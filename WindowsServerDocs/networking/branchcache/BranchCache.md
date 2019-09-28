@@ -1,9 +1,9 @@
 ---
 title: BranchCache
-description: En este tema proporciona información general sobre BranchCache en Windows Server 2016
+description: En este tema se proporciona información general sobre BranchCache en Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-bc
@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: a4587cff-c086-49f1-a0bf-cd74b8a44440
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ba334e4aee0232d939a52f1173885a5f457adbc8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7fe8d948a5f43fdab394490f543f3583167bdfe9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883866"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406768"
 ---
 # <a name="branchcache"></a>BranchCache
 
@@ -28,10 +28,10 @@ En este tema, destinado a los profesionales de tecnología de la información (T
 > [!NOTE]
 > Además de este tema, está disponible la siguiente documentación sobre BranchCache.
 > 
-> - [Comandos de Windows PowerShell y Shell de red de BranchCache](../branchcache/BranchCache-Network-Shell-and-Windows-PowerShell-Commands.md)
+> - [Shell de red de BranchCache y comandos de Windows PowerShell](../branchcache/BranchCache-Network-Shell-and-Windows-PowerShell-Commands.md)
 > -   [Guía de implementación de BranchCache](../branchcache/deploy/BranchCache-Deployment-Guide.md)
 
-**¿Quién puede interesarle BranchCache?**
+**¿A quién le interesará BranchCache?**
 
 Si es administrador de un sistema, arquitecto de soluciones de red o almacenamiento, u otro profesional de TI, BranchCache podría interesarle bajo las siguientes circunstancias:
 
@@ -43,19 +43,19 @@ Si es administrador de un sistema, arquitecto de soluciones de red o almacenamie
 
 - Ha implementado o planea implementar servidores de contenido en la oficina central que coinciden con las configuraciones que se describen en este tema.
 
-- Los equipos cliente en sus sucursales ejecutan Windows 10, Windows 8.1, Windows 8 o Windows 7.
+- Los equipos cliente de sus sucursales ejecutan Windows 10, Windows 8.1, Windows 8 o Windows 7.
 
 Este tema incluye las siguientes secciones:
 
--   [¿Qué es la BranchCache?](#bkmk_what)
+-   [¿Qué es BranchCache?](#bkmk_what)
 
 -   [Modos de BranchCache](#BKMK_2)
   
--   [Servidores de contenido habilitado para BranchCache](#BKMK_3)
+-   [Servidores de contenido habilitados para BranchCache](#BKMK_3)
   
 -   [BranchCache y la nube](#BKMK_3a)
   
--   [Versiones de la información de contenido](#bkmk_version)  
+-   [Versiones de información de contenido](#bkmk_version)  
   
 -   [Cómo administra BranchCache las actualizaciones de contenido en archivos](#bkmk_handles)  
   
@@ -67,13 +67,13 @@ Este tema incluye las siguientes secciones:
   
 -   [Flujo de contenido y procesos](#bkmk_flow)  
   
--   [Seguridad de la memoria caché](#bkmk_cache)  
+-   [Seguridad de caché](#bkmk_cache)  
   
-## <a name="bkmk_what"></a>¿Qué es la BranchCache?
+## <a name="bkmk_what"></a>¿Qué es BranchCache?
 
-BranchCache es una tecnología de optimización de ancho de banda (WAN) de red de área extensa que se incluye en algunas ediciones de los sistemas de operativos de Windows 10 y Windows Server 2016, así como en algunas ediciones de Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8 , Windows Server 2008 R2 y Windows 7. Para mejorar el ancho de banda de la WAN cuando los usuarios acceden a contenido de servidores remotos, BranchCache obtiene el contenido de los servidores de contenido de la oficina central o de la nube hospedada y lo almacena en la memoria caché de las sucursales, lo que permite que los equipos cliente de dichas sucursales accedan al contenido de forma local, y no a través de la WAN.
+BranchCache es una tecnología de optimización del ancho de banda de la red de área extensa (WAN) que se incluye en algunas ediciones de los sistemas operativos Windows Server 2016 y Windows 10, así como en algunas ediciones de Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8 , Windows Server 2008 R2 y Windows 7. Para mejorar el ancho de banda de la WAN cuando los usuarios acceden a contenido de servidores remotos, BranchCache obtiene el contenido de los servidores de contenido de la oficina central o de la nube hospedada y lo almacena en la memoria caché de las sucursales, lo que permite que los equipos cliente de dichas sucursales accedan al contenido de forma local, y no a través de la WAN.
   
-En las sucursales, el contenido se almacena en servidores que están configurados para hospedar la memoria caché o, si no hay ningún servidor está disponible en la sucursal, en los equipos cliente que ejecutan Windows 10, Windows 8.1, Windows 8 o Windows 7. Cuando un equipo cliente haya solicitado y recibido un determinado contenido de la oficina central y este se haya almacenado en caché en la sucursal, el resto de equipos de la sucursal podrá disponer de este contenido de forma local y sin necesidad de descargarlo del servidor de contenido a través de un vínculo WAN.
+En las sucursales, el contenido se almacena en servidores configurados para hospedar la memoria caché o, si no hay ningún servidor disponible en la sucursal, en los equipos cliente que ejecutan Windows 10, Windows 8.1, Windows 8 o Windows 7. Cuando un equipo cliente haya solicitado y recibido un determinado contenido de la oficina central y este se haya almacenado en caché en la sucursal, el resto de equipos de la sucursal podrá disponer de este contenido de forma local y sin necesidad de descargarlo del servidor de contenido a través de un vínculo WAN.
 
 Cuando los equipos cliente posteriormente realizan solicitudes para el mismo contenido, los clientes descargan *información del contenido* del servidor en lugar del contenido en sí. La información de contenido se compone de hashes que se calculan mediante fragmentos del contenido original y que son sumamente pequeños en comparación con el contenido de los datos originales. Después, los equipos cliente usan la información de contenido para ubicar el contenido de una memoria caché en la sucursal, ya sea que la memoria caché se encuentre en un equipo cliente o en un servidor. Los equipos y servidores cliente también usan información de contenido para proteger el contenido almacenado en caché de manera que usuarios no autorizados no puedan acceder a él.
 
@@ -108,101 +108,101 @@ El modo Caché distribuida funciona en una subred única. En una sucursal de var
 
 Por este motivo, los clientes de otras subredes, que no pueden saber si el archivo ya se descargó, obtienen el archivo del servidor de contenido de la oficina central, usando ancho de banda WAN en el proceso.
 
-Sin embargo, cuando implementan un modo Caché hospedada (este no es el caso), todos los clientes de la sucursal de varias subredes pueden acceder a una memoria caché única, que se almacena en el servidor de caché hospedada, aun si los clientes se encuentran en subredes diferentes. Además, BranchCache en Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012 proporciona la capacidad de implementar más de un servidor de caché hospedada por cada sucursal.
+Sin embargo, cuando implementan un modo Caché hospedada (este no es el caso), todos los clientes de la sucursal de varias subredes pueden acceder a una memoria caché única, que se almacena en el servidor de caché hospedada, aun si los clientes se encuentran en subredes diferentes. Además, BranchCache en Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012 proporcionan la capacidad de implementar más de un servidor de caché hospedada por cada sucursal.
 
 > [!CAUTION]
 > Si usa BranchCache para realizar almacenamiento en caché SMB de archivos y carpetas, no deshabilite Archivos sin conexión. Si deshabilita Archivos sin conexión, el almacenamiento en caché SMB no funcionará correctamente.
 
-## <a name="BKMK_3"></a>Servidores de contenido habilitado para BranchCache
+## <a name="BKMK_3"></a>Servidores de contenido habilitados para BranchCache
 
-Cuando se implementa BranchCache, el contenido de origen se almacena en servidores de contenido habilitado para BranchCache en la oficina central o en un centro de datos en la nube. BranchCache admite los siguientes tipos de servidores de contenido:
+Cuando se implementa BranchCache, el contenido de origen se almacena en servidores de contenido habilitados para BranchCache en la oficina central o en un centro de datos en la nube. BranchCache admite los siguientes tipos de servidores de contenido:
 
 > [!NOTE]
-> Solo contenido de origen: es decir, contenido que los equipos cliente obtienen inicialmente desde un servidor de contenido habilitado para BranchCache - se acelera con BranchCache. Los equipos cliente no almacenan en la memoria caché el contenido que los equipos cliente obtienen directamente de otros orígenes, como servidores web de Internet o de Windows Update ni en servidores de caché hospedada y después lo comparten con otros equipos de la sucursal. Sin embargo, si desea acelerar el contenido de actualización de Windows, puede instalar a un servidor de aplicaciones de Windows Server Update Services (WSUS) en la oficina central o un centro de datos en la nube y configúrelo como un servidor de contenido de BranchCache.
+> Solo el contenido de origen, es decir, el contenido que los equipos cliente obtienen inicialmente del servidor de contenido habilitado para BranchCache, se acelera con BranchCache. Los equipos cliente no almacenan en la memoria caché el contenido que los equipos cliente obtienen directamente de otros orígenes, como servidores web de Internet o de Windows Update ni en servidores de caché hospedada y después lo comparten con otros equipos de la sucursal. Sin embargo, si desea acelerar el contenido de Windows Update, puede instalar un servidor de aplicaciones Windows Server Update Services (WSUS) en el centro de datos de la oficina central o en la nube y configurarlo como servidor de contenido de BranchCache.
 
 ### <a name="web-servers"></a>Servidores web
 
-Servidores Web admitidos son equipos que ejecutan Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2 que tienen el rol de servidor servidor Web (IIS) instalado y que usan el protocolo de transferencia de hipertexto (HTTP) o HTTP seguro) HTTPS).
+Los servidores web admitidos son equipos que ejecutan Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2 y que tienen instalado el rol de servidor servidor Web (IIS) y que usan el protocolo de transferencia de hipertexto (HTTP) o HTTP seguro ( HTTPS).
 
 Además, el servidor web debe tener la característica BranchCache instalada.
 
 ### <a name="file-servers"></a>Servidores de archivos
 
-Servidores de archivos admitidos son equipos que ejecutan Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2 que tienen el rol de servidor Servicios de archivo y el servicio BranchCache para archivos de red rol instalado. 
+Los servidores de archivos admitidos son equipos que ejecutan Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2 que tienen instalado el rol de servidor servicios de archivo y el servicio de rol BranchCache para archivos de red. 
 
 Estos servidores de archivos usan el Bloque de mensajes del servidor (SMB) para intercambiar información entre los equipos. Después de completar la instalación del servidor de archivos, también debe compartir carpetas y habilitar la generación de hash para carpetas compartidas usando la directiva de grupo o la directiva de equipo local para habilitar BranchCache.
 
 ### <a name="application-servers"></a>Servidores de aplicaciones
 
-Servidores de aplicaciones admitidos son equipos que ejecutan Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2 con servicio de transferencia inteligente en segundo plano (BITS) instalado y habilitado. 
+Los servidores de aplicaciones admitidos son equipos que ejecutan Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2 con Servicio de transferencia inteligente en segundo plano (BITS) instalados y habilitados. 
 
-Además, el servidor web debe tener la característica BranchCache instalada. Como ejemplos de servidores de aplicaciones, puede implementar servidores de Microsoft Windows Server Update Services (WSUS) y Microsoft System Center Configuration Manager Branch Distribution Point como servidores de contenido de BranchCache.
+Además, el servidor web debe tener la característica BranchCache instalada. Como ejemplos de servidores de aplicaciones, puede implementar servidores de Microsoft Windows Server Update Services (WSUS) y de punto de distribución de sucursal de Microsoft System Center Configuration Manager como servidores de contenido de BranchCache.
 
 ## <a name="BKMK_3a"></a>BranchCache y la nube
 
-La nube ofrece grandes posibilidades de reducir los gastos operativos y alcanzar nuevos niveles de escala, pero quitarle las cargas de trabajo a las personas que dependen de ellas puede aumentar los costos de las redes y afectar a la productividad. Los usuarios esperan un alto rendimiento y no importa dónde se hospedan sus aplicaciones y datos. 
+La nube ofrece grandes posibilidades de reducir los gastos operativos y alcanzar nuevos niveles de escala, pero quitarle las cargas de trabajo a las personas que dependen de ellas puede aumentar los costos de las redes y afectar a la productividad. Los usuarios esperan un alto rendimiento y no les importa dónde se hospedan sus aplicaciones y datos. 
 
 BranchCache puede mejorar el rendimiento de aplicaciones en red y reducir el consumo de ancho de banda con una memoria caché de datos compartida.  Mejora la productividad en las sucursales y en las oficinas principales donde los trabajadores usan servidores que están implementados en la nube.
 
 Dado que BranchCache no requiere hardware nuevo ni cambios en la topología de red, es una excelente solución para mejorar la comunicación entre las ubicaciones de la oficina y las nubes pública y privada.
 
 > [!NOTE]
-> Dado que algunos servidores proxy Web no puede procesar encabezados Content-Encoding no estándares, se recomienda usar BranchCache con Hyper texto protocolo seguro (HTTPS) y no HTTP.
+> Dado que algunos proxies web no pueden procesar encabezados de codificación de contenido no estándar, se recomienda usar BranchCache con el protocolo de transferencia de hipertexto seguro (HTTPS) y no HTTP.
   
-=== Para obtener más información acerca de las tecnologías de nube en Windows Server 2016, consulte [redes definidas por Software &#40;SDN&#41;](../sdn/Software-Defined-Networking--SDN-.md).
+= = = = = = = Para obtener más información sobre las tecnologías en la nube en Windows Server 2016, consulte [software Defined Networking &#40;&#41;Sdn](../sdn/Software-Defined-Networking--SDN-.md).
   
-## <a name="bkmk_version"></a>Versiones de la información de contenido
+## <a name="bkmk_version"></a>Versiones de información de contenido
 
 Existen dos versiones de la información de contenido:
 
-- Información de contenido que sea compatible con equipos que ejecutan Windows Server 2008 R2 y Windows 7 se llama a la versión 1 (o v1). Con la segmentación de archivos de BranchCache V1, los segmentos de archivo son más grandes que los de V2 y tienen un tamaño fijo. Debido a estos tamaños fijos de segmento tan voluminosos, cuando un usuario realiza un cambio que altera la longitud del archivo, se invalida no solo el segmento con el cambio, sino todos los segmentos del archivo por completo. En consecuencia, la siguiente llamada que efectúe otro usuario de la sucursal en relación con el archivo modificado supondrá un escaso ahorro de ancho de banda de WAN, dado que tanto el contenido modificado como todo el contenido posterior al cambio se envía a través del vínculo WAN.
+- La información de contenido compatible con los equipos que ejecutan Windows Server 2008 R2 y Windows 7 se denomina versión 1 o v1. Con la segmentación de archivos de BranchCache V1, los segmentos de archivo son más grandes que los de V2 y tienen un tamaño fijo. Debido a estos tamaños fijos de segmento tan voluminosos, cuando un usuario realiza un cambio que altera la longitud del archivo, se invalida no solo el segmento con el cambio, sino todos los segmentos del archivo por completo. En consecuencia, la siguiente llamada que efectúe otro usuario de la sucursal en relación con el archivo modificado supondrá un escaso ahorro de ancho de banda de WAN, dado que tanto el contenido modificado como todo el contenido posterior al cambio se envía a través del vínculo WAN.
 
-- Información de contenido que sea compatible con equipos que ejecutan Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012 y Windows 8 se llama a la versión 2 o V2. La información de contenido V2 emplea segmentos más pequeños y de tamaño variable que son más tolerantes a los cambios en un archivo. Esto aumenta la posibilidad de poder reutilizar los segmentos procedentes de una versión más antigua del archivo cuando los usuarios acceden a una versión actualizada, lo que hace que obtengan del servidor de contenido únicamente la parte modificada del archivo y, por lo tanto, se use menos ancho de banda de WAN.
+- La información de contenido compatible con los equipos que ejecutan Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012 y Windows 8 se denomina versión 2 o V2. La información de contenido V2 emplea segmentos más pequeños y de tamaño variable que son más tolerantes a los cambios en un archivo. Esto aumenta la posibilidad de poder reutilizar los segmentos procedentes de una versión más antigua del archivo cuando los usuarios acceden a una versión actualizada, lo que hace que obtengan del servidor de contenido únicamente la parte modificada del archivo y, por lo tanto, se use menos ancho de banda de WAN.
 
 En la siguiente tabla encontrará información sobre la versión de información de contenido que se usa en función de los sistemas operativos de cliente, de servidor de contenido y de servidor de caché hospedada que use en su implementación de BranchCache.
 
 > [!NOTE]
-> En la tabla siguiente, el acrónimo "SO" significa sistema operativo.
+> En la tabla siguiente, el acrónimo "So" significa sistema operativo.
 
 |SO de cliente|SO de servidor de contenido|SO de servidor de caché hospedada|Versión de información de contenido|
 |-------------|---------------------|--------------------------|-------------------------------|
-|Windows Server 2008 R2 y Windows 7 |Windows Server 2012 o posterior|Windows Server 2012 o posterior; None para el modo caché distribuida|V1|
-|Windows Server 2012 o posterior; Windows 8 o posterior|Windows Server 2008 R2 |Windows Server 2012 o posterior; None para el modo caché distribuida|V1|
+|Windows Server 2008 R2 y Windows 7 |Windows Server 2012 o posterior|Windows Server 2012 o posterior; ninguno para el modo caché distribuida|V1|
+|Windows Server 2012 o posterior; Windows 8 o posterior|Windows Server 2008 R2 |Windows Server 2012 o posterior; ninguno para el modo caché distribuida|V1|
 |Windows Server 2012 o posterior; Windows 8 o posterior| Windows Server 2012 o posterior| Windows Server 2008 R2 |V1|
-|Windows Server 2012 o posterior; Windows 8 o posterior|Windows Server 2012 o posterior|Windows Server 2012 o posterior; None para el modo caché distribuida|V2|
+|Windows Server 2012 o posterior; Windows 8 o posterior|Windows Server 2012 o posterior|Windows Server 2012 o posterior; ninguno para el modo caché distribuida|V2|
 
-Si tiene servidores de contenido y los servidores de caché hospedada que ejecutan Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012, usan la versión de información de contenido que sea adecuada en función del sistema operativo del cliente de BranchCache que solicita información. 
+Cuando se tienen servidores de contenido y servidores de caché hospedada que ejecutan Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012, usan la versión de información de contenido adecuada según el sistema operativo del cliente de BranchCache que solicita información. 
 
-Cuando los equipos que ejecutan Windows Server 2012 y Windows 8 o sistemas operativos posteriores solicitan contenido, los servidores de caché hospedada y de contenido usan la información de contenido V2; Cuando los equipos que ejecutan Windows Server 2008 R2 y Windows 7 solicitan contenido, los servidores de caché hospedada y contenido usarán información de contenido V1.
+Cuando los equipos que ejecutan Windows Server 2012 y Windows 8 o sistemas operativos posteriores solicitan contenido, el contenido y los servidores de caché hospedada usan la información de contenido de V2. Cuando los equipos que ejecutan Windows Server 2008 R2 y el contenido de la solicitud de Windows 7, el contenido y los servidores de caché hospedada usan la información de contenido v1.
 
 >[!IMPORTANT]
->Cuando BranchCache se implementa en modo de caché distribuida, los clientes que usen otras versiones de información de contenido no compartirán contenido entre ellos. Por ejemplo, un equipo cliente que ejecutan Windows 7 y un equipo cliente que ejecutan Windows 10 que están instalados en la misma sucursal no compartir contenido entre sí.
+>Cuando BranchCache se implementa en modo de caché distribuida, los clientes que usen otras versiones de información de contenido no compartirán contenido entre ellos. Por ejemplo, un equipo cliente que ejecuta Windows 7 y un equipo cliente que ejecuta Windows 10 y que están instalados en la misma sucursal no comparten contenido entre sí.
   
 ## <a name="bkmk_handles"></a>Cómo administra BranchCache las actualizaciones de contenido en archivos
 
-Cuando los usuarios de sucursales modifican o actualización el contenido de documentos, sus cambios se escriben directamente en el servidor de contenido de la oficina central sin la participación de BranchCache. Esto es así tanto si un usuario descarga el documento del servidor de contenidos como si lo obtiene de una caché hospedada o distribuida en la sucursal.
+Cuando los usuarios de la sucursal modifican o actualizan el contenido de los documentos, los cambios se escriben directamente en el servidor de contenido de la oficina central sin la participación de BranchCache. Esto es así tanto si un usuario descarga el documento del servidor de contenidos como si lo obtiene de una caché hospedada o distribuida en la sucursal.
 
 Cuando un cliente distinto de una sucursal solicita el archivo modificado, los nuevos segmentos del archivo se descargan desde el servidor de la oficina central y se agregan a la caché distribuida u hospedada de dicha sucursal. Debido a esto, los usuarios de las sucursales siempre disponen de las versiones más recientes del contenido almacenado en caché.
 
 ## <a name="BKMK_4"></a>Guía de instalación de BranchCache
 
-Puede usar el administrador del servidor en Windows Server 2016 para instalar la característica BranchCache o el servicio BranchCache para archivos de red rol del rol de servidor Servicios de archivo. Puede usar la siguiente tabla para determinar si debe instalar el servicio de rol o la característica.
+Puede usar Administrador del servidor en Windows Server 2016 para instalar la característica BranchCache o el servicio de rol BranchCache para archivos de red del rol de servidor servicios de archivo. Puede usar la siguiente tabla para determinar si debe instalar el servicio de rol o la característica.
 
 |Funcionalidad|Ubicación del equipo|Instalar este elemento de BranchCache|
 |-----------------|---------------------|------------------------------------|
-|Servidor de contenido \(servidor de aplicaciones basados en BITS\)|Centro de datos en la nube o en oficina central|Característica BranchCache|
-|Servidor de contenido \(servidor Web\)|Centro de datos en la nube o en oficina central|Característica BranchCache|
-|Servidor de contenido \(servidor de archivos mediante el protocolo SMB\)|Centro de datos en la nube o en oficina central|Servicio de rol BranchCache para archivos de red del rol de servidor Servicios de archivo|
+|Servidor de contenido @no__t-servidor de aplicaciones basado en 0BITS @ no__t-1|Centro de datos en la nube o en oficina central|Característica BranchCache|
+|Servidor de contenido \(Web Server @ no__t-1|Centro de datos en la nube o en oficina central|Característica BranchCache|
+|Servidor de contenido @no__t: servidor 0file con el protocolo SMB @ no__t-1|Centro de datos en la nube o en oficina central|Servicio de rol BranchCache para archivos de red del rol de servidor Servicios de archivo|
 |Servidor de caché hospedada|Sucursal|Característica de BranchCache con modo de servidor de caché hospedada habilitado|
-|Equipo cliente habilitado para BranchCache|Sucursal|No necesita; la instalación simplemente habilite BranchCache y un modo de BranchCache \(distribuida u hospedada\) en el cliente|
+|Equipo cliente habilitado para BranchCache|Sucursal|No se necesita ninguna instalación; solo tiene que habilitar BranchCache y un modo de BranchCache \(distributed o hospedado @ no__t-1 en el cliente.|
 
 Para instalar el servicio de rol o la característica, abra el Administrador del servidor y seleccione los equipos en los que desea habilitar la funcionalidad de BranchCache. En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**. Se abre el asistente para **Agregar roles y características** . Cuando ejecute el asistente, realice las siguientes selecciones:
 
 - En la página del asistente **Seleccionar tipo de instalación**, seleccione **Instalación basada en características o en roles**.
 
-- En la página del asistente **seleccionar Roles de servidor**, si va a instalar un servidor de archivos habilitado para BranchCache, expanda **File and Storage Services** y **de servicios de iSCSI y archivo**, y a continuación, seleccione **BranchCache para archivos de red**.  Para ahorrar espacio en disco, también puede seleccionar la **desduplicación de datos** rol de servicio y, a continuación, continúe con el Asistente para instalación y la finalización. Si no desea instalar a un servidor de archivos habilitado para BranchCache, no instale el rol Servicios de archivos y almacenamiento con el servicio BranchCache para archivos de red rol.
+- En la página del asistente **Seleccionar roles de servidor**, si va a instalar un servidor de archivos habilitado para BranchCache, expanda **servicios de archivos y almacenamiento** y servicios de **archivos e iSCSI**y, a continuación, seleccione **BranchCache para archivos de red**.  Para ahorrar espacio en disco, también puede seleccionar el servicio de rol **desduplicación de datos** y, a continuación, continuar con el Asistente para la instalación y la finalización. Si no desea instalar un servidor de archivos habilitado para BranchCache, no instale el rol servicios de archivos y almacenamiento con el servicio de rol BranchCache para archivos de red.
 
-- En la página del asistente **seleccionar características**, si va a instalar un servidor de contenido que no es un servidor de archivos o va a instalar un servidor de caché hospedada, seleccione **BranchCache**y, a continuación, continúe con el Asistente para la instalación y la finalización. Si no desea instalar un servidor de contenido que no sea un servidor de archivos o un servidor de caché hospedada, no instale la característica BranchCache.
+- En la página del asistente **seleccionar características**, si va a instalar un servidor de contenido que no es un servidor de archivos o va a instalar un servidor de caché hospedada, seleccione **BranchCache**y, a continuación, continúe con el Asistente para la instalación y finalización. Si no desea instalar un servidor de contenido que no sea un servidor de archivos o un servidor de caché hospedada, no instale la característica BranchCache.
   
 ## <a name="bkmk_os"></a>Versiones de sistema operativo para BranchCache
 
@@ -210,7 +210,7 @@ La siguiente es una lista de los sistemas operativos compatibles con diferentes 
 
 ### <a name="operating-systems-for-branchcache-client-computer-functionality"></a>Sistemas operativos para la funcionalidad de equipo cliente de BranchCache
 
-Los siguientes sistemas operativos proporcionan BranchCache con compatibilidad con el servicio de transferencia inteligente en segundo plano (BITS), protocolo de transferencia de hipertexto (HTTP) y bloque de mensajes del servidor (SMB).
+Los sistemas operativos siguientes proporcionan a BranchCache compatibilidad con Servicio de transferencia inteligente en segundo plano (BITS), el protocolo de transferencia de hipertexto (HTTP) y el bloque de mensajes del servidor (SMB).
 
 - Windows 10 Enterprise
 
@@ -224,50 +224,50 @@ Los siguientes sistemas operativos proporcionan BranchCache con compatibilidad c
 
 - Windows 7 Ultimate
 
-En los siguientes sistemas operativos, BranchCache no admite la funcionalidad HTTP y SMB, pero es compatible con la funcionalidad de BranchCache BITS.
+En los siguientes sistemas operativos, BranchCache no admite la funcionalidad de HTTP y SMB, pero admite la funcionalidad de BITS de BranchCache.
 
--   Windows 10 Pro, BITS solamente es compatible con
+-   Windows 10 Pro, solo compatible con BITS
 
--   Windows 8.1 Pro, BITS solamente es compatible con
+-   Windows 8.1 Pro, solo compatible con BITS
 
--   Windows 8 Pro, BITS solamente es compatible con
+-   Windows 8 Pro, solo compatible con BITS
 
--   Windows 7 Pro BITS solamente es compatible con
+-   Windows 7 Pro, solo compatible con BITS
 
 > [!NOTE]
-> BranchCache no está disponible de forma predeterminada en los sistemas operativos Windows Server 2008 o Windows Vista. En estos sistemas operativos, sin embargo, si descarga e instalar la actualización de Windows Management Framework, funcionalidad de BranchCache está disponible para el protocolo de servicio de transferencia inteligente en segundo plano (BITS) solo. Para obtener más información y descargar Windows Management Framework, consulte [Windows Management Framework (Windows PowerShell 2.0, WinRM 2.0 y BITS 4.0)](https://go.microsoft.com/fwlink/?LinkId=188677) en https://go.microsoft.com/fwlink/?LinkId=188677.
+> BranchCache no está disponible de forma predeterminada en los sistemas operativos Windows Server 2008 o Windows Vista. Sin embargo, en estos sistemas operativos, si descarga e instala la actualización de Windows Management Framework, la funcionalidad de BranchCache solo está disponible para el protocolo Servicio de transferencia inteligente en segundo plano (BITS). Para obtener más información y para descargar Windows Management Framework, vea [Windows Management Framework (Windows PowerShell 2,0, WinRM 2,0 y BITS 4,0)](https://go.microsoft.com/fwlink/?LinkId=188677) en https://go.microsoft.com/fwlink/?LinkId=188677.
   
 ### <a name="operating-systems-for-branchcache-content-server-functionality"></a>Sistemas operativos para la funcionalidad de servidor de contenido de BranchCache
 
-Puede usar las familias de sistemas operativos de Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012 como servidores de contenido de BranchCache.
+Puede usar las familias de sistemas operativos Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012 como servidores de contenido de BranchCache.
 
-Además, la familia Windows Server 2008 R2 de sistemas operativos se puede usar como servidores de contenido de BranchCache, con las siguientes excepciones:
+Además, la familia de sistemas operativos Windows Server 2008 R2 se puede usar como servidores de contenido de BranchCache, con las siguientes excepciones:
 
-- No se admite BranchCache en instalaciones Server Core de Windows Server 2008 R2 Enterprise con Hyper-V.
+- BranchCache no se admite en las instalaciones Server Core de Windows Server 2008 R2 Enterprise con Hyper-V.
 
-- No se admite BranchCache en instalaciones Server Core de Windows Server 2008 R2 Datacenter con Hyper-V.
+- BranchCache no se admite en las instalaciones Server Core de Windows Server 2008 R2 Datacenter con Hyper-V.
 
 ### <a name="operating-systems-for-branchcache-hosted-cache-server-functionality"></a>Sistemas operativos para la funcionalidad de servidor de caché hospedada de BranchCache
 
-Puede usar las familias de sistemas operativos de Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012 como servidores de caché hospedada de BranchCache.
+Puede usar las familias de sistemas operativos Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012 como servidores de caché hospedada de BranchCache.
 
-Además, los siguientes sistemas operativos de Windows Server 2008 R2 puede usarse como servidores de caché hospedada de BranchCache:
+Además, los siguientes sistemas operativos Windows Server 2008 R2 se pueden usar como servidores de caché hospedada de BranchCache:
 
 - Windows Server 2008 R2 Enterprise
 
 - Windows Server 2008 R2 Enterprise con Hyper-V
 
-- Windows Server 2008 R2 Enterprise Server Core Installation
+- Instalación de Windows Server 2008 R2 Enterprise Server Core
 
-- Instalación del núcleo de servidor de Windows Server 2008 R2 Enterprise con Hyper-V
+- Instalación de Windows Server 2008 R2 Enterprise Server Core con Hyper-V
 
 - Windows Server 2008 R2 for Itanium-Based Systems
 
 - Windows Server 2008 R2 Datacenter
 
-- Centro de datos de Windows Server 2008 R2 con Hyper-V
+- Windows Server 2008 R2 Datacenter con Hyper-V
 
-- Instalación del núcleo de servidor de Windows Server 2008 R2 Datacenter con Hyper-V
+- Instalación de Windows Server 2008 R2 Datacenter Server Core con Hyper-V
 
 ## <a name="bkmk_security"></a>Seguridad de BranchCache
 
@@ -322,19 +322,19 @@ Por otra parte, BranchCache maneja información de contenido con el mismo grado 
 
 El flujo de información de contenido y el contenido real se divide en cuatro fases:
 
-1.  [Procesos de BranchCache: Contenido de la solicitud](#BKMK_8)
+1.  @no__t procesos de 0BranchCache: Contenido de la solicitud @ no__t-0
 
-2.  [Procesos de BranchCache: Buscar contenido](#BKMK_9)
+2.  @no__t procesos de 0BranchCache: Buscar contenido @ no__t-0
 
-3.  [Procesos de BranchCache: Recuperar el contenido](#BKMK_10)
+3.  @no__t procesos de 0BranchCache: Recuperar contenido @ no__t-0
 
-4.  [Procesos de BranchCache: Contenido de la caché](#BKMK_11)
+4.  @no__t procesos de 0BranchCache: Contenido de caché @ no__t-0
 
 Estas fases se describen en las siguientes secciones.
 
 ## <a name="BKMK_8"></a>Procesos de BranchCache: Solicitar contenido
 
-En la primera fase, el equipo cliente de la sucursal solicita contenido, por ejemplo, un archivo o una página web, de un servidor de contenido en una ubicación remota, como una oficina central. El servidor de contenido comprueba que el equipo cliente esté autorizado a recuperar el contenido solicitado. Si el equipo cliente está autorizado y servidor de contenido y de cliente BranchCache\-habilitado, el servidor de contenido genera información de contenido.
+En la primera fase, el equipo cliente de la sucursal solicita contenido, por ejemplo, un archivo o una página web, de un servidor de contenido en una ubicación remota, como una oficina central. El servidor de contenido comprueba que el equipo cliente esté autorizado a recuperar el contenido solicitado. Si el equipo cliente está autorizado y el servidor de contenido y el cliente son BranchCache @ no__t-0enabled, el servidor de contenido genera información de contenido.
 
 Después, el servidor de contenido envía información de contenido al equipo cliente utilizando el mismo protocolo que hubiese usado para el contenido real. 
 
@@ -378,7 +378,7 @@ Una vez que un equipo cliente ubica el contenido deseado en el host de contenido
 
 En primer lugar, el equipo cliente envía una solicitud al host de contenido para el primer bloque que requiere. La solicitud contiene el identificador de segmento y el rango de bloques que identifican el contenido deseado. Ya que solo se devuelve un bloque, el rango de bloques contiene un solo bloque. (Actualmente, no se admiten solicitudes de varios bloques). El cliente también almacena la solicitud en su lista de solicitudes pendientes local.  
 
-Al recibir un mensaje de solicitud válida de un cliente, el host de contenido comprueba si el bloque especificado en la solicitud existe en la memoria caché de contenido del host de contenido.
+Al recibir un mensaje de solicitud válido de un cliente, el host de contenido comprueba si el bloque especificado en la solicitud existe en la caché de contenido del host de contenido.
 
 Si el host de contenido está en posesión del bloque de contenido, entonces el host de contenido envía una respuesta que contiene el identificador de segmento, el identificador de bloque, el bloque de datos cifrados y el vector de inicialización que se usa para cifrar el bloque.
 
@@ -397,7 +397,7 @@ Este proceso se repite hasta que el cliente cuente con todos los bloques requeri
 > [!NOTE]
 > Si los segmentos de contenido completos no existen en un equipo, el protocolo de recuperación recupera y ensambla el contenido de una combinación de orígenes: un conjunto de equipos cliente en modo Caché distribuida, un servidor de caché hospedada y, si las memorias caché de la sucursal no tienen el contenido completo, el servidor de contenido original en la oficina central.
 
-Antes de que BranchCache envíe información de contenido o el contenido, se cifran los datos. BranchCache cifra el bloque en el mensaje de respuesta. En Windows 7, el algoritmo de cifrado predeterminado que BranchCache usa es AES-128, la clave de cifrado es Ke y el tamaño de clave es de 128 bits, tal y como indica el algoritmo de cifrado. 
+Antes de que BranchCache envíe información de contenido o el contenido, se cifran los datos. BranchCache cifra el bloque en el mensaje de respuesta. En Windows 7, el algoritmo de cifrado predeterminado que BranchCache usa es AES-128, la clave de cifrado es ke y el tamaño de la clave es de 128 bits, como indica el algoritmo de cifrado. 
 
 BranchCache genera un vector de inicialización adecuado para el algoritmo de cifrado y usa la clave de cifrado para cifrar el bloque. Después, BranchCache registra el algoritmo de cifrado y el vector de inicialización en el mensaje. 
 
@@ -433,12 +433,12 @@ Para actualizar el servidor de caché hospedada utilizando el protocolo de cach�
 
 - El equipo cliente debe contar con un conjunto de bloques dentro de un segmento que pueda ofrecer al servidor de caché hospedada. El cliente debe suministrar información de contenido para el segmento ofrecido; esta se compone del identificador de segmento, el hash de datos del segmento, el secreto del segmento y una lista de todos los hashes de bloque que contiene el segmento.
 
-- Para la caché hospedada se necesitan servidores que ejecutan Windows Server 2008 R2, un servidor de caché hospedada certificado y clave privada asociada, y la entidad de certificación (CA) que emitió el certificado debe ser de confianza para los equipos cliente de la sucursal. Esto permite que el cliente y el servidor participen correctamente en la autenticación del servidor HTTPS.
+- En el caso de los servidores de caché hospedada que ejecutan Windows Server 2008 R2, se requiere un certificado de servidor de caché hospedada y una clave privada asociada, y la entidad de certificación (CA) que emitió el certificado debe ser de confianza para los equipos cliente de la sucursal. Esto permite que el cliente y el servidor participen correctamente en la autenticación del servidor HTTPS.
 
     > [!IMPORTANT]
-    > Servidores de caché hospedada que ejecutan Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 no requieren un certificado de servidor de caché hospedada y la clave privada asociada.  
+    > Los servidores de caché hospedada que ejecutan Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 no necesitan un certificado de servidor de caché hospedada ni una clave privada asociada.  
 
-- El equipo cliente está configurado con el nombre de equipo del servidor de caché hospedada y el número de puerto del Protocolo de control de transmisión (TCP) en el cual el servidor de caché hospedada está escuchando el tráfico de BranchCache. Certificado del servidor de caché hospedada está enlazado a este puerto. El nombre de equipo del servidor de caché hospedada puede ser un nombre de dominio completo (FQDN), si el servidor de caché hospedada es un equipo miembro del dominio, o puede ser el nombre NetBIOS del equipo si el servidor de caché hospedada no es un miembro del dominio.
+- El equipo cliente está configurado con el nombre de equipo del servidor de caché hospedada y el número de puerto del Protocolo de control de transmisión (TCP) en el cual el servidor de caché hospedada está escuchando el tráfico de BranchCache. El certificado del servidor de caché hospedada está enlazado a este puerto. El nombre de equipo del servidor de caché hospedada puede ser un nombre de dominio completo (FQDN), si el servidor de caché hospedada es un equipo miembro del dominio, o puede ser el nombre NetBIOS del equipo si el servidor de caché hospedada no es un miembro del dominio.
 
 - El equipo cliente escucha activamente las solicitudes de bloque entrantes. El puerto en el que se escucha se pasa como parte de los mensajes de oferta desde el cliente al servidor de caché hospedada. Esto permite que el servidor de caché hospedada use protocolos de BranchCache para conectarse al equipo cliente para recuperar bloques de datos en el segmento.
 
@@ -448,13 +448,13 @@ Para actualizar el servidor de caché hospedada utilizando el protocolo de cach�
 
 ### <a name="hosted-cache-mode-cache-population"></a>Relleno de la memoria caché en modo de caché hospedada
 
-El proceso de agregar contenido a la memoria caché del servidor de caché hospedada en una sucursal comienza cuando el cliente envía un INITIAL_OFFER_MESSAGE, que incluye el identificador de segmento. El identificador de segmento en la solicitud INITIAL_OFFER_MESSAGE se usa para recuperar el Hash de datos del segmento correspondiente, lista de hashes de bloque y el secreto de segmento de memoria caché de bloque del servidor de caché hospedada. Si el servidor de caché hospedada ya cuenta con toda la información de contenido de un segmento en particular, la respuesta a INITIAL_OFFER_MESSAGE será OK y no se produce la solicitud de descarga de bloques.
+El proceso de agregar contenido a la caché del servidor de caché hospedada en una sucursal comienza cuando el cliente envía un INITIAL_OFFER_MESSAGE, que incluye el identificador de segmento. El identificador de segmento en la solicitud INITIAL_OFFER_MESSAGE se usa para recuperar el hash de segmento correspondiente de los datos, la lista de hashes de bloque y el secreto de segmento de la memoria caché de bloque del servidor de caché hospedada. Si el servidor de caché hospedada ya cuenta con toda la información de contenido de un segmento en particular, la respuesta a INITIAL_OFFER_MESSAGE será OK y no se produce la solicitud de descarga de bloques.
 
 Si el servidor de caché hospedada no cuenta con todos los bloques de datos ofrecidos asociados con los hashes de bloque en el segmento, la respuesta a INITIAL_OFFER_MESSAGE es INTERESTED (interesado). Después, el cliente envía un SEGMENT_INFO_MESSAGE (mensaje de información del segmento) que describe el único segmento que se está ofreciendo. El servidor de caché hospedada responde con un mensaje OK e inicia la descarga de los bloques faltantes del equipo cliente que los ofrece.
 
 El hash de datos del segmento, la lista de hashes de bloque y el secreto del segmento se usan para garantizar que el contenido que se descarga no esté modificado ni alterado de otra manera. Los bloques descargados se agregan después a la memoria caché del bloque del servidor de caché hospedada.
 
-## <a name="bkmk_cache"></a>Seguridad de la memoria caché  
+## <a name="bkmk_cache"></a>Seguridad de caché  
 En esta sección se proporciona información sobre cómo BranchCache protege los datos almacenados en caché en equipos cliente y en servidores de caché hospedada.
 
 ### <a name="client-computer-cache-security"></a>Seguridad de la memoria caché en el equipo cliente
@@ -472,9 +472,9 @@ El cifrado de todo el disco es particularmente importante en entornos en los que
 
 En modo Caché hospedada, la amenaza más importante a la seguridad del servidor de caché hospedada es la divulgación de información. BranchCache en un entorno de caché hospedada se comporta de una manera similar al modo Caché distribuida, con un permiso de sistema de archivos que protege los datos almacenados en caché. La diferencia es que el servidor de caché hospedada almacena todo el contenido que solicita cualquier equipo habilitado para BranchCache de una sucursal, y no simplemente los datos que solicita un solo cliente. Las consecuencias de la intrusión no autorizada a esta memoria caché podría ser mucho más grave ya que hay muchos más datos en riesgo.  
   
-En un entorno de caché hospedada en el servidor de caché hospedada se está ejecutando Windows Server 2008 R2, el uso de tecnologías de cifrado como BitLocker o EFS es aconsejable si alguno de los clientes de la sucursal puede acceder a datos confidenciales a través del vínculo WAN. También es necesario impedir el acceso físico a la memoria caché hospedada, ya que el cifrado del disco solo funciona cuando el equipo está apagado cuando el atacante obtiene acceso físico.  Si el equipo está activado o en modo de suspensión, el cifrado del disco ofrece poca protección.
+En un entorno de caché hospedada en el que el servidor de caché hospedada ejecuta Windows Server 2008 R2, se recomienda el uso de tecnologías de cifrado como BitLocker o EFS si alguno de los clientes de la sucursal puede acceder a datos confidenciales a través del vínculo WAN. También es necesario impedir el acceso físico a la memoria caché hospedada, ya que el cifrado del disco solo funciona cuando el equipo está apagado cuando el atacante obtiene acceso físico.  Si el equipo está activado o en modo de suspensión, el cifrado del disco ofrece poca protección.
 
 > [!NOTE]
-> Servidores de caché hospedada que ejecutan Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 cifran todos los datos en la memoria caché de forma predeterminada, por lo que no se requiere el uso de otras tecnologías de cifrado.
+> Los servidores de caché hospedada que ejecutan Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 cifran todos los datos de la caché de forma predeterminada, por lo que no es necesario el uso de tecnologías de cifrado adicionales.
 
 Aun si el cliente está configurado en modo Caché hospedada, de todas maneras guardará los datos localmente en la memoria caché y es posible que desee realizar los pasos necesarios para proteger la memoria caché local además de la memoria caché del servidor de caché hospedada.

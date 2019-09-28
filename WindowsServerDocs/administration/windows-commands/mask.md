@@ -1,8 +1,8 @@
 ---
 title: Máscara
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 353e6080d1f6c548bc907b58655f31d0bce6de8b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2f0dc83d7d9f7204f56e95c62b7cfad991f539ef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858026"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373715"
 ---
 # <a name="mask"></a>Máscara
 
 
 
-Quita las instantáneas de hardware que se importaron mediante el uso de la **importar** comando.
+Quita las instantáneas de hardware que se importaron mediante el comando de **importación** .
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,15 +38,15 @@ mask <ShadowSetID>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|ShadowSetID|Quita instantáneas que pertenecen al identificador especificado de conjunto de copia sombra.|
+|ShadowSetID|Quita las instantáneas que pertenecen al identificador de conjunto de instantáneas especificado.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Puede usar un alias existente o una variable de entorno en lugar de *ShadowSetID*. Use **agregar** sin parámetros para ver los alias existentes.
+-   Puede usar un alias existente o una variable de entorno en lugar de *ShadowSetID*. Use **Agregar** sin parámetros para ver los alias existentes.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para quitar el % de copia sombra importados Import_1, escriba:
+Para quitar la instantánea importada% Import_1%, escriba:
 ```
 mask %Import_1%
 ```

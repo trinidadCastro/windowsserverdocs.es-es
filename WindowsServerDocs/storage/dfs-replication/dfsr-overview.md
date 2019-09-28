@@ -1,17 +1,17 @@
 ---
 title: Información general de Replicación DFS
 ms.date: 03/08/2019
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 7c092547688bed01d3d588116badf6191e87b1ed
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: eebce26eef6eceddc064e3bb179f268ccf47c93d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871965"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386063"
 ---
 # <a name="dfs-replication-overview"></a>Información general de Replicación DFS
 
@@ -85,7 +85,7 @@ Abra una sesión de Windows PowerShell con permisos de usuario elevados y, a con
 Install-WindowsFeature <name>
 ```
 
-|Servicio de rol o característica|NOMBRE|
+|Servicio de rol o característica|Nombre|
 |---|---|
 |Replicación DFS|`FS-DFS-Replication`|
 |Herramientas de administración de DFS|`RSAT-DFS-Mgmt-Con`|

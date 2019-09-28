@@ -1,8 +1,8 @@
 ---
 title: systeminfo
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d08d3f86bdbd176aa4de157f58a58c9ea418470
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32a84a33c5339e9949648a4e40d71daf25c055d8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841506"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370695"
 ---
 # <a name="systeminfo"></a>systeminfo
 
 
 
-Muestra configuración información detallada sobre un equipo y su sistema operativo, incluida la configuración del sistema operativo, información de seguridad, Id. de producto y las propiedades de hardware (por ejemplo, RAM, espacio en disco y tarjetas de red).
+Muestra información de configuración detallada sobre un equipo y su sistema operativo, incluida la configuración del sistema operativo, la información de seguridad, el ID. de producto y las propiedades de hardware (como la RAM, el espacio en disco y las tarjetas de red).
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,26 +38,26 @@ Systeminfo [/s <Computer> [/u <Domain>\<UserName> [/p <Password>]]] [/fo {TABLE 
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/s \<equipo >|Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local.|
-|/u \<Domain>\<UserName>|Ejecuta el comando con los permisos de cuenta de la cuenta de usuario especificado. Si **/u** no se especifica, este comando usa los permisos del usuario que ha iniciado sesión actualmente en el equipo que está emitiendo el comando.|
-|/p \<contraseña >|Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.|
-|/Fo \<formato >|Especifica el formato de salida con uno de los siguientes valores:</br>TABLA: Muestra los resultados en una tabla.</br>LISTA: Muestra los resultados en una lista.</br>CSV: Muestra la salida en formato de valores separados por comas.|
-|/nh|Suprime los encabezados de columna en la salida. Es válido cuando el **/fo** parámetro está establecido en la tabla o CSV.|
+|/s \<Computer >|Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.|
+|/u \<Domain > \<UserName >|Ejecuta el comando con los permisos de cuenta de la cuenta de usuario especificada. Si no se especifica **/u** , este comando usa los permisos del usuario que ha iniciado sesión actualmente en el equipo que emite el comando.|
+|/p \<contraseña >|Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .|
+|/FO @no__t 0Format >|Especifica el formato de salida con uno de los siguientes valores:</br>CUADRO Muestra la salida en una tabla.</br>LISTA Muestra la salida en una lista.</br>CVS Muestra la salida en formato de valores separados por comas.|
+|/NH|Suprime los encabezados de columna en la salida. Válido cuando el parámetro **/FO** está establecido en Table o CSV.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para ver información de configuración para un equipo denominado Srvmain, escriba:
+Para ver la información de configuración de un equipo denominado Srvmain, escriba:
 
-**systeminfo /s srvmain**
+**SystemInfo/s srvmain**
 
-Para ver información de configuración para un equipo denominado Srvmain2 que se encuentra en el dominio Maindom de forma remota, escriba:
+Para ver de forma remota la información de configuración de un equipo denominado Srvmain2 que se encuentra en el dominio Maindom, escriba:
 
-**systeminfo /s srvmain2 /u maindom\hiropln**
+**SystemInfo/s srvmain2/u maindom\hiropln**
 
-Para ver información de configuración (en formato de lista) para un equipo denominado Srvmain2 que se encuentra en el dominio Maindom de forma remota, escriba:
+Para ver de forma remota la información de configuración (en formato de lista) de un equipo denominado Srvmain2 que se encuentra en el dominio Maindom, escriba:
 
-**systeminfo /s srvmain2 /u maindom\hiropln /p p@ssW23 /fo list**
+**SystemInfo/s srvmain2/u maindom\hiropln/p p@ssW23/FO List**
 
 #### <a name="additional-references"></a>Referencias adicionales
 

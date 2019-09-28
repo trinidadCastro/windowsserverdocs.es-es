@@ -1,8 +1,8 @@
 ---
-title: Copia de seguridad final
-description: 'Tema de los comandos de Windows para ***- '
+title: Finalizar copia de seguridad
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78eac68131b423768651842fbfb5e34dbdf21677
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 331b8249a4d30da883da830d6db802c3327cc25b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837396"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377587"
 ---
-# <a name="end-backup"></a>Copia de seguridad final
+# <a name="end-backup"></a>Finalizar copia de seguridad
 
 
 
 
-Finaliza una sesión de copia de seguridad completa y problemas de un **BackupComplete** eventos con el estado de sistema de escritura adecuados, si es necesario.
+Finaliza una sesión de copia de seguridad completa y emite un evento **BackupComplete** con el estado de escritor adecuado, si es necesario.
 
 ## <a name="syntax"></a>Sintaxis
 

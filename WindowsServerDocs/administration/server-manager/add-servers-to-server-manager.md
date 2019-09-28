@@ -2,7 +2,7 @@
 title: Add Servers to Server Manager
 description: Administrador de servidores
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-server-manager
@@ -14,12 +14,12 @@ ms.author: coreyp
 manager: dongill
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: a47ecbc0c7359438ed60ed34c94adf0096b14967
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: ad30a8f1c4c1e0aa317512eb68fffbd76413175b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435455"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383260"
 ---
 # <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
 
@@ -40,9 +40,9 @@ En este tema se incluyen las siguientes secciones.
 
 -   [Agregar servidores para administrar](#BKMK_add)
 
--   [Proporcione credenciales con el comando administrar como](#BKMK_creds)
+-   [Proporcionar credenciales con el comando administrar como](#BKMK_creds)
 
-## <a name="BKMK_creds"></a>Proporcione credenciales con el comando administrar como
+## <a name="BKMK_creds"></a>Proporcionar credenciales con el comando administrar como
 Al agregar servidores remotos al Administrador de servidores, algunos de los servidores que agregue es posible que requieran diferentes credenciales de cuenta de usuario para tener acceso o administrarlos. Para especificar las credenciales para un servidor administrado que sean diferentes de las que se utilizan para iniciar sesión en el equipo en el que ejecuta el Administrador de servidores, usa el comando **Administrar como** después de agregar un servidor al Administrador de servidores, al que se accede haciendo clic en la entrada de un servidor administrado en la ventana **Servidores** de una página principal de rol o de grupo. Al hacer clic en **Administrar como** se abre el cuadro de diálogo **Windows Security** , en el que puedes proporcionar un nombre de usuario que tenga derechos de acceso en el servidor administrado, en uno de los formatos siguientes.
 
 -   *Nombre de usuario.*

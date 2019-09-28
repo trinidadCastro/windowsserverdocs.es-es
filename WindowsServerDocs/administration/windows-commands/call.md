@@ -2,7 +2,7 @@
 title: llamada
 description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: e4331870f31309646974f5839d5aa70e534351e5
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.openlocfilehash: 0e5f9f2b0102c12ee0925bb434fdeddde85e34cd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590432"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379721"
 ---
 # <a name="call"></a>llamada
 
@@ -41,17 +41,17 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 
 |           Parámetro           |                                                                         Descripción                                                                          |
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<> De unidad:]\<[ruta de acceso >]<FileName> | Especifica la ubicación y el nombre del programa por lotes al que desea llamar. El parámetro *filename* es obligatorio y debe tener una extensión. bat o. cmd. |
-|      \<> BatchParameters       |                                            Especifica la información de línea de comandos requerida por el programa por lotes.                                             |
-|           :\<> De etiqueta           |                                            Especifica la etiqueta a la que desea que salte un control de programa por lotes.                                             |
-|         \<Argumentos >          |                     Especifica la información de la línea de comandos que se va a pasar a la nueva instancia del programa por lotes, a partir de *: etiqueta.*                     |
+| [\<Drive >:] [\<Path >] <FileName> | Especifica la ubicación y el nombre del programa por lotes al que desea llamar. El parámetro *filename* es obligatorio y debe tener una extensión. bat o. cmd. |
+|      @no__t 0BatchParameters >       |                                            Especifica la información de línea de comandos requerida por el programa por lotes.                                             |
+|           : \<Label >           |                                            Especifica la etiqueta a la que desea que salte un control de programa por lotes.                                             |
+|         @no__t 0Arguments >          |                     Especifica la información de la línea de comandos que se va a pasar a la nueva instancia del programa por lotes, a partir de *: etiqueta.*                     |
 |              /?               |                                                             Muestra la ayuda en el símbolo del sistema.                                                             |
 
 ## <a name="batch-parameters"></a>Parámetros de Batch
 
 En las tablas siguientes se enumeran las referencias de los argumentos del script por lotes ( **% 0**, **% 1**,...).
 
-**%\*** en un script por lotes, se refiere a todos los argumentos (por ejemplo, **% 1**, **% 2**, **% 3**...)
+**% @ no__t-2** en un script por lotes hace referencia a todos los argumentos (por ejemplo, **% 1**, **% 2**, **% 3**...)
 
 Puede usar las siguientes sintaxis opcionales como sustituciones para los parámetros de Batch ( **% n**):
 
@@ -78,19 +78,19 @@ En la tabla siguiente se muestra cómo se pueden combinar modificadores con los 
 |% ~ DP $ ruta de acceso: 1|Busca en los directorios que aparecen en la variable de entorno PATH de **% 1**y, a continuación, se expande a la letra de unidad y la ruta de acceso del primer directorio encontrado.|
 |% ~ ftza1|Expande **% 1** para mostrar una salida similar al comando **dir** .|
 
-En los ejemplos anteriores, **% 1** y path se pueden reemplazar por otros valores válidos. La <strong>%~</strong> sintaxis termina con un número de argumento válido. Los <strong>%~</strong> modificadores no se pueden utilizar **% \\ \*** con.
+En los ejemplos anteriores, **% 1** y path se pueden reemplazar por otros valores válidos. La sintaxis <strong>de %~</strong> finaliza con un número de argumento válido. Los modificadores <strong>%~</strong> no se pueden usar con **% @ no__t-4 @ no__t-5**.
 
 ## <a name="remarks"></a>Comentarios
 
 -   Usar parámetros de Batch
 
-    Los parámetros de Batch pueden contener cualquier información que se pueda pasar a un programa por lotes, incluidas las opciones de línea de comandos, los nombres de archivo, los parámetros de lote **% 0** a **% 9**y las variables (por ejemplo, **% de%** de baudios).
+    Los parámetros de Batch pueden contener cualquier información que se pueda pasar a un programa por lotes, incluidas las opciones de línea de comandos, los nombres de archivo, los parámetros de lote **% 0** a **% 9**y las variables (por ejemplo, **% de% de baudios**).
 -   Usar el parámetro *Label*
 
     Al usar **Call** con el parámetro *Label* , se crea un nuevo contexto de archivo por lotes y se pasa el control a la instrucción después de la etiqueta especificada. La primera vez que se encuentra el final del archivo por lotes (es decir, después de saltar a la etiqueta), el control vuelve a la instrucción después de la instrucción de **llamada** . La segunda vez que se encuentra el final del archivo por lotes, se sale del script por lotes.
 -   Usar canalizaciones y símbolos de redireccionamiento
 
-    No utilice canalizaciones ( **|** ) ni símbolos de redireccionamiento **>** ( **<** o) con la **llamada**.
+    No utilice canalizaciones ( **|** ) y símbolos de redireccionamiento ( **<** o **>** ) con **llamada**.
 -   Realización de una llamada recursiva
 
     Puede crear un programa por lotes que se llame a sí mismo. Sin embargo, debe proporcionar una condición de salida. De lo contrario, los programas de Batch primarios y secundarios pueden repetirse indefinidamente.

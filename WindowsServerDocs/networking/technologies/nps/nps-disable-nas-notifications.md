@@ -1,44 +1,44 @@
 ---
-title: Deshabilitar el reenvío de notificaciones de NAS en NPS
-description: Este tema proporciona instrucciones sobre la configuración de autenticaciones simultáneas del servidor de directivas de red en Windows Server 2016.
+title: Deshabilitación del reenvío de notificaciones NAS en NPS
+description: En este tema se proporcionan instrucciones sobre cómo configurar las autenticaciones simultáneas del servidor de directivas de redes en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: a09bfb03-95fc-4534-bf3c-97078ef6b07e
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: bc4c6afdcb02eb2bbab1f0373a5b3a28236269bf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b8ae0ab02a5c14675d543087f635d53ee63e0423
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882266"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396254"
 ---
-# <a name="disable-nas-notification-forwarding-in-nps"></a>Deshabilitar el reenvío de notificaciones de NAS en NPS
+# <a name="disable-nas-notification-forwarding-in-nps"></a>Deshabilitación del reenvío de notificaciones NAS en NPS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este procedimiento para deshabilitar el reenvío de inicio y detener los mensajes desde los servidores de acceso de red (NAS) a los miembros de un grupo de servidores RADIUS remoto configurado en NPS.
+Puede usar este procedimiento para deshabilitar el reenvío de mensajes de inicio y detención de los servidores de acceso a la red (NAS) a los miembros de un grupo de servidores remotos RADIUS configurado en NPS.
 
-Cuando haya grupos de servidores RADIUS remotos configurados y, en NPS **directivas de solicitud de conexión**, desactiva la **reenviar las solicitudes de cuentas a este grupo de servidores RADIUS remotos** casilla de verificación, estos grupos son NAS enviados todavía iniciar y detener los mensajes de notificación. 
+Cuando tiene grupos de servidores RADIUS remotos configurados y, en **directivas de solicitud de conexión**NPS, desactiva la casilla **Reenviar solicitudes de cuentas a este grupo de servidores RADIUS remotos** , estos grupos siguen enviando notificación de inicio y detención de NAS. mensajes. 
 
-Esto crea el tráfico de red innecesario. Para eliminar este tráfico, deshabilitar la notificación de NAS de reenvío para servidores individuales en cada grupo de servidores RADIUS remotos.
+Esto crea un tráfico de red innecesario. Para eliminar este tráfico, deshabilite el reenvío de notificaciones de NAS para servidores individuales en cada grupo de servidores RADIUS remotos.
 
 Para completar este procedimiento, debe pertenecer al grupo **Administradores**.
 
-### <a name="to-disable-nas-notification-forwarding"></a>Para deshabilitar el reenvío de notificaciones de NAS
+### <a name="to-disable-nas-notification-forwarding"></a>Para deshabilitar el reenvío de notificaciones NAS
 
-1. En el administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de red**. Se abre la consola de NPS.
+1. En Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
 
-2. En la consola NPS, haga doble clic en **clientes y servidores RADIUS**, haga clic en **grupos de servidores RADIUS remotos**y, a continuación, haga doble clic en el grupo de servidores remotos RADIUS que desea configurar. El grupo de servidores RADIUS remotos **propiedades** abre el cuadro de diálogo.
+2. En la consola de NPS, haga doble clic en **clientes y servidores RADIUS**, haga clic en **grupos de servidores remotos RADIUS**y, a continuación, haga doble clic en el grupo de servidores remotos RADIUS que desea configurar. Se abre el cuadro de diálogo **propiedades** del grupo de servidores RADIUS remoto.
 
-3. Haga doble clic en el miembro del grupo que desea configurar y, a continuación, haga clic en el **autenticación/cuentas** ficha.
+3. Haga doble clic en el miembro del grupo que desee configurar y, a continuación, haga clic en la pestaña **Autenticación/cuentas** .
 
-4. En **contabilidad**, desactive la **reenviar el inicio del servidor de acceso de red y dejar de recibir notificaciones a este servidor** casilla de verificación y, a continuación, haga clic en **Aceptar**.
+4. En **Contabilidad**, desactive la casilla **reenviar las notificaciones de inicio y detención del servidor de acceso de red a este servidor** y, a continuación, haga clic en **Aceptar**.
 
-5. Repita los pasos 3 y 4 para todos los miembros del grupo que desea configurar.
+5. Repita los pasos 3 y 4 para todos los miembros del grupo que desee configurar.
 
-Para obtener más información sobre la administración de NPS, consulte [administrar un servidor de directivas de redes](nps-manage-top.md).
+Para obtener más información sobre la administración de NPS, consulte [administrar el servidor de directivas de redes](nps-manage-top.md).
 
 Para obtener más información acerca de NPS, consulte [servidor de directivas de redes (NPS)](nps-top.md).

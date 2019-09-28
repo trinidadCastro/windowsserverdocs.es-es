@@ -1,8 +1,8 @@
 ---
 title: ren
-description: Obtenga información sobre cómo cambiar el nombre de un archivo o directorio con el comando ren.
+description: Obtenga información acerca de cómo cambiar el nombre de un archivo o directorio con el comando Ren.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 34c761cb08916d277f8f7f1c58d57a05ed2c8daf
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2ba3f6a13dc03c0b6a5561be9f0f692546a25149
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441812"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384577"
 ---
 # <a name="ren"></a>ren
 
-Cambia el nombre de archivos o directorios. Este comando es el mismo que el **cambiar el nombre de** comando.
+Cambia el nombre de los archivos o directorios. Este comando es el mismo que el comando **Rename** .
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -37,27 +37,27 @@ rename [<Drive>:][<Path>]<FileName1> <FileName2>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[\<Drive>:][\<Path>]\<FileName1>|Especifica la ubicación y el nombre del archivo o un conjunto de archivos que desea cambiar el nombre. *NombreDeArchivo1* puede incluir caracteres comodín ( **&#42;** y **?** ).|
-|\<FileName2>|Especifica el nuevo nombre para el archivo. Puede usar caracteres comodín para especificar los nuevos nombres de varios archivos.|
+|[\<Drive >:] [\<Path >] \<FileName1 >|Especifica la ubicación y el nombre del archivo o conjunto de archivos a los que desea cambiar el nombre. *NombreDeArchivo1* puede incluir caracteres comodín ( **&#42;** y **?** ).|
+|@no__t 0FileName2 >|Especifica el nuevo nombre del archivo. Puede usar caracteres comodín para especificar nuevos nombres para varios archivos.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-- No se puede especificar una nueva unidad o ruta de acceso al cambiar el nombre de archivos.
-- No puede usar el **ren** comando para cambiar el nombre de archivos en las unidades o mover archivos a un directorio diferente.
-- Puede usar caracteres comodín ( **&#42;** y **?** ) en cualquiera *FileName* parámetro. Caracteres que se representan mediante caracteres comodín en *FileName2* serán idénticos a los caracteres correspondientes de *nombreDeArchivo1*.
-- *NombreDeArchivo2* debe ser un nombre de archivo único. Si *FileName2* coincide con un nombre de archivo existente, **ren** muestra el mensaje siguiente:  
+- No se puede especificar una nueva unidad o ruta de acceso al cambiar el nombre de los archivos.
+- No se puede usar el comando **ren** para cambiar el nombre de los archivos entre unidades o para trasladarlos a un directorio diferente.
+- Puede usar caracteres comodín ( **&#42;** y **?** ) en el parámetro *filename* . Los caracteres que se representan mediante caracteres comodín en *Nombredearchivo2* serán idénticos a los caracteres correspondientes de *nombreDeArchivo1*.
+- *Nombredearchivo2* debe ser un nombre de archivo único. Si *Nombredearchivo2* coincide con un nombre de archivo existente, **ren** muestra el siguiente mensaje:  
   ```
   Duplicate file name or file not found
   ```
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para cambiar todas las extensiones de nombre de archivo .txt en el directorio actual a las extensiones .doc, escriba:
+Para cambiar todas las extensiones de nombre de archivo. txt del directorio actual a extensiones. doc, escriba:
 ```
 ren *.txt *.doc 
 ```
-Para cambiar el nombre de un directorio de Cap10 a Part10, escriba:
+Para cambiar el nombre de un directorio de Chap10 a part10, escriba:
 ```
 ren chap10 part10 
 ```

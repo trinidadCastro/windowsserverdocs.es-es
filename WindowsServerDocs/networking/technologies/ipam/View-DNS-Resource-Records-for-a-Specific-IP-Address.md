@@ -1,9 +1,9 @@
 ---
 title: Visualización de registros de recursos DNS para una dirección IP específica
-description: Este tema forma parte de la Guía de administración de administración de direcciones IP (IPAM) en Windows Server 2016.
+description: Este tema forma parte de la guía de administración de la administración de direcciones IP (IPAM) en Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ipam
@@ -12,30 +12,30 @@ ms.topic: article
 ms.assetid: f590fb86-4195-4f90-98cb-e90459d4c1e3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7436a41e167b4d01af0ff9cf294aaf4e5a2d8393
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 63fc52644b4f08d745891763265cc8f929e89910
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282067"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355094"
 ---
 # <a name="view-dns-resource-records-for-a-specific-ip-address"></a>Visualización de registros de recursos DNS para una dirección IP específica
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede utilizar este tema para ver los registros de recursos DNS que están asociados con la dirección IP que elija.  
+Puede usar este tema para ver los registros de recursos DNS que están asociados a la dirección IP que elija.  
   
 El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o grupo equivalente.  
   
-### <a name="to-view-resource-records-for-an-ip-address"></a>Para ver los registros de recursos para una dirección IP  
+### <a name="to-view-resource-records-for-an-ip-address"></a>Para ver los registros de recursos de una dirección IP  
   
-1.  En el administrador del servidor, haga clic en **IPAM**. Aparece la consola de cliente IPAM.  
+1.  En Administrador del servidor, haga clic en **IPAM**. Aparece la consola de cliente de IPAM.  
   
-2.  En el panel de navegación en **espacio de direcciones IP**, haga clic en **IP Address Inventory**. En el panel de navegación inferior, haga clic en **IPv4** o **IPv6**. El inventario de direcciones IP aparece en la vista de búsqueda del panel. Busque y seleccione la dirección IP cuyos registros de recursos DNS que desea ver.  
+2.  En el panel de navegación, en **espacio de direcciones IP**, haga clic en **inventario de direcciones IP**. En el panel de navegación inferior, haga clic en **IPv4** o **IPv6**. El inventario de direcciones IP aparece en la vista de búsqueda del panel de información. Busque y seleccione la dirección IP cuyos registros de recursos DNS desea ver.  
   
     ![Ver el inventario de direcciones IP](../../media/View-DNS-Resource-Records-for-a-Specific-IP-Address/ipam_IPInventory_01.jpg)  
   
-3.  En el panel de información **vista detalles**, haga clic en **registros de recursos DNS**. Se muestran los registros de recursos que están asociados con la dirección IP seleccionada.  
+3.  En la vista de **detalles**del panel de información, haga clic en **registros de recursos DNS**. Se muestran los registros de recursos asociados a la dirección IP seleccionada.  
   
     ![Visualización de registros de recursos DNS](../../media/View-DNS-Resource-Records-for-a-Specific-IP-Address/ipam_IPInventory_02.jpg)  
   

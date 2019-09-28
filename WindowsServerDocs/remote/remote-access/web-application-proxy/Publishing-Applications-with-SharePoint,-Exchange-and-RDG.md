@@ -7,136 +7,136 @@ manager: mtillman
 ms.author: billmath
 ms.date: 04/30/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: fd706f61216ab8760d94faf98d651d17b24efc91
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0e5c9779fae66e7edec3c1bba471d5cadbe48a72
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447146"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404234"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>Publicación de aplicaciones con SharePoint, Exchange y RDG
 
 >Se aplica a: Windows Server 2016
 
-**Este contenido es relevante para la versión local del Proxy de aplicación Web. Para habilitar el acceso seguro a aplicaciones locales a través de la nube, consulte el [contenido de Azure AD Application Proxy](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
+el contenido de **This es relevante para la versión local del proxy de aplicación Web. Para habilitar el acceso seguro a aplicaciones locales a través de la nube, consulte el [contenido del proxy de aplicación de Azure ad](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
 
-En este tema se describe las tareas necesarias para publicar SharePoint Server, Exchange Server o puerta de enlace de escritorio remoto (RDP) a través de Proxy de aplicación Web.  
+En este tema se describen las tareas necesarias para publicar SharePoint Server, Exchange Server o la puerta de enlace de Escritorio remoto (RDP) a través del proxy de aplicación Web.  
 
 >[!NOTE]
->Esta información se proporciona como-es.  Servicios de escritorio remoto admite y se recomienda el uso de [Proxy de aplicación de Azure para proporcionar acceso remoto seguro a aplicaciones locales](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started).
+>Esta información se proporciona tal cual.  Servicios de Escritorio remoto admite y recomienda el uso de [App de Azure proxy para proporcionar un acceso remoto seguro a aplicaciones locales](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started).
 
 ## <a name="BKMK_6.1"></a>Publicación de SharePoint Server  
-Puede publicar un sitio de SharePoint a través de Proxy de aplicación Web cuando el sitio de SharePoint está configurado para la autenticación basada en notificaciones o autenticación de Windows integrada. Si desea utilizar servicios de federación de Active Directory (AD FS) para la autenticación previa, debe configurar un confianza mediante uno de los asistentes.  
+Puede publicar un sitio de SharePoint mediante el proxy de aplicación web cuando el sitio de SharePoint está configurado para la autenticación basada en notificaciones o la autenticación integrada de Windows. Si desea usar Servicios de federación de Active Directory (AD FS) (AD FS) para la autenticación previa, debe configurar un usuario de confianza mediante uno de los asistentes.  
 
 -   Si el sitio de SharePoint usa la autenticación basada en notificaciones, debe utilizar el Asistente para agregar la relación de confianza para usuario autenticado para la aplicación.  
 
 -   Si el sitio de SharePoint usa la autenticación integrada de Windows, debe utilizar el Asistente para agregar relación de confianza para usuario autenticado no basado en notificaciones para configurar la relación de confianza para usuario autenticado para la aplicación. Puede usar IWA con una aplicación web basada en notificaciones si configura el KDC.  
 
-    Para permitir que los usuarios se autentiquen mediante la autenticación de Windows integrada, el servidor de Proxy de aplicación Web debe estar unido a un dominio.  
+    Para permitir que los usuarios se autentiquen mediante la autenticación integrada de Windows, el servidor proxy de aplicación Web debe estar unido a un dominio.  
 
-    Debe configurar la aplicación para que admita la delegación restringida de Kerberos. Puede hacerlo en el controlador de dominio para cualquier aplicación. También puede configurar la aplicación directamente en el servidor back-end si se está ejecutando en Windows Server 2012 R2 o Windows Server 2012. Para más información, consulte [Novedades de la autenticación Kerberos](https://technet.microsoft.com/library/hh831747.aspx). También debe asegurarse de que los servidores Proxy de aplicación Web se configuran para la delegación a los nombres de entidad de servicio de los servidores back-end. Para ver un tutorial sobre cómo configurar el Proxy de aplicación Web para publicar una aplicación mediante la autenticación de Windows integrada, vea [configurar un sitio para usar la autenticación de Windows integrada](assetId:///b0788958-627f-450f-877c-209b1bd0db52).  
+    Debe configurar la aplicación para que admita la delegación restringida de Kerberos. Puede hacerlo en el controlador de dominio para cualquier aplicación. También puede configurar la aplicación directamente en el servidor back-end si se está ejecutando en Windows Server 2012 R2 o en Windows Server 2012. Para más información, consulte [Novedades de la autenticación Kerberos](https://technet.microsoft.com/library/hh831747.aspx). También debe asegurarse de que los servidores proxy de aplicación Web estén configurados para la delegación en los nombres de entidad de seguridad de servicio de los servidores back-end. Para ver un tutorial sobre cómo configurar el proxy de aplicación web para publicar una aplicación mediante la autenticación integrada de Windows, consulte [configurar un sitio para usar la autenticación integrada de Windows](assetId:///b0788958-627f-450f-877c-209b1bd0db52).  
 
 Si el sitio de SharePoint se configura mediante asignaciones de acceso alternativas (AAM) o colecciones de sitios denominadas host, puede usar diferentes direcciones URL de los servidores externos y back-end para publicar la aplicación. Sin embargo, si no configura el sitio de SharePoint con AAM o colecciones de sitios denominadas host, deberá usar las mismas direcciones URL de los servidores externos y back-end.  
 
 ## <a name="BKMK_6.2"></a>Publicación de Exchange Server  
-En la tabla siguiente se describe los servicios de Exchange que se pueden publicar a través de Proxy de aplicación Web y la autenticación previa compatible para estos servicios:  
+En la tabla siguiente se describen los servicios de Exchange que se pueden publicar a través del proxy de aplicación web y la autenticación previa admitida para estos servicios:  
 
 
 |    Servicio de Exchange    |                                                                            Autenticación previa                                                                            |                                                                                                                                       Notas                                                                                                                                        |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    Outlook Web App     | -AD FS mediante autenticación no basada en notificaciones<br />: Paso a través de<br />-AD FS mediante autenticación basada en notificaciones para un entorno local Exchange 2013 Service Pack 1 (SP1) |                                                                  Para obtener más información, consulta: [Mediante la autenticación basada en notificaciones de AD FS con Outlook Web App y EAC](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
+|    Outlook Web App     | -AD FS mediante la autenticación no basada en notificaciones<br />-Paso a través<br />-AD FS el uso de la autenticación basada en notificaciones para Exchange 2013 Service Pak 1 (SP1) local |                                                                  Para obtener más información, consulta: [Uso de la autenticación basada en notificaciones de AD FS con Outlook Web App y EAC](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
 | Panel de control de Exchange |                                                                               Paso a través                                                                               |                                                                                                                                                                                                                                                                                    |
-|    Outlook en cualquier lugar    |                                                                               Paso a través                                                                               | Debe publicar tres direcciones URL para que Outlook en cualquier lugar funcione correctamente:<br /><br />-La dirección URL de detección automática.<br />-El nombre de host externo de Exchange Server; es decir, la dirección URL que está configurada para que conectarse a los clientes.<br />-El FQDN interno del servidor de Exchange. |
-|  Exchange ActiveSync   |                                                     Paso a través<br/> AD FS mediante el protocolo de autorización básica HTTP                                                      |                                                                                                                                                                                                                                                                                    |
+|    Outlook en cualquier lugar    |                                                                               Paso a través                                                                               | Debe publicar tres direcciones URL para que Outlook en cualquier lugar funcione correctamente:<br /><br />-La dirección URL de detección automática.<br />: El nombre de host externo del servidor de Exchange; es decir, la dirección URL que está configurada para que los clientes se conecten a.<br />: El nombre de dominio completo interno del servidor de Exchange. |
+|  Exchange ActiveSync   |                                                     Paso a través<br/> AD FS mediante el protocolo de autorización básico HTTP                                                      |                                                                                                                                                                                                                                                                                    |
 
 Para publicar Outlook Web App con la autenticación integrada de Windows, debe usar el Asistente para agregar relación de confianza para usuario autenticado no basado en notificaciones para configurar la relación de confianza para la aplicación.  
 
-Para permitir que los usuarios se autentiquen mediante Kerberos delegación restringida de que servidor Proxy de aplicación Web debe estar unido a un dominio.  
+Para permitir que los usuarios se autentiquen mediante la delegación limitada de Kerberos, el servidor proxy de aplicación Web debe estar unido a un dominio.  
 
-Debe configurar la aplicación para admitir la autenticación Kerberos. Además deberá registrar un nombre principal de servicio (SPN) a la cuenta que se ejecuta el servicio web. Puede hacerlo en el controlador de dominio o en los servidores back-end. En una carga equilibrada entorno Exchange esto requeriría con la cuenta de servicio alternativo, consulte [configurar la autenticación Kerberos para servidores con equilibrio de carga de acceso de cliente](https://technet.microsoft.com/library/ff808312(v=exchg.150).aspx)  
+Debe configurar la aplicación para que admita la autenticación Kerberos. Además, debe registrar un nombre principal de servicio (SPN) en la cuenta en la que se está ejecutando el servicio Web. Puede hacerlo en el controlador de dominio o en los servidores back-end. En un entorno de Exchange con equilibrio de carga, esto requeriría el uso de la cuenta de servicio alternativa, consulte [configuración de la autenticación Kerberos para servidores de acceso de cliente con equilibrio de carga](https://technet.microsoft.com/library/ff808312(v=exchg.150).aspx)  
 
-También puede configurar la aplicación directamente en el servidor back-end si se está ejecutando en Windows Server 2012 R2 o Windows Server 2012. Para más información, consulte [Novedades de la autenticación Kerberos](https://technet.microsoft.com/library/hh831747.aspx). También debe asegurarse de que los servidores Proxy de aplicación Web se configuran para la delegación a los nombres de entidad de servicio de los servidores back-end.  
+También puede configurar la aplicación directamente en el servidor back-end si se está ejecutando en Windows Server 2012 R2 o en Windows Server 2012. Para más información, consulte [Novedades de la autenticación Kerberos](https://technet.microsoft.com/library/hh831747.aspx). También debe asegurarse de que los servidores proxy de aplicación Web estén configurados para la delegación en los nombres de entidad de seguridad de servicio de los servidores back-end.  
 
-## <a name="publishing-remote-desktop-gateway-through-web-application-proxy"></a>Publicación de puerta de enlace de escritorio remoto a través de Proxy de aplicación Web  
-Si desea restringir el acceso a la puerta de enlace de acceso remoto y agregar la autenticación previa para el acceso remoto, se puede desplegar a través de Proxy de aplicación Web. Se trata de una manera realmente buena para asegurarse de que tiene la autenticación previa enriquecida para RDG incluidos MFA. Publicación sin autenticación previa también es una opción y proporciona un único punto de entrada en sus sistemas.  
+## <a name="publishing-remote-desktop-gateway-through-web-application-proxy"></a>Publicación de Escritorio remoto puerta de enlace mediante el proxy de aplicación Web  
+Si quiere restringir el acceso a la puerta de enlace de acceso remoto y agregar la autenticación previa para el acceso remoto, puede revertirla a través del proxy de aplicación Web. Esta es una buena manera de asegurarse de que tiene una autenticación previa enriquecida para RDG, incluido MFA. La publicación sin autenticación previa también es una opción y proporciona un único punto de entrada en los sistemas.  
 
-#### <a name="how-to-publish-an-application-in-rdg-using-web-application-proxy-pass-through-authentication"></a>Cómo publicar una aplicación en RDG mediante la autenticación de paso a través del Proxy de aplicación Web  
+#### <a name="how-to-publish-an-application-in-rdg-using-web-application-proxy-pass-through-authentication"></a>Publicación de una aplicación en RDG mediante la autenticación de paso a través del proxy de aplicación Web  
 
-1. Instalación será diferente dependiendo de si el acceso Web de escritorio remoto (/ rdweb) y roles de la puerta de enlace de escritorio remoto (rpc) en el mismo servidor o en servidores diferentes.  
+1. La instalación será diferente en función de si los roles de acceso web de escritorio remoto (/RDWeb) y de puerta de enlace de escritorio remoto (RPC) están en el mismo servidor o en servidores diferentes.  
 
-2. Si se hospedan los roles de acceso Web de escritorio remoto y puerta de enlace de escritorio remoto en el mismo servidor RDG, simplemente se puede publicar el FQDN de raíz en el Proxy de aplicación Web, como https://rdg.contoso.com/.  
+2. Si los roles acceso web de escritorio remoto y puerta de enlace de escritorio remoto se hospedan en el mismo servidor RDG, puede simplemente publicar el FQDN raíz en el proxy de aplicación web como, https://rdg.contoso.com/.  
 
-   También puede publicar los dos directorios virtuales individualmente, por ejemplo,<https://rdg.contoso.com/rdweb/> y https://rdg.contoso.com/rpc/.  
+   También puede publicar los dos directorios virtuales individualmente, por ejemplo <https://rdg.contoso.com/rdweb/> y https://rdg.contoso.com/rpc/.  
 
-3. Si el acceso Web de escritorio remoto y la puerta de enlace de escritorio remoto se hospedan en servidores independientes de RDG, deberá publicar individualmente los dos directorios virtuales. Por ejemplo, puede usar la mismo u otro FQDN externo https://rdweb.contoso.com/rdweb/ y https://gateway.contoso.com/rpc/.  
+3. Si el acceso web de escritorio remoto y la puerta de enlace de escritorio remoto se hospedan en servidores independientes de RDG, tiene que publicar los dos directorios virtuales de forma individual. Puede usar el mismo nombre de dominio completo externo o uno diferente, por ejemplo, https://rdweb.contoso.com/rdweb/ y https://gateway.contoso.com/rpc/.  
 
-4. Si el externo y el del FQDN interno son diferentes no debe deshabilitar la traducción de encabezado de solicitud en la regla de publicación RDWeb. Esto puede hacerse mediante la ejecución del siguiente script de PowerShell en el servidor Proxy de aplicación Web, pero se debe habilitar de forma predeterminada.
+4. Si los FQDN externos e internos son diferentes, no debe deshabilitar la traducción de encabezados de solicitud en la regla de publicación de RDWeb. Esto puede hacerse mediante la ejecución del siguiente script de PowerShell en el servidor proxy de aplicación Web, pero debe estar habilitado de forma predeterminada.
 
    ```  
    Get-WebApplicationProxyApplication applicationname | Set-WebApplicationProxyApplication -DisableTranslateUrlInRequestHeaders:$false  
    ```  
 
    > [!NOTE]  
-   > Si tiene que admitir a clientes enriquecidos, como RemoteApp y conexiones de escritorio o conexiones de escritorio remoto de iOS, estos no admiten la autenticación previa para que tenga que publicar RDG mediante la autenticación de paso a través.  
+   > Si necesita admitir clientes enriquecidos, como conexiones de RemoteApp y escritorio o conexiones de Escritorio remoto de iOS, estos no admiten la autenticación previa, por lo que tiene que publicar RDG mediante la autenticación de paso a través.  
 
-#### <a name="how-to-publish-an-application-in-rdg-using-web-application-proxy-with-pre-authentication"></a>Cómo publicar una aplicación en RDG mediante el Proxy de aplicación Web con la autenticación previa  
+#### <a name="how-to-publish-an-application-in-rdg-using-web-application-proxy-with-pre-authentication"></a>Publicación de una aplicación en RDG con el proxy de aplicación web con autenticación previa  
 
-1.  Autenticación previa de Proxy de aplicación Web con RDG funciona pasando la cookie de autenticación previa obtenida por Internet Explorer que se pasa en el cliente conexión a Escritorio remoto (mstsc.exe). A continuación, se utiliza el cliente conexión a Escritorio remoto (mstsc.exe). A continuación, se usa el cliente conexión a Escritorio remoto como prueba de la autenticación.  
+1.  La autenticación previa del proxy de aplicación web con RDG funciona pasando la cookie de autenticación previa obtenida por Internet Explorer que se pasa al Conexión a Escritorio remoto cliente (mstsc. exe). A continuación, el cliente de Conexión a Escritorio remoto (mstsc. exe) lo usa. Esto lo utiliza Conexión a Escritorio remoto cliente como prueba de autenticación.  
 
-    El siguiente procedimiento indica al servidor de la colección para incluir las propiedades RDP personalizadas necesarias en los archivos RDP de aplicación remota que se envían a los clientes. Estos indican que el cliente de autenticación previa que es necesario y las cookies para la autenticación previa de pasar la dirección del servidor al cliente de conexión a Escritorio remoto (mstsc.exe). Junto con la desactivación de la función HttpOnly en la aplicación de Proxy de aplicación Web, esto permite al cliente de conexión a Escritorio remoto (mstsc.exe) usar la cookie de Proxy de aplicación Web obtenida a través del explorador.  
+    El procedimiento siguiente indica al servidor de recopilación que incluya las propiedades de RDP personalizadas necesarias en los archivos RDP de la aplicación remota que se envían a los clientes. Se indica al cliente que se requiere autenticación previa y pasar las cookies para la dirección del servidor de autenticación previa a Conexión a Escritorio remoto cliente (mstsc. exe). Junto con la deshabilitación de la característica HttpOnly en la aplicación Web Application proxy, permite que el cliente de Conexión a Escritorio remoto (mstsc. exe) Use la cookie del proxy de aplicación web obtenida a través del explorador.  
 
-    Autenticación en el servidor de acceso Web de RD seguirá utilizando el inicio de sesión de formulario de acceso Web de escritorio remoto. Esto proporciona el menor número de autenticación de usuario pide como el formulario de inicio de sesión de RD Web Access crea un almacén de credenciales de cliente que, a continuación, se puede usar el cliente conexión a Escritorio remoto (mstsc.exe) para cualquier vuelva a iniciarse la aplicación remota.  
+    La autenticación en el servidor de acceso web de escritorio remoto seguirá usando el inicio de sesión del formulario de acceso web de escritorio remoto. Esto proporciona el menor número de solicitudes de autenticación de usuario que el formulario de inicio de sesión de acceso web de escritorio remoto crea un almacén de credenciales del lado cliente que, a continuación, Conexión a Escritorio remoto cliente (mstsc. exe) puede usar para cualquier inicio de la aplicación remota posterior.  
 
-2.  En primer lugar, cree un manual de confianza en AD FS como si se publica una aplicación compatible con notificaciones. Esto significa que tendrá que crear un dummy confianza que existen exigir la autenticación previa, para que obtengan la autenticación previa sin delegación limitada de Kerberos al servidor publicado. Una vez que un usuario autenticado, todo lo demás se pasa a través.  
+2.  En primer lugar, cree una relación de confianza para usuario autenticado manual en AD FS como si estuviera publicando una aplicación compatible con notificaciones. Esto significa que tiene que crear una relación de confianza para usuario autenticado que esté allí para aplicar la autenticación previa, de modo que obtenga la autenticación previa sin la delegación limitada de Kerberos en el servidor publicado. Una vez que un usuario se ha autenticado, se pasa todo lo demás.  
 
     > [!WARNING]  
-    > Puede parecer que es preferible utilizar la delegación pero no soluciona totalmente los requisitos de inicio de sesión único de mstsc y hay problemas al delegar en el directorio /rpc porque el cliente espera que controlen la autenticación de puerta de enlace de escritorio remoto.  
+    > Podría parecer que el uso de la delegación es preferible, pero no soluciona totalmente los requisitos de los SSO de mstsc y hay problemas al delegar en el directorio/RPC porque el cliente espera administrar la propia autenticación de puerta de enlace de escritorio remoto.  
 
-3.  Para crear un manual de confianza, siga los pasos descritos en la consola de administración de AD FS:  
+3.  Para crear una relación de confianza para usuario autenticado manual, siga los pasos descritos en la consola de administración de AD FS:  
 
-    1.  Use la **agregar confianza** Asistente  
+    1.  Usar el Asistente para **Agregar relación de confianza para usuario autenticado**  
 
-    2.  Seleccione **escribir manualmente los datos sobre la confianza**.  
+    2.  Seleccione **escribir manualmente los datos sobre el usuario de confianza**.  
 
-    3.  Acepte la configuración predeterminada.  
+    3.  Acepte todos los valores predeterminados.  
 
-    4.  Para obtener el identificador de confianza, escriba el FQDN externo que usará para tener acceso RDG, por ejemplo https://rdg.contoso.com/.  
+    4.  En el caso del identificador de la relación de confianza para usuario autenticado, escriba el FQDN externo que usará para el acceso a RDG, por ejemplo https://rdg.contoso.com/.  
 
-        Se trata de la relación de confianza que va a usar al publicar la aplicación en el Proxy de aplicación Web.  
+        Esta es la relación de confianza para usuario autenticado que usará al publicar la aplicación en el proxy de aplicación Web.  
 
-4.  Publicar la raíz del sitio (por ejemplo, https://rdg.contoso.com/ ) en el Proxy de aplicación Web. Establezca la autenticación previa en AD FS y use la relación de confianza que creó anteriormente. Esto le permitirá/RDWeb y /rpc para usar la misma cookie de autenticación de Proxy de aplicación Web.  
+4.  Publique la raíz del sitio (por ejemplo, https://rdg.contoso.com/ ) en el proxy de aplicación Web. Establezca la autenticación previa en AD FS y use la relación de confianza para usuario autenticado que creó anteriormente. Esto permitirá a/RDWeb y/RPC usar la misma cookie de autenticación del proxy de aplicación Web.  
 
-    Es posible publicar/RDWeb y /rpc como aplicaciones independientes e incluso usar diferentes servidores publicados. Deberá asegurarse de que publica tanto con la misma confianza como el token de Proxy de aplicación Web se emite para la confianza y, por tanto, es válido en las aplicaciones publicadas con la misma confianza.  
+    Es posible publicar/RDWeb y/RPC como aplicaciones independientes e incluso usar diferentes servidores publicados. Solo tiene que asegurarse de publicar ambos usando la misma relación de confianza para usuario autenticado que el token del proxy de aplicación web se emite para la relación de confianza para usuario autenticado y, por lo tanto, es válida entre las aplicaciones publicadas con la misma relación de confianza para usuario autenticado.  
 
-5.  Si el externo y el del FQDN interno son diferentes no debe deshabilitar la traducción de encabezado de solicitud en la regla de publicación RDWeb. Esto puede hacerse mediante la ejecución del siguiente script de PowerShell en el servidor Proxy de aplicación Web, pero se debe habilitar de forma predeterminada:
+5.  Si los FQDN externos e internos son diferentes, no debe deshabilitar la traducción de encabezados de solicitud en la regla de publicación de RDWeb. Esto puede hacerse mediante la ejecución del siguiente script de PowerShell en el servidor proxy de aplicación Web, pero debe estar habilitado de forma predeterminada:
 
     ```  
     Get-WebApplicationProxyApplication applicationname | Set-WebApplicationProxyApplication -DisableTranslateUrlInRequestHeaders:$false 
     ```  
 
-6.  Deshabilitar la propiedad de cookies HttpOnly en Proxy de aplicación Web en el RDG aplicación publicada. Para permitir el acceso de control de ActiveX RDG a la cookie de autenticación de Proxy de aplicación Web, tendrá que deshabilitar la propiedad HttpOnly en la cookie de Proxy de aplicación Web.  
+6.  Deshabilite la propiedad de cookie HttpOnly en el proxy de aplicación web en la aplicación publicada RDG. Para permitir que el control ActiveX RDG tenga acceso a la cookie de autenticación del proxy de aplicación Web, tiene que deshabilitar la propiedad HttpOnly en la cookie del proxy de aplicación Web.  
 
-    Esto requiere las siguientes acciones para instalarse [Web Application Proxy Hotfix](https://support.microsoft.com/en-gb/kb/3000850) o [ https://support.microsoft.com/en-gb/kb/3000850 ](https://support.microsoft.com/en-gb/kb/3000850).  
+    Esto requiere que se instale el siguiente [hotfix del proxy de aplicación web](https://support.microsoft.com/en-gb/kb/3000850) o el [@no__t 2](https://support.microsoft.com/en-gb/kb/3000850).  
 
-    Después de instalar la revisión, ejecute el siguiente script de PowerShell en el servidor Proxy de aplicación Web especificando el nombre de la aplicación en cuestión:  
+    Después de instalar la revisión, ejecute el siguiente script de PowerShell en el servidor proxy de aplicación web y especifique el nombre de la aplicación pertinente:  
 
     ```  
     Get-WebApplicationProxyApplication applicationname | Set-WebApplicationProxyApplication -DisableHttpOnlyCookieProtection:$true  
     ```  
 
-    Deshabilitar HttpOnly permite el acceso de control de ActiveX RDG a la cookie de autenticación de Proxy de aplicación Web.  
+    Deshabilitar HttpOnly permite que el control ActiveX RDG tenga acceso a la cookie de autenticación del proxy de aplicación Web.  
 
-7.  Configurar la recopilación de RDG relevante en el servidor de recopilación para permitir que la conexión a Escritorio remoto (mstsc.exe) del cliente sabe que es necesario que la autenticación previa en el archivo rdp.  
+7.  Configure la colección RDG relevante en el servidor de recopilación para permitir que el cliente de Conexión a Escritorio remoto (mstsc. exe) sepa que se requiere la autenticación previa en el archivo RDP.  
 
-    -   En Windows Server 2012 y Windows Server 2012 R2, esto puede realizarse mediante la ejecución del siguiente cmdlet de PowerShell en el servidor de recopilación RDG:  
+    -   En Windows Server 2012 y Windows Server 2012 R2 esto puede realizarse mediante la ejecución del siguiente cmdlet de PowerShell en el servidor de colección RDG:  
 
         ```
         Set-RDSessionCollectionConfiguration -CollectionName "<yourcollectionname>" -CustomRdpProperty "pre-authentication server address:s: <https://externalfqdn/rdweb/>`nrequire pre-authentication:i:1"
         ```
 
-        Asegúrese de quitar el < y > corchetes cuando se reemplaza por sus propios valores, por ejemplo:
+        Asegúrese de quitar los corchetes de < y > cuando reemplace por sus propios valores, por ejemplo:
 
         ```
         Set-RDSessionCollectionConfiguration -CollectionName "MyAppCollection" -CustomRdpProperty "pre-authentication server address:s: https://rdg.contoso.com/rdweb/`nrequire pre-authentication:i:1"
@@ -144,13 +144,13 @@ Si desea restringir el acceso a la puerta de enlace de acceso remoto y agregar l
 
     -   En Windows Server 2008 R2:  
 
-        1.  Inicie sesión en el servidor de Terminal Server con una cuenta que tenga privilegios de administrador.  
+        1.  Inicie sesión en el Terminal Server con una cuenta que tenga privilegios de administrador.  
 
-        2.  Vaya a **iniciar** >**herramientas administrativas** > **servicios de Terminal Server** > **Administrador de RemoteApp de TS.**  
+        2.  Vaya a **inicio** >**herramientas administrativas** > **Terminal Services** > **TS administrador de RemoteApp.**  
 
-        3.  En el **Introducción** panel de TS RemoteApp Manager, junto a configuración de RDP, haga clic en **cambio**.  
+        3.  En el panel de **información general** de TS administrador de RemoteApp, junto a configuración de RDP, haga clic en **cambiar**.  
 
-        4.  En el **configuración personalizada de RDP** , escriba la siguiente configuración de RDP en el cuadro de configuración personalizada de RDP:  
+        4.  En la pestaña **Configuración personalizada de RDP** , escriba la siguiente configuración de RDP en el cuadro configuración personalizada de RDP:  
 
             `pre-authentication server address: s: https://externalfqdn/rdweb/`  
 
@@ -158,14 +158,14 @@ Si desea restringir el acceso a la puerta de enlace de acceso remoto y agregar l
 
         5.  Cuando haya terminado, haga clic en **aplicar**.  
 
-            Esto indica al servidor de la colección para incluir las propiedades personalizadas de RDP en los archivos RDP que se envían a los clientes. Estos indican que el cliente de autenticación previa que es necesario y las cookies para la autenticación previa de pasar la dirección del servidor al cliente conexión a Escritorio remoto (mstsc.exe). Esto, junto con la desactivación HttpOnly en la aplicación de Proxy de aplicación Web, permite al cliente de conexión a Escritorio remoto (mstsc.exe) usar la cookie de autenticación de Proxy de aplicación Web obtenida a través del explorador.  
+            Esto indica al servidor de recopilación que incluya las propiedades personalizadas de RDP en los archivos RDP que se envían a los clientes. Se indica al cliente que se requiere la autenticación previa y que pase las cookies para la dirección del servidor de autenticación previa al cliente Conexión a Escritorio remoto (mstsc. exe). Esto, junto con deshabilitar HttpOnly en la aplicación de proxy de aplicación Web, permite que el cliente de Conexión a Escritorio remoto (mstsc. exe) Use la cookie de autenticación del proxy de aplicación web obtenida a través del explorador.  
 
-            Para obtener más información sobre RDP, consulte [configurar el escenario de OTP de puerta de enlace de TS](https://technet.microsoft.com/library/cc731249(v=ws.10).aspx).  
+            Para obtener más información sobre RDP, consulte [configuración del escenario de OTP de puerta de enlace de TS](https://technet.microsoft.com/library/cc731249(v=ws.10).aspx).  
 
 ## <a name="BKMK_Links"></a>Vea también  
 
--   [Planificación publicar aplicaciones mediante el Proxy de aplicación Web](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383650(v=ws.11))  
+-   [Planeación de la publicación de aplicaciones mediante el proxy de aplicación Web](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383650(v=ws.11))  
 
 -   [Solución de problemas del Proxy de aplicación web](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn770156(v=ws.11))  
 
--   [Guía de tutorial de Proxy de aplicación Web](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280944(v=ws.11))  
+-   [Guía de tutorial de proxy de aplicación Web](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280944(v=ws.11))  

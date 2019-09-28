@@ -1,8 +1,8 @@
 ---
-title: eliminar las sombras
-description: 'Tema de los comandos de Windows para ***- '
+title: eliminar sombras
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1a0945477bc4fce907b5ec4a697c7a2ec2f59557
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c965af8b045c5ab3a110542d148b255f382a95c3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436108"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378630"
 ---
-# <a name="delete-shadows"></a>eliminar las sombras
+# <a name="delete-shadows"></a>eliminar sombras
 
 
 
-eliminaciones de instantáneas.
+Elimina las instantáneas.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,11 +37,11 @@ delete shadows [all | volume <Volume> | oldest <Volume> | set <SetID> | id <Shad
 |     Parámetro     |                                                                             Descripción                                                                              |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        all        |                                                                      Elimina todas las instantáneas.                                                                      |
-| volumen \<volumen >  |                                                            Elimina todas las instantáneas del volumen especificado.                                                            |
-| más antiguo \<volumen >  |                                                         Elimina la instantánea más antigua del volumen especificado.                                                          |
-|   establecer \<SetID >    | Elimina las instantáneas en el conjunto de copia sombra del identificador especificado. Puede especificar un alias mediante la **%** si existe el alias en el entorno actual de símbolos. |
-|  Id. de \<IdDeInstantánea >   |              Elimina una instantánea del identificador especificado. Puede especificar un alias mediante la **%** si existe el alias en el entorno actual de símbolos.               |
-| expone {\<unidad > |                                                                            <MountPoint>}                                                                             |
+| Volume \<Volume >  |                                                            Elimina todas las instantáneas del volumen especificado.                                                            |
+| @no__t más antigua >  |                                                         Elimina la instantánea más antigua del volumen especificado.                                                          |
+|   establecer @no__t 0SetID >    | Elimina las instantáneas del conjunto de instantáneas del ID. especificado. Puede especificar un alias mediante el símbolo **%** si el alias existe en el entorno actual. |
+|  ID \<ShadowID >   |              Elimina una instantánea del ID. especificado. Puede especificar un alias mediante el símbolo **%** si el alias existe en el entorno actual.               |
+| expuesto {\<Drive > |                                                                            <MountPoint>}                                                                             |
 
 #### <a name="additional-references"></a>Referencias adicionales
 

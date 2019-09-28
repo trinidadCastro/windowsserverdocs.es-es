@@ -1,7 +1,7 @@
 ---
 title: Comenzar
 description: Información detallada sobre Windows Server 2019 y preparación para implementar, actualizar o migrar.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: jasgroce
 ms.technology: get-started
 layout: LandingPage
@@ -9,16 +9,16 @@ ms.topic: landing-page
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e75f4262ea3e1d20b399b3fa1214f0ede33e1e0
-ms.sourcegitcommit: b17ccf7f81e58e8f4dd844be8acf784debbb20ae
+ms.openlocfilehash: acc18e9b960473098f59d8980b4b85e63f209b82
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69023907"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360798"
 ---
 # <a name="get-started-with-windows-server-2019"></a>Introducción a Windows Server 2019
 
-> Se aplica a: Windows Server 2019
+> Se aplica a: Windows Server 2019
 
 Esta colección contiene información detallada para ayudar a determinar si estás listo para migrar a Windows Server 2019. Cuando hayas revisado los requisitos del sistema, las opciones de actualización y otra información acerca de cómo migrar a Windows Server 2019, ya estás preparado para seguir la ruta para instalar la mejor opción de edición e instalación en función de tus necesidades. Para descargar Windows Server 2019, consulta [Evaluaciones de Windows Server](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019).
 

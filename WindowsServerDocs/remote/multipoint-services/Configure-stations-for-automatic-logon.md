@@ -1,8 +1,8 @@
 ---
 title: Configurar estaciones de inicio de sesión automático
-description: Configurar el inicio de sesión automático para estaciones de MultiPoint
+description: Configuración del inicio de sesión automático para estaciones Multipoint
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,28 +13,28 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 76903950216584e0323d1142cc158ecbeceff30c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 03e9f78bbebfb4c0d3ad8816fee7c815902f303b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875796"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389800"
 ---
 # <a name="configure-stations-for-automatic-logon"></a>Configurar estaciones de inicio de sesión automático
-Si desea que sus emisoras de esté disponible para cualquiera – y los usuarios no necesitan carpetas privadas para almacenar sus datos personales o equipos de escritorio personalizadas, puede configurar las estaciones de inicio de sesión automático. Inicio de sesión automático se registra automáticamente en una cuenta de usuario que se ha especificado en la configuración de inicio de sesión automático cuando se inicia el MultiPoint Services.  
+Si desea que las estaciones estén disponibles para cualquier persona, y los usuarios no necesitan carpetas privadas para almacenar sus datos personales o escritorios personalizados, puede configurar las estaciones para el inicio de sesión automático. El inicio de sesión automático inicia sesión automáticamente en una cuenta de usuario que se ha especificado en la configuración de inicio de sesión automático cuando se inicia Multipoint Services.  
   
-1.  Desde el **iniciar** pantalla, abra **MultiPoint Manager**.  
+1.  En la pantalla **Inicio** , Abra **Multipoint Manager**.  
   
-2.  Haga clic en el **estaciones** pestaña y, a continuación, haga clic en el nombre de la estación que desea configurar para el inicio de sesión automático.  
+2.  Haga clic en la pestaña **estaciones** y, a continuación, haga clic en el nombre de la estación que desea configurar para el inicio de sesión automático.  
   
 3.  En el panel derecho, haga clic en **configurar inicio de sesión automático**.  
   
-    Se abre la página de configuración de inicio de sesión automático.  
+    Se abre la página configurar inicio de sesión automático.  
   
-4.  Seleccione el **inicio de sesión automático con la información siguiente** casilla de verificación y, a continuación, escriba la cuenta de usuario y contraseña para el inicio de sesión automático. Haga clic en **Aceptar**.  
+4.  Active la casilla **Inicio de sesión automático con la siguiente información** y, a continuación, escriba la cuenta de usuario y la contraseña que se usarán para el inicio de sesión automático. Haga clic en **Aceptar**.  
   
     > [!NOTE]  
-    > La cuenta de usuario que usó para el inicio de sesión automático debe tener una contraseña.  
+    > La cuenta de usuario que use para el inicio de sesión automático debe tener una contraseña.  
   
 > [!NOTE]  
-> Sesión temporalmente una estación a la que está configurada para inicio de sesión automático con una cuenta de usuario diferente, mantenga el mouse sobre la esquina superior derecha de la pantalla para mostrar un menú vertical, haga clic en el acceso a configuración, haga clic en el icono de energía y, a continuación, mantenga presionada la tecla MAYÚS y haga clic en **</c0>Desconectar<spanclass="notranslate">**.</span> Mantenga presionada la tecla MAYÚS hasta que aparezca un símbolo del sistema de inicio de sesión.
+> Para iniciar sesión temporalmente en una estación que está configurada para el inicio de sesión automático con una cuenta de usuario diferente, mantenga el mouse sobre la esquina superior derecha de la pantalla para mostrar un menú vertical, haga clic en el acceso a configuración, haga clic en el icono de energía y, a continuación, mantenga presionada la tecla Mayús y haga clic en **desconectar t**. Mantenga presionada la tecla Mayús hasta que aparezca un mensaje de inicio de sesión.

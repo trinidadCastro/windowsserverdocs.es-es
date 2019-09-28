@@ -2,22 +2,22 @@
 title: Conversión de un disco MBR (registro de arranque maestro) en un disco GPT (tabla de particiones GUID)
 description: Se describe cómo convertir un disco de registro de arranque maestro (MBR) en un disco de tabla de particiones GUID (GPT)
 ms.date: 06/07/2019
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 902a845bbe6a7e2a4d811aac0ea2990fb3557832
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 6bd97802fbef342520e92a857a1a53acf3e8d7a3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66812453"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385941"
 ---
 # <a name="convert-an-mbr-disk-into-a-gpt-disk"></a>Conversión de un disco MBR en un disco GPT
 
-> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
+> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Los discos MBR (registro de arranque maestro) usan la tabla de particiones de BIOS estándar. Los discos GPT (tabla de particiones GUID) usan Unified Extensible Firmware Interface (UEFI). Una ventaja de los discos GPT es que puedes tener más de cuatro particiones en cada disco. GPT también se requiere para discos de más de dos terabytes (TB).
 

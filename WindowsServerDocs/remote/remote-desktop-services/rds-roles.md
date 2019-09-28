@@ -1,19 +1,19 @@
 ---
 title: Roles de Servicios de Escritorio remoto
 description: Describe los componentes de un servicio de hospedaje de escritorio.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: dougkim
-ms.openlocfilehash: e8b5928db1acf00abdeac1b7bfd4d435bc8f0a17
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: f26f75b8ce3f5438362c15b84aeca9339b95ebbc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870770"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387203"
 ---
 # <a name="remote-desktop-services-roles"></a>Roles de Servicios de Escritorio remoto
 

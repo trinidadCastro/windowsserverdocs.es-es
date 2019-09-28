@@ -6,17 +6,17 @@ manager: mtillman
 ms.author: joflore
 ms.reviewer: richagi
 ms.custom: it-pro
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: ''
 ms.date: 05/01/2018
-ms.openlocfilehash: cd145402ed70aa52da7188dee9dd64ce17fea155
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: d393ad4af81ee1c24fa5f28b8a3b05217e7b34dd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871883"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396292"
 ---
 # <a name="network-policy-server-user-data-collection"></a>Recopilación de datos de usuario del servidor de directivas de redes
 
@@ -41,7 +41,7 @@ En este documento se explica cómo buscar información de usuario recopilada por
 
 Si los datos de cuentas están habilitados y configurados, los registros de los intentos de autenticación de NPS de un usuario se pueden obtener de SQL Server o de los archivos de registro en función de la configuración. 
 
-Si los datos de cuentas están configurados para SQL Server, consulte todos los `'<username>'`registros donde User_Name =.
+Si se configuran los datos de cuentas para SQL Server, consulte todos los registros donde User_Name = `'<username>'`.
 
 Si se configuran los datos de cuentas para un archivo de registro, busque `<username>` en el archivo de registro para buscar todas las entradas de registro.
 

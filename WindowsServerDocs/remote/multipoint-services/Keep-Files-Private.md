@@ -1,8 +1,8 @@
 ---
 title: Mantener archivos en privado
-description: Obtenga información sobre cómo proteger determinados archivos procedentes de usuarios de MultiPoint Services
+description: Aprenda a proteger determinados archivos de los usuarios de Multipoint Services
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,15 +13,15 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: f254b07c1f6f8ffdc83a1fe506bee7e6d5aa89ce
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b9ff84678787e53ef5def822e33139b9839411a6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879656"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395341"
 ---
 # <a name="keep-files-private"></a>Mantener archivos en privado
-En este tema se aplica al contenido, como documentos, que \(como un *usuario administrativo* \) y *los usuarios estándar* no desea compartir con otros usuarios en un MultiPoint Services sistema.  
+Este tema se aplica al contenido, como documentos, que @no__t 0as un *usuario administrativo*\) y *los usuarios estándar* no quieren compartir con otros usuarios en un sistema Multipoint Services.  
 
 Para más información sobre la privacidad en MultiPoint Services, vea [Consideraciones sobre privacidad y seguridad](Privacy-and-Security-Considerations.md).
   
@@ -34,4 +34,4 @@ Para mantener sus documentos y otro contenido en privado, debe guardar el trabaj
   
 ## <a name="see-also"></a>Vea también  
 [Administrar archivos de usuario](Manage-User-Files.md)  
-[Guardar y compartir archivos en una unidad Flash USB](Save-and-Share-Files-on-a-USB-Flash-Drive.md)
+[Guardar y compartir archivos en una unidad flash USB](Save-and-Share-Files-on-a-USB-Flash-Drive.md)

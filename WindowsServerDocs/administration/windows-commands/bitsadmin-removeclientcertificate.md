@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin removeclientcertificate
-description: Tema de los comandos de Windows para **removeclientcertificate bitsadmin** -quita el certificado de cliente del trabajo.
+title: bitsadmin removeclientcertificate
+description: 'Temas de comandos de Windows para **bitsadmin removeclientcertificate** : quita el certificado de cliente del trabajo.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b720800fe80037f38ff01ac3a90d5cbb41a6ec8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c664ba9b26f3511dedf35477a1cd393db709337e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868666"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381044"
 ---
-# <a name="bitsadmin-removeclientcertificate"></a>Bitsadmin removeclientcertificate
+# <a name="bitsadmin-removeclientcertificate"></a>bitsadmin removeclientcertificate
 
 
 
@@ -36,11 +36,11 @@ bitsadmin /RemoveClientCertificate <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-En el ejemplo siguiente se quita el certificado de cliente desde el trabajo denominado *myJob*.
+En el ejemplo siguiente se quita el certificado de cliente del trabajo denominado *myJob*.
 ```
 C:\>Bitsadmin /RemoveClientCertificate myJob 
 ```

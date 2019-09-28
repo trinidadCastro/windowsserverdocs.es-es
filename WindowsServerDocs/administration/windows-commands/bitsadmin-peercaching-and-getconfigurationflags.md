@@ -1,8 +1,8 @@
 ---
-title: getconfigurationflags y bitsadmin caché del mismo nivel
-description: 'Tema de los comandos de Windows para **bitsadmin caché del mismo nivel y getconfigurationflags** : Obtiene las marcas de configuración que determinan si el equipo sirve contenido a elementos del mismo nivel y puede descargar contenido de elementos del mismo nivel.'
+title: bitsadmin-caché y getconfigurationflags
+description: 'Temas de comandos de Windows para la **caché de bitsadmin y getconfigurationflags** : obtiene las marcas de configuración que determinan si el equipo atiende el contenido a los elementos del mismo nivel y puede descargar contenido de los equipos del mismo nivel.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6afa39993cf90b2d71b6b681680c3b4e1fd9b56b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 94c7eb1a115fe9152b149b8cf65765b179080cc3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826356"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381091"
 ---
-# <a name="bitsadmin-peercaching-and-getconfigurationflags"></a>getconfigurationflags y bitsadmin caché del mismo nivel
+# <a name="bitsadmin-peercaching-and-getconfigurationflags"></a>bitsadmin-caché y getconfigurationflags
 
 
 
-Obtiene las marcas de configuración que determinan si el equipo sirve contenido a elementos del mismo nivel y puede descargar contenido de elementos del mismo nivel.
+Obtiene las marcas de configuración que determinan si el equipo atiende el contenido a los elementos del mismo nivel y puede descargar contenido de elementos del mismo nivel.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,11 +36,11 @@ bitsadmin /PeerCaching /GetConfigurationFlags <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente obtiene las marcas de la configuración del trabajo denominado *myJob*.
+En el ejemplo siguiente se obtienen las marcas de configuración para el trabajo denominado *myJob*.
 ```
 C:\> Bitsadmin /PeerCaching /GetConfigurationFlags myJob
 ```

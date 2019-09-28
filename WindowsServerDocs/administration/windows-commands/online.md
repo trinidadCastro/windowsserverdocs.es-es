@@ -1,8 +1,8 @@
 ---
 title: conectado
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8063ac09b1d8d9bf4dd4e6665c1725fcb77ae89
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 489cef1ad4dc5fec5f477f95a6f2fad391b3bf02
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828116"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372493"
 ---
 # <a name="online"></a>conectado
 
 
 
-Toma un disco sin conexión o un volumen en el estado en línea.
+Toma un disco o volumen sin conexión al estado en línea.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,8 +37,8 @@ Offline volume
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[Disco sin conexión](offline-disk.md)|Toma el disco sin conexión con el foco en el estado en línea.|
-|[Volumen desconectado](offline-volume.md)|Desconecta el volumen sin conexión con el foco en el estado en línea.|
+|[Disco sin conexión](offline-disk.md)|Desconecta el disco sin conexión con el foco en el estado en línea.|
+|[Volumen sin conexión](offline-volume.md)|Desconecta el volumen sin conexión que tiene el foco en el estado en línea.|
 
 #### <a name="additional-references"></a>Referencias adicionales
 

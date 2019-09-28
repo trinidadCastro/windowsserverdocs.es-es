@@ -1,8 +1,8 @@
 ---
-title: Partición de detalle
-description: 'Tema de los comandos de Windows para ***- '
+title: partición de detalle
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3a955303a5f06c64dcdb64de110686be570ef149
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9ead078217804def619998b1d31e55744f2e1c6b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846646"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378522"
 ---
-# <a name="detail-partition"></a>Partición de detalle
+# <a name="detail-partition"></a>partición de detalle
 
 
 
@@ -34,9 +34,9 @@ detail partition
 
 ## <a name="remarks"></a>Comentarios
 
--   Debe seleccionarse una partición para que esta operación se realice correctamente. Use la **seleccione partición** comando para seleccionar una partición y desplace el foco a ella.
+-   Se debe seleccionar una partición para que esta operación se realice correctamente. Use el comando **seleccionar partición** para seleccionar una partición y desplazar el foco a ella.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para ver las propiedades de la partición seleccionada, escriba:
 ```

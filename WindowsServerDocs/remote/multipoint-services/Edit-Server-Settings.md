@@ -2,7 +2,7 @@
 title: Editar la configuración del servidor
 description: Más información sobre la configuración de Multipoint Services
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.assetid: afb64b94-9055-4703-b8ce-a8839b2718da
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 8a6a9d8e6a76a8fb3c0da59c8fb487d0311f04d7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5973bf6a23d0ce3f91620eaa3537f751ec19303c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871707"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389686"
 ---
 # <a name="edit-server-settings"></a>Editar la configuración del servidor
 Al instalar MultiPoint Services, estableció la configuración para su sistema, incluyendo las opciones de ciertos programas. En este tema se describe la configuración que puede establecer para su sistema MultiPoint Services y se explica cómo editar la configuración.  

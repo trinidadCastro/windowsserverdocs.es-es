@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin sethelpertoken
-description: Tema de los comandos de Windows para **sethelpertoken bitsadmin** -establece el token primario de la línea de comandos actual (o token de la cuenta de usuario local arbitrarias, si se especifica) como token auxiliar de un trabajo transferencia de BITS.
+title: bitsadmin sethelpertoken
+description: 'Windows Commands topic for **bitsadmin sethelpertoken** : establece el token principal del símbolo del sistema actual (o un token de cuenta de usuario local arbitrario, si se especifica) como token auxiliar de un trabajo de transferencia de bits.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,18 +12,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 558a1aca66a7b3ec447136ceff9237d13efe4ede
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 91c03366998168dad9ab4530ef36a5020b8ad6ec
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853006"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380571"
 ---
-# <a name="bitsadmin-sethelpertoken"></a>Bitsadmin sethelpertoken
+# <a name="bitsadmin-sethelpertoken"></a>bitsadmin sethelpertoken
 
-Establece el token primario de la línea de comandos actual (o token de la cuenta de usuario local arbitrarias, si se especifica) como un trabajo de transferencia de BITS [token auxiliar](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs).
+Establece el token principal del símbolo del sistema actual (o el token de una cuenta de usuario local arbitraria, si se especifica) como [token auxiliar](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)de un trabajo de transferencia de bits.
 
-**3.0 y versiones anteriores de BITS**: No compatible.
+**BITS 3,0 y versiones anteriores**: No compatible.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -35,8 +35,8 @@ bitsadmin /SetHelperToken <Job> [\<username@domain\> \<password\>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo.|
-|\<username@domain\> \<Contraseña\>|Opcional&mdash;las credenciales de un usuario local cuyo token que se usará la cuenta.|
+|Trabajo|El nombre para mostrar o el GUID del trabajo.|
+|\< @ no__t-1 @ no__t-2 \<password @ no__t-4|Credenciales opcionales @ no__t-0The de una cuenta de usuario local cuyo token se va a usar.|
 
 #### <a name="additional-references"></a>Referencias adicionales
 

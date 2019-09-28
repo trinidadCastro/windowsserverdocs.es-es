@@ -1,8 +1,8 @@
 ---
 title: convert basic
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: df1f999499154366304d59e0573ba921ab1af83d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c4b81126f4a623d841bb5868f786678d7b093581
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434239"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379133"
 ---
 # <a name="convert-basic"></a>convert basic
 
@@ -26,7 +26,7 @@ ms.locfileid: "66434239"
 
 Convierte un disco dinámico vacío en un disco básico.
 
-Para obtener instrucciones sobre cómo usar este comando, consulte [cambiar un disco dinámico vuelve a un disco básico](https://go.microsoft.com/fwlink/?LinkId=207048) (https://go.microsoft.com/fwlink/?LinkId=207048).
+Para obtener instrucciones sobre cómo usar este comando, consulte [cambiar un disco dinámico a un disco básico](https://go.microsoft.com/fwlink/?LinkId=207048) (https://go.microsoft.com/fwlink/?LinkId=207048).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -38,17 +38,17 @@ convert basic [noerr]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|noerr|sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.|
+|Noerr|Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
 
 ## <a name="remarks"></a>Comentarios
 
 > [!IMPORTANT]
-> El disco debe estar vacío para poder convertirlo en un disco básico. Realizar una copia de seguridad de los datos y, a continuación, elimine todas las particiones o volúmenes antes de convertir el disco.
-> -   Debe seleccionarse un disco dinámico para que realizar esta operación correctamente. Use la **seleccione disco** comando para seleccionar un disco dinámico y cambiar el foco a ella.
+> El disco debe estar vacío para poder convertirlo en un disco básico. Realice una copia de seguridad de los datos y, a continuación, elimine todas las particiones o volúmenes antes de convertir el disco.
+> -   Se debe seleccionar un disco dinámico para que esta operación se realice correctamente. Use el comando **Seleccionar disco** para seleccionar un disco dinámico y cambiar el foco a él.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para convertir el disco dinámico seleccionado en basic, escriba:
+Para convertir el disco dinámico seleccionado en básico, escriba:
 ```
 convert basic
 ```

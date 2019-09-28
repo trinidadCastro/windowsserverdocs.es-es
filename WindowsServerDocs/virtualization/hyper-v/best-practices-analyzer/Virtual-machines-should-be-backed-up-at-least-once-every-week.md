@@ -1,7 +1,7 @@
 ---
-title: Las máquinas virtuales se deben copiar al menos una vez cada semana
-description: Versión en línea del texto para esta regla de Best Practices Analyzer.
-ms.prod: windows-server-threshold
+title: Se debe realizar una copia de seguridad de las máquinas virtuales al menos una vez cada semana
+description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: 7dbd3dfc-c873-4a77-89f7-3166e18d9531
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: e079e3cb225ec9c712233bbf3efc85bb6f09b218
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ec11b067de2c9f8cbb3a17731caa0dc526bf54a0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826756"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393238"
 ---
-# <a name="virtual-machines-should-be-backed-up-at-least-once-every-week"></a>Las máquinas virtuales se deben copiar al menos una vez cada semana
+# <a name="virtual-machines-should-be-backed-up-at-least-once-every-week"></a>Se debe realizar una copia de seguridad de las máquinas virtuales al menos una vez cada semana
 
 >Se aplica a: Windows Server 2016
 
-Para obtener más información sobre análisis y los procedimientos recomendados, consulte [Run Best Practices Analyzer Scans y Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Property|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
-|**Característica del producto**|Hyper-V|  
+|**Producto o característica**|Hyper-V|  
 |**Gravedad**|Error|  
 |**Categoría**|Configuración|  
   
-En las secciones siguientes, la cursiva indica texto de la interfaz de usuario que aparece en la herramienta Best Practices Analyzer para resolver este problema.  
+En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.  
   
 ## <a name="issue"></a>Problema  
-*Una o más máquinas virtuales no se copia en la semana pasada.*  
+*No se ha realizado una copia de seguridad de una o más máquinas virtuales en la última semana.*  
   
 ## <a name="impact"></a>Impacto  
-*Pérdida de datos importantes puede producirse si la máquina virtual se encuentra un problema y no existe una copia de seguridad reciente. Esto afecta a las siguientes máquinas virtuales:*  
+@no__t la pérdida de datos 0Significant puede producirse si la máquina virtual encuentra un problema y no existe una copia de seguridad reciente. Esto afecta a las siguientes máquinas virtuales: *  
   
-\<lista de máquinas virtuales >  
+\<list de máquinas virtuales >  
   
 ## <a name="resolution"></a>Resolución  
-*Programar una copia de seguridad de las máquinas virtuales para ejecutar al menos una vez por semana. Puede omitir esta regla si esta máquina virtual es una réplica y se está realizando una copia de seguridad de su máquina virtual principal, o si se trata de la máquina virtual principal y se está realizando una copia de seguridad de su réplica.*  
+@no__t: 0Schedule una copia de seguridad de las máquinas virtuales para que se ejecute al menos una vez a la semana. Puede omitir esta regla si esta máquina virtual es una réplica y se está realizando una copia de seguridad de su máquina virtual principal, o si se trata de la máquina virtual principal y se está realizando una copia de seguridad de su réplica. *  
   
 
 

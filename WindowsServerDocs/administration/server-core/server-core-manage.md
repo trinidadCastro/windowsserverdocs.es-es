@@ -1,18 +1,18 @@
 ---
 title: Administrar Server Core
 description: Más información sobre cómo administrar una instalación Server Core de Windows Server
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 07/23/2019
-ms.openlocfilehash: bbb04e761dbb1dd48d95e15d11c91608f4d6c240
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: bd96dbfc93f3999d8fb3ddf7ec94cc11025bba30
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476548"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383396"
 ---
 # <a name="manage-a-server-core-server"></a>Administrar un servidor Server Core
  
@@ -30,7 +30,7 @@ También puede agregar hardware y administrar controladores de forma local, siem
 
 Hay algunas limitaciones y sugerencias importantes que se deben tener en cuenta al trabajar con Server Core:
 
-- Si cierra todas las ventanas del símbolo del sistema y desea abrir una nueva ventana del símbolo del sistema, puede hacerlo desde el administrador de tareas. Presione **Ctrl\+ALT\+Supr**, haga clic en **iniciar el administrador de tareas**, haga clic en **más detalles > Archivo > ejecutar**y, a continuación, escriba **cmd. exe**. (Escriba **PowerShell. exe** para abrir una ventana de comandos de PowerShell). También puede cerrar la sesión y volver a iniciarla.
+- Si cierra todas las ventanas del símbolo del sistema y desea abrir una nueva ventana del símbolo del sistema, puede hacerlo desde el administrador de tareas. Presione **Ctrl @ no__t-1ALT @ no__t-2DELETE**, haga clic en **iniciar el administrador de tareas**, haga clic en **más detalles > Archivo > ejecutar**y, a continuación, escriba **cmd. exe**. (Escriba **PowerShell. exe** para abrir una ventana de comandos de PowerShell). También puede cerrar la sesión y volver a iniciarla.
 - Ningún comando o herramienta que intente iniciar el Explorador de Windows funcionará. Por ejemplo, ejecutar **Start.** desde un símbolo del sistema, no funcionará.
 - No se admite la representación en HTML ni la ayuda HTML en Server Core.
 - Server Core admite Windows Installer en modo silencioso, por lo que puede instalar herramientas y utilidades desde archivos Windows Installer. Al instalar Windows Installer paquetes en Server Core, use la opción **/qb** para mostrar la interfaz de usuario básica.

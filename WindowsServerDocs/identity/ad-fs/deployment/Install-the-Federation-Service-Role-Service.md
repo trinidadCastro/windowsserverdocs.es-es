@@ -6,54 +6,54 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 80a6cb2bc8e6f0fdb1a777a42f5d245f98ac3dee
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 73c564e1c1117b229f759ca114b18a2d4c8002fa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192088"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408383"
 ---
 # <a name="install-the-federation-service-role-service"></a>Instalar el servicio de rol Servicio de federación
 
-Ahora que ha configurado correctamente un equipo con las aplicaciones de requisitos previos y los certificados, está listo para instalar el servicio de rol Servicio de federación de Active Directory Federation Services \(AD FS\). Cuando se instala el servicio de federación en un equipo, ese equipo se convierte en un servidor de federación.  
+Ahora que ha configurado correctamente un equipo con los certificados y las aplicaciones de requisitos previos, está listo para instalar el servicio de rol Servicio de federación de Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1. Al instalar el Servicio de federación en un equipo, ese equipo se convierte en un servidor de Federación.  
   
 > [!NOTE]  
-> Para Federated Web único\-sesión\-en \(SSO\) diseño, debe tener al menos un servidor de federación en la organización del asociado de cuenta y al menos un servidor de federación en la organización del asociado de recurso . Para obtener más información, consulte [Where to Place a Federation Server](https://technet.microsoft.com/library/dd807127.aspx).  
+> En el caso del diseño único Web no__t-0Sign @ no__t-1On \(SSO @ no__t-3, debe tener al menos un servidor de Federación en la organización del asociado de cuenta y al menos un servidor de Federación en la organización del asociado de recurso. Para obtener más información, consulte [Where to Place a Federation Server](https://technet.microsoft.com/library/dd807127.aspx).  
   
-Puede usar el procedimiento siguiente para instalar el servicio de rol Servicio de federación de AD FS en un equipo que se convertirá en el primer servidor de federación o en un equipo que se convertirá en un servidor de federación para una granja de servidores de federación existente.  
+Puede usar el siguiente procedimiento para instalar el servicio de rol de Servicio de federación de AD FS en un equipo que se convertirá en el primer servidor de Federación o en un equipo que se convertirá en un servidor de Federación para una granja de servidores de Federación existente.  
   
 ## <a name="prerequisites"></a>Requisitos previos  
-Compruebe que un certificado SSL con la clave privada ya se ha instalado o se haya importado en el almacén de certificados local \(almacén Personal\) antes de iniciar este procedimiento. Si va a usar un token\-certificado emitido por una entidad de certificación de firma \(CA\), compruebe que un token\-certificado de firma con la clave privada ya se ha instalado o importado en el almacén de certificados local \(almacén Personal\) antes de iniciar este procedimiento. Como alternativa, puede crear un autoservicio\-firmado, token\-firma de certificado mediante el Asistente para agregar funciones, como se describe en este procedimiento. Para obtener más información sobre el token\-certificados de firma, vea [requisitos de certificados para servidores de federación](https://technet.microsoft.com/library/dd807040.aspx).  
+Compruebe que ya se ha instalado o importado un certificado SSL con la clave privada en el almacén de certificados local \(Personal Store @ no__t-1 antes de iniciar este procedimiento. Si va a usar un certificado de token @ no__t-0signing emitido por una entidad de certificación \(CA @ no__t-2, compruebe que ya se ha instalado o importado un certificado @ no__t-3signing con la clave privada en el almacén de certificados local. \(Personal Store @ no__t-5 antes de iniciar este procedimiento. Como alternativa, puede crear un certificado Self @ no__t-0signed, token @ no__t-1signing mediante el Asistente para agregar funciones, como se describe en este procedimiento. Para obtener más información acerca de los certificados token @ no__t-0signing, consulte [requisitos de certificado para servidores de Federación](https://technet.microsoft.com/library/dd807040.aspx).  
   
-El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  ¿Revise los detalles sobre el uso de las cuentas adecuadas y pertenencia a grupos en [dominio grupos predeterminados locales y](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.microsoft.com\/fwlink\/? LinkId\=83477\).   
+El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en \( [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477) http:\/\/go.Microsoft.com\/fwlink\/? LinkId\=83477\).   
   
 #### <a name="to-install-the-federation-service-role-service"></a>Cómo instalar el servicio de rol de servicio de federación  
   
-1.  En el **iniciar** , escriba**administrador del servidor**, y, a continuación, presione ENTRAR.  
+1.  En la pantalla **Inicio** , escriba**Administrador del servidor**y, a continuación, presione Entrar.  
   
-2.  Haga clic en **administrar**y, a continuación, haga clic en **agregar Roles y características** para iniciar el Asistente de las características y agregar Roles.  
+2.  Haga clic en **administrar**y, a continuación, haga clic en **Agregar roles y características** para iniciar el Asistente para agregar roles y características.  
   
 3.  En la página **Antes de comenzar** , haga clic en **Siguiente**.  
   
-4.  En el **Seleccionar tipo de instalación** página, haga clic en **rol\-características o en\-instalación basada en**y haga clic en **siguiente**.  
+4.  En la página **Seleccionar tipo de instalación** , haga clic en **role @ no__t-2Based o en Feature @ no__t-3based Installation**y haga clic en **Next**.  
   
-5.  En el **Seleccionar servidor de destino** página, haga clic en **seleccionar un servidor del grupo de servidores**, compruebe que el equipo de destino está resaltado y, a continuación, haga clic en **siguiente**.  
+5.  En la página **Seleccionar servidor de destino** , haga clic en **seleccionar un servidor del grupo de servidores**, compruebe que el equipo de destino esté resaltado y, a continuación, haga clic en **siguiente**.  
   
-6.  En el **seleccionar roles de servidor** página, haga clic en **Active Directory Federation Services**y, a continuación, haga clic en siguiente.  
+6.  En la página **Seleccionar roles de servidor** , haga clic en **servicios de Federación de Active Directory (AD FS)** y, a continuación, haga clic en siguiente.  
   
     > [!NOTE]  
-    > Si se le solicite instalar características adicionales de .NET Framework o Windows Process Activation Service, haga clic en **agregar características** para instalarlos.  
+    > Si se le pide que instale características adicionales de .NET Framework o del servicio de activación de procesos de Windows, haga clic en **Agregar características** para instalarlas.  
   
-7.  En el **seleccionar características** , comprueba que se establecen las características y, a continuación, haga clic en **siguiente**.  
+7.  En la página **seleccionar características** , compruebe que las características están establecidas y, a continuación, haga clic en **siguiente**.  
   
-8.  En el **servicio de federación de Active Directory \(AD FS\)**  página, haga clic en **siguiente**.  
+8.  En la página **Active Directory Servicio de federación \(AD FS @ no__t-2** , haga clic en **siguiente**.  
   
-9. En el **seleccionar servicios de rol** , seleccione el **servicio de federación** casilla de verificación y, a continuación, haga clic en **siguiente**.  
+9. En la página **seleccionar servicios de función** , active la casilla **servicio de Federación** y, a continuación, haga clic en **siguiente**.  
   
-10. En el **rol de servidor Web \(IIS\)**  página, haga clic en **siguiente**.  
+10. En la página **rol de servidor Web \(IIS @ no__t-2** , haga clic en **siguiente**.  
   
 11. En la página **Seleccionar servicios de rol**, haga clic en **Siguiente**.  
   

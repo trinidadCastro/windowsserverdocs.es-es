@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getfilestotal
-description: Tema de los comandos de Windows para **getfilestotal bitsadmin** -recupera el número de archivos en el trabajo especificado.
+description: 'Temas de comandos de Windows para **bitsadmin getfilestotal** : recupera el número de archivos del trabajo especificado.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5f6d32b3410b182c510cf40b9def5370efafdc4
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 27cf04e8745aeab5cd1f2ce379c8506be642fea2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435121"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381608"
 ---
 # <a name="bitsadmin-getfilestotal"></a>bitsadmin getfilestotal
 
 
 
-Recupera el número de archivos en el trabajo especificado.
+Recupera el número de archivos del trabajo especificado.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,11 +36,11 @@ bitsadmin /GetFilesTotal <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente recupera el número de archivos incluidos en el trabajo denominado *myDownloadJob*.
+En el ejemplo siguiente se recupera el número de archivos incluidos en el trabajo denominado *myDownloadJob*.
 ```
 C:\>bitsadmin /GetFilesTotal myDownloadJob
 ```

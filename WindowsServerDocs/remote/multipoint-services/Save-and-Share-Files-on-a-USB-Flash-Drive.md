@@ -1,8 +1,8 @@
 ---
 title: Guardar y compartir archivos en una unidad flash USB
-description: Obtenga información sobre cómo guardar filese en una unidad flash USB de MultiPoint Services
+description: Obtenga información sobre cómo guardar archivos en una unidad flash USB en Multipoint Services
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,15 +13,15 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: bb9db8936f8098024f76fc09490de7ffef594760
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ddbee49ae80e65f29dcdb3c3c4ad43c17a451ccf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885476"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389415"
 ---
 # <a name="save-and-share-files-on-a-usb-flash-drive"></a>Guardar y compartir archivos en una unidad flash USB
-Además de poder compartir contenido usando carpetas públicas en el Explorador de Windows, también puede compartir contenido con un dispositivo de almacenamiento USB, como una unidad flash USB o un dispositivo de almacenamiento masivo. Cuando conecta un dispositivo de almacenamiento USB directamente al equipo host o a un concentrador USB que no es un concentrador de estaciones, ese dispositivo de almacenamiento aparecerá como un dispositivo de almacenamiento extraíble para todos los usuarios, *usuarios estándar* y *usuarios administrativos*, en todo el sistema MultiPoint Services.  
+Además de poder compartir contenido mediante carpetas públicas en el explorador de Windows, también puede compartir contenido mediante un dispositivo de almacenamiento USB, como una unidad flash USB o un dispositivo de almacenamiento masivo. Cuando conecta un dispositivo de almacenamiento USB directamente al equipo host o a un concentrador USB que no es un concentrador de estaciones, ese dispositivo de almacenamiento aparecerá como un dispositivo de almacenamiento extraíble para todos los usuarios, *usuarios estándar* y *usuarios administrativos*, en todo el sistema MultiPoint Services.  
   
 También puede usar un dispositivo de almacenamiento extraíble para guardar y almacenar documentos privados en una carpeta privada del Explorador de Windows, como en la carpeta **Mis documentos** en la biblioteca **Documentos**.  
   
@@ -44,5 +44,5 @@ Conecte el dispositivo de almacenamiento extraíble a un puerto USB abierto en e
   
 ## <a name="see-also"></a>Vea también  
 [Mantener archivos en privado](Keep-Files-Private.md)  
-[Uso compartido de archivos](Share-Files.md)  
+[Compartir archivos](Share-Files.md)  
 [Administrar archivos de usuario](Manage-User-Files.md)

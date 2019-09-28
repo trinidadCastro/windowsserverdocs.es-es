@@ -1,7 +1,7 @@
 ---
 title: Solución de problemas de Nano Server
 description: Consola de recuperación, servicios de gestión de emergencia, depuración del kernel
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -12,19 +12,19 @@ ms.assetid: e427c66f-9571-4b8c-b65d-e7370d91544d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: e832d35f1ae3bbdba256b3531a22f93b69cadbb3
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 48b63e74ab406d2e66996097d33d71f2eeaeaf20
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66443393"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391553"
 ---
 # <a name="troubleshooting-nano-server"></a>Solución de problemas de Nano Server
 
 >Se aplica a: Windows Server 2016
 
 > [!IMPORTANT]
-> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
+> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
 
 Este tema incluye información acerca de las herramientas que puede usar para conectarse para diagnosticar y reparar las instalaciones de Nano Server.  
   

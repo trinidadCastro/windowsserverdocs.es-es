@@ -1,8 +1,8 @@
 ---
 title: proceso de consulta
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3248c2b1f476a1a9843f7e930b05a3dca812d694
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 714a77c5fabf507b84090f37104203abd37a6f0f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442126"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371915"
 ---
 # <a name="query-process"></a>proceso de consulta
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Muestra información acerca de los procesos que se ejecutan en un servidor Host de sesión de escritorio remoto (Host de sesión de rd).
-Puede usar este comando para averiguar qué programas se está ejecutando un usuario específico, y también los usuarios que ejecutan un programa específico.
-Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_examples).
+Muestra información sobre los procesos que se ejecutan en un servidor de host de sesión de Escritorio remoto (host de sesión de escritorio remoto).
+Puede usar este comando para averiguar qué programas ejecuta un usuario específico y también qué usuarios ejecutan un programa específico.
+Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para descubrir las novedades de la versión más reciente, consulte [novedades nuevos servicios de escritorio remoto en Windows Server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
+> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
 > ## <a name="syntax"></a>Sintaxis
 > ```
 > query process [* | <ProcessID> | <UserName> | <SessionName> | /id:<nn> | <ProgramName>] [/server:<ServerName>]
@@ -37,36 +37,36 @@ Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_exam
 > 
 > |      Parámetro       |                                                                 Descripción                                                                  |
 > |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-> |          \*          |                                                    Enumera los procesos de todas las sesiones.                                                     |
+> |          \*          |                                                    muestra los procesos de todas las sesiones.                                                     |
 > |     <ProcessID>      |                                   Especifica el identificador numérico que identifica el proceso que desea consultar.                                   |
-> |      <UserName>      |                                       Especifica el nombre del usuario cuyos procesos que desea enumerar.                                       |
-> |    <SessionName>     |                                     Especifica el nombre de la sesión cuyos procesos que desea enumerar.                                      |
-> |       / Id:<nn>       |                                      Especifica el identificador de la sesión cuyos procesos que desea enumerar.                                       |
-> |    <ProgramName>     |                     Especifica el nombre del programa cuyos procesos que desea consultar. La extensión .exe es necesaria.                     |
-> | /server:<ServerName> | Especifica el servidor Host de sesión de escritorio remoto cuyos procesos que desea enumerar. Si no se especifica, se utiliza el servidor donde han iniciado sesión. |
+> |      <UserName>      |                                       Especifica el nombre del usuario cuyos procesos desea enumerar.                                       |
+> |    <SessionName>     |                                     Especifica el nombre de la sesión cuyos procesos desea enumerar.                                      |
+> |       /ID: <nn>       |                                      Especifica el identificador de la sesión cuyos procesos desea enumerar.                                       |
+> |    <ProgramName>     |                     Especifica el nombre del programa cuyos procesos desea consultar. Se requiere la extensión. exe.                     |
+> | /server:<ServerName> | Especifica el servidor host de sesión de escritorio remoto cuyos procesos desea enumerar. Si no se especifica, se usa el servidor en el que ha iniciado sesión actualmente. |
 > |          /?          |                                                     Muestra la ayuda en el símbolo del sistema.                                                     |
 > 
 > ## <a name="remarks"></a>Comentarios
-> - Los administradores tienen acceso total a todos **el proceso de consulta** funciones.
-> - Si no especifica el <*UserName*>, <*SessionName*>, **/ID:** <*nn*>, <*NombrePrograma*>, o **\\** * parámetros, **el proceso de consulta** sólo mostrará los procesos que pertenecen al usuario actual.
+> - Los administradores tienen acceso total a todas las funciones de **proceso de consulta** .
+> - Si no especifica el*nombre de usuario*< >, <*nombresesión*>, **/ID:** <*nn*>, <*nombreprograma*> o **\\** *, el proceso de **consulta** solo muestra los procesos que pertenecer al usuario actual.
 > - Si se especifica una sesión, debe identificar una sesión activa.
-> - **el proceso de consulta** devuelve la siguiente información:
->   -   El usuario propietario del proceso
->   -   La sesión propietaria del proceso
->   -   El identificador de la sesión
->   -   El nombre del proceso
->   -   El identificador del proceso
-> - Cuando **el proceso de consulta** devuelve información, un signo mayor que (>) se muestra antes de cada proceso al que pertenece a la sesión actual.
->   ## <a name="BKMK_examples"></a>Ejemplos
-> - Para mostrar información sobre los procesos que se están usando todas las sesiones, escriba:
+> - el **proceso de consulta** devuelve la siguiente información:
+>   -   El usuario propietario del proceso.
+>   -   La sesión que posee el proceso
+>   -   Identificador de la sesión.
+>   -   Nombre del proceso.
+>   -   Identificador del proceso.
+> - Cuando el **proceso de consulta** devuelve información, se muestra un signo mayor que (>) antes de cada proceso que pertenece a la sesión actual.
+>   ## <a name="BKMK_examples"></a>Example
+> - Para mostrar información sobre los procesos que están usando todas las sesiones, escriba:
 >   ```
 >   query process *
 >   ```
-> - Para mostrar información sobre los procesos que se están usando 2 Id. de sesión, escriba:
+> - Para mostrar información sobre los procesos utilizados por el ID. de sesión 2, escriba:
 >   ```
 >   query process /ID:2
 >   ```
 >   #### <a name="additional-references"></a>Referencias adicionales
 >   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 >   [consulta](query.md)
->   [servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia de comandos](remote-desktop-services-terminal-services-command-reference.md)
+>   [servicios de escritorio remoto &#40;referencia de comandos&#41; Terminal Services](remote-desktop-services-terminal-services-command-reference.md)

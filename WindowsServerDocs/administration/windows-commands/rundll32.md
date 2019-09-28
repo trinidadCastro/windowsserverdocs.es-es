@@ -1,8 +1,8 @@
 ---
 title: rundll32
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b1f288d21a1dcac25ecc00f685ea179d8a6542f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 29a87f9f07c25a0c671e47550e0a054d8308f747
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835036"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384421"
 ---
 # <a name="rundll32"></a>rundll32
 
 
 
-Carga y ejecuta las bibliotecas de vínculos dinámicos (DLL) de 32 bits. No hay ningún valor configurable para Rundll32. Se proporciona información de ayuda para un archivo DLL específico que se ejecuta con la **rundll32** comando.
+Carga y ejecuta las bibliotecas de vínculos dinámicos (dll) de 32 bits. No hay ninguna configuración configurable para rundll32. Se proporciona información de ayuda para un archivo DLL específico que se ejecuta con el comando **rundll32** .
 
-Debe ejecutar el **rundll32** ejecutado desde un símbolo del sistema con privilegios elevados. Para abrir un símbolo del sistema con privilegios elevados, haga clic en **iniciar**, haga clic en **símbolo**y, a continuación, haga clic en **ejecutar como administrador**.
+Debe ejecutar el comando **rundll32** desde un símbolo del sistema con privilegios elevados. Para abrir un símbolo del sistema con privilegios elevados, haga clic en **Inicio**, haga clic con el botón secundario en **símbolo del sistema**y, a continuación, haga clic en **Ejecutar como administrador**.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -38,11 +38,11 @@ Rundll32 <DLLname>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[Rundll32 printui.dll,PrintUIEntry](rundll32-printui.md)|Muestra la interfaz de usuario de impresora|
+|[Rundll32 printui. dll, PrintUIEntry](rundll32-printui.md)|Muestra la interfaz de usuario de la impresora|
 
 ## <a name="remarks"></a>Comentarios
 
-Rundll32 sólo puede llamar a funciones desde un archivo DLL que se escriben explícitamente para ser llamado por Rundll32. Para obtener más información sobre Rundll32 requisitos, consulte [artículo 164787](https://go.microsoft.com/fwlink/?LinkID=165773) en Microsoft Knowledge Base (https://go.microsoft.com/fwlink/?LinkID=165773).
+Rundll32 solo puede llamar a funciones de un archivo DLL que se escriben explícitamente para que rundll32 las llame. Para obtener más información acerca de los requisitos de rundll32, consulte el [artículo 164787](https://go.microsoft.com/fwlink/?LinkID=165773) de Microsoft Knowledge Base (https://go.microsoft.com/fwlink/?LinkID=165773).
 
 #### <a name="additional-references"></a>Referencias adicionales
 
