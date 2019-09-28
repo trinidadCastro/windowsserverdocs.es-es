@@ -1,5 +1,5 @@
 ---
-title: Proteger las máquinas virtuales de Hyper-V con Azure Site Recovery y Windows Admin Center
+title: Proteger el Virtual Machines de Hyper-V con Azure Site Recovery y el centro de administración de Windows
 description: Usa Windows Admin Center (Project Honolulu) para proteger las VM Hyper-V con Azure Site Recovery.
 ms.technology: manage
 ms.topic: article
@@ -7,19 +7,19 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 ms.localizationpriority: low
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 66e9b2e23a60d1e4725321e88fc1ac262b9c31fa
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.prod: windows-server
+ms.openlocfilehash: 4995ed433d34fddfa91548fa42d67eea3a319c1f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445925"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357353"
 ---
-# <a name="protect-your-hyper-v-virtual-machines-with-azure-site-recovery-and-windows-admin-center"></a>Proteger las máquinas virtuales de Hyper-V con Azure Site Recovery y Windows Admin Center
+# <a name="protect-your-hyper-v-virtual-machines-with-azure-site-recovery-and-windows-admin-center"></a>Proteger el Virtual Machines de Hyper-V con Azure Site Recovery y el centro de administración de Windows
 
->Se aplica a: Versión preliminar de Windows Admin Center, Windows Admin Center
+>Se aplica a: Vista previa del centro de administración de Windows, centro de administración de Windows
 
-[Más información sobre la integración de Azure con Windows Admin Center.](../plan/azure-integration-options.md)
+[Más información acerca de la integración de Azure con el centro de administración de Windows.](../plan/azure-integration-options.md)
 
 Windows Admin Center simplifica el proceso de replicación de las máquinas virtuales en los servidores o clústeres Hyper-V, lo que facilita e aprovechamiento de la potencia de Azure desde tu propio centro de datos. Para automatizar la instalación, puedes conectar la puerta de enlace de Windows Admin Center a Azure.
 
@@ -40,7 +40,7 @@ Completar la instalación para el componente de replicación por sí solo es suf
 - [Conecta la puerta de enlace de Windows Admin Center a Azure](azure-integration.md).
 - [Revisa la herramienta de planificación de capacidad para evaluar los requisitos para la replicación y la conmutación por error correctas](https://docs.microsoft.com/azure/site-recovery/hyper-v-site-walkthrough-capacity).
 
-## <a name="step-1-set-up-vm-protection-on-your-target-host"></a>Paso 1: Configurar la protección de máquina virtual en el host de destino
+## <a name="step-1-set-up-vm-protection-on-your-target-host"></a>Paso 1: Configuración de la protección de máquinas virtuales en el host de destino
 
 > [!NOTE] 
 > Debes realizar este paso una vez por cada clúster o servidor de hosts que contenga VM elegidas para protección.
@@ -52,20 +52,20 @@ Completar la instalación para el componente de replicación por sí solo es suf
 5. Inicia sesión en tu cuenta de Azure.
 6. Escribe la información necesaria:
 
-   - **Suscripción:** La suscripción de Azure que desea usar para la replicación de máquinas virtuales en este host.
-   - **Ubicación:** La región de Azure donde se deben crear los recursos de ASR.
-   - **Cuenta de almacenamiento:** La cuenta de almacenamiento donde se guardarán las cargas de trabajo de máquina virtual replicadas en este host.
-   - **Almacén:** Elija un nombre para el almacén de Azure Site Recovery para máquinas virtuales protegidas en este host.
+   - **Suscribi** La suscripción de Azure que quiere usar para la replicación de máquinas virtuales en este host.
+   - **Ubicación:** La región de Azure en la que se deben crear los recursos de ASR.
+   - **Cuenta de almacenamiento:** La cuenta de almacenamiento donde se guardarán las cargas de trabajo de máquinas virtuales replicadas en este host.
+   - **Almacén** Elija un nombre para el almacén de Azure Site Recovery para las máquinas virtuales protegidas en este host.
 
 7. Selecciona **Instalar ASR**.
-8. Espere hasta que vea la notificación: **Site Recovery establecer completado**.
+8. Espere hasta que vea la notificación: **Site Recovery configuración completada**.
  
 Esto puede tardar hasta 10 minutos. Puedes ver el progreso yendo a **Notificaciones** (el icono de campana en la parte superior derecha).
 
 >[!NOTE]
 > Automáticamente, en este paso se instala el agente de ASR en el servidor o nodos de destino (si se está configurando un clúster), crea un **Grupo de recursos** con la **Cuenta de almacenamiento** y el **Almacén** especificados, en la **Ubicación** especificada. Esto también registrará el host de destino con el servicio de ASR y configurará una directiva de replicación predeterminada.
 
-## <a name="step-2-select-virtual-machines-to-protect"></a>Paso 2: Seleccionar máquinas virtuales para proteger
+## <a name="step-2-select-virtual-machines-to-protect"></a>Paso 2: Seleccionar las máquinas virtuales que se van a proteger
 
 1. Navega hasta el servidor o el clúster configurado en el paso 2 anterior y ve a **Máquinas virtuales > Inventario**.
 2. Selecciona la máquina virtual que deseas proteger.
@@ -78,7 +78,7 @@ Esto puede tardar hasta 10 minutos. Puedes ver el progreso yendo a **Notificacio
 
 6. ASR iniciará la replicación. La replicación se completa y la VM se protege cuando el valor de la columna **Protegido** de la cuadrícula de **Inventario de máquina Virtual** en **Sí**. Esto puede tardar varios minutos.  
 
-## <a name="step-3-configure-and-run-a-test-failover-in-the-azure-portal"></a>Paso 3: Configurar y ejecutar una conmutación por error de prueba en el portal de Azure
+## <a name="step-3-configure-and-run-a-test-failover-in-the-azure-portal"></a>Paso 3: Configure y ejecute una conmutación por error de prueba en el Azure Portal
 
  Aunque no es necesario completar este paso al iniciar una replicación de máquina virtual (la máquina virtual ya estará protegida con replicación), se recomienda configurar la configuración de conmutación por error al configurar Azure Site Recovery. Si deseas preparar para conmutación por error en una VM de Azure, completa los siguientes pasos:
 

@@ -1,8 +1,8 @@
 ---
 title: Administrar cuentas de usuario
-description: Información general de navegación para administrar cuentas de usuario de MultiPoint Services
+description: Información general sobre navegación para administrar cuentas de usuario de Multipoint Services
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,15 +13,15 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: e37c99f275810bfd45c1e3f4b2f7dff6ace06d11
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a15176fd76c7f710f8adf42bb8e9930158e3b06a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814716"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395233"
 ---
 # <a name="manage-user-accounts"></a>Administrar cuentas de usuario
-En esta sección se describen los distintos tipos de cuentas de usuario, cómo crear cuentas de usuario y cómo administrarlas. En un sistema MultiPoint Services, hay dos tipos de cuentas de usuario: *cuentas de usuario estándar* y *cuentas de usuario administrativo*, tal y como se describe a continuación.  
+En esta sección se describen los distintos tipos de cuentas de usuario, cómo crear cuentas de usuario y cómo administrarlas. En un sistema Multipoint Services, hay dos tipos de cuentas de usuario: las cuentas de usuario *estándar* y *las cuentas de usuario administrativo*, tal como se describe a continuación.  
   
 > [!TIP]  
 > En el tema [Consideraciones sobre las cuentas de usuario](User-Account-Considerations.md) se proporcionan directrices que hay que tener en cuenta a la hora de crear y administrar cuentas de usuario. 

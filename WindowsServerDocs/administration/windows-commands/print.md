@@ -1,8 +1,8 @@
 ---
 title: print
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d85fc5b2cd5f5ba09ebdf4756a5adb60c1759f2a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ada0657e2f17754e55e97e6488aac99fb0025afb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831556"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372154"
 ---
 # <a name="print"></a>print
 
@@ -38,30 +38,30 @@ Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/d:\<PrinterName>|Especifica la impresora que desea que el trabajo de impresión. Para imprimir en una impresora conectada localmente, especifique el puerto en el equipo donde está conectada la impresora.</br>-Los valores válidos para los puertos paralelos son LPT1, LPT2 y LPT3.</br>-Los valores válidos para los puertos serie son COM1, COM2, COM3 y COM4.</br>También puede especificar una impresora de red mediante su nombre de cola (\\\\*ServerName*\*nombreImpresora *). Si no especifica una impresora, el trabajo de impresión se envía al puerto LPT1 de forma predeterminada.|
-|\<Drive>:|Especifica la unidad lógica o física donde se encuentra el archivo que desea imprimir. Este parámetro no es necesario si se encuentra el archivo que desea imprimir en la unidad actual.|
-|\<Path>|Especifica la ubicación del archivo que desea imprimir. Este parámetro no es necesario si se encuentra el archivo que desea imprimir en el directorio actual.|
-|\<FileName>[ ...]|Obligatorio. Especifica el archivo que desea imprimir. Puede incluir varios archivos en un solo comando.|
+|/d: @no__t 0PrinterName >|Especifica la impresora en la que desea imprimir el trabajo. Para imprimir en una impresora conectada localmente, especifique el puerto del equipo en el que está conectada la impresora.</br>-Los valores válidos para puertos paralelos son LPT1, LPT2 y LPT3.</br>-Los valores válidos para los puertos serie son COM1, COM2, COM3 y COM4.</br>También puede especificar una impresora de red mediante su nombre de cola (\\ @ no__t-1*ServerName*\*PrinterName *). Si no especifica una impresora, el trabajo de impresión se envía a LPT1 de forma predeterminada.|
+|@no__t 0Drive >:|Especifica la unidad física o lógica en la que se encuentra el archivo que desea imprimir. Este parámetro no es necesario si el archivo que desea imprimir se encuentra en la unidad actual.|
+|@no__t 0Path >|Especifica la ubicación del archivo que desea imprimir. Este parámetro no es necesario si el archivo que desea imprimir está ubicado en el directorio actual.|
+|\<FileName > [...]|Obligatorio. Especifica el archivo que desea imprimir. Puede incluir varios archivos en un solo comando.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Puede imprimir un archivo en segundo plano si se envía a una impresora conectada a un puerto serie o en paralelo en el equipo local.
--   Puede realizar muchas tareas de configuración desde el símbolo del sistema mediante la **modo** comando.
+-   Un archivo puede imprimir en segundo plano si lo envía a una impresora conectada a un puerto serie o paralelo en el equipo local.
+-   Puede realizar muchas tareas de configuración desde el símbolo del sistema mediante el comando **modo** .
 
-    Consulte [modo](mode.md) para obtener más información acerca de:  
+    Vea el [modo](mode.md) para obtener más información acerca de:  
     -   Configuración de una impresora conectada a un puerto paralelo
-    -   Configuración de una impresora conectada a un puerto serie
+    -   Configurar una impresora conectada a un puerto serie
     -   Mostrar el estado de una impresora
-    -   Preparar una impresora para la modificación de la página de código
+    -   Preparar una impresora para el cambio de páginas de códigos
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para enviar el archivo informe.txt en el directorio actual a una impresora conectada al puerto LPT2 en el equipo local, escriba:
+Para enviar el archivo report. txt en el directorio actual a una impresora conectada a LPT2 en el equipo local, escriba:
 ```
 print /d:lpt2 report.txt
 ```
-Para enviar el archivo informe.txt en el directorio c:\Accounting a la cola de impresión Printer1 el \\ \\copias servidor, escriba:
+Para enviar el archivo report. txt en el directorio c:\Accounting a la cola de impresión Printer1 del servidor \\ @ no__t-1CopyRoom, escriba:
 ```
 print /d:\\copyroom\printer1 c:\accounting\report.txt 
 ```

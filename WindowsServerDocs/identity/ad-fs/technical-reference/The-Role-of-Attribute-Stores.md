@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bd9c47c0f786fa8c7814519b26d33daaf01080a3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0a1543f2c935c2ef76ea014567b18bfc778c7401
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869389"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407382"
 ---
 # <a name="the-role-of-attribute-stores"></a>El papel de los almacenes de atributos
 Servicios de federación de Active Directory (AD FS) usa el término "almacenes de atributos" para hacer referencia a directorios o bases de datos que usa una organización para almacenar sus cuentas de usuario y sus valores de atributo asociados. Una vez configurada en una organización del proveedor de identidades, AD FS recupera estos valores de atributo del almacén y crea notificaciones basadas en esa información para que una aplicación web o un servicio hospedado en una organización de usuario de confianza pueda hacer lo adecuado decisiones de autorización cada vez que \(un usuario federado tiene un usuario cuya cuenta se almacena en\) la organización del proveedor de identidades intenta tener acceso a la aplicación o servicio.  

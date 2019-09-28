@@ -1,25 +1,25 @@
 ---
 title: Guías complementarias de red principal
-description: En este tema proporciona información general sobre las guías complementarias a la Guía de red de Windows Server 2016 Core
+description: En este tema se proporciona información general sobre las guías complementarias de la guía de red principal de Windows Server 2016.
 manager: brianlic
 ms.technology: networking
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: d57af0bd-9301-4f62-9888-f528cd10451d
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b757e1914ee263a041f39e9767d3cb8af38403dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c0895cfd62d462ef6d158dc39ef59a9ee10a7c98
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816806"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406311"
 ---
 # <a name="core-network-companion-guidance"></a>Orientación complementaria de red principal
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Aunque Windows Server 2016 [Guía de red principal](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide) proporciona instrucciones sobre cómo implementar un nuevo directorio activo&reg; bosque con un nuevo dominio raíz y la infraestructura de red subyacente, las guías complementarias le proporcionan con la capacidad de agregar características a la red.
+Aunque la [Guía de red principal](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide) de Windows Server 2016 proporciona instrucciones sobre cómo implementar un nuevo bosque Active Directory @ no__t-1 con un nuevo dominio raíz y la infraestructura de red compatible, las guías complementarias le ofrecen la posibilidad de agregar características de la red.
 
 Cada guía complementaria le permite cumplir un objetivo específico después de haber implementado la red principal. En algunos casos, existen varias guías complementarias que, cuando se implementan juntas y en el orden correcto, permiten alcanzar objetivos muy complejos de una manera medida, rentable y razonable.
 
@@ -27,42 +27,42 @@ Si implementó el dominio y la red principal de Active Directory antes de encont
 
 ## <a name="core-network-companion-guide-deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>Guía complementaria de red principal: Implementación de certificados de servidor para las implementaciones cableadas e inalámbricas de 802.1X 
 
-En esta guía complementaria se explica cómo basarse en la red principal mediante la implementación de certificados de servidor para equipos que ejecutan el servidor de directivas de red \(NPS\), servicio de acceso remoto \(RAS\), o ambos.
+En esta guía complementaria se explica cómo basarse en la red principal mediante la implementación de certificados de servidor para equipos que ejecutan el servidor de directivas de redes \(NPS @ no__t-1, el servicio de acceso remoto \(RAS @ no__t-3 o ambos.
 
-Certificados de servidor son necesarios al implementar métodos de autenticación basada en certificados con protocolo de autenticación Extensible \(EAP\) y EAP protegido \(PEAP\) para la autenticación de acceso de red. Implementación de certificados de servidor con servicios de certificados de Active Directory \(AD CS\) para la autenticación basada en certificados EAP y PEAP métodos ofrece las siguientes ventajas:
+Los certificados de servidor son necesarios al implementar métodos de autenticación basados en certificados con el protocolo de autenticación extensible \(EAP @ no__t-1 y EAP protegido \(PEAP @ no__t-3 para la autenticación de acceso a la red. La implementación de certificados de servidor con Active Directory servicios de Certificate Server \(AD CS @ no__t-1 para los métodos de autenticación basados en certificados de EAP y PEAP ofrece las siguientes ventajas:
 
-- Enlazar la identidad del servidor NPS o RAS con una clave privada
-- Un método rentable y seguro para inscribir automáticamente certificados en servidores miembros del dominio NPS y RAS
+- Enlazar la identidad del servidor NPS o RAS a una clave privada
+- Método rentable y seguro para inscribir automáticamente certificados en servidores NPS y RAS miembros del dominio.
 - Método eficaz para administrar certificados y entidades de certificación
 - Seguridad proporcionada por autenticación basada en certificados
 - Capacidad de ampliar el uso de certificados para otros propósitos
   
-Para obtener instrucciones sobre cómo implementar certificados de servidor, consulte [implementar certificados de servidor para las implementaciones inalámbricas y cableadas 802.1X](server-certs/Deploy-Server-Certificates-for-802.1X-Wired-and-Wireless-Deployments.md).  
+Para obtener instrucciones sobre cómo implementar certificados de servidor, consulte [implementación de certificados de servidor para implementaciones cableadas e inalámbricas de 802.1 x](server-certs/Deploy-Server-Certificates-for-802.1X-Wired-and-Wireless-Deployments.md).  
 ## <a name="core-network-companion-guide-deploy-password-based-8021x-authenticated-wireless-access"></a>Guía complementaria de red principal: Implementación del acceso inalámbrico autenticado mediante 802.1X basado en contraseña
 
-En esta guía complementaria se explica cómo basarse en la red principal proporcionando instrucciones sobre cómo implementar Institute of Electrical and Electronics Engineers \(IEEE\) 802.1X\-autenticado IEEE 802.11 inalámbrica obtener acceso mediante la versión 2 de Protected Extensible Authentication Protocol\ – Microsoft protocolo de autenticación \(PEAP\-MS\-CHAP v2\).
+En esta guía complementaria se explica cómo basarse en la red principal proporcionando instrucciones sobre cómo implementar el Instituto de ingenieros eléctricos y electrónicos \(IEEE @ no__t-1 802.1 X @ no__t-2authenticated acceso inalámbrico IEEE 802,11 mediante protected. Protocolo de autenticación extensible: Protocolo de autenticación por desafío mutuo de Microsoft versión 2 \(PEAP @ no__t-4MS estándar @ no__t-5CHAP V2 @ no__t-6.
 
-El método de autenticación PEAP\-MS\-CHAP v2 requiere que autenticar los servidores que ejecutan el servidor de directivas de red \(NPS\) presentar a los clientes inalámbricos con un certificado de servidor para comprobar la identidad NPS para el cliente, sin embargo, no se realiza con un certificado - autenticación de usuario en su lugar, los usuarios proporcionar su nombre de usuario de dominio y contraseña.
+El método de autenticación PEAP @ no__t-0 ms @ no__t-1CHAP V2 requiere que la autenticación de servidores que ejecuten el servidor de directivas de redes \(NPS @ no__t-3 presente clientes inalámbricos con un certificado de servidor para demostrar la identidad de NPS al cliente, sin embargo, el usuario la autenticación no se realiza mediante un certificado; en su lugar, los usuarios proporcionan su nombre de usuario y contraseña de dominio.
 
-Dado que PEAP\-MS\-CHAP v2 requiere que los usuarios proporcionen credenciales basadas en contraseña en lugar de un certificado durante el proceso de autenticación, se suele ser más fácil y menos costoso de implementar que EAP\-TLS o PEAP \-TLS.
+Dado que PEAP @ no__t-0 ms @ no__t-1CHAP V2 requiere que los usuarios proporcionen credenciales basadas en contraseña en lugar de un certificado durante el proceso de autenticación, normalmente es más fácil y menos costoso implementar que EAP @ no__t-2TLS o PEAP @ no__t-3TLS.
 
-Antes de utilizar esta guía para implementar el acceso inalámbrico con el PEAP\-MS\-método de autenticación CHAP v2, debe hacer lo siguiente:
+Antes de usar esta guía para implementar el acceso inalámbrico con el método de autenticación PEAP @ no__t-0 ms @ no__t-1CHAP V2, debe hacer lo siguiente:
 
-1. Siga las instrucciones de la Guía de red principal para implementar la infraestructura de red principal o, ya que las tecnologías presentado en esa guía implementada en la red.
-2. Siga las instrucciones en el Core Network Companion guía implementar los certificados de servidor para las implementaciones inalámbricas y cableadas 802.1X o, ya que las tecnologías presentado en esa guía implementada en la red.
+1. Siga las instrucciones de la guía de red principal para implementar la infraestructura de red principal, o ya tiene las tecnologías que se presentan en esa guía implementadas en la red.
+2. Siga las instrucciones de la guía complementaria de red principal implementación de certificados de servidor para las implementaciones cableadas e inalámbricas de 802.1 X, o ya tiene las tecnologías que se presentan en esa guía implementadas en la red.
 
-Para obtener instrucciones sobre cómo implementar el acceso inalámbrico con PEAP\-MS\-CHAP v2, consulte [basado en contraseña implementar autentica el acceso inalámbrico 802.1X](wireless/a-deploy-8021X-wireless-access.md).
+Para obtener instrucciones sobre cómo implementar el acceso inalámbrico con PEAP @ no__t-0 ms @ no__t-1CHAP V2, consulte [implementación de acceso inalámbrico autenticado mediante 802.1 x basado en contraseña](wireless/a-deploy-8021X-wireless-access.md).
 
 ## <a name="core-network-companion-guide-deploy-branchcache-hosted-cache-mode"></a>Guía complementaria de red principal: Implementar el modo de caché hospedada de BranchCache
 
-En esta guía complementaria se explica cómo implementar BranchCache en modo de caché hospedada en uno o más sucursales.
+En esta guía complementaria se explica cómo implementar BranchCache en modo caché hospedada en una o varias sucursales.
 
-BranchCache es una tecnología de optimización de ancho de banda (WAN) de red de área extensa que se incluye en algunas ediciones de los sistemas operativos Windows Server 2016 y Windows 10, así como en versiones anteriores de Windows y Windows Server.
+BranchCache es una tecnología de optimización del ancho de banda de la red de área extensa (WAN) que se incluye en algunas ediciones de los sistemas operativos Windows Server 2016 y Windows 10, así como en versiones anteriores de Windows y Windows Server.
 
-Cuando implementa BranchCache en modo Caché hospedada, la memoria caché de contenido en la sucursal se hospeda en uno o más equipos servidores que se denominan servidores de caché hospedada. Servidores de caché hospedada pueden ejecutar las cargas de trabajo además de hospedar la memoria caché, lo que le permite usar el servidor para fines diferentes en la sucursal.
+Cuando implementa BranchCache en modo Caché hospedada, la memoria caché de contenido en la sucursal se hospeda en uno o más equipos servidores que se denominan servidores de caché hospedada. Los servidores de caché hospedada pueden ejecutar cargas de trabajo además de hospedar la memoria caché, lo que le permite usar el servidor para varios propósitos en la sucursal.
 
-Modo de caché hospedada de BranchCache aumenta la eficacia de la memoria caché porque el contenido está disponible incluso si el cliente que originalmente solicitó los datos almacenados en caché está desconectado. Dado que el servidor de caché hospedada está siempre disponible, se almacena más contenido en caché, lo cual ofrece más ahorro de ancho de banda WAN y se mejora la eficiencia de BranchCache.
+El modo caché hospedada de BranchCache aumenta la eficacia de la memoria caché porque el contenido está disponible incluso si el cliente que originalmente solicitó y almacenó en caché los datos está sin conexión. Dado que el servidor de caché hospedada está siempre disponible, se almacena más contenido en caché, lo cual ofrece más ahorro de ancho de banda WAN y se mejora la eficiencia de BranchCache.
 
-Al implementar el modo de caché hospedada, todos los clientes de una sucursal de varias subredes pueden tener acceso a una memoria caché única, que se almacena en el servidor de caché hospedada, incluso si los clientes están en subredes diferentes.
+Al implementar el modo caché hospedada, todos los clientes de una sucursal de varias subredes pueden acceder a una sola caché, que se almacena en el servidor de caché hospedada, incluso si los clientes se encuentran en subredes diferentes.
 
-Para obtener instrucciones sobre cómo implementar BranchCache en modo caché hospedada, consulte [modo de caché hospedada de BranchCache de implementar](bc-hcm/1-Deploy-Bc-Hcm.md).
+Para obtener instrucciones sobre cómo implementar BranchCache en modo caché hospedada, vea [implementar el modo caché hospedada de BranchCache](bc-hcm/1-Deploy-Bc-Hcm.md).

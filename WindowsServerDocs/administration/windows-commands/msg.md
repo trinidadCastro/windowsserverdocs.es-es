@@ -1,8 +1,8 @@
 ---
 title: msg
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68a393b57a255915b93759b4b26286ce4d838019
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 42a614f313d1e68dbf78d19a498563b541c52be1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437221"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373435"
 ---
 # <a name="msg"></a>msg
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Envía un mensaje a un usuario en un servidor Host de sesión de escritorio remoto (Host de sesión de rd).
-Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_examples).
+Envía un mensaje a un usuario en un servidor host de sesión de Escritorio remoto (host de sesión de escritorio remoto).
+Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para descubrir las novedades de la versión más reciente, consulte [novedades nuevos servicios de escritorio remoto en Windows Server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
+> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
 
 ## <a name="syntax"></a>Sintaxis
 ```
@@ -39,23 +39,23 @@ msg {<UserName> | <SessionName> | <SessionID>| @<FileName> | *} [/server:<Server
 |      Parámetro       |                                                                                                                               Descripción                                                                                                                               |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |      <UserName>      |                                                                                                  Especifica el nombre del usuario que desea recibir el mensaje.                                                                                                   |
-|    <SessionName>     |                                                                                                 Especifica el nombre de la sesión que desea recibir el mensaje.                                                                                                 |
-|     <SessionID>      |                                                                                            Especifica el identificador numérico de la sesión de usuario que desea recibir un mensaje.                                                                                            |
-|     @<FileName>      |                                                                         Identifica un archivo que contiene una lista de nombres de usuario, los nombres de sesión y los identificadores de sesión que desea recibir el mensaje.                                                                         |
-|          \*          |                                                                                                           Envía el mensaje a todos los nombres de usuario en el sistema.                                                                                                            |
-| /server:<ServerName> |                                              Especifica el servidor Host de sesión de escritorio remoto cuya sesión o usuario que desea recibir el mensaje. Si no se especifica, **/Server** usa el servidor al que han iniciado sesión.                                              |
-|   /Time:<Seconds>    | Especifica la cantidad de tiempo que se muestra el mensaje enviado en la pantalla del usuario. Cuando se alcanza el límite de tiempo, el mensaje desaparece. Si no se establece ningún límite de tiempo, el mensaje permanece en la pantalla del usuario hasta que el usuario verá el mensaje y hace clic en **Aceptar**. |
-|          /v          |                                                                                                         Muestra información sobre las acciones que se va a realizar.                                                                                                         |
-|          /w          |         Espera una confirmación del usuario que se ha recibido el mensaje. Use este parámetro con **/time:** <*segundos*> para evitar un retraso largo posible si el usuario no responde inmediatamente. Usa este parámetro con **/v** también es útil.          |
-|      <Message>       |                  Especifica el texto del mensaje que desea enviar. Si no se especifica ningún mensaje, se le pedirá que escriba un mensaje. Para enviar un mensaje que se encuentra en un archivo, escriba el símbolo menor que (<) seguido del nombre de archivo.                  |
+|    <SessionName>     |                                                                                                 Especifica el nombre de la sesión que desea que reciba el mensaje.                                                                                                 |
+|     <SessionID>      |                                                                                            Especifica el identificador numérico de la sesión cuyo usuario desea recibir un mensaje.                                                                                            |
+|     @<FileName>      |                                                                         Identifica un archivo que contiene una lista de nombres de usuario, nombres de sesión e identificadores de sesión que desea que reciban el mensaje.                                                                         |
+|          \*          |                                                                                                           Envía el mensaje a todos los nombres de usuario del sistema.                                                                                                            |
+| /server:<ServerName> |                                              Especifica el servidor host de sesión de escritorio remoto cuya sesión o usuario desea recibir el mensaje. Si no se especifica, **/Server** usa el servidor en el que ha iniciado sesión actualmente.                                              |
+|   /Time: <Seconds>    | Especifica la cantidad de tiempo que se muestra el mensaje enviado en la pantalla del usuario. Una vez alcanzado el límite de tiempo, el mensaje desaparece. Si no se establece ningún límite de tiempo, el mensaje permanece en la pantalla del usuario hasta que el usuario ve el mensaje y hace clic en **Aceptar**. |
+|          /v          |                                                                                                         Muestra información acerca de las acciones que se llevan a cabo.                                                                                                         |
+|          /w          |         Espera una confirmación del usuario de que se ha recibido el mensaje. Use este parámetro con **/Time:** <*segundos*> para evitar un posible retraso largo si el usuario no responde inmediatamente. También es útil usar este parámetro con **/v** .          |
+|      <Message>       |                  Especifica el texto del mensaje que desea enviar. Si no se especifica ningún mensaje, se le pedirá que escriba un mensaje. Para enviar un mensaje incluido en un archivo, escriba el símbolo menor que (<) seguido del nombre de archivo.                  |
 |          /?          |                                                                                                                  Muestra la ayuda en el símbolo del sistema.                                                                                                                   |
 
 ## <a name="remarks"></a>Comentarios
--   Si no especifica un usuario o una sesión, **msg** muestra un mensaje de error. Al especificar una sesión, debe ser uno activo.
--   El usuario debe tener permiso de acceso especial mensaje para enviar un mensaje.
+-   Si no especifica un usuario o una sesión, **MSG** muestra un mensaje de error. Al especificar una sesión, debe ser una activa.
+-   El usuario debe tener el permiso de acceso especial de mensaje para enviar un mensaje.
 
-## <a name="BKMK_examples"></a>Ejemplos
--   Para enviar que el mensaje titulado "Quedemos hoy a la 1 P.M." a todas las sesiones de User1, escriba:
+## <a name="BKMK_examples"></a>Example
+-   Para enviar el mensaje titulado "vamos a reunirse a las 13:00 hoy" a todas las sesiones de user1, escriba:
     ```
     msg User1 Let's meet at 1PM today
     ```
@@ -82,4 +82,4 @@ msg {<UserName> | <SessionName> | <SessionID>| @<FileName> | *} [/server:<Server
 
 #### <a name="additional-references"></a>Referencias adicionales
 -  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
--  [Servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia del comando](remote-desktop-services-terminal-services-command-reference.md)
+-  [Referencia &#40;de&#41; comandos de Terminal Services de servicios de escritorio remoto](remote-desktop-services-terminal-services-command-reference.md)

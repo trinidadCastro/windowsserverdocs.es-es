@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 9e3a5cc2c71455bb040f1311bdbfed1ac7e213fb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e1018d5bbff5922df5a696e5c4fad12dc9f6ec3d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832236"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408572"
 ---
 # <a name="virtualized-domain-controller-technical-reference-appendix"></a>Apéndice de la referencia técnica de controladores de dominio virtualizados
 
@@ -24,27 +24,27 @@ En esta sección se tratan los siguientes temas:
   
 -   [Terminología](../../../ad-ds/reference/virtual-dc/../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_Terms)  
   
--   [FixVDCPermissions.ps1](../../../ad-ds/reference/virtual-dc/../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms)  
+-   [FixVDCPermissions. ps1](../../../ad-ds/reference/virtual-dc/../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms)  
   
 ## <a name="BKMK_Terms"></a>Terminología  
   
--   **Instantánea** : el estado de una máquina virtual en un momento determinado. Es dependiente de la cadena de las instantáneas anteriores realizadas, en el hardware y en la plataforma de virtualización.  
+-   **Instantánea** : el estado de una máquina virtual en un momento determinado. Depende de la cadena de instantáneas anteriores tomada, en el hardware y en la plataforma de virtualización.  
   
--   **Clon** - A completar y separar la copia de una máquina virtual. Depende en el hardware (hipervisor).  
+-   **Clone** : una copia completa y independiente de una máquina virtual. Depende del hardware virtual (hipervisor).  
   
--   **Completa la clonación** -un clon completo es una copia independiente de una máquina virtual que no comparte ningún recurso con la máquina virtual principal después de la operación de clonación. Operación en curso de un clon completo es completamente independiente de la máquina virtual principal.  
+-   **Clon completo** : un clon completo es una copia independiente de una máquina virtual que no comparte recursos con la máquina virtual principal después de la operación de clonación. El funcionamiento continuo de un clon completo es completamente independiente de la máquina virtual principal.  
   
--   **Disco de diferenciación** -una copia de una máquina virtual que comparte los discos virtuales con la máquina virtual principal en un modo continuo. Normalmente, esto ahorra espacio en disco y permite que varias máquinas virtuales usar la misma instalación de software.  
+-   **Disco de diferenciación** : una copia de una máquina virtual que comparte discos virtuales con la máquina virtual principal de manera continua. Normalmente, esto ahorra espacio en disco y permite que varias máquinas virtuales usen la misma instalación de software.  
   
--   **Copia de la máquina virtual**- un archivo de copia de todos los archivos relacionados del sistema y las carpetas de una máquina virtual.  
+-   **Copia de máquina virtual**: una copia del sistema de archivos de todos los archivos y carpetas relacionados de una máquina virtual.  
   
--   **Copia de archivos de disco duro virtual** -una copia del VHD de una máquina virtual  
+-   **Copia de archivo VHD** : una copia del VHD de una máquina virtual  
   
--   **Id. de generación de VM** : un entero de 128 bits asignada a la máquina virtual por el hipervisor. Este identificador se almacena en memoria y restablece cada vez que se aplica una instantánea. Este diseño utiliza un mecanismo independiente del hipervisor para exponer el identificador de generación de VM en la máquina virtual. La implementación de Hyper-V expone el identificador de la tabla ACPI de la máquina virtual.  
+-   **Identificador de generación de VM** : entero de 128 bits proporcionado a la máquina virtual por el hipervisor. Este identificador se almacena en memoria y se restablece cada vez que se aplica una instantánea. El diseño usa un mecanismo independiente del hipervisor para exponer el identificador de generación de VM en la máquina virtual. La implementación de Hyper-V expone el identificador en la tabla ACPI de la máquina virtual.  
   
--   **Import/Export** -característica A Hyper-V que permite al usuario guardar la máquina virtual completa (archivos VM, disco duro virtual y la configuración del equipo). Permite que los usuarios usando ese conjunto de archivos para poner el equipo en el mismo equipo que la misma máquina virtual (restauración), a continuación, en un equipo diferente, como la misma máquina virtual (mover) o una nueva máquina virtual (copia)  
+-   **Import/Export** : una característica de Hyper-V que permite al usuario guardar la máquina virtual completa (archivos de VM, VHD y la configuración de la máquina). Después, permite a los usuarios usar ese conjunto de archivos para volver a poner la máquina en el mismo equipo que la misma máquina virtual (restauración), en otro equipo como la misma máquina virtual (movimiento) o en una nueva máquina virtual (copiar).  
   
-## <a name="BKMK_FixPDCPerms"></a>FixVDCPermissions.ps1  
+## <a name="BKMK_FixPDCPerms"></a>FixVDCPermissions. ps1  
   
 ```  
 # Unsigned script, requires use of set-executionpolicy remotesigned -force  

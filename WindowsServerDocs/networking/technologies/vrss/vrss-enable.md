@@ -1,7 +1,7 @@
 ---
-title: Habilite vRSS en un adaptador de red Virtual
-description: En este tema, aprenderá a habilitar vRSS en Windows Server mediante el Administrador de dispositivos o Windows PowerShell.
-ms.prod: windows-server-threshold
+title: Habilitar vRSS en un adaptador de Virtual Network
+description: En este tema, aprenderá a habilitar vRSS en Windows Server mediante Device Manager o Windows PowerShell.
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: cb48315c-0204-4927-aa24-64f6789c2e20
@@ -10,63 +10,63 @@ ms.localizationpriority: medium
 ms.date: 09/05/2018
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 19e8011fb98b84c20e8237792664551d2362d589
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8f2886f01e4835cf2edb86fcae0a1fe77bc03d25
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882686"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405254"
 ---
-# <a name="enable-vrss-on-a-virtual-network-adapter"></a>Habilite vRSS en un adaptador de red Virtual
+# <a name="enable-vrss-on-a-virtual-network-adapter"></a>Habilitar vRSS en un adaptador de Virtual Network
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-RSS virtual \(vRSS\) requiere Virtual Machine Queue \(VMQ\) admite el adaptador físico. Si VMQ está deshabilitado o no se admite, ajuste de escala en lado de recepción Virtual se deshabilita. 
+RSS virtual \(vRSS @ no__t-1 requiere la compatibilidad con Virtual Machine Queue \(VMQ @ no__t-3 del adaptador físico. Si VMQ está deshabilitado o no se admite, se deshabilita el ajuste de escala en lado de recepción virtual. 
 
 Para obtener más información, consulte [planear el uso de vRSS](vrss-plan.md).
 
-## <a name="enable-vrss-on-a-vm"></a>Habilite vRSS en una máquina virtual
+## <a name="enable-vrss-on-a-vm"></a>Habilitación de vRSS en una máquina virtual
  
-Use los procedimientos siguientes para habilitar vRSS mediante Windows PowerShell o el Administrador de dispositivos.
+Use los procedimientos siguientes para habilitar vRSS mediante Windows PowerShell o Device Manager.
 
 -   Administrador de dispositivos
 -   Windows PowerShell
   
 ### <a name="device-manager"></a>Administrador de dispositivos
 
-Puede usar este procedimiento para habilitar vRSS mediante el Administrador de dispositivos.
+Puede usar este procedimiento para habilitar vRSS mediante Device Manager.
 
 >[!NOTE]
->El primer paso en este procedimiento es específico para las máquinas virtuales que ejecutan Windows 10 o Windows Server 2016. Si la máquina virtual se está ejecutando un sistema operativo diferente, puede abrir el Administrador de dispositivos por primera abrir Panel de Control, a continuación, buscar y abrir el Administrador de dispositivos.
+>El primer paso de este procedimiento es específico de las máquinas virtuales que ejecutan Windows 10 o Windows Server 2016. Si la máquina virtual ejecuta un sistema operativo diferente, puede abrir Device Manager abriendo primero el panel de control y localizando y abriendo Device Manager.
   
-1.  En la barra de tareas de máquina virtual, en **escriba aquí para buscar**, tipo **dispositivo**. 
+1.  En la barra de tareas de la máquina virtual, en **Escriba aquí para buscar**, escriba **dispositivo**. 
 
-2.  En los resultados de búsqueda, haga clic en **Device Manager**.
+2.  En los resultados de la búsqueda, haga clic en **Device Manager**.
 
-3.  En el Administrador de dispositivos, haga clic para expandir **adaptadores de red**. 
+3.  En Device Manager, haga clic para expandir **adaptadores de red**. 
 
-4.  Haga clic en el adaptador de red que desea configurar y, a continuación, haga clic en **propiedades**.<p>El adaptador de red **propiedades** abre el cuadro de diálogo.
+4.  Haga clic con el botón secundario en el adaptador de red que desea configurar y, a continuación, haga clic en **propiedades**.<p>Se abrirá el cuadro de diálogo **propiedades** de adaptador de red.
 
-5.  En el adaptador de red **propiedades**, haga clic en el **avanzadas** ficha. 
+5.  En **propiedades**de adaptador de red, haga clic en la pestaña **Opciones avanzadas** . 
 
-6.  En **propiedad**, desplácese hacia abajo y haga clic en **ajuste de escala en lado de recepción**. 
+6.  En **propiedad**, desplácese hacia abajo hasta y haga clic en **ajuste de escala en lado de recepción**. 
 
-7.  Asegúrese de que la selección en **valor** es **habilitado**. 
+7.  Asegúrese de que la selección de **valor** está **habilitada**. 
 
 8.  Haga clic en **Aceptar**.
   
 > [!NOTE]
-> En el **avanzadas** ficha, algunos adaptadores de red también muestran el número de colas RSS que son compatibles con el adaptador.
+> En la pestaña **Opciones avanzadas** , algunos adaptadores de red también muestran el número de colas RSS que admite el adaptador.
 
 ---
 
 ### <a name="windows-powershell"></a>Windows PowerShell
 
-Utilice el procedimiento siguiente para habilitar vRSS mediante Windows PowerShell.
+Use el procedimiento siguiente para habilitar vRSS mediante Windows PowerShell.
 
-1. En la máquina virtual, abra **Windows PowerShell**.
+1. En la máquina virtual, Abra **Windows PowerShell**.
 
-2. Escriba el siguiente comando, lo que garantiza que reemplace el *AdapterName* valor para el **-nombre** parámetro con el nombre del adaptador de red que desea configurar y, a continuación, presione ENTRAR. 
+2. Escriba el siguiente comando, asegurándose de reemplazar el valor de *AdapterName* para el parámetro **-Name** por el nombre del adaptador de red que desea configurar y, a continuación, presione Entrar. 
   
    ```PowerShell
    Enable-NetAdapterRSS -Name "AdapterName"
@@ -78,6 +78,6 @@ Utilice el procedimiento siguiente para habilitar vRSS mediante Windows PowerShe
    >Set-NetAdapterRSS -Name "AdapterName" -Enabled $True  
    >```
 
-Para obtener más información, consulte [comandos de Windows PowerShell para RSS y vRSS](vrss-wps.md).
+Para obtener más información, vea [comandos de Windows PowerShell para RSS y vRSS](vrss-wps.md).
 
 ---

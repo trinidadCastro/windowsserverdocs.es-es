@@ -1,8 +1,8 @@
 ---
 title: goto
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f1ad0190519d58bd879ae391f378d800760c204f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1caf3da3e8b873150af5be7ed8316cfcb526db83
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857536"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375693"
 ---
 # <a name="goto"></a>goto
 
 
 
-Dirige cmd.exe a una línea de un programa por lotes. Dentro de un programa por lotes, **goto** dirige el procesamiento de comandos en una línea que se identifica mediante una etiqueta. Cuando se encuentra la etiqueta, el procesamiento continúa a partir de los comandos que comienzan en la línea siguiente.
+Dirige cmd. exe a una línea etiquetada en un programa por lotes. En un programa por lotes, **goto** dirige el procesamiento de comandos a una línea identificada por una etiqueta. Cuando se encuentra la etiqueta, el procesamiento continúa a partir de los comandos que comienzan en la línea siguiente.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,33 +38,33 @@ goto <Label>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<Etiqueta >|Especifica una cadena de texto que se usa como una etiqueta en el programa por lotes.|
+|@no__t 0Label >|Especifica una cadena de texto que se utiliza como etiqueta en el programa por lotes.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Trabajar con las extensiones de comando
+-   Trabajar con extensiones de comandos
 
-    Si las extensiones de comando son habilitado (valor predeterminado), y usar el **goto** comando con una etiqueta de destino **: EOF**, transferir el control al final del archivo de script por lotes actual y salir del archivo de script por lotes sin definir una etiqueta. Cuando usas **goto** con el **: EOF** etiqueta, debe insertar un signo de dos puntos antes de la etiqueta. Por ejemplo:  
+    Si las extensiones de comando están habilitadas (el valor predeterminado) y se usa el comando **goto** con una etiqueta de destino de **: EOF**, se transfiere el control al final del archivo de script por lotes actual y se sale del archivo de script por lotes sin definir una etiqueta. Cuando use **goto** con la etiqueta **: EOF** , debe insertar un signo de dos puntos delante de la etiqueta. Por ejemplo:  
     ```
     goto:EOF
     ```  
--   Uso válido *etiqueta* valores
+-   Usar valores de *etiqueta* válidos
 
-    Puede usar espacios en el *etiqueta* parámetro, pero no puede incluir otros separadores (por ejemplo, punto y coma o signos igual).
--   Coincidencia *etiqueta* con la etiqueta en el programa por lotes
+    Puede usar espacios en el parámetro de *etiqueta* , pero no puede incluir otros separadores (por ejemplo, signos de punto y coma o signo igual).
+-   *Etiqueta* coincidente con la etiqueta en el programa por lotes
 
-    El *etiqueta* valor que especifique debe coincidir con una etiqueta en el programa por lotes. La etiqueta dentro del programa por lotes debe comenzar con un signo de dos puntos (:). Si una línea comienza con un signo de dos puntos, se trata como una etiqueta y se omiten los comandos en esa línea. Si el programa por lotes no contiene la etiqueta que especifique en *etiqueta*, el programa por lotes se detiene y se muestra el mensaje siguiente:  
+    El valor de *etiqueta* que especifique debe coincidir con una etiqueta en el programa por lotes. La etiqueta del programa por lotes debe comenzar con dos puntos (:). Si una línea comienza con un signo de dos puntos, se trata como una etiqueta y se omiten los comandos de esa línea. Si el programa por lotes no contiene la etiqueta que se especifica en la *etiqueta*, el programa por lotes se detiene y muestra el mensaje siguiente:  
     ```
     Label not found
     ```  
--   Uso de **goto** para operaciones condicionales
+-   Usar **goto** para operaciones condicionales
 
-    Puede usar **goto** con otros comandos para realizar operaciones condicionales. Para obtener más información sobre el uso de **goto** para operaciones condicionales, consulte el [si](if.md) referencia del comando.
+    Puede usar **goto** con otros comandos para realizar operaciones condicionales. Para obtener más información sobre el uso de **goto** para las operaciones condicionales, vea la referencia del comando [If](if.md) .
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El siguiente programa por lotes da formato a un disco de la unidad como un disco del sistema. Si la operación se realiza correctamente, el **goto** comando dirige el procesamiento a la **: final** etiqueta:
+El siguiente programa por lotes da formato a un disco de la unidad A como un disco del sistema. Si la operación se realiza correctamente, el comando **goto** dirige el procesamiento a la etiqueta **: end** :
 ```
 echo off
 format a: /s
@@ -80,4 +80,4 @@ echo End of batch program.
 
 [Cmd](cmd.md)
 
-[If](if.md)
+[Cuando](if.md)

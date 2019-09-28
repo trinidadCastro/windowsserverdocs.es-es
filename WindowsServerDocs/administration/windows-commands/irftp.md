@@ -1,8 +1,8 @@
 ---
 title: irftp
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d469270b744a9de881efd9b0cfa6f1105f70519a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ad8a0b9b49d90223f830081f5a99c40995d9e4ef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848426"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375365"
 ---
 # <a name="irftp"></a>irftp
 
@@ -33,17 +33,17 @@ irftp [<Drive>:\] [[<path>] <FileName>] [/h][/s]
 ### <a name="parameters"></a>Parámetros  
 |Parámetro|Descripción|  
 |-------|--------|  
-|Unidad:\|especifica la unidad que contiene los archivos que desea enviar a través de un vínculo de infrarrojos.|  
-|[path]FileName|Especifica la ubicación y el nombre del archivo o conjunto de archivos que desea enviar a través de un vínculo de infrarrojos. Si especifica un conjunto de archivos, debe especificar la ruta de acceso completa para cada archivo.|  
-|/h|Especifica el modo oculto. Cuando se utiliza el modo oculto, los archivos se envían sin mostrar el cuadro de diálogo de vínculo inalámbrico.|  
-|/s|Abre el cuadro de diálogo vínculo inalámbrico, por lo que puede seleccionar el archivo o conjunto de archivos que desea enviar sin usar la línea de comandos para especificar la unidad, ruta de acceso y nombres de archivo.|  
+|Unidad: @no__t 0Specifies la unidad que contiene los archivos que desea enviar a través de un vínculo de infrarrojos.|  
+|camino Extensión|Especifica la ubicación y el nombre del archivo o conjunto de archivos que desea enviar a través de un vínculo de infrarrojos. Si especifica un conjunto de archivos, debe especificar la ruta de acceso completa para cada archivo.|  
+|/h|Especifica el modo oculto. Cuando se utiliza el modo oculto, los archivos se envían sin mostrar el cuadro de diálogo vínculo inalámbrico.|  
+|/s|Abre el cuadro de diálogo vínculo inalámbrico, de modo que puede seleccionar el archivo o el conjunto de archivos que desea enviar sin utilizar la línea de comandos para especificar la unidad, la ruta de acceso y los nombres de archivo.|  
 
 ## <a name="remarks"></a>Comentarios  
--   Antes de usar este comando, compruebe que los dispositivos que desea comunicarse a través de un vínculo de infrarrojos tienen habilitada la funcionalidad de infrarrojos y funciona correctamente y que se ha establecido un vínculo infrarrojo entre los dispositivos.  
--   Utilizado sin parámetros o con **/s**, **irftp** abre el **vínculo inalámbrico** cuadro de diálogo donde puede seleccionar los archivos que desea enviar sin usar la línea de comandos.  
+-   Antes de utilizar este comando, compruebe que los dispositivos que desea comunicar a través de un vínculo de infrarrojos tienen la funcionalidad de infrarrojos habilitada y funciona correctamente, y que se ha establecido un vínculo de infrarrojos entre los dispositivos.  
+-   Si se usa sin parámetros o se usa con **/s**, **irftp** abre el cuadro de diálogo **vínculo inalámbrico** , donde puede seleccionar los archivos que desea enviar sin utilizar la línea de comandos.  
 
-## <a name="BKMK_Examples"></a>Ejemplos  
-Enviar Example.txt a través del vínculo infrarrojos.  
+## <a name="BKMK_Examples"></a>Example  
+Envíe el ejemplo. txt sobre el vínculo de infrarrojos.  
 ```  
 irftp c:\example.txt  
 ```  

@@ -3,7 +3,7 @@ title: Planeación de una infraestructura de red definida por software
 description: En este tema se proporciona información sobre cómo planear la implementación de la infraestructura de red definida por software (SDN).
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.service: virtual-network
 ms.suite: na
@@ -14,12 +14,12 @@ ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
 ms.author: pashort
 author: shortpatti
 ms.date: 08/10/2018
-ms.openlocfilehash: e2c125867b461cee9f694849db5c8f61be91211d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ed2dc8861366b929de346d5bd5b3d40998cc8dd5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869945"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355790"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>Planeación de una infraestructura de red definida por software
 
@@ -91,14 +91,14 @@ Es necesario crear y aprovisionar redes lógicas adicionales para el uso de la p
 Cambie los prefijos de subred IP de ejemplo y los identificadores de VLAN para su entorno. 
 
 
-| **Nombre de red** |  **Subred**  | **Máscara** | **IDENTIFICADOR de VLAN en camión** | **Puerta**  |                                                           **Reservas (ejemplos)**                                                           |
+| **Nombre de red** |  **ID**  | **Máscara** | **IDENTIFICADOR de VLAN en camión** | **Puerta**  |                                                           **Reservas (ejemplos)**                                                           |
 |------------------|--------------|----------|----------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-|    Administración    | 10.184.108.0 |    24    |          7           | 10.184.108.1 | 10.184.108.1 – router 10.184.108.4-10.184.108.10 de la controladora de red-Compute host 110.184.108.11-Compute host 210.184.108. X-Compute host X |
+|    Management    | 10.184.108.0 |    24    |          7           | 10.184.108.1 | 10.184.108.1 – router 10.184.108.4-10.184.108.10 de la controladora de red-Compute host 110.184.108.11-Compute host 210.184.108. X-Compute host X |
 |   Proveedor HNV   |  10.10.56.0  |    23    |          11          |  10.10.56.1  |                                                    10.10.56.1: enrutador 10.10.56.2-SLB/MUX1                                                     |
 |     Tránsito      |  red 10.10.10.0  |    24    |          10          |  10.10.10.1  |                                                               10.10.10.1: enrutador                                                               |
-|    VIP pública    |  41.40.40.0  |    27    |          N/D          |  41.40.40.1  |                                    41.40.40.1 – router 41.40.40.2-SLB/MUX VIP 41.40.40.3-IPSec S2S VPN VIP                                    |
-|   VIP privada    |  20.20.20.0  |    27    |          N/D          |  20.20.20.1  |                                                        20.20.20.1: GW predeterminado (enrutador)                                                         |
-|     VIP GRE      |  31.30.30.0  |    24    |          N/D          |  31.30.30.1  |                                                             31.30.30.1: GW predeterminado                                                             |
+|    VIP pública    |  41.40.40.0  |    27    |          N/A          |  41.40.40.1  |                                    41.40.40.1 – router 41.40.40.2-SLB/MUX VIP 41.40.40.3-IPSec S2S VPN VIP                                    |
+|   VIP privada    |  20.20.20.0  |    27    |          N/A          |  20.20.20.1  |                                                        20.20.20.1: GW predeterminado (enrutador)                                                         |
+|     VIP GRE      |  31.30.30.0  |    24    |          N/A          |  31.30.30.1  |                                                             31.30.30.1: GW predeterminado                                                             |
 
 ---
 
@@ -109,7 +109,7 @@ Si usa el almacenamiento basado en RDMA, defina una VLAN y una subred para cada 
 >[!IMPORTANT]
 >Para que la calidad de servicio (QoS) se aplique correctamente, los conmutadores físicos requieren una VLAN etiquetada para el tráfico RDMA.
 
-| **Nombre de red** |  **Subred**  | **Máscara** | **IDENTIFICADOR de VLAN en camión** | **Puerta**  |                                                           **Reservas (ejemplos)**                                                            |
+| **Nombre de red** |  **ID**  | **Máscara** | **IDENTIFICADOR de VLAN en camión** | **Puerta**  |                                                           **Reservas (ejemplos)**                                                            |
 |------------------|--------------|----------|----------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
 |     storage1     |  10.60.36.0  |    25    |          8           |  10.60.36.1  |  10.60.36.1: enrutador<p>10.60.36. x: host de proceso X<p>10.60.36. y-compute host Y<p>10.60.36. V: clúster de proceso<p>10.60.36. W: clúster de almacenamiento  |
 |     storage2     | 10.60.36.128 |    25    |          9           | 10.60.36.129 | 10.60.36.129: enrutador<p>10.60.36. x: host de proceso X<p>10.60.36. y-compute host Y<p>10.60.36. V: clúster de proceso<p>10.60.36. W: clúster de almacenamiento |
@@ -225,7 +225,7 @@ Tanto la infraestructura como las máquinas virtuales de inquilino se pueden red
 Para ayudar a configurar el conmutador físico o enrutador, hay disponible un conjunto de archivos de configuración de ejemplo para una variedad de proveedores y modelos de conmutadores en el [repositorio de github de SDN de Microsoft](https://github.com/microsoft/SDN/tree/master/SwitchConfigExamples). Se proporciona un archivo Léame detallado y comandos de la interfaz de la línea de comandos (CLI) probados para conmutadores específicos.         
 
 
-## <a name="compute"></a>Proceso  
+## <a name="compute"></a>Cálculo  
 Todos los hosts de Hyper-V deben tener instalado Windows Server 2016, Hyper-V habilitado y un conmutador virtual externo de Hyper-V creado con al menos un adaptador físico conectado a la red lógica de administración. El host debe ser accesible a través de una dirección IP de administración asignada al host de administración vNIC.  
 
 Se puede usar cualquier tipo de almacenamiento que sea compatible con Hyper-V, compartido o local.   

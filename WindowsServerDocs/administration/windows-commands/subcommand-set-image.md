@@ -1,8 +1,8 @@
 ---
-title: Subcomando Establecer imagen
-description: 'Tema de los comandos de Windows para ***- '
+title: 'Conjunto de subcomandos: imagen'
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e63c67210764de76edae18a1897a68d763f9d695
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4584bd6253b1991aba7e87fc42ff484101681081
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856486"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383857"
 ---
 # <a name="subcommand-set-image"></a>Subcomando: set-Image
 
@@ -26,12 +26,12 @@ ms.locfileid: "59856486"
 
 cambia los atributos de una imagen.
 ## <a name="syntax"></a>Sintaxis
-para las imágenes de arranque:
+para imágenes de arranque:
 ```
 wdsutil /Set-Imagmedia:<Image name> [/Server:<Server name>mediatype:Boot /Architecture:{x86 | ia64 | x64} [/Filename:<File name>] [/Name:<Name>] 
 [/Description:<Description>] [/Enabled:{Yes | No}]
 ```
-las imágenes de instalación:
+para imágenes de instalación:
 ```
 wdsutil /Set-Imagmedia:<Image name> [/Server:<Server name>]
    mediatype:InstallmediaGroup:<Image group name>]
@@ -46,19 +46,19 @@ wdsutil /Set-Imagmedia:<Image name> [/Server:<Server name>]
 ## <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-Medio:<Image name>|Especifica el nombre de la imagen.|
-|[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se usará el servidor local.|
-tipo de medio: {arranque &#124; instalar}|Especifica el tipo de imagen.|
-|/ Arquitectura: {x86 &#124; ia64 &#124; x64}|Especifica la arquitectura de la imagen. Dado que puede tener el mismo nombre de imagen para las imágenes de arranque diferentes en distintas arquitecturas, especificando la arquitectura garantiza que se modifica la imagen correcta.|
-|[/Filename:<File name>]|Si la imagen no se identifica por nombre, debe usar esta opción para especificar el nombre de archivo.|
-|/ [Name]|Especifica el nombre de la imagen.|
-|[/ Descripción:<Description>]|Establece la descripción de la imagen.|
-|[/ Enabled: {Sí &#124; n}]|Habilita o deshabilita la imagen.|
-|\mediaGroup:<Image group name>]|Especifica el grupo de imágenes que contiene la imagen. Si se especifica ningún nombre de grupo de imágenes y grupo de solo imágenes existe en el servidor, se usará ese grupo de imágenes. Si existe más de un grupo de imágenes en el servidor, debe usar esta opción para especificar el grupo de imágenes.|
-|[/ UserFilter:<SDDL>]|Establece el filtro de usuarios en la imagen. La cadena de filtro debe estar en formato de lenguaje de definición de descriptores de seguridad (SDDL). Tenga en cuenta que, a diferencia de la **/seguridad** opción para los grupos de la imagen, esta opción solamente restringe quién puede ver la definición de la imagen y no los recursos de archivo de imagen real. Para restringir el acceso a los recursos de archivo y, por lo tanto, tener acceso a todas las imágenes dentro de un grupo de imágenes, deberá establecer la seguridad para el grupo de imágenes propio.|
-|[/UnattendFile:<Unattend file path>]|Establece la ruta de acceso completa al archivo de instalación desatendida que se asociará con la imagen. Por ejemplo: **D:\Files\Unattend\Img1Unattend.xml**|
-|[/OverwriteUnattend:{Yes &#124; No}]|Puede especificar **/Overwrite** para sobrescribir el archivo de instalación desatendida si ya existe un archivo de instalación desatendida asociado a la imagen. Tenga en cuenta que el valor predeterminado es **No**.|
-## <a name="BKMK_examples"></a>Ejemplos
+medios: <Image name>|Especifica el nombre de la imagen.|
+|[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local.|
+mediatype: {boot &#124; install}|Especifica el tipo de imagen.|
+|/Architecture: {x86 &#124; ia64 &#124; x64}|Especifica la arquitectura de la imagen. Dado que puede tener el mismo nombre de imagen para imágenes de arranque diferentes en distintas arquitecturas, la especificación de la arquitectura garantiza que se modifique la imagen correcta.|
+|[/Filename:<File name>]|Si la imagen no se puede identificar de forma única por nombre, debe usar esta opción para especificar el nombre de archivo.|
+|/Name|Especifica el nombre de la imagen.|
+|/Description<Description>]|Establece la descripción de la imagen.|
+|[/Enabled: {Yes &#124; no}]|Habilita o deshabilita la imagen.|
+|\mediaGroup: <Image group name>]|Especifica el grupo de imágenes que contiene la imagen. Si no se especifica ningún nombre de grupo de imágenes y solo existe un grupo de imágenes en el servidor, se utilizará ese grupo de imágenes. Si existe más de un grupo de imágenes en el servidor, debe usar esta opción para especificar el grupo de imágenes.|
+|[/UserFilter: <SDDL>]|Establece el filtro de usuario en la imagen. La cadena de filtro debe estar en el formato de lenguaje de definición de descriptores de seguridad (SDDL). Tenga en cuenta que, a diferencia de la opción **/Security** para los grupos de imágenes, esta opción solo restringe quién puede ver la definición de la imagen y no los recursos de archivos de imagen reales. Para restringir el acceso a los recursos de archivo y, por lo tanto, el acceso a todas las imágenes de un grupo de imágenes, deberá establecer la seguridad para el grupo de imágenes.|
+|[/UnattendFile:<Unattend file path>]|Establece la ruta de acceso completa al archivo de instalación desatendida que se va a asociar a la imagen. Por ejemplo: **D:\Files\Unattend\Img1Unattend.xml**|
+|[/OverwriteUnattend: {Yes &#124; no}]|Puede especificar **/overwrite** para sobrescribir el archivo de instalación desatendida si ya existe un archivo de instalación desatendida asociado a la imagen. Tenga en cuenta que el valor predeterminado es **no**.|
+## <a name="BKMK_examples"></a>Example
 Para establecer los valores de una imagen de arranque, escriba uno de los siguientes:
 ```
 wdsutil /Set-Imagmedia:"WinPE boot imagemediatype:Boot /Architecture:x86 /Description:"New description"
@@ -73,9 +73,8 @@ wdsutil /verbose /Set-Imagmedia:"Windows Vista with Office" /Server:MyWDSServeme
 ```
 #### <a name="additional-references"></a>Referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[mediante el comando add-Image](using-the-add-image-command.md)
-[mediante el comando de Copiar imagen](using-the-copy-image-command.md)
-[mediante el Comando de Export-Image](using-the-export-image-command.md)
-[mediante el comando get-Image](using-the-get-image-command.md)
-[mediante el comando remove-Image](using-the-remove-image-command.md) 
- [ Con la imagen de reemplazar comandos](using-the-replace-image-command.md)
+[con el comando add-Image](using-the-add-image-command.md)
+[mediante el comando copy-Image](using-the-copy-image-command.md)
+[mediante el comando export-Image](using-the-export-image-command.md)
+[mediante el comando Get-Image](using-the-get-image-command.md)
+ mediante el comando[ Comando Remove-image](using-the-remove-image-command.md)1[mediante el comando Replace-Image](using-the-replace-image-command.md)

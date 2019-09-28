@@ -1,8 +1,8 @@
 ---
 title: change logon
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45c171a1b14cf69abf039d57697cad933a2dd87b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c04eaffe366dce079aed53351589c1b5026954e3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434568"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379643"
 ---
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 # <a name="change-logon"></a>change logon
-Habilita o deshabilita los inicios de sesión de sesiones de cliente o muestra el estado de inicio de sesión actual.
+Habilita o deshabilita los inicios de sesión de las sesiones de cliente o muestra el estado de inicio de sesión actual.
 Esta utilidad es útil para el mantenimiento del sistema.
-Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_examples).
+Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para descubrir las novedades de la versión más reciente, consulte [novedades nuevos servicios de escritorio remoto en Windows Server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
+> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
 > ## <a name="syntax"></a>Sintaxis
 > ```
 > change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
@@ -36,22 +36,22 @@ Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_exam
 > 
 > |     Parámetro      |                                                       Descripción                                                        |
 > |--------------------|--------------------------------------------------------------------------------------------------------------------------|
-> |       /query       |                             Muestra el estado de inicio de sesión actual, habilitado o deshabilitado.                              |
-> |      /enable       |                              Permite a los inicios de sesión desde las sesiones de cliente, pero no desde la consola.                              |
-> |      /Disable      |  Deshabilita los inicios de sesión posteriores desde sesiones de cliente, pero no desde la consola. No afecta a los usuarios ha iniciado sesión actualmente.   |
-> |       /drain       |                 Deshabilita los inicios de sesión de nuevas sesiones de cliente, pero permite las reconexiones a las sesiones existentes.                 |
-> | /drainuntilrestart | Deshabilita los inicios de sesión de nuevas sesiones de cliente hasta que se reinicie el equipo, pero permite las reconexiones a las sesiones existentes. |
+> |       /Query       |                             Muestra el estado de inicio de sesión actual, si está habilitado o deshabilitado.                              |
+> |      /Enable       |                              Habilita los inicios de sesión desde las sesiones de cliente, pero no desde la consola.                              |
+> |      /Disable      |  Deshabilita los inicios de sesión posteriores de las sesiones de cliente, pero no de la consola. No afecta a los usuarios que han iniciado sesión actualmente.   |
+> |       /drain       |                 Deshabilita los inicios de sesión de las nuevas sesiones de cliente, pero permite las reconexiones a las sesiones existentes.                 |
+> | /drainuntilrestart | Deshabilita los inicios de sesión de nuevas sesiones de cliente hasta que se reinicia el equipo, pero permite las reconexiones a las sesiones existentes. |
 > |         /?         |                                           Muestra la ayuda en el símbolo del sistema.                                           |
 > 
 > ## <a name="remarks"></a>Comentarios
-> - Solo los administradores pueden usar el **Cambiar inicio de sesión** comando.
-> - Los inicios de sesión se vuelven a habilitar al reiniciar el sistema. Si están conectados al servidor Host de sesión de escritorio remoto (Host de sesión de rd) desde una sesión de cliente y deshabilitar los inicios de sesión y, a continuación, cierre la sesión antes de volver a habilitar los inicios de sesión, no podrá volver a conectarse a la sesión. Para volver a habilitar los inicios de sesión de sesiones de cliente, inicie sesión en la consola.
->   ## <a name="BKMK_examples"></a>Ejemplos
-> - Para mostrar el estado actual del inicio de sesión, escriba:
+> - Solo los administradores pueden usar el comando **cambiar inicio de sesión** .
+> - Los inicios de sesión se vuelven a habilitar al reiniciar el sistema. Si está conectado al servidor de host de sesión de Escritorio remoto (host de sesión de escritorio remoto) desde una sesión de cliente y deshabilita los inicios de sesión, y cierra la sesión antes de volver a habilitar los inicios de sesión, no podrá volver a conectarse a la sesión. Para volver a habilitar los inicios de sesión desde las sesiones de cliente, inicie sesión en la consola de.
+>   ## <a name="BKMK_examples"></a>Example
+> - Para mostrar el estado de inicio de sesión actual, escriba:
 >   ```
 >   change logon /query
 >   ```
-> - Para habilitar los inicios de sesión de sesiones de cliente, escriba:
+> - Para habilitar los inicios de sesión desde las sesiones de cliente, escriba:
 >   ```
 >   change logon /enable
 >   ```
@@ -62,4 +62,4 @@ Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_exam
 >   #### <a name="additional-references"></a>Referencias adicionales
 >   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 >   [cambiar](change.md)
->   [servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia de comandos](remote-desktop-services-terminal-services-command-reference.md)
+>   [servicios de escritorio remoto &#40;referencia de comandos&#41; Terminal Services](remote-desktop-services-terminal-services-command-reference.md)

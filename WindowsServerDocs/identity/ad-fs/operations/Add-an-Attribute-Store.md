@@ -7,44 +7,44 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8d3027c419e85d1aec4b3b0308926a86bb37620d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0f5c9d3b0f856ab72a16930ddb5c50686d747ecc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445089"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358387"
 ---
 # <a name="add-an-attribute-store"></a>Adición de un almacén de atributos
 
 
-Cuentas de usuario y cuentas de equipo que requieren acceso a un recurso que está protegido por Active Directory Federation Services \(AD FS\) se almacenan en un almacén de atributos, como los servicios de dominio de Active Directory \(AD DS \). El motor de emisión de notificaciones utiliza almacenes de atributos para recopilar datos que es necesarios emitir notificaciones. Datos de los almacenes de atributos, a continuación, se proyectan como notificaciones.  
+Las cuentas de usuario y las cuentas de equipo que requieren acceso a un recurso protegido por Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1 se almacenan en un almacén de atributos, como Active Directory Domain Services \(AD DS @ no__t-3. El motor de emisión de notificaciones usa almacenes de atributos para recopilar los datos necesarios para emitir notificaciones. Los datos de los almacenes de atributos se proyectan entonces como notificaciones.  
   
-Puede usar el siguiente procedimiento para agregar un almacén de atributos para el servicio de federación.  
+Puede usar el siguiente procedimiento para agregar un almacén de atributos al Servicio de federación.  
   
-El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas adecuadas y pertenencia a grupos en [dominio grupos predeterminados locales y](https://go.microsoft.com/fwlink/?LinkId=83477).   
+El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
 #### <a name="to-add-an-attribute-store"></a>Para agregar un almacén de atributos  
   
-1.  Abra **administración de AD FS**.  
+1.  Abra **Administración de AD FS**.  
   
-2.  En **acciones** haga clic en **agregar un almacén de atributos**.  
+2.  En **acciones** , haga clic en **Agregar un almacén de atributos**.  
 
-![agregar el almacén de atributos](media/Add-an-Attribute-Store/addstore1.PNG)
+![Agregar almacén de atributos](media/Add-an-Attribute-Store/addstore1.PNG)
   
-3. En el **agregar un almacén de atributos** diálogo cuadro, configure las siguientes propiedades para el almacén de atributos que desea agregar:  
+3. En el cuadro de diálogo **Agregar un almacén de atributos** , configure las siguientes propiedades para el almacén de atributos que desea agregar:  
   
    -   En **nombre para mostrar**, escriba el nombre que desea usar para identificar el almacén de atributos.  
   
-   -   En **tipo de almacén de atributo**, seleccione un tipo de almacén de atributos admitidos, bien **Active Directory**, **LDAP**, o **SQL**.  
+   -   En **tipo de almacén de atributos**, seleccione un tipo de almacén de atributos admitido, ya sea **Active Directory**, **LDAP**o **SQL**.  
   
-   -   En **cadena de conexión**, si ha seleccionado un protocolo de acceso de directorio ligero \(LDAP\) almacén o un lenguaje de consulta estructurado \(SQL\) almacenar, escriba la cadena que utiliza para establecer una conexión con el almacén de atributos. Para almacenes de atributos de Active Directory, no es necesaria; ninguna cadena de conexión por lo tanto, este campo está deshabilitado.  
+   -   En **cadena de conexión**, si ha seleccionado un protocolo ligero de acceso a directorios \(LDAP @ no__t-2 o un almacén lenguaje de consulta estructurado \(SQL @ no__t-4, escriba la cadena que usó para establecer una conexión con el atributo. restaura. En el caso de Active Directory almacenes de atributos, no se necesita ninguna cadena de conexión; por lo tanto, este campo está deshabilitado.  
   
        > [!NOTE]  
        > AD FS crea automáticamente un almacén de atributos de Active Directory de manera predeterminada.  
  
-![agregar el almacén de atributos](media/Add-an-Attribute-Store/addstore2.PNG) 
+![Agregar almacén de atributos](media/Add-an-Attribute-Store/addstore2.PNG) 
 
 4. Haga clic en **Aceptar**.  
   
@@ -52,4 +52,4 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 
 [Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
   
-[La función de los almacenes de atributos](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)  
+[El rol de los almacenes de atributos](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)  

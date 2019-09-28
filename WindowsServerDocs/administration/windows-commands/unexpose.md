@@ -1,8 +1,8 @@
 ---
-title: Anule la exposición
-description: 'Tema de los comandos de Windows para ***- '
+title: x:.
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe9cb5dfd8ae6c71fdc72ddc1e8421229f98f5d0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e10126739ef82b060e271e9b804a77658b5ec82
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837476"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392266"
 ---
-# <a name="unexpose"></a>Anule la exposición
+# <a name="unexpose"></a>x:.
 
 
 
-Unexposes una instantánea que se expone mediante el **exponer** comando. La copia sombra expuestos se puede especificar por su Id. de la sombra, letra de unidad, recurso compartido o punto de montaje.
+anula la exposición de una instantánea que se expuso mediante el comando de **exposición** . La instantánea expuesta puede especificarse por su ID. de sombra, letra de unidad, recurso compartido o punto de montaje.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,18 +38,18 @@ unexpose {<ShadowID> | <Drive:> | <Share> | <MountPoint>}
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<ShadowID>|Unexposes la instantánea especificada por el identificador de instantánea especificado.|
-|\<Drive:>|Unexposes la instantánea asociada con la letra de unidad especificada (por ejemplo, la unidad P).|
-|\<Share>|Unexposes la instantánea asociada con el recurso compartido especificado (por ejemplo, \\ \\ *MachineName*\).|
-|\<MountPoint>|Unexposes la instantánea asociada al punto de montaje especificado (por ejemplo, C:\shadowcopy\).|
+|@no__t 0ShadowID >|Anula la exposición de la instantánea especificada por el ID. de sombra dado.|
+|\<Drive: >|Anula la exposición de la instantánea asociada a la letra de unidad especificada (por ejemplo, la unidad P).|
+|@no__t 0Share >|Anula la exposición de la instantánea asociada con el recurso compartido especificado (por ejemplo, \\ @ no__t-1*MachineName*\).|
+|@no__t 0MountPoint >|Anula la exposición de la instantánea asociada con el punto de montaje especificado (por ejemplo, C:\shadowcopy @ no__t-0.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Puede usar un alias existente o una variable de entorno en lugar de *IdDeInstantánea*. Use **agregar** sin parámetros para ver los alias existentes.
+-   Puede usar un alias existente o una variable de entorno en lugar de *ShadowID*. Use **Agregar** sin parámetros para ver los alias existentes.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para que se anule la exposición de la instantánea asociada con la unidad P, escriba:
+Para anular la exposición de la instantánea asociada a la unidad P, escriba:
 ```
 unexpose P:
 ```

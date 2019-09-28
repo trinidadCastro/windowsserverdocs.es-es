@@ -1,9 +1,9 @@
 ---
-title: Paso 1 configuración de la infraestructura de DirectAccess
-description: Este tema forma parte de la Guía de agregar DirectAccess a una implementación de acceso remoto existente (VPN) para Windows Server 2016
+title: Paso 1 configurar la infraestructura de DirectAccess
+description: Este tema forma parte de la guía agregar DirectAccess a una implementación de acceso remoto (VPN) existente para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: 5dc529f7-7bc3-48dd-b83d-92a09e4055c4
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ad0ac1ad1187d0f99f84528a658bc66794ba67b2
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 4437101c6cde25ebb370fe54a2f8ef821997f15d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281864"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388772"
 ---
-# <a name="step-1-configure-the-directaccess-infrastructure"></a>Paso 1 configuración de la infraestructura de DirectAccess
+# <a name="step-1-configure-the-directaccess-infrastructure"></a>Paso 1 configurar la infraestructura de DirectAccess
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema se describe cómo configurar la infraestructura necesaria para habilitar DirectAccess en una implementación de VPN existente. Antes de comenzar los pasos de implementación, asegúrese de que ha completado los pasos de planificación descritos en [paso 1: Planear la infraestructura de DirectAccess](Step-1-Plan-DirectAccess-Infrastructure.md).  
+En este tema se describe cómo configurar la infraestructura necesaria para habilitar DirectAccess en una implementación de VPN existente. Antes de comenzar con los pasos de implementación, asegúrese de haber completado los pasos de planificación descritos en @no__t 0Step 1: Planear la infraestructura de DirectAccess @ no__t-0.  
   
 |Tarea|Descripción|  
 |----|--------|  
@@ -37,7 +37,7 @@ En este tema se describe cómo configurar la infraestructura necesaria para habi
 |Configurar grupos de seguridad|Configura los grupos de seguridad que contendrán equipos cliente de DirectAccess, y cualquier otro grupo de seguridad necesario en la implementación.|  
 |Configurar el servidor de ubicación de red|El asistente para habilitar DirectAccess configura el servidor de ubicación de red en el servidor de DirectAccess.|  
   
-## <a name="ConfigNetworkSettings"></a>Configuración de red de servidor  
+## <a name="ConfigNetworkSettings"></a>Configurar las opciones de red del servidor  
 Los siguientes valores de la interfaz de red son necesarios para una implementación de un solo servidor en un entorno con IPv4 e IPv6. Todas las direcciones IP se configuran mediante **Cambiar configuración del adaptador** en el **Centro de redes y recursos compartidos de Windows**.  
   
 -   Topología perimetral  
@@ -73,12 +73,12 @@ Configura el enrutamiento en la red corporativa de la siguiente manera:
   
 -   Configura manualmente las rutas de IPv4 e IPv6 de la organización en los servidores de acceso remoto. Agrega una ruta publicada para que todo el tráfico con un prefijo IPv6 (/48) de organización se reenvíe a la red interna. Además, para el tráfico IPv4, agrega rutas explícitas para que el tráfico IPv4 se reenvíe a la red interna.  
   
-## <a name="ConfigFirewalls"></a>Configurar firewalls  
+## <a name="ConfigFirewalls"></a>Configuración de firewalls  
 Si usa firewalls adicionales en la implementación, aplique las siguientes excepciones del firewall con conexión a Internet para el tráfico de acceso remoto cuando el servidor de acceso remoto se encuentra en Internet IPv4:  
   
--   6to4 tráfico IP protocolo 41 de entrada y salida.  
+-   tráfico 6to4: protocolo IP 41 entrante y saliente.  
   
--   Puerto de destino 443 de protocolo de Control de transmisión de IP-HTTPS (TCP) y el puerto de origen TCP 443 de salida. Si el servidor de acceso remoto tiene un único adaptador de red y el servidor de ubicación de red se encuentra en el servidor de acceso remoto, el puerto TCP 62000 también es obligatorio.  
+-   IP-HTTPS-puerto de destino del Protocolo de control de transmisión (TCP) 443 y puerto de origen TCP 443 de salida. Si el servidor de acceso remoto tiene un único adaptador de red y el servidor de ubicación de red se encuentra en el servidor de acceso remoto, el puerto TCP 62000 también es obligatorio.  
   
 Si usa firewalls adicionales, aplique las siguientes excepciones del firewall con conexión a Internet para el tráfico de acceso remoto cuando el servidor de acceso remoto se encuentra en Internet IPv6:  
   
@@ -88,11 +88,11 @@ Si usa firewalls adicionales, aplique las siguientes excepciones del firewall co
   
 Si usa firewalls adicionales, aplique las siguientes excepciones de firewall de la red interna para el tráfico de acceso remoto:  
   
--   ISATAP: protocolo 41 de entrada y salida  
+-   ISATAP-protocolo 41 entrante y saliente  
   
 -   TCP/UDP para todo el tráfico IPv4/IPv6  
   
-## <a name="ConfigCAs"></a>Configurar las entidades de certificación y certificados  
+## <a name="ConfigCAs"></a>Configurar entidades de certificación y certificados  
 El asistente para habilitar DirectAccess configura un proxy Kerberos integrado que autentica utilizando nombres de usuario y contraseñas. También configura un certificado IP-HTTPS en el servidor de acceso remoto.  
   
 ### <a name="ConfigCertTemp"></a>Configurar plantillas de certificado  
@@ -107,17 +107,17 @@ Cuando uses una CA interna para emitir certificados, debes configurar una planti
 ### <a name="configure-the-ip-https-certificate"></a>Configurar el certificado IP-HTTPS  
 El acceso remoto requiere que un certificado IP-HTTPS autentique las conexiones IP-HTTPS con el servidor de acceso remoto. Hay tres opciones de certificado para el certificado IP-HTTPS:  
   
--   **Pública**-proporcionado por una parte 3ª.  
+-   **Público**: proporcionado por un tercero.  
   
     Un certificado utilizado para la autenticación IP-HTTPS. Si el nombre del firmante del certificado no es un carácter comodín, debe ser la dirección URL FQDN que pueda resolverse externamente utilizada solo para conexiones IP-HTTPS al servidor de acceso remoto.  
   
--   **Privada**-siguiente es necesario, si aún no existen:  
+-   **Privado**: se necesita lo siguiente, si aún no existen:  
   
     -   Un certificado de sitio web utilizado para la autenticación IP-HTTPS. El firmante del certificado debe ser un nombre de dominio completo (FQDN) que pueda resolverse externamente y accesible desde Internet.  
   
     -   Un punto de distribución de lista de revocación de certificados (CRL) que sea accesible desde un FQDN que pueda resolverse públicamente.  
   
--   **Autofirmados**-siguiente es necesario, si aún no existen:  
+-   **Autofirmado**: se requiere lo siguiente, si aún no existen:  
   
     > [!NOTE]  
     > Los certificados autofirmados no pueden usarse en implementaciones multisitio.  
@@ -144,7 +144,7 @@ Asegúrate de que el certificado de sitio web utilizado para la autenticación I
   
 ##### <a name="to-install-the-ip-https-certificate-from-an-internal-ca"></a>Cómo instalar el certificado IP-HTTPS desde una CA interna  
   
-1.  En el servidor de acceso remoto: En el **iniciar** , escriba**mmc.exe**, y, a continuación, presione ENTRAR.  
+1.  En el servidor de acceso remoto: En la pantalla **Inicio** , escriba**MMC. exe**y, a continuación, presione Entrar.  
   
 2.  En la consola MMC, en el menú **Archivo**, haz clic en **Agregar o quitar complemento**.  
   
@@ -156,7 +156,7 @@ Asegúrate de que el certificado de sitio web utilizado para la autenticación I
   
 6.  Haga clic en **Siguiente** dos veces.  
   
-7.  En el **solicitar certificados** , seleccione la casilla de verificación de la plantilla de certificado y, si es necesario, haga clic en **se necesita más información para inscribir este certificado**.  
+7.  En la página **solicitar certificados** , active la casilla de la plantilla de certificado y, si es necesario, haga clic en **se necesita más información para inscribirse en este certificado**.  
   
 8.  En el cuadro de diálogo **Propiedades de certificado**, en la pestaña **Firmante**, en la zona **Nombre del firmante**, en **Tipo**, selecciona **Nombre común**.  
   
@@ -177,9 +177,9 @@ Asegúrate de que el certificado de sitio web utilizado para la autenticación I
 ## <a name="ConfigDNS"></a>Configurar el servidor DNS  
 Debes configurar manualmente una entrada DNS para el sitio web del servidor de ubicación de red para la red interna de tu implementación.  
   
-### <a name="NLS_DNS"></a>Para crear el sondeo de web y servidor de ubicación de red en los registros de DNS  
+### <a name="NLS_DNS"></a>Para crear el servidor de ubicación de red y los registros DNS de sondeo Web  
   
-1.  En el servidor DNS de la red interna: En el **iniciar** pantalla tipo ** dnsmgmt.msc**, y, a continuación, presione ENTRAR.  
+1.  En el servidor DNS de la red interna: En la pantalla **Inicio** , escriba * * DNSMgmt. msc * * y, a continuación, presione Entrar.  
   
 2.  En el panel izquierdo de la consola del **Administrador del DNS**, expande la zona de búsqueda directa de tu dominio. Haz clic con el botón secundario en el dominio y haz clic en **Host nuevo (A o AAAA)** .  
   
@@ -189,7 +189,7 @@ Debes configurar manualmente una entrada DNS para el sitio web del servidor de u
   
 5.  Haga clic en **Listo**.  
 
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -200,9 +200,9 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 También debes configurar entradas DNS para los siguiente:  
   
--   **El servidor IP-HTTPS**los clientes de DirectAccess - deben ser capaces de resolver el nombre DNS del servidor de acceso remoto desde Internet.  
+-   **El servidor IP-https**: los clientes de DirectAccess deben ser capaces de resolver el nombre DNS del servidor de acceso remoto desde Internet.  
   
--   **Comprobación de revocación de CRL**: DirectAccess usa la revocación de certificados para la conexión IP-HTTPS entre los clientes de DirectAccess y el servidor de acceso remoto y para la conexión basada en HTTPS entre el cliente de DirectAccess y el servidor de ubicación de red. En ambos casos, los clientes de DirectAccess deben ser capaces de resolver y acceder a la ubicación del punto de distribución de CRL.  
+-   **Comprobación de revocación de CRL**: DirectAccess usa la comprobación de revocación de certificados para la conexión IP-https entre los clientes de DirectAccess y el servidor de acceso remoto, y para la conexión basada en https entre el cliente de DirectAccess y la red servidor de ubicación. En ambos casos, los clientes de DirectAccess deben ser capaces de resolver y acceder a la ubicación del punto de distribución de CRL.  
   
 ## <a name="ConfigAD"></a>Configurar Active Directory  
 El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben estar unidos a un dominio de Active Directory. Los equipos cliente de DirectAccess deben pertenecer a uno de los siguientes tipos de dominio:  
@@ -215,7 +215,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
   
 #### <a name="to-join-client-computers-to-the-domain"></a>Cómo unir equipos cliente al dominio  
   
-1.  En el **iniciar** , escriba **explorer.exe**, y, a continuación, presione ENTRAR.  
+1.  En la pantalla **Inicio** , escriba **Explorer. exe**y, a continuación, presione Entrar.  
   
 2.  Haz clic con el botón secundario en el icono del equipo y, a continuación, haz clic en **Propiedades**.  
   
@@ -233,7 +233,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
   
 9. En el cuadro de diálogo **Propiedades del sistema**, haga clic en Cerrar. Haz clic en **Reiniciar ahora** cuando se te solicite.  
   
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -245,27 +245,27 @@ Restart-Computer
 ```  
   
 ## <a name="ConfigGPOs"></a>Configurar GPO  
-Para implementar el acceso remoto, necesitas un mínimo de dos objetos de directiva de grupo: un objeto de directiva de grupo contiene la configuración del servidor de acceso remoto y otro contiene la configuración para equipos cliente de DirectAccess. Al configurar el acceso remoto, el asistente crea automáticamente los objetos de directiva de grupo necesarios. Sin embargo, si tu organización aplica una convención de nomenclatura, o no tiene los permisos necesarios para crear o modificar objetos de directiva de grupo, debe crearse antes de configurar el acceso remoto.  
+Para implementar el acceso remoto, se requiere un mínimo de dos objetos directiva de grupo: uno directiva de grupo objeto contiene la configuración para el servidor de acceso remoto y otro contiene la configuración de los equipos cliente de DirectAccess. Al configurar el acceso remoto, el asistente crea automáticamente los objetos directiva de grupo necesarios. Sin embargo, si su organización exige una Convención de nomenclatura, o si no tiene los permisos necesarios para crear o editar objetos directiva de grupo, se deben crear antes de configurar el acceso remoto.  
   
-Para crear objetos de directiva de grupo, consulte [crear y editar un objeto de directiva de grupo](https://technet.microsoft.com/library/cc754740.aspx).  
+Para crear directiva de grupo objetos, vea [crear y editar un objeto Directiva de grupo](https://technet.microsoft.com/library/cc754740.aspx).  
   
 > [!IMPORTANT]  
 > El administrador puede vincular manualmente los objetos de directiva de grupo de DirectAccess a una unidad organizativa siguiendo estos pasos:  
 >   
 > 1.  Antes de configurar DirectAccess, vincula los GPO creados a las unidades organizativas respectivas.  
 > 2.  Configura DirectAccess, especificando un grupo de seguridad para los equipos cliente.  
-> 3.  El Administrador de acceso remoto puede o no tenga permisos para vincular los objetos de directiva de grupo al dominio. En cualquier caso, los objetos de directiva de grupo se configurarán automáticamente. Si los GPO ya están vinculados a una unidad organizativa, los vínculos no se eliminarán y los GPO no se vincularán al dominio. Para un GPO de servidor, la unidad organizativa debe contener el objeto de equipo del servidor, o el GPO se vinculará a la raíz del dominio.  
-> 4.  Si la vinculación a la unidad organizativa no se ha hecho antes de ejecutar al Asistente para DirectAccess, a continuación, una vez completada la configuración, el Administrador de dominio puede vincular los objetos de directiva de grupo de DirectAccess a las unidades organizativas necesarias. El vínculo al dominio puede eliminarse. Los pasos para vincular un objeto de directiva de grupo a una unidad de organización se encuentran [aquí](https://technet.microsoft.com/library/cc732979.aspx).  
+> 3.  Es posible que el administrador de acceso remoto tenga permisos para vincular los objetos de directiva de grupo al dominio. En cualquier caso, los objetos de directiva de grupo se configurarán automáticamente. Si los GPO ya están vinculados a una unidad organizativa, los vínculos no se eliminarán y los GPO no se vincularán al dominio. Para un GPO de servidor, la unidad organizativa debe contener el objeto de equipo del servidor, o el GPO se vinculará a la raíz del dominio.  
+> 4.  Si el vínculo a la unidad organizativa no se ha realizado antes de ejecutar el Asistente de DirectAccess, una vez completada la configuración, el administrador de dominio puede vincular los objetos de directiva de grupo de DirectAccess a las unidades organizativas necesarias. El vínculo al dominio puede eliminarse. [Aquí](https://technet.microsoft.com/library/cc732979.aspx)encontrará los pasos para vincular un objeto de directiva de grupo a una unidad organizativa.  
   
 > [!NOTE]  
-> Si un objeto de directiva de grupo se creó manualmente, es posible durante la configuración de DirectAccess que el objeto de directiva de grupo no estará disponible. Es posible que el objeto de directiva de grupo no se hayan replicado en el controlador de dominio más próximo al equipo de administración. En este caso, el administrador puede esperar a que la replicación finalice, o bien forzarla.  
+> Si un objeto de directiva de grupo se creó manualmente, es posible que durante la configuración de DirectAccess el objeto de directiva de grupo no esté disponible. Es posible que el objeto de directiva de grupo no se haya replicado en el controlador de dominio más próximo al equipo de administración. En este caso, el administrador puede esperar a que la replicación finalice, o bien forzarla.  
   
 ## <a name="ConfigSGs"></a>Configurar grupos de seguridad  
-La configuración de DirectAccess contenida en el objeto de directiva de grupo del equipo cliente se aplica únicamente a los equipos que son miembros de los grupos de seguridad que se especifican al configurar el acceso remoto. Además, si usas grupos de seguridad para administrar tus servidores de aplicación, debes crear un grupo de seguridad para dichos servidores.  
+La configuración de DirectAccess contenida en el objeto de directiva de grupo equipo cliente solo se aplica a los equipos que son miembros de los grupos de seguridad que se especifican al configurar el acceso remoto. Además, si usas grupos de seguridad para administrar tus servidores de aplicación, debes crear un grupo de seguridad para dichos servidores.  
   
-### <a name="Sec_Group"></a>Para crear un grupo de seguridad para los clientes de DirectAccess  
+### <a name="Sec_Group"></a>Para crear un grupo de seguridad para clientes de DirectAccess  
   
-1.  En el **iniciar** , escriba**dsa.msc**, y, a continuación, presione ENTRAR. En la consola **Usuarios y equipos de Active Directory**, en el panel izquierdo, expande el dominio que contendrá el grupo de seguridad, haz clic con el botón secundario en **Usuarios**, elige **Nuevo** y haz clic en **Grupo**.  
+1.  En la pantalla **Inicio** , escriba**DSA. msc**y, a continuación, presione Entrar. En la consola **Usuarios y equipos de Active Directory**, en el panel izquierdo, expande el dominio que contendrá el grupo de seguridad, haz clic con el botón secundario en **Usuarios**, elige **Nuevo** y haz clic en **Grupo**.  
   
 2.  En el cuadro de diálogo **Nuevo objeto: Grupo**, en **Nombre de grupo**, escribe el nombre de grupo de seguridad.  
   
@@ -277,7 +277,7 @@ La configuración de DirectAccess contenida en el objeto de directiva de grupo d
   
 6.  En el cuadro de diálogo **Seleccionar Usuarios, Contactos, Equipos o Cuentas de servicio**, selecciona los equipos cliente que deseas habilitar para DirectAccess y haz clic en **Aceptar**.  
   
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**comandos equivalentes de Windows PowerShell**  
+](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**comandos equivalentes de Windows PowerShell** de @no__t 0Windows PowerShell  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -289,13 +289,13 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
 ## <a name="ConfigNLS"></a>Configurar el servidor de ubicación de red  
 El servidor de ubicación de red debe encontrarse en un servidor con alta disponibilidad y un certificado SSL válido de confianza para los clientes de DirectAccess. Hay dos opciones de certificados para el certificado de servidor de ubicación de red:  
   
--   **Privada**-siguiente es necesario, si aún no existen:  
+-   **Privado**: se necesita lo siguiente, si aún no existen:  
   
     -   Un certificado de sitio web usado para el servidor de ubicación de red. El firmante del certificado debe ser la dirección URL del servidor de ubicación de red.   
   
     -   Un punto de distribución de CRL altamente disponible desde la red interna.  
   
--   **Autofirmados**-siguiente es necesario, si aún no existen:  
+-   **Autofirmado**: se requiere lo siguiente, si aún no existen:  
   
     > [!NOTE]  
     > Los certificados autofirmados no pueden usarse en implementaciones multisitio.  
@@ -307,7 +307,7 @@ El servidor de ubicación de red debe encontrarse en un servidor con alta dispon
   
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>Cómo instalar el certificado de servidor de ubicación de red desde una CA interna  
   
-1.  En el servidor que hospede el sitio web del servidor de ubicación de red: En el **iniciar** , escriba**mmc.exe**, y, a continuación, presione ENTRAR.  
+1.  En el servidor que hospede el sitio web del servidor de ubicación de red: En la pantalla **Inicio** , escriba**MMC. exe**y, a continuación, presione Entrar.  
   
 2.  En la consola MMC, en el menú **Archivo**, haz clic en **Agregar o quitar complemento**.  
   
@@ -319,7 +319,7 @@ El servidor de ubicación de red debe encontrarse en un servidor con alta dispon
   
 6.  Haga clic en **Siguiente** dos veces.  
   
-7.  En el **solicitar certificados** , seleccione la casilla de verificación de la plantilla de certificado y, si es necesario, haga clic en **se necesita más información para inscribir este certificado**.  
+7.  En la página **solicitar certificados** , active la casilla de la plantilla de certificado y, si es necesario, haga clic en **se necesita más información para inscribirse en este certificado**.  
   
 8.  En el cuadro de diálogo **Propiedades de certificado**, en la pestaña **Firmante**, en la zona **Nombre del firmante**, en **Tipo**, selecciona **Nombre común**.  
   

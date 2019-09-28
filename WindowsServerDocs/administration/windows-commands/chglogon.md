@@ -1,8 +1,8 @@
 ---
 title: chglogon
-description: 'Tema de los comandos de Windows para '
+description: 'Temas de comandos de Windows para '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,23 +13,23 @@ ms.date: 10/16/2017
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: aca42e39a520e6e801bb8e7fa8cb2605f3028566
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 52cc465bb220c0a30678f75dcf0a37061fd80d56
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434445"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379513"
 ---
 # <a name="chglogon"></a>chglogon
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
-Habilita o deshabilita los inicios de sesión de sesiones de cliente en un servidor Host de sesión de escritorio remoto o muestra el estado de inicio de sesión actual.
+Habilita o deshabilita los inicios de sesión de las sesiones de cliente en un servidor host de sesión de escritorio remoto o muestra el estado de inicio de sesión actual.
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para descubrir las novedades de la versión más reciente, consulte [novedades nuevos servicios de escritorio remoto en Windows Server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
+> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
 > ## <a name="remarks"></a>Comentarios
-> Este comando es el mismo que el **Cambiar inicio de sesión** comando.
+> Este comando es el mismo que el comando **cambiar inicio de sesión** .
 > #### <a name="additional-references"></a>Referencias adicionales
-> [Cambiar inicio de sesión](change-logon.md)
+> [cambiar inicio de sesión](change-logon.md)
 > [clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-> [servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia de comandos](remote-desktop-services-terminal-services-command-reference.md)
+> [ &#40;servicios de escritorio remoto referencia de comandos Terminal Services&#41; ](remote-desktop-services-terminal-services-command-reference.md)

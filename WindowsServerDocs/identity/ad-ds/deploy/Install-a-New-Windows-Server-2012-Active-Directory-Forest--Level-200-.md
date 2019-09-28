@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 40471354af5434e77a300303572ccce639ba2489
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: a9bdc3b237d0d0f44995f2c359cc3ef6ed8568a3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443783"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71400366"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>Instalar un nuevo bosque de Active Directory de Windows Server 2012 (nivel 200)
 
@@ -22,15 +22,15 @@ ms.locfileid: "66443783"
 
 Este tema es una introducción a la nueva característica de promoción de controladores de dominio de los Servicios de dominio de Active Directory (AD DS) en Windows Server 2012. En Windows Server 2012, AD DS reemplaza a la herramienta Dcpromo por un sistema de implementación basado en Windows PowerShell y el Administrador del servidor.  
   
--   [Administración simplificada de servicios de dominio de Active Directory](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_SimplifiedAdmin)  
+-   [Administración simplificada de Active Directory Domain Services](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_SimplifiedAdmin)  
   
--   [Información general técnica](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_TechOverview)  
+-   [Información técnica](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_TechOverview)  
   
--   [Implementación de un bosque con el administrador del servidor](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_SMForest)  
+-   [Implementación de un bosque con Administrador del servidor](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_SMForest)  
   
 -   [Implementación de un bosque con Windows PowerShell](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_PSForest)  
   
-## <a name="BKMK_SimplifiedAdmin"></a>Administración simplificada de servicios de dominio de Active Directory  
+## <a name="BKMK_SimplifiedAdmin"></a>Administración simplificada de Active Directory Domain Services  
 Windows Server 2012 presenta la nueva generación de Administración simplificada de Servicios de dominio de Active Directory, el nuevo rediseño de dominio más radical desde Windows 2000 Server. La Administración simplificada de AD DS se ha inspirado en lo aprendido a lo largo de doce años de Active Directory para crear una experiencia de administración más compatible, flexible e intuitiva para arquitectos y administradores. Esto ha conllevado la creación de nuevas versiones de las tecnologías existentes y la ampliación de las capacidades de los componentes incluidos en Windows Server 2008 R2.  
   
 ### <a name="what-is-ad-ds-simplified-administration"></a>¿Qué es la Administración simplificada de AD DS?  
@@ -51,14 +51,14 @@ Estos cambios pueden parecer más complejos y no más sencillos. Sin embargo, al
   
 Los administradores de AD DS con experiencia comprobarán que sus conocimientos anteriores les resultan muy útiles. Y los administradores principiantes disfrutarán de una curva de aprendizaje mucho menos pronunciada.  
   
-## <a name="BKMK_TechOverview"></a>Información general técnica  
+## <a name="BKMK_TechOverview"></a>Información técnica  
   
 ### <a name="what-you-should-know-before-you-begin"></a>Qué debes saber antes de empezar  
 En este tema, se da por hecho que estás familiarizado con las versiones anteriores de los Servicios de dominio de Active Directory. No se proporcionan detalles básicos sobre su finalidad ni su funcionalidad. Para más información sobre AD DS, consulta las páginas del portal de TechNet vinculadas a continuación:  
   
--   [Servicios de dominio de Active Directory para Windows Server 2008 R2](https://technet.microsoft.com/library/dd378801(WS.10).aspx)  
+-   [Active Directory Domain Services para Windows Server 2008 R2](https://technet.microsoft.com/library/dd378801(WS.10).aspx)  
   
--   [Servicios de dominio de Active Directory para Windows Server 2008](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
+-   [Active Directory Domain Services para Windows Server 2008](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
   
 -   [Referencia técnica de Windows Server](https://technet.microsoft.com/library/cc739127(WS.10).aspx)  
   
@@ -76,11 +76,11 @@ Tanto en las instalaciones locales como en las remotas, se usa un asistente grá
 #### <a name="ad-ds-role-configuration"></a>Configuración del rol de AD DS  
 ![Instalar un bosque nuevo](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_DeploymentConfiguration_Forest.gif)  
   
-Configuración de servicios de dominio de Active activa "que anteriormente se conocen como DCPROMO" es ahora una operación discreta de instalación del rol. Después de instalar el rol de AD DS, un administrador configura el servidor como controlador de dominio con un asistente independiente dentro del Administrador del servidor o con el módulo ADDSDeployment de Windows PowerShell.  
+Active Directory Domain Services configuración "anteriormente conocida como DCPROMO" es ahora una operación discreta de la instalación del rol. Después de instalar el rol de AD DS, un administrador configura el servidor como controlador de dominio con un asistente independiente dentro del Administrador del servidor o con el módulo ADDSDeployment de Windows PowerShell.  
   
 La configuración del rol de AD DS se basa en doce años de experiencia en el campo y, ahora, configura los controladores de dominio de acuerdo con los procedimientos recomendados más recientes de Microsoft. Por ejemplo, en todos los controladores de dominio se instalan de forma predeterminada el Sistema de nombres de dominio y los catálogos globales.  
   
-El Asistente para configuración de AD DS del administrador del servidor combina muchos cuadros de diálogo individuales en menos avisos y ya no oculta opciones de configuración en un modo "avanzado". Durante la instalación, todo el proceso de promoción se desarrolla en un solo cuadro de diálogo que va expandiéndose. El asistente y el módulo ADDSDeployment de Windows PowerShell te muestran los cambios destacables y los riesgos de seguridad, con vínculos a más información.  
+El Asistente para configuración de Administrador del servidor AD DS combina muchos cuadros de diálogo individuales en menos mensajes y deja de ocultar la configuración en modo "avanzado". Durante la instalación, todo el proceso de promoción se desarrolla en un solo cuadro de diálogo que va expandiéndose. El asistente y el módulo ADDSDeployment de Windows PowerShell te muestran los cambios destacables y los riesgos de seguridad, con vínculos a más información.  
   
 Dcpromo.exe se mantiene en Windows Server 2012 solamente para las instalaciones desatendidas desde la línea de comandos y ya no ejecuta el Asistente para instalación gráfico. Te recomendamos encarecidamente que dejes de usar Dcpromo.exe para las instalaciones desatendidas y que lo reemplaces por el módulo ADDSDeployment: el ejecutable se considera ahora desusado y no se incluirá en la próxima versión de Windows.  
   
@@ -91,18 +91,18 @@ Estas nuevas características no son compatibles con las versiones anteriores de
 > [!IMPORTANT]
 > Dcpromo.exe ya no contiene un asistente gráfico y ya no instala los archivos binarios de los roles ni las características. Si tratas de ejecutar Dcpromo.exe desde el shell del Explorador, devolverá:  
 > 
-> "El Asistente para la instalación de los servicios de dominio de Active Directory se reubica en Administrador del servidor. Para obtener más información, consulte <https://go.microsoft.com/fwlink/?LinkId=220921>. "  
+> "El Asistente para instalación de Active Directory Domain Services se reubica en Administrador del servidor. Para obtener más información, vea <https://go.microsoft.com/fwlink/?LinkId=220921>. "  
 > 
 > Si tratas de ejecutar Dcpromo.exe /unattend, se instalarán los archivos binarios, como en los sistemas operativos anteriores, pero aparecerá la siguiente advertencia:  
 > 
-> "El dcpromo operación desatendida se reemplaza por el módulo ADDSDeployment para Windows PowerShell. Para obtener más información, consulte <https://go.microsoft.com/fwlink/?LinkId=220924>. "  
+> "La operación desatendida de DCPROMO se reemplaza por el módulo ADDSDeployment para Windows PowerShell. Para obtener más información, vea <https://go.microsoft.com/fwlink/?LinkId=220924>. "  
 > 
 > En Windows Server 2012 se deja de usar dcpromo.exe, que no se incluirá en las futuras versiones de Windows ni recibirá más mejoras en este sistema operativo. Los administradores deben dejar de utilizarlo y, si quieren crear controladores de dominio desde la línea de comandos, deberán usar en su lugar los módulos de Windows PowerShell admitidos.  
   
 #### <a name="prerequisite-checking"></a>Comprobación de requisitos previos  
 La configuración de los controladores de dominio también implementa una fase de comprobación de requisitos previos en la que se evalúan el bosque y el dominio antes de continuar con la promoción de los controladores de dominio. Incluye la disponibilidad del rol FSMO, los privilegios de los usuarios, la compatibilidad del esquema extendido y otros requisitos. Este nuevo diseño mitiga los problemas que se producen cuando la promoción de los controladores de dominio se inicia y, luego, se detiene en mitad del proceso con un error de configuración irrecuperable. Disminuye la probabilidad de que haya metadatos de controladores de dominio huérfanos en el bosque o servidores que crean por error que son controladores de dominio.  
   
-## <a name="BKMK_SMForest"></a>Implementación de un bosque con el administrador del servidor  
+## <a name="BKMK_SMForest"></a>Implementación de un bosque con Administrador del servidor  
 En esta sección, se explica cómo instalar el primer controlador de dominio en el dominio raíz de un bosque con el Administrador del servidor en un equipo con Windows Server 2012 gráfico.  
   
 ### <a name="server-manager-ad-ds-role-installation-process"></a>Proceso de instalación del rol de AD DS del Administrador del servidor  
@@ -182,7 +182,7 @@ Aquí puedes agregar las **Características** adicionales que quieras.
 #### <a name="active-directory-domain-services"></a>Active Directory Domain Services  
 ![Instalar un bosque nuevo](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ADDSIntro.png)  
   
-El diálogo **Active Directory Domain Services** proporciona cierta información sobre los requisitos y los procedimientos recomendados. Principalmente, sirve como una confirmación de que ha elegido el rol de AD DS "Si no aparece esta pantalla, no ha seleccionado AD DS.  
+El diálogo **Active Directory Domain Services** proporciona cierta información sobre los requisitos y los procedimientos recomendados. Actúa principalmente como confirmación de que eligió el rol AD DS ". Si no aparece esta pantalla, no seleccionó AD DS.  
   
 #### <a name="confirmation"></a>Confirmación  
 ![Instalar un bosque nuevo](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Confirmation.png)  
@@ -220,7 +220,7 @@ Al seleccionar este vínculo más tarde, se invocan los cmdlets de ADDSDeploymen
 ### <a name="uninstallingdisabling"></a>Desinstalación o deshabilitación  
 El rol de AD DS se quita como cualquier otro rol: da igual si promoviste el servidor a controlador de dominio. Sin embargo, para quitar el rol de AD DS, se tiene que reiniciar el sistema al finalizar.  
   
-La eliminación del rol de los Servicios de dominio de Active Directory es distinta de la instalación: para que finalice, hay que disminuir el nivel del controlador de dominio. Es necesario hacer esto para que los archivos binarios del rol de un controlador de dominio no se desinstalen sin que los metadatos del bosque se limpien adecuadamente. Para obtener más información, consulte [degradación de controladores de dominio y dominios &#40;nivel 200&#41;](../../ad-ds/deploy/Demoting-Domain-Controllers-and-Domains--Level-200-.md).  
+La eliminación del rol de los Servicios de dominio de Active Directory es distinta de la instalación: para que finalice, hay que disminuir el nivel del controlador de dominio. Es necesario hacer esto para que los archivos binarios del rol de un controlador de dominio no se desinstalen sin que los metadatos del bosque se limpien adecuadamente. Para obtener más información, consulte [degradar controladores de dominio &#40;y dominios&#41;en el nivel 200](../../ad-ds/deploy/Demoting-Domain-Controllers-and-Domains--Level-200-.md).  
   
 > [!WARNING]  
 > No se admite la eliminación de roles de AD DS con Dism.exe ni con el módulo DISM de Windows PowerShell después de la promoción a controlador de dominio. Si se hace, el servidor no podrá arrancar con normalidad.  
@@ -242,7 +242,7 @@ Para crear un bosque de Active Directory, haz clic en **Agregar un nuevo bosque*
 Para más información sobre los nombres de dominio válidos, consulte el artículo de Knowledge Base [Convenciones de nomenclatura de Active Directory para equipos, sitios, dominios y unidades organizativas](https://support.microsoft.com/kb/909264).  
   
 > [!WARNING]  
-> No crees bosques de Active Directory con el mismo nombre que un nombre DNS externo. Por ejemplo, si la dirección URL de DNS de Internet es http://contoso.com, debe elegir un nombre diferente para el bosque interno evitar problemas de compatibilidad con versiones futuras. El nombre tiene que ser único y debe ser poco probable que se use para el tráfico de la Web. Por ejemplo: corp.contoso.com.  
+> No crees bosques de Active Directory con el mismo nombre que un nombre DNS externo. Por ejemplo, si la dirección URL de DNS de Internet es http://contoso.com, debe elegir un nombre diferente para el bosque interno con el fin de evitar problemas de compatibilidad futuros. El nombre tiene que ser único y debe ser poco probable que se use para el tráfico de la Web. Por ejemplo: corp.contoso.com.  
   
 Los bosques nuevos no necesitan nuevas credenciales para la cuenta de administrador del dominio. El proceso de promoción del controlador de dominio emplea las credenciales de la cuenta de administrador integrada del primer controlador de dominio que se usó para crear la raíz del bosque. No hay ninguna forma (predeterminada) de deshabilitar o bloquear la cuenta de administrador integrada, y puede ser el único punto de entrada a un bosque si las demás cuentas administrativas del dominio no se pueden usar. Antes de implementar un bosque nuevo, es fundamental conocer la contraseña.  
   
@@ -251,7 +251,7 @@ Los bosques nuevos no necesitan nuevas credenciales para la cuenta de administra
 #### <a name="domain-controller-options"></a>Domain Controller Options  
 ![Instalar un bosque nuevo](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_DCOptions_Forest.gif)  
   
-Las **Opciones del controlador de dominio** te permiten configurar el **nivel funcional del bosque** y el **nivel funcional del dominio** del nuevo dominio raíz del bosque. De forma predeterminada, esta configuración es Windows Server 2012 en un dominio raíz del bosque. El nivel funcional del bosque de Windows Server 2012 no proporciona ninguna funcionalidad nueva respecto del nivel funcional del bosque de Windows Server 2008 R2. El nivel funcional del dominio de Windows Server 2012 solamente es necesario para implementar la nueva configuración de Kerberos "proporcionar notificaciones siempre" y "Producir error en solicitudes de autenticación". Un uso principal de los niveles funcionales de Windows Server 2012 es restringir la participación en los controladores de dominio a dominio que cumplen los requisitos del sistema operativo mínimo permitido. En otras palabras, puede especificar Windows Server 2012 dominio funcional nivel solo controladores de dominio que ejecutan Windows Server 2012 pueden hospedar el dominio.  Windows Server 2012 se implementa una nueva marca de controlador de dominio denominada **DS_WIN8_REQUIRED** en el **DSGetDcName** función de NetLogon que busca los controladores de dominio de Windows Server 2012. Así, tienes la flexibilidad de elegir un bosque más o menos homogéneo en cuestión de los sistemas operativos que se pueden ejecutar en los controladores de dominio.  
+Las **Opciones del controlador de dominio** te permiten configurar el **nivel funcional del bosque** y el **nivel funcional del dominio** del nuevo dominio raíz del bosque. De forma predeterminada, esta configuración es Windows Server 2012 en un nuevo dominio raíz del bosque. El nivel funcional del bosque de Windows Server 2012 no proporciona ninguna funcionalidad nueva a través del nivel funcional del bosque de Windows Server 2008 R2. El nivel funcional de dominio de Windows Server 2012 solo es necesario para implementar la nueva configuración de Kerberos "proporcionar notificaciones siempre" y "error en las solicitudes de autenticación sin protección". Un uso principal para los niveles funcionales en Windows Server 2012 es restringir la participación en el dominio a los controladores de dominio que cumplan los requisitos mínimos de sistema operativo permitidos. En otras palabras, puede especificar el nivel funcional de dominio de Windows Server 2012 solo los controladores de dominio que ejecutan Windows Server 2012 pueden hospedar el dominio.  Windows Server 2012 implementa una nueva marca de controlador de dominio denominada **DS_WIN8_REQUIRED** en la función **DSGetDcName** de Netlogon que ubica exclusivamente los controladores de dominio de Windows Server 2012. Así, tienes la flexibilidad de elegir un bosque más o menos homogéneo en cuestión de los sistemas operativos que se pueden ejecutar en los controladores de dominio.  
   
 Para más información sobre la ubicación del controlador de dominio, revise [funciones del servicio de directorio](https://msdn.microsoft.com/library/ms675900(VS.85).aspx).  
   
@@ -354,7 +354,7 @@ La siguiente ilustración representa el proceso de instalación del rol de Activ
 |||  
 |-|-|  
 |Cmdlet de ServerManager|Argumentos (los argumentos en **negrita** son obligatorios. Los argumentos en *cursiva* se pueden especificar con Windows PowerShell o con el Asistente para configuración de AD DS).|  
-|Install-WindowsFeature/Add-WindowsFeature|***-Name***<br /><br />*-Restart*<br /><br />*-IncludeAllSubFeature*<br /><br />*-IncludeManagementTools*<br /><br />-Source<br /><br />*-ComputerName*<br /><br />-Credential<br /><br />-LogPath<br /><br />*-Vhd*<br /><br />*-ConfigurationFilePath*|  
+|Install-WindowsFeature/Add-WindowsFeature|***-Nombre***<br /><br />*-Reiniciar*<br /><br />*-IncludeAllSubFeature*<br /><br />*-IncludeManagementTools*<br /><br />-Source<br /><br />*-ComputerName*<br /><br />-Credential<br /><br />-LogPath<br /><br />*-VHD*<br /><br />*-ConfigurationFilePath*|  
   
 > [!NOTE]  
 > El argumento **-IncludeManagementTools** no es obligatorio, pero te recomendamos encarecidamente que lo uses al instalar los archivos binarios del rol de AD DS.  
@@ -434,7 +434,7 @@ Observa cómo, al utilizar el cmdlet **Select-Object** con el argumento **-expan
 > [!NOTE]  
 > El argumento **Select-Object -expandproperty** ralentiza un poco el rendimiento general de la instalación.  
   
-### <a name="BKMK_PS"></a>Crear un dominio de raíz de bosque de AD DS con Windows PowerShell  
+### <a name="BKMK_PS"></a>Crear un dominio raíz del bosque de AD DS con Windows PowerShell  
 Para instalar un nuevo bosque de Active Directory con el módulo ADDSDeployment, utiliza este cmdlet:  
   
 ```powershell  
@@ -446,7 +446,7 @@ El cmdlet **Install-AddsForest** solo tiene dos fases: comprobación de requisit
 |||  
 |-|-|  
 |Cmdlet de ADDSDeployment|Argumentos (los argumentos en **negrita** son obligatorios. Los argumentos en *cursiva* se pueden especificar con Windows PowerShell o con el Asistente para configuración de AD DS).|  
-|install-addsforest|-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />*-DatabasePath*<br /><br />*-DomainMode*<br /><br />***-DomainName***<br /><br />***-DomainNetBIOSName***<br /><br />*-DNSDelegationCredential*<br /><br />*-ForestMode*<br /><br />-Force<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-NoDnsOnNetwork<br /><br />-NoRebootOnCompletion<br /><br />*-SafeModeAdministratorPassword*<br /><br />-SkipAutoConfigureDNS<br /><br />-SkipPreChecks<br /><br />*-SYSVOLPath*<br /><br />*-Whatif*|  
+|install-addsforest|-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />*-DatabasePath*<br /><br />*-DomainMode*<br /><br />***-NombreDeDominio***<br /><br />***-DomainNetBIOSName***<br /><br />*-DNSDelegationCredential*<br /><br />*-ForestMode*<br /><br />-Force<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-NoDnsOnNetwork<br /><br />-NoRebootOnCompletion<br /><br />*-SafeModeAdministratorPassword*<br /><br />-SkipAutoConfigureDNS<br /><br />-SkipPreChecks<br /><br />*-SYSVOLPath*<br /><br />*-Whatif*|  
   
 > [!NOTE]  
 > El argumento **-DomainNetBIOSName** es obligatorio si quieres cambiar el nombre de 15 caracteres que se genera automáticamente de acuerdo con el prefijo de nombre de dominio DNS o si el nombre tiene más de 15 caracteres.  
@@ -569,12 +569,12 @@ Para aceptar el aviso de reinicio de forma automática, utiliza los argumentos *
 > No se recomienda invalidar el reinicio. El controlador de dominio debe reiniciarse para funcionar correctamente.  
   
 ## <a name="see-also"></a>Vea también  
-[Servicios de dominio de Active Directory (Portal de TechNet)](https://technet.microsoft.com/library/cc770946(WS.10).aspx)  
-[Servicios de dominio de Active Directory para Windows Server 2008 R2](https://technet.microsoft.com/library/dd378801(WS.10).aspx)  
-[Servicios de dominio de Active Directory para Windows Server 2008](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
+[Active Directory Domain Services (portal de TechNet)](https://technet.microsoft.com/library/cc770946(WS.10).aspx)  
+[Active Directory Domain Services para Windows Server 2008 R2](https://technet.microsoft.com/library/dd378801(WS.10).aspx)  
+[Active Directory Domain Services para Windows Server 2008](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
 [Referencia técnica de Windows Server (Windows Server 2003)](https://technet.microsoft.com/library/cc739127(WS.10).aspx)  
-[Centro de administración de Active Directory: Introducción (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd560651(WS.10).aspx)  
+Centro de administración de directorios de @no__t 0Active: Introducción (Windows Server 2008 R2) ](https://technet.microsoft.com/library/dd560651(WS.10).aspx)  
 [Administración de Active Directory con Windows PowerShell (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd378937(WS.10).aspx)  
-[Pregunte al equipo de servicios de directorio (Blog de soporte técnico comercial oficial de Microsoft)](http://blogs.technet.com/b/askds)  
+[Pregunte al equipo de servicios de directorio (blog oficial de soporte técnico comercial de Microsoft)](http://blogs.technet.com/b/askds)  
   
 

@@ -1,31 +1,31 @@
 ---
 title: Mejorar el rendimiento de un servidor de archivos con SMB directo
-description: Describe la característica SMB directo en Windows Server 2012 R2, Windows Server 2012 y Windows Server 2016.
-ms.prod: windows-server-threshold
+description: Describe la característica de SMB directo en Windows Server 2012 R2, Windows Server 2012 y Windows Server 2016.
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ed8fd5b4114fc9fd9c7dc278a98cea8cc67a8749
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 41126aa0d054607449d57928c1777679e5087e73
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826446"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394461"
 ---
 # <a name="smb-direct"></a>SMB directo
 
 >Se aplica a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
 
-Windows Server 2012 R2, Windows Server 2012 y Windows Server 2016 incluyen una característica llamada SMB directo, que admite el uso de adaptadores de red que tienen capacidad de remoto acceso directo a memoria (RDMA). Los adaptadores de red que cuentan con RDMA pueden funcionar a toda velocidad con una latencia muy baja y, al mismo tiempo, minimizan el uso de CPU. Para las cargas de trabajo como Hyper-V o Microsoft SQL Server, esto permite que un servidor de archivo remoto se parezca al almacenamiento local. SMB directo incluye:
+Windows Server 2012 R2, Windows Server 2012 y Windows Server 2016 incluyen una característica llamada SMB directo, que admite el uso de adaptadores de red con capacidad de acceso directo a memoria remota (RDMA). Los adaptadores de red que cuentan con RDMA pueden funcionar a toda velocidad con una latencia muy baja y, al mismo tiempo, minimizan el uso de CPU. Para las cargas de trabajo como Hyper-V o Microsoft SQL Server, esto permite que un servidor de archivo remoto se parezca al almacenamiento local. SMB directo incluye:
 
 - Aumento de rendimiento: aprovecha todo el rendimiento de las redes de alta velocidad, donde los adaptadores de red coordinan la transferencia de grandes cantidades de datos a velocidad de línea.
 - Latencia baja: ofrece respuestas extremadamente rápidas a las solicitudes de red y, como resultado, hace que parezca que el almacenamiento de archivos remoto es en realidad almacenamiento en bloque conectado directamente.
 - Uso bajo de CPU: usa menos ciclos de CPU al transferir datos por la red, lo que deja más potencia disponible a las aplicaciones de servidor.
 
-SMB directo se configura automáticamente en Windows Server 2012 R2 y Windows Server 2012.
+Windows Server 2012 R2 y Windows Server 2012 configuran automáticamente SMB directo.
 
 ## <a name="smb-multichannel-and-smb-direct"></a>SMB multicanal y SMB directo
 
@@ -41,7 +41,7 @@ Con SMB multicanal, SMB detecta si un adaptador de red tiene una funcionalidad R
 
 SMB directo tiene los siguientes requisitos:
 
-- Al menos dos equipos que ejecutan Windows Server 2012 R2 o Windows Server 2012
+- Al menos dos equipos que ejecuten Windows Server 2012 R2 o Windows Server 2012
 - Uno o más adaptadores de red con la funcionalidad RDMA.
 
 ### <a name="considerations-when-using-smb-direct"></a>Consideraciones sobre el uso de SMB directo
@@ -49,12 +49,12 @@ SMB directo tiene los siguientes requisitos:
 - Puede usar SMB directo en un clúster de conmutación por error; sin embargo, necesita asegurarse de que las redes utilizadas para el acceso del cliente sean las adecuadas para SMB directo. La conmutación por error admite el uso de varias redes para acceso de cliente, junto con los adaptadores de red que admiten RSS (Ajuste de escala en lado de recepción) y RDMA.
 - Puede usar SMB directo en el sistema operativo de administración de Hyper-V de manera que admita el uso de Hyper-V a través de SMB y para proporcionar almacenamiento en una máquina virtual que use la pila de almacenamiento de Hyper-V. Sin embargo, los adaptadores de red compatibles con RDMA no están directamente expuestos a un cliente Hyper-V. Si conecta un adaptador de red compatible con RDMA a un conmutador virtual, los adaptadores de redes virtuales del conmutador no serán compatibles con RDMA.
 - Si deshabilita SMB multicanal, también se deshabilita SMB directo. Dado que SMB multicanal detecta funcionalidades de adaptadores de red y determina si un adaptador de red es compatible con RDMA, el cliente no puede usar SMB directo si SMB multicanal está deshabilitado.
-- SMB directo no se admite en Windows RT SMB directo requiere compatibilidad para los adaptadores de red compatibles con RDMA, que se que solo está disponible en Windows Server 2012 R2 y Windows Server 2012.
-- SMB directo no se admite en versiones inferiores de Windows Server. Se admite únicamente en Windows Server 2012 R2 y Windows Server 2012.
+- SMB directo no se admite en Windows RT. SMB directo requiere compatibilidad con los adaptadores de red compatibles con RDMA, que solo está disponible en Windows Server 2012 R2 y Windows Server 2012.
+- SMB directo no se admite en versiones inferiores de Windows Server. Solo se admite en Windows Server 2012 R2 y Windows Server 2012.
 
 ## <a name="enabling-and-disabling-smb-direct"></a>Habilitar y deshabilitar SMB directo
 
-SMB directo está habilitado de forma predeterminada cuando se instala Windows Server 2012 R2 o Windows Server 2012. El cliente SMB detecta y usa automáticamente varias conexiones de red si se identifica una configuración apropiada.
+SMB directo está habilitado de forma predeterminada cuando está instalado Windows Server 2012 R2 o Windows Server 2012. El cliente SMB detecta y usa automáticamente varias conexiones de red si se identifica una configuración apropiada.
 
 ### <a name="disable-smb-direct"></a>Deshabilitar SMB directo
 
@@ -72,7 +72,7 @@ Para deshabilitar RDMA para todas las interfaces, escriba:
 Set-NetOffloadGlobalSetting -NetworkDirect Disabled
 ```
 
-Si deshabilita RDMA en el cliente o en el servidor, los sistemas no pueden usarlo. *Network Direct* es el nombre interno para Windows Server 2012 R2 y Windows Server 2012 compatibilidad básica con redes para las interfaces RDMA.
+Si deshabilita RDMA en el cliente o en el servidor, los sistemas no pueden usarlo. *Network Direct* es el nombre interno de la compatibilidad con redes básicas de windows Server 2012 R2 y windows Server 2012 para las interfaces RDMA.
 
 ### <a name="re-enable-smb-direct"></a>Volver a habilitar SMB directo
 
@@ -98,7 +98,7 @@ Puede probar cómo funciona el rendimiento al emplear uno de los siguientes proc
 
 ### <a name="compare-a-file-copy-with-and-without-using-smb-direct"></a>Comparar una copia de archivo utilizando y no utilizando SMB directo
 
-Aquí le mostramos cómo medir el aumento del rendimiento de SMB directo:
+Aquí se muestra cómo medir el mayor rendimiento de SMB directo:
 
 1. Configurar SMB directo
 2. Mida la cantidad de tiempo necesaria para ejecutar una copia grande de archivos con SMB directo.
@@ -112,7 +112,7 @@ Aquí le mostramos cómo medir el aumento del rendimiento de SMB directo:
 
 ### <a name="fail-one-of-multiple-network-adapters-during-a-file-copy-with-smb-direct"></a>Falla de uno de los varios adaptadores de red durante la copia de archivos con SMB directo
 
-Aquí le mostramos cómo confirmar la funcionalidad de conmutación por error de SMB directo:
+A continuación se indica cómo confirmar la capacidad de conmutación por error de SMB directo:
 
 1. Asegúrese de que SMB directo funcione en una configuración de varios adaptadores de red.
 2. Ejecute una copia grande de archivos. Mientras se ejecuta la copia, simule un error de una de las rutas de red al desconectar uno de los cables (o al deshabilitar uno de los adaptadores de red).
@@ -124,5 +124,5 @@ Aquí le mostramos cómo confirmar la funcionalidad de conmutación por error de
 ## <a name="more-information"></a>Más información
 
 - [Información general de bloque de mensajes del servidor](file-server-smb-overview.md)
-- [Mejorar la disponibilidad de red, almacenamiento y servidor: Información general del escenario](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- @no__t: disponibilidad del servidor, el almacenamiento y la red de 0Increasing: Información general sobre el escenario](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
 - [Implementación de Hyper-V en SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)

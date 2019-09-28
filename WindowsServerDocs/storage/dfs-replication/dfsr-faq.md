@@ -1,17 +1,17 @@
 ---
 title: 'Replicación DFS: Preguntas más frecuentes'
 ms.date: 06/18/2014
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 5bf85938f242ec29d75b32cdcb8b03c5f34bd1bb
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 12410d619245153f759b54e7a8aff257888f04dc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871974"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386075"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>Replicación DFS: Preguntas más frecuentes
 
@@ -430,7 +430,7 @@ Para usar RDC entre archivos, un miembro de la conexión de replicación debe es
 </thead>
 <tbody>
 <tr class="even">
-<td><p>Windows Server 2012 R2</p></td>
+<td><p>Windows Server 2012 R2</p></td>
 <td><p>Sí<em></p></td>
 <td><p>No disponible</p></td>
 <td><p>Sí</em></p></td>
@@ -443,21 +443,21 @@ Para usar RDC entre archivos, un miembro de la conexión de replicación debe es
 </tr>
 <tr class="even">
 <td><p>Windows Server 2008 R2</p></td>
-<td><p>Sin</p></td>
+<td><p>No</p></td>
 <td><p>Sí</p></td>
 <td><p>Sí</p></td>
 </tr>
 <tr class="odd">
 <td><p>Windows Server 2008</p></td>
-<td><p>Sin</p></td>
+<td><p>No</p></td>
 <td><p>Sí</p></td>
-<td><p>Sin</p></td>
+<td><p>No</p></td>
 </tr>
 <tr class="even">
 <td><p>Windows Server 2003 R2</p></td>
-<td><p>Sin</p></td>
+<td><p>No</p></td>
 <td><p>Sí</p></td>
-<td><p>Sin</p></td>
+<td><p>No</p></td>
 </tr>
 </tbody>
 </table>
@@ -728,7 +728,7 @@ Si ya se está transmitiendo alguna parte del archivo, Replicación DFS continú
 </colgroup>
 <thead>
 <tr class="header">
-<th>Date</th>
+<th>Fecha</th>
 <th>Descripción</th>
 <th>Reason</th>
 </tr>

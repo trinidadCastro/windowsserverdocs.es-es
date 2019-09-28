@@ -2,7 +2,7 @@
 title: Reiniciar o apagar
 description: Obtenga información sobre cómo reiniciar o apagar completamente un sistema en Multipoint Services
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: d2ef7185dc660e50dfde1816ed843b9c2586e930
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 76155fa5f8baf877999bdc3eb0753d7805087a72
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871568"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389423"
 ---
 # <a name="restart-or-shut-down"></a>Reiniciar o apagar
 Es posible que tenga que reiniciar el equipo host y todas las *estaciones* del sistema MultiPoint Services, si así se le indica, después de instalar hardware, software y actualizaciones de software. Si ha agregado nuevos dispositivos de hardware a una estación, puede asociar también dichos dispositivos a esa estación. Para más información sobre cómo *asociar estaciones*, vea el tema [Cambiar entre modos](Switch-Between-Modes.md).  

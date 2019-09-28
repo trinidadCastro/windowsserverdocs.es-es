@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 441dad92611e1a4a1135bd15bbcdfd05f38c1be3
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: afc05f395753e5c5614e92d109d71e05980d5d92
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445820"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407179"
 ---
 # <a name="deploy-access-denied-assistance-demonstration-steps"></a>Deploy Access-Denied Assistance (Demonstration Steps)
 
@@ -24,11 +24,11 @@ En este tema se explica cómo configurar la asistencia para acceso denegado y c�
   
 **En este documento**  
   
--   [Paso 1: Configurar la asistencia para acceso denegado](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_1)  
+-   [Paso 1: Configurar la asistencia para acceso denegado @ no__t-0  
   
--   [Paso 2: Configurar las opciones de notificación de correo electrónico](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_2)  
+-   [Paso 2: Configurar los valores de notificación por correo electrónico @ no__t-0  
   
--   [Paso 3: Compruebe que la asistencia para acceso denegado esté configurada correctamente](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_3)  
+-   [Paso 3: Comprobar que la asistencia para acceso denegado esté configurada correctamente @ no__t-0  
   
 > [!NOTE]  
 > Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
@@ -38,7 +38,7 @@ Puedes configurar la asistencia para acceso denegado en un dominio mediante la D
   
 Puedes configurar la asistencia para acceso denegado para el domino mediante la Directiva de grupo de la siguiente manera:  
   
-[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
+[Realice este paso con Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
   
 #### <a name="to-configure-access-denied-assistance-by-using-group-policy"></a>Cómo configurar la asistencia para acceso denegado mediante la Directiva de grupo  
   
@@ -70,7 +70,7 @@ Puedes configurar la asistencia para acceso denegado para el domino mediante la 
   
     3.  Deja los demás ajustes de la configuración predeterminada.  
   
-![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+@no__t guías 0solution](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -88,7 +88,7 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\Software\Policies\Microsoft\W
   
 También se puede configurar la asistencia para acceso denegado individualmente en cada servidor de archivos mediante la consola del Administrador de recursos del servidor de archivos.  
   
-[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1a)  
+[Realice este paso con Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1a)  
   
 #### <a name="to-configure-access-denied-assistance-by-using-file-server-resource-manager"></a>Cómo configurar la asistencia para acceso denegado mediante el Administrador de recursos del servidor de archivos  
   
@@ -118,7 +118,7 @@ También se puede configurar la asistencia para acceso denegado individualmente 
   
 8.  Haga clic en **Aceptar**.  
   
-![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+@no__t guías 0solution](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
   
@@ -128,7 +128,7 @@ Set-FSRMAdrSetting -Event "AccessDenied" -DisplayMessage "Type the text that the
   
 Después de configurar la asistencia para acceso denegado, debes habilitarla para todos los tipos de archivos mediante la Directiva de grupo.  
   
-[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1c)  
+[Realice este paso con Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1c)  
   
 #### <a name="to-configure-access-denied-assistance-for-all-file-types-by-using-group-policy"></a>Cómo configurar la asistencia para acceso denegado para todos los tipos de archivos mediante la Directiva de grupo  
   
@@ -142,7 +142,7 @@ Después de configurar la asistencia para acceso denegado, debes habilitarla par
   
 5.  Haga clic en **Habilitada**y, a continuación, haga clic en **Aceptar**.  
   
-![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+@no__t guías 0solution](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato. 
   
@@ -153,7 +153,7 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\SOFTWARE\Policies\Microsoft\W
   
 También puede especificarse un mensaje de acceso denegado diferente para cada carpeta compartida en un servidor de archivos mediante la consola del Administrador de recursos del servidor de archivos.  
   
-[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1b)  
+[Realice este paso con Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1b)  
   
 #### <a name="to-specify-a-separate-access-denied-message-for-a-shared-folder-by-using-file-server-resource-manager"></a>Cómo especificar un mensaje de acceso denegado diferente para cada carpeta compartida mediante el Administrador de recursos del servidor de archivos  
   
@@ -181,7 +181,7 @@ También puede especificarse un mensaje de acceso denegado diferente para cada c
   
 7.  Haga clic en **Aceptar** y, a continuación, en **Cerrar**.  
   
-![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+@no__t guías 0solution](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato. 
   
@@ -192,7 +192,7 @@ Set-FSRMMgmtProperty -Namespace "folder path" -Name "AccessDeniedMessage_MS" -Va
 ## <a name="BKMK_2"></a>Paso 2: Configurar las notificaciones de correo electrónico  
 Debes configurar las notificaciones de correo electrónico en cada servidor de archivos que enviará los mensajes de asistencia para acceso denegado.  
   
-[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
+[Realice este paso con Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
   
 1.  Abra el Administrador de recursos del servidor de archivos. En el Administrador del servidor, haz clic en **Herramientas** y, luego, en **Administrador de recursos del servidor de archivos**.  
   
@@ -204,13 +204,13 @@ Debes configurar las notificaciones de correo electrónico en cada servidor de a
   
     -   En el cuadro **Nombre del servidor SMTP o dirección IP** , escribe el nombre de la dirección IP del servidor SMTP de tu organización.  
   
-    -   En el **Administradores receptores predeterminados** y **predeterminado 'From' dirección de correo electrónico** , escriba la dirección de correo electrónico del administrador del servidor de archivos.  
+    -   En los cuadros **destinatarios de administrador predeterminados** y **dirección de correo electrónico predeterminada "de"** , escriba la dirección de correo electrónico del administrador del servidor de archivos.  
   
 5.  Haz clic en **Enviar correo electrónico de prueba** para asegurarte de que las notificaciones de correo electrónico están configuradas correctamente.  
   
 6.  Haga clic en **Aceptar**.  
   
-![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+@no__t guías 0solution](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
   
@@ -219,16 +219,16 @@ set-FSRMSetting -SMTPServer "server1" -AdminEmailAddress "fileadmin@contoso.com"
 ```  
   
 ## <a name="BKMK_3"></a>Paso 3: Comprobar que la asistencia para acceso denegado se ha configurado correctamente  
-Puede comprobar que la asistencia de acceso denegado esté configurada correctamente solicitándole a un usuario se está ejecutando Windows 8 intenta tener acceso a un recurso compartido o un archivo en que comparten que no tienen acceso a. Cuando aparezca el mensaje de acceso denegado, el usuario debería ver el botón **Solicitar asistencia** . Después de hacer clic en el botón Solicitar asistencia, el usuario podrá especificar la razón del acceso y enviar un correo electrónico al propietario de la carpeta o al administrador del servidor de archivos. El propietario de la carpeta o el administrador del servidor de archivos podrán informarte de que han recibido el correo electrónico y de que contiene los detalles adecuados.  
+Puede comprobar que la asistencia para acceso denegado esté configurada correctamente si un usuario que ejecuta Windows 8 intenta tener acceso a un recurso compartido o a un archivo de ese recurso compartido al que no tienen acceso. Cuando aparezca el mensaje de acceso denegado, el usuario debería ver el botón **Solicitar asistencia** . Después de hacer clic en el botón Solicitar asistencia, el usuario podrá especificar la razón del acceso y enviar un correo electrónico al propietario de la carpeta o al administrador del servidor de archivos. El propietario de la carpeta o el administrador del servidor de archivos podrán informarte de que han recibido el correo electrónico y de que contiene los detalles adecuados.  
   
 > [!IMPORTANT]  
-> Si desea comprobar la asistencia para acceso denegado al tener un usuario que ejecuta Windows Server 2012, debe instalar la experiencia de escritorio antes de conectarse al recurso compartido de archivos.  
+> Si desea comprobar la asistencia para acceso denegado con un usuario que ejecuta Windows Server 2012, debe instalar la experiencia de escritorio antes de conectarse al recurso compartido de archivos.  
   
 ## <a name="BKMK_Links"></a>Vea también  
   
 -   [Escenario: Asistencia de acceso denegado](Scenario--Access-Denied-Assistance.md)  
   
--   [Plan para la asistencia para acceso denegado](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)  
+-   [Planear la asistencia para acceso denegado](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)  
   
 -   [Control de acceso dinámico: Información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   

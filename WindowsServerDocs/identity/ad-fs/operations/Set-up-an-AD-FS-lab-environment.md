@@ -6,15 +6,15 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 5c91cb97a1b8371d1e3f8e496f026727681e2304
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 921cf4b4b5629df735b20ba59f239abfd6b0d6d6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865597"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407506"
 ---
 # <a name="set-up-an-ad-fs-lab-environment"></a>Configuración de un entorno de laboratorio de AD FS
 
@@ -172,7 +172,7 @@ El siguiente paso consiste en configurar el Servicio de registro de dispositivos
 ### <a name="add-host-a-and-alias-cname-resource-records-to-dns"></a>Agregar registros de recursos de host (A) y alias (CNAME) a DNS  
 En DC1, debes asegurarte de que se crean los siguientes registros del Sistema de nombres de dominio (DNS) para el Servicio de registro de dispositivos.  
   
-|Entrada|Type|Dirección|  
+|Entrada|Tipo|Dirección|  
 |---------|--------|-----------|  
 |adfs1|Host (A)|Dirección IP del servidor de AD FS|  
 |enterpriseregistration|Alias (CNAME)|adfs1.contoso.com|  
@@ -306,15 +306,15 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
   
     1.  Ejecute FedUtil. exe, que se encuentra en **C:Program Files (x86) Windows Identity Foundation sdkv 3.5**.  
   
-    2.  Establezca la ubicación de configuración de la aplicación en **C:inetputclaimappweb.config** y establezca el URI de la aplicación en la dirección URL del sitio,  **https://webserv1.contoso.com /claimapp/** . Haga clic en **Next**.  
+    2.  Establezca la ubicación de configuración de la aplicación en **C:inetputclaimappweb.config** y establezca el URI de la aplicación en la dirección URL del sitio,  **https://webserv1.contoso.com /claimapp/** . Haz clic en **Siguiente**.  
   
-    3.  Seleccione **usar un STS existente** y vaya a la dirección URL **https://adfs1.contoso.com/federationmetadata/2007-06/federationmetadata.xml** de metadatos del servidor de AD FS. Haga clic en **Next**.  
+    3.  Seleccione **usar un STS existente** y vaya a la dirección URL **https://adfs1.contoso.com/federationmetadata/2007-06/federationmetadata.xml** de metadatos del servidor de AD FS. Haz clic en **Siguiente**.  
   
     4.  Selecciona **Deshabilitar la validación de la cadena de certificados**y haz clic en **Siguiente**.  
   
     5.  Selecciona **Sin cifrado**y haz clic en **Siguiente**. En la página **Notificaciones ofrecidas**, haz clic en **Siguiente**.  
   
-    6.  Selecciona la casilla situada junto a **Programar una tarea para realizar diariamente actualizaciones de metadatos de WS-Federation**. Haga clic en **Finalizar**  
+    6.  Selecciona la casilla situada junto a **Programar una tarea para realizar diariamente actualizaciones de metadatos de WS-Federation**. Haga clic en **Finalizar**.  
   
     7.  La aplicación de ejemplo ya está configurada. Si prueba la dirección URL **https://webserv1.contoso.com/claimapp** de la aplicación, debe redirigirle a su servidor de Federación. El servidor de federación debería mostrar una página de error, ya que todavía no has configurado la relación de confianza para usuario autenticado. En otras palabras, esta aplicación de prueba no se ha protegido mediante AD FS.  
   

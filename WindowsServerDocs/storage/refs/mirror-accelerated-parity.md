@@ -1,6 +1,6 @@
 ---
 title: Paridad acelerada por reflejos
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: gawatu
 ms.manager: masriniv
 ms.technology: storage-file-systems
@@ -8,12 +8,12 @@ ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: ec1f04b20b0b743085bacd95ad95a52c15207f40
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0325a37e38845ea9482a6ed260e2bb3b493cc79a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872001"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393997"
 ---
 # <a name="mirror-accelerated-parity"></a>Paridad acelerada por reflejos
 
@@ -114,7 +114,7 @@ ReFS empieza a cambiar datos cuando el reflejo llega a un umbral de capacidad es
 -   Los valores más bajos permiten que ReFS elimine copias intermedias de los datos y realice una mejor ingesta de E/S de entrada. Esto es aplica a las cargas de trabajo de ingesta intensiva, como el almacenamiento de archivos. Sin embargo, los valores más bajos, podrían afectar al rendimiento de las cargas de trabajo con fines generales. Cambiar de forma innecesaria los datos fuera del nivel de reflejo implica una disminución del rendimiento. 
 
 ReFS incluye un parámetro ajustable para ajustar este umbral, que se puede configurar mediante una clave de registro. Esta clave de registro debe configurarse en **cada nodo de una implementación de espacios de almacenamiento directo**, por tanto, será necesario reiniciar para que los cambios entren en vigor. 
--   **Clave** HKEY_LOCAL_MACHINE\System\CurrentControlSet\Policies
+-   **Clave:** HKEY_LOCAL_MACHINE\System\CurrentControlSet\Policies
 -   **ValueName (DWORD):** DataDestageSsdFillRatioThreshold
 -   **ValueType** Porcentaje
 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: a7c39656-81ee-4c2b-80ef-4d017dd11b07
 title: Planificar una implementación de Carpetas de trabajo
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
 author: JasonGerend
@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 4/5/2017
 description: Cómo planificar una implementación de Carpetas de trabajo, incluyendo los requisitos del sistema y la manera de preparar el entorno de red.
-ms.openlocfilehash: 06d56df7ce9ddb8c9822f62de383ccad0394b4f3
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: e62cd61350299461d725c5d84209230ce1cc41a3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447844"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365742"
 ---
 # <a name="planning-a-work-folders-deployment"></a>Planificar una implementación de Carpetas de trabajo
 
@@ -34,7 +34,7 @@ En este tema se explica el proceso de diseño de una implementación de Carpetas
   
   Las siguientes secciones le servirán para diseñar su implementación de Carpetas de trabajo. La implementación de Carpetas de trabajo se detalla en el siguiente tema, [Implementar Carpetas de trabajo](deploy-work-folders.md).  
   
-##  <a name="BKMK_SOFT"></a> Requisitos de software  
+##  <a name="BKMK_SOFT"></a>Requisitos de software  
 
 Carpetas de trabajo presenta los siguientes requisitos de software en cuanto a servidores de archivos e infraestructura de red:  
   
@@ -116,7 +116,7 @@ Carpetas de trabajo presenta los siguientes requisitos de software relativos a l
 ### <a name="file-servers"></a>Servidores de archivos  
  Los servidores de archivos que ejecutan Windows Server 2012 R2 o Windows Server 2016 hospedan tanto el servicio de rol de Carpetas de trabajo, como los recursos compartidos de sincronización donde se almacenan los datos de Carpetas de trabajo de los usuarios. Los servidores de archivos también pueden hospedar los datos almacenados por otras tecnologías activas en la red interna (como los recursos compartidos de archivos) y, asimismo, se pueden agrupar para disponer de tolerancia a errores en los datos de usuario.  
   
-###  <a name="GroupPolicy"></a> Directiva de grupo  
+###  <a name="GroupPolicy"></a>directiva de grupo  
  Si tiene equipos con Windows 7 en el entorno, se recomienda lo siguiente:  
   
 - Usar la directiva de grupo para controlar las directivas de contraseña para todos los equipos unidos al dominio que usen Carpetas de trabajo.  
@@ -128,7 +128,7 @@ Carpetas de trabajo presenta los siguientes requisitos de software relativos a l
   La directiva de grupo también puede servir para configurar Carpetas de trabajo forzosamente de manera individual por cada usuario o equipo, pese a que esto hace que Carpetas de trabajo se sincronice en todos los equipos en los que un usuario inicie sesión (si se usa la configuración de directiva por usuario) e impide que los usuarios establezcan otra ubicación en su PC para Carpetas de trabajo (como una tarjeta microSD, a fin de ahorrar espacio en la unidad principal). Aconsejamos evaluar detenidamente las necesidades de los usuarios antes de implantar la configuración automática.  
   
 ### <a name="windows-intune"></a>Windows Intune  
- Windows Intune aporta un nivel de seguridad y facilidad de administración para los dispositivos no unidos a dominios que de otra forma no estarían presentes. Windows Intune se puede usar para configurar y administrar dispositivos personales de los usuarios como, por ejemplo, tabletas que se conectan a Carpetas de trabajo desde Internet. Windows Intune puede proporcionar dispositivos con la URL del servidor de sincronización para usar; en caso contrario, los usuarios deben escribir su dirección de correo electrónico de trabajo para buscar la configuración (si se publica una dirección URL pública carpetas de trabajo en forma de https://workfolders. <em>contoso.com</em>), o escriba la URL del servidor de sincronización directamente.  
+ Windows Intune aporta un nivel de seguridad y facilidad de administración para los dispositivos no unidos a dominios que de otra forma no estarían presentes. Windows Intune se puede usar para configurar y administrar dispositivos personales de los usuarios como, por ejemplo, tabletas que se conectan a Carpetas de trabajo desde Internet. Windows Intune puede proporcionar dispositivos con la dirección URL del servidor de sincronización que se va a usar; de lo contrario, los usuarios deben escribir su dirección de correo electrónico del trabajo para buscar la configuración (si publica una dirección URL de carpetas de trabajo pública con el formato https://workfolders. <em>contoso.com</em>) o escriba la dirección URL del servidor de sincronización directamente.  
   
  Sin una implementación de Windows Intune, los usuarios deben configurar los dispositivos externos manualmente, lo que puede traducirse en una mayor demanda del personal del servicio de asistencia.  
   
@@ -158,7 +158,7 @@ La opción Carpetas de trabajo admite el uso del Proxy de aplicación web, el Pr
   Para obtener información sobre el rendimiento y la escala de los servidores de Carpetas de trabajo, vea [Consideraciones de rendimiento de las implementaciones de Carpetas de trabajo](http://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx).  
   
 > [!NOTE]
->  Cuando se usen varios servidores de sincronización, recomendamos configurar la detección automática de servidores para los usuarios. Este proceso se basa en la configuración de un atributo de cada cuenta de usuario en AD DS. Este atributo es **msDS-SyncServerURL** y está disponible en las cuentas de usuario después de que un controlador de dominio de Windows Server 2012 R2 se haya agregado al dominio o se hayan aplicado actualizaciones de esquema de Active Directory. Este atributo debe definirse en cada usuario si se quiere garantizar que los usuarios se conecten al servidor de sincronización adecuado. Mediante el uso de detección automática de servidores, las organizaciones pueden publicar carpetas de trabajo tras una dirección URL "descriptiva" como *https://workfolders.contoso.com* , independientemente del número de servidores de sincronización.  
+>  Cuando se usen varios servidores de sincronización, recomendamos configurar la detección automática de servidores para los usuarios. Este proceso se basa en la configuración de un atributo de cada cuenta de usuario en AD DS. Este atributo es **msDS-SyncServerURL** y está disponible en las cuentas de usuario después de que un controlador de dominio de Windows Server 2012 R2 se haya agregado al dominio o se hayan aplicado actualizaciones de esquema de Active Directory. Este atributo debe definirse en cada usuario si se quiere garantizar que los usuarios se conecten al servidor de sincronización adecuado. Mediante el uso de la detección automática de servidores, las organizaciones pueden publicar carpetas de trabajo detrás de una dirección URL "descriptiva", como *https://workfolders.contoso.com* , independientemente del número de servidores de sincronización en funcionamiento.  
   
 ### <a name="number-of-sync-shares"></a>Número de recursos compartidos de sincronización  
  Los servidores de sincronización individuales pueden mantener varios recursos compartidos de sincronización, lo que puede ser práctico por los motivos siguientes:  
@@ -255,5 +255,5 @@ La siguiente relación de preguntas está pensada para ayudar a los clientes a d
   
 |Tipo de contenido|Referencias|  
 |------------------|----------------|  
-|**Evaluación del producto**|-   [Carpetas de trabajo](work-folders-overview.md)<br />-   [Carpetas de trabajo para Windows 7](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) (entrada de blog)|  
-|**Implementación**|-   [Diseñar una implementación de carpetas de trabajo](plan-work-folders.md)<br />-   [Implementar carpetas de trabajo](deploy-work-folders.md)<br />-   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web (WAP)](deploy-work-folders-adfs-overview.md)<br />- [Implementar carpetas de trabajo con el Proxy de aplicación de Azure AD](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />-   [Consideraciones de rendimiento para las implementaciones de carpetas de trabajo](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [Carpetas de trabajo para Windows 7 (descarga de 64 bits)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Carpetas de trabajo para Windows 7 (descarga de 32 bits)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [Implementación de laboratorio de prueba de carpetas de trabajo](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (entrada de blog)|
+|**Evaluación del producto**|-   [Carpetas de trabajo](work-folders-overview.md)<br />[carpetas de trabajo de -    para Windows 7](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) (entrada de blog)|  
+|**Implementación**|-   [Diseñar una implementación de carpetas de trabajo](plan-work-folders.md)<br />-   [implementar carpetas de trabajo](deploy-work-folders.md)<br />-   [Implementación de carpetas de trabajo con AD FS y proxy de aplicación web (WAP)](deploy-work-folders-adfs-overview.md)<br />- [implementación de carpetas de trabajo con Azure ad proxy de aplicación](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />[consideraciones de rendimiento de -    para implementaciones de carpetas de trabajo](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />[carpetas de trabajo -    para Windows 7 (descarga de 64 bits)](https://www.microsoft.com/download/details.aspx?id=42558)<br />[carpetas de trabajo -    para Windows 7 (descarga de 32 bits)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [Implementación del laboratorio de pruebas de carpetas de trabajo](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (entrada de blog)|

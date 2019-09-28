@@ -2,18 +2,18 @@
 title: Definir grupos de archivos para el filtrado
 description: En este artículo se describe cómo definir grupos de archivos para crear un espacio de nombres para un filtro de archivos, una excepción al filtro de archivos o archivos de almacenamiento de archivos por grupo de archivos
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6e043692500370b6c084a4db068027d13afc957f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b56d7b0439e3dc6f1a2e0a1c96f761dbb77cb0a0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838436"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394390"
 ---
 # <a name="define-file-groups-for-screening"></a>Definir grupos de archivos para el filtrado
 
@@ -41,7 +41,7 @@ Un *grupo de archivos* se usa para definir un espacio de nombres para un filtro 
 
     -   Para cada conjunto de archivos que quieres incluir en el grupo de archivos, en el cuadro **Archivos incluidos**, escribe un patrón de nombre de archivo y luego haz clic en **Agregar**.
     -   Para cada conjunto de archivos que quieres excluir del grupo de archivos, en el cuadro **Archivos excluidos**, escribe un patrón de nombre de archivo y luego haz clic en **Agregar**.
-        Tenga en cuenta que se aplican las reglas de comodín estándar, por ejemplo,  **\*.exe** selecciona todos los archivos ejecutables.
+        Tenga en cuenta que se aplican las reglas de caracteres comodín estándar, por ejemplo, **@no__t -1. exe** selecciona todos los archivos ejecutables.
 
 5.  Haga clic en **Aceptar**.
 
@@ -49,8 +49,8 @@ Un *grupo de archivos* se usa para definir un espacio de nombres para un filtro 
 
 -   [Administración del filtrado de archivos](file-screening-management.md)
 -   [Crear un filtro de archivos](create-file-screen.md)
--   [Crear una excepción al filtro de archivo](create-file-screen-exception.md)
--   [Crear una plantilla de pantalla de archivo](create-file-screen-template.md)
+-   [Crear una excepción al filtro de archivos](create-file-screen-exception.md)
+-   [Crear una plantilla de filtro de archivos](create-file-screen-template.md)
 -   [Administración de informes de almacenamiento](storage-reports-management.md)
 
 

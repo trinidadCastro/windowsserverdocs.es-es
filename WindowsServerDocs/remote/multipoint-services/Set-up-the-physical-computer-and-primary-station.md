@@ -3,7 +3,7 @@ title: Configurar el equipo físico y la estación principal
 description: Aprenda a configurar su primer sistema, la estación principal, en Multipoint Services.
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: 4e83b126-ce9a-4cd7-a0bd-6627c9e0f81b
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 01b405b679afa3815652b91bec63c786bd661cf7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 1a5865b6bd15b6cd07cde393012afd495e3378be
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871548"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395285"
 ---
 # <a name="set-up-the-physical-computer-and-primary-station"></a>Configurar el equipo físico y la estación principal
 Antes de instalar Multipoint Services, debe configurar la estación principal del sistema Multipoint Services. Si va a utilizar una red de área local (LAN), conecte el equipo a la LAN.  

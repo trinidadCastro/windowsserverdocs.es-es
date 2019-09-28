@@ -1,8 +1,8 @@
 ---
 title: nfsadmin
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4dc49e23d67ae68c598367de5a3fb0d7d6398a8
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2658cf610e4328d382b9224f4230d68a022d1cc3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437165"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373221"
 ---
 # <a name="nfsadmin"></a>nfsadmin
 
@@ -27,207 +27,207 @@ ms.locfileid: "66437165"
 Puede usar **nfsadmin** para administrar servidor para NFS y cliente para NFS.  
   
 ## <a name="syntax"></a>Sintaxis  
-**nfsadmin server** `[` *computerName*`] [`\-u *UserName*`[`\-p *contraseña* `]]` \-l  
+**nfsadmin server** `[`*computerName*`] [` @ no__t-4U *nombreDeUsuario*`[` @ no__t-7P *password*`]]` 0L  
   
-**nfsadmin server** `[` *computerName*`] [`\-u *UserName* `[` \-p *contraseña* `]]` \-r `{` *cliente* `|` todas`}`  
+**nfsadmin server** `[`*computerName*`] [` @ no__t-4U *nombreDeUsuario* `[` @ no__t-7P *Password*`]]` 0R 1*Client* 3 All @ no__t-14  
   
-**nfsadmin server** `[` *computerName*`] [`\-u *UserName* `[` \-p *contraseña* `]] {`iniciar `|` detener`}`  
+**nfsadmin server** `[`*computerName*`] [` @ no__t-4U *nombreDeUsuario* `[` @ no__t-7P *password*`]] {`start 0 stop @ no__t-11  
   
-**nfsadmin server** `[` *computerName*`] [`\-u *UserName* `[` \-p *contraseña* `]]` config *opción*`[...]`  
+**nfsadmin server** `[`*computerName*`] [` @ no__t-4U *nombreDeUsuario* `[` @ no__t-7P *Password*`]]` *opción*de configuración 1  
   
-**nfsadmin server** `[` *computerName*`] [`\-u *UserName* `[` \-p *contraseña* `]]` creategroup *nombre*  
+**nfsadmin server** `[`*computerName*`] [` @ no__t-4U *nombreDeUsuario* `[` @ no__t-7P *contraseña*`]]` creategroup *nombre*  
   
-**nfsadmin server** `[` *computerName*`] [`\-u *UserName* `[` \-p *contraseña* `]]` listgroups  
+**nfsadmin server** `[`*computerName*`] [` @ no__t-4U *nombreDeUsuario* `[` @ no__t-7P *password*`]]` listgroups  
   
-**nfsadmin server** `[` *computerName*`] [`\-u *UserName* `[` \-p *contraseña* `]]` deletegroup *nombre*  
+**nfsadmin server** `[`*computerName*`] [` @ no__t-4U *nombreDeUsuario* `[` @ no__t-7P *contraseña*`]]` deletegroup *nombre*  
   
-**nfsadmin server** `[` *computerName*`] [`\-u *UserName* `[` \-p *contraseña* `]]` renamegroup *OldName NewName*  
+**nfsadmin server** `[`*computerName*`] [` @ no__t-4U *nombreDeUsuario* `[` @ no__t-7P *password*`]]` renamegroup *OldName NewName*  
   
-**nfsadmin server** `[` *computerName*`] [`\-u *UserName* `[` \-p *contraseña* `]]` addmembers *nombre de Host*`[...]`  
+**nfsadmin server** `[`*computerName*`] [` @ no__t-4U *nombreDeUsuario* `[` @ no__t-7P *contraseña*@no__t *-@no__t 9*.  
   
-**nfsadmin server** `[` *computerName*`] [`\-u *UserName* `[` \-p *contraseña* `]]` listmembers  
+**nfsadmin server** `[`*computerName*`] [` @ no__t-4U *nombreDeUsuario* `[` @ no__t-7P *password*`]]` listmembers  
   
-**nfsadmin server** `[` *computerName*`] [`\-u *UserName* `[` \-p *contraseña* `]]` deletemembers *grupo Host*`[...]`  
+**nfsadmin server** `[`*computerName*`] [` @ no__t-4U *nombreDeUsuario* `[` @ no__t-7P *contraseña*`]]` deletemembers *host de grupo*1  
   
-**nfsadmin client** `[` *computerName*`] [`\-u *UserName* `[` \-p *contraseña* `]] {`iniciar `|` detener`}`  
+**nfsadmin client** `[`*computerName*`] [` @ no__t-4U *nombreDeUsuario* `[` @ no__t-7P *password*`]] {`start 0 stop @ no__t-11  
   
-**nfsadmin client** `[` *computerName*`] [`\-u *UserName* `[` \-p *contraseña* `]]` config *opción*`[...]`  
+**nfsadmin client** `[`*computerName*`] [` @ no__t-4U *nombreDeUsuario* `[` @ no__t-7P *Password*`]]` *opción*de configuración 1  
   
 ## <a name="description"></a>Descripción  
-El **nfsadmin** comando\-administra la utilidad de línea de servidor para NFS o cliente para NFS en el equipo local o remoto que ejecuta Services de Microsoft para Network File System \(NFS\). Si ha iniciado sesión con una cuenta que no tiene los privilegios necesarios, puede especificar un nombre de usuario y contraseña de una cuenta que sí. La acción realizada por **nfsadmin** depende de los argumentos de comando que proporcione.  
+La utilidad **nfsadmin** Command @ no__t-1Line administra servidor para NFS o cliente para NFS en el equipo local o remoto que ejecuta servicios de Microsoft para Network File System \(NFS @ no__t-3. Si ha iniciado sesión con una cuenta que no tiene los privilegios necesarios, puede especificar un nombre de usuario y una contraseña de una cuenta que sí los tenga. La acción realizada por **nfsadmin** depende de los argumentos de comando que suministre.  
   
-Además de servicio\-argumentos de comandos específicos y opciones, **nfsadmin** acepta los siguientes:  
+Además de los argumentos de comandos y las opciones de Service @ no__t-0specific, **nfsadmin** acepta lo siguiente:  
   
-*computerName*  
-Especifica el equipo remoto que desea administrar. Puede especificar el equipo con un servicio de nombres Internet de Windows \(WINS\) nombre o un sistema de nombres de dominio \(DNS\) nombre, o mediante el protocolo Internet \(IP\) dirección.  
+*NombreDeEquipo*  
+Especifica el equipo remoto que desea administrar. Puede especificar el equipo mediante un servicio de nombres Internet de Windows @no__t 0WINS @ no__t-1 o un nombre de sistema de nombres de dominio \(DNS @ no__t-3, o bien por el protocolo de Internet \(IP @ no__t-5.  
   
-**\-u** *UserName*  
-Especifica el nombre de usuario del usuario cuyas credenciales se van a usarse. Podría ser necesario agregar el nombre de dominio al nombre de usuario en el formulario <em>dominio</em> **\\** <em>nombre de usuario</em>  
+**@no__t: nombre de** *usuario* 1U  
+Especifica el nombre de usuario del usuario cuyas credenciales se van a utilizar. Puede que sea necesario agregar el nombre de dominio al nombre de usuario con el formato <em>dominio</em> **\\** <em>nombreusuario</em>  
   
-**\-p** *contraseña*  
-Especifica la contraseña del usuario especificado mediante el  **\-u** opción. Si especifica la  **\-u** opción pero omita el  **\-p** opción, se le solicitará la contraseña del usuario.  
+*contraseña* **de \-P**  
+Especifica la contraseña del usuario especificado mediante la opción **\-U** . Si especifica la opción **\-U** pero omite la opción **\-P** , se le pedirá la contraseña del usuario.  
   
-#### <a name="administering-server-for-nfs"></a>Administración del servidor para NFS  
-Use la **nfsadmin server** comandos para administrar servidor para NFS. La acción concreta que **nfsadmin server** toma depende de la opción de comando o un argumento que especifique:  
+#### <a name="administering-server-for-nfs"></a>Administrar servidor para NFS  
+Use el comando **nfsadmin Server** para administrar servidor para NFS. La acción específica que **nfsadmin Server** realiza depende de la opción de comando o el argumento que especifique:  
   
-**\-l**  
-Enumera todos los bloqueos retenidos por los clientes.  
+**@no__t 1L**  
+enumera todos los bloqueos retenidos por los clientes.  
   
-**\-r** {*client* | **all**}  
-Libera los bloqueos mantenidos por un *cliente* o, si **todas** se especifica, todos los clientes.  
+**\-r** {*cliente* | **All**}  
+Libera los bloqueos mantenidos por un *cliente* o, si se especifica **All** , por todos los clientes.  
   
 **start**  
 inicia el servicio servidor para NFS.  
   
-**stop**  
+**detener**  
 Detiene el servicio servidor para NFS.  
   
 **config**  
-Especifica la configuración general de servidor para NFS. Debe proporcionar al menos una de las siguientes opciones con la **config** argumento de comando:  
+Especifica la configuración general de servidor para NFS. Debe proporcionar al menos una de las siguientes opciones con el argumento del comando de **configuración** :  
   
-**mapsvr\=** <em>server</em>  
-Conjuntos de *server* como el servidor de asignación de nombres de usuario para el servidor para NFS. Aunque esta opción sigue admitiendo por compatibilidad con versiones anteriores, se debe utilizar el **sfuadmin** utilidad en su lugar.  
+**mapsvr @ no__t-1**<em>servidor</em>  
+Establece el *servidor* como servidor de asignación de nombres de usuario para servidor para NFS. Aunque esta opción sigue siendo compatible con la compatibilidad con versiones anteriores, debe usar la utilidad **sfuadmin** en su lugar.  
   
-**auditlocation\=** {**eventlog** | **archivo** | **ambos** | **ninguno** }  
-Especifica si se va a auditar los eventos y que se registrarán los eventos. Falta uno de los siguientes argumentos.  
+**auditlocation @ no__t-1**{**EventLog** | **File**@no__t **-5 @no__t**-7**ninguno**}  
+Especifica si se auditarán los eventos y dónde se registrarán los eventos. Se requiere uno de los siguientes argumentos.  
   
-**eventlog**  
-Especifica que se registrarán los eventos auditados solo en la aplicación Visor de registro de eventos.  
+**EventLog**  
+Especifica que los eventos auditados se registrarán solo en el registro de la aplicación Visor de eventos.  
   
-**file**  
-Especifica que se registrarán los eventos auditados solo en el archivo especificado por **config fname**.  
+**filesystem**  
+Especifica que los eventos auditados se registrarán solo en el archivo especificado por **config fname**.  
   
-**both**  
-Especifica que se registrarán los eventos auditados en el registro de aplicación del Visor de eventos, así como el archivo especificado por **config fname**.  
+**ambos**  
+Especifica que los eventos auditados se registrarán en el registro de la aplicación Visor de eventos, así como en el archivo especificado por **config fname**.  
   
-**Ninguno**  
+**ninguna**  
 Especifica que no se auditarán los eventos.  
   
-**fname\=** <em>archivo</em>  
-Establece el archivo especificado por *archivo* como el archivo de auditoría. El valor predeterminado es % sfudir %\\registro\\nfssvr.log  
+**fname @ no__t-1**<em>archivo</em>  
+Establece el archivo especificado por *archivo* como archivo de auditoría. El valor predeterminado es% sfudir% @no__t -0log\\nfssvr.log  
   
-**fsize\=** \=*size*  
-Conjuntos de *tamaño* como el tamaño máximo en megabytes del archivo de auditoría. El tamaño máximo predeterminado es 7 MB.  
+**fsize @ no__t-1**@no__t *-2*  
+Establece el *tamaño* como el tamaño máximo en megabytes del archivo de auditoría. El tamaño máximo predeterminado es de 7 MB.  
   
-**auditar\=** \[ **\+** | **\-** \]**montar** \[ **\+** | **\-** \] **leer** \[ **\+** | **\-** \] **escribir** \[ **\+** | **\-** \] **crear** \[ **\+** | **\-** \] **eliminar** \[ **\+** | **\-** \] **bloqueo** \[ **\+** | **\-** \] **todas**  
-Especifica los eventos se registrarán. Para empezar a registrar un evento, escriba un signo \( **\+** \) delante del nombre del evento; para detener el registro de un evento, escriba un signo menos \( **\-** \) delante del nombre del evento. Si se omite el inicio de sesión, se supone el signo más. No use **todas** con ningún otro nombre de evento.  
+**Audit @ no__t-1**\[ **\+** | **\-** \]**mount** \=0**2**3**5**6**Read** 8**0**1 **@no__ t-23**4**Write** 6**8**9**1**2**crear** 4**6**7**9**0**Delete** 2 **@no__ t-44**5**7**8**locking** 0**2**3**5**6**All**  
+Especifica los eventos que se van a registrar. Para iniciar el registro de un evento, escriba un signo más \( **\+** \) antes del nombre del evento; para detener el registro de un evento, escriba un signo menos \( **\-** \) antes del nombre del evento. Si se omite el signo, se supone el signo más. No use **All** con ningún otro nombre de evento.  
   
-**lockperiod\=** <em>segundos</em>  
-Especifica el número de segundos que esperará el servidor para NFS para recuperar los bloqueos después de haber perdido una conexión al servidor para NFS y, a continuación, puede restablecer o después de reiniciar el servicio servidor para NFS.  
+**lockperiod @ no__t-1**<em>segundos</em>  
+Especifica el número de segundos que servidor para NFS esperará para reclamar bloqueos después de que se haya perdido la conexión con servidor para NFS y se haya reestablecido o después de que se haya reiniciado el servicio servidor para NFS.  
   
-Portmapprotocol\={TCP | UDP | TCP\+UDP  
-Especifica los protocolos de transporte admite Portmap. El valor predeterminado es **TCP\+UDP**.  
+Portmapprotocol @ no__t-0 {TCP | UDP | TCP @ no__t-1UDP  
+Especifica qué protocolos de transporte portmap admite. La configuración predeterminada es **TCP @ no__t-1UDP**.  
   
-mountprotocol\={TCP | UDP | TCP\+UDP}  
-Especifica el tipo de transporte protocolos montar admite. El valor predeterminado es **TCP\+UDP**.  
+mountprotocol @ no__t-0 {TCP | UDP | TCP @ no__t-1UDP}  
+Especifica qué protocolos de transporte admite el montaje. La configuración predeterminada es **TCP @ no__t-1UDP**.  
   
-nfsprotocol\={TCP | UDP | TCP\+UDP}  
-Especifica el tipo de transporte protocolos Network File System \(NFS\) admite. El valor predeterminado es **TCP\+UDP**  
+nfsprotocol @ no__t-0 {TCP | UDP | TCP @ no__t-1UDP}  
+Especifica qué protocolos de transporte Network File System \(NFS @ no__t-1 admite. La configuración predeterminada es **TCP @ no__t-1UDP**  
   
-nlmprotocol\={TCP | UDP | TCP\+UDP}  
-Especifica el tipo de transporte protocolos Administrador de bloqueos de red \(NLM\) admite. El valor predeterminado es **TCP\+UDP**.  
+nlmprotocol @ no__t-0 {TCP | UDP | TCP @ no__t-1UDP}  
+Especifica los protocolos de transporte que el administrador de bloqueos de red \(NLM @ no__t-1 admite. La configuración predeterminada es **TCP @ no__t-1UDP**.  
   
-nsmprotocol\={TCP | UDP | TCP\+UDP}  
-Especifica el tipo de transporte protocolos Administrador de estado de la red \(NSM\) admite. El valor predeterminado es **TCP\+UDP**.  
+nsmprotocol @ no__t-0 {TCP | UDP | TCP @ no__t-1UDP}  
+Especifica los protocolos de transporte que el administrador de estado de red \(NSM @ no__t-1 admite. La configuración predeterminada es **TCP @ no__t-1UDP**.  
   
-**enableV3\=** {**yes** | **no**}  
-Especifica si se admitirán los protocolos de la versión 3 de NFS. El valor predeterminado es **Sí**.  
+**enableV3 @ no__t-1**{**sí** | **no**}  
+Especifica si se admitirán los protocolos de la versión 3 de NFS. El valor predeterminado es **sí**.  
   
-**renewauth\=** {**yes** | **no**}  
-Especifica si las conexiones de cliente deberán volver a autenticarse tras el período especificado por **config renewauthinterval**. El valor predeterminado es **ningún**.  
+**renewauth @ no__t-1**{**sí** | **no**}  
+Especifica si será necesario volver a autenticar las conexiones de cliente después del período especificado por **config renewauthinterval**. La configuración predeterminada es **no**.  
   
-**renewauthinterval\=** <em>seconds</em>  
-Especifica el número de segundos que transcurren antes de que un cliente se ve obligado a volver a autenticarse si **config renewauth** está establecido en **Sí**. El valor predeterminado es 600 segundos.  
+**renewauthinterval @ no__t-1**<em>segundos</em>  
+Especifica el número de segundos que transcurren antes de que se fuerce a un cliente a volver a autenticarse si la **configuración renewauth** está establecida en **sí**. El valor predeterminado es 600 segundos.  
   
-**dircache\=** <em>size</em>  
-Especifica el tamaño en kilobytes, de la caché de directorio. El número especificado como *tamaño* debe ser un múltiplo de 4 entre 4 y 128. El directorio predeterminado\-tamaño de caché es de 128 KB.  
+**dircache @ no__t-1**<em>tamaño</em>  
+Especifica el tamaño en kilobytes de la memoria caché del directorio. El número especificado como *tamaño* debe ser un múltiplo de 4 entre 4 y 128. El tamaño predeterminado del directorio @ no__t-0cache es 128 KB.  
   
-**translationfile**\=\[file\]  
-Especifica un archivo que contiene información de asignación para reemplazar caracteres en los nombres de archivos al moverlos desde Windows\-basado en UNIX\-en función de los sistemas de archivos. Si *archivo* no se especifica, se deshabilita la traducción de caracteres de nombre de archivo. Si el valor de **translationfile** es cambia, debe reiniciar el servidor para que el cambio surta efecto.  
+**translationfile**\= @ no__t-2file @ no__t-3  
+Especifica un archivo que contiene información de asignación para reemplazar caracteres en los nombres de los archivos cuando se mueven desde Windows @ no__t-0based a sistemas de archivos UNIX @ no__t-1based. Si no se especifica *File* , la traducción de caracteres de nombre de archivo está deshabilitada. Si se cambia el valor de **translationfile** , deberá reiniciar el servidor para que el cambio surta efecto.  
   
-**dotfileshidden**\={**yes** | **no**}  
-Especifica si los archivos que están creadas con nombres que empiecen por un período \(.\) se marcados como ocultos en el sistema de archivos de Windows y por consiguiente ocultarse a los clientes NFS. El valor predeterminado es **ningún**.  
+**dotfileshidden**\= {**sí** | **no**}  
+Especifica si los archivos que se crean con nombres que comienzan por un punto \(. \) se marcarán como ocultos en el sistema de archivos de Windows y, por tanto, se ocultarán de los clientes NFS. La configuración predeterminada es **no**.  
   
-**casesensitivelookups\=** {**Sí** | **ningún**}  
-Especifica si las búsquedas de directorio se distinguen mayúsculas de minúsculas \(que requieren una coincidencia exacta del caso de carácter\).  
+**casesensitivelookups @ no__t-1**{**sí** | **no**}  
+Especifica si las búsquedas de directorio distinguirán mayúsculas de minúsculas \(requiring coincide exactamente con las mayúsculas y minúsculas de los caracteres @ no__t-1.  
   
-También deberá deshabilitar el caso del kernel de Windows\-minúsculas en orden para servidor para NFS admita caso\-nombres de los archivos confidenciales. Puede deshabilitar el caso del kernel de Windows\-no distinguir desactivando la siguiente clave del registro en 0:  
+También debe deshabilitar el caso del kernel de Windows @ no__t-0insensitivity para que Server for NFS admita los nombres de archivo Case @ no__t-1sensitive. Puede deshabilitar el caso del kernel de Windows @ no__t-0insensitivity borrando la siguiente clave del registro en 0:  
   
-HKLM\\sistema\\CurrentControlSet\\Control\\Administrador de sesión\\kernel  
+HKLM @ no__t-0SYSTEM @ no__t-1CurrentControlSet @ no__t-2Control @ no__t-3Session Manager @ no__t-4kernel  
   
-Obcaseinsensitive DWOrd   
+DWOrd obcaseinsensitive   
   
 > [!IMPORTANT]  
-> En esta sección solo se aplica a Windows Server 2008 R2, Windows Server 2008 y Windows Server 2003. En esta sección no se aplica a Windows Server 2012 R2 o Windows Server 2012.  
+> Esta sección solo se aplica a Windows Server 2008 R2, Windows Server 2008 y Windows Server 2003. Esta sección no se aplica a Windows Server 2012 R2 o Windows Server 2012.  
   
-**ntfscase\=** {**lower** | **upper** | **preserve**}  
-Especifica si se devolverá el caso de los caracteres en los nombres de archivos en el sistema de archivos NTFS en minúsculas, mayúsculas, o en el formulario que se almacenan en el directorio. El valor predeterminado es **conservar**. No se puede cambiar esta configuración si **casesensitivelookups** está establecido en **Sí**.  
+**ntfscase @ no__t-1**{**Lower** | **Upper** | **preserve**}  
+Especifica si el uso de mayúsculas o minúsculas en los nombres de los archivos del sistema de archivos NTFS se devolverá en minúsculas, mayúsculas o en el formato almacenado en el directorio. La configuración predeterminada es **preserve**. Esta configuración no se puede cambiar si **casesensitivelookups** está establecido en **yes**.  
   
-**creategroup** *name*  
-crea un nuevo grupo de cliente, dándole especificado *nombre*.  
+*nombre* de creategroup  
+crea un nuevo grupo de clientes y le asigna el *nombre*especificado.  
   
 **listgroups**  
 Muestra los nombres de todos los grupos de clientes.  
   
-**deletegroup** *name*  
-Quita el grupo de cliente especificado por *nombre*.  
+*nombre* de deletegroup  
+quita el grupo de clientes especificado por *nombre*.  
   
 **renamegroup** *OldName NewName*  
-cambia el nombre del grupo de cliente especificado por *OldName* a *NewName*  
+cambia el nombre del grupo de clientes especificado por *OldName* a *NewName* .  
   
-**AddMembers** *nombre Host*\[...\]  
-Agrega *Host* al grupo de cliente especificado por *nombre*.  
+*host de nombre*de addmembers \[... \]  
+agrega el *host* al grupo de clientes especificado por *nombre*.  
   
-**ListMembers** *nombre*  
-Enumera los equipos host en el grupo de cliente especificado por *nombre*.  
+*nombre* de listmembers  
+enumera los equipos host del grupo de clientes especificado por *nombre*.  
   
-**deletemembers** *grupo Host*\[...\]  
-Quita el cliente especificado por *Host* desde el grupo de cliente especificado por *grupo*.  
+*host de grupo*de deletemembers \[... \]  
+quita el cliente especificado por el *host* del grupo de clientes especificado por el *Grupo*.  
   
-Si no especifica un argumento, o la opción de comando **nfsadmin server** muestra el servidor actual para la configuración de NFS.  
+Si no se especifica una opción de comando o un argumento, **nfsadmin Server** muestra las opciones de configuración del servidor para NFS actual.  
   
 #### <a name="administering-client-for-nfs"></a>Administración de cliente para NFS  
-Use la **nfsadmin client** comandos para administrar el cliente para NFS. La acción concreta que **nfsadmin client** toma depende del argumento de comando que especifique:  
+Use el comando **nfsadmin Client** para administrar cliente para NFS. La acción específica que **nfsadmin Client** realiza depende del argumento de comando que especifique:  
   
 **start**  
-inicia al servicio cliente para NFS.  
+inicia el servicio cliente para NFS.  
   
-**stop**  
-Detiene al servicio cliente para NFS.  
+**detener**  
+Detiene el servicio cliente para NFS.  
   
 **config**  
-Especifica las opciones generales de cliente para NFS. Debe proporcionar al menos una de las siguientes opciones con la **config** argumento de comando:  
+Especifica la configuración general de cliente para NFS. Debe proporcionar al menos una de las siguientes opciones con el argumento del comando de **configuración** :  
   
-**fileaccess\=** <em>mode</em>  
--   Especifica el modo de permiso predeterminado para los archivos creados en Network File System \(NFS\) servidores. El *modo* argumento consta de un tres dígitos de 0 a 7 \(inclusivo\) que representa los permisos predeterminados concedidos al usuario, grupo y otros \(respectivamente\). Los dígitos se traducen en UNIX\-estilo permisos como sigue: 0\=none, 1\=x 2\=w, 3\=wx, 4\=r, 5\=rx, 6\=rw y 7\=rwx. Por ejemplo, **fileaccess\=750** ofrece rwx permiso al propietario, permiso de rx para el grupo y no tiene permiso de acceso a otros usuarios.  
+**FileAccess @ no__t-1**<em>modo</em>  
+-   Especifica el modo de permisos predeterminado para los archivos creados en los servidores Network File System \(NFS @ no__t-1. El argumento de *modo* consta de tres dígitos entre 0 y 7 \(inclusive @ no__t-2 que representan los permisos predeterminados concedidos al usuario, grupo y otros \(respectively @ no__t-4. Los dígitos se traducen a los permisos de UNIX @ no__t-0style de la siguiente manera: 0 @ no__t-0none, 1 @ no__t-1x, 2 @ no__t-2W, 3 @ no__t-3wx, 4 @ no__t-4R, 5 @ no__t-5RX, 6 @ no__t-6RW y 7 @ no__t-7rwx. Por ejemplo, **FileAccess @ no__t-1750** proporciona el permiso rwx al propietario, el permiso RX en el grupo y no tiene permiso de acceso a otros usuarios.  
   
-**mapsvr\=** <em>server</em>  
-Conjuntos de *server* como el servidor de asignación de nombres de usuario de cliente para NFS. Aunque esta opción sigue admitiendo por compatibilidad con versiones anteriores, se debe utilizar el **sfuadmin** utilidad en su lugar.  
+**mapsvr @ no__t-1**<em>servidor</em>  
+Establece el *servidor* como servidor de asignación de nombres de usuario para cliente para NFS. Aunque esta opción sigue siendo compatible con la compatibilidad con versiones anteriores, debe usar la utilidad **sfuadmin** en su lugar.  
   
-**mtype\=** {**hard** | **soft**}  
-Especifica el tipo de montaje predeterminado. Para un montaje forzado, cliente para NFS continúa intentándolo una llamada RPC con errores hasta que lo consiga. Para un montaje flexible, cliente para NFS devuelve un error en la aplicación que realiza la llamada después de volver a intentar la llamada el número de veces especificado por el **vuelva a intentar** opción.  
+**mtype @ no__t-1**{**Hard** | **Soft**}  
+Especifica el tipo de montaje predeterminado. Para un montaje forzado, cliente para NFS sigue Reintentando una RPC con errores hasta que se realiza correctamente. Para un montaje flexible, cliente para NFS devuelve un error a la aplicación que realiza la llamada después de volver a intentar la llamada el número de veces especificado por la opción de **reintento** .  
   
-**retry\=** <em>number</em>  
-Especifica el número de veces que se intenta realizar una conexión para un montaje flexible. Este valor debe ser de 1 a 10, inclusive. El valor predeterminado es 1.  
+**vuelva a intentar @ no__t-1**<em>número</em>  
+Especifica el número de veces que se intenta establecer una conexión para un montaje flexible. Este valor debe estar comprendido entre 1 y 10, ambos inclusive. El valor predeterminado es 1.  
   
-**timeout\=** <em>seconds</em>  
-Especifica el número de segundos de espera para una conexión \(llamada a procedimiento remoto\). Este valor debe ser 0,8, 0,9 o un entero entre 1 y 60, ambos inclusive. El valor predeterminado es 0,8.  
+**tiempo de espera: @ no__t-1**<em>segundos</em>  
+Especifica el número de segundos que se va a esperar a que se llame a la llamada de procedimiento \(remote a @ no__t-1. Este valor debe ser 0,8, 0,9 o un entero comprendido entre 1 y 60, ambos incluidos. El valor predeterminado es 0,8.  
   
-**Protocolo\={TCP | UDP | TCP\+UDP}**  
-Especifica el tipo de transporte protocolos admita el cliente. El valor predeterminado es **TCP\+UDP**  
+**Protocolo @ no__t-1 {TCP | UDP | TCP @ no__t-2UDP}**  
+Especifica qué protocolos de transporte admite el cliente. La configuración predeterminada es **TCP @ no__t-1UDP**  
   
-**rsize\=** <em>size</em>  
+**rsize @ no__t-1**<em>tamaño</em>  
 Especifica el tamaño, en kilobytes, del búfer de lectura. Este valor puede ser 0,5, 1, 2, 4, 8, 16 o 32. El valor predeterminado es 32.  
   
-**wsize\=** <em>size</em>  
+**wsize @ no__t-1**<em>tamaño</em>  
 Especifica el tamaño, en kilobytes, del búfer de escritura. Este valor puede ser 0,5, 1, 2, 4, 8, 16 o 32. El valor predeterminado es 32.  
   
-**perf\=default**  
-Restaura las siguientes opciones de rendimiento para los valores predeterminados:  
+**Perf @ no__t-1default**  
+Restaura los valores predeterminados de la siguiente configuración de rendimiento:  
   
 -   **mtype**  
   
--   **retry**  
+-   **realizar**  
   
 -   **timeout**  
   
@@ -235,9 +235,9 @@ Restaura las siguientes opciones de rendimiento para los valores predeterminados
   
 -   **wsize**  
   
-**fileaccess\=** <em>mode</em>  
-Especifica el modo de permiso predeterminado para los archivos creados en Network File System \(NFS\) servidores. El *modo* argumento consta de un tres dígitos de 0 a 7 \(inclusivo\) que representa los permisos predeterminados concedidos al usuario, grupo y otros \(respectivamente\). Los dígitos se traducen en UNIX\-estilo permisos como sigue: 0\=none, 1\=x 2\=w, 3\=wx, 4\=r, 5\=rx, 6\=rw y 7\=rwx. Por ejemplo, **fileaccess\=750** ofrece rwx permiso al propietario, permiso de rx para el grupo y no tiene permiso de acceso a otros usuarios.  
+**FileAccess @ no__t-1**<em>modo</em>  
+Especifica el modo de permisos predeterminado para los archivos creados en los servidores Network File System \(NFS @ no__t-1. El argumento de *modo* consta de tres dígitos entre 0 y 7 \(inclusive @ no__t-2 que representan los permisos predeterminados concedidos al usuario, grupo y otros \(respectively @ no__t-4. Los dígitos se traducen a los permisos de UNIX @ no__t-0style de la siguiente manera: 0 @ no__t-0none, 1 @ no__t-1x, 2 @ no__t-2W, 3 @ no__t-3wx, 4 @ no__t-4R, 5 @ no__t-5RX, 6 @ no__t-6RW y 7 @ no__t-7rwx. Por ejemplo, **FileAccess @ no__t-1750** proporciona el permiso rwx al propietario, el permiso RX en el grupo y no tiene permiso de acceso a otros usuarios.  
   
-Si no especifica un argumento, o la opción de comando **nfsadmin client** muestra el cliente actual para la configuración de NFS.  
+Si no se especifica una opción de comando o un argumento, **nfsadmin Client** muestra la configuración actual de cliente para NFS.  
   
 

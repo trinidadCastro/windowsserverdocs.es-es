@@ -1,8 +1,8 @@
 ---
-title: Mediante el comando AutoaddDevices aprobar
-description: 'Tema de los comandos de Windows para ***- '
+title: Uso del comando APPROVE-AutoaddDevices
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ce9824c45a00ccb9f1f9e357c7e3d36b2857f69
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5617837706a778bac2456647f40efd563d861722
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886826"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363664"
 ---
-# <a name="using-the-approve-autoadddevices-command"></a>Mediante el comando AutoaddDevices aprobar
+# <a name="using-the-approve-autoadddevices-command"></a>Uso del comando APPROVE-AutoaddDevices
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Aprueba los equipos que están pendientes de aprobación administrativa. Cuando se habilita la directiva de adición automática, se requiere aprobación administrativa antes de que los equipos desconocidos (aquéllos que no están preconfigurados) puedan instalar una imagen. Puede habilitar esta directiva con el **respuesta PXE** ficha de la página de propiedades de servidor s.
+Aprueba los equipos que están pendientes de aprobación administrativa. Cuando se habilita la Directiva de adición automática, se requiere la aprobación administrativa antes de que los equipos desconocidos (los que no están preconfigurados) puedan instalar una imagen. Puede habilitar esta Directiva mediante la pestaña **respuesta PXE** de la página Propiedades del servidor.
 ## <a name="syntax"></a>Sintaxis
 ```
 wdsutil [Options] /Approve-AutoaddDevices [/Server:<Server name>] /RequestId:{<Request ID>| ALL} [/MachineName:<Device name>] [/OU:<DN of OU>] 
@@ -34,22 +34,22 @@ wdsutil [Options] /Approve-AutoaddDevices [/Server:<Server name>] /RequestId:{<R
 |Parámetro|Descripción|
 |-------|--------|
 |[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica un nombre de servidor, se usará el servidor local.|
-|/RequestId:{Request ID &#124; ALL}|Especifica el identificador de solicitud asignado al equipo pendiente. Especificar **todas** para aprobar todos los equipos pendientes.|
-|[/MachineName:<Device name>]|Especifica el nombre del equipo va a agregar. No se puede usar esta opción al aprobar todos los equipos.|
-|[/OU:<DN of OU>]|Especifica el nombre distintivo de la unidad organizativa (UO) donde se debe crear el objeto de cuenta de equipo. Por ejemplo: **OU = Miuo, CN = Test, DC = Domain, DC = com**. La ubicación predeterminada es el contenedor del equipo predeterminado.|
-|[/User:<Domain\User &#124; User@Domain>]|Establece permisos en el objeto de cuenta de equipo para asignar al usuario especificado en los derechos necesarios.|
-|[/JoinRights:{JoinOnly &#124; Full}]|Especifica el tipo de derechos que se asignará al usuario especificado.<br /><br />-   **JoinOnly** requiere que el administrador restablecer la cuenta de equipo antes de que el usuario puede unir el equipo al dominio.<br />-   **Completa** proporciona acceso total al usuario, que incluye el derecho de unir el equipo al dominio.|
-|[/ JoinDomain: {Sí &#124; n}]|Especifica si el equipo debe estar unido al dominio como esta cuenta de equipo durante la instalación del sistema operativo. El valor predeterminado es **Sí**.|
-|[/ ReferralServer:<Server name>]|Especifica el nombre del servidor que se va a ser contactado para descargar la imagen de arranque y el programa de arranque de red mediante el protocolo Trivial de transferencia de archivos (tftp).|
-|[/BootProgram:<Relative path>]|Especifica la ruta de acceso relativa desde la carpeta remoteInstall el programa de arranque de red que debe recibir este equipo. Por ejemplo: **boot\x86\pxeboot.com**.|
-|[/WdsClientUnattend:<Relative path>]|Especifica la ruta de acceso relativa desde la carpeta remoteInstall en el archivo de instalación desatendida que automatiza al cliente de servicios de implementación de Windows.|
-|[/BootImagepath:<Relative path>]|Especifica la ruta de acceso relativa desde la carpeta remoteInstall la imagen de arranque que debe recibir este equipo.|
-## <a name="BKMK_examples"></a>Ejemplos
-Para aprobar el equipo con un Id. de solicitud de 12, escriba:
+|/RequestId: {ID. &#124; de solicitud todos}|Especifica el identificador de solicitud asignado al equipo pendiente. Especifique **All** para aprobar todos los equipos pendientes.|
+|[/MachineName: <Device name>]|Especifica el nombre del equipo que se va a agregar. No se puede usar esta opción cuando se aprueban todos los equipos.|
+|[/OU: <DN of OU>]|Especifica el nombre distintivo de la unidad organizativa (OU) en la que se debe crear el objeto de cuenta de equipo. Por ejemplo: **Ou = miuo, CN = test, DC = Domain, DC = com**. La ubicación predeterminada es el contenedor del equipo predeterminado.|
+|[/User: < Dominio\usuario &#124; User@Domain >]|Establece permisos en el objeto de cuenta de equipo para asignar al usuario especificado los derechos necesarios.|
+|[/JoinRights: {JoinOnly &#124; Full}]|Especifica el tipo de derechos que se asignará al usuario especificado.<br /><br />-   **JoinOnly** requiere que el administrador restablezca la cuenta de equipo antes de que el usuario pueda unir el equipo al dominio.<br />-   **Full** proporciona acceso completo al usuario, que incluye el derecho para unir el equipo al dominio.|
+|[/JoinDomain: {Yes &#124; no}]|Especifica si el equipo debe unirse al dominio como esta cuenta de equipo durante la instalación del sistema operativo. El valor predeterminado es **sí**.|
+|[/ReferralServer: <Server name>]|Especifica el nombre del servidor con el que se va a establecer la conexión para descargar el programa de arranque de red y la imagen de arranque mediante el File Transfer Protocol trivial (TFTP).|
+|[/BootProgram: <Relative path>]|Especifica la ruta de acceso relativa de la carpeta remoteInstall al programa de arranque de red que este equipo debe recibir. Por ejemplo: **boot\x86\pxeboot.com**.|
+|[/WdsClientUnattend: <Relative path>]|Especifica la ruta de acceso relativa de la carpeta remoteInstall al archivo de instalación desatendida que automatiza el cliente de servicios de implementación de Windows.|
+|[/BootImagepath: <Relative path>]|Especifica la ruta de acceso relativa de la carpeta remoteInstall a la imagen de arranque que este equipo debe recibir.|
+## <a name="BKMK_examples"></a>Example
+Para aprobar el equipo con un RequestId de 12, escriba:
 ```
 wdsutil /Approve-AutoaddDevices /RequestId:12
 ```
-Para aprobar el equipo con un Id. de solicitud de 20 e implementar la imagen con la configuración especificada, escriba:
+Para aprobar el equipo con un RequestID de 20 e implementar la imagen con la configuración especificada, escriba:
 ```
 wdsutil /Approve-AutoaddDevices /RequestId:20 /MachineName:computer1 /OU:"OU=Test,CN=company,DC=Domain,DC=Com" /User:Domain\User1 
 /JoinRights:Full /ReferralServer:MyWDSServer /BootProgram:boot\x86\pxeboot.n12 /WdsClientUnattend:WDSClientUnattend\Unattend.xml /BootImagepath:boot\x86\images\boot.wim
@@ -61,5 +61,5 @@ wdsutil /verbose /Approve-AutoaddDevices /RequestId:ALL
 #### <a name="additional-references"></a>Referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 [con el comando delete-AutoaddDevices](using-the-delete-autoadddevices-command.md)
-[con el comando get-AutoaddDevices](using-the-get-autoadddevices-command.md) 
- [Con el comando Reject-AutoaddDevices](using-the-reject-autoadddevices-command.md)
+[mediante el comando Get-AutoaddDevices](using-the-get-autoadddevices-command.md)
+[mediante el comando Reject-AutoaddDevices](using-the-reject-autoadddevices-command.md)

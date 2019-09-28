@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d69ccfd15004619f890c6f5c1cb630c62e16256b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e8673b9e66a0aa3b6bea89b91ae5022efb26c65c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889196"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390510"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>Arquitectura de controladores de dominio virtualizados
 
@@ -42,7 +42,7 @@ En el diagrama siguiente puedes ver la arquitectura de una operación de clonaci
   
 ![Arquitectura de controlador de dominio virtualizado](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_InitialCloningProcess.png)  
   
-**Vuelva a intentar la operación de clonación**  
+**Operación de reintento de clonación**  
   
 ![Arquitectura de controlador de dominio virtualizado](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_CloningRetryProcess.png)  
   
@@ -102,7 +102,7 @@ En los pasos siguientes se explica el proceso con más detalle:
   
 12. El nombre de objeto de equipo de AD DS se establece para que coincida con el nombre especificado en el archivo DCCloneConfig.xml (si existe); en caso contrario, se genera automáticamente en el PDCE. NTDS crea la opción de NTDS correcta para el sitio lógico apropiado de Active Directory.  
   
-    1.  En el caso de una clonación de PDC, el invitado cambiará el nombre del equipo local y se reiniciará. Después del reinicio, pasa por el paso 1-10 de nuevo, a continuación, va al paso 13.  
+    1.  En el caso de una clonación de PDC, el invitado cambiará el nombre del equipo local y se reiniciará. Después del reinicio, pasa por el paso 1-10 de nuevo y, después, pasa al paso 13.  
   
     2.  Si esto es una clonación de DC de réplica, no se reiniciará en esta fase.  
   
@@ -112,7 +112,7 @@ En los pasos siguientes se explica el proceso con más detalle:
   
 15. El invitado forzará la sincronización de hora de NT5DS (NTP de Windows) con otro controlador de dominio (en una jerarquía de Servicio de hora de Windows, se usará el PDCE). El invitado contactará con el PDCE. Se eliminarán todos los vales de Kerberos existentes.  
   
-16. El invitado configura los servicios DFSR o NTFRS para que se ejecuten automáticamente. El invitado elimina todos los archivos de base de datos existentes DFSR y NTFRS (predeterminado: c:\windows\ntfrs y c:\system information\dfsr volumen\\ *< database_GUID >*) para forzar la sincronización no autoritativa de SYSVOL al iniciarse el servicio. El invitado no elimina el contenido de los archivos de SYSVOL para preinicializar el SYSVOL cuando se inicie posteriormente la sincronización.  
+16. El invitado configura los servicios DFSR o NTFRS para que se ejecuten automáticamente. El invitado elimina todos los archivos de base de datos DFSR y NTFRS existentes (predeterminado: c:\WINDOWS\ntfrs y c:\System Volume Information\DFSR @ no__t-0 *< database_GUID >* ) para forzar la sincronización no autoritativa de SYSVOL cuando el servicio se encuentra a continuación. Introducción. El invitado no elimina el contenido de los archivos de SYSVOL para preinicializar el SYSVOL cuando se inicie posteriormente la sincronización.  
   
 17. Se cambiará el nombre del invitado. El servicio de servidor de roles de DS en el invitado comenzará la configuración de AD DS (promoción) con el archivo de base de datos NTDS.DIT existente como origen, en lugar de la base de datos de plantilla incluida en c:\windows\system32, como suele hacerse en una promoción.  
   
@@ -182,17 +182,17 @@ En el diagrama siguiente se muestra cómo las medidas de seguridad de virtualiza
   
 1.  En la hora T1, el administrador del hipervisor realiza un instantánea del DC1 virtual. En ese momento, DC1 tiene un valor USN (**highestCommittedUsn**, en un caso real) de 100, InvocationId (representado como el identificador en el diagrama anterior) tiene un valor de A (en un caso real, esto sería el GUID). El valor de savedVMGID es el VM-GenerationID en el archivo DIT del DC (almacenado para el objeto de equipo del DC en un atributo llamado **msDS-GenerationId**). El VMGID es el valor actual del VM-GenerationID obtenido por el controlador de la máquina virtual. Este valor es proporcionado por el hipervisor.  
   
-2.  Posteriormente, en T2, se agregan 100 usuarios a este DC (esto es tan solo un ejemplo de las actualizaciones que podrían realizarse en este DC entre T1 y T2; estas actualizaciones podrían ser una combinación de creación de usuarios, creación de grupos, actualizaciones de contraseña, actualizaciones de atributos, etc.). En este ejemplo, cada actualización consume un USN único (aunque, en la práctica, la creación de un usuario podría consumir más de un USN). Antes de aplicar estas actualizaciones, DC1 comprueba si el valor de VM-GenerationID de la base de datos (savedVMGID) coincide con el valor actual disponible en el controlador (VMGID). Coinciden, ya que no se ha realizado ninguna reversión, por lo que se aplican las actualizaciones y USN sube hasta 200, lo que indica que en la siguiente actualización se puede usar el USN 201. No se producen cambios en InvocationId, savedVMGID o VMGID. Estas actualizaciones se replican en DC2 en el siguiente ciclo de replicación. DC2 actualiza su límite máximo (y **UptoDatenessVector**) representado aquí simplemente como DC1 @USN = 200. Es decir, que DC2 conoce todas las actualizaciones de DC1 en el contexto de InvocationId A hasta USN 200.  
+2.  Posteriormente, en T2, se agregan 100 usuarios a este DC (esto es tan solo un ejemplo de las actualizaciones que podrían realizarse en este DC entre T1 y T2; estas actualizaciones podrían ser una combinación de creación de usuarios, creación de grupos, actualizaciones de contraseña, actualizaciones de atributos, etc.). En este ejemplo, cada actualización consume un USN único (aunque, en la práctica, la creación de un usuario podría consumir más de un USN). Antes de aplicar estas actualizaciones, DC1 comprueba si el valor de VM-GenerationID de la base de datos (savedVMGID) coincide con el valor actual disponible en el controlador (VMGID). Coinciden, ya que no se ha realizado ninguna reversión, por lo que se aplican las actualizaciones y USN sube hasta 200, lo que indica que en la siguiente actualización se puede usar el USN 201. No se producen cambios en InvocationId, savedVMGID o VMGID. Estas actualizaciones se replican en DC2 en el siguiente ciclo de replicación. DC2 actualiza su límite máximo (y **UptoDatenessVector**), que aquí se representa simplemente como DC1 (a) @USN = 200. Es decir, que DC2 conoce todas las actualizaciones de DC1 en el contexto de InvocationId A hasta USN 200.  
   
 3.  En T3, se aplica en DC1 la instantánea realizada en T1. DC1 se ha revertido, por lo que su USN se revierte a 100, lo que indica que podría usar USN a partir del 101 para asociarlos con próximas actualizaciones. Sin embargo, en este punto, el valor de VMGID sería distinto en hipervisores que admitan el VM-GenerationID.  
   
-4.  Como consecuencia, cuando DC1 realice una actualización, comprobará si el valor de VM-GenerationId que contiene su base de datos (savedVMGID) coincide con el valor del controlador de la máquina virtual (VMGID). En este caso no es el mismo, por lo que DC1 detecta esto como una reversión y activa las medidas de seguridad de virtualización; en otras palabras, restablece su InvocationId (Id. = B) y descarta el grupo RID (que no se muestra en el diagrama anterior). A continuación, guarda el nuevo valor de VMGID en su base de datos y confirma que las actualizaciones (USN 101 - 250) en el contexto de la nueva B. InvocationId En el siguiente ciclo de replicación, DC2 no sabe nada de DC1 en el contexto de InvocationId B, así que solicitará todo el contenido de DC1 asociada al InvocationID B. Como resultado, las actualizaciones realizadas en DC1 con posterioridad a la aplicación de instantánea convergerá sin problema. Además, el conjunto de actualizaciones que se realizó en DC1 en T2 (que se perdieron en DC1 después de restaurar la instantánea) se volverían a replicar en DC1 en la siguiente replicación programada, ya que se replicaron a DC2 (como indica la línea de puntos que vuelve a DC1).  
+4.  Como consecuencia, cuando DC1 realice una actualización, comprobará si el valor de VM-GenerationId que contiene su base de datos (savedVMGID) coincide con el valor del controlador de la máquina virtual (VMGID). En este caso no es el mismo, por lo que DC1 detecta esto como una reversión y activa las medidas de seguridad de virtualización; en otras palabras, restablece su InvocationId (Id. = B) y descarta el grupo RID (que no se muestra en el diagrama anterior). A continuación, guarda el nuevo valor de VMGID en su base de datos y confirma esas actualizaciones (USN 101-250) en el contexto del nuevo invocación de B. En el siguiente ciclo de replicación, DC2 no sabe nada de DC1 en el contexto del ID. de invocación B, por lo que solicita todo desde DC1 asociado con el ID. de invocación B. Como resultado, las actualizaciones realizadas en DC1 después de la aplicación de instantánea se convergirán de forma segura. Además, el conjunto de actualizaciones que se realizó en DC1 en T2 (que se perdieron en DC1 después de restaurar la instantánea) se volverían a replicar en DC1 en la siguiente replicación programada, ya que se replicaron a DC2 (como indica la línea de puntos que vuelve a DC1).  
   
 Después de que el invitado use las medidas de seguridad de virtualización, NTDS replica las diferencias del objeto de Active Directory de entrada de forma no autoritativa desde un controlador de dominio asociado. Como resultado, se actualiza el vector de actualización del servicio de directorio de destino. Después, el invitado sincroniza SYSVOL:  
   
 -   Si se usa FRS, el invitado detiene el servicio NTFRS y establece el valor del Registro BURFLAGS de D2. Después, inicia el servicio NTFRS que, de forma no autoritativa, realiza una replicación entrante y, siempre que sea posible, vuelve a usar los datos de SYSVOL no modificados.  
   
--   Si se usa DFRS, el invitado detiene el servicio DFSR y elimina los archivos de base de datos DFSR (ubicación predeterminada: %systemroot%\system volume information\dfsr\\*<database GUID>*). Después, inicia el servicio DFSR que, de forma no autoritativa, realiza una replicación entrante y, siempre que sea posible, vuelve a usar los datos de SYSVOL no modificados.  
+-   Si se usa DFSR, el invitado detiene el servicio DFSR y elimina los archivos de base de datos de DFSR (ubicación predeterminada:%SystemRoot%\System Volume Information\DFSR @ no__t-0 *<database GUID>* ). Después, inicia el servicio DFSR que, de forma no autoritativa, realiza una replicación entrante y, siempre que sea posible, vuelve a usar los datos de SYSVOL no modificados.  
   
 > [!NOTE]  
 > -   Si el hipervisor no proporciona ningún identificador de generación de VM para poder compararlo, no admitirá las medidas de seguridad de virtualización y el invitado funcionará como un controlador de dominio virtualizado que ejecuta Windows Server 2008 R2 o anterior. El invitado implementa la protección de cuarentena de reversión de USN si se intenta iniciar una replicación con unos USN no superiores a los últimos USN detectados por el DC asociado. Para obtener más información sobre la protección de cuarentena de la reversión de USN, consulta [USN y reversión de USN](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(WS.10).aspx)  

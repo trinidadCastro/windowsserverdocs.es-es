@@ -3,7 +3,7 @@ title: Implementación de MultiPoint Services
 description: Información general sobre el proceso de implementación de Multipoint Services
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: 594bc09e-5d2d-4984-a9de-79d40b1308d6
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 19e1b52c79e0d87804a76ec8963662b96c82b41b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 842b7b743624aa1e4b168b1be8e94f6d405d07e3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871724"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395688"
 ---
 # <a name="deploying-multipoint-services"></a>Implementación de MultiPoint Services
 En esta guía se describe cómo implementar un servidor que ejecuta Multipoint Services y configurar estaciones Multipoint, instalar y configurar el sistema, configurar cuentas de usuario y realizar algunas tareas de administración básicas, como la activación de la protección de disco y la configuración de copias de seguridad. antes de empezar a usar el sistema.  

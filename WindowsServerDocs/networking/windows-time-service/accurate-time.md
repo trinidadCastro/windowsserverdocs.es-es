@@ -6,14 +6,14 @@ author: shortpatti
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: acc46dacdf1d8b11aaa45b3665e8d11ee75635cf
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 1399ed6a50085baa37f06c09b8c3e18ca8bca98b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871841"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395708"
 ---
 # <a name="accurate-time-for-windows-server-2016"></a>Hora precisa para Windows Server 2016
 
@@ -27,7 +27,7 @@ El servicio de hora de Windows es un componente que utiliza un modelo de complem
 En este tema, trataremos... estos temas se refieren a la habilitación del tiempo exacto: 
 
 - Aumento
-- Medidas
+- Mediciones
 - Procedimientos recomendados
 
 > [!IMPORTANT]

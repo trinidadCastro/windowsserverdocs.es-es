@@ -1,8 +1,8 @@
 ---
 title: ipxroute
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d995204eea0af776a2084a82411fa95542d1d77a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bd5f33766ff9b33c9d6020b7284f2fbf9552d44d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889096"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375332"
 ---
 # <a name="ipxroute"></a>ipxroute
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Muestra y modifica la información acerca de las tablas de enrutamiento que utiliza el protocolo IPX. Se utiliza sin parámetros, **ipxroute** muestra la configuración predeterminada para los paquetes que se envían a direcciones de multidifusión, difusión y desconocidas.   
+Muestra y modifica información acerca de las tablas de enrutamiento utilizadas por el protocolo IPX. Si se usa sin parámetros, **ipxroute** muestra la configuración predeterminada de los paquetes que se envían a direcciones desconocidas, de difusión y de multidifusión.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 ipxroute servers [/type=X]  
@@ -36,18 +36,18 @@ ipxroute config
 ### <a name="parameters"></a>Parámetros  
 |Parámetro|Descripción|  
 |-------|--------|  
-|servers[ /type=X]|Muestra la tabla de punto de acceso de servicio (SAP) para el tipo de servidor especificado.  **X** debe ser un entero. Por ejemplo, **/type = 4** muestra todos los servidores de archivos. Si no especifica **/tipo**, **ipxroute servidores** muestra todos los tipos de servidores, ordenados por nombre de servidor.|  
-|ripout red|Detecta si *red* es accesible mediante la tabla de rutas de la pila IPX de consultoría y enviar una solicitud de rip si es necesario.  *Red* es el número de segmento de red IPX.|  
-|resolve{ GUID&#124; name} { GUID&#124; AdapterName}|Resuelve el nombre del GUID en su nombre descriptivo o el nombre descriptivo para su GUID.|  
-|panel = *N*|Especifica el adaptador de red que se va a consultar o establecer los parámetros.|  
-|def|Envía paquetes a la difusión de todas las rutas. Si un paquete se transmite a una dirección única de tarjeta de acceso de medios (MAC) que no está en la tabla de enrutamiento de origen, **ipxroute** envía el paquete a las rutas solo de difusión de forma predeterminada.|  
-|gbr|Envía paquetes a la difusión de todas las rutas. Si un paquete se transmite a la dirección de difusión (FFFFFFFFFFFF), **ipxroute** envía el paquete a las rutas solo de difusión de forma predeterminada.|  
-|mbr|Envía paquetes a la difusión de todas las rutas. Si un paquete se transmite a una dirección de multidifusión (C000xxxxxxxx), **ipxroute** envía el paquete a las rutas solo de difusión de forma predeterminada.|  
-|remove= *xxxxxxxxxxxx*|Quita la dirección del nodo de la tabla de enrutamiento de origen.|  
-|config|Muestra información sobre todos los enlaces para el que está configurado IPX.|  
+|servidores [/Type = X]|Muestra la tabla de punto de acceso de servicio (SAP) para el tipo de servidor especificado.  **X** debe ser un entero. Por ejemplo, **/Type = 4** muestra todos los servidores de archivos. Si no especifica **/Type**, **los servidores ipxroute** muestran todos los tipos de servidores y los enumeran por nombre de servidor.|  
+|Red ripout|Detecta si la *red* es accesible mediante la consulta de la tabla de rutas de la pila IPX y el envío de una solicitud RIP si es necesario.  *Network* es el número de segmento de red IPX.|  
+|resolver {GUID&#124; Name} {GUID&#124; AdapterName}|Resuelve el nombre del GUID como su nombre descriptivo o el nombre descriptivo de su GUID.|  
+|panel = *N*|Especifica el adaptador de red para el que se van a consultar o establecer parámetros.|  
+|Def|Envía paquetes a la difusión ALL ROUTEs. Si un paquete se transmite a una dirección de tarjeta de acceso a medios (MAC) única que no se encuentra en la tabla de enrutamiento de origen, **ipxroute** envía el paquete a la difusión de rutas únicas de forma predeterminada.|  
+|GbR|Envía paquetes a la difusión ALL ROUTEs. Si un paquete se transmite a la dirección de difusión (FFFFFFFFFFFF), **ipxroute** envía el paquete a la difusión de rutas únicas de forma predeterminada.|  
+|Maestro|Envía paquetes a la difusión ALL ROUTEs. Si un paquete se transmite a una dirección de multidifusión (C000xxxxxxxx), **ipxroute** envía el paquete a la difusión de rutas únicas de forma predeterminada.|  
+|Remove = *XXXXXXXXXXXX*|quita la dirección de nodo especificada de la tabla de enrutamiento de origen.|  
+|configurar|Muestra información acerca de todos los enlaces para los que se ha configurado IPX.|  
 |/?|Muestra la ayuda en el símbolo del sistema.|  
-## <a name="BKMK_Examples"></a>Ejemplos  
-Para mostrar los segmentos de red conectado a la estación de trabajo, la dirección de nodo de la estación de trabajo y tipo de marco que se va a usar, escriba:  
+## <a name="BKMK_Examples"></a>Example  
+Para mostrar los segmentos de red a los que está conectada la estación de trabajo, la dirección del nodo de estación de trabajo y el tipo de marco que se está usando, escriba:  
 ```  
 ipxroute config  
 ```  

@@ -1,7 +1,7 @@
 ---
 title: Prácticas recomendadas para ejecutar FreeBSD en Hyper-V
 description: Proporciona recomendaciones para ejecutar FreeBSD en máquinas virtuales
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: 0c66f1c8-2606-43a3-b4cc-166acaaf2d2a
 author: shirgall
 ms.author: kathydav
 ms.date: 01/09/2017
-ms.openlocfilehash: 598087411b35dde2e4a1cb606fae6a4602fe588e
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 1d284b38e1bdb642aa40ecbb8e82caa7712f7aad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544686"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365632"
 ---
 # <a name="best-practices-for-running-freebsd-on-hyper-v"></a>Prácticas recomendadas para ejecutar FreeBSD en Hyper-V
 
@@ -28,17 +28,17 @@ Este tema contiene una lista de recomendaciones para ejecutar FreeBSD como siste
 
 El protocolo de redundancia de direcciones comunes (CARP) permite que varios hosts compartan la misma dirección IP y el identificador de host virtual (VHID) para ayudar a proporcionar alta disponibilidad para uno o más servicios. Si se produce un error en uno o más hosts, los demás hosts se toman de forma transparente para que los usuarios no perciban un error del servicio. Para usar CARP en FreeBSD 10,2, siga las instrucciones del [manual de FreeBSD](https://www.freebsd.org/doc/en/books/handbook/carp.html) y haga lo siguiente en el administrador de Hyper-V.
 
-* Compruebe que la máquina virtual tiene un adaptador de red y que tiene asignado un conmutador virtual. Seleccione la máquina virtual y seleccione**configuración**de **acciones** > .
+* Compruebe que la máquina virtual tiene un adaptador de red y que tiene asignado un conmutador virtual. Seleccione la máquina virtual y seleccione **acciones** > **configuración**.
 
 ![Captura de pantalla de la configuración de la máquina virtual con el adaptador de red seleccionado](media/Hyper-V_Settings_NetworkAdapter.png)
 
 * Habilite la suplantación de direcciones MAC. Para ello,
 
-   1. Seleccione la máquina virtual y seleccione**configuración**de **acciones** > .
+   1. Seleccione la máquina virtual y seleccione **acciones** > **configuración**.
 
    2. Expanda **adaptador de red** y seleccione **características avanzadas**.
 
-   3. Seleccione habilitar la suplantación de **direcciones MAC**.
+   3. Seleccione **Habilitar la suplantación de direcciones MAC**.
 
 ## <a name="create-labels-for-disk-devices"></a>Crear etiquetas para dispositivos de disco
 

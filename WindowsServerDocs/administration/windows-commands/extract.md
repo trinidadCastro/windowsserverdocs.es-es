@@ -1,8 +1,8 @@
 ---
 title: extract
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9113c34b61b98fb738bc0aff03193ab73b1abbd7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 967f08e271019cc33970419179c9ddbf902b1882
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882316"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377261"
 ---
 # <a name="extract"></a>extract
 
@@ -36,15 +36,15 @@ EXTRACT [/Y] /C source destination
 
 |Parámetro|Descripción|
 |---------|-----------|
-|cabinet|Archivo contiene dos o más archivos.|
-|nombreDeArchivo|Nombre del archivo para extraer el contenedor. Se pueden usar caracteres comodín y varios nombres de archivo (separadas por espacios en blanco).|
-|Código fuente|Archivo comprimido (un contenedor con un solo archivo).|
-|NewName|Nuevo nombre de archivo para proporcionar el archivo extraído. Si no se proporciona, se usa el nombre original.|
-|/A|Procesar todos los archivadores. Sigue la cadena de contenedores comenzando en el primer archivo .cab que se ha mencionado.|
-|/C|Copie el archivo de origen al destino (para copiar desde discos DMF).|
-|/D|Mostrar el directorio (se usa con el nombre de archivo para evitar la extracción).|
-|/E|Extraer (usar en lugar de *.* para extraer todos los archivos).|
-|/L dir|Ubicación para colocar los archivos extraídos (valor predeterminado es el directorio actual).|
+|archiva|El archivo contiene dos o más archivos.|
+|nombreDeArchivo|Nombre del archivo que se va a extraer del archivo. cab. Se pueden usar caracteres comodín y varios nombres de archivo (separados por espacios en blanco).|
+|Fuentes|Archivos comprimidos (un archivo. cab con un solo archivo).|
+|NewName|Nuevo nombre de archivo para proporcionar el archivo extraído. Si no se proporciona, se utiliza el nombre original.|
+|/A|Procesar todos los archivadores. Sigue a la cadena de contenedores empezando en el primer contenedor mencionado.|
+|/C|Copiar el archivo de origen en el destino (copiar desde discos DMF).|
+|/D.|Mostrar el directorio del archivo. cab (use con el nombre de archivo para evitar el extracto).|
+|/E|Extraer (use en lugar de *.* para extraer todos los archivos).|
+|/L dir|Ubicación para colocar los archivos extraídos (el valor predeterminado es el directorio actual).|
 |/Y|No preguntar antes de sobrescribir un archivo existente.|
 
 #### <a name="additional-references"></a>Referencias adicionales

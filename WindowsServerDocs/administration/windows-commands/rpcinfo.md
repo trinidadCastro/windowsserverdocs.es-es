@@ -1,8 +1,8 @@
 ---
 title: rpcinfo
-description: Obtenga información sobre cómo enumerar los programas en un equipo remoto.
+description: Obtenga información acerca de cómo mostrar los programas en un equipo remoto.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 4aba1e57d5a61103310fbe7abcac391e543be5aa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3931dceea48c0e995a15f4966529fed4d5e85e34
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826376"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384472"
 ---
 # <a name="rpcinfo"></a>rpcinfo
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Muestra los programas en equipos remotos. El **rpcinfo** utilidad de línea de comandos realiza un procedimiento remoto (RPC) de llamar a un servidor RPC e informa de lo que encuentre. 
+Enumera programas en equipos remotos. La utilidad de línea de comandos **rpcinfo** realiza una llamada a procedimiento remoto (RPC) a un servidor RPC y notifica lo que encuentra. 
 
 ## <a name="syntax"></a>Sintaxis
 ```
@@ -34,26 +34,26 @@ rpcinfo [/p [<Node>]] [/b <Program version>] [/t <Node Program> [<version>]] [/u
 ### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-|/p [\<nodo >]|Enumera todos los programas registrados con el asignador de puerto en el host especificado. Si no especifica un nombre de nodo (equipo), el programa consulta al asignador de puerto en el host local.|
-|/b \<versión del programa >|Solicita una respuesta de todos los nodos de red que tienen el programa especificado y la versión registrada con el asignador de puerto. Debe especificar un nombre de programa o el número y un número de versión.|
-|/t \<nodo programa > [\<versión >]|Usa el protocolo de transporte TCP para llamar al programa especificado. Debe especificar un nombre de nodo (equipo) y un nombre de programa. Si no especifica una versión, el programa llama a todas las versiones.|
-|/u \<nodo programa > [\<versión >]|Usa el protocolo de transporte UDP para llamar al programa especificado. Debe especificar un nombre de nodo (equipo) y un nombre de programa. Si no especifica una versión, el programa llama a todas las versiones.|
+|/p [\<Node >]|enumera todos los programas registrados con el asignador de puertos en el host especificado. Si no especifica un nombre de nodo (equipo), el programa consulta el asignador de puertos en el host local.|
+|/b @no__t versión de 0Program >|Solicita una respuesta de todos los nodos de red que tienen el programa y la versión especificados registrados en el asignador de puertos. Debe especificar un nombre de programa o un número y un número de versión.|
+|/t \<Node programa > [\<version >]|Utiliza el protocolo de transporte TCP para llamar al programa especificado. Debe especificar un nombre de nodo (equipo) y un nombre de programa. Si no especifica una versión, el programa llama a todas las versiones.|
+|/u \<Node programa > [\<version >]|Utiliza el protocolo de transporte UDP para llamar al programa especificado. Debe especificar un nombre de nodo (equipo) y un nombre de programa. Si no especifica una versión, el programa llama a todas las versiones.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="BKMK_Examples"></a>Ejemplos
-Para obtener una lista de todos los programas registrados con el asignador de puerto, escriba:
+## <a name="BKMK_Examples"></a>Example
+Para enumerar todos los programas registrados en el asignador de puertos, escriba:
 ```
 rpcinfo /p [<Node>]
 ```
-Para solicitar una respuesta de nodos de la red que tienen un programa específico, escriba:
+Para solicitar una respuesta de los nodos de red que tienen un programa especificado, escriba:
 ```
 rpcinfo /b <Program version>
 ```
-Para usar el protocolo de Control de transmisión (TCP) para llamar a un programa, escriba:
+Para usar el protocolo de control de transmisión (TCP) para llamar a un programa, escriba:
 ```
 rpcinfo /t <Node Program> [<version>]
 ```
-Use el protocolo de datagramas de usuario (UDP) para llamar a un programa:
+Usar el protocolo de datagramas de usuario (UDP) para llamar a un programa:
 ```
 rpcinfo /u <Node Program> [<version>]
 ```

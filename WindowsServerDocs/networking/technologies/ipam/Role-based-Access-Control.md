@@ -1,9 +1,9 @@
 ---
 title: Control de acceso basado en roles
-description: Este tema forma parte de la Guía de administración de administración de direcciones IP (IPAM) en Windows Server 2016.
+description: Este tema forma parte de la guía de administración de la administración de direcciones IP (IPAM) en Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ipam
@@ -12,39 +12,39 @@ ms.topic: article
 ms.assetid: ecdfc589-fa14-4bb3-ab7e-456ebc719385
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: bb4c1a6a5f2ea708863be3cbf0abe436e12608de
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: cf6b8418482b606c86bac77b2790e3365e80bf5d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282140"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355160"
 ---
 # <a name="role-based-access-control"></a>Control de acceso basado en roles
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema se proporciona información sobre cómo usar el control de acceso basado en roles en IPAM.  
+En este tema se proporciona información sobre el uso del control de acceso basado en roles en IPAM.  
   
 > [!NOTE]  
-> Además de este tema, la siguiente documentación de control de acceso IPAM está disponible en esta sección.  
+> Además de este tema, está disponible la siguiente documentación sobre el control de acceso de IPAM en esta sección.  
 >   
-> -   [Administración basada en roles con el administrador del servidor de Control de acceso](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Server-Manager.md)  
-> -   [Administración basada en roles Control de acceso con Windows PowerShell](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md)  
+> -   [Administrar Access Control basado en roles con Administrador del servidor](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Server-Manager.md)  
+> -   [Administrar Access Control basado en roles con Windows PowerShell](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md)  
   
-Control de acceso basado en roles permite especificar los privilegios de acceso en varios niveles, incluido el servidor DNS, la zona DNS y niveles de registro de recursos DNS.  
-Mediante el uso de control de acceso basado en roles, puede especificar quién tiene control granular sobre las operaciones para crear, editar y eliminar diferentes tipos de registros de recursos DNS.  
+El control de acceso basado en roles permite especificar privilegios de acceso en distintos niveles, incluidos el servidor DNS, la zona DNS y los niveles de registro de recursos DNS.  
+Mediante el control de acceso basado en roles, puede especificar quién tiene un control granular sobre las operaciones para crear, editar y eliminar diferentes tipos de registros de recursos DNS.  
   
-Puede configurar el control de acceso para que los usuarios están restringidos a los siguientes permisos.  
+Puede configurar el control de acceso para que los usuarios estén restringidos a los siguientes permisos.  
   
--   Los usuarios pueden editar solo registros de recursos DNS específicos  
+-   Los usuarios solo pueden modificar determinados registros de recursos DNS.  
   
 -   Los usuarios pueden editar los registros de recursos DNS de un tipo específico, como PTR o MX  
   
 -   Los usuarios pueden editar los registros de recursos DNS para zonas específicas  
   
 ## <a name="see-also"></a>Vea también  
-[Administración basada en roles con el administrador del servidor de Control de acceso](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Server-Manager.md)  
-[Administración basada en roles Control de acceso con Windows PowerShell](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md)  
+[Administrar Access Control basado en roles con Administrador del servidor](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Server-Manager.md)  
+[Administrar Access Control basado en roles con Windows PowerShell](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md)  
 [Administrar IPAM](Manage-IPAM.md)  
   
 

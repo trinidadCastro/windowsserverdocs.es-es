@@ -1,18 +1,18 @@
 ---
 title: ¿Qué es Server Core?
 description: Más información acerca de la opción de instalación Server Core en Windows Server
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 02/20/2018
-ms.openlocfilehash: ce00bc973b7b750e33326cdec24193ba537b5294
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 269be253367ba2bc692a5903e7d519a40f487d8b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476474"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383339"
 ---
 # <a name="what-is-the-server-core-installation-option-in-windows-server"></a>¿Qué es la opción de instalación Server Core en Windows Server?
 
@@ -41,7 +41,7 @@ Además de ninguna interfaz de usuario, Server Core también difiere del servido
 - No hay OOBE (experiencia rápida) para configurar Server Core
 - Sin soporte de audio
 
-En la tabla siguiente se muestran las aplicaciones que están disponibles *localmente* en Server Core y Server con experiencia de escritorio. **Importante**: En la mayoría de los casos, las aplicaciones que se enumeran como "no disponibles" a continuación se pueden ejecutar de forma remota desde un equipo cliente de Windows y usarse para administrar la instalación Server Core.
+En la tabla siguiente se muestran las aplicaciones que están disponibles *localmente* en Server Core y Server con experiencia de escritorio. **Importantes**: En la mayoría de los casos, las aplicaciones que se enumeran como "no disponibles" a continuación se pueden ejecutar de forma remota desde un equipo cliente de Windows y usarse para administrar la instalación Server Core.
 
 > [!NOTE]
 > Esta lista está pensada para una referencia rápida: no pretende ser una lista completa.

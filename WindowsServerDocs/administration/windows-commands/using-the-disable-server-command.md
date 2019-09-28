@@ -1,8 +1,8 @@
 ---
-title: Mediante el comando disable-servidor
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el comando DISABLE-Server
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b229146206c1fbe6ce8b6f585b2ff9b50ae6104
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9376bf1c5a5641aa6763c88b58bfe92d799b44f5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853036"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363515"
 ---
-# <a name="using-the-disable-server-command"></a>Mediante el comando disable-servidor
+# <a name="using-the-disable-server-command"></a>Usar el comando DISABLE-Server
 
 
 
-Deshabilita todos los servicios para un servidor de servicios de implementación de Windows.
+Deshabilita todos los servicios de un servidor de servicios de implementación de Windows.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,11 +36,11 @@ WDSUTIL [Options] /Disable-Server [/Server:<Server name>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[/ Server:\<nombre del servidor >]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se usará el servidor local.|
+|[/Server: \<Server nombre >]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para deshabilitar al servidor, ejecute uno de los siguientes:
+Para deshabilitar el servidor, ejecute una de las siguientes opciones:
 ```
 WDSUTIL /Disable-Server
 WDSUTIL /Verbose /Disable-Server /Server:MyWDSServer

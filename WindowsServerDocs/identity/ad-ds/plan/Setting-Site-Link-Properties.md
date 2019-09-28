@@ -7,36 +7,36 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4fa9a1fa8d2a463fe5f361a5a27ee2b9e3edc0f6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c9a9b25aa56948e3116ebfef67a6af73917b76c2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870366"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402480"
 ---
 # <a name="setting-site-link-properties"></a>Establecer las propiedades de vínculo de sitio
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-La replicación entre sitios se produce según las propiedades de los objetos de conexión. Cuando el Comprobador de coherencia de la información (KCC) crea los objetos de conexión, se deriva la programación de replicación de las propiedades de los objetos de vínculo de sitio. Cada objeto de vínculo de sitio representa la conexión de área extensa (WAN) de red entre dos o más sitios.  
+La replicación entre sitios se produce de acuerdo con las propiedades de los objetos de conexión. Cuando el comprobador de coherencia de la información (KCC) crea objetos de conexión, deriva la programación de replicación de las propiedades de los objetos de vínculo a sitios. Cada objeto de vínculo a sitios representa la conexión de red de área extensa (WAN) entre dos o más sitios.  
   
-Establecer propiedades de objeto de vínculo de sitio incluye los siguientes pasos:  
+La configuración de las propiedades del objeto de vínculo de sitio incluye los pasos siguientes:  
   
--   Determinar el costo asociado a esa ruta de acceso de replicación. El KCC utiliza coste para determinar la ruta menos costosa para la replicación entre dos sitios que se replican en la misma partición de directorio.  
+-   Determinar el costo asociado a esa ruta de replicación. El KCC usa el costo para determinar la ruta menos costosa para la replicación entre dos sitios que replican la misma partición de directorio.  
   
--   Puede producirse la determinación de la programación que define los períodos de tiempo durante el que la replicación entre sitios.  
+-   Determinar la programación que define los momentos en los que se puede producir la replicación entre sitios.  
   
--   Determinar el intervalo de replicación que se define con qué frecuencia debe realizarse la replicación durante las horas cuando se permite la replicación, como se define en la programación.  
+-   Determinar el intervalo de replicación que define la frecuencia con que se debe producir la replicación durante las horas en que se permite la replicación, tal como se define en la programación.  
   
 ## <a name="in-this-guide"></a>En esta guía  
   
 -   [Determinar el costo](../../ad-ds/plan/Determining-the-Cost.md)  
   
--   [Determinación de la programación](../../ad-ds/plan/Determining-the-Schedule.md)  
+-   [Determinar la programación](../../ad-ds/plan/Determining-the-Schedule.md)  
   
--   [Determinación del intervalo](../../ad-ds/plan/Determining-the-Interval.md)  
+-   [Determinar el intervalo](../../ad-ds/plan/Determining-the-Interval.md)  
   
 
 

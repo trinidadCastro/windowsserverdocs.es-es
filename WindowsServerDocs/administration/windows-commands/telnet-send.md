@@ -1,8 +1,8 @@
 ---
-title: telnet send
-description: 'Tema de los comandos de Windows para ***- '
+title: envío de Telnet
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36dc7f861e88cf991af57dda2f150107c6870f0f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 958e0e507e5a0ae836da98de8d677a116dbb38bd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441040"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383632"
 ---
-# <a name="telnet-send"></a>telnet: send
+# <a name="telnet-send"></a>Telnet: enviar
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Envía comandos de telnet en el servidor telnet.   
+Envía comandos Telnet al servidor Telnet.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]  
@@ -33,17 +33,17 @@ sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]
 
 | Parámetro |                     Descripción                      |
 |-----------|------------------------------------------------------|
-|    ao     |       Envía el comando de telnet anular salida.        |
-|    ayt    |       Envía el comando de telnet ¿estás ahí.       |
-|    interrupción    |            Envía la interrupción de comando de telnet.            |
-|    esc    |      Envía el carácter de escape de telnet actual.      |
-|    IP     |     Envía el comando de telnet interrumpir proceso.     |
-|   sincronización   |           Envía el comando synch.           |
-| <string>  | Cualquier cadena que haya escrito se envía al servidor telnet. |
-|     ?     |     Muestra la Ayuda asociado a este comando.      |
+|    AO     |       Envía la salida de anulación del comando telnet.        |
+|    ayt    |       Envía el comando telnet.       |
+|    brk    |            Envía el comando telnet BRK.            |
+|    ESC    |      Envía el carácter de escape de Telnet actual.      |
+|    intelectual     |     Envía el proceso de interrupción del comando de Telnet.     |
+|   sincronía   |           Envía la sincronización de comandos de Telnet.           |
+| <string>  | Envía cualquier cadena que escriba en el servidor Telnet. |
+|     ?     |     Muestra la ayuda asociada a este comando.      |
 
-## <a name="BKMK_Examples"></a>Ejemplos  
-Envío eres existe en el servidor telnet.  
+## <a name="BKMK_Examples"></a>Example  
+Envíelo al servidor Telnet.  
 ```  
 sen ayt  
 ```  

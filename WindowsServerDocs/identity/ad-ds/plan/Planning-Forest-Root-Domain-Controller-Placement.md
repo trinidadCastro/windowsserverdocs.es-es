@@ -7,23 +7,23 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 57eafcc884a827d98c249e2da0c0af6888abc5b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e619d5f5e9cc317f9ba1548d5ed3a32e7bd12c2c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823646"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402544"
 ---
 # <a name="planning-forest-root-domain-controller-placement"></a>Planear la ubicación del controlador de dominio de raíz del bosque
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Controladores de dominio raíz del bosque se necesitan para crear rutas de acceso de confianza para los clientes que necesitan tener acceso a recursos en dominios que no sean sus propios. Coloque los controladores de dominio raíz del bosque en ubicaciones de centro y en ubicaciones que hospedan los centros de datos. Si los usuarios de una ubicación determinada necesitan tener acceso a recursos de otros dominios en la misma ubicación y la disponibilidad de red entre el centro de datos y la ubicación del usuario no es confiable, puede agregar un controlador de dominio raíz de bosque en la ubicación o cree una confianza directa entre los dos dominios. Es más rentable para crear una confianza directa entre los dominios a menos que tenga otras razones para colocar un controlador de dominio raíz de bosque en esa ubicación.  
+Los controladores de dominio raíz del bosque son necesarios para crear rutas de acceso de confianza para los clientes que necesitan acceder a recursos de dominios distintos de los suyos propios. Coloque los controladores de dominio raíz del bosque en ubicaciones de concentrador y en ubicaciones que hospedan centros de recursos. Si los usuarios de una ubicación determinada necesitan tener acceso a recursos de otros dominios en la misma ubicación y la disponibilidad de la red entre el centro de usuarios y la ubicación del usuario no es confiable, puede Agregar un controlador de dominio raíz del bosque en la ubicación o crear un confianza directa entre los dos dominios. Es más rentable crear una confianza directa entre los dominios, a menos que tenga otras razones para colocar un controlador de dominio raíz del bosque en esa ubicación.  
   
-Ayuda a optimizar las solicitudes de autenticación realizadas desde usuarios ubicados en cualquiera de los dominios de confianzas de acceso directo. Para obtener más información acerca de confianzas entre dominios, vea el artículo [cuándo crear una confianza directa](https://go.microsoft.com/fwlink/?LinkId=107061).  
+Las confianzas directas ayudan a optimizar las solicitudes de autenticación realizadas desde los usuarios ubicados en cualquiera de los dominios. Para obtener más información acerca de las confianzas directas entre dominios, consulte el artículo sobre [Cuándo crear una confianza directa](https://go.microsoft.com/fwlink/?LinkId=107061).  
   
-Para que una hoja de cálculo que le ayudarán a documentar la ubicación del controlador de dominio de bosque raíz, consulte [trabajo ayudas para Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558), descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip y abra "Ubicación del controlador de dominio" (DSSTOPO_4.doc).  
+Para obtener una hoja de cálculo que le ayude a documentar la ubicación del controlador de dominio raíz del bosque, vea el tema [sobre ayudas de trabajo para el kit de implementación de Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558), descargar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip y abrir el dominio Ubicación del controlador "(DSSTOPO_4. doc).  
   
-Deberá consultar esta información cuando se crea el dominio raíz del bosque. Para obtener más información sobre cómo implementar el dominio raíz del bosque, consulte [implementar un dominio raíz del bosque de Windows Server 2008](https://technet.microsoft.com/library/cc731174.aspx).  
+Tendrá que consultar esta información al crear el dominio raíz del bosque. Para obtener más información acerca de la implementación del dominio raíz del bosque, vea [implementar un dominio raíz del bosque de Windows Server 2008](https://technet.microsoft.com/library/cc731174.aspx).  

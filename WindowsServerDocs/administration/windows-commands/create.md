@@ -1,8 +1,8 @@
 ---
 title: crear
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8cccf47a38fc61cdb225a44c08ba7d68d21b4fc3
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 25c3b87ef4d7d929185481c79156c754466b788b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433963"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378837"
 ---
 # <a name="create"></a>crear
 
 
 
-Crea una partición en un disco, un volumen en uno o más discos o un disco duro virtual (VHD).
+Crea una partición en un disco, un volumen en uno o varios discos o un disco duro virtual (VHD).
 
 ## <a name="syntax"></a>Sintaxis
 

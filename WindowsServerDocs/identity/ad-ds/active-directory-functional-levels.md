@@ -7,20 +7,20 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 10/29/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: c1e2108084b03fabbf7c6a18c2ecbcaf3cbd1dd9
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 7f16d58eb6c5074c75f49ba7936c4d312a3dbda4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868256"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390978"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Niveles funcionales de dominios y bosques
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 Los niveles funcionales determinan las capacidades disponibles de dominio o bosque de Active Directory Domain Services (AD DS). También determinan los sistemas operativos Windows Server que se pueden ejecutar en los controladores de dominio del dominio o bosque. Sin embargo, los niveles funcionales no afectan a los sistemas operativos que se pueden ejecutar en estaciones de trabajo y servidores miembro que se unen al dominio o bosque.
 
@@ -63,7 +63,7 @@ Sistema operativo del controlador de dominio admitido:
 
 * Windows Server 2019
 * Windows Server 2016
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 
 ### <a name="windows-server-2012r2-forest-functional-level-features"></a>Características del nivel funcional del bosque de Windows Server 2012R2
 
@@ -88,7 +88,7 @@ Sistema operativo del controlador de dominio admitido:
 
 * Windows Server 2019
 * Windows Server 2016
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2012
 
 ### <a name="windows-server-2012-forest-functional-level-features"></a>Características del nivel funcional del bosque de Windows Server 2012
@@ -106,7 +106,7 @@ Sistema operativo del controlador de dominio admitido:
 
 * Windows Server 2019
 * Windows Server 2016
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
 
@@ -127,7 +127,7 @@ Sistema operativo del controlador de dominio admitido:
 
 * Windows Server 2019
 * Windows Server 2016
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
 * Windows Server 2008
@@ -165,7 +165,7 @@ Sistema operativo del controlador de dominio admitido:
 
 Sistema operativo del controlador de dominio admitido:
 
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
 * Windows Server 2008

@@ -6,15 +6,15 @@ ms.author: jgerend
 manager: dmoss
 ms.date: 10/16/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: 11f0a696fb843f5cd8b4a7ff3318c28d6c1adeb8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0e41d7ae577bf7e9227ff0c02689d916f1008a3d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871346"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403034"
 ---
 # <a name="refs-integrity-streams"></a>Flujos de integridad de ReFS
 >Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server (canal semianual), Windows 10
@@ -27,7 +27,7 @@ Las secuencias de integridad pueden habilitarse para archivos individuales, dire
 
 Una vez que las secuencias de integridad se han habilitado, ReFS creará y mantendrá una suma de comprobación para los archivos especificados en los metadatos del archivo. Esta suma comprobación permite a ReFS validar la integridad de los datos antes de acceder a él. Antes de devolver cualquier dato que tenga secuencias integridad habilitadas, ReFS calculará, en primer lugar, la suma de comprobación:
 
-![Calcular la suma de comprobación de datos de archivos](media/compute-checksum.gif)
+![Calcular la suma de comprobación para los datos de archivo](media/compute-checksum.gif)
 
 A continuación, esta suma de comprobación se compara con la que se incluye en los metadatos de archivo. Si las sumas de comprobación coinciden, los datos se marcan como válidos y se devuelven al usuario. Si las sumas de comprobación no coinciden, los datos están dañados. La resistencia del volumen determina cómo responde ReFS a los daños:
 
@@ -38,7 +38,7 @@ A continuación, esta suma de comprobación se compara con la que se incluye en 
 
 ReFS registrará todos los daños en el registro de eventos del sistema y aquí se reflejarán si los daños se han solucionados. 
 
-![Escritura corrección restaura la integridad de los datos](media/corrective-write.gif)
+![Integridad de datos de restauración de escritura correctiva](media/corrective-write.gif)
 
 ## <a name="performance"></a>Rendimiento 
 
@@ -95,6 +95,6 @@ PS C:\> Set-FileIntegrity H:\Docs -Enable $True
 
 ## <a name="see-also"></a>Vea también
 
--   [Información general de reFS](refs-overview.md)
--   [Clonación de bloques de reFS](block-cloning.md)
--   [Información general de espacios directo de almacenamiento](../storage-spaces/storage-spaces-direct-overview.md)
+-   [Información general sobre ReFS](refs-overview.md)
+-   [Clonación de bloques de ReFS](block-cloning.md)
+-   [Información general de Espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md)

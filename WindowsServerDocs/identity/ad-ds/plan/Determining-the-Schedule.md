@@ -7,24 +7,24 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: dee63ce0fb687b2b722ce64614c54388fc544433
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 04576a88825205398f1b555d9f5063ac26e2a76e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839006"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408866"
 ---
 # <a name="determining-the-schedule"></a>Determinar la programación
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Puede controlar la disponibilidad de vínculo de sitio estableciendo una programación para los vínculos a sitios. Cuando la replicación entre dos sitios atraviesa varios vínculos a sitios, la intersección de las programaciones de replicación en todos los vínculos relevantes determina la programación de la conexión entre los dos sitios.  
+Puede controlar la disponibilidad de los vínculos a sitios mediante la configuración de una programación de vínculos a sitios. Cuando la replicación entre dos sitios atraviesa varios vínculos a sitios, la intersección de las programaciones de replicación en todos los vínculos pertinentes determina la programación de conexión entre los dos sitios.  
   
-Para planear la configuración de la programación de vínculo de sitio, crear dos programaciones superpuestas entre los vínculos a sitios que contienen los controladores de dominio que se replican directamente entre sí. Usar la programación predeterminada (100 por ciento disponible) en esos vínculos a menos que desee bloquear el tráfico de replicación durante las horas punta. Al bloquear la duplicación, dar prioridad a otro tráfico, pero también aumenta la latencia de replicación.  
+Para planear la configuración de la programación de vínculos a sitios, cree dos programaciones superpuestas entre los vínculos de sitios que contienen controladores de dominio que se replican directamente entre sí. Use la programación predeterminada (100-porcentaje disponible) en esos vínculos a menos que desee bloquear el tráfico de replicación durante las horas punta. Al bloquear la replicación, da prioridad a otro tráfico, pero también aumenta la latencia de replicación.  
   
-Los controladores de dominio almacenan la hora en hora Universal coordinada (UTC). Configuración de hora en las programaciones de objeto de vínculo de sitio se ajusta a la hora local del sitio y el equipo en el que se establece la programación. Cuando un controlador de dominio pone en contacto con un equipo que está en un sitio diferente y la zona horaria, la programación en el controlador de dominio muestra el valor del tiempo según la hora local para el sitio del equipo.  
+Los controladores de dominio almacenan la hora en hora universal coordinada (UTC). La configuración de tiempo de las programaciones de objetos de vínculo de sitio se ajusta a la hora local del sitio y el equipo en el que se establece la programación. Cuando un controlador de dominio se pone en contacto con un equipo que se encuentra en otro sitio y zona horaria, la programación del controlador de dominio muestra la configuración de tiempo según la hora local del sitio del equipo.  
   
 
 

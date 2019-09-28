@@ -1,9 +1,9 @@
 ---
-title: Paso 3 configurar el servidor de acceso remoto de OTP
-description: En este tema forma parte de la Guía de implementación de acceso remoto con autenticación OTP en Windows Server 2016.
+title: Paso 3 configurar el servidor de acceso remoto para OTP
+description: Este tema forma parte de la guía deploy Remote Access with OTP Authentication in Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,100 +12,100 @@ ms.topic: article
 ms.assetid: df1e87f2-6a0f-433b-8e42-816ae75395f9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 093877657f19006bba2b80c10b92db1fb3b40fde
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 41cc5cc2df5ac9709818536df8fff098d2a0c297
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280862"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404335"
 ---
-# <a name="step-3-configure-the-remote-access-server-for-otp"></a>Paso 3 configurar el servidor de acceso remoto de OTP
+# <a name="step-3-configure-the-remote-access-server-for-otp"></a>Paso 3 configurar el servidor de acceso remoto para OTP
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Una vez que se ha configurado el servidor RADIUS con tokens de distribución de software, están abiertos los puertos de comunicación, se ha creado un secreto compartido, se han creado las cuentas de usuario correspondientes a Active Directory en el servidor RADIUS y el servidor de acceso remoto tiene se ha configurado como un agente de autenticación RADIUS, el servidor de acceso remoto debe configurarse para admitir la OTP.  
+Una vez que el servidor RADIUS se ha configurado con tokens de distribución de software, los puertos de comunicación están abiertos, se ha creado un secreto compartido, se han creado las cuentas de usuario correspondientes a Active Directory en el servidor RADIUS y el servidor de acceso remoto tiene configurado como agente de autenticación RADIUS, el servidor de acceso remoto debe configurarse para admitir OTP.  
   
 |Tarea|Descripción|  
 |----|--------|  
-|[3.1 los usuarios exentos de la autenticación de OTP (opcional)](#BKMK_Exempt)|Si determinados usuarios quedarán excluidos de DirectAccess con autenticación OTP, a continuación, siga estos pasos preliminares.|  
-|[3.2 configurar el servidor de acceso remoto para admitir la OTP](#BKMK_Config)|En el servidor de acceso remoto, actualice la configuración de acceso remoto para admitir la autenticación OTP en dos fases.|  
-|[3.3 las tarjetas inteligentes para la autorización adicional](#BKMK_Smartcard)|Información adicional sobre el uso de tarjetas inteligentes.|  
+|[3,1 excluir a los usuarios de la autenticación OTP (opcional)](#BKMK_Exempt)|Si se va a eximir a usuarios específicos de DirectAccess con autenticación OTP, siga estos pasos preliminares.|  
+|[3,2 configurar el servidor de acceso remoto para que admita OTP](#BKMK_Config)|En el servidor de acceso remoto, actualice la configuración de acceso remoto para admitir la autenticación de dos factores de OTP.|  
+|[3,3 tarjetas inteligentes para la autorización adicional](#BKMK_Smartcard)|Información adicional sobre el uso de tarjetas inteligentes.|  
   
 > [!NOTE]  
 > Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_Exempt"></a>3.1 los usuarios exentos de la autenticación de OTP (opcional)  
-Si los usuarios específicos que deben excluirse de la autenticación de OTP, se deben realizar estos pasos antes de configurar el acceso remoto:  
+## <a name="BKMK_Exempt"></a>3,1 excluir a los usuarios de la autenticación OTP (opcional)  
+Si se va a excluir a usuarios específicos de la autenticación de OTP, estos pasos se deben realizar antes de la configuración de acceso remoto:  
   
 > [!NOTE]  
-> Debe esperar para la replicación entre dominios para completar al configurar el grupo de exención de OTP.  
+> Debe esperar a que se complete la replicación entre dominios al configurar el grupo de exenciones de OTP.  
   
 #### <a name="create-user-exemption-security-group"></a>Crear grupo de seguridad de exención de usuario  
   
-1.  Crear un grupo de seguridad en Active Directory con el fin de exención de OTP.  
+1.  Cree un grupo de seguridad en Active Directory para la exención de OTP.  
   
-2.  Agregue todos los usuarios estén exentos de autenticación de OTP para el grupo de seguridad.  
+2.  Agregue todos los usuarios que se van a excluir de la autenticación de OTP en el grupo de seguridad.  
   
     > [!NOTE]  
-    > Asegúrese de incluir solo las cuentas de usuario y no cuentas de equipo, en el grupo de seguridad de exención de OTP.  
+    > Asegúrese de incluir solo las cuentas de usuario y no las cuentas de equipo en el grupo de seguridad de exención de OTP.  
   
-## <a name="BKMK_Config"></a>3.2 configurar el servidor de acceso remoto para admitir la OTP  
-Para configurar el acceso remoto para usar la autenticación en dos fases y OTP con el servidor RADIUS y la implementación de certificados de las secciones anteriores, siga estos pasos:  
+## <a name="BKMK_Config"></a>3,2 configurar el servidor de acceso remoto para que admita OTP  
+Para configurar el acceso remoto para que use la autenticación en dos fases y OTP con el servidor RADIUS y la implementación de certificados de las secciones anteriores, siga estos pasos:  
   
 #### <a name="configure-remote-access-for-otp"></a>Configurar el acceso remoto para OTP  
   
-1.  Abra **administración de acceso remoto** y haga clic en **configuración**.  
+1.  Abra **Administración de acceso remoto** y haga clic en **configuración**.  
   
-2.  En el **instalación de DirectAccess** ventana, en **paso 2: servidor de acceso remoto**, haga clic en **editar**.  
+2.  En la ventana **configuración de DirectAccess** , en **paso 2: servidor de acceso remoto**, haga clic en **Editar**.  
   
-3.  Haga clic en **siguiente** tres veces y, en el **autenticación** sección seleccionar ambos **autenticación en dos fases** y **usar OTP**y asegúrese de que **usar certificados de equipo** está activada.  
+3.  Haga clic en **siguiente** tres veces y, en la sección **autenticación** , seleccione **dos factores de autenticación** y **uso de OTP**y asegúrese de que la opción **usar certificados de equipo** está activada.  
   
     > [!NOTE]  
-    > Cuando haya habilitado la OTP en el servidor de acceso remoto, si deshabilita la OTP anulando la selección de **usar OTP**, se van a desinstalar las extensiones ISAPI y CGI en el servidor.  
+    > Una vez que se haya habilitado OTP en el servidor de acceso remoto, si se deshabilita OTP mediante la anulación de la selección de **usar OTP**, se desinstalarán las extensiones ISAPI y CGI en el servidor.  
   
-4.  Si se requiere la compatibilidad de Windows 7, seleccione el **los equipos cliente de habilitar Windows 7 se conecten mediante DirectAccess** casilla de verificación. Nota: Como se describe en la sección de planeación, los clientes de Windows 7 deben tener DCA 2.0 instalados para admitir DirectAccess con OTP.  
+4.  Si se requiere compatibilidad con Windows 7, active la casilla **permitir que los equipos cliente de Windows 7 se conecten a través de DirectAccess** . Nota: Como se describe en la sección de planeación, los clientes de Windows 7 deben tener DCA 2,0 instalado para admitir DirectAccess con OTP.  
   
 5.  Haz clic en **Siguiente**.  
   
-6.  En el **servidor RADIUS de OTP** sección, haga doble clic en el espacio en blanco **nombre del servidor** campo.  
+6.  En la sección **servidor RADIUS OTP** , haga doble clic en el campo **nombre del servidor** en blanco.  
   
-7.  En el **agregar un servidor RADIUS** cuadro de diálogo, escriba el nombre del servidor RADIUS en el **nombre del servidor** campo. Haga clic en **cambio** junto a la **secreto compartido** campo y escriba la misma contraseña que usó al configurar el servidor RADIUS en el **secreto nuevo** y  **Confirmar secreto nuevo** campos. Haga clic en **Aceptar** dos veces y haga clic en **siguiente**.  
-  
-    > [!NOTE]  
-    > Si el servidor RADIUS está en un dominio diferente del servidor de acceso remoto, el **nombre del servidor** campo debe especificar el FQDN del servidor RADIUS.  
-  
-8.  En el **servidores de CA OTP** sección Seleccione los servidores de CA que se usa para la inscripción de certificados de autenticación de cliente OTP y haga clic en **agregar**. Haz clic en **Siguiente**.  
-  
-9. En el **plantillas de certificado de OTP** sección, haga clic **examinar** para seleccionar la plantilla de certificado usada para la inscripción de certificados emitidos para la autenticación de OTP.  
+7.  En el cuadro de diálogo **Agregar un servidor RADIUS** , escriba el nombre del servidor RADIUS en el campo **nombre del servidor** . Haga clic en **cambiar** junto al campo **secreto compartido** y escriba la misma contraseña que usó al configurar el servidor RADIUS en los campos **nuevo secreto** y **confirmar nuevo secreto** . Haga clic en **Aceptar** dos veces y haga clic en **siguiente**.  
   
     > [!NOTE]  
-    > Sin la opción "No incluyen información de revocación de certificados emitidos", se debe configurar la plantilla de certificado para OTP los certificados emitidos por la CA de empresa. Si se selecciona esta opción durante la creación de la plantilla de certificado, a continuación, los equipos cliente OTP se producirá un error al iniciar sesión correctamente.  
+    > Si el servidor RADIUS está en un dominio diferente al del servidor de acceso remoto, el campo **nombre del servidor** debe especificar el FQDN del servidor RADIUS.  
   
-    Haga clic en **examinar** para seleccionar una plantilla de certificado que se usa para inscribir el certificado utilizado por el servidor de acceso remoto para firmar solicitudes de inscripción de certificado OTP. Haga clic en **Aceptar**. Haz clic en **Siguiente**.  
+8.  En la sección **servidores de CA de OTP** , seleccione los servidores de CA que se usarán para la inscripción de certificados de autenticación de cliente OTP y haga clic en **Agregar**. Haz clic en **Siguiente**.  
   
-10. Si es necesario, la exención de usuarios específicos de DirectAccess con OTP, a continuación, en el **exenciones de OTP** sección Seleccione **no requieren los usuarios del grupo de seguridad especificados para autenticar mediante autenticación en dos fases** . Haga clic en **grupo de seguridad** y seleccione el grupo de seguridad que se creó para exenciones de OTP.  
+9. En la sección **plantillas de certificado de OTP** , haga clic en **examinar** para seleccionar la plantilla de certificado que se usa para la inscripción de certificados que se emiten para la autenticación de OTP.  
   
-11. En el **instalación del servidor de acceso remoto** página haga clic en **finalizar**.  
+    > [!NOTE]  
+    > La plantilla de certificado para los certificados OTP emitidos por la entidad de certificación corporativa debe estar configurada sin la opción "no incluir información de revocación en los certificados emitidos". Si esta opción se selecciona durante la creación de la plantilla de certificado, los equipos cliente de OTP no podrán iniciar sesión correctamente.  
   
-12. En el **instalación de DirectAccess** ventana, en **paso 3: servidores de infraestructura**, haga clic en **editar**.  
+    Haga clic en **examinar** para seleccionar una plantilla de certificado que se usa para inscribir el certificado usado por el servidor de acceso remoto para firmar las solicitudes de inscripción de certificado de OTP. Haga clic en **Aceptar**. Haz clic en **Siguiente**.  
   
-13. Haga clic en **siguiente** dos veces y, en el **administración** sección haga doble clic en el **servidores de administración** campo.  
+10. Si se requiere la exención de usuarios específicos de DirectAccess con OTP, en la sección **exenciones de OTP** , seleccione no **requerir que los usuarios del grupo de seguridad especificado se autentiquen con la autenticación en dos fases**. Haga clic en **grupo de seguridad** y seleccione el grupo de seguridad que se creó para las exenciones de OTP.  
   
-14. Escriba el **nombre_equipo** o **dirección** del servidor de CA que está configurado para emitir certificados OTP y haga clic en **Aceptar**.  
+11. En la página **instalación del servidor de acceso remoto** , haga clic en **Finalizar**.  
   
-15. En el **instalación de acceso remoto** windows, haga clic en **finalizar**.  
+12. En la ventana **configuración de DirectAccess** , en el **paso 3: servidores de infraestructura**, haga clic en **Editar**.  
   
-16. Haga clic en **finalizar** en el **Asistente de DirectAccess experto**.  
+13. Haga clic en **siguiente** dos veces y, en la sección **Administración** , haga doble clic en el campo **servidores de administración** .  
   
-17. En el **revisión de acceso remoto** haga clic en el cuadro de diálogo **aplicar**, espere para que se puede actualizar la directiva de DirectAccess y haga clic en **cerrar**.  
+14. Escriba el **nombre de equipo** o la **Dirección** del servidor de CA que está configurado para emitir certificados OTP y haga clic en **Aceptar**.  
   
-18. En el **iniciar** , escriba**powershell.exe**, haga clic en **powershell**, haga clic en **avanzadas**y haga clic en **ejecutar como administrador**. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+15. En las ventanas **instalación de acceso remoto** , haga clic en **Finalizar**.  
   
-19. En la ventana de Windows PowerShell, escriba **gpupdate /force** y presione ENTRAR.  
+16. Haga clic en **Finalizar** en el **Asistente para el experto de DirectAccess**.  
+  
+17. En el cuadro de diálogo **revisión de acceso remoto** , haga clic en **aplicar**, espere a que se actualice la Directiva de DirectAccess y haga clic en **cerrar**.  
+  
+18. En la pantalla **Inicio** , escriba**PowerShell. exe**, haga clic con el botón derecho en **PowerShell**, haga clic en **Opciones avanzadas**y, a continuación, haga clic en **Ejecutar como administrador**. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+  
+19. En la ventana de Windows PowerShell, escriba **gpupdate/force** y presione Entrar.  
   
 Para configurar el acceso remoto para OTP mediante comandos de PowerShell:  
   
-![Windows PowerShell](../../../../media/Step-3-Configure-the-Remote-Access-Server-for-OTP/PowerShellLogoSmall.gif)**comandos equivalentes de Windows PowerShell**  
+](../../../../media/Step-3-Configure-the-Remote-Access-Server-for-OTP/PowerShellLogoSmall.gif)**comandos equivalentes de Windows PowerShell** de @no__t 0Windows PowerShell  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -115,51 +115,51 @@ Para configurar el acceso remoto para usar la autenticación en dos fases en una
 Set-DAServer -UserAuthentication TwoFactor  
 ```  
   
-Para configurar el acceso remoto para utilizar la autenticación de OTP con las siguientes opciones:  
+Para configurar el acceso remoto para usar la autenticación de OTP con la siguiente configuración:  
   
--   Un servidor OTP denominado OTP.corp.contoso.com.  
+-   Un servidor OTP llamado OTP.corp.contoso.com.  
   
--   Un servidor de CA denominado APP1.corp.contoso.com\corp-APP1-CA1.  
+-   Un servidor de CA denominado APP1. Corp. contoso. com\corp-APP1-CA1.  
   
--   Una plantilla de certificado denominado DAOTPLogon utilizado para la inscripción de certificados emitidos para la autenticación de OTP.  
+-   Una plantilla de certificado denominada DAOTPLogon usada para la inscripción de certificados que se emiten para la autenticación de OTP.  
   
--   Una plantilla de certificado denominada DAOTPRA se usa para inscribir el certificado de autoridad de registro usado por el servidor de acceso remoto para firmar solicitudes de inscripción de certificado OTP.  
+-   Una plantilla de certificado denominada DAOTPRA usada para inscribir el certificado de la autoridad de registro usado por el servidor de acceso remoto para firmar las solicitudes de inscripción de certificado de OTP.  
   
 ```  
 Enable-DAOtpAuthentication -CertificateTemplateName 'DAOTPLogon' -SigningCertificateTemplateName 'DAOTPRA' -CAServer @('APP1.corp.contoso.com\corp-APP1-CA1') -RadiusServer OTP.corp.contoso.com -SharedSecret Abcd123$  
 ```  
   
-Después de ejecutar los comandos de PowerShell, complete los pasos 12-19 del procedimiento anterior para configurar el servidor de acceso remoto para admitir la OTP.  
+Después de ejecutar los comandos de PowerShell, complete los pasos 12-19 del procedimiento anterior para configurar el servidor de acceso remoto para que admita OTP.  
   
 > [!NOTE]  
-> Asegúrese de que ha aplicado la configuración de OTP en el servidor de acceso remoto antes de agregar un punto de entrada.  
+> Asegúrese de comprobar que ha aplicado la configuración de OTP en el servidor de acceso remoto antes de agregar un punto de entrada.  
   
-## <a name="BKMK_Smartcard"></a>3.3 las tarjetas inteligentes para la autorización adicional  
-En la página de autenticación de paso 2 del Asistente para instalación de acceso remoto, puede requerir el uso de tarjetas inteligentes para el acceso a la red interna. Cuando se selecciona esta opción, el Asistente para instalación de acceso remoto configura la regla de seguridad de conexión de IPsec para el túnel de intranet en el servidor de DirectAccess para requerir autorización del modo de túnel con tarjetas inteligentes. Autorización del modo de túnel permite especificar que sólo los equipos autorizados o los usuarios pueden establecer un túnel entrante.  
+## <a name="BKMK_Smartcard"></a>3,3 tarjetas inteligentes para la autorización adicional  
+En la página autenticación del paso 2 del Asistente para la instalación de acceso remoto, puede requerir el uso de tarjetas inteligentes para el acceso a la red interna. Cuando se selecciona esta opción, el Asistente para la instalación de acceso remoto configura la regla de seguridad de conexión IPsec para el túnel de intranet en el servidor de DirectAccess para requerir la autorización del modo de túnel con tarjetas inteligentes. La autorización del modo de túnel le permite especificar que solo los equipos o usuarios autorizados pueden establecer un túnel entrante.  
   
 Para usar tarjetas inteligentes con la autorización del modo de túnel IPsec para el túnel de intranet, debe implementar una infraestructura de clave pública (PKI) con infraestructura de tarjetas inteligentes.  
   
-Dado que los clientes de DirectAccess usa tarjetas inteligentes para el acceso a la intranet, también puede usar la comprobación del mecanismo de autenticación, una característica de Windows Server 2008 R2, para controlar el acceso a recursos, como archivos, carpetas e impresoras, en función de si el usuario ha iniciado sesión con un certificado basado en tarjeta inteligente. Comprobación del mecanismo de autenticación requiere un nivel funcional del dominio de Windows Server 2008 R2.  
+Dado que los clientes de DirectAccess están usando tarjetas inteligentes para el acceso a la intranet, también puede usar la comprobación del mecanismo de autenticación, una característica de Windows Server 2008 R2, para controlar el acceso a los recursos, como archivos, carpetas e impresoras, en función de si el usuario que inició sesión con un certificado basado en tarjeta inteligente. La garantía del mecanismo de autenticación requiere un nivel funcional de dominio de Windows Server 2008 R2.  
   
 ### <a name="allowing-access-for-users-with-unusable-smart-cards"></a>Permitir el acceso a usuarios con tarjetas inteligentes inutilizables  
 Para permitir el acceso temporal a los usuarios con tarjetas inteligentes inutilizables, haga lo siguiente:  
   
 1.  Cree un grupo de seguridad de Active Directory para contener las cuentas de los usuarios que no pueden usar temporalmente sus tarjetas inteligentes.  
   
-2.  Para el objeto de directiva de grupo del servidor de DirectAccess, configure las opciones globales de IPsec para la autorización de túnel IPsec y agregue el grupo de seguridad de Active Directory a la lista de los usuarios autorizados.  
+2.  Para el objeto de directiva de grupo de servidor de DirectAccess, configure las opciones globales de IPsec para la autorización de túnel IPsec y agregue el grupo de seguridad Active Directory a la lista de usuarios autorizados.  
   
 Para conceder acceso a un usuario que no puede usar su tarjeta inteligente, agregue temporalmente su cuenta de usuario al grupo de seguridad de Active Directory. Quite la cuenta de usuario del grupo cuando la tarjeta inteligente sea utilizable.  
   
 ### <a name="under-the-covers-smart-card-authorization"></a>Información adicional: Autorización mediante tarjeta inteligente  
-La autorización mediante tarjeta inteligente funciona habilitando la autorización de modo de túnel en la regla de seguridad de conexión del túnel de intranet del servidor de DirectAccess para un identificador de seguridad (SID) basado en Kerberos determinado. Para la autorización mediante tarjeta inteligente, es el SID conocido (S-1-5-65-1), que se asigna a los inicio de sesión basados en tarjeta inteligente. Este SID está presente en el token de Kerberos de un cliente de DirectAccess y se conoce como "Este certificado de organización" cuando se configura en el global de IPsec del túnel Configuración del modo de autorización.  
+La autorización mediante tarjeta inteligente funciona habilitando la autorización de modo de túnel en la regla de seguridad de conexión del túnel de intranet del servidor de DirectAccess para un identificador de seguridad (SID) basado en Kerberos determinado. Para la autorización mediante tarjeta inteligente, es el SID conocido (S-1-5-65-1), que se asigna a los inicio de sesión basados en tarjeta inteligente. Este SID está presente en el token de Kerberos de un cliente de DirectAccess y se conoce como "este certificado de organización" cuando se configura en la configuración de autorización del modo de túnel IPsec global.  
   
-Al habilitar la autorización mediante tarjeta inteligente en el paso 2 del Asistente para la instalación de DirectAccess, el Asistente para configuración de DirectAccess configura la configuración de autorización del modo de túnel de IPsec global con este SID para el objeto de directiva de grupo del servidor de DirectAccess. Para ver esta configuración en el Firewall de Windows con complemento de seguridad avanzada para el objeto de directiva de grupo del servidor de DirectAccess, haga lo siguiente:  
+Al habilitar la autorización mediante tarjeta inteligente en el paso 2 del Asistente para configuración de DirectAccess, el Asistente para configuración de DirectAccess configura la configuración de autorización del modo de túnel IPsec global con este SID para el servidor de DirectAccess directiva de grupo objeto. Para ver esta configuración en el complemento Firewall de Windows con seguridad avanzada para el servidor de DirectAccess directiva de grupo objeto, haga lo siguiente:  
   
-1.  A la derecha, haga clic en Firewall de Windows con seguridad avanzada y, a continuación, haga clic en Propiedades.  
+1.  Haga clic con el botón secundario en firewall de Windows con seguridad avanzada y, a continuación, haga clic en propiedades.  
   
-2.  En la pestaña Configuración de IPsec, en la autorización de túnel IPsec, haga clic en Personalizar.  
+2.  En la pestaña Configuración IPsec, en autorización de túnel IPsec, haga clic en personalizar.  
   
-3.  Haga clic en la pestaña usuarios. Debería ver "NT authority\este certificado de la organización" como un usuario autorizado.  
+3.  Haga clic en la pestaña usuarios. Debería ver "NT Authority\este Organization Certificate" como usuario autorizado.  
   
 
 

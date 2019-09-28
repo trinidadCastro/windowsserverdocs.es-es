@@ -1,7 +1,7 @@
 ---
 title: Configurar las conexiones VPN de Always On del cliente de Windows 10
 description: En este paso, obtendrá información sobre las opciones y el esquema de ProfileXML, y configurará los equipos cliente de Windows 10 para comunicarse con esa infraestructura con una conexión VPN.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 05/29/2018
@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.reviewer: deverette
-ms.openlocfilehash: c3ac8295d048c599a1cb6d1ed141cd63a7a73f47
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9621f9bdca0416965861112ba23c1c8dd731f67b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871340"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404290"
 ---
 # <a name="step-6-configure-windows-10-client-always-on-vpn-connections"></a>Paso 6. Configuración de conexiones VPN de Always On cliente de Windows 10
 
@@ -710,15 +710,15 @@ Para usar System Center Configuration Manager para implementar un perfil de VPN 
 
     b. Haga clic en **examinar**, en **todos los usuarios** y en **Aceptar**.
 
-    c. Haga clic en **Next**.
+    c. Haz clic en **Siguiente**.
 
 4.  En la página reglas de pertenencia, complete los pasos siguientes:
 
     a.  En **reglas**de pertenencia, haga clic en **Agregar regla**y en **regla directa**. En este ejemplo, va a agregar usuarios individuales a la recopilación de usuarios. Sin embargo, puede usar una regla de consulta para agregar usuarios a esta colección de forma dinámica para una implementación a mayor escala.
 
-    b.  En la página **principal**, haga clic en **Siguiente**.
+    b.  En la página de **bienvenida** , haga clic en **siguiente**.
 
-    c.  En la página buscar recursos, en **valor**, escriba el nombre del usuario que desea agregar. El nombre del recurso incluye el dominio del usuario. Para incluir resultados basados en una coincidencia parcial, inserte el **%** carácter en cualquier extremo del criterio de búsqueda. Por ejemplo, para buscar todos los usuarios que contengan la cadena "Lori", escriba **% Lori%** . Haga clic en **Next**.
+    c.  En la página buscar recursos, en **valor**, escriba el nombre del usuario que desea agregar. El nombre del recurso incluye el dominio del usuario. Para incluir resultados basados en una coincidencia parcial, inserte el **%** carácter en cualquier extremo del criterio de búsqueda. Por ejemplo, para buscar todos los usuarios que contengan la cadena "Lori", escriba **% Lori%** . Haz clic en **Siguiente**.
 
     d.  En la página seleccionar recursos, seleccione los usuarios que desea agregar al grupo y haga clic en **siguiente**.
 
@@ -751,7 +751,7 @@ Después de crear el grupo de usuarios para recibir el perfil de VPN, puede crea
     c. En el cuadro de diálogo establecer carpeta de origen, haga clic en **examinar**, seleccione el recurso compartido de archivos que contiene VPN_Profile. PS1 y haga clic en **Aceptar**.
         Asegúrese de seleccionar una ruta de acceso de red, no una ruta de acceso local. En otras palabras, la ruta de acceso debe ser  *\\similar\\a fileserver vpnscript*, no *c:\\vpnscript*.
 
-1.  Haga clic en **Next**.
+1.  Haz clic en **Siguiente**.
 
 2.  En la página tipo de programa, haga clic en **siguiente**.
 
@@ -763,7 +763,7 @@ Después de crear el grupo de usuarios para recibir el perfil de VPN, puede crea
 
     c.  En el **modo de ejecución**, haga clic en **ejecutar con derechos administrativos**.
 
-    d.  Haga clic en **Next**.
+    d.  Haz clic en **Siguiente**.
 
 4.  En la página requisitos, complete los pasos siguientes:
 
@@ -775,7 +775,7 @@ Después de crear el grupo de usuarios para recibir el perfil de VPN, puede crea
 
     d.  En **tiempo de ejecución máximo permitido (minutos)** , escriba **15**.
 
-    e.  Haga clic en **Next**.
+    e.  Haz clic en **Siguiente**.
 
 5.  En la página Resumen, haga clic en **siguiente**.
 
@@ -805,7 +805,7 @@ Con el paquete y el programa creados, debe implementarlo en el grupo de **usuari
 
     c.  Haga clic en **usuarios de VPN**y en **Aceptar**.
 
-    d.  Haga clic en **Next**.
+    d.  Haz clic en **Siguiente**.
 
 6.  En la página contenido, realice los pasos siguientes:
 
@@ -813,7 +813,7 @@ Con el paquete y el programa creados, debe implementarlo en el grupo de **usuari
 
     b.  En **puntos de distribución disponibles**, seleccione los puntos de distribución a los que desea distribuir el script de configuración de ProfileXML y haga clic en **Aceptar**.
 
-    c.  Haga clic en **Next**.
+    c.  Haz clic en **Siguiente**.
 
 7.  En la página Configuración de implementación, haga clic en **siguiente**.
 
@@ -823,7 +823,7 @@ Con el paquete y el programa creados, debe implementarlo en el grupo de **usuari
 
     b.  Haga clic en **asignar inmediatamente después de este evento**y haga clic en **Aceptar**.
 
-    c.  Haga clic en **Next**.
+    c.  Haz clic en **Siguiente**.
 
 9.  En la página experiencia del usuario, complete los pasos siguientes:
 
@@ -863,7 +863,7 @@ Para usar Intune para implementar el acceso remoto de Windows 10 Always On perfi
 >[!NOTE]
 >Intune ahora usa grupos de Azure AD. Si Azure AD Connect sincronizar el grupo de usuarios de VPN de local a Azure AD y los usuarios se asignan al grupo de usuarios de VPN, está listo para continuar.
 
-Cree la Directiva de configuración de dispositivos VPN para configurar los equipos cliente de Windows 10 para todos los usuarios agregados al grupo. Dado que la plantilla de Intune proporciona parámetros de VPN, \<copie solo \<la parte EapHostConfig >/EapHostConfig > del archivo VPN_ProfileXML.
+Cree la Directiva de configuración de dispositivos VPN para configurar los equipos cliente de Windows 10 para todos los usuarios agregados al grupo. Dado que la plantilla de Intune proporciona parámetros de VPN, solo tiene que copiar la parte \<EapHostConfig > \</EapHostConfig > del archivo VPN_ProfileXML.
 
 ### <a name="create-the-always-on-vpn-configuration-policy"></a>Crear la Directiva de configuración de VPN de Always On
 

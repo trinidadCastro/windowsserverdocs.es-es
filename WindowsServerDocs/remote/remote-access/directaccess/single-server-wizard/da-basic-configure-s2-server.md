@@ -1,9 +1,9 @@
 ---
-title: Paso 2 configurar el servidor de DirectAccess básica
-description: Este tema forma parte de la Guía de implementar un único servidor de DirectAccess mediante el Asistente de iniciado para Windows Server 2016
+title: Paso 2 configurar el servidor de DirectAccess básico
+description: Este tema forma parte de la guía de implementación de un único servidor de DirectAccess con el Asistente para Introducción para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: 82bf5fed-93b3-4fa6-8e71-522146eccdb1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5bd248e36c316b11ea5e272707b75624d73dc49a
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: a21e5799824c968b29c719585ca16b6b45a9ef37
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283430"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404913"
 ---
-# <a name="step-2-configure-the-basic-directaccess-server"></a>Paso 2 configurar el servidor de DirectAccess básica
+# <a name="step-2-configure-the-basic-directaccess-server"></a>Paso 2 configurar el servidor de DirectAccess básico
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema se describe cómo configurar los ajustes de servidor y cliente necesarios para una implementación básica de DirectAccess. Antes de comenzar los pasos de implementación, asegúrese de que ha completado los pasos de planificación descritos en [planear una implementación básica de DirectAccess](Plan-a-Basic-DirectAccess-Deployment.md).  
+En este tema se describe cómo configurar los ajustes de servidor y cliente necesarios para una implementación básica de DirectAccess. Antes de comenzar con los pasos de implementación, asegúrese de que ha completado los pasos de planeación descritos en [planear una implementación básica de DirectAccess](Plan-a-Basic-DirectAccess-Deployment.md).  
   
 |Tarea|Descripción|  
 |----|--------|  
@@ -39,7 +39,7 @@ Para implementar acceso remoto debes instalar el rol de acceso remoto en un serv
   
 #### <a name="to-install-the-remote-access-role"></a>Para instalar el rol de acceso remoto  
   
-1.  En el servidor de acceso remoto, en la consola de administrador del servidor, en el **panel**, haga clic en **agregar roles y características**.  
+1.  En el servidor de acceso remoto, en la consola de Administrador del servidor, en el **Panel**, haga clic en **Agregar roles y características**.  
   
 2.  Haga clic en **Siguiente** tres veces para ir a la pantalla de selección de roles del servidor.  
   
@@ -47,19 +47,19 @@ Para implementar acceso remoto debes instalar el rol de acceso remoto en un serv
   
 4.  En el cuadro de diálogo **Seleccionar características**, haga clic en **Siguiente**.  
   
-5.  Haga clic en **siguiente**y, a continuación, en el **seleccionar servicios de rol** cuadro de diálogo, haga clic en el **DirectAccess y VPN (RAS)** casilla de verificación.  
+5.  Haga clic en **siguiente**y, a continuación, en el cuadro de diálogo **seleccionar servicios de rol** , haga clic en la casilla **DirectAccess y VPN (RAS)** .  
   
-6.  Haga clic en **agregar características**, haga clic en **siguiente**y, a continuación, haga clic en **instalar**.  
+6.  Haga clic en **Agregar características**, haga clic en **siguiente**y, a continuación, haga clic en **instalar**.  
   
 7.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
   
-![Windows PowerShell](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
   
-El siguiente cmdlet de Windows PowerShell o cmdlets de instalar el rol de acceso remoto: 
+El siguiente cmdlet o cmdlets de Windows PowerShell instala el rol de acceso remoto: 
 
 1. Abra PowerShell como administrador.
 
-2. Instale la característica de acceso remoto:
+2. Instalar la característica de acceso remoto:
 
    ```  
    Install-WindowsFeature RemoteAccess   
@@ -71,7 +71,7 @@ El siguiente cmdlet de Windows PowerShell o cmdlets de instalar el rol de acceso
    Restart-Computer
    ```
    
-4. Instale PowerShell de acceso remoto:
+4. Instalar PowerShell de acceso remoto:
 
    ```
    Install-WindowsFeature RSAT-RemoteAccess-PowerShell
@@ -86,7 +86,7 @@ El siguiente cmdlet de Windows PowerShell o cmdlets de instalar el rol de acceso
   
 1.  En Administrador del servidor haga clic en **Herramientas** y, a continuación, haga clic en **Administración de acceso remoto**.  
   
-2.  En la consola de administración de acceso remoto, seleccione el servicio de rol para configurar en el panel de navegación izquierdo y, a continuación, haga clic en **ejecutar el Asistente para introducción**.  
+2.  En la consola de administración de acceso remoto, seleccione el servicio de función que desee configurar en el panel de navegación izquierdo y, a continuación, haga clic en **ejecutar el Asistente para introducción**.  
   
 3.  Haga clic en **Implementar solo DirectAccess**.  
   
@@ -125,7 +125,7 @@ El siguiente cmdlet de Windows PowerShell o cmdlets de instalar el rol de acceso
   
 ## <a name="next-step"></a>Paso siguiente  
   
--   [Paso 3 comprobar las implementaciones de DirectAccess básica](da-basic-configure-s3-verify.md)  
+-   [Paso 3 comprobar las implementaciones básicas de DirectAccess](da-basic-configure-s3-verify.md)  
   
 
 

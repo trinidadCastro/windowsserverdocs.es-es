@@ -1,7 +1,7 @@
 ---
 title: Operaciones de actualizaciones
 description: 'Tema de Windows Server Update Service (WSUS): Cómo administrar actualizaciones, incluido el proceso de aprobación'
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-wsus
@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2618586fdc38588bb58e122116345eb88a680a3f
-ms.sourcegitcommit: 6423dfa9cecb3b06bdd563cae113c3e80a4ec330
+ms.openlocfilehash: 7121f6303bef48486720d4cdca4582fd897467c4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105060"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361485"
 ---
 # <a name="updates-operations"></a>Operaciones de actualizaciones
 
@@ -152,7 +152,7 @@ Puede crear reglas que el servidor WSUS aplicará automáticamente durante la si
 
 5.  En **el paso 3: Especifique un nombre de**cuadro, escriba un nombre único para la regla.
 
-6.  Haga clic en **OK**.
+6.  Haga clic en **Aceptar**.
 
 Las reglas de aprobación automática no se aplicarán a las actualizaciones que requieran un contrato de licencia para el usuario final (CLUF) que todavía no se haya aceptado en el servidor. Si observa que la aplicación de una regla de aprobación automática no hace que se aprueben todas las actualizaciones relevantes, debe aprobar estas actualizaciones manualmente.
 
@@ -186,7 +186,7 @@ Para buscar actualizaciones reemplazadas, puede seleccionar la columna de marca 
 
 -   Actualizaciones que han reemplazado otra actualización (un icono con un cuadrado azul en la parte superior).
 
-No hay ninguna característica en Windows Server Update Services que rechace automáticamente las actualizaciones reemplazadas tras la aprobación de una actualización más reciente. Se recomienda establecer primero la aprobación en "no aprobado" y, a continuación, usar el Asistente para la limpieza del servidor para rechazar automáticamente la actualización cuando se cumplan todas las condiciones pertinentes. Para más información, consulte: [Asistente para la limpieza del servidor](the-server-cleanup-wizard.md).
+No hay ninguna característica en Windows Server Update Services que rechace automáticamente las actualizaciones reemplazadas tras la aprobación de una actualización más reciente. Se recomienda establecer primero la aprobación en "no aprobado" y, a continuación, usar el Asistente para la limpieza del servidor para rechazar automáticamente la actualización cuando se cumplan todas las condiciones pertinentes. Para obtener más información, vea: [Asistente para la limpieza del servidor](the-server-cleanup-wizard.md).
 
 ## <a name="approving-superseding-or-superseded-updates"></a>Aprobación de actualizaciones reemplazadas o reemplazadas
 Normalmente, una actualización que reemplaza a otras actualizaciones realiza una o varias de las siguientes acciones:

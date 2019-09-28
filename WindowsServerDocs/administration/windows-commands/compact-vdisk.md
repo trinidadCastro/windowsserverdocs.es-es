@@ -1,8 +1,8 @@
 ---
-title: Compactar vdisk
-description: 'Tema de los comandos de Windows para ***- '
+title: Compact vDisk
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,39 +13,39 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4a95354bf041777e43a9eac5f16e693b02c185c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 7efd40fa4b822636eda9f4082b5f561b452d3846
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434307"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379303"
 ---
-# <a name="compact-vdisk"></a>Compactar vdisk
+# <a name="compact-vdisk"></a>Compact vDisk
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Reduce el tamaño físico de un archivo de disco duro virtual (VHD) de expansión dinámica. Este parámetro es útil porque el aumento del tamaño de los discos duros virtuales de expansión dinámica como agregar archivos, pero no se reduce automáticamente al eliminar archivos.
+Reduce el tamaño físico de un archivo de disco duro virtual (VHD) de expansión dinámica. Este parámetro es útil porque los VHD de expansión dinámica aumentan de tamaño a medida que se agregan archivos, pero no se reducen automáticamente al eliminar archivos.
 > [!NOTE]
-> Este comando sólo es aplicable a Windows 7 y Windows Server 2008 R2.
+> Este comando solo es aplicable a Windows 7 y Windows Server 2008 R2.
 > ## <a name="syntax"></a>Sintaxis
 > ```
 > compact vdisk
 > ```
 > ## <a name="remarks"></a>Comentarios
-> - Debe seleccionarse un VHD de expansión dinámica para que esta operación se realice correctamente. Use la **seleccione vdisk** comando para seleccionar un disco duro virtual y desplace el foco a ella.
-> - Sólo puede compactar el VHD que se separa o adjunta como de solo lectura de expansión dinámica.
->   ## <a name="BKMK_Examples"></a>Ejemplos
+> - Se debe seleccionar un VHD de expansión dinámica para que esta operación se realice correctamente. Use el comando **Select vDisk** para seleccionar un disco duro virtual y desplazar el foco a él.
+> - Solo puede compactar los VHD de expansión dinámica que están desasociados o adjuntados como de solo lectura.
+>   ## <a name="BKMK_Examples"></a>Example
 >   Para compactar un VHD de expansión dinámica, escriba:
 >   ```
 >   compact vdisk
 >   ```
 >   ## <a name="additional-references"></a>Referencias adicionales
 > - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-> - [attach vdisk](attach-vdisk.md)
+> - [Attach vDisk](attach-vdisk.md)
 
--   [vdisk detallado](detail-vdisk.md)
--   [Desasociar vdisk](detach-vdisk.md)
--   [Expandir vdisk](expand-vdisk.md)
--   [Combinar vdisk](merge-vdisk.md)
--   [select vdisk](select-vdisk.md)
+-   [detalles del vDisk](detail-vdisk.md)
+-   [Detach vDisk](detach-vdisk.md)
+-   [expandir vDisk](expand-vdisk.md)
+-   [Merge vDisk](merge-vdisk.md)
+-   [seleccionar vDisk](select-vdisk.md)
 -   [list_1](list_1.md)

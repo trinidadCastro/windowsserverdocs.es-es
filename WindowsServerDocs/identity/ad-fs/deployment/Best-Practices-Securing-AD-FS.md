@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bf7e2ed20a59bb021627a8a58f869ea5d94bf2b7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 15b0c721b620e2891f4452fd54501f4970b7c177
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868184"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360002"
 ---
 ## <a name="best-practices-for-securing-active-directory-federation-services"></a>Prácticas recomendadas para proteger Servicios de federación de Active Directory (AD FS)
 
@@ -74,7 +74,7 @@ Cuando se instalan AD FS y WAP, se habilita un conjunto predeterminado de puntos
 Las organizaciones que implementan AD FS y WAP solo para escenarios de Azure AD y Office 365 pueden limitar aún más el número de puntos de conexión de AD FS habilitados en el proxy para lograr una superficie de ataque más mínima.
 A continuación se muestra la lista de puntos de conexión que se deben habilitar en el proxy en estos escenarios:
 
-|Punto de conexión|Finalidad
+|Extremo|Finalidad
 |-----|-----
 |/ADFS/LS|Flujos de autenticación basados en explorador y versiones actuales de Microsoft Office usar este punto de conexión para la autenticación de Azure AD y Office 365
 |/adfs/services/trust/2005/usernamemixed|Se usa para Exchange Online con clientes de Office anteriores a Office 2013, 2015 de mayo de actualización.  Los clientes posteriores usan el punto de conexión \adfs\ls pasivo.

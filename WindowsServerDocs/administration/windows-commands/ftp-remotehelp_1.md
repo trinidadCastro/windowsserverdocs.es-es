@@ -1,8 +1,8 @@
 ---
-title: ftp remotehelp_1
-description: 'Tema de los comandos de Windows para ***- '
+title: remotehelp_1 FTP
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd64af157f7ce05330cdafe6e4db6787fa765859
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bac6fbe4a55c3fed4caab4e30ba848ec9ea68e21
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889596"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376030"
 ---
-# <a name="ftp-remotehelp1"></a>ftp: remotehelp_1
+# <a name="ftp-remotehelp_1"></a>FTP: remotehelp_1
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Muestra ayuda para los comandos remotos.   
+Muestra la ayuda de los comandos remotos.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 remotehelp [<Command>]  
@@ -32,18 +32,18 @@ remotehelp [<Command>]
 ### <a name="parameters"></a>Parámetros  
 |Parámetro|Descripción|  
 |-------|--------|  
-|[<Command>]|Especifica el nombre del comando sobre el que desea obtener ayuda. Si *comando* no se especifica, **ftp** muestra una lista de todos los comandos remotos.|  
+|[<Command>]|Especifica el nombre del comando sobre el que se desea obtener ayuda. Si no se especifica *Command* , **FTP** muestra una lista de todos los comandos remotos.|  
 ## <a name="remarks"></a>Comentarios  
-Puede ejecutar comandos remotos con **oferta** o **literal**.  
-## <a name="BKMK_Examples"></a>Ejemplos  
+Puede ejecutar comandos remotos mediante **comillas** o **literales**.  
+## <a name="BKMK_Examples"></a>Example  
 Mostrar una lista de comandos remotos.  
 ```  
 remotehelp  
 ```  
-Mostrar la sintaxis de la **Func** comando remoto.  
+Muestra la sintaxis del comando remoto **feat** .  
 ```  
 remotehelp feat  
 ```  
 ## <a name="additional-references"></a>Referencias adicionales  
--   [ftp: quote](ftp-quote.md)  
+-   [FTP: comillas](ftp-quote.md)  
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  

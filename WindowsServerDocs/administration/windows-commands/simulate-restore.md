@@ -1,8 +1,8 @@
 ---
-title: Simular la restauración
-description: 'Tema de los comandos de Windows para ***- '
+title: Simular restauración
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09b626939c13d4e38a983435b45d8c47ee2b93a4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d6652fea4e74c706fcc03b8a547fab771a7c0191
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817256"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370885"
 ---
-# <a name="simulate-restore"></a>Simular la restauración
+# <a name="simulate-restore"></a>Simular restauración
 
 
 
-Comprueba la participación del sistema de escritura en las sesiones de restauración en el equipo sin emitir **PreRestore** o **PostRestore** eventos a los escritores.
+La implicación del escritor de pruebas en las sesiones de restauración del equipo sin emitir eventos de **restauración** o **postrestauración** a escritores.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,8 +34,8 @@ simulate restore
 
 ## <a name="remarks"></a>Comentarios
 
--   **Simular la restauración** se usa para probar si la restauración con escritores puede tener éxito.
--   Para poder usar **simular restauración**, debe cargar un archivo de metadatos de DiskShadow mediante el **cargar metadatos** comando. Esto carga los escritores seleccionados y los componentes para la restauración.
+-   La simulación de la **restauración** se usa para probar si la restauración con escritores puede realizarse correctamente.
+-   Antes de poder usar **Simulate restore**, debe cargar un archivo de metadatos de DiskShadow con el comando **cargar metadatos** . Esto carga los escritores y componentes seleccionados para la restauración.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

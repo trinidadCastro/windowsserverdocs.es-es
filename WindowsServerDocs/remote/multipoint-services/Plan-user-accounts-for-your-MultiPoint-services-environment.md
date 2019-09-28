@@ -1,9 +1,9 @@
 ---
 title: Planear cuentas de usuario para el entorno de MultiPoint Services
-description: Información de planificación de cuentas de usuario de MultiPoint Services
+description: Planeación de la información de cuentas de usuario en Multipoint Services
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,32 +13,32 @@ ms.assetid: d47be540-e891-47bd-85da-6df4bbf93b2f
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 02862c1a317dfe5deff75be4a80595c8dc8bc3f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 056c3b9773387cf00b40baf6f14e4e1f3583f6c9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864176"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405007"
 ---
 # <a name="plan-user-accounts-for-your-multipoint-services-environment"></a>Planear cuentas de usuario para el entorno de MultiPoint Services
-La mejor manera de implementar cuentas de usuario de MultiPoint Services depende del tamaño y complejidad de la implementación:  
+La mejor manera de implementar cuentas de usuario en Multipoint Services depende del tamaño y la complejidad de la implementación:  
   
--   **Cuentas de usuario locales** : para una implementación pequeña con sólo unos pocos equipos de servicios de ejecución MultiPoind y algunos de los usuarios, le resultará más conveniente utilizar *cuentas de usuario locales* que se crean en MultiPoint Services. Puede crear una cuenta individual para cada persona que se use el sistema, o cree una cuenta genérica para cada estación, que cualquiera puede utilizar para iniciar sesión. Los administradores de multiPoint Services creación y administración cuentas de usuario local mediante MultiPoint Manager. Las cuentas locales pueden ser administradores, tienen derechos administrativos limitados o ser usuarios normales sin acceso al escritorio de MultiPoint Services o MultiPoint Manager.  
+-   **Cuentas de usuario locales** : para una pequeña implementación con solo unos pocos equipos que ejecutan servicios de MultiPoind y pocos usuarios, puede que le resulte más conveniente usar *cuentas de usuario locales* creadas en Multipoint Services. Puede crear una cuenta individual para cada persona que vaya a usar el sistema o crear una cuenta genérica para cada estación, que cualquier usuario puede usar para iniciar sesión. Los administradores de Multipoint Services crean y administran cuentas de usuario locales mediante Multipoint Manager. Las cuentas locales pueden ser administradores, tener derechos administrativos limitados o ser usuarios normales sin acceso a multipoint Services Desktop o Multipoint Manager.  
   
--   **Las cuentas de dominio** -si el entorno tiene muchos equipos que ejecuten MultiPoint Services y muchos usuarios, probablemente encontrará lo más útil para configurar un Active Directory Domain Services \(AD DS\) el dominio y utilice *cuentas de usuario de dominio*, que permiten al usuario tener acceso a su propio perfil de usuario y la configuración desde cualquier estación en el dominio. Las cuentas de usuario de dominio deben crearse en el controlador de dominio por un administrador de dominio.  
+-   **Cuentas de dominio** : Si su entorno tiene muchos equipos que ejecutan Multipoint Services y muchos usuarios, es probable que le resulte más útil configurar un dominio Active Directory Domain Services \(AD DS @ no__t-2 y usar *cuentas de usuario de dominio*. que permiten a los usuarios tener acceso a su propio perfil de usuario y configuración desde cualquier estación del dominio. Un administrador de dominio debe crear las cuentas de usuario de dominio en el controlador de dominio.  
   
 > [!NOTE]  
-> Las siguientes secciones describen escenarios que podrían implementar cuentas de usuario local en MultiPoint Services. Si usas cuentas de usuario de dominio, consulte el escenario "uno o más servidores MultiPoint en un entorno de red de dominio" en [escenarios de ejemplo: Las cuentas de usuario de multiPoint Services](Example-scenarios--MultiPoint-Services-user-accounts.md).  
+> En las secciones siguientes se describen los escenarios que se pueden implementar para las cuentas de usuario locales en Multipoint Services. Si usa cuentas de usuario de dominio, consulte el escenario "uno o varios servidores Multipoint en un entorno de red de dominio" en escenarios de @no__t 0Example: Cuentas de usuario de Multipoint Services @ no__t-0.  
   
-## <a name="planning-local-user-accounts"></a>Planeación de cuentas de usuario local  
-Tenga en cuenta las siguientes secciones las ventajas, desventajas y los requisitos de varias maneras de implementar cuentas de usuario local compartida o individual en su entorno de Windows MultiPoint Services.  
+## <a name="planning-local-user-accounts"></a>Planeación de cuentas de usuario locales  
+En las secciones siguientes se tienen en cuenta las ventajas, las desventajas y los requisitos de varias formas de implementar cuentas de usuario locales compartidas o individuales en el entorno de Windows MultiPoint Services.  
   
 ### <a name="use-individual-local-user-accounts"></a>Usar cuentas de usuario locales individuales  
-Al crear cuentas de usuario local, tendrá los dos enfoques de opción.  Asignar a cada usuario a un servidor específico que ejecuta MultiPoint Services y la creación de una sola cuenta para cada usuario. O bien, crear cuentas de usuario local para todos los usuarios en cada equipo que ejecuta Multipoint services. Una ventaja clave de la implementación de cuentas de usuario individuales es que cada usuario tiene su propia experiencia de escritorio Windows que incluye las carpetas privadas para almacenar los datos. 
+Al crear cuentas de usuario locales, tiene la opción dos enfoques.  Asigne cada usuario a un servidor determinado que ejecute Multipoint Services y cree una sola cuenta para cada usuario. O bien, cree cuentas de usuario locales para todos los usuarios en cada equipo que ejecute Multipoint Services. Una ventaja clave de la implementación de cuentas de usuario individuales es que cada usuario tiene su propia experiencia de escritorio de Windows que incluye carpetas privadas para almacenar datos. 
   
-Desde una perspectiva de administración del sistema, podría ser más conveniente asignar usuarios a un determinado equipo de MultiPoint Services. Por ejemplo, si tiene dos servidores con cinco estaciones de MultiPoint, puede crear cuentas de usuario locales, como se muestra en la tabla siguiente.  
+Desde la perspectiva de la administración del sistema, la asignación de usuarios a un equipo de Multipoint Services específico puede ser más conveniente. Por ejemplo, si tiene dos servidores multipoint con cinco estaciones cada uno, puede crear cuentas de usuario locales, tal como se muestra en la tabla siguiente.  
   
-**Tabla 1: Asignación de cuentas de usuario local a equipos específicos que ejecuta MultiPoint Services**  
+@no__t 0Table 1: Asignación de cuentas de usuario locales a equipos específicos que ejecutan Multipoint Services @ no__t-0  
   
 |Equipo A|Equipo B|  
 |--------------|--------------|  
@@ -48,11 +48,11 @@ Desde una perspectiva de administración del sistema, podría ser más convenien
 |UserAccount_04|UserAccount_09|  
 |UserAccount_05|UserAccount_10|  
   
-En este escenario, cada usuario tiene una sola cuenta en un equipo determinado. Por lo tanto, todos los usuarios con una cuenta local en un equipo, puede iniciar sesión en sus cuentas desde cualquier estación asociada con el equipo A. Sin embargo, estos usuarios no pueden tener acceso a sus cuentas si usan una estación asociada con el equipo B y viceversa. Una ventaja de este enfoque es que, al conectar siempre en el mismo equipo, los usuarios siempre pueden buscar y acceder a sus archivos.  
+En este escenario, cada usuario tiene una sola cuenta en un equipo determinado. Por lo tanto, todos los usuarios que tengan una cuenta local en el equipo A pueden iniciar sesión en ella o en su cuenta desde cualquier estación asociada con el equipo A. Sin embargo, estos usuarios no pueden tener acceso a sus cuentas si usan una estación asociada al equipo B y viceversa. Una ventaja de este enfoque es que, al conectarse siempre al mismo equipo, los usuarios siempre pueden buscar y acceder a sus archivos.  
   
-En cambio, también es posible replicar las cuentas de usuario individual en todos los equipos que ejecuta MultiPoint Services, como se muestra en la tabla siguiente.  
+Por el contrario, también es posible replicar cuentas de usuario individuales en todos los equipos que ejecutan Multipoint Services, tal y como se muestra en la tabla siguiente.  
   
-**Tabla 2: Replicación de las cuentas de usuario en todos los equipos que ejecuta MultiPoint Services**  
+@no__t 0Table 2: Replicar cuentas de usuario en todos los equipos que ejecutan Multipoint Services @ no__t-0  
   
 |Equipo A|Equipo B|  
 |--------------|--------------|  
@@ -62,12 +62,12 @@ En cambio, también es posible replicar las cuentas de usuario individual en tod
 |UserAccount_04|UserAccount_04|  
 |UserAccount_05|UserAccount_05|  
   
-Una ventaja de este enfoque es que los usuarios tengan una cuenta de usuario local en cada MultiPoint Services disponibles. Sin embargo, las desventajas es posible que superan esta ventaja. Por ejemplo, incluso si el nombre de usuario y la contraseña para una persona determinada son los mismos en ambos equipos, las cuentas no están vinculadas entre sí. Por lo tanto, si un usuario inicia sesión en su o guarda un archivo de su cuenta en el equipo el lunes y, a continuación, inicia sesión en su cuenta en el equipo B el martes, quien no podrá tener acceso al archivo guardado previamente en el equipo además A. , la replicación de las cuentas de usuario en varios equipos aumenta los requisitos de almacenamiento y la sobrecarga administrativos.  
+Una ventaja de este enfoque es que los usuarios tienen una cuenta de usuario local en cada Multipoint Services disponible. Sin embargo, las desventajas pueden superar esta ventaja. Por ejemplo, incluso si el nombre de usuario y la contraseña de una persona determinada son iguales en ambos equipos, las cuentas no se vinculan entre sí. Por lo tanto, si un usuario inicia sesión en su cuenta en el equipo A el lunes, guarda un archivo y, a continuación, inicia sesión en su cuenta del equipo B el martes, no podrá obtener acceso al archivo guardado anteriormente en el equipo A. , la replicación de cuentas de usuario en varios equipos aumenta la sobrecarga administrativa y los requisitos de almacenamiento.  
   
-### <a name="use-generic-local-user-accounts"></a>Usar cuentas de usuario local genérico  
-Si el sistema MultiPoint Services no está conectado a un dominio y no desea crear una cuenta individual para cada usuario, puede crear cuentas genéricas para cada estación. Por ejemplo, si tiene dos equipos que ejecuten MultiPoint Services y cinco estaciones están asociadas a cada equipo, podría decidir crear cuentas de usuario similares a los que se muestra en la tabla siguiente.  
+### <a name="use-generic-local-user-accounts"></a>Usar cuentas de usuario locales genéricas  
+Si el sistema Multipoint Services no está conectado a un dominio y no desea crear una cuenta individual para cada usuario, puede crear cuentas genéricas para cada estación. Por ejemplo, si tiene dos equipos que ejecutan Multipoint Services y cinco estaciones están asociadas a cada equipo, es posible que decida crear cuentas de usuario similares a las que se muestran en la tabla siguiente.  
   
-**Tabla 3: Creación de cuentas de usuario genérica, una cuenta cada estación**  
+@no__t 0Table 3: Creación de cuentas de usuario genéricas, una cuenta por estación @ no__t-0  
   
 |Equipo A|Equipo B|  
 |--------------|--------------|  
@@ -77,11 +77,11 @@ Si el sistema MultiPoint Services no está conectado a un dominio y no desea cre
 |Computer_A-Station_04|Computer_B-Station_04|  
 |Computer_A-Station_05|Computer_B-Station_05|  
   
-En este escenario, todas las cuentas de estación tiene la misma contraseña y las contraseñas y nombres de cuenta de usuario genérica que están disponibles para todos los usuarios. Una ventaja de este enfoque es que la sobrecarga de administrar las cuentas de usuario es probable que sea menor que si se utilizan cuentas individuales, porque normalmente hay menos estaciones que los usuarios. Además, se elimina la sobrecarga ocasionada por la replicación de las cuentas de usuario en cada servidor.  
+En este escenario, todas las cuentas de estación tienen la misma contraseña y las contraseñas y los nombres de cuenta de usuario genérica están disponibles para todos los usuarios. Una ventaja de este enfoque es que la sobrecarga de administrar cuentas de usuario es probable que sea menor que si se usan cuentas individuales, ya que normalmente hay menos estaciones que usuarios. Además, la sobrecarga que se produce al replicar cuentas de usuario en cada servidor se elimina.  
   
-Otra opción es crear cuentas genéricas en cada servidor. Cada usuario inicia sesión en un servidor como la misma cuenta. Para ello, debe habilitar varias sesiones por cuenta. Puede simplificar aún más utilizando el mismo nombre de cuenta y la contraseña en todos los servidores. Esto simplifica el inicio de sesión para los usuarios, que solo necesitan conocer un nombre de cuenta y contraseña para usar cualquier estación en cualquier servidor. Debe tenerse en cuenta que en este escenario todos los usuarios pueden ver cualquier cambio que realice cualquier usuario. Por ejemplo, si un archivo se guarda en el escritorio, todos los usuarios pueden ver el archivo.  
+Otra opción consiste en crear cuentas genéricas en cada servidor. Cada usuario inicia sesión en un servidor como la misma cuenta. Para permitirlo, debe habilitar varias sesiones por cuenta. Puede simplificar aún más mediante el uso del mismo nombre de cuenta y la misma contraseña en todos los servidores. Esto simplifica el inicio de sesión de los usuarios, que solo necesitan conocer un nombre y una contraseña de cuenta para usar cualquier estación en cualquier servidor. Debe tenerse en en este escenario que todos los usuarios pueden ver cualquier cambio que realice cualquier usuario. Por ejemplo, si se guarda un archivo en el escritorio, todos los usuarios podrán ver el archivo.  
   
 > [!IMPORTANT]  
-> Es importante comprender que cuando los usuarios comparten una cuenta de usuario, una por cada servidor o uno por cada estación, los archivos guardados en el servidor, incluso los archivos guardados en Mis documentos - no son privados. Cualquier usuario que inicia sesión con la cuenta tiene acceso a esos archivos. Cuando se usa una cuenta de cada estación, si un usuario guarda los archivos en Mis documentos en una estación, el usuario no tiene acceso a esos archivos en una estación diferente. Lo mismo ocurre al iniciar sesión en equipos diferentes de MultiPoint Services.  
+> Es importante comprender que cuando los usuarios comparten una cuenta de usuario, ya sea por servidor o por estación, los archivos guardados en el servidor (incluso los archivos guardados en mis documentos) no son privados. Cualquier usuario que inicie sesión con la cuenta tendrá acceso a esos archivos. Cuando se usa una cuenta por estación, si un usuario guarda archivos en mis documentos en una estación, el usuario no tiene acceso a esos archivos en una estación diferente. Lo mismo ocurre cuando se inicia sesión en distintos equipos Multipoint Services.  
   
-Para permitir que los usuarios tener acceso a sus archivos desde cualquier estación, puede usar un servidor de archivos, crear un recurso compartido de archivos para cada cuenta de usuario o permitir que los usuarios almacenen sus documentos personales en una unidad flash USB u otro dispositivo de almacenamiento privado. Las unidades flash USB individuales permiten que los usuarios individuales almacenar documentos privados, aunque comparten una cuenta de usuario en un MultiPoint Services.
+Para permitir que los usuarios tengan acceso a sus archivos desde cualquier estación, puede usar un servidor de archivos, crear un recurso compartido de archivos para cada cuenta de usuario o permitir que los usuarios almacenen sus documentos personales en una unidad flash USB u otro dispositivo de almacenamiento privado. Las unidades flash USB individuales permiten a los usuarios individuales almacenar documentos privados incluso si comparten una cuenta de usuario en Multipoint Services.

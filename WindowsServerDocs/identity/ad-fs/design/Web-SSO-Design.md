@@ -7,28 +7,28 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 29d50a4d1855e609b6ac9ee627256201074a5033
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: d7f52cd36588a1e5de4536a760c38c147dd1e003
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190725"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407839"
 ---
 # <a name="web-sso-design"></a>Diseño de SSO web
 
-En la Web único\-sesión\-en \(SSO\) diseño en Active Directory Federation Services \(AD FS\), los usuarios deberán autenticarse una sola vez para tener acceso a varios AD FS\- servicios o aplicaciones protegidas. En este diseño todos los usuarios son externos y no existe ninguna confianza de federación porque no hay organizaciones asociadas. Normalmente, implementas este diseño cuando desea proporcionar acceso de cliente o consumidor individual a uno o varios servicios de AD FS protegida o aplicaciones a través de Internet, como se muestra en la siguiente ilustración.  
+En el diseño único Web @ no__t-0Sign @ no__t-1On \(SSO @ no__t-3 en Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-5, los usuarios deben autenticarse una sola vez para tener acceso a varios servicios o aplicaciones AD FS @ no__t-6secured. En este diseño todos los usuarios son externos y no existe ninguna confianza de federación porque no hay organizaciones asociadas. Normalmente, se implementa este diseño cuando se desea proporcionar acceso individual al cliente o al consumidor a una o AD FS varias aplicaciones o servicios protegidos a través de Internet, tal como se muestra en la siguiente ilustración.  
   
-![diseño de sso Web](media/adfs2_WebSSODesign.gif)  
+![diseño de SSO Web](media/adfs2_WebSSODesign.gif)  
   
-Con el diseño SSO Web, una organización que normalmente hospeda una instancia de AD FS\-segura aplicación o servicio en una red perimetral puede mantener un almacén de cuentas de clientes en la red perimetral, lo que resulta más fácil aislar cliente independiente cuentas de empleados.  
+Con el diseño de SSO Web, una organización que normalmente hospeda una aplicación o servicio de AD FS @ no__t-0secured en una red perimetral puede mantener un almacén independiente de cuentas de cliente en la red perimetral, lo que facilita aislar las cuentas de cliente de cuentas de empleados.  
   
-Puede administrar las cuentas locales para los clientes de la red perimetral mediante el uso de ambos servicios de dominio de Active Directory \(AD DS\), SQL Server o un almacén de atributos personalizados.  
+Puede administrar las cuentas locales de los clientes de la red perimetral mediante Active Directory Domain Services \(AD DS @ no__t-1, SQL Server o un almacén de atributos personalizado.  
   
 Este diseño coincide con el objetivo de implementación de [Provide Your Active Directory Users Access to Your Claims-Aware Applications and Services](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md).  
   
-Para obtener una lista de tareas detalladas que puede usar para planear e implementar el diseño SSO Web, consulte [lista de comprobación: Implementar un diseño SSO Web](../../ad-fs/deployment/Checklist--Implementing-a-Web-SSO-Design.md).  
+Para obtener una lista de tareas detalladas que puede usar para planear e implementar el diseño de SSO Web, consulte @no__t 0Checklist: Implementar un diseño de SSO Web @ no__t-0.  
   
 ## <a name="see-also"></a>Vea también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

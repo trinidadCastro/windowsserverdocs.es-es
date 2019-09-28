@@ -1,8 +1,8 @@
 ---
 title: subst
-description: Obtenga información sobre cómo asociar una ruta de acceso con una letra de unidad.
+description: Obtenga información sobre cómo asociar una ruta de acceso a una letra de unidad.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 858195de89ca8661cf47c25b6cf9b519cc4efbf8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f3010d1e58fbd360b8311512e6664873b020c12b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858076"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383747"
 ---
 # <a name="subst"></a>subst
 
 
 
-Asocia una ruta de acceso con una letra de unidad. Si se utiliza sin parámetros, **subst** muestra los nombres de las unidades de disco virtuales en vigor.
+Asocia una ruta de acceso a una letra de unidad. Si se usa sin parámetros, **subst** muestra los nombres de las unidades virtuales en vigor.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -39,14 +39,14 @@ subst <Drive1>: /d
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<Drive1>:|Especifica la unidad virtual a la que desea asignar una ruta de acceso.|
-|[\<Unidad2 >:]\<ruta de acceso >|Especifica la unidad física y la ruta de acceso que desea asignar a una unidad virtual.|
-|/d|Elimina una unidad sustituida (virtual).|
+|@no__t 0Drive1 >:|Especifica la unidad virtual a la que desea asignar una ruta de acceso.|
+|[\<Drive2 >:] \<Path >|Especifica la unidad física y la ruta de acceso que desea asignar a una unidad virtual.|
+|/d|Elimina una unidad (virtual) sustituida.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Los comandos siguientes no funcionan y no debe usarse en las unidades que se especifican en el **subst** comando:
+-   Los siguientes comandos no funcionan y no deben usarse en las unidades que se especifican en el comando **subst** :
 
     **chkdsk**
 
@@ -59,17 +59,17 @@ subst <Drive1>: /d
     **label**
 
     **recover**
--   El *unidad1* parámetro debe estar dentro del intervalo especificado por el **lastdrive** comando. Si no es así, **subst** muestra el mensaje de error siguiente:
+-   El parámetro *unidad1* debe estar en el intervalo especificado por el comando **LASTDRIVE** . Si no es así, **subst** muestra el siguiente mensaje de error:
 
     `Invalid parameter - drive1:`
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para crear una unidad virtual Z para la ruta de acceso B:\User\Betty\Forms, escriba:
 ```
 subst z: b:\user\betty\forms 
 ```
-En lugar de escribir la ruta de acceso completa, puede llegar a este directorio escribiendo la letra de la unidad virtual seguida de dos puntos como sigue:
+En lugar de escribir la ruta de acceso completa, puede llegar a este directorio escribiendo la letra de la unidad virtual seguida de dos puntos, como se indica a continuación:
 ```
 z: 
 ```

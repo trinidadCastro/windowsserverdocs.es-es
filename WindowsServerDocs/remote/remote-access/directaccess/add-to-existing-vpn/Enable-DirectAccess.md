@@ -1,9 +1,9 @@
 ---
 title: Habilitación de DirectAccess
-description: Este tema forma parte de la Guía de agregar DirectAccess a una implementación de acceso remoto existente (VPN) para Windows Server 2016
+description: Este tema forma parte de la guía agregar DirectAccess a una implementación de acceso remoto (VPN) existente para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,26 +12,26 @@ ms.topic: article
 ms.assetid: bf9aaf36-fc3c-4007-bba9-c0b752774601
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 1d6cc9db9bdc0eb2a753e3cffb8c698727357009
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: d249fbfbd0f08b9b75f6a198347f29f9a721bb3b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281856"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404985"
 ---
 # <a name="enable-directaccess"></a>Habilitación de DirectAccess
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
- Windows Server 2016 y Windows Server 2012 combinan DirectAccess y el servicio de acceso remoto (RAS) VPN en un solo rol de acceso remoto. Esta información general proporciona una introducción a los pasos de configuración necesarios para implementar un único servidor de Windows Server 2016 o acceso remoto de Windows Server 2012 con la configuración básica.
+ Windows Server 2016 y Windows Server 2012 combinan la VPN de DirectAccess y el servicio de acceso remoto (RAS) en un solo rol de acceso remoto. Esta información general proporciona una introducción a los pasos de configuración necesarios para implementar un único servidor de acceso remoto de Windows Server 2016 o Windows Server 2012 con la configuración básica.
   
--   [Paso 1: Configurar la infraestructura de DirectAccess](step-1-configure-da-inf-davpn.md). Este paso incluye la configuración de la red, del servidor, de DNS y de Active Directory.  
+-   [Paso 1: Configure la infraestructura de DirectAccess @ no__t-0. Este paso incluye la configuración de la red, del servidor, de DNS y de Active Directory.  
   
--   [Paso 2: Configurar el servidor VPN de DirectAccess](step-2-configure-server-davpn.md). Este paso incluye la configuración de los equipos cliente de DirectAccess, configuración del servidor.  
+-   [Paso 2: Configure el servidor de DirectAccess-VPN @ no__t-0. Este paso incluye la configuración de equipos cliente de DirectAccess, la configuración del servidor.  
   
--   [Paso 3: Comprobar la implementación](step-3-verify-davpn.md). Este paso incluye pasos para comprobar la implementación.  
+-   [Paso 3: Compruebe la implementación @ no__t-0. Este paso incluye pasos para comprobar la implementación.  
   
-Antes de comenzar la implementación, compruebe los pasos de planificación descritos en [previsto habilitar DirectAccess](Plan-to-Enable-DirectAccess.md).  
+Antes de iniciar la implementación, compruebe los pasos de planeación descritos en [planeación para habilitar DirectAccess](Plan-to-Enable-DirectAccess.md).  
   
 
 

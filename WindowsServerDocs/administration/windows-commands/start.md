@@ -1,8 +1,8 @@
 ---
 title: start
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ab7388633681120442544adf4ee0e337d8599854
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 1fb0875c972f8259b47f48ef84ed486fc678d8b0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441226"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370891"
 ---
 # <a name="start"></a>start
 
 
 
-Inicia una ventana de símbolo del sistema independiente para ejecutar un programa o comando especificado.
+Inicia una ventana de símbolo del sistema independiente para ejecutar un programa o un comando especificado.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,38 +38,38 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 
 |Parámetro|Descripción|
 |---------|-----------|
-|"\<Title >"|Especifica el título que se mostrará en la barra de título de la ventana de símbolo del sistema.|
-|/d \<Path>|Especifica el directorio de inicio.|
-|/i|El entorno de inicio de Cmd.exe se pasa a la nueva ventana de símbolo del sistema. Si **/i** no se especifica, se usa el entorno actual.|
-|/min  \| /máx.|Especifica que se debe minimizar ( **/min**) o maximizar ( **/máx.** ) la nueva ventana de símbolo del sistema.|
-|/ separar \| / shared|Inicia programas de 16 bits en un espacio de memoria independiente ( **/separar**) o compartir el espacio de memoria ( **/ shared**). Estas opciones no se admiten en plataformas de 64 bits.|
-|/low \| /normal \| /high \| /realtime \| /abovenormal \| /belownormal|Inicia la aplicación en la clase de prioridad especificado. Los valores de clase de prioridad válido son **/baja**, **/normal**, **/alto**, **/realtime**, **/abovenormal**, y **/belownormal**.|
-|/affinity \<HexAffinity >|Se aplica la máscara de afinidad de procesador especificado (expresada como un número hexadecimal) a la nueva aplicación.|
-|/wait|Inicia la aplicación y espera a que finalice.|
-|/b|Inicia la aplicación sin tener que abrir una nueva ventana de símbolo del sistema. Control de CTRL + C se omite a menos que la aplicación habilita el procesamiento de CTRL + C. Utilice CTRL+INTER para interrumpir la aplicación.|
-|/b \<comando > \| \<programa >|Especifica el comando o el programa para iniciar.|
-|\<Parameters>|Especifica los parámetros que se pasan al programa o comando.|
+|"@no__t 0Title >"|Especifica el título que se va a mostrar en la barra de título de la ventana del símbolo del sistema.|
+|/d \<Path >|Especifica el directorio de inicio.|
+|/i|Pasa el entorno de inicio de cmd. exe a la nueva ventana del símbolo del sistema. Si no se especifica **/i** , se utiliza el entorno actual.|
+|/min \|/Max|Especifica la minimización ( **/min**) o la maximización ( **/Max**) de la nueva ventana del símbolo del sistema.|
+|/Separate \|/Shared|Inicia programas de 16 bits en un espacio de memoria independiente ( **/separate**) o en un espacio de memoria compartido ( **/Shared**). Estas opciones no se admiten en las plataformas de 64 bits.|
+|/Low \|/normal \|/High \|/Realtime \|/abovenormal \|/BelowNormal|Inicia una aplicación en la clase de prioridad especificada. Los valores válidos de la clase Priority son **/Low**, **/normal**, **/High**, **/Realtime**, **/abovenormal**y **/BelowNormal**.|
+|/Affinity \<HexAffinity >|Aplica la máscara de afinidad de procesador especificada (expresada como un número hexadecimal) a la nueva aplicación.|
+|/Wait|Inicia una aplicación y espera a que finalice.|
+|b|Inicia una aplicación sin abrir una nueva ventana del símbolo del sistema. El control de CTRL + C se omite a menos que la aplicación habilite el procesamiento de CTRL + C. Use CTRL + INTER para interrumpir la aplicación.|
+|/b \<Command > \| \<Program >|Especifica el comando o el programa que se va a iniciar.|
+|@no__t 0Parameters >|Especifica los parámetros que se van a pasar al comando o programa.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-- Puede ejecutar archivos no ejecutables a través de su asociación de archivo, escriba el nombre del archivo como un comando.
-- Al ejecutar un comando que contiene la cadena "CMD" como el primer token sin un calificador de extensión o ruta de acceso, "CMD" se reemplaza por el valor de la variable COMSPEC. Esto impide que los usuarios recoger **cmd** desde el directorio actual.
-- Al ejecutar una aplicación de 32 bits gráfica de usuario (GUI) de la interfaz, **cmd** no espera la aplicación se cierre antes de volver a la línea de comandos. Este comportamiento no se produce si ejecuta la aplicación desde una secuencia de comandos.
-- Al ejecutar un comando que usa un primer token que no tiene una extensión, Cmd.exe utiliza el valor de la variable de entorno PATHEXT para determinar qué extensiones se buscarán y en qué orden. El valor predeterminado de la variable PATHEXT es:  
+- Puede ejecutar archivos no ejecutables a través de su asociación de archivo escribiendo el nombre del archivo como un comando.
+- Cuando se ejecuta un comando que contiene la cadena "CMD" como primer token sin un calificador de extensión o ruta de acceso, "CMD" se reemplaza por el valor de la variable comspec. Esto impide a los usuarios seleccionar **cmd** desde el directorio actual.
+- Al ejecutar una aplicación de interfaz gráfica de usuario (GUI) de 32 bits, **cmd** no espera a que la aplicación se cierre antes de volver al símbolo del sistema. Este comportamiento no se produce si ejecuta la aplicación desde un script de comandos.
+- Cuando se ejecuta un comando que usa un primer token que no contiene una extensión, cmd. exe usa el valor de la variable de entorno PATHEXT para determinar qué extensiones se deben buscar y en qué orden. El valor predeterminado de la variable PATHEXT es:  
   ```
   .COM;.EXE;.BAT;.CMD 
   ```  
-  Tenga en cuenta que la sintaxis es igual que la variable de ruta de acceso con punto y coma separa cada extensión.
-- Cuando busca un archivo ejecutable, si no hay ninguna coincidencia en cualquier extensión, **iniciar** comprueba si el nombre coincide con un nombre de directorio. Si es así, **iniciar** abre Explorer.exe en esa ruta de acceso.
+  Tenga en cuenta que la sintaxis es la misma que la variable PATH, con puntos y comas que separan cada extensión.
+- Cuando busca un archivo ejecutable, si no hay ninguna coincidencia en ninguna extensión, **inicie** comprobaciones para ver si el nombre coincide con un nombre de directorio. Si lo hace, **iniciar** abre Explorer. exe en esa ruta de acceso.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para iniciar el programa Myapp en el símbolo del sistema y mantener el uso de la ventana de símbolo del sistema actual, escriba:
+Para iniciar el programa MyApp en el símbolo del sistema y conservar el uso de la ventana del símbolo del sistema actual, escriba:
 ```
 start myapp 
 ```
-Para ver el **iniciar** maximizada de tema de Ayuda de línea de comandos en otra ventana del símbolo del sistema, escriba:
+Para ver el tema de ayuda de la línea de comandos de **Inicio** en una ventana del símbolo del sistema maximizada independiente, escriba:
 ```
 start /max start /?
 ```

@@ -1,19 +1,19 @@
 ---
 title: Implementar el redireccionamiento de carpetas con Archivos sin conexión
 description: Cómo usar Windows Server para implementar el redireccionamiento de carpetas con Archivos sin conexión en equipos cliente de Windows.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 90b3e3d0b5030f8c0140e54c8b0bf55317437427
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 21172d9d3e6d91af691986bfd84b0e32049f3b88
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867306"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401962"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>Implementar el redireccionamiento de carpetas con Archivos sin conexión
 
@@ -175,7 +175,7 @@ Aquí se muestra cómo probar la redirección de carpetas:
 
 ## <a name="appendix-a-checklist-for-deploying-folder-redirection"></a>Apéndice A: Lista de comprobación para la implementación de la redirección de carpetas
 
-| Status           | . |
+| Estado           | . |
 | ---              | ---    |
 | ☐<br>☐<br>☐    | 1. Preparar el dominio<br>-Unir equipos al dominio<br>-Crear cuentas de usuario |
 | ☐<br><br><br>   | 2. Crear grupo de seguridad para redirección de carpetas<br>-Nombre del Grupo:<br>Registrados |
@@ -190,7 +190,7 @@ Aquí se muestra cómo probar la redirección de carpetas:
 
 En la tabla siguiente se resumen los cambios más importantes realizados en este tema.
 
-| Date | Descripción | Reason|
+| Fecha | Descripción | Reason|
 | --- | --- | --- |
 | 18 de enero de 2017 | Se ha agregado un [paso al paso 3: Cree un GPO para la redirección](#step-3-create-a-gpo-for-folder-redirection) de carpetas para delegar permisos de lectura a los usuarios autenticados, lo que ahora es necesario debido a una actualización de seguridad Directiva de grupo. | Comentarios del cliente |
 

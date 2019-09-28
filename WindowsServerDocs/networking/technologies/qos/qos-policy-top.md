@@ -1,19 +1,19 @@
 ---
 title: Directiva de calidad de servicio (QoS)
 description: En este tema se proporciona información general sobre la Directiva de calidad de servicio (QoS), que permite usar directiva de grupo para priorizar el ancho de banda del tráfico de red de aplicaciones y servicios específicos en Windows Server 2016.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 16918506-102c-482e-89d3-004ad8d6aabe
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 8f139f047218c4c8da3a462206d4541c1fc255ec
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 429c38d93c2c5c0053153d538304767c8261229c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871860"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395858"
 ---
 # <a name="quality-of-service-qos-policy"></a>Directiva QoS \(\) de calidad de servicio
 
@@ -38,12 +38,12 @@ Puede usar la directiva QoS para administrar el ancho de banda de los equipos o 
 
 - Windows Server 2016
 - Windows 10
-- Windows Server 2012 R2
-- Windows 8.1
+- Windows Server 2012 R2
+- Windows 8.1
 - Windows Server 2012
 - Windows 8
-- Windows Server 2008 R2
-- Windows 7
+- Windows Server 2008 R2
+- Windows 7
 - Windows Server 2008
 - Windows Vista
 

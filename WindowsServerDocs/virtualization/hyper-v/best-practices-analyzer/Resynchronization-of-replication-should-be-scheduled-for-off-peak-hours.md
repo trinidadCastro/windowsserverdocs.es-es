@@ -1,7 +1,7 @@
 ---
-title: Resincronización de la replicación se debe programar horas de poca actividad
-description: Versión en línea del texto para esta regla de Best Practices Analyzer.
-ms.prod: windows-server-threshold
+title: La resincronización de la replicación debe programarse para horas de poca actividad
+description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: 093a7bb7-8e0a-486b-b42b-04edd8809710
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 2d6c18b7e37c5d17f56f41c7ff03ed8796457de0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 379f8c8cd6744fe5db176efb55a84f231ce45857
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840026"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393510"
 ---
-# <a name="resynchronization-of-replication-should-be-scheduled-for-off-peak-hours"></a>Resincronización de la replicación se debe programar horas de poca actividad
+# <a name="resynchronization-of-replication-should-be-scheduled-for-off-peak-hours"></a>La resincronización de la replicación debe programarse para horas de poca actividad
 
 >Se aplica a: Windows Server 2016
 
-Para obtener más información sobre análisis y los procedimientos recomendados, consulte [Run Best Practices Analyzer Scans y Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Property|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
-|**Característica del producto**|Hyper-V|  
+|**Producto o característica**|Hyper-V|  
 |**Gravedad**|Advertencia|  
 |**Categoría**|Operaciones|  
   
-En las secciones siguientes, la cursiva indica texto de la interfaz de usuario que aparece en la herramienta Best Practices Analyzer para resolver este problema.  
+En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.  
   
 ## <a name="issue"></a>Problema  
-*Resincronización de la replicación para las máquinas virtuales principales no está programada para horas de poca actividad.*  
+*La resincronización de la replicación de las máquinas virtuales principales no está programada para horas de poca actividad.*  
   
 ## <a name="impact"></a>Impacto  
-*Más de una máquina virtual está en un estado que requieren resincronización, más los archivos de registro de replicación crecen y se producen los cambios no replicados más en las máquinas virtuales principales. Esto afecta a las siguientes máquinas virtuales:*  
+@no__t 0The una máquina virtual está en un estado que requiere la resincronización, cuanto más tiempo crecen los archivos de registro de replicación y se producen los cambios más sin replicar en las máquinas virtuales principales. Esto afecta a las siguientes máquinas virtuales: *  
   
-\<lista de máquinas virtuales >  
+\<list de máquinas virtuales >  
   
 ## <a name="resolution"></a>Resolución  
-*Use el Administrador de Hyper-V para modificar la configuración de replicación para la máquina virtual para llevar a cabo la resincronización automáticamente durante las horas de poca actividad.*  
+*Use el administrador de Hyper-V para modificar la configuración de replicación de la máquina virtual para realizar la resincronización automáticamente durante las horas de menor actividad.*  
   
 
 

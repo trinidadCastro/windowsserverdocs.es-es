@@ -1,58 +1,58 @@
 ---
-title: Deshabilitar archivos sin conexión en las carpetas redirigidas individuales
-description: Cómo deshabilitar el almacenamiento en caché de archivos sin conexión en las carpetas individuales que se le redirigirá a recursos compartidos de red mediante el uso de la redirección de carpetas.
-ms.prod: windows-server-threshold
+title: Deshabilitar Archivos sin conexión en carpetas redirigidas individuales
+description: Cómo deshabilitar el almacenamiento en caché de Archivos sin conexión en carpetas individuales que se redirigen a recursos compartidos de red mediante el redireccionamiento de carpetas.
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b006742c9256c357d9aff3fb1b765dbed087383a
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: c2614c0180b32a0215454f2d725d6a962986ef1f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475882"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394395"
 ---
-# <a name="disable-offline-files-on-individual-redirected-folders"></a>Deshabilitar archivos sin conexión en las carpetas redirigidas individuales
+# <a name="disable-offline-files-on-individual-redirected-folders"></a>Deshabilitar Archivos sin conexión en carpetas redirigidas individuales
 
->Se aplica a: Windows 10, Windows 8, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2 o Windows (canal semianual)
+>Se aplica a: Windows 10, Windows 8, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2, Windows (canal semianual)
 
-Este tema describe cómo deshabilitar el almacenamiento en caché de archivos sin conexión en las carpetas individuales que se le redirigirá a recursos compartidos de red mediante el uso de la redirección de carpetas. Esto proporciona la capacidad de especificar las carpetas que desea excluir del almacenamiento en caché localmente, lo que reduce la memoria caché de archivos sin conexión tamaño y el tiempo necesario para sincronizar archivos sin conexión.
+En este tema se describe cómo deshabilitar el almacenamiento en caché de Archivos sin conexión en carpetas individuales que se redirigen a recursos compartidos de red mediante el redireccionamiento de carpetas. Esto permite especificar las carpetas que se excluirán del almacenamiento en caché de forma local, lo que reduce el tamaño de la caché de Archivos sin conexión y el tiempo necesario para sincronizar Archivos sin conexión.
 
 >[!NOTE]
->Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, consulte [conceptos básicos de Windows PowerShell](https://docs.microsoft.com/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-6).
+>Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, vea [conceptos básicos de Windows PowerShell](https://docs.microsoft.com/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-6).
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-Para deshabilitar el almacenamiento en caché de archivos sin conexión de carpetas redirigidas específicas, el entorno debe cumplir los siguientes requisitos previos.
+Para deshabilitar Archivos sin conexión el almacenamiento en caché de carpetas redirigidas específicas, el entorno debe cumplir los siguientes requisitos previos.
 
-- Un dominio de Active Directory Domain Services (AD DS), con los equipos cliente Unidos al dominio. No existen requisitos de nivel funcional del bosque o dominio ni requisitos de esquema.
+- Un dominio Active Directory Domain Services (AD DS), con equipos cliente Unidos al dominio. No hay requisitos de nivel funcional de bosque o dominio ni requisitos de esquema.
 - Equipos cliente que ejecutan Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 o Windows (canal semianual).
-- Un equipo con administración de directivas de grupo instalada.
+- Un equipo con la administración de directiva de grupo instalada.
 
-## <a name="disabling-offline-files-on-individual-redirected-folders"></a>Deshabilitar archivos sin conexión en las carpetas redirigidas individuales
+## <a name="disabling-offline-files-on-individual-redirected-folders"></a>Deshabilitar Archivos sin conexión en carpetas redirigidas individuales
 
-Para deshabilitar archivos sin conexión de almacenamiento en caché de carpetas redirigidas específicas, use Directiva de grupo para habilitar el **hacer no automáticamente que determinadas carpetas redirigidas estén disponibles sin conexión** configuración de directiva para el objeto de directiva de grupo (GPO) adecuado. Esta configuración de directiva para **deshabilitado** o **no configurado** hace que todas las carpetas redirigidas estén disponibles sin conexión.
+Para deshabilitar Archivos sin conexión el almacenamiento en caché de carpetas redirigidas específicas, use directiva de grupo para habilitar la configuración de Directiva no **hacer que las carpetas redirigidas específicas estén disponibles sin conexión** para el objeto de directiva de grupo correspondiente (GPO). La configuración de esta directiva como **deshabilitada** o **no configurada** hace que todas las carpetas redirigidas estén disponibles sin conexión.
 
 >[!NOTE]
->Solo los administradores de dominio, administradores de organización y los miembros del grupo de propietarios del creador de directiva de grupo pueden crear GPO.
+>Solo los administradores de dominio, los administradores de organización y los miembros del grupo propietarios de directiva de grupo Creator pueden crear GPO.
 
-### <a name="to-disable-offline-files-on-specific-redirected-folders"></a>Para deshabilitar archivos sin conexión en determinadas carpetas redirigidas
+### <a name="to-disable-offline-files-on-specific-redirected-folders"></a>Para deshabilitar Archivos sin conexión en carpetas redirigidas específicas
 
-1. Abra **administración de directivas de grupo**.
-2. Para, opcionalmente, crear un nuevo GPO que especifica qué usuarios deben haber redirigido carpetas excluidas de estar disponibles sin conexión, haga clic en el dominio adecuado o unidad organizativa (OU) y, a continuación, seleccione **crear un GPO en este dominio y vincular TI aquí**.
-3. En el árbol de consola, haga clic en el GPO para el que desea configurar las opciones de redirección de carpetas y, a continuación, seleccione **editar**. Aparece el Editor de administración de directivas de grupo.
-4. En el árbol de consola, bajo **configuración de usuario**, expanda **directivas**, expanda **plantillas administrativas**, expanda **sistema**, y Expanda **redirección de carpetas**.
-5. Haga clic en **hacer no automáticamente que determinadas carpetas redirigidas estén disponibles sin conexión** y, a continuación, seleccione **editar**. El **hacer no automáticamente que determinadas carpetas redirigidas estén disponibles sin conexión** aparecerá la ventana.
-6. Seleccione **Habilitado**. En el **opciones** panel, seleccione las carpetas que no deben estar disponibles sin conexión seleccionando las casillas correspondientes. Seleccione **Aceptar**.
+1. Abra **Administración de directiva de grupo**.
+2. Para crear opcionalmente un nuevo GPO que especifique qué usuarios deben tener carpetas redirigidas excluidas de estar disponibles sin conexión, haga clic con el botón secundario en el dominio o unidad organizativa (OU) adecuado y, a continuación, seleccione **crear un GPO en este dominio y vincularlo aquí.** .
+3. En el árbol de consola, haga clic con el botón secundario en el GPO para el que desea configurar las opciones de redirección de carpetas y, a continuación, seleccione **Editar**. Aparece el Editor de administración de directivas de grupo.
+4. En el árbol de consola, **en configuración de usuario**, expanda **directivas**, expanda **plantillas administrativas**, expanda **sistema**y expanda **redirección de carpetas**.
+5. Haga clic con el botón derecho en **no hacer que las carpetas redirigidas específicas estén disponibles sin conexión automáticamente** y, a continuación, seleccione **Editar**. Aparece la ventana no **hacer que las carpetas redirigidas específicas estén disponibles sin conexión automáticamente** .
+6. Seleccione **Habilitado**. En el panel **Opciones** , seleccione las carpetas que no deben estar disponibles sin conexión activando las casillas adecuadas. Seleccione **Aceptar**.
 
 ### <a name="windows-powershell-equivalent-commands"></a>Comandos equivalentes de Windows PowerShell
 
-El siguiente cmdlet de Windows PowerShell o los cmdlets realizan la misma función, como se describe el procedimiento en [deshabilitar archivos sin conexión en las carpetas redirigidas individuales](#disabling-offline-files-on-individual-redirected-folders). Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
+Los siguientes cmdlets o cmdlets de Windows PowerShell realizan la misma función que el procedimiento descrito en [deshabilitar archivos sin conexión en carpetas redirigidas individuales](#disabling-offline-files-on-individual-redirected-folders). Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
-Este ejemplo crea un nuevo GPO denominado *configuración de archivos sin conexión* en el *Miuo* unidad organizativa en el *contoso.com* dominio (es el nombre distintivo LDAP "ou = MyOU, dc = Contoso, dc = com "). A continuación, se deshabilita archivos sin conexión para la carpeta vídeos redirigidos.
+En este ejemplo se crea un nuevo GPO denominado *archivos sin conexión Settings* en la unidad organizativa *miuo* del dominio *contoso.com* (el nombre distintivo LDAP es "ou = miuo, DC = Contoso, DC = com"). A continuación, deshabilita Archivos sin conexión para la carpeta redirigida de vídeos.
 
 ```PowerShell
 New-GPO -Name "Offline Files Settings" | New-Gplink -Target "ou=MyOu,dc=contoso,dc=com" -LinkEnabled Yes
@@ -61,12 +61,12 @@ Set-GPRegistryValue –Name "Offline Files Settings" –Key
 "HKCU\Software\Policies\Microsoft\Windows\NetCache\{18989B1D-99B5-455B-841C-AB7C74E4DDFC}" -ValueName DisableFRAdminPinByFolder –Type DWORD –Value 1
 ```
 
-Consulte la tabla siguiente para obtener una lista de nombres de clave del registro (carpeta de GUID) que se usará para cada carpeta redirigida.
+Vea la tabla siguiente para obtener una lista de los nombres de clave del registro (GUID de carpeta) que se usarán para cada carpeta redirigida.
 
-|Carpeta redirigida|Nombre de la clave del registro (GUID de carpeta)|
+|Carpeta redirigida|Nombre de clave del registro (GUID de carpeta)|
 |---|---|
-|AppData (roaming)|{3EB685DB-65F9-4CF6-A03A-E3EF65729F3D}|
-|Escritorio|{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}|
+|AppData (itinerancia)|{3EB685DB-65F9-4CF6-A03A-E3EF65729F3D}|
+|Escritorio|B4BFCC3A-DB2C-424C-B029-7FE99A87C641|
 |Menú Inicio|{625B53C3-AB48-4EC1-BA1F-A1EF4146FC19}|
 |Documentos|{FDD39AD0-238F-46AF-ADB4-6C85480369C7}|
 |Imágenes|{33E28130-4E1E-4676-835A-98395C3BC3BB}|
@@ -81,5 +81,5 @@ Consulte la tabla siguiente para obtener una lista de nombres de clave del regis
 
 ## <a name="more-information"></a>Más información
 
-- [Información general sobre la redirección de carpetas, archivos sin conexión y perfiles de usuario móviles](folder-redirection-rup-overview.md)
-- [Implementar la redirección de carpetas con archivos sin conexión](deploy-folder-redirection.md)
+- [Información general sobre el redireccionamiento de carpetas, los Archivos sin conexión y los perfiles de usuario móviles](folder-redirection-rup-overview.md)
+- [Implementar el redireccionamiento de carpetas con Archivos sin conexión](deploy-folder-redirection.md)

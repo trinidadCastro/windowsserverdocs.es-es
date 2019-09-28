@@ -1,19 +1,19 @@
 ---
 title: Escenarios de directivas QoS
 description: En este tema se proporcionan escenarios de directiva de calidad de servicio (QoS), que muestran cómo usar directiva de grupo para priorizar el tráfico de red de aplicaciones y servicios específicos en Windows Server 2016.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: c4306f06-a117-4f65-b78b-9fd0d1133f95
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e0968157532c0b3bd926acbaff4291e27a71de31
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9ac5ab31db1b8c184fd179ecb3e6b87f7fffd2ba
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871873"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405233"
 ---
 # <a name="qos-policy-scenarios"></a>Escenarios de directivas QoS
 
@@ -77,12 +77,12 @@ Se crea un tercer GPO y se implementa para todos los equipos cliente del dominio
 
 En la tabla siguiente se resumen las directivas de QoS para este escenario.
   
-|Nombre de la directiva|Valor de DSCP|Velocidad del acelerador|Aplicado a unidades organizativas|Descripción|  
+|Nombre de directiva|Valor de DSCP|Velocidad del acelerador|Aplicado a unidades organizativas|Descripción|  
 |-----------------|----------------|-------------------|-----------------------------------|-----------------|
-|[Sin directiva]|0|None|[Sin implementación]|Tratamiento del mejor esfuerzo (valor predeterminado) para el tráfico sin clasificar.|  
-|Datos de copia de seguridad|1|None|Todos los clientes|Aplica un valor de DSCP de prioridad baja para estos datos masivos.|  
-|LOB de servidor|44|None|Unidad organizativa de equipos para servidores ERP|Aplica el DSCP de alta prioridad para el tráfico del servidor ERP|  
-|LOB de cliente|60|None|Grupo de usuarios de finanzas|Aplica DSCP de alta prioridad para el tráfico de cliente de ERP|  
+|[Sin directiva]|0|Ninguno|[Sin implementación]|Tratamiento del mejor esfuerzo (valor predeterminado) para el tráfico sin clasificar.|  
+|Datos de copia de seguridad|1|Ninguno|Todos los clientes|Aplica un valor de DSCP de prioridad baja para estos datos masivos.|  
+|LOB de servidor|44|Ninguno|Unidad organizativa de equipos para servidores ERP|Aplica el DSCP de alta prioridad para el tráfico del servidor ERP|  
+|LOB de cliente|60|Ninguno|Grupo de usuarios de finanzas|Aplica DSCP de alta prioridad para el tráfico de cliente de ERP|  
 
 >[!NOTE]
 >Los valores de DSCP se representan en formato decimal.
@@ -171,7 +171,7 @@ Los detalles son los siguientes:
 
  De la prioridad más alta a la más baja, son:
 
-1. Nombre de host.
+1. Nombre de host
 
 2. Dirección IPv6
 

@@ -1,8 +1,8 @@
 ---
-title: disco de detalle
-description: 'Tema de los comandos de Windows para ***- '
+title: disco de detalles
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2c7a5063edf3cb2e190e8aec957e1b571c1f15bc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ff78a3f9e27cde35a7e19bdf1565c515a127261b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819106"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378578"
 ---
-# <a name="detail-disk"></a>disco de detalle
+# <a name="detail-disk"></a>disco de detalles
 
 
 
@@ -34,12 +34,12 @@ detail disk
 
 ## <a name="remarks"></a>Comentarios
 
--   Debe seleccionarse un disco para que esta operación se realice correctamente. Use la **seleccione disco** comando para seleccionar un disco y cambiar el foco a ella.
--   Si el disco seleccionado es un disco duro virtual (VHD), **disco detalle** notifica el tipo de bus del disco como Virtual.
+-   Se debe seleccionar un disco para que esta operación se realice correctamente. Use el comando **Seleccionar disco** para seleccionar un disco y desplazar el foco a él.
+-   Si el disco seleccionado es un disco duro virtual (VHD), **detail Disk** informa del tipo de bus del disco como virtual.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para ver las propiedades del disco seleccionado y obtener información acerca de los volúmenes en el disco, escriba:
+Para ver las propiedades del disco seleccionado e información acerca de los volúmenes del disco, escriba:
 ```
 detail disk
 ```

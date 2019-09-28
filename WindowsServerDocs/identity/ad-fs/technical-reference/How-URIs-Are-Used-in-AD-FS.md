@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: edd708985b8caac30b8788b12237430c1711f22f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 2ae91b16448c5acd61712332310544c1fd66789f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865447"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385492"
 ---
 # <a name="how-uris-are-used-in-ad-fs"></a>Uso de URI en AD FS
 Un identificador uniforme de recursos \(URI\) es una cadena de caracteres que se utiliza como identificador único.  En AD FS, los URI se usan para identificar las direcciones de red de asociados y los objetos de configuración.  Cuando se usa para identificar las direcciones de red de asociados, el URI es siempre una dirección URL.  Cuando se usa para identificar los objetos de configuración, el URI puede ser un nombre de recursos uniforme (URN) o una dirección URL.  Para obtener información general sobre los URI, consulte [RFC 2396](https://go.microsoft.com/fwlink/?LinkId=48289) y [RFC 3986](https://go.microsoft.com/fwlink/?LinkId=90453).  

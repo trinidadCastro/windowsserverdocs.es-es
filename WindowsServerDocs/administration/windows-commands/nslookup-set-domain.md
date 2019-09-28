@@ -1,8 +1,8 @@
 ---
 title: nslookup set domain
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d1af9f30dd2c44111adecb477a6469333f4f7685
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f140a371a6374baa7921ca823df469156593423c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436768"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372927"
 ---
 # <a name="nslookup-set-domain"></a>nslookup set domain
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-cambia el nombre de dominio predeterminado del sistema de nombres de dominio (DNS) para el nombre especificado.
+cambia el nombre de dominio del sistema de nombres de dominio (DNS) predeterminado por el nombre especificado.
 ## <a name="syntax"></a>Sintaxis
 ```
 set domain=<DomainName>
@@ -33,12 +33,12 @@ set domain=<DomainName>
 
 |    Parámetro    |                                           Descripción                                           |
 |-----------------|-------------------------------------------------------------------------------------------------|
-|  <DomainName>   | Especifica un nombre nuevo para el nombre de dominio DNS predeterminado. El nombre de dominio predeterminado es el nombre de host. |
-| {help &#124; ?} |                      Muestra un resumen breve de **nslookup** subcomandos.                      |
+|  <DomainName>   | Especifica un nuevo nombre para el nombre de dominio DNS predeterminado. El nombre de dominio predeterminado es el nombre de host. |
+| {ayuda &#124; ?} |                      Muestra un breve resumen de los subcomandos de **nslookup** .                      |
 
 ## <a name="remarks"></a>Comentarios
-- El nombre de dominio DNS predeterminado se anexa a una solicitud de búsqueda según el estado de la **defname** y **búsqueda** opciones. La lista de búsqueda de dominio DNS contiene a los elementos primarios del dominio DNS predeterminado si tiene al menos dos componentes en su nombre. Por ejemplo, si el dominio DNS predeterminado es mfg.widgets.com, la lista de búsqueda se denomina mfg.widgets.com y widgets.com. Use la **establecer srchlist** comando para especificar una lista distinta y el **establecer todos los** comando para mostrar la lista.
+- El nombre de dominio DNS predeterminado se anexa a una solicitud de búsqueda según el estado de las opciones **defname** y **Search** . La lista de búsqueda de dominios DNS contiene los elementos primarios del dominio DNS predeterminado si tiene al menos dos componentes en su nombre. Por ejemplo, si el dominio DNS predeterminado es mfg.widgets.com, la lista de búsqueda se denomina mfg.widgets.com y widgets.com. Use el comando **set srchlist** para especificar una lista diferente y el comando **set All** para mostrar la lista.
   ## <a name="additional-references"></a>Referencias adicionales
   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-  [nslookup establece srchlist](nslookup-set-srchlist.md)
-  [nslookup establece todas](nslookup-set-all.md)
+  [nslookup Set srchlist](nslookup-set-srchlist.md)
+  [nslookup SET ALL](nslookup-set-all.md)

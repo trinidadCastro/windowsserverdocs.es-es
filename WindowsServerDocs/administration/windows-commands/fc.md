@@ -1,8 +1,8 @@
 ---
 title: fc
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7ccc3d268b58bfa5e848f2336f4315baae8b4e1
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f6c004fcebcf5eb743354d9e0a121ff8598217a4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439309"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377249"
 ---
 # <a name="fc"></a>fc
 
@@ -39,63 +39,63 @@ fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
 
 |            Parámetro             |                                                                                                                                     Descripción                                                                                                                                      |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                /a                |                                                 Abrevia la salida de una comparación ASCII. En lugar de mostrar todas las líneas que son diferentes, **fc** muestra sólo la primera y última línea para cada conjunto de diferencias.                                                  |
-|                /b                |             Compara los dos archivos en modo binario, byte a byte y no intenta volver a sincronizar los archivos después de encontrar un error de coincidencia. Éste es el modo predeterminado para comparar los archivos que tienen las siguientes extensiones: .exe, .com, .sys, .obj, .lib o .bin.              |
-|                /c                |                                                                                                                               Omite las mayúsculas y minúsculas.                                                                                                                               |
-|                /l                |               Compara los archivos en modo ASCII, línea por línea y los intentos de volver a sincronizar los archivos después de encontrar un error de coincidencia. Este es el modo predeterminado para comparar archivos, excepto los archivos con las siguientes extensiones de archivo: .exe, .com, .sys, .obj, .lib o .bin.                |
-|             /lb\<N>              |                         Establece el número de líneas para el búfer interno línea *N*. La longitud predeterminada de búfer es de 100 líneas. Si los archivos que van a comparar tienen más de 100 líneas diferentes consecutivas, **fc** cancela la comparación.                         |
-|                /n                |                                                                                                                Muestra los números de línea durante una comparación ASCII.                                                                                                                 |
-|            /off[line]            |                                                                                                               No omite los archivos que tienen establecido el atributo sin conexión.                                                                                                               |
-|                /t                |                                                                    Evita que **fc** de convertir tabulaciones en espacios. El comportamiento predeterminado consiste en tratar las tabulaciones como espacios, con paradas en cada octava posición del carácter.                                                                    |
-|                /u                |                                                                                                                        Compara archivos como archivos de texto Unicode.                                                                                                                         |
-|                /w                |         Comprime los espacios en blanco (es decir, tabulaciones y espacios) durante la comparación. Si una línea contiene muchos espacios o tabulaciones consecutivos, **/w** trata estos caracteres como un único espacio. Cuando se usa con **/w**, **fc** omite los espacios en blanco al principio y al final de una línea.         |
-|             /\<NNNN>             | Especifica el número de líneas consecutivas que debe coincidir con un error de coincidencia, las siguientes antes **fc** considera que los archivos se vuelven a sincronizar. Si el número de líneas correspondientes en los archivos es menor que *NNNN*, **fc** muestra las líneas correspondientes como diferencias. El valor predeterminado es 2. |
-| [\<Drive1>:][<Path1>]<FileName1> |                                                                                        Especifica la ubicación y el nombre del primer archivo o conjunto de archivos que se va a comparar. *NombreDeArchivo1* es necesario.                                                                                        |
-| [\<Drive2>:][<Path2>]<FileName2> |                                                                                       Especifica la ubicación y el nombre del segundo archivo o conjunto de archivos que se va a comparar. *NombreDeArchivo2* es necesario.                                                                                        |
+|                /a                |                                                 Abrevia el resultado de una comparación de ASCII. En lugar de mostrar todas las líneas que son diferentes, **FC** solo muestra la primera y la última línea para cada conjunto de diferencias.                                                  |
+|                b                |             Compara los dos archivos en modo binario, byte por byte y no intenta volver a sincronizar los archivos después de encontrar una incoherencia. Este es el modo predeterminado para comparar archivos con las siguientes extensiones de archivo:. exe,. com,. sys,. obj,. lib o. bin.              |
+|                /c                |                                                                                                                               Omite el caso de la letra.                                                                                                                               |
+|                /l                |               Compara los archivos en modo ASCII, línea a línea e intenta volver a sincronizar los archivos después de encontrar una incoherencia. Este es el modo predeterminado para comparar archivos, excepto los archivos con las siguientes extensiones de archivo:. exe,. com,. sys,. obj,. lib o. bin.                |
+|             /lb @ no__t-0n (>              |                         Establece el número de líneas del búfer de línea interno en *N*. La longitud predeterminada del búfer de línea es 100 líneas. Si los archivos que está comparando tienen más de 100 líneas distintas consecutivas, **FC** cancela la comparación.                         |
+|                /n                |                                                                                                                Muestra los números de línea durante una comparación de ASCII.                                                                                                                 |
+|            /OFF [línea]            |                                                                                                               No omite los archivos que tienen el conjunto de atributos sin conexión.                                                                                                               |
+|                /t                |                                                                    Impide que **FC** convierta tabulaciones en espacios. El comportamiento predeterminado consiste en tratar las tabulaciones como espacios, con paradas en cada octava posición de carácter.                                                                    |
+|                /u                |                                                                                                                        Compara los archivos como archivos de texto Unicode.                                                                                                                         |
+|                /w                |         Comprime el espacio en blanco (es decir, tabulaciones y espacios) durante la comparación. Si una línea contiene muchos espacios consecutivos o tabulaciones, **/w** trata estos caracteres como un solo espacio. Cuando se usa con **/w**, **FC** omite los espacios en blanco al principio y al final de una línea.         |
+|             / @ NO__T-1NNNN >             | Especifica el número de líneas consecutivas que deben coincidir después de un error de coincidencia, antes de que **FC** considere que los archivos se van a volver a sincronizar. Si el número de líneas coincidentes en los archivos es menor que *nnnn*, **FC** muestra las líneas coincidentes como diferencias. El valor predeterminado es 2. |
+| [\<Drive1 >:] [<Path1>] <FileName1> |                                                                                        Especifica la ubicación y el nombre del primer archivo o conjunto de archivos que se van a comparar. Se requiere *nombreDeArchivo1* .                                                                                        |
+| [\<Drive2 >:] [<Path2>] <FileName2> |                                                                                       Especifica la ubicación y el nombre del segundo archivo o conjunto de archivos que se van a comparar. Se requiere *Nombredearchivo2* .                                                                                        |
 |                /?                |                                                                                                                         Muestra la ayuda en el símbolo del sistema.                                                                                                                         |
 
 ## <a name="remarks"></a>Comentarios
 
--   Este comando es implemeted por c:\WINDOWS\fc.exe. Puede usar este comando en PowerShell, pero asegúrese de deletrear el archivo ejecutable completo (fc.exe) puesto que "fc" es un alias de Format-Custom.
+-   Este comando es implemeted por c:\WINDOWS\fc.exe. Puede usar este comando en PowerShell, pero asegúrese de deletrear el ejecutable completo (FC. exe) ya que ' FC ' es un alias de Format-Custom.
 
--   Informe de diferencias entre archivos en una comparación ASCII
+-   Notificar diferencias entre archivos para una comparación ASCII
 
-    Cuando usas **fc** para obtener una comparación ASCII, **fc** muestra las diferencias entre dos archivos en el orden siguiente:  
+    Cuando se usa **FC** para una comparación de ASCII, **FC** muestra las diferencias entre dos archivos en el siguiente orden:  
     -   Nombre del primer archivo
-    -   Líneas de *nombreDeArchivo1* que difieren entre los archivos
-    -   Primera línea que coincida en ambos archivos
+    -   Líneas de *archivo1* que difieren entre los archivos
+    -   Primera línea que debe coincidir en ambos archivos
     -   Nombre del segundo archivo
-    -   Líneas de *nombreDeArchivo2* que difieren
-    -   Primera línea para que coincida con
--   Uso de **/b** para comparaciones binarias
+    -   Líneas de *Nombredearchivo2* que difieren
+    -   Primera línea que debe coincidir
+-   Usar **/b** para comparaciones binarias
 
-    **/b** muestra las diferencias que se producen durante una comparación binaria en la sintaxis siguiente:
+    **/b** muestra las discrepancias que se encuentran durante una comparación binaria en la sintaxis siguiente:
 
     `\<XXXXXXXX: YY ZZ>`
 
-    El valor de *XXXXXXXX* especifica la dirección relativa hexadecimal para el par de bytes, medidos desde el principio del archivo. Las direcciones comienzan en 00000000. Hexadecimal de valores para *YY* y *ZZ* representan los bytes no coincidentes de *nombreDeArchivo1* y *nombreDeArchivo2*, respectivamente.
--   Uso de caracteres comodín
+    El valor de *xxxxxxxx* especifica la dirección hexadecimal relativa para el par de bytes, medido desde el principio del archivo. Las direcciones se inician en 00000000. Los valores hexadecimales para *YY* y *ZZ* representan los bytes no coincidentes de *nombreDeArchivo1* y *Nombredearchivo2*, respectivamente.
+-   Usar caracteres comodín
 
-    Puede usar caracteres comodín ( **&#42;** y **?** ) en *nombreDeArchivo1* y *FileName2*. Si usa un carácter comodín en *nombreDeArchivo1*, **fc** compara todos los archivos especificados en el archivo o conjunto de archivos especificados por *nombreDeArchivo2*. Si usa un carácter comodín en *FileName2*, **fc** usa el valor correspondiente de *nombreDeArchivo1*.
--   Trabajar con la memoria
+    Puede usar caracteres comodín **&#42;** (y **?** ) en *nombreDeArchivo1* y *Nombredearchivo2*. Si usa un carácter comodín en *nombreDeArchivo1*, **FC** compara todos los archivos especificados con el archivo o conjunto de archivos especificado por *Nombredearchivo2*. Si usa un carácter comodín en *Nombredearchivo2*, **FC** usa el valor correspondiente de *nombreDeArchivo1*.
+-   Trabajar con memoria
 
-    Al comparar archivos ASCII, **fc** utiliza un búfer interno (lo suficientemente grande como para almacenar hasta 100 líneas) como almacenamiento. Si los archivos son más grandes que el búfer, **fc** compara lo que puede cargar en el búfer. Si **fc** no encuentra una coincidencia en las partes de la cargadas de los archivos, se detiene y se muestra el mensaje siguiente:
+    Al comparar archivos ASCII, **FC** usa un búfer interno (lo suficientemente grande como para contener 100 líneas) como almacenamiento. Si los archivos son más grandes que el búfer, **FC** compara lo que puede cargar en el búfer. Si **FC** no encuentra ninguna coincidencia en las partes cargadas de los archivos, se detiene y muestra el mensaje siguiente:
 
     `Resynch failed. Files are too different.`
 
-    Al comparar archivos binarios que son mayores que la memoria disponible, **fc** compara ambos archivos en su totalidad, superponiendo las partes en la memoria con las siguientes partes desde el disco. El resultado es el mismo que para los archivos que se ajusten completamente en memoria.
+    Al comparar archivos binarios mayores que la memoria disponible, **FC** compara ambos archivos por completo, superponiendo las partes de la memoria con las siguientes partes del disco. El resultado es el mismo que el de los archivos que caben completamente en la memoria.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para realizar una comparación ASCII de dos archivos de texto, mensual.rpt y ventas.rpt y ver los resultados en formato abreviado, escriba:
+Para realizar una comparación ASCII de dos archivos de texto, Monthly. RPT y sales. RPT, y mostrar los resultados en formato abreviado, escriba:
 ```
 fc /a monthly.rpt sales.rpt 
 ```
-Para realizar una comparación binaria de dos archivos por lotes, beneficios.bat e ingresos.bat, escriba:
+Para realizar una comparación binaria de dos archivos por lotes, relucros. bat y ganancias. bat, escriba:
 ```
 fc /b profits.bat earnings.bat
 ```
-Resultados similares a aparezca la siguiente:
+Aparecen resultados similares a los siguientes:
 ```
 00000002: 72 43
 00000004: 65 3A
@@ -106,20 +106,20 @@ Resultados similares a aparezca la siguiente:
 000005E8: 00 6E
 FC: Earnings.bat longer than Profits.bat
 ```
-Si es idénticos, el ingresos.bat y beneficios.bat **fc** muestra el mensaje siguiente:
+Si los archivos relucros. bat y Refiles. bat son idénticos, **FC** muestra el siguiente mensaje:
 ```
 Comparing files Profits.bat and Earnings.bat
 FC: no differences encountered
 ```
-Para comparar cada archivo .bat en el directorio actual con el archivo nuevo.bat, escriba:
+Para comparar cada archivo. bat en el directorio actual con el archivo New. bat, escriba:
 ```
 fc *.bat new.bat
 ```
-Para comparar el archivo nuevo.bat en la unidad C con el archivo nuevo.bat en la unidad D, escriba:
+Para comparar el archivo New. bat de la unidad C con el archivo New. bat de la unidad D, escriba:
 ```
 fc c:new.bat d:*.bat
 ```
-Para comparar cada archivo por lotes en el directorio raíz en la unidad C en el archivo con el mismo nombre en el directorio raíz en la unidad D, escriba:
+Para comparar cada archivo por lotes del directorio raíz de la unidad C con el archivo con el mismo nombre en el directorio raíz de la unidad D, escriba:
 ```
 fc c:*.bat d:*.bat
 ```

@@ -1,9 +1,9 @@
 ---
-title: Instale copias de seguridad de servidor en el servidor MultiPoint
+title: Instalación de la copia de seguridad del servidor en MultiPoint Server
 description: Le guía por los pasos necesarios para instalar las herramientas de copia de seguridad y recuperación
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,51 +13,51 @@ ms.assetid: e4331370-ba07-4529-92ab-db14a41bfc3b
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 51932c5f0796cfd757d3322e10c17de2a3081f4c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 933a24ee91fa1f5ccbe31ff4cb722a7c3eb54e4b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832496"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395122"
 ---
-# <a name="install-server-backup-on-your-multipoint-server"></a>Instale copias de seguridad de servidor en el servidor MultiPoint
-Se recomienda que considere un plan de copia de seguridad y recuperación para los servidores MultiPoint.
+# <a name="install-server-backup-on-your-multipoint-server"></a>Instalación de la copia de seguridad del servidor en MultiPoint Server
+Se recomienda que considere un plan de copia de seguridad y recuperación para los servidores multipoint.
   
-Un buen plan de recuperación y copia de seguridad es importante para cualquier entorno de tamaño. Copia de seguridad de Windows Server es una característica de Windows Server 2016 que proporciona un conjunto de asistentes y otras herramientas para realizar tareas básicas de copia de seguridad y recuperación para el servidor donde está instalado. Puede usar copias de seguridad de Windows Server para realizar copias de seguridad de un servidor completo (todos los volúmenes), los volúmenes seleccionados, el estado del sistema, o determinados archivos o carpetas y para crear una copia de seguridad que puede usar para volver a generar el sistema.  
+Un buen plan de copia de seguridad y recuperación es importante para cualquier entorno. Copias de seguridad de Windows Server es una característica de Windows Server 2016 que proporciona un conjunto de asistentes y otras herramientas para realizar tareas básicas de copia de seguridad y recuperación para el servidor en el que está instalado. Puede usar Copias de seguridad de Windows Server para hacer una copia de seguridad de un servidor completo (todos los volúmenes), de volúmenes seleccionados, del estado del sistema o de archivos o carpetas específicos, así como para crear una copia de seguridad que pueda usar para recompilar el sistema.  
   
-Puede recuperar volúmenes, carpetas, archivos, determinadas aplicaciones y el estado del sistema. Además, para desastres como errores de disco duro, puede volver a generar un sistema desde el principio o mediante el uso de hardware alternativo. Para ello, debe tener una copia de seguridad del servidor completo o solo de los volúmenes que contienen los archivos del sistema operativo y el entorno de recuperación de Windows. Esto restaura el sistema completo en el sistema antiguo o en un nuevo disco duro.  
+Puede recuperar volúmenes, carpetas, archivos, determinadas aplicaciones y el estado del sistema. Además, en el caso de desastres como errores del disco duro, puede recompilar un sistema desde cero o con hardware alternativo. Para ello, debe tener una copia de seguridad del servidor completo o solo de los volúmenes que contengan los archivos del sistema operativo y el entorno de recuperación de Windows. Esto restaura el sistema completo en el sistema antiguo o en un nuevo disco duro.  
   
-Una característica clave de copia de seguridad de Windows Server es la capacidad de programar copias de seguridad que se ejecute automáticamente.  
+Una característica clave de Copias de seguridad de Windows Server es la capacidad de programar copias de seguridad para que se ejecuten automáticamente.  
   
-Utilice los procedimientos siguientes para configurar el tipo de copia de seguridad que requiere.  
+Use los procedimientos siguientes para configurar el tipo de copia de seguridad que necesita.  
   
 ## <a name="install-backup-and-recovery-tools"></a>Instalar las herramientas de copia de seguridad y recuperación  
   
-1.  Desde el **iniciar** pantalla, abra **administrador del servidor**.  
+1.  En la pantalla **Inicio** , Abra **Administrador del servidor**.  
   
-2.  Haga clic en **agregar Roles y características** para iniciar el Asistente para agregar Roles. A continuación, haga clic en **siguiente** después de revisar la **antes de comenzar** notas.  
+2.  Haga clic en **Agregar roles y características** para iniciar el Asistente para agregar roles. Después, haga clic en **siguiente** después de revisar las notas **antes de empezar** .  
   
-3.  Seleccione el **basado en rol o característica de instalación basada en** opción y, a continuación, haga clic en **siguiente**.  
+3.  Seleccione la opción de instalación basada en **características o en roles** y, a continuación, haga clic en **siguiente**.  
   
 4.  Seleccione el equipo local que está administrando y haga clic en **siguiente**.  
   
     Se abre el Asistente para agregar características.  
   
-5.  En el **seleccionar características** página, expanda las características de copia de seguridad de Windows Server, active las casillas de verificación de **copias de seguridad de Windows Server** y **herramientas de línea de comandos**y, a continuación, haga clic en  **Siguiente**.  
+5.  En la página **seleccionar características** , expanda copias de seguridad de Windows Server características, active las casillas de **copias de seguridad de Windows Server** y **herramientas de línea de comandos**y, a continuación, haga clic en **siguiente**.  
   
     > [!NOTE]  
-    > O bien, si desea instalar el complemento y la herramienta de línea de comandos de Wbadmin, expanda **características de copia de seguridad de Windows Server**y, a continuación, seleccione el **copias de seguridad de Windows Server** solo la casilla de verificación, asegúrese de que el **Herramientas de línea de comandos** casilla está desactivada.  
+    > O bien, si solo desea instalar el complemento y la herramienta de línea de comandos de Wbadmin, expanda **copias de seguridad de Windows Server características**y, a continuación, active la casilla de **copias de seguridad de Windows Server** solo, asegúrese de que la casilla **herramientas de línea de comandos** está desactivada.  
   
-6.  En el **Confirmar selecciones de instalación** , revise las opciones seleccionadas y, a continuación, haga clic en **instalar**.  
+6.  En la página **confirmar selecciones de instalación** , revise las opciones seleccionadas y, a continuación, haga clic en **instalar**.  
   
-    Si se produce algún error durante la instalación, el **resultados de la instalación** página observarán los errores.  
+    Si se produce algún error durante la instalación, la página resultados de la **instalación** observará los errores.  
   
-7.  Cuando la instalación finalice correctamente, debe tener acceso a estas herramientas de copia de seguridad y recuperación:  
+7.  Una vez completada la instalación correctamente, debería poder tener acceso a estas herramientas de copia de seguridad y recuperación:  
   
-    -   Para abrir la copia de seguridad de Windows Server complemento, en el **iniciar** , escriba **copia de seguridad**y, a continuación, haga clic en **copias de seguridad de Windows Server** en los resultados.  
+    -   Para abrir el complemento Copias de seguridad de Windows Server, en la pantalla **Inicio** , escriba copia de **seguridad**y, a continuación, haga clic en **copias de seguridad de Windows Server** en los resultados.  
   
-    -   Para iniciar la herramienta de Wbadmin y ver la sintaxis de comandos: En el **iniciar** , escriba **comando**. En los resultados, haga clic en **símbolo**, haga clic en **ejecutar como administrador** en la parte inferior de la página y, a continuación, haga clic en **Sí** en el mensaje de confirmación. ¿En el símbolo del sistema, escriba **wbadmin /?** y presione ENTRAR. Debería ver la sintaxis de comandos y las descripciones de la herramienta.  
+    -   Para iniciar la herramienta Wbadmin y ver la sintaxis de sus comandos: En la pantalla **Inicio** , escriba **comando**. En los resultados, haga clic con el botón secundario en **símbolo del sistema**, haga clic en **Ejecutar como administrador** en la parte inferior de la página y, a continuación, haga clic en **sí** en el mensaje de confirmación. En el símbolo del sistema, escriba **Wbadmin/?** y presione Entrar. Debería ver la sintaxis y las descripciones de los comandos de la herramienta.  
   
-## <a name="configure-backups-using-windows-server-backup"></a>Configurar copias de seguridad mediante copias de seguridad de Windows Server  
+## <a name="configure-backups-using-windows-server-backup"></a>Configurar copias de seguridad con Copias de seguridad de Windows Server  
   
--   Siga las instrucciones de [seguridad del servidor](https://technet.microsoft.com/library/cc753528.aspx). 
+-   Siga las instrucciones de [copia de seguridad del servidor](https://technet.microsoft.com/library/cc753528.aspx). 

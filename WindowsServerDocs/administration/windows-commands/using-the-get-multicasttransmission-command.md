@@ -1,8 +1,8 @@
 ---
-title: Mediante el comando get-MulticastTransmission
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el comando Get-MulticastTransmission
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,25 +13,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fdbb9283285bcf56cd83c18ea076e3d36a51b966
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 54c503abda871d1f2a4fd8a30d7f12317eee6a48
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823236"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392127"
 ---
-# <a name="using-the-get-multicasttransmission-command"></a>Mediante el comando get-MulticastTransmission
+# <a name="using-the-get-multicasttransmission-command"></a>Usar el comando Get-MulticastTransmission
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Muestra información acerca de la transmisión por multidifusión para una imagen especificada.
+Muestra información sobre la transmisión por multidifusión para una imagen especificada.
 ## <a name="syntax"></a>Sintaxis
 **Windows Server 2008**
 ```
 wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image group name>] 
 [/Filename:<File name>] [/Show:Clients]
 ```
-**Windows Server 2008 R2** para las transmisiones de imagen de arranque:
+**Windows Server 2008 R2** para transmisiones de imagen de arranque:
 ```
 wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name>
     [/Server:<Server name>]
@@ -40,7 +40,7 @@ wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name>
     /Architecture:{x86 | ia64 | x64}
         [/Filename:<File name>]
 ```
-para las transmisiones de imagen de instalación:
+para las transmisiones de imágenes de instalación:
 ```
 wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name>
          [/Server:<Server name>]
@@ -52,20 +52,20 @@ wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name>
 ## <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-Medio:<Image name>|Muestra la transmisión por multidifusión que está asociada con esta imagen.|
-|[/Server:<Server name>]|Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se usa el servidor local.|
-mediatype:Install|Especifica el tipo de imagen. Tenga en cuenta que esta opción debe establecerse en **instalar**.|
-|\mediaGroup:<Image group name>]|Especifica el grupo de imágenes que contiene la imagen. Si se especifica ningún nombre de grupo de imágenes y grupo de solo imágenes existe en el servidor, se utiliza ese grupo de imágenes. Si existe más de un grupo de imágenes en el servidor, debe usar esta opción para especificar un grupo de imágenes.|
-|/ Arquitectura: {x86 &#124; ia64 &#124; x64}|Especifica la arquitectura de la imagen de arranque que está asociada con la transmisión. Dado que es posible tener el mismo nombre de imagen para las imágenes de arranque en arquitecturas diferentes, debe especificar la arquitectura para asegurarse de que se usa la imagen correcta.|
-|[/Filename:<File name>]|Especifica el archivo que contiene la imagen. Si la imagen no se identifica por nombre, debe usar esta opción para especificar el nombre de archivo.|
-|[/ Show: Clients]<br /><br />o bien<br /><br />[/ clientes: detalles]|Muestra información acerca de los equipos cliente que están conectados a la transmisión por multidifusión.|
-## <a name="BKMK_examples"></a>Ejemplos
-**Windows Server 2008** para ver información acerca de la transmisión de una imagen denominada Vista con Office, escriba uno de los siguientes:
+medios: <Image name>|Muestra la transmisión de multidifusión asociada a esta imagen.|
+|[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utiliza el servidor local.|
+mediatype: instalación|Especifica el tipo de imagen. Tenga en cuenta que esta opción debe estar configurada para **instalar**.|
+|\mediaGroup: <Image group name>]|Especifica el grupo de imágenes que contiene la imagen. Si no se especifica ningún nombre de grupo de imágenes y solo existe un grupo de imágenes en el servidor, se utiliza ese grupo de imágenes. Si existe más de un grupo de imágenes en el servidor, debe usar esta opción para especificar un grupo de imágenes.|
+|/Architecture: {x86 &#124; ia64 &#124; x64}|Especifica la arquitectura de la imagen de arranque que está asociada a la transmisión. Dado que es posible tener el mismo nombre de imagen para imágenes de arranque en diferentes arquitecturas, debe especificar la arquitectura para asegurarse de que se usa la imagen correcta.|
+|[/Filename:<File name>]|Especifica el archivo que contiene la imagen. Si la imagen no se puede identificar de forma única por nombre, debe usar esta opción para especificar el nombre de archivo.|
+|[/Show: clients]<br /><br />o bien<br /><br />[/Details: clientes]|Muestra información acerca de los equipos cliente que están conectados a la transmisión por multidifusión.|
+## <a name="BKMK_examples"></a>Example
+**Windows Server 2008** Para ver información sobre la transmisión de una imagen denominada vista con Office, escriba uno de los siguientes:
 ```
 wdsutil /Get-MulticastTransmissiomedia:"Vista with Officemediatype:Install
 wdsutil /Get-MulticastTransmission /Server:MyWDSServemedia:"Vista with Officemediatype:InstalmediaGroup:ImageGroup1 /Filename:install.wim /Show:Clients
 ```
-**Windows Server 2008 R2** para ver información acerca de la transmisión de una imagen denominada Vista con Office, escriba uno de los siguientes:
+**Windows Server 2008 R2** Para ver información sobre la transmisión de una imagen denominada vista con Office, escriba uno de los siguientes:
 ```
 wdsutil /Get-MulticastTransmissiomedia:"Vista with Office"
  /Imagetype:Install
@@ -79,6 +79,6 @@ wdsutil /Get-MulticastTransmission /Server:MyWDSServemedia:"X64 Boot Imagemediat
 #### <a name="additional-references"></a>Referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 [con el comando get-AllMulticastTransmissions](using-the-get-allmulticasttransmissions-command.md)
-[con el comando nueva-MulticastTransmission](using-the-new-multicasttransmission-command.md) 
- [Con el comando remove-MulticastTransmission](using-the-remove-multicasttransmission-command.md)
-[subcomando: start-MulticastTransmission](subcommand-start-multicasttransmission.md)
+[con el comando New-MulticastTransmission](using-the-new-multicasttransmission-command.md)
+[mediante el comando Remove-MulticastTransmission](using-the-remove-multicasttransmission-command.md)
+[ Subcomando: Start-MulticastTransmission](subcommand-start-multicasttransmission.md)

@@ -7,14 +7,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 04/23/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2a5de194f5870652920ec6a3d451d18840ba7b2a
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 6294c7b6ead0a9fa338f8b2cc8134b750f7e3e8f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980345"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385551"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Novedades de Servicios de federación de Active Directory (AD FS)
 
@@ -25,7 +25,7 @@ ms.locfileid: "69980345"
 A continuación se ofrece un breve resumen de las actualizaciones de los inicios de sesión protegidos disponibles en AD FS 2019:
 - **Proveedores de autenticación externos como principales** los clientes ahora pueden usar productos de autenticación de terceros como primer factor y no exponer contraseñas como primer factor. En los casos en los que un proveedor de autenticación externo puede demostrar dos factores, puede reclamar MFA. 
 - **Autenticación de contraseña como autenticación adicional** : los clientes tienen una opción de bandeja de entrada totalmente compatible para usar la contraseña solo para el factor adicional después de que se use la opción contraseña less como primer factor. Esto mejora la experiencia del cliente de ADFS 2016, donde los clientes tenían que descargar un adaptador de Github, que se admite tal cual. 
-- **Módulo de evaluación de riesgos conectables** : ahora los clientes pueden crear sus propios módulos de complementos para bloquear determinados tipos de solicitudes durante la fase de autenticación previa. Esto facilita a los clientes el uso de la inteligencia en la nube, como Identity Protection, para bloquear los inicios de sesión para usuarios de riesgo o transacciones de riesgo.  Para obtener más información, vea complementos de [compilación con AD FS modelo de evaluación de riesgos de 2019](../../ad-fs/development/ad-fs-risk-assessment-model.md) 
+- **Módulo de evaluación de riesgos conectables** : ahora los clientes pueden crear sus propios módulos de complementos para bloquear determinados tipos de solicitudes durante la fase de autenticación previa. Esto facilita a los clientes el uso de la inteligencia en la nube, como Identity Protection, para bloquear los inicios de sesión para usuarios de riesgo o transacciones de riesgo.  Para obtener más información, vea [Complementos de compilación con AD FS modelo de evaluación de riesgos de 2019](../../ad-fs/development/ad-fs-risk-assessment-model.md) 
 - **Mejoras de ESL** : mejora el QFE de ESL en 2016 agregando las siguientes funcionalidades.
     - Permite que los clientes estén en modo auditoría mientras están protegidos por la funcionalidad de bloqueo de la extranet "clásica" disponible desde 2012R2 de ADFS. Actualmente, 2016 clientes no tendrían protección mientras estaba en modo auditoría. 
     - Habilita el umbral de bloqueo independiente para las ubicaciones conocidas. Esto permite que varias instancias de aplicaciones que se ejecutan con una cuenta de servicio común reviertan las contraseñas con la menor cantidad de impacto. 
@@ -38,21 +38,21 @@ Las siguientes mejoras de seguridad adicionales están disponibles en AD FS 2019
      - x-Frame-Options: Permite que los administradores de ADFS permitan a usuarios de confianza específicos insertar iFrames para páginas de inicio de sesión interactivas de ADFS. Debe usarse con cuidado y solo en hosts HTTPS. 
      - Encabezado futuro: También se pueden configurar otros encabezados futuros. 
 
-Para obtener más información, consulte Personalización de [encabezados de respuesta de seguridad http con AD FS 2019](../../ad-fs/operations/customize-http-security-headers-ad-fs.md) 
+Para obtener más información, consulte [Personalización de encabezados de respuesta de seguridad http con AD FS 2019](../../ad-fs/operations/customize-http-security-headers-ad-fs.md) 
 
 ### <a name="authenticationpolicy-capabilities"></a>Capacidades de autenticación/Directiva
 Las siguientes capacidades de autenticación y Directiva están en AD FS 2019:
 - **Especificar el método de autenticación para la autenticación adicional por RP** : los clientes ahora pueden usar reglas de notificaciones para decidir qué proveedor de autenticación adicional debe invocar para el proveedor de autenticación adicional. Esto resulta útil para dos casos de uso
     - Los clientes están pasando de un proveedor de autenticación adicional a otro. De esta manera, cuando los usuarios incorporan a un proveedor de autenticación más reciente, pueden usar grupos para controlar qué proveedor de autenticación adicional se llama.
     - Los clientes necesitan un proveedor de autenticación adicional específico (por ejemplo, un certificado) para ciertas aplicaciones. 
-- **Restringir la autenticación de dispositivos basados en TLS solo a aplicaciones que lo** requieran, ahora los clientes pueden restringir las autenticaciones de dispositivo basadas en TLS de cliente solo a las aplicaciones que realizan el acceso condicional basado en dispositivos. Esto impide que se produzcan mensajes no deseados para la autenticación de dispositivos (o errores si la aplicación cliente no puede controlar) para las aplicaciones que no requieren autenticación de dispositivo basada en TLS.
+- **Restringir la autenticación de dispositivos basados en TLS solo a aplicaciones que lo requieran** , ahora los clientes pueden restringir las autenticaciones de dispositivo basadas en TLS de cliente solo a las aplicaciones que realizan el acceso condicional basado en dispositivos. Esto impide que se produzcan mensajes no deseados para la autenticación de dispositivos (o errores si la aplicación cliente no puede controlar) para las aplicaciones que no requieren autenticación de dispositivo basada en TLS.
 - **Compatibilidad con la actualización de MFA** : actualmente, AD FS admite la posibilidad de volver a hacer la credencial de segundo factor en función de la actualización de la credencial del segundo factor. Esto permite a los clientes realizar una transacción inicial con dos factores y solo solicitar el segundo factor de forma periódica. Esto solo está disponible para las aplicaciones que pueden proporcionar un parámetro adicional en la solicitud y no es un valor configurable en ADFS. Este parámetro es compatible con Azure AD cuando está configurada la opción "recordar mi MFA para X días" y la marca "supportsMFA" está establecida en true en la configuración de confianza de dominio federado en Azure AD. 
 
 ### <a name="sign-in-sso-improvements"></a>Mejoras en SSO de inicio de sesión
 Se han realizado las siguientes mejoras en el inicio de sesión único en AD FS 2019:
 
 - [Experiencia de usuario paginada con el tema centrado](../operations/AD-FS-paginated-sign-in.md) : ADFS ahora se ha pasado a un flujo de experiencia del usuario paginada que permite que ADFS valide y proporcione una experiencia de inicio de sesión más fluida. ADFS ahora usa una interfaz de usuario centrada (en lugar del lado derecho de la pantalla). Es posible que necesite un logotipo y imágenes de fondo más recientes para alinearse con esta experiencia. Esto también refleja la funcionalidad ofrecida en Azure AD.
-- **Corrección de errores: Estado de SSO persistente para dispositivos Win10 al realizar** la autenticación de PRT Esto soluciona un problema en el que el estado de MFA no se mantuvo cuando se usa la autenticación de PRT para dispositivos Windows 10. El resultado del problema fue que a los usuarios finales les se les pediera la credencial de segundo factor (MFA) con frecuencia. La corrección también hace que la experiencia sea coherente cuando la autenticación de dispositivo se realiza correctamente a través de TLS de cliente y a través del mecanismo de PRT. 
+- corrección de @no__t 0Bug: Estado de SSO persistente para dispositivos Win10 al realizar la autenticación PRT @ no__t-0 Esto soluciona un problema en el que el estado de MFA no se mantuvo cuando se usa la autenticación de PRT para dispositivos Windows 10. El resultado del problema fue que a los usuarios finales les se les pediera la credencial de segundo factor (MFA) con frecuencia. La corrección también hace que la experiencia sea coherente cuando la autenticación de dispositivo se realiza correctamente a través de TLS de cliente y a través del mecanismo de PRT. 
 
 
 ### <a name="suppport-for-building-modern-line-of-business-apps"></a>Soporte técnico para compilar aplicaciones de línea de negocio modernas
@@ -62,7 +62,7 @@ Se ha agregado la siguiente compatibilidad para la compilación de aplicaciones 
  - La **eliminación del parámetro "Resource"** -AD FS ahora ha quitado el requisito de especificar un parámetro de recurso que está en línea con las especificaciones actuales de OAuth. Los clientes ahora pueden proporcionar el identificador de la relación de confianza para usuario autenticado como parámetro de ámbito, además de los permisos solicitados. 
  - **Encabezados de CORS en AD FS respuestas** : ahora los clientes pueden crear aplicaciones de una sola página que permitan a las bibliotecas del lado cliente de JS validar la firma del ID_token consultando las claves de firma del documento de descubrimiento de OIDC en AD FS. 
  - **Compatibilidad con PKCE** : AD FS agrega compatibilidad con PKCE para proporcionar un flujo de código de autenticación seguro en OAuth. Esto agrega una capa adicional de seguridad a este flujo para evitar el secuestro del código y su reproducción desde un cliente diferente. 
- - **Corrección de errores: Enviar notificaciones** de x5t y Kid: se trata de una corrección de errores secundaria. AD FS ahora envía también la demanda ' Kid ' para denotar la sugerencia de identificador de clave para comprobar la firma. Anteriormente AD FS solo se envió como una demanda de "x5t".
+ - corrección de @no__t 0Bug: Enviar notificaciones de x5t y Kid @ no__t-0: se trata de una corrección de errores secundaria. AD FS ahora envía también la demanda ' Kid ' para denotar la sugerencia de identificador de clave para comprobar la firma. Anteriormente AD FS solo se envió como una demanda de "x5t".
 
 ### <a name="supportability-improvements"></a>Mejoras de compatibilidad
 Las siguientes mejoras de compatibilidad no forman parte de AD FS 2019:
@@ -76,14 +76,14 @@ Las siguientes actualizaciones de implementación ahora se incluyen en AD FS 201
 
 ### <a name="saml-updates"></a>Actualizaciones de SAML
 La siguiente actualización de SAML está en AD FS 2019:
-- **Corrección de errores: Corregir errores en la Federación** agregada: hay numerosas correcciones de errores en torno a la compatibilidad con la Federación agregada (por ejemplo, infrecuente). Las correcciones se han realizado en torno a lo siguiente: 
+- corrección de @no__t 0Bug: Corrección de errores en la Federación agregada @ no__t-0: hay numerosas correcciones de errores en torno a la compatibilidad con la Federación agregada (por ejemplo, infrecuente). Las correcciones se han realizado en torno a lo siguiente: 
   - Ajuste de escala mejorado para un número elevado de entidades en el documento de metadatos de Federación agregado. Anteriormente, esto generaba un error "ADMIN0017". 
   - Consulta mediante el parámetro ' ScopeGroupID ' a través del cmdlet Get-AdfsRelyingPartyTrustsGroup PSH. 
   - Control de condiciones de error en torno a entityID duplicados
 
 
 ### <a name="azure-ad-style-resource-specification-in-scope-parameter"></a>Azure AD especificación de recursos de estilo en el parámetro de ámbito 
-Anteriormente, AD FS necesitaba que el recurso y el ámbito desearan estar en un parámetro independiente en cualquier solicitud de autenticación. Por ejemplo, una solicitud de OAuth típica tendría el siguiente aspecto: 7 **https:&#47;&#47;FS.contoso.com/ADFS/OAuth2/Authorize?</br> response_type = Code & client_id = claimsxrayclient & Resource = urn: Microsoft:</br>ADFS: claimsxray & Scope = OAuth & redirect_uri = https:&#47;&#47;adfshelp.Microsoft.com/</br> claimsxray/ TokenResponse & prompt = login**
+Anteriormente, AD FS necesitaba que el recurso y el ámbito desearan estar en un parámetro independiente en cualquier solicitud de autenticación. Por ejemplo, una solicitud de OAuth típica tendría el siguiente aspecto: 7 **https:&#47;&#47;FS.contoso.com/ADFS/OAuth2/Authorize? </br>response_type = Code & client_id = claimsxrayclient & Resource = urn: Microsoft: </br>adfs: claimsxray & Scope = OAuth & redirect_uri = https:&#47; &#47; adfshelp.microsoft.com/</br> ClaimsXray/TokenResponse & prompt = login**
  
 Con AD FS en el servidor 2019, ahora puede pasar el valor de recurso incrustado en el parámetro de ámbito. Esto es coherente con el modo en que se puede realizar la autenticación en Azure AD también. 
 
@@ -214,7 +214,7 @@ Para obtener más información, consulte [mejoras de auditoría en AD FS en Wind
 ### <a name="improved-interoperability-with-saml-20-for-participation-in-confederations"></a>Mejora de la interoperabilidad con SAML 2,0 para participar en confederaciones  
 AD FS 2016 contiene compatibilidad con el protocolo SAML adicional, incluida la compatibilidad para importar confianzas basadas en metadatos que contienen varias entidades. Esto le permite configurar AD FS para participar en confederaciones como la Federación infrecuente y otras implementaciones que se ajustan al estándar eGov 2,0.  
 
-Para obtener más información, consulte interoperabilidad [mejorada con SAML 2,0.](../../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)  
+Para obtener más información, consulte [interoperabilidad mejorada con SAML 2,0.](../../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)  
 
 ### <a name="simplified-password-management-for-federated-o365-users"></a>Administración simplificada de contraseñas para usuarios federados de O365  
 Puede configurar Servicios de federación de Active Directory (AD FS) (AD FS) para enviar notificaciones de expiración de contraseñas a las relaciones de confianza para usuario autenticado (aplicaciones) que están protegidas por AD FS. La forma en que se usan estas notificaciones depende de la aplicación. Por ejemplo, con Office 365 como usuario de confianza, las actualizaciones se han implementado en Exchange y Outlook para notificar a los usuarios federados de sus contraseñas que pronto están expiradas.  

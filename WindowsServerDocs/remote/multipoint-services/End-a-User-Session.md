@@ -2,7 +2,7 @@
 title: Finalizar una sesión de usuario
 description: Aprenda Cuándo y cómo finalizar manualmente la sesión de un usuario en Multipoint Services
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.assetid: 51b1076b-cce5-45a7-8cf2-ecc6aa390d14
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 2b290dbe14129a2d5fe297c5c95479e764dc55de
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 73a04399c244adf1f9d8b6ec2c41dc0593e5ddd9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871698"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395428"
 ---
 # <a name="end-a-user-session"></a>Finalizar una sesión de usuario
 Debe finalizar la sesión de un usuario cuando tenga que cerrar la sesión del usuario desde el sistema Multipoint Services para devolver el escritorio a su configuración predeterminada. El usuario recibe una advertencia que le indica que la conexión está a punto de finalizar. Debe finalizar la conexión de un usuario cuando quiera:  

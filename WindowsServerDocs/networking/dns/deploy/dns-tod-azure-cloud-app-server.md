@@ -1,110 +1,110 @@
 ---
 title: Respuestas DNS basadas en la hora del día con un servidor de aplicaciones en la nube de Azure
-description: En este tema forma parte de las DNS directiva escenario guía para Windows Server 2016
+description: Este tema forma parte de la guía del escenario de la Directiva DNS para Windows Server 2016
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 68f30973ef58b64006181990425e6ca84c39c059
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 4307ce1512980277af819e0710e0447d8dbac8c4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812038"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406200"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>Respuestas DNS basadas en la hora del día con un servidor de aplicaciones en la nube de Azure
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede utilizar este tema para aprender a distribuir el tráfico de aplicación entre diferentes instancias distribuidas geográficamente de una aplicación mediante el uso de las directivas DNS que se basan en la hora del día. 
+Puede usar este tema para aprender a distribuir el tráfico de aplicaciones entre diferentes instancias distribuidas geográficamente de una aplicación mediante el uso de directivas DNS basadas en la hora del día. 
 
-Este escenario es útil en situaciones donde desea dirigir el tráfico de una zona horaria a servidores de aplicaciones alternativo, como los servidores Web que se hospedan en Microsoft Azure, que se encuentran en otra zona horaria. Esto le permite equilibrar la carga entre instancias de la aplicación durante los períodos cuando los servidores principales están sobrecargados con tráfico de períodos de tiempo. 
-
-> [!NOTE]
-> Para obtener información sobre cómo utilizar Directiva DNS para las respuestas DNS inteligentes sin usar Azure, consulte [usar Directiva de DNS para las respuestas de DNS inteligentes basados en la hora del día](Scenario--Use-DNS-Policy-for-Intelligent-DNS-Responses-Based-on-the-Time-of-Day.md). 
-
-## <a name="example-of-intelligent-dns-responses-based-on-the-time-of-day-with-azure-cloud-app-server"></a>Ejemplo de las respuestas DNS inteligentes basadas en la hora del día con el servidor de aplicaciones de nube de Azure
-
-La siguiente es un ejemplo de cómo puede usar la directiva DNS para equilibrar la aplicación tráfico según la hora del día.
-
-Este ejemplo usa una compañía ficticia, Contoso regalo servicios, que proporciona soluciones de regalos en línea en todo el mundo a través de su sitio Web, contosogiftservices.com. 
-
-El sitio web de contosogiftservices.com se hospeda en un único centro de datos local en Seattle (con la dirección IP pública 192.68.30.2). 
-
-El servidor DNS también se encuentra en el centro de datos local. 
-
-Con un aumento reciente en los negocios, contosogiftservices.com tiene un mayor número de visitantes diariamente y algunos clientes han informado de problemas de disponibilidad del servicio. 
-
-Servicios de regalos de Contoso realiza un análisis de sitio y descubre que la cada noche entre las 6 P.M. y 9 p. M. hora local, hay un aumento en el tráfico al servidor Web de Seattle. El servidor Web no se puede escalar para controlar el incremento del tráfico a estas horas punta, lo que provocará denegación de servicio a los clientes. 
-
-Para asegurarse de que los clientes de contosogiftservices.com obtengan una capacidad de respuesta desde el sitio Web, servicios de regalos de Contoso decide que durante estas horas alquila una máquina virtual \(VM\) en Microsoft Azure para hospedar una copia de su servidor Web .  
-
-Servicios de regalos de Contoso se obtiene una dirección IP pública de Azure para la máquina virtual (192.68.31.44) y desarrolla la automatización para implementar el servidor Web cada día en Azure entre 5-10 PM, lo que permite un período de contingencia de una hora.
+Este escenario es útil en situaciones en las que desea dirigir el tráfico de una zona horaria a servidores de aplicaciones alternativos, como los servidores web que se hospedan en Microsoft Azure, que se encuentran en otra zona horaria. Esto le permite equilibrar la carga del tráfico entre las instancias de la aplicación durante períodos de tiempo máximos cuando los servidores principales están sobrecargados con el tráfico. 
 
 > [!NOTE]
-> Para obtener más información acerca de las máquinas virtuales de Azure, consulte [documentación sobre máquinas virtuales](https://azure.microsoft.com/documentation/services/virtual-machines/) 
+> Para obtener información sobre cómo usar la Directiva de DNS para las respuestas de DNS inteligentes sin usar Azure, consulte [uso de la Directiva de DNS para respuestas de DNS inteligentes en función de la hora del día](Scenario--Use-DNS-Policy-for-Intelligent-DNS-Responses-Based-on-the-Time-of-Day.md). 
 
-Los servidores DNS se configuran con los ámbitos de la zona y las directivas DNS para que entre 5 a 9 P.M. todos los días, 30% de las consultas se envían a la instancia del servidor Web que se ejecuta en Azure.
+## <a name="example-of-intelligent-dns-responses-based-on-the-time-of-day-with-azure-cloud-app-server"></a>Ejemplo de respuestas DNS inteligentes basadas en la hora del día con el servidor de aplicaciones en la nube de Azure
 
-La siguiente ilustración muestra este escenario.
+A continuación se describe un ejemplo de cómo se puede usar la Directiva de DNS para equilibrar el tráfico de la aplicación en función de la hora del día.
 
-![Directiva de DNS para el tiempo de respuestas de día](../../media/DNS-Policy-Tod2/dns_policy_tod2.jpg)  
+En este ejemplo se usa una empresa ficticia, servicios de regalos de Contoso, que proporciona soluciones de regalos en línea en todo el mundo a través de su sitio web, contosogiftservices.com. 
 
-## <a name="how-intelligent-dns-responses-based-on-time-of-day-with-azure-app-server-works"></a>Cómo las respuestas DNS inteligentes según la hora del día con Azure funciona del servidor de aplicaciones
+El sitio web de contosogiftservices.com se hospeda solo en un centro de centros de recursos local en Seattle (con IP pública 192.68.30.2). 
+
+El servidor DNS también se encuentra en el centro de recursos local. 
+
+Con un aumento reciente en la empresa, contosogiftservices.com tiene un número mayor de visitantes cada día, y algunos de los clientes han comunicado problemas de disponibilidad del servicio. 
+
+Contoso Gift Services realiza un análisis de sitio y detecta que cada noche entre la hora local de las 6 PM y las 9 P.M. hay un aumento del tráfico en el servidor Web de Seattle. El servidor Web no se puede escalar para controlar el aumento del tráfico en estas horas punta, lo que da lugar a la denegación de servicio a los clientes. 
+
+Para asegurarse de que los clientes de contosogiftservices.com obtienen una experiencia de respuesta en el sitio web, los servicios de regalos de Contoso deciden que, durante estas horas, alquilarán una máquina virtual \(VM @ no__t-1 en Microsoft Azure para hospedar una copia de su servidor Web.  
+
+Contoso Gift Services obtiene una dirección IP pública de Azure para la máquina virtual (192.68.31.44) y desarrolla la automatización para implementar el servidor web cada día en Azure entre 5-10 PM, lo que permite un período de contingencia de una hora.
+
+> [!NOTE]
+> Para más información sobre las máquinas virtuales de Azure, consulte la [documentación de virtual machines](https://azure.microsoft.com/documentation/services/virtual-machines/) 
+
+Los servidores DNS se configuran con ámbitos de zona y directivas DNS, de modo que entre 5-9 P.M. todos los días, el 30% de las consultas se envían a la instancia del servidor Web que se ejecuta en Azure.
+
+En la ilustración siguiente se muestra este escenario.
+
+![Directiva DNS para respuestas de hora del día](../../media/DNS-Policy-Tod2/dns_policy_tod2.jpg)  
+
+## <a name="how-intelligent-dns-responses-based-on-time-of-day-with-azure-app-server-works"></a>Funcionamiento de las respuestas de DNS inteligentes basadas en la hora del día con App de Azure Server
  
-En este artículo se muestra cómo configurar el servidor DNS para responder a las consultas DNS con dos aplicaciones diferentes direcciones IP - un servidor web está en Seattle y el otro está en un centro de datos de Azure.
+En este artículo se muestra cómo configurar el servidor DNS para responder a las consultas DNS con dos direcciones IP diferentes del servidor de aplicaciones: un servidor web está en Seattle y el otro está en un centro de recursos de Azure.
 
-Después de la configuración de una nueva directiva DNS que se basa en las horas punta de 18: 00 a 21: 00 en Seattle, el servidor DNS envía setenta por ciento de las respuestas DNS a los clientes que contiene la dirección IP del servidor Web de Seattle y treinta por ciento de las respuestas DNS a clien nts que contiene la dirección IP del servidor Web de Azure, con lo que dirigir el tráfico de cliente al nuevo servidor Web de Azure e impide que se sobrecargue el servidor Web de Seattle. 
+Después de la configuración de una nueva Directiva de DNS que se basa en las horas punta de 6 PM a 9 PM en Seattle, el servidor DNS envía 70 por ciento de las respuestas DNS a los clientes que contienen la dirección IP del servidor Web de Seattle y el 30 por ciento de las respuestas DNS a clien NTS que contiene la dirección IP del servidor Web de Azure, con lo que se dirige el tráfico de cliente al nuevo servidor Web de Azure y se impide que el servidor Web de Seattle se sobrecargue. 
 
-En todas las demás horas del día, tiene lugar el procesamiento de las consultas normales y las respuestas se envían desde el ámbito de zona predeterminada que contiene un registro para el servidor web en el centro de datos local. 
+En todas las demás horas del día, se realiza el procesamiento de consultas normal y se envían las respuestas desde el ámbito de zona predeterminado que contiene un registro para el servidor Web en el centro de recursos local. 
 
-El valor de TTL de 10 minutos en el registro de Azure garantiza que ha expirado el registro de la caché LDNS antes de quita la máquina virtual de Azure. Una de las ventajas de este ajuste de tamaño es que puede mantener sus DNS datos locales y mantener el escalado en Azure según exija la demanda.
+El TTL de 10 minutos en el registro de Azure garantiza que el registro ha expirado en la memoria caché de LDNS antes de que se quite la máquina virtual de Azure. Una de las ventajas de este escalado es que puede mantener sus datos DNS en el entorno local y seguir escalando horizontalmente a Azure a medida que la demanda lo requiere.
 
-## <a name="how-to-configure-dns-policy-for-intelligent-dns-responses-based-on-time-of-day-with-azure-app-server"></a>Cómo configurar la directiva de DNS para las respuestas DNS inteligentes según la hora del día con el servidor de aplicaciones de Azure
+## <a name="how-to-configure-dns-policy-for-intelligent-dns-responses-based-on-time-of-day-with-azure-app-server"></a>Configuración de la Directiva de DNS para respuestas DNS inteligentes basadas en la hora del día con App de Azure Server
 
-Para configurar la directiva DNS para las respuestas de consulta basado en el tiempo de equilibrio de carga de aplicación de día, debe realizar los pasos siguientes.
+Para configurar la Directiva de DNS para las respuestas de consulta basadas en el equilibrio de carga de la aplicación de la hora del día, debe realizar los pasos siguientes.
 
-- [Creación de los ámbitos de zona](#create-the-zone-scopes)
+- [Crear los ámbitos de zona](#create-the-zone-scopes)
 - [Agregar registros a los ámbitos de zona](#add-records-to-the-zone-scopes)
-- [Cree las directivas DNS](#create-the-dns-policies)
+- [Crear las directivas de DNS](#create-the-dns-policies)
 
 > [!NOTE]
-> Debe realizar estos pasos en el servidor DNS que sea autoritativo para la zona que desea configurar. Pertenencia al grupo DnsAdmins, o equivalente, es necesario para realizar los procedimientos siguientes. 
+> Debe realizar estos pasos en el servidor DNS que sea autoritativo para la zona que desea configurar. La pertenencia a DnsAdmins, o equivalente, es necesaria para realizar los siguientes procedimientos. 
 
-Las secciones siguientes proporcionan instrucciones de configuración detallada.
+En las secciones siguientes se proporcionan instrucciones de configuración detalladas.
 
 > [!IMPORTANT]
-> Las secciones siguientes incluyen ejemplos de comandos de Windows PowerShell que contienen valores de ejemplo para muchos parámetros. Asegúrese de sustituir los valores de ejemplo de estos comandos con los valores adecuados para su implementación antes de ejecutar estos comandos. 
+> En las secciones siguientes se incluyen comandos de Windows PowerShell de ejemplo que contienen valores de ejemplo para muchos parámetros. Asegúrese de reemplazar los valores de ejemplo de estos comandos por los valores adecuados para su implementación antes de ejecutar estos comandos. 
 
 
-### <a name="create-the-zone-scopes"></a>Creación de los ámbitos de zona
+### <a name="create-the-zone-scopes"></a>Crear los ámbitos de zona
 
-Un ámbito de la zona es una instancia única de la zona. Una zona DNS puede tener varios ámbitos de zona, con cada ámbito de la zona que contiene su propio conjunto de registros DNS. El mismo registro puede estar presente en varios ámbitos, con direcciones IP diferentes o las mismas direcciones IP. 
+Un ámbito de zona es una instancia única de la zona. Una zona DNS puede tener varios ámbitos de zona, con cada ámbito de zona que contenga su propio conjunto de registros DNS. El mismo registro puede estar presente en varios ámbitos, con direcciones IP diferentes o con las mismas direcciones IP. 
 
 > [!NOTE]
-> De forma predeterminada, un ámbito de la zona existe en las zonas DNS. Este ámbito de la zona tiene el mismo nombre que la zona y las operaciones de DNS heredadas funcionan en este ámbito. 
+> De forma predeterminada, existe un ámbito de zona en las zonas DNS. Este ámbito de zona tiene el mismo nombre que la zona y las operaciones DNS heredadas funcionan en este ámbito. 
 
-Puede usar el siguiente comando de ejemplo para crear un ámbito de la zona para hospedar los registros de Azure.
+Puede usar el siguiente comando de ejemplo para crear un ámbito de zona para hospedar los registros de Azure.
 
 ```
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AzureZoneScope"
 ```
 
-Para obtener más información, consulte [agregar DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+Para obtener más información, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ### <a name="add-records-to-the-zone-scopes"></a>Agregar registros a los ámbitos de zona
-El siguiente paso es agregar los registros que representa el host del servidor Web en los ámbitos de la zona. 
+El siguiente paso consiste en agregar los registros que representan el host del servidor Web en los ámbitos de zona. 
 
-En AzureZoneScope, se agrega el registro www.contosogiftservices.com con la dirección IP 192.68.31.44, que se encuentra en la nube pública de Azure. 
+En AzureZoneScope, el registro www.contosogiftservices.com se agrega con la dirección IP 192.68.31.44, que se encuentra en la nube pública de Azure. 
 
-De forma similar, en el ámbito de la zona predeterminada \(contosogiftservices.com\), un registro \(www.contosogiftservices.com\) se agrega con la dirección IP 192.68.30.2 del servidor Web que se ejecutan en Seattle local Centro de datos.
+Del mismo modo, en el ámbito de zona predeterminado @no__t -0contosogiftservices. com @ no__t-1, se agrega un registro @no__t -2www. contosogiftservices. com @ no__t-3 con la dirección IP 192.68.30.2 del servidor Web que se ejecuta en el centro de centros de recursos local de Seattle.
 
-En el segundo cmdlet, no se incluye el parámetro – zonaámbito. Por este motivo, los registros se agregan en el valor predeterminado zonaámbito. 
+En el segundo cmdlet siguiente, el parámetro – ZoneScope no se incluye. Por este motivo, los registros se agregan en el valor predeterminado de ZoneScope. 
 
-Además, el TTL del registro para las máquinas virtuales de Azure se mantiene en 600s (10 minutos) para que el LDNS no lo almacena en caché durante más tiempo - lo que interferiría con equilibrio de carga. Además, las máquinas virtuales de Azure están disponibles durante 1 hora adicional como medida de contingencia para asegurarse de que los clientes incluso con los registros almacenados en caché son capaces de resolver.
+Además, el TTL del registro para las máquinas virtuales de Azure se mantiene en 600S (10 minutos), por lo que el LDNS no lo almacena en caché durante más tiempo, lo que interferiría con el equilibrio de carga. Además, las máquinas virtuales de Azure están disponibles durante 1 hora extra como contingencia para asegurarse de que incluso los clientes con los registros almacenados en caché pueden resolver.
 
 ```
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.68.31.44" -ZoneScope "AzureZoneScope" –TimeToLive 600
@@ -114,30 +114,30 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 
 Para obtener más información, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).  
 
-### <a name="create-the-dns-policies"></a>Cree las directivas DNS 
-Una vez creados los ámbitos de zona, puede crear las directivas DNS que distribución las consultas entrantes entre estos ámbitos, por lo que ocurre lo siguiente.
+### <a name="create-the-dns-policies"></a>Crear las directivas de DNS 
+Una vez creados los ámbitos de zona, puede crear directivas DNS que distribuyan las consultas entrantes en estos ámbitos para que se produzca lo siguiente.
 
-1. De 18: 00 a 9 P.M. diaria, 30% de los clientes recibir la dirección IP del servidor Web en el centro de datos de Azure en la respuesta DNS, mientras que el 70% de los clientes reciben la dirección IP del servidor Web Seattle en el entorno local.
-2. En cualquier otro momento, todos los clientes reciben la dirección IP del servidor Web Seattle en el entorno local.
+1. De 6 PM a 9 PM diariamente, el 30% de los clientes reciben la dirección IP del servidor Web en el centro de recursos de Azure en la respuesta DNS, mientras que el 70% de los clientes reciben la dirección IP del servidor Web local de Seattle.
+2. En el resto de los casos, todos los clientes reciben la dirección IP del servidor Web local de Seattle.
 
-La hora del día debe expresarse en hora local del servidor DNS.
+La hora del día se debe expresar en la hora local del servidor DNS.
 
-Puede usar el siguiente comando de ejemplo para crear la directiva DNS.
+Puede usar el siguiente comando de ejemplo para crear la Directiva DNS.
 
 ```
 Add-DnsServerQueryResolutionPolicy -Name "Contoso6To9Policy" -Action ALLOW -ZoneScope "contosogiftservices.com,7;AzureZoneScope,3" –TimeOfDay “EQ,18:00-21:00” -ZoneName "contosogiftservices.com" –ProcessingOrder 1
 ```
 
-Para obtener más información, consulte [agregar DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).  
+Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).  
   
-Ahora el servidor DNS está configurado con las directivas DNS necesarias para redirigir el tráfico al servidor Web de Azure según la hora del día. 
+Ahora el servidor DNS está configurado con las directivas DNS necesarias para redirigir el tráfico al servidor Web de Azure en función de la hora del día. 
 
-Tenga en cuenta la expresión:
+Observe la expresión:
 
 `
  -ZoneScope "contosogiftservices.com,7;AzureZoneScope,3" –TimeOfDay “EQ,18:00-21:00” 
 `
 
-Esta expresión configura el servidor DNS con una combinación zonaámbito y peso que indica al servidor DNS para enviar la dirección IP del servidor Web de Seattle setenta por ciento del tiempo, al enviar la dirección IP del servidor Web de Azure del treinta por ciento del tiempo.
+Esta expresión configura el servidor DNS con una combinación de ZoneScope y Weight que indica al servidor DNS que envíe la dirección IP del servidor Web de Seattle 70 por ciento de tiempo, al tiempo que envía la dirección IP del servidor Web de Azure el 30 por ciento del tiempo.
 
-Puede crear miles de las directivas DNS según el tráfico de los requisitos de administración y todas las nuevas directivas se aplican dinámicamente - sin necesidad de reiniciar el servidor DNS, en las consultas entrantes.
+Puede crear miles de directivas DNS según los requisitos de administración del tráfico y todas las directivas nuevas se aplican de forma dinámica, sin necesidad de reiniciar el servidor DNS, en las consultas entrantes.

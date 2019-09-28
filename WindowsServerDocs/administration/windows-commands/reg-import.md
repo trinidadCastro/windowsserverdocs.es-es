@@ -1,8 +1,8 @@
 ---
-title: reg import
-description: 'Tema de los comandos de Windows para ***- '
+title: REG Import
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d1dd1b61848671b528c62fd22fe656e14fda7b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2e1c7920a64469717c30cfcddda7b8002db5ba10
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861846"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384732"
 ---
-# <a name="reg-import"></a>reg import
+# <a name="reg-import"></a>REG Import
 
 
 
-Copia el contenido de un archivo que contiene exporta las subclaves del registro, entradas y valores en el registro del equipo local.
+Copia el contenido de un archivo que contiene las subclaves del registro exportadas, las entradas y los valores en el registro del equipo local.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,21 +38,21 @@ Reg import FileName
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<FileName>|Especifica el nombre y ruta de acceso del archivo que tiene contenido que se copiará en el registro del equipo local. Este archivo debe crearse de antemano con **reg export**.|
-|/?|Muestra la Ayuda de **reg import** en el símbolo del sistema.|
+|\<Nombre de archivo >|Especifica el nombre y la ruta de acceso del archivo que tiene el contenido que se va a copiar en el registro del equipo local. Este archivo debe crearse de antemano mediante **reg Export**.|
+|/?|Muestra ayuda para **reg Import** en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-En la tabla siguiente se enumera los valores devueltos por la **reg import** operación.
+En la tabla siguiente se enumeran los valores devueltos para la operación de **importación de reg** .
 
 |Valor|Descripción|
 |-----|-----------|
 |0|Correcto|
 |1|Error|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para importar las entradas del registro desde el archivo denominado AppBkUp.reg, escriba:
+Para importar las entradas del registro desde el archivo llamado CopiaAp. reg, escriba:
 ```
 reg import AppBkUp.reg
 ```

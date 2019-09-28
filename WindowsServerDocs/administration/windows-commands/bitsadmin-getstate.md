@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getstate
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7ed7529fda264efaceb6b4b36e36e728c211f3f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 55be37a6b1b44b81ed9002e5e3b9eb1fd46bd0dc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889626"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381235"
 ---
 # <a name="bitsadmin-getstate"></a>bitsadmin getstate
 
@@ -36,15 +36,15 @@ bitsadmin /GetState <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
 ## <a name="remarks"></a>Comentarios
 
 Los Estados posibles son:
 
-|-----|-----| | EN COLA | El trabajo está esperando para ejecutarse. | | CONECTANDO | BITS es ponerse en contacto con el servidor. | | TRANSFERIR | BITS está transfiriendo datos. | | SUSPENDE | El trabajo está en pausa. | | ERROR | Se produjo un error no recuperable; no se volverá a la transferencia. | | TRANSIENT_ERROR | Se produjo un error recuperable; vuelve a intentar la transferencia cuando expira el intervalo entre reintentos mínimo. | | CONFIRMADO | El trabajo se completó. | | CANCELADO | Se canceló el trabajo. |
+|-----|-----| | EN cola | El trabajo está en espera de ejecutarse. | | CONECTAndo | BITS está poniéndose en contacto con el servidor. | | TRANSFERIR | BITS está transfiriendo datos. | | SUSPENDIDA | El trabajo está en pausa. | | ERROR | Se produjo un error no recuperable. no se volverá a intentar la transferencia. | | TRANSIENT_ERROR | Se ha producido un error recuperable. la transferencia reintenta cuando expira el retraso de reintento mínimo. | | CONFIRMADO | Se completó el trabajo. | | CANCELAdo | Se canceló el trabajo. |
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 En el ejemplo siguiente se recupera el estado del trabajo denominado *myDownloadJob*.
 ```

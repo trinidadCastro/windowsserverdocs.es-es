@@ -1,8 +1,8 @@
 ---
 title: tamaño de bdehdcfg
-description: 'Tema de los comandos de Windows: especifica el tamaño de la partición del sistema cuando se crea una nueva unidad de sistema.'
+description: 'Temas de comandos de Windows: especifica el tamaño de la partición del sistema cuando se crea una nueva unidad del sistema.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d024bb4092f93782300d6afb9053cee1da32629a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6ec42cdb5716c63c7210ea6cfde8ce8884833b45
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817526"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382200"
 ---
-# <a name="bdehdcfg-size"></a>bdehdcfg: size
+# <a name="bdehdcfg-size"></a>bdehdcfg: tamaño
 
 
 
-Especifica el tamaño de la partición del sistema cuando se crea una nueva unidad de sistema. Para obtener un ejemplo de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
+Especifica el tamaño de la partición del sistema cuando se crea una nueva unidad del sistema. Para obtener un ejemplo de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,18 +36,18 @@ bdehdcfg -target {default|unallocated|<DriveLetter> shrink} -size <SizeinMB>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<SizeinMB>|Indica el número de megabytes (MB) que se va a utilizar para la nueva partición.|
+|@no__t 0SizeinMB >|Indica el número de megabytes (MB) que se va a utilizar para la nueva partición.|
 
 ## <a name="remarks"></a>Comentarios
 
 Si no especifica un tamaño, la herramienta utilizará el valor predeterminado de 300 MB. El tamaño mínimo de la unidad del sistema es 100 MB. Si va a almacenar las herramientas de recuperación del sistema u otras herramientas del sistema en la partición del sistema, deberá aumentar el tamaño consiguientemente.
 
 > [!NOTE]
-> El **tamaño** comando no puede combinarse con el **destino** \<letraDeUnidad > **mezcla** comando.
+> El comando **size** no se puede combinar con el comando **target** \<DriveLetter > **Merge** .
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-El ejemplo siguiente se muestra cómo utilizar el **tamaño** comando asignar 500 MB para la unidad del sistema predeterminada.
+En el siguiente ejemplo se muestra el uso del comando **size** para asignar 500 MB a la unidad del sistema predeterminada.
 ```
 bdehdcfg -target default -size 500
 ```
