@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getnotifycmdline
-description: Tema de los comandos de Windows para **getnotifycmdline bitsadmin** -recupera el comando de línea de comandos que se ejecuta cuando el trabajo finaliza la transferencia de datos.
+description: 'Temas de comandos de Windows para **bitsadmin getnotifycmdline** : recupera el comando de línea de comandos que se ejecuta cuando el trabajo finaliza la transferencia de datos.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ca7b2e67c0b5672733a25465fba89d1bd69d07a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b91d2c71ad4bedaac65e23041ca78a70ade99977
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817296"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381489"
 ---
 # <a name="bitsadmin-getnotifycmdline"></a>bitsadmin getnotifycmdline
 
-Recupera el comando de línea de comandos para ejecutar cuando el trabajo finalice la transferencia de datos.
+Recupera el comando de línea de comandos que se debe ejecutar cuando el trabajo finaliza la transferencia de datos.
 
-**BITS 1.2 y versiones anteriores**: No compatible.
+**BITS 1,2 y versiones anteriores**: No compatible.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,11 +36,11 @@ bitsadmin /GetNotifyCmdLine <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-En el ejemplo siguiente se recupera el comando de línea de comandos utilizado por el servicio cuando el trabajo denominado *myDownloadJob* se complete.
+En el ejemplo siguiente se recupera el comando de línea de comandos que usa el servicio cuando se completa el trabajo denominado *myDownloadJob* .
 ```
 C:\>bitsadmin /GetNotifyCmdLine myDownloadJob
 ```

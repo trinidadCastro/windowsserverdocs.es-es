@@ -1,8 +1,8 @@
 ---
 title: recepción de FTP
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5bfd68dcb745ebf7ef239883aa1c5322241b32df
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6ec35a2044945e3d39a2a78d39923de3a56eb18d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438431"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376128"
 ---
-# <a name="ftp-recv"></a>ftp: recv
+# <a name="ftp-recv"></a>FTP: RECV
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Copia un archivo remoto en el equipo local utilizando el tipo de transferencia de archivos actual.   
+Copia un archivo remoto en el equipo local mediante el tipo de transferencia de archivos actual.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 recv <remoteFile> [<LocalFile>]  
@@ -33,23 +33,23 @@ recv <remoteFile> [<LocalFile>]
 
 |   Parámetro   |                   Descripción                    |
 |---------------|--------------------------------------------------|
-| <remoteFile>  |        Especifica el archivo remoto para copiar.        |
-| [<LocalFile>] | Especifica el nombre que se usará en el equipo local. |
+| <remoteFile>  |        Especifica el archivo remoto que se va a copiar.        |
+| [<LocalFile>] | Especifica el nombre que se va a usar en el equipo local. |
 
 ## <a name="remarks"></a>Comentarios  
-- El **recv** comando es idéntico a la **obtener** comando.  
-- Si *archivoLocal* no se especifica, el archivo tendrá el *archivoRemoto* nombre.  
-  ## <a name="BKMK_Examples"></a>Ejemplos  
-  copia **test.txt** en el equipo local utilizando el tipo de transferencia de archivos actual.  
+- El comando **RECV** es idéntico al comando **Get** .  
+- Si no se especifica *archivolocal* , el archivo recibe el nombre de *archivoremoto* .  
+  ## <a name="BKMK_Examples"></a>Example  
+  Copie **Test. txt** en el equipo local con el tipo de transferencia de archivos actual.  
   ```  
   recv test.txt  
   ```  
-  copia **test.txt** en el equipo local como **test1.txt** tipo de transferencia mediante el archivo actual.  
+  Copie **Test. txt** en el equipo local como **Test1. txt** con el tipo de transferencia de archivo actual.  
   ```  
   recv test.txt test1.txt  
   ```  
   ## <a name="additional-references"></a>Referencias adicionales  
-- [ftp: ascii](ftp-ascii.md)  
+- [FTP: ASCII](ftp-ascii.md)  
 - [FTP: binario](ftp-binary.md)  
-- [ftp: get](ftp-get.md)  
+- [FTP: get](ftp-get.md)  
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  

@@ -1,8 +1,8 @@
 ---
 title: bitsadmin Transfer
-description: Tema de los comandos de Windows para **bitsadmin transferencia** -transfiere uno o varios archivos.
+description: 'Temas de comandos de Windows para la **transferencia de bitsadmin** : transfiere uno o varios archivos.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ef29a242a834fae42d1de3994a82aedcf87ec2d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2a12e6e2023c979d5b0c095c1eddd77eb5155d1e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852466"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380355"
 ---
 # <a name="bitsadmin-transfer"></a>bitsadmin Transfer
 
-Transfiere uno o varios archivos. Para transferir varios archivos, especificar varios \<RemoteFileName\>-\<LocalFileName\> pares. Los pares están delimitados por espacios.
+Transfiere uno o varios archivos. Para transferir más de un archivo, especifique varios \<RemoteFileName @ no__t-1 @ no__t-2 @ no__t-3LocalFileName @ no__t-4 pares. Los pares están delimitados por espacios.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,24 +34,24 @@ bitsadmin /Transfer <Name> [<Type>] [/Priority <Job_Priority>] [/ACLFlags <Flags
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Name|El nombre del trabajo. A diferencia de la mayoría de los comandos **nombre** sólo puede ser un nombre y no es un GUID.|
-|Tipo|Opcional: especifique el tipo de trabajo. Use **/descargar** (valor predeterminado) para un trabajo de descarga o **/cargar** para un trabajo de carga.|
-|Prioridad|Opcional: establecer el job_priority en uno de los siguientes valores:</br>: PRIMER PLANO</br>-ALTA</br>: NORMAL</br>-LOW|
-|ACLFlags|Opcional: indica que desea mantener la información de la ACL y el propietario con el archivo que se va a descargar. Por ejemplo, para mantener el propietario y el grupo con el archivo, establecer marcas `OG`. Especifique uno o varios de los siguientes indicadores:</br>-   O: Copiar información de propietario con el archivo.</br>-   G: Copiar información de grupo con el archivo.</br>-D: Copiar información de la DACL con el archivo.</br>-S: Copiar información de la SACL con archivo.|
-|\/DYNAMIC|Configura el trabajo con [ **BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](/windows/desktop/api/bits5_0/ne-bits5_0-bits_job_property_id), lo que reduce los requisitos de servidor.|
-|RemoteFileName|El nombre del archivo cuando se transfieren al servidor.|
-|LocalFileName|El nombre del archivo que reside localmente.|
+|Nombre|Nombre del trabajo. A diferencia de la mayoría de los comandos, **Name** solo puede ser un nombre y no un GUID.|
+|Tipo|Opcional: especifique el tipo de trabajo. Use **/download** (valor predeterminado) para un trabajo de descarga o **/upload** para un trabajo de carga.|
+|Prioridad|Opcional: establezca job_priority en uno de los siguientes valores:</br>-FOREGROUND</br>-ALTO</br>-NORMAL</br>-LOW|
+|ACLFlags|Opcional: indica que desea mantener la información de propietario y ACL con el archivo que se está descargando. Por ejemplo, para mantener el propietario y el grupo con el archivo, establezca Flags en `OG`. Especifique una o varias de las marcas siguientes:</br>ACEPTAR Copie la información del propietario con el archivo.</br>I Copiar información de grupo con el archivo.</br>D Copiar información de DACL con el archivo.</br>SEG Copie la información de SACL con el archivo.|
+|@NO__T 0DYNAMIC|Configura el trabajo con [**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](/windows/desktop/api/bits5_0/ne-bits5_0-bits_job_property_id), lo que relaja los requisitos del lado servidor.|
+|RemoteFileName|Nombre del archivo cuando se transfiere al servidor.|
+|LocalFileName|Nombre del archivo que reside localmente.|
 
 ## <a name="remarks"></a>Comentarios
 
-De forma predeterminada, el servicio BITSAdmin crea un trabajo de descarga que se ejecuta en **NORMAL** prioridad y actualiza la ventana de comandos con la información de progreso hasta que se complete la transferencia o hasta que se produce un error crítico. El servicio completa el trabajo si transfiere todos los archivos correctamente y se cancela el trabajo si se produce un error crítico. El servicio no crea el trabajo si no puede agregar archivos al trabajo o si se especifica un valor no válido para *tipo* o *Job_Priority*. Para transferir varios archivos, especificar varios *RemoteFileName*-*LocalFileName* pares. Los pares están delimitados por espacios.
+De forma predeterminada, el servicio BITSAdmin crea un trabajo de descarga que se ejecuta con prioridad **normal** y actualiza la ventana de comandos con información de progreso hasta que se completa la transferencia o hasta que se produce un error crítico. El servicio completa el trabajo si transfiere correctamente todos los archivos y cancela el trabajo si se produce un error crítico. El servicio no crea el trabajo si no puede Agregar archivos al trabajo o si especifica un valor no válido para el *tipo* o *Job_Priority*. Para transferir más de un archivo, especifique varios pares *RemoteFileName*-*LocalFileName* . Los pares están delimitados por espacios.
 
 > [!NOTE]
-> El comando BITSAdmin continúa ejecutándose si se produce un error transitorio. Para finalizar el comando, presione CTRL+C.
+> El comando BITSAdmin continúa ejecutándose si se produce un error transitorio. Para finalizar el comando, presione CTRL + C.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El siguiente ejemplo se inician con una transferencia del trabajo denominado *myDownloadJob*.
+En el ejemplo siguiente se inicia un trabajo de transferencia con el nombre *myDownloadJob*.
 ```
 C:\>bitsadmin /Transfer myDownloadJob http://prodserver/audio.wma c:\downloads\audio.wma
 ```

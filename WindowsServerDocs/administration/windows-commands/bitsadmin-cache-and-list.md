@@ -1,8 +1,8 @@
 ---
-title: lista y bitsadmin caché
-description: Tema de los comandos de Windows para **bitsadmin caché y lista** -enumera todas las entradas de caché.
+title: memoria caché y lista de bitsadmin
+description: 'Temas de comandos de Windows para **caché de bitsadmin y lista** : enumera todas las entradas de caché.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fc745d71b4022d7bfeca8f8963ec2f226c637b85
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dca3d4f4d2c71c2c7e2065f144d7b1e8e5a600a8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851486"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381960"
 ---
-# <a name="bitsadmin-cache-and-list"></a>lista y bitsadmin caché
+# <a name="bitsadmin-cache-and-list"></a>memoria caché y lista de bitsadmin
 
 
 
-Enumera todas las entradas de caché.
+Muestra todas las entradas de caché.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,9 +32,9 @@ Enumera todas las entradas de caché.
 bitsadmin /Cache /List [/Verbose] 
 ```
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente enumeran todas las entradas de caché en formato detallado.
+En el ejemplo siguiente se enumeran todas las entradas de caché en formato detallado.
 ```
 C:\> bitsadmin /Cache /List /Verbose
 ```

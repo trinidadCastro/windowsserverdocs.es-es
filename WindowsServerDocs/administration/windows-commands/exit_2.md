@@ -1,8 +1,8 @@
 ---
 title: exit
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e599f84389b23e527e3718a620d5fdfefe24edb
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 105bf572c1ebeb37ea59ff8bc5c04121d2442341
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439463"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377351"
 ---
 # <a name="exit"></a>exit
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-se cierra el programa Cmd.exe (el intérprete de comandos) o el script por lotes actual.  
-Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_examples).  
+sale del programa cmd. exe (el intérprete de comandos) o del script por lotes actual.  
+Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).  
 ## <a name="syntax"></a>Sintaxis  
 ```  
 exit [/b] [<exitCode>]  
@@ -34,12 +34,12 @@ exit [/b] [<exitCode>]
 
 | Parámetro  |                                                                                         Descripción                                                                                          |
 |------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     /b     |                                      se cierra la secuencia de comandos por lotes actual en lugar de salir de Cmd.exe. Si se ejecuta desde fuera de un script por lotes, se cierra en Cmd.exe.                                      |
-| <exitCode> | Especifica un valor numérico. Si **/b** se especifica, se establece la variable de entorno ERRORLEVEL a dicho número. Si se abandona **Cmd.exe**, el código de salida se establece en ese número. |
+|     b     |                                      sale del script por lotes actual en lugar de salir de cmd. exe. Si se ejecuta desde fuera de un script por lotes, sale de cmd. exe.                                      |
+| <exitCode> | Especifica un número numérico. Si se especifica **/b** , la variable de entorno ERRORLEVEL se establece en ese número. Si sale de **cmd. exe**, el código de salida del proceso se establece en ese número. |
 |     /?     |                                                                             Muestra la ayuda en el símbolo del sistema.                                                                             |
 
-## <a name="BKMK_examples"></a>Ejemplos  
-Para cerrar el intérprete de comandos Cmd.exe, escriba:  
+## <a name="BKMK_examples"></a>Example  
+Para cerrar el intérprete de comandos, cmd. exe, escriba:  
 ```  
 exit  
 ```  

@@ -1,8 +1,8 @@
 ---
 title: chdir
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db30ab6cbfd4d88aabf736e24535443be23c9b53
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5f7d4753c42ec9f992895b92bea7b901982c6d8f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877106"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379524"
 ---
 # <a name="chdir"></a>chdir
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este comando es el mismo que el **cd** comando.  
-Consulte [cd](cd.md) para la sintaxis y los parámetros.  
+Este comando es igual que el comando **CD** .  
+Vea el [CD](cd.md) para ver la sintaxis y los parámetros.  
 ## <a name="additional-references"></a>Referencias adicionales  
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   

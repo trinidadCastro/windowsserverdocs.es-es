@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin setcustomheaders
-description: Tema de los comandos de Windows para **setcustomheaders bitsadmin** -agregar un encabezado HTTP personalizado a una solicitud GET.
+title: bitsadmin setcustomheaders
+description: Temas de comandos de Windows para **bitsadmin setcustomheaders** -agregar un encabezado HTTP personalizado a una solicitud GET.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d90ac2d23b852ae0c2114e7cd5a9c9e6382ce8c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 45e3a5178df69b84618966ca0fcd9cc1e6d0e449
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853856"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380643"
 ---
-# <a name="bitsadmin-setcustomheaders"></a>Bitsadmin setcustomheaders
+# <a name="bitsadmin-setcustomheaders"></a>bitsadmin setcustomheaders
 
 
 
-Agregar un encabezado HTTP personalizado a una solicitud GET.
+Agregue un encabezado HTTP personalizado a una solicitud GET.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,14 +36,14 @@ bitsadmin /SetCustomHeaders <Job> <Header1> <Header2> <. . .>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
-|Header1 2. . .|Los encabezados personalizados para el trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
+|Header1 Header2 . . .|Los encabezados personalizados para el trabajo|
 
 ## <a name="remarks"></a>Comentarios
 
--   Este modificador se usa para agregar un encabezado HTTP personalizado a una solicitud GET que se envían a un servidor HTTP.
+-   Este modificador se usa para agregar un encabezado HTTP personalizado a una solicitud GET enviada a un servidor HTTP.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 En el ejemplo siguiente se agrega un encabezado HTTP personalizado para el trabajo denominado *myDownloadJob*.
 ```
