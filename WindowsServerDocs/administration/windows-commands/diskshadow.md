@@ -1,8 +1,8 @@
 ---
 title: diskshadow
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,82 +13,82 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b2c5648235a1c856c6aef09621e2381e74d08d70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8d9f34377473608d71ce7753972e5312d9eea0f6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869186"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377772"
 ---
 # <a name="diskshadow"></a>diskshadow
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-DiskShadow.exe es una herramienta que expone la funcionalidad proporcionada por las instantáneas de volumen servicio \(VSS\). De forma predeterminada, diskshadow usa un intérprete de comandos interactivo parecido de diskraid o DiskPart. Además, incorpora un modo que permite ejecutar scripts.  
+DiskShadow. exe es una herramienta que expone la funcionalidad que ofrece el servicio de instantáneas de volumen \(VSS @ no__t-1. De forma predeterminada, DiskShadow usa un intérprete de comandos interactivo similar al de Diskraid o Diskpart. DiskShadow también incluye un modo que admite scripts.  
   
 > [!NOTE]  
-> Pertenencia al grupo Administradores local, o equivalente, es lo mínimo necesario para ejecutar diskshadow.  
+> La pertenencia al grupo local Administradores, o equivalente, es lo mínimo necesario para ejecutar DiskShadow.  
   
-Para obtener ejemplos de cómo utilizar los comandos de diskshadow, consulte [ejemplos](#BKMK_examples).  
+para obtener ejemplos de cómo usar los comandos de DiskShadow, vea [ejemplos](#BKMK_examples).  
   
 ## <a name="syntax"></a>Sintaxis  
-para el modo interactivo, escriba lo siguiente en el símbolo del sistema para iniciar el intérprete de comandos de diskshadow:  
+en el modo interactivo, escriba lo siguiente en el símbolo del sistema para iniciar el intérprete de comandos de DiskShadow:  
   
 ```  
 diskshadow  
 ```  
   
-para el modo de secuencia de comandos, escriba lo siguiente, donde *script.txt* es un archivo de script que contiene los comandos de diskshadow:  
+en modo de script, escriba lo siguiente, donde *script. txt* es un archivo de script que contiene comandos de DiskShadow:  
   
 ```  
 diskshadow -s script.txt  
 ```  
   
 ## <a name="diskshadow-commands"></a>comandos de DiskShadow  
-Puede ejecutar los comandos siguientes en el intérprete de comandos de diskshadow o a través de un archivo de script:  
+Puede ejecutar los siguientes comandos en el intérprete de comandos de DiskShadow o a través de un archivo de script:  
   
 |Parámetro|Descripción|  
 |-------|--------|  
-|[set_2](set_2.md)|Establece el contexto, opciones, el modo detallado y archivo de metadatos para la creación de instantáneas.|  
-|[Simular la restauración](simulate-restore.md)|Comprueba la participación del sistema de escritura en las sesiones de restauración en el equipo sin emitir **PreRestore** o **PostRestore** eventos a los escritores.|  
-|[Cargar metadatos](load-metadata.md)|Carga un archivo .cab de metadatos antes de importar una copia de instantáneas transportables o carga los metadatos del escritor en el caso de una restauración.|  
-|[writer](writer.md)|Comprueba que un sistema de escritura o un componente se incluye o excluye un componente o sistema de escritura de los procedimientos de copia de seguridad y restauración.|  
-|[add_1](add_1.md)|los volúmenes se agrega al conjunto de volúmenes de instantáneas, o agrega alias para el entorno de alias.|  
-|[create_1](create_1.md)|inicia el proceso de creación de la copia de instantáneas, usando la configuración actual de contexto y la opción.|  
-|[exec](exec.md)|ejecuta un archivo en el equipo local.|  
-|[Comenzar la copia de seguridad](begin-backup.md)|Inicia una sesión de copia de seguridad completa.|  
-|[Copia de seguridad final](end-backup.md)|Finaliza una sesión de copia de seguridad completa y problemas de un **Backupcomplete** eventos con el estado de sistema de escritura adecuados, si es necesario.|  
-|[Comenzar la restauración](begin-restore.md)|Inicia una sesión de restauración y problemas de un **PreRestore** eventos a escritores implicados.|  
-|[Restauración de finalización](end-restore.md)|Finaliza una sesión de restauración y problemas de un **PostRestore** eventos a escritores implicados.|  
-|[reset](reset.md)|diskshadow se restablece al estado predeterminado.|  
-|[list](list.md)|Los escritores de listas, las instantáneas o proveedores de instantáneas actualmente registrados que se encuentran en el sistema.|  
-|[eliminar las sombras](delete-shadows.md)|eliminaciones de instantáneas.|  
-|[import](import.md)|Importa una copia de instantáneas transportables de un archivo de metadatos cargados en el sistema.|  
-|[mask](mask.md)|Quita las instantáneas de hardware que se importaron mediante el uso de la **importar** comando.|  
-|[expose](expose.md)|expone una instantánea persistentes como una letra de unidad, un recurso compartido o un punto de montaje.|  
-|[unexpose](unexpose.md)|Unexposes una instantánea que se expone mediante el **exponer** comando.|  
+|[set_2](set_2.md)|Establece el contexto, las opciones, el modo detallado y el archivo de metadatos para crear instantáneas.|  
+|[Simular restauración](simulate-restore.md)|La implicación del escritor de pruebas en las sesiones de restauración del equipo sin emitir eventos de **restauración** o **postrestauración** a escritores.|  
+|[Cargar metadatos](load-metadata.md)|Carga un archivo Metadata. cab antes de importar una instantánea transportable o carga los metadatos del escritor en el caso de una restauración.|  
+|[escritor](writer.md)|Comprueba que un escritor o componente está incluido o excluye un escritor o componente del procedimiento de copia de seguridad o restauración.|  
+|[add_1](add_1.md)|agrega volúmenes al conjunto de volúmenes de los que se van a realizar instantáneas o agrega alias al entorno de alias.|  
+|[create_1](create_1.md)|Inicia el proceso de creación de instantáneas con la configuración de contexto y opciones actual.|  
+|[ejec](exec.md)|Ejecuta un archivo en el equipo local.|  
+|[Iniciar copia de seguridad](begin-backup.md)|inicia una sesión de copia de seguridad completa.|  
+|[Finalizar copia de seguridad](end-backup.md)|Finaliza una sesión de copia de seguridad completa y emite un evento **Backupcomplete** con el estado de escritor adecuado, si es necesario.|  
+|[Iniciar restauración](begin-restore.md)|Inicia una sesión de restauración y emite un evento de **prerestauración** a escritores implicados.|  
+|[Finalizar restauración](end-restore.md)|Finaliza una sesión de restauración y emite un evento **Postrestore** a escritores implicados.|  
+|[determinado](reset.md)|restablece DiskShadow al estado predeterminado.|  
+|[lista](list.md)|enumera escritores, instantáneas o proveedores de instantáneas registrados actualmente en el sistema.|  
+|[eliminar sombras](delete-shadows.md)|Elimina las instantáneas.|  
+|[import](import.md)|importa una instantánea transportable de un archivo de metadatos cargado en el sistema.|  
+|[mask](mask.md)|Quita las instantáneas de hardware que se importaron mediante el comando de **importación** .|  
+|[aprovecha](expose.md)|Expone una instantánea persistente como letra de unidad, recurso compartido o punto de montaje.|  
+|[x:.](unexpose.md)|anula la exposición de una instantánea que se expuso mediante el comando de **exposición** .|  
 |[break_2](break_2.md)|Desasocia un volumen de instantáneas de VSS.|  
-|[revert](revert.md)|Revierte un volumen en una copia de instantáneas especificada.|  
-|[exit_1](exit_1.md)|diskshadow se cierra.|  
+|[revertir](revert.md)|Revierte un volumen a una instantánea especificada.|  
+|[exit_1](exit_1.md)|sale de DiskShadow.|  
   
 ## <a name="remarks"></a>Comentarios  
   
--   como mínimo, sólo **agregar** y **crear** son necesarios para crear una instantánea. Sin embargo, este perderá todo el contexto y la opción de configuración, será una copia de seguridad y solo creará una instantánea con ninguna secuencia de comandos de ejecución de copia de seguridad.  
+-   como mínimo, solo se necesitan **Agregar** y **crear** para crear una instantánea. Sin embargo, esto perderá la configuración de contexto y de opciones, será una copia de seguridad de copia y solo creará una instantánea sin ningún script de ejecución de copia de seguridad.  
   
-## <a name="BKMK_examples"></a>Ejemplos  
-Esto es un ejemplo de secuencia de comandos que va a crear una instantánea de copia de seguridad. Se puede guardar en archivo como script.dsh y ejecutar con diskshadow \/script.dsh s  
+## <a name="BKMK_examples"></a>Example  
+Se trata de una secuencia de comandos de ejemplo que creará una instantánea para la copia de seguridad. Se puede guardar en el archivo como script. DSH y ejecutarse con el script de DiskShadow \/s. DSH  
   
-Se supone lo siguiente:  
+Supongamos lo siguiente:  
   
--   Tiene un directorio existente llamado c:\\diskshadowdata.  
+-   Tiene un directorio existente denominado c: \\diskshadowdata.  
   
 -   El volumen del sistema es C: y el volumen de datos es D:.  
   
--   Tiene un archivo backupscript.cmd en c:\\diskshadowdata.  
+-   Tiene un archivo backupscript. cmd en c: \\diskshadowdata.  
   
--   El archivo backupscript.cmd llevará a cabo la copia de instantáneas datos p: y p: en la unidad de copia de seguridad.  
+-   El archivo backupscript. cmd realizará la copia de los datos de instantáneas p: y q: en la unidad de copia de seguridad.  
   
-Puede escribir estos comandos manualmente o escribirlas en script:  
+Puede escribir estos comandos manualmente o incluirlos en el script:  
   
 ```  
 #diskshadow script file  

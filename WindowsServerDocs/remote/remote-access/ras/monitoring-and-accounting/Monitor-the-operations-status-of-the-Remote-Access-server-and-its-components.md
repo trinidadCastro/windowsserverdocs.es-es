@@ -1,9 +1,9 @@
 ---
 title: Supervisar el estado de las operaciones del servidor de acceso remoto y sus componentes
-description: Este tema forma parte de la Guía de supervisión de acceso remoto y las cuentas en Windows Server 2016.
+description: Este tema forma parte de la guía de supervisión y contabilidad de acceso remoto en Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 077a3a64-2fa3-4994-9711-ec1fbdc081ba
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9ccfd0cd65a3504349dcad3bd7a549ed18eb6279
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: d0ad63ec88a428239a174a0217db94c44ab799bc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281144"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404542"
 ---
 # <a name="monitor-the-operations-status-of-the-remote-access-server-and-its-components"></a>Supervisar el estado de las operaciones del servidor de acceso remoto y sus componentes
 
@@ -25,27 +25,27 @@ ms.locfileid: "67281144"
 
 **Nota:** Windows Server 2012 combina DirectAccess y el servicio de enrutamiento y acceso remoto (RRAS) en un único rol de acceso remoto.  
   
-La consola de administración en el servidor de acceso remoto puede usarse para supervisar su estado de las operaciones.  
+La consola de administración de en el servidor de acceso remoto se puede usar para supervisar el estado de las operaciones.  
   
 > [!NOTE]  
-> Debe ser iniciado sesión como miembro del grupo Admins. del dominio o un miembro del grupo Administradores en cada equipo para completar la tarea descrita en este tema. Si no se puede completar una tarea mientras ha iniciado sesión con una cuenta que sea miembro del grupo Administradores, intente realizar la tarea mientras ha iniciado sesión con una cuenta que sea miembro del grupo Admins. del dominio.  
+> Debe haber iniciado sesión como miembro del grupo Admins. del dominio o como miembro del grupo administradores en cada equipo para completar la tarea que se describe en este tema. Si no puede completar una tarea mientras inicia sesión con una cuenta que sea miembro del grupo administradores, intente realizar la tarea mientras inicia sesión con una cuenta que sea miembro del grupo Admins. del dominio.  
   
 #### <a name="to-monitor-the-remote-access-server-operations-status"></a>Para supervisar el estado de las operaciones del servidor de acceso remoto  
   
 1.  En **Administrador del servidor**, haz clic en **Herramientas** y, a continuación, haz clic en **Administración de acceso remoto**.  
   
-2.  Haga clic en **panel** para navegar a **informes de acceso remoto** en el **consola de administración de acceso remoto**.  
+2.  Haga clic en **Panel** para ir a **informes de acceso remoto** en la **consola de administración de acceso remoto**.  
   
-3.  En el panel supervisión, tenga en cuenta la **estado de las operaciones** mosaico dentro de la **estado del servidor** icono. Este icono muestra el estado de las operaciones de servidor y el estado de todos los componentes del servidor.  
+3.  En el panel supervisión, observe el icono **Estado de las operaciones** en el icono **Estado del servidor** . Este icono muestra el estado de las operaciones del servidor y el estado de todos los componentes del servidor.  
   
-4.  Haga clic en **actualizar** en **tareas** en el panel derecho para volver a cargar el estado de las operaciones. El estado de las operaciones se actualiza automáticamente cada cinco minutos, que es el intervalo de actualización predeterminado. Para cambiar el intervalo de actualización de forma predeterminada, haga clic en **configurar el intervalo de actualización**.  
+4.  Haga clic en **Actualizar** en **tareas** en el panel derecho para recargar el estado de las operaciones. El estado de las operaciones se actualiza automáticamente cada cinco minutos, que es el intervalo de actualización predeterminado. Para cambiar el intervalo de actualización predeterminado, haga clic en **Configurar intervalo de actualización**.  
   
-![Windows PowerShell](../../../media/Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+](../../../media/Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
 > [!NOTE]  
-> El comando de estado de las operaciones de un clúster se incluye como referencia.  
+> El comando para el estado de las operaciones de un clúster se incluye como referencia.  
   
 ```  
 PS> Get-RemoteAccessHealth  

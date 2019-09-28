@@ -2,18 +2,18 @@
 title: Editar propiedades de plantillas de cuotas
 description: En este artículo se describe cómo editar las propiedades de plantillas de cuotas para ampliar los cambios en las cuotas creadas a partir de la plantilla original de la cuota
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 0362b30e16dacb354220c770899195240f3e19ee
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 37719656e107869b97045af98c1a63744e4f6b38
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885786"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403028"
 ---
 # <a name="edit-quota-template-properties"></a>Editar propiedades de plantillas de cuotas
 

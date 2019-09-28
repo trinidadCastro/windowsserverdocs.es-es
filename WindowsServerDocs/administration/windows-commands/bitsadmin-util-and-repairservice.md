@@ -1,8 +1,8 @@
 ---
-title: REPAIRSERVICE y bitsadmin util
-description: Tema de los comandos de Windows para **bitsadmin util y repairservice** -comando utilizado para solucionar los problemas conocidos con distintas versiones del servicio de BITS.
+title: bitsadmin util y repairservice
+description: Tema de comandos de Windows para **bitsadmin util y repairservice** -Command usados para corregir problemas conocidos con diversas versiones de servicio bits.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc5101378a389c865f5753146b711be0d15c6785
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0ab06ac9c784cfa438eb285c28f0e661cf4b8302
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852096"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380277"
 ---
-# <a name="bitsadmin-util-and-repairservice"></a>REPAIRSERVICE y bitsadmin util
+# <a name="bitsadmin-util-and-repairservice"></a>bitsadmin util y repairservice
 
-Si no se puede iniciar BITS, utilice este modificador para solucionar los problemas conocidos con distintas versiones de BITS.
+Si no se inicia BITS, use este modificador para corregir problemas conocidos con diversas versiones de BITS.
 
-**BITSAdmin 1.5 y versiones anterior:** no compatible.
+**BITSAdmin 1,5 y versiones anteriores:** se admite  Not.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -40,17 +40,17 @@ bitsadmin /Util /RepairService [/Force]
 
 ## <a name="remarks"></a>Comentarios
 
-Este modificador se resuelve como la configuración de servicio relacionados con errores y las dependencias de servicios de Windows (por ejemplo, LANManworkstation) y el directorio de red. Este modificador genera un resultado que indica si los problemas que se han resuelto.
+Este modificador resuelve los errores relacionados con la configuración incorrecta del servicio y las dependencias de los servicios de Windows (por ejemplo, LANManworkstation) y el directorio de red. Este modificador genera un resultado que indica si se resolvieron los problemas.
 
 > [!NOTE]
-> Si BITS vuelve a crear el servicio, se puede establecer la cadena de descripción de servicio para inglés en un sistema localizado.
+> Si BITS vuelve a crear el servicio, la cadena de Descripción del servicio se puede establecer en inglés en un sistema localizado.
 
 > [!IMPORTANT]
-> Este comando no se admite en Windows Vista.
+> Este comando no es compatible con Windows Vista.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente repara la configuración del servicio de BITS.
+En el ejemplo siguiente se repara la configuración del servicio BITS.
 ```
 C:\>bitsadmin /Util /RepairService
 ```

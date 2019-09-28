@@ -2,27 +2,27 @@
 ms.assetid: 60fca6b2-f1c0-451f-858f-2f6ab350d220
 title: Interoperabilidad de Desduplicación de datos
 ms.technology: storage-deduplication
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
-ms.openlocfilehash: b82e02b7896c3795ae7470ca03bb8d19a8d5e403
-ms.sourcegitcommit: fe621b72d45d0259bac1d5b9031deed3dcbed29d
+ms.openlocfilehash: fb3c9842f1d698151bffebbe5f77618c8b19b366
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455426"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403198"
 ---
 # <a name="data-deduplication-interoperability"></a>Interoperabilidad de Desduplicación de datos
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server de 2019
+> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2019
 
 ## <a name="supported"></a>Se admite
 
 ### <a name="refs"></a>ReFS
-Se admite la desduplicación de datos a partir de Windows Server 2019. 
+La desduplicación de datos se admite a partir de Windows Server 2019. 
 
 ### <a name="failover-clustering"></a>Clústeres de conmutación por error
 
@@ -64,14 +64,14 @@ Copias de seguridad de Windows Server puede realizar una copia de seguridad "tal
     wbadmin get versions
     ```
 
-    Este Id. de versión de salida será una cadena de fecha y hora, por ejemplo: 08/18/2016-06:22.
+    Este identificador de versión de salida será una cadena de fecha y hora, por ejemplo: 08/18/2016-06:22.
 
 4. Restaure todo el volumen.
     ```PowerShell
     wbadmin start recovery –version:02/16/2012-06:22 -itemtype:Volume  -items:E: -recoveryTarget:E:
     ```
 
-    **--OR--**  
+    **--O BIEN--**  
 
     Restaure una carpeta determinada (en este caso, la carpeta E:\Docs):
     ```PowerShell

@@ -1,8 +1,8 @@
 ---
-title: logman crear cfg
-description: 'Tema de los comandos de Windows para ***- '
+title: Logman crear cfg
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1521ae20091f2c57094fa1c75bd583e517628126
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9a9dffb308c9c5b73777aa2a2b4dd6e0204699ec
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437777"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374588"
 ---
-# <a name="logman-create-cfg"></a>logman crear cfg
+# <a name="logman-create-cfg"></a>Logman crear cfg
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Crear un recopilador de datos de configuración.  
+Cree un recopilador de datos de configuración.  
 
 ## <a name="syntax"></a>Sintaxis  
 ```  
@@ -34,39 +34,39 @@ logman create cfg <[-n] <name>> [options]
 
 |                    Parámetro                     |                                                                               Descripción                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                        /?                        |                                                                    Contextual muestra la Ayuda.                                                                     |
-|                -s <computer name>                |                                                          Ejecutar el comando en el equipo remoto especificado.                                                          |
-|                 -config <value>                  |                                                         Especifica el archivo de configuración que contiene las opciones de comando.                                                         |
+|                        /?                        |                                                                    Muestra la ayuda contextual.                                                                     |
+|                -s <computer name>                |                                                          Ejecute el comando en el equipo remoto especificado.                                                          |
+|                 -config <value>                  |                                                         Especifica el archivo de configuración que contiene opciones de comando.                                                         |
 |                   [-n] <name>                    |                                                                       Nombre del objeto de destino.                                                                        |
-| -f < bin&#124;bincirc&#124;csv&#124;tsv&#124;sql > |                                                            Especifica el formato de registro del recopilador de datos.                                                             |
-|             -[-]u <user [password]>              | Especifica el usuario para la ejecución. Escribir un \* para la contraseña genera una solicitud para la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
-|    -m <[start] [stop] [[start] [stop] [...]]>    |                                                Cambiar inicio manual o detener en lugar de un tiempo de inicio programado.                                                 |
-|                -rf <[[hh:]mm:]ss>                |                                                        Ejecute el recopilador de datos para el período de tiempo especificado.                                                         |
-|        -b < M/d/aaaa ss [AM&#124;PM] >         |                                                              Comenzar a recopilar datos a la hora especificada.                                                               |
-|        -e < M/d/aaaa ss [AM&#124;PM] >         |                                                               Finalizar la recopilación de datos a la hora especificada.                                                                |
-|                -si <[[hh:]mm:]ss>                |                                                 Especifica el intervalo de muestra para recopiladores de datos del contador de rendimiento.                                                  |
-|              -o < ruta de acceso&#124;dsn! registro >              |                                              Especifica que el archivo de registro de salida o el DSN y el registro de nombre del conjunto en una base de datos SQL.                                               |
-|                      -[-]r                       |                                                  Repita el recopilador de datos diariamente a las de inicio especificada y horas de finalización.                                                  |
-|                      -[-]a                       |                                                                     Anexar a un archivo de registro existente.                                                                     |
-|                      -[-] ow                      |                                                                     Sobrescribir un archivo de registro existente.                                                                     |
-|           -[-]v <nnnnnn&#124;mmddhhmm>           |                                                   adjuntar información de control de versiones de archivo al final del nombre del archivo de registro.                                                   |
-|                  -[-] rc <task>                   |                                                         Ejecute el comando especificado cada vez que se cierra el registro.                                                          |
-|                 -max [-] <value>                  |                                                 Tamaño de archivo de registro máximo en MB o el número máximo de registros para los registros SQL.                                                  |
-|              -[-]cnf <[[hh:]mm:]ss>              |     Cuando se especifica el tiempo, cree un nuevo archivo cuando ha transcurrido el tiempo especificado. Cuando no se especifica el tiempo, cree un nuevo archivo cuando se supera el tamaño máximo.     |
-|                        -y                        |                                                             Responda Sí a todas las preguntas sin preguntar.                                                              |
-|                      -[-] ni                      |                                                         Habilitar (-ni) o deshabilitar (-ni) consulta de la interfaz de red.                                                          |
-|             -reg <path [path [...]]>             |                                                                 Especifica los valores del registro para recopilar.                                                                 |
-|            -mgt < consulta [consulta [...]] >            |                                                      Especifica los objetos WMI para recopilar utilizando el lenguaje de consulta SQL.                                                       |
-|             -ftc <path [path [...]]>             |                                                           Especifica la ruta de acceso completa a los archivos para recopilar.                                                            |
+| -f < bin&#124;bincirc&#124;CSV&#124;TSV&#124;SQL > |                                                            Especifica el formato del registro del recopilador de datos.                                                             |
+|             -[-] u < usuario [contraseña] >              | Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
+|    -m < [Start] [STOP] [[Start] [STOP] [...]] >    |                                                cambie a Inicio o detención manual en lugar de a una hora de inicio o de finalización programada.                                                 |
+|                -RF < [[HH:] mm:] SS >                |                                                        Ejecute el recopilador de datos durante el período de tiempo especificado.                                                         |
+|        -b < M/d/YYYY h:mm: SS [AM&#124;PM] >         |                                                              Comienza a recopilar datos en el momento especificado.                                                               |
+|        -e < M/d/YYYY h:mm: SS [AM&#124;PM] >         |                                                               Finaliza la recopilación de datos en el momento especificado.                                                                |
+|                -Si < [[HH:] mm:] SS >                |                                                 Especifica el intervalo de ejemplo para los recopiladores de datos del contador de rendimiento.                                                  |
+|              -o < path&#124;DSN! log >              |                                              Especifica el archivo de registro de salida o el DSN y el nombre del conjunto de registros en una base de datos SQL.                                               |
+|                      -[-] r                       |                                                  Repetir el recopilador de datos diariamente en las horas de inicio y finalización especificadas.                                                  |
+|                      -[-] a                       |                                                                     anexar a un archivo de registro existente.                                                                     |
+|                      -[-] permitir                      |                                                                     Sobrescribir un archivo de registro existente.                                                                     |
+|           -[-] v < nnnnnn&#124;mmddHHMM >           |                                                   Adjunte información de versión del archivo al final del nombre del archivo de registro.                                                   |
+|                  -[-] RC <task>                   |                                                         Ejecute el comando especificado cada vez que se cierre el registro.                                                          |
+|                 -[-] máx. <value>                  |                                                 Tamaño máximo del archivo de registro en MB o número máximo de registros para los registros de SQL.                                                  |
+|              -[-] CNF < [[HH:] mm:] SS >              |     Cuando se especifica Time, cree un nuevo archivo cuando haya transcurrido el tiempo especificado. Si no se especifica Time, cree un archivo nuevo cuando se supere el tamaño máximo.     |
+|                        -y                        |                                                             Responda sí a todas las preguntas sin preguntar.                                                              |
+|                      -[-] ni                      |                                                         Habilitar (-ni) o deshabilitar la consulta de interfaz de red (-ni).                                                          |
+|             -reg < ruta de acceso [ruta de acceso [...]] >             |                                                                 Especifica los valores del registro que se van a recopilar.                                                                 |
+|            -ad< consulta [consulta [...]] >            |                                                      Especifica los objetos WMI que se van a recopilar mediante el lenguaje de consulta SQL.                                                       |
+|             -FTC < ruta de acceso [ruta de acceso [...]] >             |                                                           Especifica la ruta de acceso completa a los archivos que se van a recopilar.                                                            |
 
 ## <a name="remarks"></a>Comentarios  
-Donde verá [-], un - extra niega la opción.  
-## <a name="BKMK_examples"></a>Ejemplos  
-El siguiente comando crea un recopilador de datos de configuración denominado cfg_log mediante la clave del Registro HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\\.  
+Donde [-] aparece en la lista, un archivo extra niega la opción.  
+## <a name="BKMK_examples"></a>Example  
+El siguiente comando crea un recopilador de datos de configuración denominado cfg_log mediante la clave del registro HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion @ no__t-0.  
 ```  
 logman create cfg cfg_log -reg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\\"  
 ```  
-El siguiente comando crea un recopilador de datos de configuración llamado cfg_log que registra todos los objetos WMI de root\wmi en la columna de base de datos MSNdis_Vendordriverversion.  
+El siguiente comando crea un recopilador de datos de configuración denominado cfg_log que registra todos los objetos WMI de root\wmi en la columna de base de datos MSNdis_Vendordriverversion.  
 ```  
 logman create cfg cfg_log -mgt "root\wmi:select * FROM MSNdis_Vendordriverversion"  
 ```  

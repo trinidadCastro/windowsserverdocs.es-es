@@ -1,8 +1,8 @@
 ---
 title: nslookup set timeout
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f6c8863d0a9330fd3a8499b0e6dbc802bd95022
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 32fcfcaeccb6599e9aaca21f9c085bb00857479c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436511"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372756"
 ---
 # <a name="nslookup-set-timeout"></a>nslookup set timeout
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-cambia el número de segundos que espera una respuesta a una solicitud de búsqueda inicial.
+cambia el número inicial de segundos de espera para una respuesta a una solicitud de búsqueda.
 ## <a name="syntax"></a>Sintaxis
 ```
 set timeout=<Number>
@@ -33,16 +33,16 @@ set timeout=<Number>
 
 |    Parámetro    |                                           Descripción                                            |
 |-----------------|--------------------------------------------------------------------------------------------------|
-|    <Number>     | Especifica el número de segundos que esperar una respuesta. El número predeterminado de segundos de espera es 5. |
-| {help &#124; ?} |                      Muestra un resumen breve de **nslookup** subcomandos.                       |
+|    <Number>     | Especifica el número de segundos que se va a esperar una respuesta. El número predeterminado de segundos de espera es 5. |
+| {ayuda &#124; ?} |                      Muestra un breve resumen de los subcomandos de **nslookup** .                       |
 
 ## <a name="remarks"></a>Comentarios
-- Cuando no se recibe una respuesta a una solicitud dentro del período de tiempo especificado, se duplica el tiempo de espera y se volverá a enviar la solicitud. Puede usar el **conjunto reintento** comandos para controlar el número de reintentos.
-  ## <a name="BKMK_examples"></a>Ejemplos
-  El ejemplo siguiente establece el tiempo de espera para obtener una respuesta a 2 segundos:
+- Cuando no se recibe una respuesta a una solicitud dentro del período de tiempo especificado, se duplica el tiempo de espera y se envía de nuevo la solicitud. Puede usar el comando **establecer reintento** para controlar el número de reintentos.
+  ## <a name="BKMK_examples"></a>Example
+  En el ejemplo siguiente se establece el tiempo de espera para obtener una respuesta a 2 segundos:
   ```
   set timeout=2
   ```
   ## <a name="additional-references"></a>Referencias adicionales
   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-  [nslookup establece reintento](nslookup-set-retry.md)
+  [nslookup establecer reintento](nslookup-set-retry.md)

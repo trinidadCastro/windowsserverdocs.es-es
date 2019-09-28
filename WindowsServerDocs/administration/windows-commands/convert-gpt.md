@@ -1,8 +1,8 @@
 ---
 title: convert gpt
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 433e30efeecec4e4ec51d67c40c14cacf986d12e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9a6392cbcff618c642b9d0f168fe555e8be9e759
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434224"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379095"
 ---
 # <a name="convert-gpt"></a>convert gpt
 
 
 
-Convierte un disco básico vacío con el estilo de partición (MBR) registro de arranque maestro en un disco básico con el estilo de particiones GUID (GPT) de la tabla de partición.
+Convierte un disco básico vacío con el estilo de partición de registro de arranque maestro (MBR) en un disco básico con el estilo de partición de tabla de particiones GUID (GPT).
 
 Para obtener instrucciones sobre cómo usar este comando, consulte [cambiar un disco de registro de arranque maestro a un disco de tabla de particiones GUID](https://go.microsoft.com/fwlink/?LinkId=207049) (https://go.microsoft.com/fwlink/?LinkId=207049).
 
@@ -38,18 +38,18 @@ convert gpt [noerr]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|noerr|sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.|
+|Noerr|Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
 
 ## <a name="remarks"></a>Comentarios
 
 > [!IMPORTANT]
-> El disco debe estar vacío para poder convertirlo en un disco GPT. Realizar una copia de seguridad de los datos y, a continuación, elimine todas las particiones o volúmenes antes de convertir el disco.
-> -   El tamaño de disco mínimo necesario para la conversión a GPT es 128 megabytes.
-> -   Debe seleccionarse un disco MBR básico para que esta operación se realice correctamente. Use la **seleccione disco** comando para seleccionar un disco básico y desplace el foco a ella.
+> El disco debe estar vacío para poder convertirlo en un disco GPT. Realice una copia de seguridad de los datos y, a continuación, elimine todas las particiones o volúmenes antes de convertir el disco.
+> -   El tamaño de disco mínimo necesario para la conversión a GPT es de 128 megabytes.
+> -   Se debe seleccionar un disco MBR básico para que esta operación se realice correctamente. Use el comando **Seleccionar disco** para seleccionar un disco básico y desplazar el foco a él.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para convertir un disco básico de estilo de partición MBR al estilo de partición GPT, escriba:
+Para convertir un disco básico de estilo de partición MBR a estilo de partición GPT, escriba:
 ```
 convert gpt
 ```

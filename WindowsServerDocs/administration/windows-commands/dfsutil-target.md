@@ -1,7 +1,7 @@
 ---
-title: Dfsutil destino
+title: Destino Dfsutil
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,17 +13,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f45baa5af277c2538f4efe26bc3dc102e2e85c1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 82b2022c607999a4f19b0258ffb0b7759189d918
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849216"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378016"
 ---
-# <a name="dfsutil-target"></a>Dfsutil destino
+# <a name="dfsutil-target"></a>Destino Dfsutil
 
 
 
-## <a name="this-topic-is-no-longer-available"></a>En este tema ya no está disponible
+## <a name="this-topic-is-no-longer-available"></a>Este tema ya no está disponible
 
-Lo sentimos, el tema solicitado ya no está disponible.
+Lo sentimos, el tema que ha solicitado ya no está disponible.

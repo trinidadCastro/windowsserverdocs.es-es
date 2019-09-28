@@ -1,8 +1,8 @@
 ---
 title: bootcfg debug
-description: 'Tema de los comandos de Windows para **bootcfg depuración** : agrega o cambia la configuración de depuración para una entrada de sistema operativo especificado.'
+description: 'Temas de comandos de Windows para la **depuración Bootcfg** : agrega o cambia la configuración de depuración de una entrada de sistema operativo especificada.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44a1145384a62d30f055cb48fd7ed6adccd2c69b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f6659cf2bfdf83b1b2fe6f6c811365775526768a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434823"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380054"
 ---
 # <a name="bootcfg-debug"></a>bootcfg debug
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Agrega o cambia la configuración de depuración para una entrada de sistema operativo especificado.
+agrega o cambia la configuración de depuración de una entrada de sistema operativo especificada.
 
 ## <a name="syntax"></a>Sintaxis
 ```
@@ -34,19 +34,19 @@ bootcfg /debug {ON | OFF | edit}[/s <computer> [/u <Domain>\<User> /p <Password>
 
 |                           Parámetro                           |                                                                                                                                                                                                                    Descripción                                                                                                                                                                                                                    |
 |---------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                  {ON &#124; OFF&#124; edit}                   | Especifica el valor para la depuración.<br /><br />**ON** -habilita la compatibilidad con la depuración remota agregando la opción/debug a especificado <OSEntryLineNum>.<br /><br />**DESACTIVAR** -deshabilita la compatibilidad con la depuración remota mediante la eliminación de la opción/debug especificado <OSEntryLineNum>.<br /><br />**Editar** -permite la configuración de velocidad de cambios en baudios y el puerto cambiando los valores asociados con la opción/debug para el elemento especificado <OSEntryLineNum>. |
-|                         /s <computer>                         |                                                                                                                                                                Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local.                                                                                                                                                                 |
-|                      /u <Domain>\\<User>                      |                                                                                                                       Ejecuta el comando con los permisos de cuenta del usuario especificado por <User> o <Domain> \\ <User>. El valor predeterminado es los permisos de la sesión de usuario en el equipo que emite el comando actual.                                                                                                                        |
-|                         /p <Password>                         |                                                                                                                                                                               Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.                                                                                                                                                                               |
-|       /port {COM1 &#124; COM2 &#124; COM3 &#124; COM4}        |                                                                                                                                                                Especifica el puerto COM que se usará para la depuración. No utilice el **/puerto** parámetro si la depuración se va a deshabilitar.                                                                                                                                                                |
-| /baud {9600&#124; 19200&#124; 38400&#124; 57600&#124; 115200} |                                                                                                                                                               Especifica la velocidad en baudios que se usará para la depuración. No utilice el **/baud** parámetro si la depuración se va a deshabilitar.                                                                                                                                                                |
-|                     / Id <OSEntryLineNum>                      |                                                                                                               Especifica el número de línea de entrada de sistema operativo en la sección [operating systems] del archivo Boot.ini a la que se agregan las opciones de depuración. La primera línea después de encabezado de sección de la sección [operating systems] es 1.                                                                                                                |
+|                  {ON &#124; OFF&#124; Edit}                   | Especifica el valor para la depuración.<br /><br />**On** : habilita la compatibilidad con la depuración remota agregando la opción/debug al @no__t especificado-1.<br /><br />**OFF** : deshabilita la compatibilidad con la depuración remota quitando la opción/debug del <OSEntryLineNum> especificado.<br /><br />**Editar** : permite realizar cambios en la configuración de velocidad de puerto y baudios cambiando los valores asociados a la opción/debug para el <OSEntryLineNum> especificado. |
+|                         /s <computer>                         |                                                                                                                                                                Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.                                                                                                                                                                 |
+|                      /u <Domain> @ no__t-1 @ no__t-2                      |                                                                                                                       Ejecuta el comando con los permisos de cuenta del usuario especificado por <User> o <Domain> @ no__t-2 @ no__t-3. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando.                                                                                                                        |
+|                         /p <Password>                         |                                                                                                                                                                               Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                                                                                                                               |
+|       /Port {COM1 &#124; COM2 &#124; COM3 &#124; COM3 COM4}        |                                                                                                                                                                Especifica el puerto COM que se va a utilizar para la depuración. No use el parámetro **/Port** si se deshabilita la depuración.                                                                                                                                                                |
+| /Baud {9600&#124; 19200&#124; 38400&#124; 57600&#124; 115200} |                                                                                                                                                               Especifica la velocidad en baudios que se va a utilizar para la depuración. No use el parámetro **/Baud** si se deshabilita la depuración.                                                                                                                                                                |
+|                     /ID <OSEntryLineNum>                      |                                                                                                               Especifica el número de línea de entrada del sistema operativo en la sección [operating systems] del archivo boot. ini al que se agregan las opciones de depuración. La primera línea después del encabezado de la sección [operating systems] es 1.                                                                                                                |
 |                              /?                               |                                                                                                                                                                                                       Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                                                        |
 
 ##### <a name="remarks"></a>Comentarios
-- Si el puerto de depuración 1394 es necesario, utilice [bootcfg dbg1394](bootcfg-dbg1394.md).
-  ## <a name="BKMK_examples"></a>Ejemplos
-  Los ejemplos siguientes muestran cómo puede usar el **/Debug bootcfg**comando:
+- Si se requiere la depuración de Puerto 1394, use [bootcfg dbg1394](bootcfg-dbg1394.md).
+  ## <a name="BKMK_examples"></a>Example
+  En los siguientes ejemplos se muestra cómo se puede usar el comando **bootcfg/Debug**:
   ```
   bootcfg /debug on /port com1 /id 2 
   bootcfg /debug edit /port com2 /baud 19200 /id 2 

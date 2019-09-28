@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setcredentials
-description: Tema de los comandos de Windows para **bitsadmin setcredentials** -agrega credenciales a un trabajo.
+description: En el tema comandos de Windows para **bitsadmin SetCredentials** , se agregan credenciales a un trabajo.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 923dcff7d268d40b72db3254e2a97c808c7c7253
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 70ac9a01a2e713b5a2fb881f327a52552a6bbec6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877396"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380725"
 ---
 # <a name="bitsadmin-setcredentials"></a>bitsadmin setcredentials
 
 Agrega credenciales a un trabajo.
 
-**BITS 1.2 y versiones anteriores**: No compatible.
+**BITS 1,2 y versiones anteriores**: No compatible.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,15 +36,15 @@ bitsadmin /SetCredentials <Job> <Target> <Scheme> <Username> <Password>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 |Destino|SERVIDOR o PROXY|
-|Scheme|es uno de los siguientes:</br>-BÁSICOS: esquema de autenticación en el que el nombre de usuario y la contraseña se envían en texto sin cifrar en el servidor o proxy.</br>-IMPLÍCITA, un esquema de autenticación de desafío / respuesta que usa una cadena de datos especificado por el servidor para el desafío.</br>-NTLM, un esquema de autenticación de desafío / respuesta que utiliza las credenciales del usuario para la autenticación en un entorno de red de Windows.</br>-NEGOTIATE, también conocido como el protocolo Simple y protegida de negociación (Snego) es un esquema de autenticación de desafío / respuesta que negocia con el servidor o proxy para determinar qué esquema utilizar para la autenticación. Algunos ejemplos son el protocolo Kerberos y NTLM.</br>-PASSPORT, un servicio de autenticación centralizado proporcionado por Microsoft que ofrece un inicio de sesión único para los sitios miembro.|
+|regímenes|es uno de los siguientes:</br>-BASIC: esquema de autenticación en el que el nombre de usuario y la contraseña se envían en texto no cifrado al servidor o proxy.</br>-DIGEST: un esquema de autenticación de desafío-respuesta que usa una cadena de datos especificada por el servidor para el desafío.</br>-NTLM: un esquema de autenticación de desafío-respuesta que usa las credenciales del usuario para la autenticación en un entorno de red de Windows.</br>-NEGOTIATE, también conocido como el protocolo de negociación simple y protegido (Snego) es un esquema de autenticación de desafío-respuesta que negocia con el servidor o proxy para determinar el esquema que se va a utilizar para la autenticación. Algunos ejemplos son el protocolo Kerberos y NTLM.</br>-PASSPORT: servicio de autenticación centralizado proporcionado por Microsoft que ofrece un inicio de sesión único para los sitios miembro.|
 |Nombre de usuario|El nombre de las credenciales proporcionadas|
-|Contraseña|La contraseña asociada con el proporcionado *nombre de usuario*|
+|Contraseña|La contraseña asociada al nombre de *usuario* proporcionado.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Las siguientes credenciales de Adds de ejemplo para el trabajo denominado *myDownloadJob*.
+En el ejemplo siguiente se agregan credenciales al trabajo denominado *myDownloadJob*.
 ```
 C:\>bitsadmin /RemoveCredentials myDownloadJob SERVER BASIC Edward Password20
 ```

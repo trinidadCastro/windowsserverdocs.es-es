@@ -1,8 +1,8 @@
 ---
-title: Disco de atributos
-description: Tema de los comandos de Windows para **disco atributos** -muestra, Establece o borra los atributos de un disco.
+title: disco de atributos
+description: 'Temas de comandos de Windows para el **disco de atributos** : muestra, establece o borra los atributos de un disco.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7cacc2fb6b47d095f5e452ca470c89f228949594
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 415125208b13d82adeed736107f59fda9489a953
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890356"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382571"
 ---
-# <a name="attributes-disk"></a>Disco de atributos
+# <a name="attributes-disk"></a>disco de atributos
 
 
 
-Muestra, Establece o borra los atributos de un disco.
+Muestra, establece o borra los atributos de un disco.
 
 > [!IMPORTANT]
 > Este parámetro no está disponible en ninguna edición de Windows Vista.
@@ -40,16 +40,16 @@ attributes disk [{set | clear}] [readonly] [noerr]
 |Parámetro|Descripción|
 |---------|-----------|
 |set|Establece el atributo especificado del disco con el foco.|
-|clear|Borra el atributo especificado del disco con el foco.|
+|clear|Borra el atributo especificado del disco que tiene el foco.|
 |ReadOnly|Especifica que el disco es de solo lectura.|
-|noerr|sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.|
+|Noerr|Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Cuando **disco atributos** es usa para mostrar los atributos actuales de un disco, el atributo de disco de inicio que denota el disco que se usa para iniciar el equipo. Para un reflejo dinámico, se muestra para el disco que contiene el complejo de arranque del volumen de arranque.
--   Debe seleccionarse un disco para el **disco atributos** comando se ejecute correctamente. Use la **seleccione disco** comando para seleccionar un disco y cambiar el foco a ella.
+-   Cuando se utiliza el **disco de atributos** para mostrar los atributos actuales de un disco, el atributo disco de inicio denota el disco que se usa para iniciar el equipo. Para un reflejo dinámico, se muestra para el disco que contiene el Plex de arranque del volumen de arranque.
+-   Se debe seleccionar un disco para que el comando de **disco de atributos** se ejecute correctamente. Use el comando **Seleccionar disco** para seleccionar un disco y desplazar el foco a él.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para ver los atributos del disco seleccionado, escriba:
 ```

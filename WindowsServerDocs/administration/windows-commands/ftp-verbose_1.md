@@ -1,8 +1,8 @@
 ---
-title: ftp verbose_1
-description: 'Tema de los comandos de Windows para ***- '
+title: verbose_1 FTP
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 062a6399aa3fc8de5bc759b821c1b66de9c70ae9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 93088b29d174cfbe13f243b6fe4422d37419da39
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882076"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375833"
 ---
-# <a name="ftp-verbose1"></a>ftp: verbose_1
+# <a name="ftp-verbose_1"></a>FTP: verbose_1
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Activa o desactiva **detallado** modo.   
+Alterna el modo **detallado** .   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 verbose  
@@ -32,9 +32,9 @@ verbose
 ### <a name="parameters"></a>Parámetros  
 ninguno  
 ## <a name="remarks"></a>Comentarios  
-De forma predeterminada, **detallado** está activado.  Cuando **detallado** está activado, todos **ftp** se muestran las respuestas.  Cuando se completa una transferencia de archivos, también se muestran las estadísticas relativas a la eficacia de la transferencia.  
-## <a name="BKMK_Examples"></a>Ejemplos  
-Alternar **detallado** activar y desactivar el modo.  
+De forma predeterminada, la opción **verbose** está activada.  Cuando **verbose** está activado, se muestran todas las respuestas **FTP** .  Cuando se completa una transferencia de archivos, también se muestran las estadísticas sobre la eficacia de la transferencia.  
+## <a name="BKMK_Examples"></a>Example  
+Activar y desactivar el modo **detallado** .  
 ```  
 verbose  
 ```  

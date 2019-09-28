@@ -1,8 +1,8 @@
 ---
-title: versión y bitsadmin util
-description: Tema de los comandos de Windows para **bitsadmin util y versión** -muestra la versión del servicio BITS.
+title: versión y versión de bitsadmin
+description: Windows Commands topic for **bitsadmin util and version** -muestra la versión del servicio bits.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e768ec5ae43fc17c480b9deede698cca01c6291
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 495ef17bbf6f39f20f6729b64de4b4bec0f9a3c2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882876"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380198"
 ---
-# <a name="bitsadmin-util-and-version"></a>versión y bitsadmin util
+# <a name="bitsadmin-util-and-version"></a>versión y versión de bitsadmin
 
-Muestra la versión del servicio de BITS (por ejemplo, 2.0).
+Muestra la versión del servicio BITS (por ejemplo, 2,0).
 
-**BITSAdmin 1.5 y versiones anterior**: No compatible.
+**BITSAdmin 1,5 y versiones anteriores**: No compatible.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,14 +34,14 @@ bitsadmin /Util /Version [/Verbose]
 
 ## <a name="remarks"></a>Comentarios
 
-El **detallado** conmutador realiza lo siguiente:
--   Muestra la versión del archivo para cada DLL relacionada de BITS
--   Comprueba que se puede iniciar el servicio BITS.
--   Muestra los valores de directiva de grupo de BITS (sólo Windows Vista)
+El modificador **verbose** realiza lo siguiente:
+-   Muestra la versión del archivo para cada archivo DLL relacionado con BITS
+-   Comprueba que se puede iniciar el servicio BITS
+-   Muestra los valores de directiva de grupo BITS (solo Windows Vista)
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El siguiente ejemplo la versión del servicio BITS.
+En el siguiente ejemplo se trata de la versión del servicio BITS.
 ```
 C:\>bitsadmin /Util /Version
 ```

@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin elementos del mismo nivel y clear
-description: Tema de los comandos de Windows para **bitsadmin homólogos y desactive** -borra la lista del mismo nivel.
+title: bitsadmin Peers y Clear
+description: En el tema comandos de Windows para **bitsadmin del mismo nivel y borrar** la lista del mismo nivel.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 19e14078dab5471dad78b4198cd39c3a547339e2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 253b7ce370a942b30479936a5ee84aaea9c950e7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873016"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381000"
 ---
-# <a name="bitsadmin-peers-and-clear"></a>Bitsadmin elementos del mismo nivel y clear
+# <a name="bitsadmin-peers-and-clear"></a>bitsadmin Peers y Clear
 
 
 
-Borra la lista del mismo nivel.
+Borra la lista de elementos del mismo nivel.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,9 +32,9 @@ Borra la lista del mismo nivel.
 bitsadmin /Peers /Clear 
 ```
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-En el ejemplo siguiente, se borra la lista del mismo nivel.
+En el siguiente ejemplo se borra la lista del mismo nivel.
 ```
 C:\>bitsadmin /Peers /Clear
 ```

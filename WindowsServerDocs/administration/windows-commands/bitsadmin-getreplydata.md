@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getreplydata
-description: Tema de los comandos de Windows para **getreplydata bitsadmin** -recupera los datos de respuesta del servidor en formato hexadecimal.
+description: En el tema comandos de Windows para **bitsadmin getreplydata** se recuperan los datos de respuesta del servidor en formato hexadecimal.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78d70a44d6881568c8d92db145fdf22a260ee8af
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7ebd3ee77e5d442467f49bb209c560f089f2271b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883826"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381277"
 ---
 # <a name="bitsadmin-getreplydata"></a>bitsadmin getreplydata
 
 Recupera los datos de respuesta del servidor en formato hexadecimal.
 
-**BITS 1.2 y versiones anteriores**: No compatible.
+**BITS 1,2 y versiones anteriores**: No compatible.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,15 +36,15 @@ bitsadmin /GetReplyData <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
 ## <a name="remarks"></a>Comentarios
 
-Válido solo en los trabajos de respuesta de carga.
+Válido solo para trabajos de carga y respuesta.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente recupera los datos de respuesta del trabajo denominado *myDownloadJob*.
+En el ejemplo siguiente se recuperan los datos de respuesta del trabajo denominado *myDownloadJob*.
 ```
 C:\>bitsadmin /GetReplyData myDownloadJob
 ```

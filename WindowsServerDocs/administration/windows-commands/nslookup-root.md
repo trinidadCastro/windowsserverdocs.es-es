@@ -1,8 +1,8 @@
 ---
 title: nslookup root
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47a26be99a5eee510970d3eee6b486331a98b159
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 3eb3375df3a109685fc8dc5d23f0c5008339d09e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436899"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373391"
 ---
 # <a name="nslookup-root"></a>nslookup root
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-cambia el servidor predeterminado en el servidor para la raíz del espacio de nombre de dominio del sistema de nombres de dominio (DNS).
+cambia el servidor predeterminado al servidor para la raíz del espacio de nombres de dominio del sistema de nombres de dominio (DNS).
 ## <a name="syntax"></a>Sintaxis
 ```
 root 
@@ -33,10 +33,10 @@ root
 
 |    Parámetro    |                      Descripción                      |
 |-----------------|-------------------------------------------------------|
-| {help &#124; ?} | Muestra un resumen breve de **nslookup** subcomandos. |
+| {ayuda &#124; ?} | Muestra un breve resumen de los subcomandos de **nslookup** . |
 
 ## <a name="remarks"></a>Comentarios
-- Actualmente, se usa el servidor de nombres ns.nic.ddn.mil. Este comando es un sinónimo de lserver ns.nic.ddn.mil. Puede cambiar el nombre del servidor de raíz con el **conjunto raíz** comando.
+- Actualmente, se usa el servidor de nombres ns.nic.ddn.mil. Este comando es un sinónimo de lserver ns.nic.ddn.mil. Puede cambiar el nombre del servidor raíz con el comando **establecer raíz** .
   ## <a name="additional-references"></a>Referencias adicionales
   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-  [nslookup establece raíz](nslookup-set-root.md)
+  [nslookup establecer raíz](nslookup-set-root.md)

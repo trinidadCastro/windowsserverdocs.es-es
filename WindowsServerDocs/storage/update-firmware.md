@@ -1,22 +1,22 @@
 ---
 ms.assetid: e5945bae-4a33-487c-a019-92a69db8cf6c
-title: Actualización del firmware de la unidad en Windows Server 2016
-ms.prod: windows-server-threshold
+title: Actualización del firmware de la unidad
+ms.prod: windows-server
 ms.author: toklima
 ms.manager: dmoss
 ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 50291bd4da05d9c2736c84443b444b9a43f46344
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2f0530101bb7d597d2d95c26648aad65d62b69ca
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884786"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365874"
 ---
-# <a name="updating-drive-firmware-in-windows-server-2016"></a>Actualización del firmware de la unidad en Windows Server 2016
->Se aplica a: Windows 10, Windows Server (canal semianual), Windows Server 2016
+# <a name="updating-drive-firmware"></a>Actualización del firmware de la unidad
+>Se aplica a: Windows Server 2019, Windows Server 2016 y Windows 10
 
 La actualización del firmware para unidades ha sido tradicionalmente una tarea compleja con posibles tiempos de inactividad. Esa es la razón por la que estamos realizando mejoras en Espacios de almacenamiento, Windows Server y Windows 10, versión 1703 y versiones posteriores. Si tienes unidades que admitan el nuevo mecanismo de actualización de firmware incluido en Windows, puedes actualizar el firmware de la unidad de las unidades en producción sin tiempo de inactividad. Sin embargo, si vas a actualizar el firmware de una unidad de producción, asegúrate de leer nuestras sugerencias sobre cómo minimizar el riesgo al usar esta nueva funcionalidad de gran capacidad.
 
@@ -30,11 +30,11 @@ Para usar Windows Server para actualizar el firmware de la unidad, debe tener un
 Para obtener información sobre si su hardware admite que Windows actualice el firmware de la unidad, póngase en contacto con su proveedor de soluciones.
 A continuación se enumeran vínculos a los distintos requisitos:
 
--   SATA: [Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) : en el **[Si implementa\] Firmware descarga y activación** sección
+-   SAS [Device. Storage. HD. SATA](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) : en la sección **[IF implemented @ No__t-2 firmware download & Activate**
     
--   SAS: [Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) : en el **[Si implementa\] Firmware descarga y activación** sección
+-   ASOCIACIONES [Device. Storage. HD. SAS](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) : en la sección **[IF implemented @ No__t-2 firmware download & Activate**
 
--   NVMe: [Device.Storage.ControllerDrive.NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) : en las secciones **5.7** y **5.8**.
+-   NVMe [Device. Storage. ControllerDrive. NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) : en las secciones **5,7** y **5,8**.
 
 ## <a name="powershell-cmdlets"></a>Cmdlets de PowerShell
 
@@ -164,7 +164,7 @@ $NewDoc = Get-Content <Path> | Out-String
 $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document" -Value $NewDoc
 ```
 
-Si desea ver el servicio de mantenimiento en acción y obtener más información sobre su mecanismo de puesta en servicio, eche un vistazo a este vídeo: https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
+Si desea ver el Servicio de mantenimiento en acción y obtener más información sobre su mecanismo de implementación, consulte este vídeo: https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
 ## <a name="frequently-asked-questions"></a>Preguntas frecuentes
 
@@ -195,7 +195,7 @@ En Windows Server 2016 con el Servicio de mantenimiento implementado en Espacios
 
 ### <a name="what-happens-if-the-update-fails"></a>¿Qué ocurre si se produce un error en la actualización?
 
-La actualización podría producir un error por diversos motivos, algunos de ellos son: (1) la unidad no es compatible con los comandos correctos para Windows actualizar su firmware. En este caso, la nueva imagen de firmware nunca se activa y la unidad sigue funcionando con la imagen anterior. (2) La imagen no se puede descargar en esta unidad ni aplicar a ella (error de coincidencia de versiones, imagen dañada, etc.). En este caso, la unidad provoca un error en el comando Activate. De nuevo, la imagen de firmware anterior seguirá funcionando.
+Se puede producir un error en la actualización por varias razones, algunas de ellas son: 1) la unidad no es compatible con los comandos correctos para que Windows actualice su firmware. En este caso, la nueva imagen de firmware nunca se activa y la unidad sigue funcionando con la imagen anterior. (2) La imagen no se puede descargar en esta unidad ni aplicar a ella (error de coincidencia de versiones, imagen dañada, etc.). En este caso, la unidad provoca un error en el comando Activate. De nuevo, la imagen de firmware anterior seguirá funcionando.
 
 Si la unidad no responde después de una actualización de firmware, probablemente está experimentando un error en el propio firmware de la unidad. Pruebe todas las actualizaciones de firmware en un entorno de laboratorio antes de ponerlas en producción. Puede que la única corrección sea reemplazar la unidad.
 

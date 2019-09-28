@@ -1,8 +1,8 @@
 ---
 title: prnjobs
-description: Obtenga información sobre cómo administrar los trabajos de impresión desde la línea de comandos.
+description: Obtenga información acerca de cómo administrar los trabajos de impresión desde la línea de comandos.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5e9e71a21acac73aa27e8a936360c6a1e9f9b754
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c4fb9be9545274bbbf33926042f7a4deec5ceb05
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436166"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372099"
 ---
 # <a name="prnjobs"></a>prnjobs
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-pone en pausa, se reanuda, se cancela y enumera los trabajos de impresión.
+pausa, reanuda, cancela y enumera los trabajos de impresión.
 
 ## <a name="syntax"></a>Sintaxis
 ```
@@ -36,29 +36,29 @@ cscript Prnjobs {-z | -m | -x | -l | -?} [-s <ServerName>]
 
 |          Parámetro           |                                                                                                                                                                                        Descripción                                                                                                                                                                                        |
 |------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|              -z              |                                                                                                                                                                 pone en pausa el trabajo de impresión especificado con el **-j** parámetro.                                                                                                                                                                 |
-|              -m              |                                                                                                                                                                Reanuda el trabajo de impresión especificado con el **-j** parámetro.                                                                                                                                                                 |
-|              -x              |                                                                                                                                                                Cancela el trabajo de impresión especificado con el **-j** parámetro.                                                                                                                                                                 |
-|              -l              |                                                                                                                                                                        Enumera todos los trabajos de impresión en una cola de impresión.                                                                                                                                                                         |
+|              -z              |                                                                                                                                                                 pausa el trabajo de impresión especificado con el parámetro **-j** .                                                                                                                                                                 |
+|              -m              |                                                                                                                                                                Reanuda el trabajo de impresión especificado con el parámetro **-j** .                                                                                                                                                                 |
+|              -x              |                                                                                                                                                                Cancela el trabajo de impresión especificado con el parámetro **-j** .                                                                                                                                                                 |
+|              -l              |                                                                                                                                                                        enumera todos los trabajos de impresión de una cola de impresión.                                                                                                                                                                         |
 |       -s \<ServerName >       |                                                                                                                  Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local.                                                                                                                  |
-|      -p \<nombreImpresora >       |                                                                                                                                                           Especifica el nombre de la impresora que desea administrar. Obligatorio.                                                                                                                                                            |
-|         -j \<JobID >          |                                                                                                                                                                Especifica que desea cancelar el trabajo de impresión (por número de identificación).                                                                                                                                                                 |
-| -u \<UserName > -w <Password> | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores local del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe haber iniciado sesión con una cuenta con estos permisos para que funcione el comando. |
+|      -p \<printerName >       |                                                                                                                                                           Especifica el nombre de la impresora que desea administrar. Obligatorio.                                                                                                                                                            |
+|         -j \<JobID >          |                                                                                                                                                                Especifica (por número de identificador) el trabajo de impresión que desea cancelar.                                                                                                                                                                 |
+| -u \<UserName >-w <Password> | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione. |
 |              /?              |                                                                                                                                                                           Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                            |
 
 ## <a name="remarks"></a>Comentarios
--   El **prnjobs** comando es un script de Visual Basic que se encuentra en la %WINdir%\System32\printing_Admin_Scripts\\ <language> directory. Para usar este comando, en un símbolo del sistema, escriba **cscript** seguido por la ruta de acceso completa al archivo prnjobs o cambie los directorios a la carpeta correspondiente. Por ejemplo:
+-   El comando **prnjobs** es un script de Visual Basic ubicado en el directorio%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t-2. Para usar este comando, en una ventana del símbolo del sistema, escriba **cscript** seguido de la ruta de acceso completa al archivo prnjobs o cambie los directorios a la carpeta correspondiente. Por ejemplo:
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnjobs.vbs
     ```
--   Si la información que se proporciona contiene espacios, utilice comillas alrededor del texto (por ejemplo, `"computer Name"`).
+-   Si la información proporcionada contiene espacios, utilice comillas alrededor del texto (por ejemplo, `"computer Name"`).
 
-## <a name="BKMK_examples"></a>Ejemplos
-Para pausar un trabajo de impresión con un Id. de trabajo de 27 enviado al equipo remoto para la impresión en la impresora mencionada ImpresoraColor ServidorRH, escriba:
+## <a name="BKMK_examples"></a>Example
+Para pausar un trabajo de impresión con un ID. de trabajo 27 enviado al equipo remoto llamado ServidorRH para imprimirlo en la impresora denominada colorprinter, escriba:
 ```
 cscript prnjobs.vbs -z -s HRServer -p colorprinter -j 27
 ```
-Para obtener una lista de todos los trabajos de impresión actuales en la cola de la impresora local llamada ImpresoraColor_2, escriba:
+Para enumerar todos los trabajos de impresión actuales en la cola de la impresora local denominada ImpresoraColor_2, escriba:
 ```
 cscript prnjobs.vbs -l -p colorprinter_2
 ```

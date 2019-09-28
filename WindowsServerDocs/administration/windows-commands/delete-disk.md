@@ -1,8 +1,8 @@
 ---
-title: Eliminar disco
-description: 'Tema de los comandos de Windows para ***- '
+title: eliminar disco
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e401133854118e82a45fd5e01466288ae41f67da
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 886e84edf80227d42ad77e36aed388b9e853ca62
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863916"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378670"
 ---
-# <a name="delete-disk"></a>Eliminar disco
+# <a name="delete-disk"></a>eliminar disco
 
 
 
-Elimina un disco dinámico que falta en la lista de discos.
+Elimina un disco dinámico que falta de la lista de discos.
 
 Para obtener instrucciones sobre cómo usar este comando, consulte [quitar un disco dinámico que falta](https://go.microsoft.com/fwlink/?LinkId=207055) (https://go.microsoft.com/fwlink/?LinkId=207055).
 
@@ -38,10 +38,10 @@ delete disk [noerr] [override]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|noerr|sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.|
-|invalidar|Permite que DiskPart elimine todos los volúmenes simples en el disco. Si el disco contiene la mitad de un volumen reflejado, se eliminará la mitad del reflejo en el disco. El comando delete disk override produce un error si el disco es un miembro de un volumen RAID-5.|
+|Noerr|Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
+|estima|Permite que DiskPart elimine todos los volúmenes simples del disco. Si el disco contiene la mitad de un volumen reflejado, se elimina la mitad del reflejo en el disco. Se produce un error en el comando DELETE Disk override si el disco es miembro de un volumen RAID-5.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para eliminar un disco dinámico que falta en la lista de discos, escriba:
 ```

@@ -7,19 +7,19 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6ea73506bbd67dd44fa23b4b87d4744ebbbd71cb
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 264a7d3399757e903e794dc4ec554e7ea63dd0e5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192572"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360155"
 ---
 # <a name="ad-fs-deployment"></a>Implementación de AD FS
 
 
-Este documento contiene una lista de toda la documentación de implementación de AD FS para Windows Server 2016. Esto incluye lo siguiente:
+Este documento contiene una lista de toda la documentación de la implementación de AD FS para Windows Server 2016. Esto incluye lo siguiente:
   
 * [Procedimientos recomendados para proteger AD FS](deployment/Best-Practices-Securing-AD-FS.md)
 

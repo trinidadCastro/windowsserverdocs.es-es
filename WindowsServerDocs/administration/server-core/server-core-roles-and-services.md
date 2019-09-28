@@ -1,18 +1,18 @@
 ---
 title: Roles, servicios de rol y características incluidos en Windows Server-Server Core
 description: ¿Qué roles y características se incluyen en la opción de instalación Server Core de Windows Server?
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 02/23/2018
-ms.openlocfilehash: 2f6aed56083bd606ae2ec06b72152ef4a0461420
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 7b5d5d5ad38b1b03e409c26485860f43799f1322
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476507"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383331"
 ---
 # <a name="roles-role-services-and-features-included-in-windows-server---server-core"></a>Roles, servicios de rol y características incluidos en Windows Server-Server Core
 
@@ -27,7 +27,7 @@ Recuerde que siempre puede [Ver](server-core-removed-roles.md) lo que *no* se in
 ## <a name="roles-included-in-server-core"></a>Roles incluidos en Server Core
 La opción de instalación Server Core incluye los siguientes roles de servidor.
 
-| Rol                                            | NOMBRE                           | ¿Está instalado de forma predeterminada? |
+| Rol                                            | Nombre                           | ¿Está instalado de forma predeterminada? |
 |-------------------------------------------------|--------------------------------|-----------------------|
 | Servicios de certificados de Active Directory           | Certificado de AD                 | N                     |
 | Active Directory Domain Services                | AD-Domain-Services             | N                     |
@@ -51,7 +51,7 @@ La opción de instalación Server Core incluye los siguientes roles de servidor.
 ## <a name="role-services-included-in-server-core"></a>Servicios de rol incluidos en Server Core
 La opción de instalación Server Core incluye los siguientes servicios de rol.
 
-| Rol                                  | Servicio de rol                                                   | Name                    | ¿Está instalado de forma predeterminada? |
+| Rol                                  | Servicio de rol                                                   | Nombre                    | ¿Está instalado de forma predeterminada? |
 |---------------------------------------|----------------------------------------------------------------|-------------------------|-----------------------|
 | Servicios de certificados de Active Directory | Entidad de certificación                                        | ADCS-CERT-Authority     | N                     |
 |                                       | Servicio web de directivas de inscripción de certificados                      | ADCS-ENROLL-web-Pol     | N                     |
@@ -139,7 +139,7 @@ La opción de instalación Server Core incluye los siguientes servicios de rol.
 ## <a name="features-included-in-server-core"></a>Características incluidas en Server Core
 La opción de instalación Server Core incluye las siguientes características.
 
-| Característica                                                | Name                               | ¿Está instalado de forma predeterminada? |
+| Característica                                                | Nombre                               | ¿Está instalado de forma predeterminada? |
 |--------------------------------------------------------|------------------------------------|-----------------------|
 | .NET Framework características 3,5                            | Características de .NET Framework             | N                     |
 | .NET Framework 3,5 (incluye .NET 2,0 y 3,0)       | NET-Framework-Core                 | ha             |

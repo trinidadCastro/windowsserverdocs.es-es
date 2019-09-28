@@ -1,42 +1,42 @@
 ---
 title: Ampliar volúmenes en Espacios de almacenamiento directo
-description: Cómo cambiar el tamaño de los volúmenes en espacios de almacenamiento directo con Windows Admin Center y PowerShell.
-ms.prod: windows-server-threshold
+description: Cómo cambiar el tamaño de los volúmenes en Espacios de almacenamiento directo mediante el centro de administración de Windows y PowerShell.
+ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
 ms.date: 05/07/2019
-ms.openlocfilehash: 3be6a4cda20f4d7d7d881ad8a272dc38fd787bba
-ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
+ms.openlocfilehash: 20482fe1728b12d4fe56dcfa397352fbb4b4f981
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613229"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366093"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>Ampliar volúmenes en Espacios de almacenamiento directo
-> Se aplica a: Windows Server 2019, Windows Server 2016
+> Se aplica a: Windows Server 2019 y Windows Server 2016
 
-Este tema proporciona instrucciones para cambiar el tamaño de los volúmenes en un [espacios de almacenamiento directo](storage-spaces-direct-overview.md) clúster mediante el uso de Windows Admin Center.
+En este tema se proporcionan instrucciones para cambiar el tamaño de los volúmenes en un clúster de [espacios de almacenamiento directo](storage-spaces-direct-overview.md) mediante el centro de administración de Windows.
 
-Vea un breve vídeo sobre cómo cambiar el tamaño de un volumen.
+Vea un vídeo rápido sobre cómo cambiar el tamaño de un volumen.
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/hqyBzipBoTI]
 
-## <a name="extending-volumes-using-windows-admin-center"></a>Ampliación de volúmenes mediante Windows Admin Center
+## <a name="extending-volumes-using-windows-admin-center"></a>Extender volúmenes mediante el centro de administración de Windows
 
-1. En Windows Admin Center, conectarse a un clúster de espacios de almacenamiento directo y, a continuación, seleccione **volúmenes** desde el **herramientas** panel.
-2. En la página de volúmenes, seleccione el **inventario** pestaña y, a continuación, seleccione el volumen que desea cambiar el tamaño.
+1. En el centro de administración de Windows, conéctese a un clúster de Espacios de almacenamiento directo y, a continuación, seleccione **volúmenes** en el panel **herramientas** .
+2. En la página volúmenes, seleccione la pestaña **inventario** y, a continuación, seleccione el volumen cuyo tamaño desea cambiar.
 
-    En la página de detalles de volumen, se indica la capacidad de almacenamiento para el volumen. También puede abrir la página de detalles de volúmenes directamente desde el panel. En el panel, en el panel de alertas, seleccione la alerta, que le notifica si un volumen se está quedando sin capacidad de almacenamiento, y, a continuación, seleccione **ir al volumen**.
+    En la página de detalles del volumen, se indica la capacidad de almacenamiento del volumen. También puede abrir la página de detalles de los volúmenes directamente desde el panel. En el panel, en el panel alertas, seleccione la alerta, que le notifica si un volumen se está quedando sin capacidad de almacenamiento y, a continuación, seleccione **ir al volumen**.
 
-4. En la parte superior de la página de detalles de volúmenes, seleccione **cambiar el tamaño de**.
-5. Escriba un nuevo tamaño más grande y, a continuación, seleccione **cambiar el tamaño de**.
+4. En la parte superior de la página de detalles de los volúmenes, seleccione **cambiar tamaño**.
+5. Escriba un nuevo tamaño mayor y seleccione **cambiar tamaño**.
 
-    En la página de detalles de volúmenes, se indica la mayor capacidad de almacenamiento para el volumen y se borra la alerta en el panel.
+    En la página de detalles de los volúmenes, se indica la capacidad de almacenamiento más grande para el volumen y se borra la alerta en el panel.
 
-## <a name="extending-volumes-using-powershell"></a>Ampliación de volúmenes mediante PowerShell
+## <a name="extending-volumes-using-powershell"></a>Extensión de volúmenes con PowerShell
 
 ### <a name="capacity-in-the-storage-pool"></a>Capacidad del grupo de almacenamiento
 
@@ -142,6 +142,6 @@ Ya está.
 ## <a name="see-also"></a>Vea también
 
 - [Espacios de almacenamiento directo en Windows Server 2016](storage-spaces-direct-overview.md)
-- [Planificación de volúmenes en espacios de almacenamiento directo](plan-volumes.md)
-- [Creación de volúmenes en espacios de almacenamiento directo](create-volumes.md)
-- [Eliminando los volúmenes en espacios de almacenamiento directo](delete-volumes.md)
+- [Planeación de volúmenes en Espacios de almacenamiento directo](plan-volumes.md)
+- [Crear volúmenes en Espacios de almacenamiento directo](create-volumes.md)
+- [Eliminar volúmenes en Espacios de almacenamiento directo](delete-volumes.md)

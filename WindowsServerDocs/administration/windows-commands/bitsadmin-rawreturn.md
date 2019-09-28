@@ -1,8 +1,8 @@
 ---
 title: bitsadmin rawreturn
-description: Tema de los comandos de Windows para **rawreturn bitsadmin** -devuelve adecuado para el análisis de datos.
+description: 'Tema de comandos de Windows para **bitsadmin rawreturn** : devuelve datos adecuados para el análisis.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e12c8e621021d35ac618b4592515fe38c36be0e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 86d769de460538acda696194348980de5752d6d8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434892"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380879"
 ---
 # <a name="bitsadmin-rawreturn"></a>bitsadmin rawreturn
 
@@ -32,13 +32,13 @@ bitsadmin /RawReturn
 
 ## <a name="remarks"></a>Comentarios
 
-Caracteres de nueva línea de bandas y el formato de la salida.
+Quita los caracteres de nueva línea y el formato de la salida.
 
-Por lo general, use este comando junto con el **crear** y **obtener\\** * modificadores para recibir solo el valor. Debe especificar este modificador antes otros modificadores.
+Normalmente, este comando se usa junto con los modificadores **Create** y **Get no__t-2*** para recibir solo el valor. Debe especificar este modificador antes que otros modificadores.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente recupera los datos sin procesar para el estado del trabajo denominado *myDownloadJob*.
+En el ejemplo siguiente se recuperan los datos sin procesar para el estado del trabajo denominado *myDownloadJob*.
 ```
 C:\>bitsadmin /RawReturn /GetState myDownloadJob
 ```

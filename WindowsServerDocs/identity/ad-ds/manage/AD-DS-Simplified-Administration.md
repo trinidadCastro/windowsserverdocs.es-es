@@ -7,22 +7,22 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 863e5352253d53941e64b52d1ca58d565a3aa8b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4f12b1e88414a17c8fb82a707bd4399505df4c6c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890596"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369449"
 ---
 # <a name="ad-ds-simplified-administration"></a>Administración simplificada de AD DS
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tema explica las funcionalidades y ventajas de implementación de controladores de dominio de Windows Server 2012, administración y las diferencias entre la implementación de sistema operativo DC anterior y la nueva implementación de Windows Server 2012.  
+En este tema se explican las capacidades y ventajas de la implementación y administración de controladores de dominio de Windows Server 2012, así como las diferencias entre la implementación del controlador de dominio del sistema operativo anterior y la nueva implementación de Windows Server 2012.  
   
-Windows Server 2012 introdujo la próxima generación de Active Directory Domain Services Simplified Administration y fue el más radical dominio volver a previsión desde Windows 2000 Server. La Administración simplificada de AD DS se ha inspirado en lo aprendido a lo largo de doce años de Active Directory para crear una experiencia de administración más compatible, flexible e intuitiva para arquitectos y administradores. Esto ha conllevado la creación de nuevas versiones de las tecnologías existentes y la ampliación de las capacidades de los componentes incluidos en Windows Server 2008 R2.  
+Windows Server 2012 presentó la próxima generación de Active Directory Domain Services administración simplificada y era la reutilización más radical del dominio desde el servidor Windows 2000. La Administración simplificada de AD DS se ha inspirado en lo aprendido a lo largo de doce años de Active Directory para crear una experiencia de administración más compatible, flexible e intuitiva para arquitectos y administradores. Esto ha conllevado la creación de nuevas versiones de las tecnologías existentes y la ampliación de las capacidades de los componentes incluidos en Windows Server 2008 R2.  
   
 La Administración simplificada de AD DS supone un nuevo concepto de implementación de dominio.  
   
@@ -33,7 +33,7 @@ La Administración simplificada de AD DS supone un nuevo concepto de implementac
 - El módulo de Active Directory para Windows PowerShell ahora incluye cmdlets para la administración de la topología de replicación, el control de acceso dinámico y otras operaciones  
 - El nivel funcional de bosque de Windows Server 2012 no implementa nuevas características, y el nivel funcional de dominio se requiere únicamente para un subconjunto de características nuevas de Kerberos, lo que exime a los administradores de la necesidad frecuente de un entorno de controlador de dominio homogéneo  
 - Se ha añadido compatibilidad completa con controladores de dominio virtualizados, para incluir la implementación automatizada y la protección de la reversión  
-   - Para obtener más información acerca de los controladores de dominio virtualizados, consulte [Introducción a Active Directory Domain Services &#40;AD DS&#41; virtualización &#40;nivel 100&#41;](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md).
+   - Para obtener más información acerca de los controladores de dominio virtualizados, consulte [Introducción &#40;a Active Directory Domain Services AD DS&#41;&#41; &#40;nivel de virtualización 100](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md).
 
 Además, se han introducido numerosas mejoras administrativas y de mantenimiento:  
 
@@ -42,7 +42,7 @@ Además, se han introducido numerosas mejoras administrativas y de mantenimiento
 - Las cuentas de servicio administradas de grupo son compatibles con varios equipos que utilicen las mismas entidades de seguridad  
 - Las mejoras en la emisión y la supervisión de los identificadores relativos (RID) mejoran la capacidad de administración en dominios desarrollados de Active Directory  
 
-AD DS se beneficia de otras características nuevas incluidas en Windows Server 2012, como:  
+AD DS beneficios de otras características nuevas incluidas en Windows Server 2012, como:  
 
 - Equipos NIC y protocolo de puente del centro de datos  
 - Seguridad de DNS y disponibilidad de zona integrada en AD más rápida tras el arranque  
@@ -64,7 +64,7 @@ Para obtener más información sobre Adprep y la preparación de bosques de sist
   
 El Administrador del servidor actúa como concentrador de las tareas de administración del servidor. Su aspecto semejante a un panel actualiza periódicamente las vistas de los roles instalados y de los grupos de servidores remotos. El Administrador del servidor permite una administración centralizada de los servidores locales y remotos, sin necesidad de acceder mediante la consola.  
   
-Servicios de dominio de Active Directory es uno de esos roles de concentrador; al ejecutar el administrador del servidor en un controlador de dominio o las herramientas de administración remota en Windows 8, verá problemas recientes importantes en los controladores de dominio del bosque.  
+Active Directory Domain Services es uno de esos roles de concentrador; al ejecutar Administrador del servidor en un controlador de dominio o en el Herramientas de administración remota del servidor en Windows 8, verá problemas importantes recientes en los controladores de dominio del bosque.  
   
 Estas vistas incluyen:  
   
@@ -114,7 +114,7 @@ Para obtener más información sobre la replicación y la topología de sitio de
 
 Active Directory de Windows 2000 introdujo el maestro RID, que emite grupos de identificadores relativos para controladores de dominio, con el fin de crear identificadores de seguridad (SID) de elementos de confianza de seguridad, como usuarios, grupos y equipos.  De manera predeterminada, este espacio global de RID se limita a 2<sup>30</sup> (o 1.073.741.823) SID totales creados en un dominio. Los SID no pueden regresar al grupo o volver a emitirse. Con el paso del tiempo, los RID podrían empezar a escasear en un dominio grande, o podrían producirse accidentes que conllevaran la disminución innecesaria de los RID y su agotamiento final.  
   
-Windows Server 2012 aborda una serie de problemas de emisión y administración de RID que descubrieron los clientes y el Servicio de soporte al cliente de Microsoft a medida que AD DS se iban desarrollando desde la creación de los primeros dominios de Active Directory en 1999. Entre ellos se incluyen los siguientes:  
+Windows Server 2012 aborda una serie de problemas de emisión y administración de RID que descubrieron los clientes y el Servicio de soporte al cliente de Microsoft a medida que AD DS se iban desarrollando desde la creación de los primeros dominios de Active Directory en 1999. Entre ellas se incluyen las siguientes:  
 
 - Las advertencias de consumo de RID periódico se escriben en el registro de eventos  
 - Los eventos se registran cuando un administrador invalida un grupo de RID  
@@ -205,9 +205,9 @@ En general, no es necesario ejecutar estos cmdlets; se ejecutan automáticamente
 |CheckRODCPrep<br /><br />GroupMembership|LDAP,<br /><br />RPC a través de SMB (LSARPC)|Comprueba que el usuario pertenece al grupo Administradores de organización y que tiene el privilegio Administrar registros de eventos de auditoría y seguridad (SesScurityPrivilege) en los controladores de dominio existentes.|  
 |VerifyInitSync<br /><br />AfterReboot|LDAP|Comprueba que el maestro de esquema se ha replicado por lo menos una vez desde que se reinició estableciendo un valor ficticio en el atributo rootDSE becomeSchemaMaster.|  
 |VerifySFUHotFix<br /><br />Applied|LDAP|Comprueba que el esquema de bosque existente no contiene la extensión SFU2 de problema conocido para el atributo UID con el OID 1.2.840.113556.1.4.7000.187.102.<br /><br />([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
-|VerifyExchange<br /><br />SchemaFixed|LDAP, WMI, DCOM, RPC|Validar el bosque existente no esquema sigue sin contener las extensiones de Exchange 2000 de problema ms-Exch-Assistant-Name, ms-Exch-LabeledURI y ms-Exch-House-Identifier ([https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649))|  
+|VerifyExchange<br /><br />SchemaFixed|LDAP, WMI, DCOM, RPC|Validar que el esquema de bosque existente todavía no contiene las extensiones Exchange 2000 de problema MS-Exch-Assistant-Name, MS-Exch-LabeledURI y MS-Exch-House-Identifier ([https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649))|  
 |VerifyWin2KSchema<br /><br />Consistency|LDAP|Comprueba que el esquema de bosque existente tiene clases y atributos básicos coherentes (no modificados incorrectamente por terceros).|  
 |DCPromo|DRSR a través de RPC,<br /><br />LDAP,<br /><br />DNS<br /><br />RPC a través de SMB (SAMR)|Comprueba la sintaxis de línea de comandos que ha pasado al código de promoción y a la promoción de prueba. Comprueba que el bosque o dominio todavía no existe cuando se crea uno nuevo.|  
 |VerifyOutbound<br /><br />ReplicationEnabled|LDAP, DRSR a través de SMB, RPC a través de SMB (LSARPC)|Comprueba que el controlador de dominio existente especificado como asociado de replicación tiene la replicación de salida habilitada mediante la comprobación del atributo de opciones del objeto de configuración NTDS para NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004)|  
 |VerifyMachineAdmin<br /><br />Contraseña|DRSR a través de RPC,<br /><br />LDAP,<br /><br />DNS<br /><br />RPC a través de SMB (SAMR)|Comprueba que la contraseña del modo seguro establecida para DSRM cumple los requisitos de complejidad del dominio.|  
-|VerifySafeModePassword|*N/A*|Comprueba que la contraseña establecida para el administrador local cumple los requisitos de complejidad de la directiva de seguridad del equipo.|  
+|VerifySafeModePassword|*N/D*|Comprueba que la contraseña establecida para el administrador local cumple los requisitos de complejidad de la directiva de seguridad del equipo.|  

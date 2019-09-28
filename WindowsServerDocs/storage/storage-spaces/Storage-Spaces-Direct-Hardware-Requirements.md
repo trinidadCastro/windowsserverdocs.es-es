@@ -1,6 +1,6 @@
 ---
 title: Requisitos de hardware de Espacios de almacenamiento directo
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 description: Requisitos de hardware mínimos para las pruebas de Espacios de almacenamiento directo.
 ms.author: eldenc
 ms.manager: eldenc
@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3f8bff39550108b0417b9513bee4a248dca432
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 63a7152ec6abb318a096ac321ae7ccfaaef4d199
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546372"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402935"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware de Espacios de almacenamiento directo
 
@@ -33,7 +33,7 @@ Los sistemas, los componentes, los dispositivos y los controladores deben tener 
 
 ![captura de pantalla del catálogo de Windows Server que muestra la AQs de SDDC](media/hardware-requirements/sddc-aqs.png)
 
-El clúster totalmente configurado (servidores, redes y almacenamiento) debe pasar todas las [pruebas de validación del clúster](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) por el asistente en Administrador de clústeres de conmutación por error o `Test-Cluster` con el [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) de PowerShell.
+El clúster totalmente configurado (servidores, redes y almacenamiento) debe pasar todas las [pruebas de validación de clústeres](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) según el asistente en Administrador de clústeres de conmutación por error o con el [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) `Test-Cluster` en PowerShell.
 
 Además, se aplican los siguientes requisitos:
 
@@ -52,13 +52,13 @@ Además, se aplican los siguientes requisitos:
 - Memoria para Windows Server, máquinas virtuales y otras aplicaciones o cargas de trabajo; signos
 - 4 GB de RAM por terabyte (TB) de capacidad de la unidad de caché en cada servidor, para metadatos de Espacios de almacenamiento directo
 
-## <a name="boot"></a>Arranque
+## <a name="boot"></a>arranque
 
 - Cualquier dispositivo de arranque compatible con Windows Server, que [ahora incluye SATADOM](https://cloudblogs.microsoft.com/windowsserver/2017/08/30/announcing-support-for-satadom-boot-drives-in-windows-server-2016/)
 - El reflejo RAID 1 **no** es necesario, pero se admite para el arranque
-- Se recomienda: tamaño mínimo de 200 GB
+- Recomendado: tamaño mínimo de 200 GB
 
-## <a name="networking"></a>Redes
+## <a name="networking"></a>Funciones de red
 
 Espacios de almacenamiento directo requiere una conexión de red de baja latencia y ancho de banda alto confiable entre cada nodo.  
 
@@ -87,8 +87,8 @@ Espacios de almacenamiento directo funciona con unidades SATA, SAS o NVMe conect
 - Los dispositivos de caché deben tener 32 GB o más.
 - Al usar dispositivos de memoria persistentes como dispositivos de caché, debe usar dispositivos de capacidad de NVMe o SSD (no puede usar HDD).
 - El controlador de NVMe es el proporcionado por Microsoft que se incluye en Windows. (stornvme. sys)
-- Se recomienda: El número de unidades de capacidad es un múltiplo entero del número de unidades de caché
-- Se recomienda: Las unidades de caché deben tener una gran resistencia de escritura: al menos 3 unidades-escrituras por día (DWPD) o al menos 4 terabytes escritas (TBW) al día; vea Descripción de las [escrituras de unidad al día (DWPD), terabytes escritos (TBW) y el mínimo recomendado para espacios de almacenamiento directo ](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
+- Recomendado: El número de unidades de capacidad es un múltiplo entero del número de unidades de caché
+- Recomendado: Las unidades de caché deben tener una gran resistencia de escritura: al menos 3 unidades-escrituras por día (DWPD) o al menos 4 terabytes escritas (TBW) al día; vea Descripción de las [escrituras de unidad al día (DWPD), terabytes escritos (TBW) y el mínimo recomendado para espacios de almacenamiento directo ](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 
 A continuación se muestra cómo se pueden conectar las unidades de Espacios de almacenamiento directo:
 

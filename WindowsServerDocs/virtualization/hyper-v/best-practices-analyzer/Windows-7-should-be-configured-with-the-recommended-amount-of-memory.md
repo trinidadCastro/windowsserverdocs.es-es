@@ -1,7 +1,7 @@
 ---
-title: Windows 7 deben configurarse con la cantidad de memoria recomendada
-description: Proporciona instrucciones para resolver el problema notificado por esta regla de Best Practices Analyzer.
-ms.prod: windows-server-threshold
+title: Windows 7 debe configurarse con la cantidad de memoria recomendada
+description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: d77d648c-6e26-43fa-be0a-6eb4b28f9cb4
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: e91e3d5f2ddb374a6e5fd5b60ac1adee125257c2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3ce8d31b13664f09c97755399503de1c12ef070a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812296"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364518"
 ---
-# <a name="windows-7-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 7 deben configurarse con la cantidad de memoria recomendada
+# <a name="windows-7-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 7 debe configurarse con la cantidad de memoria recomendada
 
 >Se aplica a: Windows Server 2016
 
@@ -26,45 +26,45 @@ Para más información acerca de los análisis y los procedimientos recomendados
 |Property|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
-|**Característica del producto**|Hyper-V|  
+|**Producto o característica**|Hyper-V|  
 |**Gravedad**|Advertencia|  
 |**Categoría**|Configuración|  
 
-En las secciones siguientes, la cursiva indica texto de la interfaz de usuario que aparece en la herramienta Best Practices Analyzer para resolver este problema.
+En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
 ## <a name="issue"></a>Problema  
   
-*Una máquina virtual con Windows 7 se configura con menor que la cantidad recomendada de RAM, que es de 1 GB.*  
+*Una máquina virtual que ejecuta Windows 7 está configurada con menos de la cantidad de RAM recomendada, que es 1 GB.*  
   
 ## <a name="impact"></a>Impacto  
   
-*El sistema operativo invitado y las aplicaciones no es posible que funcionan bien. No puede haber suficiente memoria para ejecutar varias aplicaciones a la vez. Esto afecta a las siguientes máquinas virtuales:*  
+es posible que las aplicaciones y el sistema operativo invitado de @no__t 0The no funcionen correctamente. Puede que no haya suficiente memoria para ejecutar varias aplicaciones a la vez. Esto afecta a las siguientes máquinas virtuales: *  
 ```  
 <list of virtual machine names>  
 ```  
 ## <a name="resolution"></a>Resolución  
   
-*Use el Administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual en al menos 1 GB.*  
+*Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual a 1 GB como mínimo.*  
   
-### <a name="to-increase-the-memory-using-hyper-v-manager"></a>Para aumentar la memoria con el Administrador de Hyper-V  
+### <a name="to-increase-the-memory-using-hyper-v-manager"></a>Para aumentar la memoria mediante el administrador de Hyper-V  
   
 1.  Abre el Administrador Hyper-V. Haga clic en **Inicio**, seleccione **Herramientas administrativas** y, a continuación, haga clic en **Administrador de Hyper-V**.  
   
-2.  En el panel de resultados, bajo **máquinas virtuales**, seleccione la máquina virtual que desea configurar. El estado de la máquina virtual debe aparecer como **desactivar**. Si no es así, haga clic en la máquina virtual y, a continuación, haga clic en **apagar**.  
+2.  En el panel de resultados, en **virtual machines**, seleccione la máquina virtual que desea configurar. El estado de la máquina virtual debe aparecer como **desactivado**. Si no es así, haga clic con el botón secundario en la máquina virtual y, a continuación, haga clic en **apagar**.  
   
 3.  En el panel **Acción**, en el nombre de la máquina virtual, haga clic en **Configuración**.  
   
 4.  En el panel de navegación, haga clic en **memoria**.  
   
-5.  En el **memoria** , establezca el **RAM de inicio** para al menos 1 GB y, a continuación, haga clic en **Aceptar**.  
+5.  En la página **memoria** , establezca la **RAM de inicio** en al menos 1 GB y, a continuación, haga clic en **Aceptar**.  
   
-### <a name="increase-the-memory-using-windows-powershell"></a>Aumente la cantidad de memoria mediante Windows PowerShell  
+### <a name="increase-the-memory-using-windows-powershell"></a>Aumentar la memoria mediante Windows PowerShell  
   
-1.  Abra Windows PowerShell. (En el escritorio, haga clic en **iniciar** y comience a escribir **Windows PowerShell**.)  
+1.  Abra Windows PowerShell. (En el escritorio, haga clic en **Inicio** y comience a escribir **Windows PowerShell**).  
   
-2.  Haga clic en **Windows PowerShell** y haga clic en **ejecutar como administrador**.  
+2.  Haga clic con el botón derecho en **Windows PowerShell** y haga clic en **Ejecutar como administrador**.  
   
-3.  Ejecute este comando después de reemplazar \<MyVM > con el nombre de la máquina virtual:  
+3.  Ejecute este comando después de reemplazar \<MyVM > por el nombre de la máquina virtual:  
   
 ```  
 Set-VMMemory <MyVM> -StartupBytes 1GB  

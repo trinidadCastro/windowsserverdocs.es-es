@@ -1,8 +1,8 @@
 ---
 title: copy
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d593fbdbffd2a5ee4e4dfb4a817ad4708162160a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 102fd6b59516b04b8986ee47b52f521be73f04de
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853776"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379044"
 ---
 # <a name="copy"></a>copy
 
@@ -38,117 +38,117 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/d|Permite que los archivos cifrados que se va a copiar se guarden como archivos descifrados en el destino.|
-|/v|Comprueba que los nuevos archivos se escriben correctamente.|
-|/n|Usa un nombre de archivo corto, si está disponible, al copiar un archivo con un nombre más de ocho caracteres, o con una extensión de nombre de archivo más de tres caracteres.|
+|/d|Permite que los archivos cifrados que se copian se guarden como archivos descifrados en el destino.|
+|/v|Comprueba que los nuevos archivos están escritos correctamente.|
+|/n|Utiliza un nombre de archivo corto, si está disponible, cuando se copia un archivo con un nombre de más de ocho caracteres o una extensión de nombre de archivo de más de tres caracteres.|
 |/y|Suprime el mensaje para confirmar que desea sobrescribir un archivo de destino existente.|
-|/-y|Le pide que confirme que desea sobrescribir un archivo de destino existente.|
+|/-y|Le pide que confirme si desea sobrescribir un archivo de destino existente.|
 |/z|Copia los archivos en red en modo reiniciable.|
 |/a|Indica un archivo de texto ASCII.|
-|/b|Indica un archivo binario.|
-|\<origen >|Obligatorio. Especifica la ubicación desde la que van a copiar un archivo o un conjunto de archivos. *Origen* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
-|\<Destino >|Obligatorio. Especifica la ubicación a la que van a copiar un archivo o un conjunto de archivos. *Destino* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
+|b|Indica un archivo binario.|
+|@no__t 0Source >|Obligatorio. Especifica la ubicación desde la que desea copiar un archivo o un conjunto de archivos. El *origen* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
+|@no__t 0Destination >|Obligatorio. Especifica la ubicación en la que desea copiar un archivo o un conjunto de archivos. El *destino* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Puede copiar un archivo de texto ASCII con un carácter de final de archivo (CTRL+Z) para indicar el final del archivo.
--   Uso de **/a**
+-   Puede copiar un archivo de texto ASCII que use un carácter de fin de archivo (CTRL + Z) para indicar el final del archivo.
+-   Usar **/a**
 
-    Cuando **/a** precede o sigue a una lista de archivos en la línea de comandos, se aplica a todos los archivos enumerados hasta **copia** encuentra **/b**. En este caso, **/b** se aplica al archivo anterior **/b**.
+    Cuando **/a** precede o sigue a una lista de archivos de la línea de comandos, se aplica a todos los archivos enumerados hasta que la **copia** se encuentra **/b**. En este caso, **/b** se aplica al archivo anterior **/b**.
 
-    El efecto de **/a** depende de su posición en la cadena de línea de comandos. Cuando **/a** sigue *origen*, **copia** trata el archivo como un archivo ASCII y copia los datos que preceden al primer carácter de final de archivo (CTRL + Z).
+    El efecto de **/a** depende de su posición en la cadena de línea de comandos. Cuando **/a** sigue el *código fuente*, la **copia** trata el archivo como un archivo ASCII y copia los datos que preceden al primer carácter de fin de archivo (Ctrl + Z).
 
-    Cuando **/a** sigue *destino*, **copia** agrega un carácter de final de archivo (CTRL + Z) como el último carácter del archivo.
--   Uso de **/b**
+    Cuando **/a** sigue el *destino*, **Copy** agrega un carácter de fin de archivo (Ctrl + Z) como el último carácter del archivo.
+-   Usar **/b**
 
-    **/b** dirige el intérprete de comandos para leer el número de bytes especificado por el tamaño del archivo en el directorio. **/b** es el valor predeterminado para **copia**, a menos que **copia** combina archivos.
+    **/b** indica al intérprete de comandos que lea el número de bytes especificado por el tamaño del archivo en el directorio. **/b** es el valor predeterminado para **copiar**, a menos que **copiar** combine archivos.
 
-    Cuando **/b** precede o sigue a una lista de archivos en la línea de comandos, se aplica a todos los archivos enumerados hasta **copia** encuentra **/a**. En este caso, **/a** se aplica al archivo anterior **/a**.
+    Cuando **/b** precede o sigue a una lista de archivos de la línea de comandos, se aplica a todos los archivos enumerados hasta que la **copia** se encuentra en **/a**. En este caso, **/a** se aplica al archivo anterior a **/a**.
 
-    El efecto de **/b** depende de su posición en la cadena de línea de comandos. Cuando **/b** sigue *origen*, **copia** copia el archivo completo, incluido cualquier carácter de final de archivo (CTRL + Z).
+    El efecto de **/b** depende de su posición en la cadena de línea de comandos. Cuando **/b** sigue a *source*, **Copy** copia todo el archivo, incluido cualquier carácter de fin de archivo (Ctrl + Z).
 
-    Cuando **/b** sigue *destino*, **copia** no agrega un carácter de final de archivo (CTRL + Z).
--   Uso de **/v**
+    Cuando **/b** sigue el *destino*, la **copia** no agrega un carácter de fin de archivo (Ctrl + Z).
+-   Usar **/v**
 
-    Si una operación de escritura no se puede comprobar que aparece un mensaje de error. Aunque se producen con poca frecuencia errores de grabación con **copia**, puede usar **/v** para comprobar que los datos críticos se ha registrado correctamente. El **/v** opción de línea de comandos también ralentiza la **copia** comando, porque es necesario comprobar cada sector que se escribe en el disco.
--   Uso de **/y** y   **/y**
+    Si no se puede comprobar una operación de escritura, aparece un mensaje de error. Aunque los errores de grabación raramente se producen con la **copia**, puede usar **/v** para comprobar que los datos críticos se han registrado correctamente. La opción de línea de comandos **/v** también ralentiza el comando de **copia** , ya que debe comprobarse cada sector registrado en el disco.
+-   Usar **/y** y **/-y**
 
-    Si **/y** se preestablece en apunta el vínculo, puede invalidar esta configuración mediante el uso de **/y** en la línea de comandos. De forma predeterminada, se pide al reemplazar esta configuración, a menos que el **copia** comando se ejecuta en un script por lotes.
--   Anexar a archivos
+    Si **/y** está preestablecido en la variable de entorno COPYCMD, puede invalidar esta configuración mediante el uso de **/-y** en la línea de comandos. De forma predeterminada, se le preguntará cuando reemplace este valor, a menos que el comando de **copia** se ejecute en un script por lotes.
+-   Anexar archivos
 
-    Para anexar archivos, especifique un único archivo para *destino*, pero varios archivos para *origen* (usar caracteres comodín o *File1* +  *File2*+*File3* formato).
--   Uso de   **/z**
+    Para anexar archivos, especifique un único archivo para el *destino*, pero varios archivos para el *origen* (use caracteres comodín o el formato de *archivo1*+*archivo2*+*archivo3* ).
+-   Usar **/z**
 
-    Si se pierde la conexión durante la fase de copia (por ejemplo, si el servidor está quedándose sin conexión interrumpe la conexión), **copiar/z** reanuda una vez restablecida la conexión. **/ z** también muestra el porcentaje de la operación de copia se completa para cada archivo.
--   Copiar a y desde los dispositivos
+    Si la conexión se pierde durante la fase de copia (por ejemplo, si el servidor se desconecta y se interrumpe la conexión), la **copia/z** se reanudará después de que se haya restablecido la conexión. **/z** también muestra el porcentaje de la operación de copia que se ha completado para cada archivo.
+-   Copiar a dispositivos y desde ellos
 
-    Puede sustituir un nombre de dispositivo para una o más apariciones de *origen* o *destino*.
--   Utilizar u omitir **/b** al copiar a un dispositivo
+    Puede sustituir un nombre de dispositivo por una o varias apariciones del *origen* o del *destino*.
+-   Usar u omitir **/b** al copiar en un dispositivo
 
-    Cuando *destino* es un dispositivo (por ejemplo, Com1 o Lpt1) **/b** copia los datos en el dispositivo en modo binario. En modo binario, **copiar /b** copia todos los caracteres (incluidos los caracteres especiales, como CTRL + C, CTRL+S, CTRL+Z y ENTRAR) en el dispositivo como datos. Sin embargo, si se omite **/b**, se copian datos en el dispositivo en modo ASCII. En modo ASCII, caracteres especiales pueden provocar archivos combinar durante el proceso de copia.
+    Cuando el *destino* es un dispositivo (por ejemplo, COM1 o LPT1), **/b** copia los datos en el dispositivo en modo binario. En el modo binario, **Copy/b** copia todos los caracteres (incluidos los caracteres especiales, como Ctrl + C, Ctrl + S, Ctrl + Z y entrar) en el dispositivo como datos. Sin embargo, si se omite **/b**, los datos se copian en el dispositivo en modo ASCII. En el modo ASCII, los caracteres especiales pueden hacer que los archivos se combinen durante el proceso de copia.
 -   Usar el archivo de destino predeterminado
 
-    Si no especifica un archivo de destino, una copia se crea con el mismo nombre, fecha de modificación y hora que el archivo original de la modificación. La nueva copia se almacena en el directorio actual en la unidad actual. Si el archivo de origen está en la unidad actual y en el directorio actual y no se especifica una unidad diferente o el directorio del archivo de destino, el **copia** comando detiene y se muestra el mensaje de error siguiente:
+    Si no especifica un archivo de destino, se crea una copia con el mismo nombre, fecha de modificación y hora de modificación que el archivo original. La nueva copia se almacena en el directorio actual de la unidad actual. Si el archivo de origen está en la unidad actual y en el directorio actual y no especifica una unidad o un directorio diferente para el archivo de destino, el comando de **copia** se detiene y muestra el mensaje de error siguiente:
 
     `File cannot be copied onto itself`
 
     `0 File(s) copied`
 -   Combinar archivos
 
-    Si especifica más de un archivo en *origen*, **copia** combina todo en un solo archivo con el nombre de archivo especificado en *destino*. **Copia** asume los archivos combinados son archivos ASCII a menos que use el **/b** opción.
+    Si especifica más de un archivo en el *origen*, **copiar** los combina en un único archivo con el nombre de archivo especificado en *destino*. **Copiar** presupone que los archivos combinados son archivos ASCII a menos que use la opción **/b** .
 -   Copiar archivos de longitud cero
 
-    **Copia** no copia los archivos que tienen una longitud de 0 bytes. Use **xcopy** para copiar estos archivos.
--   Cambiar la fecha y hora de un archivo
+    La **copia** no copia los archivos que tienen una longitud de 0 bytes. Use **xcopy** para copiar estos archivos.
+-   Cambiar la hora y la fecha de un archivo
 
-    Si desea asignar a la hora actual y la fecha a un archivo sin modificar el archivo, use la sintaxis siguiente:  
+    Si desea asignar la fecha y hora actuales a un archivo sin modificar el archivo, use la sintaxis siguiente:  
     ```
     copy /b <Source> +,,
     ```  
-    Las comas indican la omisión de la *destino* parámetro.
+    Las comas indican la omisión del parámetro de *destino* .
 -   Copiar archivos en subdirectorios
 
-    Para copiar todos los archivos y subdirectorios de un directorio, use el **xcopy** comando.
--   El **copia** comando, con diferentes parámetros, está disponible en la consola de recuperación.
+    Para copiar todos los archivos y subdirectorios de un directorio, use el comando **xcopy** .
+-   El comando **Copy** , con distintos parámetros, está disponible en la consola de recuperación.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para copiar un archivo llamado Memo.doc a carta.doc en la unidad actual y asegúrese de que es un carácter de final de archivo (CTRL+Z) al final del archivo copiado, escriba:
+Para copiar un archivo denominado Memo. doc en Letter. doc en la unidad actual y asegurarse de que el carácter de fin de archivo (CTRL + Z) está al final del archivo copiado, escriba:
 ```
 copy memo.doc letter.doc /a
 ```
-Para copiar un archivo denominado Canario.TIP desde la unidad actual y el directorio a un directorio existente denominado aves que se encuentra en la unidad C, escriba:
+Para copiar un archivo llamado Robin. tip desde la unidad actual y el directorio a un directorio existente denominado pájaros que se encuentra en la unidad C, escriba:
 ```
 copy robin.typ c:\birds
 ```
-Si el directorio no existe, se copia el archivo Canario.TIP en un archivo denominado aves que se encuentra en el directorio raíz en el disco en la unidad C.
+Si el directorio pájaros no existe, el archivo Robin. Typ se copia en un archivo denominado pájaros que se encuentra en el directorio raíz del disco de la unidad C.
 
-Para combinar Mar89.rpt Apr89.rpt y May89.rpt, que se encuentran en el directorio actual y se colocan en un archivo denominado informe (también en el directorio actual), escriba:
+Para combinar Mar89. RPT, Apr89. RPT y May89. RPT, que se encuentran en el directorio actual, y colóquelos en un archivo denominado Informe (también en el directorio actual), escriba:
 ```
 copy mar89.rpt + apr89.rpt + may89.rpt Report
 ```
-Al combinar los archivos, **copia** marca el archivo de destino con la fecha y hora actuales. Si se omite *destino*, los archivos se combinan y se almacenan con el nombre del primer archivo en la lista. Por ejemplo, para combinar todos los archivos de informe cuando un archivo denominado informe ya existe, escriba:
+Al combinar archivos, **Copy** marca el archivo de destino con la fecha y hora actuales. Si omite el *destino*, los archivos se combinan y se almacenan con el nombre del primer archivo de la lista. Por ejemplo, para combinar todos los archivos de informe cuando ya existe un archivo con el nombre informe, escriba:
 ```
 copy report + mar89.rpt + apr89.rpt + may89.rpt
 ```
-Para combinar todos los archivos en el directorio actual que tienen la extensión de nombre de archivo the.txt en un único archivo denominado Combined.doc, tipo:
+Para combinar todos los archivos del directorio actual que tengan la extensión de nombre de archivo. txt en un único archivo denominado Combined. doc, escriba:
 ```
 copy *.txt Combined.doc 
 ```
-Si desea combinar varios archivos binarios en un archivo mediante el uso de caracteres comodín, incluya **/b**. Esto impide que Windows considere CTRL+Z como carácter de final de archivo. Por ejemplo, escriba:
+Si desea combinar varios archivos binarios en un archivo mediante caracteres comodín, incluya **/b**. Esto evita que Windows considere CTRL + Z como un carácter de fin de archivo. Por ejemplo, escriba:
 ```
 copy /b *.exe Combined.exe
 ```
 
 > [!CAUTION]
-> Si combina archivos binarios, el archivo resultante puede ser inservible debido a un formato interno.
+> Si combina archivos binarios, el archivo resultante podría quedar inutilizable debido al formato interno.
 
-En el ejemplo siguiente, **copia** combina cada archivo que tiene una extensión. txt con su correspondiente archivo .ref. El resultado es un archivo con el mismo nombre pero con una extensión .doc. **Copia** combina File1.txt con Archivo1.ref para formar Archivo1 y, a continuación, **copia** combina File2.txt con Archivo2.ref para formar Archivo2.doc y así sucesivamente. Por ejemplo, escriba:
+En el ejemplo siguiente, **Copy** combina cada archivo que tiene una extensión. txt con su archivo. Ref correspondiente. El resultado es un archivo con el mismo nombre de archivo, pero con una extensión. doc. La **copia** combina Archivo1. txt con Archivo1. Ref para formar Archivo1. doc y, a continuación, **copiar** combina archivo2. txt con archivo2. Ref para formar archivo2. doc, etc. Por ejemplo, escriba:
 ```
 copy *.txt + *.ref *.doc
 ```
-Para combinar todos los archivos con la extensión .txt y, a continuación, combinar todos los archivos con la extensión .ref en un archivo denominado Combined.doc, escriba:
+Para combinar todos los archivos con la extensión. txt y, a continuación, combine todos los archivos con la extensión. Ref en un archivo denominado Combined. doc, escriba:
 ```
 copy *.txt + *.ref Combined.doc
 ```

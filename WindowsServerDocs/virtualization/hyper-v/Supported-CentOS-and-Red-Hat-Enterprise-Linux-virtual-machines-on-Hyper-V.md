@@ -1,7 +1,7 @@
 ---
 title: Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V
 description: Enumera las versiones de los servicios de integración de Linux para las distribuciones admitidas y Red Hat Enterprise
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 ms.technology: compute-hyper-v
 ms.tgt_pltfrm: na
@@ -10,12 +10,12 @@ ms.assetid: 4bf8783d-dee5-4b3e-8cce-2b11b117c189
 author: danihalfin
 ms.author: jopoulso
 ms.date: 06/13/2019
-ms.openlocfilehash: 80273bc0e99a3e70c8c783deae4a3ee42b5a11f0
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 19e22df7ed5e49cdf4047204f1b13b9c4f3450ef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544726"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365552"
 ---
 # <a name="supported-centos-and-red-hat-enterprise-linux-virtual-machines-on-hyper-v"></a>Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V
 
@@ -244,7 +244,7 @@ Esta serie tiene disponible un kernel PAE de 32 bits compatible. No hay compatib
 
    1. Cree un archivo **/etc/udev/rules.d/100-Balloon.rules**. Puede usar cualquier otro nombre que desee para el archivo.
 
-   2. Agregue el siguiente contenido al archivo:`SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
+   2. Agregue el siguiente contenido al archivo: `SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
 
    3. Reinicie el sistema para habilitar la compatibilidad con la adición en caliente.
 

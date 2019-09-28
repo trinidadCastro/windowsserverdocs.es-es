@@ -1,8 +1,8 @@
 ---
 title: bitsadmin addfile
-description: Tema de los comandos de Windows para **bitsadmin addfile** -agrega un archivo para el trabajo especificado.
+description: 'Tema de comandos de Windows para **bitsadmin AddFile** : agrega un archivo al trabajo especificado.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c3027bdc4f3f8f3e3ca50400b2c5dbf33bf2bc5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8dfddda92e506dbfca2a47394a310edf16fe78aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861756"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382044"
 ---
 # <a name="bitsadmin-addfile"></a>bitsadmin addfile
 
-Agrega un archivo para el trabajo especificado.
+Agrega un archivo al trabajo especificado.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,13 +34,13 @@ bitsadmin /AddFile <Job> <RemoteURL> <LocalName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
-|RemoteURL|La dirección URL del archivo en el servidor.|
-|LocalName|El nombre del archivo en el equipo local. *LocalName* debe contener una ruta de acceso absoluta al archivo.|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
+|RemoteURL|Dirección URL del archivo en el servidor.|
+|LocalName|Nombre del archivo en el equipo local. *Localname* debe contener una ruta de acceso absoluta al archivo.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Agregue un archivo para el trabajo. Repita esta llamada para cada archivo que desea agregar. Si usan varios trabajos *myDownloadJob* como su nombre, debe reemplazar *myDownloadJob* con el GUID del trabajo para identificar de forma única el trabajo.
+Agregue un archivo al trabajo. Repita esta llamada para cada archivo que desee agregar. Si varios trabajos usan *myDownloadJob* como su nombre, debe reemplazar *MYDOWNLOADJOB* por el GUID del trabajo para identificar el trabajo de forma única.
 ```
 C:\>bitsadmin /addfile myDownloadJob http://downloadsrv/10mb.zip c:\10mb.zip
 ```

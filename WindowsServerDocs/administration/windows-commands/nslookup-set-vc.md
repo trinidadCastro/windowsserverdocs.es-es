@@ -1,8 +1,8 @@
 ---
 title: nslookup set vc
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b70cd343ce0ff2c6b4dfd61750882939153b795
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d46e60d6c755a75928c801494c385578c3b5bc5d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436761"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372738"
 ---
 # <a name="nslookup-set-vc"></a>nslookup set vc
 
 
 
-Especifica el uso o no utilizar un circuito virtual al enviar solicitudes al servidor.
+Especifica que se use o no un circuito virtual al enviar solicitudes al servidor.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,9 +36,9 @@ set [no]vc
 
 | Parámetro |                                              Descripción                                               |
 |-----------|--------------------------------------------------------------------------------------------------------|
-| **novc**  | Especifica que no utilice nunca un circuito virtual al enviar solicitudes al servidor. El valor predeterminado es **novc**. |
-|  **vc**   |             Especifica que se utilice siempre un circuito virtual al enviar solicitudes al servidor.             |
-|   {Ayuda   |                                                   ?}                                                   |
+| **novc**  | Especifica que nunca se debe usar un circuito virtual al enviar solicitudes al servidor. El valor predeterminado es **novc**. |
+|  **VC**   |             Especifica que siempre se debe usar un circuito virtual al enviar solicitudes al servidor.             |
+|   {ayuda   |                                                   ?}                                                   |
 
 #### <a name="additional-references"></a>Referencias adicionales
 

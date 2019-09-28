@@ -2,7 +2,7 @@
 title: prompt
 description: Obtenga información sobre cómo personalizar el símbolo del sistema.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 8371a67ba1b8dc7d5f02272c809f916aae3df584
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 2df80d3af6344644a68b1b2d01ba48fbf41f1581
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544555"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372022"
 ---
 # <a name="prompt"></a>prompt
 
 
 
-Cambia el símbolo del sistema cmd. exe. Si se usa sin parámetros, **prompt** restablece el símbolo del sistema a la configuración predeterminada, que es la letra de unidad y el directorio actuales seguidos del símbolo **>** mayor que ().
+Cambia el símbolo del sistema cmd. exe. Si se usa sin parámetros, **prompt** restablece el símbolo del sistema a la configuración predeterminada, que es la letra de unidad y el directorio actuales seguidos del símbolo mayor que ( **>** ).
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,7 +38,7 @@ prompt [<Text>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<> De texto|Especifica el texto y la información que desea incluir en el símbolo del sistema.|
+|@no__t 0Text >|Especifica el texto y la información que desea incluir en el símbolo del sistema.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
@@ -47,7 +47,7 @@ Puede personalizar el símbolo del sistema para mostrar el texto que desee, incl
 
 En la tabla siguiente se enumeran las combinaciones de caracteres que se pueden incluir en lugar de una o más cadenas de caracteres en el parámetro de *texto* . La lista incluye una breve descripción del texto o la información que cada combinación de caracteres agrega al símbolo del sistema.  
 
-| Óptico |                                 Descripción                                 |
+| óptico |                                 Descripción                                 |
 |-----------|-----------------------------------------------------------------------------|
 |    $q     |                               = (signo igual)                                |
 |    $$     |                               $ (signo de dólar)                               |
@@ -58,7 +58,7 @@ En la tabla siguiente se enumeran las combinaciones de caracteres que se pueden 
 |    $n     |                                Unidad actual                                |
 |    $g     |                            > (mayor que signo)                            |
 |    $l     |                             < (menor que signo)                              |
-|    $b     |                              \|(símbolo de barra vertical)                               |
+|    $b     |                              \| (símbolo de barra vertical)                               |
 |    $_     |                               ENTRAR-AVANCE DE LA                                |
 |    $e     |                         Código de escape ANSI (código 27)                          |
 |    $h     | Retroceso (para eliminar un carácter que se ha escrito en la línea de comandos) |
@@ -69,9 +69,9 @@ En la tabla siguiente se enumeran las combinaciones de caracteres que se pueden 
 
 Cuando las extensiones de comando están habilitadas (es decir, el valor predeterminado), el comando **prompt** admite los siguientes caracteres de formato:  
 
-|Óptico|Descripción|
+|óptico|Descripción|
 |---------|-----------|
-|$+|Cero o más caracteres de signo **+** más (), en función de la profundidad de la pila de directorios **insertada** (un carácter por cada nivel insertado).|
+|$+|Cero o más caracteres de signo más ( **+** ), en función de la profundidad de la pila de directorios **insertada** (un carácter por cada nivel insertado).|
 |$m|Nombre remoto asociado a la letra de unidad actual o cadena vacía si la unidad actual no es una unidad de red.|
 
 Si incluye el carácter **$p** en el parámetro de texto, el disco se lee después de escribir cada comando (para determinar la unidad y la ruta de acceso actuales). Esto puede tardar más tiempo, especialmente en el caso de las unidades de disquete.
@@ -87,7 +87,7 @@ El mensaje se cambia como se indica a continuación, donde la fecha y la hora so
 Fri 06/01/2007  13:53:28.91
 >
 ```
-Para establecer que el símbolo del sistema se muestre como una`-->`flecha (), escriba:
+Para establecer que el símbolo del sistema se muestre como una flecha (`-->`), escriba:
 ```
 prompt --$g
 ```

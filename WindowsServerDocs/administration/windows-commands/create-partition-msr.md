@@ -1,8 +1,8 @@
 ---
-title: crear la partición msr
-description: 'Tema de los comandos de Windows para ***- '
+title: crear partición MSR
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3fa9ba46418c3ed3b7999a734b4c0df40dce5027
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 45cc215b097ce048b15f0e907f95f976e4941e28
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434177"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378900"
 ---
-# <a name="create-partition-msr"></a>crear la partición msr
+# <a name="create-partition-msr"></a>crear partición MSR
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-crea un Reserved Microsoft \(MSR\) partición en una tabla de particiones GUID \(gpt\) disco.  
+crea una partición reservada de Microsoft \(MSR @ no__t-1 en una tabla de particiones GUID \(gpt @ no__t-3 Disk.  
   
 > [!CAUTION]  
-> Tenga mucho cuidado al utilizar este comando. Dado que los discos gpt requieren un diseño de partición específica, la creación de particiones de Microsoft Reserved podría provocar que el disco no sea legible.  
+> Tenga mucho cuidado al usar este comando. Dado que los discos GPT requieren un diseño de partición específico, la creación de particiones reservadas de Microsoft podría provocar que el disco no se pudiera leer.  
   
   
   
@@ -41,22 +41,22 @@ create partition msr [size=<n>] [offset=<n>] [noerr]
   
 |  Parámetro  |                                                                                                                         Descripción                                                                                                                         |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  size\=<n>  |               El tamaño de la partición en megabytes \(MB\). La partición es al menos tan larga en bytes, como el número especificado por <n>. Si no se especifica tamaño, la partición continuará mientras haya espacio libre en la región actual.               |
-| offset\=<n> | Especifica el desplazamiento en kilobytes \(KB\), que se crea la partición. El desplazamiento se redondea hacia arriba para llenar completamente el tamaño en sectores se utiliza. Si se indica ningún desplazamiento, la partición se coloca en la primera zona del disco que sea lo suficientemente grande como para albergarla. |
-|    noerr    |                            sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.                             |
+|  Size @ no__t-0 @ no__t-1  |               El tamaño de la partición en megabytes \(MB @ no__t-1. La partición es, como mínimo, en bytes como el número especificado por <n>. Si no se proporciona ningún tamaño, la partición continúa hasta que no haya más espacio libre en la región actual.               |
+| offset @ no__t-0 @ no__t-1 | Especifica el desplazamiento en kilobytes \(KB @ no__t-1, en el que se crea la partición. El desplazamiento se redondea hacia arriba para llenar completamente el tamaño del sector que se utiliza. Si no se proporciona ningún desplazamiento, la partición se coloca en la primera extensión del disco que sea lo suficientemente grande como para almacenarla. |
+|    Noerr    |                            Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.                             |
   
 ## <a name="remarks"></a>Comentarios  
   
--   En discos gpt que se utilizan para arrancar el sistema operativo Windows, la interfaz de Firmware Extensible \(EFI\) partición del sistema es la primera partición del disco, seguida de la partición Reserved Microsoft. los discos GPT que se usan únicamente para el almacenamiento de datos no tiene una partición de sistema EFI, en cuyo caso la partición de Microsoft Reserved es la primera partición.  
+-   En los discos GPT que se utilizan para arrancar el sistema operativo Windows, la partición del sistema Extensible Firmware Interface \(EFI @ no__t-1 es la primera partición del disco, seguida de la partición reservada de Microsoft. los discos GPT que se usan únicamente para el almacenamiento de datos no tienen una partición del sistema EFI, en cuyo caso la partición reservada de Microsoft es la primera partición.  
   
--   Windows no montan particiones de Microsoft Reserved. No se puede almacenar datos en ellas y no puede eliminarlas.  
+-   Windows no monta las particiones reservadas de Microsoft. No se pueden almacenar datos en ellos y no se pueden eliminar.  
   
--   Se requiere una partición de Microsoft Reserved en todos los discos gpt. El tamaño de esta partición depende del tamaño total del disco gpt. El tamaño del disco gpt debe ser al menos 32 MB para crear una partición Reserved Microsoft.  
+-   Se requiere una partición reservada de Microsoft en cada disco GPT. El tamaño de esta partición depende del tamaño total del disco GPT. El tamaño del disco GPT debe ser de al menos 32 MB para crear una partición reservada de Microsoft.  
   
--   Debe seleccionarse un disco gpt básico para que esta operación se realice correctamente. Use la **seleccione disco** comando para seleccionar un disco gpt básico y desplace el foco a ella.  
+-   Se debe seleccionar un disco GPT básico para que esta operación se realice correctamente. Use el comando **Seleccionar disco** para seleccionar un disco GPT básico y desplazar el foco a él.  
   
-## <a name="BKMK_examples"></a>Ejemplos  
-Para crear una partición de Microsoft Reserved de 1000 megabytes de tamaño, escriba:  
+## <a name="BKMK_examples"></a>Example  
+Para crear una partición reservada de Microsoft de 1000 megabytes de tamaño, escriba:  
   
 ```  
 create partition msr size=1000  

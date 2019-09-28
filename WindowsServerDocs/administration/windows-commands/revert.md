@@ -1,8 +1,8 @@
 ---
-title: revertir
-description: 'Tema de los comandos de Windows para ***- '
+title: Revertir
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5bc77b17317f602d642c7a9e025b67be10ad7256
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3243f13a4997824d9fff7c874ce26d56325fefa4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875116"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371448"
 ---
-# <a name="revert"></a>revertir
+# <a name="revert"></a>Revertir
 
 
 
-Revierte un volumen en una copia de instantáneas especificada. Esto solo se admite para las instantáneas en el contexto CLIENTACCESSIBLE. Estas instantáneas son persistentes y solo se pueden realizar por el proveedor del sistema. Si se utiliza sin parámetros, **revertir** muestra la Ayuda en el símbolo del sistema.
+Revierte un volumen a una instantánea especificada. Esto solo se admite para las instantáneas en el contexto CLIENTACCESSIBLE. Estas instantáneas son persistentes y solo las puede realizar el proveedor del sistema. Si se usa sin parámetros, **Revert** muestra la ayuda en el símbolo del sistema.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,7 +36,7 @@ revert <ShadowCopyID>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<ShadowCopyID>|Especifica el identificador de instantánea para el volumen volverá al.|
+|@no__t 0ShadowCopyID >|Especifica el identificador de la instantánea a la que se revierte el volumen.|
 
 #### <a name="additional-references"></a>Referencias adicionales
 

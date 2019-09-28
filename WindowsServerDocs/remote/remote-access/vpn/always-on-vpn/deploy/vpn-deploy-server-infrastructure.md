@@ -1,7 +1,7 @@
 ---
 title: Configurar la infraestructura de servidor
 description: En este paso, instalará y configurará los componentes del lado servidor necesarios para admitir la VPN. Los componentes del lado servidor incluyen la configuración de la PKI para distribuir los certificados usados por los usuarios, el servidor VPN y el servidor NPS.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
@@ -10,12 +10,12 @@ ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: 260d5c6273d877386dc1cd8833b2f226533127c3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: c7e2c4172621416048fa9e82bbd12f5b1717d490
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871298"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404300"
 ---
 # <a name="step-2-configure-the-server-infrastructure"></a>Paso 2. Configurar la infraestructura de servidor
 
@@ -116,7 +116,7 @@ Puesto que el servidor RRAS no está unido a un dominio, no se puede usar la ins
 
     - **Propósitos planteados:** Autenticación de servidor, seguridad IP IKE intermedia 
 
-    - **Plantilla de certificado:** [_Cliente_] Servidor VPN
+    - **Plantilla de certificado:** [_cliente_] servidor VPN
 
 #### <a name="example-vpngatewayinf-script"></a>Ejemplo: Script VPNGateway. inf
 

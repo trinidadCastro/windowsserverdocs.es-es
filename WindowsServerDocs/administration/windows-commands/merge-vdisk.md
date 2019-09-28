@@ -1,8 +1,8 @@
 ---
-title: Combinar vdisk
-description: 'Tema de los comandos de Windows para ***- '
+title: Merge vDisk
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc20fcaf6e511bb25156996bddc3357f99195875
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 7023f2a6669ea6f6801e25cbfc87c950ab95a3bc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437411"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373733"
 ---
-# <a name="merge-vdisk"></a>Combinar vdisk
+# <a name="merge-vdisk"></a>Merge vDisk
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Combina un diferenciación disco duro virtual (VHD) con su elemento primario correspondiente VHD. Se modificará el VHD primario para incluir las modificaciones en el disco duro virtual de diferenciación.
+Combina un disco duro virtual (VHD) de diferenciación con su VHD primario correspondiente. El VHD primario se modificará para incluir las modificaciones del VHD de diferenciación.
 > [!NOTE]
-> Este comando sólo es aplicable a Windows 7 y Windows Server 2008 R2.
+> Este comando solo es aplicable a Windows 7 y Windows Server 2008 R2.
 > ## <a name="syntax"></a>Sintaxis
 > ```
 > merge vdisk depth=<n>
@@ -35,23 +35,23 @@ Combina un diferenciación disco duro virtual (VHD) con su elemento primario cor
 > 
 > | Parámetro |                                                                                    Descripción                                                                                    |
 > |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-> | profundidad =<n> | Indica el número de archivos de disco duro virtual principal para combinar. Por ejemplo, **profundidad = 1** indica que el VHD de diferenciación se combinarán con un nivel de la cadena de diferenciación. |
+> | Depth = <n> | Indica el número de archivos VHD primarios que se van a combinar. Por ejemplo, **Depth = 1** indica que el disco duro virtual de diferenciación se combinará con un nivel de la cadena de diferenciación. |
 > 
 > ## <a name="remarks"></a>Comentarios
-> - Un disco duro virtual debe estar seleccionado y desconectado para que esta operación se realice correctamente. Use la **seleccione vdisk** comando para seleccionar un disco duro virtual y desplace el foco a ella.
-> - Este parámetro modifica al VHD primario. Como resultado, otros VHD de diferenciación que dependen del elemento primario ya no serán válidos.
->   ## <a name="BKMK_Examples"></a>Ejemplos
->   Para combinar un VHD de diferenciación con su elemento primario de disco duro virtual, escriba:
+> - Para que esta operación se realice correctamente, se debe seleccionar y desasociar un disco duro virtual. Use el comando **Select vDisk** para seleccionar un disco duro virtual y desplazar el foco a él.
+> - Este parámetro modifica el VHD primario. Como resultado, otros VHD de diferenciación que dependen del elemento primario ya no serán válidos.
+>   ## <a name="BKMK_Examples"></a>Example
+>   Para fusionar mediante combinación un disco duro virtual de diferenciación con su VHD primario, escriba:
 >   ```
 >   merge vdisk depth=1
 >   ```
 >   ## <a name="additional-references"></a>Referencias adicionales
 > - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-> - [attach vdisk](attach-vdisk.md)
-> - [compact vdisk](compact-vdisk.md)
+> - [Attach vDisk](attach-vdisk.md)
+> - [Compact vDisk](compact-vdisk.md)
 
--   [vdisk detallado](detail-vdisk.md)
--   [Desasociar vdisk](detach-vdisk.md)
--   [Expandir vdisk](expand-vdisk.md)
--   [select vdisk](select-vdisk.md)
+-   [detalles del vDisk](detail-vdisk.md)
+-   [Detach vDisk](detach-vdisk.md)
+-   [expandir vDisk](expand-vdisk.md)
+-   [seleccionar vDisk](select-vdisk.md)
 -   [list_1](list_1.md)

@@ -1,8 +1,8 @@
 ---
 title: convert
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a77e1fca9605c7e5cc4ff059db08ffbfcc81f81
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d78f7adbc26acf9787ad39019e1450542a6acda2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859286"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379029"
 ---
 # <a name="convert"></a>convert
 
 
 
-Convierte un disco de tipo de un disco a otro.
+Convierte un disco de un tipo de disco a otro.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -39,10 +39,10 @@ convert mbr
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[convertir básico](convert-basic.md)|Convierte un disco dinámico vacío en un disco básico.|
-|[convertir en dinámico](convert-dynamic.md)|Convierte un disco básico en un disco dinámico.|
-|[convertir a gpt](convert-gpt.md)|Convierte un disco básico vacío con el estilo de partición (MBR) registro de arranque maestro en un disco básico con el estilo de particiones GUID (GPT) de la tabla de partición.|
-|[convertir a mbr](convert-mbr.md)|Convierte un disco básico vacío con el estilo de partición de tabla de particiones GUID (GPT) en un disco básico con el estilo de partición (MBR) registro de arranque maestro.|
+|[Convertir básico](convert-basic.md)|Convierte un disco dinámico vacío en un disco básico.|
+|[Convertir dinámico](convert-dynamic.md)|Convierte un disco básico en un disco dinámico.|
+|[Convertir GPT](convert-gpt.md)|Convierte un disco básico vacío con el estilo de partición de registro de arranque maestro (MBR) en un disco básico con el estilo de partición de tabla de particiones GUID (GPT).|
+|[Convertir MBR](convert-mbr.md)|Convierte un disco básico vacío con el estilo de partición de tabla de particiones GUID (GPT) en un disco básico con el estilo de partición de registro de arranque maestro (MBR).|
 
 #### <a name="additional-references"></a>Referencias adicionales
 

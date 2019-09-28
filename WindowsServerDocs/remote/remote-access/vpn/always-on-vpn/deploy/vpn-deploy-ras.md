@@ -1,7 +1,7 @@
 ---
 title: Configurar el servidor de acceso remoto para VPN de Always On
 description: RRAS está diseñado para funcionar bien como un enrutador y un servidor de acceso remoto; por lo tanto, admite una amplia gama de características.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
@@ -10,12 +10,12 @@ ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: 8ed7dd9b8b02ab58cfb6dacf031576004c8d0290
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: c04074338cf4ba0189eb1e9bc45a80b948fdbfbf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871310"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388045"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-always-on-vpn"></a>Paso 3. Configurar el servidor de acceso remoto para VPN de Always On
 
@@ -165,7 +165,7 @@ En esta sección, puede configurar VPN de acceso remoto para permitir conexiones
 
     - **Puntuación inicial**
 
-    - **Puerto**
+    - **Casilla**
 
 13. Si es necesario, cambie los valores para que coincidan con los requisitos de su entorno y seleccione **Aceptar**.
 

@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getowner
-description: Tema de los comandos de Windows para **bitsadmin getowner** -recupera el propietario del trabajo especificado.
+description: 'Temas de comandos de Windows para **bitsadmin GetOwner** : recupera el propietario del trabajo especificado.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1381bc1268b2b81e2bde18d0d8e17bd760345e0f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ab8151ba8b1379c101aa037504ae2021ff0df62f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886716"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381451"
 ---
 # <a name="bitsadmin-getowner"></a>bitsadmin getowner
 
@@ -34,11 +34,11 @@ bitsadmin /GetOwner <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente muestra el propietario del trabajo denominado *myDownloadJob*.
+En el ejemplo siguiente se muestra el propietario del trabajo denominado *myDownloadJob*.
 ```
 C:\>bitsadmin /GetOwner myDownloadJob
 ```

@@ -1,7 +1,7 @@
 ---
 title: Solucionar problemas de VPN de Always On
 description: En este tema se proporcionan instrucciones para comprobar y solucionar problemas de la implementación de VPN Always On en Windows Server 2016.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 4d08164e-3cc8-44e5-a319-9671e1ac294a
@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 60873c8bbf71ad5afa58bd9e19b1a3fd650bc65f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 649fbc16e3dfef2ed1061d0ba6a5c22a8712b186
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871348"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404375"
 ---
 # <a name="troubleshoot-always-on-vpn"></a>Solucionar problemas de VPN de Always On 
 
@@ -118,7 +118,7 @@ Busque eventos de RasClient de código fuente. Todos los mensajes de error devue
 
 ## <a name="nps-logs"></a>Registros de NPS
 
-NPS crea y almacena los registros de cuentas de NPS. De forma predeterminada, estos datos se almacenan en\\los\\archivos de\\ registro% SystemRoot% system32 en un archivo denominado en*xxxx*. txt, donde *xxxx* es la fecha en que se creó el archivo.
+NPS crea y almacena los registros de cuentas de NPS. De forma predeterminada, estos datos se almacenan en% SYSTEMROOT% \\System32 @ no__t-1Logfiles @ no__t-2 en un archivo denominado en*xxxx*. txt, donde *xxxx* es la fecha en que se creó el archivo.
 
 De forma predeterminada, estos registros están en formato de valores separados por comas, pero no incluyen una fila de encabezado. La fila de encabezado es:
 

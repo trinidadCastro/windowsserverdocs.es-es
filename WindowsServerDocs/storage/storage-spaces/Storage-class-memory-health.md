@@ -1,7 +1,7 @@
 ---
 ms.assetid: 2bab6bf6-90e7-46a7-b917-14a7a8f55366
 title: Administración de estado de la memoria de clase de almacenamiento (NVDIMM-N) en Windows
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: jgerend
 ms.manager: dongill
 ms.technology: storage-spaces
@@ -9,25 +9,25 @@ ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ebec8618c79c43816680387ae5e495f125b3c54
-ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
+ms.openlocfilehash: 03d986832e14e0dd7b80324de3c9f14d0537dba5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67407554"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402906"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Administración de estado de la memoria de clase de almacenamiento (NVDIMM-N) en Windows
 
-> Se aplica a: Windows Server, Windows Server 2016, Windows Server (canal semianual), Windows 10 de 2019
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual), Windows 10
 
 En este artículo se ofrece información sobre el control de errores y la administración de estados específicos de dispositivos de memoria de clase de almacenamiento (NVDIMM-N) en Windows destinada a administradores de sistemas y profesionales de TI, destacando las diferencias entre la memoria de clase de almacenamiento y los dispositivos de almacenamiento tradicionales.
 
 Si no estás familiarizado con la compatibilidad de Windows con los dispositivos de memoria de clase de almacenamiento, estos breves vídeos proporcionan una visión global al respecto:
 - [Uso de memoria no volátil (NVDIMM-N) como almacenamiento en bloque en Windows Server 2016](https://channel9.msdn.com/Events/Build/2016/P466)
 - [Uso de memoria no volátil (NVDIMM-N) como almacenamiento direccionable por bytes en Windows Server 2016](https://channel9.msdn.com/Events/Build/2016/P470)
-- [Aceleración de rendimiento de SQL Server 2016 con memoria persistente en Windows Server 2016](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-Windows-Server-2016-SCM--FAST)
+- [Aceleración del rendimiento de SQL Server 2016 con memoria persistente en Windows Server 2016](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-Windows-Server-2016-SCM--FAST)
 
-Consulte también [comprender e implementar una memoria persistente en espacios de almacenamiento directo](deploy-pmem.md).
+Vea también [comprender e implementar la memoria persistente en espacios de almacenamiento directo](deploy-pmem.md).
 
 Los dispositivos de memoria de clase de almacenamiento NVDIMM-N compatibles con JEDEC se admiten en Windows con controladores nativos, a partir de Windows Server 2016 y Windows 10 (versión 1607). Aunque estos dispositivos se comportan de manera similar a otros discos (HDD y SSD), existen algunas diferencias.
 

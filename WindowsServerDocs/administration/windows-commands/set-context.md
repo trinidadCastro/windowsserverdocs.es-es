@@ -1,8 +1,8 @@
 ---
-title: Establecer el contexto
-description: 'Tema de los comandos de Windows para ***- '
+title: Establecer contexto
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6f24e795f2d7c92d462cf822e70e4830b53827e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 16f71d831f374f495abf2239cb8e694eee69efdf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845856"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370977"
 ---
-# <a name="set-contex"></a>Conjunto contextual
+# <a name="set-contex"></a>Establecer contextual.
 
 
 
-Establece el contexto de creación de instantáneas. Si se utiliza sin parámetros, **establecer el contexto de** muestra la Ayuda en el símbolo del sistema.
+Establece el contexto para la creación de la instantánea. Si se usa sin parámetros, **set context** muestra la ayuda en el símbolo del sistema.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,18 +38,18 @@ set context {clientaccessible | persistent [nowriters] | volatile [nowriters]}
 
 |Parámetro|Descripción|
 |---------|-----------|
-|clientaccessible|Especifica que la instantánea se puede utilizar en las versiones de cliente de Windows.|
-|Persistente|Especifica que la instantánea se mantiene en el reinicio, restablecimiento o cierra el programa.|
-|volatile|Elimina la instantánea en sale o restablece.|
-|NoWriters|Especifica que se excluyen todos los escritores.|
+|clientaccessible|Especifica que las versiones de cliente de Windows pueden usar la instantánea.|
+|permanentes|Especifica que la instantánea se mantiene entre la salida del programa, el restablecimiento o el reinicio.|
+|volatil|Elimina la instantánea al salir o restablecer.|
+|nowriters|Especifica que todos los escritores están excluidos.|
 
 ## <a name="remarks"></a>Comentarios
 
--   El *clientaccessible* contexto es persistente de forma predeterminada.
+-   El contexto *clientaccessible* es persistente de forma predeterminada.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para evitar que las instantáneas que se eliminen al salir de DiskShadow, escriba:
+Para evitar que se eliminen las instantáneas al salir de DiskShadow, escriba:
 ```
 set context persistent
 ```

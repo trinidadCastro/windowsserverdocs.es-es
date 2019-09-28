@@ -6,14 +6,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/21/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: da3214b715b415eed2cbce351cae93eff14a88c7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5985fc022a084e0e36e12ea60f18d1650c8c6b51
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865526"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366203"
 ---
 # <a name="ad-fs-troubleshooting---events-and-logging"></a>Solución de problemas de AD FS: eventos y registro
 AD FS proporciona dos registros principales que se pueden usar en la solución de problemas.  Estas sobrecargas son:
@@ -57,7 +57,7 @@ En la tabla siguiente se explican los niveles de auditoría disponibles.
 
 |Nivel de auditoría|Sintaxis de PowerShell|Descripción|  
 |----- | ----- | ----- |
-|None|Set-AdfsProperties-AuditLevel ninguno|La auditoría está deshabilitada y no se registrará ningún evento.|  
+|Ninguno|Set-AdfsProperties-AuditLevel ninguno|La auditoría está deshabilitada y no se registrará ningún evento.|  
 |Básico (predeterminado)|Set-AdfsProperties-AuditLevel Basic|No se registrarán más de 5 eventos para una única solicitud.|  
 |Verbose|Set-AdfsProperties-AuditLevel verbose|Se registrarán todos los eventos.  Esto registrará una cantidad significativa de información por solicitud.|  
   

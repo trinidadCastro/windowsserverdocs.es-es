@@ -1,7 +1,7 @@
 ---
-title: Windows 10 debe estar configurado con al menos la cantidad mínima de memoria
-description: Proporciona instrucciones para resolver el problema notificado por esta regla de Best Practices Analyzer.
-ms.prod: windows-server-threshold
+title: Windows 10 debe configurarse con al menos la cantidad mínima de memoria
+description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,58 +10,58 @@ ms.topic: article
 ms.assetid: e4f5bd2f-b5be-4d43-80e0-0cf198182791
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: e621750049666a916d99cf843d3a7a16069773be
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ced9b0ebab9fdac0e7bfdf37ce1581ec334864f5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824126"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393247"
 ---
-# <a name="windows-10-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows 10 debe estar configurado con al menos la cantidad mínima de memoria
+# <a name="windows-10-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows 10 debe configurarse con al menos la cantidad mínima de memoria
 
 >Se aplica a: Windows Server 2016
 
-Para obtener más información sobre análisis y los procedimientos recomendados, consulte [Run Best Practices Analyzer Scans y Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Property|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
-|**Característica del producto**|Hyper-V|  
+|**Producto o característica**|Hyper-V|  
 |**Gravedad**|Error|  
 |**Categoría**|Configuración|  
   
-Las secciones siguientes proporcionan detalles sobre el problema específico. Cursiva indica el texto de la interfaz de usuario que aparece en la herramienta Best Practices Analyzer para el problema específico.  
+En las secciones siguientes se proporcionan detalles sobre el problema específico. Cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para el problema específico.  
   
 ## <a name="issue"></a>**Problema**  
-*Se configura una máquina virtual con Windows 10 con menos de la cantidad mínima de RAM, que es de 512 MB.*  
+*Una máquina virtual que ejecuta Windows 10 está configurada con menos de la cantidad mínima de RAM, que es 512 MB.*  
   
-## <a name="impact"></a>**Impact**  
-*El sistema operativo invitado en las siguientes máquinas virtuales podrían no ejecutarse o podría ejecutarse no confiable:*  
+## <a name="impact"></a>**Impacto**  
+*Es posible que el sistema operativo invitado de las siguientes máquinas virtuales no se ejecute o se ejecute de forma no confiable:*  
 ```  
 <list of virtual machines>  
 ```  
 ## <a name="resolution"></a>**Resolución**  
-*Use el Administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual al menos 512 MB.*  
+*Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual al menos 512 MB.*  
   
-#### <a name="increase-the-memory-using-hyper-v-manager"></a>Aumentar la memoria con el Administrador de Hyper-V  
+#### <a name="increase-the-memory-using-hyper-v-manager"></a>Aumentar la memoria mediante el administrador de Hyper-V  
   
 1.  Abre el Administrador Hyper-V. Haga clic en **Inicio**, seleccione **Herramientas administrativas** y, a continuación, haga clic en **Administrador de Hyper-V**.  
   
-2.  En el panel de resultados, bajo **máquinas virtuales**, seleccione la máquina virtual que desea configurar. El estado de la máquina virtual debe aparecer como **desactivar**. Si no es así, haga clic en la máquina virtual y, a continuación, haga clic en **apagar**.  
+2.  En el panel de resultados, en **virtual machines**, seleccione la máquina virtual que desea configurar. El estado de la máquina virtual debe aparecer como **desactivado**. Si no es así, haga clic con el botón secundario en la máquina virtual y, a continuación, haga clic en **apagar**.  
   
 3.  En el panel **Acción**, en el nombre de la máquina virtual, haga clic en **Configuración**.  
   
 4.  En el panel de navegación, haga clic en **memoria**.  
   
-5.  En el **memoria** , establezca el **RAM de inicio** para al menos 512 MB y, a continuación, haga clic en **Aceptar**.  
+5.  En la página **memoria** , establezca la **RAM de inicio** en al menos 512 MB y, a continuación, haga clic en **Aceptar**.  
   
-### <a name="increase-the-memory-using-windows-powershell"></a>Aumente la cantidad de memoria mediante Windows PowerShell  
+### <a name="increase-the-memory-using-windows-powershell"></a>Aumentar la memoria mediante Windows PowerShell  
   
-1.  Abra Windows PowerShell. (En el escritorio, haga clic en **iniciar** y comience a escribir **Windows PowerShell**.)  
+1.  Abra Windows PowerShell. (En el escritorio, haga clic en **Inicio** y comience a escribir **Windows PowerShell**).  
   
-2.  Haga clic en **Windows PowerShell** y haga clic en **ejecutar como administrador**.  
+2.  Haga clic con el botón derecho en **Windows PowerShell** y haga clic en **Ejecutar como administrador**.  
   
-3.  Ejecute este comando después de reemplazar \<MyVM > con el nombre de la máquina virtual:  
+3.  Ejecute este comando después de reemplazar \<MyVM > por el nombre de la máquina virtual:  
   
 ```  
 Set-VMMemory <MyVM> -StartupBytes 512MB  

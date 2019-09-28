@@ -1,9 +1,9 @@
 ---
 title: Lista de comprobación de implementación previa
-description: Proporciona una lista de comprobación que puede usar para planear la implementación de MultiPoint Services
+description: Proporciona una lista de comprobación que puede usar para planear la implementación de Multipoint Services.
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,25 +13,25 @@ ms.assetid: 87ea20e4-46cf-49e9-86bf-70be9098c8db
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 7ce5ac114cdcc9ee2dbc63ff22569cfba01c2a12
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 38ff3832551024e3d6d89fe6d0f5eb3e136abca6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886026"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405021"
 ---
 # <a name="predeployment-checklist"></a>Lista de comprobación de implementación previa
-Use la siguiente lista de comprobación para ayudarle a planear la implementación de MultiPoint Services.  
+Use la siguiente lista de comprobación para ayudarle a planear la implementación de Multipoint Services.  
   
 |Paso|Problema|Tema de ayuda|  
 |--------|---------|--------------|  
-|1.|Compruebe que las aplicaciones son compatibles con MultiPoint Services.|[Consideraciones de la aplicación](Application-Considerations.md)|  
-|2.|Determinar el número de los usuarios que suelen tener acceso, al mismo tiempo, cada equipo que está ejecutando MultiPoint Services para que se puede calcular el número de equipos necesarios que debe ejecutar MultiPoint Services.|[Los usuarios, las estaciones y equipos](MultiPoint-services-Site-Planning.md#users-stations-and-computers)|  
-|3.|Comprender las aplicaciones de software y el contenido web que es probable que se accederá a los usuarios y el impacto que tendrá en el rendimiento del sistema.|[Requisitos de hardware y las recomendaciones de rendimiento](hardware-and-performance-recommendations.md)|  
-|4.|Determinar el número y tipo de las estaciones que se conectará al sistema.|[Las estaciones de multiPoint](MultiPoint-services-Stations.md)|  
-|5.|Determinar el hardware que se necesita.|[Selección del Hardware de su sistema MultiPoint Services](Selecting-Hardware-for-Your-MultiPoint-services-System.md) y [los requisitos de Hardware y las recomendaciones de rendimiento](hardware-and-performance-recommendations.md)|  
-|6.|Determine dónde estará ubicado el sistema MultiPoint Services. ¿Se configurará en un espacio único o se configurará para que se puede mover de una ubicación a otra?|[Planeación del sitio de multiPoint Server](MultiPoint-services-Site-Planning.md)|  
-|7.|Determinar cómo se ordenarán las estaciones.|[Planeación del sitio de multiPoint Services](MultiPoint-services-Site-Planning.md)|  
-|8.|Comprobar una infraestructura de red y energía adecuada.|[Planeación del sitio de multiPoint Services](MultiPoint-services-Site-Planning.md)|  
-|9.|Determinar cómo se implementa y administra las cuentas de usuario.|[Consideraciones de red y cuentas de usuario](Network-Considerations-and-User-Accounts.md)|  
-|10.|Determinar cómo se comparten y almacenarán los archivos de usuario.|[Almacenar archivos con MultiPoint Services](Storing-Files-with-MultiPoint-services.md)|
+|1.|Compruebe que las aplicaciones son compatibles con Multipoint Services.|[Consideraciones de la aplicación](Application-Considerations.md)|  
+|2.|Determine el número de usuarios a los que es probable que se tenga acceso al mismo tiempo, cada uno de los equipos que ejecutan Multipoint Services para que pueda calcular el número de equipos necesarios que deben ejecutar Multipoint Services.|[Usuarios, estaciones y equipos](MultiPoint-services-Site-Planning.md#users-stations-and-computers)|  
+|3.|Comprenda las aplicaciones de software y el contenido web al que probablemente tendrán acceso los usuarios y el impacto que tendrá en el rendimiento del sistema.|[Requisitos de hardware y recomendaciones de rendimiento](hardware-and-performance-recommendations.md)|  
+|4.|Determine el número y el tipo de estaciones que se conectarán al sistema.|[Estaciones de MultiPoint](MultiPoint-services-Stations.md)|  
+|5.|Determine el hardware necesario.|[Selección de hardware para los requisitos de hardware y del sistema Multipoint Services](Selecting-Hardware-for-Your-MultiPoint-services-System.md) [y recomendaciones de rendimiento](hardware-and-performance-recommendations.md)|  
+|6.|Determine dónde se ubicará el sistema Multipoint Services. ¿Se configurará en una sola sala o se configurará para que se pueda cambiar de una ubicación a otra?|[Planeación de sitios de MultiPoint Server](MultiPoint-services-Site-Planning.md)|  
+|7.|Determine cómo se organizarán las estaciones.|[Planeación del sitio de MultiPoint Services](MultiPoint-services-Site-Planning.md)|  
+|8.|Compruebe una infraestructura de red y de alimentación adecuada.|[Planeación del sitio de MultiPoint Services](MultiPoint-services-Site-Planning.md)|  
+|9.|Determine cómo se implementarán y administrarán las cuentas de usuario.|[Consideraciones de red y cuentas de usuario](Network-Considerations-and-User-Accounts.md)|  
+|10.|Determine cómo se compartirán y almacenarán los archivos de usuario.|[Almacenamiento de archivos con MultiPoint Services](Storing-Files-with-MultiPoint-services.md)|

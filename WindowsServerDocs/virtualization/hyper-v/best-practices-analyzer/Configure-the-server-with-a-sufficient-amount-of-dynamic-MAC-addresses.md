@@ -1,7 +1,7 @@
 ---
-title: Configurar el servidor con una cantidad suficiente de las direcciones MAC dinámicas
-description: Versión en línea del texto para esta regla de Best Practices Analyzer.
-ms.prod: windows-server-threshold
+title: Configurar el servidor con una cantidad suficiente de direcciones MAC dinámicas
+description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,27 +10,27 @@ ms.topic: article
 ms.assetid: a2804519-9790-4006-80b6-e990a8f505fe
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: fc444225c38ef7e8605ec328cfe3f8184b2fd307
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: efd1999411187a592cd8d175eb6de25e11605623
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870736"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364941"
 ---
-# <a name="configure-the-server-with-a-sufficient-amount-of-dynamic-mac-addresses"></a>Configurar el servidor con una cantidad suficiente de las direcciones MAC dinámicas
+# <a name="configure-the-server-with-a-sufficient-amount-of-dynamic-mac-addresses"></a>Configurar el servidor con una cantidad suficiente de direcciones MAC dinámicas
 
 >Se aplica a: Windows Server 2016
 
-*En este tema está pensado para abordar un problema específico identificado por un análisis del analizador de procedimientos recomendados. Debe aplicar la información de este tema únicamente a los equipos que han tenido la ejecutó la herramienta Best Practices Analyzer de Hyper-V y que experimentan el problema mencionado en este tema. Para obtener más información sobre análisis y los procedimientos recomendados, consulte* [Best Practices Analyzer](https://go.microsoft.com/fwlink/?LinkId=122786).  
+@no__t tema se ha diseñado para resolver un problema específico identificado por un análisis de Analizador de procedimientos recomendados. Debe aplicar la información de este tema únicamente a los equipos en los que se ha realizado Analizador de procedimientos recomendados de Hyper-V y que experimentan el problema que se trata en este tema. Para obtener más información sobre los análisis y los procedimientos recomendados, consulte @ no__t-0 [analizador de procedimientos recomendados](https://go.microsoft.com/fwlink/?LinkId=122786).  
   
 |Property|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
-|**Característica del producto**|Hyper-V|  
+|**Producto o característica**|Hyper-V|  
 |**Gravedad**|Advertencia|  
 |**Categoría**|Configuración|  
   
-En las secciones siguientes, la cursiva indica texto de la interfaz de usuario que aparece en la herramienta Best Practices Analyzer para resolver este problema.  
+En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.  
   
 ## <a name="issue"></a>Problema  
   
@@ -38,11 +38,11 @@ En las secciones siguientes, la cursiva indica texto de la interfaz de usuario q
   
 ## <a name="impact"></a>Impacto  
   
-*Cuando no hay direcciones MAC dinámicas están disponibles, no se puede iniciar las máquinas virtuales configuradas para usar una dirección MAC dinámica.*  
+*Cuando no hay ninguna dirección MAC dinámica disponible, no se pueden iniciar las máquinas virtuales configuradas para usar una dirección MAC dinámica.*  
   
 ## <a name="resolution"></a>Resolución  
   
-*Use el Administrador de conmutadores virtuales para ver y ampliar el alcance de las direcciones dinámicas.*  
+*Use el administrador de conmutadores virtuales para ver y ampliar el intervalo de direcciones dinámicas.*  
   
 
 

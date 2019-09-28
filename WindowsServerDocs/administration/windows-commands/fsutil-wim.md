@@ -1,7 +1,7 @@
 ---
 ms.assetid: 6c6ff819-f349-4aea-b0be-1f637f631736
-title: Wim de fsutil
-ms.prod: windows-server-threshold
+title: Fsutil Wim
+ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
@@ -9,17 +9,17 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: c9186721ce4d3a549964e420cbc16d4893a1859d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fc79b70e8dedb9ecad5e8c6e89f51ece3279faa4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826046"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376658"
 ---
-# <a name="fsutil-wim"></a>Wim de fsutil
+# <a name="fsutil-wim"></a>Fsutil Wim
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10
 
-Proporciona funciones para detectar y administrar archivos WIM de imagen de Windows de seguridad.
+Proporciona funciones para detectar y administrar archivos respaldados por la imagen de Windows (WIM).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,26 +34,26 @@ fsutil wim [removewim] <drive name> <data source>
 
 |Parámetro|Descripción|
 |-------------|---------------|
-|EnumFiles|Enumera los archivos WIM de seguridad.|
-|\<nombre de la unidad >|Especifica el nombre de la unidad.|
-|\<origen de datos >|Especifica el origen de datos.|
+|enumfiles (|Enumera los archivos de copia de seguridad de WIM.|
+|nombre de \<drive >|Especifica el nombre de la unidad.|
+|@no__t > de origen de 0data|Especifica el origen de datos.|
 |enumwims|Enumera los archivos WIM de respaldo.|
-|queryfile|Las consultas si el archivo está respaldado por WIM y si es así, muestra detalles acerca del archivo WIM.|
-|\<filename>|Especifica el nombre de archivo.|
-|removewim|Quita un archivo WIM de seguridad de archivos.|
+|queryfile|Consulta si el archivo está respaldado por WIM y, en caso afirmativo, muestra detalles sobre el archivo WIM.|
+|@no__t 0filename >|Especifica el nombre de archivo.|
+|removewim|Quita un WIM de los archivos de copia de seguridad.|
 
 
 
 
 ### <a name="examples"></a>Ejemplos
 
-Para enumerar los archivos de la unidad C: de origen de datos 0, escriba:
+Para enumerar los archivos de la unidad C: desde el origen de datos 0, escriba:
 
 ```
 fsutil wim enumfiles C: 0
 ```
 
-Para enumerar los archivos WIM de respaldo para la unidad C:, escriba:
+Para enumerar los archivos WIM de respaldo de la unidad C:, escriba:
 
 ```
 fsutil wim enumwims C:
@@ -65,7 +65,7 @@ Para ver si un archivo está respaldado por WIM, escriba:
 fsutil wim C:\Windows\Notepad.exe
 ```
 
-Para quitar el archivo WIM de seguridad de archivos para el origen de datos 2 y el volumen C:, escriba:
+Para quitar WIM de archivos de copia de seguridad para el volumen C: y el origen de datos 2, escriba:
 
 ```
 fsutil wim removewims C: 2

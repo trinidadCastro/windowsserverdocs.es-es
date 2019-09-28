@@ -1,8 +1,8 @@
 ---
 title: Eliminación de SC
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68af5f118b2cc9d7941abddccd2a1bc7fde4c6d0
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: ad64d0f7c772b8d29a191b5f3e690d74c8765717
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222933"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371280"
 ---
 # <a name="sc-delete"></a>Eliminación de SC
 
 
 
-Elimina una subclave de servicio del registro. Si el servicio se está ejecutando o si otro proceso tiene un identificador abierto en el servicio, el servicio está marcado para eliminación.
+Elimina una subclave de servicio del registro. Si el servicio se está ejecutando o si otro proceso tiene un identificador abierto para el servicio, el servicio se marca para su eliminación.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#examples).
 
@@ -38,17 +38,17 @@ sc [<ServerName>] delete [<ServiceName>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<ServerName>|Especifica el nombre del servidor remoto en el que se encuentra el servicio. El nombre debe tener el formato de convención de nomenclatura Universal (UNC) (por ejemplo, \\ \\myserver). Para ejecutar SC.exe localmente, omita este parámetro.|
-|\<ServiceName>|Especifica el nombre del servicio devolviendo por la **getkeyname** operación.|
+|@no__t 0ServerName >|Especifica el nombre del servidor remoto en el que se encuentra el servicio. El nombre debe usar el formato de Convención de nomenclatura universal (UNC) (por ejemplo, \\ @ no__t-1myserver). Para ejecutar SC. exe localmente, omita este parámetro.|
+|@no__t 0ServiceName >|Especifica el nombre de servicio devuelto por la operación **getkeyname** .|
 |?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-Use **agregar o quitar programas** en **Panel de Control** eliminar DHCP, DNS o cualquier otro servicio de sistema operativo integrada. Tenga en cuenta que **agregar o quitar programas** solo no quitará la subclave del registro para el servicio, pero también desinstala el servicio y eliminar todos los accesos directos a él.
+Use **Agregar o quitar programas** en el **Panel de control** para eliminar DHCP, DNS o cualquier otro servicio de sistema operativo integrado. Tenga en cuenta que en **Agregar o quitar programas** no solo se quitará la subclave del registro para el servicio, sino que también se desinstalará el servicio y se eliminarán los accesos directos a él.
 
 ## <a name="examples"></a>Ejemplos
 
-Para eliminar la subclave de servicio **NewServ** desde el registro en el equipo local, escriba:
+Para eliminar la subclave de servicio **NewServ** del registro en el equipo local, escriba:
 ```
 sc delete newserv
 ```

@@ -1,7 +1,7 @@
 ---
 title: Asistente para la limpieza de servidor
-description: Tema de Windows Server Update Service (WSUS) - cómo usar el Asistente para la limpieza del servidor para administrar espacio en disco
-ms.prod: windows-server-threshold
+description: 'Tema de Windows Server Update Service (WSUS): uso del Asistente para la limpieza del servidor para administrar el espacio en disco'
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-wsus
@@ -12,46 +12,46 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d9287bb8bfc0fd51c53c598ccbc1f0498942e2f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: e285e59a27b6bf0ef1bf3b1ab0f78a96efa60c87
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439817"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361529"
 ---
 # <a name="the-server-cleanup-wizard"></a>Asistente para la limpieza de servidor
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-El Asistente para la limpieza del servidor se integra en la interfaz de usuario y puede usarse para ayudarle a administrar el espacio en disco. Este asistente puede realizar las siguientes operaciones:
+El Asistente para la limpieza del servidor está integrado en la interfaz de usuario y se puede usar para ayudarle a administrar el espacio en disco. Este asistente puede realizar las siguientes operaciones:
 
-- Quitar no utilizadas de las actualizaciones y revisiones de la actualización de quitar todas las actualizaciones más antiguas y las revisiones de actualización que no se han aprobado.
+- Quitar las actualizaciones sin usar y las revisiones de actualización Quite todas las actualizaciones anteriores y actualice las revisiones que no se hayan aprobado.
 
-- Eliminar todos los equipos cliente que no se han conectado al servidor de treinta días o más de los equipos no ponerse en contacto con la eliminación del servidor.
+- Eliminar equipos que no se pongan en contacto con el servidor elimine todos los equipos cliente que no se han conectado al servidor en treinta días o más.
 
-- Elimine la eliminación de archivos de actualización no necesarios que todos los archivos que no son necesarios de actualización, las actualizaciones o los servidores de nivel inferior.
+- Eliminar archivos de actualización innecesarios elimine todos los archivos de actualización que no son necesarios para las actualizaciones o los servidores que siguen en la dirección.
 
-- Rechazar actualizaciones caducadas rechazar todas las actualizaciones que haya expirado por Microsoft.
+- Rechazar las actualizaciones expiradas rechaza todas las actualizaciones que ha expirado Microsoft.
 
-- Rechaza las actualizaciones reemplazadas rechazar todas las actualizaciones que cumplen los siguientes criterios:
+- Rechazar las actualizaciones reemplazadas rechaza todas las actualizaciones que cumplen todos los criterios siguientes:
 
   -   La actualización reemplazada no es obligatoria
 
-  -   La actualización reemplazada ha estado en el servidor durante treinta días o más
+  -   La actualización reemplazada se ha realizado en el servidor durante treinta días o más
 
-  -   La actualización reemplazada actualmente no se notifica según sea necesario para cualquier cliente
+  -   La actualización reemplazada no está informada actualmente según sea necesario por ningún cliente
 
-  -   La actualización reemplazada no explícitamente implementada en un grupo de equipos durante noventa días o más
+  -   La actualización reemplazada no se implementó explícitamente en un grupo de equipos durante 90 días o más
 
-  -   La actualización de reemplazo debe estar aprobada para instalar en un grupo de equipos
+  -   La actualización de reemplazo debe aprobarse para su instalación en un grupo de equipos
 
   > [!WARNING]
-  >  En una jerarquía WSUS, se recomienda encarecidamente que ejecute primero el proceso de limpieza en el servidor WSUS de réplica/descendentes más bajo y, a continuación, mueva la jerarquía. Que se ejecuta incorrectamente Liberador de espacio en cualquier servidor que precede en antes de ejecutar la limpieza en todos los servidores de nivel inferior puede provocar una incoherencia entre los datos que se encuentra en las bases de datos de nivel superior y las bases de datos de nivel inferiores. La coincidencia de datos puede provocar errores de sincronización entre los servidores ascendentes y descendentes. 
+  >  En una jerarquía de WSUS, se recomienda encarecidamente que primero ejecute el proceso de limpieza en el servidor WSUS de nivel inferior, de baja o de réplica y, a continuación, suba la jerarquía. La ejecución incorrecta de la limpieza en cualquier servidor que precede en la cadena antes de ejecutar la limpieza en cada servidor que sigue en la cadena puede producir una incoherencia entre los datos que se encuentran en las bases de datos ascendentes y en las bases de datos de nivel inferior. Los datos no coincidentes pueden provocar errores de sincronización entre los servidores de nivel superior y descendente. 
   > 
   > [!IMPORTANT]
-  >  Si quita el contenido innecesario con el Asistente para la limpieza de servidor, también se quitan todos los archivos de actualización privada que ha descargado desde el sitio del catálogo de Microsoft Update. Debe volver a importar estos archivos después de ejecutar al Asistente para la limpieza de servidor. 
+  >  Si quita contenido innecesario mediante el Asistente para la limpieza del servidor, también se quitan todos los archivos de actualización privados que ha descargado del sitio de catálogo de Microsoft Update. Debe volver a importar estos archivos después de ejecutar el Asistente para la limpieza del servidor. 
 
-Si hay actualizaciones aprobadas mediante una regla de aprobación automática, que pueden estar todavía en el estado "Aprobado" y no se quitará mediante la limpieza del servidor el Asistente para. Para quitar aprobado automáticamente las actualizaciones que están en un estado "approved", el Administrador de WSUS debe - mínimo - establecer manualmente el estado de aprobación de actualizaciones reemplazadas para "No aprobado" por lo que será aptos para el rechazo mediante el Asistente para la limpieza del servidor. Se ha aprobado la limpieza del servidor que Asistente garantizará una actualización más reciente y que ningún sistema de cliente sigue informando que actualizan según sea necesario antes de marcar la actualización como "Rechazada".
+Si las actualizaciones se aprueban mediante una regla de aprobación automática, es posible que sigan estando en el estado "aprobada" y que el Asistente para la limpieza del servidor no las quite. Para quitar las actualizaciones aprobadas automáticamente que se encuentran en un estado "aprobado", el administrador de WSUS debe, como mínimo, establecer manualmente el estado de aprobación de las actualizaciones reemplazadas en "no aprobado" para que se puedan rechazar mediante el Asistente para la limpieza del servidor. El Asistente para la limpieza del servidor garantizará que se aprueba una actualización más reciente y que ningún sistema cliente todavía está informando de esa actualización según sea necesario antes de marcar la actualización como "rechazada".
 
 
 

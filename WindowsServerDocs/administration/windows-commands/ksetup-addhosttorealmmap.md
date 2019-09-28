@@ -1,8 +1,8 @@
 ---
-title: ksetup:addhosttorealmmap
-description: 'Tema de los comandos de Windows para ***- '
+title: 'ksetup: addhosttorealmmap'
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 25cf258309c94f0efde980018dd5dcf3c7df4d60
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6a28c6001707fac245de7136b5fb5bd38495027
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837506"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375652"
 ---
-# <a name="ksetupaddhosttorealmmap"></a>ksetup:addhosttorealmmap
+# <a name="ksetupaddhosttorealmmap"></a>ksetup: addhosttorealmmap
 
 
 
-Agrega una asignación de nombre de entidad de seguridad (SPN) de servicio entre el host indicado y el dominio Kerberos. Para obtener ejemplos de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
+Agrega una asignación de nombre de entidad de seguridad de servicio (SPN) entre el host indicado y el dominio Kerberos. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,22 +36,22 @@ ksetup /addhosttorealmmap <HostName> <RealmName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<HostName>|El nombre de host es el nombre del equipo y se puede establecer como nombre de dominio completo del equipo.|
-|\<RealmName>|El nombre de dominio Kerberos se define como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM.|
+|@no__t 0HostName >|El nombre de host es el nombre del equipo y se puede indicar como el nombre de dominio completo del equipo.|
+|@no__t 0RealmName >|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM.|
 
 ## <a name="remarks"></a>Comentarios
 
-Este comando permite asignar un host o varios hosts que comparten el mismo sufijo DNS para el dominio Kerberos.
+Este comando permite asignar un host o varios hosts que comparten el mismo sufijo DNS en el dominio Kerberos.
 
 La asignación se registra en el registro en **HKEY_LOCAL_MACHINE\SYSTEM\CurrentContolSet\Lsa\Kerberos\HostToRealm**.
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-Como parte de la configuración del dominio CONTOSO, asigne el equipo host IPops897 al dominio Kerberos:
+Como parte de la configuración del territorio CONTOSO, asigne el equipo host IPops897 al dominio Kerberos:
 ```
 ksetup /addhosttorealmmap IPops897 CONTOSO
 ```
-En el registro, compruebe que la asignación es según lo previsto.
+Compruebe en el registro que la asignación es la prevista.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

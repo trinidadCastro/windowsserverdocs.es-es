@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setnotifycmdline
-description: Tema de los comandos de Windows para ***-bitsadmin setnotifycmdlineSets la línea de comandos que se ejecutará cuando el trabajo finaliza la transferencia de datos o cuando un trabajo entra en un estado.
+description: Temas de comandos de Windows para * * * *-bitsadmin setnotifycmdlineSets comando de línea de comandos que se ejecutará cuando el trabajo termine de transferir datos o cuando un trabajo entre en un estado.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f1cea4e99cbaaf3881c6f436bdb932090ad6b006
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7a307fe552e7d8ec5852de953a3a439cb02246ec
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859076"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380482"
 ---
 # <a name="bitsadmin-setnotifycmdline"></a>bitsadmin setnotifycmdline
 
-Establece la línea de comandos que se ejecutará cuando el trabajo finaliza la transferencia de datos o cuando un trabajo entra en un estado.
+Establece el comando de línea de comandos que se ejecutará cuando el trabajo finalice la transferencia de datos o cuando un trabajo entre en un estado.
 
-**BITS 1.2 y versiones anteriores**: No compatible.
+**BITS 1,2 y versiones anteriores**: No compatible.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,20 +36,20 @@ bitsadmin /SetNotifyCmdLine <Job> <ProgramName> [ProgramParameters]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
-|ProgramName|Nombre del comando que se ejecutará cuando se complete el trabajo.|
-|ProgramParameters|Los parámetros que se van a pasar al *NombrePrograma*.|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
+|Nombreprograma|Nombre del comando que se va a ejecutar cuando se complete el trabajo.|
+|ProgramParameters|Parámetros que se van a pasar a *nombreprograma*.|
 
 ## <a name="remarks"></a>Comentarios
 
-Puede especificar NULL para *NombrePrograma* y *ProgramParameters*. Si *NombrePrograma* es NULL, *ProgramParameters* debe ser NULL.
+Puede especificar NULL para *nombreprograma* y *ProgramParameters*. Si *nombreprograma* es null, *PROGRAMPARAMETERS* debe ser null.
 
 > [!IMPORTANT]
-> Si *ProgramParameters* no es NULL y, a continuación, el primer parámetro de *ProgramParameters* debe coincidir con *NombrePrograma*.
+> Si *ProgramParameters* no es null, el primer parámetro de *ProgramParameters* debe coincidir con *nombreprograma*.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-En el ejemplo siguiente se establece la línea de comandos utilizada por el servicio para ejecutar el Bloc de notas cuando el trabajo denominado *myDownloadJob* se complete.
+En el ejemplo siguiente se establece el comando de línea de comandos que usa el servicio para ejecutar el Bloc de notas cuando se completa el trabajo denominado *myDownloadJob* .
 ```
 C:\>bitsadmin /SetNotifyCmdLine myDownloadJob c:\winnt\system32\notepad.exe NULL
 ```

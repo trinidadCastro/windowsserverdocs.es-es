@@ -1,8 +1,8 @@
 ---
-title: Dfsdiag TestDFSIntegrity
-description: 'Tema de los comandos de Windows para ***- '
+title: dfsdiag TestDFSIntegrity
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,24 +13,24 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a79e034f7c60be89266eb29dcd69e8f73b2aafe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7f344e2d1fecc542efc39688f20165fd3e39a04a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837096"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378429"
 ---
-# <a name="dfsdiag-testdfsintegrity"></a>Dfsdiag TestDFSIntegrity
+# <a name="dfsdiag-testdfsintegrity"></a>dfsdiag TestDFSIntegrity
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Comprueba la integridad del sistema de archivos distribuido \(DFS\) espacio de nombres mediante la realización de las siguientes pruebas:  
+Comprueba la integridad del espacio de nombres Sistema de archivos distribuido \(DFS @ no__t-1 mediante la realización de las pruebas siguientes:  
   
--   Comprueba si hay daños en los metadatos DFS o incoherencias entre controladores de dominio.  
+-   Comprueba si hay incoherencias o daños en los metadatos DFS entre controladores de dominio.  
   
--   Valida la configuración de acceso\-según la enumeración para asegurarse de que es coherente entre los metadatos DFS y recurso compartido del servidor de espacio de nombres.  
+-   Valida la configuración de la enumeración Access @ no__t-0based para asegurarse de que es coherente entre los metadatos DFS y el recurso compartido de servidor de espacio de nombres.  
   
--   Detecta que se superponen carpetas DFS \(vínculos\), carpetas duplicadas y carpetas con destinos de carpeta de superposición.  
+-   Detecta carpetas DFS superpuestas \(links @ no__t-1, carpetas duplicadas y carpetas con destinos de carpeta superpuestos.  
   
   
   
@@ -44,12 +44,12 @@ dfsdiag /TestDFSIntegrity /DFSRoot:<DFS root path> [/Recurse] [/Full]
   
 |Parámetro|Descripción|  
 |-------|--------|  
-|\/DFSRoot:<DFS root path>|El espacio de nombres DFS para diagnosticar.|  
-|\/Recurse|Realiza la prueba, incluidos que el espacio de nombres intervínculos.|  
-|\/completo|comprueba la coherencia del recurso compartido y la configuración de lado las ACL de NTFS y el cliente en todos los destinos de carpeta. También comprueba que se establece la propiedad en línea.|  
+|\/DFSRoot: <DFS root path>|Espacio de nombres DFS que se va a diagnosticar.|  
+|@no__t 0Recurse|Realiza las pruebas, incluyendo los intervínculos de espacios de nombres.|  
+|@no__t 0Full|comprueba la coherencia de las ACL de recursos compartidos y NTFS y la configuración del lado cliente en todos los destinos de carpeta. También comprueba que la propiedad online esté establecida.|  
   
-## <a name="BKMK_Examples"></a>Ejemplos  
-Para TBD, escriba:  
+## <a name="BKMK_Examples"></a>Example  
+En TBD, escriba:  
   
 ```  
 dfsdiag /TestDFSIntegrity /DFSRoot:\\Contoso.com\MyNamespace /Recurse /Full  

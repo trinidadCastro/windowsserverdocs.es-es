@@ -1,8 +1,8 @@
 ---
 title: diskcomp
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ccd1a347f9ac51fc98c963dedb1c0ab3fcd27d41
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: ca5ea0f4587b21b2a274c772aab239668b7868b4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439588"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377869"
 ---
 # <a name="diskcomp"></a>diskcomp
 
 
 
-Compara el contenido de dos discos. Si se utiliza sin parámetros, **diskcomp** utiliza la unidad actual para comparar ambos discos. Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_examples).
+Compara el contenido de dos disquetes. Si se utiliza sin parámetros, **Diskcomp** usa la unidad actual para comparar ambos discos. Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,86 +36,86 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<Drive1>|Especifica la unidad que contiene uno de los discos.|
-|\<Drive2>|Especifica la unidad que contiene el disco.|
+|@no__t 0Drive1 >|Especifica la unidad que contiene uno de los disquetes.|
+|@no__t 0Drive2 >|Especifica la unidad que contiene el otro disquete.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
 - Uso de discos
 
-  El **diskcomp** comando funciona solo con los discos. No puede usar **diskcomp** con un disco duro. Si especifica una unidad de disco duro para *unidad1* o *unidad2*, **diskcomp** muestra el mensaje de error siguiente:  
+  El comando **Diskcomp** solo funciona con discos de disquete. No se puede usar **Diskcomp** con un disco duro. Si especifica una unidad de disco duro para *unidad1* o *unidad2*, **Diskcomp** muestra el siguiente mensaje de error:  
   ```
   Invalid drive specification
   Specified drive does not exist
   or is nonremovable
   ```  
-- Comparación de discos
+- Comparar discos
 
-  Si todas las pistas de los dos discos que se están comparadas son iguales, **diskcomp** muestra el mensaje siguiente:  
+  Si todas las pistas de los dos discos que se comparan son iguales, **Diskcomp** muestra el siguiente mensaje:  
   ```
   Compare OK
   ```  
-  Si las pistas no son iguales, **diskcomp** muestra un mensaje similar al siguiente:  
+  Si las pistas no son iguales, **Diskcomp** muestra un mensaje similar al siguiente:  
   ```
   Compare error on
   side 1, track 2
   ```  
-  Cuando **diskcomp** finaliza la comparación, muestra el mensaje siguiente:  
+  Cuando **Diskcomp** completa la comparación, muestra el siguiente mensaje:  
   ```
   Compare another diskette (Y/N)?
   ```  
-  Si presiona S, **diskcomp** le pedirá que inserte el disco para la comparación siguiente. Si presiona N, **diskcomp** detiene la comparación.
+  Si presiona Y, **Diskcomp** le pedirá que inserte el disco para la siguiente comparación. Si presiona N, **Diskcomp** detiene la comparación.
 
-  Cuando **diskcomp** hace que la comparación, omite el número de volumen del disco.
-- Omitiendo los parámetros de la unidad
+  Cuando **Diskcomp** realiza la comparación, omite el número de volumen de un disco.
+- Omitir parámetros de unidad
 
-  Si se omite el *unidad2* parámetro, **diskcomp** utiliza la unidad actual para *unidad2*. Si omite ambos parámetros, **diskcomp** utiliza la unidad actual para ambos. Si la unidad actual es igual a *unidad1*, **diskcomp** le pedirá que cambie los discos según sea necesario.
+  Si omite el parámetro *unidad2* , **Diskcomp** usa la unidad actual para *unidad2*. Si omite ambos parámetros de unidad, **Diskcomp** usa la unidad actual para ambos. Si la unidad actual es la misma que la *unidad1*, **Diskcomp** le pedirá que intercambie los discos según sea necesario.
 - Uso de una unidad
 
-  Si especifica la misma unidad de disquete para *unidad1* y *unidad2*, **diskcomp** compara con una sola unidad y le pide que se va a insertar los discos según sea necesario. Es posible que deba intercambiar los discos de más de una vez, según la capacidad de los discos y la cantidad de memoria disponible.
-- Comparación de diferentes tipos de discos
+  Si especifica la misma unidad de disquete para *unidad1* y *unidad2*, **Diskcomp** las compara con una unidad y le pide que inserte los discos según sea necesario. Es posible que tenga que cambiar más de una vez los discos, en función de la capacidad de los discos y la cantidad de memoria disponible.
+- Comparar distintos tipos de discos
 
-  **Diskcomp** no se puede comparar un disco de una sola cara con un disco a doble cara, ni un disco con un doble densidad alta densidad. Si el disco en *unidad1* no es del mismo tipo que el disco en *unidad2*, **diskcomp** muestra el mensaje siguiente:  
+  **Diskcomp** no puede comparar un disco de una sola cara con un disco de doble cara ni un disco de alta densidad con un disco de doble densidad. Si el disco en *unidad1* no es del mismo tipo que el disco en *unidad2*, **Diskcomp** muestra el siguiente mensaje:  
   ```
   Drive types or diskette types not compatible
   ```  
-- Uso de **diskcomp** con redes y unidades redirigidas
+- Usar **Diskcomp** con redes y unidades redirigidas
 
-  **Diskcomp** no funciona en una unidad de red o en una unidad creada por el **subst** comando. Si intenta usar **diskcomp** con una unidad de cualquiera de estos tipos, **diskcomp** muestra el mensaje de error siguiente:  
+  **Diskcomp** no funciona en una unidad de red o en una unidad creada por el comando **subst** . Si intenta usar **Diskcomp** con una unidad de cualquiera de estos tipos, **Diskcomp** muestra el siguiente mensaje de error:  
   ```
   Invalid drive specification
   ```  
 - Comparar un disco original con una copia
 
-  Cuando usas **diskcomp** con un disco que se hayan realizado mediante **copia**, **diskcomp** podría mostrar un mensaje similar al siguiente:  
+  Cuando se usa **Diskcomp** con un disco que se ha creado mediante **Copy**, **Diskcomp** podría mostrar un mensaje similar al siguiente:  
   ```
   Compare error on 
   side 0, track 0
   ```  
-  Este tipo de error puede producirse incluso si los archivos en los discos son idénticos. Aunque **copia** duplica la información, no necesariamente colocarlo en la misma ubicación del disco de destino.
-- Descripción de **diskcomp** códigos de salida
+  Este tipo de error puede producirse incluso si los archivos de los discos son idénticos. Aunque **Copy** duplica la información, no la coloca necesariamente en la misma ubicación en el disco de destino.
+- Descripción de los códigos de salida de **Diskcomp**
 
-  La siguiente tabla explica cada código de salida.  
+  En la tabla siguiente se explica cada código de salida.  
 
   |Código de salida|Descripción|
   |---------|-----------|
-  |0|Los discos son iguales|
+  |0|Los discos son los mismos|
   |1|Se encontraron diferencias|
   |3|Error de hardware|
   |4|Error de inicialización|
 
-  Para procesar códigos de salida devueltos por **diskcomp**, puede usar la variable de entorno ERRORLEVEL en el **si** línea de comandos en un programa por lotes.
+  Para procesar códigos de salida devueltos por **Diskcomp**, puede usar la variable de entorno ERRORLEVEL en la línea de comandos **If** en un programa por lotes.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Si el equipo tiene solo una unidad de disco (por ejemplo, la unidad A) y desea comparar dos discos, escriba:
+Si el equipo tiene solo una unidad de disquete (por ejemplo, la unidad A) y desea comparar dos discos, escriba:
 ```
 diskcomp a: a:
 ```
-**Diskcomp** le pedirá que inserte cada disco, según sea necesario.
+**Diskcomp** le pide que inserte cada disco, según sea necesario.
 
-El ejemplo siguiente muestra cómo procesar un **diskcomp** salir de código en un programa por lotes que usa la variable de entorno ERRORLEVEL en el **si** línea de comandos:
+En el ejemplo siguiente se muestra cómo procesar un código de salida de **Diskcomp** en un programa por lotes que utiliza la variable de entorno ERRORLEVEL en la línea de comandos **If** :
 ```
 rem Checkout.bat compares the disks in drive A and B 
 echo off 

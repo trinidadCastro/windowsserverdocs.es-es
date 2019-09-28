@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin gethelpertokenflags
-description: Tema de los comandos de Windows para **gethelpertokenflags bitsadmin** -devuelve las marcas de uso de un token auxiliar que está asociado con un trabajo de transferencia de BITS.
+title: bitsadmin gethelpertokenflags
+description: 'Windows Commands topic for **bitsadmin gethelpertokenflags** : devuelve las marcas de uso de un token auxiliar que está asociado a un trabajo de transferencia de bits.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,18 +12,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: e5665ed4670891dcbecd56215342f3d94e1ed753
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 25d667736d5fdcd018f557b2a5565b94898f6e51
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885796"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381571"
 ---
-# <a name="bitsadmin-gethelpertokenflags"></a>Bitsadmin gethelpertokenflags
+# <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gethelpertokenflags
 
-Devuelve las marcas de uso de un [token auxiliar](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs) que está asociado con un trabajo de transferencia de BITS.
+Devuelve las marcas de uso de un [token auxiliar](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)@no__t-clientes 1 está asociado a un trabajo de transferencia de bits.
 
-**3.0 y versiones anteriores de BITS**: No compatible.
+**BITS 3,0 y versiones anteriores**: No compatible.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -35,14 +35,14 @@ bitsadmin /GetHelperTokenFlags <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
 ## <a name="remarks"></a>Comentarios
 
-Valores devueltos posibles son las siguientes.
+Entre los posibles valores devueltos se incluyen los siguientes.
 
-- 0x0001. El token auxiliar se utiliza para abrir el archivo local de un trabajo de carga, para crear o cambiar el nombre del archivo temporal de un trabajo de descarga, o para crear o cambiar el nombre del archivo de respuesta de un trabajo de respuesta de carga.
-- 0x0002. El token auxiliar se utiliza para abrir el archivo de carga de un bloque de mensajes del servidor (SMB) remoto o descargar el trabajo o en respuesta a un desafío de servidor o proxy HTTP para implícita NTLM o Kerberos credenciales. Se debe llamar a SetCredentialsJob TargetScheme NULL NULL para permitir que las credenciales que se enviarán a través de HTTP.
+- 0x0001. El token auxiliar se usa para abrir el archivo local de un trabajo de carga, para crear o cambiar el nombre del archivo temporal de un trabajo de descarga, o para crear o cambiar el nombre del archivo de respuesta de un trabajo de carga y respuesta.
+- 0x0002. El token auxiliar se usa para abrir el archivo remoto de un trabajo de carga o descarga de bloque de mensajes del servidor (SMB), o en respuesta a un desafío del servidor HTTP o del proxy para las credenciales NTLM o Kerberos implícitas. Debe llamar a/SetCredentialsJob TargetScheme null null para permitir que las credenciales se envíen a través de HTTP.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

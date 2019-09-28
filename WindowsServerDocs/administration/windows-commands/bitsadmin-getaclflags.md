@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getaclflags
-description: Tema de los comandos de Windows para **getaclflags bitsadmin** -recupera las marcas de propagaciones de lista de control de acceso.
+description: En el tema comandos de Windows para **bitsadmin getaclflags** se recuperan las marcas de propagación de la lista de control de acceso.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 185445a97168344f910abc0e644718296de2c712
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ad98cd742161ae06be5cba7acde7b810eaf199d6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861456"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381788"
 ---
 # <a name="bitsadmin-getaclflags"></a>bitsadmin getaclflags
 
-Recupera las marcas de propagaciones de lista (ACL) de control de acceso.
+Recupera las marcas de propagación de la lista de control de acceso (ACL).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,19 +34,19 @@ bitsadmin /GetAclFlags <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
 ## <a name="remarks"></a>Comentarios
 
-Muestra uno o varios de los valores de marca siguientes:
--   O: Copiar información de propietario con el archivo.
--   G: Copiar información de grupo con el archivo.
--   D: Copiar información de la DACL con el archivo.
--   S: Copiar información de la SACL con archivo.
+Muestra uno o varios de los siguientes valores de marca:
+-   ACEPTAR Copie la información del propietario con el archivo.
+-   I Copiar información de grupo con el archivo.
+-   D: Copiar información de DACL con el archivo.
+-   S: Copie la información de SACL con el archivo.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-En el ejemplo siguiente se recuperan los indicadores de propagación de lista de control de acceso del trabajo denominado *myDownloadJob*.
+En el ejemplo siguiente se recuperan los marcadores de propagación de la lista de control de acceso para el trabajo denominado *myDownloadJob*.
 ```
 C:\>bitsadmin /getaclflags myDownloadJob
 ```

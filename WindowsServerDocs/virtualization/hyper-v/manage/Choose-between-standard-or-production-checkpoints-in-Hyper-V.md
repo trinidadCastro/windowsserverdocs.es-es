@@ -1,7 +1,7 @@
 ---
-title: Elija entre los puntos de control estándares o de producción en Hyper-V
-description: Proporciona instrucciones para configurar una máquina virtual para usar puntos de control estándares o de producción
-ms.prod: windows-server-threshold
+title: Elección entre los puntos de control estándar o de producción en Hyper-V
+description: Proporciona instrucciones para configurar una máquina virtual para usar puntos de control estándar o de producción.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,40 +11,40 @@ ms.assetid: 92bb573b-03b7-470e-b72e-e35edf52b349
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: cf1144886ec5ae723b7747bb7dd72f235944d06c
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 29c7b8be5b1e9d392cead304ab35c3d5dd5ee86a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67141347"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364207"
 ---
-# <a name="choose-between-standard-or-production-checkpoints-in-hyper-v"></a>Elija entre los puntos de control estándares o de producción en Hyper-V
+# <a name="choose-between-standard-or-production-checkpoints-in-hyper-v"></a>Elección entre los puntos de control estándar o de producción en Hyper-V
 
->Se aplica a: Windows 10, Windows Server 2016 y Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
+>Se aplica a: Windows 10, Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
 
   
-A partir de Windows Server 2016 y Windows 10, puede elegir entre los puntos de control estándar y de producción para cada máquina virtual. Los puntos de control de producción son el valor predeterminado para nuevas máquinas virtuales.
+A partir de Windows Server 2016 y Windows 10, puede elegir entre los puntos de control estándar y de producción para cada máquina virtual. Los puntos de control de producción son el valor predeterminado para las nuevas máquinas virtuales.
   
-- Los puntos de control de producción son "en tiempo de" imágenes de una máquina virtual, que se pueden restaurar más adelante de forma que es completamente compatible con todas las cargas de trabajo de producción. Esto se consigue mediante el uso de tecnología de copia de seguridad dentro del invitado para crear el punto de control, en lugar de usar tecnología de estado guardado.  
+- Los puntos de control de producción son imágenes "a un momento dado" de una máquina virtual, que se pueden restaurar más adelante de forma que se admitan por completo para todas las cargas de trabajo de producción. Esto se consigue mediante el uso de tecnología de copia de seguridad dentro del invitado para crear el punto de control, en lugar de usar tecnología de estado guardado.  
   
-- Puntos de control estándares capturan la configuración de estado, datos y hardware de una máquina virtual en ejecución y están pensadas para su uso en escenarios de desarrollo y pruebas. Los puntos de control estándares pueden ser útiles si tiene que volver a crear un estado específico o una condición de una máquina virtual en ejecución, por lo que puede solucionar un problema.  
+- Los puntos de control estándar capturan el estado, los datos y la configuración de hardware de una máquina virtual en ejecución y están pensados para su uso en escenarios de desarrollo y pruebas. Los puntos de control estándar pueden ser útiles si necesita volver a crear una condición o estado específico de una máquina virtual en ejecución para que pueda solucionar un problema.  
  
-  ## <a name="change-checkpoints-to-production-or-standard-checkpoints"></a>Cambiar los puntos de control de producción ni en los puntos de control estándares  
+  ## <a name="change-checkpoints-to-production-or-standard-checkpoints"></a>Cambiar los puntos de control a los puntos de control de producción o estándar  
   
-1.  En **Administrador de Hyper-V**, haga clic en la máquina virtual y haga clic en **configuración**.  
+1.  En el **Administrador de Hyper-V**, haga clic con el botón secundario en la máquina virtual y haga clic en **configuración**.  
   
-2.  En el **administración** sección, seleccione **puntos de control**.  
+2.  En la sección **Administración** , seleccione **puntos de control**.  
   
 3.  Seleccione los puntos de control de producción o los puntos de control estándares.  
   
-    Si elige los puntos de control de producción, también puede especificar si el host debe tener un punto de control estándar si no se pueden tomar un punto de control de producción. Si desactiva esta casilla de verificación y no se pueden tomar un punto de control de producción, a continuación, no se realiza ningún punto de comprobación.  
+    Si elige puntos de control de producción, también puede especificar si el host debe tomar un punto de control estándar si no se puede tomar un punto de control de producción. Si desactiva esta casilla y no se puede tomar un punto de control de producción, no se toma ningún punto de control.  
   
-4.  Si desea almacenar los archivos de configuración de punto de control en un lugar diferente, cambiar en el **ubicación del archivo de punto de comprobación** sección.  
+4.  Si desea almacenar los archivos de configuración de punto de comprobación en un lugar diferente, cámbielo en la sección **Ubicación del archivo de punto de comprobación** .  
   
-5.  Haga clic en **aplicar** para guardar los cambios. Si ha terminado, haga clic en **Aceptar** para cerrar el cuadro de diálogo.  
+5.  Haga clic en **aplicar** para guardar los cambios. Si ya ha terminado, haga clic en **Aceptar** para cerrar el cuadro de diálogo.  
   
 > [!NOTE]
-> Solo **puntos de control de producción** se admiten en los invitados que ejecutan el rol de servicios de dominio de Active Directory (controlador de dominio) o el rol de Active Directory Lightweight Directory Services.
+> Solo se admiten **puntos de control de producción** en invitados que ejecutan Active Directory Domain Services rol (controlador de dominio) o rol de Active Directory Lightweight Directory Services.
 
 ## <a name="see-also"></a>Vea también  
   

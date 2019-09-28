@@ -1,8 +1,8 @@
 ---
 title: color
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e1ee9b7c1ade184cf17b867b7fce10ab8885f0f
-ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.openlocfilehash: ed792e4626897945e688f1c54767d7680ade6d99
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64771883"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379240"
 ---
 # <a name="color"></a>color
 
 
 
-Cambios en el primer y segundo plano los colores de la ventana de símbolo del sistema para la sesión actual. Si se utiliza sin parámetros, **color** restaura los colores de primer y segundo plano a la ventana de símbolo del sistema de predeterminado.
+Cambia los colores de primer plano y de fondo de la ventana del símbolo del sistema para la sesión actual. Si se usa sin parámetros, el **color** restaura los colores de primer plano y de fondo de la ventana del símbolo del sistema predeterminado.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,8 +38,8 @@ color [[<B>]<F>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<B>|Especifica el color de fondo.|
-|\<F>|Especifica el color de primer plano.|
+|\<B >|Especifica el color de fondo.|
+|\<F >|Especifica el color de primer plano.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
@@ -51,9 +51,9 @@ color [[<B>]<F>]
 |0|Negro|
 |1|Azul|
 |2|Verde|
-|3|Aqua|
+|3|Aguamarina|
 |4|Roja|
-|5|Púrpura|
+|5|Ponen|
 |6|Amarillo|
 |7|Blanco|
 |8|Gris|
@@ -65,24 +65,24 @@ color [[<B>]<F>]
 |E|Amarillo claro|
 |F|Blanco brillante|
     
--   No utilice caracteres de espacio entre *B* y *F*.
--   Si especifica solo un dígito hexadecimal, el color correspondiente se usa como el color de primer plano y el color de fondo se establece en el color predeterminado.
--   Para establecer el color predeterminado de la ventana de símbolo del sistema, haga clic en la esquina superior izquierda de la ventana de símbolo del sistema, haga clic en **valores predeterminados**, haga clic en el **colores** pestaña y, a continuación, haga clic en los colores que desee usar para el  **Texto de la pantalla** y **en segundo plano de pantalla**.
--   Si *B* y *F* son iguales, la **color** comando establece ERRORLEVEL a 1, y no se realiza ningún cambio en el primer plano o el color de fondo.
+-   No use caracteres de espacio entre *B* y *F*.
+-   Si especifica un solo dígito hexadecimal, el color correspondiente se utiliza como color de primer plano y el color de fondo se establece en el color predeterminado.
+-   Para establecer el color predeterminado de la ventana del símbolo del sistema, haga clic en la esquina superior izquierda de la ventana del símbolo del sistema, haga clic en **valores predeterminados**, haga clic en la pestaña **colores** y, a continuación, haga clic en los colores que desee utilizar para el **texto de pantalla** y el fondo de la **pantalla.** .
+-   Si *B* y *F* son iguales, el comando **color** establece ERRORLEVEL en 1 y no se realiza ningún cambio en el color de primer plano o de fondo.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para cambiar el color de fondo de la ventana de símbolo del sistema a gris y el color de primer plano rojo, escriba:
+Para cambiar el color de fondo de la ventana del símbolo del sistema a gris y el color de primer plano a rojo, escriba:
 ```
 color 84
 ```
-Para cambiar el color de primer plano de la ventana de símbolo del sistema en amarillo claro, escriba:
+Para cambiar el color de primer plano de la ventana del símbolo del sistema a amarillo claro, escriba:
 ```
 color e
 ```
 
 > [!NOTE]
-> En este ejemplo, el fondo se establece en el color predeterminado porque se ha especificado un solo dígito hexadecimal.
+> En este ejemplo, el fondo se establece en el color predeterminado porque solo se especifica un dígito hexadecimal.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

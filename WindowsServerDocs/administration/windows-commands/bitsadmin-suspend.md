@@ -1,8 +1,8 @@
 ---
 title: bitsadmin suspend
-description: Tema de los comandos de Windows para **bitsadmin suspender** -suspende el trabajo especificado.
+description: En el tema comandos de Windows para **bitsadmin suspender** se suspende el trabajo especificado.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87e1bbd1b068d68fb60655043735c6c1aeb07707
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7a3a484df2b50cdc8893512020b835f913793d2c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825926"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380373"
 ---
 # <a name="bitsadmin-suspend"></a>bitsadmin suspend
 
@@ -36,15 +36,15 @@ bitsadmin /Suspend <Job>
 
 |Parámetro|Descripción|
 |-------|--------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
 ## <a name="remarks"></a>Comentarios
 
-Para reiniciar el trabajo, use el [bitsadmin reanudar](bitsadmin-resume.md) cambie.
+Para reiniciar el trabajo, use el conmutador [bitsadmin resume](bitsadmin-resume.md) .
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-En el ejemplo siguiente, se suspende el trabajo denominado *myDownloadJob*.
+En el ejemplo siguiente se suspende el trabajo denominado *myDownloadJob*.
 
 ```
 C:\>bitsadmin /Suspend myDownloadJob

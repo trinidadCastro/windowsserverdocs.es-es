@@ -1,8 +1,8 @@
 ---
-title: put de FTP
-description: 'Tema de los comandos de Windows para ***- '
+title: Put de FTP
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d602c685b7eac5d18c88bc0f6709b189cc61a77
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 15c1734322d3642ebc85891b71c6ad68100d514d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438463"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376073"
 ---
 # <a name="ftp-put"></a>FTP: put
 
@@ -33,22 +33,22 @@ put <LocalFile> [<remoteFile>]
 
 |   Parámetro    |                    Descripción                    |
 |----------------|---------------------------------------------------|
-|  <LocalFile>   |         Especifica el archivo local para copiar.         |
-| [<remoteFile>] | Especifica el nombre que se usará en el equipo remoto. |
+|  <LocalFile>   |         Especifica el archivo local que se va a copiar.         |
+| [<remoteFile>] | Especifica el nombre que se va a usar en el equipo remoto. |
 
 ## <a name="remarks"></a>Comentarios  
-- El **colocar** comando es idéntico a la **enviar** comando.  
-- Si *archivoRemoto* no se especifica, el archivo tendrá el *archivoLocal* nombre.  
-  ## <a name="BKMK_Examples"></a>Ejemplos  
-  Copie el archivo local **test.txt** y asígnele el nombre **test1.txt** en el equipo remoto.  
+- El comando **Put** es idéntico al comando **send** .  
+- Si no se especifica *archivoremoto* , el archivo recibe el nombre *archivolocal* .  
+  ## <a name="BKMK_Examples"></a>Example  
+  Copie el archivo local **Test. txt** y asígnele el nombre **prueba1. txt** en el equipo remoto.  
   ```  
   put test.txt test1.txt  
   ```  
-  Copie el archivo local **program.exe** al equipo remoto.  
+  Copie el archivo local **Program. exe** en el equipo remoto.  
   ```  
   put program.exe  
   ```  
   ## <a name="additional-references"></a>Referencias adicionales  
-- [ftp: ascii](ftp-ascii.md)  
+- [FTP: ASCII](ftp-ascii.md)  
 - [FTP: binario](ftp-binary.md)  
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  

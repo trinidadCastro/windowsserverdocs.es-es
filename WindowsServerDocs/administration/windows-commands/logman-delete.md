@@ -1,8 +1,8 @@
 ---
 title: logman delete
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e396d79dc936f56a69fac9469c020348640f1094
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8360a4955a5ebed3eb25fda77acf587c56fbf5d6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437779"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374429"
 ---
 # <a name="logman-delete"></a>logman delete
 
@@ -34,15 +34,15 @@ logman delete <[-n] <name>> [options]
 
 |        Parámetro        |                                                                               Descripción                                                                               |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|           /?            |                                                                    Contextual muestra la Ayuda.                                                                     |
-|   -s <computer name>    |                                                          Ejecutar el comando en el equipo remoto especificado.                                                          |
-|     -config <value>     |                                                         Especifica el archivo de configuración que contiene las opciones de comando.                                                         |
+|           /?            |                                                                    Muestra la ayuda contextual.                                                                     |
+|   -s <computer name>    |                                                          Ejecute el comando en el equipo remoto especificado.                                                          |
+|     -config <value>     |                                                         Especifica el archivo de configuración que contiene opciones de comando.                                                         |
 |       [-n] <name>       |                                                                   Nombre del recopilador de datos de destino.                                                                    |
-|          -ets           |                                              Enviar comandos a sesiones de seguimiento de eventos directamente sin guardar ni programación.                                               |
-| -[-]u <user [password]> | Especifica el usuario para la ejecución. Escribir un \* para la contraseña genera una solicitud para la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
+|          -ETS           |                                              Enviar comandos a sesiones de seguimiento de eventos directamente sin guardar ni programar.                                               |
+| -[-] u < usuario [contraseña] > | Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
 
-## <a name="BKMK_examples"></a>Ejemplos  
-El siguiente comando elimina el perf_log del recopilador de datos.  
+## <a name="BKMK_examples"></a>Example  
+El siguiente comando elimina el recopilador de datos perf_log.  
 ```  
 logman delete perf_log  
 ```  

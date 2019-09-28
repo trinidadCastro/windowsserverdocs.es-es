@@ -1,8 +1,8 @@
 ---
-title: Montaje automático
-description: 'Tema de los comandos de Windows para **automount** : habilita o deshabilita la característica automount.'
+title: Automount
+description: 'Temas de comandos de Windows para el **montaje automático** : habilita o deshabilita la característica de montaje automático.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 957f75173390ff628c8b52c645742d83216ebf56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bcddad3713bc61101f03e4e60ea0497aac751761
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886356"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382283"
 ---
-# <a name="automount"></a>Montaje automático
+# <a name="automount"></a>Automount
 
 
 
-Habilita o deshabilita la característica automount. Cuando se habilita (valor predeterminado), Windows monta automáticamente el sistema de archivos para un nuevo volumen básico o dinámico cuando se agrega al sistema y, a continuación, asigna una letra de unidad al volumen.
+Habilita o deshabilita la característica de montaje automático. Cuando está habilitado (valor predeterminado), Windows monta automáticamente el sistema de archivos para un nuevo volumen básico o dinámico cuando se agrega al sistema y, a continuación, asigna una letra de unidad al volumen.
 

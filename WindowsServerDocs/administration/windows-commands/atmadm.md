@@ -1,8 +1,8 @@
 ---
 title: atmadm
-description: Tema de los comandos de Windows para **atmadm** -supervisa las conexiones y las direcciones que están registradas por del atM llamar a Manager en una red de transferencia asincrónico (atM) de modo.
+description: 'Temas de comandos de Windows para **Atmadm** : supervisa las conexiones y direcciones registradas por el administrador de llamadas atM en una red de modo de transferencia asincrónico (atM).'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3a8a8883bad9aa2abdc90d5db5702ef42f46c8a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fdb0070063f2bfc6be7b762d71e2f30216f9d8d0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831776"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382631"
 ---
 # <a name="atmadm"></a>atmadm
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Supervisa las conexiones y las direcciones que están registradas por del atM llamar a Manager en una red de transferencia asincrónico (atM) de modo. Puede usar **atmadm** para mostrar las estadísticas para las llamadas entrantes y salientes de los adaptadores atM. Se utiliza sin parámetros, **atmadm** muestra las estadísticas para supervisar el estado de las conexiones activas de atM. 
+Supervisa las conexiones y direcciones registradas por el administrador de llamadas atM en una red de modo de transferencia asincrónico (atM). Puede usar **Atmadm** para mostrar estadísticas de llamadas entrantes y salientes en adaptadores atM. Si se usa sin parámetros, **Atmadm** muestra las estadísticas para supervisar el estado de las conexiones atM activas. 
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,14 +36,14 @@ atmadm [/c][/a][/s]
 
 |Parámetro|Descripción|
 |-------|--------|
-|/c|Muestra información de llamadas para todas las conexiones actuales para el adaptador de red atM instalado en este equipo.|
-|/a|Muestra el acceso al servicio de red de atM registrados puntos de dirección (NSAP) para cada adaptador instalado en este equipo.|
-|/s|Muestra las estadísticas para supervisar el estado de las conexiones activas de atM.|
+|/c|Muestra información de llamadas para todas las conexiones actuales con el adaptador de red atM instalado en este equipo.|
+|/a|Muestra la dirección de punto de acceso de servicio de red atM (NSAP) registrada para cada adaptador instalado en este equipo.|
+|/s|Muestra estadísticas para supervisar el estado de las conexiones atM activas.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-- El **atmadm /c** comando produce un resultado similar al siguiente:
+- El comando **Atmadm/c** produce una salida similar a la siguiente:
 
     ```
     Windows atM call Manager Statistics
@@ -76,21 +76,21 @@ atmadm [/c][/a][/s]
                               Rx:UBR,Peak 16953936,Avg 16953936,MaxSdu 9180
     ```
     
-    En la tabla siguiente contiene descripciones de cada elemento de la **atmadm /c** salida de ejemplo.
+    La tabla siguiente contiene descripciones de cada elemento de la salida de ejemplo de **Atmadm/c** .
     
-    |tipo de datos|Presentación en pantalla|Descripción|
+    |tipo de datos|Pantalla|Descripción|
     |--------|---------|--------|
-    |Información de conexión|Entrada/salida|dirección de la llamada.  **En** es el adaptador de red de atM desde otro dispositivo.  **Out** es desde el adaptador de red atM a otro dispositivo.|
-    ||PMP|Llamada de punto a punto.|
-    ||P-P|Llamada de punto a punto.|
-    ||SVC|La conexión es con un circuito virtual se ha cambiado.|
-    ||PVC|La conexión es en un circuito virtual permanente.|
-    |Información VPI/VCI|VPI/VCI|Ruta de acceso virtual y el canal virtual de la llamada entrante o saliente.|
-    |los parámetros de dirección/multimedia remoto|47000580FFE1000000F21A2E180000C110081500|Dirección NSAP de la llamada a **(In)** o llamado **(Out)** dispositivo atM.|
-    ||**Tx**|El **Tx** parámetro incluye los tres elementos siguientes:<br /><br />-Default o especifica el tipo de velocidad de bits (UBR, CBR, VBR o ABR)<br />-Default o especifica la velocidad de línea<br />-Tamaño de unidad (SDU) de datos de servicio especificado|
-    ||**Rx**|El **Rx** parámetro incluye los tres elementos siguientes:<br /><br />-Default o especifica el tipo de velocidad de bits (UBR, CBR, VBR o ABR)<br />-Default o especifica la velocidad de línea<br />-Tamaño de SDU especificado|
+    |Información de conexión|Entrada/salida|Dirección de la llamada.  **En** , es el adaptador de red atM desde otro dispositivo.  **Out** es del adaptador de red atM a otro dispositivo.|
+    ||PRIMARIO|Llamada de punto a multipunto.|
+    ||P-P|Llamada punto a punto.|
+    ||SVC|La conexión se encuentra en un circuito virtual conmutado.|
+    ||PERMANENTE|La conexión se encuentra en un circuito virtual permanente.|
+    |Información de VPI/VCI|VPI/VCI|Ruta de acceso virtual y canal virtual de la llamada entrante o saliente.|
+    |Dirección remota/parámetros de medios|47000580FFE1000000F21A2E180000C110081500|Dirección NSAP del dispositivo atM que llama **(en)** o **(out)** .|
+    ||**TX**|El parámetro **TX** incluye los tres elementos siguientes:<br /><br />-Tipo de velocidad de bits predeterminado o especificado (UBR, CBR, VBR o ABR)<br />-Velocidad de línea predeterminada o especificada<br />-Tamaño de unidad de datos de servicio (SDU) especificado|
+    ||**CSO**|El parámetro **RX** incluye los tres elementos siguientes:<br /><br />-Tipo de velocidad de bits predeterminado o especificado (UBR, CBR, VBR o ABR)<br />-Velocidad de línea predeterminada o especificada<br />-Tamaño de SDU especificado|
     
-- El **atmadm /a** comando produce un resultado similar al siguiente:
+- El comando **Atmadm/a** produce una salida similar a la siguiente:
 
     ```
     Windows atM call Manager Statistics
@@ -98,7 +98,7 @@ atmadm [/c][/a][/s]
     47000580FFE1000000F21A2E180000C110081500
     ```
     
-- El **atmadm /s** comando produce un resultado similar al siguiente:
+- El comando **Atmadm/s** produce una salida similar a la siguiente:
 
     ```
     Windows atM call Manager Statistics
@@ -114,29 +114,29 @@ atmadm [/c][/a][/s]
     Signaling and ILMI Packets Received        = 34989
     ```
     
-    En la tabla siguiente contiene descripciones de cada elemento de la **atmadm /s** salida de ejemplo.
+    La tabla siguiente contiene descripciones de cada elemento en el resultado del ejemplo **Atmadm/s** .
     
-    |llamada de estadística del administrador|Descripción|
+    |Estadística del administrador de llamadas|Descripción|
     |-------------|--------|
-    |Llamadas activas actualmente|llamadas activas actualmente en el adaptador de atM instalado en este equipo.|
-    |Total de llamadas entrantes correctas|llamadas que recibe correctamente desde otros dispositivos en esta red atM.|
-    |Llamadas salientes correctas|llamadas realizadas correctamente a otros dispositivos atM en esta red desde este equipo.|
-    |Llamadas entrantes fallidas|Llamadas entrantes que no se pudo conectar a este equipo.|
-    |Llamadas salientes fallidas|Llamadas salientes que no se pudo conectar a otro dispositivo en la red.|
-    |llamadas cerrado de forma remota|llamadas cerradas por un dispositivo remoto en la red.|
-    |llama a cerrado localmente|llamadas cerradas por este equipo.|
-    |Señalización y conexiones los paquetes enviados|Número de paquetes de interfaz (conexiones) de administración local integrada enviados al conmutador para que este equipo está intentando conectarse.|
-    |Señalización y los paquetes de conexiones recibidos|Número de paquetes de conexiones recibidos desde el conmutador de atM.|
+    |Llamadas activas actuales|llama actualmente a activa en el adaptador atM instalado en este equipo.|
+    |Total de llamadas entrantes correctas|llamadas recibidas correctamente desde otros dispositivos en esta red atM.|
+    |Total de llamadas salientes correctas|llamadas completadas correctamente a otros dispositivos atM de esta red desde este equipo.|
+    |Llamadas entrantes incorrectas|Llamadas entrantes que no pudieron conectarse a este equipo.|
+    |Llamadas salientes incorrectas|Llamadas salientes que no pudieron conectarse a otro dispositivo de la red.|
+    |llamadas cerradas por remoto|llamadas cerradas por un dispositivo remoto en la red.|
+    |llamadas cerradas localmente|llamadas cerradas por este equipo.|
+    |Paquetes de señalización e ILMI enviados|Número de paquetes de la interfaz de administración local (ILMI) integrados enviados al conmutador al que este equipo está intentando conectarse.|
+    |Paquetes de señalización e ILMI recibidos|Número de paquetes de ILMI recibidos del conmutador atM.|
     
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-Para mostrar información de llamadas para todas las conexiones actuales para el adaptador de red atM instalado en este equipo, escriba:
+Para mostrar información de llamada de todas las conexiones actuales al adaptador de red atM instalado en este equipo, escriba:
 
 ```
 atmadm /c
 ```
 
-Para mostrar la dirección de punto (NSAP) atM registrada acceso de servicio de red para cada adaptador instalado en este equipo, escriba:
+Para mostrar la dirección de punto de acceso de servicio de red atM (NSAP) registrada para cada adaptador instalado en este equipo, escriba:
 
 ```
 atmadm /a

@@ -1,8 +1,8 @@
 ---
-title: ¿Manage-bde bloqueo
-description: 'Tema de los comandos de Windows para ***- '
+title: Manage-BDE (bloqueo)
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2b2f4971c0b4a1057d3206c5ead82bf27dfa9b8d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d773d7f02a509b3186d7b552993277369411f963
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821136"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374041"
 ---
-# <a name="manage-bde-lock"></a>¿Manage-bde: bloqueo
+# <a name="manage-bde-lock"></a>Manage-BDE: bloqueo
 
 
 
-Bloquea una unidad protegida con BitLocker para evitar el acceso a ella a menos que se proporcione la clave de desbloqueo. Para obtener ejemplos de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
+Bloquea una unidad protegida con BitLocker para impedir el acceso a ella a menos que se proporcione la clave de desbloqueo. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,15 +36,15 @@ manage-bde -lock [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<Drive>|Representa la letra de una unidad seguida del signo de dos puntos.|
-|-computername|Especifica que se utilizará Manage-bde.exe para modificar la protección de BitLocker en un equipo diferente. También puede usar **- cn** como una versión abreviada de este comando.|
-|\<Nombre >|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Valores aceptados incluyen el nombre NetBIOS del equipo y dirección IP del equipo.|
-|-? ¿o /?|Muestra una breve ayuda en el símbolo del sistema.|
-|-help o -h|Muestra la Ayuda completa en el símbolo del sistema.|
+|@no__t 0Drive >|Representa la letra de una unidad seguida del signo de dos puntos.|
+|-COMPUTERNAME|Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando.|
+|\<Nombre >|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
+|-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
+|-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-El ejemplo siguiente se muestra cómo utilizar el **-bloqueo** comando bloquear datos unidad D.
+En el ejemplo siguiente se muestra el uso del comando **-Lock** para bloquear la unidad de datos D.
 ```
 manage-bde –lock D:
 ```
@@ -52,4 +52,4 @@ manage-bde –lock D:
 #### <a name="additional-references"></a>Referencias adicionales
 
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
--   [¿Manage-bde](manage-bde.md)
+-   [Manage-BDE](manage-bde.md)

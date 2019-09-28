@@ -1,8 +1,8 @@
 ---
-title: Borrar caché de Bitsadmin
-description: Tema de los comandos de Windows para **bitsadmin caché borrar** -purga la caché local.
+title: vaciado de caché de bitsadmin
+description: El tema comandos de Windows para la **caché de bitsadmin borra** la memoria caché local.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ebf99efad228899129e696fe9cf56ef03a80bee4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c91079c439c505a0e73e48cc5fbcb26679b150b6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868486"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381929"
 ---
-# <a name="bitsadmin-cache-and-clear"></a>caché bitsadmin y borrarlo
+# <a name="bitsadmin-cache-and-clear"></a>bitsadmin cache y Clear
 
 
 
@@ -32,9 +32,9 @@ Purga la memoria caché local.
 bitsadmin /Cache /Clear 
 ```
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente purga la memoria caché local.
+En el ejemplo siguiente se purga la caché local.
 ```
 C:\>bitsadmin /Cache /Clear 
 ```

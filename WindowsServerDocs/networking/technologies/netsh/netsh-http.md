@@ -1,43 +1,43 @@
 ---
-title: Comandos Netsh para Hypertext Transfer protocolo (HTTP)
-description: Usar netsh http para consultar y configurar parámetros y configuración de HTTP.sys.
-ms.prod: windows-server-threshold
+title: Comandos Netsh para el protocolo de transferencia de hipertexto (HTTP)
+description: Use netsh http para consultar y configurar los parámetros y la configuración de HTTP. sys.
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: ''
 manager: dougkim
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3c5f3927abf1a2394c2dd5b8ea664c7de8d5f614
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 7b9032eb05128532c8bf90a0db2f685b4435e6eb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446194"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401875"
 ---
 # <a name="netsh-http-commands"></a>Comandos http Netsh
 
 
-Use **netsh http** para consultar y configurar las opciones de HTTP.sys y los parámetros.  
+Use **netsh http** para consultar y configurar los parámetros y la configuración de http. sys.  
 
 >[!TIP]
->Si usas Windows PowerShell en un equipo que ejecuta Windows Server 2016 o Windows 10, escriba **netsh** y presione ENTRAR. En el símbolo del sistema netsh, escriba **http** y presione ENTRAR para abrir el símbolo del sistema de netsh http.
+>Si usa Windows PowerShell en un equipo que ejecuta Windows Server 2016 o Windows 10, escriba **netsh** y presione Entrar. En el símbolo del sistema de Netsh, escriba **http** y presione Entrar para obtener el símbolo del sistema netsh http.
 >
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;netsh http\>
+>&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6netsh http @ no__t-7
 
-Los comandos de netsh disponible http son:
+Los comandos Netsh http disponibles son:
 
-- [add iplisten](#add-iplisten)
-- [add sslcert](#add-sslcert)
-- [Agregue el tiempo de espera](#add-timeout)
+- [Agregar iplisten](#add-iplisten)
+- [Agregar sslcert](#add-sslcert)
+- [agregar tiempo de espera](#add-timeout)
 - [Agregar urlacl](#add-urlacl)
-- [delete cache](#delete-cache)
-- [delete iplisten](#delete-iplisten)
-- [delete sslcert](#delete-sslcert)
-- [eliminar el tiempo de espera](#delete-timeout)
-- [delete urlacl](#delete-urlacl)
-- [Vaciar logbuffer](#flush-logbuffer)
-- [show cachestate](#show-cachestate)
+- [eliminar caché](#delete-cache)
+- [eliminar iplisten](#delete-iplisten)
+- [eliminar sslcert](#delete-sslcert)
+- [tiempo de espera de eliminación](#delete-timeout)
+- [eliminar urlacl](#delete-urlacl)
+- [vaciar logbuffer](#flush-logbuffer)
+- [Mostrar cachestate](#show-cachestate)
 - [Mostrar iplisten](#show-iplisten)
 - [Mostrar servicestate](#show-servicestate)
 - [Mostrar sslcert](#show-sslcert)
@@ -46,232 +46,232 @@ Los comandos de netsh disponible http son:
 
 ## <a name="add-iplisten"></a>Agregar iplisten
 
-Agrega una nueva dirección IP a la lista de escucha IP, sin incluir el número de puerto.
+Agrega una nueva dirección IP a la lista de escucha de IP, sin incluir el número de puerto.
 
-**Sintaxis**
+**Sintáctica**
 
 ```powershell
 add iplisten [ ipaddress= ] IPAddress
 ```
 
-**Parámetros**
+**Los**
 
 |               |                                                                                                                                                                                                                          |          |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **ipaddress** | Lista de escucha de la dirección IPv4 o IPv6 que se agregarán a la dirección IP. La lista de escucha IP se usa para definir el ámbito de la lista de direcciones al que está enlazado el servicio HTTP. "0.0.0.0" significa cualquier dirección IPv4 y "::" significa cualquier dirección IPv6. | Requerido |
+| **DirIP** | Dirección IPv4 o IPv6 que se va a agregar a la lista de escucha de IP. La lista de escucha de IP se utiliza para establecer el ámbito de la lista de direcciones a las que se enlaza el servicio HTTP. "0.0.0.0" significa cualquier dirección IPv4 y "::" significa cualquier dirección IPv6. | Requerido |
 
 ---
 
-**Ejemplos**
+**Example**
 
-Estos son algunos ejemplos de cuatro de los **agregar iplisten** comando.
+A continuación se muestran cuatro ejemplos del comando **Add iplisten** .
 
--   add iplisten ipaddress=fe80::1
--   Agregar iplisten ipaddress = 1.1.1.1
--   Agregar iplisten ipaddress = 0.0.0.0
--   add iplisten ipaddress=::
+-   Agregue iplisten IPAddress = fe80:: 1
+-   Agregar iplisten IPAddress = pág
+-   Agregar iplisten IPAddress = 0.0.0.0
+-   Agregar iplisten ipaddress =::
 
 ---
 
 ## <a name="add-sslcert"></a>Agregar sslcert
 
-Agrega un nuevo certificado de servidor SSL de enlace y el correspondiente directivas de certificados de cliente para una dirección IP y puerto.
+Agrega un nuevo enlace de certificado de servidor SSL y las directivas de certificado de cliente correspondientes para una dirección IP y un puerto.
 
-**Sintaxis**
+**Sintáctica**
 
 ```powershell
 add sslcert [ ipport= ] IPAddress:port [ certhash= ] CertHash [ appid= ] GUID [ [ certstorename= ] CertStoreName [ verifyclientcertrevocation= ] enable | disable [verifyrevocationwithcachedclientcertonly= ] enable | disable [ usagecheck= ] enable | disable [ revocationfreshnesstime= ] U-Int [ urlretrievaltimeout= ] U-Int [sslctlidentifier= ] SSLCTIdentifier [ sslctlstorename= ] SLCtStoreName [ dsmapperusage= ] enable | disable [ clientcertnegotiation= ] enable | disable ] ]
 ```
 
-**Parámetros**
+**Los**
 
 
 |                                              |                                                                                                                                                                                          |          |
 |----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-|                  **ipport**                  |                       Especifica la dirección IP y puerto para el enlace. Un carácter de dos puntos (:) se utiliza como delimitador entre la dirección IP y el número de puerto.                        | Requerido |
+|                  **ipport**                  |                       Especifica la dirección IP y el puerto para el enlace. Un carácter de dos puntos (:) se utiliza como delimitador entre la dirección IP y el número de puerto.                        | Requerido |
 |                 **certhash**                 |                                     Especifica el hash SHA del certificado. Este hash tiene una longitud de 20 bytes y se especifica como una cadena hexadecimal.                                      | Requerido |
 |                  **appid**                   |                                                                  Especifica el GUID para identificar la aplicación propietaria.                                                                  | Requerido |
-|              **certstorename**               |                                  Especifica el nombre del almacén del certificado. El valor predeterminado es MY. Certificado debe almacenarse en el contexto del equipo local.                                  | Opcional |
-|        **verifyclientcertrevocation**        |                                                      Especifica la activa o desactiva la comprobación de revocación de certificados de cliente.                                                       | Opcional |
-| **verifyrevocationwithcachedclientcertonly** |                                      Especifica si el uso del certificado de cliente almacenada en caché solo para la comprobación de revocación está habilitado o deshabilitado.                                       | Opcional |
-|                **usagecheck**                |                                                      Especifica si la comprobación de uso está habilitada o deshabilitada. Valor predeterminado está habilitado.                                                       | Opcional |
-|         **revocationfreshnesstime**          | Especifica el intervalo de tiempo en segundos, para que busque una lista de revocación actualizada de certificados (CRL). Si este valor es cero, la nueva CRL se actualiza sólo si expira la anterior. | Opcional |
-|           **urlretrievaltimeout**            |                            Especifica el intervalo de tiempo de espera (en milisegundos) después de intentar recuperar la lista de revocación de certificados para la dirección URL remota.                            | Opcional |
-|             **sslctlidentifier**             |                Especifica la lista de los emisores de certificados que se puede confiar. Esta lista puede ser un subconjunto de los emisores de certificados que son de confianza del equipo.                 | Opcional |
-|             **sslctlstorename**              |                                                Especifica el nombre de almacén de certificados en equipo_local donde se almacena SslCtlIdentifier.                                                | Opcional |
-|              **dsmapperusage**               |                                                        Especifica si los asignadores de DS está habilitado o deshabilitado. Valor predeterminado es disabled.                                                         | Opcional |
-|          **clientcertnegotiation**           |                                              Especifica si la negociación de certificado está habilitada o deshabilitada. Valor predeterminado es disabled.                                               | Opcional |
+|              **certstorename**               |                                  Especifica el nombre del almacén del certificado. EL valor predeterminado es MY. El certificado debe almacenarse en el contexto del equipo local.                                  | Opcional |
+|        **verifyclientcertrevocation**        |                                                      Especifica la comprobación activa/desactivada de la revocación de certificados de cliente.                                                       | Opcional |
+| **verifyrevocationwithcachedclientcertonly** |                                      Especifica si el uso del certificado de cliente almacenado en memoria caché para la comprobación de revocación está habilitado o deshabilitado.                                       | Opcional |
+|                **usagecheck**                |                                                      Especifica si la comprobación de uso está habilitada o deshabilitada. El valor predeterminado es habilitado.                                                       | Opcional |
+|         **revocationfreshnesstime**          | Especifica el intervalo de tiempo, en segundos, para buscar una lista de revocación de certificados (CRL) actualizada. Si este valor es cero, la nueva CRL solo se actualizará si expira la anterior. | Opcional |
+|           **urlretrievaltimeout**            |                            Especifica el intervalo de tiempo de espera (en milisegundos) después del intento de recuperar la lista de revocación de certificados para la dirección URL remota.                            | Opcional |
+|             **sslctlidentifier**             |                Especifica la lista de emisores de certificados en los que se puede confiar. Esta lista puede ser un subconjunto de los emisores de certificados que son de confianza para el equipo.                 | Opcional |
+|             **sslctlstorename**              |                                                Especifica el nombre del almacén de certificados en LOCAL_MACHINE donde se almacena SslCtlIdentifier.                                                | Opcional |
+|              **dsmapperusage**               |                                                        Especifica si los asignadores de DS están habilitados o deshabilitados. El valor predeterminado es deshabilitado.                                                         | Opcional |
+|          **clientcertnegotiation**           |                                              Especifica si la negociación del certificado está habilitada o deshabilitada. El valor predeterminado es deshabilitado.                                               | Opcional |
 
 ---
 
-**Ejemplos**
+**Example**
 
-Este es un ejemplo de la **agregar sslcert** comando.
+El siguiente es un ejemplo del comando **Add sslcert** .
 
-Agregar sslcert ipport = 1.1.1.1:443 certhash = 0102030405060708090A0B0C0D0E0F1011121314 appid = {00112233-4455-6677-8899-AABBCCDDEEFF}
+Add sslcert ipport = pág: 443 certhash = 0102030405060708090A0B0C0D0E0F1011121314 AppID = {00112233-4455-6677-8899-AABBCCDDEEFF}
 
 ---
 
-## <a name="add-timeout"></a>Agregue el tiempo de espera
+## <a name="add-timeout"></a>agregar tiempo de espera
 
-Agrega un tiempo de espera global para el servicio.
+Agrega un tiempo de espera global al servicio.
 
-**Sintaxis** 
+**Sintáctica** 
 
 ```powershell
 add timeout [ timeouttype= ] IdleConnectionTimeout | HeaderWaitTimeout [ value=] U-Short
 ```
 
-**Parámetros**
+**Los**
 
 |                 |                                                                                                     |
 |-----------------|-----------------------------------------------------------------------------------------------------|
 | **timeouttype** |                                    Tipo de tiempo de espera para la configuración.                                     |
-|    **value**    | Valor de tiempo de espera (en segundos). Si el valor está en notación hexadecimal, a continuación, agregue el prefijo 0 x. |
+|    **value**    | Valor del tiempo de espera (en segundos). Si el valor está en notación hexadecimal, agregue el prefijo 0x. |
 
 ---
 
-**Ejemplos**
+**Example**
 
-Estos son dos ejemplos de la **agregar tiempo de espera** comando.
+A continuación se muestran dos ejemplos del comando **Agregar tiempo de espera** .
 
--   add timeout timeouttype=idleconnectiontimeout value=120
--   add timeout timeouttype=headerwaittimeout value=0x40
+-   agregar tiempo de espera timeouttype = valor de idleconnectiontimeout, = 120
+-   Agregar timeout timeouttype = HeaderWaitTimeout valor = 0x40
 
 ---
 
 ## <a name="add-urlacl"></a>Agregar urlacl
 
-Agrega una entrada de reserva del localizador uniforme de recursos (URL). Este comando reserva la URL para los usuarios sin privilegios de administrador y cuentas. La DACL se puede especificar mediante un nombre de cuenta de NT con los parámetros de escucha y el delegado o mediante una cadena SDDL.
+Agrega una entrada de reserva de localizador uniforme de recursos (URL). Este comando reserva la dirección URL para usuarios y cuentas que no son administradores. La DACL puede especificarse mediante el uso de un nombre de cuenta de NT con los parámetros Listen y Delegate o mediante una cadena SDDL.
 
-**Sintaxis**
+**Sintáctica**
 
 ```powershell
 add urlacl [ url= ] URL [ [user=] User [ [ listen= ] yes | no [ delegate= ] yes | no ] | [ sddl= ] SDDL ]
 ```
 
-**Parámetros**
+**Los**
 
 |              |                                                                                                                                                  |          |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 |   **url**    |                                          Especifica el localizador uniforme de recursos (URL) completo.                                           | Requerido |
 |   **user**   |                                                      Especifica el nombre de usuario o grupo de usuarios                                                       | Requerido |
-|  **listen**  | Especifica uno de los siguientes valores: Sí: Permite al usuario registrar las direcciones URL. Este es el valor predeterminado. No: Denegar al usuario al registrar las direcciones URL. | Opcional |
-| **delegate** |  Especifica uno de los siguientes valores: Sí: Permitir al usuario delegar no direcciones URL: Denegar al usuario de la delegación de las direcciones URL. Este es el valor predeterminado.  | Opcional |
-|   **sddl**   |                                                Especifica una cadena SDDL que describe la DACL.                                                 | Opcional |
+|  **escuchar**  | Especifica uno de los siguientes valores: yes: Permite al usuario registrar las direcciones URL. Este es el valor predeterminado. No: Deniega al usuario el registro de las direcciones URL. | Opcional |
+| **Delegado** |  Especifica uno de los siguientes valores: yes: Permitir que el usuario delegue las direcciones URL no: Impida que el usuario delegue las direcciones URL. Este es el valor predeterminado.  | Opcional |
+|   **SDDL**   |                                                Especifica una cadena SDDL que describe la DACL.                                                 | Opcional |
 
 ---
 
-**Ejemplos**
+**Example**
 
-Estos son algunos ejemplos de cuatro de los **agregar urlacl** comando.
+A continuación se muestran cuatro ejemplos del comando **Add urlacl** .
 
-- Agregar urlacl url =https://+:80/MyUri usuario = DOMAIN\\usuario
-- Agregar urlacl url =<https://www.contoso.com:80/MyUri> usuario = DOMAIN\\usuario escucha = yes
-- Agregar urlacl url =<https://www.contoso.com:80/MyUri> usuario = DOMAIN\\delegado de usuario = no
-- Agregar urlacl url =https://+:80/MyUri sddl =...
+- Add urlacl URL = https://+:80/MyUri User = dominio @ no__t-1User
+- Add urlacl URL = <https://www.contoso.com:80/MyUri> User = dominio @ no__t-1User Listen = Yes
+- Add urlacl URL = <https://www.contoso.com:80/MyUri> usuario = dominio @ no__t-1User delegado = no
+- Agregar urlacl URL = https://+:80/MyUri SDDL =...
 
 ---
 
-## <a name="delete-cache"></a>Eliminar caché
+## <a name="delete-cache"></a>eliminar caché
 
-Elimina todas las entradas, o una entrada especificada, el kernel de servicio caché de URI de HTTP.
+Elimina todas las entradas, o una entrada especificada, de la memoria caché de URI del kernel del servicio HTTP.
 
-**Sintaxis**
+**Sintáctica**
 
 ```powershell
 delete cache [ [ url= ] URL [ [recursive= ] yes | no ]
 ```
 
-**Parámetros**
+**Los**
 
 |               |                                                                                                                              |          |
 |---------------|------------------------------------------------------------------------------------------------------------------------------|----------|
-|    **url**    |                    Especifica el nombre completo localizador de recursos uniforme (URL) que desea eliminar.                     | Opcional |
-| **recursive** | Especifica si se quitan todas las entradas en la memoria caché la dirección url. **Sí**: quitar todas las entradas **ningún**: no quite todas las entradas | Opcional |
+|    **url**    |                    Especifica el localizador uniforme de recursos (URL) completo que desea eliminar.                     | Opcional |
+| **recursiva** | Especifica si se quitan todas las entradas de la caché de direcciones URL. **sí**: quitar todas las entradas **no**: no quitar todas las entradas | Opcional |
 
 ---
 
-**Ejemplos**
+**Example**
 
-Estos son dos ejemplos de la **eliminar caché** comando.
+A continuación se muestran dos ejemplos del comando **Delete cache** .
 
-- eliminar la dirección url de la memoria caché =<https://www.contoso.com:80/myresource/> recursiva = yes
-- Eliminar caché
+- Delete cache URL = <https://www.contoso.com:80/myresource/> Recursive = Yes
+- eliminar caché
 
 ---
 
 ## <a name="delete-iplisten"></a>eliminar iplisten
 
-Elimina una dirección IP de la lista de escucha IP. La lista de escucha IP se usa para definir el ámbito de la lista de direcciones al que está enlazado el servicio HTTP.
+Elimina una dirección IP de la lista de escucha de IP. La lista de escucha de IP se utiliza para establecer el ámbito de la lista de direcciones a las que se enlaza el servicio HTTP.
 
-**Sintaxis**
+**Sintáctica**
 
 ```powershell
 delete iplisten [ ipaddress= ] IPAddress
 ```
 
-**Parámetros**
+**Los**
 
 |               |                                                                                                                                                                                                                                                                     |          |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **ipaddress** | Lista de escucha de la dirección IPv4 o IPv6 que se eliminará de la dirección IP. La lista de escucha IP se usa para definir el ámbito de la lista de direcciones al que está enlazado el servicio HTTP. "0.0.0.0" significa cualquier dirección IPv4 y "::" significa cualquier dirección IPv6. Esto no incluye el número de puerto. | Requerido |
+| **DirIP** | Dirección IPv4 o IPv6 que se va a eliminar de la lista de escucha de IP. La lista de escucha de IP se utiliza para establecer el ámbito de la lista de direcciones a las que se enlaza el servicio HTTP. "0.0.0.0" significa cualquier dirección IPv4 y "::" significa cualquier dirección IPv6. No incluye el número de puerto. | Requerido |
 
 ---
 
 
-**Ejemplos**
+**Example**
 
-Estos son algunos ejemplos de cuatro de los **eliminar iplisten** comando.
+A continuación se muestran cuatro ejemplos del comando **Delete iplisten** .
 
--   delete iplisten ipaddress=fe80::1
--   eliminar iplisten ipaddress = 1.1.1.1
--   eliminar iplisten ipaddress = 0.0.0.0
--   delete iplisten ipaddress=::
+-   Delete iplisten IPAddress = fe80:: 1
+-   Delete iplisten IPAddress = pág
+-   Delete iplisten IPAddress = 0.0.0.0
+-   eliminar iplisten ipaddress =::
 
 ---
 
 ## <a name="delete-sslcert"></a>eliminar sslcert
 
 
-Elimina enlaces de certificado de servidor SSL y directivas de certificados de cliente correspondiente para una dirección IP y puerto.
+Elimina los enlaces de certificado de servidor SSL y las directivas de certificado de cliente correspondientes para una dirección IP y un puerto.
 
-**Sintaxis**
+**Sintáctica**
 
 ```powershell
 delete sslcert [ ipport= ] IPAddress:port
 ```
 
-**Parámetros**
+**Los**
 
 |            |                                                                                                                                                                                          |          |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **ipport** | Especifica la dirección IPv4 o IPv6 y el puerto para el que se eliminan los enlaces de certificados SSL. Un carácter de dos puntos (:) se utiliza como delimitador entre la dirección IP y el número de puerto. | Requerido |
+| **ipport** | Especifica la dirección IPv4 o IPv6 y el puerto para los que se eliminan los enlaces de certificado SSL. Un carácter de dos puntos (:) se utiliza como delimitador entre la dirección IP y el número de puerto. | Requerido |
 
 ---
 
 
-**Ejemplos**
+**Example**
 
-Estos son algunos ejemplos de tres de los **eliminar sslcert** comando.
+A continuación se muestran tres ejemplos del comando **Delete sslcert** .
 
-- eliminar sslcert ipport = 1.1.1.1:443
-- eliminar sslcert ipport = 0.0.0.0:443
-- delete sslcert ipport=[::]:443
+- Delete sslcert ipport = pág: 443
+- Delete sslcert ipport = 0.0.0.0:443
+- Delete sslcert ipport = [::]: 443
 
 ---
 
-## <a name="delete-timeout"></a>eliminar el tiempo de espera
+## <a name="delete-timeout"></a>tiempo de espera de eliminación
 
-Elimina un tiempo de espera global y hace que el servicio de revertir a los valores predeterminados.
+Elimina un tiempo de espera global y hace que el servicio vuelva a los valores predeterminados.
 
-**Sintaxis**
+**Sintáctica**
 
 ```powershell
 delete timeout [ timeouttype= ] idleconnectiontimeout | headerwaittimeout
 ```
 
-**Parámetros**
+**Los**
 
 |                 |                                        |          |
 |-----------------|----------------------------------------|----------|
@@ -280,48 +280,48 @@ delete timeout [ timeouttype= ] idleconnectiontimeout | headerwaittimeout
 ---
 
 
-**Ejemplos**
+**Example**
 
-Estos son dos ejemplos de la **eliminar el tiempo de espera** comando.
+A continuación se muestran dos ejemplos del comando **eliminar tiempo de espera** .
 
--   delete timeout timeouttype=idleconnectiontimeout
--   delete timeout timeouttype=headerwaittimeout
+-   Delete timeout timeouttype = idleconnectiontimeout,
+-   Delete timeout timeouttype = HeaderWaitTimeout
 
 ---
 
-## <a name="delete-urlacl"></a>delete urlacl
+## <a name="delete-urlacl"></a>eliminar urlacl
 
 Elimina las reservas de direcciones URL.
 
-**Sintaxis**
+**Sintáctica**
 
 ```powershell
 delete urlacl [ url= ] URL
 ```
 
-**Parámetros**
+**Los**
 
 |         |                                                                                       |          |
 |---------|---------------------------------------------------------------------------------------|----------|
-| **url** | Especifica el nombre completo localizador de recursos uniforme (URL) que desea eliminar. | Requerido |
+| **url** | Especifica el localizador uniforme de recursos (URL) completo que desea eliminar. | Requerido |
 
 ---
 
 
-**Ejemplos**
+**Example**
 
-Estos son dos ejemplos de la **delete urlacl** comando.
+A continuación se muestran dos ejemplos del comando **Delete urlacl** .
 
-- delete urlacl url=https://+:80/MyUri
-- delete urlacl url=<https://www.contoso.com:80/MyUri>
+- Delete urlacl URL = https://+:80/MyUri
+- Delete urlacl URL = <https://www.contoso.com:80/MyUri>
 
 ---
 
-## <a name="flush-logbuffer"></a>Vaciar logbuffer
+## <a name="flush-logbuffer"></a>vaciar logbuffer
 
 Vacía los búferes internos de los archivos de registro.
 
-**Sintaxis**
+**Sintáctica**
 
 ```powershell
 flush logbuffer
@@ -331,37 +331,37 @@ flush logbuffer
 
 ## <a name="show-cachestate"></a>Mostrar cachestate
 
-Almacenar en caché las listas de recursos URI y sus propiedades asociadas. Este comando enumera todos los recursos y sus propiedades asociadas que se almacenan en caché en memoria caché de respuesta HTTP o muestran un único recurso y sus propiedades asociadas.
+Enumera los recursos de URI en caché y sus propiedades asociadas. Este comando muestra todos los recursos y sus propiedades asociadas que se almacenan en caché en la caché de respuesta HTTP o muestra un único recurso y sus propiedades asociadas.
 
-**Sintaxis**
+**Sintáctica**
 
 ```powershell
 show cachestate [ [url= ] URL]
 ```
 
-**Parámetros**
+**Los**
 
 |         |                                                                                                                                                    |          |
 |---------|----------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **url** | Especifica la dirección URL completa que se desea mostrar. Si no se especifica, se muestran todas las direcciones URL. La dirección URL también podría ser un prefijo para direcciones URL registradas. | Opcional |
+| **url** | Especifica la dirección URL completa que desea mostrar. Si no se especifica, se muestran todas las direcciones URL. La dirección URL también puede ser un prefijo para las direcciones URL registradas. | Opcional |
 
 ---
 
 
-**Ejemplos**
+**Example**
 
-Estos son dos ejemplos de la **mostrar cachestate** comando:
+A continuación se muestran dos ejemplos del comando **Show cachestate** :
 
-- Mostrar url cachestate =<https://www.contoso.com:80/myresource>
+- Show cachestate URL = <https://www.contoso.com:80/myresource>
 - Mostrar cachestate
 
 ---
 
 ## <a name="show-iplisten"></a>Mostrar iplisten
 
-Muestra todas las direcciones IP en la lista de escucha IP. La lista de escucha IP se usa para definir el ámbito de la lista de direcciones al que está enlazado el servicio HTTP. "0.0.0.0" significa cualquier dirección IPv4 y "::" significa cualquier dirección IPv6.
+Muestra todas las direcciones IP en la lista de escucha de IP. La lista de escucha de IP se utiliza para establecer el ámbito de la lista de direcciones a las que se enlaza el servicio HTTP. "0.0.0.0" significa cualquier dirección IPv4 y "::" significa cualquier dirección IPv6.
 
-**Sintaxis**
+**Sintáctica**
 
 ```powershell
 show iplisten
@@ -373,65 +373,65 @@ show iplisten
 
 Muestra una instantánea del servicio HTTP.
 
-**Sintaxis**
+**Sintáctica**
 ```powershell
 show servicestate [ [ view= ] session | requestq ] [ [ verbose= ] yes | no ]
 ```
 
-**Parámetros**
+**Los**
 
 |             |                                                                                                                      |          |
 |-------------|----------------------------------------------------------------------------------------------------------------------|----------|
-|  **Vista**   | Especifica si desea ver una instantánea del estado de servicio HTTP basado en la sesión del servidor o en las colas de solicitud. | Opcional |
-| **Verbose** |                Especifica si se muestra información detallada que también se muestra información de la propiedad.                | Opcional |
+|  **Vista**   | Especifica si se va a ver una instantánea del estado del servicio HTTP en función de la sesión del servidor o de las colas de solicitudes. | Opcional |
+| **Detallado** |                Especifica si se va a mostrar información detallada que también muestra información de propiedades.                | Opcional |
 
 ---
 
-**Ejemplos**
+**Example**
 
-Estos son dos ejemplos de la **mostrar servicestate** comando.
+A continuación se muestran dos ejemplos del comando **Show servicestate** .
 
--   Mostrar servicestate view = "sesión"
--   Mostrar servicestate view = "requestq"
+-   Mostrar servicestate ver = "sesión"
+-   Show servicestate View = "requestq"
 
 ---
 
 ## <a name="show-sslcert"></a>Mostrar sslcert
 
-Muestra los enlaces de certificados de servidor de capa de Sockets seguros (SSL) y directivas de certificados de cliente correspondiente para una dirección IP y puerto.
+Muestra los enlaces de certificado de servidor Capa de sockets seguros (SSL) y las directivas de certificado de cliente correspondientes para una dirección IP y un puerto.
 
-**Sintaxis**
+**Sintáctica**
 
 ```powershell
 show sslcert [ ipport= ] IPAddress:port
 ```
 
-**Parámetros**
+**Los**
 
 |            |                                                                                                                                                                                                                                                |          |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **ipport** | Especifica la dirección IPv4 o IPv6 y el puerto que mostrar los enlaces de certificado SSL. Un carácter de dos puntos (:) se utiliza como delimitador entre la dirección IP y el número de puerto. Si no especifica ipport, se muestran todos los enlaces. | Requerido |
+| **ipport** | Especifica la dirección IPv4 o IPv6 y el puerto para los que se muestran los enlaces de certificado SSL. Un carácter de dos puntos (:) se utiliza como delimitador entre la dirección IP y el número de puerto. Si no especifica ipport, se muestran todos los enlaces. | Requerido |
 
 ---
 
 
-**Ejemplos**
+**Example**
 
-Estos son algunos ejemplos de cinco de los **mostrar sslcert** comando.
+A continuación se muestran cinco ejemplos del comando **Show sslcert** .
 
--   show sslcert ipport=[fe80::1]:443
--   Mostrar sslcert ipport = 1.1.1.1:443
+-   Show sslcert ipport = [fe80:: 1]: 443
+-   Mostrar sslcert ipport = pág: 443
 -   Mostrar sslcert ipport = 0.0.0.0:443
--   show sslcert ipport=[::]:443
+-   Mostrar sslcert ipport = [::]: 443
 -   Mostrar sslcert
 
 ---
 
 ## <a name="show-timeout"></a>Mostrar tiempo de espera
 
-Muestra, en segundos, el valor de tiempo de espera del servicio HTTP.
+Muestra, en segundos, los valores de tiempo de espera del servicio HTTP.
 
-**Sintaxis**
+**Sintáctica**
 
 ```powershell
 show timeout
@@ -441,29 +441,29 @@ show timeout
 
 ## <a name="show-urlacl"></a>Mostrar urlacl
 
-Control de acceso discrecional muestra listas (DACL) para la dirección URL reservada especificada o todas las direcciones URL reservadas.
+Muestra las listas de control de acceso discrecional (DACL) de la dirección URL reservada especificada o de todas las direcciones URL reservadas.
 
-**Sintaxis**
+**Sintáctica**
 
 ```powershell
 show urlacl [ [url= ] URL]
 ```
 
-**Parámetros**
+**Los**
 
 |         |                                                                                                |          |
 |---------|------------------------------------------------------------------------------------------------|----------|
-| **url** | Especifica la dirección URL completa que se desea mostrar. Si no especificada, se muestran todas las direcciones URL. | Opcional |
+| **url** | Especifica la dirección URL completa que desea mostrar. Si no se ha dado, se muestran todas las direcciones URL. | Opcional |
 
 ---
 
 
-**Ejemplos**
+**Example**
 
-Estos son algunos ejemplos de tres de los **mostrar urlacl** comando.
+A continuación se muestran tres ejemplos del comando **Show urlacl** .
 
-- Mostrar urlacl url =https://+:80/MyUri
-- Mostrar urlacl url =<https://www.contoso.com:80/MyUri>
+- Show urlacl URL = https://+:80/MyUri
+- Show urlacl URL = <https://www.contoso.com:80/MyUri>
 - Mostrar urlacl
 
 ---

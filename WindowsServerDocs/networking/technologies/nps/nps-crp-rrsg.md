@@ -1,45 +1,45 @@
 ---
 title: Grupos de servidores RADIUS remotos
-description: En este tema se proporciona información general de red directiva de servidor RADIUS grupos de servidores remotos en Windows Server 2016.
+description: En este tema se proporciona información general de los grupos de servidores RADIUS remotos del servidor de directivas de redes en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: d81678a7-be21-48f2-9b3f-5a75d6aef013
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9912927a7b75e4c9f04aa3d24eb7ed46c73a7dd2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 63a6eb5f0f78ed8dbcc0144602f16274fd6ec213
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855266"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396310"
 ---
 # <a name="remote-radius-server-groups"></a>Grupos de servidores RADIUS remotos
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Cuando se configura el servidor de directivas de redes (NPS) como un proxy de servicio de autenticación remota telefónica de usuario (RADIUS), se usa NPS para reenviar las solicitudes de conexión a servidores RADIUS que son capaces de procesar las solicitudes de conexión porque pueden realizar autenticación y autorización en el dominio donde se encuentra la cuenta de usuario o equipo. Por ejemplo, si desea reenviar solicitudes de conexión a uno o más servidores RADIUS en dominios de confianza, puede configurar NPS como un proxy RADIUS para reenviar las solicitudes a los servidores RADIUS remotos en el dominio de confianza.
+Cuando se configura el servidor de directivas de redes (NPS) como un proxy de Servicio de autenticación remota telefónica de usuario (RADIUS), se usa NPS para reenviar las solicitudes de conexión a los servidores RADIUS que son capaces de procesar las solicitudes de conexión porque pueden realizar autenticación y autorización en el dominio donde se encuentra la cuenta de usuario o de equipo. Por ejemplo, si desea reenviar las solicitudes de conexión a uno o varios servidores RADIUS de dominios que no son de confianza, puede configurar NPS como un proxy RADIUS para reenviar las solicitudes a los servidores RADIUS remotos en el dominio que no es de confianza.
 
 >[!NOTE]
->Grupos de servidores RADIUS remotos son relacionada e independiente de los grupos de Windows.
+>Los grupos de servidores RADIUS remotos no están relacionados con grupos de Windows ni se separan de ellos.
 
-Para configurar NPS como proxy RADIUS, debe crear una directiva de solicitud de conexión que contiene toda la información necesaria para que NPS evalúe qué mensajes reenviar y dónde enviar los mensajes.
+Para configurar NPS como un proxy RADIUS, debe crear una directiva de solicitud de conexión que contenga toda la información necesaria para que NPS evalúe los mensajes que se van a reenviar y la ubicación de envío de los mensajes.
 
-Al configurar un grupo de servidores RADIUS remotos en NPS y configurar una directiva de solicitud de conexión con el grupo, que designa la ubicación donde NPS reenviar las solicitudes de conexión.
+Al configurar un grupo de servidores RADIUS remotos en NPS y configurar una directiva de solicitud de conexión con el grupo, está designando la ubicación donde NPS va a reenviar las solicitudes de conexión.
 
 ## <a name="configuring-radius-servers-for-a-group"></a>Configuración de servidores RADIUS para un grupo
 
-Un grupo de servidores RADIUS remotos es un grupo con nombre que contiene uno o más servidores RADIUS. Si configura varios servidores, puede especificar valores para determinar el orden en que se usan los servidores por el proxy o para distribuir el flujo de mensajes RADIUS entre todos los servidores del grupo para evitar la sobrecarga de uno o más servidores de equilibrio de carga con demasiadas solicitudes de conexión.
+Un grupo de servidores RADIUS remotos es un grupo con nombre que contiene uno o varios servidores RADIUS. Si configura más de un servidor, puede especificar la configuración de equilibrio de carga para determinar el orden en el que el proxy usa los servidores o distribuir el flujo de mensajes RADIUS en todos los servidores del grupo para evitar la sobrecarga de uno o más servidores. con demasiadas solicitudes de conexión.
 
-Cada servidor en el grupo tiene los siguientes valores.
+Cada servidor del grupo tiene la siguiente configuración.
 
-- **Nombre o dirección**. Cada miembro del grupo debe tener un nombre único dentro del grupo. El nombre puede ser una dirección IP o un nombre que se puede resolver en su dirección IP.
+- **Nombre o dirección**. Cada miembro del grupo debe tener un nombre único dentro del grupo. El nombre puede ser una dirección IP o un nombre que se pueda resolver en su dirección IP.
 
-- **Autenticación y cuentas**. Puede reenviar las solicitudes de autenticación, las solicitudes de cuentas o ambos a cada miembro del grupo de servidores RADIUS remotos.
+- **Autenticación y cuentas**. Puede Reenviar solicitudes de autenticación, solicitudes de cuentas o ambas a cada miembro del grupo de servidores RADIUS remotos.
 
-- **Equilibrio de carga**. Un valor de prioridad se utiliza para indicar el miembro del grupo es el servidor principal (la prioridad se establece en 1). Los miembros del grupo que tienen la misma prioridad, se usa una opción de peso para calcular con qué frecuencia se envían mensajes RADIUS a cada servidor. Puede usar una configuración adicional para configurar la forma en que el NPS detecta cuando un miembro del grupo deja de estar disponible y cuando esté disponible una vez que se ha determinado que no esté disponible.
+- **Equilibrio de carga**. Se usa un valor de prioridad para indicar qué miembro del grupo es el servidor principal (la prioridad se establece en 1). En el caso de los miembros del grupo que tienen la misma prioridad, se usa un valor de peso para calcular la frecuencia con que se envían mensajes RADIUS a cada servidor. Puede usar valores de configuración adicionales para configurar el modo en que NPS detecta cuándo un miembro del grupo deja de estar disponible y cuándo está disponible una vez que se ha determinado que no está disponible.
 
-Después de haber configurado un grupo de servidores RADIUS remotos, puede especificar el grupo en la autenticación y la configuración de cuentas de una directiva de solicitud de conexión. Por este motivo, puede configurar un grupo de servidores RADIUS remotos en primer lugar. A continuación, puede configurar la directiva de solicitud de conexión para usar el grupo de servidores remotos RADIUS recién configurado. Como alternativa, puede usar al Asistente para nueva directiva de solicitud de conexión para crear un nuevo grupo de servidores remotos RADIUS mientras crea la directiva de solicitud de conexión.
+Después de configurar un grupo de servidores RADIUS remotos, puede especificar el grupo en la configuración de autenticación y cuentas de una directiva de solicitud de conexión. Por este motivo, puede configurar un grupo de servidores RADIUS remotos primero. A continuación, puede configurar la Directiva de solicitud de conexión para usar el grupo de servidores RADIUS remotos recién configurados. Como alternativa, puede usar el Asistente para nueva Directiva de solicitud de conexión para crear un nuevo grupo de servidores RADIUS remotos mientras crea la Directiva de solicitud de conexión.
 
 Para obtener más información acerca de NPS, consulte [servidor de directivas de redes (NPS)](nps-top.md).

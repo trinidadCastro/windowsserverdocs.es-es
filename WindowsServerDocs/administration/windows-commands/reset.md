@@ -1,8 +1,8 @@
 ---
-title: Restablecer
-description: 'Tema de los comandos de Windows para ***- '
+title: Determinado
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0bd9b6735697cbcefdcf68dc3d4a53a6870a7a76
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a8903c300d12a019f8fb4aef6d367131a195d034
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850966"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371462"
 ---
-# <a name="reset"></a>Restablecer
+# <a name="reset"></a>Determinado
 
 
 
-DiskShadow.exe se restablece al estado predeterminado. **Restablecer** es especialmente útil en la separación, como las operaciones compuestas de DiskShadow **crear**, **importar**, **copia de seguridad**, o **restaurar**.
+Restablece DiskShadow. exe al estado predeterminado. El **restablecimiento** es especialmente útil para separar las operaciones de DiskShadow compuestas, como **crear**, **importar**, **realizar copias de seguridad**o **restaurar**.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,7 +34,7 @@ reset
 
 ## <a name="remarks"></a>Comentarios
 
--   Cuando se usa el **restablecer** comando, se pierde el estado de comandos como **agregar**, **establecer**, **cargar**, o **escritor**. **Restablecer** también libera las interfaces IVssBackupComponent y pierde instantáneas no persistentes.
+-   Cuando se usa el comando de **restablecimiento** , se pierde el estado de los comandos como **Agregar**, **establecer**, **cargar**o **escritor**. **RESET** también libera interfaces IVssBackupComponent y pierde instantáneas no persistentes.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

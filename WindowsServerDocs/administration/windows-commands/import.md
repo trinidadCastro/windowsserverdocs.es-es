@@ -1,8 +1,8 @@
 ---
 title: importar
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ddef3958bc431519e3cb89b658a58d1f4dba6938
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 50a095c323806dd523994c36c5b427d4ecedf8ef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835266"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375505"
 ---
 # <a name="import"></a>importar
 
 
 
-Importa una copia de instantáneas transportables de un archivo de metadatos cargados en el sistema.
+importa una instantánea transportable de un archivo de metadatos cargado en el sistema.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -36,12 +36,12 @@ import
 
 ## <a name="remarks"></a>Comentarios
 
--   Instantáneas transportables no se almacenan en el sistema inmediatamente. Sus detalles se almacenan en un archivo XML de documento de componentes de copia de seguridad, que DiskShadow automáticamente las solicitudes y los guarda en un archivo .cab de metadatos en el directorio de trabajo. Puede cambiar la ruta de acceso y el nombre de este archivo mediante el **establecer metadatos** comando.
--   Para poder usar **importar**, debe cargar un archivo de metadatos de DiskShadow mediante el **cargar metadatos** comando.
+-   Las instantáneas transportables no se almacenan en el sistema inmediatamente. Sus detalles se almacenan en un archivo XML de documento de componentes de copia de seguridad, que DiskShadow solicita y guarda automáticamente en un archivo de metadatos. cab en el directorio de trabajo. Puede cambiar la ruta de acceso y el nombre de este archivo mediante el comando **set Metadata** .
+-   Antes de poder usar la **importación**, debe cargar un archivo de metadatos de DiskShadow con el comando **cargar metadatos** .
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-La siguiente es una secuencia de comandos de DiskShadow de ejemplo que muestra el uso de la **importar** comando:
+El siguiente es un script de DiskShadow de ejemplo que muestra el uso del comando de **importación** :
 ```
 #Sample DiskShadow script demonstrating IMPORT
 SET CONTEXT PERSISTENT

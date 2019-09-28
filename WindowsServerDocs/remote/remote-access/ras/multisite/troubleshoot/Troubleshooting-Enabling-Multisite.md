@@ -1,9 +1,9 @@
 ---
 title: Solucionar problemas relacionados con la activación de multisitio
-description: Este tema forma parte de la Guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
+description: Este tema forma parte de la guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 570c81d6-c4f4-464c-bee9-0acbd4993584
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7fafc2e95f30a3956a1e2fdfcdf2f368a1798d28
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: fc42040d68b8a22dcfc46aa30db3a2a3c3bc060a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280964"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367058"
 ---
 # <a name="troubleshooting-enabling-multisite"></a>Solucionar problemas relacionados con la activación de multisitio
 
@@ -30,16 +30,16 @@ Los usuarios pueden enfrentarse a problemas si la funcionalidad de multisitio es
   
 **Causa**  
   
-En una implementación multisitio, los equipos cliente de Windows 10 y Windows 8 pueden moverse entre distintos puntos de entrada.  Los equipos cliente de Windows 7 deben asociarse con un punto de entrada específica de la implementación multisitio. Por lo tanto, si los equipos cliente no se encuentran en el grupo de seguridad apropiado, existe la posibilidad de que se les aplique la configuración de directiva de grupo incorrecta.  
+En una implementación multisitio, los equipos cliente de Windows 10 y Windows 8 pueden moverse entre distintos puntos de entrada.  Los equipos cliente de Windows 7 deben estar asociados a un punto de entrada específico en la implementación multisitio. Por lo tanto, si los equipos cliente no se encuentran en el grupo de seguridad apropiado, existe la posibilidad de que se les aplique la configuración de directiva de grupo incorrecta.  
   
 **Solución**  
   
-DirectAccess requiere al menos un grupo de seguridad para todos los equipos de cliente de Windows 10 y Windows 8; se recomienda usar un grupo de seguridad para todos los equipos de Windows 8 por dominio y Windows 10. DirectAccess también requiere un grupo de seguridad para los equipos de cliente de Windows 7 para cada punto de entrada. Cada equipo cliente debe estar en un solo grupo de seguridad. Por lo tanto, debe asegurarse de que los grupos de seguridad para Windows 10 y los clientes de Windows 8 contienen exclusivamente equipos que ejecutan Windows 10 o Windows 8 y que cada equipo cliente de Windows 7 pertenece a un grupo de seguridad dedicado única para el punto de entrada relevante y que ningún cliente de Windows 10 o Windows 8 pertenece a los grupos de seguridad de Windows 7.  
+DirectAccess requiere al menos un grupo de seguridad para todos los equipos cliente de Windows 10 y Windows 8. se recomienda usar un grupo de seguridad para todos los equipos con Windows 10 y Windows 8 por dominio. DirectAccess también necesita un grupo de seguridad para equipos cliente de Windows 7 para cada punto de entrada. Cada equipo cliente debe estar en un solo grupo de seguridad. Por lo tanto, debe asegurarse de que los grupos de seguridad para los clientes de Windows 10 y Windows 8 contienen solo equipos que ejecutan Windows 10 o Windows 8 y que cada equipo cliente de Windows 7 pertenece a un solo grupo de seguridad dedicado para el punto de entrada correspondiente. que ningún cliente de Windows 10 o Windows 8 pertenezca a los grupos de seguridad de Windows 7.  
   
-Configurar los grupos de seguridad de Windows 8 en el **seleccionar grupos** página de la **el programa de instalación de cliente de DirectAccess** asistente. Configurar grupos de seguridad de Windows 7 en el **compatibilidad con clientes** página de la **Habilitar implementación multisitio** asistente, o en el **compatibilidad con clientes** página de la  **Agregar un punto de entrada** asistente.  
+Configure los grupos de seguridad de Windows 8 en la página **seleccionar grupos** del Asistente para la **instalación del cliente de DirectAccess** . Configure los grupos de seguridad de Windows 7 en la página **compatibilidad con clientes** del Asistente para **Habilitar la implementación multisitio** o en la página **compatibilidad con clientes** del Asistente para **Agregar un punto de entrada** .  
   
 ## <a name="kerberos-proxy-authentication"></a>Autenticación proxy de Kerberos  
-**Recibidas el error**. No se admite la autenticación de proxy de Kerberos en una implementación multisitio. Debe habilitar el uso de certificados de equipo para la autenticación de usuarios IPsec.  
+**Error recibido**. La autenticación de proxy Kerberos no se admite en una implementación multisitio. Debe habilitar el uso de certificados de equipo para la autenticación de usuarios IPsec.  
   
 **Causa**  
   
@@ -53,10 +53,10 @@ Para habilitar la autenticación de certificados de equipo
   
 2.  En la página **Autenticación** del **Asistente para la instalación del servidor de acceso remoto**, active la casilla **Usar certificados de equipo** y seleccione la entidad de certificación raíz o intermedia que emite certificados en su implementación.  
   
-Para habilitar la autenticación de certificados de equipo con Windows PowerShell, use el `Set-DAServer` cmdlet y especifique el *IPsecRootCertificate* parámetro.  
+Para habilitar la autenticación de certificados de equipo mediante Windows PowerShell, use el cmdlet `Set-DAServer` y especifique el parámetro *IPsecRootCertificate* .  
   
 ## <a name="ip-https-certificates"></a>Certificados IP-HTTPS  
-**Recibidas el error**. El servidor de DirectAccess usa un certificado IP-HTTPS autofirmado. Configure IP-HTTPS para que use un certificado firmado de una CA conocida.  
+**Error recibido**. El servidor de DirectAccess usa un certificado IP-HTTPS autofirmado. Configure IP-HTTPS para que use un certificado firmado de una CA conocida.  
   
 **Causa**  
   
@@ -74,7 +74,7 @@ Para seleccionar un certificado IP-HTTPS:
   
 -   **Problema 1**  
   
-    **Recibidas el error**. DirectAccess está configurado para usar un certificado autofirmado para el servidor de ubicación de red. Configure el servidor de ubicación de red para que use un certificado firmado por una entidad de certificación.  
+    **Error recibido**. DirectAccess está configurado para usar un certificado autofirmado para el servidor de ubicación de red. Configure el servidor de ubicación de red para que use un certificado firmado por una entidad de certificación.  
   
     **Causa**  
   
@@ -88,9 +88,9 @@ Para seleccionar un certificado IP-HTTPS:
   
     2.  En la página **Servidor de ubicación de red** del **Asistente para la instalación del servidor de infraestructura**, asegúrese de que la casilla **Usar un certificado autofirmado** en **El servidor de ubicación de red se implementa en el servidor de acceso remoto** está desactivada y, después, haga clic en **Examinar** para seleccionar un certificado emitido por una CA empresarial.  
   
--   **Issue 2**  
+-   **Problema 2**  
   
-    **Recibidas el error**. Para implementar una carga de red con equilibrio de clúster o una implementación multisitio, debe obtener un certificado para el servidor de ubicación de red con un nombre de sujeto es diferente del nombre interno del servidor de acceso remoto.  
+    **Error recibido**. Para implementar un clúster con equilibrio de carga de red o una implementación multisitio, obtenga un certificado para el servidor de ubicación de red con un nombre de firmante distinto del nombre interno del servidor de acceso remoto.  
   
     **Causa**  
   
@@ -107,18 +107,18 @@ Para seleccionar un certificado IP-HTTPS:
     2.  En la página **Servidor de ubicación de red** del **Asistente para la instalación del servidor de infraestructura**, haga clic en **Examinar** en **El servidor de ubicación de red se implementa en el servidor de acceso remoto** para seleccionar el certificado obtenido previamente. Este certificado debe tener un nombre de firmante distinto del nombre interno del servidor de acceso remoto.  
   
 ## <a name="windows-7-client-computers"></a>Equipos cliente de Windows 7  
-**Advertencia**. Al habilitar el multisitio, los grupos de seguridad configurados para los clientes de DirectAccess no deben contener los equipos de Windows 7. Para admitir equipos cliente de Windows 7 en una implementación multisitio, seleccione un grupo de seguridad que contenga los clientes de cada punto de entrada.  
+**ADVERTENCIA recibida**. Al habilitar multisitio, los grupos de seguridad configurados para los clientes de DirectAccess no deben contener equipos con Windows 7. Para admitir equipos cliente de Windows 7 en una implementación multisitio, seleccione un grupo de seguridad que contenga los clientes de cada punto de entrada.  
   
 **Causa**  
   
-En la implementación de DirectAccess existente, se ha habilitado la compatibilidad con clientes de Windows 7.  
+En la implementación de DirectAccess existente, se habilitó la compatibilidad con clientes de Windows 7.  
   
 **Solución**  
   
-DirectAccess requiere al menos un grupo de seguridad para todos los equipos cliente de Windows 8 y un grupo de seguridad para los equipos de cliente de Windows 7 para cada punto de entrada. Cada equipo cliente debe estar en un solo grupo de seguridad. Por lo tanto, debe asegurarse de que el grupo de seguridad para clientes de Windows 8 contiene exclusivamente equipos que ejecutan Windows 8 y que cada equipo cliente de Windows 7 pertenece a un grupo de seguridad dedicado única para el punto de entrada relevante y que ningún cliente de Windows 8 pertenecer a los grupos de seguridad de Windows 7.  
+DirectAccess requiere al menos un grupo de seguridad para todos los equipos cliente de Windows 8 y un grupo de seguridad para equipos cliente de Windows 7 para cada punto de entrada. Cada equipo cliente debe estar en un solo grupo de seguridad. Por lo tanto, debe asegurarse de que el grupo de seguridad para clientes de Windows 8 solo contiene equipos que ejecutan Windows 8 y que cada equipo cliente de Windows 7 pertenece a un solo grupo de seguridad dedicado para el punto de entrada relevante y que no hay clientes de Windows 8. pertenecer a los grupos de seguridad de Windows 7.  
   
 ## <a name="active-directory-site"></a>Sitio de Active Directory  
-**Recibidas el error**. El servidor < nombre_servidor > no está asociado con un sitio de Active Directory.  
+**Error recibido**. El servidor < nombre_servidor > no está asociado a un sitio Active Directory.  
   
 **Causa**  
   
@@ -128,19 +128,19 @@ DirectAccess no pudo determinar el sitio de Active Directory. En la consola Siti
   
 Confirme que se trata de este problema; para ello, ejecute el comando `nltest /dsgetsite` en el servidor de acceso remoto. Si lo es, el comando devolverá ERROR_NO_SITENAME. Para solucionarlo, en el controlador de dominio, asegúrese de que existe una subred que contiene la dirección IP de servidor interna y de que está definida con un sitio de Active Directory.  
   
-## <a name="SaveGPOSettings"></a>Guardando la configuración de GPO de servidor  
-**Recibidas el error**. Se produjo un error al guardar la configuración de acceso remoto en el GPO < nombre_gpo >.  
+## <a name="SaveGPOSettings"></a>Guardando configuración de GPO de servidor  
+**Error recibido**. Se produjo un error al guardar la configuración de acceso remoto en el GPO < GPO_name >.  
   
 **Causa**  
   
-No se puede guardar los cambios realizados en el GPO de servidor debido a problemas de conectividad o si se produce una infracción de uso compartido en el archivo registry.pol, por ejemplo, otro usuario ha bloqueado el archivo.  
+No se pudieron guardar los cambios en el GPO de servidor debido a problemas de conectividad o a una infracción de uso compartido en el archivo Registry. Pol; por ejemplo, otro usuario ha bloqueado el archivo.  
   
 **Solución**  
   
 Asegúrese de que hay conectividad entre el servidor de acceso remoto y el controlador de dominio. Si la hay, compruebe en el controlador de dominio si otro usuario ha bloqueado el archivo registry.pol y, en caso necesario, finalice la sesión de dicho usuario para desbloquearlo.  
   
-## <a name="InternalServerError"></a>Error interno  
-**Recibidas el error**. Error interno.  
+## <a name="InternalServerError"></a>Se produjo un error interno  
+**Error recibido**. Error interno.  
   
 **Causa**  
   
@@ -150,7 +150,7 @@ Esto puede deberse a una configuración inesperada de la tabla de puntos de entr
   
 Repase la configuración de la tabla de puntos de entrada en todos los GPO de cliente y arregle las incoherencias que pueda haber en la configuración multisitio entre las distintas instancias de los GPO de cliente y la configuración de DirectAccess. Use el cmdlet `Get-DaEntryPointTableItem` con el nombre del GPO de cliente para obtener la tabla de puntos de entrada relativa al cliente. Use el cmdlet `Get-NetIPHttpsConfiguration` para obtener todos los perfiles IP-HTTPS de todos los puntos de entrada.  
   
-Para obtener más información, consulte [Cmdlets del cliente de DirectAccess en Windows PowerShell](https://technet.microsoft.com/library/hh848426).  
+Para obtener más información, vea [cmdlets de cliente de DirectAccess en Windows PowerShell](https://technet.microsoft.com/library/hh848426).  
   
 
 

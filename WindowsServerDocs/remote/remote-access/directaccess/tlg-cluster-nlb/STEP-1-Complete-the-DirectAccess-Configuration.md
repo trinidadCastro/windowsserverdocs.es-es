@@ -1,9 +1,9 @@
 ---
-title: PASO 1 completar la configuración de DirectAccess
-description: 'En este tema forma parte de la Guía del laboratorio de pruebas: demostrar DirectAccess en un clúster con NLB de Windows para Windows Server 2016'
+title: Paso 1 completar la configuración de DirectAccess
+description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess en un clúster con Windows NLB para Windows Server 2016'
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: e1e15544-b575-4f39-af0b-771bfae8b0b7
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0d341fd8608a12639bcb0c855d10c91b830e6365
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: cb009d5872d2045124601f1459e829a4d15f3058
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283396"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404890"
 ---
-# <a name="step-1-complete-the-directaccess-configuration"></a>PASO 1 completar la configuración de DirectAccess
+# <a name="step-1-complete-the-directaccess-configuration"></a>Paso 1 completar la configuración de DirectAccess
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-El primer paso es completar los pasos descritos en el [Test Lab Guide: Demostrar la instalación de servidor único de DirectAccess con IPv4 e IPv6 mixto](https://go.microsoft.com/fwlink/p/?LinkId=237004). Si ya ha completado los pasos descritos en este laboratorio de pruebas le guía y guardó una imagen de disco o de instantáneas del laboratorio de pruebas, puede restaurar la instantánea o la imagen y comenzar con el paso siguiente.  
+El primer paso consiste en completar todos los pasos de la guía de laboratorio @no__t 0Test: Mostrar la configuración de servidor único de DirectAccess con IPv4 e IPv6 no__t-0. Si ya ha completado los pasos de esta guía del laboratorio de pruebas y ha guardado una instantánea o una imagen de disco del laboratorio de pruebas, puede restaurar la instantánea o la imagen y comenzar con el siguiente paso.  
   
 
 

@@ -2,18 +2,18 @@
 title: 'Lista de comprobación: aplicar un filtro de archivos a un volumen o carpeta'
 description: En este artículo se describe cómo aplicar un filtro de archivos a un volumen o carpeta
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 03325d8a65d88c35f09985223608fc7474a0fde5
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 4d38e9a92a9c99663d81aab2a0164c5a30002f6a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475849"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401996"
 ---
 # <a name="checklist---apply-a-file-screen-to-a-volume-or-folder"></a>Lista de comprobación: aplicar un filtro de archivos a un volumen o carpeta
 
@@ -25,11 +25,11 @@ Para aplicar un filtro de archivos a un volumen o carpeta, usa la siguiente list
 2. Activa el registro de eventos de filtrado de archivos en la base de datos de auditoría si tienes previsto generar informes de Auditoría de filtrado de archivos.
 [Configurar Auditoría de filtrado de archivos](configure-file-screen-audit.md)
 
-3. Evalúa los tipos de archivo almacenados que son candidatos para las reglas de filtrado. Puedes usar los informes del nodo **Administración de informes de almacenamiento** para ofrecer datos. (Por ejemplo, ejecute una archivos por grupo de archivos o un informe archivos grandes a petición para identificar los archivos que ocupan una gran cantidad de espacio en disco.) [Generar informes a petición](generate-reports-on-demand.md) 
+3. Evalúa los tipos de archivo almacenados que son candidatos para las reglas de filtrado. Puedes usar los informes del nodo **Administración de informes de almacenamiento** para ofrecer datos. (Por ejemplo, ejecute un informe de Archivos por grupo de archivos o un informe de Archivos grandes a petición para identificar los archivos que ocupan grandes cantidades de espacio en disco). [Generar informes a petición](generate-reports-on-demand.md) 
 
 4. Revisa los grupos de archivos preconfigurados o crea un nuevo grupo de archivos para aplicar una directiva específica de filtrado de la organización. [Definir grupos de archivos para el filtrado](define-file-groups-for-screening.md)  
 
-5. Revisa las propiedades de plantillas de filtro de archivos disponibles. (En **administración del filtrado de archivo**, haga clic en el **plantillas de pantalla de archivo** nodo.) [Editar propiedades de plantilla de filtro de archivos](edit-file-screen-template-properties.md) 
+5. Revisa las propiedades de plantillas de filtro de archivos disponibles. (En **Administración del filtrado de archivos**, haga clic en el nodo **plantillas de filtro de archivos** ). [Editar propiedades](edit-file-screen-template-properties.md)de la plantilla de filtro de archivos  
 <br />
  O bien:
  <br /> Crea una nueva plantilla de filtro de archivos para aplicar una directiva de almacenamiento de la organización.  [Crear una plantilla de filtro de archivos](create-file-screen-template.md) 
@@ -44,4 +44,4 @@ Para aplicar un filtro de archivos a un volumen o carpeta, usa la siguiente list
 
 
 > [!NOTE]
-> Para limitar el almacenamiento en una carpeta o volumen, consulte [lista de comprobación: Aplicar una cuota a un volumen o carpeta](checklist-apply-file-screen-to-volume-or-folder.md)
+> Para limitar el almacenamiento en un volumen o una carpeta, consulte @no__t 0Checklist: Aplicar una cuota a un volumen o carpeta](checklist-apply-file-screen-to-volume-or-folder.md)

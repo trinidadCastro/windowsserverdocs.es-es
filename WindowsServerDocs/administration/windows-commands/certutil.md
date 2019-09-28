@@ -2,7 +2,7 @@
 title: certutil
 description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3bc1e544c0e0684678bc168f286b52e5573f3ac2
-ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
+ms.openlocfilehash: 45c9946cc53fe3a901c3f6ee53f082a5b3d086c0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68300684"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379652"
 ---
 # <a name="certutil"></a>certutil
 
@@ -152,7 +152,7 @@ En la tabla siguiente se describe la notación que se usa para indicar la sintax
 |  \<Texto dentro de corchetes angulares >  | Marcador de posición para el que se debe proporcionar un valor. |
 |  [Texto entre corchetes]  |                Elementos opcionales                 |
 |      {Texto entre llaves}       |       Conjunto de elementos necesarios; Elija una       |
-|         Barra vertical (          |                       )                       |
+|         Barra vertical (          |                       ) simple                       |
 |          Puntos suspensivos (...)           |          Elementos que se pueden repetir           |
 
 [Menú](#menu) volver a
@@ -250,7 +250,7 @@ AttributeString: pares de nombre y valor de atributo de solicitud
 
 ## <a name="-setextension"></a>-setextension
 
-CertUtil [opciones]-setextension RequestId ExtensionName marcas {Long | Fecha | Cadena | \@INFILE}
+CertUtil [opciones]-setextension RequestId ExtensionName marcas {Long | Fecha | Cadena | \@InFile}
 
 Establecer la extensión para la solicitud pendiente
 
@@ -1461,7 +1461,7 @@ Mostrar texto de mensaje de código de error
 
 ## <a name="-getreg"></a>-getreg
 
-CertUtil [opciones]-getreg [{CA | restore | Directiva | salir | plantilla | inscribir | cadena | PolicyServers}\[ProgID\]] [RegistryValueName]
+CertUtil [opciones]-getreg [{CA | restore | Directiva | salir | plantilla | inscribir | cadena | PolicyServers} \[ProgId @ no__t-1] [RegistryValueName]
 
 Mostrar valor del registro
 
@@ -1499,7 +1499,7 @@ Utilice "chain\ChainCacheResyncFiletime \@Now" para vaciar de forma eficaz las C
 
 ## <a name="-setreg"></a>-setreg
 
-CertUtil [opciones]-setreg [{CA | restore | Directiva | salir | plantilla | inscribir | cadena | PolicyServers}\[ProgID\]] valor RegistryValueName
+CertUtil [opciones]-setreg [{CA | restore | Directiva | salir | plantilla | inscribir | cadena | PolicyServers} \[ProgId @ no__t-1] valor RegistryValueName
 
 Establecer valor del registro
 
@@ -1537,7 +1537,7 @@ Utilice "chain\ChainCacheResyncFiletime \@Now" para vaciar de forma eficaz las C
 
 ## <a name="-delreg"></a>-delreg
 
-CertUtil [opciones]-delreg [{CA | restore | Directiva | salir | plantilla | inscribir | cadena | PolicyServers}\[ProgID\]] [RegistryValueName]
+CertUtil [opciones]-delreg [{CA | restore | Directiva | salir | plantilla | inscribir | cadena | PolicyServers} \[ProgId @ no__t-1] [RegistryValueName]
 
 Eliminar valor del registro
 

@@ -1,7 +1,7 @@
 ---
 title: Planear la escalabilidad de Hyper-V en Windows Server 2016
 description: Muestra el número máximo admitido de componentes que puede Agregar o quitar de Hyper-V y máquinas virtuales, como la cantidad de memoria y el número de procesadores virtuales.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,12 +10,12 @@ ms.topic: article
 author: KBDAzure
 ms.author: kathydav
 ms.date: 09/28/2016
-ms.openlocfilehash: b54d3e655d10d2dbb015d57f2b1be86a803d9911
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 3d94d8475f5de8d6b3d1d3f0bc549a8791e1d0c8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546637"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364063"
 ---
 # <a name="plan-for-hyper-v-scalability-in-windows-server-2016"></a>Planear la escalabilidad de Hyper-V en Windows Server 2016
 
@@ -23,7 +23,7 @@ ms.locfileid: "69546637"
   
 En este artículo se proporcionan detalles acerca de la configuración máxima de los componentes que se pueden agregar y quitar en un host de Hyper-V o en sus máquinas virtuales, como los procesadores virtuales o los puntos de control. Cuando planee la implementación, tenga en cuenta los valores máximos que se aplican a cada máquina virtual, así como los que se aplican al host de Hyper-V. 
 
-Los valores máximos para la memoria y los procesadores lógicos son los mayores aumentos de Windows Server 2012, en respuesta a las solicitudes para admitir escenarios más recientes, como el aprendizaje automático y el análisis de datos. El blog de Windows Server publicó recientemente los resultados de rendimiento de una máquina virtual con 5,5 terabytes de memoria y 128 procesadores virtuales con una base de datos en memoria de 4 TB. El rendimiento era superior al 95% del rendimiento de un servidor físico. Para obtener más información, consulte [rendimiento de máquinas virtuales de gran escala de Hyper-V de Windows Server 2016 para el procesamiento de transacciones en memoria](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/). Otros números son similares a los que se aplican a Windows Server 2012. \(Los máximos para Windows Server 2012 R2 eran los mismos que Windows Server 2012.\) 
+Los valores máximos para la memoria y los procesadores lógicos son los mayores aumentos de Windows Server 2012, en respuesta a las solicitudes para admitir escenarios más recientes, como el aprendizaje automático y el análisis de datos. El blog de Windows Server publicó recientemente los resultados de rendimiento de una máquina virtual con 5,5 terabytes de memoria y 128 procesadores virtuales con una base de datos en memoria de 4 TB. El rendimiento era superior al 95% del rendimiento de un servidor físico. Para obtener más información, consulte [rendimiento de máquinas virtuales de gran escala de Hyper-V de Windows Server 2016 para el procesamiento de transacciones en memoria](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/). Otros números son similares a los que se aplican a Windows Server 2012. \(Maximums para Windows Server 2012 R2 eran los mismos que Windows Server 2012. \) 
   
 > [!NOTE]  
 > Para obtener información acerca de System Center Virtual Machine Manager (VMM), consulte [Virtual Machine Manager](https://technet.microsoft.com/system-center-docs/vmm/vmm). VMM es un producto de Microsoft que permite administrar centros de datos virtualizados que se venden por separado.  

@@ -1,8 +1,8 @@
 ---
 title: ftype
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c29ca0aa027d11fa8f981134e5367021227d3096
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ce3f4c360269eb9cabd2cbef8abb89935923a595
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881686"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375818"
 ---
 # <a name="ftype"></a>ftype
 
 
 
-Muestra o modifica los tipos de archivo que se usan en las asociaciones de extensión de nombre de archivo. Si se usa sin un operador de asignación (**=**), **ftype** muestra la cadena de comando Abrir actual para el tipo de archivo especificado. Si se utiliza sin parámetros, **ftype** muestra los tipos de archivo que tienen las cadenas de comando Abrir definidas.
+Muestra o modifica los tipos de archivo que se usan en las asociaciones de extensión de nombre de archivo. Si se utiliza sin un operador de asignación ( **=** ), **ftype** muestra la cadena de comando abierta actual para el tipo de archivo especificado. Si se usa sin parámetros, **ftype** muestra los tipos de archivo que tienen definidas cadenas de comandos abiertas.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,45 +38,45 @@ ftype [<FileType>[=[<OpenCommandString>]]]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<FileType>|Especifica el tipo de archivo para mostrar o cambiar.|
-|\<OpenCommandString>|Especifica la cadena de comando Abrir que se utilizará al abrir los archivos del tipo de archivo especificado.|
+|@no__t 0FileType >|Especifica el tipo de archivo que se va a mostrar o cambiar.|
+|@no__t 0OpenCommandString >|Especifica la cadena de comandos abierta que se va a usar al abrir archivos del tipo de archivo especificado.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-La tabla siguiente describe cómo **ftype** reemplaza las variables en una cadena de comando Abrir:
+En la tabla siguiente se describe cómo **ftype** sustituye las variables dentro de una cadena de comandos abierta:
 
 |Variable|Valor de reemplazo|
 |--------|-----------------|
-|%0 o %1|Se sustituye por el nombre de archivo que se inicia a través de la asociación.|
+|% 0 o% 1|Se sustituye por el nombre de archivo que se inicia a través de la asociación.|
 |%*|Obtiene todos los parámetros.|
-|%2, %3, ...|Obtiene el primer parámetro (%2), el segundo parámetro (%3) y así sucesivamente.|
-|%~\<N>|Obtiene todos los parámetros restantes a partir de la *N*parámetro donde *N* puede ser cualquier número de 2 a 9.|
+|% 2,% 3,...|Obtiene el primer parámetro (% 2), el segundo parámetro (% 3), etc.|
+|%~ @ NO__T-1N >|Obtiene todos los parámetros restantes a partir del parámetro *n*, donde *N* puede ser cualquier número comprendido entre 2 y 9.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para mostrar los tipos de archivo actual que tienen definidas de cadenas de comando Abrir, escriba:
+Para mostrar los tipos de archivo actuales que tienen definidas cadenas de comandos abiertas, escriba:
 ```
 ftype
 ```
-Para mostrar la cadena de comando Abrir actual para el *txtfile* tipo de archivo, tipo:
+Para mostrar la cadena de comando abierta actual para el tipo de archivo *TXTfile* , escriba:
 ```
 ftype txtfile
 ```
-Este comando genera una salida similar al siguiente:
+Este comando produce un resultado similar al siguiente:
 ```
 txtfile=%SystemRoot%\system32\NOTEPAD.EXE %1
 ```
-Para eliminar la cadena de comando Abrir para un tipo de archivo denominado *ejemplo*, tipo:
+Para eliminar la cadena de comandos Open para un tipo de archivo llamado *example*, escriba:
 ```
 ftype example=
 ```
-Para asociar la extensión de nombre de archivo .pl con el tipo de archivo PerlScript y habilitar el tipo de archivo PerlScript ejecutar PERL. EXE, escriba los siguientes comandos:
+Para asociar la extensión de nombre de archivo. pl con el tipo de archivo PerlScript y habilitar el tipo de archivo PerlScript para ejecutar PERL. EXE, escriba los siguientes comandos:
 ```
 assoc .pl=PerlScript 
 ftype PerlScript=perl.exe %1 %*
 ```
-Para eliminar la necesidad de escribir la extensión de nombre de archivo .pl al invocar una secuencia de comandos Perl, escriba:
+Para eliminar la necesidad de escribir la extensión de nombre de archivo. pl al invocar un script Perl, escriba:
 ```
 set PATHEXT=.pl;%PATHEXT%
 ```

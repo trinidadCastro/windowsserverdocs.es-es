@@ -1,8 +1,8 @@
 ---
 title: rem
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d78bbfe4434170078beb1fd3b3526b017a03e0be
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 56534f75baf514d1c1760edfd41f6f94ab4ae1ab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857026"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371600"
 ---
 # <a name="rem"></a>rem
 
 
 
-Proporciona una manera de agregar comentarios a una secuencia de comandos.
+Proporciona una manera de agregar comentarios a un script.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,9 +32,9 @@ Proporciona una manera de agregar comentarios a una secuencia de comandos.
 rem
 ```
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-En este script de ejemplo, **rem** se usa para proporcionar un comentario sobre lo que hace la secuencia de comandos:
+En este script de ejemplo, **REM** se usa para proporcionar un Comentario sobre lo que hace el script:
 ```
 rem The commands in this script set up 3 drives.
 rem The first drive is a primary partition and is

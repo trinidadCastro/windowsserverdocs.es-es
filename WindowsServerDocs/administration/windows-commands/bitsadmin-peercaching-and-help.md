@@ -1,8 +1,8 @@
 ---
-title: Ayuda y bitsadmin caché del mismo nivel
-description: Tema de los comandos de Windows para **bitsadmin caché del mismo nivel y ayudar a** -muestra el uso de la línea de comandos para el **caché del mismo nivel** conmutadores.
+title: la caché y ayuda de bitsadmin
+description: 'Temas de comandos de Windows para la **caché de bitsadmin y ayuda** : muestra el uso de la línea de comandos para los conmutadores de **caché** .'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e1bb255da0b457ec41f62c93d87bed7575c049e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7d01d6cc50552320d99e668a6fc7292a2275b9db
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881946"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381066"
 ---
-# <a name="bitsadmin-peercaching-and-help"></a>Ayuda y bitsadmin caché del mismo nivel
+# <a name="bitsadmin-peercaching-and-help"></a>la caché y ayuda de bitsadmin
 
 
 
-Muestra el uso de la línea de comandos para el **caché del mismo nivel** conmutadores.
+Muestra el uso de la línea de comandos para los modificadores de **caché** .
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,9 +32,9 @@ Muestra el uso de la línea de comandos para el **caché del mismo nivel** conmu
 Bitsadmin /PeerCaching /Help 
 ```
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El comando siguiente muestra la Ayuda de línea de comandos para el **caché del mismo nivel** conmutadores.
+El siguiente comando muestra la ayuda de la línea de comandos para los modificadores de **caché** .
 ```
 Bitsadmin /PeerCaching /Help
 ```

@@ -1,8 +1,8 @@
 ---
 title: bitsadmin help
-description: Tema de los comandos de Windows para **bitsadmin ayuda** -muestra el uso de la línea de comandos.
+description: 'Tema de comandos de Windows para la **ayuda de bitsadmin** : muestra el uso de la línea de comandos.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d00eeb56216852f7861295c930c36cb65fb183dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9917e3537d4b642cdaeabf7d592614ec7de17ab8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886016"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381116"
 ---
 # <a name="bitsadmin-help"></a>bitsadmin help
 
@@ -32,9 +32,9 @@ Muestra el uso de la línea de comandos.
 bitsadmin /help | /?
 ```
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente recupera de la Ayuda de línea de comandos.
+En el ejemplo siguiente se recupera la ayuda de la línea de comandos.
 ```
 C:\>bitsadmin /help
 ```

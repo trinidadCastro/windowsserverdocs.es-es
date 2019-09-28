@@ -1,9 +1,9 @@
 ---
-title: Instalar el software en su sistema MultiPoint Services
+title: Instalación del software en el sistema Multipoint Services
 descrption: Learn how to install software for users in MultiPoint Services
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,24 +13,24 @@ ms.assetid: d4fb5b8b-2d57-40bb-afc7-7cfefc2ae232
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: e68f8ac8b608bbff062c65cbee1566e7da855516
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 12da3044e1801b61c4ee11cdbbc6887afff2e653
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824186"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389099"
 ---
-# <a name="install-software-on-your-multipoint-services-system"></a>Instalar el software en su sistema MultiPoint Services
-Cuando ha iniciado sesión como usuario administrativo, puede instalar nuevos programas, ya sea en modo de consola o desde una estación, en modo de estación. Sin embargo, recomendamos que instale programas en modo de consola.  
+# <a name="install-software-on-your-multipoint-services-system"></a>Instalación del software en el sistema Multipoint Services
+Cuando haya iniciado sesión como usuario administrativo, puede instalar nuevos programas en modo de consola o, desde una estación, en modo de estación. Sin embargo, se recomienda instalar programas en el modo de consola.  
   
-Puede instalar software nuevo en el equipo que ejecuta MultiPoint Server para que todos los usuarios puedan ejecutar el software, o para que solo puede usar el software, dependiendo de la instalación y las opciones del software de licencia.  
+Puede instalar software nuevo en el equipo que ejecuta MultiPoint Server para que todos los usuarios puedan ejecutar el software, o bien para que solo pueda usar el software, en función de las opciones de instalación y licencia del software.  
    
-1.  Inicie sesión como administrador el equipo de MultiPoint Services.  
+1.  Inicie sesión en el equipo de Multipoint Services como administrador.  
   
-2.  Abra MultiPoint Manager.  
+2.  Abra Multipoint Manager.  
   
-3.  Haga clic en el **inicio** pestaña y, a continuación, haga clic en **cambiar al modo de consola**.  
+3.  Haga clic en la pestaña **Inicio** y, a continuación, haga clic en **cambiar al modo de consola**.  
   
-4.  Inicie sesión como administrador e instalar las aplicaciones.  
+4.  Inicie sesión como administrador e instale sus aplicaciones.  
   
-5.  Al finalizar la instalación de aplicaciones, cambiar el equipo al modo de estación. Para ello, en el **inicio** , haga clic **cambiar al modo de estación**.  
+5.  Una vez finalizada la instalación de aplicaciones, vuelva a cambiar el equipo al modo de estación. Para ello, en la pestaña **Inicio** , haga clic en **cambiar al modo de estación**.  

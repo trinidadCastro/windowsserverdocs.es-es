@@ -1,8 +1,8 @@
 ---
-title: bdehdcfg no interactivo
-description: Tema de los comandos de Windows para bdehdcfg quiet - indica bdehdcfg que no se mostrarán todas las acciones y errores.
+title: bdehdcfg silencioso
+description: El tema comandos de Windows para bdehdcfg Quiet-indica a bdehdcfg que no muestre todas las acciones y errores.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f0d98f6ae76e9bf6357689c97e091766b9645c2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d59a14e34200e3fa8e18e36e166ef62ceca1afe7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865756"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382220"
 ---
-# <a name="bdehdcfg-quiet"></a>bdehdcfg: quiet
+# <a name="bdehdcfg-quiet"></a>bdehdcfg: Quiet
 
 
 
-Informa a la herramienta de línea de comandos de Bdehdcfg que todas las acciones y los errores no se muestra en la interfaz de línea de comandos. Para obtener un ejemplo de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
+Informa a la herramienta de línea de comandos Bdehdcfg de que no se mostrarán todas las acciones y los errores en la interfaz de la línea de comandos. Para obtener un ejemplo de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,15 +34,15 @@ bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge} 
 
 ### <a name="parameters"></a>Parámetros
 
-Este comando toma ningún parámetro adicional.
+Este comando no toma ningún parámetro adicional.
 
 ## <a name="remarks"></a>Comentarios
 
 Si se muestran indicaciones Yes/No (Y/N) durante la preparación de la unidad, se supondrá la respuesta "Yes". Para ver los errores que se produzcan durante la preparación de la unidad, revise el registro de eventos del sistema en el proveedor de eventos **Microsoft-Windows-BitLocker-DrivePreparationTool**.
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-El ejemplo siguiente se muestra cómo utilizar el **silencioso** comando.
+En el siguiente ejemplo se muestra el uso del comando **Quiet** .
 ```
 bdehdcfg -target default -quiet
 ```

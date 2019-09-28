@@ -3,7 +3,7 @@ title: Estaciones de MultiPoint
 description: Más información sobre las estaciones en Multipoint Services, incluidas las diferentes opciones para los usuarios
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: f9f9d618-ccfe-41ea-a52c-00c3c7adb51a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 4aa08f58f8fdf6d6fce816ee090275b0bf46a844
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 7b8f757d552bf54cd7f4eed0783ba8e0062b9d30
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871629"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405077"
 ---
 # <a name="multipoint--stations"></a>Estaciones Multipoint
 En un entorno del sistema Multipoint Services, las *estaciones* son los puntos de conexión de usuario para conectarse al equipo que ejecuta Multipoint Services. Cada estación proporciona al usuario una experiencia independiente de Windows 10. Se admiten los siguientes tipos de estación:  
@@ -120,9 +120,9 @@ Una vez que se divide una estación, un usuario puede iniciar sesión en la esta
 |Rendimiento de vídeo|Recomendado para el mejor rendimiento de vídeo||Use clientes ligeros que admitan RemoteFX para mejorar la calidad del vídeo con un ancho de banda de red inferior.|  
 |Limitaciones físicas|Limitado por la longitud del cable de vídeo y el concentrador USB y la longitud del cable (se recomienda una longitud máxima de 15 medidor)|Limitado por el concentrador USB y la longitud del cable (se recomienda una longitud máxima de 15 medidor)|Limitado por distribución de LAN|  
 |Número de estaciones permitidas |Limitado por el número de ranuras PCIe disponibles en la placa base, los puertos de vídeo por tarjeta de vídeo|El número total puede estar limitado por el fabricante del cliente USB cero (para obtener más información, consulte la nota que sigue a esta tabla).|Limitado por los puertos disponibles en el conmutador de red|  
-|Pantalla dividida|Sí|Sí|Sin|  
-|Estado de periféricos de la estación de Multipoint Manager, configuración de inicio de sesión automático, cambio de nombre de estación|Sí|Sí|Sin|  
-|Acceso a los menús de inicio del servidor|Sí|No|Sin|  
+|Pantalla dividida|Sí|Sí|No|  
+|Estado de periféricos de la estación de Multipoint Manager, configuración de inicio de sesión automático, cambio de nombre de estación|Sí|Sí|No|  
+|Acceso a los menús de inicio del servidor|Sí|No|No|  
   
 > [!NOTE]  
 > El número total de clientes USB sin conexión que están conectados al servidor puede estar limitado por el fabricante o la capacidad de hardware del equipo que ejecuta Multipoint Services.

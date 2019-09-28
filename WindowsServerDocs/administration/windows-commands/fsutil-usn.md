@@ -1,7 +1,7 @@
 ---
 ms.assetid: faad34aa-4ba1-4129-bc1f-08088399e2fa
-title: fsutil usn
-ms.prod: windows-server-threshold
+title: Fsutil USN
+ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
@@ -9,17 +9,17 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 4bef63f4938b5ce786bbbfdbf3bdd2081280ce95
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b62d031c547f140ac5008af20a9e0ee4bcecc919
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829986"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376792"
 ---
-# <a name="fsutil-usn"></a>fsutil usn
+# <a name="fsutil-usn"></a>Fsutil USN
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
 
-Administra el diario de cambios actualización (USN) del número de secuencia.
+Administra el diario de cambios del número de secuencias actualizadas (USN).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -38,90 +38,90 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 |Parámetro|Descripción|
 |-------------|---------------|
 |createjournal|Crea un diario de cambios USN.|
-|m =\<MaxSize >|Especifica el tamaño máximo, en bytes, que NTFS asigna para el diario de cambios.|
-|a=\<AllocationDelta>|Especifica el tamaño, en bytes, de asignación de memoria que se agrega al final y se quita del principio del diario de cambios.|
-|\<VolumePath>|Especifica la letra de unidad (seguida de dos puntos).|
-|deletejournal|Elimina o deshabilita un diario de cambios USN activo. **Precaución:** Eliminar el diario de cambios afecta al servicio de replicación de archivos (FRS) y el servicio de indización, ya que requeriría estos servicios para realizar un examen completo (y que requieren mucho tiempo) del volumen. Esto afecta negativamente a su vez a la replicación de SYSVOL de FRS y la replicación entre DFS vínculo alternativos mientras el volumen es que se vuelve a examinar.|
-|/d|Deshabilita un diario de cambios USN activo y devuelve el control de entrada/salida (E/S) mientras se está deshabilitando el diario de cambios.|
-|/n|Deshabilita un diario de cambios USN activo y devuelve el control de E/S solo después de que el diario de cambios está deshabilitado.|
-|enablerangetracking|Permite el intervalo de escritura de USN de seguimiento para un volumen.|
-|c=\<chunk-size>|Especifica el tamaño del fragmento para realizar un seguimiento en un volumen.|
-|s=\<file-size-threshold>|Especifica el umbral de tamaño de archivo para el intervalo de seguimiento.|
-|enumdata|Enumera y muestra las entradas del diario de cambios entre dos de los límites especificados.|
-|\<FileRef>|Especifica la posición ordinal dentro de los archivos en el volumen en el que la enumeración se va a comenzar.|
-|\<LowUSN>|Especifica el límite inferior del intervalo de valores USN utilizado para filtrar los registros que se devuelven. Solo los registros cuyo último cambio diario USN es entre o igual que el *usnBajo* y *usnAlto* se devuelven los valores de miembro.|
-|\<UsnAlto >|Especifica el límite superior de los valores de intervalo de USN usados para filtrar los archivos que se devuelven.|
+|m = \<MaxSize >|Especifica el tamaño máximo, en bytes, que NTFS asigna para el diario de cambios.|
+|a = \<AllocationDelta >|Especifica el tamaño, en bytes, de la asignación de memoria que se agrega al final y se quita del principio del diario de cambios.|
+|@no__t 0VolumePath >|Especifica la letra de unidad (seguida de dos puntos).|
+|deletejournal|Elimina o deshabilita un diario de cambios USN activo. **Atención:** La eliminación del diario de cambios afecta al servicio de replicación de archivos (FRS) y al servicio de indexación, ya que requeriría que estos servicios realizaran un examen completo (y lento) del volumen. Esto, a su vez, afecta negativamente a la replicación SYSVOL de FRS y la replicación entre alternativas de vínculo DFS mientras se vuelve a examinar el volumen.|
+|/d|Deshabilita un diario de cambios USN activo y devuelve un control de entrada/salida (e/s) mientras se deshabilita el diario de cambios.|
+|/n|Deshabilita un diario de cambios USN activo y devuelve el control de e/s solo después de deshabilitar el diario de cambios.|
+|enablerangetracking|Habilita el seguimiento del intervalo de escritura USN para un volumen.|
+|c = \<chunk-size >|Especifica el tamaño del fragmento del que se va a realizar el seguimiento en un volumen.|
+|s = \<file-size-Threshold >|Especifica el umbral de tamaño de archivo para el seguimiento del intervalo.|
+|enumdata|Enumera y enumera las entradas del diario de cambios entre dos límites especificados.|
+|@no__t 0FileRef >|Especifica la posición ordinal dentro de los archivos en el volumen en el que va a comenzar la enumeración.|
+|@no__t 0LowUSN >|Especifica el límite inferior del intervalo de valores de USN utilizados para filtrar los registros que se devuelven. Solo se devuelven los registros cuyo USN del último diario de cambios está entre o igual que los valores de miembro *LowUSN* y *HighUSN* .|
+|@no__t 0HighUSN >|Especifica el límite superior del intervalo de valores de USN utilizados para filtrar los archivos que se devuelven.|
 |queryjournal|Consulta los datos de USN de un volumen para recopilar información sobre el diario de cambios actual, sus registros y su capacidad.|
 |ReadData|Lee los datos USN de un archivo.|
-|\<FileName>|Especifica la ruta de acceso completa al archivo, incluido el nombre de archivo y la extensión, por ejemplo: C:\documents\filename.txt|
-|readjournal|Lee las entradas de USN en el diario USN.|
-|minver=\<number>|Versión principal mínima de USN_RECORD para devolver. Valor predeterminado = 2.|
-|maxver=\<number>|Versión principal de máximo de USN_RECORD para devolver. Valor predeterminado = 4.|
-|startusn =\<número USN >|USN para empezar a leer el diario USN de. Valor predeterminado = 0.|
+|\<Nombre de archivo >|Especifica la ruta de acceso completa al archivo, incluido el nombre de archivo y la extensión, por ejemplo: C:\documents\filename.txt|
+|readjournal|Lee los registros USN en el diario USN.|
+|Minver = \<number >|Versión principal mínima de USN_RECORD que se va a devolver. Valor predeterminado = 2.|
+|maxver = \<number >|Versión principal máxima de USN_RECORD que se va a devolver. Valor predeterminado = 4.|
+|startusn = \<USN número >|USN del que se va a empezar a leer el diario USN. Valor predeterminado = 0.|
 
 
 ## <a name="remarks"></a>Comentarios
 
--   Sobre el diario de cambios USN
+-   Acerca del diario de cambios de USN
 
-    El diario de cambios USN proporciona un registro persistente de todos los cambios realizados en los archivos del volumen. Como se agregan, eliminan y modificar los archivos, directorios y otros objetos NTFS, NTFS escribe registros en el diario de cambios USN, uno para cada volumen en el equipo. Cada registro indica el tipo de cambio y el objeto cambiado. Nuevos registros se anexan al final de la secuencia.
+    El diario de cambios USN proporciona un registro persistente de todos los cambios realizados en los archivos del volumen. A medida que se agregan, eliminan y modifican archivos, directorios y otros objetos NTFS, NTFS escribe registros en el diario de cambios USN, uno para cada volumen del equipo. Cada registro indica el tipo de cambio y el objeto cambiado. Los nuevos registros se anexan al final de la secuencia.
 
-    Los programas pueden consultar el diario de cambios USN para determinar todas las modificaciones realizadas en un conjunto de archivos. El diario de cambios USN es mucho más eficaz que la comprobación de las marcas de tiempo o registrarse para notificaciones de archivo. El diario de cambios USN es habilitar y utilizar los servicios de Index Server, servicio de replicación de archivos (FRS), servicios de instalación remota (RIS) y el almacenamiento remoto.
+    Los programas pueden consultar el diario de cambios USN para determinar todas las modificaciones realizadas en un conjunto de archivos. El diario de cambios USN es mucho más eficaz que comprobar las marcas de tiempo o registrar las notificaciones de archivo. El diario de cambios USN está habilitado y utilizado por el servicio de indización, el servicio de replicación de archivos (FRS), los servicios de instalación remota (RIS) y el almacenamiento remoto.
 
--   Uso de **createjournal**
+-   Usar **createjournal**
 
-    Si ya existe un diario de cambios en un volumen, el **createjournal** parámetro actualiza el diario de cambios *MaxSize* y *diferenciaDeAsignación* parámetros. Esto le permite expandir el número de registros que mantiene un diario activo sin necesidad de deshabilitarlo.
+    Si ya existe un diario de cambios en un volumen, el parámetro **createjournal** actualiza los parámetros *MaxSize* y *AllocationDelta* del diario de cambios. Esto le permite ampliar el número de registros que mantiene un diario activo sin tener que deshabilitarlo.
 
--   Uso de **m**
+-   Usar **m**
 
-    El diario de cambios puede crecer superior a este valor de destino, pero se trunca el diario de cambios en el siguiente punto de comprobación NTFS a menos que este valor. NTFS examina el diario de cambios y se recorta cuando su tamaño supera el valor de *MaxSize* más el valor de *diferenciaDeAsignación*. En los puntos de control NTFS, el sistema operativo escribe registros en el archivo de registro NTFS que permiten a NTFS determinar qué procesamiento es necesario para recuperarse de un error.
+    El diario de cambios puede aumentar el tamaño de este valor de destino, pero el diario de cambios se trunca en el siguiente punto de comprobación de NTFS a menos de este valor. NTFS examina el diario de cambios y lo recorta cuando su tamaño supera el valor de *MaxSize* más el valor de *AllocationDelta*. En los puntos de comprobación de NTFS, el sistema operativo escribe registros en el archivo de registro de NTFS que permiten a NTFS determinar qué procesamiento es necesario para recuperarse de un error.
 
--   Uso de **un**
+-   Usar **un**
 
-    El diario de cambios puede crecer más allá de la suma de los valores de *MaxSize* y *diferenciaDeAsignación* antes de que se va a recortar.
+    El diario de cambios puede aumentar hasta más de la suma de los valores de *MaxSize* y *AllocationDelta* antes de que se recorte.
 
--   Uso de **deletejournal**
+-   Usar **deletejournal**
 
-    Eliminar o deshabilitar un diario de cambios activos es muy lento, porque el sistema debe tener acceso a todos los registros de la tabla maestra de archivos (MFT) y establece el último atributo USN en 0 (cero). Este proceso puede tardar varios minutos y puede continuar una vez reiniciado el sistema, si es necesario reiniciar. Durante este proceso, el diario de cambios no se considera activo ni está deshabilitada. Mientras el sistema deshabilita el diario, no se puede acceder a él, y todas las operaciones de diario devuelven errores. Debe usar extremar las precauciones al deshabilitar un diario activo, ya que afecta negativamente a otras aplicaciones que usan el diario.
+    Eliminar o deshabilitar un diario de cambios activo lleva mucho tiempo, ya que el sistema debe tener acceso a todos los registros de la tabla de archivos maestra (MFT) y establecer el último atributo USN en 0 (cero). Este proceso puede tardar varios minutos y puede continuar después de que se reinicie el sistema, en caso de que sea necesario reiniciar. Durante este proceso, el diario de cambios no se considera activo ni está deshabilitado. Mientras el sistema está deshabilitando el diario, no se puede tener acceso a él y todas las operaciones del diario devuelven errores. Debe extremar las precauciones al deshabilitar un diario activo, ya que afecta negativamente a otras aplicaciones que utilizan el diario.
 
-## <a name="BKMK_examples"></a>Ejemplos
-Para crear un USN diario de cambios en la unidad C, escriba:
+## <a name="BKMK_examples"></a>Example
+Para crear un diario de cambios USN en la unidad C, escriba:
 
 ```
 fsutil usn createjournal m=1000 a=100 c:
 ```
 
-Para eliminar un activo USN diario de cambios en la unidad C, escriba:
+Para eliminar un diario de cambios de USN activo en la unidad C, escriba:
 
 ```
 fsutil usn deletejournal /d c:
 ```
 
-Para habilitar el intervalo de seguimiento con un tamaño de fragmento especificado y el umbral de tamaño de archivo, escriba:
+Para habilitar el seguimiento de intervalo con un tamaño de fragmento y un umbral de tamaño de archivo especificados, escriba:
 
 ```
 fsutil usn enablerangetracking c=16384 s=67108864 C:
 ```
 
-Para enumerar y mostrar las entradas del diario de cambios entre dos de los límites especificados en la unidad C, escriba:
+Para enumerar y mostrar las entradas del diario de cambios entre dos límites especificados en la unidad C, escriba:
 
 ```
 fsutil usn enumdata 1 0 1 c:
 ```
 
-Para consultar datos USN de un volumen en la unidad C, escriba:
+Para consultar los datos USN de un volumen en la unidad C, escriba:
 
 ```
 fsutil usn queryjournal c:
 ```
 
-Para leer los datos USN de un archivo en la carpeta \Temp en la unidad C, escriba:
+Para leer los datos USN de un archivo en la carpeta \temp de la unidad C, escriba:
 
 ```
 fsutil usn readdata c:\temp\sample.txt
 ```
 
-Para leer el diario USN con un USN de inicio específica, escriba:
+Para leer el diario USN con un USN de inicio específico, escriba:
 
 ```
 fsutil usn readjournal startusn=0xF00

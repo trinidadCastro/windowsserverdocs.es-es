@@ -1,18 +1,18 @@
 ---
 title: Configuración de Hyper-V
 description: Consideraciones de configuración de Hyper-V para el ajuste del rendimiento
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c608d3762c45a0b1478bcb3303159feef963291
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: f21115265ca7d2788fc0be078860048602d82c0f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866615"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370159"
 ---
 # <a name="hyper-v-configuration"></a>Configuración de Hyper-V
 
@@ -32,7 +32,7 @@ Las consideraciones de hardware para los servidores que ejecutan Hyper-V suelen 
 
     El servidor físico requiere suficiente memoria para las particiones raíz y secundaria. La partición raíz requiere memoria para realizar operaciones de e/s de forma eficaz en nombre de las máquinas virtuales y las operaciones como, por ejemplo, una instantánea de máquina virtual. Hyper-V garantiza que haya suficiente memoria disponible para la partición raíz y permite asignar la memoria restante a las particiones secundarias. Se debe ajustar el tamaño de las particiones secundarias en función de las necesidades de la carga esperada para cada máquina virtual.
 
--   **Storage**
+-   **Almacenamiento**
 
     El hardware de almacenamiento debe tener suficiente ancho de banda y capacidad de e/s para satisfacer las necesidades actuales y futuras de las máquinas virtuales que hospeda el servidor físico. Tenga en cuenta estos requisitos al seleccionar controladores de almacenamiento y discos y elegir la configuración de RAID. La colocación de las máquinas virtuales con cargas de trabajo con un gran consumo de disco en diferentes discos físicos probablemente mejorará el rendimiento general. Por ejemplo, si cuatro máquinas virtuales comparten un único disco y lo usan activamente, cada máquina virtual puede producir solo el 25 por ciento del ancho de banda de ese disco.
 
@@ -76,11 +76,11 @@ Hyper-V publica los contadores de rendimiento para ayudar a caracterizar el comp
 
 Siempre debe medir el uso de CPU del sistema físico mediante los contadores de rendimiento del procesador lógico de hipervisor de Hyper-V. Los contadores de uso de CPU que el administrador de tareas y el monitor de rendimiento notifican en las particiones raíz y secundarias no reflejan el uso de CPU físico real. Use los siguientes contadores de rendimiento para supervisar el rendimiento:
 
-- **Procesador lógico de hipervisor de Hyper-\*V\\()% total de tiempo de ejecución** el tiempo de inactividad total de los procesadores lógicos
+- **Procesador lógico de hipervisor de Hyper-V (\*) \\% de tiempo de ejecución total** El tiempo total de inactividad de los procesadores lógicos
 
-- **Procesador lógico de hipervisor de Hyper-\*V\\()% tiempo de ejecución del invitado** tiempo dedicado a ejecutar ciclos dentro de un invitado o en el host
+- **Procesador lógico de hipervisor de Hyper-V (\*) \\% de tiempo de ejecución de invitado** Tiempo empleado en ejecutar ciclos dentro de un invitado o en el host
 
-- **Procesador lógico de hipervisor de Hyper-\*V\\()% tiempo de ejecución del hipervisor** el tiempo empleado en ejecutarse dentro del hipervisor
+- **Procesador lógico de hipervisor de Hyper-V (\*) \\% de tiempo de ejecución del hipervisor** Tiempo empleado en ejecutarse dentro del hipervisor
 
 - El **procesador virtual raíz del hipervisor de Hyper\*-\\V ()\\** * mide el uso de CPU de la partición raíz
 

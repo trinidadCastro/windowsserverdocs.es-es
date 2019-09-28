@@ -1,44 +1,44 @@
 ---
 title: Solución de problemas de AD FS
-description: Este documento describe cómo solucionar diversos aspectos de AD FS
+description: En este documento se describe cómo solucionar varios aspectos de AD FS
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 01/12/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6410d510085d1772ca6d8ced47226e00239a1a02
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 416d9a68326927fcdf5884ef794a74e24a25bb8b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443903"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366104"
 ---
 # <a name="troubleshooting-ad-fs"></a>Solución de problemas de AD FS
-AD FS tiene muchas piezas móviles, afecta a muchos factores diferentes y tiene muchas dependencias diferentes.  Naturalmente, esto puede dar lugar a problemas diversos.  Este documento está diseñado para ayudarle a comenzar sobre cómo solucionar estos problemas.  Este documento le presentará las áreas típicas que debe centrarse en cómo habilitar características para obtener información adicional y diversas herramientas que pueden usarse para realizar un seguimiento de problemas.  
+AD FS tiene muchas piezas móviles, toca muchas cosas diferentes y tiene muchas dependencias diferentes.  Naturalmente, esto puede dar lugar a varios problemas.  Este documento está diseñado para ayudarle a empezar a solucionar estos problemas.  En este documento se presentan las áreas típicas en las que se debe centrar, cómo habilitar características para obtener información adicional y diversas herramientas que se pueden usar para realizar un seguimiento de los problemas.  
 
 >[!NOTE]
->Para obtener más información, consulte [ADFS ayuda](http://adfshelp.microsoft.com) que proporciona herramientas eficaces en uno que colocan resulta más fácil para los usuarios y administradores a solucionar problemas de autenticación a un ritmo más rápido. 
+>Para obtener más información, consulte la [ayuda de ADFS](http://adfshelp.microsoft.com) , que proporciona herramientas eficaces en un solo lugar que facilita a los usuarios y administradores la resolución de problemas de autenticación a un ritmo más rápido. 
 
 
-## <a name="what-to-check-first"></a>Qué se debe comprobar primero
-Antes de profundizar en la solución de problemas detallada, hay algunas cosas que debe comprobar primero.  Estas sobrecargas son:
-- **¿Configuración de DNS** -puede resolver el nombre del servicio de federación?  Esta acción debería resolver a la dirección IP de ya sea del equilibrador de carga o la dirección IP de uno de los servidores de AD FS en la granja de servidores.  Para obtener más información, consulte [AD FS solución de problemas: DNS](ad-fs-tshoot-dns.md).
-- **¿Puntos de conexión de AD FS** -puede examinar los puntos de conexión de AD FS?  Examinando Esto puede determinar si el servidor web de AD FS está respondiendo a las solicitudes.  Si puede obtener este archivo, a continuación, sabrá que AD FS está atendiendo las solicitudes en el puerto 443 perfectamente.  Para obtener más información, consulte [AD FS solución de problemas: puntos de conexión](ad-fs-tshoot-endpoints.md).
-- **¿Inicio de sesión iniciado por IDP en** -puede iniciar sesión y autenticarse a través de la página de inicio de sesión Idp-Initiated?  Deberá asegurarse de que se ha habilitado esta página porque está deshabilitado de forma predeterminada.  Use `Set-AdfsProperties -EnableIdPInitiatedSignOn $true` para habilitar la página.  Si puede iniciar sesión y autenticarse, sabrá que AD FS funciona en esta área.  Para obtener más información, consulte [AD FS solución de problemas: inicio de sesión](ad-fs-tshoot-initiatedsignon.md).
+## <a name="what-to-check-first"></a>Qué comprobar primero
+Antes de profundizar en la solución de problemas detallada, hay algunas cosas que debe comprobar en primer lugar.  Estas sobrecargas son:
+- **Configuración de DNS** : ¿se puede resolver el nombre del servicio de Federación?  Esto debe resolverse en la dirección IP del equilibrador de carga o en la dirección IP de uno de los servidores AD FS de la granja.  Para obtener más información [, consulte solución de problemas de AD FS: DNS](ad-fs-tshoot-dns.md).
+- **AD FS puntos de conexión** : ¿puede examinar los puntos de conexión de AD FS?  Al ir a este paso, puede determinar si el servidor Web AD FS responde a las solicitudes.  Si puede obtener acceso a este archivo, sabrá que AD FS está atendiendo solicitudes en 443.  Para obtener más información [, consulte solución de problemas de AD FS: puntos de conexión](ad-fs-tshoot-endpoints.md).
+- **Inicio de sesión iniciado por IDP** : ¿se puede iniciar sesión y autenticarse a través de la página de inicio de sesión iniciada por IDP?  Debe asegurarse de que esta página se ha habilitado porque está deshabilitada de forma predeterminada.  Use `Set-AdfsProperties -EnableIdPInitiatedSignOn $true` para habilitar la página.  Si puede iniciar sesión y autenticarse, sabrá que AD FS funciona en esta área.  Para obtener más información [, consulte solución de problemas de AD FS de inicio de sesión](ad-fs-tshoot-initiatedsignon.md).
   ##  <a name="common-troubleshooting-areas"></a>Áreas de solución de problemas comunes
 
 |Nombre|Descripción|
 |-----|-----|
-|[Auditoría y registro de eventos](ad-fs-tshoot-logging.md)|Use los registros de eventos de Windows para ver el nivel y poca información de alto nivel a través de los registros de seguimiento y administración.  También puede usarse para ver la auditoría de seguridad.|
+|[Registro y auditoría de eventos](ad-fs-tshoot-logging.md)|Use los registros de eventos de Windows para ver la información de nivel alto y bajo de nivel a través de los registros de seguimiento y de administración.  También se puede usar para ver la auditoría de seguridad.|
 |[Conectividad de SQL](ad-fs-tshoot-sql.md)|Información sobre cómo probar la conectividad entre los servidores de AD FS y las bases de datos SQL de back-end|
-|[Emisión de notificaciones](ad-fs-tshoot-claims-issuance.md)|Información acerca de cómo determinar si AD FS es emitir notificaciones correctamente.|
-|[Detección de bucles](ad-fs-tshoot-loop.md)|Información sobre la determinación y evitar que los usuarios que se ha devuelto y hacia atrás entre el proveedor de identidades y un punto de reunión.|
-|[Certificados](ad-fs-tshoot-certs.md)|Problemas de certificados típicos que pueden surgir|
+|[Emisión de notificaciones](ad-fs-tshoot-claims-issuance.md)|Información sobre cómo determinar si AD FS emite notificaciones correctamente.|
+|[Detección de bucles](ad-fs-tshoot-loop.md)|Información sobre cómo determinar y evitar que los usuarios se devuelvan entre el IDP y el RP.|
+|[Certificados](ad-fs-tshoot-certs.md)|Problemas de certificados Typcial que pueden surgir|
 |[Fiddler](ad-fs-tshoot-fiddler.md)|Información sobre cómo instalar y usar Fiddler|
-|[WS-Federation con Fiddler](ad-fs-tshoot-fiddler-ws-fed.md)|Seguimiento de Fiddler detallados de una interacción de WS-Federation|
-|[Reglas de notificación](ad-fs-tshoot-claims-rules.md)|Información sobre cómo solucionar problemas de las reglas de notificación y su sintaxis|
-|[Autenticación integrada de Windows](ad-fs-tshoot-iwa.md)|Información sobre cómo solucionar problemas de autenticación integrada.|
-|[Azure AD](ad-fs-tshoot-azure.md)|Información sobre cómo solucionar problemas de interacción de AD FS con Azure AD.|
-|[Analizador de AD FS diagnósticos](ad-fs-diagnostics-analyzer.md)|Analizador de diagnóstico de Ayuda de AD FS puede ayudar a realizar comprobaciones básicas de AD FS mediante el módulo de PowerShell de diagnóstico. 
+|[WS-Federation con Fiddler](ad-fs-tshoot-fiddler-ws-fed.md)|Seguimiento detallado de Fiddler de una interacción de WS-Federation|
+|[Reglas de notificaciones](ad-fs-tshoot-claims-rules.md)|Información sobre la solución de problemas de reglas de notificaciones y su sintaxis|
+|[Autenticación integrada de Windows](ad-fs-tshoot-iwa.md)|Información sobre la solución de problemas de la autenticación integrada.|
+|[Azure AD](ad-fs-tshoot-azure.md)|Información sobre la solución de problemas de interacción AD FS con Azure AD.|
+|[Analizador de diagnósticos de AD FS](ad-fs-diagnostics-analyzer.md)|AD FS el analizador de diagnósticos de ayuda puede ayudar a realizar comprobaciones básicas de AD FS mediante el módulo diagnósticos de PowerShell. 

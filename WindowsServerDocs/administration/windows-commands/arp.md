@@ -2,7 +2,7 @@
 title: arp
 description: 'Temas de comandos de Windows para **ARP** : muestra y modifica las entradas de la caché del Protocolo de resolución de direcciones (ARP) que se usa para almacenar las direcciones IP y sus direcciones físicas resueltas.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8354df3f52790840e0cb0c5c9834da2722d27d43
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 1e6d34ceaa56ed40a1083b710e0db01b106f49e2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914692"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382665"
 ---
 # <a name="arp"></a>arp
 
@@ -33,10 +33,10 @@ arp [/a [<Inetaddr>] [/n <ifaceaddr>]] [/g [<Inetaddr>] [-n <ifaceaddr>]] [/d <I
 
 |                Parámetro                |                                                                                                                                                                                                                                                               Descripción                                                                                                                                                                                                                                                               |
 |-----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /a [<Inetaddr>] [/n <ifaceaddr>]     | Muestra las tablas de caché ARP actuales para todas las interfaces. El parámetro/n distingue entre mayúsculas y minúsculas.<br /><br />Para mostrar la entrada de caché ARP para una dirección IP específica, use **ARP/a** con el parámetro *Direccióndeinternet* , donde *direccióndeinternet* es una dirección IP. Si no se especifica *direccióndeinternet* , se usa la primera interfaz aplicable.<br /><br />Para mostrar la tabla de caché ARP para una interfaz específica, use el parámetro **/n** _ junto con el parámetro **/a** , donde *direccióndeinterfaz* es la dirección IP asignada a la interfaz. |
+|    /a [<Inetaddr>] [/n <ifaceaddr>]     | Muestra las tablas de caché ARP actuales para todas las interfaces. El parámetro/n distingue entre mayúsculas y minúsculas.<br /><br />Para mostrar la entrada de caché ARP para una dirección IP específica, use **ARP/a** con el parámetro *Direccióndeinternet* , donde *direccióndeinternet* es una dirección IP. Si no se especifica *direccióndeinternet* , se usa la primera interfaz aplicable.<br /><br />Para mostrar la tabla de caché ARP para una interfaz específica, use el parámetro **/n**_direccióndeinterfaz_ junto con el parámetro **/a** , donde *direccióndeinterfaz* es la dirección IP asignada a la interfaz. |
 |    /g [<Inetaddr>] [/n <ifaceaddr>]     |                                                                                                                                                                                                                                                          Idéntico a **/a**.                                                                                                                                                                                                                                                           |
-|      [/d <Inetaddr> [<ifaceaddr>]       |                                                                                           elimina una entrada con una dirección IP específica, donde *direccióndeinternet* es la dirección IP.<br /><br />Para eliminar una entrada en una tabla para una interfaz específica, use el parámetro *direccióndeinterfaz* , donde *direccióndeinterfaz* es la dirección IP asignada a la interfaz.<br /><br />Para eliminar todas las entradas, use el carácter\*comodín de asterisco () en lugar de *direccióndeinternet*.                                                                                           |
-| /s <Inetaddr> [<Etheraddr> ]<ifaceaddr> |                                                                                                                     agrega una entrada estática a la caché ARP que resuelve la dirección IP *direccióndeinternet* en la dirección física *Etheraddr*.<br /><br />Para agregar una entrada de caché ARP estática a la tabla para una interfaz específica, use el parámetro *direccióndeinterfaz* , donde *direccióndeinterfaz* es una dirección IP asignada a la interfaz.                                                                                                                     |
+|      [/d <Inetaddr> [<ifaceaddr>]       |                                                                                           elimina una entrada con una dirección IP específica, donde *direccióndeinternet* es la dirección IP.<br /><br />Para eliminar una entrada en una tabla para una interfaz específica, use el parámetro *direccióndeinterfaz* , donde *direccióndeinterfaz* es la dirección IP asignada a la interfaz.<br /><br />Para eliminar todas las entradas, use el carácter comodín de asterisco (\*) en lugar de *direccióndeinternet*.                                                                                           |
+| /s <Inetaddr> <Etheraddr> [<ifaceaddr>] |                                                                                                                     agrega una entrada estática a la caché ARP que resuelve la dirección IP *direccióndeinternet* en la dirección física *Etheraddr*.<br /><br />Para agregar una entrada de caché ARP estática a la tabla para una interfaz específica, use el parámetro *direccióndeinterfaz* , donde *direccióndeinterfaz* es una dirección IP asignada a la interfaz.                                                                                                                     |
 |                   /?                    |                                                                                                                                                                                                                                                  Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                                                                                                   |
 
 ## <a name="remarks"></a>Comentarios
@@ -56,5 +56,5 @@ arp [/a [<Inetaddr>] [/n <ifaceaddr>]] [/g [<Inetaddr>] [-n <ifaceaddr>]] [/d <I
   ```
   arp /s 10.0.0.80 00-AA-00-4F-2A-9C 
   ```
-  ## <a name="additional-references"></a>referencias adicionales
+  ## <a name="additional-references"></a>Referencias adicionales
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

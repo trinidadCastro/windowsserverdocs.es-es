@@ -1,8 +1,8 @@
 ---
-title: pwd_1 de FTP
-description: 'Tema de los comandos de Windows para ***- '
+title: pwd_1 FTP
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,26 +13,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6efccb7eb0c0e6f17d3ecbf3c83dea3709ef5319
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9dcd46508be1c32500bb4180968e4eac18ccec4c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841646"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376089"
 ---
-# <a name="ftp-pwd1"></a>ftp: pwd_1
+# <a name="ftp-pwd_1"></a>FTP: pwd_1
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Muestra el directorio actual del equipo remoto.   
+Muestra el directorio del equipo remoto actual.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 pwd  
 ```  
 ### <a name="parameters"></a>Parámetros  
 ninguno  
-## <a name="BKMK_Examples"></a>Ejemplos  
-Mostrar el directorio actual del equipo remoto.  
+## <a name="BKMK_Examples"></a>Example  
+Muestra el directorio del equipo remoto actual.  
 ```  
 pwd  
 ```  

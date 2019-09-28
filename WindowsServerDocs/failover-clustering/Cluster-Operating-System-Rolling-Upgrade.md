@@ -1,283 +1,283 @@
 ---
 title: Actualización gradual del sistema operativo del clúster
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.topic: get-started-article
 ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
 ms.date: 03/27/2018
-ms.openlocfilehash: f56c036768de7c1afcf3327135a7ff7d7a690a8b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f7d20a099f287d2ee05ae6e908c173e1eb3cfc66
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440141"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361843"
 ---
-# <a name="cluster-operating-system-rolling-upgrade"></a>Actualización gradual de sistema operativo del clúster
+# <a name="cluster-operating-system-rolling-upgrade"></a>Actualización gradual del sistema operativo del clúster
 
-> Se aplica a: Windows Server 2019, Windows Server 2016
+> Se aplica a: Windows Server 2019 y Windows Server 2016
 
-Actualización gradual de clúster del sistema operativo permite a un administrador actualizar el sistema operativo de los nodos del clúster sin detener la función Hyper-V o las cargas de trabajo de servidor de archivos de escalabilidad horizontal. Con esta característica, se pueden evitar las penalizaciones de tiempo de inactividad en los acuerdos de nivel de servicio (SLA).
+La actualización gradual de SO del clúster permite a un administrador actualizar el sistema operativo de los nodos del clúster sin detener las cargas de trabajo de Hyper-V o Servidor de archivos de escalabilidad horizontal. Con esta característica, se pueden evitar las penalizaciones de tiempo de inactividad en los acuerdos de nivel de servicio (SLA).
 
-Actualización gradual de clúster del sistema operativo proporciona las siguientes ventajas:
+La actualización gradual de SO del clúster proporciona las siguientes ventajas:
 
-- Clústeres de conmutación por error que se ejecutan cargas de trabajo de servidor de archivos de escalabilidad horizontal (SOFS) y la máquina virtual de Hyper-V se pueden actualizar desde Windows Server 2012 R2 (que se ejecuta en todos los nodos del clúster) a Windows Server 2016 (que se ejecuta en todos los nodos del clúster del clúster) sin tiempo de inactividad. Otras cargas de trabajo de clúster, como SQL Server, no estará disponibles durante el tiempo (normalmente menos de cinco minutos) que se tarda en conmutar por error a Windows Server 2016.  
-- No requiere ningún hardware adicional. Sin embargo, puede agregar más nodos del clúster temporalmente para clústeres pequeños para mejorar la disponibilidad del clúster durante la actualización de gradual de sistema operativo de clúster procesan.  
-- El clúster no tiene que ser detenido o reiniciado.  
-- No se requiere un nuevo clúster. Se actualiza el clúster existente. Además, se usan los objetos de clúster existentes almacenados en Active Directory.  
-- El proceso de actualización es reversible hasta que la elige al cliente el "punto-de-no-return", cuando todos los nodos del clúster ejecutan Windows Server 2016, y cuando se ejecuta el cmdlet de PowerShell Update-ClusterFunctionalLevel.  
-- El clúster puede admitir la aplicación de revisiones y operaciones de mantenimiento mientras se ejecuta en el modo mixto y sistema operativo.  
+- Los clústeres de conmutación por error que ejecutan las cargas de trabajo de máquina virtual de Hyper-V y servidor de archivos de escalabilidad horizontal (SOFS) se pueden actualizar desde Windows Server 2012 R2 (que se ejecuta en todos los nodos del clúster) a Windows Server 2016 (que se ejecuta en todos los nodos del clúster) sin tiempo de inactividad. Otras cargas de trabajo de clúster, como SQL Server, no estarán disponibles durante el tiempo (normalmente menos de cinco minutos) que se tarda en conmutar por error a Windows Server 2016.  
+- No requiere hardware adicional. Aunque puede agregar nodos de clúster adicionales temporalmente a los clústeres pequeños para mejorar la disponibilidad del clúster durante el proceso de actualización gradual del sistema operativo del clúster.  
+- No es necesario detener o reiniciar el clúster.  
+- No es necesario un nuevo clúster. El clúster existente se actualiza. Además, se usan los objetos de clúster existentes almacenados en Active Directory.  
+- El proceso de actualización es reversible hasta que el cliente elija "punto de no devolución", cuando todos los nodos del clúster ejecuten Windows Server 2016 y cuando se ejecute el cmdlet de PowerShell Update-ClusterFunctionalLevel.  
+- El clúster puede admitir operaciones de revisión y mantenimiento mientras se ejecuta en el modo de sistema operativo mixto.  
 - Admite la automatización a través de PowerShell y WMI.  
-- La propiedad pública del clúster **ClusterFunctionalLevel** propiedad indica el estado del clúster en los nodos de clúster de Windows Server 2016. Esta propiedad se puede consultar mediante el cmdlet de PowerShell desde un nodo de clúster de Windows Server 2016 que pertenezca a un clúster de conmutación por error:  
+- La propiedad **ClusterFunctionalLevel** de la propiedad pública del clúster indica el estado del clúster en los nodos de clúster de Windows Server 2016. Esta propiedad se puede consultar mediante el cmdlet de PowerShell desde un nodo de clúster de Windows Server 2016 que pertenezca a un clúster de conmutación por error:  
     ```PowerShell
     Get-Cluster | Select ClusterFunctionalLevel  
     ```  
 
     Un valor de **8** indica que el clúster se está ejecutando en el nivel funcional de Windows Server 2012 R2. Un valor de **9** indica que el clúster se está ejecutando en el nivel funcional de Windows Server 2016.  
 
-Esta guía describe las distintas fases del proceso de actualización gradual de clúster del sistema operativo, los pasos de instalación, las limitaciones de características y las preguntas más frecuentes (P+f) y es aplicable a los siguientes escenarios de actualización gradual de clúster del sistema operativo en Windows Server 2016:  
+En esta guía se describen las distintas fases del proceso de actualización gradual del sistema operativo del clúster, los pasos de instalación, las limitaciones de las características y las preguntas más frecuentes (p + f), y es aplicable a los siguientes escenarios de actualización gradual del sistema operativo de clúster en Windows Server 2016:  
 - Clústeres de Hyper-V  
-- Clústeres de servidor de archivos de escalabilidad horizontal  
+- Clústeres de Servidor de archivos de escalabilidad horizontal  
 
 El siguiente escenario no se admite en Windows Server 2016:  
--  Actualización del SO gradual de clústeres de invitados con disco duro virtual (archivo .vhdx) como almacenamiento compartido del clúster  
+-  Actualización gradual del sistema operativo de clúster de los clústeres invitados con el disco duro virtual (archivo. vhdx) como almacenamiento compartido  
 
-Actualización gradual de clúster del sistema operativo es totalmente compatible por System Center Virtual Machine Manager (SCVMM) 2016. Si utilizas SCVMM 2016, consulte [realizar una actualización gradual de un clúster de hosts de Hyper-V a Windows Server 2016 en VMM](https://docs.microsoft.com/system-center/vmm/hyper-v-rolling-upgrade?view=sc-vmm-1807) para obtener instrucciones sobre cómo actualizar los clústeres y automatizar los pasos que se describen en este documento.  
+La actualización gradual del sistema operativo del clúster es totalmente compatible con System Center Virtual Machine Manager (SCVMM) 2016. Si usa SCVMM 2016, consulte [realizar una actualización gradual de un clúster de hosts de Hyper-V a Windows Server 2016 en VMM](https://docs.microsoft.com/system-center/vmm/hyper-v-rolling-upgrade?view=sc-vmm-1807) para obtener instrucciones sobre cómo actualizar los clústeres y automatizar los pasos que se describen en este documento.  
 
 ## <a name="requirements"></a>Requisitos  
-Complete los siguientes requisitos antes de comenzar el proceso de actualización gradual de clúster del sistema operativo:
+Complete los requisitos siguientes antes de comenzar el proceso de actualización gradual del sistema operativo del clúster:
 
-- Comenzar con un clúster de conmutación por error que ejecuta Windows Server (canal semianual), Windows Server 2016 o Windows Server 2012 R2.
-- Actualizar un clúster de espacios de almacenamiento directo en Windows Server, no se admite la versión 1709.
-- Si la carga de trabajo de clúster es que las máquinas virtuales de Hyper-V o Scale-Out File Server, puede esperar la actualización sin tiempo de inactividad.
-- Compruebe que los nodos de Hyper-V con la CPU que admiten la tabla de direcciones de segundo nivel (SLAT) mediante uno de los métodos siguientes:  
-        ¿-Revise la [eres SLAT Compatible? WP8 SDK sugerencia 01](http://blogs.msdn.com/b/devfish/archive/2012/11/06/are-you-slat-compatible-wp8-sdk-tip-01.aspx) artículo que se describe dos métodos para comprobar si una CPU admite listones  
-        -Descargue el [Coreinfo v3.31](https://technet.microsoft.com/sysinternals/cc835722) herramienta para determinar si una CPU admite SLAT.
+- Comience con un clúster de conmutación por error que ejecute Windows Server (canal semianual), Windows Server 2016 o Windows Server 2012 R2.
+- No se admite la actualización de un clúster de Espacios de almacenamiento directo a Windows Server, versión 1709.
+- Si la carga de trabajo del clúster son máquinas virtuales de Hyper-V, o Servidor de archivos de escalabilidad horizontal, puede esperar una actualización sin tiempo de inactividad.
+- Compruebe que los nodos de Hyper-V tienen CPU que admiten la tabla de direcciones de segundo nivel (SLAT) mediante uno de los métodos siguientes:  
+        -Revisar el @no__t 0Are compatible con SLAT? Artículo WP8 de la sugerencia de SDK 01 @ no__t-0 que describe dos métodos para comprobar si una CPU admite SLATs  
+        -Descargue la herramienta [Coreinfo v 3.31](https://technet.microsoft.com/sysinternals/cc835722) para determinar si una CPU es compatible con slat.
 
-## <a name="cluster-transition-states-during-cluster-os-rolling-upgrade"></a>Estados de transición del clúster durante la actualización gradual de clúster del sistema operativo
+## <a name="cluster-transition-states-during-cluster-os-rolling-upgrade"></a>Estados de transición del clúster durante la actualización gradual del sistema operativo del clúster
 
-Esta sección describen los distintos Estados de transición del clúster de Windows Server 2012 R2 que se está actualizando a Windows Server 2016 mediante la actualización gradual de clúster del sistema operativo.  
+En esta sección se describen los distintos Estados de transición del clúster de Windows Server 2012 R2 que se está actualizando a Windows Server 2016 mediante la actualización gradual del sistema operativo del clúster.  
 
-Para mantener las cargas de trabajo de clúster ejecutándose durante el proceso de actualización gradual de clúster del sistema operativo, mover una carga de trabajo de clúster desde un nodo de Windows Server 2012 R2 a Windows Server 2016 nodo funciona como si ambos nodos estaban ejecutando el sistema operativo Windows Server 2012 R2. Cuando se agregan nodos de Windows Server 2016 en el clúster, operan en un modo de compatibilidad de Windows Server 2012 R2. Un nuevo modo de clúster conceptual, denominado "Modo mixto y sistema operativo", permite que los nodos de diferentes versiones que exista en el mismo clúster (consulte la figura 1).  
+Para mantener las cargas de trabajo del clúster en ejecución durante el proceso de actualización gradual del sistema operativo del clúster, el traslado de una carga de trabajo de clúster desde un nodo de Windows Server 2012 R2 al nodo de Windows Server 2016 funciona como si ambos nodos estuvieran ejecutando el sistema operativo Windows Server 2012 R2. Cuando se agregan nodos de Windows Server 2016 al clúster, funcionan en modo de compatibilidad de Windows Server 2012 R2. Un nuevo modo de clúster conceptual, denominado "modo de sistema operativo mixto", permite que existan nodos de versiones diferentes en el mismo clúster (vea la ilustración 1).  
 
-![Ilustración que muestra las tres fases de una actualización gradual de SO del clúster: todos los nodos de Windows Server 2012 R2, el modo mixto y sistema operativo y todos los nodos de Windows Server 2016](media/Cluster-Operating-System-Rolling-Upgrade/Clustering_RollingUpgrade_Overview.png)  
-**Figura 1: Transiciones de estado del sistema operativo de clúster**  
+![Illustration muestra las tres etapas de una actualización gradual del sistema operativo del clúster: todos los nodos Windows Server 2012 R2, modo mixto-OS y todos los nodos Windows Server 2016 @ no__t-1  
+**Figura 1: Transiciones de estado del sistema operativo del clúster @ no__t-0  
 
-Un clúster de Windows Server 2012 R2 entra en modo mixto y sistema operativo cuando se agrega un nodo de Windows Server 2016 en el clúster. El proceso es completamente reversible: se pueden quitar nodos de Windows Server 2016 desde el clúster y se pueden agregar nodos de Windows Server 2012 R2 en el clúster en este modo. El "punto sin retorno" se produce cuando se ejecuta el cmdlet de PowerShell Update-ClusterFunctionalLevel en el clúster. Para este cmdlet se realice correctamente, todos los nodos deben ser Windows Server 2016 y todos los nodos deben estar en línea.  
+Un clúster de Windows Server 2012 R2 entra en modo mixto de sistema operativo cuando se agrega un nodo de Windows Server 2016 al clúster. El proceso es totalmente reversible: los nodos de Windows Server 2016 se pueden quitar del clúster y los nodos de Windows Server 2012 R2 se pueden agregar al clúster en este modo. El "punto de no retorno" se produce cuando se ejecuta el cmdlet de PowerShell Update-ClusterFunctionalLevel en el clúster. Para que este cmdlet se ejecute correctamente, todos los nodos deben ser Windows Server 2016 y todos los nodos deben estar en línea.  
 
-## <a name="transition-states-of-a-four-node-cluster-while-performing-rolling-os-upgrade"></a>Estados de transición de un clúster de cuatro nodos mientras se realiza la actualización gradual de SO
+## <a name="transition-states-of-a-four-node-cluster-while-performing-rolling-os-upgrade"></a>Estados de transición de un clúster de cuatro nodos mientras se realiza la actualización gradual del sistema operativo
 
-En esta sección se muestra y describe las cuatro fases distintas de un clúster con almacenamiento compartido que los nodos se actualizan desde Windows Server 2012 R2 a Windows Server 2016.  
+En esta sección se muestran y describen las cuatro fases diferentes de un clúster con almacenamiento compartido cuyos nodos se actualizan de Windows Server 2012 R2 a Windows Server 2016.  
 
-"Fase 1" es el estado inicial, empezaremos con un clúster de Windows Server 2012 R2.  
+"Fase 1" es el estado inicial: comenzamos con un clúster de Windows Server 2012 R2.  
 
-![Ilustración que muestra el estado inicial: todos los nodos de Windows Server 2012 R2](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_Stage1.png)  
+![Illustration que muestra el estado inicial: todos los nodos Windows Server 2012 R2 @ no__t-1  
 **Figura 2: Estado inicial: Clúster de conmutación por error de Windows Server 2012 R2 (fase 1)**  
 
-En "fase 2", dos nodos han ha en pausa, purgar, expulsados, volver a formatear e instalado con Windows Server 2016.  
+En la "fase 2", dos nodos se han pausado, purgado, expulsado, reformateado e instalado con Windows Server 2016.  
 
-![Ilustración que muestra el clúster en modo mixto y sistema operativo: fuera del clúster de 4 nodos de ejemplo, dos nodos ejecutan Windows Server 2016 y dos nodos ejecutan Windows Server 2012 R2](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_Stage2.png)  
-**Figura 3: Estado intermedio: Modo mixto y sistema operativo: Windows Server 2012 R2 y Windows Server 2016 Failover Cluster Server (fase 2)**  
+![Illustration que muestra el clúster en modo de sistema operativo mixto: fuera del clúster de 4 nodos de ejemplo, dos nodos ejecutan Windows Server 2016 y dos nodos ejecutan Windows Server 2012 R2 @ no__t-1  
+**Figura 3: Estado intermedio: Modo de sistema operativo mixto: Clúster de conmutación por error de Windows Server 2012 R2 y Windows Server 2016 (fase 2)**  
 
-En "fase 3", todos los nodos del clúster se han actualizado a Windows Server 2016 y el clúster esté listo para actualizarse con el cmdlet de PowerShell Update-ClusterFunctionalLevel.  
+En la "fase 3", todos los nodos del clúster se han actualizado a Windows Server 2016 y el clúster está listo para actualizarse con el cmdlet de PowerShell Update-ClusterFunctionalLevel.  
 
 > [!NOTE]  
-> En esta fase, se puede invertir el proceso por completo y se pueden agregar nodos de Windows Server 2012 R2 a este clúster.  
+> En esta fase, el proceso se puede invertir completamente y los nodos de Windows Server 2012 R2 se pueden agregar a este clúster.  
 
-![Ilustración que muestra que el clúster se ha actualizado completamente para Windows Server 2016 y está listo para el cmdlet Update-ClusterFunctionalLevel para elevar el nivel funcional del clúster hasta Windows Server 2016](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_Stage3.png)  
-**Figura 4: Estado intermedio: Todos los nodos que se actualiza a Windows Server 2016, listo para Update-ClusterFunctionalLevel (fase 3)**  
+![Illustration muestra que el clúster se ha actualizado completamente a Windows Server 2016 y está listo para que el cmdlet Update-ClusterFunctionalLevel ponga el nivel funcional del clúster a Windows Server 2016 @ no__t-1  
+**Figura 4: Estado intermedio: Todos los nodos actualizados a Windows Server 2016, listos para Update-ClusterFunctionalLevel (fase 3)**  
 
-Después de ejecuta la actualización-ClusterFunctionalLevelcmdlet, el clúster entra en "Fase 4", donde se pueden usar las nuevas características de clúster de Windows Server 2016.  
+Después de ejecutar Update-ClusterFunctionalLevelcmdlet, el clúster entra en "Stage 4", donde se pueden usar las nuevas características de clúster de Windows Server 2016.  
 
-![Ilustración que muestra que la actualización de SO gradual de clúster se ha completado correctamente; todos los nodos se han actualizado a Windows Server 2016 y el clúster se está ejecutando en el nivel funcional del clúster de Windows Server 2016](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_Stage4.png)  
-**Figura 5: Estado final: Clúster de conmutación por error de Windows Server 2016 (fase 4)**  
+![Illustration que muestra que la actualización del sistema operativo gradual del clúster se ha completado correctamente; todos los nodos se han actualizado a Windows Server 2016 y el clúster se está ejecutando en el nivel funcional del clúster de Windows Server 2016, @ no__t-1.  
+@no__t 0Figure 5: Estado final: Clúster de conmutación por error de Windows Server 2016 (fase 4) **  
 
 ## <a name="cluster-os-rolling-upgrade-process"></a>Proceso de actualización gradual de SO del clúster
 
-En esta sección se describe el flujo de trabajo para realizar la actualización gradual de clúster del sistema operativo.  
+En esta sección se describe el flujo de trabajo para realizar la actualización gradual del sistema operativo del clúster.  
 
-![Ilustración que muestra el flujo de trabajo para actualizar un clúster](media/Cluster-Operating-System-Rolling-Upgrade/Clustering_RollingUpgrade_Workflow.png)  
-**Figura 6: Implementación de flujo de trabajo del proceso de actualización de SO del clúster**  
+![Illustration que muestra el flujo de trabajo para actualizar un clúster @ no__t-1  
+@no__t 0Figure 6: Flujo de trabajo del proceso de actualización gradual de SO de clúster @ no__t-0  
 
-Actualización gradual de SO del clúster incluye los siguientes pasos:  
+La actualización gradual del sistema operativo del clúster incluye los pasos siguientes:  
 
-1. Preparar el clúster para la actualización del sistema operativo como sigue:  
-    1. Actualización gradual de clúster del sistema operativo requiere quitar un nodo del clúster a la vez. Compruebe si tiene suficiente capacidad en el clúster para mantener la alta disponibilidad de SLA cuando uno de los nodos del clúster se quita del clúster para realizar una actualización de sistema operativo. ¿En otras palabras, necesita la capacidad de las cargas de trabajo de conmutación por error a otro nodo cuando se quita un nodo del clúster durante el proceso de actualización gradual de clúster del sistema operativo? ¿El clúster tiene la capacidad para ejecutar las cargas de trabajo necesarios cuando se quita un nodo del clúster para la actualización gradual de clúster del sistema operativo?  
-    2. Para cargas de trabajo de Hyper-V, compruebe que todos los hosts de Windows Server 2016 Hyper-V tienen CPU compatible con la tabla de direcciones de segundo nivel (SLAT). Solo las máquinas compatibles con SLAT pueden usar el rol Hyper-V en Windows Server 2016.  
-    3. Compruebe que las copias de seguridad de la carga de trabajo han completado y considere la posibilidad de realizar copias de seguridad del clúster. Detener las operaciones de copia de seguridad al agregar nodos al clúster.  
-    4. Compruebe que todos los nodos del clúster estén en línea/ejecución/seguridad mediante la [ `Get-ClusterNode` ](https://docs.microsoft.com/powershell/module/failoverclusters/Get-ClusterNode?view=win10-ps) cmdlet (consulte la figura 7).  
+1. Prepare el clúster para la actualización del sistema operativo de la siguiente manera:  
+    1. La actualización gradual del sistema operativo del clúster requiere la eliminación de un nodo a la vez del clúster. Compruebe si tiene suficiente capacidad en el clúster para mantener los SLA de alta disponibilidad cuando uno de los nodos del clúster se quita del clúster para una actualización del sistema operativo. En otras palabras, ¿necesita la capacidad de conmutar por error las cargas de trabajo a otro nodo cuando se quita un nodo del clúster durante el proceso de actualización gradual del sistema operativo del clúster? ¿El clúster tiene la capacidad de ejecutar las cargas de trabajo necesarias cuando se quita un nodo del clúster para la actualización gradual del sistema operativo del clúster?  
+    2. En el caso de las cargas de trabajo de Hyper-V, compruebe que todos los hosts de Hyper-V de Windows Server 2016 tienen una tabla de direcciones de segundo nivel (SLAT) de compatibilidad con CPU. Solo los equipos compatibles con SLAT pueden usar el rol de Hyper-V en Windows Server 2016.  
+    3. Compruebe que las copias de seguridad de la carga de trabajo se han completado y considere la posibilidad de realizar una copia de seguridad del clúster. Detenga las operaciones de copia de seguridad al agregar nodos al clúster.  
+    4. Compruebe que todos los nodos del clúster están en línea/Running/up con el cmdlet [`Get-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Get-ClusterNode?view=win10-ps) (vea la figura 7).  
 
-        ![Captura de pantalla que muestra los resultados de ejecutar el cmdlet Get-ClusterNode](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_GetClusterNode.png)  
-        **Figura 7: Determinar el estado del nodo mediante el cmdlet Get-ClusterNode**  
+        ![Screencap que muestra los resultados de la ejecución del cmdlet Get-ClusterNode @ no__t-1  
+        @no__t 0Figure 7: Determinar el estado del nodo mediante el cmdlet Get-ClusterNode @ no__t-0  
 
-    5. Si está ejecutando las actualizaciones de compatible con clústeres (CAU), compruebe si se está ejecutando actualmente CAU utilizando el **actualizar conscientes del clúster** interfaz de usuario, o la [ `Get-CauRun` ](https://docs.microsoft.com/powershell/module/clusterawareupdating/Get-CauRun?view=win10-ps) cmdlet (consulte la figura 8). Dejar de usar la CAU la [ `Disable-CauClusterRole` ](https://docs.microsoft.com/powershell/module/clusterawareupdating/Disable-CauClusterRole?view=win10-ps) cmdlet (consulte la figura 9) para evitar que los nodos se pause y vacían CAU durante el proceso de actualización gradual de clúster del sistema operativo.  
+    5. Si está ejecutando actualizaciones compatibles con clústeres (CAU), compruebe si la CAU se está ejecutando actualmente mediante la interfaz **de usuario de actualización compatible con clústeres** o el cmdlet [`Get-CauRun`](https://docs.microsoft.com/powershell/module/clusterawareupdating/Get-CauRun?view=win10-ps) (consulte la figura 8). Detenga la CAU con el cmdlet [`Disable-CauClusterRole`](https://docs.microsoft.com/powershell/module/clusterawareupdating/Disable-CauClusterRole?view=win10-ps) (vea la ilustración 9) para evitar que la Cau deje de usar los nodos durante el proceso de actualización gradual del sistema operativo del clúster.  
 
-        ![Captura de pantalla que muestra la salida del cmdlet Get-CauRun](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_GetCAU.png)  
-        **Figura 8: Mediante el [ `Get-CauRun` ](https://docs.microsoft.com/powershell/module/clusterawareupdating/Get-CauRun?view=win10-ps) cmdlet para determinar si las actualizaciones compatibles con clúster se está ejecutando en el clúster**  
+        ![Screencap que muestra la salida del cmdlet Get-CauRun @ no__t-1  
+        @no__t 0Figure 8: Usar el cmdlet [`Get-CauRun`](https://docs.microsoft.com/powershell/module/clusterawareupdating/Get-CauRun?view=win10-ps) para determinar si las actualizaciones compatibles con clústeres se están ejecutando en el clúster @ no__t-2  
 
-        ![Captura de pantalla que muestra la salida del cmdlet Disable-CauClusterRole](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_DisableCAU.png)  
-        **Figura 9: Deshabilitar la función de las actualizaciones de clúster compatibles con usando la [ `Disable-CauClusterRole` ](https://docs.microsoft.com/powershell/module/clusterawareupdating/Disable-CauClusterRole?view=win10-ps) cmdlet**  
+        ![Screencap que muestra la salida del cmdlet Disable-CauClusterRole @ no__t-1  
+        @no__t 0Figure 9: Deshabilitar el rol de actualizaciones compatibles con clústeres mediante el cmdlet [`Disable-CauClusterRole`](https://docs.microsoft.com/powershell/module/clusterawareupdating/Disable-CauClusterRole?view=win10-ps) @ no__t-2  
 
-2. Por cada nodo del clúster, realice lo siguiente:  
-    1. UI del Administrador de clúster, seleccione un nodo y usar el **pausar | Purgar** opción de menú para purgar el nodo (consulte la figura 10) o usar el [ `Suspend-ClusterNode` ](https://docs.microsoft.com/powershell/module/failoverclusters/Suspend-ClusterNode?view=win10-ps) cmdlet (consulte la figura 11).  
+2. Para cada nodo del clúster, realice lo siguiente:  
+    1. Mediante la interfaz de usuario del administrador de clústeres, seleccione un nodo y use la **pausa |** Opción de menú de purga para purgar el nodo (vea la figura 10) o usar el cmdlet [`Suspend-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Suspend-ClusterNode?view=win10-ps) (consulte la figura 11).  
 
-        ![Captura de pantalla que muestra cómo se purgue los roles con la UI del Administrador de clústeres](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_FCM_DrainRoles.png)  
-        **Figura 10: Roles de purga de un nodo mediante el Administrador de clústeres de conmutación por error**  
+        ![Screencap muestra cómo purgar roles con la interfaz de usuario del administrador de clústeres @ no__t-1  
+        @no__t 0Figure 10: Purga de roles de un nodo mediante Administrador de clústeres de conmutación por error @ no__t-0  
 
-        ![Captura de pantalla que muestra la salida del cmdlet Suspend-ClusterNode](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_SuspendNode.png)  
-        **Figura 11: Purgar roles desde un nodo mediante la [ `Suspend-ClusterNode` ](https://docs.microsoft.com/powershell/module/failoverclusters/Suspend-ClusterNode?view=win10-ps) cmdlet**  
+        ![Screencap que muestra la salida del cmdlet Suspend-ClusterNode @ no__t-1  
+        @no__t 0Figure 11: Purga de roles de un nodo mediante el cmdlet [`Suspend-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Suspend-ClusterNode?view=win10-ps) @ no__t-2  
 
-    2.  Mediante el Administrador de clústeres de UI, **Evict** el nodo en pausa desde el clúster, o usar el [ `Remove-ClusterNode` ](https://docs.microsoft.com/powershell/module/failoverclusters/Remove-ClusterNode?view=win10-ps) cmdlet.  
+    2.  Mediante la interfaz de usuario del administrador de clústeres, **expulse** el nodo en pausa del clúster o use el cmdlet [`Remove-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Remove-ClusterNode?view=win10-ps) .  
 
-        ![Captura de pantalla que muestra la salida del cmdlet Remove-ClusterNode](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_RemoveNode.png)  
-        **Figura 12: Quitar un nodo de clúster con [ `Remove-ClusterNode` ](https://docs.microsoft.com/powershell/module/failoverclusters/Remove-ClusterNode?view=win10-ps) cmdlet**  
+        ![Screencap que muestra la salida del cmdlet Remove-ClusterNode @ no__t-1  
+        @no__t 0Figure 12: Quitar un nodo del clúster mediante el cmdlet [`Remove-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Remove-ClusterNode?view=win10-ps) @ no__t-2  
 
-    3.  Volver a formatear la unidad del sistema y realizar una "instalación limpia del sistema operativo" de Windows Server 2016 en el nodo con el **personalizado: Instalar solo Windows (avanzado)** opción de instalación (consulte la figura 13) de setup.exe. No seleccione la **actualizar: Instalar Windows y mantener los archivos, configuraciones y aplicaciones** opción ya que la actualización gradual de clúster del sistema operativo no recomendamos la actualización en contexto.  
+    3.  Vuelva a dar formato a la unidad del sistema y realice una "instalación limpia del sistema operativo" de Windows Server 2016 en el nodo mediante el @no__t 0Custom: Instalar sólo Windows (avanzado) ** (véase la figura 13) en Setup. exe. Evite seleccionar el @no__t 0Upgrade: Instale Windows y mantenga los archivos, la configuración y las aplicaciones @ no__t-0, ya que la actualización gradual del sistema operativo del clúster no fomenta la actualización en contexto.  
 
-        ![Captura de pantalla del Asistente de instalación de Windows Server 2016 que muestra la opción de instalación personalizada seleccionada](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_InstallOption.png)  
-        **Figura 13: Opciones de instalación disponibles para Windows Server 2016**  
+        ![Screencap del Asistente para la instalación de Windows Server 2016 que muestra la opción de instalación personalizada seleccionada @ no__t-1  
+        @no__t 0Figure 13: Opciones de instalación disponibles para Windows Server 2016 @ no__t-0  
 
-    4.  Agregue el nodo para el dominio de Active Directory adecuado.  
+    4.  Agregue el nodo al dominio de Active Directory adecuado.  
     5.  Agregue los usuarios adecuados al grupo de administradores.  
-    6.  Usar el cmdlet Install-WindowsFeature PowerShell o de UI del Administrador de servidor, instale los roles de servidor que necesita, como Hyper-V.  
+    6.  Con la interfaz de usuario de Administrador del servidor o el cmdlet install-WindowsFeature de PowerShell, instale los roles de servidor que necesite, como Hyper-V.  
 
         ```PowerShell
         Install-WindowsFeature -Name Hyper-V  
         ```  
 
-    7.  Usar el cmdlet Install-WindowsFeature PowerShell o de UI del Administrador de servidor, instale la característica clúster de conmutación por error.  
+    7.  Instale la característica de clústeres de conmutación por error mediante la interfaz de usuario de Administrador del servidor o el cmdlet install-WindowsFeature de PowerShell.  
 
         ```PowerShell
         Install-WindowsFeature -Name Failover-Clustering  
         ```  
 
-    8.  Instale las características adicionales necesarias para las cargas de trabajo de clúster.  
-    9. Compruebe la configuración de conectividad de red y de almacenamiento mediante la UI del Administrador de clústeres de conmutación por error.  
-    10. Si se usa Firewall de Windows, compruebe que la configuración de Firewall es correcta para el clúster. Por ejemplo, clústeres de clúster compatible con la actualización (CAU) habilitada pueden requerir configuración de Firewall.  
-    11. Para cargas de trabajo de Hyper-V, use la interfaz de usuario del Administrador de Hyper-V para iniciar el cuadro de diálogo Administrador de conmutadores virtuales (consulte la figura 14).  
+    8.  Instale las características adicionales que necesiten las cargas de trabajo del clúster.  
+    9. Compruebe la configuración de conectividad de red y almacenamiento mediante la interfaz de usuario de Administrador de clústeres de conmutación por error.  
+    10. Si se usa Firewall de Windows, compruebe que la configuración del firewall sea correcta para el clúster. Por ejemplo, los clústeres habilitados para la actualización compatible con clústeres (CAU) pueden requerir la configuración del firewall.  
+    11. En el caso de cargas de trabajo de Hyper-V, use la interfaz de usuario del administrador de Hyper-V para iniciar el cuadro de diálogo Administrador de conmutadores virtuales (vea la figura 14).  
 
-        Compruebe que el nombre de la Virtual switches usa son idénticas para todos los nodos de host de Hyper-V en el clúster.  
+        Compruebe que el nombre de los conmutadores virtuales que se usan son idénticos para todos los nodos de host de Hyper-V del clúster.  
 
-        ![Captura de pantalla que muestra la ubicación del cuadro de diálogo Administrador de conmutadores virtuales de Hyper-V](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_VMSwitch.png)  
-        **Figura 14: Administrador de conmutadores virtuales**  
+        ![Screencap que muestra la ubicación del cuadro de diálogo Administrador de conmutadores virtuales de Hyper-V @ no__t-1  
+        @no__t 0Figure 14: Administrador de conmutadores virtuales @ no__t-0  
 
-    12. En un nodo de Windows Server 2016 (no utilice un nodo de Windows Server 2012 R2), use el Administrador de clústeres de conmutación por error (consulte la figura 15) para conectarse al clúster.  
+    12. En un nodo de Windows Server 2016 (no use un nodo de Windows Server 2012 R2), use el Administrador de clústeres de conmutación por error (vea la figura 15) para conectarse al clúster.  
 
-        ![Captura de pantalla que muestra el cuadro de diálogo Seleccionar clúster](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_AddNode.png)  
-        **Figura 15: Agregar un nodo al clúster mediante el Administrador de clústeres de conmutación por error**  
+        ![Screencap que muestra el cuadro de diálogo Seleccionar clúster @ no__t-1  
+        @no__t 0Figure 15: Agregar un nodo al clúster mediante Administrador de clústeres de conmutación por error @ no__t-0  
 
-    13. Uso de cualquier la UI del Administrador de clústeres de conmutación por error o la [ `Add-ClusterNode` ](https://docs.microsoft.com/powershell/module/failoverclusters/Add-ClusterNode?view=win10-ps) cmdlet (consulte la figura 16) para agregar el nodo al clúster.  
+    13. Use la interfaz de usuario de Administrador de clústeres de conmutación por error o el cmdlet [`Add-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Add-ClusterNode?view=win10-ps) (vea la figura 16) para agregar el nodo al clúster.  
 
-        ![Captura de pantalla que muestra la salida del cmdlet Add-ClusterNode](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_AddNode3.png)  
-        **Figura 16: Agregar un nodo al clúster con [ `Add-ClusterNode` ](https://docs.microsoft.com/powershell/module/failoverclusters/Add-ClusterNode?view=win10-ps) cmdlet**  
+        ![Screencap que muestra la salida del cmdlet Add-ClusterNode @ no__t-1  
+        @no__t 0Figure 16: Agregar un nodo al clúster mediante el cmdlet [`Add-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Add-ClusterNode?view=win10-ps) @ no__t-2  
 
         > [!NOTE]  
-        > Cuando el primer nodo de Windows Server 2016 une al clúster, el clúster entra en modo "mixto SO", y se mueven los recursos principales de clúster en el nodo de Windows Server 2016. Un clúster en modo "mixto SO" es un clúster de completamente funcional donde los nuevos nodos se ejecutan en un modo de compatibilidad con los nodos antiguos. Modo de "SO mixto" es un modo transitorio para el clúster. No pretende ser permanente y se esperan que los clientes actualizar todos los nodos del clúster de su plazo de cuatro semanas.  
+        > Cuando el primer nodo de Windows Server 2016 se une al clúster, el clúster entra en modo "Mixed-OS" y los recursos principales del clúster se mueven al nodo Windows Server 2016. Un clúster de modo "Mixed-OS" es un clúster totalmente funcional en el que los nuevos nodos se ejecutan en un modo de compatibilidad con los nodos antiguos. El modo "Mixed-OS" es un modo transitorio para el clúster. No pretende ser permanente y se espera que los clientes actualicen todos los nodos de su clúster en un plazo de cuatro semanas.  
 
-    14. Después de Windows Server 2016 está correctamente agregar nodo al clúster, puede (opcionalmente) mover algunas de las cargas de trabajo de clúster para el nodo recién agregado con el fin de equilibrar la carga de trabajo en el clúster como sigue:
+    14. Después de agregar correctamente el nodo de Windows Server 2016 al clúster, puede (opcionalmente) trasladar parte de la carga de trabajo del clúster al nodo recién agregado para volver a equilibrar la carga de trabajo en el clúster de la siguiente manera:
 
-        ![Captura de pantalla que muestra la salida del cmdlet Move-ClusterVirtualMachineRole](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_MoveVMRole.png)  
-        **Figura 17: Mover un clúster de carga de trabajo (rol de máquina virtual de clúster) mediante [ `Move-ClusterVirtualMachineRole` ](https://docs.microsoft.com/powershell/module/failoverclusters/Move-ClusterVirtualMachineRole?view=win10-ps) cmdlet**  
+        ![Screencap que muestra la salida del cmdlet Move-ClusterVirtualMachineRole @ no__t-1  
+        @no__t 0Figure 17: Traslado de una carga de trabajo de clúster (rol de máquina virtual de clúster) mediante [el cmdlet `Move-ClusterVirtualMachineRole`](https://docs.microsoft.com/powershell/module/failoverclusters/Move-ClusterVirtualMachineRole?view=win10-ps) @ no__t-2  
 
-        1. Use **migración en vivo** desde el Administrador de clústeres de conmutación por error para las máquinas virtuales o el [ `Move-ClusterVirtualMachineRole` ](https://docs.microsoft.com/powershell/module/failoverclusters/Move-ClusterVirtualMachineRole?view=win10-ps) cmdlet (consulte la figura 17) para realizar una migración en vivo de las máquinas virtuales.  
+        1. Use **migración en vivo** del administrador de clústeres de conmutación por error de máquinas virtuales o el cmdlet [@no__t 2](https://docs.microsoft.com/powershell/module/failoverclusters/Move-ClusterVirtualMachineRole?view=win10-ps) (consulte la figura 17) para realizar una migración en vivo de las máquinas virtuales.  
 
             ```PowerShell
             Move-ClusterVirtualMachineRole -Name VM1 -Node robhind-host3  
             ```  
 
-        2. Use **mover** desde el Administrador de clústeres de conmutación por error o la [ `Move-ClusterGroup` ](https://docs.microsoft.com/powershell/module/failoverclusters/Move-ClusterGroup?view=win10-ps) cmdlet para otras cargas de trabajo de clúster.  
+        2. Use **Move** desde el administrador de clústeres de conmutación por error o el cmdlet [`Move-ClusterGroup`](https://docs.microsoft.com/powershell/module/failoverclusters/Move-ClusterGroup?view=win10-ps) para otras cargas de trabajo de clúster.  
 
-3. Cuando cada nodo ha actualizado a Windows Server 2016 y se vuelve a añadir al clúster, o cuando los nodos de Windows Server 2012 R2 restantes se expulsaron, realice lo siguiente:  
+3. Cuando todos los nodos se hayan actualizado a Windows Server 2016 y se hayan agregado de nuevo al clúster, o cuando se hayan expulsado los nodos de Windows Server 2012 R2 restantes, haga lo siguiente:  
 
     > [!IMPORTANT]  
-    > -   Después de actualizar el nivel funcional del clúster, no podrá volver al nivel funcional de Windows Server 2012 R2 y nodos de Windows Server 2012 R2 no se puede agregar al clúster.
-    > -   Hasta que el [ `Update-ClusterFunctionalLevel` ](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) cmdlet se ejecuta, el proceso es completamente reversible y nodos de Windows Server 2012 R2 se pueden agregar a este clúster y se pueden quitar los nodos de Windows Server 2016.  
-    > -   Después de la [ `Update-ClusterFunctionalLevel` ](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) cmdlet se ejecuta, las nuevas características estarán disponibles.  
+    > -   Después de actualizar el nivel funcional del clúster, no puede volver al nivel funcional de Windows Server 2012 R2 y los nodos de Windows Server 2012 R2 no se pueden agregar al clúster.
+    > -   Hasta que se ejecuta el cmdlet [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) , el proceso es totalmente reversible y se pueden agregar nodos de windows Server 2012 R2 a este clúster y se pueden quitar los nodos de windows Server 2016.  
+    > -   Después de ejecutar el cmdlet [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) , estarán disponibles nuevas características.  
 
-    1.  Mediante la UI del Administrador de clústeres de conmutación por error o la [ `Get-ClusterGroup` ](https://docs.microsoft.com/powershell/module/failoverclusters/Get-ClusterGroup?view=win10-ps) cmdlet, compruebe que todos los roles de clúster se ejecutan en el clúster según lo previsto. En el ejemplo siguiente, no se utiliza almacenamiento disponible, en su lugar se utiliza CSV, por lo tanto, muestra el almacenamiento disponible un **Offline** estado (consulte la figura 18).  
+    1.  Con la interfaz de usuario de Administrador de clústeres de conmutación por error o el cmdlet [`Get-ClusterGroup`](https://docs.microsoft.com/powershell/module/failoverclusters/Get-ClusterGroup?view=win10-ps) , compruebe que todos los roles de clúster se ejecutan en el clúster según lo esperado. En el ejemplo siguiente, el almacenamiento disponible no se usa, sino que se usa CSV, por lo tanto, el almacenamiento disponible muestra un estado **sin conexión** (consulte la figura 18).  
 
-        ![Captura de pantalla que muestra la salida del cmdlet Get-ClusterGroup](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_GetClusterGroup.png)  
-        **Figura 18: Comprobar que todos los clúster grupos (roles de clúster) se ejecutan utilizando el [ `Get-ClusterGroup` ](https://docs.microsoft.com/powershell/module/failoverclusters/Get-ClusterGroup?view=win10-ps) cmdlet**  
+        ![Screencap que muestra la salida del cmdlet Get-ClusterGroup @ no__t-1  
+        @no__t 0Figure 18: Comprobando que todos los grupos de clústeres (roles de clúster) se están ejecutando con el cmdlet [`Get-ClusterGroup`](https://docs.microsoft.com/powershell/module/failoverclusters/Get-ClusterGroup?view=win10-ps) @ no__t-2  
 
-    2.  Compruebe que todos los nodos del clúster estén en línea y se está ejecutando mediante el [ `Get-ClusterNode` ](https://docs.microsoft.com/powershell/module/failoverclusters/Get-ClusterNode?view=win10-ps) cmdlet.  
-    3.  Ejecute el [ `Update-ClusterFunctionalLevel` ](https://technet.microsoft.com/library/mt589702.aspx) cmdlet - no debe devolver errores (vea la figura 19).  
+    2.  Compruebe que todos los nodos del clúster están en línea y se ejecutan con el cmdlet [`Get-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Get-ClusterNode?view=win10-ps) .  
+    3.  Ejecutar el cmdlet [`Update-ClusterFunctionalLevel`](https://technet.microsoft.com/library/mt589702.aspx) : no se deben devolver errores (vea la figura 19).  
 
-        ![Captura de pantalla que muestra la salida del cmdlet Update-ClusterFunctionalLevel](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_SelectFunctionalLevel.png)  
-        **Figura 19: Actualizar el nivel funcional de un clúster con PowerShell**  
+        ![Screencap que muestra la salida del cmdlet Update-ClusterFunctionalLevel @ no__t-1  
+        @no__t 0Figure 19: Actualizar el nivel funcional de un clúster mediante PowerShell @ no__t-0  
 
-    4.  Después de la [ `Update-ClusterFunctionalLevel` ](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) cmdlet se ejecuta, las nuevas características están disponibles.  
+    4.  Después de ejecutar el cmdlet [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) , hay disponibles nuevas características.  
 
-4. Windows Server 2016: reanudar copias de seguridad y actualizaciones del clúster normal:  
+4. Windows Server 2016: reanudar las actualizaciones y copias de seguridad normales del clúster:  
 
-    1. Si se estaba ejecutando anteriormente CAU, reiniciarlo mediante la UI de CAU o usar el [ `Enable-CauClusterRole` ](https://docs.microsoft.com/powershell/module/clusterawareupdating/Enable-CauClusterRole?view=win10-ps) cmdlet (Véase la figura 20).  
+    1. Si previamente estaba ejecutando CAU, reinícielo con la interfaz de usuario de CAU o use el cmdlet [`Enable-CauClusterRole`](https://docs.microsoft.com/powershell/module/clusterawareupdating/Enable-CauClusterRole?view=win10-ps) (consulte la figura 20).  
 
-        ![Captura de pantalla que muestra la salida de la Enable-CauClusterRole](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_EnableCAUClusterRole.png)  
-        **Figura 20: Habilitar las actualizaciones de clúster compatibles con rol mediante la [ `Enable-CauClusterRole` ](https://docs.microsoft.com/powershell/module/clusterawareupdating/Enable-CauClusterRole?view=win10-ps) cmdlet**  
+        ![Screencap que muestra la salida de enable-CauClusterRole @ no__t-1  
+        @no__t 0Figure 20: Habilitar el rol de las actualizaciones compatibles con clústeres mediante el cmdlet [`Enable-CauClusterRole`](https://docs.microsoft.com/powershell/module/clusterawareupdating/Enable-CauClusterRole?view=win10-ps) @ no__t-2  
 
     2. Reanudar las operaciones de copia de seguridad.  
 
 5. Habilitar y usar las características de Windows Server 2016 en Hyper-V Virtual Machines.  
 
-    1. Después de que el clúster se ha actualizado al nivel funcional de Windows Server 2016, muchas cargas de trabajo como máquinas virtuales de Hyper-V tendrán funcionalidades de nuevo. Para obtener una lista de nuevas capacidades de Hyper-V. consulte [migración y actualización de las máquinas virtuales](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/migrating_vms)  
+    1. Una vez que el clúster se ha actualizado al nivel funcional de Windows Server 2016, muchas cargas de trabajo, como las máquinas virtuales de Hyper-V, tendrán nuevas funcionalidades. Para obtener una lista de las nuevas funcionalidades de Hyper-V. consulte [migración y actualización de máquinas virtuales](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/migrating_vms)  
 
-    2. En cada nodo de host de Hyper-V en el clúster, use la [ `Get-VMHostSupportedVersion` ](https://docs.microsoft.com/powershell/module/hyper-v/Get-VMHostSupportedVersion?view=win10-ps) cmdlet para ver las versiones de configuración de máquina virtual de Hyper-V que son compatibles con el host.  
+    2. En cada nodo de host de Hyper-V del clúster, use el cmdlet [`Get-VMHostSupportedVersion`](https://docs.microsoft.com/powershell/module/hyper-v/Get-VMHostSupportedVersion?view=win10-ps) para ver las versiones de configuración de la máquina virtual de Hyper-v admitidas por el host.  
 
-        ![Captura de pantalla que muestra la salida del cmdlet Get-VMHostSupportedVersion](media/Cluster-Operating-System-Rolling-Upgrade/Clustering_GetVMHostSupportVersion.png)  
-        **Figura 21: Ver las versiones de configuración de máquina virtual de Hyper-V admitidas por el host**  
+        ![Screencap que muestra la salida del cmdlet Get-VMHostSupportedVersion @ no__t-1  
+        @no__t 0Figure 21: Visualización de las versiones de configuración de la máquina virtual de Hyper-V admitidas por el host @ no__t-0  
 
-   3. En cada nodo de host de Hyper-V en el clúster, se pueden actualizar las versiones de configuración de máquina virtual de Hyper-V mediante la programación de una ventana de mantenimiento breve con usuarios, realizar copias de seguridad, al desactivar las máquinas virtuales y ejecutar el [ `Update-VMVersion` ](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) cmdlet (consulte la Figura 22). Esto actualizará la versión de la máquina virtual y habilitar nuevas características de Hyper-V, lo que elimina la necesidad de futuras actualizaciones de componentes de integración de Hyper-V (IC). Este cmdlet se puede ejecutar desde el nodo de Hyper-V que hospeda la máquina virtual, o el `-ComputerName` parámetro puede usarse para actualizar la versión de la máquina virtual de forma remota. En este ejemplo, aquí se actualiza la versión de configuración de VM1 de 5.0 a 7.0 pueda beneficiarse de muchas características nuevas de Hyper-V asociadas con esta versión de configuración de máquina virtual como puntos de control de producción (copias de seguridad coherentes de aplicación) y VM binario archivo de configuración.  
+   3. En cada nodo de host de Hyper-V del clúster, las versiones de configuración de máquina virtual de Hyper-V se pueden actualizar mediante la programación de una breve ventana de mantenimiento con usuarios, la copia de seguridad, la desactivación de máquinas virtuales y la ejecución del cmdlet [`Update-VMVersion`](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) (vea la figura 22). Esto actualizará la versión de la máquina virtual y habilitará las nuevas características de Hyper-V, lo que elimina la necesidad de futuras actualizaciones de componentes de integración de Hyper-V (CI). Este cmdlet se puede ejecutar desde el nodo de Hyper-V que hospeda la máquina virtual, o bien se puede usar el parámetro `-ComputerName` para actualizar la versión de la máquina virtual de forma remota. En este ejemplo, se actualiza la versión de configuración de VM1 de 5,0 a 7,0 para aprovechar muchas de las nuevas características de Hyper-V asociadas a esta versión de configuración de máquina virtual, como puntos de control de producción (copias de seguridad coherentes con la aplicación) y máquina virtual binaria. archivo de configuración.  
 
-       ![Captura de pantalla que muestra el cmdlet Update-VMVersion en acción](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_StopVM.png)  
-       **Figura 22: Actualización de una versión de la máquina virtual mediante el cmdlet de PowerShell Update-VMVersion**  
+       ![Screencap que muestra el cmdlet Update-VMVersion en la acción @ no__t-1  
+       @no__t 0Figure 22: Actualización de una versión de máquina virtual mediante el cmdlet de PowerShell Update-VMVersion @ no__t-0  
 
-6. Los grupos de almacenamiento se pueden actualizar mediante el [Update-StoragePool](https://docs.microsoft.com/powershell/module/storage/Update-StoragePool?view=win10-ps) cmdlet de PowerShell: se trata de una operación en línea.  
+6. Los grupos de almacenamiento se pueden actualizar mediante el cmdlet de PowerShell [Update-StoragePool](https://docs.microsoft.com/powershell/module/storage/Update-StoragePool?view=win10-ps) , que es una operación en línea.  
 
-Aunque se usa como destino escenarios de nube privada, específicamente en Hyper-V y clústeres de servidor de archivos de escalabilidad horizontal, que pueden actualizarse sin tiempo de inactividad, el proceso de actualización gradual de clúster del sistema operativo pueden usarse para cualquier rol de clúster.  
+Aunque nos centramos en escenarios de nube privada, específicamente Hyper-V y clústeres de servidores de archivos de escalabilidad horizontal, que se pueden actualizar sin tiempo de inactividad, el proceso de actualización gradual del sistema operativo del clúster se puede usar para cualquier rol de clúster.  
 
 ## <a name="restrictions--limitations"></a>Restricciones y limitaciones  
-- Esta característica solo funciona para Windows Server 2012 R2 a solo las versiones de Windows Server 2016. Esta característica no puede actualizar versiones anteriores de Windows Server como Windows Server 2008, Windows Server 2008 R2 o Windows Server 2012 a Windows Server 2016.  
-- Cada nodo de Windows Server 2016 debe volver a formatear nueva instalación solo. "En contexto" o "Actualizar" no se recomienda el tipo de instalación.  
-- Un nodo de Windows Server 2016 debe usarse para agregar nodos de Windows Server 2016 en el clúster.  
-- Al administrar un clúster en modo mixto y sistema operativo, siempre que realice las tareas de administración desde un nodo de nivel superior que se está ejecutando Windows Server 2016. Los nodos de nivel inferior de Windows Server 2012 R2 no pueden usar herramientas de administración o de interfaz de usuario en Windows Server 2016.  
-- Le animamos a los clientes mover rápidamente a través del proceso de actualización de clúster porque algunas características de clúster no están optimizados para el modo mixto y sistema operativo.  
-- Evite crear o cambiar el tamaño de almacenamiento en nodos de Windows Server 2016 mientras el clúster se ejecuta en modo mixto y sistema operativo debido a posibles incompatibilidades en conmutación por error desde un nodo de Windows Server 2016 a nodos de Windows Server 2012 R2 de nivel inferior.  
+- Esta característica solo funciona para Windows Server 2012 R2 a las versiones 2016 de Windows Server. Esta característica no puede actualizar versiones anteriores de Windows Server, como Windows Server 2008, Windows Server 2008 R2 o Windows Server 2012 a Windows Server 2016.  
+- Solo se debe cambiar el formato o la nueva instalación de cada nodo de Windows Server 2016. No se recomienda el tipo de instalación "en contexto" o "actualizar".  
+- Se debe usar un nodo de Windows Server 2016 para agregar nodos de Windows Server 2016 al clúster.  
+- Al administrar un clúster de modo de sistema operativo mixto, realice siempre las tareas de administración desde un nodo de nivel superior que ejecute Windows Server 2016. Los nodos de nivel inferior de Windows Server 2012 R2 no pueden usar la interfaz de usuario o las herramientas de administración en Windows Server 2016.  
+- Animamos a los clientes a pasar por el proceso de actualización del clúster rápidamente porque algunas características del clúster no están optimizadas para el modo mixto-OS.  
+- Evite crear o cambiar el tamaño del almacenamiento en los nodos de Windows Server 2016 mientras el clúster se ejecuta en modo de sistema operativo mixto debido a posibles incompatibilidades en la conmutación por error de un nodo de Windows Server 2016 a nodos de nivel inferior de Windows Server 2012 R2.  
 
 ## <a name="frequently-asked-questions"></a>Preguntas frecuentes  
-**¿Cuánto tiempo puede ejecutar el clúster de conmutación por error en modo mixto y sistema operativo?**  
-    Recomendamos a los clientes para completar la actualización en cuatro semanas. Hay muchas optimizaciones en Windows Server 2016. Actualizamos correctamente Hyper-V y clústeres de servidor de archivos de escalabilidad horizontal con tiempo de inactividad cero en menos de cuatro horas total.  
+**¿Cuánto tiempo puede ejecutarse el clúster de conmutación por error en modo de sistema operativo mixto?**  
+    Animamos a los clientes a completar la actualización en un plazo de cuatro semanas. Hay muchas optimizaciones en Windows Server 2016. Hemos actualizado correctamente los clústeres de servidores de archivos de escalabilidad horizontal y Hyper-V sin tiempo de inactividad en menos de cuatro horas en total.  
 
-**¿Se portar esta característica a Windows Server 2012, Windows Server 2008 R2 o Windows Server 2008?**  
-    No tenemos planes para portar esta característica a las versiones anteriores. Actualización gradual de clúster del sistema operativo es nuestra visión de la actualización de clústeres de Windows Server 2012 R2 a Windows Server 2016 y mucho más.  
+**¿Trasladará esta característica de nuevo a Windows Server 2012, Windows Server 2008 R2 o Windows Server 2008?**  
+    No tenemos ningún plan para volver a migrar esta característica a las versiones anteriores. La actualización gradual del sistema operativo de clúster es nuestra visión de actualizar clústeres de Windows Server 2012 R2 a Windows Server 2016 y versiones posteriores.  
 
-**¿Necesita el clúster de Windows Server 2012 R2 tener todas las actualizaciones de software instaladas antes de iniciar el proceso de actualización gradual de clúster del sistema operativo?**  
-    Sí, antes de comenzar el proceso de actualización gradual de clúster del sistema operativo, compruebe que todos los nodos del clúster se actualizan con las últimas actualizaciones de software.  
+**¿Es necesario que el clúster de Windows Server 2012 R2 tenga todas las actualizaciones de software instaladas antes de iniciar el proceso de actualización gradual del sistema operativo del clúster?**  
+    Sí, antes de iniciar el proceso de actualización gradual del sistema operativo del clúster, compruebe que todos los nodos del clúster estén actualizados con las actualizaciones de software más recientes.  
 
-**¿Puedo ejecutar el [ `Update-ClusterFunctionalLevel` ](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) cmdlet mientras los nodos están desactivadas o en pausa?**  
-    No. Todos los nodos del clúster deben encontrarse en y en la pertenencia a active el [ `Update-ClusterFunctionalLevel` ](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) cmdlet funcione.  
+**¿Puedo ejecutar el cmdlet [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) mientras los nodos están desactivados o en pausa?**  
+    No. Todos los nodos del clúster deben estar encendidos y en pertenencia activa para que funcione el cmdlet [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) .  
 
-**¿Actualización gradual de clúster del sistema operativo funciona para cualquier carga de trabajo de clúster? ¿Funciona para SQL Server?**  
-    Sí, la actualización gradual de clúster del sistema operativo funciona para cualquier carga de trabajo de clúster. Sin embargo, es única sin tiempo de inactividad para Hyper-V y clústeres de servidor de archivos de escalabilidad horizontal. La mayoría de otras cargas de trabajo incurrir en tiempo de inactividad (normalmente un par de minutos) cuando se conmutación por error y conmutación por error no se requiere al menos una vez durante el proceso de actualización gradual de clúster del sistema operativo.  
+@no__t el trabajo de actualización gradual del sistema operativo de clúster de 0Does para cualquier carga de trabajo del clúster? ¿Funciona para SQL Server? **  
+    Sí, la actualización gradual del sistema operativo del clúster funciona para cualquier carga de trabajo del clúster. Sin embargo, solo es cero el tiempo de inactividad de Hyper-V y los clústeres de servidores de archivos de escalabilidad horizontal. La mayoría de las demás cargas de trabajo incurren en tiempo de inactividad (normalmente, un par de minutos) cuando se producen la conmutación por error y se requiere la conmutación por error al menos una vez durante el proceso de actualización gradual del sistema operativo  
 
 **¿Puedo automatizar este proceso con PowerShell?**  
-    Sí, hemos diseñado OS actualización gradual de clúster que se automatice mediante PowerShell.  
+    Sí, hemos diseñado la actualización gradual del sistema operativo de clúster para que se Automatice con PowerShell.  
 
-**Para un clúster grande que tiene la carga de trabajo adicional y la capacidad de conmutación por error, ¿se puede actualizar varios nodos simultáneamente?**  
-    Sí. Cuando se quita un nodo del clúster para actualizar el sistema operativo, el clúster tendrá un nodo menos para la conmutación por error, por lo tanto, tendrán una capacidad reducida de conmutación por error. Clústeres grandes con suficiente capacidad de conmutación por error y la carga de trabajo, se pueden actualizar varios nodos simultáneamente. Puede agregar provisionalmente los nodos del clúster para el clúster para proporcionar una carga de trabajo mejorado y la capacidad de conmutación por error durante el proceso de actualización gradual de clúster del sistema operativo.  
+**Para un clúster de gran tamaño que tenga una carga de trabajo adicional y una capacidad de conmutación por error, ¿puedo actualizar varios nodos simultáneamente?**  
+    Sí. Cuando se quita un nodo del clúster para actualizar el sistema operativo, el clúster tendrá un nodo menos para la conmutación por error; por lo tanto, tendrá una capacidad de conmutación por error reducida. En el caso de clústeres grandes con suficiente carga de trabajo y capacidad de conmutación por error, se pueden actualizar varios nodos simultáneamente. Puede agregar temporalmente nodos de clúster al clúster para proporcionar una mayor capacidad de carga de trabajo y conmutación por error durante el proceso de actualización gradual del sistema operativo del clúster.  
 
-**¿Qué ocurre si detecta un problema en mi clúster después de [ `Update-ClusterFunctionalLevel` ](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) se ha ejecutado correctamente?**  
-    Si se dispone de copia de seguridad la base de datos de clúster con una copia de seguridad del estado del sistema antes de ejecutar [ `Update-ClusterFunctionalLevel` ](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps), debe llevar a cabo una autorización restaure en un nodo de clúster de Windows Server 2012 R2 y el clúster original base de datos y la configuración.  
+**¿Qué ocurre si se detecta un problema en el clúster después [de que `Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) se haya ejecutado correctamente?**  
+    Si ha realizado una copia de seguridad de la base de datos del clúster con una copia de seguridad del estado del sistema antes de ejecutar [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps), debe poder realizar una restauración autoritativa en un nodo de clúster de Windows Server 2012 R2 y restaurar la base de datos y la configuración originales del clúster.  
 
-**¿Puedo usar actualización en contexto para cada nodo en lugar de usar la instalación del sistema operativo limpio volviendo a formatear la unidad del sistema?**  
-    No se recomienda el uso de la actualización en contexto de Windows Server, pero somos conscientes de que funciona en algunos casos donde se usan controladores predeterminados. Lea detenidamente muestran todos los mensajes de advertencia durante la actualización en contexto de un nodo de clúster.  
+**¿Puedo usar la actualización en contexto para cada nodo en lugar de usar la instalación limpia del sistema operativo Si vuelve a formatear la unidad del sistema?**  
+    No se recomienda el uso de la actualización en contexto de Windows Server, pero somos conscientes de que funciona en algunos casos en los que se usan controladores predeterminados. Lea atentamente todos los mensajes de advertencia que se muestran durante la actualización en contexto de un nodo de clúster.  
 
-**¿Si estoy usando replicación de Hyper-V para una máquina virtual de Hyper-V en mi clúster de Hyper-V, replicación permanecerán intacta durante y después del proceso de actualización gradual de clúster del sistema operativo?**  
-    Sí, la réplica de Hyper-V permanece intacta durante y después del proceso de actualización gradual de clúster del sistema operativo.  
+**Si utilizo la replicación de Hyper-V para una máquina virtual de Hyper-v en un clúster de Hyper-V, ¿la replicación permanece intacta durante y después del proceso de actualización gradual del sistema operativo del clúster?**  
+    Sí, la réplica de Hyper-V permanece intacta durante y después del proceso de actualización gradual del sistema operativo del clúster.  
 
-**¿Puedo usar System Center 2016 Virtual Machine Manager (SCVMM) para automatizar el proceso de actualización gradual de clúster del sistema operativo?**  
-    Sí, puede automatizar el proceso de actualización gradual de clúster del sistema operativo con VMM en System Center 2016.  
+**¿Puedo usar System Center 2016 Virtual Machine Manager (SCVMM) para automatizar el proceso de actualización gradual del sistema operativo del clúster?**  
+    Sí, puede automatizar el proceso de actualización gradual del sistema operativo del clúster mediante VMM en System Center 2016.  
 
 ## <a name="see-also"></a>Vea también  
 -   [Notas de la versión: Problemas importantes en Windows Server 2016](../get-started/Release-Notes--Important-Issues-in-Windows-Server-2016-Technical-Preview.md)  
 -   [Novedades en Windows Server 2016](../get-started/What-s-New-in-windows-server-2016.md)  
--   [Novedades de la conmutación por error en Windows Server](whats-new-in-failover-clustering.md)  
+-   [Novedades de los clústeres de conmutación por error en Windows Server](whats-new-in-failover-clustering.md)  

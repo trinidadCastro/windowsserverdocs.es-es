@@ -1,19 +1,19 @@
 ---
 title: Administrar Windows Server
 description: Aprende sobre herramientas, recomendaciones y orientación para administrar Windows Server
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 03/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ae87b12997aa3cb3ae3fe290c9243995b30d6b0
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: 880f8da5bfb872fba6fe4886198d932c91f4bf86
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452817"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370467"
 ---
 # <a name="manage-windows-server"></a>Administrar Windows Server
 
@@ -55,7 +55,7 @@ Usa la tabla siguiente para determinar qué herramientas usar en cada momento.
 | Sentado frente a un sistema Windows Server que ejecuta la experiencia de escritorio | X | X | X |
 | Sentado frente a un sistema Windows Server que ejecuta Server Core |X (instalar en Windows 10, usar para administrar Server Core) | | X |
 | Sentado lejos de mi sistema Windows Server |X | | X |
-| Sentado lejos de mi sistema de Windows Server, pero TIENE experiencia de escritorio |X | Usar RDS para conectar remotamente con el servidor y, a continuación, usar el Administrador de servidores. | X |
+| Sentado lejos de mi sistema de Windows Server, pero TIENE experiencia de escritorio |X | Usar RDS para conectar remotamente con el servidor y, a continuación, usar el Administrador de servidores | X |
 
 Además de las herramientas que se mencionan a continuación, también puedes usar [Servicios de Escritorio remoto](../remote/remote-desktop-services/welcome-to-rds.md) para acceder a los servidores locales, remotos y virtuales. A continuación, puedes usar el Administrador de servidores para realizar tareas de administración.
 
@@ -66,7 +66,7 @@ Además de las herramientas que se mencionan a continuación, también puedes us
 >Windows Admin Center es el nombre oficial de lo que denominábamos "Proyecto Honolulu".
 
 ### <a name="manage-on-premises-systems-with-server-manager"></a>Administrar sistemas locales con el Administrador de servidores
-[Administrador de servidores](server-manager/server-manager.md) es una consola de administración incluida en la instalación completa de Windows Server. (No está disponible para las instalaciones que no tienen interfaz de usuario - Server Core no incluye el administrador del servidor). Use el administrador del servidor para instalar y quitar roles de servidor, agregar y quitar servidores remotos, iniciar y detener los servicios y ver datos recopilados sobre su entorno.
+[Administrador de servidores](server-manager/server-manager.md) es una consola de administración incluida en la instalación completa de Windows Server. (No está disponible para las instalaciones que no tienen interfaz de usuario. Server Core no incluye el administrador del servidor). Use el Administrador del servidor para instalar y quitar roles de servidor, agregar y quitar servidores remotos, iniciar y detener los servicios y ver los datos recopilados sobre el entorno.
 
 ### <a name="manage-remote-systems-and-systems-without-ui-with-remote-server-administration-tools-rsat"></a>Administrar sistemas remotos y sistemas sin interfaz de usuario con las herramientas de administración de servidores remotos (RSAT)
 Si tu entorno incluye instalaciones de Server Core o servidores remotos (ya sea localmente o en máquinas virtuales), puedes usar las [herramientas de administración de servidores remotos (RSAT)](../remote/remote-server-administration-tools.md) para administrar esos sistemas. RSAT incluye el Administrador de servidores, para que puedas usarlo para administrar todos los servidores.
@@ -84,21 +84,21 @@ Muchas de las decisiones como administrador dependen de datos sobre los sistemas
 
 Comienza con [Configurar los datos de diagnóstico de Windows en la organización](/windows/configuration/configure-windows-diagnostic-data-in-your-organization) para obtener información sobre los datos de diagnóstico que pueden recopilarse de Windows 10 y Windows Server.
 
-### <a name="setup-and-boot-event-collectionget-started-with-setup-and-boot-event-collectionmd"></a>[El programa de instalación y arrancar la recopilación de eventos](get-started-with-setup-and-boot-event-collection.md)
+### <a name="setup-and-boot-event-collectionget-started-with-setup-and-boot-event-collectionmd"></a>[Recopilación de eventos de configuración y arranque](get-started-with-setup-and-boot-event-collection.md)
 Recopilación de eventos de configuración y arranque te permite designar un equipo "recopilador" que puede recopilar diversos eventos importantes que se producen en otros ordenadores cuando arrancan o pasan por el proceso de instalación. Puedes analizar, más adelante, los eventos recopilados con Visor de eventos, Analizador de mensajes, Wevtutil o cmdlets de Windows PowerShell. 
 
-### <a name="software-inventory-logging-silsoftware-inventory-loggingget-started-with-software-inventory-loggingmd"></a>[Inventario de software (SIL) de registro](software-inventory-logging/get-started-with-software-inventory-logging.md)
+### <a name="software-inventory-logging-silsoftware-inventory-loggingget-started-with-software-inventory-loggingmd"></a>[Registro de inventario de software (SIL)](software-inventory-logging/get-started-with-software-inventory-logging.md)
 
 El registro de inventario de software de Windows Server es una característica dotada de un sencillo conjunto de cmdlets de PowerShell que ayuda a los administradores de servidores a recuperar una lista del software de Microsoft instalado en sus servidores. También proporciona la capacidad de recopilar y reenviar estos datos periódicamente a través de la red a un servidor web de destino, mediante el protocolo HTTPS, para la agregación. También se usan comandos de PowerShell para administrar la característica, en particular para recopilar datos cada hora y reenviarlos.
 
-### <a name="user-access-logging-ualuser-access-loggingget-started-with-user-access-loggingmd"></a>[Acceso de los usuarios (UAL) de registro](user-access-logging/get-started-with-user-access-logging.md)
+### <a name="user-access-logging-ualuser-access-loggingget-started-with-user-access-loggingmd"></a>[Registro de acceso de usuarios (UAL)](user-access-logging/get-started-with-user-access-logging.md)
 
 El registro de acceso de usuarios agrega eventos únicos de dispositivos de clientes y de solicitudes de usuarios que se registran en un ordenador que ejecuta Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 a una base de datos local. Después, estos registros se ponen a disposición de los usuarios (a través de una consulta realizada por un administrador del servidor) para recuperar cantidades e instancias por rol de servidor, por usuario, por dispositivo, por el servidor local y por fecha. Además, UAL permite también que los desarrolladores de software que no es de Microsoft instrumenten sus eventos de UAL a agregar. 
 
 ## <a name="tune-your-windows-server-environment-for-performance"></a>Ajustar el entorno de Windows Server para conseguir rendimiento
 Usa la siguiente información para ayudar a ajustar tu entorno para conseguir rendimiento.
 
-### <a name="performance-tuning-guidelinesperformance-tuningindexmd"></a>[Instrucciones de ajuste de rendimiento](performance-tuning/index.md)
+### <a name="performance-tuning-guidelinesperformance-tuningindexmd"></a>[Directrices de ajuste del rendimiento](performance-tuning/index.md)
 Revisa un conjunto de directrices que puedes usar para ajustar la configuración del servidor en Windows Server 2016 y obtener ganancias de rendimiento incremental o eficiencia energética, especialmente cuando la naturaleza de la carga de trabajo varía poco con el tiempo.
 
 ### <a name="microsoft-server-performance-advisorserver-performance-advisormicrosoft-server-performance-advisormd"></a>[Microsoft Server Performance Advisor](server-performance-advisor/microsoft-server-performance-advisor.md)

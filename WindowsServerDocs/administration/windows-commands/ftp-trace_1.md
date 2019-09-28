@@ -1,8 +1,8 @@
 ---
-title: trace_1 de FTP
-description: 'Tema de los comandos de Windows para ***- '
+title: trace_1 FTP
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9db8ae49f996a6f316f0c18b51149ada38a759c7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 51f1f41a854a73bba8b56aebbc0cc8e2e98d89e2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817456"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375930"
 ---
-# <a name="ftp-trace1"></a>FTP: trace_1
+# <a name="ftp-trace_1"></a>FTP: trace_1
 
 
 
-Activa o desactiva el seguimiento de los paquetes.
+Alterna el seguimiento de paquetes.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -38,11 +38,11 @@ ninguno
 
 ## <a name="remarks"></a>Comentarios
 
-**Seguimiento** muestra la serie de llamadas de función FTP internas cuando se ejecuta un **ftp** comando.
+**Seguimiento** muestra la serie de llamadas de función FTP internas cuando se ejecuta un comando **FTP** .
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-Activar o desactivar la traza.
+Activar y desactivar el seguimiento.
 ```
 trace
 ```

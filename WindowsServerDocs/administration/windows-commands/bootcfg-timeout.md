@@ -1,8 +1,8 @@
 ---
 title: bootcfg timeout
-description: Tema de los comandos de Windows para **tiempo de espera de bootcfg** -cambia el valor de tiempo de espera del sistema operativo.
+description: 'Tema de comandos de Windows para **bootcfg timeout** : cambia el valor de tiempo de espera del sistema operativo.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fc33d2d20d6d2532c5ed1f33e27a768935d1e85
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 94bc2de43dd179117c7a44747961213d12741a09
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434642"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379869"
 ---
 # <a name="bootcfg-timeout"></a>bootcfg timeout
 
@@ -34,14 +34,14 @@ bootcfg /timeout <timeOutValue> [/s <computer> [/u <Domain\User>/p <Password>]]
 
 |        Parámetro        |                                                                                                                                                                                  Descripción                                                                                                                                                                                   |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| / Timeout <timeOutValue> | Especifica el valor de tiempo de espera en la sección [boot loader]. El <timeOutValue> es el número de segundos que el usuario tiene que seleccionar un sistema operativo de la pantalla del cargador de arranque antes de que NTLDR cargue el valor predeterminado. Intervalo válido para <timeOutValue> es 0 y 999. Si el valor es 0, NTLDR iniciará inmediatamente el sistema operativo predeterminado sin mostrar la pantalla del cargador de arranque. |
-|      /s <computer>      |                                                                                                                               Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local.                                                                                                                               |
-|    /u <Domain\User>     |                                                                                       Ejecuta el comando con los permisos de cuenta del usuario especificado por <User> o < DOMINIO\nombre de usuario >. El valor predeterminado es los permisos de la sesión de usuario en el equipo que emite el comando actual.                                                                                        |
-|      /p <Password>      |                                                                                                                                            Especifica el <Password> de la cuenta de usuario que se especifica en el **/u** parámetro.                                                                                                                                             |
+| /timeout <timeOutValue> | Especifica el valor de tiempo de espera en la sección [boot loader]. El <timeOutValue> es el número de segundos que el usuario tiene que seleccionar un sistema operativo en la pantalla del cargador de arranque antes de que NTLDR cargue el valor predeterminado. El intervalo válido para <timeOutValue> es 0-999. Si el valor es 0, NTLDR inicia inmediatamente el sistema operativo predeterminado sin mostrar la pantalla del cargador de arranque. |
+|      /s <computer>      |                                                                                                                               Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.                                                                                                                               |
+|    /u < Dominio\usuario >     |                                                                                       Ejecuta el comando con los permisos de cuenta del usuario especificado mediante <User> o < Dominio\usuario >. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando.                                                                                        |
+|      /p <Password>      |                                                                                                                                            Especifica el <Password> de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                                                                                             |
 |           /?            |                                                                                                                                                                      Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                      |
 
-## <a name="BKMK_examples"></a>Ejemplos
-Los ejemplos siguientes muestran cómo puede usar el **bootcfg /timeout** comando:
+## <a name="BKMK_examples"></a>Example
+En los siguientes ejemplos se muestra cómo se puede usar el comando **bootcfg/timeout** :
 ```
 bootcfg /timeout 30
 bootcfg /s srvmain /u maindom\hiropln /p p@ssW23 /timeout 50

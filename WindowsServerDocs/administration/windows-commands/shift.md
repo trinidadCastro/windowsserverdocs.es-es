@@ -1,8 +1,8 @@
 ---
 title: shift
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e72b4be1b265d682d489cf372cdfe5ef54bb444d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f74e0f1f9041a4a7b95d83772ea79376c82876de
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441244"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371251"
 ---
 # <a name="shift"></a>shift
 
 
 
-Cambia la posición de parámetros por lotes en un archivo por lotes.
+Cambia la posición de los parámetros de lote en un archivo por lotes.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,20 +38,20 @@ shift [/n <N>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/n \<N >|Especifica que comience el desplazamiento en el *N*argumento, donde *N* es cualquier valor entre 0 y 8. Requiere las extensiones de comando, que están habilitadas de forma predeterminada.|
+|/n \<n (>|Especifica que se inicie el desplazamiento en el argumento *n*, donde *N* es cualquier valor de 0 a 8. Requiere extensiones de comando, que están habilitadas de forma predeterminada.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-- El **MAYÚS** comando cambia los valores de los parámetros del lote **%0** a través de **%9** mediante la copia de cada parámetro en el anterior, el valor de **%1** se copia en **%0**, el valor de **%2** se copia en **%1**, y así sucesivamente. Esto es útil para escribir un archivo por lotes que realiza la misma operación en cualquier número de parámetros.
-- Si se habilitan las extensiones de comando, el **MAYÚS** comando admite la **/n** opción de línea de comandos. El **/n** opción especifica que comience el desplazamiento en el argumento n, donde **N** es cualquier valor entre 0 y 8. Por ejemplo, **MAYÚS /2** cambiaría **%3** a **%2**, **%4** a **%3**, y así sucesivamente y dejar **%0** y **%1** afectados. Las extensiones de comando están habilitadas de forma predeterminada.
-- Puede usar el **MAYÚS** comando para crear un archivo por lotes que acepte más de 10 parámetros por lotes. Si especifica más de 10 parámetros en la línea de comandos, aquellos que aparecen después del décimo ( **%9**) será desplazadas en un momento **%9**.
-- El **MAYÚS** comando no tiene ningún efecto el **% \\** * por lotes de parámetro.
-- Hay versiones anteriores no **MAYÚS** comando. Después de implementar el **MAYÚS** comando, no se puede recuperar el parámetro de lote ( **%0**) que existían antes de la tecla MAYÚS.
+- El **comando Shift** cambia los valores de los parámetros de **lote% 0** a **% 9** copiando cada parámetro en el anterior: el valor de **% 1** se copia en **% 0**, el valor de **% 2** se copia en **% 1**, y así sucesivamente. Esto resulta útil para escribir un archivo por lotes que realice la misma operación en cualquier número de parámetros.
+- Si se habilitan las extensiones de comando, el comando **Shift** admite la opción de línea de comandos **/n** . La opción **/n** especifica que se inicie el desplazamiento en el argumento n, donde **n** es cualquier valor comprendido entre 0 y 8. Por ejemplo, **Shift/2** desplazaría **% 3** a **% 2**, **% 4** a **% 3**, etc., y deje **% 0** y **% 1** no afectados. Las extensiones de comando están habilitadas de forma predeterminada.
+- Puede usar el comando **Shift** para crear un archivo por lotes que acepte más de 10 parámetros de lote. Si especifica más de 10 parámetros en la línea de comandos, los que aparecen después del décimo ( **% 9**) se desplazarán de uno en uno a **% 9**.
+- El comando **Shift** no tiene ningún efecto en el parámetro batch **% @ no__t-3***.
+- No hay ningún comando de **desplazamiento** hacia atrás. Después de implementar el comando **Shift** , no se puede recuperar el parámetro de lote ( **% 0**) que existía antes del cambio.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Las siguientes líneas de un archivo por lotes de ejemplo denominada Micopia.bat muestran cómo usar **MAYÚS** con cualquier número de parámetros del lote. En este ejemplo, Micopia.bat copia una lista de archivos en un directorio específico. Los parámetros del lote se representan mediante los argumentos de nombre de archivo y directorio.
+Las siguientes líneas de un archivo por lotes de ejemplo denominado "cópiela. bat" demuestran cómo usar **Shift** con cualquier número de parámetros de batch. En este ejemplo, el archivo de copia. bat copia una lista de archivos en un directorio específico. Los parámetros de lote se representan mediante los argumentos de nombre de archivo y directorio.
 ```
 @echo off 
 rem MYCOPY.BAT copies any number of files

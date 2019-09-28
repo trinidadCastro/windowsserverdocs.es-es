@@ -1,8 +1,8 @@
 ---
-title: resourceSACL Auditpol
-description: Tema de los comandos de Windows para **uditpol resourceSACL** -configura listas de control de acceso de recursos globales del sistema (SACL).
+title: AuditPol resourceSACL
+description: 'Temas de comandos de Windows para **Uditpol resourceSACL** : configura las listas de control de acceso (SACL) del sistema de recursos globales.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,23 +13,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 375f37250404dd6740027cb18959697626c1ffc1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2acffd75298f0f36a9c15e0622816feaae57cb64
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837496"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382428"
 ---
-# <a name="auditpol-resourcesacl"></a>resourceSACL Auditpol
+# <a name="auditpol-resourcesacl"></a>AuditPol resourceSACL
 
 
 
-Configura las listas de control de acceso de recursos globales del sistema (SACL).
+Configura las listas de control de acceso (SACL) del sistema de recursos globales.
 
 > [!NOTE]
 > Solo se aplica a Windows 7 y Windows Server 2008 R2.
 
-Para obtener ejemplos de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
+Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -45,49 +45,49 @@ auditpol /resourceSACL
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/set|Agrega una nueva entrada a o actualiza una entrada existente en la SACL de recursos para el recurso de tipo especificado.|
-|/remove|Quita todas las entradas del usuario determinado en la lista de auditoría el acceso a objetos global.|
-|/ clear|Quita todas las entradas de la auditoría de la lista el acceso a objetos global.|
-|/View|Enumera las entradas de auditoría de acceso a objetos global en un recurso de la SACL. Los tipos de usuario y los recursos son opcionales.|
+|/Set|Agrega una nueva entrada a o actualiza una entrada existente en la SACL de recursos para el tipo de recurso especificado.|
+|/remove|Quita todas las entradas del usuario determinado en la lista de auditoría de acceso a objetos global.|
+|/Clear|Quita todas las entradas de la lista de auditoría de acceso a objetos global.|
+|/View|Muestra las entradas de auditoría de acceso a objetos global en una SACL de recurso. Los tipos de usuario y de recurso son opcionales.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="arguments"></a>Argumentos
 
 |Argumento|Descripción|
 |--------|-----------|
-|/type|El recurso para el objeto de auditoría de acceso se está configurando. Los valores de argumento admitidos son archivo (para archivos y directorios) y la clave (para las claves del registro).</br>Nota: Los valores de archivo y la clave distinguen mayúsculas de minúsculas.|
-|/success|Especifica la auditoría de acierto.|
-|/failure|Especifica la auditoría de errores.|
-|/user|Especifica un usuario en una de las formas siguientes:</br>-DomainName\Account (por ejemplo, DOM\Administrators)</br>-StandaloneServer\Group cuenta (consulte [función LookupAccountName](https://msdn.microsoft.com/library/windows/desktop/aa379159(v=vs.85).aspx))</br>-{S-1-x-x-x-x} (x se expresa en formato decimal, y el SID completo debe incluirse entre llaves); Por ejemplo: {S-1-5-21-5624481-130208933-164394174-1001}</br>    Nota:     Si se usa el formulario de SID, no se realiza ninguna comprobación para comprobar la existencia de esta cuenta.|
-|/access|Especifica una máscara de permisos que se puede especificar en uno de dos formas:</br>-Una secuencia de permisos sencillas:</br>    -Derechos de acceso genéricos:</br>        -GA - TODO GENÉRICO</br>        -GR - GENÉRICO DE LECTURA</br>        -ESCRIBIR GW - GENÉRICO</br>        -EJECUTAR GX - GENÉRICO</br>    -Derechos de acceso para archivos:</br>        -FA - TODO EL ACCESO DE ARCHIVO</br>        LEER ARCHIVO - FR - GENÉRICO</br>        -EC: ESCRITURA GENÉRICA EN ARCHIVO</br>        EJECUTAR - FX - ARCHIVO GENÉRICO</br>    -Derechos de acceso para las claves del registro:</br>        -KA - TODO EL ACCESO DE CLAVE</br>        CLAVE - KR - LEER</br>        -KW - CLAVE ESCRITURA</br>        -   KX - KEY EXECUTE</br>    Por ejemplo: ' / FRFW: acceso a "habilitará los eventos de auditoría para lectura y las operaciones de escritura</br>-Un valor hexadecimal que representa la máscara de acceso (por ejemplo, 0x1200a9)</br>    Esto es útil cuando se usa la máscara de bits de específicos de los recursos que no forman parte de lo estándar de (seguridad SDDL) de lenguaje de definición de descriptor de seguridad. Si se omite, se utiliza acceso completo.|
+|/Type|Recurso para el que se está configurando la auditoría de acceso a objetos. Los valores de argumento admitidos son archivo (para directorios y archivos) y clave (para las claves del registro).</br>Nota: Los valores de archivo y clave distinguen mayúsculas de minúsculas.|
+|/Success|Especifica la auditoría de aciertos.|
+|/Failure|Especifica la auditoría de errores.|
+|/User|Especifica un usuario en uno de los siguientes formatos:</br>-DomainName\Account (por ejemplo, DOM\Administrators)</br>-StandaloneServer\Group cuenta (consulte la [función LookupAccountName](https://msdn.microsoft.com/library/windows/desktop/aa379159(v=vs.85).aspx))</br>-{S-1-x-x-x-x} (x se expresa en formato decimal y todo el SID debe ir entre llaves); por ejemplo: {S-1-5-21-5624481-130208933-164394174-1001}</br>    Nota:     Si se usa el formulario de SID, no se realiza ninguna comprobación para comprobar la existencia de esta cuenta.|
+|/access|Especifica una máscara de permisos que se puede especificar en una de las dos formas siguientes:</br>-Una secuencia de derechos simples:</br>    -Derechos de acceso genéricos:</br>        -GA-GENÉRICO TODO</br>        -GR: LECTURA GENÉRICA</br>        -GW-ESCRITURA GENÉRICA</br>        -GX-EJECUCIÓN GENÉRICA</br>    -Derechos de acceso para archivos:</br>        -FA-ARCHIVO TODO EL ACCESO</br>        -FR-LECTURA DE ARCHIVO GENÉRICO</br>        -ESCRITURA GENÉRICA DE ARCHIVO DE FW</br>        -FX-ARCHIVO GENÉRICO EXECUTE</br>    -Derechos de acceso para las claves del registro:</br>        -KA-CLAVE TODO EL ACCESO</br>        -KR-CLAVE LEÍDA</br>        -KW-ESCRITURA DE CLAVES</br>        -KX-CLAVE EXECUTE</br>    Por ejemplo: '/Access: FRFW ' habilitará los eventos de auditoría para las operaciones de lectura y escritura</br>: Un valor hexadecimal que representa la máscara de acceso (por ejemplo, 0x1200a9).</br>    Esto resulta útil cuando se usan máscaras de bits específicas del recurso que no forman parte del estándar del lenguaje de definición de descriptores de seguridad (SDDL). Si se omite, se usa el acceso completo.|
 
 ## <a name="remarks"></a>Comentarios
 
-Para las operaciones de resourceSACL, debe tener permiso de escritura o Control total en ese objeto establecido en el descriptor de seguridad. También se pueden realizar operaciones resourceSACL que poseen el **Administrar registro de auditoría y seguridad** derecho de usuario (SeSecurityPrivilege). Sin embargo, este derecho permite acceso adicional que no es necesario realizar la operación de eliminación.
+En el caso de las operaciones de resourceSACL, debe tener el permiso de control total o de escritura en ese objeto establecido en el descriptor de seguridad. También puede realizar operaciones de resourceSACL con el derecho de usuario **Administrar registro de auditoría y de seguridad** (SeSecurityPrivilege). Sin embargo, este derecho permite el acceso adicional que no es necesario para realizar la operación de eliminación.
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-Para establecer un recurso global SACL para auditar el acceso correcto intentos por el usuario en una clave del registro:
+Para establecer una SACL de recursos globales para auditar los intentos de acceso correctos de un usuario en una clave del registro:
 ```
 auditpol /resourceSACL /set /type:Key /user:MYDOMAIN\myuser /success
 ```
-Para establecer un recurso global SACL para auditar los intentos correctos e incorrectos de un usuario a realizar la lectura genérica y escribir funciones en archivos o carpetas:
+Para establecer una SACL de recursos globales para auditar los intentos correctos y erróneos de un usuario para realizar funciones genéricas de lectura y escritura en archivos o carpetas:
 ```
 auditpol /resourceSACL /set /type:File /user:MYDOMAIN\myuser /success /failure /access:FRFW
 ```
-Para quitar todas las entradas de la SACL de recursos globales de archivos o carpetas:
+Para quitar todas las entradas SACL de recursos globales de los archivos o carpetas:
 ```
 auditpol /resourceSACL /type:File /clear
 ```
-Para quitar todas las entradas de la SACL de recursos global para un usuario determinado de archivos o carpetas:
+Para quitar todas las entradas de SACL de recursos globales para un usuario determinado de archivos o carpetas:
 ```
 auditpol /resourceSACL /remove /type:File /user:{S-1-5-21-56248481-1302087933-1644394174-1001}
 ```
-Para mostrar el acceso a objetos global establecido en archivos o carpetas de entradas de auditoría:
+Para enumerar las entradas de auditoría de acceso a objetos globales establecidas en archivos o carpetas:
 ```
 auditpol /resourceSACL /type:File /view
 ```
-Para obtener una lista del objeto global, tener acceso a las entradas de auditoría para un usuario determinado que se establecen en los archivos o carpetas:
+Para enumerar las entradas de auditoría de acceso a objetos globales para un usuario determinado que se establecen en archivos o carpetas:
 ```
 auditpol /resourceSACL /type:File /view /user:MYDOMAIN\myuser
 ```

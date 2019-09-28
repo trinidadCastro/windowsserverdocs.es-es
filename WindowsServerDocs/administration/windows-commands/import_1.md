@@ -1,8 +1,8 @@
 ---
 title: importar
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 379d5923a9355db2965b56c27cedd207b1b63006
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca0a15e73e4aa913ece34e083a8070be3b4b190d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885996"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375412"
 ---
 # <a name="import"></a>importar
 
@@ -36,14 +36,14 @@ import [noerr]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|noerr|sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.|
+|Noerr|Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
 
 ## <a name="remarks"></a>Comentarios
 
--   El comando de importación importa todos los discos que se encuentra en el mismo grupo que el disco con el foco.
--   Debe seleccionarse un disco dinámico en un grupo de discos externos para que realizar esta operación correctamente. Use la **seleccione disco** comando para seleccionar un disco y cambiar el foco a ella.
+-   El comando IMPORT importa todos los discos que se encuentra en el mismo grupo que el disco que tiene el foco.
+-   Para que esta operación se realice correctamente, debe seleccionarse un disco dinámico en un grupo de discos externos. Use el comando **Seleccionar disco** para seleccionar un disco y desplazar el foco a él.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para importar todos los discos que se encuentra en el mismo grupo de discos que el disco con el foco en el grupo de discos del equipo local, escriba:
 ```

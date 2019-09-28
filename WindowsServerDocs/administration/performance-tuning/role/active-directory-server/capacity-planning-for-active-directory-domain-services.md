@@ -1,18 +1,18 @@
 ---
 title: Planeación de la capacidad para Active Directory Domain Services
 description: Explicación detallada de los factores que se deben tener en cuenta durante el planeamiento de la capacidad de AD DS.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: v-tea; kenbrunf
 author: Teresa-Motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: dac13ac94e38cf671239d35507e07d7ac3a0c1ab
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8b17d7f5c7774c1c332d49962b14fe31128f1a27
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866728"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370433"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Planeación de la capacidad para Active Directory Domain Services
 
@@ -114,7 +114,7 @@ En general:
 |Rendimiento de almacenamiento/base de datos|<ul><li>"LogicalDisk ( *\<unidad\>de base de datos Ntds*) \Avg segundos/lectura," "LogicalDisk ( *\<unidad\>de base de datos Ntds*) \Avg de disco/escritura", "LogicalDisk ( *\<unidad de base de datos Ntds) )\>* \Avg de segundos de disco/transferencia "</li><li>"LogicalDisk ( *\<unidad\>de base de datos Ntds*) \ lecturas/seg." "LogicalDisk ( *\<unidad\>de base de datos Ntds*) \ escrituras/seg." "LogicalDisk ( *\<unidad\>debasededatosNtds*) \ Transferencias/s "</li></ul>|<ul><li>El almacenamiento tiene dos preocupaciones<ul><li>El espacio disponible, que con el tamaño del almacenamiento basado en el eje actual y en la SSD, es irrelevante para la mayoría de los entornos de AD.</li> <li>Operaciones de entrada/salida (e/s) disponibles: en muchos entornos, a menudo se pasa por alto. Pero es importante evaluar solo los entornos en los que no hay suficiente RAM para cargar toda la base de datos NTDS en la memoria.</li></ul><li>El almacenamiento puede ser un tema complejo y debe implicar la experiencia del fabricante del hardware para que el tamaño sea adecuado. Especialmente con escenarios más complejos, como escenarios SAN, NAS e iSCSI. Sin embargo, en general, el costo por Gigabyte de almacenamiento suele ser la oposición directa del costo por e/s:<ul><li>RAID 5 tiene un costo menor por Gigabyte que RAID 1, pero RAID 1 tiene un costo menor por e/s</li><li>Las unidades de disco duro basadas en el eje tienen un costo menor por Gigabyte, pero las SSD tienen un costo menor por e/s</li></ul><li>Después de reiniciar el equipo o el servicio Active Directory Domain Services, la caché del motor de almacenamiento extensible (ESE) está vacía y el rendimiento se enlazará en disco mientras se calienta la memoria caché.</li><li>En la mayoría de los entornos, AD es una e/s de lectura intensiva en un patrón aleatorio a los discos, lo que evita muchas de las ventajas del almacenamiento en caché y las estrategias de optimización de lectura.  Además, AD tiene una caché más grande en la memoria que la mayoría de las memorias caché del sistema de almacenamiento.</li></ul>
 |RAM|<ul><li>Tamaño de la base de datos</li><li>Recomendaciones del sistema operativo base</li><li>Aplicaciones de terceros</li></ul>|<ul><li>El almacenamiento es el componente más lento de un equipo. Cuanto más pueda residir en la RAM, menos será necesario ir a disco.</li><li>Asegúrese de que hay suficiente RAM asignada para almacenar el sistema operativo, los agentes (antivirus, copia de seguridad, supervisión), la base de datos NTDS y el crecimiento a lo largo del tiempo.</li><li>En el caso de los entornos en los que maximizar la cantidad de memoria RAM no es rentable (como una ubicación satélite) o no factible (DIT es demasiado grande), haga referencia a la sección Storage para asegurarse de que el almacenamiento tenga el tamaño adecuado.</li></ul>|
 |Red|<ul><li>"Interfaz de red\*() \Bytes recibidos por segundo"</li><li>"Interfaz de red\*() \Bytes enviados por segundo"|<ul><li>En general, el tráfico enviado desde un controlador de dominio supera mucho el tráfico enviado a un controlador de dominio.</li><li>Como conexión Ethernet conmutada, el tráfico de red de entrada y salida de dúplex completo debe ajustarse de forma independiente.</li><li>La consolidación del número de controladores de dominio aumentará la cantidad de ancho de banda que se usa para devolver las respuestas a las solicitudes de cliente para cada controlador de dominio, pero estará suficientemente cerca para lineal en todo el sitio.</li><li>Si quita los controladores de dominio de Ubicación satélite, no olvide agregar el ancho de banda para el controlador de dominio satélite en los controladores de dominio del concentrador y usarlo para evaluar la cantidad de tráfico WAN que habrá.</li></ul>|
-|CPU|<ul><li>"Disco lógico ( *\<unidad\>de base de datos Ntds*) \Avg segundos/lectura"</li><li>"Proceso (LSASS)\\% de tiempo de procesador"</li></ul>|<ul><li>Después de eliminar el almacenamiento como cuello de botella, solucione la cantidad de potencia de proceso necesaria.</li><li>Aunque no es absolutamente lineal, el número de núcleos de procesador consumido en todos los servidores dentro de un ámbito específico (por ejemplo, un sitio) se puede usar para medir el número de procesadores necesarios para admitir la carga total de clientes. Agregue el mínimo necesario para mantener el nivel actual de servicio en todos los sistemas dentro del ámbito.</li><li>Los cambios en la velocidad del procesador, incluidos los cambios relacionados con la administración de energía, los números de impacto derivados del entorno actual. Por lo general, es imposible evaluar con exactitud cómo pasar de un procesador de 2,5 GHz a un procesador de 3 GHz reducirá el número de CPU necesarias.</li></ul>|
+|CPU|<ul><li>"Disco lógico ( *\<unidad\>de base de datos Ntds*) \Avg segundos/lectura"</li><li>"Proceso (LSASS) \\% de tiempo de procesador"</li></ul>|<ul><li>Después de eliminar el almacenamiento como cuello de botella, solucione la cantidad de potencia de proceso necesaria.</li><li>Aunque no es absolutamente lineal, el número de núcleos de procesador consumido en todos los servidores dentro de un ámbito específico (por ejemplo, un sitio) se puede usar para medir el número de procesadores necesarios para admitir la carga total de clientes. Agregue el mínimo necesario para mantener el nivel actual de servicio en todos los sistemas dentro del ámbito.</li><li>Los cambios en la velocidad del procesador, incluidos los cambios relacionados con la administración de energía, los números de impacto derivados del entorno actual. Por lo general, es imposible evaluar con exactitud cómo pasar de un procesador de 2,5 GHz a un procesador de 3 GHz reducirá el número de CPU necesarias.</li></ul>|
 |NetLogon|<ul><li>"Netlogon (\*) \Semaphore adquiere"</li><li>"Netlogon (\*) tiempos de espera de \Semaphore"</li><li>"Netlogon (\*) \Average de tiempo de espera del semáforo"</li></ul>|<ul><li>Net Logon Secure Channel/MaxConcurrentAPI solo afecta a entornos con autenticaciones NTLM y/o la validación de PAC. La validación de PAC está activada de forma predeterminada en versiones de sistema operativo anteriores a Windows Server 2008. Se trata de una configuración de cliente, por lo que los controladores de sesión se verán afectados hasta que esté desactivada en todos los sistemas cliente.</li><li>Los entornos con una autenticación de confianza cruzada importante, que incluye confianzas dentro de bosques, tienen un mayor riesgo si no tienen un tamaño adecuado.</li><li>Las consolidaciones de servidor aumentarán la simultaneidad de la autenticación entre confianzas.</li><li>Es necesario acomodar los picos, como las conmutaciones por error de los clústeres, a medida que los usuarios vuelven a autenticarse en el nuevo nodo de clúster.</li><li>Es posible que los sistemas cliente individuales (por ejemplo, un clúster) también necesiten la optimización.</li></ul>|
 
 ## <a name="planning"></a>Planificación
@@ -158,7 +158,7 @@ Evite la confirmación de la memoria en el host. El objetivo fundamental de la o
 |Componente|Memoria estimada (ejemplo)|
 |-|-|
 |RAM recomendada del sistema operativo base (Windows Server 2008)|2 GB|
-|Tareas internas de LSASS|200 MB|
+|Tareas internas de LSASS|200 MB|
 |Agente de supervisión|100 MB|
 |Antivirus|100 MB|
 |Base de datos (catálogo global)|8,5 GB está seguro de que???|
@@ -232,7 +232,7 @@ DC 2|6,25 MB/s|
 |DC 5|4,75 MB/s|
 |Total|28,5 MB/s|
 
-**Recomendar 72 MB/s** (28,5 MB/s divididos por 40%)
+**Recomendar 72 MB/s @ no__t-0 (28,5 MB/s dividido entre 40%)
 
 |Recuento de sistemas de destino|Ancho de banda total (anterior)|
 |-|-|
@@ -398,7 +398,7 @@ Para la mayoría de los entornos, una vez que el almacenamiento, la memoria RAM 
   En entornos más grandes, la razón por la que esto es importante es que las aplicaciones codificadas de forma deficiente pueden impulsar la volatilidad en la carga de la CPU, "robar" una cantidad de tiempo de CPU injustificada de otras aplicaciones, impulsar artificialmente las necesidades de capacidad y distribuir la carga de forma desequilibrada los controladores de DC.  
 - Como AD DS es un entorno distribuido con una gran variedad de clientes potenciales, la estimación del gasto de un "cliente único" es subjetiva en el entorno debido a los patrones de uso y el tipo o la cantidad de aplicaciones que aprovechan AD DS. En Resumen, de forma muy similar a la sección de redes, para una aplicabilidad amplia, este enfoque es mejor desde la perspectiva de evaluar la capacidad total necesaria en el entorno.
 
-En el caso de los entornos existentes, a medida que se analizó el tamaño del almacenamiento, se supone que el almacenamiento tiene el tamaño adecuado y, por tanto, los datos relativos a la carga del procesador son válidos. Para reiterarse, es fundamental asegurarse de que el cuello de botella del sistema no es el rendimiento del almacenamiento. Cuando existe un cuello de botella y el procesador está esperando, hay Estados inactivos que desaparecerán una vez que se quite el cuello de botella.  Como los Estados de espera del procesador se quitan, por definición, el uso de la CPU aumenta porque ya no tiene que esperar en los datos. Por lo tanto, recopile los contadores de rendimiento "disco lógico ( *\<unidad\>de base de datos Ntds*) \Avg en segundos/lectura\\" y "proceso (LSASS)% de tiempo de procesador". Los datos de "proceso (LSASS)\\% de tiempo de procesador" serán artificialmente bajos si "disco lógico ( *\<unidad\>de base de datos Ntds*) \Avg segundos/lectura" es superior a 10 o 15 ms, que es un umbral general que el soporte técnico de Microsoft usa para solucionar problemas de rendimiento relacionados con el almacenamiento. Como antes, se recomienda que los intervalos de muestra sean 15, 30 o 60 minutos. Todo menos normalmente será demasiado volátil para las mediciones correctas; cualquier valor mayor suavizará las búsquedas diarias de forma excesiva.
+En el caso de los entornos existentes, a medida que se analizó el tamaño del almacenamiento, se supone que el almacenamiento tiene el tamaño adecuado y, por tanto, los datos relativos a la carga del procesador son válidos. Para reiterarse, es fundamental asegurarse de que el cuello de botella del sistema no es el rendimiento del almacenamiento. Cuando existe un cuello de botella y el procesador está esperando, hay Estados inactivos que desaparecerán una vez que se quite el cuello de botella.  Como los Estados de espera del procesador se quitan, por definición, el uso de la CPU aumenta porque ya no tiene que esperar en los datos. Por lo tanto, recopile los contadores de rendimiento "disco lógico ( *\<NTDS, unidad de base de datos @ no__t-2*) \Avg segundos de disco/lectura" y "proceso (lsass) \\% de tiempo de procesador". Los datos de "Process (LSASS) \\% Processor Time" serán artificialmente bajos si "disco lógico ( *\<NTDS Database Drive @ no__t-3*) \Avg Disk sec/Read" supera de 10 a 15 ms, que es un umbral general que el soporte técnico de Microsoft usa para solucionar problemas problemas de rendimiento relacionados con el almacenamiento. Como antes, se recomienda que los intervalos de muestra sean 15, 30 o 60 minutos. Todo menos normalmente será demasiado volátil para las mediciones correctas; cualquier valor mayor suavizará las búsquedas diarias de forma excesiva.
 
 ### <a name="introduction"></a>Introducción
 
@@ -421,7 +421,7 @@ En el ejemplo siguiente se realizan las suposiciones siguientes:
 
 ![Gráfico de uso de CPU](media/capacity-planning-considerations-cpu-chart.png)
 
-Analizando los datos del gráfico (utilidad de procesador de información\% de procesador (_ total)) para cada uno de los controladores de DC:
+Analizando los datos del gráfico (información del procesador (_ total) @no__t la utilidad del procesador-0) para cada uno de los controladores de DC:
 
 - En su mayor parte, la carga se distribuye relativamente uniformemente, que es lo que cabría esperar cuando los clientes usan el ubicador de DC y tienen búsquedas bien escritas. 
 - Hay una serie de picos de cinco minutos del 10%, con un tamaño de hasta un 20%. Por lo general, a menos que hagan que se supere el destino del plan de capacidad, investigarlos no merece la pena.  
@@ -436,7 +436,7 @@ Analizando los datos del gráfico (utilidad de procesador de información\% de p
 
 ### <a name="calculating-cpu-demands"></a>Calcular las demandas de la CPU
 
-El contador del\\objeto de rendimiento "porcentaje de tiempo de procesador" suma la cantidad total de tiempo que todos los subprocesos de una aplicación invierten en la CPU y divide por la cantidad total de tiempo del sistema que ha transcurrido. El efecto de esto es que una aplicación multiproceso en un sistema de varias CPU puede superar el 100% de tiempo de CPU y se interpretaría de manera muy diferente que la\\"utilidad de procesador% de información de procesador". En la práctica, el "proceso (\\LSASS)% de tiempo de procesador" se puede ver como el recuento de las CPU que se ejecutan en el 100% que son necesarias para admitir las demandas del proceso. Un valor de 200% significa que se necesitan 2 CPU, cada una a 100%, para admitir la carga AD DS completa. Aunque una CPU que se ejecuta con una capacidad del 100% es la más rentable desde la perspectiva del dinero empleado en las CPU y el consumo energético y energético, por una serie de motivos que se detallan en el Apéndice A, se produce una mejor capacidad de respuesta en un sistema de varios subprocesos cuando el sistema está no se ejecuta en el 100%.
+El contador del objeto de rendimiento "proceso @ no__t-0% de tiempo de procesador" suma la cantidad total de tiempo que todos los subprocesos de una aplicación invierten en la CPU y divide por la cantidad total de tiempo del sistema que ha transcurrido. El efecto de esto es que una aplicación multiproceso en un sistema de varias CPU puede superar el 100% de tiempo de CPU y se interpretaría de manera muy diferente que la "información del procesador @ no__t-0% de la utilidad del procesador". En la práctica, el "proceso (LSASS) \\% de tiempo de procesador" se puede ver como el recuento de las CPU que se ejecutan en el 100% que son necesarias para admitir las demandas del proceso. Un valor de 200% significa que se necesitan 2 CPU, cada una a 100%, para admitir la carga AD DS completa. Aunque una CPU que se ejecuta con una capacidad del 100% es la más rentable desde la perspectiva del dinero empleado en las CPU y el consumo energético y energético, por una serie de motivos que se detallan en el Apéndice A, se produce una mejor capacidad de respuesta en un sistema de varios subprocesos cuando el sistema está no se ejecuta en el 100%.
 
 Para dar cabida a picos transitorios en la carga de cliente, se recomienda establecer como destino un período de CPU de un período de tiempo máximo entre el 40% y el 60% de la capacidad del sistema. Al trabajar con el ejemplo anterior, esto significa que se necesitarían las CPU entre 3,33 (60% de destino) y 5 (40% de destino) para la carga de AD DS (proceso Lsass). Se debe agregar capacidad adicional en según las demandas del sistema operativo base y otros agentes necesarios (como antivirus, copia de seguridad, supervisión, etc.). Aunque es necesario evaluar el impacto de los agentes por cada entorno, se puede realizar una estimación entre el 5 y el 10% de una sola CPU. En el ejemplo actual, esto sugeriría que se necesitan entre las CPU 3,43 (60% Target) y 5,1 (40% Target) durante los períodos de máxima actividad.
 
@@ -448,7 +448,7 @@ Se asume que:
 
 ![Gráfico de tiempo de procesador para el proceso Lsass (en todos los procesadores)](media/capacity-planning-considerations-proc-time-chart.png)
 
-Conocimiento obtenido de los datos del gráfico (proceso (LSASS)\\% de tiempo de procesador):
+Conocimiento obtenido de los datos del gráfico (proceso (LSASS) \\% tiempo de procesador):
 
 - El día laborable comienza la rampa en torno a 7:00 y disminuye a las 5:00 PM.
 - El período de picos más ocupado es de 9:30 AM a 11:00 AM. 
@@ -486,7 +486,7 @@ Con el ejemplo de la sección [Perfil de comportamiento del sitio de destino](#t
 
 #### <a name="example-2---differing-cpu-counts"></a>Ejemplo 2: recuentos de CPU diferentes
 
-| |Utilidad procesador\\de información %&nbsp;del procesador (_ total)<br />Uso con valores predeterminados|Nuevo LdapSrvWeight|Nueva utilización estimada|
+| |Información del procesador @ no__t-0 @ no__t-1 @ no__t-2Processor utilidad (_ total)<br />Uso con valores predeterminados|Nuevo LdapSrvWeight|Nueva utilización estimada|
 |-|-|-|-|
 |4-CPU DC 1|40|100|30 %|
 |4-CPU DC 2|40|100|30 %|
@@ -521,7 +521,7 @@ A lo largo del análisis y el cálculo de las cantidades de CPU necesarias para 
 |-|-|
 |CPU necesarias en el destino del 40%|4,85 &divide; . 4 = 12,25|
 
-Si se repite debido a la importancia de este punto, *Recuerde planear el crecimiento*. Suponiendo un crecimiento del 50% en los próximos tres años, este entorno necesitará 18,375 de &times; CPU (12,25 1,5) en el marcado de tres años. Un plan alternativo sería revisar después del primer año y agregar capacidad adicional según sea necesario.
+Si se repite debido a la importancia de este punto, *Recuerde planear el crecimiento*. Suponiendo un crecimiento del 50% en los próximos tres años, este entorno necesitará 18,375 de CPU (12,25 &times; 1,5) en el marcado de tres años. Un plan alternativo sería revisar después del primer año y agregar capacidad adicional según sea necesario.
 
 ### <a name="cross-trust-client-authentication-load-for-ntlm"></a>Carga de autenticación de cliente entre confianza para NTLM
 
@@ -576,10 +576,10 @@ En este artículo, se ha explicado que la planeación y el escalado van hacia lo
 
 |Category|Contador de rendimiento|Intervalo/muestreo|Destino|Advertencia|
 |-|-|-|-|-|
-|Procesador|Información del procesador (_\\total)% utilidad del procesador|60 mín.|40 %|60%|
+|Procesador|Información del procesador (_ total) \\% utilidad del procesador|60 mín.|40 %|60 %|
 |RAM (Windows Server 2008 R2 o versiones anteriores)|Memoria\mbytes MB|< 100 MB|N/D|< 100 MB|
 |RAM (Windows Server 2012)|Duración media de la caché en espera Memory\Long-Term (s)|30 minutos|Se debe probar|Se debe probar|
-|Red|Interfaz de red\*() \Bytes enviados/seg.<br /><br />Interfaz de red\*() \Bytes recibidos/seg.|30 minutos|40 %|60%|
+|Red|Interfaz de red\*() \Bytes enviados/seg.<br /><br />Interfaz de red\*() \Bytes recibidos/seg.|30 minutos|40 %|60 %|
 |Almacenamiento|LogicalDisk ( *\<unidad\>de base de datos Ntds*) \Avg en segundos/lectura<br /><br />LogicalDisk ( *\<unidad\>de base de datos Ntds*) \Avg en segundos/escritura|60 mín.|10 ms|15 ms|
 |Servicios de AD|\Average de\*tiempo de espera del semáforo de Netlogon ()|60 mín.|0|1 segundo|
 
@@ -655,7 +655,7 @@ La instrucción anterior en relación con el cálculo del porcentaje de tiempo d
 - Cómo trabajar con las matemáticas:
   - *U* k = 1:% de tiempo de procesador
   - % De tiempo de procesador = 1 – *U* k
-  - % De tiempo de procesador = 1 – *B* / *T*
+  - % De tiempo de procesador = 1 – *B* / *t*
   - % De tiempo de procesador = 1 – *x1* – *x0* / *Y1* – *Y0*
 
 ### <a name="applying-the-concepts-to-capacity-planning"></a>Aplicar los conceptos al planeamiento de capacidad
@@ -667,7 +667,7 @@ Las matemáticas anteriores pueden hacer que las determinaciones sobre el númer
 - Agregar más procesadores a un sistema que ejecuta el 90% que está enlazado a disco probablemente no va a mejorar significativamente el rendimiento. Un análisis más profundo del sistema probablemente identificará una gran cantidad de subprocesos que no se están obteniendo siquiera en el procesador porque están esperando a que se complete la e/s.
 - La resolución de los problemas enlazados a disco puede significar que los subprocesos que antes gastaron mucho tiempo en un estado de espera dejarán de estar en un estado de espera de e/s y habrá más competencia para el tiempo de CPU, lo que significa que el uso del 90% en el anterior el ejemplo irá al 100% (porque no puede ir más alto). Ambos componentes deben ajustarse conjuntamente.
   > [!NOTE]
-  > Información del procesador (*\\)% la utilidad del procesador puede superar el 100% con los sistemas que tienen un modo "Turbo".  Aquí es donde la CPU supera la velocidad de procesador recomendada durante breves períodos.  Consulte la documentación de los fabricantes de CPU y la descripción del contador para obtener más información.  
+  > Información del procesador (*) \\% la utilidad del procesador puede superar el 100% con sistemas que tienen un modo "Turbo".  Aquí es donde la CPU supera la velocidad de procesador recomendada durante breves períodos.  Consulte la documentación de los fabricantes de CPU y la descripción del contador para obtener más información.  
 
 La explicación de las consideraciones de uso de todo el sistema también incorpora los controladores de dominio de conversación como invitados virtualizados. [Tiempo de respuesta/cómo afecta la ocupación del sistema al rendimiento](#response-timehow-the-system-busyness-impacts-performance) se aplica tanto al host como al invitado en un escenario virtualizado. Este es el motivo por el que en un host con un solo invitado, un controlador de dominio (y generalmente cualquier sistema) tiene cerca del mismo rendimiento que en el hardware físico. Agregar invitados adicionales a los hosts aumenta la utilización del host subyacente, con lo que se incrementan los tiempos de espera para obtener acceso a los procesadores como se explicó anteriormente. En Resumen, el uso del procesador lógico debe administrarse tanto en el host como en el nivel de invitado.
 

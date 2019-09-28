@@ -1,8 +1,8 @@
 ---
-title: Metadatos del conjunto
-description: 'Tema de los comandos de Windows para ***- '
+title: Establecer metadatos
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82d2cd9ba447a0ea261f91dc01c11e45dfc0aa9b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ac73a4131d3f4065cd1aeae873734b079ad664e2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835996"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370955"
 ---
-# <a name="set-metadata"></a>Metadatos del conjunto
+# <a name="set-metadata"></a>Establecer metadatos
 
 
 
-Establece el nombre y la ubicación del archivo de metadatos de creación de instantáneas utilizado para transferir instantáneas de un equipo a otro. Si se utiliza sin parámetros, **establecer metadatos** muestra la Ayuda en el símbolo del sistema.
+Establece el nombre y la ubicación del archivo de metadatos de creación de instantáneas que se usa para transferir instantáneas de un equipo a otro. Si se usa sin parámetros, el comando **set Metadata** muestra la ayuda en el símbolo del sistema.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,8 +36,8 @@ set metadata [<Drive>:][<Path>]<MetaData.cab>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[\<Drive>:][<Path>]|Especifica la ubicación para crear el archivo de metadatos.|
-|\<MetaData.cab>|Especifica el nombre del archivo cab para almacenar metadatos de creación de instantáneas.|
+|[\<Drive >:] [<Path>]|Especifica la ubicación en la que se va a crear el archivo de metadatos.|
+|@no__t -0MetaData. cab >|Especifica el nombre del archivo. cab para almacenar los metadatos de creación de instantáneas.|
 
 #### <a name="additional-references"></a>Referencias adicionales
 

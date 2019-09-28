@@ -1,8 +1,8 @@
 ---
-title: Con el subcomando add AllDriverPackages
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el subcomando add-AllDriverPackages
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f934d8c65da939fb60c564b375699f411b7c9ac
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d8290a95dd53718b200d10b6804d312abe95e257
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440833"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363891"
 ---
-# <a name="using-the-add-alldriverpackages-subcommand"></a>Con el subcomando add AllDriverPackages
+# <a name="using-the-add-alldriverpackages-subcommand"></a>Usar el subcomando add-AllDriverPackages
 
 
 
@@ -36,12 +36,12 @@ WDSUTIL /Add-AllDriverPackages /FolderPath:<Folder Path> [/Server:<Server name>]
 
 |          Parámetro           |                                                              Descripción                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-|  / FolderPath:\<ruta de acceso de carpeta >  |                      Especifica la ruta de acceso completa a la carpeta que contiene los archivos .inf para los paquetes de controladores.                      |
-|   [/ Server:\<nombre del servidor >]   | Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se usa el servidor local. |
-|     [/ Arquitectura: {x86      |                                                                 ia64                                                                  |
-| [/ DriverGroup:\<nombre de grupo >] |                             Especifica el nombre del grupo de controladores a la que se deben agregar los paquetes.                             |
+|  /FolderPath: \<Folder ruta de acceso >  |                      Especifica la ruta de acceso completa a la carpeta que contiene los archivos. inf para los paquetes de controladores.                      |
+|   [/Server: \<Server nombre >]   | Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se utiliza el servidor local. |
+|     [/Architecture: {x86      |                                                                 64                                                                  |
+| [/DriverGroup: \<Group nombre de la >] |                             Especifica el nombre del grupo de controladores al que se deben agregar los paquetes.                             |
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para agregar paquetes de controladores, escriba uno de los siguientes:
 ```

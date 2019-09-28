@@ -2,7 +2,7 @@
 title: more
 description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: 291d98492f3f2b200ff0567c28a97927ca8c75be
-ms.sourcegitcommit: e55e27143dad1d3fb956cfdac4c23ef4186af321
+ms.openlocfilehash: d505f99511d8702f11ac0c70edba3d62c8cf7996
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603232"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373910"
 ---
 # <a name="more"></a>more
 
@@ -40,19 +40,19 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 
 |           Parámetro            |                               Descripción                               |
 |--------------------------------|-------------------------------------------------------------------------|
-|           \<> De comandos           |      Especifica un comando para el que desea mostrar la salida.      |
+|           @no__t 0Command >           |      Especifica un comando para el que desea mostrar la salida.      |
 |               /c               |               Borra la pantalla antes de mostrar una página.               |
 |               /p               |                      Expande los caracteres de avance de la forma.                      |
 |               /s               |          Muestra varias líneas en blanco como una sola línea en blanco.          |
-|             /t\<N >             |         Muestra las pestañas como el número de espacios especificado por *N*.         |
-|             +\<N >              |     Muestra el primer archivo que comienza en la línea especificada por *N*.     |
-| [\<Unidad >:] [\<ruta de acceso\<>] nombre de archivo > |          Especifica la ubicación y el nombre de un archivo que se va a mostrar.          |
-|            \<Archivos >            | Especifica una lista de archivos que se van a mostrar. Separe los nombres de archivo con un espacio. |
+|             /t @ no__t-0n (>             |         Muestra las pestañas como el número de espacios especificado por *N*.         |
+|             + @ NO__T-1N >              |     Muestra el primer archivo que comienza en la línea especificada por *N*.     |
+| [\<Drive >:] [\<Path >] \<FileName > |          Especifica la ubicación y el nombre de un archivo que se va a mostrar.          |
+|            @no__t 0Files >            | Especifica una lista de archivos que se van a mostrar. Separe los nombres de archivo con un espacio. |
 |               /?               |                  Muestra la ayuda en el símbolo del sistema.                   |
 
 ## <a name="remarks"></a>Comentarios
 
--   Los siguientes subcomandos se aceptan en el  símbolo del sistema`-- More --`más (). 
+-   Los siguientes subcomandos se aceptan en el símbolo del sistema **más** (`-- More --`). 
 
     | Key | . |
     | --- | ------ |
@@ -61,11 +61,11 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
     | f | Muestra el siguiente archivo. |
     | q | Sale del comando **More** . |
     | = | Muestra el número de línea. |
-    | p \<N > | Muestra las siguientes *N* líneas. |
-    | s \<N > |S Kips las siguientes *N* líneas. |
+    | p \<n (> | Muestra las siguientes *N* líneas. |
+    | s \<n (> |S Kips las siguientes *N* líneas. |
     | ? | Muestra los comandos que están disponibles en el símbolo del sistema **más** .| 
     
--   Al usar el carácter de redirección **<** (), debe especificar un nombre de archivo como origen. Cuando se usa **\|** la canalización (), puede usar estos comandos como **dir**, **Sort**y **Type**.
+-   Al usar el carácter de redirección ( **<** ), debe especificar un nombre de archivo como origen. Al usar la canalización ( **\|** ), puede usar tales comandos como **dir**, **Sort**y **Type**.
 -   El comando **More** , con diferentes parámetros, está disponible en la consola de recuperación.
 
 ## <a name="BKMK_examples"></a>Example
@@ -93,13 +93,13 @@ El comando **More** muestra la primera pantalla de información de clients. New 
 
 ### <a name="using-more-subcommands"></a>Usar más subcomandos
 
-Los ejemplos siguientes se pueden usar en el  símbolo del sistema`-- More --`más ().
+Los ejemplos siguientes se pueden usar en el símbolo del sistema **más** (`-- More --`).
 - Para mostrar el archivo una línea a la vez, presione Entrar en el símbolo del sistema **más** .
 - Para mostrar la siguiente pantalla, presione la barra ESPACIAdora en el símbolo del sistema **más** .
 - Para mostrar el siguiente archivo que aparece en la línea de comandos, escriba **f** en el símbolo del sistema **más** .
 - Para mostrar los comandos disponibles, escriba **?** en el símbolo del sistema **más** .
 - Para salir **más**, escriba **q** en el símbolo del sistema **más** .
-- Para mostrar el número de línea actual, **=** escriba en el símbolo del sistema **más** . El número de línea actual se agrega al símbolo **más** como se indica a continuación:  
+- Para mostrar el número de línea actual, escriba **=** en el símbolo del sistema **más** . El número de línea actual se agrega al símbolo **más** como se indica a continuación:  
   ```
   -- More [Line: 24] --
   ```  

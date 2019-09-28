@@ -1,8 +1,8 @@
 ---
 title: logman query
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e00e1ca7e6e090fd618af5b0ca2307bb573ab8c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6acf6cf5240dd59357f4c788577190699a354744
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437723"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374422"
 ---
 # <a name="logman-query"></a>logman query
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Recopilador de datos de consulta o recopilador de datos de conjunto de propiedades.  
+propiedades del recopilador de datos de consulta o conjunto de recopiladores de datos.  
 
 ## <a name="syntax"></a>Sintaxis  
 ```  
@@ -34,22 +34,22 @@ logman query [providers|"Data Collector Set name"] [options]
 
 |     Parámetro      |                                 Descripción                                  |
 |--------------------|------------------------------------------------------------------------------|
-|         /?         |                       Contextual muestra la Ayuda.                       |
-| -s <computer name> |            Ejecutar el comando en el equipo remoto especificado.             |
-|  -config <value>   |           Especifica el archivo de configuración que contiene las opciones de comando.            |
+|         /?         |                       Muestra la ayuda contextual.                       |
+| -s <computer name> |            Ejecute el comando en el equipo remoto especificado.             |
+|  -config <value>   |           Especifica el archivo de configuración que contiene opciones de comando.            |
 |    [-n] <name>     |                          Nombre del objeto de destino.                          |
-|        -ets        | Enviar comandos a sesiones de seguimiento de eventos directamente sin guardar ni programación. |
+|        -ETS        | Enviar comandos a sesiones de seguimiento de eventos directamente sin guardar ni programar. |
 
-## <a name="BKMK_examples"></a>Ejemplos  
-El siguiente comando enumera todos los conjuntos de recopiladores de datos configurada en el sistema de destino.  
+## <a name="BKMK_examples"></a>Example  
+El comando siguiente muestra todos los conjuntos de recopiladores de datos configurados en el sistema de destino.  
 ```  
 logman query  
 ```  
-El comando siguiente enumera los recopiladores de datos contenidos en el conjunto de recopiladores de datos llamado perf_log.  
+El siguiente comando muestra los recopiladores de datos contenidos en el conjunto de recopiladores de datos denominado perf_log.  
 ```  
 logman query "perf_log"  
 ```  
-El siguiente comando enumera todos los proveedores disponibles de recopiladores de datos en el sistema de destino.  
+El siguiente comando muestra todos los proveedores disponibles de recopiladores de datos en el sistema de destino.  
 ```  
 logman query providers  
 ```  

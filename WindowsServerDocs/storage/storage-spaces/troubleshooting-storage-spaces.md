@@ -2,19 +2,19 @@
 title: Solución de problemas de Espacios de almacenamiento directo
 description: Obtenga información acerca de cómo solucionar problemas de la implementación de Espacios de almacenamiento directo.
 keywords: Espacios de almacenamiento
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: ''
 ms.technology: storage-spaces
 ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 30fdda5ada01510027100efce1e95f310f69c6a1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ace19b711445106956ae223f17afb6b4181d352d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865095"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365942"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>Solucionar problemas Espacios de almacenamiento directo
 
@@ -38,8 +38,8 @@ Los nodos de un Espacios de almacenamiento directo reiniciar el sistema de forma
 
 |FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|Tamaño| PSComputerName|
 |------------|---------------------| -----------------| ------------| --------------|-----| --------------|
-|Disk4| Reflejada| OK|  Correcto| True|  10 TB|  Node-01. cont...|
-|Disk3         |Reflejada                 |OK                          |Correcto       |True            |10 TB | Node-01. cont...|
+|Disk4| Reflejada| Aceptar|  Correcto| True|  10 TB|  Node-01. cont...|
+|Disk3         |Reflejada                 |Aceptar                          |Correcto       |True            |10 TB | Node-01. cont...|
 |Disk2         |Reflejada                 |Sin redundancia               |Incorrecto     |True            |10 TB | Node-01. cont...|
 |Disk1         |Reflejada                 |{Sin redundancia, inservicio}  |Incorrecto     |True            |10 TB | Node-01. cont...| 
 
@@ -101,8 +101,8 @@ A continuación se muestra un ejemplo de la salida del cmdlet **Get-VirtualDisk*
 
 |FriendlyName|  ResiliencySettingName|  OperationalStatus|   HealthStatus|  IsManualAttach|  Tamaño|   PSComputerName|
 |-|-|-|-|-|-|-|
-|Disk4|         Reflejada|                 OK|                  Correcto|       True|            10 TB|  Node-01. cont...|
-|Disk3|         Reflejada|                 OK|                  Correcto|       True|            10 TB|  Node-01. cont...|
+|Disk4|         Reflejada|                 Aceptar|                  Correcto|       True|            10 TB|  Node-01. cont...|
+|Disk3|         Reflejada|                 Aceptar|                  Correcto|       True|            10 TB|  Node-01. cont...|
 |Disk2|         Reflejada|                 Desasociado|            Unknown|       True|            10 TB|  Node-01. cont...|
 |Disk1|         Reflejada|                 Desasociado|            Unknown|       True|            10 TB|  Node-01. cont...| 
 
@@ -335,17 +335,17 @@ Hay dos maneras de comprobar:
 
    |FriendlyName|  SerialNumber| MediaType| CanPool| OperationalStatus| HealthStatus| Uso| Tamaño|
    |-----------|------------|---------| -------| -----------------| ------------| -----| ----|
-   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| False|   OK|                Correcto|      Selección automática 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  False|    OK|                Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  False|  OK|                Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| False| OK|    Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| False|OK|       Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| False| OK|      Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| False| OK|      Correcto|Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| False| OK|  Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| False| OK| Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| False| OK|Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| False| OK| Correcto| Selección automática |1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| False|   Aceptar|                Correcto|      Selección automática 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  False|    Aceptar|                Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  False|  Aceptar|                Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| False| Aceptar|    Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| False|Aceptar|       Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| False| Aceptar|      Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| False| Aceptar|      Correcto|Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| False| Aceptar|  Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| False| Aceptar| Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| False| Aceptar|Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| False| Aceptar| Correcto| Selección automática |1,82 TB|
 
 ## <a name="how-to-destroy-an-existing-cluster-so-you-can-use-the-same-disks-again"></a>Cómo destruir un clúster existente para que pueda volver a usar los mismos discos
 
@@ -358,25 +358,25 @@ El siguiente paso consiste en quitar el grupo de almacenamiento fantasma:
 
 Ahora, si ejecuta **Get-PhysicalDisk** en cualquiera de los nodos, verá todos los discos que se encontraban en el grupo. Por ejemplo, en un laboratorio con un clúster de 4 nodos con 4 discos SAS, 100 GB cada uno se presentó a cada nodo. En ese caso, después de que el espacio de almacenamiento directo esté deshabilitado, lo que quita el SBL (capa de bus de almacenamiento) pero deja el filtro, si ejecuta **Get-PhysicalDisk**, debe notificar 4 discos, excepto el disco del sistema operativo local. En su lugar, se ha indicado 16 en su lugar. Esto es lo mismo para todos los nodos del clúster. Al ejecutar un comando **Get-Disk** , verá los discos conectados localmente numerados como 0, 1, 2, etc., tal como se muestra en este resultado de ejemplo:
 
-|Number| Nombre descriptivo| Número de serie|HealthStatus|OperationalStatus|Tamaño total| Estilo de partición|
+|Número| Nombre descriptivo| Número de serie|HealthStatus|OperationalStatus|Tamaño total| Estilo de partición|
 |-|-|-|-|-|-|-|-|
-|0|Msft Virtu...  ||Correcto | En línea|  127 GB| GPT|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-|1|Msft Virtu...||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-|2|Msft Virtu...||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-|4|Msft Virtu...||Correcto| Sin conexión| 100 GB| RAW|
-|3|Msft Virtu...||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
-||Msft Virtu... ||Correcto| Sin conexión| 100 GB| RAW|
+|0|Msft Virtu...  ||Correcto | Online|  127 GB| GPT|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
+|1|Msft Virtu...||Correcto| Desconectado| 100 GB| SOCKET|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
+|2|Msft Virtu...||Correcto| Desconectado| 100 GB| SOCKET|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
+|4|Msft Virtu...||Correcto| Desconectado| 100 GB| SOCKET|
+|3|Msft Virtu...||Correcto| Desconectado| 100 GB| SOCKET|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
 
 
 ## <a name="error-message-about-unsupported-media-type-when-you-create-an-storage-spaces-direct-cluster-using-enable-clusters2d"></a>Mensaje de error sobre "tipo de medio no admitido" al crear un clúster de Espacios de almacenamiento directo con enable-ClusterS2D  
@@ -400,7 +400,7 @@ El problema es con la tarjeta de expansión de SAS de HPE que se encuentra entre
 Es posible que aparezca un problema en el que un dispositivo de la serie P4600 de DC de Intel SSD está informando de un NGUID de 16 bytes similar para varios espacios de nombres como 0100000001000000E4D25C000014E214 o 0100000001000000E4D25C0000EEE214 en el ejemplo siguiente.
 
 
-|               UniqueID               | deviceid | MediaType | BusType |               SerialNumber               |      size      | canpool | FriendlyName | OperationalStatus |
+|               UniqueID               | ID | MediaType | BusType |               SerialNumber               |      size      | canpool | FriendlyName | OperationalStatus |
 |--------------------------------------|----------|-----------|---------|------------------------------------------|----------------|---------|--------------|-------------------|
 |           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  False  |     HGST     |  HUH721010AL4200  |
 | EUI. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  True   |    PROCESADOR     |   SSDPE2KE016T7   |

@@ -1,8 +1,8 @@
 ---
 title: nslookup view
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 623064db7a3e89decbfc1fbc27fa0598e398ac34
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 61a01a25317bdf42491f05e896ddd5bb022193fe
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436408"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372721"
 ---
 # <a name="nslookup-view"></a>nslookup view
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Ordena y se muestra el resultado de la anterior **ls** subcomando o comandos.  
+Ordena y muestra la salida del subcomando o los comandos **LS** anteriores.  
 ## <a name="syntax"></a>Sintaxis  
 ```  
 view <FileName>  
@@ -33,8 +33,8 @@ view <FileName>
 
 |    Parámetro    |                                            Descripción                                            |
 |-----------------|---------------------------------------------------------------------------------------------------|
-|   <FileName>    | Especifica el nombre del archivo que contiene la salida del anterior **ls** subcomando o comandos. |
-| {help &#124; ?} |                       Muestra un resumen breve de **nslookup** subcomandos.                       |
+|   <FileName>    | Especifica el nombre del archivo que contiene la salida de los comandos o subcomando **LS** anteriores. |
+| {ayuda &#124; ?} |                       Muestra un breve resumen de los subcomandos de **nslookup** .                       |
 
 ## <a name="additional-references"></a>Referencias adicionales  
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  

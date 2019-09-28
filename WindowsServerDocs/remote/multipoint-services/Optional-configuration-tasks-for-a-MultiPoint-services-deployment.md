@@ -1,9 +1,9 @@
 ---
 title: Tareas de configuración opcionales para una implementación de MultiPoint Services
-description: Tema de exploración para obtener información de configuración de MultiPoint Services
+description: Tema de navegación para la información de configuración de Multipoint Services
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,16 +13,16 @@ ms.assetid: 76ed6fa3-2efb-4ebd-a734-f3f9440523f0
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 8e9510f0a05990fc92216e8edf8d7713610accd5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9be3b42b2dc8fd914fa5fbc1bf2b714fd66ea18f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838826"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404978"
 ---
 # <a name="optional-configuration-tasks-for-a-multipoint-services-deployment"></a>Tareas de configuración opcionales para una implementación de MultiPoint Services
-Temas de esta sección explican cómo realizar tareas de configuración opcionales en el sistema MultiPoint Services.  
+En los temas de esta sección se explica cómo realizar tareas de configuración opcionales en el sistema Multipoint Services.  
    
 [Configurar una estación de pantalla dividida](Set-up-a-split-screen-station-in-MultiPoint-services.md)  
 [Agregar impresoras](Add-printers.md)  
-[Creación de escritorios virtuales de Windows 10 Enterprise para estaciones](Create-Windows-10-Enterprise-virtual-desktops-for-stations.md)  
+[Crear escritorios virtuales de Windows 10 Enterprise para las estaciones](Create-Windows-10-Enterprise-virtual-desktops-for-stations.md)  

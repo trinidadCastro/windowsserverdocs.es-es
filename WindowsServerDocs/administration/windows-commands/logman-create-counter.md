@@ -2,7 +2,7 @@
 title: Logman Create Counter
 description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d9099fa4540a1d9c91a714ada8a1dbba13f051e
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 3245ce1c153ac0d5fe95ea0c85009e33f71a230c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "66437810"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374564"
 ---
 # <a name="logman-create-counter"></a>Logman Create Counter
 
@@ -35,11 +35,11 @@ logman create counter <[-n] <name>> [options]
 |                    Parámetro                     |                                                                               Descripción                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                        /?                        |                                                                    Muestra la ayuda contextual.                                                                     |
-|                -s<computer name>                |                                                          Ejecute el comando en el equipo remoto especificado.                                                          |
+|                -s <computer name>                |                                                          Ejecute el comando en el equipo remoto especificado.                                                          |
 |                 -config <value>                  |                                                         Especifica el archivo de configuración que contiene opciones de comando.                                                         |
-|                   [-n]<name>                    |                                                                       Nombre del objeto de destino.                                                                        |
+|                   [-n] <name>                    |                                                                       Nombre del objeto de destino.                                                                        |
 | -f < bin&#124;bincirc&#124;CSV&#124;TSV&#124;SQL > |                                                            Especifica el formato del registro del recopilador de datos.                                                             |
-|             -[-] u < usuario [contraseña] >              | Especifica el usuario que se va a ejecutar como. Al escribir \* un para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
+|             -[-] u < usuario [contraseña] >              | Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
 |    -m < [Start] [STOP] [[Start] [STOP] [...]] >    |                                                cambie a Inicio o detención manual en lugar de a una hora de inicio o de finalización programada.                                                 |
 |                -RF < [[HH:] mm:] SS >                |                                                        Ejecute el recopilador de datos durante el período de tiempo especificado.                                                         |
 |        -b < M/d/YYYY h:mm: SS [AM&#124;PM] >         |                                                              Comienza a recopilar datos en el momento especificado.                                                               |
@@ -50,11 +50,11 @@ logman create counter <[-n] <name>> [options]
 |                      -[-] a                       |                                                                     anexar a un archivo de registro existente.                                                                     |
 |                      -[-] permitir                      |                                                                     Sobrescribir un archivo de registro existente.                                                                     |
 |           -[-] v < nnnnnn&#124;mmddHHMM >           |                                                   Adjunte información de versión del archivo al final del nombre del archivo de registro.                                                   |
-|                  -[-] RC<task>                   |                                                         Ejecute el comando especificado cada vez que se cierre el registro.                                                          |
+|                  -[-] RC <task>                   |                                                         Ejecute el comando especificado cada vez que se cierre el registro.                                                          |
 |                 -[-] máx. <value>                  |                                                 Tamaño máximo del archivo de registro en MB o número máximo de registros para los registros de SQL.                                                  |
 |              -[-] CNF < [[HH:] mm:] SS >              |     Cuando se especifica Time, cree un nuevo archivo cuando haya transcurrido el tiempo especificado. Si no se especifica Time, cree un archivo nuevo cuando se supere el tamaño máximo.     |
 |                        -y                        |                                                             Responda sí a todas las preguntas sin preguntar.                                                              |
-|                  -CF<filename>                  |                       Especifica el archivo que muestra los contadores de rendimiento que se van a recopilar. El archivo debe contener un nombre de contador de rendimiento por línea.                        |
+|                  -CF <filename>                  |                       Especifica el archivo que muestra los contadores de rendimiento que se van a recopilar. El archivo debe contener un nombre de contador de rendimiento por línea.                        |
 |               -c < ruta [path []] >               |                                                              Especifica los contadores de rendimiento que se van a recopilar.                                                               |
 |                   -SC <value>                    |                                      Especifica el número máximo de muestras que se van a recopilar con un recopilador de datos del contador de rendimiento.                                      |
 
@@ -69,5 +69,5 @@ El siguiente comando crea un contador llamado perf_log mediante el contador% de 
 ```  
 logman create counter perf_log -c "\Processor(_Total)\% Processor time" -max 10 -rf 01:00  
 ```  
-#### <a name="additional-references"></a>referencias adicionales  
+#### <a name="additional-references"></a>Referencias adicionales  
 [logman](logman.md)  

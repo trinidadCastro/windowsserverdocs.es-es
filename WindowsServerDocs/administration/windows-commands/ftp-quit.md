@@ -1,8 +1,8 @@
 ---
-title: Salga de FTP
-description: 'Tema de los comandos de Windows para ***- '
+title: salir de FTP
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,26 +13,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32b527a01c2c82ff3847affb31e03ee7acf883ac
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd523710fa5352c0d3df0d7f1cbc3ddeb3b49000
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819486"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376052"
 ---
 # <a name="ftp-quit"></a>FTP: salir
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Finaliza la sesión ftp con el equipo remoto y sale de **ftp** al símbolo del sistema operativo.   
+Finaliza la sesión FTP con el equipo remoto y sale de **FTP** al símbolo del sistema del sistema operativo.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 quit  
 ```  
 ### <a name="parameters"></a>Parámetros  
 ninguno  
-## <a name="BKMK_Examples"></a>Ejemplos  
-Finalizar la sesión ftp con el equipo remoto y salir **ftp** al símbolo del sistema operativo.  
+## <a name="BKMK_Examples"></a>Example  
+Finalice la sesión FTP con el equipo remoto y salga de **FTP** en el símbolo del sistema del sistema operativo.  
 ```  
 quit  
 ```  

@@ -1,8 +1,8 @@
 ---
 title: bootcfg query
-description: Tema de los comandos de Windows para **bootcfg consulta** -consultas y muestra [el cargador de arranque] y [sistemas operativos] sección entradas del archivo Boot.ini.
+description: 'El tema de comandos de Windows para la **consulta Bootcfg** : consulta y muestra las entradas de la sección [cargador de arranque] y [sistemas operativos] de boot. ini.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e79acc100a9ec9955f2692a3c6ee812d0310b687
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: ae82357cfe178343872448c2ebd46c49a797b5a9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434734"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379914"
 ---
 # <a name="bootcfg-query"></a>bootcfg query
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Consulta y muestra [el cargador de arranque] y las entradas del archivo Boot.ini de sección [operating systems].
+Consulta y muestra las entradas de la sección [cargador de arranque] y [sistemas operativos] de boot. ini.
 
 ## <a name="syntax"></a>Sintaxis
 ```
@@ -34,13 +34,13 @@ bootcfg /query [/s <computer> [/u <Domain>\<User> /p <Password>]]
 
 |        Término         |                                                                                             Definición                                                                                              |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s <computer>    |                                         Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local.                                          |
-| /u <Domain>\\<User> | Ejecuta el comando con los permisos de cuenta del usuario especificado por <User>o <Domain> \\ <User>. El valor predeterminado es los permisos de la sesión de usuario en el equipo que emite el comando actual. |
-|    /p <Password>    |                                                        Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.                                                        |
+|    /s <computer>    |                                         Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.                                          |
+| /u <Domain> @ no__t-1 @ no__t-2 | Ejecuta el comando con los permisos de cuenta del usuario especificado por <User>or <Domain> @ no__t-2 @ no__t-3. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
+|    /p <Password>    |                                                        Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                        |
 |         /?          |                                                                                Muestra la ayuda en el símbolo del sistema.                                                                                 |
 
 ##### <a name="remarks"></a>Comentarios
-- El siguiente es un ejemplo de **bootcfg /query** salida:
+- A continuación se muestra un ejemplo de la salida de **bootcfg/Query** :
   ```
   Boot Loader Settings
   ----------
@@ -53,10 +53,10 @@ bootcfg /query [/s <computer> [/u <Domain>\<User> /p <Password>]]
   path:            multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
   OS Load Options: /fastdetect /debug /debugport=com1:
   ```
-- La parte de la configuración del cargador de arranque de la **bootcfg consulta** salida muestra cada entrada en la sección [boot loader] del archivo Boot.ini.
-- La parte de las entradas de arranque de la **bootcfg consulta** salida muestra los detalles siguientes para cada entrada de sistema operativo en la sección [operating systems] del archivo Boot.ini: Id. de entrada de arranque, un nombre descriptivo, ruta de acceso y las opciones de carga del sistema operativo.
-  ## <a name="BKMK_examples"></a>Ejemplos
-  Los ejemplos siguientes muestran cómo puede usar el **bootcfg /query** comando:
+- La parte de configuración del cargador de arranque del resultado de la **consulta Bootcfg** muestra cada entrada de la sección [boot loader] de boot. ini.
+- La parte de entradas de arranque del resultado de la **consulta Bootcfg** muestra los detalles siguientes para cada entrada del sistema operativo en la sección [operating systems] de boot. ini: IDENTIFICADOR de la entrada de arranque, nombre descriptivo, ruta de acceso y opciones de carga del sistema operativo.
+  ## <a name="BKMK_examples"></a>Example
+  En los siguientes ejemplos se muestra cómo se puede usar el comando **bootcfg/Query** :
   ```
   bootcfg /query
   bootcfg /query /s srvmain /u maindom\hiropln /p p@ssW23

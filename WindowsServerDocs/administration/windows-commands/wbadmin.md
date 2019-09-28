@@ -1,8 +1,8 @@
 ---
 title: wbadmin
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,44 +13,44 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ce8109ef6a0885abd02ef1dee9f11d21b7d7e9b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6a0fe9b999e788af1316ca0dbbf50b84e80cb08e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858886"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362475"
 ---
 # <a name="wbadmin"></a>wbadmin
 
 
 
-Permite realizar copias de seguridad y restaurar el sistema operativo, volúmenes, archivos, carpetas y las aplicaciones desde un símbolo del sistema.
+Permite realizar copias de seguridad y restaurar el sistema operativo, los volúmenes, los archivos, las carpetas y las aplicaciones desde un símbolo del sistema.
 
-Para configurar una copia de seguridad programada periódicamente, debe ser miembro de la **administradores** grupo. Para llevar a cabo todas las tareas con este comando, debe ser miembro de la **operadores de copia de seguridad** o el **administradores** grupo, o bien debe haber sido delegar los permisos adecuados.
+Para configurar una copia de seguridad programada regularmente, debe ser miembro del grupo **administradores** . Para realizar todas las demás tareas con este comando, debe ser miembro de los grupos **operadores de copia de seguridad** o **administradores** , o bien tener delegados los permisos adecuados.
 
-Debe ejecutar **wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados, haga clic en **símbolo**y, a continuación, haga clic en **ejecutar como administrador**.)
+Debe ejecutar **Wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados, haga clic con el botón secundario en **símbolo del sistema**y, a continuación, haga clic en **Ejecutar como administrador**).
 
 ## <a name="subcommands"></a>Subcomandos
 
 |Subcomando|Descripción|
 |----------|-----------|
-|[Wbadmin habilitar copia de seguridad](wbadmin-enable-backup.md)|Configura y habilita una copia de seguridad programada periódicamente.|
-|[copia de seguridad de Wbadmin disable](wbadmin-disable-backup.md)|Deshabilita las copias de seguridad diarias.|
-|[Wbadmin start backup](wbadmin-start-backup.md)|Se ejecuta una copia de seguridad única. Si se usa sin parámetros, se usa la configuración de la programación de copia de seguridad diaria.|
-|[detención del trabajo de Wbadmin](wbadmin-stop-job.md)|Detiene la operación de recuperación o copia de seguridad activo.|
-|[versiones de Wbadmin get](wbadmin-get-versions.md)|Muestra detalles de las copias de seguridad recuperables desde el equipo local o, si se especifica otra ubicación, desde otro equipo.|
-|[Wbadmin get elementos](wbadmin-get-items.md)|Enumera los elementos incluidos en una copia de seguridad.|
-|[recuperación de Wbadmin start](wbadmin-start-recovery.md)|Ejecuta la recuperación de los volúmenes, aplicaciones, archivos o carpetas especificadas.|
-|[obtener el estado de Wbadmin](wbadmin-get-status.md)|Muestra el estado de la operación de recuperación o copia de seguridad activo.|
-|[Wbadmin get discos](wbadmin-get-disks.md)|Muestra los discos que están actualmente en línea.|
-|[Wbadmin start systemstaterecovery](wbadmin-start-systemstaterecovery.md)|Se ejecuta una recuperación del estado del sistema.|
-|[Wbadmin start systemstatebackup](wbadmin-start-systemstatebackup.md)|Se ejecuta una copia de seguridad del estado del sistema.|
-|[Wbadmin delete systemstatebackup](wbadmin-delete-systemstatebackup.md)|Elimina uno o más copias de estado del sistema.|
-|[Wbadmin start sysrecovery](wbadmin-start-sysrecovery.md)|Ejecuta la recuperación de todo el sistema (por lo menos todos los volúmenes que contienen el estado del sistema operativo). Este subcomando solo está disponible si utiliza el entorno de recuperación de Windows.|
-|[catálogo de restauración de Wbadmin](wbadmin-restore-catalog.md)|Recupera un catálogo de copia de seguridad desde una ubicación de almacenamiento especificada en el caso donde se ha dañado el catálogo de copia de seguridad en el equipo local.|
-|[catálogo de Wbadmin delete](wbadmin-delete-catalog.md)|Elimina el catálogo de copia de seguridad en el equipo local. Utilice este subcomando sólo si el catálogo de copia de seguridad en este equipo está dañado y no hay copias de seguridad almacenadas en otra ubicación que puede usar para restaurar el catálogo.|
+|[Wbadmin enable backup](wbadmin-enable-backup.md)|Configura y habilita una copia de seguridad programada periódicamente.|
+|[Wbadmin disable backup](wbadmin-disable-backup.md)|Deshabilita las copias de seguridad diarias.|
+|[Wbadmin start backup](wbadmin-start-backup.md)|Ejecuta una copia de seguridad única. Si se usa sin parámetros, usa la configuración de la programación de copia de seguridad diaria.|
+|[Wbadmin stop job](wbadmin-stop-job.md)|Detiene la operación de copia de seguridad o recuperación que se está ejecutando.|
+|[Wbadmin get versions](wbadmin-get-versions.md)|Muestra detalles de las copias de seguridad recuperables desde el equipo local o, si se especifica otra ubicación, desde otro equipo.|
+|[Wbadmin get items](wbadmin-get-items.md)|Enumera los elementos incluidos en una copia de seguridad.|
+|[Wbadmin start recovery](wbadmin-start-recovery.md)|Ejecuta una recuperación de los volúmenes, las aplicaciones, los archivos o las carpetas especificados.|
+|[Wbadmin get status](wbadmin-get-status.md)|Muestra el estado de la operación de copia de seguridad o recuperación que se está ejecutando actualmente.|
+|[Wbadmin get disks](wbadmin-get-disks.md)|Enumera los discos que están actualmente en línea.|
+|[Wbadmin start systemstaterecovery](wbadmin-start-systemstaterecovery.md)|Ejecuta una recuperación de estado del sistema.|
+|[Wbadmin start systemstatebackup](wbadmin-start-systemstatebackup.md)|Ejecuta una copia de seguridad del estado del sistema.|
+|[Wbadmin delete systemstatebackup](wbadmin-delete-systemstatebackup.md)|Elimina una o más copias de seguridad del estado del sistema.|
+|[Wbadmin start sysrecovery](wbadmin-start-sysrecovery.md)|Ejecuta una recuperación del sistema completo (al menos todos los volúmenes que contienen el estado del sistema operativo). Este subcomando solo está disponible si usa el entorno de recuperación de Windows.|
+|[Wbadmin restore catalog](wbadmin-restore-catalog.md)|Recupera un catálogo de copia de seguridad de una ubicación de almacenamiento especificada en el caso de que el catálogo de copia de seguridad del equipo local se haya dañado.|
+|[Wbadmin delete catalog](wbadmin-delete-catalog.md)|Elimina el catálogo de copias de seguridad en el equipo local. Utilice este subcomando solo si el catálogo de copias de seguridad de este equipo está dañado y no tiene copias de seguridad almacenadas en otra ubicación que pueda usar para restaurar el catálogo.|
 
 #### <a name="additional-references"></a>Referencias adicionales
 
 -   [Copia de seguridad y recuperación](https://go.microsoft.com/fwlink/?LinkID=195054)
--   [Cmdlets de copia de seguridad de Windows Server en Windows PowerShell](https://technet.microsoft.com/library/jj902428.aspx)
+-   [Cmdlets de Copias de seguridad de Windows Server en Windows PowerShell](https://technet.microsoft.com/library/jj902428.aspx)

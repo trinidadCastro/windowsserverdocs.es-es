@@ -1,7 +1,7 @@
 ---
 title: Hyper-V debe ser el único rol habilitado
-description: Proporciona instrucciones para resolver el problema notificado por esta regla de Best Practices Analyzer.
-ms.prod: windows-server-threshold
+description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,12 +10,12 @@ ms.topic: article
 ms.assetid: 5a0ed176-048f-40b1-b56c-8391b805fd37
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: bd03554396696a43b4821aff0f4ed893933484c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9b16a3be1e2f842c251ff3ab31d467ef7f128c8a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886466"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364760"
 ---
 # <a name="hyper-v-should-be-the-only-enabled-role"></a>Hyper-V debe ser el único rol habilitado
 
@@ -26,36 +26,36 @@ Para más información acerca de los análisis y los procedimientos recomendados
 |Property|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
-|**Característica del producto**|Hyper-V|  
+|**Producto o característica**|Hyper-V|  
 |**Gravedad**|Advertencia|  
 |**Categoría**|Configuración|  
   
-En las secciones siguientes, la cursiva indica texto de la interfaz de usuario que aparece en la herramienta Best Practices Analyzer para resolver este problema.  
+En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.  
   
 ## <a name="issue"></a>Problema  
   
-*Se habilitan las funciones que no sea de Hyper-V en este servidor.*  
+*Los roles distintos de Hyper-V están habilitados en este servidor.*  
   
-En la mayoría de los casos, no es una buena idea para instalar otros roles en un servidor que ejecuta el rol Hyper-V. Servicio de rol Host de virtualización de escritorio remoto es una excepción, ya que es parte del rol de servicios de escritorio remoto y requiere que Hyper-V esté instalado en el mismo servidor.  
+En la mayoría de los casos, no es una buena idea instalar otros roles en un servidor que ejecuta el rol de Hyper-V. Host de virtualización de Escritorio remoto servicio de rol es una excepción, porque forma parte del rol Servicios de Escritorio remoto y requiere que Hyper-V esté instalado en el mismo servidor.  
   
 ## <a name="impact"></a>Impacto  
   
 *El rol de Hyper-V debe ser el único rol habilitado en un servidor.*  
   
-Esta práctica recomendada ayuda a mantener el sistema operativo del host libre de roles, características y las aplicaciones que no son necesarios para ejecutar Hyper-V. Siguiendo este procedimiento recomendado y que ejecuta Hyper-V en Nano Server ayuda a reducir el número de actualizaciones, necesitará porque solo Nano Server, los componentes del servicio de Hyper-V y el hipervisor de Windows estará sujeto a las actualizaciones de software.  
+Este procedimiento recomendado ayuda a mantener el sistema operativo host libre de roles, características y aplicaciones que no son necesarios para ejecutar Hyper-V. Seguir este procedimiento recomendado y ejecutar Hyper-V en nano Server ayuda a reducir el número de actualizaciones que necesitará, ya que solo nano Server, los componentes del servicio Hyper-V y el hipervisor de Windows estarán sujetos a actualizaciones de software.  
   
 ## <a name="resolution"></a>Resolución  
   
-*Para quitar todas las funciones excepto Hyper-V, use el administrador del servidor.*  
+*Use Administrador del servidor para quitar todos los roles excepto Hyper-V.*  
   
-El administrador del servidor incluye al Asistente para quitar Roles. Este asistente le permite quitar más de un rol a la vez. Antes de quitar roles, el Asistente para quitar Roles comprueba las dependencias reducir el riesgo de quitar software del que dependen de otros roles. Si se han encontrado dependencias, el asistente le pedirá que apruebe la eliminación de otros roles, servicios de rol o software requerido por las funciones instaladas.   
+Administrador del servidor incluye el Asistente para quitar funciones. Este asistente permite quitar más de un rol a la vez. Antes de quitar roles, el Asistente para quitar roles comprueba las dependencias para reducir el riesgo de quitar el software del que dependen otros roles. Si se encuentran dependencias, el asistente le pedirá que apruebe la eliminación de otras funciones, servicios de rol o software que necesiten los roles instalados.   
   
-Para usar el administrador del servidor, debe estar iniciado en el equipo como administrador.  
+Para usar Administrador del servidor, debe haber iniciado sesión en el equipo como administrador.  
   
 #### <a name="to-remove-a-role"></a>Para quitar un rol  
   
-1.  Abra el administrador del servidor mediante el uso de métodos abreviados en el **iniciar** menú, en la barra de tareas de Windows o en Herramientas administrativas.  
-2.   En el **resumen de funciones** área de la ventana principal del administrador del servidor, haga clic en **quitar Roles**. Siga las instrucciones del Asistente para quitar el rol.   
+1.  Abra Administrador del servidor mediante accesos directos en el menú **Inicio** , en la barra de tareas de Windows o en herramientas administrativas.  
+2.   En el área **Resumen de funciones** de la ventana principal de administrador del servidor, haga clic en **quitar funciones**. Siga las instrucciones del Asistente para quitar el rol.   
   
   
   

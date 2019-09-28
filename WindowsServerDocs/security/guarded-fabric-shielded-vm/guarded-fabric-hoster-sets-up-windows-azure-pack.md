@@ -1,119 +1,119 @@
 ---
 title: 'Máquinas virtuales blindadas: el proveedor de servicios de hosting configura Microsoft Azure Pack'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: d528c689-58b0-425c-9740-25e2553ed689
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 156832087bc7af0c95a92cab9a0c1501264d47a5
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d388da2b7416543c307bd931636902b4a7543e1e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447505"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403660"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>Máquinas virtuales blindadas: el proveedor de servicios de hosting configura Microsoft Azure Pack
 
-Este tema describe cómo puede configurar un proveedor de hospedaje de servicio Windows Azure Pack para que los inquilinos pueden usar para implementar las máquinas virtuales blindadas. Paquete de Windows Azure es un portal web que extiende la funcionalidad de System Center Virtual Machine Manager para permitir que los inquilinos implementar y administrar sus propias máquinas virtuales a través de una sencilla interfaz web. Windows Azure Pack totalmente es compatible con las máquinas virtuales blindadas y facilita aún más para los inquilinos crear y administrar sus archivos de datos de blindaje.
+En este tema se describe cómo un proveedor de servicios de hosting puede configurar Windows Azure Pack para que los inquilinos puedan usarlo para implementar máquinas virtuales blindadas. Windows Azure Pack es un portal web que amplía la funcionalidad de System Center Virtual Machine Manager para permitir que los inquilinos implementen y administren sus propias máquinas virtuales a través de una sencilla interfaz Web. Windows Azure Pack es totalmente compatible con máquinas virtuales blindadas y facilita aún más que los inquilinos creen y administren los archivos de datos de blindaje.
 
-Para entender cómo encaja este tema en el proceso general de la implementación de máquinas virtuales blindadas, consulte [hospeda los pasos de configuración del proveedor de servicio para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md).
+Para entender cómo se ajusta este tema en el proceso general de implementación de máquinas virtuales blindadas, consulte [los pasos de configuración de proveedor de servicio de hospedaje para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md).
 
-## <a name="setting-up-windows-azure-pack"></a>Configurar Windows Azure Pack
+## <a name="setting-up-windows-azure-pack"></a>Configuración de Windows Azure Pack
 
-Se realizarán las siguientes tareas para configurar Windows Azure Pack en su entorno:
+Realizará las tareas siguientes para configurar Windows Azure Pack en su entorno:
 
-1. Completar la configuración de System Center 2016 - Virtual Machine Manager (VMM) para el tejido de hospedaje. Esto incluye la configuración de plantillas de máquina virtual y una nube de máquinas virtuales que se expondrá a través de Windows Azure Pack:
+1. Complete la configuración de System Center 2016-Virtual Machine Manager (VMM) para el tejido de hospedaje. Esto incluye la configuración de plantillas de máquina virtual y una nube de máquinas virtuales, que se expondrán a través de Windows Azure Pack:
 
     [Escenario: implementar hosts protegidos y máquinas virtuales blindadas en VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview)
 
-2. Instale y configure System Center 2016 - Service Provider Foundation (SPF). Este software permite a Windows Azure Pack para comunicarse con los servidores VMM:
+2. Instale y configure System Center 2016-Service Provider Foundation (SPF). Este software permite a Windows Azure Pack comunicarse con los servidores VMM:
 
-    [Implementar Service Provider Foundation - SPF](https://technet.microsoft.com/system-center-docs/spf/deploy/deploy-spf)
+    [Implementación de Service Provider Foundation-SPF](https://technet.microsoft.com/system-center-docs/spf/deploy/deploy-spf)
 
-3. Instalar Windows Azure Pack y configurarla para comunicarse con SPF:
+3. Instale Windows Azure Pack y configúrelo para comunicarse con SPF:
 
     - [Instalar Windows Azure Pack](#install-windows-azure-pack) (en este tema)
     - [Configurar Windows Azure Pack](#configure-windows-azure-pack) (en este tema)
 
-4. Crear uno o varios planes de hospedaje en Windows Azure Pack para permitir que a los inquilinos acceso a las nubes de máquina virtual:
+4. Cree uno o varios planes de hospedaje en Windows Azure Pack para permitir el acceso de los inquilinos a las nubes de máquinas virtuales:
 
     [Crear un plan en Windows Azure Pack](#create-a-plan-in-windows-azure-pack) (en este tema)
 
 ## <a name="install-windows-azure-pack"></a>Instalar Windows Azure Pack
 
-Instalar y configurar Windows Azure Pack (WAP) en el equipo donde desea hospedar el portal web para los inquilinos. Esta máquina debe ser capaz de alcanzar el servidor SPF y ser accesible por los inquilinos.
+Instale y configure Windows Azure Pack (WAP) en el equipo en el que desea hospedar el portal web para los inquilinos. Este equipo tendrá que ser capaz de acceder al servidor SPF y ser accesible para los inquilinos.
 
-1.  Revisar [requisitos del sistema WAP](https://technet.microsoft.com/library/dn296442.aspx) e instale el [requisitos previos de software](https://technet.microsoft.com/library/dn469335.aspx).
+1.  Revisar [los requisitos del sistema WAP](https://technet.microsoft.com/library/dn296442.aspx) e instalar el [software necesario](https://technet.microsoft.com/library/dn469335.aspx).
 
-2.  Descargue e instale el [instalador de plataforma Web](https://www.microsoft.com/web/downloads/platform.aspx). Si la máquina no está conectada a Internet, siga el [las instrucciones de instalación sin conexión](http://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release).
+2.  Descargue e instale el [instalador de plataforma web](https://www.microsoft.com/web/downloads/platform.aspx). Si el equipo no está conectado a Internet, siga las [instrucciones de instalación sin conexión](http://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release).
 
-3.  Abra el instalador de plataforma Web y busque **Windows Azure Pack: Portal y API Express** bajo el **productos** ficha. Haga clic en **agregar**, a continuación, **instalar** en la parte inferior de la ventana.
+3.  Abra el instalador de plataforma web y busque @no__t: 0Windows Azure Pack: Portal y API Express @ no__t-0 en la pestaña **productos** . Haga clic en **Agregar**y, a continuación, en **instalar** en la parte inferior de la ventana.
 
-4.  Lleve a cabo la instalación. Una vez finalizada la instalación, el sitio de configuración (*https://&lt;wapserver&gt;: 30101 /* ) se abre en el explorador web. En este sitio Web, se proporciona información acerca de SQL server y finalizar la configuración de WAP.
+4.  Lleve a cabo la instalación. Una vez finalizada la instalación, se abre el sitio de configuración (*https://&lt;wapserver @ no__t-2:30101/* ) en el explorador Web. En este sitio web, proporcione información sobre su SQL Server y termine de configurar WAP.
 
-Para Ayuda para instalar Windows Azure Pack, consulte [instalar una implementación rápida de Windows Azure Pack](https://technet.microsoft.com/dn296439.aspx).
+Para obtener ayuda para la configuración de Windows Azure Pack, consulte [instalar una implementación rápida de Windows Azure Pack](https://technet.microsoft.com/dn296439.aspx).
 
 > [!NOTE]
-> Si ya ejecuta Windows Azure Pack en su entorno, puede usar la instalación existente. Para poder trabajar con la versión más reciente blindadas las características de la máquina virtual, sin embargo, debe actualizar su instalación en al menos Update Rollup 10.
+> Si ya ha ejecutado Windows Azure Pack en su entorno, puede usar la instalación existente. Sin embargo, para trabajar con las características más recientes de la máquina virtual blindada, deberá actualizar la instalación al menos con el paquete acumulativo de actualizaciones 10.
 
 ### <a name="configure-windows-azure-pack"></a>Configurar Windows Azure Pack
 
-Antes de usar Windows Azure Pack, debe tener ya se instaló y configuró para su infraestructura.
+Antes de usar Windows Azure Pack, ya debe tener instalado y configurado para su infraestructura.
 
-1.  Vaya al portal de administración de Windows Azure Pack en *https://&lt;wapserver&gt;: 30091*y, a continuación, inicie sesión con sus credenciales de administrador.
+1.  Vaya al portal de administración de Windows Azure Pack en *https://&lt;wapserver @ no__t-2:30091*y, a continuación, inicie sesión con sus credenciales de administrador.
 
 2.  En el panel izquierdo, haga clic en **nubes de máquinas virtuales**.
 
-3.  Conectar Windows Azure Pack con la instancia de Service Provider Foundation haciendo **registrar System Center Service Provider Foundation**. Deberá especificar la dirección URL de Service Provider Foundation, así como un nombre de usuario y una contraseña.
+3.  Para conectarse Windows Azure Pack a la instancia de Service Provider Foundation, haga clic en **registrar System Center Service Provider Foundation**. Tendrá que especificar la dirección URL de Service Provider Foundation, así como un nombre de usuario y una contraseña.
 
     ![Registrar System Center Service Provider Foundation](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-01-register-spf.png)
 
-4.  Una vez completado, podrá ver las nubes de máquina virtual configurado en el entorno de VMM. Asegúrese de que tener al menos una nube de máquinas virtuales que admite máquinas virtuales blindadas disponibles en WAP antes de continuar.
+4.  Una vez completado, debería poder ver las nubes de máquinas virtuales configuradas en el entorno de VMM. Asegúrese de que tiene al menos una nube de máquinas virtuales que admite máquinas virtuales blindadas disponibles para WAP antes de continuar.
 
 ### <a name="create-a-plan-in-windows-azure-pack"></a>Crear un plan en Windows Azure Pack
 
-Para permitir que los inquilinos crear máquinas virtuales de WAP, primero debe crear un plan de hospedaje para que los inquilinos puedan suscribirse. Los planes definen los permitidos nubes de máquinas virtuales, plantillas, redes y entidades de facturación para los inquilinos.
+Para permitir que los inquilinos creen máquinas virtuales en WAP, primero debe crear un plan de hospedaje al que los inquilinos puedan suscribirse. Los planes definen las nubes de máquinas virtuales permitidas, las plantillas, las redes y las entidades de facturación para los inquilinos.
 
-1. En el panel inferior del portal, haga clic en **+ nuevo** &gt; **PLAN** &gt; **crear PLAN**.
+1. En el panel inferior del portal, haga clic en **+ nuevo** &gt; **plan** &gt; **crear plan**.
 
-2. En el primer paso del asistente, elija un nombre para el Plan. Esto es el nombre de que los inquilinos verán al suscribirse.
+2. En el primer paso del asistente, elija un nombre para el plan. Este es el nombre que verán los inquilinos cuando se suscriban.
 
-3. En el segundo paso, seleccione **NUBES de máquinas virtuales** como uno de los servicios que se va a ofrecer en el plan.
+3. En el segundo paso, seleccione **nubes de máquinas virtuales** como uno de los servicios que se van a ofrecer en el plan.
 
-4. Omita el paso acerca de cómo seleccionar los complementos para el plan.
+4. Omita el paso sobre cómo seleccionar los complementos para el plan.
 
-5. Haga clic en **Aceptar** (marca de verificación) para crear el plan. Aunque esto crea el plan, no está aún en un estado configurado.
+5. Haga clic en **Aceptar** (marca de verificación) para crear el plan. Aunque esto crea el plan, aún no está en un estado configurado.
 
-   ![Los planes en Windows Azure Pack](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-02-create-plan.png)
+   ![Planes en Windows Azure Pack](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-02-create-plan.png)
 
-6. Para empezar a configurar el Plan, haga clic en su nombre.
+6. Para empezar a configurar el plan, haga clic en su nombre.
 
-7. En la página siguiente, en **servicios del plan**, haga clic en **nubes de máquinas virtuales**. Se abrirá la página donde puede configurar cuotas para este plan.
+7. En la página siguiente, en **servicios del plan**, haga clic en **nubes de máquinas virtuales**. Se abrirá la página en la que puede configurar las cuotas de este plan.
 
-8. En **básica**, seleccione el servidor de administración VMM y la nube de máquinas virtuales que desea ofrecer a los inquilinos. Se mostrarán las nubes que pueden ofrecer las máquinas virtuales blindadas con **(Blindaje compatible)** junto a su nombre.
+8. En **básico**, seleccione el servidor de administración VMM y la nube de máquinas virtuales que desea ofrecer a los inquilinos. Las nubes que pueden ofrecer máquinas virtuales blindadas se mostrarán con **(se admite el blindaje)** junto a su nombre.
 
-9. Seleccionar las cuotas que desea aplicar este plan. (Por ejemplo, los límites en el núcleo de CPU y uso de RAM). Asegúrese de dejar el **permitir que las máquinas virtuales para blindar** casilla activada.
+9. Seleccione las cuotas que desea aplicar a este plan. (Por ejemplo, límites en el uso de CPU y núcleos de CPU). Asegúrese de dejar activada la casilla **permitir que virtual machines esté blindada** .
 
    ![Configuración de nubes de máquinas virtuales en Windows Azure Pack](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-03-virtual-machine-clouds.png)
     
-10. Desplácese hacia abajo hasta la sección titulada **plantillas**y, a continuación, seleccione una o varias plantillas para ofrecer a los inquilinos. Pueden ofrecer ambos blindada y se debe ofrecer no blindadas plantillas a los inquilinos, pero una plantilla blindada para proporcionar a los inquilinos-to-end garantías sobre la integridad de la máquina virtual y sus secretos.
+10. Desplácese hacia abajo hasta la sección titulado **plantillas**y, a continuación, seleccione una o varias plantillas para su oferta a los inquilinos. Puede ofrecer plantillas blindadas y no blindadas a los inquilinos, pero se debe ofrecer una plantilla blindada para proporcionar a los inquilinos garantías completas sobre la integridad de la máquina virtual y sus secretos.
 
-11. En el **redes** sección, agregue una o más redes para los inquilinos.
+11. En la sección **redes** , agregue una o más redes para los inquilinos.
 
-12. Después de establecer cualquier otra configuración o las cuotas para el Plan, haga clic en **guardar** en la parte inferior.
+12. Después de establecer cualquier otra configuración o cuota del plan, haga clic en **Guardar** en la parte inferior.
 
-13. En la parte superior izquierda de la pantalla, haga clic en la flecha para ir a la **Plan** página.
+13. En la parte superior izquierda de la pantalla, haga clic en la flecha para volver a la página **plan** .
 
-14. En la parte inferior de la pantalla, cambie el Plan se **privada** a **pública** para que los inquilinos puedan suscribirse al Plan.
+14. En la parte inferior de la pantalla, cambie el plan de **privado** a **público** para que los inquilinos puedan suscribirse al plan.
 
-    ![Cambiar el acceso para un plan en Windows Azure Pack](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-04-change-access.png)
+    ![Cambiar el acceso de un plan en Windows Azure Pack](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-04-change-access.png)
 
-    En este momento, se configura Windows Azure Pack y los inquilinos podrán suscribirse al plan que acaba de crear e implementar máquinas virtuales blindadas. Para conocer pasos adicionales que debe completar los inquilinos, consulte [máquinas virtuales blindadas para inquilinos - implementación de una máquina virtual blindada con Windows Azure Pack](guarded-fabric-shielded-vm-windows-azure-pack.md).
+    En este momento, se configura Windows Azure Pack y los inquilinos podrán suscribirse al plan que acaba de crear e implementar máquinas virtuales blindadas. Para conocer los pasos adicionales que los inquilinos deben completar, consulte [máquinas virtuales blindadas para inquilinos: implementación de una máquina virtual blindada mediante Windows Azure Pack](guarded-fabric-shielded-vm-windows-azure-pack.md).
 
 ## <a name="see-also"></a>Vea también
 
-- [Hospedaje de los pasos de configuración del proveedor de servicio para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [Pasos de configuración del proveedor de servicios de hospedaje para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

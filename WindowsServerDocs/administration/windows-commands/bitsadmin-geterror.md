@@ -1,8 +1,8 @@
 ---
 title: bitsadmin geterror
-description: Tema de los comandos de Windows para **bitsadmin geterror** -recupera información detallada del error para el trabajo especificado.
+description: El tema comandos de Windows para **bitsadmin getError** -recupera información de error detallada para el trabajo especificado.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 10a3373c0c8f290ff1f5f26ef38531fbc7745890
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0f9bd607886d00ede4e1da91ed73eff2794db6ce
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889976"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381645"
 ---
 # <a name="bitsadmin-geterror"></a>bitsadmin geterror
 
 
 
-Recupera la información de error detallada para el trabajo especificado.
+Recupera información de error detallada para el trabajo especificado.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,9 +36,9 @@ bitsadmin /GetError <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 En el ejemplo siguiente se recupera la información de error del trabajo denominado *myDownloadJob*.
 ```

@@ -1,8 +1,8 @@
 ---
 title: del
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b10da1a6035155d525a516f35f83a25209e90075
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6e569443a56646862c7a2c9fbd2c599cede941a1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433888"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378705"
 ---
 # <a name="del"></a>del
 
 
 
-Elimina uno o varios archivos. Este comando es el mismo que el **borrar** comando.
+Elimina uno o varios archivos. Este comando es el mismo que el comando **Erase** .
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -39,50 +39,50 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<Los nombres >|Especifica una lista de uno o varios archivos o directorios. Para eliminar varios archivos, se pueden usar caracteres comodín. Si se especifica un directorio, se eliminarán todos los archivos dentro del directorio.|
+|@no__t 0Names >|Especifica una lista de uno o varios archivos o directorios. Se pueden usar caracteres comodín para eliminar varios archivos. Si se especifica un directorio, se eliminarán todos los archivos del directorio.|
 |/p|Solicita confirmación antes de eliminar el archivo especificado.|
 |/f|Fuerza la eliminación de archivos de solo lectura.|
-|/s|Elimina los archivos desde el directorio actual y todos los subdirectorios especificados. Muestra los nombres de los archivos como que se están eliminando.|
-|/q|Especifica el modo silencioso. No se le pida confirmación de eliminación.|
-|/ a [::]\<atributos >|Elimina archivos basados en los atributos de archivo siguientes:</br>**r** archivos de solo lectura</br>**h** archivos ocultos</br>**no** archivos indizados del contenido</br>**s** archivos del sistema</br>**un** archivos listos para archivar</br>**l** puntos de reanálisis</br>-Prefix lo que significa "no"|
+|/s|Elimina los archivos especificados del directorio actual y todos los subdirectorios. Muestra los nombres de los archivos que se van a eliminar.|
+|/q|Especifica el modo silencioso. No se le pedirá confirmación de eliminación.|
+|/a [:] \<Attributes >|Elimina archivos en función de los siguientes atributos de archivo:</br>archivos de solo lectura de **r**</br>**h** archivos ocultos</br>**no** archivos indizados del contenido</br>archivos **del sistema**</br>**archivos listos** para archivar</br>**l** puntos de reanálisis</br>-El significado del prefijo ' not '|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
 > [!CAUTION]
-> Si usas **SUPR** para eliminar un archivo desde el disco, no podrá recuperarla.
-> -   Si usas **/p**, **SUPR** muestra el nombre de un archivo y envía el mensaje siguiente:
+> Si usa **Supr** para eliminar un archivo del disco, no puede recuperarlo.
+> -   Si usa **/p** **, el** muestra el nombre de un archivo y envía el mensaje siguiente:
 
     `FileName, Delete (Y/N)?`
 
     To confirm the deletion, press Y. To cancel the deletion and display the next file name (that is, if you specified a group of files), press N. To stop the **del** command, press CTRL+C.
-- Si deshabilita las extensiones de comando, **/s** muestra los nombres de los archivos que no se encontraron en lugar de mostrar los nombres de archivos que se va a eliminar (es decir, se invierte el comportamiento).
-- Si especifica una carpeta en *nombres*, se eliminan todos los archivos en la carpeta. Por ejemplo, el siguiente comando elimina todos los archivos de la carpeta \Work:  
+- Si deshabilita las extensiones de comando, **/s** muestra los nombres de los archivos que no se han encontrado en lugar de mostrar los nombres de los archivos que se están eliminando (es decir, se invierte el comportamiento).
+- Si especifica una carpeta en *nombres*, se eliminarán todos los archivos de la carpeta. Por ejemplo, el siguiente comando elimina todos los archivos de la carpeta \Work:  
   ```
   del \work
   ```  
-- Puede usar caracteres comodín ( **&#42;** y **?** ) para eliminar más de un archivo a la vez. Sin embargo, para evitar eliminar archivos involuntariamente, debe usar caracteres comodín con precaución con el **SUPR** comando. Por ejemplo, si escribe el siguiente comando:  
+- Puede usar caracteres comodín ( **&#42;** y **?** ) para eliminar más de un archivo a la vez. Sin embargo, para evitar la eliminación accidental de archivos, debe usar caracteres comodín con precaución con el comando **del** . Por ejemplo, si escribe el comando siguiente:  
   ```
   del *.*
   ```  
-  El **SUPR** comando muestra el símbolo del sistema siguiente:
+  El comando **Supr** muestra el siguiente mensaje:
 
   `Are you sure (Y/N)?`
 
-  Para eliminar todos los archivos en el directorio actual, presione s y, a continuación, presione ENTRAR. Para cancelar la eliminación, presione N y, a continuación, presione ENTRAR.
+  Para eliminar todos los archivos del directorio actual, presione Y y, a continuación, presione Entrar. Para cancelar la eliminación, presione N y, a continuación, presione Entrar.
 
 > [!NOTE]
-> Antes de usar caracteres comodín con el **SUPR** comando, use los mismos caracteres comodín con el **dir** comando para enumerar todos los archivos que se eliminará.
-> -   El **SUPR** comando, con diferentes parámetros, está disponible en la consola de recuperación.
+> Antes de usar caracteres comodín con el comando **del** , use los mismos caracteres comodín con el comando **dir** para enumerar todos los archivos que se van a eliminar.
+> -   El comando **del** , con diferentes parámetros, está disponible en la consola de recuperación.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para eliminar todos los archivos en una carpeta llamada Test en la unidad C, escriba lo siguiente:
+Para eliminar todos los archivos de una carpeta denominada test en la unidad C, escriba cualquiera de los siguientes:
 ```
 del c:\test
 del c:\test\*.*
 ```
-Para eliminar todos los archivos con la extensión de nombre de archivo .bat desde el directorio actual, escriba:
+Para eliminar todos los archivos con la extensión de nombre de archivo. bat del directorio actual, escriba:
 ```
 del *.bat
 ```

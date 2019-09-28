@@ -1,8 +1,8 @@
 ---
 title: move
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d651e586c31ff64664079bdd10ffde3701ec317d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4302a3403f73892500c3f9deb608e9489c7e91ae
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824996"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373531"
 ---
 # <a name="move"></a>move
 
 
 
-Mueve uno o varios archivos de un directorio en otro directorio.
+Mueve uno o más archivos de un directorio a otro.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -39,19 +39,19 @@ move [{/y | /-y}] [<Source>] [<Target>]
 |Parámetro|Descripción|
 |---------|-----------|
 |/y|Suprime el mensaje para confirmar que desea sobrescribir un archivo de destino existente.|
-|/-y|Hace que se pida confirmación para confirmar que desea sobrescribir un archivo de destino existente.|
-|\<origen >|Especifica la ruta de acceso y el nombre del archivo o archivos que desea mover. Si desea mover o cambiar el nombre de un directorio, *origen* debe ser el nombre y ruta del directorio actual.|
-|\<Destino >|Especifica la ruta de acceso y nombre para mover archivos a. Si desea mover o cambiar el nombre de un directorio, *destino* debe ser el nombre y ruta de acceso del directorio que desee.|
+|/-y|Hace que se pida confirmación de que desea sobrescribir un archivo de destino existente.|
+|@no__t 0Source >|Especifica la ruta de acceso y el nombre del archivo o los archivos que se van a trasladar. Si desea trasladar o cambiar el nombre de un directorio, el *origen* debe ser la ruta de acceso y el nombre del directorio actual.|
+|@no__t 0Target >|Especifica la ruta de acceso y el nombre al que se van a trasladar los archivos. Si desea trasladar o cambiar el nombre de un directorio, el *destino* debe ser la ruta de acceso y el nombre del directorio deseado.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   El **/y** opción de línea de comandos podría estar preestablecido en apunta el vínculo. Puede invalidar esto con **/y** en la línea de comandos. El valor predeterminado es preguntar antes de sobrescribir los archivos a menos que el **copia** comando se ejecuta desde dentro de un script por lotes.
--   Mover archivos cifrados a un volumen que no es compatible con los resultados del sistema de archivos cifrados (EFS) en un error. Descifrar en primer lugar los archivos o mueva los archivos a un volumen que es compatible con EFS.
+-   La opción de línea de comandos **/y** podría estar preestablecida en la variable de entorno COPYCMD. Puede invalidarlo con **/-y** en la línea de comandos. El valor predeterminado es preguntar antes de sobrescribir los archivos a menos que el comando de **copia** se ejecute desde un script de batch.
+-   Si se mueven archivos cifrados a un volumen que no admite Sistema de cifrado de archivos (EFS), se produce un error. Descifre primero los archivos o mueva los archivos a un volumen que admita EFS.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para mover todos los archivos con la extensión .xls desde el directorio \Data directorio \Second_Q\Reports, escriba:
+Para trasladar todos los archivos con la extensión. xls del directorio \data al directorio \Second_Q\Reports, escriba:
 ```
 move \data\*.xls \second_q\reports\ 
 ```

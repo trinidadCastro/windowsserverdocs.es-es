@@ -1,7 +1,7 @@
 ---
-title: Windows Server 2008 debe estar configurado con al menos la cantidad mínima de memoria
-description: Proporciona instrucciones para resolver el problema notificado por esta regla de Best Practices Analyzer.
-ms.prod: windows-server-threshold
+title: Windows Server 2008 debe configurarse con al menos la cantidad mínima de memoria
+description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: b5065a3f-364d-4aa9-8703-eafa7a46b575
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 51cc459264a89f223be6d5ae76786005d49b8358
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 95c4fb72a3e17ebe60f3245854fb0fd340f7f6dc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830886"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393163"
 ---
-# <a name="windows-server-2008-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Server 2008 debe estar configurado con al menos la cantidad mínima de memoria
+# <a name="windows-server-2008-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Server 2008 debe configurarse con al menos la cantidad mínima de memoria
 
 >Se aplica a: Windows Server 2016
 
@@ -26,45 +26,45 @@ Para más información acerca de los análisis y los procedimientos recomendados
 |Property|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
-|**Característica del producto**|Hyper-V|  
+|**Producto o característica**|Hyper-V|  
 |**Gravedad**|Error|  
 |**Categoría**|Configuración|  
   
-En las secciones siguientes, la cursiva indica texto de la interfaz de usuario que aparece en la herramienta Best Practices Analyzer para resolver este problema.  
+En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.  
   
 ## <a name="issue"></a>Problema  
   
-*Una máquina virtual que ejecuta Windows Server 2008 se configura con menor que la cantidad mínima de RAM, que es de 512 MB.*  
+*Una máquina virtual que ejecuta Windows Server 2008 se configura con menos de la cantidad mínima de RAM, que es de 512 MB.*  
   
 ## <a name="impact"></a>Impacto  
   
-*El sistema operativo invitado en las siguientes máquinas virtuales podrían no ejecutarse o podría ejecutarse no confiable:*  
+*Es posible que el sistema operativo invitado de las siguientes máquinas virtuales no se ejecute o se ejecute de forma no confiable:*  
   
-\<lista de nombres de máquina virtual >
+@no__t: 0list de nombres de máquina virtual >
   
 ## <a name="resolution"></a>Resolución  
   
-*Use el Administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual al menos 512 MB.*  
+*Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual al menos 512 MB.*  
   
-### <a name="to-increase-the-memory-using-hyper-v-manager"></a>Para aumentar la memoria con el Administrador de Hyper-V  
+### <a name="to-increase-the-memory-using-hyper-v-manager"></a>Para aumentar la memoria mediante el administrador de Hyper-V  
   
 1.  Abre el Administrador Hyper-V. Haga clic en **Inicio**, seleccione **Herramientas administrativas** y, a continuación, haga clic en **Administrador de Hyper-V**.  
   
-2.  En el panel de resultados, bajo **máquinas virtuales**, seleccione la máquina virtual que desea configurar. El estado de la máquina virtual debe aparecer como **desactivar**. Si no es así, haga clic en la máquina virtual y, a continuación, haga clic en **apagar**.  
+2.  En el panel de resultados, en **virtual machines**, seleccione la máquina virtual que desea configurar. El estado de la máquina virtual debe aparecer como **desactivado**. Si no es así, haga clic con el botón secundario en la máquina virtual y, a continuación, haga clic en **apagar**.  
   
 3.  En el panel **Acción**, en el nombre de la máquina virtual, haga clic en **Configuración**.  
   
 4.  En el panel de navegación, haga clic en **memoria**.  
   
-5.  En el **memoria** , establezca el **RAM de inicio** para al menos 512 MB y, a continuación, haga clic en **Aceptar**.  
+5.  En la página **memoria** , establezca la **RAM de inicio** en al menos 512 MB y, a continuación, haga clic en **Aceptar**.  
   
-### <a name="increase-the-memory-using-windows-powershell"></a>Aumente la cantidad de memoria mediante Windows PowerShell  
+### <a name="increase-the-memory-using-windows-powershell"></a>Aumentar la memoria mediante Windows PowerShell  
   
-1.  Abra Windows PowerShell. (En el escritorio, haga clic en **iniciar** y comience a escribir **Windows PowerShell**.)  
+1.  Abra Windows PowerShell. (En el escritorio, haga clic en **Inicio** y comience a escribir **Windows PowerShell**).  
   
-2.  Haga clic en **Windows PowerShell** y haga clic en **ejecutar como administrador**.  
+2.  Haga clic con el botón derecho en **Windows PowerShell** y haga clic en **Ejecutar como administrador**.  
   
-3.  Ejecute este comando después de reemplazar \<MyVM > con el nombre de la máquina virtual:  
+3.  Ejecute este comando después de reemplazar \<MyVM > por el nombre de la máquina virtual:  
   
 ```  
 Set-VMMemory <MyVM> -StartupBytes 512MB  

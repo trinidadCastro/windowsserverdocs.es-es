@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin gethelpertokensid
-description: Tema de los comandos de Windows para **gethelpertokensid bitsadmin** -devuelve el SID del token de aplicación auxiliar de un trabajo de transferencia de BITS, si se ha establecido uno.
+title: bitsadmin gethelpertokensid
+description: 'Windows Commands topic for **bitsadmin gethelpertokensid** : devuelve el SID del token auxiliar de un trabajo de transferencia de bits, si se ha establecido uno.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,18 +12,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 1a956357b786c1d151f1363dacf78dbced137a2e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a8c2a9f319defd8ac9acd36063ee079c24ad8ae0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874666"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381592"
 ---
-# <a name="bitsadmin-gethelpertokensid"></a>Bitsadmin gethelpertokensid
+# <a name="bitsadmin-gethelpertokensid"></a>bitsadmin gethelpertokensid
 
-Devuelve el SID de un trabajo de transferencia de BITS [token auxiliar](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs), si se ha establecido uno.
+Devuelve el SID de un [token auxiliar](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)de un trabajo de transferencia de bits, si se ha establecido uno.
 
-**3.0 y versiones anteriores de BITS**: No compatible.
+**BITS 3,0 y versiones anteriores**: No compatible.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -35,7 +35,7 @@ bitsadmin /GetHelperTokensID <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
 #### <a name="additional-references"></a>Referencias adicionales
 

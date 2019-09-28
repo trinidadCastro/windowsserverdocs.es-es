@@ -1,8 +1,8 @@
 ---
-title: ksetup:changepassword
-description: 'Tema de los comandos de Windows para ***- '
+title: 'ksetup: ChangePassword'
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f629c6c7930777583df38f5af900ed380ec60f9c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 51be9e71c2b290e6346d23144543e0eec29f9d07
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878536"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375179"
 ---
-# <a name="ksetupchangepassword"></a>ksetup:changepassword
+# <a name="ksetupchangepassword"></a>ksetup: ChangePassword
 
 
 
-Usa el valor de contraseña (kpasswd) del centro de distribución de claves (KDC) para cambiar la contraseña del usuario que ha iniciado sesión. Para obtener ejemplos de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
+Usa el valor de la contraseña del Centro de distribución de claves (KDC) (Kpasswd) para cambiar la contraseña del usuario que ha iniciado sesión. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,32 +36,32 @@ ksetup /changepassword <OldPasswd> <NewPasswd>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<OldPasswd>|Indica la contraseña existente del usuario que ha iniciado sesión.|
-|\<NewPasswd>|Indica el inicio de sesión en la nueva contraseña del usuario.|
+|@no__t 0OldPasswd >|Indica la contraseña existente del usuario que ha iniciado sesión.|
+|@no__t 0NewPasswd >|Indica la nueva contraseña del usuario que ha iniciado sesión.|
 
 ## <a name="remarks"></a>Comentarios
 
-Este comando usa el valor de contraseña (kpasswd) de KDC para cambiar la contraseña del usuario que ha iniciado sesión. El kpasswd, si establece, se muestra en la salida mediante la ejecución de la **ksetup /dumpstate** comando.
+Este comando usa el valor de la contraseña de KDC (Kpasswd) para cambiar la contraseña del usuario que ha iniciado sesión. El Kpasswd, si se establece, se muestra en la salida ejecutando el comando **ksetup/dumpstate** .
 
-Nueva contraseña del usuario debe cumplir todos los requisitos de contraseña que se establecen en este equipo.
+La nueva contraseña del usuario debe cumplir todos los requisitos de contraseña que se establezcan en este equipo.
 
-Si no se encuentra la cuenta de usuario en el dominio actual, el sistema le pedirá que proporcione el nombre de dominio donde reside la cuenta de usuario.
+Si la cuenta de usuario no se encuentra en el dominio actual, el sistema le pedirá que proporcione el nombre de dominio en el que reside la cuenta de usuario.
 
-Si desea forzar un cambio de contraseña en próximo inicio de sesión, este comando permite el uso del asterisco (*), por lo que se pedirá al usuario una contraseña nueva.
+Si desea forzar un cambio de contraseña en el siguiente inicio de sesión, este comando permite el uso del asterisco (*), por lo que se solicitará al usuario una nueva contraseña.
 
-La salida del comando informa del estado de éxito o error.
+La salida del comando le informa del estado de éxito o de error.
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
 Cambiar la contraseña de un usuario que ha iniciado sesión actualmente en este equipo en este dominio:
 ```
 ksetup /changepassword Pas$w0rd Pa$$w0rd
 ```
-Cambiar la contraseña de un usuario que actualmente ha iniciado sesión en el dominio Contoso:
+Cambiar la contraseña de un usuario que ha iniciado sesión actualmente en el dominio contoso:
 ```
 ksetup /domain CONTOSO /changepassword Pas$w0rd Pa$$w0rd
 ```
-Hacer que el usuario ha iniciado sesión actualmente para cambiar la contraseña en el siguiente inicio de sesión:
+Forzar al usuario que ha iniciado sesión actualmente a cambiar la contraseña en el siguiente inicio de sesión:
 ```
 ksetup /changepassword Pas$w0rd *
 ```

@@ -1,8 +1,8 @@
 ---
 title: nslookup set retry
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 876d8332e778aa0b3049354a21fbe01adb883729
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 306bcc4f5e7ac98767c3c2e274100cf917874a8e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436651"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372857"
 ---
 # <a name="nslookup-set-retry"></a>nslookup set retry
 
@@ -34,10 +34,10 @@ set retry=<Number>
 |    Parámetro    |                                      Descripción                                       |
 |-----------------|----------------------------------------------------------------------------------------|
 |    <Number>     | Especifica el nuevo valor para el número de reintentos. El número predeterminado de reintentos es 4. |
-| {help &#124; ?} |                 Muestra un resumen breve de **nslookup** subcomandos.                  |
+| {ayuda &#124; ?} |                 Muestra un breve resumen de los subcomandos de **nslookup** .                  |
 
 ## <a name="remarks"></a>Comentarios
-- Cuando no se recibe una respuesta a una solicitud en un período de tiempo determinado, el período de tiempo de espera se duplica y se vuelve a enviar la solicitud. El valor de reintento controla cuántas veces se vuelve a enviar una solicitud antes de desistir. Puede cambiar el período de tiempo de espera con el **Establecer tiempo de espera** subcomando.
+- Cuando no se recibe una respuesta a una solicitud en un período de tiempo determinado, el tiempo de espera se duplica y se reenvía la solicitud. El valor de reintento controla el número de veces que se reenvía una solicitud antes de abandonarla. Puede cambiar el período de tiempo de espera con el subcomando **establecer tiempo de espera** .
   ## <a name="additional-references"></a>Referencias adicionales
   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-  [nslookup establece tiempo de espera](nslookup-set-timeout.md)
+  [nslookup establecer tiempo de espera](nslookup-set-timeout.md)

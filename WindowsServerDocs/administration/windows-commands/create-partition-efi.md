@@ -1,8 +1,8 @@
 ---
-title: Crear partición efi
-description: 'Tema de los comandos de Windows para ***- '
+title: crear partición EFI
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99970fba41a747a6bb4b1ca6cc4b7f603c547790
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 76d97129fd67345f23eee2fc7b300493a1632cc6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434161"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379008"
 ---
-# <a name="create-partition-efi"></a>Crear partición efi
+# <a name="create-partition-efi"></a>crear partición EFI
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-En Itanium\-los equipos basados en, se crea una interfaz de Firmware Extensible \(EFI\) partición del sistema en una tabla de particiones GUID \(gpt\) disco.  
+En los equipos Itanium @ no__t-0based, crea una partición del sistema Extensible Firmware Interface \(EFI @ no__t-2 en una tabla de particiones GUID \(gpt @ no__t-4 Disk.  
   
   
   
@@ -38,17 +38,17 @@ create partition efi [size=<n>] [offset=<n>] [noerr]
   
 |  Parámetro  |                                                                                             Descripción                                                                                              |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  size\=<n>  |                         El tamaño de la partición en megabytes \(MB\). Si no se especifica tamaño, la partición continuará mientras haya espacio libre en la región actual.                         |
-| offset\=<n> |             El desplazamiento en kilobytes \(KB\), que se crea la partición. Si se indica ningún desplazamiento, la partición se coloca en la primera zona del disco que sea lo suficientemente grande como para albergarla.              |
-|    noerr    | sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error. |
+|  Size @ no__t-0 @ no__t-1  |                         El tamaño de la partición en megabytes \(MB @ no__t-1. Si no se proporciona ningún tamaño, la partición continúa hasta que no haya más espacio libre en la región actual.                         |
+| offset @ no__t-0 @ no__t-1 |             Desplazamiento en kilobytes \(KB @ no__t-1, en el que se crea la partición. Si no se proporciona ningún desplazamiento, la partición se coloca en la primera extensión del disco que sea lo suficientemente grande como para almacenarla.              |
+|    Noerr    | Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
   
 ## <a name="remarks"></a>Comentarios  
   
--   Una vez creada la partición, ésta recibe el foco a la nueva partición.  
+-   Una vez creada la partición, se asigna el foco a la nueva partición.  
   
--   Debe seleccionarse un disco gpt para que esta operación se realice correctamente. Use la **seleccione disco** comando para seleccionar un disco y cambiar el foco a ella.  
+-   Se debe seleccionar un disco GPT para que esta operación se realice correctamente. Use el comando **Seleccionar disco** para seleccionar un disco y desplazar el foco a él.  
   
-## <a name="BKMK_examples"></a>Ejemplos  
+## <a name="BKMK_examples"></a>Example  
 Para crear una partición EFI de 1000 megabytes en el disco seleccionado, escriba:  
   
 ```  

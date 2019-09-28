@@ -1,8 +1,8 @@
 ---
 title: cd
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 53340612d26eaa7c4ae6fd977a0eac573f91881d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: ed0942232eb205a8198d4b3d366ca9482af1f4b3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434600"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379711"
 ---
 # <a name="cd"></a>cd
 
 
 
-Muestra el nombre de o cambia el directorio actual. Si se usa con solo una letra de unidad (por ejemplo, `cd C:`), **cd** muestra los nombres del directorio actual en la unidad especificada. Si se utiliza sin parámetros, **cd** muestra la unidad actual y el directorio.
+Muestra el nombre de o cambia el directorio actual. Si se usa solo con una letra de unidad (por ejemplo, `cd C:`), el **CD** muestra los nombres del directorio actual en la unidad especificada. Si se usa sin parámetros, el **CD** muestra la unidad y el directorio actuales.
 
 > [!NOTE]
-> Este comando es el mismo que el **chdir** comando.
+> Este comando es el mismo que el comando **chdir** .
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -44,17 +44,17 @@ chdir [..]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/d|Cambia la unidad actual, así como el directorio actual para una unidad.|
-|\<Drive>:|Especifica la unidad para mostrar o cambiar (si difiere de la unidad actual).|
-|\<Path>|Especifica la ruta de acceso al directorio que desea mostrar o cambiar.|
+|/d|Cambia la unidad actual y el directorio actual de una unidad.|
+|@no__t 0Drive >:|Especifica la unidad que se va a mostrar o cambiar (si es diferente de la unidad actual).|
+|@no__t 0Path >|Especifica la ruta de acceso al directorio que desea mostrar o cambiar.|
 |[..]|Especifica que desea cambiar a la carpeta principal.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-Si se habilitan las extensiones de comando, las condiciones siguientes se aplican a la **cd** comando:
-- La cadena de directorio actual se convierte para usar las mismas mayúsculas y minúsculas como los nombres en el disco. Por ejemplo, `cd C:\TEMP` establecería el directorio actual en C:\Temp si ese es el caso en el disco.
-- Espacios de no se tratan como delimitadores, por lo que *ruta* pueden contener espacios sin incluir las comillas. Por ejemplo:  
+Si se habilitan las extensiones de comandos, se aplican las siguientes condiciones al comando de **CD** :
+- La cadena de directorio actual se convierte para usar el mismo caso que los nombres del disco. Por ejemplo, `cd C:\TEMP` establecería el directorio actual en C:\Temp si ese es el caso en el disco.
+- Los espacios no se tratan como delimitadores, por lo que la *ruta de acceso* puede contener espacios sin comillas. Por ejemplo:  
   ```
   cd username\programs\start menu
   ```  
@@ -62,20 +62,20 @@ Si se habilitan las extensiones de comando, las condiciones siguientes se aplica
   ```
   cd "username\programs\start menu"
   ```  
-  Sin embargo, las comillas son necesarias, si las extensiones están deshabilitadas.
+  Sin embargo, las comillas son necesarias si las extensiones están deshabilitadas.
 
 Para deshabilitar las extensiones de comando, escriba:
 ```
 cmd /e:off
 ```
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 El directorio raíz es la parte superior de la jerarquía de directorios de una unidad. Para volver al directorio raíz, escriba:
 ```
 cd\
 ```
-Para cambiar el directorio predeterminado en una unidad que es diferente de la que se encuentra en, escriba:
+Para cambiar el directorio predeterminado en una unidad distinta de la que se encuentra en, escriba:
 ```
 cd [<Drive>:\[<Directory>]]
 ```

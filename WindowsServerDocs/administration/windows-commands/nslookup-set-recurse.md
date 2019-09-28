@@ -1,8 +1,8 @@
 ---
 title: nslookup set recurse
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de948d9e182cf6489c1869a5725bce8319484293
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 68a5dc26387ddeb6541cc1c85005cd9dab4b433a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436673"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372894"
 ---
 # <a name="nslookup-set-recurse"></a>nslookup set recurse
 
 
 
-Indica que el servidor de nombres del sistema de nombres de dominio (DNS) para consultar otros servidores si no tiene la información.
+Indica al servidor de nombres del sistema de nombres de dominio (DNS) que consulte a otros servidores si no tiene la información.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,9 +36,9 @@ set [no]recurse
 
 |   Parámetro   |                                                                  Descripción                                                                  |
 |---------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| **norecurse** |                Detiene el servidor de nombres del sistema de nombres de dominio (DNS) de la consulta si no tiene la información de otros servidores.                |
-|  **recurse**  | Indica que el servidor de nombres del sistema de nombres de dominio (DNS) para consultar otros servidores si no tiene la información. La sintaxis predeterminada es **recurse**. |
-|     {Ayuda     |                                                                      ?}                                                                       |
+| **repite** |                Detiene el servidor de nombres del sistema de nombres de dominio (DNS) para consultar otros servidores si no tiene la información.                |
+|  **recurse**  | Indica al servidor de nombres del sistema de nombres de dominio (DNS) que consulte a otros servidores si no tiene la información. La sintaxis predeterminada es **RECURSE**. |
+|     {ayuda     |                                                                      ?}                                                                       |
 
 #### <a name="additional-references"></a>Referencias adicionales
 

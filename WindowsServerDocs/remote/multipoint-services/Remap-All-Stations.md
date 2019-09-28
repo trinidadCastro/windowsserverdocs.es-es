@@ -1,8 +1,8 @@
 ---
 title: Reasignar todas las estaciones
-description: Obtenga información sobre cómo reasignar estaciones en MultiPoint Services
+description: Obtenga información sobre cómo reasignar estaciones en Multipoint Services
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,16 +13,16 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 13887fffb499697c7286cf09b558b6373e6403b5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 406431fc66012c7607b8b7e921bba6ca825d7aad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828386"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389483"
 ---
 # <a name="remap-all-stations"></a>Reasignar todas las estaciones
-Reasignar estaciones permite asociar teclados y mouse a monitores. Al reasignar todas las estaciones, la configuración original, como la información de nombre y el inicio de sesión automático, se borra. Todas las estaciones de usuario local se suspenden mientras se lleva a cabo la reasignación.  
+Reasignar estaciones permite asociar teclados y mouse a monitores. Al reasignar todas las estaciones, se borra la configuración original, como el nombre y la información de inicio de sesión automático. Todas las estaciones de usuario local se suspenden mientras se lleva a cabo la reasignación.  
   
-1.  Abra MultiPoint Manager en modo de estación y, a continuación, haga clic en el **inicio** ficha.  
+1.  Abra Multipoint Manager en modo de estación y, después, haga clic en la pestaña **Inicio** .  
 2.  En **Tareas**, haga clic en **Reasignar todas las estaciones**.  
 3. Siga las instrucciones de las pantallas de la estación para asociar los teclados a las estaciones en su sistema.

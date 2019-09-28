@@ -1,8 +1,8 @@
 ---
 title: list
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aacc93e1c7a16a7327ddbd17515f19cf41a5b458
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 91b42925fc822b10157bb488167d06fe82cfe1e3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825546"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374702"
 ---
 # <a name="list"></a>list
 
 
 
-Los escritores de listas, las instantáneas o proveedores de instantáneas actualmente registrados que se encuentran en el sistema. Si se utiliza sin parámetros, **lista** muestra la Ayuda en el símbolo del sistema.
+enumera escritores, instantáneas o proveedores de instantáneas registrados actualmente en el sistema. Si se usa sin parámetros, **List** muestra la ayuda en el símbolo del sistema.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -40,13 +40,13 @@ list providers
 
 |Parámetro|Descripción|
 |---------|-----------|
-|escritores|Enumera los escritores. Consulte [List writers](list-writers.md) para la sintaxis y los parámetros.|
-|shadows|Se enumeran las instantáneas no persistente de persistente y existente. Consulte [lista sombras](list-shadows.md) para la sintaxis y los parámetros.|
-|proveedores|Las listas de los proveedores de instantáneas registrados actualmente. Consulte [enumerar proveedores](list-providers.md) para la sintaxis y los parámetros.|
+|editores|Enumera escritores. Vea [lista de escritores](list-writers.md) para ver la sintaxis y los parámetros.|
+|Las|Muestra las instantáneas no persistentes persistentes y existentes. Vea [lista de sombras](list-shadows.md) para ver la sintaxis y los parámetros.|
+|Presta|Enumera los proveedores de instantáneas registrados actualmente. Consulte la [lista de proveedores](list-providers.md) para ver la sintaxis y los parámetros.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para obtener una lista de todas las instantáneas, escriba:
+Para enumerar todas las instantáneas, escriba:
 ```
 list shadows all
 ```

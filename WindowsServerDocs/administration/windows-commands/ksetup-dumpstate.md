@@ -1,8 +1,8 @@
 ---
-title: ksetup:dumpstate
-description: 'Tema de los comandos de Windows para ***- '
+title: 'ksetup: dumpstate'
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e5e8f20188fc27cc08dfd37c5fdbd811925f476
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 625d05b2fea9ae58681648c64e309aa8b2a201ed
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863126"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375002"
 ---
-# <a name="ksetupdumpstate"></a>ksetup:dumpstate
+# <a name="ksetupdumpstate"></a>ksetup: dumpstate
 
 
 
-Muestra el estado actual de la configuración del dominio para todos los territorios de que se definen en el equipo. Para obtener ejemplos de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
+Muestra el estado actual de la configuración de dominio Kerberos para todos los territorios definidos en el equipo. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -38,20 +38,20 @@ Ninguno
 
 ## <a name="remarks"></a>Comentarios
 
-El resultado de este comando incluye el dominio Kerberos predeterminado (el dominio que el equipo es un miembro de) y todos los territorios de la que se definen en este equipo. A continuación se incluyen para cada dominio de Kerberos:
--   Todas la clave centros de distribución (KDC) que están asociados con este dominio Kerberos
--   Todas la **conjunto territorio** marcas para este dominio
--   La contraseña KDC
+La salida de este comando incluye el dominio Kerberos predeterminado (el dominio del que el equipo es miembro) y todos los territorios definidos en este equipo. Se incluye lo siguiente para cada dominio Kerberos:
+-   Todos los centros de distribución de claves (KDC) asociados a este dominio Kerberos
+-   Todas las marcas de **dominio Kerberos establecidas** para este dominio Kerberos
+-   La contraseña del KDC
 
-Este comando no muestra el nombre de dominio que se especifica mediante la detección de DNS o el comando **/Domain ksetup**.
+Este comando no muestra el nombre de dominio especificado por la detección de DNS o por el comando **ksetup/Domain**.
 
-Este comando no muestra la contraseña de equipo que se establece mediante el comando **/setcomputerpassword ksetup**.
+Este comando no muestra la contraseña del equipo establecida mediante el comando **ksetup/setcomputerpassword**.
 
-**Ksetup** genera el mismo resultado que **/dumpstate ksetup**.
+**Ksetup** produce la misma salida que **ksetup/dumpstate**.
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-Encontrar la mayoría de las configuraciones de dominio Kerberos de Kerberos en un equipo:
+Busque la mayoría de las configuraciones de dominio Kerberos en un equipo:
 ```
 ksetup /dumpstate
 ```

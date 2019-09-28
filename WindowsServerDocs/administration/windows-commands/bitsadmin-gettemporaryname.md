@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin gettemporaryname
-description: Tema de los comandos de Windows para **gettemporaryname bitsadmin** -notifica el nombre de archivo temporal del archivo determinado dentro del trabajo.
+title: bitsadmin gettemporaryname
+description: Windows Commands topic for **bitsadmin gettemporaryname** -informa del nombre de archivo temporal del archivo especificado en el trabajo.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 762a2a5943202b38e94a245b74745e6631e0792d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7b665fae4c0bfdd5ea04b929be49f9590430b358
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876716"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381303"
 ---
-# <a name="bitsadmin-gettemporaryname"></a>Bitsadmin gettemporaryname
+# <a name="bitsadmin-gettemporaryname"></a>bitsadmin gettemporaryname
 
 
 
-Notifica el nombre de archivo temporal del archivo determinado dentro del trabajo.
+Notifica el nombre de archivo temporal del archivo especificado en el trabajo.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,12 +36,12 @@ bitsadmin /GetTemporaryName <Job> <file index>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
-|Índice de archivo|Comienza por 0|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
+|Índice de archivo|Comienza en 0|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-En el ejemplo siguiente se notifica el nombre de archivo temporal de archivo 2 del trabajo denominado *myJob*.
+En el ejemplo siguiente se notifica el nombre de archivo temporal del archivo 2 para el trabajo denominado *myJob*.
 ```
 C:\>bitsadmin /GetTemporaryName myJob 1 
 ```

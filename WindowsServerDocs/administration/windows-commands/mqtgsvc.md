@@ -1,8 +1,8 @@
 ---
 title: mqtgsvc
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c420c9d00ab71993fc35d0046fc905049e57b58f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c10a260470c6a97e521b04f5bef2844c1f3893a9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817186"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373478"
 ---
 # <a name="mqtgsvc"></a>mqtgsvc
 
 
 
-Supervisa una cola de mensajes entrantes y realiza una acción, en forma de un archivo ejecutable o un componente COM, cuando las reglas de un desencadenador se evalúan como true. Para obtener ejemplos de cómo se puede usar el servicio Desencadenadores de Message Queue Server, vea [desencadenadores de Message Queue Server](https://go.microsoft.com/fwlink/?LinkId=248725)en MSDN.
+Supervisa una cola en busca de mensajes entrantes y realiza una acción, en forma de un archivo ejecutable o un componente COM, cuando las reglas de un desencadenador se evalúan como true. Para obtener ejemplos de cómo se puede usar el servicio Desencadenadores de Message Queue Server, vea [desencadenadores de Message Queue Server](https://go.microsoft.com/fwlink/?LinkId=248725)en MSDN.
 
 ## <a name="syntax"></a>Sintaxis
 

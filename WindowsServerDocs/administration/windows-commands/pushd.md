@@ -1,8 +1,8 @@
 ---
 title: pushd
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 548f39921c1f6aa3837e6443e396922396eb84f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 634dd6dee471751cc62b6899a3963e02e8e783a2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887466"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371978"
 ---
 # <a name="pushd"></a>pushd
 
 
 
-Almacena el directorio actual para su uso por el **popd** comando y, a continuación, cambios en el directorio especificado.
+Almacena el directorio actual para que lo use el comando **popd** y, a continuación, cambia al directorio especificado.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,22 +38,22 @@ pushd [<Path>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<Path>|Especifica el directorio para que el directorio actual. Este comando admite rutas de acceso relativas.|
+|@no__t 0Path >|Especifica el directorio en el que se va a crear el directorio actual. Este comando admite rutas de acceso relativas.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Cada vez que usa el **pushd** comando, un único directorio se almacena para su uso. Sin embargo, puede almacenar varios directorios mediante la **pushd** comando varias veces.
+-   Cada vez que se usa el comando **Inserted** , se almacena un solo directorio para su uso. Sin embargo, puede almacenar varios directorios mediante el comando **Inserted** varias veces.
 
-    Los directorios se almacenan secuencialmente en una pila virtual. Si usas el **pushd** comando una vez que el directorio en el que se use el comando se coloca en la parte inferior de la pila. Si usa el comando de nuevo, el segundo directorio se coloca en la primera de ellas. El proceso se repite cada vez que usa el **pushd** comando.
+    Los directorios se almacenan secuencialmente en una pila virtual. Si usa el comando **insertado** una vez, el directorio en el que usa el comando se coloca en la parte inferior de la pila. Si vuelve a usar el comando, el segundo directorio se coloca en la parte superior de la primera. El proceso se repite cada vez que se usa el comando **Inserted** .
 
-    Puede usar el **popd** comando para cambiar el directorio actual en el directorio almacenado más recientemente por el **pushd** comando. Si usas el **popd** de comandos, se quita el directorio en la parte superior de la pila de la pila y se cambia el directorio actual a ese directorio. Si usas el **popd** comando nuevo, se quita el directorio siguiente en la pila.
--   Si se habilitan las extensiones de comando, el **pushd** comandos acepta una ruta de acceso de red o una ruta de acceso y una letra de unidad local.
--   Si especifica una ruta de acceso de red, el **pushd** comando temporalmente asigna la letra de unidad no utilizada más alta (comenzando por Z:) en el recurso de red especificado. A continuación, el comando cambia la unidad actual y el directorio en el directorio especificado en la unidad recién asignada. Si usas el **popd** comando con las extensiones de comando habilitadas, el **popd** comando quita la asignación de la letra de unidad creado por **pushd**.
+    Puede usar el comando **popd** para cambiar el directorio actual al directorio almacenado más recientemente por el comando **Inserted** . Si usa el comando **popd** , el directorio en la parte superior de la pila se quita de la pila y el directorio actual se cambia a ese directorio. Si vuelve a usar el comando **popd** , se quita el siguiente directorio de la pila.
+-   Si se habilitan las extensiones de comando, el comando **Inserted** acepta una ruta de acceso de red o una letra de unidad local y la ruta de acceso.
+-   Si especifica una ruta de acceso de red, el comando **Inserted** asigna temporalmente la letra de unidad no usada más alta (a partir de Z:) al recurso de red especificado. Después, el comando cambia la unidad y el directorio actuales al directorio especificado en la unidad recién asignada. Si usa el comando **popd** con las extensiones de comando habilitadas, el comando **popd** quita la asignación de la letra de unidad creada por la **extracción**.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente muestra cómo puede usar el **pushd** comando y el **popd** comando en un programa por lotes para cambiar el directorio actual de la que en el que se ejecutó el programa por lotes y, a continuación, cambiarla de nuevo:
+En el ejemplo siguiente se muestra cómo se puede usar el comando **Inserted** y el comando **popd** en un programa por lotes para cambiar el directorio actual de aquél en el que se ejecutó el programa de batch y, a continuación, cambiarlo de nuevo:
 ```
 @echo off
 rem This batch file deletes all .txt files in a specified directory

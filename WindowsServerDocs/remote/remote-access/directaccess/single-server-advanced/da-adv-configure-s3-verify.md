@@ -1,9 +1,9 @@
 ---
 title: Paso 3 comprobar la implementación de DirectAccess avanzada
-description: Este tema forma parte de la Guía de implementación de un único servidor de DirectAccess con avanzada configuración para Windows Server 2016
+description: Este tema forma parte de la guía implementar un único servidor de DirectAccess con configuración avanzada para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,26 +12,26 @@ ms.topic: article
 ms.assetid: ae8bbff0-c981-4bc6-8df1-861621d0627f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 386d10dda9f61724a012801840e6471e48c0905a
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 51ce3fa1a72420f7272141bb5361b20360b7000c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283539"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404908"
 ---
 # <a name="step-3-verify-the-advanced-directaccess-deployment"></a>Paso 3 comprobar la implementación de DirectAccess avanzada
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Este tema describe cómo comprobar que ha configurado correctamente la implementación de DirectAccess.  
+En este tema se describe cómo comprobar que ha configurado correctamente la implementación de DirectAccess.  
   
 ### <a name="to-verify-access-to-internal-resources-through-directaccess"></a>Para comprobar el acceso a recursos internos a través de DirectAccess  
   
-1.  Conectar un equipo cliente de DirectAccess a la red corporativa y obtener el objeto de directiva de grupo.  
+1.  Conecte un equipo cliente de DirectAccess a la red corporativa y obtenga el objeto de directiva de grupo.  
   
-2.  Haga clic en el **conexiones de red** icono en el área de notificación para tener acceso al administrador de medios de DirectAccess.  
+2.  Haga clic en el icono **conexiones de red** en el área de notificación para tener acceso al administrador de medios de DirectAccess.  
   
-3.  Haga clic en **conexión de DirectAccess**, y verá que el estado es **conectado localmente**.  
+3.  Haga clic en **conexión de DirectAccess**y verá que el estado es **conectado localmente**.  
   
 4.  Conecte el equipo cliente a la red externa e intente tener acceso a recursos internos.  
   
@@ -39,7 +39,7 @@ Este tema describe cómo comprobar que ha configurado correctamente la implement
   
 ## <a name="BKMK_Links"></a>Paso anterior  
   
--   [Paso 2: Configuración de servidores de DirectAccess](Step-2-Configuring-DirectAccess-Servers.md)  
+-   [Paso 2: Configuración de los servidores de DirectAccess @ no__t-0  
   
 
 

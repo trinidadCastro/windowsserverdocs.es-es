@@ -1,8 +1,8 @@
 ---
-title: proveedores de la lista
-description: 'Tema de los comandos de Windows para ***- '
+title: enumerar proveedores
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f94df982205d639f64dde2cfb014c851bac02b61
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ed2da9e5c38c13377e694f9e39a63a15b9f144b2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840646"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374745"
 ---
-# <a name="list-providers"></a>proveedores de la lista
+# <a name="list-providers"></a>enumerar proveedores
 
 
 
@@ -34,13 +34,13 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 list providers
 ```
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para enumerar los proveedores de instantáneas están registrados actualmente, escriba:
+Para enumerar los proveedores de instantáneas registrados actualmente, escriba:
 ```
 list providers
 ```
-Resultado que es similar a la muestra siguiente:
+El resultado es similar al que se muestra a continuación:
 ```
 * ProviderID: {b5946137-7b9f-4925-af80-51abd60b20d5}
         Type: [1] VSS_PROV_SYSTEM

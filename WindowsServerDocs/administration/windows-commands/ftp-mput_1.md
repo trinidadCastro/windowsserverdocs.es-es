@@ -1,8 +1,8 @@
 ---
-title: ftp mput_1
-description: 'Tema de los comandos de Windows para ***- '
+title: mput_1 FTP
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd19a97246aa6155182cb055deceb4b5a5019f6c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6308f7b47d58bc25d964944f96fbc83a26350962
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438582"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376208"
 ---
-# <a name="ftp-mput1"></a>ftp: mput_1
+# <a name="ftp-mput_1"></a>FTP: mput_1
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Tipo de transferencia de la copia de archivos local en el equipo remoto mediante el archivo actual.   
+Copia los archivos locales en el equipo remoto mediante el tipo de transferencia de archivos actual.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 mput <LocalFile>[ ]  
@@ -33,14 +33,14 @@ mput <LocalFile>[ ]
 
 |  Parámetro  |                       Descripción                        |
 |-------------|----------------------------------------------------------|
-| <LocalFile> | Especifica el archivo local para copiar en el equipo remoto. |
+| <LocalFile> | Especifica el archivo local que se copiará en el equipo remoto. |
 
-## <a name="BKMK_Examples"></a>Ejemplos  
-copia **Program1.exe** y **Program2.exe** al equipo remoto mediante el tipo de transferencia de archivos actual.  
+## <a name="BKMK_Examples"></a>Example  
+Copie **Program1. exe** y **Program2. exe** en el equipo remoto mediante el tipo de transferencia de archivos actual.  
 ```  
 mput Program1.exe Program2.exe  
 ```  
 ## <a name="additional-references"></a>Referencias adicionales  
--   [ftp: ascii](ftp-ascii.md)  
+-   [FTP: ASCII](ftp-ascii.md)  
 -   [FTP: binario](ftp-binary.md)  
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  

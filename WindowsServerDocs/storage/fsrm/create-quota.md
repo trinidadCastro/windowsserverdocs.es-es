@@ -2,18 +2,18 @@
 title: Crear una cuota
 description: En este artículo se describe cómo crear una cuota en base a una plantilla
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f3c677f5ebf7dda44f4b99a64d0fbf8d2c72b92e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6b199d8cc520021fcbbe32397997cc483f9c68cb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883196"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403141"
 ---
 # <a name="create-a-quota"></a>Crear una cuota
 
@@ -52,7 +52,7 @@ Cuando creas una cuota, elige una ruta de acceso de cuota, que es un volumen o c
 ## <a name="see-also"></a>Vea también
 
 -   [Administración de cuotas](quota-management.md)
--   [Crear un automáticamente una cuota de aplicación](create-auto-apply-quota.md)
+-   [Crear una cuota automática](create-auto-apply-quota.md)
 -   [Crear una plantilla de cuota](create-quota-template.md)
 
 

@@ -1,8 +1,8 @@
 ---
-title: mget de FTP
-description: 'Tema de los comandos de Windows para ***- '
+title: mget FTP
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e43bf8b6e7067a31b3ec51336b0b43845ab88f63
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 666025c92b6fb1a612cbe7b83833557a8a7d5017
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438603"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376300"
 ---
-# <a name="ftp-mget"></a>ftp: mget
+# <a name="ftp-mget"></a>FTP: mget
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Tipo de transferencia de la copia de archivos remoto en el equipo local mediante el archivo actual.   
+Copia los archivos remotos en el equipo local mediante el tipo de transferencia de archivos actual.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 mget <remoteFile>[ ]  
@@ -33,14 +33,14 @@ mget <remoteFile>[ ]
 
 |  Parámetro   |                        Descripción                        |
 |--------------|-----------------------------------------------------------|
-| <remoteFile> | Especifica los archivos remotos que se copie en el equipo local. |
+| <remoteFile> | Especifica los archivos remotos que se van a copiar en el equipo local. |
 
-## <a name="BKMK_Examples"></a>Ejemplos  
-Copie los archivos remotos **a.exe** y **b.exe** en el equipo local utilizando el tipo de transferencia de archivos actual.  
+## <a name="BKMK_Examples"></a>Example  
+Copie los archivos remotos a **. exe** y **b. exe** en el equipo local con el tipo de transferencia de archivos actual.  
 ```  
 mget a.exe b.exe  
 ```  
 ## <a name="additional-references"></a>Referencias adicionales  
--   [ftp: ascii](ftp-ascii.md)  
+-   [FTP: ASCII](ftp-ascii.md)  
 -   [FTP: binario](ftp-binary.md)  
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  

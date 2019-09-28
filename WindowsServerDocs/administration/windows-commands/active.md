@@ -1,8 +1,8 @@
 ---
 title: active
-description: Tema de los comandos de Windows para **active** - en discos básicos, marca la partición con el foco como activa.
+description: En el tema comandos de Windows para los discos básicos de **activos** , se marca la partición que tiene el foco como activa.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3a039e0200fb84d446739ac7017556b6c302f4af
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c926bf9b7a583cf7eaa23166e09e6f0a1599e625
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868766"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382847"
 ---
 # <a name="active"></a>active
 
 
 
-En discos básicos, marca la partición tiene el foco como activa.
+En los discos básicos, marca la partición que tiene el foco como activa.
 
 > [!CAUTION]
-> DiskPart sólo comprueba que la partición es capaz de contener los archivos de inicio del sistema operativo. DiskPart no comprueba el contenido de la partición. Si se marca una partición como activa por error y no contiene los archivos de inicio del sistema operativo, el equipo podría no iniciarse.
+> DiskPart solo comprueba que la partición sea capaz de contener los archivos de inicio del sistema operativo. DiskPart no comprueba el contenido de la partición. Si marca una partición como activa erróneamente y no contiene los archivos de inicio del sistema operativo, es posible que el equipo no se inicie.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,13 +37,13 @@ active
 
 ## <a name="remarks"></a>Comentarios
 
--   Esto se informa al sistema básico de entrada/salida (BIOS) o Extensible Firmware Interface (EFI) de que la partición o volumen es una partición de sistema válido o el volumen del sistema.
--   Solo las particiones se pueden marcar como activas.
--   Debe seleccionarse una partición para que esta operación se realice correctamente. Use la **seleccione partición** comando para seleccionar una partición y desplace el foco a ella.
+-   Esto informa al sistema básico de entrada y salida (BIOS) o Extensible Firmware Interface (EFI) de que la partición o el volumen es una partición del sistema o un volumen del sistema válidos.
+-   Solo se pueden marcar como activas las particiones.
+-   Se debe seleccionar una partición para que esta operación se realice correctamente. Use el comando **seleccionar partición** para seleccionar una partición y desplazar el foco a ella.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para marcar la partición tiene el foco como la partición activa, escriba:
+Para marcar la partición que tiene el foco como la partición activa, escriba:
 ```
 active
 ```

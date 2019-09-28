@@ -1,6 +1,6 @@
 ---
 title: 'Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 1; configurar AD FS'
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
 manager: klaasl
@@ -8,31 +8,31 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 10/18/2018
 ms.assetid: 938cdda2-f17e-4964-9218-f5868fd96735
-ms.openlocfilehash: 4f4119e893b215bd9f6d713bc5a17218b751c3d3
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 0920d091d6e8b5f3db9bf945a966fdd577918179
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812685"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365789"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 1, configurar AD FS
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>Implementar carpetas de trabajo con AD FS y proxy de aplicación web: Paso 1: configuración AD FS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
 En este tema se describe el primer paso para implementar Carpetas de trabajo con los Servicios de federación de Active Directory (AD FS) y el Proxy de aplicación web. Puedes encontrar el resto de pasos de este proceso en estos temas:  
   
--   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Información general](deploy-work-folders-adfs-overview.md)  
+-   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Información general @ no__t-0  
   
--   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 2, trabajo posterior a la configuración de AD FS](deploy-work-folders-adfs-step2.md)  
+-   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 2: AD FS trabajo posterior a la configuración @ no__t-0  
   
--   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 3, configurar carpetas de trabajo](deploy-work-folders-adfs-step3.md)  
+-   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 3: configurar carpetas de trabajo @ no__t-0  
   
--   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 4: configurar el Proxy de aplicación Web](deploy-work-folders-adfs-step4.md)  
+-   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 4: configurar el proxy de aplicación web @ no__t-0  
   
--   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: El paso 5, configure los clientes](deploy-work-folders-adfs-step5.md)  
+-   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 5: configuración de los clientes @ no__t-0  
   
 > [!NOTE]
->   Las instrucciones descritas en esta sección son para un entorno de Windows Server 2019 o Windows Server 2016. Si estás usando Windows Server 2012 R2, lee el artículo en el que se detallan las [instrucciones para Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+>   Las instrucciones que se describen en esta sección son para un entorno de Windows Server 2019 o Windows Server 2016. Si estás usando Windows Server 2012 R2, lee el artículo en el que se detallan las [instrucciones para Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
 
 Para configurar AD FS y poder usarlo con Carpetas de trabajo, emplea los siguientes procedimientos.  
   
@@ -104,7 +104,7 @@ En el ejemplo de prueba, los valores son:
 El valor SAN enterpriseregistration es necesario para Workplace Join.  
   
 ### <a name="set-the-server-ip-address"></a>Establecer la dirección IP del servidor  
-Cambia la dirección IP del servidor a una dirección IP estática. Por ejemplo, prueba, utilice la clase IP A, que es 192.168.0.160 / máscara de subred: 255.255.0.0 / puerta de enlace predeterminada: 192.168.0.1 / preferido DNS: 192.168.0.150 (la dirección IP del controlador de dominio\).  
+Cambia la dirección IP del servidor a una dirección IP estática. En el ejemplo de prueba, use la clase IP A, que es 192.168.0.160/máscara de subred: 255.255.0.0/puerta de enlace predeterminada: 192.168.0.1/DNS preferido: 192.168.0.150 (la dirección IP del controlador de dominio @ no__t-0.  
   
 ## <a name="install-the-ad-fs-role-service"></a>Instalar el servicio de rol de AD FS  
 Sigue estos pasos para instalar AD FS:  
@@ -182,9 +182,9 @@ $thumbprint = $cert.Thumbprint
 Install-ADFSFarm -CertificateThumbprint $thumbprint -FederationServiceDisplayName "Contoso Corporation" –FederationServiceName blueadfs.contoso.com -GroupServiceAccountIdentifier contoso\ADFSService$ -OverwriteConfiguration -ErrorAction Stop  
 ```  
   
-Paso siguiente: [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 2, trabajo posterior a la configuración de AD FS](deploy-work-folders-adfs-step2.md)  
+Paso siguiente: @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 2: AD FS trabajo posterior a la configuración @ no__t-0  
   
 ## <a name="see-also"></a>Vea también  
-[Introducción a las carpetas de trabajo](Work-Folders-Overview.md)  
+[Introducción a carpetas de trabajo](Work-Folders-Overview.md)  
   
 

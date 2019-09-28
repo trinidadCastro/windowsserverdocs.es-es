@@ -1,32 +1,32 @@
 ---
-title: Afinidad de clúster
-ms.prod: windows-server-threshold
+title: Afinidad de clústeres
+ms.prod: windows-server
 ms.manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.date: 03/07/2019
-description: En este artículo se describe los niveles de afinidad y antiAffinity del clúster de conmutación por error
-ms.openlocfilehash: 67929e6d3399633ebfec0b908463131973aecaf7
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+description: En este artículo se describen los niveles de afinidad y antiafinidad de clústeres de conmutación por error
+ms.openlocfilehash: 9a269d2b14e953daee849008a473c750dfbfe84b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453028"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361457"
 ---
-# <a name="cluster-affinity"></a>Afinidad de clúster
+# <a name="cluster-affinity"></a>Afinidad de clústeres
 
-> Se aplica a: Windows Server 2019, Windows Server 2016
+> Se aplica a: Windows Server 2019 y Windows Server 2016
 
-Un clúster de conmutación por error puede contener numerosas funciones que pueden transferirse entre los nodos y ejecutar.  Hay veces cuando no deben ejecutar determinados roles (es decir, las máquinas virtuales, grupos de recursos, etcetera) en el mismo nodo.  Esto podría ser debido a consumo de recursos, el uso de memoria, etcetera.  Por ejemplo, hay dos máquinas virtuales que están en memoria y CPU considerable y si las dos máquinas virtuales se ejecutan en el mismo nodo, una o ambas de las máquinas virtuales podrían tener problemas de rendimiento de impacto.  Este artículo explicará clúster antiaffinity niveles y cómo usarlos.
+Un clúster de conmutación por error puede contener numerosos roles que pueden moverse entre nodos y ejecutarse.  Hay ocasiones en que determinados roles (es decir, máquinas virtuales, grupos de recursos, etc.) no deben ejecutarse en el mismo nodo.  Esto puede deberse al consumo de recursos, al uso de memoria, etc.  Por ejemplo, hay dos máquinas virtuales con un uso intensivo de memoria y CPU, y si las dos máquinas virtuales se ejecutan en el mismo nodo, una de las máquinas virtuales, o ambas, podrían tener problemas de impacto en el rendimiento.  En este artículo se explican los niveles de antiafinidad de clústeres y cómo puede usarlos.
 
-## <a name="what-is-affinity-and-antiaffinity"></a>¿Qué es la afinidad y AntiAffinity?
+## <a name="what-is-affinity-and-antiaffinity"></a>¿Qué es la afinidad y la antiafinidad?
 
-La afinidad es para configurar una regla que establece una relación entre dos o más roles (i, e, las máquinas virtuales, grupos de recursos, etcetera) para mantenerlos juntos.  AntiAffinity es el mismo, pero se usa para probar y mantener los roles especificados además entre sí.  Clústeres de conmutación por error use AntiAffinity para sus roles.  Más concretamente, el [AntiAffinityClassNames](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames) parámetro definido en los roles, por lo que no se ejecutan en el mismo nodo.  
+La afinidad es una regla que se debe configurar y que establece una relación entre dos o más roles (i, e, máquinas virtuales, grupos de recursos, etc.) para mantenerlos juntos.  La antiafinidad es la misma, pero se utiliza para intentar mantener los roles especificados entre sí.  Los clústeres de conmutación por error usan la antiafinidad para sus roles.  Más concretamente, el parámetro [AntiAffinityClassNames](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames) definido en los roles para que no se ejecuten en el mismo nodo.  
 
 ## <a name="antiaffinityclassnames"></a>AntiAffinityClassnames
 
-Al examinar las propiedades de un grupo, hay el parámetro AntiAffinityClassNames y está en blanco de forma predeterminada.  En los ejemplos siguientes, deben estar separados Group1 y Group2 se ejecuten en el mismo nodo.  Para ver la propiedad, sería el comando de PowerShell y el resultado:
+Al examinar las propiedades de un grupo, existe el parámetro AntiAffinityClassNames y está en blanco como valor predeterminado.  En los ejemplos siguientes, Grupo1 y grupo2 deben estar separados de ejecutarse en el mismo nodo.  Para ver la propiedad, el comando de PowerShell y el resultado serían:
 
     PS> Get-ClusterGroup Group1 | fl AntiAffinityClassNames
     AntiAffinityClassNames : {}
@@ -34,7 +34,7 @@ Al examinar las propiedades de un grupo, hay el parámetro AntiAffinityClassName
     PS> Get-ClusterGroup Group2 | fl AntiAffinityClassNames
     AntiAffinityClassNames : {}
 
-Puesto que AntiAffinityClassNames no se definen de forma predeterminada, estos pueden roles separados o ejecución juntos.  El objetivo es mantener puedan separarse.  El valor de AntiAffinityClassNames puede ser lo que quiera que sean, solo tienen que ser el mismo.  Supongamos que Group1 y Group2 son controladores de dominio que se ejecutan en máquinas virtuales y podrían mejorarse que se ejecutan en distintos nodos.  Dado que son controladores de dominio, usaré el controlador de dominio para el nombre de clase.  Para establecer el valor, el comando de PowerShell y los resultados serían:
+Dado que AntiAffinityClassNames no se define como valor predeterminado, estos roles se pueden ejecutar juntos o separar.  El objetivo es mantenerlos separados.  El valor de AntiAffinityClassNames puede ser el que desee que sea, solo tiene que ser el mismo.  Suponga que Grupo1 y grupo2 son controladores de dominio que se ejecutan en máquinas virtuales y que se ejecutarán mejor en nodos diferentes.  Puesto que son controladores de dominio, usaremos DC como nombre de clase.  Para establecer el valor, el comando de PowerShell y los resultados serían:
 
     PS> $AntiAffinity = New-Object System.Collections.Specialized.StringCollection
     PS> $AntiAffinity.Add("DC")
@@ -47,31 +47,31 @@ Puesto que AntiAffinityClassNames no se definen de forma predeterminada, estos p
     PS> Get-ClusterGroup "Group2" | fl AntiAffinityClassNames
     AntiAffinityClassNames : {DC}
 
-Ahora que están establecidos, agrupación en clústeres de conmutación por error intentará mantenerlas separadas.  
+Ahora que están configurados, los clústeres de conmutación por error intentarán mantenerlos separados.  
 
-El parámetro AntiAffinityClassName es un bloque "soft".  Es decir, intentará mantenerlas separadas, pero si no es posible, permitirá aún que se ejecuten en el mismo nodo.  Por ejemplo, los grupos se ejecutan en un clúster de conmutación por error de dos nodos.  Si necesita un nodo deje de funcionar por mantenimiento, significaría que ambos grupos sería en marcha en el mismo nodo.  En este caso, sería correcto tener esto.  No puede ser más adecuado, pero ambas máquinas virtial le sigue ejecutando dentro de los intervalos de un rendimiento aceptable.
+El parámetro establecer antiaffinityclassname es un bloque "soft".  Es decir, tratará de mantenerlos separados, pero si no es posible, seguirá pudiendo ejecutarse en el mismo nodo.  Por ejemplo, los grupos se ejecutan en un clúster de conmutación por error de dos nodos.  Si un nodo necesita dejar de funcionar para el mantenimiento, significaría que ambos grupos estarán funcionando en el mismo nodo.  En este caso, sería correcto tener esto.  Puede que no sea la más idónea, pero ambas máquinas virtial seguirán ejecutándose dentro de intervalos de rendimiento aceptables.
 
 ## <a name="i-need-more"></a>Necesito más
 
-Como se mencionó, AntiAffinityClassNames es un bloqueo suave.  Pero ¿qué ocurre si se necesita un bloque de disco duro?  Las máquinas virtuales no se puede ejecutar en él mismo nodo; en caso contrario, el impacto de rendimiento se producirse y hacer que algunos servicios posiblemente deje de funcionar.
+Como se mencionó, AntiAffinityClassNames es un bloque blando.  Pero, ¿qué ocurre si se necesita un bloque duro?  Las máquinas virtuales no se pueden ejecutar en el mismo nodo; de lo contrario, se producirá un impacto en el rendimiento y algunos servicios probablemente dejarán de funcionar.
 
-Para esos casos, hay una propiedad de clúster adicional de ClusterEnforcedAntiAffinity.  Este nivel antiaffinity impedirá a toda costa cualquiera de los mismos valores AntiAffinityClassNames que se ejecutan en el mismo nodo.
+En esos casos, hay una propiedad de clúster adicional de ClusterEnforcedAntiAffinity.  Este nivel de antiafinidad impedirá que se ejecuten cualquiera de los mismos valores de AntiAffinityClassNames en el mismo nodo.
 
-Para ver la propiedad y valor, sería el comando de PowerShell (y el resultado):
+Para ver la propiedad y el valor, el comando de PowerShell (y el resultado) sería:
 
     PS> Get-Cluster | fl ClusterEnforcedAntiAffinity
     ClusterEnforcedAntiAffinity : 0
 
-El valor de "0" significa que está deshabilitado y no para su cumplimiento.  El valor de "1" le permite y es el bloque de disco duro.  Para habilitar este bloque de disco duro, el comando (y el resultado) son:
+El valor de "0" significa que está deshabilitado y no se aplicará.  El valor de "1" lo habilita y es el bloque duro.  Para habilitar este bloque duro, el comando (y el resultado) es:
 
     PS> (Get-Cluster).ClusterEnforcedAntiAffinity = 1
     ClusterEnforcedAntiAffinity : 1
 
-Cuando se establecen ambos, el grupo se impedirá juntos entran en línea.  Si están en el mismo nodo, esto es lo que vería en el Administrador de clústeres de conmutación por error.
+Cuando se establezcan ambos, se impedirá que el grupo se ponga en línea juntos.  Si están en el mismo nodo, esto es lo que se verá en Administrador de clústeres de conmutación por error.
 
-![Afinidad de clúster](media/Cluster-Affinity/Cluster-Affinity-1.png)
+![Afinidad de clústeres](media/Cluster-Affinity/Cluster-Affinity-1.png)
 
-En una lista de PowerShell de los grupos, vería esto:
+En una lista de PowerShell de los grupos, verá lo siguiente:
 
     PS> Get-ClusterGroup
 
@@ -82,11 +82,11 @@ En una lista de PowerShell de los grupos, vería esto:
 
 ## <a name="additional-comments"></a>Comentarios adicionales
 
-- Asegúrese de que usa el valor AntiAffinity adecuado según las necesidades.
-- Tenga en cuenta que en un escenario de dos nodos y ClusterEnforcedAntiAffinity, si un nodo está inactivo, ambos grupos no se ejecutará.  
+- Asegúrese de que está usando la configuración de antiafinidad adecuada en función de las necesidades.
+- Tenga en cuenta que en un escenario de dos nodos y ClusterEnforcedAntiAffinity, si un nodo está inactivo, no se ejecutarán ambos grupos.  
 
-- El uso de propietarios preferidos en grupos se puede combinar con AntiAffinity en un clúster de tres o más nodos.
-- La configuración de AntiAffinityClassNames y ClusterEnforcedAntiAffinity sólo llevará a cabo después de un reciclaje de los recursos. I.E. puede establecer, pero si ambos grupos están en línea en el mismo nodo cuando se establece, ambos seguirán permanezcan en línea.
+- El uso de los propietarios preferidos en los grupos se puede combinar con la antiafinidad en un clúster de tres o más nodos.
+- La configuración de AntiAffinityClassNames y ClusterEnforcedAntiAffinity solo tendrá lugar después de un reciclaje de los recursos. ES DECIR,. puede establecerlos, pero si ambos grupos están en línea en el mismo nodo cuando se establecen, seguirán estando en línea.
 
 
 

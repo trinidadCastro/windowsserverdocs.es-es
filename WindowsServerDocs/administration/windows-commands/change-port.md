@@ -1,8 +1,8 @@
 ---
 title: change port
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ced5b9f0198179ab8b388f56aaea848b7a966081
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0e587572acd1af1cc7dbd2550e1eae5244d0d1dd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434504"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379596"
 ---
 # <a name="change-port"></a>change port
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Muestra o cambia las asignaciones de puerto COM para que sean compatibles con las aplicaciones MS-DOS.
-Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_examples).
+enumera o cambia las asignaciones de puertos COM para que sean compatibles con las aplicaciones de MS-DOS.
+Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para descubrir las novedades de la versión más reciente, consulte [novedades nuevos servicios de escritorio remoto en Windows Server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
+> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
 > ## <a name="syntax"></a>Sintaxis
 > ```
 > change port [<PortX>=<PortY> | /d <PortX> | /query]
@@ -36,24 +36,24 @@ Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_exam
 > 
 > |    Parámetro    |              Descripción               |
 > |-----------------|----------------------------------------|
-> | <PortX>=<PortY> |    Asigna COM <*puertox*> a <*puertoy*>.    |
-> |   /d <PortX>    | elimina la asignación para COM <*puertox*>. |
-> |     /query      |  Muestra las asignaciones de puerto actual.   |
+> | <PortX>=<PortY> |    Asigna*COM < no*está > para < > de*portabilidad*.    |
+> |   /d <PortX>    | elimina la asignación para*COM < >* . |
+> |     /Query      |  Muestra las asignaciones de puerto actuales.   |
 > |       /?        |  Muestra la ayuda en el símbolo del sistema.  |
 > 
 > ## <a name="remarks"></a>Comentarios
-> - Admite la mayoría de las aplicaciones de MS-DOS solo COM1 a puertos serie COM4. El **cambiar puerto** comando asigna un puerto serie en un número de puerto diferente, lo que permite a las aplicaciones que no admiten la numeración alta COM puertos de acceso al puerto serie. la reasignación sólo funciona para la sesión actual y no se conservará si cierra la sesión desde una sesión y, a continuación, vuelva a iniciar sesión.
-> - Use **cambiar puerto** sin ningún parámetro para mostrar los puertos COM disponibles y sus asignaciones actuales.
->   ## <a name="BKMK_examples"></a>Ejemplos
-> - Para asignar COM12 COM1 para su uso por una aplicación basada en MS-DOS, escriba:
+> - La mayoría de las aplicaciones de MS-DOS solo admiten puertos serie de COM1 a COM4. El comando **cambiar puerto** asigna un puerto serie a un número de puerto diferente, lo que permite que las aplicaciones que no admiten puertos com de número alto tengan acceso al puerto serie. la reasignación solo funciona para la sesión actual y no se conserva si cierra sesión en una sesión y vuelve a iniciarla.
+> - Use **cambiar puerto** sin parámetros para mostrar los puertos com disponibles y sus asignaciones actuales.
+>   ## <a name="BKMK_examples"></a>Example
+> - Para asignar COM12 a COM1 para su uso por parte de una aplicación basada en MS-dos, escriba:
 >   ```
 >   change port com12=com1
 >   ```
-> - Para mostrar las asignaciones de puerto actual, escriba:
+> - Para mostrar las asignaciones de puertos actuales, escriba:
 >   ```
 >   change port /query
 >   ```
 >   #### <a name="additional-references"></a>Referencias adicionales
 >   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 >   [cambiar](change.md)
->   [servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia de comandos](remote-desktop-services-terminal-services-command-reference.md)
+>   [servicios de escritorio remoto &#40;referencia de comandos&#41; Terminal Services](remote-desktop-services-terminal-services-command-reference.md)

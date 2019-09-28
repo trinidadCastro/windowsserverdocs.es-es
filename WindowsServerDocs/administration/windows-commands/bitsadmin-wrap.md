@@ -1,8 +1,8 @@
 ---
 title: bitsadmin wrap
-description: Tema de los comandos de Windows para **bitsadmin encapsulado** -ajusta cualquier línea de texto de salida extender más allá del borde más a la derecha de la ventana de comandos a la línea siguiente.
+description: El tema comandos de Windows para **bitsadmin ajusta** -ajusta cualquier línea de texto de salida que se extienda más allá del borde derecho de la ventana de comandos a la línea siguiente.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4834a8a17c72394b6ee8f051ec76919af9880124
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5609fb6f38716795a545e0c7fe3939f893a8c8d5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881676"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380684"
 ---
 # <a name="bitsadmin-wrap"></a>bitsadmin wrap
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Ajusta para que quepa en una ventana de comandos de salida.
+Ajusta la salida para que quepa en una ventana de comandos.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,15 +36,15 @@ bitsadmin /Wrap Job
 
 |Parámetro|Descripción|
 |-------|--------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
 ## <a name="remarks"></a>Comentarios
 
-Especifique antes de otros modificadores. De forma predeterminada, todos los modificadores, excepto el [bitsadmin monitor](bitsadmin-monitor.md) modificador, ajustar el resultado.
+Especifique antes que otros modificadores. De forma predeterminada, todos los modificadores, excepto el modificador de la [monitor bitsadmin](bitsadmin-monitor.md) , encapsulan la salida.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-En el ejemplo siguiente se recupera información del trabajo denominado *myDownloadJob* y ajusta la salida.
+En el ejemplo siguiente se recupera información del trabajo denominado *myDownloadJob* y se incluye la salida.
 
 ```
 C:\>bitsadmin /Wrap /Info myDownloadJob /verbose

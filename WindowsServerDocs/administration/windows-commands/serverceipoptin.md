@@ -1,8 +1,8 @@
 ---
 title: serverceipoptin
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fca2497af308faf298e1df03d8b07c68bf9e8b98
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f400a8f66f15e5a138cf355ad54d276cfa7f3ce3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840566"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371011"
 ---
 # <a name="serverceipoptin"></a>serverceipoptin
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Le permite participar en el programa para la mejora de la experiencia del usuario (CEIP).
+Permite participar en el Programa para la mejora de la experiencia del usuario (CEIP).
 ## <a name="syntax"></a>Sintaxis
 ```
 serverceipoptin [/query] [/enable] [/disable]
@@ -32,11 +32,11 @@ serverceipoptin [/query] [/enable] [/disable]
 ### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-|/query|comprueba la configuración actual.|
-|/enable|Habilita la participación.|
+|/Query|comprueba la configuración actual.|
+|/Enable|Habilita la participación.|
 |/Disable|Deshabilita la participación.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 Para comprobar la configuración actual, escriba:
 ```
 serverceipoptin /query

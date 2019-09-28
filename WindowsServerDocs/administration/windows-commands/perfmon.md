@@ -1,8 +1,8 @@
 ---
 title: perfmon
-description: 'Tema de los comandos de Windows para el Monitor de rendimiento '
+description: 'Temas de comandos de Windows para Perfmon '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/25/2018
-ms.openlocfilehash: 000ed11a0eaae36d158ae7a9f044871d4b18aacc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 52503952f2212f7de00d8e7677925b0123f0bbef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814586"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372329"
 ---
 # <a name="perfmon"></a>perfmon
 
-Iniciar el Monitor de rendimiento y confiabilidad de Windows en el modo independiente específico.
+Inicie el monitor de confiabilidad y rendimiento de Windows en un modo independiente específico.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,10 +34,10 @@ perfmon </res|report|rel|sys>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/res|Iniciar vista de recursos.|
-|/ Report|Inicie el conjunto de recopiladores de sistema de diagnóstico de datos y mostrar un informe de los resultados.|
-|/rel|Inicie el Monitor de confiabilidad.|
-|/sys|Inicie el Monitor de rendimiento.|
+|/res|Inicie Vista de recursos.|
+|/Report|Inicie el conjunto de recopiladores de datos de diagnóstico del sistema y muestre un informe de los resultados.|
+|/rel|Inicie el monitor de confiabilidad.|
+|/sys|Inicie el monitor de rendimiento.|
 
 #### <a name="additional-references"></a>Referencias adicionales
 

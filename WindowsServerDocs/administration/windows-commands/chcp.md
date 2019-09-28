@@ -1,8 +1,8 @@
 ---
 title: chcp
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 622d4b64128c7e39cc761e4f5e9d69cf54383760
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d5784b052ff1d7084d68cca0589caf518b8e44a8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819206"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379529"
 ---
 # <a name="chcp"></a>chcp
 
 
 
-Cambia la página de códigos de la consola activa. Si se utiliza sin parámetros, **chcp** muestra el número de la página de códigos de la consola activa.
+Cambia la página de códigos de la consola activa. Si se usa sin parámetros, **chcp** muestra el número de la página de códigos de la consola activa.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,35 +38,35 @@ chcp [<NNN>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<NNN>|Especifica la página de códigos.|
+|@NO__T 0NNN >|Especifica la página de códigos.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-En la tabla siguiente se enumera cada admitidos en el código página y su país o región o idioma:
+En la tabla siguiente se enumeran todas las páginas de códigos admitidas y su país o región o idioma:
 
-|Página de códigos|País o región o lenguaje|
+|Página de códigos|País o región o idioma|
 |---------|--------------------------|
 |437|Estados Unidos|
 |850|Multilingüe (Latín I)|
-|852|Eslavo (Latín II)|
-|855|Cirílico (ruso)|
+|852|Eslava (Latín II)|
+|855|Cirílico (Ruso)|
 |857|Turco|
 |860|Portugués|
 |861|Islandés|
-|863|Y el francés canadiense|
-|865|Nordic|
+|863|Canadá (Francés)|
+|865|Guantes|
 |866|Ruso|
 |869|Griego moderno|
 |936|Chino|
 
 ## <a name="remarks"></a>Comentarios
 
--   Sólo la página de códigos de fabricante de equipos originales (OEM) que se instala con Windows aparece correctamente en una ventana del símbolo del sistema que utiliza fuentes Raster. Otras páginas de códigos aparecen correctamente en modo de pantalla completa o en las ventanas de símbolo del sistema que utilizan fuentes TrueType.
+-   Solo la página de códigos del fabricante de equipos originales (OEM) que se instala con Windows aparece correctamente en una ventana del símbolo del sistema que usa fuentes de tramas. Otras páginas de códigos aparecen correctamente en el modo de pantalla completa o en las ventanas del símbolo del sistema que usan fuentes TrueType.
 -   No es necesario preparar las páginas de códigos (como en MS-DOS).
--   Programas que se inicien después de asignan una nueva página de códigos utilizarán la nueva página de códigos. Sin embargo, programas (excepto Cmd.exe) que ha iniciado antes de asignan la página de código nuevo use la página de códigos original.
+-   Los programas que se inician después de asignar una nueva página de códigos usan la nueva página de códigos. Sin embargo, los programas (excepto cmd. exe) que se inician antes de asignar la nueva página de códigos usan la página de códigos original.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para ver la configuración de la página de código activo, escriba:
+Para ver la configuración de la página de códigos activa, escriba:
 ```
 chcp
 ```
@@ -78,7 +78,7 @@ Para cambiar la página de códigos activa a 850 (multilingüe), escriba:
 ```
 chcp 850
 ```
-Si la página de códigos especificada no es válida, aparece el mensaje de error siguiente:
+Si la página de códigos especificada no es válida, aparece el siguiente mensaje de error:
 
 `Invalid code page`
 

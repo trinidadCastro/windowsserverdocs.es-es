@@ -1,8 +1,8 @@
 ---
 title: diskperf
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a99f18b56c9295e902a3c89e2e89b36c9c1b6c89
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 829f0284d761e6a5134011fa1dff99646d55fc13
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852586"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377813"
 ---
 # <a name="diskperf"></a>diskperf
 
@@ -26,7 +26,7 @@ ms.locfileid: "59852586"
 
 En Windows 2000, los contadores de rendimiento de disco físico y lógico no están habilitados de forma predeterminada.
 
-**Diskperf** se incluye en Windows XP, Windows Server 2003, Windows Server 2008, Windows Vista, Windows Server 2008 R2 y Windows 7 para que se puede usar para habilitar o deshabilitar los contadores de rendimiento de disco lógico o físico en equipos que ejecutan de forma remota Windows 2000.
+**Diskperf** se incluye en Windows XP, windows Server 2003, windows Server 2008, Windows Vista, windows Server 2008 R2 y Windows 7 para que se pueda usar para habilitar o deshabilitar de forma remota los contadores de rendimiento de disco físico o lógico en equipos que ejecutan Windows 2000.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -38,11 +38,11 @@ diskperf [-Y[D|V] | -N[D|V]] [\\computername]
 
 |Opción|Descripción|
 |------|-----------|
-|-?|Sensible al contexto muestra la Ayuda.|
-|-Y|Iniciar todos los contadores de rendimiento de disco cuando se reinicia el equipo.|
-|-YD|Habilitar los contadores de rendimiento de disco para unidades físicas al reiniciar el equipo.|
-|-YV|Habilitar los contadores de rendimiento de disco para las unidades lógicas o volúmenes de almacenamiento cuando se reinicia el equipo.|
-|-N|Deshabilitar todos los contadores de rendimiento de disco cuando se reinicia el equipo.|
-|-ND|Deshabilitar los contadores de rendimiento de disco para unidades físicas al reiniciar el equipo.|
-|-NV|Deshabilitar los contadores de rendimiento de disco para las unidades lógicas o volúmenes de almacenamiento cuando se reinicia el equipo.|
-|\\\\*\<computername>*|Especifique el nombre del equipo donde desea habilitar o deshabilitar los contadores de rendimiento de disco.|
+|-?|Muestra la ayuda contextual.|
+|-Y|Inicie todos los contadores de rendimiento de disco cuando se reinicie el equipo.|
+|-YD|Habilite los contadores de rendimiento de disco para las unidades físicas cuando se reinicie el equipo.|
+|-YV|Habilite los contadores de rendimiento de disco para unidades lógicas o volúmenes de almacenamiento cuando se reinicie el equipo.|
+|-N|Deshabilite todos los contadores de rendimiento de disco cuando se reinicie el equipo.|
+|-ND|Deshabilite los contadores de rendimiento de disco para las unidades físicas cuando se reinicie el equipo.|
+|-NV|Deshabilite los contadores de rendimiento de disco para unidades lógicas o volúmenes de almacenamiento cuando se reinicie el equipo.|
+|\\ @ no__t-1 *\<computername >*|Especifique el nombre del equipo en el que desea habilitar o deshabilitar los contadores de rendimiento del disco.|

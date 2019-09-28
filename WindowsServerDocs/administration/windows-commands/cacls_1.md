@@ -2,7 +2,7 @@
 title: cacls
 description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d3c2ba6dca1797cda3851b3c270938d47828ed7a
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.openlocfilehash: 04b60bd852abdb55059efb96aec4c290361d6a74
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590400"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379946"
 ---
 # <a name="cacls"></a>cacls
 
@@ -33,16 +33,16 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 
 |        Parámetro        |                                                                                            Descripción                                                                                             |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      \<filename\>       |                                                                            Necesario. Muestra las ACL de los archivos especificados.                                                                             |
+|      \<filename\>       |                                                                            Obligatorio. Muestra las ACL de los archivos especificados.                                                                             |
 |           /t            |                                                          cambia las ACL de los archivos especificados en el directorio actual y en todos los subdirectorios.                                                          |
 |           /m            |                                                                          cambia las ACL de los volúmenes montados en un directorio.                                                                           |
 |           /l            |                                                                        Trabaje en el propio vínculo simbólico frente al destino.                                                                         |
 |         /s: SDDL         |                                       reemplaza las ACL por las especificadas en la cadena SDDL (no es válida con **/e**, **/g**, **/r**, **/p**o **/d**).                                        |
 |           /e            |                                                                                 Edite ACL en lugar de reemplazarlo.                                                                                  |
 |           /c            |                                                                                 Continuar después de errores de acceso denegado.                                                                                  |
-|    /g usuario:\<Perm\>     |   Conceda derechos de acceso de usuario especificados.<br /><br />Valores válidos para el permiso:<br /><br />-n: ninguno<br />-r-lectura<br />-w-escritura<br />-c: cambiar (escribir)<br />-f: control total   |
+|    /g usuario: @no__t 0perm @ no__t-1     |   Conceda derechos de acceso de usuario especificados.<br /><br />Valores válidos para el permiso:<br /><br />-n: ninguno<br />-r-lectura<br />-w-escritura<br />-c: cambiar (escribir)<br />-f: control total   |
 |      /r usuario [...]      |                                                                  Revocar los derechos de acceso del usuario especificado (solo válido con **/e**).                                                                   |
-| [/p usuario:\<Perm\> [...] | reemplazar los derechos de acceso del usuario especificado.<br /><br />Valores válidos para el permiso:<br /><br />-n: ninguno<br />-r-lectura<br />-w-escritura<br />-c: cambiar (escribir)<br />-f: control total |
+| [/p usuario: \<perm @ no__t-1 [...] | reemplazar los derechos de acceso del usuario especificado.<br /><br />Valores válidos para el permiso:<br /><br />-n: ninguno<br />-r-lectura<br />-w-escritura<br />-c: cambiar (escribir)<br />-f: control total |
 |     [/d usuario [...]      |                                                                                    Denegar el acceso de usuario especificado.                                                                                     |
 |           /?            |                                                                                Muestra la ayuda en el símbolo del sistema.                                                                                |
 
@@ -63,9 +63,9 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
   |     OI IO      |                             Solo archivos.                             |
 
 
-- Puede usar caracteres comodín ( **?** **y\\) paraespecificarvariosarchivos.\***  
+- Puede usar caracteres comodín ( **?** y **\\ @ no__t-2**) para especificar varios archivos.  
 - Puede especificar más de un usuario.  
 
-#### <a name="additional-references"></a>referencias adicionales  
+#### <a name="additional-references"></a>Referencias adicionales  
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)   
 -   [icacls](icacls.md)  

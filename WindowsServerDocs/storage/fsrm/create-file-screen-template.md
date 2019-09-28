@@ -2,18 +2,18 @@
 title: Crear una plantilla de filtro de archivos
 description: En este artículo se describe cómo crear una plantilla de filtro de archivos
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b06597bce0b88ed5a2e98ad45d0cbc355d1b13fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 63824f016180ce5a92d9a16b9ee0d26a46e5db72
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858356"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394211"
 ---
 # <a name="create-a-file-screen-template"></a>Crear una plantilla de filtro de archivos
 
@@ -46,7 +46,7 @@ Al crear filtros de archivos exclusivamente a partir de plantillas, es posible a
 
     En **Grupos de archivos**, selecciona cada grupo de archivos que quieres incluir. (Para seleccionar la casilla de verificación del grupo de archivos, haz doble clic en la etiqueta de grupo de archivos).
 
-    Si desea ver los tipos de archivo incluye y excluidos de un grupo de archivos, haga clic en la etiqueta de grupo de archivos y, a continuación, haga clic en **editar**. Para crear un nuevo grupo de archivos, haga clic en **crear**.
+    Si desea ver los tipos de archivo que un grupo de archivos incluye y excluye, haga clic en la etiqueta del grupo de archivos y, a continuación, haga clic en **Editar**. Para crear un nuevo grupo de archivos, haga clic en **crear**.
 
     También puedes configurar el Administrador de recursos del servidor de archivos para generar una o varias notificaciones si estableces las siguientes opciones de las pestañas **Mensaje de correo electrónico**, **Registro de eventos**, **Comando** e **Informe**.
 
@@ -56,7 +56,7 @@ Al crear filtros de archivos exclusivamente a partir de plantillas, es posible a
 
     -   Para notificar a los administradores que un usuario o aplicación está intentando guardar un archivo no autorizado, selecciona la casilla de verificación **Enviar mensaje de correo electrónico a los siguientes administradores** y luego escribe los nombres de las cuentas administrativas que recibirán las notificaciones. Usa el formato *cuenta*@*dominio* y usa punto y coma para separar varias cuentas.
     -   Para enviar un correo electrónico al usuario que intentó guardar el archivo, selecciona la casilla de verificación **Enviar correo electrónico al usuario que ha intentado guardar un archivo no autorizado**.
-    -   Para configurar el mensaje, edita la línea de asunto y el cuerpo del mensaje predeterminados que se muestran. El texto que aparece entre paréntesis inserta información variable sobre el evento de filtro de archivos que originó la notificación. Por ejemplo, el \[ **Source Io Owner** \] variable inserta el nombre del usuario que ha intentado guardar un archivo no autorizado. Para insertar variables adicionales en el texto, haz clic en **Insertar variable**.
+    -   Para configurar el mensaje, edita la línea de asunto y el cuerpo del mensaje predeterminados que se muestran. El texto que aparece entre paréntesis inserta información variable sobre el evento de filtro de archivos que originó la notificación. Por ejemplo, la variable \[**source IO Owner**\] inserta el nombre del usuario que ha intentado guardar un archivo no autorizado. Para insertar variables adicionales en el texto, haz clic en **Insertar variable**.
     -   Para configurar los encabezados adicionales (incluidos De, Cc, Bcc y Responder-a), haz clic en **Encabezados de correo electrónico adicionales**.
 
 8.  Para registrar un error en el registro de eventos si un usuario trata de guardar un archivo no autorizado:
@@ -78,6 +78,6 @@ Al crear filtros de archivos exclusivamente a partir de plantillas, es posible a
 ## <a name="see-also"></a>Vea también
 
 -   [Administración del filtrado de archivos](file-screening-management.md)
--   [Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
--   [Editar propiedades de plantilla de filtro de archivos](edit-file-screen-template-properties.md)
+-   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
+-   [Editar las propiedades de la plantilla de filtro de archivos](edit-file-screen-template-properties.md)
 

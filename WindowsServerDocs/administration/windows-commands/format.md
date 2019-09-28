@@ -1,6 +1,6 @@
 ---
 title: Formato
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: dongill
 ms.author: JGerend
 ms.technology: storage
@@ -8,17 +8,17 @@ ms.topic: article
 ms.assetid: 51ec7423-9a01-4219-868a-25d69cdcc832
 author: JasonGerend
 ms.date: 10/16/2017
-ms.openlocfilehash: 1af340f4612015ede3fee659c9662955df9aa578
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 7db57ac8115d99327fea72c12695a2ca6d3bc05f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439277"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377040"
 ---
 # <a name="format"></a>Formato
 > Se aplica a: Windows 10, Windows Server 2016
 
-Da formato a un disco para que acepte los archivos de Windows.
+Formatea un disco para aceptar archivos de Windows.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -36,15 +36,15 @@ format <Volume> [/q]
 
 |   Parámetro    |                                                                                                                                                                                                                    Descripción                                                                                                                                                                                                                     |
 |----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   \<Volume>    |                                                                                         Especifica el punto de montaje, el nombre de volumen o la letra de unidad (seguido de dos puntos) de la unidad que desea dar formato. Si no se especifica cualquiera de las siguientes opciones de línea de comandos, **formato** usa el tipo de volumen para determinar el formato predeterminado para el disco.                                                                                         |
-|    /fs:{FAT    |                                                                                                                                                                                                                       FAT32                                                                                                                                                                                                                        |
-|  / v:\<etiqueta >   |                           Especifica la etiqueta del volumen. Si se omite el **/v** de línea de comandos de opción o usarla sin especificar una etiqueta de volumen, **formato** le pide la etiqueta de volumen una vez completado el formato. Use la sintaxis **/v:** para que no se solicite una etiqueta de volumen. Si utiliza un único comando **format** para dar formato a más de un disco, todos los discos recibirán la misma etiqueta de volumen.                            |
-| /a:\<UnitSize> | Especifica el tamaño de unidad de asignación para utilizar en volúmenes FAT, FAT32 o NTFS. Si no se especifica *UnitSize*, se elige según el tamaño del volumen. Se recomienda la configuración predeterminada para uso general. La siguiente lista muestra los valores válidos para *UnitSize* de NTFS, FAT y FAT32:</br>512</br>1024</br>2048</br>4096</br>8192</br>16 K</br>32 K</br>64 K</br>FAT y FAT32 también admiten 128 K y 256 K para un tamaño de sector mayor de 512 bytes. |
-|       /q       |                                                       Realiza un formato rápido. Elimina la tabla de archivos y el directorio raíz de un volumen formateado anteriormente, pero no realiza un examen sector por sector defectuosos. Debe usar el **/q** los volúmenes que estén en buenas condiciones de opción de línea de comandos para dar formato solo previamente formateados. Tenga en cuenta que **/q** reemplaza a **/p**.                                                       |
-|   / f:\<tamaño >   |                                                         Especifica el tamaño del disquete que se va a dar formato. Cuando sea posible, use esta opción de línea de comandos en lugar de la **/t** y **/n** opciones de línea de comandos. Windows acepta los siguientes valores para el tamaño:</br>-1440 o 1440 k o 1440 kb</br>-1,44 o 1,44 m o 1,44 mb</br>-Disco de 3,5 pulgadas, 1,44 MB, caras, cuádruple densidad                                                         |
-|  / t:\<pistas >  |                                                    Especifica el número de pistas en el disco. Cuando sea posible, use el **/f** de línea de comandos en su lugar la opción. Si utiliza la opción **/t**, también debe utilizar la opción **/n**. Juntas, estas opciones proporcionan un método alternativo de especificar el tamaño del disco que se está dando formato. Esta opción no es válida con la opción **/f**.                                                     |
-| / n:\<sectores >  |                                                         Especifica el número de sectores por pista. Cuando sea posible, use el **/f** la opción de línea de comandos en lugar de **/n**. Si utiliza **/n**, también debe usar **/t**. Estas dos opciones juntas proporcionan un método alternativo de especificar el tamaño del disco que se está dando formato. Esta opción no es válida con la opción **/f**.                                                         |
-|  / p:\<pasadas >  |                                                                                                                                                               Incluye ceros en cada sector del volumen para el número de pasadas especificado. Esta opción no es válida con la opción **/q**.                                                                                                                                                                |
+|   @no__t 0Volume >    |                                                                                         Especifica el punto de montaje, el nombre del volumen o la letra de unidad (seguido de un signo de dos puntos) de la unidad a la que desea dar formato. Si no especifica ninguna de las siguientes opciones de línea de comandos, **Format** usa el tipo de volumen para determinar el formato predeterminado del disco.                                                                                         |
+|    /FS: {FAT    |                                                                                                                                                                                                                       FAT32                                                                                                                                                                                                                        |
+|  /v: @no__t 0Label >   |                           Especifica la etiqueta del volumen. Si omite la opción de línea de comandos **/v** o la utiliza sin especificar una etiqueta de volumen, **Format** le pedirá la etiqueta del volumen una vez completado el formato. Use la sintaxis **/v:** para que no se solicite una etiqueta de volumen. Si utiliza un único comando **format** para dar formato a más de un disco, todos los discos recibirán la misma etiqueta de volumen.                            |
+| /a: @no__t 0UnitSize > | Especifica el tamaño de la unidad de asignación que se va a utilizar en volúmenes FAT, FAT32 o NTFS. Si no se especifica *UnitSize*, se elige según el tamaño del volumen. Se recomienda la configuración predeterminada para uso general. La siguiente lista muestra los valores válidos para *UnitSize* de NTFS, FAT y FAT32:</br>512</br>1024</br>2048</br>4096</br>8192</br>16 K</br>32 K</br>64 K</br>FAT y FAT32 también admiten 128 K y 256 K para un tamaño de sector mayor de 512 bytes. |
+|       /q       |                                                       Realiza un formato rápido. Elimina la tabla de archivos y el directorio raíz de un volumen con formato anterior, pero no realiza un examen sector por sector para las áreas defectuosas. Debe usar la opción de línea de comandos **/q** para dar formato solo a los volúmenes con el formato anterior que sepa que están en buenas condiciones. Tenga en cuenta que **/q** reemplaza a **/p**.                                                       |
+|   /f: @no__t 0Size >   |                                                         Especifica el tamaño del disquete que se va a dar formato. Cuando sea posible, use esta opción de línea de comandos en lugar de las opciones de línea de comandos **/t** y **/n** . Windows acepta los siguientes valores para el tamaño:</br>-1440 o 1440 k o 1440 kb</br>-1,44 o 1,44 m o 1,44 mb</br>-1,44-MB, doble cara, cuádruple densidad, disco de 3,5 pulgadas                                                         |
+|  /t: \<Tracks >  |                                                    Especifica el número de pistas en el disco. Cuando sea posible, use la opción de línea de comandos **/f** en su lugar. Si utiliza la opción **/t**, también debe utilizar la opción **/n**. Juntas, estas opciones proporcionan un método alternativo de especificar el tamaño del disco que se está dando formato. Esta opción no es válida con la opción **/f**.                                                     |
+| /n: @no__t 0Sectors >  |                                                         Especifica el número de sectores por pista. Cuando sea posible, use la opción de línea de comandos **/f** en lugar de **/n**. Si utiliza **/n**, también debe usar **/t**. Estas dos opciones juntas proporcionan un método alternativo de especificar el tamaño del disco que se está dando formato. Esta opción no es válida con la opción **/f**.                                                         |
+|  /p: @no__t 0Passes >  |                                                                                                                                                               Incluye ceros en cada sector del volumen para el número de pasadas especificado. Esta opción no es válida con la opción **/q**.                                                                                                                                                                |
 |       /c       |                                                                                                                                                                                     Solo NTFS. De forma predeterminada, los archivos creados en el nuevo volumen se comprimirán.                                                                                                                                                                                      |
 |       /x       |                                                                                                                                                            Hace que el volumen se desmonte, si es necesario, antes de darle formato. Todos los controladores abiertos en el volumen ya no serán válidos.                                                                                                                                                            |
 |       /?       |                                                                                                                                                                                                        Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                                                        |
@@ -53,43 +53,43 @@ format <Volume> [/q]
 
 -   Credenciales administrativas
 
-    Debe ser miembro del grupo Administradores para formatear un disco duro.
--   Uso de **formato**
+    Debe ser miembro del grupo administradores para dar formato a una unidad de disco duro.
+-   Usar el **formato**
 
-    El **formato** comando crea un sistema de archivos y directorios de raíz nuevo para el disco. También puede comprobar si hay sectores defectuosos en el disco y pueden eliminar todos los datos en el disco. Para poder usar un disco nuevo, primero debe usar este comando para formatear el disco.
+    El comando **Format** crea un nuevo directorio raíz y el sistema de archivos para el disco. También puede comprobar si hay áreas defectuosas en el disco y puede eliminar todos los datos del disco. Para poder usar un disco nuevo, primero debe usar este comando para formatear el disco.
 -   Agregar una etiqueta de volumen
 
-    Después de formatear un disquete, **formato** muestra el mensaje siguiente:
+    Después de formatear un disquete, **Format** muestra el siguiente mensaje:
 
     `Volume label (11 characters, ENTER for none)?`
 
-    Para agregar una etiqueta de volumen, escriba hasta 11 caracteres (incluidos espacios). Si no desea agregar una etiqueta de volumen en el disco, presione ENTRAR.
--   Formatear un disco duro
+    Para agregar una etiqueta de volumen, escriba hasta 11 caracteres (incluidos espacios). Si no desea agregar una etiqueta de volumen al disco, presione Entrar.
+-   Dar formato a un disco duro
 
 > [!NOTE]
-> Debe ser miembro del grupo Administradores para formatear un disco duro.
+> Debe ser miembro del grupo administradores para dar formato a un disco duro.
 
-Cuando se usa el **formato** comando para dar formato a un disco duro, un mensaje de advertencia similar a la muestra siguiente:
+Cuando se usa el comando **Format** para formatear un disco duro, aparece un mensaje de advertencia similar al siguiente:
 ```
 WARNING, ALL DATA ON NON-REMOVABLE DISK 
 DRIVE x: WILL BE LOST! 
 Proceed with Format (Y/N)? _ 
 ```
-Para formatear el disco duro, presione S; Si no desea formatear el disco, presione N.
+Para formatear el disco duro, presione Y; Si no desea formatear el disco, presione N.
 -   Tamaño de unidad
 
-    Sistemas de archivos FAT restringen el número de clústeres a no más de 65526. Sistemas de archivos FAT32 restringen el número de clústeres a entre 65.527 y 4.177.917.
+    Los sistemas de archivos FAT restringen el número de clústeres a un máximo de 65526. Los sistemas de archivos FAT32 restringen el número de clústeres entre 65527 y 4177917.
 
     No se admite la compresión NTFS para tamaños de unidad de asignación superiores a 4096.
 
 > [!NOTE]
-> **Formato** detendrá inmediatamente el procesamiento si determina que no pueden cumplirse los requisitos anteriores con el tamaño de clúster especificado.
-> -   **Formato** mensajes
+> El **formato** detendrá inmediatamente el procesamiento si determina que no se pueden cumplir los requisitos anteriores con el tamaño de clúster especificado.
+> -   **Dar formato** a los mensajes
 
     When formatting is complete, **format** displays messages that show the total disk space, the spaces marked as defective, and the space available for your files.
 - Formato rápido
 
-  Puede acelerar el proceso de formato mediante el **/q** opción de línea de comandos. Utilice esta opción solo si no hay sectores defectuosos en el disco duro.
+  Puede acelerar el proceso de formato mediante la opción de línea de comandos **/q** . Utilice esta opción solo si no hay sectores defectuosos en el disco duro.
 - Uso de **format** con una unidad reasignada o una unidad de red
 
   No debe utilizar el comando **format** en una unidad que se ha preparado con el comando **subst**. No se puede dar formato a discos en una red.
@@ -101,15 +101,15 @@ Para formatear el disco duro, presione S; Si no desea formatear el disco, presio
   |---------|-----------|
   |0|La operación de formato se realizó correctamente.|
   |1|Se proporcionaron parámetros incorrectos.|
-  |4|Se produjo un error irrecuperable (que es cualquier error distinto de 0, 1 ó 5).|
-  |5|El usuario presionó N en respuesta a la pregunta "¿continuar con el formato (S/N)?" para detener el proceso.|
+  |4|Se produjo un error irrecuperable (que es cualquier error distinto de 0, 1 o 5).|
+  |5|El usuario presionó N en respuesta a la pregunta "¿desea continuar con el formato (Y/N)?" para detener el proceso.|
 
   Puede comprobar estos códigos de salida mediante la variable de entorno ERRORLEVEL con el comando por lotes **if**.
 - Uso de **format** en la Consola de recuperación
 
   El comando **format**, con diferentes parámetros, está disponible en la Consola de recuperación.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para dar formato a un disquete nuevo en la unidad A con el tamaño predeterminado, escriba:
 ```

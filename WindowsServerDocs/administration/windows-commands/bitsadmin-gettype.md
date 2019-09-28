@@ -1,8 +1,8 @@
 ---
 title: bitsadmin gettype
-description: Tema de los comandos de Windows para **bitsadmin gettype** -recupera el tipo de trabajo del trabajo especificado.
+description: 'Tema de comandos de Windows para **bitsadmin GetType** : recupera el tipo de trabajo del trabajo especificado.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ff0118f14acbf4e9f37c02e660bd9c7f6e8d0f70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca46cb813809621f4fa79b3265198206729a392c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879436"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381341"
 ---
 # <a name="bitsadmin-gettype"></a>bitsadmin gettype
 
@@ -36,15 +36,15 @@ bitsadmin /GetType <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
 ## <a name="remarks"></a>Comentarios
 
-El tipo se puede descargar, cargar, respuesta de carga o desconocido.
+El tipo puede ser DOWNLOAD, UPLOAD, UPLOAD-RESPONse o UNKNOWN.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-En el ejemplo siguiente se recupera el tipo de trabajo del trabajo denominado *myDownloadJob*.
+En el ejemplo siguiente se recupera el tipo de trabajo para el trabajo denominado *myDownloadJob*.
 ```
 C:\>bitsadmin /GetType myDownloadJob
 ```

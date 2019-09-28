@@ -1,8 +1,8 @@
 ---
-title: Ayuda y bitsadmin util
-description: Tema de los comandos de Windows para **bitsadmin util y ayudar a** -muestra el uso de la línea de comandos para el **Util** conmutadores.
+title: bitsadmin util y Help
+description: Windows Commands topic for **bitsadmin util and Help** -muestra el uso de la línea de comandos para los modificadores de **util** .
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99183ab9dd7dcb0fc0351bf2a4369d19b2179aa0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 47ccf6bf1d285bcea115905781819b8553b7ed71
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890366"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380335"
 ---
-# <a name="bitsadmin-util-and-help"></a>Ayuda y bitsadmin util
+# <a name="bitsadmin-util-and-help"></a>bitsadmin util y Help
 
 
 
-Muestra el uso de la línea de comandos para el **Util** conmutadores.
+Muestra el uso de la línea de comandos para los modificadores de la **util** .
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,9 +32,9 @@ Muestra el uso de la línea de comandos para el **Util** conmutadores.
 Bitsadmin /Util /Help 
 ```
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El comando siguiente muestra la Ayuda de línea de comandos para el **Util** conmutadores.
+El siguiente comando muestra la ayuda de la línea de comandos para los modificadores de **util** .
 ```
 Bitsadmin /Util /Help
 ```

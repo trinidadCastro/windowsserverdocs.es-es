@@ -1,8 +1,8 @@
 ---
-title: ¿Manage-bde forcerecovery
-description: 'Tema de los comandos de Windows para ***- '
+title: Manage-BDE forcerecovery
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5bf7a913c9c496aebded349731ef965a53c98ac7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a17d6f276e2ee1ddde82a207a7097928720a3ed8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858646"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374081"
 ---
-# <a name="manage-bde-forcerecovery"></a>manage-bde: forcerecovery
+# <a name="manage-bde-forcerecovery"></a>Manage-BDE: forcerecovery
 
 
 
-Obliga a que una unidad protegida con BitLocker en modo de recuperación de reinicio. Este comando elimina todos los protectores de clave relacionadas con el módulo de plataforma segura TPM de la unidad. Cuando se reinicia el equipo, sólo una contraseña o clave de recuperación puede usarse para desbloquear la unidad. Para obtener ejemplos de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
+Fuerza una unidad protegida por BitLocker en modo de recuperación al reiniciarse. Este comando elimina de la unidad todos los protectores de clave relacionados con el Módulo de plataforma segura (TPM). Cuando se reinicia el equipo, solo se puede usar una contraseña de recuperación o una clave de recuperación para desbloquear la unidad. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,15 +36,15 @@ manage-bde –forcerecovery <Drive> [-computername <Name>] [{-?|/?}] [{-help|-h}
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<Drive>|Representa la letra de una unidad seguida del signo de dos puntos.|
-|-computername|Especifica que se utilizará Manage-bde.exe para modificar la protección de BitLocker en un equipo diferente. También puede usar **- cn** como una versión abreviada de este comando.|
-|\<Nombre >|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Valores aceptados incluyen el nombre NetBIOS del equipo y dirección IP del equipo.|
-|-? ¿o /?|Muestra una breve ayuda en el símbolo del sistema.|
-|-help o -h|Muestra la Ayuda completa en el símbolo del sistema.|
+|@no__t 0Drive >|Representa la letra de una unidad seguida del signo de dos puntos.|
+|-COMPUTERNAME|Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando.|
+|\<Nombre >|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
+|-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
+|-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-El ejemplo siguiente se muestra cómo utilizar el **- forcerecovery** comando para hacer que BitLocker se iniciara en modo de recuperación en la unidad C.
+En el ejemplo siguiente se muestra el uso del comando **-forcerecovery** para que BitLocker se inicie en modo de recuperación en la unidad C.
 ```
 manage-bde –forcerecovery C:
 ```
@@ -52,4 +52,4 @@ manage-bde –forcerecovery C:
 #### <a name="additional-references"></a>Referencias adicionales
 
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
--   [¿Manage-bde](manage-bde.md)
+-   [Manage-BDE](manage-bde.md)

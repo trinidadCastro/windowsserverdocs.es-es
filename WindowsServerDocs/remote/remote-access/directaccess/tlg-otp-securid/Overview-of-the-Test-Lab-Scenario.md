@@ -1,9 +1,9 @@
 ---
 title: Información general sobre el escenario de laboratorio de pruebas
-description: 'En este tema forma parte de la Guía del laboratorio de pruebas: demostrar DirectAccess con autenticación OTP y RSA SecurID para Windows Server 2016'
+description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess con autenticación OTP y RSA SecurID para Windows Server 2016'
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,24 +12,24 @@ ms.topic: article
 ms.assetid: ce584811-b209-48fe-ab2b-4c399bd0bd79
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 944a38438d81bfffcff002336a5eb0427ab9e5ea
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: ba3981c79d1441797f21c8ed8051ace6ac490cab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283150"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404735"
 ---
 # <a name="overview-of-the-test-lab-scenario"></a>Información general sobre el escenario de laboratorio de pruebas
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Acceso remoto es un rol de servidor en Windows Server 2016, con DirectAccess de recursos de red de sistemas operativos Windows Server 2012 R2 y Windows Server 2012 que permite que los usuarios remotos acceder de forma segura interno o las redes privadas virtuales (VPN) con el Enrutamiento servicio y acceso remoto (RRAS). Esta guía contiene instrucciones paso a paso para ampliar el [Test Lab Guide: Demostrar la instalación de servidor único de DirectAccess con IPv4 e IPv6 mixto](https://go.microsoft.com/fwlink/p/?LinkId=237004) para mostrar una configuración de contraseña de un solo uso (OTP) de acceso remoto.  
+El acceso remoto es un rol de servidor de los sistemas operativos Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012 que permite a los usuarios remotos acceder de forma segura a los recursos de red internos mediante DirectAccess o redes privadas virtuales (VPN) con el Servicio de enrutamiento y acceso remoto (RRAS). Esta guía contiene instrucciones paso a paso para ampliar la guía de laboratorio de @no__t 0Test: Mostrar la configuración de servidor único de DirectAccess con IPv4 e IPv6 @ no__t-0 mixto para mostrar una configuración de contraseña de un solo tiempo (OTP) de acceso remoto.  
   
 > [!WARNING]  
-> El diseño de esta guía de laboratorio de pruebas incluye servidores de infraestructura, como un controlador de dominio y una entidad de certificación (CA) que ejecutan Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012. Uso de esta guía de laboratorio de pruebas para configurar servidores de infraestructura que ejecutan otros sistemas operativos no se ha probado y no se incluyen instrucciones para configurar otros sistemas operativos en esta guía.  
+> El diseño de esta guía del laboratorio de pruebas incluye servidores de infraestructura, como un controlador de dominio y una entidad de certificación (CA) que ejecutan Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012. El uso de esta guía del laboratorio de pruebas para configurar los servidores de infraestructura que ejecutan otros sistemas operativos no se ha probado y las instrucciones para configurar otros sistemas operativos no se incluyen en esta guía.  
   
 ## <a name="about-this-guide"></a>Acerca de esta guía  
-Acceso remoto en Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012 agrega compatibilidad para la autenticación de cliente con OTP. Para los fines de este laboratorio de pruebas solo RSA SecurID se usa para demostrar la funcionalidad OTP con el acceso remoto. Otros RADIUS en función de OTP soluciones también se admiten, pero están fuera del ámbito de este laboratorio de pruebas. Esta guía contiene instrucciones para configurar y mostrar el acceso remoto usando seis servidores y dos equipos cliente. El acceso remoto completada con el laboratorio de pruebas OTP simula una intranet, Internet y una red doméstica y se muestra la funcionalidad de acceso remoto en diferentes escenarios de conexión de Internet.  
+El acceso remoto en Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012 agrega compatibilidad para la autenticación de cliente con OTP. Para los fines de este laboratorio de pruebas, RSA SecurID solo se usa para demostrar la funcionalidad de OTP con acceso remoto. También se admiten otras soluciones OTP basadas en RADIUS, pero están fuera del ámbito de este laboratorio de pruebas. Esta guía contiene instrucciones para configurar y mostrar el acceso remoto usando seis servidores y dos equipos cliente. El laboratorio de prueba de acceso remoto completado con OTP simula una intranet, Internet y una red doméstica, y muestra la funcionalidad de acceso remoto en distintos escenarios de conexión a Internet.  
   
 > [!IMPORTANT]  
 > Este laboratorio sirve como prueba de concepto con la cantidad mínima de equipos. La configuración que se detalla en esta guía es para fines de laboratorio únicamente y no se debe usar en un entorno de producción.  

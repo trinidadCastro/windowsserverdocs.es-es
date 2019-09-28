@@ -1,8 +1,8 @@
 ---
 title: dfsdiag TestDFSConfig
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,30 +13,30 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 922b78b87f3bb66765b87348a3bf136e14c9e837
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8008e02d588edaa6fe7700a331c43f9680d89431
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436130"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378419"
 ---
 # <a name="dfsdiag-testdfsconfig"></a>dfsdiag TestDFSConfig
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Comprueba la configuración de un sistema de archivos distribuido \(DFS\) espacio de nombres mediante la realización de las siguientes acciones:  
+Comprueba la configuración de un espacio de nombres Sistema de archivos distribuido \(DFS @ no__t-1 mediante la realización de las siguientes acciones:  
   
--   comprueba que se está ejecutando el servicio DFS Namespace y que su tipo de inicio esté establecido en automático en todos los servidores de espacio de nombres.  
+-   comprueba que el servicio de espacio de nombres DFS se está ejecutando y que su tipo de inicio está establecido en automático en todos los servidores de espacio de nombres.  
   
 -   comprueba que la configuración del registro DFS es coherente entre los servidores de espacio de nombres.  
   
--   Valida las siguientes dependencias en los servidores de espacio de nombres en clúster que ejecutan Windows Server 2008 o posterior:  
+-   Valida las siguientes dependencias en servidores de espacio de nombres en clúster que ejecutan Windows Server 2008 o posterior:  
   
-    -   Dependencia de recurso Namespace raíz en el recurso de nombre de red.  
+    -   Dependencia de recursos raíz de espacio de nombres en el recurso de nombre de red.  
   
-    -   Dependencia de recurso de nombre de recurso de dirección IP de red.  
+    -   Dependencia de recurso de nombre de red en el recurso de dirección IP.  
   
-    -   Dependencia de recurso Namespace raíz en el recurso de disco físico.  
+    -   Dependencia de recursos raíz del espacio de nombres en el recurso de disco físico.  
   
   
   
@@ -50,10 +50,10 @@ dfsdiag /TestDFSConfig /DFSRoot:<namespace>
   
 |       Parámetro       |               Descripción               |
 |-----------------------|-----------------------------------------|
-| \/DFSRoot:<namespace> | El espacio de nombres \(raíz DFS\) para diagnosticar. |
+| \/DFSRoot: <namespace> | Espacio de nombres @no__t 0DFS raíz @ no__t-1 para diagnosticar. |
   
-## <a name="BKMK_Examples"></a>Ejemplos  
-Para TBD, escriba:  
+## <a name="BKMK_Examples"></a>Example  
+En TBD, escriba:  
   
 ```  
 dfsdiag /TestDFSConfig /DFSRoot:\\Contoso.com\MyNamespace  

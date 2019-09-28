@@ -1,8 +1,8 @@
 ---
 title: dcgpofix
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 179d540371870075906bbcbf8ff912e1b883915d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2592210ae688f47dcf2d32c7bef560d52223141c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433936"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378762"
 ---
 # <a name="dcgpofix"></a>dcgpofix
 
 
 
-Vuelve a crear los objetos de directiva de grupo (GPO) predeterminado para un dominio. Para obtener ejemplos de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
+Vuelve a crear los objetos de directiva de grupo predeterminados (GPO) para un dominio. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,22 +36,22 @@ DCGPOFix [/ignoreschema] [/target: {Domain | DC | Both}] [/?]
 
 |    Parámetro    |                                                                                                 Descripción                                                                                                 |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  /ignoreschema  | Omite la versión de la consola de administración de esquema Active Directory®</br>al ejecutar este comando. En caso contrario, el comando sólo funciona en la misma versión de esquema que la versión de Windows en el que se envió el comando. |
-| / Target {nombre de dominio |                                                                                                     DC                                                                                                      |
+|  /ignoreschema  | Omite la versión del Active Directory del esquema de®.</br>al ejecutar este comando. De lo contrario, el comando solo funciona en la misma versión de esquema que la versión de Windows en la que se envió el comando. |
+| /Target {dominio |                                                                                                     DC                                                                                                      |
 |       /?        |                                                                                    Muestra la Ayuda en el símbolo del sistema.                                                                                     |
 
 ## <a name="remarks"></a>Comentarios
 
--   El **dcgpofix** comando está disponible en Windows Server 2008 R2 y Windows Server 2008, excepto en las instalaciones Server Core.
--   Aunque la consola de administración de directivas de grupo (GPMC) se distribuye con Windows Server 2008 R2 y Windows Server 2008, debe instalar Administración de directivas de grupo como una característica mediante el administrador del servidor.
+-   El comando **Dcgpofix** está disponible en windows Server 2008 R2 y windows Server 2008, excepto en las instalaciones Server Core.
+-   Aunque el Consola de administración de directivas de grupo (GPMC) se distribuye con Windows Server 2008 R2 y Windows Server 2008, debe instalar la administración de directiva de grupo como una característica a través de Administrador del servidor.
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-Restaurar el GPO de directiva predeterminada de dominio a su estado original. Perderá los cambios realizados a este GPO. Como práctica recomendada, debe configurar el GPO del dominio predeterminado solo para administrar la configuración de directivas de cuenta predeterminada, directiva de contraseñas, directiva de bloqueo de cuenta y la directiva Kerberos. En este ejemplo, omite la versión de esquema de Active Directory para que la **dcgpofix** comando no se limita al mismo esquema que la versión de Windows en el que se envió el comando.
+Restaure el GPO de la Directiva de dominio predeterminada a su estado original. Perderá los cambios que haya realizado en este GPO. Como práctica recomendada, debe configurar el GPO de directiva de dominio predeterminada únicamente para administrar la configuración de directivas de cuenta predeterminada, la Directiva de contraseñas, la Directiva de bloqueo de cuentas y la Directiva de Kerberos. En este ejemplo, se omite la versión del esquema de Active Directory para que el comando **Dcgpofix** no esté limitado al mismo esquema que la versión de Windows en la que se envió el comando.
 ```
 dcgpofix /ignoreschema /target:Domain
 ```
-Restaurar el GPO de directiva de controladores de dominio predeterminados a su estado original. Perderá los cambios realizados a este GPO. Como práctica recomendada, debe configurar el dominio GPO controladores predeterminados directiva sólo para establecer los derechos de usuario y directivas de auditoría. En este ejemplo, omite la versión de esquema de Active Directory para que la **dcgpofix** comando no se limita al mismo esquema que la versión de Windows en el que se envió el comando.
+Restaure el GPO de la directiva predeterminada de controladores de dominio a su estado original. Perderá los cambios que haya realizado en este GPO. Como práctica recomendada, debe configurar el GPO de directiva de controladores de dominio predeterminados únicamente para establecer derechos de usuario y directivas de auditoría. En este ejemplo, se omite la versión del esquema de Active Directory para que el comando **Dcgpofix** no esté limitado al mismo esquema que la versión de Windows en la que se envió el comando.
 ```
 dcgpofix /ignoreschema /target:DC
 ```

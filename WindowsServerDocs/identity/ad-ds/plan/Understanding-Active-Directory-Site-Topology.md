@@ -7,28 +7,28 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e6f115cab76cdbb3cf810042a42cc30e84edd904
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2efc2156706e20d4749560b188e6ee1b442152f2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858436"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402468"
 ---
 # <a name="understanding-active-directory-site-topology"></a>Descripción de la topología de sitio de Active Directory
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-La topología de sitio afecta de forma significativa el rendimiento de la red y la capacidad de los usuarios para tener acceso a los recursos de red. Antes de empezar a diseñar la topología de sitio, a familiarizarse con las funciones para sitios de Windows Server 2008, las topologías de red diferente que las organizaciones suelen usan, el rol de propietario de la topología de sitios y alguna réplica de Active Directory conceptos.  
+La topología del sitio afecta significativamente al rendimiento de la red y a la capacidad de los usuarios para tener acceso a los recursos de la red. Antes de empezar a diseñar la topología del sitio, familiarícese con las funciones de los sitios en Windows Server 2008, las distintas topologías de red que usan normalmente las organizaciones, el rol del propietario de la topología de sitio y algunos Active Directory la replicación nocion.  
   
 ## <a name="in-this-section"></a>En esta sección  
   
--   [Funciones de sitio](../../ad-ds/plan/Site-Functions.md)  
+-   [Funciones del sitio](../../ad-ds/plan/Site-Functions.md)  
   
 -   [Rol de propietario de topología de sitio](../../ad-ds/plan/Site-Topology-Owner-Role.md)  
   
--   [Conceptos de replicación de Active Directory](../../ad-ds/get-started/replication/Active-Directory-Replication-Concepts.md)  
+-   [Conceptos de replicación de Active Directory](../../ad-ds/get-started/replication/Active-Directory-Replication-Concepts.md)  
   
 
 

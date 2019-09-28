@@ -1,7 +1,7 @@
 ---
 title: Planeación de la implementación de dispositivos mediante la asignación discreta de dispositivos
 description: Más información sobre cómo funciona DDA en Windows Server
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 ms.technology: hyper-v
 ms.tgt_pltfrm: na
@@ -9,12 +9,12 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.date: 02/06/2018
-ms.openlocfilehash: 7df7dbd1e7252f5bab451ed9272f9cbede63d223
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 7084f4951ebe1d1203f4c9e45bc5f73cc6487a84
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476498"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364194"
 ---
 # <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>Planeación de la implementación de dispositivos mediante la asignación discreta de dispositivos
 >Se aplica a: Microsoft Hyper-V Server 2016, Windows Server 2016, Microsoft Hyper-V Server 2019, Windows Server 2019
@@ -57,7 +57,7 @@ La asignación de dispositivos discretos pasa todo el dispositivo a la máquina 
 
 Si el administrador desea usar un dispositivo con un inquilino que no es de confianza, hemos proporcionado fabricantes de dispositivos con la posibilidad de crear un controlador de mitigación de dispositivos que se pueda instalar en el host.  Póngase en contacto con el fabricante del dispositivo para obtener más información sobre si proporcionan un controlador de mitigación de dispositivos.
 
-Si desea omitir las comprobaciones de seguridad de un dispositivo que no tiene un controlador de mitigación de dispositivos, tendrá que pasar el `-Force` parámetro `Dismount-VMHostAssignableDevice` al cmdlet.  Tenga en cuenta que, al hacerlo, ha cambiado el perfil de seguridad de ese sistema y esto solo se recomienda durante los entornos de prototipo o de confianza.
+Si desea omitir las comprobaciones de seguridad de un dispositivo que no tiene un controlador de mitigación de dispositivos, tendrá que pasar el parámetro `-Force` al cmdlet `Dismount-VMHostAssignableDevice`.  Tenga en cuenta que, al hacerlo, ha cambiado el perfil de seguridad de ese sistema y esto solo se recomienda durante los entornos de prototipo o de confianza.
 
 ## <a name="pcie-location-path"></a>Ruta de acceso de ubicación de PCIe
 La ruta de acceso de ubicación de PCIe es necesaria para desmontar y montar el dispositivo del host.  Una ruta de acceso de ubicación de ejemplo tiene `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`el siguiente aspecto:.   El [script de Perfil de equipo](#machine-profile-script) también devolverá la ruta de acceso de la ubicación del dispositivo PCIe.

@@ -1,7 +1,7 @@
 ---
 title: Novedades de Hyper-V en Windows Server 2016
 description: Proporciona un resumen de las nuevas características de Hyper-V.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: 1a65a98e-54b6-4c41-9732-1e3d32fe3a5f
 author: KBDAzure
 ms.author: kathydav
 ms.date: 09/21/2017
-ms.openlocfilehash: 9ee621813917ce2b267d552a17dbbc499a5f77de
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 195d78ff8de75ca9e3a88d4300bb2f52cd45632f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869456"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365378"
 ---
 # <a name="whats-new-in-hyper-v-on-windows-server"></a>Novedades de Hyper-V en Windows Server
 

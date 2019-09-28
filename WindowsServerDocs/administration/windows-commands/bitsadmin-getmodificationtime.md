@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getmodificationtime
-description: Tema de los comandos de Windows para **getmodificationtime bitsadmin** -recupera la última hora de modificación del trabajo o los datos se ha transferido correctamente.
+description: 'Comando comandos de Windows para **bitsadmin getmodificationtime** : recupera la última vez que se modificó el trabajo o los datos se transfirieron correctamente.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4257f0ae4868b2f18221ab99268384f778c4bbbe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 48b4d252ce6161b288726190f41f08c64efdbcf2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837026"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381531"
 ---
 # <a name="bitsadmin-getmodificationtime"></a>bitsadmin getmodificationtime
 
 
 
-Recupera la última vez que se modificó el trabajo o los datos se ha transferido correctamente.
+Recupera la última vez que se modificó el trabajo o los datos se transfirieron correctamente.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,11 +36,11 @@ bitsadmin /GetModificationTime <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-En el ejemplo siguiente se recupera la hora última modificación del trabajo denominado *myDownloadJob*.
+En el ejemplo siguiente se recupera la hora de la última modificación del trabajo denominado *myDownloadJob*.
 ```
 C:\>bitsadmin /GetModificationTime myDownloadJob
 ```

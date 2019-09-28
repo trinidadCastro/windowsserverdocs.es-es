@@ -1,18 +1,18 @@
 ---
 title: Optimización del rendimiento Escritorio remoto hosts de virtualización
 description: Optimización del rendimiento para hosts de virtualización de Escritorio remoto
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 24e3243d4e9791c8941729d396e0a96cd8b11a7d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 6aad1560fa9f9429af94426487d9a33369137ded
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866438"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370031"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Optimización del rendimiento Escritorio remoto hosts de virtualización
 
@@ -129,7 +129,7 @@ Los siguientes contadores de rendimiento están disponibles en el servidor Remot
 
 -   **VRAM MB disponibles por cada** cantidad de memoria de vídeo dedicada que no se está usando
 
--   **VRAM % Reservado por porcentaje** de GPU de memoria de vídeo dedicada que se ha reservado para RemoteFX
+-   **VRAM Porcentaje reservado por GPU @ no__t-0% de la memoria de vídeo dedicada que se ha reservado para RemoteFX
 
 **Software RemoteFX**
 

@@ -1,8 +1,8 @@
 ---
 title: binario de FTP
-description: Tema de los comandos de Windows para el binario de ftp
+description: Tema de comandos de Windows para FTP binario
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cadd59bff3bd2acf5c6d700caef66ca5c871b523
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 48579523f44232dec3357a20e8082050cc5175e6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821926"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376583"
 ---
 # <a name="ftp-binary"></a>FTP: binario
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Establece el tipo de transferencia de archivos como binario.   
+Establece el tipo de transferencia de archivo en binario.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 binary  
@@ -32,12 +32,12 @@ binary
 ### <a name="parameters"></a>Parámetros  
 ninguno  
 ## <a name="remarks-optional-section"></a>Comentarios <optional section>  
-**FTP** es compatible con ASCII y tipos de transferencia de archivos de imagen binarios. Usa el archivo binario al transferir los archivos ejecutables. En modo binario, los archivos se transfieren en unidades de un byte. Para obtener más información acerca de la transferencia de archivos ASCII, vea **ftp: ascii** en referencias adicionales.  
-## <a name="BKMK_Examples"></a>Ejemplos  
-Establezca el tipo de transferencia de archivos al archivo binario.  
+**FTP** admite tipos de transferencia de archivos de imagen binaria y ASCII. Usar binario al transferir archivos ejecutables. En el modo binario, los archivos se transfieren en unidades de un byte. Para obtener más información acerca de la transferencia de archivos ASCII, consulte **FTP: ASCII** en referencias adicionales.  
+## <a name="BKMK_Examples"></a>Example  
+Establezca el tipo de transferencia de archivo en binario.  
 ```  
 binary  
 ```  
 ## <a name="additional-references"></a>Referencias adicionales  
--   [ftp: ascii](ftp-ascii.md)  
+-   [FTP: ASCII](ftp-ascii.md)  
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  

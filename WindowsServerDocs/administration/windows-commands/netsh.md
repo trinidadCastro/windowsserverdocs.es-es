@@ -1,8 +1,8 @@
 ---
 title: netsh
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30040f5d22711e3913e25bbf03407df07ab06b8d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5b3cc1f1145b9c96d2444953c956ac70f7fa856d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859506"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373271"
 ---
 # <a name="netsh"></a>netsh
 
 
 
-**Netsh** es una utilidad de scripting de línea de comandos que le permite, ya sea de forma local o remota, mostrar o modificar la configuración de red de un equipo que se está ejecutando.
+**Netsh** es una utilidad de scripting de línea de comandos que permite mostrar o modificar la configuración de red de un equipo que se está ejecutando actualmente, ya sea de forma local o remota.
 
-Hay diferencias funcionales entre **netsh** comandos en Windows Server® 2003, Windows Server® 2008 y Windows Server® 2008 R2:
--   Para obtener más información acerca de **netsh** comandos en Windows Server 2003, consulte [Netsh](https://technet.microsoft.com/library/cc779693(v=ws.10).aspx).
--   Para obtener más información acerca de **netsh** comandos para Windows Server 2008 y Windows Server 2008 R2, consulte [referencia técnica de Netsh](https://technet.microsoft.com/library/cc754753(v=ws.10).aspx).
+Existen diferencias funcionales entre los comandos **netsh** en windows server® 2003, windows server® 2008 y windows server® 2008 R2:
+-   Para obtener más información acerca de los comandos **netsh** en Windows Server 2003, vea [netsh](https://technet.microsoft.com/library/cc779693(v=ws.10).aspx).
+-   Para obtener más información acerca de los comandos **netsh** para windows Server 2008 y windows Server 2008 R2, consulte la [referencia técnica de Netsh](https://technet.microsoft.com/library/cc754753(v=ws.10).aspx).

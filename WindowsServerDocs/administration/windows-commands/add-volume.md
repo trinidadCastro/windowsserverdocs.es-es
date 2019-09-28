@@ -1,8 +1,8 @@
 ---
-title: Agregar volumen
-description: Tema de los comandos de Windows para **agregar volumen** -agrega volúmenes a la instantánea, que es el conjunto de volúmenes que se tomen instantáneas copiados.
+title: agregar volumen
+description: 'Temas de comandos de Windows para **agregar volumen** : agrega volúmenes al conjunto de instantáneas, que es el conjunto de volúmenes de los que se va a realizar la instantánea.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8960ffafdf49d4512e1df2dfcc046bdfbe56e224
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c534bcc5a264fbb51d12cfd2a6fc93b4e6fbd857
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819476"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382798"
 ---
-# <a name="add-volume"></a>Agregar volumen
+# <a name="add-volume"></a>agregar volumen
 
 
 
-Agrega los volúmenes en el conjunto de copia de instantáneas, que es el conjunto de volúmenes de instantáneas. Este comando es necesario para crear instantáneas. Si se utiliza sin parámetros, **agregar volumen** muestra la Ayuda en el símbolo del sistema.
+Agrega volúmenes al conjunto de instantáneas, que es el conjunto de volúmenes de los que se va a realizar la instantánea. Este comando es necesario para crear instantáneas. Si se usa sin parámetros, **agregar volumen** muestra la ayuda en el símbolo del sistema.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,22 +38,22 @@ add volume <Volume> [provider <ProviderID>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<Volume>|Especifica un volumen que se agrega al conjunto de copia sombra. Al menos un volumen es necesario para la creación de instantáneas.|
-|[proveedor \<ProviderID >]|Especifica el identificador del proveedor de un proveedor registrado se usa para crear la instantánea. Si **proveedor** no se especifica, se utiliza el proveedor predeterminado.|
+|@no__t 0Volume >|Especifica el volumen que se va a agregar al conjunto de instantáneas. Se requiere al menos un volumen para la creación de la instantánea.|
+|[proveedor \<ProviderID >]|Especifica el identificador de proveedor de un proveedor registrado que se va a usar para crear la instantánea. Si no se especifica **Provider** , se utilizará el proveedor predeterminado.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Los volúmenes se agregan una vez.
--   Cada vez que se ha agregado un volumen, se comprueba para asegurarse de que VSS es compatible con la creación de instantáneas de dicho volumen. Esta comprobación principal puede invalidar, sin embargo, su uso posterior de la **establecer el contexto de** comando.
--   Cuando se crea una instantánea, una variable de entorno vincula el alias para el identificador de la sombra, por lo que el alias, a continuación, se puede utilizar para generar scripts.
+-   Los volúmenes se agregan de uno en uno.
+-   Cada vez que se agrega un volumen, se comprueba para asegurarse de que VSS admite la creación de instantáneas de ese volumen. No obstante, es posible que esta comprobación principal se haya invalidado mediante el uso posterior del comando **set context** .
+-   Cuando se crea una instantánea, una variable de entorno vincula el alias con el identificador de la instantánea, de modo que el alias se puede usar para el scripting.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para ver la lista actual de los proveedores registrados en el `DISKSHADOW>` , escriba:
+Para ver la lista actual de proveedores registrados, en el símbolo del sistema `DISKSHADOW>`, escriba:
 ```
 list providers
 ```
-La salida siguiente muestra un proveedor único, que se usará de forma predeterminada:
+La siguiente salida muestra un solo proveedor, que se usará de forma predeterminada:
 ```
 * ProviderID: {b5946137-7b9f-4925-af80-51abd60b20d5}
         Type: [1] VSS_PROV_SYSTEM
@@ -62,7 +62,7 @@ La salida siguiente muestra un proveedor único, que se usará de forma predeter
         CLSID: {65ee1dba-8ff4-4a58-ac1c-3470ee2f376a}
 1 provider registered.
 ```
-Para agregar la unidad C para el conjunto de copia de instantáneas y asignar un alias denominado System1, escriba:
+Para agregar la unidad C al conjunto de instantáneas y asignar un alias denominado System1, escriba:
 ```
 add volume c: alias System1
 ```

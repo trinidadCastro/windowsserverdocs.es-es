@@ -1,8 +1,8 @@
 ---
 title: bitsadmin monitor
-description: Tema de los comandos de Windows para **bitsadmin monitor** -supervisa trabajos en la cola de transferencia que posee el usuario actual.
+description: 'Temas de comandos de Windows para el **monitor de bitsadmin** : supervisa los trabajos de la cola de transferencia que posee el usuario actual.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2c4620d5c8e46cb8bfcb6b9c83261d57781abea5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fe4963349c7e17fc77500b5adfceafc48a20ac5f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814596"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381221"
 ---
 # <a name="bitsadmin-monitor"></a>bitsadmin monitor
 
 
 
-Supervisa los trabajos en la cola de transferencia que posee el usuario actual.
+Supervisa los trabajos de la cola de transferencia que posee el usuario actual.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,18 +36,18 @@ bitsadmin /Monitor [/allusers] [/refresh <Seconds>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|ALLUSERS|Opcional: supervisa trabajos para todos los usuarios.|
+|AllUsers|Opcional: supervisa los trabajos de todos los usuarios.|
 |Actualizar|Opcional: actualiza los datos en un intervalo especificado por *segundos*. El intervalo de actualización predeterminado es de cinco segundos.|
 
 ## <a name="remarks"></a>Comentarios
 
-Debe tener privilegios de administrador para usar el **Allusers** parámetro.
+Debe tener privilegios de administrador para usar el parámetro **AllUsers** .
 
 Use CTRL + C para detener la actualización.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente supervisa la cola de transferencia para los trabajos que pertenecen al usuario actual y actualiza la información de cada 60 segundos.
+En el siguiente ejemplo se supervisa la cola de transferencia para los trabajos que pertenecen al usuario actual y se actualiza la información cada 60 segundos.
 ```
 C:\>bitsadmin /Monitor /refesh 60
 ```

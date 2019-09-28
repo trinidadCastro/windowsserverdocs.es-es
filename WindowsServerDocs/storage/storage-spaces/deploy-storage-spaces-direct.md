@@ -1,6 +1,6 @@
 ---
 title: Implementar espacios de almacenamiento directo
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: eldenc
 ms.author: stevenek
 ms.technology: storage-spaces
@@ -10,12 +10,12 @@ author: stevenek
 ms.date: 06/07/2019
 description: Instrucciones paso a paso para implementar el almacenamiento definido por software con Espacios de almacenamiento directo en Windows Server como una infraestructura hiperconvergida o una infraestructura convergente (también conocida como desagregada).
 ms.localizationpriority: medium
-ms.openlocfilehash: 69cd27cba09bd9d23a461978416217a20b2979ec
-ms.sourcegitcommit: b68ff64ecd87959cd2acde4a47506a01035b542a
+ms.openlocfilehash: 0ab96f737f7700e202c9d0382c06859c4ea84118
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68830906"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402821"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implementar espacios de almacenamiento directo
 
@@ -27,7 +27,7 @@ En este tema se proporcionan instrucciones paso a paso para implementar [espacio
 > ¿Desea adquirir una infraestructura hiperconvergida? Microsoft recomienda adquirir una solución de hardware/software validada de nuestros asociados, que incluye procedimientos y herramientas de implementación. Estas soluciones se diseñan, ensamblan y validan con nuestra arquitectura de referencia para garantizar la compatibilidad y la confiabilidad, de modo que pueda ponerse en marcha rápidamente. Para obtener soluciones de Windows Server 2019, visite el [sitio web de soluciones de hcl Azure Stack](https://azure.microsoft.com/overview/azure-stack/hci). En el caso de las soluciones de Windows Server 2016, obtenga más información en [Windows Server Software-Defined](https://microsoft.com/wssd).
 
 > [!Tip]
-> Puede usar máquinas virtuales de Hyper-V, incluido en Microsoft Azure, para [evaluar espacios de almacenamiento directo sin hardware](storage-spaces-direct-in-vm.md). También puede revisar los útiles scripts de [implementación rápida de Windows Server](https://aka.ms/wslab), que se usan con fines de entrenamiento.
+> Puede usar máquinas virtuales de Hyper-V, incluido en Microsoft Azure, para [evaluar espacios de almacenamiento directo sin hardware](storage-spaces-direct-in-vm.md). También puede revisar los útiles [scripts de implementación rápida de Windows Server](https://aka.ms/wslab), que se usan con fines de entrenamiento.
 
 ## <a name="before-you-start"></a>Antes de comenzar
 
@@ -84,15 +84,15 @@ Especifique la sesión de PS y use el nombre del servidor o la dirección IP del
 >   
 > `Set-Item WSMAN:\Localhost\Client\TrustedHosts -Value Server01 -Force`
 >  
-> Nota: la lista de hosts de confianza admite caracteres `Server*`comodín, como.
+> Nota: la lista de hosts de confianza admite caracteres comodín, como `Server*`.
 >
-> Para ver la lista de hosts de `Get-Item WSMAN:\Localhost\Client\TrustedHosts`confianza, escriba.  
+> Para ver la lista de hosts de confianza, escriba `Get-Item WSMAN:\Localhost\Client\TrustedHosts`.  
 >   
-> Para vaciar la lista, `Clear-Item WSMAN:\Localhost\Client\TrustedHost`escriba.  
+> Para vaciar la lista, escriba `Clear-Item WSMAN:\Localhost\Client\TrustedHost`.  
 
 ### <a name="step-13-join-the-domain-and-add-domain-accounts"></a>Paso 1,3: Unirse al dominio y agregar cuentas de dominio
 
-Hasta ahora ha configurado los servidores individuales con la cuenta `<ComputerName>\Administrator`de administrador local.
+Hasta ahora ha configurado los servidores individuales con la cuenta de administrador local, `<ComputerName>\Administrator`.
 
 Para administrar Espacios de almacenamiento directo, deberá unir los servidores a un dominio y usar una cuenta de dominio Active Directory Domain Services que esté en el grupo de administradores en cada servidor.
 
@@ -187,7 +187,7 @@ Invoke-Command ($ServerList) {
 } | Sort -Property PsComputerName, Count
 ```
 
-La salida tendrá un aspecto similar al siguiente , donde recuento es el número de unidades de cada modelo de cada servidor:
+La salida tendrá un aspecto similar al siguiente, donde **recuento** es el número de unidades de cada modelo de cada servidor:
 
 ```
 Count Name                          PSComputerName
@@ -204,7 +204,7 @@ Count Name                          PSComputerName
 
 ### <a name="step-32-validate-the-cluster"></a>Paso 3,2: Validar el clúster
 
-En este paso, ejecutará la herramienta de validación de clústeres para asegurarse de que los nodos del servidor están configurados correctamente para crear un clúster mediante Espacios de almacenamiento directo. Cuando se ejecuta la`Test-Cluster`validación de clúster () antes de crear el clúster, se ejecutan las pruebas que comprueban que la configuración parece adecuada para funcionar correctamente como un clúster de conmutación por error. En el ejemplo siguiente se usa `-Include` el parámetro y, a continuación, se especifican las categorías de pruebas específicas. Esto garantiza que se incluyen en la validación las pruebas específicas de Espacios de almacenamiento directo.
+En este paso, ejecutará la herramienta de validación de clústeres para asegurarse de que los nodos del servidor están configurados correctamente para crear un clúster mediante Espacios de almacenamiento directo. Cuando se ejecuta la validación de clúster (`Test-Cluster`) antes de crear el clúster, se ejecutan las pruebas que comprueban que la configuración parece adecuada para funcionar correctamente como un clúster de conmutación por error. En el ejemplo siguiente se usa el parámetro `-Include` y, a continuación, se especifican las categorías de pruebas específicas. Esto garantiza que se incluyen en la validación las pruebas específicas de Espacios de almacenamiento directo.
 
 Utilice el siguiente comando de PowerShell para validar un conjunto de servidores para su uso como un clúster de Espacios de almacenamiento directo.
 
@@ -238,7 +238,7 @@ Para obtener más información, consulta los temas siguientes:
 
 ### <a name="step-35-enable-storage-spaces-direct"></a>Paso 3,5: Habilitar Espacios de almacenamiento directos
 
-Después de crear el clúster, use `Enable-ClusterStorageSpacesDirect` el cmdlet de PowerShell, que colocará el sistema de almacenamiento en el modo de espacios de almacenamiento directo y realizará lo siguiente automáticamente:
+Después de crear el clúster, use el cmdlet de PowerShell `Enable-ClusterStorageSpacesDirect`, que pondrá el sistema de almacenamiento en el modo de Espacios de almacenamiento directo y realizará lo siguiente automáticamente:
 
 -   **Crear un grupo:** Crea un único grupo grande que tiene un nombre como "S2D on Cluster1".
 
@@ -258,17 +258,17 @@ Cuando finalice este comando, que puede tardar varios minutos, el sistema estar�
 
 ### <a name="step-36-create-volumes"></a>Paso 3,6: Crear volúmenes
 
-Se recomienda usar el `New-Volume` cmdlet, ya que proporciona la experiencia más rápida y sencilla. Este cmdlet crea automáticamente por sí solo el disco virtual, lo particiona y formatea, crea el volumen con nombre coincidente y lo agrega a los volúmenes compartidos de clúster: todo en un paso sencillo.
+Se recomienda usar el cmdlet `New-Volume`, ya que proporciona la experiencia más rápida y sencilla. Este cmdlet crea automáticamente por sí solo el disco virtual, lo particiona y formatea, crea el volumen con nombre coincidente y lo agrega a los volúmenes compartidos de clúster: todo en un paso sencillo.
 
 Para obtener más información, echa un vistazo a [Crear volúmenes en Espacios de almacenamiento directo](create-volumes.md).
 
 ### <a name="step-37-optionally-enable-the-csv-cache"></a>Paso 3,7: Habilitar opcionalmente la memoria caché de CSV
 
-Opcionalmente, puede habilitar la caché de volumen compartido de clúster (CSV) para usar la memoria del sistema (RAM) como una caché de nivel de bloque de escritura de las operaciones de lectura que el administrador de caché de Windows no ha almacenado en caché. Esto puede mejorar el rendimiento de aplicaciones como Hyper-V. La memoria caché de CSV puede aumentar el rendimiento de las solicitudes de lectura y también es útil para escenarios de servidor de archivos de escalabilidad horizontal.
+Opcionalmente, puede habilitar la caché de volumen compartido de clúster (CSV) para usar la memoria del sistema (RAM) como una caché de nivel de bloque de escritura de las operaciones de lectura que el administrador de caché de Windows no ha almacenado en caché. Esto puede mejorar el rendimiento de aplicaciones como Hyper-V. La memoria caché de CSV puede aumentar el rendimiento de las solicitudes de lectura y también es útil para escenarios de Servidor de archivos de escalabilidad horizontal.
 
 Al habilitar la memoria caché de CSV se reduce la cantidad de memoria disponible para ejecutar máquinas virtuales en un clúster hiperconvergido, por lo que tendrá que equilibrar el rendimiento de almacenamiento con la memoria disponible para los VHD.
 
-Para establecer el tamaño de la memoria caché de CSV, abra una sesión de PowerShell en el sistema de administración con una cuenta que tenga permisos de administrador en el clúster de almacenamiento y, a `$ClusterName` continuación `$CSVCacheSize` , use este script, y cambie las variables y según corresponda. ejemplo establece una memoria caché de CSV de 2 GB por servidor):
+Para establecer el tamaño de la memoria caché de CSV, abra una sesión de PowerShell en el sistema de administración con una cuenta que tenga permisos de administrador en el clúster de almacenamiento y, a continuación, use este script, cambiando las variables `$ClusterName` y `$CSVCacheSize` según corresponda (este ejemplo establece un 2 GB de caché CSV por servidor):
 
 ```PowerShell
 $ClusterName = "StorageSpacesDirect1"
@@ -287,19 +287,19 @@ Para obtener más información, consulte [uso de la caché de lectura en memoria
 
 Si va a implementar un clúster hiperconvergido, el último paso es aprovisionar máquinas virtuales en el clúster de Espacios de almacenamiento directo.
 
-Los archivos de la máquina virtual deben almacenarse en el espacio de nombres csv del sistema (\\ejemplo\\: c: ClusterStorage volume1), al igual que las máquinas virtuales en clúster en clústeres de conmutación por error.
+Los archivos de la máquina virtual deben almacenarse en el espacio de nombres CSV del sistema (ejemplo: c: \\ClusterStorage @ no__t-1Volume1), al igual que las máquinas virtuales en clúster en clústeres de conmutación por error.
 
 Puede usar herramientas integradas u otras herramientas para administrar el almacenamiento y las máquinas virtuales, como System Center Virtual Machine Manager.
 
-## <a name="step-4-deploy-scale-out-file-server-for-converged-solutions"></a>Paso 4: Implementar el servidor de archivos de escalabilidad horizontal para las soluciones convergentes
+## <a name="step-4-deploy-scale-out-file-server-for-converged-solutions"></a>Paso 4: Implementar Servidor de archivos de escalabilidad horizontal para las soluciones convergentes
 
-Si va a implementar una solución convergente, el siguiente paso es crear una instancia de servidor de archivos de escalabilidad horizontal y configurar algunos recursos compartidos de archivos. Si va a implementar un clúster hiperconvergido, ya ha terminado y no necesita esta sección.
+Si va a implementar una solución convergente, el siguiente paso es crear una instancia de Servidor de archivos de escalabilidad horizontal y configurar algunos recursos compartidos de archivos. Si va a implementar un clúster hiperconvergido, ya ha terminado y no necesita esta sección.
 
-### <a name="step-41-create-the-scale-out-file-server-role"></a>Paso 4,1: Crear el rol de servidor de archivos de escalabilidad horizontal
+### <a name="step-41-create-the-scale-out-file-server-role"></a>Paso 4,1: Crear el rol de Servidor de archivos de escalabilidad horizontal
 
-El siguiente paso para configurar los servicios de clúster para el servidor de archivos es crear el rol de servidor de archivos en clúster, que es cuando se crea la instancia del servidor de archivos de escalabilidad horizontal en la que se hospedan los recursos compartidos de archivos disponibles continuamente.
+El siguiente paso para configurar los servicios de clúster para el servidor de archivos es crear el rol de servidor de archivos en clúster, que es cuando se crea la instancia de Servidor de archivos de escalabilidad horizontal en la que se hospedan los recursos compartidos de archivos disponibles continuamente.
 
-#### <a name="to-create-a-scale-out-file-server-role-by-using-server-manager"></a>Para crear un rol de servidor de archivos de escalabilidad horizontal mediante Administrador del servidor
+#### <a name="to-create-a-scale-out-file-server-role-by-using-server-manager"></a>Para crear un rol de Servidor de archivos de escalabilidad horizontal mediante Administrador del servidor
 
 1. En Administrador de clústeres de conmutación por error, seleccione el clúster, vaya a **roles**y, a continuación, haga clic en **configurar rol.** .<br>Aparece el Asistente para alta disponibilidad.
 2. En la página **Seleccionar rol** , haga clic en **servidor de archivos**.
@@ -307,23 +307,23 @@ El siguiente paso para configurar los servicios de clúster para el servidor de 
 4. En la página **punto de acceso de cliente** , escriba un nombre para el servidor de archivos de escalabilidad horizontal.
 5. Para comprobar que el rol se configuró correctamente, vaya a **roles** y confirme que la columna **Estado** muestra en **ejecución** junto al rol de servidor de archivos en clúster que ha creado, tal como se muestra en la figura 1.
 
-   ![Captura de pantalla de administrador de clústeres de conmutación por error que muestra el servidor de archivos] de escalabilidad horizontal (media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "Administrador de clústeres de conmutación por error que muestra el servidor de archivos de escalabilidad") horizontal
+   ![Captura de pantalla de administrador de clústeres de conmutación por error muestra el](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "Administrador de clústeres de conmutación por error de servidor de archivos de escalabilidad horizontal que muestra la servidor de archivos de escalabilidad horizontal")
 
-    **Figura 1** Administrador de clústeres de conmutación por error que muestra el servidor de archivos de escalabilidad horizontal con el estado en ejecución
+    **Figura 1** Administrador de clústeres de conmutación por error mostrar el Servidor de archivos de escalabilidad horizontal con el estado en ejecución
 
 > [!NOTE]
 >  Después de crear el rol en clúster, es posible que se produzcan algunos retrasos en la propagación de red que podrían impedir la creación de recursos compartidos de archivos en él durante unos minutos, o incluso más.  
   
-#### <a name="to-create-a-scale-out-file-server-role-by-using-windows-powershell"></a>Para crear un rol de servidor de archivos de escalabilidad horizontal mediante Windows PowerShell
+#### <a name="to-create-a-scale-out-file-server-role-by-using-windows-powershell"></a>Para crear un rol de Servidor de archivos de escalabilidad horizontal mediante Windows PowerShell
 
- En una sesión de Windows PowerShell que esté conectada al clúster de servidores de archivos, escriba los siguientes comandos para crear el rol de servidor de archivos de escalabilidad horizontal, cambie *FSCLUSTER* para que coincida con el nombre del clúster y *sofs* para que coincida con el nombre que desea dar al Rol de servidor de archivos de escalabilidad horizontal:
+ En una sesión de Windows PowerShell conectada al clúster de servidores de archivos, escriba los siguientes comandos para crear el rol de Servidor de archivos de escalabilidad horizontal, cambiando *FSCLUSTER* para que coincida con el nombre del clúster y *sofs* para que coincida con el nombre que desea dar al Rol de Servidor de archivos de escalabilidad horizontal:
 
 ```PowerShell
 Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 ```
 
 > [!NOTE]
->  Después de crear el rol en clúster, es posible que se produzcan algunos retrasos en la propagación de red que podrían impedir la creación de recursos compartidos de archivos en él durante unos minutos, o incluso más. Si el rol SOFS produce un error inmediatamente y no se inicia, puede deberse a que el objeto de equipo del clúster no tiene permiso para crear una cuenta de equipo para el rol SOFS. Para obtener ayuda con esto, consulte esta entrada de blog: [El rol de servidor de archivos de escalabilidad horizontal no se inicia con los identificadores de evento 1205, 1069 y 1194](http://www.aidanfinn.com/?p=14142).
+>  Después de crear el rol en clúster, es posible que se produzcan algunos retrasos en la propagación de red que podrían impedir la creación de recursos compartidos de archivos en él durante unos minutos, o incluso más. Si el rol SOFS produce un error inmediatamente y no se inicia, puede deberse a que el objeto de equipo del clúster no tiene permiso para crear una cuenta de equipo para el rol SOFS. Para obtener ayuda con esto, consulte esta entrada de blog: [Servidor de archivos de escalabilidad horizontal rol no se inicia con los identificadores de evento 1205, 1069 y 1194](http://www.aidanfinn.com/?p=14142).
 
 ### <a name="step-42-create-file-shares"></a>Paso 4,2: Crear recursos compartidos de archivos
 
@@ -371,7 +371,7 @@ Para crear recursos compartidos de archivos mediante scripts de PowerShell, haga
 
 ### <a name="step-43-enable-kerberos-constrained-delegation"></a>Paso 4,3 habilitación de la delegación restringida de Kerberos
 
-Para configurar la delegación restringida de Kerberos para la administración remota de escenarios y aumentar Migración en vivo seguridad, desde uno de los nodos de clúster de almacenamiento, use el script KCDSetup. PS1 incluido en la configuración de recursos compartidos de [SMB para cargas de trabajo de Hyper-V](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a). Este es un pequeño contenedor del script:
+Para configurar la delegación restringida de Kerberos para la administración remota de escenarios y aumentar Migración en vivo seguridad, desde uno de los nodos de clúster de almacenamiento, use el script KCDSetup. PS1 incluido en la [configuración de recursos compartidos de SMB para cargas de trabajo de Hyper-V](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a). Este es un pequeño contenedor del script:
 
 ```PowerShell
 $HyperVClusterName = "Compute01"

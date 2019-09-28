@@ -2,7 +2,7 @@
 title: mountvol
 description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 07c57f7ab9c41d6155e4a8d38322176aabf3868f
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 5a3de8e5744c50acff3fdad0c7cf1dabf14fb144
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544592"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373577"
 ---
 # <a name="mountvol"></a>mountvol
 
@@ -44,8 +44,8 @@ mountvol <Drive>: /s
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[\<> De unidad:]<Path>|Especifica el directorio NTFS existente donde residirá el punto de montaje.|
-|\<VolumeName >|Especifica el nombre del volumen que es el destino del punto de montaje. El nombre del volumen utiliza la sintaxis siguiente, donde *GUID* es un identificador único global:</br>`\\\\?\Volume\{GUID}\`</br>Los corchetes {} son obligatorios.|
+|[\<Drive >:] <Path>|Especifica el directorio NTFS existente donde residirá el punto de montaje.|
+|@no__t 0VolumeName >|Especifica el nombre del volumen que es el destino del punto de montaje. El nombre del volumen utiliza la sintaxis siguiente, donde *GUID* es un identificador único global:</br>`\\\\?\Volume\{GUID}\`</br>Los corchetes {} son obligatorios.|
 |/d|Quita el punto de montaje del volumen de la carpeta especificada.|
 |/l|Muestra el nombre del volumen montado para la carpeta especificada.|
 |/p|Quita el punto de montaje del volumen del directorio especificado, desmonta el volumen básico y desconecta el volumen básico, lo que hace que sea desmontable. Si otros procesos están usando el volumen, **Mountvol** cierra los identificadores abiertos antes de desmontar el volumen.|
@@ -59,7 +59,7 @@ mountvol <Drive>: /s
 
 -   **Mountvol** le permite vincular volúmenes sin necesidad de una letra de unidad.
 -   Los volúmenes que se desmontan con **/p** se enumeran en la lista de volúmenes como "no montado hasta que se crea un punto de montaje de volumen". Si el volumen tiene más de un punto de montaje, use **/d** para quitar los puntos de montaje adicionales antes de usar **/p**. Puede volver a hacer que se pueda montar el volumen básico si asigna un punto de montaje de volumen.
--   Si necesita expandir el espacio de volumen sin volver a formatear o reemplazar una unidad de disco duro, puede Agregar una ruta de acceso de montaje a otro volumen. La ventaja de usar un volumen con varias rutas de acceso de montaje es que puede acceder a todos los volúmenes locales mediante una sola letra de `C:`unidad (como). No es necesario recordar qué volumen corresponde a la letra de unidad, aunque todavía puede montar volúmenes locales y asignarles letras de unidad.
+-   Si necesita expandir el espacio de volumen sin volver a formatear o reemplazar una unidad de disco duro, puede Agregar una ruta de acceso de montaje a otro volumen. La ventaja de usar un volumen con varias rutas de acceso de montaje es que puede acceder a todos los volúmenes locales mediante una sola letra de unidad (como `C:`). No es necesario recordar qué volumen corresponde a la letra de unidad, aunque todavía puede montar volúmenes locales y asignarles letras de unidad.
 
 ## <a name="BKMK_examples"></a>Example
 

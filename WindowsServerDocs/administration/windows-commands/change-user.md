@@ -1,8 +1,8 @@
 ---
 title: change user
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bedef9f996554a3b5745b47f646204646fdfa9a6
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 771e39182c17b9a6710e49eff2f5302e539bdbb5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434417"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379575"
 ---
 # <a name="change-user"></a>change user
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-cambia el modo de instalación para el servidor Host de sesión de escritorio remoto (Host de sesión de rd).
-Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_examples).
+cambia el modo de instalación del servidor host de sesión de Escritorio remoto (host de sesión de escritorio remoto).
+Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para descubrir las novedades de la versión más reciente, consulte [novedades nuevos servicios de escritorio remoto en Windows Server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
+> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
 > ## <a name="syntax"></a>Sintaxis
 > ```
 > change user {/execute | /install | /query}
@@ -36,32 +36,32 @@ Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_exam
 > 
 > | Parámetro |                                                                                                 Descripción                                                                                                  |
 > |-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-> | /execute  |                                                                Permite la asignación de archivo ini en el directorio principal. Esta es la configuración predeterminada.                                                                 |
-> | /install  | Deshabilita la asignación del archivo .ini en el directorio principal. Todos los archivos .ini se leen y escritos en el directorio del sistema. Debe deshabilitar la asignación del archivo .ini al instalar aplicaciones en un servidor Host de sesión de escritorio remoto. |
-> |  /query   |                                                                             Muestra la configuración actual de la asignación del archivo. ini.                                                                              |
+> | /Execute  |                                                                Habilita la asignación de archivos. ini en el directorio particular. Esta es la configuración predeterminada.                                                                 |
+> | /install  | Deshabilita la asignación de archivos. ini en el directorio particular. Todos los archivos. ini se leen y se escriben en el directorio del sistema. Debe deshabilitar la asignación de archivos. ini al instalar aplicaciones en un servidor host de sesión de escritorio remoto. |
+> |  /Query   |                                                                             Muestra la configuración actual para la asignación de archivos. ini.                                                                              |
 > |    /?     |                                                                                     Muestra la ayuda en el símbolo del sistema.                                                                                     |
 > 
 > ## <a name="remarks"></a>Comentarios
-> - Use **Cambiar usuario /install** antes de instalar una aplicación para crear archivos .ini para la aplicación en el directorio del sistema. Estos archivos se usan como el origen cuando se crean los archivos .ini específicos del usuario. Después de instalar la aplicación, use **Cambiar usuario / execute** para revertir a la asignación del archivo .ini estándar.
-> - La primera vez que ejecute la aplicación, lo busca en el directorio principal de sus archivos. ini. Si los archivos .ini no se encuentran en el directorio principal, pero se encuentran en el directorio del sistema, servicios de escritorio remoto copia los archivos .ini en el directorio particular, lo que garantiza que cada usuario tiene una copia única de los archivos .ini de aplicación. Los archivos .ini nuevos se crean en el directorio principal.
-> - Cada usuario debe tener una copia única de los archivos .ini para una aplicación. Esto evita que los casos en que distintos usuarios podrían tener configuraciones de aplicación incompatible (por ejemplo, los directorios predeterminados diferentes o resoluciones de pantalla).
-> - Cuando el sistema está en modo de instalación (es decir, **Cambiar usuario /install**), se producen varias cosas. Todas las entradas de registro que se crean están sombreadas en **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentversion\Terminal Server\Install**, en uno el **\SOFTWARE** subclave o la **\MACHINE** subclave. Las subclaves se agregan a **HKEY_CURrenT_USER** se copian en el **\SOFTWARE** de subclave y las subclaves agregado a **HKEY_LOCAL_MACHINE** se copian en el **\ MÁQUINA** subclave. Si la aplicación consulta el directorio de Windows mediante el uso de las llamadas del sistema, como GetWindowsdirectory, el servidor Host de sesión de escritorio remoto devuelve el directorio systemroot. Si se agregan las entradas del archivo .ini mediante llamadas al sistema, como WritePrivateProfileString, se agregan a los archivos en el directorio raíz.
-> - Cuando el sistema vuelve al modo de ejecución (es decir, **Cambiar usuario / execute**), y la aplicación intenta leer una entrada del registro en **HKEY_CURrenT_USER** que no existe, servicios de escritorio remoto comprueba si existe una copia de la clave bajo la **\Terminal Server\Install** subclave. Si es así, las subclaves se copian en la ubicación adecuada en **HKEY_CURrenT_USER**. Si la aplicación intenta leer un archivo .ini que no existe, busca en servicios de escritorio remoto para ese archivo. ini, bajo la raíz del sistema. Si el archivo .ini está en la raíz del sistema, se copia en el subdirectorio \Windows del directorio principal del usuario. Si la aplicación consulta el directorio de Windows, el servidor Host de sesión de escritorio remoto devuelve el subdirectorio \Windows del directorio principal del usuario.
-> - Cuando haya iniciado sesión, servicios de escritorio remoto comprueba si sus archivos .ini del sistema son más recientes que los archivos .ini en el equipo. Si la versión del sistema es más reciente, el archivo .ini se reemplaza o se combinan con la versión más reciente. Esto depende de si el bit INISYNC, 0 x 40, es para este archivo. ini. Se cambia el nombre de la versión anterior del archivo .ini IniFile.ctx. Si los valores del registro del sistema en el **\Terminal Server\Install** son más recientes que la versión de la subclave **HKEY_CURrenT_USER**, su versión de las subclaves se elimina y se reemplazan por las nuevas subclaves desde **\Terminal Server\Install**.
->   ## <a name="BKMK_examples"></a>Ejemplos
-> - Para deshabilitar la asignación del archivo .ini del directorio principal, escriba:
+> - Use **Change User/Install** antes de instalar una aplicación para crear archivos. ini para la aplicación en el directorio del sistema. Estos archivos se usan como origen cuando se crean archivos. ini específicos del usuario. Después de instalar la aplicación, use **Change User/Execute** para revertir a la asignación de archivos. ini estándar.
+> - La primera vez que ejecute la aplicación, buscará los archivos. ini en el directorio principal. Si no se encuentran los archivos. ini en el directorio particular, pero se encuentran en el directorio del sistema, Servicios de Escritorio remoto copia los archivos. ini en el directorio particular, asegurándose de que cada usuario tenga una copia única de los archivos. ini de la aplicación. Los nuevos archivos. ini se crean en el directorio particular.
+> - Cada usuario debe tener una copia única de los archivos. ini para una aplicación. Esto evita las instancias en las que distintos usuarios pueden tener configuraciones de aplicación incompatibles (por ejemplo, diferentes directorios predeterminados o resoluciones de pantalla).
+> - Cuando el sistema está en modo de instalación (es decir, **Change User/Install**), se producen varias acciones. Todas las entradas del registro que se crean se sombrean en **HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\Currentversion\Terminal Server\Install**, en la subclave **\Software** o **\MACHINE** . Las subclaves agregadas a **HKEY_CURrenT_USER** se copian bajo la subclave **\Software** y las subclaves agregadas a **HKEY_LOCAL_MACHINE** se copian bajo la subclave **\MACHINE** . Si la aplicación consulta el directorio de Windows mediante llamadas del sistema, como GetWindowsdirectory, el servidor host de sesión de escritorio remoto devuelve el directorio SystemRoot. Si se agregan entradas de archivo. ini mediante llamadas del sistema, como WritePrivateProfileString, se agregan a los archivos. ini en el directorio SystemRoot.
+> - Cuando el sistema vuelve al modo de ejecución (es decir, **cambia el usuario/Execute**) y la aplicación intenta leer una entrada del registro en **HKEY_CURrenT_USER** que no existe, servicios de escritorio remoto comprueba si existe una copia de la clave en la subclave **\Terminal Server\Install** . Si es así, las subclaves se copian en la ubicación adecuada en **HKEY_CURrenT_USER**. Si la aplicación intenta leer desde un archivo. ini que no existe, Servicios de Escritorio remoto busca ese archivo. ini en la raíz del sistema. Si el archivo. ini se encuentra en la raíz del sistema, se copia en el subdirectorio \Windows del directorio principal del usuario. Si la aplicación consulta el directorio de Windows, el servidor host de sesión de escritorio remoto devuelve el subdirectorio \Windows del directorio principal del usuario.
+> - Al iniciar sesión, Servicios de Escritorio remoto comprueba si sus archivos System. ini son más recientes que los archivos. ini del equipo. Si la versión del sistema es más reciente, el archivo. ini se reemplaza o se combina con la versión más reciente. Esto depende de si el bit INISYNC, 0x40, se establece para este archivo. ini. Se cambia el nombre de la versión anterior del archivo. ini como inifile. CTX. Si los valores del registro del sistema en la subclave **\Terminal Server\Install** son más recientes que la versión de **HKEY_CURrenT_USER**, la versión de las subclaves se elimina y se reemplaza con las nuevas subclaves de **\Terminal Server\Install**.
+>   ## <a name="BKMK_examples"></a>Example
+> - Para deshabilitar la asignación de archivos. ini en el directorio particular, escriba:
 >   ```
 >   change user /install
 >   ```
-> - Para habilitar la asignación del archivo .ini del directorio principal, escriba:
+> - Para habilitar la asignación de archivos. ini en el directorio particular, escriba:
 >   ```
 >   change user /execute
 >   ```
-> - Para mostrar la configuración actual de la asignación del archivo. ini, escriba:
+> - Para mostrar la configuración actual de la asignación de archivos. ini, escriba:
 >   ```
 >   change user /query
 >   ```
 >   #### <a name="additional-references"></a>Referencias adicionales
 >   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 >   [cambiar](change.md)
->   [servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia de comandos](remote-desktop-services-terminal-services-command-reference.md)
+>   [servicios de escritorio remoto &#40;referencia de comandos&#41; Terminal Services](remote-desktop-services-terminal-services-command-reference.md)

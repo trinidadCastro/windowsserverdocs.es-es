@@ -1,8 +1,8 @@
 ---
 title: Comandos por rol de servidor
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a855926b9648a7c0f1a0db3e59ca802f8654ab0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5201e7291ce93c6bc45180aa8b9df2e36409c8f8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873756"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379253"
 ---
 # <a name="commands-by-server-role"></a>Comandos por rol de servidor
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Un rol de servidor describe la función principal del servidor. Los administradores pueden elegir dedicar todo un servidor a un rol, o bien instalar varios roles de servidor y roles de sub en un único equipo. Cada rol puede incluir otras herramientas de línea de comandos, instaladas como parte de la función. Los temas siguientes proporcionan una lista de comandos asociados a cada rol de servidor.
+Un rol de servidor describe la función principal del servidor. Los administradores pueden optar por dedicar un servidor completo a un rol, o bien instalar varios roles de servidor y subrols en un único equipo. Cada rol puede incluir herramientas de línea de comandos adicionales, instaladas como parte del rol. En los temas siguientes se proporciona una lista de los comandos asociados a cada rol de servidor.
 
 -   [Referencia de comandos de impresión](print-command-reference.md)
--   [Servicios para la referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)
--   [Servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia del comando](remote-desktop-services-terminal-services-command-reference.md)
+-   [Servicios de referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)
+-   [Referencia &#40;de&#41; comandos de Terminal Services de servicios de escritorio remoto](remote-desktop-services-terminal-services-command-reference.md)
 -   [Referencia de comandos de copia de seguridad de Windows Server](windows-server-backup-command-reference.md)

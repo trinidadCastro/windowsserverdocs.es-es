@@ -1,8 +1,8 @@
 ---
 title: pathping
-description: Obtenga información sobre cómo obtener la información de pérdida con el comando pathping y latencia de red.
+description: Aprenda a obtener información sobre la latencia y la pérdida de red mediante el comando pathping.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: db3a0f5cd3c711f7df0a13627969dc7b74b3d605
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3232aaac979aa4e410d31db810abdd940d1c24bf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837246"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372402"
 ---
 # <a name="pathping"></a>pathping
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Proporciona información sobre la latencia de red y pérdida de red en saltos intermedios entre un origen y destino. **Pathping** envía mensajes de solicitud de eco de varios a cada enrutador entre un origen y destino durante un período de tiempo y, a continuación, calcula los resultados basándose en los paquetes devueltos en cada enrutador. Dado que **pathping** muestra el grado de pérdida de paquetes en cualquier vínculo o enrutador determinados, puede determinar qué enrutadores o subredes pueden tener problemas de red. 
+Proporciona información sobre la latencia de red y la pérdida de red en saltos intermedios entre un origen y un destino. **pathping** envía varios mensajes de solicitud de eco a cada enrutador entre un origen y un destino durante un período de tiempo y, a continuación, calcula los resultados en función de los paquetes devueltos por cada enrutador. Dado que **pathping** muestra el grado de pérdida de paquetes en un enrutador o vínculo determinados, puede determinar qué enrutadores o subredes pueden estar teniendo problemas de red. 
 
-**Pathping** realiza el equivalente de la **tracert** comando mediante la identificación de que están en la ruta de acceso. A continuación, hace ping periódicamente a todos los enrutadores durante un período de tiempo y calcula las estadísticas en función del número que devuelve cada uno. Se utiliza sin parámetros, **pathping** muestra la Ayuda. 
+**pathping** realiza el equivalente del comando **tracert** mediante la identificación de los enrutadores que se encuentran en la ruta de acceso. A continuación, envía pings periódicamente a todos los enrutadores durante un período de tiempo especificado y calcula estadísticas basadas en el número devuelto de cada. Si se usa sin parámetros, **pathping** muestra la ayuda. 
 
 ## <a name="syntax"></a>Sintaxis
 ```
@@ -35,29 +35,29 @@ pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>]
 ### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-|/n|Evita que **pathping** intentan resolver las direcciones IP de los enrutadores intermedios en sus nombres. Esto puede acelerar la presentación de **pathping** resultados.|
-|/h \<saltosMáximos >|Especifica el número máximo de saltos en la ruta de acceso para buscar el destino (destino). El valor predeterminado es 30 saltos.|
-|/g \<Hostlist >|Especifica que la opción en el encabezado IP con el conjunto de destinos intermedios especificados en el uso de los mensajes de solicitud de la ruta de origen no estricta de eco *Hostlist*. Con el enrutamiento de origen no estricta, sucesivos destinos intermedios se pueden separar con uno o varios enrutadores. El número máximo de direcciones o nombres en la lista de hosts es 9. El *Hostlist* es una serie de direcciones IP (en notación decimal con puntos) separada por espacios.|
-|/p \<período >|Especifica el número de milisegundos que transcurrirán entre pings consecutivos. El valor predeterminado es 250 milisegundos (4/1 segundo).|
-|/q \<NumQueries>|Especifica el número de eco enviados a cada enrutador en la ruta de acceso de los mensajes de solicitud. El valor predeterminado es 100 consultas.|
-|/w \<timeout>|Especifica el número de milisegundos de espera para cada respuesta. El valor predeterminado es 3000 milisegundos (3 segundos).|
-|/i \<IPaddress>|Especifica la dirección de origen.|
-|/4 \<IPv4>|Especifica que pathping usa solo IPv4.|
-|/6 \<IPv6>|Especifica que pathping solo utiliza IPv6.|
-|\<TargetName>|Especifica el destino, que se identifica por el nombre de host o dirección IP.|
+|/n|Impide que **pathping** intente resolver las direcciones IP de los enrutadores intermedios en sus nombres. Esto puede acelerar la presentación de los resultados de **pathping** .|
+|/h \<MaximumHops >|Especifica el número máximo de saltos en la ruta de acceso para buscar el destino (destino). El valor predeterminado es 30 saltos.|
+|/g \<Hostlist >|Especifica que los mensajes de solicitud de eco usan la opción de ruta de origen flexible del encabezado IP con el conjunto de destinos intermedios especificados en *hostlist*. Con el enrutamiento de origen suelto, los destinos intermedios sucesivos pueden estar separados por uno o varios enrutadores. El número máximo de direcciones o nombres en la lista de hosts es 9. *Hostlist* es una serie de direcciones IP (en notación decimal con puntos) separadas por espacios.|
+|/p \<Period >|Especifica el número de milisegundos que se va a esperar entre pings consecutivos. El valor predeterminado es 250 milisegundos (1/4 segundos).|
+|/q \<NumQueries >|Especifica el número de mensajes de solicitud de eco enviados a cada enrutador de la ruta de acceso. El valor predeterminado es 100 consultas.|
+|/w \<timeout >|Especifica el número de milisegundos que se debe esperar para cada respuesta. El valor predeterminado es 3000 milisegundos (3 segundos).|
+|/i \<IPaddress >|Especifica la dirección de origen.|
+|/4 \<IPv4 >|Especifica que PathPing solo usa IPv4.|
+|/6 \<IPv6 >|Especifica que PathPing solo usa IPv6.|
+|@no__t 0TargetName >|Especifica el destino, que se identifica mediante la dirección IP o el nombre de host.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
--   **Pathping** parámetros distinguen mayúsculas de minúsculas.
--   Para evitar la congestión de la red, se debe hacer ping a un ritmo lento suficientemente.
--   Para minimizar los efectos de las pérdidas de ráfaga, no realice ping con demasiada frecuencia.
--   Cuando se usa el **/p** parámetro, pings se envían individualmente a cada salto intermedio. Por este motivo, el intervalo entre dos pings enviados al mismo salto es *período* multiplicado por el número de saltos.
--   Cuando se usa el **/w** parámetro, se pueden enviar múltiples pings en paralelo. Por este motivo, la cantidad de tiempo especificado en el *tiempo de espera* parámetro no está limitado por la cantidad de tiempo especificado en el *período* parámetro esperará entre pings.
--   Este comando está disponible sólo si el protocolo del protocolo de Internet (TCP/IP) se instala como un componente en las propiedades de un adaptador de red en las conexiones de red.
+-   los parámetros de **pathping** distinguen mayúsculas de minúsculas.
+-   Para evitar la congestión de la red, los pings se deben enviar a un ritmo suficientemente lento.
+-   Para minimizar los efectos de las pérdidas de ráfagas, no envíe pings con demasiada frecuencia.
+-   Cuando se usa el parámetro **/p** , los pings se envían individualmente a cada salto intermedio. Por este motivo, el intervalo entre dos pings enviados al mismo salto es el *período* multiplicado por el número de saltos.
+-   Cuando se usa el parámetro **/w** , se pueden enviar varios ping en paralelo. Por este motivo, la cantidad de tiempo especificada en el parámetro *timeout* no está limitada por la cantidad de tiempo especificada en el parámetro *period* para esperar entre pings.
+-   Este comando solo está disponible si el Protocolo Protocolo de Internet (TCP/IP) se instala como componente en las propiedades de un adaptador de red en las conexiones de red.
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-El ejemplo siguiente muestra **pathping** resultado del comando:
+En el ejemplo siguiente se muestra la salida del comando **pathping** :
 
 ```
 D:\>pathping /n corp1
@@ -85,11 +85,11 @@ Hop  RTT    Lost/Sent = Pct  Lost/Sent = Pct  address
   5   24ms    13/ 100 = 13%     0/ 100 =  0%  10.54.1.196
 Trace complete.
 ```
-Cuando **pathping** es ejecutar, los primeros resultados muestran la ruta de acceso. Se trata de la misma ruta de acceso que se muestra mediante el **tracert** comando. A continuación, se muestra un mensaje de ocupado durante aproximadamente 90 segundos (el tiempo varía según el número de saltos). Durante este tiempo, se recopila información de todos los enrutadores enumerados anteriormente y uno de los vínculos entre ellos. al final de este período, se muestran los resultados de pruebas.
+Cuando se ejecuta **pathping** , los primeros resultados muestran la ruta de acceso. Se trata de la misma ruta de acceso que se muestra con el comando **tracert** . A continuación, se muestra un mensaje ocupado durante aproximadamente 90 segundos (el tiempo varía según el número de saltos). Durante este tiempo, se recopila información de todos los enrutadores enumerados anteriormente y de los vínculos entre ellos. al final de este período, se muestran los resultados de la prueba.
 
-En el informe de ejemplo anterior, el **este nodo o vínculo**, **perdido/Enviado = Pct** y **dirección** columnas muestran que el vínculo entre 172.16.87.218 y 192.168.52.1 13 % de los paquetes. Los enrutadores de los saltos 2 y 4 también pierden paquetes dirigidos a ellos, pero esta pérdida no afecta a su capacidad para reenviar el tráfico que no está dirigido a ellas.
+En el informe de ejemplo anterior, las columnas **este nodo/vínculo**, **perdido/enviado = PCT** y **Dirección** muestran que el vínculo entre 172.16.87.218 y 192.168.52.1 está quitando el 13 por ciento de los paquetes. Los enrutadores de los saltos 2 y 4 también están descartando los paquetes, pero esta pérdida no afecta a su capacidad para reenviar el tráfico que no se le dirige.
 
-Las tasas de pérdidas correspondientes a los vínculos, identificados como una barra vertical (**|**) en el **dirección** columna, indicar la congestión en el vínculo que está provocando la pérdida de paquetes reenviados en el ruta de acceso. Los niveles de pérdida de enrutadores (identificados por sus direcciones IP) indican que podrían estar sobrecargados estos enrutadores.
+Las tasas de pérdida mostradas para los vínculos, identificadas como una barra vertical ( **|** ) en la columna **Dirección** , indican la congestión del vínculo que está causando la pérdida de paquetes que se reenvían en la ruta de acceso. Las tasas de pérdida mostradas para los enrutadores (identificados por sus direcciones IP) indican que estos enrutadores podrían estar sobrecargados.
 
 ## <a name="additional-references"></a>Referencias adicionales
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

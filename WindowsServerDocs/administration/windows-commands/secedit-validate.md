@@ -1,8 +1,8 @@
 ---
-title: secedit:validate
-description: 'Tema de los comandos de Windows para ***- '
+title: 'secedit: Validate'
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cca64f6b2904ed11f6b45e316c8e4da0093c373e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ece0a0324b77eb4226b679bc29f7bd599f15a120
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877916"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371102"
 ---
-# <a name="seceditvalidate"></a>secedit:validate
+# <a name="seceditvalidate"></a>secedit: Validate
 
 
 
-Valida la configuración de seguridad almacenada en una plantilla de seguridad (archivo .inf). Para obtener ejemplos de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
+Valida la configuración de seguridad almacenada en una plantilla de seguridad (archivo. inf). Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,21 +37,21 @@ Secedit /validate <configuration file name>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Nombre de archivo de configuración|Obligatorio.</br>Especifica la ruta de acceso y el nombre de la plantilla de seguridad que se va a validar.|
+|Nombre del archivo de configuración|Obligatorio.</br>Especifica la ruta de acceso y el nombre de archivo de la plantilla de seguridad que se validará.|
 
 ## <a name="remarks"></a>Comentarios
 
-Validación de plantillas de seguridad puede ayudarle si uno está dañado o establecido incorrectamente.
+La validación de plantillas de seguridad puede ayudarle si una está dañada o configurada de forma inapropiada.
 
-No se aplicará una plantilla de seguridad no válido.
+No se aplicará una plantilla de seguridad no válida.
 
-No se actualizará el archivo de registro.
+El archivo de registro no se actualizará.
 
-En Windows Server 2008, `Secedit /refreshpolicy` se ha reemplazado por `gpupdate`. Para obtener información sobre cómo actualizar la configuración de seguridad, consulte [Gpupdate](gpupdate.md).
+En Windows Server 2008, `Secedit /refreshpolicy` se ha reemplazado `gpupdate`por. Para obtener información acerca de cómo actualizar la configuración de seguridad, consulte [gpupdate](gpupdate.md).
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-Una vez que se realiza una operación de reversión en una plantilla de seguridad, desea comprobar que el archivo inf de reversión, secRBKcontoso.inf, es válido.
+Después de realizar una reversión en una plantilla de seguridad, es conveniente comprobar que el archivo INF de reversión, secRBKcontoso. inf, es válido.
 ```
 Secedit /validate secRBKcontoso.inf
 ```

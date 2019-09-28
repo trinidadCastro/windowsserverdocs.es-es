@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getnotifyinterface
-description: Tema de los comandos de Windows para **getnotifyinterface bitsadmin** -determina si otro programa ha registrado una interfaz de devolución de llamada de COM para el trabajo especificado.
+description: 'Temas de comandos de Windows para **bitsadmin getnotifyinterface** : determina si otro programa ha registrado una interfaz de devolución de llamada com para el trabajo especificado.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8316721a20cc477f9e8e15fc57b5d1c861da3ff4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 826e13cf8a3e54935ceb5a72ff82647cacfc3be5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868046"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381466"
 ---
 # <a name="bitsadmin-getnotifyinterface"></a>bitsadmin getnotifyinterface
 
-Determina si otro programa ha registrado una interfaz de devolución de llamada de COM (la interfaz de notificación) para el trabajo especificado.
+Determina si otro programa ha registrado una interfaz de devolución de llamada COM (la interfaz de notificación) para el trabajo especificado.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,18 +34,18 @@ bitsadmin /GetNotifyInterface <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
 ## <a name="remarks"></a>Comentarios
 
-Muestra registrado o no registrado.
+Muestra registrado o ANULAdo su registro.
 
 > [!NOTE]
-> No es posible determinar el programa que registra la interfaz de devolución de llamada.
+> No es posible determinar el programa que registró la interfaz de devolución de llamada.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente recupera la interfaz de notificación del trabajo denominado *myDownloadJob*.
+En el ejemplo siguiente se recupera la interfaz Notify del trabajo denominado *myDownloadJob*.
 ```
 C:\>bitsadmin /GetNotifyInterface myDownloadJob
 ```

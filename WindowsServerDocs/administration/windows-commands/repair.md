@@ -1,8 +1,8 @@
 ---
-title: Reparación
-description: 'Tema de los comandos de Windows para ***- '
+title: Resolver
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e4b9cde10e11558aaa95edda94921144dac1f86
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 88293422519488405d94e32596c81dbe4a697dee
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441804"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371529"
 ---
-# <a name="repair"></a>Reparación
+# <a name="repair"></a>Resolver
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Repara el RAID\-volumen 5 tiene el foco mediante la sustitución de la región del disco con errores con el disco dinámico especificado.  
+repara el volumen RAID @ no__t-05 con el foco sustituyendo la región del disco con el error especificado.  
   
   
   
@@ -38,18 +38,18 @@ repair disk=<n> [align=<n>] [noerr]
   
 | Parámetro  |                                                                                             Descripción                                                                                              |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| disk\=<n>  |                                                                 Especifica el disco dinámico que reemplazará a la región del disco con errores.                                                                 |
-| Alinear\=<n> |          Alinea todas las extensiones de volumen o partición para el límite de alineación más cercano. *n* es el número de kilobytes \(KB\) desde el principio del disco para el límite de alineación más cercano.           |
-|   noerr    | sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error. |
+| disco @ no__t-0 @ no__t-1  |                                                                 Especifica el disco dinámico que reemplazará la región de disco con errores.                                                                 |
+| align @ no__t-0 @ no__t-1 |          Alinea todas las extensiones de volumen o partición con el límite de alineación más cercano. *n* es el número de kilobytes \( KB @ no__t-2 desde el principio del disco hasta el límite de alineación más cercano.           |
+|   Noerr    | Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
   
 ## <a name="remarks"></a>Comentarios  
   
--   El disco dinámico especificado debe tener espacio mayor o igual que el tamaño total de la región del disco con errores en el RAID\-volumen 5.  
+-   El disco dinámico especificado debe tener un espacio libre mayor o igual que el tamaño total de la región de disco con errores en el volumen RAID @ no__t-05.  
   
--   Un volumen de RAID\-matriz 5 debe seleccionarse para que esta operación se realice correctamente. Use la **seleccione volumen** comando para seleccionar un volumen y desplace el foco a ella.  
+-   Se debe seleccionar un volumen en una matriz RAID @ no__t-05 para que esta operación se realice correctamente. Use el comando **seleccionar volumen** para seleccionar un volumen y cambiar el foco a él.  
   
-## <a name="BKMK_examples"></a>Ejemplos  
-Para reemplazar el volumen con el foco al sustituirla por disco dinámico 4, escriba:  
+## <a name="BKMK_examples"></a>Example  
+Para reemplazar el volumen que tiene el foco reemplazándolo por el disco dinámico 4, escriba:  
   
 ```  
 repair disk=4  

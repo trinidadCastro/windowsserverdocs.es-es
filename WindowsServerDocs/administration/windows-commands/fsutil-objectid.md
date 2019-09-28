@@ -1,7 +1,7 @@
 ---
 ms.assetid: 693ab895-9d0c-47c1-9f52-df5cd287842a
-title: fsutil objectid
-ms.prod: windows-server-threshold
+title: Fsutil objectId
+ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
@@ -9,20 +9,20 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f5887f20e2c36ec7dcfcd6f4e920b5273c6c60c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 509e58b85842826b71cb1bfed72ae4c7e5337e25
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813746"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376833"
 ---
-# <a name="fsutil-objectid"></a>fsutil objectid
+# <a name="fsutil-objectid"></a>Fsutil objectId
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
 
-Administra los identificadores de objeto (OID), que son objetos internos que usa el servicio cliente de seguimiento de vínculos distribuidos (DLT) y el servicio de replicación de archivos (FRS) para realizar un seguimiento de otros objetos como archivos, directorios y vínculos. Los identificadores de objeto son invisibles para la mayoría de los programas y nunca se deben modificar.
+Administra los identificadores de objeto (OID), que son objetos internos utilizados por el servicio de cliente de seguimiento de vínculos distribuidos (DLT) y el servicio de replicación de archivos (FRS) para realizar el seguimiento de otros objetos, como archivos, directorios y vínculos. Los identificadores de objeto son invisibles para la mayoría de los programas y nunca deben modificarse.
 
 > [!CAUTION]
-> No eliminar, establecer o modificar un identificador de objeto. Eliminar o establecer un identificador de objeto puede provocar la pérdida de datos de partes de un archivo, hasta e incluyendo volúmenes completos de datos. Además, se podría provocar un comportamiento adverso en el servicio de seguimiento de vínculos distribuidos (DLT) cliente y servicio de replicación de archivos (FRS).
+> No elimine, establezca ni modifique ningún identificador de objeto. La eliminación o la configuración de un identificador de objeto puede dar lugar a la pérdida de datos de partes de un archivo, hasta incluir volúmenes completos de datos. Además, podría producirse un comportamiento adverso en el servicio de cliente de seguimiento de vínculos distribuidos (DLT) y en el servicio de replicación de archivos (FRS).
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -39,21 +39,21 @@ fsutil objectid [set] <ObjectID> <BirthVolumeID> <BirthObjectID> <DomainID> <Fil
 
 |Parámetro|Descripción|
 |-------------|---------------|
-|crear|Crea un identificador de objeto si el archivo especificado no tiene ya una. Si el archivo ya tiene un identificador de objeto, este subcomando es equivalente a la **consulta** subcomando.|
+|crear|Crea un identificador de objeto si el archivo especificado todavía no tiene uno. Si el archivo ya tiene un identificador de objeto, este subcomando es equivalente al subcomando **query** .|
 |Eliminar|Elimina un identificador de objeto.|
 |query|Consulta un identificador de objeto.|
 |set|Establece un identificador de objeto.|
-|\<ObjectID>|Establece un identificador hexadecimal de 16 bytes de archivo específico que se garantiza que sea único dentro de un volumen. El identificador de objeto se usa el servicio de cliente de seguimiento de vínculos distribuidos (DLT) y el servicio de replicación de archivos (FRS) para identificar los archivos.|
-|\<BirthVolumeID>|Indica el volumen en el que se encontró el archivo cuando primero obtiene un identificador de objeto. Este valor es un identificador hexadecimal de 16 bytes que se usa el servicio cliente DLT.|
-|\<BirthObjectID>|Indica el identificador de objeto original del archivo (el *ObjectID* pueden cambiar cuando se mueve un archivo). Este valor es un identificador hexadecimal de 16 bytes que se usa el servicio cliente DLT.|
-|\<DomainID>|identificador de dominio hexadecimal de 16 bytes. Este valor no se utiliza actualmente y se debe establecer en todo ceros.|
-|\<FileName>|Especifica la ruta de acceso completa al archivo incluido el nombre de archivo y la extensión, por ejemplo C:\documents\filename.txt.|
+|@no__t 0ObjectID >|Establece un identificador hexadecimal de 16 bytes específico del archivo que se garantiza que es único dentro de un volumen. El servicio de cliente de seguimiento de vínculos distribuidos (DLT) y el servicio de replicación de archivos (FRS) utilizan el identificador de objetos para identificar los archivos.|
+|@no__t 0BirthVolumeID >|Indica el volumen en el que se encontraba el archivo cuando se obtuvo por primera vez un identificador de objeto. Este valor es un identificador hexadecimal de 16 bytes que usa el servicio cliente DLT.|
+|@no__t 0BirthObjectID >|Indica el identificador de objeto original del archivo ( *objectId* puede cambiar cuando se mueve un archivo). Este valor es un identificador hexadecimal de 16 bytes que usa el servicio cliente DLT.|
+|@no__t 0DomainID >|identificador de dominio hexadecimal de 16 bytes. Este valor no se utiliza actualmente y debe establecerse en ceros.|
+|\<Nombre de archivo >|Especifica la ruta de acceso completa al archivo, incluido el nombre de archivo y la extensión, por ejemplo C:\documents\filename.txt.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Cualquier archivo que tenga un identificador de objeto también tiene un identificador de volumen de nacimiento, un identificador de objeto de nacimiento y un identificador de dominio. Cuando mueve un archivo, puede cambiar el identificador de objeto, pero el volumen de nacimiento y los identificadores de objeto de nacimiento que siguen siendo los mismos. Este comportamiento permite que el sistema operativo de Windows siempre se encuentra un archivo, independientemente de donde se ha movido.
+-   Cualquier archivo que tenga un identificador de objeto también tiene un identificador de volumen de nacimiento, un identificador de objeto de nacimiento y un identificador de dominio. Cuando se mueve un archivo, el identificador del objeto puede cambiar, pero los identificadores del volumen de nacimiento y del objeto de nacimiento siguen siendo los mismos. Este comportamiento permite que el sistema operativo Windows encuentre siempre un archivo, independientemente de dónde se haya pasado.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 Para crear un identificador de objeto, escriba:
 
 `fsutil objectid create c:\temp\sample.txt`

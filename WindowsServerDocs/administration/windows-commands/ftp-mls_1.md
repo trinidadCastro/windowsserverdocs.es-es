@@ -1,8 +1,8 @@
 ---
-title: ftp mls_1
-description: 'Tema de los comandos de Windows para ***- '
+title: mls_1 FTP
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a379ead9c56af096e121048a8c0f596f6879bb0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: a84a0f8f3121ea19876744e9ef04bebf5f9fcb08
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438541"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376256"
 ---
-# <a name="ftp-mls1"></a>ftp: mls_1
+# <a name="ftp-mls_1"></a>FTP: mls_1
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Muestra una lista abreviada de archivos y subdirectorios en un directorio remoto.   
+Muestra una lista abreviada de archivos y subdirectorios de un directorio remoto.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 mls <remoteFile>[ ] <LocalFile>  
@@ -37,16 +37,16 @@ mls <remoteFile>[ ] <LocalFile>
 | <LocalFile>  |  Especifica un archivo local en el que se va a almacenar la lista.  |
 
 ## <a name="remarks"></a>Comentarios  
-- Especificar *archivosRemotos*  
+- Especificar *remoteFiles*  
   Escriba un guión ( **-** ) para usar el directorio de trabajo actual en el equipo remoto.  
-- Especificar *archivoLocal*  
-  Escriba un guión ( **-** ) para mostrar la lista en la pantalla.  
-  ## <a name="BKMK_Examples"></a>Ejemplos  
+- Especificar *archivolocal*  
+  Escriba un guión ( **-** ) para mostrar la lista en pantalla.  
+  ## <a name="BKMK_Examples"></a>Example  
   Mostrar una lista abreviada de archivos y subdirectorios para **dir1** y **dir2**.  
   ```  
   mls dir1 dir2 -  
   ```  
-  Guardar una lista abreviada de archivos y subdirectorios para **dir1** y **dir2** en el archivo local **ListaDir.txt**  
+  Guardar una lista abreviada de archivos y subdirectorios para **dir1** y **dir2** en el archivo local **dirlist. txt**  
   ```  
   mls dir1 dir2 dirlist.txt   
   ```  

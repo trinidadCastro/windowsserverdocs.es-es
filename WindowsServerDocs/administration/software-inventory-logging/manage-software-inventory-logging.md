@@ -2,7 +2,7 @@
 title: Administrar el Registro de inventario de software
 description: Describe cómo administrar el registro de inventario de software
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 686bb61426e49f00597c423bcf4f52d949a358ab
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: bd8a26d158f53121074881ac8ff204287f9a19ad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866376"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382967"
 ---
 # <a name="manage-software-inventory-logging"></a>Administrar el Registro de inventario de software
 
@@ -221,7 +221,7 @@ El Registro de inventario de software almacenará temporalmente colecciones de d
 > Si por alguna razón es necesario realizar una reparación de la instalación o una actualización del sistema operativo, se perderán los archivos de registro almacenados localmente.  Si estos datos son fundamentales para las operaciones, se recomienda realizar copias de seguridad antes de la instalación del nuevo sistema operativo. Después de reparar o actualizar, restaure simplemente en la misma ubicación.  
   
 > [!NOTE]  
-> Si por alguna razón la administración de la duración de retención de los datos registrados localmente por SIL es importante, se puede configurar cambiando el valor del registro\\aquí: \HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. El valor predeterminado es ' 30 ' para 30 días.  
+> Si por alguna razón la administración de la duración de retención de los datos registrados localmente por SIL es importante, se puede configurar cambiando el valor del registro aquí: \HKEY_LOCAL_MACHINE @ no__t-0SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. El valor predeterminado es ' 30 ' para 30 días.  
   
 ## <a name="BKMK_Step6"></a>Lectura de datos registrados y publicados por el registro de inventario de software  
 Los datos registrados por SIL, pero almacenados localmente (si se produce un error en el reenvío al URI de destino), o los datos que se reenvían correctamente al servidor de agregación de destino, se almacenan en un archivo binario (para los datos de cada día). Para mostrar estos datos en PowerShell, use el cmdlet [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) .  
@@ -244,7 +244,7 @@ Los datos almacenados localmente en un equipo Windows Server (solo se produce si
 ## <a name="BKMK_Step10"></a>Habilitar y configurar el registro de inventario de software en un disco duro virtual montado  
 El Registro de inventario de software también admite la configuración y habilitación de máquinas virtuales sin conexión. Los usos prácticos de esto están diseñados para cubrir la configuración de "imagen dorada" para la implementación amplia en centros de datos, así como para configurar imágenes de usuario final que van desde una implementación local a una nube.  
   
-Para admitir estos usos, el Registro de inventario de software tiene entradas de registro asociadas con cada opción configurable.  Estos valores del registro pueden encontrarse\\en \HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging.  
+Para admitir estos usos, el Registro de inventario de software tiene entradas de registro asociadas con cada opción configurable.  Estos valores del registro pueden encontrarse en \HKEY_LOCAL_MACHINE @ no__t-0SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging.  
   
 |||||  
 |-|-|-|-|  
@@ -252,7 +252,7 @@ Para admitir estos usos, el Registro de inventario de software tiene entradas de
 |Iniciar o detener la característica|CollectionState|1 o 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx), [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|  
 |Especifica el punto de agregación de destino en la red|TargetUri|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|  
 |Especifica la huella digital del certificado o el hash del certificado usado para la autenticación SSL del servidor web de destino|CertificateThumbprint|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|  
-|Especifica la fecha y hora en que debe iniciarse la característica (si el valor establecido es futuro, según la hora del sistema local)|CollectionTime|Predeterminado:  2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|  
+|Especifica la fecha y hora en que debe iniciarse la característica (si el valor establecido es futuro, según la hora del sistema local)|CollectionTime|Default:  2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|  
   
 Para modificar estos valores en un VHD sin conexión (sin que el sistema operativo de la máquina virtual se ejecute), primero se debe montar un VHD y, después, podrán usarse los comandos siguientes para realizar cambios:  
   

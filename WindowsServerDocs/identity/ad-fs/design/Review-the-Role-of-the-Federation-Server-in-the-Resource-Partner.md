@@ -7,26 +7,26 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b2ed7a09bbc50c83d3bf6f8f2688152ed5202abc
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: fd9f20eb7559f5862ee50bdd8364fa1604d3c1b6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190821"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358970"
 ---
 # <a name="review-the-role-of-the-federation-server-in-the-resource-partner"></a>Revisar el rol del servidor de federación en el asociado de recurso
 
-El servidor de federación en la organización del asociado de recurso intercepta los tokens de seguridad entrantes que se envían por un servidor de federación de cuenta, valida y firma de ellos y, a continuación, emite su propio tokens de seguridad que están destinadas a la Web\-basado aplicación.  
+El servidor de Federación de la organización del asociado de recurso intercepta los tokens de seguridad entrantes que envía un servidor de Federación de la cuenta, los valida y los firma y, a continuación, emite sus propios tokens de seguridad que están destinados a la aplicación web @ no__t-0based .  
   
 > [!NOTE]  
-> Cuando los usuarios federados usan sus exploradores Web para tener acceso a Web\-aplicaciones basadas en, el servidor de federación en la organización del asociado de recurso crea una nueva cookie de autenticación y lo escribe en el explorador. Esta cookie permite solo\-sesión\-en \(SSO\) capacidades para que no tengan los usuarios vuelvan a iniciar sesión en el servidor de federación del asociado de cuenta cuando los usuarios intentan tener acceso a Web diferentes\- aplicaciones basadas en el asociado de recurso.  
+> Cuando los usuarios federados usan sus exploradores Web para acceder a las aplicaciones web @ no__t-0based, el servidor de Federación de la organización del asociado de recurso crea una nueva cookie de autenticación y la escribe en el explorador. Esta cookie habilita una sola funcionalidad @ no__t-0sign @ no__t-1ON \(SSO @ no__t-3 para que los usuarios no tengan que volver a iniciar sesión en el servidor de Federación del asociado de cuenta cuando los usuarios intenten tener acceso a diferentes aplicaciones web @ no__t-4based en el recurso. asociado.  
   
-En el diseño SSO Web, al menos un servidor de federación debe instalarse en la red perimetral. En el diseño SSO Web federado, debe haber al menos un servidor de federación instalado en la red corporativa de la organización del asociado de cuenta y al menos un servidor de federación instalado en la red corporativa de la organización del asociado de recurso.  
+En el diseño de SSO Web, se debe instalar al menos un servidor de Federación en la red perimetral. En el diseño de SSO Web federado, debe haber al menos un servidor de Federación instalado en la red corporativa de la organización del asociado de cuenta y al menos un servidor de Federación instalado en la red corporativa de la organización del asociado de recurso.  
   
 > [!NOTE]  
-> Antes de configurar un equipo de servidor de federación en la organización del asociado de recurso, primero debe unir el equipo a cualquier dominio de Active Directory en la organización del asociado de recurso. Para obtener más información, consulte [lista de comprobación: Configuración de un servidor de federación](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md).  
+> Para poder configurar un equipo de servidor de Federación en la organización del asociado de recurso, primero debe unir el equipo a cualquier dominio Active Directory en la organización del asociado de recurso. Para obtener más información, vea [Checklist: Configuración de un servidor de Federación @ no__t-0.  
   
 ## <a name="see-also"></a>Vea también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

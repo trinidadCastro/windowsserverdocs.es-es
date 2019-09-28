@@ -1,8 +1,8 @@
 ---
 title: Ksetup
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0194cf81d069d7a5c1223f0a514d593e4870d397
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 265f67bff65794938485472a41064837551c7699
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868846"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374797"
 ---
 # <a name="ksetup"></a>Ksetup
 
 
 
-Realiza tareas que están relacionados con la configuración y mantenimiento de protocolo de Kerberos y el centro de distribución de claves (KDC) para admitir dominios Kerberos, que no son dominios de Windows. Para obtener ejemplos de cómo se puede usar este comando, vea la sección de ejemplos de cada uno de los temas secundarios relacionados.
+Realiza tareas relacionadas con la configuración y el mantenimiento del protocolo Kerberos y el Centro de distribución de claves (KDC) para admitir dominios Kerberos, que no son también dominios de Windows. Para obtener ejemplos de cómo se puede usar este comando, consulte la sección ejemplos de cada uno de los subtemas relacionados.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -59,37 +59,37 @@ ksetup
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[Ksetup:setrealm](ksetup-setrealm.md)|Convierte un miembro de un dominio Kerberos de este equipo.|
-|[Ksetup:mapuser](ksetup-mapuser.md)|Una entidad de seguridad de Kerberos se asigna a una cuenta.|
-|[Ksetup:addkdc](ksetup-addkdc.md)|Define una entrada KDC para el dominio Kerberos determinado.|
+|[Ksetup:setrealm](ksetup-setrealm.md)|Convierte este equipo en miembro de un dominio Kerberos.|
+|[Ksetup:mapuser](ksetup-mapuser.md)|Asigna una entidad de seguridad de Kerberos a una cuenta.|
+|[Ksetup:addkdc](ksetup-addkdc.md)|Define una entrada KDC para el dominio Kerberos especificado.|
 |[Ksetup:delkdc](ksetup-delkdc.md)|Elimina una entrada KDC para el dominio Kerberos.|
 |[Ksetup:addkpasswd](ksetup-addkpasswd.md)|Agrega una dirección de servidor Kpasswd para un dominio Kerberos.|
 |[Ksetup:delkpasswd](ksetup-delkpasswd.md)|Elimina una dirección de servidor Kpasswd para un dominio Kerberos.|
-|[Ksetup:server](ksetup-server.md)|Permite especificar el nombre de un equipo de Windows en el que se va a aplicar los cambios.|
-|[Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)|Establece la contraseña de cuenta de dominio del equipo (o entidad de seguridad de host).|
-|[Ksetup:removerealm](ksetup-removerealm.md)|Elimina toda la información para el dominio Kerberos especificado desde el registro.|
-|[Ksetup:domain](ksetup-domain.md)|Le permite especificar un dominio (si \<DomainName > no se ha establecido mediante **/Domain**).|
-|[Ksetup:changepassword](ksetup-changepassword.md)|Le permite utilizar el Kpasswd para cambiar la contraseña del usuario con sesión iniciada.|
-|[Ksetup:listrealmflags](ksetup-listrealmflags.md)|Enumera las marcas de dominio Kerberos que **ksetup** puede detectar.|
-|[Ksetup:setrealmflags](ksetup-setrealmflags.md)|Establece las marcas del dominio para un dominio Kerberos específico.|
-|[Ksetup:addrealmflags](ksetup-addrealmflags.md)|Agrega marcas de dominio adicionales a un dominio Kerberos.|
-|[Ksetup:delrealmflags](ksetup-delrealmflags.md)|Elimina las marcas de dominio Kerberos de un dominio Kerberos.|
-|[Ksetup:dumpstate](ksetup-dumpstate.md)|Analiza la configuración de Kerberos en el equipo dado. Agrega un host a la asignación del dominio en el registro.|
+|[Ksetup:server](ksetup-server.md)|Permite especificar el nombre de un equipo Windows en el que se van a aplicar los cambios.|
+|[Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)|Establece la contraseña de la cuenta de dominio del equipo (o la entidad de seguridad del host).|
+|[Ksetup:removerealm](ksetup-removerealm.md)|Elimina toda la información del dominio Kerberos especificado del registro.|
+|[Ksetup:domain](ksetup-domain.md)|Permite especificar un dominio (si @no__t > no se ha establecido mediante **/Domain**).|
+|[Ksetup:changepassword](ksetup-changepassword.md)|Permite usar Kpasswd para cambiar la contraseña del usuario que ha iniciado sesión.|
+|[Ksetup:listrealmflags](ksetup-listrealmflags.md)|Muestra las marcas de dominio Kerberos disponibles que **ksetup** puede detectar.|
+|[Ksetup:setrealmflags](ksetup-setrealmflags.md)|Establece marcas de dominio Kerberos para un dominio Kerberos específico.|
+|[Ksetup:addrealmflags](ksetup-addrealmflags.md)|Agrega marcas de dominio Kerberos adicionales a un dominio Kerberos.|
+|[Ksetup:delrealmflags](ksetup-delrealmflags.md)|Elimina marcas de dominio Kerberos de un dominio Kerberos.|
+|[Ksetup:dumpstate](ksetup-dumpstate.md)|Analiza la configuración de Kerberos en el equipo especificado. Agrega un host a la asignación de dominio Kerberos al registro.|
 |[Ksetup:addhosttorealmmap](ksetup-addhosttorealmmap.md)|Agrega un valor del registro para asignar el host al dominio Kerberos.|
-|[Ksetup:delhosttorealmmap](ksetup-delhosttorealmmap.md)|Elimina el valor del registro que asigna el equipo host al dominio Kerberos.|
-|[Ksetup:setenctypeattr](ksetup-setenctypeattr.md)|Establece los atributos de confianza para el dominio de uno o varios tipos de cifrado.|
-|[Ksetup:getenctypeattr](ksetup-getenctypeattr.md)|Obtiene el atributo de confianza de los tipos de cifrado para el dominio.|
-|[Ksetup:addenctypeattr](ksetup-addenctypeattr.md)|Agrega tipos de cifrado para el atributo de confianza de los tipos de cifrado para el dominio.|
-|[Ksetup:delenctypeattr](ksetup-delenctypeattr.md)|Elimina el atributo de confianza de los tipos de cifrado para el dominio.|
+|[Ksetup:delhosttorealmmap](ksetup-delhosttorealmmap.md)|Elimina el valor del registro que asignó el equipo host al dominio Kerberos.|
+|[Ksetup:setenctypeattr](ksetup-setenctypeattr.md)|Establece uno o varios tipos de cifrado de atributos de confianza para el dominio.|
+|[Ksetup:getenctypeattr](ksetup-getenctypeattr.md)|Obtiene el atributo de confianza de tipos de cifrado para el dominio.|
+|[Ksetup:addenctypeattr](ksetup-addenctypeattr.md)|Agrega tipos de cifrado al atributo de confianza de tipos de cifrado para el dominio.|
+|[Ksetup:delenctypeattr](ksetup-delenctypeattr.md)|Elimina el atributo de confianza tipos de cifrado del dominio.|
 |/?|Muestra la Ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-**Ksetup** se utiliza para cambiar la configuración del equipo para la localización de dominios Kerberos. En las implementaciones no basados en Microsoft Kerberos, esta información normalmente se mantiene en el archivo Krb5.conf. En sistemas operativos Windows Server, se mantiene en el registro. Puede usar esta herramienta para modificar esta configuración. Esta configuración se usa por las estaciones de trabajo para buscar dominios Kerberos y los controladores de dominio para localizar los dominios Kerberos para las relaciones de confianza entre territorios.
+**Ksetup** se usa para cambiar la configuración del equipo para buscar dominios Kerberos. En implementaciones que no son de Microsoft, esta información normalmente se mantiene en el archivo Krb5. conf. En los sistemas operativos Windows Server, se mantiene en el registro. Puede usar esta herramienta para modificar esta configuración. Las estaciones de trabajo usan estas opciones para localizar los dominios Kerberos y los controladores de dominio para localizar los dominios Kerberos para las relaciones de confianza entre dominios.
 
-**Ksetup** inicializa las claves del registro que el proveedor de soporte técnico de seguridad (SSP) de Kerberos se utiliza para localizar un KDC para el dominio Kerberos si el equipo se está ejecutando Windows Server 2003, Windows Server 2008 o Windows Server 2008 R2 y no es un miembro de un Windows dominio. Después de la configuración, cuentas de usuario de un equipo cliente que se está ejecutando el sistema operativo puede iniciar sesión en Windows en el dominio Kerberos.
+**Ksetup** inicializa las claves del registro que utiliza el proveedor de compatibilidad para seguridad (SSP) de Kerberos para buscar un KDC para el dominio Kerberos si el equipo está ejecutando windows Server 2003, windows Server 2008 o windows Server 2008 R2 y no es miembro de Windows dominio. Después de la configuración, el usuario de un equipo cliente que ejecuta el sistema operativo Windows puede iniciar sesión en las cuentas del dominio Kerberos.
 
-El protocolo Kerberos versión 5 es el valor predeterminado para la autenticación de red en equipos que ejecutan Windows XP Professional, Windows Vista y Windows 7. El SSP de Kerberos busca en el registro para el nombre de dominio del dominio Kerberos del usuario y, a continuación, resuelve el nombre en una dirección IP mediante una consulta de un servidor DNS. El protocolo Kerberos puede utilizar DNS para localizar los KDC utilizando únicamente el nombre de dominio Kerberos, pero debe ser especialmente configurado para ello.
+El protocolo Kerberos versión 5 es el valor predeterminado para la autenticación de red en equipos que ejecutan Windows XP Professional, Windows Vista y Windows 7. El SSP de Kerberos busca el nombre de dominio del dominio de usuario en el registro y, a continuación, resuelve el nombre en una dirección IP mediante una consulta a un servidor DNS. El protocolo Kerberos puede usar DNS para buscar KDC usando solo el nombre de dominio Kerberos, pero debe configurarse especialmente para ello.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

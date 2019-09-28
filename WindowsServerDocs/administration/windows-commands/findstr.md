@@ -1,8 +1,8 @@
 ---
 title: findstr
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8d080420d250deee9bef701272e936d33733a9d6
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 547a0abf658ef826cca8c87d451144181f8dac7d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811197"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377189"
 ---
 # <a name="findstr"></a>findstr
 
@@ -36,55 +36,55 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/b|Coincide con el patrón de texto si está al principio de una línea.|
+|b|Coincide con el patrón de texto si está al principio de una línea.|
 |/e|Coincide con el patrón de texto si está al final de una línea.|
-|/l|Procesa las cadenas de búsqueda literalmente.|
-|/r|Los procesos de cadenas de búsqueda como expresiones regulares. Esta es la configuración predeterminada.|
-|/s|Busca en el directorio actual y todos los subdirectorios.|
-|/i|Omite el caso de los caracteres al buscar la cadena.|
-|/x|Imprime las líneas que coincidan exactamente.|
-|/v|Imprime sólo las líneas que no contienen a una coincidencia.|
-|/n|Imprime el número de línea de cada línea que coincida.|
-|/m|Imprime sólo el nombre de archivo si un archivo contiene a una coincidencia.|
-|/o|Imprime el desplazamiento de carácter antes de cada línea coincidente.|
-|/p|Omite los archivos con los caracteres no imprimibles.|
-|/off[line]|No omite los archivos que tienen establecido el atributo sin conexión.|
-|/ f:\<archivo >|Obtiene una lista de archivos desde el archivo especificado.|
-|/ c:\<cadena >|Utiliza el texto especificado como una cadena de búsqueda literal.|
-|/ g:\<archivo >|Obtiene buscar cadenas desde el archivo especificado.|
-|/ d:\<DirList >|Busca en la lista de los directorios especificados. Cada directorio debe estar separado con punto y coma (;), por ejemplo `dir1;dir2;dir3`.|
-|/a:\<ColorAttribute>|Especifica atributos de color con dos dígitos hexadecimales. Tipo `color /?` para obtener más información.|
-|\<Cadenas >|Especifica el texto que desea buscar en *FileName*. Obligatorio.|
-|[\<Drive>:][<Path>]<FileName>[ ...]|Especifica la ubicación y el archivo o archivos que desea buscar. Se requiere al menos un nombre de archivo.|
+|/l|Procesa literalmente las cadenas de búsqueda.|
+|/r|Procesa las cadenas de búsqueda como expresiones regulares. Esta es la configuración predeterminada.|
+|/s|Busca en el directorio actual y en todos los subdirectorios.|
+|/i|Omite el uso de mayúsculas y minúsculas en los caracteres al buscar la cadena.|
+|/x|Imprime las líneas que coinciden exactamente.|
+|/v|Imprime solo las líneas que no contienen una coincidencia.|
+|/n|Imprime el número de línea de cada línea que coincide con.|
+|/m|Imprime solo el nombre de archivo si un archivo contiene una coincidencia.|
+|/o|Imprime el desplazamiento de caracteres antes de cada línea coincidente.|
+|/p|Omite los archivos con caracteres no imprimibles.|
+|/OFF [línea]|No omite los archivos que tienen el conjunto de atributos sin conexión.|
+|/f: @no__t 0File >|Obtiene una lista de archivos del archivo especificado.|
+|/c: @no__t 0String >|Utiliza el texto especificado como una cadena de búsqueda literal.|
+|/g: @no__t 0File >|Obtiene las cadenas de búsqueda del archivo especificado.|
+|/d: @no__t 0DirList >|Busca la lista de directorios especificada. Cada directorio debe estar separado por un punto y coma (;), por ejemplo `dir1;dir2;dir3`.|
+|/a: @no__t 0ColorAttribute >|Especifica los atributos de color con dos dígitos hexadecimales. Escriba `color /?` para obtener información adicional.|
+|@no__t 0Strings >|Especifica el texto que se va a buscar en el *nombre de archivo*. Obligatorio.|
+|[\<Drive >:] [<Path>] <FileName> [...]|Especifica la ubicación y el archivo o los archivos que se van a buscar. Se requiere al menos un nombre de archivo.|
 |/?|Muestra la Ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-- Todos los **findstr** deben preceder las opciones de línea de comandos *cadenas* y *FileName* en la cadena de comandos.
-- Expresiones regulares usan caracteres literales y metacaracteres para buscar patrones de texto, en lugar de cadenas exactas de caracteres. Un carácter literal es un carácter que no tiene un significado especial en la sintaxis de expresión regular, coincide con una aparición del carácter. Por ejemplo, letras y números son caracteres literales. Un metacarácter es un símbolo con un significado especial (un operador o un delimitador) en la sintaxis de expresión regular.
+- Todas las opciones de línea de comandos de **Findstr** deben preceder a las *cadenas* y el *nombre de archivo* en la cadena de comandos.
+- Las expresiones regulares usan caracteres literales y metacaracteres para buscar patrones de texto, en lugar de cadenas exactas de caracteres. Un carácter literal es un carácter que no tiene un significado especial en la sintaxis de expresión regular, que coincide con una aparición de ese carácter. Por ejemplo, las letras y los números son caracteres literales. Un metacarácter es un símbolo con un significado especial (un operador o delimitador) en la sintaxis de la expresión regular.
 
-  La tabla siguiente enumeran los metacaracteres que **findstr** acepta.  
+  En la tabla siguiente se enumeran los metacaracteres que el **Findstr** acepta.  
 
   |Metacarácter|Valor|
   |-------------|-----|
   |.|Comodín: cualquier carácter|
-  |*|Repetir: cero o más apariciones del carácter anterior o la clase|
-  |^|Posición de línea: a partir de la línea|
+  |*|REPEAT: cero o más apariciones del carácter o la clase anterior|
+  |^|Posición de línea: principio de la línea|
   |$|Posición de línea: final de la línea|
-  |[class]|Clase de caracteres: cualquier carácter de un conjunto|
-  |[^ clase]|Clase inversa: cualquier carácter no en un conjunto|
-  |[x-y]|Intervalo: cualquier carácter dentro del intervalo especificado|
+  |las|Clase de caracteres: cualquier carácter de un conjunto|
+  |[^ (clase)]|Inverso (clase): cualquier carácter que no esté en un conjunto|
+  |[x-y]|Range: cualquier carácter del intervalo especificado|
   |\x|Escape: uso literal de un metacarácter x|
-  |\\< cadena|Posición de Word: a partir de la palabra|
-  |Cadena\>|Posición de Word: final de la palabra|
+  |\\ < cadena|Posición de la palabra: principio de la palabra|
+  |cadena @ no__t-0|Posición de la palabra: final de la palabra|
 
-  Los caracteres especiales en la sintaxis de expresiones regulares tienen la máxima potencia cuando se usan juntas. Por ejemplo, utilice la siguiente combinación del carácter comodín (.) y repita el carácter (*) para que coincida con cualquier cadena de caracteres:
+  Los caracteres especiales de la sintaxis de expresiones regulares tienen la máxima eficacia cuando se usan juntos. Por ejemplo, utilice la siguiente combinación del carácter comodín (.) y el carácter repetir (*) para que coincida con cualquier cadena de caracteres:
 
   ```
   .*
   ``` 
 
-  Utilice la siguiente expresión como parte de una expresión mayor para que coincida con cualquier cadena comienza con "b" y termina por "ing": 
+  Use la expresión siguiente como parte de una expresión mayor para que coincida con cualquier cadena que empiece por "b" y termine por "Ing": 
 
   ```
   b.*ing
@@ -92,51 +92,51 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 
 ## <a name="examples"></a>Ejemplos
 
-Use espacios para separar varias cadenas de búsqueda a menos que el argumento es el prefijo **/c**.
+Use espacios para separar varias cadenas de búsqueda a menos que el argumento tenga el prefijo **/c**.
 
-Para buscar "hello" o "there" en el archivo x.y, escriba:
+Para buscar "Hello" o "There" en el archivo x. y, escriba:
 
 ```
 findstr "hello there" x.y 
 ```
 
-Para buscar "Hola" en el archivo x.y, escriba:
+Para buscar "Hello There" en el archivo x. y, escriba:
 
 ```
 findstr /c:"hello there" x.y 
 ```
 
-Para buscar todas las apariciones de la palabra "Windows" (con una letra mayúscula inicial W) en el archivo propuesta.txt, escriba:
+Para buscar todas las apariciones de la palabra "Windows" (con una letra mayúscula inicial W) en el archivo propuesta. txt, escriba:
 
 ```
 findstr Windows proposal.txt 
 ```
 
-Para buscar todos los archivos del directorio actual y todos los subdirectorios que contienen la palabra Windows, sin tener en cuenta las mayúsculas y minúsculas, escriba:
+Para buscar todos los archivos del directorio actual y todos los subdirectorios que contenían la palabra Windows, independientemente del caso de la letra, escriba:
 
 ```
 findstr /s /i Windows *.* 
 ```
 
-Para buscar todas las apariciones de las líneas que comienzan por "FOR" y van precedidas por cero o más espacios (como en un bucle de programa) y para mostrar el número de línea donde se encuentra cada coincidencia, escriba:
+Para buscar todas las apariciones de las líneas que comienzan por "FOR" y van precedidas de cero o más espacios (como en un bucle de programa) y para mostrar el número de línea donde se encuentra cada repetición, escriba:
 
 ```
 findstr /b /n /r /c:"^ *FOR" *.bas 
 ```
 
-Para buscar varias cadenas en un conjunto de archivos, cree un archivo de texto que contiene cada criterio de búsqueda en una línea independiente. También puede enumerar los archivos exactos que desea buscar en un archivo de texto. Por ejemplo, para usar los criterios de búsqueda en el archivo Stringlist.txt, buscar los archivos enumerados en Filelist.txt y, a continuación, almacenar los resultados en resultado.out, tipo:
+Para buscar varias cadenas en un conjunto de archivos, cree un archivo de texto que contenga cada criterio de búsqueda en una línea independiente. También puede enumerar los archivos exactos que desea buscar en un archivo de texto. Por ejemplo, para usar los criterios de búsqueda del archivo StringList. txt, busque los archivos enumerados en FileList. txt y, a continuación, almacene los resultados en el archivo Results. out, escriba:
 
 ```
 findstr /g:stringlist.txt /f:filelist.txt > results.out 
 ```
 
-Para obtener una lista de todos los archivos que contienen la palabra "equipo" en el directorio actual y todos los subdirectorios, independientemente del caso, escriba:
+Para enumerar todos los archivos que contengan la palabra "equipo" en el directorio actual y todos los subdirectorios, independientemente del caso, escriba:
 
 ```
 findstr /s /i /m "\<computer\>" *.*
 ```
 
-Para mostrar todos los archivos que contiene la palabra "equipo" y otras palabras que comienzan por "composición" (por ejemplo, "el complemento" y "competir"), escriba:
+Para enumerar todos los archivos que contengan la palabra "equipo" y cualquier otra palabra que comience por "Comp" (por ejemplo, "addedo" y "competir"), escriba:
 
 ```
 findstr /s /i /m "\<comp.*" *.*

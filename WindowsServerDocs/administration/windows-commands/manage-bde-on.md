@@ -1,8 +1,8 @@
 ---
-title: ¿Manage-bde en
-description: 'Tema de los comandos de Windows para ***- '
+title: Manage-BDE en
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b50cad64025e85824a8f0a27d773ffb614491fe5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a95bbc375c0a5b62b96f7c68f7d5ab5e09371d1c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841186"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373993"
 ---
-# <a name="manage-bde-on"></a>¿Manage-bde: en
+# <a name="manage-bde-on"></a>Manage-BDE: activado
 
 
 
-Cifra la unidad y se activa BitLocker. Para obtener ejemplos de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
+Cifra la unidad y activa BitLocker. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -39,50 +39,50 @@ manage-bde –on <Drive> {[-recoveryPassword <NumericalPassword>]|[-recoverykey 
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<Drive>|Representa la letra de una unidad seguida del signo de dos puntos.|
-|-recoverypassword|Agrega un protector de contraseña numérica. También puede usar **- rp** como una versión abreviada de este comando.|
-|\<NumericalPassword>|Representa la contraseña de recuperación.|
-|-recoverykey|Agrega un protector de clave externo para la recuperación. También puede usar **- rk** como una versión abreviada de este comando.|
-|\<PathToExternalDirectory>|Representa la ruta de acceso de directorio a la clave de recuperación.|
-|-startupkey|Agrega un protector de clave externo para el inicio. También puede usar **-sk** como una versión abreviada de este comando.|
-|\<PathToExternalKeyDirectory>|Representa la ruta de acceso de directorio a la clave de inicio.|
-|-certificado|Agrega un protector de clave público para una unidad de datos. También puede usar **-cert** como una versión abreviada de este comando.|
-|-tpmandpin|Agrega un módulo de plataforma segura (TPM) y un protector (PIN) número de identificación personal para la unidad del sistema operativo. También puede usar **- tp** como una versión abreviada de este comando.|
-|-tpmandstartupkey|Agrega un protector de clave de inicio y el TPM para la unidad del sistema operativo. También puede usar **-tsk** como una versión abreviada de este comando.|
-|-tpmandpinandstartupkey|Agrega un protector de clave de inicio para la unidad del sistema operativo, TPM y PIN. También puede usar **- tpsk** como una versión abreviada de este comando.|
-|-contraseña|Agrega un protector de clave de contraseña para la unidad de datos. También puede usar **- pw** como una versión abreviada de este comando.|
-|-ADAccountOrGroup|Agrega un protector de identidad basada en SID para el volumen. El volumen se desbloqueará automáticamente si el usuario o equipo tiene las credenciales apropiadas. Anexar al especificar una cuenta de equipo, un **$** al equipo un nombre y especificar **: servicio** para indicar que debe ocurrir el desbloqueo del contenido del servidor en lugar de BitLocker de la usuario. También puede usar **-sid** como una versión abreviada de este comando.|
-|-UsedSpaceOnly|Establece el modo de cifrado para el cifrado solo del espacio utilizado. Se cifrarán las secciones del volumen que contiene el espacio utilizado pero no el espacio libre. Si no se especifica esta opción, todo el espacio utilizado y el espacio libre en el volumen se cifrará... También puede usar **-usa** como una versión abreviada de este comando.|
-|-encryptionMethod|Configura el tamaño de algoritmo y la clave de cifrado. También puede usar **-em** como una versión abreviada de este comando.|
-|-skiphardwaretest|Inicia el cifrado sin una prueba de hardware. También puede usar **-s** como una versión abreviada de este comando.|
-|-discoveryvolumetype|Especifica el sistema de archivos que se usará para la unidad de datos de detección. La unidad de datos de detección es una unidad oculta en una unidad de datos extraíbles con formato FAT, protegidas por BitLocker que contiene el lector de BitLocker To Go para que los sistemas operativos Windows Vista o Windows XP se puede usar para ver las unidades protegidas por BitLocker.|
-|-ForceEncryptionType|Fuerza BitLocker al utilizar el cifrado de software o hardware. Puede especificar **Hardware** o **Software** como el tipo de cifrado. Si el **hardware** parámetro esté seleccionado, pero la unidad no admite el cifrado de hardware, ¿manage-bde devuelve un error. Si la configuración de directiva de grupo prohíbe el tipo de cifrado especificado, ¿manage-bde devuelve un error. También puede usar **-fet** como una versión abreviada de este comando.|
-|-RemoveVolumeShadowCopies|Forzar deletikon de instantáneas de volumen para el volumen. No podrá restaurar este volumen mediante puntos de restauración del sistema anterior después de ejecutar este comando. También puede usar **- rvsc** como una versión abreviada de este comando.|
-|\<FileSystemType>|Especifica qué sistemas de archivos se pueden usar con las unidades de datos de detección: FAT32, predeterminada o ninguno.|
-|-computername|Especifica que se utiliza Manage-bde para modificar la protección de BitLocker en un equipo diferente. También puede usar **- cn** como una versión abreviada de este comando.|
-|\<Nombre >|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Valores aceptados incluyen el nombre NetBIOS del equipo y dirección IP del equipo.|
-|-? ¿o /?|Muestra una breve ayuda en el símbolo del sistema.|
-|-help o -h|Muestra la Ayuda completa en el símbolo del sistema.|
+|@no__t 0Drive >|Representa la letra de una unidad seguida del signo de dos puntos.|
+|-RecoveryPassword|Agrega un protector de contraseña numérica. También puede usar **-RP** como una versión abreviada de este comando.|
+|@no__t 0NumericalPassword >|Representa la contraseña de recuperación.|
+|-recoverykey|Agrega un protector de clave externa para la recuperación. También puede usar **-RK** como una versión abreviada de este comando.|
+|@no__t 0PathToExternalDirectory >|Representa la ruta de acceso del directorio a la clave de recuperación.|
+|-clave|Agrega un protector de clave externa para el inicio. También puede usar **-SK** como una versión abreviada de este comando.|
+|@no__t 0PathToExternalKeyDirectory >|Representa la ruta de acceso al directorio de la clave de inicio.|
+|-certificado|Agrega un protector de clave pública para una unidad de datos. También puede usar **-CERT** como una versión abreviada de este comando.|
+|-tpmandpin|Agrega un protector de Módulo de plataforma segura (TPM) y un número de identificación personal (PIN) para la unidad del sistema operativo. También puede usar **-TP** como una versión abreviada de este comando.|
+|-tpmandstartupkey|Agrega un protector de clave de inicio y TPM para la unidad del sistema operativo. También puede usar **-TSK** como una versión abreviada de este comando.|
+|-tpmandpinandstartupkey|Agrega un protector de TPM, PIN y clave de inicio para la unidad del sistema operativo. También puede usar **-tpsk** como una versión abreviada de este comando.|
+|-contraseña|Agrega un protector de clave de contraseña para la unidad de datos. También puede usar **-PW** como una versión abreviada de este comando.|
+|-ADAccountOrGroup|Agrega un protector de identidad basado en SID para el volumen. El volumen se desbloqueará automáticamente si el usuario o el equipo tienen las credenciales adecuadas. Al especificar una cuenta de equipo, anexe un **$** al nombre del equipo y especifique **– Service** para indicar que el desbloqueo debe producirse en el contenido del servidor BitLocker en lugar de en el usuario. También puede usar **-SID** como una versión abreviada de este comando.|
+|-UsedSpaceOnly|Establece el modo de cifrado para el cifrado solo del espacio usado. Se cifrarán las secciones del volumen que contiene el espacio usado, pero no el espacio disponible. Si no se especifica esta opción, se cifrarán todos los espacios usados y el espacio disponible en el volumen. También puede usar **: se usa** como una versión abreviada de este comando.|
+|-encryptionMethod|Configura el algoritmo de cifrado y el tamaño de la clave. También puede usar **-em** como una versión abreviada de este comando.|
+|-skiphardwaretest|Comienza el cifrado sin una prueba de hardware. También puede usar **-s** como una versión abreviada de este comando.|
+|-discoveryvolumetype|Especifica el sistema de archivos que se va a usar para la unidad de datos de detección. La unidad de datos de detección es una unidad oculta que se ha agregado a una unidad de datos extraíbles con formato FAT y protegida por BitLocker que contiene la Lector de BitLocker To Go de modo que los sistemas operativos Windows Vista o Windows XP se pueden usar para ver las unidades protegidas por BitLocker.|
+|-ForceEncryptionType|Fuerza a BitLocker a usar el software o el cifrado de hardware. Puede especificar el **hardware** o el **software** como el tipo de cifrado. Si el parámetro de **hardware** está seleccionado, pero la unidad no admite el cifrado de hardware, Manage-BDE devuelve un error. Si directiva de grupo configuración prohíbe el tipo de cifrado especificado, Manage-BDE devuelve un error. También puede usar **-FET** como una versión abreviada de este comando.|
+|-RemoveVolumeShadowCopies|Fuerce la deletikon de instantáneas de volumen para el volumen. Después de ejecutar este comando, no podrá restaurar este volumen mediante puntos de restauración del sistema anteriores. También puede usar **-rvsc** como una versión abreviada de este comando.|
+|@no__t 0FileSystemType >|Especifica los sistemas de archivos que se pueden usar con las unidades de datos de detección: FAT32, predeterminado o ninguno.|
+|-COMPUTERNAME|Especifica que Manage-BDE se usa para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando.|
+|\<Nombre >|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
+|-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
+|-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-El ejemplo siguiente se muestra cómo utilizar el **-en** comando para activar BitLocker para la unidad C y agrega una contraseña de recuperación a la unidad.
+En el siguiente ejemplo se muestra el uso del comando **-on** para Activar BitLocker para la unidad C y agregar una contraseña de recuperación a la unidad.
 ```
 manage-bde –on C: -recoverypassword
 ```
-El ejemplo siguiente se muestra cómo utilizar el **-en** comando para activar BitLocker para la unidad C, agregue una contraseña de recuperación a la unidad y guardar una clave de recuperación en la unidad E.
+En el siguiente ejemplo se muestra el uso del comando **-on** para Activar BitLocker para la unidad C, agregar una contraseña de recuperación a la unidad y guardar una clave de recuperación en la unidad E.
 ```
 manage-bde –on C: -recoverykey E:\ -recoverypassword
 ```
-El ejemplo siguiente se muestra cómo utilizar el **-en** comandos para activar BitLocker para la unidad C mediante el uso de un protector de clave externo (por ejemplo, una llave USB) para desbloquear la unidad del sistema operativo. Este método es necesario si va a usar BitLocker con equipos que no tienen un TPM.
+En el ejemplo siguiente se muestra el uso del comando **-on** para Activar BitLocker para la unidad C mediante un protector de clave externa (como una clave USB) para desbloquear la unidad del sistema operativo. Este método es necesario si usa BitLocker con equipos que no tienen un TPM.
 ```
 manage-bde -on C: -startupkey E:\
 ```
-El ejemplo siguiente se muestra cómo utilizar el **-en** comando para activar BitLocker para unidades de datos E y agregar un protector de clave de contraseña. ¿Manage-bde le solicitará que escriba la contraseña después de escribir este comando.
+En el ejemplo siguiente se muestra el uso del comando **-on** para Activar BitLocker para la unidad de datos e y agregar un protector de clave de contraseña. Manage-BDE le pedirá que escriba la contraseña una vez que se haya escrito este comando.
 ```
 manage-bde –on E: -pw
 ```
-El ejemplo siguiente se muestra cómo utilizar el **-en** comando para activar BitLocker para la unidad C del sistema operativo y usar el cifrado basado en hardware.
+En el ejemplo siguiente se muestra el uso del comando **-on** para Activar BitLocker para la unidad de sistema operativo C y usar el cifrado basado en hardware.
 ```
 manage-bde –on C: -fet Hardware
 ```
@@ -90,4 +90,4 @@ manage-bde –on C: -fet Hardware
 #### <a name="additional-references"></a>Referencias adicionales
 
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
--   [¿Manage-bde](manage-bde.md)
+-   [Manage-BDE](manage-bde.md)

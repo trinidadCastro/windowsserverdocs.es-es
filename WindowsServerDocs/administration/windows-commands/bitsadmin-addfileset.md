@@ -1,8 +1,8 @@
 ---
 title: bitsadmin addfileset
-description: Tema de los comandos de Windows para **addfileset bitsadmin** -agrega uno o varios archivos al trabajo especificado.
+description: 'Temas de comandos de Windows para **bitsadmin addfileset** : agrega uno o varios archivos al trabajo especificado.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8f6ff32dfa6042272c68647477d77183ce9cb76
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 464f2da151d5a7bfffde286e52d9158560d48dcc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889446"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381989"
 ---
 # <a name="bitsadmin-addfileset"></a>bitsadmin addfileset
 
-Agrega uno o varios archivos al trabajo especificado.
+Agrega uno o más archivos al trabajo especificado.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,10 +34,10 @@ bitsadmin /addfileset <Job> <TextFile>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
-|TextFile|Un archivo de texto, cada línea de los cuales contiene un control remoto y un nombre de archivo local.</br>Nota: Los nombres están delimitados por espacios. Las líneas que comienzan por un carácter # se tratan como un comentario.|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
+|TextFile|Un archivo de texto, cada línea de que contiene un nombre de archivo remoto y otro local.</br>Nota: Los nombres están delimitados por espacios. Las líneas que comienzan con un carácter # se tratan como comentario.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 ```
 C:\>bitsadmin /addfileset files.txt
