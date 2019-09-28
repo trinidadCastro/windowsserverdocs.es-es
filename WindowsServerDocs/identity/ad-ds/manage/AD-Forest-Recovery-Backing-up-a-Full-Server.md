@@ -1,81 +1,81 @@
 ---
-title: Recuperación de bosques de AD - copia de seguridad completa del servidor
+title: 'Recuperación de bosque de AD: copia de seguridad de un servidor completo'
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
 ms.technology: identity-adds
-ms.openlocfilehash: fec8de8ea1dadb392f6a3bd1c881e8df2266f404
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4377c1d993b4f6d30cf8ca8a7d149b741d7f8d2f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846526"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369362"
 ---
-# <a name="ad-forest-recovery---backing-up-a-full-server"></a>Recuperación de bosques de AD - copia de seguridad completa del servidor  
+# <a name="ad-forest-recovery---backing-up-a-full-server"></a>Recuperación de bosque de AD: copia de seguridad de un servidor completo  
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 y 2012 R2, Windows Server 2008 y 2008 R2
 
-Para prepararse para una recuperación de bosques porque se puede restaurar a un hardware diferente o una instancia de sistema operativo diferente, se recomienda una copia de seguridad completa del servidor.  Uso de copias de seguridad de Windows Server puede realizar una copia de seguridad completa del servidor. 
+Se recomienda una copia de seguridad completa del servidor para preparar la recuperación de un bosque, ya que se puede restaurar en otro hardware o en una instancia de sistema operativo diferente.  Con Copias de seguridad de Windows Server puede realizar una copia de seguridad completa del servidor. 
 
 ## <a name="windows-server-backup"></a>Copias de seguridad de Windows Server
 
-Copia de seguridad de Windows Server no está instalado de forma predeterminada. En Windows Server 2016 y Windows Server 2012 R2, debe instalarlo siguiendo los pasos siguientes.
+Copias de seguridad de Windows Server no se instala de forma predeterminada. En Windows Server 2016 y Windows Server 2012 R2, instálelo siguiendo los pasos que se indican a continuación.
 
 >[!NOTE]
->Ten en cuenta que los pasos pueden variar ligeramente entre Windows Server 2016 y Windows Server 2012 R2.
+>Tenga en cuenta que los pasos pueden variar ligeramente entre Windows Server 2016 y Windows Server 2012 R2.
 
-Para que conocer los pasos instalarlo en Windows Server 2008 y Windows Server 2008 R2, consulte [instalar Windows Server Backup](https://technet.microsoft.com/library/cc771232.aspx).  
+Para conocer los pasos para instalarlo en Windows Server 2008 y Windows Server 2008 R2, consulte [instalación de copias de seguridad de Windows Server](https://technet.microsoft.com/library/cc771232.aspx).  
 
-### <a name="to-install-windows-server-backup"></a>Para instalar copias de seguridad de Windows Server
+### <a name="to-install-windows-server-backup"></a>Para instalar Copias de seguridad de Windows Server
 
-1. Abra **administrador del servidor** y haga clic en **agregar roles y características**.
-2. En el **agregar Roles y características Asistente** haga clic en **siguiente**.
-3. En el **tipo de instalación** pantalla, deje el valor predeterminado **instalación basada en roles o basada en características** y haga clic en **siguiente**.
-4. En el **selección de servidor** pantalla, haga clic en **siguiente**.
-5. En el **Roles de servidor** pantalla clic **siguiente**.
-6. En el **características** pantalla, seleccione **copias de seguridad de Windows Server** y haga clic en **siguiente**
-   ![instalar copias de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
+1. Abra **Administrador del servidor** y haga clic en **Agregar roles y características**.
+2. En el **Asistente para agregar roles y características,** haga clic en **siguiente**.
+3. En la pantalla **tipo de instalación** , deje la instalación predeterminada basada en **características o en roles** y haga clic en **siguiente**.
+4. En la pantalla **selección de servidor** , haga clic en **siguiente**.
+5. En la pantalla **roles de servidor** , haga clic en **siguiente**.
+6. En la pantalla **características** , seleccione **copias de seguridad de Windows Server** y haga clic en **siguiente**
+    @ no__t-4Install backup @ no__t-5.
 7. Haga clic en **Instalar**.
 8. Una vez completada la instalación, haga clic en **cerrar**.
 
-### <a name="to-perform-a-backup-with-windows-server-backup"></a>Para realizar una copia de seguridad con copias de seguridad de Windows Server
+### <a name="to-perform-a-backup-with-windows-server-backup"></a>Para realizar una copia de seguridad con Copias de seguridad de Windows Server
 
-1. Abra **administrador del servidor**, haga clic en **herramientas**y, a continuación, haga clic en **copias de seguridad de Windows Server**.
-   - En Windows Server 2008 R2 y Windows Server 2008, haga clic en **iniciar**, apunte a **herramientas administrativas**y, a continuación, haga clic en **copias de seguridad de Windows Server**.
+1. Abra **Administrador del servidor**, haga clic en **herramientas**y, a continuación, haga clic en **copias de seguridad de Windows Server**.
+   - En Windows Server 2008 R2 y Windows Server 2008, haga clic en **Inicio**, seleccione **herramientas administrativas**y, a continuación, haga clic en **copias de seguridad de Windows Server**.
 
-   ![Instale copias de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png) 
+   ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png) 
 
-2. Si se le pide, en el **User Account Control** cuadro de diálogo, proporcione credenciales de operador de copia de seguridad y, a continuación, haga clic en **Aceptar**.
-3. Haga clic en **copia de seguridad Local**.
+2. Si se le solicita, en el cuadro de diálogo **control de cuentas de usuario** , proporcione credenciales de operador de copia de seguridad y, a continuación, haga clic en **Aceptar**.
+3. Haga clic en **copia de seguridad local**.
 4. En el menú **Acción**, haga clic en **Hacer copia de seguridad una vez**.
-5. En la copia de seguridad una vez asistente, en el **opciones de copia de seguridad** página, haga clic en **diferentes opciones**y, a continuación, haga clic en **siguiente**.
+5. En el Asistente para hacer copia de seguridad una vez, en la página **Opciones de copia de seguridad** , haga clic en **opciones diferentes**y, a continuación, en **siguiente**.
 
-   ![Instale copias de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
+   ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
 
-6. En el **seleccione Configuración de copia de seguridad** página, haga clic en **servidor completo (recomendado)** y, a continuación, haga clic en **siguiente**.
-7. En el **especificar tipo de destino** página, haga clic en **unidades locales** o **carpeta compartida remota**y, a continuación, haga clic en **siguiente**.
-8. En el **Seleccionar destino de copia de seguridad** página, elija la ubicación de copia de seguridad.  Si ha seleccionado local unidad elija una unidad local o si ha seleccionado remoto compartido elija un recurso compartido de red.
-9. En la pantalla de confirmación, haga clic en **copia de seguridad**.
+6. En la página **seleccionar configuración de copia de seguridad** , haga clic en **servidor completo (recomendado)** y, a continuación, haga clic en **siguiente**.
+7. En la página **especificar tipo de destino** , haga clic en **unidades locales** o en **carpeta compartida remota**y, a continuación, haga clic en **siguiente**.
+8. En la página **Seleccionar destino** de la copia de seguridad, elija la ubicación de copia de seguridad.  Si seleccionó unidad local, elija una unidad local o, si seleccionó recurso compartido remoto, elija un recurso compartido de red.
+9. En la pantalla confirmación, haga clic en **copia de seguridad**.
 
-   ![Instale copias de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup4.png)
+   ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup4.png)
 
 10. Una vez que se haya completado, haga clic en **cerrar**.
-11. Cierre la copia de seguridad de Windows Server.
+11. Cierre Copias de seguridad de Windows Server.
 
 >[!NOTE]
->Si recibe un error que indica que no está disponible ninguna ubicación de almacenamiento de copia de seguridad, deberá excluir uno de los volúmenes que se ha seleccionado o agregar un nuevo volumen o recurso compartido remoto.
->Si recibe una advertencia que indica que el volumen seleccionado también se incluye en la lista de elementos para copia de seguridad, determinar si se deben quitar y haga clic en **Aceptar**.
+>Si recibe un error que indica que no hay ninguna ubicación de almacenamiento de copia de seguridad disponible, tendrá que excluir uno de los volúmenes seleccionados o agregar un nuevo volumen o recurso compartido remoto.
+>Si recibe una advertencia que indica que el volumen seleccionado también se incluye en la lista de elementos de la copia de seguridad, determine si desea quitarlo y haga clic en **Aceptar**.
 
-## <a name="using-wbadminexe-to-backup-a-windows-server"></a>Uso de Wbadmin.exe para copia de seguridad de windows server
+## <a name="using-wbadminexe-to-backup-a-windows-server"></a>Uso de Wbadmin. exe para realizar una copia de seguridad de Windows Server
 
-Wbadmin.exe es una utilidad de línea de comandos que permite realizar copias de seguridad y restaurar el sistema operativo, volúmenes, archivos, carpetas y las aplicaciones desde un símbolo del sistema.
+Wbadmin. exe es una utilidad de línea de comandos que permite realizar copias de seguridad y restaurar el sistema operativo, los volúmenes, los archivos, las carpetas y las aplicaciones desde un símbolo del sistema.
 
-### <a name="to-perform-a-full-server-backup-using-wbadminexe"></a>Para realizar una copia de seguridad completa con Wbadmin.exe
+### <a name="to-perform-a-full-server-backup-using-wbadminexe"></a>Para realizar una copia de seguridad completa del servidor con Wbadmin. exe
   
 - Abra un símbolo del sistema con privilegios elevados, escriba el siguiente comando y presione ENTRAR:  
 
@@ -83,9 +83,9 @@ Wbadmin.exe es una utilidad de línea de comandos que permite realizar copias de
    wbadmin start backup -backuptarget:<Drive_letter_to store_backup>: -include:<Drive_letter_to_include>:
    ```
 
-   ![Instale copias de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup5.png)
+   ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup5.png)
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Guía de recuperación de bosque de AD](AD-Forest-Recovery-Guide.md)
-- [Recuperación de bosques de AD: procedimientos](AD-Forest-Recovery-Procedures.md)
+- [Guía de recuperación del bosque de AD](AD-Forest-Recovery-Guide.md)
+- [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)
