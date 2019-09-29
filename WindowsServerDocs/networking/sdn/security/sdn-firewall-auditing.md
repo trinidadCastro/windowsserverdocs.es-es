@@ -1,32 +1,32 @@
 ---
 title: Auditoría de firewall SDN
-description: Auditoría de servidor de seguridad es una nueva funcionalidad para el firewall SDN en Windows Server 2019. Cuando habilita el firewall de SDN, obtiene registra cualquier flujo procesado por las reglas de firewall SDN (ACL) que tienen habilitado el registro.
+description: La auditoría de Firewall es una nueva funcionalidad para el Firewall de SDN en Windows Server 2019. Al habilitar el Firewall de SDN, se registra cualquier flujo procesado por las reglas de Firewall de SDN (ACL) que tienen habilitado el registro.
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: pashort
 author: shortpatti
 ms.date: 08/22/2018
-ms.openlocfilehash: a73cdc443dd55b16f6e6cb187e001581620ce771
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 246adc6b4fd3ea130196cf1786f7fa130703de1a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890906"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355755"
 ---
 # <a name="sdn-firewall-auditing"></a>Auditoría de firewall SDN
 
 >Se aplica a: Windows Server 2019
 
-Auditoría de servidor de seguridad es una nueva funcionalidad para el firewall SDN en Windows Server 2019. Cuando habilita el firewall de SDN, obtiene registra cualquier flujo procesado por las reglas de firewall SDN (ACL) que tienen habilitado el registro. Los archivos de registro deben estar en una sintaxis que sea coherente con la [los registros de flujo de Azure Network Watcher](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview). Estos registros se pueden utilizar para obtener un diagnóstico o archivados para su análisis posterior. 
+La auditoría de Firewall es una nueva funcionalidad para el Firewall de SDN en Windows Server 2019. Al habilitar el Firewall de SDN, se registra cualquier flujo procesado por las reglas de Firewall de SDN (ACL) que tienen habilitado el registro. Los archivos de registro deben estar en una sintaxis que sea coherente con los [registros de flujo de Network Watcher de Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview). Estos registros se pueden usar para diagnósticos o archivados para su posterior análisis. 
 
-Pronto proporcionaremos algunos ejemplos de cómo procesar estos archivos mediante herramientas como Power BI.
+Pronto se proporcionarán algunos ejemplos de cómo procesar estos archivos mediante herramientas como Power BI.
 
-_**Pruébelo y proporcionar comentarios.**_
+_**Pruébelo y envíenos sus comentarios.**_
 
-Este es un script de ejemplo para habilitar la auditoría en los hosts de Hyper-V de firewall. Actualice las variables al principio y ejecute esto en un equipo Windows Server 2019 con la característica de RSAT NetworkController instalada:
+Este es un script de ejemplo para habilitar la auditoría de firewall en los hosts de Hyper-V. Actualice las variables al principio y ejecútelo en un equipo con Windows Server 2019 con la característica RSAT-NetworkController instalada:
 
 ```PowerShell
 $logpath = "C:\test\log1"
@@ -54,7 +54,7 @@ foreach ($s in $servers) {
 }
 ```
 
-Una vez habilitado un nuevo archivo aparece en el directorio especificado en cada host aproximadamente una vez por hora.  Periódicamente, debe procesar estos archivos y quitarlas de los hosts.  El archivo actual tiene longitud cero y se bloquea hasta que se vacían en la siguiente marca de hora:
+Una vez habilitado, aparece un nuevo archivo en el directorio especificado de cada host aproximadamente una vez por hora.  Debe procesar periódicamente estos archivos y quitarlos de los hosts.  El archivo actual tiene una longitud cero y se bloquea hasta que se vacía en la marca de hora siguiente:
 
 ```syntax
 PS C:\test\log1> dir
@@ -100,7 +100,7 @@ Estos archivos contienen una secuencia de eventos de flujo, por ejemplo:
 ```
 
 
-Tenga en cuenta que el registro se lleva a cabo únicamente para las reglas que tienen **registro** establecido en **habilitado**, por ejemplo:
+Tenga en cuenta que el registro solo tiene lugar para las reglas que tienen el **registro** establecido en **habilitado**, por ejemplo:
 
 ```syntax
 {
