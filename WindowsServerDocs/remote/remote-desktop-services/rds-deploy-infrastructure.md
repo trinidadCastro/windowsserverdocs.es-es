@@ -1,7 +1,7 @@
 ---
 title: Implementación del entorno de Escritorio remoto
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 description: Pasos básicos para implementar un entorno de Escritorio remoto.
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b9ce1bb87a7a2ad8819235edc412fd095bc2985
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e00be471b2607ad4bc8cc8e11652d428419b4fd6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805132"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404018"
 ---
 # <a name="deploy-your-remote-desktop-environment"></a>Implementación del entorno de Escritorio remoto
 
@@ -46,7 +46,7 @@ Si estás usando máquinas virtuales para cualquiera de los servidores de Servic
 4.  Activa el servidor de licencias de Escritorio remoto y agrégalo al grupo de servidores de licencias:  
     1.  En el Administrador del servidor, haz clic en **Herramientas > Terminal Services > Administrador de licencias de Escritorio remoto**.  
     2.  En el Administrador de licencias de Escritorio remoto, selecciona el servidor y haz clic en **Acción > Activar servidor**.  
-    3.  Acepta los valores predeterminados en el Asistente para activar el servidor que aceptará los valores predeterminados hasta que llegues a la página **Información de la empresa**. A continuación, escribe la información de tu empresa.  
+    3.  Acepta los valores predeterminados en el Asistente para activar servidor. Continúa aceptando los valores predeterminados hasta llegar a la página **Información de la empresa** A continuación, escribe la información de tu empresa.  
     4.  Acepta los valores predeterminados de las páginas restantes hasta la página final. Desactiva la opción para **iniciar el Asistente de instalación de licencias** y haz clic en **Finalizar**.  
     5.  A continuación, haz clic en **Acción > Revisar configuración > Agregar a grupo > Aceptar**. Escribe las credenciales de un usuario en el grupo de administradores de AAD DC y regístrate como SCP. Es posible que este paso no funcione si usas Azure AD Domain Services, pero puedes ignorar cualquier advertencia o error.  
 5.  Agrega el servidor de Puerta de enlace de Escritorio remoto y el nombre del certificado:  

@@ -2,7 +2,7 @@
 title: Introducción al cliente de Android
 description: Información general acerca del cliente de Android.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -14,12 +14,12 @@ manager: daveba
 ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f9e8eb861961dc714a964012960e8742b721d4de
-ms.sourcegitcommit: 081661f50d6dafb77180149956a02e679270c710
+ms.openlocfilehash: d11e8ad0cac1f9cf024097450e90d9be95d950b0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71037599"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387761"
 ---
 # <a name="get-started-with-the-android-client"></a>Introducción al cliente de Android
 
@@ -52,7 +52,7 @@ A continuación, te mostramos cómo configurar el cliente de Escritorio remoto e
 
 Para crear una conexión a Escritorio remoto:
 
-1. En Connection Center (Centro de conexión), pulsa y, después, pulsa Escritorio.
+1. En Connection Center (Centro de conexión), pulsa **+** y, después, pulsa **Escritorio**.
 2. Escribe el nombre del equipo remoto en **Nombre de PC**. Puede ser un nombre de equipo Windows, un nombre de dominio de Internet o una dirección IP. También puedes anexar la información del puerto al nombre de equipo (por ejemplo, MyDesktop:3389 o 10.0.0.1:3389). Este es el único campo obligatorio.
 3. Selecciona el **nombre de usuario** que utilizas para acceder al equipo remoto.
    - Selecciona **Escribir siempre** para que el cliente te pida las credenciales cada vez que te conectes al equipo remoto.

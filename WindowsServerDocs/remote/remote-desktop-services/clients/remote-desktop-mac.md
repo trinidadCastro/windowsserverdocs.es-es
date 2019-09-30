@@ -2,7 +2,7 @@
 title: Introducción al cliente de macOS
 description: Aprenda a configurar el cliente de Escritorio remoto para Mac.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8836ab500e97b68efbcdd0cd1ca5bcbe39d79334
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 1512589315489f5bc351ff105a56694e0947463b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70150921"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404139"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introducción al cliente de macOS
 
@@ -159,7 +159,7 @@ Las distribuciones del teclado Mac son distintas de las distribución del teclad
 - Para activar las teclas de función en la sesión, debes presionar además la tecla FN (por ejemplo, FN + F1).
 - La tecla Alt que está a la derecha de la barra espaciadora en el teclado Mac equivale a la tecla Alt Gr/Alt derecho en Windows.
 
-De manera predeterminada, la sesión remota usará la misma configuración regional del teclado que usa el sistema operativo donde se ejecuta el cliente. Si el equipo Mac ejecuta un sistema operativo en en-us, esa configuración regional se usará también para las sesiones remotas. Si no se usa la configuración regional del teclado del sistema operativo, comprueba la configuración del teclado del equipo remoto y cámbiala manualmente. Consulta las [Preguntas más frecuentes del cliente de Escritorio remoto](remote-desktop-client-faq.md) para más información sobre los teclados y las configuraciones regionales.
+De manera predeterminada, la sesión remota usará la misma configuración regional del teclado que usa el sistema operativo donde se ejecuta el cliente. (Si el equipo Mac ejecuta un sistema operativo en en-us, esa configuración regional se usará también para las sesiones remotas). Si no se usa la configuración regional del teclado del sistema operativo, comprueba la configuración del teclado del equipo remoto y cámbiala manualmente. Consulta las [Preguntas más frecuentes del cliente de Escritorio remoto](remote-desktop-client-faq.md) para más información sobre los teclados y las configuraciones regionales.
 
 
 ## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>Compatibilidad con la autorización y autenticación acoplables de la puerta de enlace de Escritorio remoto
