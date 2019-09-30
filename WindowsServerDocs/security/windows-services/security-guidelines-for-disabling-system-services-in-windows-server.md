@@ -2000,7 +2000,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 
 <br />          
 
-## <a name="tcpip-netbios-helper"></a>Aplicación auxiliar de NetBIOS sobre TCP/IP            
+## <a name="tcpip-netbios-helper"></a>Asistente NetBIOS sobre TCP/IP            
 
 | | |           
 |---|---|   

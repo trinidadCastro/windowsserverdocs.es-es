@@ -238,7 +238,7 @@ En la tabla 1-5 se enumeran los servicios que se instalan de forma predeterminad
 | LanmanServer  | Servidor  | Automático | LocalSystem |
 | LanmanWorkstation  | Estación de trabajo  | Automático | LocalService |
 | lltdsvc  | Asignador de detección de topologías de nivel de vínculo  | Manual | LocalService |
-| lmhosts  | Aplicación auxiliar de NetBIOS sobre TCP/IP  | Automático | LocalService |
+| lmhosts  | Asistente NetBIOS sobre TCP/IP  | Automático | LocalService |
 | MpsSvc  | Firewall de Windows  | Automático | LocalService |
 | MSDTC  | Coordinador de transacciones distribuidas  | Automático | Servicio de red |
 | MSiSCSI  | Servicio del iniciador iSCSI de Microsoft  | Manual | LocalSystem |
