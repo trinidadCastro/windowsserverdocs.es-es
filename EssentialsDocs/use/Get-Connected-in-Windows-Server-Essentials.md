@@ -90,7 +90,7 @@ ms.locfileid: "70866941"
 -   La instalación de Windows Server Essentials se ha completado y el servidor se está ejecutando. El software del Conector finalizará la instalación si no puede comunicarse con el servidor.  
 
 
--   El equipo cliente usa un sistema operativo compatible. Para obtener más información, consulte [Supported operating systems for client computers](Get-Connected-in-Windows-Server-Essentials.md#BKMK_4).
+-   El equipo cliente usa un sistema operativo compatible. Para obtener más información, consulte [Sistemas operativos compatibles para equipos cliente](Get-Connected-in-Windows-Server-Essentials.md#BKMK_4).
 
 
 -   El equipo cliente debe tener una conexión a Internet válida.  
@@ -123,11 +123,11 @@ ms.locfileid: "70866941"
 > 
 >  En una implementación de cliente local para Windows Server Essentials o Windows Server Essentials, puede conectar equipos al servidor sin agregarlos al dominio de Windows Server Essentials. Este método no está disponible para todos los sistemas operativos cliente compatibles, y características como la directiva de grupo y las redes privadas virtuales (VPN), que requieren que un equipo esté conectado al dominio, no están disponibles. Para requisitos e instrucciones, vea [Conectar equipos a un servidor de Windows Server Essentials sin unirse al dominio](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10).  
 
- Para obtener instrucciones detalladas sobre cómo conectar un equipo al servidor que ejecuta Windows Server Essentials, consulte [Connect computers to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
+ Para obtener instrucciones detalladas sobre cómo conectar un equipo al servidor que ejecuta Windows Server Essentials, consulte [Conectar equipos al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
 
 >  En una implementación de cliente local para Windows Server Essentials o Windows Server Essentials, puede conectar equipos al servidor sin agregarlos al dominio de Windows Server Essentials. Este método no está disponible para todos los sistemas operativos cliente compatibles, y características como la directiva de grupo y las redes privadas virtuales (VPN), que requieren que un equipo esté conectado al dominio, no están disponibles. Para requisitos e instrucciones, vea [Conectar equipos a un servidor de Windows Server Essentials sin unirse al dominio](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10).  
 
- Para obtener instrucciones detalladas sobre cómo conectar un equipo al servidor que ejecuta Windows Server Essentials, consulte [Connect computers to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
+ Para obtener instrucciones detalladas sobre cómo conectar un equipo al servidor que ejecuta Windows Server Essentials, consulte [Conectar equipos al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
 
 
 ###  <a name="BKMK_3"></a>Requisitos previos para conectar un equipo Mac a la red  
@@ -295,7 +295,7 @@ ms.locfileid: "70866941"
 -   Implementa VPN en el equipo cliente y ofrece una experiencia de un solo clic si está habilitada la funcionalidad de VPN en Windows Server Essentials, o proporciona una experiencia de conexión automática si está habilitada la funcionalidad de VPN en Windows Server Essentials.  
 
 
- Para obtener información sobre cómo conectar el equipo al servidor, consulte [Connect computers to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
+ Para obtener información sobre cómo conectar el equipo al servidor, consulte [Conectar equipos al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
 
 ###  <a name="BKMK_6"></a>Información de nombre de usuario y contraseña de red  
  Puede obtener la información de nombre de usuario y contraseña de red de la persona que administra el servidor. Puede usar estas credenciales para conectar el equipo al servidor y acceder a información ubicada en él.  
@@ -483,7 +483,7 @@ ms.locfileid: "70866941"
     -    Windows 7 Professional (x86 y x64), Windows 7 Enterprise (x86 y x64), Windows 7 Ultimate (x86 y x64)  
 
 
--   El equipo debe cumplir el resto de requisitos para los equipos cliente de Windows Server Essentials. Para obtener más información, consulte [Prerequisites for connecting a computer to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_2).  
+-   El equipo debe cumplir el resto de requisitos para los equipos cliente de Windows Server Essentials. Para obtener más información, consulte [Requisitos previos para conectar un equipo al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_2).  
 
 
 -   Para habilitar una conexión sin unirse al dominio, debe iniciar sesión en el equipo con una cuenta que sea miembro del grupo Administradores local.  
@@ -546,7 +546,7 @@ ms.locfileid: "70866941"
     3.  Actualice la página web.  
 
 
-    4.  Para conectar el segundo servidor a un servidor que ejecuta Windows Server Essentials, siga las instrucciones de [Connect computers to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
+    4.  Para conectar el segundo servidor a un servidor que ejecuta Windows Server Essentials, siga las instrucciones de [Conectar equipos al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
 
 
 ~~~
@@ -598,7 +598,7 @@ ms.locfileid: "70866941"
 -   Le permite configurar y administrar de forma remota Windows Server Essentials desde su equipo doméstico  
 
 
- Para obtener instrucciones detalladas sobre cómo conectar un equipo al servidor de Windows Server Essentials, consulte [Connect computers to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).   
+ Para obtener instrucciones detalladas sobre cómo conectar un equipo al servidor de Windows Server Essentials, consulte [Conectar equipos al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).   
 
 
 ###  <a name="BKMK_12"></a>Traslado manual de los datos y la configuración del equipo  
@@ -632,7 +632,7 @@ ms.locfileid: "70866941"
 6.  Espere a que el programa se desinstale. Después de quitar el software, **Conector de Windows Server Essentials** ya no aparece en la lista de programas o actualizaciones instalados. Además, los accesos directos al Launchpad y al panel ya no se muestran en el escritorio del equipo.  
 
 > [!NOTE]
-> - Al desinstalar el software del Conector, no se quita el equipo de la lista de equipos que se muestran en la pestaña **DISPOSITIVOS** del panel. Para quitar el equipo del panel, consulte [Remove a computer from the server](../manage/Manage-Devices-in-Windows-Server-Essentials.md#BKMK_3).  
+> - Al desinstalar el software del Conector, no se quita el equipo de la lista de equipos que se muestran en la pestaña **DISPOSITIVOS** del panel. Para quitar el equipo del panel, consulte [Quitar un equipo del servidor](../manage/Manage-Devices-in-Windows-Server-Essentials.md#BKMK_3).  
 >   -   Al desinstalar el software del Conector, no se eliminan las carpetas compartidas del equipo cliente que se habían asignado al servidor. Debe eliminar manualmente las carpetas compartidas que se asignan al servidor.  
 > 
 > -   Al desinstalar el software del Conector, no se separa el equipo del dominio original. El equipo debe separarse manualmente del dominio. Para obtener instrucciones, consulte [Remove a computer from a Windows domain](Get-Connected-in-Windows-Server-Essentials.md#BKMK_8).  
@@ -647,7 +647,7 @@ ms.locfileid: "70866941"
 
 2. Separe el equipo del dominio de Windows Server Essentials y únalo al grupo de trabajo. Para obtener instrucciones detalladas sobre cómo unir Windows a un grupo de trabajo, consulte [Crear un grupo de trabajo o unirse a él](https://windows.microsoft.com/windows7/Join-or-create-a-workgroup).  
 
-3. Quitar el equipo del servidor mediante el panel. Para obtener instrucciones paso a paso, vea [Remove a computer from the server](../manage/Manage-Devices-in-Windows-Server-Essentials.md#BKMK_3).  
+3. Quitar el equipo del servidor mediante el panel. Para obtener instrucciones paso a paso, vea [Quitar un equipo del servidor](../manage/Manage-Devices-in-Windows-Server-Essentials.md#BKMK_3).  
 
    Para volver a conectar un equipo al servidor que previamente se ha desconectado de la red del servidor de Windows Server Essentials, debe completar los siguientes pasos:  
 
@@ -656,7 +656,7 @@ ms.locfileid: "70866941"
 
 5. Separe el equipo del dominio de Windows Server Essentials y únalo al grupo de trabajo. Para obtener instrucciones detalladas sobre cómo unir Windows a un grupo de trabajo, consulte [Crear un grupo de trabajo o unirse a él](https://windows.microsoft.com/windows7/Join-or-create-a-workgroup).  
 
-6. Conecte el equipo al servidor mediante el Asistente para conectar equipos. Para obtener instrucciones paso a paso, vea [Connect computers to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
+6. Conecte el equipo al servidor mediante el Asistente para conectar equipos. Para obtener instrucciones paso a paso, vea [Conectar equipos al servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
 
 ###  <a name="BKMK_Sleep"></a>Cómo funciona la copia de seguridad con los modos de suspensión e hibernación  
  Si selecciona la opción **Reactivar este equipo para copia de seguridad** al conectar un equipo al servidor, el equipo se reactiva automáticamente desde el modo de suspensión o hibernación a diario tal como se especifica en la programación de copia de seguridad para que se puedan hacer copias de seguridad. Una vez finalizada la copia de seguridad, el equipo vuelve al modo de suspensión o hibernación, en función de la configuración de administración de energía. Si no se selecciona esta opción, el servidor no hace ninguna copia de seguridad de un equipo si el equipo está en modo de suspensión o hibernación. Para obtener más información, vea [Manage Client backup](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md).  

@@ -2,7 +2,7 @@
 title: Introducción al cliente de escritorio de Windows
 description: Información básica sobre el cliente del escritorio de Windows.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/13/2019
+ms.date: 09/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c864ba0e51054a553bfd53f845bd4d1c9ff3c8ba
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: 961d636fb59b33d0c562ec25d13174abbe766606
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988243"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404080"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introducción al cliente de escritorio de Windows
 
@@ -40,6 +40,17 @@ Actualmente, puedes descargar el cliente para Windows de 64 bits. Esta lista se
 Puedes instalar el cliente para el usuario actual, lo que no requiere derechos de administrador, o bien el administrador puede instalar y configurar el cliente para que todos los usuarios del dispositivo puedan acceder a él.
 
 Una vez instalado, el cliente se puede iniciar desde el menú Inicio al buscar **Escritorio remoto.**
+
+## <a name="update-the-client"></a>Actualizar el cliente
+
+Se te enviará una notificación cuando haya una nueva versión del cliente disponible siempre y cuando el administrador no haya deshabilitado las notificaciones. La notificación aparecerá en Connection Center (Centro de conexión) o en el centro de actividades de Windows. Para actualizar el cliente, solo tienes que seleccionar la notificación.
+
+También puedes buscar manualmente nuevas actualizaciones para el cliente:
+
+1. En el centro de conexiones, pulsa en el menú de desbordamiento ( **...** ) en la barra de comandos de la parte superior del cliente.
+2. Selecciona **Acerca de** en el menú desplegable.
+3. Pulsa en **Buscar actualizaciones**.
+4. Si hay una actualización disponible, pulsa en **Instalar actualización** para actualizar el cliente.
 
 ## <a name="feeds"></a>Fuentes
 
@@ -84,20 +95,30 @@ En esta sección se indica el proceso para cancelar tu suscripción a una fuente
 2. Selecciona **Cancelar suscripción** en el menú desplegable.
 3. Revisa el cuadro de diálogo y selecciona **Continuar**.
 
-## <a name="update-the-client"></a>Actualizar el cliente
+## <a name="managed-desktops"></a>Escritorios administrados
 
-A menos que lo deshabilite un administrador, se te notificará cuando haya disponible una nueva versión del cliente. Esta notificación se puede mostrar directamente en el centro de conexiones o en el centro de actividades de Windows. Selecciona la notificación para iniciar el proceso de actualización.
+Las áreas de trabajo pueden contener varios recursos administrados, incluidos los escritorios. Al acceder a un escritorio administrado, tienes acceso a todas las aplicaciones que instaló el administrador.
 
-También puedes buscar manualmente nuevas actualizaciones para el cliente:
+### <a name="desktop-settings"></a>Configuración del escritorio
 
-1. En el centro de conexiones, pulsa en el menú de desbordamiento ( **...** ) en la barra de comandos de la parte superior del cliente.
-2. Selecciona **Acerca de** en el menú desplegable.
-3. Pulsa en **Buscar actualizaciones**.
-4. Si hay una actualización disponible, pulsa en **Instalar actualización** para actualizar el cliente.
+Puedes configurar algunas de las opciones de configuración de los recursos de escritorio para asegurarte de que la experiencia satisface tus necesidades. Para acceder a la lista de opciones de configuración disponibles:
 
-## <a name="providing-feedback"></a>Comentarios
+1. En Connection Center (Centro de conexión), haz clic con el botón derecho en un recurso de escritorio.
+2. Selecciona **Detalles** en el menú desplegable.
+3. El panel Configuración aparece en el lado derecho del cliente que muestra el nombre del escritorio.
 
-¿Tienes algunas alguna sugerencia de característica o quieres informar de un problema? Indícanoslo desde el [Centro de opiniones](feedback-hub://?tabid=2&contextid=883), al que también se puede acceder desde el cliente:
+El cliente usará las opciones que configuró el administrador, a menos que se desactive la opción **Usar configuración predeterminada**. Esto te permite configurar las siguientes opciones:
+
+- La opción **Use all monitors** (Usar todos los monitores) cambia la sesión de escritorio entre el uso de todos los monitores locales disponibles y un solo monitor.
+- La opción **Start in full screen** (Iniciar en pantalla completa) determina si la sesión se iniciará en modo de pantalla completa o de ventana. Esta configuración se habilita automáticamente cuando se utilizan todos los monitores.
+- La opción **Update the resolution on resize** (Actualizar la resolución al cambiar de tamaño) cambia el comportamiento al cambiar el tamaño de la sesión en modo de ventana. Si está habilitada, la resolución del escritorio remoto se actualizará para que coincida con el tamaño de la ventana local. Si está deshabilitada, la sesión conservará la resolución especificada en **Resolución** durante toda su duración. Esta configuración se habilita automáticamente cuando se utilizan todos los monitores.
+- La opción **Resolución** le permite especificar la resolución del escritorio remoto. La sesión conservará esta resolución durante toda la duración. Esta configuración se deshabilita automáticamente si la resolución está establecida para actualizarse al cambiar el tamaño.
+- La opción **Change the size of the text and apps** (Cambiar el tamaño del texto y las aplicaciones) especifica el tamaño del contenido de la sesión. Esta configuración solo se aplica al conectarse con Windows 8.1 y versiones posteriores o Windows Server 2012 R2 y versiones posteriores. Esta configuración se deshabilita automáticamente si la resolución está establecida para actualizarse al cambiar el tamaño.
+- La opción **Fit session to window** (Ajustar sesión a la ventana) determina cómo se muestra la sesión cuando la resolución del escritorio remoto difiere del tamaño de la ventana local. Cuando se habilite, se cambiará el tamaño del contenido de la sesión para ajustarse dentro de la ventana, a la vez que se conservará la relación de aspecto de la sesión. Cuando se deshabilite, las barras de desplazamiento o las áreas negras se mostrarán cuando la resolución y el tamaño de la ventana no coincidan.
+
+## <a name="provide-feedback"></a>Enviar comentarios
+
+¿Tienes algunas alguna sugerencia de característica o quieres informar de un problema? Para indicárnoslo, utiliza el [Centro de opiniones](feedback-hub://?tabid=2&contextid=883). También puedes acceder al Centro de opiniones a través de tu cliente:
 
 1. En el centro de conexiones, pulsa en el menú de desbordamiento ( **...** ) en la barra de comandos de la parte superior del cliente.
 2. Selecciona **Comentarios** en el menú desplegable para abrir el Centro de opiniones.
