@@ -10,10 +10,10 @@ ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: 118c03ada32d3cd5b198ecd238078984a38df0db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 8fbd2d877612a9feb02d7d91ed0372d7cd441d5c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 10/01/2019
 ms.locfileid: "71359834"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-both-the-perimeter-network-and-internet-clients"></a>Configurar la resolución de nombres para un servidor proxy de federación de una zona DNS que da servicio tanto a la red perimetral como a los clientes de Internet
