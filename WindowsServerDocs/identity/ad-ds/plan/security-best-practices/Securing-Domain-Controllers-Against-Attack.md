@@ -92,7 +92,7 @@ El inicio de los exploradores Web en los controladores de dominio debe estar pro
   
 ### <a name="perimeter-firewall-restrictions"></a>Restricciones del firewall perimetral
 
-Los firewalls perimetrales deben configurarse para bloquear las conexiones salientes desde controladores de dominio a Internet. Aunque es posible que los controladores de dominio deban comunicarse a través de los límites del sitio, los firewalls perimetrales se pueden configurar para permitir la comunicación entre sitios siguiendo las instrucciones proporcionadas en [How to Configure a Firewall for Domains and trusts](https://support.microsoft.com/kb/179442) en el Soporte técnico de Microsoft sitio Web.  
+Los firewalls perimetrales deben configurarse para bloquear las conexiones salientes desde controladores de dominio a Internet. Aunque es posible que los controladores de dominio deban comunicarse a través de los límites del sitio, los firewalls perimetrales se pueden configurar para permitir la comunicación entre sitios siguiendo las instrucciones proporcionadas en [Cómo configurar un servidor de seguridad para Active Directory dominios y confianzas](https://support.microsoft.com/kb/179442) en el Soporte técnico de Microsoft sitio Web.  
   
 ### <a name="dc-firewall-configurations"></a>Configuraciones de Firewall de DC  
 
