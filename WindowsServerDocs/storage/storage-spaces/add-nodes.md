@@ -1,33 +1,33 @@
 ---
 ms.assetid: 898d72f1-01e7-4b87-8eb3-a8e0e2e6e6da
 title: Agregar servidores o unidades a espacios de almacenamiento directo
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosdar
 ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 11/06/2017
-description: Cómo agregar servidores o unidades a un clúster de espacios de almacenamiento directo
+description: Cómo agregar servidores o unidades a un clúster de Espacios de almacenamiento directo
 ms.localizationpriority: medium
-ms.openlocfilehash: ae639b920788911dbc16952d7b61aab85b0a391b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3d5949b8fce7253371ee7ecea5118596f713f037
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833456"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393780"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>Agregar servidores o unidades a espacios de almacenamiento directo
 
->Se aplica a: Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server 2019 y Windows Server 2016
 
 En este tema se describe cómo agregar servidores o unidades a espacios de almacenamiento directo.
 
-## <a name="adding-servers"></a> Adición de servidores
+## <a name="adding-servers"></a>Agregar servidores
 
 Mediante la adición de servidores, también conocida como escalado horizontal, se agrega capacidad de almacenamiento y también se puede mejorar el rendimiento, así como mejorar la eficiencia del almacenamiento. Si tu implementación es hiperconvergida, la adición de servidores también proporciona más recursos de proceso para la carga de trabajo.
 
-![Animación de agregar un servidor a un clúster de cuatro nodos](media/add-nodes/Scaling-Out.gif)
+![Animación de la adición de un servidor a un clúster de cuatro nodos](media/add-nodes/Scaling-Out.gif)
 
 Las implementaciones típicas son fáciles de escalar horizontalmente mediante la adición de nodos: Tan solo se necesitan realizar dos pasos:
 
@@ -156,7 +156,7 @@ Si la implementación usa la tolerancia a errores de chasis o bastidor, debes es
    New-ClusterFaultDomain -Type Node -Name <NewNode> 
    ```
 
-2. Mueve este dominio de error temporal al chasis o al bastidor donde se encuentra en realidad el nuevo servidor, como se especifica en *\<ParentName>*:
+2. Mueve este dominio de error temporal al chasis o al bastidor donde se encuentra en realidad el nuevo servidor, como se especifica en *\<ParentName>* :
 
    ```PowerShell
    Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName> 
@@ -166,14 +166,14 @@ Si la implementación usa la tolerancia a errores de chasis o bastidor, debes es
 
 3. Agrega el servidor al clúster como se describe en [Agregar servidores](#adding-servers). Cuando el servidor nuevo se une al clúster, se asocia automáticamente (mediante su nombre) al dominio de error del marcador de posición.
 
-## <a name="adding-drives"></a> Adición de unidades
+## <a name="adding-drives"></a>Agregar unidades
 
 Mediante la adición de unidades (también conocida como escalado vertical) se agrega capacidad de almacenamiento y se puede mejorar el rendimiento. Si tienes ranuras disponibles, puedes agregar unidades a cada servidor para expandir la capacidad de almacenamiento sin agregar servidores. Puedes agregar unidades de caché o unidades de capacidad independientemente en cualquier momento.
 
    >[!IMPORTANT]
    > Te recomendamos encarecidamente que todos los servidores tengan una configuración de almacenamiento idéntica.
 
-![Las unidades de animación que muestra la incorporación a un sistema](media/add-nodes/Scale-Up.gif)
+![Animación que muestra cómo agregar unidades a un mismo](media/add-nodes/Scale-Up.gif)
 
 Para escalar verticalmente, conecta las unidades y comprueba que Windows las detecta. Deben aparecer en la salida del cmdlet **Get-PhysicalDisk** de PowerShell con la propiedad de **CanPool** establecida como **True**. Si se muestran como **CanPool = False**, puedes ver porqué echando un vistazo a la propiedad **CannotPoolReason**.
 
@@ -188,19 +188,19 @@ Si las unidades no aparecen, busque manualmente si se han producido cambios en e
    >[!NOTE]
    > La agrupación automática depende de que solo tenga un grupo. Si has sorteado la configuración estándar para crear varios grupos, tendrás que agregar unidades nuevas a tu grupo preferido mediante **Add-PhysicalDisk**.
 
-## <a name="optimizing-drive-usage-after-adding-drives-or-servers"></a>Optimizar el uso de la unidad después de agregar servidores o las unidades
+## <a name="optimizing-drive-usage-after-adding-drives-or-servers"></a>Optimizar el uso de la unidad después de agregar unidades o servidores
 
-Con el tiempo, como las unidades se agregan o quitan, la distribución de datos entre las unidades en el grupo puede ser desigual. En algunos casos, esto puede dar lugar en ciertas llenen, mientras que otras unidades del grupo tengan mucho menor consumo de unidades.
+Con el tiempo, a medida que se agregan o se quitan unidades, la distribución de los datos entre las unidades del grupo puede ser desigual. En algunos casos, esto puede dar lugar a que ciertas unidades se llenen mientras otras unidades del grupo tienen un consumo mucho menor.
 
-Para ayudar a mantener la asignación de unidad incluso en el grupo, espacios de almacenamiento directo automáticamente optimiza el uso de la unidad después de agregar servidores o las unidades para el grupo (Esto es un proceso manual para los sistemas de espacios de almacenamiento que usan contenedores SAS compartido). Optimización inicia 15 minutos después de agregar una nueva unidad al grupo. Optimización de grupo se ejecuta como una operación de baja prioridad en segundo plano, por lo que puede tardar horas o días en completarse, especialmente si usa unidades de disco duro grandes.
+Para ayudar a mantener la asignación de la unidad incluso en el grupo, Espacios de almacenamiento directo optimiza automáticamente el uso de la unidad después de agregar unidades o servidores al grupo (se trata de un proceso manual para sistemas de espacios de almacenamiento que usan alojamientos de SAS compartidos). La optimización se inicia 15 minutos después de agregar una nueva unidad al grupo. La optimización de grupo se ejecuta como una operación en segundo plano de prioridad baja, por lo que puede tardar horas o días en completarse, especialmente si usa unidades de disco duro de gran tamaño.
 
-La optimización de usa dos trabajos: uno llamado *optimizar* y otro llamado *reequilibrar* - y puede supervisar su progreso en el siguiente comando:
+La optimización usa dos trabajos: uno denominado *optimizar* y otro denominado *reequilibrio* , y puede supervisar su progreso con el siguiente comando:
 
 ```powershell
 Get-StorageJob
 ```
 
-Puede optimizar manualmente un grupo de almacenamiento con el [Optimize-StoragePool](https://docs.microsoft.com/powershell/module/storage/optimize-storagepool?view=win10-ps) cmdlet. Por ejemplo:
+Puede optimizar manualmente un grupo de almacenamiento con el cmdlet [Optimize-StoragePool](https://docs.microsoft.com/powershell/module/storage/optimize-storagepool?view=win10-ps) . Por ejemplo:
 
 ```powershell
 Get-StoragePool <PoolName> | Optimize-StoragePool

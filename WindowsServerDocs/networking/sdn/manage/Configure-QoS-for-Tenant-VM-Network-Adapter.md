@@ -1,9 +1,9 @@
 ---
 title: Configurar la calidad de servicio (QoS) para un adaptador de red de máquina virtual de inquilino
-description: Al configurar QoS para un adaptador de red de máquina virtual de inquilino, tiene la opción de elegir entre el protocolo de puente del centro de datos DCB o la QoS de redes definidas por software.
+description: Al configurar QoS para un adaptador de red de máquina virtual de inquilino, tiene la opción de elegir \(entre\)el protocolo de puente del\) centro de datos DCB o la QoS de redes \(definidas por software.
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -13,12 +13,12 @@ ms.assetid: 6d783ff6-7dd5-496c-9ed9-5c36612c6859
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 99ef286b91bec4bcb008bfd9f62003e75a5a5921
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 1074525abe375e78ab0d2065ce8e98f894f50c61
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870020"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355845"
 ---
 # <a name="configure-quality-of-service-qos-for-a-tenant-vm-network-adapter"></a>Configurar la calidad de servicio (QoS) para un adaptador de red de máquina virtual de inquilino
 
@@ -41,7 +41,7 @@ Aplique la configuración de QoS de SDN a través de la configuración de puerto
 |portFlowLimit| Número máximo de flujos que se pueden ejecutar para el puerto. Un valor en blanco o cero \(0\) significa que no hay ningún límite. |
 |vmqWeight| El peso relativo describe la afinidad del adaptador de red virtual para utilizar Virtual Machine Queue (VMQ). El intervalo de valores es de 0 a 100.<p>Valores permitidos:<ul><li>0: deshabilita VMQ en el adaptador de red virtual.</li><li>1-100: habilita VMQ en el adaptador de red virtual.</li></ul>|
 |iovWeight| La ponderación relativa establece la afinidad del adaptador de red virtual con la función \(\) virtual de la virtualización de e/s de la virtualización de e/s de raíz única asignada. <p>Valores permitidos:<ul><li>0: deshabilita SR-IOV en el adaptador de red virtual.</li><li>1-100: habilita SR-IOV en el adaptador de red virtual.</li></ul>|
-|iovInterruptModeration|<p>Valores permitidos:<ul><li>predeterminada: la configuración del proveedor del adaptador de red físico determina el valor.</li><li>contrario </li><li>Desactivado </li><li>bajo</li><li>medio</li><li>alta</li></ul><p>Si elige **predeterminada**, la configuración del proveedor del adaptador de red físico determina el valor.  Si elige, **Adaptive**, el patrón de tráfico en tiempo de ejecución determina la velocidad de moderación de interrupciones.|
+|iovInterruptModeration|<p>Valores permitidos:<ul><li>predeterminada: la configuración del proveedor del adaptador de red físico determina el valor.</li><li>contrario </li><li>Desactivado </li><li>Habilita</li><li>mediano</li><li>Calidad</li></ul><p>Si elige **predeterminada**, la configuración del proveedor del adaptador de red físico determina el valor.  Si elige, **Adaptive**, el patrón de tráfico en tiempo de ejecución determina la velocidad de moderación de interrupciones.|
 |iovQueuePairsRequested| El número de pares de colas de hardware asignados a una función virtual de SR-IOV. Si se requiere el ajuste \(de\) escala en lado de recepción RSS y el adaptador de red físico que se enlaza al conmutador virtual admite RSS en las funciones virtuales de SR-IOV, se necesita más de un par de cola. <p>Valores permitidos: de 1 a 4294967295.|
 |QosSettings| Configure las siguientes opciones de QoS, que son opcionales: <ul><li>**outboundReservedValue** : si outboundReservedMode es "Absolute", el valor indica el ancho de banda, en Mbps, garantizado en el puerto virtual para la transmisión (salida). Si outboundReservedMode es "Weight", el valor indica la parte ponderada del ancho de banda garantizado.</li><li>**outboundMaximumMbps** : indica el ancho de banda máximo permitido del lado de envío, en Mbps, para el puerto virtual (salida).</li><li>**InboundMaximumMbps** : indica el ancho de banda de recepción máximo permitido para el puerto virtual (entrada) en Mbps.</li></ul> |
 
