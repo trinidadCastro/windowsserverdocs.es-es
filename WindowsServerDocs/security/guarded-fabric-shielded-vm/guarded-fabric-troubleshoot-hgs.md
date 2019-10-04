@@ -7,16 +7,17 @@ ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: be817a2c06b13af254b80090b9a7488209d4df0a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 09/25/2019
+ms.openlocfilehash: d34bbeee1a980aba76b5bed994be8db7fc8c8acf
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403526"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940819"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>Solución de problemas del servicio de protección de host
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
 En este tema se describen las soluciones a problemas comunes que se producen al implementar o operar un servidor de servicio de protección de host (HGS) en un tejido protegido.
 Si no está seguro de la naturaleza del problema, primero intente ejecutar los [diagnósticos de tejido protegido](guarded-fabric-troubleshoot-diagnostics.md) en los servidores de HGS y en los hosts de Hyper-V para reducir las posibles causas.
@@ -80,6 +81,7 @@ $cert.Acl = $cert.Acl | Add-AccessRule $gMSA Read Allow
 
 Si las claves privadas del certificado están respaldadas por un módulo de seguridad de hardware (HSM) o un proveedor de almacenamiento de claves (KSP) personalizado, el modelo de permisos dependerá de su proveedor de software específico.
 Para obtener los mejores resultados, consulte la documentación del proveedor o el sitio de soporte técnico para obtener información sobre cómo se administran los permisos de clave privada para un dispositivo o software específico.
+En todos los casos, el gMSA que usa HGS requiere permisos de *lectura* en las claves privadas del certificado de cifrado, firma y comunicaciones para que pueda realizar operaciones de firma y cifrado.
 
 Algunos módulos de seguridad de hardware no admiten la concesión de cuentas de usuario específicas al acceso a una clave privada. en su lugar, permiten que la cuenta de equipo tenga acceso a todas las claves de un conjunto de claves específico.
 Para estos dispositivos, normalmente es suficiente proporcionar al equipo acceso a las claves y HGS podrá aprovechar esa conexión.
@@ -93,7 +95,7 @@ Si tiene más preguntas, póngase en contacto con el fabricante de HSM para obte
 Marca/serie HSM      | Sugerencia
 ----------------------|-------------
 Gemalto SafeNet       | Asegúrese de que la propiedad uso de la clave del archivo de solicitud de certificado está establecida en 0XA0, lo que permite usar el certificado para la firma y el cifrado. Además, debe conceder a la cuenta gMSA acceso de *lectura* a la clave privada mediante la herramienta Administrador de certificados local (consulte los pasos anteriores).
-nCipher nShield        | Asegúrese de que cada nodo de HGS tiene acceso al mundo de seguridad que contiene las claves de firma y cifrado. No es necesario configurar los permisos específicos de gMSA.
+nCipher nShield        | Asegúrese de que cada nodo de HGS tiene acceso al mundo de seguridad que contiene las claves de firma y cifrado. Además, es posible que tenga que conceder a gMSA acceso de *lectura* a la clave privada mediante el administrador de certificados local (consulte los pasos anteriores).
 Utimaco CryptoServers | Asegúrese de que la propiedad uso de la clave del archivo de solicitud de certificado está establecida en 0x13, lo que permite usar el certificado para el cifrado, el descifrado y la firma.
 
 ### <a name="certificate-requests"></a>Solicitudes de certificado

@@ -7,14 +7,14 @@ ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 10/08/2018
+ms.date: 09/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b02d26e8a2f2cd699d8e1eda95cf72fe71396a21
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 21ba41f636c95660d16055908f6bef857b0f3608
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402898"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71934994"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>Elegir las unidades para Espacios de almacenamiento directo
 
@@ -114,9 +114,7 @@ La memoria caché debe ajustarse para adaptarse al espacio de trabajo de las apl
 
 ### <a name="general"></a>General
 
-Te recomendamos limitar la capacidad total de almacenamiento por servidor a aproximadamente 100 terabytes (TB). Cuanta más capacidad de almacenamiento tenga un servidor, más tiempo se necesitará para resincronizar los datos tras un periodo de inactividad o reinicio, como por ejemplo tras aplicar actualizaciones de software.
-
-El tamaño máximo actual por grupo de almacenamiento es 4 petabyte (PB) (4.000 TB) para Windows Server 2019 o 1 petabyte para Windows Server 2016.
+Se recomienda limitar la capacidad de almacenamiento total por servidor a aproximadamente 400 terabytes (TB). Cuanta más capacidad de almacenamiento tenga un servidor, más tiempo se necesitará para resincronizar los datos tras un periodo de inactividad o reinicio, como por ejemplo tras aplicar actualizaciones de software. El tamaño máximo actual por grupo de almacenamiento es 4 petabyte (PB) (4.000 TB) para Windows Server 2019 o 1 petabyte para Windows Server 2016.
 
 ## <a name="see-also"></a>Vea también
 

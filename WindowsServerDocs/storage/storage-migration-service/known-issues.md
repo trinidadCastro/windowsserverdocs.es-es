@@ -8,12 +8,12 @@ ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 391430b75670f207520a7d972b54ba293616d0e1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 150c9f1e70df4f634886ea65efd9c61ef075f26a
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393907"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940705"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -257,6 +257,13 @@ Al intentar ejecutar el inventario con el orquestador del servicio de migración
 
 Para solucionar este problema, instale las "herramientas de administración del clúster de conmutación por error" (RSAT-clustering-MGMT) en el servidor que ejecuta el orquestador del servicio de migración de almacenamiento. 
 
+## <a name="error-there-are-no-more-endpoints-available-from-the-endpoint-mapper-when-running-inventory-against-a-windows-server-2003-source-computer"></a>Error "no hay más extremos disponibles desde el asignador de extremos" al ejecutar el inventario en un equipo de origen de Windows Server 2003
+
+Al intentar ejecutar el inventario con el servidor de servicio de migración de almacenamiento revisado con la actualización acumulativa de [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) o una versión posterior, recibe el siguiente error:
+
+    There are no more endpoints available from the endpoint mapper  
+
+Para solucionar este problema, desinstale temporalmente la actualización acumulativa KB4512534 (y cualquier reemplazada) del equipo de Orchestrator del servicio de migración de almacenamiento. Una vez completada la migración, vuelva a instalar la actualización acumulativa más reciente.  
 
 ## <a name="see-also"></a>Vea también
 

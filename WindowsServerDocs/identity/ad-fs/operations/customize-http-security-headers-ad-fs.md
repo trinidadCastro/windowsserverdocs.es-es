@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e1042ad4dae0b023c9816dff798c25b05b60eccf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0685e0935a031b2f73474d59b025b70fc735902d
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407443"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935043"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>Personalización de encabezados de respuesta de seguridad HTTP con AD FS 2019 
  
@@ -53,7 +53,7 @@ Set-AdfsResponseHeaders -EnableResponseHeaders $false
 ### <a name="http-strict-transport-security-hsts"></a>HTTP STRICT-Transport-Security (HSTS) 
 HSTS es un mecanismo de directiva de seguridad Web que ayuda a mitigar los ataques de degradación del protocolo y la apropiación de cookies para los servicios que tienen puntos de conexión HTTP y HTTPS. Permite que los servidores web declaren que los exploradores Web (u otros agentes de usuario de cumplimiento) solo deberían interactuar con él mediante HTTPS y nunca a través del protocolo HTTP.  
  
-Todos los puntos de conexión de AD FS para el tráfico de autenticación Web se abren exclusivamente a través de HTTPS. Como resultado, AD FS mitiga eficazmente las amenazas que proporciona el mecanismo de la Directiva de seguridad de transporte HTTP STRICT (de forma predeterminada, no hay ninguna degradación de HTTP, ya que no hay agentes de escucha en HTTP). El encabezado se puede personalizar estableciendo los parámetros siguientes: 
+Todos los puntos de conexión de AD FS para el tráfico de autenticación Web se abren exclusivamente a través de HTTPS. Como resultado, AD FS mitiga eficazmente las amenazas que proporciona el mecanismo de la Directiva de seguridad de transporte HTTP STRICT (de forma predeterminada, no hay ninguna degradación de HTTP, ya que no hay agentes de escucha en HTTP). El encabezado se puede personalizar estableciendo los parámetros siguientes:
  
 - **Max-Age =&lt;expire-Time&gt;**  : el tiempo de expiración (en segundos) especifica cuánto tiempo se debe tener acceso al sitio solo mediante HTTPS. El valor predeterminado y el recomendado es de 31536000 segundos (1 año).  
 - **includeSubDomains** : este es un parámetro opcional. Si se especifica, la regla HSTS se aplica también a todos los subdominios.  
@@ -107,7 +107,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options"
 ```
 
 ### <a name="x-xss-protection"></a>Protección de X-XSS 
-Este encabezado de respuesta de seguridad HTTP se usa para impedir que se carguen las páginas web cuando los exploradores detectan ataques de scripting entre sitios (XSS). Esto se conoce como filtrado XSS. El encabezado se puede establecer en uno de los valores siguientes: 
+Este encabezado de respuesta de seguridad HTTP se usa para impedir que se carguen las páginas web cuando los exploradores detectan ataques de scripting entre sitios (XSS). Esto se conoce como filtrado XSS. El encabezado se puede establecer en uno de los siguientes valores:
  
 - **0** : deshabilita el filtrado XSS. No se recomienda.  
 - **1** : habilita el filtrado XSS. Si se detecta un ataque XSS, el explorador desaverá la página.   
@@ -138,7 +138,7 @@ La seguridad del explorador Web impide que una página web realice solicitudes e
 Para comprender mejor la solicitud de CORS, veamos un escenario en el que una aplicación de una sola página (SPA) necesita llamar a una API Web con un dominio diferente. Además, vamos a tener en cuenta que tanto SPA como la API están configurados en ADFS 2019 y AD FS tienen CORS habilitado, es decir, AD FS pueden identificar los encabezados de CORS en la solicitud HTTP, validar los valores de encabezado e incluir los encabezados de CORS correspondientes en la respuesta (más información sobre cómo habilitar y Configure CORS en AD FS 2019 en la sección de personalización de CORS más adelante). Flujo de ejemplo: 
 
 1. El usuario accede a SPA a través del explorador del cliente y se redirige al extremo de autenticación de AD FS para la autenticación. Dado que SPA está configurado para el flujo de concesión implícita, la solicitud devuelve un token de identificador y de acceso al explorador después de la autenticación correcta.  
-2. Después de la autenticación de usuario, el código JavaScript de front-end incluido en SPA realiza una solicitud para acceder a la API Web. La solicitud se redirige a AD FS con encabezados siguientes
+2. Después de la autenticación de usuario, el código JavaScript de front-end incluido en SPA realiza una solicitud para acceder a la API Web. La solicitud se redirige a AD FS con los encabezados siguientes:
     - Opciones: describe las opciones de comunicación para el recurso de destino. 
     - Origin: incluye el origen de la API Web
     - Access-Control-request-Method: identifica el método HTTP (por ejemplo, DELETE) que se usará cuando se realice la solicitud real. 
@@ -146,11 +146,11 @@ Para comprender mejor la solicitud de CORS, veamos un escenario en el que una ap
     
    >[!NOTE]
    >La solicitud de CORS se parece a una solicitud HTTP estándar, sin embargo, la presencia de un encabezado de origen indica que la solicitud entrante está relacionada con CORS. 
-3. AD FS comprueba que el origen de la API Web incluido en el encabezado aparece en la lista de orígenes de confianza configurados en AD FS (más adelante, en la sección detalles sobre cómo modificar orígenes de confianza en la personalización de CORS). A continuación, AD FS responde con los encabezados siguientes.  
+3. AD FS comprueba que el origen de la API Web incluido en el encabezado aparece en la lista de orígenes de confianza configurados en AD FS (más adelante, en la sección detalles sobre cómo modificar orígenes de confianza en la personalización de CORS). A continuación, AD FS responde con los encabezados siguientes:  
     - Access-Control-Allow-Origin: valor igual que en el encabezado Origin 
     - Access-Control-Allow-Method – valor igual que en el encabezado Access-Control-request-Method 
     - Access-Control-Allow-headers-valor igual que en el encabezado Access-Control-request-headers 
-4. El explorador envía la solicitud real, incluidos los encabezados siguientes 
+4. El explorador envía la solicitud real, incluidos los encabezados siguientes:
     - Método HTTP (por ejemplo, DELETE) 
     - Origin: incluye el origen de la API Web 
     - Todos los encabezados incluidos en el encabezado de respuesta Access-Control-Allow-headers 
@@ -199,7 +199,7 @@ Si una directiva se muestra explícitamente, el valor especificado invalida el v
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src ‘self'; img-src *" 
 ```
-Se pueden definir los siguientes orígenes para la directiva predeterminada de src 
+Se pueden definir los siguientes orígenes para la directiva predeterminada-src:
  
 - ' Self ': si se especifica, se restringe el origen del contenido que se va a cargar en el origen de la Página Web. 
 - ' Unsafe-inline ': especificar esto en la Directiva permite el uso de JavaScript y CSS en línea 
@@ -223,7 +223,7 @@ Una vez establecido, el nuevo encabezado se envía en la respuesta AD FS (siguie
  
 ![Fiddler](media/customize-http-security-headers-ad-fs/header2.png)
 
-## <a name="web-browswer-compatibility"></a>Compatibilidad con Web explorador le
+## <a name="web-browser-compatibility"></a>Compatibilidad con exploradores Web
 Utilice la tabla y los vínculos siguientes para determinar qué exploradores Web son compatibles con cada uno de los encabezados de respuesta de seguridad.
 
 |Encabezados de respuesta de seguridad HTTP|Compatibilidad con exploradores|
@@ -236,5 +236,5 @@ Utilice la tabla y los vínculos siguientes para determinar qué exploradores We
 
 ## <a name="next"></a>Siguiente
 
-- [Usar AD FS guías de troublehshooting de ayuda](https://aka.ms/adfshelp/troubleshooting )
+- [Usar la ayuda de AD FS guías de solución de problemas](https://aka.ms/adfshelp/troubleshooting )
 - [Solución de problemas de AD FS](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)

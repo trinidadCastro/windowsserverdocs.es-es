@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 29e3785d1c004d669e0060854acb6af1d2953644
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fb91ca583fd71a7fbe38369606d2dcc4a816d8aa
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357918"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935017"
 ---
 # <a name="privileged-access-workstations"></a>Estaciones de trabajo de acceso con privilegios
 
@@ -511,66 +511,136 @@ En esta sección, creará un nuevo GPO de "configuración de pata: usuario" que 
 En esta sección, configuraremos directivas de grupo para impedir que las cuentas administrativas con privilegios inicien sesión en los hosts de nivel inferior.
 
 1. Cree el nuevo GPO **Restringir inicio de sesión de estación de trabajo**: esta configuración restringirá a las cuentas de administrador de Nivel 0 y Nivel 1 el inicio de sesión en estaciones de trabajo estándar.  Este GPO debe estar vinculado a la UO de nivel superior "estaciones de trabajo" y tener la siguiente configuración:
-   * En el equipo \ configuración de seguridad de seguridad\Directivas locales \ derechos de Usuario\denegar iniciar sesión como proceso por lotes, seleccione **definir esta configuración de directiva** y agregue los grupos nivel 0 y nivel 1:     Administradores de dominio administradores de dominio administradores de esquema operadores de copia de seguridad operadores de copia de seguridad operadores de servidor operadores de dominio controladores de dominio de solo lectura directiva de grupo creadores propietarios Opers ators
+   * En el equipo \ configuración de seguridad de seguridad\Directivas locales \ derechos de Usuario\denegar iniciar sesión como proceso por lotes, seleccione **definir esta configuración de directiva** y agregue los grupos nivel 0 y nivel 1:
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Los grupos integrados de nivel 0, consulte equivalencia de nivel 0 para obtener más detalles.
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Cualquier grupo personalizado creado con acceso efectivo de nivel 0, consulte equivalencia de nivel 0 para obtener más detalles.
 
          Tier 1 Admins
 
-         > [!NOTE]
-         > This Group was created earlier in Phase 1.
+     > [!NOTE]
+     > Este grupo se creó anteriormente en la fase 1.
 
-   * En el equipo \ configuración de seguridad de seguridad\Directivas locales \ derechos de Usuario\denegar iniciar sesión como servicio, seleccione **definir esta configuración de directiva** y agregue los grupos nivel 0 y nivel 1:     Administradores de dominio administradores de dominio administradores de esquema operadores de copia de seguridad operadores de copia de seguridad operadores de servidor operadores de dominio controladores de dominio de solo lectura directiva de grupo creadores propietarios Opers ators
+   * En el equipo \ configuración de seguridad de seguridad\Directivas locales \ derechos de Usuario\denegar iniciar sesión como servicio, seleccione **definir esta configuración de directiva** y agregue los grupos nivel 0 y nivel 1:
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Note: Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Nota: Los grupos integrados de nivel 0, consulte equivalencia de nivel 0 para obtener más detalles.
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Note: Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Nota: Cualquier grupo personalizado creado con acceso efectivo de nivel 0, consulte equivalencia de nivel 0 para obtener más detalles.
 
          Tier 1 Admins
 
-         > [!NOTE]
-         > Note: This Group was created earlier in Phase 1
+     > [!NOTE]
+     > Nota: Este grupo se creó anteriormente en la fase 1
 
 2. Crear el nuevo GPO **restringir inicio de sesión de servidor** : esta configuración restringirá las cuentas de administrador de nivel 0 del inicio de sesión en servidores de nivel 1.  Este GPO debe estar vinculado a la unidad organizativa de nivel superior "servidores de nivel 1" y tener la siguiente configuración:
-   * En el equipo \ configuración de seguridad de seguridad\Directivas locales \ derechos de Usuario\denegar iniciar sesión como proceso por lotes, seleccione **definir esta configuración de directiva** y agregue los grupos de nivel 0:     Administradores de dominio administradores de dominio administradores de esquema operadores de copia de seguridad operadores de copia de seguridad operadores de servidor operadores de dominio controladores de dominio de solo lectura directiva de grupo creadores propietarios Opers ators
+   * En el equipo \ configuración de seguridad de seguridad\Directivas locales \ derechos de Usuario\denegar iniciar sesión como proceso por lotes, seleccione **definir esta configuración de directiva** y agregue los grupos de nivel 0:
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
-
-         Other Delegated Groups
-
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
-
-   * En el equipo \ configuración de seguridad de seguridad\Directivas locales \ derechos de Usuario\denegar iniciar sesión como servicio, seleccione **definir esta configuración de directiva** y agregar los grupos de nivel 0:     Administradores de dominio administradores de dominio administradores de esquema operadores de copia de seguridad operadores de copia de seguridad operadores de servidor operadores de dominio controladores de dominio de solo lectura directiva de grupo creadores propietarios Opers ators
-
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
-
-         Other Delegated Groups
-
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
-
-   * En el equipo \ configuración de seguridad de seguridad\Directivas locales \ derechos de inicio de sesión local, seleccione **definir esta configuración de directiva** y agregue los grupos de nivel 0:     Admins. del dominio Admins. del esquema operadores de cuentas operadores de copia de seguridad operadores de servidor operadores de dominio controladores de dominio de solo lectura controladores de dominio directiva de grupo creadores propietarios operadores criptográficos
-
-         > [!NOTE]
-         > Note: Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Los grupos integrados de nivel 0, consulte equivalencia de nivel 0 para obtener más detalles.
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Note: Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > Cualquier grupo personalizado creado con acceso efectivo de nivel 0, consulte equivalencia de nivel 0 para obtener más detalles.
+
+   * En el equipo \ configuración de seguridad de seguridad\Directivas locales \ derechos de Usuario\denegar iniciar sesión como servicio, seleccione **definir esta configuración de directiva** y agregar los grupos de nivel 0:
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
+
+     > [!NOTE]
+     > Los grupos integrados de nivel 0, consulte equivalencia de nivel 0 para obtener más detalles.
+
+         Other Delegated Groups
+
+     > [!NOTE]
+     > Cualquier grupo personalizado creado con acceso efectivo de nivel 0, consulte equivalencia de nivel 0 para obtener más detalles.
+
+   * En el equipo \ configuración de seguridad de seguridad\Directivas locales \ derechos de inicio de sesión local, seleccione **definir esta configuración de directiva** y agregue los grupos de nivel 0:
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
+
+     > [!NOTE]
+     > Nota: Los grupos integrados de nivel 0, consulte equivalencia de nivel 0 para obtener más detalles.
+
+         Other Delegated Groups
+
+     > [!NOTE]
+     > Nota: Cualquier grupo personalizado creado con acceso efectivo de nivel 0, consulte equivalencia de nivel 0 para obtener más detalles.
 
 #### <a name="deploy-your-paws"></a>Implemente sus PAW.
 

@@ -2,13 +2,13 @@
 author: shortpatti
 ms.author: pashort
 ms.date: 10/02/2018
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms:topic: include
-ms.openlocfilehash: 761deb136ebd4ec22dfeebc47b4eeb7650594d89
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 01f231ca730a19ac0e7e868bcb7180377830afe1
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863716"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935081"
 ---
-Con el puerto de Hyper-V, configurado en hosts de Hyper-V de equipos de NIC, asigne a las direcciones MAC de máquinas virtuales independientes.  La dirección MAC de máquinas virtuales o la máquina virtual portada conectados al conmutador de Hyper-V, puede utilizarse para dividir el tráfico de red entre los miembros del equipo NIC. No se puede configurar los equipos de NIC que cree con el modo de equilibrio de carga del puerto de Hyper-V dentro de las máquinas virtuales. En su lugar, use el modo de Hash de dirección. 
+Con el puerto de Hyper-V, los equipos NIC configurados en hosts de Hyper-V proporcionan direcciones MAC independientes de las máquinas virtuales.  La dirección MAC de las máquinas virtuales o la máquina virtual conectada al conmutador de Hyper-V se puede usar para dividir el tráfico de red entre los miembros del equipo NIC. No se pueden configurar los equipos NIC que se crean dentro de las máquinas virtuales con el modo de equilibrio de carga del puerto de Hyper-V. En su lugar, use el modo de hash de dirección. 

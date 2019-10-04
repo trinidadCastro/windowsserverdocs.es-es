@@ -6,14 +6,14 @@ ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 2b8c6148af21e94e4a56661402f36dcb2e636461
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 73922a07d8d5396aa9ced377bfc3c9be97a9950d
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871829"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935102"
 ---
 ## <a name="windows-server-2016-improvements"></a>Mejoras en Windows Server 2016
 
@@ -46,28 +46,28 @@ Los tres últimos contadores cubren los escenarios de servidor NTP y son útiles
 ### <a name="configuration-updates-per-environment"></a>Actualizaciones de configuración por entorno
 A continuación se describen los cambios en la configuración predeterminada entre Windows 2016 y las versiones anteriores para cada rol.  La configuración de Windows Server 2016 y de la actualización de aniversario de Windows 10 (compilación 14393) ahora es única, que es el motivo por el que se muestran como columnas independientes. 
 
-|Rol|Parámetro|Windows Server 2016|Windows 10|Windows Server 2012 R2</br>Windows Server 2008 R2</br>Windows 10|
+|Rol|Parámetro|Windows Server 2016|Windows 10|Windows Server 2012 R2</br>Windows Server 2008 R2</br>Windows 10|
 |---|---|---|---|---|
 |**Independiente/nano Server**||||
-| |*Servidor horario*|time.windows.com|N/D|time.windows.com|
-| |*Frecuencia de sondeo*|64-1024 segundos|N/D|Una vez a la semana|
-| |*Frecuencia de actualización del reloj*|Una vez por segundo|N/D|Una vez a la hora|
+| |*Servidor horario*|time.windows.com|N/A|time.windows.com|
+| |*Frecuencia de sondeo*|64-1024 segundos|N/A|Una vez a la semana|
+| |*Frecuencia de actualización del reloj*|Una vez por segundo|N/A|Una vez a la hora|
 |**Cliente independiente**||||
-| |*Servidor horario*|N/D|time.windows.com|time.windows.com|
-| |*Frecuencia de sondeo*|N/D|Una vez al día|Una vez a la semana|
-| |*Frecuencia de actualización del reloj*|N/D|Una vez al día|Una vez a la semana|
+| |*Servidor horario*|N/A|time.windows.com|time.windows.com|
+| |*Frecuencia de sondeo*|N/A|Una vez al día|Una vez a la semana|
+| |*Frecuencia de actualización del reloj*|N/A|Una vez al día|Una vez a la semana|
 |**Controlador de dominio**||||
-| |*Servidor horario*|PDC/GTIMESERV|N/D|PDC/GTIMESERV|
-| |*Frecuencia de sondeo*|64-1024 segundos|N/D|1024-32768 segundos|
-| |*Frecuencia de actualización del reloj*|Una vez al día|N/D|Una vez a la semana|
+| |*Servidor horario*|PDC/GTIMESERV|N/A|PDC/GTIMESERV|
+| |*Frecuencia de sondeo*|64-1024 segundos|N/A|1024-32768 segundos|
+| |*Frecuencia de actualización del reloj*|Una vez al día|N/A|Una vez a la semana|
 |**Servidor miembro de dominio**||||
-| |*Servidor horario*|DC|N/D|DC|
-| |*Frecuencia de sondeo*|64-1024 segundos|N/D|1024-32768 segundos|
-| |*Frecuencia de actualización del reloj*|Una vez por segundo|N/D|Una vez cada 5 minutos|
+| |*Servidor horario*|DC|N/A|DC|
+| |*Frecuencia de sondeo*|64-1024 segundos|N/A|1024-32768 segundos|
+| |*Frecuencia de actualización del reloj*|Una vez por segundo|N/A|Una vez cada 5 minutos|
 |**Cliente miembro de dominio**||||
-| |*Servidor horario*|N/D|DC|DC|
-| |*Frecuencia de sondeo*|N/D|1204-32768 segundos|1024-32768 segundos|
-| |*Frecuencia de actualización del reloj*|N/D|Una vez cada 5 minutos|Una vez cada 5 minutos|
+| |*Servidor horario*|N/A|DC|DC|
+| |*Frecuencia de sondeo*|N/A|1204-32768 segundos|1024-32768 segundos|
+| |*Frecuencia de actualización del reloj*|N/A|Una vez cada 5 minutos|Una vez cada 5 minutos|
 |**Invitado de Hyper-V**||||
 | |*Servidor horario*|Elige la mejor opción en función del estrato del host y el servidor de tiempo|Elige la mejor opción en función del estrato del host y el servidor de tiempo|El valor predeterminado es host|
 | |*Frecuencia de sondeo*|Según el rol anterior|Según el rol anterior|Según el rol anterior|
@@ -191,7 +191,7 @@ TIMESERV es otro marcador de servicios de dominio relacionado que indica si un e
 
 Si desea configurar un controlador de dominio como GTIMESERV, puede configurarlo manualmente con el siguiente comando.  En este caso, el controlador de dominio usa otras máquinas como el reloj maestro.  Podría ser un dispositivo o un equipo dedicado.
 
-    w32tm /config /manualpeerlist:”master_clock1,0x8 master_clock2,0x8” /syncfromflags:manual /reliable:yes /update
+    w32tm /config /manualpeerlist:"master_clock1,0x8 master_clock2,0x8" /syncfromflags:manual /reliable:yes /update
 
 > [!NOTE]
 > Para obtener más información, consulte [configuración del servicio de hora de Windows](https://technet.microsoft.com/library/cc731191.aspx)
