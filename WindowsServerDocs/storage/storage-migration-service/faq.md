@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a776920caa85c3ee133070d52b020c8ad3c799e1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6895c4b5f74beb237378060f82135d6f578986b7
+ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403001"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973862"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>Preguntas más frecuentes sobre el servicio de migración de almacenamiento (p + f)
 
@@ -34,15 +34,15 @@ El servicio de migración de almacenamiento no permite la migración entre domin
 
 ## <a name="are-clusters-supported-as-sources-or-destinations"></a>¿Se admiten clústeres como orígenes o destinos?
 
-El servicio de migración de almacenamiento no se migra actualmente entre clústeres en Windows Server 2019. Tenemos previsto agregar compatibilidad con clústeres en una versión futura del servicio de migración de almacenamiento.
+El servicio de migración de almacenamiento admite la migración desde y hacia clústeres después de la instalación de la actualización acumulativa [KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) o actualizaciones posteriores. Esto incluye la migración de un clúster de origen a un clúster de destino, así como la migración desde un servidor de origen independiente a un clúster de destino para fines de consolidación de dispositivos. 
 
 ## <a name="do-local-groups-and-local-users-migrate"></a>¿Migran los grupos locales y los usuarios locales?
 
-El servicio de migración de almacenamiento no migra actualmente usuarios locales o grupos locales en Windows Server 2019. Tenemos previsto agregar compatibilidad con la migración de usuarios locales y grupos locales en una futura versión del servicio de migración de almacenamiento.
+El servicio de migración de almacenamiento admite la migración de usuarios y grupos locales después de la instalación de la actualización acumulativa [KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) o actualizaciones posteriores. 
 
 ## <a name="is-domain-controller-migration-supported"></a>¿Se admite la migración del controlador de dominio?
 
-El servicio de migración de almacenamiento no migra actualmente controladores de dominio en Windows Server 2019. Como solución alternativa, siempre que tenga más de un controlador de dominio en el dominio Active Directory, disminuya el nivel del controlador de dominio antes de migrarlo y, a continuación, promueva el destino después de que se complete el corte. Tenemos previsto agregar compatibilidad con la migración de controladores de dominio en una futura versión del servicio de migración de almacenamiento.
+El servicio de migración de almacenamiento no migra actualmente controladores de dominio en Windows Server 2019. Como solución alternativa, siempre que tenga más de un controlador de dominio en el dominio Active Directory, disminuya el nivel del controlador de dominio antes de migrarlo y, a continuación, promueva el destino después de que se complete el corte.
 
 ## <a name="what-attributes-are-migrated-by-the-storage-migration-service"></a>¿Qué atributos migra el servicio de migración de almacenamiento?
 
@@ -73,11 +73,11 @@ El servicio de migración de almacenamiento migra todas las marcas, la configura
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>¿Puedo consolidar varios servidores en un solo servidor?
 
-La versión del servicio de migración de almacenamiento incluida en Windows Server 2019 no admite la consolidación de varios servidores en un solo servidor. Un ejemplo de consolidación sería la migración de tres servidores de origen independientes, que pueden tener los mismos nombres de recursos compartidos y rutas de acceso de archivo local: en un único servidor nuevo que virtualizó esas rutas y recursos compartidos para evitar cualquier superposición o colisión, respondiendo los tres nombres y direcciones IP de los servidores anteriores. Se puede Agregar esta funcionalidad en una versión futura del servicio de migración de almacenamiento. 
+La versión del servicio de migración de almacenamiento incluida en Windows Server 2019 no admite la consolidación de varios servidores en un solo servidor. Un ejemplo de consolidación sería la migración de tres servidores de origen independientes, que pueden tener los mismos nombres de recursos compartidos y rutas de acceso de archivo local: en un único servidor nuevo que virtualizó esas rutas y recursos compartidos para evitar cualquier superposición o colisión, respondiendo los tres nombres y direcciones IP de los servidores anteriores. Sin embargo, puede migrar servidores independientes en varios recursos del servidor de archivos en un solo clúster. 
 
 ## <a name="can-i-migrate-from-sources-other-than-windows-server"></a>¿Puedo migrar desde orígenes distintos de Windows Server?
 
-La versión del servicio de migración de almacenamiento incluida en Windows Server 2019 admite la migración desde Windows Server 2003 y los sistemas operativos posteriores. También puede migrar el almacenamiento desde un servidor o dispositivo Linux que use Samba. para ello, ejecute el servicio de migración de almacenamiento en un servidor que ejecute Windows Server, versión 1903 o posterior.
+El servicio de migración de almacenamiento admite la migración desde servidores Samba Linux después de la instalación de la actualización acumulativa [KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) o actualizaciones posteriores. Vea los requisitos para obtener una lista de las versiones de samba compatibles y Linux distribuciones.
 
 ## <a name="can-i-migrate-previous-file-versions"></a>¿Puedo migrar las versiones anteriores de los archivos?
 
@@ -129,7 +129,7 @@ La versión del servicio de migración de almacenamiento incluida en Windows Ser
 El servicio de migración de almacenamiento utiliza una base de datos del motor de almacenamiento extensible (ESE) que se instala de forma predeterminada en la carpeta c:\programdata\microsoft\storagemigrationservice oculta. Esta base de datos crecerá a medida que se agreguen los trabajos y se completen las transferencias, y puede consumir mucho espacio en la unidad después de migrar millones de archivos si no se eliminan los trabajos. Si la base de datos debe moverse, realice los pasos siguientes:
 
 1. Detenga el servicio de "servicio de migración de almacenamiento" en el equipo de Orchestrator.
-2. Tomar posesión de la `%programdata%/Microsoft/StorageMigrationService` carpeta
+2. Tomar posesión de la carpeta `%programdata%/Microsoft/StorageMigrationService`
 3. Agregue su cuenta de usuario para tener control total sobre ese recurso compartido y todos sus archivos y subcarpetas.
 4. Mueva la carpeta a otra unidad del equipo del orquestador.
 5. Establezca el siguiente valor REG_SZ del registro:
@@ -145,7 +145,7 @@ Para proporcionar comentarios sobre el servicio de migración de almacenamiento:
 
 - Use la herramienta centro de comentarios que se incluye en Windows 10, haciendo clic en "sugerir una característica" y especificando la categoría de "Windows Server" y la subcategoría de "migración de almacenamiento".
 - Usar el sitio web de [Windows Server UserVoice](https://windowsserver.uservoice.com)
-- Correo electrónicosmsfeed@microsoft.com
+- Correo electrónico smsfeed@microsoft.com
 
 Para archivos errores:
 
