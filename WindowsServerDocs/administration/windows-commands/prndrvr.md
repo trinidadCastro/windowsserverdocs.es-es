@@ -47,7 +47,7 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}]
 |-s \<ServerName >|Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local.|
 |-u \<UserName >-w \<Password >|Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione.|
 |-h \<path >|Especifica la ruta de acceso al archivo del controlador. Si no especifica una ruta de acceso, se usa la ruta de acceso a la ubicación en la que se instaló Windows.|
-|-i @no__t -0Filename. inf >|Especifica la ruta de acceso completa y el nombre de archivo del controlador que desea instalar. Si no especifica un nombre de archivo, el script usa uno de los archivos Printer. inf de la bandeja de entrada en el subdirectorio inf del directorio de Windows.<br /><br />Si no se especifica la ruta de acceso del controlador, el script busca archivos de controlador en el archivo driver. cab.|
+|-i \<Filename.inf>|Especifica la ruta de acceso completa y el nombre de archivo del controlador que desea instalar. Si no especifica un nombre de archivo, el script usa uno de los archivos Printer. inf de la bandeja de entrada en el subdirectorio inf del directorio de Windows.<br /><br />Si no se especifica la ruta de acceso del controlador, el script busca archivos de controlador en el archivo driver. cab.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
