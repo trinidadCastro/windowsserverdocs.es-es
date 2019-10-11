@@ -1,26 +1,26 @@
 ---
-title: Procedimientos habituales de solución de problemas de KMS y DNS
+title: Instrucciones para solucionar problemas de activación relacionados con DNS
 description: ''
 ms.topic: article
-ms.date: 07/22/2019
+ms.date: 09/10/2019
 ms.technology: server-general
 ms.assetid: ''
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 12e3c1fa82a567c43507df2f2ffd72595c3903ba
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: e2bd9c766f07591e0c643a6cea644b2db7a95364
+ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68664897"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960955"
 ---
-# <a name="common-troubleshooting-procedures-for-kms-and-dns-issues"></a>Procedimientos habituales de solución de problemas de KMS y DNS
+# <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>Instrucciones para solucionar problemas de activación relacionados con DNS
 
 Es posible que tenga que usar algunos de estos métodos si una o varias de las condiciones siguientes son "true":
 
 - Use los medios con licencias por volumen y una&nbsp;clave de producto genérica de licencia por volumen para instalar uno de los siguientes sistemas operativos:
-   - Windows Server 2019
+   - Windows Server 2019
    - Windows Server 2016
    - Windows Server 2012 R2
    - Windows Server 2012

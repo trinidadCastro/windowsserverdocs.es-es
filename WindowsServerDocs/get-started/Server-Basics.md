@@ -10,12 +10,12 @@ ms.topic: article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 70c3f3df4890717e2604e98e909ecacae956d3e7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b8d346ceafb81b02ebbffc62e558800b77f0086
+ms.sourcegitcommit: 8fbd2d877612a9feb02d7d91ed0372d7cd441d5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391603"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71678811"
 ---
 # <a name="get-started-with-windows-server-2016"></a>Introducción a Windows Server 2016
 
@@ -46,7 +46,7 @@ Características que ya se han quitado de Windows Server 2016 o marcado para su 
 Descripción de todas las formas para migrar a Windows Server 2016 desde todo lo que ejecuta actualmente.
 
 ## <a name="server-role-upgrade-and-migration-matrixserver-role-upgradeability-tablemd"></a>[Matriz de actualización y migración del rol de servidor](Server-Role-Upgradeability-Table.md)
-Información sobre los pasos adicionales necesarios para traer determinados roles de servidor a Windows Server 2016
+Información sobre los pasos adicionales necesarios para traer determinados roles de servidor a Windows Server 2016.
 
 ## <a name="server-application-compatibility-tableserver-application-compatibilitymd"></a>[Tabla de compatibilidad de aplicaciones de servidor](Server-Application-Compatibility.md)
 ¿Funciona SQL en Windows Server 2016? ¿Qué pasos hay que seguir para la ejecución de Exchange? En este tema se explica todo lo que necesita hacer.

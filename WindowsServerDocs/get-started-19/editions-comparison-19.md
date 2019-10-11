@@ -1,46 +1,44 @@
 ---
 title: Comparación de las ediciones Standard y Datacenter de Windows Server 2019
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c5ca3bfe-7ced-49f6-2932-80cab33fe914
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: af9334159b4b2aef6c2880e44bbc4ee46d7821b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 24ae0e11a3e8ca2b50bd6722f7bd7d18b8c1c532
+ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360870"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973874"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2019"></a>Comparación de las ediciones Standard y Datacenter de Windows Server 2019
 
 > Se aplica a: Windows Server 2019
   
 ## <a name="locks-and-limits"></a>Bloqueos y límites
-|Bloqueos y límites|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
-|-------------------|----------|---------------------------|  
-|Número máximo de usuarios|Según licencias CAL|Según licencias CAL|
-|Número máximo de conexiones SMB|16 777 216|16 777 216|
-|Número máximo de conexiones RRAS|sin límite|sin límite|
-|Número máximo de conexiones IAS|2 147 483 647|2 147 483 647|
-|Número máximo de conexiones RDS|65 535|65 535|
-|Número máximo de sockets de 64 bits|64|64|
-|Número máximo de núcleos|sin límite|sin límite|
-|RAM máxima|24 TB|24 TB|
-|Puede usarse como invitado de virtualización|Sí; 2 máquinas virtuales, más un host de Hyper-V por licencia|Sí; máquinas virtuales ilimitadas, más un host de Hyper-V por licencia|
-|El servidor puede unirse a un dominio|sí|sí|
-|Protección de red y firewall de Edge|no|no|
-|DirectAccess|sí|sí|
-|Códecs de DLNA y streaming de archivos multimedia web|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
+
+| Bloqueos y límites                 | Windows Server 2019 Standard | Windows Server 2019 Datacenter |  
+| -------------------              | ---------------------------  | --------------------------- |  
+| Número máximo de usuarios          | Según licencias CAL                | Según licencias CAL |
+| Número máximo de conexiones SMB          | 16,777,216                   | 16,777,216 |
+| Número máximo de conexiones RRAS         | sin límite                    | sin límite |
+| Número máximo de conexiones IAS          | 2,147,483,647                | 2,147,483,647 |
+| Número máximo de conexiones RDS          | 65,535                       | 65,535 |
+| Número máximo de sockets de 64 bits | 64                           | 64 |
+| Número máximo de núcleos          | sin límite                    | sin límite |
+| RAM máxima                      | 24 TB                        | 24 TB |
+| Puede usarse como invitado de virtualización | Sí; 2 máquinas virtuales, más un host de Hyper-V por licencia|Sí; <strong>máquinas virtuales ilimitadas</strong>, más un host de Hyper-V por licencia |
+| El servidor puede unirse a un dominio        | sí                           | sí |
+| Protección de red y firewall de Edge| no                            | no    |
+| DirectAccess                    | sí                           | sí |
+| Códecs de DLNA y streaming de archivos multimedia web | Sí, si se instala como servidor con Experiencia de escritorio | Sí, si se instala como servidor con Experiencia de escritorio |
 
 ## <a name="server-roles"></a>Roles del servidor
+
 |Roles de Windows Server disponibles|Servicios de rol|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|----------|---------------------------|  
 |Servicios de certificados de Active Directory| |Sí|Sí|
@@ -66,7 +64,7 @@ ms.locfileid: "71360870"
 |Servicios de archivos y almacenamiento|Servicios de almacenamiento|Sí|Sí|
 |Servicio de protección de host| |Sí|Sí|
 |Hyper-V| |Sí|Sí; incluye máquinas virtuales blindadas|
-|Controladora de red| |No|Sí|
+|Controladora de red| |No| <strong>Sí</strong> |
 |Servicios de acceso y directivas de redes| |Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 |Servicios de impresión y documentos| |Sí|Sí|
 |Acceso remoto| |Sí|Sí|
@@ -74,7 +72,7 @@ ms.locfileid: "71360870"
 |Volume Activation Services| |Sí|Sí|
 |Servicios web (IIS)| |Sí|Sí|
 |Servicios de implementación de Windows| |Sí*|Sí*|
-|Experiencia con Windows Server Essentials| |Sí|Sí|
+|Experiencia con Windows Server Essentials| |No | No |
 |Windows Server Update Services| |Sí|Sí|
 
 \* El servidor de transporte WDS es nuevo en las instalaciones básicas de Windows Server 2019 (también en el Canal semianual a partir de Windows Server, versión 1803)
@@ -84,20 +82,20 @@ ms.locfileid: "71360870"
 
 |Características de Windows Server instalables con Administrador del servidor (o PowerShell)|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|---------------------------|  
-|.NET Framework 3.5|Sí|Sí|
-|.NET Framework 4.6|Sí|Sí|
+|.NET Framework 3.5 |Sí|Sí|
+|.NET Framework 4.7 |Sí|Sí|
 |Servicio de transferencia inteligente en segundo plano (BITS)|Sí|Sí|
 |Cifrado de unidad BitLocker|Sí|Sí|
 |Desbloqueo de BitLocker en red|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 |BranchCache|Sí|Sí|
 |Cliente para NFS|Sí|Sí|
-|Contenedores|Sí (contenedores de Windows ilimitados; hasta 2 contenedores de Hyper-V)|Sí (todos los tipos de contenedor ilimitados)|
+|Contenedores|Sí (contenedores de Windows ilimitados; hasta dos contenedores de Hyper-V)|Sí (<strong>contenedores de Windows e Hyper-V ilimitados</strong>) |
 |Protocolo de puente del centro de datos|Sí|Sí|
 |DirectPlay|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 |Almacenamiento mejorado|Sí|Sí|
 |Clústeres de conmutación por error|Sí|Sí|
 |Administración de directivas de grupo|Sí|Sí|
-|Compatibilidad de Hyper-V con protección de host|No|Sí|
+|Compatibilidad de Hyper-V con protección de host|No| <strong>Sí</strong> |
 |Calidad de servicio de E/S|Sí|Sí|
 |Núcleo de web hospedable de IIS|Sí|Sí|
 |Cliente de impresión en Internet|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
@@ -149,7 +147,6 @@ ms.locfileid: "71360870"
 |Características que por lo general están disponibles|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|---------------------------|  
 |Analizador de procedimientos recomendados|Sí|Sí|
-|Réplica de almacenamiento restringida|Sí, (1 asociación y 1 grupo de recursos con un volumen único de 2TB)|Sí, sin límite|
 |Direct Access|Sí|Sí|
 |Memoria dinámica (en virtualización)|Sí|Sí|
 |RAM de agregado o reemplazo en caliente|Sí|Sí|
@@ -161,15 +158,15 @@ ms.locfileid: "71360870"
 |Opción de instalación Nano Server|Sí|Sí|
 |Administrador de servidores|Sí|Sí|
 |SMB directo y SMB sobre RDMA|Sí|Sí|
-|Redes definidas por software|No|Sí|
-|Servicio de administración de almacenamiento|Sí|Sí|
+|Redes definidas por software|No| <strong>Sí</strong> |
+|Servicio de migración de almacenamiento|Sí|Sí|
+| Réplica de almacenamiento         | Sí, (1 asociación y 1 grupo de recursos con un volumen único de 2 TB)    | Sí, <strong>sin límite</strong> |
 |Espacios de almacenamiento|Sí|Sí|
-|Espacios de almacenamiento directo|No|Sí|
+|Espacios de almacenamiento directo|No| <strong>Sí</strong> |
 |Volume Activation Services|Sí|Sí|
 |Integración de VSS (Servicio de instantáneas de volumen)|Sí|Sí|
 |Windows Server Update Services|Sí|Sí|
 |Administrador de recursos del sistema de Windows|Sí|Sí|
 |Registro de licencias del servidor|Sí|Sí|
-|Activación heredada|Como invitado si se hospeda en el centro de datos|Puede ser host o invitado|
+|Activación heredada|Como invitado si se hospeda en el centro de datos| <strong>Puede ser host o invitado</strong> |
 |Carpetas de trabajo|Sí|Sí|
-

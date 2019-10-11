@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b1dd3b728f941d9c3732abccf19363cf631284e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 54ed455955053ebb234864f827759385ecf3d3c5
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387749"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935035"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>Preguntas más frecuentes sobre los clientes de Escritorio remoto
 
@@ -166,7 +166,7 @@ Para usar dos o más pantallas, haz lo siguiente:
 2. Habilita **Use all monitors** (Usar todos los monitores) y **Full screen** (Pantalla completa).
 
 ### <a name="is-bi-directional-sound-supported"></a>¿Se admite el sonido bidireccional?
-El cliente de Escritorio remoto no admite el sonido ascendente (desde el cliente al servidor, para los micrófonos).
+El sonido bidireccional puede configurarse en el cliente de Windows para cada conexión. Se puede acceder a la configuración correspondiente en la sección **Audio remoto** de la pestaña de opciones **Recursos locales**.
 
 ### <a name="what-can-i-do-if-the-sound-wont-play"></a>¿Qué puedo hacer si no se reproduce el sonido?
 Cierra la sesión (no solo te desconectes, sino que cierra totalmente la sesión) y vuelve a iniciarla.

@@ -1,21 +1,21 @@
 ---
-title: Solución de problemas de códigos de error de activación
+title: Resolver códigos de error de activación de Windows
 description: Aprenda a solucionar problemas de códigos de error de activación.
 ms.topic: article
-ms.date: 07/22/2019
+ms.date: 9/18/2019
 ms.technology: server-general
 ms.assetid: ''
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 506aa5969228a17fe64581ec2a7143537b1fa05a
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 26b107264c9dfaca16ef445760089b8ac0ae8e22
+ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658869"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960971"
 ---
-# <a name="troubleshooting-activation-error-codes"></a>Solución de problemas de códigos de error de activación
+# <a name="resolve-windows-activation-error-codes"></a>Resolver códigos de error de activación de Windows
 
 > **Usuarios particulares**  
 > Este artículo está pensado para que lo usen los agentes de soporte técnico y profesionales de TI. Si quiere obtener más información acerca de los mensajes de error de activación de Windows, consulte [Obtener ayuda con los errores de activación de Windows](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors).  
@@ -30,40 +30,162 @@ Para obtener más información acerca de la activación de volumen para versione
 
 ## <a name="summary-of-error-codes"></a>Resumen de códigos de error
 
-|Código de error |Mensaje de error |Tipo de activación |
+|Código de error |Mensaje de error |Tipo de&nbsp;activación|
 |-----------|--------------|----------------|
+|[0x8004FE21](#0x8004fe21-this-computer-is-not-running-genuine-windows) |Este equipo no está ejecutando Windows original.  |MAK<br />Cliente KMS |
+|[0x80070005](#0x80070005-access-denied) |Acceso denegado: la acción solicitada requiere privilegios elevados. |MAK<br />Cliente KMS<br />Host de KMS |
+|[0x8007007b](#0x8007007b-dns-name-does-not-exist) |0x8007007b El nombre DNS no existe. |Cliente KMS |
+|[0x80070490](#0x80070490-the-product-key-you-entered-didnt-work) |La clave de producto que escribió no funcionó. Compruebe la clave de producto y vuelva a intentarlo o especifique otra diferente. |MAK |
+|[0x800706BA](#0x800706ba-the-rpc-server-is-unavailable) |El servidor RPC no está disponible. |Cliente KMS |
+|[0x8007232A](#0x8007232a-dns-server-failure) |Error de servidor DNS.  |Host de KMS  |
+|[0x8007232A](#0x8007232b-dns-name-does-not-exist) |El nombre DNS no existe. |Cliente KMS |
+|[0x8007251D](#0x8007251d-no-records-found-for-dns-query) |No se ha encontrado ningún registro para la consulta de DNS. |Cliente KMS |
+|[0x80092328](#0x80092328-dns-name-does-not-exist) |El nombre DNS no existe.  |Cliente KMS |
+|[0xC004B100](#0xc004b100-the-activation-server-determined-that-the-computer-could-not-be-activated) |El servidor de activación determinó que no se pudo activar el equipo. |MAK |
 |[0xC004C001](#0xc004c001-the-activation-server-determined-the-specified-product-key-is-invalid) |El servidor de activación determinó que la clave de producto especificada no es válida. |MAK|
 |[0xC004C003](#0xc004c003-the-activation-server-determined-the-specified-product-key-is-blocked) |El servidor de activación determinó que la clave de producto especificada está bloqueada. |MAK |
 |[0xC004C008](#0xc004c008-the-activation-server-determined-that-the-specified-product-key-could-not-be-used) |El servidor de activación determinó que la clave de producto especificada no se pudo usar. |KMS |
-|[0xC004B100](#0xc004b100-the-activation-server-determined-that-the-computer-could-not-be-activated) |El servidor de activación determinó que no se pudo activar el equipo. |MAK |
 |[0xC004C020](#0xc004c020-the-activation-server-reported-that-the-multiple-activation-key-has-exceeded-its-limit) |El servidor de activación notificó que la Clave de activación múltiple superó su límite. |MAK |
 |[0xC004C021](#0xc004c021-the-activation-server-reported-that-the-multiple-activation-key-extension-limit-has-been-exceeded) |El servidor de activación notificó que la Clave de activación múltiple superó su límite de extensión. |MAK |
 |[0xC004F009](#0xc004f009-the-software-protection-service-reported-that-the-grace-period-expired) |El servicio de protección de software informó de que el período de gracia expiró. |MAK |
-|[0xC004F00F](#0xc004f00f-the-software-licensing-server-reported-that-the-hardware-id-binding-is-beyond-level-of-tolerance) |El servidor de licencias de software notificó que el enlace del identificador de hardware supera el nivel de tolerancia. |Cliente de MAK/KMS y host de KMS |
-|[0xC004F014](#0xc004f014-the-software-protection-service-reported-that-the-product-key-is-not-available) |El servicio de protección de software informó de que la clave de producto no está disponible. |Cliente de MAK/KMS |
-|[0xC004F02C](#0xc004f02c-the-software-protection-service-reported-that-the-format-for-the-offline-activation-data-is-incorrect) |El servicio de protección de software informó de que el formato de los datos de activación sin conexión es incorrecto. |Cliente de MAK/KMS |
-|[0xC004F035](#0xc004f035-invalid-volume-license-key) |Este código de error equivale a "El servicio de protección de software informó de que no se pudo activar el equipo con una clave de producto licencia por volumen...". El texto del error es correcto, pero resulta ambiguo. Este error indica que al equipo le falta un marcador de Windows en el sistema BIOS (se proporciona en los sistemas de fabricantes de equipos originales para indicar que los equipos incluyen ediciones aplicables de Windows), lo que constituye un requisito para la activación del cliente de KMS. Error: Clave de licencia por volumen no válida. Para activarla, debe cambiar la clave de producto a una clave de activación múltiple (MAK) o clave comercial. Debe tener una licencia de sistema operativo susceptible de actualización Y una licencia por volumen de actualización de Windows 7, o una licencia completa de Windows 7 de una fuente comercial. CUALQUIER OTRA INSTALACIÓN DE ESTE SOFTWARE CONSTITUYE UNA INFRACCIÓN DEL CONTRATO Y DE LAS LEYES DE COPYRIGHT APLICABLES. |Cliente KMS y host de KMS |
+|[0xC004F00F](#0xc004f00f-the-software-licensing-server-reported-that-the-hardware-id-binding-is-beyond-level-of-tolerance) |El servidor de licencias de software notificó que el enlace del identificador de hardware supera el nivel de tolerancia. |MAK<br />Cliente KMS<br />Host de KMS |
+|[0xC004F014](#0xc004f014-the-software-protection-service-reported-that-the-product-key-is-not-available) |El servicio de protección de software informó de que la clave de producto no está disponible. |MAK<br />Cliente KMS |
+|[0xC004F02C](#0xc004f02c-the-software-protection-service-reported-that-the-format-for-the-offline-activation-data-is-incorrect) |El servicio de protección de software informó de que el formato de los datos de activación sin conexión es incorrecto. |MAK<br />Cliente KMS |
+|[0xC004F035](#0xc004f035-invalid-volume-license-key) |El servicio de protección de software informó de que no se pudo activar el equipo con una clave de producto de licencia por volumen. |Cliente KMS<br />Host de KMS |
 |[0xC004F038](#0xc004f038-the-count-reported-by-your-key-management-service-kms-is-insufficient) |El servicio de protección de software notificó que no se pudo activar el equipo. El número devuelto desde el Servicio de administración de claves (KMS) no es suficiente. Póngase en contacto con el administrador del sistema. |Cliente KMS |
 |[0xC004F039](#0xc004f039-the-key-management-service-kms-is-not-enabled) |El servicio de protección de software notificó que no se pudo activar el equipo. El Servicio de administración de claves (KMS) no está habilitado. |Cliente KMS |
 |[0xC004F041](#0xc004f041-the-software-protection-service-determined-that-the-key-management-server-kms-is-not-activated) |El servicio de protección de software determinó que el servidor de administración de claves (KMS) no está activado. KMS tiene que activarse.  |Cliente KMS |
 |[0xC004F042](#0xc004f042-the-software-protection-service-determined-that-the-specified-key-management-service-kms-cannot-be-used) |El servicio de protección de software determinó que el Servicio de administración de claves (KMS) no se pudo usar. |Cliente KMS |
-|[0xC004F050](#0xc004f050-the-software-protection-service-reported-that-the-product-key-is-invalid) |El servicio de protección de software informó de que la clave de producto no es válida. |KMS, cliente de KMS, MAK |
-|[0xC004F051](#0xc004f051-the-software-protection-service-reported-that-the-product-key-is-blocked) |El servicio de protección de software informó de que la clave de producto está bloqueada. |MAK/KMS |
+|[0xC004F050](#0xc004f050-the-software-protection-service-reported-that-the-product-key-is-invalid) |El servicio de protección de software informó de que la clave de producto no es válida. |MAK<br />KMS<br />Cliente KMS |
+|[0xC004F051](#0xc004f051-the-software-protection-service-reported-that-the-product-key-is-blocked) |El servicio de protección de software informó de que la clave de producto está bloqueada. |MAK<br />KMS |
 |[0xC004F064](#0xc004f064-the-software-protection-service-reported-that-the-non-genuine-grace-period-expired) |El servicio de protección de software notificó que expiró el período de gracia para software no original. |MAK |
-|[0xC004F065](#0xc004f065-the-software-protection-service-reported-that-the-application-is-running-within-the-valid-non-genuine-period) |El servicio de protección de software notificó que la aplicación se está ejecutando dentro del período de gracia válido para software no original. |Cliente de MAK/KMS |
+|[0xC004F065](#0xc004f065-the-software-protection-service-reported-that-the-application-is-running-within-the-valid-non-genuine-period) |El servicio de protección de software notificó que la aplicación se está ejecutando dentro del período de gracia válido para software no original. |MAK<br />Cliente KMS |
 |[0xC004F06C](#0xc004f06c-the-request-timestamp-is-invalid) |El servicio de protección de software notificó que no se pudo activar el equipo. El Servicio de administración de claves (KMS) determinó que la marca de tiempo de la solicitud no es válida.  |Cliente KMS |
-|[0x80070005](#0x80070005-access-denied) |Acceso denegado: la acción solicitada requiere privilegios elevados. |Cliente de KMS y host de MAK/KMS |
-|[0x8007232A](#0x8007232a-dns-server-failure) |Error de servidor DNS.  |Host de KMS  |
-|[0x8007232A](#0x8007232b-dns-name-does-not-exist) |El nombre DNS no existe. |Cliente KMS |
-|[0x800706BA](#0x800706ba-the-rpc-server-is-unavailable) |El servidor RPC no está disponible. |Cliente KMS |
-|[0x8007251D](#0x8007251d-no-records-found-for-dns-query) |No se ha encontrado ningún registro para la consulta de DNS. |Cliente KMS |
 |[0xC004F074](#0xc004f074-no-key-management-service-kms-could-be-contacted) |El servicio de protección de software notificó que no se pudo activar el equipo. No se pudo establecer contacto con ningún Servicio de administración de claves (KMS). Consulte el registro de eventos de la aplicación para obtener más información.  |Cliente KMS |
-|[0x8004FE21](#0x8004fe21-this-computer-is-not-running-genuine-windows) |Este equipo no está ejecutando Windows original.  |Cliente de MAK/KMS |
-|[0x80092328](#0x80092328-dns-name-does-not-exist) |0x80092328 El nombre DNS no existe.  |Cliente KMS |
-|[0x8007007b](#0x8007007b-dns-name-does-not-exist) |0x8007007b El nombre DNS no existe. |Cliente KMS |
-|[0x80070490](#0x80070490-the-product-key-you-entered-didnt-work) |La clave de producto que escribió no funcionó. Compruebe la clave de producto y vuelva a intentarlo o especifique otra diferente. |MAK |
 
 ## <a name="causes-and-resolutions"></a>Causas y resoluciones
+
+### <a name="0x8004fe21-this-computer-is-not-running-genuine-windows"></a>0x8004FE21: este equipo no está ejecutando Windows original  
+
+#### <a name="possible-cause"></a>Causa posible
+
+Este problema puede ocurrir por varios motivos. El motivo más probable es que se hayan instalado paquetes de idioma (MUI) en equipos que ejecutan ediciones de Windows que no disponen de licencia para incluir paquetes de idiomas adicionales.  
+
+> [!NOTE]
+> Este problema no es necesariamente una señal de manipulación. Algunas aplicaciones pueden incluir compatibilidad con varios idiomas aunque esa edición de Windows no tenga licencia para esos paquetes de idiomas).  
+
+Este problema puede producirse también si algún tipo de malware ha modificado Windows para permitir que se instalen características adicionales. Este problema puede producirse también si algunos archivos del sistema están dañados.  
+
+#### <a name="resolution"></a>Resolución
+
+Para resolver este problema, debe volver a instalar el sistema operativo.  
+
+### <a name="0x80070005-access-denied"></a>0x80070005: acceso denegado
+
+El texto completo de este mensaje de error es similar al siguiente:
+
+> Acceso denegado: la acción solicitada requiere privilegios elevados.
+
+#### <a name="possible-cause"></a>Causa posible
+
+El Control de cuentas de usuario (UAC) impide que se ejecuten los procesos de activación en una ventana del símbolo del sistema sin permisos elevados.  
+
+#### <a name="resolution"></a>Resolución
+
+Ejecute **slmgr.vbs** desde un símbolo del sistema con permisos elevados. Para ello, en el **menú Inicio**, haga clic con el botón derecho en **cmd.exe** y, a continuación, seleccione **Ejecutar como administrador**.  
+
+### <a name="0x8007007b-dns-name-does-not-exist"></a>0x8007007b: el nombre DNS no existe
+
+#### <a name="possible-cause"></a>Causa posible
+
+Este problema puede ocurrir si el cliente de KMS no puede encontrar los registros de recursos SRV de KMS en DNS.  
+
+#### <a name="resolution"></a>Resolución
+
+Para obtener más información acerca de la solución de problemas relacionados con DNS, consulte [Procedimientos habituales de solución de problemas de KMS y DNS](common-troubleshooting-procedures-kms-dns.md).  
+
+### <a name="0x80070490-the-product-key-you-entered-didnt-work"></a>0x80070490: la clave de producto que escribió no funcionó
+
+El texto completo de este error es similar al siguiente:
+> La clave de producto que escribió no funcionó. Compruebe la clave de producto y vuelva a intentarlo o especifique otra diferente.  
+
+#### <a name="possible-cause"></a>Causa posible
+
+Este problema ocurre porque se especificó una clave MAK no válida, o debido a un problema conocido en Windows Server 2019.  
+
+#### <a name="resolution"></a>Resolución
+
+Para solucionar este problema y activar el equipo, ejecute **slmgr -ipk <5x5 key>** en un símbolo del sistema con permisos elevados.
+
+### <a name="0x800706ba-the-rpc-server-is-unavailable"></a>0x800706BA: el servidor RPC no está disponible
+
+#### <a name="possible-cause"></a>Causa posible
+
+Los ajustes del firewall no están configurados en el host de KMS o los registros SRV de DNS son obsoletos.  
+
+#### <a name="resolution"></a>Resolución
+
+En el host de KMS, asegúrese de que la excepción de firewall esté habilitada para el Servicio de administración de claves (puerto TCP 1688).
+
+Asegúrese de que los registros SRV de DNS apunten a un host de KMS válido. 
+
+Resuelva los problemas relacionados con las conexiones de red.  
+
+Para obtener más información acerca de la solución de problemas relacionados con DNS, consulte [Procedimientos habituales de solución de problemas de KMS y DNS](common-troubleshooting-procedures-kms-dns.md).  
+
+### <a name="0x8007232a-dns-server-failure"></a>0x8007232A: error de servidor DNS
+
+#### <a name="possible-cause"></a>Causa posible
+
+El sistema presenta problemas de red o DNS.
+
+#### <a name="resolution"></a>Resolución
+
+Resuelva los problemas de red y DNS.  
+
+### <a name="0x8007232b-dns-name-does-not-exist"></a>0x8007232B: el nombre DNS no existe
+
+#### <a name="possible-cause"></a>Causa posible
+
+El cliente de KMS no encuentra los registros de recursos del servidor de KMS (RR de SRV) en DNS.  
+
+#### <a name="resolution"></a>Resolución
+
+Verifique que se haya instalado un host de KMS y que la publicación de DNS se encuentre habilitada (valor predeterminado). Si DNS no está disponible, apunte el cliente de KMS al host de KMS por medio de **slmgr.vbs /skms <*kms_host_name*>** .  
+
+Si no tiene ningún host de KMS, obtenga e instale una clave MAK. A continuación, active el sistema.
+
+Para obtener más información acerca de la solución de problemas relacionados con DNS, consulte [Procedimientos habituales de solución de problemas de KMS y DNS](common-troubleshooting-procedures-kms-dns.md).  
+
+### <a name="0x8007251d-no-records-found-for-dns-query"></a>0x8007251D: no se encontró ningún registro para la consulta de DNS
+
+#### <a name="possible-cause"></a>Causa posible
+
+El cliente de KMS no encuentra los registros SRV de KMS en DNS.
+
+#### <a name="resolution"></a>Resolución
+
+Resuelva los problemas relacionados con las conexiones de red y DNS. Para obtener más información acerca de cómo solucionar problemas relacionados con DNS, consulte [Procedimientos habituales de solución de problemas de KMS y DNS](common-troubleshooting-procedures-kms-dns.md).  
+
+### <a name="0x80092328-dns-name-does-not-exist"></a>0x80092328: el nombre DNS no existe
+
+#### <a name="possible-cause"></a>Causa posible
+
+Este problema puede ocurrir si el cliente de KMS no puede encontrar los registros de recursos SRV de KMS en DNS.
+
+#### <a name="resolution"></a>Resolución
+
+Para obtener más información acerca de la solución de problemas relacionados con DNS, consulte [Procedimientos habituales de solución de problemas de KMS y DNS](common-troubleshooting-procedures-kms-dns.md).  
+
+### <a name="0xc004b100-the-activation-server-determined-that-the-computer-could-not-be-activated"></a>0xC004B100: el servidor de activación determinó que no se pudo activar el equipo
+
+#### <a name="possible-cause"></a>Causa posible
+
+MAK no es compatible.  
+
+#### <a name="resolution"></a>Resolución
+
+Para solucionar este problema, verifique que la clave MAK que utiliza es la que proporcionó Microsoft. Para verificar que la MAK sea válida, póngase en contacto con los [centros de activación de licencias de Microsoft](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers).
 
 ### <a name="0xc004c001-the-activation-server-determined-the-specified-product-key-is-invalid"></a>0xC004C001: el servidor de activación determinó que la clave de producto especificada no es válida
 
@@ -94,16 +216,6 @@ Se superó el límite de activaciones de la clave KMS. Una clave de host de KMS 
 #### <a name="resolution"></a>Resolución
 
 Si necesita más activaciones, póngase en contacto los [centros de activación de licencias de Microsoft](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers).  
-
-### <a name="0xc004b100-the-activation-server-determined-that-the-computer-could-not-be-activated"></a>0xC004B100: el servidor de activación determinó que no se pudo activar el equipo
-
-#### <a name="possible-cause"></a>Causa posible
-
-MAK no es compatible.  
-
-#### <a name="resolution"></a>Resolución
-
-Para solucionar este problema, verifique que la clave MAK que utiliza es la que proporcionó Microsoft. Para verificar que la MAK sea válida, póngase en contacto con los [centros de activación de licencias de Microsoft](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers).
 
 ### <a name="0xc004c020-the-activation-server-reported-that-the-multiple-activation-key-has-exceeded-its-limit"></a>0xC004C020: el servidor de activación notificó que la clave de activación múltiple superó su límite
 
@@ -175,15 +287,23 @@ El texto completo de este mensaje de error es similar al siguiente:
 
 > Error: La clave de licencia por volumen no es válida. Para activarla debe cambiar la clave de producto a una clave de activación múltiple (MAK) o clave comercial. Debe tener una licencia de sistema operativo susceptible de actualización Y una licencia por volumen de actualización de Windows 7, o una licencia completa de Windows 7 de una fuente comercial. CUALQUIER OTRA INSTALACIÓN DE ESTE SOFTWARE CONSTITUYE UNA INFRACCIÓN DEL CONTRATO Y DE LAS LEYES DE COPYRIGHT APLICABLES.  
 
+El texto del error es correcto, pero resulta ambiguo. Este error indica que el equipo no tiene un marcador de Windows en su BIOS que lo identifique como sistema OEM que ejecuta una edición certificada de Windows. Esta información es necesaria para la activación del cliente de KMS. El significado más específico de este código es "Error: La clave de licencia por volumen no es válida".
+
 #### <a name="possible-cause"></a>Causa posible
 
 Las licencias de las ediciones por volumen de Windows 7 solo se conceden con fines de actualización. Microsoft no admite la instalación de un sistema operativo por volumen en un equipo que no tenga un sistema operativo susceptible de actualización instalado.  
 
-Este error indica una de las siguientes situaciones: "El servicio de protección de software informó de que no se pudo activar el equipo con una clave de producto de licencia por volumen..." El texto del error es correcto, pero resulta ambiguo. Este error indica que el equipo no tiene ningún marcador de Windows en el BIOS. Este marcador aparece en los sistemas OEM para indicar los equipos que se proporcionan con las ediciones de Windows susceptibles de actualización. El marcador es necesario para la activación del cliente de KMS.  
-
 #### <a name="resolution"></a>Resolución
 
-Instale una versión de un sistema operativo de Microsoft que sea susceptible de actualización y, a continuación, actívela mediante una clave MAK.
+Para activar, debes seguir uno de los procedimientos siguientes:
+
+- Cambia la clave de producto a una clave de activación múltiple (MAK) o clave comercial. Debe tener una licencia de sistema operativo susceptible de actualización Y una licencia por volumen de actualización de Windows 7, o una licencia completa de Windows 7 de una fuente comercial.
+  > [!NOTE]
+  > Si recibes el error 0x80072ee2 al intentar activar, usa en su lugar el método de activación por teléfono siguiente.
+- Para activar por teléfono, sigue estos pasos:
+   1. Ejecuta **slmgr /dti** y, luego, registra el valor del identificador de instalación. </li>
+   1. Ponte en contacto con los [Centros de activación de licencias de Microsoft](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers) e indica el identificador de instalación para recibir un identificador de confirmación.</li>
+   1. Para activar mediante el identificador de confirmación, ejecuta **slmgr /atp &lt;id. de confirmación&gt;** .
 
 ### <a name="0xc004f038-the-count-reported-by-your-key-management-service-kms-is-insufficient"></a>0xC004F038: el número devuelto desde el Servicio de administración de claves (KMS) no es suficiente
 
@@ -290,70 +410,6 @@ La configuración horaria del sistema del equipo cliente difiere demasiado de la
 
 Para solucionar este problema, cambie la hora del sistema en el cliente para sincronizarla con la del KMS. Le recomendamos que use un origen de hora NTP (Protocolo de tiempo de redes) o Active Directory Domain Services para la sincronización horaria. En este error interviene la hora UTP y es independiente de la selección de la zona horaria.  
 
-### <a name="0x80070005-access-denied"></a>0x80070005: acceso denegado
-
-El texto completo de este mensaje de error es similar al siguiente:
-
-> Acceso denegado: la acción solicitada requiere privilegios elevados.
-
-#### <a name="possible-cause"></a>Causa posible
-
-El Control de cuentas de usuario (UAC) impide que se ejecuten los procesos de activación en una ventana del símbolo del sistema sin permisos elevados.  
-
-#### <a name="resolution"></a>Resolución
-
-Ejecute **slmgr.vbs** desde un símbolo del sistema con permisos elevados. Para ello, en el **menú Inicio**, haga clic con el botón derecho en **cmd.exe** y, a continuación, seleccione **Ejecutar como administrador**.  
-
-### <a name="0x8007232a-dns-server-failure"></a>0x8007232A: error de servidor DNS
-
-#### <a name="possible-cause"></a>Causa posible
-
-El sistema presenta problemas de red o DNS.
-
-#### <a name="resolution"></a>Resolución
-
-Resuelva los problemas de red y DNS.  
-
-### <a name="0x8007232b-dns-name-does-not-exist"></a>0x8007232B: el nombre DNS no existe
-
-#### <a name="possible-cause"></a>Causa posible
-
-El cliente de KMS no encuentra los registros de recursos del servidor de KMS (RR de SRV) en DNS.  
-
-#### <a name="resolution"></a>Resolución
-
-Verifique que se haya instalado un host de KMS y que la publicación de DNS se encuentre habilitada (valor predeterminado). Si DNS no está disponible, apunte el cliente de KMS al host de KMS por medio de **slmgr.vbs /skms <*kms_host_name*>** .  
-
-Si no tiene ningún host de KMS, obtenga e instale una clave MAK. A continuación, active el sistema.
-
-Para obtener más información acerca de la solución de problemas relacionados con DNS, consulte [Procedimientos habituales de solución de problemas de KMS y DNS](common-troubleshooting-procedures-kms-dns.md).  
-
-### <a name="0x800706ba-the-rpc-server-is-unavailable"></a>0x800706BA: el servidor RPC no está disponible
-
-#### <a name="possible-cause"></a>Causa posible
-
-Los ajustes del firewall no están configurados en el host de KMS o los registros SRV de DNS son obsoletos.  
-
-#### <a name="resolution"></a>Resolución
-
-En el host de KMS, asegúrese de que la excepción de firewall esté habilitada para el Servicio de administración de claves (puerto TCP 1688).
-
-Asegúrese de que los registros SRV de DNS apunten a un host de KMS válido. 
-
-Resuelva los problemas relacionados con las conexiones de red.  
-
-Para obtener más información acerca de la solución de problemas relacionados con DNS, consulte [Procedimientos habituales de solución de problemas de KMS y DNS](common-troubleshooting-procedures-kms-dns.md).  
-
-### <a name="0x8007251d-no-records-found-for-dns-query"></a>0x8007251D: no se encontró ningún registro para la consulta de DNS
-
-#### <a name="possible-cause"></a>Causa posible
-
-El cliente de KMS no encuentra los registros SRV de KMS en DNS.
-
-#### <a name="resolution"></a>Resolución
-
-Resuelva los problemas relacionados con las conexiones de red y DNS. Para obtener más información acerca de cómo solucionar problemas relacionados con DNS, consulte [Procedimientos habituales de solución de problemas de KMS y DNS](common-troubleshooting-procedures-kms-dns.md).  
-
 ### <a name="0xc004f074-no-key-management-service-kms-could-be-contacted"></a>0xC004F074: no se pudo establecer contacto con ningún Servicio de administración de claves (KMS)
 
 El texto completo de este mensaje de error es similar al siguiente:
@@ -369,51 +425,3 @@ Todos los sistemas de host de KMS devolvieron un error.
 En el registro de eventos de aplicación, identifique cada evento que tenga el id. de evento 12288 y esté asociado al intento de activación. Solucione los errores de estos eventos.
 
 Para obtener más información acerca de la solución de problemas relacionados con DNS, consulte [Procedimientos habituales de solución de problemas de KMS y DNS](common-troubleshooting-procedures-kms-dns.md).  
-
-### <a name="0x8004fe21-this-computer-is-not-running-genuine-windows"></a>0x8004FE21: este equipo no está ejecutando Windows original  
-
-#### <a name="possible-cause"></a>Causa posible
-
-Este problema puede ocurrir por varios motivos. El motivo más probable es que se hayan instalado paquetes de idioma (MUI) en equipos que ejecutan ediciones de Windows que no disponen de licencia para incluir paquetes de idiomas adicionales.  
-
-> [!NOTE]
-> Este problema no es necesariamente una señal de manipulación. Algunas aplicaciones pueden incluir compatibilidad con varios idiomas aunque esa edición de Windows no tenga licencia para esos paquetes de idiomas).  
-
-Este problema puede producirse también si algún tipo de malware ha modificado Windows para permitir que se instalen características adicionales. Este problema puede producirse también si algunos archivos del sistema están dañados.  
-
-#### <a name="resolution"></a>Resolución
-
-Para resolver este problema, debe volver a instalar el sistema operativo.  
-
-### <a name="0x80092328-dns-name-does-not-exist"></a>0x80092328: el nombre DNS no existe
-
-#### <a name="possible-cause"></a>Causa posible
-
-Este problema puede ocurrir si el cliente de KMS no puede encontrar los registros de recursos SRV de KMS en DNS. 
-
-#### <a name="resolution"></a>Resolución
-
-Para obtener más información acerca de la solución de problemas relacionados con DNS, consulte [Procedimientos habituales de solución de problemas de KMS y DNS](common-troubleshooting-procedures-kms-dns.md).  
-
-### <a name="0x8007007b-dns-name-does-not-exist"></a>0x8007007b: el nombre DNS no existe
-
-#### <a name="possible-cause"></a>Causa posible
-
-Este problema puede ocurrir si el cliente de KMS no puede encontrar los registros de recursos SRV de KMS en DNS.  
-
-#### <a name="resolution"></a>Resolución
-
-Para obtener más información acerca de la solución de problemas relacionados con DNS, consulte [Procedimientos habituales de solución de problemas de KMS y DNS](common-troubleshooting-procedures-kms-dns.md).  
-
-### <a name="0x80070490-the-product-key-you-entered-didnt-work"></a>0x80070490: la clave de producto que escribió no funcionó
-
-El texto completo de este error es similar al siguiente:
-> La clave de producto que escribió no funcionó. Compruebe la clave de producto y vuelva a intentarlo o especifique otra diferente.  
-
-#### <a name="possible-cause"></a>Causa posible
-
-Este problema ocurre porque se especificó una clave MAK no válida, o debido a un problema conocido en Windows Server 2019.  
-
-#### <a name="resolution"></a>Resolución
-
-Para solucionar este problema y activar el equipo, ejecute **slmgr -ipk <5x5 key>** en un símbolo del sistema con permisos elevados.

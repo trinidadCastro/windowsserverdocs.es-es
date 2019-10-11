@@ -13,12 +13,12 @@ manager: daveba
 ms.author: helohr
 ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 092804ea84ba2d0e68eede3a597cb354c53bb8bd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cc09a60882c481cea974508b0ef967aad0ed82fa
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404195"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940646"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novedades del cliente de macOS
 
@@ -189,7 +189,7 @@ Han pasado algunas semanas desde la última actualización, pero estamos trabaja
 - Se agregó compatibilidad para los certificados de punto de conexión de Escritorio remoto que contienen claves asimétricas de curva elíptica.
 - Se corrigió un error que impedía la descarga de recursos administrados en algunos escenarios.
 - Se abordó un problema de recorte con el centro de conexiones anclado.
-- Se corrigieron las casillas de verificación en la hoja de propiedades Display (Pantalla) para que funcionen mejor juntas.
+- Se corrigieron las casillas de verificación en la pestaña Display (Pantalla) de la ventana Add a Desktop (Agregar un escritorio) para que funcionen mejor juntas.
 - Ahora está deshabilitado el bloqueo de la relación de aspecto cuando el cambio dinámico de presentación está en vigor.
 - Se abordaron problemas de compatibilidad con la infraestructura de F5.
 - Se actualizó el control de contraseñas en blanco para asegurarse de que se muestren los mensajes correctos en tiempo de conexión.
