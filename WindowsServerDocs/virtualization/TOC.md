@@ -51,6 +51,7 @@
 #### [Habilitar el hardware de supervisión de rendimiento de Intel](hyper-v/manage/Performance-Monitoring-Hardware.md)
 #### [Mover VM con la migración en vivo](hyper-v/manage/Live-migration-overview.md)
 ##### [Información general sobre la migración en vivo](hyper-v/manage/Live-migration-overview.md)
+
 ##### [Configurar hosts para la migración en vivo](hyper-v/deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md) 
 ##### [Uso de una migración en vivo sin clústeres de conmutación por error](hyper-v/manage/Use-live-migration-without-Failover-Clustering-to-move-a-virtual-machine.md)
 
