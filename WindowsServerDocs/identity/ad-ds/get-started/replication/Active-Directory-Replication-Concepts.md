@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d426b9923b569c8475862c1426a9dd310dc0b798
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ccc1801ba325fec4d7273b503ccb799966122b99
+ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390551"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591075"
 ---
 # <a name="active-directory-replication-concepts"></a>Conceptos de replicación de Active Directory
 
@@ -47,12 +47,12 @@ Un objeto de conexión es un objeto Active Directory que representa una conexió
   
 El objeto de conexión es un elemento secundario del objeto de configuración NTDS en el servidor de destino. Para que se produzca la replicación entre dos controladores de dominio, el objeto de servidor de uno debe tener un objeto de conexión que represente la replicación de entrada desde el otro. Todas las conexiones de replicación de un controlador de dominio se almacenan como objetos de conexión en el objeto de configuración NTDS. El objeto de conexión identifica el servidor de origen de replicación, contiene una programación de replicación y especifica un transporte de replicación.  
   
-El comprobador de coherencia de la información (KCC) crea los objetos de conexión automáticamente, pero también se pueden crear manualmente. Los objetos de conexión creados por el KCC aparecen en el complemento sitios y servicios de Active Directory como **<automatically generated>** y se consideran adecuados en condiciones de funcionamiento normales. Los objetos de conexión creados por un administrador son objetos de conexión creados manualmente. Un objeto de conexión creado manualmente se identifica mediante el nombre asignado por el administrador cuando se creó. Cuando se modifica un objeto **de conexión <automatically generated>** , se convierte en un objeto de conexión modificado administrativamente y el objeto aparece en forma de GUID. El KCC no realiza cambios en los objetos de conexión manuales o modificados.  
+El comprobador de coherencia de la información (KCC) crea los objetos de conexión automáticamente, pero también se pueden crear manualmente. Los objetos de conexión creados por el KCC aparecen en el complemento sitios y servicios de Active Directory como **<automatically generated>** y se consideran suficientes en condiciones de funcionamiento normales. Los objetos de conexión creados por un administrador son objetos de conexión creados manualmente. Un objeto de conexión creado manualmente se identifica mediante el nombre asignado por el administrador cuando se creó. Cuando se modifica un objeto de conexión de **<automatically generated>** , se convierte en un objeto de conexión modificado administrativamente y el objeto aparece en forma de GUID. El KCC no realiza cambios en los objetos de conexión manuales o modificados.  
   
 ## <a name="BKMK_2"></a>KCC  
 El KCC es un proceso integrado que se ejecuta en todos los controladores de dominio y genera una topología de replicación para el bosque de Active Directory. El KCC crea topologías de replicación independientes en función de si la replicación se está produciendo en un sitio (dentro del sitio) o entre sitios (entre sitios). El KCC también ajusta dinámicamente la topología para dar cabida a la adición de nuevos controladores de dominio, la eliminación de controladores de dominio existentes, el movimiento de controladores de dominio hacia y desde sitios, el cambio de costos y programaciones y controladores de dominio que se temporalmente no disponible o en estado de error.  
   
-Dentro de un sitio, las conexiones entre los controladores de dominio de escritura siempre están organizadas en un anillo bidireccional, con conexiones de acceso directo adicionales para reducir la latencia en sitios de gran tamaño. Por otro lado, la topología entre sitios es una capa de árboles de expansión, lo que significa que una conexión entre sitios existe entre dos sitios cualesquiera para cada partición de directorio y, por lo general, no contiene conexiones de acceso directo. Para obtener más información acerca de la expansión de árboles y Active Directory topología de replicación, consulte Active Directory referencia técnica[de la topología de replicación (https://go.microsoft.com/fwlink/?LinkID=93578](https://go.microsoft.com/fwlink/?LinkID=93578)).  
+Dentro de un sitio, las conexiones entre los controladores de dominio de escritura siempre están organizadas en un anillo bidireccional, con conexiones de acceso directo adicionales para reducir la latencia en sitios de gran tamaño. Por otro lado, la topología entre sitios es una capa de árboles de expansión, lo que significa que una conexión entre sitios existe entre dos sitios cualesquiera para cada partición de directorio y, por lo general, no contiene conexiones de acceso directo. Para obtener más información acerca de la expansión de árboles y Active Directory topología de replicación, consulte Active Directory referencia técnica de la topología de replicación ([ https://go.microsoft.com/fwlink/?LinkID=93578](https://go.microsoft.com/fwlink/?LinkID=93578)).  
   
 En cada controlador de dominio, el KCC crea rutas de replicación mediante la creación de objetos de conexión de entrada unidireccionales que definen conexiones de otros controladores de dominio. En el caso de los controladores de dominio del mismo sitio, el KCC crea objetos de conexión automáticamente sin intervención administrativa. Si tiene más de un sitio, configure los vínculos de sitio entre los sitios y un solo KCC en cada sitio creará automáticamente las conexiones entre sitios.  
   
@@ -64,16 +64,16 @@ Una de las ventajas de implementar RODC en este escenario es la replicación uni
   
 Sin embargo, un desafío administrativo resaltado por la topología de concentrador-radio en versiones anteriores del sistema operativo Windows Server es que, después de agregar un nuevo controlador de dominio de cabeza de puente en el concentrador, no hay ningún mecanismo automático para redistribuir el conexiones de replicación entre los controladores de dominio de la sucursal y los controladores de dominio del concentrador para aprovechar el nuevo controlador de dominio del concentrador.  
   
-En el caso de los controladores de dominio de Windows Server 2003, puede reequilibrar la carga de trabajo mediante una herramienta como Adlb. exe de la guía de implementación de sucursales de Windows Server 2003 ([https://go.microsoft.com/fwlink/?LinkID=28523](https://go.microsoft.com/fwlink/?LinkID=28523)).  
+En el caso de los controladores de dominio de Windows Server 2003, puede reequilibrar la carga de trabajo mediante una herramienta como Adlb. exe de la guía de implementación de sucursales de Windows Server 2003 ([ https://go.microsoft.com/fwlink/?LinkID=28523](https://go.microsoft.com/fwlink/?LinkID=28523)).  
   
-En el caso de los RODC de Windows Server 2008, el funcionamiento normal del KCC proporciona un reequilibrio, lo que elimina la necesidad de usar una herramienta adicional como Adlb. exe. La nueva funcionalidad está habilitada de forma predeterminada. Puede deshabilitarlo agregando el siguiente conjunto de claves del registro en el RODC:  
+En el caso de los RODC de Windows Server 2008, el funcionamiento normal del KCC proporciona algún reequilibrio, lo que elimina la necesidad de usar una herramienta adicional como Adlb. exe. La nueva funcionalidad está habilitada de forma predeterminada. Puede deshabilitarlo agregando el siguiente conjunto de claves del registro en el RODC:  
   
 **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NTDS\Parameters**  
   
 **"Se permite el equilibrio de BH aleatorio"**  
 **1 = habilitado (valor predeterminado), 0 = deshabilitado**  
   
-Para obtener más información acerca de cómo funcionan estas mejoras de KCC, consulte planear e implementar Active Directory Domain Services para sucursales ([https://go.microsoft.com/fwlink/?LinkId=107114](https://go.microsoft.com/fwlink/?LinkId=107114)).  
+Para obtener más información acerca de cómo funcionan estas mejoras de KCC, consulte planear e implementar Active Directory Domain Services para sucursales ([ https://go.microsoft.com/fwlink/?LinkId=107114](https://go.microsoft.com/fwlink/?LinkId=107114)).  
   
 ## <a name="BKMK_3"></a>Funcionalidad de conmutación por error  
 Los sitios aseguran que la replicación se enrute en torno a errores de red y controladores de dominio sin conexión. El KCC se ejecuta a intervalos especificados para ajustar la topología de replicación de los cambios que se producen en AD DS, como cuando se agregan nuevos controladores de dominio y se crean nuevos sitios. El KCC revisa el estado de replicación de las conexiones existentes para determinar si las conexiones no funcionan. Si una conexión no funciona debido a un error en un controlador de dominio, el KCC crea automáticamente conexiones temporales a otros asociados de replicación (si están disponibles) para asegurarse de que se produce la replicación. Si todos los controladores de dominio de un sitio no están disponibles, el KCC crea automáticamente las conexiones de replicación entre los controladores de dominio de otro sitio.  

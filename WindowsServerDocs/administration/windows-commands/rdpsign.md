@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: aa1f8f8f31abd85a1ad106a3c4764fc4ccf74258
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 406563a07d3760c2846c201410f3a7b8f1c2829b
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384770"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588057"
 ---
 # <a name="rdpsign"></a>rdpsign
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Permite firmar digitalmente un archivo Protocolo de escritorio remoto (. RDP).
-Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
+para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
 
 > [!NOTE]
 > En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
@@ -39,14 +39,15 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 
 |Parámetro|Descripción|
 |-------|--------|
-|/SHA1 \<hash >|Especifica la huella digital, que es el hash Algoritmo hash seguro 1 (SHA1) del certificado de firma que se incluye en el almacén de certificados.|
+|\<hash/SHA1 >|Especifica la huella digital, que es el hash Algoritmo hash seguro 1 (SHA1) del certificado de firma que se incluye en el almacén de certificados. Se usa en Windows Server 2012 R2 y versiones anteriores.|
+|\<hash/SHA256 >|Especifica la huella digital, que es el hash del algoritmo hash seguro 256 (SHA256) del certificado de firma que se incluye en el almacén de certificados. Reemplaza/SHA1 en Windows Server 2016 y versiones más recientes.|
 |/q|Modo silencioso. No hay ninguna salida cuando el comando se ejecuta correctamente y la salida mínima si se produce un error en el comando.|
 |/v|modo detallado. Muestra todas las advertencias, mensajes y estado.|
 |/l|Comprueba los resultados de la firma y la salida sin reemplazar realmente ninguno de los archivos de entrada.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
--   La huella digital del certificado SHA1 debe representar un editor de archivos. RDP de confianza. Para obtener la huella digital del certificado, abra el complemento certificados, haga doble clic en el certificado que desea usar (ya sea en el almacén de certificados del equipo local o en el almacén de certificados personales), haga clic en la pestaña **detalles** y, a continuación, en elLista de campos, haga clic en **huella digital**.
+## <a name="remarks"></a>Observaciones
+-   La huella digital del certificado SHA1 o SHA256 debe representar un editor de archivos. RDP de confianza. Para obtener la huella digital del certificado, abra el complemento certificados, haga doble clic en el certificado que desea usar (ya sea en el almacén de certificados del equipo local o en el almacén de certificados personales), haga clic en la pestaña **detalles** y, a continuación, en elLista de campos, haga clic en **huella digital**.
 
     > [!NOTE]
     > Al copiar la huella digital para usarla con la herramienta rdpsign. exe, debe quitar los espacios.
@@ -70,6 +71,6 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
   ```
   rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
   ```
-  ## <a name="see-also"></a>Vea también
-  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+  ## <a name="see-also"></a>Consulta también
+  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md) 
   [servicios de escritorio remoto &#40;referencia de comandos Terminal Services&#41; ](remote-desktop-services-terminal-services-command-reference.md)

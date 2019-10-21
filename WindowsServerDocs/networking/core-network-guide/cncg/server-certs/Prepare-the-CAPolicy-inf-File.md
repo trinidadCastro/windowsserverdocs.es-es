@@ -8,12 +8,12 @@ ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 810f6f8ba9e33f1f26f49f542ad6d23819deb463
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2af3a621991627addb94238e84cceb357fb47731
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406287"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588084"
 ---
 # <a name="capolicyinf-syntax"></a>Sintaxis de CAPolicy. inf
 >   Se aplica a: Windows Server (canal semianual), Windows Server 2016
@@ -42,16 +42,16 @@ Los siguientes términos se usan para describir la estructura del archivo. inf:
 
 -   _Valor_ : es el parámetro y aparece a la derecha del signo igual.
 
-En el ejemplo siguiente, **[Version]** es la sección, **Signature** es la clave y **"\$Windows NT @ no__t-4"** es el valor.
+En el ejemplo siguiente, **[Version]** es la sección, **Signature** es la clave y **"\$Windows NT \$"** es el valor.
 
-Ejemplo:
+Por ejemplo:
 
 ```PowerShell
 [Version]                     #section
 Signature="$Windows NT$"      #key=value
 ```
 
-###  <a name="version"></a>`Version`
+###  <a name="version"></a>Versión
 
 Identifica el archivo como un archivo. inf. La versión es la única sección necesaria y debe estar al principio del archivo CAPolicy. inf.
 
@@ -116,7 +116,7 @@ Información adicional sobre esta sección:
 
 -   Las comillas deben encerrar las direcciones URL con espacios.
 
--   Si no se especifica ninguna dirección URL, es decir, si la sección **[CRLDistributionPoint]** existe en el archivo pero está vacía, se omite la extensión de acceso a la información de entidad de certificación del certificado de CA raíz. Esto suele ser preferible al configurar una CA raíz. Windows no realiza la comprobación de revocación en un certificado de CA raíz, por lo que la extensión CDP es superflua en un certificado de CA raíz.
+-   Si no se especifica ninguna dirección URL, es decir, si la sección **[CRLDistributionPoint]** existe en el archivo pero está vacía, se omite la extensión de punto de distribución de CRL del certificado de CA raíz. Esto suele ser preferible al configurar una CA raíz. Windows no realiza la comprobación de revocación en un certificado de CA raíz, por lo que la extensión CDP es superflua en un certificado de CA raíz.
 
 -    La CA puede publicar en un archivo UNC, por ejemplo, en un recurso compartido que representa la carpeta de un sitio web en el que un cliente recupera a través de HTTP.
 
@@ -142,7 +142,7 @@ Algunas notas adicionales en la sección acceso a la información de entidad:
 
 -   Las direcciones URL con espacios deben ir entre comillas.
 
--   Si no se especifica ninguna dirección URL, es decir, si la sección **[AuthorityInformationAccess]** existe en el archivo pero está vacía, se omite la extensión de punto de distribución de CRL del certificado de CA raíz. De nuevo, esta sería la configuración preferida en el caso de un certificado de entidad de certificación raíz, ya que no hay ninguna autoridad mayor que una CA raíz a la que deba hacer referencia un vínculo a su certificado.
+-   Si no se especifica ninguna dirección URL, es decir, si la sección **[AuthorityInformationAccess]** existe en el archivo pero está vacía, se omite la extensión de acceso a la información de entidad de certificación del certificado de CA raíz. De nuevo, esta sería la configuración preferida en el caso de un certificado de entidad de certificación raíz, ya que no hay ninguna autoridad mayor que una CA raíz a la que deba hacer referencia un vínculo a su certificado.
 
 ### <a name="certsrv_server"></a>certsrv_Server
 
@@ -170,11 +170,11 @@ EnableKeyCounting=0
 
 Al renovar un certificado de entidad de certificación con un nuevo par de claves, la longitud de la clave puede aumentar o disminuir. Por ejemplo, si ha establecido un tamaño de clave de CA raíz de 4096 bytes o superior y, a continuación, descubre que tiene aplicaciones Java o dispositivos de red que solo admiten tamaños de clave de 2048 bytes. Si aumenta o disminuye el tamaño, debe volver a emitir todos los certificados emitidos por esa CA.
 
-**RenewalValidityPeriod** y **RenewalValidityPeriodUnits** establecen la duración del nuevo certificado de CA raíz al renovar el certificado de CA raíz antiguo. Solo se aplica a una CA raíz. La duración del certificado de una CA subordinada viene determinada por su superior. RenewalValidityPeriod puede tener los siguientes valores: Horas, días, semanas, meses y años.
+**RenewalValidityPeriod** y **RenewalValidityPeriodUnits** establecen la duración del nuevo certificado de CA raíz al renovar el certificado de CA raíz antiguo. Solo se aplica a una CA raíz. La duración del certificado de una CA subordinada viene determinada por su superior. RenewalValidityPeriod puede tener los siguientes valores: horas, días, semanas, meses y años.
 
-**CRLPeriod** y **CRLPeriodUnits** establecen el período de validez de la CRL base. **CRLPeriod** puede tener los siguientes valores: Horas, días, semanas, meses y años.
+**CRLPeriod** y **CRLPeriodUnits** establecen el período de validez de la CRL base. **CRLPeriod** puede tener los siguientes valores: horas, días, semanas, meses y años.
 
-**CRLDeltaPeriod** y **configurar crldeltaperiodunits** establecen el período de validez de la diferencia CRL. **CRLDeltaPeriod** puede tener los siguientes valores: Horas, días, semanas, meses y años.
+**CRLDeltaPeriod** y **configurar crldeltaperiodunits** establecen el período de validez de la diferencia CRL. **CRLDeltaPeriod** puede tener los siguientes valores: horas, días, semanas, meses y años.
 
 Cada una de estas opciones se puede configurar después de instalar la CA:
 
@@ -193,18 +193,17 @@ En una instalación predeterminada de la CA, se agrega un subconjunto de las pla
 
 Es posible que no quiera emitir ningún certificado inmediatamente después de instalar una CA, por lo que puede usar la opción LoadDefaultTemplates para evitar que las plantillas predeterminadas se agreguen a la CA empresarial. Si no hay ninguna plantilla configurada en la CA, puede no emitir ningún certificado.
 
-**AlternateSignatureAlgorithm** configura la CA para admitir el formato de firma\#PKCS 1 v 2.1 tanto para el certificado de CA como para las solicitudes de certificado. Cuando se establece en 1 en una entidad de certificación raíz, el certificado de\#CA incluirá el formato de firma PKCS 1 v 2.1. Cuando se establece en una CA subordinada, la CA subordinada creará una solicitud de certificado\#que incluye el formato de firma PKCS 1 v 2.1.
+**AlternateSignatureAlgorithm** configura la CA para admitir el formato de firma PKCS \#1 v 2.1 tanto para el certificado de CA como para las solicitudes de certificado. Cuando se establece en 1 en una entidad de certificación raíz, el certificado de CA incluirá el formato de firma PKCS \#1 V 2.1. Cuando se establece en una CA subordinada, la CA subordinada creará una solicitud de certificado que incluye el formato de firma PKCS \#1 V 2.1.
 
 **ForceUTF8** cambia la codificación predeterminada de los nombres distintivos relativos (RDN) en el asunto y los nombres distintivos del emisor a UTF-8. Solo se ven afectados los RDN que admiten UTF-8, como los que se definen como tipos de cadena de directorio. Por ejemplo, el RDN del componente de dominio (DC) admite la codificación como IA5 o UTF-8, mientras que el RDN del país (C) solo admite la codificación como una cadena que se puede imprimir. Por lo tanto, la Directiva ForceUTF8 afectará a un RDN de DC, pero no afectará a un RDN de C.
 
 **EnableKeyCounting** configura la CA para incrementar un contador cada vez que se usa la clave de firma de la CA. No habilite esta opción a menos que tenga un módulo de seguridad de hardware (HSM) y un proveedor de servicios criptográficos (CSP) asociado que admita el recuento de claves. Ni el CSP strong de Microsoft ni el proveedor de almacenamiento de claves (KSP) de software de Microsoft admiten el recuento de claves.
 
-
 ## <a name="create-the-capolicyinf-file"></a>Crear el archivo CAPolicy. inf
 
 Antes de instalar AD CS, configure el archivo CAPolicy. inf con la configuración específica de la implementación.
 
-**Requisitos previos** Debe ser miembro del grupo administradores.
+**Requisito previo:** Debe ser miembro del grupo administradores.
 
 1. En el equipo en el que planea instalar AD CS, abra Windows PowerShell, escriba **notepad c:\CAPolicy.inf** y presione Entrar.
 
@@ -243,7 +242,7 @@ Antes de instalar AD CS, configure el archivo CAPolicy. inf con la configuració
 
    -   **Codificación** sea **ANSI**
 
-7. Haga clic en **Guardar**.
+7. Haz clic en **Guardar**.
 
 8. Cuando se le pregunte si desea sobrescribir el archivo, haga clic en **Sí**.
 
@@ -255,4 +254,4 @@ Antes de instalar AD CS, configure el archivo CAPolicy. inf con la configuració
 9. Cierre el Bloc de notas.
 
 > [!IMPORTANT]
->   En el archivo CAPolicy. inf, puede ver que hay una línea que especifica la https://pki.corp.contoso.com/pki/cps.txt dirección URL. La sección Internal Policy del archivo CAPolicy.inf se muestra como ejemplo de cómo se especificaría la ubicación de una orden de prácticas de certificación (CPS). En esta guía, no se le indicará que cree la declaración de prácticas de certificación (CPS).
+>   En el archivo CAPolicy. inf, puede ver que hay una línea que especifica la dirección URL https://pki.corp.contoso.com/pki/cps.txt. La sección Internal Policy del archivo CAPolicy.inf se muestra como ejemplo de cómo se especificaría la ubicación de una orden de prácticas de certificación (CPS). En esta guía, no se le indicará que cree la declaración de prácticas de certificación (CPS).

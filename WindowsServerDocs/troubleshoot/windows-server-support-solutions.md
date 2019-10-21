@@ -1,189 +1,163 @@
 ---
-title: Soluciones principales de soporte técnico para Windows Server
-description: Obtener vínculos a soluciones para problemas de Windows Server
+title: Solución de problemas de Windows Server
+description: Obtener vínculos a los artículos de solución de problemas de Windows Server
 layout: LandingPage
 ms.prod: windows-server
 ms.service: na
-manager: alant
+manager: ''
 ms.technology: server-general
-ms.date: 03/16/2018
+ms.date: 10/17/2019
 ms.topic: landing-page
 author: kaushika-msft
-ms.author: elizapo
-ms.openlocfilehash: 796f2351813218955a72ee9746dddb63453ac112
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: kaushika
+ms.openlocfilehash: 0d593ab28234d5abfa0b5d2931eb7d2c958efe2a
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365649"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588077"
 ---
-# <a name="top-support-solutions-for-windows-server"></a>Soluciones principales de soporte técnico para Windows Server
+# <a name="troubleshooting-windows-server-components"></a>Solucionar problemas de componentes de Windows Server
 
->[!TIP]
-> ¿Buscas información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
+>- [!TIP]
+> ¿Busca información sobre versiones anteriores de Windows Server? Consulte nuestras otras bibliotecas de [Windows Server](/previous-versions/windows/) en docs.Microsoft.com. También puede buscar información específica en [este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) .
 
-Microsoft publica periódicamente actualizaciones y soluciones para Windows Server. Para garantizar que los servidores pueden recibir actualizaciones futuras, incluidas las actualizaciones de seguridad, es importante mantenerlos actualizados. Echa un vistazo a [Historial de actualizaciones de Windows 10 y Windows Server 2016](https://support.microsoft.com/en-us/help/4000825/windows-10-windows-server-2016-update-history) para obtener una lista completa de las actualizaciones publicadas.
+Microsoft publica regularmente ambas actualizaciones para Windows Server. Para garantizar que los servidores pueden recibir actualizaciones futuras, incluidas las actualizaciones de seguridad, es importante mantenerlos actualizados. Consulte el historial de actualizaciones de [Windows 10 y Windows Server 2016](https://support.microsoft.com/en-us/help/4000825/windows-10-windows-server-2016-update-history) para obtener una lista completa de las actualizaciones publicadas.
 
-Estas son las mejores soluciones del Soporte técnico de Microsoft para la mayoría de problemas comunes experimentados con Windows Server 2016. Los siguientes vínculos incluyen vínculos a artículos KB, actualizaciones y artículos de la biblioteca.
+Esta sección contiene temas de solución de problemas avanzados y vínculos para ayudarle a resolver problemas con Windows Server. Se agregarán temas adicionales a medida que estén disponibles.
 
-<HR />
+### <a name="troubleshoot-activation"></a>Solucionar problemas de activación
+- [Solución de problemas de activación del volumen de Windows](https://docs.microsoft.com/windows-server/get-started/activation-troubleshooting-guide)
+- [Instrucciones para solucionar problemas de KMS](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-kms-general)
+- [Opciones de Slmgr.vbs para obtener información de activación de volúmenes](https://docs.microsoft.com/windows-server/get-started/activation-slmgr-vbs-options)
+- [Resolver códigos de error de activación de Windows](https://docs.microsoft.com/windows-server/get-started/activation-error-codes)
+- [Problemas conocidos de activación de KMS](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-kms-issues)
+- [Problemas conocidos de la activación de MAK](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-mak-issues)
+- [Instrucciones para solucionar problemas de activación relacionados con DNS](https://docs.microsoft.com/windows-server/get-started/common-troubleshooting-procedures-kms-dns)
+- [Volver a generar el archivo Tokens.dat](https://docs.microsoft.com/windows-server/get-started/activation-rebuild-tokens-dat-file)
+- [Solución de problemas de clientes de ADBA](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-adba-clients)
 
-<ul class="cardsF panelContent">
-<li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Instalación y actualización de Windows Server</h3>
-<hr> 
-                        <a href="\windows\deployment\upgrade\resolve-windows-10-upgrade-errors">Resolver errores de actualización de Windows 10: Información técnica para profesionales de ti</a>
-<hr> 
-                        <p><a href="https://support.microsoft.com/en-US/help/4035631">Actualización de la pila de servicio para Windows 10 versión 1607 y Windows Server 2016: 8 de agosto de 2017)</a></p>
-<hr> 
-                        <p><a href="https://support.microsoft.com/en-US/help/4033524">Actualización de compatibilidad para actualizar a la versión 1607 y Windows Server 2016 de Windows 10: 3 de agosto de 2017)</a></p>
-<hr>
-                        <p><a href="https://support.microsoft.com/en-US/help/4014997">No se admite la actualización en contexto del sistema en máquinas virtuales de Azure basadas en Windows)</a></p>
-<hr>
-                        <p><a href="..\get-started\supported-upgrade-paths.md">Opciones de actualización y conversión para Windows Server 2016)</a></p>
-<hr>
-                       <p><a href="..\get-started\server-role-upgradeability-table.md">Matriz de actualización y migración del rol de servidor para Windows Server 2016)</a></p>
-<hr>
-                       <p><a href="..\get-started\installation-and-upgrade.md">Instalación y actualización de Windows Server)</a></p>
-<hr>
-                       <p><a href="..\get-started\windows-server-2016-ga-release-notes.md">Notas de la versión: Problemas importantes en Windows Server 2016)</a></p>
-<hr>
-                       <p><a href="..\get-started\recommendations-moving-to-server2016.md">Recomendaciones para pasar a Windows Server 2016)</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-<li>
- <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Activación de volumen</h3>
-<hr> 
-                        <a href="../get-started/server-2016-activation.md">Activación de Windows Server 2016</a>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/jj134256(ws.11).aspx">Revisar y seleccionar métodos de activación</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/dn502528.aspx">Códigos de error de activación para activación de volumen</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/ee939272.aspx">Cómo solucionar problemas del servicio de administración de claves (KMS)</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/ff793439.aspx">Solución de problemas de activación de volumen</a></p>
-<hr><br/>                        <p><a href="https://technet.microsoft.com/library/ff793399.aspx">Códigos de error de activación</a></p>
-<hr>
-                        <p><a href="https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess">Puede producirse un error &quot;en la instalación de Windows si la clave de producto especificada no coincide con ninguna de las imágenes de Windows disponibles para la instalación. Escriba una clave de producto diferente&quot;</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-<li>
- <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>DCPromo e instalación de controladores de dominio</h3>
-<hr> 
-                        <a href="https://technet.microsoft.com/library/dd772723(v=ws.10).aspx">Requisitos de puertos Active Directory y Active Directory Domain Services</a>
-<hr>
-                        <p> <a href="http://blogs.msmvps.com/acefekay/2011/11/01/active-directory-firewall-ports-let-s-try-to-make-this-simple/">Active Directory puertos de Firewall: vamos a intentar hacer esto sencillo</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx">Compatibilidad de Exchange Server con Windows Server 2016</a></p>
-<hr>
-                        <p><a href="https://support.microsoft.com/kb/255504">Usar Ntdsutil. exe para transferir o asumir roles FSMO en un controlador de dominio</a></p>
-<hr>
-                        <p><a href="../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md">Solución de problemas de implementación de controladores de dominio</a></p>
-<hr>
-                        <p><a href="https://msdn.microsoft.com/library/bb727058.aspx">Solución de problemas del Asistente para la instalación de Active Directory</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/cc754463(v=ws.10).aspx">Problemas conocidos de la instalación y eliminación de AD DS</a></p>
-                      </div>
-                 </div>
-            </div>
-        </div>
-    </li>
-<li>
- <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Servicios de federación de Active Directory (AD FS)</h3>
-<hr> 
-                        <a href="/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup">Cómo configurar el registro automático de dispositivos Unidos a un dominio de Windows con Azure Active Directory</a>
-<hr>
-                        <p><a href="/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims">Configuración de la emisión de notificaciones</a></p>
-<hr><br/>                        <p><a href="../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md">Configuración de AD FS para autenticar a los usuarios almacenados en directorios LDAP</a></p>
-<hr>
-                        <p><a href="../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md">Compatibilidad de AD FS con el enlace de nombre de host alternativo para la autenticación de certificado</a></p>
-<hr>
-                        <p><a href="https://blogs.technet.microsoft.com/tspring/2017/01/20/federated-to-microsoft-cloud-and-account-lockouts/">Protección contra ataques</a>
-                        <a href="../identity/ad-fs/deployment/upgrading-to-ad-fs-in-windows-server-2016.md">de contraseñas actualizar a AD FS en Windows Server 2016 con una base de datos WID</a></p>
-<hr>
-                        <p><a href="../identity/ad-fs/operations/configure-device-based-conditional-access-on-premises.md">Inicio de sesión de Windows 10: habilitar la autenticación de dispositivos con AD FS</a></p>
-<hr>
-                        <p><a href="../identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap-2016.md">Administración de certificados SSL en AD FS y WAP en Windows Server 2016</a></p>
-<hr>
-                        <p><a href="../identity/ad-fs/operations/access-control-policies-in-ad-fs.md">Directivas de Access Control en Windows Server 2016 AD FS</a></p>
-                      </div>
-                 </div>
-            </div>
-        </div>
-    </li>
-<li>
- <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Replicación de Active Directory</h3>
-<hr> 
-                         <a href="../identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems.md">Solución de problemas de replicación de Active Directory</a>
-<hr>
-                         <a href="https://www.microsoft.com/en-in/download/details.aspx?id=30005">E2E Cómo solucionar errores comunes de replicación de Active Directory</a>
-<hr>
-                         <a href="https://support.microsoft.com/kb/3108513">Descargar Active Directory Replication Status herramienta del centro de descarga de Microsoft</a>
-<hr>
-                         <a href="https://support.microsoft.com/kb/2028495">Solución de problemas de replicación de AD 8606: Se asignaron atributos insuficientes para crear un objeto</a></p>
-<hr>
-                         <a href="https://support.microsoft.com/kb/837932">El ID. de evento 2108 y el ID. de evento 1084 se producen durante la replicación de entrada de Active Directory en el servidor de Windows 2000 y en Windows Server 2003</a>
-<hr>
-                         <a href="https://support.microsoft.com/kb/2645996">Solución de problemas de replicación de AD 8451: La operación de replicación encontró un error de base de datos</a>
-<hr>
-                         <a href="https://support.microsoft.com/kb/2025726">Solución de problemas de replicación de AD 1127: Al tener acceso al disco duro, se produjo un error en una operación de disco incluso después de reintentos</a>
-<hr>
-                         <a href="https://technet.microsoft.com/library/cc816907.aspx">Limpiar metadatos de servidor</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+### <a name="troubleshoot-ad-forest-recovery"></a>Solucionar problemas de la recuperación del bosque de AD
+- [Recuperación del bosque de AD: preguntas frecuentes](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/ad-forest-recovery-faq)
+
+### <a name="troubleshoot-ad-replication"></a>Solución de problemas de replicación de AD
+- [Solución de problemas de replicación de Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems)
+- [Solucionar problemas de controladores de dominio virtualizados](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/virtual-dc/virtualized-domain-controller-troubleshooting)
+- [Solución de problemas de implementación de controladores de dominio](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/troubleshooting-domain-controller-deployment)
+- [Configuración de un equipo para la solución de problemas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/troubleshoot/configuring-a-computer-for-troubleshooting)
+
+### <a name="troubleshoot-ad-fs"></a>Solucionar problemas AD FS
+- [Solución de problemas AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-overview)
+- [AD FS solución de problemas: auditoría de eventos y registro](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-logging)
+- [Solución de problemas de AD FS-conectividad de SQL](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-sql)
+- [Solución de problemas de AD FS: emisión de notificaciones](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-claims-issuance)
+- [Solución de problemas de AD FS: detección de bucles](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-loop)
+- [Solución de problemas de AD FS: certificados](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-certs)
+- [Solución de problemas de AD FS: Fiddler](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-fiddler)
+- [Solución de problemas de AD FS-Fiddler-WS-Federation](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-fiddler-ws-fed)
+- [Solución de problemas de AD FS: reglas de notificaciones](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-claims-rules)
+- [Solución de problemas de AD FS la autenticación integrada de Windows](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-iwa)
+- [Solución de problemas de AD FS-Azure AD](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-azure)
+- [PREGUNTAS MÁS FRECUENTES SOBRE AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-faq)
+- [Analizador de diagnósticos de la Ayuda de AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-diagnostics-analyzer)
+
+### <a name="troubleshoot-aovpn"></a>Solución de problemas de AoVPN
+- [Solucionar problemas de VPN de Always On](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting)
+
+### <a name="troubleshoot-converged-nic"></a>Solucionar problemas de la NIC convergente
+- [Solución de problemas de configuraciones de NIC convergentes](https://docs.microsoft.com/windows-server/networking/technologies/conv-nic/cnic-app-troubleshoot)
+
+### <a name="troubleshoot-dfsr"></a>Solucionar problemas de DFSR
+- [Replicación DFS: preguntas más frecuentes (p + f)](https://docs.microsoft.com/windows-server/storage/dfs-replication/dfsr-faq)
+
+### <a name="troubleshoot-directaccess"></a>solución de problemas de DirectAccess
+- [Solución de problemas de DirectAccess](https://docs.microsoft.com/windows-server/remote/remote-access/directaccess/troubleshooting-directaccess)
+
+### <a name="troubleshoot-disk--management"></a>Solucionar problemas de administración de discos
+- [Solución de problemas de Administración de discos](https://docs.microsoft.com/windows-server/storage/disk-management/troubleshooting-disk-management)
+
+### <a name="troubleshoot-dns"></a>Solucionar problemas de DNS
+- [Solución de problemas del sistema de nombres de dominio (DNS)](https://docs.microsoft.com/windows-server/networking/dns/troubleshoot/troubleshoot-dns-data-collection)
+- [Solución de problemas de clientes DNS](https://docs.microsoft.com/windows-server/networking/dns/troubleshoot/troubleshoot-dns-client)
+- [Deshabilitar el almacenamiento en caché del lado cliente DNS en clientes DNS](https://docs.microsoft.com/windows-server/networking/dns/troubleshoot/disable-dns-client-side-caching)
+- [Solución de problemas de servidores DNS](https://docs.microsoft.com/windows-server/networking/dns/troubleshoot/troubleshoot-dns-server)
+
+### <a name="troubleshoot-failover-cluster"></a>Solucionar problemas del clúster de conmutación por error
+- [Solución de problemas de clúster de conmutación por error con el Informe de errores de Windows](https://docs.microsoft.com/windows-server/failover-clustering/troubleshooting-using-wer-reports)
+- [Actualización compatible con clústeres: preguntas más frecuentes](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating-faq)
+
+### <a name="troubleshoot-fsrm"></a>Solucionar problemas de FSRM
+- [Solución de problemas del Administrador de recursos del servidor de archivos](https://docs.microsoft.com/windows-server/storage/fsrm/troubleshooting-file-server-resource-manager)
+
+### <a name="troubleshoot-guarded-fabric"></a>Solución de problemas de tejido protegido
+- [Solución de problemas con la herramienta de diagnóstico de tejido protegido](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-diagnostics)
+- [Solución de problemas del servicio de protección de host](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-hgs)
+- [Solución de problemas del servicio de protección de host](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-hosts)
+
+### <a name="troubleshoot-multi-site-ras"></a>Solución de problemas de RAS de varios sitios
+- [Solucionar problemas relacionados con la activación de multisitio](https://docs.microsoft.com/windows-server/remote/remote-access/ras/multisite/troubleshoot/troubleshooting-enabling-multisite)
+- [Solucionar problemas de agregar puntos de entrada](https://docs.microsoft.com/windows-server/remote/remote-access/ras/multisite/troubleshoot/troubleshooting-adding-entry-points)
+- [Solucionar problemas relacionados con el establecimiento del controlador de dominio de punto de entrada](https://docs.microsoft.com/windows-server/remote/remote-access/ras/multisite/troubleshoot/troubleshooting-setting-the-entry-point-domain-controller)
+- [Solucionar problemas relacionados con las direcciones URL de sondeo web](https://docs.microsoft.com/windows-server/remote/remote-access/ras/multisite/troubleshoot/troubleshooting-web-probe-urls)
+
+### <a name="troubleshoot-nano-server"></a>Solución de problemas de nano Server
+- [Solución de problemas de Nano Server](https://docs.microsoft.com/windows-server/get-started/troubleshooting-nano-server)
+
+### <a name="troubleshoot-nic-teaming"></a>Solucionar problemas de formación de equipos NIC
+- [Solución de problemas de formación de equipos NIC](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/troubleshooting-nic-teaming)
+
+### <a name="troubleshoot-otp-authentication"></a>Solucionar problemas de autenticación de OTP
+- [Solucionar problemas relacionados con la autenticación](https://docs.microsoft.com/windows-server/remote/remote-access/ras/otp/troubleshoot/troubleshooting-authentication-issues)
+- [Solucionar problemas relacionados con la activación de OTP](https://docs.microsoft.com/windows-server/remote/remote-access/ras/otp/troubleshoot/troubleshooting-enabling-otp)
+
+### <a name="troubleshoot-qos"></a>Solución de problemas de QoS
+- [Preguntas más frecuentes sobre QoS](https://docs.microsoft.com/windows-server/networking/technologies/qos/qos-policy-faq)
+
+### <a name="troubleshoot-s2d"></a>Solucionar problemas de S2D
+- [Solución de problemas de Espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/troubleshooting-storage-spaces)
+- [Preguntas más frecuentes sobre Espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-faq)
+- [Espacios de almacenamiento directo Estados operativos y de estado](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-states)
+- [Recopilación de datos de diagnóstico con Espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/data-collection)
+- [Administración de estado de memoria de clase de almacenamiento (NVDIMM-N) en Windows](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-class-memory-health)
+
+### <a name="troubleshoot-sdn"></a>Solucionar problemas de SDN
+- [Solucionar problemas de SDN](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-software-defined-networking)
+- [Solución de problemas de la pila de redes definidas por software de Windows Server](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
+
+### <a name="troubleshoot-rds-session-connectivity"></a>Solucionar problemas de conectividad de sesión de RDS
+- [Solución de problemas generales de conexión con Escritorio remoto](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/rdp-error-general-troubleshooting)
+- [Los clientes no pueden conectarse y obtener el error de clase no registrada](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/rdp-error-class-not-registered)
+- [Los clientes no se pueden conectar y no ve el error no hay licencias disponibles](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/rdp-error-no-licenses-available)
+- [Los usuarios no se pueden autenticar o deben autenticarse dos veces](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/cannot-authenticate-or-must-authenticate-twice)
+- [Al conectarse, el usuario recibe el mensaje de Escritorio remoto el servicio está ocupado actualmente](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/remote-desktop-service-currently-busy)
+- [El cliente de Escritorio remoto se desconecta y no puede volver a conectarse a la misma sesión](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session)
+- [Los portátiles remotos se desconectan de la red inalámbrica](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/remote-laptop-disconnects-wireless-network)
+- [Problemas de bajo rendimiento o de aplicaciones durante la conexión a escritorio remoto](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/poor-performance-or-application-problems)
+
+### <a name="troubleshoot-shielded-vm"></a>Solución de problemas de máquinas virtuales blindadas
+- [Solución de problemas de máquinas virtuales blindadas](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms)
+
+### <a name="troubleshoot-software-restriction-policies"></a>Solución de problemas de las directivas de restricción de software
+- [Solución de problemas de las directivas de restricción de software](https://docs.microsoft.com/windows-server/identity/software-restriction-policies/troubleshoot-software-restriction-policies)
+
+### <a name="troubleshoot-storage-migration"></a>Solucionar problemas de migración de almacenamiento
+- [Problemas conocidos del servicio de migración de almacenamiento](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues)
+- [Preguntas más frecuentes sobre el servicio de migración de almacenamiento (p + f)](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq)
+
+### <a name="troubleshoot-storage-replica"></a>Solucionar problemas de réplica de almacenamiento
+- [Problemas conocidos de réplica de almacenamiento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-known-issues)
+- [Preguntas más frecuentes sobre réplica de almacenamiento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-frequently-asked-questions)
+
+### <a name="troubleshoot-user-profiles"></a>Solucionar problemas de perfiles de usuario
+- [Solucionar problemas de perfiles de usuario con eventos](https://docs.microsoft.com/windows-server/storage/folder-redirection/troubleshoot-user-profiles-events)
+
+### <a name="troubleshoot-vrss"></a>Solucionar problemas de vRSS
+- [Preguntas más frecuentes sobre vRSS](https://docs.microsoft.com/windows-server/networking/technologies/vrss/vrss-faq)
+
+### <a name="troubleshoot-webproxy"></a>Solucionar problemas de WebProxy
+- [Solución de problemas del Proxy de aplicación web](https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/troubleshooting-web-application-proxy)
+
+### <a name="troubleshoot-windows-admin-center"></a>Solución de problemas de Windows Admin Center
+- [Pasos comunes de solución de problemas del centro de administración de Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/troubleshooting)
+- [Problemas conocidos del centro de administración de Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/known-issues)
+- [Preguntas más frecuentes sobre el centro de administración de Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/faq)

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61a01a25317bdf42491f05e896ddd5bb022193fe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d59e7365ac4fbead527450ad78a76aad4165d0d9
+ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372721"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591035"
 ---
 # <a name="nslookup-view"></a>nslookup view
 

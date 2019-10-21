@@ -7,12 +7,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: eacb80d89e7bcc95d6b5c12269d7587dc7d6870c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d670add6e4b4fc7369c48905bb297642ae07ff20
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383321"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588066"
 ---
 # <a name="patch-a-server-core-installation"></a>Revisión de una instalación Server Core
 
@@ -39,14 +39,14 @@ Siga estos pasos para aplicar una revisión automática del servidor con Windows
 
 1. Compruebe la configuración de Windows Update actual:
    ```
-   %systemroot%\system32\Cscript scregedit.wsf /AU /v 
+   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU /v 
    ```
 
 2. Para habilitar las actualizaciones automáticas:
 
    ```
    Net stop wuauserv 
-   %systemroot%\system32\Cscript scregedit.wsf /AU 4 
+   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU 4 
    Net start wuauserv
    ```  
 
@@ -54,11 +54,11 @@ Siga estos pasos para aplicar una revisión automática del servidor con Windows
 
    ```
    Net stop wuauserv 
-   %systemroot%\system32\Cscript scregedit.wsf /AU 1 
+   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU 1 
    Net start wuauserv 
    ```
 
-Si el servidor es miembro de un dominio, también puedes configurar Windows Update mediante directivas de grupo. Para obtener más información, consulta https://go.microsoft.com/fwlink/?LinkId=192470. Sin embargo, cuando se usa este método, solo la opción 4 ("descargar automáticamente y programar la instalación") es pertinente para las instalaciones Server Core debido a la falta de una interfaz gráfica. Para tener un mayor control sobre qué actualizaciones están instaladas y dónde, puede usar un script que funciona como el equivalente en línea de comandos para la mayor parte de la interfaz gráfica de Windows Update. Para obtener información sobre el script, vea https://go.microsoft.com/fwlink/?LinkId=192471.
+Si el servidor es miembro de un dominio, también puedes configurar Windows Update mediante directivas de grupo. Para obtener más información, consulte https://go.microsoft.com/fwlink/?LinkId=192470. Sin embargo, cuando se usa este método, solo la opción 4 ("descargar automáticamente y programar la instalación") es pertinente para las instalaciones Server Core debido a la falta de una interfaz gráfica. Para tener un mayor control sobre qué actualizaciones están instaladas y dónde, puede usar un script que funciona como el equivalente en línea de comandos para la mayor parte de la interfaz gráfica de Windows Update. Para obtener información sobre el script, vea https://go.microsoft.com/fwlink/?LinkId=192471.
 
 Para obligar a Windows Update a detectar e instalar inmediatamente cualquier actualización disponible, ejecute el siguiente comando:
 

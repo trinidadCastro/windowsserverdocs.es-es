@@ -13,12 +13,12 @@ ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: pashort
 author: shortpatti
 ms.date: 09/13/2018
-ms.openlocfilehash: f1e7e27100d801d226adf79e078d8b16ddbcd308
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1785b34741ce525a5bdd27b77a0e52fc2ca6c1b6
+ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401929"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591100"
 ---
 # <a name="create-a-new-nic-team-on-a-host-computer-or-vm"></a>Crear un nuevo equipo NIC en un equipo host o una máquina virtual
 
@@ -99,7 +99,7 @@ Debe ser miembro de **los administradores**o un grupo equivalente.
 
     c. Haga clic para seleccionar **habilitar este adaptador de red para que forme parte de un equipo en el sistema operativo invitado**. 
 
-    d. Haga clic en **Aceptar**.  
+    d. Haz clic en **Aceptar**.  
 
     ![Agregar un adaptador de red a un equipo](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hvs_05.jpg)  
 
@@ -119,7 +119,7 @@ Debe ser miembro de **los administradores**o un grupo equivalente.
 
 17. Haga clic en **características avanzadas**, desplácese hacia abajo hasta **formación de equipos NIC**y haga clic para seleccionar **habilitar este adaptador de red para que forme parte de un equipo en el sistema operativo invitado**. 
 
-18. Haga clic en **Aceptar**.  
+18. Haz clic en **Aceptar**.  
 
 _**Finaliza!**_  Ha configurado la red física y virtual.  Ahora puede continuar con la creación de un nuevo equipo NIC.  
 
@@ -175,7 +175,7 @@ Debe ser miembro de **los administradores**o un grupo equivalente.
        |                                              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
        |----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
        |              **Formación de equipos estática**              |                                                                                                                                              Requiere la configuración manual del conmutador y el host para identificar qué vínculos forman el equipo. Dado que se trata de una solución configurada de forma estática, no hay ningún protocolo adicional para ayudar al conmutador y el host a identificar cables conectados incorrectamente u otros errores que puedan hacer que el equipo no funcione. Este modo lo suelen ofrecer los conmutadores de clase de servidor.                                                                                                                                              |
-       | **Protocolo de control de agregación de vínculos (LACP)** | A diferencia de la formación de equipos estática, el modo de formación de equipos de LACP identifica dinámicamente los vínculos que están conectados entre el host y el conmutador. Esta conexión dinámica permite la creación automática de un equipo y, en teoría, pero raramente en la práctica, la expansión y reducción de un equipo simplemente por la transmisión o recepción de paquetes LACP de la entidad del mismo nivel. Todos los conmutadores de clase de servidor admiten LACP y todos requieren que el operador de red Habilite administrativamente LACP en el puerto del conmutador. Cuando se configura un modo de formación de equipos de LACP, la formación de equipos NIC siempre funciona en el modo activo de LACP con un temporizador breve.  Actualmente no hay disponible ninguna opción para modificar el temporizador o cambiar el modo LACP. |
+       | **Protocolo de control de agregación de vínculos (LACP)** | A diferencia de la formación de equipos estática, el modo de formación de equipos de LACP identifica dinámicamente los vínculos que están conectados entre el host y el conmutador. Esta conexión dinámica permite la creación automática de un equipo y, en teoría, pero raramente en la práctica, la expansión y reducción de un equipo simplemente por la transmisión o recepción de paquetes LACP de la entidad del mismo nivel. Todos los conmutadores de clase de servidor admiten LACP y todos requieren que el operador de red Habilite administrativamente LACP en el puerto del conmutador. Cuando se configura un modo de formación de equipos de LACP, la formación de equipos NIC siempre funciona en el modo activo de LACP.  De forma predeterminada, la formación de equipos NIC usa un temporizador breve (3 segundos), pero puede configurar un temporizador largo (90 segundos) con `Set-NetLbfoTeam`. |
 
        ---
 
@@ -204,18 +204,18 @@ Debe ser miembro de **los administradores**o un grupo equivalente.
 
    -   Configurar la pertenencia a VLAN: haga clic en **VLAN específica** y escriba la información de la VLAN. Por ejemplo, si desea agregar este equipo NIC al número 44 de la VLAN de contabilidad, escriba Accounting 44-VLAN.   
 
-9. Haga clic en **Aceptar**.  
+9. Haz clic en **Aceptar**.  
 
 _**Finaliza!**_  Ha creado un nuevo equipo NIC en un equipo host o máquina virtual.
 
 ## <a name="related-topics"></a>Temas relacionados
 
-- [Formación de equipos NIC](NIC-Teaming.md): En este tema se proporciona información general sobre la formación de equipos de tarjeta de interfaz de red (NIC) en Windows Server 2016. La formación de equipos NIC le permite agrupar entre uno y 32 adaptadores de red Ethernet físicos en uno o varios adaptadores de red virtuales basados en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.   
+- [Formación de equipos NIC](NIC-Teaming.md): en este tema se proporciona información general sobre la formación de equipos de tarjetas de interfaz de red (NIC) en Windows Server 2016. La formación de equipos NIC le permite agrupar entre uno y 32 adaptadores de red Ethernet físicos en uno o varios adaptadores de red virtuales basados en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.   
 
-- [Administración y uso de direcciones MAC de formación de equipos NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): Al configurar un equipo NIC con el modo independiente del conmutador y la distribución de la carga dinámica o el hash de la dirección, el equipo usa la dirección Media Access Control (MAC) del miembro del equipo NIC principal en el tráfico saliente. El miembro del equipo NIC principal es un adaptador de red seleccionado por el sistema operativo del conjunto inicial de miembros del equipo.
+- [Administración y uso de direcciones MAC de formación de equipos NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): al configurar un equipo NIC con el modo independiente del conmutador y la distribución de la carga dinámica o el hash de la dirección, el equipo usa la dirección Media Access Control (Mac) del miembro del equipo NIC principal en el saliente. entrante. El miembro del equipo NIC principal es un adaptador de red seleccionado por el sistema operativo del conjunto inicial de miembros del equipo.
 
-- [Configuración de la formación de equipos NIC](nic-teaming-settings.md): En este tema se proporciona información general sobre las propiedades del equipo NIC, como la formación de equipos y los modos de equilibrio de carga. También se proporcionan detalles acerca de la configuración del adaptador en espera y la propiedad de la interfaz de equipo principal. Si tiene al menos dos adaptadores de red en un equipo NIC, no es necesario designar un adaptador en espera para la tolerancia a errores.
+- [Configuración de la formación de equipos NIC](nic-teaming-settings.md): en este tema se proporciona información general de las propiedades del equipo NIC, como la formación de equipos y los modos de equilibrio de carga. También se proporcionan detalles acerca de la configuración del adaptador en espera y la propiedad de la interfaz de equipo principal. Si tiene al menos dos adaptadores de red en un equipo NIC, no es necesario designar un adaptador en espera para la tolerancia a errores.
 
-- [Solución de problemas de formación de equipos NIC](Troubleshooting-NIC-Teaming.md): En este tema se describen las formas de solucionar problemas de formación de equipos NIC, como hardware, los valores de los conmutadores físicos y la deshabilitación o habilitación de adaptadores de red con Windows PowerShell. 
+- [Solución de problemas de formación de equipos NIC](Troubleshooting-NIC-Teaming.md): en este tema se describen las formas de solucionar problemas de formación de equipos NIC, como hardware, los valores de los conmutadores físicos y la deshabilitación o habilitación de adaptadores de red con Windows PowerShell. 
 
 ---

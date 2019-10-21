@@ -9,16 +9,16 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 00f3851ce74a496bd530c8ea682ea312f8b06a0a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e3f320b67196a2400ebedbaeaf0a5b59969400e8
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390934"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588093"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>Degradar controladores de dominio y dominios
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 En este tema se explica cómo quitar AD DS usando el Administrador del servidor o Windows PowerShell.
   
@@ -36,7 +36,7 @@ En este tema se explica cómo quitar AD DS usando el Administrador del servidor
 |||  
 |-|-|  
 |**Cmdlets ADDSDeployment y ServerManager**|Argumentos (los argumentos en **negrita** son obligatorios. Los argumentos en *cursiva* se pueden especificar con Windows PowerShell o con el Asistente para configuración de AD DS).|  
-|Uninstall-AddsDomainController|-SkipPreChecks<br /><br />*-LocalAdministratorPassword*<br /><br />-Confirm<br /><br />***-Credential***<br /><br />-DemoteOperationMasterRole<br /><br />*-DNSDelegationRemovalCredential*<br /><br />-Force<br /><br />*-ForceRemoval*<br /><br />*-IgnoreLastDCInDomainMismatch*<br /><br />*-IgnoreLastDNSServerForZone*<br /><br />*-LastDomainControllerInDomain*<br /><br />-Norebootoncompletion<br /><br />*-RemoveApplicationPartitions*<br /><br />*-RemoveDNSDelegation*<br /><br />-RetainDCMetadata|  
+|Uninstall-ADDSDomainController|-SkipPreChecks<br /><br />*-LocalAdministratorPassword*<br /><br />-Confirm<br /><br />***-Credential***<br /><br />-DemoteOperationMasterRole<br /><br />*-DNSDelegationRemovalCredential*<br /><br />-Force<br /><br />*-ForceRemoval*<br /><br />*-IgnoreLastDCInDomainMismatch*<br /><br />*-IgnoreLastDNSServerForZone*<br /><br />*-LastDomainControllerInDomain*<br /><br />-Norebootoncompletion<br /><br />*-RemoveApplicationPartitions*<br /><br />*-RemoveDNSDelegation*<br /><br />-RetainDCMetadata|  
 |Uninstall-WindowsFeature/Remove-WindowsFeature|***-Nombre***<br /><br />***-IncludeManagementTools***<br /><br />*-Reiniciar*<br /><br />-Remove<br /><br />-Force<br /><br />-ComputerName<br /><br />-Credential<br /><br />-LogPath<br /><br />-Vhd|  
   
 > [!NOTE]  
@@ -104,7 +104,7 @@ Las opciones de degradación se configuran en la página **Credenciales** . Prop
    > [!WARNING]  
    > No seleccione esta opción a menos que el controlador de dominio no pueda establecer contacto con otros controladores de dominio y no haya una *forma razonable* para resolver el problema de red. La degradación forzada deja metadatos huérfanos en Active Directory en los controladores de dominio restantes del bosque. Además, todos los cambios no replicados en ese controlador de dominio, como por ejemplo contraseñas o cuentas de usuario nuevas, se pierden para siempre. Los metadatos huérfanos son la causa raíz en un porcentaje significativo de casos del Soporte al cliente de Microsoft para AD DS, Exchange, SQL y otro software.  
    >
-   > Si degrada a la fuerza un controlador de dominio, *debe* realizar la limpieza manual de los metadatos en forma inmediata. Para conocer los pasos necesarios, consulta el tema [Limpiar metadatos de servidor](https://technet.microsoft.com/library/cc816907(WS.10).aspx).  
+   > Si degrada a la fuerza un controlador de dominio, *debe* realizar la limpieza manual de los metadatos en forma inmediata. Para conocer los pasos necesarios, consulta el tema [Limpiar metadatos de servidor](ad-ds-metadata-cleanup.md).  
 
    ![Asistente para configuración de Active Directory Domain Services: eliminación forzada de credenciales](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ForceDemote.png)  
   
@@ -188,7 +188,7 @@ La página **Confirmación** refleja la disminución de nivel planeada, pero no 
 Haz clic en **Disminuir nivel** para ejecutar el siguiente cmdlet de implementación de AD DS:
 
 ```
-Uninstall-DomainController
+Uninstall-ADDSDomainController
 ```
 
 Emplea el argumento opcional **Whatif** con el cmdlet **Uninstall-ADDSDomainController** para repasar la información de configuración. Te permitirá ver los valores explícitos e implícitos de los argumentos de un cmdlet.
@@ -208,7 +208,7 @@ Cuando la página **Degradación** se abre, se inicia la configuración del cont
 * %systemroot%\debug\dcpromo.log
 * %systemroot%\debug\dcpromoui.log
 
-Como **Uninstall-AddsDomainController** y **Uninstall-WindowsFeature** solo tienen una acción cada una, se muestran aquí en la fase de confirmación con los argumentos necesarios mínimos. Si presionas ENTRAR, se inicia el proceso de disminución de nivel irrevocable y el equipo se reinicia.
+Como **Uninstall-ADDSDomainController** y **Uninstall-WindowsFeature** solo tienen una acción cada una, se muestran aquí en la fase de confirmación con los argumentos mínimos necesarios. Si presionas ENTRAR, se inicia el proceso de disminución de nivel irrevocable y el equipo se reinicia.
 
 ![Ejemplo de desinstalación de PowerShell: ADDSDomainController](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallConfirm.png)
 
@@ -236,7 +236,7 @@ Si intenta quitar el rol de AD DS antes de disminuir de nivel el servidor, Windo
 > [!IMPORTANT]
 > Para poder eliminar los archivos binarios del rol AD-Domain-Services, debes reiniciar el equipo después de disminuir el servidor de nivel.
 
-### <a name="results"></a>Results
+### <a name="results"></a>Resultados
 
 ![Está a punto de cerrarse la advertencia tras quitar AD DS](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_DemoteSignoff.png)
 
