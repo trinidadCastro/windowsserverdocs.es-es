@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 10/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d233708c6d206569f42f2a883bd342e90813f6a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bcbd3292bcd4653a4568492a996d53c17f465aa8
+ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404097"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591041"
 ---
 # <a name="whats-new-in-the-web-client"></a>Novedades del cliente web
 
@@ -27,12 +27,22 @@ El [cliente web de Escritorio remoto](remote-desktop-web-client.md) se actualiza
 > [!NOTE]
 > Cambiamos el sistema de control de versiones del cliente web. A partir de la versión 1.0.18.0, todas las versiones del cliente web incluirán números (con el formato "W.X.Y.Z"). Los números de versión del cliente web de Escritorio remoto siempre terminarán en 0 (por ejemplo, W.X.Y.0). Cada versión del cliente web de Windows Virtual Desktop cambiará el último dígito hasta la próxima versión del cliente web de Escritorio remoto (por ejemplo, 1.0.18.1).
 
+## <a name="updates-for-version-10200"></a>Actualizaciones de la versión 1.0.20.0
+*Fecha de publicación: 18/10/2019*
+
+- Se agregó compatibilidad con conexiones a hosts de Windows 7 y Windows Server 2008 R2.
+- Se corrigió un problema por el que algunos iconos de aplicaciones se mostraban como mosaicos transparentes.
+- Se corrigieron problemas de conexión para el explorador Internet Explorer en Windows 7.
+- Se corrigieron desconexiones inesperadas que se producían cuando se cambiaba el tamaño del explorador.
+- Mejoras de accesibilidad.
+- Se actualizaron bibliotecas de terceros.
+
 ## <a name="updates-for-version-10180"></a>Actualizaciones de la versión 1.0.18.0
 *Fecha de publicación: 14/05/2019*
 
 - Se agregó la configuración del método de inicio del recurso en la pestaña Configuración, lo que permite que los usuarios abran recursos en el explorador o descarguen un archivo .rdp para administrarlo con otro cliente. Esta opción la puede configurar el administrador. Puedes encontrar detalles sobre las configuraciones del administrador para esta característica en la [documentación de instalación del cliente web](remote-desktop-web-client-admin.md).
 - Se corrigieron problemas de representación del color, lo que permite usar colores más vívidos en la sesión remota.
-- Se revisaron los mensajes de error relacionados con errores de fuente de los recursos remotos. 
+- Se revisaron los mensajes de error relacionados con errores de fuente de los recursos remotos.
 - Se agregó compatibilidad con más combinaciones de teclas de Office, como el pegado especial (Ctrl + Alt + V).
 - Se agregó una combinación de teclas para que los usuarios invoquen la tecla Windows en la sesión remota (Alt + F3).
 - Se actualizó el mensaje de error para los usuarios que intentan autenticarse con una contraseña expirada.
@@ -105,4 +115,3 @@ El [cliente web de Escritorio remoto](remote-desktop-web-client.md) se actualiza
 - Copia y pega texto mediante el Portapapeles con **CTRL + C** y **CTRL + V**.
 - Imprime en un archivo PDF.
 - Localizado en 18 idiomas.
- 
