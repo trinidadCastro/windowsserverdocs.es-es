@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: e3ec7ee787fb6fd2e8e9f59249a6c4013a76b377
-ms.sourcegitcommit: e2964a803cba1b8037e10d065a076819d61e8dbe
+ms.openlocfilehash: 830a2d99443938c25625211f590984819a20d566
+ms.sourcegitcommit: 40e4ba214954d198936341c4d6ce1916dc891169
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252359"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72690448"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -48,11 +48,11 @@ Para resolverlo, use o actualice a Windows Server 2019 Build 1809 o posterior.
 
 Cuando se usa la versión 0,57 de la extensión del servicio de migración de almacenamiento en el centro de administración de Windows y se alcanza la fase de traslado, no se puede seleccionar una dirección IP estática para una dirección. Se le obligará a usar DHCP.
 
-Para resolver este problema, en el centro de administración de Windows, mire en **configuración** > **extensiones** para obtener una alerta que indica que el servicio de migración de almacenamiento de versión actualizado está disponible para instalarse. Es posible que tenga que reiniciar la pestaña del explorador para el centro de administración de Windows.
+Para resolver este problema, en el centro de administración de Windows, busque en **configuración**  > **extensiones** para obtener una alerta que indique que la versión actualizada del servicio de migración de almacenamiento de la versión está disponible para instalarse. Es posible que tenga que reiniciar la pestaña del explorador para el centro de administración de Windows.
 
 ## <a name="storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer"></a>Se produce el error "acceso denegado para la Directiva de filtro de tokens en el equipo de destino" del servicio de migración de almacenamiento
 
-Al ejecutar la validación de traslado, recibe el error "FAIL: Se denegó el acceso a la Directiva de filtro de tokens en el equipo de destino. " Esto ocurre incluso si proporcionó credenciales de administrador local correctas para los equipos de origen y de destino.
+Al ejecutar la validación de traslado, recibe el error "error: acceso denegado para la Directiva de filtro de tokens en el equipo de destino". Esto ocurre incluso si proporcionó credenciales de administrador local correctas para los equipos de origen y de destino.
 
 Este problema se debe a un defecto de código en Windows Server 2019. El problema se produce cuando se usa el equipo de destino como un orquestador de servicio de migración de almacenamiento.
 
@@ -120,9 +120,9 @@ Hemos corregido este problema en una versión posterior del centro de administra
 Al validar un trabajo de transferencia, verá las siguientes advertencias:
 
  > **La credencial tiene privilegios administrativos.**
- > Advertencia: La acción no está disponible de forma remota.
+ > ADVERTENCIA: la acción no está disponible de forma remota.
  > **El proxy de destino está registrado.**
- > Advertencia: No se encontró el proxy de destino.
+ > ADVERTENCIA: no se encontró el proxy de destino.
 
 Si no ha instalado el servicio de proxy de migración de almacenamiento en el equipo de destino de Windows Server 2019 o si el equipo de destino es Windows Server 2016 o Windows Server 2012 R2, este comportamiento es así por diseño. Se recomienda migrar a un equipo con Windows Server 2019 con el proxy instalado para mejorar significativamente el rendimiento de la transferencia.  
 
@@ -130,10 +130,10 @@ Si no ha instalado el servicio de proxy de migración de almacenamiento en el eq
 
 Al realizar un inventario o transferir archivos de los equipos de origen a destino, los archivos de los que un usuario ha quitado los permisos de grupo de administradores no se pueden migrar. Examinar el servicio de migración de almacenamiento: depuración del proxy:
 
-  Nombre de registro:      Microsoft-Windows-StorageMigrationService-proxy/origen de depuración:        Microsoft-Windows-StorageMigrationService-proxy fecha:          2/26/2019 9:00:04 AM ID. de evento:      10000 categoría de tareas: Nivel ninguno:         Palabras clave de error:      
-  Usuario:          Equipo de servicio de red: Descripción de srv1.contoso.com:
+  Nombre de registro: Microsoft-Windows-StorageMigrationService-proxy/Debug Source: Microsoft-Windows-StorageMigrationService-proxy Date: 2/26/2019 9:00:04 AM ID. de evento: 10000 nivel de tarea: None LEVEL: Palabras clave de error:      
+  Usuario: equipo de servicio de red: Descripción de srv1.contoso.com:
 
-  02/26/2019-09:00:04.860 [error] error de transferencia de \\srv1. contoso. com\public\indy.png: (5) se denegó el acceso.
+  02/26/2019-09:00:04.860 [error] error de transferencia de \\srv1. contoso. com\public\indy.png: (5) se ha denegado el acceso.
 Seguimiento de la pila: en Microsoft. StorageMigration. proxy. Service. Transfer. FileDirUtils. OpenFile (String fileName, DesiredAccess desiredAccess, ShareMode shareMode, CreationDisposition creationDisposition, FlagsAndAttributes flagsAndAttributes) at Microsoft. StorageMigration. proxy. Service. Transfer. FileDirUtils. GetTargetFile (ruta de acceso de cadena) en Microsoft. StorageMigration. proxy. Service. Transfer. FileDirUtils. GetTargetFile (archivo FileInfo) en Microsoft. StorageMigration. proxy. Service. Transfer. FileTransfer. InitializeSourceFileInfo () en Microsoft. StorageMigration. proxy. Service. Transfer. FileTransfer. Transfer () en Microsoft. StorageMigration. proxy. Service. Transfer. FileTransfer. TryTransfer () [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs:: TryTransfer:: 55]
 
 
@@ -171,7 +171,7 @@ Para solucionar este problema, siga usando Robocopy para [las operaciones de clo
 
 Al intentar descargar los registros de transferencia o de errores al final de una operación de transferencia, recibe el error:
 
-  $jobname: Registro de transferencia: error de Ajax 404
+  $jobname: transferir registro: error de Ajax 404
 
 Este error se espera si no ha habilitado la regla de firewall "uso compartido de archivos e impresoras (SMB-in)" en el servidor de Orchestrator. Las descargas de archivos del centro de administración de Windows requieren el puerto TCP/445 (SMB) en los equipos conectados.  
 
@@ -199,14 +199,14 @@ En el examen del registro de eventos StorageMigrationService/admin se muestra:
 
    No se pudo transferir el almacenamiento.
 
-   Trabajo IDENTIFICADOR de Job1:  
-   Estado: Error: Mensaje de error 36931: 
+   Trabajo: ID. de Job1:  
+   Estado: error Error: 36931 mensaje de error: 
 
-   Orientación: Compruebe el error detallado y asegúrese de que se cumplen los requisitos de transferencia. El trabajo de transferencia no pudo transferir ningún equipo de origen y de destino. Esto puede deberse a que el equipo de Orchestrator no pudo acceder a los equipos de origen o de destino, posiblemente debido a una regla de firewall, o a los permisos que faltan.
+   Guía: Compruebe el error detallado y asegúrese de que se cumplen los requisitos de transferencia. El trabajo de transferencia no pudo transferir ningún equipo de origen y de destino. Esto puede deberse a que el equipo de Orchestrator no pudo acceder a los equipos de origen o de destino, posiblemente debido a una regla de firewall, o a los permisos que faltan.
 
 El examen del registro StorageMigrationService-proxy/Debug muestra:
 
-   07/02/2019-13:35:57.231 [error] error de validación de transferencia. ErrorCode 40961, el punto de conexión de origen no es accesible o no existe, las credenciales de origen no son válidas o el usuario autenticado no tiene permisos suficientes para acceder a ella.
+   07/02/2019-13:35:57.231 [error] error de validación de transferencia. ErrorCode: 40961, el punto de conexión de origen no es accesible o no existe, o las credenciales de origen no son válidas o el usuario autenticado no tiene permisos suficientes para acceder a él.
 en Microsoft. StorageMigration. proxy. Service. Transfer. TransferOperation. Validate () en Microsoft. StorageMigration. proxy. Service. Transfer. TransferRequestHandler. ProcessRequest (FileTransferRequest fileTransferRequest, GUID operationId)    [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
 
 Este error se espera si la cuenta de migración no tiene al menos permisos de acceso de lectura para los recursos compartidos de SMB. Para solucionar este error, agregue un grupo de seguridad que contenga la cuenta de migración de origen a los recursos compartidos de SMB en el equipo de origen y concédale la lectura, el cambio o el control total. Una vez finalizada la migración, puede quitar este grupo.
@@ -215,15 +215,15 @@ Este error se espera si la cuenta de migración no tiene al menos permisos de ac
 
 Después de instalar [KB4512534](https://support.microsoft.com/en-us/help/4512534/windows-10-update-kb4512534) e intentar ejecutar el inventario, se produce un error en el inventario con errores:
 
-  EXCEPCIÓN DE HRESULT: 0x80005000
+  EXCEPCIÓN de HRESULT: 0x80005000
   
-  Nombre de registro:      Origen de Microsoft-Windows-StorageMigrationService/admin:        Microsoft-Windows-StorageMigrationService fecha:          9/9/2019 5:21:42 PM ID. de evento:      2503 categoría de tareas: Nivel ninguno:         Palabras clave de error:      
-  Usuario:          Equipo de servicio de red:      FS02. Descripción de TailwindTraders.net: No se pudo realizar un inventario de los equipos.
-Trabajo: ID. de foo2: Estado de 20ac3f75-4945-41d1-9A79-d11dbb57798b: Error: Mensaje de error 36934: Error en el inventario de todos los dispositivos: Compruebe el error detallado y asegúrese de que se cumplen los requisitos de inventario. El trabajo no pudo inventariar ninguno de los equipos de origen especificados. Esto puede deberse a que el equipo del orquestador no pudo acceder a él a través de la red, posiblemente a causa de una regla de firewall o a falta de permisos.
+  Nombre de registro: Microsoft-Windows-StorageMigrationService/admin Source: Microsoft-Windows-StorageMigrationService Date: 9/9/2019 5:21:42 PM ID. de evento: 2503, categoría de tarea: None LEVEL: Palabras clave de error:      
+  Usuario: equipo de servicio de red: FS02. Descripción de TailwindTraders.net: no se pudieron inventariar los equipos.
+Trabajo: ID. de foo2: estado de 20ac3f75-4945-41d1-9A79-d11dbb57798b: error Error: 36934 mensaje de error: error de inventario para todos los dispositivos guía: Compruebe el error detallado y asegúrese de que se cumplen los requisitos de inventario. El trabajo no pudo inventariar ninguno de los equipos de origen especificados. Esto puede deberse a que el equipo del orquestador no pudo acceder a él a través de la red, posiblemente a causa de una regla de firewall o a falta de permisos.
   
-  Nombre de registro:      Origen de Microsoft-Windows-StorageMigrationService/admin:        Microsoft-Windows-StorageMigrationService fecha:          9/9/2019 5:21:42 PM ID. de evento:      2509 categoría de tareas: Nivel ninguno:         Palabras clave de error:      
-  Usuario:          Equipo de servicio de red:      FS02. Descripción de TailwindTraders.net: No se pudo realizar el inventario de un equipo.
-Trabajo: foo2 equipo: FS01. Estado de TailwindTraders.net: Error:-2147463168 mensaje de error: Orientación: Compruebe el error detallado y asegúrese de que se cumplen los requisitos de inventario. El inventario no pudo determinar ningún aspecto del equipo de origen especificado. Esto puede deberse a que faltan permisos o privilegios en el puerto de firewall o en el de origen.
+  Nombre de registro: Microsoft-Windows-StorageMigrationService/admin Source: Microsoft-Windows-StorageMigrationService Date: 9/9/2019 5:21:42 PM ID. de evento: 2509, categoría de tarea: None LEVEL: Palabras clave de error:      
+  Usuario: equipo de servicio de red: FS02. Descripción de TailwindTraders.net: no se pudo realizar el inventario de un equipo.
+Trabajo: foo2 equipo: FS01. Estado de TailwindTraders.net: error con error:-2147463168 mensaje de error: Guía: Compruebe el error detallado y asegúrese de que se cumplen los requisitos de inventario. El inventario no pudo determinar ningún aspecto del equipo de origen especificado. Esto puede deberse a que faltan permisos o privilegios en el puerto de firewall o en el de origen.
   
 Este error se debe a un defecto de código en el servicio de migración de almacenamiento cuando se proporcionan credenciales de migración en forma de nombre principal de usuario (UPN), como "meghan@contoso.com". El servicio del orquestador de servicio de migración de almacenamiento no puede analizar correctamente este formato, lo que conduce a un error en una búsqueda de dominio que se agregó para la compatibilidad con la migración de clústeres en KB4512534 y 19H1.
 
@@ -270,6 +270,8 @@ Tenga en cuenta que, en algunas circunstancias, la desinstalación de KB4512534 
 1.  Abra un símbolo del sistema con privilegios elevados, donde sea miembro de los administradores en el servidor de servicio de migración de almacenamiento y ejecute:
 
      ```
+     TAKEOWN /d /a /r /f c:\ProgramData\Microsoft\StorageMigrationService
+     
      MD c:\ProgramData\Microsoft\StorageMigrationService\backup
 
      ICACLS c:\ProgramData\Microsoft\StorageMigrationService\* /grant Administrators:(GA)
@@ -280,13 +282,13 @@ Tenga en cuenta que, en algunas circunstancias, la desinstalación de KB4512534 
 
      ICACLS c:\ProgramData\Microsoft\StorageMigrationService  /GRANT networkservice:F /T /C
 
-     ICACLS c:\ProgramData\Microsoft\StorageMigrationService /GRANT networkservice:(GA)F /T /C
+     ICACLS c:\ProgramData\Microsoft\StorageMigrationService /GRANT networkservice:(GA) /T /C
      ```
    
 2.  Inicie el servicio de migración de almacenamiento, que creará una nueva base de datos.
 
 
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 - [Información general del servicio de migración de almacenamiento](overview.md)
