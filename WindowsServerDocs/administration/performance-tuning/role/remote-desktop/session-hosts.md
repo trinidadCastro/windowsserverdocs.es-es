@@ -4,15 +4,15 @@ description: Directrices para la optimización del rendimiento para hosts de ses
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: HammadBu; VladmiS
+ms.author: HammadBu; VladmiS; DenisGun
 author: phstee
-ms.date: 10/16/2017
-ms.openlocfilehash: c50c0c981362bd96ed3bf1c603cde6bfeec289f4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 10/22/2019
+ms.openlocfilehash: b439b0cbab66f98a1f74faeb7bff996b30a188d5
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385021"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812333"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>Optimización del rendimiento Escritorio remoto hosts de sesión
 
@@ -130,9 +130,9 @@ Programador de tareas permite examinar la lista de tareas programadas para disti
 
 Los iconos de notificación en el escritorio pueden tener mecanismos de actualización bastante caros. Debe deshabilitar las notificaciones quitando el componente que las registra de la lista de inicio o cambiando la configuración en aplicaciones y componentes del sistema para deshabilitarlos. Puede usar los **iconos de personalización de notificaciones** para examinar la lista de notificaciones que están disponibles en el servidor.
 
-### <a name="remotefx-data-compression"></a>Compresión de datos de RemoteFX
+### <a name="remote-desktop-protocol-data-compression"></a>Protocolo de escritorio remoto compresión de datos
 
-Microsoft RemoteFX compresión se puede configurar mediante directiva de grupo en **configuración del equipo &gt; Plantillas administrativas &gt; componentes de Windows &gt; servicios de escritorio remoto &gt; escritorio remoto host de sesión &gt; Remote Entorno de sesión &gt; configure la compresión para los datos de RemoteFX**. Hay tres valores posibles:
+Protocolo de escritorio remoto compresión se puede configurar mediante directiva de grupo en **configuración del equipo** &gt; **plantillas administrativas** &gt; **componentes** de Windows **&gt; servicios de escritorio remoto &gt;** **Escritorio remoto host de sesión** &gt; **entorno de sesión remoto** &gt; **configurar la compresión para los datos de RemoteFX**. Hay tres valores posibles:
 
 -   **Optimizado para usar menos memoria** Consume la menor cantidad de memoria por sesión, pero tiene la menor relación de compresión y, por lo tanto, el mayor consumo de ancho de banda.
 
@@ -140,11 +140,11 @@ Microsoft RemoteFX compresión se puede configurar mediante directiva de grupo e
 
 -   **Optimizado para usar menos ancho de banda de red** Reduce aún más el uso de ancho de banda de red a un costo de aproximadamente 2 MB por sesión. Si desea usar esta configuración, debe evaluar el número máximo de sesiones y realizar pruebas en ese nivel con esta configuración antes de colocar el servidor en producción.
 
-También puede optar por no usar un algoritmo de compresión de RemoteFX. La elección de no usar un algoritmo de compresión de RemoteFX usará más ancho de banda de red y solo se recomienda si se usa un dispositivo de hardware diseñado para optimizar el tráfico de red. Aunque decida no usar un algoritmo de compresión de RemoteFX, se comprimirán algunos datos de gráficos.
+También puede optar por no usar un algoritmo de compresión de Protocolo de escritorio remoto, por lo que solo se recomienda usarlo con un dispositivo de hardware diseñado para optimizar el tráfico de red. Aunque decida no usar un algoritmo de compresión, se comprimirán algunos datos de gráficos.
 
 ### <a name="device-redirection"></a>Redireccionamiento de dispositivos
 
-La redirección de dispositivos se puede configurar mediante directiva de grupo en **configuración del equipo &gt; Plantillas administrativas &gt; componentes de Windows &gt; servicios de escritorio remoto &gt; escritorio remoto host de sesión &gt; dispositivo y recurso Redirección** o mediante el cuadro de propiedades **colección de sesiones** en Administrador del servidor.
+La redirección de dispositivos se puede configurar mediante directiva de grupo **en configuración del equipo** &gt; **plantillas administrativas** &gt; **componentes de Windows** &gt; servicios de escritorio remoto &gt; **remoto Host de sesión de escritorio** &gt; la **redirección de dispositivos y recursos** , o mediante el cuadro de propiedades **colección de sesiones** en Administrador del servidor.
 
 Por lo general, la redirección de dispositivos aumenta la cantidad de ancho de banda de red que usan las conexiones del servidor host de sesión de escritorio remoto porque los datos se intercambian entre los dispositivos de los equipos cliente y los procesos que se ejecutan en la sesión de servidor. La extensión del aumento es una función de la frecuencia de las operaciones realizadas por las aplicaciones que se ejecutan en el servidor en los dispositivos redirigidos.
 
@@ -172,7 +172,7 @@ La siguiente configuración se aplica al conectarse a cualquier equipo:
 
 -   **Mostrar contenido de Windows mientras se arrastra** (deshabilitar arrastre de ventana completa: i: 1) cuando esta opción está deshabilitada, reduce el ancho de banda mostrando solo el marco de la ventana en lugar de todo el contenido cuando se arrastra la ventana.
 
--   **Animación de menús y ventanas** (deshabilitar el menú anims: i: 1 y deshabilitar la configuración de cursor: i: 1): Cuando esta configuración está deshabilitada, reduce el ancho de banda deshabilitando la animación en los menús (como la atenuación) y los cursores.
+-   **Animación de menús y ventanas** (deshabilitar el menú anims: i: 1 y deshabilitar la configuración del cursor: i: 1): cuando esta configuración está deshabilitada, reduce el ancho de banda deshabilitando la animación en los menús (como la atenuación) y los cursores.
 
 -   **Suavizado de fuentes** (Permitir suavizado de fuentes: i: 0) controla la compatibilidad con la representación de fuentes ClearType. Al conectarse a equipos que ejecutan Windows 8 o Windows Server 2012 y versiones posteriores, la habilitación o deshabilitación de esta configuración no tiene un impacto significativo en el uso del ancho de banda. Sin embargo, para los equipos que ejecutan versiones anteriores a Windows 7 y Windows 2008 R2, la habilitación de esta configuración afecta significativamente al consumo de ancho de banda de red.
 
