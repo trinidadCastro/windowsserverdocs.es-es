@@ -9,16 +9,17 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
-ms.openlocfilehash: 3b37abaf5a2341aff66ff0064ecc4f52faf47f06
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 08/21/2019
+ms.openlocfilehash: 5466cecf9f11a53dc6e205f36d50d7b27b310ea1
+ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392998"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72923877"
 ---
 # <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>Implementación de dispositivos de gráficos mediante la asignación discreta de dispositivos
 
->Se aplica a: Microsoft Hyper-V Server 2016, Windows Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019  
+> Se aplica a: Microsoft Hyper-V Server 2016, Windows Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019  
 
 A partir de Windows Server 2016, puede usar la asignación discreta de dispositivos, o DDA, para pasar un dispositivo PCIe completo en una máquina virtual.  Esto permitirá el acceso de alto rendimiento a dispositivos como el [almacenamiento de NVMe](./Deploying-storage-devices-using-dda.md) o tarjetas de gráficos desde una máquina virtual mientras se pueden aprovechar los controladores nativos de los dispositivos.  Visite el [plan para la implementación de dispositivos mediante la asignación discreta de dispositivos](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md) para obtener más detalles sobre qué dispositivos funcionan, cuáles son las posibles implicaciones de seguridad, etc.
 
@@ -60,10 +61,10 @@ Cierto hardware funciona mejor si la máquina virtual está configurada de una m
 ## <a name="dismount-the-device-from-the-host-partition"></a>Desmontar el dispositivo de la partición de host
 ### <a name="optional---install-the-partitioning-driver"></a>Opcional: instalar el controlador de particionamiento
 La asignación discreta de dispositivos proporciona a los expendedores de hardware la capacidad de proporcionar un controlador de mitigación de seguridad con sus dispositivos.  Tenga en cuenta que este controlador no es el mismo que el controlador de dispositivo que se instalará en la máquina virtual invitada.  Es responsabilidad del proveedor de hardware proporcionar este controlador; sin embargo, si lo proporcionan, instálelo antes de desmontar el dispositivo de la partición del host...  Póngase en contacto con el proveedor de hardware para obtener más información sobre si tienen un controlador de mitigación.
-> Si no se proporciona ningún controlador de particionamiento, durante el desmontaje debe `-force` utilizar la opción para omitir la advertencia de seguridad. Lea más sobre las implicaciones de seguridad de hacerlo en [planear la implementación de dispositivos mediante la asignación discreta de dispositivos](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md).
+> Si no se proporciona ningún controlador de particionamiento, durante el desmontaje debe utilizar la opción `-force` para omitir la advertencia de seguridad. Lea más sobre las implicaciones de seguridad de hacerlo en [planear la implementación de dispositivos mediante la asignación discreta de dispositivos](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md).
 
 ### <a name="locating-the-devices-location-path"></a>Buscar la ruta de acceso de la ubicación del dispositivo
-La ruta de acceso de la ubicación de PCI es necesaria para desmontar y montar el dispositivo del host.  Una ruta de acceso de ubicación de ejemplo tiene `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`el siguiente aspecto:.  Aquí encontrará más detalles sobre cómo encontrar la ruta de acceso de Ubicación: [Planear la implementación de dispositivos mediante la asignación discreta de dispositivos](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md).
+La ruta de acceso de la ubicación de PCI es necesaria para desmontar y montar el dispositivo del host.  Una ruta de acceso de ubicación de ejemplo tiene un aspecto similar al siguiente: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`.  Aquí encontrará más detalles sobre cómo encontrar la ruta de acceso de Ubicación: [planear la implementación de dispositivos mediante la asignación discreta de dispositivos](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md).
 
 ### <a name="disable-the-device"></a>Deshabilitar el dispositivo
 Con Device Manager o PowerShell, asegúrese de que el dispositivo está "deshabilitado".  
@@ -99,7 +100,7 @@ Mount-VMHostAssignableDevice -LocationPath $locationPath
 ```
 Después, puede volver a habilitar el dispositivo en el administrador de dispositivos y el sistema operativo host podrá interactuar con el dispositivo de nuevo.
 
-## <a name="examples"></a>Ejemplos
+## <a name="example"></a>Ejemplo
 
 ### <a name="mounting-a-gpu-to-a-vm"></a>Montaje de una GPU en una máquina virtual
 En este ejemplo, se usa PowerShell para configurar una máquina virtual denominada "ddatest1" para que la primera GPU esté disponible por el fabricante NVIDIA y asignarla a la máquina virtual.  
@@ -131,3 +132,13 @@ Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
 #Assign the device to the guest VM.
 Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
 ```
+
+## <a name="troubleshooting"></a>de solución de problemas
+
+Si ha pasado una GPU a una máquina virtual pero Escritorio remoto o una aplicación no reconoce la GPU, busque los siguientes problemas comunes:
+
+- Asegúrese de que ha instalado la versión más reciente del controlador compatible con el proveedor de GPU y que el controlador no informa de los errores comprobando el estado del dispositivo en Device Manager.
+- Asegúrese de que el dispositivo tiene suficiente espacio MMIO asignado dentro de la máquina virtual. Para obtener más información, vea [espacio de MMIO](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md#mmio-space).
+- Asegúrese de que está usando una GPU que el proveedor admite en esta configuración. Por ejemplo, algunos proveedores impiden que sus tarjetas de consumidor funcionen cuando pasan a una máquina virtual.
+- Asegúrese de que la aplicación que se ejecuta admite la ejecución dentro de una máquina virtual y que la aplicación admite tanto la GPU como sus controladores asociados. Algunas aplicaciones tienen listas de permitidos de GPU y entornos.
+- Si usa el rol host de sesión de Escritorio remoto o Windows MultiPoint Services en el invitado, deberá asegurarse de que una entrada de directiva de grupo específica está establecida para permitir el uso de la GPU predeterminada. Con un objeto de directiva de grupo aplicado al invitado (o al Editor de directivas de grupo local en el invitado), navegue hasta el siguiente elemento de directiva de grupo: **configuración del equipo** > plantillas de **Administrador** > componentes de **Windows** > **Servicios de Escritorio remoto** > **escritorio remoto Host de sesión** > **entorno de sesión remota** > **usar el adaptador de gráficos predeterminado de hardware para todas las sesiones de servicios de escritorio remoto**. Establezca este valor en habilitado y, a continuación, reinicie la máquina virtual una vez que se haya aplicado la Directiva.
