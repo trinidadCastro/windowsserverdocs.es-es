@@ -10,14 +10,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
-ms.date: 09/16/2016
+ms.date: 10/22/2019
 manager: dongill
-ms.openlocfilehash: 7429cd9cb87db310a716136c171de47cfe0892f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9386733911ca81ad60d038854bd68e5603aae4cf
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387362"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812286"
 ---
 # <a name="use-personal-session-desktops-with-remote-desktop-services"></a>Uso de un entorno de escritorios de sesión personal con Servicios de Escritorio remoto
 
@@ -100,6 +100,3 @@ El cmdlet **Export-RDPersonalPersonalDesktopAssignment** exporta las asociacione
 
 
 Todos los nuevos cmdlets admiten los parámetros comunes: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer y -OutVariable. Para obtener más información, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/p/?LinkID=113216).
-
-## <a name="hardware-accelerated-graphics"></a>Gráficos acelerados por hardware
-Windows Server 2016 amplía la tecnología del adaptador de gráficos 3D (vGPU) de RemoteFX para admitir OpenGL, y es compatible con VM invitadas de Windows Server 2016 de usuario único. Puedes combinar escritorios de sesión personal con las nuevas funcionalidades de vGPU para proporcionar compatibilidad con aplicaciones hospedadas que requieran gráficos acelerados. Como alternativa, puedes combinar escritorios de sesión personal con la nueva funcionalidad Discrete Device Assignment (DDA, asignación discreta de dispositivos) para proporcionar también compatibilidad con aplicaciones hospedadas que requieran gráficos acelerados.

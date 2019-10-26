@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ae0e11a3e8ca2b50bd6722f7bd7d18b8c1c532
-ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
+ms.openlocfilehash: 2cb368b5ff4723c1afb53c5a9e787d9f8a39bef3
+ms.sourcegitcommit: 40e4ba214954d198936341c4d6ce1916dc891169
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973874"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72690460"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2019"></a>Comparación de las ediciones Standard y Datacenter de Windows Server 2019
 
@@ -155,7 +155,6 @@ ms.locfileid: "71973874"
 |Equilibrio de carga de red|Sí|Sí|
 |Windows PowerShell|Sí|Sí|
 |Opción de instalación Server Core|Sí|Sí|
-|Opción de instalación Nano Server|Sí|Sí|
 |Administrador de servidores|Sí|Sí|
 |SMB directo y SMB sobre RDMA|Sí|Sí|
 |Redes definidas por software|No| <strong>Sí</strong> |
