@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 830a2d99443938c25625211f590984819a20d566
-ms.sourcegitcommit: 40e4ba214954d198936341c4d6ce1916dc891169
+ms.openlocfilehash: 597bcbe647bca3595dc8251ce4d6bf52265d8731
+ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690448"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72986430"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -133,7 +133,7 @@ Al realizar un inventario o transferir archivos de los equipos de origen a desti
   Nombre de registro: Microsoft-Windows-StorageMigrationService-proxy/Debug Source: Microsoft-Windows-StorageMigrationService-proxy Date: 2/26/2019 9:00:04 AM ID. de evento: 10000 nivel de tarea: None LEVEL: Palabras clave de error:      
   Usuario: equipo de servicio de red: Descripción de srv1.contoso.com:
 
-  02/26/2019-09:00:04.860 [error] error de transferencia de \\srv1. contoso. com\public\indy.png: (5) se ha denegado el acceso.
+  02/26/2019-09:00:04.860 [error] error de transferencia de \\SRV1. contoso. com\public\indy.png: (5) se denegó el acceso.
 Seguimiento de la pila: en Microsoft. StorageMigration. proxy. Service. Transfer. FileDirUtils. OpenFile (String fileName, DesiredAccess desiredAccess, ShareMode shareMode, CreationDisposition creationDisposition, FlagsAndAttributes flagsAndAttributes) at Microsoft. StorageMigration. proxy. Service. Transfer. FileDirUtils. GetTargetFile (ruta de acceso de cadena) en Microsoft. StorageMigration. proxy. Service. Transfer. FileDirUtils. GetTargetFile (archivo FileInfo) en Microsoft. StorageMigration. proxy. Service. Transfer. FileTransfer. InitializeSourceFileInfo () en Microsoft. StorageMigration. proxy. Service. Transfer. FileTransfer. Transfer () en Microsoft. StorageMigration. proxy. Service. Transfer. FileTransfer. TryTransfer () [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs:: TryTransfer:: 55]
 
 
@@ -287,7 +287,25 @@ Tenga en cuenta que, en algunas circunstancias, la desinstalación de KB4512534 
    
 2.  Inicie el servicio de migración de almacenamiento, que creará una nueva base de datos.
 
+## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>Error "error de CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO en el recurso de dirección de servidor" y se produce un error en la transferencia del clúster de Windows Server 2008 R2
 
+Al intentar ejecutar el corte en un origen de clúster de Windows Server 2008 R2, el cambio se bloquea en la fase "cambiar el nombre del equipo de origen..." y recibe el siguiente error:
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Debug
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          10/17/2019 6:44:48 PM
+    Event ID:      10000
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      WIN-RNS0D0PMPJH.contoso.com
+    Description:
+    10/17/2019-18:44:48.727 [Erro] Exception error: 0x1. Message: Control code CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO failed against netName resource 2008r2FS., stackTrace:    at Microsoft.FailoverClusters.Framework.ClusterUtils.NetnameRepairVCO(SafeClusterResourceHandle netNameResourceHandle, String netName)
+       at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
+       at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
+
+Este problema se debe a que falta una API en versiones anteriores de Windows Server. Actualmente no hay ninguna manera de migrar los clústeres de Windows Server 2008 y Windows Server 2003. Puede realizar el inventario y la transferencia sin problemas en los clústeres de Windows Server 2008 R2 y, a continuación, realizar manualmente el traslado mediante el cambio manual de la dirección IP y el servidor de archivos de origen del clúster. Dirección que debe coincidir con el origen original. 
 
 ## <a name="see-also"></a>Consulta también
 

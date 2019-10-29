@@ -1,25 +1,25 @@
 ---
 title: Información general del servicio de migración de almacenamiento
-description: El servicio de migración de almacenamiento facilita la migración de servidores a una versión más reciente de Windows Server. Proporciona una herramienta gráfica que hace un inventario de los datos en los servidores y, a continuación, transfiere los datos y la configuración a los servidores más recientes, todo ello sin que los usuarios o las aplicaciones tengan que cambiar nada.
+description: El servicio de migración de almacenamiento facilita la migración de almacenamiento a Windows Server o a Azure. Proporciona una herramienta gráfica que inventa datos en servidores Windows y Linux y, a continuación, transfiere los datos a servidores más recientes o a máquinas virtuales de Azure. El servicio de migración de almacenamiento también proporciona la opción de transferir la identidad de un servidor al servidor de destino para que las aplicaciones y los usuarios puedan acceder a sus datos sin cambiar los vínculos o las rutas de acceso.
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 08/16/2019
+ms.date: 10/25/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 022b0c3445c007960c490159f6580a702233ee41
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 712befacaf1d5bddd4f9bd993ce0d423b15cba36
+ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402973"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72986450"
 ---
 # <a name="storage-migration-service-overview"></a>Información general del servicio de migración de almacenamiento
 
 >Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server (canal semianual)
 
-El servicio de migración de almacenamiento facilita la migración de servidores a una versión más reciente de Windows Server. Proporciona una herramienta gráfica que hace un inventario de los datos en los servidores y, a continuación, transfiere los datos y la configuración a los servidores más recientes, todo ello sin que los usuarios o las aplicaciones tengan que cambiar nada.
+El servicio de migración de almacenamiento facilita la migración de almacenamiento a Windows Server o a Azure. Proporciona una herramienta gráfica que inventa datos en servidores Windows y Linux y, a continuación, transfiere los datos a servidores más recientes o a máquinas virtuales de Azure. El servicio de migración de almacenamiento también proporciona la opción de transferir la identidad de un servidor al servidor de destino para que las aplicaciones y los usuarios puedan acceder a sus datos sin cambiar los vínculos o las rutas de acceso.
 
 En este tema se explica por qué desea usar el servicio de migración de almacenamiento, cómo funciona el proceso de migración y cuáles son los requisitos para los servidores de origen y de destino.
 
@@ -34,7 +34,7 @@ Use el servicio de migración de almacenamiento porque tiene un servidor (o much
 
 ![Diagrama que muestra el servicio de migración de almacenamiento migrando archivos & configuración de los servidores de origen a los servidores de destino, las máquinas virtuales de Azure o Azure File Sync.](media/overview/storage-migration-service-diagram.png)
 
-**Figura 1: Orígenes y destinos de servicio de migración de almacenamiento**
+**Figura 1: orígenes y destinos de los servicios de migración de almacenamiento**
 
 ## <a name="how-the-migration-process-works"></a>Cómo funciona el proceso de migración
 
@@ -44,8 +44,8 @@ La migración es un proceso de tres pasos:
 2. **Transferir datos (copiarlos)** de los servidores de origen a los servidores de destino.
 3. **Recorte a los nuevos servidores** (opcional).<br>Los servidores de destino suponen las identidades anteriores de los servidores de origen para que las aplicaciones y los usuarios no tengan que cambiar nada. <br>Los servidores de origen entran en un estado de mantenimiento donde todavía contienen los mismos archivos que siempre tienen (nunca se quitan archivos de los servidores de origen) pero no están disponibles para los usuarios y las aplicaciones. Después, puede retirar los servidores a su comodidad.
 
-![Captura de pantalla en la que se muestra un](media/migrate/inventory.png)
-servidor listo para analizar**la figura 2: Servidores de inventario del servicio de migración de almacenamiento**
+![captura de pantalla que muestra un servidor listo para su examen](media/migrate/inventory.png)
+**figura 2: servidores de inventario de migración de almacenamiento**
 
 ## <a name="requirements"></a>Requisitos
 
@@ -80,7 +80,7 @@ Se recomienda encarecidamente que el orquestador y los equipos de destino tengan
 El servidor de origen debe ejecutar uno de los siguientes sistemas operativos:
 
 - Windows Server, Canal semianual
-- Windows Server 2019
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2012
@@ -93,7 +93,7 @@ El servidor de origen debe ejecutar uno de los siguientes sistemas operativos:
 - Windows Small Business Server 2011
 - Windows Server 2012 Essentials
 - Windows Server 2012 R2 Essentials
-- Windows Server 2016 Essentials
+- Windows Server 2016 Essentials
 - Windows Server 2019 Essentials
 
 Nota: Windows Small Business Server y Windows Server Essentials son controladores de dominio. El servicio de migración de almacenamiento todavía no puede pasar de los controladores de dominio, pero puede inventariar y transferir archivos de ellos.   
@@ -114,7 +114,7 @@ Puede migrar los siguientes tipos de origen adicionales si el orquestador ejecut
 El servidor de destino debe ejecutar uno de los siguientes sistemas operativos:
 
 - Windows Server, Canal semianual
-- Windows Server 2019
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 
@@ -131,7 +131,7 @@ Las siguientes características nuevas están disponibles al ejecutar el orquest
 - Sincronizar más fácilmente los recursos compartidos migrados en Azure mediante Azure File Sync.
 - Migrar a nuevas redes, como Azure.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 - [Migración de un servidor de archivos mediante el servicio de migración de almacenamiento](migrate-data.md)
 - [Preguntas más frecuentes (p + f) sobre Storage Migration Services](faq.md)
