@@ -11,14 +11,14 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 manager: jasgro
-ms.date: 08/22/2019
+ms.date: 10/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 261023223b56e235320b7ad414fa91206420b1ed
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a2d3a871165812ac3a27e65b5f52cc56a05c9efe
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360842"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812293"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-windows-server-2019"></a>Características eliminadas o que está previsto eliminar a partir de Windows Server 2019
 
@@ -41,6 +41,7 @@ Hemos eliminado las siguientes características y funcionalidades de la imagen d
 | Análisis de negocio, que también se denomina Administración de digitalización distribuida (DSM)|Vamos a eliminar esta funcionalidad de escaneado y administración de escáneres porque no hay ningún dispositivo que admita esta característica. |
 | Componentes de impresión: ahora es un componente opcional en las instalaciones básicas.|En las versiones anteriores de Windows Server, los componentes de impresión estaban *deshabilitados* de manera predeterminada en la opción de instalación básica. Eso cambió en Windows Server 2016, donde estaban habilitados de manera predeterminada. En Windows Server 2019, esos componentes de impresión han vuelto a deshabilitarse de manera predeterminada en la instalación básica. Si tiene que habilitar los componentes de impresión, ejecute el cmdlet **Install-WindowsFeature Print-Server**. |
 | [Agente de Conexión a Escritorio remoto y Host de virtualización de escritorio remoto](../remote/remote-desktop-services/desktop-hosting-service.md) en una instalación básica|La mayoría de las implementaciones de los Servicios de Escritorio remoto tienen estos roles colocalizados con el host de sesión de Escritorio remoto (RDSH), que requiere Windows Server con experiencia de escritorio; para que sea coherente con RDSH vamos a cambiar estos roles para que también requieran Windows Server con experiencia de escritorio. Estos roles de RDS ya no están disponibles en la [instalación básica](../administration/server-core/what-is-server-core.md). Si necesitas [implementar estos roles como parte de la infraestructura de Escritorio remoto](../remote/remote-desktop-services/rds-deploy-infrastructure.md), puedes [instalarlos en Windows Server con experiencia de escritorio](../get-started/getting-started-with-server-with-desktop-experience.md). <br/><br/>Estos roles también se incluyen en la opción de instalación de la experiencia de escritorio de Windows Server 2019. |
+| [Adaptador de vídeo 3D RemoteFX (vGPU)](../remote/remote-desktop-services/rds-remotefx-vgpu.md)|Estamos desarrollando nuevas opciones de aceleración de gráficos para entornos virtualizados. También puedes usar la [Asignación de dispositivos discreta (DDA)](../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md) como alternativa. |
 
 ## <a name="features-were-no-longer-developing"></a>Características que ya no estamos desarrollando
 

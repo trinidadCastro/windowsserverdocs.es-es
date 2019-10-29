@@ -7,18 +7,18 @@ ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
-ms.date: 11/08/2016
+ms.date: 10/22/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: cec1ae43b51b17da5617f95e13b839d4ecfbb40c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 92af2b4e9fb174f1aa815256148ee8d5c7c7181a
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404005"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812255"
 ---
 # <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>Creación de una colección de servicios de Escritorio remoto para que se ejecuten escritorios y aplicaciones
 
@@ -33,7 +33,7 @@ Antes de crear una colección, debes decidir qué tipo de colección necesitas: 
  
 Con una sesión agrupada, varios usuarios acceden a un grupo compartido de recursos, mientras que con una sesión de escritorio personal, se asigna a cada usuario su propio escritorio dentro del grupo. La sesión agrupada proporciona un menor costo general, mientras que las sesiones personales permiten a los usuarios personalizar su experiencia de escritorio.
 
-Si necesitas compartir aplicaciones hospedadas que consuman gráficos, puedes combinar sesiones de escritorio personales con la vGPU RemoteFX configurada para la aceleración de gráficos. Como alternativa, puedes combinar escritorios de sesión personal con la nueva funcionalidad Discrete Device Assignment (DDA, asignación discreta de dispositivos) para proporcionar también compatibilidad con aplicaciones hospedadas que requieran gráficos acelerados. Para más información, consulta [¿La tecnología de virtualización de gráficos es adecuada para usted?](rds-graphics-virtualization.md)
+Si necesitas compartir aplicaciones hospedadas con gran cantidad de gráficos, puedes combinar escritorios de sesión personal con la nueva funcionalidad Discrete Device Assignment (DDA, asignación discreta de dispositivos) para proporcionar también compatibilidad con aplicaciones hospedadas que requieran gráficos acelerados. Para más información, consulta [¿La tecnología de virtualización de gráficos es adecuada para usted?](rds-graphics-virtualization.md)
 
 
 Independientemente del tipo de colección que elijas, deberás rellenar esas colecciones con RemoteApps: programas y recursos a que los usuarios pueden acceder desde cualquier dispositivo compatible y trabajar como si el programa se ejecutase localmente.
