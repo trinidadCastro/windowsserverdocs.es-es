@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3a53f5002a9ab97d72bbc4a17468ad0369185d08
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d3c0a75f7466636ef366d17415760164808a9e82
+ms.sourcegitcommit: 9e123d475f3755218793a130dda88455eac9d4ab
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357431"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73413279"
 ---
 # <a name="solutions-and-scenario-guides"></a>Guías de soluciones y situaciones
 
@@ -31,6 +31,6 @@ Protección de acceso e información
 | [Unirse a un área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en todas las aplicaciones de la compañía](https://technet.microsoft.com/library/dn280945.aspx) | Los empleados pueden acceder a aplicaciones y datos en cualquier lugar, en cualquier dispositivo. Los empleados pueden usar el inicio de sesión único en aplicaciones de explorador o en aplicaciones empresariales. Los administradores pueden controlar quién tiene acceso a los recursos de la compañía según la aplicación, el usuario, el dispositivo y la ubicación.                                        
 | [Administración de riesgos con la autenticación multifactor adicional para aplicaciones confidenciales](https://technet.microsoft.com/library/dn280949.aspx)| En este escenario, habilitará MFA basándose en los datos de pertenencia a grupos del usuario para una aplicación específica. Es decir, configurará una directiva de autenticación en el servidor de federación que requiera MFA cuando los usuarios que pertenezcan a un grupo concreto soliciten acceso a una aplicación específica hospedada en un servidor web.  
 | [Administración de riesgos con control de acceso condicional](https://technet.microsoft.com/library/dn280937.aspx) | El control de acceso en AD FS se implementa con reglas de notificación de autorización de emisión que se usan para emitir un permiso o denegar las notificaciones que determinarán si se permitirá a un usuario o a un grupo de usuarios acceder a los recursos protegidos AD FS. Las reglas de autorización solo se pueden establecer en relaciones de confianza para usuario autenticado.
-  
+|[Configuración de Servicio web de inscripción de certificados para la renovación basada en claves de certificado en un puerto personalizado](certificate-enrollment-certificate-key-based-renewal.md)|En este artículo se proporcionan instrucciones paso a paso para implementar el Servicio web de inscripción de certificados (o la Directiva de inscripción de certificados (CEP)/servicio de inscripción de certificados (CES)) en un puerto personalizado distinto de 443 para que se lleve a cabo la renovación basada en claves de certificado. ventaja de la característica de renovación automática de CEP y CES. |
 
 
