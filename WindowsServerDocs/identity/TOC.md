@@ -20,7 +20,7 @@
 ##### [Lenguaje de reglas de transformación de notificaciones](solution-guides/Claims-Transformation-Rules-Language.md)
 #### [Apéndice A: Glosario de control de acceso dinámico](solution-guides/appendix-A--Dynamic-Access-Control-Glossary.md)
 #### [Apéndice B: Configuración del entorno de prueba](solution-guides/appendix-B--Setting-Up-the-Test-Environment.md)
-
+### [Configuración del Servicio web de inscripción de certificados para la renovación basada en claves de certificados en un puerto personalizado](solution-guides/certificate-enrollment-certificate-key-based-renewal.md)
 
 ## [Active Directory Domain Services](ad-ds/active-directory-Domain-Services.md)
 
