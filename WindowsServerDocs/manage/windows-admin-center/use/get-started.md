@@ -8,16 +8,16 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: 68b5c7b2c5bc8e93d653514b2664d96b97b07a9e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fac17cd5975eeb699f205888edbe3f1c30b43394
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406844"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567148"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Introducción al centro de administración de Windows
 
->Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
 
 > [!Tip]
 > ¿Novedad en Windows Admin Center?
@@ -56,15 +56,15 @@ Después de haber completado la instalación del centro de administración de Wi
 
    ![](../media/launch/addserver0.png)
 
-2. Elija Agregar un servidor, un clúster de conmutación por error o una conexión de clúster hiperconvergida:
+2. Elija Agregar un servidor, un clúster, un equipo de Windows o una máquina virtual de Azure:
     
-   ![](../media/launch/addserver1.png)
+   ![](../media/launch/ChooseConnectionType.png)
 
 3. Escriba el nombre del servidor o clúster que desea administrar y haga clic en **submit (enviar**). El servidor o clúster se agregará a la lista de conexiones en la página información general.
 
    ![](../media/launch/addserver2.png)
 
-   **--O BIEN--**
+   **--O bien--**
 
 **Importación en bloque de varios servidores**
 
@@ -77,7 +77,7 @@ Después de haber completado la instalación del centro de administración de Wi
 > [!Note]
 > El archivo. csv que se crea al [exportar las conexiones con PowerShell](#use-powershell-to-import-or-export-your-connections-with-tags) contiene información adicional más allá de los nombres de servidor y no es compatible con este método de importación.
 
-  **--O BIEN--**
+  **--O bien--**
 
 **Agregar servidores buscando Active Directory**
 
@@ -101,7 +101,7 @@ Puede usar sus credenciales actuales de Windows para autenticarse con el nodo ad
 
 Si ha instalado el centro de administración de Windows en Windows Server, se requiere una configuración adicional para el inicio de sesión único.  [Configurar el entorno para la delegación](../configure/user-access-control.md)
 
-**--O BIEN--**
+**--O bien--**
 
 **Usar *administrar como* para especificar credenciales**
 
@@ -117,7 +117,7 @@ Puede aplicar las credenciales a todas las conexiones, que se almacenarán en ca
 
 **Solución de contraseña de administrador local (LAPS)**
 
-Si su entorno usa [laps](https://technet.microsoft.com/mt227395.aspx)y tiene instalado el centro de administración de Windows en el equipo con Windows 10, puede usar las credenciales de laps para autenticarse con el nodo administrado. **Si usa este escenario,** [proporcione comentarios](http://aka.ms/WACFeedback).
+Si su entorno usa [laps](https://technet.microsoft.com/mt227395.aspx)y tiene instalado el centro de administración de Windows en el equipo con Windows 10, puede usar las credenciales de laps para autenticarse con el nodo administrado. **Si usa este escenario,** indique [sus comentarios](https://aka.ms/WACFeedback).
 
 ## <a name="using-tags-to-organize-your-connections"></a>Uso de etiquetas para organizar las conexiones
 
@@ -181,7 +181,7 @@ el **tipo** es el tipo de conexión. En el caso de las conexiones predeterminada
 
 las **etiquetas** se separan por canalización.
 
-**GROUPID** se usa para las conexiones compartidas. Use el valor ```global``` de esta columna para establecer esta conexión compartida.
+**GROUPID** se usa para las conexiones compartidas. Use el valor ```global``` en esta columna para que esta sea una conexión compartida.
 
 ### <a name="example-csv-file-for-importing-connections"></a>Archivo CSV de ejemplo para importar conexiones
 

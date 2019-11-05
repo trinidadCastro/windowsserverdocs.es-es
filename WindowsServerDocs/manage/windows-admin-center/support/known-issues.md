@@ -8,25 +8,18 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: a579d0274ff4b53a72c17760a6d53ef796625d3a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 23943c9567f371f7598c7dcda6db434760cabeab
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356914"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567083"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conocidos de Windows Admin Center
 
-> Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
+> Se aplica a: Centro de administración de Windows, versión preliminar del centro de administración de Windows
 
-Si encuentras un problema no descrito en esta página, [háznoslo saber](http://aka.ms/WACfeedback).
-
-## <a name="lenovo-xclarity-integrator"></a>Integrador de Lenovo XClarity
-
-El problema de incompatibilidad previamente divulgado de la extensión de integrador de Lenovo XClarity y el centro de administración de Windows versión 1904 ahora se resuelve con la versión 1904,1 del centro de administración de Windows. Le recomendamos encarecidamente que actualice a la última versión compatible del centro de administración de Windows.
-
-- La versión 1,1 de la extensión de integrador de Lenovo XClarity es totalmente compatible con el centro de administración de Windows 1904,1. Le recomendamos encarecidamente que actualice a la versión más reciente del centro de administración de Windows y de la extensión de Lenovo.
-- Por cualquier motivo, si necesita seguir usando el centro de administración de Windows 1809,5 por el momento, puede usar XClarity Integrator 1.0.4, que también estará disponible en la fuente de extensión del centro de administración de Windows hasta que el centro de administración de Windows 1809,5 ya no se admita en función de nuestra [Directiva de soporte técnico](../support/index.md).
+Si encuentras un problema no descrito en esta página, [háznoslo saber](https://aka.ms/WACfeedback).
 
 ## <a name="installer"></a>Instalador
 
@@ -34,20 +27,9 @@ El problema de incompatibilidad previamente divulgado de la extensión de integr
 
 - No se admite el uso de un puerto inferior a 1024. En el modo de servicio, puede configurar opcionalmente el puerto 80 para redirigir al puerto especificado.
 
-- Si el servicio Windows Update (wuauserv) está detenido y deshabilitado, se producirá un error en el instalador. [19100629]
+## <a name="general"></a>General,
 
-### <a name="upgrade"></a>Actualizar versión
-
-- Al actualizar el centro de administración de Windows en modo de servicio desde una versión anterior, si usa msiexec en modo silencioso, es posible que se produzca un problema en el que se elimine la regla de Firewall de entrada para el puerto del centro de administración de Windows.
-  - Para volver a crear la regla, ejecute el siguiente comando desde una consola de PowerShell con \<privilegios elevados, reemplazando el puerto > por el puerto configurado para el centro de administración de Windows (el valor predeterminado es 443).
-
-    ```powershell
-    New-NetFirewallRule -DisplayName "SmeInboundOpenException" -Description "Windows Admin Center inbound port exception" -LocalPort <port> -RemoteAddress Any -Protocol TCP
-    ```
-
-## <a name="general"></a>General
-
-- Si tiene el centro de administración de Windows instalado como puerta de enlace en **Windows Server 2016** bajo un uso intensivo, el servicio puede bloquearse con un error en ```Faulting application name: sme.exe``` el ```Faulting module name: WsmSvc.dll```registro de eventos que contiene y. Esto se debe a un error que se ha corregido en Windows Server 2019. La revisión para Windows Server 2016 se incluyó la actualización acumulativa de febrero de 2019, [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977).
+- Si tiene el centro de administración de Windows instalado como puerta de enlace en **Windows Server 2016** bajo un uso intensivo, el servicio puede bloquearse con un error en el registro de eventos que contiene ```Faulting application name: sme.exe``` y ```Faulting module name: WsmSvc.dll```. Esto se debe a un error que se ha corregido en Windows Server 2019. La revisión para Windows Server 2016 se incluyó la actualización acumulativa de febrero de 2019, [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977).
 
 - Si el centro de administración de Windows está instalado como una puerta de enlace y la lista de conexiones parece estar dañada, siga estos pasos:
 
@@ -58,15 +40,7 @@ El problema de incompatibilidad previamente divulgado de la extensión de integr
   2. Elimina la carpeta **Server Management Experience** en **C:\Windows\ServiceProfiles\NetworkService\AppData\Roaming\Microsoft**
   3. Volver a instalar Windows Admin Center
 
-- Si deja abierta la herramienta y está inactiva durante un largo período de tiempo, puede obtener varios **errores: El estado de espacio de ejecución no es válido** para estos errores de operación. Si esto ocurre, actualiza el explorador. Si encuentra esto, [envíenos sus comentarios](http://aka.ms/WACfeedback).
-
-- Es posible que encuentres un **Error 500** al actualizar páginas con direcciones URL muy largas. [12443710]
-
-- En algunas herramientas, el corrector ortográfico del explorador puede marcar ciertos valores de campo como errores ortográficos. [12425477]
-
-- En algunas herramientas, los botones de comando no pueden reflejar los cambios de estado inmediatamente después de hacer clic y la herramienta de la interfaz de usuario puede que no refleje automáticamente los cambios realizados en determinadas propiedades. Puedes hacer clic en **Actualizar** para recuperar el estado más reciente desde el servidor de destino. [11445790]
-
-- Filtrado de etiquetas en la lista de conexiones: Si selecciona conexiones con las casillas de selección múltiple, filtre la lista de conexiones por etiquetas, la selección original se mantiene para que cualquier acción que seleccione se aplique a todas las máquinas seleccionadas anteriormente. [18099259]
+- Si dejas la herramienta abierta e inactivo durante un largo período de tiempo, es posible que recibas varios errores tipo **Error: el estado de espacio de ejecución no es válido para esta operación**. Si esto ocurre, actualiza el explorador. Si encuentra esto, [envíenos sus comentarios](https://aka.ms/WACfeedback).
 
 - Puede haber una desviación mínima entre el número de versión de los sistemas operativos que se ejecutan en los módulos del centro de administración de Windows y lo que se incluye en el aviso de software de terceros.
 
@@ -79,27 +53,21 @@ El problema de incompatibilidad previamente divulgado de la extensión de integr
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- En algunos casos, puedes encontrar tiempos de carga largos al utilizar Microsoft Edge para acceder a una puerta de enlace de Windows Admin Center a través de Internet. Esto puede ocurrir en VM de Azure donde la puerta de enlace de Windows Admin Center está usando un certificado autofirmado. [13819912]
-
-- Al utilizar Azure Active Directory como proveedor de identidades y Windows Admin Center se configura con un certificado autofirmado o, en caso contrario , no de confianza, no puedes completar la autenticación de AAD en Microsoft Edge.  [15968377]
-
 - Si tiene el centro de administración de Windows implementado como un servicio y usa Microsoft Edge como su explorador, es posible que se produzca un error al conectar la puerta de enlace a Azure después de generar una nueva ventana del explorador. Intente solucionar este problema agregando https://login.microsoftonline.com , https://login.live.com y la dirección URL de la puerta de enlace como sitios de confianza y sitios permitidos para la configuración del bloqueador de elementos emergentes en el explorador del lado cliente. Para obtener más información sobre cómo solucionar este [problema](troubleshooting.md#azure-features-dont-work-properly-in-edge)en la guía de solución de problemas. [17990376]
-
-- Si el centro de administración de Windows está instalado en el modo de escritorio, la pestaña explorador de Microsoft Edge no mostrará favicon. [17665801]
 
 ### <a name="google-chrome"></a>Google Chrome
 
-- Antes de la versión 70 (publicada a finales de octubre de 2018), Chrome tenía un [error](https://bugs.chromium.org/p/chromium/issues/detail?id=423609) relacionado con el protocolo WebSockets y la autenticación NTLM. Esto afecta a las siguientes herramientas: Eventos, PowerShell Escritorio remoto.
+- Antes de la versión 70 (publicada a finales de octubre de 2018), Chrome tenía un [error](https://bugs.chromium.org/p/chromium/issues/detail?id=423609) relacionado con el protocolo WebSockets y la autenticación NTLM. Esto afecta a las siguientes herramientas: Eventos, PowerShell, Escritorio remoto.
 
 - Chrome puede mostrar varias peticiones de credenciales, especialmente durante la adición de la experiencia de conexión en un entorno de **grupo de trabajo** (que no sea dominio).
 
-- Si el centro de administración de Windows se implementa como un servicio, es necesario habilitar los elementos emergentes de la dirección URL de la puerta de enlace para que funcione la funcionalidad de integración de Azure. Estos servicios incluyen adaptador de red de Azure, Azure Update Management y Azure Site Recovery.
+- Si el centro de administración de Windows se implementa como un servicio, es necesario habilitar los elementos emergentes de la dirección URL de la puerta de enlace para que funcione la funcionalidad de integración de Azure.
 
 ### <a name="mozilla-firefox"></a>Mozilla Firefox
 
 Windows Admin Center no se ha probado con Mozilla Firefox, pero deberían funcionar la mayoría de las funciones.
 
-- Instalación de Windows 10: Mozilla Firefox tiene su propio almacén de certificados, por lo que debe importar ```Windows Admin Center Client``` el certificado en Firefox para usar el centro de administración de Windows en Windows 10.
+- Instalación de Windows 10: Mozilla Firefox tiene su propio almacén de certificados, por lo que debe importar el certificado de ```Windows Admin Center Client``` en Firefox para usar el centro de administración de Windows en Windows 10.
 
 ## <a name="websocket-compatibility-when-using-a-proxy-service"></a>Compatibilidad de WebSocket al usar un servicio de proxy
 
@@ -124,29 +92,21 @@ Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microso
 
 ## <a name="server-manager-solution"></a>Solución del Administrador de servidores
 
-### <a name="server-settings"></a>Configuración del servidor
-
-- Si modifica una configuración y, a continuación, intenta salir sin guardar, la página le avisará de los cambios no guardados, pero seguirá desplazarse. Puede acabar en un estado en el que la pestaña configuración seleccionada no coincida con el contenido de la página. [19905798] [19905787]
-
 ### <a name="certificates"></a>Certificados
 
 - No se puede importar un certificado cifrado .PFX en al almacén del usuario actual. [11818622]
 
-### <a name="devices"></a>Dispositivos
-
-- Al desplazarse por la tabla con el teclado, la selección puede saltar a la parte superior del grupo de tablas. [16646059]
-
-### <a name="events"></a>Events
+### <a name="events"></a>Eventos
 
 - Los eventos se realiza a través de [compatibilidad de websocket al usar un servicio de proxy.](#websocket-compatibility-when-using-a-proxy-service)
 
-- Puedes obtener un error que hace referencia al "tamaño del paquete" al exportar los archivos de registro de gran tamaño. [16630279]
+- Puedes obtener un error que hace referencia al "tamaño del paquete" al exportar los archivos de registro de gran tamaño.
 
-  - Para resolver este error, use el siguiente comando en un símbolo del sistema con privilegios elevados en el equipo de puerta de enlace:```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
+  - Para resolver este error, use el siguiente comando en un símbolo del sistema con privilegios elevados en el equipo de puerta de enlace: ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
 ### <a name="files"></a>Archivos
 
-- Aún no se admite la carga o descarga de archivos grandes. (@no__t límite de 0100mb) [12524234]
+- Aún no se admite la carga o descarga de archivos grandes. (\~límite de 100 MB) [12524234]
 
 ### <a name="powershell"></a>PowerShell
 
@@ -158,17 +118,19 @@ Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microso
 
 - Cuando reduces el tamaño de la ventana de Windows Admin Center, se distribuye el contenido del terminal, pero cuando se agranda de nuevo, el contenido puede que no vuelva a su estado anterior. Si se embrollan las cosas, puedes intentar Clear-Host o desconecta y volver a conectar con el botón encima del terminal.
 
-### <a name="registry-editor"></a>Editor del Registro
+### <a name="registry-editor"></a>Editor del registro
 
 - No implementada la funcionalidad de búsqueda. [13820009]
 
 ### <a name="remote-desktop"></a>Escritorio remoto
 
+- Cuando el centro de administración de Windows se implementa como un servicio, la herramienta de Escritorio remoto puede no cargarse después de actualizar el servicio del centro de administración de Windows a una nueva versión. Para solucionar este problema, borre la memoria caché del explorador.   [23824194]
+
 - La herramienta de Escritorio remoto puede no conectarse al administrar Windows Server 2012. [20258278]
 
-- Al usar el escritorio remoto para conectarse a un equipo que no está unido a un dominio, debe especificar su cuenta en ```MACHINENAME\USERNAME``` el formato.
+- Al usar el Escritorio remoto para conectarse a un equipo que no está unido a un dominio, debe especificar su cuenta en el formato de ```MACHINENAME\USERNAME```.
 
-- Algunas configuraciones pueden bloquear el cliente de escritorio remoto del centro de administración de Windows con la Directiva de grupo. Si encuentra esto, habilítelo ```Allow users to connect remotely by using Remote Desktop Services``` en```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
+- Algunas configuraciones pueden bloquear el cliente de escritorio remoto del centro de administración de Windows con la Directiva de grupo. Si encuentra esto, habilite ```Allow users to connect remotely by using Remote Desktop Services``` en ```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
 - Escritorio remoto se ve afectado por la [compatibilidad de WebSocket.](#websocket-compatibility-when-using-a-proxy-service)
 
@@ -182,8 +144,6 @@ Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microso
   - Tecla de Windows
   - Impr Pant
 
-- Aplicación remota: después de habilitar la herramienta de aplicación remota desde Escritorio remoto configuración, es posible que la herramienta no aparezca en la lista de herramientas al administrar un servidor con experiencia de escritorio. [18906904]
-
 ### <a name="roles-and-features"></a>Roles y características
 
 - Al seleccionar los roles o características con orígenes no disponibles para la instalación, se omiten. [12946914]
@@ -194,26 +154,24 @@ Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microso
 
 ### <a name="storage"></a>Almacenamiento
 
-- Se puede producir un error en la captura de información de cuota sin una notificación de error (todavía habrá un error en la consola del explorador) [18962274]
+- Nivel inferior: Las unidades de DVD, CD o disquete no aparecen como volúmenes en el nivel inferior.
 
-- Nivel inferior: Las unidades de DVD/CD/disquete no aparecen como volúmenes en el nivel inferior.
+- Nivel inferior: algunas propiedades en los volúmenes y discos no están disponible en el nivel inferior, con lo cual aparecen como desconocidos o en blanco en el panel de detalles.
 
-- Nivel inferior: Algunas propiedades de volúmenes y discos no están disponibles de nivel inferior, por lo que parecen desconocidos o en blanco en el panel de detalles.
-
-- Nivel inferior: Al crear un nuevo volumen, ReFS solo admite un tamaño de unidad de asignación de 64 k en máquinas con Windows 2012 y 2012 R2. Si se crea un volumen ReFS con un tamaño de unidad de asignación más pequeño en destinos de nivel inferior, se producirá un error al formatear el sistema de archivos. El nuevo volumen no se podrá utilizar. La solución consiste en eliminar el volumen y usar el tamaño de unidad de asignación de 64 K.
+- Nivel inferior: al crear un nuevo volumen, ReFS solo admite un tamaño de unidad de asignación de 64 K en equipos con Windows 2012 y 2012 R2. Si se crea un volumen ReFS con un tamaño de unidad de asignación más pequeño en destinos de nivel inferior, se producirá un error al formatear el sistema de archivos. El nuevo volumen no se podrá utilizar. La solución consiste en eliminar el volumen y usar el tamaño de unidad de asignación de 64 K.
 
 ### <a name="updates"></a>Actualizaciones
 
 - Después de instalar las actualizaciones, el estado de la instalación puede almacenarse en caché y requerir una actualización del explorador.
 
-- Es posible que se produzca el error: "El conjunto de claves no existe" al intentar configurar la administración de actualizaciones de Azure. En este caso, pruebe los siguientes pasos de corrección en el nodo administrado:
+- Es posible que se produzca el error: "el conjunto de claves no existe" al intentar configurar la administración de actualizaciones de Azure. En este caso, pruebe los siguientes pasos de corrección en el nodo administrado:
     1. Detenga el servicio "servicios criptográficos".
     2. Cambie las opciones de carpeta para mostrar los archivos ocultos (si es necesario).
     3. Vaya a la carpeta "%allusersprofile%\Microsoft\Crypto\RSA\S-1-5-18" y elimine todo su contenido.
     4. Reinicie el servicio "servicios criptográficos".
     5. Repetir la configuración de Update Management con el centro de administración de Windows
 
-### <a name="virtual-machines"></a>Virtual Machines
+### <a name="virtual-machines"></a>Máquinas virtuales
 
 - Al administrar las máquinas virtuales en un host de Windows Server 2012, la herramienta de conexión de máquina virtual en el explorador no podrá conectarse a la máquina virtual. La descarga del archivo. RDP para conectarse a la máquina virtual debería seguir funcionando. [20258278]
 
@@ -223,13 +181,13 @@ Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microso
 
 ### <a name="virtual-switches"></a>Conmutadores virtuales
 
-- Cambiar la formación de equipos incrustada (SET): Al agregar NIC a un equipo, deben estar en la misma subred.
+- Switch Embedded Teaming (SET): al agregar NIC a un equipo, deben estar en la misma subred.
 
 ## <a name="computer-management-solution"></a>Solución de administración de equipos
 
 La solución de administración de equipos contiene un subconjunto de herramientas de la solución del Administrador de servidores, por lo que se aplican los mismos problemas conocidos, así como los siguientes problemas específicos de la solución de administración de equipos:
 
-- Si usa una cuenta Microsoft ([MSA](https://account.microsoft.com/account/)) o si usa Azure Active Directory (AAD) para iniciar sesión en su equipo con Windows 10, debe especificar las credenciales "administrar como" para administrar el equipo local [16568455]
+- Si usa una cuenta Microsoft ([MSA](https://account.microsoft.com/account/)) o si usa Azure Active Directory (AAD) para iniciar sesión en su equipo con Windows 10, debe usar "administrar como" para proporcionar las credenciales para una cuenta de administrador local [16568455]
 
 - Cuando intentas administrar el localhost, se te pedirá elevar el proceso de puerta de enlace. Si haces clic en **no** en la ventana emergente de Control de cuentas de usuario que aparece, Windows Admin Center no podrá volver a mostrarlo. En este caso, sal del proceso de puerta de enlace haciendo doble clic con el botón derecho en el icono de Windows Admin Center en la bandeja del sistema y elige Salir y vuelve a iniciar Windows Admin Center desde el menú Inicio.
 
@@ -252,3 +210,20 @@ La solución de administración de equipos contiene un subconjunto de herramient
 ## <a name="hyper-converged-cluster-manager-solution"></a>Solución Administrador de clústeres hiperconvergidos
 
 - Algunos comandos, como **Unidades - Actualizar firmware**, **Servidores - Eliminar** y **Volúmenes - Abrir** se han deshabilitado y actualmente no se admiten.
+
+## <a name="azure-services"></a>Servicios de Azure
+
+### <a name="azure-file-sync-permissions"></a>Azure File Sync permisos
+
+Azure File Sync requiere permisos en Azure que el centro de administración de Windows no proporcionó antes de la versión 1910. Si ha registrado la puerta de enlace del centro de administración de Windows con Azure con una versión anterior a la versión 1910 del centro de administración de Windows, tendrá que actualizar la aplicación Azure Active Directory para obtener los permisos correctos para usar Azure File Sync en la versión más reciente de. Centro de administración de Windows. El permiso adicional permite a Azure File Sync realizar la configuración automática del acceso a la cuenta de almacenamiento como se describe en este artículo: Asegúrese de que [Azure File Sync tenga acceso a la cuenta de almacenamiento](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal).
+
+Para actualizar la aplicación Azure Active Directory, puede realizar una de estas dos acciones
+1. Vaya a **configuración** > **Azure** > **anular el registro**y, a continuación, vuelva a registrar el centro de administración de Windows con Azure, asegurándose de que elige crear una nueva aplicación de Azure Active Directory. 
+2. Vaya a la aplicación de Azure Active Directory y agregue manualmente el permiso necesario a la aplicación de Azure Active Directory existente registrada en el centro de administración de Windows. Para ello, vaya a **configuración** > **Azure** > **vista en Azure**. Desde la hoja de **registro de aplicaciones** de Azure, vaya a **API permisos**y seleccione **Agregar un permiso**. Desplácese hacia abajo para seleccionar **Azure Active Directory gráfico**, seleccione **permisos delegados**, expanda el **directorio**y seleccione **Directory. AccessAsUser. All**. Haga clic en **Agregar permisos** para guardar las actualizaciones en la aplicación.
+
+### <a name="options-for-setting-up-azure-management-services"></a>Opciones para configurar los servicios de administración de Azure
+
+Los servicios de administración de Azure, incluidos Azure Monitor, Update Management de Azure y Azure Security Center, usan el mismo agente para un servidor local: el Microsoft Monitoring Agent. Azure Update Management tiene un conjunto más limitado de regiones admitidas y requiere que el área de trabajo Log Analytics esté vinculada a una cuenta de Azure Automation. Debido a esta limitación, si desea configurar varios servicios en el centro de administración de Windows, debe configurar primero Azure Update Management y, a continuación, Azure Security Center o Azure Monitor. Si ha configurado los servicios de administración de Azure que usan el Microsoft Monitoring Agent y, a continuación, intenta configurar Azure Update Management mediante el centro de administración de Windows, el centro de administración de Windows solo le permitirá configurar Azure Update Management si el existente los recursos vinculados a la Microsoft Monitoring Agent admiten Azure Update Management. Si no es así, tiene dos opciones:
+
+1. Vaya al panel de control > Microsoft Monitoring Agent para [desconectar el servidor de las soluciones de administración de Azure existentes](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics) (como Azure Monitor o Azure Security Center). Después, configure Azure Update Management en el centro de administración de Windows. Después, puede volver a configurar las otras soluciones de administración de Azure a través del centro de administración de Windows sin problemas.
+2. Puede [configurar manualmente los recursos de Azure necesarios para azure Update Management](https://docs.microsoft.com/azure/automation/automation-update-management) y, a continuación, [actualizar manualmente el Microsoft Monitoring Agent](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace) (fuera del centro de administración de Windows) para agregar la nueva área de trabajo correspondiente a la solución Update Management quiere usar.

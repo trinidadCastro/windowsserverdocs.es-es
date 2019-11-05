@@ -8,23 +8,23 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: f4e772550aaba6fe9a4f78a6032eaabde4aeb0bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0b4e02e6759bdb91ea51b5dcf5e1d0ae307d13b4
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406869"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567097"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Solución de problemas de Windows Admin Center
 
-> Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
+> Se aplica a: Centro de administración de Windows, versión preliminar del centro de administración de Windows
 
 > [!Important]
-> Esta guía te ayudará a diagnosticar y resolver problemas que te impiden usar Windows Admin Center. Si tienes un problema con una herramienta específica, comprueba si estás experimentando un [problema conocido.](http://aka.ms/wacknownissues)
+> Esta guía te ayudará a diagnosticar y resolver problemas que te impiden usar Windows Admin Center. Si tienes un problema con una herramienta específica, comprueba si estás experimentando un [problema conocido.](https://aka.ms/wacknownissues)
 
-## <a name="installer-fails-with-message-_the-module-microsoftpowershelllocalaccounts-could-not-be-loaded_"></a>El instalador produce un error con el mensaje: **_No se pudo cargar el módulo "Microsoft. PowerShell. LocalAccounts"._**
+## <a name="installer-fails-with-message-_the-module-microsoftpowershelllocalaccounts-could-not-be-loaded_"></a>Error del instalador con el mensaje:  **_no se pudo cargar el módulo ' Microsoft. PowerShell. LocalAccounts '._**
 
-Esto puede ocurrir si se ha modificado o quitado la ruta de acceso predeterminada del módulo de PowerShell. Para resolver el problema, asegúrese de que ```%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules``` es el **primer** elemento de la variable de entorno PSModulePath. Puede lograrlo con la siguiente línea de PowerShell:
+Esto puede ocurrir si se ha modificado o quitado la ruta de acceso predeterminada del módulo de PowerShell. Para resolver el problema, asegúrese de que ```%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules``` sea el **primer** elemento de la variable de entorno PSModulePath. Puede lograrlo con la siguiente línea de PowerShell:
 
 ```powershell
 [Environment]::SetEnvironmentVariable("PSModulePath","%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules;" + ([Environment]::GetEnvironmentVariable("PSModulePath","User")),"User")
@@ -53,12 +53,6 @@ Esto puede ocurrir si se ha modificado o quitado la ruta de acceso predeterminad
 
 ### <a name="if-youve-installed-windows-admin-center-as-a-gateway-on-windows-server"></a>Si has instalado Windows Admin Center como una **puerta de enlace en Windows Server**
 
-* ¿Ha actualizado desde una versión anterior del centro de administración de Windows? Asegúrese de que la regla de Firewall no se eliminó debido a [este problema conocido](known-issues.md#upgrade). Use el siguiente comando de PowerShell para determinar si existe la regla. Si no es así, siga [estas instrucciones](known-issues.md#upgrade) para volver a crearlo.
-    
-    ```powershell
-    Get-NetFirewallRule -DisplayName "SmeInboundOpenException"
-    ```
-
 * [Comprueba la versión de Windows](#check-the-windows-version) del cliente y del servidor.
 
 * Asegúrate de que utilizas Microsoft Edge o Google Chrome como navegador web.
@@ -66,7 +60,7 @@ Esto puede ocurrir si se ha modificado o quitado la ruta de acceso predeterminad
 * En el servidor, abra el administrador de tareas > servicios y asegúrese de que el **centro de administración de ServerManagementGateway/Windows** se está ejecutando.
 ![](../media/Service-TaskMan.PNG)
 
-* Pruebe la conexión de red a la puerta de enlace (reemplace \<values > con la información de la implementación)
+* Pruebe la conexión de red con la puerta de enlace (reemplace \<valores > con la información de la implementación)
 
     ```powershell
     Test-NetConnection -Port <port> -ComputerName <gateway> -InformationLevel Detailed
@@ -96,7 +90,7 @@ Esto puede ocurrir si se ha modificado o quitado la ruta de acceso predeterminad
 
 * Es posible que se haya desactivado la configuración de hosts de confianza. [Siga estas instrucciones para actualizar la configuración de los hosts de confianza.](#configure-trustedhosts) 
 
-## <a name="i-get-the-message-cant-connect-securely-to-this-page-this-might-be-because-the-site-uses-outdated-or-unsafe-tls-security-settings"></a>Obtengo el mensaje: "No se pudo conectar de forma segura a esta página. Esto puede deberse a que el sitio utiliza una configuración de seguridad de TLS no actualizada o no segura.
+## <a name="i-get-the-message-cant-connect-securely-to-this-page-this-might-be-because-the-site-uses-outdated-or-unsafe-tls-security-settings"></a>Obtengo el mensaje: "no se puede conectar de forma segura a esta página. Esto puede deberse a que el sitio utiliza una configuración de seguridad de TLS no actualizada o no segura.
 
 El equipo está restringido a las conexiones HTTP/2. El centro de administración de Windows usa la autenticación integrada de Windows, que no se admite en HTTP/2. Agregue los dos valores de registro siguientes en la clave ```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Http\Parameters``` en **el equipo que ejecuta el explorador** para quitar la restricción http/2:
 
@@ -111,11 +105,11 @@ Estas tres herramientas requieren el protocolo WebSocket, que normalmente está 
 
 ## <a name="i-can-connect-to-some-servers-but-not-others"></a>Puedo conectar con algunos servidores, pero no con otros
 
-* Inicie sesión en la máquina de la puerta de enlace localmente e intente ```Enter-PSSession <machine name>``` en PowerShell, reemplazando \<machine name > por el nombre de la máquina que está intentando administrar en el centro de administración de Windows. 
+* Inicie sesión en la máquina de puerta de enlace localmente e intente ```Enter-PSSession <machine name>``` en PowerShell, reemplazando \<nombre de equipo > por el nombre de la máquina que está intentando administrar en el centro de administración de Windows. 
 
 * Si tu entorno utiliza un grupo de trabajo en lugar de un dominio, consulta [Estoy usando Windows Admin Center en un grupo de trabajo](#using-windows-admin-center-in-a-workgroup).
 
-* **Usar cuentas de administrador local:** Si utiliza una cuenta de usuario local que no es la cuenta de administrador integrada, deberá habilitar la Directiva en el equipo de destino mediante la ejecución del siguiente comando en PowerShell o en un símbolo del sistema como administrador en el equipo de destino:
+* **Con cuentas de administrador local:** si usas una cuenta de usuario local que no sea la cuenta de administrador integrada, debes habilitar la directiva en el equipo de destino ejecutando el siguiente comando en PowerShell o en un símbolo del sistema como administrador en el equipo de destino:
 
     ```
     REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1
@@ -213,7 +207,7 @@ Envíenos un correo electrónico a wacFeedbackAzure@microsoft.com con la siguien
 * Describa el problema y los pasos que realizó para reproducir el problema. 
 * ¿Previamente registró la puerta de enlace en Azure mediante el script descargable New-AadApp. PS1 y después ha actualizado a la versión 1807? ¿O registró la puerta de enlace en Azure con la interfaz de usuario de la configuración de puerta de enlace > Azure?
 * ¿Su cuenta de Azure está asociada a varios directorios o inquilinos?
-    * En caso afirmativo: Al registrar la aplicación Azure AD en el centro de administración de Windows, ¿se usó el directorio predeterminado en Azure? 
+    * En caso afirmativo: al registrar la aplicación Azure AD en el centro de administración de Windows, ¿se usó el directorio predeterminado en Azure? 
 * ¿Tiene su cuenta de Azure acceso a varias suscripciones?
 * ¿Se ha asociado la facturación a la suscripción que estaba usando?
 * ¿Ha iniciado sesión en varias cuentas de Azure en el momento en que se produjo el problema?
