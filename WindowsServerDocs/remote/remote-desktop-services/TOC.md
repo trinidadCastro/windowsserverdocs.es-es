@@ -100,7 +100,7 @@
 #### [Los clientes no se pueden conectar y reciben el mensaje "Clase no registrada"](troubleshoot/rdp-error-class-not-registered.md)
 #### [Los clientes no se pueden conectar y reciben el error "No hay licencias disponibles"](troubleshoot/rdp-error-no-licenses-available.md)
 #### [Los usuarios no se pueden autenticar o deben autenticarse dos veces](troubleshoot/cannot-authenticate-or-must-authenticate-twice.md)
-#### [Al conectarse, se produce el error "Remote Desktop Service is currently busy"](troubleshoot/remote-desktop-service-currently-busy.md) (El servicio Escritorio remoto está ocupado actualmente)
+#### [El servicio Escritorio remoto está ocupado actualmente](troubleshoot/remote-desktop-service-currently-busy.md)
 #### [El cliente de Escritorio remoto se desconecta y no puede volver a conectarse a la misma sesión](troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session.md)
 #### [Los portátiles remotos se desconectan de la red inalámbrica](troubleshoot/remote-laptop-disconnects-wireless-network.md)
 #### [Problemas de bajo rendimiento o de aplicaciones durante la conexión a escritorio remoto](troubleshoot/poor-performance-or-application-problems.md)
