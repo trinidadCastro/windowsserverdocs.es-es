@@ -37,7 +37,7 @@ Hay tres tipos de archivos de conexión que puede crear:
   
 2.  En la columna **Equipo**, haga clic en el nombre del equipo cuya configuración de conexión quiere guardar en un archivo.  
   
-3.  En ***tareas**nombre del equipo *, haga clic en **Guardar conexiones en archivo**. Se muestra la página **Save Connection Settings to File** (Guardar configuración de conexión en archivo).  
+3.  En ***tareas**nombre del equipo*, haga clic en **Guardar conexiones en archivo**. Se muestra la página **Save Connection Settings to File** (Guardar configuración de conexión en archivo).  
   
 4.  Elija el tipo de archivo de conexión que quiere crear y haga clic en **Aceptar**.  
   

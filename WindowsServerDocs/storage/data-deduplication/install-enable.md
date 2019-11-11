@@ -76,12 +76,12 @@ Para determinar si una carga de trabajo funciona bien con la desduplicación, re
 
 1. **¿El conjunto de los conjuntos de sus cargas de trabajo tiene suficiente duplicación para beneficiarse de la habilitación de la desduplicación?**  
     Antes de habilitar Desduplicación de datos para una carga de trabajo, investigue cuánta duplicación de conjunto de datos de la carga de trabajo tiene mediante la herramienta de evaluación del ahorro de desduplicación de datos o DDPEval. Después de instalar Desduplicación de datos, puede encontrar esta herramienta en `C:\Windows\System32\DDPEval.exe`. DDPEval puede evaluar el potencial de optimización en los volúmenes conectados directamente (incluidas unidades locales o volúmenes compartidos de clúster) y recursos compartidos de red asignados o sin asignar.  
-    [https://doi.org/10.13012/J8PN93H8](&nbsp;)   
+    &nbsp;   
     La ejecución de DDPEval.exe devolverá un resultado similar al siguiente:  
     &nbsp;  
     `Data Deduplication Savings Evaluation Tool`  
     `Copyright 2011-2012 Microsoft Corporation.  All Rights Reserved.`    
-    [https://doi.org/10.13012/J8PN93H8](&nbsp;)   
+    &nbsp;   
     `Evaluated folder: E:\Test`     
     `Processed files: 34`  
     `Processed files size: 12.03MB`  
@@ -95,7 +95,7 @@ Para determinar si una carga de trabajo funciona bien con la desduplicación, re
     `Files excluded by policy: 20`  
     `Files excluded by error: 0`  
 
-2. **What ¿mis patrones de e/s de la carga de trabajo en su conjunto de sus conjuntos de trabajo son similares? ¿Qué rendimiento tengo para mi carga de trabajo?**  
+2. **¿Qué aspecto tienen mis patrones de E/S de la carga de trabajo con relación a su conjunto de datos? ¿Qué rendimiento tengo para mi carga de trabajo?**  
      Desduplicación de datos realiza la optimización de los archivos como un trabajo periódico, en lugar de cuando el archivo se escribe un el disco. Por lo tanto, es importante examinar los patrones de lectura previstos de la carga de trabajo para el volumen desduplicado. Como Desduplicación de datos mueve el contenido del archivo al almacenamiento de fragmentos e intenta organizar el almacenamiento de fragmentos por archivo siempre que sea posible, las operaciones de lectura se desempeñarán mejor cuando se aplican a intervalos secuenciales de un archivo.  
 
     Las cargas de trabajo de tipo base de datos suelen tener patrones de lectura más aleatorios que los patrones de lectura secuenciales, porque las bases de datos no suelen garantizar que el diseño de la base de datos sea óptimo para todas las posibles consultas que se pueden ejecutar. Como las secciones del almacén de fragmentos pueden existir en todo el volumen, el acceso a los intervalos de datos en el almacén de fragmentos para las consultas de base de datos puede introducir latencia adicional. Las cargas de trabajo de alto rendimiento son especialmente sensibles a esta latencia adicional, pero otras cargas de trabajo de tipo base de datos podrían no serlo.
