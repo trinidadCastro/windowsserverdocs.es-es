@@ -10,14 +10,14 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 175c4dbd23bac1822365ce80f05d69509d27321c
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 54352f47a31826b91b5696eb90104ca166a4299d
+ms.sourcegitcommit: 18f6b104e73e0397009283d55bee7984ac7ef0d1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935020"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73632650"
 ---
-## <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>Guía para deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio
+# <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>Guía para deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio
 
 Se aplica a: Windows Server 2016
 
@@ -47,7 +47,7 @@ Tareas programadas:
 
 (También puedes acceder a la información sobre todos los servicios detallados en este artículo si consultas la hoja de cálculo de Microsoft Excel adjunta: [Guía para deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio](https://msdnshared.blob.core.windows.net/media/2017/05/Service-management-WS2016.xlsx))
 
-<br />
+
 
 ### <a name="disabling-services-not-installed-by-default"></a>Deshabilitación de los servicios no instalados de manera predeterminada
 
@@ -57,10 +57,10 @@ Microsoft no recomienda aplicar las directivas para deshabilitar los servicios n
 -  Una línea base o banco de pruebas que deshabilite un servicio de Windows no predeterminado (por ejemplo, W3SVC) dará a algunos auditores la impresión errónea de que la tecnología (por ejemplo, IIS) es inherentemente insegura y que no se debería usar nunca.
 -  Si nunca se instala la característica (ni el servicio), esto solo agrega elementos innecesarios a la línea base y al trabajo de verificación.
 
-<br />
+
 En el caso de todos los servicios del sistema que se mencionan en este documentos, las dos tablas siguientes ofrecen una explicación de las columnas y las recomendaciones de Microsoft para habilitar y deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio: 
 
-<br />
+
 
 ### <a name="explanation-of-columns"></a>Explicación de las columnas
 
@@ -68,12 +68,12 @@ En el caso de todos los servicios del sistema que se mencionan en este documento
 |---|---|
 |**Descripción del servicio**|   La descripción del servicio desde sc.exe qdescription.|
 |**Nombre** |Nombre clave (interno) del servicio.|
-|**Instalación** |Siempre instalado: el servicio está en Server Core y Server con Experiencia de escritorio.  <br /> Solo con Experiencia de escritorio: el servicio está en Windows Server 2016 con Experiencia de escritorio, pero ***no*** está en Server Core |
+|**Instalación** |Siempre instalado: El servicio se encuentra en Server Core y Server con Experiencia de escritorio. Solo con Experiencia de escritorio: el servicio está en Windows Server 2016 con Experiencia de escritorio, pero ***no*** está en Server Core |
 |**StartType**  |Tipo de inicio del servicio en Windows Server 2016|
 |**Recomendación** |La recomendación o el consejo de Microsoft sobre la deshabilitación de este servicio en Windows Server 2016 es una implementación empresarial típica bien administrada y donde el servidor no se usa como un reemplazo del escritorio del usuario final.|
 |**Comentarios** |Una explicación adicional.|
 
-<br />
+
 
 ### <a name="explanation-of-microsoft-recommendations"></a>Explicación de las recomendaciones de Microsoft
 
@@ -84,11 +84,11 @@ En el caso de todos los servicios del sistema que se mencionan en este documento
 |**Ya deshabilitado**|  Este servicio está deshabilitado de manera predeterminada, por lo que no es necesario aplicar la directiva.|
 |**Debe estar deshabilitado** |Este servicio nunca se debe habilitar en un sistema empresarial bien administrado.|
 
-<br />
+
 
 En las tablas siguientes se brindan las directrices de Microsoft sobre cómo deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio:
 
-<br />
+
 
 ##  <a name="activex-installer-axinstsv"></a>Instalador de ActiveX (AxInstSV)
 
@@ -102,7 +102,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Se puede deshabilitar si no se necesita la característica |
 
 
-<br />
+
 
 ## <a name="alljoyn-router-service"></a>Servicio del enrutador de AllJoyn   
 
@@ -116,7 +116,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |       |
 | | |
 
-<br />
+
 
 ## <a name="app-readiness"></a>Preparación de las aplicaciones
 
@@ -130,7 +130,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 **Comentarios**    |   
 | | |
 
-<br />
+
 
 ##  <a name="application-identity"></a>Identidad de aplicación
 
@@ -144,7 +144,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 **Comentarios**    |   
 |||     
 
-<br />
+
 
 ##  <a name="application-information"></a>Información de las aplicaciones 
 
@@ -158,7 +158,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Admite la elevación del control de cuentas de usuario en el mismo escritorio
 |||     
 
-<br />
+
 
 ##  <a name="application-layer-gateway-service"></a>Servicio de puerta de enlace de nivel de aplicación       
 
@@ -172,7 +172,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||     
 
-<br />
+
 
 ##  <a name="application-management"></a>Administración de aplicaciones      
 
@@ -186,7 +186,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="appx-deployment-service-appxsvc"></a>Servicios de implementación de AppX (AppXSVC)       
 
@@ -200,7 +200,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="auto-time-zone-updater"></a>Actualizador automático de la zona horaria.           
 
@@ -214,7 +214,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="background-intelligent-transfer-service"></a>Servicio de transferencia inteligente en segundo plano          
 
@@ -228,7 +228,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 
 ## <a name="background-tasks-infrastructure-service"></a>Servicio de la infraestructura de tareas en segundo plano      
@@ -243,7 +243,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="base-filtering-engine"></a>Motor de filtrado de base            
 
@@ -257,7 +257,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="bluetooth-support-service"></a>Servicio de compatibilidad con Bluetooth            
 
@@ -271,7 +271,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Se puede deshabilitar si no se usa. Otro mecanismo de deshabilitación: https://technet.microsoft.com/library/dd252791.aspx
 |||         
 
-<br />          
+
 
 
 ## <a name="cdpusersvc"></a>CDPUserSvc           
@@ -286,7 +286,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Plantilla de servicio de usuario
 |||         
 
-<br />          
+
 
 
 ##  <a name="certificate-propagation"></a>Propagación de certificados     
@@ -301,7 +301,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="client-license-service-clipsvc"></a>Servicio de licencias de cliente (ClipSVC)        
 
@@ -315,7 +315,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="cng-key-isolation"></a>Aislamiento de claves CNG
 
@@ -329,7 +329,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="com-event-system"></a>Sistema de eventos COM+       
 
@@ -343,7 +343,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="com-system-application"></a>Aplicación del sistema COM+     
 
@@ -357,7 +357,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="computer-browser"></a>Explorador de equipos        
 
@@ -371,7 +371,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="connected-devices-platform-service"></a>Servicio de plataforma de dispositivos conectados       
 
@@ -385,7 +385,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="connected-user-experiences-and-telemetry"></a>Experiencias del usuario y telemetría asociadas     
 
@@ -399,7 +399,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="contact-data"></a>Datos de contacto        
 
@@ -413,7 +413,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Plantilla de servicio de usuario
 |||         
 
-<br />          
+
 
 ## <a name="coremessaging"></a>CoreMessaging            
 
@@ -427,7 +427,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="credential-manager"></a>Administrador de credenciales           
 
@@ -441,7 +441,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="cryptographic-services"></a>Servicios criptográficos           
 
@@ -455,7 +455,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="data-sharing-service"></a>Servicio de uso compartido de datos         
 
@@ -469,7 +469,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="datacollectionpublishingservice"></a>DataCollectionPublishingService          
 
@@ -483,7 +483,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="dcom-server-process-launcher"></a>Iniciador de procesos de servidor DCOM         
 
@@ -497,7 +497,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />
+
 
 ##  <a name="device-association-service"></a>Servicio de asociación de dispositivos      
 
@@ -511,7 +511,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />
+
 
 ##  <a name="device-install-service"></a>Servicio de instalación de dispositivos
 
@@ -525,7 +525,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |
 |||
 
-<br />          
+
 
 ##  <a name="device-management-enrollment-service"></a>Servicio de inscripción de administración de dispositivos        
 
@@ -539,7 +539,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="device-setup-manager"></a>Administrador de configuración del dispositivo         
 
@@ -553,7 +553,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="devquery-background-discovery-broker"></a>Agente de detección en segundo plano de DevQuery         
 
@@ -567,7 +567,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="dhcp-client"></a>Cliente DHCP          
 
@@ -581,7 +581,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="diagnostic-policy-service"></a>Servicio de directivas de diagnóstico            
 
@@ -595,7 +595,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="diagnostic-service-host"></a>Host de servicio de diagnóstico     
 
@@ -609,7 +609,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="diagnostic-system-host"></a>Host de sistema de diagnóstico           
 
@@ -623,7 +623,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="distributed-link-tracking-client"></a>Cliente de seguimiento de vínculos distribuidos.            
 
@@ -637,7 +637,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="distributed-transaction-coordinator"></a>Coordinador de transacciones distribuidas     
 
@@ -651,7 +651,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />  
+
 
 ##  <a name="dmwappushsvc"></a>dmwappushsvc        
 
@@ -665,7 +665,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   El servicio es necesario en dispositivos cliente para Intune, MDM y tecnologías de administración similares y también para el Filtro de escritura unificado. No es necesario para el servidor.
 |||         
 
-<br />      
+
 
 ##  <a name="dns-client"></a>Cliente DNS      
 
@@ -679,7 +679,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="downloaded-maps-manager"></a>Administrador de mapas descargados     
 
@@ -693,7 +693,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Si se deshabilita, se interrumpen las aplicaciones que se basan en el servicio; se puede deshabilitar si las aplicaciones no se basan en él.
 |||         
 
-<br />          
+
 
 ## <a name="embedded-mode"></a>Modo incrustado            
 
@@ -707,7 +707,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="encrypting-file-system-efs"></a>Sistema de archivos cifrados (EFS)
 
@@ -721,7 +721,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**   |
 |||                 
 
-<br />  
+
 
 ## <a name="enterprise-app-management-service"></a>Servicio de administración de aplicaciones de empresa            
 
@@ -735,7 +735,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="extensible-authentication-protocol"></a>Protocolo de autenticación extensible           
 
@@ -749,7 +749,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="function-discovery-provider-host"></a>Host de proveedor de detección de funciones         
 
@@ -763,7 +763,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="function-discovery-resource-publication"></a>Publicación de recurso de detección de función      
 
@@ -777,7 +777,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="geolocation-service"></a>Servicio de geolocalización          
 
@@ -791,7 +791,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Si se deshabilita, se interrumpen las aplicaciones que se basan en el servicio; se puede deshabilitar si las aplicaciones no se basan en él.
 |||         
 
-<br />          
+
 
 ##  <a name="group-policy-client"></a>Cliente de directiva de grupo     
 
@@ -805,7 +805,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 
 ## <a name="human-interface-device-service"></a>Servicio de dispositivos de interfaz humana           
@@ -820,7 +820,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="hv-host-service"></a>Servicio de host HV     
 
@@ -834,7 +834,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Optimizadores de rendimiento de las máquinas virtuales invitadas. Hoy no se usa, excepto en las máquinas virtuales rellenadas explícitamente, pero se usará en Protección de aplicaciones.
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-data-exchange-service"></a>Servicio de intercambio de datos de Hyper-V        
 
@@ -848,7 +848,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Consulta HvHost
 |||         
 
-<br />      
+
 
 ## <a name="hyper-v-guest-service-interface"></a>Interfaz de servicio de invitado de Hyper-V          
 
@@ -862,7 +862,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Consulta HvHost
 |||         
 
-<br />  
+
 
 ## <a name="hyper-v-guest-shutdown-service"></a>Servicio de cierre de invitado de Hyper-V           
 
@@ -876,7 +876,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Consulta HvHost
 |||         
 
-<br />
+
 
 ## <a name="hyper-v-heartbeat-service"></a>Servicio de latido de Hyper-V
 | | |
@@ -889,7 +889,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Consulta HvHost
 |||
 
-<br />          
+
 
 ## <a name="hyper-v-powershell-direct-service"></a>Servicio directo de PowerShell de Hyper-V            
 
@@ -903,7 +903,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Consulta HvHost
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-remote-desktop-virtualization-service"></a>Servicio de virtualización de escritorio remoto de Hyper-V            
 
@@ -917,7 +917,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Consulta HvHost
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-time-synchronization-service"></a>Servicio de sincronización de hora de Hyper-V         
 
@@ -931,7 +931,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Consulta HvHost
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-volume-shadow-copy-requestor"></a>Solicitante de instantáneas de volumen de Hyper-V         
 
@@ -945,7 +945,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Consulta HvHost
 |||         
 
-<br />          
+
 
 ## <a name="ike-and-authip-ipsec-keying-modules"></a>Módulos de creación de claves de IPsec para IKE y AuthIP          
 
@@ -959,7 +959,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |    
 |||         
 
-<br />          
+
 
 ## <a name="interactive-services-detection"></a>Detección de servicios interactivos           
 
@@ -973,7 +973,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />  
+
 
 ## <a name="internet-connection-sharing-ics"></a>Conexión compartida a Internet (ICS)            
 
@@ -987,7 +987,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Se requiere para los clientes que se usan como zonas Wi-Fi y también en ambos extremos de la proyección de Miracast. Es posible bloquear la Conexión compartida a Internet con la configuración de GPO, "Prohibir el uso de Conexión compartida a Internet en su red de dominio DNS".
 |||         
 
-<br />          
+
 
 ## <a name="ip-helper"></a>Aplicación auxiliar IP            
 
@@ -1001,7 +1001,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 
 ##  <a name="ipsec-policy-agent"></a>Agente de directiva IPsec      
@@ -1016,7 +1016,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />
+
 
 ##  <a name="kdc-proxy-server-service-kps"></a>Servicio de servidor proxy KDC (KPS)      
 
@@ -1030,7 +1030,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="ktmrm-for-distributed-transaction-coordinator"></a>KTMRM para DTC (Coordinador de transacciones distribuidas)            
 
@@ -1044,7 +1044,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />
+
 
 ##  <a name="link-layer-topology-discovery-mapper"></a>Asignador de detección de topologías de nivel de vínculo        
 
@@ -1058,7 +1058,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Se puede deshabilitar si no existen dependencias del mapa de red.
 |||         
 
-<br />
+
 
 ## <a name="local-session-manager"></a>Administrador de sesión local                    
 
@@ -1072,7 +1072,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||                 
 
-<br />                  
+
 
 ## <a name="microsoft-r-diagnostics-hub-standard-collector"></a>Recopilador estándar del concentrador de diagnósticos de Microsoft (R)         
 
@@ -1086,7 +1086,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />
+
 
 ## <a name="microsoft-account-sign-in-assistant"></a>Ayudante para el inicio de sesión de cuenta Microsoft
 | | |
@@ -1099,7 +1099,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Las cuentas Microsoft no están disponibles en Windows Server.
 |||
 
-<br />          
+
 
 ##  <a name="microsoft-app-v-client"></a>Cliente de Microsoft App-V      
 
@@ -1113,7 +1113,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-iscsi-initiator-service"></a>Servicio del iniciador iSCSI de Microsoft            
 
@@ -1127,7 +1127,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Los datos de diagnóstico indican que se usa en un cliente y también en un servidor. Deshabilitarlo no brinda ningún beneficio.
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-passport"></a>Microsoft Passport           
 
@@ -1141,7 +1141,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Es necesario para los inicios de sesión de PIN/Hello, que no son compatibles en el servidor.
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-passport-container"></a>Contenedor de Microsoft Passport         
 
@@ -1155,7 +1155,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-software-shadow-copy-provider"></a>Proveedor de instantáneas de software de Microsoft          
 
@@ -1169,7 +1169,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-storage-spaces-smp"></a>SMP de Espacios de almacenamiento de Microsoft         
 
@@ -1183,7 +1183,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Sin este servicio, las API de administración de almacenamiento presentarán errores. Por ejemplo: "Get-WmiObject -class MSFT_Disk -Namespace Root\Microsoft\Windows\Storage".
 |||         
 
-<br />          
+
 
 ## <a name="nettcp-port-sharing-service"></a>Servicio de uso compartido de puertos Net.Tcp         
 
@@ -1197,7 +1197,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="netlogon"></a>Netlogon         
 
@@ -1211,7 +1211,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-connection-broker"></a>Agente de conexión de red            
 
@@ -1225,7 +1225,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-connections"></a>Conexiones de red         
 
@@ -1239,7 +1239,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-connectivity-assistant"></a>Asistente para la conectividad de red      
 
@@ -1253,7 +1253,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />  
+
 
 ##  <a name="network-list-service"></a>Servicio de lista de redes        
 
@@ -1267,7 +1267,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-location-awareness"></a>Reconocimiento de ubicación de red           
 
@@ -1281,7 +1281,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-setup-service"></a>Servicio de configuración de red       
 
@@ -1295,7 +1295,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-store-interface-service"></a>Servicio Interfaz de almacenamiento en red      
 
@@ -1309,7 +1309,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="offline-files"></a>Archivos sin conexión            
 
@@ -1323,7 +1323,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="optimize-drives"></a>Optimizar unidades          
 
@@ -1337,7 +1337,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />
+
 
 ## <a name="performance-counter-dll-host"></a>DLL de host del Contador de rendimiento         
 
@@ -1351,7 +1351,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="performance-logs--alerts"></a>Registros y alertas de rendimiento            
 
@@ -1365,7 +1365,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="phone-service"></a>Servicio telefónico       
 
@@ -1379,7 +1379,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Usado por aplicaciones VoIP modernas
 |||         
 
-<br />          
+
 
 ##      <a name="plug-and-play"></a>Plug and Play       
 
@@ -1393,7 +1393,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="portable-device-enumerator-service"></a>Servicio enumerador de dispositivos portátiles           
 
@@ -1407,7 +1407,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="power"></a>Alimentación            
 
@@ -1421,7 +1421,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="print-spooler"></a>Print Spooler            
 
@@ -1435,7 +1435,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   En un controlador de dominio, la instalación del rol del controlador de dominio agrega un subproceso al servicio del administrador de trabajos en cola que es responsable de realizar la eliminación de las impresiones, quitando de Active Directory los objetos de la cola de impresión obsoleta.  Si el servicio del administrador de trabajos en cola no se ejecuta en al menos un controlador de dominio de cada sitio, AD no tiene ninguna forma de quitar las colas antiguas que ya no existen. [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/ )
 |||         
 
-<br />          
+
 
 ##  <a name="printer-extensions-and-notifications"></a>Extensiones y notificaciones de impresora        
 
@@ -1449,7 +1449,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="problem-reports-and-solutions-control-panel-support"></a>Ayuda del Panel de control de Informes de problemas y soluciones     
 
@@ -1463,7 +1463,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="program-compatibility-assistant-service"></a>Servicio Asistente para la compatibilidad de programas     
 
@@ -1477,7 +1477,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="quality-windows-audio-video-experience"></a>Windows Audio Video Experience (qWAVE)      
 
@@ -1491,7 +1491,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Servicio de calidad de servicio del lado cliente
 |||         
 
-<br />          
+
 
 ##      <a name="radio-management-service"></a>Servicio de administración de radio        
 
@@ -1505,7 +1505,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-access-auto-connection-manager"></a>Administrador de conexiones automáticas de acceso remoto            
 
@@ -1519,7 +1519,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-access-connection-manager"></a>Administrador de conexiones de acceso remoto         
 
@@ -1533,7 +1533,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-desktop-configuration"></a>Configuración de Escritorio remoto         
 
@@ -1547,7 +1547,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-desktop-services"></a>Servicios de Escritorio remoto          
 
@@ -1561,7 +1561,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="remote-desktop-services-usermode-port-redirector"></a>Redirector de puerto en modo usuario de Servicios de Escritorio remoto        
 
@@ -1575,7 +1575,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Admite los redireccionamientos en el lado servidor de la conexión.
 |||         
 
-<br />          
+
 
 ## <a name="remote-procedure-call-rpc"></a>Llamada a procedimiento remoto (RPC)          
 
@@ -1589,7 +1589,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="remote-procedure-call-rpc-locator"></a>Localizador de llamada a procedimiento remoto (RPC)             
 
@@ -1603,7 +1603,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |       |
 |||             
 
-<br />              
+
 
 ## <a name="remote-registry"></a>Registro remoto          
 
@@ -1617,7 +1617,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="resultant-set-of-policy-provider"></a>Conjunto resultante de proveedor de directivas            
 
@@ -1631,7 +1631,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="routing-and-remote-access"></a>Enrutamiento y acceso remoto            
 
@@ -1645,7 +1645,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Ya deshabilitado
 |||         
 
-<br />          
+
 
 ## <a name="rpc-endpoint-mapper"></a>Asignador de extremos de RPC          
 
@@ -1659,7 +1659,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="secondary-logon"></a>Inicio de sesión secundario     
 
@@ -1673,7 +1673,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="secure-socket-tunneling-protocol-service"></a>Servicio de protocolo de túnel de sockets seguros            
 
@@ -1687,7 +1687,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   La deshabilitación interrumpe a RRAS.   |
 |||             
 
-<br />              
+
 
 ## <a name="security-accounts-manager"></a>Administrador de cuentas de seguridad            
 
@@ -1701,7 +1701,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="sensor-data-service"></a>Servicio de datos del sensor  
 
@@ -1715,7 +1715,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />  
+
 
 ## <a name="sensor-monitoring-service"></a>Servicio de supervisión de sensores            
 
@@ -1729,8 +1729,6 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />
-
 ## <a name="sensor-service"></a>Servicio de sensores
 
 | | |
@@ -1742,8 +1740,6 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |
 |||
-  
-<br />          
 
 ## <a name="server"></a>Servidor           
 
@@ -1757,7 +1753,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Es necesario para la administración remota, IPC$ y el uso compartido de archivos SMB.
 |||         
 
-<br />          
+
 
 ## <a name="shell-hardware-detection"></a>Detección de hardware shell             
 
@@ -1771,7 +1767,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="smart-card"></a>Tarjeta inteligente           
 
@@ -1785,7 +1781,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="smart-card-device-enumeration-service"></a>Servicio de enumeración de dispositivos de tarjeta inteligente                    
 
@@ -1799,7 +1795,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Es necesario casi exclusivamente para las aplicaciones de WinRT.    |
 |||             
 
-<br />              
+
 
 ## <a name="smart-card-removal-policy"></a>Directiva de extracción de tarjetas inteligentes        
 
@@ -1813,7 +1809,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="snmp-trap"></a>Captura de SNMP            
 
@@ -1827,7 +1823,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="software-protection"></a>Protección de software             
 
@@ -1841,7 +1837,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="special-administration-console-helper"></a>Aplicación auxiliar especial de la consola de administración        
 
@@ -1855,7 +1851,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="spot-verifier"></a>Comprobador puntual            
 
@@ -1869,7 +1865,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="ssdp-discovery"></a>Detección SSDP           
 
@@ -1883,7 +1879,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="state-repository-service"></a>Servicio de repositorio de estado         
 
@@ -1897,7 +1893,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="still-image-acquisition-events"></a>Eventos de adquisición de imágenes estáticas
 
@@ -1911,7 +1907,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />  
+
 
 ## <a name="storage-service"></a>Servicio de almacenamiento          
 
@@ -1925,7 +1921,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="storage-tiers-management"></a>Administración de capas de almacenamiento        
 
@@ -1939,7 +1935,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="superfetch"></a>SuperFetch          
 
@@ -1953,7 +1949,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="sync-host"></a>Host de sincronización            
 
@@ -1967,7 +1963,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Plantilla de servicio de usuario
 |||         
 
-<br />          
+
 
 ## <a name="system-event-notification-service"></a>Servicio de notificación de eventos del sistema            
 
@@ -1981,7 +1977,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="system-events-broker"></a>Agente de eventos del sistema             
 
@@ -1995,7 +1991,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   A pesar de que su descripción implica que solamente es para las aplicaciones de WinRT, es necesario para el programador de tareas, el servicio de infraestructura del agente y otros componentes internos.
 |||         
 
-<br />          
+
 
 ## <a name="task-scheduler"></a>Programador de tareas           
 
@@ -2009,7 +2005,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="tcpip-netbios-helper"></a>Asistente NetBIOS sobre TCP/IP            
 
@@ -2023,7 +2019,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="telephony"></a>Telefonía           
 
@@ -2037,7 +2033,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   La deshabilitación interrumpe a RRAS.
 |||         
 
-<br />          
+
 
 ## <a name="themes"></a>Temas           
 
@@ -2051,7 +2047,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Si este servicio está deshabilitado, no se pueden establecer los temas de accesibilidad.
 |||         
 
-<br />  
+
 
 ## <a name="tile-data-model-server"></a>Servidor del modelo de datos de mosaicos           
 
@@ -2065,7 +2061,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Si este servicio está deshabilitado, el menú Inicio se interrumpe.
 |||         
 
-<br />          
+
 
 ##  <a name="time-broker"></a>Agente de eventos de tiempo     
 
@@ -2079,7 +2075,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   A pesar de que su descripción implica que solamente es para las aplicaciones de WinRT, es necesario para el programador de tareas, el servicio de infraestructura del agente y otros componentes internos.
 |||         
 
-<br />          
+
 
 ## <a name="touch-keyboard-and-handwriting-panel-service"></a>Servicio de teclado táctil y panel de escritura a mano         
 
@@ -2093,7 +2089,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="update-orchestrator-service-for-windows-update"></a>Servicio de actualizaciones Orchestrator para Windows Update           
 
@@ -2107,7 +2103,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   La descripción del servicio faltaba en la versión 1607; Windows Update (incluido WSUS) depende de este servicio.
 |||         
 
-<br />          
+
 
 ## <a name="upnp-device-host"></a>Host de dispositivo UPnP         
 
@@ -2121,7 +2117,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="user-access-logging-service"></a>Servicio de registro de acceso de usuarios          
 
@@ -2135,7 +2131,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="user-data-access"></a>Acceso a datos de usuario        
 
@@ -2149,7 +2145,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Plantilla de servicio de usuario
 |||         
 
-<br />          
+
 
 ## <a name="user-data-storage"></a>Almacenamiento de datos de usuarios            
 
@@ -2163,7 +2159,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Plantilla de servicio de usuario
 |||         
 
-<br />          
+
 
 ## <a name="user-experience-virtualization-service"></a>Servicio de virtualización de la experiencia de usuario           
 
@@ -2177,7 +2173,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="user-manager"></a>Administrador de usuarios        
 
@@ -2191,7 +2187,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="user-profile-service"></a>Servicio de perfiles de usuario         
 
@@ -2205,7 +2201,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="virtual-disk"></a>Disco virtual             
 
@@ -2219,7 +2215,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="volume-shadow-copy"></a>Instantánea de volumen           
 
@@ -2233,7 +2229,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="walletservice"></a>WalletService           
 
@@ -2247,7 +2243,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-audio"></a>Audio de Windows            
 
@@ -2261,7 +2257,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-audio-endpoint-builder"></a>Compilador del punto de conexión de audio de Windows           
 
@@ -2275,7 +2271,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-biometric-service"></a>Servicio biométrico de Windows            
 
@@ -2289,7 +2285,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-camera-frame-server"></a>Servicio FrameServer de la Cámara de Windows         
 
@@ -2303,7 +2299,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-connection-manager"></a>Administrador de conexiones de Windows           
 
@@ -2317,7 +2313,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-defender-network-inspection-service"></a>Servicio de inspección de red de Windows Defender          
 
@@ -2331,7 +2327,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-defender-service"></a>Servicio de Windows Defender         
 
@@ -2345,7 +2341,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-driver-foundation---user-mode-driver-framework"></a>Windows Driver Foundation: marco de controlador en modo usuario           
 
@@ -2359,7 +2355,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-encryption-provider-host-service"></a>Servicio host de proveedor de cifrado de Windows     
 
@@ -2373,7 +2369,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-error-reporting-service"></a>Servicio Informe de errores de Windows          
 
@@ -2387,7 +2383,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Recopila y envía los datos sobre bloqueo usados por los ISV o IHV de Microsoft o de terceros. Los datos se usan para diagnosticar errores que generan bloqueos, los que pueden incluir errores de seguridad. También es necesario para generar los informes de errores corporativos.
 |||         
 
-<br />          
+
 
 ## <a name="windows-event-collector"></a>Recopilador de eventos de Windows          
 
@@ -2401,7 +2397,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Recopila eventos de ETW (incluidos eventos de seguridad) para la capacidad de administración y los diagnósticos.  Son muchas las características y las herramientas de terceros que se basan en el servicio, incluidas herramientas de auditoría de seguridad.
 |||         
 
-<br />          
+
 
 ## <a name="windows-event-log"></a>Registro de sucesos de Windows            
 
@@ -2415,7 +2411,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-firewall"></a>Firewall de Windows         
 
@@ -2429,7 +2425,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-font-cache-service"></a>Servicio de caché de fuentes de Windows      
 
@@ -2443,7 +2439,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-image-acquisition-wia"></a>Adquisición de imágenes de Windows (WIA)          
 
@@ -2457,7 +2453,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-insider-service"></a>Servicio de Windows Insider     
 
@@ -2471,7 +2467,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   El servidor no admite la distribución de paquetes piloto, .por lo que no opera en el servidor. La característica también se puede deshabilitar a través de la directiva de grupo.
 |||         
 
-<br />          
+
 
 ##  <a name="windows-installer"></a>Windows Installer       
 
@@ -2485,7 +2481,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-license-manager-service"></a>Servicio de administrador de licencias de Windows          
 
@@ -2499,7 +2495,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-management-instrumentation"></a>Instrumental de administración de Windows       
 
@@ -2513,7 +2509,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-mobile-hotspot-service"></a>Servicio de zona con cobertura inalámbrica móvil de Windows          
 
@@ -2527,7 +2523,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-modules-installer"></a>Instalador de módulos de Windows        
 
@@ -2541,7 +2537,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-push-notifications-system-service"></a>Servicio del sistema de notificaciones de inserción de Windows            
 
@@ -2555,7 +2551,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Es necesario para los iconos dinámicos y otras características.
 |||         
 
-<br />      
+
 
 ## <a name="windows-push-notifications-user-service"></a>Servicio de usuario de notificaciones de inserción de Windows          
 
@@ -2569,7 +2565,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Plantilla de servicio de usuario
 |||         
 
-<br />
+
 
 ## <a name="windows-remote-management-ws-management"></a>Administración remota de Windows (WS-Management)
 | | |
@@ -2582,7 +2578,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Necesario para la administración remota.
 |||
 
-<br />          
+
 
 ##  <a name="windows-search"></a>Windows Search      
 
@@ -2596,7 +2592,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-time"></a>Hora de Windows        
 
@@ -2610,7 +2606,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-update"></a>Windows Update           
 
@@ -2624,7 +2620,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="winhttp-web-proxy-auto-discovery-service"></a>Servicio de detección automática del proxy web WinHTTP         
 
@@ -2638,7 +2634,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Todo lo que usa la pila de red puede tener una dependencia funcional de este servicio. Muchas de las organizaciones se basan en esto para configurar el enrutamiento de proxy HTTP de sus redes internas.  Sin el servicio, todas las conexiones HTTP a Internet originadas internamente presentarán un error.
 |||         
 
-<br />          
+
 
 ## <a name="wired-autoconfig"></a>Servicio de configuración automática de redes cableadas         
 
@@ -2652,7 +2648,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="wmi-performance-adapter"></a>Adaptador de rendimiento de WMI          
 
@@ -2666,7 +2662,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="workstation"></a>Estación de trabajo          
 
@@ -2680,7 +2676,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />
+
 
 ## <a name="xbox-live-auth-manager"></a>Administración de autenticación de Xbox Live           
 
@@ -2694,7 +2690,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   
 |||         
 
-<br />          
+
 
 ## <a name="xbox-live-game-save"></a>Partida guardada en Xbox Live          
 
@@ -2708,6 +2704,6 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |   Este servicio sincroniza los datos guardados para los juegos que pueden guardarse en Xbox Live.  Si se detiene el servicio, la partida guardada no se cargará a Xbox Live ni se descargará desde ahí.
 |||         
 
-<br /> 
-<br /> 
+
+
 

@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2019
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: e235c8013afa573712feaec75bbd1ca195c0e307
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c914a472869f9887c83733d6aab614b5676d17d7
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356997"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567139"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -25,9 +25,9 @@ ms.locfileid: "71356997"
 
 >[!VIDEO https://www.youtube.com/embed/PcQj6ZklmK0]
 
-![Infografía de Windows Admin Center](media/WAC1809Poster_thumb.PNG)
+![Infografía de Windows Admin Center](media/WAC1910Poster_thumb.PNG)
 
-[Descargar el PDF](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1809Poster.pdf)
+[Descargar el PDF](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1910Poster.pdf)
 
 ## <a name="quick-start"></a>Inicio rápido
 
@@ -86,6 +86,7 @@ Puedes tener Windows Admin Center en funcionamiento y en ejecución en tu entorn
             <ul>
             <li><a href="use/get-started.md">Iniciar y agregar conexiones</a>
             <li><a href="use/manage-servers.md">Administración de servidores</a>
+            <li><a href="use/deploy-hyperconverged-infrastructure.md">Implementar la infraestructura hiperconvergida</a>
             <li><a href="use/manage-hyper-converged.md">Administración de la infraestructura hiperconvergida</a>
             <li><a href="use/manage-failover-clusters.md">Administración de clústeres de conmutación por error</a>
             <li><a href="use/manage-virtual-machines.md">Administración de máquinas virtuales</a>
@@ -129,11 +130,12 @@ Puedes tener Windows Admin Center en funcionamiento y en ejecución en tu entorn
 
 Obtén información sobre las últimas funciones publicadas:
 
+- La versión [1910](https://aka.ms/wac1910) es la versión con disponibilidad general más reciente que incorpora varios servicios híbridos nuevos de Azure y ofrece características que anteriormente se encontraban en versión preliminar en el canal de disponibilidad general.
 - En la versión [1909](https://aka.ms/wac1909) se incorpora el tipo de conexión específico de la máquina virtual de Azure y se unifican los tipos de conexión para los clústeres de conmutación por error tradicionales y los clústeres de HCI.
 - En la versión [1908](https://aka.ms/wac1908) se agregaron actualizaciones visuales, Packetmon, FlowLog Audit, la incorporación de Azure Monitor para clústeres y compatibilidad con WinRM a través de HTTPS (puerto 5986).
 - En la versión [1907](https://aka.ms/wac1907) se agregaron vínculos de estimación de costos de Azure y se realizaron mejoras en la importación, exportación y etiquetado de máquinas virtuales.
 - En la versión [1906](https://aka.ms/wac1906) se agregaron VM de importación y exportación, se cambiaron las cuentas de Azure y se incluyeron conexiones de Azure, el experimento de configuración de la conectividad, mejoras de rendimiento y las herramientas de generación de perfiles de rendimiento.
-- La versión 1904.1 es la versión más reciente con disponibilidad general: una actualización de mantenimiento para mejorar la estabilidad de los complementos de puerta de enlace.
+- La versión 1904.1 era una actualización de mantenimiento para mejorar la estabilidad de los complementos de puerta de enlace.
 - La versión [1904](https://aka.ms/wac1904) era una versión con disponibilidad general que introdujo la herramienta Azure Hybrid Services y que trajo las características que anteriormente se encontraban en la versión preliminar al canal de disponibilidad general.
 - En la versión [1903](https://aka.ms/wac1903) se agregaron notificaciones por correo electrónico desde Azure Monitor, la posibilidad de agregar conexiones de servidor o de PC desde Active Directory y nuevas herramientas para administrar Active Directory, DHCP y DNS.
 - En la versión [1902](https://aka.ms/wac1902) se agregó una lista de conexiones compartidas y mejoras en la administración de redes definidas por software entre las que se incluyen nuevas herramientas SDN para administrar ACL, conexiones de puerta de enlace y redes lógicas.

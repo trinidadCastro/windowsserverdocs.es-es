@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/24/2019
+ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4325bd7b33c16d972cac980e17c10bacbfeffd8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6a8e66398bc61a69250b84101a3cb66f2c8f3548
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387591"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567071"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -31,7 +31,25 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 |Grupo de usuarios |Versión  |
 |-----------|---------|
 |Public     |1.2.247  |
-|Insider    |1.2.247  |
+|Insider    |1.2.428  |
+
+## <a name="updates-for-version-12428"></a>Actualizaciones de la versión 1.2.428
+
+*Fecha de publicación: 31/10/2019*
+
+- Ya hay una vista previa disponible de las versiones de 32 bits y ARM64 del cliente.
+- Ahora, el cliente guarda los cambios que realizas en la barra de conexión (como su posición, tamaño y estado anclado) y aplica los cambios en las sesiones.
+- Se actualizaron los cuadros de diálogo del estado de conexión y la información de la puerta de enlace.
+- Se solucionó un problema que hacía que se solicitaran dos credenciales al mismo tiempo al intentar establecer conexión después de que expirara el token de Azure Active Directory.
+- En Windows 7, ahora se solicitan correctamente las credenciales a los usuarios si las habían guardado cuando el servidor no lo permite.
+- La solicitud de Azure Active Directory ahora se muestra delante de la ventana de conexión cuando se vuelve a establecer conexión.
+- Los elementos anclados en la barra de tareas ahora se actualizan cuando se actualiza una fuente.
+- Se mejoró el desplazamiento en Connection Center al usar la función táctil.
+- Se quitó la línea vacía del menú desplegable de resolución.
+- Se quitaron las entradas innecesarias en el Administrador de credenciales de Windows.
+- Las sesiones de escritorio ahora tienen el tamaño correcto al salir de la pantalla completa.
+- El cuadro de diálogo de desconexión de RemoteApp ahora se muestra en primer plano al reanudar la sesión después de entrar en el modo de suspensión.
+- Se solucionaron problemas de accesibilidad como la navegación con el teclado.
 
 ## <a name="updates-for-version-12247"></a>Actualizaciones de la versión 1.2.247
 
