@@ -117,7 +117,7 @@ Los siguientes procedimientos recomendados principales son comunes para todas la
 Las siguientes prácticas recomendadas de seguridad son específicas para el uso de Microsoft SQL Server® o Windows Internal Database (WID) cuando se usan estas tecnologías de base de datos para administrar datos en el diseño y la implementación de AD FS.  
   
 > [!NOTE]  
-> Estas recomendaciones tienen como objetivo ampliar (no sustituir) la guía de seguridad del producto de SQL Server. Para obtener más información acerca de cómo planear una instalación de SQL Server segura, consulte [consideraciones de seguridad para una instalación de SQL Server](https://go.microsoft.com/fwlink/?LinkID=139831) (https://go.microsoft.com/fwlink/?LinkID=139831).  
+> Estas recomendaciones tienen como objetivo ampliar (no sustituir) la guía de seguridad del producto de SQL Server. Para obtener más información acerca de cómo planear una instalación de SQL Server segura, vea [consideraciones de seguridad para una instalación de SQL Server](https://go.microsoft.com/fwlink/?LinkID=139831) (https://go.microsoft.com/fwlink/?LinkID=139831).  
   
 -   **Implemente siempre SQL Server detrás de un firewall en un entorno de red físicamente seguro.**  
   
@@ -129,11 +129,11 @@ Las siguientes prácticas recomendadas de seguridad son específicas para el uso
   
 -   **Minimice el área expuesta de SQL Server.**  
   
-    Habilita únicamente los extremos de SQL Server que sean necesarios. De manera predeterminada, SQL Server proporciona un extremo TCP predefinido que no se puede eliminar. Por AD FS, debe habilitar este extremo TCP para la autenticación Kerberos. Para revisar los extremos TCP actuales y comprobar si se han agregado puertos TCP definidos por el usuario adicionales a una instalación de SQL, usa la instrucción de consulta “SELECT * FROM sys.tcp_endpoints” en una sesión de Transact-SQL (T-SQL). Para obtener más información acerca de SQL Server configuración del punto de conexión, consulte [How para: Configure el Motor de base de datos para escuchar en varios puertos TCP @ no__t-0 (https://go.microsoft.com/fwlink/?LinkID=189231).  
+    Habilita únicamente los extremos de SQL Server que sean necesarios. De manera predeterminada, SQL Server proporciona un extremo TCP predefinido que no se puede eliminar. Por AD FS, debe habilitar este extremo TCP para la autenticación Kerberos. Para revisar los extremos TCP actuales y comprobar si se han agregado puertos TCP definidos por el usuario adicionales a una instalación de SQL, usa la instrucción de consulta “SELECT * FROM sys.tcp_endpoints” en una sesión de Transact-SQL (T-SQL). Para obtener más información acerca de la configuración del punto de conexión de SQL Server, consulte [How to: Configure the motor de base de datos para escuchar en varios puertos TCP](https://go.microsoft.com/fwlink/?LinkID=189231) (https://go.microsoft.com/fwlink/?LinkID=189231).  
   
 -   **Evite el uso de la autenticación basada en SQL.**  
   
-    Para evitar la transferencia de contraseñas como texto no cifrado por la red o almacenar contraseñas en opciones de configuración, usa únicamente la autenticación de Windows en la instalación de SQL Server. La autenticación de SQL Server es un modo de autenticación heredado. No se recomienda almacenar credenciales de inicio de sesión de lenguaje de consulta estructurado (nombres de usuario y contraseñas de SQL) al usar la autenticación de SQL Server. Para obtener más información, consulte [modos de autenticación](https://go.microsoft.com/fwlink/?LinkID=189232) (https://go.microsoft.com/fwlink/?LinkID=189232).  
+    Para evitar la transferencia de contraseñas como texto no cifrado por la red o almacenar contraseñas en opciones de configuración, usa únicamente la autenticación de Windows en la instalación de SQL Server. La autenticación de SQL Server es un modo de autenticación heredado. No se recomienda almacenar credenciales de inicio de sesión de lenguaje de consulta estructurado (nombres de usuario y contraseñas de SQL) al usar la autenticación de SQL Server. Para obtener más información, vea [modos de autenticación](https://go.microsoft.com/fwlink/?LinkID=189232) (https://go.microsoft.com/fwlink/?LinkID=189232).  
   
 -   **Evalúe detenidamente la necesidad de seguridad adicional del canal en la instalación de SQL.**  
   
@@ -149,5 +149,5 @@ Las siguientes prácticas recomendadas de seguridad son específicas para el uso
   
     Para mejorar el servicio y el aislamiento de datos puedes crear procedimientos almacenados para todos los comandos de búsqueda en el almacén de atributos. Puedes crear un rol de base de datos y después conceder permisos a dicho rol para ejecutar los procedimientos almacenados. Asigne la identidad de servicio del AD FS servicio de Windows a este rol de base de datos. El AD FS servicio de Windows no debe ser capaz de ejecutar ninguna otra instrucción SQL, excepto los procedimientos almacenados adecuados que se usan para la búsqueda de atributos. Bloquear el acceso a la base de datos de SQL Server de este modo reduce el riesgo de un ataque de elevación de privilegios.  
   
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

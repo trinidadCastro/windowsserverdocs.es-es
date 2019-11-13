@@ -62,7 +62,7 @@ Para lograr la precisión de 1% para un equipo de destino específico en compara
 
 ### <a name="target-accuracy-50-milliseconds"></a>Precisión de destino: 50 milisegundos
 
-Todos los requisitos descritos en la sección **Target precisión: 1 segundo @ no__t-0 se aplican, excepto en el caso de los controles más estrictos que se describen en esta sección.
+Todos los requisitos que se describen en la sección **precisión de destino: 1 segundo** se aplican, excepto en el caso de los controles más estrictos que se describen en esta sección.
 
 Los requisitos adicionales para lograr la precisión de 50 ms para un sistema de destino específico son:
 
@@ -81,7 +81,7 @@ Los requisitos adicionales para lograr la precisión de 50 ms para un sistema de
 
 ### <a name="target-accuracy-1-millisecond"></a>Precisión de destino: 1 milisegundo
 
-Todos los requisitos descritos en las secciones @no__t precisión 0Target: 1 segundo @ no__t-0 y **Target precisión: 50 milisegundos @ no__t-0 se aplican, excepto cuando los controles más estrictos se describen en esta sección.
+Todos los requisitos descritos en las secciones **precisión de destino: 1 segundo** y precisión de destino: se aplican **50 milisegundos** , excepto en el caso de los controles más estrictos que se describen en esta sección.
 
 Los requisitos adicionales para conseguir una precisión de 1 ms para un sistema de destino específico son:
 

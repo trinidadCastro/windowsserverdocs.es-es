@@ -40,7 +40,7 @@ Para importar revisiones en WSUS, debe tener acceso al sitio del catálogo de Mi
 
 Las actualizaciones aprobadas importadas desde el sitio del catálogo de Microsoft Update se descargan la próxima vez que se sincronice el servidor WSUS. No se descargan en el momento de la importación desde el sitio del catálogo de Microsoft Update.
 
-Tenga en cuenta que debe tener acceso al sitio del catálogo de Microsoft Update a través de la consola de WSUS para asegurarse de que las actualizaciones se importan en un formato compatible con WSUS. Si tiene acceso al sitio web del catálogo de Microsoft Update manualmente, las actualizaciones que descargue no se importan en el servidor WSUS, sino que se descargan como individuales *. Archivos MSU. WSUS no tiene actualmente un mecanismo compatible para la importación de archivos en el \*. Formato MSU.
+Tenga en cuenta que debe tener acceso al sitio del catálogo de Microsoft Update a través de la consola de WSUS para asegurarse de que las actualizaciones se importan en un formato compatible con WSUS. Si tiene acceso al sitio web del catálogo de Microsoft Update manualmente, las actualizaciones que descargue no se importan en el servidor WSUS, sino que se descargan como individuales *. Archivos MSU. WSUS no tiene actualmente un mecanismo compatible para importar archivos en el \*. Formato MSU.
 
 Si ejecuta el Asistente para la limpieza del servidor, las actualizaciones importadas del catálogo de Microsoft Update que están establecidas como no aprobadas o rechazadas pueden quitarse del servidor WSUS. Si se quitan, se pueden volver a importar desde el catálogo de Microsoft Update.
 
@@ -64,7 +64,7 @@ Los administradores de WSUS pueden considerar la posibilidad de restringir el ac
 
     -   Seleccione **autenticación de Windows** y haga clic en **Habilitar** en el panel **acciones** de la derecha.
 
-2.  Cree un grupo de destino de WSUS para los equipos que necesitan la revisión y agréguelos al grupo. Para obtener más información acerca de los equipos y grupos, consulte [Administración de equipos cliente de WSUS y grupos](managing-wsus-client-computers-and-wsus-computer-groups.md) de equipos WSUS en esta guía, y la sección [3,3. Configure los grupos de equipos de WSUS @ no__t-0 del paso 3: Configure WSUS en la guía de implementación de WSUS.
+2.  Cree un grupo de destino de WSUS para los equipos que necesitan la revisión y agréguelos al grupo. Para obtener más información acerca de los equipos y grupos, consulte [Administración de equipos cliente de WSUS y grupos](managing-wsus-client-computers-and-wsus-computer-groups.md) de equipos WSUS en esta guía y la sección [3,3. Configure los grupos de equipos de WSUS](../deploy/2-configure-wsus.md#23-configure-wsus-computer-groups) del paso 3: configurar WSUS, en la guía de implementación de WSUS.
 
 3.  Descargue los archivos de la revisión.
 

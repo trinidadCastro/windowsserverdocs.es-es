@@ -37,13 +37,13 @@ Al agregar un punto de entrada nuevo a una implementación multisitio, hay que e
 Ejecute el comando y cuide de especificar el parámetro *RemoteAccessServer* con el nombre del servidor que se va a agregar como punto de entrada.  
   
 ## <a name="remote-access-is-not-configured"></a>Acceso remoto no está configurado  
-**Error recibido**. El acceso remoto no está configurado en < SERVER_NAME >. Especifique el nombre de un servidor que forme parte de una implementación multisitio.  
+**Error recibido**. El acceso remoto no está configurado en < server_name >. Especifique el nombre de un servidor que forme parte de una implementación multisitio.  
   
 **Causa**  
   
 Acceso remoto no está configurado en el equipo especificado en el parámetro *ComputerName* o en el equipo en el que el comando se ha ejecutado.  
   
-Al agregar un punto de entrada nuevo a una implementación multisitio, debe especificar dos parámetros: *ComputerName* y *RemoteAccessServer*. *ComputerName* es el nombre de un servidor que ya forma parte de la implementación multisitio, mientras que *RemoteAccessServer* es el nombre del servidor que se quiere agregar como nuevo punto de entrada. Si realiza este proceso en un equipo que forme parte de una implementación multisitio, el parámetro ComputerName no es necesario.  
+Al agregar un punto de entrada nuevo a una implementación multisitio, se deben especificar dos parámetros: *ComputerName* y *RemoteAccessServer*. *ComputerName* es el nombre de un servidor que ya forma parte de la implementación multisitio, mientras que *RemoteAccessServer* es el nombre del servidor que se quiere agregar como nuevo punto de entrada. Si realiza este proceso en un equipo que forme parte de una implementación multisitio, el parámetro ComputerName no es necesario.  
   
 **Solución**  
   
@@ -102,11 +102,11 @@ La dirección ConnectTo y la dirección del servidor de ubicación de red son la
 La dirección ConnectTo se debe poder resolver a través de Internet para que los equipos cliente puedan conectarse mediante IP-HTTPS. Sin embargo, la dirección del servidor de ubicación de red se debe poder resolver a través de la red corporativa, pero no a través de Internet. Asegúrese de que las direcciones ConnectTo y del servidor de ubicación de red son distintas. Seleccione otras direcciones e inténtelo de nuevo.  
   
 ## <a name="directaccess-or-vpn-already-installed"></a>DirectAccess o VPN ya instalados  
-**Error recibido**. Se detectó una instalación de VPN en el servidor < SERVER_NAME >. Especifique un servidor alternativo que no tenga instalado el acceso remoto o quite la configuración de VPN del servidor.  
+**Error recibido**. Se detectó una instalación de VPN en el servidor < server_name >. Especifique un servidor alternativo que no tenga instalado el acceso remoto o quite la configuración de VPN del servidor.  
   
 O bien  
   
-Acceso remoto ya está instalado en el servidor < nombre_servidor >. Especifique un servidor alternativo que no ejecute DirectAccess o quite la configuración de DirectAccess existente del servidor.  
+Acceso remoto ya está instalado en el servidor < server_name >. Especifique un servidor alternativo que no ejecute DirectAccess o quite la configuración de DirectAccess existente del servidor.  
   
 **Causa**  
   
@@ -119,7 +119,7 @@ Para agregar un servidor a una implementación multisitio, el rol Acceso remoto 
 Ejecute el comando y asegúrese de que el servidor que indique en el parámetro *RemoteAccessServer* no tiene DirectAccess o VPN configurados.  
   
 ## <a name="ipsec-root-certificate"></a>Certificado raíz IPsec  
-**Error recibido**. No se encuentra el certificado raíz IPsec configurado en el servidor < nombre_servidor >.  
+**Error recibido**. No se encuentra el certificado raíz IPsec configurado en el servidor < server_name >.  
   
 **Causa**  
   
@@ -147,7 +147,7 @@ Cuando DirectAccess se instala por primera vez, se inspecciona el adaptador de r
   
     **Solución**  
   
-    En caso de que toda la red interna esté configurada con direcciones IPv6 e IPv4, considere la posibilidad de pasar a una implementación de IPv6+IPv4 para disfrutar de las ventajas que reportan las tecnologías de IPv6. Consulte "transición de una IPv4 pura a una red corporativa IPv6 + IPv4" en @no__t 0Step 3: Planee la implementación multisitio @ no__t-0.  
+    En caso de que toda la red interna esté configurada con direcciones IPv6 e IPv4, considere la posibilidad de pasar a una implementación de IPv6+IPv4 para disfrutar de las ventajas que reportan las tecnologías de IPv6. Consulte "transición de una IPv4 pura a una red corporativa IPv6 + IPv4" en [el paso 3: planear la implementación multisitio](assetId:///19d49dbf-1786-47bb-ab97-f0458c53d91d).  
   
 -   **Problema 2**  
   
@@ -191,7 +191,7 @@ Cuando DirectAccess se instala por primera vez, se inspecciona el adaptador de r
   
 -   **Problema 1**  
   
-    **Error recibido**. El dominio especificado en el parámetro ServerGpoName < server_GPO > no existe. En su lugar, especifique el dominio < nombre_dominio >.  
+    **Error recibido**. El dominio especificado en el parámetro ServerGpoName < server_GPO > no existe. En su lugar, especifique el dominio < domain_name >.  
   
     **Causa**  
   
@@ -203,7 +203,7 @@ Cuando DirectAccess se instala por primera vez, se inspecciona el adaptador de r
   
 -   **Problema 2**  
   
-    **Error recibido**. El GPO de servidor debe estar ubicado en el dominio del servidor de acceso remoto. Especifique el dominio < nombre_dominio > en el parámetro ServerGpoName.  
+    **Error recibido**. El GPO de servidor debe estar ubicado en el dominio del servidor de acceso remoto. Especifique el < de dominio domain_name > en el parámetro ServerGpoName.  
   
     **Causa**  
   
@@ -235,12 +235,12 @@ Para eximir una dirección en las reglas NRPT:
 Cuando se agrega un sufijo de nombre sin indicar una dirección de servidor, dicho sufijo se considera una exención de NRPT.  
   
 ## <a name="saving-server-gpo-settings"></a>Guardar la configuración del GPO de servidor  
-**Error recibido**. Se produjo un error al guardar la configuración de acceso remoto en el GPO < GPO_name >.  
+**Error recibido**. Error al guardar la configuración de acceso remoto en el GPO < GPO_name >.  
   
 Para solucionar este error, consulte el tema sobre cómo guardar la configuración de GPO de servidor en [solución de problemas al habilitar multisitio](https://technet.microsoft.com/library/jj591658.aspx).  
   
 ## <a name="gpo-updates-cannot-be-applied"></a>No se pueden aplicar actualizaciones de GPO  
-**ADVERTENCIA recibida**. No se pueden aplicar actualizaciones de GPO en < SERVER_NAME >. Los cambios no surtirán efecto hasta la siguiente actualización de directiva.  
+**ADVERTENCIA recibida**. No se pueden aplicar actualizaciones de GPO en < server_name >. Los cambios no surtirán efecto hasta la siguiente actualización de directiva.  
   
 **Causa**  
   

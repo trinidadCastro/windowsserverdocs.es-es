@@ -27,21 +27,21 @@ En los pasos siguientes se describe cómo configurar la infraestructura de acces
   
 En esta guía del laboratorio de pruebas, creará un acceso remoto con el entorno OTP mediante los pasos siguientes:  
   
--   [PASO 1: Complete la configuración de DirectAccess @ no__t-0. Complete todos los pasos de la guía de laboratorio @no__t 0Test: Mostrar la configuración de servidor único de DirectAccess con IPv4 e IPv6 no__t-0.  
+-   [Paso 1: completar la configuración de DirectAccess](assetId:///4dbf877f-02fb-439b-907a-f5b3f1d8afa6). Complete todos los pasos de la [Guía del laboratorio de pruebas: demostración de la configuración de servidor único de DirectAccess con IPv4 e IPv6 mixtos](https://go.microsoft.com/fwlink/p/?LinkId=237004).  
   
--   [PASO 2: Configure APP1 @ no__t-0. Configure APP1 con plantillas de certificado de OTP para su uso por parte de EDGE1.  
+-   [Paso 2: configurar app1](assetId:///c1bb590f-91d4-4ed5-bceb-b0e36eabd4ff). Configure APP1 con plantillas de certificado de OTP para su uso por parte de EDGE1.  
   
--   [PASO 3: Configure DC1 @ no__t-0. Compruebe el nombre principal de usuario definido en DC1.  
+-   [Paso 3: configurar DC1](assetId:///904a6edc-a771-45ed-9630-a34a680bb522). Compruebe el nombre principal de usuario definido en DC1.  
   
--   [PASO 7: Instale y configure RSA @ no__t-0. Instale y configure RSA, un servidor RADIUS y OTP y configure EDGE1 para OTP.  
+-   [Paso 7: instalar y configurar RSA](assetId:///baa4c28c-add7-42e2-8afd-ccc7a559406a). Instale y configure RSA, un servidor RADIUS y OTP y configure EDGE1 para OTP.  
   
--   [PASO 11: Compruebe el estado de OTP en EDGE1 @ no__t-0. Asegúrese de que el estado de OTP sea correcto en el servidor de acceso remoto.  
+-   [Paso 11: comprobar el estado de OTP en EDGE1](assetId:///3b397a4a-8478-47f2-a932-9e8e048c14ba). Asegúrese de que el estado de OTP sea correcto en el servidor de acceso remoto.  
   
--   [PASO 8: Pruebe la conectividad de DirectAccess desde la subred HomeNet @ no__t-0. Pruebe la funcionalidad OTP de DirectAccess desde detrás de un dispositivo NAT.  
+-   [Paso 8: probar la conectividad de DirectAccess desde la subred HomeNet](assetId:///ba1652a6-0692-4add-91ca-34a84956ba14). Pruebe la funcionalidad OTP de DirectAccess desde detrás de un dispositivo NAT.  
   
--   [PASO 10: Probar la conectividad de DirectAccess desde Internet @ no__t-0. Probar la Conectividad del cliente de DirectAccess desde Internet.  
+-   [Paso 10: probar la conectividad de DirectAccess desde Internet](assetId:///321149eb-5f23-4a0b-b8fb-1244540126e9). Probar la Conectividad del cliente de DirectAccess desde Internet.  
   
--   [PASO 12: Una instantánea de la configuración @ no__t-0. Después de completar el laboratorio de pruebas, tome una instantánea de la configuración de DirectAccess en funcionamiento con OTP para que pueda volver a ella más adelante para probar escenarios adicionales.  
+-   [Paso 12: instantánea de la configuración](assetId:///8a51ed3c-9c32-402f-85d1-617ce46845b4). Después de completar el laboratorio de pruebas, tome una instantánea de la configuración de DirectAccess en funcionamiento con OTP para que pueda volver a ella más adelante para probar escenarios adicionales.  
   
 
 

@@ -25,10 +25,10 @@ La mejor manera de implementar cuentas de usuario en Multipoint Services depende
   
 -   **Cuentas de usuario locales** : para una pequeña implementación con solo unos pocos equipos que ejecutan servicios de MultiPoind y pocos usuarios, puede que le resulte más conveniente usar *cuentas de usuario locales* creadas en Multipoint Services. Puede crear una cuenta individual para cada persona que vaya a usar el sistema o crear una cuenta genérica para cada estación, que cualquier usuario puede usar para iniciar sesión. Los administradores de Multipoint Services crean y administran cuentas de usuario locales mediante Multipoint Manager. Las cuentas locales pueden ser administradores, tener derechos administrativos limitados o ser usuarios normales sin acceso a multipoint Services Desktop o Multipoint Manager.  
   
--   **Cuentas de dominio** : Si su entorno tiene muchos equipos que ejecutan Multipoint Services y muchos usuarios, es probable que le resulte más útil configurar un dominio Active Directory Domain Services \(AD DS @ no__t-2 y usar *cuentas de usuario de dominio*. que permiten a los usuarios tener acceso a su propio perfil de usuario y configuración desde cualquier estación del dominio. Un administrador de dominio debe crear las cuentas de usuario de dominio en el controlador de dominio.  
+-   **Cuentas de dominio** : Si su entorno tiene muchos equipos que ejecutan Multipoint Services y muchos usuarios, es probable que le resulte más útil configurar una Active Directory Domain Services \(AD DS\) dominio y usar *cuentas de usuario de dominio*, lo que permite a los usuarios tener acceso a su propio perfil de usuario y configuración desde cualquier estación del dominio. Un administrador de dominio debe crear las cuentas de usuario de dominio en el controlador de dominio.  
   
 > [!NOTE]  
-> En las secciones siguientes se describen los escenarios que se pueden implementar para las cuentas de usuario locales en Multipoint Services. Si usa cuentas de usuario de dominio, consulte el escenario "uno o varios servidores Multipoint en un entorno de red de dominio" en escenarios de @no__t 0Example: Cuentas de usuario de Multipoint Services @ no__t-0.  
+> En las secciones siguientes se describen los escenarios que se pueden implementar para las cuentas de usuario locales en Multipoint Services. Si usa cuentas de usuario de dominio, consulte el escenario "uno o varios servidores Multipoint en un entorno de red de dominio" en [escenarios de ejemplo: cuentas de usuario de Multipoint Services](Example-scenarios--MultiPoint-Services-user-accounts.md).  
   
 ## <a name="planning-local-user-accounts"></a>Planeación de cuentas de usuario locales  
 En las secciones siguientes se tienen en cuenta las ventajas, las desventajas y los requisitos de varias formas de implementar cuentas de usuario locales compartidas o individuales en el entorno de Windows MultiPoint Services.  
@@ -38,7 +38,7 @@ Al crear cuentas de usuario locales, tiene la opción dos enfoques.  Asigne cada
   
 Desde la perspectiva de la administración del sistema, la asignación de usuarios a un equipo de Multipoint Services específico puede ser más conveniente. Por ejemplo, si tiene dos servidores multipoint con cinco estaciones cada uno, puede crear cuentas de usuario locales, tal como se muestra en la tabla siguiente.  
   
-@no__t 0Table 1: Asignación de cuentas de usuario locales a equipos específicos que ejecutan Multipoint Services @ no__t-0  
+**Tabla 1: asignación de cuentas de usuario locales a equipos específicos que ejecutan Multipoint Services**  
   
 |Equipo A|Equipo B|  
 |--------------|--------------|  
@@ -52,7 +52,7 @@ En este escenario, cada usuario tiene una sola cuenta en un equipo determinado. 
   
 Por el contrario, también es posible replicar cuentas de usuario individuales en todos los equipos que ejecutan Multipoint Services, tal y como se muestra en la tabla siguiente.  
   
-@no__t 0Table 2: Replicar cuentas de usuario en todos los equipos que ejecutan Multipoint Services @ no__t-0  
+**Tabla 2: replicación de cuentas de usuario en todos los equipos que ejecutan Multipoint Services**  
   
 |Equipo A|Equipo B|  
 |--------------|--------------|  
@@ -67,15 +67,15 @@ Una ventaja de este enfoque es que los usuarios tienen una cuenta de usuario loc
 ### <a name="use-generic-local-user-accounts"></a>Usar cuentas de usuario locales genéricas  
 Si el sistema Multipoint Services no está conectado a un dominio y no desea crear una cuenta individual para cada usuario, puede crear cuentas genéricas para cada estación. Por ejemplo, si tiene dos equipos que ejecutan Multipoint Services y cinco estaciones están asociadas a cada equipo, es posible que decida crear cuentas de usuario similares a las que se muestran en la tabla siguiente.  
   
-@no__t 0Table 3: Creación de cuentas de usuario genéricas, una cuenta por estación @ no__t-0  
+**Tabla 3: creación de cuentas de usuario genéricas, una cuenta por estación**  
   
 |Equipo A|Equipo B|  
 |--------------|--------------|  
-|Computer_A-Station_01|Computer_B-Station_01|  
-|Computer_A-Station_02|Computer_B-Station_02|  
-|Computer_A-Station_03|Computer_B-Station_03|  
-|Computer_A-Station_04|Computer_B-Station_04|  
-|Computer_A-Station_05|Computer_B-Station_05|  
+|Computer_A Station_01|Computer_B Station_01|  
+|Computer_A Station_02|Computer_B Station_02|  
+|Computer_A Station_03|Computer_B Station_03|  
+|Computer_A Station_04|Computer_B Station_04|  
+|Computer_A Station_05|Computer_B Station_05|  
   
 En este escenario, todas las cuentas de estación tienen la misma contraseña y las contraseñas y los nombres de cuenta de usuario genérica están disponibles para todos los usuarios. Una ventaja de este enfoque es que la sobrecarga de administrar cuentas de usuario es probable que sea menor que si se usan cuentas individuales, ya que normalmente hay menos estaciones que usuarios. Además, la sobrecarga que se produce al replicar cuentas de usuario en cada servidor se elimina.  
   

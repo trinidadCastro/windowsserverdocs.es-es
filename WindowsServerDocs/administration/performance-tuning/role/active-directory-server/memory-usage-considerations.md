@@ -49,9 +49,9 @@ El mayor uso de memoria de la variable en LSASS es la memoria caché del búfer 
 
 El almacén de la versión de ESE es el uso de memoria variable (la parte roja del diagrama anterior). La cantidad de memoria que se usa depende de si tiene Windows Server 2019 o versiones anteriores de Windows.
 
-- En las versiones de Windows Server anteriores a Windows Server 2019, de forma predeterminada, LSASS puede usar hasta aproximadamente 400 MB de memoria (en función del número de CPU) en un equipo de 64 bits para el almacén de versiones de ESE. Para obtener más información acerca de cómo se usa el almacén de versiones, vea la siguiente entrada de blog de preguntar A servicios de Ryan Ries: [El almacén de versiones llamó a y están todos fuera de cubos](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/The-Version-Store-Called-and-They-8217-re-All-Out-of-Buckets/ba-p/400415).
+- En las versiones de Windows Server anteriores a Windows Server 2019, de forma predeterminada, LSASS puede usar hasta aproximadamente 400 MB de memoria (en función del número de CPU) en un equipo de 64 bits para el almacén de versiones de ESE. Para obtener más información sobre cómo se usa el almacén de versiones, vea la siguiente entrada de blog de preguntar A servicios de Ryan Ries: [el almacén de versiones denominado y todos los cubos](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/The-Version-Store-Called-and-They-8217-re-All-Out-of-Buckets/ba-p/400415).
 
-- En Windows Server 2019, se simplifica y cuando se inicia por primera vez el servicio NTDS, el tamaño del almacén de versiones de ESE ahora se calcula como el 10% de la RAM física, con un mínimo de 400 MB y un máximo de 4 GB. Para obtener más información sobre esta solución de problemas y el almacén de versiones, vea otro blog de Ryan Ries: @no__t 0Deep: Active Directory cambios del almacén de versiones de ESE en el servidor 2019 @ no__t-0.
+- En Windows Server 2019, se simplifica y cuando se inicia por primera vez el servicio NTDS, el tamaño del almacén de versiones de ESE ahora se calcula como el 10% de la RAM física, con un mínimo de 400 MB y un máximo de 4 GB. Para obtener más información sobre esta solución de problemas y el almacén de versiones, vea otro blog de Ryan Ries: [profundización: Active Directory cambios del almacén de versiones de ese en el servidor 2019](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/Deep-Dive-Active-Directory-ESE-Version-Store-Changes-in-Server/ba-p/400510).
 
 ## <a name="other-memory-use"></a>Otro uso de memoria
 
@@ -63,7 +63,7 @@ Para obtener un rendimiento óptimo, LSASS toma tanta RAM como sea posible en un
 
 Debido a esto y para aumentar el rendimiento, es recomendable limitar o minimizar el número de programas en un controlador de dominio. Si no hay ninguna solicitud de memoria, LSASS usa esta memoria para almacenar en caché el Active Directory base de datos y, por tanto, lograr un rendimiento óptimo.
 
-Si observa que un controlador de dominio tiene problemas de rendimiento, vea también los procesos con un uso significativo de la memoria. Puede que se deba a un problema que necesita para solucionar los problemas. Pueden incluir componentes de Microsoft. Asegúrese de mantenerse al día con las actualizaciones de servicio recientes. @ no__t-0Microsoft incluye soluciones para un uso excesivo de la memoria como parte de las actualizaciones de calidad, que también pueden ayudar al rendimiento del controlador de dominio.
+Si observa que un controlador de dominio tiene problemas de rendimiento, vea también los procesos con un uso significativo de la memoria. Puede que se deba a un problema que necesita para solucionar los problemas. Pueden incluir componentes de Microsoft. Asegúrese de mantenerse al día con las actualizaciones de servicio recientes&mdash;Microsoft incluye soluciones para el uso excesivo de memoria como parte de las actualizaciones de calidad, que también pueden ayudar al rendimiento del controlador de dominio.
 
 Hay instalaciones de sistema operativo integradas que pueden consumir una gran cantidad de RAM según el perfil de uso:
 

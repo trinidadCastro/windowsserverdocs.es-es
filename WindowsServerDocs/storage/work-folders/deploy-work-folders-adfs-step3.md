@@ -15,21 +15,21 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71365772"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-3-set-up-work-folders"></a>Implementar carpetas de trabajo con AD FS y proxy de aplicación web: Paso 3: configurar carpetas de trabajo
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-3-set-up-work-folders"></a>Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: Paso 3; configurar Carpetas de trabajo
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
 En este tema se describe el tercer paso para implementar Carpetas de trabajo con los Servicios de federación de Active Directory (AD FS) y el Proxy de aplicación web. Puedes encontrar el resto de pasos de este proceso en estos temas:  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Información general @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: información general](deploy-work-folders-adfs-overview.md)  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 1: configurar AD FS @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 1, configurar AD FS](deploy-work-folders-adfs-step1.md)  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 2: AD FS trabajo posterior a la configuración @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 2 AD FS trabajo posterior a la configuración](deploy-work-folders-adfs-step2.md)  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 4: configurar el proxy de aplicación web @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 4: configurar el proxy de aplicación Web](deploy-work-folders-adfs-step4.md)  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 5: configuración de los clientes @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 5, configurar clientes](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
 >   Las instrucciones que se describen en esta sección son para un entorno de Windows Server 2019 o Windows Server 2016. Si estás usando Windows Server 2012 R2, lee el artículo en el que se detallan las [instrucciones para Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
@@ -42,7 +42,7 @@ Para instalar Carpetas de trabajo, debes tener un servidor unido al dominio y qu
 En el ejemplo de prueba, debes unir el equipo que ejecute Carpetas de trabajo al dominio de Contoso y configurar la interfaz de red tal como se describe en las siguientes secciones. 
 
 ### <a name="set-the-server-ip-address"></a>Establecer la dirección IP del servidor  
-Cambia la dirección IP del servidor a una dirección IP estática. En el ejemplo de prueba, use la clase IP A, que es 192.168.0.170/máscara de subred: 255.255.0.0/puerta de enlace predeterminada: 192.168.0.1/DNS preferido: 192.168.0.150 (la dirección IP del controlador de dominio). 
+Cambia la dirección IP del servidor a una dirección IP estática. En el ejemplo prueba, usa la clase IP A, que es 192.168.0.170 / máscara de subred: 255.255.0.0 / puerta de enlace predeterminada: 192.168.0.1 / DNS preferido: 192.168.0.150 (es la dirección IP del controlador de dominio). 
   
 ### <a name="create-the-cname-record-for-work-folders"></a>Crear el registro CNAME de Carpetas de trabajo  
 Para crear el registro CNAME de Carpetas de trabajo, sigue estos pasos:  
@@ -189,7 +189,7 @@ Para finalizar la configuración de Carpetas de trabajo, sigue estos pasos adici
 ### <a name="bind-the-certificate"></a>Enlazar el certificado  
 Carpetas de trabajo se comunica solo a través de SSL y debe tener el certificado autofirmado que creaste anteriormente (o el certificado que emitió la entidad de certificación) enlazado al puerto.  
   
-Hay dos métodos que puede usar para enlazar el certificado al puerto a través de Windows PowerShell: Cmdlets de IIS y netsh.  
+Existen dos métodos que puedes usar para enlazar el certificado al puerto mediante Windows PowerShell: cmdlets de IIS y netsh.  
   
 #### <a name="bind-the-certificate-by-using-netsh"></a>Enlazar el certificado mediante netsh  
 Para usar la utilidad de scripting de línea de comandos netsh en Windows PowerShell, debes canalizar el comando netsh. El siguiente script de ejemplo busca el certificado con el firmante **workfolders.contoso.com** y lo enlaza al puerto 443 mediante netsh:  
@@ -271,11 +271,11 @@ Debes exportar el certificado autofirmado de Carpetas de trabajo, para que despu
   
 -   El cliente de Windows que no está unido a un dominio  
   
-Para exportar el certificado, siga los mismos pasos que usó para exportar el certificado AD FS anteriormente, como se describe en [Deploy Work folders with AD FS and Web Application proxy: Paso 2: AD FS trabajo posterior a la configuración @ no__t-0, exporte el certificado de AD FS.  
+Para exportar el certificado, sigue los mismos pasos que usaste para exportar el certificado de AD FS, tal como se describe en [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 2; trabajo posterior a la configuración de AD FS](deploy-work-folders-adfs-step2.md) y Exportar el certificado de AD FS.  
   
-Paso siguiente: @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 4: configurar el proxy de aplicación web @ no__t-0  
+Siguiente paso: [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 4; configurar el Proxy de aplicación web](deploy-work-folders-adfs-step4.md)  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Introducción a carpetas de trabajo](Work-Folders-Overview.md)  
   
 

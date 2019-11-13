@@ -21,7 +21,7 @@ ms.locfileid: "71393049"
 
 >Se aplica a: Windows Server 2016
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -40,7 +40,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
   
 ## <a name="resolution"></a>Resolución  
   
-@no__t: 0Check el catálogo de Windows Server para ver si el servidor está calificado para ejecutar Hyper-V. A continuación, asegúrese de que el BIOS está habilitado para la virtualización asistida por hardware y la prevención de ejecución de datos aplicada por hardware. A continuación, compruebe el registro de eventos del hipervisor de Hyper-V. *  
+*Compruebe el catálogo de Windows Server para ver si el servidor está calificado para ejecutar Hyper-V. A continuación, asegúrese de que el BIOS está habilitado para la virtualización asistida por hardware y la prevención de ejecución de datos aplicada por hardware. A continuación, compruebe el registro de eventos del hipervisor de Hyper-V.*  
   
 Para comprobar el catálogo, consulte [Catálogo de Windows Server](https://go.microsoft.com/fwlink/?LinkId=111228) (https://go.microsoft.com/fwlink/?LinkId=111228).  
   
@@ -76,7 +76,7 @@ A continuación, compruebe el registro de eventos del hipervisor de Hyper-V. Si 
   
 #### <a name="to-check-the-event-logs"></a>Para comprobar los registros de eventos  
   
-1.  Abra el Visor de eventos. Haga clic en **Inicio**, en **herramientas administrativas**y, a continuación, en **visor de eventos**.  
+1.  Abre el Visor de eventos. Haga clic en **Inicio**, en **herramientas administrativas**y, a continuación, en **visor de eventos**.  
   
 2.  Abra el registro de eventos del hipervisor de Hyper-V. En el panel de navegación, expanda **registros de aplicaciones y servicios** >> **Microsoft** >> **Windows** >> **Hyper-V-hipervisor**y, a continuación, haga clic en **operativo**.  
   
@@ -86,9 +86,9 @@ A continuación, compruebe el registro de eventos del hipervisor de Hyper-V. Si 
   
 5.  Use un filtro para buscar eventos de hipervisor de Hyper-V:   
     1. En el panel **acciones** , haga clic en **filtrar registro actual**. En el caso de los **orígenes de eventos**, especifique "Hyper-V-hipervisor".   
-    2. Busque los eventos que notifican problemas. Por ejemplo, el ID. de evento 41 indica un problema con la configuración del BIOS: "Error en el lanzamiento de Hyper-V. VMX no está presente o no está habilitado en el BIOS ".  
+    2. Busque los eventos que notifican problemas. Por ejemplo, el ID. de evento 41 indica un problema con la configuración del BIOS: "error de inicio de Hyper-V. VMX no está presente o no está habilitado en el BIOS ".  
   
-### <a name="see-also"></a>Vea también  
+### <a name="see-also"></a>Consulta también  
 Para obtener más información sobre el uso de Hyper-V en Windows 10, incluido cómo comprobar que el equipo puede ejecutar Hyper-V, consulte [requisitos del sistema de Hyper-v de Windows 10](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_compatibility). 
 
 

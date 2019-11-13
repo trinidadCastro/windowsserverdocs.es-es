@@ -36,14 +36,14 @@ En este escenario:
 4.  [Validar el escenario](Deploy-Claims-Across-Forests--Demonstration-Steps-.md#BKMK_5)  
 
 ## <a name="BKMK_1.1"></a>Configurar los requisitos previos y el entorno de prueba  
-La configuración de prueba implica la configuración de dos bosques: Adatum Corporation y Contoso, Ltd, y tienen una confianza bidireccional entre contoso y adatum. "adatum.com" es el bosque de confianza y "contoso.com" es el bosque que confía.  
+La configuración de prueba implica la configuración de dos bosques: Adatum Corporation y Contoso, Ltd, y que tienen una confianza bidireccional entre contoso y adatum. "adatum.com" es el bosque de confianza y "contoso.com" es el bosque que confía.  
 
 El escenario de transformación de notificaciones muestra la transformación de una notificación en el bosque de confianza a una notificación en el bosque que confía. Para ello, debe configurar un nuevo bosque llamado adatum.com y rellenar el bosque con un usuario de prueba con un valor de empresa de ' Adatum '. A continuación, debe configurar una relación de confianza bidireccional entre contoso.com y adatum.com.  
 
 > [!IMPORTANT]  
 > Al configurar los bosques contoso y Adatum, debe asegurarse de que ambos dominios raíz estén en el nivel funcional del dominio de Windows Server 2012 para que funcione la transformación de notificaciones.  
 
-Debe configurar lo siguiente para el laboratorio. Estos procedimientos se explican en detalle en @no__t 0Appendix B: Configuración del entorno de prueba](Appendix-B--Setting-Up-the-Test-Environment.md)  
+Debe configurar lo siguiente para el laboratorio. Estos procedimientos se explican en detalle en [el Apéndice B: configurar el entorno de prueba.](Appendix-B--Setting-Up-the-Test-Environment.md)  
 
 Debe implementar los siguientes procedimientos para configurar el laboratorio para este escenario:  
 
@@ -68,7 +68,7 @@ Use la siguiente información para completar este escenario:
 |Objects|Detalles|  
 |-----------|-----------|  
 |Usuarios|Jeff Low, contoso|  
-|Notificaciones de usuario en adatum y contoso|ID: ad://ext/Company:ContosoAdatum,<br /><br />Atributo de origen: compañía<br /><br />Valores sugeridos: Contoso, Adatum **importante:** Debe establecer el identificador en el tipo de notificación ' Company ' en Contoso y Adatum para que sea el mismo para que funcione la transformación de notificaciones.|  
+|Notificaciones de usuario en adatum y contoso|ID: ad://ext/Company:ContosoAdatum,<br /><br />Atributo de origen: compañía<br /><br />Valores sugeridos: Contoso, Adatum **importante:** debe establecer el identificador en el tipo de notificación ' compañía ' en Contoso y Adatum para que sea el mismo para que funcione la transformación de notificaciones.|  
 |Regla de acceso central en Contoso|AdatumEmployeeAccessRule|  
 |Directiva de acceso central en Contoso|Directiva de acceso de solo Adatum|  
 |Directivas de transformación de notificaciones en adatum y contoso|Empresa DenyAllExcept|  
@@ -161,7 +161,7 @@ En este paso, intentará obtener acceso a la carpeta D:\EARNINGS que se configur
 
 1. Inicie sesión en el equipo cliente, CLIENT1 como Juan bajo con la contraseña <strong>pass@word1</strong>.  
 
-2. Vaya a la carpeta \\ \ ARCHIVO1. contoso. com\Earnings.  
+2. Vaya a la carpeta \\\FILE1.contoso.com\Earnings.  
 
 3. Jeff Low debe poder tener acceso a la carpeta.  
 
@@ -171,9 +171,9 @@ A continuación se muestra una lista de casos comunes adicionales en la transfor
 
 |                                                 Escenario                                                 |                                                                                                                                                                                                                                           Directiva                                                                                                                                                                                                                                            |
 |----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                  Permitir que todas las notificaciones que proceden de Adatum pasen a contoso Adatum                  |                                                          Codifica <br />New-ADClaimTransformPolicy \`<br /> -Description: "Directiva de transformación de notificaciones para permitir todas las notificaciones" \`<br />-Name: "AllowAllClaimsPolicy" \`<br />-AllowAll \`<br />-Server:"contoso. com" \`<br />Set-ADClaimTransformLink \`<br />-Identity:"adatum. com" \`<br />-Policy: "AllowAllClaimsPolicy" \`<br />-TrustRole: confiar \`<br />-Server:"contoso. com" \`                                                          |
-|                  Denegar todas las notificaciones que proceden de Adatum a pasar a contoso Adatum                   |                                                            Codifica <br />New-ADClaimTransformPolicy \`<br />-Description: "Directiva de transformación de notificaciones para denegar todas las notificaciones" \`<br />-Name: "DenyAllClaimsPolicy" \`<br /> -DenyAll \`<br />-Server:"contoso. com" \`<br />Set-ADClaimTransformLink \`<br />-Identity:"adatum. com" \`<br />-Policy: "DenyAllClaimsPolicy" \`<br />-TrustRole: confiar \`<br />-Server:"contoso. com" \`                                                             |
-| Permitir todas las notificaciones que proceden de Adatum, excepto "compañía" y "Departamento", para pasar a contoso Adatum | Código <br />-New-ADClaimTransformationPolicy \`<br />-Description: "Directiva de transformación de notificaciones para permitir todas las notificaciones excepto la empresa y el Departamento" \`<br /> -Name: "AllowAllClaimsExceptCompanyAndDepartmentPolicy" \`<br />-AllowAllExcept: compañía, Departamento \`<br />-Server:"contoso. com" \`<br />Set-ADClaimTransformLink \`<br /> -Identity:"adatum. com" \`<br />-Policy: "AllowAllClaimsExceptCompanyAndDepartmentPolicy" \`<br /> -TrustRole: confiar \`<br />-Server:"contoso. com" \` |
+|                  Permitir que todas las notificaciones que proceden de Adatum pasen a contoso Adatum                  |                                                          Codifica <br />\` New-ADClaimTransformPolicy<br /> -Description: "Directiva de transformación de notificaciones para permitir todas las notificaciones" \`<br />-Name: "AllowAllClaimsPolicy" \`<br />-AllowAll \`<br />-Server:"contoso. com" \`<br />\` Set-ADClaimTransformLink<br />-Identity:"adatum. com" \`<br />-Policy: "AllowAllClaimsPolicy" \`<br />-TrustRole: confiar en \`<br />-Server:"contoso. com" \`                                                          |
+|                  Denegar todas las notificaciones que proceden de Adatum a pasar a contoso Adatum                   |                                                            Codifica <br />\` New-ADClaimTransformPolicy<br />-Description: "Directiva de transformación de notificaciones para denegar todas las notificaciones" \`<br />-Name: "DenyAllClaimsPolicy" \`<br /> -DenyAll \`<br />-Server:"contoso. com" \`<br />\` Set-ADClaimTransformLink<br />-Identity:"adatum. com" \`<br />-Policy: "DenyAllClaimsPolicy" \`<br />-TrustRole: confiar en \`<br />-Server:"contoso. com"\`                                                             |
+| Permitir todas las notificaciones que proceden de Adatum, excepto "compañía" y "Departamento", para pasar a contoso Adatum | Código <br />-New-ADClaimTransformationPolicy \`<br />-Description: "Directiva de transformación de notificaciones para permitir todas las notificaciones excepto la empresa y el Departamento" \`<br /> -Name: "AllowAllClaimsExceptCompanyAndDepartmentPolicy" \`<br />-AllowAllExcept: compañía, Departamento \`<br />-Server:"contoso. com" \`<br />\` Set-ADClaimTransformLink<br /> -Identity:"adatum. com" \`<br />-Policy: "AllowAllClaimsExceptCompanyAndDepartmentPolicy" \`<br /> -TrustRole: confiar en \`<br />-Server:"contoso. com" \` |
 
 ## <a name="BKMK_Links"></a>Vea también  
 
@@ -185,6 +185,6 @@ A continuación se muestra una lista de casos comunes adicionales en la transfor
 
 -   [Lenguaje de reglas de transformación de notificaciones](Claims-Transformation-Rules-Language.md)  
 
--   [Control de acceso dinámico: Información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [Access Control dinámico: información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
 
 

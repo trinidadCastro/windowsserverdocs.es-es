@@ -19,11 +19,11 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71388221"
 ---
-# <a name="test-lab-guide-demonstrate-a-directaccess-multisite-deployment"></a>Guía del laboratorio de pruebas para la Demostración de una implementación multisitio de DirectAccess
+# <a name="test-lab-guide-demonstrate-a-directaccess-multisite-deployment"></a>Guía del laboratorio de pruebas: demostración de una implementación multisitio de DirectAccess
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-El acceso remoto es un rol de servidor de los sistemas operativos Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012 que permite a los usuarios remotos acceder de forma segura a los recursos de red internos mediante DirectAccess o RRAS VPN. Esta guía contiene instrucciones paso a paso para ampliar la guía de laboratorio de @no__t 0Test: Mostrar la configuración de servidor único de DirectAccess con IPv4 e IPv6 @ no__t-0 mixto para demostrar el acceso remoto en un escenario de multisitio.  
+El acceso remoto es un rol de servidor de los sistemas operativos Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012 que permite a los usuarios remotos acceder de forma segura a los recursos de red internos mediante DirectAccess o RRAS VPN. Esta guía contiene instrucciones paso a paso para ampliar la guía del [laboratorio de pruebas: demostración de la configuración de servidor único de DirectAccess con IPv4 e IPv6 mixto](https://go.microsoft.com/fwlink/p/?LinkId=237004) para demostrar el acceso remoto en un escenario de varios sitios.  
   
 La implementación del acceso remoto en un escenario multisitio le permite configurar servidores de acceso remoto en ubicaciones geográficamente distintas. Anteriormente, los usuarios remotos debían conectarse siempre a la red corporativa a través de un servidor de DirectAccess determinado. Con Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 y Windows 10 o Windows 8, puede configurar puntos de entrada para cada ubicación geográfica de la implementación. Cada punto de entrada puede ser un único servidor de acceso remoto o un clúster de servidores de acceso remoto. Los usuarios remotos tienen la opción de conectarse a cualquiera de los puntos de entrada de acceso remoto de la organización. Por ejemplo, si un usuario remoto normalmente se conecta al punto de entrada de acceso remoto que se encuentra en Asia, pero después llega a un viaje de negocio a Europe, el equipo cliente se conecta automáticamente al punto de entrada de acceso remoto más cercano.  
   

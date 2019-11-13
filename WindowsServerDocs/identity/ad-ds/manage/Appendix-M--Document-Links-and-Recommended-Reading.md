@@ -16,12 +16,12 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71368938"
 ---
-# <a name="appendix-m-document-links-and-recommended-reading"></a>Apéndice M: Vínculos de documentos y lecturas recomendadas
+# <a name="appendix-m-document-links-and-recommended-reading"></a>Anexo M: vínculos a documentos y lecturas recomendadas
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
   
-## <a name="appendix-m-document-links-and-recommended-reading"></a>Apéndice M: Vínculos de documentos y lecturas recomendadas  
+## <a name="appendix-m-document-links-and-recommended-reading"></a>Anexo M: vínculos a documentos y lecturas recomendadas  
   
 ### <a name="document-links"></a>Vínculos de documentos  
 La tabla siguiente contiene una lista de vínculos a documentos externos y sus direcciones URL para que los lectores de copias impresas de este documento puedan tener acceso a esta información. Los vínculos se muestran en el orden en que aparecen en el documento.  
@@ -90,7 +90,7 @@ La tabla siguiente contiene una lista de vínculos a documentos externos y sus d
 |[Administración de los CS de retina](http://www.wideeyesecurity.com/products.asp)|[http://www.wideeyesecurity.com/products.asp](http://www.wideeyesecurity.com/products.asp)|  
 |[Lúmenes](http://www.lumension.com/?rpLeadSourceId=5009&gclid=CKuai_e13rMCFal7QgodMFkAyA)|[http://www.lumension.com/?rpLeadSourceId=5009&gclid=CKuai_e13rMCFal7QgodMFkAyA](http://www.lumension.com/?rpLeadSourceId=5009&gclid=CKuai_e13rMCFal7QgodMFkAyA)|  
 |[Administración de vulnerabilidades de lúmenes](http://www.lumension.com/Solutions/Vulnerability-Management.aspx)|[http://www.lumension.com/Solutions/Vulnerability-Management.aspx](http://www.lumension.com/Solutions/Vulnerability-Management.aspx)|  
-|[Guía de amenazas y contramedidas: Derechos de usuario @ no__t-0|[https://technet.microsoft.com/library/hh125917(v=ws.10).aspx](https://technet.microsoft.com/library/hh125917(v=ws.10).aspx)|  
+|[Guía de amenazas y contramedidas: derechos de usuario](https://technet.microsoft.com/library/hh125917(v=ws.10).aspx)|[https://technet.microsoft.com/library/hh125917(v=ws.10).aspx](https://technet.microsoft.com/library/hh125917(v=ws.10).aspx)|  
 |[Mitigación de amenazas y vulnerabilidades](https://technet.microsoft.com/library/cc755181(v=ws.10).aspx)|[https://technet.microsoft.com/library/cc755181(v=ws.10).aspx](https://technet.microsoft.com/library/cc755181(v=ws.10).aspx)|  
 |[Derechos de usuario](https://technet.microsoft.com/library/dd349804(v=WS.10).aspx)|[https://technet.microsoft.com/library/dd349804(v=WS.10).aspx](https://technet.microsoft.com/library/dd349804(v=WS.10).aspx)|  
 |[Acceder al administrador de credenciales como un llamador de confianza](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_2)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_2](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_2)|  
@@ -166,7 +166,7 @@ La tabla siguiente contiene una lista de vínculos a documentos externos y sus d
 |[Prácticas recomendadas para delegar la administración de Active Directory](https://www.microsoft.com/download/details.aspx?id=21678) para Windows Server 2003|[https://www.microsoft.com/en-us/download/details.aspx?id=21678](https://www.microsoft.com/download/details.aspx?id=21678)|  
 |[Ciclo de vida de Soporte técnico de Microsoft](https://support.microsoft.com/lifecycle/)|[https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx](https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx)|  
 |[Active Directory especificaciones técnicas](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|[https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|  
-|@no__t mensaje de 0Error cuando los usuarios que no son administradores con control delegado intentan unir equipos a un controlador de dominio basado en Windows Server 2003 o Windows Server 2008: "Acceso denegado" ](https://support.microsoft.com/kb/932455)|[https://support.microsoft.com/kb/932455](https://support.microsoft.com/kb/932455)| 
+|[Mensaje de error cuando los usuarios que no son administradores con control delegado intentan unir equipos a un controlador de dominio basado en Windows Server 2003 o Windows Server 2008: "acceso denegado"](https://support.microsoft.com/kb/932455)|[https://support.microsoft.com/kb/932455](https://support.microsoft.com/kb/932455)| 
 |[Guía paso a paso de la comprobación del mecanismo de autenticación para AD DS en Windows Server 2008 R2](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|[https://technet.microsoft.com/library/dd378897(WS.10).aspx](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|  
 |[Validación de KDC estricta](https://www.microsoft.com/download/details.aspx?id=6382)|[https://www.microsoft.com/download/details.aspx?id=6382](https://www.microsoft.com/download/details.aspx?id=6382)|  
   
@@ -189,7 +189,7 @@ La tabla siguiente contiene una lista de lecturas recomendadas que le ayudarán 
 |[Prácticas recomendadas para delegar la administración de Active Directory](https://www.microsoft.com/download/details.aspx?id=21678) para Windows Server 2003|  
 |[Ciclo de vida de Soporte técnico de Microsoft](https://support.microsoft.com/lifecycle/)|  
 |[Active Directory especificaciones técnicas](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx) -dSHeuristics|  
-|@no__t mensaje de 0Error cuando los usuarios que no son administradores con control delegado intentan unir equipos a un controlador de dominio basado en Windows Server 2003 o Windows Server 2008: "Acceso denegado" ](https://support.microsoft.com/kb/932455)|  
+|[Mensaje de error cuando los usuarios que no son administradores con control delegado intentan unir equipos a un controlador de dominio basado en Windows Server 2003 o Windows Server 2008: "acceso denegado"](https://support.microsoft.com/kb/932455)|  
 |[Guía de procedimientos recomendados para proteger las instalaciones de Active Directory. doc](https://go.microsoft.com/fwlink/?LinkId=140862)|  
 |[Guía de seguridad de Hyper-V](https://www.microsoft.com/download/details.aspx?id=16650)|  
 |[La guía paso a paso de la comprobación del mecanismo de autenticación para AD DS en Windows Server 2008 R2](https://technet.microsoft.com/library/dd378897(WS.10).aspx).|  

@@ -23,7 +23,7 @@ ms.locfileid: "71393510"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -36,9 +36,9 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 *La resincronización de la replicación de las máquinas virtuales principales no está programada para horas de poca actividad.*  
   
 ## <a name="impact"></a>Impacto  
-@no__t 0The una máquina virtual está en un estado que requiere la resincronización, cuanto más tiempo crecen los archivos de registro de replicación y se producen los cambios más sin replicar en las máquinas virtuales principales. Esto afecta a las siguientes máquinas virtuales: *  
+*Cuanto más tiempo una máquina virtual se encuentra en un estado que requiere resincronización, más tiempo aumentan los archivos de registro de replicación y se producen cambios más sin replicar en las máquinas virtuales principales. Esto afecta a las siguientes máquinas virtuales:*  
   
-\<list de máquinas virtuales >  
+\<lista de máquinas virtuales >  
   
 ## <a name="resolution"></a>Resolución  
 *Use el administrador de Hyper-V para modificar la configuración de replicación de la máquina virtual para realizar la resincronización automáticamente durante las horas de menor actividad.*  

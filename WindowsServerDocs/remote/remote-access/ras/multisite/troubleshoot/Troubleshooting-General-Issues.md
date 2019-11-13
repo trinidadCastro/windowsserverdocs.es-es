@@ -43,7 +43,7 @@ Como solución alternativa, use los cmdlets de configuración en lugar de usar l
 > [!NOTE]  
 > Este escenario no se produce cuando no está disponible el GPO de servidor del punto de entrada actual.  
   
-Puede usar el cmdlet `Get-DAEntryPointDC` para enumerar todos los controladores de dominio que almacenan los GPO de servidor y `Get-DAMultiSite` junto con @no__t 2 para recuperar una lista completa de los GPO de servidor en la implementación. Por ejemplo:  
+Puede usar el cmdlet `Get-DAEntryPointDC` para enumerar todos los controladores de dominio que almacenan los GPO de servidor y `Get-DAMultiSite` junto con `Get-RemoteAccess` para recuperar una lista completa de los GPO de servidor en la implementación. Por ejemplo:  
   
 ```  
 $ServerGpos = Get-DAEntryPointDC | ForEach-Object {   
@@ -78,7 +78,7 @@ Si un cliente ya se ha actualizado o el DCA no está configurado, mueva el equip
   
 -   **Problema 1**  
   
-    **Error recibido**. No se puede establecer contacto con el controlador de dominio < domain_controller > para < > SERVER_NAME o entry_point_name.  
+    **Error recibido**. No se puede tener acceso al > de domain_controller de < del controlador de dominio para < SERVER_NAME o entry_point_name >.  
   
     **Causa**  
   
@@ -86,11 +86,11 @@ Si un cliente ya se ha actualizado o el DCA no está configurado, mueva el equip
   
     **Solución**  
   
-    Siga el procedimiento "para cambiar el controlador de dominio que administra los GPO de servidor" descrito en [2,4. Configure los GPO @ no__t-0.  
+    Siga el procedimiento "para cambiar el controlador de dominio que administra los GPO de servidor" descrito en [2,4. Configurar GPO](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs).  
   
 -   **Problema 2**  
   
-    **Error recibido**. No se puede alcanzar el controlador de dominio principal en el dominio < nombre_dominio >.  
+    **Error recibido**. No se puede tener acceso al controlador de dominio principal en el > domain_name de < de dominio.  
   
     **Causa**  
   
@@ -98,7 +98,7 @@ Si un cliente ya se ha actualizado o el DCA no está configurado, mueva el equip
   
     **Solución**  
   
-    Siga el procedimiento "para transferir el rol de emulador de PDC" descrito en [2,4. Configure los GPO @ no__t-0.  
+    Siga el procedimiento "para transferir el rol de emulador de PDC" descrito en [2,4. Configurar GPO](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs).  
   
 
 

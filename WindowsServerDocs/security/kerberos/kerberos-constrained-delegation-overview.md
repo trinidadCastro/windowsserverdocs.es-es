@@ -36,7 +36,7 @@ En Windows Server 2012 R2 y Windows Server 2012, la capacidad de configurar la d
 
 Para obtener información detallada sobre la delegación limitada según se presentó en Windows Server 2003, consulte el tema sobre la [delegación limitada y la transición de protocolo de Kerberos](https://technet.microsoft.com/library/cc739587(v=ws.10)).
 
-La implementación de Windows Server 2012 R2 y Windows Server 2012 del protocolo Kerberos incluye extensiones específicamente para la delegación restringida.  S4U2Proxy (del inglés Service for User to Proxy) permite que un servicio use su vale de servicio de Kerberos para que un usuario obtenga un vale de servicio del Centro de distribución de claves (KDC) para el servicio back-end. Estas extensiones permiten configurar la delegación restringida en la cuenta del servicio back-end, que puede estar en otro dominio. Para obtener más información acerca de estas extensiones, consulte [ @ no__t-1 ms-SFU @ no__t-2: Extensiones del protocolo Kerberos: Especificación del Protocolo de delegación limitada y de servicio para el usuario @ no__t-0 en MSDN Library.
+La implementación de Windows Server 2012 R2 y Windows Server 2012 del protocolo Kerberos incluye extensiones específicamente para la delegación restringida.  S4U2Proxy (del inglés Service for User to Proxy) permite que un servicio use su vale de servicio de Kerberos para que un usuario obtenga un vale de servicio del Centro de distribución de claves (KDC) para el servicio back-end. Estas extensiones permiten configurar la delegación restringida en la cuenta del servicio back-end, que puede estar en otro dominio. Para obtener más información acerca de estas extensiones, consulte [\[MS-SFU\]: extensiones de protocolo Kerberos: especificación del Protocolo de delegación limitada y servicio para el usuario](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx) en MSDN Library.
 
 **Aplicaciones prácticas**
 
@@ -58,9 +58,9 @@ Esto también desplazará la decisión de si un servidor debe confiar en el orig
 
 Un cambio en el protocolo subyacente permite la delegación limitada entre dominios. La implementación de Windows Server 2012 R2 y Windows Server 2012 del protocolo Kerberos incluye extensiones al protocolo Service for User to proxy (S4U2Proxy). Este es un conjunto de extensiones al protocolo de Kerberos que permite que un servicio use su vale de servicio de Kerberos para que un usuario obtenga un vale de servicio del Centro de distribución de claves (KDC) para un servicio back-end.
 
-Para obtener información de implementación acerca de estas extensiones, consulte [ @ no__t-1 ms-SFU @ no__t-2: Extensiones del protocolo Kerberos: Especificación del Protocolo de delegación limitada y de servicio para el usuario @ no__t-0 en MSDN.
+Para obtener información de implementación acerca de estas extensiones, consulte [\[MS-SFU\]: extensiones de protocolo Kerberos: especificación del Protocolo de delegación limitada y servicio para el usuario](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx) en MSDN.
 
-Para obtener más información acerca de la secuencia de mensajes básica para la delegación de Kerberos con un vale de concesión de vales (TGT) reenviado en comparación con las extensiones de servicio para el usuario (S4U), vea la sección [información general sobre el protocolo 1.3.3](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx) en [ms-SFU]: Extensiones del protocolo Kerberos: especificación del protocolo de delegación limitada y de servicio para el usuario.
+Para obtener más información acerca de la secuencia de mensajes básica para la delegación de Kerberos con un vale de concesión de vales (TGT) remitido según se compara con las extensiones de servicio para el usuario (S4U) consulte la sección [1.3.3 de introducción al protocolo](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx) en el tema [MS-SFU]: Extensiones del protocolo Kerberos: especificación del protocolo de delegación limitada y de servicio para el usuario.
 
 **Implicaciones de seguridad de la delegación restringida basada en recursos**
 
@@ -81,9 +81,9 @@ Para configurar un servicio de recurso para que permita que un servicio front-en
 
 -   Para recuperar una lista de entidades de seguridad, use los cmdlets **Get-ADComputer**, **Get-ADServiceAccount**y **Get-ADUser** con el parámetro **Properties PrincipalsAllowedToDelegateToAccount** .
 
--   Para configurar el servicio de recursos, use los cmdlets **New-ADComputer**, **New-ADServiceAccount**, **New-ADUser**, **set-ADComputer**, **set-ADServiceAccount**y **set-ADUser** con la  **Parámetro PrincipalsAllowedToDelegateToAccount** .
+-   Para configurar el servicio de recursos, use los cmdlets **New-ADComputer**, **New-ADServiceAccount**, **New-ADUser**, **set-ADComputer**, **set-ADServiceAccount**y **set-ADUser** con el parámetro **PrincipalsAllowedToDelegateToAccount** .
 
 ## <a name="BKMK_SOFT"></a>Requisitos de software
 La delegación restringida basada en recursos solo se puede configurar en un controlador de dominio que ejecute Windows Server 2012 R2 y Windows Server 2012, pero se puede aplicar en un bosque de modo mixto.
 
-Debe aplicar la siguiente revisión a todos los controladores de dominio que ejecutan Windows Server 2012 en dominios de cuenta de usuario en la ruta de acceso de referencia entre los dominios front-end y back-end que ejecutan sistemas operativos anteriores a Windows Server:  Error de KDC_ERR_POLICY de delegación restringida basada en recursos en entornos que tienen controladores de dominio basados en Windows Server 2008 R2 (https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro).
+Debe aplicar la siguiente revisión a todos los controladores de dominio que ejecutan Windows Server 2012 en dominios de cuenta de usuario en la ruta de acceso de referencia entre los dominios front-end y back-end que ejecutan sistemas operativos anteriores a Windows Server: la delegación restringida basada en recursos KDC_ERR_POLICY error en entornos que tienen controladores de dominio basados en Windows Server 2008 R2 (https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro).

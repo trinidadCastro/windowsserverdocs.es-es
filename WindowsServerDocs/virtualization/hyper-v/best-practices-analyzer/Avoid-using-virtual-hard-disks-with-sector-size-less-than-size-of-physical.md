@@ -23,7 +23,7 @@ ms.locfileid: "71366406"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Operativo** <br />**Integrado**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -36,9 +36,9 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 *Uno o más discos duros virtuales tienen un tamaño de sector físico menor que el tamaño de sector físico del almacenamiento en el que se encuentra el archivo de disco duro virtual.*  
   
 ## <a name="impact"></a>**Impacto**  
-es posible que se produzcan problemas @no__t 0Performance en la máquina virtual o la aplicación que usa el disco duro virtual. Esto afecta a las siguientes máquinas virtuales: *  
+*Pueden producirse problemas de rendimiento en la máquina virtual o la aplicación que usa el disco duro virtual. Esto afecta a las siguientes máquinas virtuales:*  
   
-\<list de máquinas virtuales >  
+\<lista de máquinas virtuales >  
   
 ## <a name="resolution"></a>**Resolución**  
 *Realice una de las acciones siguientes:*  

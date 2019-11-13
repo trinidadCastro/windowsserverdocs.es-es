@@ -25,7 +25,7 @@ ms.locfileid: "71365201"
   
 *Para obtener más información sobre los análisis y los procedimientos recomendados, consulte* [analizador de procedimientos recomendados](https://go.microsoft.com/fwlink/?LinkId=122786).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -40,9 +40,9 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
   
 ## <a name="impact"></a>Impacto  
   
-@no__t: 0In el evento de una conmutación por error de clúster o se mueve a otro nodo, la replicación de Hyper-V se detendrá si el nuevo nodo no tiene también instalado el certificado adecuado. Esto afecta a los siguientes nodos: *  
+*En caso de que se realice una conmutación por error de clúster o se mueva a otro nodo, la replicación de Hyper-V se detendrá si el nuevo nodo no tiene también instalado el certificado adecuado. Esto afecta a los siguientes nodos:*  
   
-@no__t: 0list de los nodos >  
+\<lista de nodos >  
   
 ## <a name="resolution"></a>Resolución  
   

@@ -23,7 +23,7 @@ ms.locfileid: "71393491"
 
 Para más información acerca de los análisis y los procedimientos recomendados, vea [Analizador de procedimientos recomendados](https://go.microsoft.com/fwlink/?LinkId=122786).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -38,13 +38,13 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
   
 ## <a name="impact"></a>Impacto  
   
-@no__t: las máquinas 0Virtual no pueden usar el almacenamiento conectado a un controlador de almacenamiento deshabilitado. Esto afecta a las siguientes máquinas virtuales: *  
+*Las máquinas virtuales no pueden usar el almacenamiento conectado a un controlador de almacenamiento deshabilitado. Esto afecta a las siguientes máquinas virtuales:*  
   
-@no__t: 0list de nombres de máquina virtual >  
+\<lista de nombres de máquina virtual >  
   
 ## <a name="resolution"></a>Resolución  
   
-*Use Device Manager en el sistema operativo invitado para habilitar todos los controladores de almacenamiento. Si el controlador de almacenamiento no es necesario, use el administrador de Hyper-V para quitarlo de la máquina virtual.*  
+*Use Device Manager del sistema operativo invitado para habilitar todos los controladores de almacenamiento. Si el controlador de almacenamiento no es necesario, use el administrador de Hyper-V para quitarlo de la máquina virtual.*  
   
 Para obtener instrucciones sobre cómo usar Device Manager, consulte la ayuda del sistema operativo invitado. Para obtener instrucciones sobre cómo quitar el controlador de almacenamiento, consulte el procedimiento siguiente.  
   

@@ -25,9 +25,9 @@ ms.locfileid: "71404590"
 
 En los temas siguientes se proporcionan los pasos de planeación para implementar un único servidor de acceso remoto que ejecuta y que se puede usar para la administración remota de clientes de DirectAccess.  
   
-[Paso 1: Planeación de la infraestructura de acceso remoto @ no__t-0: Este tema le ayuda a planear la configuración del servidor y la topología de red, los requisitos de firewall, los requisitos de certificados, los requisitos del sistema de nombres de dominio, la configuración del servidor de ubicación de red de DirectAccess y los servidores de administración, Active Directory requisitos y directiva de grupo creación de objetos.  
+[Paso 1: planear la infraestructura de acceso remoto](Step-1-Plan-the-Remote-Access-Infrastructure.md): este tema le ayuda a planear la topología de red y la configuración del servidor, los requisitos de firewall, los requisitos de certificado, los requisitos del sistema de nombres de dominio, la configuración del servidor de ubicación de red de DirectAccess y los servidores de administración, los requisitos de Active Directory y la creación de objetos de directiva de grupo.  
   
-[Paso 2: Planear la implementación de acceso remoto @ no__t-0: Planear las configuraciones de servidores de infraestructura y las estrategias de implementación de cliente y servidor.  
+[Paso 2: planear la implementación de acceso remoto](Step-2-Plan-the-Remote-Access-Deployment.md): planear las estrategias de implementación de cliente y servidor y las configuraciones de servidores de infraestructura.  
 
   
 

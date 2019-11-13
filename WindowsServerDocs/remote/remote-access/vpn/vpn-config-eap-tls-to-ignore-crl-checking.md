@@ -26,8 +26,8 @@ ms.locfileid: "71388072"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-- [**Previo** Paso 7. Opta Acceso condicional para la conectividad VPN con Azure AD](ad-ca-vpn-connectivity-windows10.md)
-- [**Nueva** Paso 7.2. Crear certificados raíz para la autenticación de VPN con Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
+- [**Anterior:** Paso 7. Opta Acceso condicional para la conectividad VPN con Azure AD](ad-ca-vpn-connectivity-windows10.md)
+- [**Siguiente:** Paso 7,2. Crear certificados raíz para la autenticación VPN con Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
 
 >[!IMPORTANT]
 >Si no se implementa este cambio en el registro, se producirá un error en las conexiones IKEv2 que usan certificados de nube con PEAP, pero las conexiones de IKEv2 que usan certificados de autenticación de cliente emitidas desde la CA local seguirán funcionando.
@@ -45,7 +45,7 @@ Dado que el método de autenticación es EAP-TLS, este valor del registro solo e
 
 1. Abra **regedit. exe** en el servidor NPS.
 
-2. Vaya a **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\13**.
+2. Vaya a **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\rasman\ppp\eap\13**.
 
 3. Seleccione **editar > nuevo** y seleccione **el valor DWORD (32 bits)** y escriba **IgnoreNoRevocationCheck**.
 
@@ -64,4 +64,4 @@ Para obtener más información, consulte [habilitar o deshabilitar la comprobaci
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Paso 7.2. Cree certificados raíz para la autenticación VPN con Azure AD @ no__t-0: En este paso, configurará los certificados raíz de acceso condicional para la autenticación VPN con Azure AD, que crea automáticamente una aplicación de nube de servidor VPN en el inquilino.
+[Paso 7,2. Crear certificados raíz para la autenticación VPN con Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md): en este paso, se configuran los certificados raíz de acceso condicional para la autenticación VPN con Azure ad, que crea automáticamente una aplicación de nube de servidor VPN en el inquilino.

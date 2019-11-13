@@ -85,7 +85,7 @@ Para configurar un clúster de acceso remoto, debe instalar la característica d
   
 ## <a name="BKMK_Links"></a>Vea también  
   
--   [Paso 3: Configuración de un clúster con equilibrio de carga @ no__t-0  
+-   [Paso 3: configurar un clúster con equilibrio de carga](Step-3-Configure-a-Load-Balanced-Cluster.md)  
   
 
 

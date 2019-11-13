@@ -19,11 +19,11 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71388431"
 ---
-# <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>Guía del laboratorio de pruebas para la Demostración de DirectAccess en un clúster con Windows NLB
+# <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>Guía del laboratorio de prueba: mostrar DirectAccess en un clúster con Windows NLB
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-El acceso remoto es un rol de servidor de los sistemas operativos Windows Server 2016, Windows Server 2012 R2 andWindows Server 2012 que permite a los usuarios remotos acceder de forma segura a los recursos de red internos mediante DirectAccess o RRAS VPN. Esta guía contiene instrucciones paso a paso para ampliar la guía de laboratorio de @no__t 0Test: Mostrar la configuración de servidor único de DirectAccess con IPv4 e IPv6 @ no__t-0 mixto para mostrar la configuración de clúster y el equilibrio de carga de red de DirectAccess.  
+El acceso remoto es un rol de servidor de los sistemas operativos Windows Server 2016, Windows Server 2012 R2 andWindows Server 2012 que permite a los usuarios remotos acceder de forma segura a los recursos de red internos mediante DirectAccess o RRAS VPN. Esta guía contiene instrucciones paso a paso que amplían la [guía del laboratorio de prueba: mostrar la instalación de un solo servidor DirectAccess con IPv4 e IPv6 mixto](https://go.microsoft.com/fwlink/p/?LinkId=237004) para mostrar la configuración de clúster y el equilibrio de carga de red de DirectAccess.  
   
 ## <a name="about-this-guide"></a>Acerca de esta guía  
 Esta guía contiene instrucciones para configurar y mostrar el acceso remoto usando seis servidores y dos equipos cliente. El laboratorio de prueba de Acceso remoto finalizado con NLB simula una intranet, la conexión a Internet y una red doméstica, y demuestra la funcionalidad de Acceso remoto en distintos escenarios de conexión a Internet.  
@@ -34,7 +34,7 @@ Esta guía contiene instrucciones para configurar y mostrar el acceso remoto usa
 ## <a name="KnownIssues"></a>Problemas conocidos  
 Los problemas que se mencionan a continuación son problemas conocidos de la configuración de un escenario de clúster:  
   
--   Después de configurar DirectAccess en una implementación de solo IPv4 con un solo adaptador de red y después de que el valor predeterminado de DNS64 (la dirección IPv6 que contiene ":3333::") se configure automáticamente en el adaptador de red, al intentar habilitar el equilibrio de carga a través de la Consola de administración de acceso remoto se muestra un mensaje al usuario que le indica que proporcione una DIP de IPv6. Si se proporciona una DIP de IPv6, se produce el siguiente error de configuración después de hacer clic en **Confirmar**: El parámetro es incorrecto.  
+-   Después de configurar DirectAccess en una implementación de solo IPv4 con un solo adaptador de red y después de que el valor predeterminado de DNS64 (la dirección IPv6 que contiene ":3333::") se configure automáticamente en el adaptador de red, al intentar habilitar el equilibrio de carga a través de la Consola de administración de acceso remoto se muestra un mensaje al usuario que le indica que proporcione una DIP de IPv6. Si se proporciona una DIP de IPv6, después de hacer clic en **Confirmar** , se produce el siguiente error de configuración: el parámetro es incorrecto.  
   
     Para resolver este problema:  
   

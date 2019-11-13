@@ -61,12 +61,15 @@ La diferencia entre los controladores *l2bridge* y *l2tunnel* son:
 
 ## <a name="workflow"></a>Flujo de trabajo
 
-[1. Agregue varias configuraciones de IP a un recurso de NIC de máquina virtual existente a través de la controladora de red (host de Hyper-V) ](#1-add-multiple-ip-configurations) @ no__t-1 @ no__t-22. Habilite el proxy de red en el host para asignar las direcciones IP de CA para los puntos de conexión de contenedor (host de Hyper-V) ](#2-enable-the-network-proxy) @ no__t-1 @ no__t-23. Instale el complemento de nube privada para asignar direcciones IP de CA a puntos de conexión de contenedor (VM de host de contenedor) ](#3-install-the-private-cloud-plug-in) @ no__t-1 @ no__t-24. Creación de una red de *l2bridge* o *l2tunnel* mediante Docker (VM de Host de contenedor) ](#4-create-an-l2bridge-container-network)
+[1. agregar varias configuraciones de IP a un recurso de NIC de máquina virtual existente a través de la controladora de red (host de Hyper-V)](#1-add-multiple-ip-configurations)
+[2. Habilite el proxy de red en el host para asignar las direcciones IP de CA para los puntos de conexión de contenedor (host de Hyper-V)](#2-enable-the-network-proxy)
+[3. Instale el complemento de nube privada para asignar direcciones IP de CA a puntos de conexión de contenedor (VM de host de contenedor)](#3-install-the-private-cloud-plug-in)
+[4. Creación de una red de *l2bridge* o *l2tunnel* mediante Docker (máquina virtual de host de contenedor)](#4-create-an-l2bridge-container-network)
 
 >[!NOTE]
 >No se admiten varias configuraciones de IP en los recursos de NIC de máquina virtual creados mediante System Center Virtual Machine Manager. Se recomienda para estos tipos de implementaciones que crea el recurso de NIC de VM fuera de banda mediante el controlador de red PowerShell.
 
-### <a name="1-add-multiple-ip-configurations"></a>1. Agregar varias configuraciones de IP
+### <a name="1-add-multiple-ip-configurations"></a>1. agregar varias configuraciones de IP
 En este paso, asumimos que la NIC de VM de la máquina virtual del inquilino tiene una configuración de IP con la dirección IP de 192.168.1.9 y está conectada a un identificador de recurso de red virtual de "VNet1" y un recurso de subred de VM de "Subnet1" en la subred IP 192.168.1.0/24. Agregamos 10 direcciones IP para los contenedores de 192.168.1.101-192.168.1.110.
 
 ```powershell
@@ -117,7 +120,7 @@ foreach ($i in 1..10)
 New-NetworkControllerNetworkInterface -ResourceId $vmnic.ResourceId -Properties $vmnic.Properties -ConnectionUri $uri
 ```
 
-### <a name="2-enable-the-network-proxy"></a>2. Habilitar el proxy de red
+### <a name="2-enable-the-network-proxy"></a>2. habilitar el proxy de red
 En este paso, habilitará el proxy de red para asignar varias direcciones IP para la máquina virtual del host de contenedor. 
 
 Para habilitar el proxy de red, ejecute el script [ConfigureMCNP. PS1](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1) en el **host de Hyper-V** que hospeda la máquina virtual del host de contenedor (inquilino).
@@ -126,7 +129,7 @@ Para habilitar el proxy de red, ejecute el script [ConfigureMCNP. PS1](https://g
 PS C:\> ConfigureMCNP.ps1
 ```
 
-### <a name="3-install-the-private-cloud-plug-in"></a>3. Instalación del complemento de nube privada
+### <a name="3-install-the-private-cloud-plug-in"></a>3. instalar el complemento de nube privada
 En este paso, instalará un complemento para permitir que el SNP se comunique con el proxy de red en el host de Hyper-V.
 
 Para instalar el complemento, ejecute el script [InstallPrivateCloudPlugin. PS1](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1) dentro de la **máquina virtual del host de contenedor (inquilino)** .
@@ -136,7 +139,7 @@ Para instalar el complemento, ejecute el script [InstallPrivateCloudPlugin. PS1]
 PS C:\> InstallPrivateCloudPlugin.ps1
 ```
 
-### <a name="4-create-an-l2bridge-container-network"></a>4. Creación de una red de contenedores de *l2bridge*
+### <a name="4-create-an-l2bridge-container-network"></a>4. creación de una red de contenedores de *l2bridge*
 En este paso, usará el comando `docker network create` en la **máquina virtual del host de contenedor (inquilino)** para crear una red l2bridge. 
 
 ```powershell

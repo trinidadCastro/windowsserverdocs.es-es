@@ -21,16 +21,16 @@ ms.locfileid: "71355450"
 
 En este tema se describen las funciones del Protocolo de configuración dinámica de host (DHCP) nuevas o modificadas en Windows Server 2016.
   
-DHCP es un estándar de Internet Engineering Task Force (IETF) diseñado para reducir la carga administrativa y la complejidad de configurar hosts en una red TCP/IP @ no__t-0based, como una intranet privada. Al usar el servicio del servidor DHCP, el proceso de configuración de TCP/IP en clientes DHCP es automático.
+DHCP es un estándar de Internet Engineering Task Force (IETF) diseñado para reducir la carga administrativa y la complejidad de configurar hosts en una red TCP/IP basada en\-, como una intranet privada. Al usar el servicio del servidor DHCP, el proceso de configuración de TCP/IP en clientes DHCP es automático.
 
 En las secciones siguientes se proporciona información acerca de las nuevas características y los cambios en la funcionalidad de DHCP.
 
 ## <a name="dhcp-subnet-selection-options"></a>Opciones de selección de subred DHCP
 
-DHCP ahora admite las opciones 118 y 82 \(sub-Option 5 @ no__t-1. Puede usar estas opciones para permitir que los clientes proxy DHCP y los agentes de retransmisión soliciten una dirección IP para una subred específica y desde un ámbito y un intervalo de direcciones IP específicos.
+DHCP ahora admite las opciones 118 y 82 \(subopción 5\). Puede usar estas opciones para permitir que los clientes proxy DHCP y los agentes de retransmisión soliciten una dirección IP para una subred específica y desde un ámbito y un intervalo de direcciones IP específicos.
 
 
-Si usa un agente de retransmisión DHCP que está configurado con la opción 82 de DHCP, sub @ no__t-0option 5, el agente de retransmisión puede solicitar una concesión de dirección IP a los clientes DHCP de un intervalo de direcciones IP específico.
+Si usa un agente de retransmisión DHCP que está configurado con la opción 82 de DHCP, sub\-opción 5, el agente de retransmisión puede solicitar una concesión de dirección IP a los clientes DHCP de un intervalo de direcciones IP específico.
 
 Para obtener más información, consulte [Opciones de selección de subred DHCP](dhcp-subnet-options.md).
 
@@ -42,7 +42,7 @@ Para obtener más información, consulte [DHCP Logging Events for DNS record](dh
 
 ## <a name="dhcp-nap-is-not-supported-in-windows-server-2016"></a>El NAP de DHCP no se admite en Windows Server 2016
 
-La protección de acceso a redes \(NAP @ no__t-1 está en desuso en Windows Server 2012 R2 y, en Windows Server 2016, el rol de servidor DHCP ya no es compatible con NAP. Para obtener más información, vea [características eliminadas o en desuso en Windows Server 2012 R2](https://technet.microsoft.com/library/dn303411.aspx).  
+La protección de acceso a redes \(NAP\) está en desuso en Windows Server 2012 R2 y, en Windows Server 2016, el rol de servidor DHCP ya no es compatible con NAP. Para obtener más información, vea [características eliminadas o en desuso en Windows Server 2012 R2](https://technet.microsoft.com/library/dn303411.aspx).  
   
 La compatibilidad con NAP se presentó al rol de servidor DHCP con Windows Server 2008 y es compatible con los sistemas operativos de cliente y servidor de Windows anteriores a Windows 10 y Windows Server 2016. En la tabla siguiente se resume la compatibilidad con NAP en Windows Server.  
   
@@ -54,13 +54,13 @@ La compatibilidad con NAP se presentó al rol de servidor DHCP con Windows Serve
 | Windows Server 2012 R2 |Se admite|  
 | Windows Server 2016|No se admite|  
   
-En una implementación de NAP, un servidor DHCP que ejecute un sistema operativo que admita NAP puede funcionar como un punto de cumplimiento NAP para el método de cumplimiento NAP DHCP. Para obtener más información acerca de DHCP en NAP, consulte [Checklist: Implementación de un diseño de cumplimiento DHCP @ no__t-0.  
+En una implementación de NAP, un servidor DHCP que ejecute un sistema operativo que admita NAP puede funcionar como un punto de cumplimiento NAP para el método de cumplimiento NAP DHCP. Para obtener más información acerca de DHCP en NAP, consulte [lista de comprobación: implementar un diseño de cumplimiento DHCP](https://technet.microsoft.com/library/dd314186.aspx).  
   
-En Windows Server 2016, los servidores DHCP no aplican directivas de NAP y los ámbitos DHCP no pueden ser NAP @ no__t-0enabled. Los equipos cliente DHCP que también son clientes NAP envían un informe de mantenimiento \(SoH @ no__t-1 con la solicitud DHCP. Si el servidor DHCP ejecuta Windows Server 2016, estas solicitudes se procesan como si no hubiera ningún SoH. El servidor DHCP concede una concesión DHCP normal al cliente. 
+En Windows Server 2016, los servidores DHCP no aplican directivas de NAP y los ámbitos DHCP no pueden ser NAP\-habilitado. Los equipos cliente DHCP que también son clientes NAP envían un informe de mantenimiento \(SoH\) con la solicitud DHCP. Si el servidor DHCP ejecuta Windows Server 2016, estas solicitudes se procesan como si no hubiera ningún SoH. El servidor DHCP concede una concesión DHCP normal al cliente. 
 
-Si los servidores que ejecutan Windows Server 2016 son proxies RADIUS que reenvían las solicitudes de autenticación a un servidor de directivas de redes \(NPS @ no__t-1 que admite NAP, NPS evalúa estos clientes NAP como no NAP @ no__t-2capable y se produce un error en el procesamiento de NAP.
+Si los servidores que ejecutan Windows Server 2016 son proxies RADIUS que reenvían las solicitudes de autenticación a un servidor de directivas de redes \(\) NPS que admite NAP, NPS evalúa estos clientes NAP como no compatibles con NAP\-y se produce un error en el procesamiento de NAP.
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
   
 -   [Protocolo de configuración dinámica de host (DHCP)](Dynamic-Host-Configuration-Protocol--DHCP-.md)  
   

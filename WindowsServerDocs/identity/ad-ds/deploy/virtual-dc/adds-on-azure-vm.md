@@ -48,12 +48,12 @@ El siguiente script automatiza el proceso de creación de dos máquinas virtuale
 
 El siguiente script se puede ejecutar directamente desde el Azure Portal. Si decide instalar y usar la CLI localmente, para esta guía de inicio rápido es preciso que ejecute la CLI de Azure versión 2.0.4 o posterior. Ejecute `az --version` para encontrar la versión. Si necesita instalar o actualizar, consulte Instalación de [CLI de Azure 2,0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-| Nombre de variable | Finalidad |
+| Nombre de variable | Propósito |
 | :---: | :--- |
 | AdminUsername | Nombre de usuario que se configurará en cada máquina virtual como administrador local. |
 | AdminPassword | Contraseña de texto no cifrado que se configurará en cada máquina virtual como la contraseña de administrador local. |
-| resourceGroupName | Nombre que se va a usar para el grupo de recursos. No debe duplicar un nombre existente. |
-| Location | Nombre de ubicación de Azure en el que desea realizar la implementación. Muestra las regiones admitidas para la suscripción actual mediante `az account list-locations`. |
+| ResourceGroupName | Nombre que se va a usar para el grupo de recursos. No debe duplicar un nombre existente. |
+| Ubicación | Nombre de ubicación de Azure en el que desea realizar la implementación. Muestra las regiones admitidas para la suscripción actual mediante `az account list-locations`. |
 | VNetName | Nombre para asignar la red virtual de Azure no debe duplicar un nombre existente. |
 | VNetAddress | Ámbito de IP que se usará para las redes de Azure. No debe duplicar un intervalo existente. |
 | SubnetName | Nombre para asignar la subred IP. No debe duplicar un nombre existente. |
@@ -159,7 +159,8 @@ Si las máquinas virtuales de Azure creadas como parte de este proceso serán un
 
 Después de promocionar los nuevos controladores de dominio en Azure, tendrán que establecerse en los servidores DNS principal y secundario de la red virtual, y los servidores DNS locales se degradarán a terciario y más. Puede encontrar más información sobre cómo cambiar los servidores DNS en el artículo [creación, cambio o eliminación de una red virtual](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#change-dns-servers).
 
-Puede encontrar información sobre cómo extender una red local a Azure en el artículo [Creating de una conexión VPN de sitio a sitio @ no__t-1.
+Puede encontrar información sobre cómo extender una red local a Azure en el artículo creación de [una conexión VPN de sitio a sitio](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal
+).
 
 ## <a name="configure-the-vms-and-install-active-directory-domain-services"></a>Configurar las máquinas virtuales e instalar Active Directory Domain Services
 

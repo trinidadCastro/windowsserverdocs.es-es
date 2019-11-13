@@ -18,7 +18,7 @@ ms.locfileid: "71408404"
 ---
 # <a name="deploying-federation-server-proxies"></a>Implementación de servidores proxy de federación
 
-Para implementar los servidores proxy de Federación en Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1, complete cada una de las tareas en [Checklist: Configuración de un servidor proxy de Federación @ no__t-0.  
+Para implementar servidores proxy de Federación en Servicios de federación de Active Directory (AD FS) \(AD FS\), complete cada una de las tareas de la [lista de comprobación: configuración de un servidor proxy de Federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md).  
   
 > [!NOTE]  
 > Cuando use esta lista de comprobación, recomendamos que lea primero las referencias a la guía de planeamiento del servidor proxy de Federación en la [Guía de diseño de AD FS en Windows server 2012](https://technet.microsoft.com/library/dd807036.aspx) antes de comenzar los procedimientos para configurar los servidores. La siguiente lista de comprobación proporciona una mejor comprensión del proceso de diseño e implementación de los servidores proxy de Federación.  

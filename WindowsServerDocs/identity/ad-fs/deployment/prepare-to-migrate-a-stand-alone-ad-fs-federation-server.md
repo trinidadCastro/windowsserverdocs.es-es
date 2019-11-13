@@ -21,15 +21,15 @@ Para preparar la migración (migración del mismo servidor) de un servidor de Fe
   
 Para exportar los datos de configuración de AD FS, realiza estas tareas:  
   
--   [Paso 1:  Exportar la configuración del servicio @ no__t-0  
+-   [Paso 1: exportar la configuración del servicio](#step-1-export-service-settings)  
   
--   [Paso 2:  Exportar confianzas de proveedor de notificaciones @ no__t-0  
+-   [Paso 2: exportar las relaciones de confianza para proveedor de notificaciones](#step-2-export-claims-provider-trusts)  
   
--   [Paso 3:  Exportar las relaciones de confianza para usuario autenticado @ no__t-0  
+-   [Paso 3: exportar las relaciones de confianza para usuario autenticado](#step-3-export-relying-party-trusts)  
   
--   [Paso 4:  Copia de seguridad de almacenes de atributos personalizados @ no__t-0  
+-   [Paso 4: copia de seguridad de almacenes de atributos personalizados](#step-4-back-up-custom-attribute-stores)  
   
--   [Paso 5:  Realizar copias de seguridad de las personalizaciones de páginas web @ no__t-0  
+-   [Paso 5: realizar copias de seguridad de las personalizaciones de páginas web](#step-5-back-up-webpage-customizations)  
   
 ## <a name="step-1-export-service-settings"></a>Paso 1: Exportar la configuración del servicio  
  Para exportar la configuración del servicio, realiza el siguiente procedimiento:  
@@ -87,29 +87,29 @@ Para ello, abra Windows PowerShell y ejecute el siguiente comando para agregar l
   
 Para ello, abra Windows PowerShell y ejecute el siguiente comando para agregar los cmdlets de AD FS a su sesión de Windows PowerShell: `PSH:>add-pssnapin “Microsoft.adfs.powershell”`. Después, ejecute el siguiente comando para exportar las descripciones de notificaciones personalizadas a un archivo: `Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.  
   
-##  <a name="step-2-export-claims-provider-trusts"></a>Paso 2: Exportar las relaciones de confianza para proveedor de notificaciones  
+##  <a name="step-2-export-claims-provider-trusts"></a>Paso 2: exportar las relaciones de confianza para proveedor de notificaciones  
  Para exportar las relaciones de confianza para proveedor de notificaciones, realiza el siguiente procedimiento:  
   
 ### <a name="to-export-claims-provider-trusts"></a>Exportar las relaciones de confianza para proveedor de notificaciones  
   
 1.  Puedes usar Windows PowerShell para exportar todas las relaciones de confianza para proveedor de notificaciones. Abra Windows PowerShell y ejecute el comando siguiente para agregar los cmdlets de AD FS a la sesión de Windows PowerShell: `PSH:>add-pssnapin “Microsoft.adfs.powershell”`. Después, ejecute el siguiente comando para exportar todas las relaciones de confianza para proveedor de notificaciones: `PSH:>Get-ADFSClaimsProviderTrust | Out-File “.\cptrusts.txt”`.  
   
-## <a name="step-3-export-relying-party-trusts"></a>Paso 3: Exportar las relaciones de confianza para usuario autenticado  
+## <a name="step-3-export-relying-party-trusts"></a>Paso 3: exportar las relaciones de confianza para usuario autenticado  
  Para exportar las relaciones de confianza para usuario autenticado, realiza el siguiente procedimiento:  
   
 ### <a name="to-export-relying-party-trusts"></a>Exportar las relaciones de confianza para usuario autenticado  
   
 1.  Para exportar todas las relaciones de confianza para usuario autenticado, abra Windows PowerShell y ejecute el siguiente comando para agregar los cmdlets de AD FS a su sesión de Windows PowerShell: `PSH:>add-pssnapin “Microsoft.adfs.powershell”`. Luego, ejecute el siguiente comando para exportar todas las relaciones de confianza para usuario autenticado:`PSH:>Get-ADFSRelyingPartyTrust | Out-File “.\rptrusts.txt”`.  
   
-## <a name="step-4-back-up-custom-attribute-stores"></a>Paso 4: Hacer una copia de seguridad de los almacenes de atributos personalizados  
+## <a name="step-4-back-up-custom-attribute-stores"></a>Paso 4: copia de seguridad de almacenes de atributos personalizados  
  Para obtener información acerca de los almacenes de atributos personalizados que utiliza AD FS, usa Windows PowerShell. Abra Windows PowerShell y ejecute el comando siguiente para agregar los cmdlets de AD FS a la sesión de Windows PowerShell: `PSH:>add-pssnapin “Microsoft.adfs.powershell”`. Luego, ejecute el siguiente comando para encontrar información acerca de los almacenes de atributos personalizados: `PSH:>Get-ADFSAttributeStore`. Los pasos para actualizar o migrar almacenes de atributos personalizados varían.  
   
 ## <a name="step-5-back-up-webpage-customizations"></a>Paso 5: Hacer una copia de seguridad de las personalizaciones de las páginas web  
  Para hacer una copia de seguridad de las personalizaciones de páginas web, copie las páginas web de AD FS y el archivo **web.config** del directorio que está asignado a la ruta de acceso virtual **“/adfs/ls”** en IIS. De forma predeterminada, está en el directorio **%systemdrive%\inetpub\adfs\ls**.  
 
 ## <a name="next-steps"></a>Pasos siguientes
- [Preparar la migración del servidor de Federación de AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Preparar la migración del servidor de federación AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
  [Preparar la migración del servidor proxy de Federación de AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [Migrar el servidor de federación AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
- [Migrar el servidor proxy de Federación de AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   
+ [Migre el servidor proxy de Federación de AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [Migrar los agentes web de AD FS 1.1](migrate-the-ad-fs-web-agent.md)

@@ -23,7 +23,7 @@ ms.locfileid: "71393525"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016| 
 |**Producto o característica**|Hyper-V|  
@@ -36,9 +36,9 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 *Una máquina virtual conmutada por error tiene una o varias instantáneas de recuperación.*  
   
 ## <a name="impact"></a>**Impacto**  
-@no__t espacio 0Available puede quedarse en el disco físico que almacena los archivos de instantáneas. Si esto ocurre, no se pueden realizar más operaciones de disco en el almacenamiento físico. Cualquier máquina virtual que se base en el almacenamiento físico podría verse afectada. Esto afecta a las siguientes máquinas virtuales: *  
+*Se puede agotar el espacio disponible en el disco físico que almacena los archivos de instantáneas. Si esto ocurre, no se pueden realizar más operaciones de disco en el almacenamiento físico. Cualquier máquina virtual que se base en el almacenamiento físico podría verse afectada. Esto afecta a las siguientes máquinas virtuales:*  
   
-\<list de máquinas virtuales >  
+\<lista de máquinas virtuales >  
   
 ## <a name="resolution"></a>**Resolución**  
 *Para cada máquina virtual conmutada por error, use el cmdlet complete-VMFailover en Windows PowerShell para quitar las instantáneas de recuperación e indicar la finalización de la conmutación por error.*  

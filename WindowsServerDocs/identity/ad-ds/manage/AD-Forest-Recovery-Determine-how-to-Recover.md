@@ -76,13 +76,13 @@ Elija un controlador de dominio que se adapte mejor a los siguientes criterios:
 - Un DC que era un servidor de sistema de nombres de dominio (DNS) antes de que se produjera el error. Esto ahorra el tiempo necesario para reinstalar DNS.
 - Si también usa servicios de implementación de Windows, elija un controlador de dominio que no esté configurado para usar el desbloqueo de red de BitLocker. En este caso, no se admite el desbloqueo de red de BitLocker para el primer controlador de dominio que se restaura a partir de una copia de seguridad durante la recuperación de un bosque.
 
-   Desbloqueo de red de BitLocker como el *único* protector de clave *no se puede* usar en controladores de dominio en los que ha implementado los servicios de implementación de Windows (WDS) porque al hacerlo se produce un escenario en el que el primer DC requiere Active Directory y que WDS funcione para Pulsa. Pero antes de restaurar el primer controlador de dominio, Active Directory todavía no está disponible para WDS, por lo que no se puede desbloquear.
+   Desbloqueo de red de BitLocker como el *único* protector de clave *no se puede* usar en controladores de dominio en los que ha implementado los servicios de implementación de Windows (WDS) porque al hacerlo se produce un escenario en el que el primer DC requiere Active Directory y que WDS funcione para poder desbloquearlo. Pero antes de restaurar el primer controlador de dominio, Active Directory todavía no está disponible para WDS, por lo que no se puede desbloquear.
 
    Para determinar si un controlador de dominio está configurado para usar el desbloqueo de red de BitLocker, compruebe que se ha identificado un certificado de desbloqueo de red en la siguiente clave del registro:
 
    HKEY_LOCAL_MACHINESoftwarePoliciesMicrosoftSystemCertificatesFVE_NKP
 
-Mantenga los procedimientos de seguridad al administrar o restaurar archivos de copia de seguridad que incluyan Active Directory. La urgencia que acompaña a la recuperación del bosque puede conducir involuntariamente a las prácticas recomendadas de seguridad. Para obtener más información, vea la sección titulada "establecer estrategias de copia de seguridad y restauración del controlador de dominio" en @no__t guía de prácticas recomendadas de 0Best para proteger las instalaciones de Active Directory y las operaciones cotidianas: Parte II @ no__t-0.
+Mantenga los procedimientos de seguridad al administrar o restaurar archivos de copia de seguridad que incluyan Active Directory. La urgencia que acompaña a la recuperación del bosque puede conducir involuntariamente a las prácticas recomendadas de seguridad. Para obtener más información, vea la sección titulada "establecer estrategias de copia de seguridad y restauración del controlador de dominio" en la [Guía de procedimientos recomendados para proteger las instalaciones de Active Directory y las operaciones cotidianas: parte II](https://technet.microsoft.com/library/bb727066.aspx).
 
 ## <a name="identify-the-current-forest-structure-and-dc-functions"></a>Identificación de la estructura del bosque actual y las funciones del controlador de dominio
 
@@ -92,17 +92,17 @@ Prepare una tabla que muestre las funciones de cada DC del dominio, tal como se 
 
 |Nombre del controlador de dominio|Sistema operativo|FSMO|COLECTOR|RODC|Copias de seguridad|DNS|Server Core|Máquina virtual|VM: genio|  
 |-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|  
-|DC_1|Windows Server 2012|Maestro de esquema, maestro de nomenclatura de dominios|Sí|No|Sí|No|No|Sí|Sí|  
-|DC_2|Windows Server 2012|Ninguno|Sí|No|Sí|Sí|No|Sí|Sí|  
-|DC_3|Windows Server 2012|Maestro de infraestructura|No|No|No|Sí|Sí|Sí|Sí|  
-|DC_4|Windows Server 2012|Emulador de PDC, maestro RID|Sí|No|No|No|No|Sí|No|  
-|DC_5|Windows Server 2012|Ninguno|No|No|Sí|Sí|No|Sí|Sí|  
-|RODC_1|Windows Server 2008 R2|Ninguno|Sí|Sí|Sí|Sí|Sí|Sí|No|  
-|RODC_2|Windows Server 2008|Ninguno|Sí|Sí|No|Sí|Sí|Sí|No|  
+|DC_1|Windows Server 2012|Maestro de esquema, maestro de nomenclatura de dominios|Sí|Sin|Sí|Sin|Sin|Sí|Sí|  
+|DC_2|Windows Server 2012|Ninguno|Sí|Sin|Sí|Sí|Sin|Sí|Sí|  
+|DC_3|Windows Server 2012|Maestro de infraestructura|Sin|Sin|Sin|Sí|Sí|Sí|Sí|  
+|DC_4|Windows Server 2012|Emulador de PDC, maestro RID|Sí|Sin|Sin|Sin|Sin|Sí|Sin|  
+|DC_5|Windows Server 2012|Ninguno|Sin|Sin|Sí|Sí|Sin|Sí|Sí|  
+|RODC_1|Windows Server 2008 R2|Ninguno|Sí|Sí|Sí|Sí|Sí|Sí|Sin|  
+|RODC_2|Windows Server 2008|Ninguno|Sí|Sí|Sin|Sí|Sí|Sí|Sin|  
 
 Para cada dominio del bosque, identifique un solo DC grabable que tenga una copia de seguridad de confianza de la base de datos de Active Directory para ese dominio. Tenga cuidado al elegir una copia de seguridad para restaurar un controlador de dominio. Si el día y la causa del error son aproximadamente conocidos, la recomendación general es usar una copia de seguridad que se haya realizado unos días antes de esa fecha.
   
-En este ejemplo, hay cuatro candidatos de copia de seguridad: DC_1, DC_2, DC_4 y DC_5. De estos candidatos de copia de seguridad, solo se restaura uno. El controlador de dominio recomendado es DC_5 por las razones siguientes:  
+En este ejemplo, hay cuatro candidatos de copia de seguridad: DC_1, DC_2, DC_4 y DC_5. De estos candidatos de copia de seguridad, solo se restaura uno. El controlador de dominio recomendado es DC_5 por los siguientes motivos:  
 
 - Cumple los requisitos para usarlo como origen de la clonación de controladores de dominio virtualizados, es decir, ejecuta Windows Server 2012 como un controlador de dominio virtual en un hipervisor que admite VM-GenerationID, ejecuta el software que se permite clonar (o que puede quitarse si no se puede clonar). d). Después de la restauración, el rol de emulador de PDC se asumirá para ese servidor y se puede Agregar al grupo controladores de dominio clonables del dominio.  
 - Ejecuta una instalación completa de Windows Server 2012. Un controlador de dominio que ejecute una instalación Server Core puede ser menos práctico como destino de la recuperación.  

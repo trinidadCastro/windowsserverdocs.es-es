@@ -23,7 +23,7 @@ ms.locfileid: "71366495"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -36,12 +36,12 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 *Se detectaron incoherencias de alineación en uno o varios discos duros virtuales.*  
   
 ### <a name="impact"></a>Impacto  
-@no__t 0If los discos duros virtuales se almacenan en un disco físico que tiene un tamaño de sector de 4K, es posible que la máquina virtual o las aplicaciones que usan el disco duro virtual experimenten problemas de rendimiento. Esto afecta a las siguientes máquinas virtuales: *  
+*Si los discos duros virtuales se almacenan en un disco físico que tiene un tamaño de sector de 4K, es posible que la máquina virtual o las aplicaciones que usan el disco duro virtual experimenten problemas de rendimiento. Esto afecta a las siguientes máquinas virtuales:*  
   
-\<list de máquinas virtuales >  
+\<lista de máquinas virtuales >  
   
 ## <a name="resolution"></a>Resolución  
-*Use el Asistente para crear discos duros virtuales para crear un nuevo disco duro virtual con formato VHD o VHDX y especificar el disco duro virtual existente como disco de origen. El nuevo disco duro virtual se creará con la alineación entre los bloques virtuales y el disco físico.*  
+*Use el Asistente para crear discos duros virtuales para crear un nuevo disco duro virtual con formato VHD o VHDX y especifique el disco duro virtual existente como disco de origen. El nuevo disco duro virtual se creará con la alineación entre los bloques virtuales y el disco físico.*  
   
 
 

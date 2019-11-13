@@ -38,7 +38,7 @@ Un servidor WSUS descarga actualizaciones basadas en productos o familias de pro
 
 Puede especificar actualizar productos y clasificaciones en la página **Opciones** en **productos y clasificaciones**. Los productos se muestran en una jerarquía, agrupados por familias de productos. Si selecciona Windows, se seleccionan automáticamente todos los productos que se encuentran bajo esa jerarquía de productos. Al activar la casilla primario, se seleccionan todos los elementos que hay debajo de él, así como todas las versiones futuras. Si activa las casillas secundarias, no se activarán las casillas de verificación primarias. La configuración predeterminada para los productos es todos los productos de Windows y la configuración predeterminada para las clasificaciones es crítica y actualizaciones de seguridad.
 
-Si un servidor WSUS se ejecuta en modo de réplica, no podrá realizar esta tarea. Para obtener más información acerca del modo de réplica, vea [ejecutar el modo de réplica de WSUS](running-wsus-replica-mode.md)y @no__t 1Step 1: Preparar la implementación de WSUS @ no__t-0.
+Si un servidor WSUS se ejecuta en modo de réplica, no podrá realizar esta tarea. Para obtener más información acerca del modo de réplica, vea [ejecutar el modo de réplica de WSUS](running-wsus-replica-mode.md)y [paso 1: preparar la implementación de WSUS](../plan/plan-your-wsus-deployment.md).
 
 ##### <a name="to-specify-update-products-and-classifications-for-synchronization"></a>Para especificar productos y clasificaciones de actualización para la sincronización
 
@@ -59,7 +59,7 @@ Si un servidor WSUS se ejecuta en modo de réplica, no podrá realizar esta tare
 El servidor WSUS descarga las actualizaciones en función de los idiomas que especifique. Puede sincronizar las actualizaciones en todos los idiomas en los que están disponibles, o puede especificar un subconjunto de idiomas. Si tiene una jerarquía de servidores WSUS y necesita descargar actualizaciones en distintos idiomas, asegúrese de que ha especificado todos los idiomas necesarios en el servidor que precede en la cadena. En un servidor de nivel inferior, puede especificar un subconjunto de los idiomas especificados en el servidor que precede en la cadena.
 
 ### <a name="synchronizing-updates-from-the-microsoft-update-catalog"></a>Sincronizar actualizaciones desde el catálogo de Microsoft Update
-para obtener más información acerca de la sincronización de actualizaciones desde el sitio del catálogo de Microsoft Update, consulte: [WSUS y el sitio del catálogo de](wsus-and-the-catalog-site.md).
+para obtener más información acerca de la sincronización de actualizaciones desde el sitio del catálogo de Microsoft Update, vea: [WSUS y el sitio del catálogo](wsus-and-the-catalog-site.md).
 
 ## <a name="configuring-proxy-server-settings"></a>Configuración del servidor proxy
 Puede configurar el servidor WSUS para que use un servidor proxy durante la sincronización con un servidor que precede en la cadena o Microsoft Update. Esta configuración solo se aplicará cuando el servidor WSUS ejecute sincronizaciones. De forma predeterminada, el servidor WSUS intentará conectarse directamente al servidor que precede en la cadena o a Microsoft Update.
@@ -87,9 +87,9 @@ El origen de la actualización es la ubicación desde la que el servidor WSUS ob
 
 Entre las opciones para personalizar el modo en que el servidor WSUS se sincroniza con el origen de actualización se incluyen las siguientes:
 
--   Puede especificar un puerto personalizado para la sincronización. Para obtener información sobre la configuración de puertos, consulte @no__t 0Step 3: Configure WSUS @ no__t-0 en la guía de implementación de WSUS.
+-   Puede especificar un puerto personalizado para la sincronización. Para obtener información acerca de la configuración de puertos, consulte [Step 3: configure WSUS](../deploy/2-configure-wsus.md) en la guía de implementación de WSUS.
 
--   Puede usar capas de sockets seguros (SSL) para proteger la sincronización de la información de actualización entre los servidores WSUS. Para obtener más información sobre el uso de SSL, consulte la sección "3,5. Proteger WSUS con el protocolo de Capa de sockets seguros "de [Step 3: Configure WSUS @ no__t-0 en la guía de implementación de WSUS.
+-   Puede usar capas de sockets seguros (SSL) para proteger la sincronización de la información de actualización entre los servidores WSUS. Para obtener más información sobre el uso de SSL, consulte la sección "3,5. Proteja WSUS con el protocolo de Capa de sockets seguros "del [paso 3: configurar WSUS](../deploy/2-configure-wsus.md) en la guía de implementación de WSUS.
 
 ## <a name="synchronizing-manually-or-automatically"></a>Sincronizar manual o automáticamente
 Puede sincronizar el servidor WSUS manualmente o especificar una hora para que se sincronice automáticamente.

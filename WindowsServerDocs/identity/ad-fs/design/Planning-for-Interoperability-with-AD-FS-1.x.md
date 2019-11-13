@@ -18,21 +18,21 @@ ms.locfileid: "71407963"
 ---
 # <a name="planning-for-interoperability-with-ad-fs-1x"></a>Planificación para la interoperabilidad con AD FS 1.x
 
-Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1 los servidores de Federación que ejecutan Windows Server® 2012 pueden interoperar con un AD FS 1,0 \(installed con Windows Server 2003 R2 @ no__t-3 Servicio de federación y un AD FS 1,1 \(installed con Windows Server 2008 o Windows Server 2008 R2 @ no__t-5 Servicio de federación. Se admite cualquiera de las siguientes combinaciones de interoperabilidad:  
+Servicios de federación de Active Directory (AD FS) \(AD FS\) servidores de Federación que ejecutan Windows Server® 2012 pueden interoperar con AD FS 1,0 \(instalado con Windows Server 2003 R2\) servicio de Federación y un AD FS 1,1 \(instalado con Windows Server 2008 o Windows Server 2008 R2\) servicio de Federación. Se admite cualquiera de las siguientes combinaciones de interoperabilidad:  
 
--   Cualquier AD FS 1. *x* servicio de Federación puede enviar una demanda que un Servicio de federación de AD FS puede consumir en Windows Server 2012. Para obtener más información, vea [Checklist: Configuración de AD FS para consumir notificaciones de AD FS 1. x @ no__t-0.  
+-   Cualquier AD FS 1. *x* servicio de Federación puede enviar una demanda que un Servicio de federación de AD FS puede consumir en Windows Server 2012. Para obtener más información, consulte [Checklist: configuring AD FS para consumir notificaciones de AD FS 1. x](../../ad-fs/deployment/Checklist--Configuring-AD-FS--to-Consume-Claims-from-AD-FS-1.x.md).  
 
--   Cualquier AD FS Servicio de federación en Windows Server 2012 puede enviar un AD FS 1. *x*@no__t: 1Compatible que puede ser consumida por un AD FS 1. *x* servicio de Federación. Para obtener más información, vea [Checklist: Configuración de AD FS para enviar notificaciones a un AD FS 1. x Servicio de federación @ no__t-0.  
+-   Cualquier AD FS Servicio de federación en Windows Server 2012 puede enviar un AD FS 1. *x*\-Claim compatible que puede consumir un AD FS 1. *x* servicio de Federación. Para obtener más información, consulte [Checklist: Configuring AD FS to Send Claims to an AD FS 1.x Federation Service](../../ad-fs/deployment/Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Federation-Service.md).  
 
--   Cualquier AD FS Servicio de federación en Windows Server 2012 puede enviar un AD FS 1. *x*@no__t: 1Compatible que se puede usar en uno o varios servidores web que ejecutan el AD FS 1. *x* Claims @ no__t-3aware web Agent. Para obtener más información, vea [Checklist: Configuración de AD FS para enviar notificaciones a un agente Web compatible con notificaciones de AD FS 1. x @ no__t-0.  
+-   Cualquier AD FS Servicio de federación en Windows Server 2012 puede enviar un AD FS 1. *x*\-notificaciones compatibles que pueden usar uno o varios servidores web que ejecuten el AD FS 1. el agente Web compatible con\-de notificaciones *x* . Para obtener más información, consulte [Checklist: Configuring AD FS to Send Claims to an AD FS 1.x Claims-Aware Web Agent](../../ad-fs/deployment/Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Claims-Aware-Web-Agent.md).  
 
 > [!NOTE]  
 > AD FS no admite ni interopera con el AD FS 1. *x* agente Web basado en tokens de Windows NT.  
 
-Un AD FS 1. *x*\-Compatible es una demanda que se puede enviar a través de un AD FS servicio de Federación en Windows Server 2012 y que comprende AD FS 1. *x* servicio de Federación. Para que un AD FS 1. *x* servicio de Federación puede consumir las notificaciones que envía un Servicio de federación de AD FS, se debe enviar un identificador de nombre \(ID @ no__t-2.  
+Un AD FS 1. *x*\-Claim compatible es una demanda que se puede enviar mediante un AD FS servicio de Federación en Windows Server 2012 y que se entiende por un AD FS 1. *x* servicio de Federación. Para que un AD FS 1. *x* servicio de Federación puede consumir las notificaciones que envía un Servicio de federación de AD FS, se debe enviar un identificador de nombre \(identificador\) tipo de notificación.  
 
 ## <a name="understanding-the-name-id-claim-type"></a>Descripción del tipo de notificación de Id. de nombre  
-El tipo de notificación de Id. de nombre es equivalente al tipo de notificación de identidad que usa AD FS 1.*x* . Debe usarse cuando quiera interactuar con AD FS 1.*x*. El tipo de notificaciones de identificador de nombre permite un AD FS 1. *x* servicio de Federación o el AD FS 1. *x* Claims @ no__t-2aware web Agent para consumir notificaciones que AD FS en Windows Server 2012 envía, siempre y cuando estas notificaciones se envíen en uno de los formatos de identificador de nombre de la tabla siguiente.  
+El tipo de notificación de Id. de nombre es equivalente al tipo de notificación de identidad que usa AD FS 1.*x* . Debe usarse cuando quiera interactuar con AD FS 1.*x*. El tipo de notificaciones de identificador de nombre permite un AD FS 1. *x* servicio de Federación o el AD FS 1. *x* notifica\-agente Web compatible para consumir notificaciones que AD FS en Windows Server 2012 envía, siempre y cuando estas notificaciones se envíen en uno de los formatos de identificador de nombre de la tabla siguiente.  
 
 
 |      Formato del Id. de nombre.       |               URI correspondiente                |
@@ -40,12 +40,12 @@ El tipo de notificación de Id. de nombre es equivalente al tipo de notificació
 | Dirección de correo electrónico de AD FS 1.*x* | http://schemas.xmlsoap.org/claims/EmailAddress |
 |   UPN de correo electrónico de AD FS 1.*x*   |     http://schemas.xmlsoap.org/claims/UPN      |
 |        Nombre común        |  http://schemas.xmlsoap.org/claims/CommonName  |
-|           Agrupar           |    http://schemas.xmlsoap.org/claims/Group     |
+|           Grupo           |    http://schemas.xmlsoap.org/claims/Group     |
 
 Solo se debe enviar una notificación de Id. de nombre con el formato adecuado. Cuando se cumple ese criterio, también se pueden enviar muchas otras notificaciones, suponiendo que se ajusten a las restricciones que se describen en la tabla.  
 
 > [!NOTE]  
-> Un AD FS 1. *x* servicio de Federación puede interpretar solo los tipos de notificaciones entrantes que comienzan por el identificador uniforme de recursos \(URI @ no__t-2 de http://schemas.xmlsoap.org/claims/.  
+> Un AD FS 1. *x* servicio de Federación puede interpretar solo los tipos de notificaciones entrantes que comienzan por el identificador uniforme de recursos \(URI\) de http://schemas.xmlsoap.org/claims/.  
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

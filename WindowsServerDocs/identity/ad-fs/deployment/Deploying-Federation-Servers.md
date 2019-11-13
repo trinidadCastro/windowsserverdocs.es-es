@@ -18,7 +18,7 @@ ms.locfileid: "71359633"
 ---
 # <a name="deploying-federation-servers"></a>Implementación de servidores de federación
 
-Para implementar servidores de Federación en Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1, complete cada una de las tareas en [Checklist: Configuración de un servidor de Federación @ no__t-0.  
+Para implementar servidores de Federación en Servicios de federación de Active Directory (AD FS) \(AD FS\), complete cada una de las tareas de la [lista de comprobación: configuración de un servidor de Federación](Checklist--Setting-Up-a-Federation-Server.md).  
   
 > [!NOTE]  
 > Cuando use esta lista de comprobación, recomendamos que lea primero las referencias al planeamiento del servidor de Federación en la [Guía de diseño de AD FS en Windows server 2012](https://technet.microsoft.com/library/dd807036.aspx) antes de comenzar con los procedimientos para configurar los servidores. Al seguir la lista de comprobación de esta manera, se entiende mejor el proceso de diseño e implementación de los servidores de Federación.  
@@ -26,22 +26,22 @@ Para implementar servidores de Federación en Servicios de federación de Active
 ## <a name="about-federation-servers"></a>Acerca de los servidores de Federación  
 Los servidores de Federación son equipos que ejecutan Windows Server 2008 con el software AD FS instalado que se han configurado para actuar en el rol de servidor de Federación. Los servidores de Federación autentican o enrutan las solicitudes de las cuentas de usuario de otras organizaciones y de los equipos cliente que se pueden encontrar en cualquier parte de Internet.  
   
-La acción de instalar el software de AD FS en un equipo y usar el Asistente para la configuración del servidor de Federación de AD FS para configurarlo para el rol de servidor de Federación hace que ese equipo sea un servidor de Federación. También hace que el complemento de administración de AD FS @ no__t-0in esté disponible en el equipo en el menú **iniciar @ no__t-2Administrative Tools @ no__t-3** para que pueda especificar lo siguiente:  
+La acción de instalar el software de AD FS en un equipo y usar el Asistente para la configuración del servidor de Federación de AD FS para configurarlo para el rol de servidor de Federación hace que ese equipo sea un servidor de Federación. También hace que el\-de administración de AD FS se encuentre disponible en el equipo en el menú **inicio\\herramientas administrativas\\** para que pueda especificar lo siguiente:  
   
 -   El nombre de host AD FS en el que las aplicaciones y las organizaciones asociadas enviarán solicitudes y respuestas de token  
   
 -   El identificador AD FS que las organizaciones y aplicaciones asociadas usarán para identificar el nombre único o la ubicación de la organización.  
   
--   El certificado de token @ no__t-0signing que todos los servidores de Federación de una granja de servidores usarán para emitir y firmar tokens.  
+-   El token\-certificado de firma que todos los servidores de Federación de una granja de servidores usarán para emitir y firmar tokens.  
   
 -   La ubicación de las páginas web de ASP.NET personalizadas para el inicio de sesión, la cierre de sesión y la detección de asociado de cuenta para mejorar la experiencia del cliente  
   
     > [!NOTE]  
-    > La mayoría de estas opciones principales de la interfaz de usuario \(UI @ no__t-1 se encuentran en el archivo Web. config de cada servidor de Federación. El nombre de host de AD FS y los valores de identificador de AD FS no se especifican en el archivo Web. config.  
+    > La mayoría de estas opciones principales de interfaz de usuario \(interfaz de usuario\) se encuentran en el archivo Web. config de cada servidor de Federación. El nombre de host de AD FS y los valores de identificador de AD FS no se especifican en el archivo Web. config.  
   
-Los servidores de Federación hospedan un motor de emisión de notificaciones que emite tokens basados en las credenciales @no__t ejemplo 0for, el nombre de usuario y la contraseña @ no__t-1 que se le presentan. Un token de seguridad es una unidad de datos con firma criptográfica que expresa una o más notificaciones. Una demanda es una instrucción que hace que un servidor haga @no__t ejemplo, nombre, identidad, clave, grupo, privilegio o capacidad de 0for @ no__t-1 sobre un cliente. Una vez comprobadas las credenciales en el servidor de Federación @no__t 0through el proceso de inicio de sesión de usuario @ no__t-1, se recopilan las notificaciones para el usuario mediante el examen de los atributos de usuario que se almacenan en el almacén de atributos especificado.  
+Los servidores de Federación hospedan un motor de emisión de notificaciones que emite tokens basados en las credenciales \(por ejemplo, el nombre de usuario y la contraseña\) que se le presentan. Un token de seguridad es una unidad de datos con firma criptográfica que expresa una o más notificaciones. Una demanda es una instrucción que hace que un servidor \(por ejemplo, nombre, identidad, clave, grupo, privilegio o capacidad\) sobre un cliente. Una vez comprobadas las credenciales en el servidor de Federación \(a través del proceso de inicio de sesión de usuario\), se recopilan las notificaciones del usuario mediante el examen de los atributos de usuario que se almacenan en el almacén de atributos especificado.  
   
-En el sitio Web federado único @ no__t-0Sign @ no__t-1On \(SSO @ no__t-3 diseña los diseños \(AD FS en los que dos o más organizaciones están implicadas en @ no__t-5, las notificaciones pueden ser modificadas por reglas de notificación para un usuario de confianza específico. Las notificaciones se integran en un token que se envía a un servidor de Federación en la organización del asociado de recurso. Después de que un servidor de Federación del asociado de recurso reciba las notificaciones como notificaciones entrantes, ejecuta el motor de emisión de notificaciones para ejecutar un conjunto de reglas de notificación para filtrar, pasar o transformar esas notificaciones. Las notificaciones se compilan en un nuevo token que se envía al servidor Web en el asociado de recurso.  
+En Inicio de sesión único de\-Web federado\-en \(diseños de\) SSO \(diseños de AD FS en los que se implican dos o más organizaciones\), las notificaciones pueden ser modificadas por reglas de notificación para un usuario de confianza específico. Las notificaciones se integran en un token que se envía a un servidor de Federación en la organización del asociado de recurso. Después de que un servidor de Federación del asociado de recurso reciba las notificaciones como notificaciones entrantes, ejecuta el motor de emisión de notificaciones para ejecutar un conjunto de reglas de notificación para filtrar, pasar o transformar esas notificaciones. Las notificaciones se compilan en un nuevo token que se envía al servidor Web en el asociado de recurso.  
   
-En el diseño de SSO Web \(AN AD FS diseño en el que solo una organización implica @ no__t-1, se puede usar un solo servidor de Federación para que los empleados puedan iniciar sesión una vez y seguir accediendo a varias aplicaciones.  
+En el diseño de SSO Web \(un diseño de AD FS en el que solo una organización implica\), se puede usar un solo servidor de Federación para que los empleados puedan iniciar sesión una vez y seguir accediendo a varias aplicaciones.  
   

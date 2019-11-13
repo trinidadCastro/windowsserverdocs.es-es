@@ -25,7 +25,7 @@ ms.locfileid: "71365221"
   
 *Para obtener más información sobre los análisis y los procedimientos recomendados, consulte* [analizador de procedimientos recomendados](https://go.microsoft.com/fwlink/?LinkId=122786).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -43,13 +43,13 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
   
 ## <a name="impact"></a>Impacto  
   
-@no__t espacio 0Available puede quedarse en el disco físico que almacena los archivos de puntos de control. Si esto ocurre, no se pueden realizar más operaciones de disco en el almacenamiento físico. Cualquier máquina virtual que se base en el almacenamiento físico podría verse afectada. *  
+*Se puede agotar el espacio disponible en el disco físico en el que se almacenan los archivos de puntos de control. Si esto ocurre, no se pueden realizar más operaciones de disco en el almacenamiento físico. Cualquier máquina virtual que se base en el almacenamiento físico podría verse afectada.*  
   
 Si se agota el espacio en disco físico, cualquier máquina virtual en ejecución que tenga puntos de control o discos duros virtuales almacenados en ese disco puede pausarse automáticamente. El administrador de Hyper-V muestra el estado de estas máquinas virtuales como "en pausa-crítico".  
   
 ## <a name="resolution"></a>Resolución  
   
-*If la máquina virtual ejecuta una carga de trabajo de servidor en un entorno de producción, desconecta la máquina virtual y, a continuación, usa el administrador de Hyper-V para aplicar o eliminar los puntos de control. Para eliminar puntos de control, debe apagar la máquina virtual para completar el proceso.*  
+*Si la máquina virtual ejecuta una carga de trabajo de servidor en un entorno de producción, ponga la máquina virtual sin conexión y, a continuación, use el administrador de Hyper-V para aplicar o eliminar los puntos de control. Para eliminar puntos de control, debe apagar la máquina virtual para completar el proceso.*  
   
 > [!NOTE]  
 > Los puntos de control de producción ahora están disponibles como alternativa a los puntos de control estándar. Para obtener más información, consulte [elegir entre los puntos de control estándar o de producción](../manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md).  

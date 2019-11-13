@@ -57,7 +57,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |**Notación**|**Recomendación**|  
 |SÍ|Habilitar en escenarios generales|  
 |NO|**No** habilitar en escenarios generales|  
-|CUANDO|Habilitar si es necesario para un escenario concreto, o si se instala en el equipo un rol o característica para el que se desea la auditoría|  
+|Cuando|Habilitar si es necesario para un escenario concreto, o si se instala en el equipo un rol o característica para el que se desea la auditoría|  
 |DC|Habilitar en controladores de dominio|  
 |En blanco|Ninguna recomendación|  
 
@@ -257,7 +257,7 @@ Un ejemplo del segundo evento es:
 
 Un número Aberrant de inicios de sesión erróneos podría indicar un ataque de adivinación de contraseñas. Para que una empresa proporcione una alerta para un número inusualmente alto de inicios de sesión con error, primero debe comprender los niveles normales de inicios de sesión con error dentro de su entorno antes de un evento de seguridad malintencionado.  
 
-Para obtener una lista completa de los eventos que se deben incluir al supervisar los síntomas de riesgo, consulte @no__t 0Appendix L: Eventos para supervisar @ no__t-0.  
+Para obtener una lista completa de los eventos que se deben incluir al supervisar los síntomas de riesgo, consulte [Apéndice L: eventos para supervisar](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md).  
 
 ## <a name="active-directory-objects-and-attributes-to-monitor"></a>Active Directory objetos y atributos que se van a supervisar  
 A continuación se muestran las cuentas, los grupos y los atributos que debe supervisar para ayudarle a detectar los intentos de poner en peligro la instalación de Active Directory Domain Services.  
@@ -270,11 +270,11 @@ A continuación se muestran las cuentas, los grupos y los atributos que debe sup
 
 -   Cuentas con privilegios y VIP en AD DS. Supervise los cambios, especialmente los cambios en los atributos de la pestaña cuenta (por ejemplo, CN, Name, sAMAccountName, userPrincipalName o userAccountControl). Además de supervisar las cuentas, restrinja quién puede modificar las cuentas como un pequeño conjunto de usuarios administrativos como sea posible.  
 
-Consulte @no__t 0Appendix L: Eventos para supervisar @ no__t-0 para obtener una lista de los eventos recomendados que se van a supervisar, su clasificación de importancia crítica y un resumen de mensajes de eventos.  
+Consulte [Apéndice L: events to Monitor](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md) para obtener una lista de los eventos recomendados que se deben supervisar, su clasificación de importancia y un resumen de mensajes de eventos.  
 
 -   Agrupar servidores por la clasificación de sus cargas de trabajo, lo que le permite identificar rápidamente los servidores que deben ser los más supervisados y configurados de forma más rigurosa  
 
--   Cambios en las propiedades y pertenencia a los siguientes grupos de AD DS: Administradores de empresas (EA), Admins. del dominio (DA), administradores (BA) y administradores de esquema (SA)  
+-   Cambios en las propiedades y pertenencia a los siguientes grupos de AD DS: administradores de empresas (EA), Admins. del dominio (DA), administradores (BA) y administradores de esquema (SA)  
 
 -   Cuentas con privilegios deshabilitadas (como las cuentas de administrador integradas en Active Directory y en los sistemas miembro) para habilitar las cuentas  
 
@@ -298,12 +298,12 @@ Revise los siguientes vínculos para obtener información adicional sobre la sup
 ## <a name="general-list-of-security-event-id-recommendation-criticalities"></a>Lista general de críticas de recomendaciones de ID. de eventos de seguridad  
 Todas las recomendaciones de ID. de evento van acompañadas de una clasificación de importancia crítica de la siguiente manera:  
 
-**Calidad** Los identificadores de eventos con una clasificación de nivel de importancia alta siempre deben alertarse e investigarse inmediatamente.  
+**Alto:** Los identificadores de eventos con una clasificación de nivel de importancia alta siempre deben alertarse e investigarse inmediatamente.  
 
-**Medio** Un ID. de evento con una clasificación de gravedad media podría indicar actividad malintencionada, pero debe ir acompañado de otra anomalía (por ejemplo, un número inusual en un período de tiempo determinado, repeticiones inesperadas o ocurrencias en un equipo que Normalmente, no se esperaría registrar el evento). También se puede recopilar un evento de importancia media y compararlo con el tiempo.  
+**Medio:** Un ID. de evento con una clasificación de gravedad media podría indicar actividad malintencionada, pero debe ir acompañado de otra anomalía (por ejemplo, un número inusual en un período de tiempo determinado, repeticiones inesperadas o repeticiones de un equipo que normalmente no se esperarían registrar el evento). También se puede recopilar un evento de importancia media y compararlo con el tiempo.  
 
-**Habilita** Y el ID. de evento con un bajo nivel de gravedad no deben obtener atención ni producir alertas, a menos que estén correlacionados con eventos de importancia media o alta.  
+**Bajo:** Y el ID. de evento con un bajo nivel de gravedad no deben obtener atención ni producir alertas, a menos que estén correlacionados con eventos de importancia media o alta.  
 
 Estas recomendaciones están pensadas para proporcionar una guía de línea de base para el administrador. Todas las recomendaciones deben revisarse minuciosamente antes de la implementación en un entorno de producción.  
 
-Consulte @no__t 0Appendix L: Eventos para supervisar @ no__t-0 para obtener una lista de los eventos recomendados que se van a supervisar, su clasificación de importancia crítica y un resumen de mensajes de eventos.  
+Consulte [Apéndice L: events to Monitor](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md) para obtener una lista de los eventos recomendados que se deben supervisar, su clasificación de importancia y un resumen de mensajes de eventos.  

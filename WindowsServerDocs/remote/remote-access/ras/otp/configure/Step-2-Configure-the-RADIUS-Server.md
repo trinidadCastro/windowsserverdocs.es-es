@@ -27,8 +27,8 @@ Antes de configurar el servidor de acceso remoto para que admita DirectAccess co
   
 |Tarea|Descripción|  
 |----|--------|  
-|[2,1. Configurar los tokens de distribución de software RADIUS @ no__t-0|En el servidor RADIUS, configure los tokens de distribución de software.|  
-|[2,2. Configurar la información de seguridad de RADIUS @ no__t-0|En el servidor RADIUS, configure los puertos y el secreto compartido que se usarán.|  
+|[2,1. configurar los tokens de distribución de software RADIUS](#BKMK_1.1)|En el servidor RADIUS, configure los tokens de distribución de software.|  
+|[2,2. configurar la información de seguridad de RADIUS](#BKMK_1.2)|En el servidor RADIUS, configure los puertos y el secreto compartido que se usarán.|  
 |[2,3 agregar la cuenta de usuario para el sondeo de OTP](#BKMK_Probe)|En el servidor RADIUS, cree una nueva cuenta de usuario para el sondeo de OTP.|  
 |[2,4 sincronizar con Active Directory](#BKMK_Active)|En el servidor RADIUS, cree cuentas de usuario sincronizadas con cuentas de Active Directory.|  
 |[2,5 configuración del agente de autenticación RADIUS](#BKMK_AuthAgent)|Configure el servidor de acceso remoto como agente de autenticación RADIUS.|  

@@ -21,11 +21,11 @@ Para preparar la migración de un servidor proxy de Federación AD FS 2,0 a Wind
   
  Para exportar los datos de configuración de AD FS, realiza estas tareas:  
   
--   [Paso 1: Exportar la configuración del servicio de proxy @ no__t-0  
+-   [Paso 1: exportar la configuración del servicio de proxy](#step-1-export-proxy-service-settings)  
   
--   [Paso 2: Realizar copias de seguridad de las personalizaciones de páginas web @ no__t-0  
+-   [Paso 2: realizar copias de seguridad de las personalizaciones de páginas web](#step-2-back-up-webpage-customizations)  
   
-##  <a name="step-1-export-proxy-service-settings"></a>Paso 1: exportar la configuración del servicio de proxy  
+##  <a name="step-1-export-proxy-service-settings"></a>Paso 1: Exportar la configuración del servicio de proxy  
  Para exportar la configuración del servicio de proxy de servidores de federación, realice el siguiente procedimiento:  
   
 ### <a name="to-export-proxy-service-settings"></a>Para exportar la configuración del servicio de proxy  
@@ -49,12 +49,12 @@ Abra Windows PowerShell y ejecute el comando siguiente para agregar los cmdlets 
   
 -   La dirección y el puerto del proxy HTTP (si hay un servidor proxy HTTP entre el proxy del servidor de federación de AD FS y los servidores de federación de AD FS)  
   
-##  <a name="step-2-back-up-webpage-customizations"></a>Paso 2: Hacer una copia de seguridad de las personalizaciones de las páginas web  
+##  <a name="step-2-back-up-webpage-customizations"></a>Paso 2: Hacer copia de seguridad de las personalizaciones de las páginas web  
  Para hacer una copia de seguridad de las personalizaciones de las páginas web, copie las páginas web del proxy de AD FS y el archivo **web.config** del directorio que está asignado a la ruta de acceso virtual **“/adfs/ls”** en IIS.  De forma predeterminada, está en el directorio **%systemdrive%\inetpub\adfs\ls**.  
   
 ## <a name="next-steps"></a>Pasos siguientes
- [Preparar la migración del servidor de Federación de AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Preparar la migración del servidor de federación AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
  [Preparar la migración del servidor proxy de Federación de AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [Migrar el servidor de federación AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
- [Migrar el servidor proxy de Federación de AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   
+ [Migre el servidor proxy de Federación de AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [Migrar los agentes web de AD FS 1.1](migrate-the-ad-fs-web-agent.md)

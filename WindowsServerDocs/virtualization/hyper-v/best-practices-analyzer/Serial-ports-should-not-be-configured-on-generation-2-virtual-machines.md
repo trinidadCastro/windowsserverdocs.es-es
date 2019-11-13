@@ -23,7 +23,7 @@ ms.locfileid: "71364726"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -38,10 +38,10 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 ## <a name="impact"></a>**Impacto**  
 *El rendimiento puede verse afectado en las siguientes máquinas virtuales:*  
   
-\<list de máquinas virtuales >  
+\<lista de máquinas virtuales >  
   
 ## <a name="resolution"></a>**Resolución**  
-@no__t 0If es intencional, no es necesario realizar ninguna otra acción. En caso contrario, considere la posibilidad de usar el administrador de Hyper-V o Windows PowerShell para quitar la cadena de conexión de los puertos serie de la máquina virtual. *  
+*Si esto es intencionado, no es necesario realizar ninguna otra acción. En caso contrario, considere la posibilidad de usar el administrador de Hyper-V o Windows PowerShell para quitar la cadena de conexión de los puertos serie de la máquina virtual.*  
   
 
 

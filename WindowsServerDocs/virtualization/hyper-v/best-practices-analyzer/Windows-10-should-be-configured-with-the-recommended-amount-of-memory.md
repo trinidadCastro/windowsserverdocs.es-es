@@ -23,7 +23,7 @@ ms.locfileid: "71364570"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -36,7 +36,7 @@ En las secciones siguientes se proporcionan detalles sobre el problema específi
 *Una máquina virtual que ejecuta Windows 10 está configurada con menos de la cantidad de RAM recomendada, que es 1 GB.*  
   
 ## <a name="impact"></a>**Impacto**  
-es posible que las aplicaciones y el sistema operativo invitado de @no__t 0The no funcionen correctamente. Puede que no haya suficiente memoria para ejecutar varias aplicaciones a la vez. Esto afecta a las siguientes máquinas virtuales: *  
+*Es posible que el sistema operativo invitado y las aplicaciones no funcionen correctamente. Puede que no haya suficiente memoria para ejecutar varias aplicaciones a la vez. Esto afecta a las siguientes máquinas virtuales:*  
 ```  
 <list of virtual machines>  
 ```  
@@ -67,7 +67,7 @@ es posible que las aplicaciones y el sistema operativo invitado de @no__t 0The n
 Set-VMMemory <MyVM> -StartupBytes 1GB  
 ```  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Set-VMMemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

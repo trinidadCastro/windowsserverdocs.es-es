@@ -30,7 +30,7 @@ Antes de configurar una implementación multisitio, debe configurar una implemen
   
 ## <a name="BKMK_Links"></a>Vea también  
   
--   [Paso 2: Configuración de la infraestructura multisitio @ no__t-0  
+-   [Paso 2: configurar la infraestructura multisitio](Step-2-Configure-the-Multisite-Infrastructure.md)  
 
 
 

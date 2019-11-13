@@ -18,9 +18,9 @@ ms.locfileid: "71407883"
 ---
 # <a name="when-to-create-a-federation-server"></a>Cuándo se debe crear un servidor de federación
 
-Cuando se crea un servidor de Federación en Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1, se proporciona un medio por el que la organización puede:  
+Cuando se crea un servidor de Federación en Servicios de federación de Active Directory (AD FS) \(AD FS\), se proporciona un medio por el que la organización puede:  
   
--   Participar en Web Single @ no__t-0sign @ no__t-1ON \(SSO @ no__t-3: la comunicación basada en otra organización \(that también tiene al menos un servidor de Federación @ no__t-5 y, cuando sea necesario, con los empleados de su propia organización \(who necesitan acceso a través de Internet @ no__t-7.  
+-   Participar en el\-de inicio de\-único Web en \(comunicación basada en\)SSO con otra organización \(que también tenga al menos un servidor de Federación\) y, cuando sea necesario, con los empleados de su propia organización \(que necesiten acceso a través de Internet\).  
   
 -   Habilite servicios front-end para suplantar a los usuarios en los servicios de infraestructura mediante la delegación de identidad. Para obtener más información, consulte [When to Use Identity Delegation](When-to-Use-Identity-Delegation.md).  
   
@@ -29,9 +29,9 @@ En las secciones siguientes se describen algunas de las decisiones clave para de
 ## <a name="determine-the-organizational-role-for-the-federation-server"></a>Determinar la función organizativa del servidor de federación  
 Para tomar una decisión informada sobre cuándo crear un nuevo servidor de Federación, primero debe determinar en qué organización va a residir el servidor. El rol que desempeña un servidor de Federación en una organización depende de si se coloca el servidor de Federación en la organización del asociado de cuenta o en la organización del asociado de recurso.  
   
-Cuando se coloca un servidor de Federación en la red corporativa del asociado de cuenta, su rol es autenticar las credenciales de usuario del explorador, el servicio web o los clientes del selector de identidad y enviar los tokens de seguridad a los clientes. Para obtener más información, consulte [revisar el rol del servidor de federación del asociado de cuenta](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md).  
+Cuando se coloca un servidor de Federación en la red corporativa del asociado de cuenta, su rol es autenticar las credenciales de usuario del explorador, el servicio web o los clientes del selector de identidad y enviar los tokens de seguridad a los clientes. Para obtener más información, consulte [Review the Role of the Federation Server in the Account Partner](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md).  
   
-Cuando se coloca un servidor de Federación en la red corporativa del asociado de recurso, su rol es autenticar usuarios, en función de un token de seguridad emitido por un servidor de Federación en la organización del asociado de recurso, o su rol es redirigir solicitudes de token desde aplicaciones web o servicios web configurados para la organización del asociado de cuenta al que pertenece el cliente. Para obtener más información, consulte [revisar el rol del servidor de federación del asociado de recurso](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md).  
+Cuando se coloca un servidor de Federación en la red corporativa del asociado de recurso, su rol es autenticar usuarios, en función de un token de seguridad emitido por un servidor de Federación en la organización del asociado de recurso, o su rol es redirigir solicitudes de token desde aplicaciones web o servicios web configurados para la organización del asociado de cuenta al que pertenece el cliente. Para obtener más información, consulte [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md).  
   
 ## <a name="determine-which-ad-fs-design-to-deploy"></a>Determinar qué diseño de AD FS implementar  
 Cree servidores de Federación en su organización siempre que desee implementar cualquiera de los siguientes diseños de AD FS:  
@@ -40,13 +40,13 @@ Cree servidores de Federación en su organización siempre que desee implementar
   
 -   [Diseño de SSO web federado](Federated-Web-SSO-Design.md)  
   
-Si es necesario, una organización que implementa un diseño de SSO Web federado puede configurar un único servidor de Federación para que actúe en el rol de asociado de cuenta y en el rol de asociado de recurso. En este caso, el servidor de Federación puede producir Lenguaje de marcado de aserción de seguridad tokens \(SAML @ no__t-1, en función de las cuentas de usuario de su propia organización, o volver a enrutar las solicitudes de token a la organización, en función de dónde residen las cuentas de los usuarios.  
+Si es necesario, una organización que implementa un diseño de SSO Web federado puede configurar un único servidor de Federación para que actúe en el rol de asociado de cuenta y en el rol de asociado de recurso. En este caso, el servidor de Federación puede producir Lenguaje de marcado de aserción de seguridad \(tokens de SAML\), en función de las cuentas de usuario de su propia organización, o volver a enrutar las solicitudes de token a la organización, en función de dónde residen las cuentas de los usuarios.  
   
 > [!NOTE]  
 > En el caso del diseño de SSO Web federado, debe haber al menos un servidor de Federación en el asociado de cuenta y al menos un servidor de Federación en el asociado de recurso.  
   
 ## <a name="differences-between-a-federation-server-and-a-federation-server-proxy"></a>Diferencias entre un servidor de federación y un servidor proxy de federación  
-Un servidor de Federación puede servir páginas web para firmar @ no__t-0in, Directiva, autenticación y detección de la misma manera que un servidor proxy de Federación. Las principales diferencias entre un servidor de Federación y un servidor proxy de Federación tienen que hacer con las operaciones que puede realizar un servidor de Federación y que no puede realizar un servidor proxy de Federación.  
+Un servidor de Federación puede servir páginas web para firmar\-en, la Directiva, la autenticación y la detección de la misma manera que un servidor proxy de Federación. Las principales diferencias entre un servidor de Federación y un servidor proxy de Federación tienen que hacer con las operaciones que puede realizar un servidor de Federación y que no puede realizar un servidor proxy de Federación.  
   
 A continuación se indican las operaciones que solo puede realizar un servidor de Federación:  
   
@@ -55,14 +55,14 @@ A continuación se indican las operaciones que solo puede realizar un servidor d
 -   Los servidores de Federación admiten el uso de la autenticación integrada de Windows para los clientes de la red corporativa; los servidores proxy de Federación no lo hacen. Para obtener más información acerca del uso de la autenticación integrada de Windows con el servidor de Federación, consulte [Cuándo crear una granja de servidores de Federación](When-to-Create-a-Federation-Server-Farm.md).  
   
 > [!CAUTION]  
-> La integridad y confidencialidad de la comunicación entre los servidores de federación y las bases de datos de configuración de SQL Server, los almacenes de atributos de SQL Server, los controladores de dominio y las instancias de AD LDS no está protegida de forma predeterminada. Para mitigar esto, considere la posibilidad de proteger el canal de comunicación entre estos servidores mediante IPSEC o con una conexión segura físicamente entre todos estos servidores. Para la comunicación entre los servidores de federación y SQL, considere la posibilidad de usar la protección de SSL en la cadena de conexión. Para las conexiones entre los servidores de federación y los controladores de dominio, considere la posibilidad de activar la firma y el cifrado de Kerberos. Para LDAP, LDAP @ no__t-0S no es compatible con AD LDS @ no__t-1AD DS.  
+> La integridad y confidencialidad de la comunicación entre los servidores de federación y las bases de datos de configuración de SQL Server, los almacenes de atributos de SQL Server, los controladores de dominio y las instancias de AD LDS no está protegida de forma predeterminada. Para mitigar esto, considere la posibilidad de proteger el canal de comunicación entre estos servidores mediante IPSEC o con una conexión segura físicamente entre todos estos servidores. Para la comunicación entre los servidores de Federación y los servidores SQL Server, considere la posibilidad de usar la protección SSL en la cadena de conexión. Para las conexiones entre los servidores de Federación y los controladores de dominio, considere la posibilidad de activar la firma y el cifrado de Kerberos. En LDAP, LDAP\/S no es compatible con AD LDS\/AD DS.  
   
 ## <a name="how-to-create-a-federation-server"></a>Cómo se crea un servidor de federación  
-Puede crear un servidor de Federación mediante el Asistente para la configuración del servidor de Federación de AD FS o la herramienta @ no__t-0line del comando Fsconfig. exe. Cualquiera de estas herramientas permite elegir las siguientes opciones para crear un servidor de federación.  
+Puede crear un servidor de Federación mediante el Asistente para la configuración del servidor de Federación de AD FS o la herramienta de línea de\-de comandos Fsconfig. exe. Cualquiera de estas herramientas permite elegir las siguientes opciones para crear un servidor de federación.  
   
--   Creación de un servidor de Federación @ no__t-0alone  
+-   Crear un servidor de Federación\-independiente  
   
-    Para obtener más información sobre cómo configurar un servidor de Federación @ no__t-0alone, consulta [crear un servidor de Federación](../../ad-fs/deployment/Create-a-Stand-Alone-Federation-Server.md)independiente.  
+    Para obtener más información sobre cómo configurar un servidor de Federación\-independiente, consulte [crear un servidor de Federación](../../ad-fs/deployment/Create-a-Stand-Alone-Federation-Server.md)independiente.  
   
 -   Crear el primer servidor de federación en una granja de servidores de federación  
   
@@ -70,12 +70,12 @@ Puede crear un servidor de Federación mediante el Asistente para la configuraci
   
 -   Agregar un servidor de federación a una granja de servidores de federación  
   
-    Para obtener más información acerca de cómo agregar un servidor de federación a una granja de servidores, consulte [agregar un servidor de federación a una granja de servidores de federación](../../ad-fs/deployment/Add-a-Federation-Server-to-a-Federation-Server-Farm.md).  
+    Para obtener más información sobre cómo agregar un servidor de federación a una granja de servidores, consulte [Add a Federation Server to a Federation Server Farm](../../ad-fs/deployment/Add-a-Federation-Server-to-a-Federation-Server-Farm.md).  
   
-Para obtener más información acerca de cómo funciona cada una de estas opciones, consulte [el papel de la base de datos de configuración de AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md).  
+Para obtener más información detallada acerca de cómo funciona cada una de estas opciones, consulte [The Role of the AD FS Configuration Database](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md).  
   
-Para obtener más información acerca de cómo configurar todos los requisitos previos necesarios para implementar un servidor de Federación, consulte @no__t 0Checklist: Configuración de un servidor de Federación @ no__t-0.  
+Para obtener más información acerca de cómo configurar todos los requisitos previos necesarios para implementar un servidor de federación, consulte [Checklist: Setting Up a Federation Server](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md).  
   
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

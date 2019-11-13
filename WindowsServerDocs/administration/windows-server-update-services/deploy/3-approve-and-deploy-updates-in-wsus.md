@@ -17,7 +17,7 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71361694"
 ---
-# <a name="step-3-approve-and-deploy-updates-in-wsus"></a>Paso 3: Aprobar e implementar actualizaciones en WSUS
+# <a name="step-3-approve-and-deploy-updates-in-wsus"></a>Paso 3: aprobar e implementar actualizaciones en WSUS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -25,9 +25,9 @@ Los equipos que pertenecen a un grupo se comunican automáticamente con el servi
 
 |Tarea|Descripción|
 |----|--------|
-|[3,1. Aprobar e implementar actualizaciones de WSUS @ no__t-0|Apruebe e implemente actualizaciones de WSUS mediante el uso de la Consola de administración de WSUS.|
-|[3,2. Configurar reglas de aprobación automática @ no__t-0|Configure WSUS para aprobar automáticamente la instalación de actualizaciones para grupos seleccionados y el método para aprobar las revisiones de las actualizaciones existentes.|
-|[3,3. Revisar las actualizaciones instaladas con informes de WSUS @ no__t-0|Revise las actualizaciones que se instalaron, los equipos que recibieron esas actualizaciones y otros detalles mediante el uso de la característica de informes de WSUS.|
+|[3,1. aprobar e implementar actualizaciones de WSUS](3-approve-and-deploy-updates-in-wsus.md#BKM_3.1.)|Apruebe e implemente actualizaciones de WSUS mediante el uso de la Consola de administración de WSUS.|
+|[3,2. configurar reglas de aprobación automática](3-approve-and-deploy-updates-in-wsus.md#BKM_3.2.a.)|Configure WSUS para aprobar automáticamente la instalación de actualizaciones para grupos seleccionados y el método para aprobar las revisiones de las actualizaciones existentes.|
+|[3,3. revisar las actualizaciones instaladas con informes de WSUS](3-approve-and-deploy-updates-in-wsus.md#BKM_3.3.)|Revise las actualizaciones que se instalaron, los equipos que recibieron esas actualizaciones y otros detalles mediante el uso de la característica de informes de WSUS.|
 
 ## <a name="BKM_3.1."></a>3,1. Aprobar e implementar actualizaciones de WSUS
 Use el siguiente procedimiento para aprobar e implementar actualizaciones.
@@ -69,7 +69,7 @@ Las aprobaciones automáticas permiten especificar cómo aprobar automáticament
 
 5.  En **paso 2: editar las propiedades**, haga clic en cada una de las opciones que aparecen y, a continuación, seleccione las opciones adecuadas para cada una.
 
-6.  En @no__t 0Step 3: Especifique un nombre @ no__t-0, escriba un nombre para la regla y, a continuación, haga clic en **Aceptar**.
+6.  En  **Paso 3: Especificar un nombre**, escriba un nombre para la regla y luego haga clic en **Aceptar**.
 
 7.  Haga clic en **Aceptar** para cerrar el cuadro de diálogo Aprobaciones automáticas.
 

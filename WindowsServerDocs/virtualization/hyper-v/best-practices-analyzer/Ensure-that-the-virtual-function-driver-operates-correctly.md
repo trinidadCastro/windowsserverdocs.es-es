@@ -23,7 +23,7 @@ ms.locfileid: "71393615"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -38,10 +38,10 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 ## <a name="impact"></a>Impacto  
 *El rendimiento de red no es óptimo en las siguientes máquinas virtuales:*  
   
-\<list de máquinas virtuales >  
+\<lista de máquinas virtuales >  
   
 ## <a name="resolution"></a>Resolución  
-@no__t 0In el sistema operativo invitado, haga lo siguiente: Compruebe que estén instalados los controladores adecuados y que todos los dispositivos de red estén habilitados y compruebe si hay errores o advertencias en el registro de eventos. *  
+*En el sistema operativo invitado, realice lo siguiente: Compruebe que estén instalados los controladores adecuados y que todos los dispositivos de red estén habilitados, y compruebe si hay errores o advertencias en el registro de eventos.*  
   
 
 

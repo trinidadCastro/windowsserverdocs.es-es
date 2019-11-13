@@ -22,9 +22,9 @@ ms.locfileid: "71359265"
   
 -   [Paso 1: exportar la configuración del servicio](#step-1-export-service-settings)  
   
--   [Paso 2: Copia de seguridad de almacenes de atributos personalizados @ no__t-0  
+-   [Paso 2: realizar una copia de seguridad de almacenes de atributos personalizados](#step-2-back-up-custom-attribute-stores)  
   
--   [Paso 3: Realizar copias de seguridad de las personalizaciones de páginas web @ no__t-0  
+-   [Paso 3: realizar copias de seguridad de las personalizaciones de páginas web](#step-3-back-up-webpage-customizations)  
   
 ## <a name="step-1-export-service-settings"></a>Paso 1: Exportar la configuración del servicio  
  Para exportar la configuración del servicio, realiza el siguiente procedimiento:  
@@ -56,8 +56,8 @@ Para buscar el valor de identidad, examina la columna **Iniciar sesión como** d
  Para hacer una copia de seguridad de las personalizaciones de páginas web, copie las páginas web de AD FS y el archivo **web.config** del directorio que está asignado a la ruta de acceso virtual **“/adfs/ls”** en IIS. De forma predeterminada, está en el directorio **%systemdrive%\inetpub\adfs\ls**.  
 
 ## <a name="next-steps"></a>Pasos siguientes
- [Preparar la migración del servidor de Federación de AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Preparar la migración del servidor de federación AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
  [Preparar la migración del servidor proxy de Federación de AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
  [Migrar el servidor de federación AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
- [Migrar el servidor proxy de Federación de AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   
+ [Migre el servidor proxy de Federación de AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [Migrar los agentes web de AD FS 1.1](migrate-the-ad-fs-web-agent.md)

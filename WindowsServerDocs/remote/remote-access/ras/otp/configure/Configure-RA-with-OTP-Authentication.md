@@ -26,13 +26,13 @@ ms.locfileid: "71404413"
  Windows Server 2016 y Windows Server 2012 combinan DirectAccess y la VPN del servicio de enrutamiento y acceso remoto (RRAS) en un único rol de acceso remoto. Esta información general proporciona una introducción a los pasos de configuración necesarios para implementar una única implementación de multisitio de acceso remoto de Windows Server 2016 o Windows Server 2012.  
 
 
-- [Paso 1: Implemente una implementación de acceso remoto de un solo servidor @ no__t-0. Instalar y configurar un solo servidor de acceso remoto. Para obtener instrucciones, vea [implementar un único servidor de DirectAccess con configuración avanzada](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings).
+- [Paso 1: implementar una implementación de acceso remoto de un solo servidor](../../multisite/configure/Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md). Instalar y configurar un solo servidor de acceso remoto. Para obtener instrucciones, vea [implementar un único servidor de DirectAccess con configuración avanzada](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings).
 
-- [Paso 2: Configure el servidor RADIUS @ no__t-0.
+- [Paso 2: configurar el servidor RADIUS](Step-2-Configure-the-RADIUS-Server.md).
 
-- [Paso 3: Configure el servidor de acceso remoto para OTP @ no__t-0.
+- [Paso 3: configurar el servidor de acceso remoto para OTP](Step-3-Configure-the-Remote-Access-Server-for-OTP.md).
 
-- [Paso 4: Compruebe DirectAccess con OTP @ no__t-0.
+- [Paso 4: comprobar DirectAccess con OTP](Step-4-Verify-DirectAccess-with-OTP.md).
   
 
 

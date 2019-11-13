@@ -26,13 +26,13 @@ ms.locfileid: "71404622"
 
  Windows Server 2016 y Windows Server 2012 combinan Always On VPN y el servicio de enrutamiento y acceso remoto (RRAS) VPN en un solo rol de acceso remoto. Esta información general proporciona una introducción a los pasos de configuración necesarios para implementar un único servidor de acceso remoto de Windows Server 2016 o Windows Server 2012 en un clúster con equilibrio de carga.
   
--  Paso 1: [Implementar un servidor VPN de AlwaysOn con opciones avanzadas](../../../vpn/always-on-vpn/deploy/always-on-vpn-adv-options.md).
+-  Paso 1: [implementar un servidor VPN de AlwaysOn con opciones avanzadas](../../../vpn/always-on-vpn/deploy/always-on-vpn-adv-options.md).
   
--   [Paso 2: Preparar los servidores de clúster @ no__t-0.  
+-   [Paso 2: preparación de los servidores de clúster](Step-2-Prepare-Cluster-Servers.md).  
   
--   [Paso 3: Configure un clúster de carga equilibrada @ no__t-0.  
+-   [Paso 3: configurar un clúster con equilibrio de carga](Step-3-Configure-a-Load-Balanced-Cluster.md).  
   
--   [Paso 4: Compruebe el clúster @ no__t-0.  
+-   [Paso 4: comprobar el clúster](Step-4-Verify-the-Cluster.md).  
   
 
 

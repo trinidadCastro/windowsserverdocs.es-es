@@ -19,11 +19,11 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71404666"
 ---
-# <a name="test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid"></a>Guía del laboratorio de pruebas para la Demostración de DirectAccess con autenticación OTP y RSA SecurID
+# <a name="test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid"></a>Guía del laboratorio de pruebas: demostración de DirectAccess con autenticación OTP y RSA SecurID
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-El acceso remoto es un rol de servidor en el sistema operativo Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012 que permite a los usuarios remotos acceder de forma segura a los recursos de red internos mediante DirectAccess o redes privadas virtuales (VPN) con el enrutamiento y el servicio de acceso remoto (RRAS). Esta guía contiene instrucciones paso a paso para ampliar la guía de laboratorio de @no__t 0Test: Mostrar la configuración de servidor único de DirectAccess con IPv4 e IPv6 @ no__t-0 mixto para mostrar una configuración de contraseña de un solo tiempo (OTP) de acceso remoto.  
+El acceso remoto es un rol de servidor en el sistema operativo Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012 que permite a los usuarios remotos acceder de forma segura a los recursos de red internos mediante DirectAccess o redes privadas virtuales (VPN) con el enrutamiento y el servicio de acceso remoto (RRAS). Esta guía contiene instrucciones paso a paso para ampliar la guía del [laboratorio de pruebas: demostrar la configuración de un solo servidor de DirectAccess con IPv4 e IPv6 mixto](https://go.microsoft.com/fwlink/p/?LinkId=237004) para mostrar una configuración de contraseña de un solo acceso remoto (OTP).  
   
 > [!WARNING]  
 > El diseño de esta guía del laboratorio de pruebas incluye servidores de infraestructura, como un controlador de dominio y una entidad de certificación (CA) que ejecutan Windows Server 2012 R2 o Windows Server 2012. El uso de esta guía del laboratorio de pruebas para configurar los servidores de infraestructura que ejecutan otros sistemas operativos no se ha probado y las instrucciones para configurar otros sistemas operativos no se incluyen en esta guía.  

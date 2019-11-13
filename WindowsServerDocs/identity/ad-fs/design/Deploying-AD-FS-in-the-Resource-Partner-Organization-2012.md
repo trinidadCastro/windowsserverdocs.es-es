@@ -18,11 +18,11 @@ ms.locfileid: "71408131"
 ---
 # <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>Implementación de AD FS en la organización del asociado de recurso
 
-La organización del asociado de recurso de Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1 representa la organización cuyos servidores Web pueden estar protegidos por un servidor de Federación de recursos @ no__t-2side. El servidor de Federación del asociado de recurso utiliza los tokens de seguridad generados por el asociado de cuenta para proporcionar notificaciones a los servidores web ubicados en el asociado de recurso.  
+La organización del asociado de recurso de Servicios de federación de Active Directory (AD FS) \(AD FS\) representa la organización cuyos servidores Web pueden estar protegidos por un servidor de Federación de\-de recursos. El servidor de Federación del asociado de recurso utiliza los tokens de seguridad generados por el asociado de cuenta para proporcionar notificaciones a los servidores web ubicados en el asociado de recurso.  
   
 En escenarios en los que es necesario proporcionar acceso a servicios o aplicaciones federados a muchos usuarios diferentes (cuando algunos usuarios residen en organizaciones diferentes), puede configurar el servidor de Federación de recursos para que pueda implementar varios asociados de cuenta.  
   
-Para obtener más información sobre cómo instalar y configurar una organización de asociado de recurso, consulte [Checklist: Configuración de la organización del asociado de recurso @ no__t-0.  
+Para obtener más información sobre cómo instalar y configurar una organización de asociado de cuenta, consulta [Checklist: Configuring the Resource Partner Organization](../../ad-fs/deployment/Checklist--Configuring-the-Resource-Partner-Organization.md).  
   
 ## <a name="in-this-section"></a>En esta sección  
   
@@ -33,5 +33,5 @@ Para obtener más información sobre cómo instalar y configurar una organizaci�
 -   [Determinar la estrategia de aplicación federada en el asociado de recurso](Determine-Your-Federated-Application-Strategy-in-the-Resource-Partner.md)  
   
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -25,8 +25,8 @@ ms.locfileid: "71394545"
 
 A continuación se incluyen vínculos a las guías del laboratorio de pruebas para DirectAccess en Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012.
 
-- [Guía de laboratorio de pruebas: Demostración de DirectAccess en un clúster con Windows NLB @ no__t-0
+- [Guía del laboratorio de pruebas: demostración de DirectAccess en un clúster con Windows NLB](tlg-cluster-nlb/Test-Lab-Guide-Demonstrate-DirectAccess-in-a-Cluster-with-Windows-NLB.md)
 
-- [Guía de laboratorio de pruebas: Mostrar una implementación multisitio de DirectAccess @ no__t-0
+- [Guía del laboratorio de pruebas: demostración de una implementación multisitio de DirectAccess](tlg-multisite/Test-Lab-Guide-Demonstrate-a-DirectAccess-Multisite-Deployment.md)
 
-- [Guía de laboratorio de pruebas: Demostración de DirectAccess con autenticación OTP y RSA SecurID @ no__t-0
+- [Guía del laboratorio de pruebas: demostración de DirectAccess con autenticación OTP y RSA SecurID](tlg-otp-securid/Test-Lab-Guide-Demonstrate-DirectAccess-with-OTP-Authentication-and-RSA-SecurID.md)

@@ -25,9 +25,9 @@ ms.locfileid: "71388601"
 
 En este tema se describen los pasos de planeación necesarios para implementar un único servidor de DirectAccess que ejecute Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 con características básicas:  
   
-1.  [Paso 1: Planear la infraestructura de DirectAccess básica @ no__t-0: planear la topología de red y de servidor, la configuración de firewall, los requisitos de certificado, DNS y Active Directory.  
+1.  [Paso 1: planear la infraestructura básica de DirectAccess](da-basic-plan-s1-infrastructure.md): planear la topología de red y de servidor, la configuración del firewall, los requisitos de certificado, DNS y Active Directory.  
   
-2.  [Paso 2: Planear la implementación básica de DirectAccess @ no__t-0: planear la implementación de cliente y servidor.  
+2.  [Paso 2: planear la implementación básica de DirectAccess](da-basic-plan-s2-deployment.md): planear la implementación del cliente y del servidor.  
   
 ## <a name="next-step"></a>Paso siguiente  
 Después de completar estos pasos de planificación, puedes comenzar a implementar los servidores. Para obtener instrucciones, consulte [install and configure Basic DirectAccess](Install-and-Configure-Basic-DirectAccess.md).  

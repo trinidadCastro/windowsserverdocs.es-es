@@ -23,7 +23,7 @@ ms.locfileid: "71393591"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -36,9 +36,9 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 *Las máquinas virtuales que participan en la replicación se pueden configurar para usar una dirección IP específica en caso de conmutación por error, pero solo si Integration Services está instalado en el sistema operativo invitado de la máquina virtual.*  
   
 ## <a name="impact"></a>Impacto  
-@no__t 0In el evento de una conmutación por error (planeada, no planeada o de prueba), la máquina virtual de réplica se conectará con la misma dirección IP que la máquina virtual principal. Esta configuración puede provocar problemas de conectividad. Esto afecta a las siguientes máquinas virtuales: *  
+*En el caso de una conmutación por error (planeada, no planeada o de prueba), la máquina virtual de réplica se conectará con la misma dirección IP que la máquina virtual principal. Esta configuración puede provocar problemas de conectividad. Esto afecta a las siguientes máquinas virtuales:*  
   
-\<list de máquinas virtuales >  
+\<lista de máquinas virtuales >  
   
 ## <a name="resolution"></a>Resolución  
 *Use conexión a máquina virtual para instalar los servicios de integración en la máquina virtual.*  

@@ -23,7 +23,7 @@ ms.locfileid: "71367572"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-El primer paso consiste en completar la guía de laboratorio de @no__t 0Test: Mostrar la configuración de servidor único de DirectAccess con IPv4 e IPv6 no__t-0. Si ya ha completado los pasos de la guía del laboratorio de pruebas y ha guardado una instantánea o una imagen de disco del laboratorio de pruebas, puede restaurar la instantánea o la imagen y comenzar con el siguiente paso.  
+El primer paso es completar la [Guía del laboratorio de pruebas: demostrar la configuración de un solo servidor de DirectAccess con IPv4 e IPv6 mixtos](https://go.microsoft.com/fwlink/p/?LinkId=237004). Si ya ha completado los pasos de la guía del laboratorio de pruebas y ha guardado una instantánea o una imagen de disco del laboratorio de pruebas, puede restaurar la instantánea o la imagen y comenzar con el siguiente paso.  
   
 
 

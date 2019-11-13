@@ -31,11 +31,11 @@ Una vez que haya creado una ACL y la haya asignado a una subred virtual, puede q
 
 En este tema, se muestra cómo agregar una ACL a una interfaz de red. También le mostramos cómo quitar una ACL de una interfaz de red mediante Windows PowerShell y la API de REST de la controladora de red.
 
-- [Ejemplo Agregar una ACL a una interfaz de red @ no__t-0
-- [Ejemplo Quitar una ACL de una interfaz de red mediante Windows PowerShell y la API de REST de la controladora de red @ no__t-0
+- [Ejemplo: agregar una ACL a una interfaz de red](#example-add-an-acl-to-a-network-interface)
+- [Ejemplo: quitar una ACL de una interfaz de red mediante Windows PowerShell y la API de REST de la controladora de red](#example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api)
 
 
-## <a name="example-add-an-acl-to-a-network-interface"></a>Ejemplo: Agregar una ACL a una interfaz de red
+## <a name="example-add-an-acl-to-a-network-interface"></a>Ejemplo: agregar una ACL a una interfaz de red
 En este ejemplo, se muestra cómo agregar una ACL a una red virtual. 
 
 >[!TIP]
@@ -65,7 +65,7 @@ En este ejemplo, se muestra cómo agregar una ACL a una red virtual.
    new-networkcontrollernetworkinterface -ConnectionUri $uri -Properties $nic.properties -ResourceId $nic.resourceid
    ```
  
-## <a name="example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api"></a>Ejemplo: Quitar una ACL de una interfaz de red mediante Windows PowerShell y la API de REST de la controladora de red
+## <a name="example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api"></a>Ejemplo: quitar una ACL de una interfaz de red mediante Windows PowerShell y la API de REST de la controladora de red
 En este ejemplo, se muestra cómo quitar una ACL. Al quitar una ACL se aplica el conjunto predeterminado de reglas a la interfaz de red. El conjunto predeterminado de reglas permite todo el tráfico saliente, pero bloquea todo el tráfico entrante.
 
 >[!NOTE]

@@ -75,7 +75,7 @@ Cuando los clientes de DirectAccess solicitan un certificado OTP, el servidor de
   
 ## <a name="BKMK_Links"></a>Vea también  
   
--   [Paso 4: Planear la OTP para el servidor de acceso remoto @ no__t-0  
+-   [Paso 4: planear la OTP para el servidor de acceso remoto](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)  
   
 
 

@@ -21,7 +21,7 @@ ms.locfileid: "71394382"
 
 En este tema se describe cómo solucionar problemas de carga y descarga de perfiles de usuario mediante eventos y registros de seguimiento. En las secciones siguientes se describe cómo usar los tres registros de eventos que registran información de Perfil de usuario.
 
-## <a name="step-1-checking-events-in-the-application-log"></a>Paso 1: Comprobar eventos en el registro de aplicaciones
+## <a name="step-1-checking-events-in-the-application-log"></a>Paso 1: comprobación de eventos en el registro de aplicaciones
 
 El primer paso para la solución de problemas con la carga y descarga de perfiles de usuario (incluidos los perfiles de usuario móviles) es usar Visor de eventos para examinar los eventos de advertencia y error que registra el servicio de perfiles de usuario en el registro de aplicaciones.
 
@@ -38,7 +38,7 @@ Aquí se muestra cómo ver eventos de servicios de perfiles de usuario en el reg
 >[!NOTE]
 >Puede omitir con seguridad el evento 1530 de servicio de Perfil de usuario "Windows detectó que el archivo de registro todavía está siendo utilizado por otras aplicaciones o servicios".
 
-## <a name="step-2-view-the-operational-log-for-the-user-profile-service"></a>Paso 2: Ver el registro operativo del servicio de perfiles de usuario
+## <a name="step-2-view-the-operational-log-for-the-user-profile-service"></a>Paso 2: ver el registro operativo del servicio de perfiles de usuario
 
 Si no puede resolver el problema solo con el registro de aplicación, utilice el procedimiento siguiente para ver los eventos del servicio de perfiles de usuario en el registro operativo. Este registro muestra algunos de los trabajos internos del servicio y puede ayudar a identificar dónde se está produciendo el problema en el proceso de descarga o carga de perfiles.
 
@@ -49,7 +49,7 @@ Aquí se muestra cómo ver el registro operativo del servicio de Perfil de usuar
 1. En el árbol de consola de Visor de eventos, vaya a **registros de aplicaciones y servicios**, **Microsoft**, después **Windows**, servicio de **perfiles de usuario**y, a continuación, **operativo**.
 2. Examine los eventos que se produjeron aproximadamente a la hora de los eventos de error o de advertencia que anotó en el registro de aplicaciones.
 
-## <a name="step-3-enable-and-view-analytic-and-debug-logs"></a>Paso 3: Habilitación y visualización de registros analíticos y de depuración
+## <a name="step-3-enable-and-view-analytic-and-debug-logs"></a>Paso 3: habilitar y ver los registros analíticos y de depuración
 
 Si necesita más detalles de los proporcionados por el registro operativo, puede habilitar los registros analíticos y de depuración en el equipo afectado. Este nivel de registro es mucho más detallado y debe deshabilitarse, excepto cuando se intenta solucionar un problema.
 
@@ -58,10 +58,10 @@ Aquí se muestra cómo habilitar y ver los registros analíticos y de depuració
 1. En el panel **acciones** de visor de eventos, seleccione **Ver**y, a continuación, seleccione **Mostrar registros analíticos y de depuración**.
 2. Vaya a **registros de aplicaciones y servicios**, **Microsoft**, **Windows**, servicio de **perfiles de usuario**y **diagnóstico**.
 3. Seleccione **Habilitar registro** y, a continuación, seleccione **sí**. Esto habilita el registro de diagnóstico, que iniciará el registro.
-4. Si necesita información aún más detallada, consulte @no__t 0Step 4: Crear y descodificar un seguimiento @ no__t-0 para obtener más información acerca de cómo crear un registro de seguimiento.
+4. Si necesita información aún más detallada, vea [paso 4: crear y descodificar un seguimiento](#step-4-creating-and-decoding-a-trace) para obtener más información sobre cómo crear un registro de seguimiento.
 5. Cuando haya terminado de solucionar el problema, vaya al registro de **diagnóstico** , seleccione **deshabilitar registro**, seleccione **Ver** y, a continuación, desactive la casilla **Mostrar registros analíticos y de depuración** para ocultar el registro analítico y de depuración.
 
-## <a name="step-4-creating-and-decoding-a-trace"></a>Paso 4: Crear y descodificar un seguimiento
+## <a name="step-4-creating-and-decoding-a-trace"></a>Paso 4: crear y descodificar un seguimiento
 
 Si no puede resolver el problema mediante eventos, puede crear un registro de seguimiento (un archivo ETL) mientras se reproduce el problema y, a continuación, descodificarlo mediante símbolos públicos del servidor de símbolos de Microsoft. Los registros de seguimiento proporcionan información muy específica sobre lo que hace el servicio de perfiles de usuario y pueden ayudar a identificar dónde se ha producido el error.
 
@@ -70,7 +70,7 @@ La mejor estrategia al usar el seguimiento ETL es capturar primero el registro m
 Aquí se muestra cómo crear y descodificar un seguimiento para el servicio de Perfil de usuario:
 
 1. Inicie sesión en el equipo en el que el usuario está experimentando problemas con una cuenta que sea miembro del grupo local Administradores.
-2. En un símbolo del sistema con privilegios elevados, escriba los siguientes comandos, donde *\<Path @ no__t-2* es la ruta de acceso a una carpeta local que ha creado anteriormente, por ejemplo, C: \\logs:
+2. En un símbolo del sistema con privilegios elevados, escriba los siguientes comandos, donde *\<ruta de acceso\>* es la ruta de acceso a una carpeta local que ha creado anteriormente, por ejemplo, C:\\registros:
         
     ```PowerShell
     logman create trace -n RUP -o <Path>\RUP.etl -ets
@@ -84,7 +84,7 @@ Aquí se muestra cómo crear y descodificar un seguimiento para el servicio de P
     ```PowerShell
     logman stop -n RUP -ets
     ```
-7. Escriba el siguiente comando para exportar el archivo ETL en un archivo legible en el directorio actual (probablemente la carpeta particular o la carpeta% WINDIR% \\System32):
+7. Escriba el siguiente comando para exportar el archivo ETL en un archivo legible en el directorio actual (probablemente la carpeta particular o la carpeta% WINDIR%\\system32):
     
     ```PowerShell
     Tracerpt <path>\RUP.etl

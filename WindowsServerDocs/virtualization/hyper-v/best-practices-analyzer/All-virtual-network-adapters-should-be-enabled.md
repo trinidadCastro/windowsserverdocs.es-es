@@ -23,7 +23,7 @@ ms.locfileid: "71366595"
 
 
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -44,7 +44,7 @@ El sistema operativo de administración no se puede conectar a una red física (
   
 ## <a name="resolution"></a>Resolución  
   
-Configuración de Internet de la red @no__t 0Use & para habilitar el adaptador de red virtual. O bien, use el administrador de conmutadores virtuales para volver a configurar el conmutador virtual externo de modo que no se comparta con el sistema operativo de administración. *  
+*Use la configuración de Internet de & de red para habilitar el adaptador de red virtual. O bien, use el administrador de conmutadores virtuales para volver a configurar el conmutador virtual externo de modo que no se comparta con el sistema operativo de administración.*  
   
 
 

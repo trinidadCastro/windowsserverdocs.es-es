@@ -23,7 +23,7 @@ ms.locfileid: "71366449"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -44,7 +44,7 @@ Las máquinas virtuales en pausa no liberan la memoria asignada, lo que signific
   
 ## <a name="resolution"></a>Resolución  
   
-@no__t 0If es intencional, no es necesario realizar ninguna otra acción. De lo contrario, considere la posibilidad de reanudar estas máquinas virtuales o apagarlas. *  
+*Si esto es intencionado, no es necesario realizar ninguna otra acción. De lo contrario, considere la posibilidad de reanudar estas máquinas virtuales o apagarlas.*  
   
 #### <a name="use-hyper-v-manager-to-resume-the-virtual-machine"></a>Usar el administrador de Hyper-V para reanudar la máquina virtual  
   

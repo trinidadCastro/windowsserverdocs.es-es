@@ -86,12 +86,12 @@ Los siguientes contadores de rendimiento de SMB se introdujeron en Windows Serve
 
 -   **Relaciones de contador de rendimiento de disco físico, SMB y CSV FS**
 
-    Para obtener más información sobre cómo se relacionan los contadores de disco físico, SMB y CSV FS (sistema de archivos), vea la siguiente entrada de blog: [Volumen compartido de clúster contadores de rendimiento](http://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx).
+    Para obtener más información sobre cómo se relacionan los contadores de disco físico, SMB y CSV FS (sistema de archivos), vea la siguiente entrada de blog: [volumen compartido de clúster contadores de rendimiento](http://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx).
 
 ## <a name="tuning-parameters-for-smb-file-servers"></a>Parámetros de optimización para servidores de archivos SMB
 
 
-La siguiente configuración del registro REG @ no__t-0DWORD puede afectar al rendimiento de los servidores de archivos SMB:
+La siguiente configuración del registro de REG\_DWORD puede afectar al rendimiento de los servidores de archivos SMB:
 
 - **Smb2CreditsMin** y **Smb2CreditsMax**
 
@@ -108,7 +108,7 @@ La siguiente configuración del registro REG @ no__t-0DWORD puede afectar al ren
   > [!TIP]
   > Antes de Windows 10 y Windows Server 2016, el número de créditos concedidos al cliente se ha variado dinámicamente entre Smb2CreditsMin y Smb2CreditsMax basándose en un algoritmo que ha intentado determinar el número óptimo de créditos para conceder en función de la latencia de red y el uso de crédito. En Windows 10 y Windows Server 2016, se cambió el servidor SMB para conceder de forma incondicional créditos al solicitar el número máximo de créditos configurado. Como parte de este cambio, el mecanismo de limitación de crédito, que reduce el tamaño de la ventana de crédito de cada conexión cuando el servidor está bajo presión de memoria, se quitó. El evento de memoria insuficiente del kernel que activó la limitación solo se señala cuando el servidor está tan bajo en la memoria (< unos pocos MB) para que no sea útil. Dado que el servidor ya no reduce las ventanas de crédito, el valor Smb2CreditsMin ya no es necesario y ahora se omite.
   > 
-  > Puede supervisar los recursos compartidos de cliente SMB @ no__t-0Credit retretes/S para ver si hay algún problema con los créditos.
+  > Puede supervisar recursos compartidos de cliente SMB\\paradas de crédito en/S para ver si hay algún problema con los créditos.
 
 - **AdditionalCriticalWorkerThreads**
 
@@ -119,7 +119,7 @@ La siguiente configuración del registro REG @ no__t-0DWORD puede afectar al ren
     El valor predeterminado es 0, lo que significa que no se agrega ningún subproceso de trabajo de kernel crítico adicional. Este valor afecta al número de subprocesos que la memoria caché del sistema de archivos utiliza para las solicitudes de lectura y escritura previa. Aumentar este valor puede permitir más e/s en cola en el subsistema de almacenamiento, y puede mejorar el rendimiento de e/s, especialmente en sistemas con muchos procesadores lógicos y hardware de almacenamiento eficaz.
 
     >[!TIP]
-    > Es posible que sea necesario aumentar el valor si la cantidad de datos modificados del administrador de caché (páginas de caché del contador de rendimiento @ no__t-0Dirty) está creciendo para consumir una gran parte (más de un 25%). de memoria o si el sistema está realizando una gran cantidad de operaciones de e/s de lectura sincrónicas.
+    > Es posible que sea necesario aumentar el valor si la cantidad de datos modificados del administrador de caché (caché del contador de rendimiento\\páginas desfasadas) está creciendo para consumir una gran parte (más de un 25%). de memoria o si el sistema está realizando una gran cantidad de operaciones de e/s de lectura sincrónicas.
 
 - **MaxThreadsPerQueue**
 
@@ -130,7 +130,7 @@ La siguiente configuración del registro REG @ no__t-0DWORD puede afectar al ren
   El valor predeterminado es 20. Al aumentar este valor, se eleva el número de subprocesos que el servidor de archivos puede usar para atender las solicitudes simultáneas. Cuando es necesario atender un gran número de conexiones activas, y los recursos de hardware, como el ancho de banda de almacenamiento, son suficientes, el aumento del valor puede mejorar la escalabilidad, el rendimiento y los tiempos de respuesta del servidor.
 
   >[!TIP]
-  > Una indicación de que es posible que sea necesario aumentar el valor si las colas de trabajo de SMB2 están creciendo muy grandes (el contador de rendimiento ' colas de trabajo de servidor @ no__t-0Queue length @ no__t-1SMB2 no bloqueado \* ' es constantemente superior a ~ 100).
+  > Es una indicación de que es posible que sea necesario aumentar el valor si las colas de trabajo de SMB2 están creciendo muy grandes (el contador de rendimiento "colas de trabajo de servidor\\longitud de cola\\SMB2 de \*sin bloqueo" es constantemente superior a ~ 100).
 
   >[!Note]
   >En Windows 10 y Windows Server 2016, MaxThreadsPerQueue no está disponible. El número de subprocesos de un grupo de subprocesos será "20 * el número de procesadores en un nodo NUMA".
@@ -148,7 +148,7 @@ La siguiente configuración del registro REG @ no__t-0DWORD puede afectar al ren
 
 La siguiente configuración puede optimizar un equipo para el rendimiento del servidor de archivos en muchos casos. Los valores no son óptimos ni adecuados para todos los equipos. Debe evaluar el impacto de cada uno de los valores antes de aplicarlos.
 
-| Parámetro                       | Valor | Default |
+| Parámetro                       | Valor | Predeterminado |
 |---------------------------------|-------|---------|
 | AdditionalCriticalWorkerThreads | 64    | 0       |
 | MaxThreadsPerQueue              | 64    | 20      |
@@ -156,4 +156,4 @@ La siguiente configuración puede optimizar un equipo para el rendimiento del se
 
 ### <a name="smb-client-performance-monitor-counters"></a>Contadores del monitor de rendimiento del cliente SMB
 
-Para obtener más información sobre los contadores de cliente SMB, vea [Windows Server 2012 File Server Tip: Los nuevos contadores de rendimiento de cliente SMB por recurso compartido proporcionan una visión excelente @ no__t-0.
+Para obtener más información acerca de los contadores del cliente SMB, vea [información del servidor de archivos de Windows Server 2012: los nuevos contadores de rendimiento de cliente SMB por recurso compartido proporcionan una visión excelente](http://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx).

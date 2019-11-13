@@ -17,7 +17,7 @@ ms.locfileid: "71402086"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>Información general sobre el uso compartido de archivos mediante el protocolo SMB 3 en Windows Server
 
->Se aplica a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
+>Se aplica a: Windows Server 2012 R2, Windows Server 2012 y Windows Server 2016
 
 En este tema se describe la característica SMB 3,0 en Windows Server® 2012, Windows Server 2012 R2 y Windows Server 2016: usos prácticos para la característica, la funcionalidad nueva o actualizada más importante de esta versión en comparación con las versiones anteriores, y el hardware satisfacer.
 
@@ -133,4 +133,4 @@ En la siguiente lista se proporcionan recursos adicionales en la web sobre SMB y
 * [Implementación de Hyper-V en SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
 * [Implementación de SMB multicanal](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
 * [Implementación de servidores de archivos rápidos y eficientes para aplicaciones de servidor](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
-* [SMB: Guía de solución de problemas @ no__t-0
+* [SMB: Guía de solución de problemas](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)

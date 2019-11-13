@@ -23,7 +23,7 @@ ms.locfileid: "71366416"
 
 
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -38,13 +38,13 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
   
 ## <a name="impact"></a>Impacto  
   
-las máquinas @no__t 0Virtual no pueden usar el almacenamiento conectado a la controladora SCSI. Esto afecta a las siguientes máquinas virtuales: *  
+*Las máquinas virtuales no pueden usar el almacenamiento conectado a la controladora SCSI. Esto afecta a las siguientes máquinas virtuales:*  
   
-\<list de máquinas virtuales >  
+\<lista de máquinas virtuales >  
   
 ## <a name="resolution"></a>Resolución  
   
-@no__t 0Shut la máquina virtual y use el administrador de Hyper-V para quitar la controladora SCSI de la máquina virtual. A continuación, reinicie la máquina virtual. *  
+*Apague la máquina virtual y use el administrador de Hyper-V para quitarla de la máquina virtual. A continuación, reinicie la máquina virtual.*  
   
 
 

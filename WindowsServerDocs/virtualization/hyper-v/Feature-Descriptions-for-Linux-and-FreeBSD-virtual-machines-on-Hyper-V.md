@@ -80,7 +80,7 @@ En este artículo se describen las características disponibles en componentes c
 
 |**Característica**|**Descripción**|
 |-|-|
-|Intercambio de KVP (par de clave-valor)|Esta característica proporciona un servicio de intercambio de pares clave-valor (KVP) para las máquinas virtuales. Normalmente, los administradores usan el mecanismo KVP para realizar operaciones de lectura y escritura de datos personalizados en una máquina virtual. Para obtener más información, vea [Data Exchange: Usar pares de clave-valor para compartir información entre el host y el invitado en Hyper-V @ no__t-0.|
+|Intercambio de KVP (par de clave-valor)|Esta característica proporciona un servicio de intercambio de pares clave-valor (KVP) para las máquinas virtuales. Normalmente, los administradores usan el mecanismo KVP para realizar operaciones de lectura y escritura de datos personalizados en una máquina virtual. Para obtener más información, vea [intercambio de datos: uso de pares de clave y valor para compartir información entre el host y el invitado en Hyper-V](https://technet.microsoft.com/library/dn798287.aspx).|
 |Interrupción no enmascarable|Con esta característica, un administrador puede emitir interrupciones no Enmascarables (NMI) a una máquina virtual. NMIs son útiles para obtener volcados de memoria de sistemas operativos que han dejado de responder debido a errores en la aplicación. Estos volcados de memoria se pueden diagnosticar después de reiniciar.|
 |Copia de archivos de host a invitado|Esta característica permite copiar archivos del equipo físico del host a las máquinas virtuales invitadas sin usar el adaptador de red. Para obtener más información, vea [servicios invitados](https://technet.microsoft.com/library/dn798297(WS.11).aspx#BKMK_guest).|
 |comando lsvmbus|Este comando obtiene información acerca de los dispositivos del bus de máquina virtual (VMBus) de Hyper-V similar a comandos de información como lspci.|
@@ -94,7 +94,7 @@ En este artículo se describen las características disponibles en componentes c
 |Arranque mediante UEFI|Esta característica permite que las máquinas virtuales arranquen mediante Unified Extensible Firmware Interface (UEFI).<br /><br />Para obtener más información, vea el artículo de [información general acerca de las máquinas virtuales de generación 2](https://technet.microsoft.com/library/dn282285.aspx).|
 |Arranque seguro|Esta característica permite que las máquinas virtuales usen el modo de arranque seguro basado en UEFI. Cuando una máquina virtual arranca en modo seguro, se comprueban varios componentes del sistema operativo mediante firmas presentes en el almacén de datos UEFI.<br /><br />Para obtener más información, consulta [Arranque seguro](https://technet.microsoft.com/library/dn486875.aspx).|
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 * [Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

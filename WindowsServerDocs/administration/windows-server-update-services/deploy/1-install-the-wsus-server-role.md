@@ -17,7 +17,7 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71361700"
 ---
-# <a name="step-1-install-the-wsus-server-role"></a>Paso 1: Instalar el rol de servidor de WSUS
+# <a name="step-1-install-the-wsus-server-role"></a>Paso 1: instalar el rol de servidor WSUS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -63,5 +63,5 @@ El siguiente paso en la implementación del servidor WSUS es instalar el rol de 
 14. En **Administrador del servidor**, compruebe si aparece una notificación que le informa que es necesario reiniciar el servidor. Esta puede variar según el rol de servidor instalado. Si se requiere el reinicio, asegúrese de reiniciar el servidor para que finalice la instalación.
 
 > [!IMPORTANT]
-> En este momento, el proceso de instalación ha finalizado, pero para que WSUS sea funcional, debe continuar en @no__t 0Step 2: Configure WSUS @ no__t-0.
+> En este momento, el proceso de instalación ha finalizado; sin embargo, para que WSUS sea funcional, debe continuar con el [paso 2: configurar WSUS](2-configure-wsus.md).
 

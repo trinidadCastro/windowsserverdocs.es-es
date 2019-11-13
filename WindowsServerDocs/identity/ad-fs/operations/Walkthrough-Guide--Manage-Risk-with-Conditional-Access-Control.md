@@ -26,15 +26,15 @@ En este tutorial se proporcionan instrucciones para administrar los riesgos con 
 
 Este tutorial incluye las secciones siguientes:
 
--   [Paso 1: Configuración del entorno de laboratorio @ no__t-0
+-   [Paso 1: configurar el entorno de laboratorio](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
 
--   [Paso 2: Comprobar el mecanismo de control de acceso AD FS predeterminado @ no__t-0
+-   [Paso 2: comprobar el mecanismo de control de acceso AD FS predeterminado](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
 
--   [Paso 3: Configuración de la Directiva de control de acceso condicional según los datos de usuario @ no__t-0
+-   [Paso 3: configurar la Directiva de control de acceso condicional según los datos del usuario](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_3)
 
--   [Paso 4: Comprobar el mecanismo de control de acceso condicional @ no__t-0
+-   [Paso 4: comprobar el mecanismo de control de acceso condicional](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_4)
 
-## <a name="BKMK_1"></a>Paso 1: Configuración del entorno de laboratorio
+## <a name="BKMK_1"></a>Paso 1: configurar el entorno de laboratorio
 Para completar este tutorial, necesita un entorno con los siguientes componentes:
 
 -   Un dominio de Active Directory con cuentas de grupo y usuario de prueba que se ejecutan en Windows Server 2008, Windows Server 2008 R2 o Windows Server 2012 con su esquema actualizado a Windows Server 2012 R2 o a un dominio de Active Directory que se ejecuta en Windows Server 2012 R2
@@ -52,7 +52,7 @@ En este entorno, el servidor de federación emite las notificaciones necesarias 
 
 Para obtener instrucciones sobre cómo configurar este entorno, vea [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
-## <a name="BKMK_2"></a>Paso 2: Comprobar el mecanismo de control de acceso predeterminado de AD FS
+## <a name="BKMK_2"></a>Paso 2: comprobar el mecanismo de control de acceso AD FS predeterminado
 En este paso comprobará el mecanismo de control de acceso predeterminado de AD FS, en el que se redirige al usuario a la página de inicio de sesión de AD FS, el usuario proporciona credenciales válidas y se le concede acceso a la aplicación. Puede usar la cuenta de ad de **Robert Hatley** y la aplicación de ejemplo **claimapp** que configuró en [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
 #### <a name="to-verify-the-default-ad-fs-access-control-mechanism"></a>Para comprobar el mecanismo de control de acceso predeterminado de AD FS
@@ -65,7 +65,7 @@ En este paso comprobará el mecanismo de control de acceso predeterminado de AD 
 
     Se le concederá acceso a la aplicación.
 
-## <a name="BKMK_3"></a>Paso 3: configurar la directiva de control de acceso condicional según los datos de usuario
+## <a name="BKMK_3"></a>Paso 3: configurar la Directiva de control de acceso condicional según los datos del usuario
 En este paso configurará una directiva de control de acceso basándose en los datos de pertenencia a grupos del usuario. Es decir, configurará una **Regla de autorización de emisión** en el servidor de federación para una relación de confianza para usuario autenticado que represente a la aplicación de ejemplo **claimapp**. Según la lógica de esta regla, el usuario de ad de **Robert Hatley** recibirá las notificaciones necesarias para tener acceso a esta aplicación, ya que pertenece a un grupo de **finanzas** . Ha agregado la cuenta **Robert Hatley** al grupo **Finance** en [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
 Puede completar esta tarea mediante la Consola de administración de AD FS o Windows PowerShell.
@@ -126,9 +126,9 @@ En este paso comprobará la directiva de control de acceso condicional que confi
 
 3.  Escriba las credenciales de otro usuario de AD que no pertenezca al grupo **Finance**. (Para obtener más información sobre cómo crear cuentas de usuario en AD, vea [https://technet.microsoft.com/library/cc7833232.aspx](https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx).
 
-    En este momento, debido a la Directiva de control de acceso que configuró en el paso anterior, se muestra un mensaje "acceso denegado" para este usuario de AD que no pertenece al grupo **Finance** . El texto del mensaje predeterminado es **You no está autorizado para tener acceso a este sitio. Haga clic aquí para cerrar la sesión y volver a iniciarla o póngase en contacto con el administrador para obtener los permisos.** No obstante, este texto se puede personalizar. Para obtener más información sobre cómo personalizar la experiencia de inicio de sesión, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx).
+    En este momento, debido a la Directiva de control de acceso que configuró en el paso anterior, se muestra un mensaje "acceso denegado" para este usuario de AD que no pertenece al grupo **Finance** . El texto del mensaje predeterminado es **no está autorizado para tener acceso a este sitio. Haga clic aquí para cerrar la sesión y volver a iniciarla o póngase en contacto con el administrador para obtener los permisos.** No obstante, este texto se puede personalizar. Para obtener más información sobre cómo personalizar la experiencia de inicio de sesión, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx).
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Administración de riesgos con Access Control condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 

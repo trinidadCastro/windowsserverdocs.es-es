@@ -25,15 +25,15 @@ ms.locfileid: "71388640"
 
 En esta información general se enumeran los pasos de configuración necesarios para implementar un único servidor de DirectAccess que ejecute Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 con IPv4 e IPv6.  
   
--   [Paso 1: Configurar la infraestructura de DirectAccess avanzada @ no__t-0.  
+-   [Paso 1: configurar la infraestructura de DirectAccess avanzada](da-adv-configure-s1-infrastructure.md).  
   
     En esta fase, se definen la configuración de la red y del servidor, los requisitos de certificado, la configuración del Sistema de nombres de dominio (DNS), la implementación del servidor de ubicación de red, los servidores de administración de DirectAccess, la configuración de Active Directory y los objetos de directiva de grupo (GPO).  
   
--   [Paso 2: Configure los servidores de DirectAccess avanzados @ no__t-0.  
+-   [Paso 2: configurar servidores de DirectAccess avanzados](da-adv-configure-s2-servers.md).  
   
     En esta fase, se configuran los equipos cliente de DirectAccess, la configuración del servidor, los servidores de infraestructura y los servidores de aplicación.  
   
--   [Paso 3: Compruebe la implementación de DirectAccess avanzada @ no__t-0.  
+-   [Paso 3: comprobar la implementación de DirectAccess avanzada](da-adv-configure-s3-verify.md).  
   
     En este paso se indica el procedimiento para comprobar la implementación.  
   

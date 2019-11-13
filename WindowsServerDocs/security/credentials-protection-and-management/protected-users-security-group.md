@@ -31,7 +31,7 @@ En este tema dirigido a profesionales de TI se describe el grupo de seguridad de
 Este grupo de seguridad está diseñado como parte de una estrategia para administrar la exposición de credenciales en la empresa. Las cuentas de los miembros de este grupo reciben automáticamente protecciones que no son configurables. La pertenencia al grupo de usuarios protegidos es de naturaleza restrictiva y segura proactivamente de forma predeterminada. El único método con el que estas protecciones de cuenta se pueden modificar consiste en quitar la cuenta del grupo de seguridad.
 
 > [!WARNING]
-> Las cuentas de servicios y equipos nunca deben ser miembros del grupo usuarios protegidos. Este grupo proporcionaría una protección incompleta porque la contraseña o el certificado siempre están disponibles en el host. Se producirá un error de autenticación con el error @no__t el nombre de usuario o la contraseña de 0The son incorrectos @ no__t-1 para cualquier servicio o equipo que se agregue al grupo usuarios protegidos.
+> Las cuentas de servicios y equipos nunca deben ser miembros del grupo usuarios protegidos. Este grupo proporcionaría una protección incompleta porque la contraseña o el certificado siempre están disponibles en el host. Se producirá un error en la autenticación \"el nombre de usuario o la contraseña son incorrectos\" para cualquier servicio o equipo que se agregue al grupo usuarios protegidos.
 
 Este grupo global relacionado con el dominio desencadena una protección no configurable en dispositivos y equipos host que ejecutan Windows Server 2012 R2 y Windows 8.1 o posterior para los usuarios de dominios con un controlador de dominio principal que ejecuta Windows Server 2012 R2. Esto reduce en gran medida la superficie de memoria predeterminada de las credenciales cuando los usuarios inician sesión en equipos con estas protecciones.
 
@@ -70,9 +70,9 @@ En la siguiente tabla se especifican las propiedades del grupo de usuarios prote
 |Contenedor predeterminado|CN=Usuarios, DC=<domain>, DC=|
 |Miembros predeterminados|Ninguno|
 |Miembro predeterminado de|Ninguno|
-|¿Protegido por ADMINSDHOLDER?|No|
+|¿Protegido por ADMINSDHOLDER?|Sin|
 |¿Es seguro sacarlo del contenedor predeterminado?|Sí|
-|¿Es seguro delegar la administración de este grupo en administradores que no son de servicio?|No|
+|¿Es seguro delegar la administración de este grupo en administradores que no son de servicio?|Sin|
 |Derechos de usuario predeterminados|No hay derechos de usuario predeterminados.|
 
 ## <a name="BKMK_HowItWorks"></a>Cómo funciona el grupo de usuarios protegidos
@@ -90,7 +90,7 @@ Cuando el usuario que ha iniciado sesión es miembro del grupo usuarios protegid
 -   A partir de Windows 8.1 y Windows Server 2012 R2, el Resumen de Windows no almacenará en caché las credenciales de texto sin formato del usuario aunque el Resumen de Windows esté habilitado.
 
 > [!Note]
-> Después de instalar el [aviso de seguridad de Microsoft 2871997](https://technet.microsoft.com/library/security/2871997) el Resumen de Windows seguirá almacenando credenciales en caché hasta que se configure la clave del registro. Consulte [Microsoft Security Advisory: Actualización para mejorar la protección y administración de credenciales: 13 de mayo de 2014 a no__t-0 para obtener instrucciones.
+> Después de instalar el [aviso de seguridad de Microsoft 2871997](https://technet.microsoft.com/library/security/2871997) el Resumen de Windows seguirá almacenando credenciales en caché hasta que se configure la clave del registro. Vea el [aviso de seguridad de Microsoft: actualización para mejorar la protección y la administración de las credenciales: 13 de mayo de 2014](https://support.microsoft.com/en-us/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) para obtener instrucciones.
 
 -   NTLM no almacenará en caché las credenciales de texto sin formato del usuario ni la función unidireccional NT (NTOWF).
 
@@ -120,11 +120,11 @@ Existen dos registros administrativos funcionales que son de ayuda a la hora de 
 
 |Identificador de evento y registro|Descripción|
 |----------|--------|
-|104<br /><br />**ProtectedUser-Client**|Motivo: el paquete de seguridad en el cliente no contiene las credenciales.<br /><br />El error se registra en el equipo cliente cuando la cuenta es miembro del grupo de seguridad de usuarios protegidos. Este evento pone de manifiesto que el paquete de seguridad no almacena en caché las credenciales necesarias para autenticarse en el servidor.<br /><br />Incluye el nombre del paquete, el nombre de usuario, el nombre del dominio y el nombre del servidor.|
-|304<br /><br />**ProtectedUser-Client**|Motivo: El paquete de seguridad no almacena las credenciales del usuario protegido.<br /><br />Se registra un evento informativo en el cliente para indicar que el paquete de seguridad no almacena en caché las credenciales de inicio de sesión del usuario. Se espera que la autenticación implícita (WDigest), la delegación de credenciales (CredSSP) y NTLM no puedan tener credenciales para los usuarios protegidos. Las aplicaciones se pueden autenticar correctamente si solicitan credenciales.<br /><br />Incluye el nombre del paquete, el nombre de usuario y el nombre del dominio.|
-|100<br /><br />**ProtectedUserFailures-DomainController**|Motivo: se produce un error de inicio de sesión de NTLM en el caso de las cuentas que forman parte del grupo de seguridad de usuarios protegidos.<br /><br />Se registra un error en el controlador de dominio para señalar que la autenticación NTLM no se ha podido llevar a cabo porque la cuenta es miembro del grupo de seguridad de usuarios protegidos.<br /><br />Incluye el nombre de cuenta y el nombre de dispositivo.|
-|104<br /><br />**ProtectedUserFailures-DomainController**|Motivo: los tipos de cifrado DES o RC4 se usan en la autenticación Kerberos y un usuario del grupo de seguridad de usuarios protegidos no puede iniciar sesión.<br /><br />La autenticación previa de Kerberos no puede realizarse porque los tipos de cifrado DES y RC4 no se pueden usar cuando la cuenta es miembro del grupo de seguridad de usuarios protegidos.<br /><br />(Se acepta AES.)|
-|303<br /><br />**ProtectedUserSuccesses-DomainController**|Motivo: se ha emitido correctamente un vale de concesión de vales de Kerberos para un miembro del grupo de usuarios protegidos.|
+|104<br /><br />**ProtectedUser-Client**|Motivo: el paquete de seguridad del cliente no contiene las credenciales.<br /><br />El error se registra en el equipo cliente cuando la cuenta es miembro del grupo de seguridad de usuarios protegidos. Este evento pone de manifiesto que el paquete de seguridad no almacena en caché las credenciales necesarias para autenticarse en el servidor.<br /><br />Incluye el nombre del paquete, el nombre de usuario, el nombre del dominio y el nombre del servidor.|
+|304<br /><br />**ProtectedUser-Client**|Motivo: el paquete de seguridad no almacena las credenciales del usuario protegido.<br /><br />Se registra un evento informativo en el cliente para indicar que el paquete de seguridad no almacena en caché las credenciales de inicio de sesión del usuario. Se espera que la autenticación implícita (WDigest), la delegación de credenciales (CredSSP) y NTLM no puedan tener credenciales para los usuarios protegidos. Las aplicaciones se pueden autenticar correctamente si solicitan credenciales.<br /><br />Incluye el nombre del paquete, el nombre de usuario y el nombre del dominio.|
+|100<br /><br />**ProtectedUserFailures-DomainController**|Motivo: se produce un error de inicio de sesión NTLM para una cuenta que se encuentra en el grupo de seguridad usuarios protegidos.<br /><br />Se registra un error en el controlador de dominio para señalar que la autenticación NTLM no se ha podido llevar a cabo porque la cuenta es miembro del grupo de seguridad de usuarios protegidos.<br /><br />Incluye el nombre de cuenta y el nombre de dispositivo.|
+|104<br /><br />**ProtectedUserFailures-DomainController**|Motivo: los tipos de cifrado DES o RC4 se usan para la autenticación Kerberos y se produce un error de inicio de sesión para un usuario en el grupo de seguridad de usuarios protegidos.<br /><br />La autenticación previa de Kerberos no puede realizarse porque los tipos de cifrado DES y RC4 no se pueden usar cuando la cuenta es miembro del grupo de seguridad de usuarios protegidos.<br /><br />(Se acepta AES.)|
+|303<br /><br />**ProtectedUserSuccesses-DomainController**|Motivo: se emitió correctamente un vale de concesión de vales (TGT) de Kerberos para un miembro del grupo de usuarios protegidos.|
 
 
 

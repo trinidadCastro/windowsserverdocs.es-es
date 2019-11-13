@@ -38,15 +38,15 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[\<Drive >:] [<Path>]|Especifica la unidad y el directorio para los que desea ver una lista.|
-|[\<FileName >]|Especifica un determinado archivo o grupo de archivos para los que desea ver una lista.|
+|[\<> de unidad:] [<Path>]|Especifica la unidad y el directorio para los que desea ver una lista.|
+|[\<nombre de archivo >]|Especifica un determinado archivo o grupo de archivos para los que desea ver una lista.|
 |/p|Muestra una pantalla de la lista a la vez. Para ver la siguiente pantalla, presione cualquier tecla del teclado.|
 |/q|Muestra información de propiedad del archivo.|
 |/w|Muestra la lista en formato ancho, con un máximo de cinco nombres de archivo o de directorio en cada línea.|
 |/d|Muestra la lista en el mismo formato que **/w**, pero los archivos se ordenan por columna.|
-|/a [[:] \<Attributes >]|Muestra solo los nombres de los directorios y archivos con los atributos que especifique. Si omite **/a**, **dir** mostrará los nombres de todos los archivos excepto los archivos ocultos y del sistema. Si usa **/a** sin especificar *atributos*, **dir** mostrará los nombres de todos los archivos, incluidos los archivos ocultos y del sistema.</br>La lista siguiente describe cada uno de los valores que puede usar para *los atributos*. Usar dos puntos (:) es opcional. Use cualquier combinación de estos valores y no separe los valores con espacios.</br>directorios **d**</br>**h** archivos ocultos</br>archivos **del sistema**</br>**l** puntos de reanálisis</br>archivos de solo lectura de **r**</br>**archivos listos** para archivar</br>**i** no archivos indizados del contenido</br>**-** Significado del prefijo "no"|
-|/o [[:] \<SortOrder >]|Ordena la salida según *SortOrder*, que puede ser cualquier combinación de los valores siguientes:</br>**n** por nombre (alfabético)</br>**e** por extensión (en orden alfabético)</br>**g** primero directorios de grupo</br>**s** por tamaño (el más pequeño primero)</br>**d** por fecha y hora (más antiguo primero)</br>**-** Prefijo para el orden inverso</br>Nota: El uso de un signo de dos puntos es opcional. Se procesan varios valores en el orden en que se enumeran. No separe varios valores con espacios.</br>Si no se especifica *SortOrder* , **dir/o** enumera los directorios en orden alfabético, seguidos de los archivos, que también se ordenan en orden alfabético.|
-|/t [[:] \<TimeField >]|Especifica el campo de tiempo que se va a mostrar o usar para la ordenación. La lista siguiente describe cada uno de los valores que puede usar para *TimeField*:</br>creación de **c**</br>**último acceso**</br>**w** escritos por última vez|
+|/a [[:]\<atributos >]|Muestra solo los nombres de los directorios y archivos con los atributos que especifique. Si omite **/a**, **dir** mostrará los nombres de todos los archivos excepto los archivos ocultos y del sistema. Si usa **/a** sin especificar *atributos*, **dir** mostrará los nombres de todos los archivos, incluidos los archivos ocultos y del sistema.</br>La lista siguiente describe cada uno de los valores que puede usar para *los atributos*. Usar dos puntos (:) es opcional. Use cualquier combinación de estos valores y no separe los valores con espacios.</br>directorios **d**</br>**h** archivos ocultos</br>archivos **del sistema**</br>**l** puntos de reanálisis</br>archivos de solo lectura de **r**</br>**archivos listos** para archivar</br>**no** archivos indizados del contenido</br>**-** Significado del prefijo "no"|
+|/o [[:]\<SortOrder >]|Ordena la salida según *SortOrder*, que puede ser cualquier combinación de los valores siguientes:</br>**n** por nombre (alfabético)</br>**e** por extensión (en orden alfabético)</br>**g** primero directorios de grupo</br>**s** por tamaño (el más pequeño primero)</br>**d** por fecha y hora (más antiguo primero)</br>**-** Prefijo para el orden inverso</br>Nota: el uso de un signo de dos puntos es opcional. Se procesan varios valores en el orden en que se enumeran. No separe varios valores con espacios.</br>Si no se especifica *SortOrder* , **dir/o** enumera los directorios en orden alfabético, seguidos de los archivos, que también se ordenan en orden alfabético.|
+|/t [[:]\<TimeField >]|Especifica el campo de tiempo que se va a mostrar o usar para la ordenación. La lista siguiente describe cada uno de los valores que puede usar para *TimeField*:</br>creación de **c**</br>**último acceso**</br>**w** escritos por última vez|
 |/s|Muestra todas las apariciones del nombre de archivo especificado en el directorio especificado y en todos los subdirectorios.|
 |b|Muestra una lista completa de directorios y archivos, sin información adicional. **/b** invalida **/w**.|
 |/l|Muestra los nombres de directorio y los nombres de archivo sin ordenar en minúsculas.|
@@ -56,15 +56,15 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 |/4|Muestra los años en formato de cuatro dígitos.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Para usar varios parámetros de *nombre* de archivo, separe cada nombre de archivo con un espacio, una coma o un punto y coma.
 - Puede usar caracteres comodín ( **&#42;** o **?** ) para representar uno o varios caracteres de un nombre de archivo y mostrar un subconjunto de archivos o subdirectorios.
 
   **Asterisco (\*):** Use el asterisco como sustituto de cualquier cadena de caracteres, por ejemplo:  
-  - **dir @no__t -1. txt** enumera todos los archivos del directorio actual con extensiones que comienzan por. txt, como. txt,. txt1,. txt_old.
-  - **dir Read\*.txt** enumera todos los archivos del directorio actual que comienzan por "Read" y con extensiones que comienzan por. txt, como. txt,. txt1 o. txt_old.
-  - **dir Read @ no__t-1. \\** * enumera todos los archivos del directorio actual que comienzan por "Read" con cualquier extensión.
+  - **dir \*. txt** enumera todos los archivos del directorio actual con extensiones que comienzan por. txt, como. txt,. txt1,. txt_old.
+  - **dir read\*. txt** enumera todos los archivos del directorio actual que comienzan por "Read" y con extensiones que comienzan por. txt, como. txt,. txt1 o. txt_old.
+  - **dir read\*.\\** * enumera todos los archivos del directorio actual que comienzan por "Read" con cualquier extensión.
 
   El carácter comodín de asterisco siempre usa la asignación de nombres de archivo cortos, por lo que podría obtener resultados inesperados. Por ejemplo, el directorio siguiente contiene dos archivos (t. txt2 y T97. txt): 
  
@@ -81,7 +81,7 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
   11/30/2004  01:16 PM 0 t97.txt
   ```  
 
-  Podría esperar que escribir **dir T97 @ no__t-1*** devolvería el archivo T97. txt. Sin embargo, al escribir **dir T97 @ no__t-1*** se devuelven ambos archivos, ya que el carácter comodín de asterisco coincide con el archivo t. txt2 a T97. txt mediante el uso de su asignación de nombre corto T97B4 ~ 1. txt. Del mismo modo, **al escribir del T97 @ no__t-1*** se eliminarían ambos archivos.
+  Podría esperar que escribir **dir t97\\** * devolvería el archivo T97. txt. Sin embargo, al escribir **dir t97\\** * se devuelven ambos archivos, ya que el carácter comodín de asterisco coincide con el archivo t. txt2 con T97. txt mediante la asignación de nombre corto T97B4 ~ 1. txt. Del mismo modo, al escribir **del t97\\** * se eliminarían ambos archivos.
 
   **Signo de interrogación (?):** Use el signo de interrogación como sustituto de un solo carácter en un nombre. Por ejemplo, escribir **dir de lectura???. TXT** muestra los archivos del directorio actual con la extensión. txt que comienzan por "lectura" y van seguidos de tres caracteres como máximo. Esto incluye Read. txt, Read1. txt, Read12. txt, Read123. txt y Readme1. txt, pero no Readme12. txt.
 - Especificar atributos para mostrar archivos

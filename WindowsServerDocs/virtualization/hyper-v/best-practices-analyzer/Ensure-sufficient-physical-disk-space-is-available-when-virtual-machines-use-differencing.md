@@ -23,7 +23,7 @@ ms.locfileid: "71364871"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -36,12 +36,12 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 *Una o varias máquinas virtuales están usando discos duros virtuales de diferenciación.*  
   
 ## <a name="impact"></a>Impacto  
-los discos duros virtuales de *Differencing requieren espacio disponible en el volumen de hospedaje para que se pueda asignar espacio cuando se produzcan escrituras en los discos duros virtuales. Si se agota el espacio disponible, cualquier máquina virtual que se base en el almacenamiento físico podría verse afectada. Esto afecta a las siguientes máquinas virtuales:*  
+*Los discos duros virtuales de diferenciación requieren espacio disponible en el volumen de hospedaje para que se pueda asignar espacio cuando se produzcan escrituras en los discos duros virtuales. Si se agota el espacio disponible, cualquier máquina virtual que se base en el almacenamiento físico podría verse afectada. Esto afecta a las siguientes máquinas virtuales:*  
   
-\<list de máquinas virtuales >  
+\<lista de máquinas virtuales >  
   
 ## <a name="resolution"></a>Resolución  
-@no__t: 0Monitor espacio en disco disponible para asegurarse de que hay suficiente espacio disponible para la expansión del disco duro virtual. Considere la posibilidad de combinar discos duros virtuales de diferenciación en sus elementos primarios. En el administrador de Hyper-V, inspeccione el disco de diferenciación para determinar el disco duro virtual principal. Si fusiona mediante combinación un disco de diferenciación en un disco primario compartido por otros discos de diferenciación, la acción dañará la relación entre los demás discos de diferenciación y el disco principal, de forma que no se puedan usar. Después de comprobar que el disco duro virtual primario no está compartido, puede usar el Asistente para editar discos para fusionar mediante combinación el disco de diferenciación con el disco duro virtual principal. *  
+*Supervise el espacio disponible en disco para asegurarse de que hay suficiente espacio disponible para la expansión del disco duro virtual. Considere la posibilidad de combinar discos duros virtuales de diferenciación en sus elementos primarios. En el administrador de Hyper-V, inspeccione el disco de diferenciación para determinar el disco duro virtual principal. Si fusiona mediante combinación un disco de diferenciación en un disco primario compartido por otros discos de diferenciación, la acción dañará la relación entre los demás discos de diferenciación y el disco principal, de forma que no se puedan usar. Después de comprobar que el disco duro virtual primario no está compartido, puede usar el Asistente para editar discos para fusionar mediante combinación el disco de diferenciación con el disco duro virtual principal.*  
   
 
 

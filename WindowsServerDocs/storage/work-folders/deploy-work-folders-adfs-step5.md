@@ -15,21 +15,21 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71402778"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>Implementar carpetas de trabajo con AD FS y proxy de aplicación web: Paso 5: configuración de clientes
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: Paso 5; configurar clientes
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
 En este tema se describe el quinto paso para implementar Carpetas de trabajo con los Servicios de federación de Active Directory (AD FS) y el Proxy de aplicación web. Puedes encontrar el resto de pasos de este proceso en estos temas:  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Información general @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: información general](deploy-work-folders-adfs-overview.md)  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 1: configurar AD FS @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 1, configurar AD FS](deploy-work-folders-adfs-step1.md)  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 2: AD FS trabajo posterior a la configuración @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 2 AD FS trabajo posterior a la configuración](deploy-work-folders-adfs-step2.md)  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 3: configurar carpetas de trabajo @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 3, configurar carpetas de trabajo](deploy-work-folders-adfs-step3.md)  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 4: configurar el proxy de aplicación web @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 4: configurar el proxy de aplicación Web](deploy-work-folders-adfs-step4.md)  
   
 Usa los siguientes procedimientos para configurar los clientes de Windows que estén unidos (o no) a un dominio. Puedes usar a estos clientes para comprobar si los archivos de tus clientes se sincronizan correctamente en Carpetas de trabajo.  
   
@@ -79,7 +79,7 @@ Para configurar Carpetas de trabajo en el equipo cliente, sigue estos pasos:
   
 2. Haz clic en **Configurar Carpetas de trabajo**.  
   
-3. En la página **Escriba su dirección de correo electrónico del trabajo** , escriba la dirección de correo electrónico del usuario (por ejemplo, user@contoso.com) o la dirección URL de carpetas de trabajo (en el ejemplo de prueba, https: \//workfolders. contoso. com) y, a continuación, haga clic en **siguiente**.  
+3. En la página **Escriba su dirección de correo electrónico del trabajo** , escriba la dirección de correo electrónico del usuario (por ejemplo, user@contoso.com) o la dirección URL de carpetas de trabajo (en el ejemplo de prueba, https:\//workfolders.contoso.com) y, a continuación, haga clic en **siguiente**.  
   
 4. Si el usuario está conectado a la red corporativa, la autenticación se realiza mediante la autenticación integrada de Windows. Si el usuario no está conectado a la red corporativa, la autenticación se realiza mediante ADFS (OAuth); asimismo, se le pedirán al usuario las credenciales. Escribe las credenciales y haz clic en **Aceptar**.  
   
@@ -124,7 +124,7 @@ Cuando se abra la nueva carpeta de Carpetas de trabajo en este cliente, podrás 
   
 Así concluye el procedimiento para implementar Carpetas de trabajo, AD FS y el Proxy de aplicación web mediante la interfaz de usuario de Windows Server.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Introducción a carpetas de trabajo](Work-Folders-Overview.md)  
   
 

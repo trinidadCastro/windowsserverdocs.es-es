@@ -25,11 +25,11 @@ ms.locfileid: "71404985"
 
  Windows Server 2016 y Windows Server 2012 combinan la VPN de DirectAccess y el servicio de acceso remoto (RAS) en un solo rol de acceso remoto. Esta información general proporciona una introducción a los pasos de configuración necesarios para implementar un único servidor de acceso remoto de Windows Server 2016 o Windows Server 2012 con la configuración básica.
   
--   [Paso 1: Configure la infraestructura de DirectAccess @ no__t-0. Este paso incluye la configuración de la red, del servidor, de DNS y de Active Directory.  
+-   [Paso 1: configurar la infraestructura de DirectAccess](step-1-configure-da-inf-davpn.md). Este paso incluye la configuración de la red, del servidor, de DNS y de Active Directory.  
   
--   [Paso 2: Configure el servidor de DirectAccess-VPN @ no__t-0. Este paso incluye la configuración de equipos cliente de DirectAccess, la configuración del servidor.  
+-   [Paso 2: configurar el servidor VPN de DirectAccess](step-2-configure-server-davpn.md). Este paso incluye la configuración de equipos cliente de DirectAccess, la configuración del servidor.  
   
--   [Paso 3: Compruebe la implementación @ no__t-0. Este paso incluye pasos para comprobar la implementación.  
+-   [Paso 3: comprobar la implementación](step-3-verify-davpn.md). Este paso incluye pasos para comprobar la implementación.  
   
 Antes de iniciar la implementación, compruebe los pasos de planeación descritos en [planeación para habilitar DirectAccess](Plan-to-Enable-DirectAccess.md).  
   

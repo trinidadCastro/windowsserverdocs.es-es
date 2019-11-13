@@ -27,11 +27,11 @@ ms.locfileid: "71388765"
 
 La fase de planeamiento incluye los pasos siguientes:  
   
--   [Paso 1: Planear la infraestructura de DirectAccess @ no__t-0  
+-   [Paso 1: planear la infraestructura de DirectAccess](step-1-plan-da-inf-davpn.md)  
   
     En esta fase se describe la planificación necesaria para configurar la infraestructura de red antes de comenzar la implementación de acceso remoto. Engloba planear la topología de servidores y de red y los certificados, el Sistema de nombres de dominio (DNS), la configuración del objeto de directiva de grupo (GPO) de Active Directory y el servidor de ubicación de red de DirectAccess.  
   
--   [Paso 2: Planear la implementación de DirectAccess @ no__t-0  
+-   [Paso 2: planear la implementación de DirectAccess](step-2-plan-da-davpn.md)  
   
     En esta fase se describen los pasos de planificación necesarios para preparar la implementación de acceso remoto. Incluye planear los equipos cliente de acceso remoto, los requisitos de autenticación de servidor y cliente y los servidores de infraestructura.  
   

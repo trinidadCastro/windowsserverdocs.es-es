@@ -47,12 +47,12 @@ Los atributos de indización son útiles al buscar objetos que tienen el nombre 
 
 - Los grandes volúmenes de consultas con duraciones altas provocan el consumo y el agotamiento de los subprocesos LDAP de ATQ. Supervise los siguientes contadores de rendimiento:
 
-    - **NTDS @ no__t-1Request latencia** : está sujeto a cuánto tiempo tarda la solicitud en procesarse. Active Directory agota el tiempo de espera de las solicitudes después de 120 segundos (valor predeterminado), sin embargo, la mayoría debe ejecutarse mucho más rápido y las consultas de ejecución extremadamente larga deben ocultarse en los números generales. Busque los cambios en esta línea de base, en lugar de los umbrales absolutos.
+    - **Latencia de solicitud de\\NTDS** : está sujeto a cuánto tiempo tarda la solicitud en procesarse. Active Directory agota el tiempo de espera de las solicitudes después de 120 segundos (valor predeterminado), sin embargo, la mayoría debe ejecutarse mucho más rápido y las consultas de ejecución extremadamente larga deben ocultarse en los números generales. Busque los cambios en esta línea de base, en lugar de los umbrales absolutos.
 
         > [!NOTE]
         > Los valores altos aquí también pueden ser indicadores de retrasos en las solicitudes de "proxy" a otras comprobaciones de CRL y dominios.
 
-    - **NTDS @ no__t-1Estimated de tiempo** de espera de la cola: Idealmente, debería estar cerca de 0 para un rendimiento óptimo, ya que esto significa que las solicitudes no pasan ningún tiempo en espera de servicio.
+    - **NTDS\\retraso en la cola Estimado** : Idealmente, esto debería estar cerca de 0 para un rendimiento óptimo, ya que esto significa que las solicitudes no pasan ningún tiempo en espera de servicio.
 
 Estos escenarios se pueden detectar mediante uno o varios de los métodos siguientes:
 
@@ -60,11 +60,11 @@ Estos escenarios se pueden detectar mediante uno o varios de los métodos siguie
 
 -   [Seguimiento de búsquedas costosas e ineficaces](https://msdn.microsoft.com/library/ms808539.aspx)
 
--   Active Directory conjunto de recopiladores de datos de diagnóstico en el monitor de rendimiento ([Son de SPA: Conjuntos de recopiladores de datos de AD en Win2008 y más allá de @ no__t-0)
+-   Active Directory conjunto de recopiladores de datos de diagnóstico en el monitor de rendimiento ([hijo de spa: conjuntos de recopiladores de datos de AD en Win2008 y versiones posteriores](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx))
 
 -   [Asesor de rendimiento de servidor de Microsoft](../../../server-performance-advisor/microsoft-server-performance-advisor.md) Paquete de Active Directory Advisor
 
--   Realiza búsquedas con cualquier filtro además de "(objectClass = \*)" que usa el índice de antecesores.
+-   Realiza búsquedas con cualquier filtro además de "(objectClass =\*)" que usa el índice de antecesores.
 
 ### <a name="other-index-considerations"></a>Otras consideraciones sobre los índices
 
@@ -80,11 +80,11 @@ Estos escenarios se pueden detectar mediante uno o varios de los métodos siguie
 
 -   Los índices de tupla son necesarios para admitir cadenas de búsqueda medial y cadenas de búsqueda final. Los índices de tupla no son necesarios para las cadenas de búsqueda iniciales.
 
-    -   Cadena de búsqueda inicial: (samAccountName = mi @ no__t-0)
+    -   Cadena de búsqueda inicial: (samAccountName = MiPC\*)
 
-    -   Cadena de búsqueda medial: (samAccountName = \*MYPC @ no__t-1)
+    -   Cadena de búsqueda medial: (samAccountName =\*MiPC\*)
 
-    -   Cadena de búsqueda final: (samAccountName = \*MYPC $)
+    -   Cadena de búsqueda final: (samAccountName =\*miPC $)
 
 -   Al crear un índice se generará la e/s de disco mientras se compila el índice. Esto se hace en un subproceso en segundo plano con una prioridad más baja y las solicitudes entrantes se priorizarán en la compilación del índice. Si el planeamiento de la capacidad para el entorno se ha realizado correctamente, debería ser transparente. Sin embargo, los escenarios con mucha actividad de escritura o un entorno en el que se desconoce la carga en el almacenamiento del controlador de dominio podrían degradar la experiencia del cliente y deben deshacerse fuera del horario de trabajo.
 
@@ -98,10 +98,10 @@ Para obtener más información, vea lo siguiente:
 
 -   [Atributos indizados](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 - [Optimizar el rendimiento de servidores Active Directory](index.md)
-- [Consideraciones de hardware](hardware-considerations.md)
+- [Consideraciones de hardware](hardware-considerations.md).
 - [Colocación adecuada de los controladores de dominio y consideraciones de sitio](site-definition-considerations.md)
 - [Solución de problemas de rendimiento de AD DS](troubleshoot.md) 
 - [Capacity Planning for Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566) (Planeamiento de la capacidad para Active Directory Domain Services)

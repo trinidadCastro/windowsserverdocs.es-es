@@ -73,7 +73,7 @@ Tenga en cuenta los siguientes términos al configurar OTP en una implementació
   
 -   Bosque de cuenta: todos los demás bosques en la topología.  
   
-En este procedimiento se necesita el script de PowerShell PKISync.ps1. Consulte [AD CS: Script pkisync. PS1 para la inscripción de certificados entre bosques @ no__t-0.  
+En este procedimiento se necesita el script de PowerShell PKISync.ps1. Vea [AD CS: script PKISync.ps1 para la inscripción de certificados entre bosques](https://technet.microsoft.com/library/ff961506.aspx).  
   
 > [!NOTE]  
 > Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
@@ -100,7 +100,7 @@ En este procedimiento se necesita el script de PowerShell PKISync.ps1. Consulte 
     certutil -config <Computer-Name>\<Root-CA-Name> -ca.cert <root-ca-cert-filename.cer>  
     ```  
   
-    (Si ejecuta el comando en la CA raíz, puede omitir la información de conexión,-config < nombre del equipo > \\ < raíz-CA-nombre >)  
+    (Si ejecuta el comando en la CA raíz, puede omitir la información de conexión,-config < nombre del equipo >\\< raíz-CA-nombre >)  
   
     1.  Ejecute el siguiente comando desde un símbolo del sistema con privilegios elevados para importar el certificado de CA raíz del paso anterior en la CA del bosque de cuenta:  
   
@@ -108,7 +108,7 @@ En este procedimiento se necesita el script de PowerShell PKISync.ps1. Consulte 
         certutil -dspublish -f <root-ca-cert-filename.cer> RootCA  
         ```  
   
-    2.  Conceda a las plantillas de certificado de bosque de recursos permisos de lectura y escritura para el bosque \<Account @ no__t-1 @ no__t-2 < cuenta de administrador @ no__t-3.  
+    2.  Conceda a las plantillas de certificado de bosque de recursos permisos de lectura y escritura en el \<bosque de cuenta\>\\< cuenta de administrador\>.  
   
     3.  Ejecute el siguiente comando desde un símbolo del sistema con privilegios elevados para extraer todos los certificados de CA empresariales del bosque de recursos:  
   
@@ -116,7 +116,7 @@ En este procedimiento se necesita el script de PowerShell PKISync.ps1. Consulte 
         certutil -config <Computer-Name>\<Enterprise-CA-Name> -ca.cert <enterprise-ca-cert-filename.cer>  
         ```  
   
-        (Si ejecuta el comando en la CA raíz, puede omitir la información de conexión,-config < nombre del equipo > \\ < raíz-CA-nombre >)  
+        (Si ejecuta el comando en la CA raíz, puede omitir la información de conexión,-config < nombre del equipo >\\< raíz-CA-nombre >)  
   
     4.  Ejecute los siguientes comandos desde un símbolo del sistema con privilegios elevados para importar los certificados de CA empresariales del paso anterior en la CA del bosque de cuenta:  
   
@@ -179,7 +179,7 @@ La lista de búsqueda de sufijos DNS permite que los clientes usen nombres de et
   
 3.  En la tabla de la página **DNS** , especifique los sufijos de nombre adicionales que formen parte de la red corporativa en Bosque2. En **Dirección de servidor DNS**, especifique la dirección del servidor DNS, ya sea manualmente o haciendo clic en **Detectar**. Si no especifica la dirección, las nuevas entradas se aplican como exenciones de NRPT. Haga clic en **Siguiente**.  
   
-4.  Opcional: En la página **Lista de búsqueda de sufijos DNS**, agregue sufijos DNS especificándolos en el cuadro **Nuevo sufijo** y haciendo clic en **Agregar**. Haga clic en **Siguiente**.  
+4.  Opcional: En la página **Lista de búsqueda de sufijos DNS** , agregue sufijos DNS especificándolos en el cuadro **Nuevo sufijo** y haciendo clic en **Agregar**. Haga clic en **Siguiente**.  
   
 5.  En la página **Administración** , haga clic en **Finalizar**.  
   
@@ -202,7 +202,7 @@ Acceso remoto administra una lista de prefijos IPv6 para los recursos corporativ
   
 2.  En el Asistente para instalación de acceso remoto, haga clic en **Configuración de prefijo**.  
   
-3.  En **Prefijos IPv6 de la red interna** en dicha página, **agregue prefijos IPv6** separados por puntos y coma (por ejemplo, 2001:db8:1::/64;2001:db8:2::/64). Haga clic en **Siguiente**.  
+3.  En **Prefijos IPv6 de la red interna** en dichapágina, agregue prefijos IPv6 separados por puntos y coma (por ejemplo, 2001:db8:1::/64;2001:db8:2::/64). Haga clic en **Siguiente**.  
   
 4.  En la página **Autenticación** , haga clic en **Finalizar**.  
   

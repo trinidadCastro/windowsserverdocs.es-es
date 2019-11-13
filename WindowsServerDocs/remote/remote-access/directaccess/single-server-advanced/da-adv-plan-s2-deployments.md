@@ -138,7 +138,7 @@ De forma predeterminada, cuando la autenticación se extiende a los servidores d
 ## <a name="25-plan-directaccess-and-third-party-vpn-clients"></a>2.5 Planear DirectAccess y los clientes VPN de terceros  
 Algunos clientes VPN de terceros no crean conexiones en la carpeta Conexiones de red. Esto puede hacer que DirectAccess determine que no tiene conectividad de la intranet cuando se establece la conexión VPN y la conectividad con la intranet exista. Esto ocurre cuando los clientes VPN de terceros registran sus interfaces definiéndolos como tipos de extremo de la Especificación de interfaz de dispositivo de red (NDIS). Puedes habilitar la coexistencia con estos tipos de clientes VPN estableciendo el siguiente valor del Registro en 1 en los clientes de DirectAccess:  
   
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces (REG_DWORD)**  
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces (REG_DWORD)**  
   
 Algunos clientes VPN de terceros emplean una configuración de túnel dividido, que permite al equipo cliente VPN tener acceso directamente a Internet, sin tener que enviar el tráfico a través de la conexión VPN a la intranet.  
   
@@ -146,11 +146,11 @@ Las configuraciones de túnel dividido suelen dejar la configuración de puerta 
   
 Si la conexión VPN muestra su puerta de enlace predeterminada como vacía o como todo ceros (0.0.0.0), tu cliente VPN está configurado de esta manera. De forma predeterminada, el cliente de DirectAccess no identifica las configuraciones de túnel dividido. Para configurar que los clientes de DirectAccess detecten estos tipos de configuraciones del cliente VPN y coexistir con ellos, establece el siguiente valor del Registro en 1:  
   
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection (REG_DWORD)**  
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection (REG_DWORD)**  
   
 ## <a name="previous-step"></a>Paso anterior  
   
--   [Paso 1: Planear la infraestructura de DirectAccess @ no__t-0  
+-   [Paso 1: planear la infraestructura de DirectAccess](da-adv-plan-s1-infrastructure.md)  
   
 
 

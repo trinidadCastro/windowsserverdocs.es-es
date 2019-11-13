@@ -23,7 +23,7 @@ ms.locfileid: "71393349"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -36,9 +36,9 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 *No se están usando algunas funciones de aceleración de hardware*  
   
 ## <a name="impact"></a>Impacto  
-@no__t configuración de 0This puede hacer que el uso de CPU total sea mayor de lo necesario. Es posible que el rendimiento de red no sea óptimo en las siguientes máquinas virtuales: *  
+*Esta configuración puede hacer que el uso total de la CPU sea más alto de lo necesario. Es posible que el rendimiento de red no sea óptimo en las siguientes máquinas virtuales:*  
   
-\<list de máquinas virtuales >  
+\<lista de máquinas virtuales >  
   
 ## <a name="resolution"></a>Resolución  
 *Considere la posibilidad de configurar el adaptador de red virtual para SR-IOV si el hardware físico es compatible con SR-IOV y si esta configuración no entra en conflicto con las características de red que necesita la máquina virtual.*  

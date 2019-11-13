@@ -31,4 +31,4 @@ La administración de direcciones IP (IPAM) es un conjunto de herramientas integ
 > -   [Novedades de IPAM](../../technologies/ipam/What-s-New-in-IPAM.md)  
 > -   [Administrar IPAM](../../technologies/ipam/Manage-IPAM.md)  
 > -   [Cmdlets del servidor de administración de direcciones IP (IPAM) en Windows PowerShell](https://technet.microsoft.com/library/jj553807.aspx)  
-> -   Video: [Windows Server 2016: Administración de DNS en IPAM @ no__t-0  
+> -   Vídeo: [Windows Server 2016: administración de DNS en IPAM](https://channel9.msdn.com/Blogs/windowsserver/Windows-Server-2016-DNS-management-in-IPAM)  

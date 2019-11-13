@@ -23,7 +23,7 @@ ms.locfileid: "71365179"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -36,12 +36,12 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 *Una o varias máquinas virtuales seleccionadas para la replicación están configuradas para la autenticación Kerberos.*  
   
 ## <a name="impact"></a>**Impacto**  
-@no__t: el tráfico de red de replicación de 0The del servidor principal al servidor de replicación no está cifrado. Esto afecta a las siguientes máquinas virtuales: *  
+*El tráfico de red de replicación del servidor principal al servidor de replicación no está cifrado. Esto afecta a las siguientes máquinas virtuales:*  
   
-\<list de máquinas virtuales >  
+\<lista de máquinas virtuales >  
   
 ## <a name="resolution"></a>**Resolución**  
-*If se usa otro método para realizar el cifrado; puede pasarlo por alto. De lo contrario, modifique la configuración de la máquina virtual para elegir autenticación basada en certificados.*  
+*Si se usa otro método para realizar el cifrado, puede pasarlo por alto. De lo contrario, modifique la configuración de la máquina virtual para elegir autenticación basada en certificados.*  
   
 
 

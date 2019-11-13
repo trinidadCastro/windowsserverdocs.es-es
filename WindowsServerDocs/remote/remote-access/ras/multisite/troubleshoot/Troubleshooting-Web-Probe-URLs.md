@@ -26,16 +26,16 @@ ms.locfileid: "71404441"
 En este tema encontrará información para solucionar problemas relacionados con el comando `Set-DAEntryPointDC`. Para confirmar que el error recibido está relacionado con el establecimiento del controlador de dominio del punto de entrada, consulte el identificador de evento 10065 en el Registro de eventos de Windows.  
   
 ## <a name="SaveGPOSettings"></a>Guardando configuración de GPO de servidor  
-**Error recibido**. Se produjo un error al guardar la configuración de acceso remoto en el GPO < GPO_name >.  
+**Error recibido**. Error al guardar la configuración de acceso remoto en el GPO < GPO_name >.  
   
 Para solucionar este error, consulte guardar la configuración de GPO de servidor.  
   
 ## <a name="remote-access-is-not-configured"></a>Acceso remoto no está configurado  
-**Error recibido**. El acceso remoto no está configurado en < SERVER_NAME >. Especifique el nombre de un servidor que forme parte de una implementación multisitio.  
+**Error recibido**. El acceso remoto no está configurado en < server_name >. Especifique el nombre de un servidor que forme parte de una implementación multisitio.  
   
 O bien  
   
-El acceso remoto no está configurado en el servidor < SERVER_NAME >. Especifique un equipo con DirectAccess habilitado.  
+El acceso remoto no está configurado en el servidor < server_name >. Especifique un equipo con DirectAccess habilitado.  
   
 **Causa**  
   
@@ -92,7 +92,7 @@ Asegúrese de que se puede acceder al equipo remoto mediante RPC y de que hay un
   
 -   **Problema 1**  
   
-    **Error recibido**. No se puede tener acceso al controlador de dominio < domain_controller >. Compruebe la conectividad de red y la disponibilidad del servidor.  
+    **Error recibido**. No se puede establecer contacto con el controlador de dominio < domain_controller >. Compruebe la conectividad de red y la disponibilidad del servidor.  
   
     **Causa**  
   
@@ -104,7 +104,7 @@ Asegúrese de que se puede acceder al equipo remoto mediante RPC y de que hay un
   
 -   **Problema 2**  
   
-    **Error recibido**. No se puede establecer contacto con el controlador de dominio < > domain_controller.  
+    **Error recibido**. No se puede establecer contacto con el controlador de dominio < domain_controller >.  
   
     **Causa**  
   
@@ -116,7 +116,7 @@ Asegúrese de que se puede acceder al equipo remoto mediante RPC y de que hay un
   
 -   **Problema 3**  
   
-    **Error recibido**. No se puede establecer contacto con el controlador de dominio < domain_controller > para% 2! s!.  
+    **Error recibido**. No se puede establecer contacto con el controlador de dominio < domain_controller > para %2! s!.  
   
     **Causa**  
   
@@ -124,11 +124,11 @@ Asegúrese de que se puede acceder al equipo remoto mediante RPC y de que hay un
   
     **Solución**  
   
-    Siga el procedimiento "para cambiar el controlador de dominio que administra los GPO de servidor" descrito en [2,4. Configure los GPO @ no__t-0.  
+    Siga el procedimiento "para cambiar el controlador de dominio que administra los GPO de servidor" descrito en [2,4. Configurar GPO](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs).  
   
 -   **Problema 4**  
   
-    **Error recibido**. No se puede alcanzar el controlador de dominio principal en el dominio < nombre_dominio >.  
+    **Error recibido**. No se puede tener acceso al controlador de dominio principal en el > domain_name de < de dominio.  
   
     **Causa**  
   
@@ -136,10 +136,10 @@ Asegúrese de que se puede acceder al equipo remoto mediante RPC y de que hay un
   
     **Solución**  
   
-    Siga el procedimiento "para transferir el rol de emulador de PDC" descrito en [2,4. Configure los GPO @ no__t-0.  
+    Siga el procedimiento "para transferir el rol de emulador de PDC" descrito en [2,4. Configurar GPO](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs).  
   
 ## <a name="read-only-domain-controller"></a>Controlador de dominio de solo lectura  
-**Error recibido**. El controlador de dominio < > domain_controller es de solo lectura. Especifique uno que no lo sea.  
+**Error recibido**. El controlador de dominio < domain_controller > es de solo lectura. Especifique uno que no lo sea.  
   
 **Causa**  
   
@@ -153,7 +153,7 @@ Al usar `Set-DAEntryPointDC`, el parámetro *NewDC* se utiliza para actualizar e
   
 -   **Problema 1**  
   
-    **Error recibido**. No se puede recuperar el GPO < GPO_name > en el controlador de dominio < previous_domain_controller > desde el controlador de dominio < replacement_domain_controller > porque no están en el mismo dominio.  
+    **Error recibido**. > De GPO_name de < de GPO en el controlador de dominio < previous_domain_controller > no se pueden recuperar del controlador de dominio < replacement_domain_controller > porque no están en el mismo dominio.  
   
     **Causa**  
   
@@ -165,7 +165,7 @@ Al usar `Set-DAEntryPointDC`, el parámetro *NewDC* se utiliza para actualizar e
   
 -   **Problema 2**  
   
-    **Error recibido**. No se puede recuperar el GPO < GPO_name > en el controlador de dominio < previous_domain_controller > del controlador de dominio < replacement_domain_controller >. Espere a que se complete la replicación del dominio y, a continuación, vuelva a intentarlo.  
+    **Error recibido**. No se puede recuperar el > de GPO_name de GPO < en el controlador de dominio < previous_domain_controller > del controlador de dominio < replacement_domain_controller >. Espere a que se complete la replicación del dominio y, a continuación, vuelva a intentarlo.  
   
     **Causa**  
   
@@ -202,7 +202,7 @@ Asegúrese de que el nombre de punto de entrada está bien escrito y de que los 
   
 -   **Problema 1**  
   
-    **Error recibido**. No se puede tener acceso al servidor < SERVER_NAME > en el punto de entrada < entry_point_name >.  
+    **Error recibido**. No se puede tener acceso al server_name de < de servidor > en el punto de entrada < entry_point_name >.  
   
     **Causa**  
   
@@ -214,7 +214,7 @@ Asegúrese de que el nombre de punto de entrada está bien escrito y de que los 
   
 -   **Problema 2**  
   
-    **Error recibido**. No se puede guardar la configuración en el registro en Server < SERVER_NAME > en el punto de entrada < entry_point_name >.  
+    **Error recibido**. No se puede guardar la configuración en el registro en el servidor < server_name > en el punto de entrada < entry_point_name >.  
   
     **Causa**  
   
@@ -226,7 +226,7 @@ Asegúrese de que el nombre de punto de entrada está bien escrito y de que los 
   
 -   **Problema 3**  
   
-    **Error recibido**. No se pueden aplicar actualizaciones de GPO en < SERVER_NAME >. Los cambios no surtirán efecto hasta la siguiente actualización de directiva.  
+    **Error recibido**. No se pueden aplicar actualizaciones de GPO en < server_name >. Los cambios no surtirán efecto hasta la siguiente actualización de directiva.  
   
     **Causa**  
   
@@ -237,7 +237,7 @@ Asegúrese de que el nombre de punto de entrada está bien escrito y de que los 
     Todos aquellos servidores que no se han actualizado se pueden consultar mediante la opción **Estado de configuración** en **PANEL**, en la Consola de administración de acceso remoto. Esto no acarrea problemas de funcionamiento; sin embargo, se puede ejecutar `gpupdate /force` en cualquier servidor que no se haya actualizado para actualizar su estado de configuración inmediatamente.  
   
 ## <a name="problem-resolving-fqdn"></a>Problema al resolver FQDN  
-**Error recibido**. No se puede tener acceso al servidor < SERVER_NAME > en el punto de entrada < entry_point_name >.  
+**Error recibido**. No se puede tener acceso al server_name de < de servidor > en el punto de entrada < entry_point_name >.  
   
 **Causa**  
   

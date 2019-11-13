@@ -23,7 +23,7 @@ ms.locfileid: "71393602"
 
 Para más información acerca de los análisis y los procedimientos recomendados, vea [Analizador de procedimientos recomendados](https://go.microsoft.com/fwlink/?LinkId=122786).
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -40,11 +40,11 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
   
 *Algunas funcionalidades no estarán disponibles para las siguientes máquinas virtuales:*  
   
-@no__t: 0list de nombres de máquina virtual >  
+\<lista de nombres de máquina virtual >  
   
 ## <a name="resolution"></a>Resolución  
   
-@no__t 0If es intencional, no es necesario realizar ninguna otra acción. En caso contrario, considere la posibilidad de ofrecer todos los servicios de integración en la configuración de estas máquinas virtuales. *  
+*Si esto es intencionado, no es necesario realizar ninguna otra acción. En caso contrario, considere la posibilidad de ofrecer todos los servicios de integración en la configuración de estas máquinas virtuales.*  
   
 La disponibilidad de algunos servicios de integración se puede administrar a través de la configuración de la máquina virtual.   
   

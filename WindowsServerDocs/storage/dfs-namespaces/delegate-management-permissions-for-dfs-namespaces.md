@@ -17,7 +17,7 @@ ms.locfileid: "71402221"
 ---
 # <a name="delegate-management-permissions-for-dfs-namespaces"></a>Delegar permisos de administración para espacios de nombres DFS
 
-> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008
 
 En la siguiente tabla se describen los grupos que pueden realizar tareas básicas de espacio de nombres de forma predeterminada y el método para delegar la capacidad para realizar estas tareas:
 
@@ -32,4 +32,4 @@ En la siguiente tabla se describen los grupos que pueden realizar tareas básica
 
 <br />
 
-@no__t permisos de administración de 0Delegating para administrar un espacio de nombres independiente no concede al usuario la posibilidad de ver y administrar la seguridad mediante la pestaña **delegación** a menos que el usuario sea miembro del grupo Administradores local en el servidor de espacio de nombres. Este problema se produce porque el complemento de administración DFS no puede recuperar las listas de control de acceso discrecional (DACL) para el espacio de nombres independiente desde el registro. Para habilitar el complemento para que muestre información de delegación, debe seguir los pasos descritos en el artículo de Microsoft<sup>®</sup> Knowledge Base: @NO__T 0KB314837: Cómo administrar el acceso remoto al registro @ no__t-0
+\*delegar permisos de administración para administrar un espacio de nombres independiente no concede al usuario la posibilidad de ver y administrar la seguridad mediante la pestaña **delegación** a menos que el usuario sea miembro del grupo Administradores local en el servidor de espacio de nombres. Este problema se produce porque el complemento de administración DFS no puede recuperar las listas de control de acceso discrecional (DACL) para el espacio de nombres independiente desde el registro. Para habilitar el complemento para que muestre información de delegación, debes seguir los pasos indicados en el artículo de Microsoft<sup>®</sup> Knowledge Base: [KB314837: Cómo administrar el acceso remoto al Registro](https://go.microsoft.com/fwlink?linkid=46803)

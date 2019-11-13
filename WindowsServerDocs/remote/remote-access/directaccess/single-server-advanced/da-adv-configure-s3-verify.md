@@ -39,7 +39,7 @@ En este tema se describe cómo comprobar que ha configurado correctamente la imp
   
 ## <a name="BKMK_Links"></a>Paso anterior  
   
--   [Paso 2: Configuración de los servidores de DirectAccess @ no__t-0  
+-   [Paso 2: configuración de los servidores de DirectAccess](Step-2-Configuring-DirectAccess-Servers.md)  
   
 
 
