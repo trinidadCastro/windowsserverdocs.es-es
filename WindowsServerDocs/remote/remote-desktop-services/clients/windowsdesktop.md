@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/24/2019
+ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 961d636fb59b33d0c562ec25d13174abbe766606
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: aff7e6e1f37cad66530679ade024c089a4ba034e
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404080"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567165"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introducción al cliente de escritorio de Windows
 
@@ -33,9 +33,11 @@ El cliente de Escritorio remoto para el escritorio de Windows se puede usar para
 
 ## <a name="install-the-client"></a>Instalar el cliente
 
-Actualmente, puedes descargar el cliente para Windows de 64 bits. Esta lista se actualizará cuando el cliente esté disponible para más versiones de Windows.
+Elige el cliente que coincida con tu versión de Windows:
 
-- [Cliente de Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2068602)
+- [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2068602)
+- [Versión preliminar de Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2098960)
+- [Versión preliminar de Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2098961)
 
 Puedes instalar el cliente para el usuario actual, lo que no requiere derechos de administrador, o bien el administrador puede instalar y configurar el cliente para que todos los usuarios del dispositivo puedan acceder a él.
 
@@ -112,7 +114,7 @@ El cliente usará las opciones que configuró el administrador, a menos que se d
 - La opción **Use all monitors** (Usar todos los monitores) cambia la sesión de escritorio entre el uso de todos los monitores locales disponibles y un solo monitor.
 - La opción **Start in full screen** (Iniciar en pantalla completa) determina si la sesión se iniciará en modo de pantalla completa o de ventana. Esta configuración se habilita automáticamente cuando se utilizan todos los monitores.
 - La opción **Update the resolution on resize** (Actualizar la resolución al cambiar de tamaño) cambia el comportamiento al cambiar el tamaño de la sesión en modo de ventana. Si está habilitada, la resolución del escritorio remoto se actualizará para que coincida con el tamaño de la ventana local. Si está deshabilitada, la sesión conservará la resolución especificada en **Resolución** durante toda su duración. Esta configuración se habilita automáticamente cuando se utilizan todos los monitores.
-- La opción **Resolución** le permite especificar la resolución del escritorio remoto. La sesión conservará esta resolución durante toda la duración. Esta configuración se deshabilita automáticamente si la resolución está establecida para actualizarse al cambiar el tamaño.
+- La opción **Resolución** te permite especificar la resolución del escritorio remoto. La sesión conservará esta resolución durante toda la duración. Esta configuración se deshabilita automáticamente si la resolución está establecida para actualizarse al cambiar el tamaño.
 - La opción **Change the size of the text and apps** (Cambiar el tamaño del texto y las aplicaciones) especifica el tamaño del contenido de la sesión. Esta configuración solo se aplica al conectarse con Windows 8.1 y versiones posteriores o Windows Server 2012 R2 y versiones posteriores. Esta configuración se deshabilita automáticamente si la resolución está establecida para actualizarse al cambiar el tamaño.
 - La opción **Fit session to window** (Ajustar sesión a la ventana) determina cómo se muestra la sesión cuando la resolución del escritorio remoto difiere del tamaño de la ventana local. Cuando se habilite, se cambiará el tamaño del contenido de la sesión para ajustarse dentro de la ventana, a la vez que se conservará la relación de aspecto de la sesión. Cuando se deshabilite, las barras de desplazamiento o las áreas negras se mostrarán cuando la resolución y el tamaño de la ventana no coincidan.
 
