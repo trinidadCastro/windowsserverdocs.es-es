@@ -11,12 +11,12 @@ ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 author: lizap
 ms.author: elizapo
 ms.date: 01/08/2019
-ms.openlocfilehash: f491f283861098bbe98e253cb2ff1d5cee2ac57f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8b7fc4c6266c7d8e3255c35b105f92d4f2de9a2c
+ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365456"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73956108"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Sistemas operativos invitados de Windows admitidos para Hyper-V en Windows Server
 
@@ -31,11 +31,12 @@ Algunos sistemas operativos tienen integrado Integration Services. Otros requier
 A continuación se muestran las versiones de Windows Server que se admiten como sistemas operativos invitados para Hyper-V en Windows Server 2016 y Windows Server 2019. 
   
 |Sistema operativo invitado (servidor)|Número máximo de procesadores virtuales|Servicios de integración|Notas|  
-|-------------------------------------|----------------------------------------|------------------------|---------|  
+|-------------------------------------|----------------------------------------|------------------------|---------| 
+|Windows Server, versión 1909 |240 para la generación 2;<br>64 para la generación 1|Integrados|Una compatibilidad con el procesador virtual de más de 240 requiere sistemas operativos invitados de Windows Server, versión 1903 o posterior.| 
 |Windows Server, versión 1903 |240 para la generación 2;<br>64 para la generación 1|Integrados||
 |Windows Server, versión 1809 |240 para la generación 2;<br>64 para la generación 1|Integrados|| 
-|Windows Server 2019 |240 para la generación 2;<br>64 para la generación 1|Integrados||
-|Windows Server, versión 1803 |240 para la generación 2;<br>64 para la generación 1|Integrados|| 
+|Windows Server 2019 |240 para la generación 2;<br>64 para la generación 1|Integrados||
+|Windows Server, versión 1803 |240 para la generación 2;<br>64 para la generación 1|Integrados|| 
 |Windows Server 2016 |240 para la generación 2;<br>64 para la generación 1|Integrados|| 
 |Windows Server 2012 R2 |64|Integrados||  
 |Windows Server 2012 |64|Integrados||  
@@ -59,7 +60,7 @@ En la tabla siguiente se proporcionan vínculos a información acerca de los sis
 |Sistema operativo host|Tema|  
 |-------------------------|---------|  
 |Windows 10|[Sistemas operativos invitados admitidos para el cliente Hyper-V en Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os)|  
-|Windows Server 2012 R2 y Windows 8.1|-   [sistemas operativos invitados de Windows admitidos para Hyper-V en Windows Server 2012 R2 y Windows 8.1](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />Virtual Machines de -   [Linux y FreeBSD en Hyper-V](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|  
+|Windows Server 2012 R2 y Windows 8.1|-   [sistemas operativos invitados de Windows admitidos para Hyper-V en Windows Server 2012 R2 y Windows 8.1](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />[Virtual Machines de -   Linux y FreeBSD en Hyper-V](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|  
 |Windows Server 2012 y Windows 8|[Sistemas operativos invitados de Windows admitidos para Hyper-V en Windows Server 2012 y Windows 8](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792028(v=ws.11))|  
 |Windows Server 2008 y Windows Server 2008 R2|[Acerca de los sistemas operativos Virtual Machines e invitados](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10))|  
   
@@ -67,13 +68,13 @@ En la tabla siguiente se proporcionan vínculos a información acerca de los sis
 
 Microsoft ofrece compatibilidad para los sistemas operativos invitados de la siguiente manera:  
   
--   Los problemas encontrados en sistemas operativos y en servicios de integración de Microsoft se admiten en el soporte técnico de Microsoft.  
+-   Los problemas encontrados en sistemas operativos y en servicios de integración de Microsoft los atiende el soporte técnico de Microsoft.  
   
 -   Los problemas encontrados en otros sistemas operativos cuya ejecución en Hyper-V se encuentra certificada por el proveedor del sistema operativo, se admiten en el soporte del proveedor.  
   
 -   Microsoft envía los problemas detectados en otros sistemas operativos a la comunidad de soporte técnico de varios proveedores, [TSANet](https://www.tsanet.org/).  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
   
 -   [Virtual Machines de Linux y FreeBSD en Hyper-V](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)  
   
