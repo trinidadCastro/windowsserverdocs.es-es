@@ -5,16 +5,16 @@ ms.prod: windows-server
 ms.technology: server-general
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 05/21/2019
+ms.date: 11/12/2019
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
-ms.openlocfilehash: 7b45f5e8fa7f2586f6fd3b5f49599928dee436e7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c27fd6652e86211449c1db0e69e88a604d659498
+ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391431"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73956051"
 ---
 # <a name="windows-server-release-information"></a>Información de la versión de Windows Server
 
@@ -26,10 +26,10 @@ El canal semianual ofrece una oportunidad a los clientes que innovan de forma r�
 
 | Versión de Windows Server | Versión | Compilación del sistema operativo | Disponibilidad | Fecha de finalización del soporte estándar|Fecha de finalización del soporte extendido |
 |----------------|---------|----------|----------|---------|----------|
+| Windows Server, versión 1909 (Canal semianual) (Datacenter Core, Standard Core) | 1909  | 18363.418.191007-0143 | 12/11/2019 | 11/05/2021 | Nota de revisión |
 | Windows Server, versión 1903 (canal semianual) (Datacenter Core, Core estándar) | 1903  | 18362.30.190401-1528 | 21/5/2019 | 08/12/2020 | Nota de revisión |
 |Windows Server 2019 (canal de mantenimiento a largo plazo) (Centro de datos, Essentials, Estándar)|1809|17763.107.1010129-1455|13/11/2018|09/01/2024|09/01/2029|
 |Windows Server, versión 1809 (canal semianual) (Datacenter Core, Core estándar)|1809|17763.107.1010129-1455|13/11/2018|12/5/2020|Nota de revisión|
-| Windows Server, versión 1803 (Canal semianual) (Centro de datos, estándar)| 1803 |17134.1.180410-1804 |30/04/2018| 12/11/2019|Nota de revisión|
 | Windows Server 2016 (canal de mantenimiento a largo plazo)| 1607 | 14393.0 | 15/10/2016 |11/01/2022| 11/01/2027|
 
 > [!NOTE]

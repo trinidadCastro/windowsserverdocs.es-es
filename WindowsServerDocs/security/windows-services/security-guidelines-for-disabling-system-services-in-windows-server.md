@@ -10,12 +10,12 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 54352f47a31826b91b5696eb90104ca166a4299d
-ms.sourcegitcommit: 18f6b104e73e0397009283d55bee7984ac7ef0d1
+ms.openlocfilehash: 1711eb94b622775feaf02f6bada596fe03b08ea9
+ms.sourcegitcommit: b8e120fc574450e9eee13e7315424137a43e6a6c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73632650"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74044809"
 ---
 # <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>Guía para deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio
 
@@ -68,7 +68,7 @@ En el caso de todos los servicios del sistema que se mencionan en este documento
 |---|---|
 |**Descripción del servicio**|   La descripción del servicio desde sc.exe qdescription.|
 |**Nombre** |Nombre clave (interno) del servicio.|
-|**Instalación** |Siempre instalado: El servicio se encuentra en Server Core y Server con Experiencia de escritorio. Solo con Experiencia de escritorio: el servicio está en Windows Server 2016 con Experiencia de escritorio, pero ***no*** está en Server Core |
+|**Instalación** | *Siempre instalado*: El servicio se instala en Windows Server 2016 Core y Windows Server 2016 con Experiencia de escritorio. *Solo con Experiencia de escritorio*: El servicio se instala en Windows Server 2016 con Experiencia de escritorio, pero ***no*** se instala en Server Core. |
 |**StartType**  |Tipo de inicio del servicio en Windows Server 2016|
 |**Recomendación** |La recomendación o el consejo de Microsoft sobre la deshabilitación de este servicio en Windows Server 2016 es una implementación empresarial típica bien administrada y donde el servidor no se usa como un reemplazo del escritorio del usuario final.|
 |**Comentarios** |Una explicación adicional.|

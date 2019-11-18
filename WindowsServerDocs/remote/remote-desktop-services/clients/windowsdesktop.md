@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 10/31/2019
+ms.date: 11/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: aff7e6e1f37cad66530679ade024c089a4ba034e
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 2f786a1db0854ae89c1ceb23942793deb7f608e1
+ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567165"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74019602"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introducción al cliente de escritorio de Windows
 
@@ -36,8 +36,8 @@ El cliente de Escritorio remoto para el escritorio de Windows se puede usar para
 Elige el cliente que coincida con tu versión de Windows:
 
 - [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2068602)
-- [Versión preliminar de Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2098960)
-- [Versión preliminar de Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2098961)
+- [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2098960)
+- [Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2098961)
 
 Puedes instalar el cliente para el usuario actual, lo que no requiere derechos de administrador, o bien el administrador puede instalar y configurar el cliente para que todos los usuarios del dispositivo puedan acceder a él.
 
