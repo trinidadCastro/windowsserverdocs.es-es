@@ -78,7 +78,7 @@ AlternateSignatureAlgorithm=1
 ```  
 Debe planear los siguientes elementos para este archivo:  
   
--   **DIRECCIÓN URL**. El archivo CAPolicy. inf de ejemplo tiene un valor de dirección URL de **https://pki.corp.contoso.com/pki/cps.txt** . Esto se debe a que el servidor Web de esta guía se denomina WEB1 y tiene un registro de recursos CNAME de DNS de PKI. El servidor web también se une al dominio corp.contoso.com. Además, hay un directorio virtual en el servidor Web denominado "PKI" donde se almacena la lista de revocación de certificados. Asegúrese de que el valor que proporciona para la dirección URL en el archivo CAPolicy. inf apunta a un directorio virtual del servidor Web de su dominio.  
+-   **Dirección URL**. El archivo CAPolicy. inf de ejemplo tiene un valor de dirección URL de **https://pki.corp.contoso.com/pki/cps.txt** . Esto se debe a que el servidor Web de esta guía se denomina WEB1 y tiene un registro de recursos CNAME de DNS de PKI. El servidor web también se une al dominio corp.contoso.com. Además, hay un directorio virtual en el servidor Web denominado "PKI" donde se almacena la lista de revocación de certificados. Asegúrese de que el valor que proporciona para la dirección URL en el archivo CAPolicy. inf apunta a un directorio virtual del servidor Web de su dominio.  
   
 -   **RenewalKeyLength**. La longitud de clave de renovación predeterminada para AD CS en Windows Server 2012 es 2048. La longitud de la clave que seleccione debe ser lo más larga posible y, al mismo tiempo, proporcionar compatibilidad con las aplicaciones que piensa usar.  
   

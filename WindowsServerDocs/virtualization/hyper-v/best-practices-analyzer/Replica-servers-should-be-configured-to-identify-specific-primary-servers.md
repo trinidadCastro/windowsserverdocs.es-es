@@ -23,7 +23,7 @@ ms.locfileid: "71364739"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -39,7 +39,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 *Toda la replicación de todos los servidores principales se almacena en una ubicación, lo que puede incluir problemas de privacidad o seguridad.*  
   
 ## <a name="resolution"></a>Resolución  
-*Use administrador de Hyper-V para crear nuevas entradas de autorización para los servidores principales específicos y especificar ubicaciones de almacenamiento separadas para cada una de ellas. Puede usar caracteres comodín para agrupar los servidores principales en conjuntos para cada entrada de autorización.*  
+*Use el administrador de Hyper-V para crear nuevas entradas de autorización para los servidores principales específicos y especificar ubicaciones de almacenamiento separadas para cada una de ellas. Puede usar caracteres comodín para agrupar los servidores principales en conjuntos para cada entrada de autorización.*  
   
 #### <a name="create-authorization-entries-using-hyper-v-manager"></a>Crear entradas de autorización mediante el administrador de Hyper-V  
   
@@ -83,7 +83,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 New-VMReplicationAuthorizationEntry server01.domain01.contoso.com D:\ReplicaVMStorage DEFAULT  
 ```  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [New-VMReplicationAuthorizationEntry](https://technet.microsoft.com/library/hh848606.aspx)  
   
 
