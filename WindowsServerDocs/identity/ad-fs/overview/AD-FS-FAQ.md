@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a52676ffc89c9fc5ce0eba4f44407e76520fef0a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0a2bbeeb459fd364db728579dc20015a2474fd25
+ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407439"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74163092"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS preguntas más frecuentes (p + f)
 
@@ -71,9 +71,11 @@ AD FS admite varias configuraciones de varios bosques y se basa en la red de con
 - En el caso de una confianza de bosque unidireccional, como un bosque DMZ que contiene identidades de asociados, se recomienda implementar ADFS en el bosque Corp y tratar el bosque DMZ como otra relación de confianza para proveedor de notificaciones local conectada a través de LDAP. En este caso, la autenticación integrada de Windows no funcionará para los usuarios del bosque DMZ y se les pedirá que realice la autenticación con contraseña, ya que es el único mecanismo admitido para LDAP. En caso de que no pueda seguir esta opción, deberá configurar otro ADFS en el bosque DMZ y agregarlo como confianza del proveedor de notificaciones en ADFS en el bosque Corp. Los usuarios deberán realizar la detección del dominio de inicio, pero la autenticación integrada de Windows y la autenticación de contraseña funcionarán. Realice los cambios adecuados en las reglas de emisión en ADFS en el bosque de la red perimetral, ya que ADFS en el bosque Corp no podrá obtener información adicional sobre el usuario del bosque DMZ.
 - Aunque se admiten las confianzas de nivel de dominio y pueden funcionar, se recomienda encarecidamente pasar a un modelo de confianza de nivel de bosque. Además, debe asegurarse de que el enrutamiento UPN y la resolución de nombres NETBIOS de los nombres deben funcionar con precisión.
 
+>[!NOTE]  
+>Si se usa la autenticación optativa con una configuración de confianza bidireccional, asegúrese de que el usuario que llama tenga el permiso "permitir la autenticación" en la cuenta de servicio de destino. 
 
 
-## <a name="design"></a>Diseño
+## <a name="design"></a>Diseñar
 
 ### <a name="what-third-party-multi-factor-authentication-providers-are-available-for-ad-fs"></a>¿Qué proveedores de autenticación multifactor de terceros están disponibles para AD FS?
 AD FS proporciona un mecanismo extensible para que los proveedores de MFA de terceros se integren. No hay ningún programa de certificación establecido para este. Se supone que el proveedor ha realizado las validaciones necesarias antes del lanzamiento. 
@@ -103,17 +105,17 @@ Para asegurarse de que los servidores de AD FS y WAP negocian solo los conjuntos
 
 ## <a name="developer"></a>Desarrollador
 
-### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>Al generar un ID_token con ADFS para un usuario autenticado en AD, ¿cómo se genera la declaración "sub" en el ID_token?
+### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>Al generar una id_token con ADFS para un usuario autenticado en AD, ¿cómo se genera la declaración "sub" en el id_token?
 El valor de la demanda "sub" es el hash del identificador de cliente y el valor de la petición de delimitador.
 
 ### <a name="what-is-the-lifetime-of-the-refresh-tokenaccess-token-when-the-user-logs-in-via-a-remote-claims-provider-trust-over-ws-fedsaml-p"></a>¿Cuál es la duración del token de actualización y el token de acceso cuando el usuario inicia sesión a través de una confianza de proveedor de notificaciones remotas sobre WS-FED/SAML-P?
 La duración del token de actualización será la duración del token que ADFS recibió de la confianza del proveedor de notificaciones remotas. La duración del token de acceso será la duración del token del usuario de confianza para el que se emite el token de acceso.
 
 ### <a name="i-need-to-return-profile-and-email-scopes-as-well-in-addition-to-the-openid-scope-can-i-obtain-additional-information-using-scopes-how-to-do-it-in-ad-fs"></a>También necesito devolver los ámbitos de perfil y correo electrónico, además del ámbito de OpenId. ¿Puedo obtener información adicional mediante el uso de ámbitos? ¿Cómo hacerlo en AD FS?
-Puede usar ID_token personalizadas para agregar información relevante en el mismo ID_token. Para obtener más información, consulte el artículo [Personalización de notificaciones que se van a emitir en ID_token](../development/Custom-Id-Tokens-in-AD-FS.md).
+Puede usar id_token personalizadas para agregar información relevante en el id_token mismo. Para obtener más información, consulte el artículo [Personalización de notificaciones que se van a emitir en ID_token](../development/Custom-Id-Tokens-in-AD-FS.md).
 
 ### <a name="how-to-issue-json-blobs-inside-jwt-tokens"></a>¿Cómo se emiten blobs JSON dentro de tokens JWT?
-Se agregó un ValueType especial<http://www.w3.org/2001/XMLSchema#json>("") y un carácter de escape (\x22) para este en AD FS 2016. En el ejemplo siguiente se muestra la regla de emisión y también la salida final del token de acceso.
+Se agregó un ValueType especial ("<http://www.w3.org/2001/XMLSchema#json>") y un carácter de escape (\x22) en AD FS 2016. En el ejemplo siguiente se muestra la regla de emisión y también la salida final del token de acceso.
 
 Ejemplo de regla de emisión:
 
@@ -131,11 +133,11 @@ Con AD FS en el servidor 2019, ahora puede pasar el valor de recurso incrustado 
 AD FS en el servidor 2019 admite la clave de prueba para el intercambio de código (PKCE) para el flujo de concesión de código de autorización OAuth
 
 ### <a name="what-permitted-scopes-are-supported-by-ad-fs"></a>¿Qué ámbitos permitidos admite AD FS?
-- AZA: si se usan [las extensiones de protocolo de OAuth 2,0 para los clientes de Broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) y si el parámetro de ámbito contiene el ámbito "AZA", el servidor emite un nuevo token de actualización principal y lo establece en el campo refresh_token de la respuesta, así como la configuración de refresh_token_ expires_in el campo a la duración del nuevo token de actualización principal si se aplica uno.
+- AZA: si se usan [las extensiones de protocolo de OAuth 2,0 para los clientes de Broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) y si el parámetro de ámbito contiene el ámbito "AZA", el servidor emite un nuevo token de actualización principal y lo establece en el refresh_token campo de la respuesta, además de establecer el campo refresh_token_expires_in en la duración del nuevo token de actualización principal si se aplica uno.
 - OpenID: permite que la aplicación solicite el uso del Protocolo de autorización OpenID Connect.
-- logon_cert: el ámbito logon_cert permite a una aplicación solicitar certificados de inicio de sesión, que se pueden usar para iniciar sesión de forma interactiva en usuarios autenticados. El servidor de AD FS omite el parámetro access_token de la respuesta y, en su lugar, proporciona una cadena de certificados CMS codificada en base64 o una respuesta de PKI completa de CMC. Puede encontrar más información [aquí](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e). 
-- user_impersonation: el ámbito user_impersonation es necesario para solicitar correctamente un token de acceso en nombre de AD FS. Para obtener más información sobre cómo usar este ámbito, consulte [compilar una aplicación de varios niveles con on-behalf-of (OBO) mediante OAuth con AD FS 2016](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md).
-- vpn_cert: el ámbito vpn_cert permite a una aplicación solicitar certificados VPN, que se pueden usar para establecer conexiones VPN mediante la autenticación EAP-TLS. Esto ya no se admite.
+- logon_cert: el ámbito de logon_cert permite a una aplicación solicitar certificados de inicio de sesión, que se pueden usar para iniciar sesión de forma interactiva en usuarios autenticados. El servidor de AD FS omite el parámetro access_token de la respuesta y, en su lugar, proporciona una cadena de certificados CMS codificada en base64 o una respuesta de PKI completa de CMC. Puede encontrar más información [aquí](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e). 
+- user_impersonation: el ámbito de user_impersonation es necesario para solicitar correctamente un token de acceso en nombre de AD FS. Para obtener más información sobre cómo usar este ámbito, consulte [compilar una aplicación de varios niveles con on-behalf-of (OBO) mediante OAuth con AD FS 2016](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md).
+- vpn_cert: el ámbito de vpn_cert permite a una aplicación solicitar certificados VPN, que se pueden usar para establecer conexiones VPN mediante la autenticación EAP-TLS. Esto ya no se admite.
 - correo electrónico: permite que la aplicación solicite una solicitud de correo electrónico para el usuario que ha iniciado sesión. Esto ya no se admite. 
 - Perfil: permite que la aplicación solicite notificaciones relacionadas con el perfil para el usuario de inicio de sesión. Esto ya no se admite. 
 
@@ -191,7 +193,7 @@ A continuación se enumeran las duraciones predeterminadas de las distintas cook
 
 - access_token: 1 hora de forma predeterminada, según el usuario de confianza
 
-- ID_token: igual que el token de acceso
+- id_token: igual que el token de acceso
 
 **Dispositivos no registrados**
 
@@ -202,7 +204,7 @@ A continuación se enumeran las duraciones predeterminadas de las distintas cook
 
 - access_token: 1 hora de forma predeterminada, según el usuario de confianza
 
-- ID_token: igual que el token de acceso
+- id_token: igual que el token de acceso
 
 ### <a name="does-ad-fs-support-http-strict-transport-security-hsts"></a>¿AD FS admite la seguridad de transporte estricta HTTP (HSTS)?  
 
@@ -217,8 +219,8 @@ Además, AD FS 2016 (con las revisiones más recientes) y AD FS compatibilidad c
 ### <a name="x-ms-forwarded-client-ip-does-not-contain-the-ip-of-the-client-but-contains-ip-of-the-firewall-in-front-of-the-proxy-where-can-i-get-the-right-ip-of-the-client"></a>X-MS-forwarded-Client-IP no contiene la dirección IP del cliente, pero contiene la dirección IP del firewall delante del proxy. ¿Dónde puedo obtener la dirección IP correcta del cliente?
 No se recomienda la terminación SSL antes de WAP. En caso de que se termine la terminación SSL delante de la WAP, X-MS-forwarded-Client-IP contendrá la dirección IP del dispositivo de red delante de WAP. A continuación se muestra una breve descripción de las distintas notificaciones relacionadas con IP admitidas por AD FS:
  - x-MS-Client-IP: IP de red del dispositivo que se ha conectado al STS.  En el caso de una solicitud de extranet, este siempre contiene la dirección IP de la WAP.
- - x-MS-forwarded-Client-IP: Notificaciones multivalor que contendrán los valores reenviados a ADFS por Exchange Online y la dirección IP del dispositivo que se conectó a WAP.
- - Userip: Para las solicitudes de extranet, esta demanda contendrá el valor de x-MS-forwarded-Client-IP.  En el caso de las solicitudes de la intranet, esta demanda contendrá el mismo valor que x-MS-Client-IP.
+ - x-MS-forwarded-Client-IP: notificaciones multivalor que contendrán los valores reenviados a ADFS por Exchange Online y la dirección IP del dispositivo que se conectó a WAP.
+ - Userip: para las solicitudes de extranet, esta demanda contendrá el valor de x-MS-forwarded-Client-IP.  En el caso de las solicitudes de la intranet, esta demanda contendrá el mismo valor que x-MS-Client-IP.
 
  Además, en AD FS 2016 (con las revisiones más recientes) y las versiones posteriores también admiten la captura del encabezado x-forwarded-for. Cualquier equilibrador de carga o dispositivo de red que no avance en el nivel 3 (IP se conserva) debe agregar la dirección IP de cliente entrante al encabezado x-forwarded-for estándar del sector. 
 
@@ -230,7 +232,7 @@ Este evento se registra normalmente para un acceso a recursos no válido en AD F
 
 ### <a name="why-am-i-seeing-a-warning-for-failure-to-add-the-ad-fs-service-account-to-the-enterprise-key-admins-group"></a>¿Por qué veo una advertencia de error al agregar la cuenta de servicio de AD FS al grupo administradores de claves de empresa?
 Este grupo solo se crea cuando existe un controlador de dominio de Windows 2016 con el rol PDC de FSMO en el dominio. Para resolver el error, puede crear el grupo manualmente y seguir el siguiente para conceder el permiso necesario después de agregar la cuenta de servicio como miembro del grupo.
-1.  Abra **Usuarios y equipos de Active Directory**.
+1.  Abre **Usuarios y equipos de Active Directory**.
 2.  **Haga clic con el botón secundario en** el nombre de dominio en el panel de navegación y **haga clic en** propiedades.
 3.  **Haga clic en** Seguridad (si falta la pestaña seguridad, Active características avanzadas en el menú Ver).
 4.  **Haga clic en** Financieros. **Haga clic en** Agréguela. **Haga clic en** Seleccione una entidad de seguridad.
@@ -299,7 +301,7 @@ Realice la actualización en el resto de AD FS y servidores WAP de manera simila
 ### <a name="is-adfs-supported-when-web-application-proxy-wap-servers-are-behind-azure-web-application-firewallwaf"></a>¿Se admite ADFS cuando los servidores del proxy de aplicación web (WAP) están detrás del firewall de aplicaciones web (WAF) de Azure?
 ADFS y los servidores de aplicaciones web admiten cualquier firewall que no realice la terminación SSL en el extremo. Además, los servidores ADFS/WAP tienen mecanismos integrados para evitar ataques web comunes, como el scripting entre sitios, el proxy de ADFS y cumplir todos los requisitos definidos por el [Protocolo MS-ADFSPIP](https://msdn.microsoft.com/library/dn392811.aspx).
 
-### <a name="i-am-seeing-an-event-441-a-token-with-a-bad-token-binding-key-was-found-what-should-i-do-to-resolve-this"></a>Veo un "evento 441: Se encontró un token con una clave de enlace de tokens no válida. " ¿Qué debo hacer para solucionarlo?
+### <a name="i-am-seeing-an-event-441-a-token-with-a-bad-token-binding-key-was-found-what-should-i-do-to-resolve-this"></a>Veo un "evento 441: se encontró un token con una clave de enlace de tokens no válida". ¿Qué debo hacer para solucionarlo?
 En AD FS 2016, el enlace de tokens se habilita automáticamente y provoca varios problemas conocidos con los escenarios de proxy y de Federación que producen este error. Para resolverlo, ejecute el siguiente comando de PowerShell y quite la compatibilidad con el enlace de tokens.
 
 `Set-AdfsProperties -IgnoreTokenBinding $true`
