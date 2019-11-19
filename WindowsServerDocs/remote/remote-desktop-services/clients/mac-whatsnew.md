@@ -11,38 +11,100 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 11/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cc09a60882c481cea974508b0ef967aad0ed82fa
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: b44f7c14dce8a8c319f9240c24ebcd8e2d4f7202
+ms.sourcegitcommit: b60fdd2efa57ff23834a324b75de8fe245a7631f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940646"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74166166"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novedades del cliente de macOS
 
 El [cliente de Escritorio remoto para macOS](remote-desktop-mac.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
 
-Si tienes algún problema, puedes ponerte en contacto con nosotros a través **Ayuda > Notificar un problema**.
+Si tienes algún problema, puedes ponerte en contacto con nosotros a través **Ayuda** > **Notificar un problema**.
+
+## <a name="updates-for-version-1034"></a>Actualizaciones de la versión 10.3.4
+
+*Fecha de publicación: 18/11/19*
+
+Hemos trabajado mucho basándonos en vuestros comentarios y hemos elaborado una colección de correcciones de errores y actualizaciones de características.
+
+- Al conectarte a través de una puerta de enlace de Escritorio remoto con autenticación multifactor, la conexión de puerta de enlace se mantiene abierta para evitar varias solicitudes de MFA.
+- Toda la interfaz de usuario del cliente es ahora totalmente accesible desde el teclado con compatibilidad con VoiceOver.
+- Los archivos copiados en el Portapapeles en la sesión remota solo se transfieren ahora cuando se pegan en el equipo local.
+- Las direcciones URL copiadas en el Portapapeles en la sesión remota se pegan ahora correctamente en el equipo local.
+- El factor de escala remota para admitir pantallas de retina está disponible ahora para escenarios multimonitor.
+- Se ha solucionado un problema de compatibilidad con los servidores de Escritorio remoto basados en FreeRDP que provocaban problemas de conectividad en escenarios de redireccionamiento.
+- Se ha solucionado la compatibilidad de la redirección de tarjetas inteligentes con versiones futuras de Windows 10.
+- Se ha solucionado un problema específico de macOS 10.15 por el que se comunicaba un espacio disponible incorrecto para las carpetas redirigidas.
+- Las conexiones de equipos publicadas se representan con un nuevo icono en la pestaña Áreas de trabajo.
+- Las "Fuentes" se denominan ahora "Áreas de trabajo" y los "Equipos de escritorio" se denominan ahora "Equipos".
+- Se han corregido incoherencias y errores del control de cuentas de usuario en la interfaz de usuario de preferencias.
+- Se han corregido gran cantidad de errores para una ejecución más fluida y confiable.
+
+## <a name="updates-for-version-1033"></a>Actualizaciones de la versión 10.3.3
+
+*Fecha de publicación: 18/11/19*
+
+Hemos elaborado una actualización de características y se han corregido errores para la versión 10.3.3.
+
+En primer lugar, hemos agregado valores predeterminados de usuario para deshabilitar la tarjeta inteligente, el Portapapeles, el micrófono, la cámara y la redirección de carpetas:
+
+- ClientSettings.DisableSmartcardRedirection
+- ClientSettings.DisableClipboardRedirection
+- ClientSettings.DisableMicrophoneRedirection
+- ClientSettings.DisableCameraRedirection
+- ClientSettings.DisableFolderRedirection
+
+Las correcciones de errores son las siguientes:
+
+- Se ha resuelto un problema que provocaba que no se detectaran los cambios de tamaño de la ventana de la sesión mediante programación.
+- Se ha arreglado un problema por el que el contenido de la ventana de la sesión aparecía en formato pequeño al conectar en modo de ventana (con la visualización dinámica habilitada).
+- Se ha solucionado un parpadeo inicial que se producía al conectar a una sesión en modo de ventana con la visualización dinámica habilitada.
+- Se han corregido las incorrecciones al dibujar gráficos que se producían al conectar a Windows 7 después de alternar ajustar a la ventana con la visualización dinámica habilitada.
+- Se ha corregido un error que causaba el envío de un nombre de dispositivo incorrecto a la sesión remota (interrumpiendo las licencias en algunas aplicaciones de terceros).
+- Se ha resuelto un problema por el que las ventanas de aplicación remota ocupaban todo un monitor al maximizarlas.
+- Se ha solucionado un problema por el que la interfaz de usuario de los permisos de acceso aparecía debajo de las ventanas locales.
+- Se ha limpiado parte del código de apagado para garantizar que el cliente se cierra de manera más confiable.
+
+## <a name="updates-for-version-1032"></a>Actualizaciones de la versión 10.3.2
+
+*Fecha de publicación: 18/11/19*
+
+En esta versión, se ha corregido un error que hacía que la visualización fuera de baja resolución al conectar a una sesión.
+
+## <a name="updates-for-version-1031"></a>Actualizaciones de la versión 10.3.1
+
+*Fecha de publicación: 18/11/19*
+
+Hemos elaborado algunas correcciones para solucionar las regresiones que consiguieron colarse en la versión 10.3.0.
+
+- Se han solucionado problemas de conectividad con los servidores de puerta de enlace de Escritorio remoto que usaban claves asimétricas de 4096 bits.
+- Se ha corregido un error que hacía que el cliente dejara de responder aleatoriamente al descargar recursos de fuentes.
+- Se ha corregido un error que hacía que el cliente se bloqueara durante la apertura.
+- Se ha corregido un error que provocaba el bloqueo del cliente al importar conexiones desde el Escritorio remoto, versión 8.
 
 ## <a name="updates-for-version-1030"></a>Actualizaciones de la versión 10.3.0
+
 *Fecha de publicación: 27/8/19*
 
 Han pasado algunas semanas desde la última actualización, pero estamos trabajando durante este tiempo. La versión 10.3.0 ofrece algunas nuevas características y muchas correcciones técnicas.
 
- - Ahora es posible el redireccionamiento de la cámara al conectarse a Windows 10 1809, Windows Server 2019 y versiones posteriores.
- - En Mojave y Catalina, hemos agregado un nuevo cuadro de diálogo que te pide permiso para usar el micrófono y la cámara para el redireccionamiento de dispositivos.
- - Se ha reescrito el flujo de suscripción de fuentes para que sea más sencillo y más rápido.
- - El redireccionamiento del Portapapeles incluye ahora el formato de texto enriquecido (RTF).
- - Al escribir la contraseña, tienes la opción de revelarla con una casilla "Mostrar contraseña".
- - Se abordaron los escenarios donde la ventana de la sesión saltaba entre monitores.
- - El Centro de conexión muestra iconos de aplicaciones remotas de alta resolución (si están disponibles).
- - CMD+A se asigna a Ctrl+A cuando se usan accesos directos del Portapapeles de Mac.
- - CMD+R ahora actualiza todas las fuentes suscritas.
- - Se han agregado nuevas opciones de clic secundario para expandir o contraer todos los grupos o fuentes del Centro de conexión.
- - Se ha agregado una nueva opción de clic secundario para cambiar el tamaño de los iconos en la pestaña Fuentes del Centro de conexiones.
- - Un nuevo icono de aplicación simplificado y más claro.
+- Ahora es posible el redireccionamiento de la cámara al conectarse a Windows 10 1809, Windows Server 2019 y versiones posteriores.
+- En Mojave y Catalina, hemos agregado un nuevo cuadro de diálogo que te pide permiso para usar el micrófono y la cámara para el redireccionamiento de dispositivos.
+- Se ha reescrito el flujo de suscripción de fuentes para que sea más sencillo y más rápido.
+- El redireccionamiento del Portapapeles incluye ahora el formato de texto enriquecido (RTF).
+- Al escribir la contraseña, tienes la opción de revelarla con una casilla "Mostrar contraseña".
+- Se abordaron los escenarios donde la ventana de la sesión saltaba entre monitores.
+- El Centro de conexión muestra iconos de aplicaciones remotas de alta resolución (si están disponibles).
+- CMD+A se asigna a Ctrl+A cuando se usan accesos directos del Portapapeles de Mac.
+- CMD+R ahora actualiza todas las fuentes suscritas.
+- Se han agregado nuevas opciones de clic secundario para expandir o contraer todos los grupos o fuentes del Centro de conexión.
+- Se ha agregado una nueva opción de clic secundario para cambiar el tamaño de los iconos en la pestaña Fuentes del Centro de conexiones.
+- Un nuevo icono de aplicación simplificado y claro.
 
 ## <a name="updates-for-version-10213"></a>Actualizaciones de la versión 10.2.13
 
