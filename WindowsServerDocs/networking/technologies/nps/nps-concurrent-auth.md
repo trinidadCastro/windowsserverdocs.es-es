@@ -21,7 +21,7 @@ ms.locfileid: "71396430"
 
 Puede usar este tema para obtener instrucciones sobre cómo configurar las autenticaciones simultáneas del servidor de directivas de redes.
 
-Si instaló el servidor de directivas de redes \(NPS @ no__t-1 en un equipo que no sea un controlador de dominio y el NPS recibe un gran número de solicitudes de autenticación por segundo, puede mejorar el rendimiento de NPS aumentando el número de autenticaciones permitidas entre el NPS y el controlador de dominio.
+Si instaló el servidor de directivas de redes \(\) NPS en un equipo que no sea un controlador de dominio y NPS recibe un gran número de solicitudes de autenticación por segundo, puede mejorar el rendimiento de NPS aumentando el número de autenticaciones simultáneas permitidas entre el NPS y el controlador de dominio.
 
 Para ello, debe editar la siguiente clave del registro: 
 

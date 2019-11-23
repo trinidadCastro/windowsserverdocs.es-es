@@ -36,9 +36,9 @@ Para crear una exportación de máquina virtual:
 
 Una vez finalizada la exportación, podrá ver todos los archivos exportados en la ubicación de exportación.
 
-### <a name="using-powershell"></a>Con PowerShell
+### <a name="using-powershell"></a>Uso de PowerShell
 
-Abra una sesión como administrador y ejecute un comando similar al siguiente, después de reemplazar \<vm Name @ no__t-1 y \<path @ no__t-3:
+Abra una sesión como administrador y ejecute un comando similar al siguiente, después de reemplazar \<nombre de la máquina virtual\> y \<ruta de acceso\>:
 
 ```powershell
 Export-VM -Name \<vm name\> -Path \<path\>
@@ -66,7 +66,7 @@ Para importar una máquina virtual:
 
 5. Elija el tipo de importación y haga clic en **siguiente**. (Para obtener descripciones, vea [tipos de importación](#import-types), a continuación).
 
-6. Haga clic en **Finalizar**.
+6. Haz clic en **Finalizar**.
 
 ### <a name="import-using-powershell"></a>Importar mediante PowerShell
 

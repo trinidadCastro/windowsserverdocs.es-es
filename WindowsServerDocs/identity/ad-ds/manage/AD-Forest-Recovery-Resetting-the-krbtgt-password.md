@@ -33,7 +33,7 @@ Utilice el siguiente procedimiento para restablecer la contraseña de krbtgt par
 2. Haga clic en **Ver** y, a continuación, haga clic en **Características avanzadas**.
 3. En el árbol de consola, haga doble clic en el contenedor de dominio y, a continuación, haga clic en **usuarios**.
 4. En el panel de detalles, haga clic con el botón secundario en la cuenta de usuario de **krbtgt** y, a continuación, haga clic en **Restablecer contraseña**.
-   ![Reset contraseña @ no__t-1
+   ![restablecer contraseña](media/AD-Forest-Recovery-Resetting-the-krbtgt-password/resetpass1.png)
 5. En **nueva contraseña**, escriba una nueva contraseña, vuelva a escribir la contraseña en **Confirmar contraseña**y, a continuación, haga clic en **Aceptar**. La contraseña que especifique no es significativa, ya que el sistema generará automáticamente una contraseña segura independiente de la contraseña que especifique.
   
 > [!NOTE]

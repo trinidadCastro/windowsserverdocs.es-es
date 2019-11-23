@@ -27,7 +27,7 @@ ms.locfileid: "71373302"
 Muestra información acerca de una cola de impresión especificada o de un trabajo de impresión especificado, o controla un trabajo de impresión especificado.
 para obtener ejemplos de cómo usar este comando, consulte la sección [ejemplos](#BKMK_examples) de este documento.
 > [!NOTE]
-> Este comando está en desuso en Windows 7 y Windows Server 2008 R2. Sin embargo, puede realizar muchas de las mismas tareas mediante prnjobs, Instrumental de administración de Windows (WMI) o cmdlets de Windows PowerShell. Para obtener más información, consulte [prnjobs](prnjobs.md), [instrumental de administración de Windows](https://go.microsoft.com/fwlink/?LinkID=29991) (https://go.microsoft.com/fwlink/?LinkID=29991) , [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=128426) (https://go.microsoft.com/fwlink/?LinkID=128426) y la [Galería de TechNet script Center](https://go.microsoft.com/fwlink/?LinkId=164635) (https://go.microsoft.com/fwlink/?LinkId=164635) ).
+> Este comando está en desuso en Windows 7 y Windows Server 2008 R2. Sin embargo, puede realizar muchas de las mismas tareas mediante prnjobs, Instrumental de administración de Windows (WMI) o cmdlets de Windows PowerShell. Para obtener más información, vea [prnjobs](prnjobs.md), [instrumental de administración de Windows](https://go.microsoft.com/fwlink/?LinkID=29991) (https://go.microsoft.com/fwlink/?LinkID=29991), [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=128426) (https://go.microsoft.com/fwlink/?LinkID=128426)y la [Galería de TechNet script Center](https://go.microsoft.com/fwlink/?LinkId=164635) (https://go.microsoft.com/fwlink/?LinkId=164635)).
 > ## <a name="syntax"></a>Sintaxis
 > ```
 > Net print {\\<computerName>\<Sharename> | 
@@ -39,12 +39,12 @@ para obtener ejemplos de cómo usar este comando, consulte la sección [ejemplos
 > |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > |    \\\\<computerName>\\<Sharename>     |                                                                                                                                                                            Especifica (por nombre) el equipo y la cola de impresión sobre los que desea mostrar información.                                                                                                                                                                             |
 > |           \\\\<computerName>           |                                                                                                                                 Especifica (por nombre) el equipo que hospeda el trabajo de impresión que desea controlar. Si no especifica un equipo, se supone que se trata del equipo local. Requiere el parámetro <JobNumber>.                                                                                                                                  |
-> |              <JobNumber>               |                                             Especifica el número del trabajo de impresión que desea controlar. Este número lo asigna el equipo que hospeda la cola de impresión donde se envía el trabajo de impresión. Una vez que un equipo asigna un número a un trabajo de impresión, ese número no se asigna a ningún otro trabajo de impresión en ninguna cola hospedada por ese equipo. Obligatorio cuando se usa el parámetro \\ @ no__t-1 @ no__t-2.                                             |
+> |              <JobNumber>               |                                             Especifica el número del trabajo de impresión que desea controlar. Este número lo asigna el equipo que hospeda la cola de impresión donde se envía el trabajo de impresión. Una vez que un equipo asigna un número a un trabajo de impresión, ese número no se asigna a ningún otro trabajo de impresión en ninguna cola hospedada por ese equipo. Obligatorio cuando se usa el parámetro de <computerName> \\de \\.                                             |
 > | [/HOLD &#124; /Release &#124; /DELETE] | Especifica la acción que se realizará con el trabajo de impresión.<br /><br />-El parámetro **/Hold** retrasa el trabajo, lo que permite que otros trabajos de impresión lo omitan hasta que se libere.<br />-El parámetro **/Release** libera un trabajo de impresión que se ha retrasado.<br />-El parámetro **/Delete** quita un trabajo de impresión de una cola de impresión.<br /><br />Si especifica un número de trabajo, pero no especifica ninguna acción, se muestra información sobre el trabajo de impresión. |
 > |                  ayuda                  |                                                                                                                                                                                                     Muestra la ayuda para el comando **net Print** .                                                                                                                                                                                                     |
 > 
-> ## <a name="remarks"></a>Comentarios
-> - **Net print** \\ @ no__t-2 @ no__t-3 muestra información acerca de los trabajos de impresión en una cola de impresora compartida. A continuación se presenta un ejemplo de un informe de todos los trabajos de impresión de una cola para una impresora compartida denominada láser:
+> ## <a name="remarks"></a>Observaciones
+> - **Net print** \\\\<computerName> muestra información acerca de los trabajos de impresión en una cola de impresora compartida. A continuación se presenta un ejemplo de un informe de todos los trabajos de impresión de una cola para una impresora compartida denominada láser:
 >   ```
 >   printers at \\PRODUCTION
 >   Name              Job #      Size      Status
@@ -67,22 +67,22 @@ para obtener ejemplos de cómo usar este comando, consulte la sección [ejemplos
 >   additional info
 >   ```
 >   ## <a name="BKMK_examples"></a>Example
->   En este ejemplo se muestra cómo enumerar el contenido de la cola de impresión DotMatrix en el equipo \\ \ Production:
+>   En este ejemplo se muestra cómo mostrar el contenido de la cola de impresión DotMatrix en el equipo de la \\\Production:
 >   ```
 >   Net print \\Production\Dotmatrix 
 >   ```
->   En este ejemplo se muestra cómo Mostrar información sobre el número de trabajo 35 en el equipo \\ \ Production:
+>   En este ejemplo se muestra cómo Mostrar información sobre el número de trabajo 35 en el equipo \\\Production:
 >   ```
 >   Net print \\Production 35 
 >   ```
->   En este ejemplo se muestra cómo retrasar el número de trabajo 263 en el equipo \\ \ Production:
+>   En este ejemplo se muestra cómo retrasar el número de trabajo 263 en el equipo \\\Production:
 >   ```
 >   Net print \\Production 263 /hold 
 >   ```
->   En este ejemplo se muestra cómo liberar el número de trabajo 263 en el equipo \\ \ Production:
+>   En este ejemplo se muestra cómo liberar el número de trabajo 263 en el equipo \\\Production:
 >   ```
 >   Net print \\Production 263 /release 
 >   ```
->   #### <a name="additional-references"></a>Referencias adicionales
+>   #### <a name="additional-references"></a>referencias adicionales
 >   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
->   [referencia de comando de impresión](print-command-reference.md)
+>   [Referencia del comando Print](print-command-reference.md)

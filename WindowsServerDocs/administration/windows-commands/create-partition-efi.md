@@ -24,7 +24,7 @@ ms.locfileid: "71379008"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-En los equipos Itanium @ no__t-0based, crea una partición del sistema Extensible Firmware Interface \(EFI @ no__t-2 en una tabla de particiones GUID \(gpt @ no__t-4 Disk.  
+En los equipos basados en Itanium\-, crea un Extensible Firmware Interface \(partición del sistema\) EFI en una tabla de particiones GUID \(\) GPT.  
   
   
   
@@ -38,11 +38,11 @@ create partition efi [size=<n>] [offset=<n>] [noerr]
   
 |  Parámetro  |                                                                                             Descripción                                                                                              |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  Size @ no__t-0 @ no__t-1  |                         El tamaño de la partición en megabytes \(MB @ no__t-1. Si no se proporciona ningún tamaño, la partición continúa hasta que no haya más espacio libre en la región actual.                         |
-| offset @ no__t-0 @ no__t-1 |             Desplazamiento en kilobytes \(KB @ no__t-1, en el que se crea la partición. Si no se proporciona ningún desplazamiento, la partición se coloca en la primera extensión del disco que sea lo suficientemente grande como para almacenarla.              |
-|    Noerr    | Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
+|  tamaño\=<n>  |                         Tamaño de la partición en megabytes \(MB\). Si no se proporciona ningún tamaño, la partición continúa hasta que no haya más espacio libre en la región actual.                         |
+| desplazamiento\=<n> |             Desplazamiento en kilobytes \(KB\), en el que se crea la partición. Si no se proporciona ningún desplazamiento, la partición se coloca en la primera extensión del disco que sea lo suficientemente grande como para almacenarla.              |
+|    Noerr    | solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
   
 -   Una vez creada la partición, se asigna el foco a la nueva partición.  
   
@@ -55,7 +55,7 @@ Para crear una partición EFI de 1000 megabytes en el disco seleccionado, escrib
 create partition efi size=1000  
 ```  
   
-#### <a name="additional-references"></a>Referencias adicionales  
+#### <a name="additional-references"></a>referencias adicionales  
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   
 

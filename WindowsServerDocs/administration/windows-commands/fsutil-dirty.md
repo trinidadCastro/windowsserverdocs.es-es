@@ -35,9 +35,9 @@ fsutil dirty {query | set} <VolumePath>
 |---------------|--------------------------------------------------------------------------------------------------------------|
 |     query     |                                  Consulta el bit de integridad del volumen especificado.                                   |
 |      set      |                                    Establece el bit de integridad del volumen especificado.                                    |
-| @no__t 0VolumePath > | Especifica el nombre de la unidad seguido de dos puntos o un GUID con el siguiente formato: **Volumen {** <em>GUID</em> **}** . |
+| \<VolumePath > | Especifica el nombre de la unidad seguido de dos puntos o un GUID con el siguiente formato: **volumen {** <em>GUID</em> **}** . |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   El bit de integridad de un volumen indica que el sistema de archivos puede estar en un estado incoherente. El bit de integridad se puede establecer porque:
 

@@ -36,10 +36,10 @@ manage-bde -changekey [<Drive>] [<PathToExternalKeyDirectory>] [-computername <N
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Drive >|Representa la letra de una unidad seguida del signo de dos puntos.|
-|@no__t 0PathToExternalKeyDirectory >|Representa la ubicación del directorio para guardar el archivo de clave de inicio externo que se puede usar para desbloquear la unidad.|
+|\<unidad >|Representa la letra de una unidad seguida del signo de dos puntos.|
+|\<PathToExternalKeyDirectory >|Representa la ubicación del directorio para guardar el archivo de clave de inicio externo que se puede usar para desbloquear la unidad.|
 |-COMPUTERNAME|Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando.|
-|\<Nombre >|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
+|Nombre del \<>|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
 |-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
 |-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
 

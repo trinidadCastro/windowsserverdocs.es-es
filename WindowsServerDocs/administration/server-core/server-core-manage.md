@@ -30,7 +30,7 @@ También puede agregar hardware y administrar controladores de forma local, siem
 
 Hay algunas limitaciones y sugerencias importantes que se deben tener en cuenta al trabajar con Server Core:
 
-- Si cierra todas las ventanas del símbolo del sistema y desea abrir una nueva ventana del símbolo del sistema, puede hacerlo desde el administrador de tareas. Presione **Ctrl @ no__t-1ALT @ no__t-2DELETE**, haga clic en **iniciar el administrador de tareas**, haga clic en **más detalles > Archivo > ejecutar**y, a continuación, escriba **cmd. exe**. (Escriba **PowerShell. exe** para abrir una ventana de comandos de PowerShell). También puede cerrar la sesión y volver a iniciarla.
+- Si cierra todas las ventanas del símbolo del sistema y desea abrir una nueva ventana del símbolo del sistema, puede hacerlo desde el administrador de tareas. Presione **CTRL\+ALT\+eliminar**, haga clic en **iniciar el administrador de tareas**, haga clic en **más detalles > Archivo > ejecutar**y, a continuación, escriba **cmd. exe**. (Escriba **PowerShell. exe** para abrir una ventana de comandos de PowerShell). También puede cerrar la sesión y volver a iniciarla.
 - Ningún comando o herramienta que intente iniciar el Explorador de Windows funcionará. Por ejemplo, ejecutar **Start.** desde un símbolo del sistema, no funcionará.
 - No se admite la representación en HTML ni la ayuda HTML en Server Core.
 - Server Core admite Windows Installer en modo silencioso, por lo que puede instalar herramientas y utilidades desde archivos Windows Installer. Al instalar Windows Installer paquetes en Server Core, use la opción **/qb** para mostrar la interfaz de usuario básica.

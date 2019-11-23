@@ -24,10 +24,10 @@ ms.locfileid: "71394330"
 2. Evalúa los requisitos de almacenamiento del volumen o carpeta. Puedes usar los informes del nodo **Administración de informes de almacenamiento** para ofrecer datos. (Por ejemplo, ejecuta a petición un informe Archivos por propietario para identificar quién usa una gran cantidad de espacio del disco). [Generar informes a petición](generate-reports-on-demand.md)
 
 3. Revisa las plantillas de cuota preconfiguradas disponibles. (En **Administración de cuotas**, haga clic en el nodo **plantillas de cuota** ). [Editar propiedades de plantilla de cuota](edit-quota-template-properties.md) 
-<br />O bien: <br /> Crea una nueva plantilla de cuota para aplicar una directiva de almacenamiento de la organización. [Crear una plantilla de cuota](create-quota-template.md)
+<br />O bien, <br /> Crea una nueva plantilla de cuota para aplicar una directiva de almacenamiento de la organización. [Crear una plantilla de cuota](create-quota-template.md)
 
 4. Crea una cuota basada en la plantilla del volumen o carpeta.  
- [Crear una cuota](create-quota.md) <br /> O bien: <br /> Crea una cuota automática para generar automáticamente cuotas para las subcarpetas del volumen o carpeta. [Crear una cuota automática](create-auto-apply-quota.md)
+ [Crear una cuota](create-quota.md) <br /> O bien, <br /> Crea una cuota automática para generar automáticamente cuotas para las subcarpetas del volumen o carpeta. [Crear una cuota automática](create-auto-apply-quota.md)
 
 6. Programa una tarea de informes que incluya un informe de Uso de cuotas para supervisar cuotas periódicamente. [Programar un conjunto de informes](schedule-set-of-reports.md)
 

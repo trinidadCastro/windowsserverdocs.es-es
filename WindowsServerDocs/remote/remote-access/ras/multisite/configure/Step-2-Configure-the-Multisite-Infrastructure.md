@@ -60,7 +60,7 @@ Para obtener más información, consulte [Agregar un sitio al bosque](https://te
   
 8.  Cierre Active Directory sitios y servicios.  
   
-](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -161,7 +161,7 @@ Una implementación multisitio requiere un grupo de seguridad adicional para equ
   
 4.  En **ámbito de grupo**, haga clic en **universal**, en **tipo de grupo**, haga clic en **seguridad**y, a continuación, haga clic en **Aceptar**.  
   
-5.  Para agregar equipos al nuevo grupo de seguridad, haga doble clic en el grupo de seguridad y, en el cuadro de diálogo **propiedades de < Group_Name >** , haga clic en la pestaña **miembros** .  
+5.  Para agregar equipos al nuevo grupo de seguridad, haga doble clic en el grupo de seguridad y, en el < cuadro de diálogo **propiedades de Group_Name >** , haga clic en la pestaña **miembros** .  
   
 6.  En la pestaña **Miembros** , haga clic en **Agregar**.  
   
@@ -169,7 +169,7 @@ Una implementación multisitio requiere un grupo de seguridad adicional para equ
   
 8.  Repita este procedimiento para crear un grupo de seguridad para cada punto de entrada según sea necesario.  
   
-](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -289,7 +289,7 @@ La información de asociación del controlador de dominio se almacena en el regi
   
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssoc3.png)  
   
-3.  Para sincronizar la Asociación del controlador de dominio para el GPO de servidor "punto de entrada 2" en el GPO de servidor "punto de entrada 1", ejecute el comando para reemplazar "DC2" por "DC3" y especifique el servidor de acceso remoto cuyo GPO de servidor no esté sincronizado, en este caso "DA1", para el  *Parámetro ComputerName* .  
+3.  Para sincronizar la Asociación del controlador de dominio para el GPO de servidor "punto de entrada 2" en el GPO de servidor "punto de entrada 1", ejecute el comando para reemplazar "DC2" por "DC3" y especifique el servidor de acceso remoto cuyo GPO de servidor no esté sincronizado, en este caso "DA1", para el parámetro *ComputerName* .  
   
     ```  
     Set-DAEntryPointDC "ExistingDC 'DC2' "NewDC 'DC3' "ComputerName 'DA1' "ErrorAction Continue  
@@ -300,7 +300,7 @@ La información de asociación del controlador de dominio se almacena en el regi
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
 ### <a name="ConfigDistOptimization"></a>Optimización de la distribución de la configuración  
-Al realizar cambios de configuración, los cambios se aplican solo después de que los GPO de servidor se propaguen a los servidores de acceso remoto. Para reducir el tiempo de distribución de la configuración, el acceso remoto selecciona automáticamente un controlador de dominio de escritura que es el hipervínculo "<https://technet.microsoft.com/library/cc978016.aspx>" más cercano al servidor de acceso remoto al crear su GPO de servidor.  
+Al realizar cambios de configuración, los cambios se aplican solo después de que los GPO de servidor se propaguen a los servidores de acceso remoto. Para reducir el tiempo de distribución de la configuración, el acceso remoto selecciona automáticamente un controlador de dominio de escritura que es el hipervínculo "<https://technet.microsoft.com/library/cc978016.aspx>" más próximo al servidor de acceso remoto al crear su GPO de servidor.  
   
 En algunos escenarios, puede ser necesario modificar manualmente el controlador de dominio que administra un GPO de servidor para optimizar el tiempo de distribución de la configuración:  
   
@@ -310,7 +310,7 @@ En algunos escenarios, puede ser necesario modificar manualmente el controlador 
   
 -   La Asociación del controlador de dominio para un punto de entrada se modificó manualmente debido al trabajo de mantenimiento en un controlador de dominio y ahora el controlador de dominio vuelve a estar en línea.  
   
-En estos casos, ejecute el cmdlet de PowerShell `Set-DAEntryPointDC` en el servidor de acceso remoto y especifique el nombre del punto de entrada que desea optimizar mediante el parámetro *EntryPointName*. Debe hacer esto solo después de que los datos del GPO del controlador de dominio que almacena actualmente el GPO de servidor ya se hayan replicado por completo en el nuevo controlador de dominio deseado.  
+En estos escenarios, ejecute el cmdlet de PowerShell `Set-DAEntryPointDC` en el servidor de acceso remoto y especifique el nombre del punto de entrada que desea optimizar mediante el parámetro *EntryPointName*. Debe hacer esto solo después de que los datos del GPO del controlador de dominio que almacena actualmente el GPO de servidor ya se hayan replicado por completo en el nuevo controlador de dominio deseado.  
   
 > [!NOTE]  
 > Antes de modificar la Asociación del controlador de dominio, asegúrese de que todos los GPO de la implementación de acceso remoto se han replicado en todos los controladores de dominio del dominio. Si el GPO no está sincronizado, los cambios de configuración recientes pueden perderse después de modificar la Asociación del controlador de dominio, lo que puede dar lugar a una configuración dañada. Para comprobar la sincronización de GPO, consulte comprobar el estado de la [infraestructura de directiva de grupo](https://technet.microsoft.com/library/jj134176.aspx).  
@@ -334,6 +334,6 @@ Para optimizar el tiempo de distribución de la configuración, realice una de l
   
 ## <a name="BKMK_Links"></a>Vea también  
   
--   [Paso 3: Configuración de la implementación multisitio @ no__t-0  
--   [Paso 1: Implementar una implementación de acceso remoto de un solo servidor @ no__t-0  
+-   [Paso 3: configurar la implementación multisitio](Step-3-Configure-the-Multisite-Deployment.md)  
+-   [Paso 1: implementar una implementación de acceso remoto de un solo servidor](Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md)  
 

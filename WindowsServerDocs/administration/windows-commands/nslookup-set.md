@@ -37,8 +37,8 @@ set <KeyWord>[=<Value>]
 |     <Value>     |                                                                                      Especifica el valor de configuración de Nslookup para cada subcomando.                                                                                      |
 | {ayuda &#124; ?} |                                                                                               Muestra un breve resumen de los subcomandos de **nslookup** .                                                                                               |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 Use **establecer todo** para ver una lista de los valores actuales.
-## <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)[nslookup SET ALL](nslookup-set-all.md) 
-
+## <a name="additional-references"></a>referencias adicionales
+[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+[nslookup SET ALL](nslookup-set-all.md)

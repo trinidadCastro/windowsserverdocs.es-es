@@ -38,13 +38,13 @@ reg copy <KeyName1> <KeyName2> [/s] [/f]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0KeyName1 >|Especifica la ruta de acceso completa de la subclave que se va a copiar. Para especificar un equipo remoto, incluya el nombre del equipo (en el formato \\ @ no__t-1ComputerName @ no__t-2 como parte del nombre de *clave*. Si se omite \\ @ no__t-1ComputerName, la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.|
-|@no__t 0KeyName2 >|Especifica la ruta de acceso completa del destino de la subclave. Para especificar un equipo remoto, incluya el nombre del equipo (en el formato \\ @ no__t-1ComputerName @ no__t-2 como parte del nombre de *clave*. Si se omite \\ @ no__t-1ComputerName, la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.|
+|\<KeyName1 >|Especifica la ruta de acceso completa de la subclave que se va a copiar. Para especificar un equipo remoto, incluya el nombre del equipo (en el formato \\\\ComputerName\) como parte del nombre de *clave*. Si se omite \\\\ComputerName \, la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.|
+|\<KeyName2 >|Especifica la ruta de acceso completa del destino de la subclave. Para especificar un equipo remoto, incluya el nombre del equipo (en el formato \\\\ComputerName\) como parte del nombre de *clave*. Si se omite \\\\ComputerName \, la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.|
 |/s|Copia todas las subclaves y entradas de la subclave especificada.|
 |/f|Copia la subclave sin pedir confirmación.|
 |/?|Muestra la ayuda de la copia **reg** en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Reg no pide confirmación al copiar una subclave.
 -   En la tabla siguiente se enumeran los valores devueltos para la operación de **copia de reg** .

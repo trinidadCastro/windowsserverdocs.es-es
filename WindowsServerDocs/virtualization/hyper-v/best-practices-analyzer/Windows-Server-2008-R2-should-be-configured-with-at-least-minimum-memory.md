@@ -19,11 +19,11 @@ ms.locfileid: "71364456"
 ---
 # <a name="windows-server-2008-r2-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Server 2008 R2 debe configurarse con al menos la cantidad mínima de memoria
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2016
 
 Para más información acerca de los análisis y los procedimientos recomendados, vea [Analizador de procedimientos recomendados](https://go.microsoft.com/fwlink/?LinkId=122786).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -41,7 +41,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 *Es posible que el sistema operativo invitado de las siguientes máquinas virtuales no se ejecute o se ejecute de forma no confiable:*  
   
   
-@no__t: 0list de nombres de máquina virtual >  
+\<lista de nombres de máquina virtual >  
   
 ## <a name="resolution"></a>Resolución  
   
@@ -71,7 +71,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 Set-VMMemory <MyVM> -StartupBytes 512MB  
 ```  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Set-VMMemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

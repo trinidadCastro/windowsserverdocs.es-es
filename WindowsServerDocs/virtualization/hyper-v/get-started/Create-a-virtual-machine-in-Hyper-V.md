@@ -46,7 +46,7 @@ Obtenga información sobre cómo crear una máquina virtual mediante el administ
 
 2. Haga clic con el botón derecho en **Windows PowerShell** y seleccione **Ejecutar como administrador**.  
 
-3. Obtenga el nombre del conmutador virtual que desea que use la máquina virtual con [Get-VMSwitch](https://technet.microsoft.com/library/hh848499.aspx).  Por ejemplo,  
+3. Obtenga el nombre del conmutador virtual que desea que use la máquina virtual con [Get-VMSwitch](https://technet.microsoft.com/library/hh848499.aspx).  Por ejemplo:  
 
    ```  
    Get-VMSwitch  * | Format-Table Name  
@@ -78,7 +78,7 @@ Obtenga información sobre cómo crear una máquina virtual mediante el administ
 
        Esto crea una máquina virtual de generación 2 denominada Win10VM con 4 GB de memoria. Se inicia desde la carpeta VMs\Win10.vhdx en el directorio actual y usa el conmutador virtual denominado ExternalSwitch. Los archivos de configuración de la máquina virtual se almacenan en la carpeta VMData.  
 
-   - **Nuevo disco duro virtual** : para crear una máquina virtual con un nuevo disco duro virtual, reemplace el parámetro **-VHDPath** del ejemplo anterior por **-NewVHDPath** y agregue el parámetro **-NewVHDSizeBytes** . Por ejemplo,  
+   - **Nuevo disco duro virtual** : para crear una máquina virtual con un nuevo disco duro virtual, reemplace el parámetro **-VHDPath** del ejemplo anterior por **-NewVHDPath** y agregue el parámetro **-NewVHDSizeBytes** . Por ejemplo:  
 
      ```  
      New-VM -Name Win10VM -MemoryStartupBytes 4GB -BootDevice VHD -NewVHDPath .\VMs\Win10.vhdx -Path .\VMData -NewVHDSizeBytes 20GB -Generation 2 -Switch ExternalSwitch  
@@ -109,15 +109,15 @@ En la tabla siguiente se enumeran las opciones que puede elegir al crear una má
 
 |Página|Predeterminado para Windows Server 2016 y Windows 10|Otras opciones|  
 |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|  
-|**Especificar el nombre y la ubicación**|Nombre:  Nueva máquina virtual.<br /><br />Ubicación:  **C:\ProgramData\Microsoft\Windows\Hyper-V @ no__t-1**.|También puede escribir su propio nombre y elegir otra ubicación para la máquina virtual.<br /><br />Aquí es donde se almacenarán los archivos de configuración de la máquina virtual.|  
+|**Especificar el nombre y la ubicación**|Nombre: nueva máquina virtual.<br /><br />Location: **C:\ProgramData\Microsoft\Windows\Hyper-V\\** .|También puede escribir su propio nombre y elegir otra ubicación para la máquina virtual.<br /><br />Aquí es donde se almacenarán los archivos de configuración de la máquina virtual.|  
 |**Especificar la generación**|Generación 1|También puede crear una máquina virtual de generación 2. Para obtener más información, consulte ¿ [debo crear una máquina virtual de generación 1 o 2 en Hyper-V?](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)|  
 |**Asignar memoria**|Memoria de Inicio: 1024 MB<br /><br />Memoria dinámica: **no seleccionado**|Puede establecer la memoria de inicio de 32 MB a 5902MB.<br /><br />También puede optar por usar Memoria dinámica. Para obtener más información, vea [información general sobre memoria dinámica de Hyper-V](https://technet.microsoft.com/library/hh831766.aspx).|  
 |**Configurar redes**|No conectado|Puede seleccionar una conexión de red para la máquina virtual que se va a usar en una lista de conmutadores virtuales existentes. Consulte [crear un conmutador virtual para máquinas virtuales de Hyper-V](Create-a-virtual-switch-for-Hyper-V-virtual-machines.md).|  
-|**Conectar disco duro virtual**|Crear un disco duro virtual<br /><br />Nombre: <*vmname*>. vhdx<br /><br />**Ubicación**: **Discos duros C:\Users\Public\Documents\Hyper-V\Virtual @ no__t-1**<br /><br />**Tamaño**: 127 GB|También puede optar por usar un disco duro virtual existente o esperar y conectar un disco duro virtual más adelante.|  
+|**Conectar disco duro virtual**|Crear un disco duro virtual<br /><br />Nombre: <*vmname*>. vhdx<br /><br />**Ubicación**: **discos duros de C:\Users\Public\Documents\Hyper-V\Virtual\\**<br /><br />**Tamaño**: 127 GB|También puede optar por usar un disco duro virtual existente o esperar y conectar un disco duro virtual más adelante.|  
 |**Opciones de instalación**|Instalar un sistema operativo más adelante|Estas opciones cambian el orden de arranque de la máquina virtual para que pueda instalar desde un archivo. ISO, un disquete de arranque o un servicio de instalación de red, como servicios de implementación de Windows (WDS).|  
 |**Resumen**|Muestra las opciones que ha elegido, de modo que pueda comprobar que son correctas.<br /><br />-Nombre<br />-Generación<br />-Memoria<br />-Red<br />-Disco duro<br />-Sistema operativo|**Sugerencia:** Puede copiar el Resumen de la página y pegarlo en el correo electrónico o en otra parte para ayudarle a realizar un seguimiento de las máquinas virtuales.|  
 
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
 
 - [Nueva máquina virtual](https://technet.microsoft.com/library/hh848537.aspx)  
 

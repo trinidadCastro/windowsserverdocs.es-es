@@ -63,7 +63,7 @@ El diagrama siguiente ilustra el proceso de configuración de Active Directory D
   
 Para realizar la operación de preconfiguración de una cuenta de equipo de controlador de dominio de solo lectura, abre el Centro de administración de Active Directory (**Dsac.exe**). Haz clic en el nombre del dominio en el panel de navegación. Haz doble clic en **Controladores de dominio** en la lista de administración. Haz clic en **Crear previamente una cuenta de controlador de dominio de solo lectura** en el panel de tareas.  
   
-Para obtener más información sobre el centro de administración de Active Directory, consulte [Administración avanzada de AD DS &#40;con el&#41; nivel de centro de administración de Active Directory 200](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md) y revise [Active Directory Administrative Center: Introducción @ no__t-0.  
+Para obtener más información sobre el centro de administración de Active Directory, consulte [Administración avanzada de AD DS &#40;con centro de administración de Active Directory&#41; nivel 200](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md) y revisión [centro de administración de Active Directory: Introducción](https://technet.microsoft.com/library/dd560651(WS.10).aspx).  
   
 Si ya tienes experiencia en la creación de controladores de dominio de solo lectura, descubrirás que el asistente para instalación tiene la misma interfaz gráfica que se ve cuando se usa el antiguo complemento Usuarios y equipos de Active Directory de Windows Server 2008, y usa el mismo código, que incluye exportar la configuración en el formato de archivo desatendido que usa el obsoleto dcpromo.  
   
@@ -229,7 +229,7 @@ Install-AddsDomainController
 ### <a name="domain-controller-options"></a>Domain Controller Options  
 ![Install RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2DCOptions.png)  
   
-La página **Opciones del controlador de dominio** muestra las opciones del nuevo controlador de dominio. Cuando esta página se carga, el Asistente para configuración de Active Directory Domain Services envía una consulta LDAP a un controlador de dominio existente para comprobar las cuentas no ocupadas. Si la consulta encuentra una cuenta de equipo de controlador de dominio no ocupada que comparte el mismo nombre que el equipo actual, el asistente muestra un mensaje informativo en la parte superior de la página que dice "**A cuenta de RODC creada previamente que coincide con el nombre del el servidor de destino existe en el directorio. Elija si desea usar esta cuenta de RODC existente o reinstalar este controlador de dominio @ no__t-0. El asistente usa la opción **Usar cuenta RODC existente** como configuración predeterminada.  
+La página **Opciones del controlador de dominio** muestra las opciones del nuevo controlador de dominio. Cuando esta página se carga, el Asistente para configuración de Active Directory Domain Services envía una consulta LDAP a un controlador de dominio existente para comprobar las cuentas no ocupadas. Si la consulta encuentra una cuenta de equipo de controlador de dominio no ocupada que comparte el mismo nombre que el equipo actual, el asistente muestra un mensaje informativo en la parte superior de la página que indica "**una cuenta RODC creada previamente que coincide con el nombre del servidor de destino existe en el directorio. Elija si desea usar esta cuenta de RODC existente o reinstalar este controlador de dominio**". El asistente usa la opción **Usar cuenta RODC existente** como configuración predeterminada.  
   
 > [!IMPORTANT]  
 > Puedes usar la opción **Volver a instalar el controlador de dominio** si el controlador de dominio ha sufrido un problema físico y no puede volver a funcionar correctamente. Dejar la cuenta de equipo de dominio y los metadatos del objeto en Active Directory permite ahorrar tiempo a la hora de configurar el controlador de dominio de sustitución. Instala el nuevo equipo con el *mismo nombre*y promuévelo a controlador de dominio en el dominio. La opción **reinstalar este controlador de dominio** no está disponible si quitó los metadatos del objeto de controlador de dominio de Active Directory (limpieza de metadatos).  
@@ -406,7 +406,7 @@ Para aceptar el aviso de reinicio de forma automática, utiliza los argumentos *
 > [!WARNING]  
 > No se recomienda invalidar el reinicio. El controlador de dominio debe reiniciarse para funcionar correctamente.  
   
-### <a name="results"></a>Results  
+### <a name="results"></a>Resultados  
 ![Install RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_ForestSignOff.png)  
   
 La página **Resultados** indica si la promoción se realizó correctamente o si se produjo algún error, junto con toda la información administrativa importante que corresponda. El controlador de dominio se reiniciará automáticamente 10 segundos después.  
@@ -686,7 +686,7 @@ Para aceptar el aviso de reinicio de forma automática, utiliza los argumentos *
 > [!WARNING]  
 > Se recomienda no invalidar el reinicio. El controlador de dominio debe reiniciarse para funcionar correctamente. Si cierras sesión en el controlador de dominio, no puedes volver a iniciar sesión interactivamente hasta que lo reinicies.  
   
-### <a name="results"></a>Results  
+### <a name="results"></a>Resultados  
 ![Install RODC](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_RODCSignoff.png)  
   
 La página **Resultados** indica si la promoción se realizó correctamente o si se produjo algún error, junto con toda la información administrativa importante que corresponda. El controlador de dominio se reiniciará automáticamente 10 segundos después.  

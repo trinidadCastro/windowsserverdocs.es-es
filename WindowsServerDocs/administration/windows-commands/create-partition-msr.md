@@ -24,7 +24,7 @@ ms.locfileid: "71378900"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-crea una partición reservada de Microsoft \(MSR @ no__t-1 en una tabla de particiones GUID \(gpt @ no__t-3 Disk.  
+crea una partición de\) MSR \(de Microsoft en una tabla de particiones GUID \(GPT\) disco.  
   
 > [!CAUTION]  
 > Tenga mucho cuidado al usar este comando. Dado que los discos GPT requieren un diseño de partición específico, la creación de particiones reservadas de Microsoft podría provocar que el disco no se pudiera leer.  
@@ -41,13 +41,13 @@ create partition msr [size=<n>] [offset=<n>] [noerr]
   
 |  Parámetro  |                                                                                                                         Descripción                                                                                                                         |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  Size @ no__t-0 @ no__t-1  |               El tamaño de la partición en megabytes \(MB @ no__t-1. La partición es, como mínimo, en bytes como el número especificado por <n>. Si no se proporciona ningún tamaño, la partición continúa hasta que no haya más espacio libre en la región actual.               |
-| offset @ no__t-0 @ no__t-1 | Especifica el desplazamiento en kilobytes \(KB @ no__t-1, en el que se crea la partición. El desplazamiento se redondea hacia arriba para llenar completamente el tamaño del sector que se utiliza. Si no se proporciona ningún desplazamiento, la partición se coloca en la primera extensión del disco que sea lo suficientemente grande como para almacenarla. |
-|    Noerr    |                            Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.                             |
+|  tamaño\=<n>  |               Tamaño de la partición en megabytes \(MB\). La partición es, como mínimo, en bytes como el número especificado por <n>. Si no se proporciona ningún tamaño, la partición continúa hasta que no haya más espacio libre en la región actual.               |
+| desplazamiento\=<n> | Especifica el desplazamiento en kilobytes \(KB\), en el que se crea la partición. El desplazamiento se redondea hacia arriba para llenar completamente el tamaño del sector que se utiliza. Si no se proporciona ningún desplazamiento, la partición se coloca en la primera extensión del disco que sea lo suficientemente grande como para almacenarla. |
+|    Noerr    |                            solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.                             |
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
   
--   En los discos GPT que se utilizan para arrancar el sistema operativo Windows, la partición del sistema Extensible Firmware Interface \(EFI @ no__t-1 es la primera partición del disco, seguida de la partición reservada de Microsoft. los discos GPT que se usan únicamente para el almacenamiento de datos no tienen una partición del sistema EFI, en cuyo caso la partición reservada de Microsoft es la primera partición.  
+-   En los discos GPT que se utilizan para arrancar el sistema operativo Windows, el Extensible Firmware Interface \(EFI\) partición del sistema es la primera partición del disco, seguida de la partición reservada de Microsoft. los discos GPT que se usan únicamente para el almacenamiento de datos no tienen una partición del sistema EFI, en cuyo caso la partición reservada de Microsoft es la primera partición.  
   
 -   Windows no monta las particiones reservadas de Microsoft. No se pueden almacenar datos en ellos y no se pueden eliminar.  
   
@@ -62,7 +62,7 @@ Para crear una partición reservada de Microsoft de 1000 megabytes de tamaño, e
 create partition msr size=1000  
 ```  
   
-#### <a name="additional-references"></a>Referencias adicionales  
+#### <a name="additional-references"></a>referencias adicionales  
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   
 

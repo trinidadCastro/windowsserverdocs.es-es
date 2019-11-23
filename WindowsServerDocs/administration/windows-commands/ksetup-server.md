@@ -36,13 +36,13 @@ ksetup /server <ServerName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0ServerName >|Nombre completo del equipo en el que la configuración será efectiva, como IPops897.corp.contoso.com.</br>Si se especifica un nombre completo de equipo de dominio completo, se producirá un error en el comando.|
+|\<ServerName >|Nombre completo del equipo en el que la configuración será efectiva, como IPops897.corp.contoso.com.</br>Si se especifica un nombre completo de equipo de dominio completo, se producirá un error en el comando.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 No hay ninguna manera de quitar el nombre del servidor de destino; solo puede volver a cambiarlo al nombre del equipo local, que es el valor predeterminado.
 
-El nombre del servidor de destino se almacena en el registro en **HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\LSA\Kerberos**. No se registra mediante **ksetup**.
+El nombre del servidor de destino se almacena en el registro en **HKEY_LOCAL_MACHINE \system\controlset001\control\lsa\kerberos**. No se registra mediante **ksetup**.
 
 ## <a name="BKMK_Examples"></a>Example
 

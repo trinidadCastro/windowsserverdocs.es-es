@@ -39,14 +39,14 @@ fsutil volume [querycluster] <VolumePath> <Cluster> [<Cluster>] … …
 |Parámetro|Descripción|
 |-------------|---------------|
 |allocationreport|Muestra información sobre cómo se usa el almacenamiento en un volumen determinado.|
-|@no__t 0VolumePath >|Especifica la letra de unidad (seguida de dos puntos).|
+|\<VolumePath >|Especifica la letra de unidad (seguida de dos puntos).|
 |diskfree|Consulta la unidad de disco duro para determinar la cantidad de espacio disponible en ella.|
 |desmontar|Desmonta un volumen.|
 |filelayout|Muestra los metadatos NTFS del archivo especificado.|
-|@no__t 0fileid >|Especifica el identificador de archivo.|
+|\<fileid >|Especifica el identificador de archivo.|
 |list|Enumera todos los volúmenes del sistema.|
-|querycluster|Busca el archivo que está utilizando un clúster especificado. Puede especificar varios clústeres con el parámetro **querycluster** .<br /><br />Este parámetro se aplica a:  Windows Server 2008 R2 y Windows 7.|
-|@no__t 0cluster >|Especifica el número de clúster lógico (LCN).|
+|querycluster|Busca el archivo que está utilizando un clúster especificado. Puede especificar varios clústeres con el parámetro **querycluster** .<br /><br />Este parámetro se aplica a: Windows Server 2008 R2 y Windows 7.|
+|> de clúster de \<|Especifica el número de clúster lógico (LCN).|
 
 ## <a name="BKMK_examples"></a>Example
 Para mostrar un informe de clústeres asignados, escriba:

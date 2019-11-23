@@ -53,7 +53,7 @@ Para enumerar los elementos de la copia de seguridad que se ejecutó el 31 de ma
 ```
 wbadmin get items -version:03/31/2013-09:00
 ```
-Para enumerar los elementos de la copia de seguridad de Server01 que se ejecutó el 30 de abril de 2013 a las 9:00 A.M. y se almacenan en \\ @ no__t-1servername\share, escriba:
+Para enumerar los elementos de la copia de seguridad de Server01 que se ejecutó el 30 de abril de 2013 a las 9:00 A.M. y se almacenan en \\\\servername\share, escriba:
 ```
 wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

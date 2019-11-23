@@ -38,9 +38,9 @@ set [no]debug
 |-------------|--------------------------------------------------------------|
 | **nodebug** | Desactiva el modo de depuración. La sintaxis predeterminada es **nodebug**. |
 |  **debug**  |                   Activa el modo de depuración.                   |
-|  \* @ no__t-1 {Help  |                            ?} \* @ no__t-1                            |
+|  \*\*{Help  |                            ?}\*\*                            |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Con el modo de depuración activado, se imprime más información sobre el paquete que se envía al servidor y la respuesta resultante.
 

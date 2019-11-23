@@ -24,7 +24,7 @@ ms.locfileid: "71380224"
 
 Establecer la configuración de proxy que se va a usar al transferir archivos mediante una cuenta de servicio.
 
-**BITSAdmin 1,5 y versiones anteriores**: No compatible.
+**BITSAdmin 1,5 y versiones anteriores**: no se admiten.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,12 +37,12 @@ bitsadmin /Util /SetIEProxy <Account> <Usage>[/Conn <ConnectionName>]
 |Parámetro|Descripción|
 |---------|-----------|
 |Cuenta|Especifica el tipo de cuenta de servicio cuya configuración de proxy desea definir. Los valores posibles son:</br>-LOCALSYSTEM</br>-NETWORKSERVICE</br>-LOCALSERVICE|
-|Uso|Especifica la forma de detección del proxy que se va a usar. Los valores posibles son:</br>-NO_PROXY: no se usa un servidor proxy.</br>-DETECCIÓN automática: detecta automáticamente la configuración de proxy.</br>-MANUAL_PROXY: Use una lista de proxy explícita y una lista de omisión. Especifique la lista de proxy y la lista de omisión inmediatamente después de la etiqueta Usage. Por ejemplo, MANUAL_PROXY proxy1, Proxy2 NULL.</br>    -La lista de proxy es una lista delimitada por comas de servidores proxy que se usarán.</br>    -La lista de omisión es una lista delimitada por espacios de nombres de host o direcciones IP, o ambos, para las que las transferencias no se van a enrutar a través de un proxy. Esto puede ser @no__t 0local > para hacer referencia a todos los servidores de la misma LAN. Los valores NULL o "" se pueden usar para una lista de omisión de proxy vacía.</br>-Autoscript: igual que la detección automática, salvo que también ejecuta un script. Especifique la dirección URL del script inmediatamente después de la etiqueta Usage. Por ejemplo, autoscript http://server/proxy.js.</br>-RESET: igual que NO_PROXY, excepto que quita las direcciones URL de proxy manuales (si se especifican) y las direcciones URL detectadas mediante la detección automática.|
+|Uso|Especifica la forma de detección del proxy que se va a usar. Los valores posibles son:</br>-NO_PROXY: no use un servidor proxy.</br>-DETECCIÓN automática: detecta automáticamente la configuración de proxy.</br>-MANUAL_PROXY: usar una lista de proxy explícita y una lista de omisión. Especifique la lista de proxy y la lista de omisión inmediatamente después de la etiqueta Usage. Por ejemplo, MANUAL_PROXY proxy1, Proxy2 NULL.</br>    -La lista de proxy es una lista delimitada por comas de servidores proxy que se usarán.</br>    -La lista de omisión es una lista delimitada por espacios de nombres de host o direcciones IP, o ambos, para las que las transferencias no se van a enrutar a través de un proxy. Se puede \<> local para hacer referencia a todos los servidores de la misma LAN. Los valores NULL o "" se pueden usar para una lista de omisión de proxy vacía.</br>-Autoscript: igual que la detección automática, salvo que también ejecuta un script. Especifique la dirección URL del script inmediatamente después de la etiqueta Usage. Por ejemplo, autoscript http://server/proxy.js.</br>-RESET: igual que NO_PROXY, excepto en que quita las direcciones URL de proxy manuales (si se especifican) y las direcciones URL detectadas mediante la detección automática.|
 |ConnectionName|Opcional: se usa con el parámetro **/Conn** para especificar la conexión del módem que se va a usar. Si no especifica el parámetro **/Conn** , bits usa la conexión LAN. Especifique el nombre de la conexión del módem inmediatamente después del parámetro **/Conn** .|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
-Cada llamada sucesiva con este modificador reemplaza el uso previamente especificado, pero no los parámetros del uso definido previamente. Por ejemplo, si especifica NO_PROXY, AutoDetect y MANUAL_PROXY en llamadas independientes, BITS usa el último uso proporcionado, pero mantiene los parámetros del uso definido previamente.
+Cada llamada sucesiva con este modificador reemplaza el uso previamente especificado, pero no los parámetros del uso definido previamente. Por ejemplo, si especifica NO_PROXY, detección automática y MANUAL_PROXY en llamadas independientes, BITS usa el último uso proporcionado, pero mantiene los parámetros del uso definido previamente.
 
 > [!IMPORTANT]
 > Debe ejecutar este comando desde un símbolo del sistema con privilegios elevados para que se complete correctamente.

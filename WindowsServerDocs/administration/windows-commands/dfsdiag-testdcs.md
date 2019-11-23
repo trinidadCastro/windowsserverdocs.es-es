@@ -26,9 +26,9 @@ ms.locfileid: "71378440"
 
 Comprueba la configuración de los controladores de dominio mediante la realización de las siguientes pruebas en cada controlador de dominio del dominio especificado:  
   
--   comprueba que el servicio de espacio de nombres Sistema de archivos distribuido \(DFS @ no__t-1 se está ejecutando y que su tipo de inicio está establecido en automático.  
+-   comprueba que el Sistema de archivos distribuido \(DFS\) el servicio de espacio de nombres se está ejecutando y que su tipo de inicio está establecido en automático.  
   
--   Comprueba la compatibilidad de las referencias de site @ no__t-0costed para NETLOGON y SYSvol.  
+-   Comprueba la compatibilidad del sitio\-referencias costosas para NETLOGON y SYSvol.  
   
 -   comprueba la coherencia de la Asociación del sitio por el nombre de host y la dirección IP.  
   
@@ -44,10 +44,10 @@ dfsdiag /TestDCs [/Domain:<Domain name>]
   
 |Parámetro|Descripción|  
 |-------|--------|  
-|\/Domain: <Domain name>|Dominio que desea comprobar.|  
+|Dominio de \/:<Domain name>|Dominio que desea comprobar.|  
   
-## <a name="remarks"></a>Comentarios  
-\/Domain es un parámetro opcional. El valor predeterminado es el dominio local al que está unido el host local.  
+## <a name="remarks"></a>Observaciones  
+\/dominio es un parámetro opcional. El valor predeterminado es el dominio local al que está unido el host local.  
   
 ## <a name="BKMK_Examples"></a>Example  
 Para comprobar la configuración de los controladores de dominio en el dominio Contoso.com, escriba:  
@@ -56,7 +56,7 @@ Para comprobar la configuración de los controladores de dominio en el dominio C
 dfsdiag /TestDCs /Domain:Contoso.com  
 ```  
   
-## <a name="additional-references"></a>Referencias adicionales  
+## <a name="additional-references"></a>referencias adicionales  
   
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   

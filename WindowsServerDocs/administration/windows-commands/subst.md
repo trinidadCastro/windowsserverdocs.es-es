@@ -39,12 +39,12 @@ subst <Drive1>: /d
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Drive1 >:|Especifica la unidad virtual a la que desea asignar una ruta de acceso.|
-|[\<Drive2 >:] \<Path >|Especifica la unidad física y la ruta de acceso que desea asignar a una unidad virtual.|
+|> \<unidad1:|Especifica la unidad virtual a la que desea asignar una ruta de acceso.|
+|[\<Unidad2 >:]\<ruta de acceso >|Especifica la unidad física y la ruta de acceso que desea asignar a una unidad virtual.|
 |/d|Elimina una unidad (virtual) sustituida.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Los siguientes comandos no funcionan y no deben usarse en las unidades que se especifican en el comando **subst** :
 

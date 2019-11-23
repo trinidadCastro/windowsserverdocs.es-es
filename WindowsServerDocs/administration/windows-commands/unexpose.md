@@ -24,7 +24,7 @@ ms.locfileid: "71392266"
 
 
 
-anula la exposición de una instantánea que se expuso mediante el comando de **exposición** . La instantánea expuesta puede especificarse por su ID. de sombra, letra de unidad, recurso compartido o punto de montaje.
+Anula la exposición de una instantánea que se expuso mediante el comando de **exposición** . La instantánea expuesta puede especificarse por su ID. de sombra, letra de unidad, recurso compartido o punto de montaje.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,12 +38,12 @@ unexpose {<ShadowID> | <Drive:> | <Share> | <MountPoint>}
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0ShadowID >|Anula la exposición de la instantánea especificada por el ID. de sombra dado.|
-|\<Drive: >|Anula la exposición de la instantánea asociada a la letra de unidad especificada (por ejemplo, la unidad P).|
-|@no__t 0Share >|Anula la exposición de la instantánea asociada con el recurso compartido especificado (por ejemplo, \\ @ no__t-1*MachineName*\).|
-|@no__t 0MountPoint >|Anula la exposición de la instantánea asociada con el punto de montaje especificado (por ejemplo, C:\shadowcopy @ no__t-0.|
+|\<ShadowID >|Anula la exposición de la instantánea especificada por el ID. de sombra dado.|
+|Unidad de \<: >|Anula la exposición de la instantánea asociada a la letra de unidad especificada (por ejemplo, la unidad P).|
+|\<compartir >|Anula la exposición de la instantánea asociada al recurso compartido especificado (por ejemplo, \\\\*MachineName*\).|
+|\<MountPoint >|Anula la exposición de la instantánea asociada con el punto de montaje especificado (por ejemplo, C:\shadowcopy\).|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Puede usar un alias existente o una variable de entorno en lugar de *ShadowID*. Use **Agregar** sin parámetros para ver los alias existentes.
 

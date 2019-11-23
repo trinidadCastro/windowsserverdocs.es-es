@@ -17,11 +17,11 @@ ms.locfileid: "71394461"
 ---
 # <a name="smb-direct"></a>SMB directo
 
->Se aplica a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
+>Se aplica a: Windows Server 2012 R2, Windows Server 2012 y Windows Server 2016
 
 Windows Server 2012 R2, Windows Server 2012 y Windows Server 2016 incluyen una característica llamada SMB directo, que admite el uso de adaptadores de red con capacidad de acceso directo a memoria remota (RDMA). Los adaptadores de red que cuentan con RDMA pueden funcionar a toda velocidad con una latencia muy baja y, al mismo tiempo, minimizan el uso de CPU. Para las cargas de trabajo como Hyper-V o Microsoft SQL Server, esto permite que un servidor de archivo remoto se parezca al almacenamiento local. SMB directo incluye:
 
-- Aumento de rendimiento: aprovecha todo el rendimiento de las redes de alta velocidad, donde los adaptadores de red coordinan la transferencia de grandes cantidades de datos a velocidad de línea.
+- Aumento de rendimiento: aprovecha el rendimiento total de las redes de alta velocidad donde los adaptadores de red coordinan la transferencia de grandes cantidades de datos a velocidad de línea.
 - Latencia baja: ofrece respuestas extremadamente rápidas a las solicitudes de red y, como resultado, hace que parezca que el almacenamiento de archivos remoto es en realidad almacenamiento en bloque conectado directamente.
 - Uso bajo de CPU: usa menos ciclos de CPU al transferir datos por la red, lo que deja más potencia disponible a las aplicaciones de servidor.
 
@@ -124,5 +124,5 @@ A continuación se indica cómo confirmar la capacidad de conmutación por error
 ## <a name="more-information"></a>Más información
 
 - [Información general de bloque de mensajes del servidor](file-server-smb-overview.md)
-- @no__t: disponibilidad del servidor, el almacenamiento y la red de 0Increasing: Información general sobre el escenario](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- [Aumento de la disponibilidad del servidor, el almacenamiento y la red: información general del escenario](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
 - [Implementación de Hyper-V en SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)

@@ -36,9 +36,9 @@ manage-bde -pause <Volume> [-computername <Name>] [{-?|/?}] [{-help|-h}]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Volume >|Una letra de unidad seguida de dos puntos, una ruta de acceso de GUID de volumen o un volumen montado.|
+|\<> de volumen|Una letra de unidad seguida de dos puntos, una ruta de acceso de GUID de volumen o un volumen montado.|
 |-COMPUTERNAME|Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando.|
-|\<Nombre >|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
+|Nombre del \<>|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
 |-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
 |-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
 

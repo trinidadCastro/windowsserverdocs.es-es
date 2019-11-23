@@ -31,7 +31,7 @@ Para aplicar un filtro de archivos a un volumen o carpeta, usa la siguiente list
 
 5. Revisa las propiedades de plantillas de filtro de archivos disponibles. (En **Administración del filtrado de archivos**, haga clic en el nodo **plantillas de filtro de archivos** ). [Editar propiedades](edit-file-screen-template-properties.md) de la plantilla de filtro de archivos 
 <br />
- O bien:
+ O bien,
  <br /> Crea una nueva plantilla de filtro de archivos para aplicar una directiva de almacenamiento de la organización.  [Crear una plantilla de filtro de archivos](create-file-screen-template.md) 
 
 6. Crea un filtro de archivos basado en la plantilla de un volumen o carpeta. 

@@ -38,29 +38,29 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 |Parámetro|Descripción|
 |-------------|---------------|
 |createjournal|Crea un diario de cambios USN.|
-|m = \<MaxSize >|Especifica el tamaño máximo, en bytes, que NTFS asigna para el diario de cambios.|
-|a = \<AllocationDelta >|Especifica el tamaño, en bytes, de la asignación de memoria que se agrega al final y se quita del principio del diario de cambios.|
-|@no__t 0VolumePath >|Especifica la letra de unidad (seguida de dos puntos).|
-|deletejournal|Elimina o deshabilita un diario de cambios USN activo. **Atención:** La eliminación del diario de cambios afecta al servicio de replicación de archivos (FRS) y al servicio de indexación, ya que requeriría que estos servicios realizaran un examen completo (y lento) del volumen. Esto, a su vez, afecta negativamente a la replicación SYSVOL de FRS y la replicación entre alternativas de vínculo DFS mientras se vuelve a examinar el volumen.|
+|m =\<MaxSize >|Especifica el tamaño máximo, en bytes, que NTFS asigna para el diario de cambios.|
+|a =\<AllocationDelta >|Especifica el tamaño, en bytes, de la asignación de memoria que se agrega al final y se quita del principio del diario de cambios.|
+|\<VolumePath >|Especifica la letra de unidad (seguida de dos puntos).|
+|deletejournal|Elimina o deshabilita un diario de cambios USN activo. **PRECAUCIÓN:** La eliminación del diario de cambios afecta al servicio de replicación de archivos (FRS) y al servicio de indexación, ya que requeriría que estos servicios realizaran un examen completo (y lento) del volumen. Esto, a su vez, afecta negativamente a la replicación SYSVOL de FRS y la replicación entre alternativas de vínculo DFS mientras se vuelve a examinar el volumen.|
 |/d|Deshabilita un diario de cambios USN activo y devuelve un control de entrada/salida (e/s) mientras se deshabilita el diario de cambios.|
 |/n|Deshabilita un diario de cambios USN activo y devuelve el control de e/s solo después de deshabilitar el diario de cambios.|
 |enablerangetracking|Habilita el seguimiento del intervalo de escritura USN para un volumen.|
-|c = \<chunk-size >|Especifica el tamaño del fragmento del que se va a realizar el seguimiento en un volumen.|
-|s = \<file-size-Threshold >|Especifica el umbral de tamaño de archivo para el seguimiento del intervalo.|
+|c =\<> de tamaño de fragmento|Especifica el tamaño del fragmento del que se va a realizar el seguimiento en un volumen.|
+|s =\<tamaño de archivo-umbral >|Especifica el umbral de tamaño de archivo para el seguimiento del intervalo.|
 |enumdata|Enumera y enumera las entradas del diario de cambios entre dos límites especificados.|
-|@no__t 0FileRef >|Especifica la posición ordinal dentro de los archivos en el volumen en el que va a comenzar la enumeración.|
-|@no__t 0LowUSN >|Especifica el límite inferior del intervalo de valores de USN utilizados para filtrar los registros que se devuelven. Solo se devuelven los registros cuyo USN del último diario de cambios está entre o igual que los valores de miembro *LowUSN* y *HighUSN* .|
-|@no__t 0HighUSN >|Especifica el límite superior del intervalo de valores de USN utilizados para filtrar los archivos que se devuelven.|
+|\<FileRef >|Especifica la posición ordinal dentro de los archivos en el volumen en el que va a comenzar la enumeración.|
+|\<LowUSN >|Especifica el límite inferior del intervalo de valores de USN utilizados para filtrar los registros que se devuelven. Solo se devuelven los registros cuyo USN del último diario de cambios está entre o igual que los valores de miembro *LowUSN* y *HighUSN* .|
+|\<HighUSN >|Especifica el límite superior del intervalo de valores de USN utilizados para filtrar los archivos que se devuelven.|
 |queryjournal|Consulta los datos de USN de un volumen para recopilar información sobre el diario de cambios actual, sus registros y su capacidad.|
 |ReadData|Lee los datos USN de un archivo.|
-|\<Nombre de archivo >|Especifica la ruta de acceso completa al archivo, incluido el nombre de archivo y la extensión, por ejemplo: C:\documents\filename.txt|
+|\<nombre de archivo >|Especifica la ruta de acceso completa al archivo, incluido el nombre de archivo y la extensión, por ejemplo: C:\documents\filename.txt|
 |readjournal|Lee los registros USN en el diario USN.|
-|Minver = \<number >|Versión principal mínima de USN_RECORD que se va a devolver. Valor predeterminado = 2.|
-|maxver = \<number >|Versión principal máxima de USN_RECORD que se va a devolver. Valor predeterminado = 4.|
-|startusn = \<USN número >|USN del que se va a empezar a leer el diario USN. Valor predeterminado = 0.|
+|Minver = número de\<>|Versión principal mínima de USN_RECORD que se va a devolver. Valor predeterminado = 2.|
+|maxver = número de\<>|Versión principal máxima de USN_RECORD que se va a devolver. Valor predeterminado = 4.|
+|startusn = número USN\<>|USN del que se va a empezar a leer el diario USN. Valor predeterminado = 0.|
 
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Acerca del diario de cambios de USN
 

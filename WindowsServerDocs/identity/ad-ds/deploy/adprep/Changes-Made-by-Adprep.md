@@ -30,9 +30,9 @@ En este tema se describen los cambios que adprep. exe realiza en Windows Server 
   
 -   [Actualizaciones de esquema](../../../ad-ds/deploy/Schema-Updates.md)  
   
-## <a name="see-also"></a>Vea también  
-[Windows Server 2008 R2: Apéndice de cambios en adprep. exe para admitir AD DS @ no__t-0  
-[Windows Server 2008: Apéndice de cambios en adprep. exe para admitir AD DS @ no__t-0  
+## <a name="see-also"></a>Consulta también  
+[Windows Server 2008 R2: Apéndice de cambios en adprep. exe para admitir AD DS](https://technet.microsoft.com/library/dd378876.aspx)  
+[Windows Server 2008: Apéndice de cambios en adprep. exe para admitir AD DS](https://technet.microsoft.com/library/cc770703.aspx)  
   
 
 

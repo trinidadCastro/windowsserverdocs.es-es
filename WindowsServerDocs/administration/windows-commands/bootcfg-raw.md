@@ -35,14 +35,14 @@ bootcfg /raw [/s <computer> [/u <Domain>\<User> /p <Password>]] <OSLoadOptionsSt
 |         Término          |                                                                                                            Definición                                                                                                             |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     /s <computer>     |                                                        Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.                                                         |
-| /u <Domain> \\ @ no__t-2  |               Ejecuta el comando con los permisos de cuenta del usuario especificado por <User> o <Domain> @ no__t-2 @ no__t-3. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando.                |
+| /u <Domain> \\<User>  |               Ejecuta el comando con los permisos de cuenta del usuario especificado mediante <User> o <Domain>\\<User>. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando.                |
 |     /p <Password>     |                                                                       Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                       |
 | <OSLoadOptionsString> | Especifica las opciones de carga del sistema operativo que se van a agregar a la entrada de sistema operativo. Estas opciones de carga reemplazarán las opciones de carga existentes asociadas a la entrada del sistema operativo. No se realiza ninguna validación de <OSLoadOptions>. |
 | /ID <OSEntryLineNum>  |                       Especifica el número de línea de entrada del sistema operativo en la sección [operating systems] del archivo boot. ini que se va a actualizar. La primera línea después del encabezado de la sección [operating systems] es 1.                       |
 |          /a           |                                                       Especifica que las opciones del sistema operativo que se van a agregar se deben anexar a las opciones del sistema operativo existentes.                                                        |
 |          /?           |                                                                                               Muestra la ayuda en el símbolo del sistema.                                                                                                |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 - **bootcfg RAW** se usa para agregar texto al final de una entrada de sistema operativo, sobrescribiendo las opciones de entrada existentes del sistema operativo. Este texto debe contener opciones de carga del sistema operativo válidas como **/Debug**, **/fastdetect**, **/nodebug**, **/Baudrate**, **/crashdebug**y **/SOS**. Por ejemplo, el comando siguiente agrega " **/Debug/fastdetect**" al final de la primera entrada del sistema operativo, reemplazando las opciones de entrada del sistema operativo anteriores:
   ```
   bootcfg /raw "/debug /fastdetect" /id 1
@@ -53,5 +53,5 @@ bootcfg /raw [/s <computer> [/u <Domain>\<User> /p <Password>]] <OSLoadOptionsSt
   bootcfg /raw "/debug /sos" /id 2
   bootcfg /raw /s srvmain /u maindom\hiropln /p p@ssW23 "/crashdebug " /id 2
   ```
-  #### <a name="additional-references"></a>Referencias adicionales
+  #### <a name="additional-references"></a>referencias adicionales
   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

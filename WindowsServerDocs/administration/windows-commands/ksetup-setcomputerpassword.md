@@ -36,9 +36,9 @@ ksetup /setcomputerpassword <Password>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Password >|Usa la contraseña proporcionada para establecer la cuenta de equipo en el equipo local.</br>La contraseña solo se puede establecer mediante una cuenta con privilegios administrativos. La contraseña puede tener de 1 a 156 caracteres alfanuméricos o especiales.|
+|\<contraseña >|Usa la contraseña proporcionada para establecer la cuenta de equipo en el equipo local.</br>La contraseña solo se puede establecer mediante una cuenta con privilegios administrativos. La contraseña puede tener de 1 a 156 caracteres alfanuméricos o especiales.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Este comando afecta solo a la cuenta de equipo.
 

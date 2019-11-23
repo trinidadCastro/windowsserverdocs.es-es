@@ -1,5 +1,5 @@
 ---
-title: Revertir
+title: revertir
 description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -20,7 +20,7 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71371448"
 ---
-# <a name="revert"></a>Revertir
+# <a name="revert"></a>revertir
 
 
 
@@ -36,7 +36,7 @@ revert <ShadowCopyID>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0ShadowCopyID >|Especifica el identificador de la instantánea a la que se revierte el volumen.|
+|\<ShadowCopyID >|Especifica el identificador de la instantánea a la que se revierte el volumen.|
 
 #### <a name="additional-references"></a>Referencias adicionales
 

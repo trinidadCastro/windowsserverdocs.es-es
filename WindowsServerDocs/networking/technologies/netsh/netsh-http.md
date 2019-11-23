@@ -23,7 +23,7 @@ Use **netsh http** para consultar y configurar los parámetros y la configuraci�
 >[!TIP]
 >Si usa Windows PowerShell en un equipo que ejecuta Windows Server 2016 o Windows 10, escriba **netsh** y presione Entrar. En el símbolo del sistema de Netsh, escriba **http** y presione Entrar para obtener el símbolo del sistema netsh http.
 >
->&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6netsh http @ no__t-7
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;netsh http\>
 
 Los comandos Netsh http disponibles son:
 
@@ -156,8 +156,8 @@ add urlacl [ url= ] URL [ [user=] User [ [ listen= ] yes | no [ delegate= ] yes 
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 |   **url**    |                                          Especifica el localizador uniforme de recursos (URL) completo.                                           | Requerido |
 |   **user**   |                                                      Especifica el nombre de usuario o grupo de usuarios                                                       | Requerido |
-|  **escuchar**  | Especifica uno de los siguientes valores: yes: Permite al usuario registrar las direcciones URL. Este es el valor predeterminado. No: Deniega al usuario el registro de las direcciones URL. | Opcional |
-| **Delegado** |  Especifica uno de los siguientes valores: yes: Permitir que el usuario delegue las direcciones URL no: Impida que el usuario delegue las direcciones URL. Este es el valor predeterminado.  | Opcional |
+|  **escuchar**  | Especifica uno de los siguientes valores: yes: permite al usuario registrar las direcciones URL. Este es el valor predeterminado. no: deniega al usuario el registro de las direcciones URL. | Opcional |
+| **Delegado** |  Especifica uno de los siguientes valores: yes: permitir que el usuario delegue las direcciones URL no: denegar que el usuario delegue las direcciones URL. Este es el valor predeterminado.  | Opcional |
 |   **SDDL**   |                                                Especifica una cadena SDDL que describe la DACL.                                                 | Opcional |
 
 ---
@@ -166,10 +166,10 @@ add urlacl [ url= ] URL [ [user=] User [ [ listen= ] yes | no [ delegate= ] yes 
 
 A continuación se muestran cuatro ejemplos del comando **Add urlacl** .
 
-- Add urlacl URL = https://+:80/MyUri User = dominio @ no__t-1User
-- Add urlacl URL = <https://www.contoso.com:80/MyUri> User = dominio @ no__t-1User Listen = Yes
-- Add urlacl URL = <https://www.contoso.com:80/MyUri> usuario = dominio @ no__t-1User delegado = no
-- Agregar urlacl URL = https://+:80/MyUri SDDL =...
+- Agregar urlacl URL =https://+:80/MyUri usuario = dominio\\usuario
+- Agregar urlacl URL =<https://www.contoso.com:80/MyUri> usuario = dominio\\usuario escuchar = sí
+- Agregar urlacl URL =<https://www.contoso.com:80/MyUri> usuario = dominio\\usuario delegado = no
+- Agregar urlacl URL =https://+:80/MyUri SDDL =...
 
 ---
 
@@ -196,7 +196,7 @@ delete cache [ [ url= ] URL [ [recursive= ] yes | no ]
 
 A continuación se muestran dos ejemplos del comando **Delete cache** .
 
-- Delete cache URL = <https://www.contoso.com:80/myresource/> Recursive = Yes
+- Delete cache URL =<https://www.contoso.com:80/myresource/> Recursive = Yes
 - eliminar caché
 
 ---
@@ -312,8 +312,8 @@ delete urlacl [ url= ] URL
 
 A continuación se muestran dos ejemplos del comando **Delete urlacl** .
 
-- Delete urlacl URL = https://+:80/MyUri
-- Delete urlacl URL = <https://www.contoso.com:80/MyUri>
+- Delete urlacl URL =https://+:80/MyUri
+- Delete urlacl URL =<https://www.contoso.com:80/MyUri>
 
 ---
 
@@ -352,7 +352,7 @@ show cachestate [ [url= ] URL]
 
 A continuación se muestran dos ejemplos del comando **Show cachestate** :
 
-- Show cachestate URL = <https://www.contoso.com:80/myresource>
+- Mostrar dirección URL de cachestate =<https://www.contoso.com:80/myresource>
 - Mostrar cachestate
 
 ---
@@ -382,7 +382,7 @@ show servicestate [ [ view= ] session | requestq ] [ [ verbose= ] yes | no ]
 
 |             |                                                                                                                      |          |
 |-------------|----------------------------------------------------------------------------------------------------------------------|----------|
-|  **Vista**   | Especifica si se va a ver una instantánea del estado del servicio HTTP en función de la sesión del servidor o de las colas de solicitudes. | Opcional |
+|  **Ver**   | Especifica si se va a ver una instantánea del estado del servicio HTTP en función de la sesión del servidor o de las colas de solicitudes. | Opcional |
 | **Detallado** |                Especifica si se va a mostrar información detallada que también muestra información de propiedades.                | Opcional |
 
 ---
@@ -462,8 +462,8 @@ show urlacl [ [url= ] URL]
 
 A continuación se muestran tres ejemplos del comando **Show urlacl** .
 
-- Show urlacl URL = https://+:80/MyUri
-- Show urlacl URL = <https://www.contoso.com:80/MyUri>
+- Mostrar dirección URL de urlacl =https://+:80/MyUri
+- Mostrar dirección URL de urlacl =<https://www.contoso.com:80/MyUri>
 - Mostrar urlacl
 
 ---

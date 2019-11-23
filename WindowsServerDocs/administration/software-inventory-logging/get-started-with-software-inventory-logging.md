@@ -44,7 +44,7 @@ El registro de inventario de software puede ayudar a los administradores del ser
 
 -   Agregar información de inventario de software y servidor para una amplia variedad de escenarios de administración de activos de software mediante la habilitación de la característica registro de inventario de software de cada servidor y la elección de un URI de destino de servidor Web y la huella digital de certificado para la autenticación.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Agregador de Registro de inventario de software](https://technet.microsoft.com/library/mt572043.aspx)<br>
 [Administrar el Registro de inventario de software](manage-software-inventory-logging.md)<br>
 [Cmdlets de registro de inventario de software en Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx)<br>

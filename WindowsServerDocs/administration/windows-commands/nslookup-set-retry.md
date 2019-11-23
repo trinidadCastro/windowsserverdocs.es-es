@@ -36,8 +36,8 @@ set retry=<Number>
 |    <Number>     | Especifica el nuevo valor para el número de reintentos. El número predeterminado de reintentos es 4. |
 | {ayuda &#124; ?} |                 Muestra un breve resumen de los subcomandos de **nslookup** .                  |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 - Cuando no se recibe una respuesta a una solicitud en un período de tiempo determinado, el tiempo de espera se duplica y se reenvía la solicitud. El valor de reintento controla el número de veces que se reenvía una solicitud antes de abandonarla. Puede cambiar el período de tiempo de espera con el subcomando **establecer tiempo de espera** .
-  ## <a name="additional-references"></a>Referencias adicionales
+  ## <a name="additional-references"></a>referencias adicionales
   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-  [nslookup establecer tiempo de espera](nslookup-set-timeout.md)
+  [nslookup Set timeout](nslookup-set-timeout.md)

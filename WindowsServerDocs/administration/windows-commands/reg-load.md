@@ -38,11 +38,11 @@ reg load KeyName FileName
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0KeyName >|Especifica la ruta de acceso completa de la subclave que se va a cargar. Para especificar equipos remotos, incluya el nombre del equipo (en el formato \\ @ no__t-1ComputerName @ no__t-2 como parte del nombre de *clave*. Si se omite \\ @ no__t-1ComputerName, la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.|
-|\<Nombre de archivo >|Especifica el nombre y la ruta de acceso del archivo que se va a cargar. Este archivo debe crearse de antemano mediante la operación de **guardado del registro** y la extensión. HIV.|
+|\<KeyName >|Especifica la ruta de acceso completa de la subclave que se va a cargar. Para especificar equipos remotos, incluya el nombre del equipo (en el formato \\\\ComputerName\) como parte del nombre de *clave*. Si se omite \\\\ComputerName \, la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.|
+|\<nombre de archivo >|Especifica el nombre y la ruta de acceso del archivo que se va a cargar. Este archivo debe crearse de antemano mediante la operación de **guardado del registro** y la extensión. HIV.|
 |/?|Muestra la ayuda de la **carga del registro** en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 En la tabla siguiente se enumeran los valores devueltos para la operación de **carga del registro** .
 

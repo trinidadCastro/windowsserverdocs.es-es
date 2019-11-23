@@ -37,7 +37,7 @@ list shadows {all | set <SetID> | id <ShadowID>}
 |Parámetro|Descripción|
 |---------|-----------|
 |all|Muestra todas las instantáneas.|
-|establecer @no__t 0SetID >|Muestra las instantáneas que pertenecen al identificador de conjunto de instantáneas especificado.|
+|establecer \<> SetId|Muestra las instantáneas que pertenecen al identificador de conjunto de instantáneas especificado.|
 |ID \<ShadowID >|Muestra todas las instantáneas con el identificador de instantánea especificado.|
 
 #### <a name="additional-references"></a>Referencias adicionales

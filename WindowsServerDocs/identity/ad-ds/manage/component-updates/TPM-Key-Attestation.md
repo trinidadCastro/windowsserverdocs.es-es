@@ -25,11 +25,11 @@ ms.locfileid: "71389863"
 > [!NOTE]  
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.  
   
-## <a name="overview"></a>Información general  
+## <a name="overview"></a>Introducción  
 Aunque la compatibilidad con las claves protegidas con TPM ha existido desde Windows 8, no había ningún mecanismo para que las CA atestiguaran criptográficamente que la clave privada del solicitante de certificados está protegida realmente por un Módulo de plataforma segura (TPM). Esta actualización permite a una CA realizar esa atestación y reflejar la atestación en el certificado emitido.  
   
 > [!NOTE]  
-> En este artículo se da por supuesto que el lector está familiarizado con el concepto de plantilla de certificado (como referencia, consulte [plantillas de certificado](https://technet.microsoft.com/library/cc730705.aspx)). También se da por supuesto que el lector está familiarizado con la configuración de las CA empresariales para emitir certificados basados en plantillas de certificado (como referencia, consulte @no__t 0Checklist: Configurar CA para emitir y administrar certificados @ no__t-0).  
+> En este artículo se da por supuesto que el lector está familiarizado con el concepto de plantilla de certificado (como referencia, consulte [plantillas de certificado](https://technet.microsoft.com/library/cc730705.aspx)). También se da por supuesto que el lector está familiarizado con la configuración de las CA empresariales para emitir certificados basados en plantillas de certificado (como referencia, consulte [Checklist: configure CAS to Issue and Manage Certificates](https://technet.microsoft.com/library/cc771533.aspx)).  
   
 ### <a name="terminology"></a>Terminología  
   
@@ -54,7 +54,7 @@ La atestación de clave de TPM es la capacidad de la entidad que solicita un cer
 ### <a name="why-is-tpm-key-attestation-important"></a>¿Por qué es importante la atestación de clave de TPM?  
 Un certificado de usuario con una clave atestiguada por TPM proporciona un mayor control de seguridad, al que se hace una copia de seguridad mediante la no exportabilidad, el antimartillo y el aislamiento de claves que proporciona el TPM.  
   
-Con la atestación de clave de TPM, ahora es posible un nuevo paradigma de administración: Un administrador puede definir el conjunto de dispositivos que los usuarios pueden usar para tener acceso a los recursos corporativos (por ejemplo, VPN o punto de acceso inalámbrico) y tener garantías **fuertes** de que no se pueden usar otros dispositivos para acceder a ellos. Este nuevo paradigma de control de acceso es **seguro** porque está asociado a una identidad *de usuario enlazada al hardware* , que es más fuerte que una credencial basada en software.
+Con la atestación de clave de TPM, ahora es posible un nuevo paradigma de administración: un administrador puede definir el conjunto de dispositivos que los usuarios pueden usar para tener acceso a los recursos corporativos (por ejemplo, VPN o punto de acceso inalámbrico) y tener garantías **seguras** de que no se pueden usar otros dispositivos para acceder a ellos. Este nuevo paradigma de control de acceso es **seguro** porque está asociado a una identidad *de usuario enlazada al hardware* , que es más fuerte que una credencial basada en software.
   
 ### <a name="how-does-tpm-key-attestation-work"></a>¿Cómo funciona la atestación de clave de TPM?  
 En general, la atestación de clave de TPM se basa en los pilares siguientes:  
@@ -84,7 +84,7 @@ Hay tres pasos para implementar la atestación de clave de TPM:
   
     Tenga en cuenta que es posible elegir una combinación de modelos de confianza de TPM. En este caso, la CA aceptará cualquiera de los métodos de atestación y los OID de la Directiva de emisión reflejarán todos los métodos de atestación que se hayan realizado correctamente.  
   
-2.  **Configurar la plantilla de certificado:** La configuración de la plantilla de certificado se describe en la sección [detalles de implementación](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails) de este tema. En este artículo no se explica cómo se asigna esta plantilla de certificado a la CA de empresa o cómo se concede el acceso de inscripción a un grupo de usuarios. Para obtener más información, vea [Checklist: Configure las CA para emitir y administrar certificados @ no__t-0.  
+2.  **Configurar la plantilla de certificado:** La configuración de la plantilla de certificado se describe en la sección [detalles de implementación](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails) de este tema. En este artículo no se explica cómo se asigna esta plantilla de certificado a la CA de empresa o cómo se concede el acceso de inscripción a un grupo de usuarios. Para obtener más información, consulte [Checklist: configure CAS to Issue and Manage Certificates](https://technet.microsoft.com/library/cc771533.aspx).  
   
 3.  **Configurar la CA para el modelo de confianza de TPM**  
   
@@ -132,11 +132,11 @@ Para configurar la plantilla de certificado para la atestación de clave de TPM,
   
     ![Atestación de clave de TPM](media/TPM-Key-Attestation/GTR_ADDS_KeyModes.gif)  
   
-    -   **Ninguna** Implica que no se debe usar la atestación de clave  
+    -   **Ninguno:** Implica que no se debe usar la atestación de clave  
   
     -   **Obligatorio, si el cliente es capaz:** Permite que los usuarios de un dispositivo que no admiten la atestación de clave de TPM sigan inscribiendo para ese certificado. Los usuarios que pueden realizar la atestación se distinguirán con un OID de directiva de emisión especial. Es posible que algunos dispositivos no puedan realizar la atestación debido a un TPM antiguo que no admite la atestación de clave o a que el dispositivo no tiene un TPM.
   
-    -   **Obligatorio:** El cliente *debe* realizar la atestación de clave de TPM, de lo contrario se producirá un error en la solicitud de certificado.  
+    -   **Requerido:** El cliente *debe* realizar la atestación de clave de TPM, de lo contrario se producirá un error en la solicitud de certificado.  
   
     A continuación, elija el modelo de confianza de TPM. Hay tres opciones de nuevo:  
   
@@ -154,9 +154,9 @@ Para configurar la plantilla de certificado para la atestación de clave de TPM,
   
     |OID|Tipo de atestación de clave|Descripción|Nivel de seguridad|  
     |-------|------------------------|---------------|-------------------|  
-    |1.3.6.1.4.1.311.21.30|EK|"EK verificado":   Para la lista administrada por el administrador de EK|Alto|  
-    |1.3.6.1.4.1.311.21.31|Certificado de aprobación|"Certificado EK comprobado": Cuando se valida la cadena de certificados EK|Medio|  
-    |1.3.6.1.4.1.311.21.32|Credenciales de usuario|"EK de confianza al usarse": En el caso del EK atestado por el usuario|Bajo|  
+    |1.3.6.1.4.1.311.21.30|EK|"EK verificado": para la lista administrada por el administrador de EK|Alto|  
+    |1.3.6.1.4.1.311.21.31|Certificado de aprobación|"Certificado EK comprobado": cuando se valida la cadena de certificados EK|Medio|  
+    |1.3.6.1.4.1.311.21.32|Credenciales de usuario|"EK de confianza en uso": para la EK con atestación del usuario|Baja|  
   
     Los OID se insertarán en el certificado emitido si se selecciona **incluir directivas de emisión** (la configuración predeterminada).  
   
@@ -199,11 +199,11 @@ Para configurar la plantilla de certificado para la atestación de clave de TPM,
   
         El comando EndorsementKeyListDirectories en certutil es una configuración del registro como se describe en la tabla siguiente.  
   
-        |Nombre de valor|Tipo|Datos|  
+        |Nombre de valor|Tipo|data|  
         |--------------|--------|--------|  
-        |EndorsementKeyListDirectories|REG_MULTI_SZ|< ruta de acceso LOCAL o UNC a EKPUB permitir listas ><br /><br />Ejemplo:<br /><br />*\\ \ blueCA. contoso. com\ekpub*<br /><br />*\\ \ bluecluster1. contoso. com\ekpub*<br /><br />D:\ekpub|  
+        |EndorsementKeyListDirectories|REG_MULTI_SZ|< ruta de acceso LOCAL o UNC a EKPUB permitir listas ><br /><br />Por ejemplo:<br /><br />*\\\blueCA.contoso.com\ekpub*<br /><br />*\\\bluecluster1.contoso.com\ekpub*<br /><br />D:\ekpub|  
   
-        HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration @ no__t-0 @ no__t-1  
+        \\HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration <CA Sanitized Name>  
   
         *EndorsementKeyListDirectories* contendrá una lista de rutas de acceso del sistema de archivos local o UNC, cada una de las cuales apunta a una carpeta a la que la CA tiene acceso de lectura. Cada carpeta puede contener cero o más entradas de la lista de permitidos, donde cada entrada es un archivo con un nombre que es el hash SHA-2 de un EKpub de confianza, sin extensión de archivo. 
         La creación o edición de esta configuración de clave del registro requiere un reinicio de la CA, al igual que las opciones de configuración del registro de CA existentes. Sin embargo, las modificaciones en el valor de configuración surtirán efecto inmediatamente y no requerirán que se reinicie la CA.  
@@ -231,11 +231,11 @@ Los campos de atestación de clave no están disponibles si la configuración de
   
 2.  La configuración de criptografía no está configurada correctamente. Asegúrese de que están configurados de la siguiente manera:  
   
-    1.  **Categoría de proveedor**: **Proveedor de almacenamiento de claves**  
+    1.  **Categoría de proveedor**: **proveedor de almacenamiento de claves**  
   
     2.  **Nombre del algoritmo**: **RSA**  
   
-    3.  **Proveedores**: **Proveedor de cifrado de plataforma de Microsoft**  
+    3.  **Proveedores**: **proveedor de criptografía de la plataforma Microsoft**  
   
 3.  La configuración de control de solicitudes no está configurada correctamente. Asegúrese de que están configurados de la siguiente manera:  
   
@@ -275,6 +275,6 @@ Use el cmdlet de Windows PowerShell, **CONFIRM-CAEndorsementKeyInfo**, para comp
         PS C:>new-object System.Security.Cryptography.X509Certificates.X509Certificate2 "c:\diagnose\myEKcert.cer" | Confirm-CAEndorsementKeyInfo  
         ```  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Información general sobre tecnología de Módulo de plataforma segura](https://technet.microsoft.com/library/jj131725.aspx)  
-Recurso @no__t 0External: Módulo de plataforma segura @ no__t-0  
+[Recurso externo: Módulo de plataforma segura](http://www.cs.unh.edu/~it666/reading_list/Hardware/tpm_fundamentals.pdf)  

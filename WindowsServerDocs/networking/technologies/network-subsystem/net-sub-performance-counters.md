@@ -57,7 +57,7 @@ Los siguientes contadores de rendimiento son relevantes para el uso de recursos 
   
   - Longitud de la cola de salida  
   
-    Este contador es la longitud de la cola de paquetes de salida \(in paquetes @ no__t-1. Si es mayor que 2, se producen retrasos. Debería encontrar el cuello de botella y eliminarlo si es posible. Dado que NDIS pone en cola las solicitudes, esta longitud siempre debe ser 0.  
+    Este contador es la longitud de la cola de paquetes de salida \(en los paquetes\). Si es mayor que 2, se producen retrasos. Debería encontrar el cuello de botella y eliminarlo si es posible. Dado que NDIS pone en cola las solicitudes, esta longitud siempre debe ser 0.  
   
 - Información del procesador  
   

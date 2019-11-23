@@ -37,17 +37,17 @@ pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>]
 |-------|--------|
 |/n|Impide que **pathping** intente resolver las direcciones IP de los enrutadores intermedios en sus nombres. Esto puede acelerar la presentación de los resultados de **pathping** .|
 |/h \<MaximumHops >|Especifica el número máximo de saltos en la ruta de acceso para buscar el destino (destino). El valor predeterminado es 30 saltos.|
-|/g \<Hostlist >|Especifica que los mensajes de solicitud de eco usan la opción de ruta de origen flexible del encabezado IP con el conjunto de destinos intermedios especificados en *hostlist*. Con el enrutamiento de origen suelto, los destinos intermedios sucesivos pueden estar separados por uno o varios enrutadores. El número máximo de direcciones o nombres en la lista de hosts es 9. *Hostlist* es una serie de direcciones IP (en notación decimal con puntos) separadas por espacios.|
-|/p \<Period >|Especifica el número de milisegundos que se va a esperar entre pings consecutivos. El valor predeterminado es 250 milisegundos (1/4 segundos).|
+|/g \<hostlist >|Especifica que los mensajes de solicitud de eco usan la opción de ruta de origen flexible del encabezado IP con el conjunto de destinos intermedios especificados en *hostlist*. Con el enrutamiento de origen suelto, los destinos intermedios sucesivos pueden estar separados por uno o varios enrutadores. El número máximo de direcciones o nombres en la lista de hosts es 9. *Hostlist* es una serie de direcciones IP (en notación decimal con puntos) separadas por espacios.|
+|/p \<período >|Especifica el número de milisegundos que se va a esperar entre pings consecutivos. El valor predeterminado es 250 milisegundos (1/4 segundos).|
 |/q \<NumQueries >|Especifica el número de mensajes de solicitud de eco enviados a cada enrutador de la ruta de acceso. El valor predeterminado es 100 consultas.|
-|/w \<timeout >|Especifica el número de milisegundos que se debe esperar para cada respuesta. El valor predeterminado es 3000 milisegundos (3 segundos).|
+|/w \<tiempo de espera >|Especifica el número de milisegundos que se debe esperar para cada respuesta. El valor predeterminado es 3000 milisegundos (3 segundos).|
 |/i \<IPaddress >|Especifica la dirección de origen.|
-|/4 \<IPv4 >|Especifica que PathPing solo usa IPv4.|
+|/4 \<> IPv4|Especifica que PathPing solo usa IPv4.|
 |/6 \<IPv6 >|Especifica que PathPing solo usa IPv6.|
-|@no__t 0TargetName >|Especifica el destino, que se identifica mediante la dirección IP o el nombre de host.|
+|\<TargetName >|Especifica el destino, que se identifica mediante la dirección IP o el nombre de host.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 -   los parámetros de **pathping** distinguen mayúsculas de minúsculas.
 -   Para evitar la congestión de la red, los pings se deben enviar a un ritmo suficientemente lento.
 -   Para minimizar los efectos de las pérdidas de ráfagas, no envíe pings con demasiada frecuencia.
@@ -89,7 +89,7 @@ Cuando se ejecuta **pathping** , los primeros resultados muestran la ruta de acc
 
 En el informe de ejemplo anterior, las columnas **este nodo/vínculo**, **perdido/enviado = PCT** y **Dirección** muestran que el vínculo entre 172.16.87.218 y 192.168.52.1 está quitando el 13 por ciento de los paquetes. Los enrutadores de los saltos 2 y 4 también están descartando los paquetes, pero esta pérdida no afecta a su capacidad para reenviar el tráfico que no se le dirige.
 
-Las tasas de pérdida mostradas para los vínculos, identificadas como una barra vertical ( **|** ) en la columna **Dirección** , indican la congestión del vínculo que está causando la pérdida de paquetes que se reenvían en la ruta de acceso. Las tasas de pérdida mostradas para los enrutadores (identificados por sus direcciones IP) indican que estos enrutadores podrían estar sobrecargados.
+Las tasas de pérdida mostradas para los vínculos, identificadas como barras verticales ( **|** ) en la columna **Dirección** , indican la congestión del vínculo que está causando la pérdida de paquetes que se reenvían en la ruta de acceso. Las tasas de pérdida mostradas para los enrutadores (identificados por sus direcciones IP) indican que estos enrutadores podrían estar sobrecargados.
 
 ## <a name="additional-references"></a>Referencias adicionales
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

@@ -48,7 +48,8 @@ Los ahorros de espacio que pueden obtenerse con Desduplicación de datos depende
     <tbody>
         <tr>
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-clustered-gpfs.png" alt="Illustration of file servers" /></td>
-            <td style="vertical-align:top">@no__t: servidores de archivos de propósito 0General @ no__t-1<br />
+            <td style="vertical-align:top">
+                <b>Servidores de archivos de uso general</b><br />
 Los servidores de archivos de uso general son los servidores de archivos destinados a un uso general que pueden contener alguno de los siguientes tipos de recursos compartidos: <ul>
                     <li>Recursos compartidos del equipo</li>
                     <li>Carpetas particulares de usuario</li>
@@ -60,27 +61,28 @@ Los servidores de archivos de uso general son un buen candidato para Desduplicac
         </tr>
         <tr>
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-vdi.png" alt="Illustration of VDI servers" /></td>
-            <td style="vertical-align:top">implementaciones de infraestructura de escritorio 0Virtualized (VDI) @ no__t-1 @no__t<br />
+            <td style="vertical-align:top">
+                <b>Implementaciones de infraestructura de escritorio virtualizado (VDI)</b><br />
 Los servidores VDI, como <a href="https://technet.microsoft.com/library/cc725560.aspx">Servicios de Escritorio remoto</a>, proporcionan una opción ligera para que las organizaciones aprovisionen de escritorios a los usuarios. Hay muchas razones para que una organización dependa de esa tecnología: <ul>
-                    <li><b>Implementación de aplicaciones</b>: Puede implementar aplicaciones rápidamente en toda la empresa. Esto es especialmente útil cuando tiene aplicaciones que se actualizan con frecuencia, se usan con poca frecuencia o son difíciles de administrar.</li>
-                    <li><b>Consolidación de aplicaciones</b>: Al instalar y ejecutar aplicaciones desde un conjunto de máquinas virtuales administradas centralmente, se elimina la necesidad de actualizar las aplicaciones en los equipos cliente. Esta opción también reduce la cantidad de ancho de banda de red que se necesita para acceder a las aplicaciones.</li>
-                    <li><b>Acceso remoto</b>: Los usuarios pueden acceder a aplicaciones empresariales desde dispositivos como equipos domésticos, quioscos, hardware de baja potencia y sistemas operativos que no sean Windows.</li>
-                    <li><b>Acceso a sucursales</b>: Las implementaciones de VDI pueden proporcionar un mejor rendimiento de la aplicación para los trabajadores de sucursales que necesitan acceder a almacenes de datos centralizados. A veces las aplicaciones con un uso intensivo de datos no tienen protocolos cliente/servidor optimizados para conexiones de baja velocidad.</li>
+                    <li><b>Implementación de aplicaciones</b>: Es posible implementar rápidamente las aplicaciones en toda la empresa. Esto es especialmente útil cuando tiene aplicaciones que se actualizan con frecuencia, se usan con poca frecuencia o son difíciles de administrar.</li>
+                    <li><b>Consolidación de aplicaciones</b>: Al instalar y ejecutar aplicaciones desde un conjunto de máquinas virtuales administradas de forma centralizada, se elimina la necesidad de actualizar las aplicaciones en los equipos cliente. Esta opción también reduce la cantidad de ancho de banda de red que se necesita para acceder a las aplicaciones.</li>
+                    <li><b>Acceso remoto</b>: Los usuarios pueden acceder a aplicaciones empresariales desde dispositivos como equipos domésticos, quioscos, hardware de baja potencia y sistemas operativos distintos de Windows.</li>
+                    <li><b>Acceso a sucursales</b>: Las implementaciones de VDI pueden proporcionar un mejor rendimiento de la aplicación para los empleados de sucursales que necesiten acceder a almacenes de datos centralizados. A veces las aplicaciones con un uso intensivo de datos no tienen protocolos cliente/servidor optimizados para conexiones de baja velocidad.</li>
                 </ul>
 Las implementaciones de VDI son excelentes candidatas para Desduplicación de datos porque los discos duros virtuales que llevan los Escritorios remotos a los usuarios son prácticamente idénticos. Además, Desduplicación de datos puede ayudarle con los arranques simultáneos de VDI (lo que se conoce como <em>boot storm</em>), que reduce el rendimiento de almacenamiento cuando muchos usuarios inician sesión en el escritorio al mismo tiempo a la vez al comienzo del día.
             </td>
         </tr>
         <tr>
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-backup.png" alt="Illustration of backup applications" /></td>
-            <td style="vertical-align:top">destinos 
-                <b>Backup, como aplicaciones de copia de seguridad virtualizadas @ no__t-1<br />
+            <td style="vertical-align:top">
+                <b>Destinos de copia de seguridad, como aplicaciones de copia de seguridad virtualizadas</b><br />
 Las aplicaciones de copia de seguridad, como <a href="https://technet.microsoft.com/library/hh758173.aspx">Microsoft Data Protection Manager (DPM)</a>, son candidatas perfectas para Desduplicación de datos debido a una duplicación significativa entre las instantáneas de copia de seguridad.
             </td>
         </tr>
         <tr>
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-other.png" alt="Illustration of other workloads" /></td>
-            <td style="vertical-align:top">cargas de trabajo de 
-                <b>Other @ no__t-1<br />
+            <td style="vertical-align:top">
+                <b>Otras cargas de trabajo</b><br />
                 <a href="install-enable.md#enable-dedup-candidate-workloads" data-raw-source="[Other workloads may also be excellent candidates for Data Deduplication](install-enable.md#enable-dedup-candidate-workloads)">Otras cargas de trabajo también pueden ser candidatas perfectas para Desduplicación de datos</a>.
             </td>
         </tr>

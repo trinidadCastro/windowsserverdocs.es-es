@@ -38,10 +38,10 @@ Los usuarios administrativos pueden realizar tareas que afectan a los demás usu
 Un aspecto importante relacionado con las cuentas de usuario es que a cada una se le asigna una biblioteca **Documentos** exclusiva del Explorador de Windows, que incluye la carpeta **Mis documentos**. Si los usuarios estándar del sistema MultiPoint Services van a almacenar documentos privados en su biblioteca **Documentos** en el Explorador de Windows, también deberían iniciar sesión en el sistema MultiPoint Services con un nombre de usuario y una contraseña únicos que solo ellos conozcan. Para más información sobre cómo almacenar documentos en el Explorador de Windows, vea el tema [Administrar archivos de usuario](Manage-User-Files.md).  
   
 > [!TIP]  
-> Para una mayor seguridad del sistema, todas las contraseñas de los usuarios deben ser contraseñas seguras. Una contraseña segura es aquella que no se puede adivinar o descifrar con facilidad, tiene al menos ocho caracteres de longitud, no contiene todo o parte del nombre de la cuenta del usuario y contiene al menos tres de las cuatro categorías de caracteres siguientes: caracteres en mayúsculas, minúsculas caracteres, números y símbolos encontrados en un teclado (como!, @, #).  
+> Para una mayor seguridad del sistema, todas las contraseñas de los usuarios deben ser contraseñas seguras. Una contraseña segura es aquella que no se puede adivinar o descifrar con facilidad, tiene al menos ocho caracteres de longitud, no contiene todo o parte del nombre de la cuenta del usuario y contiene al menos tres de las cuatro categorías de caracteres siguientes: caracteres en mayúsculas, caracteres en minúsculas, números y símbolos que se encuentran en un teclado (como!, @, #).  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Crear una cuenta de usuario administrativo](Create-an-Administrative-User-Account.md)  
 [Crear una cuenta de usuario estándar](Create-a-Standard-User-Account.md)  
-[Administrar archivos](Manage-User-Files.md)
-de usuario[administrar cuentas de usuario](Manage-User-Accounts.md)
+[Administrar archivos de usuario](Manage-User-Files.md)
+[administrar cuentas de usuario](Manage-User-Accounts.md)

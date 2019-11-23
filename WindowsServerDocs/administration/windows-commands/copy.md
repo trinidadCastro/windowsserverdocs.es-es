@@ -46,11 +46,11 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
 |/z|Copia los archivos en red en modo reiniciable.|
 |/a|Indica un archivo de texto ASCII.|
 |b|Indica un archivo binario.|
-|@no__t 0Source >|Obligatorio. Especifica la ubicación desde la que desea copiar un archivo o un conjunto de archivos. El *origen* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
-|@no__t 0Destination >|Obligatorio. Especifica la ubicación en la que desea copiar un archivo o un conjunto de archivos. El *destino* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
+|> de \<de origen|Obligatorio. Especifica la ubicación desde la que desea copiar un archivo o un conjunto de archivos. El *origen* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
+|> de destino de \<|Obligatorio. Especifica la ubicación en la que desea copiar un archivo o un conjunto de archivos. El *destino* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Puede copiar un archivo de texto ASCII que use un carácter de fin de archivo (CTRL + Z) para indicar el final del archivo.
 -   Usar **/a**
@@ -77,7 +77,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
     Si **/y** está preestablecido en la variable de entorno COPYCMD, puede invalidar esta configuración mediante el uso de **/-y** en la línea de comandos. De forma predeterminada, se le preguntará cuando reemplace este valor, a menos que el comando de **copia** se ejecute en un script por lotes.
 -   Anexar archivos
 
-    Para anexar archivos, especifique un único archivo para el *destino*, pero varios archivos para el *origen* (use caracteres comodín o el formato de *archivo1*+*archivo2*+*archivo3* ).
+    Para anexar archivos, especifique un único archivo para el *destino*, pero varios archivos para el *origen* (usar caracteres comodín o *archivo1*+el formato de *archivo2*+*archivo3* ).
 -   Usar **/z**
 
     Si la conexión se pierde durante la fase de copia (por ejemplo, si el servidor se desconecta y se interrumpe la conexión), la **copia/z** se reanudará después de que se haya restablecido la conexión. **/z** también muestra el porcentaje de la operación de copia que se ha completado para cada archivo.

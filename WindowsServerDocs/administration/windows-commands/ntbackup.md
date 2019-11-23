@@ -26,7 +26,7 @@ ms.locfileid: "71372682"
 
 El comando **NTBackup** no está disponible en Windows Vista o windows Server 2008. En su lugar, debe usar el comando **Wbadmin** y los subcomandos para realizar copias de seguridad y restaurar el equipo y los archivos desde un símbolo del sistema.
 
-No se pueden recuperar las copias de seguridad creadas con **ntbackup** mediante **wbadmin**. Sin embargo, existe una versión de **NTBackup** disponible como descarga para los usuarios de windows Server 2008 y Windows Vista que desean recuperar copias de seguridad creadas con **NTBackup**. Esta versión descargable de **NTBackup** solo permite realizar recuperaciones de copias de seguridad heredadas y no se puede usar en equipos que ejecutan windows Server 2008 o Windows Vista para crear nuevas copias de seguridad. Para descargar esta versión de **NTBackup**, consulte [@no__t 2](https://go.microsoft.com/fwlink/?LinkId=82917).
+No se pueden recuperar las copias de seguridad creadas con **ntbackup** mediante **wbadmin**. Sin embargo, existe una versión de **NTBackup** disponible como descarga para los usuarios de windows Server 2008 y Windows Vista que desean recuperar copias de seguridad creadas con **NTBackup**. Esta versión descargable de **NTBackup** solo permite realizar recuperaciones de copias de seguridad heredadas y no se puede usar en equipos que ejecutan windows Server 2008 o Windows Vista para crear nuevas copias de seguridad. Para descargar esta versión de **NTBackup**, vea [https://go.microsoft.com/fwlink/?LinkId=82917](https://go.microsoft.com/fwlink/?LinkId=82917).
 
 #### <a name="additional-references"></a>Referencias adicionales
 

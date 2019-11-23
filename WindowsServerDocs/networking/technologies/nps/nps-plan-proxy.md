@@ -19,7 +19,7 @@ ms.locfileid: "71396015"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Cuando se implementa el servidor de directivas de redes (NPS) como un proxy Servicio de autenticación remota telefónica de usuario \(RADIUS @ no__t-1, NPS recibe solicitudes de conexión de clientes RADIUS, como servidores de acceso a la red u otros proxy RADIUS y, a continuación, los reenvía solicitudes de conexión a servidores que ejecutan NPS u otros servidores RADIUS. Puede utilizar estas directrices de planeación para simplificar la implementación de RADIUS.
+Cuando se implementa el servidor de directivas de redes (NPS) como Servicio de autenticación remota telefónica de usuario \(RADIUS\) proxy, NPS recibe solicitudes de conexión de clientes RADIUS, como servidores de acceso a la red u otros proxies RADIUS y, a continuación, reenvía estas solicitudes de conexión a servidores que ejecutan NPS u otros servidores RADIUS. Puede utilizar estas directrices de planeación para simplificar la implementación de RADIUS.
 
 Estas directrices de planeación no incluyen las circunstancias en las que desea implementar NPS como un servidor RADIUS. Cuando se implementa NPS como un servidor RADIUS, NPS realiza la autenticación, la autorización y la administración de cuentas para las solicitudes de conexión para el dominio local y para los dominios que confían en el dominio local.
 
@@ -39,7 +39,7 @@ Antes de implementar NPS como un proxy RADIUS en la red, use las siguientes dire
 
 ## <a name="plan-nps-configuration"></a>Planear la configuración de NPS
 
-Cuando se usa NPS como un proxy RADIUS, NPS reenvía las solicitudes de conexión a un NPS u otros servidores RADIUS para su procesamiento. Por este motivo, la pertenencia al dominio del proxy NPS es irrelevante. No es necesario registrar el proxy en Active Directory Domain Services \(AD DS @ no__t-1 porque no necesita acceso a las propiedades de acceso telefónico de las cuentas de usuario. Además, no es necesario configurar directivas de red en un proxy NPS porque el proxy no realiza la autorización para las solicitudes de conexión. El proxy NPS puede ser un miembro de dominio o puede ser un servidor independiente sin pertenencia a dominio.
+Cuando se usa NPS como un proxy RADIUS, NPS reenvía las solicitudes de conexión a un NPS u otros servidores RADIUS para su procesamiento. Por este motivo, la pertenencia al dominio del proxy NPS es irrelevante. No es necesario registrar el proxy en Active Directory Domain Services \(AD DS\) porque no necesita acceso a las propiedades de acceso telefónico de las cuentas de usuario. Además, no es necesario configurar directivas de red en un proxy NPS porque el proxy no realiza la autorización para las solicitudes de conexión. El proxy NPS puede ser un miembro de dominio o puede ser un servidor independiente sin pertenencia a dominio.
 
 NPS debe estar configurado para comunicarse con clientes RADIUS, también denominados servidores de acceso a la red, mediante el protocolo RADIUS. Además, puede configurar los tipos de eventos que NPS registra en el registro de eventos y puede escribir una descripción para el servidor.
 
@@ -59,7 +59,7 @@ Durante la planeación de la configuración del proxy NPS, puede seguir estos pa
 
 ## <a name="plan-radius-clients"></a>Planeación de clientes RADIUS
 
-Los clientes RADIUS son servidores de acceso a la red, como puntos de acceso inalámbricos, servidores de red privada virtual \(VPN @ no__t-1, conmutadores compatibles con 802.1 X y servidores de acceso telefónico. Los proxies RADIUS, que reenvían los mensajes de solicitud de conexión a los servidores RADIUS, también son clientes RADIUS. NPS es compatible con todos los servidores de acceso a la red y los proxies RADIUS que cumplen con el protocolo RADIUS, como se describe en RFC 2865, "servicio de autenticación remota telefónica de usuario \(RADIUS @ no__t-1" y RFC 2866, "cuentas RADIUS".
+Los clientes RADIUS son servidores de acceso a la red, como puntos de acceso inalámbricos, redes privadas virtuales \(servidores VPN\), conmutadores compatibles con 802.1 X y servidores de acceso telefónico. Los proxies RADIUS, que reenvían los mensajes de solicitud de conexión a los servidores RADIUS, también son clientes RADIUS. NPS es compatible con todos los servidores de acceso a la red y los proxies RADIUS que cumplen con el protocolo RADIUS, como se describe en RFC 2865, "servicio de usuario de acceso telefónico de autenticación remota \(RADIUS\)," y RFC 2866, "cuentas RADIUS".
 
 Además, los puntos de acceso inalámbrico y los conmutadores deben ser capaces de la autenticación de 802.1 X. Si desea implementar el protocolo de autenticación extensible (EAP) o el protocolo de autenticación extensible protegido (PEAP), los puntos de acceso y los conmutadores deben admitir el uso de EAP.
 
@@ -155,7 +155,7 @@ Durante el planeamiento de cuentas NPS, puede seguir estos pasos.
 
 - Planee los pasos de configuración de la Directiva de solicitud de conexión si planea reenviar mensajes de cuentas a otros servidores. Si deshabilita la contabilidad local para el proxy NPS, cada directiva de solicitud de conexión que configure en ese proxy debe tener habilitado el reenvío de mensajes de contabilidad y configurado correctamente.
 
-- Determine el formato de registro que desea usar: Archivos de registro de formato de IAS, archivos de registro de formato compatible con la base de datos o registro de SQL Server de NPS.
+- Determine el formato de registro que desea usar: los archivos de registro de formato de IAS, los archivos de registro de formato compatible con la base de datos o el registro de SQL Server de NPS.
 
 Para configurar el equilibrio de carga para NPS como proxy RADIUS, consulte [equilibrio de carga del servidor proxy NPS](nps-manage-proxy-lb.md).
 

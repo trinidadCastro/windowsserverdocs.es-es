@@ -38,10 +38,10 @@ rem [<Comment>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Comment >|Especifica una cadena de caracteres que se va a incluir como comentario.|
+|\<comentario >|Especifica una cadena de caracteres que se va a incluir como comentario.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   El comando **REM** no muestra comentarios en la pantalla. Debe usar el comando **echo on** en el lote o la configuración. Archivo SYS para mostrar los comentarios en la pantalla.
 -   No se puede usar un carácter de redirección ( **<** o **>** ) o una canalización ( **|** ) en un Comentario de archivo por lotes.

@@ -40,7 +40,7 @@ Puede usar la consola de administración de en el servidor de acceso remoto para
   
 4.  Verá la lista de usuarios que están conectados al servidor de acceso remoto y estadísticas detalladas sobre ellos. Haga clic en la primera fila de la lista que corresponde a un cliente. Al seleccionar una fila, se muestra la actividad de usuario remoto en el panel de vista previa.  
   
-](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -52,7 +52,7 @@ Las estadísticas de usuario se pueden filtrar en función de las selecciones de
   
 |Nombre del campo|Valor|  
 |-------|-----|  
-|Nombre de usuario|El nombre de usuario o alias del usuario remoto. Se pueden usar caracteres comodín para seleccionar un grupo de usuarios, como contoso @ no__t-0 * o \* \ Administrator.|  
+|Nombre de usuario|El nombre de usuario o alias del usuario remoto. Se pueden usar caracteres comodín para seleccionar un grupo de usuarios, como contoso\\* o \*\Administrator.|  
 |Nombre de host|El nombre de la cuenta de equipo del usuario remoto. También se puede especificar una dirección IPv4 o IPv6.|  
 |Tipo|DirectAccess o VPN. Si se selecciona DirectAccess, se muestran todos los usuarios remotos que se conectan mediante DirectAccess. Si se selecciona VPN, se muestran todos los usuarios remotos que se conectan mediante VPN.|  
 |Dirección ISP|Dirección IPv4 o IPv6 del usuario remoto.|  

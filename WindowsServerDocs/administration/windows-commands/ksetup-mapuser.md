@@ -36,10 +36,10 @@ ksetup /mapuser <Principal> <Account>
 
 |  Parámetro   |                                                   Descripción                                                   |
 |--------------|-----------------------------------------------------------------------------------------------------------------|
-| @no__t 0Principal > |              El nombre de dominio completo de cualquier entidad de seguridad; por ejemplo, mike@corp.CONTOSO.COM.              |
-|  @no__t 0Account >  | Cualquier cuenta o nombre de grupo de seguridad que exista en este equipo, como invitado, usuarios del dominio o administrador. |
+| \<principal > |              El nombre de dominio completo de cualquier entidad de seguridad; por ejemplo, mike@corp.CONTOSO.COM.              |
+|  \<cuenta >  | Cualquier cuenta o nombre de grupo de seguridad que exista en este equipo, como invitado, usuarios del dominio o administrador. |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Una cuenta se puede identificar específicamente, como los invitados del dominio. O bien, puede usar el carácter comodín (*) para incluir todas las cuentas.
 

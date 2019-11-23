@@ -43,11 +43,11 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/p: @no__t -0Policyfile. XML >|Especifica la ruta de acceso y el nombre de archivo del archivo de directiva. XML que se debe aplicar. Se debe especificar este parámetro.|
-|/g: @no__t 0GPODisplayName >|Especifica el nombre para mostrar del GPO. Se debe especificar este parámetro.|
+|/p:\<policyFile. XML >|Especifica la ruta de acceso y el nombre de archivo del archivo de directiva. XML que se debe aplicar. Se debe especificar este parámetro.|
+|/g:\<GPODisplayName >|Especifica el nombre para mostrar del GPO. Se debe especificar este parámetro.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Scwcmd. exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
 

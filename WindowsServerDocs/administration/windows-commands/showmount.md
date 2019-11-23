@@ -32,13 +32,13 @@ showmount {-e|-a|-d} <Server>
 ```
 
 ## <a name="description"></a>Descripción  
-El comando **showmount** @ no__t-1line utilidad muestra información acerca de los sistemas de archivos montados exportados por servidor para NFS en el equipo especificado por *servidor*. Si no se proporciona el *servidor* , **showmount** muestra información sobre el equipo en el que se ejecuta el comando **showmount** .  
+La utilidad de línea de\-de comandos **showmount** muestra información acerca de los sistemas de archivos montados exportados por servidor para NFS en el equipo especificado por *servidor*. Si no se proporciona el *servidor* , **showmount** muestra información sobre el equipo en el que se ejecuta el comando **showmount** .  
   
 Debe proporcionar una de las siguientes opciones:  
   
-- **\-E** -muestra todos los sistemas de archivos exportados en el servidor.  
-- **\-A** -muestra todos los clientes de Network File System \(NFS @ no__t-3 y los directorios del servidor que se han montado.  
-- **\-D** : muestra todos los directorios del servidor montados actualmente por clientes NFS.  
+- **\-e** : muestra todos los sistemas de archivos exportados en el servidor.  
+- **\-a** : muestra todos los clientes del sistema de archivos de red \(NFS\) y los directorios en el servidor montados.  
+- **\-d** : muestra todos los directorios del servidor montados actualmente por clientes NFS.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Servicios de referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)  

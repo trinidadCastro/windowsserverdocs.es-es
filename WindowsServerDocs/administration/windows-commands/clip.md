@@ -39,11 +39,11 @@ clip < <FileName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Command >|Especifica un comando cuya salida se desea enviar al portapapeles de Windows.|
-|\<Nombre de archivo >|Especifica un archivo cuyo contenido desea enviar al portapapeles de Windows.|
+|\<> de comandos|Especifica un comando cuya salida se desea enviar al portapapeles de Windows.|
+|\<nombre de archivo >|Especifica un archivo cuyo contenido desea enviar al portapapeles de Windows.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Puede usar el comando **clip** para copiar los datos directamente en cualquier aplicación que pueda recibir texto del portapapeles.
 

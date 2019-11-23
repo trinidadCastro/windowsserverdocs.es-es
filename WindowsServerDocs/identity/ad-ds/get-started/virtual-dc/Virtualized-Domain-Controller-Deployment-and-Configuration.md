@@ -91,34 +91,34 @@ Ninguna de estas operaciones está contemplada por la semántica VM-GenerationID
 >   
 > Después de restaurar una instantánea, se perderán de forma permanente los deltas de los cambios previamente no replicados que se originaron en ese controlador de dominio tras la instantánea. La restauración segura implementa la restauración no autoritativa automatizada para evitar *solo* la cuarentena accidental de controladores de dominio.  
   
-Para obtener más información sobre las burbujas de USN y los objetos persistentes, vea [Troubleshooting Active Directory operaciones que dan error 8606: "Se asignaron atributos insuficientes para crear un objeto" ](https://support.microsoft.com/kb/2028495).  
+Para obtener más información sobre burbujas de USN y objetos persistentes, consulte [Solución de problemas de operaciones de Active Directory que generan el error 8606: "No se especificaron atributos suficientes para crear un objeto"](https://support.microsoft.com/kb/2028495).  
   
 ## <a name="BKMK_VDCCloning"></a>Clonación de controladores de dominio virtualizados  
 Existen varias fases y pasos en la clonación de un controlador de dominio virtualizado, independientemente de si se utilizan herramientas gráficas o Windows PowerShell. En un nivel alto, las tres fases son las siguientes:  
   
 **Preparar el entorno**  
   
--   Paso 1: Validar que el hipervisor sea compatible con el identificador de generación de VM y, por lo tanto, la clonación  
+-   Paso 1: validar que el hipervisor sea compatible con el identificador de generación de VM y, por lo tanto, la clonación.  
   
--   Paso 2: Compruebe que el rol de emulador de PDC esté hospedado en un controlador de dominio que ejecute Windows Server 2012 y que esté en línea y que el controlador de dominio clonado pueda acceder a él durante la clonación.  
+-   Paso 2: comprobar que el rol de emulador de PDC esté hospedado en un controlador de dominio que ejecute Windows Server 2012 y que esté en línea y que el controlador de dominio clonado pueda acceder a él durante la clonación.  
   
 **Preparar el controlador de dominio de origen**  
   
--   Paso 3: Autorizar el controlador de dominio de origen para la clonación  
+-   Paso 3: autorizar el controlador de dominio de origen para la clonación.  
   
--   Paso 4: Eliminar los servicios o programas incompatibles o agregarlos al archivo CustomDCCloneAllowList.xml.  
+-   Paso 4: eliminar los servicios o programas incompatibles o agregarlos al archivo CustomDCCloneAllowList.xml.  
   
--   Paso 5: Crear DCCloneConfig.xml  
+-   Paso 5: crear el archivo DCCloneConfig.xml  
   
--   Paso 6: Desconectar el controlador de dominio de origen  
+-   Paso 6: desconectar el controlador de dominio de origen  
   
 **Crear el controlador de dominio clonado**  
   
--   Paso 7: Copiar o exportar la VM de origen y agregar el XML si todavía no se ha copiado  
+-   Paso 7: copiar o exportar la VM de origen y agregar el XML si todavía no se ha copiado.  
   
--   Paso 8: Crear una máquina virtual nueva desde la copia  
+-   Paso 8: crear una máquina virtual nueva desde la copia.  
   
--   Paso 9: Iniciar la máquina virtual nueva para comenzar la clonación  
+-   Paso 9: iniciar la máquina virtual nueva para comenzar la clonación.  
   
 No existe ninguna diferencia en el procedimiento, independientemente de si se utilizan herramientas gráficas como la consola de administración de Hyper-V o herramientas de línea de comandos como Windows PowerShell, por lo que estos pasos se presentan una sola vez con ambas interfaces. En este tema se aportan ejemplos de Windows PowerShell para que explores la automatización de un extremo a otro del proceso de clonación; no son necesarios para ninguno de los pasos. En Windows Server 2012 no se incluye ninguna herramienta de administración gráfica para controladores de dominio virtualizados.  
   
@@ -427,7 +427,7 @@ Por ejemplo, para exportar una VM llamada DC2-SOURCECLONE a una carpeta llamada 
 > Hyper-V de Windows Server 2012 es compatible con nuevas capacidades de exportación e importación que no se incluyen en esta explicación. Revisa TechNet para obtener más información.  
   
 #### <a name="exporting-merged-disks-using-hyper-v"></a>Exportar discos combinados utilizando Hyper-V  
-La última opción es usar las opciones de combinación y conversión de discos dentro de Hyper-V. Estas opciones te permiten copiar una estructura de disco existente (también cuando se incluyen archivos de instantánea AVHD/AVHDX) en un solo disco nuevo. Al igual que en el escenario de copia de disco manual, esto está destinado principalmente a máquinas virtuales más sencillas que solo utilizan una sola unidad, como C: \\. Su única ventaja es que, a diferencia de la copia manual, no te obliga a eliminar primero las instantáneas. Esta operación es por fuerza más lenta que simplemente eliminar las instantáneas y copiar los discos.  
+La última opción es usar las opciones de combinación y conversión de discos dentro de Hyper-V. Estas opciones te permiten copiar una estructura de disco existente (también cuando se incluyen archivos de instantánea AVHD/AVHDX) en un solo disco nuevo. Al igual que en el escenario de copia de disco manual, esto está destinado principalmente a máquinas virtuales más sencillas que solo utilizan una sola unidad, como C:\\. Su única ventaja es que, a diferencia de la copia manual, no te obliga a eliminar primero las instantáneas. Esta operación es por fuerza más lenta que simplemente eliminar las instantáneas y copiar los discos.  
   
 ##### <a name="hyper-v-manager-method"></a>Método de Administrador de Hyper-V  
 Para crear un disco combinado utilizando el Administrador de Hyper-V:  
@@ -647,7 +647,7 @@ Por ejemplo:
 > [!WARNING]
 > Asegúrate de que, al importar el equipo, las direcciones MAC estáticas no se asignaron al controlador de dominio de origen. Si se clona un equipo de origen con una MAC estática, los equipos copiados no enviarán ni recibirán tráfico de red correctamente. Establece una nueva dirección MAC exclusiva, estática o dinámica, si este es el caso. Puedes ver si una VM utiliza direcciones MAC estáticas con el comando:  
 > 
-> **Get-VM-VMName**   
+>   **Get-VM-VMName**  
 >  ***Test-VM* | Get-VMNetworkAdapter | FL \\** *  
   
 ### <a name="step-9---clone-the-new-virtual-machine"></a>Paso 9 - Clonar la nueva máquina virtual  

@@ -100,7 +100,7 @@ En función de las necesidades de cada escenario de implementación concreto, ot
 
 Puede configurar túneles de dispositivo mediante el uso de un script de Windows PowerShell y el puente de Instrumental de administración de Windows (WMI). El túnel de dispositivo VPN Always On debe configurarse en el contexto de la cuenta de **sistema local** . Para ello, será necesario usar [PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec), una de las [PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools) incluidas en el conjunto de aplicaciones de [Sysinternals](https://docs.microsoft.com/sysinternals/) .
 
-Para obtener instrucciones sobre cómo implementar un perfil por dispositivo `(.\Device)` frente a un perfil `(.\User)` por usuario, consulte [uso de scripts de PowerShell con el proveedor de puente WMI](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider).
+Para obtener instrucciones sobre cómo implementar un perfil por dispositivo `(.\Device)` frente a un perfil de `(.\User)` por usuario, consulte [uso de scripts de PowerShell con el proveedor de puente WMI](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider).
 
 Ejecute el siguiente comando de Windows PowerShell para comprobar que ha implementado correctamente un perfil de dispositivo:
 
@@ -108,7 +108,7 @@ Ejecute el siguiente comando de Windows PowerShell para comprobar que ha impleme
   Get-VpnConnection -AllUserConnection
   ```
 
-La salida muestra una lista de los perfiles de VPN Device @ no__t-0wide que se implementan en el dispositivo.
+En la salida se muestra una lista de los perfiles de VPN de\-Wide Device que se implementan en el dispositivo.
 
 ### <a name="example-windows-powershell-script"></a>Script de ejemplo de Windows PowerShell
 
@@ -186,5 +186,5 @@ A continuación se muestran los recursos de puerta de enlace del servidor de acc
 - [Configuración del acceso remoto basado en IKEv2](https://technet.microsoft.com/library/ff687731.aspx)
 
 >[!IMPORTANT]
->Al usar el túnel de dispositivo con una puerta de enlace RAS de Microsoft, tendrá que configurar el servidor RRAS para que admita la autenticación de certificado de equipo IKEv2 habilitando el método de autenticación **permitir la autenticación de certificados de equipo para IKEv2** como se describe. [aquí](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29). Una vez habilitada esta configuración, se recomienda encarecidamente que se use el cmdlet de PowerShell **set-VpnAuthProtocol** , junto con el parámetro opcional **RootCertificateNameToAccept** , para asegurarse de que las conexiones IKEv2 de RRAS solo se permiten para Certificados de cliente de VPN que encadenan a una entidad de certificación raíz interna o privada definida explícitamente. Como alternativa, el almacén de **entidades de certificación raíz de confianza** en el servidor RRAS debe modificarse para asegurarse de que no contiene entidades de certificación públicas, como se describe [aquí](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/). También es posible que sea necesario tener en cuenta métodos similares para otras puertas de enlace de VPN.
+>Al usar el túnel de dispositivo con una puerta de enlace RAS de Microsoft, tendrá que configurar el servidor RRAS para que admita la autenticación de certificado de equipo IKEv2 habilitando el método de autenticación **permitir la autenticación de certificados de equipo para IKEv2** como se describe [aquí](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29). Una vez habilitada esta configuración, se recomienda encarecidamente que se use el cmdlet de PowerShell **set-VpnAuthProtocol** , junto con el parámetro opcional **RootCertificateNameToAccept** , para asegurarse de que las conexiones IKEv2 de RRAS solo se permiten para los certificados de cliente VPN que se encadenan a una entidad de certificación raíz interna o privada definida explícitamente. Como alternativa, el almacén de **entidades de certificación raíz de confianza** en el servidor RRAS debe modificarse para asegurarse de que no contiene entidades de certificación públicas, como se describe [aquí](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/). También es posible que sea necesario tener en cuenta métodos similares para otras puertas de enlace de VPN.
 

@@ -32,24 +32,24 @@ La cuenta de usuario de WMSshell es una cuenta del sistema que Multipoint Servic
 > [!NOTE]  
 > Para obtener información sobre cómo actualizar las directivas de grupo, consulte [Editor de directivas de grupo local](https://technet.microsoft.com/library/dn265982.aspx).  
   
-**DIRECTIVAS** Configuración de usuario > Plantillas administrativas > panel de control > Personalización  
+**Directiva:** Configuración de usuario > Plantillas administrativas > panel de control > **Personalización**  
   
 Asigne los valores siguientes:  
   
-|Parámetro|Valores|  
+|Valor|Valores|  
 |-----------|----------|  
-|Habilitar protector de pantalla|Deshabilitada|  
-|Tiempo de espera del protector de pantalla|Deshabilitada<br /><br />Segundos: XXX|  
-|Proteger el protector de pantalla mediante contraseña|Deshabilitada|  
+|Habilitar protector de pantalla|Deshabilitado|  
+|Tiempo de espera del protector de pantalla|Deshabilitado<br /><br />Segundos: XXX|  
+|Proteger el protector de pantalla mediante contraseña|Deshabilitado|  
   
-**DIRECTIVAS** Configuración del equipo > configuración de Windows > configuración de seguridad > directivas locales > asignación **de derechos de usuario > permitir el inicio de sesión local**  
+**Directiva:** Configuración del equipo > configuración de Windows > configuración de seguridad > directivas locales > asignación **de derechos de usuario > permitir el inicio de sesión local**  
   
-|Parámetro|Valores|  
+|Valor|Valores|  
 |-----------|----------|  
 |Permitir el inicio de sesión local|Asegúrese de que la lista de cuentas incluye la cuenta WMSshell.<br /><br />**Nota:** De forma predeterminada, la cuenta WMSshell es un miembro del grupo usuarios. Si el grupo de usuarios está en la lista y WMSshell es un miembro del grupo de usuarios, no es necesario que agregue la cuenta de WMSshell a la lista.|  
   
 > [!IMPORTANT]  
-> Cuando establezca directivas de grupo, asegúrese de que las directivas no interfieren con las actualizaciones automáticas y los informes de errores de Windows en el servidor multipoint. Se establecen mediante las opciones **instalar actualizaciones automáticamente** y **automática informe de errores de Windows** que se seleccionaron durante la instalación de Windows MultiPoint Server, configuradas en Multipoint Manager mediante **Editar configuración del servidor**, o bien configurado en actualizaciones programadas para protección de disco.  
+> Cuando establezca directivas de grupo, asegúrese de que las directivas no interfieren con las actualizaciones automáticas y los informes de errores de Windows en el servidor multipoint. Se establecen mediante las opciones **instalar actualizaciones automáticamente** y **automática informe de errores de Windows** que se seleccionaron durante la instalación de Windows MultiPoint Server, configuradas en Multipoint Manager mediante **Editar configuración del servidor**o configurado en actualizaciones programadas para protección de disco.  
   
 ## <a name="update-the-registry"></a>Actualizar el registro  
 Para una implementación de dominio de Multipoint Services, debe actualizar las siguientes subclaves del registro.  
@@ -63,9 +63,9 @@ Para una implementación de dominio de Multipoint Services, debe actualizar las 
   
 2.  En el panel izquierdo, busque la siguiente subclave del registro y selecciónela:  
   
-    HKEY_USERS @ no__t-0SIDofWMSshell > \Software\Policies\Microsoft\Windows\Control Panel\Desktop  
+    HKEY_USERS\<SIDofWMSshell > \Software\Policies\Microsoft\Windows\Control Panel\Desktop  
   
-    donde "<SIDofWMSshell>" es el identificador de seguridad (SID) de la cuenta WMSshell. Para averiguar cómo identificar el SID, consulte [cómo asociar un nombre de usuario a un identificador de seguridad (SID)](https://support.microsoft.com/kb/154599).  
+    donde '<SIDofWMSshell>' es el identificador de seguridad (SID) de la cuenta WMSshell. Para averiguar cómo identificar el SID, consulte [cómo asociar un nombre de usuario a un identificador de seguridad (SID)](https://support.microsoft.com/kb/154599).  
   
 3.  En la lista de la derecha, actualice las siguientes subclaves.  
   

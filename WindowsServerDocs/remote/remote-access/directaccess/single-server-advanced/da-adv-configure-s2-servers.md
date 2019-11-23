@@ -56,7 +56,7 @@ Para implementar acceso remoto debes instalar el rol de acceso remoto en un serv
   
 6.  En la página **Progreso de la instalación**, comprueba que la instalación se ha completado correctamente y haz clic en **Cerrar**.  
   
-![Installation progreso correcto](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+![progreso de la instalación correctos](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -77,7 +77,7 @@ Esta guía usa una implementación de solo DirectAccess en los procedimientos de
   
 #### <a name="to-configure-the-deployment-type"></a>Para configurar el tipo de implementación  
   
-1.  En el servidor de acceso remoto, abre la consola de administración de acceso remoto: En la pantalla **Inicio** , escriba**RAMgmtUI. exe**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+1.  En el servidor de acceso remoto, abra la consola de administración de acceso remoto: en la pantalla **Inicio** , escriba**RAMgmtUI. exe**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
   
 2.  En el panel central de la consola de administración de acceso remoto, haz clic en **Ejecutar el Asistente para la instalación de acceso remoto**.  
   
@@ -121,7 +121,7 @@ Para que un equipo cliente se aprovisione para el uso de DirectAccess, este debe
         > [!NOTE]  
         > Al habilitar la resolución local de nombres, los usuarios que ejecuten el Asistente para la conectividad de red pueden seleccionar que se resuelvan los nombres mediante servidores DNS configurados en el equipo cliente de DirectAccess.  
   
-9. Haga clic en **Finalizar**.  
+9. Haz clic en **Finalizar**.  
   
 ## <a name="BKMK_Server"></a>2,4. Configurar el servidor de acceso remoto  
 Para implementar acceso remoto es necesario configurar el servidor de acceso remoto con los adaptadores de red correctos, una URL pública para el servidor de acceso remoto a la que se puedan conectar los equipos cliente (la dirección ConnectTo), un certificado IP-HTTPS con un sujeto que coincida con la dirección ConnectTo, configuración de IPv6 y autenticación de equipos cliente.  
@@ -150,7 +150,7 @@ Para implementar acceso remoto es necesario configurar el servidor de acceso rem
         > [!NOTE]  
         > Además, también es necesario usar la autenticación de certificados de equipo en este tipo de implementación.  
   
-6.  Haga clic en **Finalizar**.  
+6.  Haz clic en **Finalizar**.  
   
 ## <a name="BKMK_Infra"></a>2,5. Configurar los servidores de infraestructura  
 Para configurar los servidores de infraestructura en una implementación de acceso remoto es necesario configurar el servidor de ubicación de red, la configuración DNS (incluida la lista de búsqueda de sufijos DNS) y, además, los servidores de administración que acceso remoto no detecte automáticamente.  
@@ -170,7 +170,7 @@ Para configurar los servidores de infraestructura en una implementación de acce
     > [!NOTE]  
     > Aunque los servidores se agregan automáticamente, no aparecen en la lista. Después de aplicar la configuración por primera vez, los servidores de System Center Configuration Manager aparecerán en la lista.  
   
-6.  Haga clic en **Finalizar**.  
+6.  Haz clic en **Finalizar**.  
   
 ## <a name="BKMK_App"></a>2,6. Configurar servidores de aplicaciones  
 La configuración de servidores de aplicaciones en las implementaciones de acceso remoto es una tarea opcional. Acceso remoto permite requerir autenticación para servidores de aplicaciones seleccionados (deberás agregarlos a un grupo de seguridad de servidores de aplicaciones). De manera predeterminada, el tráfico a los servidores de aplicaciones que requieren autenticación también se cifra; pero puedes seleccionar una opción para no cifrar el tráfico a los servidores de aplicaciones y usar solo autenticación.  
@@ -186,29 +186,29 @@ La configuración de servidores de aplicaciones en las implementaciones de acces
   
 3.  Para restringir el acceso a los servidores del grupo de seguridad Servidor de aplicaciones, selecciona la casilla **Permitir el acceso únicamente a los servidores incluidos en los grupos de seguridad**.  
   
-4.  Para usar la autenticación sin cifrado, seleccione el **Do no cifrar el tráfico. Casilla usar solo autenticación @ no__t-0.  
+4.  Para usar la autenticación sin cifrado, seleccione no **cifrar el tráfico. Casilla usar solo autenticación** .  
   
-5.  Haga clic en **Finalizar**.  
+5.  Haz clic en **Finalizar**.  
   
 ## <a name="BKMK_GPO"></a>2,7. Configuración de resumen y GPO alternativos  
 Cuando completes la configuración de acceso remoto verás el cuadro de diálogo **Revisión de acceso remoto**. Podrás revisar todas las opciones que hayas seleccionado anteriormente, como por ejemplo:  
   
-1.  **Configuración del GPO**: Verás el nombre del GPO del servidor de DirectAccess y el nombre del GPO del cliente. Además, puedes hacer clic en el vínculo **Cambiar** junto al encabezado **Configuración del GPO** para modificar la configuración del GPO.  
+1.  **Configuración del GPO**: muestra el nombre del GPO del servidor de DirectAccess y el nombre del GPO del cliente. Además, puedes hacer clic en el vínculo **Cambiar** junto al encabezado **Configuración del GPO** para modificar la configuración del GPO.  
   
-2.  **Clientes remotos**: Muestra la configuración de clientes de DirectAccess, como el grupo de seguridad, estado de túnel forzado, comprobadores de conectividad y el nombre de la conexión de DirectAccess.  
+2.  **Clientes remotos**: muestra la configuración de los cliente de DirectAccess, incluidos el grupo de seguridad, el estado del túnel forzado, los comprobadores de conectividad y el nombre de la conexión de DirectAccess.  
   
-3.  **Servidor de acceso remoto**: Muestra la configuración de DirectAccess, como el nombre público o dirección, la configuración del adaptador de red, la información del certificado y la información de OTP (si está configurado).  
+3.  **Servidor de acceso remoto**: muestra la configuración de DirectAccess, incluidos el nombre o la dirección públicos, la configuración del adaptador de red, la información del certificado y la información de OTP (si está configurado).  
   
-4.  **Servidores de infraestructura**: Esta lista contiene la URL del servidor de ubicación de red, los sufijos DNS usados por clientes de DirectAccess e información sobre el servidor de administración.  
+4.  **Servidores de infraestructura**: esta lista contiene la URL del servidor de ubicación de red, los sufijos DNS usados por los clientes de DirectAccess e información sobre el servidor de administración.  
   
-5.  **Servidores de aplicaciones**: Muestra el estado de administración remota de DirectAccess, así como el estado de la autenticación descentralizada en los servidores de aplicaciones específicos.  
+5.  **Servidores de aplicación**: muestra el estado de administración remota de DirectAccess, así como el estado de la autenticación de un extremo a otro de los servidores de aplicaciones específicos.  
   
 ## <a name="BKMK_PS"></a>2,8. Configuración del servidor de acceso remoto con Windows PowerShell  
-](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)**comandos equivalentes de Windows PowerShell** de @no__t 0Windows PowerShell  
+![](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)**comandos equivalentes** de Windows PowerShell Windows PowerShell  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
-Para realizar una instalación completa en una topología perimetral de acceso remoto para DirectAccess únicamente en un dominio con la raíz **corp.contoso.com** y con los parámetros siguientes: GPO de servidor: **DirectAccess Server Settings**, GPO de cliente: Configuración de cliente de DirectAccess, adaptador de red interno: **Corpnet**; adaptador de red externo: **Internet**, dirección connectto: **edge1.contoso.com**y servidor de ubicación de red: **NLS.Corp.contoso.com**:  
+Para realizar una instalación completa en una topología perimetral de acceso remoto para DirectAccess solo en un dominio con el **Corp.contoso.com** raíz y con los parámetros siguientes: GPO de servidor: **configuración de servidor de DirectAccess**, GPO de cliente: configuración de cliente de DirectAccess, adaptador de red interno: **CorpNet**, adaptador de red externo: **Internet**, dirección ConnectTo: **edge1.contoso.com**y servidor de ubicación de red: **NLS.Corp.contoso.com**:  
   
 ```  
 Install-RemoteAccess -Force -PassThru -ServerGpoName 'corp.contoso.com\DirectAccess Server Settings' -ClientGpoName 'corp.contoso.com\DirectAccess Client Settings' -DAInstallType 'FullInstall' -InternetInterface 'Internet' -InternalInterface 'Corpnet' -ConnectToAddress 'edge1.contoso.com' -NlsUrl 'https://nls.corp.contoso.com/'  
@@ -243,11 +243,11 @@ Set-DAClientExperienceConfiguration -FriendlyName 'Contoso DirectAccess Connecti
   
 ## <a name="BKMK_Links"></a>Paso anterior  
   
--   [Paso 1: Configurar la infraestructura avanzada de DirectAccess](da-adv-configure-s1-infrastructure.md)  
+-   [Paso 1: configurar la infraestructura de DirectAccess avanzada](da-adv-configure-s1-infrastructure.md)  
   
 ## <a name="next-step"></a>Paso siguiente  
   
--   [Paso 3: Comprobar la implementación](Step-3-Verify-the-Deployment.md)  
+-   [Paso 3: comprobar la implementación](Step-3-Verify-the-Deployment.md)  
   
 
 

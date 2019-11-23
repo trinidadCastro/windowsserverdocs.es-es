@@ -36,9 +36,9 @@ WDSUTIL /Remove-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server nam
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/DriverGroup: \<Group nombre >|Especifica el nombre del grupo de controladores.|
-|[/Server: \<Server nombre >]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se utiliza el servidor local.|
-|[/FilterType: \<FilterType >]|Especifica el tipo de filtro que se va a quitar del grupo. @no__t 0FilterType > puede ser uno de los siguientes:</br>**BiosVendor**</br>**BiosVersion**</br>**ChassisType**</br>**Le**</br>**UUID**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
+|/DriverGroup: nombre del grupo de\<>|Especifica el nombre del grupo de controladores.|
+|[/Server:\<nombre de servidor >]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se utiliza el servidor local.|
+|[/FilterType:\<FilterType >]|Especifica el tipo de filtro que se va a quitar del grupo. \<FilterType > puede ser uno de los siguientes:</br>**BiosVendor**</br>**BiosVersion**</br>**ChassisType**</br>**Le**</br>**UUID**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
 
 ## <a name="BKMK_examples"></a>Example
 

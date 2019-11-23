@@ -36,10 +36,10 @@ ksetup /addenctypeattr <DomainName> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | 
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0DomainName >|Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso.|
+|\<DomainName >|Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso.|
 |Tipo de cifrado|Debe ser uno de los siguientes tipos de cifrado admitidos:</br>-DES-CBC-CRC</br>-DES-CBC-MD5</br>-RC4-HMAC-MD5</br>-AES128-CTS-HMAC-SHA1-96</br>-AES256-CTS-HMAC-SHA1-96|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Para ver el tipo de cifrado del vale de concesión de vales (TGT) de Kerberos y la clave de sesión, ejecute el comando **klist** y vea la salida.
 
@@ -47,7 +47,7 @@ Puede establecer o agregar varios tipos de cifrado separando los tipos de cifrad
 
 Si el comando se ejecuta correctamente o produce un error, se muestra un mensaje de estado.
 
-Para establecer el dominio al que desea conectarse y usar, ejecute el comando **ksetup/domain \<DomainName >** .
+Para establecer el dominio al que desea conectarse y usar, ejecute el comando **ksetup/domain \<nombredominio >** .
 
 ## <a name="BKMK_Examples"></a>Example
 

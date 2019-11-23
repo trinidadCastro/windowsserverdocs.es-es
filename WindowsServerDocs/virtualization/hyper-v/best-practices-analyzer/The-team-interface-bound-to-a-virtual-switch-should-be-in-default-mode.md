@@ -19,11 +19,11 @@ ms.locfileid: "71393428"
 ---
 # <a name="the-team-interface-bound-to-a-virtual-switch-should-be-in-default-mode"></a>La interfaz de equipo enlazada a un conmutador virtual debe estar en el modo predeterminado
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2016
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -36,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 *Algunos conmutadores virtuales están enlazados a una interfaz de equipo, pero la interfaz de equipo no pasa el tráfico de todas las VLAN a los conmutadores virtuales.*  
   
 ## <a name="impact"></a>**Impacto**  
-*Los siguientes conmutadores virtuales no pueden tener acceso a todas las VLAN: \n @ no__t-1*  
+*Los siguientes conmutadores virtuales no pueden tener acceso a todas las VLAN: \n{0}*  
   
 ## <a name="resolution"></a>**Resolución**  
 *Use Administrador del servidor o el cmdlet de Windows PowerShell Set-NetLbfoTeamNic para restablecer la interfaz de equipo en el modo predeterminado.*  

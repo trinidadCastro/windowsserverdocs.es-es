@@ -38,10 +38,10 @@ add volume <Volume> [provider <ProviderID>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Volume >|Especifica el volumen que se va a agregar al conjunto de instantáneas. Se requiere al menos un volumen para la creación de la instantánea.|
-|[proveedor \<ProviderID >]|Especifica el identificador de proveedor de un proveedor registrado que se va a usar para crear la instantánea. Si no se especifica **Provider** , se utilizará el proveedor predeterminado.|
+|\<> de volumen|Especifica el volumen que se va a agregar al conjunto de instantáneas. Se requiere al menos un volumen para la creación de la instantánea.|
+|[Provider \<ProviderID >]|Especifica el identificador de proveedor de un proveedor registrado que se va a usar para crear la instantánea. Si no se especifica **Provider** , se utilizará el proveedor predeterminado.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Los volúmenes se agregan de uno en uno.
 -   Cada vez que se agrega un volumen, se comprueba para asegurarse de que VSS admite la creación de instantáneas de ese volumen. No obstante, es posible que esta comprobación principal se haya invalidado mediante el uso posterior del comando **set context** .
@@ -49,7 +49,7 @@ add volume <Volume> [provider <ProviderID>]
 
 ## <a name="BKMK_examples"></a>Example
 
-Para ver la lista actual de proveedores registrados, en el símbolo del sistema `DISKSHADOW>`, escriba:
+Para ver la lista actual de proveedores registrados, en el símbolo del sistema de `DISKSHADOW>`, escriba:
 ```
 list providers
 ```

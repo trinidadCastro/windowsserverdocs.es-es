@@ -35,9 +35,9 @@ tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
 |/?|Muestra la ayuda en el símbolo del sistema.|
 |/g|Muestra el ID. de zona horaria actual.|
 |/s \<timeZoneID > [_dstoff]|Establece la zona horaria actual mediante el identificador de zona horaria especificado. El sufijo **_dstoff** deshabilita los ajustes del horario de verano de la zona horaria (si procede).|
-|/l|enumera todos los ID. de zona horaria y nombres para mostrar válidos. La salida será:<br /><br />-    @ no__t-1display nombre ><br />-    @ no__t-1time ID. de zona >|
+|/l|enumera todos los ID. de zona horaria y nombres para mostrar válidos. La salida será:<br /><br />-   \<nombre para Mostrar ><br />-   \<ID. de zona horaria >|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 Un código de salida de **0** indica que el comando se completó correctamente.
 
 ## <a name="BKMK_Examples"></a>Example
@@ -53,6 +53,6 @@ Para establecer la zona horaria actual en hora estándar del Pacífico y deshabi
 ```
 tzutil /s Pacific Standard time_dstoff
 ```
-## <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>referencias adicionales
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 

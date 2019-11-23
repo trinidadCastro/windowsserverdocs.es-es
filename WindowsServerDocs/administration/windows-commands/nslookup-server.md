@@ -36,8 +36,8 @@ server <DNSDomain>
 |   <DNSDomain>   | Obligatorio. Especifica el nuevo dominio DNS para el servidor predeterminado. |
 | {ayuda &#124; ?} |     Muestra un breve resumen de los subcomandos de **nslookup** .      |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 - El comando **Server** usa el servidor predeterminado actual para buscar la información sobre el dominio DNS especificado. Esto contrasta con el comando **lserver** , que utiliza el servidor inicial.
-  ## <a name="additional-references"></a>Referencias adicionales
-  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)[nslookup lserver](nslookup-lserver.md) 
-  
+  ## <a name="additional-references"></a>referencias adicionales
+  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+  [nslookup lserver](nslookup-lserver.md)

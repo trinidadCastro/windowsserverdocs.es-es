@@ -24,7 +24,7 @@ ms.locfileid: "71392889"
 
 Conexión a máquina virtual (VMConnect) permite usar los recursos locales de un equipo en una máquina virtual, como una unidad flash USB extraíble o una impresora. El modo de sesión mejorada también le permite cambiar el tamaño de la ventana VMConnect. En este artículo se muestra cómo configurar el host y, a continuación, conceder a la máquina virtual acceso a un recurso local.
 
-El modo de sesión mejorada y el texto del portapapeles solo están disponibles para las máquinas virtuales que ejecutan los sistemas operativos Windows recientes. @no__t [los requisitos de 0See para usar recursos locales](#requirements-for-using-local-resources), a continuación @no__t. 2 
+El modo de sesión mejorada y el texto del portapapeles solo están disponibles para las máquinas virtuales que ejecutan los sistemas operativos Windows recientes. \(ver [los requisitos para usar recursos locales](#requirements-for-using-local-resources), a continuación.\) 
 
 Para las máquinas virtuales que ejecutan Ubuntu, consulte [cambio de la resolución de pantalla de Ubuntu en una máquina virtual de Hyper-V](https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/09/19/changing-ubuntu-screen-resolution-in-a-hyper-v-vm/). 
   
@@ -89,7 +89,7 @@ Para elegir un recurso local:
   
     ![Captura de pantalla que llama a la casilla de verificación para seleccionar esta opción.](media/HyperV-VMConnect-SaveSettings.png)  
   
-8.  Haga clic en **Conectar**.  
+8.  Haz clic en **Connect**.  
   
 ## <a name="edit-vmconnect-settings"></a>Editar la configuración de VMConnect
 
@@ -138,7 +138,7 @@ Puede que desee usar los recursos locales de un equipo para:
   
 -   Realizar pruebas y solucionar problemas en aplicaciones de desarrollador que requieren redireccionamiento de sonido y USB sin usar RDP.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Conexión a una máquina virtual](https://technet.microsoft.com/library/cc742407.aspx)  
 [¿Debo crear una máquina virtual de generación 1 o 2 en Hyper-V?](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)
 

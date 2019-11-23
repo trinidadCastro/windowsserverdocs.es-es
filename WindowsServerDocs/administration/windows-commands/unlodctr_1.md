@@ -33,10 +33,10 @@ Unlodctr <DriverName>
 ### <a name="parameters"></a>Parámetros  
 |Parámetro|Descripción|  
 |-------|--------|  
-|@no__t 0DriverName >|quita la configuración del nombre del contador de rendimiento y el texto explicativo para el controlador o el servicio <DriverName> del registro de Windows Server 2003.|  
+|\<DriverName >|quita la configuración del nombre del contador de rendimiento y el texto explicativo de los <DriverName> de controlador o servicio del registro de Windows Server 2003.|  
 |/?|Muestra la ayuda en el símbolo del sistema.|  
 
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
 > [!WARNING]  
 > La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.  
 

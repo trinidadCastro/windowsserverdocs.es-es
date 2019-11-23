@@ -42,9 +42,9 @@ break [writable] <SetID>
 |Parámetro|Descripción|
 |---------|-----------|
 |edita|Habilita el acceso de lectura y escritura en el volumen.|
-|@no__t 0SetID >|Especifica el identificador del conjunto de instantáneas.|
+|\<SetId >|Especifica el identificador del conjunto de instantáneas.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Los volúmenes expuestos, como las instantáneas de las que se originan, son de solo lectura de forma predeterminada.
 -   El alias del identificador de instantánea, que se almacena como una variable de entorno mediante el comando **cargar metadatos** , se puede usar en el parámetro *SetID* .

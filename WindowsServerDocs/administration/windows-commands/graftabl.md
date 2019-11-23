@@ -39,11 +39,11 @@ graftabl /status
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0CodePage >|Especifica una página de códigos para definir el aspecto de los caracteres extendidos en el modo gráficos.</br>Los números de identificación válidos de la página de códigos son:</br>437: Estados Unidos</br>850: Multilingüe (Latín I)</br>852: Eslava (Latín II)</br>855: Cirílico (Ruso)</br>857: Turco</br>860: Portugués</br>861: Islandés</br>863: Canadá (Francés)</br>865: Guantes</br>866: Ruso</br>869: Griego moderno|
+|\<página de códigos >|Especifica una página de códigos para definir el aspecto de los caracteres extendidos en el modo gráficos.</br>Los números de identificación válidos de la página de códigos son:</br>437: Estados Unidos</br>850: multilingüe (Latín I)</br>852: Eslava (Latín II)</br>855: cirílico (Ruso)</br>857: Turco</br>860: Portugués</br>861: Islandés</br>863: Canadá-francés</br>865: Nordic</br>866: Ruso</br>869: Griego moderno|
 |/status|Muestra la página de códigos actual que usa **Graftabl** .|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   **Graftabl** solo afecta a la presentación del monitor de caracteres extendidos de la página de códigos que especifique. No cambia la página de código de entrada de la consola real. Para cambiar la página de códigos de entrada de la consola, use el comando **mode** o **chcp** .
 -   En la tabla siguiente se enumeran los códigos de salida y una breve descripción.  

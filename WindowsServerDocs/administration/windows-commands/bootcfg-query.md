@@ -35,11 +35,11 @@ bootcfg /query [/s <computer> [/u <Domain>\<User> /p <Password>]]
 |        Término         |                                                                                             Definición                                                                                              |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /s <computer>    |                                         Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.                                          |
-| /u <Domain> @ no__t-1 @ no__t-2 | Ejecuta el comando con los permisos de cuenta del usuario especificado por <User>or <Domain> @ no__t-2 @ no__t-3. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
+| /u <Domain>\\<User> | Ejecuta el comando con los permisos de cuenta del usuario especificado mediante <User>o <Domain>\\<User>. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
 |    /p <Password>    |                                                        Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                        |
 |         /?          |                                                                                Muestra la ayuda en el símbolo del sistema.                                                                                 |
 
-##### <a name="remarks"></a>Comentarios
+##### <a name="remarks"></a>Observaciones
 - A continuación se muestra un ejemplo de la salida de **bootcfg/Query** :
   ```
   Boot Loader Settings
@@ -54,7 +54,7 @@ bootcfg /query [/s <computer> [/u <Domain>\<User> /p <Password>]]
   OS Load Options: /fastdetect /debug /debugport=com1:
   ```
 - La parte de configuración del cargador de arranque del resultado de la **consulta Bootcfg** muestra cada entrada de la sección [boot loader] de boot. ini.
-- La parte de entradas de arranque del resultado de la **consulta Bootcfg** muestra los detalles siguientes para cada entrada del sistema operativo en la sección [operating systems] de boot. ini: IDENTIFICADOR de la entrada de arranque, nombre descriptivo, ruta de acceso y opciones de carga del sistema operativo.
+- La parte de entradas de arranque del resultado de la **consulta Bootcfg** muestra los detalles siguientes para cada entrada del sistema operativo en la sección [sistemas operativos] de boot. ini: ID. de entrada de arranque, nombre descriptivo, ruta de acceso y opciones de carga del sistema operativo.
   ## <a name="BKMK_examples"></a>Example
   En los siguientes ejemplos se muestra cómo se puede usar el comando **bootcfg/Query** :
   ```
@@ -62,5 +62,5 @@ bootcfg /query [/s <computer> [/u <Domain>\<User> /p <Password>]]
   bootcfg /query /s srvmain /u maindom\hiropln /p p@ssW23
   bootcfg /query /u hiropln /p p@ssW23
   ```
-  #### <a name="additional-references"></a>Referencias adicionales
+  #### <a name="additional-references"></a>referencias adicionales
   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

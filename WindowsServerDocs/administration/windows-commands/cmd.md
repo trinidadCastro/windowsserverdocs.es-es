@@ -41,17 +41,17 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 |/d|Deshabilita la ejecución de comandos de ejecución automática.|
 |/a|Da formato al resultado del comando interno en una canalización o un archivo como American National Standards Institute (ANSI).|
 |/u|Da formato al resultado del comando interno en una canalización o un archivo como Unicode.|
-|/t: {\<B @ no__t-1 @ no__t-2F @ no__t-3 @ no__t-4 @ no__t-5F @ no__t-6}|Establece los colores de fondo (*B*) y de primer plano (*F*).|
+|/t: {\<B\>\<F\>\|\<F\>}|Establece los colores de fondo (*B*) y de primer plano (*F*).|
 |/e: activado|Habilita las extensiones de comandos.|
 |/e: desactivado|Deshabilita las extensiones de comandos.|
 |/f: activado|Habilita la finalización de nombres de archivos y directorios.|
 |/f: desactivado|Deshabilita la finalización de nombres de archivos y directorios.|
 |/v: activado|Habilita la expansión diferida de variables de entorno.|
 |/v: desactivado|Deshabilita la expansión diferida de variables de entorno.|
-|@no__t 0String >|Especifica el comando que se desea llevar a cabo.|
+|\<cadena >|Especifica el comando que se desea llevar a cabo.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede usar como valores de \<B @ no__t-1 y \<F @ no__t-3
+En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede usar como valores para \<B\> y \<F\>
 
 |Valor|Color|
 |-----|-----|
@@ -69,14 +69,14 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
 |b|Aguamarina claro|
 |c|Rojo claro|
 |d|Púrpura claro|
-|E:.|Amarillo claro|
+|e:.|Amarillo claro|
 |f|Blanco brillante|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Usar varios comandos
 
-    Para usar varios comandos para el > \<String, sepárelos mediante el separador de comandos **&&** y colóquelos entre comillas. Por ejemplo:
+    Para usar varios comandos para \<cadena >, sepárelos mediante el separador de comandos **&&** y enciérrelos entre comillas. Por ejemplo:
 
     ```
     "<Command>&&<Command>&&<Command>"
@@ -96,9 +96,9 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
 
     Si no especifica **/d** en *String*, cmd. exe busca las siguientes subclaves del registro:
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\AutoRun\REG_SZ**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\AutoRun\ REG_SZ**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\AutoRun\REG_EXPAND_SZ**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\AutoRun\ REG_EXPAND_SZ**
 
     Si una o ambas subclaves del registro están presentes, se ejecutan antes que todas las demás variables.
 
@@ -107,13 +107,13 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
 
 -   Habilitar y deshabilitar las extensiones de comando
 
-    Las extensiones de comando están habilitadas de forma predeterminada en Windows XP. Puede deshabilitarlos para un proceso determinado mediante **/e: OFF**. Puede habilitar o deshabilitar las extensiones para todas las opciones de línea de comandos de **cmd** en un equipo o una sesión de usuario mediante el establecimiento de los siguientes valores **REG_DWORD** :
+    Las extensiones de comando están habilitadas de forma predeterminada en Windows XP. Puede deshabilitarlos para un proceso determinado mediante **/e: OFF**. Puede habilitar o deshabilitar las extensiones para todas las opciones de línea de comandos de **cmd** en un equipo o una sesión de usuario mediante el establecimiento de los siguientes valores de **REG_DWORD** :
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\EnableExtensions\REG_DWORD**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\EnableExtensions\ REG_DWORD**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\EnableExtensions\REG_DWORD**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\EnableExtensions\ REG_DWORD**
 
-    Establezca el valor **REG_DWORD** en **0 × 1** (habilitado) o en **0 × 0** (deshabilitado) en el registro mediante regedit. exe. La configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
+    Establezca el valor de **REG_DWORD** en **0 × 1** (habilitado) o en **0 × 0** (deshabilitado) en el registro mediante regedit. exe. La configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
 
 > [!CAUTION]
 > La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
@@ -143,17 +143,17 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
     Si habilita la expansión diferida de variables de entorno, puede usar el carácter de signo de exclamación para sustituir el valor de una variable de entorno en tiempo de ejecución.
 -   Habilitar la finalización de nombres de archivos y directorios
 
-    La finalización de los nombres de archivos y directorios no está habilitada de forma predeterminada. Puede habilitar o deshabilitar la finalización de un nombre de archivo para un proceso determinado del comando **cmd** con **/f:** {**on**|**OFF**}. Puede habilitar o deshabilitar la finalización de nombres de archivos y directorios para todos los procesos del comando **cmd** en un equipo o para una sesión de inicio de sesión de usuario mediante el establecimiento de los siguientes valores **REG_DWORD** :
+    La finalización de los nombres de archivos y directorios no está habilitada de forma predeterminada. Puede habilitar o deshabilitar la finalización de un nombre de archivo para un proceso determinado del comando **cmd** con **/f:** {**on**|**OFF**}. Puede habilitar o deshabilitar la finalización de nombres de archivos y directorios para todos los procesos del comando **cmd** en un equipo o para una sesión de inicio de sesión de usuario mediante el establecimiento de los siguientes valores de **REG_DWORD** :
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\CompletionChar\REG_DWORD**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\CompletionChar\ REG_DWORD**
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\PathCompletionChar\REG_DWORD**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\PathCompletionChar\ REG_DWORD**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\CompletionChar\REG_DWORD**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\CompletionChar\ REG_DWORD**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\PathCompletionChar\REG_DWORD**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\PathCompletionChar\ REG_DWORD**
 
-    Para establecer el valor **REG_DWORD** , ejecute regedit. exe y use el valor hexadecimal de un carácter de control para una función determinada (por ejemplo, **0 × 9** es Tab y **0 × 08** es el retroceso). La configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
+    Para establecer el valor de **REG_DWORD** , ejecute regedit. exe y use el valor hexadecimal de un carácter de control para una función determinada (por ejemplo, **0 × 9** es Tab y **0 × 08** es el retroceso). La configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
 
 > [!CAUTION]
 > La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.

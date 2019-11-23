@@ -20,7 +20,7 @@ ms.locfileid: "71392556"
 ---
 # <a name="use-live-migration-without-failover-clustering-to-move-a-virtual-machine"></a>Usar la migración en vivo sin clústeres de conmutación por error para migrar una máquina virtual
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2016
 
 En este artículo se muestra cómo trasladar una máquina virtual mediante una migración en vivo sin usar clústeres de conmutación por error. Una migración en vivo mueve máquinas virtuales en ejecución entre hosts de Hyper-V sin ningún tiempo de inactividad apreciable.   
   
@@ -48,7 +48,7 @@ Para ello, necesitará lo siguiente:
 
 ## <a name="use-windows-powershell-to-move-a-running-virtual-machine"></a>Usar Windows PowerShell para trasladar una máquina virtual en ejecución
   
-En el ejemplo siguiente se usa el cmdlet Move-VM para mover una máquina virtual llamada *LMTest* a un servidor de destino llamado *TestServer02* y mueve los discos duros virtuales y otro archivo, como los puntos de control y los archivos de paginación inteligente, al *D:\LMTest* directorio en el servidor de destino.  
+En el ejemplo siguiente se usa el cmdlet Move-VM para mover una máquina virtual llamada *LMTest* a un servidor de destino llamado *TestServer02* y mueve los discos duros virtuales y otro archivo, como los puntos de control y los archivos de paginación inteligente, al directorio *D:\LMTest* en el servidor de destino.  
   
 ```  
 PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\LMTest  
@@ -61,7 +61,7 @@ PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\L
 Si no ha configurado la delegación restringida, debe iniciar sesión en el servidor de origen para poder trasladar una máquina virtual. Si no lo hace, se producirá un error en el intento de autenticación, se producirá un error y se mostrará este mensaje:  
   
 "Error en la operación de migración de la máquina virtual en el origen de la migración.  
-No se pudo establecer una conexión con *el nombre del equipo*host: No hay credenciales disponibles en el paquete de seguridad 0x8009030E ".
+No se pudo establecer una conexión con el *nombre del equipo*host: no hay credenciales disponibles en el paquete de seguridad 0x8009030E ".
   
  Para solucionar este problema, inicie sesión en el servidor de origen y vuelva a intentar el movimiento. Para evitar tener que iniciar sesión en un servidor de origen antes de realizar una migración en vivo, configure la delegación restringida. Necesitará credenciales de administrador de dominio para configurar la delegación restringida. Para obtener instrucciones, consulte [configuración de hosts para la migración en vivo](../deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md). 
  
@@ -69,14 +69,14 @@ No se pudo establecer una conexión con *el nombre del equipo*host: No hay crede
  
  Si una máquina virtual no tiene la compatibilidad con el procesador activada y tiene una o más instantáneas, se produce un error en el movimiento si los hosts tienen versiones de procesador diferentes. Se produce un error y se muestra este mensaje:
  
-@no__t máquina virtual 0The no se puede migrar al equipo de destino. El hardware del equipo de destino no es compatible con los requisitos de hardware de esta máquina virtual. **
+**No se puede migrar la máquina virtual al equipo de destino. El hardware del equipo de destino no es compatible con los requisitos de hardware de esta máquina virtual.**
  
  Para corregir este problema, apague la máquina virtual y active la configuración de compatibilidad del procesador.
  
 1. En el administrador de Hyper-V, en el panel **virtual machines** , haga clic con el botón secundario en la máquina virtual y haga clic en configuración.
 2. En el panel de navegación, expanda **procesadores** y haga clic en **compatibilidad**.
 3. Active **migrar a un equipo con una versión de procesador diferente**.
-4. Haga clic en **Aceptar**.
+4. Haz clic en **Aceptar**.
  
    Para usar Windows PowerShell, use el cmdlet [set-VMProcessor](https://technet.microsoft.com/library/hh848533.aspx) :
  

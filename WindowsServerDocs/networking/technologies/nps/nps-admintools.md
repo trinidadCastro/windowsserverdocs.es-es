@@ -23,12 +23,12 @@ Puede usar este tema para obtener información sobre las herramientas que puede 
 
 Después de instalar NPS, puede administrar NPSs:
 
-- Localmente, mediante el complemento Microsoft Management Console de NPS \(MMC @ no__t-1, la consola NPS estática en herramientas administrativas, comandos de Windows PowerShell o los comandos Network Shell \(Netsh @ no__t-3 para NPS.
+- Localmente, mediante el complemento Microsoft Management Console de NPS \(MMC\), la consola NPS estática en herramientas administrativas, comandos de Windows PowerShell o el shell de red \(comandos Netsh\) para NPS.
 - Desde un NPS remoto, mediante el complemento MMC NPS, los comandos Netsh para NPS, los comandos de Windows PowerShell para NPS o Conexión a Escritorio remoto.
 - Desde una estación de trabajo remota, mediante Conexión a Escritorio remoto en combinación con otras herramientas, como la MMC de NPS o Windows PowerShell.
 
 >[!NOTE]
->En Windows Server 2016, puede administrar el NPS local mediante la consola de NPS. Para administrar NPSs locales y remotos, debe usar el complemento de MMC de NPS.
+>En Windows Server 2016, puede administrar el NPS local mediante la consola de NPS. Para administrar NPSs locales y remotos, debe usar el complemento MMC de NPS\-en.
 
 En las secciones siguientes se proporcionan instrucciones sobre cómo administrar los NPSs locales y remotos.
 
@@ -44,32 +44,32 @@ Para completar este procedimiento, debe ser miembro del grupo administradores.
 
 1. En Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
 
-2. En la consola de NPS, haga clic en NPS \(Local @ no__t-1. En el panel de detalles, elija **Configuración estándar** o **Configuración avanzada**y, a continuación, realice una de las siguientes acciones en función de la selección:
+2. En la consola de NPS, haga clic en NPS \(\)local. En el panel de detalles, elija **Configuración estándar** o **Configuración avanzada**y, a continuación, realice una de las siguientes acciones en función de la selección:
     - Si elige **Configuración estándar**, seleccione un escenario de la lista y, a continuación, siga las instrucciones para iniciar un asistente de configuración.
     - Si elige **Configuración avanzada**, haga clic en la flecha para expandir **Opciones de configuración avanzadas**y, a continuación, revise y configure las opciones disponibles en función de la funcionalidad de NPS que desee: servidor RADIUS, proxy RADIUS o ambos.
 
-## <a name="manage-multiple-npss-by-using-the-nps-mmc-snap-in"></a>Administrar varios NPSs mediante el uso del complemento de MMC de NPS @ no__t-0in
+## <a name="manage-multiple-npss-by-using-the-nps-mmc-snap-in"></a>Administrar varios NPSs mediante el\-de complemento de MMC de NPS en
 
-Puede usar este procedimiento para administrar el NPS local y varios NPSs remotos mediante el complemento de MMC de NPS.
+Puede usar este procedimiento para administrar el NPS local y varios NPSs remotos mediante el complemento MMC de NPS\-en.
 
 Antes de realizar el procedimiento siguiente, debe instalar NPS en el equipo local y en los equipos remotos.
 
-En función de las condiciones de la red y el número de NPSs que se administran mediante el complemento de MMC de NPS, el complemento @ no__t-0in, la respuesta de MMC snap @ no__t-1in podría ser lenta. Además, el tráfico de configuración de NPS se envía a través de la red durante una sesión de administración remota mediante el complemento NPS @ no__t-0in. Asegúrese de que la red es físicamente segura y que los usuarios malintencionados no tienen acceso a este tráfico de red.
+En función de las condiciones de la red y el número de NPSs que se administran mediante el complemento MMC de NPS\-en, la respuesta del\-de complemento MMC en puede ser lenta. Además, el tráfico de configuración de NPS se envía a través de la red durante una sesión de administración remota mediante el complemento NPS\-en. Asegúrese de que la red es físicamente segura y que los usuarios malintencionados no tienen acceso a este tráfico de red.
 
 **Credenciales administrativas** 
 
 Para completar este procedimiento, debe ser miembro del grupo administradores.
 
-### <a name="to-manage-multiple-npss-by-using-the-nps-snap-in"></a>Para administrar varios NPSs mediante el uso del complemento NPS @ no__t-0in
+### <a name="to-manage-multiple-npss-by-using-the-nps-snap-in"></a>Para administrar varios NPSs mediante el\-de complemento de NPS en
 
 1. Para abrir MMC, ejecute Windows PowerShell como administrador. En Windows PowerShell, escriba **MMC**y, a continuación, presione Entrar. Se abre Microsoft Management Console.
-2. En MMC, en el menú **archivo** , haga clic en **Agregar o quitar Snap @ no__t-2in**. Se abre el cuadro de diálogo **Agregar o quitar ajustar @ no__t-1ins** .
-3. En **Agregar o quitar ajustar @ no__t-1ins**, en el **ajuste disponible @ no__t-3ins**, desplácese hacia abajo en la lista, haga clic en **servidor de directivas de redes**y, a continuación, haga clic en **Agregar**. Se abre el cuadro de diálogo **Seleccionar equipo**.
-4. En **seleccionar equipo**, compruebe que está seleccionado equipo **local @no__t 2The en el que se ejecuta esta consola @ no__t-3** y, a continuación, haga clic en **Aceptar**. El ajuste @ no__t-0in del NPS local se agrega a la lista en el **ajuste seleccionado @ no__t-2ins**.
-5. En **Agregar o quitar Snap @ no__t-1ins**, en **el ajuste disponible @ no__t-3ins**, asegúrese de que el **servidor de directivas de redes** está todavía seleccionado y, a continuación, haga clic en **Agregar**. Se volverá a abrir el cuadro de diálogo **seleccionar equipo** .
-6. En **seleccionar equipo**, haga clic en **otro equipo**y, a continuación, escriba la dirección IP o el nombre de dominio completo \(FQDN @ NO__T-3 del NPS remoto que desea administrar mediante el complemento NPS @ no__t-4in. Opcionalmente, puede hacer clic en **Examinar para explorar** el directorio del equipo que desea agregar. Haga clic en **Aceptar**.
-7. Repita los pasos 5 y 6 para agregar más NPSs al complemento NPS @ no__t-0in. Cuando haya agregado todas las NPSs que desea administrar, haga clic en **Aceptar**.
-8. Para guardar el complemento NPS para su uso posterior, haga clic en **archivo**y, a continuación, haga clic en **Guardar**. En el cuadro de diálogo **Guardar como** , vaya a la ubicación del disco duro donde desea guardar el archivo, escriba un nombre para el archivo Microsoft Management Console @no__t -1. msc @ no__t-2 y, a continuación, haga clic en **Guardar**. 
+2. En MMC, en el menú **archivo** , haga clic en **agregar o quitar\-de ajuste en**. Se abre el cuadro de diálogo **Agregar o quitar** complementos\-.
+3. En **Agregar o quitar**complementos\-, en complementos **disponibles\-** , desplácese hacia abajo en la lista, haga clic en **servidor de directivas de redes**y, a continuación, haga clic en **Agregar**. Se abre el cuadro de diálogo **Seleccionar equipo**.
+4. En **seleccionar equipo**, compruebe que **la opción equipo local \(el equipo en el que se ejecuta esta consola\)** está seleccionada y, a continuación, haga clic en **Aceptar**. El\-de ajuste de para el NPS local se agrega a la lista de complementos **seleccionados\-** .
+5. En **Agregar o quitar**complementos\-, en complementos **disponibles\-** , asegúrese de que el **servidor de directivas de redes** sigue seleccionado y, a continuación, haga clic en **Agregar**. Se volverá a abrir el cuadro de diálogo **seleccionar equipo** .
+6. En **seleccionar equipo**, haga clic en **otro equipo**y, a continuación, escriba la dirección IP o el nombre de dominio completo \(FQDN\) del NPS remoto que desea administrar mediante el complemento NPS\-en. Opcionalmente, puede hacer clic en **Examinar para explorar** el directorio del equipo que desea agregar. Haz clic en **Aceptar**.
+7. Repita los pasos 5 y 6 para agregar más NPSs al\-de complemento de NPS en. Cuando haya agregado todas las NPSs que desea administrar, haga clic en **Aceptar**.
+8. Para guardar el complemento NPS para su uso posterior, haga clic en **archivo**y, a continuación, haga clic en **Guardar**. En el cuadro de diálogo **Guardar como** , vaya a la ubicación del disco duro donde desea guardar el archivo, escriba un nombre para el archivo de Microsoft Management Console \(. msc\) y, a continuación, haga clic en **Guardar**. 
 
 ## <a name="manage-an-nps-by-using-remote-desktop-connection"></a>Administrar un NPS mediante Conexión a Escritorio remoto
 
@@ -80,7 +80,7 @@ Mediante el uso de Conexión a Escritorio remoto, puede administrar de forma rem
 Puede usar Escritorio remoto conexión para administrar varios NPSs mediante uno de estos dos métodos.
 
 1. Cree una conexión Escritorio remoto a cada uno de los NPSs de forma individual.
-2. Use Escritorio remoto para conectarse a un NPS y, a continuación, use el MMC de NPS en ese servidor para administrar otros servidores remotos. Para obtener más información, consulte la sección anterior **Administración de varios NPSs mediante el uso del complemento MMC de NPS**.
+2. Use Escritorio remoto para conectarse a un NPS y, a continuación, use el MMC de NPS en ese servidor para administrar otros servidores remotos. Para obtener más información, consulte la sección anterior **Administración de varios NPSs mediante el\-de MMC de NPS en**.
 
 **Credenciales administrativas** 
 
@@ -96,7 +96,7 @@ Para completar este procedimiento, debe ser miembro del grupo administradores en
     2. Para habilitar Conexión a Escritorio remoto para todas las conexiones de red en el equipo, haga clic en **Aceptar**.
 3. En **propiedades del sistema**, en **escritorio remoto**, decida si desea habilitar **permitir conexiones solo desde equipos que ejecutan escritorio remoto con autenticación a nivel de red**y realice la selección.
 4. Haz clic en **Seleccionar usuarios**. Se abre el cuadro de diálogo **escritorio remoto usuarios** .
-5. En **escritorio remoto usuarios**, para conceder permiso a un usuario para conectarse de forma remota al NPS, haga clic en **Agregar**y, a continuación, escriba el nombre de usuario de la cuenta de usuario. Haga clic en **Aceptar**.
+5. En **escritorio remoto usuarios**, para conceder permiso a un usuario para conectarse de forma remota al NPS, haga clic en **Agregar**y, a continuación, escriba el nombre de usuario de la cuenta de usuario. Haz clic en **Aceptar**.
 6. Repita el paso 5 para cada usuario para el que desea conceder permiso de acceso remoto al NPS. Cuando haya terminado de agregar usuarios, haga clic en **Aceptar** para cerrar el cuadro de diálogo **escritorio remoto usuarios** y en **Aceptar** de nuevo para cerrar el cuadro de diálogo **propiedades del sistema** .
 7. Para conectarse a un NPS remoto que ha configurado mediante los pasos anteriores, haga clic en **Inicio**, desplácese hacia abajo en la lista alfabética, haga clic en **accesorios de Windows**y, a continuación, haga clic en **conexión a escritorio remoto**. Se abrirá el cuadro de diálogo **conexión a escritorio remoto** .
 8. En el cuadro de diálogo **conexión a escritorio remoto** , en **equipo**, escriba el nombre o la dirección IP de NPS. Si lo prefiere, haga clic en **Opciones**, configure opciones de conexión adicionales y, a continuación, haga clic en **Guardar** para guardar la conexión para su uso repetido.
@@ -121,10 +121,10 @@ Para llevar a cabo este procedimiento, debe pertenecer al grupo de administrador
 1. Abra el símbolo del sistema o Windows PowerShell.
 2. Escriba **netsh**y, a continuación, presione Entrar.
 3. Escriba **NPS**y, a continuación, presione Entrar.
-4. Para ver una lista de los comandos disponibles, escriba un signo de interrogación \(? \) y presione Entrar.
+4. Para ver una lista de los comandos disponibles, escriba un signo de interrogación \(?\) y presione Entrar.
 
 
-Para obtener más información acerca de los comandos Netsh NPS, consulte [comandos Netsh para el servidor de directivas de redes en Windows server 2008](https://technet.microsoft.com/library/cc754428(v=ws.10).aspx)o descargue la [referencia técnica de Netsh](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc?redir=0) completa desde la galería de TechNet. Esta descarga es una referencia técnica completa de Shell de red para Windows Server 2008 y Windows Server 2008 R2. El formato es ayuda de Windows \( *. chm @ no__t-1 en un archivo zip. Estos comandos siguen presentes en Windows Server 2016 y Windows 10, por lo que puede usar Netsh en estos entornos, aunque se recomienda usar Windows PowerShell.
+Para obtener más información acerca de los comandos Netsh NPS, consulte [comandos Netsh para el servidor de directivas de redes en Windows server 2008](https://technet.microsoft.com/library/cc754428(v=ws.10).aspx)o descargue la [referencia técnica de Netsh](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc?redir=0) completa desde la galería de TechNet. Esta descarga es una referencia técnica completa de Shell de red para Windows Server 2008 y Windows Server 2008 R2. El formato es ayuda de Windows \(*. chm\) en un archivo zip. Estos comandos siguen presentes en Windows Server 2016 y Windows 10, por lo que puede usar Netsh en estos entornos, aunque se recomienda usar Windows PowerShell.
 
 ## <a name="use-windows-powershell-to-manage-npss"></a>Usar Windows PowerShell para administrar NPSs
 

@@ -36,16 +36,16 @@ scwcmd configure [[[/m:<ComputerName> | /ou:<OuName>] /p:<Policy>] | /i:<Compute
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/m: @no__t 0ComputerName >|Especifica el nombre NetBIOS, el nombre DNS o la dirección IP del equipo que se va a configurar. Si se especifica el parámetro **/m** , también se debe especificar el parámetro **/p** .|
-|/ou: \<OuName >|Especifica el nombre de dominio completo (FQDN) de una unidad organizativa (OU) en Active Directory Domain Services. Si se especifica el parámetro **/ou** , también se debe especificar el parámetro **/p** . Todos los equipos de la unidad organizativa se analizarán según la Directiva especificada.|
-|/p: @no__t 0Policy >|Especifica la ruta de acceso y el nombre del archivo de directiva. XML que se va a usar para realizar la configuración.|
-|/i: @no__t 0ComputerList >|Especifica la ruta de acceso y el nombre de un archivo. XML que contiene una lista de equipos junto con los archivos de directivas esperados. Todos los equipos del archivo. XML se configurarán según sus archivos de directiva correspondientes. Un archivo. XML de ejemplo es%windir%\security\SampleMachineList.xml.|
-|/u: @no__t 0UserName >|Especifica una credencial de usuario alternativa para usar al configurar un equipo remoto. El valor predeterminado es el usuario que ha iniciado sesión.|
-|/PW: \<Password >|Especifica una credencial de usuario alternativa para usar al configurar un equipo remoto. El valor predeterminado es la contraseña del usuario que ha iniciado sesión.|
-|/t: \<Threads >|Especifica el número de operaciones de configuración pendientes simultáneas que se deben mantener durante el proceso de configuración (DefaultValue = 40, MinValue = 1, MaxValue = 1000).|
+|/m:\<ComputerName >|Especifica el nombre NetBIOS, el nombre DNS o la dirección IP del equipo que se va a configurar. Si se especifica el parámetro **/m** , también se debe especificar el parámetro **/p** .|
+|/ou:\<OuName >|Especifica el nombre de dominio completo (FQDN) de una unidad organizativa (OU) en Active Directory Domain Services. Si se especifica el parámetro **/ou** , también se debe especificar el parámetro **/p** . Todos los equipos de la unidad organizativa se analizarán según la Directiva especificada.|
+|/p:\<Directiva >|Especifica la ruta de acceso y el nombre del archivo de directiva. XML que se va a usar para realizar la configuración.|
+|/i:\<ComputerList >|Especifica la ruta de acceso y el nombre de un archivo. XML que contiene una lista de equipos junto con los archivos de directivas esperados. Todos los equipos del archivo. XML se configurarán según sus archivos de directiva correspondientes. Un archivo. XML de ejemplo es%windir%\security\SampleMachineList.xml.|
+|/u:\<nombre de usuario >|Especifica una credencial de usuario alternativa para usar al configurar un equipo remoto. El valor predeterminado es el usuario que ha iniciado sesión.|
+|/PW:\<contraseña >|Especifica una credencial de usuario alternativa para usar al configurar un equipo remoto. El valor predeterminado es la contraseña del usuario que ha iniciado sesión.|
+|/t:\<subprocesos >|Especifica el número de operaciones de configuración pendientes simultáneas que se deben mantener durante el proceso de configuración (DefaultValue = 40, MinValue = 1, MaxValue = 1000).|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Scwcmd. exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
 

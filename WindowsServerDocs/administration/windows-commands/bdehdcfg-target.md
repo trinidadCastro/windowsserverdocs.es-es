@@ -38,8 +38,8 @@ bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge}
 |---------|-----------|
 |valor predeterminado|Indica que la herramienta de línea de comandos seguirá el mismo proceso que el asistente para la instalación de BitLocker.|
 |unallocated|Crea la partición del sistema a partir del espacio sin asignar disponible en el disco.|
-|\<DriveLetter > reducir|Reduce la unidad especificada en la cantidad necesaria para crear una partición activa del sistema. Para utilizar este comando, la unidad especificada debe tener al menos el 5 por ciento de espacio disponible.|
-|@no__t 0DriveLetter > Merge|Utiliza la unidad de disco especificada como partición activa del sistema. La unidad del sistema operativo no puede ser un destino para la combinación.|
+|\<letraDeUnidad > reducir|Reduce la unidad especificada en la cantidad necesaria para crear una partición activa del sistema. Para utilizar este comando, la unidad especificada debe tener al menos el 5 por ciento de espacio disponible.|
+|fusionar mediante combinación \<letraDeUnidad >|Utiliza la unidad de disco especificada como partición activa del sistema. La unidad del sistema operativo no puede ser un destino para la combinación.|
 
 ## <a name="BKMK_Examples"></a>Example
 

@@ -25,7 +25,7 @@ ms.locfileid: "71392365"
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Se conecta a otra sesión en un servidor host de sesión de Escritorio remoto (host de sesión de escritorio remoto).  
-Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).  
+para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).  
 
 > [!NOTE]  
 > En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.  
@@ -38,15 +38,15 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
 
 |Parámetro|Descripción|  
 |-------|--------|  
-|@no__t 0SessionID >|Especifica el identificador de la sesión a la que se desea conectar. Si usa el parámetro opcional **/dest:** <*nombresesión*>, es el identificador de la sesión a la que desea conectarse.|  
-|@no__t 0SessionName >|Especifica el nombre de la sesión a la que desea conectarse.|  
-|/dest: \<SessionName >|Especifica el nombre de la sesión actual. Esta sesión se desconectará cuando se conecte a la nueva sesión.|  
-|/Password: @no__t 0PW >|Especifica la contraseña del usuario propietario de la sesión a la que desea conectarse. Esta contraseña es necesaria cuando el usuario que se conecta no es propietario de la sesión.|  
+|\<SessionID >|Especifica el identificador de la sesión a la que se desea conectar. Si usa el parámetro opcional **/dest:** <*nombresesión*>, es el identificador de la sesión a la que desea conectarse.|  
+|\<nombresesión >|Especifica el nombre de la sesión a la que desea conectarse.|  
+|/dest:\<nombresesión >|Especifica el nombre de la sesión actual. Esta sesión se desconectará cuando se conecte a la nueva sesión.|  
+|/Password:\<PW >|Especifica la contraseña del usuario propietario de la sesión a la que desea conectarse. Esta contraseña es necesaria cuando el usuario que se conecta no es propietario de la sesión.|  
 |/Password: *|solicita la contraseña del usuario propietario de la sesión a la que desea conectarse.|  
 |/v|Muestra información acerca de las acciones que se llevan a cabo.|  
 |/?|Muestra la ayuda en el símbolo del sistema.|  
 
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
 -   Debe tener el permiso de acceso de control total o el permiso de acceso especial Connect para conectarse a otra sesión.  
 -   El parámetro **/dest:** <*nombresesión*> permite conectar la sesión de otro usuario a otra sesión.  
 -   Si no especifica una contraseña en el parámetro <*contraseña*> y la sesión de destino pertenece a un usuario que no es el actual, se produce un error en **tscon** .  

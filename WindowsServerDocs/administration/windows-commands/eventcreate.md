@@ -36,17 +36,17 @@ eventcreate [/s <Computer> [/u <Domain\User> [/p <Password>]] {[/l {APPLICATION|
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/s \<Computer >|Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.|
-|/u \<Domain \ > de usuario|Ejecuta el comando con los permisos de cuenta del usuario especificado mediante @no__t 0User > o < Dominio\usuario >. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando.|
+|/s \<equipo >|Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.|
+|/u \<Dominio\usuario >|Ejecuta el comando con los permisos de cuenta del usuario especificado por \<usuario > o < Dominio\usuario >. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando.|
 |/p \<contraseña >|Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .|
-|/l {APPLICATION @ no__t-0SYSTEM}|Especifica el nombre del registro de eventos donde se creará el evento. Los nombres de registro válidos son aplicación y sistema.|
+|/l {APPLICATION\|SYSTEM}|Especifica el nombre del registro de eventos donde se creará el evento. Los nombres de registro válidos son aplicación y sistema.|
 |/so \<SrcName >|Especifica el origen que se va a usar para el evento. Un origen válido puede ser cualquier cadena y debe representar la aplicación o el componente que está generando el evento.|
-|/t {ERROR @ no__t-0WARNING @ no__t-1INFORMATION @ no__t-2</br>SUCCESSAUDIT @ NO__T-0FAILUREAUDIT}|Especifica el tipo de evento que se va a crear. Los tipos válidos son ERROR, WARNING, INFORMATION, SUCCESSAUDIT y FAILUREAUDIT.|
+|/t {ERROR\|ADVERTENCIA\|información\|</br>SUCCESSAUDIT\|FAILUREAUDIT}|Especifica el tipo de evento que se va a crear. Los tipos válidos son ERROR, WARNING, INFORMATION, SUCCESSAUDIT y FAILUREAUDIT.|
 |/ID \<EventID >|Especifica el identificador del evento. Un identificador válido es cualquier número comprendido entre 1 y 1000.|
-|/d \<Description >|Especifica la descripción que se va a usar para el evento que se acaba de crear.|
+|/d \<Descripción >|Especifica la descripción que se va a usar para el evento que se acaba de crear.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Los eventos personalizados no se pueden escribir en el registro de seguridad.
 

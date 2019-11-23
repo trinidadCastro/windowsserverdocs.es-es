@@ -40,29 +40,29 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 
 |           Parámetro            |                               Descripción                               |
 |--------------------------------|-------------------------------------------------------------------------|
-|           @no__t 0Command >           |      Especifica un comando para el que desea mostrar la salida.      |
+|           \<> de comandos           |      Especifica un comando para el que desea mostrar la salida.      |
 |               /c               |               Borra la pantalla antes de mostrar una página.               |
 |               /p               |                      Expande los caracteres de avance de la forma.                      |
 |               /s               |          Muestra varias líneas en blanco como una sola línea en blanco.          |
-|             /t @ no__t-0n (>             |         Muestra las pestañas como el número de espacios especificado por *N*.         |
-|             + @ NO__T-1N >              |     Muestra el primer archivo que comienza en la línea especificada por *N*.     |
-| [\<Drive >:] [\<Path >] \<FileName > |          Especifica la ubicación y el nombre de un archivo que se va a mostrar.          |
-|            @no__t 0Files >            | Especifica una lista de archivos que se van a mostrar. Separe los nombres de archivo con un espacio. |
+|             /t\<N >             |         Muestra las pestañas como el número de espacios especificado por *N*.         |
+|             +\<N >              |     Muestra el primer archivo que comienza en la línea especificada por *N*.     |
+| [\<> de unidad:] [\<path >]\<FileName > |          Especifica la ubicación y el nombre de un archivo que se va a mostrar.          |
+|            Archivos de \<>            | Especifica una lista de archivos que se van a mostrar. Separe los nombres de archivo con un espacio. |
 |               /?               |                  Muestra la ayuda en el símbolo del sistema.                   |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Los siguientes subcomandos se aceptan en el símbolo del sistema **más** (`-- More --`). 
 
-    | Key | . |
+    | Key | Acción |
     | --- | ------ |
     | TECLA | Muestra la página siguiente. |
     | ENTRAR | Muestra la línea siguiente. |
     | f | Muestra el siguiente archivo. |
     | q | Sale del comando **More** . |
     | = | Muestra el número de línea. |
-    | p \<n (> | Muestra las siguientes *N* líneas. |
-    | s \<n (> |S Kips las siguientes *N* líneas. |
+    | p \<N > | Muestra las siguientes *N* líneas. |
+    | s \<N > |S Kips las siguientes *N* líneas. |
     | ? | Muestra los comandos que están disponibles en el símbolo del sistema **más** .| 
     
 -   Al usar el carácter de redirección ( **<** ), debe especificar un nombre de archivo como origen. Al usar la canalización ( **\|** ), puede usar tales comandos como **dir**, **Sort**y **Type**.

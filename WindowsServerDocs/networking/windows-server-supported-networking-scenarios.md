@@ -18,11 +18,11 @@ ms.locfileid: "71395699"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Escenarios de redes admitidos por Windows Server
 
->Se aplica a: Windows Server \(Semi-canal anual @ no__t-1, Windows Server 2016
+>Se aplica a:\)de canal semianual de Windows Server \(, Windows Server 2016
 
 En este tema se proporciona información acerca de los escenarios admitidos y no admitidos que puede o no puede realizar con esta versión de Windows Server 2016.  
 >[!IMPORTANT]
->En todos los escenarios de producción, use los controladores de hardware firmados más recientes del fabricante de equipo original \(OEM @ no__t-1 o proveedor de hardware independiente \(IHV @ no__t-3.
+>En todos los escenarios de producción, use los controladores de hardware firmados más recientes del fabricante de equipo original \(OEM\) o fabricante de hardware independiente \(\)IHV.
   
 ## <a name="bkmk_supp"></a>Escenarios de red admitidos
 
@@ -38,7 +38,7 @@ En esta sección se incluye información acerca de los escenarios de red admitid
   
 -   [Escenarios de formación de equipos NIC](#bkmk_nicteam)
 
-- [Cambiar los escenarios de Teaming Embedded \(SET @ no__t-2](#bkmk_set)
+- [Cambiar la formación de equipos incrustados \(establecer\) escenarios](#bkmk_set)
   
 ### <a name="bkmk_sdn"></a>Escenarios de redes definidas por software (SDN)
  
@@ -86,7 +86,7 @@ Para obtener más información, consulte [virtualización de función de red](sd
   
 ### <a name="bkmk_netp"></a>Escenarios de plataforma de red
 
-En los escenarios de esta sección, el equipo de redes de Windows Server admite el uso de cualquier controlador certificado de Windows Server 2016. Consulte con el fabricante de la tarjeta de interfaz de red \(NIC @ no__t-1 para asegurarse de que tiene las actualizaciones más recientes del controlador.
+En los escenarios de esta sección, el equipo de redes de Windows Server admite el uso de cualquier controlador certificado de Windows Server 2016. Consulte la tarjeta de interfaz de red \(NIC\) fabricante para asegurarse de que dispone de las actualizaciones más recientes del controlador.
   
 Los escenarios de la plataforma de red permiten:  
   
@@ -169,7 +169,7 @@ Los escenarios de formación de equipos NIC permiten:
 
 Para obtener más información, consulte [formación de equipos NIC](technologies/nic-teaming/NIC-Teaming.md). 
 
-### <a name="bkmk_set"></a>Cambiar los escenarios de Teaming Embedded \(SET @ no__t-2
+### <a name="bkmk_set"></a>Cambiar la formación de equipos incrustados \(establecer\) escenarios
 
 SET es una solución alternativa para la formación de equipos NIC que puede usar en entornos que incluyen Hyper-V y la pila de redes definidas por software (SDN) en Windows Server 2016. El conjunto integra la funcionalidad de formación de equipos NIC en el conmutador virtual de Hyper-V. 
 

@@ -40,9 +40,9 @@ manage-bde -autounlock [{-enable|-disable|-clearallkeys}] <Drive> [-computername
 |-habilitar|Habilita el desbloqueo automático para una unidad de datos.|
 |-Disable|Deshabilita el desbloqueo automático para una unidad de datos.|
 |-clearallkeys|Quita todas las claves externas almacenadas en la unidad del sistema operativo.|
-|@no__t 0Drive >|Representa la letra de una unidad seguida del signo de dos puntos.|
+|\<unidad >|Representa la letra de una unidad seguida del signo de dos puntos.|
 |-COMPUTERNAME|Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando.|
-|\<Nombre >|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
+|Nombre del \<>|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
 |-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
 |-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
 

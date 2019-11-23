@@ -37,7 +37,7 @@ Ajustar el rendimiento del subsistema de red, especialmente en el caso de cargas
   
 3. **Pila de protocolos**. La pila de protocolos implementa protocolos como TCP/IP y UDP/IP. Estas capas exponen la interfaz de capa de transporte para las capas por encima de ellas.
   
-4. **Controladores del sistema**. Suelen ser clientes que usan una interfaz de extensión de datos de transporte (TDX) o de Winsock kernel (WSK) para exponer interfaces a aplicaciones de modo usuario. La interfaz WSK se presentó en Windows Server 2008 y Windows @ no__t-0 vista y se expone mediante AFD. sys. La interfaz mejora el rendimiento eliminando el cambio entre el modo de usuario y el modo kernel.
+4. **Controladores del sistema**. Suelen ser clientes que usan una interfaz de extensión de datos de transporte (TDX) o de Winsock kernel (WSK) para exponer interfaces a aplicaciones de modo usuario. La interfaz WSK se presentó en Windows Server 2008 y Windows&reg; vista, y se expone mediante AFD. sys. La interfaz mejora el rendimiento eliminando el cambio entre el modo de usuario y el modo kernel.
   
 5. **Aplicaciones de modo usuario**. Normalmente se trata de soluciones de Microsoft o aplicaciones personalizadas.
 

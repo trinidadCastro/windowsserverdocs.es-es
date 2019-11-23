@@ -39,7 +39,7 @@ cmstp.exe [/nf] [/ni] [/ns] [/s] [/su] [/u]  [Drive:][path]ServiceProfileFileNam
 |-------|--------|
 |< NombreArchivoPerfilServicio >. exe|Especifica, por nombre, el paquete de instalación que contiene el perfil que desea instalar.<br /><br />Se requiere para la sintaxis 1, pero no es válida para la sintaxis 2.|
 |/q:a|Especifica que el perfil debe instalarse sin preguntar al usuario. El mensaje de comprobación que indica que la instalación se ha realizado correctamente seguirá apareciendo.<br /><br />Se requiere para la sintaxis 1, pero no es válida para la sintaxis 2.|
-|[Unidad:] [rutaDeAcceso] @no__t -0. inf|Obligatorio. Especifica, por nombre, el archivo de configuración que determina cómo se debe instalar el perfil.<br /><br />El parámetro [unidad:] [rutaDeAcceso] no es válido para la sintaxis 1.|
+|[Unidad:] [rutaDeAcceso] <ServiceProfileFileName>. inf|Obligatorio. Especifica, por nombre, el archivo de configuración que determina cómo se debe instalar el perfil.<br /><br />El parámetro [unidad:] [rutaDeAcceso] no es válido para la sintaxis 1.|
 |/NF|Especifica que no se deben instalar los archivos de compatibilidad.|
 |/ni|Especifica que no se debe crear un icono de escritorio. Este parámetro solo es válido para equipos que ejecutan Windows 95, Windows 98, Windows NT 4,0 o Windows Millennium Edition.|
 |/NS|Especifica que no se debe crear un acceso directo de escritorio. Este parámetro solo es válido para equipos que ejecutan un miembro de la familia de Windows Server 2003, Windows 2000 o Windows XP.|
@@ -48,9 +48,9 @@ cmstp.exe [/nf] [/ni] [/ns] [/s] [/su] [/u]  [Drive:][path]ServiceProfileFileNam
 |/au|Especifica que el perfil de servicio debe instalarse para todos los usuarios. Este parámetro solo es válido para equipos que ejecutan Windows Server 2003, Windows 2000 o Windows XP.|
 |/u|Especifica que debe desinstalarse el perfil de servicio.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 **/s** es el único parámetro que puede usar en combinación con **/u**.
-La sintaxis 1 es la sintaxis típica utilizada en una aplicación de instalación personalizada. Para usar esta sintaxis, debe ejecutar **cmstp** desde el directorio que contiene el archivo @no__t -1. exe.
+La sintaxis 1 es la sintaxis típica utilizada en una aplicación de instalación personalizada. Para usar esta sintaxis, debe ejecutar **cmstp** desde el directorio que contiene el archivo <ServiceProfileFileName>. exe.
 ## <a name="BKMK_Examples"></a>Example
 Para instalar el perfil de servicio ficción sin ningún archivo de compatibilidad, escriba:
 ```
@@ -64,5 +64,5 @@ Para desinstalar de forma silenciosa el perfil del servicio ficción, escriba:
 ```
 fiction.exe /c:"cmstp.exe fiction.inf /s /u"
 ```
-## <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>referencias adicionales
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

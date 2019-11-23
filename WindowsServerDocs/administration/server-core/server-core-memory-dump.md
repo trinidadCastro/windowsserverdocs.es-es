@@ -20,29 +20,29 @@ ms.locfileid: "71383391"
 
 Siga estos pasos para configurar un volcado de memoria para la instalación Server Core. 
 
-## <a name="step-1-disable-the-automatic-system-page-file-management"></a>Paso 1: Deshabilitar la administración automática de archivos de páginas del sistema
+## <a name="step-1-disable-the-automatic-system-page-file-management"></a>Paso 1: deshabilitar la administración automática de archivos de páginas del sistema
 
 El primer paso consiste en configurar manualmente las opciones de recuperación y los errores del sistema. Esto es necesario para completar los pasos restantes.
 
-Ejecute el siguiente comando: 
+Ejecuta el siguiente comando: 
 
 ```
 wmic computersystem set AutomaticManagedPagefile=False
 ```
  
-## <a name="step-2-configure-the-destination-path-for-a-memory-dump"></a>Paso 2: Configurar la ruta de acceso de destino para un volcado de memoria
+## <a name="step-2-configure-the-destination-path-for-a-memory-dump"></a>Paso 2: configurar la ruta de acceso de destino para un volcado de memoria
 
 No es necesario tener el archivo de paginación en la partición en la que está instalado el sistema operativo. Para colocar el archivo de paginación en otra partición, debe crear una nueva entrada del registro denominada **DedicatedDumpFile**. Puede definir el tamaño del archivo de paginación mediante la entrada del registro **DumpFileSize** . Para crear las entradas del registro DedicatedDumpFile y DumpFileSize, siga estos pasos: 
 
 1. En el símbolo del sistema, ejecute el comando **regedit** para abrir el editor del registro.
-2. Busque y haga clic en la siguiente subclave del Registro: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl
+2. Busque y haga clic en la siguiente subclave del registro: HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\CrashControl
 3. Haga clic en **editar > nuevo > valor de cadena**.
 4. Asigne al nuevo valor el nombre **DedicatedDumpFile**y, a continuación, presione Entrar.
 5. Haga clic con el botón secundario en **DedicatedDumpFile**y, a continuación, haga clic en **modificar**.
-6. En tipo de **datos del valor** **\<Drive @ no__t-3: @no__t -4\<Dedicateddumpfile.sys @ no__t-6**y, a continuación, haga clic en **Aceptar**.
+6. En tipo de **datos del valor** **\<unidad\>:\\\<Dedicateddumpfile. sys\>** y, a continuación, haga clic en **Aceptar**.
 
    >[!NOTE] 
-   > Reemplace \<Drive @ no__t-1 por una unidad que tenga suficiente espacio en disco para el archivo de paginación y reemplace @no__t -2Dedicateddumpfile. DMP @ no__t-3 por la ruta de acceso completa al archivo dedicado.
+   > Reemplace \<unidad\> por una unidad que tenga suficiente espacio en disco para el archivo de paginación y reemplace \<\> Dedicateddumpfile. DMP por la ruta de acceso completa al archivo dedicado.
  
 7. Haga clic en **editar > nuevo valor DWORD >** .
 8. Escriba **DumpFileSize**y, a continuación, presione Entrar.
@@ -65,13 +65,13 @@ El destino predeterminado para **DebugFilePath** es%SystemRoot%\Memory.DMP. Para
 wmic RECOVEROS set DebugFilePath = <FilePath>
 ```
 
-Establezca \<FilePath @ no__t-1 en la ruta de acceso de destino. Por ejemplo, el comando siguiente establece la ruta de acceso de destino de volcado de memoria en C:\WINDOWS\MEMORY. DMP 
+Establezca \<FilePath\> en la ruta de acceso de destino. Por ejemplo, el comando siguiente establece la ruta de acceso de destino de volcado de memoria en C:\WINDOWS\MEMORY. DMP 
 
 ```
 wmic RECOVEROS set DebugFilePath = C:\WINDOWS\MEMORY.DMP
 ```
  
-## <a name="step-3-set-the-type-of-memory-dump"></a>Paso 3: Establecer el tipo de volcado de memoria
+## <a name="step-3-set-the-type-of-memory-dump"></a>Paso 3: establecer el tipo de volcado de memoria
 
 Determine el tipo de volcado de memoria que se va a configurar para el servidor. Para ver el tipo de volcado de memoria actual, ejecute el siguiente comando:
 
@@ -85,14 +85,14 @@ Para cambiar el tipo de volcado de memoria actual, ejecute el siguiente comando:
 wmic RECOVEROS set DebugInfoType = <Value>
 ```
 
-\<Value @ no__t-1 puede ser 0, 1, 2 o 3, tal como se define a continuación.
+\<valor\> puede ser 0, 1, 2 o 3, tal y como se define a continuación.
 
-- 0: Deshabilitar la eliminación de un volcado de memoria.
-- 1: Volcado de memoria completo. Registra todo el contenido de la memoria del sistema cuando el equipo se detiene de forma inesperada. Un volcado de memoria completo puede contener datos de los procesos que se estaban ejecutando cuando se recopiló el volcado de memoria.
-- 2: Volcado de memoria del kernel (predeterminado). Registra únicamente en la memoria de kernel. Esto acelera el proceso de grabar información en un archivo de registro cuando el equipo se detiene de forma inesperada.
-- 3: Volcado de memoria pequeño. Registra el conjunto más pequeño de información útil que puede ayudar a identificar por qué el equipo se detuvo de forma inesperada.
+- 0: deshabilitar la eliminación de un volcado de memoria.
+- 1: volcado de memoria completo. Registra todo el contenido de la memoria del sistema cuando el equipo se detiene de forma inesperada. Un volcado de memoria completo puede contener datos de los procesos que se estaban ejecutando cuando se recopiló el volcado de memoria.
+- 2: volcado de memoria del kernel (predeterminado). Registra únicamente en la memoria de kernel. Esto acelera el proceso de grabar información en un archivo de registro cuando el equipo se detiene de forma inesperada.
+- 3: volcado de memoria pequeño. Registra el conjunto más pequeño de información útil que puede ayudar a identificar por qué el equipo se detuvo de forma inesperada.
 
-## <a name="step-4-configure-the-server-to-restart-automatically-after-generating-a-memory-dump"></a>Paso 4: Configurar el servidor para que se reinicie automáticamente después de generar un volcado de memoria
+## <a name="step-4-configure-the-server-to-restart-automatically-after-generating-a-memory-dump"></a>Paso 4: configurar el servidor para que se reinicie automáticamente después de generar un volcado de memoria
 
 De forma predeterminada, el servidor se reinicia automáticamente después de generar un volcado de memoria. Para ver la configuración actual, ejecute el siguiente comando:
 
@@ -108,7 +108,7 @@ Si el valor de **AutoReboot** es false, el servidor no se reiniciará automátic
 wmic RECOVEROS set AutoReboot = true
 ```
  
-## <a name="step-5-configure-the-server-to-overwrite-the-existing-memory-dump-file"></a>Paso 5: Configurar el servidor para sobrescribir el archivo de volcado de memoria existente
+## <a name="step-5-configure-the-server-to-overwrite-the-existing-memory-dump-file"></a>Paso 5: configurar el servidor para sobrescribir el archivo de volcado de memoria existente
 
 De forma predeterminada, el servidor sobrescribe el archivo de volcado de memoria existente cuando se crea uno nuevo. Para determinar si los archivos de volcado de memoria existentes ya están configurados para sobrescribirse, ejecute el siguiente comando:
 
@@ -124,7 +124,7 @@ Si el valor es 0, el servidor no sobrescribirá el archivo de volcado de memoria
 wmic RECOVEROS set OverwriteExistingDebugFile = 1
 ```
  
-## <a name="step-6-set-an-administrative-alert"></a>Paso 6: Establecer una alerta administrativa
+## <a name="step-6-set-an-administrative-alert"></a>Paso 6: establecer una alerta administrativa
 
 Determine si una alerta administrativa es adecuada y establezca **SendAdminAlert** en consecuencia. Para ver el valor actual de SendAdminAlert, ejecute el siguiente comando:
 
@@ -138,7 +138,7 @@ Los valores posibles de SendAdminAlert son TRUE o FALSE. Para modificar el valor
 wmic RECOVEROS set SendAdminAlert = true
 ```
  
-## <a name="step-7-set-the-memory-dumps-page-file-size"></a>Paso 7: Establecer el tamaño del archivo de paginación del volcado de memoria
+## <a name="step-7-set-the-memory-dumps-page-file-size"></a>Paso 7: establecer el tamaño del archivo de paginación del volcado de memoria
 
 Para comprobar la configuración del archivo de paginación actual, ejecute uno de los siguientes comandos:
 
@@ -158,7 +158,7 @@ Por ejemplo, ejecute el siguiente comando para configurar los tamaños inicial y
 wmic pagefileset where name="c:\\pagefile.sys" set InitialSize=1000,MaximumSize=5000
 ```
 
-## <a name="step-8-configure-the-server-to-generate-a-manual-memory-dump"></a>Paso 8: Configurar el servidor para generar un volcado de memoria manual
+## <a name="step-8-configure-the-server-to-generate-a-manual-memory-dump"></a>Paso 8: configurar el servidor para generar un volcado de memoria manual
 
 Puede generar manualmente un volcado de memoria mediante un teclado PS/2. Esta característica está deshabilitada de forma predeterminada y no está disponible para los teclados de bus serie universal (USB).
 
@@ -182,7 +182,7 @@ Shutdown / r / t 0
 
 Puede generar volcados de memoria manuales con un teclado PS/2 conectado al servidor manteniendo presionada la tecla CTRL derecha mientras presiona la tecla Bloq Despl dos veces. Esto hace que la comprobación de errores del equipo sea el código de error 0xE2. Después de reiniciar el servidor, aparece un nuevo archivo de volcado en la ruta de acceso de destino que estableció en el paso 2.
 
-## <a name="step-9-verify-that-memory-dump-files-are-being-created-correctly"></a>Paso 9: Comprobar que los archivos de volcado de memoria se están creando correctamente
+## <a name="step-9-verify-that-memory-dump-files-are-being-created-correctly"></a>Paso 9: comprobar que los archivos de volcado de memoria se están creando correctamente
 
 Puede usar el utlity de Dumpchk. exe para comprobar que los archivos de volcado de memoria se crean correctamente. La utilidad Dumpchk. exe no se instala con la opción de instalación Server Core, por lo que tendrá que ejecutarla desde un servidor con la experiencia de escritorio o desde Windows 10. Además, se deben instalar las herramientas de depuración para productos de Windows.  
 

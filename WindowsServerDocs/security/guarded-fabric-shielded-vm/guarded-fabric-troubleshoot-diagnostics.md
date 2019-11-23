@@ -44,7 +44,7 @@ Los diagnósticos de tejido protegido están disponibles en cualquier host con c
 
 Esto significa que las herramientas de diagnóstico estarán disponibles en todos los hosts protegidos, nodos de HGS, determinados servidores de administración de tejido y las estaciones de trabajo de Windows 10 con [rsat](https://www.microsoft.com/download/details.aspx?id=45520) instaladas.  Los diagnósticos se pueden invocar desde cualquiera de las máquinas anteriores con la intención de diagnosticar cualquier host protegido o nodo de HGS en un tejido protegido; con los destinos de seguimiento remoto, los diagnósticos pueden localizar y conectarse a los hosts que no sean el equipo que ejecuta el diagnóstico.
 
-Cada host de destino se denomina "destino de seguimiento".  Los destinos de seguimiento se identifican por sus nombres de host y roles.  Los roles describen la función que realiza un destino de seguimiento determinado en un tejido protegido.  Actualmente, los destinos de seguimiento admiten los roles `HostGuardianService` y `GuardedHost`.  Tenga en cuenta que es posible que un host ocupe varios roles a la vez y que también sea compatible con el diagnóstico; sin embargo, esto no debería realizarse en entornos de producción.  Los hosts HGS y Hyper-V deben mantenerse separados y distintos en todo momento.
+Cada host de destino se denomina "destino de seguimiento".  Los destinos de seguimiento se identifican por sus nombres de host y roles.  Los roles describen la función que realiza un destino de seguimiento determinado en un tejido protegido.  Actualmente, los destinos de seguimiento admiten `HostGuardianService` y `GuardedHost` roles.  Tenga en cuenta que es posible que un host ocupe varios roles a la vez y que también sea compatible con el diagnóstico; sin embargo, esto no debería realizarse en entornos de producción.  Los hosts HGS y Hyper-V deben mantenerse separados y distintos en todo momento.
 
 Los administradores pueden iniciar cualquier tarea de diagnóstico mediante la ejecución de `Get-HgsTrace`.  Este comando realiza dos funciones distintas en función de los modificadores proporcionados en tiempo de ejecución: colección y diagnóstico de seguimiento.  Estos dos combinados componen la totalidad de la herramienta de diagnóstico de tejido protegido.  Aunque no se requiere explícitamente, los diagnósticos más útiles requieren seguimientos que solo se pueden recopilar con credenciales de administrador en el destino de seguimiento.  Si el usuario que ejecuta la colección de seguimiento contiene privilegios insuficientes, se producirá un error en los seguimientos que requieran elevación mientras se pasarán todos los demás.  Esto permite el diagnóstico parcial en el caso de que un operador con privilegios mínimos realice la evaluación de prioridades. 
 
@@ -55,10 +55,10 @@ Si es necesario, los seguimientos se pueden revisar manualmente.  Todos los form
 
 Los resultados de la ejecución de la colección de seguimiento no hacen ninguna indicación del estado de un host determinado.  Simplemente indican que los seguimientos se recopilaron correctamente.  Es necesario usar los mecanismos de diagnóstico de `Get-HgsTrace` para determinar si los seguimientos indican un entorno con errores.
 
-Con el parámetro `-Diagnostic`, puede restringir la colección de seguimiento solo a los seguimientos necesarios para operar el diagnóstico especificado.  Esto reduce la cantidad de datos recopilados, así como los permisos necesarios para invocar diagnósticos.
+Con el parámetro `-Diagnostic`, puede restringir la recopilación de seguimiento solo a los seguimientos necesarios para operar el diagnóstico especificado.  Esto reduce la cantidad de datos recopilados, así como los permisos necesarios para invocar diagnósticos.
 
 ### <a name="diagnosis"></a>Diagnóstico
-Los seguimientos recopilados se pueden diagnosticar proporcionando `Get-HgsTrace` a la ubicación de los seguimientos mediante el parámetro `-Path` y especificando el modificador `-RunDiagnostics`.  Además, `Get-HgsTrace` puede realizar la recopilación y el diagnóstico en un solo paso proporcionando el conmutador `-RunDiagnostics` y una lista de destinos de seguimiento.  Si no se proporciona ningún destino de seguimiento, el equipo actual se usa como destino implícito, y su rol se deduce mediante la inspección de los módulos de Windows PowerShell instalados.
+Los seguimientos recopilados se pueden diagnosticar facilitando `Get-HgsTrace` la ubicación de los seguimientos a través del parámetro `-Path` y especificando el modificador `-RunDiagnostics`.  Además, `Get-HgsTrace` puede realizar la recopilación y el diagnóstico en un solo paso proporcionando el modificador de `-RunDiagnostics` y una lista de destinos de seguimiento.  Si no se proporciona ningún destino de seguimiento, el equipo actual se usa como destino implícito, y su rol se deduce mediante la inspección de los módulos de Windows PowerShell instalados.
 
 El diagnóstico proporcionará los resultados en un formato jerárquico que muestre qué destinos de seguimiento, conjuntos de diagnósticos y diagnósticos individuales son responsables de un error determinado.  Los errores incluyen recomendaciones de corrección y resolución si se puede determinar la acción que debe realizarse a continuación.  De forma predeterminada, se ocultan los resultados de paso y irrelevantes.  Para ver todo lo que prueban los diagnósticos, especifique el modificador `-Detailed`.  Esto hará que todos los resultados aparezcan independientemente de su estado.
 
@@ -69,13 +69,13 @@ Es posible restringir el conjunto de diagnósticos que se ejecutan mediante el p
 
 ## <a name="targeting-diagnostics"></a>Destinar diagnósticos
 
-`Get-HgsTrace` funciona con destinos de seguimiento.  Un destino de seguimiento es un objeto que se corresponde con un nodo HGS o un host protegido dentro de un tejido protegido.  Puede considerarse una extensión de un `PSSession`, que incluye la información que solo requiere diagnóstico como el rol del host en el tejido.  Los destinos se pueden generar implícitamente (por ejemplo, diagnóstico local o manual) o explícitamente con el comando `New-HgsTraceTarget`.
+`Get-HgsTrace` funciona con destinos de seguimiento.  Un destino de seguimiento es un objeto que se corresponde con un nodo HGS o un host protegido dentro de un tejido protegido.  Puede considerarse como una extensión de una `PSSession` que incluye la información que solo requiere diagnóstico como el rol del host en el tejido.  Los destinos se pueden generar implícitamente (por ejemplo, diagnóstico local o manual) o explícitamente con el comando `New-HgsTraceTarget`.
 
 ### <a name="local-diagnosis"></a>Diagnóstico local
 
 De forma predeterminada, `Get-HgsTrace` se destinará al host local (es decir, donde se invoca el cmdlet).  Esto se conoce como el destino local implícito.  El destino local implícito solo se usa cuando no se proporciona ningún destino en el parámetro `-Target` y no se encuentra ningún seguimiento existente previamente en el `-Path`.
 
-El destino local implícito usa la inferencia de roles para determinar qué rol desempeña el host actual en el tejido protegido.  Esto se basa en los módulos de Windows PowerShell instalados que corresponden aproximadamente a las características que se han instalado en el sistema.  La presencia del módulo `HgsServer` hará que el destino del seguimiento adopte el rol `HostGuardianService` y la presencia del módulo `HgsClient` hará que el destino del seguimiento adopte el rol `GuardedHost`.  Es posible que un host determinado tenga ambos módulos presentes en cuyo caso se tratará como un `HostGuardianService` y un `GuardedHost`.
+El destino local implícito usa la inferencia de roles para determinar qué rol desempeña el host actual en el tejido protegido.  Esto se basa en los módulos de Windows PowerShell instalados que corresponden aproximadamente a las características que se han instalado en el sistema.  La presencia del módulo `HgsServer` hará que el destino del seguimiento adopte el rol `HostGuardianService` y la presencia del módulo `HgsClient` hará que el destino del seguimiento adopte el rol `GuardedHost`.  Es posible que un host determinado tenga ambos módulos presentes, en cuyo caso se tratará como un `HostGuardianService` y un `GuardedHost`.
 
 Por lo tanto, la invocación predeterminada de diagnósticos para recopilar seguimientos localmente:
 ```PowerShell
@@ -107,20 +107,20 @@ Puede comprobar que se ha creado una instancia correcta de un destino de seguimi
 $server = New-HgsTraceTarget -HostName "hgs-01.secure.contoso.com" -Role HostGuardianService -Credential (Enter-Credential)
 $server | Test-HgsTraceTarget
 ```
-Este comando devolverá `$True` si `Get-HgsTrace` podrá establecer una sesión de diagnóstico remoto con el destino de seguimiento.  En caso de error, este cmdlet devolverá información de estado relevante para solucionar el problema de la conexión remota de Windows PowerShell.
+Este comando devolverá `$True` si `Get-HgsTrace` podría establecer una sesión de diagnóstico remoto con el destino de seguimiento.  En caso de error, este cmdlet devolverá información de estado relevante para solucionar el problema de la conexión remota de Windows PowerShell.
 
 #### <a name="implicit-credentials"></a>Credenciales IMPLÍCITAS
 
-Cuando se realiza el diagnóstico remoto desde un usuario con privilegios suficientes para conectarse de forma remota al destino de seguimiento, no es necesario proporcionar credenciales a `New-HgsTraceTarget`.  El cmdlet `Get-HgsTrace` reutilizará automáticamente las credenciales del usuario que invocó el cmdlet al abrir una conexión.
+Cuando se realiza el diagnóstico remoto desde un usuario con privilegios suficientes para conectarse de forma remota al destino de seguimiento, no es necesario proporcionar credenciales a `New-HgsTraceTarget`.  El cmdlet `Get-HgsTrace` volverá a usar automáticamente las credenciales del usuario que invocó el cmdlet al abrir una conexión.
 
 > [!WARNING]
 > Algunas restricciones se aplican a la reutilización de credenciales, especialmente al realizar lo que se conoce como "segundo salto".  Esto sucede cuando se intenta reutilizar las credenciales de una sesión remota en otra máquina.  Es necesario [configurar CredSSP](https://technet.microsoft.com/library/hh849872.aspx) para que admita este escenario, pero esto está fuera del ámbito de administración y solución de problemas de los tejidos protegidos.
 
 #### <a name="using-windows-powershell-just-enough-administration-jea-and-diagnostics"></a>Uso de la administración suficiente de Windows PowerShell (JEA) y diagnósticos
 
-El diagnóstico remoto admite el uso de puntos de conexión de Windows PowerShell con restricción de JEA. De forma predeterminada, los destinos de seguimiento remoto se conectarán mediante el punto de conexión `microsoft.powershell` predeterminado.  Si el destino de seguimiento tiene el rol `HostGuardianService`, también intentará usar el punto de conexión `microsoft.windows.hgs` que se configura cuando se instala HGS.
+El diagnóstico remoto admite el uso de puntos de conexión de Windows PowerShell con restricción de JEA. De forma predeterminada, los destinos de seguimiento remoto se conectarán mediante el punto de conexión de `microsoft.powershell` predeterminado.  Si el destino de seguimiento tiene el rol `HostGuardianService`, también intentará usar el punto de conexión de `microsoft.windows.hgs` que se configura cuando se instala HGS.
 
-Si desea utilizar un punto de conexión personalizado, debe especificar el nombre de la configuración de sesión mientras construye el destino de seguimiento mediante el parámetro `-PSSessionConfigurationName`, como el siguiente:
+Si desea utilizar un punto de conexión personalizado, debe especificar el nombre de la configuración de sesión mientras construye el destino de seguimiento mediante el parámetro `-PSSessionConfigurationName`, como se muestra a continuación:
 
 ```PowerShell
 New-HgsTraceTarget -HostName "hgs-01.secure.contoso.com" -Role HostGuardianService -Credential (Enter-Credential) -PSSessionConfigurationName "microsoft.windows.hgs"
@@ -128,9 +128,9 @@ New-HgsTraceTarget -HostName "hgs-01.secure.contoso.com" -Role HostGuardianServi
 
 #### <a name="diagnosing-multiple-hosts"></a>Diagnóstico de varios hosts
 
-Puede pasar varios destinos de seguimiento a `Get-HgsTrace` a la vez.  Esto incluye una combinación de destinos locales y remotos.  Se realizará un seguimiento de cada destino a su vez y, a continuación, los seguimientos de cada destino se diagnosticarán simultáneamente.  La herramienta de diagnóstico puede usar el mayor conocimiento de la implementación para identificar configuraciones incompletas interactivas entre nodos que de otro modo no serían detectables.  El uso de esta característica solo requiere proporcionar seguimientos de varios hosts simultáneamente (en el caso de diagnóstico manual) o estableciendo como destino varios hosts al llamar a `Get-HgsTrace` (en el caso de diagnóstico remoto).
+Puede pasar varios destinos de seguimiento a `Get-HgsTrace` a la vez.  Esto incluye una combinación de destinos locales y remotos.  Se realizará un seguimiento de cada destino a su vez y, a continuación, los seguimientos de cada destino se diagnosticarán simultáneamente.  La herramienta de diagnóstico puede usar el mayor conocimiento de la implementación para identificar configuraciones incompletas interactivas entre nodos que de otro modo no serían detectables.  El uso de esta característica solo requiere proporcionar seguimientos de varios hosts simultáneamente (en el caso de diagnóstico manual) o dirigirse a varios hosts al llamar a `Get-HgsTrace` (en el caso del diagnóstico remoto).
 
-Este es un ejemplo del uso de diagnósticos remotos para evaluar un tejido compuesto por dos nodos HGS y dos hosts protegidos, donde uno de los hosts protegidos se usa para iniciar `Get-HgsTrace`.
+Este es un ejemplo del uso de diagnósticos remotos para evaluar un tejido compuesto por dos nodos HGS y dos hosts protegidos, donde se usa uno de los hosts protegidos para iniciar `Get-HgsTrace`.
 
 ```PowerShell
 $hgs01 = New-HgsTraceTarget -HostName "hgs-01.secure.contoso.com" -Credential (Enter-Credential)
@@ -154,7 +154,7 @@ Antes de realizar el diagnóstico manual, debe asegurarse de que los administrad
 
 Los pasos para realizar un diagnóstico manual son los siguientes:
 
-1. Solicite que cada administrador de host ejecute `Get-HgsTrace` especificando un @no__t conocido y la lista de diagnósticos que desea ejecutar en los seguimientos resultantes.  Por ejemplo:
+1. Solicite que cada administrador de host ejecute `Get-HgsTrace` especificar un `-Path` conocido y la lista de diagnósticos que desea ejecutar en los seguimientos resultantes.  Por ejemplo:
 
    ```PowerShell
    Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
@@ -179,7 +179,7 @@ Los pasos para realizar un diagnóstico manual son los siguientes:
          |- [..]
       ```
 
-4. Ejecute diagnósticos y proporcione la ruta de acceso a la carpeta de seguimiento ensamblada en el parámetro `-Path` y especifique el conmutador `-RunDiagnostics`, así como los diagnósticos para los que solicitó a los administradores que recopilen seguimientos.  El diagnóstico asumirá que no puede acceder a los hosts que se encuentran dentro de la ruta de acceso y, por lo tanto, intentará usar solo los seguimientos recopilados previamente.  Si faltan seguimientos o están dañados, el diagnóstico solo producirá un error en las pruebas afectadas y continuará normalmente.  Por ejemplo:
+4. Ejecute los diagnósticos y proporcione la ruta de acceso a la carpeta de seguimiento ensamblada en el parámetro `-Path` y especifique el modificador `-RunDiagnostics` así como los diagnósticos para los que solicitó a los administradores que recopilen seguimientos.  El diagnóstico asumirá que no puede acceder a los hosts que se encuentran dentro de la ruta de acceso y, por lo tanto, intentará usar solo los seguimientos recopilados previamente.  Si faltan seguimientos o están dañados, el diagnóstico solo producirá un error en las pruebas afectadas y continuará normalmente.  Por ejemplo:
 
    ```PowerShell
    Get-HgsTrace -RunDiagnostics -Diagnostic Networking,BestPractices -Path ".\FabricTraces"
@@ -189,7 +189,7 @@ Los pasos para realizar un diagnóstico manual son los siguientes:
 
 En algunos casos, es posible que tenga un conjunto de seguimientos recopilados previamente que desea aumentar con seguimientos de host adicionales.  Es posible mezclar seguimientos previamente recopilados con destinos adicionales que se rastrearán y diagnosticarán en una única llamada de diagnósticos.
 
-Siguiendo las instrucciones para recopilar y ensamblar una carpeta de seguimiento especificada anteriormente, llame a `Get-HgsTrace` con destinos de seguimiento adicionales que no se encuentren en la carpeta de seguimiento recopilada previamente:
+Siga las instrucciones para recopilar y ensamblar una carpeta de seguimiento especificada anteriormente, llamar a `Get-HgsTrace` con destinos de seguimiento adicionales que no se encuentran en la carpeta de seguimiento recopilada previamente:
 
 ```PowerShell
 $hgs03 = New-HgsTraceTarget -HostName "hgs-03.secure.contoso.com" -Credential (Enter-Credential)

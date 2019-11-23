@@ -36,7 +36,7 @@ ksetup /listrealmflags
 
 Ninguno
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Las marcas de dominio Kerberos especifican características adicionales de un dominio Kerberos no basado en Windows. Los equipos que ejecutan Windows Server 2003, Windows Server 2008 o Windows Server 2008 R2 pueden usar un servidor Kerberos no basado en Windows para administrar la autenticación en lugar de usar un dominio que ejecute un sistema operativo Windows Server. Estos sistemas participan en un dominio Kerberos en lugar de en un dominio de Windows. Esta entrada establece las características del dominio Kerberos. En la tabla siguiente se describe cada uno de ellos.
 
@@ -50,7 +50,7 @@ Las marcas de dominio Kerberos especifican características adicionales de un do
 |0x08|NcSupported|Este dominio Kerberos admite la canonización de nombres, que permite los estándares de nomenclatura DNS y dominio Kerberos.|
 |0x80|RC4|Este dominio Kerberos es compatible con el cifrado RC4 para habilitar la confianza entre dominios, lo que permite el uso de TLS.|
 
-Las marcas de dominio Kerberos se almacenan en el registro en **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains @ no__t-1**<em>realm-name</em>. Esta entrada no existe en el registro de forma predeterminada. Puede usar el comando [Ksetup: addrealmflags](ksetup-addrealmflags.md) para rellenar el registro.
+Las marcas de dominio Kerberos se almacenan en el registro en **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains\\** <em>nombre de dominio Kerberos</em>. Esta entrada no existe en el registro de forma predeterminada. Puede usar el comando [Ksetup: addrealmflags](ksetup-addrealmflags.md) para rellenar el registro.
 
 ## <a name="BKMK_Examples"></a>Example
 

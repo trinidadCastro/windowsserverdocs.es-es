@@ -38,8 +38,8 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 
 |Parámetro|Descripción|
 |---------|-----------|
-|"@no__t 0Title >"|Especifica el título que se va a mostrar en la barra de título de la ventana del símbolo del sistema.|
-|/d \<Path >|Especifica el directorio de inicio.|
+|"título de\<>"|Especifica el título que se va a mostrar en la barra de título de la ventana del símbolo del sistema.|
+|/d \<ruta de acceso >|Especifica el directorio de inicio.|
 |/i|Pasa el entorno de inicio de cmd. exe a la nueva ventana del símbolo del sistema. Si no se especifica **/i** , se utiliza el entorno actual.|
 |/min \|/Max|Especifica la minimización ( **/min**) o la maximización ( **/Max**) de la nueva ventana del símbolo del sistema.|
 |/Separate \|/Shared|Inicia programas de 16 bits en un espacio de memoria independiente ( **/separate**) o en un espacio de memoria compartido ( **/Shared**). Estas opciones no se admiten en las plataformas de 64 bits.|
@@ -47,11 +47,11 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 |/Affinity \<HexAffinity >|Aplica la máscara de afinidad de procesador especificada (expresada como un número hexadecimal) a la nueva aplicación.|
 |/Wait|Inicia una aplicación y espera a que finalice.|
 |b|Inicia una aplicación sin abrir una nueva ventana del símbolo del sistema. El control de CTRL + C se omite a menos que la aplicación habilite el procesamiento de CTRL + C. Use CTRL + INTER para interrumpir la aplicación.|
-|/b \<Command > \| \<Program >|Especifica el comando o el programa que se va a iniciar.|
-|@no__t 0Parameters >|Especifica los parámetros que se van a pasar al comando o programa.|
+|/b \<> de comandos \| \<programa >|Especifica el comando o el programa que se va a iniciar.|
+|\<parámetros >|Especifica los parámetros que se van a pasar al comando o programa.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Puede ejecutar archivos no ejecutables a través de su asociación de archivo escribiendo el nombre del archivo como un comando.
 - Cuando se ejecuta un comando que contiene la cadena "CMD" como primer token sin un calificador de extensión o ruta de acceso, "CMD" se reemplaza por el valor de la variable comspec. Esto impide a los usuarios seleccionar **cmd** desde el directorio actual.

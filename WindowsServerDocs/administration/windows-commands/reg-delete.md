@@ -38,14 +38,14 @@ Reg delete <KeyName> [{/v ValueName | /ve | /va}] [/f]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0KeyName >|Especifica la ruta de acceso completa de la subclave o entrada que se va a eliminar. Para especificar un equipo remoto, incluya el nombre del equipo (en el formato \\ @ no__t-1ComputerName @ no__t-2 como parte del nombre de *clave*. Si se omite \\ @ no__t-1ComputerName, la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.|
+|\<KeyName >|Especifica la ruta de acceso completa de la subclave o entrada que se va a eliminar. Para especificar un equipo remoto, incluya el nombre del equipo (en el formato \\\\ComputerName\) como parte del nombre de *clave*. Si se omite \\\\ComputerName \, la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.|
 |/v \<ValueName >|Elimina una entrada específica bajo la subclave. Si no se especifica ninguna entrada, se eliminarán todas las entradas y subclaves de la subclave.|
 |/ve|Especifica que solo se eliminarán las entradas que no tengan ningún valor.|
 |/va|Elimina todas las entradas de la subclave especificada. Las subclaves de la subclave especificada no se eliminan.|
 |/f|Elimina la subclave del registro existente o la entrada sin solicitar confirmación.|
 |/?|Muestra la ayuda de **reg Delete** en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 En la tabla siguiente se enumeran los valores devueltos para la operación de **eliminación de registro** .
 

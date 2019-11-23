@@ -36,13 +36,13 @@ En este tema se incluyen las siguientes secciones.
   
 -   [Características de BGP](#bkmk_features)  
   
-Cuando se configura en un servicio de acceso remoto de Windows Server 2016 \(RAS @ no__t-1 Gateway en el modo multiinquilino, Protocolo de puerta de enlace de borde (BGP) le proporciona la capacidad de administrar el enrutamiento del tráfico de red entre las redes de VM de los inquilinos y sus Remote sitios. También puede usar BGP para implementaciones de puerta de enlace RAS de un solo inquilino y al implementar el acceso remoto como un enrutador de red de área local \(LAN @ no__t-1.  
+Cuando se configura en un servicio de acceso remoto de Windows Server 2016 \(puerta de enlace de RAS\) en modo multiinquilino, Protocolo de puerta de enlace de borde (BGP) le proporciona la capacidad de administrar el enrutamiento del tráfico de red entre las redes de VM de los inquilinos y sus sitios remotos. También puede usar BGP para implementaciones de puerta de enlace RAS de un solo inquilino y al implementar el acceso remoto como una red de área local \(enrutador\) LAN.  
   
 BGP reduce la necesidad de configuración de enrutamiento manual en los enrutadores, ya que es un protocolo de enrutamiento dinámico y aprende automáticamente las rutas entre sitios que están conectados mediante conexiones VPN de sitio a sitio.  
   
-Para usar el enrutamiento de BGP, debe instalar el **servicio de acceso remoto \(RAS @ no__t-2** y/o el servicio de rol **enrutamiento** del rol de servidor de acceso remoto en un equipo o máquina virtual \(VM @ no__t-5: el tipo de sistema que use dependerá de Si tiene una implementación multiinquilino:  
+Para usar el enrutamiento de BGP, debe instalar el **servicio de acceso remoto \(RAS\)** o el servicio de rol de **enrutamiento** del rol de servidor de acceso remoto en un equipo o máquina virtual \(VM\): el tipo de sistema que use dependerá de si tiene una implementación multiinquilino:  
   
--   Para una implementación multiinquilino, se recomienda instalar la puerta de enlace RAS en una o más máquinas virtuales. El uso de varias máquinas virtuales proporciona alta disponibilidad. La puerta de enlace RAS es capaz de controlar varias conexiones de varios inquilinos y consta de un host de Hyper-V y una máquina virtual que realmente está configurada como puerta de enlace. Esta puerta de enlace se configura con conexiones VPN de sitio a sitio como un enrutador BGP multiinquilino para el inquilino de Exchange y el proveedor de servicios en la nube \(CSP @ no__t-1 rutas de subred.  
+-   Para una implementación multiinquilino, se recomienda instalar la puerta de enlace RAS en una o más máquinas virtuales. El uso de varias máquinas virtuales proporciona alta disponibilidad. La puerta de enlace RAS es capaz de controlar varias conexiones de varios inquilinos y consta de un host de Hyper-V y una máquina virtual que realmente está configurada como puerta de enlace. Esta puerta de enlace se configura con conexiones VPN de sitio a sitio como un enrutador BGP multiinquilino para el inquilino de Exchange y el proveedor de servicios en la nube \(CSP\) rutas de subred.  
   
 -   En el caso de una implementación de puerta de enlace perimetral de un solo inquilino o una implementación de enrutador LAN, puede instalar la puerta de enlace RAS en un equipo físico o en una máquina virtual.  
   

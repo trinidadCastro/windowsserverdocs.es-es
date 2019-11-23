@@ -134,7 +134,7 @@ La consola de SPA puede ejecutarse en los siguientes sistemas operativos:
 
 * Windows Server 2008 R2
 
-* Windows Server 2008
+* Windows Server 2008
 
 En una aplicación empresarial típica, hay tres niveles: el nivel de presentación, la capa de lógica de negocios y la capa de almacenamiento. SPA está diseñado como un producto de dos niveles en la consola y en la base de datos. La consola de actúa como una capa de presentación con cierta lógica relacionada con el proceso y la base de datos sirve como la capa de almacenamiento y la capa de lógica de negocios. La consola captura los datos proporcionados por el usuario y controla los pasos para la recopilación de datos, el procesamiento de datos y la generación de informes. SPA no depende de los servicios del sistema de Windows.
 
@@ -173,7 +173,7 @@ Dado que los usuarios pueden crear y administrar bases de datos con SPA, la cuen
 
 ### <a href="" id="bkmk-setupspa"></a>Configuración de SPA
 
-SPA se empaqueta como un archivo. cab que incluye todos los archivos binarios del marco SPA, los cmdlets de Windows PowerShell que se usan en escenarios avanzados y los siguientes paquetes de Advisor: Sistema operativo principal, Hyper-V, Active Directory e IIS. Después de extraer el archivo. cab en una carpeta, no se requiere ninguna instalación adicional. Sin embargo, para ejecutar SPA, debe habilitar la recopilación de datos de los servidores de destino de la siguiente manera:
+SPA se empaqueta como un archivo. cab que incluye todos los archivos binarios para el marco de SPA, los cmdlets de Windows PowerShell que se usan en escenarios avanzados y los siguientes paquetes de asesores: sistema operativo principal, Hyper-V, Active Directory e IIS. Después de extraer el archivo. cab en una carpeta, no se requiere ninguna instalación adicional. Sin embargo, para ejecutar SPA, debe habilitar la recopilación de datos de los servidores de destino de la siguiente manera:
 
 * Para ejecutar la recopilación de datos de PLA, la cuenta de usuario que use para ejecutar la consola de SPA debe formar parte del grupo de seguridad Administrators en el servidor de destino. Si el servidor de destino y la consola de están en el mismo dominio, la cuenta de usuario de dominio debe formar parte del grupo de seguridad administradores en el servidor de destino. Si el servidor de destino y la consola no están en el mismo dominio, cree una cuenta de usuario administrativo en el servidor de destino con el mismo nombre de usuario y la misma contraseña que la cuenta de usuario que utiliza para ejecutar la consola de SPA.
 
@@ -196,7 +196,7 @@ La consola de SPA usa la misma cuenta para leer los registros e importarlos en l
 
 * Active la detección de redes en la consola de y en cada uno de los servidores de destino.
 
-* Si el servidor de destino no está unido a un dominio, habilite la siguiente configuración del registro: **HKLM @ no__t-1SOFTWARE @ no__t-2Microsoft @ no__t-3Windows @ no__t-4Currentversion @ no__t-5Policies @ no__t-6system @ no__t-7LocalAccountTokenFilterPolicy**.
+* Si el servidor de destino no está unido a un dominio, habilite la siguiente configuración del registro: **HKLM\\SOFTWARE\\Microsoft\\Windows\\Currentversion\\Policies\\system\\LocalAccountTokenFilterPolicy**.
 
 **Nota:** De forma predeterminada, SPA escribe los registros de diagnóstico en la carpeta donde se encuentra SpaConsole. exe. Si SPA está instalado en la carpeta archivos de programa, SPA solo puede escribir el registro cuando SpaConsole. exe se ejecuta como administrador.
 
@@ -222,9 +222,9 @@ Una vez que todo está configurado, puede crear su primer proyecto de SPA. Como 
 
     * Agregar servidores a la lista de servidores de destino
 
-3.  Haz clic en **Siguiente**. La página **crear base de datos del proyecto** le pide que proporcione el nombre de la Microsoft SQL Server instancia en la que desea crear la base de datos. Por ejemplo, si se encuentra en el mismo equipo que la consola, puede usar **localhost @ no__t-1 @ no__t-2YOUR SQL Server Name @ no__t-3**.
+3.  Haz clic en **Siguiente**. La página **crear base de datos del proyecto** le pide que proporcione el nombre de la Microsoft SQL Server instancia en la que desea crear la base de datos. Por ejemplo, si se encuentra en el mismo equipo que la consola de, puede usar **localhost\\&lt;el nombre de SQL server&gt;** .
 
-    **Nota:** El nombre de instancia predeterminado para una instalación SQL Server 2008 R2 Express es SQLExpress. Para una instancia de SQL Server 2008 R2 Express que está instalada en el equipo local, la base de datos suele tener como valor predeterminado **localhost @ no__t-1SQLExpress**. Sin embargo, es posible que se haya cambiado durante la instalación de SQL Server, por lo que debe asegurarse de que usa el nombre de instancia de SQL Server correcto.
+    **Nota:** El nombre de instancia predeterminado para una instalación SQL Server 2008 R2 Express es SQLExpress. En el caso de una instancia de SQL Server 2008 R2 Express instalada en el equipo local, la base de datos suele tener como valor predeterminado **localhost\\SQLEXPRESS**. Sin embargo, es posible que se haya cambiado durante la instalación de SQL Server, por lo que debe asegurarse de que usa el nombre de instancia de SQL Server correcto.
 
      
 
@@ -238,7 +238,7 @@ Una vez que todo está configurado, puede crear su primer proyecto de SPA. Como 
 
 6.  En la página **crear base de datos de proyecto** , haga clic en **siguiente**. El Asistente para usar la primera vez crea una base de datos y genera todos los esquemas de base de datos, funciones y procedimientos almacenados relacionados con SPA en la base de datos. Este paso puede tardar varios segundos en función del hardware y de la velocidad de la red.
 
-    **Nota:** si se produce un error en este paso, aparece un mensaje de error. Algunos de los problemas más comunes son: La consola no se puede conectar a la instancia de SQL Server, no hay suficientes privilegios para crear la base de datos o el nombre de la base de datos ya existe.
+    **Nota:** si se produce un error en este paso, aparece un mensaje de error. Algunos de los problemas comunes son: la consola no se puede conectar a la instancia de SQL Server, no tiene privilegios suficientes para crear la base de datos o el nombre de la base de datos ya existe.
 
      
 
@@ -254,7 +254,7 @@ Una vez que todo está configurado, puede crear su primer proyecto de SPA. Como 
 
      
 
-9.  En la página **agregar servidores** , para cada servidor que se va a agregar a la lista de servidores de destino, hay dos campos obligatorios que se van a rellenar: **Nombre del servidor y de la** **Ubicación del recurso compartido de archivos**.
+9.  En la página **agregar servidores** , para cada servidor que se va a agregar a la lista de servidores de destino, hay dos campos obligatorios que se van a rellenar: **nombre del servidor y de la ubicación del** **recurso compartido de archivos**.
 
     **Nota:** También hay un campo de **Comentario** que se usa principalmente para clasificar o encontrar el servidor. En casos en los que tenga muchos servidores, puede importar un archivo de valores separados por comas (. csv) que contenga el nombre del servidor, la carpeta de resultados y el campo de comentario opcional. El campo de **Comentario** se utiliza para describir el servidor y el término se puede usar para filtrar los servidores para la recopilación de datos. Si está inicializando los servidores a través del archivo. csv, un error de análisis dentro del archivo no carga los servidores.
 
@@ -271,7 +271,7 @@ Una vez que todo está configurado, puede crear su primer proyecto de SPA. Como 
 
 Después de configurar la base de datos, puede ejecutar el análisis de rendimiento en los servidores.
 
-Cada vez que se inicia la consola de SPA, se abre automáticamente el último proyecto que usó el usuario actual. La ventana principal contiene una lista de servidores. Cada servidor tiene cuatro propiedades: Nombre del servidor, resultado del análisis, estado actual y comentario.
+Cada vez que se inicia la consola de SPA, se abre automáticamente el último proyecto que usó el usuario actual. La ventana principal contiene una lista de servidores. Cada servidor tiene cuatro propiedades: el nombre del servidor, el resultado del análisis, el estado actual y el comentario.
 
 * **Nombre del servidor** Nombre del servidor, que es el identificador del servidor. No se permiten nombres duplicados.
 
@@ -302,7 +302,7 @@ Para ejecutar el análisis de rendimiento en los servidores de destino, seleccio
 ## <a href="" id="bkmk-viewingreports"></a>Ver informes
 
 
-En SPA, hay tres tipos de informes de análisis de rendimiento: Informe único, informe en paralelo y gráficos de tendencias y históricos.
+En SPA, hay tres tipos de informe de análisis de rendimiento: informe único, informe en paralelo y gráficos de tendencias y históricos.
 
 Después de ejecutar el análisis de rendimiento, se genera un informe para cada uno de los paquetes de Advisor que se ejecutan en el equipo de destino. En la lista de servidores de la ventana principal, puede expandir el **resultado del análisis** para ver todos los paquetes de Advisor que se han ejecutado en el servidor específico. Puede hacer clic en un nombre de informe para ver un solo informe.
 
@@ -356,7 +356,7 @@ Los distintos servidores pueden tener patrones de configuración y uso drástica
 
 El **otro área de notificaciones** contiene todas las demás reglas, donde no se genera ninguna advertencia o la regla no es aplicable. Contiene partes similares que se encuentran en el área de **ADVERTENCIA** . La diferencia más importante es que si no se genera ninguna advertencia o la regla no es aplicable, normalmente no se proporciona ninguna recomendación.
 
-### <a name="data-sections"></a>Secciones de datos
+### <a name="data-sections"></a>secciones de datos
 
 Las secciones de datos contienen los datos de rendimiento generados por el módulo de Advisor en función de los datos sin procesar recopilados de los servidores de destino. Las secciones de datos incluyen un conjunto de secciones de nivel superior y varios niveles de subsecciones. Las secciones de nivel superior se presentan como pestañas. Todas las subsecciones de las secciones de nivel superior se muestran en áreas expansibles. Puede contraer o expandir cada una de las secciones para centrarse en el área de interés, tal como se muestra en la ilustración siguiente.
 
@@ -372,7 +372,7 @@ El módulo Core SPA Advisor y el paquete de asesor de IIS SPA contienen una secc
 
 * **Lista superior** Normalmente contiene los principales consumidores de un recurso específico o las entidades principales que experimentaron ciertos eventos. Por ejemplo, los **10 procesos principales en términos de uso promedio de CPU** incluyen los diez procesos principales con el uso promedio de CPU más alto durante el tiempo de recopilación de datos. Dado que el uso de CPU también es un punto de datos numérico dinámico, también se incluyen en la lista otras estadísticas como el valor máximo, mínimo y 90% para proporcionar al usuario una imagen más completa del consumo de la CPU.
 
-Como se mencionó en las secciones anteriores, SPA se basa en PLA para recopilar el seguimiento de ETW, las consultas de WMI, los contadores de rendimiento, las claves del registro y los archivos de configuración para generar el informe. Es importante comprender el origen de datos detrás de cada punto de datos del informe. SPA proporciona información a través de la información sobre herramientas. Puede mantener el mouse sobre las columnas o filas de clave para ver la información sobre herramientas de origen de datos. Por ejemplo, **WMI: Win32 @ no__t-1DisDrive: Caption** significa que el origen de datos es de una consulta WMI, el nombre de la clase WMI es Win32 @ No__t-2DiskDrive y la propiedad es **Caption**.
+Como se mencionó en las secciones anteriores, SPA se basa en PLA para recopilar el seguimiento de ETW, las consultas de WMI, los contadores de rendimiento, las claves del registro y los archivos de configuración para generar el informe. Es importante comprender el origen de datos detrás de cada punto de datos del informe. SPA proporciona información a través de la información sobre herramientas. Puede mantener el mouse sobre las columnas o filas de clave para ver la información sobre herramientas de origen de datos. Por ejemplo, **WMI: win32\_disdrive: Caption** significa que el origen de datos procede de una consulta WMI, el nombre de la clase WMI es Win32\_DiskDrive y la propiedad es **Caption**.
 
 ### <a href="" id="side-by-side-report-"></a>Informe en paralelo
 
@@ -464,7 +464,7 @@ Microsoft o los desarrolladores que no son de Microsoft pueden publicar nuevos p
 
 **Para aprovisionar un nuevo paquete de Advisor**
 
-1.  Copie todo el contenido del paquete de Advisor en el directorio *% SpaRoot%* \\APs.
+1.  Copie todo el contenido del paquete de Advisor en el directorio *% SpaRoot%* \\APS.
 
 2.  En la ventana principal, haga clic en **configuración**y, a continuación, haga clic en **configurar paquetes de Advisor**. Se abre el cuadro de diálogo **configurar paquetes de Advisor** .
 
@@ -557,7 +557,7 @@ SPA proporciona capacidades básicas para administrar servidores de destino. Pue
 
      
 
-4.  Si desea usar SPA con un gran número de servidores, SPA admite un formato de valores separados por comas (. csv) para la importación. El archivo debe contener al menos dos campos: Ubicación del **recurso compartido de archivos**y **servidor** . El tercer campo, el **Comentario** es opcional, pero se recomienda organizar los servidores. También puede exportar la lista de servidores a un archivo. csv para determinar el formato adecuado o realizar una copia de seguridad de la configuración del servidor.
+4.  Si desea usar SPA con un gran número de servidores, SPA admite un formato de valores separados por comas (. csv) para la importación. El archivo debe contener al menos dos campos: la **Ubicación del recurso compartido de archivos**y el **servidor** . El tercer campo, el **Comentario** es opcional, pero se recomienda organizar los servidores. También puede exportar la lista de servidores a un archivo. csv para determinar el formato adecuado o realizar una copia de seguridad de la configuración del servidor.
 
 ### <a name="searching-and-filtering"></a>Búsqueda y filtrado
 
@@ -590,8 +590,8 @@ En la tabla siguiente se describen los cmdlets de Windows PowerShell para SPA:
 | ------ | ------- | ------ |
 | Start-SpaAnalysis | **-ServerName** Nombre del servidor de destino.<br>**-AdvisorPackName** Nombre completo del paquete de Advisor que se va a poner en cola en el servidor. Cuando hay más de un paquete programado para ejecutarse al mismo tiempo, el valor del parámetro debe tener el formato AP1name, AP2name.<br>**-Duración** Duración de la recopilación de datos.<br>**-Credential** Credenciales de usuario para la cuenta que ejecuta la recopilación de datos en el servidor de destino.<br>**-SqlInstanceName** Nombre de la instancia de SQL Server.<br>**-SqlDatabaseName** Nombre de la base de datos del proyecto SPA. | Inicia una sesión de recopilación de datos SPA en el servidor especificado. |
 | Stop-SpaAnalysis | **-SqlInstanceName** Nombre de la instancia de SQL Server.<br>**-SqlDatabaseName** Nombre de la base de datos del proyecto SPA.<br>**-ServerName** Nombre del servidor de destino. | Intenta detener una sesión SPA en ejecución. Si ya se ha completado una sesión, devuelve sin hacer nada. |
-| Get-SpaServer | **-SqlInstanceName** Nombre de la instancia de SQL Server.<br>**-SqlDatabaseName** Nombre de la base de datos del proyecto SPA. | Obtiene la lista de servidores en la base de datos. Devuelve una lista de objetos, incluidas estas propiedades: Nombre, estado, FileShare y comentario. |
-| Get-SpaAdvisorPacks | **-SqlInstanceName** Nombre de la instancia de SQL Server<br>**-SqlDatabaseName** Nombre de la base de datos del proyecto SPA | Obtiene la lista de módulos de Advisor en la base de datos. Devuelve una lista de objetos, incluidas estas propiedades: Nombre, DisplayName, autor y versión. |
+| Get-SpaServer | **-SqlInstanceName** Nombre de la instancia de SQL Server.<br>**-SqlDatabaseName** Nombre de la base de datos del proyecto SPA. | Obtiene la lista de servidores en la base de datos. Devuelve una lista de objetos, incluidas estas propiedades: nombre, estado, FileShare y comentario. |
+| Get-SpaAdvisorPacks | **-SqlInstanceName** Nombre de la instancia de SQL Server<br>**-SqlDatabaseName** Nombre de la base de datos del proyecto SPA | Obtiene la lista de módulos de Advisor en la base de datos. Devuelve una lista de objetos, incluidas estas propiedades: Name, DisplayName, Author y version. |
 
 Windows PowerShell proporciona la capacidad de pasar credenciales a través de archivos cifrados para habilitar escenarios de automatización. Para obtener más información sobre el uso de archivos cifrados para pasar credenciales a un cmdlet, consulte [crear scripts de Windows PowerShell que acepten credenciales](https://technet.microsoft.com/magazine/ff714574.aspx).
 
@@ -717,7 +717,7 @@ SQL Server Express tiene un límite de tamaño de 10 GB para una base de datos d
 
 ### <a name="sql-server-express-log-size-and-disk-capacity"></a>Tamaño del registro de SQL Server Express y capacidad de disco
 
-Si usa SQL Server Express, la base de datos de usuario está limitada a 10 GB, pero el archivo de registro correspondiente puede superar los 70 GB. Por estas razones, se recomienda 100 GB o más de espacio libre en disco para SQL Server Express. Este espacio en disco debe ser suficiente para almacenar aproximadamente de 20.000 a 30.000 informes. Este archivo de registro se denomina SPADB\_log.ldf y se encuentra en **% archivos de programa% \\Microsoft SQL Server @ no__t-3MSSQL10. SQLEXPRESS @ no__t-4MSSQL @ no__t-5DatA**.
+Si usa SQL Server Express, la base de datos de usuario está limitada a 10 GB, pero el archivo de registro correspondiente puede superar los 70 GB. Por estas razones, se recomienda 100 GB o más de espacio libre en disco para SQL Server Express. Este espacio en disco debe ser suficiente para almacenar aproximadamente de 20.000 a 30.000 informes. Este archivo de registro se denomina SPADB\_log. ldf y se encuentra en **% archivos de programa%\\Microsoft SQL Server\\MSSQL10. SQLEXPRESS\\datos de\\MSSQL**.
 
 ### <a name="failure-to-connect-to-target-server"></a>No se pudo conectar al servidor de destino
 
@@ -729,7 +729,7 @@ Si obtiene el mensaje no se puede crear el conjunto de recopilación de datos PL
 
 * Asegúrese de que los **registros de rendimiento &** servicio de alertas se está ejecutando
 
-* La configuración de seguridad @no__t el acceso a 0Network: No permitir el almacenamiento de contraseñas y credenciales para la autenticación de red @ no__t-0 está deshabilitado. La configuración de seguridad debe estar deshabilitada porque SPA debe usar las credenciales de usuario para crear el conjunto de recopilación de datos en el servidor de destino.
+* La configuración **de seguridad acceso de red: no permitir el almacenamiento de contraseñas y credenciales para la autenticación de red** está deshabilitada. La configuración de seguridad debe estar deshabilitada porque SPA debe usar las credenciales de usuario para crear el conjunto de recopilación de datos en el servidor de destino.
 
 ### <a href="" id="running-spa-against-the-console-"></a>Ejecución de SPA en la consola
 
