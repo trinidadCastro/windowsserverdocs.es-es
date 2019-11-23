@@ -19,11 +19,11 @@ ms.locfileid: "71364932"
 ---
 # <a name="configure-virtual-machines-running-windows-vista-with-1-or-2-virtual-processors"></a>Configuración de máquinas virtuales que ejecutan Windows Vista con 1 o 2 procesadores virtuales
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2016
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -40,7 +40,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
   
 *Microsoft no admite la configuración de las siguientes máquinas virtuales:*  
   
-@no__t: 0list de nombres de máquina virtual >  
+\<lista de nombres de máquina virtual >  
   
 ## <a name="resolution"></a>Resolución  
   

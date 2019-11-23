@@ -66,7 +66,7 @@ En esta sección se explica cómo planear tu red, incluido:
   
     ||Adaptador de red externo|Adaptador de red interno|Requisitos de enrutamiento|  
     |-|--------------|--------------|------------|  
-    |Internet IPv4 e intranet IPv4|Configura dos direcciones IPv4 públicas estáticas consecutivas con las máscaras de subred adecuadas (solo se necesita para Teredo).<br/><br/>Configura también la dirección IPv4 de la puerta de enlace predeterminada del firewall de Internet o del enrutador del proveedor de acceso a Internet (ISP). **Nota:** El servidor de DirectAccess necesita dos direcciones IPv4 públicas consecutivas para que pueda actuar como un servidor Teredo y para que los clientes basados en Windows puedan usar el servidor de DirectAccess para detectar el tipo de NAT detrás del que están.|Configura lo siguiente:<br/><br/>-Una dirección de intranet IPv4 con la máscara de subred adecuada.<br/>-El sufijo DNS específico de la conexión del espacio de nombres de la intranet. También se debería configurar un servidor DNS en la interfaz interna. **Atención:** No configure ninguna puerta de enlace predeterminada en ninguna interfaz de la intranet.|Para configurar el servidor de DirectAccess de manera que tenga acceso a todas las subredes de la red IPv4 interna, haz lo siguiente:<br/><br/>-Enumere los espacios de direcciones IPv4 para todas las ubicaciones de la intranet.<br/>-Use la **ruta Add-p** o el comando**netsh interface IPv4 Add Route** para agregar los espacios de direcciones IPv4 como rutas estáticas en la tabla de enrutamiento IPv4 del servidor de DirectAccess.|  
+    |Internet IPv4 e intranet IPv4|Configura dos direcciones IPv4 públicas estáticas consecutivas con las máscaras de subred adecuadas (solo se necesita para Teredo).<br/><br/>Configura también la dirección IPv4 de la puerta de enlace predeterminada del firewall de Internet o del enrutador del proveedor de acceso a Internet (ISP). **Nota:** El servidor de DirectAccess requiere dos direcciones IPv4 públicas consecutivas para que pueda actuar como un servidor Teredo y los clientes basados en Windows puedan usar el servidor de DirectAccess para detectar el tipo de dispositivo NAT que están detrás.|Configura lo siguiente:<br/><br/>-Una dirección de intranet IPv4 con la máscara de subred adecuada.<br/>-El sufijo DNS específico de la conexión del espacio de nombres de la intranet. También se debería configurar un servidor DNS en la interfaz interna. **PRECAUCIÓN:** No configure una puerta de enlace predeterminada en ninguna interfaz de la intranet.|Para configurar el servidor de DirectAccess de manera que tenga acceso a todas las subredes de la red IPv4 interna, haz lo siguiente:<br/><br/>-Enumere los espacios de direcciones IPv4 para todas las ubicaciones de la intranet.<br/>-Use la **ruta Add-p** o el comando**netsh interface IPv4 Add Route** para agregar los espacios de direcciones IPv4 como rutas estáticas en la tabla de enrutamiento IPv4 del servidor de DirectAccess.|  
     |Internet IPv6 e intranet IPv6|Configura lo siguiente:<br/><br/>-Use la configuración de la dirección proporcionada por su ISP.<br/>-Use el comando **Route Print** para asegurarse de que existe una ruta IPv6 predeterminada y que apunta al enrutador del ISP en la tabla de enrutamiento IPv6.<br/>: Determine si los enrutadores del ISP y de la intranet están usando las preferencias de enrutador predeterminadas descritas en RFC 4191 y el uso de una preferencia predeterminada mayor que los enrutadores de la Intranet local.<br/>    Si ambas condiciones se cumplen, no se necesita ninguna otra configuración para la ruta predeterminada. La preferencia mayor para el enrutador del ISP asegura que la ruta IPv6 predeterminada activa del servidor de DirectAccess señala a Internet por IPv6.<br/><br/>Como el servidor de DirectAccess es un enrutador IPv6, si tienes una infraestructura IPv6 nativa, la interfaz de Internet también puede tener acceso a los controladores de dominio de la intranet. En este caso, agrega filtros de paquetes al controlador de dominio de la red perimetral que impidan que el servidor de DirectAccess conecte con la dirección IPv6 de la interfaz accesible desde Internet.|Configura lo siguiente:<br/><br/>-Si no está usando los niveles de preferencia predeterminados, puede configurar las interfaces de la intranet con el siguiente comando**netsh interface ipv6 set InterfaceIndex ignoredefaultroutes = Enabled**.<br/>    Este comando garantiza que las rutas predeterminadas adicionales que apunten a enrutadores de la intranet no se agregarán a la tabla de enrutamiento IPv6. Puedes obtener el índice de interfaz de las interfaces de la intranet con el siguiente comando: **netsh interface ipv6 show interface**.|Si la intranet es IPv6, haz lo siguiente para configurar el servidor de DirectAccess para que tenga acceso a todas las ubicaciones IPv6:<br/><br/>-Enumere los espacios de direcciones IPv6 para todas las ubicaciones de la intranet.<br/>-Use el comando **netsh interface ipv6 add Route** para agregar los espacios de direcciones IPv6 como rutas estáticas en la tabla de enrutamiento IPv6 del servidor de DirectAccess.|  
     |Internet IPv4 e intranet IPv6|El servidor de DirectAccess reenvía el tráfico de la ruta IPv6 predeterminada a través del adaptador 6to4 de Microsoft con una retransmisión 6to4 en Internet IPv4. Puede configurar un servidor de DirectAccess para la dirección IPv4 del adaptador 6to4 de Microsoft con el siguiente comando: `netsh interface ipv6 6to4 set relay name=<ipaddress> state=enabled`.|||  
   
@@ -84,7 +84,7 @@ Para administrar clientes de DirectAccess remotos, se necesita IPv6. IPv6 permit
 > - No es necesario usar IPv6 en la red para admitir conexiones iniciadas por equipos cliente de DirectAccess con los recursos IPv4 de la red de tu organización. Para esto se usa NAT64/DNS64.  
 > - Si no vas a administrar clientes de DirectAccess remotos, no necesitas implementar IPv6.  
 > - ISATAP (Intra-Site Automatic Tunnel Addressing Protocol) no se admite en las implementaciones de DirectAccess.  
-> - Si usas IPv6, puedes habilitar las consultas de registros de recursos (AAAA) de host IPv6 para DNS64 mediante el siguiente comando de Windows PowerShell:   **Set-NetDnsTransitionConfiguration -OnlySendAQuery $false**.  
+> - Si usa IPv6, puede habilitar las consultas de registros de recursos (AAAA) de host IPv6 para DNS64 mediante el siguiente comando de Windows PowerShell: **Set-NetDnsTransitionConfiguration -OnlySendAQuery $false**.  
   
 ### <a name="113-plan-for-force-tunneling"></a>1.1.3 Planear el túnel forzado
 
@@ -396,7 +396,7 @@ Puede que tengas que crear reglas de NRPT adicionales en los siguientes casos:
   
 **Nombres de una sola etiqueta**  
   
-A veces se usan nombres de una sola etiqueta, como <https://paycheck>, para los servidores de la intranet. Si se solicita un nombre de una sola etiqueta y hay configurada una lista de sufijos DNS, los sufijos DNS de la lista se anexarán al nombre de una sola etiqueta. Por ejemplo, cuando un usuario de un equipo que es miembro del tipo de dominio corp.contoso.com <https://paycheck> en el explorador Web, el FQDN que se construye como el nombre es paycheck.corp.contoso.com. De forma predeterminada, el sufijo anexado se basa en el sufijo DNS principal del equipo cliente.  
+A veces se usan nombres de una sola etiqueta, como <https://paycheck>, para los servidores de la intranet. Si se solicita un nombre de una sola etiqueta y hay configurada una lista de sufijos DNS, los sufijos DNS de la lista se anexarán al nombre de una sola etiqueta. Por ejemplo, cuando un usuario de un equipo que es miembro del <https://paycheck> tipos de dominio corp.contoso.com en el explorador Web, el FQDN que se construye como el nombre es paycheck.corp.contoso.com. De forma predeterminada, el sufijo anexado se basa en el sufijo DNS principal del equipo cliente.  
   
 > [!NOTE]  
 > En un escenario de espacio de nombres no contiguo (en el que uno o varios equipos del dominio tienen un sufijo DSN que no coincide con el dominio de Active Directory al que pertenecen los equipos), debes asegurarte de que la lista de búsqueda se personalice para incluir todos los sufijos necesarios. De forma predeterminada, el Asistente para acceso remoto configurará el nombre DNS de Active Directory como sufijo DNS principal en el cliente. Asegúrate de agregar el sufijo DNS que los clientes usan para la resolución de nombres.  
@@ -419,7 +419,7 @@ En un entorno DNS que no sea de cerebro dividido, el espacio de nombres de Inter
   
 **Comportamiento de la resolución local de nombres para los clientes de DirectAccess**  
   
-Si un nombre no se puede resolver con DNS, para resolver el nombre en la subred local, el servicio cliente DNS en Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows 8 y Windows 7 pueden usar la resolución local de nombres, con el nombre de multidifusión local de vínculo R protocolos esolution (LLMNR) y NetBIOS sobre TCP/IP.  
+Si un nombre no se puede resolver con DNS, para resolver el nombre en la subred local, el servicio cliente DNS en Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows 8 y Windows 7 pueden usar la resolución local de nombres, con los protocolos de resolución de nombres de multidifusión local de vínculo (LLMNR) y NetBIOS sobre TCP/IP.  
   
 La resolución local de nombres suele ser necesaria para la conectividad punto a punto cuando el equipo se encuentra en redes privadas, como redes domésticas de una única subred. Cuando el servicio Cliente DNS realiza la resolución local de los nombres de servidores de la intranet y el equipo está conectado a una subred compartida en Internet, los usuarios malintencionados pueden capturar los mensajes de LLMNR y de NetBIOS sobre TCP/IP para determinar los nombres de los servidores de la intranet. En la página DNS del Asistente para configuración de DirectAccess se configura el comportamiento de la resolución local de nombres según los tipos de respuestas recibidos de los servidores DNS de la intranet. Están disponibles las opciones siguientes:  
   
@@ -585,10 +585,10 @@ Los GPO se pueden configurar de dos maneras:
 > [!NOTE]  
 > Después de configurar DirectAccess para que use unos GPO específicos, no se puede configurar para que use otros GPO.  
   
-Tanto si usas GPO configurados manual o automáticamente, tienes que agregar una directiva para la detección de vínculos de baja velocidad si tus clientes van a usar redes 3G. La ruta de acceso de **Policy: Configure directiva de grupo detección de vínculos de baja velocidad @ no__t-0 es: **Equipo configuración/Políticas/Plantillas administrativas/Sistema/Directiva de grupo**.  
+Tanto si usas GPO configurados manual o automáticamente, tienes que agregar una directiva para la detección de vínculos de baja velocidad si tus clientes van a usar redes 3G. La ruta de acceso de **Directiva: Configurar detección de vínculo de baja velocidad de la directiva de grupo** es: **Configuración del/Directivas/Plantillas administrativas/Sistema/Directiva de grupo**.  
   
 > [!CAUTION]  
-> Usa el procedimiento siguiente para hacer una copia de seguridad de todos los GPO de acceso remoto antes de ejecutar los cmdlets de DirectAccess: [Realizar copias de seguridad y restaurar la configuración de acceso remoto](https://go.microsoft.com/fwlink/?LinkID=257928).  
+> Use el procedimiento siguiente para realizar una copia de seguridad de todos los GPO de acceso remoto antes de ejecutar los cmdlets de DirectAccess: [copia de seguridad y restauración de la configuración de acceso remoto](https://go.microsoft.com/fwlink/?LinkID=257928).  
   
 Si los GPO de vinculación no cuentan con los permisos correctos (que se indican en las siguientes secciones), se emite una advertencia. La operación de acceso remoto continuará pero no se producirá la vinculación. Si aparece esta advertencia, los vínculos no se crearán automáticamente, aunque los permisos se agreguen más tarde. En su lugar, el administrador tiene que crear los vínculos manualmente.  
   
@@ -675,7 +675,7 @@ En el siguiente diagrama se ilustra esta configuración.
 ### <a name="185-recover-from-a-deleted-gpo"></a>1.8.5 Recuperación de un GPO eliminado  
 Si un GPO de cliente, de servidor de DirectAccess o de servidor de aplicaciones se elimina accidentalmente y no hay una copia de seguridad disponible, tienes que quitar la configuración y volver a configurarlo. Si hay una copia de seguridad disponible, puedes usarla para restaurar el GPO.  
   
-La consola de Administración de acceso remoto mostrará el siguiente mensaje de error: **No se encuentra el GPO (nombre de GPO)** . Para quitar las opciones de configuración, sigue estos pasos:  
+La consola de administración de acceso remoto mostrará el siguiente mensaje de error: **no se encuentra el GPO (nombre del GPO)** . Para quitar las opciones de configuración, sigue estos pasos:  
   
 1.  Ejecuta el cmdlet de Windows PowerShell **Uninstall-remoteaccess**.  
   
@@ -685,7 +685,7 @@ La consola de Administración de acceso remoto mostrará el siguiente mensaje de
   
 ## <a name="next-steps"></a>Pasos siguientes  
   
--   [Paso 2: Planear implementaciones de DirectAccess @ no__t-0  
+-   [Paso 2: planear las implementaciones de DirectAccess](da-adv-plan-s2-deployments.md)  
   
 
 

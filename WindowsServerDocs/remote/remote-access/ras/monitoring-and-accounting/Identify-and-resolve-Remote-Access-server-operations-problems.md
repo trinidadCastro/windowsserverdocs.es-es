@@ -23,7 +23,7 @@ ms.locfileid: "71404569"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-**Nota:** Windows Server 2012 combina DirectAccess y el servicio de enrutamiento y acceso remoto (RRAS) en un único rol de acceso remoto.  
+**Nota:** Windows Server 2012 combina DirectAccess y el Servicio de enrutamiento y acceso remoto (RRAS) en un único rol de acceso remoto.  
   
 Puede usar los procedimientos siguientes para identificar problemas de operaciones del servidor de acceso remoto, sus causas raíz y la resolución necesaria para corregir los problemas.  
   
@@ -91,7 +91,7 @@ Para restaurar el servicio auxiliar de IP en el servidor de acceso remoto, puede
   
 2.  En la lista de **servicios**, desplácese hacia abajo y haga clic con el botón secundario en **aplicación auxiliar de IP**y, a continuación, haga clic en **iniciar**.  
   
-](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   

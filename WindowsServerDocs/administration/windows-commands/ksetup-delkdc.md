@@ -36,12 +36,12 @@ ksetup /delkdc <RealmName> <KDCName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0RealmName >|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos predeterminado cuando se ejecuta **ksetup** . Es el dominio Kerberos desde el que está intentando eliminar el otro KDC.|
-|@no__t 0KDCName >|El nombre del KDC se indica como un nombre de dominio completo que no distingue entre mayúsculas y minúsculas, como mitkdc.contoso.com.|
+|\<RealmName >|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos predeterminado cuando se ejecuta **ksetup** . Es el dominio Kerberos desde el que está intentando eliminar el otro KDC.|
+|\<KDCName >|El nombre del KDC se indica como un nombre de dominio completo que no distingue entre mayúsculas y minúsculas, como mitkdc.contoso.com.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
-Estas asignaciones se almacenan en el registro en **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\LSA\Kerberos\Domains**. Para quitar los datos de configuración de dominio Kerberos de varios equipos, use el complemento de plantilla de configuración de seguridad y la distribución de directivas en lugar de usar **ksetup** explícitamente en equipos individuales.
+Estas asignaciones se almacenan en el registro en **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains**. Para quitar los datos de configuración de dominio Kerberos de varios equipos, use el complemento de plantilla de configuración de seguridad y la distribución de directivas en lugar de usar **ksetup** explícitamente en equipos individuales.
 
 En los equipos que ejecutan Windows 2000 Server con Service Pack 1 (SP1) y versiones anteriores, el equipo debe reiniciarse antes de que se use la configuración de configuración de dominio Kerberos modificada.
 

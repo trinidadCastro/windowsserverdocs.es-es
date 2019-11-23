@@ -23,7 +23,7 @@ En este tema se muestra cómo crear un clúster de conmutación por error a trav
 
 También puede implementar un clúster desasociado Active Directory. Este método de implementación permite crear un clúster de conmutación por error sin permisos para crear objetos de equipo en AD DS y sin necesidad de solicitar que los objetos de equipo estén preconfigurados en AD DS. Esta opción solo está disponible a través de Windows PowerShell, y se recomienda únicamente para casos específicos. Para obtener más información, consulte [Implementar un clúster desconectado de Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11)).
 
-#### <a name="checklist-create-a-failover-cluster"></a>Lista de comprobación: Crear un clúster de conmutación por error
+#### <a name="checklist-create-a-failover-cluster"></a>Lista de comprobación: crear un clúster de conmutación por error
 
 | Estado | Tarea | Referencia |
 | ---    | ---  | ---       |
@@ -95,7 +95,7 @@ Antes de crear el clúster de conmutación por error, recomendamos encarecidamen
     La página Validación muestra el estado de las pruebas en ejecución.
 7. En la página **Resumen**, realiza una de las acciones siguientes:
     
-      - Si los resultados indican que las pruebas se completaron correctamente y la configuración es adecuada para la agrupación en clústeres y desea crear el clúster inmediatamente, asegúrese de que la casilla **crear el clúster ahora con los nodos validados** esté activada y, a continuación, Seleccione **Finalizar**. Después, continúa con el paso 4 del procedimiento [Crear el clúster de conmutación por error](#create-the-failover-cluster).
+      - Si los resultados indican que las pruebas se completaron correctamente y la configuración es adecuada para la agrupación en clústeres y desea crear el clúster inmediatamente, asegúrese de que la casilla **crear el clúster ahora con los nodos validados** esté activada y, a continuación, seleccione **Finalizar**. Después, continúa con el paso 4 del procedimiento [Crear el clúster de conmutación por error](#create-the-failover-cluster).
       - Si los resultados indican que había advertencias o errores, seleccione **Ver informe** para ver los detalles y determinar qué problemas deben corregirse. Ten en cuenta que una advertencia sobre una prueba de validación en particular indica que ese aspecto del clúster de conmutación por error puede ser compatible, pero podría no cumplir los procedimientos recomendados.
         
         > [!NOTE]
@@ -193,7 +193,7 @@ Test-Cluster –Node Server1, Server2
 ```
 
 > [!NOTE]
-> El cmdlet **Test-Cluster** genera los resultados en un archivo de registro en el directorio de trabajo actual. Por ejemplo: C:\Users @ no__t-0username > \AppData\Local\Temp.
+> El cmdlet **Test-Cluster** genera los resultados en un archivo de registro en el directorio de trabajo actual. Por ejemplo: C:\Users\<nombreDeUsuario > \AppData\Local\Temp.
 
 El siguiente ejemplo crea un clúster de conmutación por error llamado *MyCluster* con los nodos *Server1* y *Server2*, asigna la dirección IP estática *192.168.1.12*y agrega todo el almacenamiento apto al clúster de conmutación por error.
 

@@ -19,16 +19,16 @@ ms.locfileid: "71405939"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este tema para obtener información sobre la configuración de escalabilidad y alta disponibilidad de la controladora de red para redes definidas por software \(SDN @ no__t-1.
+Puede usar este tema para obtener información sobre la configuración de escalabilidad y alta disponibilidad de la controladora de red para redes definidas por software \(SDN\).
 
-Al implementar SDN en su centro de recursos, puede usar la controladora de red para implementar, supervisar y administrar de forma centralizada muchos elementos de red, como puertas de enlace de RAS, equilibradores de carga de software, directivas de red virtual para la comunicación de inquilinos, firewall del centro de seguridad directivas, @no__t de calidad de servicio: 0QoS @ no__t-1 para directivas de SDN, directivas de redes híbridas, etc.
+Al implementar SDN en el centro de información, puede usar la controladora de red para implementar, supervisar y administrar de forma centralizada muchos elementos de red, como puertas de enlace RAS, equilibradores de carga de software, directivas de redes virtuales para la comunicación de inquilinos, directivas de Firewall de centro de seguridad, calidad de servicio \(QoS\) para directivas de SDN, directivas de red híbrida, etc
 
 Dado que la controladora de red es la piedra angular de la administración de SDN, es fundamental que las implementaciones de la controladora de red proporcionen alta disponibilidad y la posibilidad de escalar vertical u horizontalmente los nodos de la controladora de red con las necesidades del centro de seguridad.
 
 Aunque puede implementar la controladora de red como un clúster de máquina única, para la alta disponibilidad y la conmutación por error, debe implementar la controladora de red en un clúster de varias máquinas con un mínimo de tres equipos.
 
 >[!NOTE]
->Puede implementar la controladora de red en equipos servidor o en máquinas virtuales \(VMs @ no__t-1 que ejecuten Windows Server 2016 Datacenter Edition. Si implementa el controlador de red en las máquinas virtuales, las máquinas virtuales deben ejecutarse en hosts de Hyper-V que también ejecuten Datacenter Edition. La controladora de red no está disponible en Windows Server 2016 Standard Edition.
+>Puede implementar la controladora de red en equipos servidor o en máquinas virtuales \(máquinas virtuales\) que ejecuten Windows Server 2016 Datacenter Edition. Si implementa el controlador de red en las máquinas virtuales, las máquinas virtuales deben ejecutarse en hosts de Hyper-V que también ejecuten Datacenter Edition. La controladora de red no está disponible en Windows Server 2016 Standard Edition.
 
 ## <a name="network-controller-as-a-service-fabric-application"></a>Controladora de red como una aplicación Service Fabric
 
@@ -45,7 +45,7 @@ La aplicación de controladora de red se compone de varios servicios Service Fab
 
 Cada servicio de Service Fabric tiene una réplica principal y dos réplicas secundarias. La réplica de servicio principal procesa las solicitudes, mientras que las dos réplicas de servicio secundarias proporcionan alta disponibilidad en las circunstancias en las que la réplica principal está deshabilitada o no está disponible por algún motivo.
 
-En la ilustración siguiente se muestra una controladora de red Service Fabric clúster con cinco equipos. Se distribuyen cuatro servicios entre las cinco máquinas: Servicio de firewall, servicio de puerta de enlace, equilibrio de carga de software \(SLB @ no__t-1 y servicio de red virtual \(Vnet @ no__t-3.  Cada uno de los cuatro servicios incluye una réplica de servicio principal y dos réplicas de servicio secundarias.
+En la ilustración siguiente se muestra una controladora de red Service Fabric clúster con cinco equipos. Se distribuyen cuatro servicios entre las cinco máquinas: servicio de firewall, servicio de puerta de enlace, equilibrio de carga de software \(el servicio SLB\) y Virtual Network \(Vnet\) Service.  Cada uno de los cuatro servicios incluye una réplica de servicio principal y dos réplicas de servicio secundarias.
 
 ![Clúster de Service Fabric de controladora de red](../../../media/Network-Controller-HA/Network-Controller-HA.jpg)
 
@@ -62,11 +62,11 @@ Dado que el controlador de red es el núcleo de una red de centro de recursos, d
 
 ### <a name="persistent-storage"></a>Almacenamiento persistente
 
-La aplicación de controladora de red tiene grandes requisitos de almacenamiento para su configuración y estado. La aplicación también debe ser utilizable en las interrupciones planeadas y no planeadas. Con este propósito, Service Fabric proporciona un almacén de clave-valor \(KVS @ no__t-1, que es un almacén transaccional y persistente replicado.
+La aplicación de controladora de red tiene grandes requisitos de almacenamiento para su configuración y estado. La aplicación también debe ser utilizable en las interrupciones planeadas y no planeadas. Con este propósito, Service Fabric proporciona un almacén de valores de clave \(KVS\) que es un almacén transaccional, replicado y replicado.
 
 ### <a name="modularity"></a>Modularidad
 
-La controladora de red está diseñada con una arquitectura modular, y cada uno de los servicios de red, como el servicio de redes virtuales y el servicio de firewall, ha creado @ no__t-0in como servicios individuales. 
+La controladora de red está diseñada con una arquitectura modular, y cada uno de los servicios de red, como el servicio de redes virtuales y el servicio de firewall, se ha creado\-en servicios individuales. 
 
 Esta arquitectura de aplicación proporciona las siguientes ventajas.
 
@@ -80,7 +80,7 @@ Service Fabric modularidad utiliza esquemas de modelo de servicio para maximizar
 
 ## <a name="network-controller-deployment-options"></a>Opciones de implementación de la controladora de red
 
-Para implementar la controladora de red mediante System Center Virtual Machine Manager \(VMM @ no__t-1, consulte [configuración de una controladora de red de Sdn en el tejido de VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller).
+Para implementar la controladora de red mediante System Center Virtual Machine Manager \(\)de VMM, consulte [configuración de una controladora de red de Sdn en el tejido de VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller).
 
 Para implementar la controladora de red mediante scripts, consulte [implementación de una infraestructura de red definida por software mediante scripts](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md).
 

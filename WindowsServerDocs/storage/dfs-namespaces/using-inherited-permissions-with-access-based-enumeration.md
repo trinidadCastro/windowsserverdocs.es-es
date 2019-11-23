@@ -17,9 +17,9 @@ ms.locfileid: "71402134"
 ---
 # <a name="using-inherited-permissions-with-access-based-enumeration"></a>Usar permisos heredados con la enumeración basada en el acceso
 
-> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008
 
-De manera predeterminada, los permisos que se usan para una carpeta DFS se heredan de sistema de archivos local del servidor de espacio de nombres. Los permisos se heredan del directorio raíz de la unidad del sistema y conceden permisos de lectura al grupo de dominio @ no__t-0Users. Como resultado, incluso después de habilitar la enumeración basada en el acceso, todas las carpetas del espacio de nombres permanecen visibles para todos los usuarios del dominio.
+De manera predeterminada, los permisos que se usan para una carpeta DFS se heredan de sistema de archivos local del servidor de espacio de nombres. Los permisos se heredan del directorio raíz de la unidad del sistema y conceden permisos de lectura al dominio\\grupo usuarios. Como resultado, incluso después de habilitar la enumeración basada en el acceso, todas las carpetas del espacio de nombres permanecen visibles para todos los usuarios del dominio.
 
 ## <a name="advantages-and-limitations-of-inherited-permissions"></a>Ventajas y limitaciones de los permisos heredados
 
@@ -58,6 +58,6 @@ Para limitar qué usuarios pueden ver una carpeta DFS, debes realizar una de las
 
 4.  Para cambiar los permisos heredados de carpetas o raíces de espacio de nombres de un espacio de nombres DFS, usa el Explorador de Windows o el comando **ICacls**.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 -   [Crear un espacio de nombres DFS](create-a-dfs-namespace.md)

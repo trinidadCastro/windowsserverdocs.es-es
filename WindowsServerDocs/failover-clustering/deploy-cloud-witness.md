@@ -16,9 +16,9 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71369883"
 ---
-# <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>Implementación de un testigo en la nube para un clúster de conmutación por error
+# <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>Implementación de un testigo en la nube para conmutación de clústeres por error
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 El testigo en la nube es un tipo de testigo de cuórum del clúster de conmutación por error que usa Microsoft Azure para proporcionar un voto en el cuórum del clúster. En este tema se proporciona información general sobre la característica de testigo en la nube, los escenarios que admite e instrucciones sobre cómo configurar un testigo en la nube para un clúster de conmutación por error.
 
@@ -27,7 +27,7 @@ El testigo en la nube es un tipo de testigo de cuórum del clúster de conmutaci
 En la figura 1 se muestra una configuración de cuórum de clúster de conmutación por error extendida de varios sitios con Windows Server 2016. En esta configuración de ejemplo (Ilustración 1), hay 2 nodos en dos centros de recursos (denominados sitios). Tenga en cuenta que un clúster puede abarcar más de 2 centros de recursos. Además, cada centro de información puede tener más de 2 nodos. Una configuración típica de cuórum de clúster en esta instalación (acuerdo de nivel de servicio de conmutación por error automática) asigna a cada nodo un voto. Se da un voto adicional al testigo de cuórum para permitir que el clúster siga ejecutándose incluso si uno de los centros de Datacenter experimenta una interrupción del suministro eléctrico. La expresión matemática es sencilla: hay 5 votos totales y se necesitan 3 votos para el clúster para mantenerla en ejecución.  
 
 ![Testigo de recurso compartido de archivos en un tercer sitio independiente con 2 nodos en otros dos sitios testigo de](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_1.png "recurso compartido de archivos")  
-**Figura 1: Uso de un testigo de recurso compartido de archivos como testigo de cuórum @ no__t-0  
+**Figura 1: uso de un testigo de recurso compartido de archivos como testigo de cuórum**  
 
 En caso de que se produzca una interrupción de la alimentación en un centro de centros de recursos, para dar la misma oportunidad para que el clúster de otro centro de recursos lo siga ejecutando, se recomienda hospedar el testigo de cuórum en una ubicación distinta a la de los dos centros de recursos. Normalmente, esto significa requerir un tercer centro de recursos independiente (sitio) para hospedar un servidor de archivos que realiza una copia de seguridad del recurso compartido de archivos que se usa como testigo de cuórum (testigo de recurso compartido de archivos).  
 
@@ -42,12 +42,12 @@ Este enfoque tiene importantes ventajas:
 4. $Cost muy baja en la cuenta de almacenamiento (datos muy pequeños escritos por cada archivo de BLOB, el archivo de BLOB se actualiza solo una vez cuando cambia el estado de los nodos del clúster).  
 5. Tipo de recurso de testigo de nube integrado.  
 
-@no__t 0Diagram ilustrar un clúster extendido de varios sitios con el testigo en la nube como testigo de cuórum @ no__t-1  
-**Figura 2: Clústeres extendidos de varios sitios con testigo en la nube como testigo de cuórum @ no__t-0  
+Diagrama de ![que ilustra un clúster extendido de varios sitios con el testigo en la nube como testigo de cuórum](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_2.png)  
+**Figura 2: clústeres extendidos de varios sitios con testigo en la nube como testigo de cuórum**  
 
 Como se muestra en la figura 2, no hay ningún tercer sitio independiente que sea necesario. El testigo en la nube, como cualquier otro testigo de cuórum, obtiene un voto y puede participar en los cálculos de cuórum.  
 
-## <a name="CloudWitnessSupportedScenarios"></a>Testigo en la nube: Escenarios admitidos para el tipo de testigo único
+## <a name="CloudWitnessSupportedScenarios"></a>Testigo en la nube: escenarios admitidos para el tipo de testigo único
 Si tiene una implementación de clúster de conmutación por error, donde todos los nodos pueden tener acceso a Internet (por extensión de Azure), se recomienda configurar un testigo en la nube como recurso de testigo de cuórum.  
 
 Algunos de los escenarios compatibles con el uso del testigo en la nube como testigo de quórum son los siguientes:  
@@ -96,11 +96,11 @@ Cuando se crea una cuenta de Microsoft Azure Storage, está asociada a dos clave
 
 En Azure portal, vaya a la cuenta de almacenamiento, haga clic en **toda la configuración** y luego haga clic en **claves de acceso** para ver, copiar y regenerar las claves de acceso de la cuenta. La hoja claves de acceso también incluye cadenas de conexión preconfiguradas con las claves principal y secundaria que se pueden copiar para usarlas en las aplicaciones (consulte la figura 4).
 
-![Snapshot del cuadro de diálogo administrar claves de acceso en Microsoft Azure @ no__t-1  
-**Figura 4: Claves de acceso de almacenamiento @ no__t-0
+![instantánea del cuadro de diálogo administrar claves de acceso en Microsoft Azure](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_4.png)  
+**Figura 4: claves de acceso de almacenamiento**
 
 ### <a name="view-and-copy-endpoint-url-links"></a>Ver y copiar vínculos de URL de punto de conexión  
-Al crear una cuenta de almacenamiento, se generan las siguientes direcciones URL con el formato: `https://<Storage Account Name>.<Storage Type>.<Endpoint>`  
+Al crear una cuenta de almacenamiento, se generan las direcciones URL siguientes con el formato: `https://<Storage Account Name>.<Storage Type>.<Endpoint>`  
 
 El testigo de la nube siempre usa el **BLOB** como el tipo de almacenamiento. Azure usa **. Core.Windows.net** como punto de conexión. Al configurar el testigo de la nube, es posible que se configure con un punto de conexión diferente según el escenario (por ejemplo, el centro de recursos de Microsoft Azure en China tiene un punto de conexión diferente).  
 
@@ -110,8 +110,8 @@ El testigo de la nube siempre usa el **BLOB** como el tipo de almacenamiento. Az
 #### <a name="to-view-and-copy-endpoint-url-links"></a>Para ver y copiar los vínculos de la dirección URL del extremo
 En Azure portal, vaya a la cuenta de almacenamiento, haga clic en **toda la configuración** y, luego, haga clic en **propiedades** para ver y copiar las direcciones URL del punto de conexión (consulte la figura 5).  
 
-![Snapshot de los vínculos de punto de conexión de testigo de nube @ no__t-1  
-@no__t 0Figure 5: Vínculos URL de punto de conexión de testigo de nube @ no__t-0
+![instantánea de los vínculos de extremo del testigo en la nube](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_5.png)  
+**Figura 5: vínculos URL de punto de conexión de testigo de nube**
 
 Para obtener más información acerca de la creación y administración de cuentas de Azure Storage, consulte [acerca de las cuentas de Azure Storage](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/)
 
@@ -120,18 +120,18 @@ La configuración del testigo en la nube está bien integrada en el Asistente pa
 
 ### <a name="to-configure-cloud-witness-as-a-quorum-witness"></a>Para configurar el testigo de nube como testigo de Cuórum
 1. Inicie Administrador de clústeres de conmutación por error.
-2. Haga clic con el botón derecho en el clúster: > **acciones más** -> **configurar las opciones del cuórum del clúster** (consulte la figura 6). Se inicia el Asistente para configurar Cuórum de clúster.  
-    ![Snapshot de la ruta de acceso del menú a la configuración del Cuórum del clúster de configurar en la interfaz de usuario Administrador de clústeres de conmutación por error @ no__t-1 **Figure 6. Configuración de Cuórum de clúster @ no__t-0
+2. Haga clic con el botón derecho en el clúster: > **más acciones** -> **configurar el cuórum de clúster** (consulte la figura 6). Se inicia el Asistente para configurar Cuórum de clúster.  
+    ![instantánea de la ruta de acceso del menú a la configuración del Cuórum de clúster de configurar en la interfaz de usuario de Administrador de clústeres de conmutación por error](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_7.png) **figura 6. Configuración de Cuórum de clúster**
 
 3. En la página **seleccionar configuraciones de cuórum** , seleccione **seleccionar el testigo de cuórum** (consulte la figura 7).  
 
-    ![Snapshot del botón de radio ' seleccionar el testigo de quotrum ' en el Asistente para Cuórum de clúster @ no__t-1  
-    @no__t 0Figure 7. Seleccione la configuración de Cuórum @ no__t-0
+    ![instantánea del botón de radio "seleccionar el testigo de quotrum" en el Asistente para Cuórum de clúster](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_8.png)  
+    **Figura 7. Seleccionar la configuración de Cuórum**
 
 4. En la página **seleccionar testigo de quórum** , seleccione **configurar un testigo en la nube** (consulte la figura 8).  
 
-    ![Snapshot del botón de radio adecuado para seleccionar un testigo en la nube @ no__t-1  
-    **Figure 8. Seleccione el testigo de Cuórum @ no__t-0  
+    ![instantánea del botón de radio adecuado para seleccionar un testigo en la nube](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_9.png)  
+    **Ilustración 8. Seleccionar el testigo de Cuórum**  
 
 5. En la página **configurar el testigo** de la nube, escriba la siguiente información:  
    1. (Parámetro obligatorio) Azure Storage nombre de la cuenta.  
@@ -140,18 +140,18 @@ La configuración del testigo en la nube está bien integrada en el Asistente pa
        2. Al girar la clave de acceso principal, use la clave de acceso secundaria (consulte la figura 5).  
    3. (Parámetro opcional) Si piensa usar un punto de conexión de servicio de Azure distinto (por ejemplo, el servicio Microsoft Azure en China), actualice el nombre del servidor de extremo.  
 
-      ![Snapshot del panel Configuración de testigo en la nube en el Asistente para Cuórum de clúster @ no__t-1  
-      @no__t 0Figure 9: Configuración del testigo en la nube @ no__t-0
+      ![instantánea del panel Configuración de testigo en la nube en el Asistente para Cuórum de clúster](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_10.png)  
+      **Figura 9: configuración de un testigo en la nube**
 
 6. Tras configurar correctamente el testigo en la nube, puede ver el recurso testigo recién creado en el complemento Administrador de clústeres de conmutación por error (consulte la figura 10).
 
-    @no__t: configuración de 0Successful del testigo de la nube @ no__t-1  
-    @no__t 0Figure 10: Configuración correcta del testigo en la nube @ no__t-0
+    ![configuración correcta del testigo de nube](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_11.png)  
+    **Figura 10: configuración correcta del testigo en la nube**
 
 ### <a name="configuring-cloud-witness-using-powershell"></a>Configuración de un testigo en la nube con PowerShell  
 El comando de PowerShell Set-ClusterQuorum existente tiene nuevos parámetros adicionales correspondientes al testigo en la nube.  
 
-Puede configurar el testigo en la nube con el siguiente comando [de PowerShell `Set-ClusterQuorum`](https://technet.microsoft.com/library/ee461013.aspx) :  
+Puede configurar el testigo en la nube mediante el [`Set-ClusterQuorum`](https://technet.microsoft.com/library/ee461013.aspx) siguiente comando de PowerShell:  
 
 ```PowerShell
 Set-ClusterQuorum -CloudWitness -AccountName <StorageAccountName> -AccessKey <StorageAccountAccessKey>
@@ -172,5 +172,5 @@ Al configurar un testigo en la nube como testigo de quórum para el clúster de 
 ### <a name="proxy-considerations-with-cloud-witness"></a>Consideraciones del proxy con el testigo en la nube  
 El testigo en la nube usa HTTPS (puerto predeterminado 443) para establecer la comunicación con el servicio BLOB de Azure. Asegúrese de que el Puerto HTTPS es accesible a través del proxy de red.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 - [Novedades de los clústeres de conmutación por error en Windows Server](whats-new-in-failover-clustering.md)

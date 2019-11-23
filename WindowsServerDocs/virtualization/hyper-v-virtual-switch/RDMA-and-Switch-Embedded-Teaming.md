@@ -15,15 +15,15 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71365692"
 ---
-# <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>Acceso directo a memoria remota \(RDMA @ no__t-1 y switch Embedded Teaming \(SET @ no__t-3
+# <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>Acceso directo a memoria remota \(\) RDMA y cambiar la formación de equipos incrustados \(establecida\)
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema se proporciona información sobre cómo configurar el acceso directo a memoria remota \(RDMA @ no__t-1 interfaces con Hyper-V en Windows Server 2016, además de información sobre cómo cambiar la formación de equipos incrustada \(SET @ no__t-3.  
+En este tema se proporciona información sobre cómo configurar el acceso directo a memoria remota \(las interfaces de RDMA\) con Hyper-V en Windows Server 2016, además de información sobre cómo cambiar la formación de equipos incrustados \(conjunto de\).  
 
 > [!NOTE]
 > Además de este tema, está disponible el siguiente contenido incrustado de formación de equipos. 
-> - Descarga de la galería de TechNet: [Guía de usuario de Windows Server 2016 NIC y switch Embedded Teaming](https://gallery.technet.microsoft.com/Windows-Server-2016-839cb607?redir=0)
+> - Descarga de la Galería [de TechNet: Guía de usuario de Windows Server 2016 NIC y switch Embedded Teaming](https://gallery.technet.microsoft.com/Windows-Server-2016-839cb607?redir=0)
 
 ## <a name="bkmk_rdma"></a>Configuración de interfaces RDMA con Hyper-V  
 
@@ -38,11 +38,11 @@ En la imagen siguiente se muestran los cambios de la arquitectura de software en
 
 ![Cambios de arquitectura](../media/RDMA-and-SET/rdma_over.jpg)
 
-En las secciones siguientes se proporcionan instrucciones sobre cómo usar los comandos de Windows PowerShell para habilitar el protocolo de puente del centro de datos (DCB), crear un conmutador virtual de Hyper-V con una NIC virtual de RDMA \(vNIC @ no__t-1 y crear un conmutador virtual de Hyper-V con SET y VNIC RDMA.
+En las secciones siguientes se proporcionan instrucciones sobre cómo usar los comandos de Windows PowerShell para habilitar el protocolo de puente del centro de datos (DCB), crear un conmutador virtual de Hyper-V con una NIC virtual de RDMA \(vNIC\)y crear un conmutador virtual de Hyper-V con SET y RDMA VNIC.
 
-### <a name="enable-data-center-bridging-dcb"></a>Habilitar el protocolo de puente del centro de datos \(DCB @ no__t-1
+### <a name="enable-data-center-bridging-dcb"></a>Habilitar el protocolo de puente del centro de datos \(DCB\)
 
-Antes de usar cualquier RDMA en la versión RoCE \(\) Ethernet convergente de RDMA, debe habilitar DCB.  Aunque no es necesario para redes del protocolo RDMA de área extensa de Internet \(iWARP @ no__t-1, las pruebas han determinado que todas las tecnologías RDMA basadas en Ethernet funcionan mejor con DCB. Por ello, debe considerar la posibilidad de usar DCB incluso para las implementaciones de iWARP RDMA.
+Antes de usar cualquier RDMA a través de Ethernet convergente \(RoCE\) versión de RDMA, debe habilitar DCB.  Aunque no es necesario para el protocolo RDMA de área extensa de Internet \(iWARP\) Networks, las pruebas han determinado que todas las tecnologías RDMA basadas en Ethernet funcionan mejor con DCB. Por ello, debe considerar la posibilidad de usar DCB incluso para las implementaciones de iWARP RDMA.
 
 En los siguientes comandos de ejemplo de Windows PowerShell se muestra cómo habilitar y configurar DCB para SMB directo.
 
@@ -96,7 +96,7 @@ Comprobar las capacidades de RDMA:
 
 ###  <a name="bkmk_set-rdma"></a>Crear un conmutador virtual de Hyper-V con SET y RDMA VNIC
 
-Para usar RDMA rastreo en los adaptadores de red virtual del host de Hyper-V \(vNICs @ no__t-1 en un conmutador virtual de Hyper-V que admita la formación de equipos de RDMA, puede usar estos comandos de Windows PowerShell de ejemplo.
+Para usar RDMA rastreo en los adaptadores de red virtual del host de Hyper-V \(VNIC\) en un conmutador virtual de Hyper-V que admita la formación de equipos de RDMA, puede usar estos comandos de ejemplo de Windows PowerShell.
 
     New-VMSwitch -Name SETswitch -NetAdapterName "SLOT 2","SLOT 3" -EnableEmbeddedTeaming $true
 
@@ -146,7 +146,7 @@ En esta sección se proporciona información general sobre Switch Embedded Teami
 
 ## <a name="bkmk_over"></a>ESTABLECER información general
 
-SET es una solución de formación de equipos NIC alternativa que puede usar en entornos que incluyen Hyper-V y la pila de redes definidas por software \(SDN @ no__t-1 en Windows Server 2016. El conjunto integra la funcionalidad de formación de equipos NIC en el conmutador virtual de Hyper-V.
+SET es una solución alternativa para la formación de equipos NIC que se puede usar en entornos que incluyen Hyper-V y las redes definidas por software \(SDN\) stack en Windows Server 2016. El conjunto integra la funcionalidad de formación de equipos NIC en el conmutador virtual de Hyper-V.
 
 El conjunto le permite agrupar entre uno y ocho adaptadores de red Ethernet físicos en uno o varios adaptadores de red virtuales basados en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.
 
@@ -173,42 +173,42 @@ SET está disponible en todas las versiones de Windows Server 2016 que incluyen 
 
 ## <a name="bkmk_nics"></a>NIC admitidas para SET
 
-Puede usar cualquier NIC Ethernet que haya superado el logotipo y la calificación de hardware de Windows \(WHQL @ no__t-1 de un equipo establecido en Windows Server 2016. SET requiere que todos los adaptadores de red que son miembros de un equipo conjunto deben ser idénticos @no__t 0i. e., el mismo fabricante, el mismo modelo, el mismo firmware y el mismo controlador que @ no__t-1. El conjunto admite entre uno y ocho adaptadores de red en un equipo.
+Puede usar cualquier NIC Ethernet que haya superado el logotipo y la calificación de hardware de Windows \(WHQL\) test en un equipo conjunto en Windows Server 2016. SET requiere que todos los adaptadores de red que son miembros de un equipo conjunto deben ser idénticos \(es decir, el mismo fabricante, el mismo modelo, el mismo firmware y\)de controlador. El conjunto admite entre uno y ocho adaptadores de red en un equipo.
   
 ## <a name="bkmk_compat"></a>ESTABLECER compatibilidad con las tecnologías de red de Windows Server
 
 SET es compatible con las siguientes tecnologías de red de Windows Server 2016.
 
-- Puente del centro de \(DCB @ no__t-1
+- Puente del centro de \(DCB\)
   
 - Virtualización de red de Hyper-V: NV-GRE y VxLAN se admiten en Windows Server 2016.  
-- Descarga de suma de comprobación de recepción \(IPv4, IPv6, TCP @ no__t-1: se admiten si alguno de los miembros del equipo los admite.
+- Descarga de suma de comprobación de recepción \(IPv4, IPv6,\) TCP: se admiten si alguno de los miembros del equipo los admite.
 
-- Acceso directo a memoria remota \(RDMA @ no__t-1
+- Acceso directo a memoria remota \(RDMA\)
 
-- Virtualización de e/s de raíz única \(SR-IOV @ no__t-1
+- Virtualización de e/s de raíz única \(SR-IOV\)
 
-- Descargas de suma de comprobación de transmisión \(IPv4, IPv6, TCP @ no__t-1: se admiten si todos los miembros del equipo lo admiten.
+- Descargas de sumas de comprobación de transmisión \(IPv4, IPv6,\) TCP: se admiten si todos los miembros del equipo lo admiten.
 
-- Colas de máquinas virtuales \(VMQ @ no__t-1
+- Colas de máquinas virtuales \(VMQ\)
 
-- Ajuste de escala en lado de recepción virtual \(RSS @ no__t-1
+- Ajuste de escala en lado de recepción virtual \(RSS\)
 
 SET no es compatible con las siguientes tecnologías de red de Windows Server 2016.
 
-- autenticación de 802.1 x. el conmutador virtual de Hyper @ no__t-2V quita automáticamente el protocolo de autenticación extensible 802.1 x \(EAP @ no__t-1 en escenarios establecidos.
+- autenticación de 802.1 x. el conmutador virtual de Hyper\-V quita automáticamente los paquetes de 802.1 x de autenticación extensible \(EAP\) en escenarios establecidos.
  
-- Descarga de tareas de IPsec \(IPsecTO @ no__t-1. Se trata de una tecnología heredada que no es compatible con la mayoría de los adaptadores de red y donde existe, está deshabilitada de forma predeterminada.
+- Descarga de tareas de IPsec \(\)de IPsec. Se trata de una tecnología heredada que no es compatible con la mayoría de los adaptadores de red y donde existe, está deshabilitada de forma predeterminada.
 
-- Usar QoS @no__t -0pacer. exe @ no__t-1 en host o sistemas operativos nativos. Estos escenarios de QoS no son escenarios de Hyper-no__t-0V, por lo que las tecnologías no forman una intersección. Además, QoS está disponible pero no está habilitado de forma predeterminada; debe habilitar de manera intencionada QoS.
+- Usar QoS \(\) de pacer. exe en sistemas operativos de host o nativos. Estos escenarios de QoS no son escenarios de Hyper\-V, por lo que las tecnologías no se intersecan. Además, QoS está disponible pero no está habilitado de forma predeterminada; debe habilitar de manera intencionada QoS.
 
-- La fusión del lado de recepción \(RSC @ no__t-1. RSC se deshabilita automáticamente mediante el conmutador virtual de Hyper-no__t-0V.
+- Reciba la fusión lateral \(\)RSC. RSC se deshabilita automáticamente mediante el conmutador virtual de Hyper\-V.
 
-- Ajuste de escala en lado de recepción \(RSS @ no__t-1. Como Hyper-V usa las colas para VMQ y VMMQ, RSS siempre está deshabilitado cuando se crea un conmutador virtual.
+- Ajuste de escala en lado de recepción \(RSS\). Como Hyper-V usa las colas para VMQ y VMMQ, RSS siempre está deshabilitado cuando se crea un conmutador virtual.
 
 - Descarga de TCP Chimney. Esta tecnología está deshabilitada de forma predeterminada.
 
-- QoS de máquina virtual \(VM-QoS @ no__t-1. QoS de VM está disponible pero deshabilitada de forma predeterminada. Si configura la QoS de máquina virtual en un entorno establecido, la configuración de QoS producirá resultados imprevisibles.
+- QoS de máquinas virtuales \(VM:\)QoS. QoS de VM está disponible pero deshabilitada de forma predeterminada. Si configura la QoS de máquina virtual en un entorno establecido, la configuración de QoS producirá resultados imprevisibles.
 
 ## <a name="bkmk_modes"></a>ESTABLECER modos y valores
 
@@ -260,20 +260,20 @@ VMQ y establecer juntos funcionan bien y debe habilitar VMQ siempre que use Hype
 > [!NOTE]
 > SET siempre presenta el número total de colas que están disponibles en todos los miembros del equipo de conjunto. En la formación de equipos NIC, esto se denomina modo de suma de colas.
 
-La mayoría de los adaptadores de red tienen colas que se pueden usar para el ajuste de escala en lado de recepción \(RSS @ no__t-1 o VMQ, pero no ambos al mismo tiempo.
+La mayoría de los adaptadores de red tienen colas que se pueden usar para el ajuste de escala en lado de recepción \(RSS\) o VMQ, pero no ambos al mismo tiempo.
   
-Parece que algunas opciones de VMQ son la configuración de las colas de RSS pero que son realmente la configuración en las colas genéricas que usan RSS y VMQ, dependiendo de qué característica esté actualmente en uso. Cada NIC tiene, en sus propiedades avanzadas, los valores de `*RssBaseProcNumber` y `*MaxRssProcessors`.
+Parece que algunas opciones de VMQ son la configuración de las colas de RSS pero que son realmente la configuración en las colas genéricas que usan RSS y VMQ, dependiendo de qué característica esté actualmente en uso. Cada NIC tiene, en sus propiedades avanzadas, los valores para `*RssBaseProcNumber` y `*MaxRssProcessors`.
 
 A continuación se muestran algunos valores de VMQ que proporcionan un mejor rendimiento del sistema.
 
-- Idealmente, cada NIC debe tener el `*RssBaseProcNumber` establecido en un número par mayor o igual que dos (2). Esto se debe a que el primer procesador físico, Core 0 \(logical procesadores 0 y 1 @ no__t-1, normalmente realiza la mayor parte del procesamiento del sistema, por lo que el procesamiento de la red se debe dirigir fuera de este procesador físico. 
+- Idealmente, cada NIC debe tener la `*RssBaseProcNumber` establecida en un número par mayor o igual que dos (2). Esto se debe a que el primer procesador físico, Core 0 \(procesadores lógicos 0 y 1\), normalmente realiza la mayor parte del procesamiento del sistema, por lo que el procesamiento de la red se debe dirigir fuera de este procesador físico. 
 
 >[!NOTE]
 >Algunas arquitecturas de máquina no tienen dos procesadores lógicos por procesador físico, por lo que para tales equipos el procesador base debe ser mayor o igual que 1. En caso de duda, suponga que el host usa un procesador lógico 2 por cada arquitectura de procesador físico.
 
-- Los procesadores de los miembros del equipo deben ser, en la medida en que sea práctico, no superpuesto. Por ejemplo, en un host de 4 núcleos \(8 procesadores lógicos @ no__t-1 con un equipo de 2 NIC de 10 Gbps, podría establecer el primero en usar el procesador base de 2 y usar 4 núcleos; la segunda se establecería para usar el procesador base 6 y usar 2 núcleos.
+- Los procesadores de los miembros del equipo deben ser, en la medida en que sea práctico, no superpuesto. Por ejemplo, en un host de 4 núcleos \(8 procesadores lógicos\) con un equipo de 2 NIC de 10 Gbps, podría establecer el primero para usar el procesador base de 2 y para usar 4 núcleos; la segunda se establecería para usar el procesador base 6 y usar 2 núcleos.
 
-## <a name="bkmk_hnv"></a>ESTABLECER y virtualización de red de Hyper-V \(HNV @ no__t-2
+## <a name="bkmk_hnv"></a>ESTABLECER y virtualización de red de Hyper-V \(HNV\)
 
 SET es totalmente compatible con la virtualización de red de Hyper-V en Windows Server 2016. El sistema de administración de HNV proporciona información al controlador de conjunto que permite que el conjunto distribuya la carga de tráfico de red de una manera optimizada para el tráfico de HNV.
   
@@ -283,11 +283,11 @@ Migración en vivo es compatible con Windows Server 2016.
 
 ## <a name="bkmk_mac"></a>Uso de direcciones MAC en los paquetes transmitidos
 
-Al configurar un equipo de conjunto con la distribución de carga dinámica, los paquetes de un solo origen \(such como una sola máquina virtual @ no__t-1 se distribuyen simultáneamente entre varios miembros del equipo. 
+Al configurar un equipo de conjunto con la distribución de carga dinámica, los paquetes de un solo origen \(como una sola máquina virtual\) se distribuyen simultáneamente entre varios miembros del equipo. 
 
 Para evitar confundir los conmutadores y evitar las alarmas de oscilación de MAC, establezca reemplaza la dirección MAC de origen por una dirección MAC diferente en los fotogramas que se transmiten a los miembros del equipo que no sean el miembro del equipo afinidad con. Por este motivo, cada miembro del equipo utiliza una dirección MAC diferente y los conflictos de direcciones MAC se evitan a menos que se produzca un error.
 
-Cuando se detecta un error en la NIC principal, el software de formación de equipos comienza a usar la dirección MAC de la máquina virtual en el miembro del equipo que se elige para que actúe como el miembro del equipo afinidad con temporal \(i. e., que ahora se mostrará al conmutador como la interfaz de la máquina virtual @ No_ _ t-1.
+Cuando se detecta un error en la NIC principal, el software de formación de equipos comienza a usar la dirección MAC de la máquina virtual en el miembro del equipo que se elige para que actúe como el miembro del equipo afinidad con temporal \(es decir, el que ahora se mostrará al conmutador como\)de interfaz de la máquina virtual.
 
 Este cambio solo se aplica al tráfico que se va a enviar en el miembro del equipo de afinidad con de la máquina virtual con la dirección MAC de la máquina virtual como su dirección MAC de origen. Se sigue enviando otro tráfico con cualquier dirección MAC de origen que hubiera usado antes del error.
 
@@ -313,7 +313,7 @@ A continuación se muestran listas que describen el comportamiento de sustituci�
   
 ## <a name="bkmk_manage"></a>Administrar un equipo conjunto
 
-Se recomienda que use System Center Virtual Machine Manager \(VMM @ no__t-1 para administrar los equipos del conjunto; sin embargo, también puede usar Windows PowerShell para administrar el conjunto. En las secciones siguientes se proporcionan los comandos de Windows PowerShell que puede usar para administrar el conjunto.
+Se recomienda usar System Center Virtual Machine Manager \(\) de VMM para administrar los equipos del conjunto; sin embargo, también puede usar Windows PowerShell para administrar el conjunto. En las secciones siguientes se proporcionan los comandos de Windows PowerShell que puede usar para administrar el conjunto.
 
 Para obtener información sobre cómo crear un equipo de conjunto mediante VMM, consulte la sección "configuración de un conmutador lógico" en el tema de la biblioteca VMM de System Center [crear conmutadores lógicos](https://docs.microsoft.com/system-center/vmm/network-switch).
   
@@ -365,9 +365,9 @@ Set-VMSwitchTeam -Name TeamedvSwitch -LoadBalancingAlgorithm Dynamic
 ```  
 ### <a name="affinitizing-virtual-interfaces-to-physical-team-members"></a>Estableciendo interfaces virtuales a miembros del equipo físico
 
-El conjunto le permite crear una afinidad entre una interfaz virtual \(i. e., el puerto del conmutador virtual de Hyper-V @ no__t-1 y una de las NIC físicas del equipo. 
+El conjunto le permite crear una afinidad entre una interfaz virtual \(es decir, el puerto del conmutador virtual de Hyper-V\) y una de las NIC físicas del equipo. 
 
-Por ejemplo, si crea dos VNIC de host para SMB @ no__t-0Direct, como en la sección [crear un conmutador virtual de Hyper-V con set y RDMA VNIC](#bkmk_set-rdma), puede asegurarse de que los dos VNIC utilicen distintos miembros del equipo. 
+Por ejemplo, si crea dos VNIC de host para SMB\-Direct, como en la sección [creación de un conmutador virtual de Hyper-V con set y RDMA VNIC](#bkmk_set-rdma), puede asegurarse de que los dos VNIC utilicen distintos miembros del equipo. 
 
 Al agregar el script en esa sección, puede usar los siguientes comandos de Windows PowerShell.
 

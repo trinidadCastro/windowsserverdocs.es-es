@@ -45,7 +45,7 @@ NPS le permite configurar y administrar de forma centralizada la autenticación 
 - **Cuentas de RADIUS**. Puede configurar NPS para registrar eventos en un archivo de registro local o en una instancia local o remota de Microsoft SQL Server. Para obtener más información, consulte [registro de NPS](#nps-logging).
 
 > [!IMPORTANT]
-> Protección de acceso a redes \(NAP @ no__t-1, autoridad de registro de mantenimiento \(HRA @ no__t-3 y Protocolo de autorización de credenciales de host \(HCAP @ no__t-5 quedó en desuso en Windows Server 2012 R2 y no están disponibles en Windows Server 2016. Si tiene una implementación de NAP con sistemas operativos anteriores a Windows Server 2016, no puede migrar la implementación de NAP a Windows Server 2016.
+> Protección de acceso a redes \(NAP\), autoridad de registro de mantenimiento \(HRA\)y Protocolo de autorización de credenciales de host \(HCAP\) quedó en desuso en Windows Server 2012 R2 y no están disponibles en Windows Server 2016. Si tiene una implementación de NAP con sistemas operativos anteriores a Windows Server 2016, no puede migrar la implementación de NAP a Windows Server 2016.
 
 Puede configurar NPS con cualquier combinación de estas características. Por ejemplo, puede configurar un NPS como un servidor RADIUS para conexiones VPN y también como proxy RADIUS para reenviar algunas solicitudes de conexión a los miembros de un grupo de servidores RADIUS remotos para la autenticación y autorización en otro dominio.
 
@@ -68,19 +68,19 @@ Puede usar NPS como un servidor RADIUS, un proxy RADIUS o ambos.
 
 ### <a name="radius-server"></a>Servidor RADIUS
 
-NPS es la implementación de Microsoft del estándar RADIUS que especifica el equipo de ingeniería de Internet @no__t 0IETF @ no__t-1 en RFC 2865 y 2866. Como servidor RADIUS, NPS realiza la autenticación centralizada de la conexión, la autorización y las cuentas para muchos tipos de acceso a la red, como el acceso remoto inalámbrico, el conmutador de autenticación, la red privada virtual y de acceso telefónico \(VPN @ no__t-1. conexiones de enrutador a enrutador.
+NPS es la implementación de Microsoft del estándar RADIUS especificado por el equipo de ingeniería de Internet \(IETF\) en RFC 2865 y 2866. Como servidor RADIUS, NPS realiza la autenticación centralizada de la conexión, la autorización y las cuentas para muchos tipos de acceso a la red, como el conmutador de autenticación inalámbrico, de acceso telefónico y de red privada virtual \(VPN\) acceso remoto y las conexiones de enrutador a enrutador.
 
 > [!NOTE]
 > Para obtener información acerca de la implementación de NPS como un servidor RADIUS, consulte [implementar el servidor de directivas de redes](nps-deploy.md).
 
 NPS permite el uso de un conjunto heterogéneo de equipos inalámbricos, de conmutación, de acceso remoto o VPN. Puede usar NPS con el servicio de acceso remoto, que está disponible en Windows Server 2016.
 
-NPS usa un dominio Active Directory Domain Services \(AD DS @ no__t-1 o la base de datos de cuentas de usuario del administrador de cuentas de seguridad (SAM) local para autenticar las credenciales de usuario para los intentos de conexión. Cuando un servidor que ejecuta NPS es miembro de un dominio de AD DS, NPS usa el servicio de directorio como su base de datos de cuentas de usuario y forma parte de una solución de inicio de sesión único. El mismo conjunto de credenciales se usa para el control de acceso a la red \(authenticating y autorizar el acceso a una red @ no__t-1 e iniciar sesión en un dominio AD DS.
+NPS usa un Active Directory Domain Services \(AD DS dominio de\) o la base de datos de cuentas de usuario del administrador de cuentas de seguridad (SAM) local para autenticar las credenciales de usuario para los intentos de conexión. Cuando un servidor que ejecuta NPS es miembro de un dominio de AD DS, NPS usa el servicio de directorio como su base de datos de cuentas de usuario y forma parte de una solución de inicio de sesión único. El mismo conjunto de credenciales se usa para el control de acceso a la red \(autenticar y autorizar el acceso a un\) de red e iniciar sesión en un dominio de AD DS.
 
 > [!NOTE]
 > NPS usa las propiedades de acceso telefónico de la cuenta de usuario y las directivas de red para autorizar una conexión.
 
-Los proveedores de servicios de Internet \(ISPs @ no__t-1 y las organizaciones que mantienen el acceso a la red tienen el mayor desafío de administrar todos los tipos de acceso a la red desde un único punto de administración, independientemente del tipo de equipo de acceso a la red utilizado. El estándar RADIUS es compatible con esta funcionalidad en entornos homogéneos y heterogéneos. RADIUS es un protocolo cliente-servidor que permite que los equipos de acceso a la red (usados como clientes RADIUS) envíen solicitudes de autenticación y cuentas a un servidor RADIUS.
+Los proveedores de servicios de Internet \(ISP\) y las organizaciones que mantienen el acceso a la red tienen el mayor desafío de administrar todos los tipos de acceso a la red desde un único punto de administración, independientemente del tipo de equipo de acceso a la red utilizado. El estándar RADIUS es compatible con esta funcionalidad en entornos homogéneos y heterogéneos. RADIUS es un protocolo cliente-servidor que permite que los equipos de acceso a la red (usados como clientes RADIUS) envíen solicitudes de autenticación y cuentas a un servidor RADIUS.
 
 Un servidor RADIUS tiene acceso a la información de la cuenta de usuario y puede comprobar las credenciales de autenticación de acceso a la red. Si se autentican las credenciales de usuario y se autoriza el intento de conexión, el servidor RADIUS autoriza el acceso del usuario en función de las condiciones especificadas y, a continuación, registra la conexión de acceso a la red en un registro de cuentas. El uso de RADIUS permite que los datos de autenticación, autorización y cuentas de usuario de acceso a la red se recopilen y se mantengan en una ubicación central, en lugar de en cada servidor de acceso.
 
@@ -99,7 +99,7 @@ En la siguiente ilustración se muestra NPS como un servidor RADIUS para una var
 
 ### <a name="radius-proxy"></a>Proxy RADIUS
 
-Como proxy RADIUS, NPS reenvía los mensajes de autenticación y cuentas a NPS y a otros servidores RADIUS. Puede usar NPS como un proxy RADIUS para proporcionar el enrutamiento de mensajes RADIUS entre clientes RADIUS @no__t 0also denominado servidores de acceso a la red @ no__t-1 y servidores RADIUS que realizan la autenticación, autorización y cuentas de usuario para el intento de conexión. 
+Como proxy RADIUS, NPS reenvía los mensajes de autenticación y cuentas a NPS y a otros servidores RADIUS. Puede usar NPS como un proxy RADIUS para proporcionar el enrutamiento de mensajes RADIUS entre clientes RADIUS \(también denominados servidores de acceso a la red\) y servidores RADIUS que realizan la autenticación de usuarios, la autorización y las cuentas para el intento de conexión. 
 
 Cuando se usa como proxy RADIUS, NPS es un punto central de conmutación o enrutamiento a través del cual fluyen los mensajes de acceso y cuentas de RADIUS. NPS registra información en un registro de cuentas sobre los mensajes que se reenvían.
 
@@ -139,7 +139,7 @@ Los siguientes ejemplos de configuración muestran cómo puede configurar NPS co
 
 **NPS como un servidor RADIUS con servidores de cuentas remotas**. En este ejemplo, el NPS local no está configurado para realizar cuentas y la Directiva de solicitud de conexión predeterminada se revisa para que los mensajes de cuentas RADIUS se reenvíen a un NPS u otro servidor RADIUS en un grupo de servidores RADIUS remotos. Aunque se reenvían los mensajes de cuentas, no se reenvían los mensajes de autenticación y autorización, y el NPS local realiza estas funciones para el dominio local y todos los dominios de confianza.
 
-**NPS con asignación de usuarios de RADIUS remotos a Windows**. En este ejemplo, NPS actúa como servidor RADIUS y como proxy RADIUS para cada solicitud de conexión individual mediante el reenvío de la solicitud de autenticación a un servidor RADIUS remoto mientras se usa una cuenta de usuario de Windows local para la autorización. Esta configuración se implementa mediante la configuración del atributo de asignación de RADIUS remota a usuario de Windows como una condición de la Directiva de solicitud de conexión. \(In, debe crearse una cuenta de usuario localmente en el servidor RADIUS que tenga el mismo nombre que la cuenta de usuario remota en la que el servidor RADIUS remoto realiza la autenticación. \)
+**NPS con asignación de usuarios de RADIUS remotos a Windows**. En este ejemplo, NPS actúa como servidor RADIUS y como proxy RADIUS para cada solicitud de conexión individual mediante el reenvío de la solicitud de autenticación a un servidor RADIUS remoto mientras se usa una cuenta de usuario de Windows local para la autorización. Esta configuración se implementa mediante la configuración del atributo de asignación de RADIUS remota a usuario de Windows como una condición de la Directiva de solicitud de conexión. \(además, se debe crear una cuenta de usuario localmente en el servidor RADIUS que tenga el mismo nombre que la cuenta de usuario remota en la que el servidor RADIUS remoto realiza la autenticación.\)
 
 ## <a name="configuration"></a>Configuración
 

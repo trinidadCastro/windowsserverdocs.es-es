@@ -21,9 +21,9 @@ ms.locfileid: "71380581"
 ---
 # <a name="bitsadmin-sethelpertokenflags"></a>bitsadmin sethelpertokenflags
 
-Establece las marcas de uso de un [token auxiliar](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)@no__t-clientes 1 está asociado a un trabajo de transferencia de bits.
+Establece las marcas de uso de un de [token auxiliar](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs) que está asociado a un trabajo de transferencia de bits.
 
-**BITS 3,0 y versiones anteriores**: No compatible.
+**BITS 3,0 y versiones anteriores**: no se admiten.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,7 +36,7 @@ bitsadmin /SetHelperTokenFlags <Job> <Flags>
 |Parámetro|Descripción|
 |---------|-----------|
 |Trabajo|El nombre para mostrar o el GUID del trabajo.|
-|Flags|Entre los valores posibles se incluyen los siguientes. 0x0001 @ no__t-0The: el token de la aplicación se usa para abrir el archivo local de un trabajo de carga, para crear o cambiar el nombre del archivo temporal de un trabajo de descarga, o para crear o cambiar el nombre del archivo de respuesta de un trabajo de carga y respuesta. 0x0002 @ no__t-0The el token de la aplicación se usa para abrir el archivo remoto de un trabajo de carga o descarga de bloque de mensajes del servidor (SMB), o en respuesta a un desafío del servidor HTTP o del proxy para las credenciales NTLM o Kerberos implícitas. Debe llamar a @ no__t-0 @ no__t-1to permitir que las credenciales se envíen a través de HTTP.|
+|Flags|Entre los valores posibles se incluyen los siguientes. 0x0001&mdash;el token auxiliar se usa para abrir el archivo local de un trabajo de carga, para crear o cambiar el nombre del archivo temporal de un trabajo de descarga, o para crear o cambiar el nombre del archivo de respuesta de un trabajo de carga y respuesta. 0x0002&mdash;el token auxiliar se usa para abrir el archivo remoto de un trabajo de carga o descarga de bloque de mensajes del servidor (SMB), o en respuesta a un desafío del servidor HTTP o del proxy para las credenciales NTLM o Kerberos implícitas. Debe llamar a `/SetCredentialsJob TargetScheme NULL NULL` para permitir que las credenciales se envíen a través de HTTP.|
 
 #### <a name="additional-references"></a>Referencias adicionales
 

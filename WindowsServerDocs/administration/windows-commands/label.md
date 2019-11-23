@@ -39,11 +39,11 @@ label [/mp] [<Volume>] [<Label>]
 |Parámetro|Descripción|
 |---------|-----------|
 |/MP|Especifica que el volumen se debe tratar como un punto de montaje o un nombre de volumen.|
-|@no__t 0Volume >|Especifica una letra de unidad (seguida de un signo de dos puntos), un punto de montaje o un nombre de volumen. Si se especifica un nombre de volumen, el parámetro **/MP** no es necesario.|
-|@no__t 0Label >|Especifica la etiqueta del volumen.|
+|\<> de volumen|Especifica una letra de unidad (seguida de un signo de dos puntos), un punto de montaje o un nombre de volumen. Si se especifica un nombre de volumen, el parámetro **/MP** no es necesario.|
+|\<etiqueta >|Especifica la etiqueta del volumen.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Windows muestra la etiqueta de volumen y el número de serie (si tiene uno) como parte de la lista de directorios.
 - Una etiqueta de volumen NTFS puede tener una longitud de hasta 32 caracteres, incluidos espacios. Las etiquetas de volumen NTFS conservan y muestran el caso que se usó cuando se creó la etiqueta.

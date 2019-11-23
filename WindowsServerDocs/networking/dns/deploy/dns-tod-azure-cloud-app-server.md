@@ -40,7 +40,7 @@ Con un aumento reciente en la empresa, contosogiftservices.com tiene un número 
 
 Contoso Gift Services realiza un análisis de sitio y detecta que cada noche entre la hora local de las 6 PM y las 9 P.M. hay un aumento del tráfico en el servidor Web de Seattle. El servidor Web no se puede escalar para controlar el aumento del tráfico en estas horas punta, lo que da lugar a la denegación de servicio a los clientes. 
 
-Para asegurarse de que los clientes de contosogiftservices.com obtienen una experiencia de respuesta en el sitio web, los servicios de regalos de Contoso deciden que, durante estas horas, alquilarán una máquina virtual \(VM @ no__t-1 en Microsoft Azure para hospedar una copia de su servidor Web.  
+Para asegurarse de que los clientes de contosogiftservices.com obtienen una experiencia de respuesta en el sitio web, los servicios de regalos de Contoso deciden que, durante estas horas, alquilará una máquina virtual \(máquina virtual\) en Microsoft Azure para hospedar una copia de su servidor Web.  
 
 Contoso Gift Services obtiene una dirección IP pública de Azure para la máquina virtual (192.68.31.44) y desarrolla la automatización para implementar el servidor web cada día en Azure entre 5-10 PM, lo que permite un período de contingencia de una hora.
 
@@ -100,7 +100,7 @@ El siguiente paso consiste en agregar los registros que representan el host del 
 
 En AzureZoneScope, el registro www.contosogiftservices.com se agrega con la dirección IP 192.68.31.44, que se encuentra en la nube pública de Azure. 
 
-Del mismo modo, en el ámbito de zona predeterminado @no__t -0contosogiftservices. com @ no__t-1, se agrega un registro @no__t -2www. contosogiftservices. com @ no__t-3 con la dirección IP 192.68.30.2 del servidor Web que se ejecuta en el centro de centros de recursos local de Seattle.
+Del mismo modo, en el ámbito de zona predeterminado \(contosogiftservices.com\), se agrega un registro \(www.contosogiftservices.com\) con la dirección IP 192.68.30.2 del servidor Web que se ejecuta en el centro de recursos local de Seattle.
 
 En el segundo cmdlet siguiente, el parámetro – ZoneScope no se incluye. Por este motivo, los registros se agregan en el valor predeterminado de ZoneScope. 
 

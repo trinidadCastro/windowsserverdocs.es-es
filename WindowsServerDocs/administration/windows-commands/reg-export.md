@@ -38,12 +38,12 @@ Reg export KeyName FileName [/y]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0KeyName >|Especifica la ruta de acceso completa de la subclave. La operación de exportación solo funciona con el equipo local. KeyName debe incluir una clave raíz válida. Las claves raíz válidas son: HKLM, HKCU, HKCR, HKU y HKCC.|
-|\<Nombre de archivo >|Especifica el nombre y la ruta de acceso del archivo que se va a crear durante la operación. El archivo debe tener una extensión. reg.|
+|\<KeyName >|Especifica la ruta de acceso completa de la subclave. La operación de exportación solo funciona con el equipo local. KeyName debe incluir una clave raíz válida. Las claves raíz válidas son: HKLM, HKCU, HKCR, HKU y HKCC.|
+|\<nombre de archivo >|Especifica el nombre y la ruta de acceso del archivo que se va a crear durante la operación. El archivo debe tener una extensión. reg.|
 |/y|Sobrescribe cualquier archivo existente con el nombre *filename* sin pedir confirmación.|
 |/?|Muestra ayuda para la **exportación reg** en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 En la tabla siguiente se enumeran los valores devueltos para la operación de **exportación del registro** .
 

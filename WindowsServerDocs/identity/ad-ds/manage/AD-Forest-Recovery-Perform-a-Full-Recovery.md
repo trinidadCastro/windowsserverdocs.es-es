@@ -37,23 +37,23 @@ En función de su escenario, use uno de los procedimientos siguientes para reali
   
 1. Inicie instalación de Windows, especifique el idioma, el formato de hora y moneda y las opciones de teclado y haga clic en **siguiente**. 
 2. Haga clic en **Reparar el equipo**.
-   ![Server restore @ no__t-1
+   ![restaurar servidor](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore1.png)
 3. Haz clic en **Solucionar problemas**.</br>
-   ![Server restore @ no__t-1
+   ![restaurar servidor](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore2.png)
 4. Haga clic en **recuperación de imagen del sistema**.</br>
-   ![Server restore @ no__t-1
+   ![restaurar servidor](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore3.png)
 5. Haga clic en **Windows Server 2016**. 
-   ![Server restore @ no__t-1
+   ![restaurar servidor](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore4.png)
 6. Si va a restaurar la copia de seguridad local más reciente, haga clic en **usar la imagen de sistema más reciente disponible (recomendado)** y haga clic en **siguiente**.
-   ![Server restore @ no__t-1
+   ![restaurar servidor](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore5.png)
 7. Ahora se le ofrecerá una opción para:
    -  Formatear y volver a particionar discos
    -  Instalación de controladores
    -  Anulación de la selección de las características **avanzadas** de reinicio automático y comprobación de errores de disco. Están habilitados de forma predeterminada.
-   ![Server restore @ no__t-1
+   ![restaurar servidor](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore6.png)
 8. Haz clic en **Siguiente**.
-9. Haga clic en **Finalizar**. Se le preguntará si está seguro de que desea continuar. Haga clic en **Sí**. 
-   ![Server restore @ no__t-1 
+9. Haz clic en **Finalizar**. Se le preguntará si está seguro de que desea continuar. Haz clic en **Sí**. 
+   ![restaurar servidor](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore11.png) 
 10. Una vez completado este paso, realice una restauración autoritativa de SYSVOL, como se describe en [recuperación del bosque de ad: realización de una sincronización autoritativa de SYSVOL replicada en DFSR](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md).
 
 ## <a name="perform-a-full-server-restore-with-any-image-local-or-remote"></a>Realizar una restauración completa del servidor con cualquier imagen local o remota
@@ -64,11 +64,11 @@ En función de su escenario, use uno de los procedimientos siguientes para reali
 4. Si va a restaurar la copia de seguridad local más reciente, haga clic en **seleccionar una imagen del sistema** y haga clic en **siguiente**.
 5. Ahora puede seleccionar la ubicación de la copia de seguridad que desea restaurar. Si la imagen es local, puede seleccionarla en la lista. 
 6. Si la imagen se encuentra en un recurso compartido de red, seleccione **avanzadas**. También puede seleccionar **Opciones avanzadas** si necesita instalar un controlador.
-   ![Server restore @ no__t-1
+   ![restaurar servidor](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore7.png)
 7. Si va a restaurar desde la red después de hacer clic en **avanzada** , seleccione **buscar una imagen de sistema en la red**. Es posible que se le pida que restaure la conectividad de red. Seleccione Aceptar. </br>
-   ![Server restore @ no__t-1
-8. Escriba la ruta de acceso UNC a la ubicación del recurso compartido de copia de seguridad (por ejemplo, \\ \ server1\backups) y haga clic en **Aceptar**. También puede escribir la dirección IP del servidor de destino, como \\ \ 192.168.1.3 \ backups. 
-   ![Server restore @ no__t-1
+   ![restaurar servidor](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore8.png)
+8. Escriba la ruta de acceso UNC a la ubicación del recurso compartido de copia de seguridad (por ejemplo, \\\server1\backups) y haga clic en **Aceptar**. También puede escribir la dirección IP del servidor de destino, como \\\192.168.1.3\backups. 
+   ![restaurar servidor](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore9.png)
 9. Escriba las credenciales necesarias para tener acceso al recurso compartido y haga clic en Aceptar. 
 10. Ahora **Seleccione la fecha y hora de la imagen de sistema que desea restaurar** y haga clic en **siguiente**.
 11. Ahora se le ofrecerá una opción para:
@@ -76,7 +76,7 @@ En función de su escenario, use uno de los procedimientos siguientes para reali
     - Instalación de controladores
     - Anulación de la selección de las características **avanzadas** de reinicio automático y comprobación de errores de disco. Están habilitados de forma predeterminada.
 12. Haz clic en **Siguiente**.
-13. Haga clic en **Finalizar**. Se le preguntará si está seguro de que desea continuar. Haga clic en **Sí**.  
+13. Haz clic en **Finalizar**. Se le preguntará si está seguro de que desea continuar. Haz clic en **Sí**.  
 14. Una vez completado este paso, realice una restauración autoritativa de SYSVOL, como se describe en [recuperación del bosque de ad: realización de una sincronización autoritativa de SYSVOL replicada en DFSR](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md).
 
 ## <a name="enabling-the-network-adapter-for-a-network-backup"></a>Habilitar el adaptador de red para una copia de seguridad de red
@@ -84,7 +84,7 @@ En función de su escenario, use uno de los procedimientos siguientes para reali
 Si necesita habilitar un adaptador de red desde el símbolo del sistema para restaurar desde un recurso compartido de red, siga estos pasos.
 
 1. Inicie instalación de Windows, especifique el idioma, el formato de hora y moneda y las opciones de teclado y haga clic en **siguiente**. 
-2. Haga clic en **Reparar el equipo**. CONFIGUR
+2. Haga clic en **Reparar el equipo**. Configur
 3. Haga clic en **solucionar problemas**y haga clic en **símbolo del sistema**. 
 4. Escriba el siguiente comando y presione ENTRAR:  
 
@@ -126,7 +126,7 @@ Si necesita habilitar un adaptador de red desde el símbolo del sistema para res
    set address "Local Area Connection" static 192.168.1.2 255.0.0.0 192.168.1.1 1  
    ```  
 
-   Escriba `quit` para volver al símbolo del sistema. Escriba `ipconfig /all` para comprobar que el adaptador de red tiene una dirección IP e intente hacer ping en la dirección IP del servidor que hospeda el recurso compartido de copia de seguridad para confirmar la conectividad. Cuando haya terminado, cierre el símbolo del sistema. 
+   Escriba `quit` para volver a un símbolo del sistema. Escriba `ipconfig /all` para comprobar que el adaptador de red tiene una dirección IP e intente hacer ping en la dirección IP del servidor que hospeda el recurso compartido de copia de seguridad para confirmar la conectividad. Cuando haya terminado, cierre el símbolo del sistema. 
 
 6. Ahora que el adaptador de red funciona, seleccione los pasos anteriores para completar la restauración.
 

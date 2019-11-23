@@ -80,7 +80,7 @@ En la primera página del Asistente para directivas de QoS, puede especificar un
 
 2. Opcionalmente, use **especificar el valor de DSCP** para habilitar el marcado de DSCP y, a continuación, configure un valor de DSCP entre 0 y 63.
 
-3. De forma opcional, use **Especificar velocidad del acelerador** para habilitar el límite de tráfico y configurar la velocidad del acelerador. El valor de velocidad del acelerador debe ser mayor que 1 y puede especificar unidades de kilobytes por \(segundo\) kbps o megabytes por \(segundo\)Mbps.
+3. De forma opcional, use **Especificar velocidad del acelerador** para habilitar el límite de tráfico y configurar la velocidad del acelerador. El valor de velocidad del acelerador debe ser mayor que 1 y puede especificar unidades de kilobytes por segundo \(KBps\) o megabytes por segundo \(MBps\).
 
 4. Haz clic en **Siguiente**.
 
@@ -99,11 +99,11 @@ Opcionalmente, puede especificar la ruta de acceso de la aplicación. Para espec
 >[!NOTE]
 >La ruta de acceso de la aplicación no puede incluir una ruta de acceso que se resuelva como un vínculo simbólico.
 
-La dirección URL debe ajustarse a [RFC 1738](https://tools.ietf.org/html/rfc1738), con el `http[s]://<hostname\>:<port\>/<url-path>`formato. Puede usar un carácter comodín, `‘*'`, para `<hostname>` y `https://training.\*/, https://\*.\*`/o `<port>`, por ejemplo,, pero el carácter comodín no puede indicar una subcadena `<port>`de `<hostname>` o.
+La dirección URL debe ajustarse a [RFC 1738](https://tools.ietf.org/html/rfc1738), en forma de `http[s]://<hostname\>:<port\>/<url-path>`. Puede utilizar un carácter comodín, `‘*'`, para `<hostname>` y/o `<port>`, por ejemplo, `https://training.\*/, https://\*.\*`, pero el carácter comodín no puede indicar una subcadena de `<hostname>` o `<port>`.
 
-En otras palabras, `https://my\*site/` ni ni `https://\*training\*/` son válidos. 
+En otras palabras, ni `https://my\*site/` ni `https://\*training\*/` son válidos. 
 
-Opcionalmente, puede activar **incluir subdirectorios y archivos** para realizar la búsqueda de coincidencias en todos los subdirectorios y archivos que siguen a una dirección URL. Por ejemplo, si se activa esta opción y la dirección URL `https://training`es, la Directiva de QoS considerará las solicitudes de` https://training/video` una buena coincidencia.
+Opcionalmente, puede activar **incluir subdirectorios y archivos** para realizar la búsqueda de coincidencias en todos los subdirectorios y archivos que siguen a una dirección URL. Por ejemplo, si se activa esta opción y la dirección URL es `https://training`, la Directiva de QoS considerará las solicitudes de` https://training/video` una buena coincidencia.
 
 #### <a name="to-configure-the-application-name-page-of-the-qos-policy-wizard"></a>Para configurar la página nombre de aplicación del Asistente para directivas de QoS
 
@@ -123,13 +123,13 @@ En la tercera página del Asistente para directivas de QoS puede especificar las
 
 Si selecciona **Sólo para el siguiente prefijo o dirección IP de origen:** o **Sólo para el siguiente prefijo o dirección IP de destino:** , debe escribir una de las siguientes opciones:
 
-- Una dirección IPv4, como`192.168.1.1`
+- Una dirección IPv4, como `192.168.1.1`
 
-- Un prefijo de dirección IPv4 mediante la notación de longitud de prefijo de red, como`192.168.1.0/24`
+- Un prefijo de dirección IPv4 mediante la notación de longitud de prefijo de red, como `192.168.1.0/24`
 
-- Una dirección IPv6, como`3ffe:ffff::1`
+- Una dirección IPv6, como `3ffe:ffff::1`
 
-- Un prefijo de dirección IPv6, como`3ffe:ffff::/48`
+- Un prefijo de dirección IPv6, como `3ffe:ffff::/48`
 
 Si selecciona **solo para la siguiente dirección IP de origen** y **solo para la siguiente dirección IP de destino**, ambas direcciones o prefijos de dirección deben estar basadas en IPv4 o IPv6.
 
@@ -240,7 +240,7 @@ La configuración avanzada de QoS proporciona controles adicionales para los adm
   
 2.  Haga clic con el botón secundario en **Directiva de QoS**y, a continuación, haga clic en **Configuración avanzada de QoS**.
 
-     En la ilustración siguiente se muestran las dos pestañas de configuración avanzada de QoS: El **tráfico TCP entrante** y el **marcado de DSCP invalidan**.
+     En la ilustración siguiente se muestran las dos pestañas de configuración avanzada de QoS: **invalidación del marcado de DSCP**y el **tráfico TCP entrante** .
   
 > [!NOTE]
 >  La configuración avanzada de QoS es una configuración de directiva de grupo de nivel de equipo.
@@ -270,7 +270,7 @@ El tamaño de la ventana real puede ser un valor igual o menor que el máximo, d
 
 3.  Vincule el GPO a la unidad organizativa.
 
-#### <a name="advanced-qos-settings-dscp-marking-override"></a>Configuración avanzada de QoS: Invalidación de marcado de DSCP
+#### <a name="advanced-qos-settings-dscp-marking-override"></a>Configuración avanzada de QoS: invalidación de marcado de DSCP
 
 La invalidación del marcado de DSCP restringe la capacidad de las aplicaciones de especificar, o "marcar", valores de DSCP distintos de los especificados en las directivas de QoS. Al especificar que las aplicaciones tienen permitido establecer valores de DSCP, las aplicaciones pueden establecer valores de DSCP distintos de cero. 
 
@@ -280,7 +280,7 @@ De forma predeterminada, los equipos que ejecutan Windows Server 2016, Windows 1
 
 ##### <a name="wireless-multimedia-and-dscp-values"></a>Valores de valor de DSCP y de multimedia inalámbrico
 
-La [Alianza Wi-Fi](https://go.microsoft.com/fwlink/?LinkId=160769) ha establecido una certificación para los multimedia inalámbricos \(WMM @ no__t-2 que define cuatro categorías de acceso \(WMM_AC @ no__t-4 para priorizar el tráfico de red transmitido en una red inalámbrica de Wi @ No__t-5Fi. Las categorías de acceso \(incluyen en orden de prioridad\)más alta a mínima: voz, vídeo, mejor esfuerzo y fondo; se abrevian respectivamente como VO, VI, ser y BK. La especificación de WMM define qué valores de DSCP se corresponden con cada una de las cuatro categorías de acceso:
+La [Alianza Wi-Fi](https://go.microsoft.com/fwlink/?LinkId=160769) ha establecido una certificación para la\) de Multimedia inalámbrica \(WMM que define cuatro categorías de acceso \(WMM_AC\) para priorizar el tráfico de red transmitido en una red inalámbrica Wi\-fi. Las categorías de acceso incluyen \(en orden de prioridad más alta a la más baja\): voz, vídeo, mejor esfuerzo y fondo; SE abrevia respectivamente como VO, VI, es y BK. La especificación de WMM define qué valores de DSCP se corresponden con cada una de las cuatro categorías de acceso:
   
 |Valor de DSCP|Categoría de acceso de WMM|
 |----------|-------------------|
@@ -289,7 +289,7 @@ La [Alianza Wi-Fi](https://go.microsoft.com/fwlink/?LinkId=160769) ha establecid
 |24-31, 0-7|Mejor esfuerzo (ser)|
 |8-23|Background (BK)|
 
-Puede crear directivas de QoS que usen estos valores de DSCP para asegurarse de que los equipos\-portátiles con certificados Wi-Fi™ para los adaptadores inalámbricos de WMM reciban\-un control de prioridades cuando estén asociados con los puntos de acceso de la certificación Wi-Fi para WMM.
+Puede crear directivas de QoS que usen estos valores de DSCP para asegurarse de que los equipos portátiles con certificados Wi\-Fi™ para los adaptadores inalámbricos de WMM reciban un control de prioridades cuando estén asociados a Wi\-fi Certified for WMM Access Points.
   
 ### <a name="BKMK_precedencerules"></a>Reglas de prioridad de la directiva QoS
 
@@ -297,7 +297,7 @@ De forma similar a las prioridades de los GPO, las directivas de QoS tienen regl
 
 En general, la Directiva de QoS con las condiciones más coincidentes gana. Cuando se aplican varias directivas de QoS, las reglas se dividen en tres categorías: nivel de usuario frente a nivel de equipo; aplicación frente a la red quíntuplo; y entre la red quíntuplo.
 
-Por *quíntuplo de red*, nos referimos a la dirección IP de origen, la dirección IP de destino, el puerto \(de origen,\)el puerto de destino y el protocolo TCP/UDP.  
+Por *quíntuplo de red*, nos referimos a la dirección IP de origen, la dirección IP de destino, el puerto de origen, el puerto de destino y el protocolo \(\)TCP/UDP.  
 
  **La directiva QoS de nivel de usuario tiene prioridad sobre la directiva QoS de nivel de equipo**
 
@@ -312,13 +312,13 @@ Cuando varias directivas de QoS coinciden con el tráfico específico, se aplica
 
 Como alternativa, se pueden aplicar varias directivas de QoS al mismo tráfico especificando condiciones no superpuestas. Entre las condiciones de las aplicaciones y el quíntuplo de red, la Directiva que especifica la aplicación se considera más específica y se aplica. 
 
-Por ejemplo, policy_A solo especifica un nombre de aplicación (App. exe) y policy_B especifica la dirección IP de destino 192.168.1.0/24. Cuando estas directivas de QoS entran en conflicto @no__t -0app. exe envía el tráfico a una dirección IP dentro del intervalo de 192.168.4.0/24 @ no__t-1, se aplican policy_A.
+Por ejemplo, policy_A solo especifica un nombre de aplicación (App. exe) y policy_B especifica la dirección IP de destino 192.168.1.0/24. Cuando estas directivas de QoS entran en conflicto \(app. exe envía el tráfico a una dirección IP dentro del intervalo de 192.168.4.0/24\), policy_A se aplica.
 
  **Una mayor especificidad tiene prioridad en el quíntuplo de red**
 
-En el caso de conflictos de directivas dentro de la red quíntuplo, la Directiva con las condiciones más coincidentes tiene prioridad. Por ejemplo, supongamos que policy_C especifica la dirección IP de origen "any", la dirección IP de destino 10.0.0.1, el puerto de origen "any", el puerto de destino "any" y el protocolo "TCP". 
+En el caso de conflictos de directivas dentro de la red quíntuplo, la Directiva con las condiciones más coincidentes tiene prioridad. Por ejemplo, supongamos policy_C especifica la dirección IP de origen "any", la dirección IP de destino 10.0.0.1, el puerto de origen "any", el puerto de destino "any" y el protocolo "TCP". 
 
-A continuación, supongamos que policy_D especifica la dirección IP de origen "any", la dirección IP de destino 10.0.0.1, el puerto de origen "any", el puerto de destino 80 y el protocolo "TCP". Después, policy_C y policy_D coinciden con las conexiones con el destino 10.0.0.1:80. Dado que la directiva QoS aplica la Directiva con las condiciones de coincidencia más específicas, policy_D tiene prioridad en este ejemplo.  
+A continuación, supongamos policy_D especifica la dirección IP de origen "any", la dirección IP de destino 10.0.0.1, el puerto de origen "any", el puerto de destino 80 y el protocolo "TCP". A continuación, policy_C y policy_D coinciden con las conexiones con el destino 10.0.0.1:80. Dado que la directiva QoS aplica la Directiva con las condiciones de coincidencia más específicas, policy_D tiene prioridad en este ejemplo.  
   
 Sin embargo, las directivas QoS pueden tener un número igual de condiciones. Por ejemplo, varias directivas pueden especificar solo una parte de la red quíntuplo (pero no la misma). Entre el quíntuplo de red, el orden siguiente es de mayor a menor prioridad:
 

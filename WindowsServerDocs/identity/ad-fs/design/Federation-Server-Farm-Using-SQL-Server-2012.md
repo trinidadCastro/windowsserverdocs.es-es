@@ -18,22 +18,22 @@ ms.locfileid: "71359153"
 ---
 # <a name="federation-server-farm-using-sql-server"></a>Granja de servidores de federación con SQL Server
 
-Esta topología para \(servicios de Federación de Active Directory (AD FS) AD FS\) difiere de la granja de servidores de Federación con la topología de\) implementación WID de Windows Internal Database \(en que no replica los datos en cada servidor de Federación de la granja. En su lugar, todos los servidores de Federación de la granja pueden leer y escribir datos en una base de datos común que se almacena en un servidor que ejecuta Microsoft SQL Server que se encuentra en la red corporativa.  
+Esta topología para Servicios de federación de Active Directory (AD FS) \(AD FS\) difiere de la granja de servidores de Federación con la topología de implementación de Windows Internal Database \(WID\) en que no replica los datos en cada servidor de Federación de la granja. En su lugar, todos los servidores de Federación de la granja pueden leer y escribir datos en una base de datos común que se almacena en un servidor que ejecuta Microsoft SQL Server que se encuentra en la red corporativa.  
   
 ## <a name="deployment-considerations"></a>Consideraciones acerca de la implementación  
 En esta sección se describen varias consideraciones sobre la audiencia, las ventajas y las limitaciones que están asociadas con esta topología de implementación.  
   
 ### <a name="who-should-use-this-topology"></a>¿Quién debe usar esta topología?  
   
--   Organizaciones de gran tamaño con más de 100 relaciones de confianza que necesitan proporcionar a los usuarios internos y a los usuarios\-externos \(\) acceso de inicio de sesión único a los servicios o aplicaciones federados.  
+-   Organizaciones de gran tamaño con más de 100 relaciones de confianza que necesitan proporcionar a los usuarios internos y a los usuarios externos con el inicio de sesión único\-en \(SSO\) acceso a servicios o aplicaciones federados  
   
 -   Organizaciones que ya usan SQL Server y quieren aprovechar sus herramientas y conocimientos existentes  
   
 ### <a name="what-are-the-benefits-of-using-this-topology"></a>¿Cuáles son las ventajas de usar esta topología?  
   
--   Compatibilidad con un mayor número de relaciones \(de confianza más de 100\)  
+-   Compatibilidad con un número mayor de relaciones de confianza \(más de 100\)  
   
--   Compatibilidad con la \(detección de reproducción de tokens parte de la característica\) de seguridad y \(la\) resolución \(de artefactos del protocolo lenguaje de marcado de aserción de seguridad SAML 2,0\)  
+-   Compatibilidad con la detección de reproducción de tokens \(un\) de características de seguridad y resolución de artefactos \(parte de Lenguaje de marcado de aserción de seguridad \(protocolo SAML\) 2,0\)  
   
 -   Compatibilidad con las ventajas completas de SQL Server, como la creación de reflejo de la base de datos, los clústeres de conmutación por error, la creación de informes y las herramientas de administración  
   
@@ -44,7 +44,7 @@ En esta sección se describen varias consideraciones sobre la audiencia, las ven
 > [!NOTE]  
 > SQL Server admite muchos datos diferentes y opciones de redundancia de aplicaciones, incluidos los clústeres de conmutación por error, la creación de reflejo de la base de datos y varios tipos diferentes de replicación SQL Server.  
   
-El Departamento de ti \(\) de tecnología\- \- dela\(información de Microsoft usa SQL Server la creación de reflejo de la base de datos enmodosincrónicodealtaseguridadyclústeresdeconmutaciónporerrorparaproporcionarunaalta\) compatibilidad con la disponibilidad de la instancia de SQL Server. El equipo del producto \(de AD FS\-de\) Microsoft no ha probado SQL Server del mismo nivel\-transaccional a par y la replicación de mezcla. Para obtener más información acerca de SQL Server, consulte [información general sobre soluciones de alta disponibilidad](https://go.microsoft.com/fwlink/?LinkId=179853) o [selección del tipo de replicación adecuado](https://go.microsoft.com/fwlink/?LinkId=214648).  
+La tecnología de la información de Microsoft \(Departamento de ti\) usa SQL Server la creación de reflejo de la base de datos en alta\-seguridad \(modo sincrónico\) y clúster de conmutación por error para proporcionar compatibilidad con alta\-disponibilidad para la instancia de SQL Server. El equipo del producto\) de Microsoft no ha probado SQL Server \(de\-del mismo nivel transaccionales a\-de AD FS del mismo nivel y replicación de mezcla. Para obtener más información acerca de SQL Server, consulte [información general sobre soluciones de alta disponibilidad](https://go.microsoft.com/fwlink/?LinkId=179853) o [selección del tipo de replicación adecuado](https://go.microsoft.com/fwlink/?LinkId=214648).  
   
 ### <a name="supported-sql-server-versions"></a>Versiones de SQL Server compatibles  
 Las siguientes versiones de SQL Server son compatibles con AD FS instaladas con Windows Server 2012:  
@@ -54,13 +54,13 @@ Las siguientes versiones de SQL Server son compatibles con AD FS instaladas con 
 -   SQL Server 2012  
   
 ## <a name="server-placement-and-network-layout-recommendations"></a>Recomendaciones de ubicación de servidor y diseño de red  
-De forma similar a la granja de servidores de Federación con la topología WID, todos los servidores de Federación de la granja están configurados para \(usar\) un \(nombre DNS del sistema de nombres de dominio del clúster que representa el nombre\)delserviciodeFederacióny una dirección IP del clúster como parte de la configuración del \(clúster\) NLB de equilibrio de carga de red. Esto ayuda al host de NLB a asignar las solicitudes de cliente a los servidores de Federación individuales. Los proxies de servidor de Federación se pueden usar para el proxy de las solicitudes de cliente a la granja de servidores de Federación.  
+De forma similar a la granja de servidores de Federación con la topología WID, todos los servidores de Federación de la granja están configurados para usar un sistema de nombres de dominio de clúster \(nombre de\) DNS \(que representa el nombre de Servicio de federación\) y una dirección IP de clúster como parte de la configuración de clúster de \(NLB\) de equilibrio de carga de red. Esto ayuda al host de NLB a asignar las solicitudes de cliente a los servidores de Federación individuales. Los proxies de servidor de Federación se pueden usar para el proxy de las solicitudes de cliente a la granja de servidores de Federación.  
   
-En la siguiente ilustración se muestra cómo la empresa ficticia contoso Pharmaceuticals implementó su granja de servidores de Federación con SQL Server topología en la red corporativa. También muestra cómo la empresa configuró la red perimetral con acceso a un servidor DNS, un host de NLB adicional que usa el mismo nombre DNS del clúster @no__t -0fs. contoso. com @ no__t-1 que se usa en el clúster NLB de la red corporativa y con dos servidores de Federación proxies \(fsp1 y fsp2 @ no__t-3.  
+En la siguiente ilustración se muestra cómo la empresa ficticia contoso Pharmaceuticals implementó su granja de servidores de Federación con SQL Server topología en la red corporativa. También muestra cómo la empresa configuró la red perimetral con acceso a un servidor DNS, un host de NLB adicional que usa el mismo nombre DNS del clúster \(fs.contoso.com\) que se usa en el clúster NLB de la red corporativa y con dos servidores proxy de Federación \(fsp1 y fsp2\).  
   
 ![granja de servidores con SQL](media/FarmSQLProxies.gif)  
   
-Para obtener más información acerca de cómo configurar el entorno de red para su uso con servidores de Federación o proxies de servidor de Federación, consulte [requisitos de resolución de nombres para servidores de Federación](Name-Resolution-Requirements-for-Federation-Servers.md) o [requisitos de resolución de nombres para la Federación Servidores proxy](Name-Resolution-Requirements-for-Federation-Server-Proxies.md).  
+Para obtener más información acerca de cómo configurar el entorno de red para su uso con servidores de Federación o proxies de servidor de Federación, consulte [requisitos de resolución de nombres para servidores de Federación](Name-Resolution-Requirements-for-Federation-Servers.md) o [requisitos de resolución de nombres para los proxies de servidor de Federación](Name-Resolution-Requirements-for-Federation-Server-Proxies.md).  
   
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -23,11 +23,11 @@ Las directivas de acceso de cliente en Servicios de federación de Active Direct
 
 Para habilitar la Directiva de acceso de cliente, siga los pasos que se indican a continuación.
 
-### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>Paso 1: Instale el paquete acumulativo de actualizaciones 2 para AD FS paquete 2,0 en los servidores de AD FS
+### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>Paso 1: instalar el paquete acumulativo de actualizaciones 2 para AD FS paquete 2,0 en los servidores de AD FS
 
 Descargue el paquete [acumulativo de actualizaciones 2 para servicios de Federación de Active Directory (AD FS) (AD FS) 2,0](https://support.microsoft.com/en-us/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0) e instálelo en todos los servidores proxy de Federación y de servidor de Federación.
 
-### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>Paso 2: Agregar cinco reglas de notificación a la Active Directory confianza del proveedor de notificaciones
+### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>Paso 2: agregar cinco reglas de notificación a la Active Directory confianza del proveedor de notificaciones
 
 Una vez que se haya instalado el paquete acumulativo de actualizaciones 2 en todos los servidores y servidores proxy de AD FS, utilice el siguiente procedimiento para agregar un conjunto de reglas de notificaciones que permita que los nuevos tipos de notificaciones estén disponibles para el motor de directivas.
 
@@ -44,7 +44,7 @@ En la Active Directory confianza del proveedor de notificaciones, cree una nueva
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificaciones, seleccione pasar o filtrar una notificaciones entrantes de la lista y, a continuación, haga clic en siguiente.
 5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. en tipo de notificaciones entrantes, escriba la siguiente dirección URL de tipo de notificaciones y, después, seleccione pasar por todos los valores de notificaciones.</br>
         `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`</br>
-6. Para comprobar la regla, selecciónela en la lista, haga clic en Editar regla y, a continuación, haga clic en ver lenguaje de reglas. El lenguaje de reglas de notificaciones debe aparecer de la siguiente manera:`c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
+6. Para comprobar la regla, selecciónela en la lista, haga clic en Editar regla y, a continuación, haga clic en ver lenguaje de reglas. El lenguaje de reglas de notificaciones debe aparecer de la siguiente manera: `c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
 7. Haga clic en finalizar.
 8. En el cuadro de diálogo editar reglas de notificaciones, haga clic en Aceptar para guardar las reglas.
 9. Repita los pasos del 2 al 6 para crear una regla de notificaciones adicional para cada uno de los cuatro tipos de notificaciones restantes que se muestran a continuación hasta que se hayan creado las cinco reglas.
@@ -60,14 +60,14 @@ En la Active Directory confianza del proveedor de notificaciones, cree una nueva
 `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
 ~~~
 
-### <a name="step-3-update-the-microsoft-office-365-identity-platform-relying-party-trust"></a>Paso 3: Actualización de la relación de confianza para usuario autenticado de la plataforma de identidad Microsoft Office 365
+### <a name="step-3-update-the-microsoft-office-365-identity-platform-relying-party-trust"></a>Paso 3: actualización de la relación de confianza para usuario autenticado de la plataforma de identidad Microsoft Office 365
 
 Elige uno de los siguientes escenarios de ejemplo para configurar las reglas de notificaciones en la Microsoft Office 365 confianza del usuario de confianza de la plataforma de identidad que mejor se adapte a las necesidades de tu organización.
 
 ## <a name="client-access-policy-scenarios-for-ad-fs-20"></a>Escenarios de directivas de acceso de cliente para AD FS 2,0
 En las secciones siguientes se describen los escenarios que existen para AD FS 2,0
 
-### <a name="scenario-1-block-all-external-access-to-office-365"></a>Escenario 1: Bloquear todo el acceso externo a Office 365
+### <a name="scenario-1-block-all-external-access-to-office-365"></a>Escenario 1: bloquear todo el acceso externo a Office 365
 
 Este escenario de directiva de acceso de cliente permite el acceso desde todos los clientes internos y bloquea todos los clientes externos en función de la dirección IP del cliente externo. El conjunto de reglas se basa en la regla de autorización de emisión predeterminada para permitir el acceso a todos los usuarios. Puede usar el siguiente procedimiento para agregar una regla de autorización de emisión a la relación de confianza para usuario autenticado de Office 365.
 
@@ -79,7 +79,7 @@ Este escenario de directiva de acceso de cliente permite el acceso desde todos l
 2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones. 
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
-5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");` 
@@ -90,7 +90,7 @@ Este escenario de directiva de acceso de cliente permite el acceso desde todos l
 >Tendrá que reemplazar el valor anterior para "Regex de dirección IP pública" por una expresión IP válida; vea crear la expresión de intervalo de direcciones IP para obtener más información.
 
 
-### <a name="scenario-2-block-all-external-access-to-office-365-except-exchange-activesync"></a>Escenario 2: Bloquear todo el acceso externo a Office 365 excepto Exchange ActiveSync
+### <a name="scenario-2-block-all-external-access-to-office-365-except-exchange-activesync"></a>Escenario 2: bloquear todo el acceso externo a Office 365 excepto Exchange ActiveSync
 
 En el ejemplo siguiente se permite el acceso a todas las aplicaciones de Office 365, incluido Exchange Online, desde clientes internos, incluido Outlook. Bloquea el acceso desde los clientes que se encuentran fuera de la red corporativa, como indica la dirección IP del cliente, excepto en el caso de los clientes de Exchange ActiveSync, como smartphones. El conjunto de reglas se basa en la regla de autorización de emisión predeterminada titulada permitir el acceso a todos los usuarios. Siga estos pasos para agregar una regla de autorización de emisión a la relación de confianza para usuario autenticado de Office 365 mediante el Asistente para reglas de notificaciones:
 
@@ -102,7 +102,7 @@ En el ejemplo siguiente se permite el acceso a todas las aplicaciones de Office 
 2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones. 
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
-5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application",
     Value=="Microsoft.Exchange.Autodiscover"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application",
@@ -116,7 +116,7 @@ En el ejemplo siguiente se permite el acceso a todas las aplicaciones de Office 
 >[!NOTE]
 >Tendrá que reemplazar el valor anterior para "Regex de dirección IP pública" por una expresión IP válida; vea crear la expresión de intervalo de direcciones IP para obtener más información.
 
-### <a name="scenario-3-block-all-external-access-to-office-365-except-browser-based-applications"></a>Escenario 3: Bloquear todo el acceso externo a Office 365 excepto las aplicaciones basadas en explorador
+### <a name="scenario-3-block-all-external-access-to-office-365-except-browser-based-applications"></a>Escenario 3: bloquear todo el acceso externo a Office 365 excepto las aplicaciones basadas en explorador
 
 El conjunto de reglas se basa en la regla de autorización de emisión predeterminada titulada permitir el acceso a todos los usuarios. Siga estos pasos para agregar una regla de autorización de emisión a la relación de confianza para usuario autenticado de la plataforma de identidad Microsoft Office 365 mediante el Asistente para reglas de notificaciones:
 
@@ -131,7 +131,7 @@ El conjunto de reglas se basa en la regla de autorización de emisión predeterm
 2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones. 
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
-5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value == "/adfs/ls/"])
@@ -139,7 +139,7 @@ El conjunto de reglas se basa en la regla de autorización de emisión predeterm
 6. Haga clic en finalizar. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
 7. Para guardar la regla, en el cuadro de diálogo editar reglas de notificaciones, haga clic en Aceptar.
 
-### <a name="scenario-4-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>Escenario 4: Bloquear todo el acceso externo a Office 365 para los grupos de Active Directory designados
+### <a name="scenario-4-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>Escenario 4: bloquear todo el acceso externo a Office 365 para los grupos de Active Directory designados
 
 En el ejemplo siguiente se habilita el acceso desde clientes internos basados en la dirección IP. Bloquea el acceso desde los clientes que se encuentran fuera de la red corporativa que tienen una dirección IP de cliente externa, excepto para las personas de un grupo de Active Directory especificado. el conjunto de reglas se basa en la regla de autorización de emisión predeterminada titulada acceso a Todos los usuarios. Siga estos pasos para agregar una regla de autorización de emisión a la relación de confianza para usuario autenticado de la plataforma de identidad Microsoft Office 365 mediante el Asistente para reglas de notificaciones:
 
@@ -151,7 +151,7 @@ En el ejemplo siguiente se habilita el acceso desde clientes internos basados en
 2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones. 
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
-5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value =~ "Group SID value of allowed AD group"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
@@ -180,14 +180,14 @@ La solicitud x-MS-forwarded-Client-IP se rellena a partir de un encabezado HTTP 
 >[!Note] 
 >Actualmente, Exchange Online solo admite direcciones IPV4 y no IPV6.
 
-Una única dirección IP: La dirección IP del cliente que está conectado directamente a Exchange Online
+Una única dirección IP: la dirección IP del cliente que está conectada directamente a Exchange Online
 
 >[!Note] 
 >La dirección IP de un cliente de la red corporativa aparecerá como la dirección IP de la interfaz externa del proxy o la puerta de enlace de salida de la organización.
 
 Los clientes que están conectados a la red corporativa mediante una VPN o Microsoft DirectAccess (DA) pueden aparecer como clientes corporativos internos o como clientes externos, en función de la configuración de VPN o DA.
 
-Una o más direcciones IP: Cuando Exchange online no puede determinar la dirección IP del cliente que se conecta, establecerá el valor según el valor del encabezado x-forwarded-for, un encabezado no estándar que se puede incluir en las solicitudes basadas en HTTP y es compatible con muchos clientes, equilibradores de carga, y servidores proxy en el mercado.
+Una o varias direcciones IP: cuando Exchange online no puede determinar la dirección IP del cliente que se conecta, establecerá el valor según el valor del encabezado x-forwarded-for, un encabezado no estándar que se puede incluir en las solicitudes basadas en HTTP y es compatible con muchos clientes, equilibradores de carga y servidores proxy en el mercado.
 
 >[!Note]
 >Varias direcciones IP, que indican la dirección IP del cliente y la dirección de cada proxy que pasó la solicitud, se separan con una coma.
@@ -203,19 +203,19 @@ Cuando tiene que coincidir con un intervalo de direcciones IP, es necesario cons
 - 192.168.1.1 – 192.168.1.25
 - 10.0.0.1:10.0.0.14
 
-En primer lugar, el patrón básico que coincidirá con una sola dirección IP es el siguiente: \b\.# # #######\.\.# # # \b
+En primer lugar, el patrón básico que coincidirá con una sola dirección IP es el siguiente: \b # # #\.###\.###\.# # # \b
 
-Extendiendo esto, podemos hacer coincidir dos direcciones IP diferentes con una expresión o como se indica a continuación\.: \b # # #\. \.\. ######\.# # # \b | \b # # #### ######\b \.
+Extendiendo esto, podemos hacer coincidir dos direcciones IP diferentes con una expresión o como se indica a continuación: \b # # #\.###\.###\.# # # \b | \b # # #\.###\.###\.# # # \b
 
-Por lo tanto, un ejemplo que coincida con solo dos direcciones (como 192.168.1.1 o 10.0.0.1) sería:\.\b192\.168\.1 1 \ b |\.\b10\.0\.0 1 \ b
+Por lo tanto, un ejemplo que coincida con solo dos direcciones (como 192.168.1.1 o 10.0.0.1) sería: \b192\.168\.1\.1 \ b | \b10\.0\.0\.1 \ b
 
-Esto le ofrece la técnica por la que puede escribir cualquier número de direcciones. En los casos en los que es necesario permitir un intervalo de direcciones (por ejemplo, 192.168.1.1 – 192.168.1.25), la coincidencia se debe hacer carácter por carácter: \b192 @ no__t-0168 @ no__t-11 @ no__t-2 ([1-9] | 1 [0-9] | 2 [0-5]) \b
+Esto le ofrece la técnica por la que puede escribir cualquier número de direcciones. En los casos en los que es necesario permitir un intervalo de direcciones (por ejemplo, 192.168.1.1 – 192.168.1.25), la coincidencia se debe hacer carácter por carácter: \b192\.168\.1\.([1-9] | 1 [0-9] | 2 [0-5]) \b
 
 >[!Note] 
 >La dirección IP se trata como una cadena y no como un número.
 
 
-La regla se desglosa de la siguiente manera:\.\b192\.168 1\.
+La regla se desglosa de la siguiente manera: \b192\.168\.1\.
 
 Coincide con cualquier valor que comience por 192.168.1.
 
@@ -229,9 +229,9 @@ El siguiente valor coincide con los intervalos necesarios para la parte de la di
 >[!Note]
 >Los paréntesis deben estar colocados correctamente, de modo que no empiece a buscar coincidencias con otras partes de direcciones IP.
 
-Con el bloque 192 coincidente, podemos escribir una expresión similar para el bloque 10: \b10 @ no__t-00 @ no__t-10 @ no__t-2 ([1-9] | 1 [0-4]) \b
+Con el bloque 192 coincidente, podemos escribir una expresión similar para el bloque 10: \b10\.0\.0\.([1-9] | 1 [0-4]) \b
 
-Además de colocarlas juntas, la siguiente expresión debe coincidir con todas las direcciones de "192.168.1.1 ~ 25" y "10.0.0.1 ~ 14": \b192 @ no__t-0168 @ no__t-11 @ no__t-2 ([1-9] | 1 [0-9] | 2 [0-5]) \b | \b10 @ no__t-30 @ no__t-40 @ no__t-5 ([1-9] | 1 [0-4]) \b
+Además, la expresión siguiente debe coincidir con todas las direcciones de "192.168.1.1 ~ 25" y "10.0.0.1 ~ 14": \b192\.168\.1\.([1-9] | 1 [0-9] | 2 [0-5]) \b | \b10\.0\.0\.([1-9] | 1 [0-4]) \b
 
 #### <a name="testing-the-expression"></a>Probar la expresión
 

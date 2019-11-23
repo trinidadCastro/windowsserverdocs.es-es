@@ -55,9 +55,9 @@ wbadmin start sysrecovery
 |-backupTarget|Especifica la ubicación de almacenamiento que contiene la copia de seguridad o las copias de seguridad que desea recuperar. Este parámetro es útil cuando la ubicación de almacenamiento es diferente de donde se almacenan normalmente las copias de seguridad de este equipo.|
 |-equipo|Especifica el nombre del equipo que desea recuperar. Este parámetro es útil cuando se ha realizado una copia de seguridad de varios equipos en la misma ubicación. Debe usarse cuando se especifica el parámetro **-backupTarget** .|
 |-restoreAllVolumes|Recupera todos los volúmenes de la copia de seguridad seleccionada. Si no se especifica este parámetro, solo se recuperan los volúmenes críticos (volúmenes que contienen los componentes del sistema operativo y el estado del sistema). Este parámetro es útil cuando se necesita recuperar volúmenes no críticos durante la recuperación del sistema.|
-|-recreateDisks|Recupera una configuración de disco al estado que tenía cuando se creó la copia de seguridad.</br>Advertencia: Este parámetro elimina todos los datos de los volúmenes que hospedan componentes del sistema operativo. También puede eliminar los datos de los volúmenes de datos.|
+|-recreateDisks|Recupera una configuración de disco al estado que tenía cuando se creó la copia de seguridad.</br>ADVERTENCIA: este parámetro elimina todos los datos de los volúmenes que hospedan componentes del sistema operativo. También puede eliminar los datos de los volúmenes de datos.|
 |-excludeDisks|Solo es válido cuando se especifica con el parámetro **-recreateDisks** y debe ser una entrada como una lista delimitada por comas de identificadores de disco (como se muestra en la salida de los **discos de Wbadmin get**). Los discos excluidos no tienen particiones ni tienen formato. Este parámetro ayuda a conservar los datos en los discos que no desea modificar durante la operación de recuperación.|
-|-skipBadClusterCheck|Omite la comprobación de los discos de recuperación para obtener información de clúster incorrecta. Si va a restaurar a un servidor o hardware alternativo, se recomienda que no use este parámetro. Puede ejecutar manualmente **CHKDSK/b** en los discos de recuperación en cualquier momento para comprobarlos en busca de clústeres defectuosos y, a continuación, actualizar la información del sistema de archivos en consecuencia.</br>Advertencia: Hasta que ejecute **CHKDSK** tal y como se describe, es posible que los clústeres incorrectos notificados en el sistema recuperado no sean precisos.|
+|-skipBadClusterCheck|Omite la comprobación de los discos de recuperación para obtener información de clúster incorrecta. Si va a restaurar a un servidor o hardware alternativo, se recomienda que no use este parámetro. Puede ejecutar manualmente **CHKDSK/b** en los discos de recuperación en cualquier momento para comprobarlos en busca de clústeres defectuosos y, a continuación, actualizar la información del sistema de archivos en consecuencia.</br>ADVERTENCIA: hasta que ejecute **CHKDSK** como se describe, es posible que los clústeres incorrectos notificados en el sistema recuperado no sean precisos.|
 |-quiet|Ejecuta el comando sin preguntar al usuario.|
 
 ## <a name="BKMK_examples"></a>Example
@@ -66,7 +66,7 @@ Para iniciar la recuperación de la información de la copia de seguridad que se
 ```
 wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 ```
-Para iniciar la recuperación de la información de la copia de seguridad que se ejecutó el 30 de abril de 2013 a las 9:00 A.M., que se encuentra en la carpeta compartida \\ @ no__t-1servername\shared: para Server01, escriba:
+Para iniciar la recuperación de la información de la copia de seguridad que se ejecutó el 30 de abril de 2013 a las 9:00 A.M., que se encuentra en la carpeta compartida \\\\servername\shared: para Server01, escriba:
 ```
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

@@ -23,9 +23,9 @@ ms.locfileid: "71405962"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Si trabaja para un proveedor de servicios en la nube \(CSP @ no__t-1 o Enterprise que planea implementar redes definidas por software \(SDN @ no__t-3 en Windows Server 2016, puede proporcionar servicios DNS a las cargas de trabajo de inquilino hospedado mediante el uso de DNS interno @no__ t-4iDNS @ no__t-5, que se integra con SDN.
+Si trabaja para un proveedor de servicios en la nube \(CSP\) o Enterprise que planea implementar redes definidas por software \(SDN\) en Windows Server 2016, puede proporcionar servicios DNS a las cargas de trabajo de inquilino hospedado mediante el uso de DNS interno \(IDN\), que se integra con SDN.
 
-Las máquinas virtuales hospedadas \(VMs @ no__t-1 y las aplicaciones requieren que el DNS se comunique dentro de sus propias redes y con recursos externos en Internet. Con IDN, puede proporcionar a los inquilinos los servicios de resolución de nombres DNS para su espacio de nombres local aislado y para los recursos de Internet.
+Máquinas virtuales hospedadas \(máquinas virtuales\) y las aplicaciones requieren que el DNS se comunique dentro de sus propias redes y con recursos externos en Internet. Con IDN, puede proporcionar a los inquilinos los servicios de resolución de nombres DNS para su espacio de nombres local aislado y para los recursos de Internet.
 
 Dado que el servicio IDN no es accesible desde redes virtuales de inquilinos que no sean a través del proxy de IDN, el servidor no es vulnerable a las actividades malintencionadas en las redes de inquilinos.
 
@@ -54,7 +54,7 @@ los servidores de IDN son los servidores autoritativos para sus zonas DNS intern
 
 Todos los nombres de host de las máquinas virtuales de las redes virtuales se almacenan como registros de recursos DNS en la misma zona. Por ejemplo, si implementa IDN para una zona denominada contoso. local, los registros de recursos DNS de las máquinas virtuales de esa red se almacenan en la zona contoso. local.
 
-Los nombres de dominio completos de las máquinas virtuales de inquilino \(FQDNs @ no__t-1 se componen del nombre del equipo y de la cadena del sufijo DNS para la Virtual Network, en formato GUID. Por ejemplo, si tiene una máquina virtual de inquilino denominada TENANT1 que está en el Virtual Network Contoso, local, el FQDN de la máquina virtual es TENANT1. *vn-GUID*. contoso. local, donde *vn-GUID* es la cadena de sufijo DNS para el Virtual Network.
+Los nombres de dominio completos de las máquinas virtuales de inquilino \(FQDN\) constan del nombre del equipo y de la cadena del sufijo DNS para el Virtual Network, en formato GUID. Por ejemplo, si tiene una máquina virtual de inquilino denominada TENANT1 que está en el Virtual Network Contoso, local, el FQDN de la máquina virtual es TENANT1. *vn-GUID*. contoso. local, donde *vn-GUID* es la cadena de sufijo DNS para el Virtual Network.
 
 >[!NOTE]
 >Si es administrador del tejido, puede usar la infraestructura de CSP o DNS empresarial como servidores de IDN en lugar de implementar nuevos servidores DNS específicamente para su uso como servidores de IDN. Tanto si implementa nuevos servidores para IDN como si usa la infraestructura existente, IDN se basa en Active Directory para proporcionar alta disponibilidad. Por lo tanto, los servidores de IDN deben integrarse con Active Directory.
@@ -82,12 +82,12 @@ A continuación se indica un resumen de los pasos necesarios para implementar ID
 >[!NOTE]
 >Si ha implementado SDN mediante el uso de scripts, no es necesario que realice ninguno de estos pasos. Los pasos se proporcionan únicamente con fines informativos y de solución de problemas.
 
-### <a name="step-1-deploy-dns"></a>Paso 1: Implementación de DNS
+### <a name="step-1-deploy-dns"></a>Paso 1: implementación de DNS
 Puede implementar un servidor DNS mediante el siguiente comando de ejemplo de Windows PowerShell.
     
     Install-WindowsFeature DNS -IncludeManagementTools
     
-### <a name="step-2-configure-idns-information-in-network-controller"></a>Paso 2: Configuración de la información de IDN en la controladora de red
+### <a name="step-2-configure-idns-information-in-network-controller"></a>Paso 2: configuración de la información de IDN en la controladora de red
 Este segmento de script es una llamada REST realizada por el administrador a la controladora de red, que le informa sobre la configuración de la zona IDN, como la dirección IP del iDNSServer y la zona que se usa para hospedar los nombres de IDN. 
 
 ```
@@ -114,7 +114,7 @@ Method: PUT
 >[!NOTE]
 >Este es un extracto de la sección **Configuration ConfigureIDns** en SDNExpress. ps1. Para obtener más información, vea [implementación de una infraestructura de red definida por software mediante scripts](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts).
 
-### <a name="step-3-configure-the-idns-proxy-service"></a>Paso 3: Configuración del servicio de proxy de IDN
+### <a name="step-3-configure-the-idns-proxy-service"></a>Paso 3: configurar el servicio de proxy de IDN
 El servicio de proxy IDN se ejecuta en cada uno de los hosts de Hyper-V y proporciona el puente entre las redes virtuales de los inquilinos y la red física donde se encuentran los servidores de IDN. Las siguientes claves del registro deben crearse en cada host de Hyper-V.
 
 
@@ -133,7 +133,7 @@ El servicio de proxy IDN se ejecuta en cada uno de los hosts de Hyper-V y propor
 - ValueData = 53
 - ValueType = "DWORD"
         
-**IP DE DNS:** Dirección IP fija configurada en la interfaz de red, en caso de que el inquilino elija usar el servicio IDN
+**IP de DNS:** Dirección IP fija configurada en la interfaz de red, en caso de que el inquilino elija usar el servicio IDN
 
 - Clave del registro = HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters\Plugins\Vnet\InfraServices\DnsProxyService "
 - ValueName = "IP"
@@ -150,7 +150,7 @@ El servicio de proxy IDN se ejecuta en cada uno de los hosts de Hyper-V y propor
 
 **Dirección del servidor de IDN:** Una lista separada por comas de servidores de IDN.
 
-- Claves del Registro: HKLM\SYSTEM\CurrentControlSet\Services\DNSProxy\Parameters
+- Clave del registro: HKLM\SYSTEM\CurrentControlSet\Services\DNSProxy\Parameters
 - ValueName = "reenviadores"
 - ValueData = "10.0.0.9"
 - ValueType = "cadena"
@@ -160,7 +160,7 @@ El servicio de proxy IDN se ejecuta en cada uno de los hosts de Hyper-V y propor
 >[!NOTE]
 >Este es un extracto de la sección **Configuration ConfigureIDnsProxy** en SDNExpress. ps1. Para obtener más información, vea [implementación de una infraestructura de red definida por software mediante scripts](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts).
 
-### <a name="step-4-restart-the-network-controller-host-agent-service"></a>Paso 4: Reiniciar el servicio del agente de host de la controladora de red
+### <a name="step-4-restart-the-network-controller-host-agent-service"></a>Paso 4: reiniciar el servicio del agente de host de la controladora de red
 Puede usar el siguiente comando de Windows PowerShell para reiniciar el servicio del agente de host de la controladora de red.
     
     Restart-Service nchostagent -Force

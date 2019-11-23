@@ -33,7 +33,7 @@ En la ilustración siguiente se muestra el modelo de comunicación para NFS.
 
 ### <a name="tuning-parameters-for-nfs-file-servers"></a>Parámetros de optimización para servidores de archivos NFS
 
-La siguiente configuración del registro REG @ no__t-0DWORD puede afectar al rendimiento de los servidores de archivos NFS:
+La siguiente configuración del registro de REG\_DWORD puede afectar al rendimiento de los servidores de archivos NFS:
 
 -   **OptimalReads**
 
@@ -41,7 +41,7 @@ La siguiente configuración del registro REG @ no__t-0DWORD puede afectar al ren
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\OptimalReads
     ```
 
-    El valor predeterminado es 0. Este parámetro determina si los archivos se abren para el archivo @ no__t-0RANDOM @ no__t-1ACCESS o para el archivo @ no__t-2SEQUENTIAL @ no__t-3ONLY, en función de las características de e/s de la carga de trabajo. Establezca este valor en 1 para forzar que se abran archivos para el archivo @ no__t-0RANDOM @ no__t-1ACCESS. El archivo @ no__t-0RANDOM @ no__t-1ACCESS impide que el sistema de archivos y el administrador de caché realicen la captura previa.
+    El valor predeterminado es 0. Este parámetro determina si los archivos se abren para el acceso\_\_aleatorio o para el archivo\_\_secuencial únicamente, en función de las características de e/s de la carga de trabajo. Establezca este valor en 1 para forzar que se abran los archivos para el acceso\_de archivo\_aleatorio. El acceso al archivo\_aleatorio\_impide que el sistema de archivos y el administrador de caché realicen la captura previa.
 
     >[!NOTE]
     > Esta configuración se debe evaluar cuidadosamente porque puede tener un impacto potencial en el crecimiento de la caché de archivos del sistema.
@@ -85,7 +85,7 @@ La siguiente configuración del registro REG @ no__t-0DWORD puede afectar al ren
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\FileHandleCacheSizeinMB
     ```
 
-    El valor predeterminado es 4. Este parámetro especifica la cantidad máxima de memoria que consumirán las entradas de la caché de identificadores de archivos. El mínimo es 1 y el máximo es 1 @ no__t-01024 @ no__t-11024 @ no__t-21024 (1073741824).
+    El valor predeterminado es 4. Este parámetro especifica la cantidad máxima de memoria que consumirán las entradas de la caché de identificadores de archivos. El mínimo es 1 y el máximo es 1\*1024\*1024\*1024 (1073741824).
 
 -   **LockFileHandleCacheInMemory**
 

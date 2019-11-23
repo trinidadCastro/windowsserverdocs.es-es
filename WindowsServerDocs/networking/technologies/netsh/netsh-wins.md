@@ -15,25 +15,25 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71401916"
 ---
-# <a name="network-shell-netsh-example-batch-file"></a>Shell de red \(Netsh @ no__t-1 archivo por lotes de ejemplo
+# <a name="network-shell-netsh-example-batch-file"></a>Shell de red \(archivo por lotes de ejemplo netsh\)
 
-Se aplica a: Windows Server 2016
+Se aplica a: Windows Server 2016
 
 Puede usar este tema para obtener información sobre cómo crear un archivo por lotes que realice varias tareas mediante Netsh en Windows Server 2016. En este archivo por lotes de ejemplo, se utiliza el contexto **netsh wins** .
 
 ## <a name="example-batch-file-overview"></a>Información general del archivo por lotes de ejemplo
 
-Puede usar los comandos Netsh para el servicio de nombres Internet de Windows \(WINS @ no__t-1 en archivos por lotes y otros scripts para automatizar tareas. En el siguiente ejemplo de archivo por lotes se muestra cómo usar los comandos Netsh para WINS a fin de realizar una serie de tareas relacionadas.
+Puede usar los comandos Netsh para el servicio de nombres Internet de Windows \(WINS\) en archivos por lotes y otros scripts para automatizar las tareas. En el siguiente ejemplo de archivo por lotes se muestra cómo usar los comandos Netsh para WINS a fin de realizar una serie de tareas relacionadas.
 
-En este archivo por lotes de ejemplo, WINS @ no__t-0A es un servidor WINS con la dirección IP 192.168.125.30 y WINS @ no__t-1B es un servidor WINS con la dirección IP 192.168.0.189.
+En este archivo por lotes de ejemplo, WINS\-A es un servidor WINS con la dirección IP 192.168.125.30 y WINS\-B es un servidor WINS con la dirección IP 192.168.0.189.
 
 El archivo por lotes de ejemplo realiza las siguientes tareas.
 
-- Agrega un registro de nombre dinámico con la dirección IP 192.168.0.205, mi @ no__t-0RECORD \[04h @ no__t-2, a WINS @ no__t-3A
-- Establece WINS @ no__t-0B como asociado de replicación de inserción/extracción de WINS @ no__t-1A
-- Se conecta a WINS @ no__t-0B y, a continuación, establece WINS @ no__t-1A como asociado de replicación de inserción/extracción de WINS @ no__t-2B
-- Inicia una replicación de extracción desde WINS @ no__t-0A a WINS @ no__t-1B
-- Se conecta a WINS @ no__t-0B para comprobar que el nuevo registro, MY @ no__t-1RECORD, se replicó correctamente
+- Agrega un registro de nombre dinámico con la dirección IP 192.168.0.205, el registro de\_\[04h\], a WINS\-
+- Establece WINS\-B como asociado de replicación de inserción/extracción de WINS\-A
+- Se conecta a WINS\-B y, a continuación, establece WINS\-A como un asociado de replicación de inserción/extracción de WINS\-B
+- Inicia una replicación de extracción desde WINS\-a WINS\-B
+- Se conecta a WINS\-B para comprobar que el nuevo registro, mi\_registro, se ha replicado correctamente.
 
 ## <a name="netsh-example-batch-file"></a>Archivo por lotes de ejemplo de Netsh
 
@@ -73,7 +73,7 @@ En el siguiente archivo por lotes de ejemplo, las líneas que contienen comentar
 
 En la siguiente sección se enumeran los comandos **netsh wins** que se usan en este procedimiento de ejemplo.
 
-- **servidor**. Desplaza el contexto actual del comando WINS @ no__t-0line al servidor especificado por su nombre o dirección IP.
+- **servidor**. Desplaza el comando WINS actual\-contexto de línea al servidor especificado por su nombre o dirección IP.
 - **Agregar nombre**. Registra un nombre en el servidor WINS.
 - **Agregar asociado**. Agrega un asociado de replicación en el servidor WINS.
 - **inicialización de init**. Inicia y envía un desencadenador de envío a un servidor WINS.

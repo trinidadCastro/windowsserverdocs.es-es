@@ -18,11 +18,11 @@ ms.locfileid: "71366891"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>Planificar volúmenes en Espacios de almacenamiento directo
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se proporcionan instrucciones para planificar los volúmenes Espacios de almacenamiento directo para satisfacer las necesidades de rendimiento y capacidad de tus cargas de trabajo, incluida la elección de su sistema de archivos, el tipo de resistencia y el tamaño.
 
-## <a name="review-what-are-volumes"></a>Revise Qué son los volúmenes
+## <a name="review-what-are-volumes"></a>Revisión: Qué son los volúmenes
 
 Los volúmenes son donde se colocan los archivos que las cargas de trabajo necesitan, como archivos VHD o VHDX para máquinas virtuales de Hyper-V. Los volúmenes combinan las unidades en el grupo de almacenamiento para introducir las ventajas de tolerancia a errores, escalabilidad y rendimiento de Espacios de almacenamiento directo.
 
@@ -31,7 +31,7 @@ Los volúmenes son donde se colocan los archivos que las cargas de trabajo neces
 
 ![what-are-volumes](media/plan-volumes/what-are-volumes.png)
 
-Todos los servidores del clúster pueden acceder a todos los volúmenes al mismo tiempo. Una vez creadas, se muestran en **C:\ClusterStorage @ no__t-1** en todos los servidores.
+Todos los servidores del clúster pueden acceder a todos los volúmenes al mismo tiempo. Una vez creadas, se muestran en **C:\ClusterStorage\\** en todos los servidores.
 
 ![csv-folder-screenshot](media/plan-volumes/csv-folder-screenshot.png)
 
@@ -91,9 +91,9 @@ Qué tipo de resistencia debes usar depende de las necesidades de la carga de tr
 
 | Tipo de resistencia | Eficiencia de la capacidad | Velocidad | Cargas de trabajo |
 | ------------------- | ----------------------  | --------- | ------------- |
-| **Reflejo**         | ![Eficiencia del almacenamiento mostrando un 33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>Reflejo triple: 33% <br>Reflejo doble: 50 %     |![Rendimiento que muestra el 100%](media/plan-volumes/three-way-mirror-perf.png)<br> Mayor rendimiento  | Cargas de trabajo virtualizadas<br> Bases de datos<br>Otras cargas de trabajo de alto rendimiento |
+| **Reflejo**         | ![Eficiencia del almacenamiento mostrando un 33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>Reflejo triple: 33% <br>Reflejo bidireccional: 50%     |![Rendimiento que muestra el 100%](media/plan-volumes/three-way-mirror-perf.png)<br> Mayor rendimiento  | Cargas de trabajo virtualizadas<br> Bases de datos<br>Otras cargas de trabajo de alto rendimiento |
 | **Paridad acelerada por reflejos** |![Eficiencia del almacenamiento que se muestra alrededor del 50%](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> Depende de la proporción de reflejo y paridad | ![Rendimiento en torno al 20%](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>Es mucho más lento que el reflejo, pero hasta dos veces más rápido que la paridad dual.<br> Mejor para lecturas y escrituras secuenciales grandes | Archivado y copia de seguridad<br> Infraestructura de escritorio virtualizado     |
-| **Paridad dual**               | ![Eficiencia del almacenamiento que se muestra alrededor del 80%](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4 servidores: 50 % <br>16 servidores: hasta 80% | ![Rendimiento que se muestra en torno al 10%](media/plan-volumes/dual-parity-perf.png)<br>Mayor latencia de e/s & uso de CPU en las escrituras<br> Mejor para lecturas y escrituras secuenciales grandes | Archivado y copia de seguridad<br> Infraestructura de escritorio virtualizado  |
+| **Paridad dual**               | ![Eficiencia del almacenamiento que se muestra alrededor del 80%](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4 servidores: 50% <br>16 servidores: hasta 80% | ![Rendimiento que se muestra en torno al 10%](media/plan-volumes/dual-parity-perf.png)<br>Mayor latencia de e/s & uso de CPU en las escrituras<br> Mejor para lecturas y escrituras secuenciales grandes | Archivado y copia de seguridad<br> Infraestructura de escritorio virtualizado  |
 
 #### <a name="when-performance-matters-most"></a>Cuando lo que más importa es el rendimiento
 
@@ -199,7 +199,7 @@ Por cuestiones de simplicidad, a lo largo de este ejemplo se usan decimales (bas
 
 Consulta [Crear volúmenes en Espacios de almacenamiento directo](create-volumes.md).
 
-### <a name="see-also"></a>Vea también
+### <a name="see-also"></a>Consulte también
 
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Elección de unidades para Espacios de almacenamiento directo](choosing-drives.md)

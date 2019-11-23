@@ -19,14 +19,14 @@ ms.locfileid: "71405405"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Todos los certificados que se usan para la autenticación de acceso a la red con el protocolo de autenticación extensible @ no__t-0Transport seguridad de capa \(EAP @ no__t-2TLS @ no__t-3, protocolo de autenticación extensible protegido @ no__t-4Transport seguridad de capa \(PEAP @ no__t-6TLS @ no__t-7 y PEAP @ no__t-8Microsoft protocolo de autenticación por desafío mutuo versión 2 \(MS @ no__t-10CHAP V2 @ no__t-11 debe cumplir los requisitos de los certificados X. 509 y el trabajo de las conexiones que usan socket seguro Seguridad de nivel de transporte (SSL/TLS). Los certificados de cliente y de servidor tienen requisitos adicionales.
+Todos los certificados que se utilizan para la autenticación de acceso a la red con el protocolo de autenticación extensible\-la seguridad de la capa de transporte \(EAP\-TLS\), el protocolo de autenticación extensible protegido\-la seguridad de la capa de transporte \(PEAP\-TLS\)y el protocolo de autenticación por desafío mutuo de Microsoft, versión 2\-MS \(CHAP V2\-deben cumplir los requisitos de los certificados X Capa de sockets seguros/Seguridad de nivel de transporte (SSL/TLS).\) Los certificados de cliente y de servidor tienen requisitos adicionales.
 
 >[!IMPORTANT]
->En este tema se proporcionan instrucciones para configurar plantillas de certificado. Para usar estas instrucciones, es necesario haber implementado su propia infraestructura de clave pública \(PKI @ no__t-1 con Active Directory servicios de Certificate Server \(AD CS @ no__t-3.
+>En este tema se proporcionan instrucciones para configurar plantillas de certificado. Para usar estas instrucciones, es necesario haber implementado su propia infraestructura de clave pública \(PKI\) con Active Directory servicios de Certificate Server \(AD CS\).
 
 ## <a name="minimum-server-certificate-requirements"></a>Requisitos mínimos de certificados de servidor
 
-Con PEAP @ no__t-0 ms @ no__t-1CHAP V2, PEAP @ no__t-2TLS o EAP @ no__t-3TLS como método de autenticación, el NPS debe usar un certificado de servidor que cumpla los requisitos mínimos de certificados de servidor. 
+Con PEAP\-MS\-CHAP V2, PEAP\-TLS o EAP\-TLS como método de autenticación, el NPS debe usar un certificado de servidor que cumpla los requisitos mínimos de certificados de servidor. 
 
 Los equipos cliente se pueden configurar para validar certificados de servidor mediante la opción **validar certificado de servidor** en el equipo cliente o en Directiva de grupo. 
 
@@ -50,7 +50,7 @@ El equipo cliente acepta el intento de autenticación del servidor cuando el cer
     3. Haga clic en la pestaña **Criptografía** y asegúrese de configurar lo siguiente:
        - **Categoría de proveedor:** Proveedor de almacenamiento de claves
        - **Nombre del algoritmo:** RSA
-       - **Presta** Proveedor de cifrado de plataforma de Microsoft
+       - **Proveedores:** Proveedor de cifrado de plataforma de Microsoft
        - **Tamaño mínimo de clave:** 2048
        - **Algoritmo hash:** SHA2
     4. Haz clic en **Siguiente**.
@@ -76,27 +76,27 @@ Para obtener más información, consulte [implementación de certificados de ser
 
 Con EAP-TLS o PEAP-TLS, el servidor acepta el intento de autenticación del cliente cuando el certificado cumple los siguientes requisitos:
 
-- El certificado de cliente lo emite una CA de empresa o se asigna a una cuenta de usuario o de equipo en Active Directory Domain Services \(AD DS @ no__t-1.
+- El certificado de cliente lo emite una CA de empresa o se asigna a una cuenta de usuario o de equipo en Active Directory Domain Services \(AD DS\).
 
-- El certificado de usuario o de equipo en el cliente se encadena a una CA raíz de confianza, incluye el propósito de autenticación del cliente en extensiones EKU @no__t el identificador de objeto para la autenticación del cliente es 1.3.6.1.5.5.7.3.2 @ no__t-1 y no supera las comprobaciones realizada por CryptoAPI y que se especifican en la Directiva de acceso remoto o en la Directiva de red, y las comprobaciones de identificador de objeto de certificado que se especifican en la Directiva de red NPS.
+- El certificado de usuario o de equipo en el cliente se encadena a una CA raíz de confianza, incluye el propósito de autenticación del cliente en las extensiones EKU \(el identificador de objeto para la autenticación del cliente es 1.3.6.1.5.5.7.3.2\)y no supera las comprobaciones realizadas por CryptoAPI y que se especifican en la Directiva de acceso remoto o en la Directiva de red, ni las comprobaciones de identificadores de objetos de
 
 - El cliente de 802.1 X no usa certificados basados en el registro que sean certificados de inicio de sesión de tarjeta inteligente o protegidos por contraseña.
 
-- En el caso de los certificados de usuario, la extensión de nombre alternativo del sujeto \(SubjectAltName @ no__t-1 del certificado contiene el nombre principal de usuario \(UPN @ no__t-3. Para configurar el UPN en una plantilla de certificado:
+- En el caso de los certificados de usuario, el nombre alternativo del sujeto \(extensión de\) SubjectAltName del certificado contiene el nombre principal de usuario \(\)UPN. Para configurar el UPN en una plantilla de certificado:
 
     1. Abra las plantillas de certificado.
     2. En el panel de detalles, haga clic con el botón secundario en la plantilla de certificado que desea cambiar y, a continuación, haga clic en **propiedades**.
     3. Haga clic en la pestaña **nombre de sujeto** y, a continuación, haga clic en **compilar a partir de esta información Active Directory**.
-    4. En **incluir esta información en un nombre de sujeto alternativo**, seleccione **nombre principal de usuario \(UPN @ no__t-3**.
+    4. En **incluir esta información en un nombre de sujeto alternativo**, seleccione **nombre principal de usuario \(UPN\)** .
 
-- En el caso de los certificados de equipo, la extensión de nombre alternativo del sujeto \(SubjectAltName @ no__t-1 del certificado debe contener el nombre de dominio completo \(FQDN @ no__t-3 del cliente, que también se denomina *nombre DNS*. Para configurar este nombre en la plantilla de certificado:
+- En el caso de los certificados de equipo, el nombre alternativo del sujeto \(extensión de\) SubjectAltName en el certificado debe contener el nombre de dominio completo \(FQDN\) del cliente, que también se denomina *nombre DNS*. Para configurar este nombre en la plantilla de certificado:
 
     1. Abra las plantillas de certificado.
     2. En el panel de detalles, haga clic con el botón secundario en la plantilla de certificado que desea cambiar y, a continuación, haga clic en **propiedades**.
     3. Haga clic en la pestaña **nombre de sujeto** y, a continuación, haga clic en **compilar a partir de esta información Active Directory**.
     4. En **incluir esta información en un nombre de sujeto alternativo**, seleccione **nombre DNS**.
 
-Con PEAP @ no__t-0TLS y EAP @ no__t-1TLS, los clientes muestran una lista de todos los certificados instalados en el complemento certificados, con las siguientes excepciones:
+Con PEAP\-TLS y EAP\-TLS, los clientes muestran una lista de todos los certificados instalados en el complemento certificados, con las siguientes excepciones:
 
 - Los clientes inalámbricos no muestran certificados de inicio de sesión de tarjeta inteligente y basados en el registro. 
 

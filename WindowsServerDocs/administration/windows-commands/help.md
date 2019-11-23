@@ -39,7 +39,7 @@ help [<Command>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Command >|Especifica el nombre del comando sobre el que se desea obtener información.|
+|\<> de comandos|Especifica el nombre del comando sobre el que se desea obtener información.|
 
 ## <a name="BKMK_examples"></a>Example
 

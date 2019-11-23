@@ -42,7 +42,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath "C:\temp\MyTemplateDisk.vhdx" -Vol
 Para cada tejido de virtualización en el que quiera ejecutar la máquina virtual blindada, deberá obtener los metadatos de protección para los clústeres de HGS de los tejidos.
 El proveedor de hospedaje debe ser capaz de proporcionar esta información.
 
-Si se encuentra en un entorno empresarial y puede comunicarse con el servidor HGS, los metadatos de Guardian están disponibles en *http://\<HGSCLUSTERNAME @ no__t-2/KeyProtection/Service/Metadata/2014-07/Metadata. XML*
+Si se encuentra en un entorno empresarial y puede comunicarse con el servidor HGS, los metadatos de Guardian están disponibles en *http://\<HGSCLUSTERNAME\>/KeyProtection/Service/Metadata/2014-07/Metadata.XML*
 
 ## <a name="create-shielding-data-pdk-file"></a>Creación de un archivo de datos de blindaje (PDK)
 
@@ -105,13 +105,13 @@ New-ShieldedVM -Name 'MyStaticIPVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vh
 
 ```
 
-Si el disco de plantilla contiene un sistema operativo basado en Linux, incluya el indicador `-Linux` al ejecutar el comando:
+Si el disco de plantilla contiene un sistema operativo basado en Linux, incluya la marca `-Linux` al ejecutar el comando:
 
 ```powershell
 New-ShieldedVM -Name 'MyLinuxVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Wait -Linux
 ```
 
-Consulte el contenido de la ayuda con `Get-Help New-ShieldedVM -Full` para obtener más información sobre otras opciones que puede pasar al cmdlet.
+Consulte el contenido de la ayuda mediante `Get-Help New-ShieldedVM -Full` para obtener más información sobre otras opciones que puede pasar al cmdlet.
 
 Una vez que la máquina virtual finaliza el aprovisionamiento, entrará en la fase de especialización específica del sistema operativo, después de la cual estará lista para su uso.
 Asegúrese de conectar la máquina virtual a una red válida para que pueda conectarse a ella una vez que se esté ejecutando (mediante RDP, PowerShell, SSH o su herramienta de administración preferida).

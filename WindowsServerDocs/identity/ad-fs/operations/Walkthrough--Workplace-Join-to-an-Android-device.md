@@ -29,8 +29,8 @@ ms.locfileid: "71407474"
 
 1.  Tendrá que instalar Azure Authenticator aplicación en el dispositivo para crear una cuenta profesional que se una al dispositivo con la Unión al área de trabajo. La siguiente dirección URL contiene instrucciones sobre cómo instalar la aplicación Azure Authenticator en el dispositivo Android y agregar una cuenta profesional. La cuenta profesional convierte el dispositivo Android en un dispositivo de confianza y proporciona el inicio de sesión único (SSO) a las aplicaciones del dispositivo. Puede usar el dispositivo de confianza para acceder a aplicaciones web y aplicaciones de línea de negocio modernas como recomienda el administrador de ti. Para obtener más información, vea [Azure Authenticator para Android](https://docs.microsoft.com/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to).
 
-## <a name="see-also"></a>Vea también
-[Unirse al área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en las aplicaciones](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)de la empresa 
-[configuración del acceso condicional local mediante registro de dispositivos de Azure Active Directory servicio](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)
+## <a name="see-also"></a>Consulta también
+[Unirse al área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en todas las aplicaciones](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md) de la empresa
+[configurar el acceso condicional local mediante registro de dispositivos de Azure Active Directory servicio](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)
 
 

@@ -40,22 +40,22 @@ set /a <Variable>=<Expression>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Variable >|Especifica la variable de entorno que se va a establecer o modificar.|
-|@no__t 0String >|Especifica la cadena que se va a asociar a la variable de entorno especificada.|
+|\<variable >|Especifica la variable de entorno que se va a establecer o modificar.|
+|\<cadena >|Especifica la cadena que se va a asociar a la variable de entorno especificada.|
 |/p|Establece el valor de la *variable* en una línea de entrada especificada por el usuario.|
-|@no__t 0PromptString >|Opcional. Especifica un mensaje para solicitar la intervención del usuario. Este parámetro se usa con la opción de línea de comandos **/p** .|
+|\<PromptString >|Opcional. Especifica un mensaje para solicitar la intervención del usuario. Este parámetro se usa con la opción de línea de comandos **/p** .|
 |/a|Establece una *cadena* en una expresión numérica que se evalúa.|
-|@no__t 0Expression >|Especifica una expresión numérica. Vea la sección Comentarios para ver los operadores válidos que se pueden usar en la *expresión*.|
+|\<expresión >|Especifica una expresión numérica. Vea la sección Comentarios para ver los operadores válidos que se pueden usar en la *expresión*.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Usar **set** con extensiones de comandos habilitadas
 
   Cuando se habilitan las extensiones de comando (valor predeterminado) y se ejecuta **set** con un valor, se muestran todas las variables que comienzan por ese valor.
 - Usar caracteres especiales
 
-  Los caracteres **<** , **>** , **|** , **&** , **^** son caracteres de Shell de comandos especiales y deben ir precedidos del carácter de escape (**1**) o encerrarse entre comillas. Cuando se usa en una *cadena* (por ejemplo, **"StringContaining & Symbol"** ). Si utiliza comillas para incluir una cadena que contenga uno de los caracteres especiales, las comillas se establecerán como parte del valor de la variable de entorno.
+  Los caracteres **<** , **>** , **|** , **&** , **^** son caracteres de Shell de comandos especiales y deben ir precedidos del carácter de escape ( **^** ) o encerrarse entre comillas cuando se usan en una *cadena* (por ejemplo, **"StringContaining & Symbol"** ). Si utiliza comillas para incluir una cadena que contenga uno de los caracteres especiales, las comillas se establecerán como parte del valor de la variable de entorno.
 - Usar variables de entorno
 
   Utilice variables de entorno para controlar el comportamiento de algunos archivos y programas por lotes y para controlar la manera en que Windows y el subsistema MS-DOS aparecen y funcionan. El comando **set** se usa a menudo en el archivo Autoexec. NT para establecer variables de entorno.
@@ -73,7 +73,7 @@ set /a <Variable>=<Expression>
 
   |        Operador         | Operación realizada  |
   |-------------------------|----------------------|
-  |           ( )           |       Agrupar       |
+  |           ( )           |       Agrupación       |
   |          ! ~ -          |        Unario         |
   |         \*/%          |      Operador      |
   |           + -           |      Operador      |
@@ -81,10 +81,10 @@ set /a <Variable>=<Expression>
   |            &            |     And bit a bit      |
   |            ^            | Or exclusivo bit a bit |
   |                         |                      |
-  | =  @ no__t-1 =/=% = + =-= & = ^ = |      = < < = > > =       |
+  | = \*=/=% = + =-= & = ^ = |      = < < = > > =       |
   |            ,            | Separador de expresión |
 
-  Si usa operadores lógicos ( **&&** o **||** ) o módulo ( **%** ), incluya la cadena de expresión entre comillas. Las cadenas no numéricas de la expresión se consideran nombres de variable de entorno y sus valores se convierten en números antes de que se procesen. Si especifica un nombre de variable de entorno que no está definido en el entorno actual, se asigna un valor de cero, lo que le permite realizar operaciones aritméticas con valores de variables de entorno sin usar% para recuperar un valor.
+  Si utiliza operadores lógicos ( **&&** o **||** ) o módulo ( **%** ), incluya la cadena de expresión entre comillas. Las cadenas no numéricas de la expresión se consideran nombres de variable de entorno y sus valores se convierten en números antes de que se procesen. Si especifica un nombre de variable de entorno que no está definido en el entorno actual, se asigna un valor de cero, lo que le permite realizar operaciones aritméticas con valores de variables de entorno sin usar% para recuperar un valor.
 
   Si ejecuta **set/a** desde la línea de comandos fuera de un script de comandos, muestra el valor final de la expresión.
 
@@ -97,7 +97,7 @@ set /a <Variable>=<Expression>
   Cuando las extensiones de comando están habilitadas (valor predeterminado) y se ejecuta **set** Byly, se muestran todas las variables de entorno actuales. Si ejecuta **set** con un valor, se muestran las variables que coinciden con ese valor.
 - Usar **set** en archivos por lotes
 
-  Al crear archivos por lotes, puede usar **set** para crear variables y, a continuación, utilizarlos de la misma manera que usaría las variables numeradas **% 0** hasta **% 9**. También puede usar las variables **% 0** a **% 9** como entrada para **set**.
+  Al crear archivos por lotes, puede usar **set** para crear variables y, a continuación, utilizarlos de la misma manera que usaría las variables numeradas **%0** hasta **%9**. También puede usar las variables **%0** a **%9** como entrada para **set**.
 - Llamar a una variable **set** desde un archivo por lotes
 
   Cuando llame a un valor de variable desde un archivo por lotes, incluya el valor entre signos de porcentaje ( **%** ). Por ejemplo, si el programa por lotes crea una variable de entorno denominada BAUD, puede usar la cadena asociada a BAUD como parámetro reemplazable escribiendo **% Baud%** en el símbolo del sistema.
@@ -129,7 +129,7 @@ set testVar=test^^1
 > ```
 > set include=c:\inc
 > ```
-> Después, puede usar la cadena C:\Inc en los archivos por lotes, para lo que debe incluir signos de porcentaje ( **%** ). Por ejemplo, puede incluir el siguiente comando en un archivo por lotes para que pueda mostrar el contenido del directorio asociado a la variable de entorno INCLUDE:
+> Después, puede usar la cadena C:\Inc en los archivos por lotes incluyendo el nombre INCLUDE con signos de porcentaje ( **%** ). Por ejemplo, puede incluir el siguiente comando en un archivo por lotes para que pueda mostrar el contenido del directorio asociado a la variable de entorno INCLUDE:
 > ```
 > dir %include%
 > ```

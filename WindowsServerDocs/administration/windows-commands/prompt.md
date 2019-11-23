@@ -38,16 +38,16 @@ prompt [<Text>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Text >|Especifica el texto y la información que desea incluir en el símbolo del sistema.|
+|\<texto >|Especifica el texto y la información que desea incluir en el símbolo del sistema.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Puede personalizar el símbolo del sistema para mostrar el texto que desee, incluida la información como el nombre del directorio actual, la fecha y la hora, y el número de versión de Microsoft Windows.
 
 En la tabla siguiente se enumeran las combinaciones de caracteres que se pueden incluir en lugar de una o más cadenas de caracteres en el parámetro de *texto* . La lista incluye una breve descripción del texto o la información que cada combinación de caracteres agrega al símbolo del sistema.  
 
-| óptico |                                 Descripción                                 |
+| Óptico |                                 Descripción                                 |
 |-----------|-----------------------------------------------------------------------------|
 |    $q     |                               = (signo igual)                                |
 |    $$     |                               $ (signo de dólar)                               |
@@ -69,7 +69,7 @@ En la tabla siguiente se enumeran las combinaciones de caracteres que se pueden 
 
 Cuando las extensiones de comando están habilitadas (es decir, el valor predeterminado), el comando **prompt** admite los siguientes caracteres de formato:  
 
-|óptico|Descripción|
+|Óptico|Descripción|
 |---------|-----------|
 |$+|Cero o más caracteres de signo más ( **+** ), en función de la profundidad de la pila de directorios **insertada** (un carácter por cada nivel insertado).|
 |$m|Nombre remoto asociado a la letra de unidad actual o cadena vacía si la unidad actual no es una unidad de red.|

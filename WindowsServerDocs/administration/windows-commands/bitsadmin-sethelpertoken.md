@@ -23,7 +23,7 @@ ms.locfileid: "71380571"
 
 Establece el token principal del símbolo del sistema actual (o el token de una cuenta de usuario local arbitraria, si se especifica) como [token auxiliar](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)de un trabajo de transferencia de bits.
 
-**BITS 3,0 y versiones anteriores**: No compatible.
+**BITS 3,0 y versiones anteriores**: no se admiten.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,7 +36,7 @@ bitsadmin /SetHelperToken <Job> [\<username@domain\> \<password\>]
 |Parámetro|Descripción|
 |---------|-----------|
 |Trabajo|El nombre para mostrar o el GUID del trabajo.|
-|\< @ no__t-1 @ no__t-2 \<password @ no__t-4|Credenciales opcionales @ no__t-0The de una cuenta de usuario local cuyo token se va a usar.|
+|\<username@domain\> \<contraseña\>|Opcional&mdash;las credenciales de una cuenta de usuario local cuyo token se va a usar.|
 
 #### <a name="additional-references"></a>Referencias adicionales
 

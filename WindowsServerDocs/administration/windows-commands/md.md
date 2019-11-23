@@ -42,11 +42,11 @@ mkdir [<Drive>:]<Path>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Drive >:|Especifica la unidad en la que desea crear el nuevo directorio.|
-|@no__t 0Path >|Obligatorio. Especifica el nombre y la ubicación del nuevo directorio. El sistema de archivos determina la longitud máxima de cualquier ruta de acceso única.|
+|> de \<unidad:|Especifica la unidad en la que desea crear el nuevo directorio.|
+|\<ruta de acceso >|Obligatorio. Especifica el nombre y la ubicación del nuevo directorio. El sistema de archivos determina la longitud máxima de cualquier ruta de acceso única.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Las extensiones de comandos, que están habilitadas de forma predeterminada, permiten usar un único comando **MD** para crear directorios intermedios en una ruta de acceso especificada.
 

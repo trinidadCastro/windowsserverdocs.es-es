@@ -25,7 +25,7 @@ ms.locfileid: "71384526"
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Permite restablecer (eliminar) una sesión en un servidor de host de sesión de Escritorio remoto (host de sesión de escritorio remoto).  
-Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).  
+para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).  
 
 > [!NOTE]  
 > En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.  
@@ -39,13 +39,13 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 
 |Parámetro|Descripción|  
 |-------|--------|  
-|@no__t 0SessionName >|Especifica el nombre de la sesión que desea restablecer. Para determinar el nombre de la sesión, use el comando **query Session** .|  
-|@no__t 0SessionID >|Especifica el identificador de la sesión que se va a restablecer.|  
-|/Server: @no__t 0ServerName >|Especifica el servidor de Terminal Server que contiene la sesión que desea restablecer. De lo contrario, se usa el servidor host de sesión de escritorio remoto actual.|  
+|\<nombresesión >|Especifica el nombre de la sesión que desea restablecer. Para determinar el nombre de la sesión, use el comando **query Session** .|  
+|\<SessionID >|Especifica el identificador de la sesión que se va a restablecer.|  
+|/Server:\<ServerName >|Especifica el servidor de Terminal Server que contiene la sesión que desea restablecer. De lo contrario, se usa el servidor host de sesión de escritorio remoto actual.|  
 |/v|Muestra información acerca de las acciones que se llevan a cabo.|  
 |/?|Muestra la ayuda en el símbolo del sistema.|  
 
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
 -   Siempre puede restablecer sus propias sesiones, pero debe tener permiso de acceso de control total para restablecer la sesión de otro usuario.  
 -   Tenga en cuenta que el restablecimiento de una sesión de usuario sin advertir al usuario puede provocar la pérdida de datos en la sesión.  
 -   Solo debe restablecer una sesión si no funciona correctamente o parece que ha dejado de responder.  

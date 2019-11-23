@@ -18,7 +18,7 @@ ms.locfileid: "71392063"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Preconfigurar objetos de equipo de clúster en Active Directory Domain Services
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 En este tema se muestra el modo de preconfigurar objetos de equipo en clúster en los Servicios de dominio de Active Directory (AD DS). Puede usar este procedimiento con el fin de habilitar a un usuario o grupo para que cree un clúster de conmutación por error cuando no tenga permisos para crear objetos de equipo en AD DS.
 
@@ -29,7 +29,7 @@ Al crear un clúster de conmutación por error con el Asistente para crear clús
 
 Para crear el CNO de forma automática, el usuario que crea el clúster de conmutación por error debe tener el permiso **Crear objetos de equipo** en la unidad organizativa o el contenedor donde residen los servidores que conformarán el clúster. Para que un usuario o grupo que no posee este permiso pueda crear un clúster, un usuario con los permisos correspondientes en AD DS (por lo general, un administrador de dominios) puede preconfigurar el CNO en AD DS. Este procedimiento también ofrece al administrador de dominios más control sobre la convención de nomenclatura empleada para el clúster y sobre la unidad organizativa en la que se crean los objetos de clúster.
 
-## <a name="step-1-prestage-the-cno-in-ad-ds"></a>Paso 1: Preconfigurar el CNO en AD DS
+## <a name="step-1-prestage-the-cno-in-ad-ds"></a>Paso 1: preconfigurar el CNO en AD DS
 
 Antes de comenzar, asegúrese de que conoce los siguientes datos:
 
@@ -59,9 +59,9 @@ Como práctica recomendada, se aconseja crear una unidad organizativa para los o
 
 ![CNO deshabilitado en la unidad organizativa de clústeres usada como ejemplo.](media/prestage-cluster-adds/disabled-cno-in-the-example-clusters-ou.png)
 
-@no__t 0Figure 1. El CNO deshabilitado en la unidad organizativa de clústeres de ejemplo @ no__t-0
+**Figura 1. El CNO deshabilitado en la unidad organizativa de clústeres de ejemplo**
 
-## <a name="step-2-grant-the-user-permissions-to-create-the-cluster"></a>Paso 2: Conceder permisos de usuario para crear el clúster
+## <a name="step-2-grant-the-user-permissions-to-create-the-cluster"></a>Paso 2: conceder al usuario permisos para crear el clúster
 
 Debe configurar los permisos de manera que la cuenta de usuario que se utilizará para crear el clúster de conmutación por error tenga permisos de control total con respecto al CNO.
 
@@ -77,7 +77,7 @@ Aquí se muestra cómo conceder permisos de usuario para crear el clúster:
   
    ![Concesión de control total al usuario o grupo que creará el clúster](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
   
-   @no__t 0Figure 2. Conceder control total al usuario o grupo que creará el clúster @ no__t-0
+   **Figura 2. Conceder control total al usuario o grupo que creará el clúster**
 6. Seleccione **Aceptar**.
 
 Tras finalizar este paso, el usuario al que concedió los permisos puede crear el clúster de conmutación por error. Sin embargo, si el CNO está ubicado en una unidad organizativa, el usuario no puede crear roles en clúster que requieran un punto de acceso cliente hasta que se haya realizado el Paso 3.
@@ -85,18 +85,18 @@ Tras finalizar este paso, el usuario al que concedió los permisos puede crear e
 >[!NOTE]
 >Si el CNO se encuentra en el contenedor Equipos predeterminado, un administrador de clústeres puede crear un máximo de 10 VCO sin ninguna configuración adicional. Para agregar más de 10 VCO, debe conceder de forma explícita el permiso **Crear objeto de equipo** al CNO para el contenedor Equipos.
 
-## <a name="step-3-grant-the-cno-permissions-to-the-ou-or-prestage-vcos-for-clustered-roles"></a>Paso 3: Conceda los permisos de CNO a la unidad organizativa o Preconfigure VCO para los roles en clúster
+## <a name="step-3-grant-the-cno-permissions-to-the-ou-or-prestage-vcos-for-clustered-roles"></a>Paso 3: conceder al CNO permisos para la unidad organizativa o preconfigurar los VCO para los roles en clúster
 
 Al crear un rol en clúster con un punto de acceso cliente, el clúster crea un VCO en la misma unidad organizativa que el CNO. Para que esto se produzca automáticamente, el CNO debe poseer permisos para crear objetos de equipo en la unidad organizativa.
 
 Si ha preconfigurado el CNO en AD DS, tiene dos opciones para crear los VCO:
 
-- Opción 1: [Conceda los permisos de CNO a la unidad organizativa](#grant-the-cno-permissions-to-the-ou). Con esta opción, el clúster puede crear automáticamente los VCO en AD DS. De este modo, un administrador del clúster de conmutación por error puede crear roles en clúster sin tener que solicitarle que preconfigure los VCO en AD DS.
+- Opción 1: [conceder los permisos de CNO a la unidad organizativa](#grant-the-cno-permissions-to-the-ou). Con esta opción, el clúster puede crear automáticamente los VCO en AD DS. De este modo, un administrador del clúster de conmutación por error puede crear roles en clúster sin tener que solicitarle que preconfigure los VCO en AD DS.
 
 >[!NOTE]
 >El requisito mínimo para completar los pasos de esta opción es la pertenencia al grupo **Admins. del dominio** u otro equivalente.
 
-- Opción 2: [Preconfigure un VCO para un rol en clúster](#prestage-a-vco-for-a-clustered-role). Use esta opción si es necesario preconfigurar cuentas de roles en clúster debido a los requisitos existentes en su organización. Por ejemplo, es posible que desee controlar la convención de nomenclatura o bien controlar los roles de clúster que se crean.
+- Opción 2: preconfigurar [un VCO para un rol en clúster](#prestage-a-vco-for-a-clustered-role). Use esta opción si es necesario preconfigurar cuentas de roles en clúster debido a los requisitos existentes en su organización. Por ejemplo, es posible que desee controlar la convención de nomenclatura o bien controlar los roles de clúster que se crean.
 
 >[!NOTE]
 >El requisito mínimo para completar los pasos de esta opción es la pertenencia al grupo **Opers. de cuentas**.
@@ -104,7 +104,7 @@ Si ha preconfigurado el CNO en AD DS, tiene dos opciones para crear los VCO:
 ### <a name="grant-the-cno-permissions-to-the-ou"></a>Conceder los permisos de CNO a la unidad organizativa
 
 1. En Usuarios y equipos de Active Directory, en el menú **Ver**, seleccione la opción **Características avanzadas**.
-2. Haga clic con el botón secundario en la unidad organizativa en la que creó el CNO en @no__t 0Step 1: Preconfigure el CNO en AD DS @ no__t-0 y, a continuación, seleccione **propiedades**.
+2. Haga clic con el botón secundario en la unidad organizativa en la que creó el CNO en el [paso 1: preconfigurar el CNO en AD DS](#step-1-prestage-the-cno-in-ad-ds)y, a continuación, seleccione **propiedades**.
 3. En la pestaña **seguridad** , seleccione **avanzadas**.
 4. En el cuadro de diálogo **configuración de seguridad avanzada** , seleccione **Agregar**.
 5. Junto a **entidad**de seguridad, seleccione **seleccionar una entidad de**seguridad.
@@ -115,7 +115,7 @@ Si ha preconfigurado el CNO en AD DS, tiene dos opciones para crear los VCO:
 
    ![Concesión del permiso Crear objetos de equipo al CNO](media/prestage-cluster-adds/granting-create-computer-objects-permission-to-the-cno.png)
 
-   @no__t 0Figure 3. Concesión del permiso crear objetos de equipo al CNO @ no__t-0
+   **Figura 3. Concesión del permiso crear objetos de equipo al CNO**
 10. Seleccione **Aceptar** hasta volver al complemento usuarios y equipos de Active Directory.
 
 Un administrador del clúster de conmutación por error puede ahora crear roles en clúster con puntos de acceso cliente y poner los recursos en línea.

@@ -47,7 +47,7 @@ wbadmin restore catalog
 |-equipo|Especifica el nombre del equipo para el que desea recuperar el catálogo de copia de seguridad. Se utiliza cuando las copias de seguridad de varios equipos se han almacenado en la misma ubicación. Se debe usar cuando se especifica **-backupTarget** .|
 |-quiet|Ejecuta el subcomando sin preguntar al usuario.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Si la ubicación (disco, DVD o carpeta compartida remota) donde se almacenan las copias de seguridad está dañada o se ha perdido y no se puede usar para restaurar el catálogo de copias de seguridad, use **Wbadmin Delete Catalog** para eliminar el catálogo dañado. En este caso, debe crear una nueva copia de seguridad una vez que se elimine el catálogo de copias de seguridad.
 
@@ -57,7 +57,7 @@ Para restaurar un catálogo a partir de una copia de seguridad almacenada en dis
 ```
 wbadmin restore catalog -backupTarget:d
 ```
-Para restaurar un catálogo a partir de una copia de seguridad almacenada en la carpeta compartida \\ @ no__t-1servername\share de Server01, escriba:
+Para restaurar un catálogo a partir de una copia de seguridad almacenada en la carpeta compartida \\\\servername\share de Server01, escriba:
 ```
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```

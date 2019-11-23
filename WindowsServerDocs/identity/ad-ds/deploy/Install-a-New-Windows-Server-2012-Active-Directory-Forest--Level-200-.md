@@ -91,11 +91,11 @@ Estas nuevas características no son compatibles con las versiones anteriores de
 > [!IMPORTANT]
 > Dcpromo.exe ya no contiene un asistente gráfico y ya no instala los archivos binarios de los roles ni las características. Si tratas de ejecutar Dcpromo.exe desde el shell del Explorador, devolverá:  
 > 
-> "El Asistente para instalación de Active Directory Domain Services se reubica en Administrador del servidor. Para obtener más información, vea <https://go.microsoft.com/fwlink/?LinkId=220921>. "  
+> "El Asistente para instalación de Active Directory Domain Services se reubica en Administrador del servidor. Para obtener más información, vea <https://go.microsoft.com/fwlink/?LinkId=220921>".  
 > 
 > Si tratas de ejecutar Dcpromo.exe /unattend, se instalarán los archivos binarios, como en los sistemas operativos anteriores, pero aparecerá la siguiente advertencia:  
 > 
-> "La operación desatendida de DCPROMO se reemplaza por el módulo ADDSDeployment para Windows PowerShell. Para obtener más información, vea <https://go.microsoft.com/fwlink/?LinkId=220924>. "  
+> "La operación desatendida de DCPROMO se reemplaza por el módulo ADDSDeployment para Windows PowerShell. Para obtener más información, vea <https://go.microsoft.com/fwlink/?LinkId=220924>".  
 > 
 > En Windows Server 2012 se deja de usar dcpromo.exe, que no se incluirá en las futuras versiones de Windows ni recibirá más mejoras en este sistema operativo. Los administradores deben dejar de utilizarlo y, si quieren crear controladores de dominio desde la línea de comandos, deberán usar en su lugar los módulos de Windows PowerShell admitidos.  
   
@@ -157,7 +157,7 @@ El equipo en el que ejecutas el Administrador del servidor se incluye en el grup
   
 El diálogo **Tipo de instalación** ofrece una opción que no admite los Servicios de dominio de Active Directory: la **instalación basada en escenario de los Servicios de Escritorio remoto**. Esa opción solamente permite el Servicio de Escritorio remoto en una carga de trabajo distribuida con varios servidores. Si la activas, AD DS no se podrá instalar.  
   
-Al instalar AD DS, deja siempre la selección predeterminada: **Instalación basada en roles o basada en características**.  
+Al instalar AD DS, deja siempre la selección predeterminada: **Instalación basada en roles o basada en características**.  
   
 #### <a name="server-selection"></a>Selección de servidores  
 ![Instalar un bosque nuevo](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectDestinationServer.png)  
@@ -191,7 +191,7 @@ El diálogo **Confirmación** es el último punto de control antes de que se ini
   
 Al hacer clic en **Instalar**, confirmas que está todo listo para empezar la instalación del rol. Una vez que haya comenzado la instalación del rol, no se podrá cancelar.  
   
-#### <a name="results"></a>Results  
+#### <a name="results"></a>Resultados  
 ![Instalar un bosque nuevo](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Results.png)  
   
 El diálogo **Resultados** muestra el progreso actual de la instalación y el estado de instalación actual. La instalación del rol continuará sin importar si está cerrado el Administrador del servidor.  
@@ -242,7 +242,7 @@ Para crear un bosque de Active Directory, haz clic en **Agregar un nuevo bosque*
 Para más información sobre los nombres de dominio válidos, consulte el artículo de Knowledge Base [Convenciones de nomenclatura de Active Directory para equipos, sitios, dominios y unidades organizativas](https://support.microsoft.com/kb/909264).  
   
 > [!WARNING]  
-> No crees bosques de Active Directory con el mismo nombre que un nombre DNS externo. Por ejemplo, si la dirección URL de DNS de Internet es http://contoso.com, debe elegir un nombre diferente para el bosque interno con el fin de evitar problemas de compatibilidad futuros. El nombre tiene que ser único y debe ser poco probable que se use para el tráfico de la Web. Por ejemplo: corp.contoso.com.  
+> No crees bosques de Active Directory con el mismo nombre que un nombre DNS externo. Por ejemplo, si la dirección URL de DNS de Internet es http://contoso.com, debe elegir un nombre diferente para el bosque interno para evitar problemas de compatibilidad en el futuro. El nombre tiene que ser único y debe ser poco probable que se use para el tráfico de la Web. Por ejemplo: corp.contoso.com.  
   
 Los bosques nuevos no necesitan nuevas credenciales para la cuenta de administrador del dominio. El proceso de promoción del controlador de dominio emplea las credenciales de la cuenta de administrador integrada del primer controlador de dominio que se usó para crear la raíz del bosque. No hay ninguna forma (predeterminada) de deshabilitar o bloquear la cuenta de administrador integrada, y puede ser el único punto de entrada a un bosque si las demás cuentas administrativas del dominio no se pueden usar. Antes de implementar un bosque nuevo, es fundamental conocer la contraseña.  
   
@@ -336,7 +336,7 @@ Cuando se muestra la página **Instalación** , la configuración del controlado
 > [!NOTE]  
 > Puedes ejecutar simultáneamente varios Asistentes para configuración de AD DS y de instalación de roles desde la misma consola del Administrador del servidor.  
   
-#### <a name="results"></a>Results  
+#### <a name="results"></a>Resultados  
 ![Instalar un bosque nuevo](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestSignOff.png)  
   
 La página **Resultados** indica si la promoción se realizó correctamente o si se produjo algún error, junto con toda la información administrativa importante que corresponda. El controlador de dominio se reiniciará automáticamente 10 segundos después.  
@@ -568,12 +568,12 @@ Para aceptar el aviso de reinicio de forma automática, utiliza los argumentos *
 > [!WARNING]  
 > No se recomienda invalidar el reinicio. El controlador de dominio debe reiniciarse para funcionar correctamente.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Active Directory Domain Services (portal de TechNet)](https://technet.microsoft.com/library/cc770946(WS.10).aspx)  
 [Active Directory Domain Services para Windows Server 2008 R2](https://technet.microsoft.com/library/dd378801(WS.10).aspx)  
 [Active Directory Domain Services para Windows Server 2008](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
 [Referencia técnica de Windows Server (Windows Server 2003)](https://technet.microsoft.com/library/cc739127(WS.10).aspx)  
-Centro de administración de directorios de @no__t 0Active: Introducción (Windows Server 2008 R2) ](https://technet.microsoft.com/library/dd560651(WS.10).aspx)  
+[Centro de administración de Active Directory: Introducción (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd560651(WS.10).aspx)  
 [Administración de Active Directory con Windows PowerShell (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd378937(WS.10).aspx)  
 [Pregunte al equipo de servicios de directorio (blog oficial de soporte técnico comercial de Microsoft)](http://blogs.technet.com/b/askds)  
   

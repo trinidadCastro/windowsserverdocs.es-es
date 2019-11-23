@@ -38,11 +38,11 @@ Reg restore <KeyName> <FileName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0KeyName >|Especifica la ruta de acceso completa de la subclave que se va a restaurar. La operación de restauración solo funciona con el equipo local. KeyName debe incluir una clave raíz válida. Las claves raíz válidas son: HKLM, HKCU, HKCR, HKU y HKCC.|
-|\<Nombre de archivo >|Especifica el nombre y la ruta de acceso del archivo con el contenido que se va a escribir en el registro. Este archivo debe crearse de antemano con la operación de **Guardar reg** mediante la extensión. HIV.|
+|\<KeyName >|Especifica la ruta de acceso completa de la subclave que se va a restaurar. La operación de restauración solo funciona con el equipo local. KeyName debe incluir una clave raíz válida. Las claves raíz válidas son: HKLM, HKCU, HKCR, HKU y HKCC.|
+|\<nombre de archivo >|Especifica el nombre y la ruta de acceso del archivo con el contenido que se va a escribir en el registro. Este archivo debe crearse de antemano con la operación de **Guardar reg** mediante la extensión. HIV.|
 |/?|Muestra la ayuda de **reg restore** en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Antes de editar las entradas del registro, guarde la subclave primaria con la operación **reg Save** . Si se produce un error en la edición, restaure la subclave original con la operación **reg restore** .
 -   En la tabla siguiente se enumeran los valores devueltos para la operación de **restauración de reg** .

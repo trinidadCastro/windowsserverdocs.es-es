@@ -40,12 +40,12 @@ tcmsetup  [/q] /c /d
 |/q|Impide que se muestren cuadros de mensaje.|
 |/x|Especifica que se usarán devoluciones de llamada orientadas a la conexión para redes de tráfico intensiva en las que la pérdida de paquetes es alta. Cuando se omite este parámetro, se usarán devoluciones de llamada sin conexión.|
 |/c|Obligatorio. Especifica la configuración del cliente.|
-|@no__t 0Server1 >|Obligatorio. Especifica el nombre del servidor remoto que tiene los proveedores de servicios TAPI que utilizará el cliente. El cliente usará las líneas y los teléfonos de los proveedores de servicios. El cliente debe estar en el mismo dominio que el servidor o en un dominio que tenga una relación de confianza bidireccional con el dominio que contiene el servidor.|
-|\<Server2 >...|Especifica el servidor o los servidores adicionales que estarán disponibles para este cliente. Si especifica una lista de servidores, use un espacio para separar los nombres de los servidores.|
+|\<Servidor1 >|Obligatorio. Especifica el nombre del servidor remoto que tiene los proveedores de servicios TAPI que utilizará el cliente. El cliente usará las líneas y los teléfonos de los proveedores de servicios. El cliente debe estar en el mismo dominio que el servidor o en un dominio que tenga una relación de confianza bidireccional con el dominio que contiene el servidor.|
+|\<servidor2 >...|Especifica el servidor o los servidores adicionales que estarán disponibles para este cliente. Si especifica una lista de servidores, use un espacio para separar los nombres de los servidores.|
 |/d|Borra la lista de servidores remotos. Deshabilita el cliente TAPI evitando el uso de los proveedores de servicios TAPI que se encuentran en los servidores remotos.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Para llevar a cabo este procedimiento, debe ser miembro del grupo Administradores en el equipo local o tener delegada la autoridad correspondiente. Si el equipo está unido a un dominio, los miembros del grupo Administradores de dominio podrían llevar a cabo este procedimiento. Como práctica de seguridad recomendada, piense en usar **Ejecutar como** para llevar a cabo este procedimiento.
 -   Para que TAPI funcione correctamente, debe ejecutar **tcmsetup** para especificar los servidores remotos que usarán los clientes TAPI.

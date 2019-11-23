@@ -1,6 +1,6 @@
 ---
 title: restauración Auditpol
-description: 'Temas de comandos de Windows para **restauración de Auditpol** : restaura la configuración de la Directiva de auditoría del sistema, la configuración de directiva de auditoría por usuario para todos los usuarios y todas las opciones de auditoría de un archivo que es sintácticamente coherente con el formato de archivo de valores separados por comas (CSV). usado por la opción/backup.'
+description: 'Temas de comandos de Windows para **restauración Auditpol** : restaura la configuración de la Directiva de auditoría del sistema, la configuración de directiva de auditoría por usuario para todos los usuarios y todas las opciones de auditoría de un archivo que es sintácticamente coherente con el formato de archivo de valores separados por comas (CSV) que usa la opción/backup.'
 ms.custom: na
 ms.prod: windows-server
 ms.reviewer: na
@@ -35,13 +35,13 @@ auditpol /restore /file:<filename>
 |-------|--------|
 |/File|Especifica el archivo del que se debe restaurar la Directiva de auditoría. El archivo se debe haber creado con la opción/backup o debe ser sintácticamente coherente con el formato de archivo CSV usado por la opción/backup.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 en el caso de las operaciones de restauración de la Directiva de usuario y la Directiva del sistema, debe tener el permiso de control total o de escritura en ese objeto establecido en el descriptor de seguridad. También puede realizar la operación de restauración con el derecho de usuario **Administrar registro de auditoría y de seguridad** (SeSecurityPrivilege). SeSecurityPrivilege es útil cuando se restaura el descriptor de seguridad en caso de que se produzca un error accidental o un ataque malintencionado.
 ## <a name="BKMK_examples"></a>Example
 Para restaurar la configuración de la Directiva de auditoría del sistema, la configuración de la Directiva de auditoría por usuario para todos los usuarios y todas las opciones de auditoría de un archivo denominado AuditPolicy. csv que se creó con el comando/backup, escriba:
 ```
 auditpol /restore /file:c:\auditpolicy.csv
 ```
-#### <a name="additional-references"></a>Referencias adicionales
+#### <a name="additional-references"></a>referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 [copia de seguridad Auditpol](auditpol-backup.md)

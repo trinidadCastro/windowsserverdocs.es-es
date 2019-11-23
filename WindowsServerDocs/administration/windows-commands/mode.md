@@ -46,11 +46,11 @@ mode com<M>[:] [baud=<B>] [parity=<P>] [data=<D>] [stop=<S>] [to={on|off}] [xon=
 
 |  Parámetro  |                                                                                                                                                                                     Descripción                                                                                                                                                                                     |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Com @ no__t-0M > [:]  |                                                                                                                                                      Especifica el número del puerto de comunicaciones de Async prncnfg. vbshronous.                                                                                                                                                      |
-|  Baud = \<B >  | Especifica la velocidad de transmisión en bits por segundo. En la tabla siguiente se enumeran las abreviaturas válidas para *B* y sus tarifas relacionadas.</br>-   **11** = 110 baudios</br>-   **15** = 150 baudios</br>-   **30** = 300 baudios</br>-   **60** = 600 baudios</br>-   **12** = 1200 baudios</br>-   **24** = 2400 baudios</br>-   **48** = 4800 baudios</br>-   **96** = 9600 baudios</br>-   **19** = 19.200 baudios |
-| Parity = \<P > |                              Especifica cómo el sistema utiliza el bit de paridad para comprobar los errores de transmisión. En la tabla siguiente se enumeran los valores válidos para *P*. El valor predeterminado es **e**. No todos los equipos admiten los valores **m** y **s**.</br>-   **n** = ninguno</br>-   **e** = par</br>-   **o** = impar</br>-   **m** = marca</br>-   **s** = espacio                              |
-|  Data = \<D >  |                                                                                                    Especifica el número de bits de datos en un carácter. Los valores válidos para **d** están en el intervalo comprendido entre 5 y 8. El valor predeterminado es 7. No todos los equipos admiten los valores 5 y 6.                                                                                                     |
-|  Stop = \<S >  |                                                                                  Especifica el número de bits de parada que definen el final de un carácter: 1, 1,5 o 2. Si la velocidad en baudios es 110, el valor predeterminado es 2. De lo contrario, el valor predeterminado es 1. No todos los equipos admiten el valor 1,5.                                                                                   |
+| Com\<M > [:]  |                                                                                                                                                      Especifica el número del puerto de comunicaciones de Async prncnfg. vbshronous.                                                                                                                                                      |
+|  Baud =\<B >  | Especifica la velocidad de transmisión en bits por segundo. En la tabla siguiente se enumeran las abreviaturas válidas para *B* y sus tarifas relacionadas.</br>-   **11** = 110 baudios</br>-   **15** = 150 baudios</br>-   **30** = 300 baudios</br>-   **60** = 600 baudios</br>-   **12** = 1200 baudios</br>-   **24** = 2400 baudios</br>-   **48** = 4800 baudios</br>-   **96** = 9600 baudios</br>-   **19** = 19.200 baudios |
+| Parity =\<P > |                              Especifica cómo el sistema utiliza el bit de paridad para comprobar los errores de transmisión. En la tabla siguiente se enumeran los valores válidos para *P*. El valor predeterminado es **e**. No todos los equipos admiten los valores **m** y **s**.</br>-   **n** = ninguno</br>-   **e** = par</br>-   **o** = impar</br>-   **m** = marca</br>-   **s** = espacio                              |
+|  Data =\<D >  |                                                                                                    Especifica el número de bits de datos en un carácter. Los valores válidos para **d** están en el intervalo comprendido entre 5 y 8. El valor predeterminado es 7. No todos los equipos admiten los valores 5 y 6.                                                                                                     |
+|  Stop =\<S >  |                                                                                  Especifica el número de bits de parada que definen el final de un carácter: 1, 1,5 o 2. Si la velocidad en baudios es 110, el valor predeterminado es 2. De lo contrario, el valor predeterminado es 1. No todos los equipos admiten el valor 1,5.                                                                                   |
 |   en = {activado    |                                                                                                                                                                                        habilitar                                                                                                                                                                                         |
 |   Xon = {activado   |                                                                                                                                                                                        habilitar                                                                                                                                                                                         |
 |  ODSR = {activado   |                                                                                                                                                                                        habilitar                                                                                                                                                                                         |
@@ -72,11 +72,11 @@ mode [<Device>] [/status]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Device >|Especifica el nombre del dispositivo para el que desea mostrar el estado.|
+|\<> de dispositivo|Especifica el nombre del dispositivo para el que desea mostrar el estado.|
 |/status|Solicita el estado de las impresoras paralelas redirigidas. Puede abreviar la opción de línea de comandos **/status** como **/STA**.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 Si se usa sin parámetros, el **modo** muestra el estado de todos los dispositivos instalados en el sistema.
 
@@ -92,11 +92,11 @@ mode lpt<N>[:]=com<M>[:]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|LPT @ no__t-0n (> [:]|Obligatorio. Especifica el puerto paralelo. Los valores válidos para *N* están en el intervalo comprendido entre 1 y 3.|
-|com @ no__t-0M > [:]|Obligatorio. Especifica el puerto serie. Los valores válidos para *M* están en el intervalo comprendido entre 1 y 4.|
+|LPT\<N > [:]|Obligatorio. Especifica el puerto paralelo. Los valores válidos para *N* están en el intervalo comprendido entre 1 y 3.|
+|com\<M > [:]|Obligatorio. Especifica el puerto serie. Los valores válidos para *M* están en el intervalo comprendido entre 1 y 4.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 Debe ser miembro del grupo administradores para redirigir la impresión.
 
@@ -128,9 +128,9 @@ mode <Device> codepage [/status]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Device >|Obligatorio. Especifica el dispositivo para el que desea seleccionar una página de códigos. Con es el único nombre válido para un dispositivo.|
+|\<> de dispositivo|Obligatorio. Especifica el dispositivo para el que desea seleccionar una página de códigos. Con es el único nombre válido para un dispositivo.|
 |Página de códigos Select =|Obligatorio. Especifica la página de códigos que se va a usar con el dispositivo especificado. Puede abreviar la **Página de códigos** **de la selección** como **CP** **SEL**.|
-|@NO__T 0YYY >|Obligatorio. Especifica el número de la página de códigos que se va a seleccionar. En la siguiente lista se muestran todas las páginas de códigos admitidas y su país o región o idioma.</br>437: Estados Unidos</br>850: Multilingüe (Latín I)</br>852: Eslava (Latín II)</br>855: Cirílico (Ruso)</br>857: Turco</br>860: Portugués</br>861: Islandés</br>863: Canadá (Francés)</br>865: Guantes</br>866: Ruso</br>869: Griego moderno|
+|\<YYY >|Obligatorio. Especifica el número de la página de códigos que se va a seleccionar. En la siguiente lista se muestran todas las páginas de códigos admitidas y su país o región o idioma.</br>437: Estados Unidos</br>850: multilingüe (Latín I)</br>852: Eslava (Latín II)</br>855: cirílico (Ruso)</br>857: Turco</br>860: Portugués</br>861: Islandés</br>863: Canadá-francés</br>865: Nordic</br>866: Ruso</br>869: Griego moderno|
 |737|Obligatorio. Muestra los números de las páginas de códigos (si existen) que se han seleccionado para el dispositivo especificado.|
 |/status|Muestra los números de las páginas de códigos actuales seleccionadas para el dispositivo especificado. Puede abreviar **/status** para **/STA**. Independientemente de si se especifica **/status**, el **modo CodePage** muestra los números de las páginas de códigos que se seleccionan para el dispositivo especificado.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
@@ -148,8 +148,8 @@ mode con[:] [cols=<C>] [lines=<N>]
 |Parámetro|Descripción|
 |---------|-----------|
 |con [:]|Obligatorio. Indica que el cambio se aplica a la ventana del símbolo del sistema.|
-|cols = \<C >|Especifica el número de columnas en el búfer de pantalla del símbolo del sistema.|
-|Lines = \<n (>|Especifica el número de líneas en el búfer de pantalla del símbolo del sistema.|
+|cols =\<C >|Especifica el número de columnas en el búfer de pantalla del símbolo del sistema.|
+|Lines =\<N >|Especifica el número de líneas en el búfer de pantalla del símbolo del sistema.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="BKMK_6"></a>Para establecer la velocidad de teclado
@@ -165,11 +165,11 @@ mode con[:] [rate=<R> delay=<D>]
 |Parámetro|Descripción|
 |---------|-----------|
 |con [:]|Obligatorio. Hace referencia al teclado.|
-|Rate = \<R >|Especifica la velocidad a la que se repite un carácter en la pantalla cuando se mantiene presionada una tecla.|
-|Delay = \<D >|Especifica la cantidad de tiempo que transcurrirá después de presionar y mantener presionada una tecla antes de que se repita la salida de caracteres.|
+|Rate =\<R >|Especifica la velocidad a la que se repite un carácter en la pantalla cuando se mantiene presionada una tecla.|
+|Delay =\<D >|Especifica la cantidad de tiempo que transcurrirá después de presionar y mantener presionada una tecla antes de que se repita la salida de caracteres.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 - La velocidad del teclado es la velocidad a la que se repite un carácter cuando se mantiene presionada la tecla para ese carácter. La velocidad de los intermitencias tiene dos componentes: la velocidad y el retraso. Algunos teclados no reconocen este comando.
 - Usar **Rate =** <em>R</em>

@@ -44,8 +44,8 @@ mountvol <Drive>: /s
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[\<Drive >:] <Path>|Especifica el directorio NTFS existente donde residirá el punto de montaje.|
-|@no__t 0VolumeName >|Especifica el nombre del volumen que es el destino del punto de montaje. El nombre del volumen utiliza la sintaxis siguiente, donde *GUID* es un identificador único global:</br>`\\\\?\Volume\{GUID}\`</br>Los corchetes {} son obligatorios.|
+|[\<> de unidad:]<Path>|Especifica el directorio NTFS existente donde residirá el punto de montaje.|
+|\<VolumeName >|Especifica el nombre del volumen que es el destino del punto de montaje. El nombre del volumen utiliza la sintaxis siguiente, donde *GUID* es un identificador único global:</br>`\\\\?\Volume\{GUID}\`</br>Los corchetes {} son obligatorios.|
 |/d|Quita el punto de montaje del volumen de la carpeta especificada.|
 |/l|Muestra el nombre del volumen montado para la carpeta especificada.|
 |/p|Quita el punto de montaje del volumen del directorio especificado, desmonta el volumen básico y desconecta el volumen básico, lo que hace que sea desmontable. Si otros procesos están usando el volumen, **Mountvol** cierra los identificadores abiertos antes de desmontar el volumen.|
@@ -55,7 +55,7 @@ mountvol <Drive>: /s
 |/s|Monta la partición del sistema EFI en la unidad especificada.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   **Mountvol** le permite vincular volúmenes sin necesidad de una letra de unidad.
 -   Los volúmenes que se desmontan con **/p** se enumeran en la lista de volúmenes como "no montado hasta que se crea un punto de montaje de volumen". Si el volumen tiene más de un punto de montaje, use **/d** para quitar los puntos de montaje adicionales antes de usar **/p**. Puede volver a hacer que se pueda montar el volumen básico si asigna un punto de montaje de volumen.

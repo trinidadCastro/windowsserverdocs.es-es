@@ -121,7 +121,7 @@ El grupo de atributos de nombre de usuario contiene el atributo de nombre de usu
 
 La configuración de la Directiva de solicitud de conexión es un conjunto de propiedades que se aplican a un mensaje RADIUS entrante. La configuración consta de los siguientes grupos de propiedades.
 
-- Autenticación
+- Authentication
 - Cuentas
 - Manipulación de atributos
 - Reenvío de solicitud
@@ -129,12 +129,12 @@ La configuración de la Directiva de solicitud de conexión es un conjunto de pr
 
 En las secciones siguientes se proporcionan detalles adicionales acerca de esta configuración.
 
-### <a name="authentication"></a>Autenticación
+### <a name="authentication"></a>Authentication
 
 Al usar esta opción, puede invalidar la configuración de autenticación que se configura en todas las directivas de red y puede designar los métodos y tipos de autenticación que se necesitan para conectarse a la red.
 
 >[!IMPORTANT]
->Si configura un método de autenticación en una directiva de solicitud de conexión que sea menos segura que el método de autenticación que configure en la Directiva de red, se invalidará el método de autenticación más seguro que configure en la Directiva de red. Por ejemplo, si tiene una directiva de red que requiere el uso del Protocolo de autenticación extensible protegido-protocolo de autenticación por desafío mutuo de Microsoft versión 2 \(PEAP-MS-CHAP V2 @ no__t-1, que es una autenticación basada en contraseña método para una red inalámbrica segura y también se configura una directiva de solicitud de conexión para permitir el acceso no autenticado, el resultado es que no se requiere que los clientes se autentiquen mediante PEAP-MS-CHAP v2. En este ejemplo, se concede acceso no autenticado a todos los clientes que se conectan a la red.
+>Si configura un método de autenticación en una directiva de solicitud de conexión que sea menos segura que el método de autenticación que configure en la Directiva de red, se invalidará el método de autenticación más seguro que configure en la Directiva de red. Por ejemplo, si tiene una directiva de red que requiere el uso del Protocolo de autenticación extensible protegido-protocolo de autenticación por desafío mutuo de Microsoft versión 2 \(PEAP-MS-CHAP V2\), que es un método de autenticación basado en contraseña para una red inalámbrica segura y también se configura una directiva de solicitud de conexión para permitir el acceso no autenticado, el resultado es que no es necesario que los clientes se autentiquen mediante PEAP-MS-CHAP v2. En este ejemplo, se concede acceso no autenticado a todos los clientes que se conectan a la red.
 
 ### <a name="accounting"></a>Cuentas
 
@@ -158,7 +158,7 @@ Puede configurar un conjunto de reglas de búsqueda y reemplazo que manipulen la
 El procesamiento de reglas de búsqueda y reemplazo se produce para uno de los atributos anteriores antes de que el mensaje RADIUS esté sujeto a la configuración de autenticación y cuentas. Las reglas de manipulación de atributos se aplican solo a un atributo único. No puede configurar reglas de manipulación de atributos para cada atributo. Además, la lista de atributos que se pueden manipular es una lista estática. no se puede Agregar a la lista de atributos disponibles para su manipulación.
 
 >[!NOTE]
->Si usa el protocolo de autenticación MS-CHAP V2, no podrá manipular el atributo de nombre de usuario si se utiliza la Directiva de solicitud de conexión para reenviar el mensaje RADIUS. La única excepción se produce cuando se usa una barra diagonal inversa (\) y la manipulación solo afecta a la información que se encuentra a su izquierda. Un carácter de barra diagonal inversa se usa normalmente para indicar un nombre de dominio (la información a la izquierda del carácter de barra diagonal inversa) y un nombre de cuenta de usuario en el dominio (la información a la derecha del carácter de barra diagonal inversa). En este caso, solo se permiten las reglas de manipulación de atributos que modifican o reemplazan el nombre de dominio.
+>Si usa el protocolo de autenticación MS-CHAP V2, no podrá manipular el atributo de nombre de usuario si se utiliza la Directiva de solicitud de conexión para reenviar el mensaje RADIUS. La única excepción se produce cuando se usa una barra diagonal inversa (\) carácter y la manipulación solo afecta a la información que se encuentra a su izquierda. Un carácter de barra diagonal inversa se usa normalmente para indicar un nombre de dominio (la información a la izquierda del carácter de barra diagonal inversa) y un nombre de cuenta de usuario en el dominio (la información a la derecha del carácter de barra diagonal inversa). En este caso, solo se permiten las reglas de manipulación de atributos que modifican o reemplazan el nombre de dominio.
 
 Para ver ejemplos de cómo manipular el nombre de dominio Kerberos en el atributo de nombre de usuario, consulte la sección "ejemplos de manipulación del nombre de dominio Kerberos en el atributo de nombre de usuario" en el tema [uso de expresiones regulares en NPS](nps-crp-reg-expressions.md).
 
@@ -175,7 +175,7 @@ Puede establecer las siguientes opciones de solicitud de reenvío que se usan pa
 >[!NOTE]
 >Esta opción de autenticación no se puede usar cuando el protocolo de autenticación del cliente de acceso es MS-CHAP V2 o protocolo de autenticación extensible-seguridad de la capa de transporte (EAP-TLS), y ambos proporcionan autenticación mutua. En la autenticación mutua, el cliente de acceso demuestra que es un cliente de acceso válido al servidor de autenticación (NPS) y el servidor de autenticación demuestra que es un servidor de autenticación válido para el cliente de acceso. Cuando se usa esta opción de autenticación, se devuelve el mensaje de aceptación de acceso. Sin embargo, el servidor de autenticación no proporciona validación al cliente de acceso y se produce un error en la autenticación mutua.
 
-Para obtener ejemplos de cómo usar expresiones regulares para crear reglas de enrutamiento que reenvían mensajes RADIUS con un nombre de dominio Kerberos especificado a un grupo de servidores RADIUS remotos, consulte la sección "ejemplo de reenvío de mensajes RADIUS mediante un servidor proxy" en el tema [usar normal Expresiones en NPS](nps-crp-reg-expressions.md).
+Para obtener ejemplos de cómo usar expresiones regulares para crear reglas de enrutamiento que reenvían mensajes RADIUS con un nombre de dominio Kerberos especificado a un grupo de servidores RADIUS remotos, consulte la sección "ejemplo de reenvío de mensajes RADIUS por un servidor proxy" en el tema [uso de expresiones regulares en NPS](nps-crp-reg-expressions.md).
 
 ### <a name="advanced"></a>Avanzado
 

@@ -37,7 +37,7 @@ auditpol /backup /file:<filename>
 |   /File   | Especifica el nombre del archivo en el que se realizará la copia de seguridad de la Directiva de auditoría. |
 |    /?     |                    Muestra la ayuda en el símbolo del sistema.                     |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 en el caso de las operaciones de copia de seguridad de la Directiva por usuario y de la Directiva del sistema, debe tener el permiso de control total o de escritura en ese objeto establecido en el descriptor de seguridad. También puede realizar operaciones de copia de seguridad con el derecho de usuario **Administrar registro de auditoría y de seguridad** (SeSecurityPrivilege). Sin embargo, este derecho permite el acceso adicional que no es necesario para realizar la operación de lista.
 ## <a name="BKMK_examples"></a>Example
 Para realizar una copia de seguridad de la configuración de la Directiva de auditoría por usuario para todos los usuarios, la configuración de la Directiva de auditoría del sistema y todas las opciones de auditoría en un archivo de texto con formato CSV denominado AuditPolicy. csv, escriba:
@@ -46,6 +46,6 @@ auditpol /backup /file:C:\auditpolicy.csv
 ```
 > [!NOTE]
 > Si no se especifica ninguna unidad, se usa el directorio actual.
-> #### <a name="additional-references"></a>Referencias adicionales
+> #### <a name="additional-references"></a>referencias adicionales
 > [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-> [Auditpol restauración](auditpol-restore.md)
+> [restauración Auditpol](auditpol-restore.md)

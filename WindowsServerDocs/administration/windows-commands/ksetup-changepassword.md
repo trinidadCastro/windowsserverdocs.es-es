@@ -36,10 +36,10 @@ ksetup /changepassword <OldPasswd> <NewPasswd>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0OldPasswd >|Indica la contraseña existente del usuario que ha iniciado sesión.|
-|@no__t 0NewPasswd >|Indica la nueva contraseña del usuario que ha iniciado sesión.|
+|\<OldPasswd >|Indica la contraseña existente del usuario que ha iniciado sesión.|
+|\<NewPasswd >|Indica la nueva contraseña del usuario que ha iniciado sesión.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Este comando usa el valor de la contraseña de KDC (Kpasswd) para cambiar la contraseña del usuario que ha iniciado sesión. El Kpasswd, si se establece, se muestra en la salida ejecutando el comando **ksetup/dumpstate** .
 

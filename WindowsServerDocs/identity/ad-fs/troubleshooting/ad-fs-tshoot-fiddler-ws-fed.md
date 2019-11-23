@@ -75,7 +75,7 @@ Ante
     - MSISSignout se usa para realizar un seguimiento del IdP y de todos los RPs visitados para la sesión de SSO. Esta cookie se emplea cuando se invoca un cierre de sesión de WS-Federation. Puede ver el contenido de esta cookie con un descodificador de Base64.
     
 ## <a name="step-9-and-10"></a>Paso 9 y 10
-Solicitud @no__t 0:
+![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler7.png) solicitud:
 
 - HTTP POST
 
@@ -84,7 +84,7 @@ Ante
 - La respuesta es una encontrada
 
 ## <a name="step-11-and-12"></a>Paso 11 y 12
-Solicitud @no__t 0:
+![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler8.png) solicitud:
 
 - HTTP GET
 

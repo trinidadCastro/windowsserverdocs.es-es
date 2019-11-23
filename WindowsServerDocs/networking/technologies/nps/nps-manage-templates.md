@@ -19,7 +19,7 @@ ms.locfileid: "71396157"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar las plantillas del servidor de directivas de redes \(NPS @ no__t-1 para crear elementos de configuración, como Servicio de autenticación remota telefónica de usuario \(RADIUS @ no__t-3 o secretos compartidos, que puede reutilizar en el NPS local y exportar para su uso en otros NPSs. 
+Puede usar el servidor de directivas de redes \(plantillas de\) de NPS para crear elementos de configuración, como Servicio de autenticación remota telefónica de usuario \(RADIUS\) clientes o secretos compartidos, que puede reutilizar en el NPS local y exportar para su uso en otros NPSs. 
 
 La administración de plantillas proporciona un nodo en la consola de NPS donde puede crear, modificar, eliminar, duplicar y ver el uso de las plantillas de NPS. Las plantillas de NPS están diseñadas para reducir la cantidad de tiempo y el costo que se tarda en configurar NPS en uno o varios servidores.
 
@@ -31,15 +31,15 @@ Los siguientes tipos de plantilla de NPS están disponibles para la configuraci�
 
 - **Servidores RADIUS remotos**. Esta plantilla permite configurar las opciones del servidor RADIUS remoto que puede reutilizar seleccionando la plantilla en la ubicación adecuada en la consola NPS. 
 
-- **Filtros IP**. Esta plantilla permite crear filtros del Protocolo de Internet versión 4 (IPv4) y del Protocolo de Internet versión 6 \(IPv6 @ no__t-1 que se pueden reutilizar \(by seleccionar la plantilla en la ubicación adecuada en la consola de NPS @ no__t-3 cuando se configurar directivas de red.
+- **Filtros IP**. Esta plantilla permite crear los filtros del Protocolo de Internet versión 4 (IPv4) y del Protocolo de Internet versión 6 \(IPv6\) que se pueden reutilizar \(mediante la selección de la plantilla en la ubicación adecuada en la consola de NPS\) al configurar las directivas de red.
 
 ## <a name="create-an-nps-template"></a>Creación de una plantilla de NPS
 
 La configuración de una plantilla es diferente de la configuración de NPS directamente. La creación de una plantilla no afecta a la funcionalidad del NPS. Solo cuando se selecciona la plantilla en la ubicación adecuada en la consola de NPS y se aplica la plantilla que la plantilla afecta a la funcionalidad de NPS. 
 
-Por ejemplo, si configura un cliente RADIUS en la consola de NPS en **clientes y servidores RADIUS**, modifica la configuración de NPS y realiza un paso en la configuración de NPS para comunicarse con uno de los servidores de acceso a la red. @no__t paso siguiente consiste en configurar el servidor de acceso a la red \(NAS @ no__t-2 para comunicarse con NPS. \) 
+Por ejemplo, si configura un cliente RADIUS en la consola de NPS en **clientes y servidores RADIUS**, modifica la configuración de NPS y realiza un paso en la configuración de NPS para comunicarse con uno de los servidores de acceso a la red. \(el siguiente paso consiste en configurar el servidor de acceso a la red \(NAS\) para comunicarse con NPS.\) 
 
-Sin embargo, si configura una nueva plantilla de **clientes RADIUS** en la consola de NPS en **Administración de plantillas** en lugar de crear un nuevo cliente RADIUS en **clientes y servidores RADIUS**, ha creado una plantilla, pero no ha modificado el Funcionalidad de NPS todavía. Para modificar la funcionalidad de NPS, debe aplicar la plantilla desde la ubicación correcta en la consola de NPS.
+Sin embargo, si configura una nueva plantilla de **clientes RADIUS** en la consola de NPS en **Administración de plantillas** en lugar de crear un nuevo cliente RADIUS en **clientes y servidores RADIUS**, ha creado una plantilla, pero aún no ha modificado la funcionalidad de NPS. Para modificar la funcionalidad de NPS, debe aplicar la plantilla desde la ubicación correcta en la consola de NPS.
 
 En el procedimiento siguiente se proporcionan instrucciones sobre cómo crear una nueva plantilla.
 

@@ -22,7 +22,7 @@ ms.locfileid: "71380756"
 ---
 # <a name="bitsadmin-setaclflag"></a>bitsadmin setaclflag
 
-Establece las marcas de propagación de la lista de control de acceso (ACL) para el trabajo. Las marcas indican que desea mantener la información del propietario y de la ACL con el archivo que se está descargando. Por ejemplo, para mantener el propietario y el grupo con el archivo, establezca **marcas** to `OG`.
+Establece las marcas de propagación de la lista de control de acceso (ACL) para el trabajo. Las marcas indican que desea mantener la información del propietario y de la ACL con el archivo que se está descargando. Por ejemplo, para mantener el propietario y el grupo con el archivo, establezca **flags** en `OG`.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -35,9 +35,9 @@ bitsadmin /SetAclFlags <Job> <Flags>
 |Parámetro|Descripción|
 |---------|-----------|
 |Trabajo|El nombre para mostrar del trabajo o el GUID|
-|Flags|Especifique uno o varios de los siguientes valores de marca:</br>ACEPTAR Copie la información del propietario con el archivo.</br>I Copiar información de grupo con el archivo.</br>D Copiar información de DACL con el archivo.</br>-S: copiar información de SACL con el archivo.|
+|Flags|Especifique uno o varios de los siguientes valores de marca:</br>-O: copiar información del propietario con el archivo.</br>-G: copiar información de grupo con el archivo.</br>-D: copiar información de DACL con el archivo.</br>-S: copiar información de SACL con el archivo.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 El modificador SetAclFlags se usa para mantener la información de la lista de control de acceso y el propietario cuando un trabajo está descargando datos de un recurso compartido de Windows (SMB).
 

@@ -15,16 +15,16 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71356017"
 ---
-# <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Usar la Directiva de DNS para la implementación de DNS de Split @ no__t-0Brain
+# <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Uso de la Directiva de DNS para la implementación de DNS de cerebro dividido\-
 
 >Se aplica a: Windows Server 2016
 
-Puede usar este tema para obtener información sobre cómo configurar la Directiva de DNS en Windows Server @ no__t-0 2016 para implementaciones de DNS de cerebro dividido, en las que hay dos versiones de una sola zona: una para los usuarios internos de la intranet de la organización y otra para los usuarios externos, que son normalmente usuarios de Internet.
+Puede usar este tema para obtener información sobre cómo configurar la Directiva de DNS en Windows Server&reg; 2016 para implementaciones de DNS de cerebro dividido, donde hay dos versiones de una sola zona: una para los usuarios internos de la intranet de la organización y otra para los usuarios externos, que suelen ser usuarios de Internet.
 
 >[!NOTE]
->Para obtener información sobre cómo usar la Directiva de DNS para la implementación de DNS de Split @ no__t-0brain con Active Directory Zonas DNS integrada, consulte [uso de la Directiva de DNS para DNS de cerebro dividido en Active Directory](dns-sb-with-ad.md).
+>Para obtener información sobre cómo usar la Directiva de DNS para la implementación de la división de DNS de\-cerebro con Active Directory Zonas DNS integrada, consulte [uso de la Directiva de DNS para DNS de cerebro dividido en Active Directory](dns-sb-with-ad.md).
 
-Anteriormente, este escenario requería que los administradores de DNS mantengan dos servidores DNS diferentes, cada uno de los cuales proporciona servicios a cada conjunto de usuarios, tanto internos como externos. Si solo unos pocos registros dentro de la zona se han dividido @ no__t-0brained o ambas instancias de la zona (interna y externa) se han delegado en el mismo dominio primario, esto se convirtió en un dilema de administración. 
+Anteriormente, este escenario requería que los administradores de DNS mantengan dos servidores DNS diferentes, cada uno de los cuales proporciona servicios a cada conjunto de usuarios, tanto internos como externos. Si solo unos pocos registros dentro de la zona se dividieron\-cerebro o ambas instancias de la zona (interna y externa) se delegaron en el mismo dominio primario, se convirtió en un dilema de administración. 
 
 Otro escenario de configuración para la implementación de división de cerebro es el control de recursividad selectiva para la resolución de nombres DNS. En algunas circunstancias, se espera que los servidores DNS empresariales realicen una resolución recursiva a través de Internet para los usuarios internos, mientras que también deben actuar como servidores de nombres autoritativos para los usuarios externos y bloquear la recursividad para ellos. 
 
@@ -158,7 +158,7 @@ En la ilustración siguiente se muestra este escenario.
 
 Si se recibe una consulta para la que el servidor DNS de Contoso no es autoritativo, como para www.microsoft.com, la solicitud de resolución de nombres se evalúa con respecto a las directivas del servidor DNS. 
 
-Dado que estas consultas no se encuentran en ninguna zona, las directivas de nivel de zona @no__t definidas en el ejemplo Split-cerebro @ no__t-1 no se evalúan. 
+Dado que estas consultas no se encuentran en ninguna zona, las directivas de nivel de zona \(tal y como se definen en el ejemplo de división-cerebro\) no se evalúan. 
 
 El servidor DNS evalúa las directivas de recursividad y las consultas que se reciben en la interfaz privada coinciden con el **SplitBrainRecursionPolicy**. Esta directiva apunta a un ámbito de recursividad en el que se habilita la recursividad.
 
@@ -179,7 +179,7 @@ Para configurar el control de recursividad selectiva de DNS mediante la Directiv
 
 Los ámbitos de recursividad son instancias únicas de un grupo de valores de configuración que controlan la recursividad en un servidor DNS. Un ámbito de recursividad contiene una lista de reenviadores y especifica si está habilitada la recursividad. Un servidor DNS puede tener muchos ámbitos de recursividad. 
 
-La configuración de recursividad heredada y la lista de reenviadores se conocen como el ámbito de recursividad predeterminado. No se puede agregar ni quitar el ámbito de recursividad predeterminado, identificado por el nombre DOT \( ". \).
+La configuración de recursividad heredada y la lista de reenviadores se conocen como el ámbito de recursividad predeterminado. No se puede agregar ni quitar el ámbito de recursividad predeterminado, identificado por el nombre DOT \("."\).
 
 En este ejemplo, la configuración de recursividad predeterminada está deshabilitada, mientras que se crea un nuevo ámbito de recursividad para clientes internos donde se habilita la recursividad.
 

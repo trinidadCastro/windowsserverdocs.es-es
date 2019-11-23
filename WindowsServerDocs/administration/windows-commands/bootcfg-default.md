@@ -35,7 +35,7 @@ bootcfg /default [/s <computer> [/u <Domain>\<User> /p <Password>]] [/id <OSEntr
 |      Parámetro       |                                                                                             Descripción                                                                                              |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /s <computer>     |                                          Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.                                          |
-| /u <Domain> @ no__t-1 @ no__t-2  | Ejecuta el comando con los permisos de cuenta del usuario especificado por <User> o <Domain> @ no__t-2 @ no__t-3. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
+| /u <Domain>\\<User>  | Ejecuta el comando con los permisos de cuenta del usuario especificado mediante <User> o <Domain>\\<User>. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
 |    /p <Password>     |                                                        Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                         |
 | /ID <OSEntryLineNum> | Especifica el número de línea de entrada del sistema operativo en la sección [operating systems] del archivo boot. ini para designar como predeterminado. La primera línea después del encabezado de la sección [operating systems] es 1.  |
 |          /?          |                                                                                 Muestra la ayuda en el símbolo del sistema.                                                                                 |
@@ -46,5 +46,5 @@ En los siguientes ejemplos se muestra cómo se puede usar el comando **bootcfg/d
 bootcfg /default /id 2
 bootcfg /default /s srvmain /u maindom\hiropln /p p@ssW23 /id 2
 ```
-#### <a name="additional-references"></a>Referencias adicionales
+#### <a name="additional-references"></a>referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

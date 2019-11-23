@@ -38,12 +38,12 @@ reg save <KeyName> <FileName> [/y]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0KeyName >|Especifica la ruta de acceso completa de la subclave. Para especificar equipos remotos, incluya el nombre del equipo (en el formato \\ @ no__t-1ComputerName @ no__t-2 como parte del nombre de *clave*. Si se omite \\ @ no__t-1ComputerName, la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.|
-|\<Nombre de archivo >|Especifica el nombre y la ruta de acceso del archivo que se crea. Si no se especifica ninguna ruta de acceso, se usa la ruta de acceso actual.|
+|\<KeyName >|Especifica la ruta de acceso completa de la subclave. Para especificar equipos remotos, incluya el nombre del equipo (en el formato \\\\ComputerName\) como parte del nombre de *clave*. Si se omite \\\\ComputerName \, la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.|
+|\<nombre de archivo >|Especifica el nombre y la ruta de acceso del archivo que se crea. Si no se especifica ninguna ruta de acceso, se usa la ruta de acceso actual.|
 |/y|Sobrescribe un archivo existente con el nombre *filename* sin pedir confirmación.|
 |/?|Muestra la ayuda de **reg Save** en el símbolo del sistema.|
 
-## <a name="remarks-optional-section"></a>Notas @no__t la sección 0optional >
+## <a name="remarks-optional-section"></a>Comentarios \<sección opcional >
 
 -   En la tabla siguiente se enumeran los valores devueltos para la operación de **guardado del registro** .
 

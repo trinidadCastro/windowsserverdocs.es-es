@@ -32,7 +32,7 @@ Para iniciar el proceso de detección de distintos bosques de Active Directory, 
 ![Configurar la detección de servidores](../../media/Manage-Resources-in-Multiple-Active-Directory-Forests/ipam_serverdiscovery.jpg)  
 
 >[!NOTE]
->Por directiva de grupo el aprovisionamiento de @ no__t-0based para un escenario de Active Directory entre bosques, asegúrese de ejecutar el siguiente cmdlet de Windows PowerShell en el servidor IPAM y no en los controladores de dominio de confianza. Por ejemplo, si el servidor IPAM está unido al bosque corp.contoso.com y el bosque que confía es fabrikam.com, puede ejecutar el siguiente cmdlet de Windows PowerShell en el servidor IPAM en corp.contoso.com para el aprovisionamiento de directiva de grupo @ no__t-0based en el bosque fabrikam.com. Para ejecutar este cmdlet, debe ser miembro del grupo Admins. del dominio en el bosque fabrikam.com.
+>Por directiva de grupo el aprovisionamiento basado en\-para un escenario de Active Directory entre bosques, asegúrese de ejecutar el siguiente cmdlet de Windows PowerShell en el servidor IPAM y no en los controladores de dominio que confían. Por ejemplo, si el servidor IPAM está unido al bosque corp.contoso.com y el bosque que confía es fabrikam.com, puede ejecutar el siguiente cmdlet de Windows PowerShell en el servidor IPAM en corp.contoso.com para directiva de grupo\-el aprovisionamiento basado en el bosque de fabrikam.com. Para ejecutar este cmdlet, debe ser miembro del grupo Admins. del dominio en el bosque fabrikam.com.
 
     
     Invoke-IpamGpoProvisioning -Domain fabrikam.COM -GpoPrefixName IPAMSERVER -IpamServerFqdn IPAM.CORP.CONTOSO.COM

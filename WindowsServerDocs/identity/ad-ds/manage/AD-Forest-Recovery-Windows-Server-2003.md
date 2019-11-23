@@ -61,7 +61,7 @@ Para ahorrar tiempo necesario para volver a instalar el software, determine si l
 3. Seleccione el sistema operativo que desea iniciar en modo de restauración.  
 4. Inicie sesión como administrador (solo puede usar una cuenta de equipo local, no hay disponible ninguna opción de inicio de sesión de dominio).  
 5. En un símbolo del sistema, escriba **NTBackup**y, a continuación, presione Entrar.  
-6. En la página de **bienvenida** , haga clic en **modo avanzado**y, a continuación, seleccione la pestaña **restaurar y administrar medios** . (No seleccione **Asistente para restauración**).  
+6. En la página de **bienvenida** , haga clic en **modo avanzado**y, a continuación, seleccione la pestaña **restaurar y administrar medios** . (no seleccione **Asistente para restauración**).  
 7. Seleccione el archivo de copia de seguridad que desea restaurar y asegúrese de que estén activadas las casillas **disco del sistema** y **Estado del sistema** .  
 8. Haga clic en **iniciar restauración**.  
 9. Una vez completada la operación de restauración, reinicie el equipo.  
@@ -77,7 +77,7 @@ Use el procedimiento siguiente para realizar una restauración autoritativa (tam
    > [!NOTE]
    > Marcar los datos restaurados como datos principales en la copia de seguridad equivale a establecer la entrada **BurFlags** en D4 en la subclave del Registro siguiente:  
    >   
-   > *GUID* **de HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NtFrs\Parameters\Cumulative conjuntos de réplicas @ no__t-1**  
+   > **HKEY_LOCAL_MACHINE conjuntos de réplicas de \system\currentcontrolset\services\ntfrs\parameters\cumulative\\** *GUID*  
 
 4. Una vez completada la operación de restauración, reinicie el equipo.  
   
@@ -103,7 +103,7 @@ Si el controlador de dominio restaurado a partir de una copia de seguridad ejecu
 7. Configure los datos DNS tal como existían antes de que el funcionamiento sea crítico. Por ejemplo:  
 
    - Configure las zonas DNS que se van a almacenar en AD DS. Para obtener más información, consulte cambiar el tipo de zona ([https://go.microsoft.com/fwlink/?LinkId=74579](https://go.microsoft.com/fwlink/?LinkId=74579)).  
-   - Configure la zona DNS que sea autoritativa para los registros de recursos del localizador de controladores de dominio (Ubicador de DC) para permitir la actualización dinámica segura. Para obtener más información, consulte permitir solo actualizaciones dinámicas seguras ([https://go.microsoft.com/fwlink/?LinkId=74580](https://go.microsoft.com/fwlink/?LinkId=74580)).  
+   - Configure la zona DNS que sea autoritativa para los registros de recursos del localizador de controladores de dominio (Ubicador de DC) para permitir la actualización dinámica segura. Para obtener más información, vea permitir solo actualizaciones dinámicas seguras ([https://go.microsoft.com/fwlink/?LinkId=74580](https://go.microsoft.com/fwlink/?LinkId=74580)).  
 
 8. Asegúrese de que la zona DNS primaria contiene registros de recursos de delegación (registros de recursos de servidor de nombres (NS) y de host de adherencia (A) para la zona secundaria hospedada en este servidor DNS. Para obtener más información, consulte crear una delegación de zona ([https://go.microsoft.com/fwlink/?LinkId=74562](https://go.microsoft.com/fwlink/?LinkId=74562)).  
 9. Después de configurar DNS, en el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR:  

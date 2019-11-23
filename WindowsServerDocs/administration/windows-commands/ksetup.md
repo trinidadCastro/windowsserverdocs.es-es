@@ -68,7 +68,7 @@ ksetup
 |[Ksetup:server](ksetup-server.md)|Permite especificar el nombre de un equipo Windows en el que se van a aplicar los cambios.|
 |[Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)|Establece la contraseña de la cuenta de dominio del equipo (o la entidad de seguridad del host).|
 |[Ksetup:removerealm](ksetup-removerealm.md)|Elimina toda la información del dominio Kerberos especificado del registro.|
-|[Ksetup:domain](ksetup-domain.md)|Permite especificar un dominio (si @no__t > no se ha establecido mediante **/Domain**).|
+|[Ksetup:domain](ksetup-domain.md)|Permite especificar un dominio (si \<nombredominio > no se ha establecido mediante **/Domain**).|
 |[Ksetup:changepassword](ksetup-changepassword.md)|Permite usar Kpasswd para cambiar la contraseña del usuario que ha iniciado sesión.|
 |[Ksetup:listrealmflags](ksetup-listrealmflags.md)|Muestra las marcas de dominio Kerberos disponibles que **ksetup** puede detectar.|
 |[Ksetup:setrealmflags](ksetup-setrealmflags.md)|Establece marcas de dominio Kerberos para un dominio Kerberos específico.|
@@ -83,11 +83,11 @@ ksetup
 |[Ksetup:delenctypeattr](ksetup-delenctypeattr.md)|Elimina el atributo de confianza tipos de cifrado del dominio.|
 |/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 **Ksetup** se usa para cambiar la configuración del equipo para buscar dominios Kerberos. En implementaciones que no son de Microsoft, esta información normalmente se mantiene en el archivo Krb5. conf. En los sistemas operativos Windows Server, se mantiene en el registro. Puede usar esta herramienta para modificar esta configuración. Las estaciones de trabajo usan estas opciones para localizar los dominios Kerberos y los controladores de dominio para localizar los dominios Kerberos para las relaciones de confianza entre dominios.
 
-**Ksetup** inicializa las claves del registro que utiliza el proveedor de compatibilidad para seguridad (SSP) de Kerberos para buscar un KDC para el dominio Kerberos si el equipo está ejecutando windows Server 2003, windows Server 2008 o windows Server 2008 R2 y no es miembro de Windows dominio. Después de la configuración, el usuario de un equipo cliente que ejecuta el sistema operativo Windows puede iniciar sesión en las cuentas del dominio Kerberos.
+**Ksetup** inicializa las claves del registro que utiliza el proveedor de compatibilidad para seguridad (SSP) de Kerberos para buscar un KDC para el dominio Kerberos si el equipo ejecuta windows Server 2003, windows Server 2008 o windows Server 2008 R2 y no es miembro de un dominio de Windows. Después de la configuración, el usuario de un equipo cliente que ejecuta el sistema operativo Windows puede iniciar sesión en las cuentas del dominio Kerberos.
 
 El protocolo Kerberos versión 5 es el valor predeterminado para la autenticación de red en equipos que ejecutan Windows XP Professional, Windows Vista y Windows 7. El SSP de Kerberos busca el nombre de dominio del dominio de usuario en el registro y, a continuación, resuelve el nombre en una dirección IP mediante una consulta a un servidor DNS. El protocolo Kerberos puede usar DNS para buscar KDC usando solo el nombre de dominio Kerberos, pero debe configurarse especialmente para ello.
 

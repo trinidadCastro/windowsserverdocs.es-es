@@ -33,12 +33,12 @@ irftp [<Drive>:\] [[<path>] <FileName>] [/h][/s]
 ### <a name="parameters"></a>Parámetros  
 |Parámetro|Descripción|  
 |-------|--------|  
-|Unidad: @no__t 0Specifies la unidad que contiene los archivos que desea enviar a través de un vínculo de infrarrojos.|  
+|Unidad:\|especifica la unidad que contiene los archivos que desea enviar a través de un vínculo de infrarrojos.|  
 |camino Extensión|Especifica la ubicación y el nombre del archivo o conjunto de archivos que desea enviar a través de un vínculo de infrarrojos. Si especifica un conjunto de archivos, debe especificar la ruta de acceso completa para cada archivo.|  
 |/h|Especifica el modo oculto. Cuando se utiliza el modo oculto, los archivos se envían sin mostrar el cuadro de diálogo vínculo inalámbrico.|  
 |/s|Abre el cuadro de diálogo vínculo inalámbrico, de modo que puede seleccionar el archivo o el conjunto de archivos que desea enviar sin utilizar la línea de comandos para especificar la unidad, la ruta de acceso y los nombres de archivo.|  
 
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
 -   Antes de utilizar este comando, compruebe que los dispositivos que desea comunicar a través de un vínculo de infrarrojos tienen la funcionalidad de infrarrojos habilitada y funciona correctamente, y que se ha establecido un vínculo de infrarrojos entre los dispositivos.  
 -   Si se usa sin parámetros o se usa con **/s**, **irftp** abre el cuadro de diálogo **vínculo inalámbrico** , donde puede seleccionar los archivos que desea enviar sin utilizar la línea de comandos.  
 
@@ -48,5 +48,5 @@ Envíe el ejemplo. txt sobre el vínculo de infrarrojos.
 irftp c:\example.txt  
 ```  
 
-## <a name="additional-references"></a>Referencias adicionales  
+## <a name="additional-references"></a>referencias adicionales  
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  

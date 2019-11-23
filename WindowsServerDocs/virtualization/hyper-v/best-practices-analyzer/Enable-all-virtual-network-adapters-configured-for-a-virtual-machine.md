@@ -19,11 +19,11 @@ ms.locfileid: "71393648"
 ---
 # <a name="enable-all-virtual-network-adapters-configured-for-a-virtual-machine"></a>Habilitar todos los adaptadores de red virtuales configurados para una máquina virtual
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2016
 
 Para más información acerca de los análisis y los procedimientos recomendados, vea [Analizador de procedimientos recomendados](https://go.microsoft.com/fwlink/?LinkId=122786).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -40,11 +40,11 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
   
 *Es posible que las siguientes máquinas virtuales no tengan conectividad de red:*  
   
-@no__t: 0list de nombres de máquina virtual >  
+\<lista de nombres de máquina virtual >  
   
 ## <a name="resolution"></a>Resolución  
   
-*Use Device Manager en el sistema operativo invitado para habilitar todos los adaptadores de red virtuales. Si el adaptador no es necesario, use el administrador de Hyper-V para quitarlo de la máquina virtual.*  
+*Use Device Manager del sistema operativo invitado para habilitar todos los adaptadores de red virtuales. Si el adaptador no es necesario, use el administrador de Hyper-V para quitarlo de la máquina virtual.*  
   
 
 

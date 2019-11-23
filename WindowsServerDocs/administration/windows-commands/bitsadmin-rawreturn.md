@@ -30,11 +30,11 @@ Devuelve los datos adecuados para el análisis.
 bitsadmin /RawReturn
 ```
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Quita los caracteres de nueva línea y el formato de la salida.
 
-Normalmente, este comando se usa junto con los modificadores **Create** y **Get no__t-2*** para recibir solo el valor. Debe especificar este modificador antes que otros modificadores.
+Normalmente, este comando se usa junto con los modificadores **Create** y **Get\\** * para recibir solo el valor. Debe especificar este modificador antes que otros modificadores.
 
 ## <a name="BKMK_examples"></a>Example
 

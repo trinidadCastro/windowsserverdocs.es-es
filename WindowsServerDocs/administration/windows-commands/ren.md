@@ -37,11 +37,11 @@ rename [<Drive>:][<Path>]<FileName1> <FileName2>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[\<Drive >:] [\<Path >] \<FileName1 >|Especifica la ubicación y el nombre del archivo o conjunto de archivos a los que desea cambiar el nombre. *NombreDeArchivo1* puede incluir caracteres comodín ( **&#42;** y **?** ).|
-|@no__t 0FileName2 >|Especifica el nuevo nombre del archivo. Puede usar caracteres comodín para especificar nuevos nombres para varios archivos.|
+|[\<> de unidad:] [\<ruta de acceso >]\<nombreDeArchivo1 >|Especifica la ubicación y el nombre del archivo o conjunto de archivos a los que desea cambiar el nombre. *NombreDeArchivo1* puede incluir caracteres comodín ( **&#42;** y **?** ).|
+|\<Nombredearchivo2 >|Especifica el nuevo nombre del archivo. Puede usar caracteres comodín para especificar nuevos nombres para varios archivos.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - No se puede especificar una nueva unidad o ruta de acceso al cambiar el nombre de los archivos.
 - No se puede usar el comando **ren** para cambiar el nombre de los archivos entre unidades o para trasladarlos a un directorio diferente.

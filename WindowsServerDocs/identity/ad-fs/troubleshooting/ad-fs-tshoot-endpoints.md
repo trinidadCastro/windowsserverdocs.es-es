@@ -24,7 +24,7 @@ La Federación pasiva hace referencia a escenarios en los que el explorador se r
 
 1.  Mediante un explorador Web, vaya a la AD FS extremo de metadatos de Federación.  Por ejemplo: https://sts.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml
 2. El archivo XML debe descargarse localmente en el equipo.
-3. Ábralo y compruebe que contiene información similar a la información siguiente: ![Passive @ no__t-1
+3. Ábralo y compruebe que contiene información similar a la información siguiente: ![pasiva](media/ad-fs-tshoot-endpoints/meta2.png)
 
 ## <a name="ws-mex-test-active-test"></a>Prueba WS-MEX (prueba activa)
 WS-MetaDataExchange es un protocolo de servicios web y forma parte del mapa de ruta de WS-Federation.  Usa un mensaje SOAP para solicitar los metadatos.  Al probar el punto de conexión, podemos determinar si el servidor de AD FS responde a las solicitudes Web de WS-MetaDataExchange.  Utilice el siguiente procedimiento para probar el punto de conexión.

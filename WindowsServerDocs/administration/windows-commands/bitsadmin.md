@@ -22,11 +22,11 @@ ms.locfileid: "71380097"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
-> **Se aplica a**: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10
+> **Se aplica a**: Windows Server (canal semianual), windows Server 2016, windows Server 2012 R2, windows Server 2012, Windows 10
 
 bitsadmin es una herramienta de línea de comandos que puede usar para crear trabajos de descarga o carga y supervisar su progreso. La herramienta bitsadmin usa modificadores para identificar el trabajo que se va a realizar.  Puede llamar a `bitsadmin /?` o `bitsadmin /HELP` para obtener una lista de modificadores.
 
-La mayoría de los conmutadores requieren un parámetro \<Job @ no__t-1 que establezca en el nombre para mostrar del trabajo, o GUID. Tenga en cuenta que el nombre para mostrar de un trabajo puede no ser único. Los modificadores **/Create** y **/List** devuelven el GUID de un trabajo.
+La mayoría de los conmutadores requieren un \<de trabajo\> parámetro que se establece en el nombre para mostrar del trabajo, o GUID. Tenga en cuenta que el nombre para mostrar de un trabajo puede no ser único. Los modificadores **/Create** y **/List** devuelven el GUID de un trabajo.
 
 De forma predeterminada, puede tener acceso a información sobre sus propios trabajos. Para tener acceso a la información de los trabajos de otro usuario, debe tener privilegios de administrador. Si el trabajo se ha creado en un estado con privilegios elevados, debe ejecutar bitsadmin desde una ventana con privilegios elevados. de lo contrario, tendrá acceso de solo lectura al trabajo.
 
@@ -84,8 +84,8 @@ Use los modificadores siguientes para crear un trabajo, establecer y recuperar l
 [bitsadmin info](bitsadmin-info.md)  
 [bitsadmin list](bitsadmin-list.md)  
 [bitsadmin listfiles](bitsadmin-listfiles.md)  
-monitor [makecustomheaderswriteonly](bitsadmin-makecustomheaderswriteonly.md)
-[bitsadmin](bitsadmin-monitor.md)  
+monitor de makecustomheaderswriteonly
+[bitsadmin](bitsadmin-monitor.md) de [bitsadmin](bitsadmin-makecustomheaderswriteonly.md)  
 [bitsadmin nowrap](bitsadmin-nowrap.md)  
 [bitsadmin peercaching](bitsadmin-peercaching.md)  
 [bitsadmin peers](bitsadmin-peers.md)  

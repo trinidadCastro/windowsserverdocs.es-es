@@ -19,27 +19,27 @@ ms.locfileid: "71360089"
 # <a name="add-a-token-signing-certificate"></a>Agregar un certificado de firma de tokens
 
 
-Los servidores de Federación en Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1 requieren el token @ no__t-2signing Certificates para evitar que los atacantes alteren o falsifican tokens de seguridad en un intento de obtener acceso no autorizado a federado. recursos. Cada certificado\-de firma de tokens contiene claves privadas criptográficas y claves públicas que se usan para \(firmar digitalmente por medio de\) la clave privada un token de seguridad. Más adelante, después de que un servidor de Federación asociado reciba estas claves, validará la autenticidad @no__t medio de la clave pública @ no__t-1 del token de seguridad cifrado.  
+Los servidores de Federación en Servicios de federación de Active Directory (AD FS) \(AD FS\) requieren certificados de firma de\-de tokens para evitar que los atacantes modifiquen o falsifican los tokens de seguridad en un intento de obtener acceso no autorizado a los recursos federados. Cada certificado de firma\-token contiene claves privadas criptográficas y claves públicas que se usan para firmar digitalmente \(por medio de la clave privada\) un token de seguridad. Más adelante, después de que un servidor de Federación asociado reciba estas claves, validará la autenticidad \(por medio de la clave pública\) del token de seguridad cifrado.  
   
 > [!CAUTION]  
-> Los certificados usados para el token @ no__t-0signing son fundamentales para la estabilidad del Servicio de federación. Dado que la pérdida o la eliminación no planeada de los certificados configurados con este fin pueden interrumpir el servicio, debe realizar una copia de seguridad de todos los certificados configurados con este fin.  
+> Los certificados usados para la firma de\-de token son fundamentales para la estabilidad de la Servicio de federación. Dado que la pérdida o la eliminación no planeada de los certificados configurados con este fin pueden interrumpir el servicio, debe realizar una copia de seguridad de todos los certificados configurados con este fin.  
   
-El certificado de token @ no__t-0signing debe encadenarse a una raíz de confianza en el Servicio de federación. Puede usar el siguiente procedimiento para agregar el certificado de token @ no__t-0signing al AD FS Management Add @ no__t-1in desde un archivo que haya exportado.  
+El token\-certificado de firma debe encadenarse a una raíz de confianza en el Servicio de federación. Puede usar el siguiente procedimiento para agregar el token\-certificado de firma al\-de administración de AD FS en desde un archivo que haya exportado.  
   
-El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en \( [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477) http:\/\/go.Microsoft.com\/fwlink\/? LinkId\=83477\).   
+El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas adecuadas y las pertenencias a grupos en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.Microsoft.com\/fwlink\/? LinkId\=83477\).   
   
-### <a name="to-add-a-token-signing-certificate"></a>Para agregar un token @ no__t-0signing  
+### <a name="to-add-a-token-signing-certificate"></a>Para agregar un token\-certificado de firma  
   
 1.  En la pantalla **Inicio** , escriba**AD FS Management**y, a continuación, presione Entrar.  
   
-2.  En el árbol de consola, duplique el **servicio**@ no__t-0click y, a continuación, haga clic en **certificados**.  
+2.  En el árbol de consola, haga doble\-haga clic en **servicio**y, a continuación, haga clic en **certificados**.  
   
-3.  En el panel **acciones** , haga clic en el vínculo **Agregar token @ no__t-2Signing** .  
+3.  En el panel **acciones** , haga clic en el vínculo **Agregar token\-certificado de firma** .  
   
 4.  En el cuadro de diálogo **Buscar archivo de certificado** , navegue hasta el archivo de certificado que desea agregar, seleccione el archivo de certificado y, a continuación, haga clic en **abrir**.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de comprobación: configuración de un servidor de Federación](Checklist--Setting-Up-a-Federation-Server.md)  
   
 [Requisitos de certificado para servidores de federación](https://technet.microsoft.com/library/dd807040.aspx)  
   

@@ -18,9 +18,9 @@ ms.locfileid: "71361251"
 ---
 # <a name="cluster-aware-updating-overview"></a>Información general de la Actualización compatible con clústeres
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-En este tema se proporciona información general sobre la actualización del clúster @ no__t-0Aware \(CAU @ no__t-2, una característica que automatiza el proceso de actualización de software en servidores en clúster manteniendo la disponibilidad.
+En este tema se proporciona información general sobre la actualización compatible con\-de clúster \(CAU\), una característica que automatiza el proceso de actualización de software en servidores en clúster manteniendo la disponibilidad.
 
 > [!NOTE]
 > Al actualizar clústeres de [espacios de almacenamiento directo](../storage/storage-spaces/storage-spaces-direct-overview.md) , se recomienda usar la actualización compatible con clústeres.
@@ -36,40 +36,40 @@ La actualización compatible con clústeres es una característica automatizada 
 6. Restaura los roles en clúster en el nodo.
 7. Se desplaza para actualizar el siguiente nodo.
 
-En muchos roles en clúster de un clúster, el proceso de actualización automático desencadena una conmutación por error planeada, lo que puede provocar una interrupción transitoria del servicio para los clientes conectados. Sin embargo, en el caso de las cargas de trabajo disponibles continuamente, como Hyper @ no__t-0V con migración en vivo o servidor de archivos con conmutación por error transparente de SMB, la actualización compatible con clústeres puede coordinar las actualizaciones de clúster sin afectar a la disponibilidad del servicio.    
+En muchos roles en clúster de un clúster, el proceso de actualización automático desencadena una conmutación por error planeada, lo que puede provocar una interrupción transitoria del servicio para los clientes conectados. Sin embargo, en el caso de las cargas de trabajo disponibles continuamente, como Hyper\-V con migración en vivo o servidor de archivos con conmutación por error transparente de SMB, la actualización compatible con clústeres puede coordinar las actualizaciones de clúster sin afectar a la disponibilidad del servicio.    
   
 ## <a name="practical-applications"></a>Aplicaciones prácticas  
   
--   La CAU reduce las interrupciones del servicio en los servicios en clúster, reduce la necesidad de soluciones de actualización manual y hace que el proceso de actualización del clúster end @ no__t-0to @ no__t-1Fin sea más confiable para el administrador. Cuando la característica CAU se usa junto con las cargas de trabajo de clúster disponibles continuamente, como los servidores de archivos disponibles continuamente @no__t la carga de trabajo del servidor 0file con la conmutación por error transparente de SMB @ no__t-1 o Hyper @ no__t-2V, se pueden realizar las actualizaciones del clúster. sin impacto en la disponibilidad del servicio para los clientes.  
+-   La CAU reduce las interrupciones del servicio en los servicios en clúster, reduce la necesidad de soluciones de actualización manual y hace que el extremo\-a\-final del proceso de actualización del clúster sea más confiable para el administrador. Cuando la característica CAU se usa junto con cargas de trabajo de clúster disponibles continuamente, como los servidores de archivos disponibles continuamente \(carga de trabajo del servidor de archivos con conmutación por error transparente de SMB\) o Hyper\-V, las actualizaciones de clúster se pueden realizar sin impacto alguno en la disponibilidad del servicio para los clientes.  
   
--   La CAU facilita la adopción de procesos de TI coherentes en toda la empresa. Los perfiles de ejecución de actualización se pueden crear para diferentes clases de clústeres de conmutación por error y, a continuación, administrarse de forma centralizada en un recurso compartido de archivos para garantizar que las implementaciones de la CAU en toda la organización de ti apliquen las actualizaciones de forma coherente, incluso si los clústeres están Lines @ no__t-0of @ no__t-1business o Administrators.  
+-   La CAU facilita la adopción de procesos de TI coherentes en toda la empresa. Los perfiles de ejecución de actualización se pueden crear para diferentes clases de clústeres de conmutación por error y, a continuación, administrarse de forma centralizada en un recurso compartido de archivos para garantizar que las implementaciones de la CAU en toda la organización de ti apliquen actualizaciones de manera coherente, incluso si los clústeres se administran mediante distintas líneas\-de\-empresas o administradores.  
   
 -   La CAU puede programar las ejecuciones de actualización en intervalos diarios, semanales o mensuales regulares para ayudar a coordinar las actualizaciones de clústeres con otros procesos de administración de TI.  
   
--   La CAU proporciona una arquitectura extensible para actualizar el inventario de software de clúster en un clúster @ no__t-0aware. Los publicadores pueden usar esto para coordinar la instalación de actualizaciones de software que no se publican en Windows Update o Microsoft Update o que no están disponibles en Microsoft, por ejemplo, actualizaciones de controladores de dispositivos que no son @ no__t-0Microsoft.  
+-   La CAU proporciona una arquitectura extensible para actualizar el inventario de software de clústeres en un clúster\-modo consciente. Los publicadores pueden usar esto para coordinar la instalación de actualizaciones de software que no se publican en Windows Update o Microsoft Update o que no están disponibles en Microsoft, por ejemplo, actualizaciones de controladores de dispositivos de Microsoft no\-.  
   
--   El modo de instalación automática de CAU no__t-0updating habilita un dispositivo de "clúster en una caja" @no__t un conjunto de máquinas físicas en clúster, normalmente empaquetados en un chasis @ no__t-2 para actualizarse. Generalmente, estas aplicaciones se implementan en sucursales con soporte técnico de TI local mínimo para administrar los clústeres. El modo Self @ no__t-0updating ofrece un gran valor en estos escenarios de implementación.  
+-   El modo de actualización de\-de CAU habilita un dispositivo de "clúster en una caja" \(un conjunto de máquinas físicas en clúster, normalmente empaquetados en un chasis\) para actualizarse a sí mismo. Generalmente, estas aplicaciones se implementan en sucursales con soporte técnico de TI local mínimo para administrar los clústeres. El modo de actualización de\-automático ofrece un gran valor en estos escenarios de implementación.  
   
 ## <a name="important-functionality"></a>Funcionalidad importante  
 A continuación se describe una funcionalidad importante de actualización compatible con clústeres:  
   
--   Una interfaz de usuario \(UI @ no__t-1: la ventana de actualización compatible con clústeres, y un conjunto de cmdlets que puede usar para obtener una vista previa, aplicar, supervisar e informar sobre las actualizaciones.  
+-   Una interfaz de usuario \(interfaz de usuario\) la ventana actualización compatible con clústeres: y un conjunto de cmdlets que puede usar para obtener una vista previa, aplicar, supervisar e informar sobre las actualizaciones.  
   
--   Una automatización de end @ no__t-0to @ no__t-1Fin de la operación del clúster @ no__t-2updating \(an actualización de la ejecución @ no__t-4, orquestada por uno o varios equipos coordinadores de actualizaciones  
+-   Un extremo\-a\-finalización de la automatización del clúster\-operación de actualización \(una\)de ejecución de actualización, orquestada por uno o varios equipos coordinadores de actualizaciones  
   
--   Un valor predeterminado de plug @ no__t-0in que se integra con el agente de Windows Update existente \(WUA @ no__t-2 y Windows Server Update Services \(WSUS @ no__t-4 Infrastructure en Windows Server para aplicar las actualizaciones importantes de Microsoft.  
+-   Un\-de plug-in predeterminado en que se integra con el agente de Windows Update existente \(WUA\) y Windows Server Update Services \(infraestructura de\) de WSUS en Windows Server para aplicar actualizaciones importantes de Microsoft.  
   
--   Un segundo Plug @ no__t-0in que se puede usar para aplicar revisiones de Microsoft y que se puede personalizar para aplicar actualizaciones que no sean @ no__t-1Microsoft  
+-   Un segundo\-de conexión de que se puede usar para aplicar revisiones de Microsoft y que se puede personalizar para aplicar actualizaciones que no son de\-de Microsoft  
   
 -   Perfiles de ejecución de actualización que configura con ajustes de opciones de ejecución de actualización, como el número máximo de veces que la actualización se reintentará por nodo. Los perfiles de ejecución de actualización permiten reutilizar rápidamente la misma configuración entre ejecuciones de actualización y compartir fácilmente la configuración de actualización con otros clústeres de conmutación por error.  
   
--   Una arquitectura extensible que admite el nuevo desarrollo de plug @ no__t-0in para coordinar otras herramientas de node @ no__t-1updating en el clúster, como instaladores de software personalizados, herramientas de actualización de BIOS y adaptador de red o adaptador de bus host \(HBA @ no__t-3 actualizando herramientas.  
+-   Una arquitectura extensible que admite nuevos\-de plug-in Development para coordinar otras herramientas de actualización de nodos\-en el clúster, como instaladores de software personalizados, herramientas de actualización de BIOS y adaptador de red o adaptador de bus host \(HBA\) herramientas de actualización.  
   
 La actualización compatible con clústeres puede coordinar toda la operación de actualización del clúster en dos modos:  
   
--   **Self @ no__t-1updating Mode** En este modo, el rol en clúster de CAU se configura como una carga de trabajo en el clúster de conmutación por error que se va a actualizar y se define una programación de actualización asociada. El clúster se actualiza automáticamente a horas programadas mediante un perfil de ejecución de actualización personalizado o predeterminado. Durante la ejecución de actualización, el proceso de coordinador de actualizaciones de la CAU se inicia en el nodo que actualmente es propietario del rol en clúster de la CAU y el proceso realiza actualizaciones secuencialmente en cada nodo de clúster. Para actualizar el nodo de clúster actual, el rol en clúster de la CAU realiza una conmutación por error a otro nodo de clúster y un nuevo proceso de coordinador de actualizaciones en dicho nodo asume el control de la ejecución de actualización. En el modo Self @ no__t-0updating, la CAU puede actualizar el clúster de conmutación por error mediante un proceso de actualización de end @ no__t-1to @ no__t-2end totalmente automatizado. Un administrador también puede desencadenar actualizaciones en @ no__t-0demand en este modo, o simplemente usar el enfoque remoto @ no__t-1updating si lo desea. En el modo Self @ no__t-0updating, un administrador puede obtener información de resumen sobre una ejecución de actualización en curso mediante la conexión al clúster y la ejecución del cmdlet **Get @ no__t-2CauRun de** Windows PowerShell.  
+-   **Modo de actualización de\-propio** En este modo, el rol en clúster de CAU se configura como una carga de trabajo en el clúster de conmutación por error que se va a actualizar y se define una programación de actualización asociada. El clúster se actualiza automáticamente a horas programadas mediante un perfil de ejecución de actualización personalizado o predeterminado. Durante la ejecución de actualización, el proceso de coordinador de actualizaciones de la CAU se inicia en el nodo que actualmente es propietario del rol en clúster de la CAU y el proceso realiza actualizaciones secuencialmente en cada nodo de clúster. Para actualizar el nodo de clúster actual, el rol en clúster de la CAU realiza una conmutación por error a otro nodo de clúster y un nuevo proceso de coordinador de actualizaciones en dicho nodo asume el control de la ejecución de actualización. En el modo de actualización de\-, la CAU puede actualizar el clúster de conmutación por error mediante un\-de finalización totalmente automatizado para\-finalizar el proceso de actualización. Un administrador también puede desencadenar actualizaciones en\-demanda en este modo, o simplemente usar el enfoque de actualización de\-remoto si lo desea. En el modo de actualización de\-, un administrador puede obtener información de resumen sobre una ejecución de actualización en curso mediante la conexión al clúster y la ejecución del cmdlet **get\-CauRun** de Windows PowerShell.  
   
--   **Modo remoto @ no__t-1updating** En este modo, un equipo remoto, que se denomina Coordinador de actualizaciones, se configura con las herramientas de la CAU. El coordinador de actualizaciones no es miembro del clúster que se actualiza durante la ejecución de actualización. Desde el equipo remoto, el administrador desencadena una ejecución de actualización de @ no__t-0demand mediante un perfil de ejecución de actualización personalizado o predeterminado. El modo remoto @ no__t-0updating es útil para supervisar el progreso real de @ no__t-1time durante la ejecución de actualización y para los clústeres que se ejecutan en instalaciones Server Core.  
+-   **Modo de actualización de\-remoto** En este modo, un equipo remoto, que se denomina Coordinador de actualizaciones, se configura con las herramientas de la CAU. El coordinador de actualizaciones no es miembro del clúster que se actualiza durante la ejecución de actualización. Desde el equipo remoto, el administrador desencadena una ejecución de actualización a petición\-mediante un perfil de ejecución de actualización personalizado o predeterminado. El modo de actualización de\-remoto es útil para supervisar el progreso real de la\-durante la ejecución de actualización y para los clústeres que se ejecutan en instalaciones Server Core.  
   
 ## <a name="hardware-and-software-requirements"></a>Requisitos de hardware y software  
 
@@ -80,7 +80,7 @@ Para usar la CAU, instale la característica de clústeres de conmutación por e
 
 Para instalar una característica Clúster de conmutación por error, puede usar las siguientes herramientas:
 - Asistente para agregar roles y características en el Administrador del servidor
-- Cmdlet [install-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/Install-WindowsFeature?view=winserver2012r2-ps&viewFallbackFrom=win10-ps) Windows de PowerShell
+- Cmdlet [install-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/Install-WindowsFeature?view=winserver2012r2-ps&viewFallbackFrom=win10-ps) Windows PowerShell
 - Herramienta de línea de comandos Administración y mantenimiento de imágenes de implementación (DISM)
 
 Para obtener más información, vea [instalar la característica de clústeres de conmutación por error](create-failover-cluster.md#install-the-failover-clustering-feature).
@@ -89,27 +89,27 @@ También debe instalar las herramientas de clúster de conmutación por error, q
 
 Debe instalar las Herramientas de clústeres de conmutación por error como se indica a continuación para admitir los diferentes modos de actualización de CAU:
 
-- Para usar la CAU en modo Self @ no__t-0updating, instale las herramientas de clúster de conmutación por error en cada nodo del clúster.   
+- Para usar la CAU en el modo de actualización de\-, instale las herramientas de clúster de conmutación por error en cada nodo del clúster.   
   
-- Para habilitar el modo remoto @ no__t-0updating, instale las herramientas de clúster de conmutación por error en un equipo que tenga conectividad de red con el clúster de conmutación por error.  
+- Para habilitar el modo de actualización de\-remoto, instale las herramientas de clúster de conmutación por error en un equipo que tenga conectividad de red con el clúster de conmutación por error.  
   
 > [!NOTE]  
 > -   No puede usar las herramientas de clúster de conmutación por error en Windows Server 2012 para administrar la actualización compatible con clústeres en una versión más reciente de Windows Server. 
-> -   Para usar la CAU solo en el modo remoto @ no__t-0updating, no es necesario instalar las herramientas de clúster de conmutación por error en los nodos del clúster. si bien algunas características de CAU no estarán disponibles. Para obtener más información, consulte [requisitos y procedimientos recomendados para el clúster @ no__t-1Aware actualización](cluster-aware-updating-requirements.md).  
-> -   A menos que esté usando la CAU solo en el modo Self @ no__t-0updating, el equipo en el que están instaladas las herramientas de la CAU y que coordina las actualizaciones no puede ser miembro del clúster de conmutación por error.  
+> -   Para usar la CAU solo en el modo de actualización de\-remoto, no es necesario instalar las herramientas de clúster de conmutación por error en los nodos del clúster. si bien algunas características de CAU no estarán disponibles. Para obtener más información, consulte [requisitos y procedimientos recomendados para la actualización compatible con\-de clúster](cluster-aware-updating-requirements.md).  
+> -   A menos que esté usando la CAU solo en el modo de actualización de\-, el equipo en el que están instaladas las herramientas de la CAU y que coordina las actualizaciones no puede ser miembro del clúster de conmutación por error.  
   
 ### <a name="enabling-self-updating-mode"></a>Habilitación del modo de auto-actualización
 Para habilitar el modo de auto-actualización, debe agregar el rol en clúster de actualización compatible con clústeres al clúster de conmutación por error. Para ello, use uno de los métodos siguientes:
 - En Administrador del servidor, seleccione **herramientas** > **actualización compatible con clústeres**y, a continuación, en la ventana actualización compatible con clústeres, seleccione **configurar opciones de auto-actualización de clústeres**. 
 - En una sesión de PowerShell, ejecute el cmdlet [Add-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps) .  
   
-Para desinstalar la CAU, desinstale la característica de clúster de conmutación por error o las herramientas de clústeres de conmutación por error mediante Administrador del servidor, el cmdlet [Uninstall-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/Uninstall-WindowsFeature?view=win10-ps) o el comando DISM @ no__t-1line Tools.  
+Para desinstalar la CAU, desinstale la característica de clúster de conmutación por error o las herramientas de clústeres de conmutación por error mediante Administrador del servidor, el cmdlet [Uninstall-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/Uninstall-WindowsFeature?view=win10-ps) o las herramientas de línea de comandos de DISM\-.  
   
 ### <a name="additional-requirements-and-best-practices"></a>Otros requisitos y procedimientos recomendados  
 
 Puede ejecutar el Analizador de procedimientos recomendados de la CAU para asegurarse de que la CAU puede actualizar correctamente los nodos de clúster, así como para obtener más instrucciones sobre cómo configurar el entorno de clúster de conmutación por error para que use la CAU.  
   
-Para conocer los requisitos detallados y los procedimientos recomendados para usar la CAU, así como información sobre la ejecución de la Analizador de procedimientos recomendados de CAU, consulte [requisitos y procedimientos recomendados para el clúster @ no__t-1Aware actualización](cluster-aware-updating-requirements.md).  
+Para conocer los requisitos detallados y los procedimientos recomendados para usar la CAU, así como información sobre cómo ejecutar la Analizador de procedimientos recomendados de CAU, consulte [requisitos y procedimientos recomendados para la actualización compatible con\-de clústeres](cluster-aware-updating-requirements.md).  
   
 ### <a name="starting-cluster-aware-updating"></a>Iniciar la actualización compatible con clústeres  
   
@@ -119,23 +119,23 @@ Para conocer los requisitos detallados y los procedimientos recomendados para us
   
 2.  Realiza una de las siguientes acciones:  
   
-    -   En el menú **herramientas** , haga clic en **clúster @ No__t-2Aware actualizar**.  
+    -   En el menú **herramientas** , haga clic en **actualización compatible con\-de clúster**.  
   
-    -   Si uno o más nodos de clúster, o el clúster, se agregan a Administrador del servidor, en la página **todos los servidores** , haga clic con el botón derecho en @ no__t-1Click el nombre de un nodo \(or el nombre del clúster @ no__t-3 y, a continuación, haga clic en **Actualizar clúster**.  
+    -   Si uno o más nodos de clúster, o el clúster, se agregan a Administrador del servidor, en la página **todos los servidores** , haga clic con el botón secundario\-en el nombre de un nodo \(o en el nombre del\)de clúster y, a continuación, haga clic en **Actualizar clúster**.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
 Los vínculos siguientes proporcionan más información acerca del uso de la actualización compatible con clústeres.  
   
--   [Requisitos y procedimientos recomendados para la actualización del clúster @ no__t-1Aware](cluster-aware-updating.md)  
+-   [Requisitos y procedimientos recomendados para la actualización compatible con\-de clúster](cluster-aware-updating.md)  
   
--   [Cluster @ no__t-1Aware actualización: Preguntas más frecuentes](cluster-aware-updating-faq.md)  
+-   [Actualización compatible con\-de clúster: preguntas más frecuentes](cluster-aware-updating-faq.md)  
   
 -   [Opciones avanzadas y perfiles de ejecución de actualización para CAU](cluster-aware-updating-options.md)  
   
--   [Cómo funciona CAU Plug @ no__t-1ins](cluster-aware-updating-plug-ins.md)  
+-   [Cómo funcionan los complementos de\-de CAU](cluster-aware-updating-plug-ins.md)  
   
--   [Cluster @ no__t-1Aware actualización de cmdlets en Windows PowerShell](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)  
+-   [Cmdlets de actualización compatible con\-de clúster en Windows PowerShell](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)  
   
--   [Cluster @ no__t-1Aware actualización de plug @ no__t-2in](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)  
+-   [\-de complemento de actualización compatible con\-de clúster en referencia](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)  
   
 

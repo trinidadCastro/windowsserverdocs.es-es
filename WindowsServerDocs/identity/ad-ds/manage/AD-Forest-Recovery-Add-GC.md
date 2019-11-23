@@ -29,7 +29,7 @@ Utilice el procedimiento siguiente para agregar el catálogo global a un control
 3. Expanda el contenedor **servidores** y, a continuación, expanda el objeto de servidor del controlador de dominio al que desea agregar el catálogo global.  
 4. Haga clic con el botón secundario en **configuración NTDS**y, a continuación, haga clic en **propiedades**.  
 5. Active la casilla **catálogo global** .  
-![Add GC @ no__t-1
+![agregar](media/AD-Forest-Recovery-Add-GC/addgc1.png) GC
 
 ## <a name="to-add-the-global-catalog-using-repadmin"></a>Para agregar el catálogo global mediante repadmin  
 

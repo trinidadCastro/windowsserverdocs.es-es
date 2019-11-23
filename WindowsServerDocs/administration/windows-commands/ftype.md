@@ -38,20 +38,20 @@ ftype [<FileType>[=[<OpenCommandString>]]]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0FileType >|Especifica el tipo de archivo que se va a mostrar o cambiar.|
-|@no__t 0OpenCommandString >|Especifica la cadena de comandos abierta que se va a usar al abrir archivos del tipo de archivo especificado.|
+|\<FileType >|Especifica el tipo de archivo que se va a mostrar o cambiar.|
+|\<OpenCommandString >|Especifica la cadena de comandos abierta que se va a usar al abrir archivos del tipo de archivo especificado.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 En la tabla siguiente se describe cómo **ftype** sustituye las variables dentro de una cadena de comandos abierta:
 
 |Variable|Valor de reemplazo|
 |--------|-----------------|
-|% 0 o% 1|Se sustituye por el nombre de archivo que se inicia a través de la asociación.|
+|%0 o %1|Se sustituye por el nombre de archivo que se inicia a través de la asociación.|
 |%*|Obtiene todos los parámetros.|
-|% 2,% 3,...|Obtiene el primer parámetro (% 2), el segundo parámetro (% 3), etc.|
-|%~ @ NO__T-1N >|Obtiene todos los parámetros restantes a partir del parámetro *n*, donde *N* puede ser cualquier número comprendido entre 2 y 9.|
+|%2, %3,...|Obtiene el primer parámetro (%2), el segundo parámetro (%3), etc.|
+|%~\<N >|Obtiene todos los parámetros restantes a partir del parámetro *n*, donde *N* puede ser cualquier número comprendido entre 2 y 9.|
 
 ## <a name="BKMK_examples"></a>Example
 

@@ -24,7 +24,7 @@ ms.locfileid: "71363754"
 
 
 
-agrega un paquete de controladores al servidor.
+Agrega un paquete de controladores al servidor.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,11 +36,11 @@ WDSUTIL /Add-DriverPackage /InfFile:<Inf File path> [/Server:<Server name>] [/Ar
 
 |          Parámetro           |                                                              Descripción                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-|   InfFile: ruta de acceso del archivo \<Inf >   |                                           Especifica la ruta de acceso completa del archivo. inf que se va a agregar.                                            |
-|    /Server: @no__t nombre de 0Server >    | Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se utiliza el servidor local. |
+|   InfFile:\<ruta de acceso del archivo INF >   |                                           Especifica la ruta de acceso completa del archivo. inf que se va a agregar.                                            |
+|    /Server:\<nombre de servidor >    | Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se utiliza el servidor local. |
 |      /Architecture: {x86      |                                                                 64                                                                  |
-| [/DriverGroup: \<Group nombre de la >] |                             Especifica el nombre del grupo de controladores al que se debe agregar el paquete.                              |
-|   [/Name: @no__t nombre de 0Friendly >]   |                                           Indica el nombre descriptivo para el paquete de controladores.                                            |
+| [/DriverGroup: nombre de grupo de\<>] |                             Especifica el nombre del grupo de controladores al que se debe agregar el paquete.                              |
+|   [/Name:\<nombre descriptivo >]   |                                           Indica el nombre descriptivo para el paquete de controladores.                                            |
 
 ## <a name="BKMK_examples"></a>Example
 

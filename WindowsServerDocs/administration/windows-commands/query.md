@@ -45,6 +45,6 @@ query user
 |[consulta termserver](query-termserver.md)|Muestra una lista de todos los servidores host de sesión de escritorio remoto en la red.|
 |[consultar usuario](query-user.md)|Muestra información acerca de las sesiones de usuario en un servidor host de sesión de escritorio remoto.|
 
-#### <a name="additional-references"></a>Referencias adicionales
+#### <a name="additional-references"></a>referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 [servicios de escritorio remoto &#40;referencia de comandos Terminal Services&#41; ](remote-desktop-services-terminal-services-command-reference.md)

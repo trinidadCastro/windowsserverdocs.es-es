@@ -41,12 +41,12 @@ create volume stripe [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr]
   
 |         Parámetro         |                                                                                                                            Descripción                                                                                                                            |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         Size @ no__t-0 @ no__t-1         |             La cantidad de espacio en disco, en megabytes @no__t 0MB @ no__t-1, que el volumen ocupará en cada disco. Si no se proporciona ningún tamaño, el nuevo volumen ocupará el espacio libre restante en el disco más pequeño y una cantidad igual de espacio en cada disco subsiguiente.             |
-| Disk @ no__t-0 @ no__t-1, <n> @ no__t-3, <n>,... \] |                                  Los discos dinámicos en los que se crea el volumen seccionado. Necesita al menos dos discos dinámicos para crear un volumen seccionado. En cada disco se asigna una cantidad de espacio igual a **size @ no__t-1 @ no__t-2** .                                   |
-|        align @ no__t-0 @ no__t-1         | Alinea todas las extensiones de volumen con el límite de alineación más cercano. Normalmente se usa con el número de unidad lógica RAID de hardware \(LUN @ no__t-1 para mejorar el rendimiento. *n* es el número de kilobytes \( KB @ no__t-2 desde el principio del disco hasta el límite de alineación más cercano. |
-|           Noerr           |                               Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.                                |
+|         tamaño\=<n>         |             La cantidad de espacio en disco, en megabytes \(MB\), que el volumen ocupará en cada disco. Si no se proporciona ningún tamaño, el nuevo volumen ocupará el espacio libre restante en el disco más pequeño y una cantidad igual de espacio en cada disco subsiguiente.             |
+| <n>de\=de disco,<n>\[,<n>,...\] |                                  Los discos dinámicos en los que se crea el volumen seccionado. Necesita al menos dos discos dinámicos para crear un volumen seccionado. En cada disco se asigna una cantidad de espacio igual al **tamaño\=<n>** .                                   |
+|        alinear\=<n>         | Alinea todas las extensiones de volumen con el límite de alineación más cercano. Normalmente se usa con el número de unidad lógica RAID de hardware \(matrices\) LUN para mejorar el rendimiento. *n* es el número de kilobytes \(KB\) desde el principio del disco hasta el límite de alineación más cercano. |
+|           Noerr           |                               solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.                                |
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
   
 -   Después de crear el volumen, el foco se desplaza automáticamente al nuevo volumen.  
   
@@ -57,7 +57,7 @@ Para crear un volumen seccionado de 1000 megabytes de tamaño, en los discos 1 y
 create volume stripe size=1000 disk=1,2  
 ```  
   
-#### <a name="additional-references"></a>Referencias adicionales  
+#### <a name="additional-references"></a>referencias adicionales  
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   
 

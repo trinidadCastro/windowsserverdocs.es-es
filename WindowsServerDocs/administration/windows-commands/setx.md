@@ -40,30 +40,30 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 
 |         Parámetro          |                                                                                                                                              Descripción                                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       /s \<Computer >       |                                                                                  Especifica el nombre o la dirección IP de un equipo remoto. No use barras diagonales inversas. El valor predeterminado es el nombre del equipo local.                                                                                  |
-| /u [\<Domain > \] @ no__t-2 |                                                                                           Ejecuta el script con las credenciales de la cuenta de usuario especificada. El valor predeterminado es los permisos del sistema.                                                                                            |
-|      /p [\<Password >]      |                                                                                                         Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                                                         |
-|        @no__t 0Variable >         |                                                                                                                 Especifica el nombre de la variable de entorno que desea establecer.                                                                                                                  |
-|          @no__t 0Value >          |                                                                                                                Especifica el valor en el que desea establecer la variable de entorno.                                                                                                                 |
-|         /k \<Path >         | Especifica que la variable se establece basándose en la información de una clave del registro. La*gistro* p usa la siguiente sintaxis:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por ejemplo, puede especificar la ruta de acceso siguiente:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
-|      /f @no__t-nombre de 0File >       |                                                                                                                               Especifica el archivo que desea usar.                                                                                                                                |
-|        /a \<X >, <Y>         |                                                                                                                    Especifica las coordenadas absolutas y el desplazamiento como parámetros de búsqueda.                                                                                                                    |
-|   /r \<X >, <Y> "<String>"   |                                                                                                            Especifica las coordenadas relativas y el desplazamiento de la **cadena** como parámetros de búsqueda.                                                                                                            |
+|       /s \<equipo >       |                                                                                  Especifica el nombre o la dirección IP de un equipo remoto. No use barras diagonales inversas. El valor predeterminado es el nombre del equipo local.                                                                                  |
+| /u [\<\]de > de dominio <User name> |                                                                                           Ejecuta el script con las credenciales de la cuenta de usuario especificada. El valor predeterminado es los permisos del sistema.                                                                                            |
+|      /p [\<contraseña >]      |                                                                                                         Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                                                         |
+|        \<variable >         |                                                                                                                 Especifica el nombre de la variable de entorno que desea establecer.                                                                                                                  |
+|          \<valor >          |                                                                                                                Especifica el valor en el que desea establecer la variable de entorno.                                                                                                                 |
+|         /k \<ruta de acceso >         | Especifica que la variable se establece basándose en la información de una clave del registro. La*gistro* p usa la siguiente sintaxis:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por ejemplo, puede especificar la ruta de acceso siguiente:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
+|      /f \<nombre de archivo >       |                                                                                                                               Especifica el archivo que desea usar.                                                                                                                                |
+|        /a \<X >,<Y>         |                                                                                                                    Especifica las coordenadas absolutas y el desplazamiento como parámetros de búsqueda.                                                                                                                    |
+|   /r \<X >,<Y> "<String>"   |                                                                                                            Especifica las coordenadas relativas y el desplazamiento de la **cadena** como parámetros de búsqueda.                                                                                                            |
 |             /m             |                                                                                                Especifica que se establezca la variable en el entorno del sistema. La configuración predeterminada es el entorno local.                                                                                                 |
 |             /x             |                                                                                                       Muestra las coordenadas del archivo, pasando por alto las opciones de la línea de comandos **/a**, **/r**y **/d** .                                                                                                        |
-|      /d \<Delimiters >      |                    Especifica los delimitadores como " **,** " o " **\\** " que se van a usar además de los cuatro delimitadores integrados: espacio, tabulación, entrada y avance de velocidad. Entre los delimitadores válidos se incluyen los caracteres ASCII. El número máximo de delimitadores es 15, incluidos los delimitadores integrados.                    |
+|      /d \<delimitadores >      |                    Especifica los delimitadores como " **,** " o " **\\** " que se van a usar además de los cuatro delimitadores integrados: espacio, tabulación, entrada y avance de velocidad. Entre los delimitadores válidos se incluyen los caracteres ASCII. El número máximo de delimitadores es 15, incluidos los delimitadores integrados.                    |
 |             /?             |                                                                                                                                 Muestra la ayuda en el símbolo del sistema.                                                                                                                                  |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   El comando **setx** es similar a la utilidad de UNIX setenv.
 -   **Setx** proporciona la única línea de comandos o la manera programática de establecer de forma directa y permanente valores de entorno del sistema. Las variables de entorno del sistema se pueden configurar manualmente mediante el **Panel de control** o mediante un editor del registro. El comando **set** , que es interno del intérprete de comandos (cmd. exe), solo establece las variables de entorno de usuario para la ventana de la consola actual.
--   Puede usar el comando **setx** para establecer los valores de las variables de entorno del sistema y del usuario a partir de uno de los tres orígenes (modos): Modo de línea de comandos, modo de registro o modo de archivo.
+-   Puede usar el comando **setx** para establecer los valores de las variables de entorno de usuario y de sistema de uno de los tres orígenes (modos): modo de línea de comandos, modo de registro o modo de archivo.
 -   **Setx** escribe variables en el entorno principal del registro. Las variables establecidas con variables **setx** solo están disponibles en las ventanas de comandos futuras, no en la ventana de comandos actual.
 -   **HKEY_CURRENT_USER** y **HKEY_LOCAL_MACHINE** son los únicos subárboles admitidos. REG_DWORD, REG_EXPAND_SZ, REG_SZ y REG_MULTI_SZ son los tipos de datos **RegKey** válidos.
--   Cuando se obtiene acceso a los valores **REG_MULTI_SZ** en el registro, solo se extrae y se usa el primer elemento.
+-   Cuando obtiene acceso a **REG_MULTI_SZ** valores del registro, solo se extrae y se usa el primer elemento.
 -   No se puede usar el comando **setx** para quitar los valores que se han agregado a los entornos local o del sistema. Puede usar **set** con un nombre de variable y ningún valor para quitar un valor correspondiente del entorno local.
--   REG_DWORD los valores del registro se extraen y se usan en modo hexadecimal.
+-   REG_DWORD valores del registro se extraen y se usan en modo hexadecimal.
 -   El modo de archivo solo admite el análisis de archivos de texto de retorno de carro y avance de línea (CRLF).
 
 ## <a name="BKMK_examples"></a>Example
@@ -92,19 +92,19 @@ Para establecer la variable de entorno MYPATH en el entorno local para que use l
 ```
 setx /s computer1 /u maindom\hiropln /p p@ssW23 MYPATH %PATH%
 ```
-Para establecer la variable de entorno TZONE en el entorno local en el valor que se encuentra en la clave del registro **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName** , escriba:
+Para establecer la variable de entorno TZONE en el entorno local en el valor que se encuentra en la clave del registro **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\timezoneinformation\standardname** , escriba:
 ```
 setx TZONE /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName 
 ```
-Para establecer la variable de entorno TZONE en el entorno local de un equipo remoto llamado Equipo1 en el valor que se encuentra en la clave del registro **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName** , escriba:
+Para establecer la variable de entorno TZONE en el entorno local de un equipo remoto llamado Equipo1 en el valor que se encuentra en la clave del registro **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\timezoneinformation\standardname** , escriba:
 ```
 setx /s computer1 /u maindom\hiropln /p p@ssW23 TZONE /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName 
 ```
-Para establecer la variable de entorno de compilación en el entorno del sistema en el valor que se encuentra en la clave del registro **HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber** , escriba:
+Para establecer la variable de entorno de compilación en el entorno del sistema en el valor que se encuentra en la clave del registro **HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber** , escriba:
 ```
 setx BUILD /k "HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber" /m
 ```
-Para establecer la variable de entorno de compilación en el entorno del sistema de un equipo remoto denominado Equipo1 en el valor que se encuentra en la clave del registro **HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber** , escriba:
+Para establecer la variable de entorno de compilación en el entorno del sistema de un equipo remoto denominado Equipo1 en el valor que se encuentra en la clave del registro **HKEY_LOCAL_MACHINE \software\microsoft\windowsnt\currentversion\currentbuildnumber** , escriba:
 ```
 setx /s computer1 /u maindom\hiropln /p p@ssW23  BUILD /k "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\CurrentBuildNumber" /m
 ```
@@ -116,7 +116,7 @@ Para establecer la variable de entorno DIRIP en el entorno local en el valor que
 ```
 setx IPADDR /f ipconfig.out /a 5,11
 ```
-Para establecer la variable de entorno OCTET1 en el entorno local en el valor que se encuentra en la coordenada 5, 3 en el archivo ipconfig. out con delimitadores **"# $ \*."** , escriba:
+Para establecer la variable de entorno OCTET1 en el entorno local en el valor que se encuentra en la coordenada 5, 3 en el archivo ipconfig. out con delimitadores **"# $\*."** , escriba:
 ```
 setx OCTET1 /f ipconfig.out /a 5,3 /d "#$*." 
 ```

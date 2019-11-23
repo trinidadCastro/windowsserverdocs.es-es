@@ -24,7 +24,7 @@ ms.locfileid: "71389399"
 Reasignar estaciones en MultiPoint Dashboard le permite asociar teclados y mouse a monitores. Las estaciones de usuario local se suspenden mientras se reasigna un sistema MultiPoint Services.  
   
 > [!CAUTION]  
-> La reasignación sirve principalmente para solucionar problemas. La configuración de la estación, como el nombre y la información de @ no__t-0logon automática, se borran durante el proceso de reasignación.  
+> La reasignación sirve principalmente para solucionar problemas. La configuración de la estación, como el nombre y la información de inicio de sesión de\-automática, se borran durante el proceso de reasignación.  
   
 #### <a name="to-remap-a-multipoint-services-system"></a>Para reasignar un sistema MultiPoint Services  
   

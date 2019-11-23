@@ -36,11 +36,11 @@ ksetup /removerealm <RealmName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0RealmName >|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos predeterminado cuando se ejecuta **ksetup** .|
+|\<RealmName >|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos predeterminado cuando se ejecuta **ksetup** .|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
-El nombre de dominio Kerberos se almacena en dos lugares del registro: **HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001** y **\CurrentControlSet\Control\Lsa\Kerberos**.
+El nombre de dominio Kerberos se almacena en dos lugares del registro: **HKEY_LOCAL_MACHINE \system\controlset001** y **\CurrentControlSet\Control\Lsa\Kerberos**.
 
 No se puede quitar el nombre de dominio Kerberos predeterminado del controlador de dominio, ya que se restablecerá la información de DNS y se podrá quitar el controlador de dominio.
 

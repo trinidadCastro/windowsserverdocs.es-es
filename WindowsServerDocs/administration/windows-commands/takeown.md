@@ -36,16 +36,16 @@ takeown [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <File n
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/s \<Computer >|Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local. Este parámetro se aplica a todos los archivos y carpetas especificados en el comando.|
-|/u [\<Domain > \] @ no__t-2|Ejecuta el script con los permisos de la cuenta de usuario especificada. El valor predeterminado es permisos del sistema.|
-|/p [\<Password >]|Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .|
-|/f @no__t-nombre de 0File >|Especifica el nombre de archivo o el patrón de nombre de directorio. Puede usar el carácter comodín * al especificar el patrón. También puede usar la sintaxis *ShareName*\*FileName *.|
+|/s \<equipo >|Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local. Este parámetro se aplica a todos los archivos y carpetas especificados en el comando.|
+|/u [\<\]de > de dominio <User name>|Ejecuta el script con los permisos de la cuenta de usuario especificada. El valor predeterminado es permisos del sistema.|
+|/p [\<contraseña >]|Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .|
+|/f \<nombre de archivo >|Especifica el nombre de archivo o el patrón de nombre de directorio. Puede usar el carácter comodín * al especificar el patrón. También puede usar la sintaxis *ShareName*\*nombre de archivo *.|
 |/a|Proporciona la propiedad al grupo de administradores en lugar de al usuario actual.|
 |/r|Realiza una operación recursiva en todos los archivos del directorio y los subdirectorios especificados.|
-|/d {Y \| N}|Suprime el mensaje de confirmación que se muestra cuando el usuario actual no tiene el permiso "lista de carpetas" en un directorio especificado y, en su lugar, utiliza el valor predeterminado especificado. Los valores válidos para la opción **/d** son los siguientes:</br>SÍ Tomar posesión del directorio.</br>N Omitir el directorio.</br>Tenga en cuenta que debe usar esta opción junto con la opción **/r** .|
+|/d {Y \| N}|Suprime el mensaje de confirmación que se muestra cuando el usuario actual no tiene el permiso "lista de carpetas" en un directorio especificado y, en su lugar, utiliza el valor predeterminado especificado. Los valores válidos para la opción **/d** son los siguientes:</br>-Y: tomar posesión del directorio.</br>-N: omitir el directorio.</br>Tenga en cuenta que debe usar esta opción junto con la opción **/r** .|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Este comando se usa normalmente en archivos por lotes.
 -   Si no se especifica el parámetro **/a** , se proporciona la propiedad del archivo al usuario que ha iniciado sesión actualmente en el equipo.

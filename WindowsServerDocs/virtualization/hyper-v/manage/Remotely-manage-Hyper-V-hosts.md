@@ -79,7 +79,7 @@ Enable-PSRemoting
 
 Para Windows 8.1 y versiones anteriores, la administración remota solo funciona cuando el host está en el mismo dominio y la cuenta de usuario local también está en el host remoto.
 
-Para agregar un host remoto de Hyper-V al administrador de Hyper-V, seleccione **otro equipo** en el cuadro de diálogo **seleccionar equipo** y escriba el nombre de host del host remoto, el nombre NetBIOS o el nombre de dominio completo \(FQDN @ no__t-3.
+Para agregar un host remoto de Hyper-V al administrador de Hyper-V, seleccione **otro equipo** en el cuadro de diálogo **seleccionar equipo** y escriba el nombre de host del host remoto, el nombre NetBIOS o el nombre de dominio completo \(FQDN\).
 
 El administrador de Hyper-V en Windows Server 2016 y Windows 10 ofrece más tipos de conexión remota que las versiones anteriores, que se describen en las secciones siguientes.  
 
@@ -138,7 +138,7 @@ A continuación, configure el equipo que va a usar para administrar el host de H
      Enable-WSManCredSSP -Role client -DelegateComputer "fqdn-of-hyper-v-host"
      ```
 1. También puede que necesite configurar la Directiva de grupo siguiente: 
-    * **Configuración del equipo** @no__t- **1 plantillas administrativas** \> **sistema** \> la **delegación de credenciales** \> **permitir la delegación de credenciales nuevas con autenticación de servidor solo NTLM**
+    * **Configuración del equipo** \> **plantillas administrativas** \> la **delegación de credenciales** \> **del sistema** \> **permitir delegar credenciales nuevas con autenticación de servidor solo NTLM**
     * Haga clic en **Habilitar** y agregue *wsman/FQDN-of-Hyper-v-host*.
 1. Abra **el administrador de Hyper-V**.
 1. En el panel izquierdo, haga clic con el botón secundario en **Administrador de Hyper-V**.
@@ -153,7 +153,7 @@ Para obtener información sobre los cmdlets, consulte [set-Item](https://msdn.mi
 
 Para usar una herramienta de interfaz de usuario, elija la que sea adecuada para el sistema operativo en el equipo en el que va a ejecutar el administrador de Hyper-V:
 
-En Windows Server, abra Administrador del servidor \> **administrar** \> **Agregar roles y características**. Vaya a la página **características** y expanda herramientas de **administración remota del servidor** \> herramientas de **Administración de roles** \> herramientas de **Administración de Hyper-V**. 
+En Windows Server, abra Administrador del servidor \> **administrar** \> **Agregar roles y características**. Vaya a la página **características** y expanda **herramientas de administración remota del servidor** \> herramientas de administración de **roles** \> **herramientas de administración de Hyper-V**. 
 
 En Windows, el administrador de Hyper-V está disponible en [cualquier sistema operativo de Windows que incluya Hyper-v](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_compatibility).
 
@@ -169,7 +169,7 @@ Para usar Windows PowerShell, ejecute el siguiente comando como administrador:
 add-windowsfeature rsat-hyper-v-tools
 ```
 
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
  
 [Instalar Hyper-V](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md) 
 

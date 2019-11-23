@@ -19,13 +19,13 @@ ms.locfileid: "71364909"
 ---
 # <a name="display-adapters-should-be-enabled-in-virtual-machines-to-provide-video-capabilities"></a>Los adaptadores de pantalla deben estar habilitados en las máquinas virtuales para proporcionar funcionalidades de vídeo
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2016
 
 
   
 *Para obtener más información sobre los análisis y los procedimientos recomendados, consulte* [analizador de procedimientos recomendados](https://go.microsoft.com/fwlink/?LinkId=122786).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -44,7 +44,7 @@ El dispositivo de vídeo de bus de máquina virtual de Microsoft es un adaptador
   
 *Se degradará el rendimiento de vídeo para las siguientes máquinas virtuales:*  
   
-@no__t: 0list de nombres de máquina virtual >  
+\<lista de nombres de máquina virtual >  
   
 ## <a name="resolution"></a>Resolución  
   

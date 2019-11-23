@@ -36,14 +36,14 @@ bdehdcfg -target {default|unallocated|<DriveLetter> shrink} -size <SizeinMB>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0SizeinMB >|Indica el número de megabytes (MB) que se va a utilizar para la nueva partición.|
+|\<SizeinMB >|Indica el número de megabytes (MB) que se va a utilizar para la nueva partición.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Si no especifica un tamaño, la herramienta utilizará el valor predeterminado de 300 MB. El tamaño mínimo de la unidad del sistema es 100 MB. Si va a almacenar las herramientas de recuperación del sistema u otras herramientas del sistema en la partición del sistema, deberá aumentar el tamaño consiguientemente.
 
 > [!NOTE]
-> El comando **size** no se puede combinar con el comando **target** \<DriveLetter > **Merge** .
+> El comando de **tamaño** no se puede combinar con el comando de \<de la > de la **mezcla** de **destino** de letraDeUnidad.
 
 ## <a name="BKMK_Examples"></a>Example
 

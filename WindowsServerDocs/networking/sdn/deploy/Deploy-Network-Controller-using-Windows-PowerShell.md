@@ -27,7 +27,7 @@ ms.locfileid: "71406118"
 En este tema se proporcionan instrucciones sobre el uso de Windows PowerShell para implementar la controladora de red en una o varias máquinas virtuales (VM) que ejecutan Windows Server 2016.
 
 >[!IMPORTANT]
->No implemente el rol de servidor de la controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \(VM @ no__t-1 que esté instalado en un host de Hyper-V. Después de haber instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper @ no__t-0V diferentes, debe habilitar los hosts de Hyper @ no__t-1V para redes definidas por software \(SDN @ no__t-3 agregando los hosts a la controladora de red mediante Windows PowerShell. comando **New-NetworkControllerServer**. Al hacerlo, habilita el Load Balancer de software de SDN para que funcione. Para obtener más información, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
+>No implemente el rol de servidor de la controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \(máquina virtual\) instalada en un host de Hyper-V. Después de haber instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper\-V diferentes, debe habilitar los hosts de Hyper\-V para redes definidas por software \(SDN\) agregando los hosts a la controladora de red mediante el comando de Windows PowerShell **New-NetworkControllerServer**. Al hacerlo, habilita el Load Balancer de software de SDN para que funcione. Para obtener más información, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
 
 En este tema se incluyen las siguientes secciones.
 
@@ -47,10 +47,10 @@ En este tema se incluyen las siguientes secciones.
 
 ## <a name="install-the-network-controller-server-role"></a>Instalar el rol de servidor de controlador de red
 
-Puede usar este procedimiento para instalar el rol de servidor de la controladora de red en una máquina virtual \(VM @ no__t-1.
+Puede usar este procedimiento para instalar el rol de servidor de la controladora de red en una máquina virtual \(\)de máquinas virtuales.
 
 >[!IMPORTANT]
->No implemente el rol de servidor de la controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \(VM @ no__t-1 que esté instalado en un host de Hyper-V. Después de haber instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper @ no__t-0V diferentes, debe habilitar los hosts de Hyper @ no__t-1V para las redes definidas por software \(SDN @ no__t-3 agregando los hosts a la controladora de red. Al hacerlo, habilita el Load Balancer de software de SDN para que funcione.
+>No implemente el rol de servidor de la controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \(máquina virtual\) instalada en un host de Hyper-V. Después de haber instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper\-V diferentes, debe habilitar los hosts de Hyper\-V para redes definidas por software \(SDN\) agregando los hosts a la controladora de red. Al hacerlo, habilita el Load Balancer de software de SDN para que funcione.
 
 El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o grupo equivalente.  
 

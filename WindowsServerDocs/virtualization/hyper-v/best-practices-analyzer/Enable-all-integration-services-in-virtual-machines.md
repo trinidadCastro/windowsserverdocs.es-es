@@ -19,11 +19,11 @@ ms.locfileid: "71364889"
 ---
 # <a name="enable-all-integration-services-in-virtual-machines"></a>Habilitar todos los servicios de integración en máquinas virtuales
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2016
 
 Para más información acerca de los análisis y los procedimientos recomendados, vea [Analizador de procedimientos recomendados](https://go.microsoft.com/fwlink/?LinkId=122786).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -40,7 +40,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
   
 *Es posible que el servicio o la característica de integración no funcionen correctamente para las siguientes máquinas virtuales:*  
   
-@no__t: 0list de nombres de máquina virtual >  
+\<lista de nombres de máquina virtual >  
   
 ## <a name="resolution"></a>Resolución  
   

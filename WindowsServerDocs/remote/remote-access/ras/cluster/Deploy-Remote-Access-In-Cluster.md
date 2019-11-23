@@ -23,10 +23,10 @@ ms.locfileid: "71404648"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Windows Server 2016 y Windows Server 2012 combinan el servicio de DirectAccess y acceso remoto \(RAS @ no__t-1 VPN en un solo rol de acceso remoto. Puede implementar el acceso remoto en varios escenarios empresariales. Esta información general proporciona una introducción al escenario empresarial para implementar varios servidores de acceso remoto en una carga de clúster equilibrada con el equilibrio de carga de red de Windows \(NLB @ no__t-1 o con un equilibrador de carga externo \(ELB @ no__t-3, como F5 Big @ no__t-4IP.  
+Windows Server 2016 y Windows Server 2012 combinan DirectAccess y el servicio de acceso remoto \(RAS\) VPN en un solo rol de acceso remoto. Puede implementar el acceso remoto en varios escenarios empresariales. Esta información general proporciona una introducción al escenario empresarial para implementar varios servidores de acceso remoto en una carga de clúster equilibrada con equilibrio de carga de red de Windows \(NLB\) o con un equilibrador de carga externo \(el\)de ELB, como F5 Big\-IP.  
 
 ## <a name="BKMK_OVER"></a>Descripción del escenario  
-La implementación de un clúster reúne varios servidores de acceso remoto en una sola unidad, que luego actúa como un único punto de contacto para equipos cliente remotos que se conectan a través de DirectAccess o VPN a la red corporativa interna con la dirección IP virtual externa @no__ Dirección t-0VIP @ no__t-1 del clúster de acceso remoto.  Se equilibra la carga del tráfico al clúster mediante Windows NLB o con un equilibrador de carga externo \(such como F5 Big @ no__t-1IP @ no__t-2.  
+La implementación de un clúster reúne varios servidores de acceso remoto en una sola unidad, que luego actúa como un único punto de contacto para equipos cliente remotos que se conectan a través de DirectAccess o VPN a la red corporativa interna con la dirección IP virtual externa \(VIP\) dirección del clúster de acceso remoto.  Se equilibra la carga del tráfico al clúster mediante Windows NLB o con un equilibrador de carga externo \(como F5 Big\-IP\).  
 
 ## <a name="prerequisites"></a>Requisitos previos  
 Antes de empezar a implementar este escenario, revise esta lista de requisitos importantes:  
@@ -43,9 +43,9 @@ Antes de empezar a implementar este escenario, revise esta lista de requisitos i
 
 -   Los nodos de carga equilibrada deben estar en la misma subred IPv4.  
 
--   En las implementaciones de ELB, si se necesita la administración de salida, los clientes de DirectAccess no pueden usar @ no__t-0Teredo. Solo se puede usar IPHTTPS para la comunicación end @ no__t-0to @ no__t-1Fin.  
+-   En las implementaciones de ELB, si se necesita la administración de salida, los clientes de DirectAccess no pueden usar&nbsp;Teredo. Solo se puede usar IPHTTPS para end\-a fin de\-la comunicación final.  
 
--   Asegúrese de que todas las revisiones conocidas de NLB @ no__t-0ELB estén instaladas.  
+-   Asegúrese de que todas las revisiones de NLB\/ELB están instaladas.  
 
 -   ISATAP no es compatible con la red corporativa. Si utilizas ISATAP, debes eliminarlo y usar IPv6 nativo.  
 
@@ -63,17 +63,17 @@ La recopilación de varios servidores en un clúster de servidores ofrece lo sig
 
 -   Escalabilidad. Un solo servidor de acceso remoto ofrece un nivel limitado de confiabilidad del servidor y un rendimiento escalable. Al agrupar los recursos de dos o más servidores en un único clúster, se aumenta la capacidad para la cantidad de usuarios y el rendimiento.  
 
--   Alta disponibilidad. Un clúster proporciona alta disponibilidad para el acceso siempre @ no__t-0on. Si se produce un error en un servidor del clúster, los usuarios remotos pueden seguir teniendo acceso a la red corporativa a través de un servidor diferente en el clúster. Todos los servidores del clúster tienen el mismo conjunto de direcciones IP virtuales de clúster \(VIP @ no__t-1, a la vez que mantienen una única dirección IP dedicada para cada servidor.  
+-   Alta disponibilidad. Un clúster proporciona alta disponibilidad para siempre\-en el acceso. Si se produce un error en un servidor del clúster, los usuarios remotos pueden seguir teniendo acceso a la red corporativa a través de un servidor diferente en el clúster. Todos los servidores del clúster tienen el mismo conjunto de direcciones IP virtuales \(VIP\), a la vez que mantienen una única dirección IP dedicada para cada servidor.  
 
--   Facilite @ no__t-0of @ no__t-1Management. Un clúster permite la administración de varios servidores como una sola entidad. La configuración compartida se puede establecer fácilmente en el servidor del clúster. La configuración de acceso remoto se puede administrar desde cualquiera de los servidores del clúster o de forma remota mediante Herramientas de administración remota del servidor \(RSAT @ no__t-1. Además, se puede supervisar todo el clúster desde una única consola de administración de acceso remoto.  
+-   Facilite la\-de la administración de\-. Un clúster permite la administración de varios servidores como una sola entidad. La configuración compartida se puede establecer fácilmente en el servidor del clúster. La configuración de acceso remoto se puede administrar desde cualquiera de los servidores del clúster o de forma remota mediante Herramientas de administración remota del servidor \(RSAT\). Además, se puede supervisar todo el clúster desde una única consola de administración de acceso remoto.  
 
 ## <a name="BKMK_NEW"></a>Roles y características incluidos en este escenario  
 En la siguiente tabla, se muestran los roles y características requeridos para el escenario:  
 
-|Role @ no__t-0feature|Compatibilidad con este escenario|  
+|Característica de\/de roles|Compatibilidad con este escenario|  
 |---------|-----------------|  
-|Rol de acceso remoto|El rol se instala y desinstala mediante la consola del Administrador del servidor. Engloba tanto DirectAccess, que antes era una característica de Windows Server 2008 R2, como los servicios de enrutamiento y acceso remoto \(RRAS @ no__t-1, que anteriormente era un servicio de rol de servicios de acceso y directivas de redes \(NPAS @ no__t-3 rol de servidor. El rol de acceso remoto consta de dos componentes:<br /><br />-Always On VPN y los servicios de enrutamiento y acceso remoto \(RRAS @ no__t-1 VPN: DirectAccess y VPN se administran juntos en la consola de administración de acceso remoto.<br />-Enrutamiento RRAS: las características de enrutamiento RRAS se administran en la consola de enrutamiento y acceso remoto heredada.<br /><br />Las dependencias son las siguientes:<br /><br />-Internet Information Services \(IIS @ no__t-1 servidor Web: esta característica es necesaria para configurar el servidor de ubicación de red y el sondeo Web predeterminado.<br />-Windows Internal Database: se usa para las cuentas locales en el servidor de acceso remoto.|  
-|Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<br /><br />-Se instala de forma predeterminada en un servidor de acceso remoto cuando se instala el rol de acceso remoto y es compatible con la interfaz de usuario de la consola de administración remota.<br />-Se puede instalar opcionalmente en un servidor que no ejecute el rol de servidor de acceso remoto. En este caso, se usa para la administración remota de un equipo de acceso remoto que ejecuta DirectAccess y VPN.<br /><br />La característica de herramientas de administración de acceso remoto consiste de los siguientes elementos:<br /><br />-Herramientas de línea de comandos y GUI de acceso remoto<br />-Módulo de acceso remoto para Windows PowerShell<br /><br />Las dependencias incluyen:<br /><br />-Consola de administración de directivas de grupo<br />-Kit de administración del administrador de conexiones RAS \(CMAK @ no__t-1<br />-Windows PowerShell 3,0<br />-Infraestructura y herramientas de administración de gráficos|  
+|Rol de acceso remoto|El rol se instala y desinstala mediante la consola del Administrador del servidor. Engloba tanto DirectAccess, que antes era una característica de Windows Server 2008 R2, como los servicios de enrutamiento y acceso remoto \(RRAS\), que antes era un servicio de rol en la Directiva de red y los servicios de acceso \(NPAS\) rol de servidor. El rol de acceso remoto consta de dos componentes:<br /><br />-Always On servicios de enrutamiento y acceso remoto \(RRAS\) VPN: DirectAccess y VPN se administran juntos en la consola de administración de acceso remoto.<br />-Enrutamiento RRAS: las características de enrutamiento RRAS se administran en la consola de enrutamiento y acceso remoto heredada.<br /><br />Las dependencias son las siguientes:<br /><br />-Internet Information Services \(servidor Web\) IIS: esta característica es necesaria para configurar el servidor de ubicación de red y el sondeo Web predeterminado.<br />-Windows Internal Database: se usa para las cuentas locales en el servidor de acceso remoto.|  
+|Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<br /><br />-Se instala de forma predeterminada en un servidor de acceso remoto cuando se instala el rol de acceso remoto y es compatible con la interfaz de usuario de la consola de administración remota.<br />-Se puede instalar opcionalmente en un servidor que no ejecute el rol de servidor de acceso remoto. En este caso, se usa para la administración remota de un equipo de acceso remoto que ejecuta DirectAccess y VPN.<br /><br />La característica de herramientas de administración de acceso remoto consiste de los siguientes elementos:<br /><br />-Herramientas de línea de comandos y GUI de acceso remoto<br />-Módulo de acceso remoto para Windows PowerShell<br /><br />Las dependencias incluyen:<br /><br />-Consola de administración de directivas de grupo<br />-Kit de administración del administrador de conexiones RAS \(CMAK\)<br />-Windows PowerShell 3,0<br />-Infraestructura y herramientas de administración de gráficos|  
 |Equilibrio de carga de red|Esta característica ofrece equilibrio de carga en un clúster con Windows NLB.|  
 
 ## <a name="BKMK_HARD"></a>Requisitos de hardware  
@@ -81,7 +81,7 @@ Los requisitos de hardware para este escenario incluyen los siguientes:
 
 -   Al menos dos equipos que cumplan los requisitos de hardware para Windows Server 2012.  
 
--   En el escenario de Load Balancer externo, se requiere hardware dedicado \(i. e. F5 BigIP @ no__t-1.  
+-   En el escenario de Load Balancer externo, se requiere hardware dedicado \(es decir, F5 BigIP\).  
 
 -   Para probar el escenario, debe tener al menos un equipo que ejecute Windows 10 configurado como Always On cliente VPN.   
 
@@ -90,28 +90,28 @@ Hay varios requisitos para este escenario:
 
 -   Requisitos de software para la implementación de un solo servidor. Para obtener más información, vea [implementar un único servidor de DirectAccess con configuración avanzada](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md). Un solo acceso remoto).  
 
--   Además de los requisitos de software para un solo servidor, hay varios requisitos de Cluster @ no__t-0specific:  
+-   Además de los requisitos de software para un solo servidor, hay varios requisitos específicos de\-de clúster:  
 
-    -   En cada servidor de clúster el nombre de sujeto del certificado IP @ no__t-0HTTPS debe coincidir con la dirección ConnectTo. Una implementación de clúster admite una combinación de certificados comodín y no @ no__t-0wildcard en servidores de clúster.  
+    -   En cada servidor de clúster, el nombre de sujeto del certificado HTTPS\-IP debe coincidir con la dirección ConnectTo. Una implementación de clúster admite una combinación de certificados comodín y no\-comodín en servidores de clúster.  
 
     -   Si el servidor de ubicación de red está instalado en el servidor de acceso remoto, el certificado del servidor de ubicación de red debe tener el mismo nombre de firmante en cada servidor de clúster. Además, el nombre del certificado del servidor de ubicación de red no debe tener el mismo nombre que cualquier otro servidor en la implementación de DirectAccess.  
 
-    -   Los certificados de IP @ no__t-0HTTPS y el servidor de ubicación de red se deben emitir con el mismo método con el que se emitió el certificado para el servidor único. Por ejemplo, si el servidor único usa una entidad de certificación pública \(CA @ no__t-1, todos los servidores del clúster deben tener un certificado emitido por una CA pública. O bien, si el servidor único usa un certificado Self @ no__t-0signed para IP @ no__t-1HTTPS, todos los servidores del clúster deben hacer lo mismo.  
+    -   Los certificados de servidor de ubicación de red y HTTPS de IP\-se deben emitir con el mismo método con el que se emitió el certificado para el servidor único. Por ejemplo, si el servidor único usa una entidad de certificación pública \(CA\), todos los servidores del clúster deben tener un certificado emitido por una CA pública. O bien, si el servidor único usa un certificado firmado\-para IP\-HTTPS, todos los servidores del clúster deben hacerlo de la misma manera.  
 
     -   El prefijo IPv6 asignado a equipos clientes de DirectAccess en clústeres de servidor debe ser de 59 bits. Si VPN está habilitado, el prefijo VPN también debe ser de 59 bits.  
 
 ## <a name="KnownIssues"></a>Problemas conocidos  
 Los problemas que se mencionan a continuación son problemas conocidos de la configuración de un escenario de clúster:  
 
--   Después de configurar DirectAccess en una implementación de IPv4 @ no__t-0only con un solo adaptador de red, y después de la dirección IPv6 de DNS64 \(El predeterminada que contiene ": 3333::" \) se configura automáticamente en el adaptador de red, intentando habilitar la carga de @ no__t-3balancing a través de la consola de administración de acceso remoto provoca un aviso al usuario para que proporcione una DIP de IPv6. Si se proporciona una DIP de IPv6, se produce el siguiente error de configuración después de hacer clic en **Confirmar**: El parámetro es incorrecto.  
+-   Después de configurar DirectAccess en una implementación de IPv4\-solo con un adaptador de red único y después de que el DNS64 predeterminado \(la dirección IPv6 que contiene ": 3333::"\) se configura automáticamente en el adaptador de red, al intentar habilitar el equilibrio de\-de carga a través de la consola de administración de acceso remoto, se solicita al usuario que proporcione una DIP de IPv6. Si se proporciona una DIP de IPv6, después de hacer clic en **Confirmar** , se produce el siguiente error de configuración: el parámetro es incorrecto.  
 
     Para resolver este problema:  
 
     1.  Descargue la copia de seguridad y restaure los scripts desde [Back up and Restore Remote Access Configuration](https://gallery.technet.microsoft.com/Back-up-and-Restore-Remote-e157e6a6).  
 
-    2.  Realice una copia de seguridad de los GPO de acceso remoto mediante la copia de seguridad del script descargado @ no__t-0RemoteAccess. ps1  
+    2.  Realice una copia de seguridad de los GPO de acceso remoto mediante la copia de seguridad de script descargado\-RemoteAccess. ps1  
 
-    3.  Intente habilitar el equilibrio de carga hasta el paso en el que se produce el error. En el cuadro de diálogo habilitar equilibrio de carga, expanda el área de detalles, haga clic en @ no__t-0click en el área de detalles y, a continuación, haga clic en **copiar script**.  
+    3.  Intente habilitar el equilibrio de carga hasta el paso en el que se produce el error. En el cuadro de diálogo habilitar equilibrio de carga, expanda el área de detalles, haga clic con el botón secundario\-en el área de detalles y, a continuación, haga clic en **copiar script**.  
 
     4.  Abra el Bloc de notas y pegue el contenido del Portapapeles. Por ejemplo:  
 
@@ -129,6 +129,6 @@ Los problemas que se mencionan a continuación son problemas conocidos de la con
 
     7.  En una ventana de PowerShell con privilegios elevados, ejecute el comando del paso anterior.  
 
-    8.  Si se produce un error en el cmdlet mientras se ejecuta \(not debido a valores de entrada incorrectos @ no__t-1, ejecute el comando restore @ no__t-2RemoteAccess. PS1 y siga las instrucciones para asegurarse de que se mantiene la integridad de la configuración original.  
+    8.  Si se produce un error en el cmdlet mientras se está ejecutando \(no debido a valores de entrada incorrectos\), ejecute el comando restore\-RemoteAccess. PS1 y siga las instrucciones para asegurarse de que se mantiene la integridad de la configuración original.  
 
     9. Ahora puede volver a abrir la Consola de administración de acceso remoto.  

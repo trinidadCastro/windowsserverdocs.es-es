@@ -36,15 +36,15 @@ ksetup /getenctypeattr <DomainName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0DomainName >|Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso.|
+|\<DomainName >|Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Para ver el tipo de cifrado del vale de concesión de vales (TGT) de Kerberos y la clave de sesión, ejecute el comando **klist** y vea la salida.
 
 Si el comando se ejecuta correctamente o produce un error, se muestra un mensaje de estado cuando se completa correctamente o con errores.
 
-Para establecer el dominio al que desea conectarse y usar, ejecute el comando **ksetup/domain \<DomainName >** .
+Para establecer el dominio al que desea conectarse y usar, ejecute el comando **ksetup/domain \<nombredominio >** .
 
 ## <a name="BKMK_Examples"></a>Example
 

@@ -24,7 +24,7 @@ ms.locfileid: "71377435"
 
 
 
-Ejecuta un archivo en el equipo local. El archivo puede ser un script **cmd** .
+ejecuta un archivo en el equipo local. El archivo puede ser un script **cmd** .
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,9 +36,9 @@ exec <ScriptFile.cmd>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t -0ScriptFile. cmd >|Especifica el archivo de script que se va a ejecutar.|
+|\<ScriptFile. cmd >|Especifica el archivo de script que se va a ejecutar.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Este comando se usa para duplicar o restaurar datos como parte de una secuencia de copia de seguridad o restauración.
 -   Si se produce un error en el script, se devuelve un error y se cierra DiskShadow.

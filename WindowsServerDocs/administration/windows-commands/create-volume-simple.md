@@ -41,12 +41,12 @@ create volume simple [size=<n>] [disk=<n>] [align=<n>] [noerr]
   
 | Parámetro  |                                                                                                                            Descripción                                                                                                                            |
 |------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Size @ no__t-0 @ no__t-1  |                                                                  El tamaño del volumen en megabytes \(MB @ no__t-1. Si no se proporciona ningún tamaño, el nuevo volumen ocupará el espacio libre restante en el disco.                                                                   |
-| disco @ no__t-0 @ no__t-1  |                                                                                El disco dinámico en el que se crea el volumen. Si no se especifica ningún disco, se usa el disco actual.                                                                                |
-| align @ no__t-0 @ no__t-1 | Alinea todas las extensiones de volumen con el límite de alineación más cercano. Normalmente se usa con el número de unidad lógica RAID de hardware \(LUN @ no__t-1 para mejorar el rendimiento. *n* es el número de kilobytes \( KB @ no__t-2 desde el principio del disco hasta el límite de alineación más cercano. |
-|   Noerr    |                               Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.                                |
+| tamaño\=<n>  |                                                                  Tamaño del volumen en megabytes \(MB\). Si no se proporciona ningún tamaño, el nuevo volumen ocupará el espacio libre restante en el disco.                                                                   |
+| <n> de\=de disco  |                                                                                El disco dinámico en el que se crea el volumen. Si no se especifica ningún disco, se usa el disco actual.                                                                                |
+| alinear\=<n> | Alinea todas las extensiones de volumen con el límite de alineación más cercano. Normalmente se usa con el número de unidad lógica RAID de hardware \(matrices\) LUN para mejorar el rendimiento. *n* es el número de kilobytes \(KB\) desde el principio del disco hasta el límite de alineación más cercano. |
+|   Noerr    |                               solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.                                |
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
   
 -   Después de crear el volumen, el foco se desplaza automáticamente al nuevo volumen.  
   
@@ -57,7 +57,7 @@ Para crear un volumen de 1000 megabytes de tamaño, en el disco 1, escriba:
 create volume simple size=1000 disk=1  
 ```  
   
-#### <a name="additional-references"></a>Referencias adicionales  
+#### <a name="additional-references"></a>referencias adicionales  
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   
 

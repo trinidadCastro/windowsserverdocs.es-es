@@ -43,7 +43,7 @@ A partir de Windows Server 2012, el Asistente para configuración de Active Dire
 > [!WARNING]  
 > El Asistente para instalación de Active Directory Domain Services heredado (Dcpromo. exe) está en desuso a partir de Windows Server 2012.  
 
-En el [nivel &#40;de instalación&#41;Active Directory Domain Services 100](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md), los procedimientos de la interfaz de usuario muestran cómo iniciar el Asistente para agregar roles para instalar los archivos binarios de la función AD DS Server y, a continuación, ejecutar el Asistente para configuración de Active Directory Domain Services para completar la instalación del controlador de dominio. En los ejemplos de Windows PowerShell se muestra cómo completar ambos pasos con un cmdlet de implementación de AD DS.  
+En el [nivel &#40;de instalación&#41;de Active Directory Domain Services 100](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md), los procedimientos de la interfaz de usuario muestran cómo iniciar el Asistente para agregar roles para instalar los archivos binarios de la función AD DS Server y, a continuación, ejecutar el Asistente para configuración de Active Directory Domain Services para completar la instalación del controlador de dominio. En los ejemplos de Windows PowerShell se muestra cómo completar ambos pasos con un cmdlet de implementación de AD DS.  
   
 ## <a name="BKMK_NewAdprep"></a>Integración de adprep. exe
 
@@ -116,11 +116,11 @@ Por ejemplo, los requisitos previos relacionados con Adprep incluyen:
 
 Otras comprobaciones de requisitos previos traídos del Asistente para la instalación de Active Directory heredado (dcpromo.exe) incluyen:  
 
-- Comprobación de nombre de bosque: se asegura de que el nombre del bosque es válido y no existe actualmente.  
-- Comprobación de nombre NetBIOS: comprueba que el nombre NetBIOS facilitado es válido y no tiene conflictos con otros nombres.  
+- Comprobación de nombre de bosque: asegura que el nombre de bosque sea válido y no exista en la actualidad.  
+- Comprobación de nombre NetBIOS: comprueba que el nombre NetBIOS proporcionado es válido y no tiene conflictos con otros nombres.  
 - Comprobación de ruta de acceso del componente: comprueba que las rutas de acceso para SYSVOL, registros y la base de datos de Active Directory, son válidas y que hay suficiente espacio disponible en disco para ellas.  
-- Comprobación de nombre de dominio secundario: se asegura de que el nombre de dominio primario y el nuevo secundario son válidos, y que no tienen conflictos con otros dominios.  
-- Comprobación de nombre de dominio de árbol: se asegura de que el nombre de árbol especificado es válido y de que no existe actualmente.  
+- Comprobación de nombre de dominio secundario: asegura que el nombre de dominio primario y el nuevo secundario son válidos, y que no tienen conflictos con otros dominios.  
+- Comprobación de nombre de dominio de árbol: asegura que el nombre de árbol especificado sea válido y no exista en la actualidad.  
 
 ## <a name="BKMK_SystemReqs"></a>Requisitos del sistema
 
@@ -176,7 +176,7 @@ En esta sección se enumeran algunos de los problemas conocidos que afectan a la
 
    En este caso, debe ejecutar el cmdlet de ADDSDeployment independientemente del cmdlet que no admite procesos nativos de 64 bits.  
 
-- Hay un nuevo sistema de archivos en Windows Server 2012 llamado sistema de archivos resistente. No almacene SYSVOL, archivos de registro o la base de datos de Active Directory en un volumen de datos formateado con el Sistema de archivos resistente (ReFS). Para obtener más información sobre ReFS, consulte @no__t 0Building el sistema de archivos de la próxima generación para Windows: ReFS @ no__t-0.  
+- Hay un nuevo sistema de archivos en Windows Server 2012 llamado sistema de archivos resistente. No almacene SYSVOL, archivos de registro o la base de datos de Active Directory en un volumen de datos formateado con el Sistema de archivos resistente (ReFS). Para obtener más información sobre ReFS, consulte el tema sobre cómo [crear el sistema de archivos de la próxima generación para Windows: ReFS](http://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)(en inglés).  
 - En Administrador del servidor, los servidores que ejecutan AD DS u otros roles de servidor en una instalación Server Core y se han actualizado a Windows Server 2012, el rol de servidor puede aparecer con estado rojo, aunque los eventos y el estado se recopilen según lo previsto. Los servidores que ejecutan una instalación Server Core de una versión preliminar de Windows Server 2012 también pueden verse afectados.  
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>Si un error impide la replicación crítica, la instalación de Servicios de dominio de Active Directory no responde

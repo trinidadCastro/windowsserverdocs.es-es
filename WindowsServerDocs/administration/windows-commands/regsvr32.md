@@ -41,8 +41,8 @@ regsvr32 [/u] [/s] [/n] [/i[:cmdline]] <DllName>
 |/u|Anula el registro del servidor.|
 |/s|Ejecuta **regsvr32** sin mostrar mensajes.|
 |/n|Ejecuta **regsvr32** sin llamar a **DllRegisterServer**. (Requiere el parámetro **/i** ).|
-|/i: @no__t 0cmdline >|Pasa una cadena de línea de comandos (*cmdline*) opcional a **DllInstall**. Si usa este parámetro junto con el parámetro **/u** , llama a **DllUninstall**.|
-|@no__t 0DllName >|Nombre del archivo. dll que se va a registrar.|
+|/i:\<cmdline >|Pasa una cadena de línea de comandos (*cmdline*) opcional a **DllInstall**. Si usa este parámetro junto con el parámetro **/u** , llama a **DllUninstall**.|
+|\<DllName >|Nombre del archivo. dll que se va a registrar.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="BKMK_examples"></a>Example

@@ -40,18 +40,18 @@ move [{/y | /-y}] [<Source>] [<Target>]
 |---------|-----------|
 |/y|Suprime el mensaje para confirmar que desea sobrescribir un archivo de destino existente.|
 |/-y|Hace que se pida confirmación de que desea sobrescribir un archivo de destino existente.|
-|@no__t 0Source >|Especifica la ruta de acceso y el nombre del archivo o los archivos que se van a trasladar. Si desea trasladar o cambiar el nombre de un directorio, el *origen* debe ser la ruta de acceso y el nombre del directorio actual.|
-|@no__t 0Target >|Especifica la ruta de acceso y el nombre al que se van a trasladar los archivos. Si desea trasladar o cambiar el nombre de un directorio, el *destino* debe ser la ruta de acceso y el nombre del directorio deseado.|
+|> de \<de origen|Especifica la ruta de acceso y el nombre del archivo o los archivos que se van a trasladar. Si desea trasladar o cambiar el nombre de un directorio, el *origen* debe ser la ruta de acceso y el nombre del directorio actual.|
+|> de destino de \<|Especifica la ruta de acceso y el nombre al que se van a trasladar los archivos. Si desea trasladar o cambiar el nombre de un directorio, el *destino* debe ser la ruta de acceso y el nombre del directorio deseado.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   La opción de línea de comandos **/y** podría estar preestablecida en la variable de entorno COPYCMD. Puede invalidarlo con **/-y** en la línea de comandos. El valor predeterminado es preguntar antes de sobrescribir los archivos a menos que el comando de **copia** se ejecute desde un script de batch.
 -   Si se mueven archivos cifrados a un volumen que no admite Sistema de cifrado de archivos (EFS), se produce un error. Descifre primero los archivos o mueva los archivos a un volumen que admita EFS.
 
 ## <a name="BKMK_examples"></a>Example
 
-Para trasladar todos los archivos con la extensión. xls del directorio \data al directorio \Second_Q\Reports, escriba:
+Para migrar todos los archivos con la extensión. xls del directorio \data al directorio \ Second_Q \Reports, escriba:
 ```
 move \data\*.xls \second_q\reports\ 
 ```

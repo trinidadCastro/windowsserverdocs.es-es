@@ -16,7 +16,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71369677"
 ---
 # <a name="health-service-reports"></a>Servicio de mantenimiento informes
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 ## <a name="what-are-reports"></a>¿Qué son los informes?  
 
@@ -48,7 +48,7 @@ Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 
 ### <a name="connect"></a>Conectar
 
-Para consultar el Servicio de mantenimiento, tendrá que establecer un **CimSession** con el clúster. Para ello, necesitará algunas cosas que solo están disponibles en .NET completo, lo que significa que no puede hacerlo directamente desde una aplicación web o móvil. Estos ejemplos de código usarán C @ no__t-0, la opción más sencilla para esta capa de acceso a datos.
+Para consultar el Servicio de mantenimiento, tendrá que establecer un **CimSession** con el clúster. Para ello, necesitará algunas cosas que solo están disponibles en .NET completo, lo que significa que no puede hacerlo directamente desde una aplicación web o móvil. Estos ejemplos de código usarán C\#, la opción más sencilla para esta capa de acceso a datos.
 
 ``` 
 ...
@@ -80,7 +80,7 @@ Se recomienda que construya la contraseña **SecureString** directamente a parti
 
 Con el **CimSession** establecido, puede consultar instrumental de administración de Windows (WMI) en el clúster.
 
-Antes de que pueda obtener errores o métricas, deberá obtener instancias de varios objetos pertinentes. En primer lugar, **msft @ no__t-1StorageSubSystem** , que representa espacios de almacenamiento directo en el clúster. Con esto, puede obtener cada **msft @ no__t-1StorageNode** en el clúster y cada **msft @ no__t-3Volume**, los volúmenes de datos. Por último, también necesitará **msft @ no__t-1StorageHealth**, el propio servicio de mantenimiento.
+Antes de que pueda obtener errores o métricas, deberá obtener instancias de varios objetos pertinentes. En primer lugar, el **MSFT\_StorageSubSystem** que representa espacios de almacenamiento directo en el clúster. Con esto, puede obtener todos los **StorageNode de msft\_** en el clúster y todos los volúmenes de **\_de msft**, los volúmenes de datos. Por último, necesitará el **MSFT\_StorageHealth**, el servicio de mantenimiento mismo.
 
 ```
 CimInstance Cluster;
@@ -209,7 +209,7 @@ No es necesario decir que estas métricas se pueden visualizar, almacenar en una
 
 Cada ejemplo de métricas es un "informe" que contiene muchos "registros" correspondientes a las métricas individuales.
 
-En el esquema completo, inspeccione las clases **msft @ no__t-1StorageHealthReport** y **msft @ no__t-3HealthRecord** en *storagewmi. mof*.
+En el esquema completo, inspeccione las clases **msft\_StorageHealthReport** y **msft\_HealthRecord** en *storagewmi. mof*.
 
 Cada métrica tiene solo tres propiedades, por esta tabla.
 
@@ -227,7 +227,7 @@ A continuación se muestran las métricas disponibles para cada ámbito en Windo
 
 ### <a name="msft_storagesubsystem"></a>MSFT_StorageSubSystem
 
-| **Name**                        | **Participa** |
+| **Nombre**                        | **Participa** |
 |---------------------------------|-----------|
 | CPUUsage                        | 4         |
 | CapacityPhysicalPooledAvailable | 0         |
@@ -251,7 +251,7 @@ A continuación se muestran las métricas disponibles para cada ámbito en Windo
 
 ### <a name="msft_storagenode"></a>MSFT_StorageNode
 
-| **Name**            | **Participa** |
+| **Nombre**            | **Participa** |
 |---------------------|-----------|
 | CPUUsage            | 4         |
 | IOLatencyAverage    | 3         |
@@ -268,7 +268,7 @@ A continuación se muestran las métricas disponibles para cada ámbito en Windo
 
 ### <a name="msft_volume"></a>MSFT_Volume
 
-| **Name**            | **Participa** |
+| **Nombre**            | **Participa** |
 |---------------------|-----------|
 | CapacityAvailable   | 0         |
 | CapacityTotal       | 0         |
@@ -282,6 +282,6 @@ A continuación se muestran las métricas disponibles para cada ámbito en Windo
 | IOThroughputTotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 - [Servicio de mantenimiento en Windows Server 2016](health-service-overview.md)

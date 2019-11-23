@@ -45,17 +45,17 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 |Parámetro|Descripción|
 |-------|--------|
 |/Update|Actualiza la información de la ruta de acceso del perfil para <*nombre de usuario*> en dominio <*DomainName*> para <*Profilepath*>.|
-|/Domain: @no__t 0DomainName >|Especifica el nombre del dominio en el que se aplica la operación.|
+|/Domain:\<nombredominio >|Especifica el nombre del dominio en el que se aplica la operación.|
 |/local|Aplica la operación solo a cuentas de usuario locales.|
-|/Profile: @no__t 0path >|Especifica la ruta de acceso del perfil tal y como se muestra en el Servicios de Escritorio remoto extensiones de usuarios y grupos locales y usuarios y equipos de Active Directory.|
-|@no__t 0UserName >|Especifica el nombre del usuario para el que desea actualizar o consultar la ruta de acceso del perfil del servidor.|
-|/Copy|Copia la información de configuración de usuario de \<*SourceUser*> a \<*DestinationUser*> y actualiza la información de la ruta de acceso del perfil de \<*DestinationUser*> a \<*Profilepath*>. @No__t-0*SourceUser*> y \< >*DestinationUser*deben ser locales o deben estar en el dominio \<*nombreDominio*>.|
-|@no__t 0Src_usr >|Especifica el nombre del usuario del que desea copiar la información de configuración de usuario.|
-|@no__t 0Dest_usr >|Especifica el nombre del usuario al que desea copiar la información de configuración de usuario.|
+|/Profile:\<ruta de acceso >|Especifica la ruta de acceso del perfil tal y como se muestra en el Servicios de Escritorio remoto extensiones de usuarios y grupos locales y usuarios y equipos de Active Directory.|
+|\<nombre de usuario >|Especifica el nombre del usuario para el que desea actualizar o consultar la ruta de acceso del perfil del servidor.|
+|/Copy|Copia la información de configuración de usuario de \<*SourceUser*> a \<*DestinationUser*> y actualiza la información de la ruta de acceso del perfil de \<*DestinationUser*> a \<*Profilepath*>. Tanto \<*SourceUser*> como \<> *DestinationUser*deben ser locales o deben estar en el dominio \<*nombreDominio*>.|
+|\<Src_usr >|Especifica el nombre del usuario del que desea copiar la información de configuración de usuario.|
+|\<Dest_usr >|Especifica el nombre del usuario al que desea copiar la información de configuración de usuario.|
 |/q|Muestra la ruta de acceso del perfil actual del usuario para el que desea consultar la ruta de acceso del perfil del servidor.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 -   El comando **tsprof** solo está disponible cuando se ha instalado el servicio de rol Terminal Server en un equipo que ejecuta windows Server 2008 o el servicio de rol host de sesión de escritorio remoto en un equipo que ejecuta windows Server 2008 R2.
 
 ## <a name="BKMK_examples"></a>Example

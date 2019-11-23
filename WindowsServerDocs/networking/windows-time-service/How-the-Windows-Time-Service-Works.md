@@ -171,7 +171,7 @@ Cada uno de estos tipos de sincronización se describe en la sección siguiente.
 La sincronización basada en una jerarquía de dominios usa el AD DS jerarquía de dominios para buscar una fuente confiable con la que sincronizar la hora. En función de la jerarquía de dominios, el servicio de hora de Windows determina la precisión de cada servidor horario. En un bosque de Windows Server 2003, el equipo que contiene la función de maestro de operaciones del emulador del controlador de dominio principal (PDC), ubicado en el dominio raíz del bosque, contiene la posición del mejor origen de hora, a menos que se haya configurado otro origen de hora confiable. En la ilustración siguiente se muestra una ruta de acceso de sincronización de hora entre equipos en una jerarquía de dominios.  
   
 **Sincronización de hora en una jerarquía de AD DS**  
-![Windows Time @ no__t-1
+](../media/Windows-Time-Service/How-the-Windows-Time-Service-Works/trnt_ntw_adhc.gif) de hora de Windows ![
   
 #### <a name="reliable-time-source-configuration"></a>Configuración de origen de tiempo de confianza  
 Un equipo configurado para ser un origen de hora confiable se identifica como la raíz del servicio de hora. La raíz del servicio de hora es el servidor autoritativo para el dominio y se configura normalmente para recuperar la hora de un servidor NTP externo o un dispositivo de hardware. Un servidor horario puede configurarse como un origen de hora confiable para optimizar el tiempo que se transfiere a través de la jerarquía de dominios. Si un controlador de dominio está configurado para ser un origen de hora confiable, el servicio Inicio de sesión de red anuncia ese controlador de dominio como un origen de hora confiable cuando inicia sesión en la red. Cuando otros controladores de dominio buscan un origen de hora con el que sincronizar, eligen primero una fuente confiable si hay alguna disponible.  
@@ -203,7 +203,7 @@ En la tabla siguiente se enumeran las consultas que realiza un controlador de do
   
 **Consultas de origen de tiempo del controlador de dominio**  
   
-|Número de consulta|Controlador de dominio|Location|Confiabilidad del origen de tiempo|  
+|Número de consulta|Controlador de dominio|Ubicación|Confiabilidad del origen de tiempo|  
 |----------------|---------------------|------------|------------------------------|  
 |1|Controlador de dominio primario|En el sitio|Prefiere un origen de hora confiable, pero puede sincronizarse con un origen de hora no confiable si es todo lo que está disponible.|  
 |2|Controlador de dominio local|En el sitio|Solo se sincroniza con un origen de hora confiable.|  
@@ -262,7 +262,7 @@ El servicio de hora de Windows se comunica en una red para identificar los oríg
 |NTP|123|N/D|  
 |SNTP|123|N/D|  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Referencia técnica del servicio de hora de windows](windows-time-service-tech-ref.md)
-[herramientas y configuración del servicio de hora de Windows](Windows-Time-Service-Tools-and-Settings.md)
- artículo de[Microsoft Knowledge Base 902229](https://go.microsoft.com/fwlink/?LinkId=186066)
+[herramientas y configuración del servicio de hora de Windows
+el artículo de](Windows-Time-Service-Tools-and-Settings.md) [Microsoft Knowledge Base 902229](https://go.microsoft.com/fwlink/?LinkId=186066)

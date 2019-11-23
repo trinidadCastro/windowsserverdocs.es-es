@@ -43,14 +43,14 @@ assoc [<.ext>[=[<FileType>]]]
 |Parámetro|Descripción|
 |---------|-----------|
 |<. ext >|Especifica la extensión de nombre de archivo.|
-|@no__t 0FileType >|Especifica el tipo de archivo que se va a asociar a la extensión de nombre de archivo especificada.|
+|\<FileType >|Especifica el tipo de archivo que se va a asociar a la extensión de nombre de archivo especificada.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Para quitar la Asociación de tipo de archivo para una extensión de nombre de archivo, agregue un espacio en blanco después del signo igual presionando la barra ESPACIAdora.
 -   Para ver los tipos de archivo actuales que tienen definidas cadenas de comandos abiertas, use el comando **ftype** .
--   Para redirigir la salida de **Assoc** a un archivo de texto, utilice el operador de redireccionamiento **>** .
+-   Para redirigir la salida de **Assoc** a un archivo de texto, utilice el operador de redireccionamiento de **>** .
 
 ## <a name="BKMK_examples"></a>Example
 

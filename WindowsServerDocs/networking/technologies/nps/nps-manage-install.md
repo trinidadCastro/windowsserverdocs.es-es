@@ -20,7 +20,7 @@ ms.locfileid: "71396185"
 Puede usar este tema para instalar el servidor de directivas de redes (NPS) mediante Windows PowerShell o el Asistente para agregar roles y características. NPS es un servicio de rol del rol de servidor Servicios de acceso y directivas de redes.
 
 > [!NOTE]
-> De forma predeterminada, NPS escucha el tráfico RADIUS en los puertos 1812, 1813, 1645 y 1646 en todos los adaptadores de red instalados. Si el Firewall de Windows con seguridad avanzada está habilitado al instalar NPS, las excepciones de Firewall para estos puertos se crean automáticamente durante el proceso de instalación del tráfico del Protocolo de Internet versión 6 \(IPv6 @ no__t-1 y de IPv4. Si los servidores de acceso a la red están configurados para enviar tráfico RADIUS a través de puertos distintos de los predeterminados, quite las excepciones creadas en firewall de Windows con seguridad avanzada durante la instalación de NPS y cree excepciones para los puertos que se usan para Tráfico RADIUS.
+> De forma predeterminada, NPS escucha el tráfico RADIUS en los puertos 1812, 1813, 1645 y 1646 en todos los adaptadores de red instalados. Si el Firewall de Windows con seguridad avanzada está habilitado al instalar NPS, las excepciones de Firewall para estos puertos se crean automáticamente durante el proceso de instalación del Protocolo de Internet versión 6 \(IPv6\) y el tráfico IPv4. Si los servidores de acceso a la red están configurados para enviar tráfico RADIUS a través de puertos distintos de los predeterminados, quite las excepciones creadas en firewall de Windows con seguridad avanzada durante la instalación de NPS y cree excepciones para los puertos que se usan para Tráfico RADIUS.
 
 **Credenciales administrativas**
 

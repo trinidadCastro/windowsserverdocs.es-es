@@ -27,7 +27,7 @@ Netsh también proporciona una característica de scripting que permite ejecutar
 
 ## <a name="netsh-contexts"></a>Contextos de Netsh
 
-Netsh interactúa con otros componentes del sistema operativo mediante el uso de la biblioteca dinámica @ no__t-0link \(DLL @ no__t-2. 
+Netsh interactúa con otros componentes del sistema operativo mediante Dynamic\-Link Library \(DLL\) archivos. 
 
 Cada archivo DLL de la aplicación auxiliar netsh proporciona un amplio conjunto de características denominado *contexto*, que es un grupo de comandos específicos de un rol o característica del servidor de red. Estos contextos amplían la funcionalidad de Netsh al proporcionar compatibilidad con la configuración y la supervisión de uno o varios servicios, utilidades o protocolos. Por ejemplo, Dhcpmon. dll proporciona netsh con el contexto y el conjunto de comandos necesarios para configurar y administrar los servidores DHCP.
 
@@ -94,7 +94,7 @@ A continuación se muestra una salida de ejemplo para estos comandos en un equip
 
 Los contextos netsh pueden contener comandos y contextos adicionales, denominados *subcontextos*. Por ejemplo, en el contexto de enrutamiento, puede cambiar a los subcontextos IP e IPv6.
 
-Para mostrar una lista de comandos y subcontextos que puede usar en un contexto, en el símbolo del sistema de Netsh, escriba el nombre del contexto y, a continuación, escriba **/?** o la **ayuda**de. Por ejemplo, para mostrar una lista de subcontextos y comandos que puede usar en el contexto de enrutamiento, en el símbolo del sistema de Netsh \(that es, **netsh @ no__t-2**\), escriba uno de los siguientes:
+Para mostrar una lista de comandos y subcontextos que puede usar en un contexto, en el símbolo del sistema de Netsh, escriba el nombre del contexto y, a continuación, escriba **/?** o la **ayuda**de. Por ejemplo, para mostrar una lista de subcontextos y comandos que puede usar en el contexto de enrutamiento, en el símbolo del sistema de Netsh \(es decir, **netsh&gt;** \), escriba uno de los siguientes:
 
 **¿enrutamiento/?**
 
@@ -116,7 +116,7 @@ Puede usar la siguiente leyenda de formato para interpretar y utilizar la sintax
 
 - El texto en *cursiva* es información que debe proporcionar mientras escribe el comando. Por ejemplo, si un comando tiene un parámetro denominado-*username*, debe escribir el nombre de usuario real.
 - El texto en **negrita** es información que debe escribir exactamente como se muestra mientras escribe el comando.
-- El texto seguido de un botón de puntos suspensivos \(... \) es un parámetro que se puede repetir varias veces en una línea de comandos.
+- El texto seguido de un botón de puntos suspensivos \(...\) es un parámetro que se puede repetir varias veces en una línea de comandos.
 - El texto entre corchetes [&nbsp;] es un elemento opcional.
 - El texto entre llaves {&nbsp;} con opciones separadas por una canalización proporciona un conjunto de opciones de las que debe seleccionar solo una, como `{enable|disable}`.
 - El texto al que se da formato con la fuente Courier es código o resultado del programa.
@@ -127,11 +127,11 @@ Para iniciar el shell de red y escribir Netsh en el símbolo del sistema o en Wi
 
 ### <a name="netsh"></a>netsh
 
-Netsh es una utilidad de scripting de línea de comandos que permite mostrar o modificar la configuración de red de un equipo que se está ejecutando actualmente, ya sea de forma local o remota. Si se usa sin parámetros, **netsh** abre el símbolo del sistema netsh. exe @no__t-clientes 1 es, **netsh @ no__t-3**\).
+Netsh es una utilidad de scripting de línea de comandos que permite mostrar o modificar la configuración de red de un equipo que se está ejecutando actualmente, ya sea de forma local o remota. Si se usa sin parámetros, **netsh** abre el símbolo del sistema netsh. exe \(es decir, **netsh&gt;** \).
 
 #### <a name="syntax"></a>Sintaxis
 
-**netsh**\[ **-a**&nbsp;*AliasFile*\] \[ **-c**&nbsp;*Context* 0 1 **-r**3*equiporemoto*5 6 **-u** 8  *DomainName @ no__t-20* 1 *nombreDeUsuario* 3 4 **-p**6*contraseña*8 @ no__t-29 @ No__t-30 1 {*NetshCommand*3 **-f**5*ScriptFile*} 7
+**netsh**\[ **-a**&nbsp;*AliasFile*\] \[ **-c**&nbsp;*Context* \] **\[-r**&nbsp;*equiporemoto*\] \[ **-u** \[ *domainname\\* \] *username* \] \[ **-p**&nbsp;*password* | \*\] \[{*NetshCommand* |  **-f**&nbsp; *ScriptFile*}\]
 
 #### <a name="parameters"></a>Parámetros
 
@@ -168,7 +168,7 @@ Opcional. Especifica que desea ejecutar el comando netsh en una cuenta de usuari
 
 ***`DomainName\\`***
 
-Opcional. Especifica el dominio en el que se encuentra la cuenta de usuario. El valor predeterminado es el dominio local si no se especifica *domainname @ no__t-1* .
+Opcional. Especifica el dominio en el que se encuentra la cuenta de usuario. El valor predeterminado es el dominio local si no se especifica *DomainName\\* .
 
 ***`UserName`***
 
@@ -199,7 +199,7 @@ Opcional. Especifica el script que desea ejecutar.
 Opcional. Muestra la ayuda en el símbolo del sistema de Netsh.
 
 > [!NOTE]
-> Si especifica **`-r`** seguido de otro comando, **netsh** ejecuta el comando en el equipo remoto y, a continuación, vuelve al símbolo del sistema cmd. exe. Si especifica **`-r`** sin otro comando, **netsh** se abre en modo remoto. El proceso es similar al uso de **set Machine** en el símbolo del sistema de Netsh. Cuando se usa **`-r`** , el equipo de destino solo se establece para la instancia actual de **netsh** . Después de salir y volver a escribir **netsh**, el equipo de destino se restablece como el equipo local. Los comandos **netsh** se pueden ejecutar en un equipo remoto mediante la especificación de un nombre de equipo almacenado en WINS, un nombre UNC, un nombre de Internet que debe resolver el servidor DNS o una dirección IP.
+> Si especifica **`-r`** seguido de otro comando, **netsh** ejecuta el comando en el equipo remoto y, a continuación, vuelve al símbolo del sistema cmd. exe. Si especifica **`-r`** sin otro comando, **netsh** se abre en modo remoto. El proceso es similar al uso de **set Machine** en el símbolo del sistema de Netsh. Cuando se usa **`-r`** , se establece el equipo de destino para la instancia actual de solo **netsh** . Después de salir y volver a escribir **netsh**, el equipo de destino se restablece como el equipo local. Los comandos **netsh** se pueden ejecutar en un equipo remoto mediante la especificación de un nombre de equipo almacenado en WINS, un nombre UNC, un nombre de Internet que debe resolver el servidor DNS o una dirección IP.
 
 **Escribir valores de cadena de parámetros para comandos Netsh**
 

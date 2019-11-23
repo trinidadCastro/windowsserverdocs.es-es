@@ -34,16 +34,16 @@ En Windows Server 2016, el servidor DNS ofrece compatibilidad mejorada en las á
   
 ## <a name="dns-policies"></a>Directivas de DNS
 
-Puede usar la Directiva DNS para la administración del tráfico basada en la ubicación geográfica, las respuestas de DNS inteligentes basadas en la hora del día, para administrar un solo servidor DNS configurado para la implementación de Split @ no__t-0brain, aplicar filtros en consultas DNS, etc. Los elementos siguientes proporcionan más detalles acerca de estas capacidades.
+Puede usar la Directiva DNS para la administración del tráfico basada en la ubicación geográfica, las respuestas de DNS inteligentes basadas en la hora del día, para administrar un solo servidor DNS configurado para la división de\-de cerebro, aplicar filtros en consultas DNS y mucho más. Los elementos siguientes proporcionan más detalles acerca de estas capacidades.
 
 -   **Equilibrio de carga de la aplicación.** Cuando haya implementado varias instancias de una aplicación en diferentes ubicaciones, puede usar la Directiva de DNS para equilibrar la carga de tráfico entre las distintas instancias de aplicación, asignando dinámicamente la carga de tráfico para la aplicación.
 
--   **Administración del tráfico basado en Geo @ no__t-1Location.** Puede usar la Directiva de DNS para permitir que los servidores DNS principal y secundario respondan a las consultas de cliente DNS en función de la ubicación geográfica del cliente y el recurso al que el cliente intenta conectarse, proporcionando al cliente la dirección IP del recurso. 
+-   **Administración de tráfico basada en la ubicación geográfica\-.** Puede usar la Directiva de DNS para permitir que los servidores DNS principal y secundario respondan a las consultas de cliente DNS en función de la ubicación geográfica del cliente y el recurso al que el cliente intenta conectarse, proporcionando al cliente la dirección IP del recurso. 
 
--   **Divida DNS de cerebro.** Con el DNS dividido @ no__t-0brain, los registros DNS se dividen en diferentes ámbitos de zona en el mismo servidor DNS y los clientes DNS reciben una respuesta en función de si los clientes son internos o externos. Puede configurar el DNS dividido @ no__t-0brain para las zonas integradas Active Directory o para las zonas de los servidores DNS independientes.
+-   **Divida DNS de cerebro.** Con el DNS de división\-cerebro, los registros DNS se dividen en diferentes ámbitos de zona en el mismo servidor DNS y los clientes DNS reciben una respuesta basada en si los clientes son internos o externos. Puede configurar el DNS de división\-cerebro para Active Directory zonas integradas o para zonas en servidores DNS independientes.
 
 -   **Filtra.** Puede configurar la Directiva de DNS para crear filtros de consulta basados en los criterios que proporcione. Los filtros de consulta de la Directiva de DNS permiten configurar el servidor DNS para responder de forma personalizada en función de la consulta DNS y el cliente DNS que envía la consulta DNS. 
--   **Análisis forense.** Puede usar la Directiva de DNS para redirigir a los clientes DNS malintencionados a una dirección IP que no sea de no__t-0existent en lugar de dirigirlos al equipo al que intentan acceder.
+-   **Análisis forense.** Puede usar la Directiva de DNS para redirigir a los clientes DNS malintencionados a una dirección IP que no sea\-existente, en lugar de dirigirlos al equipo al que intentan acceder.
 
 -   **Hora del redireccionamiento basado en el día.** Puede usar la Directiva de DNS para distribuir el tráfico de aplicaciones entre diferentes instancias distribuidas geográficamente de una aplicación mediante el uso de directivas DNS basadas en la hora del día. 
   
@@ -75,7 +75,7 @@ Puede establecer la configuración de RRL para controlar cómo responder a las s
   
 ## <a name="dane-support"></a>Compatibilidad con SUNDANÉS
 
-Puede usar la compatibilidad con SUNDANÉS \(RFC 6394 y 6698 @ no__t-1 para especificar a los clientes DNS en qué CA deben esperar que se emitan los certificados para los nombres de dominios hospedados en el servidor DNS. Esto evita una forma de ataque de tipo "Man in the Middle", donde alguien puede dañar una memoria caché de DNS y apuntar un nombre DNS a su propia dirección IP.  
+Puede usar la compatibilidad con SUNDANÉS \(RFC 6394 y 6698\) para especificar a los clientes DNS en qué CA deben esperar que se emitan los certificados para los nombres de dominios hospedados en el servidor DNS. Esto evita una forma de ataque de tipo "Man in the Middle", donde alguien puede dañar una memoria caché de DNS y apuntar un nombre DNS a su propia dirección IP.  
   
 Por ejemplo, Imagine que hospeda un sitio web seguro que usa SSL en www.contoso.com con un certificado de una autoridad conocida denominada CA1. Es posible que alguien siga pudiendo obtener un certificado para www.contoso.com desde una entidad de certificación distinta, no conocida, denominada CA2. A continuación, la entidad que hospeda el sitio web de www.contoso.com falso podría dañar la memoria caché de DNS de un cliente o servidor para apuntar a www.contoto.com a su sitio falso. Al usuario final se le presentará un certificado de CA2 y puede simplemente confirmarlo y conectarse al sitio falso. Con SUNDANÉS, el cliente realizará una solicitud al servidor DNS para que contoso.com solicite el registro TLSA y aprenderá que el certificado de www.contoso.com fue issued by CA1. Si se presenta un certificado de otra CA, la conexión se anula.  
   
@@ -150,7 +150,7 @@ Para obtener más información, vea los siguientes temas de referencia de comand
 - [Módulo DnsServer](https://docs.microsoft.com/powershell/module/dnsserver/?view=win10-ps)
 - [Módulo DnsClient](https://docs.microsoft.com/powershell/module/dnsclient/?view=win10-ps)
 
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
   
 -   [Novedades del cliente DNS](What-s-New-in-DNS-Client.md)  
   

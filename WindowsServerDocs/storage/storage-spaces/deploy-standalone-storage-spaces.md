@@ -17,7 +17,7 @@ ms.locfileid: "71393729"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>Implementar espacios de almacenamiento en un servidor independiente
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 En este tema se describe cómo implementar espacios de almacenamiento en un servidor independiente. Para obtener información sobre cómo crear un espacio de almacenamiento en clúster, vea [implementar un clúster de espacios de almacenamiento en Windows Server 2012 R2](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>).
 
@@ -34,7 +34,7 @@ La siguiente figura ilustra el flujo de trabajo de los Espacios de almacenamient
 
 ![Flujo de trabajo de Espacios de almacenamiento](media/deploy-standalone-storage-spaces/storage-spaces-workflow.png)
 
-**Figura 1: Flujo de trabajo de espacios de almacenamiento @ no__t-0
+**Figura 1: flujo de trabajo de espacios de almacenamiento**
 
 >[!NOTE]
 >Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, vea [PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6).

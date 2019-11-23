@@ -40,17 +40,17 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
 |-------|--------|  
 |set|Establece el atributo especificado del volumen que tiene el foco.|  
 |clear|Borra el atributo especificado del volumen que tiene el foco.|  
-|ReadOnly|Especifica que el volumen es Read @ no__t-0only.|  
+|ReadOnly|Especifica que el volumen se lee solo\-.|  
 |plusvalía|Especifica que el volumen está oculto.|  
 |nodefaultdriveletter|Especifica que el volumen no recibe una letra de unidad de forma predeterminada.|  
 |ShadowCopy|Especifica que el volumen es un volumen de instantánea.|  
-|Noerr|Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|  
+|Noerr|solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
   
--   En los discos básicos de registro de arranque maestro \(MBR @ no__t-1, los parámetros **Hidden**, **ReadOnly**y **nodefaultdriveletter** se aplican a todos los volúmenes del disco.  
+-   En el registro de arranque maestro básico \(MBR\) disks, los parámetros **Hidden**, **ReadOnly**y **nodefaultdriveletter** se aplican a todos los volúmenes del disco.  
   
--   En la tabla de particiones GUID básica \(gpt @ no__t-1 Disks y en discos MBR y GPT dinámicos, los parámetros **Hidden**, **ReadOnly**y **nodefaultdriveletter** solo se aplican al volumen seleccionado.  
+-   En la tabla de particiones GUID básica \(GPT\) discos y en discos MBR y GPT dinámicos, los parámetros **Hidden**, **ReadOnly**y **nodefaultdriveletter** solo se aplican al volumen seleccionado.  
   
 -   Se debe seleccionar un volumen para que el comando de **volumen de atributos** se ejecute correctamente. Use el comando **seleccionar volumen** para seleccionar un volumen y cambiar el foco a él.  
   
@@ -61,19 +61,19 @@ Para mostrar los atributos actuales en el volumen seleccionado, escriba:
 attributes volume  
 ```  
   
-Para establecer el volumen seleccionado como oculto y leer @ no__t-0only, escriba:  
+Para establecer el volumen seleccionado como oculto y de solo lectura\-, escriba:  
   
 ```  
 attributes volume set hidden readonly  
 ```  
   
-Para quitar los atributos Hidden y Read @ no__t-0only en el volumen seleccionado, escriba:  
+Para quitar los atributos Hidden y Read\-solo en el volumen seleccionado, escriba:  
   
 ```  
 attributes volume clear hidden readonly  
 ```  
   
-#### <a name="additional-references"></a>Referencias adicionales  
+#### <a name="additional-references"></a>referencias adicionales  
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   
 

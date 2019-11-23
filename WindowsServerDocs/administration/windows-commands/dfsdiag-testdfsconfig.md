@@ -24,7 +24,7 @@ ms.locfileid: "71378419"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Comprueba la configuración de un espacio de nombres Sistema de archivos distribuido \(DFS @ no__t-1 mediante la realización de las siguientes acciones:  
+Comprueba la configuración de un Sistema de archivos distribuido \(el espacio de nombres\) DFS mediante la realización de las siguientes acciones:  
   
 -   comprueba que el servicio de espacio de nombres DFS se está ejecutando y que su tipo de inicio está establecido en automático en todos los servidores de espacio de nombres.  
   
@@ -50,7 +50,7 @@ dfsdiag /TestDFSConfig /DFSRoot:<namespace>
   
 |       Parámetro       |               Descripción               |
 |-----------------------|-----------------------------------------|
-| \/DFSRoot: <namespace> | Espacio de nombres @no__t 0DFS raíz @ no__t-1 para diagnosticar. |
+| \/DFSRoot:<namespace> | Espacio de nombres \(\) raíz DFS que se va a diagnosticar. |
   
 ## <a name="BKMK_Examples"></a>Example  
 En TBD, escriba:  
@@ -59,7 +59,7 @@ En TBD, escriba:
 dfsdiag /TestDFSConfig /DFSRoot:\\Contoso.com\MyNamespace  
 ```  
   
-## <a name="additional-references"></a>Referencias adicionales  
+## <a name="additional-references"></a>referencias adicionales  
   
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   

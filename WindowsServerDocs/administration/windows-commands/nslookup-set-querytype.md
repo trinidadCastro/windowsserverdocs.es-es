@@ -30,7 +30,7 @@ Cambia el tipo de registro de recursos de la consulta.
 set querytype=<ResourceRecordtype>
 ```
 ## <a name="parameters"></a>Parámetros
-<ResourceRecordtype>Especifica un tipo de registro de recursos DNS. El tipo de registro de recursos predeterminado es. En la tabla siguiente se enumeran los valores válidos para este comando.
+<ResourceRecordtype> especifica un tipo de registro de recursos DNS. El tipo de registro de recursos predeterminado es. En la tabla siguiente se enumeran los valores válidos para este comando.
 
 | Valor |                                                   Descripción                                                   |
 |-------|-----------------------------------------------------------------------------------------------------------------|
@@ -46,7 +46,7 @@ set querytype=<ResourceRecordtype>
 |  MX   |                                          Especifica el intercambiador de correo.                                          |
 |  NS   |                                 Especifica un servidor de nombres DNS para la zona con nombre.                                 |
 |  ANOTA  | Especifica un nombre de equipo si la consulta es una dirección IP; de lo contrario, especifica el puntero a otra información. |
-|  ORIENTE  |                                Especifica el inicio de autoridad de una zona DNS.                                 |
+|  Oriente  |                                Especifica el inicio de autoridad de una zona DNS.                                 |
 |  TXT  |                                         Especifica la información de texto.                                         |
 |  UID  |                                         Especifica el identificador de usuario.                                          |
 | UINFO |                                         Especifica la información del usuario.                                         |
@@ -54,9 +54,9 @@ set querytype=<ResourceRecordtype>
 | {ayuda |                                                       ?}                                                        |
 
 Muestra un breve resumen de los subcomandos de <strong>nslookup</strong>
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 - El comando <strong>set Type</strong> realiza la misma función que el comando <strong>set QueryType</strong> .
 - Para obtener más información acerca de los tipos de registro de recursos, consulte la solicitud de comentarios (RFC) 1035.
-  ## <a name="additional-references"></a>Referencias adicionales
+  ## <a name="additional-references"></a>referencias adicionales
   <a href="command-line-syntax-key.md" data-raw-source="[Command-Line Syntax Key](command-line-syntax-key.md)">Clave de sintaxis de línea de comandos</a>
-  <a href="nslookup-set-type.md" data-raw-source="[nslookup set type](nslookup-set-type.md)">nslookup Set Type</a>
+  <a href="nslookup-set-type.md" data-raw-source="[nslookup set type](nslookup-set-type.md)">tipo de conjunto nslookup</a>

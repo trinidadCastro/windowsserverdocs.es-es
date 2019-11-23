@@ -34,14 +34,14 @@ getmac[.exe][/s <computer> [/u <Domain\<User> [/p <Password>]]][/fo {TABLE | lis
 |             Parámetro              |                                                                                          Descripción                                                                                          |
 |------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |           /s <computer>            |                                      Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.                                       |
-|        /u <Domain> @ no__t-1 @ no__t-2         | Ejecuta el comando con los permisos de cuenta del usuario especificado por user o Dominio\usuario. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
+|        /u <Domain>\\<User>         | Ejecuta el comando con los permisos de cuenta del usuario especificado por user o Dominio\usuario. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando. |
 |           /p <Password>            |                                                     Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                     |
 | /FO {TABLE &#124; List&#124; CSV} |                       Especifica el formato que se va a usar para los resultados de la consulta. Los valores válidos son **TABLE**, **List**y **CSV**. El formato predeterminado de la salida es **TABLE**.                        |
 |                /NH                 |                                             Suprime el encabezado de columna en la salida. Válido cuando el parámetro **/FO** está establecido en **TABLE** o **CSV**.                                              |
 |                 /v                 |                                                                    Especifica que el resultado muestra información detallada.                                                                     |
 |                 /?                 |                                                                                                                                                                                               |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 **getmac** puede ser útil si desea escribir la dirección Mac en un analizador de red o si necesita saber qué protocolos se están usando actualmente en cada adaptador de red de un equipo.
 ## <a name="BKMK_Examples"></a>Example
 En los siguientes ejemplos se muestra cómo se puede usar el comando **getmac** :
@@ -63,5 +63,5 @@ getmac /s srvmain /u maindom\hiropln /p p@ssW23 /fo list /v
 ```
 getmac /s srvmain /u maindom\hiropln /p p@ssW23 /fo table /nh
 ```
-## <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>referencias adicionales
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

@@ -33,11 +33,11 @@ fsutil hardlink list <Filename>
 |Parámetro|Descripción|
 |-------------|---------------|
 |crear|Establece un vínculo físico NTFS entre un archivo existente y un archivo nuevo. (Un vínculo físico NTFS es similar a un vínculo físico de POSIX).|
-|@no__t 0NewFileName >|Especifica el archivo al que desea crear un vínculo físico.|
-|@no__t 0ExistingFileName >|Especifica el archivo desde el que desea crear un vínculo físico.|
-|list|Muestra el hardlinks al *nombre de archivo*.<br /><br />Este parámetro se aplica a:  Windows Server 2008 R2 y Windows 7.|
+|\<NewFileName >|Especifica el archivo al que desea crear un vínculo físico.|
+|\<ExistingFileName >|Especifica el archivo desde el que desea crear un vínculo físico.|
+|list|Muestra el hardlinks al *nombre de archivo*.<br /><br />Este parámetro se aplica a: Windows Server 2008 R2 y Windows 7.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Un vínculo físico es una entrada de directorio para un archivo. Se puede considerar que cada archivo tiene al menos un vínculo físico. En volúmenes NTFS, cada archivo puede tener varios vínculos físicos, por lo que un único archivo puede aparecer en muchos directorios (o incluso en el mismo directorio con nombres diferentes). Dado que todos los vínculos hacen referencia al mismo archivo, los programas pueden abrir cualquiera de los vínculos y modificar el archivo. Un archivo se elimina del sistema de archivos solo después de que se hayan eliminado todos los vínculos a él. Después de crear un vínculo físico, los programas pueden usarlo como cualquier otro nombre de archivo.
 

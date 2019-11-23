@@ -26,7 +26,7 @@ En la ilustración siguiente se muestran los pasos para implementar Windows Serv
   
 ![implementación en una nueva organización](media/Deploying-AD-DS-in-a-New-Organization/daa38971-86f2-4033-9442-0cdff9ecc48f.gif)  
   
-Para obtener una lista de tareas detalladas que puede usar para planear e implementar AD DS en una nueva organización, consulte [Checklist: Implementación de AD DS en una nueva organización @ no__t-0.  
+Para obtener una lista de tareas detalladas que puede usar para planear e implementar AD DS en una nueva organización, vea [lista de comprobación: implementar AD DS en una nueva organización](https://technet.microsoft.com/library/cc725897.aspx).  
   
 
 

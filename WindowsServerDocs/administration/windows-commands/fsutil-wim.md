@@ -17,7 +17,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71376658"
 ---
 # <a name="fsutil-wim"></a>Fsutil Wim
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016 y Windows 10
 
 Proporciona funciones para detectar y administrar archivos respaldados por la imagen de Windows (WIM).
 
@@ -35,11 +35,11 @@ fsutil wim [removewim] <drive name> <data source>
 |Parámetro|Descripción|
 |-------------|---------------|
 |enumfiles (|Enumera los archivos de copia de seguridad de WIM.|
-|nombre de \<drive >|Especifica el nombre de la unidad.|
-|@no__t > de origen de 0data|Especifica el origen de datos.|
+|\<nombre de la unidad >|Especifica el nombre de la unidad.|
+|\<origen de datos >|Especifica el origen de datos.|
 |enumwims|Enumera los archivos WIM de respaldo.|
 |queryfile|Consulta si el archivo está respaldado por WIM y, en caso afirmativo, muestra detalles sobre el archivo WIM.|
-|@no__t 0filename >|Especifica el nombre de archivo.|
+|\<nombre de archivo >|Especifica el nombre de archivo.|
 |removewim|Quita un WIM de los archivos de copia de seguridad.|
 
 

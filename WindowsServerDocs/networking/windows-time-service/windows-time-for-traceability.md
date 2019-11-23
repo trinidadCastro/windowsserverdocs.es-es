@@ -102,7 +102,7 @@ Server1. fabrikam. com, 0x8 (NTP. m | 0x8 | [::]: 123-> [IPAddress]: 123) servid
 
 **Comando** Esta información también se puede consultar mediante los siguientes comandos.
 
-*Identificar elementos del mismo nivel*
+*Identificar los elementos del mismo nivel*
 `w32tm.exe /query /peers`
 
 # <a name="260tab260"></a>[260](#tab/260)

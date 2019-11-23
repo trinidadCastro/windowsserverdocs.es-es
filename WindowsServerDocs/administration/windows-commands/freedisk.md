@@ -35,12 +35,12 @@ freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [
 |       Parámetro       |                                                                                         Descripción                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     /s <computer>     | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local. Este parámetro se aplica a todos los archivos y carpetas especificados en el comando. |
-| /u [<Domain> @ no__t-1] <User> |                                            Ejecuta el script con los permisos de la cuenta de usuario especificada. El valor predeterminado es los permisos del sistema.                                            |
+| /u [<Domain>\\]<User> |                                            Ejecuta el script con los permisos de la cuenta de usuario especificada. El valor predeterminado es los permisos del sistema.                                            |
 |    /p [<Password>]    |                                                           Especifica la contraseña de la cuenta de usuario especificada en **/u**.                                                            |
-|      /d <Drive>       |                              Especifica la unidad para la que desea averiguar la disponibilidad de espacio disponible. Debe especificar @no__t 0for un equipo remoto.                               |
+|      /d <Drive>       |                              Especifica la unidad para la que desea averiguar la disponibilidad de espacio disponible. Debe especificar <Drive>para un equipo remoto.                               |
 |        <Value>        |                                     Comprueba una cantidad específica de espacio libre en disco. Puede especificar <Value>en bytes, KB, MB, GB, TB, PB, EB, ZB o YB.                                      |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 - El uso de las opciones de línea de comandos **/s**, **/u**y **/p** solo está disponible cuando se utiliza **/s**. Debe usar **/p** con **/u**para proporcionar la contraseña del usuario.
 - en el caso de las instalaciones desatendidas, puede usar **FREEDISK** en archivos por lotes de instalación para comprobar el espacio disponible en la cantidad de requisitos previos antes de continuar con la instalación.
 - Cuando se usa **FREEDISK** en un archivo por lotes, devuelve **0** si hay espacio suficiente y un **1** si no hay suficiente espacio.
@@ -53,5 +53,5 @@ freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [
   ```
   INFO: The specified 52,428,800 byte(s) of free space is available on current drive.
   ```
-  ## <a name="additional-references"></a>Referencias adicionales
+  ## <a name="additional-references"></a>referencias adicionales
   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

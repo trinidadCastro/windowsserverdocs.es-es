@@ -23,7 +23,7 @@ ms.locfileid: "71367220"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-**Nota:** Windows Server 2012 combina DirectAccess y el servicio de enrutamiento y acceso remoto (RRAS) en un único rol de acceso remoto.  
+**Nota:** Windows Server 2012 combina DirectAccess y el Servicio de enrutamiento y acceso remoto (RRAS) en un único rol de acceso remoto.  
   
 El término **carga** hace referencia a las estadísticas relacionadas con el número de conexiones en el servidor de acceso remoto. A continuación se indican los pasos necesarios para realizar el seguimiento de la carga en el servidor de acceso remoto.  
   
@@ -58,7 +58,7 @@ Puede usar el panel de supervisión que está disponible en la consola de admini
   
 El **monitor de rendimiento** mostrará ahora gráficamente las estadísticas de carga del servidor seleccionado.  
   
-](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   

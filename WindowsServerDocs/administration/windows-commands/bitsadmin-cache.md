@@ -43,18 +43,18 @@ bitsadmin /Cache /SetExpirationtime
 
 |Parámetro|Descripción|
 |-------|--------|
-|[bitsadmin cache y help](bitsadmin-cache-and-help.md)|Muestra el uso del comando @ no__t-0line para los modificadores \/Cache.|
+|[bitsadmin cache y help](bitsadmin-cache-and-help.md)|Muestra el uso de línea\-de comandos para los modificadores de caché \/.|
 |[bitsadmin cache y clear](bitsadmin-cache-clear.md)|Purga la memoria caché local.|
 |[bitsadmin cache y delete](bitsadmin-cache-and-delete.md)|elimina una entrada de la memoria caché.|
 |[bitsadmin cache y deleteurl](bitsadmin-cache-and-deleteurl.md)|elimina todas las entradas de la memoria caché de la dirección URL especificada.|
-|[bitsadmin cache y list](bitsadmin-cache-and-list.md)|Muestra todas las entradas de caché.|
+|[bitsadmin cache y list](bitsadmin-cache-and-list.md)|muestra todas las entradas de caché.|
 |[bitsadmin cache e info](bitsadmin-cache-and-info.md)|Vuelca una entrada específica de la memoria caché.|
 |[bitsadmin cache y getlimit](bitsadmin-cache-and-getlimit.md)|Recupera el límite de la memoria caché.|
 |[bitsadmin cache y setlimit](bitsadmin-cache-and-setlimit.md)|Establece el límite de la memoria caché.|
 |[bitsadmin cache y getexpirationtime](bitsadmin-cache-and-getexpirationtime.md)|Recupera la hora de expiración de la memoria caché.|
 |[bitsadmin cache y setexpirationtime](bitsadmin-cache-and-setexpirationtime.md)|Establece la hora de expiración de la caché.|
 
-## <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
 

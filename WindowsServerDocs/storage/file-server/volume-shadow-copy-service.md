@@ -43,7 +43,7 @@ Entre las características y aplicaciones de Windows que usan VSS se incluyen la
       
   - [Instantáneas de carpetas compartidas](http://go.microsoft.com/fwlink/?linkid=142874) (http://go.microsoft.com/fwlink/?LinkId=142874)  
       
-  - [Data Protection Manager de System Center](http://go.microsoft.com/fwlink/?linkid=180892) (http://go.microsoft.com/fwlink/?LinkId=180892)  
+  - [System Center Data Protection Manager](http://go.microsoft.com/fwlink/?linkid=180892) (http://go.microsoft.com/fwlink/?LinkId=180892)  
       
   - [Restaurar sistema](http://go.microsoft.com/fwlink/?linkid=180893) (http://go.microsoft.com/fwlink/?LinkId=180893)  
       
@@ -52,13 +52,13 @@ Entre las características y aplicaciones de Windows que usan VSS se incluyen la
 
 Una solución completa de VSS requiere todos los elementos básicos siguientes:
 
-   La parte del servicio VSS del sistema operativo Windows que garantiza que los demás componentes puedan comunicarse entre sí correctamente y funcionar juntos.
+El **servicio VSS**   parte del sistema operativo Windows que garantiza que los demás componentes puedan comunicarse entre sí correctamente y trabajar juntos.
 
-**Solicitante de VSS**el software que solicita la creación real de instantáneas (u otras operaciones de alto nivel como la importación o la eliminación).    Normalmente, se trata de la aplicación de copia de seguridad. La utilidad Copias de seguridad de Windows Server y la aplicación de Data Protection Manager de System Center son solicitantes VSS. Los solicitantes de VSS que no son de® Microsoft incluyen casi todo el software de copia de seguridad que se ejecuta en Windows.
+El **solicitante de VSS**   el software que solicita la creación real de instantáneas (u otras operaciones de alto nivel, como la importación o la eliminación). Normalmente, se trata de la aplicación de copia de seguridad. La utilidad Copias de seguridad de Windows Server y la aplicación de Data Protection Manager de System Center son solicitantes VSS. Los solicitantes de VSS que no son de® Microsoft incluyen casi todo el software de copia de seguridad que se ejecuta en Windows.
 
-**VSS Writer el componente**que garantiza que tenemos un conjunto de datos coherente para realizar la copia de seguridad.    Esto se proporciona normalmente como parte de una aplicación de línea de negocio, como SQL Server® o Exchange Server. Los escritores de VSS para varios componentes de Windows, como el registro, se incluyen con el sistema operativo Windows. Los escritores de VSS que no son de Microsoft se incluyen con muchas aplicaciones para Windows que necesitan garantizar la coherencia de los datos durante la copia de seguridad.
+**VSS Writer**   el componente que garantiza que tenemos un conjunto de datos coherente para realizar la copia de seguridad. Esto se proporciona normalmente como parte de una aplicación de línea de negocio, como SQL Server® o Exchange Server. Los escritores de VSS para varios componentes de Windows, como el registro, se incluyen con el sistema operativo Windows. Los escritores de VSS que no son de Microsoft se incluyen con muchas aplicaciones para Windows que necesitan garantizar la coherencia de los datos durante la copia de seguridad.
 
-**Proveedor VSS componente**quecreaymantienelasinstantáneas   . Esto puede ocurrir en el software o en el hardware. El sistema operativo Windows incluye un proveedor VSS que usa la operación de copia en escritura. Si utiliza una red de área de almacenamiento (SAN), es importante que instale el proveedor de hardware de VSS para la SAN, si se proporciona uno. Un proveedor de hardware descarga la tarea de creación y mantenimiento de una instantánea del sistema operativo host.
+**Proveedor VSS**   el componente que crea y mantiene las instantáneas. Esto puede ocurrir en el software o en el hardware. El sistema operativo Windows incluye un proveedor VSS que usa la operación de copia en escritura. Si utiliza una red de área de almacenamiento (SAN), es importante que instale el proveedor de hardware de VSS para la SAN, si se proporciona uno. Un proveedor de hardware descarga la tarea de creación y mantenimiento de una instantánea del sistema operativo host.
 
 En el diagrama siguiente se ilustra cómo el servicio VSS se coordina con solicitantes, escritores y proveedores para crear una instantánea de un volumen.
 
@@ -106,11 +106,11 @@ Para crear una instantánea, el solicitante, el escritor y el proveedor realizan
 
 Un proveedor de instantáneas de hardware o software usa uno de los métodos siguientes para crear una instantánea:
 
-**Copia completa este**método realiza una copia completa (denominada "copia completa" o "clon") del volumen original en un momento dado en el tiempo.    Esta copia es de solo lectura.
+**Copia completa**   este método realiza una copia completa (denominada "copia completa" o "clon") del volumen original en un momento dado. Esta copia es de solo lectura.
 
 **Copiar en escritura**   este método no copia el volumen original. En su lugar, realiza una copia diferencial copiando todos los cambios (solicitudes de e/s de escritura completadas) que se realizan en el volumen después de un momento dado.
 
-**Redireccionamiento de escritura**   : este método no copia el volumen original y no realiza ningún cambio en el volumen original después de un momento dado en el tiempo. En su lugar, realiza una copia diferencial redirigiendo todos los cambios a un volumen diferente.
+**Redireccionamiento** de la escritura   este método no copia el volumen original y no realiza ningún cambio en el volumen original después de un momento dado en el tiempo. En su lugar, realiza una copia diferencial redirigiendo todos los cambios a un volumen diferente.
 
 ## <a name="complete-copy"></a>Copia completa
 
@@ -136,7 +136,7 @@ En el método de copia en escritura, cuando se produce un cambio en el volumen o
 </colgroup>
 <thead>
 <tr class="header">
-<th>Time</th>
+<th>Tiempo</th>
 <th>Datos de origen (estado y datos)</th>
 <th>Instantánea (estado y datos)</th>
 </tr>
@@ -149,18 +149,18 @@ En el método de copia en escritura, cuando se produce un cambio en el volumen o
 </tr>
 <tr class="even">
 <td><p>T1</p></td>
-<td><p>Datos cambiados en caché: de 3 a 3 '</p></td>
+<td><p>Datos cambiados en caché: 3 a 3 '</p></td>
 <td><p>Instantánea creada (solo diferencias): 3</p></td>
 </tr>
 <tr class="odd">
 <td><p>T2</p></td>
-<td><p>Datos originales sobrescritos: 1 2 3 ' 4 5</p></td>
+<td><p>Datos originales sobrescritos: 1 2 3 ' 4 5 '</p></td>
 <td><p>Diferencias e índice almacenados en la instantánea: 3</p></td>
 </tr>
 </tbody>
 </table>
 
-**Tabla 1**   método de copia en escritura para crear instantáneas
+**Tabla 1**   el método de copia en escritura de creación de instantáneas
 
 El método de copia en escritura es un método rápido para crear una instantánea, ya que solo copia los datos que se han modificado. Los bloques copiados en el área de diferencia se pueden combinar con los datos modificados en el volumen original para restaurar el volumen a su estado anterior a los cambios realizados. Si hay muchos cambios, el método de copia en escritura puede ser caro.
 
@@ -177,7 +177,7 @@ En el método de redireccionamiento de escritura, siempre que el volumen origina
 </colgroup>
 <thead>
 <tr class="header">
-<th>Time</th>
+<th>Tiempo</th>
 <th>Datos de origen (estado y datos)</th>
 <th>Instantánea (estado y datos)</th>
 </tr>
@@ -190,18 +190,18 @@ En el método de redireccionamiento de escritura, siempre que el volumen origina
 </tr>
 <tr class="even">
 <td><p>T1</p></td>
-<td><p>Datos cambiados en caché: de 3 a 3 '</p></td>
-<td><p>Instantánea creada (solo diferencias): 3</p></td>
+<td><p>Datos cambiados en caché: 3 a 3 '</p></td>
+<td><p>Instantánea creada (solo diferencias): 3 '</p></td>
 </tr>
 <tr class="odd">
 <td><p>T2</p></td>
 <td><p>Datos originales sin cambios: 1 2 3 4 5</p></td>
-<td><p>Diferencias e índice almacenados en la instantánea: 3</p></td>
+<td><p>Diferencias e índice almacenados en la instantánea: 3 '</p></td>
 </tr>
 </tbody>
 </table>
 
-**Tabla 2**   método de redirección de creación de instantáneas
+**Tabla 2**   el método de redirección de creación de instantáneas
 
 Al igual que el método de copia en escritura, el método de redireccionamiento de escritura es un método rápido para crear una instantánea, ya que solo copia los cambios en los datos. Los bloques copiados en el área de diferencia se pueden combinar con los datos sin modificar en el volumen original para crear una copia completa y actualizada de los datos. Si hay muchas solicitudes de e/s de lectura, el método de redirección de escritura puede ser costoso.
 
@@ -247,7 +247,7 @@ El sistema operativo Windows incluye un conjunto de escritores de VSS que son re
 
 Para obtener más información acerca de estos escritores, vea los siguientes sitios web de Microsoft:
 
-  - [Escritores de VSS en la caja](http://go.microsoft.com/fwlink/?linkid=180895) (http://go.microsoft.com/fwlink/?LinkId=180895)  
+  - [Escritores de VSS integrados](http://go.microsoft.com/fwlink/?linkid=180895) (http://go.microsoft.com/fwlink/?LinkId=180895)  
       
   - [Nuevos escritores de VSS integrados para Windows Server 2008 y Windows Vista SP1](http://go.microsoft.com/fwlink/?linkid=180896) (http://go.microsoft.com/fwlink/?LinkId=180896)  
       
@@ -384,7 +384,7 @@ Para excluir archivos específicos de instantáneas, use la siguiente clave del 
 > <LI>Los archivos se eliminan de una instantánea en función del mejor esfuerzo. Esto significa que no se garantiza que se eliminen.<BR><BR></LI></UL>
 
 
-Para obtener más información, vea [excluir archivos de instantáneas](http://go.microsoft.com/fwlink/?linkid=180904) (http://go.microsoft.com/fwlink/?LinkId=180904) en MSDN).
+Para obtener más información, vea [excluir archivos de instantáneas](http://go.microsoft.com/fwlink/?linkid=180904) (http://go.microsoft.com/fwlink/?LinkId=180904) en MSDN.
 
 ### <a name="my-non-microsoft-backup-program-failed-with-a-vss-error-what-can-i-do"></a>Error de VSS en mi programa de copia de seguridad que no es de Microsoft. ¿Qué puedo hacer?
 
@@ -431,7 +431,7 @@ El número máximo de instantáneas de software para cada volumen es 512. Sin em
 
 Escriba el comando **vssadmin Resize shadowstorage** .
 
-Para obtener más información, vea [vssadmin Resize shadowstorage](http://go.microsoft.com/fwlink/?linkid=180906) (http://go.microsoft.com/fwlink/?LinkId=180906) en TechNet).
+Para obtener más información, vea [vssadmin Resize shadowstorage](http://go.microsoft.com/fwlink/?linkid=180906) (http://go.microsoft.com/fwlink/?LinkId=180906) en TechNet.
 
 ### <a name="what-happens-when-i-run-out-of-space"></a>¿Qué ocurre cuando se queda sin espacio?
 
@@ -450,15 +450,15 @@ El sistema operativo Windows proporciona las siguientes herramientas para trabaj
 
 DiskShadow es un solicitante de VSS que puede usar para administrar todas las instantáneas de hardware y software que puede tener en un sistema. DiskShadow incluye comandos como los siguientes:
 
-  - **lista**: Enumera escritores de VSS, proveedores VSS y instantáneas  
+  - **lista**: enumera escritores de VSS, proveedores VSS y instantáneas  
       
-  - **crear**: Crea una nueva instantánea  
+  - **crear**: crea una nueva instantánea.  
       
-  - **importar**: Importa una instantánea transportable  
+  - **importar**: importa una instantánea transportable  
       
-  - **exponer**: Expone una instantánea persistente (como una letra de unidad, por ejemplo)  
+  - **exponer**: expone una instantánea persistente (como una letra de unidad, por ejemplo).  
       
-  - **revertir**: Revierte un volumen a una instantánea especificada.  
+  - **revertir**: revierte un volumen a una instantánea especificada.  
       
 
 Esta herramienta está pensada para que la usen los profesionales de ti, pero los desarrolladores también pueden encontrarla útil al probar un proveedor de VSS Writer o VSS.
@@ -471,15 +471,15 @@ VssAdmin se usa para crear, eliminar y Mostrar información sobre las instantán
 
 VssAdmin incluye comandos como los siguientes:
 
-  - **crear sombra**: Crea una nueva instantánea  
+  - **crear sombra**: crea una nueva instantánea.  
       
-  - **eliminar sombras**: Elimina instantáneas  
+  - **eliminar sombras**: elimina instantáneas  
       
-  - **enumerar proveedores**: Enumera todos los proveedores VSS registrados  
+  - **enumerar proveedores**: enumera todos los proveedores VSS registrados  
       
-  - **enumerar escritores**: Enumera todos los escritores de VSS suscritos  
+  - enumerar **escritores**: enumera todos los escritores de VSS suscritos  
       
-  - **cambiar el tamaño de shadowstorage**: Cambia el tamaño máximo del área de almacenamiento de instantáneas  
+  - **cambiar el tamaño de shadowstorage**: cambia el tamaño máximo del área de almacenamiento de instantáneas  
       
 
 VssAdmin solo se puede usar para administrar las instantáneas creadas por el proveedor de software del sistema.
@@ -514,7 +514,7 @@ Esta clave especifica el número máximo de instantáneas accesibles para el cli
 
 Para obtener más información, vea la siguiente entrada en el sitio web de MSDN:
 
-**MaxShadowCopies** en [claves del registro para copias de seguridad y restauración](http://go.microsoft.com/fwlink/?linkid=180909) (http://go.microsoft.com/fwlink/?LinkId=180909)
+**MaxShadowCopies** en [las claves del registro para copias de seguridad y restauración](http://go.microsoft.com/fwlink/?linkid=180909) (http://go.microsoft.com/fwlink/?LinkId=180909)
 
 ### <a name="mindiffareafilesize"></a>MinDiffAreaFileSize
 
@@ -522,9 +522,9 @@ Esta clave especifica el tamaño mínimo inicial, en MB, del área de almacenami
 
 Para obtener más información, vea la siguiente entrada en el sitio web de MSDN:
 
-**MinDiffAreaFileSize** en [claves del registro para copias de seguridad y restauración](http://go.microsoft.com/fwlink/?linkid=180910) (http://go.microsoft.com/fwlink/?LinkId=180910)
+**MinDiffAreaFileSize** en [las claves del registro para copias de seguridad y restauración](http://go.microsoft.com/fwlink/?linkid=180910) (http://go.microsoft.com/fwlink/?LinkId=180910)
 
-`##`N.º de versiones admitidas del sistema operativo
+`##`# ' versiones admitidas del sistema operativo
 
 En la tabla siguiente se enumeran las versiones de sistema operativo mínimas admitidas para las características de VSS.
 
@@ -625,6 +625,6 @@ En la tabla siguiente se enumeran las versiones de sistema operativo mínimas ad
 </tbody>
 </table>
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 [Servicio de instantáneas de volumen en el centro para desarrolladores de Windows](https://docs.microsoft.com/windows/desktop/vss/volume-shadow-copy-service-overview)

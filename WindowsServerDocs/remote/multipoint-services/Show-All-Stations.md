@@ -21,7 +21,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71389308"
 ---
 # <a name="show-all-stations"></a>Mostrar todas las estaciones
-Como administrador en el sistema Multipoint Services, puede que desee ver todas las estaciones que están conectadas al sistema, incluidas las estaciones que no son @ no__t-0active o que han cerrado la sesión. Por ejemplo, según el contrato de licencia, puede que tenga que comprobar el número de estaciones que están conectadas al sistema Multipoint Services. Puede ver esta información mediante Multipoint Manager.  
+Como administrador en el sistema Multipoint Services, puede que desee ver todas las estaciones que están conectadas al sistema, incluidas las estaciones que no son de\-activas o que han cerrado sesión. Por ejemplo, según el contrato de licencia, puede que tenga que comprobar el número de estaciones que están conectadas al sistema Multipoint Services. Puede ver esta información mediante Multipoint Manager.  
   
 1.  En modo normal, haga clic en la pestaña **Escritorios**.  
   

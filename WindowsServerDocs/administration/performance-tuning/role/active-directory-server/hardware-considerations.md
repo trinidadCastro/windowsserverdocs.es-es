@@ -27,7 +27,7 @@ Active Directory almacena en caché la gran parte de la base de datos que permit
 
     -   Para conocer las limitaciones de las plataformas heredadas, consulte [uso de memoria por parte del proceso Lsass. exe en los controladores de dominio que ejecutan Windows server 2003 o windows 2000 Server](https://support.microsoft.com/kb/308356).
 
-    -   Use el contador\\de rendimiento duración &gt; promedio de la caché en espera de memoria a largo plazo 30 minutos.
+    -   Use el contador de rendimiento memoria\\promedio de tiempo de espera de la caché en espera &gt; 30 minutos.
 
 -   Coloque el sistema operativo, los registros y la base de datos en volúmenes independientes. Si todos o la mayoría del DIT se pueden almacenar en la memoria caché, una vez que la memoria caché esté preparada y bajo un estado estable, se hace menos pertinente y ofrece un poco más de flexibilidad en el diseño del almacenamiento. En escenarios en los que no se puede almacenar en caché el DIT completo, es más importante la importancia de dividir el sistema operativo, los registros y la base de datos en volúmenes independientes.
 
@@ -41,13 +41,13 @@ Active Directory almacena en caché la gran parte de la base de datos que permit
 
 -   Revise el rendimiento del subsistema de disco individualmente para cada volumen. La mayoría de los escenarios de Active Directory se basan principalmente en el nivel de lectura, por lo que es más importante inspeccionar las estadísticas del volumen que hospeda el DIT. Sin embargo, no pase por alto la supervisión del resto de las unidades, incluidos el sistema operativo y las unidades de archivos de registro. Para determinar si el controlador de dominio está configurado correctamente para evitar que el almacenamiento sea el cuello de botella para el rendimiento, consulte la sección sobre subsistemas de almacenamiento para conocer las recomendaciones de almacenamiento de estándares. En muchos entornos, la filosofía es asegurarse de que hay suficiente espacio suficiente para dar cabida a subidas o picos de carga. Estos umbrales son umbrales de advertencia en los que la sala principal para acomodar subidas o picos en la carga se vuelve restringida y la capacidad de respuesta del cliente se degrada. En Resumen, la superación de estos umbrales no es mala en el corto plazo (de 5 a 15 minutos varias veces al día). sin embargo, un sistema que se ejecuta de manera sostenida con este tipo de estadísticas no almacena por completo la base de datos y puede estar sobrecargado y debe investigarse.
 
-    -   Database = =&gt; Instances (LSASS/NTDSA)\\lecturas de la base de datos &lt; de e/s 15ms de latencia media
+    -   Database = = instancias de&gt; (LSASS/NTDSa)\\la latencia promedio de lecturas de base de datos de e/s &lt; 15ms
 
-    -   Base de datos&gt; = = instancias (LSASS/NTDSA)\\lecturas de base de datos &lt; de e/s 10 por segundo
+    -   Database = = instancias de&gt; (LSASS/NTDSa)\\lecturas de base de datos de e/s/s &lt; 10
 
-    -   Base de datos&gt; = = instancias (LSASS/NTDSA)\\escrituras de &lt; registro de e/s de entrada promedio de 10 ms
+    -   Database = = instancias de&gt; (LSASS/NTDSa)\\latencia media de escrituras de registro de e/s &lt; 10 ms
 
-    -   Database = =&gt; Instances (LSASS/NTDSA)\\escrituras de registro de e/s por segundo: solo informativo.
+    -   Database = = instancias de&gt; (LSASS/NTDSa)\\escrituras de registro de e/s/s: solo informativo.
 
         Para mantener la coherencia de los datos, todos los cambios se deben escribir en el registro. No hay un número bueno o incorrecto aquí, solo es una medida de cuánto se admite el almacenamiento.
 
@@ -61,7 +61,7 @@ Los procesadores que no tienen suficientes ciclos libres pueden provocar tiempos
 
 -   Agregue hardware, optimice la carga, dirija a los clientes en otro lugar o quite la carga del entorno para reducir la carga de la CPU.
 
--   Use la información del procesador (\_Total) \\% de utilización del procesador @no__t el contador de rendimiento del 2 60%.
+-   Use el contador de rendimiento información del procesador (\_total)\\% de uso del procesador &lt; 60%.
 
 ## <a name="avoid-overloading-the-network-adapter"></a>Evitar sobrecargar el adaptador de red
 
@@ -69,9 +69,9 @@ Al igual que con los procesadores, el uso excesivo de adaptadores de red provoca
 
 -   Para obtener más información sobre cómo optimizar el subsistema de red, consulte [optimización del rendimiento de los subsistemas de red](../../../../networking/technologies/network-subsystem/net-sub-performance-top.md).
 
--   Use el contador de rendimiento\*comparar\\interfaz cluster () bytes enviados/seg\*.\\con el ancho de banda actual de interfaz cluster (). La relación debe ser inferior al 60% de uso.
+-   Use el contador de rendimiento comparar interfaz cluster (\*)\\bytes enviados/seg. con interfaz cluster (\*)\\de ancho de banda actual. La relación debe ser inferior al 60% de uso.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 - [Optimizar el rendimiento de servidores Active Directory](index.md)
 - [Consideraciones de LDAP](ldap-considerations.md)
 - [Colocación adecuada de los controladores de dominio y consideraciones de sitio](site-definition-considerations.md)

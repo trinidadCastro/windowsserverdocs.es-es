@@ -29,16 +29,16 @@ En función de la configuración de notificaciones y de los requisitos de la con
 En este tema se explica brevemente la sintaxis y la semántica del lenguaje de reglas de transformación de notificaciones en Active Directory y consideraciones que se deben realizar al crear directivas. Proporciona varios conjuntos de reglas de ejemplo para empezar a trabajar y ejemplos de sintaxis incorrecta y los mensajes que generan, para ayudarle a descifrar los mensajes de error al crear las reglas.  
   
 ## <a name="tools-for-authoring-claims-transformation-policies"></a>Herramientas para la creación de directivas de transformación de notificaciones  
-**Cmdlets de Windows PowerShell para Active Directory**: Esta es la manera preferida y recomendada para crear y establecer directivas de transformación de notificaciones. Estos cmdlets proporcionan modificadores para las directivas simples y comprueban las reglas que se establecen para las directivas más complejas.  
+**Cmdlets de Windows PowerShell para Active Directory**: esta es la manera preferida y recomendada para crear y establecer directivas de transformación de notificaciones. Estos cmdlets proporcionan modificadores para las directivas simples y comprueban las reglas que se establecen para las directivas más complejas.  
   
-**LDAP**: Las directivas de transformación de notificaciones se pueden editar en Active Directory a través del Protocolo ligero de acceso a directorios (LDAP). Sin embargo, esto no es recomendable porque las directivas tienen varios componentes complejos, y las herramientas que se usan no pueden validar la Directiva antes de escribirla en Active Directory. Posteriormente, esto puede requerir una cantidad considerable de tiempo para diagnosticar problemas.  
+**LDAP**: las directivas de transformación de notificaciones se pueden editar en Active Directory a través del Protocolo ligero de acceso a directorios (LDAP). Sin embargo, esto no es recomendable porque las directivas tienen varios componentes complejos, y las herramientas que se usan no pueden validar la Directiva antes de escribirla en Active Directory. Posteriormente, esto puede requerir una cantidad considerable de tiempo para diagnosticar problemas.  
   
 ## <a name="active-directory-claims-transformation-rules-language"></a>Active Directory lenguaje de reglas de transformación de notificaciones  
   
 ### <a name="syntax-overview"></a>Información general sobre la sintaxis  
 A continuación se muestra una breve descripción de la sintaxis y la semántica del lenguaje:  
   
--   El conjunto de reglas de transformación de notificaciones consta de cero o más reglas. Cada regla tiene dos partes activas: **Seleccione la acción lista de condiciones** y **regla**. Si la **lista Select Condition** se evalúa como true, se ejecuta la acción de la regla correspondiente.  
+-   El conjunto de reglas de transformación de notificaciones consta de cero o más reglas. Cada regla tiene dos partes activas: **Seleccione la lista de condiciones y la** **acción de regla**. Si la **lista Select Condition** se evalúa como true, se ejecuta la acción de la regla correspondiente.  
   
 -   **Select Condition List** tiene cero o más **condiciones Select**. Todas las **condiciones Select** deben evaluarse como true para que la **lista Select Condition** se evalúe como true.  
   
@@ -67,11 +67,11 @@ ISSUE (TYPE= "EmpType", VALUE = C1.VALUE, VALUETYPE = C1.VALUETYPE) == Rule Acti
 ### <a name="runtime-operation"></a>Operación en tiempo de ejecución  
 Es importante comprender la operación en tiempo de ejecución de las transformaciones de notificaciones para crear las reglas de forma eficaz. La operación en tiempo de ejecución utiliza tres conjuntos de notificaciones:  
   
-1.  **Conjunto de notificaciones de entrada**: Conjunto de entrada de notificaciones que se conceden a la operación de transformación de notificaciones.  
+1.  **Conjunto de notificaciones de entrada**: el conjunto de entrada de notificaciones que se asignan a la operación de transformación de notificaciones.  
   
-2.  **Conjunto de notificaciones de trabajo**: Notificaciones intermedias en las que se leen y se escriben durante la transformación de notificaciones.  
+2.  **Conjunto de notificaciones de trabajo**: notificaciones intermedias que se leen y se escriben durante la transformación de notificaciones.  
   
-3.  **Conjunto de notificaciones de salida**: Salida de la operación de transformación de notificaciones.  
+3.  **Conjunto de notificaciones de salida**: salida de la operación de transformación de notificaciones.  
   
 Esta es una breve descripción de la operación de transformación de notificaciones en tiempo de ejecución:  
   
@@ -91,7 +91,7 @@ Esta es una breve descripción de la operación de transformación de notificaci
   
 Es posible escribir transformaciones complejas de notificaciones basadas en el comportamiento anterior en tiempo de ejecución.  
   
-**Ejemplo Operación en tiempo de ejecución @ no__t-0  
+**Ejemplo: operación en tiempo de ejecución**  
   
 En este ejemplo se muestra la operación de tiempo de ejecución de una transformación de notificaciones que utiliza dos reglas.  
   
@@ -135,7 +135,7 @@ A continuación se muestran una sintaxis especial para las reglas:
   
 2.  Lista de condiciones Select vacía = = cada demanda coincide con la lista de condiciones Select  
   
-    **Ejemplo Empty Select Condition List @ no__t-0  
+    **Ejemplo: lista vacía de selección de condiciones**  
   
     La siguiente regla coincide con todas las notificaciones del espacio de trabajo.  
   
@@ -145,7 +145,7 @@ A continuación se muestran una sintaxis especial para las reglas:
   
 3.  Selección de lista de coincidencias vacía = = cada demanda coincide con la lista de condiciones Select  
   
-    **Ejemplo Condiciones de coincidencia vacías @ no__t-0  
+    **Ejemplo: condiciones de coincidencia vacías**  
   
     La siguiente regla coincide con todas las notificaciones del espacio de trabajo. Esta es la regla básica "Allow-All" si se usa por sí sola.  
   
@@ -184,7 +184,7 @@ Active Directory no puede determinar la intención en este caso y entra en un mo
   
 4.  Si una acción de regla hace referencia a un identificador que no se usó en la parte de la lista de selección de condiciones de la regla, se trata de un uso no válido. Esto produciría un error de sintaxis.  
   
-    **Ejemplo Referencia de identificador incorrecta @ no__t-0  
+    **Ejemplo: referencia de identificador incorrecta**  
     La siguiente regla muestra un identificador incorrecto que se usa en la acción de regla.  
   
     ```  
@@ -225,7 +225,7 @@ Un analizador personalizado analiza las reglas de transformación de notificacio
   
 En esta sección se muestran algunos ejemplos de reglas que se escriben con una sintaxis incorrecta y los errores de sintaxis correspondientes que genera el analizador.  
   
-1. Ejemplo:  
+1. Por ejemplo:  
   
    ```  
    c1;[]=>Issue(claim=c1);  
@@ -233,11 +233,11 @@ En esta sección se muestran algunos ejemplos de reglas que se escriben con una 
   
    En este ejemplo se usa un punto y coma incorrectamente en lugar de un signo de dos puntos.   
    **Mensaje de error:**  
-   @NO__T 0POLICY0002: No se pudieron analizar los datos de la Directiva. *  
-   @no__t 0Line: 1, número de columna: 2, token de error:;. Línea: ' C1; [] = > problema (Claim = C1); ". *  
-   error de @no__t 0Parser: 'POLICY0030: Error de sintaxis, no se esperaba '; ', se esperaba uno de los siguientes elementos: ': '. ' *  
+   *POLICY0002: no se pudieron analizar los datos de la Directiva.*  
+   *Número de línea: 1, número de columna: 2, token de error:;. Línea: ' C1; [] = > problema (Claim = C1); ".*  
+   *Error del analizador: ' POLICY0030: error de sintaxis, no esperado '; ', se esperaba uno de los siguientes elementos: ': '. '*  
   
-2. Ejemplo:  
+2. Por ejemplo:  
   
    ```  
    c1:[]=>Issue(claim=c2);  
@@ -245,9 +245,9 @@ En esta sección se muestran algunos ejemplos de reglas que se escriben con una 
   
    En este ejemplo, la etiqueta de identificador de la instrucción Copy emisión no está definida.   
    **Mensaje de error**:   
-   @NO__T 0POLICY0011: No hay condiciones en la regla de notificaciones que coincidan con la etiqueta de condición especificada en CopyIssuanceStatement: ' C2 '. *  
+   *POLICY0011: no hay condiciones en la regla de notificaciones que coincidan con la etiqueta de condición especificada en CopyIssuanceStatement: ' C2 '.*  
   
-3. Ejemplo:  
+3. Por ejemplo:  
   
    ```  
    c1:[type=="x1", value=="1", valuetype=="bool"]=>Issue(claim=c1)  
@@ -255,11 +255,11 @@ En esta sección se muestran algunos ejemplos de reglas que se escriben con una 
   
    "bool" no es un terminal en el idioma y no es un tipo ValueType válido. Los terminales válidos se enumeran en el mensaje de error siguiente.   
    **Mensaje de error:**  
-   @NO__T 0POLICY0002: No se pudieron analizar los datos de la Directiva. *  
+   *POLICY0002: no se pudieron analizar los datos de la Directiva.*  
    Número de línea: 1, número de columna: 39, token de error: "bool". Línea: ' C1: [type = = "x1", Value = = "1", ValueType = = "bool"] = > problema (Claim = C1); ".   
-   error de @no__t 0Parser: 'POLICY0030: Error de sintaxis, ' cadena ' inesperado, se esperaba uno de los siguientes elementos: ' INT64_TYPE ' ' UINT64_TYPE ' ' STRING_TYPE ' ' BOOLEAN_TYPE ' ' IDENTIFICADOR ' *  
+   *Error del analizador: ' POLICY0030: error de sintaxis, ' cadena ' inesperado, se esperaba uno de los siguientes elementos: ' INT64_TYPE ' ' UINT64_TYPE ' ' STRING_TYPE ' ' BOOLEAN_TYPE ' ' identificador '*  
   
-4. Ejemplo:  
+4. Por ejemplo:  
   
    ```  
    c1:[type=="x1", value==1, valuetype=="boolean"]=>Issue(claim=c1);  
@@ -267,10 +267,10 @@ En esta sección se muestran algunos ejemplos de reglas que se escriben con una 
   
    El número **1** en este ejemplo no es un token válido en el lenguaje y dicho uso no se permite en una condición de coincidencia. Debe escribirse entre comillas dobles para convertirlo en una cadena.   
    **Mensaje de error:**  
-   @NO__T 0POLICY0002: No se pudieron analizar los datos de la Directiva. *  
-   @no__t 0Line: 1, número de columna: 23, token de error: 1. Línea: ' C1: [type = = "x1", Value = = 1, ValueType = = "bool"] = > problema (Claim = C1); ". * @ no__t-error de 1Parser: 'POLICY0029: Entrada inesperada. </em>  
+   *POLICY0002: no se pudieron analizar los datos de la Directiva.*  
+   *Número de línea: 1, número de columna: 23, token de error: 1. línea: ' C1: [type = = "x1", Value = = 1, ValueType = = "bool"] = > problema (Claim = C1); '.* <em>Error del analizador: ' POLICY0029: entrada inesperada.</em>  
   
-5. Ejemplo:  
+5. Por ejemplo:  
   
    ```  
    c1:[type == "x1", value == "1", valuetype == "boolean"] =>   
@@ -280,12 +280,12 @@ En esta sección se muestran algunos ejemplos de reglas que se escriben con una 
   
    En este ejemplo se usa un signo igual doble (= =) en lugar de un único signo igual (=).   
    **Mensaje de error:**  
-   @NO__T 0POLICY0002: No se pudieron analizar los datos de la Directiva. *  
-   @no__t 0Line: 1, número de columna: 91, token de error: = =. Línea: ' C1: [type = = "x1", Value = = "1", *  
+   *POLICY0002: no se pudieron analizar los datos de la Directiva.*  
+   *Número de línea: 1, número de columna: 91, token de error: = =. Línea: ' C1: [type = = "x1", Value = = "1",*  
    *ValueType = = "Boolean"] = > problema (Type = C1. Type, Value = "0", ValueType = = "Boolean"); ".*  
-   error de @no__t 0Parser: 'POLICY0030: Error de sintaxis, ' = = ' inesperado, se esperaba uno de los siguientes elementos: ' = ' *  
+   *Error del analizador: ' POLICY0030: error de sintaxis, inesperado ' = = ', se esperaba uno de los siguientes elementos: ' = '*  
   
-6. Ejemplo:  
+6. Por ejemplo:  
   
    ```  
    c1:[type=="x1", value=="boolean", valuetype=="string"] =>   
@@ -301,7 +301,7 @@ En la tabla siguiente se muestra el conjunto completo de cadenas de terminal y l
 |Cadena|Terminal|  
 |----------|------------|  
 |"= >"|IMPLICA|  
-|";"|PUNTO Y COMA|  
+|";"|PUNTO Y coma|  
 |":"|Y|  
 |","|UNAS|  
 |"."|SEMITONO|  
@@ -320,8 +320,8 @@ En la tabla siguiente se muestra el conjunto completo de cadenas de terminal y l
 |valor|VALOR|  
 |ValueType|VALUE_TYPE|  
 |declara|DECLARA|  
-|"[A-Za-z] [a-Za-z0-9] *"|IDENTIFICADOR|  
-|"\\" [^ \\ "\n] * \\" "|STRING@|  
+|"[_A-Za-z] [_A-Za-z0-9] *"|IDENTIFICADOR|  
+|"\\" [^\\"\n] *\\" "|String@|  
 |UInt64|UINT64_TYPE|  
 |Int64|INT64_TYPE|  
 |String@|STRING_TYPE|  

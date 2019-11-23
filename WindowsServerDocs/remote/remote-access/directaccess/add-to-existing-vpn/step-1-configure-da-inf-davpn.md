@@ -23,7 +23,7 @@ ms.locfileid: "71388772"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema se describe cómo configurar la infraestructura necesaria para habilitar DirectAccess en una implementación de VPN existente. Antes de comenzar con los pasos de implementación, asegúrese de haber completado los pasos de planificación descritos en @no__t 0Step 1: Planear la infraestructura de DirectAccess @ no__t-0.  
+En este tema se describe cómo configurar la infraestructura necesaria para habilitar DirectAccess en una implementación de VPN existente. Antes de comenzar con los pasos de implementación, asegúrese de haber completado los pasos de planeación descritos en [paso 1: planear la infraestructura de DirectAccess](Step-1-Plan-DirectAccess-Infrastructure.md).  
   
 |Tarea|Descripción|  
 |----|--------|  
@@ -144,7 +144,7 @@ Asegúrate de que el certificado de sitio web utilizado para la autenticación I
   
 ##### <a name="to-install-the-ip-https-certificate-from-an-internal-ca"></a>Cómo instalar el certificado IP-HTTPS desde una CA interna  
   
-1.  En el servidor de acceso remoto: En la pantalla **Inicio** , escriba**MMC. exe**y, a continuación, presione Entrar.  
+1.  En el servidor de acceso remoto: en la pantalla **Inicio** , escriba**MMC. exe**y, a continuación, presione Entrar.  
   
 2.  En la consola MMC, en el menú **Archivo**, haz clic en **Agregar o quitar complemento**.  
   
@@ -179,7 +179,7 @@ Debes configurar manualmente una entrada DNS para el sitio web del servidor de u
   
 ### <a name="NLS_DNS"></a>Para crear el servidor de ubicación de red y los registros DNS de sondeo Web  
   
-1.  En el servidor DNS de la red interna: En la pantalla **Inicio** , escriba * * DNSMgmt. msc * * y, a continuación, presione Entrar.  
+1.  En el servidor DNS de la red interna: en la pantalla **Inicio** , escriba * * DNSMgmt. msc * * y, a continuación, presione Entrar.  
   
 2.  En el panel izquierdo de la consola del **Administrador del DNS**, expande la zona de búsqueda directa de tu dominio. Haz clic con el botón secundario en el dominio y haz clic en **Host nuevo (A o AAAA)** .  
   
@@ -187,9 +187,9 @@ Debes configurar manualmente una entrada DNS para el sitio web del servidor de u
   
 4.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)** , escribe el nombre DNS del sondeo web (el nombre del sondeo web predeterminado es directaccess-webprobehost). En el cuadro **Dirección IP**, escribe la dirección IPv4 del sondeo web y haz clic en **Agregar host**. Repite este proceso para directaccess-corpconnectivityhost y todos los comprobadores de conectividad creados manualmente. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.  
   
-5.  Haga clic en **Listo**.  
+5.  Haz clic en **Listo**.  
 
-](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -202,7 +202,7 @@ También debes configurar entradas DNS para los siguiente:
   
 -   **El servidor IP-https**: los clientes de DirectAccess deben ser capaces de resolver el nombre DNS del servidor de acceso remoto desde Internet.  
   
--   **Comprobación de revocación de CRL**: DirectAccess usa la comprobación de revocación de certificados para la conexión IP-https entre los clientes de DirectAccess y el servidor de acceso remoto, y para la conexión basada en https entre el cliente de DirectAccess y la red servidor de ubicación. En ambos casos, los clientes de DirectAccess deben ser capaces de resolver y acceder a la ubicación del punto de distribución de CRL.  
+-   **Comprobación de revocación de CRL**: DirectAccess usa la comprobación de revocación de certificados para la conexión IP-https entre los clientes de DirectAccess y el servidor de acceso remoto, y para la conexión basada en https entre el cliente de DirectAccess y el servidor de ubicación de red. En ambos casos, los clientes de DirectAccess deben ser capaces de resolver y acceder a la ubicación del punto de distribución de CRL.  
   
 ## <a name="ConfigAD"></a>Configurar Active Directory  
 El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben estar unidos a un dominio de Active Directory. Los equipos cliente de DirectAccess deben pertenecer a uno de los siguientes tipos de dominio:  
@@ -233,7 +233,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
   
 9. En el cuadro de diálogo **Propiedades del sistema**, haga clic en Cerrar. Haz clic en **Reiniciar ahora** cuando se te solicite.  
   
-](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -277,7 +277,7 @@ La configuración de DirectAccess contenida en el objeto de directiva de grupo e
   
 6.  En el cuadro de diálogo **Seleccionar Usuarios, Contactos, Equipos o Cuentas de servicio**, selecciona los equipos cliente que deseas habilitar para DirectAccess y haz clic en **Aceptar**.  
   
-](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**comandos equivalentes de Windows PowerShell** de @no__t 0Windows PowerShell  
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**comandos equivalentes** de Windows PowerShell Windows PowerShell  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -307,7 +307,7 @@ El servidor de ubicación de red debe encontrarse en un servidor con alta dispon
   
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>Cómo instalar el certificado de servidor de ubicación de red desde una CA interna  
   
-1.  En el servidor que hospede el sitio web del servidor de ubicación de red: En la pantalla **Inicio** , escriba**MMC. exe**y, a continuación, presione Entrar.  
+1.  En el servidor que hospedará el sitio web del servidor de ubicación de red: en la pantalla **Inicio** , escriba**MMC. exe**y, a continuación, presione Entrar.  
   
 2.  En la consola MMC, en el menú **Archivo**, haz clic en **Agregar o quitar complemento**.  
   

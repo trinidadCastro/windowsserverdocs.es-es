@@ -18,11 +18,11 @@ ms.locfileid: "71406122"
 ---
 # <a name="gateway-bandwidth-allocation"></a>Asignación de ancho de banda de puerta de enlace
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 En Windows Server 2016, el ancho de banda de túnel individual para IPsec, GRE y L3 era una proporción de la capacidad total de la puerta de enlace. Por lo tanto, los clientes proporcionarían la capacidad de puerta de enlace basada en el ancho de banda TCP estándar que esperaba esta máquina virtual de puerta de enlace.
 
-Además, el ancho de banda de túnel IPsec máximo en la puerta de enlace se limitó a (3/20) la capacidad de \*Gateway proporcionada por el cliente. Por lo tanto, por ejemplo, si establece la capacidad de la puerta de enlace en 100 Mbps, la capacidad del túnel IPsec sería de 150 Mbps. Las proporciones equivalentes para los túneles GRE y L3 son 1/5 y 1/2, respectivamente.
+Además, el ancho de banda de túnel IPsec máximo en la puerta de enlace se limitó a (3/20)\*capacidad de puerta de enlace proporcionada por el cliente. Por lo tanto, por ejemplo, si establece la capacidad de la puerta de enlace en 100 Mbps, la capacidad del túnel IPsec sería de 150 Mbps. Las proporciones equivalentes para los túneles GRE y L3 son 1/5 y 1/2, respectivamente.
 
 Aunque esto funcionaba para la mayoría de las implementaciones, el modelo de proporción fija no era adecuado para entornos de alto rendimiento. Incluso cuando las tasas de transferencia de datos eran altas (por ejemplo, más de 40 Gbps), el rendimiento máximo de los túneles de puerta de enlace de SDN se limita debido a factores internos.
 
@@ -60,15 +60,15 @@ Por ejemplo, si asigna 2 Gbps de rendimiento de IPsec a un cliente:
 
 Capacidad disponible restante en la puerta de enlace = capacidad total de la puerta de enlace: proporción de rendimiento de IPsec * rendimiento de IPsec asignado (capacidad usada)
 
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-525 – 5 * 2 = 15 Gbps
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25 – 5 * 2 = 15 Gbps
 
 Rendimiento de IPsec restante que se puede asignar en la puerta de enlace 
 
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-55-2 = 3 Gbps
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5-2 = 3 Gbps
 
 Rendimiento GRE restante que se puede asignar en la puerta de enlace = capacidad restante de la relación de rendimiento de puerta de enlace/GRE 
 
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-515 * 3/5 = 9 Gbps
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 * 3/5 = 9 Gbps
 
 La proporción de rendimiento varía en función de la capacidad total de la puerta de enlace. Hay que tener en cuenta que debe establecer la capacidad total en el ancho de banda de TCP disponible para la máquina virtual de puerta de enlace. Si tiene varias máquinas virtuales hospedadas en la puerta de enlace, debe ajustar la capacidad total de la puerta de enlace en consecuencia.
 
@@ -76,7 +76,7 @@ Además, si la capacidad de la puerta de enlace es menor que la capacidad total 
 
 ## <a name="windows-server-2016-behavior"></a>Comportamiento de Windows Server 2016
 
-El algoritmo de cálculo de la capacidad de puerta de enlace para Windows Server 2016 permanece sin cambios. En Windows Server 2016, el ancho de banda de túnel IPsec máximo se limitó a (3/20) la capacidad de \*gateway en una puerta de enlace. Las proporciones equivalentes para los túneles de GRE y L3 eran 1/5 y 1/2, respectivamente.
+El algoritmo de cálculo de la capacidad de puerta de enlace para Windows Server 2016 permanece sin cambios. En Windows Server 2016, el ancho de banda de túnel IPsec máximo se limitó a (3/20)\*capacidad de puerta de enlace en una puerta de enlace. Las proporciones equivalentes para los túneles de GRE y L3 eran 1/5 y 1/2, respectivamente.
 
 Si está actualizando de Windows Server 2016 a Windows Server 2019:
 

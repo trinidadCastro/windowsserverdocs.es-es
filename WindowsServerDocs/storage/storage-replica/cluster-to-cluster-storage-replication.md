@@ -18,7 +18,7 @@ ms.locfileid: "71393787"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>Replicación de almacenamiento de clúster a clúster
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 Réplica de almacenamiento puede replicar volúmenes entre clústeres, incluida la replicación de clústeres mediante Espacios de almacenamiento directo. La administración y la configuración es similar a la replicación de servidor a servidor.  
 
@@ -39,7 +39,7 @@ En este tutorial se utiliza como ejemplo el siguiente entorno:
 
 ![Diagrama que muestra un entorno de ejemplo con un clúster en el sitio de Redmond que se replica con un clúster en el sitio de Bellevue](./media/Cluster-to-Cluster-Storage-Replication/SR_ClustertoCluster.png)  
 
-@NO__T 0FIGURE 1: Replicación de clúster a clúster @ no__t-0  
+**Figura 1: replicación de clúster a clúster**  
 
 ## <a name="prerequisites"></a>Requisitos previos  
 
@@ -109,7 +109,7 @@ Muchos de estos requisitos se pueden determinar mediante el cmdlet `Test-SRTopol
     > -   El volumen de registro debe ser al menos de 8 GB de forma predeterminada y puede ser mayor o menor en función de los requisitos de registro.
     > -   Al usar Espacios de almacenamiento directo (Espacios de almacenamiento directo) con una memoria caché de NVME o SSD, verá un mayor que el aumento esperado de latencia al configurar la replicación de réplica de almacenamiento entre los clústeres de Espacios de almacenamiento directo. El cambio de latencia es proporcionalmente mucho mayor de lo que se ve cuando se usa NVME y SSD en una configuración de rendimiento y capacidad, y no en el nivel de capacidad y en el de HDD.
 
-    Este problema se produce debido a las limitaciones de la arquitectura en el mecanismo de registro de SR combinada con la latencia extremadamente baja de NVME en comparación con los medios más lentos. Cuando se usa Espacios de almacenamiento directo memoria caché de Espacios de almacenamiento directo, todas las e/s de los registros de SR, junto con todas las e/s de lectura/escritura recientes de las aplicaciones, se producirán en la memoria caché y nunca en los niveles de rendimiento o capacidad. Esto significa que todas las actividades de SR se producen en el mismo medio de velocidad; no se recomienda esta configuración (vea https://aka.ms/srfaq para ver las recomendaciones de registro). 
+    Este problema se produce debido a las limitaciones de la arquitectura en el mecanismo de registro de SR combinada con la latencia extremadamente baja de NVME en comparación con los medios más lentos. Cuando se usa Espacios de almacenamiento directo memoria caché de Espacios de almacenamiento directo, todas las e/s de los registros de SR, junto con todas las e/s de lectura/escritura recientes de las aplicaciones, se producirán en la memoria caché y nunca en los niveles de rendimiento o capacidad. Esto significa que todas las actividades de SR se producen en el mismo medio de velocidad; no se recomienda esta configuración (consulte https://aka.ms/srfaq para obtener recomendaciones de registro). 
 
     Cuando se usa Espacios de almacenamiento directo con HDD, no se puede deshabilitar o evitar la memoria caché. Como solución alternativa, si usa solo SSD y NVME, puede configurar solo los niveles de rendimiento y capacidad. Si se usa esa configuración y se colocan los registros de SR en el nivel de rendimiento únicamente con los volúmenes de datos que solo están en el nivel de capacidad, se evitará el problema de latencia alta que se ha descrito anteriormente. Lo mismo puede hacerse con una combinación de SSD más rápidas y lentas y sin NVME.
 
@@ -140,7 +140,7 @@ Muchos de estos requisitos se pueden determinar mediante el cmdlet `Test-SRTopol
 2. Asegúrate de que los volúmenes de registro SR siempre estarán en el almacenamiento flash más rápido y los volúmenes de datos en el almacenamiento de gran capacidad más lento.
 
 3. Inicie Windows PowerShell y use el cmdlet `Test-SRTopology` para determinar si se cumplen todos los requisitos de Réplica de almacenamiento. Puede usar el cmdlet en modo de solo requisitos para una prueba rápida, o en modo de evaluación de rendimiento de ejecución más larga.  
-   Por ejemplo,  
+   Por ejemplo:  
 
    ```PowerShell
    MD c:\temp
@@ -149,7 +149,7 @@ Muchos de estos requisitos se pueden determinar mediante el cmdlet `Test-SRTopol
    ```
 
      > [!IMPORTANT]
-     > Al usar un servidor de prueba sin carga de E/S de escritura en el volumen de origen especificado durante el período de evaluación, considere la posibilidad de agregar una carga de trabajo o no se generará un informe útil. Pruebe con cargas de trabajo del estilo de producción para ver números reales y tamaños de registro recomendados. Otra alternativa es copiar algunos archivos en el volumen de origen durante la prueba o descargar y ejecutar [DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) para generar E/S de escritura. Por ejemplo, una muestra con una carga de trabajo de E/S de escritura baja durante cinco minutos en el volumen D:.  
+     > Al usar un servidor de prueba sin carga de E/S de escritura en el volumen de origen especificado durante el período de evaluación, considere la posibilidad de agregar una carga de trabajo o no se generará un informe útil. Pruebe con cargas de trabajo del estilo de producción para ver números reales y tamaños de registro recomendados. Otra alternativa es copiar algunos archivos en el volumen de origen durante la prueba o descargar y ejecutar [DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) para generar E/S de escritura. Por ejemplo, una muestra con una carga de trabajo de E/S de escritura baja durante cinco minutos en el volumen D:  
      > `Diskspd.exe -c1g -d300 -W5 -C5 -b8k -t2 -o2 -r -w5 -h d:\test.dat`  
 
 4. Examine el informe **TestSrTopologyReport.html** para asegurarse de que cumple los requisitos de la Réplica de almacenamiento.  
@@ -209,7 +209,7 @@ Ahora creará dos clústeres de conmutación por error normal. Después de la co
 
 4.  Cree los servidores de archivos de escalabilidad horizontal en clúster en ambos clústeres con las instrucciones del artículo sobre [configuración de un servidor de archivos de escalabilidad horizontal](https://technet.microsoft.com/library/hh831718.aspx).  
 
-## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>Paso 3: Configuración de la replicación de clúster a clúster mediante Windows PowerShell  
+## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>Paso 3: Configuración de la replicación de clúster a clúster mediante Windows PowerShell  
 Ahora configurarás la replicación de clúster a clúster mediante Windows PowerShell. Puede realizar todos los pasos siguientes en los nodos directamente o desde un equipo de administración remota que contenga Windows Server Herramientas de administración remota del servidor  
 
 1. Conceda al primer clúster acceso completo al otro clúster mediante la ejecución del cmdlet **Grant-SRAccess** en cualquier nodo del primer clúster, o de forma remota.  Windows Server Herramientas de administración remota del servidor
@@ -248,7 +248,7 @@ Ahora configurarás la replicación de clúster a clúster mediante Windows Pow
        ```PowerShell
        Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20
        ```
-   2.  En el servidor de destino, ejecute el siguiente comando para ver los eventos de Réplica de almacenamiento que muestran la creación de la asociación. Este evento indica el número de bytes copiados y el tiempo necesario. Ejemplo:  
+   2.  En el servidor de destino, ejecute el siguiente comando para ver los eventos de Réplica de almacenamiento que muestran la creación de la asociación. Este evento indica el número de bytes copiados y el tiempo necesario. Por ejemplo:  
         
        ```powershell
        Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | Format-List
@@ -296,7 +296,7 @@ Ahora configurarás la replicación de clúster a clúster mediante Windows Pow
    > [!NOTE]
    > El disco de clúster de destino siempre se mostrará como **En línea (sin acceso)** cuando se replica.  
 
-## <a name="step-4-manage-replication"></a>Paso 4: Administrar la replicación
+## <a name="step-4-manage-replication"></a>Paso 4: Administración de la replicación
 
 Ahora podrá administrar y operar la replicación de clúster a clúster. Puede realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga el Herramientas de administración remota del servidor de Windows Server.  
 
@@ -310,23 +310,23 @@ Ahora podrá administrar y operar la replicación de clúster a clúster. Puede 
 
     -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Número de solicitudes para la última escritura del registro  
 
-    -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Promedio de longitud de cola de vaciado  
+    -   \Estadísticas de E/S de partición de réplica de almacenamiento (*)\Longitud media de la cola de vaciado  
 
     -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Longitud actual de la cola de vaciado  
 
     -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Número de solicitudes de escritura en aplicación  
 
-    -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Promedio de Número de solicitudes por escritura en registro  
+    -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Número promedio de solicitudes por escritura del registro  
 
-    -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Promedio de latencia de escritura de aplicación  
+    -   \Estadísticas de E/S de partición de réplica de almacenamiento (*)\Latencia media de escritura de la aplicación  
 
-    -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Promedio de latencia de lectura de aplicación  
+    -   \Estadísticas de E/S de partición de réplica de almacenamiento (*)\Latencia media de lectura de la aplicación  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\RPO de destino  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\RPO actual  
 
-    -   \Estadísticas de Réplica de almacenamiento(*)\Promedio de longitud de cola de registro  
+    -   \Estadísticas de Réplica de almacenamiento(*)\Longitud media de cola del registro  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Longitud de cola del registro actual  
 
@@ -334,11 +334,11 @@ Ahora podrá administrar y operar la replicación de clúster a clúster. Puede 
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Nº total de bytes enviados  
 
-    -   \Estadísticas de Réplica de almacenamiento(*)\Promedio de latencia de envío de red  
+    -   \Estadísticas de réplica de almacenamiento (*)\Latencia media de envío de red  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Estado de la replicación  
 
-    -   \Estadísticas de Réplica de almacenamiento(*)\Promedio de latencia del recorrido de ida y vuelta de mensaje  
+    -   \Estadísticas de réplica de almacenamiento(*)\Latencia medida del recorrido de ida y vuelta de mensaje  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Tiempo transcurrido de la última recuperación  
 
@@ -387,11 +387,11 @@ Ahora podrá administrar y operar la replicación de clúster a clúster. Puede 
     > [!NOTE]  
     > La réplica de almacenamiento desmonta los volúmenes de destino. Esto es así por diseño.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 -   [Información general sobre réplica de almacenamiento](storage-replica-overview.md) 
 -   [Replicación de clúster extendido con almacenamiento compartido](stretch-cluster-replication-using-shared-storage.md)  
 -   [Replicación de almacenamiento de servidor a servidor](server-to-server-storage-replication.md)  
--   [Réplica de almacenamiento: Problemas conocidos](storage-replica-known-issues.md)  
--   [Réplica de almacenamiento: Preguntas más frecuentes](storage-replica-frequently-asked-questions.md)  
+-   [Réplica de almacenamiento: problemas conocidos](storage-replica-known-issues.md)  
+-   [Réplica de almacenamiento: preguntas más frecuentes](storage-replica-frequently-asked-questions.md)  
 -   [Espacios de almacenamiento directo en Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)  

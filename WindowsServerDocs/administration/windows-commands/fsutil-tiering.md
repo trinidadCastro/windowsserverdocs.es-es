@@ -17,7 +17,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71376784"
 ---
 # <a name="fsutil-tiering"></a>Niveles de fsutil
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016 y Windows 10
 
 Habilita la administración de funciones de nivel de almacenamiento, como la configuración y deshabilitación de marcas y la lista de niveles.
 
@@ -36,7 +36,7 @@ fsutil tiering [tierlist] <volume>
 |Parámetro|Descripción|
 |-------------|---------------|
 |clearflags|Deshabilita las marcas de comportamiento de niveles de un volumen.|
-|@no__t 0volume >|Especifica el volumen.|
+|\<> de volumen|Especifica el volumen.|
 |/TrNH|En el caso de los volúmenes con almacenamiento en capas, hace que la recopilación térmica se deshabilite.<br /><br>Solo se aplica a NTFS y ReFS.|
 |queryflags|Consulta las marcas de comportamiento de niveles de un volumen.|
 |regionlist|Enumera las regiones en capas de un volumen y sus respectivos niveles de almacenamiento.|

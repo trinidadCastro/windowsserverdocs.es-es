@@ -45,7 +45,7 @@ Este cambio se basa en el análisis de rendimiento y de equilibrio de energía m
 
 ## <a name="specpower--java-workload"></a>SPECpower: carga de trabajo de JAVA
 
-[SPECpower @ no__t-1ssj2008](http://spec.org/power_ssj2008/), la prueba comparativa de especificación estándar del sector más popular para las características de potencia y rendimiento del servidor, se usa para comprobar el impacto en la energía. Puesto que solo usa el **rendimiento** como métrica de rendimiento, el plan de energía predeterminado **equilibrado** proporciona la mejor eficacia energética.
+[SPECpower\_ssj2008](http://spec.org/power_ssj2008/), la prueba comparativa de especificación estándar del sector más popular para características de rendimiento y energía del servidor, se usa para comprobar el impacto en la energía. Puesto que solo usa el **rendimiento** como métrica de rendimiento, el plan de energía predeterminado **equilibrado** proporciona la mejor eficacia energética.
 
 El cambio de parámetro propuesto consume una potencia ligeramente mayor a la luz (es decir, < = 20%) niveles de carga. Pero con el nivel de carga superior, la diferencia aumenta y comienza a consumir la misma potencia que el plan de energía de **alto rendimiento** después del nivel de carga del 60%. Para usar los parámetros de cambio propuestos, los usuarios deben tener en cuenta el costo de energía en niveles de carga medio y alto durante el planeamiento de la capacidad del bastidor.
 
@@ -64,7 +64,7 @@ Configuramos un [clúster de conmutación por error] y usabamos Diskspd para gen
 >[!Important]
 >A partir de procesadores Intel [Broadwell] que ejecutan Windows Server 2016, la mayoría de las decisiones de administración de energía del procesador se realizan en el procesador en lugar de en el nivel de sistema operativo para lograr una adaptación más rápida a los cambios de carga de trabajo. Los parámetros de PPM heredados que usa el sistema operativo tienen un impacto mínimo en las decisiones de frecuencia reales, excepto en indicar al procesador si se debe favorecer la potencia o el rendimiento, o bien limitar las frecuencias mínima y máxima. Por lo tanto, el cambio propuesto del parámetro PPM solo se dirige a los sistemas Broadwell.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 - [Consideraciones de rendimiento de hardware de servidor](../index.md)
 - [Server Hardware Power Considerations](../power.md) (Consideraciones de alimentación del hardware de servidor)
 - [Power and Performance Tuning](power-performance-tuning.md) (Optimización de potencia y rendimiento)

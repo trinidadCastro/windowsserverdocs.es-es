@@ -18,15 +18,15 @@ ms.locfileid: "71359165"
 ---
 # <a name="determine-your-federated-application-strategy-in-the-resource-partner"></a>Determinar la estrategia de aplicación federada en el asociado de recurso
 
-Una parte importante del diseño de una nueva infraestructura de Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1 en la organización del asociado de recurso es determinar el conjunto completo de aplicaciones y servicios que se usarán para participar en la Federación. los asociados de cuenta serán los destinatarios de esos recursos. Antes de diseñar una estrategia de servicios y aplicación federada, plantéese las siguientes cuestiones:  
+Una parte importante del diseño de una nueva Servicios de federación de Active Directory (AD FS) \(AD FS infraestructura de\) en la organización del asociado de recurso es determinar el conjunto completo de aplicaciones y servicios que se usarán para participar en la Federación y los asociados de cuenta que serán los destinatarios de esos recursos. Antes de diseñar una estrategia de servicios y aplicación federada, plantéese las siguientes cuestiones:  
   
--   ¿Habilitará e implementará una aplicación ASP.NET o un servicio Windows Communication Foundation \(WCF @ no__t-1 para la Federación?  
+-   ¿Habilitará e implementará una aplicación ASP.NET o un servicio\) \(WCF de Windows Communication Foundation para la Federación?  
   
 -   ¿Necesitarán los usuarios de la red corporativa obtener acceso al servicio o la aplicación federada mediante la autenticación integrada de Windows?  
   
 -   ¿Utilizarán los usuarios de la red perimetral el servicio o la aplicación federada? Si es así, ¿será necesaria la autenticación integrada de Windows?  
   
--   ¿Todos los servidores web que hospedan aplicaciones federadas ejecutan un sistema operativo Windows Server y Internet Information Services \(IIS @ no__t-1?  
+-   ¿Todos los servidores web que hospedan aplicaciones federadas que ejecutan un sistema operativo Windows Server y Internet Information Services \(IIS\)?  
   
 -   ¿A quién proporcionará recursos el servicio o la aplicación federada?  
   
@@ -38,8 +38,8 @@ Responder a estas preguntas le ayudará a planear un diseño sólido de AD FS. T
   
 -   [Proporcionar a los usuarios de otra organización acceso a aplicaciones y servicios habilitados para notificaciones](Provide-Users-in-Another-Organization-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
   
-Para obtener más información sobre cómo crear una aplicación de notificaciones @ no__t-0aware ASP.NET o un servicio WCF, consulte el [SDK de Windows Identity Foundation](https://go.microsoft.com/fwlink/?LinkId=122266).  
+Para obtener más información sobre cómo crear una aplicación ASP.NET compatible con\-notificaciones o un servicio WCF, consulte el [SDK de Windows Identity Foundation](https://go.microsoft.com/fwlink/?LinkId=122266).  
   
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

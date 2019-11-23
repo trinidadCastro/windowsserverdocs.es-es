@@ -41,7 +41,7 @@ HNV es un bloque de creación fundamental de la solución de redes definidas por
   
 El nuevo controlador de red de Microsoft envía directivas de HNV a un agente de host que se ejecuta en cada host mediante Open vSwitch Database Management Protocol (OVSDB) como la interfaz SouthBound (SBI). El agente de host almacena esta Directiva mediante una personalización del [esquema VTEP](https://github.com/openvswitch/ovs/blob/master/vtep/vtep.ovsschema) y ejecuta reglas de flujo complejo en un motor de flujo de rendimiento en el conmutador de Hyper-V.  
   
-El motor de flujo dentro del conmutador de Hyper-V es el mismo motor que se usa en Microsoft Azure @ no__t-0, que se ha demostrado a hiperescala en la Microsoft Azure nube pública. Además, toda la pila de SDN a través de la controladora de red y el proveedor de recursos de red (los detalles próximamente) son coherentes con Microsoft Azure, lo que aporta la eficacia de la nube Microsoft Azure a nuestra empresa y servicio de hospedaje. clientes del proveedor.  
+El motor de flujo dentro del conmutador de Hyper-V es el mismo motor que se usa en Microsoft Azure&trade;, que se ha demostrado a hiperescala en la nube pública de Microsoft Azure. Además, toda la pila de SDN a través de la controladora de red y el proveedor de recursos de red (los detalles próximamente) son coherentes con Microsoft Azure, lo que aporta la eficacia de la nube Microsoft Azure a nuestra empresa y servicio de hospedaje. clientes del proveedor.  
   
 > [!NOTE]  
 > Para obtener más información sobre OVSDB, consulte [RFC 7047](https://www.rfc-editor.org/info/rfc7047).  
@@ -59,7 +59,7 @@ Windows Server 2016 incluye un equilibrador de carga de software (SLB) con compa
 ### <a name="L2"></a>Encabezados IEEE Ethernet compatibles  
 HNV implementa encabezados Ethernet L2 correctos para garantizar la interoperabilidad con dispositivos físicos y virtuales de terceros que dependen de los protocolos estándar del sector. Microsoft garantiza que todos los paquetes transmitidos tienen valores compatibles en todos los campos para garantizar esta interoperabilidad. Además, se requerirá la compatibilidad con tramas gigantes (MTU > 1780) en la red física L2 para tener en cuenta la sobrecarga de paquetes introducida por los protocolos de encapsulación (NVGRE, VXLAN) al tiempo que se garantiza que los invitados Virtual Machines conectados a un HNV Virtual Network mantener un MTU 1514.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulte también  
   
 -   [Información general sobre Virtualización de red de Hyper-V](hyperv-network-virtualization-overview-windows-server.md)  
   

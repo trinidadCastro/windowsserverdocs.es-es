@@ -36,9 +36,9 @@ bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge} 
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0DriveLetter >|Define la letra de unidad que se asignará a la unidad de destino especificada.|
+|\<letraDeUnidad >|Define la letra de unidad que se asignará a la unidad de destino especificada.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Como práctica recomendada, se recomienda no asignar una letra de unidad a la unidad del sistema.
 

@@ -38,11 +38,11 @@ add alias <AliasName> <AliasValue>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0AliasName >|Especifica el nombre del alias.|
-|@no__t 0AliasValue >|Especifica el valor del alias.|
+|\<AliasName >|Especifica el nombre del alias.|
+|\<AliasValue >|Especifica el valor del alias.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Los alias se guardan en el archivo de metadatos y se cargarán con el comando **cargar metadatos** .
 

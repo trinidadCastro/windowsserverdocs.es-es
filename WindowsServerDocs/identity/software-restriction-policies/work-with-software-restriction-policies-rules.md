@@ -88,7 +88,7 @@ Dependiendo del entorno, existen diferentes procedimientos para habilitar las re
 
 2.  En el árbol de consola, haga clic en **Opciones de seguridad** , que se encuentra en configuración de seguridad/Directivas locales.
 
-3.  En el panel de detalles, haga doble clic en configuración de @no__t 0System: Usar reglas de certificado en archivos ejecutables de Windows para directivas de restricción de software @ no__t-0.
+3.  En el panel de detalles, haga doble clic en **Configuración del sistema: usar reglas de certificado en archivos ejecutables de Windows para directivas de restricción de software**.
 
 4.  Realice una de las siguientes acciones y, a continuación, haga clic en **Aceptar**:
 
@@ -112,7 +112,7 @@ Dependiendo del entorno, existen diferentes procedimientos para habilitar las re
 
 7.  En el árbol de consola, haga clic en **Opciones de seguridad** , que se encuentra en *GroupPolicyObject* [*NombreDeEquipo*] directiva/configuración del equipo/Configuración de Windows/configuración de seguridad/Directivas locales/.
 
-8.  En el panel de detalles, haga doble clic en configuración de @no__t 0System: Usar reglas de certificado en archivos ejecutables de Windows para directivas de restricción de software @ no__t-0.
+8.  En el panel de detalles, haga doble clic en **Configuración del sistema: usar reglas de certificado en archivos ejecutables de Windows para directivas de restricción de software**.
 
 9. Si esta configuración de directiva no está aun definida, seleccione la casilla **Definir esta configuración de directiva**.
 
@@ -134,7 +134,7 @@ Dependiendo del entorno, existen diferentes procedimientos para habilitar las re
 
 5.  En el árbol de consola, haga clic en **Opciones de seguridad** , que se encuentra en *GroupPolicyObject*[*NombreDeEquipo*] directiva/configuración del equipo/Configuración de Windows/configuración de seguridad/Directivas locales.
 
-6.  En el panel de detalles, haga doble clic en configuración de @no__t 0System: Usar reglas de certificado en archivos ejecutables de Windows para directivas de restricción de software @ no__t-0.
+6.  En el panel de detalles, haga doble clic en **Configuración del sistema: usar reglas de certificado en archivos ejecutables de Windows para directivas de restricción de software**.
 
 7.  Si esta configuración de directiva no está aun definida, seleccione la casilla **Definir esta configuración de directiva**.
 
@@ -150,7 +150,7 @@ Dependiendo del entorno, existen diferentes procedimientos para habilitar las re
 
 2.  En el árbol de consola, haga clic en **Opciones de seguridad**, en *GroupPolicyObject* [*NombreDeEquipo*] Directiva/Configuración del equipo/Configuración de Windows/Configuración de seguridad/Directivas locales.
 
-3.  En el panel de detalles, haga doble clic en configuración de @no__t 0System: Usar reglas de certificado en archivos ejecutables de Windows para directivas de restricción de software @ no__t-0.
+3.  En el panel de detalles, haga doble clic en **Configuración del sistema: usar reglas de certificado en archivos ejecutables de Windows para directivas de restricción de software**.
 
 4.  Si esta configuración de directiva no está aun definida, seleccione la casilla **Definir esta configuración de directiva**.
 
@@ -310,7 +310,7 @@ Como estas reglas se especifican a través de la ruta de acceso, si se mueve un 
 
 5.  En **ruta de acceso**, pegue el nombre de la clave del registro, seguido del nombre del valor.
 
-6.  Incluya la ruta de acceso del registro entre signos de porcentaje (%), por ejemplo,%HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PlatformSDK\Directories\InstallDir%.
+6.  Incluya la ruta de acceso del registro entre signos de porcentaje (%), por ejemplo,% HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\PlatformSDK\Directories\InstallDir%.
 
 7.  En **nivel de seguridad**, haga clic en no **permitido** o no **restringido**.
 

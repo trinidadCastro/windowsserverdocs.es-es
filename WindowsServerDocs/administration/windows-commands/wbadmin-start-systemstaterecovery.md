@@ -27,7 +27,7 @@ ms.locfileid: "71362224"
 Realiza una recuperación de estado del sistema en una ubicación y desde una copia de seguridad que especifique.
 
 > [!NOTE]
-> Copias de seguridad de Windows Server no realiza copias de seguridad ni recupera secciones de usuarios del registro (HKEY_CURRENT_USER) como parte de la copia de seguridad del estado del sistema o de la recuperación del estado del sistema.
+> Copias de seguridad de Windows Server no realiza copias de seguridad ni recupera subárboles de usuario del registro (HKEY_CURRENT_USER) como parte de la copia de seguridad del estado del sistema o de la recuperación del estado del sistema.
 
 Para realizar una recuperación del estado del sistema con este subcomando, debe ser miembro del grupo **operadores de copia de seguridad** o del grupo **administradores** , o bien tener delegados los permisos adecuados. Además, debe ejecutar **Wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados, haga clic con el botón secundario en **símbolo del sistema**y, a continuación, haga clic en **Ejecutar como administrador**).
 
@@ -78,7 +78,7 @@ wbadmin start systemstaterecovery
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
   ```  
-- Para realizar una recuperación del estado del sistema de la copia de seguridad de 04/30/2013 a las 9:00 A.M. que está almacenado en el recurso compartido \\ @ no__t-1servername\share para Server01, escriba:  
+- Para realizar una recuperación del estado del sistema de la copia de seguridad de 04/30/2013 a las 9:00 A.M. que está almacenado en el recurso compartido \\\\servername\share para Server01, escriba:  
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```

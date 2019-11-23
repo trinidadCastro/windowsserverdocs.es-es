@@ -21,11 +21,11 @@ ms.locfileid: "71364036"
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016 
 
 >[!TIP]
-> ¿Buscas información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
+> ¿Buscas información sobre versiones anteriores de Windows Server? Echa un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
 
 <img src="../media/landing-icons/virtualization.png" style='float:left; padding:.5em;' alt="Icon showing a box with spokes"> La virtualización en Windows Server 2016 es una de las tecnologías fundamentales necesarias para crear tu infraestructura definida por software. Junto con las redes y el almacenamiento, las funciones de virtualización ofrecen la flexibilidad que necesitas para impulsar las cargas de trabajo para tus clientes.
 
-Las tecnologías de virtualización de Windows Server incluyen actualizaciones de Hyper-V, el conmutador virtual de Hyper-V y el tejido protegido y el Virtual Machines blindado \(VMs @ no__t-1, que mejoran la seguridad, la escalabilidad y la confiabilidad. Las actualizaciones de clústeres de conmutación por error, redes y almacenamiento facilitan aún más la implementación y administración de estas tecnologías cuando se usan con Hyper-V. 
+Las tecnologías de virtualización de Windows Server incluyen actualizaciones de Hyper-V, el conmutador virtual de Hyper-V y el tejido protegido y Virtual Machines blindadas \(máquinas virtuales\), que mejoran la seguridad, la escalabilidad y la confiabilidad. Las actualizaciones de clústeres de conmutación por error, redes y almacenamiento facilitan aún más la implementación y administración de estas tecnologías cuando se usan con Hyper-V. 
 
 
 <ul class="cardsI panelContent">
@@ -59,7 +59,7 @@ Las tecnologías de virtualización de Windows Server incluyen actualizaciones d
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Windows 10 para empresas: Formas de usar dispositivos para trabajar</h3>
+                        <h3>Windows 10 para empresas: formas de usar los dispositivos para el trabajo</h3>
                         <p>La tecnología Hyper-V proporciona recursos informáticos mediante la virtualización de hardware. Hyper-V crea una versión de software de un equipo, denominada máquina virtual, que usas para ejecutar un sistema operativo y las aplicaciones. Puedes ejecutar varias máquinas virtuales al mismo tiempo y puedes crearlas y eliminarlas según sea necesario. </p>
                     </div>
                 </div>
@@ -128,7 +128,7 @@ Las tecnologías de virtualización de Windows Server incluyen actualizaciones d
                     </div>
                     <div class="cardText">
                         <h3>Contenedores de Windows</h3>
-                        <p>Los contenedores de Windows proporcionan una virtualización a nivel de sistema operativo que permite ejecutar varias aplicaciones aisladas en un solo sistema. Se incluyen dos tipos diferentes de contenedores en tiempo de ejecución con la función, cada uno de ellos con distintos grados de aislamiento de aplicaciones.</p>
+                        <p>Los contenedores de Windows proporcionan virtualización en el nivel del sistema operativo que permite que varias aplicaciones aisladas se ejecuten en un solo sistema. Se incluyen dos tipos diferentes de contenedores en tiempo de ejecución con la función, cada uno de ellos con distintos grados de aislamiento de aplicaciones.</p>
                     </div>
                 </div>
             </div>

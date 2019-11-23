@@ -45,7 +45,7 @@ wbadmin get versions
 |-backupTarget|Especifica la ubicación de almacenamiento que contiene las copias de seguridad de las que desea obtener información. Se usa para enumerar las copias de seguridad almacenadas en esa ubicación de destino. Las ubicaciones de destino de copia de seguridad pueden ser unidades de disco conectadas localmente, volúmenes, carpetas compartidas remotas, medios extraíbles, como unidades de DVD u otros medios ópticos. Si las **versiones de Wbadmin get** se ejecutan en el mismo equipo en el que se creó la copia de seguridad, este parámetro no es necesario. Sin embargo, este parámetro es necesario para obtener información acerca de una copia de seguridad creada desde otro equipo.|
 |-equipo|Especifica el equipo para el que desea obtener detalles de la copia de seguridad. Se utiliza cuando las copias de seguridad de varios equipos se almacenan en la misma ubicación. Se debe usar cuando se especifica **-backupTarget** .|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Para enumerar los elementos disponibles para la recuperación a partir de una copia de seguridad específica, use **Wbadmin get items**.
 
@@ -55,7 +55,7 @@ Para ver una lista de las copias de seguridad disponibles almacenadas en el volu
 ```
 wbadmin get versions -backupTarget:h:
 ```
-Para ver una lista de las copias de seguridad disponibles almacenadas en la carpeta compartida remota \\ @ no__t-1servername\share para el equipo Server01, escriba:
+Para ver una lista de las copias de seguridad disponibles almacenadas en la carpeta compartida remota \\\\servername\share para el equipo Server01, escriba:
 ```
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```

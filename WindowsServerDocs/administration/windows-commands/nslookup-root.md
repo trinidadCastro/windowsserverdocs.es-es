@@ -35,8 +35,8 @@ root
 |-----------------|-------------------------------------------------------|
 | {ayuda &#124; ?} | Muestra un breve resumen de los subcomandos de **nslookup** . |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 - Actualmente, se usa el servidor de nombres ns.nic.ddn.mil. Este comando es un sinónimo de lserver ns.nic.ddn.mil. Puede cambiar el nombre del servidor raíz con el comando **establecer raíz** .
-  ## <a name="additional-references"></a>Referencias adicionales
+  ## <a name="additional-references"></a>referencias adicionales
   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-  [nslookup establecer raíz](nslookup-set-root.md)
+  [nslookup Set root](nslookup-set-root.md)

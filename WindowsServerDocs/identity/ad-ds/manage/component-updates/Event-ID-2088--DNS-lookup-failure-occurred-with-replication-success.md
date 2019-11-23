@@ -16,7 +16,7 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71368911"
 ---
-# <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>ID. de evento 2088: Error de búsqueda de DNS con replicación correcta
+# <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>Id. de evento 2088: se produjo un error de búsqueda de DNS con replicación correcta
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -46,17 +46,17 @@ La configuración de DNS no válida puede afectar a otras operaciones esenciales
 
 Debes resolver inmediatamente este error de configuración de DNS para que este controlador de dominio pueda resolver la dirección IP del controlador de dominio de origen mediante DNS. 
 
-Nombre de servidor alternativo: Error de DC1 en el nombre de host DNS: 4a8717eb-8e58-456c-995a-c92e4add7e8e. _ msdcs. contoso. com 
+Nombre de servidor alternativo: error de DC1 nombre de host DNS: 4a8717eb-8e58-456c-995a-c92e4add7e8e. _msdcs. contoso. com 
 
-Nota: De forma predeterminada, solo se muestran hasta 10 errores de DNS durante un período de 12 horas determinado, incluso si se producen más de 10 errores.  Para registrar todos los eventos de error individuales, establezca el siguiente valor del registro de diagnóstico en 1: 
+Nota: de forma predeterminada, solo se muestran hasta 10 errores de DNS durante un período de 12 horas determinado, incluso si se producen más de 10 errores.  Para registrar todos los eventos de error individuales, establezca el siguiente valor del registro de diagnóstico en 1: 
 
-Ruta de acceso del registro: Cliente RPC de HKLM\System\CurrentControlSet\Services\NTDS\Diagnostics\22 DS 
+Ruta de acceso del registro: cliente RPC de HKLM\System\CurrentControlSet\Services\NTDS\Diagnostics\22 DS 
 
 Acción del usuario: 
 
 1) Si el controlador de dominio de origen ya no funciona o su sistema operativo se ha reinstalado con un nombre de equipo o un GUID de objeto NTDSDSA diferentes, quite los metadatos del controlador de dominio de origen con Ntdsutil. exe, siguiendo los pasos descritos en el artículo MSKB 216498. 
 
-2) Confirme que el controlador de dominio de origen se está ejecutando Active Directory y que es accesible en la red. para ello, escriba "net view \\ @ no__t-1source DC Name @ no__t-2" o "ping &lt;source DC Name @ no__t-4". 
+2) Confirme que el controlador de dominio de origen se está ejecutando Active Directory y que es accesible en la red. para ello, escriba "net view \\&lt;nombre del DC de origen&gt;" o "ping &lt;nombre del DC de origen&gt;". 
 
 3) Compruebe que el controlador de dominio de origen usa un servidor DNS válido para los servicios DNS y que el registro del host del controlador de dominio de origen y el registro CNAME se han registrado correctamente, mediante la versión mejorada de DNS de DCDIAG. EXE disponible en <https://www.microsoft.com/dns> 
 
@@ -68,13 +68,17 @@ dcdiag/test: DNS
 
 5) Para más información sobre el análisis de errores de DNS, consulte KB 824449: <https://support.microsoft.com/?kbid=824449> 
 
-Datos adicionales Valor de error: 11004 el nombre solicitado es válido, pero no se encontró ningún dato del tipo solicitado @ no__t-0 </introduction>
+Valor de error de datos adicional: 11004 el nombre solicitado es válido, pero no se encontró ningún dato del tipo solicitado</code> </introduction>
   <section>
-    <title>Diagnosis @ no__t-1 @ no__t-2 @ no__t-3<para>Un error al resolver el nombre del controlador de dominio de origen mediante el registro de recursos de alias (CNAME) en DNS puede deberse a errores de configuración o retrasos de DNS en la propagación de datos DNS.</para>
+       de
+    <content>de 
+    <title>diagnóstico</title><para>Un error al resolver el nombre del controlador de dominio de origen mediante el registro de recursos de alias (CNAME) en DNS puede deberse a errores de configuración o retrasos de DNS en la propagación de datos DNS.</para>
     </content>
   </section>
   <section>
-    <title>Resolution @ no__t-1 @ no__t-2 @ no__t-3<para>Continúe con las pruebas de DNS como se describe en &quot; @ no__t-1Event ID 2087: Error de búsqueda de DNS que causó un error de replicación @ no__t-0. &quot;</para>
+    <content>de 
+    <title>resolución</title> 
+      <para>Continúe con las pruebas de DNS como se describe en &quot;ID. de <link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">evento 2087: error de búsqueda de DNS que causó un error en la replicación</link>.&quot;</para>
     </content>
   </section>
   <relatedTopics />

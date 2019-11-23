@@ -40,16 +40,16 @@ echo [on | off]
 |Parámetro|Descripción|
 |---------|-----------|
 |[on \| OFF]|Activa o desactiva la característica de repetición de comandos. El eco de comandos está activado de forma predeterminada.|
-|@no__t 0Message >|Especifica el texto que se va a mostrar en la pantalla.|
+|\<> de mensaje|Especifica el texto que se va a mostrar en la pantalla.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   El comando **echo** *Message* es especialmente útil cuando se desactiva el **eco** . Para mostrar un mensaje con varias líneas de longitud sin mostrar ningún comando, puede incluir varios comandos de *mensaje* de **eco** después del comando **echo off** en el programa por lotes.
 -   Cuando se desactiva el **eco** , el símbolo del sistema no aparece en la ventana del símbolo del sistema. Para mostrar el símbolo del sistema, escriba **echo.**
 -   Si se usa en un archivo por lotes, el **eco** y el **eco** no afectan a la configuración del símbolo del sistema.
 -   Para evitar que se repita un comando determinado en un archivo por lotes, inserte una arroba (@) delante del comando. Para evitar que se repitan todos los comandos en un archivo por lotes, incluya el comando **echo off** al principio del archivo.
--   Para mostrar una canalización ( **|** ) o un carácter de redireccionamiento ( **<** o **>** ) cuando se usa el **eco**, use un símbolo de intercalación (^) inmediatamente antes del carácter de canalización o redirección (por ejemplo, **^|** , **0** o **2**). Para mostrar un símbolo de intercalación, escriba dos intercalaciones consecutivas ( **^^** ).
+-   Para mostrar una canalización ( **|** ) o un carácter de redireccionamiento ( **<** o **>** ) cuando use el **eco**, use un símbolo de intercalación (^) inmediatamente antes del carácter de canalización o redirección (por ejemplo, **^|** , **^>** o **^<** ). Para mostrar un símbolo de intercalación, escriba dos intercalaciones consecutivas ( **^^** ).
 
 ## <a name="examples"></a>Ejemplos
 

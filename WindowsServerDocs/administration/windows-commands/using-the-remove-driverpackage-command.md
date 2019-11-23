@@ -37,8 +37,8 @@ wdsutil /remove-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package N
 |        Parámetro        |                                                                            Descripción                                                                             |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [/Server:<Server name>] |              Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se utiliza el servidor local.              |
-| [/DriverPackage: <Name>] |                                                        Especifica el nombre del paquete de controladores que se va a quitar.                                                         |
-|    [/PackageId: <ID>]    | Especifica el ID. de servicios de implementación de Windows del paquete de controladores que se va a quitar. Debe especificar el identificador si el paquete de controladores no se puede identificar de forma única por nombre. |
+| [/DriverPackage:<Name>] |                                                        Especifica el nombre del paquete de controladores que se va a quitar.                                                         |
+|    [/PackageId:<ID>]    | Especifica el ID. de servicios de implementación de Windows del paquete de controladores que se va a quitar. Debe especificar el identificador si el paquete de controladores no se puede identificar de forma única por nombre. |
 
 ## <a name="BKMK_examples"></a>Example
 Para ver información acerca de las imágenes, escriba una de las siguientes opciones:
@@ -48,6 +48,6 @@ wdsutil /remove-DriverPackage /PackageId:{4D36E972-E325-11CE-Bfc1-08002BE10318}
 ```
 wdsutil /remove-DriverPackage /Server:MyWdsServer /DriverPackage:MyDriverPackage
 ```
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[con el comando Remove-DriverPackages](using-the-remove-driverpackages-command.md)
+#### <a name="additional-references"></a>referencias adicionales
+
+[de la clave de sintaxis de línea de comandos](command-line-syntax-key.md) [mediante el comando Remove-DriverPackages](using-the-remove-driverpackages-command.md)

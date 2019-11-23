@@ -38,10 +38,10 @@ title [<String>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0String >|Especifica el título de la ventana del símbolo del sistema.|
+|\<cadena >|Especifica el título de la ventana del símbolo del sistema.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Para crear el título de una ventana para los programas por lotes, incluya el comando **título** al principio de un programa por lotes.
 -   Una vez establecido el título de una ventana, solo se puede restablecer mediante el comando **título** .

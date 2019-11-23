@@ -42,14 +42,14 @@ fsutil quota [violations]
 |    pone    |                                                                   Aplica el uso de cuotas en el volumen especificado.                                                                   |
 |    modify     |                                                              Modifica una cuota de disco existente o crea una nueva.                                                              |
 |     query     |                                                                            Muestra las cuotas de disco existentes.                                                                            |
-|     dar     |                                                                    Realiza el seguimiento del uso del disco en el volumen especificado.                                                                     |
-|  Dujeron   | Busca en los registros del sistema y de la aplicación, y muestra un mensaje para indicar que se han detectado infracciones de cuota o que un usuario ha alcanzado un umbral de cuota o un límite de cuota. |
-| @no__t 0VolumePath > |                                  Obligatorio. Especifica el nombre de la unidad seguido de dos puntos o el GUID en el formato **volumen {** <em>GUID</em> **}** .                                  |
-| @no__t 0Threshold >  |                            Establece el límite (en bytes) en el que se emiten las advertencias. Este parámetro es necesario para el comando **fsutil quota Modify** .                            |
-|   @no__t 0Limit >    |                                Establece el uso máximo permitido del disco (en bytes). Este parámetro es necesario para el comando **fsutil quota Modify** .                                |
-|  @no__t 0UserName >  |                                      Especifica el nombre de dominio o de usuario. Este parámetro es necesario para el comando **fsutil quota Modify** .                                       |
+|     Dar     |                                                                    Realiza el seguimiento del uso del disco en el volumen especificado.                                                                     |
+|  dujeron   | Busca en los registros del sistema y de la aplicación, y muestra un mensaje para indicar que se han detectado infracciones de cuota o que un usuario ha alcanzado un umbral de cuota o un límite de cuota. |
+| \<VolumePath > |                                  Obligatorio. Especifica el nombre de la unidad seguido de dos puntos o el GUID en el formato **volumen {** <em>GUID</em> **}** .                                  |
+| Umbral de \<>  |                            Establece el límite (en bytes) en el que se emiten las advertencias. Este parámetro es necesario para el comando **fsutil quota Modify** .                            |
+|   Límite de \<>    |                                Establece el uso máximo permitido del disco (en bytes). Este parámetro es necesario para el comando **fsutil quota Modify** .                                |
+|  \<nombre de usuario >  |                                      Especifica el nombre de dominio o de usuario. Este parámetro es necesario para el comando **fsutil quota Modify** .                                       |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Las cuotas de disco se implementan por volumen y permiten que se implementen límites de almacenamiento tanto de forma rígida como por usuario.
 

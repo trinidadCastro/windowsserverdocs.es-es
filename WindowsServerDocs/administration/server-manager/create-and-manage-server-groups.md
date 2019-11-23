@@ -71,9 +71,9 @@ Los servidores pueden ser miembros de más de un grupo.
 
 3.  Cuando haya terminado de realizar cambios en el grupo, haga clic en **Aceptar**.
 
-## <a name="see-also"></a>Vea también
-[agregar servidores al Administrador del servidor](add-servers-to-server-manager.md)
-[Administrador del servidor](server-manager.md)
+## <a name="see-also"></a>Consulta también
+[agregar servidores al
+de Administrador del servidor](add-servers-to-server-manager.md) [Administrador del servidor](server-manager.md)
 
 
 

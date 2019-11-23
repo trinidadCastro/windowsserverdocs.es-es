@@ -36,14 +36,14 @@ ksetup /delhosttorealmmap <HostName> <RealmName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0HostName >|El nombre de host es el nombre del equipo y se puede indicar como el nombre de dominio completo del equipo.|
-|@no__t 0RealmName >|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM.|
+|\<HostName >|El nombre de host es el nombre del equipo y se puede indicar como el nombre de dominio completo del equipo.|
+|\<RealmName >|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Cuando existe una asignación de host a dominio Kerberos (o varios hosts a dominio Kerberos), este comando quita esa asignación.
 
-La asignación se registra en el registro en **HKEY_LOCAL_MACHINE\SYSTEM\CurrentContolSet\Lsa\Kerberos\HostToRealm**. Debe comprobar la asignación en el registro después de usar este comando.
+La asignación se registra en el registro en **HKEY_LOCAL_MACHINE \system\currentcontolset\lsa\kerberos\hosttorealm**. Debe comprobar la asignación en el registro después de usar este comando.
 
 ## <a name="BKMK_Examples"></a>Example
 

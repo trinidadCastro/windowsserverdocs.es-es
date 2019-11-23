@@ -18,9 +18,9 @@ ms.locfileid: "71358142"
 ---
 # <a name="create-a-rule-to-pass-through-or-filter-an-incoming-claim"></a>Crear una regla para pasar a través o filtrar una demanda entrante
 
-El uso de la plantilla de reglas pasar a través o filtrar una notificación entrante en Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1 le permite pasar a través todas las notificaciones entrantes con un tipo de notificación seleccionado. También puede filtrar los valores de las notificaciones entrantes con un tipo de notificación seleccionado. Por ejemplo, puede usar esta plantilla de reglas para crear una regla que enviará todas las notificaciones de grupo entrantes. También puede usar esta regla para enviar solo las notificaciones de nombre principal de usuario \(UPN @ no__t-1 que terminen con @fabrikam.  
+Con la plantilla de reglas pasar a través o filtrar una notificación entrante en Servicios de federación de Active Directory (AD FS) \(AD FS\), puede pasar a través todas las notificaciones entrantes con un tipo de notificación seleccionado. También puede filtrar los valores de las notificaciones entrantes con un tipo de notificación seleccionado. Por ejemplo, puede usar esta plantilla de reglas para crear una regla que enviará todas las notificaciones de grupo entrantes. También puede usar esta regla para enviar solo el nombre principal de usuario \(UPN\) notificaciones que terminan con @fabrikam.  
   
-Puede usar el procedimiento siguiente para crear una regla de notificaciones con el complemento\-de administración de AD FS en.  
+Puede usar el siguiente procedimiento para crear una regla de notificaciones con el complemento de administración de AD FS\-en.  
   
 El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
 
@@ -31,7 +31,7 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 2.  En el árbol de consola, en **AD FS**, haga clic en relaciones de confianza para usuario **autenticado**. 
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
-3.  Haga\-clic con el botón derecho en la confianza seleccionada y luego haga clic en **Editar Directiva de emisión de notificaciones**.
+3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **Editar Directiva de emisión de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
   
 4.  En el cuadro de diálogo **Editar Directiva de emisión de notificaciones** , en **reglas de transformación de emisión** , haga clic en **Agregar regla** para iniciar el Asistente para reglas. 
@@ -62,7 +62,7 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 2.  En el árbol de consola, en **AD FS**, haga clic en **confianzas de proveedor de notificaciones**. 
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
   
-3.  Haga\-clic con el botón secundario en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
+3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
   
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , en **reglas de transformación de aceptación** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
@@ -90,12 +90,12 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 
 1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **Administración de AD FS**.  
   
-2.  En el árbol de consola, en **relaciones de\\confianza de ad FSAD FS**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas para usuario autenticado**y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.  
+2.  En el árbol de consola, en **ad FSAD FS\\relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas para usuario autenticado**y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.  
   
-3.  Haga\-clic con el botón secundario en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
+3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)   
   
-4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, en función de la confianza que esté editando y el conjunto de reglas en el que desee crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas. :  
+4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, en función de la confianza que esté editando y el conjunto de reglas en el que desee crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas:  
   
     -   **Reglas de transformación de aceptación**  
   

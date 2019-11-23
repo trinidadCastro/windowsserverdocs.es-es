@@ -36,12 +36,12 @@ ksetup /addkdc <RealmName> [<KDCName>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0RealmName >|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos predeterminado cuando se ejecuta **ksetup** . Es el dominio Kerberos que está intentando agregar el otro KDC.|
-|@no__t 0KDCName >|El nombre del KDC se indica como un nombre de dominio completo sin distinción de mayúsculas y minúsculas, como mitkdc.microsoft.com. Si se omite el nombre del KDC, DNS buscará KDC.|
+|\<RealmName >|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos predeterminado cuando se ejecuta **ksetup** . Es el dominio Kerberos que está intentando agregar el otro KDC.|
+|\<KDCName >|El nombre del KDC se indica como un nombre de dominio completo sin distinción de mayúsculas y minúsculas, como mitkdc.microsoft.com. Si se omite el nombre del KDC, DNS buscará KDC.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
-Estas asignaciones se almacenan en el registro en **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\LSA\Kerberos\Domains**. Para implementar datos de configuración de dominio Kerberos en varios equipos, use el complemento de plantilla de configuración de seguridad y la distribución de directivas en lugar de usar **ksetup** explícitamente en equipos individuales.
+Estas asignaciones se almacenan en el registro en **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains**. Para implementar datos de configuración de dominio Kerberos en varios equipos, use el complemento de plantilla de configuración de seguridad y la distribución de directivas en lugar de usar **ksetup** explícitamente en equipos individuales.
 
 El equipo debe reiniciarse antes de que se use la nueva configuración de dominio Kerberos.
 

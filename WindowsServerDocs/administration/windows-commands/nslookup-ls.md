@@ -38,8 +38,8 @@ ls [<Option>] <DNSDomain> [{[>] <FileName>|[>>] <FileName>}]
 |   <FileName>    |                                                                                                                                                                                                                                 Especifica un nombre de archivo en el que se guardará la salida. Puede usar los caracteres mayor que (>) y Double mayor que (> >) para redirigir la salida de la manera habitual.                                                                                                                                                                                                                                  |
 | {ayuda &#124; ?} |                                                                                                                                                                                                                                                                                          Muestra un breve resumen de los subcomandos de **nslookup** .                                                                                                                                                                                                                                                                                           |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 - La salida predeterminada contiene los nombres de equipo y sus direcciones IP. Cuando la salida se dirige a un archivo, se imprimen marcas de hash por cada 50 registros recibidos del servidor.
-  ## <a name="additional-references"></a>Referencias adicionales
-  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)[nslookup Set QueryType](nslookup-set-querytype.md) 
-  
+  ## <a name="additional-references"></a>referencias adicionales
+  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+  [nslookup Set QueryType](nslookup-set-querytype.md)

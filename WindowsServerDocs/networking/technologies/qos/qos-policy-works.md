@@ -29,7 +29,7 @@ Al iniciar o obtener la configuración actualizada de directiva de grupo de usua
 
 4. El módulo de inspección de QoS recupera las directivas QoS de usuario o equipo y las almacena.
 
-Cuando se crea un nuevo extremo de capa de transporte @no__t conexión-0TCP o el tráfico UDP @ no__t-1, se produce el siguiente proceso.
+Cuando se crea un nuevo extremo de capa de transporte \(conexión TCP o\) de tráfico UDP, se produce el siguiente proceso.
 
 1. El componente de capa de transporte de la pila TCP/IP informa al módulo de inspección de QoS.
 
@@ -59,7 +59,7 @@ Cuando se envía un paquete correspondiente a un extremo de capa de transporte m
 
 7. Pacer. sys usa el número de flujo del paquete para determinar si es necesario limitar el paquete y, en caso afirmativo, programa el paquete para enviarlo.
 
-8. Pacer. sys entrega el paquete de inmediato \(If no hay limitación de tráfico @ no__t-1 o como está programado \(If hay una limitación de tráfico de @ no__t-3 a NDIS 6. x para la transmisión a través del adaptador de red adecuado.
+8. Pacer. sys entrega el paquete inmediatamente \(si no hay ningún límite de tráfico\) o según lo programado \(si hay una limitación de tráfico\) a NDIS 6. x para la transmisión a través del adaptador de red adecuado.
 
 Estos procesos de QoS basada en directivas proporcionan las siguientes ventajas.
 

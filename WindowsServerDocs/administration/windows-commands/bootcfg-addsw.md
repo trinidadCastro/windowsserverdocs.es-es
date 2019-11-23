@@ -35,12 +35,12 @@ bootcfg /addsw [/s <computer> [/u <Domain>\<User> /p <Password>]] [/mm <MaximumR
 |         Término         |                                                                                                            Definición                                                                                                            |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /s <computer>     |                                                        Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.                                                        |
-| /u <Domain> @ no__t-1 @ no__t-2  |               Ejecuta el comando con los permisos de cuenta del usuario especificado por <User> o <Domain> @ no__t-2 @ no__t-3. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando.               |
+| /u <Domain>\\<User>  |               Ejecuta el comando con los permisos de cuenta del usuario especificado mediante <User> o <Domain>\\<User>. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando.               |
 |    /p <Password>     |                                                                      Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                       |
 |   /mm <MaximumRAM>   |                                          Especifica la cantidad máxima de RAM, en megabytes, que puede usar el sistema operativo. El valor debe ser igual o mayor que 32 megabytes.                                          |
-|         /bv          |                                    agrega la opción **/basevideo** al @no__t especificado, dirigiendo al sistema operativo para que use el modo VGA estándar para el controlador de vídeo instalado.                                     |
+|         /bv          |                                    agrega la opción **/basevideo** al <OSEntryLineNum>especificado, dirigiendo al sistema operativo para que use el modo VGA estándar para el controlador de vídeo instalado.                                     |
 |         /so          |                                      agrega la opción **/SOS** al parámetro *númeroLíneaEntradaSO*especificado y dirige al sistema operativo para que muestre los nombres de los controladores de dispositivo mientras se cargan.                                      |
-|         /NG          |                                         agrega la opción **/noguiboot** al @no__t especificado, deshabilitando la barra de progreso que aparece antes del símbolo del sistema de inicio de sesión Ctrl + Alt + Supr.                                          |
+|         /NG          |                                         agrega la opción **/noguiboot** al <OSEntryLineNum>especificado, deshabilitando la barra de progreso que aparece antes del símbolo del sistema de inicio de sesión Ctrl + Alt + Supr.                                          |
 | /ID <OSEntryLineNum> | Especifica el número de línea de entrada del sistema operativo en la sección [operating systems] del archivo boot. ini en el que se agregan las opciones de carga del sistema operativo. La primera línea después del encabezado de la sección [operating systems] es 1. |
 |          /?          |                                                                                               Muestra la ayuda en el símbolo del sistema.                                                                                               |
 
@@ -53,5 +53,5 @@ bootcfg /addsw /so /ng /s srvmain /u hiropln /id 2
 bootcfg /addsw /ng /id 2 
 bootcfg /addsw /mm 96 /ng /s srvmain /u maindom\hiropln /p p@ssW23 /id 2
 ```
-#### <a name="additional-references"></a>Referencias adicionales
+#### <a name="additional-references"></a>referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

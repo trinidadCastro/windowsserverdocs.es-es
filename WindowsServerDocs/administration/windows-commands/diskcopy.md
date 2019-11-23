@@ -41,12 +41,12 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Drive1 >|Especifica la unidad que contiene el disco de origen.|
-|@no__t 0Drive2 >|Especifica la unidad que contiene el disco de destino.|
+|\<unidad1 >|Especifica la unidad que contiene el disco de origen.|
+|\<Unidad2 >|Especifica la unidad que contiene el disco de destino.|
 |/v|Comprueba que la información se ha copiado correctamente. Esta opción ralentiza el proceso de copia.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Uso de discos
 

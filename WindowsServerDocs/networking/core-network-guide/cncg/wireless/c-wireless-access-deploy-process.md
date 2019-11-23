@@ -23,7 +23,7 @@ El proceso que se usa para implementar el acceso inalámbrico se produce en esta
 
 ## <a name="stage-1--ap-deployment"></a>Fase 1: implementación de AP
 
-Planee, implemente y configure los AP para la conectividad de clientes inalámbricos y para su uso con NPS. En función de sus preferencias y de las dependencias de red, puede configurar la configuración de @ no__t-0configure en los AP inalámbricos antes de instalarlos en la red, o bien puede configurarlos de forma remota después de la instalación.
+Planee, implemente y configure los AP para la conectividad de clientes inalámbricos y para su uso con NPS. En función de las dependencias de red y preferencias, puede\-configurar los parámetros en los puntos de conexión inalámbricos antes de instalarlos en la red, o bien puede configurarlos de forma remota después de la instalación.
 
 ## <a name="stage-2--adds-group-configuration"></a>Fase 2: configuración de grupo de AD DS
 
@@ -38,11 +38,11 @@ Por último, agregue los usuarios a los grupos de seguridad de usuarios inalámb
 
 ## <a name="stage-3--group-policy-configuration"></a>Fase 3: configuración de directiva de grupo
 
-Configure la extensión de directivas de la red inalámbrica \(IEEE 802.11 @ no__t-1 de directiva de grupo mediante el Editor de administración de directivas de grupo Microsoft Management Console \(MMC @ no__t-3.
+Configure la extensión de directivas de \(IEEE 802,11\) de la red inalámbrica de directiva de grupo con el Editor de administración de directivas de grupo Microsoft Management Console \(MMC\).
 
-Para configurar los equipos de dominio @ no__t-0member con la configuración de las directivas de red inalámbrica, debe aplicar directiva de grupo. Cuando un equipo se une por primera vez al dominio, directiva de grupo se aplica automáticamente. Si se realizan cambios en directiva de grupo, se aplica automáticamente la nueva configuración:
+Para configurar los equipos miembro de\-de dominio mediante la configuración de las directivas de red inalámbrica, debe aplicar directiva de grupo. Cuando un equipo se une por primera vez al dominio, directiva de grupo se aplica automáticamente. Si se realizan cambios en directiva de grupo, se aplica automáticamente la nueva configuración:
 
-- Por directiva de grupo a intervalos anteriores a no__t-0determined
+- Por directiva de grupo a\-determinados intervalos
 
 - Si un usuario de dominio cierra la sesión y vuelve a iniciarla en la red
 
@@ -62,7 +62,7 @@ Usar equipos cliente para conectarse a la red.
 
 En el caso de los equipos miembros del dominio que pueden iniciar sesión en la LAN cableada, se aplicarán automáticamente las opciones de configuración inalámbrica necesarias cuando se actualice directiva de grupo.
 
-Si ha habilitado la configuración de las directivas de red inalámbrica \(IEEE 802.11 @ no__t-1 se conecten automáticamente cuando el equipo esté dentro del alcance de difusión de la red inalámbrica, los equipos inalámbricos, dominio @ no__t-2joined intente conectarse a la LAN inalámbrica.
+Si ha habilitado la opción de configuración de redes inalámbricas \(IEEE 802,11\) directivas para conectarse automáticamente cuando el equipo esté dentro del alcance de difusión de la red inalámbrica, los equipos inalámbricos Unidos a un dominio\-intentarán conectarse automáticamente a la LAN inalámbrica.
 
 Para conectarse a la red inalámbrica, los usuarios solo necesitan proporcionar sus credenciales de nombre de usuario y contraseña de dominio cuando Windows las solicite.
 

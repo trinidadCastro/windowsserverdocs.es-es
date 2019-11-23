@@ -41,11 +41,11 @@ Un *grupo de archivos* se usa para definir un espacio de nombres para un filtro 
 
     -   Para cada conjunto de archivos que quieres incluir en el grupo de archivos, en el cuadro **Archivos incluidos**, escribe un patrón de nombre de archivo y luego haz clic en **Agregar**.
     -   Para cada conjunto de archivos que quieres excluir del grupo de archivos, en el cuadro **Archivos excluidos**, escribe un patrón de nombre de archivo y luego haz clic en **Agregar**.
-        Tenga en cuenta que se aplican las reglas de caracteres comodín estándar, por ejemplo, **@no__t -1. exe** selecciona todos los archivos ejecutables.
+        Tenga en cuenta que se aplican las reglas de caracteres comodín estándar, por ejemplo, **\*. exe** selecciona todos los archivos ejecutables.
 
-5.  Haga clic en **Aceptar**.
+5.  Haz clic en **Aceptar**.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 -   [Administración del filtrado de archivos](file-screening-management.md)
 -   [Crear un filtro de archivos](create-file-screen.md)

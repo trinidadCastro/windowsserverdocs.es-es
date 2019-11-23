@@ -37,20 +37,20 @@ cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <Ne
 |-g|Muestra información de configuración acerca de una impresora.|
 |-t|Configura una impresora.|
 |-x|cambia el nombre de una impresora.|
-|-S \<ServerName @ no__t-1|Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local.|
-|-P \<printerName @ no__t-1|Especifica el nombre de la impresora que desea administrar. Obligatorio.|
-|-z \<NewprinterName @ no__t-1|Especifica el nuevo nombre de la impresora. Requiere los parámetros **-x** y **-P** .|
-|-u \<UserName @ no__t-1-w \<Password @ no__t-3|Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione.|
-|-r \<PortName @ no__t-1|Especifica el puerto al que está conectada la impresora. Si se trata de un puerto paralelo o de serie, use el identificador del puerto (por ejemplo, LPT1 o COM1). Si se trata de un puerto TCP/IP, utilice el nombre de puerto que se especificó cuando se agregó el puerto.|
-|-l \<Location @ no__t-1|Especifica la ubicación de la impresora, como "copiar salón".|
-|-h \<Sharename @ no__t-1|Especifica el nombre del recurso compartido de la impresora.|
-|-m \<Comment @ no__t-1|Especifica la cadena de comentario de la impresora.|
-|-f \<SeparatorFileName @ no__t-1|Especifica un archivo que contiene el texto que aparece en la página separador.|
-|-y \<Datatype @ no__t-1|Especifica los tipos de datos que la impresora puede aceptar.|
-|-St \<starttime @ no__t-1|Configura la impresora para una disponibilidad limitada. Especifica la hora del día en la que la impresora está disponible. Si envía un documento a una impresora cuando no está disponible, el documento se mantiene (en cola) hasta que la impresora esté disponible. Debe especificar la hora como un reloj de 24 horas. Por ejemplo, para especificar 11:00 P.M., escriba **2300**.|
-|-UT \<Endtime @ no__t-1|Configura la impresora para una disponibilidad limitada. Especifica la hora del día en que la impresora ya no está disponible. Si envía un documento a una impresora cuando no está disponible, el documento se mantiene (en cola) hasta que la impresora esté disponible. Debe especificar la hora como un reloj de 24 horas. Por ejemplo, para especificar 11:00 P.M., escriba **2300**.|
-|-o \<Priority @ no__t-1|Especifica la prioridad que utiliza el administrador de trabajos de impresión para enrutar los trabajos de impresión en la cola de impresión. Una cola de impresión con una prioridad más alta recibe todos sus trabajos antes de cualquier cola con una prioridad más baja.|
-|-i \<DefaultPriority @ no__t-1|Especifica la prioridad predeterminada asignada a cada trabajo de impresión.|
+|-S \<ServerName\>|Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local.|
+|-P \<Nombredeimpresora\>|Especifica el nombre de la impresora que desea administrar. Obligatorio.|
+|-z \<NewprinterName\>|Especifica el nuevo nombre de la impresora. Requiere los parámetros **-x** y **-P** .|
+|-u \<nombredeusuario\>-w \<contraseña\>|Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione.|
+|-r \<PortName\>|Especifica el puerto al que está conectada la impresora. Si se trata de un puerto paralelo o de serie, use el identificador del puerto (por ejemplo, LPT1 o COM1). Si se trata de un puerto TCP/IP, utilice el nombre de puerto que se especificó cuando se agregó el puerto.|
+|-l \<ubicación\>|Especifica la ubicación de la impresora, como "copiar salón".|
+|-h \<ShareName\>|Especifica el nombre del recurso compartido de la impresora.|
+|-m \<comentario\>|Especifica la cadena de comentario de la impresora.|
+|-f \<SeparatorFileName\>|Especifica un archivo que contiene el texto que aparece en la página separador.|
+|-y \<\> DataType|Especifica los tipos de datos que la impresora puede aceptar.|
+|-St \<startTime\>|Configura la impresora para una disponibilidad limitada. Especifica la hora del día en la que la impresora está disponible. Si envía un documento a una impresora cuando no está disponible, el documento se mantiene (en cola) hasta que la impresora esté disponible. Debe especificar la hora como un reloj de 24 horas. Por ejemplo, para especificar 11:00 P.M., escriba **2300**.|
+|-UT \<EndTime\>|Configura la impresora para una disponibilidad limitada. Especifica la hora del día en que la impresora ya no está disponible. Si envía un documento a una impresora cuando no está disponible, el documento se mantiene (en cola) hasta que la impresora esté disponible. Debe especificar la hora como un reloj de 24 horas. Por ejemplo, para especificar 11:00 P.M., escriba **2300**.|
+|-o \<prioridad\>|Especifica la prioridad que utiliza el administrador de trabajos de impresión para enrutar los trabajos de impresión en la cola de impresión. Una cola de impresión con una prioridad más alta recibe todos sus trabajos antes de cualquier cola con una prioridad más baja.|
+|-i \<DefaultPriority\>|Especifica la prioridad predeterminada asignada a cada trabajo de impresión.|
 |{+&#124;-} compartido|Especifica si esta impresora se comparte en la red.|
 |{+&#124;-} directo|Especifica si el documento se debe enviar directamente a la impresora sin ser puesto en cola.|
 |{+&#124;-} publicado|Especifica si esta impresora debe publicarse en Active Directory. Si publica la impresora, otros usuarios pueden buscarla en función de su ubicación y capacidades (como la impresión en color y el grapado).|
@@ -64,29 +64,29 @@ cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <Ne
 |{+ &#124; -} enablebidi|Especifica si la impresora envía información de estado al administrador de trabajos de impresión.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
--   El comando **prncnfg** es un script de Visual Basic ubicado en el directorio%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t-2. Para usar este comando, en una ventana del símbolo del sistema, escriba **cscript** seguido de la ruta de acceso completa al archivo prncnfg o cambie los directorios a la carpeta correspondiente. Por ejemplo:
+## <a name="remarks"></a>Observaciones
+-   El comando **prncnfg** es un script de Visual Basic ubicado en el printing_Admin_Scripts%windir%\system32\\\<language> directorio. Para usar este comando, en una ventana del símbolo del sistema, escriba **cscript** seguido de la ruta de acceso completa al archivo prncnfg o cambie los directorios a la carpeta correspondiente. Por ejemplo:
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prncnfg
     ```
 -   Si la información proporcionada contiene espacios, utilice comillas alrededor del texto (por ejemplo, `"computer Name"`).
 
 ## <a name="BKMK_examples"></a>Example
-Para mostrar la información de configuración de la impresora denominada ImpresoraColor_2 con una cola de impresión hospedada por el equipo remoto llamado ServidorRH, escriba:
+Para mostrar la información de configuración de la impresora llamada colorprinter_2 con una cola de impresión hospedada por el equipo remoto llamado ServidorRH, escriba:
 ```
 cscript prncnfg -g -S HRServer -P colorprinter_2 
 ```
 
-Para configurar una impresora denominada ImpresoraColor_2 para que el administrador de trabajos de impresión en el equipo remoto llamado ServidorRH Mantenga los trabajos de impresión una vez que se hayan impreso, escriba:
+Para configurar una impresora llamada colorprinter_2 de modo que el administrador de trabajos de impresión en el equipo remoto llamado ServidorRH Mantenga los trabajos de impresión una vez que se hayan impreso, escriba:
 ```
 cscript prncnfg -t -S HRServer -P colorprinter_2 +keepprintedjobs 
 ```
 
-Para cambiar el nombre de una impresora en el equipo remoto llamado ServidorRH de ImpresoraColor_2 a colorprinter 3, escriba:
+Para cambiar el nombre de una impresora en el equipo remoto llamado ServidorRH desde colorprinter_2 a colorprinter 3, escriba:
 ```
 cscript prncnfg -x -S HRServer -P colorprinter_2 -z "colorprinter 3" 
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+#### <a name="additional-references"></a>referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[referencia de comando de impresión](print-command-reference.md)
+[Referencia del comando Print](print-command-reference.md)

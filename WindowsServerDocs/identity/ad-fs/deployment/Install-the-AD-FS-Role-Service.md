@@ -24,11 +24,11 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
   
 ### <a name="to-install-the-ad-fs-server-role-via-the-add-roles-and-features-wizard"></a>Para instalar el rol de servidor AD FS mediante el Asistente para agregar roles y características  
   
-1.  Abra el Administrador del servidor. Para abrir Administrador del servidor, haga clic en **Administrador del servidor** en la pantalla **Inicio** o **Administrador del servidor** en la barra de tareas del escritorio. En la pestaña **Inicio rápido** del icono **Página principal** en la página **Panel**, haga clic en **Agregar roles y características**. Como alternativa, puede hacer clic en **Agregar roles y características** en el menú **Administrar**.  
+1.  Abre el Administrador del servidor. Para abrir Administrador del servidor, haga clic en **Administrador del servidor** en la pantalla **Inicio** o **Administrador del servidor** en la barra de tareas del escritorio. En la pestaña **Inicio rápido** del icono **Página principal** en la página **Panel**, haga clic en **Agregar roles y características**. Como alternativa, puede hacer clic en **Agregar roles y características** en el menú **Administrar**.  
   
-2.  En la página **Antes de comenzar** , haga clic en **Siguiente**.  
+2.  En la página **Before you begin**, haz clic en **Next**.  
   
-3.  En la página **Seleccionar tipo de instalación** , haga clic en **rol @ no__t-2Based o en característica @ no__t-3based instalación**y, a continuación, haga clic en **siguiente**.  
+3.  En la página **Seleccionar tipo de instalación** , haga clic en **\-de roles o en instalación basada en\-de características**y, a continuación, haga clic en **siguiente**.  
   
 4.  En la página **Seleccionar servidor de destino**, haz clic en **Seleccionar un servidor del grupo de servidores**, comprueba que está seleccionado el equipo de destino y haz clic en **Siguiente**.  
   
@@ -36,7 +36,7 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
   
 6.  En la página **Seleccionar características**, haga clic en **Siguiente**. Los requisitos previos necesarios están preseleccionados automáticamente. No tiene que seleccionar otras características.  
   
-7.  En la página **Active Directory Servicio de federación \(AD FS @ no__t-2** , haga clic en **siguiente**.  
+7.  En la página **Active Directory Servicio de federación \(AD FS\)** , haga clic en **siguiente**.  
   
 8.  Después de comprobar la información de la página **confirmar selecciones de instalación** , haga clic en **instalar**.  
   
@@ -44,9 +44,9 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
   
 ### <a name="to-install-the-ad-fs-server-role-via-windows-powershell"></a>Para instalar el rol de servidor AD FS a través de Windows PowerShell  
   
-1.  En el equipo que deseas configurar como servidor de Federación, abre la ventana de comandos de Windows PowerShell y, después, ejecuta el siguiente `Install-windowsfeature adfs-federation –IncludeManagementTools`comando:.  
+1.  En el equipo que deseas configurar como servidor de Federación, abre la ventana de comandos de Windows PowerShell y, después, ejecuta el siguiente comando: `Install-windowsfeature adfs-federation –IncludeManagementTools`.  
   
-## <a name="see-also"></a>Vea también 
+## <a name="see-also"></a>Consulta también 
 
 [Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
 

@@ -21,7 +21,7 @@ ms.locfileid: "71357979"
 
 El contenido web se puede localizar a idiomas distintos del inglés. Al localizarlo, ten en cuenta las siguientes consideraciones.  
   
-Después de personalizar el contenido, la personalización tendrá precedencia, así que deberás personalizarla para todos los idiomas que quieras admitir. Todo el contenido personalizado toma un parámetro de configuración regional. Al configurar contenido localizado, configúrelo con una configuración regional de país @ no__t-0less en primer lugar, por ejemplo, "en", antes de configurar una configuración regional de país y región @ no__t-1specific como "en @ no__t-2US".  
+Después de personalizar el contenido, la personalización tendrá precedencia, así que deberás personalizarla para todos los idiomas que quieras admitir. Todo el contenido personalizado toma un parámetro de configuración regional. Al configurar contenido localizado, configúrelo con un país\-menos la configuración regional en primer lugar, por ejemplo, "en", antes de configurar un país y una región\-configuración regional específica, como "en\-US".  
   
 A continuación se muestran varios ejemplos de código adicionales.  
   

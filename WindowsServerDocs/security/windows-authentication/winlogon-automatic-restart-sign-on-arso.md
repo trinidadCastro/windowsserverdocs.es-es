@@ -29,7 +29,7 @@ ms.locfileid: "71402330"
 > [!NOTE]  
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.  
   
-## <a name="overview"></a>Información general  
+## <a name="overview"></a>Introducción  
 Windows 8 presentó aplicaciones de pantalla de bloqueo.  Estas son las aplicaciones que ejecutan y muestran las notificaciones mientras la sesión del usuario está bloqueada (citas del calendario, correo electrónico y mensajes, etc.).  Los dispositivos que se reinician debido al proceso de Windows Update no pueden mostrar estas notificaciones de la pantalla de bloqueo tras el reinicio.  Algunos usuarios dependen de estas aplicaciones de pantalla de bloqueo.  
   
 ## <a name="whats-changed"></a>¿Qué es lo que ha cambiado?  
@@ -74,7 +74,7 @@ Al reiniciar, el usuario iniciará sesión automáticamente a través del mecani
   
     -   Solo se puede habilitar si BitLocker está habilitado  
   
-## <a name="group-policy-sign-in-last-interactive-user-automatically-after-a-system-initiated-restart"></a>Directiva de grupo: Iniciar sesión último usuario interactivo automáticamente después de un reinicio Iniciado por el sistema  
+## <a name="group-policy-sign-in-last-interactive-user-automatically-after-a-system-initiated-restart"></a>Directiva de grupo: iniciar sesión último usuario interactivo automáticamente después de un reinicio Iniciado por el sistema  
 En Windows 8.1/Windows Server 2012 R2, el inicio de sesión automático del usuario de la pantalla de bloqueo después de un reinicio de Windows Update es participar en las SKU de servidor y no participar en las SKU de cliente.  
   
 **Ubicación de la Directiva:** Configuración del equipo > directivas > Plantillas administrativas > componentes de Windows > opción de inicio de sesión de Windows  
@@ -93,7 +93,7 @@ Si deshabilita esta configuración de Directiva, el dispositivo no almacena las 
   
 **Editor del registro**  
   
-|Nombre del valor|Tipo|Datos|  
+|Nombre del valor|Tipo|data|  
 |-------|----|----|  
 |DisableAutomaticRestartSignOn|DWORD|0<br /><br />**Ejemplo:**<br /><br />0 (habilitado)<br /><br />1 (deshabilitado)|  
   
@@ -143,7 +143,7 @@ Se puede mantener una sesión de usuario existente incluso si está deshabilitad
 Las horas de inicio de sesión y los controles parentales pueden prohibir la creación de una nueva sesión de usuario.  Si se produjera un reinicio durante esta ventana, el usuario no tendría permiso para iniciar sesión.  Existe una directiva adicional que provoca el bloqueo o cierre de sesión como una acción de cumplimiento.  Esto podría ser problemático para muchos casos secundarios en los que puede producirse un bloqueo de cuenta entre el tiempo de cama y la reactivación, especialmente si la ventana de mantenimiento es normalmente durante este tiempo.  
   
 ## <a name="additional-resources"></a>Recursos adicionales  
-**Table SEQ Table \\ @ no__t-2 ARABIC 3: ARSO Glossary @ no__t-0  
+**Tabla SEQ \\\* árabe 3: ARSO Glosario**  
   
 |Término|Definición|  
 |----|-------|  

@@ -76,18 +76,18 @@ La plantilla se abre en una ventana aparte y se presentan más instrucciones don
     > [!NOTE]  
     > Si el sistema MultiPoint Services no se está ejecutando en modo de estación, reinícielo antes de completar este procedimiento.  
   
-2.  Seleccione la plantilla de escritorio virtual en el panel izquierdo @ no__t-0hand. El nombre es <prefijo – t>.  
+2.  Seleccione la plantilla de escritorio virtual en el panel de la izquierda\-. El nombre es <prefijo – t>.  
   
 3.  En las tareas de plantilla, haga clic en **Create virtual desktop stations** (Crear estaciones de escritorios virtuales) y, luego, haga clic en **Aceptar**.  
   
     El proceso de creación de una estación de escritorios virtuales tarda varios minutos.  
   
     > [!NOTE]  
-    > Si alguna de las estaciones locales está conectada actualmente a un escritorio virtual de sesión @ no__t-0based, debe cerrar sesión en estas estaciones para que se conecten a una de las estaciones de escritorios virtuales recién creadas.  
+    > Si alguna de las estaciones locales está conectada actualmente a una sesión\-escritorio virtual basado en, debe cerrar la sesión de esas estaciones para que se conecten a una de las estaciones de escritorios virtuales recién creadas.  
   
 ### <a name="validate-the-newly-created-customized-virtual-station-desktops"></a>Validar los escritorios virtuales personalizados recién creados en las estaciones  
   
-Para validar los escritorios de la estación virtual personalizada, inicie sesión en una o varias de las estaciones de escritorios virtuales mediante una cuenta de administrador local o una cuenta de dominio y, a continuación, compruebe que los nuevos escritorios virtuales de VM @ no__t-0based funcionan correctamente.  
+Para validar los escritorios de la estación virtual personalizada, inicie sesión en una o varias de las estaciones de escritorios virtuales mediante una cuenta de administrador local o una cuenta de dominio y, a continuación, compruebe que la nueva máquina virtual\-escritorios virtuales basados en funcionan correctamente.  
   
 ## <a name="disable-virtual-desktops"></a>Deshabilitar escritorios virtuales  
   

@@ -30,9 +30,9 @@ En este tema se explica cómo instalar la característica [Desduplicación de da
 
 ### <a id="install-dedup-via-server-manager"></a>Instalación de desduplicación de datos mediante Administrador del servidor
 1. En el Asistente para agregar roles y características, seleccione **Roles de servidor** y, después, seleccione **Desduplicación de datos**.  
-![Install desduplicación de datos a través de Administrador del servidor: seleccione desduplicación de datos en roles de servidor @ no__t-1.
+![instalar desduplicación de datos a través de Administrador del servidor: seleccione desduplicación de datos en roles de servidor](media/install-dedup-via-server-manager-1.png)
 2. Haga clic en **Siguiente** hasta que se active el botón **Instalar** y, a continuación, haga clic en **Instalar**.  
-![Install desduplicación de datos a través de Administrador del servidor: haga clic en instalar @ no__t-1.
+![instalar desduplicación de datos a través de Administrador del servidor: haga clic en instalar](media/install-dedup-via-server-manager-2.png)
 
 ### <a id="install-dedup-via-powershell"></a>Instalación de desduplicación de datos mediante PowerShell
 Para instalar Desduplicación de datos, ejecute el siguiente comando de PowerShell como administrador:  
@@ -46,8 +46,8 @@ Para instalar Desduplicación de datos en una instalación de Nano Server:
     Install-WindowsFeature -ComputerName <MyNanoServer> -Name FS-Data-Deduplication
     ```  
     <br />
-    <strong>--O BIEN--</strong>
-    @ NO__T-2<br />
+    <strong>--O bien--</strong>
+    <br />
     Conecte de manera remota con la instancia de Nano Server con comunicación remota de PowerShell e instale Desduplicación de datos mediante DISM:  
     
     ```PowerShell
@@ -95,7 +95,7 @@ Para determinar si una carga de trabajo funciona bien con la desduplicación, re
     `Files excluded by policy: 20`  
     `Files excluded by error: 0`  
 
-2. **¿Qué aspecto tienen mis patrones de E/S de la carga de trabajo con relación a su conjunto de datos? ¿Qué rendimiento tengo para mi carga de trabajo?**  
+2. **¿Qué aspecto tienen los patrones de e/s de la carga de trabajo en su conjunto de elementos? ¿Qué rendimiento tengo para mi carga de trabajo?**  
      Desduplicación de datos realiza la optimización de los archivos como un trabajo periódico, en lugar de cuando el archivo se escribe un el disco. Por lo tanto, es importante examinar los patrones de lectura previstos de la carga de trabajo para el volumen desduplicado. Como Desduplicación de datos mueve el contenido del archivo al almacenamiento de fragmentos e intenta organizar el almacenamiento de fragmentos por archivo siempre que sea posible, las operaciones de lectura se desempeñarán mejor cuando se aplican a intervalos secuenciales de un archivo.  
 
     Las cargas de trabajo de tipo base de datos suelen tener patrones de lectura más aleatorios que los patrones de lectura secuenciales, porque las bases de datos no suelen garantizar que el diseño de la base de datos sea óptimo para todas las posibles consultas que se pueden ejecutar. Como las secciones del almacén de fragmentos pueden existir en todo el volumen, el acceso a los intervalos de datos en el almacén de fragmentos para las consultas de base de datos puede introducir latencia adicional. Las cargas de trabajo de alto rendimiento son especialmente sensibles a esta latencia adicional, pero otras cargas de trabajo de tipo base de datos podrían no serlo.
@@ -115,13 +115,13 @@ Antes de habilitar Desduplicación de datos, debe elegir el [tipo de uso](unders
 
 #### <a id="enable-dedup-via-server-manager"></a>Habilitar la desduplicación de datos mediante Administrador del servidor
 1. Seleccione **Servicios de archivos y almacenamiento** en el Administrador del servidor.  
-![Click servicios de archivos y almacenamiento @ no__t-1
+![haga clic en servicios de archivos y almacenamiento](media/enable-dedup-via-server-manager-1.PNG)
 2. Seleccione **Volúmenes** en **Servicios de archivos y almacenamiento**.  
-Volúmenes de @no__t 0Click a no__t-1
+![haga clic en volúmenes](media/enable-dedup-via-server-manager-2.png)
 3. Haga clic con el botón derecho en el volumen deseado y seleccione **Configurar desduplicación de datos**.  
-![Click configurar desduplicación de datos @ no__t-1
+![haga clic en configurar desduplicación de datos](media/enable-dedup-via-server-manager-3.png)
 4. Seleccione el **Tipo de uso** deseado en el cuadro de lista desplegable y seleccione **Aceptar**.  
-![Select el tipo de uso deseado en la lista desplegable @ no__t-1
+![seleccionar el tipo de uso deseado en la lista desplegable](media/enable-dedup-via-server-manager-4.png)
 5. Si está ejecutando una carga de trabajo recomendada, ha terminado. Para otras cargas de trabajo, consulte [Otras consideraciones](#enable-dedup-sometimes-considerations).
 
 > [!Note]  
@@ -147,7 +147,7 @@ Volúmenes de @no__t 0Click a no__t-1
 * Si la carga de trabajo no tiene requisitos elevados de recursos, o si es más importante que se completen los trabajos de optimización que atender a las solicitudes de carga de trabajo, [se pueden ajustar la memoria, la CPU y la prioridad de los trabajos de Desduplicación de datos](advanced-settings.md#modifying-job-schedules).
 
 ## <a id="faq"></a>Preguntas más frecuentes (p + f)
-**I desea ejecutar la desduplicación de datos en el conjunto de datos para la carga de trabajo X. ¿Es compatible?**  
+**Deseo ejecutar la desduplicación de datos en el conjunto de datos para la carga de trabajo X. ¿Es compatible?**  
 Aparte de las cargas de trabajo [que se sabe que no interoperan con Desduplicación de datos](interop.md), admitimos completamente la integridad de datos de Desduplicación de datos con cualquier carga de trabajo. Las cargas de trabajo recomendadas son compatibles también con Microsoft por rendimiento. El rendimiento de otras cargas de trabajo depende en gran medida de lo que hacen en el servidor. Debe determinar qué efectos sobre el rendimiento tiene Desduplicación de datos en la carga de trabajo, y si son aceptables para esta carga de trabajo.
 
 **¿Cuáles son los requisitos de tamaño del volumen para los volúmenes desduplicados?**  

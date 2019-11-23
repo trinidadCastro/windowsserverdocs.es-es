@@ -24,7 +24,7 @@ ms.locfileid: "71380810"
 
 Cancela todos los trabajos de la cola de transferencia que posee el usuario actual.
 
-**BITSAdmin 1,5 y versiones anteriores**: Si tiene privilegios de administrador, **restablezca**@no__t 1cancels todos los trabajos de la cola. No se admite la opción/AllUsers.
+**BITSAdmin 1,5 y versiones anteriores**: Si tiene privilegios de administrador, **restablezca** cancela todos los trabajos de la cola. No se admite la opción/AllUsers.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -38,7 +38,7 @@ bitsadmin /Reset [/AllUsers]
 |---------|-----------|
 |AllUsers|Opcional: cancela todos los trabajos de la cola.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Debe tener privilegios de administrador para usar el parámetro **AllUsers** .
 

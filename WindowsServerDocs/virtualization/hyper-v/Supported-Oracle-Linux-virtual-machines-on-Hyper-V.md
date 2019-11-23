@@ -40,7 +40,7 @@ En esta sección:
 
 * (*en blanco*): característica no disponible
 
-* **UEK R @ no__t-1x qu @ no__t-2Y** -Unbreakable Enterprise kernel (UEK), donde *x* es el *número de versión e y* es la actualización trimestral.
+* **UEK R\*x QU\*y** -Unbreakable Enterprise kernel (UEK), donde *x* es el *número de versión e y* es la actualización trimestral.
 
 ## <a name="BKMK_rhc"></a>Serie de kernel compatible con Red Hat
 
@@ -176,7 +176,7 @@ El Oracle Linux kernel de empresa ininterrumpible (UEK) es solo de 64 bits y tie
 14. Es posible que la inyección de direcciones IP estáticas no funcione si se ha configurado el administrador de red para un adaptador de red sintético determinado en la máquina virtual. Para un funcionamiento sin problemas de la inyección de direcciones IP estáticas, asegúrese de que el administrador de red esté desactivado completamente o se haya desactivado para un adaptador de red específico a través de su archivo ifcfg-ethX.
 
 
-Vea también
+Consulta también
 
 * [Set-VMFirmware](https://technet.microsoft.com/library/dn464287.aspx)
 

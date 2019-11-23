@@ -32,7 +32,7 @@ wdsutil /Get-DriverGroup /DriverGroup:<Group Name> [/Server:<Server name>]
 ## <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-|/DriverGroup: <Group Name>|Especifica el nombre del grupo de controladores.|
+|/DriverGroup:<Group Name>|Especifica el nombre del grupo de controladores.|
 |[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN.  Si no se especifica un nombre de servidor, se utiliza el servidor local.|
 |[/Show: {PackageMetaData &#124; filters &#124; All}]|Muestra los metadatos de todos los paquetes de controladores del grupo especificado. **PackageMetaData** muestra información acerca de todos los filtros del grupo de controladores. **Filtros** muestra los metadatos de todos los paquetes de controladores y filtros del grupo.|
 ## <a name="BKMK_examples"></a>Example
@@ -43,6 +43,6 @@ wdsutil /Get-DriverGroup /DriverGroup:printerdrivers /Show:PackageMetaData
 ```
 wdsutil /Get-DriverGroup /DriverGroup:printerdrivers /Server:MyWdsServer /Show:Filters
 ```
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[con el comando Get-AllDriverGroups](using-the-get-alldrivergroups-command.md)
+#### <a name="additional-references"></a>referencias adicionales
+
+[de la clave de sintaxis de línea de comandos](command-line-syntax-key.md) [mediante el comando Get-AllDriverGroups](using-the-get-alldrivergroups-command.md)

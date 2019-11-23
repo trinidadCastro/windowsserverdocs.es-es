@@ -35,12 +35,12 @@ bootcfg /rmsw [/s <computer> [/u <Domain>\<User> [/p <Password>]]] [/mm] [/bv] [
 |      Parámetro       |                                                                                                      Descripción                                                                                                       |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /s <computer>     |                                                   Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.                                                   |
-| /u <Domain> @ no__t-1 @ no__t-2  |          Ejecuta el comando con los permisos de cuenta del usuario especificado por <User> o <Domain> @ no__t-2 @ no__t-3. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando.          |
+| /u <Domain>\\<User>  |          Ejecuta el comando con los permisos de cuenta del usuario especificado mediante <User> o <Domain>\\<User>. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando.          |
 |    /p <Password>     |                                                                 Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                  |
-|         Val          |           quita la opción/MaxMem y su valor máximo de memoria asociado del <OSEntryLineNum> especificado. La opción/MaxMem especifica la cantidad máxima de memoria RAM que puede usar el sistema operativo.            |
-|         /bv          |                     quita la opción/basevideo del @no__t especificado-0. La opción/basevideo indica al sistema operativo que use el modo VGA estándar para el controlador de vídeo instalado.                     |
-|         /so          |                         quita la opción/SOS del @no__t especificado-0. La opción/SOS indica al sistema operativo que muestre los nombres de los controladores de dispositivo mientras se cargan.                          |
-|         /NG          |                         quita la opción/noguiboot del <OSEntryLineNum> especificado. La opción/noguiboot deshabilita la barra de progreso que aparece antes del símbolo del sistema de inicio de sesión CTRL + ALT + SUPR.                          |
+|         Val          |           quita la opción/MaxMem y su valor máximo de memoria asociado del <OSEntryLineNum>especificado. La opción/MaxMem especifica la cantidad máxima de memoria RAM que puede usar el sistema operativo.            |
+|         /bv          |                     quita la opción/basevideo del <OSEntryLineNum>especificado. La opción/basevideo indica al sistema operativo que use el modo VGA estándar para el controlador de vídeo instalado.                     |
+|         /so          |                         quita la opción/SOS del <OSEntryLineNum>especificado. La opción/SOS indica al sistema operativo que muestre los nombres de los controladores de dispositivo mientras se cargan.                          |
+|         /NG          |                         quita la opción/noguiboot del <OSEntryLineNum>especificado. La opción/noguiboot deshabilita la barra de progreso que aparece antes del símbolo del sistema de inicio de sesión CTRL + ALT + SUPR.                          |
 | /ID <OSEntryLineNum> | Especifica el número de línea de entrada del sistema operativo en la sección [operating systems] del archivo boot. ini del que se quitan las opciones de carga del sistema operativo. La primera línea después del encabezado de la sección [operating systems] es 1. |
 |          /?          |                                                                                          Muestra la ayuda en el símbolo del sistema.                                                                                          |
 
@@ -53,5 +53,5 @@ bootcfg /rmsw /so /ng /s srvmain /u hiropln /id 2
 bootcfg /rmsw /ng /id 2 
 bootcfg /rmsw /mm 96 /ng /s srvmain /u maindom\hiropln /p p@ssW23 /id 2       
 ```
-#### <a name="additional-references"></a>Referencias adicionales
+#### <a name="additional-references"></a>referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

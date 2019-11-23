@@ -118,7 +118,7 @@ Busque eventos de RasClient de código fuente. Todos los mensajes de error devue
 
 ## <a name="nps-logs"></a>Registros de NPS
 
-NPS crea y almacena los registros de cuentas de NPS. De forma predeterminada, estos datos se almacenan en% SYSTEMROOT% \\System32 @ no__t-1Logfiles @ no__t-2 en un archivo denominado en*xxxx*. txt, donde *xxxx* es la fecha en que se creó el archivo.
+NPS crea y almacena los registros de cuentas de NPS. De forma predeterminada, estos datos se almacenan en% SYSTEMROOT%\\system32\\logfiles\\ en un archivo denominado en*xxxx*. txt, donde *xxxx* es la fecha en que se creó el archivo.
 
 De forma predeterminada, estos registros están en formato de valores separados por comas, pero no incluyen una fila de encabezado. La fila de encabezado es:
 
@@ -132,7 +132,7 @@ Los registros de NPS pueden ser útiles para diagnosticar problemas relacionados
 
 ## <a name="vpn_profileps1-script-issues"></a>Problemas del script VPN_Profile. ps1
 
-Los problemas más comunes al ejecutar manualmente el script VPN_. PS1 incluyen:
+Los problemas más comunes al ejecutar manualmente el script VPN_ Profile. PS1 incluyen:
 
 - ¿Usa una herramienta de conexión remota?  Asegúrese de no usar RDP u otro método de conexión remota, ya que no se usa la detección de inicio de sesión de usuario.
 
@@ -146,7 +146,7 @@ Una pequeña configuración incorrecta puede provocar un error en la conexión d
 
 1. ¿La máquina de plantilla está conectada externamente? Un examen de **whatismyip** debe mostrar una dirección IP pública que no le pertenece.
 
-2. ¿Se puede resolver el nombre del servidor VPN o de acceso remoto en una dirección IP? En **el panel** > de control**redes** y**conexiones de red**de **Internet** > , abra las propiedades del perfil de VPN. El valor de la pestaña **General** debe poder resolverse públicamente a través de DNS.
+2. ¿Se puede resolver el nombre del servidor VPN o de acceso remoto en una dirección IP? En el **Panel de Control** > **redes** e **Internet** > **conexiones de red**, abra las propiedades del perfil de VPN. El valor de la pestaña **General** debe poder resolverse públicamente a través de DNS.
 
 3. ¿Se puede tener acceso al servidor VPN desde una red externa? Considere la posibilidad de abrir el protocolo de mensajes de control de Internet (ICMP) a la interfaz externa y hacer ping en el nombre del cliente remoto. Después de que un ping se realice correctamente, puede quitar la regla de permiso de ICMP.
 
@@ -170,14 +170,14 @@ Una pequeña configuración incorrecta puede provocar un error en la conexión d
 
   - El usuario tiene un certificado de autenticación de cliente válido en su almacén de certificados personal que no ha emitido Azure AD.
 
-  - Falta la sección \<TLSExtensions\> de Perfil de VPN o no contiene el **\<EKUName\>de acceso\<condicional de AAD\>/EKUName EKUOID\<\>1.3.6.1.4.1.311.87 </EKUOID\>\>\<\>EKUName > AAD acceso condicional </EKUName EKUOID 1.3.6.1.4.1.311.87 </EKUOID\> \<** entradas. Las \<entradas EKUName > \<y EKUOID > indican al cliente VPN qué certificado se debe recuperar del almacén de certificados del usuario al pasar el certificado al servidor VPN. Sin esto, el cliente VPN usa cualquier certificado de autenticación de cliente válido que se encuentra en el almacén de certificados del usuario y la autenticación se realiza correctamente. 
+  - Falta la sección\> de Perfil de VPN \<TLSExtensions o no contiene la **\<EKUName\>AAD condicional access\</EKUName\>\<EKUOID\>1.3.6.1.4.1.311.87 </EKUOID\>\<EKUName > el acceso condicional de aad </EKUName\>\<EKUOID\>1.3.6.1.4.1.311.87 <** /EKUOID\>entradas. Las entradas \<EKUName > y \<EKUOID > indican al cliente VPN qué certificado se debe recuperar del almacén de certificados del usuario al pasar el certificado al servidor VPN. Sin esto, el cliente VPN usa cualquier certificado de autenticación de cliente válido que se encuentra en el almacén de certificados del usuario y la autenticación se realiza correctamente. 
 
   - El servidor RADIUS (NPS) no se ha configurado para aceptar solo certificados de cliente que contengan el OID de **acceso condicional de AAD** .
 
 - **Posible solución.** Para omitir este bucle, haga lo siguiente:
 
   1. En Windows PowerShell, ejecute el cmdlet **Get-WMIObject** para volcar la configuración del perfil de VPN. 
-  2. Compruebe que existen las  **\<secciones TLSExtensions >** ,  **\<EKUName >** y  **\<EKUOID >** y muestra el nombre y el OID correctos.
+  2. Compruebe que existen las secciones **\<TLSExtensions >** , **\<EKUName >** y **\<EKUOID >** y muestra el nombre y el OID correctos.
       
       ```powershell
       PS C:\> Get-WmiObject -Class MDM_VPNv2_01 -Namespace root\cimv2\mdm\dmmap
@@ -277,9 +277,9 @@ Una pequeña configuración incorrecta puede provocar un error en la conexión d
       Encryption test passed
      ```
      >[!NOTE]
-     >Si un certificado del emisor **CN = Microsoft VPN raíz de la generación 1** se encuentra en el almacén personal del usuario, pero el usuario obtuvo acceso seleccionando **X** para cerrar el mensaje de fin, recopile los registros de eventos de CAPI2 para comprobar que el certificado usado para autenticar fue un certificado de autenticación de cliente válido que no se ha emitido desde la entidad de certificación raíz de VPN de Microsoft.
+     >Si un certificado del emisor **CN = Microsoft VPN root CA gen 1** está presente en el almacén personal del usuario, pero el usuario obtuvo acceso seleccionando **X** para cerrar el mensaje de perdedor, recopile los registros de eventos de CAPI2 para comprobar que el certificado usado para autenticar sea un certificado de autenticación de cliente válido que no se haya emitido desde la CA raíz de VPN de Microsoft.
 
-  4. Si existe un certificado de autenticación de cliente válido en el almacén personal del usuario, se produce un error en la conexión (como debería) después de que el usuario seleccione la **X** y si  **\<TLSExtensions >** ,  **\<EKUName >** y  **EKUOID\<>** secciones existen y contienen la información correcta.
+  4. Si existe un certificado de autenticación de cliente válido en el almacén personal del usuario, se produce un error en la conexión (como debería) después de que el usuario seleccione la **X** y si las secciones **\<TLSExtensions >** , **\<EKUName >** y **\<EKUOID >** existen y contienen la información correcta.
    
      Aparece un mensaje de error que indica "no se encontró un certificado que se pueda usar con el protocolo de autenticación extensible".
 

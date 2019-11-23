@@ -38,13 +38,13 @@ tree [<Drive>:][<Path>] [/f] [/a]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Drive >:|Especifica la unidad que contiene el disco para el que desea mostrar la estructura de directorios.|
-|@no__t 0Path >|Especifica el directorio para el que desea mostrar la estructura de directorios.|
+|> de \<unidad:|Especifica la unidad que contiene el disco para el que desea mostrar la estructura de directorios.|
+|\<ruta de acceso >|Especifica el directorio para el que desea mostrar la estructura de directorios.|
 |/f|Muestra los nombres de los archivos de cada directorio.|
 |/a|Especifica que el **árbol** va a utilizar caracteres de texto en lugar de caracteres gráficos para mostrar las líneas que vinculan a los subdirectorios.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 La estructura que muestra el **árbol** depende de los parámetros que se especifiquen en el símbolo del sistema. Si no especifica una unidad o una ruta de acceso, **árbol** muestra la estructura de árbol que empieza con el directorio actual de la unidad actual.
 

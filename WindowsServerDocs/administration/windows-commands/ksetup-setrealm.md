@@ -36,9 +36,9 @@ ksetup /setrealm <DNSDomainName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0DNSDomainName >|El nombre de dominio DNS puede tener el formato de un nombre de dominio completo o un nombre de dominio simple.|
+|\<NombreDominioDns >|El nombre de dominio DNS puede tener el formato de un nombre de dominio completo o un nombre de dominio simple.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 El parámetro de nombre de dominio DNS debe escribirse en mayúsculas. De lo contrario, el comando **ksetup** solicitará la comprobación para continuar.
 

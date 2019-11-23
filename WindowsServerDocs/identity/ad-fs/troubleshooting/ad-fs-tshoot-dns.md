@@ -29,7 +29,7 @@ Comprueba la conectividad de nivel IP con otro equipo TCP/IP mediante el envío 
 
 ### <a name="to-use-a-ping-test"></a>Para usar una prueba de PING
 1.  Abra un símbolo del sistema
-2. Escriba PING <name of adfs server> a. Ejemplo:  PING sts.contoso.com
+2. Escriba PING <name of adfs server> a. Ejemplo: PING sts.contoso.com
 3. Debería ver una respuesta del servidor
 
 ![Ping](media/ad-fs-tshoot-dns/dns1.png)
@@ -40,7 +40,7 @@ Muestra información que puede usar para diagnosticar la infraestructura del sis
 ### <a name="to-use-a-nslookup"></a>Para usar NSLookup
 1.  Abra un símbolo del sistema
 2. Escriba PING <name of adfs server> a. Ejemplo: nslookup sts.contoso.com
-3. Debería ver la información de DNS del servidor ![NSLookup @ no__t-1
+3. Debería ver la información de DNS del servidor ![NSLookup](media/ad-fs-tshoot-dns/dns2.png)
 
 ## <a name="tracert"></a>Tracert
 Determina la ruta de acceso tomada a un destino mediante el envío de solicitudes de eco del Protocolo de mensajes de control de Internet (ICMP) o mensajes ICMPv6 al destino con valores de campo de período de vida (TTL) que aumentan incrementalmente.   Para obtener más información, consulte [tracert](https://technet.microsoft.com/library/ff961507.aspx).
@@ -48,8 +48,8 @@ Determina la ruta de acceso tomada a un destino mediante el envío de solicitude
 
 ### <a name="to-use-tracert"></a>Para usar tracert
 1.  Abra un símbolo del sistema
-2. Escriba tracert <name of adfs server> a. Ejemplo: tracert sts.contoso.com
-3. Debería ver la ruta de acceso de destino que se usa para llegar al servidor ![Tracert @ no__t-1
+2. Escriba tracert <name of adfs server>. Ejemplo: tracert sts.contoso.com
+3. Debería ver la ruta de acceso de destino que se usa para llegar al servidor ![tracert](media/ad-fs-tshoot-dns/dns3.png)
 
 ## <a name="next-steps"></a>Pasos siguientes
 

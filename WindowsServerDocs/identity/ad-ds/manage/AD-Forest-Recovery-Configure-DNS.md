@@ -39,18 +39,18 @@ Complete los pasos de instalación y configuración que se indican a continuaci�
 5. En la pantalla **roles de servidor** , seleccione **servidor DNS**. Si se le pide, haga clic en **Agregar características** y en **siguiente**.
 6. En la pantalla **características** , haga clic en **siguiente**.
 7. Lea la información de la página **servidor DNS** y, a continuación, haga clic en **siguiente**.
-   ![DNS Server @ no__t-1  
+   ![](media/AD-Forest-Recovery-Configure-DNS/dns1.png) del servidor DNS  
 8. En la página **confirmación** , compruebe que se instalará el rol de servidor DNS y, a continuación, haga clic en **instalar**. 
 
 ### <a name="to-configure-the-dns-server-service"></a>Para configurar el servicio servidor DNS
 
 1. Abra Administrador del servidor, haga clic en **herramientas** y en **DNS**.
-   ![DNS Server @ no__t-1
+   ![](media/AD-Forest-Recovery-Configure-DNS/dns2.png) del servidor DNS
 2. Cree zonas DNS para los mismos nombres de dominio DNS que se hospedaron en los servidores DNS antes de que el funcionamiento sea crítico. Para obtener más información, consulte Agregar una zona de búsqueda directa ([https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574)).
 3. Configure los datos DNS tal como existían antes de que el funcionamiento sea crítico. Por ejemplo:  
 
    - Configure las zonas DNS que se van a almacenar en AD DS. Para obtener más información, consulte cambiar el tipo de zona ([https://go.microsoft.com/fwlink/?LinkId=74579](https://go.microsoft.com/fwlink/?LinkId=74579)).
-   - Configure la zona DNS que sea autoritativa para los registros de recursos del localizador de controladores de dominio (Ubicador de DC) para permitir la actualización dinámica segura. Para obtener más información, consulte permitir solo actualizaciones dinámicas seguras ([https://go.microsoft.com/fwlink/?LinkId=74580](https://go.microsoft.com/fwlink/?LinkId=74580)).
+   - Configure la zona DNS que sea autoritativa para los registros de recursos del localizador de controladores de dominio (Ubicador de DC) para permitir la actualización dinámica segura. Para obtener más información, vea permitir solo actualizaciones dinámicas seguras ([https://go.microsoft.com/fwlink/?LinkId=74580](https://go.microsoft.com/fwlink/?LinkId=74580)).
 
 4. Asegúrese de que la zona DNS primaria contiene registros de recursos de delegación (registros de recursos de servidor de nombres (NS) y de host de adherencia (A) para la zona secundaria hospedada en este servidor DNS. Para obtener más información, consulte crear una delegación de zona ([https://go.microsoft.com/fwlink/?LinkId=74562](https://go.microsoft.com/fwlink/?LinkId=74562)).
 5. Después de configurar DNS, puede acelerar el registro de los registros de NETLOGON.

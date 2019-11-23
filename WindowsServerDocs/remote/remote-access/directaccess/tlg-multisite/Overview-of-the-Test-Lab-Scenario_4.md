@@ -41,7 +41,7 @@ En este escenario de laboratorio de pruebas, DirectAccess se implementa con:
   
 -   **NAT1**: un equipo cliente que está configurado como un dispositivo de traductor de direcciones de red (NAT) mediante conexión compartida A Internet.  
   
--   **CLIENT1 y cliente2**: dos equipos cliente que están configurados como clientes de DirectAccess que se usarán para probar la conectividad de DirectAccess al moverse entre la red interna, la Internet simulada y una red doméstica. **Cliente2** es un cliente de Windows 7 @ no__t-1.  
+-   **CLIENT1 y cliente2**: dos equipos cliente que están configurados como clientes de DirectAccess que se usarán para probar la conectividad de DirectAccess al moverse entre la red interna, la Internet simulada y una red doméstica. **Cliente2** es un cliente de Windows 7&reg;.  
   
 El laboratorio de pruebas consta de cuatro subredes que simulan lo siguiente:  
   

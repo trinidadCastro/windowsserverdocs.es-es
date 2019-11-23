@@ -135,7 +135,7 @@ TCP/IP proporciona utilidades de TCP/IP básicas que permiten a los equipos basa
 
 -    Windows 7
 
--    Windows Server 2008
+-    Windows Server 2008
 
 -   Windows Vista
 
@@ -224,7 +224,7 @@ Para obtener más información, vea la sección [Planear la implementación de D
 Para cada servidor de la red principal, debe cambiar el nombre del equipo y asignar y configurar una dirección IPv4 estática y otras propiedades TCP/IP para el equipo.
 
 #### <a name="planning-naming-conventions-for-computers-and-devices"></a>Planear las convenciones de nomenclatura para equipos y dispositivos
-Para mantener la coherencia en toda la red, es una buena idea usar nombres coherentes para servidores, impresoras y demás dispositivos. Los nombres de los equipos se pueden usar para ayudar a los usuarios y administradores a identificar con facilidad el propósito y la ubicación del servidor, impresora u otro dispositivo. Por ejemplo, si tiene tres servidores DNS, uno en San Francisco, uno en los Ángeles y otro en Chicago, puede usar la *función de servidor*de Convención de nomenclatura -*Location*-*Number*:
+Para mantener la coherencia en toda la red, es una buena idea usar nombres coherentes para servidores, impresoras y demás dispositivos. Los nombres de los equipos se pueden usar para ayudar a los usuarios y administradores a identificar con facilidad el propósito y la ubicación del servidor, impresora u otro dispositivo. Por ejemplo, si tiene tres servidores DNS, uno en San Francisco, uno en los Ángeles y otro en Chicago, puede usar la *función de servidor* de Convención de nomenclatura-*Ubicación*-*número*:
 
 -   DNS-DEN-01. Este nombre representa el servidor DNS en Denver, Colorado. Si se agregan más servidores DNS en Denver, se puede incrementar el valor numérico del nombre, como en DNS-DEN-02 y DNS-DEN-03.
 
@@ -285,11 +285,11 @@ En la tabla siguiente se proporcionan elementos de configuración de ejemplo par
 |------------------------|-------------------|
 |Nombre DNS completo|Ejemplos:<br /><br />-corp.contoso.com<br />-example.com|
 |Nivel funcional del bosque|-Windows Server 2008 <br />-Windows Server 2008 R2 <br />-Windows Server 2012 <br />-Windows Server 2012 R2 <br />-Windows Server 2016|
-|Ubicación de la carpeta de bases de datos de Active Directory Domain Services|E:\Configuration @ no__t-0<br /><br />O bien, acepte la ubicación predeterminada.|
-|Ubicación de la carpeta de archivos de registro de Active Directory Domain Services|E:\Configuration @ no__t-0<br /><br />O bien, acepte la ubicación predeterminada.|
-|Ubicación de la carpeta SYSVOL de Active Directory Domain Services|E:\Configuration @ no__t-0<br /><br />O bien, acepte la ubicación predeterminada.|
-|Contraseña de administrador para el modo de restauración de directorios|**J @ no__t-1p2leO4 $ F**|
-|Nombre del archivo de respuesta (opcional)|**AD DS_AnswerFile**|
+|Ubicación de la carpeta de bases de datos de Active Directory Domain Services|\\ E:\Configuration<br /><br />O bien, acepte la ubicación predeterminada.|
+|Ubicación de la carpeta de archivos de registro de Active Directory Domain Services|\\ E:\Configuration<br /><br />O bien, acepte la ubicación predeterminada.|
+|Ubicación de la carpeta SYSVOL de Active Directory Domain Services|\\ E:\Configuration<br /><br />O bien, acepte la ubicación predeterminada.|
+|Contraseña de administrador para el modo de restauración de directorios|**J\*p2leO4 $ F**|
+|Nombre del archivo de respuesta (opcional)|**DS_AnswerFile de AD**|
 
 #### <a name="planning-dns-zones"></a>Planear zonas DNS
 En los servidores DNS principales integrados en Active Directory, se crea una zona de búsqueda directa de forma predeterminada durante la instalación del rol Servidor DNS. Una zona de búsqueda directa permite a los equipos y dispositivos consultar la dirección IP de otro equipo o dispositivo a partir de su nombre DNS. Además de una zona de búsqueda directa, se recomienda crear una zona de búsqueda DNS inversa. Con una consulta de búsqueda DNS inversa, un equipo o dispositivo puede detectar el nombre de otro equipo o dispositivo mediante su dirección IP. La implementación de una zona de búsqueda inversa suele mejorar el rendimiento de DNS y aumenta enormemente el acierto de las consultas DNS.
@@ -401,7 +401,7 @@ Se recomienda configurar el intervalo de exclusión con direcciones adicionales 
 #### <a name="planning-tcpip-static-configuration"></a>Planear la configuración estática de TCP/IP
 Algunos dispositivos, como enrutadores, servidores DHCP y servidores DNS, se deben configurar con una dirección IP estática. Además, es posible que tenga dispositivos adicionales, como impresoras, para los que desee asegurarse de que tengan siempre la misma dirección IP. Reúna en una lista los dispositivos que desee configurar estáticamente para cada subred y, a continuación, planee el intervalo de exclusión que desea usar en el servidor DHCP para asegurarse de que el servidor DHCP no conceda la dirección IP de un dispositivo configurado estáticamente. Un intervalo de exclusión es una secuencia limitada de direcciones IP dentro de un ámbito que está excluida de las ofertas del servicio DHCP. Los intervalos de exclusión garantizan que el servidor no ofrece ninguna de las direcciones incluidas en esos intervalos a los clientes DHCP de la red.
 
-Por ejemplo, si el intervalo de direcciones IP para una subred va de 192.168.0.1 a 192.168.0.254 y tiene diez dispositivos que desea configurar con una dirección IP estática, puede crear un intervalo de exclusión para el ámbito 192.168.0.*x* que incluya diez o más direcciones IP: 192.168.0.1 a 192.168.0.15.
+Por ejemplo, si el intervalo de direcciones IP para una subred va de 192.168.0.1 a 192.168.0.254 y tiene diez dispositivos que desea configurar con una dirección IP estática, puede crear un intervalo de exclusión para el ámbito 192.168.0.*x* que incluya diez o más direcciones IP: de 192.168.0.1 a 192.168.0.15.
 
 En este ejemplo, se usan diez de las direcciones IP excluidas para configurar servidores y otros dispositivos con direcciones IP estáticas, y quedan cinco direcciones IP más disponibles para la configuración estática de nuevos dispositivos que puede que quiera agregar en el futuro. Con este intervalo de exclusión, se ha dejado al servidor DHCP con un grupo de direcciones que oscila entre 192.168.0.16 y 192.168.0.254.
 
@@ -412,7 +412,7 @@ En la tabla siguiente se proporcionan elementos de configuración de ejemplo adi
 |Enlaces de conexión de red|Ethernet|
 |Configuración del servidor DNS|DC1.corp.contoso.com|
 |Dirección IP del servidor DNS preferido|10.0.0.2|
-|Valores del cuadro de diálogo Agregar ámbito<br /><br />1.  Nombre de ámbito<br />2.  Dirección IP inicial<br />3.  Dirección IP final<br />4.  Máscara de subred<br />5.  Puerta de enlace predeterminada (opcional)<br />6.  Duración de la concesión|1.  Subred principal<br />2.10.0.0.1<br />3.10.0.0.254<br />4.255.255.255.0<br />5.10.0.0.1<br />6.8 días|
+|Valores del cuadro de diálogo Agregar ámbito<br /><br />1. nombre del ámbito<br />2. dirección IP inicial<br />3. dirección IP final<br />4. máscara de subred<br />5. puerta de enlace predeterminada (opcional)<br />6. duración de la concesión|1. subred principal<br />2.10.0.0.1<br />3.10.0.0.254<br />4.255.255.255.0<br />5.10.0.0.1<br />6.8 días|
 |Modo de funcionamiento del servidor DHCP IPv6|No habilitado|
 
 ## <a name="BKMK_deployment"></a>Implementación de red principal
@@ -451,7 +451,7 @@ Puede usar el procedimiento de esta sección para cambiar el nombre de un equipo
 > [!NOTE]
 > Para llevar a cabo este procedimiento con Windows PowerShell, abra PowerShell, escriba los siguientes cmdlets en líneas separadas y después presione ENTRAR. También debe reemplazar *nombreDeEquipo* por el nombre que quiera usar.
 >
-> `Rename-Computer`*NombreDeEquipo*
+> `Rename-Computer`*ComputerName*
 >
 > `Restart-Computer`
 
@@ -671,7 +671,7 @@ El requisito mínimo para llevar a cabo este procedimiento consiste en pertenece
 
     **Mientras?**
 
-    -   Active Directory usuarios y equipos/*nodo de dominio*@no__t*carpeta* -1
+    -   Active Directory usuarios y equipos/*nodo de dominio*/*carpeta*
 
 3.  Elija **Nuevo** y haga clic en **Usuario**. Se abrirá el cuadro **de diálogo nuevo objeto-usuario** .
 
@@ -777,11 +777,11 @@ En todos los servidores que va a implementar, excepto en el caso del servidor qu
 
 3.  En **Nombre del equipo**, en **Miembro del**, haga clic en **Dominio** y, a continuación, escriba el nombre del dominio al que quiere unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-4.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+4.  Haz clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-5.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
+5.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haz clic en **Aceptar**.
 
-6.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
+6.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haz clic en **Aceptar**.
 
 7.  En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
@@ -950,11 +950,11 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 
 5.  En **cambios en el dominio o el nombre del equipo** , en **miembro de**, haga clic en **dominio**y, a continuación, escriba el nombre del dominio al que desea unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-6.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+6.  Haz clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
+7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haz clic en **Aceptar**.
 
-8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
+8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haz clic en **Aceptar**.
 
 9. En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
@@ -970,11 +970,11 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 
 5.  En **cambios en el dominio o el nombre del equipo** , en **miembro de**, haga clic en **dominio**y, a continuación, escriba el nombre del dominio al que desea unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-6.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+6.  Haz clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
+7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haz clic en **Aceptar**.
 
-8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
+8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haz clic en **Aceptar**.
 
 9. En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
@@ -1009,7 +1009,7 @@ En las siguientes secciones se proporciona información sobre cómo agregar serv
 #### <a name="BKMK_deployNPS1"></a>Implementación de NPS1
 El Servidor de directivas de redes (NPS) se instala como un paso previo a la implementación de otras tecnologías de acceso a redes, como servidores de red privada virtual (VPN), puntos de acceso inalámbrico y conmutadores de autenticación 802.1X.
 
-El servidor de directivas de redes (NPS) permite configurar y administrar de forma centralizada las directivas de red con las siguientes características: Servidor de Servicio de autenticación remota telefónica de usuario (RADIUS) y proxy RADIUS.
+El servidor de directivas de redes (NPS) permite configurar y administrar de forma centralizada las directivas de red con las siguientes características: servidor de Servicio de autenticación remota telefónica de usuario (RADIUS) y proxy RADIUS.
 
 NPS es un componente opcional de una red principal, pero conviene instalarlo si se cumple alguna de las siguientes condiciones:
 
@@ -1050,7 +1050,7 @@ A continuación se indican los pasos clave de planeación necesarios previos a l
 Puede usar este procedimiento para instalar el servidor de directivas de redes (NPS) mediante el Asistente para agregar roles y características. NPS es un servicio de rol del rol de servidor Servicios de acceso y directivas de redes.
 
 > [!NOTE]
-> De forma predeterminada, NPS escucha el tráfico RADIUS en los puertos 1812, 1813, 1645 y 1646 en todos los adaptadores de red instalados. Si el Firewall de Windows con seguridad avanzada está habilitado al instalar NPS, las excepciones de Firewall para estos puertos se crean automáticamente durante el proceso de instalación del tráfico del Protocolo de Internet versión 6 \(IPv6 @ no__t-1 y de IPv4. Si los servidores de acceso a la red están configurados para enviar tráfico RADIUS a través de puertos distintos de los predeterminados, quite las excepciones creadas en firewall de Windows con seguridad avanzada durante la instalación de NPS y cree excepciones para los puertos que se usan para Tráfico RADIUS.
+> De forma predeterminada, NPS escucha el tráfico RADIUS en los puertos 1812, 1813, 1645 y 1646 en todos los adaptadores de red instalados. Si el Firewall de Windows con seguridad avanzada está habilitado al instalar NPS, las excepciones de Firewall para estos puertos se crean automáticamente durante el proceso de instalación del Protocolo de Internet versión 6 \(IPv6\) y el tráfico IPv4. Si los servidores de acceso a la red están configurados para enviar tráfico RADIUS a través de puertos distintos de los predeterminados, quite las excepciones creadas en firewall de Windows con seguridad avanzada durante la instalación de NPS y cree excepciones para los puertos que se usan para Tráfico RADIUS.
 
 **Credenciales administrativas**
 
@@ -1321,11 +1321,11 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 5.  En **Nombre del equipo**, en **Miembro del**, seleccione **Dominio** y, a continuación, escriba el nombre del dominio al que quiere unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-6.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+6.  Haz clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
+7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haz clic en **Aceptar**.
 
-8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
+8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haz clic en **Aceptar**.
 
 9. En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
@@ -1344,11 +1344,11 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 5.  En **Nombre del equipo**, en **Miembro del**, seleccione **Dominio** y, a continuación, escriba el nombre del dominio al que quiere unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-6.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+6.  Haz clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
+7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haz clic en **Aceptar**.
 
-8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
+8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haz clic en **Aceptar**.
 
 9. En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
@@ -1437,11 +1437,11 @@ Elementos de configuración para el procedimiento de implementación de una red 
 |-----------------------|------------------|----------|
 |Nombre DNS completo|corp.contoso.com||
 |Nivel funcional del bosque|Windows Server 2003||
-|Ubicación de la carpeta de bases de datos de Active Directory Domain Services|E:\Configuration @ no__t-0<br /><br />O bien, acepte la ubicación predeterminada.||
-|Ubicación de la carpeta de archivos de registro de Active Directory Domain Services|E:\Configuration @ no__t-0<br /><br />O bien, acepte la ubicación predeterminada.||
-|Ubicación de la carpeta SYSVOL de Active Directory Domain Services|E:\Configuration @ no__t-0<br /><br />O bien, acepte la ubicación predeterminada.||
+|Ubicación de la carpeta de bases de datos de Active Directory Domain Services|\\ E:\Configuration<br /><br />O bien, acepte la ubicación predeterminada.||
+|Ubicación de la carpeta de archivos de registro de Active Directory Domain Services|\\ E:\Configuration<br /><br />O bien, acepte la ubicación predeterminada.||
+|Ubicación de la carpeta SYSVOL de Active Directory Domain Services|\\ E:\Configuration<br /><br />O bien, acepte la ubicación predeterminada.||
 |Contraseña de administrador para el modo de restauración de directorios|J*p2leO4$F||
-|Nombre del archivo de respuesta (opcional)|AD DS_AnswerFile||
+|Nombre del archivo de respuesta (opcional)|DS_AnswerFile de AD||
 
 #### <a name="BKMK_FndtnPrep_DNSRevrsLook"></a>Configuración de una zona de búsqueda inversa de DNS
 

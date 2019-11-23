@@ -38,16 +38,16 @@ find [/v] [/c] [/n] [/i] [/off[line]] "<String>" [[<Drive>:][<Path>]<FileName>[.
 
 |           Parámetro           |                                              Descripción                                               |
 |-------------------------------|--------------------------------------------------------------------------------------------------------|
-|              /v               |                    Muestra todas las líneas que no contienen el > \<String especificado.                     |
-|              /c               |              Cuenta las líneas que contienen el > \<String especificado y muestra el total.              |
+|              /v               |                    Muestra todas las líneas que no contienen la cadena de \<especificada >.                     |
+|              /c               |              Cuenta las líneas que contienen la cadena de \<especificada > y muestra el total.              |
 |              /n               |                            Precede a cada línea con el número de línea del archivo.                             |
 |              /i               |                            Especifica que la búsqueda no distingue entre mayúsculas y minúsculas.                            |
 |         [/OFF [línea]]          |                        No omite los archivos que tienen el conjunto de atributos sin conexión.                        |
-|          "@no__t 0String >"          | Obligatorio. Especifica el grupo de caracteres (entre comillas) que desea buscar. |
-| [\<Drive >:] [<Path>] <FileName> |        Especifica la ubicación y el nombre del archivo en el que se va a buscar la cadena especificada.        |
+|          "cadena de\<>"          | Obligatorio. Especifica el grupo de caracteres (entre comillas) que desea buscar. |
+| [\<> de unidad:] [<Path>]<FileName> |        Especifica la ubicación y el nombre del archivo en el que se va a buscar la cadena especificada.        |
 |              /?               |                                  Muestra la ayuda en el símbolo del sistema.                                  |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Especificar una cadena
 

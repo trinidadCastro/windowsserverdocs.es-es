@@ -18,7 +18,7 @@ ms.locfileid: "71407770"
 ---
 # <a name="add-home-link"></a>Adición del vínculo a la página principal 
 
-Para agregar el vínculo de inicio que se muestra en la página Sign @ no__t-0in, use el siguiente cmdlet de Windows PowerShell y la siguiente sintaxis. 
+Para agregar el vínculo de inicio que se muestra en la página firmar\-en, use el siguiente cmdlet de Windows PowerShell y la siguiente sintaxis. 
 
 
 ![Agregar vínculo de inicio](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
@@ -28,7 +28,7 @@ Para agregar el vínculo de inicio que se muestra en la página Sign @ no__t-0in
  
   
 > [!IMPORTANT]  
-> El parámetro `linkText` de este cmdlet solo es obligatorio si usa un valor distinto del predeterminado, que es *Home*. La ventaja de usar el valor predeterminado es que las páginas están localizadas para todas las configuraciones regionales de los clientes. Después de personalizar la página Sign @ no__t-0in, la personalización tiene prioridad; por lo tanto, debe personalizar para todos los idiomas que desee admitir.
+> El parámetro `linkText` de este cmdlet solo es obligatorio si usa un valor distinto del predeterminado, que es *Home*. La ventaja de usar el valor predeterminado es que las páginas están localizadas para todas las configuraciones regionales de los clientes. una vez que se ha personalizado el signo\-en la página, la personalización tiene prioridad; por lo tanto, debe personalizar para todos los idiomas que desee admitir.
 
 ## <a name="additional-references"></a>Referencias adicionales 
 [Personalización de inicio de sesión de AD FS usuario](AD-FS-user-sign-in-customization.md)  

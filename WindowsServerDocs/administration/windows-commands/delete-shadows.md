@@ -24,7 +24,7 @@ ms.locfileid: "71378630"
 
 
 
-Elimina las instantáneas.
+elimina las instantáneas.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,11 +37,11 @@ delete shadows [all | volume <Volume> | oldest <Volume> | set <SetID> | id <Shad
 |     Parámetro     |                                                                             Descripción                                                                              |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        all        |                                                                      Elimina todas las instantáneas.                                                                      |
-| Volume \<Volume >  |                                                            Elimina todas las instantáneas del volumen especificado.                                                            |
-| @no__t más antigua >  |                                                         Elimina la instantánea más antigua del volumen especificado.                                                          |
-|   establecer @no__t 0SetID >    | Elimina las instantáneas del conjunto de instantáneas del ID. especificado. Puede especificar un alias mediante el símbolo **%** si el alias existe en el entorno actual. |
-|  ID \<ShadowID >   |              Elimina una instantánea del ID. especificado. Puede especificar un alias mediante el símbolo **%** si el alias existe en el entorno actual.               |
-| expuesto {\<Drive > |                                                                            <MountPoint>}                                                                             |
+| volumen \<volumen >  |                                                            Elimina todas las instantáneas del volumen especificado.                                                            |
+| Volumen de \<más antiguo >  |                                                         Elimina la instantánea más antigua del volumen especificado.                                                          |
+|   establecer \<> SetId    | Elimina las instantáneas del conjunto de instantáneas del ID. especificado. Puede especificar un alias mediante el **%** símbolo si el alias existe en el entorno actual. |
+|  ID \<ShadowID >   |              Elimina una instantánea del ID. especificado. Puede especificar un alias mediante el **%** símbolo si el alias existe en el entorno actual.               |
+| expuesto {\<de la unidad > |                                                                            <MountPoint>}                                                                             |
 
 #### <a name="additional-references"></a>Referencias adicionales
 

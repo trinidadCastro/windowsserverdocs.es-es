@@ -36,10 +36,10 @@ Un archivo de vínculo de datos universal o un archivo UDL es básicamente un ar
 1. Abra el Bloc de notas y guarde el archivo como test. udl.  Asegúrese de que tiene **todos los archivos** seleccionados en el menú desplegable para **Guardar como tipo**.
 2. Haga doble clic en test. udl
 3. Rellene la información siguiente: a. **Seleccione o escriba un nombre de servidor:**  Use el origen de datos de la cadena de conexión anterior a b. **Escriba la información para iniciar sesión en el servidor:**  Use la cuenta de servicio de AD FS o una cuenta que tenga permisos para iniciar sesión de forma remota.  Si la cuenta es una cuenta de Windows, use la autenticación integrada; de lo contrario, escriba el nombre de usuario y la contraseña.
-    c. **Seleccione la base de datos en el servidor:** Use el catálogo inicial de la cadena anterior.  Ejemplo:  AdfsConfigurationV3.
-   Conexión ![Test @ no__t-1
+    c. **Seleccione la base de datos en el servidor:** Use el catálogo inicial de la cadena anterior.  Ejemplo: AdfsConfigurationV3.
+   ![probar la conexión](media/ad-fs-tshoot-sql/sql4.png)
 1. Haga clic en **probar conexión**.</br>
-![Success @ no__t-1
+![correcto](media/ad-fs-tshoot-sql/sql3.png)
 
 ## <a name="use-sql-server-management-studio-to-test-connectivity"></a>Usar SQL Server Management Studio para probar la conectividad
 También puede [Descargar](https://go.microsoft.com/fwlink/?linkid=864329) e instalar SSMS para probar la conectividad de la base de datos.
@@ -49,9 +49,9 @@ También puede [Descargar](https://go.microsoft.com/fwlink/?linkid=864329) e ins
 ![Instalar](media/ad-fs-tshoot-sql/sql5.png)
 1. Abra SSMS y escriba el nombre del servidor.  Origen de datos anterior.
 2. Use la cuenta de servicio de AD FS o una cuenta que tenga permisos para iniciar sesión de forma remota.  Si la cuenta es una cuenta de Windows, use la autenticación integrada; de lo contrario, escriba el nombre de usuario y la contraseña.
-![Connect @ no__t-1
+![conectar](media/ad-fs-tshoot-sql/sql6.png)
 1. Debería ver el lado izquierdo rellenado.  Expanda bases de datos y compruebe que ve las bases de datos de AD FS.
-bases de datos de ![AD FS @ no__t-1
+![AD FS bases de datos](media/ad-fs-tshoot-sql/sql7.png)
 
 ## <a name="next-steps"></a>Pasos siguientes
 

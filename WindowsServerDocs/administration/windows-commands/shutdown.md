@@ -46,17 +46,17 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 |/p|Desactiva solo el equipo local (no un equipo remoto), sin ningún período de tiempo de espera ni ADVERTENCIA. Puede usar **/p** solo con **/d** o **/f**. Si el equipo no admite la funcionalidad de apagado, se apagará cuando se use **/p**, pero la energía del equipo permanecerá activada.|
 |/h|Pone el equipo local en hibernación si está habilitada la hibernación. Puede usar **/h** solo con **/f**.|
 |/e|Permite documentar el motivo del apagado inesperado en el equipo de destino.|
-|/f|Obliga a las aplicaciones en ejecución a cerrarse sin avisar a los usuarios.</br>Precaución: El uso de la opción **/f** podría provocar la pérdida de datos no guardados.|
-|/m \\ @ no__t-1 @ no__t-2ComputerName >|Especifica el equipo de destino. No se puede usar con la opción **/l** .|
+|/f|Obliga a las aplicaciones en ejecución a cerrarse sin avisar a los usuarios.</br>PRECAUCIÓN: el uso de la opción **/f** podría provocar la pérdida de datos no guardados.|
+|/m \\\\\<ComputerName >|Especifica el equipo de destino. No se puede usar con la opción **/l** .|
 |/t \<XXX >|Establece el período de tiempo de espera o el retraso en *XXX* segundos antes de un reinicio o apagado. Esto hace que se muestre una advertencia en la consola local. Puede especificar 0-600 segundos. Si no usa **/t**, el período de tiempo de espera es de 30 segundos de forma predeterminada.|
-|/d [p @ no__t-0U:] \<XX >: \<YY >|Muestra el motivo del reinicio o apagado del sistema. Estos son los valores de parámetro:</br>**p** indica que el reinicio o el apagado están planeados.</br>**u** indica que el motivo es definido por el usuario.</br>Nota: Si no se especifican **p** o **u** , el reinicio o el apagado no están planeados.</br>*XX* especifica el número de motivo principal (entero positivo inferior a 256).</br>*AA* Especifica el número de motivo secundario (entero positivo inferior a 65536).|
-|/c "@no__t 0Comment >"|Le permite comentar con detalle el motivo del apagado. Primero debe proporcionar un motivo mediante la opción **/d** . Los comentarios deben ir entre comillas. Puede utilizar 511 caracteres como máximo.|
+|/d [p\|u:]\<XX >:\<YY >|Muestra el motivo del reinicio o apagado del sistema. Estos son los valores de parámetro:</br>**p** indica que el reinicio o el apagado están planeados.</br>**u** indica que el motivo es definido por el usuario.</br>Nota: Si no se especifican **p** o **u** , el reinicio o el apagado no están planeados.</br>*XX* especifica el número de motivo principal (entero positivo inferior a 256).</br>*AA* Especifica el número de motivo secundario (entero positivo inferior a 65536).|
+|/c "\<> de comentario"|Le permite comentar con detalle el motivo del apagado. Primero debe proporcionar un motivo mediante la opción **/d** . Los comentarios deben ir entre comillas. Puede utilizar 511 caracteres como máximo.|
 |/?|Muestra la ayuda en el símbolo del sistema, incluida una lista de las razones principales y secundarias que se definen en el equipo local.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Los usuarios deben tener asignado el derecho de usuario **apagar el sistema** para apagar un equipo administrado de forma remota o local que use el comando **Shutdown** .
--   Los usuarios deben ser miembros del grupo administradores para anotar un apagado inesperado de un equipo administrado de forma remota o local. Si el equipo de destino está unido a un dominio, los miembros del grupo Admins. del dominio podrían realizar este procedimiento. Para obtener más información, vea:  
+-   Los usuarios deben ser miembros del grupo administradores para anotar un apagado inesperado de un equipo administrado de forma remota o local. Si el equipo de destino está unido a un dominio, los miembros del grupo Admins. del dominio podrían realizar este procedimiento. Para más información, consulta lo siguiente:  
     -   [Grupos locales predeterminados](https://technet.microsoft.com/library/cc785098(v=ws.10).aspx)
     -   [Grupos predeterminados](https://technet.microsoft.com/library/cc756898(v=ws.10).aspx)
 -   Si desea apagar más de un equipo a la vez, puede llamar a **Shutdown** para cada equipo mediante un script, o bien puede usar **Shutdown** **/i** para mostrar el cuadro de diálogo apagado remoto.
@@ -65,11 +65,11 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 
 ## <a name="BKMK_examples"></a>Example
 
-Para obligar a las aplicaciones a cerrar y reiniciar el equipo local después de un retraso de un minuto con el motivo "aplicación: Mantenimiento (planeado) "y el comentario" reconfigurando MyApp. exe "tipo:
+Para obligar a las aplicaciones a cerrar y reiniciar el equipo local después de un retraso de un minuto con el motivo "aplicación: mantenimiento (planeado)" y el comentario "reconfigurando MyApp. exe", escriba:
 ```
 shutdown /r /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
 ```
-Para reiniciar el equipo remoto \\ @ no__t-1ServerName con los mismos parámetros, escriba:
+Para reiniciar el equipo remoto \\\\ServerName con los mismos parámetros, escriba:
 ```
 shutdown /r /m \\servername /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
 ```

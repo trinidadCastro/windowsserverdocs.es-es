@@ -37,16 +37,16 @@ manage-bde -unlock {-recoverypassword <Password>|-recoverykey <PathToExternalKey
 |Parámetro|Valor|Descripción|
 |---------|-----|-----------|
 |-RecoveryPassword||Especifica que se usará una contraseña de recuperación para desbloquear la unidad. Abreviatura:-RP|
-||@no__t 0Password >|Representa la contraseña de recuperación que se puede usar para desbloquear la unidad.|
+||\<contraseña >|Representa la contraseña de recuperación que se puede usar para desbloquear la unidad.|
 |-recoverykey||Especifica que se usará un archivo de clave de recuperación externa para desbloquear la unidad. Abreviatura:-RK|
-||@no__t 0PathToExternalKeyFile >|Representa el archivo de clave de recuperación externa que se puede usar para desbloquear la unidad.|
-||@no__t 0Drive >|Representa la letra de una unidad seguida del signo de dos puntos.|
+||\<PathToExternalKeyFile >|Representa el archivo de clave de recuperación externa que se puede usar para desbloquear la unidad.|
+||\<unidad >|Representa la letra de una unidad seguida del signo de dos puntos.|
 |-certificado||El certificado de usuario local de un certificado de BitLocker para deshacer el reloj del volumen se encuentra en el almacén de certificados de usuario de búsqueda. Abreviatura:-CERT|
 ||<-CF PathToCertificateFile >|Ruta de acceso al archivo Cerficate|
 ||<-CT CertificateThumbprint >|Huella digital del certificado que puede incluir opcionalmente el PIN (-PIN).|
 |-contraseña||Presenta un símbolo del sistema para la contraseña para desbloquear el volumen. Abreviatura:-PW|
 |-COMPUTERNAME||Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. Abreviatura:-CN|
-||\<Nombre >|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
+||Nombre del \<>|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
 |-? o/?||Muestra una breve ayuda en el símbolo del sistema.|
 |-Help o-h||Muestra la ayuda completa en el símbolo del sistema.|
 

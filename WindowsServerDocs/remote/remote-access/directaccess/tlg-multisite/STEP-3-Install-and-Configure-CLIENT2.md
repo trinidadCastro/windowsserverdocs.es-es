@@ -23,9 +23,9 @@ ms.locfileid: "71388320"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Cliente2 es un equipo con Windows 7 @ no__t-0 que se usa para mostrar la compatibilidad con versiones anteriores de acceso remoto que se ejecuta en servidores de Windows Server 2016.  
+Cliente2 es un equipo con Windows 7&reg; que se usa para mostrar la compatibilidad con versiones anteriores de acceso remoto que se ejecuta en servidores Windows Server 2016.  
   
-1. Para instalar el sistema operativo en cliente2. Instale Windows @ no__t-0 7 Enterprise o Windows @ no__t-1 7 Ultimate en cliente2.  
+1. Para instalar el sistema operativo en cliente2. Instale Windows&reg; 7 Enterprise o Windows&reg; 7 Ultimate en cliente2.  
   
 2. Para unir el cliente2 al dominio CORP. Únase a cliente2 en el dominio corp.contoso.com.  
   

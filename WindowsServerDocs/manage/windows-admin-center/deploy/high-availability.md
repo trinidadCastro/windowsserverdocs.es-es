@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 6ae7bd9ed7aee5835ac1f53b9e10879ad8824f52
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71406948"
 ---
 # <a name="deploy-windows-admin-center-with-high-availability"></a>Implementación del centro de administración de Windows con alta disponibilidad
 
->Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
 
 Puede implementar el centro de administración de Windows en un clúster de conmutación por error para proporcionar alta disponibilidad para el servicio de puerta de enlace del centro de administración de Windows. La solución proporcionada es una solución activa-pasiva, donde solo hay una instancia del centro de administración de Windows activa. Si se produce un error en uno de los nodos del clúster, el centro de administración de Windows conmuta por error correctamente a otro nodo, lo que le permite seguir administrando los servidores de su entorno sin problemas. 
 
@@ -31,19 +31,19 @@ Puede implementar el centro de administración de Windows en un clúster de conm
 
 ## <a name="install-windows-admin-center-on-a-failover-cluster"></a>Instalar el centro de administración de Windows en un clúster de conmutación por error
 
-1. Copie el script ```Install-WindowsAdminCenterHA.ps1``` en un nodo del clúster. Descargue o copie el archivo. msi del centro de administración de Windows en el mismo nodo.
-2. Conéctese al nodo a través de RDP y ejecute el script ```Install-WindowsAdminCenterHA.ps1``` desde ese nodo con los parámetros siguientes:
-    - `-clusterStorage`: la ruta de acceso local del Volumen compartido de clúster para almacenar los datos del centro de administración de Windows.
-    - `-clientAccessPoint`: elija un nombre que usará para tener acceso al centro de administración de Windows. Por ejemplo, si ejecuta el script con el parámetro `-clientAccessPoint contosoWindowsAdminCenter`, tendrá acceso al servicio del centro de administración de Windows visitando `https://contosoWindowsAdminCenter.<domain>.com`
-    - `-staticAddress`: Opcional. Una o varias direcciones estáticas para el servicio genérico de clúster. 
-    - `-msiPath`: La ruta de acceso del archivo. msi del centro de administración de Windows.
-    - `-certPath`: Opcional. La ruta de acceso de un archivo. pfx de certificado.
-    - `-certPassword`: Opcional. Una contraseña SecureString para el archivo Certificate. pfx proporcionado en `-certPath`
-    - `-generateSslCert`: Opcional. Si no desea proporcionar un certificado firmado, incluya esta marca de parámetro para generar un certificado autofirmado. Tenga en cuenta que el certificado autofirmado expirará en 60 días.
-    - `-portNumber`: Opcional. Si no especifica un puerto, el servicio de puerta de enlace se implementa en el puerto 443 (HTTPS). Para usar un puerto diferente, especifique en este parámetro. Tenga en cuenta que si usa un puerto personalizado (algo más que 443), tendrá acceso al centro de administración de Windows yendo a https://\<clientAccessPoint @ no__t-1: \<port @ no__t-3.
+1. Copie el script de ```Install-WindowsAdminCenterHA.ps1``` en un nodo del clúster. Descargue o copie el archivo. msi del centro de administración de Windows en el mismo nodo.
+2. Conéctese al nodo a través de RDP y ejecute el script de ```Install-WindowsAdminCenterHA.ps1``` desde ese nodo con los parámetros siguientes:
+    - `-clusterStorage`: ruta de acceso local del Volumen compartido de clúster para almacenar los datos del centro de administración de Windows.
+    - `-clientAccessPoint`: elija un nombre que usará para tener acceso al centro de administración de Windows. Por ejemplo, si ejecuta el script con el parámetro `-clientAccessPoint contosoWindowsAdminCenter`, tendrá acceso al servicio centro de administración de Windows visitando `https://contosoWindowsAdminCenter.<domain>.com`
+    - `-staticAddress`: opcional. Una o varias direcciones estáticas para el servicio genérico de clúster. 
+    - `-msiPath`: la ruta de acceso del archivo. msi del centro de administración de Windows.
+    - `-certPath`: opcional. La ruta de acceso de un archivo. pfx de certificado.
+    - `-certPassword`: opcional. Una contraseña SecureString para el archivo Certificate. pfx proporcionado en `-certPath`
+    - `-generateSslCert`: opcional. Si no desea proporcionar un certificado firmado, incluya esta marca de parámetro para generar un certificado autofirmado. Tenga en cuenta que el certificado autofirmado expirará en 60 días.
+    - `-portNumber`: opcional. Si no especifica un puerto, el servicio de puerta de enlace se implementa en el puerto 443 (HTTPS). Para usar un puerto diferente, especifique en este parámetro. Tenga en cuenta que si usa un puerto personalizado (algo más que 443), tendrá acceso al centro de administración de Windows yendo a https://\<clientAccessPoint\>:\<\>de puertos.
 
 > [!NOTE]
-> El script ```Install-WindowsAdminCenterHA.ps1``` admite los parámetros ```-WhatIf ``` y ```-Verbose```.
+> El script de ```Install-WindowsAdminCenterHA.ps1``` admite los parámetros ```-WhatIf ``` y ```-Verbose```
 
 ### <a name="examples"></a>Ejemplos
 
@@ -90,7 +90,7 @@ $certPassword = Read-Host -AsSecureString
 
 ## <a name="uninstall"></a>Desinstalar
 
-Para desinstalar la implementación de alta disponibilidad del centro de administración de Windows desde el clúster de conmutación por error, pase el parámetro ```-Uninstall``` al script ```Install-WindowsAdminCenterHA.ps1```.
+Para desinstalar la implementación de alta disponibilidad del centro de administración de Windows desde el clúster de conmutación por error, pase el parámetro ```-Uninstall``` al script de ```Install-WindowsAdminCenterHA.ps1```.
 
 ```powershell
 .\Install-WindowsAdminCenterHA.ps1 -Uninstall -Verbose

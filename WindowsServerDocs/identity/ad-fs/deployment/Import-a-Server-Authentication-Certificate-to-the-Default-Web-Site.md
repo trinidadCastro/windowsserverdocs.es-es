@@ -18,24 +18,24 @@ ms.locfileid: "71359560"
 ---
 # <a name="import-a-server-authentication-certificate-to-the-default-web-site"></a>Importar un certificado de autenticación de servidor al sitio web predeterminado
 
-Después de obtener un certificado de autenticación de servidor de una entidad de certificación \(CA @ no__t-1, debe instalar manualmente dicho certificado en el sitio web predeterminado para cada servidor de Federación o servidor proxy de Federación en una granja de servidores.  
+Después de obtener un certificado de autenticación de servidor de una entidad de certificación \(CA\), debe instalar manualmente dicho certificado en el sitio web predeterminado para cada servidor de Federación o servidor proxy de Federación en una granja de servidores.  
   
 En el caso de los servidores web, debes instalar manualmente el certificado de autenticación de servidor en el sitio web correspondiente o en el directorio virtual donde se encuentra la aplicación federada.  
   
 Si estás configurando una granja, asegúrate de realizar este procedimiento de forma idéntica (usando exactamente la misma configuración) en todos los servidores de la granja.  
   
 > [!NOTE]  
-> El complemento de administración de AD FS @ no__t-0in hace referencia a los certificados de autenticación de servidor para los servidores de Federación como certificados de comunicación de servicio.  
+> El\-de administración de AD FS en se refiere a los certificados de autenticación de servidor para los servidores de Federación como certificados de comunicación de servicio.  
   
 El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
 ### <a name="to-import-a-server-authentication-certificate-to-the-default-web-site"></a>Para importar un certificado de autenticación de servidor al sitio web predeterminado  
   
-1.  En la pantalla **Inicio** , escriba**Internet Information Services \(IIS @ No__t-3 Manager**y, a continuación, presione Entrar.  
+1.  En la pantalla **Inicio** , escriba**Internet Information Services \(administrador de\) IIS**y, a continuación, presione Entrar.  
   
 2.  En el árbol de consola, haz clic en **nombreDeEquipo**.  
   
-3.  En el panel central, duplique los **certificados de servidor**@ no__t-0click.  
+3.  En el panel central, haga doble\-haga clic en **certificados de servidor**.  
   
 4.  En el panel **Acciones** , haz clic en **Importar**.  
   
@@ -46,9 +46,9 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 7.  Escribe la contraseña del certificado y, después, haz clic en **Aceptar**.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de comprobación: configuración de un servidor de Federación](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[Lista de comprobación: configuración de un servidor proxy de federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[Lista de comprobación: configuración de un servidor proxy de Federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 [Requisitos de certificado para servidores de federación](https://technet.microsoft.com/library/dd807040.aspx)  
   

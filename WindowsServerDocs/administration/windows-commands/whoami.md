@@ -46,7 +46,7 @@ whoami /all [/fo <Format>] [/nh]
 |/User|Muestra el dominio y el nombre de usuario actuales y el identificador de seguridad (SID).|
 |/groups|Muestra los grupos de usuarios a los que pertenece el usuario actual.|
 |/priv|Muestra los privilegios de seguridad del usuario actual.|
-|/FO @no__t 0Format >|Especifica el formato de salida. Los valores válidos son:</br>**tabla** de Muestra la salida en una tabla. Este es el valor predeterminado.</br>**lista** de Muestra la salida en una lista.</br>**CSV** Muestra la salida en formato de valores separados por comas (CSV).|
+|/FO \<formato >|Especifica el formato de salida. Los valores válidos son:</br>**tabla** de Muestra la salida en una tabla. Este es el valor predeterminado.</br>**lista** de Muestra la salida en una lista.</br>**CSV** Muestra la salida en formato de valores separados por comas (CSV).|
 |/All|Muestra toda la información del token de acceso actual, incluidos el nombre de usuario actual, los identificadores de seguridad (SID), los privilegios y los grupos a los que pertenece el usuario actual.|
 |/NH|Especifica que el encabezado de columna no debe mostrarse en la salida. Esto solo es válido para los formatos de tabla y CSV.|
 |/?|Muestra la ayuda en el símbolo del sistema.|

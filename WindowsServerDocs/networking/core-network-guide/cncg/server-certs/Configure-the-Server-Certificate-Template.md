@@ -19,7 +19,7 @@ ms.locfileid: "71356759"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este procedimiento para configurar la plantilla de certificado que Active Directory los servicios de Certificate Server de @ no__t-0 (AD CS) usan como base para los certificados de servidor que están inscritos en los servidores de la red.  
+Puede usar este procedimiento para configurar la plantilla de certificado que Active Directory&reg; servicios de Certificate Server (AD CS) utiliza como base para los certificados de servidor que están inscritos en los servidores de la red.  
   
 Al configurar esta plantilla, puede especificar los servidores por Active Directory grupo que debe recibir automáticamente un certificado de servidor de AD CS.   
   

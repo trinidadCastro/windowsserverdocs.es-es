@@ -69,9 +69,9 @@ Después de preparar los servidores para el clúster, configure el equilibrio de
   
 4.  En función de lo que haya elegido en los pasos de planeación:  
   
-    1.  Windows NLB: En la página **método de equilibrio de carga** , haga clic en **usar equilibrio de carga de red (NLB) de Windows**y, a continuación, en **siguiente**.  
+    1.  Windows NLB: en la página **método de equilibrio de carga** , haga clic en **usar equilibrio de carga de red (NLB) de Windows**y, a continuación, haga clic en **siguiente**.  
   
-    2.  Equilibrador de carga externo: En la página **método de equilibrio de carga** , haga clic en **usar un equilibrador de carga externo**y, a continuación, haga clic en **siguiente**.  
+    2.  Equilibrador de carga externo: en la página **método de equilibrio de carga** , haga clic en **usar un equilibrador de carga externo**y, a continuación, haga clic en **siguiente**.  
   
 5.  En una implementación de un único adaptador de red, en la página **direcciones IP dedicadas** , realice lo siguiente y, a continuación, haga clic en **siguiente**:  
   
@@ -100,7 +100,7 @@ Después de preparar los servidores para el clúster, configure el equilibrio de
     > [!NOTE]  
     > Si se está usando el equilibrio de carga externo, tenga en cuenta las direcciones IP virtuales y proporcione como en los equilibradores de carga externos.  
   
-](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -247,7 +247,7 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia al gr
   
 12. En el cuadro de diálogo **Agregar y quitar servidores** , haga clic en **cerrar**.  
   
-](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -277,7 +277,7 @@ Add-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 7.  En el cuadro de diálogo **Agregar y quitar servidores** , haga clic en **cerrar**.  
   
-](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -298,7 +298,7 @@ Remove-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 4.  En el cuadro de diálogo **deshabilitar equilibrio de carga** , haga clic en **cerrar**.  
   
-](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -317,7 +317,7 @@ Al hacer clic en **quitar opciones de configuración** se quitará el acceso rem
   
 ## <a name="BKMK_Links"></a>Vea también  
   
--   [Paso 4: Comprobando el clúster @ no__t-0  
+-   [Paso 4: comprobar el clúster](Step-4-Verify-the-Cluster.md)  
   
 
 

@@ -30,13 +30,13 @@ Si implementa DirectAccess con replicación SYSVOL de FRS, corre el riesgo de la
   
 Si planea implementar DirectAccess, debe usar controladores de dominio que ejecuten sistemas operativos posteriores a Windows Server 2003 R2 y debe usar DFS-R.  
   
-Para obtener información sobre la migración de FRS a DFS-R, consulte la guía de migración de replicación de [SYSVOL: FRS que se](https://technet.microsoft.com/library/dd640019(v=ws.10).aspx)va a replicación DFS.  
+Para obtener información acerca de la migración de FRS a DFS-R, consulte la [Guía de migración de replicación de SYSVOL: FRS to replicación DFS](https://technet.microsoft.com/library/dd640019(v=ws.10).aspx).  
   
 ## <a name="bkmk_nap"></a>Protección de acceso a redes para clientes de DirectAccess  
 La protección de acceso a redes (NAP) se usa para determinar si los equipos cliente remotos cumplen las directivas de ti antes de que se les conceda acceso a la red corporativa. NAP quedó en desuso en Windows Server 2012 R2 y no se incluye en Windows Server 2016. Por esta razón, no se recomienda iniciar una nueva implementación de DirectAccess con NAP. Se recomienda un método diferente de control de punto final para la seguridad de los clientes de DirectAccess.  
   
 ## <a name="bkmk_multi"></a>Compatibilidad con multisitio para clientes de Windows 7  
-Cuando DirectAccess se configura en una implementación multisitio, los clientes Windows 10 @ no__t-0, Windows @ no__t-1 8,1 y Windows @ no__t-2 8 tienen la capacidad de conectarse al sitio más cercano.  Los equipos cliente con Windows 7 @ no__t-0 no tienen la misma capacidad. La selección de sitio para los clientes de Windows 7 se establece en un sitio determinado en el momento de la configuración de la Directiva, y estos clientes siempre se conectarán a ese sitio designado, independientemente de su ubicación.  
+Cuando DirectAccess se configura en una implementación multisitio, los clientes de Windows 10&reg;, Windows&reg; 8,1 y Windows&reg; 8 tienen la capacidad de conectarse al sitio más cercano.  Los equipos cliente de Windows 7&reg; no tienen la misma capacidad. La selección de sitio para los clientes de Windows 7 se establece en un sitio determinado en el momento de la configuración de la Directiva, y estos clientes siempre se conectarán a ese sitio designado, independientemente de su ubicación.  
   
 ## <a name="bkmk_user"></a>Control de acceso basado en usuario  
 Las directivas de DirectAccess están basadas en equipos, no en función del usuario. No se admite la especificación de directivas de usuario de DirectAccess para controlar el acceso a la red corporativa.  
@@ -45,7 +45,7 @@ Las directivas de DirectAccess están basadas en equipos, no en función del usu
 DirectAccess se puede configurar mediante el Asistente para configuración de DirectAccess, la consola de administración de acceso remoto o los cmdlets de acceso remoto de Windows PowerShell. No se admite el uso de ningún medio que no sea el Asistente para configuración de DirectAccess para configurar DirectAccess, como la modificación de objetos de directiva de grupo de DirectAccess directamente o la modificación manual de la configuración de directivas predeterminada en el servidor o cliente. Estas modificaciones pueden dar lugar a una configuración inutilizable.  
   
 ## <a name="bkmk_kerb"></a>Autenticación de KerbProxy  
-Al configurar un servidor de DirectAccess con el Asistente para Introducción, el servidor de DirectAccess se configura automáticamente para usar la autenticación KerbProxy para la autenticación de equipos y usuarios. Por este motivo, solo debe usar el Asistente para Introducción para implementaciones de un solo sitio donde solo se implementan clientes Windows 10 @ no__t-0, Windows 8.1 o Windows 8.  
+Al configurar un servidor de DirectAccess con el Asistente para Introducción, el servidor de DirectAccess se configura automáticamente para usar la autenticación KerbProxy para la autenticación de equipos y usuarios. Por este motivo, solo debe usar el Asistente para Introducción para implementaciones de sitio único donde solo se implementan clientes de Windows 10&reg;, Windows 8.1 o Windows 8.  
   
 Además, las siguientes características no deben usarse con la autenticación de KerbProxy:  
   

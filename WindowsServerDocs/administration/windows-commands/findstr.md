@@ -49,16 +49,16 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 |/o|Imprime el desplazamiento de caracteres antes de cada línea coincidente.|
 |/p|Omite los archivos con caracteres no imprimibles.|
 |/OFF [línea]|No omite los archivos que tienen el conjunto de atributos sin conexión.|
-|/f: @no__t 0File >|Obtiene una lista de archivos del archivo especificado.|
-|/c: @no__t 0String >|Utiliza el texto especificado como una cadena de búsqueda literal.|
-|/g: @no__t 0File >|Obtiene las cadenas de búsqueda del archivo especificado.|
-|/d: @no__t 0DirList >|Busca la lista de directorios especificada. Cada directorio debe estar separado por un punto y coma (;), por ejemplo `dir1;dir2;dir3`.|
-|/a: @no__t 0ColorAttribute >|Especifica los atributos de color con dos dígitos hexadecimales. Escriba `color /?` para obtener información adicional.|
-|@no__t 0Strings >|Especifica el texto que se va a buscar en el *nombre de archivo*. Obligatorio.|
-|[\<Drive >:] [<Path>] <FileName> [...]|Especifica la ubicación y el archivo o los archivos que se van a buscar. Se requiere al menos un nombre de archivo.|
+|/f:\<archivo >|Obtiene una lista de archivos del archivo especificado.|
+|/c:\<cadena >|Utiliza el texto especificado como una cadena de búsqueda literal.|
+|/g:\<> de archivo|Obtiene las cadenas de búsqueda del archivo especificado.|
+|/d:\<DirList >|Busca la lista de directorios especificada. Cada directorio debe estar separado por un punto y coma (;), por ejemplo `dir1;dir2;dir3`.|
+|/a:\<ColorAttribute >|Especifica los atributos de color con dos dígitos hexadecimales. Escriba `color /?` para obtener información adicional.|
+|Cadenas de \<>|Especifica el texto que se va a buscar en el *nombre de archivo*. Obligatorio.|
+|[\<> de unidad:] [<Path>]<FileName>[...]|Especifica la ubicación y el archivo o los archivos que se van a buscar. Se requiere al menos un nombre de archivo.|
 |/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Todas las opciones de línea de comandos de **Findstr** deben preceder a las *cadenas* y el *nombre de archivo* en la cadena de comandos.
 - Las expresiones regulares usan caracteres literales y metacaracteres para buscar patrones de texto, en lugar de cadenas exactas de caracteres. Un carácter literal es un carácter que no tiene un significado especial en la sintaxis de expresión regular, que coincide con una aparición de ese carácter. Por ejemplo, las letras y los números son caracteres literales. Un metacarácter es un símbolo con un significado especial (un operador o delimitador) en la sintaxis de la expresión regular.
@@ -75,8 +75,8 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
   |[^ (clase)]|Inverso (clase): cualquier carácter que no esté en un conjunto|
   |[x-y]|Range: cualquier carácter del intervalo especificado|
   |\x|Escape: uso literal de un metacarácter x|
-  |\\ < cadena|Posición de la palabra: principio de la palabra|
-  |cadena @ no__t-0|Posición de la palabra: final de la palabra|
+  |\\cadena de <|Posición de la palabra: principio de la palabra|
+  |\> de cadena|Posición de la palabra: final de la palabra|
 
   Los caracteres especiales de la sintaxis de expresiones regulares tienen la máxima eficacia cuando se usan juntos. Por ejemplo, utilice la siguiente combinación del carácter comodín (.) y el carácter repetir (*) para que coincida con cualquier cadena de caracteres:
 

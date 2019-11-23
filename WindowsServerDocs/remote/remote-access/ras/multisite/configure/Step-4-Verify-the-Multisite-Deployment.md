@@ -37,7 +37,7 @@ En este tema se describe cómo comprobar que ha configurado correctamente la imp
   
     Debe poder tener acceso a todos los recursos corporativos a través de cada servidor multisitio.  
   
-4.  Conecte un equipo cliente Windows 7 @ no__t-0 a la red corporativa y obtenga la Directiva de grupo.  
+4.  Conecte un equipo cliente de Windows 7&reg; a la red corporativa y obtenga la Directiva de grupo.  
   
 5.  Conecte el equipo cliente de Windows 7 a la red externa e intente acceder a los recursos internos.  
   

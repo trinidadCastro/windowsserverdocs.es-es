@@ -39,7 +39,7 @@ logman create cfg <[-n] <name>> [options]
 |                 -config <value>                  |                                                         Especifica el archivo de configuración que contiene opciones de comando.                                                         |
 |                   [-n] <name>                    |                                                                       Nombre del objeto de destino.                                                                        |
 | -f < bin&#124;bincirc&#124;CSV&#124;TSV&#124;SQL > |                                                            Especifica el formato del registro del recopilador de datos.                                                             |
-|             -[-] u < usuario [contraseña] >              | Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
+|             -[-] u < usuario [contraseña] >              | Especifica el usuario que se va a ejecutar como. Al escribir una \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
 |    -m < [Start] [STOP] [[Start] [STOP] [...]] >    |                                                cambie a Inicio o detención manual en lugar de a una hora de inicio o de finalización programada.                                                 |
 |                -RF < [[HH:] mm:] SS >                |                                                        Ejecute el recopilador de datos durante el período de tiempo especificado.                                                         |
 |        -b < M/d/YYYY h:mm: SS [AM&#124;PM] >         |                                                              Comienza a recopilar datos en el momento especificado.                                                               |
@@ -59,10 +59,10 @@ logman create cfg <[-n] <name>> [options]
 |            -ad< consulta [consulta [...]] >            |                                                      Especifica los objetos WMI que se van a recopilar mediante el lenguaje de consulta SQL.                                                       |
 |             -FTC < ruta de acceso [ruta de acceso [...]] >             |                                                           Especifica la ruta de acceso completa a los archivos que se van a recopilar.                                                            |
 
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
 Donde [-] aparece en la lista, un archivo extra niega la opción.  
 ## <a name="BKMK_examples"></a>Example  
-El siguiente comando crea un recopilador de datos de configuración denominado cfg_log mediante la clave del registro HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion @ no__t-0.  
+El siguiente comando crea un recopilador de datos de configuración llamado cfg_log mediante la clave del registro HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\Currentverion\\.  
 ```  
 logman create cfg cfg_log -reg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\\"  
 ```  
@@ -70,5 +70,5 @@ El siguiente comando crea un recopilador de datos de configuración denominado c
 ```  
 logman create cfg cfg_log -mgt "root\wmi:select * FROM MSNdis_Vendordriverversion"  
 ```  
-#### <a name="additional-references"></a>Referencias adicionales  
+#### <a name="additional-references"></a>referencias adicionales  
 [logman](logman.md)  

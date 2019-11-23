@@ -139,7 +139,7 @@ A continuación se muestra una lista de mensajes de advertencia de la Directiva 
 |**Gravedad**|Advertencia|  
 |**SymbolicName**|EVENT_EQOS_WARNING_TEST_1|  
 |**Idioma**|Inglés|  
-|**Mensaje**|EQOS: * * * Testing @ no__t-0 @ no__t-1 @ no__t-2 [, con una cadena] "% 2".|  
+|**Mensaje**|EQOS: * * * Testing\*\*\*[, con una cadena] "%2".|  
   
 |||  
 |-|-|  
@@ -147,7 +147,7 @@ A continuación se muestra una lista de mensajes de advertencia de la Directiva 
 |**Gravedad**|Advertencia|  
 |**SymbolicName**|EVENT_EQOS_WARNING_TEST_2|  
 |**Idioma**|Inglés|  
-|**Mensaje**|EQOS: * * * Testing @ no__t-0 @ no__t-1 @ no__t-2 [, con dos cadenas, String1 es] "% 2" [, cadena2 es] "% 3".|  
+|**Mensaje**|EQOS: * * * Testing\*\*\*[, con dos cadenas, String1 es] "%2" [, cadena2 es] "%3".|  
   
 |||  
 |-|-|  
@@ -155,7 +155,7 @@ A continuación se muestra una lista de mensajes de advertencia de la Directiva 
 |**Gravedad**|Advertencia|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_VERSION|  
 |**Idioma**|Inglés|  
-|**Mensaje**|La directiva QoS de equipo "% 2" tiene un número de versión no válido. Esta Directiva no se aplicará.|  
+|**Mensaje**|La directiva QoS de equipo "%2" tiene un número de versión no válido. Esta Directiva no se aplicará.|  
   
 |||  
 |-|-|  
@@ -163,7 +163,7 @@ A continuación se muestra una lista de mensajes de advertencia de la Directiva 
 |**Gravedad**|Advertencia|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_VERSION|  
 |**Idioma**|Inglés|  
-|**Mensaje**|La directiva QoS de usuario "% 2" tiene un número de versión no válido. Esta Directiva no se aplicará.|  
+|**Mensaje**|La directiva QoS de usuario "%2" tiene un número de versión no válido. Esta Directiva no se aplicará.|  
   
 |||  
 |-|-|  
@@ -171,7 +171,7 @@ A continuación se muestra una lista de mensajes de advertencia de la Directiva 
 |**Gravedad**|Advertencia|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_PROFILE_NOT_SPECIFIED|  
 |**Idioma**|Inglés|  
-|**Mensaje**|La directiva QoS de equipo "% 2" no especifica un valor de DSCP o una velocidad de limitación. Esta Directiva no se aplicará.|  
+|**Mensaje**|La directiva QoS de equipo "%2" no especifica un valor de DSCP o una velocidad de limitación. Esta Directiva no se aplicará.|  
   
 |||  
 |-|-|  
@@ -179,7 +179,7 @@ A continuación se muestra una lista de mensajes de advertencia de la Directiva 
 |**Gravedad**|Advertencia|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_PROFILE_NOT_SPECIFIED|  
 |**Idioma**|Inglés|  
-|**Mensaje**|La directiva QoS de usuario "% 2" no especifica un valor de DSCP o una tasa de limitación. Esta Directiva no se aplicará.|  
+|**Mensaje**|La directiva QoS de usuario "%2" no especifica un valor de DSCP o una tasa de limitación. Esta Directiva no se aplicará.|  
   
 |||  
 |-|-|  
@@ -187,7 +187,7 @@ A continuación se muestra una lista de mensajes de advertencia de la Directiva 
 |**Gravedad**|Advertencia|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_QUOTA_EXCEEDED|  
 |**Idioma**|Inglés|  
-|**Mensaje**|Se superó el número máximo de directivas de QoS de equipo. No se aplicará la directiva QoS "% 2" y las directivas QoS de equipo posteriores.|  
+|**Mensaje**|Se superó el número máximo de directivas de QoS de equipo. No se aplicará la directiva QoS "%2" y las directivas QoS de equipo posteriores.|  
   
 |||  
 |-|-|  
@@ -195,7 +195,7 @@ A continuación se muestra una lista de mensajes de advertencia de la Directiva 
 |**Gravedad**|Advertencia|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_QUOTA_EXCEEDED|  
 |**Idioma**|Inglés|  
-|**Mensaje**|Se superó el número máximo de directivas de QoS de usuario. No se aplicará la directiva QoS "% 2" y las directivas QoS de usuario subsiguientes.|  
+|**Mensaje**|Se superó el número máximo de directivas de QoS de usuario. No se aplicará la directiva QoS "%2" y las directivas QoS de usuario subsiguientes.|  
   
 |||  
 |-|-|  
@@ -203,7 +203,7 @@ A continuación se muestra una lista de mensajes de advertencia de la Directiva 
 |**Gravedad**|Advertencia|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_CONFLICT|  
 |**Idioma**|Inglés|  
-|**Mensaje**|La directiva QoS de equipo "% 2" puede estar en conflicto con otras directivas de QoS. Consulte la documentación sobre las reglas sobre qué directiva se aplicará.|  
+|**Mensaje**|La directiva QoS de equipo "%2" puede estar en conflicto con otras directivas de QoS. Consulte la documentación sobre las reglas sobre qué directiva se aplicará.|  
   
 |||  
 |-|-|  
@@ -211,7 +211,7 @@ A continuación se muestra una lista de mensajes de advertencia de la Directiva 
 |**Gravedad**|Advertencia|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_CONFLICT|  
 |**Idioma**|Inglés|  
-|**Mensaje**|La directiva QoS de usuario "% 2" puede estar en conflicto con otras directivas QoS. Consulte la documentación sobre las reglas sobre qué directiva se aplicará.|  
+|**Mensaje**|La directiva QoS de usuario "%2" puede estar en conflicto con otras directivas QoS. Consulte la documentación sobre las reglas sobre qué directiva se aplicará.|  
   
 |||  
 |-|-|  
@@ -219,7 +219,7 @@ A continuación se muestra una lista de mensajes de advertencia de la Directiva 
 |**Gravedad**|Advertencia|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_NO_FULLPATH_APPNAME|  
 |**Idioma**|Inglés|  
-|**Mensaje**|Se omitió la directiva QoS de equipo "% 2" porque no se puede procesar la ruta de acceso de la aplicación. Es posible que la ruta de acceso de la aplicación no sea válida, contenga una letra de unidad no válida o contenga una unidad de red asignada.|  
+|**Mensaje**|Se omitió la directiva QoS de equipo "%2" porque no se puede procesar la ruta de acceso de la aplicación. Es posible que la ruta de acceso de la aplicación no sea válida, contenga una letra de unidad no válida o contenga una unidad de red asignada.|  
   
 |||  
 |-|-|  
@@ -227,7 +227,7 @@ A continuación se muestra una lista de mensajes de advertencia de la Directiva 
 |**Gravedad**|Advertencia|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_NO_FULLPATH_APPNAME|  
 |**Idioma**|Inglés|  
-|**Mensaje**|Se omitió la directiva QoS de usuario "% 2" porque no se puede procesar la ruta de acceso de la aplicación. Es posible que la ruta de acceso de la aplicación no sea válida, contenga una letra de unidad no válida o contenga una unidad de red asignada.|  
+|**Mensaje**|Se omitió la directiva QoS de usuario "%2" porque no se puede procesar la ruta de acceso de la aplicación. Es posible que la ruta de acceso de la aplicación no sea válida, contenga una letra de unidad no válida o contenga una unidad de red asignada.|  
   
 ## <a name="error-messages"></a>Mensajes de error  
 
@@ -239,7 +239,7 @@ A continuación se muestra una lista de mensajes de error de la directiva QoS.
 |**Gravedad**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_MACHINE_POLICY_REFERESH|  
 |**Idioma**|Inglés|  
-|**Mensaje**|No se pudieron actualizar las directivas QoS del equipo. Código de error: "% 2".|  
+|**Mensaje**|No se pudieron actualizar las directivas QoS del equipo. Código de error: "%2".|  
   
 |||  
 |-|-|  
@@ -247,7 +247,7 @@ A continuación se muestra una lista de mensajes de error de la directiva QoS.
 |**Gravedad**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_USER_POLICY_REFERESH|  
 |**Idioma**|Inglés|  
-|**Mensaje**|No se pudieron actualizar las directivas QoS de usuario. Código de error: "% 2".|  
+|**Mensaje**|No se pudieron actualizar las directivas QoS de usuario. Código de error: "%2".|  
   
 |||  
 |-|-|  
@@ -255,7 +255,7 @@ A continuación se muestra una lista de mensajes de error de la directiva QoS.
 |**Gravedad**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_MACHINE_POLICY_ROOT_KEY|  
 |**Idioma**|Inglés|  
-|**Mensaje**|QoS no pudo abrir la clave raíz de nivel de equipo para las directivas QoS. Código de error: "% 2".|  
+|**Mensaje**|QoS no pudo abrir la clave raíz de nivel de equipo para las directivas QoS. Código de error: "%2".|  
   
 |||  
 |-|-|  
@@ -263,7 +263,7 @@ A continuación se muestra una lista de mensajes de error de la directiva QoS.
 |**Gravedad**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_USER_POLICY_ROOT_KEY|  
 |**Idioma**|Inglés|  
-|**Mensaje**|QoS no pudo abrir la clave raíz de nivel de usuario para las directivas QoS. Código de error: "% 2".|  
+|**Mensaje**|QoS no pudo abrir la clave raíz de nivel de usuario para las directivas QoS. Código de error: "%2".|  
   
 |||  
 |-|-|  
@@ -271,7 +271,7 @@ A continuación se muestra una lista de mensajes de error de la directiva QoS.
 |**Gravedad**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_MACHINE_POLICY_KEYNAME_TOO_LONG|  
 |**Idioma**|Inglés|  
-|**Mensaje**|Una directiva QoS de equipo supera la longitud de nombre máxima permitida. La Directiva infractora aparece en la clave raíz de la directiva QoS de nivel de equipo con el índice "% 2".|  
+|**Mensaje**|Una directiva QoS de equipo supera la longitud de nombre máxima permitida. La Directiva infractora aparece en la clave raíz de la directiva QoS de nivel de equipo con el índice "%2".|  
   
 |||  
 |-|-|  
@@ -279,7 +279,7 @@ A continuación se muestra una lista de mensajes de error de la directiva QoS.
 |**Gravedad**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_USER_POLICY_KEYNAME_TOO_LONG|  
 |**Idioma**|Inglés|  
-|**Mensaje**|Una directiva QoS de usuario supera la longitud máxima permitida del nombre. La Directiva infractora aparece en la clave raíz de la directiva QoS de nivel de usuario, con el índice "% 2".|  
+|**Mensaje**|Una directiva QoS de usuario supera la longitud máxima permitida del nombre. La Directiva infractora aparece en la clave raíz de la directiva QoS de nivel de usuario, con el índice "%2".|  
   
 |||  
 |-|-|  
@@ -287,7 +287,7 @@ A continuación se muestra una lista de mensajes de error de la directiva QoS.
 |**Gravedad**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_MACHINE_POLICY_KEYNAME_SIZE_ZERO|  
 |**Idioma**|Inglés|  
-|**Mensaje**|Una directiva QoS de equipo tiene un nombre de longitud cero. La Directiva infractora aparece en la clave raíz de la directiva QoS de nivel de equipo con el índice "% 2".|  
+|**Mensaje**|Una directiva QoS de equipo tiene un nombre de longitud cero. La Directiva infractora aparece en la clave raíz de la directiva QoS de nivel de equipo con el índice "%2".|  
   
 |||  
 |-|-|  
@@ -295,7 +295,7 @@ A continuación se muestra una lista de mensajes de error de la directiva QoS.
 |**Gravedad**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_USER_POLICY_KEYNAME_SIZE_ZERO|  
 |**Idioma**|Inglés|  
-|**Mensaje**|Una directiva QoS de usuario tiene un nombre de longitud cero. La Directiva infractora aparece en la clave raíz de la directiva QoS de nivel de usuario, con el índice "% 2".|  
+|**Mensaje**|Una directiva QoS de usuario tiene un nombre de longitud cero. La Directiva infractora aparece en la clave raíz de la directiva QoS de nivel de usuario, con el índice "%2".|  
   
 |||  
 |-|-|  
@@ -303,7 +303,7 @@ A continuación se muestra una lista de mensajes de error de la directiva QoS.
 |**Gravedad**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_MACHINE_POLICY_SUBKEY|  
 |**Idioma**|Inglés|  
-|**Mensaje**|QoS no pudo abrir la subclave del registro para una directiva QoS del equipo. La directiva aparece en la clave raíz de la directiva QoS de nivel de equipo con el índice "% 2".|  
+|**Mensaje**|QoS no pudo abrir la subclave del registro para una directiva QoS del equipo. La directiva aparece en la clave raíz de la directiva QoS de nivel de equipo con el índice "%2".|  
   
 |||  
 |-|-|  
@@ -311,7 +311,7 @@ A continuación se muestra una lista de mensajes de error de la directiva QoS.
 |**Gravedad**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_OPENING_USER_POLICY_SUBKEY|  
 |**Idioma**|Inglés|  
-|**Mensaje**|QoS no pudo abrir la subclave del registro para una directiva QoS de usuario. La directiva aparece en la clave raíz de la directiva QoS de nivel de usuario, con el índice "% 2".|  
+|**Mensaje**|QoS no pudo abrir la subclave del registro para una directiva QoS de usuario. La directiva aparece en la clave raíz de la directiva QoS de nivel de usuario, con el índice "%2".|  
   
 |||  
 |-|-|  
@@ -319,7 +319,7 @@ A continuación se muestra una lista de mensajes de error de la directiva QoS.
 |**Gravedad**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_PROCESSING_MACHINE_POLICY_FIELD|  
 |**Idioma**|Inglés|  
-|**Mensaje**|QoS no pudo leer o validar el campo "% 2" para la directiva QoS de equipo "% 3".|  
+|**Mensaje**|QoS no pudo leer o validar el campo "%2" para la directiva QoS de equipo "%3".|  
   
 |||  
 |-|-|  
@@ -327,7 +327,7 @@ A continuación se muestra una lista de mensajes de error de la directiva QoS.
 |**Gravedad**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_PROCESSING_USER_POLICY_FIELD|  
 |**Idioma**|Inglés|  
-|**Mensaje**|QoS no pudo leer o validar el campo "% 2" para la directiva QoS de usuario "% 3".|  
+|**Mensaje**|QoS no pudo leer o validar el campo "%2" para la directiva QoS de usuario "%3".|  
   
 |||  
 |-|-|  
@@ -335,7 +335,7 @@ A continuación se muestra una lista de mensajes de error de la directiva QoS.
 |**Gravedad**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_SETTING_TCP_AUTOTUNING|  
 |**Idioma**|Inglés|  
-|**Mensaje**|QoS no pudo leer o establecer el nivel de rendimiento de TCP de entrada, código de error: "% 2".|  
+|**Mensaje**|QoS no pudo leer o establecer el nivel de rendimiento de TCP de entrada, código de error: "%2".|  
   
 |||  
 |-|-|  
@@ -343,7 +343,7 @@ A continuación se muestra una lista de mensajes de error de la directiva QoS.
 |**Gravedad**|Error|  
 |**SymbolicName**|EVENT_EQOS_ERROR_SETTING_APP_MARKING|  
 |**Idioma**|Inglés|  
-|**Mensaje**|QoS no pudo leer o establecer la configuración de invalidación de marcado de DSCP, código de error: "% 2".|  
+|**Mensaje**|QoS no pudo leer o establecer la configuración de invalidación de marcado de DSCP, código de error: "%2".|  
 
 Para el siguiente tema de esta guía, consulte [preguntas más frecuentes sobre la Directiva de QoS](qos-policy-faq.md).
 

@@ -22,18 +22,18 @@ La página de inicio de sesión de AD FS se puede usar para comprobar si la aute
 De forma predeterminada, AD FS en Windows 2016 no tiene habilitada la página de inicio de sesión.  Para habilitarlo, puede usar el comando de PowerShell Set-AdfsProperties.  Use el procedimiento siguiente para habilitar la página:
 
 1.  Abrir Windows PowerShell
-2.  Escriba: `Get-AdfsProperties` y presione Entrar.
-3.  Compruebe que **EnableIdpInitiatedSignonPage** está establecido en false ![False @ no__t-2
+2.  Entrar: `Get-AdfsProperties` y presione Entrar
+3.  Compruebe que **EnableIdpInitiatedSignonPage** está establecido en false ![false](media/ad-fs-tshoot-initiatedsignon/idp2.png)
 4.  En PowerShell, escriba: `Set-AdfsProperties -EnableIdpInitiatedSignonPage $true`
 5.  No verá una confirmación, por lo que deberá escribir Get-AdfsProperties de nuevo y comprobar que **EnableIdpInitatedSignonPage** está establecido en true.
-![True @ no__t-1
+![True](media/ad-fs-tshoot-initiatedsignon/idp4.png)
 
 ## <a name="test-authentication"></a>Probar autenticación
 Use el procedimiento siguiente para probar la autenticación de AD FS con la página de inicio de sesión iniciada por IDP.
 
 1.  Abra un explorador Web y vaya a la página de inicio de sesión de IDP.  Ejemplo: https://sts.contoso.com/adfs/ls/idpinitiatedsignon.htm
 2.  Se le pedirá que inicie sesión.  Escriba sus credenciales.
-![Sign-on @ no__t-1
+](media/ad-fs-tshoot-initiatedsignon/idp5.png) de inicio de sesión ![
 3.  Si esta operación se realizó correctamente, debe iniciar sesión.
 
 
@@ -42,14 +42,14 @@ Puede probar la experiencia de inicio de sesión sin problemas asegurándose de 
 
 1.  En un cliente de Windows 10, haga clic en Inicio y escriba opciones de Internet y seleccione Opciones de Internet.
 2.   Haga clic en la pestaña seguridad, haga clic en Intranet local y, a continuación, haga clic en el botón sitios.
-![Seamless @ no__t-1
+![](media/ad-fs-tshoot-initiatedsignon/idp8.png) sin problemas
 1.  Haga clic en Avanzado.
 2.  Escriba la dirección URL y haga clic en Agregar.  Haga clic en cerrar.
-Dirección URL de ![Add @ no__t-1
+![agregar dirección URL](media/ad-fs-tshoot-initiatedsignon/idp9.png)
 1.  Haga clic en Aceptar.  Haga clic en Aceptar.  Esto debe cerrar las opciones de Internet.
 2.  Abra un explorador Web y vaya a la página de inicio de sesión de IDP.  Ejemplo: https://sts.contoso.com/adfs/ls/idpinitiatedsignon.htm
 3.  Haga clic en el botón iniciar sesión.  Debe iniciar sesión automáticamente y no se le pedirán las credenciales.
-![Seamless @ no__t-1
+![](media/ad-fs-tshoot-initiatedsignon/idp6.png) sin problemas
 
 ## <a name="next-steps"></a>Pasos siguientes
 

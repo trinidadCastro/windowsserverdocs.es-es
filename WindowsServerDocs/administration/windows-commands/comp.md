@@ -38,17 +38,17 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Data1 >|Especifica la ubicación y el nombre del primer archivo o conjunto de archivos que se van a comparar. Puede usar caracteres comodín ( **&#42;** y **?** ) para especificar varios archivos.|
-|@no__t 0Data2 >|Especifica la ubicación y el nombre del segundo archivo o conjunto de archivos que desea comparar. Puede usar caracteres comodín ( **&#42;** y **?** ) para especificar varios archivos.|
+|\<data1 >|Especifica la ubicación y el nombre del primer archivo o conjunto de archivos que se van a comparar. Puede usar caracteres comodín ( **&#42;** y **?** ) para especificar varios archivos.|
+|\<Data2 >|Especifica la ubicación y el nombre del segundo archivo o conjunto de archivos que desea comparar. Puede usar caracteres comodín ( **&#42;** y **?** ) para especificar varios archivos.|
 |/d|Muestra las diferencias en el formato decimal. (El formato predeterminado es hexadecimal).|
 |/a|Muestra las diferencias como caracteres.|
 |/l|Muestra el número de la línea donde se produce una diferencia, en lugar de mostrar el desplazamiento de bytes.|
-|/n = \<Number >|Compara solo el número de líneas que se especifican para cada archivo, incluso si los archivos tienen tamaños diferentes.|
+|/n = número de\<>|Compara solo el número de líneas que se especifican para cada archivo, incluso si los archivos tienen tamaños diferentes.|
 |/c|Realiza una comparación que no distingue entre mayúsculas y minúsculas.|
 |/OFF [línea]|Procesa archivos con el conjunto de atributos sin conexión.|
 |/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Cómo identifica el comando **COMP** la información no coincidente
 
@@ -93,7 +93,7 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 
 ## <a name="BKMK_examples"></a>Example
 
-Para comparar el contenido del directorio C:\Informes con el directorio de copia de seguridad \\ @ no__t-1Sales\Backup\April, escriba:
+Para comparar el contenido del directorio C:\Informes con el directorio de copia de seguridad \\\\Sales\Backup\April, escriba:
 ```
 comp c:\reports \\sales\backup\april
 ```

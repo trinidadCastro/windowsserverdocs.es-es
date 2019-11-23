@@ -36,7 +36,7 @@ mqbkup {/b | /r} <folder path_to_storage_device>
 |-------|--------|  
 |b|Especifica la operación de copia de seguridad|  
 |/r|Especifica la operación de restauración|  
-|< carpeta path_to_storage @ no__t-0device >|Especifica la ruta de acceso donde se almacenan los archivos de mensajes y la configuración del registro de MSMQ|  
+|< carpeta path_to_storage\_dispositivo >|Especifica la ruta de acceso donde se almacenan los archivos de mensajes y la configuración del registro de MSMQ|  
 |/?|Muestra la ayuda en el símbolo del sistema.|  
 ## <a name="BKMK_Examples"></a>Example  
 Para realizar una copia de seguridad de todos los archivos de mensajes de MSMQ y la configuración del registro y almacenarlos en la carpeta *Msmqbkup* de la unidad c:.  
@@ -53,5 +53,5 @@ Para restaurar la configuración del registro y los mensajes de MSMQ:
 mqbkup /r c:\msmqbkup  
 ```  
 Las ubicaciones de las carpetas utilizadas para almacenar los archivos de mensajes de MSMQ se almacenan en el registro. Por lo tanto, la utilidad restaurará los archivos de mensajes de MSMQ en las carpetas especificadas en el registro y no en las carpetas de almacenamiento usadas antes de la operación de restauración. Si las carpetas especificadas en el registro no existen, la operación de restauración las creará automáticamente. Si existen directorios de carpetas y no están vacíos, la utilidad le pedirá permiso para eliminar el contenido actual de estas carpetas.  
-## <a name="additional-references"></a>Referencias adicionales  
+## <a name="additional-references"></a>referencias adicionales  
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  

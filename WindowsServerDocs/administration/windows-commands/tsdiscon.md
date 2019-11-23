@@ -25,7 +25,7 @@ ms.locfileid: "71369866"
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Desconecta una sesión de un servidor de host de sesión de Escritorio remoto (host de sesión de escritorio remoto).
-Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
+para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
 
 > [!NOTE]
 > En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
@@ -39,13 +39,13 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 
 |Parámetro|Descripción|
 |-------|--------|
-|@no__t 0SessionId >|Especifica el identificador de la sesión que se va a desconectar.|
-|@no__t 0SessionName >|Especifica el nombre de la sesión que se va a desconectar.|
-|/Server: @no__t 0ServerName >|Especifica el servidor de Terminal Server que contiene la sesión que desea desconectar. De lo contrario, se usa el servidor host de sesión de escritorio remoto actual.|
+|\<SessionId >|Especifica el identificador de la sesión que se va a desconectar.|
+|\<nombresesión >|Especifica el nombre de la sesión que se va a desconectar.|
+|/Server:\<ServerName >|Especifica el servidor de Terminal Server que contiene la sesión que desea desconectar. De lo contrario, se usa el servidor host de sesión de escritorio remoto actual.|
 |/v|Muestra información acerca de las acciones que se llevan a cabo.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 -   Debe tener el permiso control total o el permiso de acceso especial desconectar para desconectar a otro usuario de una sesión.
 -   Si no se especifica ningún identificador de sesión o nombre de sesión, **tsdiscon** desconecta la sesión actual.
 -   Las aplicaciones que se estaban ejecutando cuando se desconectó la sesión se ejecutan automáticamente cuando se vuelve a conectar a esa sesión sin pérdida de datos. Use **restablecer sesión** para finalizar las aplicaciones en ejecución de la sesión desconectada, pero tenga en cuenta que esto podría provocar la pérdida de datos en la sesión.

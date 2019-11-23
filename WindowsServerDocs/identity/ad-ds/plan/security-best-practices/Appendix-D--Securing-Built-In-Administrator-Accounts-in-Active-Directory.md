@@ -16,12 +16,12 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71367839"
 ---
-# <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>Apéndice A: Protección de cuentas de administrador integradas en Active Directory
+# <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>Anexo D: protección de cuentas de administrador integradas en Active Directory
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
-## <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>Apéndice A: Protección de cuentas de administrador integradas en Active Directory  
+## <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>Anexo D: protección de cuentas de administrador integradas en Active Directory  
 En cada dominio de Active Directory, se crea una cuenta de administrador como parte de la creación del dominio. De forma predeterminada, esta cuenta es miembro de los grupos Admins. del dominio y administradores del dominio, y si el dominio es el dominio raíz del bosque, la cuenta también es miembro del grupo administradores de empresas.
 
 El uso de la cuenta de administrador de un dominio solo se debe reservar para las actividades de compilación iniciales y, posiblemente, en escenarios de recuperación ante desastres. Para asegurarse de que se puede usar una cuenta de administrador para realizar reparaciones en caso de que no se puedan usar otras cuentas, no debe cambiar la pertenencia predeterminada de la cuenta de administrador en ningún dominio del bosque. En su lugar, debe proteger la cuenta de administrador en cada dominio del bosque, tal y como se describe en la sección siguiente, y se detalla en las instrucciones paso a paso que se indican a continuación. 
@@ -39,7 +39,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
 -   Configure los GPO para restringir el uso de la cuenta de administrador en sistemas Unidos a un dominio:  
 
-    -   En uno o más GPO creados y vinculados a las unidades organizativas de estaciones de trabajo y servidores miembro de cada dominio, agregue la cuenta de administrador de cada dominio a los siguientes derechos de usuario en el **equipo \ configuración de seguridad\Directivas \ directivas de seguridad\Directivas \ Asignaciones de derechos de usuario**:  
+    -   En uno o más GPO creados y vinculados a las unidades organizativas de estaciones de trabajo y servidores miembro de cada dominio, agregue la cuenta de administrador de cada dominio a los siguientes derechos de usuario en el **equipo \ configuración**de seguridad\Directivas locales\Opciones de trabajo \ asignaciones de derechos:  
 
         -   Denegar el acceso desde la red a este equipo  
 
@@ -58,7 +58,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_23.gif)  
 
 -   Configurar GPO para restringir cuentas de administrador en controladores de dominio  
-    -   En cada dominio del bosque, el GPO de controladores de dominio predeterminados o una directiva vinculada a la unidad organizativa de controladores de dominio se deben modificar para agregar la cuenta de administrador de cada dominio a los siguientes derechos de usuario en el **equipo \ configuración \ Seguridad de Seguridad\directivas**locales \ asignaciones de derechos:   
+    -   En cada dominio del bosque, el GPO de controladores de dominio predeterminados o una directiva vinculada a la unidad organizativa controladores de dominio debe modificarse para agregar la cuenta de administrador de cada dominio a los siguientes derechos de usuario en el **equipo \ \ configuración de Seguridad\directivas \ configuración de Seguridad\directivas \ asignaciones de derechos**:   
         -   Denegar el acceso desde la red a este equipo  
 
         -   Denegar el inicio de sesión como trabajo por lotes  
@@ -105,17 +105,17 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
 1.  En **Administrador del servidor**, haga clic en **herramientas**y en **Administración de directiva de grupo**.  
 
-2.  En el árbol de consola, expanda <Forest> \ Domains @ no__t-1 @ no__t-2 y, a continuación, **Directiva de grupo objetos** (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea crear el Directiva de grupo).  
+2.  En el árbol de consola, expanda <Forest>\Domains\\<Domain>y, a continuación, **Directiva de grupo objetos** (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea crear el Directiva de grupo).  
 
 3.  En el árbol de consola, haga clic con el botón secundario en **Directiva de grupo objetos**y haga clic en **nuevo**.  
 
     ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_27.gif)  
 
-4.  En el cuadro de diálogo **nuevo GPO** , escriba <GPO Name> y haga clic en **aceptar** (donde <GPO Name> es el nombre de este GPO) como se indica en la siguiente captura de pantalla.  
+4.  En el cuadro de diálogo **nuevo GPO** , escriba <GPO Name>y haga clic en **aceptar** (donde <GPO Name> es el nombre de este GPO) como se indica en la siguiente captura de pantalla.  
 
     ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_28.gif)  
 
-5.  En el panel de detalles, haga clic con el botón secundario en <GPO Name> y haga clic en **Editar**.  
+5.  En el panel de detalles, haga clic con el botón secundario en <GPO Name>y haga clic en **Editar**.  
 
 6.  Vaya a **equipo \ configuración de Seguridad\directivas \ directivas de seguridad\Directivas**y haga clic en **asignación de derechos de usuario**.  
 
@@ -127,7 +127,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
     2.  Haga clic en **Agregar usuario o grupo** y, a continuación, en **examinar**.  
 
-    3.  Escriba **Administrador**, haga clic en **Comprobar nombres**y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en el formato <DomainName> \ nombredeusuario como se indica en la siguiente captura de pantalla.  
+    3.  Escriba **Administrador**, haga clic en **Comprobar nombres**y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en <DomainName>formato \Username., tal y como se indica en la siguiente captura de pantalla.  
 
         ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_30.gif)  
 
@@ -139,7 +139,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
     2.  Haga clic en **Agregar usuario o grupo** y, a continuación, en **examinar**.  
 
-    3.  Escriba **Administrador**, haga clic en **Comprobar nombres**y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en el formato <DomainName> \ nombredeusuario como se indica en la siguiente captura de pantalla.  
+    3.  Escriba **Administrador**, haga clic en **Comprobar nombres**y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en <DomainName>formato \Username., tal y como se indica en la siguiente captura de pantalla.  
 
         ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_31.gif)  
 
@@ -151,7 +151,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
     2.  Haga clic en **Agregar usuario o grupo** y, a continuación, en **examinar**.  
 
-    3.  Escriba **Administrador**, haga clic en **Comprobar nombres**y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en el formato <DomainName> \ nombredeusuario como se indica en la siguiente captura de pantalla.  
+    3.  Escriba **Administrador**, haga clic en **Comprobar nombres**y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en <DomainName>formato \Username., tal y como se indica en la siguiente captura de pantalla.  
 
         ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_32.gif)  
 
@@ -163,7 +163,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
     2.  Haga clic en **Agregar usuario o grupo** y, a continuación, en **examinar**.  
 
-    3.  Escriba **Administrador**, haga clic en **Comprobar nombres**y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en el formato <DomainName> \ nombredeusuario como se indica en la siguiente captura de pantalla.  
+    3.  Escriba **Administrador**, haga clic en **Comprobar nombres**y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en <DomainName>formato \Username., tal y como se indica en la siguiente captura de pantalla.  
 
         ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_33.gif)  
 
@@ -173,7 +173,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
 12. En **Administración de directiva de grupo**, VINCULE el GPO al servidor miembro y las unidades organizativas de la estación de trabajo haciendo lo siguiente:  
 
-    1.  Desplácese hasta el <Forest> \ Domains @ no__t-1 @ no__t-2 (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer el directiva de grupo).  
+    1.  Navegue hasta el <Forest>\Domains\\<Domain> (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer la directiva de grupo).  
 
     2.  Haga clic con el botón secundario en la unidad organizativa a la que se aplicará el GPO y haga clic en **vincular un GPO existente**.  
 
@@ -218,7 +218,7 @@ Desde cualquier servidor miembro o estación de trabajo que no se vea afectado p
 
     ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_38.gif)  
 
-5.  En la ventana del **símbolo del sistema** , escriba **net use \\ @ no__t-3 @ No__t-4Server Name @ no__t-5\c $** , donde \<Server Name @ no__t-7 es el nombre del servidor miembro o de la estación de trabajo a la que está intentando obtener acceso a través de la red.  
+5.  En la ventana del **símbolo del sistema** , escriba **net use \\\\nombre del servidor \<\>\c $** , donde \<nombre del servidor\> es el nombre del servidor miembro o de la estación de trabajo a la que está intentando obtener acceso a través de la red.  
 
 6.  En la captura de pantalla siguiente se muestra el mensaje de error que debe aparecer.  
 
@@ -238,7 +238,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 4.  Haga clic en **archivo** y en **Guardar como**.  
 
-5.  En el campo **nombre de archivo** , escriba **@no__t -2. bat** (donde <Filename> es el nombre del nuevo archivo por lotes).  
+5.  En el campo **nombre de archivo** , escriba **<Filename>. bat** (donde <Filename> es el nombre del nuevo archivo por lotes).  
 
 ###### <a name="schedule-a-task"></a>Programar una tarea  
 
@@ -259,7 +259,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 7.  En **programa/script:** , haga clic en **examinar**, busque y seleccione el archivo por lotes creado en la sección "crear un archivo por lotes" y haga clic en **abrir**.  
 
-8.  Haga clic en **Aceptar**.  
+8.  Haz clic en **Aceptar**.  
 
 9. Haga clic en la pestaña **General**.  
 
@@ -269,7 +269,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 12. Seleccione **ejecutar si el usuario ha iniciado sesión o no** y no **almacena la contraseña**. La tarea solo tendrá acceso a los recursos del equipo local.  
 
-13. Haga clic en **Aceptar**.  
+13. Haz clic en **Aceptar**.  
 
 14. Debe aparecer un cuadro de diálogo que solicite las credenciales de la cuenta de usuario para ejecutar la tarea.  
 

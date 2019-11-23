@@ -94,7 +94,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
                 <ul>
                     <li>Alto</li>
                     <li>Medio</li>
-                    <li>Bajo</li>
+                    <li>Baja</li>
                 </ul>
             </td>
             <td>Este valor ayuda a que el sistema determinar cómo asignar el tiempo de CPU. <em>High</em> utilizará más tiempo de CPU, <em>Low</em> utilizará menos.</td>
@@ -126,7 +126,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Para evitar que un trabajo se ejecute en una&#39;carga de trabajo en horas de inactividad</td>
         </tr>
         <tr>
-            <td>Enabled</td>
+            <td>Habilitado</td>
             <td>Si el trabajo se ejecuta</td>
             <td>Verdadero o falso</td>
             <td>Para deshabilitar un trabajo sin quitarlo</td>
@@ -165,7 +165,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Comienzo</td>
             <td>Especifica la hora en la que se debe iniciar un trabajo.</td>
             <td><code>System.DateTime</code></td>
-            <td>La parte de <em>fecha</em> del <code>System.Datetime</code> proporcionado para <em>iniciar</em> es irrelevante (siempre y cuando se&#39;hayan pasado), pero la parte de <em>hora</em> especifica cuándo debe comenzar el trabajo.</td>
+            <td>La parte de la <em>fecha</em> del <code>System.Datetime</code> proporcionado para <em>iniciar</em> es irrelevante (siempre y cuando&#39;se hayan pasado), pero la parte de <em>hora</em> especifica cuándo debe comenzar el trabajo.</td>
         </tr>
         <tr>
             <td>StopWhenSystemBusy</td>
@@ -208,7 +208,7 @@ Las razones principales para modificar la configuración de volumen desde el tip
     <tbody>
         <tr>
             <td>ChunkRedundancyThreshold</td>
-            <td>El número de veces al que se hace referencia a un fragmento antes de que se duplique un fragmento en la sección de la zona activa del almacén de fragmentos. El valor de la sección HotSpot es que los fragmentos denominados &quot;hot @ no__t-1 a los que se hace referencia suelen tener varias rutas de acceso para mejorar el tiempo de acceso.</td>
+            <td>El número de veces al que se hace referencia a un fragmento antes de que se duplique un fragmento en la sección de la zona activa del almacén de fragmentos. El valor de la sección de zona activa es que, a la que se llama &quot;los fragmentos de&quot; de acceso frecuente a los que se hace referencia con frecuencia tienen varias rutas de acceso para mejorar el tiempo de acceso.</td>
             <td>Números enteros positivos</td>
             <td>La razón principal para modificar este número es aumentar la velocidad del ahorro de volúmenes con desduplicación alta. En general, el valor predeterminado (100) es la configuración recomendada y no&#39;es necesario modificarlo.</td>
         </tr>
@@ -310,7 +310,7 @@ Por ejemplo, puede querer deshabilitar la recolección de elementos no utilizado
         </tr>
         <tr>
             <td>DeepGCInterval</td>
-            <td>Esta opción configura el intervalo en el que trabajos de recolección normal de elementos no utilizados se convierten en <a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">trabajos de recolección completa de elementos no utilizados</a>. Un valor de n significa que cada n<sup></sup> trabajos había un trabajo de recolección completa de elementos no utilizados. Ten en cuenta que la colección completa de elementos no utilizados siempre está deshabilitada (independientemente del valor del Registro) para volúmenes con el <a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">tipo de Uso de copia de seguridad</a>. se puede usar <code>Start-DedupJob -Type GarbageCollection -Full</code> si se desea una recolección completa de elementos no utilizados en un volumen de copia de seguridad.</td>
+            <td>Esta opción configura el intervalo en el que trabajos de recolección normal de elementos no utilizados se convierten en <a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">trabajos de recolección completa de elementos no utilizados</a>. Un valor de n significa que cada n<sup></sup> trabajos había un trabajo de recolección completa de elementos no utilizados. Ten en cuenta que la colección completa de elementos no utilizados siempre está deshabilitada (independientemente del valor del Registro) para volúmenes con el <a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">tipo de Uso de copia de seguridad</a>. <code>Start-DedupJob -Type GarbageCollection -Full</code> puede usarse si se desea una recolección completa de elementos no utilizados en un volumen de copia de seguridad.</td>
             <td>Enteros (-1 indica deshabilitado)</td>
             <td>Consulte <a href="advanced-settings.md#faq-why-disable-full-gc" data-raw-source="[this frequently asked question](advanced-settings.md#faq-why-disable-full-gc)">esta pregunta frecuente</a></td>
         </tr>
@@ -318,7 +318,7 @@ Por ejemplo, puede querer deshabilitar la recolección de elementos no utilizado
 </table>
 
 ## <a id="faq"></a>Preguntas más frecuentes
-<a id="faq-use-responsibly"></a>**I cambió una configuración de desduplicación de datos y ahora los trabajos son lentos o no finalizan, o bien el rendimiento de la carga de trabajo ha disminuido. ¿Por qué?**  
+<a id="faq-use-responsibly"></a>**He cambiado una configuración de desduplicación de datos y ahora los trabajos son lentos o no finalizan, o bien el rendimiento de la carga de trabajo ha disminuido. ¿Por qué?**  
 Esta configuración le permiten controlar cómo se ejecuta Desduplicación de datos. Úselos de forma responsable y [supervise el rendimiento](run.md#monitoring-dedup).
 
 <a id="faq-running-dedup-jobs-manually"></a>**Deseo ejecutar un trabajo de desduplicación de datos ahora mismo, pero no deseo crear una nueva programación. ¿puedo hacerlo?**  

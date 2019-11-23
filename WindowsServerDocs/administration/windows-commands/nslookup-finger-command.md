@@ -36,8 +36,8 @@ finger [<UserName>] [{[>] <FileName>|[>>] <FileName>}]
 
 |  Parámetro  |                                                                               Descripción                                                                               |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @no__t 0UserName > |                                                               Especifica el nombre del usuario que se va a buscar.                                                                |
-| \<Nombre de archivo > | Especifica un nombre de archivo en el que se guardará la salida. Puede usar los caracteres mayor que (>) y Double mayor que (> >) para redirigir la salida de la manera habitual. |
+| \<nombre de usuario > |                                                               Especifica el nombre del usuario que se va a buscar.                                                                |
+| \<nombre de archivo > | Especifica un nombre de archivo en el que se guardará la salida. Puede usar los caracteres mayor que (>) y Double mayor que (> >) para redirigir la salida de la manera habitual. |
 |    {ayuda    |                                                                                   ?}                                                                                    |
 
 #### <a name="additional-references"></a>Referencias adicionales

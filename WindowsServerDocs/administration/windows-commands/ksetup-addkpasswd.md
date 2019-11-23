@@ -38,10 +38,10 @@ Si el dominio Kerberos con el que se va a autenticar la estación de trabajo es 
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0RealmName >|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos o el dominio Kerberos predeterminados = cuando se ejecuta **ksetup** .|
-|@no__t 0KpasswdName >|El nombre del KDC que se va a usar como servidor de contraseñas de Kerberos se indica como un nombre de dominio completo que no distingue mayúsculas de minúsculas, como mitkdc.microsoft.com. Si se omite el nombre del KDC, se podría usar DNS para buscar KDC.|
+|\<RealmName >|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos o el dominio Kerberos predeterminados = cuando se ejecuta **ksetup** .|
+|\<KpasswdName >|El nombre del KDC que se va a usar como servidor de contraseñas de Kerberos se indica como un nombre de dominio completo que no distingue mayúsculas de minúsculas, como mitkdc.microsoft.com. Si se omite el nombre del KDC, se podría usar DNS para buscar KDC.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Si el dominio Kerberos con el que se va a autenticar la estación de trabajo es compatible con el protocolo de cambio de contraseña de Kerberos, puede configurar un equipo cliente que ejecute el sistema operativo Windows para que use un servidor de contraseñas de Kerberos.
 

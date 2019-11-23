@@ -47,20 +47,20 @@ Cada cliente de OAuth (aplicación web o nativa) o recurso (API Web) configurado
 ## <a name="security-tokens"></a>Tokens de seguridad 
  
 La autenticación moderna usa los siguientes tipos de token: 
-- **ID_token**: Un token de JWT emitido por el servidor de autorización (AD FS) y utilizado por el cliente. Las notificaciones del token de identificador contendrán información sobre el usuario para que el cliente pueda usarla.  
-- **access_token**: Un token de JWT emitido por el servidor de autorización (AD FS) y destinado a ser utilizado por el recurso. La demanda de "AUD" o audiencia de este token debe coincidir con el identificador del recurso o de la API Web.  
-- **refresh_token**: Este es el token emitido por AD FS para que el cliente lo use cuando necesite actualizar ID_token y access_token. El token es opaco para el cliente y solo lo puede consumir AD FS.  
+- **ID_token**: un token de JWT emitido por el servidor de autorización (AD FS) y utilizado por el cliente. Las notificaciones del token de identificador contendrán información sobre el usuario para que el cliente pueda usarla.  
+- **access_token**: un token de JWT emitido por el servidor de autorización (AD FS) y destinado a ser utilizado por el recurso. La demanda de "AUD" o audiencia de este token debe coincidir con el identificador del recurso o de la API Web.  
+- **refresh_token**: este es el token emitido por AD FS para que el cliente lo use cuando necesite actualizar el id_token y access_token. El token es opaco para el cliente y solo lo puede consumir AD FS.  
 
 ## <a name="scopes"></a>Ámbitos 
  
 Al registrar un recurso en AD FS, se pueden configurar ámbitos para permitir que AD FS realice acciones específicas. Además de configurar el ámbito, también se requiere que el valor de ámbito se envíe en la solicitud de AD FS para realizar la acción. Por ejemplo, el administrador debe configurar el ámbito como OpenID durante el registro de recursos y la aplicación (cliente) debe enviar el ámbito = OpenID en la solicitud de autenticación para que AD FS emita el token de identificador. A continuación se proporcionan detalles sobre los ámbitos disponibles en AD FS 
  
-- AZA: si se usan [las extensiones de protocolo de OAuth 2,0 para los clientes de broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) and si el parámetro de ámbito contiene el ámbito "AZA", el servidor emite un nuevo token de actualización principal y lo establece en el campo refresh_token de la respuesta, así como establecer refresh_ token_expires_in el campo a la duración del nuevo token de actualización principal si se aplica uno. 
+- AZA: si se usan [las extensiones de protocolo de OAuth 2,0 para los clientes de broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) y si el parámetro de ámbito contiene el ámbito "AZA", el servidor emite un nuevo token de actualización principal y lo establece en el campo refresh_token de la respuesta, además de establecer el campo refresh_token_expires_in en la duración del nuevo token de actualización principal si se aplica uno. 
 - OpenID: permite que la aplicación solicite el uso del Protocolo de autorización OpenID Connect. 
-- logon_cert: el ámbito logon_cert permite a una aplicación solicitar certificados de inicio de sesión, que se pueden usar para iniciar sesión de forma interactiva en usuarios autenticados. El servidor de AD FS omite el parámetro access_token de la respuesta y, en su lugar, proporciona una cadena de certificados CMS codificada en base64 o una respuesta de PKI completa de CMC. Puede encontrar más información [aquí](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e).
-- user_impersonation: el ámbito user_impersonation es necesario para solicitar correctamente un token de acceso en nombre de AD FS. Para obtener más información sobre cómo usar este ámbito, consulte [creación de una aplicación de varios niveles con on-behalf-of (OBO) mediante OAuth con AD FS 2016](ad-fs-on-behalf-of-authentication-in-windows-server.md). 
+- logon_cert: el ámbito de logon_cert permite a una aplicación solicitar certificados de inicio de sesión, que se pueden usar para iniciar sesión de forma interactiva en usuarios autenticados. El servidor de AD FS omite el parámetro access_token de la respuesta y, en su lugar, proporciona una cadena de certificados CMS codificada en base64 o una respuesta de PKI completa de CMC. Puede encontrar más información [aquí](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e).
+- user_impersonation: el ámbito de user_impersonation es necesario para solicitar correctamente un token de acceso en nombre de AD FS. Para obtener más información sobre cómo usar este ámbito, consulte [creación de una aplicación de varios niveles con on-behalf-of (OBO) mediante OAuth con AD FS 2016](ad-fs-on-behalf-of-authentication-in-windows-server.md). 
 - allatclaims: el ámbito allatclaims permite que la aplicación solicite notificaciones en el token de acceso que se van a agregar también en el token de identificador.   
-- vpn_cert: el ámbito vpn_cert permite a una aplicación solicitar certificados VPN, que se pueden usar para establecer conexiones VPN mediante la autenticación EAP-TLS. Esto ya no se admite. 
+- vpn_cert: el ámbito de vpn_cert permite a una aplicación solicitar certificados VPN, que se pueden usar para establecer conexiones VPN mediante la autenticación EAP-TLS. Esto ya no se admite. 
 - correo electrónico: permite que la aplicación solicite una solicitud de correo electrónico para el usuario que ha iniciado sesión.  
 - Perfil: permite que la aplicación solicite notificaciones relacionadas con el perfil para el usuario de inicio de sesión.  
 
@@ -106,7 +106,7 @@ Los tokens de seguridad (acceso y tokens de identificador) emitidos por AD FS co
 ## <a name="types-of-libraries"></a>Tipos de bibliotecas 
   
 Se usan dos tipos de bibliotecas con AD FS: 
-- **Bibliotecas de cliente**: Los clientes nativos y las aplicaciones de servidor usan bibliotecas de cliente para adquirir tokens de acceso para llamar a un recurso, como una API Web. La biblioteca de autenticación de Microsoft (MSAL) es la biblioteca de cliente más reciente y recomendada al usar AD FS 2019. Biblioteca de autenticación de Active Directory (ADAL) se recomienda para AD FS 2016.  
+- **Bibliotecas de cliente**: los clientes nativos y las aplicaciones de servidor usan bibliotecas de cliente para adquirir tokens de acceso para llamar a un recurso, como una API Web. La biblioteca de autenticación de Microsoft (MSAL) es la biblioteca de cliente más reciente y recomendada al usar AD FS 2019. Biblioteca de autenticación de Active Directory (ADAL) se recomienda para AD FS 2016.  
 
 - **Bibliotecas de middleware de servidor**: Web Apps usa bibliotecas de middleware de servidor para el inicio de sesión de usuario. Las API Web usan las bibliotecas de middleware de servidor para validar los tokens enviados por clientes nativos o por otros servidores. OWIN (Open web interface para .NET) es la biblioteca de middleware recomendada. 
 
@@ -115,13 +115,13 @@ Se usan dos tipos de bibliotecas con AD FS:
 En algunos escenarios es posible que la aplicación web (cliente) necesite notificaciones adicionales en un token de identificador para ayudar en la funcionalidad. Esto se puede lograr mediante una de las siguientes opciones. 
 
 **Opción 1:** Debe usarse cuando se usa un cliente público y la aplicación web no tiene un recurso al que se está intentando obtener acceso. La opción requiere 
-1.  response_mode establecido como form_post 
+1.  response_mode establecer como form_post 
 2.  El identificador del usuario de confianza (identificador de la API Web) es el mismo que el identificador de cliente
 
 ![AD FS la opción de token de personalización 1](media/adfs-modern-auth-concepts/option1.png)
 
 **Opción 2:** Debe usarse cuando la aplicación web tiene un recurso al que está intentando acceder y debe pasar notificaciones adicionales mediante el token de identificador. Se pueden usar clientes públicos y confidenciales. La opción requiere 
-1.  response_mode establecido como form_post 
+1.  response_mode establecer como form_post 
 2.  KB4019472 está instalado en los servidores de AD FS 
 3.  Ámbito allatclaims asignado al par cliente-RP. Puede asignar el ámbito mediante el cmdlet Grant-ADFSApplicationPermission (usar Set-AdfsApplicationPermission si ya se concedió una vez) de PowerShell como se indica en el ejemplo siguiente: 
 
@@ -131,7 +131,7 @@ En algunos escenarios es posible que la aplicación web (cliente) necesite notif
 
 ![AD FS la opción de token de personalización 2](media/adfs-modern-auth-concepts/option2.png)
 
-Para comprender mejor cómo configurar una aplicación web en ADFS para adquirir un token de identificador personalizado, consulte [Personalización de notificaciones que se emitirán en ID_token al usar OpenID Connect o OAuth con AD FS 2016 o posterior](Custom-Id-Tokens-in-AD-FS.md).
+Para comprender mejor cómo configurar una aplicación web en ADFS para adquirir un token de identificador personalizado, consulte [Personalización de notificaciones que se van a emitir en ID_token al usar OpenID Connect o OAuth con AD FS 2016 o posterior](Custom-Id-Tokens-in-AD-FS.md).
 
 ## <a name="single-log-out"></a>Cierre de sesión único
 

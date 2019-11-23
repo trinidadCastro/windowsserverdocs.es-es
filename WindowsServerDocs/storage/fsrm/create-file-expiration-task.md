@@ -23,7 +23,7 @@ El procedimiento que se describe a continuación te guía a través del proceso 
 
 Cuando se ejecuta una tarea de expiración de archivos, se crea un nuevo directorio en el directorio de expiración, agrupado por el nombre de servidor en el que se ejecutó la tarea.
 
-El nombre de directorio nuevo se basa en el nombre de la tarea de administración de archivos y la hora en la que se ejecutó. Cuando se encuentra un archivo que ha expirado, se mueve al directorio nuevo, a la vez que se conserva la estructura de directorio original.
+El nombre de directorio nuevo se basa en el nombre de la tarea de administración de archivos y la hora en la que se ejecutó. Cuando se encuentra un archivo expirado, se mueve al nuevo directorio, conservando así la estructura de directorios original.
 
 ## <a name="to-create-a-file-expiration-task"></a>Para crear una tarea de expiración de archivos
 
@@ -61,7 +61,7 @@ El nombre de directorio nuevo se basa en el nombre de la tarea de administració
 
      - Para enviar un correo electrónico a la persona cuyos archivos están a punto de expirar, selecciona la casilla de verificación **Enviar mensaje de correo electrónico al usuario cuyos archivos están a punto de expirar**.
 
-     - Para configurar el mensaje, edita la línea de asunto y el cuerpo del mensaje predeterminados que se muestran. El texto que aparece entre paréntesis inserta información variable sobre el evento de cuota que originó la notificación. Por ejemplo, la variable **\[Source propietario de archivo @ no__t-2** inserta el nombre del usuario cuyo archivo está a punto de expirar. Para insertar variables adicionales en el texto, haz clic en **Insertar variable**.
+     - Para configurar el mensaje, edita la línea de asunto y el cuerpo del mensaje predeterminados que se muestran. El texto que aparece entre paréntesis inserta información variable sobre el evento de cuota que originó la notificación. Por ejemplo, la variable **\[propietario del archivo de origen\]** inserta el nombre del usuario cuyo archivo está a punto de expirar. Para insertar variables adicionales en el texto, haz clic en **Insertar variable**.
 
      - Para adjuntar una lista de los archivos que están a punto de expirar, haz clic en **Adjuntar a la lista de correo electrónico de los archivos en los que se va a realizar la acción**y escribe o selecciona un valor para **Número máximo de archivos en la lista**.
 
@@ -71,7 +71,7 @@ El nombre de directorio nuevo se basa en el nombre de la tarea de administració
 
    - Para ejecutar un comando o script, haz clic en la pestaña **Comando** y selecciona la casilla de verificación **Ejecutar este comando o script**. Luego escribe el comando o haz clic en **Examinar** para buscar la ubicación en la que está almacenado el script. También puedes especificar argumentos de comando; para ello, selecciona un directorio de trabajo para el comando o script o modifica la configuración de seguridad de comandos.
 
-6. Otra alternativa es usar la ficha **Informe** para generar uno o varios registros o informes de almacenamiento.
+6. Otra alternativa es usar la pestaña **Informe** para generar uno o varios registros o informes de almacenamiento.
 
    - Para generar registros, selecciona la casilla de verificación **Generar registro** y luego selecciona uno o varios registros disponibles.  
 
@@ -82,7 +82,7 @@ El nombre de directorio nuevo se basa en el nombre de la tarea de administració
      > [!Note]
      > El informe se guarda en la ubicación predeterminada para los informes de incidentes, que se puede modificar en el cuadro de diálogo **Opciones del Administrador de recursos del servidor de archivos**.
         
-7. Otra opción es usar la ficha **Condiciones** para ejecutar esta tarea solo en archivos que reúnan una serie de condiciones definidas. Las siguientes configuraciones están disponibles:
+7. Otra opción es usar la pestaña **Condiciones** para ejecutar esta tarea solo en archivos que reúnan una serie de condiciones definidas. Las siguientes configuraciones están disponibles:
 
     -   **Condiciones de propiedad**. Haz clic en **Agregar** para crear una nueva condición basada en la clasificación del archivo. Esto abrirá el cuadro de diálogo **Condición de propiedad**, que te permite seleccionar una propiedad, un operador para realizar una acción en la propiedad y el valor con el que comparar la propiedad. Después de hacer clic en **Aceptar**, puedes crear condiciones adicionales o editar o quitar una condición existente.
 
@@ -96,7 +96,7 @@ El nombre de directorio nuevo se basa en el nombre de la tarea de administració
 
 8. En la pestaña **Programación**, haz clic en **Crear una programación** y luego en **Programación**, haz clic en **Nueva**. Se muestra una programación predeterminada para las 9:00 a.m. todos los días, pero puedes modificar la programación predeterminada. Cuando haya terminado de configurar la programación, haz clic en **Aceptar** y luego vuelve a hacer clic en **Aceptar**.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 -   [Administración de clasificaciones](classification-management.md)
 -   [Tareas de administración de archivos](file-management-tasks.md)

@@ -41,12 +41,12 @@ wdsutil [Options] /New-Namespace [/Server:<Server name>]
 |Parámetro|Descripción|
 |-------|--------|
 |[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utiliza el servidor local.|
-|/FriendlyName: <Friendly name>|Especifica el nombre descriptivo del espacio de nombres.|
+|/FriendlyName:<Friendly name>|Especifica el nombre descriptivo del espacio de nombres.|
 |/Description<Description>]|Establece la descripción del espacio de nombres.|
-|/Namespace: <Namespace name>|Especifica el nombre del espacio de nombres. Tenga en cuenta que este no es el nombre descriptivo y debe ser único.<br /><br />**servicio de rol servidor de implementación**-   : La sintaxis de esta opción es/namespace: WDS: <Image group> @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4. Por ejemplo: **WDS: ImageGroup1/install. Wim/1**<br />**servicio de función de servidor de transporte**-   : Este valor debe coincidir con el nombre especificado cuando se creó el espacio de nombres en el servidor.|
-|/ContentProvider: <Name>]|Especifica el nombre del proveedor de contenido que proporcionará el contenido del espacio de nombres.|
-|[/ConfigString: <Configuration string>]|Especifica la cadena de configuración para el proveedor de contenido.|
-|/Namespacetype: {autocast &#124; ScheduledCast}|Especifica la configuración de la transmisión. La configuración se especifica mediante las siguientes opciones:<br /><br />-[/Time: <time>]: establece la hora a la que debe comenzar la transmisión con el siguiente formato: AAAA/MM/DD: HH: mm. Esta opción solo se aplica a las transmisiones de difusión programadas.<br />-[/Clients: <Number of clients>]: establece el número mínimo de clientes que hay que esperar antes de que se inicie la transmisión. Esta opción solo se aplica a las transmisiones de difusión programadas.|
+|/Namespace:<Namespace name>|Especifica el nombre del espacio de nombres. Tenga en cuenta que este no es el nombre descriptivo y debe ser único.<br /><br />-   **servicio de rol servidor de implementación**: la sintaxis de esta opción es/namespace: WDS:<Image group>/<Image name>/<Index>. Por ejemplo: **WDS: ImageGroup1/install. Wim/1**<br />-   **servicio de función de servidor de transporte**: este valor debe coincidir con el nombre especificado cuando se creó el espacio de nombres en el servidor.|
+|/ContentProvider:<Name>]|Especifica el nombre del proveedor de contenido que proporcionará el contenido del espacio de nombres.|
+|[/ConfigString:<Configuration string>]|Especifica la cadena de configuración para el proveedor de contenido.|
+|/Namespacetype: {autocast &#124; ScheduledCast}|Especifica la configuración de la transmisión. La configuración se especifica mediante las siguientes opciones:<br /><br />-[/Time: <time>]: establece el tiempo que la transmisión debe comenzar con el siguiente formato: AAAA/MM/DD: HH: mm. Esta opción solo se aplica a las transmisiones de difusión programadas.<br />-[/Clients: <Number of clients>]: establece el número mínimo de clientes que hay que esperar antes de que se inicie la transmisión. Esta opción solo se aplica a las transmisiones de difusión programadas.|
 ## <a name="BKMK_examples"></a>Example
 Para crear un espacio de nombres de conversión automática, escriba:
 ```
@@ -57,8 +57,8 @@ Para crear un espacio de nombres de difusión programada, escriba:
 wdsutil /New-Namespace /Server:MyWDSServer /FriendlyName:"Custom Scheduled Namespace" /Namespace:"Custom Auto 1" /ContentProvider:MyContentProvider 
 /Namespacetype:ScheduledCast /time:"2006/11/20:17:00" /Clients:20
 ```
-#### <a name="additional-references"></a>Referencias adicionales
+#### <a name="additional-references"></a>referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[con el comando get-AllNamespaces](using-the-get-allnamespaces-command.md)
-[mediante el comando Remove-namespace](using-the-remove-namespace-command.md)
+[usar el comando get-AllNamespaces](using-the-get-allnamespaces-command.md)
+[usar el comando Remove-namespace](using-the-remove-namespace-command.md)
 [subcomando: Start-namespace](subcommand-start-namespace.md)

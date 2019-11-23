@@ -17,7 +17,7 @@ ms.locfileid: "71393821"
 ---
 # <a name="storage-replica-overview"></a>Información general sobre Réplica de almacenamiento
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 Réplica de almacenamiento es una tecnología de Windows Server que permite la replicación de volúmenes entre servidores o clústeres para la recuperación ante desastres. También permite crear clústeres de conmutación por error ampliados que abarcan dos sitios y que tienen todos los nodos sincronizados.
 
@@ -44,19 +44,19 @@ Puede implementar réplica de almacenamiento en un clúster extendido, entre un 
 
 ![Diagrama que muestra dos nodos de clúster en Nueva York que usan la Réplica de almacenamiento para replicar su almacenamiento con dos nodos en Nueva Jersey](./media/Storage-Replica-Overview/Storage_SR_StretchCluster.png)  
 
-@NO__T 0FIGURE 1: Replicación de almacenamiento en un clúster extendido con réplica de almacenamiento @ no__t-0  
+**Figura 1: replicación de almacenamiento en un clúster extendido con réplica de almacenamiento**  
 
 **Clúster a clúster** permite la replicación entre dos clústeres independientes, donde un clúster replica de forma sincrónica o asincrónica con otro clúster. Este escenario puede utilizar Espacios de almacenamiento directo, espacios de almacenamiento con almacenamiento SAS compartido, SAN y LUN asociados a iSCSI. Se administra con el centro de administración de Windows y PowerShell, y requiere la intervención manual para la conmutación por error. 
 
 ![Diagrama que muestra un clúster en Los Ángeles que usa la Réplica de almacenamiento para replicar su almacenamiento a un clúster distinto en Las Vegas](./media/Storage-Replica-Overview/Storage_SR_ClustertoCluster.png)  
 
-@NO__T 0FIGURE 2: Replicación de almacenamiento de clúster a clúster mediante la réplica de almacenamiento @ no__t-0  
+**Figura 2: replicación de almacenamiento de clúster a clúster mediante réplica de almacenamiento**  
 
 **Servidor a servidor** permite la replicación sincrónica y asincrónica entre dos servidores independientes, usando Espacios de almacenamiento con almacenamiento SAS compartido, SAN y LUN asociados a iSCSI y unidades locales. Se administra con el centro de administración de Windows y PowerShell, y requiere la intervención manual para la conmutación por error.  
 
 ![Diagrama que muestra un servidor en la replicación de la compilación 5 con un servidor de la compilación 9](./media/Storage-Replica-Overview/Storage_SR_ServertoServer.png)  
 
-@NO__T 0FIGURE 3: Replicación de almacenamiento de servidor a servidor con réplica de almacenamiento @ no__t-0  
+**Figura 3: replicación de almacenamiento de servidor a servidor con réplica de almacenamiento**  
 
 > [!NOTE]
 > También puede configurar la replicación de servidor al propio dispositivo, usando cuatro volúmenes independientes en un equipo. Sin embargo, esta guía no incluye este escenario.  
@@ -73,7 +73,7 @@ Puede implementar réplica de almacenamiento en un clúster extendido, entre un 
 
 * **Seguridad**. A diferencia de los productos de muchos proveedores, Réplica de almacenamiento tiene incorporada la tecnología de seguridad líder del sector. Esto incluye la firma de paquetes, el cifrado completo de datos de AES-128-GCM, la compatibilidad con la aceleración del cifrado de Intel AES-NI y la prevención de ataque de tipo "Man in the middle" mediante la integridad por autenticación previa. Réplica de almacenamiento utiliza Kerberos AES256 para toda la autenticación entre los nodos.  
 
-* **Sincronización inicial de alto rendimiento**. Réplica de almacenamiento admite una primera sincronización inicializada, donde un subconjunto de datos ya existe en un destino procedente de copias más antiguas, copias de seguridad o unidades enviadas. La replicación inicial solo copia los bloques distintos, lo que puede acortar el tiempo de sincronización inicial y evitar que los datos usen ancho de banda limitado. El hecho de que las réplicas de almacenamiento bloqueen el cálculo y el agregado de la suma de comprobación significa que el rendimiento de la sincronización inicial solo está limitado por la velocidad del almacenamiento y la red.  
+* **Sincronización inicial de alto rendimiento**. La réplica de almacenamiento admite una sincronización inicializada, donde un subconjunto de datos ya existe en un destino procedente de copias más antiguas, copias de seguridad o unidades enviadas. La replicación inicial solo copia los bloques distintos, lo que puede acortar el tiempo de sincronización inicial y evitar que los datos usen ancho de banda limitado. El hecho de que las réplicas de almacenamiento bloqueen el cálculo y el agregado de la suma de comprobación significa que el rendimiento de la sincronización inicial solo está limitado por la velocidad del almacenamiento y la red.  
 
 * **Grupos de coherencia**. La ordenación de escritura garantiza que las aplicaciones como Microsoft SQL Server pueden escribir en varios volúmenes replicados y saber que los datos se escriben en el servidor de destino de forma secuencial.  
 
@@ -140,7 +140,7 @@ Cuando se producen escrituras de la aplicación en la copia de datos de origen, 
 
 | Modo | Diagrama | Pasos |
 | -------- | ----------- | --------- |
-| **Sincrónica**<br /><br />Cero pérdida de datos<br /><br />RPO | ![Diagrama que muestra cómo la Réplica de almacenamiento escribe datos en la replicación sincrónica](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.  La aplicación escribe los datos.<br />2.  Se escriben los datos de registro y estos se replican en el sitio remoto.<br />3.  Se escriben los datos de registro en el sitio remoto.<br />4.  Confirmación del sitio remoto.<br />5.  Confirmación de escritura en la aplicación.<br /><br />t & T1: Datos vaciados en el volumen, los registros siempre escriben |
+| **Sincrónica**<br /><br />Cero pérdida de datos<br /><br />RPO | ![Diagrama que muestra cómo la Réplica de almacenamiento escribe datos en la replicación sincrónica](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.  La aplicación escribe los datos.<br />2.  Se escriben los datos de registro y estos se replican en el sitio remoto.<br />3.  Se escriben los datos de registro en el sitio remoto.<br />4.  Confirmación del sitio remoto.<br />5.  Confirmación de escritura en la aplicación.<br /><br />t & t1: Datos vaciados en el volumen, los registros siempre se escriben a través. |
 
 ### <a name="asynchronous-replication"></a>Replicación asincrónica
 
@@ -152,7 +152,7 @@ Con su RPO mayor que cero, la replicación asincrónica es menos apropiada para 
 
 | Modo | Diagrama | Pasos |
 | -------- | ----------- | --------- |
-| **Asincrónica**<br /><br />Pérdida de datos de casi cero<br /><br />(depende de varios factores)<br /><br />RPO | ![Diagrama que muestra cómo la Réplica de almacenamiento escribe datos en la replicación asincrónica](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.  La aplicación escribe los datos.<br />2.  Datos de registro escritos.<br />3.  Confirmación de escritura en la aplicación.<br />4.  Datos replicados en el sitio remoto.<br />5.  Datos de registro escritos en el sitio remoto.<br />6.  Confirmación del sitio remoto.<br /><br />t & T1: Datos vaciados en el volumen, los registros siempre escriben |
+| **Asincrónica**<br /><br />Pérdida de datos de casi cero<br /><br />(depende de varios factores)<br /><br />RPO | ![Diagrama que muestra cómo la Réplica de almacenamiento escribe datos en la replicación asincrónica](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.  La aplicación escribe los datos.<br />2.  Datos de registro escritos.<br />3.  Confirmación de escritura en la aplicación.<br />4.  Datos replicados en el sitio remoto.<br />5.  Datos de registro escritos en el sitio remoto.<br />6.  Confirmación del sitio remoto.<br /><br />t & t1: Datos vaciados en el volumen, los registros siempre se escriben a través. |
 
 ### <a name="key-evaluation-points-and-behaviors"></a>Puntos de evaluación y comportamientos clave  
 
@@ -188,12 +188,12 @@ En esta guía se usan con frecuencia los términos siguientes:
 
 Para obtener una lista de las nuevas características de réplica de almacenamiento en Windows Server 2019, consulte [what's New in Storage (novedades de almacenamiento](../whats-new-in-storage.md#storage-replica2019) ).
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 - [Replicación de clúster extendido con almacenamiento compartido](stretch-cluster-replication-using-shared-storage.md)  
 - [Replicación de almacenamiento de servidor a servidor](server-to-server-storage-replication.md)  
 - [Replicación de almacenamiento de clúster a clúster](cluster-to-cluster-storage-replication.md)  
-- [Réplica de almacenamiento: Problemas conocidos](storage-replica-known-issues.md)  
-- [Réplica de almacenamiento: Preguntas más frecuentes](storage-replica-frequently-asked-questions.md)  
+- [Réplica de almacenamiento: problemas conocidos](storage-replica-known-issues.md)  
+- [Réplica de almacenamiento: preguntas más frecuentes](storage-replica-frequently-asked-questions.md)  
 - [Espacios de almacenamiento directo en Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)
 - [Soporte técnico de profesionales de TI de Windows](https://www.microsoft.com/itpro/windows/support)

@@ -24,7 +24,7 @@ ms.locfileid: "71378686"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Detiene el disco duro virtual seleccionado \(VHD @ no__t-1 para que aparezca como una unidad de disco duro local en el equipo host. Cuando se desasocia un VHD, puede copiarlo en otras ubicaciones.  
+Detiene el disco duro virtual seleccionado \(VHD\) de aparecer como una unidad de disco duro local en el equipo host. Cuando se desasocia un VHD, puede copiarlo en otras ubicaciones.  
   
 > [!NOTE]  
 > Este comando solo es aplicable a Windows 7 y Windows Server 2008 R2.  
@@ -41,7 +41,7 @@ detach vdisk [noerr]
 |-------|--------|  
 |Noerr|Se usa solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
   
 -   Para que esta operación se realice correctamente, se debe seleccionar y desasociar un disco duro virtual. Use el comando **Select vDisk** para seleccionar un disco duro virtual y desplazar el foco a él.  
   
@@ -52,7 +52,7 @@ Para desasociar el disco duro virtual seleccionado, escriba:
 detach vdisk  
 ```  
   
-## <a name="additional-references"></a>Referencias adicionales  
+## <a name="additional-references"></a>referencias adicionales  
   
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   

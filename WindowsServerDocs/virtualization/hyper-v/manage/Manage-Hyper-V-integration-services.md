@@ -190,21 +190,21 @@ Los servicios de integración de Linux normalmente se ofrecen a través del kern
     ```
   
    Entre los demonios de servicio de integración que se pueden mostrar se incluyen los siguientes. Si falta alguno, es posible que no se admita en el sistema o que no esté instalado. Para obtener más información, consulte [máquinas virtuales Linux y FreeBSD compatibles con Hyper-V en Windows](https://technet.microsoft.com/library/dn531030.aspx).  
-   - **hv_vss_daemon**: Este demonio es necesario para crear copias de seguridad de máquinas virtuales de Linux en vivo.
-   - **hv_kvp_daemon**: Este demonio permite establecer y consultar pares de clave-valor intrínsecos y extrínsecos.
-   - **hv_fcopy_daemon**: Este demonio implementa un servicio de copia de archivos entre el host y el invitado.  
+   - **hv_vss_daemon**: este demonio es necesario para crear copias de seguridad de máquinas virtuales de Linux en vivo.
+   - **hv_kvp_daemon**: este demonio permite establecer y consultar los pares de valores de clave intrínsecos y extrínsecos.
+   - **hv_fcopy_daemon**: este demonio implementa un servicio de copia de archivos entre el host y el invitado.  
 
 ### <a name="examples"></a>Ejemplos
 
 En estos ejemplos se muestra cómo detener e iniciar el demonio KVP, denominado `hv_kvp_daemon`.
 
-1. Use el ID. de proceso \(PID @ no__t-1 para detener el proceso del demonio. Para buscar el PID, examine la segunda columna de la salida o use `pidof`. Los demonios de Hyper-V se ejecutan como raíz, por lo que necesitará permisos raíz.
+1. Use el ID. de proceso \(PID\) para detener el proceso del demonio. Para buscar el PID, examine la segunda columna de la salida o use `pidof`. Los demonios de Hyper-V se ejecutan como raíz, por lo que necesitará permisos raíz.
 
     ``` BASH
     sudo kill -15 `pidof hv_kvp_daemon`
     ```
 
-1. Para comprobar que el proceso `hv_kvp_daemon` ha desaparecido, ejecute:
+1. Para comprobar que todos los procesos de `hv_kvp_daemon` han desaparecido, ejecute:
 
     ```
     ps -ef | hv
@@ -216,7 +216,7 @@ En estos ejemplos se muestra cómo detener e iniciar el demonio KVP, denominado 
     sudo hv_kvp_daemon
     ``` 
 
-1. Para comprobar que el proceso `hv_kvp_daemon` aparece con un nuevo identificador de proceso, ejecute:
+1. Para comprobar que el proceso de `hv_kvp_daemon` aparece con un nuevo identificador de proceso, ejecute:
 
     ```
     ps -ef | hv

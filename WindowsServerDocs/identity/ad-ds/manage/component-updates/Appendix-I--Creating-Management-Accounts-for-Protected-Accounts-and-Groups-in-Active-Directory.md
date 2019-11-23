@@ -16,7 +16,7 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71369213"
 ---
-# <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Apéndice I: Creación de cuentas de administración para cuentas y grupos protegidos en Active Directory
+# <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Anexo I: creación de cuentas de administración para cuentas protegidas y grupos en Active Directory
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -42,7 +42,7 @@ La creación de cuentas que se pueden usar para administrar la pertenencia de gr
 Debe probar exhaustivamente todos estos procedimientos y modificarlos según sea necesario para su entorno antes de implementarlos en un entorno de producción. También debe comprobar que todas las configuraciones funcionan según lo previsto (en este apéndice se proporcionan algunos procedimientos de prueba) y debe probar un escenario de recuperación ante desastres en el que las cuentas de administración no estén disponibles para rellenar los grupos protegidos para la recuperación. Fiere. Para obtener más información sobre la copia de seguridad y la restauración de Active Directory, consulte la [Guía paso a paso de AD DS de copia de seguridad y recuperación](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx).  
   
 > [!NOTE]  
-> Mediante la implementación de los pasos descritos en este apéndice, creará cuentas que podrán administrar la pertenencia a todos los grupos protegidos de cada dominio, no solo los grupos de Active Directory con privilegios más altos, como EAs, DAs y BAs. Para obtener más información acerca de los grupos protegidos en Active Directory, consulte [Appendix C: Cuentas y grupos protegidos en Active Directory @ no__t-0.  
+> Mediante la implementación de los pasos descritos en este apéndice, creará cuentas que podrán administrar la pertenencia a todos los grupos protegidos de cada dominio, no solo los grupos de Active Directory con privilegios más altos, como EAs, DAs y BAs. Para obtener más información acerca de los grupos protegidos en Active Directory, vea [Apéndice C: cuentas y grupos protegidos en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md).  
   
 ### <a name="step-by-step-instructions-for-creating-management-accounts-for-protected-groups"></a>Instrucciones paso a paso para crear cuentas de administración para grupos protegidos  
   
@@ -60,7 +60,7 @@ Para crear un grupo con el fin de habilitar y deshabilitar cuentas de administra
   
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_116.png)  
   
-3.  Haga clic con el botón secundario en el grupo que acaba de crear y luego haga clic en **Propiedades**y en la pestaña **Objeto** . En el cuadro de diálogo **propiedad de objeto** del grupo, seleccione **proteger objeto contra eliminación accidental**, que no solo impedirá que los usuarios autorizados en caso contrario eliminen el grupo, sino que también lo muevan a otra unidad organizativa, a menos que el atributo sea primero. anula.  
+3.  Haga clic con el botón secundario en el grupo que acaba de crear, haga clic en **propiedades**y, a continuación, haga clic en la pestaña **objeto** . En el cuadro de diálogo **propiedad de objeto** del grupo, seleccione **proteger objeto contra eliminación accidental**, que no solo impedirá que los usuarios autorizados en caso contrario eliminen el grupo, sino que también lo muevan a otra unidad organizativa, a menos que se anule la selección del atributo por primera vez.  
   
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_117.png)  
   
@@ -71,7 +71,7 @@ Para crear un grupo con el fin de habilitar y deshabilitar cuentas de administra
   
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_118.png)  
   
-5.  Si todavía no lo ha hecho, en la consola de **Active Directory usuarios y equipos** , haga clic en **Ver** y seleccione **características avanzadas**. Haga clic con el botón secundario en el grupo que acaba de crear, haga clic en **propiedades**y, a continuación, haga clic en la pestaña **seguridad** . En la pestaña **Seguridad** , haga clic en **Opciones avanzadas**.  
+5.  Si todavía no lo ha hecho, en la consola de **Active Directory usuarios y equipos** , haga clic en **Ver** y seleccione **características avanzadas**. Haga clic con el botón secundario en el grupo que acaba de crear, haga clic en **propiedades**y, a continuación, haga clic en la pestaña **seguridad** . En la pestaña **seguridad** , haga clic en **Opciones avanzadas**.  
   
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_119.png)  
   
@@ -135,12 +135,12 @@ Para crear las cuentas de administración, realice los pasos siguientes:
 
 8. Haga clic en la pestaña **cuenta** .  
 
-9. En el **campo opciones de cuenta** , seleccione la marca la **cuenta es importante y no se puede delegar** , seleccione el **cifrado la cuenta compatible con Kerberos AES 128 bits** y/o la marca de **cifrado esta cuenta es compatible con Kerberos AES 256** . y haga clic en **Aceptar**.  
+9. En el campo **Opciones de cuenta** , seleccione la marca la **cuenta es importante y no se puede delegar** , seleccione la marca de cifrado la **cuenta compatible con Kerberos AES 128 bits** y/o **esta cuenta es compatible con Kerberos AES 256** y haga clic en **Aceptar**.  
 
    ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_124.png)  
 
    > [!NOTE]  
-   > Dado que esta cuenta, al igual que otras cuentas, tendrá una función limitada pero eficaz, la cuenta solo debe usarse en hosts administrativos seguros. En el caso de todos los hosts administrativos seguros de su entorno, considere la posibilidad de implementar el directiva de grupo configuración **Network Security: Configure los tipos de cifrado permitidos para Kerberos @ no__t-0 para permitir solo los tipos de cifrado más seguros que se pueden implementar para hosts seguros.  
+   > Dado que esta cuenta, al igual que otras cuentas, tendrá una función limitada pero eficaz, la cuenta solo debe usarse en hosts administrativos seguros. En el caso de todos los hosts administrativos seguros de su entorno, considere la posibilidad de implementar la directiva de grupo configuración de **seguridad de red: configurar tipos de cifrado permitidos para Kerberos** para permitir solo los tipos de cifrado más seguros que se pueden implementar para hosts seguros.  
    >
    > Aunque la implementación de tipos de cifrado más seguros para los hosts no mitiga los ataques de robo de credenciales, es el uso y la configuración adecuados de los hosts seguros. El establecimiento de tipos de cifrado más seguros para los hosts que solo usan las cuentas con privilegios reduce la superficie de ataque general de los equipos.  
    >
@@ -186,7 +186,7 @@ Para crear las cuentas de administración, realice los pasos siguientes:
 
 19. Escriba **denegado grupo de replicación de contraseña RODC** en el cuadro de diálogo **Seleccionar usuarios, contactos, equipos** y haga clic en **Comprobar nombres**. Cuando el nombre del grupo esté subrayado en el selector de objetos, haga clic en **Aceptar** y compruebe que la cuenta es ahora miembro de los dos grupos mostrados en la captura de pantalla siguiente. No agregue la cuenta a ninguno de los grupos protegidos.  
 
-20. Haga clic en **Aceptar**.  
+20. Haz clic en **Aceptar**.  
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_129.png)  
 
@@ -233,7 +233,7 @@ Puede crear cuentas de administración adicionales repitiendo los pasos anterior
   
 En su lugar, puede crear un grupo al que delegue los derechos para rellenar y quitar los grupos protegidos, pero tendrá que proteger el grupo y las cuentas que coloque en él. Dado que debe haber muy pocas cuentas en el directorio que tengan la capacidad de administrar la pertenencia de los grupos protegidos, la creación de cuentas individuales podría ser el enfoque más sencillo.  
   
-Independientemente de cómo decida crear un grupo en el que se colocan las cuentas de administración, debe asegurarse de que todas las cuentas estén protegidas tal y como se ha descrito anteriormente. También debe considerar la posibilidad de implementar restricciones de GPO similares a las descritas en @no__t 0Appendix D: Protección de cuentas de administrador integradas en Active Directory @ no__t-0.  
+Independientemente de cómo decida crear un grupo en el que se colocan las cuentas de administración, debe asegurarse de que todas las cuentas estén protegidas tal y como se ha descrito anteriormente. También debe considerar la posibilidad de implementar restricciones de GPO similares a las descritas en el [Apéndice D: proteger cuentas de administrador integradas en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
   
 ##### <a name="auditing-management-accounts"></a>Auditoría de cuentas de administración
 
@@ -247,7 +247,7 @@ Para obtener más información acerca de las opciones de configuración de audit
 
 En este procedimiento, configurará permisos en el objeto AdminSDHolder del dominio para permitir que las cuentas de administración recién creadas modifiquen la pertenencia de los grupos protegidos en el dominio. Este procedimiento no se puede realizar a través de una interfaz gráfica de usuario (GUI).  
   
-Como se describe en @no__t 0Appendix C: Cuentas y grupos protegidos en Active Directory @ no__t-0, la ACL del objeto AdminSDHolder de un dominio se "copia" en objetos protegidos cuando se ejecuta la tarea SDProp. Los grupos y cuentas protegidos no heredan sus permisos del objeto AdminSDHolder; sus permisos se establecen explícitamente para que coincidan con los del objeto AdminSDHolder. Por lo tanto, cuando modifique permisos en el objeto AdminSDHolder, deberá modificarlos para los atributos que sean adecuados para el tipo del objeto protegido al que está destinada.  
+Como se describe en el [Apéndice C: cuentas y grupos protegidos en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md), la ACL del objeto AdminSDHolder de un dominio se "copia" en objetos protegidos cuando se ejecuta la tarea SDProp. Los grupos y cuentas protegidos no heredan sus permisos del objeto AdminSDHolder; sus permisos se establecen explícitamente para que coincidan con los del objeto AdminSDHolder. Por lo tanto, cuando modifique permisos en el objeto AdminSDHolder, deberá modificarlos para los atributos que sean adecuados para el tipo del objeto protegido al que está destinada.  
   
 En este caso, va a conceder las cuentas de administración que acaba de crear para permitirles leer y escribir el atributo Members en objetos de grupo. Sin embargo, el objeto AdminSDHolder no es un objeto de grupo y los atributos de grupo no se exponen en el editor gráfico de ACL. Por esta razón, se implementarán los cambios de permisos mediante la utilidad de línea de comandos DSACLS. Para conceder permisos a las cuentas de administración (deshabilitadas) para modificar la pertenencia de grupos protegidos, realice los pasos siguientes:  
   
@@ -286,7 +286,7 @@ En este caso, va a conceder las cuentas de administración que acaba de crear pa
   
    Para obtener más información acerca del uso de **DSACLS**, escriba DSACLS sin ningún parámetro en el símbolo del sistema.  
   
-   Si ha creado varias cuentas de administración para el dominio, debe ejecutar el comando DSACLS para cada cuenta. Cuando haya completado la configuración de ACL en el objeto AdminSDHolder, debe forzar la ejecución de SDProp o esperar a que se complete la ejecución programada. Para obtener información sobre cómo forzar la ejecución de SDProp, vea "ejecutar SDProp manualmente" en [Appendix C: Cuentas y grupos protegidos en Active Directory @ no__t-0.  
+   Si ha creado varias cuentas de administración para el dominio, debe ejecutar el comando DSACLS para cada cuenta. Cuando haya completado la configuración de ACL en el objeto AdminSDHolder, debe forzar la ejecución de SDProp o esperar a que se complete la ejecución programada. Para obtener información sobre cómo forzar la ejecución de SDProp, vea "ejecutar SDProp manualmente" en el [Apéndice C: cuentas y grupos protegidos en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md).  
   
    Cuando se ejecuta SDProp, puede comprobar que los cambios realizados en el objeto AdminSDHolder se han aplicado a los grupos protegidos del dominio. No puede comprobarlo mediante la visualización de la ACL en el objeto AdminSDHolder por las razones descritas anteriormente, pero puede comprobar que los permisos se han aplicado mediante la visualización de las ACL en los grupos protegidos.  
   
@@ -317,7 +317,7 @@ Ahora que ha creado y configurado cuentas de administración que pueden modifica
   
 ##### <a name="test-the-group-that-will-enable-and-disable-management-accounts"></a>Probar el grupo que habilitará y deshabilitará las cuentas de administración
   
-1.  Para probar la habilitación de una cuenta de administración y el restablecimiento de la contraseña, inicie sesión en una estación de trabajo administrativa segura con una cuenta que sea miembro del grupo que creó en @no__t 0Appendix I: Creación de cuentas de administración para cuentas y grupos protegidos en Active Directory @ no__t-0.  
+1.  Para probar la habilitación de una cuenta de administración y el restablecimiento de su contraseña, inicie sesión en una estación de trabajo administrativa segura con una cuenta que sea miembro del grupo que creó en el [Apéndice I: creación de cuentas de administración para cuentas y grupos protegidos en Active Directory](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md).  
   
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_142.gif)  
   

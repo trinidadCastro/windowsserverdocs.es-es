@@ -28,7 +28,7 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
   
 ### <a name="to-refresh-group-policy-on-the-local-computer"></a>Para actualizar la directiva de grupo en el equipo local  
   
-1.  En el equipo donde está instalado NPS, abra Windows PowerShell @ no__t-0 mediante el icono de la barra de tareas.  
+1.  En el equipo donde está instalado NPS, abra el&reg; de Windows PowerShell mediante el icono de la barra de tareas.  
   
 2.  En el símbolo del sistema de Windows PowerShell, escriba **gpupdate**y presione Entrar.  
   

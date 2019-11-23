@@ -39,15 +39,15 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Names >|Especifica una lista de uno o varios archivos o directorios. Se pueden usar caracteres comodín para eliminar varios archivos. Si se especifica un directorio, se eliminarán todos los archivos del directorio.|
+|Nombres de \<>|Especifica una lista de uno o varios archivos o directorios. Se pueden usar caracteres comodín para eliminar varios archivos. Si se especifica un directorio, se eliminarán todos los archivos del directorio.|
 |/p|Solicita confirmación antes de eliminar el archivo especificado.|
 |/f|Fuerza la eliminación de archivos de solo lectura.|
 |/s|Elimina los archivos especificados del directorio actual y todos los subdirectorios. Muestra los nombres de los archivos que se van a eliminar.|
 |/q|Especifica el modo silencioso. No se le pedirá confirmación de eliminación.|
-|/a [:] \<Attributes >|Elimina archivos en función de los siguientes atributos de archivo:</br>archivos de solo lectura de **r**</br>**h** archivos ocultos</br>**no** archivos indizados del contenido</br>archivos **del sistema**</br>**archivos listos** para archivar</br>**l** puntos de reanálisis</br>-El significado del prefijo ' not '|
+|/a [:]\<atributos >|Elimina archivos en función de los siguientes atributos de archivo:</br>archivos de solo lectura de **r**</br>**h** archivos ocultos</br>**no** archivos indizados del contenido</br>archivos **del sistema**</br>**archivos listos** para archivar</br>**l** puntos de reanálisis</br>-El significado del prefijo ' not '|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 > [!CAUTION]
 > Si usa **Supr** para eliminar un archivo del disco, no puede recuperarlo.

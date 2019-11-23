@@ -20,7 +20,7 @@ ms.locfileid: "71358458"
 
 
 ## <a name="to-add-a-help-desk-link"></a>Para agregar un vínculo al Departamento de soporte técnico  
-Para agregar el vínculo del Departamento de soporte técnico que se muestra en la página Sign @ no__t-0in, use el siguiente cmdlet de Windows PowerShell y la siguiente sintaxis.  
+Para agregar el vínculo del Departamento de soporte técnico que se muestra en la página firmar\-de, use el siguiente cmdlet de Windows PowerShell y la siguiente sintaxis.  
 
 ![Agregar Departamento de soporte técnico](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   

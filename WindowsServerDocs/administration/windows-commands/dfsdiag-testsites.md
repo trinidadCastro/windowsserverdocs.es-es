@@ -24,7 +24,7 @@ ms.locfileid: "71378380"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Comprueba la configuración de los sitios de los servicios de dominio de Active Directory \(AD DS @ no__t-1 comprobando que los servidores que actúan como servidores de espacio de nombres o carpetas \(Link @ no__t-3 tienen las mismas asociaciones de sitio en todos los controladores de dominio.  
+Comprueba la configuración de los servicios de dominio de Active Directory \(sitios de AD DS\) comprobando que los servidores que actúan como servidores de espacio de nombres o \(de vínculo\) destinos tienen las mismas asociaciones de sitio en todos los controladores de dominio.  
   
   
   
@@ -38,10 +38,10 @@ dfsdiag /TestSites </Machine:<server name>| /DFSpath:<namespace root or DFS fold
   
 |Parámetro|Descripción|  
 |-------|--------|  
-|\/Machine: <server name>|Nombre del servidor en el que se va a comprobar la Asociación del sitio.|  
-|\/DFSpath: <namespace root or DFS folder>|La carpeta raíz del espacio de nombres o Sistema de archivos distribuido \(DFS @ no__t-1 \(Link @ no__t-3 con los destinos para los que se va a comprobar la Asociación del sitio.|  
-|@no__t 0Recurse|Enumera y comprueba las asociaciones del sitio para todos los destinos de carpeta en la raíz del espacio de nombres especificada.|  
-|@no__t 0Full|comprueba que AD DS y el registro del servidor contienen la misma información de asociación del sitio.|  
+|\/máquina:<server name>|Nombre del servidor en el que se va a comprobar la Asociación del sitio.|  
+|\/DFSpath:<namespace root or DFS folder>|La raíz del espacio de nombres o el Sistema de archivos distribuido \(carpeta DFS\) \(vínculo\) con destinos para los que se va a comprobar la Asociación del sitio.|  
+|\/recurse|Enumera y comprueba las asociaciones del sitio para todos los destinos de carpeta en la raíz del espacio de nombres especificada.|  
+|\/completo|comprueba que AD DS y el registro del servidor contienen la misma información de asociación del sitio.|  
   
 ## <a name="BKMK_Examples"></a>Example  
 En TBD, escriba:  
@@ -62,7 +62,7 @@ En TBD, escriba:
 dfsdiag /TestSites /DFSpath:\\Contoso.com\Namespace2 /Recurse /Full  
 ```  
   
-## <a name="additional-references"></a>Referencias adicionales  
+## <a name="additional-references"></a>referencias adicionales  
   
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   

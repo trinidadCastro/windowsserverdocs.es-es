@@ -41,12 +41,12 @@ create volume mirror [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr] [noer
   
 |         Parámetro         |                                                                                                                                     Descripción                                                                                                                                     |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         Size @ no__t-0 @ no__t-1         |                 Especifica la cantidad de espacio en disco, en megabytes \(MB @ no__t-1, que el volumen ocupará en cada disco. Si no se proporciona ningún tamaño, el nuevo volumen ocupará el espacio libre restante en el disco más pequeño y una cantidad igual de espacio en cada disco subsiguiente.                 |
-| Disk @ no__t-0 @ no__t-1, <n> @ no__t-3, <n>,... \] |                       Especifica los discos dinámicos en los que se crea el volumen reflejado. Necesita dos discos dinámicos para crear un volumen reflejado. En cada disco se asigna una cantidad de espacio igual al tamaño especificado con el parámetro de **tamaño** .                        |
-|        align @ no__t-0 @ no__t-1         | Alinea todas las extensiones de volumen con el límite de alineación más cercano. Este parámetro se utiliza normalmente con matrices de número de unidad lógica RAID de hardware \(LUN @ no__t-1 para mejorar el rendimiento. *n* es el número de kilobytes \( KB @ no__t-2 desde el principio del disco hasta el límite de alineación más cercano. |
+|         tamaño\=<n>         |                 Especifica la cantidad de espacio en disco, en megabytes \(MB\), que el volumen ocupará en cada disco. Si no se proporciona ningún tamaño, el nuevo volumen ocupará el espacio libre restante en el disco más pequeño y una cantidad igual de espacio en cada disco subsiguiente.                 |
+| <n>de\=de disco,<n>\[,<n>,...\] |                       Especifica los discos dinámicos en los que se crea el volumen reflejado. Necesita dos discos dinámicos para crear un volumen reflejado. En cada disco se asigna una cantidad de espacio igual al tamaño especificado con el parámetro de **tamaño** .                        |
+|        alinear\=<n>         | Alinea todas las extensiones de volumen con el límite de alineación más cercano. Este parámetro se usa normalmente con el número de unidad lógica RAID de hardware \(matrices\) LUN para mejorar el rendimiento. *n* es el número de kilobytes \(KB\) desde el principio del disco hasta el límite de alineación más cercano. |
 |           Noerr           |                                        Se usa solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart se cierre con un error.                                         |
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
   
 -   Después de crear el volumen, el foco se desplaza automáticamente al nuevo volumen.  
   
@@ -57,7 +57,7 @@ Para crear un volumen reflejado de 1000 megabytes de tamaño, en los discos 1 y 
 create volume mirror size=1000 disk=1,2  
 ```  
   
-#### <a name="additional-references"></a>Referencias adicionales  
+#### <a name="additional-references"></a>referencias adicionales  
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   
 

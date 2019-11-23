@@ -49,7 +49,7 @@ Antes de empezar a implementar este escenario, revise esta lista de requisitos i
   
 -   Hay que implementar una infraestructura de clave pública.  
   
-    Para obtener más información, consulta: @no__t: módulo de la guía de laboratorio de 0Test: PKI básica para Windows Server 2012. ](https://social.technet.microsoft.com/wiki/contents/articles/7862.test-lab-guide-mini-module-basic-pki-for-windows-server-2012.aspx)  
+    Para obtener más información, vea: [Minimódulo de la guía de laboratorio de pruebas: PKI básica para Windows Server 2012.](https://social.technet.microsoft.com/wiki/contents/articles/7862.test-lab-guide-mini-module-basic-pki-for-windows-server-2012.aspx)  
   
 -   La red corporativa debe estar habilitada para IPv6. Si utilizas ISATAP, debes eliminarlo y usar IPv6 nativo.  
   
@@ -139,7 +139,7 @@ A continuación se indican problemas conocidos al configurar un escenario de mul
   
     En caso de que el cliente ya se haya actualizado, mueva el equipo cliente al grupo de seguridad de Windows 8.  
   
--   Al modificar la configuración del controlador de dominio con el cmdlet **de Windows PowerShell Set-DAEntryPointDC**, si el parámetro COMPUTERNAME especificado es un servidor de acceso remoto en un punto de entrada distinto del último que se agregó a la implementación multisitio, se trata de una advertencia. se mostrará que indica que el servidor especificado no se actualizará hasta la siguiente actualización de directiva. Los servidores reales que no se actualizaron pueden verse con el **Estado de configuración** en el **Panel** de la consola de **Administración de acceso remoto**. No obstante, esto no causará ningún problema funcional; sin embargo, puede ejecutar **gpupdate/force** en los servidores que no se actualizaron para obtener el estado de configuración actualizado inmediatamente.  
+-   Al modificar la configuración del controlador de dominio con el cmdlet **de Windows PowerShell Set-DAEntryPointDC**, si el parámetro COMPUTERNAME especificado es un servidor de acceso remoto en un punto de entrada distinto del último que se agrega a la implementación multisitio, se mostrará una advertencia que indica que el servidor especificado no se actualizará hasta la siguiente actualización de directiva. Los servidores reales que no se actualizaron pueden verse con el **Estado de configuración** en el **Panel** de la consola de **Administración de acceso remoto**. No obstante, esto no causará ningún problema funcional; sin embargo, puede ejecutar **gpupdate/force** en los servidores que no se actualizaron para obtener el estado de configuración actualizado inmediatamente.  
   
 -   Cuando se implementa multisitio en una red corporativa solo IPv4, al cambiar el prefijo IPv6 de la red interna también se cambia la dirección DNS64, pero no se actualiza la dirección en las reglas de firewall que permiten consultas DNS en el servicio DNS64. Para resolver este problema, ejecute los siguientes comandos de Windows PowerShell después de cambiar el prefijo IPv6 de la red interna:  
   
@@ -159,7 +159,7 @@ A continuación se indican problemas conocidos al configurar un escenario de mul
   
 -   Si DirectAccess se implementó cuando una infraestructura ISATAP existente estaba presente, al quitar un punto de entrada que era un host ISATAP, la dirección IPv6 del servicio DNS64 se quitará de las direcciones de servidor DNS de todos los sufijos DNS de la NRPT.  
   
-    Para resolver este problema, en el Asistente para la **instalación del servidor de infraestructura** , en la página **DNS** , quite los sufijos DNS que se modificaron y agréguelos de nuevo con las direcciones de servidor DNS correctas; para ello, haga clic en **detectar** en las **direcciones del servidor DNS.** cuadro de diálogo.  
+    Para resolver este problema, en el Asistente para la **instalación del servidor de infraestructura** , en la página **DNS** , quite los sufijos DNS que se modificaron y agréguelos de nuevo con las direcciones de servidor DNS correctas; para ello, haga clic en **detectar** en el cuadro de diálogo **direcciones de servidor DNS** .  
   
 
 

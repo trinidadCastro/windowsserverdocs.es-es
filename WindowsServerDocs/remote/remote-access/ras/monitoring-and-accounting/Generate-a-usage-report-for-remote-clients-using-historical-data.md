@@ -23,7 +23,7 @@ ms.locfileid: "71367252"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-**Nota:** Windows Server 2012 combina DirectAccess y el servicio de enrutamiento y acceso remoto (RRAS) en un único rol de acceso remoto.  
+**Nota:** Windows Server 2012 combina DirectAccess y el Servicio de enrutamiento y acceso remoto (RRAS) en un único rol de acceso remoto.  
   
 La consola de administración de en el servidor de acceso remoto se puede usar para generar un informe de uso para los clientes remotos que acceden al servidor. Para generar un informe de uso para clientes remotos, primero debe habilitar las cuentas en el servidor de acceso remoto. Después de generar el informe, puede usar el panel de supervisión que está disponible en la consola de administración de en el servidor de acceso remoto para ver las estadísticas de carga en el servidor.  
   
@@ -59,7 +59,7 @@ La consola de administración de en el servidor de acceso remoto se puede usar p
 >   
 > La contabilidad de acceso remoto se basa en el concepto de **sesiones**. A diferencia de una **conexión**, una **sesión** se identifica de forma única mediante una combinación de dirección IP de cliente remoto y nombre de usuario. Por ejemplo, si se forma un túnel de equipo desde el cliente remoto, denominado Client1, se creará una sesión y se almacenará en la base de datos de cuentas. Cuando un usuario llamado user1 se conecta desde ese cliente después de que transcurra un tiempo (pero el túnel del equipo todavía está activo), la sesión se registra como una sesión independiente. La distinción de sesiones es mantener la distinción entre el túnel del equipo y el túnel del usuario.  
   
-](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   

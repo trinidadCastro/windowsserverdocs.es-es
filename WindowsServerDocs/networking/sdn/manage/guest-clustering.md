@@ -26,10 +26,10 @@ ms.locfileid: "71406039"
 
 Las máquinas virtuales conectadas a una red virtual solo pueden usar las direcciones IP asignadas por la controladora de red para comunicarse en la red.  Las tecnologías de agrupación en clústeres que requieren una dirección IP flotante, como los clústeres de conmutación por error de Microsoft, requieren algunos pasos adicionales para que funcionen correctamente.
 
-El método para hacer que la dirección IP flotante sea accesible es usar un software Load Balancer \(SLB @ no__t-1 IP virtual \(VIP @ no__t-3.  El equilibrador de carga de software debe configurarse con un sondeo de estado en un puerto en esa dirección IP para que SLB dirija el tráfico a la máquina que actualmente tiene esa IP.
+El método para hacer que la IP flotante sea accesible es usar una Load Balancer de software \(SLB\) IP virtual \(VIP\).  El equilibrador de carga de software debe configurarse con un sondeo de estado en un puerto en esa dirección IP para que SLB dirija el tráfico a la máquina que actualmente tiene esa IP.
 
 
-## <a name="example-load-balancer-configuration"></a>Ejemplo: Configuración del equilibrador de carga
+## <a name="example-load-balancer-configuration"></a>Ejemplo: configuración del equilibrador de carga
 
 En este ejemplo se da por supuesto que ya ha creado las máquinas virtuales que se convertirán en nodos de clúster y las asociará a un Virtual Network.  Para obtener instrucciones, consulte [creación de una máquina virtual y conexión a un inquilino Virtual Network o VLAN](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm).  
 
@@ -50,7 +50,7 @@ En este ejemplo se creará una dirección IP virtual (192.168.2.100) para repres
    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
    ```
 
-3. Cree una dirección IP de Front @ no__t-0end.
+3. Cree una dirección IP de Front\-end.
 
    ```PowerShell
    $LoadBalancerProperties.frontendipconfigurations += $FrontEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
@@ -63,7 +63,7 @@ En este ejemplo se creará una dirección IP virtual (192.168.2.100) para repres
    $FrontEnd.properties.privateIPAllocationMethod = "Static"
    ```
 
-4. Cree un grupo de copia de seguridad @ no__t-0end para que contenga los nodos de clúster.
+4. Cree un grupo de back\-end para que contenga los nodos de clúster.
 
    ```PowerShell
    $BackEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
@@ -132,7 +132,7 @@ En este ejemplo se creará una dirección IP virtual (192.168.2.100) para repres
 
 9. Opta Si usa un clúster de conmutación por error de Microsoft, continúe con el ejemplo siguiente. 
 
-## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>Ejemplo 2: Configuración de un clúster de conmutación por error de Microsoft
+## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>Ejemplo 2: configurar un clúster de conmutación por error de Microsoft
 
 Puede usar los pasos siguientes para configurar un clúster de conmutación por error.
 

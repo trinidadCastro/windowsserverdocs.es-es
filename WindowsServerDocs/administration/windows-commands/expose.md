@@ -39,11 +39,11 @@ expose <ShadowID> {<Drive:> | <Share> | <MountPoint>}
 |Parámetro|Descripción|
 |---------|-----------|
 |ShadowID|Especifica el ID. de sombra de la instantánea que desea exponer.|
-|\<Drive: >|Expone la instantánea especificada como una letra de unidad (por ejemplo, P:).|
-|@no__t 0Share >|Expone la instantánea especificada en un recurso compartido (por ejemplo, \\ @ no__t-1*MachineName*\).|
-|@no__t 0MountPoint >|Expone la instantánea especificada en un punto de montaje (por ejemplo, C:\shadowcopy @ no__t-0.|
+|Unidad de \<: >|Expone la instantánea especificada como una letra de unidad (por ejemplo, P:).|
+|\<compartir >|Expone la instantánea especificada en un recurso compartido (por ejemplo, \\\\*MachineName*\).|
+|\<MountPoint >|Expone la instantánea especificada en un punto de montaje (por ejemplo, C:\shadowcopy\).|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Puede usar un alias existente o una variable de entorno en lugar de *ShadowID*. Use **Agregar** sin parámetros para ver los alias existentes.
 

@@ -19,7 +19,7 @@ ms.locfileid: "71406436"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este procedimiento para instalar la característica BranchCache e iniciar el servicio BranchCache en un equipo que ejecute Windows Server @ no__t-0 2016, Windows Server 2012 R2 o Windows Server 2012.  
+Puede usar este procedimiento para instalar la característica BranchCache e iniciar el servicio BranchCache en un equipo que ejecute Windows Server&reg; 2016, Windows Server 2012 R2 o Windows Server 2012.  
   
 El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o un grupo equivalente.  
   

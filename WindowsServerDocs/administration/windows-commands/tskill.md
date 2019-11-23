@@ -25,7 +25,7 @@ ms.locfileid: "71392333"
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Finaliza un proceso que se ejecuta en una sesión en un servidor de host de sesión de Escritorio remoto (host de sesión de escritorio remoto).
-Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
+para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
 
 > [!NOTE]
 > En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
@@ -39,15 +39,15 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 
 |Parámetro|Descripción|
 |-------|--------|
-|@no__t 0ProcessID >|Especifica el identificador del proceso que desea finalizar.|
-|@no__t 0ProcessName >|Especifica el nombre del proceso que desea finalizar. Este parámetro puede incluir caracteres comodín.|
-|/Server: @no__t 0ServerName >|Especifica el servidor de Terminal Server que contiene el proceso que desea finalizar. Si no se especifica **/Server** , se usa el servidor host de sesión de escritorio remoto actual.|
-|/ID: \<SessionID >|Finaliza el proceso que se está ejecutando en la sesión especificada.|
+|\<ProcessID >|Especifica el identificador del proceso que desea finalizar.|
+|\<processName >|Especifica el nombre del proceso que desea finalizar. Este parámetro puede incluir caracteres comodín.|
+|/Server:\<ServerName >|Especifica el servidor de Terminal Server que contiene el proceso que desea finalizar. Si no se especifica **/Server** , se usa el servidor host de sesión de escritorio remoto actual.|
+|/ID:\<SessionID >|Finaliza el proceso que se está ejecutando en la sesión especificada.|
 |/a|Finaliza el proceso que se está ejecutando en todas las sesiones.|
 |/v|Muestra información acerca de las acciones que se llevan a cabo.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 - Puede usar **tskill** para finalizar solo los procesos que le pertenecen, a menos que sea administrador. Los administradores tienen acceso total a todas las funciones de **tskill** y pueden finalizar los procesos que se ejecutan en otras sesiones de usuario.
 - Cuando todos los procesos que se ejecutan en una sesión finalizan, la sesión también finaliza.
 - Si usa los parámetros *processName* y **/Server:** <em>ServerName</em> , también debe especificar el parámetro **/ID:** <em>SessionID</em> o **/a** .

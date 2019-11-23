@@ -41,30 +41,30 @@ typeperf -qx [object] [options]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<counter [contador [...]] >|Especifica los contadores de rendimiento que se van a supervisar.|
+|\<contador [...]] >|Especifica los contadores de rendimiento que se van a supervisar.|
 
 > [!NOTE]
-> **\<counter >** es el nombre completo de un contador de rendimiento *@no__t en formato \Counter-3 @ no__t-4Computer\Object (instancia)* , como **\\ @ no__t-7Server1\Processor (0) \% tiempo de usuario**.
+> **\<contador >** es el nombre completo de un contador de rendimiento en *\\\\formato \Counter Computer\Object (instancia)* , como **\\\\Server1\Processor (0)\% tiempo de usuario**.
 
 ## <a name="options"></a>Opciones
 
 |                   Opción                   |                                                         Descripción                                                          |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 |                     -?                     |                                               Muestra la ayuda contextual.                                               |
-| -f \<CSV @ no__t-1TSV @ no__t-2BIN @ no__t-3SQL > |                                    Especifica el formato del archivo de salida. El valor predeterminado es CSV.                                     |
-|              -CF \<filename >               |              Especifica un archivo que contiene una lista de contadores de rendimiento que se van a supervisar, con un contador por línea.               |
+| -f \<CSV&verbar;TSV&verbar;BIN&verbar;SQL > |                                    Especifica el formato del archivo de salida. El valor predeterminado es CSV.                                     |
+|              -CF \<nombre de archivo >               |              Especifica un archivo que contiene una lista de contadores de rendimiento que se van a supervisar, con un contador por línea.               |
 |             -Si < [[HH:] mm:] SS >             |                                  Especifica el intervalo de ejemplo. El valor predeterminado es un segundo.                                   |
-|               -o \<filename >               |     Especifica la ruta de acceso del archivo de salida o la base de datos SQL. El valor predeterminado es STDOUT (se escribe en la ventana de comandos).      |
-|                -q [objeto]                 | Mostrar una lista de contadores instalados (sin instancias). Para enumerar los contadores de un objeto, incluya el nombre del objeto. \* @ NO__T-1 @ NO__T-2EXAMPLE |
+|               -o \<nombre de archivo >               |     Especifica la ruta de acceso del archivo de salida o la base de datos SQL. El valor predeterminado es STDOUT (se escribe en la ventana de comandos).      |
+|                -q [objeto]                 | Mostrar una lista de contadores instalados (sin instancias). Para enumerar los contadores de un objeto, incluya el nombre del objeto. EJEMPLO de \*de \*de \* |
 |                -QX [objeto]                |        Mostrar una lista de contadores instalados con instancias. Para enumerar los contadores de un objeto, incluya el nombre del objeto.        |
-|               -SC \<samples >               |             Especifica el número de muestras que se van a recopilar. El valor predeterminado es recopilar datos hasta que se presiona CTRL + C.              |
+|               -SC \<ejemplos >               |             Especifica el número de muestras que se van a recopilar. El valor predeterminado es recopilar datos hasta que se presiona CTRL + C.              |
 |            -config \<nombre de archivo >             |                                    Especifica un archivo de configuración que contiene opciones de comando.                                     |
 |            -s \<computer_name >             |                   Especifica un equipo remoto que se va a supervisar si no se especifica ningún equipo en la ruta de acceso del contador.                    |
 |                     -y                     |                                        Responda sí a todas las preguntas sin preguntar.                                        |
 
 ## <a name="BKMK_EXAMPLES"></a>Example
 
-- En el ejemplo siguiente se escriben los valores del contador de rendimiento del equipo local **\\ @ no__t-2Processor (_ total) \% tiempo de procesador** en la ventana de comandos en un intervalo de ejemplo predeterminado de 1 segundo hasta que se presiona Ctrl + C.  
+- En el ejemplo siguiente se escriben los valores del contador de rendimiento del equipo local **\\procesador de \\(_Total)\% tiempo de procesador** a la ventana de comandos en un intervalo de ejemplo predeterminado de 1 segundo hasta que se presiona Ctrl + C.  
   ```
   typeperf "\Processor(_Total)\% Processor Time"
   ```  

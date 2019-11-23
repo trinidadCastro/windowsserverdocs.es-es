@@ -17,7 +17,7 @@ ms.locfileid: "71402178"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>Habilitar la enumeración basada en el acceso en un espacio de nombres
 
-> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008
 
 La enumeración basada en el acceso oculta los archivos y las carpetas para los que los usuarios no tienen permiso de acceso. De forma predeterminad, esta característica no está habilitada para los espacios de nombres DFS. Puedes habilitar la enumeración basada en el acceso de carpetas DFS mediante la opción de administración de DFS. Para controlar la enumeración basada en el acceso de archivos y carpetas en destinos de carpeta, debes habilitar la enumeración basada en el acceso en cada carpeta compartida mediante el uso compartido y la administración del almacenamiento.
 
@@ -51,7 +51,7 @@ Puedes Habilitar la enumeración basada en el acceso en un espacio de nombres me
 
 1.  Abre una ventana del símbolo del sistema en un servidor que tenga el servicio de rol **Sistema de archivos distribuido** o la característica **Herramientas del sistema de archivos distribuido**.
 
-2.  Escriba el siguiente comando, donde *< espacio de nombres @ no__t-1root >* es la raíz del espacio de nombres:
+2.  Escriba el siguiente comando, donde *< espacio de nombres\_> raíz* es la raíz del espacio de nombres:
 
     ```  
     dfsutil property abe enable \\ <namespace_root>
@@ -80,13 +80,13 @@ Puedes controlar los usuarios y grupos que pueden ver carpetas DFS individuales 
 
 1. Abre una ventana del símbolo del sistema en un servidor que tenga el servicio de rol **Sistema de archivos distribuido** o la característica **Herramientas del sistema de archivos distribuido**.
 
-2. Escriba el siguiente comando, donde *&lt;DFSPath @ no__t-2* es la ruta de acceso de la carpeta DFS (vínculo), *< dominio @ no__t-4Account >* es el nombre de la cuenta de grupo o de usuario, y *(...)* se reemplaza por entradas de Access Control adicionales ( ACE):
+2. Escriba el siguiente comando, donde *&lt;DFSPath&gt;* es la ruta de acceso de la carpeta DFS (vínculo), *< cuenta de\\de dominio >* es el nombre de la cuenta de grupo o de usuario, y *(...)* se reemplaza por entradas de Access Control adicionales (ACE):
 
    ```
    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
    ```
 
-   Por ejemplo, para reemplazar los permisos existentes con permisos que permitan a los grupos Admins. del dominio y CONTOSO @ no__t-0Trainers Groups Read (R) el acceso a la carpeta \\contoso. office\public\training, escriba el siguiente comando:
+   Por ejemplo, para reemplazar los permisos existentes con permisos que permitan al grupo Admins. del dominio y a los grupos de formadores de\\de CONTOSO (R) el acceso a la carpeta \\contoso. office\public\training, escriba el siguiente comando:
 
    ```
    dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 
@@ -101,7 +101,7 @@ Puedes controlar los usuarios y grupos que pueden ver carpetas DFS individuales 
 |[Propiedad Dfsutil de SD RESET](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |Quita todos los permisos de la carpeta.|
 |[Propiedad Dfsutil SD REVOKE](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| Quita una ACE de grupo o usuario de la carpeta. |
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 -   [Crear un espacio de nombres DFS](create-a-dfs-namespace.md)
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md)

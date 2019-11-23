@@ -39,9 +39,9 @@ Una vez que el administrador del tejido Capture la información, agréguela a la
     > Puede comprobar si falta un EKCert abriendo el archivo XML en un editor como el Bloc de notas y comprobando si hay un mensaje de error que indica que no se encontró EKCert.
     > Si este es el caso y confía en que el TPM del equipo es auténtico, puede usar la marca `-Force` para invalidar esta comprobación de seguridad y agregar el identificador de host a HGS.
 
-2. Obtenga la Directiva de integridad de código creada por el administrador de tejido para los hosts, en formato binario (@no__t -0. p7b). Cópielo en un servidor HGS. A continuación, ejecute el siguiente comando.
+2. Obtiene la Directiva de integridad de código creada por el administrador de tejido para los hosts, en formato binario (\*. p7b). Cópielo en un servidor HGS. A continuación, ejecute el siguiente comando.
 
-    Para `<PolicyName>`, especifique un nombre para la Directiva de CI que describe el tipo de host al que se aplica. Un procedimiento recomendado consiste en asignarle un nombre después de la marca y el modelo de su equipo y cualquier configuración de software especial que se ejecute en él.<br>Para `<Path>`, especifique la ruta de acceso y el nombre de archivo de la Directiva de integridad de código.
+    Por `<PolicyName>`, especifique un nombre para la Directiva de CI que describa el tipo de host al que se aplica. Un procedimiento recomendado consiste en asignarle un nombre después de la marca y el modelo de su equipo y cualquier configuración de software especial que se ejecute en él.<br>En `<Path>`, especifique la ruta de acceso y el nombre de archivo de la Directiva de integridad de código.
 
     ```powershell
     Add-HgsAttestationCIPolicy -Path <Path> -Name '<PolicyName>'

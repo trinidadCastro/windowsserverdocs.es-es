@@ -38,10 +38,10 @@ goto <Label>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Label >|Especifica una cadena de texto que se utiliza como etiqueta en el programa por lotes.|
+|\<etiqueta >|Especifica una cadena de texto que se utiliza como etiqueta en el programa por lotes.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Trabajar con extensiones de comandos
 

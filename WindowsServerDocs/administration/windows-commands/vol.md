@@ -36,7 +36,7 @@ vol [<Drive>:]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Drive >:|Especifica la unidad que contiene el disco para el que desea mostrar la etiqueta de volumen y el número de serie.|
+|> de \<unidad:|Especifica la unidad que contiene el disco para el que desea mostrar la etiqueta de volumen y el número de serie.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 #### <a name="additional-references"></a>Referencias adicionales

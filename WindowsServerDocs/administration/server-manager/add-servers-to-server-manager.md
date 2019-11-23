@@ -1,5 +1,5 @@
 ---
-title: Add Servers to Server Manager
+title: Adición de servidores al Administrador de servidores
 description: Administrador de servidores
 ms.custom: na
 ms.prod: windows-server
@@ -21,7 +21,7 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71383260"
 ---
-# <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
+# <a name="add-servers-to-server-manager"></a>Adición de servidores al Administrador de servidores
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -43,7 +43,7 @@ En este tema se incluyen las siguientes secciones.
 -   [Proporcionar credenciales con el comando administrar como](#BKMK_creds)
 
 ## <a name="BKMK_creds"></a>Proporcionar credenciales con el comando administrar como
-Al agregar servidores remotos al Administrador de servidores, algunos de los servidores que agregue es posible que requieran diferentes credenciales de cuenta de usuario para tener acceso o administrarlos. Para especificar las credenciales para un servidor administrado que sean diferentes de las que se utilizan para iniciar sesión en el equipo en el que ejecuta el Administrador de servidores, usa el comando **Administrar como** después de agregar un servidor al Administrador de servidores, al que se accede haciendo clic en la entrada de un servidor administrado en la ventana **Servidores** de una página principal de rol o de grupo. Al hacer clic en **Administrar como** se abre el cuadro de diálogo **Windows Security** , en el que puedes proporcionar un nombre de usuario que tenga derechos de acceso en el servidor administrado, en uno de los formatos siguientes.
+Al agregar servidores remotos al Administrador de servidores, algunos de los servidores que agregue es posible que requieran diferentes credenciales de cuenta de usuario para tener acceso o administrarlos. Para especificar las credenciales para un servidor administrado que sean diferentes de las que se utilizan para iniciar sesión en el equipo en el que ejecuta el Administrador de servidores, usa el comando **Administrar como** después de agregar un servidor al Administrador de servidores, al que se accede haciendo clic en la entrada de un servidor administrado en la ventana **Servidores** de una página principal de rol o de grupo. Al hacer clic en **Administrar como** se abre el cuadro de diálogo **Seguridad de Windows**, en el que puedes proporcionar un nombre de usuario que tenga derechos de acceso en el servidor administrado, en uno de los formatos siguientes.
 
 -   *Nombre de usuario.*
 
@@ -73,7 +73,7 @@ Puedes agregar servidores al Administrador de servidores para administrar usando
 
 -   **Importar servidores múltiples** Especifica varios servidores para importarlos en un archivo que contiene servidores que aparecen por nombre de equipo o dirección IP.
 
-#### <a name="to-add-servers-to-the-server-pool"></a>Para agregar servidores en el grupo de servidores
+#### <a name="to-add-servers-to-the-server-pool"></a>Para agregar servidores al grupo de servidores
 
 1.  Si ya se ha abierto el Administrador del servidor, vaya al siguiente paso. Si todavía no se ha abierto el Administrador del servidor, ábralo mediante una de las siguientes acciones.
 
@@ -96,7 +96,7 @@ Puedes agregar servidores al Administrador de servidores para administrar usando
 ### <a name="add-and-manage-servers-in-workgroups"></a>Agregar y administrar servidores en grupos de trabajo
 Aunque se realice correctamente la adición de servidores que se encuentran en grupos de trabajo al Administrador de servidores, después de agregarse, la columna **Capacidad de administración** de la ventana **Servidores** en una página de rol o grupo que incluye un servidor de grupo de trabajo, puedes mostrar errores del tipo **Credenciales no válidas** que se producen al intentar conectarse a o recopilar datos del servidor remoto de grupo de trabajo.
 
-Se pueden producir estos errores o unos similares en las condiciones siguientes.
+Estos errores o similares pueden producirse en las siguientes condiciones.
 
 -   El servidor administrado está en el mismo grupo de trabajo que el equipo que ejecuta el Administrador de servidores.
 
@@ -129,7 +129,7 @@ Se pueden producir estos errores o unos similares en las condiciones siguientes.
 3.  > [!IMPORTANT]
     > La ejecución de cmdlet en este paso invalida las medidas de Control de cuentas de usuario (UAC) que evitan la ejecución de procesos elevados en equipos del grupo de trabajo a menos que la cuenta predefinida de Administrador o la cuenta del Sistema esté ejecutando los procesos. El cmdlet permite que los miembros del grupo Administradores puedan manejar el servidor del grupo de trabajo sin iniciar sesión con la cuenta predefinida de Administrador. Permitir que otros usuarios administren el servidor del grupo de trabajo puede reducir la seguridad; sin embargo, esto es más seguro que proporcionar credenciales de la cuenta predefinida de administrador a varias personas para administrar el servidor del grupo de trabajo.
 
-    Para invalidar las restricciones UAC en los procesos elevados en ejecución en los equipos del grupo de trabajo, cree una entrada del Registro llamada **LocalAccountTokenFilterPolicy** en el servidor de grupo de trabajo mediante la ejecución del siguiente cmdlet.
+    Para invalidar las restricciones UAC en los procesos elevados en ejecución en los equipos del grupo de trabajo, crea una entrada del Registro llamada **LocalAccountTokenFilterPolicy** en el servidor de grupo de trabajo mediante la ejecución del siguiente cmdlet.
 
     ```
     New-ItemProperty -Name LocalAccountTokenFilterPolicy -path HKLM:\SOFTWARE\Microsoft\Windows\Currentversion\Policies\System -propertytype DWord -value 1
@@ -176,6 +176,6 @@ Puedes usar el Administrador de servidores para administrar servidores que se en
 
 -   No puedes instalar roles y características en un servidor virtual en clúster.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Administrador del servidor](server-manager.md)
 [crear y administrar grupos de servidores](create-and-manage-server-groups.md)

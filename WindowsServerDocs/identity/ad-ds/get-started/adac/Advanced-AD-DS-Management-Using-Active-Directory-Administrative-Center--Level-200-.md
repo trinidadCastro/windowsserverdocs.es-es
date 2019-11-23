@@ -98,7 +98,7 @@ La papelera de reciclaje de Active Directory conserva todos los objetos eliminad
   
 El contenedor **Objetos eliminados** muestra todos los objetos restaurables en la partición de dominio. Los objetos eliminados anteriores a **msDS-deletedObjectLifetime** se conocen como objetos reciclados. El Centro de administración de Active Directory no muestra los objetos reciclados y estos objetos no se pueden restaurar usando el Centro de administración de Active Directory.  
   
-Para obtener una explicación más detallada de la arquitectura y las reglas de procesamiento de la papelera de reciclaje, consulte [The de la papelera de reciclaje de AD: Descripción, implementación, procedimientos recomendados y solución de problemas de @ no__t-0.  
+Para obtener una explicación detallada de la arquitectura y las reglas de procesamiento de la papelera de reciclaje, consulte [La papelera de reciclaje de AD: Descripción, implementación, procedimientos recomendados y solución de problemas](http://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx).  
   
 El Centro de administración de Active Directory limita artificialmente a 20.000 el número predeterminado de objetos que se devuelven de un contenedor. Puedes aumentar este límite hasta 100.000 objetos haciendo clic en el menú **Administrar** y, después, **Opciones de la lista de administración**.  
   
@@ -202,7 +202,7 @@ Filtra todos los usuarios de Sales. Presiona las teclas CTRL y A para selecciona
   
 Si la OU **Sales** contenía a su vez OU secundarias, restaurarías primero las OU secundarias antes de restaurar sus secundarias, y así sucesivamente.  
   
-Para restaurar todos los objetos eliminados anidados especificando un contenedor principal eliminado, vea [Appendix B: Restaura varios objetos Active Directory eliminados (script de ejemplo) ](https://technet.microsoft.com/library/dd379504(WS.10).aspx).  
+Para restaurar todos los objetos eliminados anidados especificando un contenedor principal eliminado, consulte el [Apéndice B: Restaurar varios objetos eliminados de Active Directory (script de ejemplo)](https://technet.microsoft.com/library/dd379504(WS.10).aspx).  
   
 El cmdlet de Active Directory Windows PowerShell para restaurar objetos eliminados es:  
 
@@ -450,7 +450,7 @@ Los errores que se muestran cuando no hay disponibles instancias de Servicios we
 |Error|Operación|
 | --- | --- |  
 |"No se pudo conectar a ningún dominio. Actualice o vuelva a intentarlo cuando la conexión esté disponible"|Se muestra al iniciar la aplicación Centro de administración de Active Directory.|
-|"No se puede encontrar un servidor disponible en el dominio *<NetBIOS domain name>* que ejecuta el servicio Web Active Directory (ADWs)"|Se muestra al intentar seleccionar un nodo del dominio en la aplicación Centro de administración de Active Directory.|
+|"No se puede encontrar un servidor disponible en el dominio de *<NetBIOS domain name>* que ejecuta el servicio Web Active Directory (ADWs)"|Se muestra al intentar seleccionar un nodo del dominio en la aplicación Centro de administración de Active Directory.|
   
 Para solucionar este problema, sigue estos pasos:  
   
@@ -470,7 +470,7 @@ Para solucionar este problema, sigue estos pasos:
    Netstat -anob > ports.txt  
    ```
 
-   Examina el archivo ports.txt y comprueba que el servicio ADWS está escuchando en el puerto 9389. Ejemplo:  
+   Examina el archivo ports.txt y comprueba que el servicio ADWS está escuchando en el puerto 9389. Por ejemplo:  
 
    ```
    TCP    0.0.0.0:9389    0.0.0.0:0    LISTENING    1828  
@@ -484,6 +484,6 @@ Para solucionar este problema, sigue estos pasos:
   
 4. Instala NetMon u otra utilidad de captura de red en el equipo donde se ejecuta el Centro de administración de Active Directory y en el controlador de dominio que NLTEST devuelve. Recopila capturas de red simultáneas en ambos equipos mientras inicias el Centro de administración de Active Directory y mira el error antes de detener las capturas. Comprueba si el cliente puede enviar y recibir desde el controlador de dominio en el puerto TCP 9389. Si los paquetes se envían pero no llegan, o llegan y el controlador de dominio responde pero no llegan nunca al cliente, es problema que haya un firewall entre los equipos en la red que pierda los paquetes de ese puerto. Este firewall puede ser de software o hardware, y quizás forme parte de un software de protección de extremos (antivirus) de terceros.  
   
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 [Papelera de reciclaje de AD, directivas de contraseña muy específicas e historial de PowerShell](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  

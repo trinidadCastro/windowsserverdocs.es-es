@@ -26,13 +26,13 @@ Puedes establecer períodos de retención para carpetas e imponer una retención
   
 -   [Requisitos previos](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Prereqs)  
   
--   [Paso 1: Crear definiciones de propiedad de recurso @ no__t-0  
+-   [Paso 1: crear definiciones de propiedad de recurso](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
   
--   [Paso 2: Configurar notificaciones @ no__t-0  
+-   [Paso 2: configuración de notificaciones](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step2)  
   
--   [Paso 3: Crear una tarea de administración de archivos @ no__t-0  
+-   [Paso 3: crear una tarea de administración de archivos](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step3)  
   
--   [Paso 4: Clasificar un archivo manualmente @ no__t-0  
+-   [Paso 4: clasificar un archivo manualmente](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step4)  
   
 > [!NOTE]  
 > Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
@@ -57,7 +57,7 @@ En este paso, se habilitan las propiedades de recurso Período de retención y D
   
 5.  Haz clic con el botón secundario en **Detectabilidad**y, después, haz clic en **Habilitar**.  
   
-@no__t guías 0solution](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+![guías de soluciones](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -66,7 +66,7 @@ Set-ADResourceProperty -Enabled:$true -Identity:'CN=RetentionPeriod_MS,CN=Resour
 Set-ADResourceProperty -Enabled:$true -Identity:'CN=Discoverability_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'  
 ```  
   
-## <a name="BKMK_Step2"></a>Paso 2: Configurar notificaciones  
+## <a name="BKMK_Step2"></a>Paso 2: configuración de notificaciones  
 En este paso, se utiliza la consola del Administrador de recursos del servidor de archivos para configurar el servidor SMTP, la dirección de correo electrónico del administrador predeterminado y la dirección de correo electrónico predeterminada desde la que se envían los informes.  
   
 [Realice este paso con Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
@@ -89,9 +89,9 @@ En este paso, se utiliza la consola del Administrador de recursos del servidor d
   
     -   En el cuadro **dirección de correo electrónico predeterminada "desde"** , escriba la dirección de correo electrónico que se debe usar para enviar las notificaciones.  
   
-6.  Haga clic en **Aceptar**.  
+6.  Haz clic en **Aceptar**.  
   
-@no__t guías 0solution](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+![guías de soluciones](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -99,7 +99,7 @@ Los siguientes cmdlets de Windows PowerShell realizan la misma función que el p
 Set-FsrmSetting -SmtpServer IP address of SMTP server -FromEmailAddress "FromEmailAddress" -AdminEmailAddress "AdministratorEmailAddress"  
 ```  
   
-## <a name="BKMK_Step3"></a>Paso 3: Crear una tarea de administración de archivos  
+## <a name="BKMK_Step3"></a>Paso 3: crear una tarea de administración de archivos  
 En este paso, se utiliza la consola del Administrador de recursos del servidor de archivos para crear una tarea de administración de archivos que se ejecutará el último día del mes y que hará que expiren los archivos que cumplan los siguientes criterios:  
   
 -   El archivo no está clasificado con el estado de retención legal.  
@@ -116,7 +116,7 @@ En este paso, se utiliza la consola del Administrador de recursos del servidor d
   
 2.  Abra el Administrador de recursos del servidor de archivos. En el Administrador del servidor, haz clic en **Herramientas** y, luego, en **Administrador de recursos del servidor de archivos**.  
   
-3.  Haga clic con el botón secundario en **Tarea de administración de archivos**y, a continuación, en **Crear tarea de administración de archivos**.  
+3.  Haga clic con el botón secundario eny, a continuación, en **Crear tarea de administración de archivos**.  
   
 4.  En la pestaña **General**, en el cuadro **Nombre de tarea**, escribe un nombre para la tarea de administración de archivos, como Tarea de retención.  
   
@@ -140,9 +140,9 @@ En este paso, se utiliza la consola del Administrador de recursos del servidor d
   
 10. En la pestaña **Programar** , haz clic en la opción **Mensualmente** y activa la casilla **Último** .  
   
-11. Haga clic en **Aceptar**.  
+11. Haz clic en **Aceptar**.  
   
-@no__t guías 0solution](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+![guías de soluciones](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -158,7 +158,7 @@ $schedule = New-FsrmScheduledTask -Time $date -Monthly @(-1)
 $fmj1=New-FSRMFileManagementJob -Name "Retention Task" -Namespace @('D:\Finance Documents') -Action $fmjexpiration -Schedule $schedule -Notification @($fmjNotification) -Condition @( $fmjCondition1, $fmjCondition2, $fmjCondition3)  
 ```  
   
-## <a name="BKMK_Step4"></a>Paso 4: Clasificar un archivo manualmente  
+## <a name="BKMK_Step4"></a>Paso 4: clasificar un archivo manualmente  
 En este paso, se clasifica manualmente un archivo con el estado de retención legal. La carpeta principal de este archivo se clasificará con un período de retención a largo plazo.  
   
 #### <a name="to-manually-classify-a-file"></a>Cómo clasificar manualmente un archivo  
@@ -185,10 +185,10 @@ En este paso, se clasifica manualmente un archivo con el estado de retención le
   
 ## <a name="BKMK_Links"></a>Vea también  
   
--   [Escenario: Implementar la retención de información en servidores de archivos](Scenario--Implement-Retention-of-Information-on-File-Servers.md)  
+-   [Escenario: implementar la retención de información en servidores de archivos](Scenario--Implement-Retention-of-Information-on-File-Servers.md)  
   
 -   [Planeación de la retención de información en servidores de archivos](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)  
   
--   [Control de acceso dinámico: Información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [Access Control dinámico: información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

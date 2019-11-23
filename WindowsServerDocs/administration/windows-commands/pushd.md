@@ -38,10 +38,10 @@ pushd [<Path>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Path >|Especifica el directorio en el que se va a crear el directorio actual. Este comando admite rutas de acceso relativas.|
+|\<ruta de acceso >|Especifica el directorio en el que se va a crear el directorio actual. Este comando admite rutas de acceso relativas.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Cada vez que se usa el comando **Inserted** , se almacena un solo directorio para su uso. Sin embargo, puede almacenar varios directorios mediante el comando **Inserted** varias veces.
 

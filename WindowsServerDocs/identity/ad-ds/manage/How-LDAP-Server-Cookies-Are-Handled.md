@@ -48,15 +48,15 @@ En este caso, la cookie enviada al cliente por el servidor también la usa el se
 ## <a name="how-the-cookie-pool-is-managed"></a>Cómo se administra el grupo de cookies  
 Obviamente, el servidor LDAP está atendiendo a más de un cliente al mismo tiempo y también más de un cliente cada vez puede iniciar consultas que requieren el uso de la caché de cookies de servidor. Por lo tanto, la implementación de Windows Server ahí es un seguimiento del uso del grupo de cookies y se establecen límites para que el grupo de cookies no tome demasiados recursos. El Administrador puede establecer los límites mediante la siguiente configuración de la directiva LDAP. Los valores predeterminados y las explicaciones son:  
   
-@no__t 0MinResultSets: 4 @ no__t-0  
+**MinResultSets: 4**  
   
 El servidor LDAP no examinará el tamaño máximo del grupo que se describe a continuación, si hay menos de MinResultSets entradas en la caché de cookies del servidor.  
   
-@no__t 0MaxResultSetSize: 262.144 bytes @ no__t-0  
+**MaxResultSetSize:: 262.144 bytes**  
   
 El tamaño total de caché de cookies en el servidor no puede superar el valor máximo de MaxResultSetSize en bytes. Si lo hace, se eliminan las cookies empezando por la más antigua hasta que el grupo es menor que MaxResultSetSize bytes o hay menos de MinResultSets cookies en el grupo. Esto significa que al usar la configuración predeterminada, el servidor LDAP considera que un grupo de 450 KB será correcto si solo hay 3 cookies almacenadas.  
   
-@no__t 0MaxResultSetsPerConn: 10 @ no__t-0  
+**MaxResultSetsPerConn: 10**  
   
 El servidor LDAP no permite más de MaxResultSetsPerConn cookies por conexión LDAP en el grupo.  
   

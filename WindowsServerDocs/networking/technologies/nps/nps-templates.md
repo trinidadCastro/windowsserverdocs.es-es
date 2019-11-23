@@ -19,7 +19,7 @@ ms.locfileid: "71405315"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Las plantillas servidor de directivas de redes \(NPS @ no__t-1 permiten crear elementos de configuración, como Servicio de autenticación remota telefónica de usuario \(RADIUS @ no__t-3 o secretos compartidos, que puede reutilizar en el NPS local y exportar para su uso en otros NPSs.
+Servidor de directivas de redes \(las plantillas de\) de NPS permiten crear elementos de configuración, como Servicio de autenticación remota telefónica de usuario \(RADIUS\) clientes o secretos compartidos, que puede reutilizar en el NPS local y exportar para su uso en otros NPSs.
 
 Las plantillas de NPS están diseñadas para reducir la cantidad de tiempo y el costo que se tarda en configurar NPS en uno o varios servidores. Los siguientes tipos de plantilla de NPS están disponibles para la configuración en la administración de plantillas:
 
@@ -31,7 +31,7 @@ Las plantillas de NPS están diseñadas para reducir la cantidad de tiempo y el 
 
 La configuración de una plantilla es diferente de la configuración de NPS directamente. La creación de una plantilla no afecta a la funcionalidad del NPS. Solo cuando se selecciona la plantilla en la ubicación adecuada en la consola de NPS, la plantilla afecta a la funcionalidad de NPS. 
 
-Por ejemplo, si configura un cliente RADIUS en la consola de NPS en clientes y servidores RADIUS, ha modificado la configuración de NPS y ha realizado un paso en la configuración de NPS para comunicarse con uno de los servidores de acceso a la red \(NAS's @ no__t-1. @no__t paso siguiente sería configurar el NAS para comunicarse con NPS. \) Sin embargo, si configura una nueva plantilla de clientes RADIUS en la consola de NPS en **Administración de plantillas** en lugar de crear un nuevo cliente RADIUS en **clientes y servidores RADIUS**, ha creado una plantilla, pero no ha modificado el NPS todavía. Para modificar la funcionalidad de NPS, debe seleccionar la plantilla en la ubicación correcta en la consola de NPS.
+Por ejemplo, si configura un cliente RADIUS en la consola de NPS en clientes y servidores RADIUS, ha modificado la configuración de NPS y ha realizado un paso en la configuración de NPS para comunicarse con uno de los servidores de acceso a la red \(\)de NAS. \(el siguiente paso sería configurar el NAS para comunicarse con NPS. Sin embargo,\), si configura una nueva plantilla de clientes RADIUS en la consola de NPS en **Administración de plantillas** en lugar de crear un nuevo cliente RADIUS en **clientes y servidores RADIUS**, ha creado una plantilla, pero aún no ha modificado la funcionalidad de NPS. Para modificar la funcionalidad de NPS, debe seleccionar la plantilla en la ubicación correcta en la consola de NPS.
 
 ## <a name="creating-templates"></a>Crear plantillas
 

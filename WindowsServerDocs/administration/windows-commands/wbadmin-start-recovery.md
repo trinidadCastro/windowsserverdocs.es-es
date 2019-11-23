@@ -61,11 +61,11 @@ wbadmin start recovery
 |-recursivo|Solo es válido cuando se recuperan archivos. Recupera los archivos de las carpetas y todos los archivos subordinados a las carpetas especificadas. De forma predeterminada, solo se recuperan los archivos que residen directamente en las carpetas especificadas.|
 |-overwrite|Solo es válido cuando se recuperan archivos. Especifica la acción que debe llevarse a cabo cuando un archivo que se va a recuperar ya existe en la misma ubicación.</br>-   **SKIP** hace que copias de seguridad de Windows Server omita el archivo existente y continúe con la recuperación del siguiente archivo.</br>-   **CreateCopy** hace que copias de seguridad de Windows Server cree una copia del archivo existente para que no se modifique el archivo existente.</br>-   **overwrite** hace que copias de seguridad de Windows Server sobrescriba el archivo existente con el archivo de la copia de seguridad.|
 |-notRestoreAcl|Solo es válido cuando se recuperan archivos. Especifica que no se restauren las listas de control de acceso (ACL) de seguridad de los archivos que se recuperan de la copia de seguridad. De forma predeterminada, se restauran las ACL de seguridad (el valor predeterminado es **true)** . Si se usa este parámetro, las ACL de los archivos restaurados se heredarán de la ubicación en la que se restauran los archivos.|
-|-skipBadClusterCheck|Solo es válido cuando se recuperan volúmenes. Omite la comprobación de los discos a los que se va a recuperar para obtener información de clúster incorrecta. Si va a realizar la recuperación en un servidor o hardware alternativo, se recomienda que no utilice este parámetro. Puede ejecutar manualmente el comando **CHKDSK/b** en estos discos en cualquier momento para comprobarlos en busca de clústeres defectuosos y, a continuación, actualizar la información del sistema de archivos en consecuencia.</br>Importante: Hasta que ejecute **CHKDSK** tal y como se describe, es posible que los clústeres incorrectos notificados en el sistema recuperado no sean precisos.|
+|-skipBadClusterCheck|Solo es válido cuando se recuperan volúmenes. Omite la comprobación de los discos a los que se va a recuperar para obtener información de clúster incorrecta. Si va a realizar la recuperación en un servidor o hardware alternativo, se recomienda que no utilice este parámetro. Puede ejecutar manualmente el comando **CHKDSK/b** en estos discos en cualquier momento para comprobarlos en busca de clústeres defectuosos y, a continuación, actualizar la información del sistema de archivos en consecuencia.</br>Importante: hasta que ejecute **CHKDSK** tal y como se describe, es posible que los clústeres incorrectos notificados en el sistema recuperado no sean precisos.|
 |-noRollForward|Solo es válido cuando se recuperan aplicaciones. Permite la recuperación en un momento dado anterior de una aplicación si se selecciona la versión más reciente de las copias de seguridad. En el caso de otras versiones de la aplicación que no son la última recuperación a un momento dado anterior, se realiza como valor predeterminado.|
 |-quiet|Ejecuta el subcomando sin preguntar al usuario.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Para ver una lista de los elementos que están disponibles para la recuperación a partir de una versión de copia de seguridad específica, use **Wbadmin get items**. Si un volumen no tenía un punto de montaje o una letra de unidad en el momento de la copia de seguridad, este subcomando devolvería un nombre de volumen basado en GUID que se debe usar para recuperar el volumen.
 -   Cuando **-itemType** es una **aplicación**, puede usar un valor de **ADIFM** para que realice una instalación desde el **medio de la** operación para recuperar todos los datos relacionados necesarios para Active Directory Domain Services. **ADIFM** crea una copia de la base de datos Active Directory, el registro y el estado de SYSVOL y, a continuación, guarda esta información en la ubicación especificada por **-recoveryTarget**. Use este parámetro solo cuando se especifica **-recoveryTarget** .
@@ -87,12 +87,12 @@ Para ejecutar una recuperación de la copia de seguridad desde el 31 de marzo de
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:File -items:d:\folder -recursive
 ```
-Para ejecutar una recuperación de la copia de seguridad del 31 de marzo de 2013, tomada a las 9:00 A.M., del volumen \\ @ no__t-1? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963} \,:
+Para ejecutar una recuperación de la copia de seguridad del 31 de marzo de 2013, tomada a las 9:00 A.M., del volumen \\\\? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\, tipo:
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume 
 -items:\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
 ```
-Para ejecutar una recuperación de la copia de seguridad del 30 de abril de 2013, tomada a las 9:00 A.M., de la carpeta compartida \\ @ no__t-1servername\share de Server01, escriba:
+Para ejecutar una recuperación de la copia de seguridad del 30 de abril de 2013, tomada a las 9:00 A.M., de la carpeta compartida \\\\servername\share de Server01, escriba:
 ```
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

@@ -38,9 +38,9 @@ select partition=<n>
   
 |   Parámetro    |                                                                                    Descripción                                                                                    |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Partition @ no__t-0 @ no__t-1 | Número de la partición que va a recibir el foco. Puede ver los números de todas las particiones del disco seleccionado actualmente mediante el comando **List Partition** en Diskpart. |
+| <n> de\=de partición | Número de la partición que va a recibir el foco. Puede ver los números de todas las particiones del disco seleccionado actualmente mediante el comando **List Partition** en Diskpart. |
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
   
 -   Antes de poder seleccionar una partición, primero debe seleccionar un disco con el comando **Seleccionar disco** .  
   
@@ -63,7 +63,7 @@ Para mostrar la partición que tiene actualmente el foco en el disco seleccionad
 select partition  
 ```  
   
-#### <a name="additional-references"></a>Referencias adicionales  
+#### <a name="additional-references"></a>referencias adicionales  
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   
 

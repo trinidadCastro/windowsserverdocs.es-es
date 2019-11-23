@@ -24,7 +24,7 @@ ms.locfileid: "71378561"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Muestra las propiedades del disco duro virtual seleccionado \(VHD @ no__t-1.  
+Muestra las propiedades del disco duro virtual seleccionado \(VHD\).  
   
 ## <a name="syntax"></a>Sintaxis  
   
@@ -32,7 +32,7 @@ Muestra las propiedades del disco duro virtual seleccionado \(VHD @ no__t-1.
 detail vdisk  
 ```  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
   
 -   Se debe seleccionar un disco duro virtual para que esta operación se realice correctamente. Use el comando **Select vDisk** para seleccionar un vDisk y desplazar el foco a él.  
   
@@ -43,7 +43,7 @@ Para ver detalles sobre el disco duro virtual seleccionado, escriba:
 detail vdisk  
 ```  
   
-#### <a name="additional-references"></a>Referencias adicionales  
+#### <a name="additional-references"></a>referencias adicionales  
   
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   

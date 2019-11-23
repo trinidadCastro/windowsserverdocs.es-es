@@ -36,13 +36,13 @@ set timeout=<Number>
 |    <Number>     | Especifica el número de segundos que se va a esperar una respuesta. El número predeterminado de segundos de espera es 5. |
 | {ayuda &#124; ?} |                      Muestra un breve resumen de los subcomandos de **nslookup** .                       |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 - Cuando no se recibe una respuesta a una solicitud dentro del período de tiempo especificado, se duplica el tiempo de espera y se envía de nuevo la solicitud. Puede usar el comando **establecer reintento** para controlar el número de reintentos.
   ## <a name="BKMK_examples"></a>Example
   En el ejemplo siguiente se establece el tiempo de espera para obtener una respuesta a 2 segundos:
   ```
   set timeout=2
   ```
-  ## <a name="additional-references"></a>Referencias adicionales
+  ## <a name="additional-references"></a>referencias adicionales
   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-  [nslookup establecer reintento](nslookup-set-retry.md)
+  [nslookup set retry](nslookup-set-retry.md)

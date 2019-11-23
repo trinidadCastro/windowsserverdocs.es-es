@@ -24,7 +24,7 @@ ms.locfileid: "71377308"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-extiende el volumen o la partición con el foco y su sistema de archivos en un espacio \(unallocated @ no__t-1 gratuito en un disco.  
+extiende el volumen o la partición con el foco y el sistema de archivos en el espacio de\) libre \(sin asignar en un disco.  
   
   
   
@@ -39,16 +39,16 @@ extend filesystem [noerr]
   
 | Parámetro  |                                                                                             Descripción                                                                                              |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Size @ no__t-0 @ no__t-1  |      Especifica la cantidad de espacio en megabytes \(MB @ no__t-1 que se va a agregar al volumen o partición actual. Si no se proporciona ningún tamaño, se usa todo el espacio libre contiguo que está disponible en el disco.       |
-| disco @ no__t-0 @ no__t-1  |                          Especifica el disco en el que se extiende el volumen o la partición. Si no se especifica ningún disco, el volumen o la partición se amplía en el disco actual.                          |
+| tamaño\=<n>  |      Especifica la cantidad de espacio en megabytes \(MB\) que se va a agregar al volumen o partición actual. Si no se proporciona ningún tamaño, se usa todo el espacio libre contiguo que está disponible en el disco.       |
+| <n> de\=de disco  |                          Especifica el disco en el que se extiende el volumen o la partición. Si no se especifica ningún disco, el volumen o la partición se amplía en el disco actual.                          |
 | Systems |                                   extiende el sistema de archivos del volumen que tiene el foco. Para su uso solo en discos en los que el sistema de archivos no se extendió con el volumen.                                    |
-|   Noerr    | Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
+|   Noerr    | solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
   
--   En los discos básicos, el espacio disponible debe estar en el mismo disco que el volumen o la partición que tiene el foco. También debe seguir inmediatamente el volumen o la partición con el foco \(that es, debe comenzar en el siguiente desplazamiento del sector @ no__t-1.  
+-   En los discos básicos, el espacio disponible debe estar en el mismo disco que el volumen o la partición que tiene el foco. También debe seguir inmediatamente el volumen o la partición con el foco \(es decir, debe comenzar en el siguiente desplazamiento del sector\).  
   
--   En los discos dinámicos con volúmenes simples o distribuidos, se puede extender un volumen a cualquier espacio disponible en cualquier disco dinámico. Con este comando, puede convertir un volumen dinámico simple en un volumen dinámico distribuido. Reflejado, RAID @ no__t-05 y volúmenes seccionados no se pueden extender.  
+-   En los discos dinámicos con volúmenes simples o distribuidos, se puede extender un volumen a cualquier espacio disponible en cualquier disco dinámico. Con este comando, puede convertir un volumen dinámico simple en un volumen dinámico distribuido. Reflejado, RAID\-5 y volúmenes seccionados no se pueden extender.  
   
 -   Si se formateó la partición anteriormente con el sistema de archivos NTFS, el sistema de archivos se extiende automáticamente para rellenar la partición más grande y no se producirá ninguna pérdida de datos.  
   
@@ -71,7 +71,7 @@ Para extender el sistema de archivos de un volumen una vez extendido, escriba:
 extend filesystem  
 ```  
   
-#### <a name="additional-references"></a>Referencias adicionales  
+#### <a name="additional-references"></a>referencias adicionales  
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   
 

@@ -38,10 +38,10 @@ Systeminfo [/s <Computer> [/u <Domain>\<UserName> [/p <Password>]]] [/fo {TABLE 
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/s \<Computer >|Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.|
-|/u \<Domain > \<UserName >|Ejecuta el comando con los permisos de cuenta de la cuenta de usuario especificada. Si no se especifica **/u** , este comando usa los permisos del usuario que ha iniciado sesión actualmente en el equipo que emite el comando.|
+|/s \<equipo >|Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.|
+|/u \<> de dominio\<nombreDeUsuario >|Ejecuta el comando con los permisos de cuenta de la cuenta de usuario especificada. Si no se especifica **/u** , este comando usa los permisos del usuario que ha iniciado sesión actualmente en el equipo que emite el comando.|
 |/p \<contraseña >|Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .|
-|/FO @no__t 0Format >|Especifica el formato de salida con uno de los siguientes valores:</br>CUADRO Muestra la salida en una tabla.</br>LISTA Muestra la salida en una lista.</br>CVS Muestra la salida en formato de valores separados por comas.|
+|/FO \<formato >|Especifica el formato de salida con uno de los siguientes valores:</br>TABLA: muestra la salida en una tabla.</br>LIST: muestra la salida en una lista.</br>CSV: muestra la salida en formato de valores separados por comas.|
 |/NH|Suprime los encabezados de columna en la salida. Válido cuando el parámetro **/FO** está establecido en Table o CSV.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 

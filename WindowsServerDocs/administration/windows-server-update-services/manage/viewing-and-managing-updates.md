@@ -74,9 +74,9 @@ En la página **actualizaciones** , puede hacer lo siguiente:
 
 4.  En **paso 2: editar las propiedades**, haga clic en las palabras subrayadas para seleccionar los valores que desee.
 
-5.  En @no__t 0Step 3: Especifique un nombre @ no__t-0, asigne un nombre a la nueva vista.
+5.  En **paso 3: especifique un nombre**, asigne un nombre a la nueva vista.
 
-6.  Haga clic en **Aceptar**.
+6.  Haz clic en **Aceptar**.
 
 La nueva vista aparecerá en el panel vista de árbol en actualizaciones. Se mostrará, como las vistas estándar, en el panel central al seleccionarlo.
 
@@ -123,11 +123,11 @@ Tenga en cuenta que este procedimiento solo se puede realizar en una actualizaci
 ## <a name="managing-updates-with-wsus"></a>Administración de actualizaciones con WSUS
 Las actualizaciones se usan para actualizar o proporcionar una sustitución completa de archivos para el software instalado en un equipo. Cada actualización que está disponible en Microsoft Update se compone de dos componentes:
 
--   Repositorio Proporciona información acerca de la actualización. Por ejemplo, los metadatos proporcionan información para las propiedades de una actualización, lo que le permite averiguar cuál es la utilidad de actualización. Los metadatos también incluyen términos de licencia del software de Microsoft. El paquete de metadatos descargado para una actualización suele ser mucho menor que el paquete del archivo de actualización real.
+-   Metadata: proporciona información acerca de la actualización. Por ejemplo, los metadatos proporcionan información para las propiedades de una actualización, lo que le permite averiguar cuál es la utilidad de actualización. Los metadatos también incluyen términos de licencia del software de Microsoft. El paquete de metadatos descargado para una actualización suele ser mucho menor que el paquete del archivo de actualización real.
 
--   Archivos de actualización: Los archivos reales necesarios para instalar una actualización en un equipo.
+-   Archivos de actualización: los archivos reales necesarios para instalar una actualización en un equipo.
 
-Cuando se sincronizan las actualizaciones con su servidor WSUS, los archivos de actualización y los metadatos se almacenan en dos ubicaciones independientes. Los metadatos se almacenan en la base de datos de WSUS. Los archivos de actualización se pueden almacenar en el servidor WSUS o en servidores de Microsoft Update, en función de cómo haya configurado las opciones de sincronización. Si decide almacenar los archivos de actualización en servidores de Microsoft Update, solo se descargan los metadatos en el momento de la sincronización; las actualizaciones se aprueban a través de la consola de WSUS y, a continuación, los equipos cliente obtienen los archivos de actualización directamente desde Microsoft Update en el momento de la instalación. Para obtener más información sobre las opciones de almacenamiento de actualizaciones, consulte la sección [1,3. Elija una estrategia de almacenamiento de WSUS @ no__t-0 del paso 1: Prepárese para la implementación de WSUS, en la guía de implementación de WSUS.
+Cuando se sincronizan las actualizaciones con su servidor WSUS, los archivos de actualización y los metadatos se almacenan en dos ubicaciones independientes. Los metadatos se almacenan en la base de datos de WSUS. Los archivos de actualización se pueden almacenar en el servidor WSUS o en servidores de Microsoft Update, en función de cómo haya configurado las opciones de sincronización. Si decide almacenar los archivos de actualización en servidores de Microsoft Update, solo se descargan los metadatos en el momento de la sincronización; las actualizaciones se aprueban a través de la consola de WSUS y, a continuación, los equipos cliente obtienen los archivos de actualización directamente desde Microsoft Update en el momento de la instalación. Para obtener más información sobre las opciones de almacenamiento de actualizaciones, consulte la sección [1,3. Elija una estrategia de almacenamiento de WSUS](../plan/plan-your-wsus-deployment.md#13-choose-a-wsus-storage-strategy) de paso 1: preparación para la implementación de WSUS, en la guía de implementación de WSUS.
 
 Podrá configurar y ejecutar sincronizaciones, agregar equipos y grupos de equipos e implementar actualizaciones de forma periódica. En la lista siguiente se proporcionan ejemplos de tareas generales que se pueden llevar a cabo en la actualización de equipos con WSUS.
 
