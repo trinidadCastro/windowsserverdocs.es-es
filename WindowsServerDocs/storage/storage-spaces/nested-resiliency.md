@@ -18,7 +18,7 @@ ms.locfileid: "71402868"
 
 > Se aplica a: Windows Server 2019
 
-La resistencia anidada es una nueva capacidad de [espacios de almacenamiento directo](storage-spaces-direct-overview.md) en Windows Server 2019 que permite que un clúster de dos servidores resista varios errores de hardware al mismo tiempo sin pérdida de disponibilidad de almacenamiento, por lo que los usuarios, las aplicaciones y las máquinas virtuales continúe ejecutándose sin interrupciones. En este tema se explica cómo funciona, se proporcionan instrucciones paso a paso para comenzar y se responde a las preguntas más frecuentes.
+La resistencia anidada es una nueva capacidad de [espacios de almacenamiento directo](storage-spaces-direct-overview.md) en Windows Server 2019 que permite que un clúster de dos servidores resista varios errores de hardware al mismo tiempo sin pérdida de disponibilidad de almacenamiento, por lo que los usuarios, las aplicaciones y las máquinas virtuales continúan ejecutándose sin interrupciones. En este tema se explica cómo funciona, se proporcionan instrucciones paso a paso para comenzar y se responde a las preguntas más frecuentes.
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -42,7 +42,7 @@ La desventaja es que la resistencia anidada tiene **menos eficiencia de la capac
 
 ## <a name="how-it-works"></a>Cómo funciona
 
-### <a name="inspiration-raid-51"></a>Ideas RAID 5 + 1
+### <a name="inspiration-raid-51"></a>Inspiración: RAID 5 + 1
 
 RAID 5 + 1 es una forma establecida de resistencia de almacenamiento distribuido que proporciona información útil para comprender la resistencia anidada. En RAID 5 + 1, en cada servidor, RAID-5, o *paridad única*, proporciona resistencia local para protegerse frente a la pérdida de una sola unidad. Después, RAID-1, o la *creación de reflejo bidireccional*, proporciona resistencia adicional entre los dos servidores para protegerse frente a la pérdida de cualquiera de los servidores.
 
@@ -86,9 +86,9 @@ Observe que la eficacia de la capacidad del reflejo bidireccional clásico (apro
 
 Puede usar cmdlets de almacenamiento conocidos en PowerShell para crear volúmenes con resistencia anidada.
 
-### <a name="step-1-create-storage-tier-templates"></a>Paso 1: Crear plantillas de capa de almacenamiento
+### <a name="step-1-create-storage-tier-templates"></a>Paso 1: creación de plantillas de capa de almacenamiento
 
-En primer lugar, cree nuevas plantillas de capa de almacenamiento con el cmdlet `New-StorageTier`. Solo tiene que hacer esto una vez y cada nuevo volumen que cree puede hacer referencia a estas plantillas. Especifique el @no__t 0 de las unidades de capacidad y, opcionalmente, el `-FriendlyName` de su elección. No modifique los otros parámetros.
+En primer lugar, cree nuevas plantillas de capa de almacenamiento con el cmdlet `New-StorageTier`. Solo tiene que hacer esto una vez y cada nuevo volumen que cree puede hacer referencia a estas plantillas. Especifique el `-MediaType` de las unidades de capacidad y, opcionalmente, el `-FriendlyName` de su elección. No modifique los otros parámetros.
 
 Si las unidades de capacidad son unidades de disco duro (HDD), inicie PowerShell como administrador y ejecute:
 
@@ -105,13 +105,13 @@ Si las unidades de capacidad son unidades de estado sólido (SSD), establezca el
 > [!TIP]
 > Compruebe que los niveles se crearon correctamente con `Get-StorageTier`.
 
-### <a name="step-2-create-volumes"></a>Paso 2: Crear volúmenes
+### <a name="step-2-create-volumes"></a>Paso 2: creación de volúmenes
 
 A continuación, cree nuevos volúmenes con el cmdlet `New-Volume`.
 
 #### <a name="nested-two-way-mirror"></a>Reflejo doble anidado
 
-Para usar un reflejo bidireccional anidado, haga referencia a la plantilla de nivel `NestedMirror` y especifique el tamaño. Por ejemplo:
+Para usar un reflejo bidireccional anidado, haga referencia a la plantilla de nivel de `NestedMirror` y especifique el tamaño. Por ejemplo:
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFriendlyNames NestedMirror -StorageTierSizes 500GB
@@ -125,15 +125,15 @@ Para usar la paridad anidada con aceleración de reflejo, haga referencia a las 
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFriendlyNames NestedMirror, NestedParity -StorageTierSizes 100GB, 400GB
 ```
 
-### <a name="step-3-continue-in-windows-admin-center"></a>Paso 3: Continuar en el centro de administración de Windows
+### <a name="step-3-continue-in-windows-admin-center"></a>Paso 3: continuar en el centro de administración de Windows
 
 Los volúmenes que usan resistencia anidada aparecen en el [centro de administración de Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center) con etiquetas claras, como se muestra en la captura de pantalla siguiente. Una vez creados, puede administrarlos y supervisarlos mediante el centro de administración de Windows como cualquier otro volumen en Espacios de almacenamiento directo.
 
 ![](media/nested-resiliency/windows-admin-center.png)
 
-### <a name="optional-extend-to-cache-drives"></a>Opcional: Extender a unidades de caché
+### <a name="optional-extend-to-cache-drives"></a>Opcional: extender a unidades de caché
 
-Con su configuración predeterminada, la resistencia anidada protege frente a la pérdida de varias unidades de capacidad al mismo tiempo, o de una unidad de servidor y de capacidad al mismo tiempo. Para ampliar esta protección a las [unidades de caché](understand-the-cache.md) se debe tener en cuenta lo siguiente: dado que las unidades de memoria caché proporcionan a menudo almacenamiento en caché de lectura *y escritura* para *varias* unidades de capacidad, la única manera de asegurarse de que puede tolerar la pérdida de una unidad de caché cuando el otro servidor está inactivo es simplemente no almacenar en caché escrituras, pero esto afecta al rendimiento.
+Con su configuración predeterminada, la resistencia anidada protege frente a la pérdida de varias unidades de capacidad al mismo tiempo, o de una unidad de servidor y de capacidad al mismo tiempo. Para ampliar esta protección a las [unidades de caché](understand-the-cache.md) se debe tener en cuenta lo siguiente: dado que las unidades de caché proporcionan a menudo almacenamiento en caché de lectura *y escritura* para unidades de *varias* capacidades, la única manera de asegurarse de que puede tolerar la pérdida de una unidad de caché cuando el otro servidor está inactivo es simplemente no almacenar en caché escrituras, pero esto afecta al rendimiento.
 
 Para abordar este escenario, Espacios de almacenamiento directo ofrece la opción de deshabilitar automáticamente el almacenamiento en caché de escritura cuando un servidor de un clúster de dos servidores está inactivo y volver a habilitar el almacenamiento en caché de escritura una vez que el servidor se copia de seguridad. Para permitir el reinicio de rutina sin impacto en el rendimiento, el almacenamiento en caché de escritura no está deshabilitado hasta que el servidor ha estado inactivo durante 30 minutos. Una vez deshabilitado el almacenamiento en caché de escritura, el contenido de la memoria caché de escritura se escribe en los dispositivos de capacidad. Después, el servidor puede tolerar un error en el dispositivo de caché en el servidor en línea, aunque las lecturas de la memoria caché se pueden retrasar o generar un error si se produce un error en un dispositivo de caché.
 
@@ -159,7 +159,7 @@ No, los volúmenes no se pueden convertir entre tipos de resistencia. En el caso
 
 ### <a name="can-i-use-nested-resiliency-with-multiple-types-of-capacity-drives"></a>¿Puedo usar la resistencia anidada con varios tipos de unidades de capacidad?
 
-Sí, solo tiene que especificar el `-MediaType` de cada nivel como corresponda durante el [paso 1](#step-1-create-storage-tier-templates) anterior. Por ejemplo, con NVMe, SSD y HDD en el mismo clúster, NVMe proporciona memoria caché mientras que las dos últimas proporcionan capacidad: establezca el nivel `NestedMirror` en `-MediaType SSD` y el nivel @no__t 2 en `-MediaType HDD`. En este caso, tenga en cuenta que la eficacia de la capacidad de paridad depende solo del número de unidades HDD y necesita al menos 4 de ellas por servidor.
+Sí, solo tiene que especificar el `-MediaType` de cada nivel como corresponda durante el [paso 1](#step-1-create-storage-tier-templates) anterior. Por ejemplo, con NVMe, SSD y HDD en el mismo clúster, NVMe proporciona memoria caché mientras que las dos últimas proporcionan capacidad: establezca el nivel de `NestedMirror` en `-MediaType SSD` y el nivel de `NestedParity` en `-MediaType HDD`. En este caso, tenga en cuenta que la eficacia de la capacidad de paridad depende solo del número de unidades HDD y necesita al menos 4 de ellas por servidor.
 
 ### <a name="can-i-use-nested-resiliency-with-3-or-more-servers"></a>¿Puedo usar la resistencia anidada con 3 o más servidores?
 
@@ -184,7 +184,7 @@ No. Para reemplazar un nodo de servidor y sus unidades, siga este orden:
 
 Para obtener más información, consulte el tema [quitar servidores](remove-servers.md) .
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Comprender la tolerancia a errores en Espacios de almacenamiento directo](storage-spaces-fault-tolerance.md)

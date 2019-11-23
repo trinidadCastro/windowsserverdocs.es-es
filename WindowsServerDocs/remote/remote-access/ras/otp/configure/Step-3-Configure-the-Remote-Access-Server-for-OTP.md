@@ -63,7 +63,7 @@ Para configurar el acceso remoto para que use la autenticación en dos fases y O
     > [!NOTE]  
     > Una vez que se haya habilitado OTP en el servidor de acceso remoto, si se deshabilita OTP mediante la anulación de la selección de **usar OTP**, se desinstalarán las extensiones ISAPI y CGI en el servidor.  
   
-4.  Si se requiere compatibilidad con Windows 7, active la casilla **permitir que los equipos cliente de Windows 7 se conecten a través de DirectAccess** . Nota: Como se describe en la sección de planeación, los clientes de Windows 7 deben tener DCA 2,0 instalado para admitir DirectAccess con OTP.  
+4.  Si se requiere compatibilidad con Windows 7, active la casilla **permitir que los equipos cliente de Windows 7 se conecten a través de DirectAccess** . Nota: como se describe en la sección planeación, los clientes de Windows 7 deben tener DCA 2,0 instalado para admitir DirectAccess con OTP.  
   
 5.  Haz clic en **Siguiente**.  
   
@@ -81,7 +81,7 @@ Para configurar el acceso remoto para que use la autenticación en dos fases y O
     > [!NOTE]  
     > La plantilla de certificado para los certificados OTP emitidos por la entidad de certificación corporativa debe estar configurada sin la opción "no incluir información de revocación en los certificados emitidos". Si esta opción se selecciona durante la creación de la plantilla de certificado, los equipos cliente de OTP no podrán iniciar sesión correctamente.  
   
-    Haga clic en **examinar** para seleccionar una plantilla de certificado que se usa para inscribir el certificado usado por el servidor de acceso remoto para firmar las solicitudes de inscripción de certificado de OTP. Haga clic en **Aceptar**. Haz clic en **Siguiente**.  
+    Haga clic en **examinar** para seleccionar una plantilla de certificado que se usa para inscribir el certificado usado por el servidor de acceso remoto para firmar las solicitudes de inscripción de certificado de OTP. Haz clic en **Aceptar**. Haz clic en **Siguiente**.  
   
 10. Si se requiere la exención de usuarios específicos de DirectAccess con OTP, en la sección **exenciones de OTP** , seleccione no **requerir que los usuarios del grupo de seguridad especificado se autentiquen con la autenticación en dos fases**. Haga clic en **grupo de seguridad** y seleccione el grupo de seguridad que se creó para las exenciones de OTP.  
   
@@ -105,7 +105,7 @@ Para configurar el acceso remoto para que use la autenticación en dos fases y O
   
 Para configurar el acceso remoto para OTP mediante comandos de PowerShell:  
   
-](../../../../media/Step-3-Configure-the-Remote-Access-Server-for-OTP/PowerShellLogoSmall.gif)**comandos equivalentes de Windows PowerShell** de @no__t 0Windows PowerShell  
+![](../../../../media/Step-3-Configure-the-Remote-Access-Server-for-OTP/PowerShellLogoSmall.gif)**comandos equivalentes** de Windows PowerShell Windows PowerShell  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -150,7 +150,7 @@ Para permitir el acceso temporal a los usuarios con tarjetas inteligentes inutil
   
 Para conceder acceso a un usuario que no puede usar su tarjeta inteligente, agregue temporalmente su cuenta de usuario al grupo de seguridad de Active Directory. Quite la cuenta de usuario del grupo cuando la tarjeta inteligente sea utilizable.  
   
-### <a name="under-the-covers-smart-card-authorization"></a>Información adicional: Autorización mediante tarjeta inteligente  
+### <a name="under-the-covers-smart-card-authorization"></a>En segundo plano: autorización mediante tarjeta inteligente  
 La autorización mediante tarjeta inteligente funciona habilitando la autorización de modo de túnel en la regla de seguridad de conexión del túnel de intranet del servidor de DirectAccess para un identificador de seguridad (SID) basado en Kerberos determinado. Para la autorización mediante tarjeta inteligente, es el SID conocido (S-1-5-65-1), que se asigna a los inicio de sesión basados en tarjeta inteligente. Este SID está presente en el token de Kerberos de un cliente de DirectAccess y se conoce como "este certificado de organización" cuando se configura en la configuración de autorización del modo de túnel IPsec global.  
   
 Al habilitar la autorización mediante tarjeta inteligente en el paso 2 del Asistente para configuración de DirectAccess, el Asistente para configuración de DirectAccess configura la configuración de autorización del modo de túnel IPsec global con este SID para el servidor de DirectAccess directiva de grupo objeto. Para ver esta configuración en el complemento Firewall de Windows con seguridad avanzada para el servidor de DirectAccess directiva de grupo objeto, haga lo siguiente:  

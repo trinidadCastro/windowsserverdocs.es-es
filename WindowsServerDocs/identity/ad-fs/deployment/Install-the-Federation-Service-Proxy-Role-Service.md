@@ -18,7 +18,7 @@ ms.locfileid: "71359571"
 ---
 # <a name="install-the-federation-service-proxy-role-service"></a>Instalar el servicio de rol Proxy de Servicio de federación
 
-Después de configurar un equipo con los certificados y las aplicaciones de requisitos previos, está listo para instalar el servicio de rol Proxy de Servicio de federación de Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1. Puede usar el siguiente procedimiento para instalar el servicio de rol Proxy de Servicio de federación. Al instalar el servicio de rol de Proxy de Servicio de federación en un equipo, ese equipo se convierte en un servidor proxy de Federación.  
+Después de configurar un equipo con los certificados y las aplicaciones de requisitos previos, está listo para instalar el servicio de rol Proxy de Servicio de federación de Servicios de federación de Active Directory (AD FS) \(AD FS\). Puede usar el siguiente procedimiento para instalar el servicio de rol Proxy de Servicio de federación. Al instalar el servicio de rol de Proxy de Servicio de federación en un equipo, ese equipo se convierte en un servidor proxy de Federación.  
   
 El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
@@ -28,9 +28,9 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
   
 2.  Haga clic en **administrar**y, a continuación, haga clic en **Agregar roles y características** para iniciar el Asistente para agregar roles y características.  
   
-3.  En la página **Antes de comenzar** , haga clic en **Siguiente**.  
+3.  En la página **Before you begin**, haz clic en **Next**.  
   
-4.  En la página **Seleccionar tipo de instalación** , haga clic en **role @ no__t-2Based o en Feature @ no__t-3based Installation**y haga clic en **Next**.  
+4.  En la página **Seleccionar tipo de instalación** , haga clic en **rol\-basado o en instalación basada en\-de características**y, a continuación, haga clic en **siguiente**.  
   
 5.  En la página **Seleccionar servidor de destino** , haga clic en **seleccionar un servidor del grupo de servidores**, compruebe que el equipo de destino esté resaltado y, a continuación, haga clic en **siguiente**.  
   
@@ -57,8 +57,8 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de comprobación: configuración de un servidor de Federación](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[Lista de comprobación: configuración de un servidor proxy de federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[Lista de comprobación: configuración de un servidor proxy de Federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 

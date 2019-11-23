@@ -18,27 +18,27 @@ ms.locfileid: "71408452"
 ---
 # <a name="add-a-token-decrypting-certificate"></a>Agregar un certificado de descifrado de tokens
 
-Los servidores de Federación usan un certificado de token @ no__t-0decryption cuando un servidor de Federación de usuario de confianza debe descifrar los tokens que se emiten con un certificado anterior después de establecer un nuevo certificado como el certificado de descifrado principal. Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1 usa el certificado Capa de sockets seguros \(SSL @ no__t-3 para Internet Information Services \(IIS @ no__t-5 como el certificado de descifrado predeterminado.  
+Los servidores de Federación usan un certificado de descifrado de\-de token cuando un servidor de Federación de usuario de confianza debe descifrar los tokens que se emiten con un certificado anterior después de establecer un nuevo certificado como el certificado de descifrado principal. Servicios de federación de Active Directory (AD FS) \(AD FS\) usa el certificado capa de sockets seguros \(SSL\) para Internet Information Services \(IIS\) como el certificado de descifrado predeterminado.  
   
 > [!CAUTION]  
-> Los certificados usados para el token @ no__t-0decrypting son fundamentales para la estabilidad del Servicio de federación. Dado que la pérdida o la eliminación no planeada de los certificados configurados con este fin pueden interrumpir el servicio, debe realizar una copia de seguridad de todos los certificados configurados con este fin.  
+> Los certificados usados para el descifrado de\-de token son fundamentales para la estabilidad de la Servicio de federación. Dado que la pérdida o la eliminación no planeada de los certificados configurados con este fin pueden interrumpir el servicio, debe realizar una copia de seguridad de todos los certificados configurados con este fin.  
   
-Puede usar el siguiente procedimiento para agregar el certificado de token @ no__t-0decrypting al AD FS Management Add @ no__t-1in desde un archivo que haya exportado.  
+Puede usar el siguiente procedimiento para agregar el token\-el descifrado del certificado al ajuste de administración de AD FS\-en desde un archivo que haya exportado.  
   
-El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en \( [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477) http:\/\/go.Microsoft.com\/fwlink\/? LinkId\=83477\).   
+El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas adecuadas y las pertenencias a grupos en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.Microsoft.com\/fwlink\/? LinkId\=83477\).   
   
-### <a name="to-add-a-token-decrypting-certificate"></a>Para agregar un token @ no__t-0decrypting  
+### <a name="to-add-a-token-decrypting-certificate"></a>Para agregar un token\-descifrar el certificado  
   
 1.  En la pantalla **Inicio** , escriba**AD FS Management**y, a continuación, presione Entrar.  
   
-2.  En el árbol de consola, duplique el **servicio**@ no__t-0click y, a continuación, haga clic en **certificados**.  
+2.  En el árbol de consola, haga doble\-haga clic en **servicio**y, a continuación, haga clic en **certificados**.  
   
-3.  En el panel **acciones** , haga clic en el vínculo **Agregar token @ no__t-2Decrypting** .  
+3.  En el panel **acciones** , haga clic en el vínculo **Agregar token\-descifrar certificado** .  
   
 4.  En el cuadro de diálogo **Buscar archivo de certificado** , navegue hasta el archivo de certificado que desea agregar, seleccione el archivo de certificado y, a continuación, haga clic en **abrir**.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de comprobación: configuración de un servidor de Federación](Checklist--Setting-Up-a-Federation-Server.md)  
   
 [Requisitos de certificado para servidores de federación](https://technet.microsoft.com/library/dd807040.aspx)  
   

@@ -18,9 +18,9 @@ ms.locfileid: "71404234"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>Publicación de aplicaciones con SharePoint, Exchange y RDG
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2016
 
-el contenido de **This es relevante para la versión local del proxy de aplicación Web. Para habilitar el acceso seguro a aplicaciones locales a través de la nube, consulte el [contenido del proxy de aplicación de Azure ad](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
+**Este contenido es relevante para la versión local del proxy de aplicación Web. Para habilitar el acceso seguro a aplicaciones locales a través de la nube, consulte el [contenido del proxy de aplicación Azure ad](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
 
 En este tema se describen las tareas necesarias para publicar SharePoint Server, Exchange Server o la puerta de enlace de Escritorio remoto (RDP) a través del proxy de aplicación Web.  
 
@@ -46,7 +46,7 @@ En la tabla siguiente se describen los servicios de Exchange que se pueden publi
 
 |    Servicio de Exchange    |                                                                            Autenticación previa                                                                            |                                                                                                                                       Notas                                                                                                                                        |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    Outlook Web App     | -AD FS mediante la autenticación no basada en notificaciones<br />-Paso a través<br />-AD FS el uso de la autenticación basada en notificaciones para Exchange 2013 Service Pak 1 (SP1) local |                                                                  Para obtener más información, consulta: [Uso de la autenticación basada en notificaciones de AD FS con Outlook Web App y EAC](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
+|    Outlook Web App     | -AD FS mediante la autenticación no basada en notificaciones<br />-Paso a través<br />-AD FS el uso de la autenticación basada en notificaciones para Exchange 2013 Service Pak 1 (SP1) local |                                                                  Para más información, vea: [Usar la autenticación basada en notificaciones de AD FS con Outlook Web App y EAC](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
 | Panel de control de Exchange |                                                                               Paso a través                                                                               |                                                                                                                                                                                                                                                                                    |
 |    Outlook en cualquier lugar    |                                                                               Paso a través                                                                               | Debe publicar tres direcciones URL para que Outlook en cualquier lugar funcione correctamente:<br /><br />-La dirección URL de detección automática.<br />: El nombre de host externo del servidor de Exchange; es decir, la dirección URL que está configurada para que los clientes se conecten a.<br />: El nombre de dominio completo interno del servidor de Exchange. |
 |  Exchange ActiveSync   |                                                     Paso a través<br/> AD FS mediante el protocolo de autorización básico HTTP                                                      |                                                                                                                                                                                                                                                                                    |
@@ -66,11 +66,11 @@ Si quiere restringir el acceso a la puerta de enlace de acceso remoto y agregar 
 
 1. La instalación será diferente en función de si los roles de acceso web de escritorio remoto (/RDWeb) y de puerta de enlace de escritorio remoto (RPC) están en el mismo servidor o en servidores diferentes.  
 
-2. Si los roles acceso web de escritorio remoto y puerta de enlace de escritorio remoto se hospedan en el mismo servidor RDG, puede simplemente publicar el FQDN raíz en el proxy de aplicación web como, https://rdg.contoso.com/.  
+2. Si los roles acceso web de escritorio remoto y puerta de enlace de escritorio remoto se hospedan en el mismo servidor RDG, puede simplemente publicar el FQDN raíz en el proxy de aplicación Web, como https://rdg.contoso.com/.  
 
-   También puede publicar los dos directorios virtuales individualmente, por ejemplo <https://rdg.contoso.com/rdweb/> y https://rdg.contoso.com/rpc/.  
+   También puede publicar los dos directorios virtuales individualmente, por ejemplo<https://rdg.contoso.com/rdweb/> y https://rdg.contoso.com/rpc/.  
 
-3. Si el acceso web de escritorio remoto y la puerta de enlace de escritorio remoto se hospedan en servidores independientes de RDG, tiene que publicar los dos directorios virtuales de forma individual. Puede usar el mismo nombre de dominio completo externo o uno diferente, por ejemplo, https://rdweb.contoso.com/rdweb/ y https://gateway.contoso.com/rpc/.  
+3. Si el acceso web de escritorio remoto y la puerta de enlace de escritorio remoto se hospedan en servidores independientes de RDG, tiene que publicar los dos directorios virtuales de forma individual. Puede usar el mismo nombre de dominio completo externo, por ejemplo, https://rdweb.contoso.com/rdweb/ y https://gateway.contoso.com/rpc/.  
 
 4. Si los FQDN externos e internos son diferentes, no debe deshabilitar la traducción de encabezados de solicitud en la regla de publicación de RDWeb. Esto puede hacerse mediante la ejecución del siguiente script de PowerShell en el servidor proxy de aplicación Web, pero debe estar habilitado de forma predeterminada.
 
@@ -106,7 +106,7 @@ Si quiere restringir el acceso a la puerta de enlace de acceso remoto y agregar 
 
         Esta es la relación de confianza para usuario autenticado que usará al publicar la aplicación en el proxy de aplicación Web.  
 
-4.  Publique la raíz del sitio (por ejemplo, https://rdg.contoso.com/ ) en el proxy de aplicación Web. Establezca la autenticación previa en AD FS y use la relación de confianza para usuario autenticado que creó anteriormente. Esto permitirá a/RDWeb y/RPC usar la misma cookie de autenticación del proxy de aplicación Web.  
+4.  Publique la raíz del sitio (por ejemplo, https://rdg.contoso.com/) en el proxy de aplicación Web. Establezca la autenticación previa en AD FS y use la relación de confianza para usuario autenticado que creó anteriormente. Esto permitirá a/RDWeb y/RPC usar la misma cookie de autenticación del proxy de aplicación Web.  
 
     Es posible publicar/RDWeb y/RPC como aplicaciones independientes e incluso usar diferentes servidores publicados. Solo tiene que asegurarse de publicar ambos usando la misma relación de confianza para usuario autenticado que el token del proxy de aplicación web se emite para la relación de confianza para usuario autenticado y, por lo tanto, es válida entre las aplicaciones publicadas con la misma relación de confianza para usuario autenticado.  
 
@@ -118,7 +118,7 @@ Si quiere restringir el acceso a la puerta de enlace de acceso remoto y agregar 
 
 6.  Deshabilite la propiedad de cookie HttpOnly en el proxy de aplicación web en la aplicación publicada RDG. Para permitir que el control ActiveX RDG tenga acceso a la cookie de autenticación del proxy de aplicación Web, tiene que deshabilitar la propiedad HttpOnly en la cookie del proxy de aplicación Web.  
 
-    Esto requiere que se instale el siguiente [hotfix del proxy de aplicación web](https://support.microsoft.com/en-gb/kb/3000850) o el [@no__t 2](https://support.microsoft.com/en-gb/kb/3000850).  
+    Esto requiere que se instale el siguiente [hotfix del proxy de aplicación web](https://support.microsoft.com/en-gb/kb/3000850) o el [https://support.microsoft.com/en-gb/kb/3000850](https://support.microsoft.com/en-gb/kb/3000850).  
 
     Después de instalar la revisión, ejecute el siguiente script de PowerShell en el servidor proxy de aplicación web y especifique el nombre de la aplicación pertinente:  
 
@@ -146,7 +146,7 @@ Si quiere restringir el acceso a la puerta de enlace de acceso remoto y agregar 
 
         1.  Inicie sesión en el Terminal Server con una cuenta que tenga privilegios de administrador.  
 
-        2.  Vaya a **inicio** >**herramientas administrativas** > **Terminal Services** > **TS administrador de RemoteApp.**  
+        2.  Vaya a **inicio** >**herramientas administrativas** > **Terminal Services** > **Administrador de RemoteApp de TS.**  
 
         3.  En el panel de **información general** de TS administrador de RemoteApp, junto a configuración de RDP, haga clic en **cambiar**.  
 

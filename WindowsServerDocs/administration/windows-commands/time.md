@@ -38,11 +38,11 @@ time [/t | [<HH>[:<MM>[:<SS>]] [am|pm]]]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<HH > [: \<MM > [: \<SS > [. \<NN >]]] [AM @ no__t-16:00]|Establece la hora del sistema en la nueva hora especificada, donde *HH* se encuentra en horas (obligatorio), *mm* es en minutos y *SS* está en segundos. *Nn* se puede usar para especificar centésimas de segundo. Si no se especifica **AM** o **PM** , **Time** usa el formato de 24 horas de forma predeterminada.|
+|\<HH > [:\<MM > [:\<SS > [.\<NN >]]] [AM\|PM]|Establece la hora del sistema en la nueva hora especificada, donde *HH* se encuentra en horas (obligatorio), *mm* es en minutos y *SS* está en segundos. *Nn* se puede usar para especificar centésimas de segundo. Si no se especifica **AM** o **PM** , **Time** usa el formato de 24 horas de forma predeterminada.|
 |/t|Muestra la hora actual sin pedirle una nueva hora.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Para cambiar la hora actual, debe tener credenciales administrativas.
 -   Debe separar los valores de *HH*, *mm*y *SS* con dos puntos (:). *SS* y *nn* se deben separar con un punto (.).

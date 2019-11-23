@@ -27,7 +27,7 @@ Si las cuotas se crean exclusivamente a partir de plantillas, es posible adminis
 
 1.  En **Administración de cuotas** haga clic en el nodo **Plantillas de cuota**.
 
-2.  Haga clic con el botón secundario en **Plantillas de cuota** y, a continuación, haga clic en **Crear plantilla de cuota** (o seleccione **Crear plantilla de cuota** en el panel **Acciones**). Se abrirá el cuadro de diálogo **Crear plantilla de cuota**.
+2.  Haz clic con el botón secundario en **Plantillas de cuota** y luego haz clic en **Crear plantilla de cuota** (o selecciona **Crear plantilla de cuota** en el panel **Acciones**). Se abrirá el cuadro de diálogo **Crear plantilla de cuota**.
 
 3.  Si quieres copiar las propiedades de una plantilla existente para usarla como base de la nueva plantilla, selecciona una plantilla en la lista desplegable **Copiar propiedades de la plantilla de cuota**. Luego haz clic en **Copiar**.
 
@@ -67,7 +67,7 @@ Por ejemplo, puedes configurar umbrales para enviar un mensaje de correo electr�
 
    - Para notificar a los administradores que se ha alcanzado un umbral, selecciona la casilla de verificación **Enviar mensaje de correo electrónico a los siguientes administradores** y luego escribe los nombres de las cuentas administrativas que recibirán las notificaciones. Usa el formato <em>account@domain</em> y usa punto y coma para separar varias cuentas.
    - Para enviar un correo electrónico a la persona que guardó el archivo que alcanzó el umbral de cuota, selecciona la casilla de verificación **Enviar correo electrónico al usuario que ha superado el umbral**.
-   - Para configurar el mensaje, edita la línea de asunto y el cuerpo del mensaje predeterminados que se muestran. El texto que aparece entre paréntesis inserta información variable sobre el evento de cuota que originó la notificación. Por ejemplo, la variable **\[Source IO Owner @ no__t-2** inserta el nombre del usuario que guardó el archivo que alcanzó el umbral de cuota. Para insertar variables adicionales en el texto, haz clic en **Insertar variable**.
+   - Para configurar el mensaje, edita la línea de asunto y el cuerpo del mensaje predeterminados que se muestran. El texto que aparece entre paréntesis inserta información variable sobre el evento de cuota que originó la notificación. Por ejemplo, el **\[propietario de e/s de origen\]** variable inserta el nombre del usuario que guardó el archivo que alcanzó el umbral de cuota. Para insertar variables adicionales en el texto, haz clic en **Insertar variable**.
    - Para configurar los encabezados adicionales (incluidos De, Cc, Bcc y Responder-a), haz clic en **Encabezados de correo electrónico adicionales**.
 
 4. Para registrar un evento:
@@ -88,7 +88,7 @@ Por ejemplo, puedes configurar umbrales para enviar un mensaje de correo electr�
 
 8. Repite estos pasos si quieres configurar umbrales de notificación adicionales para la plantilla de cuota.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 -   [Administración de cuotas](quota-management.md)
 -    [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)

@@ -16,19 +16,19 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408646"
 ---
-# <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>Apéndice G: Protección de grupos de administradores en Active Directory
+# <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>Anexo G: protección de grupos de administradores en Active Directory
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
-## <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>Apéndice G: Protección de grupos de administradores en Active Directory  
-Como es el caso de los grupos administradores de empresas (EA) y Admins. del dominio (DA), la pertenencia al grupo administradores integrados (BA) solo debe ser necesaria en escenarios de recuperación ante desastres o de compilación. No debe haber cuentas de usuario cotidianas en el grupo administradores con la excepción de la cuenta de administrador integrada para el dominio, si se ha protegido como se describe en @no__t 0Appendix D: Protección de cuentas de administrador integradas en Active Directory @ no__t-0.  
+## <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>Anexo G: protección de grupos de administradores en Active Directory  
+Como es el caso de los grupos administradores de empresas (EA) y Admins. del dominio (DA), la pertenencia al grupo administradores integrados (BA) solo debe ser necesaria en escenarios de recuperación ante desastres o de compilación. No debe haber cuentas de usuario diarias en el grupo de administradores, salvo la cuenta de administrador integrada del dominio, si se ha protegido como se describe en el [Apéndice D: protección de cuentas de administrador integradas en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
 
 De forma predeterminada, los administradores son los propietarios de la mayoría de los objetos de AD DS en sus respectivos dominios. La pertenencia a este grupo puede ser necesaria en escenarios de compilación o recuperación ante desastres en los que se requiere la propiedad o la capacidad de asumir la propiedad de los objetos. Además, DAs y EAs heredan una serie de sus derechos y permisos en virtud de su pertenencia predeterminada en el grupo de administradores. No se debe modificar el anidamiento de grupos predeterminado para los grupos con privilegios en Active Directory y el grupo de administradores de cada dominio debe protegerse tal y como se describe en las instrucciones paso a paso que se indican a continuación.  
 
 Para el grupo administradores de cada dominio del bosque:  
 
-1.  Quite todos los miembros del grupo administradores, con la posible excepción de la cuenta de administrador integrada para el dominio, siempre que se haya protegido como se describe en @no__t 0Appendix D: Protección de cuentas de administrador integradas en Active Directory @ no__t-0.  
+1.  Quite todos los miembros del grupo administradores, con la posible excepción de la cuenta de administrador integrada para el dominio, siempre que se haya protegido como se describe en el [Apéndice D: protección de cuentas de administrador integradas en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
 
 2.  En los GPO vinculados a unidades organizativas que contienen servidores miembro y estaciones de trabajo en cada dominio, el grupo de BA debe agregarse a los siguientes derechos de usuario en el **equipo \ configuración de seguridad\Directivas \ directivas de seguridad\Directivas \ asignación de derechos de usuario**:  
 
@@ -66,13 +66,13 @@ Para el grupo administradores de cada dominio del bosque:
 
 1.  En **Administrador del servidor**, haga clic en **herramientas**y en **Administración de directiva de grupo**.  
 
-2.  En el árbol de consola, expanda &lt;Forest @ no__t-1\Domains @ no__t-2 @ no__t-3Domain @ no__t-4 y, a continuación, **Directiva de grupo objetos** (donde &lt;Forest @ no__t-7 es el nombre del bosque y &lt;Domain @ no__t-9 es el nombre del dominio al que desea Establezca el directiva de grupo).  
+2.  En el árbol de consola, expanda &lt;bosque&gt;\Domains\\&lt;dominio&gt;y, a continuación, **Directiva de grupo objetos** (donde &lt;bosque&gt; es el nombre del bosque y &lt;dominio&gt; es el nombre del dominio en el que desea establecer la Directiva de grupo).  
 
 3.  En el árbol de consola, haga clic con el botón secundario en **Directiva de grupo objetos**y haga clic en **nuevo**.  
 
     ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_80.gif)  
 
-4.  En el cuadro de diálogo **nuevo GPO** , escriba <GPO Name> y haga clic en **Aceptar** (donde *nombre de GPO* es el nombre de este GPO).  
+4.  En el cuadro de diálogo **nuevo GPO** , escriba <GPO Name>y haga clic en **Aceptar** (donde *nombre de GPO* es el nombre de este GPO).  
 
     ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_81.gif)  
 
@@ -122,7 +122,7 @@ Para el grupo administradores de cada dominio del bosque:
 
 11. En **Administración de directiva de grupo**, VINCULE el GPO al servidor miembro y las unidades organizativas de la estación de trabajo haciendo lo siguiente:  
 
-    1.  Desplácese hasta el &lt;Forest @ no__t-1 > \Domains @ no__t-2 @ no__t-3Domain @ no__t-4 (donde &lt;Forest @ no__t-6 es el nombre del bosque y &lt;Domain @ no__t-8 es el nombre del dominio en el que desea establecer la directiva de grupo).  
+    1.  Navegue hasta el &lt;bosque&gt;> \Domains\\&lt;&gt; de dominio (donde &lt;bosque&gt; es el nombre del bosque y &lt;dominio&gt; es el nombre del dominio en el que desea establecer la directiva de grupo).  
 
     2.  Haga clic con el botón secundario en la unidad organizativa a la que se aplicará el GPO y haga clic en **vincular un GPO existente**.  
 
@@ -150,13 +150,13 @@ Para el grupo administradores de cada dominio del bosque:
 
 1.  En **Administrador del servidor**, haga clic en **herramientas**y en **Administración de directiva de grupo**.  
 
-2.  En el árbol de consola, expanda <Forest> \ Domains @ no__t-1 @ no__t-2 y, a continuación, **Directiva de grupo objetos** (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer la Directiva de grupo).  
+2.  En el árbol de consola, expanda <Forest>\Domains\\<Domain>y, a continuación, **Directiva de grupo objetos** (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer la Directiva de grupo).  
 
 3.  En el árbol de consola, haga clic con el botón secundario en **Directiva de grupo objetos**y haga clic en **nuevo**.  
 
     ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_89.gif)  
 
-4.  En el cuadro de diálogo **nuevo GPO** , escriba <GPO Name> y haga clic en **aceptar** (donde <GPO Name> es el nombre de este GPO).  
+4.  En el cuadro de diálogo **nuevo GPO** , escriba <GPO Name>y haga clic en **aceptar** (donde <GPO Name> es el nombre de este GPO).  
 
     ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_90.gif)  
 
@@ -206,7 +206,7 @@ Para el grupo administradores de cada dominio del bosque:
 
 11. En **Administración de directiva de grupo**, VINCULE el GPO a la unidad organizativa controladores de dominio haciendo lo siguiente:  
 
-    1.  Desplácese hasta el <Forest> \ Domains @ no__t-1 @ no__t-2 (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer el directiva de grupo).  
+    1.  Navegue hasta el <Forest>\Domains\\<Domain> (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer la directiva de grupo).  
 
     2.  Haga clic con el botón secundario en la unidad organizativa controladores de dominio y haga clic en **vincular un GPO existente**.  
 
@@ -231,7 +231,7 @@ Desde cualquier servidor miembro o estación de trabajo que no se vea afectado p
 
     ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_97.gif)  
 
-5.  En la ventana del **símbolo del sistema** , escriba **net use \\ @ no__t-3 @ No__t-4Server Name @ no__t-5\c $** , donde \<Server Name @ no__t-7 es el nombre del servidor miembro o de la estación de trabajo a la que está intentando obtener acceso a través de la red.  
+5.  En la ventana del **símbolo del sistema** , escriba **net use \\\\nombre del servidor \<\>\c $** , donde \<nombre del servidor\> es el nombre del servidor miembro o de la estación de trabajo a la que está intentando obtener acceso a través de la red.  
 
 6.  En la captura de pantalla siguiente se muestra el mensaje de error que debe aparecer.  
 
@@ -250,7 +250,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 4.  Haga clic en **archivo**y en **Guardar como**.  
 
-5.  En el campo **nombre de archivo** , escriba **@no__t -2. bat** (donde <Filename> es el nombre del nuevo archivo por lotes).  
+5.  En el campo **nombre de archivo** , escriba **<Filename>. bat** (donde <Filename> es el nombre del nuevo archivo por lotes).  
 
 ###### <a name="schedule-a-task"></a>Programar una tarea  
 
@@ -271,7 +271,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 7.  En el campo **programa/script** , haga clic en **examinar**, busque y seleccione el archivo por lotes creado en la sección **crear un archivo por lotes** y haga clic en **abrir**.  
 
-8.  Haga clic en **Aceptar**.  
+8.  Haz clic en **Aceptar**.  
 
 9. Haga clic en la pestaña **General**.  
 
@@ -281,7 +281,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 12. Seleccione **ejecutar si el usuario ha registrado Onor** y no **almacenar la contraseña**. La tarea solo tendrá acceso a los recursos del equipo local.  
 
-13. Haga clic en **Aceptar**.  
+13. Haz clic en **Aceptar**.  
 
 14. Debe aparecer un cuadro de diálogo que solicite las credenciales de la cuenta de usuario para ejecutar la tarea.  
 

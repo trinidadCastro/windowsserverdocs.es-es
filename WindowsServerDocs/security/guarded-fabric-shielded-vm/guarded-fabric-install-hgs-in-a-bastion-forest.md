@@ -130,19 +130,19 @@ Compruebe los objetos de directiva de grupo para ver la configuración siguiente
 
 **Ruta de acceso de directiva:** Configuración del equipo \ configuración de seguridad\Directivas locales \ asignaciones de derechos
 
-**Nombre de la Directiva:** Denegar el acceso desde la red a este equipo
+**Nombre de la Directiva:** Denegar el acceso a este equipo desde la red
 
 **Valor obligatorio:** Asegúrese de que el valor no bloquea los inicios de sesión de red para todas las cuentas locales. Sin embargo, puede bloquear de forma segura las cuentas de administrador local.
 
-**Debido** Los clústeres de conmutación por error se basan en una cuenta local que no es de administrador denominada CLIUSR para administrar los nodos de clúster. Si se bloquea el inicio de sesión de red para este usuario, impedirá que el clúster funcione correctamente.
+**Motivo:** Los clústeres de conmutación por error se basan en una cuenta local que no es de administrador denominada CLIUSR para administrar los nodos de clúster. Si se bloquea el inicio de sesión de red para este usuario, impedirá que el clúster funcione correctamente.
 
 ### <a name="kerberos-encryption"></a>Cifrado Kerberos
 
-**Ruta de acceso de directiva:** Configuración del equipo\Configuración de Windows\Configuración de seguridad\Directivas locales\Opciones de seguridad
+**Ruta de acceso de directiva:** Configuración del equipo \ configuración de seguridad\Directivas Locales\opciones de opciones
 
-**Nombre de la Directiva:** Seguridad de red: Configurar los tipos de cifrado permitidos para Kerberos
+**Nombre de la Directiva:** Seguridad de red: configurar tipos de cifrado permitidos para Kerberos
 
-**Acción**: Si esta directiva está configurada, debe actualizar la cuenta de gMSA con [set-ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps) para usar solo los tipos de cifrado admitidos en esta Directiva. Por ejemplo, si la Directiva solo permite AES128 @ no__t-0HMAC @ no__t-1SHA1 y AES256 @ no__t-2HMAC @ no__t-3SHA1, debe ejecutar `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256`.
+**Acción**: si se configura esta Directiva, debe actualizar la cuenta de GMSA con [set-ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps) para usar solo los tipos de cifrado admitidos en esta Directiva. Por ejemplo, si la Directiva solo permite AES128\_HMAC\_SHA1 y AES256\_HMAC\_SHA1, debe ejecutar `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256`.
 
 
 

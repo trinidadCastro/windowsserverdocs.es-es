@@ -33,7 +33,7 @@ Normalmente, una nueva instalación del sistema operativo requiere un enrutador 
 |---------------------------|-------------|  
 |DHCP|Activado|  
 |Reenvío de puerto|Debe reenviar los siguientes puertos a la dirección del servidor:<br /><br /> -80 (para la configuración hospedada, use solo 443)<br />-443|  
-|Compatibilidad con UPnP|Debe habilitar la compatibilidad con UPnP para proporcionar la configuración de enrutador más sencilla para el cliente y la mejor experiencia de cliente durante la instalación.<br /><br /> **Advertencia:** La arquitectura UPnP puede implicar un riesgo para la seguridad si se deja habilitada.|  
+|Compatibilidad con UPnP|Debe habilitar la compatibilidad con UPnP para proporcionar la configuración de enrutador más sencilla para el cliente y la mejor experiencia de cliente durante la instalación.<br /><br /> **ADVERTENCIA:** La arquitectura UPnP puede suponer un riesgo para la seguridad si se deja habilitada.|  
   
  Además de la configuración previa básica del enrutador, complete las tareas que se indican a continuación para ofrecer una experiencia del usuario integrada para la administración del enrutador:  
   
@@ -48,9 +48,9 @@ Normalmente, una nueva instalación del sistema operativo requiere un enrutador 
 > [!NOTE]
 >  Para obtener más información acerca de la configuración de conexiones inalámbricas, consulte [Configure Support for a Wireless Network](Configure-Support-for-a-Wireless-Network.md).  
   
-## <a name="see-also"></a>Vea también  
- [Introducción con el ADK de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [Creación y personalización de la imagen](Creating-and-Customizing-the-Image.md)   
+## <a name="see-also"></a>Consulta también  
+ [Introducción con el ADK de Windows Server essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

@@ -23,17 +23,17 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia a **U
   
 ### <a name="to-verify-that-a-federation-server-is-operational"></a>Para comprobar que un servidor de federación sea operativo  
   
-1.  Abra una ventana del explorador y, en la barra de direcciones, escriba el nombre de los servidores de Federación `federationmetadata/2007-06/federationmetadata.xml` y, a continuación, agréguelo a para buscar el extremo de metadatos del servicio de Federación. Por ejemplo, `https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml` .  
+1.  Abra una ventana del explorador y, en la barra de direcciones, escriba el nombre de los servidores de Federación y, a continuación, agréguelo con `federationmetadata/2007-06/federationmetadata.xml` para ir al extremo de metadatos del servicio de Federación. Por ejemplo, `https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml`.  
   
 Si en la ventana del explorador puede ver los metadatos del servidor de federación sin errores ni advertencias de SSL, el servidor de federación es operativo.  
   
 2. También puede ir a la página de inicio de sesión de AD FS (nombre de su servicio de federación con `adfs/ls/idpinitiatedsignon.htm` anexado, por ejemplo, `https://fs.contoso.com/adfs/ls/idpinitiatedsignon.htm`).  Esto muestra la página de inicio de sesión de AD FS donde puede iniciar sesión con credenciales de administrador del dominio.  
   
 > [!IMPORTANT]
->  Asegúrese de configurar las opciones del explorador para que confíe en el rol de servidor de Federación. para ello, agregue el `https://fs.contoso.com`nombre del servicio de Federación (por ejemplo,) a la zona de Intranet local del explorador.  
+>  Asegúrese de configurar las opciones del explorador para que confíe en el rol de servidor de Federación. para ello, agregue el nombre del servicio de Federación (por ejemplo, `https://fs.contoso.com`) a la zona de Intranet local del explorador.  
   
 ## <a name="next-steps"></a>Pasos siguientes
- [Migrar servicios de rol de Servicios de federación de Active Directory (AD FS) a Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
+ [Migrar servicios de rol de servicios de Federación de Active Directory (AD FS) a Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
  [Preparación de la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md)  
  [Migración del servidor de Federación de AD FS](migrate-ad-fs-fed-server-r2.md)   
  [Migración del servidor proxy de Federación de AD FS](migrate-fed-server-proxy-r2.md)   

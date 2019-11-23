@@ -50,9 +50,9 @@ Instale y configure Windows Azure Pack (WAP) en el equipo en el que desea hosped
 
 2.  Descargue e instale el [instalador de plataforma web](https://www.microsoft.com/web/downloads/platform.aspx). Si el equipo no está conectado a Internet, siga las [instrucciones de instalación sin conexión](http://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release).
 
-3.  Abra el instalador de plataforma web y busque @no__t: 0Windows Azure Pack: Portal y API Express @ no__t-0 en la pestaña **productos** . Haga clic en **Agregar**y, a continuación, en **instalar** en la parte inferior de la ventana.
+3.  Abra el instalador de plataforma web y busque **Windows Azure Pack: portal y API Express** en la pestaña **productos** . Haga clic en **Agregar**y luego en **instalar** en la parte inferior de la ventana.
 
-4.  Lleve a cabo la instalación. Una vez finalizada la instalación, se abre el sitio de configuración (*https://&lt;wapserver @ no__t-2:30101/* ) en el explorador Web. En este sitio web, proporcione información sobre su SQL Server y termine de configurar WAP.
+4.  Lleve a cabo la instalación. Una vez finalizada la instalación, se abre el sitio de configuración (*https://&lt;wapserver&gt;: 30101/* ) en el explorador Web. En este sitio web, proporcione información sobre su SQL Server y termine de configurar WAP.
 
 Para obtener ayuda para la configuración de Windows Azure Pack, consulte [instalar una implementación rápida de Windows Azure Pack](https://technet.microsoft.com/dn296439.aspx).
 
@@ -63,7 +63,7 @@ Para obtener ayuda para la configuración de Windows Azure Pack, consulte [insta
 
 Antes de usar Windows Azure Pack, ya debe tener instalado y configurado para su infraestructura.
 
-1.  Vaya al portal de administración de Windows Azure Pack en *https://&lt;wapserver @ no__t-2:30091*y, a continuación, inicie sesión con sus credenciales de administrador.
+1.  Vaya al portal de administración de Windows Azure Pack en *https://&lt;wapserver&gt;: 30091*y, a continuación, inicie sesión con sus credenciales de administrador.
 
 2.  En el panel izquierdo, haga clic en **nubes de máquinas virtuales**.
 
@@ -77,7 +77,7 @@ Antes de usar Windows Azure Pack, ya debe tener instalado y configurado para su 
 
 Para permitir que los inquilinos creen máquinas virtuales en WAP, primero debe crear un plan de hospedaje al que los inquilinos puedan suscribirse. Los planes definen las nubes de máquinas virtuales permitidas, las plantillas, las redes y las entidades de facturación para los inquilinos.
 
-1. En el panel inferior del portal, haga clic en **+ nuevo** &gt; **plan** &gt; **crear plan**.
+1. En el panel inferior del portal, haga clic en **+ nuevo** &gt; **PLAN** &gt; **crear plan**.
 
 2. En el primer paso del asistente, elija un nombre para el plan. Este es el nombre que verán los inquilinos cuando se suscriban.
 
@@ -113,7 +113,7 @@ Para permitir que los inquilinos creen máquinas virtuales en WAP, primero debe 
 
     En este momento, se configura Windows Azure Pack y los inquilinos podrán suscribirse al plan que acaba de crear e implementar máquinas virtuales blindadas. Para conocer los pasos adicionales que los inquilinos deben completar, consulte [máquinas virtuales blindadas para inquilinos: implementación de una máquina virtual blindada mediante Windows Azure Pack](guarded-fabric-shielded-vm-windows-azure-pack.md).
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 - [Pasos de configuración del proveedor de servicios de hospedaje para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

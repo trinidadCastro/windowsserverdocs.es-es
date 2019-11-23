@@ -35,28 +35,28 @@ cscript pubprn {<ServerName> | <UNCprinterpath>}
 ## <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-|@no__t 0ServerName >|Especifica el nombre del servidor de Windows que hospeda la impresora que desea publicar. Si no especifica un equipo, se usa el equipo local.|
-|@no__t 0UNCprinterpath >|La ruta de acceso de la Convención de nomenclatura universal (UNC) a la impresora compartida que desea publicar.|
-|"LDAP://CN = <Container>, DC = <Container>"|Especifica la ruta de acceso al contenedor en servicios de dominio de Active Directory donde desea publicar la impresora.|
+|\<ServerName >|Especifica el nombre del servidor de Windows que hospeda la impresora que desea publicar. Si no especifica un equipo, se usa el equipo local.|
+|\<UNCprinterpath >|La ruta de acceso de la Convención de nomenclatura universal (UNC) a la impresora compartida que desea publicar.|
+|"LDAP://CN =<Container>, DC =<Container>"|Especifica la ruta de acceso al contenedor en servicios de dominio de Active Directory donde desea publicar la impresora.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
--   El comando **Pubprn** es un script de Visual Basic ubicado en el directorio%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t-2. Para usar este comando, en una ventana del símbolo del sistema, escriba **cscript** seguido de la ruta de acceso completa al archivo Pubprn o cambie los directorios a la carpeta correspondiente. Por ejemplo:
+## <a name="remarks"></a>Observaciones
+-   El comando **Pubprn** es un script de Visual Basic ubicado en el printing_Admin_Scripts%windir%\system32\\\<language> directorio. Para usar este comando, en una ventana del símbolo del sistema, escriba **cscript** seguido de la ruta de acceso completa al archivo Pubprn o cambie los directorios a la carpeta correspondiente. Por ejemplo:
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\pubprn
     ```
 -   Si la información proporcionada contiene espacios, utilice comillas alrededor del texto (por ejemplo, `"computer Name"`).
 
 ## <a name="BKMK_examples"></a>Example
-Para publicar todas las impresoras del equipo \\ \ Servidor1 en el contenedor de conMyDomain.company.Com, escriba:
+Para publicar todas las impresoras del equipo \\\Server1 en el contenedor de contención del dominio MyDomain.company.Com, escriba:
 ```
 cscript Ppubprn Server1 "LDAP://CN=MyContainer,DC=MyDomain,DC=company,DC=Com"
 ```
-Para publicar la impresora Laserprinter1 en el servidor \\ \ Servidor1 en el contenedor de al del dominio MyDomain.company.Com, escriba:
+Para publicar la impresora Laserprinter1 en el servidor de la \\\Server1 en el contenedor de contención del dominio MyDomain.company.Com, escriba:
 ```
 cscript Ppubprn \\Server1\Laserprinter1 "LDAP://CN=MyContainer,DC=MyDomain,DC=company,DC=Com"
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+#### <a name="additional-references"></a>referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[referencia de comando de impresión](print-command-reference.md)
+[Referencia del comando Print](print-command-reference.md)

@@ -22,28 +22,28 @@ ms.locfileid: "71402487"
 
 
 <developerConceptualDocument xmlns="https://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="https://www.w3.org/1999/xlink" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://ddue.schemas.microsoft.com/authoring/2003/5 http://clixdevr3.blob.core.windows.net/ddueschema/developer.xsd"> <introduction>
-    <para>This article describes the symptoms, cause and how to resolve Active Directory replication failing with Win32 error 1396: &quot;Logon failure: The target account name is incorrect.&quot; </para>
+    <para>En este artículo se describen los síntomas, la causa y el modo de resolver Active Directory errores de replicación con el error 1396 de Win32: &quot;error de inicio de sesión: el nombre de la cuenta de destino no es correcto.&quot; </para>
     <list class="bullet"> <listItem>
         <para>
-          <link xlink:href="d3a01966-74c9-4c49-ba11-354b9acf7519#BKMK_Symptoms">Symptoms</link>
+          <link xlink:href="d3a01966-74c9-4c49-ba11-354b9acf7519#BKMK_Symptoms">Síntomas</link>
         </para>
       </listItem> <listItem>
         <para>
-          <link xlink:href="d3a01966-74c9-4c49-ba11-354b9acf7519#BKMK_Causes">Causes</link>
+          <link xlink:href="d3a01966-74c9-4c49-ba11-354b9acf7519#BKMK_Causes">Hace que</link>
         </para>
       </listItem> <listItem>
         <para>
-          <link xlink:href="d3a01966-74c9-4c49-ba11-354b9acf7519#BKMK_Resolutions">Resolutions</link>
+          <link xlink:href="d3a01966-74c9-4c49-ba11-354b9acf7519#BKMK_Resolutions">Soluciones</link>
         </para>
       </listItem>
     </list>
   </introduction>
   <section address="BKMK_Symptoms">
-    <title>Symptoms</title>
+    <title>Síntomas</title>
     <content>
       <para />
       <list class="ordered">
-<listItem><para>DCDIAG reports that the Active Directory Replications test has failed with error 1396: Logon failure: The target account name is incorrect.&quot;</para><code>Testing server: &lt;Site name&gt;&lt;DC Name&gt;
+<listItem><para>DCDIAG informa de que se ha producido el error 1396 en la prueba de replicaciones de Active Directory: error de inicio de sesión: el nombre de la cuenta de destino no es correcto.&quot;</para><code>Testing server: &lt;Site name&gt;&lt;DC Name&gt;
 Starting test: Replications
 [Replications Check,&lt;DC Name&gt;] A recent replication attempt failed:
 From &lt;source DC&gt; to &lt;destination DC&gt;
@@ -52,7 +52,7 @@ Naming Context: CN=&lt;DN path of naming context&gt;
 Logon Failure: The target account name is incorrect.</codeFeaturedElement>
 The failure occurred at &lt;date&gt; &lt;time&gt;.
 The last success occurred at &lt;date&gt; &lt;time&gt;.
-XX failures have occurred since the last success</code></listItem><listItem><para>REPADMIN.EXE reports that the last replication attempt has failed with status 1396.</para><para>REPADMIN commands that commonly cite the 1396 status include but are not limited to:</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><tbody><tr><TD><list class="bullet"><listItem><para>REPADMIN /ADD</para></listItem><listItem><para>REPADMIN /REPLSUM</para></listItem><listItem><para>REPADMIN /REHOST</para></listItem><listItem><para>REPADMIN /SHOWVECTOR /LATENCY</para></listItem></list></TD><TD><list class="bullet"><listItem><para>REPADMIN /SHOWREPS</para></listItem><listItem><para>REPADMIN /SHOWREPL</para></listItem><listItem><para>REPADMIN /SYNCALL</para></listItem></list></TD></tr></tbody></table><para>Sample output from &quot;REPADMIN /SHOWREPS&quot; depicting inbound replication from CONTOSO-DC2 to CONTOSO-DC1 failing with the &quot;Logon Failure: The target account name is incorrect.&quot; error is shown below::</para><code>Default-First-Site-NameCONTOSO-DC1
+XX failures have occurred since the last success</code></listItem><listItem><para>REPADMIN. EXE informa de que se ha producido un error en el último intento de replicación con el estado 1396.</para><para>Los comandos REPADMIN que suelen mencionar el estado 1396 incluyen, pero no se limitan a:</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><tbody><tr><TD><list class="bullet"><listItem><para>REPADMIN/ADD</para></listItem><listItem><para>REPADMIN/REPLSUM</para></listItem><listItem><para>REPADMIN/REHOST</para></listItem><listItem><para>REPADMIN/SHOWVECTOR/LATENCY</para></listItem></list></TD><TD><list class="bullet"><listItem><para>REPADMIN/SHOWREPS</para></listItem><listItem><para>REPADMIN/SHOWREPL</para></listItem><listItem><para>REPADMIN/SYNCALL</para></listItem></list></TD></tr></tbody></table><para>Salida de ejemplo de &quot;REPADMIN/SHOWREPS&quot; que describe la replicación de entrada de CONTOSO-DC2 a CONTOSO-DC1 con error de inicio de sesión &quot;: el nombre de la cuenta de destino no es correcto. a continuación se muestra&quot; error:</para><code>Default-First-Site-NameCONTOSO-DC1
 DSA Options: IS_GC 
 Site Options: (none)
 DSA object GUID: b6dc8589-7e00-4a5d-b688-045aef63ec01
@@ -65,74 +65,74 @@ Last attempt @ &lt;date&gt; &lt;time&gt; failed, <codeFeaturedElement>result 139
 Logon Failure: The target account name is incorrect.</codeFeaturedElement>
 &lt;#&gt; consecutive failure(s).
 Last success @ &lt;date&gt; &lt;time&gt;.
-</code></listItem><listItem><para>The <ui>Replicate now</ui> command in Active Directory Sites and Services returns &quot;Logon Failure: The target account name is incorrect.&quot;</para><para>Right-clicking on the connection object from a source DC and choosing <ui>Replicate now</ui> fails with &quot;Logon Failure: The target account name is incorrect.&quot; The on-screen error message is shown below:</para><para>Dialog title text:</para><para>Replicate Now</para><para>Dialog message text: </para><para>The following error occurred during the attempt to synchronize naming context &lt;partition DNS path&gt; from domain controller &lt;source DC&gt; to domain controller &lt;destination DC&gt;: Logon Failure: The target account name is incorrect. This operation will not continue. </para></listItem><listItem><para>NTDS KCC, NTDS General or Microsoft-Windows-ActiveDirectory_DomainService events with the 1396 status are logged in the Directory Services log in Event Viewer.</para><para>Active Directory events that commonly cite the 1396 status include but are not limited to:</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><thead><tr><TD><para>Id. de evento</para></TD><TD><para>Origen del evento</para></TD><TD><para>Event String</para></TD></tr></thead><tbody><tr><TD><para>1125</para></TD><TD><para>Microsoft-Windows-ActiveDirectory_DomainService</para></TD><TD><para>The Active Directory Domain Services Installation Wizard (Dcpromo) was unable to establish connection with the following domain controller.</para></TD></tr><tr><TD><para>1645</para><para>This event lists the three-part SPN.</para></TD><TD><para>NTDS Replication</para></TD><TD><para>Active Directory no realizó una llamada a procedimiento remoto (RPC) autenticada a otro controlador de dominio porque el nombre principal de servicio (SPN) deseado para el controlador de dominio de destino no está registrado en el controlador de dominio del Centro de distribución principal (KDC) que resuelve el SPN.</para></TD></tr><tr><TD><para>1655</para></TD><TD><para>Microsoft-Windows-ActiveDirectory_DomainService</para></TD><TD><para>Active Directory Domain Services attempted to communicate with the following global catalog and the attempts were unsuccessful.</para></TD></tr><tr><TD><para>2847</para></TD><TD><para>Microsoft-Windows-ActiveDirectory_DomainService</para></TD><TD><para>The Knowledge Consistency Checker located a replication connection for the local read-only directory service and attempted to update it remotely on the following directory service instance. The operation failed. It will be retried.</para></TD></tr><tr><TD><para>1925</para></TD><TD><para>NTDS KCC</para></TD><TD><para>The attempt to establish a replication link for the following writable directory partition failed.</para></TD></tr><tr><TD><para>1926</para></TD><TD><para>NTDS KCC</para></TD><TD><para>The attempt to establish a replication link to a read-only directory partition with the following parameters failed.</para></TD></tr><tr><TD><para>5781</para></TD><TD><para>NETLOGON</para></TD><TD><para> The server cannot register its name in DNS.</para></TD></tr></tbody></table></listItem><listItem><para>DCPROMO fails with an onscreen error</para><para>Dialog Title Text:</para><para>Active Directory Installation Failed</para><para>Dialog Message text:</para><para>The operation failed because: The Directory Service failed to create the server object for CN=NTDS Settings,CN=ServerBeingPromoted,CN=Servers,CN=Site,CN=Sites,CN=Configuration,DC=contoso,DC=com on server ReplicationSourceDC.contoso.com. </para><para>Please ensure the network credentials provided have sufficient access to add a replica. </para><para>
-&quot;Logon Failure: The target account name is incorrect. [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](&quot;)</para><para>In this case, Event ID 1645, 1168, and 1125 are logged on the server that is being promoted.</para></listItem><listItem><para>Map a drive using <embeddedLabel>net use</embeddedLabel>:</para><code>C:&gt;net use z: &lt;server_name&gt;c$
+</code></listItem><listItem><para>El comando <ui>Replicar ahora</ui> en Active Directory sitios y servicios devuelve &quot;error de inicio de sesión: el nombre de la cuenta de destino no es correcto.&quot;</para><para>Al hacer clic con el botón derecho en el objeto de conexión desde un controlador de dominio de origen y elegir <ui>Replicar ahora</ui> se produce un error de inicio de sesión &quot;: el nombre de la cuenta de destino es incorrecto.&quot; el mensaje de error en pantalla se muestra a continuación:</para><para>Texto del título del cuadro de diálogo:</para><para>Replicar ahora</para><para>Texto del mensaje de diálogo: </para><para>Se produjo el siguiente error al intentar sincronizar el contexto de nomenclatura &lt;la ruta de acceso DNS de la partición&gt; desde el controlador de dominio &lt;el DC de origen&gt; al controlador de dominio &lt;DC de destino: error de inicio de sesión: el nombre de la cuenta de destino no es correcto.&gt; Esta operación no continuará. </para></listItem><listItem><para>Los eventos NTDS KCC, NTDS general o Microsoft-Windows-ActiveDirectory_DomainService con el estado 1396 se registran en el registro de servicios de directorio en Visor de eventos.</para><para>Active Directory eventos que suelen citar el estado 1396 incluyen, pero no se limitan a:</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><thead><tr><TD><para>Id. de evento</para></TD><TD><para>Origen del evento</para></TD><TD><para>Cadena de evento</para></TD></tr></thead><tbody><tr><TD><para>1125</para></TD><TD><para>Microsoft-Windows-ActiveDirectory_DomainService</para></TD><TD><para>El Asistente para instalación de Active Directory Domain Services (Dcpromo) no pudo establecer conexión con el siguiente controlador de dominio.</para></TD></tr><tr><TD><para>1645</para><para>Este evento muestra el SPN de tres partes.</para></TD><TD><para>Replicación de NTDS</para></TD><TD><para>Active Directory no realizó una llamada a procedimiento remoto (RPC) autenticada a otro controlador de dominio porque el nombre principal de servicio (SPN) deseado para el controlador de dominio de destino no está registrado en el controlador de dominio del Centro de distribución principal (KDC) que resuelve el SPN.</para></TD></tr><tr><TD><para>1655</para></TD><TD><para>Microsoft-Windows-ActiveDirectory_DomainService</para></TD><TD><para>Active Directory Domain Services intentó comunicarse con el catálogo global siguiente y los intentos fueron incorrectos.</para></TD></tr><tr><TD><para>2847</para></TD><TD><para>Microsoft-Windows-ActiveDirectory_DomainService</para></TD><TD><para>El comprobador de coherencia de la información encontró una conexión de replicación para el servicio de directorio local de solo lectura e intentó actualizarla de forma remota en la siguiente instancia del servicio de directorio. Error en la operación. Se volverá a intentar.</para></TD></tr><tr><TD><para>1925</para></TD><TD><para>KCC NTDS</para></TD><TD><para>Error al intentar establecer un vínculo de replicación para la siguiente partición de directorio grabable.</para></TD></tr><tr><TD><para>1926</para></TD><TD><para>KCC NTDS</para></TD><TD><para>Error al intentar establecer un vínculo de replicación en una partición de directorio de solo lectura con los siguientes parámetros.</para></TD></tr><tr><TD><para>5781</para></TD><TD><para>NETLOGON</para></TD><TD><para> El servidor no puede registrar su nombre en DNS.</para></TD></tr></tbody></table></listItem><listItem><para>DCPROMO produce un error en pantalla</para><para>Texto del título del cuadro de diálogo:</para><para>Error en la instalación de Active Directory</para><para>Texto del mensaje de diálogo:</para><para>No se pudo realizar la operación porque: el servicio de directorio no pudo crear el objeto de servidor para CN = NTDS Settings, CN = ServerBeingPromoted, CN = servers, CN = site, CN = Sites, CN = Configuration, DC = Contoso, DC = com en el servidor ReplicationSourceDC.contoso.com. </para><para>Asegúrese de que las credenciales de red proporcionadas tienen acceso suficiente para agregar una réplica. </para><para>
+Error de inicio de sesión de &quot;: el nombre de la cuenta de destino no es correcto. &quot;</para><para>En este caso, se registra el ID. de evento 1645, 1168 y 1125 en el servidor que se está promocionando.</para></listItem><listItem><para>Asignar una unidad mediante <embeddedLabel>net use</embeddedLabel>:</para><code>C:&gt;net use z: &lt;server_name&gt;c$
 System error 1396 has occurred.
-Logon Failure: The target account name is incorrect.</code><para>In this case, the server can also logging Event ID 333 in the system event log and use a high amount of virtual memory for an application such as SQL Server.</para></listItem><listItem><para>The DC time is incorrect.</para></listItem><listItem><para>The KDC will not start on an RODC after a restore of the krbtgt account for the RODC, which had been deleted. For example, after a restore, error 1396 appears. </para><para>
-Event ID 1645 is logged on the RODC. </para><para>
-Dcdiag also reports an error that it cannot update the RODC krbtgt account. </para></listItem>
+Logon Failure: The target account name is incorrect.</code><para>En este caso, el servidor también puede registrar el ID. de evento 333 en el registro de eventos del sistema y usar una gran cantidad de memoria virtual para una aplicación como SQL Server.</para></listItem><listItem><para>La hora del controlador de dominio es incorrecta.</para></listItem><listItem><para>El KDC no se iniciará en un RODC después de una restauración de la cuenta krbtgt para el RODC, que se eliminó. Por ejemplo, después de una restauración, aparece el error 1396. </para><para>
+El ID. de evento 1645 está registrado en el RODC. </para><para>
+Dcdiag también informa de un error que indica que no puede actualizar la cuenta krbtgt de RODC. </para></listItem>
 </list>
     </content>
   </section>
   <section address="BKMK_Causes">
-    <title>Causes</title>
+    <title>Hace que</title>
     <content>
       <para />
       <list class="ordered">
         <listItem>
-          <para>The SPN does not exist on the global catalog searched by the KDC on behalf of the client attempting to authenticate using Kerberos.</para>
-          <para>In the context of Active Directory replication, the Kerberos client is the destination DC, the KDC performing the SPN lookup is likely the destination DC itself but could be a remote DC.</para>
+          <para>El SPN no existe en el catálogo global buscado por el KDC en nombre del cliente que intenta autenticarse mediante Kerberos.</para>
+          <para>En el contexto de la replicación de Active Directory, el cliente Kerberos es el controlador de dominio de destino, el KDC que realiza la búsqueda de SPN es probablemente el propio controlador de dominio de destino, pero podría ser un controlador de dominio remoto.</para>
         </listItem>
         <listItem>
-          <para>The user or service account that should contain the service principal name being looked up does not exist on the global catalog searched by the KDC on behalf of destination DC attempting to replicate.</para>
-          <para>In the context of Active Directory replication, the source DC computer account does not exist on the global catalog searched by the DC on behalf of the destination DC performing inbound replication.</para>
+          <para>El usuario o la cuenta de servicio que debe contener el nombre de entidad de seguridad de servicio que se está buscando no existe en el catálogo global que busca el KDC en nombre del controlador de dominio de destino que intenta replicarse.</para>
+          <para>En el contexto de la replicación de Active Directory, la cuenta de equipo del controlador de dominio de origen no existe en el catálogo global que busca el controlador de dominio en nombre del controlador de dominio de destino que realiza la replicación de entrada.</para>
         </listItem>
         <listItem>
-          <para>The destination DC lacks an LSA secret for the source DCs domain.</para>
+          <para>El DC de destino carece de un secreto LSA para el dominio DC de origen.</para>
         </listItem>
         <listItem>
-          <para>The SPN being looked up exists on a different computer account than the source DC.</para>
+          <para>El SPN que se está buscando existe en una cuenta de equipo distinta de la del controlador de dominio de origen.</para>
         </listItem>
       </list>
     </content>
   </section>
   <section address="BKMK_Resolutions">
-    <title>Resolutions</title>
+    <title>Soluciones</title>
     <content>
       <list class="ordered">
         <listItem>
-          <para>Check the Directory Service event log on the destination DC for NTDS Replication event 1645 and note the following:</para>
-          <para>The name of the destination DC</para>
-          <para>The SPN being looked up (E3514235-4B06-11D1-AB04-00C04FC2DCD2/&lt;object guid for source DCs NTDS Settings object&gt;/&lt;target domain&amp;amp;gt;.&amp;amp;lt;tld&amp;amp;gt;@&lt;target domain&gt;.&lt;tld&gt;</para>
-          <para>The KDC being used by the destination DC</para>
+          <para>Compruebe el registro de eventos del servicio de directorio en el controlador de dominio de destino para el evento de replicación NTDS 1645 y tenga en cuenta lo siguiente:</para>
+          <para>Nombre del controlador de dominio de destino.</para>
+          <para>El SPN que se busca (GUID de objeto de E3514235-4B06-11D1-AB04-00C04FC2DCD2/&lt;para el objeto de configuración NTDS de DC de origen&gt;/&lt;dominio de destino&amp;amp; gt;.&amp;amp; lt; TLD&amp;amp; gt; @&lt;dominio de destino&gt;.&lt;TLD&gt;</para>
+          <para>El KDC utilizado por el controlador de dominio de destino</para>
         </listItem>
         <listItem>
-          <para>From the console of the KDC identified in step 1, type: </para>
+          <para>En la consola del KDC identificado en el paso 1, escriba: </para>
           <code>nltest /dsgetdc &lt;forest root DNS domain name &gt; /gc</code>
-          <para>Run the NLTEST locator test immediately following a replication attempt that fails with the 1396 error on the destination DC. </para>
-          <para>This should identify that GC that the KDC is performing SPN lookups against. </para>
-          <para>The GC being searched by the KDC may also be captured in Microsoft-Windows-ActiveDirectory_DomainService event 1655.</para>
+          <para>Ejecute la prueba de ubicación de NLTEST inmediatamente después de un intento de replicación que produce el error 1396 en el controlador de dominio de destino. </para>
+          <para>Esto debe identificar el GC con el que el KDC realiza búsquedas de SPN. </para>
+          <para>El GC que se está buscando en el KDC también puede capturarse en el evento 1655 de Microsoft-Windows-ActiveDirectory_DomainService.</para>
         </listItem>
         <listItem>
-          <para>Search for the SPN discovered in step 1 on the global catalog discovered in step 2.</para>
+          <para>Busque el SPN detectado en el paso 1 en el catálogo global detectado en el paso 2.</para>
           <code>C:&gt;repadmin /showattr Server_Name DC=corp,DC=contoso,dc=com &lt;GC used by KDC&gt; &lt;DN path of forest root domain&gt; /filter:&quot;(serviceprincipalname=&lt;SPN cited in the NTDS Replication event 1645&gt;)&quot; /gc /subtree /atts:cn,serviceprincipalname</code>
           <para>O bien,</para>
           <code>C:&gt;dsquery * forestroot -scope subtree -filter &quot;(serviceprincipalname=E3514235-4B06-11D1-AB04-00C04FC2DCD2/65cead9f-4949-46a3-a49a-f1fbfe13d2b3*)&quot; -attr * -s Server_Name.europe.corp.contoso.com</code>
-          <para>Verify that the host object for the SPN exists.</para>
-          <para>Verify the DN path for the host object including whether the object is CNF / conflict mangled or resides in the lost and found container.</para>
-          <para>Verify that the source DCs Active Directory Replication SPN is registered only on the source DCs computer account.</para>
-          <para>If the replication SPN is missing, determine if the source DC has registered its SPN with itself, and whether the SPN is missing on the GC used by the KDC due to simple replication latency or a replication failure.</para>
+          <para>Compruebe que el objeto host del SPN existe.</para>
+          <para>Compruebe la ruta de acceso de DN para el objeto host, incluido si el objeto es CNF/conflicto alterado o reside en el contenedor perdido y encontrado.</para>
+          <para>Compruebe que los DC de origen Active Directory SPN de replicación están registrados solo en la cuenta de equipo de DC de origen.</para>
+          <para>Si falta el SPN de replicación, determine si el controlador de dominio de origen ha registrado su SPN en sí mismo y si el SPN falta en el GC que usa el KDC debido a una latencia de replicación simple o un error de replicación.</para>
         </listItem>
         <listItem>
-          <para>Check the secure channel health and trust health.</para>
+          <para>Compruebe el estado del canal seguro y el mantenimiento de la confianza.</para>
         </listItem>
       </list>
     </content>
   </section>
   <relatedTopics>
-    <externalLink>
-      <linkText>Troubleshooting Active Directory operations that fail with error 1396: Logon Failure: The target account name is incorrect.</linkText>
-      <linkUri><a href="https://support.microsoft.com/kb/2183411/en-gb" data-raw-source="https://support.microsoft.com/kb/2183411/en-gb">https://support.microsoft.com/kb/2183411/en-gb</a></linkUri>
+    <externalLink> 
+      <linkText>Solución de problemas de operaciones de Active Directory que producen el error 1396: error de inicio de sesión: el nombre de la cuenta de destino no es correcto.</linkText> 
+      <linkUri><a href="https://support.microsoft.com/kb/2183411/en-gb" data-raw-source="https://support.microsoft.com/kb/2183411/en-gb">https://support.microsoft.com/kb/2183411/en-gb</a></linkUri> 
     </externalLink>
   </relatedTopics>
 </developerConceptualDocument>

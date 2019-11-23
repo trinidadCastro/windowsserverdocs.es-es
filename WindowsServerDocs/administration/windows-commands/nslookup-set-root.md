@@ -38,6 +38,6 @@ set root=<RootServer>
 
 ## <a name="remarks"></a>Observaciones
 - El subcomando **establecer raíz** afecta al subcomando **raíz** .
-  ## <a name="additional-references"></a>Referencias adicionales
-  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md) 
+  ## <a name="additional-references"></a>referencias adicionales
+  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
   [raíz de nslookup](nslookup-root.md)

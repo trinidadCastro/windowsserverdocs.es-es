@@ -115,7 +115,7 @@ Si tiene personalización de la página web en la granja de AD FS existente que 
   
 - Windows Server 2008 R2  
   
-- Windows Server 2008  
+- Windows Server 2008  
   
   Si planea usar una cuenta de servicio administrada de grupo (gMSA) como cuenta de servicio para AD FS, debe tener al menos un controlador de dominio en el entorno que se ejecute en el sistema operativo Windows Server 2012 o Windows Server 2012 R2.  
   
@@ -151,7 +151,7 @@ Durante la instalación del controlador de dominio, es posible que deba especifi
 -   Si desea migrar una granja de AD FS de SQL Server, tenga en cuenta que el proceso de migración implica crear una instancia de la base de datos de SQL en la que deberá importar los datos de configuración originales.  
   
 ## <a name="next-steps"></a>Pasos siguientes
- [Migrar servicios de rol de Servicios de federación de Active Directory (AD FS) a Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
+ [Migrar servicios de rol de servicios de Federación de Active Directory (AD FS) a Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
  [Migración del servidor de Federación de AD FS](migrate-ad-fs-fed-server-r2.md)   
- [Migración del servidor proxy de Federación de AD FS](migrate-fed-server-proxy-r2.md)   
+ [Migración del servidor proxy de AD FS Federation](migrate-fed-server-proxy-r2.md)   
  [Comprobar la migración de AD FS a Windows Server 2012 R2](verify-ad-fs-migration.md)

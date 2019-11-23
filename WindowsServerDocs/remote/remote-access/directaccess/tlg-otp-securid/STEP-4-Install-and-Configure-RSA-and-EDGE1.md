@@ -205,7 +205,7 @@ Realizará los siguientes pasos para configurar la implementación de RSA:
   
     6.  En la página **configurar servidor RADIUS** , escriba la misma contraseña usada para el usuario administrador de los **secretos** y la **contraseña maestra**. Escriba el identificador de usuario y la contraseña de administrador y haga clic en **configurar**.  
   
-    7.  Compruebe que se muestra el mensaje "se ha **configurado correctamente el servidor RADIUS"** . Haga clic en **Listo**. Cierre la **consola del operador de RSA**.  
+    7.  Compruebe que se muestra el mensaje "se ha **configurado correctamente el servidor RADIUS"** . Haz clic en **Listo**. Cierre la **consola del operador de RSA**.  
   
     8.  Vuelva a la **Consola RSA Security Console**.  
   
@@ -255,7 +255,7 @@ Realizará los siguientes pasos para configurar la implementación de RSA:
   
     6.  En el cuadro de diálogo **descarga de archivos** , haga clic en **Guardar**, desplácese a la instalación de C:\RSA y haga clic en **Guardar**. Haga clic en **cerrar** en el cuadro de diálogo **Descarga completada** .  
   
-    7.  Desde la instalación de medios de RSA Authentication Manager \auth_mgr\windows-x86_64\am\rsa-ace_nsload\win32-5.0-x86\agent_nsload.exe a C:\RSA.  
+    7.  Desde la copia multimedia del administrador de autenticación de RSA \ auth_mgr \Windows-x86_64 \am\rsa-ace_nsload \win32-5.0-x86\ agent_nsload. exe a la instalación de C:\RSA.  
   
 ## <a name="BKMK_DAProbeUser"></a>Crear DAProbeUser  
   
@@ -268,7 +268,7 @@ Utilice este procedimiento para instalar el token de software de SecurID en clie
   
 #### <a name="install-securid-software-token"></a>Instalación del token de software de SecurID  
   
-1.  En el equipo CLIENT1, cree la carpeta C:\RSA files. Copie el archivo Software_Tokens. zip desde la instalación de C:\RSA en el equipo RSA en archivos C:\RSA. Extraiga el archivo User1_000031701832. SDTID en los archivos C:\RSA de CLIENT1.  
+1.  En el equipo CLIENT1, cree la carpeta C:\RSA files. Copie el archivo Software_Tokens. zip de la instalación de C:\RSA en el equipo de RSA a C:\RSA files. Extraiga el archivo User1_000031701832. SDTID en C:\RSA files en cliente1.  
   
 2.  Acceda al origen multimedia del token de software de RSA SecurID y haga doble clic en RSASECURIDTOKEN410 en la carpeta de la **aplicación cliente de SoftwareToken de SecurID** para iniciar la instalación de RSA SecurID. Si aparece el mensaje **de advertencia de seguridad abrir archivo** , haga clic en **Ejecutar**.  
   
@@ -284,7 +284,7 @@ Utilice este procedimiento para instalar el token de software de SecurID en clie
   
 8.  Haga clic en **Importar desde archivo**.  
   
-9. Haga clic en **examinar**, seleccione C:\RSA Files\User1_000031701832.SDTID y haga clic en **abrir**.  
+9. Haga clic en **examinar**, seleccione C:\RSA files \ USER1_000031701832. SDTID y haga clic en **Open (abrir**).  
   
 10. Haga clic en **Aceptar** dos veces.  
   
@@ -295,7 +295,7 @@ Use este procedimiento para configurar EDGE1 para realizar la autenticación RSA
   
 1. En EDGE1, abra el explorador de Windows y cree la carpeta C:\RSA files. Busque el disco de instalación de RSA ACE.  
   
-2. Copie los archivos agent_nsload. exe, AM_Config. zip y EDGE1_NodeSecret. zip desde el medio de RSA a los archivos C:\RSA.  
+2. Copie los archivos agent_nsload. exe, AM_Config. zip y EDGE1_NodeSecret. zip desde el medio de RSA a los archivos de C:\RSA.  
   
 3. Extraiga el contenido de ambos archivos zip en las siguientes ubicaciones:  
   
@@ -303,11 +303,11 @@ Use este procedimiento para configurar EDGE1 para realizar la autenticación RSA
   
    2.  C:\Windows\SysWOW64  
   
-4. Copie agent_nsload. exe en C:\Windows\SysWOW64 @ no__t-0.  
+4. Copie agent_nsload. exe en C:\Windows\SysWOW64\\.  
   
 5. Abra un símbolo del sistema con privilegios elevados y vaya a C:\Windows\SysWOW64.  
   
-6. Escriba **agent_nsload. exe-f nodesecret. REC-p <password>,** donde <password> es la contraseña segura que creó durante la configuración inicial de RSA. Presiona Entrar.  
+6. Escriba **agent_nsload. exe-f nodesecret. REC-p <password>** donde <password> es la contraseña segura que creó durante la configuración inicial de RSA. Presiona Entrar.  
   
 7. Copie C:\Windows\SysWOW64\securid en C:\Windows\System32.  
   
@@ -335,7 +335,7 @@ Use este procedimiento para configurar OTP para DirectAccess y comprobar la conf
   
 8.  En la sección **servidores de CA de OTP** , seleccione app1.Corp.contoso.com y haga clic en **Agregar**. Haz clic en **Siguiente**.  
   
-9. En la página **plantillas de certificado OTP** , haga clic en **examinar** para seleccionar una plantilla de certificado que se usa para la inscripción de certificados que se emiten para la autenticación OTP y, en el cuadro de diálogo **plantillas de certificado** , seleccione **DAOTPLogon** . Haga clic en **Aceptar**. Haga clic en **examinar** para seleccionar una plantilla de certificado que se usa para inscribir el certificado usado por el servidor de acceso remoto para firmar las solicitudes de inscripción de certificados OTP y, en el cuadro de diálogo **plantillas de certificado** , seleccione **DAOTPRA**. Haga clic en **Aceptar**. Haz clic en **Siguiente**.  
+9. En la **Página plantillas de certificado de OTP** , haga clic en **examinar** para seleccionar una plantilla de certificado que se usa para la inscripción de certificados que se emiten para la autenticación de OTP y, en el cuadro de diálogo **plantillas de certificado** , seleccione **DAOTPLogon**. Haz clic en **Aceptar**. Haga clic en **examinar** para seleccionar una plantilla de certificado que se usa para inscribir el certificado usado por el servidor de acceso remoto para firmar las solicitudes de inscripción de certificados OTP y, en el cuadro de diálogo **plantillas de certificado** , seleccione **DAOTPRA**. Haga clic en **Aceptar**. Haz clic en **Siguiente**.  
   
 10. En la página **instalación del servidor de acceso remoto** , haga clic en **Finalizar**y en **Finalizar** en el **Asistente para el experto de DirectAccess**.  
   

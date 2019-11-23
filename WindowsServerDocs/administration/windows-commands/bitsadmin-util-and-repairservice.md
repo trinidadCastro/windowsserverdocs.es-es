@@ -24,7 +24,7 @@ ms.locfileid: "71380277"
 
 Si no se inicia BITS, use este modificador para corregir problemas conocidos con diversas versiones de BITS.
 
-**BITSAdmin 1,5 y versiones anteriores:** se admite  Not.
+**BITSAdmin 1,5 y versiones anteriores:**  no se admiten.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -38,7 +38,7 @@ bitsadmin /Util /RepairService [/Force]
 |---------|-----------|
 |Force|Opcional: elimina y vuelve a crear el servicio.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Este modificador resuelve los errores relacionados con la configuración incorrecta del servicio y las dependencias de los servicios de Windows (por ejemplo, LANManworkstation) y el directorio de red. Este modificador genera un resultado que indica si se resolvieron los problemas.
 

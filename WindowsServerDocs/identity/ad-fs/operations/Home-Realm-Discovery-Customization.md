@@ -30,22 +30,22 @@ Cuando el cliente de AD FS solicita primero un recurso, el servidor de Federaci�
 
 
 ## <a name="configure-identity-provider-to-use-certain-email-suffixes"></a>Configuración del proveedor de identidades para utilizar ciertos sufijos de correo electrónico  
-Cada organización se puede federar con varios proveedores de notificaciones. AD FS ahora proporciona la funcionalidad @ no__t-0box para que los administradores enumeren los sufijos, por ejemplo, @us.contoso.com, @eu.contoso.com, que es compatible con un proveedor de notificaciones y lo habilitan para la detección de sufijo @ no__t-3based. Con esta configuración, los usuarios finales pueden escribir su cuenta profesional y AD FS selecciona automáticamente el proveedor de notificaciones correspondiente.  
+Cada organización se puede federar con varios proveedores de notificaciones. AD FS ahora proporciona la funcionalidad de Box en\-para que los administradores puedan enumerar los sufijos, por ejemplo, @us.contoso.com, @eu.contoso.com, que es compatible con un proveedor de notificaciones y habilitarlo para la detección basada en el sufijo\-. Con esta configuración, los usuarios finales pueden escribir su cuenta profesional y AD FS selecciona automáticamente el proveedor de notificaciones correspondiente.  
   
-Para configurar un proveedor de identidades \(IDP @ no__t-1, como `fabrikam`, para usar determinados sufijos de correo electrónico, use el siguiente cmdlet de Windows PowerShell y la siguiente sintaxis.  
+Para configurar un proveedor de identidades \(\)de IDP, como `fabrikam`, para usar determinados sufijos de correo electrónico, use el siguiente cmdlet de Windows PowerShell y la siguiente sintaxis.  
   
 
 `Set-AdfsClaimsProviderTrust -TargetName fabrikam -OrganizationalAccountSuffix @("fabrikam.com";"fabrikam2.com") ` 
  
 >[!NOTE]
-> Al federar entre dos servidores AD FS, establezca la propiedad PromptLoginFederation en la relación de confianza para proveedor de notificaciones en ForwardPromptAndHintsOverWsFederation.  De este modo, AD FS reenviará el login_hint y el parámetro prompt al IDP.  Esto puede hacerse mediante la ejecución del siguiente cmdlet de PowerShell:
+> Al federar entre dos servidores AD FS, establezca la propiedad PromptLoginFederation en la relación de confianza para proveedor de notificaciones en ForwardPromptAndHintsOverWsFederation.  Esto es para que AD FS reenvíe el login_hint y solicite el parámetro al IDP.  Esto puede hacerse mediante la ejecución del siguiente cmdlet de PowerShell:
 >
 >`Set-AdfsclaimsProviderTrust -PromptLoginFederation ForwardPromptAndHintsOverWsFederation`
 
 ## <a name="configure-an-identity-provider-list-per-relying-party"></a>Configuración de una lista de proveedores de identidades por usuarios de confianza  
 En algunos escenarios, es posible que una organización quiera que los usuarios finales vean solamente los proveedores de notificaciones específicos de una aplicación, de manera que, en la página de detección del dominio de inicio, solo se muestre un subconjunto de los proveedores de notificaciones.  
   
-Para configurar una lista de IDP por usuario de confianza \(RP @ no__t-1, usa el siguiente cmdlet de Windows PowerShell y la siguiente sintaxis.  
+Para configurar una lista de IDP por usuario de confianza \(RP\), usa el siguiente cmdlet de Windows PowerShell y la siguiente sintaxis.  
   
  
 `Set-AdfsRelyingPartyTrust -TargetName claimapp -ClaimsProviderName @("Fabrikam","Active Directory") ` 
@@ -61,7 +61,7 @@ Para omitir HRD para la intranet, use el siguiente cmdlet de Windows PowerShell 
  
   
 > [!IMPORTANT]  
-> Tenga en cuenta que si se ha configurado una lista de proveedores de identidades para un usuario de confianza, aunque se haya habilitado la configuración anterior y el usuario acceda desde la intranet, AD FS seguirá mostrando la página de detección del dominio de inicio \(HRD @ no__t-1. Para omitir la HRD en este caso, tendrás que asegurarte de que se agregue también “Active Directory” a la lista de IDP del usuario de confianza.  
+> Tenga en cuenta que si se ha configurado una lista de proveedores de identidades para un usuario de confianza, aunque se haya habilitado la configuración anterior y el usuario acceda desde la intranet, AD FS seguirá mostrando la página\) de detección del dominio de inicio \(HRD. Para omitir la HRD en este caso, tendrás que asegurarte de que se agregue también “Active Directory” a la lista de IDP del usuario de confianza.  
 
 ## <a name="additional-references"></a>Referencias adicionales 
 [Personalización de inicio de sesión de AD FS usuario](AD-FS-user-sign-in-customization.md)  

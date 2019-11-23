@@ -266,7 +266,7 @@ Por ejemplo, quiero cambiar una máquina virtual del conjunto de clústeres de C
 
         Move-ClusterSetVM -CimSession CSMASTER -VMName CSVM1 -Node NODE2-CL3
 
-Tenga en cuenta que esto no mueve los archivos de configuración o el almacenamiento de la máquina virtual.  Esto no es necesario, ya que la ruta de acceso a la \\máquina virtual permanece como sofs-CLUSTER1\VOLUME1.  Una vez que una máquina virtual se ha registrado con conjuntos de clústeres tiene la ruta de acceso del recurso compartido del servidor de archivos de infraestructura, las unidades y la máquina virtual no necesitan estar en el mismo equipo que la máquina virtual.
+Tenga en cuenta que esto no mueve los archivos de configuración o el almacenamiento de la máquina virtual.  Esto no es necesario, ya que la ruta de acceso a la máquina virtual permanece como \\SOFS-CLUSTER1\VOLUME1.  Una vez que una máquina virtual se ha registrado con conjuntos de clústeres tiene la ruta de acceso del recurso compartido del servidor de archivos de infraestructura, las unidades y la máquina virtual no necesitan estar en el mismo equipo que la máquina virtual.
 
 ## <a name="creating-availability-sets-fault-domains"></a>Creación de conjuntos de disponibilidad dominios de error
 
@@ -325,55 +325,55 @@ Por ejemplo, el comando para quitar el clúster de CLUSTER1 de los conjuntos de 
 
 ## <a name="frequently-asked-questions-faq"></a>Preguntas más frecuentes
 
-**Correspondiente** En mi conjunto de clústeres, ¿estoy limitado a usar solo clústeres hiperconvergidos? <br>
-**Respuesta** No.  Puede mezclar Espacios de almacenamiento directo con los clústeres tradicionales.
+**Pregunta:** En mi conjunto de clústeres, ¿estoy limitado a usar solo clústeres hiperconvergidos? <br>
+**Respuesta:** No.  Puede mezclar Espacios de almacenamiento directo con los clústeres tradicionales.
 
-**Correspondiente** ¿Puedo administrar mi conjunto de clústeres a través de System Center Virtual Machine Manager? <br>
-**Respuesta** En la actualidad, System Center Virtual Machine Manager no admite conjuntos de clústeres <br><br> **Correspondiente** ¿Pueden coexistir los clústeres de Windows Server 2012 R2 o 2016 en el mismo conjunto de clústeres? <br>
-**Correspondiente** ¿Puedo migrar las cargas de trabajo de los clústeres de Windows Server 2012 R2 o 2016 con solo que esos clústeres se unan al mismo conjunto de clústeres? <br>
-**Respuesta** Conjuntos de clústeres es una nueva tecnología que se introduce en Windows Server 2019, por lo que no existe en versiones anteriores. Los clústeres basados en el sistema operativo de nivel inferior no pueden unirse a un conjunto de clústeres. Sin embargo, la tecnología de las actualizaciones graduales del sistema operativo del clúster debe proporcionar la funcionalidad de migración que está buscando mediante la actualización de estos clústeres a Windows Server 2019.
+**Pregunta:** ¿Puedo administrar mi conjunto de clústeres a través de System Center Virtual Machine Manager? <br>
+**Respuesta:** En la actualidad, System Center Virtual Machine Manager no admite conjuntos de clústeres <br><br> **Pregunta:** ¿Pueden coexistir los clústeres de Windows Server 2012 R2 o 2016 en el mismo conjunto de clústeres? <br>
+**Pregunta:** ¿Puedo migrar las cargas de trabajo de los clústeres de Windows Server 2012 R2 o 2016 con solo que esos clústeres se unan al mismo conjunto de clústeres? <br>
+**Respuesta:** Conjuntos de clústeres es una nueva tecnología que se introduce en Windows Server 2019, por lo que no existe en versiones anteriores. Los clústeres basados en el sistema operativo de nivel inferior no pueden unirse a un conjunto de clústeres. Sin embargo, la tecnología de las actualizaciones graduales del sistema operativo del clúster debe proporcionar la funcionalidad de migración que está buscando mediante la actualización de estos clústeres a Windows Server 2019.
 
-**Correspondiente** ¿Pueden los conjuntos de clústeres permitirme escalar el almacenamiento o el proceso (solo)? <br>
-**Respuesta** Sí, simplemente agregando un espacio de almacenamiento directo o un clúster de Hyper-V tradicional. Con los conjuntos de clústeres, es un cambio sencillo de la relación de proceso a almacenamiento, incluso en un conjunto de clúster hiperconvergido.
+**Pregunta:** ¿Pueden los conjuntos de clústeres permitirme escalar el almacenamiento o el proceso (solo)? <br>
+**Respuesta:** Sí, simplemente agregando un espacio de almacenamiento directo o un clúster de Hyper-V tradicional. Con los conjuntos de clústeres, es un cambio sencillo de la relación de proceso a almacenamiento, incluso en un conjunto de clúster hiperconvergido.
 
-**Correspondiente** ¿Qué son las herramientas de administración para conjuntos de clústeres? <br>
-**Respuesta** PowerShell o WMI en esta versión.
+**Pregunta:** ¿Qué son las herramientas de administración para conjuntos de clústeres? <br>
+**Respuesta:** PowerShell o WMI en esta versión.
 
-**Correspondiente** ¿Cómo funcionará la migración en vivo entre clústeres con procesadores de diferentes generaciones?  <br>
-**Respuesta** Los conjuntos de clústeres no solucionan las diferencias de procesador y sustituyen a lo que actualmente admite Hyper-V.  Por lo tanto, se debe usar el modo de compatibilidad de procesador con las migraciones rápidas.  La recomendación para conjuntos de clústeres es usar el mismo hardware de procesador dentro de cada clúster individual, así como todo el conjunto de clústeres para migraciones en vivo entre los clústeres.
+**Pregunta:** ¿Cómo funcionará la migración en vivo entre clústeres con procesadores de diferentes generaciones?  <br>
+**Respuesta:** Los conjuntos de clústeres no solucionan las diferencias de procesador y sustituyen a lo que actualmente admite Hyper-V.  Por lo tanto, se debe usar el modo de compatibilidad de procesador con las migraciones rápidas.  La recomendación para conjuntos de clústeres es usar el mismo hardware de procesador dentro de cada clúster individual, así como todo el conjunto de clústeres para migraciones en vivo entre los clústeres.
 
-**Correspondiente** ¿Puede mi clúster establecer automáticamente la conmutación por error de máquinas virtuales en un clúster?  <br>
-**Respuesta** En esta versión, las máquinas virtuales del conjunto de clústeres solo se pueden migrar en vivo de forma manual a través de los clústeres. pero no puede realizar la conmutación por error automáticamente. 
+**Pregunta:** ¿Puede mi clúster establecer automáticamente la conmutación por error de máquinas virtuales en un clúster?  <br>
+**Respuesta:** En esta versión, las máquinas virtuales del conjunto de clústeres solo se pueden migrar en vivo de forma manual a través de los clústeres. pero no puede realizar la conmutación por error automáticamente. 
 
-**Correspondiente** ¿Cómo se garantiza que el almacenamiento sea resistente a los errores de clúster? <br>
-**Respuesta** Use la solución de réplica de almacenamiento entre clústeres (SR) en los clústeres miembro para obtener la resistencia de almacenamiento a los errores de clúster.
+**Pregunta:** ¿Cómo se garantiza que el almacenamiento sea resistente a los errores de clúster? <br>
+**Respuesta:** Use la solución de réplica de almacenamiento entre clústeres (SR) en los clústeres miembro para obtener la resistencia de almacenamiento a los errores de clúster.
 
-**Correspondiente** Utilizo réplica de almacenamiento (SR) para replicar a través de los clústeres de miembros. ¿Las rutas UNC de almacenamiento de espacio de nombres del conjunto de clúster cambian en la conmutación por error de SR al destino de réplica Espacios de almacenamiento directo clúster? <br>
-**Respuesta** En esta versión, este cambio de referencia de espacio de nombres de conjunto de clústeres no se produce con la conmutación por error de SR. Deje que Microsoft sepa si este escenario es fundamental para usted y cómo planea usarlo.
+**Pregunta:** Utilizo réplica de almacenamiento (SR) para replicar a través de los clústeres de miembros. ¿Las rutas UNC de almacenamiento de espacio de nombres del conjunto de clúster cambian en la conmutación por error de SR al destino de réplica Espacios de almacenamiento directo clúster? <br>
+**Respuesta:** En esta versión, este cambio de referencia de espacio de nombres de conjunto de clústeres no se produce con la conmutación por error de SR. Deje que Microsoft sepa si este escenario es fundamental para usted y cómo planea usarlo.
 
-**Correspondiente** ¿Es posible realizar una conmutación por error de máquinas virtuales a través de dominios de error en una situación de recuperación ante desastres (por ejemplo, el dominio de error completo dejó de funcionar)? <br>
-**Respuesta** No, tenga en cuenta que todavía no se admite la conmutación por error entre clústeres dentro de un dominio de error lógico. 
+**Pregunta:** ¿Es posible realizar una conmutación por error de máquinas virtuales a través de dominios de error en una situación de recuperación ante desastres (por ejemplo, el dominio de error completo dejó de funcionar)? <br>
+**Respuesta:** No, tenga en cuenta que todavía no se admite la conmutación por error entre clústeres dentro de un dominio de error lógico. 
 
-**Correspondiente** ¿Puede mi clúster establecer clústeres de intervalos en varios sitios (o dominios DNS)? <br> 
-**Respuesta** Se trata de un escenario no probado que no se ha planeado de inmediato para el soporte de producción. Deje que Microsoft sepa si este escenario es fundamental para usted y cómo planea usarlo.
+**Pregunta:** ¿Puede mi clúster establecer clústeres de intervalos en varios sitios (o dominios DNS)? <br> 
+**respuesta:** se trata de un escenario no probado y no planeado de inmediato para el soporte de producción. Deje que Microsoft sepa si este escenario es fundamental para usted y cómo planea usarlo.
 
-**Correspondiente** ¿Funciona el conjunto de clústeres con IPv6? <br>
-**Respuesta** Tanto IPv4 como IPv6 son compatibles con los conjuntos de clústeres que con los clústeres de conmutación por error.
+**Pregunta:** ¿Funciona el conjunto de clústeres con IPv6? <br>
+**Respuesta:** Tanto IPv4 como IPv6 son compatibles con los conjuntos de clústeres que con los clústeres de conmutación por error.
 
-**Correspondiente** ¿Cuáles son los requisitos de bosque de Active Directory para conjuntos de clústeres? <br>
-**Respuesta** Todos los clústeres miembros deben estar en el mismo bosque de AD.
+**Pregunta:** ¿Cuáles son los requisitos de bosque de Active Directory para conjuntos de clústeres? <br>
+**Respuesta:** Todos los clústeres miembros deben estar en el mismo bosque de AD.
 
-**Correspondiente** ¿Cuántos clústeres o nodos pueden formar parte de un único conjunto de clústeres? <br>
-**Respuesta** En Windows Server 2019, los conjuntos de clústeres se han probado y se admite hasta 64 nodos de clúster en total. Sin embargo, la arquitectura de los conjuntos de clústeres se escala a límites mucho mayores y no es algo codificado para un límite. Deje que Microsoft sepa si la escala es más importante para usted y cómo planea usarla.
+**Pregunta:** ¿Cuántos clústeres o nodos pueden formar parte de un único conjunto de clústeres? <br>
+**Respuesta:** En Windows Server 2019, los conjuntos de clústeres se han probado y se admite hasta 64 nodos de clúster en total. Sin embargo, la arquitectura de los conjuntos de clústeres se escala a límites mucho mayores y no es algo codificado para un límite. Deje que Microsoft sepa si la escala es más importante para usted y cómo planea usarla.
 
-**Correspondiente** ¿Todos los clústeres de Espacios de almacenamiento directo de un conjunto de clústeres forman un solo grupo de almacenamiento? <br>
-**Respuesta** No. Espacios de almacenamiento directo tecnología sigue funcionando en un solo clúster y no en los clústeres de miembros de un conjunto de clústeres.
+**Pregunta:** ¿Todos los clústeres de Espacios de almacenamiento directo de un conjunto de clústeres forman un solo grupo de almacenamiento? <br>
+**Respuesta:** No. Espacios de almacenamiento directo tecnología sigue funcionando en un solo clúster y no en los clústeres de miembros de un conjunto de clústeres.
 
-**Correspondiente** ¿El espacio de nombres del conjunto de clústeres es altamente disponible? <br>
-**Respuesta** Sí, el espacio de nombres del conjunto de clústeres se proporciona a través de un servidor de espacio de nombres SOFS de referencia disponible continuamente (CA) que se ejecuta en el clúster de administración. Microsoft recomienda tener un número suficiente de máquinas virtuales de los clústeres miembro para que sea resistente a errores localizados en todo el clúster. Sin embargo, para tener en cuenta los errores catastróficos imprevistos (por ejemplo, todas las máquinas virtuales del clúster de administración se desactivan al mismo tiempo), la información de referencia se almacena en caché de forma persistente en cada nodo del conjunto de clústeres, incluso entre reinicios.
+**Pregunta:** ¿El espacio de nombres del conjunto de clústeres es altamente disponible? <br>
+**Respuesta:** Sí, el espacio de nombres del conjunto de clústeres se proporciona a través de un servidor de espacio de nombres SOFS de referencia disponible continuamente (CA) que se ejecuta en el clúster de administración. Microsoft recomienda tener un número suficiente de máquinas virtuales de los clústeres miembro para que sea resistente a errores localizados en todo el clúster. Sin embargo, para tener en cuenta los errores catastróficos imprevistos (por ejemplo, todas las máquinas virtuales del clúster de administración se desactivan al mismo tiempo), la información de referencia se almacena en caché de forma persistente en cada nodo del conjunto de clústeres, incluso entre reinicios.
  
-**Correspondiente** ¿El clúster establece el acceso de almacenamiento basado en el espacio de nombres para reducir el rendimiento del almacenamiento en un conjunto de clústeres? <br>
-**Respuesta** No. Cluster Set namespace ofrece un espacio de nombres de referencia superpuesto dentro de un conjunto de clústeres, conceptualmente como Sistema de archivos distribuido espacios de nombres (DFSN). Y, a diferencia de DFSN, todos los metadatos de referencia de espacio de nombres del conjunto de clúster se rellenan automáticamente y se actualizan automáticamente en todos los nodos sin intervención del administrador, por lo que no hay casi ninguna sobrecarga de rendimiento en la ruta de acceso de almacenamiento. 
+**Pregunta:** ¿El clúster establece el acceso de almacenamiento basado en el espacio de nombres para reducir el rendimiento del almacenamiento en un conjunto de clústeres? <br>
+**Respuesta:** No. Cluster Set namespace ofrece un espacio de nombres de referencia superpuesto dentro de un conjunto de clústeres, conceptualmente como Sistema de archivos distribuido espacios de nombres (DFSN). Y, a diferencia de DFSN, todos los metadatos de referencia de espacio de nombres del conjunto de clúster se rellenan automáticamente y se actualizan automáticamente en todos los nodos sin intervención del administrador, por lo que no hay casi ninguna sobrecarga de rendimiento en la ruta de acceso de almacenamiento. 
 
-**Correspondiente** ¿Cómo puedo realizar copias de seguridad de metadatos del conjunto de clústeres? <br>
-**Respuesta** Esta guía es la misma que la del clúster de conmutación por error. La copia de seguridad del estado del sistema también realizará una copia de seguridad del estado del clúster.  A través de Copias de seguridad de Windows Server, puede realizar restauraciones de solo la base de datos de clúster de un nodo (que nunca debe ser necesaria debido a una serie de lógica de recuperación automática que tenemos) o realizar una restauración autoritativa para revertir toda la base de datos del clúster en todos los nodos. En el caso de los conjuntos de clústeres, Microsoft recomienda realizar una restauración autoritativa primero en el clúster de miembros y, a continuación, en el clúster de administración si es necesario.
+**Pregunta:** ¿Cómo puedo realizar copias de seguridad de metadatos del conjunto de clústeres? <br>
+**Respuesta:** Esta guía es la misma que la del clúster de conmutación por error. La copia de seguridad del estado del sistema también realizará una copia de seguridad del estado del clúster.  A través de Copias de seguridad de Windows Server, puede realizar restauraciones de solo la base de datos de clúster de un nodo (que nunca debe ser necesaria debido a una serie de lógica de recuperación automática que tenemos) o realizar una restauración autoritativa para revertir toda la base de datos del clúster en todos los nodos. En el caso de los conjuntos de clústeres, Microsoft recomienda realizar una restauración autoritativa primero en el clúster de miembros y, a continuación, en el clúster de administración si es necesario.

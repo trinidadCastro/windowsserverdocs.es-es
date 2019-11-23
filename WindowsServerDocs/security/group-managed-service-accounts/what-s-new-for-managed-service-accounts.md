@@ -51,12 +51,12 @@ En los equipos que ejecutan Windows Server 2012 o Windows 8, se puede crear una 
 ### <a name="interoperability"></a>Funcionalidad eliminada o desusada
 En Windows Server 2012, los cmdlets de Windows PowerShell predeterminados para administrar las cuentas de servicio administradas de grupo en lugar de las cuentas de servicio administradas del servidor.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 -   [Introducción a las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)
 
 -   [Introducción a Active Directory Domain Services](active-directory-domain-services-overview.md)
 
--   @no__t las cuentas de servicio de 0Managed: Descripción, implementación, procedimientos recomendados y solución de problemas de @ no__t-0
+-   [Cuentas de servicio administradas: Descripción, implementación, procedimientos recomendados y solución de problemas](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 
 

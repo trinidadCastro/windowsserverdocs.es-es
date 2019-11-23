@@ -30,7 +30,7 @@ Vaya a [AD FS Help Diagnostics Analyzer (https://aka.ms/adfsdiagnosticsanalyzer)
 
 ![AD FS herramienta analizador de diagnósticos en AD FS ayuda](media/ad-fs-diagonostics-analyzer/home.png)
 
-## <a name="step-1-setup-the-adfstoolbox-module-on-ad-fs-server"></a>Paso 1: Configuración del módulo ADFSToolbox en AD FS Server
+## <a name="step-1-setup-the-adfstoolbox-module-on-ad-fs-server"></a>Paso 1: configurar el módulo ADFSToolbox en AD FS Server
 
 Para ejecutar el [analizador de diagnósticos](https://aka.ms/adfsdiagnosticsanalyzer), debe instalar el módulo de PowerShell ADFSToolbox. Si el servidor de AD FS tiene conectividad a Internet, puede instalar el módulo ADFSToolbox directamente desde la galería de PowerShell. En el caso de que no haya conectividad a Internet, puede instalarla manualmente. 
 
@@ -58,7 +58,7 @@ El módulo ADFSToolbox se debe copiar manualmente en los servidores AD FS o WAP.
     ```powershell
     Install-Module -Name ADFSToolbox -Force
     ```
-3. Copie la carpeta ADFSToolbox ubicada `%SYSTEMDRIVE%\Program Files\WindowsPowerShell\Modules\` en la máquina local en la misma ubicación en el AD FS o en el equipo WAP.
+3. Copie la carpeta ADFSToolbox ubicada `%SYSTEMDRIVE%\Program Files\WindowsPowerShell\Modules\` en el equipo local en la misma ubicación en el AD FS o en el equipo WAP.
 
 4. Inicie una ventana de PowerShell con privilegios elevados en la máquina AD FS y ejecute el siguiente cmdlet para importar el módulo.
 
@@ -66,7 +66,7 @@ El módulo ADFSToolbox se debe copiar manualmente en los servidores AD FS o WAP.
     Import-Module ADFSToolbox -Force
     ```
 
-## <a name="step-2-execute-the-diagnostics-cmdlet"></a>Paso 2: Ejecutar el cmdlet de diagnóstico
+## <a name="step-2-execute-the-diagnostics-cmdlet"></a>Paso 2: ejecutar el cmdlet de diagnóstico
 
 ![Herramienta analizador de diagnóstico de AD FS: ejecución y carga de resultados](media/ad-fs-diagonostics-analyzer/step2_v2.png)
 
@@ -82,11 +82,11 @@ En un servidor 2016 o superior AD FS granja de servidores, el comando leerá la 
     Export-AdfsDiagnosticsFile -ServerNames @("adfs1.contoso.com", "adfs2.contoso.com")
 ```
 
-El resultado es un archivo JSON que se crea en el mismo directorio donde se ejecutó el comando. El nombre del archivo es AdfsDiagnosticsFile-\<timestamp @ no__t-1. Un nombre de archivo de ejemplo es AdfsDiagnosticsFile-07312019-184201. JSON.
+El resultado es un archivo JSON que se crea en el mismo directorio donde se ejecutó el comando. El nombre del archivo es AdfsDiagnosticsFile-\<timestamp\>. Un nombre de archivo de ejemplo es AdfsDiagnosticsFile-07312019-184201. JSON.
 
-## <a name="step-3-upload-the-diagnostics-file"></a>Paso 3: Cargar el archivo de diagnóstico
+## <a name="step-3-upload-the-diagnostics-file"></a>Paso 3: cargar el archivo de diagnóstico
 
-En el paso 3 de [https://aka.ms/adfsdiagnosticsanalyzer](https://aka.ms/adfsdiagnosticsanalyzer) use el explorador de archivos para seleccionar el archivo de resultados que se va a cargar.
+En el paso 3 de [https://aka.ms/adfsdiagnosticsanalyzer](https://aka.ms/adfsdiagnosticsanalyzer) usar el explorador de archivos para seleccionar el archivo de resultados que se va a cargar.
 
 Haga clic en **cargar** para finalizar la carga.
 
@@ -94,22 +94,22 @@ Al iniciar sesión con un cuenta de Microsoft, los resultados de diagnóstico se
 
 ![Herramienta analizador de diagnóstico de AD FS: Inicio de sesión](media/ad-fs-diagonostics-analyzer/sign_in_step.png)
 
-## <a name="step-4-view-diagnostics-analysis-and-resolve-any-issues"></a>Paso 4: Ver el análisis de diagnósticos y resolver los problemas
+## <a name="step-4-view-diagnostics-analysis-and-resolve-any-issues"></a>Paso 4: ver el análisis de diagnósticos y resolver los problemas
 
 Existen cinco secciones de resultados de pruebas:
 
-1. Error: Esta sección contiene una lista de pruebas con errores. Cada resultado consta de:
-2. Advertencia: Esta sección contiene una lista de pruebas que han generado una advertencia. Estos problemas no tendrán más probabilidades de que se produzcan problemas en la autenticación en una escala más amplia, pero se deben abordar en primer lugar.
-3. Ha Esta sección contiene la lista de pruebas que se han superado y no tienen ningún elemento de acción para el usuario.
-4. No ejecutado: Esta sección contiene la lista de pruebas que no se pudieron ejecutar debido a la falta de información.
-5. No aplicable: Esta sección contiene la lista de pruebas que no se ejecutaron porque no eran aplicables para el servidor determinado en el que se estaba ejecutando el comando.
+1. Error: esta sección contiene una lista de pruebas con errores. Cada resultado consta de:
+2. ADVERTENCIA: esta sección contiene una lista de pruebas que han provocado una advertencia. Estos problemas no tendrán más probabilidades de que se produzcan problemas en la autenticación en una escala más amplia, pero se deben abordar en primer lugar.
+3. Passed: esta sección contiene la lista de pruebas que se han superado y no tienen ningún elemento de acción para el usuario.
+4. No ejecutado: esta sección contiene la lista de pruebas que no se pudieron ejecutar debido a la falta de información.
+5. No aplicable: esta sección contiene la lista de pruebas que no se ejecutaron porque no se aplicaron para el servidor determinado en el que se estaba ejecutando el comando.
 
-![AD FS Diagnostics Tool: lista de resultados de pruebas @ no__t-1 cada resultado de la prueba se muestra con detalles que describen la prueba y la resolución de los pasos:
+![AD FS herramienta analizador de diagnósticos: lista de resultados de pruebas](media/ad-fs-diagonostics-analyzer/step3a_v3.png) cada resultado de la prueba se muestra con detalles que describen la prueba y la resolución de los pasos:
 
-1. Nombre de la prueba: Nombre de la prueba que se ejecutó
-2. Descripción: Una descripción de la prueba.
-3. Detalles: Descripción de la operación general realizada durante la prueba
-4. Pasos de resolución: Los pasos sugeridos para resolver el problema resaltado por la prueba
+1. Nombre de la prueba: nombre de la prueba que se ejecutó.
+2. Descripción: una descripción de la prueba.
+3. Detalles: Descripción de la operación general realizada durante la prueba.
+4. Pasos de resolución: pasos sugeridos para resolver el problema resaltado por la prueba
 
 ![Herramienta analizador de diagnóstico de AD FS: resolución de errores](media/ad-fs-diagonostics-analyzer/step3b_v3.png)
 

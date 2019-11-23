@@ -42,15 +42,15 @@ Los siguientes subcomandos están disponibles en todo momento:
 |-----------|-----------|
 |clase|Escapa del modo de alias predeterminado de WMIC para tener acceso directamente a las clases del esquema WMI.|
 |ruta de acceso|Escapa del modo de alias predeterminado de WMIC para tener acceso directamente a las instancias del esquema WMI.|
-|Contexto|Muestra los valores actuales de todos los conmutadores globales.|
-|[salir \| salir]|Sale del shell de comandos de WMIC.|
+|contexto|Muestra los valores actuales de todos los conmutadores globales.|
+|[salir de \| salir]|Sale del shell de comandos de WMIC.|
 
 ## <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
-|</parameter>|@no__t Descripción de 0Concise, comienza con un verbo. >|
-|</param2>|@no__t descripción concisa de 0Another, comienza con un verbo. >|
+|</parameter>|\<descripción concisa, comienza con un verbo. >|
+|</param2>|\<otra descripción concisa, comienza con un verbo. >|
 
 
 ## <a name="BKMK_examples"></a>Example

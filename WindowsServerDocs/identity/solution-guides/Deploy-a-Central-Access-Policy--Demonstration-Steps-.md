@@ -26,15 +26,15 @@ Para implementar una directiva de acceso central es necesario completar varias f
 
 |Fase|Descripción  
 |---------|---------------  
-|@no__t 0Plan: Identifique la necesidad de la Directiva y la configuración necesaria para la implementación @ no__t-0|Identifica la necesidad de una directiva y la configuración necesaria para la implementación. 
-|@no__t 0Implement: Configurar los componentes y la Directiva @ no__t-0|Configura los componentes y la directiva.  
+|[Plan: identifique la necesidad de la Directiva y la configuración necesaria para la implementación.](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.2)|Identifica la necesidad de una directiva y la configuración necesaria para la implementación. 
+|[Implementar: configurar los componentes y la Directiva](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.3)|Configura los componentes y la directiva.  
 |[Implementar la Directiva de acceso central](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.4)|Implementa la directiva.  
-|@no__t 0Maintain: Cambiar y almacenar provisionalmente la Directiva @ no__t-0|Cambios de directivas y almacenamiento provisional. 
+|[Mantener: cambiar y almacenar provisionalmente la Directiva](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.5)|Cambios de directivas y almacenamiento provisional. 
 
 ## <a name="BKMK_1.1"></a>Configurar un entorno de prueba  
-Antes de comenzar, deberás preparar un entorno de laboratorio para este escenario. Los pasos para configurar el laboratorio se explican en detalle en @no__t 0Appendix B: Configurar el entorno de prueba @ no__t-0.  
+Antes de comenzar, deberás preparar un entorno de laboratorio para este escenario. Los pasos para configurar el laboratorio se explican en detalle en el [Apéndice B: configurar el entorno de prueba](Appendix-B--Setting-Up-the-Test-Environment.md).  
 
-## <a name="BKMK_1.2"></a>Plan Identifica la necesidad de una directiva y la configuración necesaria para la implementación  
+## <a name="BKMK_1.2"></a>Plan: identifique la necesidad de la Directiva y la configuración necesaria para la implementación.  
 En esta sección encontrarás series de pasos de alto nivel que te ayudarán a planificar la implementación.  
 
 ||Paso|Ejemplo|  
@@ -46,7 +46,7 @@ En esta sección encontrarás series de pasos de alto nivel que te ayudarán a p
 |1.5|Determinar los tipos de notificaciones y los grupos necesarios para la directiva|Tipos de notificaciones:<br /><br />-País<br />-Departamento<br /><br />Grupos de usuarios:<br /><br />-FinanceAdmin<br />-FinanceException|  
 |1.6|Determinar los servidores donde se aplicará esta directiva|Aplica la directiva en todos los servidores de archivos de finanzas.|  
 
-## <a name="BKMK_1.3"></a>Ejecutar Configura los componentes y la directiva  
+## <a name="BKMK_1.3"></a>Implementar: configurar los componentes y la Directiva  
 En esta sección encontrarás un ejemplo en el que implementa una directiva de acceso central para documentos financieros.  
 
 |No|Paso|Ejemplo|  
@@ -58,11 +58,11 @@ En esta sección encontrarás un ejemplo en el que implementa una directiva de a
 |2.5|Dirigir la directiva de acceso central a los servidores de archivos|Publica la CAP Directiva de finanzas en los servidores de archivos.|  
 |2.6|Habilita Compatibilidad de KDC para notificaciones, autenticación compuesta y protección de Kerberos.|Habilita Compatibilidad de KDC para notificaciones, autenticación compuesta y protección de Kerberos para contoso.com.|  
 
-En el procedimiento siguiente puedes crear dos tipos de notificaciones: País y Departamento.  
+En el procedimiento siguiente, creará dos tipos de notificaciones: país y departamento.  
 
 #### <a name="to-create-claim-types"></a>Para crear tipos de notificaciones  
 
-1. Abra el servidor DC1 en el administrador de Hyper-V e inicie sesión como Contoso\Administrador con la contraseña <strong>pass@word1</strong>.  
+1. Abra el servidor DC1 en el administrador de Hyper-V e inicie sesión como Contoso\Administrador, con la contraseña <strong>pass@word1</strong>.  
 
 2. Abre el Centro de administración de Active Directory.  
 
@@ -73,7 +73,7 @@ En el procedimiento siguiente puedes crear dos tipos de notificaciones: País y 
    > [!TIP]  
    > También puedes abrir la ventana **Crear tipo de notificación** en el panel **Tareas**. En el panel **Tareas**, haz clic en **Nueva** y después en **Tipo de notificación**.  
 
-4. En la lista **Atributo de origen**, desplázate por la lista de atributos y haz clic en **departamento**. Esto rellenará el campo **Nombre para mostrar** con **departamento**. Haga clic en **Aceptar**.  
+4. En la lista **Atributo de origen**, desplázate por la lista de atributos y haz clic en **departamento**. Esto rellenará el campo **Nombre para mostrar** con **departamento**. Haz clic en **Aceptar**.  
 
 5. En el panel **Tareas**, haz clic en **Nueva** y después en **Tipo de notificación**.  
 
@@ -85,7 +85,7 @@ En el procedimiento siguiente puedes crear dos tipos de notificaciones: País y 
 
 9. Repite el paso anterior. En el cuadro de diálogo **Agregar un valor sugerido**, escribe **JP** en los campos **Valor** y **Nombre para mostrar**, y haz clic en **Aceptar**.  
 
-@no__t guías 0solution](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
 
@@ -121,7 +121,7 @@ El paso siguiente es crear propiedades de recursos. En el procedimiento siguient
 
     -   Departmento  
 
-@no__t guías 0solution](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
 
@@ -147,7 +147,7 @@ El paso siguiente es crear reglas de acceso central que definan quién puede acc
 
 O para expresar las reglas con construcciones de Windows Server 2012:  
 
-Destinatarios: Resource.Department Contains Finance  
+Destino: Resource. Department contiene Finance  
 
 Reglas de acceso:  
 
@@ -171,7 +171,7 @@ Reglas de acceso:
 5. En la sección **Permisos**, selecciona **Usar los siguientes permisos como permisos actuales**, haz clic en **Editar** y, en el cuadro de diálogo **Configuración de seguridad avanzada para permisos**, haz clic en **Agregar**.  
 
    > [!NOTE]  
-   > Con la opción **Usar los siguientes permisos como permisos propuestos** podrás crear una directiva provisional. Para obtener más información sobre cómo crearla, consulta la sección Mantenimiento: Cambiar y almacenar provisionalmente la directiva en este tema.  
+   > Con la opción **Usar los siguientes permisos como permisos propuestos** podrás crear una directiva provisional. Para obtener más información sobre cómo hacerlo, consulte la sección mantener: cambiar y ensayar la Directiva de este tema.  
 
 6. En el cuadro de diálogo **Entrada de permiso para permisos**, haz clic en **Seleccionar una entidad de seguridad**, escribe **Usuarios autenticados** y haz clic en **Aceptar**.  
 
@@ -189,7 +189,7 @@ Reglas de acceso:
 
 11. Haz clic en **Aceptar** tres veces para terminar y volver al Centro de administración de Active Directory.  
 
-    @no__t guías 0solution](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+    ![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
 
     Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
 
@@ -206,7 +206,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 
 > [!IMPORTANT]  
-> En el cmdlet del ejemplo anterior, los identificadores de seguridad (SID) para el grupo FinanceAdmin y los usuarios se determinan en el momento de la creación y serán distintos en tu ejemplo. Por ejemplo, es necesario reemplazar el valor de SID proporcionado (S-1-5-21-1787166779-1215870801-2157059049-1113) para los FinanceAdmins con el SID real del grupo FinanceAdmin que has de crear en la implementación. Puede usar Windows PowerShell para buscar el valor de SID de este grupo, asignar ese valor a una variable y, a continuación, usar la variable aquí. Para obtener más información, vea [Windows PowerShell Tip: Trabajar con SID @ no__t-0.  
+> En el cmdlet del ejemplo anterior, los identificadores de seguridad (SID) para el grupo FinanceAdmin y los usuarios se determinan en el momento de la creación y serán distintos en tu ejemplo. Por ejemplo, es necesario reemplazar el valor de SID proporcionado (S-1-5-21-1787166779-1215870801-2157059049-1113) para los FinanceAdmins con el SID real del grupo FinanceAdmin que has de crear en la implementación. Puede usar Windows PowerShell para buscar el valor de SID de este grupo, asignar ese valor a una variable y, a continuación, usar la variable aquí. Para obtener más información, vea [sugerencia de Windows PowerShell: trabajar con SID](https://go.microsoft.com/fwlink/?LinkId=253545).  
 
 Ahora verás una regla de acceso central que permite a los usuarios acceder a documentos del mismo país y del mismo departamento. La regla permite al grupo FinanceAdmin editar los documentos y al grupo FinanceException leerlos. Esta regla solo es válida para documentos clasificados como de Finanzas.  
 
@@ -224,7 +224,7 @@ Ahora verás una regla de acceso central que permite a los usuarios acceder a do
 
 6. Haz clic en **Aceptar** para finalizar. Ahora deberías tener una directiva de acceso central llamada Directiva de finanzas.  
 
-   @no__t guías 0solution](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+   ![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
 
    Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
 
@@ -245,7 +245,7 @@ Ahora verás una regla de acceso central que permite a los usuarios acceder a do
     > [!TIP]  
     > En el entorno de producción, crea una unidad de organización de servidores de archivos (OU) y agrega todos los servidores de archivos a esta OU, a la que deberás aplicar esta directiva. Después, puedes crear una directiva de grupo y agregar esta OU a dicha directiva.  
 
-2.  En este paso, editarás el objeto de directiva de grupo que creaste en la sección [Creación del controlador de dominio](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build) del entorno de prueba para incluir la nueva directiva de acceso central. En el Editor de administración de directivas de grupo, navega hasta la unidad organizativa del dominio (en este ejemplo, contoso.com) y selecciónala: **Administración de directivas de grupo**, **Bosque: contoso.com**, **Dominios**, **contoso.com**, **Contoso**, **OUServidorArchivos**.  
+2.  En este paso, editarás el objeto de directiva de grupo que creaste en la sección [Creación del controlador de dominio](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build) del entorno de prueba para incluir la nueva directiva de acceso central. En el Editor de administración de directivas de grupo, vaya a la unidad organizativa del dominio y selecciónela (contoso.com en este ejemplo): **Directiva de grupo Management**, **Forest: contoso.com**, **Domains**, **contoso.com**, **contoso**, **FileServerOU**.  
 
 3.  Haz clic con el botón secundario en **FlexibleAccessGPO** y después en **Editar**.  
 
@@ -292,7 +292,7 @@ En este paso asignarás la directiva de acceso central a un servidor de archivos
 
 #### <a name="to-assign-a-central-access-policy-to-a-file-server"></a>Para asignar una directiva de acceso central a un servidor de archivos  
 
-1. En el Administrador de Hyper-V, conecta con el servidor FILE1. Inicie sesión en el servidor con Contoso\Administrador con la contraseña: <strong>pass@word1</strong>.  
+1. En el Administrador de Hyper-V, conecta con el servidor FILE1. Inicie sesión en el servidor mediante Contoso\Administrador con la contraseña: <strong>pass@word1</strong>.  
 
 2. Abra un símbolo del sistema con privilegios elevados y escriba: **gpupdate /force**. Esto garantiza que los cambios que realices en la directiva de grupo se apliquen en el servidor.  
 
@@ -340,7 +340,7 @@ En el paso siguiente, comprueba que el acceso esté configurado correctamente.  
 
     La última columna se llama **Acceso limitado por** en la ventana Acceso efectivo. Esta columna le indica qué puertas están afectando a los permisos de la persona. En este caso, los permisos de recursos compartidos y NTFS otorgan control total a todos los usuarios. Pero la directiva de acceso central restringe el acceso basándose en las reglas que has configurado anteriormente.  
 
-## <a name="BKMK_1.5"></a>Manteni Cambiar y almacenar provisionalmente la directiva  
+## <a name="BKMK_1.5"></a>Mantener: cambiar y almacenar provisionalmente la Directiva  
 
 ||||  
 |-|-|-|  
@@ -360,20 +360,20 @@ En el paso siguiente, comprueba que el acceso esté configurado correctamente.  
 
 #### <a name="to-enable-a-claim-for-devices"></a>Para habilitar una notificación para dispositivos  
 
-1. Abra el servidor DC1 en el administrador de Hyper-V e inicie sesión como Contoso\administrador con la contraseña <strong>pass@word1</strong>.  
+1. Abra el servidor DC1 en el administrador de Hyper-V e inicie sesión como Contoso\administrador, con la contraseña <strong>pass@word1</strong>.  
 
 2. En el menú **Herramientas**, abre el Centro de administración de Active Directory.  
 
 3. Haz clic en **Vista de árbol**, expande **Control de acceso dinámico**, haz doble clic en **Tipos de notificaciones** y, después, haz doble clic en la notificación de **país**.  
 
-4. En **Las notificaciones de este tipo pueden ser emitidas por las siguientes clases**, selecciona la casilla **Equipo**. Haga clic en **Aceptar**.   
+4. En **Las notificaciones de este tipo pueden ser emitidas por las siguientes clases**, selecciona la casilla **Equipo**. Haz clic en **Aceptar**.   
    Deben estar seleccionadas las dos casillas, **Usuario** y **Equipo**. Ahora puede usarse la notificación de país con dispositivos, además de los usuarios.  
 
 El paso siguiente es crear una regla de directivas de almacenamiento provisional. Las directivas de almacenamiento provisional se pueden usar para supervisar los efectos de una nueva entrada de directiva antes de habilitarla. En el paso siguiente crearás una entrada de directiva de almacenamiento provisional y comprobarás los efectos en la carpeta compartida.  
 
 #### <a name="to-create-a-staging-policy-rule-and-add-it-to-the-central-access-policy"></a>Para crear una regla de directivas de almacenamiento provisional y agregar la a la directiva de acceso central  
 
-1. Abra el servidor DC1 en el administrador de Hyper-V e inicie sesión como Contoso\administrador con la contraseña <strong>pass@word1</strong>.  
+1. Abra el servidor DC1 en el administrador de Hyper-V e inicie sesión como Contoso\administrador, con la contraseña <strong>pass@word1</strong>.  
 
 2. Abre el Centro de administración de Active Directory.  
 
@@ -392,7 +392,7 @@ El paso siguiente es crear una regla de directivas de almacenamiento provisional
 
 8. Vuelve a hacer clic en el vínculo **Agregar una condición** y agrega la condición siguiente.  
    Etc   
-    [**Usuario**] [**Grupo**] [**Miembro de any**] [**Valor**] \(**FinanceException**)  
+    [**Usuario**] [**Grupo**] [**Miembro de any**] [**Valor**]\(**FinanceException**)  
 
 9. Para establecer el grupo FinanceException, haz clic en **Agregar elementos** y, en la ventana **Seleccionar usuario, equipo, cuenta de servicio o grupo**, escribe **FinanceException**.  
 
@@ -402,7 +402,7 @@ El paso siguiente es crear una regla de directivas de almacenamiento provisional
 
 12. Haz clic en **Aceptar** dos veces para finalizar.  
 
-@no__t guías 0solution](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
 
@@ -429,7 +429,7 @@ En el procedimiento siguiente verificarás los resultados de la directiva de alm
 
 3. En el Administrador de Hyper-V, conéctate al servidor CLIENT1. Cierra la sesión del usuario que haya iniciado sesión actualmente. Reinicia la máquina virtual, CLIENT1. A continuación, inicie sesión en el equipo con contoso\EValle pass@word1.  
 
-4. Haga doble clic en el acceso directo del escritorio a @no__t File1\finance Documents-0 \ documentos. EValle debería seguir teniendo acceso a los archivos. Cambia a FILE1.  
+4. Haga doble clic en el acceso directo del escritorio para \\documentos de \FILE1\Finance. EValle debería seguir teniendo acceso a los archivos. Cambia a FILE1.  
 
 5. Abre el **Visor de eventos** mediante el acceso directo en el escritorio. Expande **Registros de Windows** y selecciona **Seguridad**. Abra las entradas con el **ID. de evento 4818**en la categoría de tareas **almacenamiento provisional de directivas de acceso central** . Verás que EValle tiene acceso permitido; pero, según la directiva de almacenamiento provisional, el usuario no debería tener acceso.  
 

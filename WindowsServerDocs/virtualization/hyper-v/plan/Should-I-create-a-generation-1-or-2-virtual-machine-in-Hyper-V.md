@@ -64,7 +64,7 @@ En la tabla siguiente se muestran las versiones de Windows de 64 bits que puede 
 | Windows Server 2012 R2 |&#10004;|&#10004;|  
 | Windows Server 2012 |&#10004;|&#10004;|  
 |Windows Server 2008 R2|&#10004;| &#10006;|  
-|Windows Server 2008|&#10004;| &#10006;|  
+|Windows Server 2008|&#10004;| &#10006;|  
 |Windows 10|&#10004;|&#10004;|  
 |Windows 8.1|&#10004;|&#10004;|  
 |Windows 8|&#10004;|&#10004;|  
@@ -81,7 +81,7 @@ En la tabla siguiente se muestran las versiones de Windows de 32 bits que puede 
 
 ### <a name="centos-and-red-hat-enterprise-linux-guest-operating-system-support"></a>Compatibilidad con el sistema operativo invitado de acRed Hat Enterprise Linux y de
 
-En la tabla siguiente se muestran las versiones de Red Hat Enterprise Linux \(RHEL @ no__t-1 y de la versión que puede usar como sistema operativo invitado para máquinas virtuales de generación 1 y generación 2.
+En la tabla siguiente se muestran las versiones de Red Hat Enterprise Linux \(RHEL\) y la versión de usuario que puede usar como sistema operativo invitado para máquinas virtuales de generación 1 y generación 2.
 
 |Versiones de sistema operativo|Generación 1|Generación 2|  
 |-----------------------------|----------------|----------------|  
@@ -251,7 +251,7 @@ Para agregar un puerto COM:
 > [!NOTE]  
 > Los puertos COM configurados no aparecen en la configuración de una máquina virtual en el administrador de Hyper-V.
 
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 
 - [Virtual Machines de Linux y FreeBSD en Hyper-V](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 - [Usar recursos locales en una máquina virtual de Hyper-V con VMConnect](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)

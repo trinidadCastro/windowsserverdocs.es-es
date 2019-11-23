@@ -33,7 +33,7 @@ En la ilustración siguiente se muestran los pasos para implementar Windows Serv
   
 La consolidación de dominios de recursos y de cuentas que se actualizan en su lugar desde un entorno de Windows Server 2003 como parte de la implementación de AD DS de Windows Server 2008 puede requerir la reestructuración de dominios entre bosques o dentro de un bosque. La reestructuración de dominios de AD DS entre bosques ayuda a reducir la complejidad de la representación de la organización en AD DS y ayuda a reducir los costos administrativos asociados. La reestructuración de dominios de AD DS dentro de un bosque ayuda a reducir la sobrecarga administrativa de la organización al reducir el tráfico de replicación, reducir la cantidad de administración de usuarios y grupos necesaria y simplificar la administración de grupos Directivas. Para obtener más información, vea la guía de migración de ADMT v 3.1 ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)).  
   
-Para obtener una lista de tareas detalladas que puede usar para planear e implementar AD DS en una organización que ejecuta Windows Server 2003 Active Directory, consulte [Checklist: Implementación de AD DS en una organización de Windows Server 2003 @ no__t-0.  
+Para obtener una lista de tareas detalladas que puede usar para planear e implementar AD DS en una organización que ejecuta Windows Server 2003 Active Directory, consulte [Checklist: deploying AD DS in a Windows server 2003 Organization](https://technet.microsoft.com/library/cc771407.aspx).  
   
 
 

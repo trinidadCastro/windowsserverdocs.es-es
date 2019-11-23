@@ -18,12 +18,12 @@ ms.locfileid: "71408049"
 ---
 # <a name="name-resolution-requirements-for-federation-servers"></a>Requisitos de resolución de nombres para servidores de federación
 
-Cuando los equipos cliente de la red corporativa intentan obtener acceso a una aplicación o un servicio Web que está protegido por Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1, deben autenticarse primero en un servidor de Federación. Una manera de autenticarse es que los clientes de la red corporativa tengan acceso a un servidor de Federación local a través de la autenticación integrada de Windows.  
+Cuando los equipos cliente de la red corporativa intentan obtener acceso a una aplicación o un servicio Web que está protegido por Servicios de federación de Active Directory (AD FS) \(AD FS\), primero deben autenticarse en un servidor de Federación. Una manera de autenticarse es que los clientes de la red corporativa tengan acceso a un servidor de Federación local a través de la autenticación integrada de Windows.  
   
 ## <a name="configure-corporate-dns"></a>Configurar un DNS corporativo  
-Para que se pueda producir una resolución de nombres correcta mediante la autenticación integrada de Windows en servidores de Federación locales, el sistema de nombres de dominio \(DNS @ no__t-1 en la red corporativa del asociado de cuenta debe configurarse para un nuevo host \(A @ no__t-3 registro de recursos que resolverá el nombre de dominio completo \(FQDN @ no__t-5 nombre de host del servidor de Federación en la dirección IP del clúster de servidores de Federación.  
+Para que se pueda producir una resolución de nombres correcta mediante la autenticación integrada de Windows en servidores de Federación locales, el sistema de nombres de dominio \(DNS\) en la red corporativa del asociado de cuenta debe configurarse para un nuevo host \(un registro de recursos de\) que resuelva el nombre de dominio completo \(FQDN\) nombre de host del servidor de Federación en la dirección IP del clúster  
   
-En la ilustración siguiente puedes ver cómo se lleva a cabo esta tarea en un escenario determinado. En este escenario, el equilibrio de carga de red de Microsoft \(NLB @ no__t-1 proporciona un nombre FQDN de clúster único y una dirección IP de clúster única para una granja de servidores de Federación existente.  
+En la ilustración siguiente puedes ver cómo se lleva a cabo esta tarea en un escenario determinado. En este escenario, el equilibrio de carga de red de Microsoft \(NLB\) proporciona un nombre FQDN de clúster único y una dirección IP de clúster única para una granja de servidores de Federación existente.  
   
 ![requisitos de nombres](media/adfs2_deploy_single_fs.gif)  
   
@@ -34,5 +34,5 @@ Para obtener información sobre cómo configurar el DNS corporativo para un serv
 Para obtener información sobre cómo configurar los servidores proxy de Federación en la red perimetral, consulte [requisitos de resolución de nombres para servidores proxy de Federación](Name-Resolution-Requirements-for-Federation-Server-Proxies.md).  
   
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

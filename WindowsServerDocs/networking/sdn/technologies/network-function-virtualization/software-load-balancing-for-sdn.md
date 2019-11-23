@@ -19,7 +19,7 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71355568"
 ---
-# <a name="software-load-balancing-slb-for-sdn"></a>Equilibrio de carga de software \(SLB @ no__t-1 para SDN
+# <a name="software-load-balancing-slb-for-sdn"></a>Equilibrio de carga de software \(SLB\) para SDN
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 

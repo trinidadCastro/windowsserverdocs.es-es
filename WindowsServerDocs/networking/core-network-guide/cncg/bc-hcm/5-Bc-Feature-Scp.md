@@ -19,7 +19,7 @@ ms.locfileid: "71356345"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Puede usar este procedimiento para instalar la característica BranchCache en el servidor de caché hospedada, HCS1, y configurar el servidor para que registre un punto de conexión de servicio \(SCP @ no__t-1 en Active Directory Domain Services \(AD DS @ no__t-3.
+Puede usar este procedimiento para instalar la característica BranchCache en el servidor de caché hospedada, HCS1, y configurar el servidor para que registre un punto de conexión de servicio \(SCP\) en Active Directory Domain Services \(AD DS\).
 
 Al registrar servidores de caché hospedada con un SCP en AD DS, el SCP permite que los equipos cliente que están configurados correctamente detecten automáticamente los servidores de caché hospedada mediante la consulta de AD DS para el SCP. Más adelante en esta guía se proporcionan instrucciones sobre cómo configurar los equipos cliente para realizar esta acción.
 
@@ -50,11 +50,11 @@ Para llevar a cabo este procedimiento, debe ser miembro del grupo Administradore
   
     Los resultados del comando muestran el estado de todos los aspectos de la instalación de BranchCache. A continuación se muestran algunos de los valores de BranchCache y el valor correcto para cada elemento:  
   
-    -   BranchCacheIsEnabled: True
+    -   BranchCacheIsEnabled: true
 
-    -   HostedCacheServerIsEnabled: True
+    -   HostedCacheServerIsEnabled: true
 
-    -   HostedCacheScpRegistrationEnabled: True
+    -   HostedCacheScpRegistrationEnabled: true
 
 4. Para preparar el paso de copia de los paquetes de datos de los servidores de contenido en los servidores de caché hospedada, identifique un recurso compartido existente en el servidor de caché hospedada o cree una nueva carpeta y comparta la carpeta para que sea accesible desde los servidores de contenido. Después de crear los paquetes de datos en los servidores de contenido, copiará los paquetes de datos a esta carpeta compartida en el servidor de caché hospedada.
   

@@ -26,7 +26,7 @@ El atributo RADIUS de nombre de usuario es una cadena de caracteres que normalme
 
 En otro ejemplo, si el atributo RADIUS de nombre de usuario contiene el nombre de usuario user1@example.com, user1 es el nombre de la cuenta de usuario y example.com es el nombre de dominio Kerberos. Los nombres de dominio Kerberos se pueden presentar en el nombre de usuario como prefijo o como sufijo:
 
-- **Example\user1**. En este ejemplo, el **ejemplo** de nombre de dominio Kerberos es un prefijo; Además, es el nombre de un dominio Active Directory @ no__t-1 Domain Services \(AD DS @ no__t-3.
+- **Example\user1**. En este ejemplo, el **ejemplo** de nombre de dominio Kerberos es un prefijo; Además, es el nombre de una Active Directory&reg; de servicios de dominio \(AD DS dominio\).
 
 - <strong>user1@example.com</strong>. En este ejemplo, el nombre de dominio Kerberos **example.com** es un sufijo; y es un nombre de dominio DNS o el nombre de un dominio de AD DS.
 
@@ -58,9 +58,9 @@ Antes de que el mensaje RADIUS se procese localmente (cuando NPS se usa como un 
 
 Puede configurar reglas de manipulación de atributos para que el atributo de nombre de usuario cambie lo siguiente:
 
-- Quite el nombre de dominio Kerberos del nombre de usuario \(also conocido como eliminación de dominio Kerberos \ no__t-1. Por ejemplo, el nombre de usuario user1@example.com cambia a user1.
+- Quite el nombre de dominio Kerberos del nombre de usuario \(también conocido como\)de eliminación de dominio Kerberos. Por ejemplo, el nombre de usuario user1@example.com se cambia a user1.
 
-- Cambiar el nombre de dominio Kerberos, pero no su sintaxis. Por ejemplo, el nombre de usuario user1@example.com cambia a user1@wcoast.example.com.
+- Cambiar el nombre de dominio Kerberos, pero no su sintaxis. Por ejemplo, el nombre de usuario user1@example.com se cambia a user1@wcoast.example.com.
 
 - Cambiar la sintaxis del nombre de dominio Kerberos. Por ejemplo, el nombre de usuario example\user1 se cambia a user1@example.com.
 

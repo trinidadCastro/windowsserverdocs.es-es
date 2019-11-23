@@ -16,11 +16,11 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408726"
 ---
-# <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Apéndice C: Cuentas y grupos protegidos en Active Directory
+# <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Anexo C: cuentas protegidas y grupos de Active Directory
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Apéndice C: Cuentas y grupos protegidos en Active Directory
+## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Anexo C: cuentas protegidas y grupos de Active Directory
 
 Dentro de Active Directory, un conjunto predeterminado de cuentas y grupos con privilegios elevados se considera cuentas y grupos protegidos. Con la mayoría de los objetos de Active Directory, los administradores delegados (usuarios con permisos delegados para administrar objetos de Active Directory) pueden cambiar los permisos de los objetos, incluido el cambio de permisos para permitirse cambiar la pertenencia de los grupos, por ejemplo.  
 
@@ -32,7 +32,7 @@ La tabla siguiente contiene los grupos protegidos en Active Directory enumerados
 
 #### <a name="protected-accounts-and-groups-in-active-directory-by-operating-system"></a>Cuentas y grupos protegidos en Active Directory por sistema operativo
 
-| Windows Server 2003 RTM | Windows Server 2003 SP1 + | Windows Server 2012, <br> Windows Server 2008 R2, <br> Windows Server 2008 | Windows Server 2016 |
+| Windows Server 2003 RTM | Windows Server 2003 SP1 + | Windows Server 2012, <br> Windows Server 2008 R2, <br> Windows Server 2008 | Windows Server 2016 |
 | --- | --- | --- | --- |
 |Operadores de cuentas|Operadores de cuentas|Operadores de cuentas|Operadores de cuentas|
 |Administrador|Administrador|Administrador|Administrador|
@@ -88,7 +88,7 @@ Puede forzar que SDProp se ejecute con LDP. exe o mediante la ejecución de un s
 
    ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_10.png)  
 
-4. Compruebe que se ha conectado correctamente, como se indica en @no__t 0Dn: (RootDSE) ** en la siguiente captura de pantalla, haga clic en **conexión** y haga clic en **enlazar**.  
+4. Compruebe que se ha conectado correctamente, como se indica en **DN: (RootDSE)** en la siguiente captura de pantalla, haga clic en **conexión** y haga clic en **enlazar**.  
 
    ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_11.png)  
 
@@ -107,7 +107,7 @@ Puede forzar que SDProp se ejecute con LDP. exe o mediante la ejecución de un s
 8. En el cuadro de diálogo modificar, haga clic en ejecutar y compruebe que los cambios realizados en el objeto AdminSDHolder han aparecido en ese objeto.  
 
 > [!NOTE]  
-> Para obtener información sobre cómo modificar AdminSDHolder para permitir que las cuentas sin privilegios designadas modifiquen la pertenencia de los grupos protegidos, vea [Appendix I: Creación de cuentas de administración para cuentas y grupos protegidos en Active Directory @ no__t-0.  
+> Para obtener información sobre cómo modificar AdminSDHolder para permitir que las cuentas sin privilegios designadas modifiquen la pertenencia de los grupos protegidos, vea el [Apéndice I: crear cuentas de administración para cuentas y grupos protegidos en Active Directory](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md).  
 
 Si prefiere ejecutar SDProp manualmente mediante LDIFDE o un script, puede crear una entrada de modificación como se muestra aquí:  
 
@@ -127,7 +127,7 @@ También puede forzar que SDProp se ejecute con LDP. exe o mediante la ejecució
 
    ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_17.gif)  
 
-4. Compruebe que se ha conectado correctamente, como se indica en @no__t 0Dn: (RootDSE) ** en la siguiente captura de pantalla, haga clic en **conexión** y haga clic en **enlazar**.  
+4. Compruebe que se ha conectado correctamente, como se indica en **DN: (RootDSE)** en la siguiente captura de pantalla, haga clic en **conexión** y haga clic en **enlazar**.  
 
    ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_18.gif)  
 

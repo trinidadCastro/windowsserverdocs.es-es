@@ -18,18 +18,18 @@ ms.locfileid: "71407944"
 ---
 # <a name="prepare-client-computers-in-the-account-partner"></a>Preparar los equipos cliente en el asociado de cuenta
 
-La forma más sencilla de que un administrador de una organización del asociado de cuenta prepare a los equipos cliente para tener acceso a Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1 aplicaciones federadas es usar directiva de grupo. La directiva de grupo proporciona una manera cómoda para insertar certificados y valores de configuración específicos que son necesarios para la federación a todos los equipos cliente que se usarán para el acceso a las aplicaciones federadas.  
+La manera más sencilla de que un administrador de una organización del asociado de cuenta prepare a los equipos cliente para tener acceso a Servicios de federación de Active Directory (AD FS) \(AD FS\) aplicaciones federadas es usar directiva de grupo. La directiva de grupo proporciona una manera cómoda para insertar certificados y valores de configuración específicos que son necesarios para la federación a todos los equipos cliente que se usarán para el acceso a las aplicaciones federadas.  
   
 Para que los equipos cliente puedan acceder sin problemas a las aplicaciones federadas sin solicitudes de certificado o mensajes de confianza relacionados con el sitio, se recomienda preparar primero cada equipo cliente antes de implementar AD FS en su organización. Considere usar la directiva de grupo para realizar automáticamente las siguientes acciones:  
   
 -   Configure Internet Explorer en cada equipo cliente para que confíe en el servidor de Federación de la cuenta.  
   
-    Para obtener más información, consulte [configurar los equipos cliente para confiar en el servidor de federación de cuenta](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md).  
+    Para obtener más información, consulte [Configure Client Computers to Trust the Account Federation Server](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md).  
   
--   Instale el servidor de Federación de cuenta adecuado, el servidor de Federación de recursos y el servidor Web Capa de sockets seguros los certificados \(SSL @ no__t-1 \(or certificados equivalentes que encadenan a una raíz de confianza @ no__t-3 en cada equipo cliente.  
+-   Instale el servidor de Federación de cuenta, el servidor de Federación de recursos y el servidor Web Capa de sockets seguros \(SSL\) certificados \(o certificados equivalentes que encadenan a una\) raíz de confianza en cada equipo cliente.  
   
     Para obtener más información, consulte [distribuir certificados a equipos cliente mediante Directiva de grupo](../../ad-fs/deployment/Distribute-Certificates-to-Client-Computers-by-Using-Group-Policy.md).  
   
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

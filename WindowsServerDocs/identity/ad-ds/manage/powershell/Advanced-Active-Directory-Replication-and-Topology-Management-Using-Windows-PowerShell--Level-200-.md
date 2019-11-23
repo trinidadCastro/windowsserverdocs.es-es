@@ -39,7 +39,7 @@ En este tema se explican más detalladamente los nuevos cmdlets de administraci�
 8.  [Topología](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_Topo)  
   
 ## <a name="BKMK_Intro"></a>Aparición  
-Windows Server 2012 amplía el módulo de Active Directory para Windows PowerShell con 25 nuevos cmdlets con los que se administra la replicación y la topología de bosques. Antes de esto, se forzó el uso de los nombres genéricos **@no__t -1-AdObject** o la llamada a funciones de .net.  
+Windows Server 2012 amplía el módulo de Active Directory para Windows PowerShell con 25 nuevos cmdlets con los que se administra la replicación y la topología de bosques. Antes de esto, se forzó el uso de los nombres genéricos **\*-AdObject** o la llamada a funciones de .net.  
   
 Al igual que sucede con todos los cmdlets de Windows PowerShell para Active Directory, esta nueva funcionalidad requiere que se instale el [Servicio de administración de la puerta de enlace de Active Directory](https://www.microsoft.com/download/details.aspx?displaylang=en&id=2852) en un controlador de dominio como mínimo (aunque lo ideal sería hacerlo en todos los controladores de dominio).  
   
@@ -102,7 +102,7 @@ Además, los siguientes cmdlets implementan un nuevo conjunto de parámetros de 
   
 -   **Get-ADReplicationUpToDatenessVectorTable**  
   
-El argumento **Target** acepta una lista separada por comas de cadenas con las que se distinguen los servidores, sitios, dominios o bosques de destino especificados mediante el argumento **Scope** . También se admite un asterisco (\*) y significa todos los servidores del ámbito especificado. Si no se especifica ningún ámbito, significa que todos los servidores del bosque del usuario actual. El argumento **Scope** especifica la latitud de la búsqueda. Los valores que se aceptan son **Server**, **Site**, **Domain** y **Forest**. El argumento **EnumerationServer** especifica el servidor que enumera la lista de controladores de dominio señalados por los argumentos **Target** y **Scope**. Funciona igual que el argumento **Server** y requiere que el servidor especificado ejecute el Servicio web de Active Directory.  
+El argumento **Target** acepta una lista separada por comas de cadenas con las que se distinguen los servidores, sitios, dominios o bosques de destino especificados mediante el argumento **Scope** . También se permite un asterisco (\*) y significa todos los servidores del ámbito especificado. Si no se especifica ningún ámbito, significa que todos los servidores del bosque del usuario actual. El argumento **Scope** especifica la latitud de la búsqueda. Los valores que se aceptan son **Server**, **Site**, **Domain** y **Forest**. El argumento **EnumerationServer** especifica el servidor que enumera la lista de controladores de dominio señalados por los argumentos **Target** y **Scope**. Funciona igual que el argumento **Server** y requiere que el servidor especificado ejecute el Servicio web de Active Directory.  
   
 Para presentarte los nuevos cmdlets, incluimos aquí algunos escenarios de ejemplo en los que se muestran funciones que son imposibles de conseguir con repadmin.exe (estas ilustraciones dejan claras las posibilidades administrativas). Repasa la ayuda de los cmdlets para conocer los requisitos de uso específicos.  
   
@@ -228,7 +228,7 @@ Si bien Repadmin.exe es adecuado para obtener determinados datos de la topologí
   
 Por ejemplo, tras una rápida expansión de nuevas sucursales, a lo que se suma la consolidación de las ya existentes, probablemente tengas un centenar de cambios de sitios que realizar según las ubicaciones físicas, los cambios de red y los nuevos requisitos de capacidad. En lugar de usar Dssites.msc y Adsiedit.msc para efectuar tales cambios, puedes automatizarlos. Esto resulta especialmente interesante cuando comienzas con una hoja de cálculo de datos que te han proporcionado los equipos de red y de instalaciones.  
   
-Los cmdlets **Get-Adreplication @ no__t-1*** devuelven información sobre la topología de replicación y son útiles para la canalización en los cmdlets **set-Adreplication @ no__t-3*** de forma masiva. Los cmdlets **Get** no cambian los datos, solo muestran datos o crean objetos de sesión de Windows PowerShell que se pueden canalizar a cmdlets **set-Adreplication @ no__t-2***. Los cmdlets **New** y **Remove** son de utilidad para crear o quitar objetos de topología de Active Directory.  
+Los cmdlets **Get-Adreplication\\** * devuelven información sobre la topología de replicación y son útiles para la canalización en los cmdlets **Set-Adreplication\\** * de forma masiva. Los cmdlets **Get** no cambian los datos, solo muestran datos o crean objetos de sesión de Windows PowerShell que se pueden canalizar a cmdlets **Set-Adreplication\\** *. Los cmdlets **New** y **Remove** son de utilidad para crear o quitar objetos de topología de Active Directory.  
   
 Por ejemplo, se pueden crear sitios mediante un archivo CSV:  
   
@@ -267,7 +267,7 @@ get-adreplicationsite -filter * -property subnets | where-object {!$_.subnets -e
   
 ![Administración avanzada con PowerShell](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSNewADReplSiteFiltrer.png)  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Introducción a la administración de la replicación y la topología de &#40;Active Directory con el nivel 100 de Windows PowerShell&#41;](../../../ad-ds/manage/powershell/Introduction-to-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-100-.md)  
   
 

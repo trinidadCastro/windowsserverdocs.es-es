@@ -19,7 +19,7 @@ ms.locfileid: "71404674"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Windows Server 2016 proporciona actualizaciones a la encapsulación de enrutamiento genérico \(GRE @ no__t-1 para la puerta de enlace de RAS.  
+Windows Server 2016 proporciona actualizaciones a la encapsulación de enrutamiento genérico \(la funcionalidad de túnel\) GRE para la puerta de enlace de RAS.  
   
 GRE es un protocolo de túnel ligero que puede encapsular una amplia variedad de protocolos de capa de red dentro de los vínculos de punto a punto virtuales en una conexión entre redes de protocolo de Internet. La implementación de Microsoft GRE puede encapsular IPv4 e IPv6.  
   
@@ -27,11 +27,11 @@ Los túneles GRE son útiles en muchos escenarios porque:
   
 -   Son compatibles con el estándar RFC 2890, lo que permite interoperar con varios dispositivos del proveedor.  
   
--   Puede usar Protocolo de puerta de enlace de borde \(BGP @ no__t-1 para el enrutamiento dinámico  
+-   Puede usar Protocolo de puerta de enlace de borde \(\) BGP para el enrutamiento dinámico  
   
--   Puede configurar puertas de enlace RAS multiempresa GRE para su uso con redes definidas por software \(SDN @ no__t-1
+-   Puede configurar las puertas de enlace RAS multiempresa GRE para usarla con redes definidas por software \(SDN\)
   
--   Puede usar System Center Virtual Machine Manager para administrar las puertas de enlace de RAS de GRE @ no__t-0based.
+-   Puede usar System Center Virtual Machine Manager para administrar puertas de enlace RAS basadas en\-GRE
   
 -   Puede conseguir un rendimiento de hasta 2,0 Gbps en una máquina virtual de 6 núcleos configurada como una puerta de enlace RAS GRE
   
@@ -104,7 +104,7 @@ Este escenario se puede usar para integrar dispositivos de terceros (por ejemplo
   
 ## <a name="configuration-and-deployment"></a>Configuración e implementación
 
-Un túnel GRE se expone como un protocolo adicional dentro de una interfaz S2S. Se implementa de manera similar a un túnel S2S de IPSec descrito en el siguiente blog de redes: [VPN Gateway de sitio a sitio (S2S) multiempresa con Windows Server 2012 R2](https://blogs.technet.com/b/networking/archive/2013/09/29/multi-tenant-site-to-site-s2s-vpn-gateway-with-windows-server-2012-r2.aspx)  
+Un túnel GRE se expone como un protocolo adicional dentro de una interfaz S2S. Se implementa de forma similar a un túnel S2S de IPSec descrito en el siguiente blog de redes: [VPN Gateway de sitio a sitio (s2s) multiempresa con Windows Server 2012 R2](https://blogs.technet.com/b/networking/archive/2013/09/29/multi-tenant-site-to-site-s2s-vpn-gateway-with-windows-server-2012-r2.aspx)  
   
 Vea el tema siguiente para obtener un ejemplo en el que se implementan puertas de enlace, incluidas las puertas de enlace de túnel GRE:  
   
@@ -118,7 +118,7 @@ Para obtener más información sobre la implementación de puertas de enlace de 
   
 -   [Protocolo de puerta de enlace de borde &#40;BGP&#41;](../bgp/Border-Gateway-Protocol-BGP.md)  
   
--   @no__t 0New! Guía de implementación de puerta de enlace multiinquilino de RAS de Windows Server 2012 R2 @ no__t-0  
+-   [¡Nuevo! Guía de implementación de puerta de enlace multiinquilino RAS de Windows Server 2012 R2](https://blogs.technet.com/b/wsnetdoc/archive/2014/03/26/new-windows-server-2012-r2-RAS-multitenant-gateway-deployment-guide.aspx)  
   
 -   [Implementación de Protocolo de puerta de enlace de borde (BGP) con la puerta de enlace multiinquilino de RAS](https://blogs.technet.com/b/wsnetdoc/archive/2014/04/03/deploy-border-gateway-protocol-bgp-with-the-RAS-multitenant-gateway.aspx)  
   

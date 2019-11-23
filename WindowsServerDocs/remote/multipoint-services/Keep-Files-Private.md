@@ -21,7 +21,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71395341"
 ---
 # <a name="keep-files-private"></a>Mantener archivos en privado
-Este tema se aplica al contenido, como documentos, que @no__t 0as un *usuario administrativo*\) y *los usuarios estándar* no quieren compartir con otros usuarios en un sistema Multipoint Services.  
+Este tema se aplica al contenido, como documentos, que \(como *usuario administrativo*\) y *los usuarios estándar* no quieren compartir con otros usuarios en un sistema Multipoint Services.  
 
 Para más información sobre la privacidad en MultiPoint Services, vea [Consideraciones sobre privacidad y seguridad](Privacy-and-Security-Considerations.md).
   
@@ -32,6 +32,6 @@ Para mantener sus documentos y otro contenido en privado, debe guardar el trabaj
 > [!WARNING]  
 > Mientras un dispositivo de almacenamiento externo, como puede ser una unidad flash USB, esté conectado al puerto USB en el host o en un concentrador de USB que no sea un concentrador de estaciones, lo puede ver cualquier usuario estándar o administrativo que haya iniciado sesión en el sistema MultiPoint Services. Si le preocupa la privacidad o la seguridad del contenido almacenado en un dispositivo de almacenamiento externo, conéctelo únicamente a un concentrador de estaciones en el sistema MultiPoint Services. Para más información sobre cómo usar dispositivos de almacenamiento USB, vea el tema [Guardar y compartir archivos en una unidad flash USB](Save-and-Share-Files-on-a-USB-Flash-Drive.md).  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Administrar archivos de usuario](Manage-User-Files.md)  
 [Guardar y compartir archivos en una unidad flash USB](Save-and-Share-Files-on-a-USB-Flash-Drive.md)

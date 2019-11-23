@@ -22,7 +22,7 @@ ms.locfileid: "71403395"
 ---
 # <a name="schannel-security-support-provider-technical-reference"></a>Referencia técnica del proveedor de compatibilidad con seguridad de Schannel
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016 y Windows 10
 
 Esta referencia para profesionales de ti contiene información sobre el protocolo de seguridad de la capa de transporte (TLS), el protocolo Capa de sockets seguros (SSL) y el protocolo de seguridad de la capa de transporte de datagramas (DTLS) tal y como lo implementa la compatibilidad con la seguridad Schannel. Proveedor (SSP).
 
@@ -31,7 +31,7 @@ Estos protocolos proporcionan un medio para proteger los datos que se envían en
 - [Protocolo de seguridad de la capa de transporte](transport-layer-security-protocol.md)
 - [Protocolo de seguridad de capa de transporte de datagrama](datagram-transport-layer-security-protocol.md)
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 Autenticación de [Windows](../windows-authentication/windows-authentication-overview.md)
 [autenticación Kerberos](../kerberos/kerberos-authentication-overview.md)
 

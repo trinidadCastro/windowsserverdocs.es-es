@@ -42,6 +42,6 @@ wdsutil /Get-AllDriverGroups /Server:MyWdsServer /Show:All
 ```
 wdsutil /Get-AllDriverGroups [/Show:PackageMetaData]
 ```
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[con el comando Get-DriverGroup](using-the-get-drivergroup-command.md)
+#### <a name="additional-references"></a>referencias adicionales
+
+[de la clave de sintaxis de línea de comandos](command-line-syntax-key.md) [mediante el comando Get-DriverGroup](using-the-get-drivergroup-command.md)

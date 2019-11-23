@@ -18,7 +18,7 @@ ms.locfileid: "71359677"
 ---
 # <a name="deploying-federation-server-proxies"></a>Implementación de servidores proxy de federación
 
-En Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1 en Windows Server 2012 R2, el rol de un servidor proxy de Federación se administra mediante un nuevo servicio de rol de acceso remoto denominado proxy de aplicación Web. Para habilitar la AD FS para la accesibilidad desde fuera de la red corporativa, que era el propósito de implementar un servidor proxy de Federación en versiones heredadas de AD FS, como AD FS 2,0 y AD FS en Windows Server 2012, puede implementar uno o varios proxy de aplicación web para un D FS en Windows Server 2012 R2.  
+En Servicios de federación de Active Directory (AD FS) \(AD FS\) en Windows Server 2012 R2, el rol de un servidor proxy de Federación se administra mediante un nuevo servicio de rol de acceso remoto denominado proxy de aplicación Web. Para habilitar la AD FS para la accesibilidad desde fuera de la red corporativa, que era el propósito de implementar un servidor proxy de Federación en versiones heredadas de AD FS, como AD FS 2,0 y AD FS en Windows Server 2012, puede implementar uno o varios proxy de aplicación web para un D FS en Windows Server 2012 R2.  
   
 En el contexto de AD FS, el proxy de aplicación web funciona como un proxy de servidor de Federación AD FS. Además, el servicio Proxy de aplicación web ofrece funcionalidad de proxy inverso para las aplicaciones web dentro de la red corporativa para permitir a los usuarios de cualquier dispositivo acceso a estas desde fuera de la red corporativa. Para obtener información general sobre el servicio de rol Proxy de aplicación web, consulte la introducción a Proxy de aplicación web.  
   
@@ -35,7 +35,7 @@ Para implementar Web Application Proxy, puede seguir los procedimientos de los t
 -   [Instalación y configuración del servidor proxy de aplicación Web](https://technet.microsoft.com/library/dn383662.aspx)  
   
  
-## <a name="see-also"></a>Vea también 
+## <a name="see-also"></a>Consulta también 
 
 [Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
 

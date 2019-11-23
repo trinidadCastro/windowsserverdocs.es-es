@@ -26,7 +26,7 @@ Este procedimiento es opcional porque no es necesario aplicar previamente hash y
 Este procedimiento proporciona instrucciones para aplicar un algoritmo hash al contenido en los servidores de archivos y en los servidores Web. Si no tiene uno de estos tipos de servidores de contenido, no tiene que realizar las instrucciones para ese tipo de servidor de contenido.
 
 >[!IMPORTANT]
->Antes de llevar a cabo este procedimiento, debe instalar y configurar BranchCache en los servidores de contenido. Además, si planea cambiar el secreto del servidor en un servidor de contenido, hágalo antes de que el contenido de @ no__t-0hashing: la modificación del secreto del servidor invalide los hashes @ no__t-1generated anteriores.
+>Antes de llevar a cabo este procedimiento, debe instalar y configurar BranchCache en los servidores de contenido. Además, si planea cambiar el secreto del servidor en un servidor de contenido, hágalo antes de que el contenido de hash de la\-da, modificar el secreto del servidor, invalide previamente\-hash generados anteriormente.
 
 Para llevar a cabo este procedimiento, debe ser miembro del grupo Administradores.
 
@@ -53,7 +53,7 @@ Para llevar a cabo este procedimiento, debe ser miembro del grupo Administradore
         Publish-BCWebContent –Path D:\inetpub\wwwroot -StageData
         ```  
 
-4. Cree el paquete de datos mediante la ejecución del comando siguiente en cada uno de los servidores de contenido. Reemplace el valor de ejemplo \(D: \\temp @ no__t-2 para el parámetro – Destination con la ubicación que identificó o creó al principio de este procedimiento.
+4. Cree el paquete de datos mediante la ejecución del comando siguiente en cada uno de los servidores de contenido. Reemplace el valor de ejemplo \(D:\\Temp\) para el parámetro – Destination con la ubicación que identificó o creó al principio de este procedimiento.
 
     ```  
     Export-BCDataPackage –Destination D:\temp

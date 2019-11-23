@@ -23,13 +23,13 @@ En este tema se proporciona una breve introducción al servidor de destino iSCSI
 
 El servidor de destino iSCSI es ideal para lo siguiente:
 
-* **Arranque de red y sin disco**   By con adaptadores de red con capacidad de arranque o un cargador de software, puede implementar cientos de servidores sin disco. Con el servidor de destino iSCSI, la implementación es rápida. En las pruebas internas de Microsoft, se implementaron 256 equipos en 34 minutos. Al usar discos duros virtuales de diferenciación, puede ahorrar hasta el 90% del espacio de almacenamiento usado para las imágenes del sistema operativo. Esto resulta perfecto en implementaciones a gran escala de imágenes de sistemas operativos idénticas, como en máquinas virtuales con Hyper-V o clústeres de informática de alto rendimiento (HPC).
+*    de **arranque sin disco y de red** mediante el uso de adaptadores de red con capacidad de arranque o un cargador de software, puede implementar cientos de servidores sin disco. Con el servidor de destino iSCSI, la implementación es rápida. En las pruebas internas de Microsoft, se implementaron 256 equipos en 34 minutos. Al usar discos duros virtuales de diferenciación, puede ahorrar hasta el 90% del espacio de almacenamiento usado para las imágenes del sistema operativo. Esto resulta perfecto en implementaciones a gran escala de imágenes de sistemas operativos idénticas, como en máquinas virtuales con Hyper-V o clústeres de informática de alto rendimiento (HPC).
 
-* **Almacenamiento de aplicaciones de servidor**   Some aplicaciones requieren almacenamiento en bloque. El servidor de destino iSCSI puede proveer a esas aplicaciones de almacenamiento en bloque de continuamente disponible. Dado que es posible obtener acceso al almacenamiento de forma remota, también puede consolidar el almacenamiento de bloque para ubicaciones de oficinas centrales o sucursales.
+* **Almacenamiento de aplicaciones de servidor**   algunas aplicaciones requieren almacenamiento en bloque. El servidor de destino iSCSI puede proveer a esas aplicaciones de almacenamiento en bloque de continuamente disponible. Dado que es posible obtener acceso al almacenamiento de forma remota, también puede consolidar el almacenamiento de bloque para ubicaciones de oficinas centrales o sucursales.
 
-* **Almacenamiento heterogéneo**@no__t el servidor de destino 1iSCSI admite iniciadores iSCSI que no sean de Microsoft, lo que facilita compartir el almacenamiento en servidores en un entorno de software mixto.
+* **Almacenamiento heterogéneo**   servidor de destino iSCSI admite iniciadores iSCSI que no sean de Microsoft, lo que facilita compartir el almacenamiento en servidores en un entorno de software mixto.
 
-* **Entornos de desarrollo, prueba, demostración y laboratorio**   When servidor de destino iSCSI está habilitado, un equipo que ejecuta el sistema operativo Windows Server se convierte en un dispositivo de almacenamiento en bloque accesible a través de la red. Esto es útil para probar aplicaciones antes de implementarlas en una red de área de almacenamiento (SAN).
+* **Entornos de desarrollo, prueba, demostración y laboratorio**   cuando el servidor de destino iSCSI está habilitado, un equipo que ejecuta el sistema operativo Windows Server se convierte en un dispositivo de almacenamiento en bloque accesible a través de la red. Esto es útil para probar aplicaciones antes de implementarlas en una red de área de almacenamiento (SAN).
 
 ## <a name="block-storage-requirements"></a>Requisitos de almacenamiento en bloque
 
@@ -37,7 +37,7 @@ La habilitación del servidor del destino iSCSI para proporcionar almacenamiento
 
 Si habilita la agrupación en clústeres de invitado, debe proporcionar almacenamiento de bloque. Todos los servidores que ejecutan software de Windows Server con Servidor de destino iSCSI pueden proporcionar almacenamiento de bloque.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 [Almacenamiento de bloque de destino iSCSI, procedimientos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848268(v%3dws.11))  
 [Novedades del servidor de destino iSCSI en Windows Server](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn305893(v%3dws.11))

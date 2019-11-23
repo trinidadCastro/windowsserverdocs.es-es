@@ -16,19 +16,19 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408713"
 ---
-# <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>Apéndice E: Protección de los grupos administradores de organización en Active Directory
+# <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>Anexo E: protección de grupos de administradores de empresa en Active Directory
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
-## <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>Apéndice E: Protección de los grupos administradores de organización en Active Directory  
-El grupo administradores de empresas (EA), que está hospedado en el dominio raíz del bosque, no debe contener ningún usuario en el día, con la posible excepción de la cuenta de administrador del dominio raíz, siempre que esté protegido como se describe en @no__t 0Appendix D: Protección de cuentas de administrador integradas en Active Directory @ no__t-0.  
+## <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>Anexo E: protección de grupos de administradores de empresa en Active Directory  
+El grupo administradores de empresas (EA), que está hospedado en el dominio raíz del bosque, no debe contener ningún usuario en el día, con la posible excepción de la cuenta de administrador del dominio raíz, siempre que esté protegido como se describe en el [Apéndice D: proteger cuentas de administrador integradas en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
 
 De forma predeterminada, los administradores de empresas son miembros del grupo administradores de cada dominio del bosque. No debe quitar el grupo EA de los grupos administradores de cada dominio porque, en caso de que se produzca un escenario de recuperación ante desastres de bosque, es probable que se necesiten derechos de EA. El grupo administradores de organización del bosque debe protegerse tal y como se detalla en las instrucciones paso a paso que se indican a continuación.  
 
 Para el grupo administradores de empresas del bosque:  
 
-1.  En los GPO vinculados a las unidades organizativas que contienen servidores miembro y estaciones de trabajo en cada dominio, el grupo administradores de organización debe agregarse a los siguientes derechos de usuario en el **equipo \ configuración de Seguridad\directivas \ todos los derechos Asignaciones**:  
+1.  En los GPO vinculados a las unidades organizativas que contienen servidores miembro y estaciones de trabajo en cada dominio, el grupo administradores de organización debe agregarse a los siguientes derechos de usuario en el **equipo \ configuración**de seguridad\Directivas de Seguridad\directivas locales \ asignaciones de derechos:  
 
     -   Denegar el acceso desde la red a este equipo  
 
@@ -46,7 +46,7 @@ Para el grupo administradores de empresas del bosque:
 
 1.  En **Administrador del servidor**, haga clic en **herramientas**y en **Active Directory usuarios y equipos**.  
 
-2.  Si no está administrando el dominio raíz del bosque, en el árbol de consola, haga clic con el botón secundario en <Domain> y, a continuación, haga clic en **cambiar dominio** (donde <Domain> es el nombre del dominio que está administrando actualmente).  
+2.  Si no está administrando el dominio raíz del bosque, en el árbol de consola, haga clic con el botón secundario en <Domain>y, a continuación, haga clic en **cambiar dominio** (donde <Domain> es el nombre del dominio que está administrando actualmente).  
 
     ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_43.gif)  
 
@@ -68,7 +68,7 @@ Para el grupo administradores de empresas del bosque:
 
 1.  En **Administrador del servidor**, haga clic en **herramientas**y en **Administración de directiva de grupo**.  
 
-2.  En el árbol de consola, expanda <Forest> \ Domains @ no__t-1 @ no__t-2 y, a continuación, **Directiva de grupo objetos** (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer la Directiva de grupo).  
+2.  En el árbol de consola, expanda <Forest>\Domains\\<Domain>y, a continuación, **Directiva de grupo objetos** (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer la Directiva de grupo).  
 
     > [!NOTE]  
     > En un bosque que contenga varios dominios, debe crearse un GPO similar en cada dominio que requiera la protección del grupo administradores de empresas.  
@@ -77,11 +77,11 @@ Para el grupo administradores de empresas del bosque:
 
     ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_46.gif)  
 
-4.  En el cuadro de diálogo **nuevo GPO** , escriba <GPO Name> y haga clic en **aceptar** (donde <GPO Name> es el nombre de este GPO).  
+4.  En el cuadro de diálogo **nuevo GPO** , escriba <GPO Name>y haga clic en **aceptar** (donde <GPO Name> es el nombre de este GPO).  
 
     ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_47.gif)  
 
-5.  En el panel de detalles, haga clic con el botón secundario en <GPO Name> y haga clic en **Editar**.  
+5.  En el panel de detalles, haga clic con el botón secundario en <GPO Name>y haga clic en **Editar**.  
 
 6.  Vaya a **equipo \ configuración de Seguridad\directivas \ directivas de seguridad\Directivas**y haga clic en **asignación de derechos de usuario**.  
 
@@ -163,7 +163,7 @@ Para el grupo administradores de empresas del bosque:
 
 13. En **Administración de directiva de grupo**, VINCULE el GPO al servidor miembro y las unidades organizativas de la estación de trabajo haciendo lo siguiente:  
 
-    1.  Desplácese hasta el <Forest> \ Domains @ no__t-1 @ no__t-2 (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer el directiva de grupo).  
+    1.  Navegue hasta el <Forest>\Domains\\<Domain> (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer la directiva de grupo).  
 
     2.  Haga clic con el botón secundario en la unidad organizativa a la que se aplicará el GPO y haga clic en **vincular un GPO existente**.  
 
@@ -197,7 +197,7 @@ Desde cualquier servidor miembro o estación de trabajo que no se vea afectado p
 
     ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_56.gif)  
 
-5.  En la ventana del **símbolo del sistema** , escriba **net use \\ @ no__t-3 @ No__t-4Server Name @ no__t-5\c $** , donde \<Server Name @ no__t-7 es el nombre del servidor miembro o de la estación de trabajo a la que está intentando obtener acceso a través de la red.  
+5.  En la ventana del **símbolo del sistema** , escriba **net use \\\\nombre del servidor \<\>\c $** , donde \<nombre del servidor\> es el nombre del servidor miembro o de la estación de trabajo a la que está intentando obtener acceso a través de la red.  
 
 6.  En la captura de pantalla siguiente se muestra el mensaje de error que debe aparecer.  
 
@@ -217,7 +217,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 4.  Haga clic en **archivo**y en **Guardar como**.  
 
-5.  En el cuadro Nombre de **archivo** , escriba **@no__t -2. bat** (donde <Filename> es el nombre del nuevo archivo por lotes).  
+5.  En el cuadro Nombre de **archivo** , escriba **<Filename>. bat** (donde <Filename> es el nombre del nuevo archivo por lotes).  
 
 ##### <a name="schedule-a-task"></a>Programar una tarea  
 
@@ -238,7 +238,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 7.  En **programa/script**, haga clic en **examinar**, busque y seleccione el archivo por lotes creado en la sección **crear un archivo por lotes** y haga clic en **abrir**.  
 
-8.  Haga clic en **Aceptar**.  
+8.  Haz clic en **Aceptar**.  
 
 9. Haga clic en la pestaña **General**.  
 
@@ -248,7 +248,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 12. Seleccione **ejecutar si el usuario ha iniciado sesión o no** y seleccione no **almacenar contraseña**. La tarea solo tendrá acceso a los recursos del equipo local.  
 
-13. Haga clic en **Aceptar**.  
+13. Haz clic en **Aceptar**.  
 
 14. Debe aparecer un cuadro de diálogo que solicite las credenciales de la cuenta de usuario para ejecutar la tarea.  
 

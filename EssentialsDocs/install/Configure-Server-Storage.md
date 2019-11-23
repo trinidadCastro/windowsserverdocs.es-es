@@ -32,7 +32,7 @@ ms.locfileid: "70865036"
 |Nivel de servidor|Configuración del disco|  
 |------------------|------------------------|  
 |Entrada|-Dos discos físicos<br /><br /> -Configurado como un conjunto reflejado RAID 1 que contiene lo siguiente:<br /><br /> -C: volumen? 60 GB<br /><br /> -D: volumen? 1000 GB|  
-|Mediano|-Tres discos físicos<br /><br /> -Configurado como un conjunto RAID 5 que contiene lo siguiente:<br /><br /> -C: volumen? 60 GB<br /><br /> -D: volumen? 1500 GB|  
+|Medio|-Tres discos físicos<br /><br /> -Configurado como un conjunto RAID 5 que contiene lo siguiente:<br /><br /> -C: volumen? 60 GB<br /><br /> -D: volumen? 1500 GB|  
 |Alto|-Cinco o más discos físicos en total<br /><br /> -Dos discos en un conjunto reflejado RAID 1 que contiene el volumen C: 100 GB<br /><br /> -Todos los discos restantes en un conjunto RAID 5 que contiene lo siguiente:<br /><br /> -D: volumen? 1500 GB<br /><br /> -E: volumen? 1500 GB|  
   
  Estas recomendaciones tienen en cuenta el tamaño del sistema operativo instalado, el tamaño promedio del almacenamiento de datos que usa el servidor y el crecimiento del almacenamiento de datos previsto durante toda la vida útil del servidor. Los volúmenes pueden ser particiones de un único disco físico o se pueden incluir en discos físicos separados. Dado que el servidor almacena datos importantes para el cliente, se recomienda usar varios discos físicos y ayudar a proteger los datos del cliente mediante RAID de hardware o espacios de almacenamiento.  
@@ -43,17 +43,17 @@ ms.locfileid: "70865036"
 ## <a name="partition-configuration"></a>Configuración de partición  
  Durante la configuración inicial del servidor, se creará un conjunto de carpetas de servidor predeterminadas (incluidas carpetas compartidas y la carpeta de copia de seguridad del equipo cliente) en la partición de datos más grande del disco 0.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 
- [Introducción con el ADK de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [Creación y personalización de la imagen](Creating-and-Customizing-the-Image.md)   
+ [Introducción con el ADK de Windows Server essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
 
- [Introducción con el ADK de Windows Server Essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [Creación y personalización de la imagen](../install/Creating-and-Customizing-the-Image.md)   
+ [Introducción con el ADK de Windows Server essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparar la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 

@@ -19,14 +19,14 @@ ms.locfileid: "71405307"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar el siguiente procedimiento para configurar los puertos que usa el servidor de directivas de redes (NPS) para Servicio de autenticación remota telefónica de usuario el tráfico de autenticación y cuentas de \(RADIUS @ no__t-1.
+Puede usar el siguiente procedimiento para configurar los puertos que usa el servidor de directivas de redes (NPS) para Servicio de autenticación remota telefónica de usuario \(RADIUS\) el tráfico de autenticación y cuentas.
 
-De forma predeterminada, NPS escucha el tráfico RADIUS en los puertos 1812, 1813, 1645 y 1646 para el protocolo de Internet versión 6 \(IPv6 @ no__t-1 y IPv4 para todos los adaptadores de red instalados.
+De forma predeterminada, NPS escucha el tráfico RADIUS en los puertos 1812, 1813, 1645 y 1646 para el protocolo de Internet versión 6 \(IPv6\) y IPv4 para todos los adaptadores de red instalados.
 
 >[!NOTE]
 >Si desinstala IPv4 o IPv6 en un adaptador de red, NPS no supervisará el tráfico RADIUS para el protocolo desinstalado.
 
-Los valores de puerto de 1812 para la autenticación y 1813 para cuentas son puertos RADIUS estándar definidos por Internet Engineering Task Force \(IETF @ no__t-1 en RFC 2865 y 2866. Sin embargo, de forma predeterminada, muchos servidores de acceso usan los puertos 1645 para las solicitudes de autenticación y 1646 para las solicitudes de cuentas. Con independencia de los números de puerto que decida usar, asegúrese de que NPS y el servidor de acceso estén configurados para usar los mismos.
+Los valores de puerto de 1812 para la autenticación y 1813 para cuentas son puertos RADIUS estándar definidos por Internet Engineering Task Force \(IETF\) en RFC 2865 y 2866. Sin embargo, de forma predeterminada, muchos servidores de acceso usan los puertos 1645 para las solicitudes de autenticación y 1646 para las solicitudes de cuentas. Con independencia de los números de puerto que decida usar, asegúrese de que NPS y el servidor de acceso estén configurados para usar los mismos.
 
 >AÚN Si no usa los números de puerto predeterminados de RADIUS, debe configurar excepciones en el firewall para que el equipo local permita el tráfico RADIUS en los nuevos puertos. Para obtener más información, consulte [configurar firewalls para el tráfico RADIUS](nps-firewalls-configure.md).
 

@@ -23,9 +23,9 @@ ms.locfileid: "71367325"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-**Nota:** Windows Server 2012 combina DirectAccess y el servicio de enrutamiento y acceso remoto (RRAS) en un único rol de acceso remoto.  
+**Nota:** Windows Server 2012 combina DirectAccess y el Servicio de enrutamiento y acceso remoto (RRAS) en un único rol de acceso remoto.  
   
-En este tema se describe cómo configurar la infraestructura necesaria para una implementación de acceso remoto avanzada con un solo servidor de acceso remoto en un entorno mixto de IPv4 e IPv6. Antes de comenzar con los pasos de implementación, asegúrese de haber completado los pasos de planificación descritos en @no__t 0Step 1: Planear la infraestructura de acceso remoto @ no__t-0.  
+En este tema se describe cómo configurar la infraestructura necesaria para una implementación de acceso remoto avanzada con un solo servidor de acceso remoto en un entorno mixto de IPv4 e IPv6. Antes de comenzar con los pasos de implementación, asegúrese de haber completado los pasos de planificación descritos en [paso 1: planear la infraestructura de acceso remoto](../plan/Step-1-Plan-the-Remote-Access-Infrastructure.md).  
   
 |Tarea|Descripción|  
 |----|--------|  
@@ -118,7 +118,7 @@ Aplique las siguientes excepciones de firewall con conexión a Internet para el 
 ### <a name="remote-access-traffic"></a>Tráfico de acceso remoto  
 Aplique las siguientes excepciones de Firewall de la red interna para el tráfico de acceso remoto:  
   
--   ISATAP Protocolo 41 de entrada y de salida  
+-   ISATAP: protocolo 41 de entrada y de salida  
   
 -   TCP/UDP para todo el tráfico IPv4 o IPv6  
   
@@ -198,7 +198,7 @@ Asegúrate de que el certificado de sitio web utilizado para la autenticación I
   
 ##### <a name="to-install-the-ip-https-certificate-from-an-internal-ca"></a>Cómo instalar el certificado IP-HTTPS desde una CA interna  
   
-1.  En el servidor de acceso remoto: En la pantalla **Inicio** , escriba**MMC. exe**y, a continuación, presione Entrar.  
+1.  En el servidor de acceso remoto: en la pantalla **Inicio** , escriba**MMC. exe**y, a continuación, presione Entrar.  
   
 2.  En la consola MMC, en el menú **Archivo**, haz clic en **Agregar o quitar complemento**.  
   
@@ -231,7 +231,7 @@ Debes configurar manualmente una entrada DNS para el sitio web del servidor de u
   
 ### <a name="NLS_DNS"></a>Para agregar el servidor de ubicación de red y el sondeo Web  
   
-1.  En el servidor DNS de la red interna: En la pantalla **Inicio** , escriba**DNSMgmt. msc**y, a continuación, presione Entrar.  
+1.  En el servidor DNS de la red interna: en la pantalla **Inicio** , escriba**DNSMgmt. msc**y, a continuación, presione Entrar.  
   
 2.  En el panel izquierdo de la consola del **Administrador del DNS**, expande la zona de búsqueda directa de tu dominio. Haga clic con el botón secundario en el dominio y haga clic en **nuevo host (A o aaaa)** .  
   
@@ -241,9 +241,9 @@ Debes configurar manualmente una entrada DNS para el sitio web del servidor de u
   
 5.  Repite este proceso para directaccess-corpconnectivityhost y todos los comprobadores de conectividad creados manualmente. En el cuadro de diálogo **DNS** , haga clic en **Aceptar**.  
   
-6.  Haga clic en **Listo**.  
+6.  Haz clic en **Listo**.  
   
-](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -315,7 +315,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
   
 10. Haz clic en **Reiniciar ahora** cuando se te solicite.  
   
-](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -370,7 +370,7 @@ La configuración de DirectAccess contenida en el equipo cliente directiva de gr
   
 7.  En el cuadro de diálogo **Seleccionar usuarios, contactos, equipos o cuentas de servicio**, selecciona los equipos cliente que quieras habilitar para DirectAccess y, después, haz clic en **Aceptar**.  
   
-](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**comandos equivalentes de Windows PowerShell** de @no__t 0Windows PowerShell  
+![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**comandos equivalentes** de Windows PowerShell Windows PowerShell  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -405,7 +405,7 @@ Tanto si usa un certificado privado como un certificado autofirmado, requiere lo
   
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>Cómo instalar el certificado de servidor de ubicación de red desde una CA interna  
   
-1.  En el servidor que hospede el sitio web del servidor de ubicación de red: En la pantalla **Inicio** , escriba**MMC. exe**y, a continuación, presione Entrar.  
+1.  En el servidor que hospedará el sitio web del servidor de ubicación de red: en la pantalla **Inicio** , escriba**MMC. exe**y, a continuación, presione Entrar.  
   
 2.  En la consola MMC, en el menú **Archivo**, haz clic en **Agregar o quitar complemento**.  
   
@@ -447,7 +447,7 @@ Tanto si usa un certificado privado como un certificado autofirmado, requiere lo
   
     -   Servidores web que usan una dirección URL basada en HTTP, como: https://crl.corp.contoso.com/crld/corp-APP1-CA.crl  
   
-    -   Servidores de archivos a los que se accede a través de una ruta de acceso UNC (Convención de nomenclatura universal), como \\ \ CRL. Corp. contoso. com\crld\corp-APP1-CA.crl  
+    -   Servidores de archivos a los que se accede a través de una ruta de acceso UNC (Convención de nomenclatura universal), como \\\crl.corp.contoso.com\crld\corp-APP1-CA.crl  
   
     Si el punto de distribución de CRL interno solo es accesible a través de IPv6, debe configurar una regla de seguridad de conexión de Firewall de Windows con seguridad avanzada. Esto exime la protección de IPsec del espacio de direcciones IPv6 de la intranet a las direcciones IPv6 de los puntos de distribución de CRL.  
   
@@ -455,5 +455,5 @@ Tanto si usa un certificado privado como un certificado autofirmado, requiere lo
   
 ## <a name="BKMK_Links"></a>Vea también  
   
--   [Paso 2: Configurar el servidor de acceso remoto](Step-2-Configure-the-Remote-Access-Server.md)
+-   [Paso 2: configurar el servidor de acceso remoto](Step-2-Configure-the-Remote-Access-Server.md)
 

@@ -17,7 +17,7 @@ ms.locfileid: "71402967"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>Replicación de clúster extendido con almacenamiento compartido
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 En este ejemplo de evaluación, configurará estos equipos y su almacenamiento en un único clúster extendido, donde dos nodos comparten un conjunto de almacenamiento y dos nodos comparten otro conjunto de almacenamiento; luego, la replicación conserva ambos conjuntos de almacenamiento reflejados en el clúster para permitir la conmutación por error inmediata. Estos nodos y su almacenamiento deberían encontrarse en distintos sitios físicos, aunque no es necesario. Existen pasos independientes para crear clústeres de Hyper-V y de servidor de archivos como escenarios de ejemplo.  
 
@@ -36,7 +36,7 @@ En este tutorial se utiliza como ejemplo el siguiente entorno:
 
 ![Diagrama que muestra dos nodos en Redmond que se replican con dos nodos del mismo clúster en el sitio de Bellevue.](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_StretchClusterExample.png)  
 
-@NO__T 0FIGURE 1:  Replicación de almacenamiento en un clúster extendido @ no__t-0  
+**Figura 1: replicación de almacenamiento en un clúster extendido**  
 
 ## <a name="prerequisites"></a>Requisitos previos  
 -   Bosque de Active Directory Domain Services (no es necesario ejecutar Windows Server 2016).  
@@ -220,7 +220,7 @@ Ahora creará un clúster de conmutación por error normal. Después de la confi
 
 14. **(Opcional)** Configure redes en clúster y Active Directory para una conmutación por error de sitio DNS más rápida. Puedes utilizar redes definidas por software de Hyper-V, VLAN extendidas, dispositivos de abstracción de red, TTL de DNS reducido y otras técnicas habituales.
 
-    Para obtener más información, revise la sesión de Microsoft encendido: La [ampliación de los clústeres de conmutación por error y el uso de réplica de almacenamiento en Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) y la entrada de blog [habilitar las notificaciones de cambio entre sitios: ¿Cómo y por qué?](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx) .  
+    Para más información, revise la sesión de Microsoft Ignite: [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Extensión de clústeres de conmutación por error y uso de la réplica de almacenamiento en Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) y la entrada de blog [Enable Change Notifications between Sites - How and Why? (Habilitar las notificaciones de cambio entre sitios: ¿cómo y por qué?)](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).  
 
 15. **(Opcional)** Configura la resistencia de la máquina virtual para que los invitados no entren en pausas prolongadas durante los errores en nodos. En su lugar, estos aplican la conmutación por error al nuevo almacenamiento del origen de la replicación en el plazo de 10 segundos.  
 
@@ -287,7 +287,7 @@ Ahora creará un clúster de conmutación por error normal. Después de la confi
 
 9. **(Opcional)** Configure redes en clúster y Active Directory para una conmutación por error de sitio DNS más rápida. Puedes utilizar redes definidas por software de Hyper-V, VLAN extendidas, dispositivos de abstracción de red, TTL de DNS reducido y otras técnicas habituales.  
 
-   Para obtener más información, revise la sesión de Microsoft encendido: [Ajuste de clústeres de conmutación por error y uso de réplica de almacenamiento en Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) y [habilitación de notificaciones de cambio entre sitios: Cómo y por qué](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).  
+   Para más información, revise la sesión de Microsoft Ignite: [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Extensión de clústeres de conmutación por error y uso de la Réplica de almacenamiento en Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) y [Enable Change Notifications between Sites - How and Why? (Habilitar las notificaciones de cambio entre sitios: ¿cómo y por qué?)](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).  
 
 10. **(Opcional)** Configure la resistencia de la máquina virtual para que los invitados no entren en pausas prolongadas durante los errores en nodos. En su lugar, estos aplican la conmutación por error al nuevo almacenamiento del origen de la replicación en el plazo de 10 segundos.  
 
@@ -340,11 +340,11 @@ Ahora creará un clúster de conmutación por error normal. Después de la confi
 
 11. Seleccione un disco para que sea el volumen de datos y haga clic en **Siguiente**.  
 
-12. Revise la configuración y haga clic en **Siguiente**. Haga clic en **Finalizar**.  
+12. Revise la configuración y haga clic en **Siguiente**. Haz clic en **Finalizar**.  
 
 13. Haga clic con el botón derecho en el rol Servidor de archivos y, a continuación, haga clic en **Agregar recurso compartido de archivos**. Continúe con el asistente para configurar recursos compartidos.  
 
-14. Opcional: Agregue otro rol de servidor de archivos que use el otro almacenamiento en este sitio.  
+14. Opcional: agregue otro rol Servidor de archivos que use el otro almacenamiento en este sitio.  
 
 15. Configure el reconocimiento de sitios de clúster extendido para que los servidores SR-SRV01 y SR-SRV02 estén en el sitio Redmond, SR-SRV03 y SRV04 SR estén en el sitio Bellevue, y Redmond sea el preferido para tener la propiedad del nodo de almacenamiento de origen y las máquinas virtuales:  
 
@@ -470,7 +470,7 @@ Si se replica la carga de un recurso de disco físico (PDR) como Servidor de arc
 
 11. En este punto, ha configurado una asociación de Réplica de almacenamiento entre las dos mitades del clúster, pero la replicación está en curso. Hay varias formas de ver el estado de replicación a través de una herramienta gráfica.  
 
-    1.  Utilice la columna **Rol de replicación** y la pestaña **Replicación**. Cuando haya terminado con la sincronización inicial, los discos de origen y de destino tendrán un estado de replicación de **Replicación continua**.   
+    1.  Usa la columna **Rol de replicación** y la pestaña **Replicación**. Cuando hayas terminado con la sincronización inicial, los discos de origen y de destino tendrán un estado de replicación de **Replicación continua**.   
 
         ![Pantalla que muestra la ficha Replicación de un disco en el Administrador de clústeres de conmutación por error](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_ReplicationDetails2.png)  
 
@@ -478,7 +478,7 @@ Si se replica la carga de un recurso de disco físico (PDR) como Servidor de arc
 
         1.  En el servidor de origen, vaya a **Applications and Services \ Microsoft \ Windows \ StorageReplica \ Admin** y examine los eventos 5015, 5002, 5004, 1237, 5001 y 2200.  
 
-        2.  En el servidor de destino, vaya a **Applications and Services \ Microsoft \ Windows \ StorageReplica \ Operational** y espere al evento 1215. Este evento indica el número de bytes copiados y el tiempo necesario. Ejemplo:  
+        2.  En el servidor de destino, vaya a **Applications and Services \ Microsoft \ Windows \ StorageReplica \ Operational** y espere al evento 1215. Este evento indica el número de bytes copiados y el tiempo necesario. Por ejemplo:  
 
             ```  
             Log Name:      Microsoft-Windows-StorageReplica/Operational  
@@ -578,7 +578,7 @@ Si se replica la carga de un recurso de disco físico (PDR) como Servidor de arc
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20  
         ```  
 
-    2.  En el servidor de destino, ejecute el siguiente comando para ver los eventos de Réplica de almacenamiento que muestran la creación de la asociación. Este evento indica el número de bytes copiados y el tiempo necesario. Ejemplo:  
+    2.  En el servidor de destino, ejecute el siguiente comando para ver los eventos de Réplica de almacenamiento que muestran la creación de la asociación. Este evento indica el número de bytes copiados y el tiempo necesario. Por ejemplo:  
 
             Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | fl  
 
@@ -699,23 +699,23 @@ Ahora podrá administrar y hacer funcionar su clúster extendido. Puede realizar
 
     -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Número de solicitudes para la última escritura del registro  
 
-    -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Promedio de longitud de cola de vaciado  
+    -   \Estadísticas de E/S de partición de réplica de almacenamiento (*)\Longitud media de la cola de vaciado  
 
     -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Longitud actual de la cola de vaciado  
 
     -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Número de solicitudes de escritura en aplicación  
 
-    -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Promedio de Número de solicitudes por escritura en registro  
+    -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Número promedio de solicitudes por escritura del registro  
 
-    -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Promedio de latencia de escritura de aplicación  
+    -   \Estadísticas de E/S de partición de réplica de almacenamiento (*)\Latencia media de escritura de la aplicación  
 
-    -   \Estadísticas de E/S de partición de Réplica de almacenamiento(*)\Promedio de latencia de lectura de aplicación  
+    -   \Estadísticas de E/S de partición de réplica de almacenamiento (*)\Latencia media de lectura de la aplicación  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\RPO de destino  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\RPO actual  
 
-    -   \Estadísticas de Réplica de almacenamiento(*)\Promedio de longitud de cola de registro  
+    -   \Estadísticas de Réplica de almacenamiento(*)\Longitud media de cola del registro  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Longitud de cola del registro actual  
 
@@ -723,11 +723,11 @@ Ahora podrá administrar y hacer funcionar su clúster extendido. Puede realizar
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Nº total de bytes enviados  
 
-    -   \Estadísticas de Réplica de almacenamiento(*)\Promedio de latencia de envío de red  
+    -   \Estadísticas de réplica de almacenamiento (*)\Latencia media de envío de red  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Estado de la replicación  
 
-    -   \Estadísticas de Réplica de almacenamiento(*)\Promedio de latencia del recorrido de ida y vuelta de mensaje  
+    -   \Estadísticas de réplica de almacenamiento(*)\Latencia medida del recorrido de ida y vuelta de mensaje  
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Tiempo transcurrido de la última recuperación  
 
@@ -796,9 +796,9 @@ Ahora podrá administrar y hacer funcionar su clúster extendido. Puede realizar
 - [Información general sobre réplica de almacenamiento](storage-replica-overview.md)  
 - [Replicación de almacenamiento de servidor a servidor](server-to-server-storage-replication.md)  
 - [Replicación de almacenamiento de clúster a clúster](cluster-to-cluster-storage-replication.md)  
-- [Réplica de almacenamiento: Problemas conocidos](storage-replica-known-issues.md) 
-- [Réplica de almacenamiento: Preguntas más frecuentes](storage-replica-frequently-asked-questions.md)  
+- [Réplica de almacenamiento: problemas conocidos](storage-replica-known-issues.md) 
+- [Réplica de almacenamiento: preguntas más frecuentes](storage-replica-frequently-asked-questions.md)  
 
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Espacios de almacenamiento directo en Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)

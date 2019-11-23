@@ -21,7 +21,7 @@ ms.locfileid: "71405254"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-RSS virtual \(vRSS @ no__t-1 requiere la compatibilidad con Virtual Machine Queue \(VMQ @ no__t-3 del adaptador físico. Si VMQ está deshabilitado o no se admite, se deshabilita el ajuste de escala en lado de recepción virtual. 
+El\) de RSS virtual \(vRSS requiere la compatibilidad con Virtual Machine Queue \(VMQ\) del adaptador físico. Si VMQ está deshabilitado o no se admite, se deshabilita el ajuste de escala en lado de recepción virtual. 
 
 Para obtener más información, consulte [planear el uso de vRSS](vrss-plan.md).
 
@@ -53,7 +53,7 @@ Puede usar este procedimiento para habilitar vRSS mediante Device Manager.
 
 7.  Asegúrese de que la selección de **valor** está **habilitada**. 
 
-8.  Haga clic en **Aceptar**.
+8.  Haz clic en **Aceptar**.
   
 > [!NOTE]
 > En la pestaña **Opciones avanzadas** , algunos adaptadores de red también muestran el número de colas RSS que admite el adaptador.

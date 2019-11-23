@@ -53,7 +53,7 @@ Para implementar acceso remoto debes instalar el rol de acceso remoto en un serv
   
 7.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
   
-](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 El siguiente cmdlet o cmdlets de Windows PowerShell instala el rol de acceso remoto: 
 
@@ -95,7 +95,7 @@ El siguiente cmdlet o cmdlets de Windows PowerShell instala el rol de acceso rem
     > [!NOTE]  
     > De forma predeterminada, el Asistente para introducción implementa DirectAccess en todos los equipos portátiles del dominio al aplicar un filtro WMI a la configuración GPO de cliente.  
   
-5.  Haga clic en **Finalizar**.  
+5.  Haz clic en **Finalizar**.  
   
 6.  Dado que no se usa ninguna PKI en esta implementación, si no se encuentran los certificados, el asistente aprovisionará automáticamente certificados autofirmados para IP-HTTPS y el servidor de ubicación de red, y habilitará automáticamente el proxy Kerberos. El asistente también habilitará NAT64 y DNS64 para la traducción de protocolo en el entorno de solo IPv4. Una vez que el asistente haya terminado de aplicar la configuración correctamente, haga clic en **Cerrar**.  
   
@@ -121,7 +121,7 @@ El siguiente cmdlet o cmdlets de Windows PowerShell instala el rol de acceso rem
   
 ## <a name="BKMK_Links"></a>Paso anterior  
   
--   [Paso 1: Configurar la infraestructura de DirectAccess](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
+-   [Paso 1: configurar la infraestructura de DirectAccess](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
   
 ## <a name="next-step"></a>Paso siguiente  
   

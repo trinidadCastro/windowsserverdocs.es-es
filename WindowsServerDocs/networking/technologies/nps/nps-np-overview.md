@@ -30,7 +30,7 @@ Las directivas de red son conjuntos de condiciones, restricciones y valores de c
 
 Al procesar las solicitudes de conexión como un servidor Servicio de autenticación remota telefónica de usuario (RADIUS), NPS realiza la autenticación y autorización para la solicitud de conexión. Durante el proceso de autenticación, NPS comprueba la identidad del usuario o equipo que se está conectando a la red. Durante el proceso de autorización, NPS determina si el usuario o el equipo pueden tener acceso a la red.
 
-Para efectuar estas determinaciones, NPS usa directivas de red que se configuran en la consola de NPS. NPS también examina las propiedades de acceso telefónico de la cuenta de usuario en Active Directory @ no__t-0 Domain Services \(AD DS @ no__t-2 para realizar la autorización.
+Para efectuar estas determinaciones, NPS usa directivas de red que se configuran en la consola de NPS. NPS también examina las propiedades de acceso telefónico de la cuenta de usuario en Active Directory&reg; servicios de dominio \(AD DS\) para realizar la autorización.
 
 ## <a name="network-policies---an-ordered-set-of-rules"></a>Directivas de red: un conjunto ordenado de reglas
 
@@ -47,7 +47,7 @@ Cada directiva de red tiene una configuración de **Estado de directiva** que le
 
 Hay cuatro categorías de propiedades para cada directiva de red:
 
-### <a name="overview"></a>Información general
+### <a name="overview"></a>Introducción
 
  Estas propiedades permiten especificar si la Directiva está habilitada, si la Directiva concede o deniega el acceso y si se requiere un método de conexión de red específico, o un tipo de servidor de acceso a la red (NAS), para las solicitudes de conexión. Las propiedades de información general también permiten especificar si se omiten las propiedades de acceso telefónico de las cuentas de usuario de AD DS. Si selecciona esta opción, NPS solo usará la configuración de la Directiva de red para determinar si la conexión está autorizada.
 

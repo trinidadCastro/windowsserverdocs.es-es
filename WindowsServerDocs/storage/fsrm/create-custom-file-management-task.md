@@ -34,12 +34,12 @@ La expiración no es siempre una acción que se quiera realizar en los archivos.
 
     -   **Tipo**. Selecciona **Personalizar** en el menú desplegable.
     -   **Ejecutable**. Escribe o busca un comando para ejecutarse cuando la tarea de administración de archivos procese los archivos. Este archivo ejecutable debe establecerse para que puedan escribir en él únicamente los administradores y el sistema. Si otros usuarios tienen acceso de escritura al archivo ejecutable, no se ejecutará correctamente.
-    -   **Configuración del comando**. Para configurar los argumentos pasados al archivo ejecutable cuando un trabajo de administración de archivos procesa los archivos, edita el cuadro de texto denominado **Argumentos**. Para insertar variables adicionales en el texto, coloca el cursor en la ubicación del cuadro de texto donde quieres insertar la variable, selecciona la variable que quieres insertar y luego haz clic en **Insertar variable**. El texto que aparece entre paréntesis inserta información de variables que el archivo ejecutable puede recibir. Por ejemplo, la variable de ruta de acceso de archivo \[Source @ no__t-1 inserta el nombre del archivo que debe ser procesado por el ejecutable. También puedes hacer clic en el botón **Directorio de trabajo** para especificar la ubicación del archivo ejecutable personalizado.
+    -   **Configuración del comando**. Para configurar los argumentos pasados al archivo ejecutable cuando un trabajo de administración de archivos procesa los archivos, edita el cuadro de texto denominado **Argumentos**. Para insertar variables adicionales en el texto, coloca el cursor en la ubicación del cuadro de texto donde quieres insertar la variable, selecciona la variable que quieres insertar y luego haz clic en **Insertar variable**. El texto que aparece entre paréntesis inserta información de variables que el archivo ejecutable puede recibir. Por ejemplo, la variable \[ruta de acceso del archivo de origen\] inserta el nombre del archivo que debe ser procesado por el ejecutable. También puedes hacer clic en el botón **Directorio de trabajo** para especificar la ubicación del archivo ejecutable personalizado.
     -   **Seguridad del comando**. Establece la configuración de seguridad para este archivo ejecutable. De forma predeterminada, el comando se ejecuta como Servicio Local, que es la cuenta más restrictiva disponible.
 
-4.  Haga clic en **Aceptar**.
+4.  Haz clic en **Aceptar**.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 -   [Administración de clasificaciones](classification-management.md)
 -   [Tareas de administración de archivos](file-management-tasks.md)

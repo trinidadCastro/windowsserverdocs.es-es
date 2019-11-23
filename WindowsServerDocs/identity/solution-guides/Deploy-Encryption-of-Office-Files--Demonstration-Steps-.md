@@ -33,11 +33,11 @@ En este escenario, realizará los siguientes pasos:
 |[Comprobar la protección de AD RMS](Deploy-Encryption-of-Office-Files--Demonstration-Steps-.md#BKMK_5)|Comprueba que el documento está protegido con AD RMS.|  
 |||  
   
-## <a name="BKMK_1.1"></a>Paso 1: Habilitar las propiedades de recursos  
+## <a name="BKMK_1.1"></a>Paso 1: habilitar las propiedades de recursos  
   
 #### <a name="to-enable-resource-properties"></a>Para habilitar las propiedades de recursos  
   
-1. En el Administrador de Hyper-V, conecta con el servidor ID_AD_DC1. Inicie sesión en el servidor con Contoso\administrador con la contraseña <strong>pass@word1</strong>.  
+1. En el Administrador de Hyper-V, conecta con el servidor ID_AD_DC1. Inicie sesión en el servidor mediante Contoso\administrador con la contraseña <strong>pass@word1</strong>.  
   
 2. Abre el Centro de administración de Active Directory y haz clic en **Vista de árbol**.  
   
@@ -51,7 +51,7 @@ En este escenario, realizará los siguientes pasos:
   
 7. Haz clic en **Agregar**, desplázate hacia abajo y haz clic en **Impacto** para agregarla a la lista. Haz lo mismo para **Información de identificación personal**. Haz clic en **Aceptar** dos veces para finalizar.  
   
-@no__t guías 0solution](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+![guías de soluciones](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -60,14 +60,14 @@ Set-ADResourceProperty -Enabled:$true -Identity:"CN=Impact_MS,CN=Resource Proper
 Set-ADResourceProperty -Enabled:$true -Identity:"CN=PII_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com" 
 ```  
   
-## <a name="BKMK_2"></a>Paso 2: Crear reglas de clasificación  
+## <a name="BKMK_2"></a>Paso 2: crear reglas de clasificación  
 En este paso se explica cómo crear la regla de clasificación **Alto impacto**. Esta regla buscará en el contenido de los documentos y, si se encuentra la cadena "Contoso Confidential", clasificará este documento como que tiene un gran impacto en el negocio. Esta clasificación invalidará la clasificación previamente asignada de bajo impacto para la empresa.  
   
 También crearás una regla **Alta PII** . Esta regla busca en el contenido de los documentos y, si encuentra un número de la Seguridad Social, clasifica el documento como contenido de alta PII.  
   
 #### <a name="to-create-the-high-impact-classification-rule"></a>Para crear la regla de clasificación de alto impacto  
   
-1. En el Administrador de Hyper-V, conecta con el servidor ID_AD_FILE1. Inicie sesión en el servidor con Contoso\administrador con la contraseña <strong>pass@word1</strong>.  
+1. En el Administrador de Hyper-V, conecta con el servidor ID_AD_FILE1. Inicie sesión en el servidor mediante Contoso\administrador con la contraseña <strong>pass@word1</strong>.  
   
 2. Tienes que actualizar las propiedades de recursos globales desde Active Directory. Abra Windows PowerShell, escriba `Update-FSRMClassificationPropertyDefinition`y, luego, presione ENTRAR. Cierra Windows PowerShell.  
   
@@ -75,7 +75,7 @@ También crearás una regla **Alta PII** . Esta regla busca en el contenido de l
   
 4. En el panel izquierdo del Administrador de recursos del servidor de archivos, expande **Administración de clasificaciones**y selecciona **Reglas de clasificación**.  
   
-5. En el panel **Acciones** , haz clic en **Configurar programación de clasificación**. En la pestaña **Clasificación automática**, selecciona **Habilitar programación fija**, selecciona un **Día de la semana** y, después, activa la casilla **Permitir clasificación continua para archivos nuevos**. Haga clic en **Aceptar**.  
+5. En el panel **Acciones** , haz clic en **Configurar programación de clasificación**. En la pestaña **Clasificación automática**, selecciona **Habilitar programación fija**, selecciona un **Día de la semana** y, después, activa la casilla **Permitir clasificación continua para archivos nuevos**. Haz clic en **Aceptar**.  
   
 6. En el panel **Acciones**, haz clic en **Crear regla de clasificación**. Se abrirá el cuadro de diálogo **Crear regla de clasificación**.  
   
@@ -85,17 +85,17 @@ También crearás una regla **Alta PII** . Esta regla busca en el contenido de l
   
 9. En la pestaña **Ámbito** , haz clic en **Establecer propiedades de administración de carpetas**, selecciona **Uso de carpeta**, haz clic en **Agregar**y en **Examinar**, ve a D:\Finance Documents como ruta de acceso, haz clic en **Aceptar**y, después, elige un valor de propiedad llamado **Archivos de grupo** y haz clic en **Cerrar**. Una vez establecidas las propiedades de administración, en la pestaña **Ámbito de regla** , selecciona **Archivos de grupo**.  
   
-10. Haz clic en la pestaña **Clasificación**.  En Elija un método para asignar una propiedad a los archivos, selecciona **Clasificador de contenido** en la lista desplegable.  
+10. Haga clic en la pestaña **clasificación** .  En **Elija un método para asignar la propiedad a los archivos**, seleccione **clasificador de contenido** en la lista desplegable.  
   
 11. En **Elija una propiedad para asignar a los archivos**, selecciona **Impacto** en la lista desplegable.  
   
 12. En **Especifique un valor**, selecciona **Alto** en la lista desplegable.  
   
-13. Haz clic en **Configurar** , en **Parámetros**.  En el cuadro de diálogo **Parámetros de clasificación** , en la lista **Tipo de expresión** , selecciona **Cadena**. En el cuadro **Expresión**, escribe: Contoso Confidencial, y haz clic en **Aceptar**.  
+13. Haz clic en **Configurar** , en **Parámetros**.  En el cuadro de diálogo **Parámetros de clasificación** , en la lista **Tipo de expresión** , selecciona **Cadena**. En el cuadro **Expresión** , escribe: **Contoso Confidencial**, y haz clic en **Aceptar**.  
   
-14. Haz clic en la pestaña **Tipo de evaluación** .  Haga clic en Volver a evaluar los valores de propiedad existentes, en **Sobrescribir**el valor existente y, después, en **Aceptar** para finalizar.  
+14. Haga clic en la pestaña **tipo de evaluación** .  Haga clic en **volver a evaluar los valores de propiedad existentes**, haga clic en **sobrescribir**el valor existente y, a continuación, haga clic en **Aceptar** para finalizar.  
   
-@no__t guías 0solution](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+![guías de soluciones](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -109,9 +109,9 @@ New-FSRMClassificationRule -Name "High Business Impact" -Property "Impact_MS" -D
   
 #### <a name="to-create-the-high-pii-classification-rule"></a>Para crear la regla de clasificación de alta PII  
   
-1. En el Administrador de Hyper-V, conecta con el servidor ID_AD_FILE1. Inicie sesión en el servidor con Contoso\administrador con la contraseña <strong>pass@word1</strong>.  
+1. En el Administrador de Hyper-V, conecta con el servidor ID_AD_FILE1. Inicie sesión en el servidor mediante Contoso\administrador con la contraseña <strong>pass@word1</strong>.  
   
-2. En el escritorio, abre la carpeta **Expresiones regulares** y, después, abre el documento de texto llamado **RegEx-SSN**. Resalte y copie la siguiente cadena de expresión regular: **^ (?! 000) ([0-7] \d @ no__t-1 | 7 ([0-7] \d | 7 [012])) ([-]?) (?! 00) \d\d\3 (?! 0000) \d @ no__t-2 $** . Esta cadena se usará más adelante en este paso; guárdala en el portapapeles.  
+2. En el escritorio, abre la carpeta **Expresiones regulares** y, después, abre el documento de texto llamado **RegEx-SSN**. Resalte y copie la siguiente cadena de expresión regular: **^ (?! 000) ([0-7] \d{2}| 7 ([0-7] \d | 7 [012])) ([-]?) (?! 00) \d\d\3 (?! 0000) \d{4}$** . Esta cadena se usará más adelante en este paso; guárdala en el portapapeles.  
   
 3. Abra el Administrador de recursos del servidor de archivos. Para abrir el Administrador de recursos del servidor de archivos haz clic en **Inicio**, escribe **administrador de recursos del servidor de archivos**y haz clic en **Administrador de recursos del servidor de archivos**.  
   
@@ -123,21 +123,21 @@ New-FSRMClassificationRule -Name "High Business Impact" -Property "Impact_MS" -D
   
 7. Haz clic en la pestaña **Ámbito** y activa la casilla **Archivos de grupo** .  
   
-8. Haz clic en la pestaña **Clasificación**.  En Elija un método para asignar una propiedad a los archivos, selecciona **Clasificador de contenido** en la lista desplegable.  
+8. Haga clic en la pestaña **clasificación** .  En **Elija un método para asignar la propiedad a los archivos**, seleccione **clasificador de contenido** en la lista desplegable.  
   
 9. En **Elija una propiedad para asignar a los archivos**, selecciona **Información de identificación personal** en la lista desplegable.  
   
 10. En **Especifique un valor**, selecciona **Alto** en la lista desplegable.  
   
 11. Haz clic en **Configurar** , en **Parámetros**.   
-    En el panel **Parámetros de clasificación**, en la lista **Tipo de expresión** , selecciona **Expresión regular**. En el cuadro **expresión** , pegue el texto del portapapeles: **^ (?! 000) ([0-7] \d @ no__t-2 | 7 ([0-7] \d | 7 [012])) ([-]?) (?! 00) \d\d\3 (?! 0000) \d @ no__t-3 $** y, a continuación, haga clic en **Aceptar**.  
+    En el panel **Parámetros de clasificación**, en la lista **Tipo de expresión** , selecciona **Expresión regular**. En el cuadro **expresión** , pegue el texto del portapapeles: **^ (?! 000) ([0-7] \d{2}| 7 ([0-7] \d | 7 [012])) ([-]?) (?! 00) \d\d\3 (?! 0000) \d{4}$** y, a continuación, haga clic en **Aceptar**.  
   
     > [!NOTE]  
     > Esta expresión permitirá números de la Seguridad Social no válidos. Esto nos permite usar números de la Seguridad Social ficticios en la demostración.  
   
-12. Haz clic en la pestaña **Tipo de evaluación** .  Seleccione Volver a evaluar los valores de propiedad existentes, elija **Sobrescribir**el valor existente y, después, haga clic en **Aceptar** para finalizar.  
+12. Haga clic en la pestaña **tipo de evaluación** .  Seleccione **volver a evaluar los valores de propiedad existentes**, **sobrescribir**el valor existente y, a continuación, haga clic en **Aceptar** para finalizar.  
   
-@no__t guías 0solution](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+![guías de soluciones](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -151,12 +151,12 @@ Ahora deberías tener dos reglas de clasificación:
   
 -   Alta PII  
   
-## <a name="BKMK_3"></a>Paso 3: Usar tareas de administración de archivos para proteger documentos automáticamente con AD RMS  
+## <a name="BKMK_3"></a>Paso 3: uso de tareas de administración de archivos para proteger documentos automáticamente con AD RMS  
 Ahora que ha creado reglas para clasificar documentos automáticamente en función del contenido, el siguiente paso es crear una tarea de administración de archivos que use AD RMS para proteger automáticamente determinados documentos en función de su clasificación. En este paso, crearás una tarea de administración de archivos que protege automáticamente todos los documentos con una alta PII. Solo los miembros del grupo FinanceAdmin tendrán acceso a los documentos que contienen PII.  
   
 #### <a name="to-protect-documents-with-ad-rms"></a>Para proteger los documentos con AD RMS  
   
-1. En el Administrador de Hyper-V, conecta con el servidor ID_AD_FILE1. Inicie sesión en el servidor con Contoso\administrador con la contraseña <strong>pass@word1</strong>.  
+1. En el Administrador de Hyper-V, conecta con el servidor ID_AD_FILE1. Inicie sesión en el servidor mediante Contoso\administrador con la contraseña <strong>pass@word1</strong>.  
   
 2. Abra el Administrador de recursos del servidor de archivos. Para abrir el Administrador de recursos del servidor de archivos haz clic en **Inicio**, escribe **administrador de recursos del servidor de archivos**y haz clic en **Administrador de recursos del servidor de archivos**.  
   
@@ -166,15 +166,15 @@ Ahora que ha creado reglas para clasificar documentos automáticamente en funci�
   
 5. Haz clic en la pestaña **Ámbito** y activa la casilla **Archivos de grupo** .  
   
-6. Haz clic en la pestaña **Acción** . En Tipo, selecciona **Cifrado RMS**. Haz clic en **Examinar** y selecciona la plantilla **Contoso Finance Admin Only**.  
+6. Haga clic en la pestaña **acción** . En **tipo**, seleccione **cifrado de RMS**. Haz clic en **Examinar** y selecciona la plantilla **Contoso Finance Admin Only**.  
   
-7. Haz clic en la pestaña **Condición** y haz clic en **Agregar**. En **Propiedad**, selecciona **Información de identificación personal**. En **Operador**, selecciona**Igual**. En **Valor**, selecciona **Alto**. Haga clic en **Aceptar**.  
+7. Haz clic en la pestaña **Condición** y haz clic en **Agregar**. En **Propiedad**, selecciona **Información de identificación personal**. En **Operador**, selecciona**Igual**. En **Valor**, selecciona **Alto**. Haz clic en **Aceptar**.  
   
-8. Haz clic en la pestaña **Programación** . En la sección Programación, haz clic en **Semanalmente** y selecciona **Domingo**. Al ejecutar la tarea una vez a la semana, te aseguras de capturar los documentos que se puedan haber perdido debido a una interrupción del servicio u otro evento disruptivo.  
+8. Haga clic en la pestaña **programación** . En la sección **programación** , haga clic en **semanalmente**y, a continuación, seleccione **Sunday**. Al ejecutar la tarea una vez a la semana, te aseguras de capturar los documentos que se puedan haber perdido debido a una interrupción del servicio u otro evento disruptivo.  
   
 9. En la sección **Operación continua** , selecciona **Ejecutar continuamente en archivos nuevos**y haz clic en **Aceptar**. Ahora deberías tener una tarea de administración de archivos llamada Alta PII.  
   
-@no__t guías 0solution](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+![guías de soluciones](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -186,12 +186,12 @@ $schedule = New-FsrmScheduledTask -Time $date -Weekly @('Sunday')
 $fmj1=New-FSRMFileManagementJob -Name "High PII" -Description "Automatic RMS protection for high PII documents" -Namespace @('D:\Finance Documents') -Action $fmjRmsEncryption -Schedule $schedule -Continuous -Condition @($fmjCondition1)  
 ```  
   
-## <a name="BKMK_4"></a>Paso 4: Ver los resultados  
+## <a name="BKMK_4"></a>Paso 4: visualización de los resultados  
 Es el momento de echar un vistazo a las nuevas reglas de clasificación automática y protección de AD RMS en acción. En este paso, examinarás la clasificación de los documentos y observarás cómo cambian cuando cambias el contenido del documento.  
   
 #### <a name="to-view-the-results"></a>Para ver los resultados  
   
-1. En el Administrador de Hyper-V, conecta con el servidor ID_AD_FILE1. Inicie sesión en el servidor con Contoso\administrador con la contraseña <strong>pass@word1</strong>.  
+1. En el Administrador de Hyper-V, conecta con el servidor ID_AD_FILE1. Inicie sesión en el servidor mediante Contoso\administrador con la contraseña <strong>pass@word1</strong>.  
   
 2. En el Explorador de Windows, ve a D:\Finance Documents.  
   
@@ -214,13 +214,13 @@ Es el momento de echar un vistazo a las nuevas reglas de clasificación automát
   
 10. Cambia de nuevo a ID_AD_FILE1. En el Explorador de Windows, ve a D:\Finance Documents.  
   
-11. Haga clic con el botón derecho en el documento Finance Memo y haz clic en **Propiedades**. Haz clic en la pestaña **Clasificación**. Observa que ahora, la propiedad Impacto está establecida en **Alto**. Haga clic en **Cancelar**.  
+11. Haga clic con el botón derecho en el documento Finance Memo y haz clic en **Propiedades**. Haga clic en la pestaña **clasificación** . Observe que la propiedad **impacto** ahora está establecida en **alto**. Haga clic en **Cancelar**.  
   
 12. Haz clic con el botón derecho en el documento Request for Approval to Hire y selecciona **Propiedades**.  
   
-13. . Haz clic en la pestaña **Clasificación**. Observa que ahora, la propiedad Información de identificación personal está establecida en **Alto**. Haga clic en **Cancelar**.  
+13. . Haga clic en la pestaña **clasificación** . Observe que la propiedad **información de identificación personal** ahora está establecida en **alta**. Haga clic en **Cancelar**.  
   
-## <a name="BKMK_5"></a>Paso 5: Comprobar la protección con AD RMS  
+## <a name="BKMK_5"></a>Paso 5: comprobación de la protección con AD RMS  
   
 #### <a name="to-verify-that-the-document-is-protected"></a>Para comprobar que el documento está protegido  
   

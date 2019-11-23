@@ -19,23 +19,23 @@ ms.locfileid: "71359624"
 # <a name="distribute-certificates-to-client-computers-by-using-group-policy"></a>Distribuir certificados a los equipos cliente mediante directiva de grupo
 
 
-Puede usar el siguiente procedimiento para desplazar los certificados Capa de sockets seguros \(SSL @ no__t-1 adecuados \(or certificados equivalentes que encadenan a una raíz de confianza @ no__t-3 para los servidores de Federación de cuenta, los servidores de Federación de recursos y Servidores web a cada equipo cliente del bosque del asociado de cuenta mediante directiva de grupo.  
+Puede usar el siguiente procedimiento para desplazar el Capa de sockets seguros adecuado \(certificados\) SSL \(o certificados equivalentes que encadenan a un\) raíz de confianza para los servidores de Federación de cuenta, los servidores de Federación de recursos y los servidores web a cada equipo cliente del bosque del asociado de cuenta mediante directiva de grupo.  
   
-Para completar este procedimiento, lo mínimo que se necesita es pertenecer a **Admins** . del dominio o **administradores de organización**, o un grupo equivalente, en Active Directory Domain Services \(AD DS @ no__t-3.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en \( [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477) http:\/\/go.Microsoft.com\/fwlink\/? LinkId\=83477\).   
+Para completar este procedimiento, lo mínimo que se necesita es pertenecer al grupo Admins. del **dominio** o **administradores de organización**, o equivalente, en Active Directory Domain Services \(AD DS\).  Revise los detalles sobre el uso de las cuentas adecuadas y las pertenencias a grupos en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.Microsoft.com\/fwlink\/? LinkId\=83477\).   
   
 ### <a name="to-distribute-certificates-to-client-computers-by-using-group-policy"></a>Para distribuir certificados a los equipos cliente mediante directiva de grupo  
   
-1.  En un controlador de dominio del bosque de la organización del asociado de cuenta, inicie el **Directiva de grupo Management** Snap @ no__t-1in.  
+1.  En un controlador de dominio del bosque de la organización del asociado de cuenta, inicie el\-**Directiva de grupo de administración** en.  
   
-2.  Busque un objeto de directiva de grupo existente \(GPO @ no__t-1 o cree un GPO nuevo que contenga la configuración del certificado. Asegúrese de que el GPO está asociado al dominio, sitio o unidad organizativa \(OU @ no__t-1 donde residen las cuentas de usuario y equipo adecuadas.  
+2.  Busque un objeto de directiva de grupo existente \(GPO\) o cree un nuevo GPO para que contenga la configuración del certificado. Asegúrese de que el GPO está asociado con el dominio, sitio o unidad organizativa \(unidad organizativa\) donde residen las cuentas de usuario y equipo adecuadas.  
   
-3.  Right @ no__t-0click el GPO y, a continuación, haga clic en **Editar**.  
+3.  \-haga clic en el GPO y, a continuación, haga clic en **Editar**.  
   
-4.  En el árbol de consola, Abra **configuración del equipo @ no__t-1Policies @ no__t-2Windows configuración @ no__t-3Security configuración @ no__t-4Public directivas de clave**, derecha @ no__t-5click entidades de **certificación raíz de confianza**y, a continuación, haga clic en **Importar.** .  
+4.  En el árbol de consola, Abra **configuración del equipo\\directivas\\configuración de Windows\\configuración de seguridad\\directivas de clave pública**, haga clic con el botón secundario\-en **entidades de certificación raíz de confianza**y, a continuación, haga clic en **importar**.  
   
 5.  En la página **Éste es el Asistente para importación de certificados**, haga clic en **Siguiente**.  
   
-6.  En la página **archivo para importar** , escriba la ruta de acceso a los archivos de certificado adecuados \(Para example, \\ @ no__t-3fs1 @ no__t-4c $ @no__t -5fs1. cer @ no__t-6 y, a continuación, haga clic en **siguiente**.  
+6.  En la página **archivo para importar** , escriba la ruta de acceso a los archivos de certificado adecuados \(por ejemplo, \\\\FS1\\c $\\FS1. cer\)y, a continuación, haga clic en **siguiente**.  
   
 7.  En la página **almacén de certificados** , haga clic en **colocar todos los certificados en el siguiente almacén**y, a continuación, haga clic en **siguiente**.  
   

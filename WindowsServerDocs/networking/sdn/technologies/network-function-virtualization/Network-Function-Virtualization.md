@@ -23,7 +23,7 @@ ms.locfileid: "71355663"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este tema para obtener información acerca de la virtualización de función de red, que le permite implementar aplicaciones de red virtual como firewall de centro de centros de seguridad, puerta de enlace RAS multiempresa y equilibrio de carga de software \(SLB @ no__t-1 multiplexor \(MUX @ No_ _ t-3.
+Puede usar este tema para obtener información sobre la virtualización de función de red, que le permite implementar aplicaciones de red virtual como firewall de centro de seguridad de red, puerta de enlace RAS multiinquilino y equilibrio de carga de software \(multiplexador de\) de SLB \(MUX\).
   
 >[!NOTE]  
 >Además de este tema, está disponible la siguiente documentación sobre virtualización de funciones de red.  

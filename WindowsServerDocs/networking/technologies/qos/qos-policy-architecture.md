@@ -29,19 +29,19 @@ La arquitectura de QoS basada en Directiva consta de los siguientes componentes:
 
 - **Directiva de grupo servicio de cliente**. Un servicio de Windows que administra la configuración de directiva de grupo de usuario y equipo.
 
-- **Motor de directiva de grupo**. Componente del servicio de cliente de directiva de grupo que recupera la configuración del usuario y del equipo directiva de grupo de Active Directory en el inicio y comprueba periódicamente si hay cambios \(by predeterminado, cada 90 minutos @ no__t-1. Si se detectan cambios, el motor de directiva de grupo recupera la nueva configuración de directiva de grupo. El motor de directiva de grupo procesa los GPO entrantes e informa a la extensión del lado cliente QoS cuando se actualizan las directivas QoS.
+- **Motor de directiva de grupo**. Componente del servicio de cliente de directiva de grupo que recupera la configuración del usuario y del equipo directiva de grupo de Active Directory al inicio y comprueba periódicamente si hay cambios \(de forma predeterminada, cada 90 minutos\). Si se detectan cambios, el motor de directiva de grupo recupera la nueva configuración de directiva de grupo. El motor de directiva de grupo procesa los GPO entrantes e informa a la extensión del lado cliente QoS cuando se actualizan las directivas QoS.
 
 - **Extensión del lado cliente QoS**. Componente del servicio de cliente de directiva de grupo que espera una indicación del motor de directiva de grupo que las directivas de QoS han cambiado e informa al módulo de inspección de QoS.
 
 - **Pila TCP/IP**. La pila TCP/IP que incluye compatibilidad integrada para IPv4 e IPv6 y admite la plataforma de filtrado de Windows. 
 
-- **Inspección de QoS**. Módulo un componente dentro de la pila TCP/IP que espera las indicaciones de los cambios de la Directiva de QoS de la extensión del lado cliente QoS, recupera la configuración de la directiva QoS e interactúa con la capa de transporte y Pacer. sys para marcar internamente el tráfico que coincide con la QoS políticas.
+- **Inspección de QoS**. Módulo un componente dentro de la pila TCP/IP que espera las indicaciones de los cambios de la Directiva de QoS de la extensión del lado cliente de QoS, recupera la configuración de la Directiva de QoS e interactúa con la capa de transporte y Pacer. sys para marcar internamente el tráfico que coincide con las directivas de QoS.
 
 - **NDIS 6. x**. Una interfaz estándar entre los controladores de red en modo kernel y el sistema operativo en Windows Server y los sistemas operativos cliente. NDIS 6. x es compatible con los filtros ligeros, que es un modelo de controlador simplificado para controladores intermedios NDIS y controladores de minipuerto que proporcionan un mejor rendimiento.
 
-- **Interfaz del proveedor de red de QoS \(NPI @ no__t-2**. Interfaz para que los controladores de modo kernel interactúen con Pacer. sys.
+- **\)de interfaz de proveedor de red QoS \(NPI** . Interfaz para que los controladores de modo kernel interactúen con Pacer. sys.
 
-- **Pacer. sys**. Un controlador de filtro ligero NDIS 6. x que controla la programación de paquetes para QoS basada en directivas y para el tráfico de aplicaciones que usan las API Generic QoS \(GQoS @ no__t-1 y Traffic Control \(TC @ no__t-3. Pacer. sys ha reemplazado a Psched. sys en Windows Server 2003 y Windows XP. Pacer. sys se instala con el componente programador de paquetes QoS de las propiedades de una conexión de red o adaptador.
+- **Pacer. sys**. Un controlador de filtro ligero NDIS 6. x que controla la programación de paquetes para QoS basada en directivas y para el tráfico de aplicaciones que usan el QoS genérico \(GQoS\) y el control de tráfico \(las API de\) TC. Pacer. sys ha reemplazado a Psched. sys en Windows Server 2003 y Windows XP. Pacer. sys se instala con el componente programador de paquetes QoS de las propiedades de una conexión de red o adaptador.
 
 Para el siguiente tema de esta guía, vea [escenarios de directivas de QoS](qos-policy-scenarios.md).
 

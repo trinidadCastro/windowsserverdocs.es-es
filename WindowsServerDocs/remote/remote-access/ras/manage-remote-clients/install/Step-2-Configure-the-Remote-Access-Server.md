@@ -61,7 +61,7 @@ Debe instalar el rol de acceso remoto en un servidor de su organización que act
   
 8.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
   
-](../../../../media/Step-2-Configure-the-Remote-Access-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows powershell</em> de @no__t 0Windows PowerShell***  
+![](../../../../media/Step-2-Configure-the-Remote-Access-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -83,7 +83,7 @@ Hay tres opciones que puede usar para implementar el acceso remoto desde la cons
   
 #### <a name="to-configure-the-deployment-type"></a>Para configurar el tipo de implementación  
   
-1.  En el servidor de acceso remoto, abre la consola de administración de acceso remoto: En la pantalla **Inicio** , escriba, escriba **consola de administración de acceso remoto**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+1.  En el servidor de acceso remoto, abra la consola de administración de acceso remoto: en la pantalla **Inicio** , escriba, escriba **consola de administración de acceso remoto**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
   
 2.  En el panel central de la consola de administración de acceso remoto, haz clic en **Ejecutar el Asistente para la instalación de acceso remoto**.  
   
@@ -115,7 +115,7 @@ Para que un equipo cliente se aprovisione para el uso de DirectAccess, este debe
         > [!NOTE]  
         > Cuando se habilita la resolución local de nombres, los usuarios que ejecutan NCA pueden resolver nombres mediante el uso de servidores DNS que están configurados en el equipo cliente de DirectAccess.  
   
-6.  Haga clic en **Finalizar**.  
+6.  Haz clic en **Finalizar**.  
   
 ## <a name="BKMK_Server"></a>Configurar el servidor de acceso remoto  
 Para implementar el acceso remoto, debe configurar el servidor que actuará como el servidor de acceso remoto con lo siguiente:  
@@ -152,7 +152,7 @@ Para implementar el acceso remoto, debe configurar el servidor que actuará como
   
     -   Para permitir que los equipos cliente que ejecutan Windows 7 se conecten a través de DirectAccess, active la casilla **Habilitar equipos cliente de Windows 7 para que se conecten a través de DirectAccess** . Además, también es necesario usar la autenticación de certificados de equipo en este tipo de implementación.  
   
-7.  Haga clic en **Finalizar**.  
+7.  Haz clic en **Finalizar**.  
   
 ## <a name="BKMK_Infra"></a>Configurar los servidores de infraestructura  
 Para configurar los servidores de infraestructura en una implementación de acceso remoto, debe configurar lo siguiente:  
@@ -179,7 +179,7 @@ Para configurar los servidores de infraestructura en una implementación de acce
   
 5.  En la página **Administración** , agregue los servidores de administración que no se detecten automáticamente y, a continuación, haga clic en **siguiente**. Acceso remoto agrega automáticamente los controladores de dominio y los servidores de System Center Configuration Manager.  
   
-6.  Haga clic en **Finalizar**.  
+6.  Haz clic en **Finalizar**.  
   
 ## <a name="BKMK_App"></a>Configurar servidores de aplicaciones  
 En una implementación de acceso remoto completa, la configuración de los servidores de aplicaciones es una tarea opcional. En este escenario para la administración remota de clientes de DirectAccess, los servidores de aplicaciones no se usan y este paso está atenuado para indicar que no está activo. Haga clic en **Finalizar** para aplicar la configuración.  
@@ -205,7 +205,7 @@ Cuando completes la configuración de acceso remoto verás el cuadro de diálogo
   
 ## <a name="BKMK_Links"></a>Vea también  
   
--   [Paso 3: Comprobar la implementación](Step-3-Verify-the-Deployment_2.md)  
+-   [Paso 3: comprobar la implementación](Step-3-Verify-the-Deployment_2.md)  
   
   
 

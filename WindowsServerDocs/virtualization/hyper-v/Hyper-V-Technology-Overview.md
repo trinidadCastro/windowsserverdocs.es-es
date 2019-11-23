@@ -90,7 +90,7 @@ Hyper-V también tiene herramientas para la administración y la conectividad. P
 
 - Administrador de Hyper-V
 - [Módulo de Hyper-V para Windows PowerShell](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- [Conexión de máquina Virtual](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \(Sometimes llamada VMConnect @ no__t-2
+- [Conexión a máquina Virtual](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \(a veces denominada VMConnect\)
 - [Windows PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>Tecnologías relacionadas

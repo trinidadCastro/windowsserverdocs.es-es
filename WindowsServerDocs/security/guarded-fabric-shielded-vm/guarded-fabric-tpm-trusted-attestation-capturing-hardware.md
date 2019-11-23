@@ -19,7 +19,7 @@ ms.locfileid: "71403521"
 
 >Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
-El modo TPM usa un identificador de TPM (también denominado identificador de plataforma o clave de aprobación \[EKpub @ no__t-1) para empezar a determinar si un host determinado está autorizado como "protegido". Este modo de atestación utiliza medidas de arranque seguro y de integridad de código para garantizar que un host de Hyper-V determinado se encuentre en un estado correcto y ejecute solo código de confianza. Para que la atestación entienda qué es y no es correcto, debe capturar los siguientes artefactos:
+El modo TPM usa un identificador de TPM (también denominado identificador de plataforma o clave de aprobación \[EKpub\]) para empezar a determinar si un host determinado está autorizado como "protegido". Este modo de atestación utiliza medidas de arranque seguro y de integridad de código para garantizar que un host de Hyper-V determinado se encuentre en un estado correcto y ejecute solo código de confianza. Para que la atestación entienda qué es y no es correcto, debe capturar los siguientes artefactos:
 
 1.  Identificador de TPM (EKpub)
 
@@ -45,7 +45,7 @@ Un host solo puede atestiguar si todos los artefactos (EKPub + Directiva de lín
 
 1.  En el dominio del tejido, asegúrese de que el TPM de cada host está listo para su uso; es decir, el TPM se inicializa y se obtiene la propiedad. Puede comprobar el estado del TPM si abre la consola de administración de TPM (TPM. msc) o si ejecuta **Get-TPM** en una ventana de Windows PowerShell con privilegios elevados. Si el TPM no está en el estado **listo** , tendrá que inicializarlo y establecer su propiedad. Esto puede hacerse en la consola de administración de TPM o mediante la ejecución de **Initialize-TPM**.
 
-2.  En cada host protegido, ejecute el siguiente comando en una consola de Windows PowerShell con privilegios elevados para obtener su EKpub. En el caso de `<HostName>`, sustituya el nombre de host único por un elemento que sea adecuado para identificar este host: puede ser su nombre de host o el nombre usado por un servicio de inventario de tejido (si está disponible). Para mayor comodidad, asigne un nombre al archivo de salida con el nombre del host.
+2.  En cada host protegido, ejecute el siguiente comando en una consola de Windows PowerShell con privilegios elevados para obtener su EKpub. Por `<HostName>`, sustituya el nombre de host único por un elemento que sea adecuado para identificar este host: puede ser su nombre de host o el nombre usado por un servicio de inventario de tejido (si está disponible). Para mayor comodidad, asigne un nombre al archivo de salida con el nombre del host.
 
     ```powershell
     (Get-PlatformIdentifier -Name '<HostName>').InnerXml | Out-file <Path><HostName>.xml -Encoding UTF8
@@ -74,8 +74,8 @@ Cada host protegido debe tener una directiva de integridad de código aplicada p
 
 A partir de la versión 1709 de Windows Server, las directivas de integridad de código de ejemplo se incluyen con Windows en C:\Windows\schemas\CodeIntegrity\ExamplePolicies. Se recomiendan dos directivas para Windows Server:
 
-- **AllowMicrosoft**: Permite todos los archivos firmados por Microsoft. Esta Directiva se recomienda para las aplicaciones de servidor como SQL o Exchange, o si el servidor es supervisado por agentes publicados por Microsoft.
-- **DefaultWindows_Enforced**: Solo permite archivos distribuidos en Windows y no permite otras aplicaciones publicadas por Microsoft, como Office. Esta Directiva se recomienda para los servidores que ejecutan solo roles de servidor integrados y características como Hyper-V. 
+- **AllowMicrosoft**: permite todos los archivos firmados por Microsoft. Esta Directiva se recomienda para las aplicaciones de servidor como SQL o Exchange, o si el servidor es supervisado por agentes publicados por Microsoft.
+- **DefaultWindows_Enforced**: solo permite archivos distribuidos en Windows y no permite otras aplicaciones publicadas por Microsoft, como Office. Esta Directiva se recomienda para los servidores que ejecutan solo roles de servidor integrados y características como Hyper-V. 
 
 Se recomienda crear primero la Directiva de CI en modo auditoría (registro) para ver si falta algo y, a continuación, aplicar la Directiva para las cargas de trabajo de producción del host. 
 
@@ -128,11 +128,11 @@ Para obtener más información sobre los niveles de regla de directiva de CI dis
     >[!NOTE]
     >Tenga cuidado al aplicar directivas de CI a los hosts y al actualizar cualquier software en estos equipos. Cualquier controlador de modo kernel que no sea compatible con la Directiva de CI puede impedir que se inicie la máquina. 
 
-6.  Proporcione el archivo binario (en este ejemplo, HW1CodeIntegrity @ no__t-0enforced. p7b) al administrador de HGS.
+6.  Proporcione el archivo binario (en este ejemplo, HW1CodeIntegrity\_forzada. p7b) al administrador de HGS.
 
 7.  En el dominio HGS, copie la Directiva de integridad de código en un servidor HGS y ejecute el siguiente comando.
 
-    Para `<PolicyName>`, especifique un nombre para la Directiva de CI que describe el tipo de host al que se aplica. Un procedimiento recomendado consiste en asignarle un nombre después de la marca y el modelo de su equipo y cualquier configuración de software especial que se ejecute en él.<br>Para `<Path>`, especifique la ruta de acceso y el nombre de archivo de la Directiva de integridad de código.
+    Por `<PolicyName>`, especifique un nombre para la Directiva de CI que describa el tipo de host al que se aplica. Un procedimiento recomendado consiste en asignarle un nombre después de la marca y el modelo de su equipo y cualquier configuración de software especial que se ejecute en él.<br>En `<Path>`, especifique la ruta de acceso y el nombre de archivo de la Directiva de integridad de código.
 
     ```powershell
     Add-HgsAttestationCIPolicy -Path <Path> -Name '<PolicyName>'

@@ -17,21 +17,21 @@ ms.locfileid: "71355989"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>Contacto con el equipo de centros de datos y redes de nube
 
-> Se aplica a: Windows Server 2016
+> Se aplica a: Windows Server 2016
 
-Las soluciones de red **definidas por Software \(SDN @ no__t-2** y de red de **contenedor** las crea el equipo de redes de nube y el centro de trabajo. Use esta página para ponerse en contacto con el equipo: para formular preguntas, proporcionar comentarios, notificar errores o realizar solicitudes de características.
+Las soluciones de redes **definidas por Software \(de SDN\)** y de **red de contenedor** las crea el equipo de redes de nube y el centro de trabajo. Use esta página para ponerse en contacto con el equipo: para formular preguntas, proporcionar comentarios, notificar errores o realizar solicitudes de características.
 
 Hay muchas vías para ponerse en contacto con los equipos de Microsoft y, al mismo tiempo, hacemos nuestro mejor trabajo en el equipo de SDN para seguir todas las vías usadas por nuestra comunidad, aquí se muestra una lista de los foros que suelen ser los más activos. *Estos son recursos clave para nuestros usuarios y, como tal, son las vías en las que observamos lo más cercano.*
 
 ## <a name="twitterhttpstwittercommicrosoft_sdn"></a>[Twitter](https://twitter.com/Microsoft_SDN)
 
 Recientemente, iniciamos nuestra presencia en Twitter como [@Microsoft_SDN](https://twitter.com/Microsoft_SDN). No dude en usar nuestro identificador de Twitter para formular preguntas, proporcionar comentarios o realizar solicitudes de documentación o características.
-> Además de un lugar donde puede ponerse en contacto con preguntas, comentarios y solicitudes, considere la posibilidad de usar Twitter en el lugar de la "fuente" en todas las funciones de SDN y de las redes de contenedores de Windows: Twitter es el primer lugar en el que **publicaremos noticias**, anunciamos **nuevas las características** y apuntan a la comunidad a todos nuestros **blogs y recursos más recientes**.
+> Además de un lugar en el que pueda ponerse en contacto con preguntas, comentarios y solicitudes, considere la posibilidad de usar Twitter en el lugar de la "fuente" en todo el SDN y en las redes de contenedor de Windows relacionadas: Twitter es el primer lugar en el que **publicaremos noticias**, anunciaremos **nuevas características** y dirigiremos la comunidad a todos nuestros **blogs y recursos más recientes**.
 
 ## <a name="github-microsoftsdn-repohttpsgithubcommicrosoftsdnissues"></a>GitHub ([repositorio de Microsoft/Sdn](https://github.com/Microsoft/SDN/issues))
 Vaya [aquí](https://github.com/Microsoft/SDN/issues) para enviar problemas al equipo de Sdn a través de nuestro repositorio de github. Este es el mejor lugar para **obtener ayuda para solucionar problemas** o **notificar errores**.
 
-> GitHub es el mejor lugar para ponerse en contacto con nosotros sobre temas que implican más detalles que los tipos de cosas que puede ajustar fácilmente en un tweet. *Need ayuda con la implementación de SDN? ¿No está seguro de cómo nuestras características podrían adaptarse a las necesidades únicas de su organización? ¿Se está reteniendo un posible error?* Todos los buenos motivos para ponerse en contacto con nosotros mediante el envío de un problema de GitHub.
+> GitHub es el mejor lugar para ponerse en contacto con nosotros sobre temas que implican más detalles que los tipos de cosas que puede ajustar fácilmente en un tweet. *¿Necesita ayuda con la implementación de SDN? ¿No está seguro de cómo nuestras características podrían adaptarse a las necesidades únicas de su organización? ¿Se está reteniendo un posible error?* Todos los buenos motivos para ponerse en contacto con nosotros mediante el envío de un problema de GitHub.
 
 ## <a name="microsoft-docshttpsdocsmicrosoftcom"></a>[Microsoft Docs](https://docs.microsoft.com/)
 Nuestra [documentación sobre redes de contenedor](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking) se puede encontrar en [Microsoft docs (docs.Microsoft.com)](https://docs.microsoft.com/), que tiene **una funcionalidad de comentario integrada**. Para salir o responder a un Comentario en Microsoft Docs simplemente inicie sesión, desplácese hacia abajo hasta la parte inferior de la página de Microsoft Docs a la que desea hacer referencia y, a continuación, haga y envíe el comentario allí.

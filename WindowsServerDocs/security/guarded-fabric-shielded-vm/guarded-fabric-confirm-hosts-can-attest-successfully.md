@@ -31,7 +31,7 @@ Un administrador de tejido debe confirmar que los hosts de Hyper-V pueden ejecut
 
 3. Configure las direcciones URL de atestación y protección de claves del host:
 
-    - **A través de Windows PowerShell**: Puede configurar la protección de claves y las direcciones URL de atestación ejecutando el siguiente comando en una consola de Windows PowerShell con privilegios elevados. En &lt;FQDN @ no__t-1, use el nombre de dominio completo (FQDN) del clúster de HGS (por ejemplo, HGS. bastión. local) o pida al administrador de HGS que ejecute el cmdlet **Get-HgsServer** en el servidor de HGS para recuperar las direcciones URL.
+    - **A través de Windows PowerShell**: puede configurar la protección de claves y las direcciones URL de atestación ejecutando el siguiente comando en una consola de Windows PowerShell con privilegios elevados. Por &lt;FQDN&gt;, use el nombre de dominio completo (FQDN) del clúster de HGS (por ejemplo, HGS. bastión. local) o pida al administrador de HGS que ejecute el cmdlet **Get-HgsServer** en el servidor HGS para recuperar las direcciones URL.
 
         ```PowerShell
         Set-HgsClientConfiguration -AttestationServerUrl 'http://<FQDN>/Attestation' -KeyProtectionServerUrl 'http://<FQDN>/KeyProtection'
@@ -70,7 +70,7 @@ Un administrador de tejido debe confirmar que los hosts de Hyper-V pueden ejecut
 > [!div class="nextstepaction"]
 > [Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 - [Implementación del servicio de protección de host (HGS)](guarded-fabric-deploying-hgs-overview.md)
 - [Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)

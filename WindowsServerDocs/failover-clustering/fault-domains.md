@@ -17,7 +17,7 @@ ms.locfileid: "71361143"
 ---
 # <a name="fault-domain-awareness"></a>Reconocimiento de dominio de error
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019 y Windows Server 2016
 
 Los clústeres de conmutación por error permiten que varios servidores funcionen conjuntamente para proporcionar alta disponibilidad, o dicho de otro modo, para proporcionar tolerancia de errores de nodo. Pero las empresas de hoy día demandan una disponibilidad cada vez mayor de su infraestructura. Para lograr un tiempo de actividad similar a la nube, incluso en situaciones muy improbables como errores de chasis, interrupciones del bastidor o desastres naturales, deberá estar protegido. Este es el motivo por el que los clústeres de conmutación por error en Windows Server 2016 introdujeron también el chasis, el bastidor y la tolerancia a errores del sitio.
 
@@ -26,7 +26,7 @@ Los clústeres de conmutación por error permiten que varios servidores funcione
 Los dominios de error y la tolerancia a errores son conceptos relacionados. Un dominio de error es un conjunto de componentes de hardware que comparten un único punto de error. Para ser tolerante a errores en un nivel determinado, se necesitan varios dominios de error en ese nivel. Por ejemplo, para ser tolerante a errores en bastidor, los servidores y los datos deben distribuirse entre varios bastidores.
 
 Este breve vídeo presenta una introducción a los dominios de error en Windows Server 2016:  
-[@no__t: 1Click esta imagen para ver información general de los dominios de error en Windows Server 2016](media/Fault-Domains-in-Windows-Server-2016/Part-1-Fault-Domains-Overview.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-1-Overview)
+[![haga clic en esta imagen para ver información general de los dominios de error en Windows Server 2016](media/Fault-Domains-in-Windows-Server-2016/Part-1-Fault-Domains-Overview.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-1-Overview)
 
 ### <a name="fault-domain-awareness-in-windows-server-2019"></a>Reconocimiento de dominios de error en Windows Server 2019
 
@@ -72,7 +72,7 @@ Windows Server 2016 presenta los siguientes cmdlets para trabajar con dominios d
 * `Remove-ClusterFaultDomain`
 
 Este breve vídeo muestra el uso de estos cmdlets.
-[@no__t: 1Click esta imagen para ver un vídeo corto sobre el uso de los cmdlets de dominio de error de clúster](media/Fault-Domains-in-Windows-Server-2016/Part-2-Using-PowerShell.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-2-Using-PowerShell)
+[![haga clic en esta imagen para ver un vídeo corto sobre el uso de los cmdlets de dominio de error de clúster](media/Fault-Domains-in-Windows-Server-2016/Part-2-Using-PowerShell.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-2-Using-PowerShell)
 
 Use `Get-ClusterFaultDomain` para ver la topología de dominio de error actual. Esto mostrará todos los nodos del clúster, además de los chasis, bastidores o sitios que haya creado. Puede filtrarlos mediante parámetros como **-Type** o **-Name**, pero no son necesarios.
 
@@ -82,7 +82,7 @@ Get-ClusterFaultDomain -Type Rack
 Get-ClusterFaultDomain -Name "server01.contoso.com"
 ```
 
-Use `New-ClusterFaultDomain` para crear nuevos chasis, bastidores o sitios. Los parámetros `-Type` y `-Name` son obligatorios. Los valores posibles para `-Type` son `Chassis`, `Rack` y `Site`. El `-Name` puede ser cualquier cadena. (En el caso de los dominios de error de tipo `Node`, el nombre debe ser el nombre de nodo real, tal como se estableció automáticamente).
+Use `New-ClusterFaultDomain` para crear nuevos chasis, bastidores o sitios. Los parámetros `-Type` y `-Name` son obligatorios. Los valores posibles para `-Type` son `Chassis`, `Rack`y `Site`. El `-Name` puede ser cualquier cadena. (Para los dominios de error de tipo `Node`, el nombre debe ser el nombre de nodo real, tal como se estableció automáticamente).
 
 ```PowerShell
 New-ClusterFaultDomain -Type Chassis -Name "Chassis 007"
@@ -91,7 +91,7 @@ New-ClusterFaultDomain -Type Site -Name "Shanghai"
 ```
 
 > [!IMPORTANT]  
-> Windows Server no puede y no comprueba que los dominios de error que cree se correspondan con nada del mundo físico real. (Esto puede parecer obvio, pero es importante entenderlo). Si, en el mundo físico, los nodos están en un bastidor, la creación de dos `-Type Rack` dominios de error en el software no proporciona mágicamente la tolerancia a errores del bastidor. Son responsables de garantizar que la topología que se crea con estos cmdlets coincide con la disposición real del hardware.
+> Windows Server no puede y no comprueba que los dominios de error que cree se correspondan con nada del mundo físico real. (Esto puede parecer obvio, pero es importante entenderlo). Si, en el mundo físico, los nodos están todos en un bastidor, la creación de dos `-Type Rack` dominios de error en el software no proporciona la tolerancia a errores de bastidor. Son responsables de garantizar que la topología que se crea con estos cmdlets coincide con la disposición real del hardware.
 
 Use `Set-ClusterFaultDomain` para desplace un dominio de error a otro. Los términos "principal" y "secundario" se utilizan normalmente para describir esta relación de anidamiento. Los parámetros `-Name` y `-Parent` son obligatorios. En `-Name`, proporcione el nombre del dominio de error que se está moviendo; en `-Parent`, proporcione el nombre del destino. Para mover varios dominios de error a la vez, liste sus nombres.
 
@@ -105,7 +105,7 @@ Set-ClusterFaultDomain -Name "Rack A", "Rack B", "Rack C", "Rack D" -Parent "Sha
 
 Puede ver las relaciones de elementos primarios y secundarios en la salida de `Get-ClusterFaultDomain`, en las columnas `ParentName` y `ChildrenNames`.
 
-También puede usar `Set-ClusterFaultDomain` para modificar algunas otras propiedades de los dominios de error. Por ejemplo, puede proporcionar metadatos opcionales `-Location` o `-Description` para cualquier dominio de error. Si se proporciona, esta información se incluirá en las alertas de hardware procedentes del servicio de mantenimiento. También puede cambiar el nombre de los dominios de error mediante el parámetro `-NewName`. No cambie el nombre de los dominios de error de tipo `Node`.
+También puede usar `Set-ClusterFaultDomain` para modificar algunas otras propiedades de los dominios de error. Por ejemplo, puede proporcionar `-Location` o metadatos de `-Description` opcionales para cualquier dominio de error. Si se proporciona, esta información se incluirá en las alertas de hardware procedentes del servicio de mantenimiento. También puede cambiar el nombre de los dominios de error mediante el parámetro `-NewName`. No cambie el nombre de los dominios de error de tipo `Node`.
 
 ```PowerShell
 Set-ClusterFaultDomain -Name "Rack A" -Location "Building 34, Room 4010"
@@ -113,7 +113,7 @@ Set-ClusterFaultDomain -Type Node -Description "Contoso XYZ Server"
 Set-ClusterFaultDomain -Name "Shanghai" -NewName "China Region"
 ```
 
-Use `Remove-ClusterFaultDomain` para quitar el chasis, los bastidores o los sitios que ha creado. El parámetro `-Name` es obligatorio. No se puede quitar un dominio de error que contenga elementos secundarios: en primer lugar, quite los elementos secundarios o muévalos fuera de mediante `Set-ClusterFaultDomain`. Para desplace un dominio de error fuera de todos los demás dominios de error, establezca su `-Parent` en la cadena vacía (""). No se pueden quitar los dominios de error de tipo `Node`. Para quitar varios dominios de error a la vez, liste sus nombres.
+Use `Remove-ClusterFaultDomain` para quitar chasis, bastidores o sitios que haya creado. El parámetro `-Name` es obligatorio. No se puede quitar un dominio de error que contenga elementos secundarios: en primer lugar, quite los elementos secundarios o muévalos fuera de mediante `Set-ClusterFaultDomain`. Para desplace un dominio de error fuera de todos los demás dominios de error, establezca su `-Parent` en la cadena vacía (""). No se puede quitar `Node` tipos de dominios de error. Para quitar varios dominios de error a la vez, liste sus nombres.
 
 ```PowerShell
 Set-ClusterFaultDomain -Name "server01.contoso.com" -Parent ""
@@ -125,9 +125,9 @@ Los dominios de error se especifican mediante una sintaxis basada en XML. Se rec
 
 Este breve vídeo muestra el uso de marcado de XML para especificar los dominios de error.
 
-[@no__t: 1Click esta imagen para ver un vídeo corto sobre cómo usar XML para especificar los dominios de error](media/Fault-Domains-in-Windows-Server-2016/Part-3-Using-XML-Markup.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-3-Using-XML)
+[![haga clic en esta imagen para ver un vídeo corto sobre cómo usar XML para especificar los dominios de error](media/Fault-Domains-in-Windows-Server-2016/Part-3-Using-XML-Markup.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-3-Using-XML)
 
-En PowerShell, ejecute el siguiente cmdlet: `Get-ClusterFaultDomainXML`. Se devuelve la especificación del dominio de error actual para el clúster, como XML. Esto refleja todos los @no__t detectados, ajustados en etiquetas de apertura y cierre `<Topology>`.  
+En PowerShell, ejecute el siguiente cmdlet: `Get-ClusterFaultDomainXML`. Se devuelve la especificación del dominio de error actual para el clúster, como XML. Esto refleja todos los `<Node>`detectados, que se incluyen en etiquetas de apertura y cierre `<Topology>`.  
 
 Ejecute lo siguiente para guardar esta salida en un archivo.  
 
@@ -135,13 +135,13 @@ Ejecute lo siguiente para guardar esta salida en un archivo.
 Get-ClusterFaultDomainXML | Out-File <Path>  
 ```
 
-Abra el archivo y agregue las etiquetas `<Site>`, `<Rack>` y `<Chassis>` para especificar cómo se distribuyen estos nodos entre los sitios, los bastidores y el chasis. Cada etiqueta debe identificarse mediante un **nombre** único. Para los nodos, debe mantener el nombre del nodo tal como se muestra de forma predeterminada.  
+Abra el archivo y agregue `<Site>`, `<Rack>`y `<Chassis>` etiquetas para especificar cómo se distribuyen estos nodos entre los sitios, los bastidores y el chasis. Cada etiqueta debe identificarse mediante un **nombre** único. Para los nodos, debe mantener el nombre del nodo tal como se muestra de forma predeterminada.  
 
 > [!IMPORTANT]  
 > Mientras que todas las etiquetas adicionales son opcionales, deben adherirse a la jerarquía transitiva de Sitio &gt; Bastidor &gt; Chasis &gt; Nodo y debe cerrarse correctamente.  
-Además del nombre, los descriptores de forma libre `Location="..."` y `Description="..."` se pueden agregar a cualquier etiqueta.  
+Además del nombre, los descriptores de `Location="..."` y `Description="..."` de forma libre se pueden agregar a cualquier etiqueta.  
 
-#### <a name="example-two-sites-one-rack-each"></a>Ejemplo: Dos sitios, un bastidor cada uno  
+#### <a name="example-two-sites-one-rack-each"></a>Ejemplo: Dos sitios, una estantería cada uno  
 
 ```XML
 <Topology>  
@@ -185,15 +185,15 @@ $xml = Get-Content <Path> | Out-String
 Set-ClusterFaultDomainXML -XML $xml
 ```
 
-En esta guía se presentan solo dos ejemplos, pero las etiquetas `<Site>`, `<Rack>`, `<Chassis>` y `<Node>` se pueden mezclar y coincidir de muchas maneras adicionales para reflejar la topología física de la implementación, lo que pueda haber. Esperamos que estos ejemplos muestren la flexibilidad de estas etiquetas y el valor de descriptores de ubicación de forma libre para eliminar la ambigüedad entre ellos.  
+En esta guía se presentan solo dos ejemplos, pero las etiquetas `<Site>`, `<Rack>`, `<Chassis>`y `<Node>` se pueden combinar y comparar de muchas maneras adicionales para reflejar la topología física de la implementación, lo que sea posible. Esperamos que estos ejemplos muestren la flexibilidad de estas etiquetas y el valor de descriptores de ubicación de forma libre para eliminar la ambigüedad entre ellos.  
 
-### <a name="optional-location-and-description-metadata"></a>Opcional: Metadatos de ubicación y descripción
+### <a name="optional-location-and-description-metadata"></a>Opcional: metadatos de ubicación y descripción
 
 Puede proporcionar metadatos de **Ubicación** o **Descripción** opcionales para cualquier dominio de error. Si se proporciona, esta información se incluirá en las alertas de hardware procedentes del servicio de mantenimiento. En este breve vídeo se muestra el valor de agregar estos descriptores.
 
-[![Click para ver un vídeo corto en el que se muestra el valor de agregar descriptores de ubicación a dominios de error](media/Fault-Domains-in-Windows-Server-2016/part-4-location-description.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-4-Location-Description)
+[![haga clic para ver un vídeo corto en el que se muestra el valor de agregar descriptores de ubicación a dominios de error](media/Fault-Domains-in-Windows-Server-2016/part-4-location-description.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-4-Location-Description)
 
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 - [Introducción a Windows Server 2019](https://docs.microsoft.com/windows-server/get-started-19/get-started-19)  
 - [Introducción a Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/server-basics)  
 -   [Información general de Espacios de almacenamiento directo](../storage/storage-spaces/storage-spaces-direct-overview.md) 

@@ -69,19 +69,19 @@ Vamos a imaginar este escenario: tiene un tejido de Hyper-V existente, como Cont
 
 ![Tejido de Hyper-V existente](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-existing-hyper-v.png)
 
-## <a name="step-1-deploy-the-hyper-v-hosts-running-windows-server-2016"></a>Paso 1: Implementar los hosts de Hyper-V que ejecutan Windows Server 2016 
+## <a name="step-1-deploy-the-hyper-v-hosts-running-windows-server-2016"></a>Paso 1: implementar los hosts de Hyper-V que ejecutan Windows Server 2016 
 
 Los hosts de Hyper-V deben ejecutar Windows Server 2016 Datacenter Edition o posterior. Si está actualizando los hosts, puede [Actualizar](https://technet.microsoft.com/windowsserver/dn527667.aspx) de la edición Standard a la edición Datacenter.
 
 ![Actualizar hosts de Hyper-V](../../security/media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-one-upgrade-hyper-v.png)
 
-## <a name="step-2-deploy-the-host-guardian-service-hgs"></a>Paso 2: Implementación del servicio de protección de host (HGS)
+## <a name="step-2-deploy-the-host-guardian-service-hgs"></a>Paso 2: implementación del servicio de protección de host (HGS)
 
 A continuación, instale el rol de servidor HGS e impleméntelo como un clúster de tres nodos, como en el ejemplo relecloud.com de la siguiente imagen. Esto requiere tres cmdlets de PowerShell:
 
-- Para agregar el rol HGS, use`Install-WindowsFeature` 
-- Para instalar HGS, use`Install-HgsServer` 
-- Para inicializar el HGS con el modo de atestación elegido, use`Initialize-HgsServer` 
+- Para agregar el rol HGS, use `Install-WindowsFeature` 
+- Para instalar HGS, use `Install-HgsServer` 
+- Para inicializar el HGS con el modo de atestación elegido, use `Initialize-HgsServer` 
 
 Si los servidores de Hyper-V existentes no cumplen los requisitos previos para el modo TPM (por ejemplo, no tienen el TPM 2,0), puede inicializar HGS mediante la atestación basada en el administrador (modo AD), que requiere una confianza Active Directory con el dominio de tejido. 
 
@@ -89,7 +89,7 @@ En nuestro ejemplo, supongamos que contoso se implementa inicialmente en modo AD
 
 ![Instalar HGS](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-two-deploy-hgs.png)
 
-## <a name="step-3-extract-identities-hardware-baselines-and-code-integrity-policies"></a>Paso 3: Extraer identidades, líneas de base de hardware y directivas de integridad de código
+## <a name="step-3-extract-identities-hardware-baselines-and-code-integrity-policies"></a>Paso 3: extraer las identidades, las líneas de base de hardware y las directivas de integridad de código
 
 El proceso de extracción de identidades de hosts de Hyper-V depende del modo de atestación que se esté usando.
 
@@ -106,19 +106,19 @@ Como se indicó otra manera, los pasos de validación rigurosos que se usan para
 En el modo TPM, se necesitan tres cosas: 
 
 1.  Una _clave de aprobación pública_ (o _EKPUB_) del TPM 2,0 en cada uno de los hosts de Hyper-V. Para capturar EKpub, use `Get-PlatformIdentifier`. 
-2.  _Línea de base de hardware_. Si cada uno de los hosts de Hyper-V es idéntico, se necesita una sola línea de base. Si no es así, necesitará uno para cada clase de hardware. La línea de base está en forma de un archivo de registro de Trustworthy Computing Group o TCGlog. El TCGlog contiene todo lo que el host hizo, desde el firmware UEFI, hasta el kernel, hasta el punto en el que se arranca el host por completo. Para capturar la línea de base de hardware, instale el rol de Hyper-V y la característica de compatibilidad de Hyper `Get-HgsAttestationBaselinePolicy`-v de protección de host y use. 
-3.  Una _Directiva de integridad de código_. Si cada uno de los hosts de Hyper-V es idéntico, solo necesitará una directiva de CI. Si no es así, necesitará uno para cada clase de hardware. Tanto Windows Server 2016 como Windows 10 tienen una nueva forma de cumplimiento de directivas de CI, llamada _integridad de código forzada por hipervisor (HVCI)_ . HVCI proporciona un cumplimiento fuerte y garantiza que un host solo puede ejecutar archivos binarios que un administrador de confianza le permita ejecutar. Estas instrucciones se incluyen en una directiva de CI que se agrega a HGS. HGS mide la Directiva de CI de cada host antes de que se le permita ejecutar máquinas virtuales blindadas. Para capturar una directiva de CI, `New-CIPolicy`use. La Directiva se debe convertir a su formato binario mediante `ConvertFrom-CIPolicy`.
+2.  _Línea de base de hardware_. Si cada uno de los hosts de Hyper-V es idéntico, se necesita una sola línea de base. Si no es así, necesitará uno para cada clase de hardware. La línea de base está en forma de un archivo de registro de Trustworthy Computing Group o TCGlog. El TCGlog contiene todo lo que el host hizo, desde el firmware UEFI, hasta el kernel, hasta el punto en el que se arranca el host por completo. Para capturar la línea de base de hardware, instale el rol de Hyper-V y la característica de compatibilidad de Hyper-V de protección de host y use `Get-HgsAttestationBaselinePolicy`. 
+3.  Una _Directiva de integridad de código_. Si cada uno de los hosts de Hyper-V es idéntico, solo necesitará una directiva de CI. Si no es así, necesitará uno para cada clase de hardware. Tanto Windows Server 2016 como Windows 10 tienen una nueva forma de cumplimiento de directivas de CI, llamada _integridad de código forzada por hipervisor (HVCI)_ . HVCI proporciona un cumplimiento fuerte y garantiza que un host solo puede ejecutar archivos binarios que un administrador de confianza le permita ejecutar. Estas instrucciones se incluyen en una directiva de CI que se agrega a HGS. HGS mide la Directiva de CI de cada host antes de que se le permita ejecutar máquinas virtuales blindadas. Para capturar una directiva de CI, use `New-CIPolicy`. La Directiva se debe convertir a su formato binario mediante `ConvertFrom-CIPolicy`.
 
 ![Extraer identidades, línea base y Directiva de CI](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-three-extract-identity-baseline-ci-policy.png)
 
 Eso es todo: el tejido protegido se crea, en lo que se refiere a la infraestructura para ejecutarlo.  
 Ahora puede crear un disco de plantilla de máquina virtual blindada y un archivo de datos de blindaje para que las máquinas virtuales blindadas se puedan aprovisionar de forma sencilla y segura. 
 
-## <a name="step-4-create-a-template-for-shielded-vms"></a>Paso 4: Creación de una plantilla para máquinas virtuales blindadas
+## <a name="step-4-create-a-template-for-shielded-vms"></a>Paso 4: creación de una plantilla para máquinas virtuales blindadas
 
 Una plantilla de máquina virtual blindada protege los discos de plantilla mediante la creación de una firma del disco en un momento conocido de confianza. 
 Si el disco de plantilla está infectado más adelante por malware, su firma tendrá una plantilla original que será detectada por el proceso de aprovisionamiento de máquinas virtuales blindadas seguro. 
-Los discos de plantilla blindada se crean mediante la ejecución del **Asistente para creación de discos de plantilla blindada** o `Protect-TemplateDisk` en un disco de plantilla normal. 
+Los discos de plantilla blindada se crean mediante la ejecución del **Asistente para creación de discos de plantilla blindada** o la `Protect-TemplateDisk` en un disco de plantilla normal. 
 
 Cada una de ellas se incluye con la característica **herramientas de máquinas virtuales blindadas** en el [herramientas de administración remota del servidor para Windows 10](https://www.microsoft.com/download/details.aspx?id=45520).
 Después de descargar RSAT, ejecute este comando para instalar la característica **herramientas de máquinas virtuales blindadas** :
@@ -137,7 +137,7 @@ Esto permite a los usuarios identificar de forma segura los discos en los que co
 
 Revise los [requisitos del disco de plantilla](guarded-fabric-create-a-shielded-vm-template.md) antes de empezar. 
 
-## <a name="step-5-create-a-shielding-data-file"></a>Paso 5: Creación de un archivo de datos de blindaje 
+## <a name="step-5-create-a-shielding-data-file"></a>Paso 5: creación de un archivo de datos de blindaje 
 
 Un archivo de datos de blindaje, también conocido como archivo. PDK, captura información confidencial sobre la máquina virtual, como la contraseña de administrador. 
 
@@ -157,7 +157,7 @@ El archivo de datos de blindaje también incluye la configuración de la Directi
 
 Puede agregar piezas de administración opcionales como VMM o Windows Azure Pack. Si desea crear una máquina virtual sin instalar esas piezas, consulte [paso a paso: creación de máquinas virtuales blindadas sin VMM](https://blogs.technet.microsoft.com/datacentersecurity/2016/06/06/step-by-step-creating-shielded-vms-without-vmm/).
 
-## <a name="step-6-create-a-shielded-vm"></a>Paso 6: Creación de una máquina virtual blindada
+## <a name="step-6-create-a-shielded-vm"></a>Paso 6: creación de una máquina virtual blindada
 
 La creación de máquinas virtuales blindadas difiere muy poco de las máquinas virtuales normales. En Windows Azure Pack, la experiencia es incluso más fácil que la creación de una máquina virtual normal porque solo es necesario proporcionar un nombre, un archivo de datos de blindaje (que contiene el resto de la información de especialización) y la red de VM. 
 

@@ -19,16 +19,16 @@ ms.locfileid: "71356046"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este tema para obtener información acerca de la Directiva de DNS, que es nueva en Windows Server 2016. Puede usar la Directiva DNS para la administración del tráfico basada en la ubicación geográfica, las respuestas de DNS inteligentes basadas en la hora del día, para administrar un solo servidor DNS configurado para la implementación de Split @ no__t-0brain, aplicar filtros en consultas DNS, etc. Los elementos siguientes proporcionan más detalles acerca de estas capacidades.
+Puede usar este tema para obtener información acerca de la Directiva de DNS, que es nueva en Windows Server 2016. Puede usar la Directiva DNS para la administración del tráfico basada en la ubicación geográfica, las respuestas de DNS inteligentes basadas en la hora del día, para administrar un solo servidor DNS configurado para la división de\-de cerebro, aplicar filtros en consultas DNS y mucho más. Los elementos siguientes proporcionan más detalles acerca de estas capacidades.
 
 -   **Equilibrio de carga de la aplicación.** Cuando haya implementado varias instancias de una aplicación en diferentes ubicaciones, puede usar la Directiva de DNS para equilibrar la carga de tráfico entre las distintas instancias de aplicación, asignando dinámicamente la carga de tráfico para la aplicación.
 
--   **Administración del tráfico basado en Geo @ no__t-1Location.** Puede usar la Directiva de DNS para permitir que los servidores DNS principal y secundario respondan a las consultas de cliente DNS en función de la ubicación geográfica del cliente y el recurso al que el cliente intenta conectarse, proporcionando al cliente la dirección IP del recurso. 
+-   **Administración de tráfico basada en la ubicación geográfica\-.** Puede usar la Directiva de DNS para permitir que los servidores DNS principal y secundario respondan a las consultas de cliente DNS en función de la ubicación geográfica del cliente y el recurso al que el cliente intenta conectarse, proporcionando al cliente la dirección IP del recurso. 
 
--   **Divida DNS de cerebro.** Con el DNS dividido @ no__t-0brain, los registros DNS se dividen en diferentes ámbitos de zona en el mismo servidor DNS y los clientes DNS reciben una respuesta en función de si los clientes son internos o externos. Puede configurar el DNS dividido @ no__t-0brain para las zonas integradas Active Directory o para las zonas de los servidores DNS independientes.
+-   **Divida DNS de cerebro.** Con el DNS de división\-cerebro, los registros DNS se dividen en diferentes ámbitos de zona en el mismo servidor DNS y los clientes DNS reciben una respuesta basada en si los clientes son internos o externos. Puede configurar el DNS de división\-cerebro para Active Directory zonas integradas o para zonas en servidores DNS independientes.
 
 -   **Filtra.** Puede configurar la Directiva de DNS para crear filtros de consulta basados en los criterios que proporcione. Los filtros de consulta de la Directiva de DNS permiten configurar el servidor DNS para responder de forma personalizada en función de la consulta DNS y el cliente DNS que envía la consulta DNS. 
--   **Análisis forense.** Puede usar la Directiva de DNS para redirigir a los clientes DNS malintencionados a una dirección IP que no sea de no__t-0existent en lugar de dirigirlos al equipo al que intentan acceder.
+-   **Análisis forense.** Puede usar la Directiva de DNS para redirigir a los clientes DNS malintencionados a una dirección IP que no sea\-existente, en lugar de dirigirlos al equipo al que intentan acceder.
 
 -   **Hora del redireccionamiento basado en el día.** Puede usar la Directiva de DNS para distribuir el tráfico de aplicaciones entre diferentes instancias distribuidas geográficamente de una aplicación mediante el uso de directivas DNS basadas en la hora del día.
 
@@ -49,9 +49,9 @@ Las directivas de DNS se dividen por nivel y tipo. Puede usar las directivas de 
 
 Puede usar las directivas de resolución de consultas DNS para especificar cómo se administran las consultas de resolución de entrada por un servidor DNS. Cada directiva de resolución de consultas DNS contiene los siguientes elementos:  
 
-|Campo|Descripción|Posibles valores|  
+|Campo|Descripción|Valores posibles|  
 |---------|---------------|-------------------|  
-|**Name**|Nombre de directiva|-Hasta 256 caracteres<br />-Puede contener cualquier carácter válido para un nombre de archivo|  
+|**Nombre**|Nombre de directiva|-Hasta 256 caracteres<br />-Puede contener cualquier carácter válido para un nombre de archivo|  
 |**Estado**|Estado de la Directiva|-Enable (valor predeterminado)<br />-Deshabilitado|  
 |**Dosis**|Nivel de Directiva|-Servidor<br />-Zona|  
 |**Orden de procesamiento**|Una vez que una consulta se clasifica por nivel y se aplica en, el servidor encuentra la primera Directiva para la que la consulta coincide con los criterios y la aplica a la consulta.|-Valor numérico<br />-Valor único por directiva que contiene el mismo nivel y se aplica al valor|  
@@ -71,11 +71,11 @@ El campo criterios de la Directiva de DNS se compone de dos elementos:
 |     **Protocolo de transporte**      |        Protocolo de transporte utilizado en la consulta. Las entradas posibles son **UDP** y **TCP**        |                                                                                                                    -   **EQ, TCP**<br />-   **EQ, UDP**                                                                                                                     |
 |      **Protocolo de Internet**      |        Protocolo de red utilizado en la consulta. Las entradas posibles son **IPv4** e **IPv6**        |                                                                                                                   -   **EQ, IPv4**<br />-   **EQ, IPv6**                                                                                                                    |
 | **Dirección IP de la interfaz de servidor** |                   Dirección IP de la interfaz de red del servidor DNS entrante                   |                                                                                                              -   **EQ, 10.0.0.1**<br />-   **EQ, 192.168.1.1**                                                                                                              |
-|            **SEAN**             |            FQDN del registro en la consulta, con la posibilidad de usar un carácter comodín            | -   **EQ, www. contoso. com** : se resuelve como true solo si la consulta está intentando resolver el FQDN <em>www.contoso.com</em><br />-   **EQ, \*.contoso.com, \*.Woodgrove.com** -se resuelve como true si la consulta es para cualquier registro que termine en *contoso.com***o***Woodgrove.com* |
+|            **SEAN**             |            FQDN del registro en la consulta, con la posibilidad de usar un carácter comodín            | -   **EQ, www. contoso. com** : se resuelve como true solo si la consulta está intentando resolver el FQDN de <em>www.contoso.com</em><br />-   **EQ,\*. contoso.com,\*. Woodgrove.com** : se resuelve como true si la consulta es para cualquier registro que termine en *contoso.com***o***Woodgrove.com* |
 |         **Tipo de consulta**          |                          Tipo de registro que se consulta (A, SRV, TXT)                          |                                                  -   **EQ, txt, SRV** -se resuelve como true si la consulta solicita un registro TXT **o** SRV<br />-   **EQ, mx** -se resuelve como true si la consulta solicita un registro MX                                                   |
-|         **Hora del día**         |                              Hora del día en que se recibe la consulta                               |                                                                    -   **EQ, 10:00-12:00, 22:00-23:00** -se resuelve como true si la consulta se recibe entre 10 a.m. y mediodía, **o** entre 10PM y 11 p.m.                                                                    |
+|         **Hora del día**         |                              Hora del día en que se recibe la consulta                               |                                                                    -   **EQ, 10:00-12:00, 22:00-23:00** -se resuelve como true si la consulta se recibe entre 10 AM y mediodía, **o** entre 10PM y 11 p.m.                                                                    |
 
-Con la tabla anterior como punto de partida, la tabla siguiente podría usarse para definir un criterio que se usa para hacer coincidir las consultas para cualquier tipo de registro, pero los registros SRV del dominio contoso.com proceden de un cliente en la subred 10.0.0.0/24 a través de TCP entre 8 y 10 PM a través de i Interfa 10.0.0.3:  
+Con la tabla anterior como punto de partida, la tabla siguiente podría usarse para definir un criterio que se usa para hacer coincidir las consultas para cualquier tipo de registro, pero los registros SRV del dominio contoso.com proceden de un cliente en la subred 10.0.0.0/24 a través de TCP entre 8 y 10 PM a través de la interfaz 10.0.0.3:  
 
 |Nombre|Valor|  
 |--------|---------|  

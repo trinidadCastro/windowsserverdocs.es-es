@@ -17,7 +17,7 @@ ms.locfileid: "71407857"
 ---
 #  <a name="single-log-out-for-openid-connect-with-ad-fs"></a>Cierre de sesión único de OpenID Connect con AD FS
 
-## <a name="overview"></a>Información general
+## <a name="overview"></a>Introducción
 Basándose en la compatibilidad inicial de OAuth en AD FS en Windows Server 2012 R2, AD FS 2016 presentó la compatibilidad con el inicio de sesión de OpenId Connect. Con [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801), AD FS 2016 ahora admite el cierre de sesión único para escenarios de OpenID Connect. En este artículo se proporciona información general sobre el cierre de sesión único para el escenario de OpenId Connect y se proporcionan instrucciones sobre cómo usarlo para las aplicaciones de OpenId Connect en AD FS.
 
 
@@ -72,7 +72,7 @@ Set-ADFSProperties -EnableOAuthLogout $true
 ```
 
 >[!NOTE]
-> el parámetro `EnableOAuthLogout` se marcará como obsoleto después de instalar [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801). `EnableOAUthLogout` siempre será true y no afectará a la funcionalidad de cierre de sesión.
+> `EnableOAuthLogout` parámetro se marcará como obsoleto después de instalar [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801). `EnableOAUthLogout` siempre será true y no afectará a la funcionalidad de cierre de sesión.
 
 >[!NOTE]
 >frontchannel_logout **solo** se admite después de instalación de [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)
@@ -94,20 +94,20 @@ El `LogoutUri` es la dirección URL que usa AF FS para "cerrar la sesión" del u
 ![](media/ad-fs-logout-openid-connect/adfs_single_logout2.png)
 
 
-1.  **Token de OAuth con ID. de sesión**: AD FS incluye el identificador de sesión en el token de OAuth en el momento de la emisión del token de ID_token. Lo usará más adelante AD FS para identificar las cookies de SSO pertinentes que se limpiarán para el usuario.
-2.  El **usuario inicia el cierre de sesión en app1**: El usuario puede iniciar un cierre de sesión de cualquiera de las aplicaciones que han iniciado sesión. En este escenario de ejemplo, un usuario inicia un cierre de sesión de app1.
-3.  La **aplicación envía una solicitud de cierre de sesión a AD FS**: Una vez que el usuario inicia el cierre de sesión, la aplicación envía una solicitud GET a end_session_endpoint de AD FS. Opcionalmente, la aplicación puede incluir id_token_hint como parámetro para esta solicitud. Si id_token_hint está presente, AD FS lo usará junto con el identificador de sesión para averiguar a qué URI debe redirigirse el cliente después del cierre de sesión (post_logout_redirect_uri).  Post_logout_redirect_uri debe ser un URI válido registrado con AD FS mediante el parámetro RedirectUris.
-4.  **AD FS envía el cierre de sesión a los clientes que han iniciado sesión**: AD FS usa el valor de identificador de sesión para encontrar los clientes relevantes en los que el usuario ha iniciado sesión. Los clientes identificados envían la solicitud en el LogoutUri registrado con AD FS para iniciar un cierre de sesión en el lado cliente.
+1.  **Token de OAuth con ID. de sesión**: AD FS incluye el identificador de sesión en el token de OAuth en el momento de la emisión de tokens de ID_token. Lo usará más adelante AD FS para identificar las cookies de SSO pertinentes que se limpiarán para el usuario.
+2.  El **usuario inicia el cierre de sesión en app1**: el usuario puede iniciar un cierre de sesión de cualquiera de las aplicaciones conectadas. En este escenario de ejemplo, un usuario inicia un cierre de sesión de app1.
+3.  La **aplicación envía una solicitud de cierre de sesión a AD FS**: una vez que el usuario inicia el cierre de sesión, la aplicación envía una solicitud GET a end_session_endpoint de AD FS. Opcionalmente, la aplicación puede incluir id_token_hint como un parámetro para esta solicitud. Si id_token_hint está presente, AD FS lo utilizará junto con el identificador de sesión para averiguar a qué URI debe redirigirse el cliente después del cierre de sesión (post_logout_redirect_uri).  El post_logout_redirect_uri debe ser un URI válido registrado con AD FS mediante el parámetro RedirectUris.
+4.  **AD FS envía el cierre de sesión a los clientes que han iniciado**sesión: AD FS usa el valor de identificador de sesión para encontrar los clientes relevantes en los que el usuario ha iniciado sesión. Los clientes identificados envían la solicitud en el LogoutUri registrado con AD FS para iniciar un cierre de sesión en el lado cliente.
 
 ## <a name="faqs"></a>P+F
-**RESPUESTAS** No veo los parámetros frontchannel_logout_supported y frontchannel_logout_session_supported en el documento de detección.</br>
+**P:** No veo los parámetros frontchannel_logout_supported y frontchannel_logout_session_supported en el documento de detección.</br>
 **R:** Asegúrese de que ha instalado [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801) en todos los servidores AD FS. Consulte el cierre de sesión único en el servidor 2016 con [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801).
 
-**RESPUESTAS** He configurado el cierre de sesión único como se indicó, pero el usuario permanece registrado en otros clientes.</br>
-**R:** Asegúrese de que se establece `LogoutUri` para todos los clientes en los que el usuario ha iniciado sesión. Además, AD FS realiza el mejor intento de enviar la solicitud de cierre de sesión en el @no__t registrado-0. El cliente debe implementar la lógica para controlar la solicitud y tomar medidas para cerrar la sesión del usuario de la aplicación.</br>
+**P:** He configurado el cierre de sesión único como se indicó, pero el usuario permanece registrado en otros clientes.</br>
+**R:** Asegúrese de que `LogoutUri` se establece para todos los clientes en los que el usuario ha iniciado sesión. Además, AD FS realiza el mejor intento de enviar la solicitud de cierre de sesión en el `LogoutUri`registrado. El cliente debe implementar la lógica para controlar la solicitud y tomar medidas para cerrar la sesión del usuario de la aplicación.</br>
 
-**RESPUESTAS** Si después del cierre de sesión, uno de los clientes vuelve a AD FS con un token de actualización válido, ¿AD FS emitir un token de acceso?</br>
-**R:** Sí. Es responsabilidad de la aplicación cliente quitar todos los artefactos autenticados después de que se haya recibido una solicitud de cierre de sesión en el @no__t registrado-0.
+**P:** Si después del cierre de sesión, uno de los clientes vuelve a AD FS con un token de actualización válido, ¿AD FS emitir un token de acceso?</br>
+**R:** Sí. Es responsabilidad de la aplicación cliente quitar todos los artefactos autenticados después de que se haya recibido una solicitud de cierre de sesión en el `LogoutUri`registrado.
 
 
 ## <a name="next-steps"></a>Pasos siguientes

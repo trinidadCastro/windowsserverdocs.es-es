@@ -33,7 +33,7 @@ wdsutil [Options] /Get-Server [/Server:<Server name>] /Show:{Config | Images | A
 |Parámetro|Descripción|
 |-------|--------|
 |[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utiliza el servidor local.|
-|/Show: {config &#124; images &#124; All}|Especifica el tipo de información que se va a devolver.<br /><br />la**configuración de -    devuelve** información de configuración.<br />-   **imágenes** devuelve información acerca de los grupos de imágenes, las imágenes de arranque y las imágenes de instalación.<br />@no__t **-0 devuelve** la información de configuración y la información de la imagen.|
+|/Show: {config &#124; images &#124; All}|Especifica el tipo de información que se va a devolver.<br /><br />-   **configuración** devuelve información de configuración.<br />-   **imágenes** devuelve información acerca de los grupos de imágenes, las imágenes de arranque y las imágenes de instalación.<br />-   **All** devuelve información de configuración e información de la imagen.|
 |[/detailed]|Puede usar esta opción con **/Show: images** o **/Show: ALL** para indicar que se deben devolver todos los metadatos de imagen de cada imagen. Si no se usa la opción **/Detailed** , el comportamiento predeterminado es devolver el nombre de la imagen, la descripción y el nombre de archivo.|
 ## <a name="BKMK_examples"></a>Example
 Para ver información sobre el servidor, escriba:
@@ -44,10 +44,12 @@ Para ver información detallada acerca del servidor, escriba:
 ```
 wdsutil /verbose /Get-Server /Server:MyWDSServer /Show:All /detailed
 ```
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[con el comando DISABLE-Server](using-the-disable-server-command.md)
+#### <a name="additional-references"></a>referencias adicionales
+La [clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+[usar el comando DISABLE-Server](using-the-disable-server-command.md)
 [mediante el comando Enable-Server](using-the-enable-server-command.md)
 [mediante el comando Initialize-Server](using-the-initialize-server-command.md)
 [Subcommand: set-Server](subcommand-set-server.md)
-[ Subcomando: Start-Server](subcommand-start-server.md)1[subcomando: Stop-Server](subcommand-stop-server.md)3[The UnInitialize-Server Option](the-uninitialize-server-option.md)
+[Subcommand: Start-Server](subcommand-start-server.md)
+[Subcommand: Stop-Server](subcommand-stop-server.md)
+[la opción UnInitialize-](the-uninitialize-server-option.md) Server

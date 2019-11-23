@@ -18,9 +18,9 @@ ms.locfileid: "71408371"
 ---
 # <a name="implementing-your-ad-fs-design-plan"></a>Implementación del plan de diseño de AD FS
 
-Las siguientes condiciones y requisitos del entorno son factores importantes en la implementación de su plan de diseño Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1:  
+Las siguientes condiciones y requisitos ambientales son factores importantes en la implementación de la Servicios de federación de Active Directory (AD FS) \(AD FS\) plan de diseño:  
   
--   **Asociados admitidos:** Normalmente, se usa AD FS para trabajar con organizaciones asociadas. Para establecer la Federación de identidades, determine las organizaciones con las que desea formar una asociación. Una vez que se implementa una base de referencia AD FS, el funcionamiento de los asociados implica agregar asociados, eliminar asociados y actualizar la información de los asociados. Pueden producirse cambios en las asociaciones por diversos motivos. Por ejemplo, la implementación de AD FS podría requerir actualizaciones de la asociación si el socio cambia su negocio de manera significativa, la organización se convierte en parte de una organización mayor o en una Federación de organizaciones, o bien si la organización se adquiere por otro recíproca. En cualquier escenario en el que se federan identidades de varios dominios, deberá conocer los dominios \(partners @ no__t-1 que actualmente admite y todos los dominios adicionales que representan posibles asociados.  
+-   **Asociados admitidos:** Normalmente, se usa AD FS para trabajar con organizaciones asociadas. Para establecer la Federación de identidades, determine las organizaciones con las que desea formar una asociación. Una vez que se implementa una base de referencia AD FS, el funcionamiento de los asociados implica agregar asociados, eliminar asociados y actualizar la información de los asociados. Pueden producirse cambios en las asociaciones por diversos motivos. Por ejemplo, la implementación de AD FS podría requerir actualizaciones de la asociación si el socio cambia su negocio de manera significativa, la organización se convierte en parte de una organización mayor o en una Federación de organizaciones, o bien si la organización se adquiere por otro recíproca. En cualquier escenario en el que se federan identidades de varios dominios, deberá conocer los dominios \(asociados\) que actualmente se admiten y todos los dominios adicionales que representan posibles asociados.  
   
 -   **Tipos de aplicación y servicio admitidos:** Algunas aplicaciones y servicios requieren acceso a los recursos del sistema operativo, mientras que otros son "compatibles con notificaciones". Es importante comprender los tipos de aplicaciones y servicios que AD FS admite para que pueda formular los requisitos de administración.  
   
@@ -37,6 +37,6 @@ El paso siguiente para implementar el diseño consiste en determinar en qué ord
   
 Use las siguientes listas de comprobación principales en esta sección de la guía para familiarizarse con las tareas de implementación para implementar el diseño de AD FS preferido de su organización:  
   
--   [Lista de comprobación: Implementar un diseño de SSO web](Checklist--Implementing-a-Web-SSO-Design.md)  
+-   [Lista de comprobación: implementar un diseño de SSO Web](Checklist--Implementing-a-Web-SSO-Design.md)  
   
--   [Lista de comprobación: Implementar un diseño de SSO web federado](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  
+-   [Lista de comprobación: implementar un diseño de SSO Web federado](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  

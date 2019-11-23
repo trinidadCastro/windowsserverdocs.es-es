@@ -18,7 +18,7 @@ ms.locfileid: "71407595"
 ---
 # <a name="create-a-rule-to-send-an-ad-fs-1x-compatible-claim"></a>Creación de una regla para enviar una afirmación compatible con AD FS 1. x
 
-En situaciones en las que se usa Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1 para emitir notificaciones que recibirán los servidores de Federación que ejecutan AD FS 1,0 \(Windows Server 2003 R2 @ no__t-3 o AD FS 1,1 \(Windows Server 2008 o Windows Server 2008 R2 @ no__t-5, debe hacer lo siguiente:  
+En situaciones en las que usa Servicios de federación de Active Directory (AD FS) \(AD FS\) para emitir notificaciones que recibirán los servidores de Federación que ejecutan AD FS 1,0 \(Windows Server 2003 R2\) o AD FS 1,1 \(Windows Server 2008 o Windows Server 2008 R2\), debe hacer lo siguiente:  
   
 -   Cree una regla que enviará un tipo de notificaciones de identificador de nombre con un formato de UPN, correo electrónico o nombre común.  
   
@@ -30,7 +30,7 @@ En situaciones en las que se usa Servicios de federación de Active Directory (A
   
     -   Nombre común  
   
-    -   Agrupar  
+    -   Grupo  
   
     -   Cualquier otro tipo de notificaciones que comience por https://schemas.xmlsoap.org/claims/, como https://schemas.xmlsoap.org/claims/EmployeeID  
   
@@ -50,7 +50,7 @@ En función de las necesidades de su organización, use uno de los procedimiento
 2.  En el árbol de consola, en **AD FS**, haga clic en relaciones de confianza para usuario **autenticado**. 
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
-3.  Haga\-clic con el botón derecho en la confianza seleccionada y luego haga clic en **Editar Directiva de emisión de notificaciones**.
+3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **Editar Directiva de emisión de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
   
 4.  En el cuadro de diálogo **Editar Directiva de emisión de notificaciones** , en **reglas de transformación de emisión** , haga clic en **Agregar regla** para iniciar el Asistente para reglas. 
@@ -63,11 +63,11 @@ En función de las necesidades de su organización, use uno de los procedimiento
   
 7.  En **tipo de notificaciones entrantes**, seleccione ID. de **nombre** en la lista.  
   
-8.  En **formato de ID. de nombre entrante**, seleccione una de las siguientes AD FS 1. *x*\-Compatible formatos de notificaciones de la lista:  
+8.  En **formato de ID. de nombre entrante**, seleccione una de las siguientes AD FS 1. *x*\-formatos de notificaciones compatibles de la lista:  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **Correo electrónico\-**  
   
     -   **Nombre común**  
   
@@ -92,7 +92,7 @@ En función de las necesidades de su organización, use uno de los procedimiento
 2.  En el árbol de consola, en **AD FS**, haga clic en **confianzas de proveedor de notificaciones**. 
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
   
-3.  Haga\-clic con el botón secundario en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
+3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
   
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , en **reglas de transformación de aceptación** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
@@ -105,11 +105,11 @@ En función de las necesidades de su organización, use uno de los procedimiento
   
 7.  En **tipo de notificaciones entrantes**, seleccione ID. de **nombre** en la lista.  
   
-8.  En **formato de ID. de nombre entrante**, seleccione una de las siguientes AD FS 1. *x*\-Compatible formatos de notificaciones de la lista:  
+8.  En **formato de ID. de nombre entrante**, seleccione una de las siguientes AD FS 1. *x*\-formatos de notificaciones compatibles de la lista:  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **Correo electrónico\-**  
   
     -   **Nombre común**  
   
@@ -134,7 +134,7 @@ En función de las necesidades de su organización, use uno de los procedimiento
 2.  En el árbol de consola, en **AD FS**, haga clic en relaciones de confianza para usuario **autenticado**. 
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
-3.  Haga\-clic con el botón derecho en la confianza seleccionada y luego haga clic en **Editar Directiva de emisión de notificaciones**.
+3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **Editar Directiva de emisión de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
   
 4.  En el cuadro de diálogo **Editar Directiva de emisión de notificaciones** , en **reglas de transformación de emisión** , haga clic en **Agregar regla** para iniciar el Asistente para reglas. 
@@ -149,11 +149,11 @@ En función de las necesidades de su organización, use uno de los procedimiento
   
 8.  En **tipo de notificaciones salientes**, seleccione ID. de **nombre** en la lista.  
   
-9. En **formato de ID. de nombre de salida**, seleccione una de las siguientes AD FS 1. *x*\-Compatible formatos de notificaciones de la lista:  
+9. En **formato de ID. de nombre de salida**, seleccione una de las siguientes AD FS 1. *x*\-formatos de notificaciones compatibles de la lista:  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **Correo electrónico\-**  
   
     -   **Nombre común**  
   
@@ -163,7 +163,7 @@ En función de las necesidades de su organización, use uno de los procedimiento
   
     -   **Reemplazar un valor de notificaciones entrantes por otro valor de notificaciones salientes**  
   
-    -   **Reemplace las notificaciones entrantes e @ no__t-1mail por un nuevo sufijo e @ no__t-2mail**  
+    -   **Reemplazar las notificaciones entrantes de sufijos de correo e\-por un nuevo sufijo e\-correo electrónico**  
 ![crear regla](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)
 
 11. Haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.  
@@ -178,7 +178,7 @@ En función de las necesidades de su organización, use uno de los procedimiento
 2.  En el árbol de consola, en **AD FS**, haga clic en **confianzas de proveedor de notificaciones**. 
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
   
-3.  Haga\-clic con el botón secundario en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
+3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
   
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , en **reglas de transformación de aceptación** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
@@ -193,11 +193,11 @@ En función de las necesidades de su organización, use uno de los procedimiento
   
 8.  En **tipo de notificaciones salientes**, seleccione ID. de **nombre** en la lista.  
   
-9. En **formato de ID. de nombre de salida**, seleccione una de las siguientes AD FS 1. *x*\-Compatible formatos de notificaciones de la lista:  
+9. En **formato de ID. de nombre de salida**, seleccione una de las siguientes AD FS 1. *x*\-formatos de notificaciones compatibles de la lista:  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **Correo electrónico\-**  
   
     -   **Nombre común**  
   
@@ -207,7 +207,7 @@ En función de las necesidades de su organización, use uno de los procedimiento
   
     -   **Reemplazar un valor de notificaciones entrantes por otro valor de notificaciones salientes**  
   
-    -   **Reemplace las notificaciones entrantes e @ no__t-1mail por un nuevo sufijo e @ no__t-2mail**  
+    -   **Reemplazar las notificaciones entrantes de sufijos de correo e\-por un nuevo sufijo e\-correo electrónico**  
 ![crear regla](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)    
 
 11. Haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.  
@@ -229,12 +229,12 @@ En función de las necesidades de su organización, use uno de los procedimiento
   
 1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **Administración de AD FS**.  
   
-2.  En el árbol de consola, **en\\AD FS relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas**de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.  
+2.  En el árbol de consola, en **AD FS\\relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas para usuario autenticado**y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.  
   
-3.  Haga\-clic con el botón secundario en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.  
+3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.  
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) 
   
-4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, en función de la confianza que esté editando y el conjunto de reglas en el que desee crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas. :  
+4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, en función de la confianza que esté editando y el conjunto de reglas en el que desee crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas:  
   
     -   **Reglas de transformación de aceptación**  
   
@@ -252,11 +252,11 @@ En función de las necesidades de su organización, use uno de los procedimiento
   
 7.  En **tipo de notificaciones entrantes**, seleccione ID. de **nombre** en la lista.  
   
-8.  En **formato de ID. de nombre entrante**, seleccione una de las siguientes AD FS 1. *x*\-Compatible formatos de notificaciones de la lista:  
+8.  En **formato de ID. de nombre entrante**, seleccione una de las siguientes AD FS 1. *x*\-formatos de notificaciones compatibles de la lista:  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **Correo electrónico\-**  
   
     -   **Nombre común**  
   
@@ -278,12 +278,12 @@ En función de las necesidades de su organización, use uno de los procedimiento
   
 1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **Administración de AD FS**.  
   
-2.  En el árbol de consola, **en\\AD FS relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas**de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.  
+2.  En el árbol de consola, en **AD FS\\relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas para usuario autenticado**y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.  
   
-3.  Haga\-clic con el botón secundario en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.  
+3.  \-haga clic en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.  
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) 
   
-4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, que depende de la confianza que está editando y en qué conjunto de reglas desea crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas. :  
+4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, que depende de la confianza que está editando y en qué conjunto de reglas desea crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas:  
   
     -   **Reglas de transformación de aceptación**  
   
@@ -303,11 +303,11 @@ En función de las necesidades de su organización, use uno de los procedimiento
   
 8.  En **tipo de notificaciones salientes**, seleccione ID. de **nombre** en la lista.  
   
-9. En **formato de ID. de nombre de salida**, seleccione una de las siguientes AD FS 1. *x*\-Compatible formatos de notificaciones de la lista:  
+9. En **formato de ID. de nombre de salida**, seleccione una de las siguientes AD FS 1. *x*\-formatos de notificaciones compatibles de la lista:  
   
     -   **UPN**  
   
-    -   **E @ no__t-1Mail**  
+    -   **Correo electrónico\-**  
   
     -   **Nombre común**  
   
@@ -317,7 +317,7 @@ En función de las necesidades de su organización, use uno de los procedimiento
   
     -   **Reemplazar un valor de notificaciones entrantes por otro valor de notificaciones salientes**  
   
-    -   **Reemplace las notificaciones entrantes e @ no__t-1mail por un nuevo sufijo e @ no__t-2mail**  
+    -   **Reemplazar las notificaciones entrantes de sufijos de correo e\-por un nuevo sufijo e\-correo electrónico**  
 ![crear regla](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs2.PNG)    
 
 11. Haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.  
@@ -325,9 +325,9 @@ En función de las necesidades de su organización, use uno de los procedimiento
 ## <a name="additional-references"></a>Referencias adicionales 
 [Configuración de regla de notificación](Configure-Claim-Rules.md)  
  
-[Lista de comprobación: crear reglas de notificación para una relación de confianza para usuario autenticado](https://technet.microsoft.com/library/ee913578.aspx)  
+[Lista de comprobación: creación de reglas de notificaciones para una relación de confianza para usuario autenticado](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[Lista de comprobación: Lista de comprobación: crear reglas de notificación para confianza de proveedores de notificaciones](https://technet.microsoft.com/library/ee913564.aspx)  
+[Lista de comprobación: creación de reglas de notificación para una confianza de proveedor de notificaciones](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [Cuándo usar una regla de notificaciones de autorización](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

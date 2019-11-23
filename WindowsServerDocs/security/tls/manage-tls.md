@@ -39,7 +39,7 @@ Los cambios en el orden de los conjuntos de cifrado TLS surtirán efecto en el s
 
 Puede usar el orden de los conjuntos de cifrado SSL directiva de grupo configuración para configurar el orden predeterminado del conjunto de cifrado TLS.
 
-1. En el consola de administración de directivas de grupo, vaya a **configuración** > del equipo**plantillas administrativas** > **redes** > **Opciones de configuración de SSL**.
+1. En el Consola de administración de directivas de grupo, vaya a **configuración del equipo** > **Plantillas administrativas** > **redes** > opciones de **configuración de SSL**.
 2. Haga doble clic en **orden de conjunto de cifrado SSL**y, a continuación, haga clic en la opción **habilitado** .
 3. Haga clic con el botón secundario en el cuadro **conjuntos de cifrado SSL** y seleccione **seleccionar todo** en el menú emergente.
 
@@ -123,8 +123,8 @@ El proceso de distribución de una curva es el siguiente:
 
 1.  En Windows 10 y Windows Server 2016, use **certutil. exe** para agregar una nueva curva con nombre registrada a Windows.
 2.  En el mismo equipo, abra el Consola de administración de directivas de grupo (GPMC), cree un nuevo objeto directiva de grupo y edítelo.
-3.  Vaya a **configuración del equipo | Preferencias | Configuración de Windows | Registro**.  Haga clic con el botón secundario en **registro**. Mantenga el mouse sobre **nuevo** y seleccione **elemento de recopilación**. Cambie el nombre del elemento de recopilación para que coincida con el nombre de la curva. Creará un elemento de colección de registro para cada clave del registro en *HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters*.
-4.  Configure la colección del registro de preferencias directiva de grupo recién creada agregando un nuevo **elemento del registro** para cada valor del registro que aparece en *HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters @ no__t-2curveName]* .
+3.  Vaya a **configuración del equipo | Preferencias | Configuración de Windows | Registro**.  Haga clic con el botón secundario en **registro**. Mantenga el mouse sobre **nuevo** y seleccione **elemento de recopilación**. Cambie el nombre del elemento de recopilación para que coincida con el nombre de la curva. Creará un elemento de colección de registro para cada clave del registro en *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters*.
+4.  Configure la colección del registro de preferencias directiva de grupo recién creada agregando un nuevo **elemento del registro** para cada valor del registro que aparece en *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters\[curveName]* .
 5.  Implemente el directiva de grupo objeto que contiene directiva de grupo elemento de colección del registro en equipos con Windows 10 y Windows Server 2016 que deben recibir las nuevas curvas con nombre.
 
     ![GPP distribuir curvas](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)

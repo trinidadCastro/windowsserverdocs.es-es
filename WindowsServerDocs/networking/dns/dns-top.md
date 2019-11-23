@@ -27,7 +27,7 @@ El sistema de nombres de dominio (DNS) es uno de los conjuntos de protocolos est
 > -   [Novedades del cliente DNS](What-s-New-in-DNS-Client.md)  
 > -   [Novedades en el servidor DNS](What-s-New-in-DNS-Server.md)  
 > -   [Guía del escenario de la Directiva DNS](deploy/DNS-Policy-Scenario-Guide.md)  
-> -   Video: [Windows Server 2016: Administración de DNS en IPAM @ no__t-0  
+> -   Vídeo: [Windows Server 2016: administración de DNS en IPAM](https://channel9.msdn.com/Blogs/windowsserver/Windows-Server-2016-DNS-management-in-IPAM)  
   
 En Windows Server 2016, DNS es un rol de servidor que puede instalar mediante Administrador del servidor o comandos de Windows PowerShell. Si va a instalar un nuevo bosque y dominio de Active Directory, DNS se instala automáticamente con Active Directory como el servidor de catálogo global para el bosque y el dominio.  
   

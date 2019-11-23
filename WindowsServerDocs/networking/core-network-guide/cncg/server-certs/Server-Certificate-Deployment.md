@@ -22,7 +22,7 @@ ms.locfileid: "71406280"
 Siga estos pasos para instalar una entidad de certificación (CA) raíz de empresa y para implementar certificados de servidor para su uso con PEAP y EAP.  
   
 > [!IMPORTANT]  
-> Antes de instalar Active Directory servicios de Certificate Server, debe asignar un nombre al equipo, configurar el equipo con una dirección IP estática y unir el equipo al dominio. Después de instalar AD CS, no puede cambiar el nombre del equipo o la pertenencia al dominio del equipo; sin embargo, puede cambiar la dirección IP si es necesario. Para obtener más información acerca de cómo realizar estas tareas, consulte la [Guía de red principal](../../Core-Network-Guide.md)de Windows Server @ no__t-0 2016.  
+> Antes de instalar Active Directory servicios de Certificate Server, debe asignar un nombre al equipo, configurar el equipo con una dirección IP estática y unir el equipo al dominio. Después de instalar AD CS, no puede cambiar el nombre del equipo o la pertenencia al dominio del equipo; sin embargo, puede cambiar la dirección IP si es necesario. Para obtener más información sobre cómo realizar estas tareas, vea la [Guía de red principal](../../Core-Network-Guide.md)de Windows Server&reg; 2016.  
 
   
 -   [Instalar la WEB1 de servidor web](../../../core-network-guide/cncg/server-certs/Install-the-Web-Server-WEB1.md)  

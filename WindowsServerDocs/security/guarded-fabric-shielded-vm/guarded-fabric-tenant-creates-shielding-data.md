@@ -76,31 +76,31 @@ Al crear un archivo Unattend. XML para máquinas virtuales blindadas, tenga en c
 
     | Elemento reemplazable | Cadena de sustitución |
     |-----------|-----------|
-    | ComputerName        | @ComputerName @      |
-    | TimeZone            | @TimeZone @          |
-    | ProductKey          | @ProductKey @        |
-    | IPAddr4-1           | @IP4Addr-1 @         |
-    | IPAddr6-1           | @IP6Addr-1 @         |
-    | MACAddr-1           | @MACAddr-1 @         |
-    | Prefijo: 1-1          | @Prefix-1-1 @        |
-    | NextHop: 1-1         | @NextHop-1-1 @       |
-    | Prefijo: 1-2          | @Prefix-1-2 @        |
-    | NextHop: 1-2         | @NextHop-1-2 @       |
+    | ComputerName        | @ComputerName@      |
+    | TimeZone            | @TimeZone@          |
+    | ProductKey          | @ProductKey@        |
+    | IPAddr4-1           | @IP4Addr-1@         |
+    | IPAddr6-1           | @IP6Addr-1@         |
+    | MACAddr-1           | @MACAddr-1@         |
+    | Prefijo: 1-1          | @Prefix-1-1@        |
+    | NextHop: 1-1         | @NextHop-1-1@       |
+    | Prefijo: 1-2          | @Prefix-1-2@        |
+    | NextHop: 1-2         | @NextHop-1-2@       |
 
     Si tiene más de una NIC, puede agregar varias cadenas de sustitución para la configuración de IP incrementando el primer dígito. Por ejemplo, para establecer la dirección IPv4, la subred y la puerta de enlace para 2 NIC, usaría las siguientes cadenas de sustitución:
 
     | Cadena de sustitución | Sustitución de ejemplo |
     |---------------------|----------------------|
-    | @IP4Addr-1 @         | 192.168.1.10         |
-    | @MACAddr-1 @         | Ethernet             |
-    | @Prefix-1-1 @        | 192.168.1.0/24       |
-    | @NextHop-1-1 @       | 192.168.1.254        |
-    | @IP4Addr-2 @         | 10.0.20.30           |
-    | @MACAddr-2 @         | Ethernet 2           |
-    | @Prefix-2-1 @        | 10.0.20.0/24         |
-    | @NextHop-2-1 @       | 10.0.20.1            |
+    | @IP4Addr-1@         | 192.168.1.10         |
+    | @MACAddr-1@         | Ethernet             |
+    | @Prefix-1-1@        | 192.168.1.0/24       |
+    | @NextHop-1-1@       | 192.168.1.254        |
+    | @IP4Addr-2@         | 10.0.20.30           |
+    | @MACAddr-2@         | Ethernet 2           |
+    | @Prefix-2-1@        | 10.0.20.0/24         |
+    | @NextHop-2-1@       | 10.0.20.1            |
 
-Al usar cadenas de sustitución, es importante asegurarse de que las cadenas se rellenarán durante el proceso de aprovisionamiento de la máquina virtual. Si no se proporciona una cadena como @ProductKey @ en el momento de la implementación y deja en blanco el nodo &lt;ProductKey @ no__t-2 en el archivo de instalación desatendida, se producirá un error en el proceso de especialización y no podrá conectarse a la máquina virtual.
+Al usar cadenas de sustitución, es importante asegurarse de que las cadenas se rellenarán durante el proceso de aprovisionamiento de la máquina virtual. Si no se proporciona una cadena como @ProductKey@ en el momento de la implementación, lo que deja en blanco el nodo &lt;ProductKey&gt; en el archivo de instalación desatendida, se producirá un error en el proceso de especialización y no podrá conectarse a la máquina virtual.
 
 Además, tenga en cuenta que las cadenas de sustitución relacionadas con redes hacia el final de la tabla solo se usan si está aprovechando grupos de direcciones IP estáticas de VMM. El proveedor de servicios de hosting debe ser capaz de indicarle si se requieren estas cadenas de sustitución. Para obtener más información acerca de las direcciones IP estáticas en las plantillas de VMM, consulte lo siguiente en la documentación de VMM:
 
@@ -161,13 +161,13 @@ Obtenga los archivos de metadatos de protección para cada tejido protegido en e
 
 Ejecute el Asistente para archivos de datos de blindaje para crear un archivo de datos de blindaje (PDK). Aquí, agregará el certificado RDP, el archivo de instalación desatendida, los catálogos de firmas de volumen, el guardián del propietario y los metadatos del guardián descargados obtenidos en el paso anterior.
 
-1. Instale **herramientas de administración remota del servidor herramientas de administración de características &gt; &gt; herramientas de máquinas virtuales blindadas** en el equipo con administrador del servidor o el siguiente comando de Windows PowerShell:
+1. Instale **herramientas de administración remota del servidor herramientas de administración de características de &gt; &gt; herramientas de máquinas virtuales blindadas** en el equipo con administrador del servidor o el siguiente comando de Windows PowerShell:
 
     ```powershell
     Install-WindowsFeature RSAT-Shielded-VM-Tools
     ```
 
-2. Abra el Asistente para archivos de datos de blindaje en la sección herramientas de administrador del menú Inicio o ejecute el siguiente archivo ejecutable **C: \\Windows @ no__t-2System32\\ShieldingDataFileWizard.exe**.
+2. Abra el Asistente para archivos de datos de blindaje en la sección herramientas de administrador del menú Inicio o ejecute el siguiente archivo ejecutable **C:\\Windows\\System32\\ShieldingDataFileWizard. exe**.
 
 3. En la primera página, use el segundo cuadro de selección de archivo para elegir una ubicación y un nombre de archivo para el archivo de datos de blindaje. Normalmente, debería asignar un nombre a un archivo de datos de blindaje después de la entidad que posee las máquinas virtuales creadas con los datos de blindaje (por ejemplo, HR, IT, Finance) y el rol de carga de trabajo que se está ejecutando (por ejemplo, servidor de archivos, servidor web o cualquier otro elemento configurado por el archivo de instalación desatendida). Deje el botón de radio establecido en **blindaje de los datos para las plantillas blindadas**.
 
@@ -200,7 +200,7 @@ Ejecute el Asistente para archivos de datos de blindaje para crear un archivo de
 
 6. En la página **valores de especialización** , haga clic en **examinar** para seleccionar el archivo Unattend. XML que se usará para especializar las máquinas virtuales.
 
-    Use el botón **Agregar** de la parte inferior para agregar cualquier archivo adicional al PDK que sea necesario durante el proceso de especialización. Por ejemplo, si el archivo de instalación desatendida está instalando un certificado RDP en la máquina virtual (como se describe en [generación de un archivo de respuesta mediante la función New-ShieldingDataAnswerFile](guarded-fabric-sample-unattend-xml-file.md)), debe agregar el archivo PFX del certificado RDP y RDPCertificateConfig. ps1 incluir aquí el script. Tenga en cuenta que los archivos que especifique aquí se copiarán automáticamente en C: \\temp @ no__t-1 en la máquina virtual que se crea. El archivo de instalación desatendida debería esperar que los archivos estén en esa carpeta al hacer referencia a ellos mediante la ruta de acceso.
+    Use el botón **Agregar** de la parte inferior para agregar cualquier archivo adicional al PDK que sea necesario durante el proceso de especialización. Por ejemplo, si el archivo de instalación desatendida está instalando un certificado RDP en la máquina virtual (como se describe en [generación de un archivo de respuesta mediante la función New-ShieldingDataAnswerFile](guarded-fabric-sample-unattend-xml-file.md)), debe agregar el archivo PFX del certificado RDP y el script RDPCertificateConfig. PS1 aquí. Tenga en cuenta que los archivos que especifique aquí se copiarán automáticamente en C:\\Temp\\ en la máquina virtual que se crea. El archivo de instalación desatendida debería esperar que los archivos estén en esa carpeta al hacer referencia a ellos mediante la ruta de acceso.
 
 7. Revise las selecciones en la página siguiente y, a continuación, haga clic en **generar**.
 
@@ -255,7 +255,7 @@ Por último, si tiene otros archivos que deben acompañar el archivo de respuest
 
 Consulte la documentación del cmdlet para [New-ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps) y [New-VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps) para obtener información sobre otras formas de configurar el archivo de datos de blindaje.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 - [Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

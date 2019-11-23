@@ -23,7 +23,7 @@ ms.locfileid: "71405839"
 En este tema se proporcionan instrucciones sobre cómo instalar el rol de servidor de la controladora de red mediante Administrador del servidor.
 
 >[!IMPORTANT]
->No implemente el rol de servidor de la controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \(VM @ no__t-1 que esté instalado en un host de Hyper-V. Después de haber instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper @ no__t-0V diferentes, debe habilitar los hosts de Hyper @ no__t-1V para redes definidas por software \(SDN @ no__t-3 agregando los hosts a la controladora de red mediante Windows PowerShell. comando **New-NetworkControllerServer**. Al hacerlo, habilita el Load Balancer de software de SDN para que funcione. Para obtener más información, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
+>No implemente el rol de servidor de la controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \(máquina virtual\) instalada en un host de Hyper-V. Después de haber instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper\-V diferentes, debe habilitar los hosts de Hyper\-V para redes definidas por software \(SDN\) agregando los hosts a la controladora de red mediante el comando de Windows PowerShell **New-NetworkControllerServer**. Al hacerlo, habilita el Load Balancer de software de SDN para que funcione. Para obtener más información, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
   
 Después de instalar el controlador de red, debe usar comandos de Windows PowerShell para la configuración adicional de la controladora de red. Para obtener más información, consulte implementación de la [controladora de red con Windows PowerShell](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md).  
   
@@ -51,7 +51,7 @@ Después de instalar el controlador de red, debe usar comandos de Windows PowerS
   
 8.  En **controlador de red** , haga clic en **siguiente**.  
   
-9. En **confirmar selecciones de instalación**, revise las opciones. La instalación de la controladora de red requiere que reinicie el equipo después de que se ejecute el asistente. Debido a esto, haga clic en **reiniciar el servidor de destino automáticamente si es necesario**. Se abre el cuadro de diálogo **Asistente para agregar roles y características** . Haga clic en **Sí**.  
+9. En **confirmar selecciones de instalación**, revise las opciones. La instalación de la controladora de red requiere que reinicie el equipo después de que se ejecute el asistente. Debido a esto, haga clic en **reiniciar el servidor de destino automáticamente si es necesario**. Se abre el cuadro de diálogo **Asistente para agregar roles y características** . Haz clic en **Sí**.  
   
     ![Asistente para agregar roles y características](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_11.jpg)  
   
@@ -63,7 +63,7 @@ Después de instalar el controlador de red, debe usar comandos de Windows PowerS
   
     ![Administrador de servidores](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/nc_013.jpg)  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Controladora de red](Network-Controller.md)  
   
 

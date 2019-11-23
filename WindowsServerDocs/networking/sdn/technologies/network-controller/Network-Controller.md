@@ -34,23 +34,23 @@ Con Controladora de red puede automatizar la configuración de la infraestructur
 
 ## <a name="bkmk_overview"></a>Información general de la controladora de red
 
-La controladora de red es un rol de servidor escalable y de alta disponibilidad, y proporciona una interfaz de programación de aplicaciones \(API @ no__t-1 que permite a la controladora de red comunicarse con la red y una segunda API que le permite comunicarse con Controladora de red.
+La controladora de red es un rol de servidor escalable y de alta disponibilidad, y proporciona una interfaz de programación de aplicaciones \(\) de API que permite a la controladora de red comunicarse con la red y una segunda API que le permite comunicarse con el controlador de red.
 
 Puede implementar la controladora de red en entornos de dominio y que no sean de dominio. En entornos de dominio, el controlador de red autentica los usuarios y los dispositivos de red mediante Kerberos. en entornos que no son de dominio, debe implementar certificados para la autenticación.
 
 >[!IMPORTANT]
->No implemente el rol de servidor de la controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \(VM @ no__t-1 que esté instalado en un host de Hyper-V. Después de haber instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper @ no__t-0V diferentes, debe habilitar los hosts de Hyper @ no__t-1V para redes definidas por software \(SDN @ no__t-3 agregando los hosts a la controladora de red mediante Windows PowerShell. comando **New-NetworkControllerServer**. Al hacerlo, habilita el Load Balancer de software de SDN para que funcione. Para obtener más información, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
+>No implemente el rol de servidor de la controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \(máquina virtual\) instalada en un host de Hyper-V. Después de haber instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper\-V diferentes, debe habilitar los hosts de Hyper\-V para redes definidas por software \(SDN\) agregando los hosts a la controladora de red mediante el comando de Windows PowerShell **New-NetworkControllerServer**. Al hacerlo, habilita el Load Balancer de software de SDN para que funcione. Para obtener más información, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
 
 Controladora de red se comunica con dispositivos, servicios y componentes de red mediante la API Southbound. Esta API permite a Controladora de red detectar dispositivos de red y configuraciones de servicios, así como obtener toda la información necesaria sobre la red. Además, la API Southbound ofrece un canal para enviar información a la infraestructura de red, como los cambios de configuración que se realicen.
 
 La API Northbound le permite obtener información de Controladora de red y usarla para supervisar y configurar la red.
 
-La API Northbound de la controladora de red permite configurar, supervisar, solucionar problemas e implementar nuevos dispositivos en la red mediante Windows PowerShell, la transferencia de estado representacional \(REST @ no__t-1 API o una aplicación de administración con un gráfico interfaz de usuario, como System Center Virtual Machine Manager.
+La API Northbound de la controladora de red le permite configurar, supervisar, solucionar problemas e implementar nuevos dispositivos en la red mediante Windows PowerShell, la transferencia de estado representacional \(API de REST\) o una aplicación de administración con una interfaz gráfica de usuario, como System Center Virtual Machine Manager.
 
 >[!NOTE]
 >La API Northbound de Controladora de red se implementa como una interfaz REST.
 
-Puede administrar la red del centro de recursos con la controladora de red mediante aplicaciones de administración, como System Center Virtual Machine Manager \(SCVMM @ no__t-1 y System Center Operations Manager \(SCOM @ no__t-3, ya que la controladora de red permite configurar, supervisar, programar y solucionar problemas de la infraestructura de red que se encuentra bajo su control.
+Puede administrar la red del centro de recursos con la controladora de red mediante aplicaciones de administración, como System Center Virtual Machine Manager \(SCVMM\)y System Center Operations Manager \(SCOM\), ya que la controladora de red permite configurar, supervisar, programar y solucionar problemas de la infraestructura de red que se encuentra bajo su control.
 
 Mediante Windows PowerShell, la API REST o una aplicación de administración, puede usar Controladora de red para administrar la siguiente infraestructura de red física y virtual:
 
@@ -58,7 +58,7 @@ Mediante Windows PowerShell, la API REST o una aplicación de administración, p
 
 - Firewall de centro de datos
 
-- Servicio de acceso remoto \(RAS @ no__t-1 puertas de enlace para varios inquilinos, puertas de enlace virtuales y grupos de puerta de enlace
+- Servicio de acceso remoto \(RAS\) puertas de enlace para varios inquilinos, puertas de enlace virtuales y grupos de puerta de enlace
 
 - Equilibradores de carga de software
 
@@ -66,7 +66,7 @@ En la siguiente ilustración, un administrador usa una herramienta de administra
 
 ![Información general de la controladora de red](../../../media/Network-Controller/NetController_overview.png)  
 
-Si va a implementar la controladora de red en un entorno de laboratorio de pruebas, puede ejecutar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V @no__t 0VM @ no__t-1 que esté instalado en un host de Hyper-V.
+Si va a implementar la controladora de red en un entorno de laboratorio de pruebas, puede ejecutar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \(máquina virtual\) instalada en un host de Hyper-V.
 
 Para lograr una alta disponibilidad en centros de recursos de mayor tamaño, puede implementar un clúster con tres máquinas virtuales que estén instaladas en tres o más hosts de Hyper-V. Para obtener más información, consulte [alta disponibilidad de la controladora de red](network-controller-high-availability.md).
 
@@ -128,7 +128,7 @@ Para obtener más información sobre la puerta de enlace RAS, consulte [puerta d
 
 ## <a name="network-controller-deployment-options"></a>Opciones de implementación de la controladora de red
 
-Para implementar la controladora de red mediante System Center Virtual Machine Manager \(VMM @ no__t-1, consulte [configuración de una controladora de red de Sdn en el tejido de VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller).
+Para implementar la controladora de red mediante System Center Virtual Machine Manager \(\)de VMM, consulte [configuración de una controladora de red de Sdn en el tejido de VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller).
 
 Para implementar la controladora de red mediante scripts, consulte [implementación de una infraestructura de red definida por software mediante scripts](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md).
 

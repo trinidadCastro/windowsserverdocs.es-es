@@ -190,11 +190,11 @@ Puede usar Administrador del servidor en Windows Server 2016 para instalar la ca
 
 |Funcionalidad|Ubicación del equipo|Instalar este elemento de BranchCache|
 |-----------------|---------------------|------------------------------------|
-|Servidor de contenido @no__t-servidor de aplicaciones basado en 0BITS @ no__t-1|Centro de datos en la nube o en oficina central|Característica BranchCache|
-|Servidor de contenido \(Web Server @ no__t-1|Centro de datos en la nube o en oficina central|Característica BranchCache|
-|Servidor de contenido @no__t: servidor 0file con el protocolo SMB @ no__t-1|Centro de datos en la nube o en oficina central|Servicio de rol BranchCache para archivos de red del rol de servidor Servicios de archivo|
+|Servidor de contenido \(servidor de aplicaciones basado en BITS\)|Centro de datos en la nube o en oficina central|Característica BranchCache|
+|Servidor Web \(servidor de contenido\)|Centro de datos en la nube o en oficina central|Característica BranchCache|
+|Servidor de contenido \(servidor de archivos mediante el protocolo SMB\)|Centro de datos en la nube o en oficina central|Servicio de rol BranchCache para archivos de red del rol de servidor Servicios de archivo|
 |Servidor de caché hospedada|Sucursal|Característica de BranchCache con modo de servidor de caché hospedada habilitado|
-|Equipo cliente habilitado para BranchCache|Sucursal|No se necesita ninguna instalación; solo tiene que habilitar BranchCache y un modo de BranchCache \(distributed o hospedado @ no__t-1 en el cliente.|
+|Equipo cliente habilitado para BranchCache|Sucursal|No se necesita ninguna instalación; simplemente habilite BranchCache y un modo de BranchCache \(\) distribuido o hospedado en el cliente.|
 
 Para instalar el servicio de rol o la característica, abra el Administrador del servidor y seleccione los equipos en los que desea habilitar la funcionalidad de BranchCache. En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**. Se abre el asistente para **Agregar roles y características** . Cuando ejecute el asistente, realice las siguientes selecciones:
 
@@ -322,19 +322,19 @@ Por otra parte, BranchCache maneja información de contenido con el mismo grado 
 
 El flujo de información de contenido y el contenido real se divide en cuatro fases:
 
-1.  @no__t procesos de 0BranchCache: Contenido de la solicitud @ no__t-0
+1.  [Procesos de BranchCache: contenido de la solicitud](#BKMK_8)
 
-2.  @no__t procesos de 0BranchCache: Buscar contenido @ no__t-0
+2.  [Procesos de BranchCache: buscar contenido](#BKMK_9)
 
-3.  @no__t procesos de 0BranchCache: Recuperar contenido @ no__t-0
+3.  [Procesos de BranchCache: recuperación de contenido](#BKMK_10)
 
-4.  @no__t procesos de 0BranchCache: Contenido de caché @ no__t-0
+4.  [Procesos de BranchCache: contenido de la caché](#BKMK_11)
 
 Estas fases se describen en las siguientes secciones.
 
-## <a name="BKMK_8"></a>Procesos de BranchCache: Solicitar contenido
+## <a name="BKMK_8"></a>Procesos de BranchCache: contenido de la solicitud
 
-En la primera fase, el equipo cliente de la sucursal solicita contenido, por ejemplo, un archivo o una página web, de un servidor de contenido en una ubicación remota, como una oficina central. El servidor de contenido comprueba que el equipo cliente esté autorizado a recuperar el contenido solicitado. Si el equipo cliente está autorizado y el servidor de contenido y el cliente son BranchCache @ no__t-0enabled, el servidor de contenido genera información de contenido.
+En la primera fase, el equipo cliente de la sucursal solicita contenido, por ejemplo, un archivo o una página web, de un servidor de contenido en una ubicación remota, como una oficina central. El servidor de contenido comprueba que el equipo cliente esté autorizado a recuperar el contenido solicitado. Si el equipo cliente está autorizado y el servidor de contenido y el cliente están\-habilitados para BranchCache, el servidor de contenido genera información de contenido.
 
 Después, el servidor de contenido envía información de contenido al equipo cliente utilizando el mismo protocolo que hubiese usado para el contenido real. 
 
@@ -352,7 +352,7 @@ La principal amenaza en este nivel es el riesgo del secreto de segmento; sin emb
 
 Este enfoque garantiza que una entidad que posee el secreto de servidor no pueda descubrir el contenido real en el bloque de datos. El secreto de segmento se trata con el mismo grado de seguridad que el segmento de texto sin formato mismo, ya que conocer el secreto de segmento de un segmento determinado permite a una entidad obtener el segmento de sus pares y después, descifrarlo. Conocer el secreto de servidor no produce de inmediato ningún texto sin formato en particular, pero se puede usar para derivar ciertos tipos de datos del texto cifrado y después, posiblemente exponer algunos datos parcialmente conocidos a un ataque por adivinar mediante la fuerza bruta. Por lo tanto, el secreto de servidor debe mantenerse en absoluta confidencialidad.
   
-## <a name="BKMK_9"></a>Procesos de BranchCache: Localizar contenido
+## <a name="BKMK_9"></a>Procesos de BranchCache: buscar contenido
 
 Una vez que el equipo cliente recibe información de contenido, el cliente usa el identificador de segmento para ubicar el contenido solicitado en la memoria caché de la sucursal, ya sea que esa memoria caché esté distribuida entre los equipos cliente o se encuentre en un servidor de caché hospedada.
 
@@ -372,11 +372,11 @@ Si el contenido solicitado no se encuentra en la sucursal, el cliente solicita e
 
 Después de que se recibe el contenido, se agrega a la caché local ya sea en el equipo cliente o en el servidor de caché hospedada. En este caso, la información de contenido impide que un cliente o servidor de caché hospedada agregue a la caché local ningún contenido que no coincida con los hashes. El proceso de comprobación de contenido mediante hashes coincidentes garantiza que solo se agregue a la caché contenido válido y se protege la integridad de la caché local.
 
-## <a name="BKMK_10"></a>Procesos de BranchCache: Recuperar contenido
+## <a name="BKMK_10"></a>Procesos de BranchCache: recuperación de contenido
 
 Una vez que un equipo cliente ubica el contenido deseado en el host de contenido, que es un servidor de caché hospedada o un equipo cliente en modo Caché distribuida, el equipo cliente inicia el proceso de recuperación de contenido.
 
-En primer lugar, el equipo cliente envía una solicitud al host de contenido para el primer bloque que requiere. La solicitud contiene el identificador de segmento y el rango de bloques que identifican el contenido deseado. Ya que solo se devuelve un bloque, el rango de bloques contiene un solo bloque. (Actualmente, no se admiten solicitudes de varios bloques). El cliente también almacena la solicitud en su lista de solicitudes pendientes local.  
+En primer lugar, el equipo cliente envía una solicitud al host de contenido para el primer bloque que requiere. La solicitud contiene el identificador de segmento y el rango de bloques que identifican el contenido deseado. Ya que solo se devuelve un bloque, el rango de bloques contiene un solo bloque. (Actualmente no se admiten solicitudes de varios bloques). El cliente también almacena la solicitud en su lista de solicitudes pendientes local.  
 
 Al recibir un mensaje de solicitud válido de un cliente, el host de contenido comprueba si el bloque especificado en la solicitud existe en la caché de contenido del host de contenido.
 
@@ -421,7 +421,7 @@ Las principales amenazas para la seguridad en este nivel incluyen:
 
     *Un cliente se desborda con solicitudes de datos*. Los protocolos de BranchCache incorporan contadores y temporizadores de administración de colas para impedir que los clientes se sobrecarguen.
 
-## <a name="BKMK_11"></a>Procesos de BranchCache: Contenidó de la caché
+## <a name="BKMK_11"></a>Procesos de BranchCache: contenido de la caché
 
 En los equipos cliente en modo Caché distribuida y los servidores de caché hospedada que se encuentran en las sucursales, las caché de contenido se acumulan con el paso del tiempo a medida que se recupera el contenido a través de los vínculos WAN.
 
@@ -448,7 +448,7 @@ Para actualizar el servidor de caché hospedada utilizando el protocolo de cach�
 
 ### <a name="hosted-cache-mode-cache-population"></a>Relleno de la memoria caché en modo de caché hospedada
 
-El proceso de agregar contenido a la caché del servidor de caché hospedada en una sucursal comienza cuando el cliente envía un INITIAL_OFFER_MESSAGE, que incluye el identificador de segmento. El identificador de segmento en la solicitud INITIAL_OFFER_MESSAGE se usa para recuperar el hash de segmento correspondiente de los datos, la lista de hashes de bloque y el secreto de segmento de la memoria caché de bloque del servidor de caché hospedada. Si el servidor de caché hospedada ya cuenta con toda la información de contenido de un segmento en particular, la respuesta a INITIAL_OFFER_MESSAGE será OK y no se produce la solicitud de descarga de bloques.
+El proceso de agregar contenido a la caché del servidor de caché hospedada en una sucursal comienza cuando el cliente envía una INITIAL_OFFER_MESSAGE, que incluye el identificador de segmento. El identificador de segmento en la solicitud de INITIAL_OFFER_MESSAGE se usa para recuperar el hash de segmento correspondiente de los datos, la lista de hashes de bloque y el secreto de segmento de la memoria caché de bloque del servidor de caché hospedada. Si el servidor de caché hospedada ya cuenta con toda la información de contenido de un segmento en particular, la respuesta a INITIAL_OFFER_MESSAGE será OK y no se produce la solicitud de descarga de bloques.
 
 Si el servidor de caché hospedada no cuenta con todos los bloques de datos ofrecidos asociados con los hashes de bloque en el segmento, la respuesta a INITIAL_OFFER_MESSAGE es INTERESTED (interesado). Después, el cliente envía un SEGMENT_INFO_MESSAGE (mensaje de información del segmento) que describe el único segmento que se está ofreciendo. El servidor de caché hospedada responde con un mensaje OK e inicia la descarga de los bloques faltantes del equipo cliente que los ofrece.
 

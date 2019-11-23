@@ -35,6 +35,7 @@ Las mismas herramientas también están disponibles como una extensión de herra
 
 La extensión de herramientas de clústeres de conmutación por error y clústeres hiperconvergidos proporciona un panel que muestra el estado general de mantenimiento del hardware del clúster, las alertas de estado, el estado de coherencia del firmware y el informe, el consumo de energía y la temperatura, y la fuente de alimentación y el ventilador. Estado de mantenimiento.
 
-![Lenovo extensión @ no__t-1 @ no__t-2Lenovo extensión @ no__t-3
+extensión ![Lenovo](../../media/extend-case-study-lenovo/lenovo-4.png)
+![extensión Lenovo](../../media/extend-case-study-lenovo/lenovo-5.png)
 
 Obtenga más información sobre las ofertas del integrador de Lenovo XClarity para el centro de administración de Windows en el [sitio web de Lenovo](https://support.lenovo.com/us/en/solutions/ht507549).

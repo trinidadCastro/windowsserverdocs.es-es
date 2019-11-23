@@ -18,7 +18,7 @@ ms.locfileid: "71407630"
 ---
 # <a name="configure-claim-rules"></a>Configuración de regla de notificación
 
-En un modelo de identidad Claims @ no__t-0based, la función de Servicios de federación de Active Directory (AD FS) (AD FS) como servicios de Federación es emitir un token que contenga un conjunto de notificaciones. Las reglas de notificaciones rigen las decisiones con respecto a las notificaciones que AD FS problemas. Las reglas de notificaciones y todos los datos de configuración del servidor se almacenan en la base de datos de configuración de AD FS.  
+En un modelo de identidad basado en notificaciones\-, la función de Servicios de federación de Active Directory (AD FS) (AD FS) como servicios de Federación es emitir un token que contenga un conjunto de notificaciones. Las reglas de notificaciones rigen las decisiones con respecto a las notificaciones que AD FS problemas. Las reglas de notificaciones y todos los datos de configuración del servidor se almacenan en la base de datos de configuración de AD FS.  
   
 AD FS toma decisiones de emisión basadas en la información de identidad que se proporciona en forma de notificaciones y otra información contextual. En un nivel alto, AD FS funciona como un procesador de reglas tomando un conjunto de notificaciones como entrada, realiza una serie de transformaciones y, a continuación, devuelve un conjunto diferente de notificaciones como salida. 
 
@@ -40,5 +40,5 @@ Los temas siguientes le ayudarán a crear las reglas que AD FS procesarán:
   
 -   [Crear una regla para enviar notificaciones mediante una regla personalizada](../../ad-fs/operations/Create-a-Rule-to-Send-Claims-Using-a-Custom-rule.md)  
 
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md) 

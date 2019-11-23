@@ -21,7 +21,7 @@ ms.locfileid: "71405480"
 
 Puede usar este tema para crear y configurar directivas de solicitud de conexión que designen si el NPS local procesa las solicitudes de conexión o las reenvía al servidor RADIUS remoto para su procesamiento.
 
-Las directivas de solicitud de conexión son conjuntos de condiciones y configuraciones que permiten a los administradores de red designar qué servidores Servicio de autenticación remota telefónica de usuario (RADIUS) realizan la autenticación y autorización de solicitudes de conexión que el el servidor que ejecuta el servidor de directivas de redes \(NPS @ no__t-1 recibe de clientes RADIUS.
+Las directivas de solicitud de conexión son conjuntos de condiciones y configuraciones que permiten a los administradores de red designar qué servidores de Servicio de autenticación remota telefónica de usuario (RADIUS) realizan la autenticación y autorización de las solicitudes de conexión que el servidor que ejecuta el servidor de directivas de redes \(NPS\) recibe de los clientes RADIUS.
 
 La Directiva de solicitud de conexión predeterminada usa NPS como servidor RADIUS y procesa todas las solicitudes de autenticación de forma local.
 

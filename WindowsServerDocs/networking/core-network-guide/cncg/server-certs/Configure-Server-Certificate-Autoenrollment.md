@@ -25,7 +25,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 ## <a name="configure-server-certificate-auto-enrollment"></a>Configurar la inscripción automática de certificados de servidor
 
-1. En el equipo en el que está instalado AD DS, abra Windows PowerShell @ no__t-0, escriba **MMC**y, a continuación, presione Entrar. Se abre Microsoft Management Console.
+1. En el equipo en el que está instalado AD DS, abra&reg;de Windows PowerShell, escriba **MMC**y, a continuación, presione Entrar. Se abre Microsoft Management Console.
 2. En el menú **Archivo**, haga clic en **Agregar o quitar complemento**. Se abre el cuadro de diálogo **Agregar o quitar complementos**.
 3. En **complementos disponibles**, desplácese hacia abajo y haga doble clic en **Editor de administración de directivas de grupo**. Se abre el cuadro de diálogo **Seleccionar objeto de directiva de grupo** .
 
@@ -35,18 +35,18 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 4. En **Objeto de directiva de grupo**, haga clic en **Examinar**. Se abre el cuadro de diálogo **Buscar un objeto de directiva de grupo**.
 5. En **Dominios, unidades organizativas y objetos de directiva de grupo vinculados**, haga clic en **Directiva predeterminada de dominio** y, a continuación, haga clic en **Aceptar**.
 6. Haga clic en **Finalizar**y, a continuación, en **Aceptar**.
-7. Haga doble clic en **Directiva predeterminada de dominio**. En la consola, expanda la ruta siguiente: **Configuración del equipo**, **Directivas**, **Configuración de Windows**, **Configuración de seguridad** y, a continuación, **Directivas de clave pública**.
+7. Haga doble clic en **Directiva predeterminada de dominio**. En la consola de, expanda la siguiente ruta de acceso: **configuración del equipo**, **directivas**, **configuración de Windows**, configuración de **seguridad**y, a continuación, **directivas de clave pública**.
 8. Haga clic en **Directivas de clave pública**. En el panel de detalles, haz doble clic en **Cliente de Servicios de servidor de certificados - Inscripción automática**. Se abrirá el cuadro de diálogo **propiedades** . Configure los siguientes elementos y haga clic en **Aceptar**:
 
      1. En **Modelo de configuración**, seleccione **Habilitado**.
      2. Active la casilla **Renovar certificados expirados, actualizar certificados pendientes y quitar certificados revocados**.
      3. Active la casilla **Actualizar certificados que usan plantillas de certificado**.
 
-9. Haga clic en **Aceptar**.
+9. Haz clic en **Aceptar**.
 
 ## <a name="configure-user-certificate-auto-enrollment"></a>Configurar la inscripción automática de certificados de usuario
 
-1. En el equipo en el que está instalado AD DS, abra Windows PowerShell @ no__t-0, escriba **MMC**y, a continuación, presione Entrar. Se abre Microsoft Management Console.
+1. En el equipo en el que está instalado AD DS, abra&reg;de Windows PowerShell, escriba **MMC**y, a continuación, presione Entrar. Se abre Microsoft Management Console.
 2. En el menú **Archivo**, haga clic en **Agregar o quitar complemento**. Se abre el cuadro de diálogo **Agregar o quitar complementos**.
 3. En **complementos disponibles**, desplácese hacia abajo y haga doble clic en **Editor de administración de directivas de grupo**. Se abre el cuadro de diálogo **Seleccionar objeto de directiva de grupo** .
 
@@ -56,14 +56,14 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 4. En **Objeto de directiva de grupo**, haga clic en **Examinar**. Se abre el cuadro de diálogo **Buscar un objeto de directiva de grupo**.
 5. En **Dominios, unidades organizativas y objetos de directiva de grupo vinculados**, haga clic en **Directiva predeterminada de dominio** y, a continuación, haga clic en **Aceptar**.
 6. Haga clic en **Finalizar**y, a continuación, en **Aceptar**.
-7. Haga doble clic en **Directiva predeterminada de dominio**. En la consola, expanda la ruta siguiente: **Configuración de usuario**, **directivas**, **configuración de Windows**, configuración de **seguridad**.
+7. Haga doble clic en **Directiva predeterminada de dominio**. En la consola de, expanda la siguiente ruta de acceso: **configuración de usuario**, **directivas**, **configuración de Windows**, configuración de **seguridad**.
 8. Haga clic en **Directivas de clave pública**. En el panel de detalles, haz doble clic en **Cliente de Servicios de servidor de certificados - Inscripción automática**. Se abrirá el cuadro de diálogo **propiedades** . Configure los siguientes elementos y haga clic en **Aceptar**:
 
      1. En **Modelo de configuración**, seleccione **Habilitado**.
      2. Active la casilla **Renovar certificados expirados, actualizar certificados pendientes y quitar certificados revocados**.
      3. Active la casilla **Actualizar certificados que usan plantillas de certificado**.
 
-9. Haga clic en **Aceptar**.
+9. Haz clic en **Aceptar**.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

@@ -127,7 +127,7 @@ Propiedad de plantilla ADCS | Valor obligatorio
 Categoría de proveedor      | Proveedor de almacenamiento de claves
 Nombre del algoritmo         | RSA
 Tamaño mínimo de clave       | 2048
-Finalidad                | Firma y cifrado
+Propósito                | Firma y cifrado
 Extensión uso de claves    | Firma digital, cifrado de clave, cifrado de datos ("permitir cifrado de datos de usuario")
 
 
@@ -143,7 +143,7 @@ Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName
 AttestationSignerCertRenewalTask
 ```
 
-Como alternativa, puede ejecutar manualmente la tarea programada abriendo **programador de tareas** (taskschd. msc), navegando a **programador de tareas Library > Microsoft > Windows > HGSServer** y ejecutando la tarea denominada  **AttestationSignerCertRenewalTask**.
+Como alternativa, puede ejecutar manualmente la tarea programada abriendo **programador de tareas** (taskschd. msc), navegando a **programador de tareas Library > Microsoft > Windows > HGSServer** y ejecutando la tarea denominada **AttestationSignerCertRenewalTask**.
 
 ## <a name="switching-attestation-modes"></a>Cambiar los modos de atestación
 
@@ -154,14 +154,14 @@ Se recomienda no quitar las directivas que permitan a los hosts del modo de ates
 **Problema conocido al cambiar de TPM a modo de AD**
 
 Si ha inicializado el clúster de HGS en modo TPM y después cambia al modo Active Directory, hay un problema conocido que impedirá que otros nodos del clúster de HGS cambien al nuevo modo de atestación.
-Para asegurarse de que todos los servidores HGS están aplicando el modo de atestación correcto, ejecute `Set-HgsServer -TrustActiveDirectory` **en cada nodo** del clúster de HGS.
+Para asegurarse de que todos los servidores de HGS están aplicando el modo de atestación correcto, ejecute `Set-HgsServer -TrustActiveDirectory` **en cada nodo** del clúster de HGS.
 Este problema no se aplica si va a cambiar del modo TPM al modo AD *y* el clúster se configuró originalmente en el modo ad.
 
 Puede comprobar el modo de atestación del servidor HGS mediante la ejecución de [Get-HgsServer](https://technet.microsoft.com/library/mt652162.aspx).
 
 ## <a name="memory-dump-encryption-policies"></a>Directivas de cifrado de volcado de memoria
 
-Si está intentando configurar las directivas de cifrado de volcado de memoria y no ve las directivas de volcado de HGS predeterminadas (HGS @ no__t-0NoDumps, HGS @ no__t-1DumpEncryption y HGS @ no__t-2DumpEncryptionKey) o el cmdlet dump Policy (Add-HgsAttestationDumpPolicy), es es probable que no tenga instalada la actualización acumulativa más reciente.
+Si está intentando configurar las directivas de cifrado de volcado de memoria y no ve las directivas de volcado de HGS predeterminadas (HGS\_nodumps, HGS\_DumpEncryption y HGS\_DumpEncryptionKey) o el cmdlet dump Policy (Add-HgsAttestationDumpPolicy), es probable que no tenga instalada la actualización acumulativa más reciente.
 Para corregir esto, [actualice el servidor HGS](guarded-fabric-manage-hgs.md#patching-hgs) a la actualización acumulativa más reciente de Windows y [Active las nuevas directivas de atestación](guarded-fabric-manage-hgs.md#updates-requiring-policy-activation).
 Asegúrese de actualizar los hosts de Hyper-V a la misma actualización acumulativa antes de activar las nuevas directivas de atestación, ya que es probable que los hosts que no tengan instaladas las nuevas funcionalidades de cifrado de volcado de memoria no se realicen correctamente cuando se active la Directiva HGS.
 
@@ -176,8 +176,8 @@ Recibirá un error al registrar un host de TPM si se cumple alguna de las dos co
 2. El archivo de identificador de plataforma contiene un certificado de clave de aprobación, pero ese certificado no es de **confianza** en el sistema
 
 Algunos fabricantes de TPM no incluyen EKcerts en sus TPM.
-Si sospecha que este es el caso del TPM, confirme con el OEM que los TPM no deben tener un EKcert y use la marca `-Force` para registrar manualmente el host con HGS.
+Si sospecha que este es el caso del TPM, confirme con el OEM que los TPM no deben tener un EKcert y use la marca de `-Force` para registrar manualmente el host con HGS.
 Si el TPM debe tener un EKcert pero no se encontró ninguno en el archivo de identificador de plataforma, asegúrese de que está usando una consola de PowerShell de administrador (elevado) al ejecutar [Get-PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier) en el host.
 
-Si ha recibido el error de que el EKcert no es de confianza, asegúrese de que ha [instalado el paquete de certificados raíz TPM de confianza](guarded-fabric-install-trusted-tpm-root-certificates.md) en cada servidor HGS y de que el certificado raíz para el proveedor TPM está presente en el **TrustedTPM @ No__ de la máquina local. almacén t-2RootCA** . También es necesario instalar los certificados intermedios aplicables en el almacén **TrustedTPM @ no__t-1IntermediateCA** en el equipo local.
+Si ha recibido el error de que el EKcert no es de confianza, asegúrese de que ha [instalado el paquete de certificados raíz de TPM de confianza](guarded-fabric-install-trusted-tpm-root-certificates.md) en cada servidor de HGS y que el certificado raíz para el proveedor de TPM se encuentra en el almacén de **TrustedTPM\_RootCA** de la máquina local. Cualquier certificado intermedio aplicable también debe instalarse en el almacén de **TrustedTPM\_IntermediateCA** en el equipo local.
 Después de instalar los certificados raíz e intermedios, debería poder ejecutar `Add-HgsAttestationTpmHost` correctamente.

@@ -18,7 +18,7 @@ ms.locfileid: "71408014"
 ---
 # <a name="planning-federation-server-proxy-placement"></a>Planear la ubicación del servidor proxy de federación
 
-Después de recopilar toda la información que usará para diseñar la infraestructura de Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1 y después de planear la estrategia de servidor Web y servidor de Federación, puede planear Cuándo y dónde colocar el servidor de Federación. servidores proxy en el nuevo diseño. La información de los temas siguientes puede ayudarle a determinar cuándo y dónde se debe colocar un servidor proxy de Federación y si debe configurarse para el rol de asociado de cuenta o el rol de asociado de recurso:  
+Después de recopilar toda la información que usará para diseñar el Servicios de federación de Active Directory (AD FS) \(AD FS infraestructura de\) y después de planear la estrategia de servidor Web y servidor de Federación, puede planear Cuándo y dónde colocar los proxies de servidor de Federación en el nuevo diseño. La información de los temas siguientes puede ayudarle a determinar cuándo y dónde se debe colocar un servidor proxy de Federación y si debe configurarse para el rol de asociado de cuenta o el rol de asociado de recurso:  
   
 -   [Revisar el rol del servidor de federación en el asociado de cuenta](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
   
@@ -39,7 +39,7 @@ Después de recopilar toda la información que usará para diseñar la infraestr
   
 Para obtener ejemplos de cómo se puede colocar un servidor proxy de Federación en cualquiera de los dos escenarios de diseño AD FS principales, consulte [asignación de los objetivos de implementación a un diseño de AD FS](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md).  
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
   
 

@@ -19,7 +19,7 @@ ms.locfileid: "71405284"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar los temas siguientes para empezar a trabajar con la Directiva de calidad de servicio \(QoS @ no__t-1.
+Puede usar los temas siguientes para empezar a trabajar con la Directiva de QoS\) de calidad de servicio \(.
 
 - [Cómo funciona la Directiva de QoS](qos-policy-works.md)
 - [Arquitectura de la directiva QoS](qos-policy-architecture.md)

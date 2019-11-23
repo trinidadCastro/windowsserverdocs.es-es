@@ -79,7 +79,7 @@ A la hora de obtener el certificado de sitio web que se va a usar para el servid
 3.  En el campo puntos de distribución CRL, use un punto de distribución CRL al que puedan tener acceso los clientes de DirectAccess que estén conectados a la intranet.  
   
 ### <a name="322dns-for-the-network-location-server"></a>3.2.2 DNS para el servidor de ubicación de red  
-Si hospeda el servidor de ubicación de red en el servidor de acceso remoto, debe agregar una entrada DNS para el sitio web del servidor de ubicación de red para cada punto de entrada de la implementación. Tenga en cuenta lo siguiente:  
+Si hospeda el servidor de ubicación de red en el servidor de acceso remoto, debe agregar una entrada DNS para el sitio web del servidor de ubicación de red para cada punto de entrada de la implementación. Ten en cuenta esto:  
   
 -   El nombre de sujeto del primer certificado de servidor de ubicación de red en la implementación multisitio se utiliza como dirección URL del servidor de ubicación de red para todos los puntos de entrada, por lo tanto, el nombre de sujeto y la dirección URL del servidor de ubicación de red no pueden ser iguales que el nombre de equipo del primer servidor de acceso remoto en la implementación. Debe ser un FQDN dedicado para el servidor de ubicación de red.  
   
@@ -162,11 +162,11 @@ En una implementación multisitio, el enrutamiento simétrico se aplica mediante
   
    3. Prefijo Teredo (opcional). Este prefijo solo es relevante si el servidor de acceso remoto está configurado con dos direcciones IPv4 públicas consecutivas en el adaptador externo. El prefijo se basa en la primera dirección IPv4 pública del par de direcciones. Por ejemplo, si las direcciones externas son:  
   
-      1. www\.xxx.yyy.zzz  
+      1. www\.xxx. yyy. zzz  
   
-      2. www\.xxx.yyy.zzz + 1  
+      2. www\.xxx. yyy. zzz + 1  
   
-      Después, el prefijo Teredo para configurar es 2001:0: WWXX: YYZZ::/64, donde WWXX: YYZZ es la representación hexadecimal de la dirección IPv4 www\.xxx.yyy.zzz.  
+      Después, el prefijo Teredo para configurar es 2001:0: WWXX: YYZZ::/64, donde WWXX: YYZZ es la representación hexadecimal de la dirección IPv4 www\.xxx. yyy. zzz.  
   
       Tenga en cuenta que puede usar el siguiente script para calcular el prefijo Teredo:  
   
@@ -247,7 +247,7 @@ La transición de solo IPv4 a una red corporativa de solo IPv6 no se puede reali
     > [!NOTE]  
     > Al instalar una implementación de DirectAccess adicional junto con una actual, asegúrese de que no haya dos puntos de entrada que compartan el mismo prefijo de cliente.  
     >   
-    > Si instala DirectAccess mediante el Asistente para Introducción o con el cmdlet `Install-RemoteAccess`, el acceso remoto establece automáticamente el prefijo de cliente del primer punto de entrada de la implementación en un valor predeterminado de < subred IPv6 @ no__t-1prefix >: 1000::/64. Si es necesario, debe cambiar el prefijo.  
+    > Si instala DirectAccess mediante el Asistente para Introducción o con el cmdlet `Install-RemoteAccess`, el acceso remoto establece automáticamente el prefijo de cliente del primer punto de entrada de la implementación en un valor predeterminado de < subred IPv6\_prefijo >: 1000::/64. Si es necesario, debe cambiar el prefijo.  
   
 2.  Quite los grupos de seguridad de cliente elegidos de la primera implementación.  
   

@@ -84,7 +84,7 @@ Una vez aplicada la configuración de directiva de grupo, puede comprobar si la 
   
 #### <a name="to-verify-that-the-global-object-access-policy-has-been-applied"></a>Para comprobar la aplicación de la directiva de acceso a objetos global  
   
-1.  Inicie sesión en el equipo cliente, CLIENT1 como Contoso\MReid. Vaya al hipervínculo de la carpeta "file:///\\ @ no__t-1 @ no__t-2\ID_AD_FILE1 @ no__t-3\Finance" \\ \ File1\finance Documents Documents y modifique el documento 2 de Word.  
+1.  Inicie sesión en el equipo cliente, CLIENT1 como Contoso\MReid. Vaya al hipervínculo de la carpeta "file:///\\\\\\\ ID_AD_FILE1\\\Finance" \\\ File1\finance Documents Documents y modifique el documento 2 de Word.  
   
 2.  Inicie sesión en el servidor de archivos, FILE1 como contoso\administrador. Abra el Visor de eventos, busque **Registros de Windows**, seleccione **Seguridad** y confirme que las actividades generaron los eventos de auditoría **4656** y **4663** (aunque no haya establecido SACL de auditoría específicos en los archivos o las carpetas que creó, modificó y eliminó).  
   
@@ -93,10 +93,10 @@ Una vez aplicada la configuración de directiva de grupo, puede comprobar si la 
   
 ## <a name="BKMK_Links"></a>Vea también  
   
--   [Escenario: Auditoría de acceso a archivos](Scenario--File-Access-Auditing.md)  
+-   [Escenario: auditoría de acceso a archivos](Scenario--File-Access-Auditing.md)  
   
 -   [Planear la auditoría de acceso a archivos](Plan-for-File-Access-Auditing.md)  
   
--   [Control de acceso dinámico: Información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [Access Control dinámico: información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

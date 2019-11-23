@@ -29,11 +29,11 @@ Los componentes siguientes son necesarios para configurar el acceso remoto en el
   
 -   Nueve equipos o máquinas virtuales que cumplan los requisitos mínimos de hardware para Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012; tres de estos equipos tienen dos adaptadores de red instalados.  
   
--   El disco o los archivos de producto para Windows 10 @ no__t-0 o Windows @ no__t-1 8.  
+-   El disco o los archivos del producto para Windows 10&reg; o Windows&reg; 8.  
   
 -   El disco o los archivos del producto para Windows 7 Ultimate.  
   
--   Tres equipos o máquinas virtuales que cumplan los requisitos mínimos de hardware para Windows 10 @ no__t-0, Windows 8 o Windows 7; uno de estos equipos tiene instalados dos adaptadores de red.  
+-   Tres equipos o máquinas virtuales que cumplan los requisitos mínimos de hardware para Windows 10&reg;, Windows 8 o Windows 7; uno de estos equipos tiene instalados dos adaptadores de red.  
   
 
 

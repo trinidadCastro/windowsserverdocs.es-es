@@ -16,7 +16,7 @@ ms.locfileid: "71361299"
 ---
 # <a name="deploying-a-two-node-clustered-file-server"></a>Implementación de un servidor de archivos en clúster de dos nodos
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 Un clúster de conmutación por error es un grupo de equipos independientes que trabajan juntos para aumentar la disponibilidad de las aplicaciones y los servicios. Los servidores agrupados (denominados nodos) están conectados mediante cables físicos y mediante software. Si se produce un error en uno de los nodos del clúster, otro comienza a dar servicio (proceso que se denomina conmutación por error). Los usuarios experimentarán un número de interrupciones mínimo en el servicio.
 
@@ -42,15 +42,15 @@ El escenario siguiente describe cómo se puede configurar un clúster de conmuta
 
 En la siguiente lista se describe la funcionalidad de configuración de carpetas compartidas que se integra en los clústeres de conmutación por error:
 
-- La visualización solo está orientada a carpetas compartidas en clúster (no se mezcla con carpetas compartidas no en clúster): Cuando un usuario ve carpetas compartidas mediante la especificación de la ruta de acceso de un servidor de archivos en clúster, la presentación incluirá solo las carpetas compartidas que forman parte del rol de servidor de archivos específico. Excluirá las carpetas compartidas no en clúster y los recursos compartidos que formen parte de roles de servidor de archivos independientes que se encuentren en un nodo del clúster.
+- La visualización solo está en el ámbito de las carpetas compartidas en clúster (no se mezcla con carpetas compartidas no en clúster): cuando un usuario ve carpetas compartidas mediante la especificación de la ruta de acceso de un servidor de archivos en clúster, la presentación incluirá solo las carpetas compartidas que forman parte del archivo específico. rol de servidor. Excluirá las carpetas compartidas no en clúster y los recursos compartidos que formen parte de roles de servidor de archivos independientes que se encuentren en un nodo del clúster.
 
-- Enumeración basada en el acceso: puede utilizar la enumeración basada en el acceso para ocultar una carpeta determinada de la vista de los usuarios. En lugar de permitir a los usuarios ver la carpeta pero no tener acceso a nada de ella, puede elegir impedir que vean la carpeta en su totalidad. Puede configurar la enumeración basada en el acceso para una carpeta compartida en clúster de la misma manera que para una carpeta compartida no en clúster.
+- Enumeración basada en el acceso: puede usar la enumeración basada en el acceso para ocultar una carpeta especificada de la vista de los usuarios. En lugar de permitir a los usuarios ver la carpeta pero no tener acceso a nada de ella, puede elegir impedir que vean la carpeta en su totalidad. Puede configurar la enumeración basada en el acceso para una carpeta compartida en clúster de la misma manera que para una carpeta compartida no en clúster.
 
-- Acceso sin conexión: puede configurar el acceso sin conexión (almacenamiento en caché) para una carpeta compartida en clúster de la misma manera que para una carpeta compartida no clúster.
+- Acceso sin conexión: puede configurar el acceso sin conexión (almacenamiento en caché) para una carpeta compartida en clúster de la misma manera que para una carpeta compartida no agrupada.
 
-- Los discos en clúster siempre se reconocen como parte del clúster: Tanto si usa la interfaz de clúster de conmutación por error, el explorador de Windows o el complemento de administración de almacenamiento y recursos compartidos, Windows reconoce si un disco se ha designado como en el almacenamiento de clúster. Si este disco ya se ha configurado en la administración de clúster de conmutación por error como parte de un servidor de archivos en clúster, puede usar cualquiera de las interfaces mencionadas anteriormente para crear un recurso compartido en el disco. Si ese tipo de disco no se ha configurado como parte de un servidor de archivos en clúster, no puede crear por error un recurso compartido en él. En su lugar, un error indica que el disco se debe configurar primero como parte de un servidor de archivos en clúster antes de que se pueda compartir.
+- Los discos en clúster siempre se reconocen como parte del clúster: Si usa la interfaz de clúster de conmutación por error, el explorador de Windows o el complemento Administración de almacenamiento y recursos compartidos, Windows reconoce si un disco se ha designado como en el almacenamiento de clúster. Si este disco ya se ha configurado en la administración de clúster de conmutación por error como parte de un servidor de archivos en clúster, puede usar cualquiera de las interfaces mencionadas anteriormente para crear un recurso compartido en el disco. Si ese tipo de disco no se ha configurado como parte de un servidor de archivos en clúster, no puede crear por error un recurso compartido en él. En su lugar, un error indica que el disco se debe configurar primero como parte de un servidor de archivos en clúster antes de que se pueda compartir.
 
-- Integración de servicios para Network File System: El rol servidor de archivos en Windows Server incluye el servicio de rol opcional denominado servicios para Network File System (NFS). Instalando el servicio de rol y configurando carpetas compartidas con Servicios para NFS, puede crear un servidor de archivos en clúster que admita clientes basados en UNIX.
+- Integración de servicios para Network File System: el rol servidor de archivos en Windows Server incluye el servicio de rol opcional denominado servicios para Network File System (NFS). Instalando el servicio de rol y configurando carpetas compartidas con Servicios para NFS, puede crear un servidor de archivos en clúster que admita clientes basados en UNIX.
 
 ## <a name="requirements-for-a-two-node-failover-cluster"></a>Requisitos para un clúster de conmutación por error de dos nodos
 
@@ -62,7 +62,7 @@ Para un clúster de conmutación por error en Windows Server 2016 o Windows Serv
 
 Se necesitará lo siguiente para un clúster de conmutación por error de dos nodos.
 
-- **Servidores** Se recomienda usar equipos coincidentes con el mismo componente o con componentes similares.  Los servidores de un clúster de conmutación por error de dos nodos deben ejecutar la misma versión de Windows Server. También deben tener las mismas actualizaciones de software (revisiones).
+- **Servidores:** Se recomienda usar equipos coincidentes con el mismo componente o con componentes similares.  Los servidores de un clúster de conmutación por error de dos nodos deben ejecutar la misma versión de Windows Server. También deben tener las mismas actualizaciones de software (revisiones).
 
 - **Adaptadores de red y cable:** El hardware de red, como otros componentes de la solución de clúster de conmutación por error, debe ser compatible con Windows Server 2016 o Windows Server 2019. Si usa iSCSI, los adaptadores de red deben estar dedicados a la comunicación de red o iSCSI, no a ambos. En la infraestructura de red que conecta los nodos de clúster, evite tener puntos de concentración de errores. Hay varias maneras de lograr esto. Puede conectar los nodos del clúster mediante varias redes distintas. Alternativamente, puede conectar los nodos del clúster con una red construida con adaptadores de red en equipo, conmutadores redundantes, enrutadores redundantes u otro hardware similar que elimine los puntos de concentración de errores.
 
@@ -70,10 +70,10 @@ Se necesitará lo siguiente para un clúster de conmutación por error de dos no
    > Si los nodos del clúster están conectados a una red única, la red pasará el requisito de redundancia en el Asistente para validar una configuración.  Sin embargo, el informe incluirá una advertencia de que la red no debe tener un único punto de error.
 
 - **Controladores de dispositivo o adaptadores adecuados para el almacenamiento:**
-    - **SCSI conectado en serie o Canal de fibra:** Si está utilizando SCSI conectado en serie o Fibre Channel, todos los componentes de la pila de almacenamiento deberían ser idénticos en todos los servidores en clúster. Es necesario que el software de e/s de múltiples rutas (MPIO) y los componentes de software del módulo específico del dispositivo (DSM) sean idénticos.  Se recomienda que los controladores de dispositivos de almacenamiento, es decir, el adaptador de bus host (HBA), los controladores HBA y el firmware de HBA que están conectados al almacenamiento de clúster sean idénticos. Si utiliza unos HBA distintos, debería comprobar con el proveedor de almacenamiento que está siguiendo sus configuraciones compatibles o recomendadas.
-    - **iSCSI** Si usa iSCSI, cada servidor en clúster debe tener uno o varios adaptadores de red o adaptadores de bus host dedicados al almacenamiento ISCSI. La red que utiliza para iSCSI no se puede utilizar para la comunicación de red. En todos los servidores en clúster, los adaptadores de red que usa para conectar con el destino de almacenamiento de iSCSI deben ser idénticos y se recomienda utilizar Gigabit Ethernet o superior.  
+    - **SCSI conectado en serie o canal de fibra:** Si usa SCSI conectado en serie o Canal de fibra, en todos los servidores en clúster, todos los componentes de la pila de almacenamiento deben ser idénticos. Es necesario que el software de e/s de múltiples rutas (MPIO) y los componentes de software del módulo específico del dispositivo (DSM) sean idénticos.  Se recomienda que los controladores de dispositivos de almacenamiento, es decir, el adaptador de bus host (HBA), los controladores HBA y el firmware de HBA que están conectados al almacenamiento de clúster sean idénticos. Si utiliza unos HBA distintos, debería comprobar con el proveedor de almacenamiento que está siguiendo sus configuraciones compatibles o recomendadas.
+    - **iSCSI:** Si usa iSCSI, cada servidor en clúster debe tener uno o varios adaptadores de red o adaptadores de bus host dedicados al almacenamiento ISCSI. La red que utiliza para iSCSI no se puede utilizar para la comunicación de red. En todos los servidores en clúster, los adaptadores de red que usa para conectar con el destino de almacenamiento de iSCSI deben ser idénticos y se recomienda utilizar Gigabit Ethernet o superior.  
 
-- **Discos** Debe usar el almacenamiento compartido que está certificado para Windows Server 2016 o Windows Server 2019.
+- **Almacenamiento:** Debe usar el almacenamiento compartido que está certificado para Windows Server 2016 o Windows Server 2019.
   
     En el caso de un clúster de conmutación por error de dos nodos, el almacenamiento debe contener al menos dos volúmenes independientes (LUN) si usa un disco testigo para el cuórum. El disco testigo es un disco del almacenamiento de clúster designado para mantener una copia de la base de datos de configuración del clúster. En este ejemplo de clúster de dos nodos, la configuración de quórum será mayoría de disco y nodo. La mayoría de disco y nodo significa que los nodos y el disco testigo contienen cada uno copias de la configuración del clúster, y el clúster tiene quórum siempre y cuando esté disponible una mayoría (dos de tres) de estas copias. El otro volumen (LUN) contendrá los archivos que se comparten con los usuarios.
 
@@ -91,45 +91,45 @@ Al implementar una red de área de almacenamiento (SAN) con un clúster de conmu
 
 - **Confirme la certificación del almacenamiento:** Con el sitio del [Catálogo de Windows Server](https://www.windowsservercatalog.com/default.aspx) , confirme que el almacenamiento del proveedor, incluidos los controladores, el firmware y el software, está certificado para windows Server 2016 o windows Server 2019.
 
-- **Aísle los dispositivos de almacenamiento, un clúster por dispositivo:** los servidores de clústeres diferentes no deben poder tener acceso a los mismos dispositivos de almacenamiento. En la mayoría de los casos, un LUN que se usa para un conjunto de servidores de clúster se debe aislar de todos los demás servidores a través de máscaras o zonas de LUN.
+- **Aísle los dispositivos de almacenamiento, un clúster por dispositivo:** Los servidores de clústeres diferentes no deben poder tener acceso a los mismos dispositivos de almacenamiento. En la mayoría de los casos, un LUN que se usa para un conjunto de servidores de clúster se debe aislar de todos los demás servidores a través de máscaras o zonas de LUN.
 
-- **Considere la posibilidad de usar software de e/s de múltiples rutas:** en un tejido de almacenamiento de alta disponibilidad, puede implementar los clústeres de conmutación por error con varios adaptadores de bus host utilizando software de E/S de múltiples rutas. Esto proporciona el mayor nivel de redundancia y disponibilidad. La solución de múltiples rutas debe estar basada en e/s de múltiples rutas (MPIO) de Microsoft. El fabricante del hardware de almacenamiento puede proporcionar un módulo específico del dispositivo (DSM) MPIO para el hardware, aunque Windows Server 2016 y Windows Server 2019 incluyen uno o más DSM como parte del sistema operativo.
+- **Considere la posibilidad de usar software de e/s de múltiples rutas:** En un tejido de almacenamiento de alta disponibilidad, puede implementar clústeres de conmutación por error con varios adaptadores de bus host mediante el software de e/s de múltiples rutas. Esto proporciona el mayor nivel de redundancia y disponibilidad. La solución de múltiples rutas debe estar basada en e/s de múltiples rutas (MPIO) de Microsoft. El fabricante del hardware de almacenamiento puede proporcionar un módulo específico del dispositivo (DSM) MPIO para el hardware, aunque Windows Server 2016 y Windows Server 2019 incluyen uno o más DSM como parte del sistema operativo.
 
 ## <a name="network-infrastructure-and-domain-account-requirements"></a>Requisitos de infraestructura de red y cuentas de dominio
 
 Para un clúster de conmutación por error de dos nodos, necesitará la siguiente infraestructura de red y una cuenta administrativa con los siguientes permisos de dominio:
 
-- **Configuración de red y direcciones IP:** cuando use adaptadores de red idénticos para una red, utilice también una configuración de comunicaciones idéntica en esos adaptadores (por ejemplo, Velocidad, Modo dúplex, Control de flujo y Tipo de medios). Además, compare la configuración entre el adaptador de red y el conmutador al que se conecta, y asegúrese de que ninguna configuración está en conflicto.
+- **Configuración de red y direcciones IP:** Cuando se usan adaptadores de red idénticos para una red, también se usa una configuración de comunicaciones idéntica en esos adaptadores (por ejemplo, velocidad, modo dúplex, control de flujo y tipo de medio). Además, compare la configuración entre el adaptador de red y el conmutador al que se conecta, y asegúrese de que ninguna configuración está en conflicto.
 
     Si tiene redes privadas que no se enrutan al resto de su infraestructura de red, asegúrese de que cada una de estas redes privadas usa una subred única. Esto es necesario aunque asigne una dirección IP única a cada adaptador de red. Por ejemplo, si tiene un nodo de clúster en una oficina central que usa una red física, y otro nodo en una sucursal que utiliza una red física independiente, no especifique 10.0.0.0/24 para ambas redes, incluso aunque asigne una dirección IP única a cada adaptador.
 
     Para obtener más información acerca de los adaptadores de red, vea requisitos de hardware para un clúster de conmutación por error de dos nodos, anteriormente en esta guía.
 
-- **DN** los servidores del clúster deben usar el Sistema de nombres de dominio (DNS) para la resolución de nombres. Se puede utilizar el protocolo de actualización dinámica DNS.
+- **DNS:** Los servidores del clúster deben usar el sistema de nombres de dominio (DNS) para la resolución de nombres. Se puede utilizar el protocolo de actualización dinámica DNS.
 
-- **Rol de dominio:** todos los servidores del clúster deben estar en el mismo dominio de Active Directory. Como procedimiento recomendado, todos los servidores en clúster deben tener el mismo rol de dominio (a sea servidor miembro o controlador de dominio). El rol recomendado es el de servidor miembro.
+- **Rol de dominio:** Todos los servidores del clúster deben estar en el mismo dominio Active Directory. Como procedimiento recomendado, todos los servidores en clúster deben tener el mismo rol de dominio (a sea servidor miembro o controlador de dominio). El rol recomendado es el de servidor miembro.
 
-- **Controlador de dominio:** se recomienda que sus servidores en clúster sean servidores miembro. Si lo son, necesita un servidor adicional que actúe como controlador de dominio en el dominio que contiene el clúster de conmutación por error.
+- **Controlador de dominio:** Se recomienda que los servidores en clúster sean servidores miembro. Si lo son, necesita un servidor adicional que actúe como controlador de dominio en el dominio que contiene el clúster de conmutación por error.
 
-- **Clientes** Tal y como se necesita para las pruebas, puede conectar uno o más clientes en red al clúster de conmutación por error que cree y observar el efecto en un cliente al mover o conmutar por error el servidor de archivos en clúster de un nodo de clúster al otro.
+- **Clientes:** Según sea necesario para las pruebas, puede conectar uno o más clientes en red al clúster de conmutación por error que cree y observar el efecto en un cliente cuando se mueve o conmuta por error el servidor de archivos en clúster de un nodo de clúster al otro.
 
-- **Cuenta para administrar el clúster:** al crear un clúster por primera vez o agregarle servidores, debe haber iniciado sesión en el dominio con una cuenta que tenga derechos y permisos de administrador en todos los servidores de ese clúster. La cuenta no tiene por qué ser una cuenta de administrador de dominio; puede ser una cuenta de usuarios de dominio que pertenezca al grupo Administradores de cada servidor en clúster. Además, si la cuenta no es una cuenta de Admins. del dominio, se debe conceder a la cuenta (o al grupo del que la cuenta es miembro) los permisos **crear objetos de equipo** y **leer todas las propiedades** en la unidad organizativa (OU) del dominio que será. residir en.
+- **Cuenta para administrar el clúster:** Al crear un clúster por primera vez o agregarle servidores, debe haber iniciado sesión en el dominio con una cuenta que tenga derechos de administrador y permisos en todos los servidores de ese clúster. La cuenta no tiene por qué ser una cuenta de administrador de dominio; puede ser una cuenta de usuarios de dominio que pertenezca al grupo Administradores de cada servidor en clúster. Además, si la cuenta no es una cuenta de Admins. del dominio, la cuenta (o el grupo del que la cuenta es miembro) debe tener asignados los permisos **crear objetos de equipo** y **leer todas las propiedades** en la unidad organizativa (OU) del dominio que se encuentra en.
 
 ## <a name="steps-for-installing-a-two-node-file-server-cluster"></a>Pasos para instalar un clúster de servidores de archivos de dos nodos
 
 Debe completar los pasos siguientes para instalar un clúster de conmutación por error de servidor de archivos de dos nodos.
 
-Paso 1: Conectar los servidores del clúster a las redes y almacenamiento
+Paso 1: conexión de los servidores de clúster a las redes y almacenamiento
 
-Paso 2: Instalar la característica de clúster de conmutación por error
+Paso 2: instalar la característica de clúster de conmutación por error
 
-Paso 3: Validar la configuración de clústeres
+Paso 3: validar la configuración del clúster
 
-Paso 4: Crear el clúster
+Paso 4: crear el clúster
 
 Si ya ha instalado los nodos de clúster y desea configurar un clúster de conmutación por error de servidor de archivos, consulte los pasos para configurar un clúster de servidores de archivos de dos nodos, más adelante en esta guía.
 
-### <a name="step-1-connect-the-cluster-servers-to-the-networks-and-storage"></a>Paso 1: Conectar los servidores del clúster a las redes y almacenamiento
+### <a name="step-1-connect-the-cluster-servers-to-the-networks-and-storage"></a>Paso 1: conexión de los servidores de clúster a las redes y almacenamiento
 
 Para una red de clúster de conmutación por error, evite tener puntos de concentración de errores. Hay varias maneras de lograr esto. Puede conectar los nodos del clúster mediante varias redes distintas. O bien, puede conectar sus nodos de clúster con una red creada con adaptadores de red unidos, conmutadores redundantes, enrutadores redundantes o hardware similar que quite los puntos de concentración de errores (si utiliza una red para iSCSI, debe crear esta red además de las demás redes).
 
@@ -159,7 +159,7 @@ En el caso de un clúster de servidores de archivos de dos nodos, al conectar lo
 
 9. Compruebe el formato de cualquier volumen o LUN expuesto. Se recomienda usar NTFS para el formato (para el disco testigo, debe utilizar NTFS).
 
-### <a name="step-2-install-the-file-server-role-and-failover-cluster-feature"></a>Paso 2: Instalar el rol de servidor de archivos y la característica de clúster de conmutación por error
+### <a name="step-2-install-the-file-server-role-and-failover-cluster-feature"></a>Paso 2: instalar el rol de servidor de archivos y la característica de clúster de conmutación por error
 
 En este paso, se instalará el rol de servidor de archivos y la característica de clúster de conmutación por error. Ambos servidores deben ejecutar Windows Server 2016 o Windows Server 2019.
 
@@ -189,7 +189,7 @@ En este paso, se instalará el rol de servidor de archivos y la característica 
 
 9. Repita los pasos en el segundo equipo.
 
-#### <a name="using-powershell"></a>Con PowerShell
+#### <a name="using-powershell"></a>Uso de PowerShell
 
 1. Abra una sesión de PowerShell de administración haciendo clic con el botón derecho en el botón Inicio y seleccionando **Windows PowerShell (admin)** .
 2. Para instalar el rol de servidor de archivos, ejecute el comando:
@@ -219,7 +219,7 @@ En este paso, se instalará el rol de servidor de archivos y la característica 
 
 6. Repita los pasos en el segundo servidor.
 
-### <a name="step-3-validate-the-cluster-configuration"></a>Paso 3: Validar la configuración de clústeres
+### <a name="step-3-validate-the-cluster-configuration"></a>Paso 3: validar la configuración del clúster
 
 Antes de crear un clúster, se recomienda encarecidamente que valide su configuración. La validación le ayuda a confirmar que la configuración de sus servidores, red y almacenamiento cumple un conjunto de requisitos concretos para los clústeres de conmutación por error.
 
@@ -243,7 +243,7 @@ Antes de crear un clúster, se recomienda encarecidamente que valide su configur
 
 9. Para ver los temas de ayuda sobre la validación de clústeres después de cerrar el asistente, en administración de clúster de conmutación por error, haga clic en ayuda, en temas de ayuda, en la pestaña contenido, expanda el contenido de la ayuda del clúster de conmutación por error y haga clic en validar una configuración de clúster de conmutación por error. .
 
-#### <a name="using-powershell"></a>Con PowerShell
+#### <a name="using-powershell"></a>Uso de PowerShell
 
 1. Abra una sesión de PowerShell de administración haciendo clic con el botón derecho en el botón Inicio y seleccionando **Windows PowerShell (admin)** .
 
@@ -252,11 +252,11 @@ Antes de crear un clúster, se recomienda encarecidamente que valide su configur
     ```PowerShell
     Test-Cluster -Node "NODE1","NODE2"
     ```
-4. Para ver los resultados de las pruebas después de cerrar el asistente, vea el archivo especificado (en SystemRoot\Cluster\Reports @ no__t-0 y, a continuación, realice los cambios necesarios en la configuración y vuelva a ejecutar las pruebas.
+4. Para ver los resultados de las pruebas después de cerrar el asistente, vea el archivo especificado (en SystemRoot\Cluster\Reports\), realice los cambios necesarios en la configuración y vuelva a ejecutar las pruebas.
 
 Para obtener más información, consulte [validar una configuración de clúster de conmutación por error](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v=ws.11)).
 
-### <a name="step-4-create-the-cluster"></a>Paso 4: Crear el clúster
+### <a name="step-4-create-the-cluster"></a>Paso 4: crear el clúster
 
 Lo siguiente creará un clúster fuera de los equipos y la configuración que tiene.
 
@@ -281,7 +281,7 @@ Lo siguiente creará un clúster fuera de los equipos y la configuración que ti
 
 8. En la página **Resumen** , le proporcionará la configuración que ha creado.  Puede seleccionar ver informe para ver el informe de la creación.
 
-#### <a name="using-powershell"></a>Con PowerShell
+#### <a name="using-powershell"></a>Uso de PowerShell
 
 1. Abra una sesión de PowerShell de administración haciendo clic con el botón derecho en el botón Inicio y seleccionando **Windows PowerShell (admin)** .
 
@@ -317,7 +317,7 @@ Para configurar un clúster de conmutación por error de servidor de archivos, s
 
    ![Tipo de servidor de archivos](media/Cluster-File-Server/Cluster-FS-File-Server-Type.png)
 
-8. En la ventana **punto de acceso cliente** , escriba el nombre del servidor de archivos que va a usar.  Tenga en cuenta que no es el nombre del clúster.  Esto es para la Conectividad del recurso compartido de archivos.  Por ejemplo, si deseo conectarse a \\SERVER, el nombre introducido sería servidor.
+8. En la ventana **punto de acceso cliente** , escriba el nombre del servidor de archivos que va a usar.  Tenga en cuenta que no es el nombre del clúster.  Esto es para la Conectividad del recurso compartido de archivos.  Por ejemplo, si deseo conectarme a \\SERVER, el nombre que se ha introducido sería SERVER.
 
    > [!NOTE]
    > Si utiliza direcciones IP estáticas, debe seleccionar la red que se va a usar y especificar la dirección IP que utilizará para el nombre del clúster.  Si usa DHCP para las direcciones IP, la dirección IP se configurará automáticamente.

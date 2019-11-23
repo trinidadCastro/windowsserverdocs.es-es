@@ -18,12 +18,12 @@ ms.locfileid: "71407990"
 ---
 # <a name="planning-your-deployment"></a>Planear la implementación
 
-Cuando planee la colaboración entre @ no__t-0organizational \(federation @ no__t-2based @ no__t-3 con Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-5, determine primero si la organización va a hospedar un recurso Web al que otro organizaciones a través de Internet o si va a proporcionar acceso al recurso Web para los empleados de la organización. Esta determinación afecta al modo en que implementa AD FS, y es fundamental en el planeamiento de la infraestructura de AD FS.  
+Cuando planee la\-de la Federación de \(organizacional\-basada\) colaboración con Servicios de federación de Active Directory (AD FS) \(AD FS\), determine primero si la organización hospedará un recurso Web al que otras organizaciones accederán a través de Internet o si va a proporcionar acceso al recurso Web para los empleados de la organización. Esta determinación afecta al modo en que implementa AD FS, y es fundamental en el planeamiento de la infraestructura de AD FS.  
   
 > [!NOTE]  
 > Asegúrese de que todos los participantes comprenden claramente el papel que desempeña de organización en el acuerdo de federación.  
   
-En el [diseño de SSO Web federado](Federated-Web-SSO-Design.md), AD FS usa términos como el *asociado de cuenta* \(also conocido como proveedor de *identidades* en el complemento de administración de AD FS @ no__t-4in @ no__t-5 y el *asociado de recurso* \(also denominadousuario de confianza en el complemento de administración de AD FS @ no__t-9in @ no__t-10 para ayudar a diferenciar la organización que hospeda las cuentas @no__t-undécimo asociado de cuenta @ no__t-12 de la organización que hospeda el recurso Web @ no__t-13based resources @no__t-decimocuarty Partner @ no__t-15.  
+En el caso del [diseño de SSO Web federado](Federated-Web-SSO-Design.md), AD FS usa términos como el *asociado de cuenta* \(también conocido como *proveedor de identidades* en el complemento de administración de AD FS\-en\) y el *asociado de recurso* \(también conocido como *usuario de confianza* en el AD FS de complemento de administración de\-de la organización que hospeda los recursos basados en Web\) \(el asociado de recurso\).\)\-\(  
   
 En el [Web SSO Design](Web-SSO-Design.md), la organización actúa en los dos roles de asociado de cuenta y asociado de recurso porque ofrece a sus usuarios acceso a sus aplicaciones.  
   
@@ -41,7 +41,7 @@ En los temas siguientes se explican algunos de los conceptos de la organización
   
 -   [Implementación de AD FS en la organización del asociado de recurso](Deploying-AD-FS-in-the-Resource-Partner-Organization-2012.md)  
   
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 
 

@@ -37,8 +37,8 @@ Para planear la implementación de Web Application Proxy, puede consultar la inf
 - [Instalación y configuración del servidor proxy de aplicación Web](https://technet.microsoft.com/library/dn383662.aspx)  
   
 ## <a name="next-steps"></a>Pasos siguientes
- [Migrar servicios de rol de Servicios de federación de Active Directory (AD FS) a Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
- [Preparación de la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md)   
+ [Migrar servicios de rol de servicios de Federación de Active Directory (AD FS) a Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
+ [Preparando la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md)   
  [Migración del servidor de Federación de AD FS](migrate-ad-fs-fed-server-r2.md)    
  [Comprobar la migración de AD FS a Windows Server 2012 R2](verify-ad-fs-migration.md)
 

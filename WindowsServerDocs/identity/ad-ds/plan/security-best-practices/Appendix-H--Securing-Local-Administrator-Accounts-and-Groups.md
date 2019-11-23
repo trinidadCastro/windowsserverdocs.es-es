@@ -16,12 +16,12 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408633"
 ---
-# <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>Apéndice H: Protección de grupos y cuentas de administrador local
+# <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>Anexo H: protección de cuentas de administrador local y grupos
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
-## <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>Apéndice H: Protección de grupos y cuentas de administrador local  
+## <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>Anexo H: protección de cuentas de administrador local y grupos  
 En todas las versiones de Windows que se encuentran actualmente en soporte estándar, la cuenta de administrador local está deshabilitada de forma predeterminada, lo que hace que la cuenta sea inutilizable para Pass-The-hash y otros ataques de robo de credenciales. Sin embargo, en entornos que contienen sistemas operativos heredados o en los que se han habilitado cuentas de administrador local, estas cuentas se pueden usar como se ha descrito anteriormente para propagar el compromiso entre los servidores miembro y las estaciones de trabajo. Cada cuenta de administrador local y grupo debe protegerse tal y como se describe en las instrucciones paso a paso que se indican a continuación.  
 
 Para obtener información detallada acerca de las consideraciones sobre la protección de grupos de administradores integrados (BA), consulte [implementación de modelos administrativos con privilegios mínimos](../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md).  
@@ -30,7 +30,7 @@ Para obtener información detallada acerca de las consideraciones sobre la prote
 Para la cuenta de administrador local en cada dominio del bosque, debe configurar las siguientes opciones:  
 
 -   Configurar GPO para restringir el uso de la cuenta de administrador del dominio en sistemas Unidos a un dominio  
-    -   En uno o más GPO que cree y vincule a las unidades organizativas de estaciones de trabajo y servidores miembro de cada dominio, agregue la cuenta de administrador a los siguientes derechos de usuario en el **equipo \ configuración de Seguridad\directivas \ todos los derechos Asignaciones**:  
+    -   En uno o más GPO que cree y vincule a las unidades organizativas de estaciones de trabajo y servidores miembro de cada dominio, agregue la cuenta de administrador a los siguientes derechos de usuario en el **equipo \ configuración de Seguridad\directivas \ configuración de directivas**de usuario \ asignación de derechos:  
 
         -   Denegar el acceso desde la red a este equipo  
 
@@ -46,7 +46,7 @@ Para la cuenta de administrador local en cada dominio del bosque, debe configura
 
 1.  En **Administrador del servidor**, haga clic en **herramientas**y en **Administración de directiva de grupo**.  
 
-2.  En el árbol de consola, expanda <Forest> \ Domains @ no__t-1 @ no__t-2 y, a continuación, **Directiva de grupo objetos** (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer la Directiva de grupo).  
+2.  En el árbol de consola, expanda <Forest>\Domains\\<Domain>y, a continuación, **Directiva de grupo objetos** (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer la Directiva de grupo).  
 
 3.  En el árbol de consola, haga clic con el botón secundario en **Directiva de grupo objetos**y haga clic en **nuevo**.  
 
@@ -83,7 +83,7 @@ Para la cuenta de administrador local en cada dominio del bosque, debe configura
 
         ![protección de grupos y cuentas de administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_105.png)  
 
-    3.  Haga clic en **Aceptar**.  
+    3.  Haz clic en **Aceptar**.  
 
         > [!IMPORTANT]  
         > Al agregar la cuenta de administrador a esta configuración, debe especificar si va a configurar la cuenta de administrador local o la cuenta de administrador de dominio mediante el etiquetado de las cuentas. Por ejemplo, para agregar la cuenta de administrador del dominio TAILSPINTOYS a estos derechos de denegación, debe ir a la cuenta de administrador del dominio TAILSPINTOYS, que aparecería como TAILSPINTOYS\Administrator. Si escribe **Administrador** en esta configuración de derechos de usuario en el editor de objetos de directiva de grupo, restringe la cuenta de administrador local en cada equipo al que se aplica el GPO, como se describió anteriormente.  
@@ -96,7 +96,7 @@ Para la cuenta de administrador local en cada dominio del bosque, debe configura
 
         ![protección de grupos y cuentas de administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_106.png)  
 
-    3.  Haga clic en **Aceptar**.  
+    3.  Haz clic en **Aceptar**.  
 
         > [!IMPORTANT]  
         > Al agregar la cuenta de administrador a esta configuración, debe especificar si va a configurar la cuenta de administrador local o la cuenta de administrador de dominio mediante el etiquetado de las cuentas. Por ejemplo, para agregar la cuenta de administrador del dominio TAILSPINTOYS a estos derechos de denegación, debe ir a la cuenta de administrador del dominio TAILSPINTOYS, que aparecería como TAILSPINTOYS\Administrator. Si escribe **Administrador** en esta configuración de derechos de usuario en el editor de objetos de directiva de grupo, restringe la cuenta de administrador local en cada equipo al que se aplica el GPO, como se describió anteriormente.  
@@ -109,7 +109,7 @@ Para la cuenta de administrador local en cada dominio del bosque, debe configura
 
         ![protección de grupos y cuentas de administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_107.png)  
 
-    3.  Haga clic en **Aceptar**.  
+    3.  Haz clic en **Aceptar**.  
 
         > [!IMPORTANT]  
         > Al agregar la cuenta de administrador a esta configuración, debe especificar si va a configurar la cuenta de administrador local o la cuenta de administrador de dominio mediante el etiquetado de las cuentas. Por ejemplo, para agregar la cuenta de administrador del dominio TAILSPINTOYS a estos derechos de denegación, debe ir a la cuenta de administrador del dominio TAILSPINTOYS, que aparecería como TAILSPINTOYS\Administrator. Si escribe **Administrador** en esta configuración de derechos de usuario en el editor de objetos de directiva de grupo, restringe la cuenta de administrador local en cada equipo al que se aplica el GPO, como se describió anteriormente.  
@@ -118,7 +118,7 @@ Para la cuenta de administrador local en cada dominio del bosque, debe configura
 
 12. En **Administración de directiva de grupo**, VINCULE el GPO al servidor miembro y las unidades organizativas de la estación de trabajo haciendo lo siguiente:  
 
-    1.  Desplácese hasta el <Forest> \ Domains @ no__t-1 @ no__t-2 (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer el directiva de grupo).  
+    1.  Navegue hasta el <Forest>\Domains\\<Domain> (donde <Forest> es el nombre del bosque y <Domain> es el nombre del dominio en el que desea establecer la directiva de grupo).  
 
     2.  Haga clic con el botón secundario en la unidad organizativa a la que se aplicará el GPO y haga clic en **vincular un GPO existente**.  
 
@@ -148,7 +148,7 @@ Desde cualquier servidor miembro o estación de trabajo que no se vea afectado p
 
     ![protección de grupos y cuentas de administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_110.png)  
 
-5.  En la ventana del **símbolo del sistema** , escriba **net use \\ @ no__t-3 @ no__t-4\c $/User: <Server Name> \ Administrator**, donde <Server Name> es el nombre del servidor miembro o de la estación de trabajo al que está intentando obtener acceso a través de la red.  
+5.  En la ventana del **símbolo del sistema** , escriba **net use \\\\<Server Name>\c $/User:<Server Name>\administrador**, donde <Server Name> es el nombre del servidor miembro o de la estación de trabajo a la que está intentando obtener acceso a través de la red.  
 
     > [!NOTE]  
     > Las credenciales de administrador local deben estar en el mismo sistema al que está intentando obtener acceso a través de la red.  
@@ -170,7 +170,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 4.  Haga clic en **archivo**y en **Guardar como**.  
 
-5.  En el cuadro **nombre de archivo** , escriba **@no__t -2. bat** (donde <Filename> es el nombre del nuevo archivo por lotes).  
+5.  En el cuadro **nombre de archivo** , escriba **<Filename>. bat** (donde <Filename> es el nombre del nuevo archivo por lotes).  
 
 ###### <a name="schedule-a-task"></a>Programar una tarea  
 
@@ -191,7 +191,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 7.  En el campo **programa/script** , haga clic en **examinar**, busque y seleccione el archivo por lotes creado en la sección **crear un archivo por lotes** y haga clic en **abrir**.  
 
-8.  Haga clic en **Aceptar**.  
+8.  Haz clic en **Aceptar**.  
 
 9. Haga clic en la pestaña **General**.  
 
@@ -201,7 +201,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 12. Seleccione **ejecutar si el usuario ha iniciado sesión o no** y no **almacena la contraseña**. La tarea solo tendrá acceso a los recursos del equipo local.  
 
-13. Haga clic en **Aceptar**.  
+13. Haz clic en **Aceptar**.  
 
 14. Debe aparecer un cuadro de diálogo que solicite las credenciales de la cuenta de usuario para ejecutar la tarea.  
 

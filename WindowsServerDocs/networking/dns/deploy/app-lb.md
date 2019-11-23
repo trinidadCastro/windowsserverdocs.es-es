@@ -54,7 +54,7 @@ Por lo tanto, para cada cuatro consultas que recibe el servidor DNS, responde co
 
 Un posible problema con el equilibrio de carga con la Directiva de DNS es el almacenamiento en caché de los registros DNS por parte del cliente DNS y el solucionador/LDNS, que pueden interferir con el equilibrio de carga porque el cliente o el solucionador no envían una consulta al servidor DNS.
 
-Puede mitigar el efecto de este comportamiento mediante el uso de un valor @ no__t-0to @ no__t-1Live \(TTL @ no__t-3 para los registros DNS cuya carga se debe equilibrar.
+Puede mitigar el efecto de este comportamiento mediante el uso de un\-de tiempo bajo para\-Live \(TTL\) valor para los registros DNS cuya carga se debe equilibrar.
 
 ### <a name="how-to-configure-application-load-balancing"></a>Cómo configurar el equilibrio de carga de la aplicación
 
@@ -85,9 +85,9 @@ Ahora debe agregar los registros que representan el host del servidor Web en los
 
 En **SeattleZoneScope**, puede Agregar el registro www.contosogiftservices.com con la dirección IP 192.0.0.1, que se encuentra en el centro de recursos de Seattle.
 
-En **ChicagoZoneScope**, puede Agregar el mismo registro @no__t -1www. contosogiftservices. com @ no__t-2 con la dirección IP 182.0.0.1 en el centro de recursos de Chicago.
+En **ChicagoZoneScope**, puede Agregar el mismo registro \(www.contosogiftservices.com\) con la dirección IP 182.0.0.1 en el centro de recursos de Chicago.
 
-Del mismo modo en **DallasZoneScope**, puede Agregar un registro @no__t -1www. contosogiftservices. com @ no__t-2 con la dirección IP 162.0.0.1 en el centro de los centros de ti.
+Del mismo modo en **DallasZoneScope**, puede Agregar un registro \(www.contosogiftservices.com\) con la dirección IP 162.0.0.1 en el centro de los centros de ti.
 
 Puede usar los siguientes comandos de Windows PowerShell para agregar registros a los ámbitos de zona.
     
@@ -107,7 +107,7 @@ Después de haber creado las particiones (ámbitos de zona) y de haber agregado 
 Puede usar los siguientes comandos de Windows PowerShell para crear una directiva DNS que equilibre el tráfico de la aplicación en estos tres centros de recursos.
 
 >[!NOTE]
->En el siguiente comando de ejemplo, la expresión-ZoneScope "SeattleZoneScope, 2; ChicagoZoneScope, 1; DallasZoneScope, 1 "configura el servidor DNS con una matriz que incluye la combinación de parámetros \<ZoneScope @ no__t-1, \<weight @ no__t-3.
+>En el siguiente comando de ejemplo, la expresión-ZoneScope "SeattleZoneScope, 2; ChicagoZoneScope, 1; DallasZoneScope, 1 "configura el servidor DNS con una matriz que incluye la combinación de parámetros \<ZoneScope\>,\<Weight\>.
     
     Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1;DallasZoneScope,1" -ZoneName "contosogiftservices.com"
     

@@ -22,7 +22,7 @@ ms.locfileid: "71402982"
 El Servidor de destino iSCSI en Windows Server puede arrancar cientos de equipos desde una sola imagen de sistema operativo que se almacena en una ubicación centralizada. Esto mejora la eficacia, la facilidad de uso, la disponibilidad y la seguridad.  
   
 ## <a name="BKMK_OVER"></a>Descripción de la característica  
-Mediante el uso de discos duros virtuales de diferenciación \(VHDs @ no__t-1, puede usar una sola imagen de sistema operativo \(The "imagen maestra" \) para arrancar hasta 256 equipos. Por ejemplo, supongamos que ha implementado Windows Server con una imagen de sistema operativo de aproximadamente 20 GB y usó dos unidades de disco reflejadas para que actúen como el volumen de arranque. Hubiera necesitado aproximadamente 10 TB de almacenamiento solo para la imagen del sistema operativo para arrancar 256 equipos. Con el servidor de destino iSCSI, usará 40 GB para la imagen base de sistema operativo y 2 GB para los discos duros virtuales de diferenciación por cada instancia de servidor, lo que hace un total de 552 GB para las imágenes de sistema operativo. Esto permite ahorrar más del 90 % del almacenamiento solamente para las imágenes de sistema operativo.  
+Mediante el uso de discos duros virtuales de diferenciación \(los VHD\), puede usar una sola imagen de sistema operativo \(la\) "imagen maestra" para arrancar hasta 256 equipos. Por ejemplo, supongamos que ha implementado Windows Server con una imagen de sistema operativo de aproximadamente 20 GB y usó dos unidades de disco reflejadas para que actúen como el volumen de arranque. Hubiera necesitado aproximadamente 10 TB de almacenamiento solo para la imagen del sistema operativo para arrancar 256 equipos. Con el servidor de destino iSCSI, usará 40 GB para la imagen base de sistema operativo y 2 GB para los discos duros virtuales de diferenciación por cada instancia de servidor, lo que hace un total de 552 GB para las imágenes de sistema operativo. Esto permite ahorrar más del 90 % del almacenamiento solamente para las imágenes de sistema operativo.  
   
 ## <a name="BKMK_APP"></a>Aplicaciones prácticas  
 El uso de una imagen de sistema operativo controlada ofrece las siguientes ventajas:  
@@ -37,7 +37,7 @@ El uso de una imagen de sistema operativo controlada ofrece las siguientes venta
 > Varios proveedores ofrecen una solución de arranque de red de área de almacenamiento \(SAN\), que el Servidor de destino iSCSI puede usar en Windows Server con hardware económico.  
   
 ## <a name="BKMK_HARD"></a>Requisitos de hardware  
-El servidor de destino iSCSI no requiere hardware especial para la verificación funcional. En los centros de datos con grandes implementaciones de @ no__t-0scale, el diseño debe validarse en relación con el hardware específico. Como referencia, las pruebas internas de Microsoft indicaron que una implementación de equipo 256 requería necesitaba 15.000 @ no__t-0RPM Disks en una configuración de RAID 10 para almacenamiento. El ancho de banda óptimo es de 10 GB. El cálculo general es de servidores de arranque de 60 iSCSI por adaptador de red de 1 GB.  
+El servidor de destino iSCSI no requiere hardware especial para la verificación funcional. En los centros de datos con grandes implementaciones de escalado de\-, el diseño debe validarse en relación con el hardware específico. Como referencia, las pruebas internas de Microsoft indicaron que una implementación de equipo 256 requería necesitaba 15.000\-RPM en una configuración de RAID 10 para almacenamiento. El ancho de banda óptimo es de 10 GB. El cálculo general es de servidores de arranque de 60 iSCSI por adaptador de red de 1 GB.  
   
 No se necesita un adaptador de red para este escenario y puede usarse un cargador de arranque de software \(como el firmware de arranque de código abierto de iPXE\).  
   
@@ -47,7 +47,7 @@ El servidor de destino iSCSI se puede instalar como parte del servicio del rol S
 > [!NOTE]
 > No se admite el arranque de Nano Server desde iSCSI (ya sea desde el Servidor de destino iSCSI de Windows o una implementación de destino de terceros).
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 * [Servidor de destino iSCSI](https://technet.microsoft.com/library/hh848272(v=ws.11).aspx)
 * [cmdlets del iniciador iSCSI](https://technet.microsoft.com/library/hh826099(v=wps.640).aspx)
 * [cmdlets del servidor de destino iSCSI](https://technet.microsoft.com/library/jj612803(v=wps.630).aspx)

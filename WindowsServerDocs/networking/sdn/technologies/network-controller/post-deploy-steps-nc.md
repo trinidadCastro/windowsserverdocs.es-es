@@ -19,11 +19,11 @@ ms.locfileid: "71355619"
 
 Al instalar el controlador de red, puede elegir implementaciones de Kerberos o no Kerberos.
 
-En el caso de las implementaciones que no sean @ no__t-0Kerberos, debe configurar los certificados.
+En el caso de las implementaciones de Kerberos que no son\-, debe configurar los certificados.
 
 ## <a name="configure-certificates-for-non-kerberos-deployments"></a>Configuración de certificados para implementaciones que no son de Kerberos
 
-Si los equipos o máquinas virtuales \(VMs @ no__t-1 para la controladora de red y el cliente de administración no son dominio @ no__t-2joined, debe configurar el certificado @ no__t-3based autenticación completando los pasos siguientes.
+Si los equipos o máquinas virtuales \(máquinas virtuales\) para la controladora de red y el cliente de administración no están Unidos al dominio\-, debe configurar la autenticación basada en\-de certificado completando los pasos siguientes.
 
 - Cree un certificado en la controladora de red para la autenticación del equipo. El nombre del firmante del certificado debe ser el mismo que el nombre DNS del equipo o la máquina virtual de la controladora de red.
 
@@ -31,7 +31,7 @@ Si los equipos o máquinas virtuales \(VMs @ no__t-1 para la controladora de red
   
 - Inscriba un certificado en el equipo o la máquina virtual de la controladora de red. El certificado debe cumplir los siguientes requisitos.
   
-    -  Tanto el propósito de autenticación de servidor como el propósito de autenticación del cliente deben configurarse en uso mejorado de clave \(EKU @ no__t-1 o en extensiones de directivas de aplicación. El identificador de objeto para la autenticación del servidor es 1.3.6.1.5.5.7.3.1. El identificador de objeto para la autenticación del cliente es 1.3.6.1.5.5.7.3.2.
+    -  Tanto el propósito de autenticación de servidor como el propósito de autenticación del cliente deben configurarse en uso mejorado de clave \(EKU\) o extensiones de directivas de aplicación. El identificador de objeto para la autenticación del servidor es 1.3.6.1.5.5.7.3.1. El identificador de objeto para la autenticación del cliente es 1.3.6.1.5.5.7.3.2.
   
     - El nombre del firmante del certificado debe resolverse en:
   

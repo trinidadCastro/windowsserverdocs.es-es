@@ -27,10 +27,10 @@ Windows PowerShell para Active Directory ofrece la capacidad de administrar la r
 > 
 > -    Controlador de dominio de Windows Server 2012
 > -    Windows Server 2012 con la Herramientas de administración remota del servidor para AD DS y AD LDS instaladas.
-> -   Windows @ no__t-0 8 con la Herramientas de administración remota del servidor para AD DS y AD LDS instaladas.
+> -   Windows&reg; 8 con la Herramientas de administración remota del servidor para AD DS y AD LDS instaladas.
 
 ## <a name="installing-the-active-directory-module-for-windows-powershell"></a>Instalar el módulo de Active Directory para Windows PowerShell
-El módulo de Active Directory para Windows PowerShell se instala de forma predeterminada cuando se instala el rol de servidor de AD DS en un servidor que ejecuta Windows Server 2012. No se necesita ningún paso adicional además de agregar el rol de servidor. También puede instalar el módulo de Active Directory en un servidor que ejecute Windows Server 2012 instalando el Herramientas de administración remota del servidor y puede instalar el módulo de Active Directory en un equipo que ejecute Windows 8 descargando e instalando el [ Herramientas administrativas del servidor remoto (RSAT)](https://www.microsoft.com/download/details.aspx?id=28972). Consulte [Instrucciones](https://www.microsoft.com/download/details.aspx?id=28972)para obtener pasos de instalación.
+El módulo de Active Directory para Windows PowerShell se instala de forma predeterminada cuando se instala el rol de servidor de AD DS en un servidor que ejecuta Windows Server 2012. No se necesita ningún paso adicional además de agregar el rol de servidor. También puede instalar el módulo de Active Directory en un servidor que ejecute Windows Server 2012 instalando el Herramientas de administración remota del servidor y puede instalar el módulo de Active Directory en un equipo que ejecute Windows 8 descargando e instalando las [herramientas administrativas del servidor remoto (RSAT)](https://www.microsoft.com/download/details.aspx?id=28972). Consulte [Instrucciones](https://www.microsoft.com/download/details.aspx?id=28972)para obtener pasos de instalación.
 
 ## <a name="scenarios-for-testing-windows-powershell-for-active-directory-replication-and-topology-management-cmdlets"></a>Escenarios para probar los cmdlets de administración de la replicación y la topología de Windows PowerShell para Active Directory
 Los siguientes escenarios están diseñados para que los administradores se familiaricen con los nuevos cmdlets de administración:
@@ -43,7 +43,7 @@ Los siguientes escenarios están diseñados para que los administradores se fami
 
 ## <a name="lab-requirements"></a>Requisitos del laboratorio
 
--   Dos controladores de dominio de Windows Server 2012: **DC1** y **DC2** que forman parte del dominio contoso.com y residen en el sitio CORPORATE dentro de ese dominio.
+-   Dos controladores de dominio de Windows Server 2012: **DC1** y **DC2** que forman parte del dominio contoso.com y residen en el sitio corporativo dentro de ese dominio.
 
 ## <a name="view-domain-controllers-and-their-sites"></a>Ver controladores de dominio y sus sitios
 En este paso usará el módulo de Active Directory para Windows PowerShell que permite ver los controladores de dominio existentes y la topología de replicación para el dominio.
@@ -65,7 +65,7 @@ Para completar los pasos de los procedimientos siguientes debe ser miembro del g
     > 
     > Ejemplo: escriba `Get-ADRep` y presione la tecla TAB varias veces para omitir los comandos coincidentes hasta llegar a `Get-ADReplicationSite`. Autocompletar también funciona para los nombres de parámetro como `Filter`.
 
-    Para dar formato a la salida del comando `Get-ADReplicationSite` como una tabla y limitar la visualización a campos específicos, puede canalizar el resultado al comando `Format-Table` (o "`ft`" para abreviar):
+    Para dar formato a la salida desde el comando `Get-ADReplicationSite` como una tabla y limitar la visualización a campos específicos, puede canalizar el resultado al comando `Format-Table` (o "`ft`" para abreviar):
 
     `Get-ADReplicationSite -Filter * | ft Name`
 
@@ -154,7 +154,7 @@ Para completar los pasos de los procedimientos siguientes debe ser miembro del g
 
     La ordenación permite comparar fácilmente el último USN visto por cada controlador de dominio para un asociado de replicación determinado. Esta es una manera rápida de comprobar que se está realizando la replicación en el entorno. Si la réplica funciona correctamente, los valores de UsnFilter notificados para un asociado de replicación determinado deben ser bastante similares en todos los controladores de dominio.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Administración avanzada de la replicación y la topología de Active Directory &#40;con el nivel 200 de Windows PowerShell&#41;](Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md)
 
 

@@ -17,9 +17,9 @@ ms.locfileid: "71402197"
 ---
 # <a name="choose-a-namespace-type"></a>Elegir un tipo de espacio de nombres
 
-> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008
 
-Al crear un espacio de nombres, debes elegir uno de los dos tipos de espacio de nombres: un espacio de nombres independiente o un espacio de nombres basado en dominio. Además, si elige un espacio de nombres basado en dominio, debe elegir un modo de espacio de nombres: Modo de servidor de Windows 2000 o modo de Windows Server 2008.
+Al crear un espacio de nombres, debes elegir uno de los dos tipos de espacio de nombres: un espacio de nombres independiente o un espacio de nombres basado en dominio. Además, si elige un espacio de nombres basado en dominio, debe elegir un modo de espacio de nombres: modo de servidor de Windows 2000 o modo de Windows Server 2008.
 
 ## <a name="choosing-a-namespace-type"></a>Elegir un tipo de espacio de nombres
 
@@ -59,17 +59,17 @@ En la siguiente tabla, se describen las características de cada tipo de espacio
 
 |Característica|Espacio de nombres independiente|Espacio de nombres basado en dominio (modo Windows 2000 Server) |Espacio de nombres basado en dominio (modo Windows Server 2008) | 
 |---|---|---|---|
-|Ruta de acceso al espacio de nombres|\\ @ no__t-1*ServerName\RootName* |\\ @ no__t-1*NetBIOSDomainName\RootName* <br />\\ @ no__t-1*DNSDomainName\RootName*|\\ @ no__t-1*NetBIOSDomainName\RootName* <br /> \\ @ no__t-1*DNSDomainName\RootName*|
+|Ruta de acceso al espacio de nombres|\\\ *ServerName\RootName* |\\\ *NetBIOSDomainName\RootName* <br />\\\ *DNSDomainName\RootName*|\\\ *NetBIOSDomainName\RootName* <br /> \\\ *DNSDomainName\RootName*|
 |Ubicación de almacenamiento de información de espacios de nombres|En el registro y en una caché en memoria en el servidor de espacio de nombres|En AD DS y en una caché en memoria en cada servidor de espacio de nombres|En AD DS y en una caché en memoria en cada servidor de espacio de nombres|
 |Recomendaciones de tamaño de espacio de nombres|El espacio de nombres puede incluir más de 5000 carpetas con destinos; el límite recomendado es 50 000 carpetas con destinos|El tamaño del objeto de espacio de nombres en AD DS debe ser inferior a 5 megabytes (MB) para mantener la compatibilidad con controladores de dominio que no ejecutan Windows Server 2008. Esto significa que no más de aproximadamente 5000 carpetas con destinos.|El espacio de nombres puede incluir más de 5000 carpetas con destinos; el límite recomendado es 50 000 carpetas con destinos |
 |Nivel funcional del bosque de AD DS mínimo|AD DS no es obligatorio|Windows 2000|Windows Server 2003|
-|Nivel funcional del dominio de AD DS mínimo|AD DS no es obligatorio|Windows 2000 mixto|Windows Server 2008|
-|Servidores de espacio de nombres mínimos compatibles|Windows 2000 Server|Windows 2000 Server|Windows Server 2008|
+|Nivel funcional del dominio de AD DS mínimo|AD DS no es obligatorio|Windows 2000 mixto|Windows Server 2008|
+|Servidores de espacio de nombres mínimos compatibles|Windows 2000 Server|Windows 2000 Server|Windows Server 2008|
 |Compatibilidad con la enumeración basada en el acceso (si estuviera habilitada)|Sí, requiere el servidor de espacio de nombres Windows Server 2008|No|Sí|
 |Métodos compatibles para garantizar la disponibilidad de espacios de nombres|Cree un espacio de nombres independiente en un clúster de conmutación por error.|Use varios servidores de espacios de nombres para hospedar el espacio de nombres. (Los servidores de espacios de nombres deben estar en el mismo dominio).|Use varios servidores de espacios de nombres para hospedar el espacio de nombres. (Los servidores de espacios de nombres deben estar en el mismo dominio).|
 |Compatibilidad con el uso de la replicación DFS para replicar destinos de carpeta|Compatible cuando une a un dominio de AD DS|Se admite|Se admite|
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 -   [Implementar espacios de nombres DFS](deploying-dfs-namespaces.md)
 -   [Migrar un espacio de nombres basado en dominio al modo Windows Server 2008](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)

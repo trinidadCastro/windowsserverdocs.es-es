@@ -59,11 +59,11 @@ ms.locfileid: "71359391"
   
 |De|Para AD FS instala con Windows Server 2012 R2|  
 |----------|----------------------------------------------------------------------------------------------|  
-|AD FS servidor de Federación 2,0 instalado en Windows Server 2008 o Windows Server 2008 R2|Se admite la migración en el mismo servidor. Para obtener más información, vea:<br /><br /> [Preparación de la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [Migración del servidor de Federación de AD FS](migrate-ad-fs-fed-server-r2.md)|  
+|AD FS servidor de Federación 2,0 instalado en Windows Server 2008 o Windows Server 2008 R2|Se admite la migración en el mismo servidor. Para más información, consulta lo siguiente:<br /><br /> [Preparación de la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [Migración del servidor de Federación de AD FS](migrate-ad-fs-fed-server-r2.md)|  
 |AD FS servidor de Federación instalado en Windows Server 2012|Se admite la migración en el mismo servidor.  Para obtener más información, consulta:<br /><br /> [Preparación de la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [Migración del servidor de Federación de AD FS](migrate-ad-fs-fed-server-r2.md)|  
   
 ## <a name="next-steps"></a>Pasos siguientes
- [Preparación de la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md)   
+ [Preparando la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md)   
  [Migración del servidor de Federación de AD FS](migrate-ad-fs-fed-server-r2.md)   
- [Migración del servidor proxy de Federación de AD FS](migrate-fed-server-proxy-r2.md)   
+ [Migración del servidor proxy de AD FS Federation](migrate-fed-server-proxy-r2.md)   
  [Comprobar la migración de AD FS a Windows Server 2012 R2](verify-ad-fs-migration.md)

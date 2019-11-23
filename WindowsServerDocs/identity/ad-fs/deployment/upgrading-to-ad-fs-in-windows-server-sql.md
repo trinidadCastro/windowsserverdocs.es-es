@@ -54,12 +54,12 @@ En el diagrama arquitectónico siguiente se muestra la configuración que se us�
 1.  Usar Administrador del servidor instalar el rol de Servicios de federación de Active Directory (AD FS) en Windows Server 2016  
 
 2.  Mediante el Asistente para configuración de AD FS, una el nuevo servidor de Windows Server 2016 a la granja de AD FS existente.  En la pantalla de **bienvenida** , haga clic en **siguiente**.
- ![Join granja de servidores @ no__t-1  
+ ![](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure1.png) de la granja de servidores  
 3.  En la pantalla **conectar a Active Directory Domain Services** , s**pecifique una cuenta de administrador** con permisos para realizar la configuración de servicios de Federación y haz clic en **siguiente**.
 4.  En la pantalla **especificar granja de servidores** , escriba el nombre de la instancia de SQL Server y, a continuación, haga clic en **siguiente**.
-![Join granja de servidores @ no__t-1
+![](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure3.png) de la granja de servidores
 5.  En la pantalla **especificar certificado SSL** , especifique el certificado y haga clic en **siguiente**.
-![Join granja de servidores @ no__t-1
+![](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure4.png) de la granja de servidores
 6.  En la pantalla **especificar cuenta de servicio** , especifique la cuenta de servicio y haga clic en **siguiente**.
 7.  En la pantalla **Opciones de revisión** , revise las opciones y haga clic en **siguiente**.
 8.  En la pantalla **comprobaciones de requisitos** previos, asegúrese de que se han superado todas las comprobaciones de requisitos previos y haga clic en **configurar**.
@@ -72,11 +72,11 @@ En el diagrama arquitectónico siguiente se muestra la configuración que se us�
 >No es necesario establecer el servidor de AD FS principal mediante Set-AdfsSyncProperties-role cuando se usa SQL como base de datos.  Esto se debe a que todos los nodos se consideran principales en esta configuración.
 
 1.  En el servidor de AD FS de Windows Server 2012 R2 en Administrador del servidor use **quitar roles y características** en **administrar**.
-![Remove Server @ no__t-1
+![quitar](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove1.png) de servidor
 2.  En la pantalla **Antes de comenzar**, haz clic en **Siguiente**.
 3.  En la pantalla **selección de servidor** , haga clic en **siguiente**.
 4.  En la pantalla **roles de servidor** , desactive la casilla situada junto a **servicios de Federación de Active Directory (AD FS)** y haga clic en **siguiente**.
-![Remove Server @ no__t-1
+![quitar](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove2.png) de servidor
 5.  En la pantalla **características** , haga clic en **siguiente**.
 6.  En la pantalla **confirmación** , haga clic en **quitar**.
 7.  Cuando se complete, reinicie el servidor.
@@ -89,11 +89,11 @@ Antes de este paso, debe asegurarse de que se han ejecutado ForestPrep y DomainP
 
 1. Ahora, en el servidor de Windows Server 2016, abra PowerShell y ejecute lo siguiente: **$CRED = Get-Credential** y presione Entrar.
 2. Escriba las credenciales que tienen privilegios de administrador en el SQL Server.
-3. Ahora, en PowerShell, escriba lo siguiente: **Invocar-AdfsFarmBehaviorLevelRaise-Credential $cred**
+3. Ahora en PowerShell, escriba lo siguiente: **Invoke-AdfsFarmBehaviorLevelRaise-Credential $CRED**
 2. Cuando se le solicite, escriba **Y**.  Esto comenzará a elevar el nivel.  Una vez completado esto, habrá generado correctamente el FBL.  
-![Finish Update @ no__t-1
+![finalizar la actualización](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish1.png)
 3. Ahora, si va a la administración de AD FS, verá los nuevos nodos que se han agregado para AD FS en Windows Server 2016  
-4. Del mismo modo, puede usar el cmdlt de PowerShell:  Get-AdfsFarmInformation para mostrar la FBL actual.  
+4. Del mismo modo, puede usar el cmdlt de PowerShell: get-AdfsFarmInformation para mostrarle el FBL actual.  
 ![Finalizar actualización](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish2.png)
 
 #### <a name="upgrade-the-configuration-version-of-existing-wap-servers"></a>Actualizar la versión de configuración de los servidores WAP existentes

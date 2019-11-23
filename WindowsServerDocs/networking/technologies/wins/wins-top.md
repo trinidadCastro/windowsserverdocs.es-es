@@ -21,7 +21,7 @@ ms.locfileid: "71405251"
 
 El servicio WINS es un servicio heredado de registro y resolución de nombres de ordenadores que asigna nombres NetBIOS de ordenador a direcciones IP.
 
-Si aún no tiene WINS implementado en la red, no implemente WINS en su lugar, implemente el sistema de nombres de dominio \(DNS @ no__t-1. DNS también proporciona servicios de resolución y registro de nombres de equipo e incluye muchas ventajas adicionales sobre WINS, como la integración con Active Directory Domain Services.
+Si aún no tiene WINS implementado en la red, no implemente WINS en su lugar, implemente el sistema de nombres de dominio \(DNS\). DNS también proporciona servicios de resolución y registro de nombres de equipo e incluye muchas ventajas adicionales sobre WINS, como la integración con Active Directory Domain Services.
 
 Para obtener más información, consulte [sistema de nombres de dominio (DNS)](https://docs.microsoft.com/windows-server/networking/dns/dns-top)
 
