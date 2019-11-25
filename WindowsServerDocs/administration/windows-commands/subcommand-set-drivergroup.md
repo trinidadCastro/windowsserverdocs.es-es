@@ -32,9 +32,9 @@ wdsutil /Set-DriverGroup /DriverGroup:<Group Name> [/Server:<Server Name>] [/Nam
 ## <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-|/DriverGroup: <Group Name>|Especifica el nombre del grupo de controladores.|
+|/DriverGroup:<Group Name>|Especifica el nombre del grupo de controladores.|
 |[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se utiliza el servidor local.|
-|[/Name: <New Group Name>]|Especifica el nuevo nombre del grupo de controladores.|
+|[/Name:<New Group Name>]|Especifica el nuevo nombre del grupo de controladores.|
 |[/Enabled: {Yes &#124; no}|Habilita o deshabilita el grupo de controladores.|
 |[/Applicability: {matched &#124; All}]|Especifica los paquetes que se van a instalar si se cumplen los criterios de filtro. **Matched** significa instalar solo los paquetes de controladores que coinciden con el hardware del cliente. **Todo** significa instalar todos los paquetes en los clientes, independientemente de su hardware.|
 ## <a name="BKMK_examples"></a>Example
@@ -45,6 +45,6 @@ wdsutil /Set-DriverGroup /DriverGroup:printerdrivers /Enabled:Yes
 ```
 wdsutil /Set-DriverGroup /DriverGroup:printerdrivers /Name:colorprinterdrivers /Applicability:All
 ```
-#### <a name="additional-references"></a>Referencias adicionales
+#### <a name="additional-references"></a>referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 [subcomando: set-DriverGroupFilter](subcommand-set-drivergroupfilter.md)

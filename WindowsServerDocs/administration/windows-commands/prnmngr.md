@@ -45,29 +45,29 @@ cscript Prnmngr {-a | -d | -x | -g | -t | -l | -?}[c] [-s <ServerName>]
 |              -l               |                                                                                                         muestra todas las impresoras instaladas en el servidor especificado por el parámetro **-s** . Si no especifica un servidor, Windows enumera las impresoras instaladas en el equipo local.                                                                                                         |
 |               c               |                                                                                                                                      Especifica que el parámetro se aplica a las conexiones de impresora. Se puede usar con los parámetros **-a** y **-x** .                                                                                                                                      |
 |        -s <ServerName>        |                                                                                                                  Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local.                                                                                                                  |
-|       -p \<printerName >       |                                                                                                                                                                Especifica el nombre de la impresora que desea administrar.                                                                                                                                                                 |
+|       -p \<Nombredeimpresora >       |                                                                                                                                                                Especifica el nombre de la impresora que desea administrar.                                                                                                                                                                 |
 |     -m \<DrivermodelName >     |                                                                                                          Especifica (por nombre) el controlador que desea instalar. Los controladores a menudo se denominan para el modelo de impresora que admiten. Consulte la documentación de la impresora para obtener más información.                                                                                                           |
 |        -r \<PortName >         |                                                                         Especifica el puerto al que está conectada la impresora. Si se trata de un puerto paralelo o serie, use el identificador del puerto (por ejemplo, LPT1: o COM1:). Si se trata de un puerto TCP/IP, utilice el nombre de puerto que se especificó cuando se agregó el puerto.                                                                          |
-| -u \<UserName >-w \<Password > | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione. |
+| -u \<nombreDeUsuario >-w \<contraseña > | Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione. |
 |              /?               |                                                                                                                                                                           Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                            |
 
-## <a name="remarks"></a>Comentarios
--   El comando **prndrvr** es un script de Visual Basic ubicado en el directorio%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t-2. Para usar este comando, en una ventana del símbolo del sistema, escriba **cscript** seguido de la ruta de acceso completa al archivo **PRNMNGR** o cambie los directorios a la carpeta correspondiente. Por ejemplo:
+## <a name="remarks"></a>Observaciones
+-   El comando **prndrvr** es un script de Visual Basic ubicado en el printing_Admin_Scripts%windir%\system32\\\<language> directorio. Para usar este comando, en una ventana del símbolo del sistema, escriba **cscript** seguido de la ruta de acceso completa al archivo **PRNMNGR** o cambie los directorios a la carpeta correspondiente. Por ejemplo:
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnmngr
     ```
 -   Si la información proporcionada contiene espacios, utilice comillas alrededor del texto (por ejemplo, `"computer Name"`).
 
 ## <a name="BKMK_examples"></a>Example
-Para agregar una impresora denominada ImpresoraColor_2 que esté conectada a LPT1 en el equipo local y requiera un controlador de impresora denominado color Printer Driver1, escriba:
+Para agregar una impresora llamada colorprinter_2 conectada a LPT1 en el equipo local y requiere un controlador de impresora llamado color Printer Driver1, escriba:
 ```
 cscript prnmngr -a -p colorprinter_2 -m "color printer Driver1" -r lpt1:
 ```
-Para eliminar la impresora denominada ImpresoraColor_2 del equipo remoto llamado ServidorRH, escriba:
+Para eliminar la impresora denominada colorprinter_2 del equipo remoto llamado ServidorRH, escriba:
 ```
 cscript prnmngr -d -s HRServer -p colorprinter_2 
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+#### <a name="additional-references"></a>referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[referencia de comando de impresión](print-command-reference.md)
+[Referencia del comando Print](print-command-reference.md)

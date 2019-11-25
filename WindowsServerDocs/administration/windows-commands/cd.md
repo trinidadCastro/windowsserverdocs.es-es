@@ -45,12 +45,12 @@ chdir [..]
 |Parámetro|Descripción|
 |---------|-----------|
 |/d|Cambia la unidad actual y el directorio actual de una unidad.|
-|@no__t 0Drive >:|Especifica la unidad que se va a mostrar o cambiar (si es diferente de la unidad actual).|
-|@no__t 0Path >|Especifica la ruta de acceso al directorio que desea mostrar o cambiar.|
+|> de \<unidad:|Especifica la unidad que se va a mostrar o cambiar (si es diferente de la unidad actual).|
+|\<ruta de acceso >|Especifica la ruta de acceso al directorio que desea mostrar o cambiar.|
 |[..]|Especifica que desea cambiar a la carpeta principal.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Si se habilitan las extensiones de comandos, se aplican las siguientes condiciones al comando de **CD** :
 - La cadena de directorio actual se convierte para usar el mismo caso que los nombres del disco. Por ejemplo, `cd C:\TEMP` establecería el directorio actual en C:\Temp si ese es el caso en el disco.

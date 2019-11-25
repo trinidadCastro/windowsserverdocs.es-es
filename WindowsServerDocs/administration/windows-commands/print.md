@@ -38,13 +38,13 @@ Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/d: @no__t 0PrinterName >|Especifica la impresora en la que desea imprimir el trabajo. Para imprimir en una impresora conectada localmente, especifique el puerto del equipo en el que está conectada la impresora.</br>-Los valores válidos para puertos paralelos son LPT1, LPT2 y LPT3.</br>-Los valores válidos para los puertos serie son COM1, COM2, COM3 y COM4.</br>También puede especificar una impresora de red mediante su nombre de cola (\\ @ no__t-1*ServerName*\*PrinterName *). Si no especifica una impresora, el trabajo de impresión se envía a LPT1 de forma predeterminada.|
-|@no__t 0Drive >:|Especifica la unidad física o lógica en la que se encuentra el archivo que desea imprimir. Este parámetro no es necesario si el archivo que desea imprimir se encuentra en la unidad actual.|
-|@no__t 0Path >|Especifica la ubicación del archivo que desea imprimir. Este parámetro no es necesario si el archivo que desea imprimir está ubicado en el directorio actual.|
-|\<FileName > [...]|Obligatorio. Especifica el archivo que desea imprimir. Puede incluir varios archivos en un solo comando.|
+|/d:\<Nombredeimpresora >|Especifica la impresora en la que desea imprimir el trabajo. Para imprimir en una impresora conectada localmente, especifique el puerto del equipo en el que está conectada la impresora.</br>-Los valores válidos para puertos paralelos son LPT1, LPT2 y LPT3.</br>-Los valores válidos para los puertos serie son COM1, COM2, COM3 y COM4.</br>También puede especificar una impresora de red mediante su nombre de cola (\\\\*ServerName*\*nombredeimpresora *). Si no especifica una impresora, el trabajo de impresión se envía a LPT1 de forma predeterminada.|
+|> de \<unidad:|Especifica la unidad física o lógica en la que se encuentra el archivo que desea imprimir. Este parámetro no es necesario si el archivo que desea imprimir se encuentra en la unidad actual.|
+|\<ruta de acceso >|Especifica la ubicación del archivo que desea imprimir. Este parámetro no es necesario si el archivo que desea imprimir está ubicado en el directorio actual.|
+|\<nombre de archivo > [...]|Obligatorio. Especifica el archivo que desea imprimir. Puede incluir varios archivos en un solo comando.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Un archivo puede imprimir en segundo plano si lo envía a una impresora conectada a un puerto serie o paralelo en el equipo local.
 -   Puede realizar muchas tareas de configuración desde el símbolo del sistema mediante el comando **modo** .
@@ -61,7 +61,7 @@ Para enviar el archivo report. txt en el directorio actual a una impresora conec
 ```
 print /d:lpt2 report.txt
 ```
-Para enviar el archivo report. txt en el directorio c:\Accounting a la cola de impresión Printer1 del servidor \\ @ no__t-1CopyRoom, escriba:
+Para enviar el archivo report. txt en el directorio c:\Accounting a la cola de impresión Printer1 en el \\\\servidor CopyRoom, escriba:
 ```
 print /d:\\copyroom\printer1 c:\accounting\report.txt 
 ```

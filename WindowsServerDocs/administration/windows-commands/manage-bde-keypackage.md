@@ -20,7 +20,7 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71374048"
 ---
-# <a name="manage-bde-keypackage"></a>Manage-BDE KeyPackage
+# <a name="manage-bde-keypackage"></a>Manage-BDE: KeyPackage
 
 
 
@@ -36,11 +36,11 @@ manage-bde -KeyPackage [<Drive>] [-ID <KeyProtectoryID>] [-path <PathToExternalK
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Drive >|Representa la letra de una unidad seguida del signo de dos puntos.|
-|IDENTIFICADOR DE|Cree un paquete de claves mediante el protector de clave con el identificador especificado por este valor de identificador.|
+|\<unidad >|Representa la letra de una unidad seguida del signo de dos puntos.|
+|IDENTIFICADOR de|Cree un paquete de claves mediante el protector de clave con el identificador especificado por este valor de identificador.|
 |-path|Ubicación en la que se va a guardar el paquete de claves creado.|
 |-COMPUTERNAME|Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando.|
-|\<Nombre >|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
+|Nombre del \<>|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
 |-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
 |-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
 

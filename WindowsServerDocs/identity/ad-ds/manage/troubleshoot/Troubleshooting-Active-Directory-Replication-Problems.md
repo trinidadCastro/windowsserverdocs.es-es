@@ -51,7 +51,7 @@ A veces se producen errores de replicación debido a interrupciones intencionada
 
 Si un controlador de dominio que está intentando realizar la replicación con un controlador de dominio que se ha compilado en un sitio de ensayo ha generado errores de replicación y actualmente está sin conexión esperando su implementación en el sitio de producción final (un sitio remoto, como una sucursal) ), puede tener en cuenta los errores de replicación. Para evitar separar un controlador de dominio de la topología de replicación durante períodos prolongados, lo que provoca errores continuos hasta que el controlador de dominio se vuelve a conectar, considere la posibilidad de agregar estos equipos inicialmente como servidores miembro y mediante la instalación desde el medio ( IFM) para instalar Active Directory Domain Services (AD DS). Puede usar la herramienta de línea de comandos Ntdsutil para crear medios de instalación que puede almacenar en medios extraíbles (CD, DVD u otros medios) y enviarlos al sitio de destino. A continuación, puede usar el medio de instalación de para instalar AD DS en los controladores de dominio en el sitio, sin usar la replicación. 
 
-### <a name="hardware-failures-or-upgradestitle"></a>Errores de hardware o actualizaciones @ no__t-0
+### <a name="hardware-failures-or-upgradestitle"></a>Errores de hardware o actualizaciones</title>
 
 Si se producen problemas de replicación como resultado de un error de hardware (por ejemplo, un error de una placa base, un subsistema de disco o una unidad de disco duro), notifique al propietario del servidor para que se pueda resolver el problema de hardware.
 
@@ -81,12 +81,12 @@ De forma predeterminada, los objetos de configuración NTDS que se eliminan se r
 
 Si se descartan desconexiones intencionadas, errores de hardware y controladores de dominio de Windows 2000 anticuados, el resto de los problemas de replicación casi siempre tienen una de las causas raíz siguientes:
 
-- Conectividad de red: Es posible que la conexión de red no esté disponible o que la configuración de red no esté correctamente configurada.
-- Resolución de nombres: Las configuraciones erróneas de DNS son una causa común de los errores de replicación.
-- Autenticación y autorización: Los problemas de autenticación y autorización causan errores de "acceso denegado" cuando un controlador de dominio intenta conectarse a su asociado de replicación.
-- Base de datos de directorio (almacén): Es posible que la base de datos de directorio no pueda procesar transacciones lo suficientemente rápido como para mantenerse al día de los tiempos de espera de replicación.
-- Motor de replicación: Si las programaciones de replicación entre sitios son demasiado cortas, es posible que las colas de replicación sean demasiado grandes para procesarlas en el tiempo necesario para la programación de la replicación de salida. En este caso, la replicación de algunos cambios puede detenerse indefinidamente potencialmente, lo suficientemente largo como para superar la duración del desecho.
-- Topología de replicación: Los controladores de dominio deben tener vínculos entre sitios en AD DS que se asignen a conexiones de red de área extensa (WAN) o de red privada virtual (VPN) reales. Si crea objetos en AD DS para la topología de replicación que no son compatibles con la topología de sitio real de la red, se produce un error en la replicación que requiere la topología mal configurada.
+- Conectividad de red: puede que la conexión de red no esté disponible o que la configuración de red no esté correctamente configurada.
+- Resolución de nombres: las configuraciones erróneas de DNS son una causa común de los errores de replicación.
+- Autenticación y autorización: los problemas de autenticación y autorización causan errores de "acceso denegado" cuando un controlador de dominio intenta conectarse a su asociado de replicación.
+- Base de datos de directorio (almacén): la base de datos de directorio podría no ser capaz de procesar las transacciones lo suficientemente rápido como para mantenerse al día de los tiempos de espera de replicación.
+- Motor de replicación: si las programaciones de replicación entre sitios son demasiado cortas, es posible que las colas de replicación sean demasiado grandes para procesarlas en el tiempo necesario para la programación de la replicación de salida. En este caso, la replicación de algunos cambios puede detenerse indefinidamente potencialmente, lo suficientemente largo como para superar la duración del desecho.
+- Topología de replicación: los controladores de dominio deben tener vínculos entre sitios en AD DS que se asignen a conexiones de red de área extensa (WAN) o de red privada virtual (VPN) real. Si crea objetos en AD DS para la topología de replicación que no son compatibles con la topología de sitio real de la red, se produce un error en la replicación que requiere la topología mal configurada.
 
 ## <a name="general-approach-to-fixing-problems"></a>Enfoque general para solucionar problemas
 
@@ -102,7 +102,7 @@ Use el siguiente enfoque general para solucionar problemas de replicación:
 
 Para obtener más información sobre cómo forzar la eliminación de AD DS, consulte [forzar la eliminación de un controlador de dominio](https://go.microsoft.com/fwlink/?LinkId=128291).
 
-## <a name="using-repadmin-to-retrieve-replication-statustitle"></a>Uso de repadmin para recuperar el estado de replicación @ no__t-0
+## <a name="using-repadmin-to-retrieve-replication-statustitle"></a>Uso de repadmin para recuperar el estado de replicación</title>
 
 El estado de replicación es una manera importante de evaluar el estado del servicio de directorio. Si la replicación funciona sin errores, sabrá que los controladores de dominio están en línea. También sabe que los siguientes sistemas y servicios están funcionando:
 
@@ -128,7 +128,7 @@ Herramientas:
 
 ### <a name="to-generate-a-repadmin-showrepl-spreadsheet-for-domain-controllers"></a>Para generar una hoja de cálculo de repadmin/showrepl para controladores de dominio
 
-1. Abra una ventana del símbolo del sistema como administrador: En el menú Inicio, haga clic con el botón secundario en símbolo del sistema y, a continuación, haga clic en ejecutar como administrador. Si aparece el cuadro de diálogo control de cuentas de usuario, proporcione credenciales de administradores de empresa, si es necesario, y, a continuación, haga clic en continuar.
+1. Abra un símbolo del sistema como administrador: en el menú Inicio, haga clic con el botón secundario en símbolo del sistema y, a continuación, haga clic en ejecutar como administrador. Si aparece el cuadro de diálogo control de cuentas de usuario, proporcione credenciales de administradores de empresa, si es necesario, y, a continuación, haga clic en continuar.
 2. En el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR: `repadmin /showrepl * /csv > showrepl.csv`
 3. Abra Excel.
 4. Haga clic en el botón Office, haga clic en abrir, desplácese hasta showrepl. csv y, a continuación, haga clic en abrir.
@@ -160,7 +160,7 @@ Para identificar Active Directory problemas de replicación, use el comando <sys
 
 |Error de repadmin|Causa principal|Solución|
 | --- | --- | --- |
-|El tiempo transcurrido desde la última replicación con este servidor superó la duración del desecho.|Un controlador de dominio ha producido un error en la replicación de entrada con el controlador de dominio de origen con nombre suficiente para que una eliminación se haya extinguido, replicado y recolectado como elemento no utilizado de AD DS.|Identificador de evento 2042: transcurrió demasiado tiempo desde que este equipo se replicó por última vez|
+|El tiempo transcurrido desde la última replicación con este servidor superó la duración del desecho.|Un controlador de dominio ha producido un error en la replicación de entrada con el controlador de dominio de origen con nombre suficiente para que una eliminación se haya extinguido, replicado y recolectado como elemento no utilizado de AD DS.|Id. de evento 2042: transcurrió demasiado tiempo desde que se replicó esta máquina|
 |No hay vecinos entrantes.|Si no aparece ningún elemento en la sección "vecinos de entrada" de la salida generada por repadmin/showrepl, el controlador de dominio no pudo establecer vínculos de replicación con otro controlador de dominio.|Solución de problemas de conectividad de replicación (Id. de evento 1925)| 
 |Acceso denegado.|Existe un vínculo de replicación entre dos controladores de dominio, pero la replicación no se puede realizar correctamente como resultado de un error de autenticación.|Solución de problemas de seguridad de replicación| 
 |No se pudo realizar el último intento en < > de fecha y hora con el "el nombre de cuenta de destino es incorrecto".|Este problema se puede relacionar con los problemas de conectividad, DNS o autenticación. Si se trata de un error de DNS, el controlador de dominio local no pudo resolver el nombre DNS basado en el identificador único global (GUID) de su asociado de replicación.|Corrección de problemas de búsqueda de DNS de replicación (identificadores de evento 1925, 2087 y 2088) corrección de problemas de seguridad de replicación corrección de problemas de conectividad de replicación (ID. de evento 1925)| 
@@ -186,4 +186,4 @@ Para obtener más información sobre los conceptos de replicación, vea [Active 
   
 ## <a name="next-steps"></a>Pasos siguientes
 
-Para obtener más información, incluidos los artículos de soporte específicos de los códigos de error, vea el artículo de soporte técnico: [Cómo solucionar errores comunes de replicación de Active Directory](https://support.microsoft.com/help/3108513)
+Para obtener más información, incluidos los artículos de soporte específicos de los códigos de error, vea el artículo de soporte: [cómo solucionar errores comunes de replicación de Active Directory](https://support.microsoft.com/help/3108513) .

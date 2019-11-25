@@ -17,7 +17,7 @@ ms.locfileid: "71385230"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>Usar un complemento de puerta de enlace personalizado en la extensión de herramienta
 
->Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
 
 En este artículo, usaremos un complemento de puerta de enlace personalizado en una nueva extensión de herramienta vacía que hemos creado con la CLI del centro de administración de Windows.
 
@@ -64,7 +64,7 @@ export class PluginService {
 Cambie las referencias a ```Sample Uno``` y ```Sample%20Uno``` al nombre de la característica según corresponda.
 
 [!WARNING]
-> Se recomienda usar el @no__t integrado-0 para llamar a cualquier API que se define en el complemento de puerta de enlace personalizada. Esto garantizará que, si se requieren credenciales en el complemento de puerta de enlace, se controlarán correctamente.
+> Se recomienda que el ```this.appContextService.node``` integrado se use para llamar a cualquier API que esté definida en el complemento de puerta de enlace personalizada. Esto garantizará que, si se requieren credenciales en el complemento de puerta de enlace, se controlarán correctamente.
 
 ### <a name="modify-modulets"></a>Modificar módulo. ts
 

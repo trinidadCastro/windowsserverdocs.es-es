@@ -38,11 +38,11 @@ sc [<ServerName>] delete [<ServiceName>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0ServerName >|Especifica el nombre del servidor remoto en el que se encuentra el servicio. El nombre debe usar el formato de Convención de nomenclatura universal (UNC) (por ejemplo, \\ @ no__t-1myserver). Para ejecutar SC. exe localmente, omita este parámetro.|
-|@no__t 0ServiceName >|Especifica el nombre de servicio devuelto por la operación **getkeyname** .|
+|\<ServerName >|Especifica el nombre del servidor remoto en el que se encuentra el servicio. El nombre debe usar el formato de Convención de nomenclatura universal (UNC) (por ejemplo, \\\\Server). Para ejecutar SC. exe localmente, omita este parámetro.|
+|\<ServiceName >|Especifica el nombre de servicio devuelto por la operación **getkeyname** .|
 |?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Use **Agregar o quitar programas** en el **Panel de control** para eliminar DHCP, DNS o cualquier otro servicio de sistema operativo integrado. Tenga en cuenta que en **Agregar o quitar programas** no solo se quitará la subclave del registro para el servicio, sino que también se desinstalará el servicio y se eliminarán los accesos directos a él.
 

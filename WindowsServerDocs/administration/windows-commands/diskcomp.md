@@ -36,11 +36,11 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|@no__t 0Drive1 >|Especifica la unidad que contiene uno de los disquetes.|
-|@no__t 0Drive2 >|Especifica la unidad que contiene el otro disquete.|
+|\<unidad1 >|Especifica la unidad que contiene uno de los disquetes.|
+|\<Unidad2 >|Especifica la unidad que contiene el otro disquete.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Uso de discos
 

@@ -24,7 +24,7 @@ ms.locfileid: "71372033"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-imprime una página de prueba, pausa o reanuda una impresora y borra una cola de impresión.  
+Imprime una página de prueba, pausa o reanuda una impresora y borra una cola de impresión.  
 
 ## <a name="syntax"></a>Sintaxis  
 ```  
@@ -40,19 +40,19 @@ cscript Prnqctl {-z | -m | -e | -x | -?} [-s <ServerName>]
 |-e|imprime una página de prueba en la impresora especificada con el parámetro **-p** .|  
 |-x|Cancela todos los trabajos de impresión en la impresora especificada con el parámetro **-p** .|  
 |-s \<ServerName >|Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local.|  
-|-p \<printerName >|Especifica el nombre de la impresora que desea administrar. Obligatorio.|  
-|-u \<UserName >-w \<Password >|Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione.|  
+|-p \<Nombredeimpresora >|Especifica el nombre de la impresora que desea administrar. Obligatorio.|  
+|-u \<nombreDeUsuario >-w \<contraseña >|Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione.|  
 |/?|Muestra la ayuda en el símbolo del sistema.|  
 
-## <a name="remarks"></a>Comentarios  
-- El comando **prnqctl** es un script de Visual Basic ubicado en el directorio%WINdir%\System32\printing_Admin_Scripts @ no__t-1 @ no__t-2. Para usar este comando, en una ventana del símbolo del sistema, escriba **cscript** seguido de la ruta de acceso completa al archivo prnqctl o cambie los directorios a la carpeta correspondiente. Por ejemplo:  
+## <a name="remarks"></a>Observaciones  
+- El comando **prnqctl** es un script de Visual Basic ubicado en el printing_Admin_Scripts de%windir%\system32\\\<language> directorio. Para usar este comando, en una ventana del símbolo del sistema, escriba **cscript** seguido de la ruta de acceso completa al archivo prnqctl o cambie los directorios a la carpeta correspondiente. Por ejemplo:  
   ```  
   cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnqctl  
   ```  
 - Si la información proporcionada contiene espacios, utilice comillas alrededor del texto (por ejemplo, `"computer Name"`).  
 
 ## <a name="BKMK_examples"></a>Example  
-Para imprimir una página de prueba en la impresora Laserprinter1 compartida por el equipo \\ \ Servidor1, escriba:  
+Para imprimir una página de prueba en la impresora Laserprinter1 compartida por el equipo \\\Server1, escriba:  
 ```  
 cscript Prnqctl -e -s Server1 -p Laserprinter1  
 ```  
@@ -65,6 +65,6 @@ Para cancelar todos los trabajos de impresión de la impresora Laserprinter1 en 
 cscript Prnqctl -x -p Laserprinter1  
 ```  
 
-#### <a name="additional-references"></a>Referencias adicionales  
+#### <a name="additional-references"></a>referencias adicionales  
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
 [Referencia de comandos de impresión](print-command-reference.md)  

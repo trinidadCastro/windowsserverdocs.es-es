@@ -19,13 +19,13 @@ ms.locfileid: "71365072"
 ---
 # <a name="configure-a-virtual-machine-with-a-scsi-controller-to-be-able-to-hot-plug-and-hot-unplug-storage"></a>Configuración de una máquina virtual con una controladora SCSI para poder enchufar y desconectar el almacenamiento en caliente
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2016
 
 
   
 *Para obtener más información sobre los análisis y los procedimientos recomendados, consulte* [analizador de procedimientos recomendados](https://go.microsoft.com/fwlink/?LinkId=122786).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -42,13 +42,13 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
   
 *No podrá conectar en caliente o desconectar el almacenamiento para las siguientes máquinas virtuales:*  
   
-@no__t: 0list de nombres de máquina virtual >  
+\<lista de nombres de máquina virtual >  
   
 La capacidad de conectar y desconectar el almacenamiento en caliente facilita la administración de las necesidades de almacenamiento de una máquina virtual sin necesidad de tiempo de inactividad. Las máquinas virtuales sin controladores SCSI deben apagarse para poder agregar o quitar almacenamiento.  
   
 ## <a name="resolution"></a>Resolución  
   
-*If no es necesario conectar el almacenamiento en caliente o desconectar en caliente para esta máquina virtual, no es necesario realizar ninguna acción. De lo contrario, apague la máquina virtual y agregue una controladora SCSI a la configuración.*  
+*Si no necesita conectar en caliente o desconectar el almacenamiento para esta máquina virtual, no es necesario realizar ninguna acción. De lo contrario, apague la máquina virtual y agregue una controladora SCSI a la configuración.*  
   
 Para usar una controladora SCSI para el almacenamiento de conexión y desconexión en caliente, el sistema operativo invitado debe ejecutar la versión actual de Integration Services.  
   

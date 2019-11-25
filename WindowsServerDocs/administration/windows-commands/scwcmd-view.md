@@ -36,11 +36,11 @@ scwcmd view /x:<Xmlfile.xml> [/s:<Xslfile.xsl>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/x: @no__t -0Xmlfile. XML >|Especifica el archivo. XML que se va a ver. Se debe especificar este parámetro.|
-|/s: @no__t -0Xslfile. xsl >|Especifica la transformación. XSL que se va a aplicar al archivo. XML como parte del proceso de representación. Este parámetro es opcional para los archivos SCW. Xml. Cuando el comando **View** se usa para representar un archivo SCW. XML, intentará cargar automáticamente la transformación predeterminada correcta para el archivo. XML especificado. Si se especifica una transformación. xsl, se debe escribir la transformación bajo el supuesto de que el archivo. XML está en el mismo directorio que la transformación. Xsl.|
+|/x:\<Xmlfile. XML >|Especifica el archivo. XML que se va a ver. Se debe especificar este parámetro.|
+|/s:\<xslfile. xsl >|Especifica la transformación. XSL que se va a aplicar al archivo. XML como parte del proceso de representación. Este parámetro es opcional para los archivos SCW. Xml. Cuando el comando **View** se usa para representar un archivo SCW. XML, intentará cargar automáticamente la transformación predeterminada correcta para el archivo. XML especificado. Si se especifica una transformación. xsl, se debe escribir la transformación bajo el supuesto de que el archivo. XML está en el mismo directorio que la transformación. Xsl.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Scwcmd. exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
 

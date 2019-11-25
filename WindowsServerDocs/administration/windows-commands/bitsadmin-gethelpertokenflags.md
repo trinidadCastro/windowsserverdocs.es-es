@@ -21,9 +21,9 @@ ms.locfileid: "71381571"
 ---
 # <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gethelpertokenflags
 
-Devuelve las marcas de uso de un [token auxiliar](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)@no__t-clientes 1 está asociado a un trabajo de transferencia de bits.
+Devuelve las marcas de uso de un [token auxiliar](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs) asociado a un trabajo de transferencia de bits.
 
-**BITS 3,0 y versiones anteriores**: No compatible.
+**BITS 3,0 y versiones anteriores**: no se admiten.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,7 +37,7 @@ bitsadmin /GetHelperTokenFlags <Job>
 |---------|-----------|
 |Trabajo|El nombre para mostrar del trabajo o el GUID|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Entre los posibles valores devueltos se incluyen los siguientes.
 

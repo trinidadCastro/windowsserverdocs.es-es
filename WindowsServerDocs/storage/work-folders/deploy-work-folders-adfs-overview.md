@@ -15,7 +15,7 @@ ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71365920"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-overview"></a>Implementar carpetas de trabajo con AD FS y proxy de aplicación web: Información general
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-overview"></a>Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web (WAP): Información general
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
@@ -37,7 +37,7 @@ Para seguir los procedimientos y ejemplos que se detallan estos temas, debes ten
   
 -   Un bosque de Active Directory® Domain Services con extensiones de esquema en Windows Server 2012 R2 para poder remitir automáticamente los equipos y los dispositivos al servidor de archivos adecuado cuando se usen varios servidores de archivos. Es preferible que el DNS esté habilitado en el bosque, pero esto no es necesario.  
   
--   Un controlador de dominio: Un servidor que tenga el rol de AD DS habilitado y configurado con un dominio (para el ejemplo de prueba, contoso.com).  
+-   Un controlador de dominio: esto es, un servidor que tenga el rol de AD DS habilitado y que esté configurado con un dominio (como la prueba de ejemplo contoso.com).  
   
     Un controlador de dominio que ejecute al menos Windows Server 2012 R2; esto es necesario para poder registrar el dispositivo en Workplace Join. Si no quieres usar Workplace Join, puedes ejecutar Windows Server 2012 en el controlador de dominio.  
   
@@ -51,7 +51,7 @@ Para seguir los procedimientos y ejemplos que se detallan estos temas, debes ten
   
 En cuanto al entorno de prueba que estamos explicando en esta guía, debes tener la topología que se muestra en el siguiente diagrama. Estos equipos pueden ser máquinas físicas o virtuales (VM). 
   
-![El diagrama muestra los segmentos de red de Internet, DMZ y Contoso. En el segmento de Internet: Cliente2 en la red perimetral: un servidor WAP; en el segmento contoso: Servidor de carpetas de trabajo, un controlador de dominio, un servidor de AD FS y Client1](media/deploy-work-folders-adfs/WF_ADFS_WAP_Diagram.png)
+![El diagrama muestra los segmentos de red de Internet, DMZ y Contoso. En el segmento de Internet: Client2; en el de DMZ: servidor WAP; en el segmento de Contoso: servidor Carpetas de trabajo, un controlador de dominio, un servidor de AD FS y Client1](media/deploy-work-folders-adfs/WF_ADFS_WAP_Diagram.png)
 
 ## <a name="deployment-overview"></a>Información general sobre la implementación  
 En este grupo de temas, te guiaremos paso a paso mediante un ejemplo que muestra la manera de configurar AD FS, el Proxy de aplicación web y las Carpetas de trabajo en un entorno de prueba. Los componentes se configurarán en este orden:  
@@ -69,17 +69,17 @@ Asimismo, usarás un script de Windows PowerShell para crear certificados autofi
 ## <a name="deployment-steps"></a>Pasos de implementación  
 Para realizar la implementación mediante la interfaz de usuario de Windows Server, sigue los pasos descritos en estos temas:  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 1: configurar AD FS @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 1, configurar AD FS](deploy-work-folders-adfs-step1.md)  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 2: AD FS trabajo posterior a la configuración @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 2 AD FS trabajo posterior a la configuración](deploy-work-folders-adfs-step2.md)  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 3: configurar carpetas de trabajo @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 3, configurar carpetas de trabajo](deploy-work-folders-adfs-step3.md)  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 4: configurar el proxy de aplicación web @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 4: configurar el proxy de aplicación Web](deploy-work-folders-adfs-step4.md)  
   
--   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 5: configuración de los clientes @ no__t-0  
+-   [Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 5, configurar clientes](deploy-work-folders-adfs-step5.md)  
 
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Introducción a carpetas de trabajo](Work-Folders-Overview.md)  
 [Diseñar una implementación de Carpetas de trabajo](Plan-Work-Folders.md)  
 [Implementar Carpetas de trabajo](Deploy-Work-Folders.md)  

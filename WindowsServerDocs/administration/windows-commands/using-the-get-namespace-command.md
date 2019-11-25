@@ -38,7 +38,7 @@ wdsutil /Get-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/det
 
 |               Parámetro               |                                                                                                                                                                                         Descripción                                                                                                                                                                                          |
 |---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      /Namespace: <Namespace name>      | Especifica el nombre del espacio de nombres. Tenga en cuenta que este no es el nombre descriptivo y debe ser único.<br /><br />-Servidor de implementación: La sintaxis del nombre de espacio de nombres es/Namspace: WDS: <ImageGroup> @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4. Por ejemplo: **WDS: ImageGroup1/install. Wim/1**<br />-Servidor de transporte: Este valor debe coincidir con el nombre asignado al espacio de nombres cuando se creó en el servidor. |
+|      /Namespace:<Namespace name>      | Especifica el nombre del espacio de nombres. Tenga en cuenta que este no es el nombre descriptivo y debe ser único.<br /><br />-Servidor de implementación: la sintaxis del nombre de espacio de nombres es/Namspace: WDS:<ImageGroup>/<ImageName>/<Index>. Por ejemplo: **WDS: ImageGroup1/install. Wim/1**<br />-Servidor de transporte: este valor debe coincidir con el nombre asignado al espacio de nombres cuando se creó en el servidor. |
 |        [/Server:<Server name>]        |                                                                                                             Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utiliza el servidor local.                                                                                                              |
 | [/Show: clients] o [/Details: clients] |                                                                                                                                                  Muestra información acerca de los equipos cliente que están conectados al espacio de nombres especificado.                                                                                                                                                  |
 
@@ -50,9 +50,9 @@ wdsutil /Get-Namespace /Namespace:"Custom Auto 1"
 Para ver información acerca de un espacio de nombres y los clientes que están conectados, escriba uno de los siguientes:
 - Windows Server 2008: `wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:"Custom Auto 1" /Show:Clients`
 - Windows Server 2008 R2: `wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:"Custom Auto 1" /details:Clients`
-  #### <a name="additional-references"></a>Referencias adicionales
+  #### <a name="additional-references"></a>referencias adicionales
   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-  [mediante el comando get-AllNamespaces](using-the-get-allnamespaces-command.md)
-  [con el comando New-namespace](using-the-new-namespace-command.md)
-  [mediante el comando Remove-namespace](using-the-remove-namespace-command.md)
+  [usar el comando get-AllNamespaces](using-the-get-allnamespaces-command.md)
+  [usar el comando New-namespace](using-the-new-namespace-command.md)
+  [usar el comando Remove-namespace](using-the-remove-namespace-command.md)
   [Subcommand: Start-namespace](subcommand-start-namespace.md)

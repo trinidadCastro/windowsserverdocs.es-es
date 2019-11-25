@@ -34,7 +34,7 @@ Para ver la sintaxis del comando, haga clic en uno de los siguientes comandos:
 -   [eliminar SchTasks](#BKMK_delete)
 -   [Schtasks (consulta)](#BKMK_query)
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - **SchTasks. exe** realiza las mismas operaciones que **las tareas programadas** en el **Panel de control**. Puede usar estas herramientas juntas e indistintamente.
 - **Schtasks** reemplaza **a. exe**, una herramienta incluida en versiones anteriores de Windows. Aunque **at. exe** todavía está incluido en la familia de Windows Server 2003, **Schtasks** es la herramienta de programación de tareas de línea de comandos recomendada.
@@ -93,24 +93,24 @@ Especifica el tipo de programación. Los valores válidos son minuto, cada hora,
 |Tipo de programación|Descripción|
 |-------------|-----------|
 |MINUTO, CADA HORA, DIARIAMENTE, SEMANALMENTE, MENSUALMENTE|Especifica la unidad de tiempo para la programación.|
-|UNA VEZ|La tarea se ejecuta una vez en una fecha y hora especificadas.|
+|UNA vez|La tarea se ejecuta una vez en una fecha y hora especificadas.|
 |ONSTART|La tarea se ejecuta cada vez que se inicia el sistema. Puede especificar una fecha de inicio o ejecutar la tarea la próxima vez que se inicie el sistema.|
-|AL INICIAR|La tarea se ejecuta cada vez que un usuario (cualquier usuario) inicia sesión. Puede especificar una fecha o ejecutar la tarea la próxima vez que el usuario inicie sesión.|
+|AL iniciar|La tarea se ejecuta cada vez que un usuario (cualquier usuario) inicia sesión. Puede especificar una fecha o ejecutar la tarea la próxima vez que el usuario inicie sesión.|
 |ONIDLE|La tarea se ejecuta siempre que el sistema está inactivo durante un período de tiempo especificado. Puede especificar una fecha o ejecutar la tarea la próxima vez que el sistema esté inactivo.|
 
 ##### <a name="tn-taskname"></a>/TN \<TaskName >
 
 Especifica un nombre para la tarea. Cada tarea del sistema debe tener un nombre único. El nombre debe cumplir las reglas de los nombres de archivo y no debe superar los 238 caracteres. Utilice comillas para encerrar los nombres que incluyen espacios.
 
-##### <a name="tr-taskrun"></a>/TR \<TaskRun >
+##### <a name="tr-taskrun"></a>/TR \<la > de la
 
 Especifica el programa o comando que ejecuta la tarea. Escriba la ruta de acceso completa y el nombre de archivo de un archivo ejecutable, un archivo de script o un archivo por lotes. El nombre de la ruta de acceso no debe superar los 262 caracteres. Si omite la ruta de acceso, **SchTasks** supone que el archivo se encuentra en el directorio *systemroot*\System32
 
-##### <a name="s-computer"></a>/s \<Computer >
+##### <a name="s-computer"></a>/s \<equipo >
 
 Programa una tarea en el equipo remoto especificado. Escriba el nombre o la dirección IP de un equipo remoto (con o sin barras diagonales inversas). El valor predeterminado es el equipo local. Los parámetros **/u** y **/p** solo son válidos cuando se utiliza **/s**.
 
-##### <a name="u-domainuser"></a>/u [\<Domain > \] @ no__t-2
+##### <a name="u-domainuser"></a>/u [\<\]de > de dominio <User>
 
 Ejecuta este comando con los permisos de la cuenta de usuario especificada. El valor predeterminado son los permisos del usuario actual del equipo local. Los parámetros **/u** y **/p** solo son válidos para programar una tarea en un equipo remoto ( **/s**).
 
@@ -124,39 +124,39 @@ Proporciona la contraseña de la cuenta de usuario especificada en el parámetro
 
 Los parámetros **/u** y **/p** solo son válidos para programar una tarea en un equipo remoto ( **/s**).
 
-##### <a name="ru-domainuser--system"></a>/ru {[\<Domain > \] @ no__t-2 | Integrado
+##### <a name="ru-domainuser--system"></a>/ru {[\<> de dominio\]<User> | Integrado
 
 Ejecuta la tarea con los permisos de la cuenta de usuario especificada. De forma predeterminada, la tarea se ejecuta con los permisos del usuario actual del equipo local o con el permiso del usuario especificado mediante el parámetro **/u** , si se incluye uno. El parámetro **/RU** es válido cuando se programan tareas en equipos locales o remotos.
 
 
 |       Valor        |                                                    Descripción                                                    |
 |--------------------|-------------------------------------------------------------------------------------------------------------------|
-| [\<Domain > \] @ no__t-2 |                                       Especifica una cuenta de usuario alternativa.                                        |
+| [\<\]de > de dominio <User> |                                       Especifica una cuenta de usuario alternativa.                                        |
 |    System o ""    | Especifica la cuenta de sistema local, una cuenta con privilegios elevados usada por el sistema operativo y los servicios del sistema. |
 
-##### <a name="rp-password"></a>/RP \<Password >
+##### <a name="rp-password"></a>/RP \<contraseña >
 
 Proporciona la contraseña de la cuenta de usuario que se especifica en el parámetro **/RU** . Si omite este parámetro al especificar una cuenta de usuario, **SchTasks. exe** le pedirá la contraseña y ocultará el texto que escriba.
 
 No use el parámetro **/RP** para las tareas que se ejecutan con las credenciales de la cuenta del sistema ( **/RU System**). La cuenta del sistema no tiene una contraseña y **SchTasks. exe** no solicita una.
 
-##### <a name="mo-modifier"></a>/mo \<Modifier >
+##### <a name="mo-modifier"></a>/mo \<modificador >
 
 Especifica la frecuencia con que se ejecuta la tarea dentro de su tipo de programación. Este parámetro es válido, pero opcional, para una programación de minuto, hora, diaria, semanal y mensual. El valor predeterminado es 1.
 
 |Tipo de programación|Valores modificadores|Descripción|
 |-------------|---------------|-----------|
-|QUEDA|1 - 1439|La tarea se ejecuta cada \<n (> minutos.|
-|POR HORA|1 - 23|La tarea se ejecuta cada \<n (> horas.|
-|DIARIO|1 - 365|La tarea se ejecuta cada @no__t 0n (> días.|
-|SEMANA|1 - 52|La tarea se ejecuta cada @no__t 0n (> semanas.|
-|UNA VEZ|Sin modificadores.|La tarea se ejecuta una vez.|
+|QUEDA|1 - 1439|La tarea se ejecuta cada \<N > minutos.|
+|POR hora|1 - 23|La tarea se ejecuta cada \<N > horas.|
+|DIARIO|1 - 365|La tarea se ejecuta cada \<N > días.|
+|SEMANA|1 - 52|La tarea se ejecuta cada \<N > semanas.|
+|UNA vez|Sin modificadores.|La tarea se ejecuta una vez.|
 |ONSTART|Sin modificadores.|La tarea se ejecuta en el inicio.|
-|AL INICIAR|Sin modificadores.|La tarea se ejecuta cuando el usuario especificado por el parámetro **/u** inicia sesión.|
+|AL iniciar|Sin modificadores.|La tarea se ejecuta cuando el usuario especificado por el parámetro **/u** inicia sesión.|
 |ONIDLE|Sin modificadores.|La tarea se ejecuta después de que el sistema esté inactivo durante el número de minutos especificado por el parámetro **/i** , que es necesario para su uso con OnIdle.|
-|MENSUALMENTE|1 - 12|La tarea se ejecuta cada @no__t 0n (> meses.|
+|MENSUALMENTE|1 - 12|La tarea se ejecuta cada \<N > meses.|
 |MENSUALMENTE|LASTDAY|La tarea se ejecuta el último día del mes.|
-|MENSUALMENTE|PRIMERO, SEGUNDO, TERCERO, CUARTO, ÚLTIMO|Use con el parámetro **/d**\<Day > para ejecutar una tarea en una semana y día determinados. Por ejemplo, el tercer miércoles del mes.|
+|MENSUALMENTE|PRIMERO, SEGUNDO, TERCERO, CUARTO, ÚLTIMO|Use con el parámetro **/d**\<Day > para ejecutar una tarea en una determinada semana y día. Por ejemplo, el tercer miércoles del mes.|
 
 ##### <a name="d-dayday--"></a>/d Day [, Day...] | *
 
@@ -173,7 +173,7 @@ Especifica un día o días de la semana o un día (o días) de un mes. Válido s
 
 Especifica un mes o meses del año en los que se debe ejecutar la tarea programada. Los valores válidos son JAN-DEC y * (cada mes). El parámetro **/m** solo es válido con una programación mensual. Se requiere cuando se usa el modificador LASTDAY. De lo contrario, es opcional y el valor predeterminado es * (cada mes).
 
-##### <a name="i-idletime"></a>/i \<IdleTime >
+##### <a name="i-idletime"></a>/i \<Tiempodeinactividad >
 
 Especifica el número de minutos que el equipo está inactivo antes de que se inicie la tarea. Un valor válido es un número entero comprendido entre 1 y 999. Este parámetro solo es válido con una programación OnIdle y, a continuación, es obligatorio.
 
@@ -181,7 +181,7 @@ Especifica el número de minutos que el equipo está inactivo antes de que se in
 
 Especifica la hora del día a la que se inicia la tarea (cada vez que se inicia) en \<HH: MM > formato de 24 horas. El valor predeterminado es la hora actual en el equipo local. El parámetro **/St** es válido con programaciones de minuto, hora, diaria, semanal, mensual y una vez. Es necesario para una programación una vez.
 
-##### <a name="ri-interval"></a>/RI \<Interval >
+##### <a name="ri-interval"></a>/RI \<intervalo >
 
 Especifica el intervalo de repetición en minutos. Esto no es aplicable a los tipos de programación: MINUTE, HOURly, OnStart, ONLOGON y OnIdle. El intervalo válido es de 1 a 599940 minutos (599940 minutos = 9999 horas). Si se especifica/ET o/DU, el intervalo de repetición tiene como valor predeterminado 10 minutos.
 
@@ -192,7 +192,7 @@ Especifica la hora del día a la que finaliza un programa de tareas por minuto o
 Para obtener un ejemplo, vea:
 -   "Para programar una tarea que se ejecuta cada 100 minutos durante el horario no comercial" en la sección **para programar una tarea que se ejecuta cada** \<N > **minutos** .
 
-##### <a name="du-duration"></a>/du \<Duration >
+##### <a name="du-duration"></a>/du \<duración >
 
 Especifica un período de tiempo máximo para una programación de minuto o hora en \<HHHH: MM > formato de 24 horas. Una vez transcurrido el tiempo especificado, **SchTasks** no vuelve a iniciar la tarea hasta que se repite la hora de inicio. De forma predeterminada, las programaciones de tareas no tienen una duración máxima. Este parámetro es opcional y solo es válido con una programación por minuto o hora.
 
@@ -218,8 +218,8 @@ En la tabla siguiente se enumeran los formatos de fecha válidos. Use el formato
 |       Valor       |                                        Descripción                                         |
 |-------------------|--------------------------------------------------------------------------------------------|
 | \<MM >/<DD>/<YYYY> | Se usa para los formatos de primer mes, como **Inglés (Estados Unidos)** y **Español (Panamá)** . |
-| \<DD >/<MM> @ NO__T-2 @ NO__T-3 |       Se usa para los formatos de primer día, como **búlgaro** y **holandés (Países Bajos)** .        |
-| \<YYYY >/<MM> @ NO__T-2<DD> |          Se usa para los formatos de año primero, como **sueco** y **francés (Canadá)** .          |
+| \<DD >/<MM>/<YYYY> |       Se usa para los formatos de primer día, como **búlgaro** y **holandés (Países Bajos)** .        |
+| \<YYYY >/<MM>/<DD> |          Se usa para los formatos de año primero, como **sueco** y **francés (Canadá)** .          |
 
 /Ed \<EndDate >
 
@@ -233,8 +233,8 @@ En la tabla siguiente se enumeran los formatos de fecha válidos. Use el formato
 |       Valor       |                                        Descripción                                         |
 |-------------------|--------------------------------------------------------------------------------------------|
 | \<MM >/<DD>/<YYYY> | Se usa para los formatos de primer mes, como **Inglés (Estados Unidos)** y **Español (Panamá)** . |
-| \<DD >/<MM> @ NO__T-2 @ NO__T-3 |       Se usa para los formatos de primer día, como **búlgaro** y **holandés (Países Bajos)** .        |
-| \<YYYY >/<MM> @ NO__T-2<DD> |          Se usa para los formatos de año primero, como **sueco** y **francés (Canadá)** .          |
+| \<DD >/<MM>/<YYYY> |       Se usa para los formatos de primer día, como **búlgaro** y **holandés (Países Bajos)** .        |
+| \<YYYY >/<MM>/<DD> |          Se usa para los formatos de año primero, como **sueco** y **francés (Canadá)** .          |
 
 ##### <a name="it"></a>/It
 
@@ -266,7 +266,7 @@ Muestra la ayuda en el símbolo del sistema.
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc minute [/mo {1 - 1439}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [{/et <HH:MM> | /du <HHHH:MM>} [/k]] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 En una programación por minuto, el parámetro **/SC minute** es obligatorio. El parámetro **/mo** (modificador) es opcional y especifica el número de minutos entre cada ejecución de la tarea. El valor predeterminado de **/mo** es 1 (cada minuto). Los parámetros **/et** (hora de finalización) y **/du** (duración) son opcionales y se pueden usar con o sin el parámetro **/k** (Finalizar tarea).
 
@@ -296,7 +296,7 @@ schtasks /create /tn "Security Script" /tr sec.vbs /sc minute /mo 100 /st 17:00 
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc hourly [/mo {1 - 23}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [{/et <HH:MM> | /du <HHHH:MM>} [/k]] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 En una programación por hora, se requiere el parámetro **/SC HOURLY** . El parámetro **/mo** (modificador) es opcional y especifica el número de horas entre cada ejecución de la tarea. El valor predeterminado de **/mo** es 1 (cada hora). El parámetro **/k** (Finalizar tarea) es opcional y se puede usar con **/et** (finalizar en el momento especificado) o **/du** (finalizar después del intervalo especificado).
 
@@ -336,7 +336,7 @@ En este ejemplo, la tarea se ejecuta a las 12:00 A.M., 3:00 A.M., 6:00 A.M. y 9:
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc daily [/mo {1 - 365}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 En una programación diaria, se requiere el parámetro **/SC Daily** . El parámetro **/mo** (modificador) es opcional y especifica el número de días entre cada ejecución de la tarea. El valor predeterminado de **/mo** es 1 (cada día).
 
@@ -378,11 +378,11 @@ schtasks /create /tn "Security Script" /tr sec.vbs /sc daily /mo 70 /it
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/mo {1 - 52}] [/d {<MON - SUN>[,MON - SUN...] | *}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 En una programación semanal, se requiere el parámetro **/SC Weekly** . El parámetro **/mo** (modificador) es opcional y especifica el número de semanas entre cada ejecución de la tarea. El valor predeterminado de **/mo** es 1 (cada semana).
 
-Las programaciones semanales también tienen un parámetro opcional **/d** para programar la ejecución de la tarea en los días de la semana especificados o en todos los días ( *). El valor predeterminado es LUN (lunes). La opción todos los días (* ) es equivalente a programar una tarea diaria.
+Las programaciones semanales también tienen un parámetro opcional **/d** para programar la ejecución de la tarea en los días de la semana especificados o en todos los días ( *). El valor predeterminado es LUN (lunes). La opción todos los días (* ) equivale a programar una tarea diaria.
 
 #### <a name="examples"></a>Ejemplos
 
@@ -412,7 +412,7 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo 2 /d FRI
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly [/mo {1 - 12}] [/d {1 - 31}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 En este tipo de programación, se requiere el parámetro **/SC Monthly** . El parámetro **/mo** (modificador), que especifica el número de meses entre cada ejecución de la tarea, es opcional y el valor predeterminado es 1 (cada mes). Este tipo de programación también tiene un parámetro opcional **/d** para programar la ejecución de la tarea en una fecha determinada del mes. El valor predeterminado es 1 (el primer día del mes).
 
@@ -449,9 +449,9 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo 2 /d 21 /st 
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/d {<MON - SUN>[,MON - SUN...] | *}] [/mo {1 - 52}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
-La programación de "día de la semana" es una variación de la programación semanal. En una programación semanal, se requiere el parámetro **/SC Weekly** . El parámetro **/mo** (modificador) es opcional y especifica el número de semanas entre cada ejecución de la tarea. El valor predeterminado de **/mo** es 1 (cada semana). El parámetro **/d** , que es opcional, programa la tarea para que se ejecute en los días de la semana especificados o en todos los días (\*). El valor predeterminado es LUN (lunes). La opción todos los días ( **/d \*** ) equivale a programar una tarea diaria.
+La programación de "día de la semana" es una variación de la programación semanal. En una programación semanal, se requiere el parámetro **/SC Weekly** . El parámetro **/mo** (modificador) es opcional y especifica el número de semanas entre cada ejecución de la tarea. El valor predeterminado de **/mo** es 1 (cada semana). El parámetro **/d** , que es opcional, programa la tarea para que se ejecute en los días de la semana especificados o en todos los días (\*). El valor predeterminado es LUN (lunes). La opción todos los días ( **/d \*** ) es equivalente a programar una tarea diaria.
 
 #### <a name="examples"></a>Ejemplos
 
@@ -477,7 +477,7 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc weekly /mo 8 /d MON,FRI
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo {FIRST | SECOND | THIRD | FOURTH | LAST} /d MON - SUN [/m {JAN - DEC[,JAN - DEC...] | *}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 En este tipo de programación, es necesario el parámetro **/SC Monthly** , el parámetro **/mo** (modificador) y el parámetro **/d** (Day). El parámetro **/mo** (modificador) especifica la semana en la que se ejecuta la tarea. El parámetro **/d** especifica el día de la semana. (Solo puede especificar un día de la semana para este tipo de programación). Esta programación también tiene un parámetro **/m** (mes) opcional que le permite programar la tarea para meses concretos o cada mes (\*). El valor predeterminado del parámetro **/m** es cada mes (\*).
 
@@ -505,7 +505,7 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo FIRST /d MON
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /d {1 - 31} [/m {JAN - DEC[,JAN - DEC...] | *}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 En el tipo de programación de fecha específica, se requiere el parámetro **/SC Monthly** y el parámetro **/d** (Day). El parámetro **/d** especifica una fecha del mes (1-31), no un día de la semana. Solo puede especificar un día en la programación. El parámetro **/mo** (modificador) no es válido con este tipo de programación.
 
@@ -535,7 +535,7 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /d 15 /m MAY,JUN
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo LASTDAY /m {JAN - DEC[,JAN - DEC...] | *} [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 En el tipo de programación del último día, es necesario el parámetro **/SC Monthly** , el parámetro **/mo lastDay** (modificador) y el parámetro **/m** (month). El parámetro **/d** (Day) no es válido.
 
@@ -563,7 +563,7 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly /mo lastday /m F
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc once /st <HH:MM> [/sd <StartDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 En el tipo de programación Run-once, se requiere el parámetro **/SC once** . El parámetro **/St** , que especifica el tiempo que se ejecuta la tarea, es obligatorio. El parámetro **/SD** , que especifica la fecha en la que se ejecuta la tarea, es opcional. Los parámetros **/mo** (modificador) y **/Ed** (fecha de finalización) no son válidos para este tipo de programación.
 
@@ -588,7 +588,7 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc once /sd 01/01/2003 /st 
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc onstart [/sd <StartDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 En el tipo de programación on-Start, se requiere el parámetro **/SC OnStart** . El parámetro **/SD** (fecha de inicio) es opcional y el valor predeterminado es la fecha actual.
 
@@ -611,7 +611,7 @@ schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc onstart /sd 03/15/2001
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc onlogon [/sd <StartDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 El tipo de programación "al iniciar sesión" programa una tarea que se ejecuta cada vez que un usuario inicia sesión en el equipo. En el tipo de programación "al iniciar sesión", se requiere el parámetro **/SC ONLOGON** . El parámetro **/SD** (fecha de inicio) es opcional y el valor predeterminado es la fecha actual.
 
@@ -632,7 +632,7 @@ schtasks /create /tn "Start Web Site" /tr c:\myiis\webstart.bat /sc onlogon /s S
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc onidle /i {1 - 999} [/sd <StartDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 El tipo de programación "en inactivo" programa una tarea que se ejecuta siempre que no haya ninguna actividad de usuario durante el tiempo especificado por el parámetro **/i** . En el tipo de programación "en inactivo", se requieren el parámetro **/SC** OnIdle y el parámetro **/i** . **/SD** (fecha de inicio) es opcional y el valor predeterminado es la fecha actual.
 
@@ -865,7 +865,7 @@ Idle Time: Disabled
 Power Management: Disabled
 ```
 
-#### <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
 -   Para ejecutar un comando **/Create** con los permisos de otro usuario, use el parámetro **/u** . El parámetro **/u** solo es válido para programar tareas en equipos remotos.
 -   Para ver más ejemplos de **Schtasks/Create** , escriba **Schtasks/Create/?** en un símbolo del sistema.
@@ -896,16 +896,16 @@ schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Passwo
 |          Término           |                                                                                                                                                                                                                                                                                                                                     Definición                                                                                                                                                                                                                                                                                                                                      |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     /TN \<TaskName >     |                                                                                                                                                                                                                                                                                                               Identifica la tarea que se va a cambiar. Escriba el nombre de la tarea.                                                                                                                                                                                                                                                                                                               |
-|     /s \<Computer >      |                                                                                                                                                                                                                                                                               Especifica el nombre o la dirección IP de un equipo remoto (con o sin barras diagonales inversas). El valor predeterminado es el equipo local.                                                                                                                                                                                                                                                                               |
-|  /u [\<Domain > \] @ no__t-2  |                                                                                                                                                                 Ejecuta este comando con los permisos de la cuenta de usuario especificada. El valor predeterminado son los permisos del usuario actual del equipo local. La cuenta de usuario especificada debe ser miembro del grupo administradores en el equipo remoto. Los parámetros **/u** y **/p** solo son válidos para cambiar una tarea en un equipo remoto ( **/s**).                                                                                                                                                                  |
+|     /s \<equipo >      |                                                                                                                                                                                                                                                                               Especifica el nombre o la dirección IP de un equipo remoto (con o sin barras diagonales inversas). El valor predeterminado es el equipo local.                                                                                                                                                                                                                                                                               |
+|  /u [\<\]de > de dominio <User>  |                                                                                                                                                                 Ejecuta este comando con los permisos de la cuenta de usuario especificada. El valor predeterminado son los permisos del usuario actual del equipo local. La cuenta de usuario especificada debe ser miembro del grupo administradores en el equipo remoto. Los parámetros **/u** y **/p** solo son válidos para cambiar una tarea en un equipo remoto ( **/s**).                                                                                                                                                                  |
 |     /p \<contraseña >      |                                                                                                                                                                                              Especifica la contraseña de la cuenta de usuario especificada en el parámetro **/u** . Si usa el parámetro **/u** , pero omite el parámetro **/p** o el argumento de contraseña, **Schtasks** solicita una contraseña.</br>Los parámetros **/u** y **/p** solo son válidos cuando se utiliza **/s**.                                                                                                                                                                                               |
-| /ru {[\<Domain > \] @ no__t-2 |                                                                                                                                                                                                                                                                                                                                       Integrado                                                                                                                                                                                                                                                                                                                                       |
-|     /RP \<Password >     |                                                                                                                                                                                                                                                 Especifica una nueva contraseña para la cuenta de usuario existente o la cuenta de usuario especificada por el parámetro **/RU** . Este parámetro se omite cuando se usa con la cuenta de sistema local.                                                                                                                                                                                                                                                  |
-|     /TR \<TaskRun >      |                                                                                                                                                                                  Cambia el programa que ejecuta la tarea. Escriba la ruta de acceso completa y el nombre de archivo de un archivo ejecutable, un archivo de script o un archivo por lotes. Si omite la ruta de acceso, **SchTasks** supone que el archivo se encuentra en el directorio \<systemroot > \System32 El programa especificado reemplaza el programa original ejecutado por la tarea.                                                                                                                                                                                  |
-|    /St \<Starttime >     |                                                                                                                                                                                                                                                              Especifica la hora de inicio de la tarea, con el formato de hora de 24 horas, HH: mm. Por ejemplo, un valor de 14:30 es equivalente a la hora de 12 horas de 2:30 PM.                                                                                                                                                                                                                                                               |
-|     /RI \<Interval >     |                                                                                                                                                                                                                                                                           Especifica el intervalo de repetición de la tarea programada, en minutos. El intervalo válido es 1-599940 (599940 minutos = 9999 horas).                                                                                                                                                                                                                                                                            |
+| /ru {[\<> de dominio\]<User> |                                                                                                                                                                                                                                                                                                                                       Integrado                                                                                                                                                                                                                                                                                                                                       |
+|     /RP \<contraseña >     |                                                                                                                                                                                                                                                 Especifica una nueva contraseña para la cuenta de usuario existente o la cuenta de usuario especificada por el parámetro **/RU** . Este parámetro se omite cuando se usa con la cuenta de sistema local.                                                                                                                                                                                                                                                  |
+|     /TR \<la > de la      |                                                                                                                                                                                  Cambia el programa que ejecuta la tarea. Escriba la ruta de acceso completa y el nombre de archivo de un archivo ejecutable, un archivo de script o un archivo por lotes. Si omite la ruta de acceso, **SchTasks** supone que el archivo se encuentra en el directorio \<SystemRoot > \System32 El programa especificado reemplaza el programa original ejecutado por la tarea.                                                                                                                                                                                  |
+|    /St \<startTime >     |                                                                                                                                                                                                                                                              Especifica la hora de inicio de la tarea, con el formato de hora de 24 horas, HH: mm. Por ejemplo, un valor de 14:30 es equivalente a la hora de 12 horas de 2:30 PM.                                                                                                                                                                                                                                                               |
+|     /RI \<intervalo >     |                                                                                                                                                                                                                                                                           Especifica el intervalo de repetición de la tarea programada, en minutos. El intervalo válido es 1-599940 (599940 minutos = 9999 horas).                                                                                                                                                                                                                                                                            |
 |     /et \<EndTime >      |                                                                                                                                                                                                                                                               Especifica la hora de finalización de la tarea, con el formato de hora de 24 horas, HH: mm. Por ejemplo, un valor de 14:30 es equivalente a la hora de 12 horas de 2:30 PM.                                                                                                                                                                                                                                                                |
-|     /du \<Duration >     |                                                                                                                                                                                                                                                                                                     Especifica que se cierre la tarea en el > \<EndTime o <Duration>, si se especifica.                                                                                                                                                                                                                                                                                                      |
+|     /du \<duración >     |                                                                                                                                                                                                                                                                                                     Especifica que se cierre la tarea en el \<EndTime > o <Duration>, si se especifica.                                                                                                                                                                                                                                                                                                      |
 |           /k            |                                                                                                                                                                   Detiene el programa que ejecuta la tarea en el momento especificado por **/et** o **/du**. Sin **/k**, **Schtasks** no vuelve a iniciar el programa después de alcanzar el tiempo especificado por **/et** o **/du**, pero no detiene el programa si todavía se está ejecutando. Este parámetro es opcional y solo es válido con una programación por minuto o hora.                                                                                                                                                                   |
 |    /SD \<StartDate >     |                                                                                                                                                                                                                                                                                              Especifica la primera fecha en la que se debe ejecutar la tarea. El formato de fecha es MM/DD/AAAA.                                                                                                                                                                                                                                                                                               |
 |     /Ed \<EndDate >      |                                                                                                                                                                                                                                                                                                 Especifica la última fecha en la que se debe ejecutar la tarea. El formato es MM/DD/AAAA.                                                                                                                                                                                                                                                                                                  |
@@ -915,7 +915,7 @@ schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Passwo
 |           /z            |                                                                                                                                                                                                                                                                                                          Especifica la eliminación de la tarea tras la finalización de su programación.                                                                                                                                                                                                                                                                                                          |
 |           /?            |                                                                                                                                                                                                                                                                                                                        Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                                                                                                                                                                         |
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 -   Los parámetros **/TN** y **/s** identifican la tarea. Los parámetros **/TR**, **/RU**y **/RP** especifican las propiedades de la tarea que puede cambiar.
 -   Los parámetros **/RU**y **/RP** especifican los permisos en los que se ejecuta la tarea. Los parámetros **/u** y **/p** especifican los permisos que se usan para cambiar la tarea.
@@ -1015,16 +1015,16 @@ schtasks /run /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 |         Término          |                                                                                                                                                                 Definición                                                                                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /TN \<TaskName >    |                                                                                                                                                       Obligatorio. Identifica la tarea.                                                                                                                                                        |
-|    /s \<Computer >     |                                                                                                           Especifica el nombre o la dirección IP de un equipo remoto (con o sin barras diagonales inversas). El valor predeterminado es el equipo local.                                                                                                           |
-| /u [\<Domain > \] @ no__t-2 | Ejecuta este comando con los permisos de la cuenta de usuario especificada. De forma predeterminada, el comando se ejecuta con los permisos del usuario actual del equipo local.</br>La cuenta de usuario especificada debe ser miembro del grupo administradores en el equipo remoto. Los parámetros **/u** y **/p** solo son válidos cuando se utiliza **/s**. |
+|    /s \<equipo >     |                                                                                                           Especifica el nombre o la dirección IP de un equipo remoto (con o sin barras diagonales inversas). El valor predeterminado es el equipo local.                                                                                                           |
+| /u [\<\]de > de dominio <User> | Ejecuta este comando con los permisos de la cuenta de usuario especificada. De forma predeterminada, el comando se ejecuta con los permisos del usuario actual del equipo local.</br>La cuenta de usuario especificada debe ser miembro del grupo administradores en el equipo remoto. Los parámetros **/u** y **/p** solo son válidos cuando se utiliza **/s**. |
 |    /p \<contraseña >     |                          Especifica la contraseña de la cuenta de usuario especificada en el parámetro **/u** . Si usa el parámetro **/u** , pero omite el parámetro **/p** o el argumento de contraseña, **Schtasks** solicita una contraseña.</br>Los parámetros **/u** y **/p** solo son válidos cuando se utiliza **/s**.                           |
 |          /?           |                                                                                                                                                    Muestra la ayuda en el símbolo del sistema.                                                                                                                                                     |
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
--   Use esta operación para probar sus tareas. Si una tarea no se ejecuta, compruebe si hay errores en el registro de transacciones del servicio de Programador de tareas, \<Systemroot > \SchedLgU.txt.
+-   Use esta operación para probar sus tareas. Si una tarea no se ejecuta, compruebe si hay errores en el registro de transacciones del servicio de Programador de tareas, \<Raíz_sistema > \SchedLgU.txt.
 -   La ejecución de una tarea no afecta a la programación de tareas y no cambia la siguiente hora de ejecución programada para la tarea.
--   Para ejecutar una tarea de forma remota, se debe programar la tarea en el equipo remoto. Al ejecutarlo, la tarea solo se ejecuta en el equipo remoto. Para comprobar que una tarea se ejecuta en un equipo remoto, use el administrador de tareas o el registro de transacciones de Programador de tareas, \<Systemroot > \SchedLgU.txt.
+-   Para ejecutar una tarea de forma remota, se debe programar la tarea en el equipo remoto. Al ejecutarlo, la tarea solo se ejecuta en el equipo remoto. Para comprobar que una tarea se ejecuta en un equipo remoto, use el administrador de tareas o el registro de transacciones de Programador de tareas, \<Raíz_sistema > \SchedLgU.txt.
 
 ### <a name="examples"></a>Ejemplos
 
@@ -1083,12 +1083,12 @@ schtasks /end /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 |         Término          |                                                                                                                                                               Definición                                                                                                                                                                |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /TN \<TaskName >    |                                                                                                                                         Obligatorio. Identifica la tarea que inició el programa.                                                                                                                                         |
-|    /s \<Computer >     |                                                                                                                        Especifica el nombre o la dirección IP de un equipo remoto. El valor predeterminado es el equipo local.                                                                                                                        |
-| /u [\<Domain > \] @ no__t-2 | Ejecuta este comando con los permisos de la cuenta de usuario especificada. De forma predeterminada, el comando se ejecuta con los permisos del usuario actual del equipo local. La cuenta de usuario especificada debe ser miembro del grupo administradores en el equipo remoto. Los parámetros **/u** y **/p** solo son válidos cuando se utiliza **/s**. |
+|    /s \<equipo >     |                                                                                                                        Especifica el nombre o la dirección IP de un equipo remoto. El valor predeterminado es el equipo local.                                                                                                                        |
+| /u [\<\]de > de dominio <User> | Ejecuta este comando con los permisos de la cuenta de usuario especificada. De forma predeterminada, el comando se ejecuta con los permisos del usuario actual del equipo local. La cuenta de usuario especificada debe ser miembro del grupo administradores en el equipo remoto. Los parámetros **/u** y **/p** solo son válidos cuando se utiliza **/s**. |
 |    /p \<contraseña >     |                        Especifica la contraseña de la cuenta de usuario especificada en el parámetro **/u** . Si usa el parámetro **/u** , pero omite el parámetro **/p** o el argumento de contraseña, **Schtasks** solicita una contraseña.</br>Los parámetros **/u** y **/p** solo son válidos cuando se utiliza **/s**.                         |
 |          /?           |                                                                                                                                                             Muestra la ayuda.                                                                                                                                                              |
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 **SchTasks. exe** finaliza únicamente las instancias de un programa iniciadas por una tarea programada. Para detener otros procesos, use TaskKill. Para obtener más información, consulte [Taskkill](taskkill.md).
 
@@ -1132,12 +1132,12 @@ schtasks /delete /tn {<TaskName> | *} [/f] [/s <Computer> [/u [<Domain>\]<User> 
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   /TN {\<TaskName >    |                                                                                                                                                                     \*}                                                                                                                                                                     |
 |          /f           |                                                                                                                                  Suprime el mensaje de confirmación. La tarea se elimina sin previo aviso.                                                                                                                                  |
-|    /s \<Computer >     |                                                                                                           Especifica el nombre o la dirección IP de un equipo remoto (con o sin barras diagonales inversas). El valor predeterminado es el equipo local.                                                                                                           |
-| /u [\<Domain > \] @ no__t-2 | Ejecuta este comando con los permisos de la cuenta de usuario especificada. De forma predeterminada, el comando se ejecuta con los permisos del usuario actual del equipo local.</br>La cuenta de usuario especificada debe ser miembro del grupo administradores en el equipo remoto. Los parámetros **/u** y **/p** solo son válidos cuando se utiliza **/s**. |
+|    /s \<equipo >     |                                                                                                           Especifica el nombre o la dirección IP de un equipo remoto (con o sin barras diagonales inversas). El valor predeterminado es el equipo local.                                                                                                           |
+| /u [\<\]de > de dominio <User> | Ejecuta este comando con los permisos de la cuenta de usuario especificada. De forma predeterminada, el comando se ejecuta con los permisos del usuario actual del equipo local.</br>La cuenta de usuario especificada debe ser miembro del grupo administradores en el equipo remoto. Los parámetros **/u** y **/p** solo son válidos cuando se utiliza **/s**. |
 |    /p \<contraseña >     |                          Especifica la contraseña de la cuenta de usuario especificada en el parámetro **/u** . Si usa el parámetro **/u** , pero omite el parámetro **/p** o el argumento de contraseña, **Schtasks** solicita una contraseña.</br>Los parámetros **/u** y **/p** solo son válidos cuando se utiliza **/s**.                           |
 |          /?           |                                                                                                                                                    Muestra la ayuda en el símbolo del sistema.                                                                                                                                                     |
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 - La operación de **eliminación** elimina la tarea de la programación. No elimina el programa que ejecuta la tarea ni interrumpe un programa en ejecución.
 - El comando **delete \\** * elimina todas las tareas programadas para el equipo, no solo las tareas programadas por el usuario actual.
@@ -1184,12 +1184,12 @@ schtasks [/query] [/fo {TABLE | LIST | CSV}] [/nh] [/v] [/s <Computer> [/u [<Dom
 |      /FO {TABLE       |                                                                                                                                                                    LISTA                                                                                                                                                                     |
 |          /NH          |                                                                                                            Omite los encabezados de columna de la visualización de la tabla. Este parámetro es válido con los formatos de salida de **tabla** y **CSV** .                                                                                                             |
 |          /v           |                                                                                                         Agrega propiedades avanzadas de las tareas a la pantalla.</br>Las consultas que usan **/v** deben tener el formato **List** o **CSV**.                                                                                                          |
-|    /s \<Computer >     |                                                                                                           Especifica el nombre o la dirección IP de un equipo remoto (con o sin barras diagonales inversas). El valor predeterminado es el equipo local.                                                                                                           |
-| /u [\<Domain > \] @ no__t-2 | Ejecuta este comando con los permisos de la cuenta de usuario especificada. De forma predeterminada, el comando se ejecuta con los permisos del usuario actual del equipo local.</br>La cuenta de usuario especificada debe ser miembro del grupo administradores en el equipo remoto. Los parámetros **/u** y **/p** solo son válidos cuando se utiliza **/s**. |
+|    /s \<equipo >     |                                                                                                           Especifica el nombre o la dirección IP de un equipo remoto (con o sin barras diagonales inversas). El valor predeterminado es el equipo local.                                                                                                           |
+| /u [\<\]de > de dominio <User> | Ejecuta este comando con los permisos de la cuenta de usuario especificada. De forma predeterminada, el comando se ejecuta con los permisos del usuario actual del equipo local.</br>La cuenta de usuario especificada debe ser miembro del grupo administradores en el equipo remoto. Los parámetros **/u** y **/p** solo son válidos cuando se utiliza **/s**. |
 |    /p \<contraseña >     |                                        Especifica la contraseña de la cuenta de usuario especificada en el parámetro **/u** . Si usa **/u**, pero omite **/p** o el argumento de contraseña, **Schtasks** solicita una contraseña.</br>Los parámetros **/u** y **/p** solo son válidos cuando se utiliza **/s**.                                         |
 |          /?           |                                                                                                                                                    Muestra la ayuda en el símbolo del sistema.                                                                                                                                                     |
 
-### <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 **SchTasks. exe** finaliza únicamente las instancias de un programa iniciadas por una tarea programada. Para detener otros procesos, use TaskKill. Para obtener más información, consulte [Taskkill](taskkill.md).
 
@@ -1256,7 +1256,7 @@ Power Mgmt: Stop On Battery Mode: Disabled
 
 El comando siguiente solicita una lista de tareas programadas para un equipo remoto y agrega las tareas a un archivo de registro separado por comas en el equipo local. Puede usar este formato de comando para recopilar y realizar un seguimiento de las tareas programadas para varios equipos.
 
-El comando usa el parámetro **/s** para identificar el equipo remoto, Reskit16, el parámetro **/FO** para especificar el formato y el parámetro **/NH** para suprimir los encabezados de columna. El símbolo Append **de >>** redirige la salida al registro de tareas, p0102. csv, en el equipo local, Svr01. Dado que el comando se ejecuta en el equipo remoto, la ruta de acceso del equipo local debe ser completa.
+El comando usa el parámetro **/s** para identificar el equipo remoto, Reskit16, el parámetro **/FO** para especificar el formato y el parámetro **/NH** para suprimir los encabezados de columna. El símbolo de **>>** Append redirige la salida al registro de tareas, p0102. csv, en el equipo local, Svr01. Dado que el comando se ejecuta en el equipo remoto, la ruta de acceso del equipo local debe ser completa.
 ```
 schtasks /query /s Reskit16 /fo csv /nh >> \\svr01\data\tasklogs\p0102.csv
 ```

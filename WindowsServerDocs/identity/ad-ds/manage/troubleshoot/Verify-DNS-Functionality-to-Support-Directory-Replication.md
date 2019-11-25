@@ -28,13 +28,13 @@ Aunque puede ejecutar esta prueba de la funcionalidad DNS básica en cualquier c
 
 
 
-## <a name="running-the-domain-controller-basic-dns-testtitle"></a>Ejecutar la prueba de DNS básica @ no__t-0 del controlador de dominio
+## <a name="running-the-domain-controller-basic-dns-testtitle"></a>Ejecutar la prueba de DNS básica del controlador de dominio</title>
 
 La prueba de DNS básica comprueba los siguientes aspectos de la funcionalidad de DNS:
 
 
-- **Conectividad** La prueba determina si los controladores de dominio están registrados en DNS, se puede poner en contacto con el comando <system>ping</system> y tener conectividad de Protocolo ligero de acceso a directorios/llamada a procedimiento remoto (LDAP/RPC). Si se produce un error en la prueba de conectividad en un controlador de dominio, no se ejecuta ninguna otra prueba en ese controlador de dominio. La prueba de conectividad se realiza automáticamente antes de que se ejecute cualquier otra prueba de DNS.
-- **Servicios esenciales:** La prueba confirma que los siguientes servicios se están ejecutando y están disponibles en el controlador de dominio probado: Servicio de cliente DNS, servicio de inicio de sesión de red, servicio de Centro de distribución de claves (KDC) y servicio servidor DNS (si DNS está instalado en el controlador de dominio).
+- **Conectividad:** La prueba determina si los controladores de dominio están registrados en DNS, se puede poner en contacto con el comando <system>ping</system> y tener conectividad de Protocolo ligero de acceso a directorios/llamada a procedimiento remoto (LDAP/RPC). Si se produce un error en la prueba de conectividad en un controlador de dominio, no se ejecuta ninguna otra prueba en ese controlador de dominio. La prueba de conectividad se realiza automáticamente antes de que se ejecute cualquier otra prueba de DNS.
+- **Servicios esenciales:** La prueba confirma que los siguientes servicios se están ejecutando y están disponibles en el controlador de dominio probado: servicio de cliente DNS, servicio de inicio de sesión de red, servicio de Centro de distribución de claves (KDC) y servicio servidor DNS (si DNS está instalado en el controlador de dominio).
 - **Configuración del cliente DNS:**  La prueba confirma que se puede tener acceso a los servidores DNS de todos los adaptadores de red del equipo cliente DNS.
 - **Registros de registros de recursos:** La prueba confirma que el registro de recursos de host (A) de cada controlador de dominio está registrado en al menos uno de los servidores DNS que está configurado en el equipo cliente.
 - **Zona e inicio de autoridad (SOA):** Si el controlador de dominio está ejecutando el servicio servidor DNS, la prueba confirma que los Active Directory zona de dominio y el registro de recursos de inicio de autoridad (SOA) para la zona de dominio Active Directory están presentes.
@@ -51,11 +51,11 @@ Puede usar el procedimiento siguiente para comprobar la funcionalidad básica de
 2. En Iniciar búsqueda, escriba símbolo del sistema. 
 3. En la parte superior del menú Inicio, haga clic con el botón secundario en símbolo del sistema y, a continuación, haga clic en ejecutar como administrador. Si aparece el cuadro de diálogo Control de cuentas de usuario, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en Continuar.
 4. En el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR: `dcdiag /test:dns /v /s:<DCName> /DnsBasic /f:dcdiagreport.txt`
-</br></br>Sustituya el nombre distintivo real, el nombre NetBIOS o el nombre DNS del controlador de dominio por @no__t 0DCName @ no__t-1. Como alternativa, puede probar todos los controladores de dominio en el bosque escribiendo/e: en lugar de/s:. El modificador/f especifica un nombre de archivo, que en el comando anterior es dcdiagreport. txt. Si desea colocar el archivo en una ubicación distinta del directorio de trabajo actual, puede especificar una ruta de acceso de archivo, como/f: c:reportsdcdiagreport.txt.
+</br></br>Sustituya el nombre distintivo real, el nombre NetBIOS o el nombre DNS del controlador de dominio por &lt;Nombrededc&gt;. Como alternativa, puede probar todos los controladores de dominio en el bosque escribiendo/e: en lugar de/s:. El modificador/f especifica un nombre de archivo, que en el comando anterior es dcdiagreport. txt. Si desea colocar el archivo en una ubicación distinta del directorio de trabajo actual, puede especificar una ruta de acceso de archivo, como/f: c:reportsdcdiagreport.txt.
 
 5. Abra el archivo dcdiagreport. txt en el Bloc de notas o en un editor de texto similar. Para abrir el archivo en el Bloc de notas, en el símbolo del sistema, escriba notepad dcdiagreport. txt y, a continuación, presione Entrar. Si colocó el archivo en un directorio de trabajo diferente, incluya la ruta de acceso al archivo. Por ejemplo, si colocó el archivo en c:Reports, escriba notepad c:reportsdcdiagreport.txt y, a continuación, presione Entrar.
 6. Desplácese a la tabla de resumen cerca de la parte inferior del archivo. 
-</br></br>Anote los nombres de todos los controladores de dominio que notifican el estado "ADVERTENCIA" o "error" en la tabla de resumen.  Intente determinar si hay un controlador de dominio de problema buscando la sección de salida detallada mediante la búsqueda de la cadena "DC: Nombrededc, "donde Nombrededc es el nombre real del controlador de dominio.
+</br></br>Anote los nombres de todos los controladores de dominio que notifican el estado "ADVERTENCIA" o "error" en la tabla de resumen.  Intente determinar si hay un controlador de dominio problemático mediante la búsqueda de la sección de salida detallada mediante la búsqueda de la cadena "DC: Nombrededc", donde Nombrededc es el nombre real del controlador de dominio.
 
 Si ve cambios de configuración obvios que son necesarios, hagalos, según corresponda. Por ejemplo, si observa que uno de los controladores de dominio tiene una dirección IP obviamente incorrecta, puede corregirlo. Después, vuelva a ejecutar la prueba.
 
@@ -67,7 +67,7 @@ El controlador de dominio de destino utiliza el registro de recursos de alias DN
       
 Puede usar el procedimiento siguiente para comprobar el registro de registros de recursos, incluido el registro de registros de recursos de alias (CNAME).
       
-### <a name="to-verify-resource-record-registrationtitle"></a>Para comprobar el registro de registros de recursos @ no__t-0
+### <a name="to-verify-resource-record-registrationtitle"></a>Para comprobar el registro de registros de recursos</title>
 
 
 1. Abre un símbolo del sistema como administrador. Para abrir un símbolo del sistema como administrador, haga clic en iniciar. En Iniciar búsqueda, escriba símbolo del sistema. 
@@ -88,21 +88,21 @@ Puede usar el procedimiento siguiente para comprobar el registro de registros de
 
 1. Abra el complemento DNS. Para abrir DNS, haga clic en iniciar. En Iniciar búsqueda, escriba DNSMgmt. msc y, a continuación, presione Entrar. Si aparece el cuadro de diálogo control de cuentas de usuario, confirme que muestra la acción deseada y, a continuación, haga clic en continuar.
 2. Use el complemento DNS para buscar cualquier controlador de dominio que ejecute el servicio servidor DNS, donde el servidor hospede la zona DNS con el mismo nombre que el dominio Active Directory del controlador de dominio.
-3. En el árbol de consola, haga clic en la zona denominada _ msdcs. Dns_Domain_Name.
-4. En el panel de detalles, compruebe que están presentes los siguientes registros de recursos: un registro de recursos de alias (CNAME) que se denomina Dsa_Guid. _ msdcs. <placeholder>Dns_Domain_Name</placeholder> y un registro de recursos de host (a) correspondiente para el nombre del servidor DNS.
+3. En el árbol de consola, haga clic en la zona denominada _msdcs. Dns_Domain_Name.
+4. En el panel de detalles, compruebe que están presentes los siguientes registros de recursos: un registro de recursos de alias (CNAME) denominado Dsa_Guid. _msdcs. <placeholder>Dns_Domain_Name</placeholder> y un registro de recursos de host (a) correspondiente para el nombre del servidor DNS.
 
 Si el registro de recursos de alias (CNAME) no está registrado, compruebe que la actualización dinámica funciona correctamente. Use la prueba de la siguiente sección para comprobar la actualización dinámica.
     
 ## <a name="verifying-dynamic-update"></a>Comprobando la actualización dinámica
     
-Si la prueba de DNS básica muestra que los registros de recursos no existen en DNS, use la prueba de actualización dinámica para determinar por qué el servicio de net Logon no registró los registros de recursos automáticamente. Para comprobar que la zona de dominio Active Directory está configurada para aceptar actualizaciones dinámicas seguras y para realizar el registro de un registro de prueba (_dcdiag_test_record), use el procedimiento siguiente. El registro de prueba se elimina automáticamente después de la prueba.
+Si la prueba de DNS básica muestra que los registros de recursos no existen en DNS, use la prueba de actualización dinámica para determinar por qué el servicio de net Logon no registró los registros de recursos automáticamente. Use el procedimiento siguiente para comprobar que la zona de dominio Active Directory está configurada para aceptar actualizaciones dinámicas seguras y para realizar el registro de un registro de prueba (_dcdiag_test_record). El registro de prueba se elimina automáticamente después de la prueba.
 
-### <a name="to-verify-dynamic-updatetitle"></a>Para comprobar la actualización dinámica @ no__t-0
+### <a name="to-verify-dynamic-updatetitle"></a>Para comprobar la actualización dinámica</title>
 
 
 1. Abre un símbolo del sistema como administrador. Para abrir un símbolo del sistema como administrador, haga clic en iniciar. En Iniciar búsqueda, escriba símbolo del sistema. En la parte superior del menú Inicio, haga clic con el botón secundario en símbolo del sistema y, a continuación, haga clic en ejecutar como administrador. Si aparece el cuadro de diálogo Control de cuentas de usuario, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en Continuar.
 2. En el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR: `dcdiag /test:dns /v /s:<DCName> /DnsDynamicUpdate`
-   </br></br>Sustituya el nombre distintivo, el nombre NetBIOS o el nombre DNS del controlador de dominio por @no__t 0DCName @ no__t-1. Como alternativa, puede probar todos los controladores de dominio en el bosque escribiendo/e: en lugar de/s:. Si no tiene IPv6 habilitado en el controlador de dominio, debe esperar que se produzca un error en la parte del registro de recursos del host (AAAA) de la prueba, que es una condición normal cuando IPv6 no está habilitado.
+   </br></br>Sustituya el nombre distintivo, el nombre NetBIOS o el nombre DNS del controlador de dominio por &lt;Nombrededc&gt;. Como alternativa, puede probar todos los controladores de dominio en el bosque escribiendo/e: en lugar de/s:. Si no tiene IPv6 habilitado en el controlador de dominio, debe esperar que se produzca un error en la parte del registro de recursos del host (AAAA) de la prueba, que es una condición normal cuando IPv6 no está habilitado.
 
 Si no se configuran las actualizaciones dinámicas seguras, puede usar el procedimiento siguiente para configurarlas.
 
@@ -119,7 +119,7 @@ Si no se configuran las actualizaciones dinámicas seguras, puede usar el proced
     
 Si los registros de recursos DNS no aparecen en DNS para el controlador de dominio de origen, ha comprobado las actualizaciones dinámicas y desea registrar los registros de recursos DNS inmediatamente, puede forzar el registro manualmente mediante el procedimiento siguiente. El servicio Inicio de sesión de red de un controlador de dominio registra los registros de recursos DNS necesarios para que el controlador de dominio se encuentre en la red. El servicio cliente DNS registra el registro de recursos de host (A) al que apunta el registro de alias (CNAME).
 
-### <a name="to-register-dns-resource-records-manuallytitle"></a>Para registrar los registros de recursos DNS manualmente @ no__t-0
+### <a name="to-register-dns-resource-records-manuallytitle"></a>Para registrar manualmente los registros de recursos DNS</title>
 
 
 1. Abre un símbolo del sistema como administrador. Para abrir un símbolo del sistema como administrador, haga clic en iniciar. 
@@ -127,4 +127,4 @@ Si los registros de recursos DNS no aparecen en DNS para el controlador de domin
 3. En la parte superior del inicio, haga clic con el botón secundario en símbolo del sistema y, a continuación, haga clic en ejecutar como administrador. Si aparece el cuadro de diálogo Control de cuentas de usuario, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en Continuar.
 4. Para iniciar el registro de los registros de recursos del localizador del controlador de dominio manualmente en el controlador de dominio de origen, en el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR: `net stop netlogon && net start netlogon`
 5. Para iniciar manualmente el registro del registro de recursos de host (A), escriba el siguiente comando en el símbolo del sistema y presione ENTRAR: `ipconfig /flushdns && ipconfig /registerdns`
-6. En el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR: `dcdiag /test:dns /v /s:<DCName>` </br></br>Sustituya el nombre distintivo, el nombre NetBIOS o el nombre DNS del controlador de dominio por @no__t 0DCName @ no__t-1. Revise la salida de la prueba para asegurarse de que se han superado las pruebas de DNS. Si no tiene IPv6 habilitado en el controlador de dominio, debe esperar que se produzca un error en la parte del registro de recursos del host (AAAA) de la prueba, que es una condición normal cuando IPv6 no está habilitado.
+6. En el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR: `dcdiag /test:dns /v /s:<DCName>` </br></br>Sustituya el nombre distintivo, el nombre NetBIOS o el nombre DNS del controlador de dominio por &lt;Nombrededc&gt;. Revise la salida de la prueba para asegurarse de que se han superado las pruebas de DNS. Si no tiene IPv6 habilitado en el controlador de dominio, debe esperar que se produzca un error en la parte del registro de recursos del host (AAAA) de la prueba, que es una condición normal cuando IPv6 no está habilitado.

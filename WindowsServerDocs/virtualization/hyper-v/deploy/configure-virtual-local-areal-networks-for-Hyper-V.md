@@ -19,7 +19,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71364282"
 ---
 # <a name="configure-virtual-local-area-networks-for-hyper-v"></a>Configuración de redes de área local virtual para Hyper-V
-Las redes de área local virtuales \(VLANs @ no__t-1 ofrecen una manera de aislar el tráfico de red. Las VLAN se configuran en conmutadores y enrutadores que admiten 802.1 q. Si configura varias VLAN y desea que se produzca la comunicación entre ellas, deberá configurar los dispositivos de red para que lo permitan. 
+Las redes de área local virtuales \(VLAN\) ofrecen una manera de aislar el tráfico de red. Las VLAN se configuran en conmutadores y enrutadores que admiten 802.1 q. Si configura varias VLAN y desea que se produzca la comunicación entre ellas, deberá configurar los dispositivos de red para que lo permitan. 
 
 Necesitará lo siguiente para configurar las VLAN:  
   
@@ -30,7 +30,7 @@ En el host, configurará el conmutador virtual para permitir el tráfico de red 
   
 #### <a name="to-allow-a-virtual-switch-to-use-a-vlan"></a>Para permitir que un conmutador virtual use una VLAN  
   
-1.  Abra el administrador de Hyper @ no__t-0V.  
+1.  Abra el administrador de Hyper\-V.  
   
 2.  En el menú acciones, haga clic en **Administrador de conmutadores virtuales**.  
   
@@ -42,7 +42,7 @@ En el host, configurará el conmutador virtual para permitir el tráfico de red 
   
 #### <a name="to-allow-a-virtual-machine-to-use-a-vlan"></a>Para permitir que una máquina virtual use una VLAN  
   
-1.  Abra el administrador de Hyper @ no__t-0V.  
+1.  Abra el administrador de Hyper\-V.  
   
 2.  En el panel de resultados, en **virtual machines**, seleccione la máquina virtual adecuada y, a continuación, haga clic con el botón derecho en **configuración**.  
 
@@ -54,8 +54,8 @@ Si la máquina virtual necesita usar más VLAN, realice una de las siguientes ac
   
 -   Conecte más adaptadores de red virtuales a los conmutadores virtuales adecuados y asigne los identificadores de VLAN. Asegúrese de configurar las direcciones IP correctamente y de que el tráfico que desea enrutar a través de la VLAN use también la dirección IP correcta.  
   
--   Configure el adaptador de Word para la red virtual en el modo de tronco mediante el cmdlt [set @ no__t-1VMNetworkAdapterVlan](https://technet.microsoft.com/library/hh848475.aspx) .
+-   Configure el adaptador de Word para red virtual en el modo de tronco mediante el [conjunto\-VMNetworkAdapterVlan](https://technet.microsoft.com/library/hh848475.aspx) cmdlt.
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
  
-[Conmutador virtual de Hyper @ no__t-1V](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/hyper-v-virtual-switch)
+[Conmutador virtual de Hyper\-V](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/hyper-v-virtual-switch)
