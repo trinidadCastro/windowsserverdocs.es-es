@@ -1,50 +1,50 @@
 ---
 ms.date: 09/27/2018
 ms.topic: conceptual
-keywords: OpenSSH, SSH, SSHD, instalación y configuración
+keywords: OpenSSH;SSH;SSHD;install;setup;instalación;configuración
 contributor: maertendMSFT
 author: maertendMSFT
-title: Configuración del servidor OpenSSH para Windows
+title: Configuración del servidor de OpenSSH para Windows
 ms.product: w10
 ms.openlocfilehash: ed9f3653c79f1329b1334f52fe14c1184bc99539
 ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 09/10/2019
 ms.locfileid: "70866871"
 ---
 # <a name="openssh-key-management"></a>Administración de claves de OpenSSH
 
-La mayoría de la autenticación en entornos Windows se realiza con un par de nombre de usuario y contraseña.
-Esto funciona bien con sistemas que comparten un dominio común. Al trabajar entre dominios, como entre sistemas locales y hospedados en la nube, es más difícil.
+La mayor parte de la autenticación en entornos de Windows se realiza con un par de nombre de usuario y contraseña.
+Esta funciona bien en los sistemas que comparten un dominio común. Al trabajar con varios dominios (por ejemplo, entre sistemas locales y hospedados en la nube), se torna más difícil.
 
-En comparación, los entornos de Linux usan normalmente pares de clave pública y privada para controlar la autenticación.
-OpenSSH incluye herramientas que ayudan a respaldar esto, en concreto:
+En comparación, los entornos de Linux normalmente usan pares de clave pública y privada para controlar la autenticación.
+OpenSSH incluye herramientas que ayudan a admitir esta opción, en concreto:
 
-* __ssh-keygen__ para generar claves seguras
-* __ssh-agent__ y __ssh-add__ para almacenar de forma segura las claves privadas
-* __SCP__ y __SFTP__ para copiar archivos de clave pública de forma segura durante el uso inicial de un servidor
+* __ssh-keygen__ para generar claves seguras.
+* __ssh-agent__ y __ssh-add__ para almacenar claves privadas de forma segura.
+* __scp__ y __sftp__ para copiar archivos de claves públicas de forma segura durante el uso inicial de un servidor.
 
-En este documento se proporciona información general sobre cómo usar estas herramientas en Windows para empezar a usar la autenticación de claves con SSH. Si no está familiarizado con la administración de claves SSH, le recomendamos encarecidamente que revise el [documento NIST 7966](http://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.7966.pdf) titulado "seguridad de la administración de acceso interactivo y automatizada con Secure Shell (SSH)".
+En este documento se proporciona información general sobre cómo usar estas herramientas en Windows para empezar a usar la autenticación de claves con SSH. Si no estás familiarizado con la administración de claves SSH, se recomienda que revises el [informe interno de NIST 7966](http://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.7966.pdf) titulado "Seguridad de la administración de acceso interactiva y automatizada con Secure Shell (SSH)".
 
 ## <a name="about-key-pairs"></a>Acerca de los pares de claves
 
-Los pares de claves hacen referencia a los archivos de clave pública y privada utilizados por determinados protocolos de autenticación. 
+Los pares de claves hacen referencia a los archivos de clave pública y privada que utilizan determinados protocolos de autenticación. 
 
-La autenticación de clave pública SSH usa algoritmos criptográficos asimétricos para generar dos archivos de clave: uno "privado" y otro "público". Los archivos de clave privada son equivalentes a una contraseña y deben estar protegidos en todas las circunstancias. Si alguien adquiere su clave privada, puede iniciar sesión en cualquier servidor SSH al que tenga acceso. La clave pública es lo que se coloca en el servidor SSH y puede compartirse sin poner en peligro la clave privada.
+La autenticación de clave pública SSH usa algoritmos criptográficos asimétricos para generar dos archivos de clave: uno "privado" y otro "público". Los archivos de clave privada son el equivalente de una contraseña y deben estar protegidos en todo momento. Si alguien adquiere tu clave privada, esa persona puede iniciar sesión en cualquier servidor SSH al que tengas acceso. La clave pública es la que se coloca en el servidor SSH y puede compartirse sin poner en peligro la clave privada.
 
-Al usar la autenticación de clave con un servidor SSH, el servidor SSH y el cliente comparan la clave pública del nombre de usuario proporcionado con la clave privada. Si la clave pública no se puede validar con la clave privada del lado cliente, se produce un error de autenticación. 
+Al usar la autenticación de claves con un servidor SSH, el servidor SSH y el cliente comparan la clave pública del nombre de usuario proporcionado con la clave privada. Si la clave pública no se puede validar con la clave privada del lado cliente, se produce un error de autenticación. 
 
-La autenticación multifactor se puede implementar con pares de claves, ya que requiere que se proporcione una frase de contraseña cuando se genera el par de claves (vea la generación de claves a continuación). Durante la autenticación, se solicita al usuario la frase de contraseña, que se usa junto con la presencia de la clave privada en el cliente SSH para autenticar al usuario. 
+Para implementar la autenticación multifactor con pares de claves, debes solicitar que se proporcione una frase de contraseña cuando se genera el par de claves (consulta Generación de claves a continuación). Durante la autenticación, se solicita al usuario la frase de contraseña, que se usa junto con la presencia de la clave privada en el cliente SSH para autenticar al usuario. 
 
 ## <a name="host-key-generation"></a>Generación de claves de host
 
-Las claves públicas tienen requisitos de ACL específicos que, en Windows, equivalen solo a permitir el acceso a los administradores y al sistema. Para facilitar esta tarea, 
+Las claves públicas tienen requisitos de ACL específicos que, en Windows, equivalen a permitir el acceso únicamente a los administradores y al sistema. Para facilitar esta tarea, 
 
-* El módulo de PowerShell OpenSSHUtils se ha creado para establecer las ACL de claves correctamente y debe instalarse en el servidor.
-* Al usar sshd por primera vez, se generará automáticamente el par de claves para el host. Si ssh-agent se está ejecutando, las claves se agregarán automáticamente al almacén local. 
+* El módulo de PowerShell de OpenSSHUtils se creó para establecer las ACL de claves correctamente y debe instalarse en el servidor.
+* Al usar sshd por primera vez, se generará automáticamente el par de claves para el host. Si el ssh-agent se está ejecutando, las claves se agregarán automáticamente al almacén local. 
 
-Para facilitar la autenticación de claves con un servidor SSH, ejecute los siguientes comandos desde un símbolo del sistema de PowerShell con privilegios elevados:
+Para facilitar la autenticación de claves con un servidor SSH, ejecuta los siguientes comandos desde un símbolo del sistema de PowerShell con privilegios elevados:
 
 ```powershell
 
@@ -58,27 +58,27 @@ Start-Service ssh-agent
 Start-Service sshd
 ```
 
-Puesto que no hay ningún usuario asociado al servicio sshd, las claves de host se almacenan en \ProgramData\ssh.
+Dado que no hay ningún usuario asociado al servicio sshd, las claves de host se almacenan en \ProgramData\ssh.
 
 
 ## <a name="user-key-generation"></a>Generación de claves de usuario
 
-Para usar la autenticación basada en claves, primero debe generar algunos pares de claves pública y privada para el cliente. Desde PowerShell o CMD, use ssh-keygen para generar algunos archivos de clave.
+Para usar la autenticación basada en claves, primero debes generar algunos pares de claves públicas o privadas para el cliente. Desde PowerShell o cmd, usa ssh-keygen para generar algunos archivos de clave.
 
 ```powershell
 cd ~\.ssh\
 ssh-keygen
 ```
 
-Esto debería mostrar algo parecido a lo siguiente (donde "username" se reemplaza por su nombre de usuario)
+Esta operación debería mostrar algo similar a lo siguiente (donde "username" se reemplaza por tu nombre de usuario)
 
 ```
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (C:\Users\username\.ssh\id_ed25519):
 ```
 
-Puede presionar entrar para aceptar el valor predeterminado o especificar una ruta de acceso donde desee que se generen las claves. Llegados a este punto, se le pedirá que use una frase de contraseña para cifrar los archivos de clave privada.
-La frase de contraseña funciona con el archivo de clave para proporcionar autenticación en dos fases. En este ejemplo, vamos a dejar la frase de contraseña vacía. 
+Puedes presionar Entrar para aceptar el valor predeterminado o puedes especificar una ruta de acceso en la que quieres que se generen las claves. Llegados a este punto, se te pedirá que uses una frase de contraseña para cifrar los archivos de clave privada.
+La frase de contraseña funciona con el archivo de clave para proporcionar una autenticación en dos fases. En este ejemplo, vamos a dejar la frase de contraseña vacía. 
 
 ```
 Enter passphrase (empty for no passphrase): 
@@ -102,7 +102,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-Ahora tiene un par de claves ED25519 pública y privada (los archivos. pub son claves públicas y el resto son claves privadas):
+Ahora tienes un par de claves ED25519 pública y privada (los archivos .pub son claves públicas y los demás son claves privadas):
 
 ```
 Mode                LastWriteTime         Length Name
@@ -111,8 +111,8 @@ Mode                LastWriteTime         Length Name
 -a----        9/28/2018  11:09 AM            414 id_ed25519.pub
 ```
 
-Recuerde que los archivos de clave privada son equivalentes a las contraseñas que se deben proteger de la misma manera que se protege la contraseña.
-Para que le resulte más fácil, use ssh-agent para almacenar de forma segura las claves privadas en un contexto de seguridad de Windows, asociado a su inicio de sesión de Windows. Para ello, inicie el servicio ssh-agent como administrador y use ssh-add para almacenar la clave privada. 
+Recuerda que los archivos de clave privada son el equivalente de una contraseña, por lo que se deben proteger de la misma manera que las contraseñas.
+Para que sea más fácil, usa ssh-agent para almacenar de forma segura las claves privadas en un contexto de seguridad de Windows y asócialas con tu inicio de sesión de Windows. Para ello, inicia el servicio de ssh-agent como administrador y usa ssh-add para almacenar la clave privada. 
 
 ```powershell
 # Make sure you're running as an Administrator
@@ -126,20 +126,20 @@ ssh-add ~\.ssh\id_ed25519
 
 ```
 
-Después de completar estos pasos, cada vez que se necesita una clave privada para la autenticación desde este cliente, ssh-agent recuperará automáticamente la clave privada local y la pasará al cliente SSH.
+Después de completar estos pasos, cada vez que se necesite una clave privada para la autenticación desde este cliente, ssh-agent recuperará automáticamente la clave privada local y la pasará al cliente SSH.
 
 > [!NOTE]
-> Se recomienda encarecidamente que realice una copia de seguridad de la clave privada en una ubicación segura y, a continuación, la elimine del sistema local *después* de agregarla al agente SSH.
+> Se recomienda realizar una copia de seguridad de la clave privada en una ubicación segura y, a continuación, eliminarla del sistema local *después* de agregarla al agente SSH.
 > No se puede recuperar la clave privada del agente.
-> Si pierde el acceso a la clave privada, tendrá que crear un nuevo par de claves y actualizar la clave pública en todos los sistemas con los que interactúe.
+> Si pierdes el acceso a la clave privada, tendrás que crear un nuevo par de claves y actualizar la clave pública en todos los sistemas con los que interactúes.
 
 ## <a name="deploying-the-public-key"></a>Implementación de la clave pública
 
-Para usar la clave de usuario que se creó anteriormente, la clave pública debe colocarse en el servidor en un archivo de texto denominado *authorized_keys* en users\username\ssh. Las herramientas OpenSSH incluyen SCP, que es una utilidad de transferencia de archivos segura, para ayudarle con esto.
+Para usar la clave de usuario que se creó anteriormente, la clave pública debe colocarse en el servidor en un archivo de texto denominado *authorized_keys* en users\nombre de usuario\ssh. Las herramientas de OpenSSH incluyen scp (una utilidad de transferencia de archivos segura) para ayudarte con esta operación.
 
-Para trasladar el contenido de la clave pública (\.~ ssh\id_ed25519.pub) a un archivo de texto denominado authorized_keys\.en ~ ssh \ en el servidor o host.
+Para trasladar el contenido de la clave pública (~\.ssh\id_ed25519.pub) a un archivo de texto denominado authorized_keys en ~\.ssh\ en el servidor o host.
 
-En este ejemplo se usa la función repair-AuthorizedKeyPermissions en el módulo OpenSSHUtils que se instaló anteriormente en el host en las instrucciones anteriores.
+En este ejemplo se usa la función Repair-AuthorizedKeyPermissions en el módulo OpenSSHUtils que se instaló anteriormente en el host de las instrucciones anteriores.
 
 ```powershell
 # Make sure that the .ssh directory exists in your server's home folder
@@ -152,6 +152,6 @@ scp C:\Users\user1\.ssh\id_ed25519.pub user1@domain1@contoso.com:C:\Users\user1\
 ssh --% user1@domain1@contoso.com powershell -c $ConfirmPreference = 'None'; Repair-AuthorizedKeyPermission C:\Users\user1\.ssh\authorized_keys
 ```
 
-Estos pasos completan la configuración necesaria para usar la autenticación basada en claves con SSH en Windows.
+Estos pasos completan la configuración necesaria para usar la autenticación con SSH basada en claves en Windows.
 Después de esto, el usuario puede conectarse al host de sshd desde cualquier cliente que tenga la clave privada.
 

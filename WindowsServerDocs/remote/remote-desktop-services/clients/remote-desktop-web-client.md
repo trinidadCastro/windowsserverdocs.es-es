@@ -8,12 +8,12 @@ ms.date: 08/27/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 69beba2c59617da5b501dc55e2509e41ce4ee3fd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6c37c28fded08ba68e46a10a534ee0269c714938
+ms.sourcegitcommit: 89aea00fe0e00fc8b1a6e20af36ad04df8c9fe5b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404118"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74189473"
 ---
 # <a name="get-started-with-the-web-client"></a>Introducción al cliente web
 
@@ -58,6 +58,10 @@ Sigue estos pasos para imprimir desde el cliente web:
 ## <a name="copy-and-paste-from-the-remote-desktop-web-client"></a>Copiar y pegar desde el cliente web de Escritorio remoto
 
 El cliente web admite actualmente copiar y pegar solo texto. No pueden copiarse ni pegarse archivos desde y hacia el cliente web. Además, puedes usar solo **Ctrl+C** y **Ctrl+V** para copiar y pegar texto.
+
+## <a name="use-an-input-method-editor-ime-in-the-remote-session"></a>Usar un editor de métodos de entrada (IME) en la sesión remota
+
+Para usar un editor de métodos de entrada para escribir caracteres complejos en la sesión remota, selecciona el icono con forma de engranaje en la barra de navegación para abrir el panel lateral de la **configuración**, y establece la opción para **habilitar el editor de métodos de entrada** como **Activada**. Recuerda que debes tener un editor de métodos de entrada instalado y habilitado en la sesión remota. 
 
 ## <a name="get-help-with-the-web-client"></a>Obtención de ayuda con el cliente web
 

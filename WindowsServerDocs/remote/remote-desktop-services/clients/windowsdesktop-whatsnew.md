@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/12/2019
+ms.date: 11/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: db9c2b64e018b41b053974b5459bd320098a6d2d
-ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
+ms.openlocfilehash: 54994aad08c2f428b429082ed450235ed8bbe7e7
+ms.sourcegitcommit: 244b89505c5131dfdb90628857cc7e31741c84c2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74019593"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74265924"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -31,11 +31,22 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 |Grupo de usuarios |Versión  |
 |-----------|---------|
 |Public     |1.2.431  |
-|Insider    |1.2.431  |
+|Insider    |1.2.524  |
+
+## <a name="updates-for-version-12524"></a>Actualizaciones de la versión 1.2.524
+
+*Fecha de publicación: 11/20/2019*
+
+Descargar: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4e7Nj), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dZCo), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dX1s)
+
+- Ahora puedes obtener acceso directo a la información sobre las actualizaciones, gracias al botón para obtener más opciones de la barra de comandos que está en la parte superior del cliente.
+- Ahora puedes notificar los comentarios desde la barra de comandos del cliente.
 
 ## <a name="updates-for-version-12431"></a>Actualizaciones de la versión 1.2.431
 
 *Fecha de publicación: 12/11/2019*
+
+Descargar: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48kow), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48koA), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48zYj)
 
 - Ya están disponibles las versiones de 32 bits y ARM64 del cliente.
 - Ahora, el cliente guarda los cambios que realizas en la barra de conexión (como su posición, tamaño y estado anclado) y aplica los cambios en las sesiones.
@@ -55,15 +66,12 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 *Fecha de publicación: 17/09/2019*
 
-- Se ha corregido un bloqueo que se producía al autenticarse durante una conexión.
-- Se ha corregido un bloqueo que se producía al cerrar el cliente.
-
-## <a name="updates-for-version-12246"></a>Actualizaciones de la versión 1.2.246
-
-*Fecha de publicación: 28/08/2019*
+Descargar: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3LkSa)
 
 - Se han mejorado los idiomas de reserva para la versión localizada. (Por ejemplo, FR-CA se mostrará correctamente en francés, en lugar de en inglés).
 - Al quitar una suscripción, el cliente ahora quita correctamente las credenciales guardadas del Administrador de credenciales.
 - El proceso de actualización del cliente ahora está desatendido una vez que se ha iniciado y el cliente se reiniciará una vez completado.
 - El cliente ahora se puede usar en el modo S de Windows 10.
 - Se corrigió un problema que hacía que se produjera un error en el proceso de actualización de usuarios con un espacio en su nombre de usuario.
+- Se ha corregido un bloqueo que se producía al autenticarse durante una conexión.
+- Se ha corregido un bloqueo que se producía al cerrar el cliente.
