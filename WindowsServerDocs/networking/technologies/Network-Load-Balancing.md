@@ -1,6 +1,6 @@
 ---
 title: Equilibrio de carga de red
-description: En este tema se proporciona información general sobre la característica de equilibrio de carga de red \(NLB @ no__t-1 en Windows Server 2016. Puede usar NLB para administrar dos o más servidores como un solo clúster virtual. NLB mejora la disponibilidad y escalabilidad de las aplicaciones de servidor de Internet, como las que se usan en Web, FTP, firewall, proxy, red privada virtual \(VPN @ no__t-1 y otros servidores Mission @ no__t-2critical.
+description: En este tema se proporciona información general sobre la característica de equilibrio de carga de red \(NLB\) en Windows Server 2016. Puede usar NLB para administrar dos o más servidores como un solo clúster virtual. NLB mejora la disponibilidad y escalabilidad de las aplicaciones de servidor de Internet, como las que se usan en Web, FTP, firewall, proxy, red privada virtual \(VPN\) y otros servidores Mission\- critical.
 manager: dougkim
 ms.prod: windows-server
 ms.technology: networking-nlb
@@ -20,7 +20,7 @@ ms.locfileid: "71405842"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema se proporciona información general sobre la característica de equilibrio de carga de red \(NLB @ no__t-1 en Windows Server 2016. Puede usar NLB para administrar dos o más servidores como un solo clúster virtual. NLB mejora la disponibilidad y escalabilidad de las aplicaciones de servidor de Internet, como las que se usan en Web, FTP, firewall, proxy, red privada virtual \(VPN @ no__t-1 y otros servidores Mission @ no__t-2critical.  
+En este tema se proporciona información general sobre la característica de equilibrio de carga de red \(NLB\) en Windows Server 2016. Puede usar NLB para administrar dos o más servidores como un solo clúster virtual. NLB mejora la disponibilidad y escalabilidad de las aplicaciones de servidor de Internet, como las que se usan en Web, FTP, firewall, proxy, red privada virtual \(VPN @ no__t-1 y otros servidores Mission @ no__t-2critical.  
 
 > [!NOTE]
 > Windows Server 2016 incluye un nuevo software inspirado en Azure Load Balancer \(SLB @ no__t-1 como componente de la infraestructura de redes definidas por software \(SDN @ no__t-3. Use SLB en lugar de NLB si usa SDN, si usa cargas de trabajo que no son de Windows, necesita traducción de direcciones de red salientes \(NAT @ no__t-1 o necesita el equilibrio de carga de nivel 3 \(L3 @ no__t-3 o no basado en TCP. Puede seguir usando NLB con Windows Server 2016 para las implementaciones que no son de SDN. Para obtener más información sobre SLB, consulte [equilibrio de carga de software (SLB) para Sdn](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).

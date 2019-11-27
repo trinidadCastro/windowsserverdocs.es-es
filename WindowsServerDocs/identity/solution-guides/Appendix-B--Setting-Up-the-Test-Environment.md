@@ -104,7 +104,7 @@ Crea una máquina virtual para usarla como controlador de dominio (DC1). Instale
 
 2. En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**.  
 
-3. En la página **Antes de comenzar** , haga clic en **Siguiente**.  
+3. En la página **Before you begin**, haz clic en **Next**.  
 
 4. En la página **Seleccionar tipo de instalación** , haz clic en **Instalación basada en características o en roles**y, después, haz clic en **Siguiente**.  
 
@@ -164,7 +164,7 @@ Crea los siguientes usuarios con el Centro de administración de Active Director
 4. Crea los siguientes usuarios con los atributos indicados:  
 
 
-   |       Usuario       |  Nombre de usuario  |     Dirección de correo electrónico      | Departmento |      Agrupar       | País o región |
+   |       Usuario       |  Nombre de usuario  |     Dirección de correo electrónico      | Departmento |      Grupo       | País o región |
    |------------------|------------|------------------------|------------|------------------|----------------|
    | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  Finanzas   |                  |       EE. UU.       |
    |    Miles Reid    |   MReid    |   MReid@contoso.com    |  Finanzas   |   FinanceAdmin   |       EE. UU.       |
@@ -213,7 +213,7 @@ Crea los siguientes usuarios con el Centro de administración de Active Director
 
 1.  En el Administrador del servidor, haz clic en **Agregar roles y características**.  
 
-2.  En la página **Antes de comenzar** , haga clic en **Siguiente**.  
+2.  En la página **Before you begin**, haz clic en **Next**.  
 
 3.  En la página **Seleccionar tipo de instalación** , haz clic en **Siguiente**.  
 
@@ -245,7 +245,7 @@ Al crear cuotas y filtros de archivos, tienes la opción de enviar notificacione
 
 3. En la pestaña **Notificaciones de correo electrónico** , en el nombre o la dirección IP del servidor SMTP, escribe el nombre de host o la dirección IP del servidor SMTP que reenviará las notificaciones de correo electrónico.  
 
-4. Si desea notificar de forma rutinaria a determinados administradores de eventos de cuota o de filtrado de archivos, en **los destinatarios de administrador predeterminados**, escriba cada dirección de correo electrónico como fileadmin@contoso.com. Use el formato account@domain y use punto y coma para separar varias cuentas.  
+4. Si desea notificar de forma rutinaria a determinados administradores de eventos de cuota o de filtrado de archivos, en **los destinatarios de administrador predeterminados**, escriba cada dirección de correo electrónico como fileadmin@contoso.com. Use el formato account@domainy use punto y coma para separar varias cuentas.  
 
 #### <a name="create-groups-on-file1"></a>Crear grupos en FILE1  
 
@@ -263,7 +263,7 @@ Al crear cuotas y filtros de archivos, tienes la opción de enviar notificacione
 
     -   **Finance Memo.docx**: Agrega texto financiero al documento. Por ejemplo, "las reglas de negocios sobre quién puede acceder a los documentos financieros han cambiado. Ahora, solo los miembros del grupo FinanceExpert pueden acceder a los documentos financieros. Ningún otro departamento o grupo tiene acceso. " Tienes que evaluar el impacto de este cambio antes de implementarlo en el entorno. Asegúrate de que en el pie de página de todas las páginas de este documento aparece CONTOSO CONFIDENTIAL.  
 
-    -   **Request for Approval to Hire.docx**: Crea un formulario en este documento que recopile la información del candidato. El documento debe tener los siguientes campos: **Applicant Name, Social Security number, Job Title, Proposed Salary, Starting Date, Supervisor name, Department** (Nombre del candidato, N.º de la Seguridad Social, Puesto, Salario propuesto, Fecha de inicio, Nombre del supervisor, Departamento). Agrega una sección adicional al documento que tenga un formulario con **Supervisor Signature, Approved Salary, Conformation of Offer** y **Status of Offer** (Firma del supervisor, Salario aprobado, Detalle de la oferta y Estado de la oferta).   
+    -   **Request for Approval to Hire.docx**: Crea un formulario en este documento que recopile la información del candidato. El documento debe tener los siguientes campos: **Applicant Name, Social Security number, Job Title, Proposed Salary, Starting Date, Supervisor name, Department**(Nombre del candidato, N.º de la Seguridad Social, Puesto, Salario propuesto, Fecha de inicio, Nombre del supervisor, Departamento). Agrega una sección adicional al documento que tenga un formulario con **Supervisor Signature, Approved Salary, Conformation of Offer** y **Status of Offer** (Firma del supervisor, Salario aprobado, Detalle de la oferta y Estado de la oferta).   
         Habilite la administración de derechos del documento.  
 
     -   **Word Document1.docx**: Agrega contenido de prueba a este documento.  
@@ -275,7 +275,7 @@ Al crear cuotas y filtros de archivos, tienes la opción de enviar notificacione
     -   **Workbook2. xlsx**  
 
     -   Crea una carpeta en el escritorio que se llame Expresiones regulares. Crea un documento de texto en la carpeta **RegEx-SSN**. Escribe el siguiente contenido en el archivo y, después, guárdalo y ciérralo:   
-        ^(?!000)([0-7]\d{2}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$  
+        ^(?!000)([0-7]\d{4}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$  
 
 3.  Comparte la carpeta D:\Finance Documents como Finance Documents y permite que todos tengan acceso de lectura y escritura al recurso compartido.  
 
@@ -369,7 +369,7 @@ Agrega Active Directory Rights Management Services (AD RMS) y todas las caracter
 
 33. Haz clic en las demás pestañas sin realizar cambios y, después, haz clic en **Finalizar**. Inicie sesión como CONTOSO\Administrador.  
 
-34. Vaya a la carpeta, C:\Inetpub\wwwroot @ no__t-0_wmcs\certification, seleccione el archivo archivo servercertification. asmx y agregue usuarios autenticados para que tengan permisos de lectura y escritura en el archivo.  
+34. Vaya a la carpeta, C:\Inetpub\wwwroot\\_wmcs \certification, seleccione el archivo archivo servercertification. asmx y agregue usuarios autenticados para que tengan permisos de lectura y escritura en el archivo.  
 
 35. Abra Windows PowerShell y ejecute `Get-FsrmRmsTemplate`. Comprueba que puedes ver la plantilla RMS que creaste en los pasos anteriores de este procedimiento, con este comando.  
 
@@ -540,7 +540,7 @@ Configura Microsoft Exchange Server en este equipo. Para obtener más informaci�
 
 6. Elimina los mensajes de prueba que se generaron.  
 
-7. Cree un nuevo corte corto en el escritorio para todos los usuarios de la máquina virtual de cliente que apunte a @no__t documentos File1\finance Documents-0 \.  
+7. Cree un nuevo corte corto en el escritorio para todos los usuarios de la máquina virtual de cliente que apunte a \\documentos de \FILE1\Finance.  
 
 8. Reinicia cuando sea necesario.  
 
@@ -575,7 +575,7 @@ Configura Microsoft Exchange Server en este equipo. Para obtener más informaci�
 
 2. En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**.  
 
-3. En la página **Antes de comenzar** , haga clic en **Siguiente**.  
+3. En la página **Before you begin**, haz clic en **Next**.  
 
 4. En la página **Seleccionar tipo de instalación** , haz clic en **Instalación basada en características o en roles**y, después, haz clic en **Siguiente**.  
 
@@ -693,7 +693,7 @@ Cree el usuario Jeff Low con la contraseña <strong>pass@word1</strong>y asigne 
 
 3.  En el panel izquierdo del Centro de administración de Active Directory, haz clic en **Vista de árbol**. En el panel izquierdo, haz clic en **Control de acceso dinámico** y, después, haz doble clic en **Propiedades de recursos**.  
 
-4.  Selecciona **Company** en la lista **Propiedades de recursos** y haz clic con el botón derecho en **Propiedades**. En la sección **Valores sugeridos**, haz clic en **Agregar** para agregar los valores sugeridos: Contoso y Adatum y, después, haz clic en **Aceptar** dos veces.  
+4.  Selecciona **Company** en la lista **Propiedades de recursos** y haz clic con el botón derecho en **Propiedades**. En la sección **Valores sugeridos** , haz clic en **Agregar** para agregar los valores sugeridos: Contoso y Adatum y, después, haz clic en **Aceptar** dos veces.  
 
 5.  Selecciona **Company** en la lista **Propiedades de recursos** y haz clic con el botón derecho en **Habilitar**.  
 
@@ -748,11 +748,11 @@ Cree el usuario Jeff Low con la contraseña <strong>pass@word1</strong>y asigne 
 
 5. En el cuadro de diálogo **Entrada de permiso para permisos**, haga clic en **Agregar una condición** y especifique las condiciones siguientes:  [**Usuario**] [**Empresa**] [**Igual**] [**Valor**] [**Adatum**]. Los permisos deben ser **Modificar, Leer y ejecutar, Leer, Escribir**.  
 
-6. Haga clic en **Aceptar**.  
+6. Haz clic en **Aceptar**.  
 
 7. Haz clic en **Aceptar** tres veces para terminar y volver al Centro de administración de Active Directory.  
 
-   @no__t guías 0solution](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+   ![guías de soluciones](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
 
    Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
 
@@ -829,11 +829,11 @@ Crea un nuevo volumen NTFS en FILE1 y crea la siguiente carpeta: D:\Earnings.
 
 4. Abre el Explorador de Windows y ve a D:\EARNINGS. Haz clic con el botón derecho en la carpeta **Earnings** y haz clic en **Propiedades**.  
 
-5. Haz clic en la pestaña **Clasificación**. Selecciona Companyy, después, selecciona **Adatum** en el campo **Valor** .  
+5. Haga clic en la pestaña **clasificación** . Seleccione **Company**y, después, seleccione **Adatum** en el campo **valor** .  
 
 6. Haz clic en **Cambiar**, selecciona **Adatum Only Access Policy** en el menú desplegable y, después, haz clic en **Aplicar**.  
 
-7. Haz clic en la pestaña **Seguridad**, en **Opciones avanzadas** y, después, haz clic en la pestaña **Directiva central**. Deberías ver **AdatumEmployeeAccessRule** en la lista. Puedes expandir el elemento para ver todos los permisos que estableciste cuando creaste la regla en Active Directory.  
+7. Haga clic en la pestaña **seguridad** , haga clic en **Opciones avanzadas**y, a continuación, haga clic en la pestaña **directiva central** . Debería ver la lista **AdatumEmployeeAccessRule** . Puedes expandir el elemento para ver todos los permisos que estableciste cuando creaste la regla en Active Directory.  
 
 8. Haz clic en **Aceptar** para volver al Explorador de Windows.  
 

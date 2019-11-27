@@ -19,7 +19,7 @@ ms.locfileid: "71355720"
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar los temas de esta sección para obtener información sobre la seguridad en redes definidas por software \(SDN @ no__t-1.
+Puede usar los temas de esta sección para obtener información sobre la seguridad en redes definidas por software \(SDN\).
 
 >[!Note]
 >Para obtener documentación adicional sobre redes definidas por software, puede usar las siguientes secciones de la biblioteca.
