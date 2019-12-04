@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9840bc20ddf6193241fe36055698e2bd3222496
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f5096ab82ebbd01cb4f3a7dc0cf0b15e4b9fae8e
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361879"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781332"
 ---
 # <a name="wmic"></a>wmic
 
@@ -31,7 +31,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 ## <a name="syntax"></a>Sintaxis
 
 ```
-command </parameter>
+wmic </parameter>
 ```
 
 ## <a name="sub-commands"></a>Subcomandos
@@ -44,14 +44,6 @@ Los siguientes subcomandos están disponibles en todo momento:
 |ruta de acceso|Escapa del modo de alias predeterminado de WMIC para tener acceso directamente a las instancias del esquema WMI.|
 |contexto|Muestra los valores actuales de todos los conmutadores globales.|
 |[salir de \| salir]|Sale del shell de comandos de WMIC.|
-
-## <a name="parameters"></a>Parámetros
-
-|Parámetro|Descripción|
-|---------|-----------|
-|</parameter>|\<descripción concisa, comienza con un verbo. >|
-|</param2>|\<otra descripción concisa, comienza con un verbo. >|
-
 
 ## <a name="BKMK_examples"></a>Example
 

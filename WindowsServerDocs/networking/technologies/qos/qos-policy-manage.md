@@ -8,12 +8,12 @@ ms.assetid: 04fdfa54-6600-43d4-8945-35f75e15275a
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ac717555d1ab751600527e294d32f10d1f05bfa5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b8f10ab7b3da05fbefabb735ee2b8bb4ef1cb8a
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395879"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781352"
 ---
 # <a name="manage-qos-policy"></a>Administrar la directiva QoS
 
@@ -62,9 +62,9 @@ Para crear una directiva de QoS, edite la configuración de un objeto de directi
 
 Los nombres de las directivas QoS deben ser exclusivos. La forma en que se aplican las directivas a los servidores y los usuarios finales depende de dónde se almacena la Directiva de QoS en el Editor de objetos de directiva de grupo:
 
-- Una directiva QoS ubicada en Configuración del equipo\Configuración de Windows\QoS basada en directivas se aplica a equipos, independientemente del usuario que tenga iniciada la sesión actualmente. Por lo general, se utilizan directivas Qos basadas en equipos para los equipos de servidores.
+- Una directiva de QoS de la Directiva de Settings\QoS de equipo \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Por lo general, se utilizan directivas Qos basadas en equipos para los equipos de servidores.
 
-- Una directiva QoS ubicada en Configuración de usuario\Configuración de Windows\QoS basada en directivas se aplica a los usuarios después de que iniciaron sesión, independientemente del equipo en el que iniciaron sesión.
+- Una directiva de QoS de la Directiva de Settings\QoS de usuario \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
 
 #### <a name="to-create-a-new-qos-policy-with-the-qos-policy-wizard"></a>Para crear una nueva Directiva de QoS con el Asistente para directivas de QoS
 
@@ -90,7 +90,7 @@ En la segunda página del Asistente para directivas de QoS puede aplicar la Dire
 
 - **Todas las aplicaciones** especifica que la configuración de administración de tráfico de la primera página del Asistente para directivas QoS se aplica a todas las aplicaciones.
 
-- **Solo las aplicaciones con este nombre de archivo ejecutable** especifican que la configuración de administración de tráfico de la primera página del Asistente para directivas de QoS sea para una aplicación específica. El nombre del archivo ejecutable debe terminar con la extensión de nombre de archivo .exe.
+- **Solo las aplicaciones con este nombre de archivo ejecutable** especifican que la configuración de administración de tráfico de la primera página del Asistente para directivas de QoS sea para una aplicación específica. El nombre del archivo ejecutable debe terminar con la extensión .exe.
 
 - **Solo las aplicaciones de servidor HTTP que responden a las solicitudes de esta dirección URL** especifican que la configuración de administración de tráfico de la primera página del Asistente para directivas de QoS se aplique solo a determinadas aplicaciones de servidor http.
 

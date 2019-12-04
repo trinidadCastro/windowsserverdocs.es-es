@@ -9,12 +9,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a24c88f5469890f12f821b9f729c7d283b687f43
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53f51d3a7a777ae378ce733ea9e66de66da5351a
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389904"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781342"
 ---
 # <a name="executive-summary"></a>Resumen ejecutivo
 
@@ -56,10 +56,10 @@ Se incluyen los siguientes temas:
   
     -   Falta de prácticas de desarrollo de aplicaciones seguras  
   
--   **Cuentas atractivas para el robo de credenciales** : los ataques de robo de credenciales son aquellos en los que un atacante gana inicialmente el acceso con privilegios a un equipo de una red y, a continuación, usa herramientas disponibles gratuitamente para extraer las credenciales de las sesiones de otros cuentas con sesión iniciada.   
+-   **Cuentas atractivas para el robo de credenciales** : los ataques de robo de credenciales son aquellos en los que un atacante gana inicialmente el acceso con privilegios a un equipo de una red y, a continuación, usa herramientas disponibles gratuitamente para extraer las credenciales de las sesiones de otras cuentas que han iniciado sesión.   
     En esta sección se incluyen los siguientes:  
   
-    -   **Actividades que aumentan la probabilidad de riesgo** : dado que el objetivo del robo de credenciales suele ser cuentas de dominio con privilegios elevados y cuentas de "persona muy importante" (VIP), es importante que los administradores sean conscientes de las actividades. que aumentan la probabilidad de éxito de un ataque de robo de credenciales. Estas actividades son las siguientes:  
+    -   **Actividades que aumentan la probabilidad de poner en peligro** : dado que el objetivo del robo de credenciales suele ser cuentas de dominio con privilegios elevados y cuentas de "persona muy importante" (VIP), es importante que los administradores sean conscientes de las actividades que aumentan la probabilidad de que se produzca un ataque de robo de credenciales. Estas actividades son las siguientes:  
   
         -   Inicio de sesión en equipos no seguros con cuentas con privilegios  
   
@@ -114,7 +114,7 @@ En esta sección se incluyen los siguientes:
   
     -   No olvide la seguridad física al diseñar e implementar hosts administrativos seguros.  
   
--   **Protección de los controladores de dominio contra ataques** : Si un usuario malintencionado obtiene acceso con privilegios a un controlador de dominio, dicho usuario puede modificar, dañar y destruir el Active Directory base de datos y, por extensión, todos los sistemas y cuentas que se administran por Active Directory.  
+-   **Protección de los controladores de dominio contra ataques** : Si un usuario malintencionado obtiene acceso con privilegios a un controlador de dominio, dicho usuario puede modificar, dañar y destruir el Active Directory base de datos y, por extensión, todos los sistemas y cuentas administrados por Active Directory.  
   
 En esta sección se incluyen los siguientes temas:  
   
@@ -131,7 +131,7 @@ En esta sección se incluyen los siguientes temas:
   
 -   **Directiva de auditoría de Windows** : los registros de eventos de seguridad de Windows tienen categorías y subcategorías que determinan los eventos de seguridad de los que se realiza un seguimiento y se registran  
   
--   **Recomendaciones** de la Directiva de auditoría: en esta sección se describe la configuración de directiva de auditoría predeterminada de Windows, la configuración de directiva de auditoría recomendada por Microsoft y recomendaciones más agresivas para que las organizaciones las usen para auditar servidores críticos. estaciones.  
+-   **Recomendaciones** de la Directiva de auditoría: en esta sección se describe la configuración de directiva de auditoría predeterminada de Windows, la configuración de directiva de auditoría recomendada por Microsoft y recomendaciones más agresivas para que las organizaciones las usen para auditar servidores y estaciones de trabajo críticos.  
   
 ## <a name="planning-for-compromise"></a>Planeación de compromiso  
 Esta sección contiene recomendaciones que ayudarán a las organizaciones a prepararse para un riesgo antes de que se produzcan, a implementar controles que pueden detectar un evento de riesgo antes de que se produzca una infracción de la totalidad y proporcionar directrices de respuesta y recuperación para los casos en los que los atacantes obtienen un riesgo completo del directorio. En esta sección se incluyen los siguientes temas:  
@@ -160,7 +160,7 @@ Esta sección contiene recomendaciones que ayudarán a las organizaciones a prep
   
         -   **Clasifique todos los Active Directory datos: los** propietarios empresariales deben proporcionar una clasificación de los datos en Active Directory. Dentro del modelo de clasificación de datos, se debe incluir la clasificación de los siguientes datos de Active Directory:  
   
-            -   **Sistemas** : clasifique los rellenados de servidores, su sistema operativo, sus roles, las aplicaciones que se ejecutan en ellos y los propietarios de ti y empresariales del registro.  
+            -   **Sistemas** : clasifique los rellenados de servidores, su sistema operativo, su rol, las aplicaciones que se ejecutan en ellos y los propietarios de ti y empresariales del registro.  
   
             -   **Aplicaciones** : clasifique las aplicaciones por funcionalidad, base de usuarios y su sistema operativo.  
   

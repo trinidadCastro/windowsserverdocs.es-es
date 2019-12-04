@@ -11,12 +11,12 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 71b1985da522ef9ee2d7745bd19d2548e0241a2f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 60f2f3a6ed885f2da80b9beac51eeb703789ec91
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366772"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791764"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Máquinas virtuales de Debian compatibles en Hyper-V
 
@@ -32,7 +32,7 @@ El siguiente mapa de distribución de características indica las característic
 
 * (*en blanco*): característica no disponible
 
-| **Característica**                                                                                                                                  | **Versión del sistema operativo Windows Server** | **10 (validador)** | **9.0-9.6 (Stretch)** | **8.0-8.11 (Jessie)** | **7.0-7.11 (Wheezy)** |
+| **Ofrecen**                                                                                                                                  | **Versión del sistema operativo Windows Server** | **10 (validador)** | **9.0-9.6 (Stretch)** | **8.0-8.11 (Jessie)** | **7.0-7.11 (Wheezy)** |
 |----------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|-----------------------|-----------------------|-----------------------|-----------------------|
 | **Disponibilidad**                                                                                                                             |                                             | Integrado              | Integrado              | Integrado              | Integrado (Nota 6)     |
 | **[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019, 2016, 2012 R2, 2012, 2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
@@ -68,7 +68,7 @@ El siguiente mapa de distribución de características indica las característic
 | Acceso directo/DDA de PCI                                                                                                                          | 2019, 2016                                  | &#10004;Nota 8       | &#10004;Nota 8       |                       |                       |
 | **[Máquinas virtuales de generación 2](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)** |                                             |                       |                       |                       |                       |
 | Arranque mediante UEFI                                                                                                                              | 2019, 2016, 2012 R2                         | &#10004;Nota 7       | &#10004;Nota 7       | &#10004;Nota 7       |                       |
-| Arranque seguro                                                                                                                                  | 2019, 2016                                  |                       |                       |                       |                       |
+| Arranque seguro                                                                                                                                  | 2019, 2016                                  | &#10004;              |                       |                       |                       |
 
 
 ## <a name="BKMK_notes"></a>Apunte
@@ -93,7 +93,7 @@ El siguiente mapa de distribución de características indica las característic
    ```
 8. Las funcionalidades más recientes del kernel de nivel superior solo están disponibles mediante el uso de los [puertos de subpuertos de Debian](https://wiki.debian.org/Backports)de kernel incluidos.
 
-Vea también
+Consulta también
 
 * [Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

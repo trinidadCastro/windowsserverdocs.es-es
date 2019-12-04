@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 7ce84c9f-fd1f-4463-8fc7-d2f33344a2c9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: db10f784f383938edb29b18d7e8febf869378abc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 831f484db8325bf9a27e9065ac5cf74913d0805c
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404569"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791163"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>Identificar y resolver los problemas de operaciones del servidor de acceso remoto
 
@@ -76,7 +76,7 @@ La desactivación del servicio auxiliar de IP producirá un error grave en el se
   
     **Resolución**  
   
-    1.  Para asegurarse de que el servicio se está ejecutando, escriba **Get-Service iphlpsc** en un símbolo del sistema de Windows PowerShell.  
+    1.  Para asegurarse de que el servicio se está ejecutando, escriba **Get-Service Iphlpsvc** en un símbolo del sistema de Windows PowerShell.  
   
     2.  Para habilitar el servicio, escriba **Start-Service Iphlpsvc** desde un símbolo del sistema de Windows PowerShell con privilegios elevados.  
   
@@ -95,9 +95,6 @@ Para restaurar el servicio auxiliar de IP en el servidor de acceso remoto, puede
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
-```  
+```PowerShell
 PS> Get-RemoteAccessHealth | Where-Object {$_.Component -eq "IP-HTTPS"} | Format-List -Property *  
-```  
-  
-
-
+```

@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 84ce4986d27884f817eb5e632ac8dc1c5a22b922
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2d5630ece940e5bd7895510c245d14b67c847a70
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390482"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791127"
 ---
 # <a name="active-directory-domain-services-overview"></a>Introducción a Active Directory Domain Services
 
@@ -23,7 +23,7 @@ ms.locfileid: "71390482"
 
 Un directorio es una estructura jerárquica que almacena información acerca de los objetos de la red. Un servicio de directorio, como Active Directory Domain Services (AD DS), proporciona los métodos para almacenar los datos de directorio y hacer que estos datos estén disponibles para los usuarios y administradores de la red. Por ejemplo, AD DS almacena información acerca de las cuentas de usuario, como nombres, contraseñas, números de teléfono, etc., y permite que otros usuarios autorizados de la misma red tengan acceso a esta información.
 
-Active Directory almacena información acerca de los objetos de la red y facilita la búsqueda y el uso de esta información para los administradores y los usuarios. Active Directory usa un almacén de datos estructurado como base para una organización jerárquica lógica de información de directorio.
+Active Directory almacena información acerca de los objetos de una red y facilita su búsqueda y uso por parte de los usuarios y administradores. Active Directory usa un almacén de datos estructurado como base para una organización jerárquica lógica de la información del directorio.
 
 Este almacén de datos, también conocido como directorio, contiene información sobre los objetos de Active Directory. Estos objetos suelen incluir recursos compartidos como servidores, volúmenes, impresoras y las cuentas de equipo y usuario de red. Para obtener más información sobre el almacén de datos de Active Directory, vea [almacén de datos de directorio](https://technet.microsoft.com/library/cc736627(v=ws.10).aspx).
 

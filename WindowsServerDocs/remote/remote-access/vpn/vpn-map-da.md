@@ -9,12 +9,12 @@ ms.date: 11/05/2018
 ms.assetid: 8fe1c810-4599-4493-b4b8-73fa9aa18535
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ba554d4f69089d009baf7294c49c96592de50878
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ba0b3969695611385fb0a0bdc6df900eeab85254
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404272"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791137"
 ---
 # <a name="always-on-vpn-features-and-functionalities"></a>Always On características y funcionalidades de VPN
 
@@ -25,8 +25,8 @@ ms.locfileid: "71404272"
 
 En este tema, obtendrá información sobre las características y funcionalidades de Always On VPN.  La tabla siguiente no es una lista exhaustiva; sin embargo, incluye algunas de las características y funcionalidades más comunes que se usan en las soluciones de acceso remoto. 
 
->[!TIP]
->Si actualmente usa DirectAccess, recomendamos que investigue detenidamente la funcionalidad de VPN Always On para determinar si aborda todas sus necesidades de acceso remoto antes de migrar el formulario de DirectAccess a Always On VPN.  
+> [!TIP]
+> Si actualmente usa DirectAccess, recomendamos que investigue detenidamente la funcionalidad de VPN Always On para determinar si aborda todas sus necesidades de acceso remoto antes de migrar de DirectAccess a Always On VPN.  
 
 |                                                   Área funcional                                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                     VPN de Always On                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |---------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

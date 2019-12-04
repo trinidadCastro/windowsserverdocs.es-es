@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 8086ce329c532e07363fd22fe424a9a1dda04250
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 45fe605228189f49d40543e5da703f9afe0d962e
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386889"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791213"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Introducción a las cuentas de servicio administradas de grupo
 
@@ -56,7 +56,7 @@ Cuando un equipo cliente se conecta a un servicio hospedado en una granja de ser
 
 Los servicios tienen las siguientes entidades de seguridad entre las que pueden elegir, y cada una de ellas tiene determinadas limitaciones.
 
-|Entidades de seguridad|Scope|Servicios admitidos|Administración de contraseñas|
+|Entidades de seguridad|Ámbito|Servicios admitidos|Administración de contraseñas|
 |-------|-----|-----------|------------|
 |Cuenta de equipo del sistema de Windows|Dominio|Limitado a un servidor unido a un dominio|El equipo administra|
 |Cuenta de equipo sin sistema de Windows|Dominio|Cualquier servidor unido a un dominio|Ninguno|
@@ -142,7 +142,7 @@ Al implementar una nueva granja de servidores, el administrador de servicios ten
 
 -   El intervalo de cambio de la contraseña (el valor predeterminado es 30 días).
 
-### <a name="BKMK_Step1"></a>Paso 1: Aprovisionamiento de cuentas de servicio administradas de grupo
+### <a name="BKMK_Step1"></a>Paso 1: aprovisionamiento de cuentas de servicio administradas de grupo
 Solo puede crear una gMSA si el esquema del bosque se ha actualizado a Windows Server 2012, se ha implementado la clave raíz maestra de Active Directory y hay al menos un DC de Windows Server 2012 en el dominio en el que se creará el gMSA.
 
 Para completar los siguientes procedimientos, el requisito mínimo es ser miembro de **Admins. del dominio**u **Opers. de cuentas** o poder crear objetos msDS-GroupManagedServiceAccount.
@@ -153,7 +153,7 @@ Para completar los siguientes procedimientos, el requisito mínimo es ser miembr
 
 2.  Escribe los siguientes comandos en el símbolo del sistema de Windows PowerShell y, luego, presiona ENTRAR. (El módulo de Active Directory se cargará automáticamente).
 
-    **New-ADServiceAccount [-name] <string>-DNSHostName <string> [-KerberosEncryptionType <ADKerberosEncryptionType>] [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]-SamAccountName <string>-ServicePrincipalNames < cadena [] >**
+    **New-ADServiceAccount [-name] <string>-DNSHostName <string> [-KerberosEncryptionType <ADKerberosEncryptionType>] [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]-SamAccountName <string>-ServicePrincipalNames < String [] >**
 
     |Parámetro|Cadena|Ejemplo|
     |-------|-----|------|
@@ -172,9 +172,8 @@ Para completar los siguientes procedimientos, el requisito mínimo es ser miembr
 
     Escribe el comando en una sola línea, aunque aquí pueda aparecer con saltos de línea debido a las limitaciones del formato.
 
-    ```
-    New-ADServiceAccount ITFarm1 -DNSHostName ITFarm1.contoso.com -PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts -KerberosEncryptionType RC4, AES128, AES256 -ServicePrincipalNames http/ITFarm1.contoso.com/contoso.com, http/ITFarm1.contoso.com/contoso, http/ITFarm1/contoso.com, http/ITFarm1/contoso
-
+    ```Powershell
+    New-ADServiceAccount ITFarm1 -DNSHostName ITFarm1.contoso.com -PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts$ -KerberosEncryptionType RC4, AES128, AES256 -ServicePrincipalNames http/ITFarm1.contoso.com/contoso.com, http/ITFarm1.contoso.com/contoso, http/ITFarm1/contoso.com, http/ITFarm1/contoso
     ```
 
 Para completar este procedimiento, el requisito mínimo es ser miembro de **Admins. del dominio** u **Opers. de cuentas** o poder crear objetos msDS-GroupManagedServiceAccount. Para ver información detallada sobre el uso de las cuentas adecuadas y las pertenencias a grupos, consulte [Grupos predeterminados locales y de dominio](https://technet.microsoft.com/library/dd728026(WS.10).aspx).
@@ -198,12 +197,11 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 
 **Ejemplo**
 
+```PowerShell
+New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts$
 ```
-New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts
 
-```
-
-### <a name="BKMK_ConfigureServiceIdentity"></a>Paso 2: Configuración del servicio de aplicación de identidad de servicio
+### <a name="BKMK_ConfigureServiceIdentity"></a>Paso 2: configuración del servicio de aplicación de identidad de servicio
 Para configurar los servicios en Windows Server 2012, consulte la siguiente documentación de características:
 
 -   Grupo de aplicaciones de IIS
@@ -233,7 +231,7 @@ Para completar estos procedimientos, el requisito mínimo es ser miembro de **Ad
 
     Para ver los procedimientos de este método, consulte [Agregar cuentas de equipo a grupos](https://technet.microsoft.com/library/cc733097.aspx) con la línea de comandos.
 
--   Método 3: cmdlet de Active Directory de Windows PowerShell Add-ADPrincipalGroupMembership
+-   Método 3: cmdlet de Active Directory de Windows PowerShell Add-ADPrincipalGroupMembership
 
     Para ver los procedimientos de este método, consulte [Add-ADPrincipalGroupMembership](https://technet.microsoft.com/library/ee617203.aspx).
 
@@ -262,14 +260,12 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 
 Por ejemplo, para agregar hosts miembros, escribe los siguientes comandos y, luego, presiona ENTRAR.
 
-```
+```PowerShell
 Get-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
-
 ```
 
-```
-Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1,Host2,Host3
-
+```PowerShell
+Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1$,Host2$,Host3$
 ```
 
 ## <a name="BKMK_Update_gMSA"></a>Actualización de las propiedades de la cuenta de servicio administrada de grupo
@@ -293,7 +289,7 @@ Si usa grupos de seguridad para administrar los hosts miembros, quite la cuenta 
 
     Para ver los procedimientos de este método, consulte [Eliminar cuentas de equipo](https://technet.microsoft.com/library/cc754624.aspx) con la línea de comandos.
 
--   Método 3: cmdlet de Active Directory de Windows PowerShell Remove-ADPrincipalGroupMembership
+-   Método 3: cmdlet de Active Directory de Windows PowerShell Remove-ADPrincipalGroupMembership
 
     Para ver información detallada sobre cómo hacer esto, consulte  [Remove-ADPrincipalGroupMembership](https://technet.microsoft.com/library/ee617243.aspx) en la biblioteca de TechNet o escriba **Get-Help Remove-ADPrincipalGroupMembership** en el símbolo del sistema del módulo de Active Directory para Windows PowerShell y presione ENTRAR para consultarlo.
 
@@ -322,17 +318,15 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 
 Por ejemplo, para quitar hosts miembros, escribe los siguientes comandos y, luego, presiona ENTRAR.
 
-```
+```PowerShell
 Get-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
-
 ```
 
+```PowerShell
+Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1$,Host3$
 ```
-Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1,Host3
 
-```
-
-### <a name="BKMK_RemoveGMSA"></a>Paso 2: Eliminación de una cuenta de servicio administrada de grupo del sistema
+### <a name="BKMK_RemoveGMSA"></a>Paso 2: quitar una cuenta de servicio administrada de grupo del sistema
 Quita del host miembro las credenciales almacenadas en caché de la gMSA con Uninstall-ADServiceAccount o la API NetRemoveServiceAccount en el sistema host.
 
 El requisito mínimo para completar estos procedimientos es pertenecer al grupo **Administradores** u otro equivalente.
@@ -349,7 +343,7 @@ El requisito mínimo para completar estos procedimientos es pertenecer al grupo 
 
     Por ejemplo, para quitar las credenciales almacenadas en caché de una gMSA llamada ITFarm1, escribe el siguiente comando y presiona ENTRAR:
 
-    ```
+    ```PowerShell
     Uninstall-ADServiceAccount ITFarm1
     ```
 
@@ -360,6 +354,3 @@ Para obtener más información sobre el cmdlet Uninstall-ADServiceAccount, en el
 ## <a name="BKMK_Links"></a>Vea también
 
 -   [Introducción a las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)
-
-
-
