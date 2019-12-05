@@ -10,12 +10,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: ac6d9abf96348a596fbd2f886cb67b5d97f686e2
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+ms.openlocfilehash: f3b580b108677b391065ad83f61e52504fe9ac91
+ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700158"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74823848"
 ---
 # <a name="networking"></a>Funciones de red de
 
@@ -252,7 +252,7 @@ Esta coherencia significa que las aplicaciones son ahora más fáciles de escala
             </div>
         </div>
     </li>
-    <hr />
+   <hr />
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -263,7 +263,7 @@ Esta coherencia significa que las aplicaciones son ahora más fáciles de escala
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><a href="dns/dns-top.md">&quot;del sistema de nombres de dominio (DNS) &gt;</a></h3>
+                        <h3><a href="dns/dns-top.md">Sistema de nombres de dominio (DNS)</a></h3>
                         <hr />
                         <p>El sistema de nombres de dominio (DNS) es uno de los conjuntos de protocolos estándar del sector que componen TCP/IP y, conjuntamente, el cliente DNS y el servidor DNS proporcionan servicios de resolución de nombres de nombre de equipo a dirección IP para equipos y usuarios.</p>
                     </div>
@@ -382,8 +382,8 @@ Esta coherencia significa que las aplicaciones son ahora más fáciles de escala
                         <p>Las tecnologías de descarga de la red y optimización en Windows Server 2016 incluyen funciones y tecnologías de solo software (SO), funciones integradas de software y hardware (SH) y funciones y tecnologías de solo Hardware (HO).</p>
                         <p>La siguiente documentación de tecnología de descarga y optimización también está disponible:<p>
                         <hr />
-                         
-                        <a href="technologies/conv-nic/cnic-top.md">de redes de alto rendimiento</a><hr />Protocolo de 
+                        <a href="technologies/conv-nic/cnic-top.md">Tarjeta de interfaz de red (NIC) convergente</a>
+                        <hr />Protocolo de 
                         <a href="technologies/dcb/dcb-top.md">puente del centro de datos (DCB)</a>
                         <hr />
                      de 

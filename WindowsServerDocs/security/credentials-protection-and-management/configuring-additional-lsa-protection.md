@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: eaebac19119525b659c09b5506c497afdbd9a263
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40e489089fc0c15c3e6ebf7b654377f4d6f7e482
+ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386992"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74829629"
 ---
 # <a name="configuring-additional-lsa-protection"></a>Configuración de protección LSA adicional
 
@@ -71,7 +71,7 @@ Puede utilizar el modo de auditoría para identificar los complementos y control
 
 ##### <a name="to-enable-the-audit-mode-for-lsassexe-on-a-single-computer-by-editing-the-registry"></a>Para habilitar el modo de auditoría para Lsass.exe en un único equipo mediante la edición del Registro
 
-1.  Abre el Editor del Registro (RegEdit.exe) y desplázate a la clave del Registro que se encuentra en: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe.
+1.  Abra el Editor del Registro (RegEdit.exe) y navegue hasta la clave del Registro ubicada en: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe.
 
 2.  Establece el valor de la clave del Registro en **AuditLevel=dword:00000008**.
 
@@ -114,7 +114,7 @@ Para habilitar el modo de auditoría para varios equipos en un dominio, puede ut
 
 10. En el cuadro **Datos del valor**, escribe **00000008**.
 
-11. Haga clic en **Aceptar**.
+11. Haz clic en **Aceptar**.
 
 > [!NOTE]
 > Para que se aplique el GPO, el cambio del GPO debe replicarse a todos los controladores de dominio en el dominio.
@@ -138,7 +138,7 @@ Las secciones compartidas normalmente son el resultado de técnicas de programac
 En los dispositivos que ejecutan Windows 8.1 (con o sin arranque seguro o UEFI), la configuración es posible mediante la realización de los procedimientos descritos en esta sección. En el caso de los dispositivos que ejecutan Windows RT 8,1, la protección de LSASS. exe siempre está habilitada y no se puede desactivar.
 
 ### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>En los dispositivos basados en x86 o x64 con o sin arranque seguro y UEFI
-En los dispositivos basados en x86 y x64 que utilizan arranque seguro y UEFI, se establece una variable UEFI en el firmware UEFI cuando se habilita la protección LSA con la clave del Registro. Cuando la configuración se almacena en el firmware, la variable UEFI no puede suprimirse ni cambiarse en la clave del Registro. La variable UEFI debe restablecerse.
+En los dispositivos basados en x86 o x64 que usan arranque seguro o UEFI, se establece una variable UEFI en el firmware UEFI cuando la protección LSA está habilitada mediante la clave del registro. Cuando la configuración se almacena en el firmware, la variable UEFI no puede suprimirse ni cambiarse en la clave del Registro. La variable UEFI debe restablecerse.
 
 Los dispositivos basados en x86 o x64 que no admiten UEFI o en los que el arranque seguro está deshabilitado no pueden almacenar la configuración para la protección LSA en el firmware y únicamente dependen de la presencia de la clave del Registro. En este escenario, es posible deshabilitar la protección LSA con el acceso remoto al dispositivo.
 
@@ -146,9 +146,9 @@ Puede utilizar los procedimientos siguientes para habilitar o deshabilitar la pr
 
 ##### <a name="to-enable-lsa-protection-on-a-single-computer"></a>Para habilitar la protección LSA en un único equipo
 
-1.  Abre el Editor del Registro (RegEdit.exe) y desplázate a la clave del Registro que se encuentra en: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
+1.  Abra el Editor del Registro (RegEdit.exe) y desplácese a la clave del Registro que se encuentra en: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
 
-2.  Establece el valor de la clave del Registro en: "RunAsPPL"=dword:00000001.
+2.  Establezca el valor de la clave del Registro en: "RunAsPPL"=dword:00000001.
 
 3.  Reinicie el equipo.
 
@@ -174,13 +174,13 @@ Puede utilizar los procedimientos siguientes para habilitar o deshabilitar la pr
 
 10. En el cuadro **información del valor** , escriba **00000001**.
 
-11. Haga clic en **Aceptar**.
+11. Haz clic en **Aceptar**.
 
 ##### <a name="to-disable-lsa-protection"></a>Para deshabilitar la protección LSA
 
-1.  Abre el Editor del Registro (RegEdit.exe) y desplázate a la clave del Registro que se encuentra en: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
+1.  Abra el Editor del Registro (RegEdit.exe) y desplácese a la clave del Registro que se encuentra en: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
 
-2.  Elimina el siguiente valor de la clave del Registro: "RunAsPPL"=dword:00000001.
+2.  Elimine el valor siguiente de la clave del Registro: "RunAsPPL"=dword:00000001.
 
 3.  Utiliza la herramienta de cancelación de procesos protegidos de autoridad de seguridad local (LSA) para suprimir la variable UEFI si el dispositivo está utilizando el arranque de seguridad.
 
