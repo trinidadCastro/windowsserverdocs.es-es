@@ -5,25 +5,25 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 03/07/2019
+ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: c7f436ea9b2baa00294ccef52a5d7a27c7247e4a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9a116cc9d86dfe0bb4450efa0f18580a062af722
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406784"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903724"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Administrar servidores con el centro de administración de Windows
 
->Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
 
 > [!Tip]
 > ¿Novedad en Windows Admin Center?
 > [Obtén más información acerca de Windows Admin Center](../understand/windows-admin-center.md) o [descárgalo ahora](https://aka.ms/windowsadmincenter).
 
-## <a name="managing-windows-server-machines"></a>Administración de máquinas con Windows Server
+## <a name="managing-windows-server-machines"></a>Administrar las máquinas de Windows Server
 
 Puede agregar servidores individuales que ejecuten Windows Server 2012 o posterior al centro de administración de Windows para administrar el servidor con un conjunto completo de herramientas, como certificados, dispositivos, eventos, procesos, roles y características, actualizaciones, Virtual Machines y mucho más.
 
@@ -49,23 +49,25 @@ Las siguientes herramientas están disponibles para las conexiones de servidor:
 
 | Herramienta | Descripción |
 | ---- | ----------- |
-| [Información general](#overview) | Ver detalles del servidor y controlar el estado del servidor |
+| [Introducción](#overview) | Ver detalles del servidor y controlar el estado del servidor |
 | [Active Directory](#active-directory-preview) | Administrar Active Directory |
-| [Copiar](#backup) | Ver y configurar Azure Backup |  
+| [Backup](#backup) | Ver y configurar Azure Backup |  
 | [Certificados](#certificates) | Ver y modificar certificados |
-| [Container](#containers) | Ver contenedores |
+| [Containers](#containers) | Ver contenedores |
 | [Dispositivos](#devices) | Ver y modificar dispositivos |
 | [DHCP](#dhcp) | Ver y administrar la configuración del servidor DHCP |
 | [DNS](#dns) | Ver y administrar la configuración del servidor DNS |
-| [Ceso](#events) | Ver eventos |
-| [Archivos](#files) | Examinar archivos y carpetas |
+| [Eventos](#events) | Ver eventos |
+| [Archivos](#files) | Examen de archivos y carpetas |
 | [Firewall](#firewall) | Ver y modificar las reglas de Firewall |
 | [Aplicaciones instaladas](#installed-apps) | Visualización y eliminación de las aplicaciones instaladas |
 | [Usuarios y grupos locales](#local-users-and-groups) | Ver y modificar usuarios y grupos locales |
-| [Storage](#network) | Ver y modificar dispositivos de red |
+| [Network](#network) | Ver y modificar dispositivos de red |
+| [Supervisión de paquetes](https://aka.ms/wac1908) | Supervisión de paquetes de red |
+| [Monitor de rendimiento](https://aka.ms/perfmon-blog) | Ver informes y contadores de rendimiento |
 | [PowerShell](#powershell) | Interacción con el servidor a través de PowerShell |
-| [Procese](#processes) | Ver y modificar procesos en ejecución |
-| [Del registro](#registry) | Ver y modificar las entradas del registro |
+| [Procesos](#processes) | Ver y modificar procesos en ejecución |
+| [Registry](#registry) | Ver y modificar las entradas del registro |
 | [Escritorio remoto](#remote-desktop) | Interacción con el servidor a través de Escritorio remoto |
 | [Roles y características](#roles-and-features) | Ver y modificar roles y características |
 | [Tareas programadas](#scheduled-tasks) | Ver y modificar las tareas programadas |
@@ -79,7 +81,7 @@ Las siguientes herramientas están disponibles para las conexiones de servidor:
 | [Máquinas virtuales](manage-virtual-machines.md) | Ver y administrar máquinas virtuales |
 | [Conmutadores virtuales](#virtual-switches) | Visualización y administración de conmutadores virtuales |
 
-## <a name="overview"></a>Información general
+## <a name="overview"></a>Introducción
 
 **Información general** le permite ver el estado actual de la CPU, la memoria y el rendimiento de la red, así como realizar operaciones y modificar la configuración de un equipo o servidor de destino.
 
@@ -91,7 +93,7 @@ En Administrador del servidor información general, se admiten las siguientes ca
 - Ver la actividad de la CPU
 - Ver la actividad de memoria
 - Ver la actividad de la red
-- Reiniciar el servidor
+- Reinicio del servidor
 - Apagar servidor
 - Habilitar las métricas de disco en el servidor
 - Editar ID. de equipo en el servidor
@@ -119,7 +121,7 @@ Están disponibles las siguientes opciones de administración de Active Director
 
 [**Ver comentarios y características propuestas para Active Directory**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D).
 
-## <a name="backup"></a>Copias de seguridad
+## <a name="backup"></a>Copia de seguridad
 
 La **copia de seguridad** le permite proteger su servidor de Windows frente a daños, ataques o desastres mediante la copia de seguridad del servidor directamente en Microsoft Azure.
 [Más información sobre Azure Backup.](https://aka.ms/windows-admin-center-backup)
@@ -135,7 +137,7 @@ Las siguientes características se admiten en la copia de seguridad:
 - Iniciar o detener un trabajo de copia de seguridad
 - Ver el estado y el historial de trabajos de copia de seguridad
 - Ver puntos de recuperación y recuperar datos
-- Eliminar datos de copia de seguridad
+- Eliminar datos de la copia de seguridad
 
 ## <a name="certificates"></a>Certificados
 
@@ -147,7 +149,7 @@ En los certificados se admiten las siguientes características:
 
 - Examinar y buscar certificados existentes
 - Ver detalles del certificado
-- Exportar certificados
+- Exportación de certificados
 - Renovar certificados
 - Solicitar nuevos certificados
 - Eliminar certificados
@@ -169,7 +171,7 @@ Los **dispositivos** permiten administrar dispositivos conectados en un equipo o
 Se admiten las siguientes características en los dispositivos:
 
 - Examinar y buscar dispositivos
-- Ver detalles del dispositivo
+- Ver los detalles de dispositivo
 - Deshabilitar un dispositivo
 - Actualizar controlador en un dispositivo
 
@@ -202,7 +204,7 @@ Se admiten las siguientes características en los dispositivos:
 
 [**Ver comentarios y características propuestas para DHCP**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDNS%5D).
 
-## <a name="events"></a>Events
+## <a name="events"></a>Eventos
 
 **Los eventos** permiten administrar registros de eventos en un equipo o servidor.
 
@@ -211,7 +213,7 @@ Se admiten las siguientes características en los dispositivos:
 Se admiten las siguientes características en eventos:
 
 - Examinar y buscar eventos
-- Ver detalles del evento
+- Ver detalles de eventos
 - Borrar eventos del registro
 - Exportar eventos del registro
 
@@ -225,13 +227,13 @@ Se admiten las siguientes características en eventos:
 
 Se admiten las siguientes características en los archivos:
 
-- Examinar archivos y carpetas
+- Examen de archivos y carpetas
 - Buscar un archivo o una carpeta
-- Crear una nueva carpeta
+- Crear una carpeta nueva
 - Eliminar un archivo o una carpeta
 - Descargar un archivo o una carpeta
-- Cargar un archivo o una carpeta
-- Cambiar el nombre de un archivo o una carpeta
+- Carga de un archivo o una carpeta
+- cambiar el nombre de un archivo o una carpeta.
 - Extraer un archivo zip
 - Ver propiedades de archivo o carpeta
 - Agregar, editar o quitar recursos compartidos de archivos
@@ -252,7 +254,7 @@ Se admiten las siguientes características en el Firewall:
 - Ver las reglas de Firewall salientes
 - Buscar reglas de Firewall
 - Ver detalles de la regla de Firewall
-- Crear una nueva regla de Firewall
+- Crear una nueva regla de firewall
 - Habilitar o deshabilitar una regla de Firewall
 - Eliminar una regla de firewall
 - Editar las propiedades de una regla de Firewall
@@ -277,7 +279,7 @@ Las siguientes características se admiten en usuarios y grupos locales:
 - Crear un nuevo usuario o grupo
 - Administrar la pertenencia a grupos de un usuario
 - Eliminar un usuario o grupo
-- Cambiar la contraseña de un usuario
+- Cambia la contraseña de un usuario
 - Editar las propiedades de un usuario o grupo
 
 [**Ver comentarios y características propuestas para usuarios y grupos locales**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BLocal%20users%20and%20Groups%5D)
@@ -310,7 +312,7 @@ Las siguientes características se admiten en PowerShell:
 
 [**Ver comentarios y características propuestas para PowerShell**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BPowerShell%5D)
 
-## <a name="processes"></a>Procesos
+## <a name="processes"></a>Processes
 
 **Procesos** permite administrar procesos en ejecución en un equipo o servidor.
 
@@ -321,7 +323,7 @@ Se admiten las siguientes características en los procesos:
 - Examinar y buscar procesos en ejecución
 - Ver detalles del proceso
 - Iniciar un proceso
-- Finalizar un proceso
+- Terminar un proceso
 - Crear un volcado de proceso
 - Buscar identificadores de proceso
 
@@ -451,10 +453,10 @@ El **servicio de migración de almacenamiento** permite migrar servidores y recu
 Use **réplica de almacenamiento** para administrar la replicación de almacenamiento de servidor a servidor.
 [Más información acerca de réplica de almacenamiento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)
 
-## <a name="system-insights"></a>Información del sistema
+## <a name="system-insights"></a>Conclusiones del sistema
 
 **System Insights** incorpora análisis predictivos de forma nativa en Windows Server para ayudarle a mejorar el funcionamiento del servidor.
-[Obtener información general de System Insights](http://aka.ms/systeminsights)
+[Obtener información general de System Insights](https://aka.ms/systeminsights)
 
 >[!NOTE]
 >System Insights requiere Windows Server 2019.
@@ -469,13 +471,13 @@ Las siguientes características se admiten en las actualizaciones de:
 
 - Ver las actualizaciones de Windows o de Microsoft disponibles
 - Ver una lista de historial de actualizaciones
-- Instalar actualizaciones
+- Instalación de actualizaciones
 - Buscar actualizaciones en línea desde Microsoft Update
 - Administración de la integración de [Azure Update Management](https://docs.microsoft.com/azure/automation/automation-update-management)
 
 [**Ver comentarios y características propuestas para actualizaciones**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BUpdates%5D)
 
-## <a name="virtual-machines"></a>Virtual Machines
+## <a name="virtual-machines"></a>Máquinas virtuales
 
 Vea [administrar virtual machines con el centro de administración de Windows](manage-virtual-machines.md)
 

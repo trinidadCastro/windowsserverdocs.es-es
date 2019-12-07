@@ -1,6 +1,6 @@
 ---
-title: Introducción al centro de administración de Windows
-description: Introducción al centro de administración de Windows
+title: Primeros pasos con Windows Admin Center
+description: Primeros pasos con Windows Admin Center
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: fac17cd5975eeb699f205888edbe3f1c30b43394
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 1643568cd1a0cdbb693d773a8357d2c36b701fd3
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567148"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903987"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Introducción al centro de administración de Windows
 
@@ -153,134 +153,7 @@ Una vez que se han agregado etiquetas a una o más conexiones de servidor, puede
 
 ## <a name="use-powershell-to-import-or-export-your-connections-with-tags"></a>Usar PowerShell para importar o exportar las conexiones (con etiquetas)
 
-```powershell
-# Load the module
-Import-Module "$env:ProgramFiles\windows admin center\PowerShell\Modules\ConnectionTools"
-# Available cmdlets: Export-Connection, Import-Connection
-
-# Export connections (including tags) to .csv files
-Export-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
-# Import connections (including tags) from .csv files
-Import-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
-```
-
-### <a name="csv-file-format-for-importing-connections"></a>Formato de archivo CSV para importar conexiones
-
-El formato del archivo CSV comienza con los cuatro encabezados ```"name","type","tags","groupId"```, seguido de cada conexión en una línea nueva.
-
-**Name** es el FQDN de la conexión.
-
-el **tipo** es el tipo de conexión. En el caso de las conexiones predeterminadas incluidas con el centro de administración de Windows, utilizará una de las siguientes opciones:
-
-| Tipo de conexión | Cadena de conexión |
-|------|-------------------------------|
-| Windows Server | msft. SME. Connection-Type. Server |
-| EQUIPO Windows 10 | msft. SME. Connection-Type. Windows-Client |
-| Clúster de conmutación por error | msft. SME. Connection-Type. Cluster |
-| Clúster hiperconvergido | msft. SME. Connection-Type. hiperconvergid-Cluster |
-
-las **etiquetas** se separan por canalización.
-
-**GROUPID** se usa para las conexiones compartidas. Use el valor ```global``` en esta columna para que esta sea una conexión compartida.
-
-### <a name="example-csv-file-for-importing-connections"></a>Archivo CSV de ejemplo para importar conexiones
-
-```
-"name","type","tags","groupId"
-"myServer.contoso.com","msft.sme.connection-type.server","hyperv"
-"myDesktop.contoso.com","msft.sme.connection-type.windows-client","hyperv"
-"teamcluster.contoso.com","msft.sme.connection-type.cluster","legacyCluster|WS2016","global"
-"myHCIcluster.contoso.com,"msft.sme.connection-type.hyper-converged-cluster","myHCIcluster|hyperv|JIT|WS2019"
-"teamclusterNode.contoso.com","msft.sme.connection-type.server","legacyCluster|WS2016","global"
-"myHCIclusterNode.contoso.com","msft.sme.connection-type.server","myHCIcluster|hyperv|JIT|WS2019"
-```
-
-## <a name="import-rdcman-connections"></a>Importar conexiones RDCman
-
-Use el script siguiente para exportar las conexiones guardadas en [RDCman](https://blogs.technet.microsoft.com/rmilne/2014/11/19/remote-desktop-connection-manager-download-rdcman-2-7/) a un archivo. Después, puede importar el archivo en el centro de administración de Windows y mantener la jerarquía de agrupación de RDCMan mediante etiquetas. Pruébelo.
-
-1. Copie y pegue el código siguiente en la sesión de PowerShell:
-
-   ```powershell
-   #Helper function for RdgToWacCsv
-   function AddServers {
-    param (
-    [Parameter(Mandatory = $true)]
-    [Xml.XmlLinkedNode]
-    $node,
-    [Parameter()]
-    [String[]]
-    $tags,
-    [Parameter(Mandatory = $true)]
-    [String]
-    $csvPath
-    )
-    if ($node.LocalName -eq 'server') {
-        $serverName = $node.properties.name
-        $tagString = $tags -join "|"
-        Add-Content -Path $csvPath -Value ('"'+ $serverName + '","msft.sme.connection-type.server","'+ $tagString +'"')
-    } 
-    elseif ($node.LocalName -eq 'group' -or $node.LocalName -eq 'file') {
-        $groupName = $node.properties.name
-        $tags+=$groupName
-        $currNode = $node.properties.NextSibling
-        while ($currNode) {
-            AddServers -node $currNode -tags $tags -csvPath $csvPath
-            $currNode = $currNode.NextSibling
-        }
-    } 
-    else {
-        # Node type isn't relevant to tagging or adding connections in WAC
-    }
-    return
-   }
-
-   <#
-   .SYNOPSIS
-   Convert an .rdg file from Remote Desktop Connection Manager into a .csv that can be imported into Windows Admin Center, maintaining groups via server tags. This will not modify the existing .rdg file and will create a new .csv file
-
-    .DESCRIPTION
-    This converts an .rdg file into a .csv that can be imported into Windows Admin Center.
-
-    .PARAMETER RDGfilepath
-    The path of the .rdg file to be converted. This file will not be modified, only read.
-
-    .PARAMETER CSVdirectory
-    Optional. The directory you wish to export the new .csv file. If not provided, the new file is created in the same directory as the .rdg file.
-
-    .EXAMPLE
-    C:\PS> RdgToWacCsv -RDGfilepath "rdcmangroup.rdg"
-    #>
-   function RdgToWacCsv {
-    param(
-        [Parameter(Mandatory = $true)]
-        [String]
-        $RDGfilepath,
-        [Parameter(Mandatory = $false)]
-        [String]
-        $CSVdirectory
-    )
-    [xml]$RDGfile = Get-Content -Path $RDGfilepath
-    $node = $RDGfile.RDCMan.file
-    if (!$CSVdirectory){
-        $csvPath = [System.IO.Path]::GetDirectoryName($RDGfilepath) + [System.IO.Path]::GetFileNameWithoutExtension($RDGfilepath) + "_WAC.csv"
-    } else {
-        $csvPath = $CSVdirectory + [System.IO.Path]::GetFileNameWithoutExtension($RDGfilepath) + "_WAC.csv"
-    }
-    New-item -Path $csvPath
-    Add-Content -Path $csvPath -Value '"name","type","tags"'
-    AddServers -node $node -csvPath $csvPath
-    Write-Host "Converted $RDGfilepath `nOutput: $csvPath"
-   }
-   ```
-
-2. Para crear un. Archivo CSV, ejecute el siguiente comando:
-
-   ```powershell
-   RdgToWacCsv -RDGfilepath "path\to\myRDCManfile.rdg"
-   ```
-
-3. Importe el resultante. En el centro de administración de Windows y todas las jerarquías de agrupación de RDCMan se representarán mediante etiquetas en la lista de conexiones. Para obtener más información, consulte [uso de PowerShell para importar o exportar las conexiones (con etiquetas)](#use-powershell-to-import-or-export-your-connections-with-tags).
+[!INCLUDE [ps-connections](../includes/ps-connections.md)]
 
 ## <a name="view-powershell-scripts-used-in-windows-admin-center"></a>Ver scripts de PowerShell usados en el centro de administración de Windows
 

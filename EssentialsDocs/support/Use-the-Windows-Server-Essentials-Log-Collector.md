@@ -12,12 +12,12 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: df467921f8a8f5633d2b0bd792885fe2c9ae2212
-ms.sourcegitcommit: a937eb17915a4a0e444a36ddb0fac9c9771cfbfa
+ms.openlocfilehash: 3bc43b08df30d03f29d9f343b7d6ed4d63c85eda
+ms.sourcegitcommit: 39244de670f712857a5fdd56630e95d57b7001a5
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 12/06/2019
-ms.locfileid: "74877910"
+ms.locfileid: "74897669"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>Uso del compilador de registros de Windows Server Essentials
 
@@ -30,6 +30,7 @@ Al solucionar problemas del equipo, un representante del servicio de atención a
 > [!NOTE]
 >El Compilador de registros no analiza los problemas de red ni realiza cambios en cualquier servidor o equipo de la red. Para obtener información sobre cómo solucionar problemas de red, consulte la documentación de ayuda del producto de su servidor.  
 >En esta guía, los equipos de la red que no sean el servidor, se denominan equipos de red.  
+>
 >[Descargue el paquete de instalación del recopilador de registros de Windows Server Essentials](https://www.microsoft.com/download/details.aspx?id=34821).  
   
  Para instalar y ejecutar el Compilador de registros, realice los pasos que se indican en los temas siguientes:  

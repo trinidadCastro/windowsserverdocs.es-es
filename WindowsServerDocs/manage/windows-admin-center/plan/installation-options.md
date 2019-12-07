@@ -7,37 +7,36 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.date: 06/07/2019
-ms.openlocfilehash: 144c57bba621ee1b94a66914f8d9b6c0292f8b03
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 12/02/2019
+ms.openlocfilehash: d4046cc10a5e0fdc12cfb9587eef10d4263c2ddd
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406871"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74904033"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>¿Qué tipo de instalación es el adecuado para ti?
 
->Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
-
 En este tema se describen las distintas opciones de instalación del centro de administración de Windows, incluida la instalación de en un equipo con Windows 10 o Windows Server para su uso por parte de varios administradores. Para instalar el centro de administración de Windows en una máquina virtual de Azure, consulte [implementación del centro de administración de Windows en Azure](../azure/deploy-wac-in-azure.md).
 
-## <a name="installation-types"></a>Instalación: Tipos
+## <a name="installation-types"></a>Instalación: tipos
+
+![img](../media/deployment-options/install-options.PNG)
 
 | Cliente local                                | Servidor de puerta de enlace                                  | Servidor administrado                               | Clúster de conmutación por error                           |
 |---------------------------------------------|-------------------------------------------------|----------------------------------------------|--------------------------------------------|
-| ![IMG](../media/deployment-options/W10.PNG) | ![IMG](../media/deployment-options/gateway.PNG) | ![IMG](../media/deployment-options/node.PNG) | ![IMG](../media/deployment-options/HA.png) |
-| Instale en un cliente de Windows 10 local que tenga conectividad a los servidores administrados.  Excelente para escenarios de inicio rápido, pruebas, ad hoc o de escala pequeña. |Instale en un servidor de puerta de enlace designado y acceda desde cualquier explorador cliente con conectividad al servidor de puerta de enlace.  Excelente para escenarios a gran escala. | Instale directamente en un servidor administrado con el fin de administrarse a sí mismo o de un clúster en el que sea un nodo de miembro.  Excelente para escenarios distribuidos. | Implemente en un clúster de conmutación por error para habilitar la alta disponibilidad del servicio de puerta de enlace. Ideal para entornos de producción con el fin de garantizar la resistencia del servicio de administración. |
+| [Instale](../deploy/install.md) en un cliente de Windows 10 local que tenga conectividad a los servidores administrados.  Excelente para escenarios de inicio rápido, pruebas, ad hoc o de escala pequeña. |[Instale](../deploy/install.md) en un servidor de puerta de enlace designado y acceda desde cualquier explorador cliente con conectividad al servidor de puerta de enlace.  Excelente para escenarios a gran escala. | [Instale](../deploy/install.md) directamente en un servidor administrado con el fin de administrarse a sí mismo o de un clúster en el que sea un nodo de miembro.  Excelente para escenarios distribuidos. | [Implemente](#high-availability) en un clúster de conmutación por error para habilitar la alta disponibilidad del servicio de puerta de enlace. Ideal para entornos de producción con el fin de garantizar la resistencia del servicio de administración. |
 
-## <a name="installation-supported-operating-systems"></a>Instalación: Sistemas operativos compatibles
+## <a name="installation-supported-operating-systems"></a>Instalación: sistemas operativos compatibles
 
 Puede **instalar** el centro de administración de Windows en los siguientes sistemas operativos de Windows:
 
 | **Plataforma**                       | **Modo de instalación** |
 | -----------------------------------| --------------------- |
-| Windows 10, versión 1709 o posterior  | Cliente local |
+| Windows 10                         | Cliente local |
 | Canal semianual de Windows Server | Servidor de puerta de enlace, servidor administrado, clúster de conmutación por error |
 | Windows Server 2016                | Servidor de puerta de enlace, servidor administrado, clúster de conmutación por error |
-| Windows Server 2019                | Servidor de puerta de enlace, servidor administrado, clúster de conmutación por error |
+| Windows Server 2019                | Servidor de puerta de enlace, servidor administrado, clúster de conmutación por error |
 
 Al centro de administración de Windows operativo:
 
@@ -45,27 +44,27 @@ Al centro de administración de Windows operativo:
 - **En otros escenarios:** Conéctese a la puerta de enlace del centro de administración de Windows en otra máquina desde un explorador cliente a través de su dirección URL, por ejemplo, `https://servername.contoso.com`
 
 > [!WARNING]
-> No se admite la instalación del centro de administración de Windows en un controlador de dominio. [Obtenga más información sobre los procedimientos recomendados de seguridad de los controladores de dominio](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack). 
+> No se admite la instalación del centro de administración de Windows en un controlador de dominio. [Obtenga más información sobre los procedimientos recomendados de seguridad de los controladores de dominio](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack).
 
-## <a name="installation-supported-web-browsers"></a>Instalación: Exploradores Web compatibles
+## <a name="installation-supported-web-browsers"></a>Instalación: exploradores Web compatibles
 
-Microsoft Edge y Google Chrome se prueban y admiten en Windows 10. Otros exploradores Web, incluidos Internet Explorer y Firefox, no forman parte actualmente de nuestra matriz de pruebas y, por lo tanto, no se admiten *oficialmente* . Es posible que estos exploradores tengan problemas al ejecutar el centro de administración de Windows. Por ejemplo, Firefox tiene su propio almacén de certificados, por lo que debe importar el certificado `Windows Admin Center Client` en Firefox para usar el centro de administración de Windows en Windows 10. Para obtener más información, consulte [problemas conocidos específicos del explorador](../support/known-issues.md#browser-specific-issues).
+Microsoft Edge (incluido [Microsoft Edge Insider](https://microsoftedgeinsider.com)) y Google Chrome se prueban y admiten en Windows 10. Otros exploradores Web, incluidos Internet Explorer y Firefox, no forman parte actualmente de nuestra matriz de pruebas y, por lo tanto, no se admiten *oficialmente* . Es posible que estos exploradores tengan problemas al ejecutar el centro de administración de Windows. Por ejemplo, Firefox tiene su propio almacén de certificados, por lo que debe importar el certificado de `Windows Admin Center Client` en Firefox para usar el centro de administración de Windows en Windows 10. Para obtener más información, consulte [problemas conocidos específicos del explorador](../support/known-issues.md#browser-specific-issues).
 
-## <a name="management-target-supported-operating-systems"></a>Destino de administración: Sistemas operativos compatibles
+## <a name="management-target-supported-operating-systems"></a>Destino de administración: sistemas operativos compatibles
 
 Puede **administrar** los siguientes sistemas operativos de Windows mediante el centro de administración de Windows:
 
-| `Version` | Administrar *nodo* a través de *Administrador del servidor* | Administrar el *clúster* a través de *Administrador de clústeres de conmutación por error* | Administrar *HCI* a través *del administrador de clústeres de HCI* |
-| ------------------------- |--------------- | ----- | ------------------------ |
-| Windows 10, versión 1709 o posterior | Sí (a través de administración de equipos) | N/D | N/D |
-| Canal semianual de Windows Server | Sí | Sí | N/D |
-| Windows Server 2019 | Sí | Sí | Sí |
-| Windows Server 2016 | Sí | Sí | Sí, con la [última actualización acumulativa](../use/manage-hyper-converged.md#prepare-your-windows-server-2016-cluster-for-windows-admin-center) |
-| Microsoft Hyper-V Server 2016 | Sí | Sí | N/D |
-| Windows Server 2012 R2 | Sí | Sí | N/D |
-| Microsoft Hyper-V Server 2012 R2 | Sí | Sí | N/D |
-| Windows Server 2012 | Sí | Sí | N/D |
-| Windows Server 2008 R2 | Sí, funcionalidad limitada | N/D | N/D |
+| Versión | Administrar *nodo* a través de *Administrador del servidor* | Administrar mediante el *Administrador de clústeres* |
+| ------------------------- |--------------- | ----- |
+| Windows 10 | Sí (a través de administración de equipos) | N/D |
+| Canal semianual de Windows Server | Sí | Sí |
+| Windows Server 2019 | Sí | Sí |
+| Windows Server 2016 | Sí | Sí, con la [última actualización acumulativa](../use/manage-hyper-converged.md#prepare-your-windows-server-2016-cluster-for-windows-admin-center) |
+| Microsoft Hyper-V Server 2016 | Sí | Sí |
+| Windows Server 2012 R2 | Sí | Sí |
+| Microsoft Hyper-V Server 2012 R2 | Sí | Sí |
+| Windows Server 2012 | Sí | Sí |
+| Windows Server 2008 R2 | Sí, funcionalidad limitada | N/D |
 
 > [!NOTE]
 > El centro de administración de Windows requiere características de PowerShell que no están incluidas en Windows Server 2008 R2, 2012 y 2012 R2. Si va a administrarlos con el centro de administración de Windows, tendrá que instalar Windows Management Framework (WMF) versión 5,1 o superior en esos servidores.

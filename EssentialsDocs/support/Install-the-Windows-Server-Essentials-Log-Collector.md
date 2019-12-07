@@ -12,25 +12,25 @@ ms.assetid: d271c54f-1ffa-464e-afa5-27b8df61854e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ade18cec590392f35e7ad6b30d9a22ccdce44dcd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: a1b1a5492a6e5dbc48899b3918314676884e0454
+ms.sourcegitcommit: 39244de670f712857a5fdd56630e95d57b7001a5
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837036"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74897682"
 ---
 # <a name="install-the-windows-server-essentials-log-collector"></a>Instalación del compilador de registros de Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-El Asistente para instalación de Windows Server Essentials Log Collector instala al recopilador de registros como un Add en Launchpad. Puede instalar y usar el Compilador de registros en los equipos de la red, del servidor o de ambos. Después de la instalación, el Compilador de registros aparecerá en el panel.  
+El Asistente para la instalación del recopilador de registros de Windows Server Essentials instala el compilador de registros como un complemento de Launchpad. Puede instalar y usar el Compilador de registros en los equipos de la red, del servidor o de ambos. Después de la instalación, el Compilador de registros aparecerá en el panel.  
   
-###  <a name="BKMK_ToInstall"></a> Para instalar al recopilador de registros  
+###  <a name="BKMK_ToInstall"></a>Para instalar el recopilador de registros  
   
 1.  Descargue el paquete de instalación del Compilador de registros en cualquier servidor o equipo de la red.  
   
     > [!NOTE]
-    >  También puede [descargar el paquete de instalación del Compilador de registros](https://go.microsoft.com/fwlink/p/?LinkId=255470) de Microsoft.  
+    > [Descargue el paquete de instalación del recopilador de registros de Windows Server Essentials](https://www.microsoft.com/download/details.aspx?id=34821).  
   
 2.  Haga doble clic en el icono del Compilador de registros.  
   
@@ -42,7 +42,7 @@ El Asistente para instalación de Windows Server Essentials Log Collector instal
   
 6.  Haga clic en **Instalar el complemento**.  
   
-###  <a name="BKMK_Reinstall"></a> Volver a instalar al recopilador de registros  
+###  <a name="BKMK_Reinstall"></a>Reinstalación del compilador de registros  
  Si fuera necesario reinstalar el Compilador de registros, debe desinstalar y reinstalarlo en el servidor y en los equipos de la red. Al desinstalar el Compilador de registros en el servidor desde el panel, todos los equipos de red desinstalarán automáticamente el Compilador de registros.  
   
 ##### <a name="to-uninstall-and-reinstall-the-log-collector"></a>Para desinstalar y reinstalar el Compilador de registros  
@@ -62,12 +62,12 @@ El Asistente para instalación de Windows Server Essentials Log Collector instal
   
 ##### <a name="to-manually-install-the-log-collector"></a>Para instalar manualmente el Compilador de registros  
   
-1.  Cambie la extensión del archivo de instalación descargado desde .wssx a .cab.  
+1.  Cambie el nombre de la extensión del archivo de instalación descargado de. WSSX a. cab.  
   
 2.  Haga doble clic en el nombre del archivo de instalación.  
   
 3.  Haga clic en **Aceptar** si se le pide.  
   
-4.  Haga doble clic en el nombre de archivo que termina con ˜.msi y seleccione una carpeta en la que extraerlo.  
+4.  Haga doble clic en el nombre de archivo que termina con ". msi" y seleccione una carpeta en la que se va a extraer.  
   
 5.  Navegue hasta la carpeta con los archivos extraídos y haga doble clic en el archivo de instalación para utilizar al asistente para finalizar la instalación.
