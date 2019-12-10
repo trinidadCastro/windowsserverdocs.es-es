@@ -6,14 +6,14 @@ ms.topic: article
 manager: klaasl
 ms.author: jeffpatt
 author: JeffPatt24
-ms.date: 6/242017
+ms.date: 6/24/2017
 ms.assetid: 4a11ede0-b000-4188-8190-790971504e17
-ms.openlocfilehash: ff0c6d4a6e457947c063a7ea5c3ce6463e9c17bb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 17adf89d3a26767bbc736a31da7b7b2b204570a2
+ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365750"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74945237"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: Paso 4; configurar el Proxy de aplicación web
 
@@ -43,19 +43,19 @@ Como estás instalando certificados autofirmados cuyo origen no se puede rastrea
   
 Para instalar los certificados, sigue estos pasos:  
   
-1.  Haga clic en **Inicio** y, a continuación, en **Ejecutar**.  
+1.  Haz clic en **Inicio**y en **Ejecutar**.  
   
 2.  Escribe **MMC**.  
   
-3.  En el menú **Archivo**, haga clic en **Agregar o quitar complemento**.  
+3.  En el menú **Archivo**, haz clic en **Agregar o quitar complemento**.  
   
 4.  En la lista **Complementos disponibles**, selecciona **Certificados** y, a continuación, haz clic en **Agregar**. Se iniciará el asistente del complemento de certificados.  
   
-5.  Seleccione **Cuenta de equipo** y, a continuación, haga clic en **Siguiente**.  
+5.  Selecciona **Cuenta de equipo** y, a continuación, haz clic en **Siguiente**.  
   
 6.  Selecciona **Equipo local: (el equipo en el que se ejecuta la consola)** y haz clic en **Finalizar**.  
   
-7.  Haga clic en **Aceptar**.  
+7.  Haz clic en **Aceptar**.  
   
 8.  Expande la carpeta **Raíz de consola\Certificados\(equipo local) \Personal\Certificados**.  
   
@@ -88,7 +88,7 @@ Para instalar el Proxy de aplicación web, sigue estos pasos:
   
 6.  En la página **Servicios de rol**, selecciona **Proxy de aplicación web**, haz clic en **Agregar características** y, a continuación, haz clic en **Siguiente**.
 
-7.  En la página **Confirmar selecciones de instalación** , haga clic en **Instalar**.  
+7.  En la página **Confirm installation selections**, haz clic en **Install**.  
   
 ## <a name="configure-web-application-proxy"></a>Configurar el Proxy de aplicación web  
 Para configurar el Proxy de aplicación web, sigue estos pasos:  
@@ -103,7 +103,7 @@ Para configurar el Proxy de aplicación web, sigue estos pasos:
   
 5.  En la página **Certificado de proxy de AD FS**, selecciona el certificado de AD FS que hayas importado anteriormente. En este caso de prueba, el valor es **blueadfs.contoso.com**. Haz clic en **Siguiente**.  
   
-6.  La página de confirmación te mostrará el comando de Windows PowerShell que se ejecutará para configurar el servicio. Haga clic en **configurar**.  
+6.  La página de confirmación te mostrará el comando de Windows PowerShell que se ejecutará para configurar el servicio. Haz clic en **Configurar**.  
   
 ## <a name="publish-the-work-folders-web-application"></a>Publicar la aplicación web Carpetas de trabajo  
 En el siguiente paso publicaremos una aplicación web que pondrá a disposición de los clientes Carpetas de trabajo. Para publicar la aplicación web Carpetas de trabajo, sigue estos pasos:  
@@ -144,7 +144,7 @@ En el siguiente paso publicaremos una aplicación web que pondrá a disposición
   
    Dirección URL del servidor back-end: **https://workfolders.contoso.com**  
   
-9. La página de confirmación muestra el comando de Windows PowerShell que se ejecutará para publicar la aplicación. Haga clic en **Publicar**.  
+9. La página de confirmación muestra el comando de Windows PowerShell que se ejecutará para publicar la aplicación. Haz clic en **Publicar**.  
   
 10. En la página **Resultados** verás que la aplicación se publicó correctamente.
     >[!NOTE]

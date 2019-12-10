@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 46a1e2aa8c116f79c164448ab5644a7dda9607c8
-ms.sourcegitcommit: ac9946deb4fa70203a9b05e0386deb4244b8ca55
+ms.openlocfilehash: 9abe199399e577eb06044377c30d5a2dc0e35dd1
+ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310369"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74945224"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -64,7 +64,7 @@ Hemos corregido este problema en una versión posterior de Windows Server.
 
 Al usar el centro de administración de Windows o PowerShell para descargar el registro CSV de operaciones de transferencia de errores detallados, recibe el error:
 
- >   Transferir registro: Compruebe que el uso compartido de archivos está permitido en el firewall. : Esta operación de solicitud enviada a net. TCP: psico: 28940/SMS/Service/1/Transfer no recibió una respuesta dentro del tiempo de espera configurado (00:01:00). El tiempo asignado a esta operación puede haber sido una parte de un tiempo de espera mayor. Esto puede deberse a que el servicio sigue procesando la operación o a que el servicio no pudo enviar un mensaje de respuesta. Considere la posibilidad de aumentar el tiempo de espera de la operación (convirtiendo el canal o el proxy a IContextChannel y estableciendo la propiedad OperationTimeout) y asegúrese de que el servicio pueda conectarse al cliente.
+ >   Transferir registro: Compruebe que el uso compartido de archivos está permitido en el firewall. : Esta operación de solicitud enviada a net. TCP: psico: 28940/SMS/Service/1/Transfer no recibió una respuesta dentro del tiempo de espera configurado (00:01:00). El tiempo asignado a esta operación puede haber sido una parte de un tiempo de espera mayor. La razón puede ser que el servicio sigue procesando la operación o que no pudo enviar un mensaje de respuesta. Considere la posibilidad de aumentar el tiempo de espera de la operación (convirtiendo el canal o el proxy a IContextChannel y estableciendo la propiedad OperationTimeout) y asegúrese de que el servicio pueda conectarse al cliente.
 
 Este problema se debe a un gran número de archivos transferidos que no se pueden filtrar en el tiempo de espera predeterminado de un minuto permitido por el servicio de migración de almacenamiento. 
 
@@ -90,7 +90,7 @@ Para solucionar este problema:
 7. Haga clic con el botón secundario en "WcfOperationTimeoutInMinutes" y, a continuación, haga clic en modificar. 
 8. En el cuadro datos base, haga clic en "decimal".
 9. En el cuadro información del valor, escriba "10" y, a continuación, haga clic en Aceptar.
-10. Salga del editor del registro.
+10. Salga del Editor del Registro.
 11. Intente descargar el archivo CSV de solo errores de nuevo. 
 
 Tenemos previsto cambiar este comportamiento en una versión posterior de Windows Server 2019.  
@@ -314,6 +314,13 @@ Este problema se debe a una regresión en la actualización de [KB4512534](https
   
 En ambas soluciones alternativas, después de que se complete el corte, puede establecer una dirección IP estática en el equipo de origen anterior como considere conveniente y dejar de usar DHCP.   
 
-## <a name="see-also"></a>Consulte también
+## <a name="slower-than-expected-re-transfer-performance"></a>Rendimiento más lento que el rendimiento de retransferencia esperado
+
+Después de completar una transferencia y, a continuación, ejecutar una retransferencia posterior de los mismos datos, es posible que no vea muchas mejoras en el tiempo de transferencia aunque haya pocos datos que hayan cambiado mientras tanto en el servidor de origen.
+
+Este es el comportamiento esperado cuando se transfiere un número muy grande de archivos y carpetas anidadas. El tamaño de los datos no es relevante. Primero hemos realizado mejoras en este comportamiento en [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) y continúan optimizando el rendimiento de la transferencia. Para optimizar aún más el rendimiento, revise [optimización del inventario y rendimiento](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)de la transferencia.
+
+
+## <a name="see-also"></a>Consulta también
 
 - [Información general del servicio de migración de almacenamiento](overview.md)
