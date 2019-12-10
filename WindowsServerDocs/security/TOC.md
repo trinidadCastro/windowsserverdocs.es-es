@@ -1,6 +1,5 @@
 # [Seguridad y control](security-and-assurance.md)
 ## [Inicio de tu viaje por el Reglamento general de protección de datos (GDPR) para Windows Server 2016](gdpr/gdpr-winserver-whitepaper.md)
-## [Configurar HGS para Always Encrypted en SQL Server](set-up-hgs-for-always-encrypted-in-sql-server.md)
 ## [Configurar HGS para VM blindadas y tejido protegido](guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md)
 ### [Introducción](guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)
 ### [Planificar](guarded-fabric-shielded-vm/guarded-fabric-plan-overview.md)
