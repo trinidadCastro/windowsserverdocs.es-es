@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/20/2019
+ms.date: 12/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 54994aad08c2f428b429082ed450235ed8bbe7e7
-ms.sourcegitcommit: 244b89505c5131dfdb90628857cc7e31741c84c2
+ms.openlocfilehash: 5526d401ba26cabcaccfc0b88df9b0e69f8149a5
+ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74265924"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74829608"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -30,17 +30,21 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 |Grupo de usuarios |Versión  |
 |-----------|---------|
-|Public     |1.2.431  |
-|Insider    |1.2.524  |
+|Public     |1.2.535  |
+|Insider    |1.2.535  |
 
-## <a name="updates-for-version-12524"></a>Actualizaciones de la versión 1.2.524
+## <a name="updates-for-version-12535"></a>Actualizaciones para la versión 1.2.535
 
-*Fecha de publicación: 11/20/2019*
+*Fecha de publicación: 04/12/2019*
 
-Descargar: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4e7Nj), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dZCo), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dX1s)
+Descargar: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jH), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jL), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k27O)
 
 - Ahora puedes obtener acceso directo a la información sobre las actualizaciones, gracias al botón para obtener más opciones de la barra de comandos que está en la parte superior del cliente.
 - Ahora puedes notificar los comentarios desde la barra de comandos del cliente.
+- Ahora, la opción Comentarios solo se muestra si el Centro de opiniones está disponible.
+- Ahora, la notificación de actualización no se muestra si las notificaciones se han deshabilitado mediante la directiva.
+- Se corrigió un problema que impedía el inicio de algunos archivos RDP.
+- Se corrigió un bloqueo al iniciar el cliente debido a daños en algunos valores de configuración persistentes.
 
 ## <a name="updates-for-version-12431"></a>Actualizaciones de la versión 1.2.431
 

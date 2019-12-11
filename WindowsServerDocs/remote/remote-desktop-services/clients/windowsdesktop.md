@@ -11,18 +11,18 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/12/2019
+ms.date: 11/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f786a1db0854ae89c1ceb23942793deb7f608e1
-ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
+ms.openlocfilehash: e71aa2b1cccda85e0bf6f8a80ad68013346b30d4
+ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74019602"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74829618"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introducción al cliente de escritorio de Windows
 
->Se aplica a: Windows 10 y Windows 7
+>Se aplica a: Windows 10, Windows 10 IoT Enterprise y Windows 7
 
 El cliente de Escritorio remoto para el escritorio de Windows se puede usar para acceder a aplicaciones y escritorios de Windows de forma remota desde otro dispositivo Windows.
 
@@ -33,7 +33,7 @@ El cliente de Escritorio remoto para el escritorio de Windows se puede usar para
 
 ## <a name="install-the-client"></a>Instalar el cliente
 
-Elige el cliente que coincida con tu versión de Windows:
+Elige el cliente que coincida con la versión de Windows. El nuevo cliente de Escritorio remoto (MSRDC) es compatible con dispositivos cliente Windows 10, Windows 10 IoT Enterprise y Windows 7. 
 
 - [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2068602)
 - [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2098960)

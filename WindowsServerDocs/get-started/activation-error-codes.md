@@ -8,12 +8,12 @@ ms.assetid: ''
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 26b107264c9dfaca16ef445760089b8ac0ae8e22
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.openlocfilehash: d4d9a8917bf455d8ed84207e2f9ecc6d13d01c3d
+ms.sourcegitcommit: b18ee742662b24b25d29ef1079b1c49f220f1d57
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71960971"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74691863"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>Resolver códigos de error de activación de Windows
 
@@ -22,11 +22,19 @@ ms.locfileid: "71960971"
 
 En este artículo se proporciona información de solución de problemas que le ayudará a responder a los mensajes de error que puede recibir al intentar usar una clave de activación múltiple (MAK) o el Servicio de administración de claves (KMS) para realizar la activación de volumen en uno o varios equipos basados en Windows. Busque el código de error en la tabla siguiente y, a continuación, seleccione el vínculo para ver más información sobre el código de error y cómo resolverlo.
 
-Para obtener más información sobre la activación de volumen, vea [Plan para la activación de volumen](https://docs.microsoft.com/en-us/windows/deployment/volume-activation/plan-for-volume-activation-client).
+Para obtener más información sobre la activación de volumen, vea [Plan para la activación de volumen](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client).
 
 Para obtener más información acerca de la activación de volumen para las versiones actuales y recientes de Windows, consulte [Activación de volumen [cliente]](https://docs.microsoft.com/windows/deployment/volume-activation/volume-activation-windows-10).
 
 Para obtener más información acerca de la activación de volumen para versiones anteriores de Windows, consulte KB 929712, [información de activación de volumen para Windows Vista, Windows Server 2008, Windows Server 2008 R2 y Windows 7](https://support.microsoft.com/en-us/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi).
+
+## <a name="diagnostic-tool"></a>Herramienta de diagnóstico
+
+El Asistente de soporte y recuperación (SaRA) de Microsoft simplifican la solución de problemas de activación de KMS de Windows. Descargue la herramienta de diagnóstico desde [aquí](https://aka.ms/SaRA-WindowsActivation).
+
+Esta herramienta intentará activar Windows. Si devuelve un código de error de activación, la herramienta mostrará soluciones de destino para los códigos de error conocidos.
+
+Se admiten los códigos de error siguientes: 0xC004F038, 0xC004F039, 0xC004F041, 0xC004F074, 0xC004C008.
 
 ## <a name="summary-of-error-codes"></a>Resumen de códigos de error
 

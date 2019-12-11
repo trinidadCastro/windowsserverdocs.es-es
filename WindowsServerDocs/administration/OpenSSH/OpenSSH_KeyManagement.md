@@ -6,12 +6,12 @@ contributor: maertendMSFT
 author: maertendMSFT
 title: Configuración del servidor de OpenSSH para Windows
 ms.product: w10
-ms.openlocfilehash: ed9f3653c79f1329b1334f52fe14c1184bc99539
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: fa3d40617a04c092403d9d2e018bd2eb82d20cd9
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866871"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781322"
 ---
 # <a name="openssh-key-management"></a>Administración de claves de OpenSSH
 
@@ -135,7 +135,7 @@ Después de completar estos pasos, cada vez que se necesite una clave privada pa
 
 ## <a name="deploying-the-public-key"></a>Implementación de la clave pública
 
-Para usar la clave de usuario que se creó anteriormente, la clave pública debe colocarse en el servidor en un archivo de texto denominado *authorized_keys* en users\nombre de usuario\ssh. Las herramientas de OpenSSH incluyen scp (una utilidad de transferencia de archivos segura) para ayudarte con esta operación.
+Para usar la clave de usuario que se creó anteriormente, la clave pública debe colocarse en el servidor en un archivo de texto denominado *authorized_keys* en users\username\.ssh\. Las herramientas de OpenSSH incluyen scp (una utilidad de transferencia de archivos segura) para ayudarte con esta operación.
 
 Para trasladar el contenido de la clave pública (~\.ssh\id_ed25519.pub) a un archivo de texto denominado authorized_keys en ~\.ssh\ en el servidor o host.
 
