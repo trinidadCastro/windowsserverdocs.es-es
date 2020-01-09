@@ -7,24 +7,33 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 08/19/2019
+ms.date: 12/20/2019
 description: Temas nuevos y actualizados de la documentación de almacenamiento local para Windows Server para profesionales de ti.
-ms.openlocfilehash: ce937dfb5c6c0b46c8085cbb202590567ea829d3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d50d4ca5b49b7f895fad3d3866226f95c55ae485
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393934"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352776"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Cambiar el historial de los temas de almacenamiento en Windows Server
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 En este tema se enumeran los temas nuevos y actualizados de la documentación de [Storage](storage.md) para Windows Server.
 
 > Si está buscando el historial de actualizaciones de Windows Server, consulte el historial de actualizaciones de Windows [10 y Windows server 2019](https://support.microsoft.com/help/4464619) o el [historial de actualizaciones de Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).
 
-## <a name="august-2019"></a>2019 de agosto
+## <a name="december-2019"></a>Diciembre de 2019
+
+| Tema nuevo o modificado                                        | Descripción |
+| ---                                                         | ---           |
+| [Solución de problemas de Administración de discos](disk-management/troubleshooting-disk-management.md)| Editado para refinar aún más la guía, en función de las solicitudes de los clientes.|
+| [Extender un volumen en administración de discos](disk-management/extend-a-basic-volume.md) | Se ha agregado orientación en respuesta a los comentarios de los clientes. |
+| [Cambiar un disco dinámico por un disco básico](disk-management/change-a-dynamic-disk-back-to-a-basic-disk.md) | Se ha corregido un error en la línea de comandos y se ha agregado información en función de los comentarios de los clientes. |
+
+
+## <a name="august-2019"></a>Agosto de 2019
 
 | Tema nuevo o modificado                                        | Descripción |
 | ---                                                         | ---           |
@@ -41,17 +50,17 @@ En este tema se enumeran los temas nuevos y actualizados de la documentación de
 
 |Tema nuevo o modificado                                        |Descripción|
 |---                                                         |---           |
-|[Eliminar volúmenes](storage-spaces/delete-volumes.md)| Nuevo        |
+|[Eliminar volúmenes](storage-spaces/delete-volumes.md)| New        |
 |[Crear volúmenes](storage-spaces/create-volumes.md)| Se han agregado pasos y vídeos para crear un volumen en el centro de administración de Windows.|
 |[Ampliar volúmenes](storage-spaces/resize-volumes.md)| Se han agregado pasos y vídeo para cambiar el tamaño de un volumen en el centro de administración de Windows.|
 
-## <a name="march-2019"></a>2019 de marzo
+## <a name="march-2019"></a>Marzo de 2019
 
 |Tema nuevo o modificado                                        |Descripción|
 |---                                                         |---           |
-| [Supervisión con Azure Monitor](storage-spaces/configure-azure-monitor.md) | Nuevo |
-| [Descripción e implementación de una memoria persistente](storage-spaces/deploy-pmem.md) | Nuevo |
-| [Actualizar un clúster de espacios de almacenamiento directo a Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| Nuevo        |
+| [Supervisión con Azure Monitor](storage-spaces/configure-azure-monitor.md) | New |
+| [Descripción e implementación de una memoria persistente](storage-spaces/deploy-pmem.md) | New |
+| [Actualizar un clúster de espacios de almacenamiento directo a Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| New        |
 | [Replicación DFS](dfs-replication/dfsr-overview.md)        | Migración desde la biblioteca de [versiones anterior](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))|
 
 ## <a name="february-2019"></a>Febrero de 2019
@@ -60,13 +69,13 @@ En este tema se enumeran los temas nuevos y actualizados de la documentación de
 |---                                                         |---           |
 |[Problemas conocidos del servicio de migración de almacenamiento](storage-migration-service/known-issues.md)   | Se ha agregado un problema    |
 
-## <a name="january-2019"></a>2019 de enero
+## <a name="january-2019"></a>Enero de 2019
 
 |Tema nuevo o modificado                                        |Descripción|
 |---                                                         |---           |
 |[Comprender y controlar la resincronización de almacenamiento](storage-spaces/understand-storage-resync.md)|Nuevo tema|
 
-## <a name="december-2018"></a>2018 de diciembre
+## <a name="december-2018"></a>Diciembre de 2018
 
 |Tema nuevo o modificado                                        |Descripción|
 |---                                                         |---           |
@@ -81,9 +90,9 @@ En este tema se enumeran los temas nuevos y actualizados de la documentación de
 |---                                                         |---           |
 |[Resistencia anidada](storage-spaces/nested-resiliency.md)    | Nuevo tema    |
 |[Problemas conocidos del servicio de migración de almacenamiento](storage-migration-service/known-issues.md)   | Nuevo tema    |
-|[Replicación DFS: Preguntas más frecuentes (P+F)](dfs-replication/dfsr-faq.md)|Migración desde la biblioteca de [versiones anterior](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/)|
+|[Replicación DFS: preguntas más frecuentes (p + f)](dfs-replication/dfsr-faq.md)|Migración desde la biblioteca de [versiones anterior](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/)|
 |[Migrar la replicación de SYSVOL a la replicación de DFS](dfs-replication/migrate-sysvol-to-dfsr.md)|Migración desde la biblioteca de [versiones anterior](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)|
-|[SMB: Los puertos de compartir archivos e impresoras deben estar abiertos](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|Migración desde la biblioteca de [versiones anterior](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)|
+|[SMB: deben abrirse los puertos de uso compartido de archivos e impresoras](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|Migración desde la biblioteca de [versiones anterior](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)|
 |[Servicio de instantáneas de volumen](file-server/volume-shadow-copy-service.md)|Migración desde la biblioteca de [versiones anterior](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)|
 
 ## <a name="october-2018"></a>Octubre de 2018
@@ -103,7 +112,7 @@ En este tema se enumeran los temas nuevos y actualizados de la documentación de
 | [Servidor de destino iSCSI](iscsi/iscsi-target-server.md) | Se migró desde la biblioteca de [versiones anterior](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
 | [Límites de escalabilidad del servidor de destino iSCSI](iscsi/iscsi-target-server-limits.md) |Se migró desde la biblioteca de [versiones anterior](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
 
-## <a name="june-2018"></a>2018 de junio
+## <a name="june-2018"></a>Junio de 2018
 
 |Tema nuevo o modificado|Descripción|
 |---|---|
@@ -164,7 +173,7 @@ En este tema se enumeran los temas nuevos y actualizados de la documentación de
 |Tema nuevo o modificado|Descripción|
 |---|---|
 |[Cambiar una letra de unidad](disk-management/change-a-drive-letter.md)|Nuevo tema.|
-|[Solución de problemas de Administración de discos](disk-management/troubleshooting-disk-management.md)|El [Estado de un disco no se ha inicializado o el disco falta por completo en la](disk-management/troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing) sección para agregar pasos de solución de problemas completos, en función de las solicitudes de los clientes.|
+|[Solución de problemas de Administración de discos](disk-management/troubleshooting-disk-management.md)|El [Estado de un disco no se ha inicializado o el disco falta por completo en la](disk-management/troubleshooting-disk-management.md#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps) sección para agregar pasos de solución de problemas completos, en función de las solicitudes de los clientes.|
 |[Inicializar nuevos discos](disk-management/initialize-new-disks.md)|Se ha vuelto a escribir para intentar que sea más fácil comprender y abordar las preguntas de los clientes.|
 |[Planeación de volúmenes en Espacios de almacenamiento directo](storage-spaces/plan-volumes.md)|Se ha agregado una tabla que resume los tipos de resistencia disponibles en clústeres de cuatro nodos y más grandes.|
 |[Información general sobre ReFS](refs/refs-overview.md)|Se aclararon las cargas de trabajo recomendadas para la paridad acelerada para reflejo y se corrigieron los tamaños de archivo y volumen admitidos para ReFS y NTFS.|

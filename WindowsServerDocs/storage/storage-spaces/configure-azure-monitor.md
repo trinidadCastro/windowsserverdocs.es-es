@@ -1,7 +1,7 @@
 ---
-title: Entender y configurar Azure Monitor
-description: El programa de instalación información detallada sobre qué es Azure Monitor y cómo configurar alertas de correo electrónico y sms para el clúster de espacios de almacenamiento directo en Windows Server 2016 y de 2019.
-keywords: Espacios de almacenamiento directo, azure monitor, notificaciones, correo electrónico, sms
+title: Comprender y configurar Azure Monitor
+description: Información de configuración detallada sobre qué es Azure Monitor y cómo configurar el correo electrónico y las alertas de SMS para el clúster de espacios de almacenamiento directo en Windows Server 2016 y 2019.
+keywords: Espacios de almacenamiento directo, Azure monitor, notificaciones, correo electrónico, SMS
 ms.assetid: ''
 ms.prod: ''
 ms.author: adagashe
@@ -10,162 +10,193 @@ ms.topic: article
 author: adagashe
 ms.date: 3/26/2019
 ms.localizationpriority: ''
-ms.openlocfilehash: 6b229696e796f176fe89ab250ab48f1d9f0d5666
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 4a11ad670bdd26cdc771bb5ae357db4928995bb8
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280202"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352635"
 ---
 ---
-# <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>Use Azure Monitor para enviar mensajes de correo electrónico para errores de servicio de mantenimiento
+# <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>Usar Azure Monitor para enviar correos electrónicos de Servicio de mantenimiento errores
 
 >Se aplica a: Windows Server 2019, Windows Server 2016
 
-Azure Monitor maximiza la disponibilidad y rendimiento de las aplicaciones al ofrecer una solución completa para recopilar, analizar y actuar en la telemetría de la nube y entornos locales. Le ayudará a comprender cómo funcionan las aplicaciones e identifica proactivamente los problemas que afectan a ellos y los recursos que dependen.
+Azure Monitor maximiza la disponibilidad y el rendimiento de las aplicaciones con una completa solución que permite recopilar, analizar y administrar datos telemétricos tanto en la nube como en entornos locales. Esta solución ayuda a entender cómo funcionan las aplicaciones y permite identificar de manera proactiva los problemas que les afectan y los recursos de los que dependen.
 
-Esto es especialmente útil para el clúster hiperconvergido de en el entorno local. Con Azure Monitor integrado, podrá configurar el correo electrónico, texto (SMS) y otras alertas hacer ping cuando algo va mal con el clúster (o cuando desee marcar alguna otra actividad según los datos recopilados). A continuación, se explicará brevemente cómo funciona Azure Monitor, cómo instalar el Monitor de Azure y cómo configurarlo para enviar notificaciones.
+Esto es especialmente útil para el clúster hiperconvergido local. Con Azure Monitor integrado, podrá configurar el correo electrónico, el texto (SMS) y otras alertas para hacer ping cuando haya algún problema con el clúster (o cuando desee marcar alguna otra actividad en función de los datos recopilados). A continuación, explicaremos brevemente cómo funciona Azure Monitor, cómo instalar Azure Monitor y cómo configurarlo para que le envíe notificaciones.
 
 
-## <a name="understanding-azure-monitor"></a>Descripción del Monitor de Azure
+## <a name="understanding-azure-monitor"></a>Descripción de Azure Monitor
 
-Todos los datos recopilados por Azure Monitor se adapta a uno de dos tipos fundamentales: métricas y registros.
+Todos los datos recopilados por Azure Monitor pueden clasificarse en uno de los dos tipos fundamentales: métricas y registros.
 
-1. [Las métricas](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#metrics) son valores numéricos que se describen algunos aspectos de un sistema en un momento determinado en el tiempo. Son ligeros y capaz de admitir escenarios en tiempo real casi. Podrá ver los datos recopilados por la derecha de Azure Monitor en su página de información general en Azure portal.
+1. Las [métricas](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#metrics) son valores numéricos que describen algún aspecto de un sistema en un momento dado. Las métricas son ligeras y capaces de admitir escenarios de tiempo casi real. Verá los datos recopilados por Azure Monitor derecha en su página de información general en el Azure Portal.
 
-![imagen de la ingesta en las métricas en el Explorador de métricas](media/configure-azure-monitor/metrics.png)
+![imagen de la ingesta de métricas en el explorador de métricas](media/configure-azure-monitor/metrics.png)
 
-2. [Registros](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#logs) contienen distintos tipos de datos que se organizan en registros con diferentes conjuntos de propiedades para cada tipo. Datos de telemetría, como eventos y seguimientos se almacenan como registros además a los datos de rendimiento para que lo puede todos combinarse para el análisis. Se pueden analizar los datos de registro recopilados por Azure Monitor con [consultas](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview) rápidamente recuperar, consolidar y analizar los datos recopilados. Puede crear y probar consultas usando [Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/portals) en el portal de Azure y, a continuación, ya sea directamente analizar los datos mediante estas herramientas o guardar las consultas para su uso con [visualizaciones](https://docs.microsoft.com/azure/azure-monitor/visualizations) o [alerta las reglas de](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview).
+2. Los [registros](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#logs) contienen distintos tipos de datos organizados en grupos de registros, donde cada tipo tiene diferentes conjuntos de propiedades. Los datos de telemetría, como los eventos y los seguimientos, se almacenan como registros junto con los datos de rendimiento para poder analizarlos de forma combinada. Los datos de registro recopilados por Azure Monitor se pueden analizar con [consultas](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview) que recuperan, consolidan y analizan rápidamente los datos recopilados. Puede crear y probar consultas mediante [Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/portals) en Azure Portal y después analizar los datos directamente mediante estas herramientas o guardar las consultas para usarlas con las [visualizaciones](https://docs.microsoft.com/azure/azure-monitor/visualizations) o las [reglas de alertas](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview).
 
-![imagen de los registros de ingesta en log analytics](media/configure-azure-monitor/logs.png)
+![imagen de la ingesta de registros en log Analytics](media/configure-azure-monitor/logs.png)
 
-Tendremos más detalles a continuación sobre cómo configurar estas alertas.
+Veremos más detalles a continuación sobre cómo configurar estas alertas.
 
-## <a name="configuring-health-service"></a>Configuración de servicio de mantenimiento
+## <a name="onboarding-your-cluster-using-windows-admin-center"></a>Incorporación del clúster mediante el centro de administración de Windows
 
-Lo primero que necesita hacer es configurar el clúster. Como ya sabrá, el [servicio de mantenimiento](../../failover-clustering/health-service-overview.md) mejora la experiencia operativa para los clústeres que ejecutan espacios de almacenamiento directo y la supervisión diaria. 
+Con el centro de administración de Windows, puede incorporar el clúster a Azure Monitor.
 
-Como hemos visto anteriormente, Azure Monitor recopila registros de cada nodo que se está ejecutando en el clúster. Por lo tanto, se debe configurar el servicio de mantenimiento para escribir en un canal de eventos, que es:
+![GIF del clúster de incorporación a Azure Monitor "](media/configure-azure-monitor/onboarding.gif)
+
+Durante este flujo de incorporación, los pasos siguientes se están produciendo en el capó. Se explica cómo configurarlos en detalle en caso de que quiera configurar manualmente el clúster. 
+
+### <a name="configuring-health-service"></a>Configuración de Servicio de mantenimiento
+
+Lo primero que debe hacer es configurar el clúster. Como puede saber, el [servicio de mantenimiento](../../failover-clustering/health-service-overview.md) mejora la supervisión cotidiana y la experiencia operativa de los clústeres que ejecutan espacios de almacenamiento directo. 
+
+Como vimos anteriormente, Azure Monitor recopila registros de cada nodo en el que se está ejecutando en el clúster. Por lo tanto, tenemos que configurar la Servicio de mantenimiento para escribir en un canal de eventos, que es:
 
 ```
 Event Channel: Microsoft-Windows-Health/Operational
 Event ID: 8465
 ```
 
-Para configurar el servicio de mantenimiento, ejecute:
+Para configurar el Servicio de mantenimiento, ejecute:
 
 ```PowerShell
 get-storagesubsystem clus* | Set-StorageHealthSetting -Name "Platform.ETW.MasTypes" -Value "Microsoft.Health.EntityType.Subsystem,Microsoft.Health.EntityType.Server,Microsoft.Health.EntityType.PhysicalDisk,Microsoft.Health.EntityType.StoragePool,Microsoft.Health.EntityType.Volume,Microsoft.Health.EntityType.Cluster"
 ```
 
-Al ejecutar el cmdlet anterior para establecer la configuración de estado, provocar los eventos que desea empezar a la que se escriben en el *Microsoft-Windows-estado/Operational* canal de eventos.
+Al ejecutar el cmdlet anterior para establecer la configuración de mantenimiento, se producen los eventos que deseamos que comiencen a escribirse en el canal de eventos *Microsoft-Windows-Health/Operational* .
 
-## <a name="configuring-log-analytics"></a>Configuración de Log Analytics
+### <a name="configuring-log-analytics"></a>Configuración de Log Analytics
 
-Ahora que ha configurado el registro adecuado en el clúster, el siguiente paso es configurar correctamente de log analytics.
+Ahora que ha configurado el registro correcto en el clúster, el siguiente paso es configurar correctamente log Analytics.
 
-Para ofrecer una introducción, [Azure Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows) puede recopilar datos directamente desde los equipos de Windows físicos o virtuales en su centro de datos o en otro entorno de nube en un único repositorio para la correlación y análisis detallados.
+Para obtener información general, [Azure log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows) puede recopilar datos directamente de los equipos de Windows físicos o virtuales de su centro de datos o de otro entorno en la nube en un solo repositorio para el análisis y la correlación detallados.
 
-Para comprender la configuración admitida, revise [admite los sistemas operativos de Windows](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems) y [configuración de firewall de red](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements).
+Para comprender la configuración compatible, revise los [sistemas operativos Windows admitidos](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems) y la [configuración del firewall de red](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements).
 
-Si no tiene una suscripción de Azure, cree un [cuenta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de comenzar.
+Si no tiene una suscripción de Azure, cree una [cuenta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de empezar.
 
-### <a name="login-in-to-azure-portal"></a>Inicio de sesión en el portal de Azure
+#### <a name="login-in-to-azure-portal"></a>Inicio de sesión en Azure portal
 
-Inicie sesión en el portal de Azure en [ https://portal.azure.com ](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+Inicie sesión en Azure Portal en [https://portal.azure.com](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-### <a name="create-a-workspace"></a>Crear un área de trabajo
+#### <a name="create-a-workspace"></a>Creación de un área de trabajo
 
-Para obtener más detalles sobre los pasos indicados a continuación, consulte el [documentación de Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-windows-computer).
+Para obtener más información sobre los pasos que se indican a continuación, consulte la [documentación de Azure monitor](https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-windows-computer).
 
-1. En el portal de Azure, haga clic en **todos los servicios**. En la lista de recursos, escriba **Log Analytics**. Cuando empiece a escribir, la lista se filtra según la entrada. Seleccione **de Log Analytics**.<br><br> 
+1. En Azure Portal, haga clic en **Todos los servicios**. En la lista de recursos, escriba **Log Analytics**. Cuando empieza a escribir, la lista se filtra según lo que escribe. Seleccione **Log Analytics**.<br><br> 
 
-   ![Portal de Azure](media/configure-azure-monitor/azure-portal-01.png)<br><br>
+   ![Azure Portal](media/configure-azure-monitor/azure-portal-01.png)<br><br>
 
-2. Haga clic en **crear**y, a continuación, seleccione opciones para los siguientes elementos:
+2. Haga clic en **Crear** y, a continuación, seleccione opciones para los elementos siguientes:
 
-   * Proporcione un nombre para el nuevo **el área de trabajo de Log Analytics**, tales como *DefaultLAWorkspace*. 
-   * Seleccione un **suscripción** para vincular a seleccionándola en la lista desplegable si la opción predeterminada seleccionada no es adecuada.
-   * Para **grupo de recursos**, seleccione un grupo de recursos existente que contiene uno o más máquinas virtuales de Azure. <br><br>
+   * Escriba el nombre del nuevo **área de trabajo de Log Analytics**, como por ejemplo *DefaultLAWorkspace*. 
+   * Seleccione una **suscripción** a la que vincularlo en la lista desplegable si la opción predeterminada seleccionada no es adecuada.
+   * Para **Grupo de recursos**, seleccione un grupo de recursos existente que contenga una o más máquinas virtuales de Azure. <br><br>
 
-      ![Crear hoja de recursos de Log Analytics](media/configure-azure-monitor/create-loganalytics-workspace-02.png) <br><br>  
+      ![Creación de una hoja de recursos de Log Analytics](media/configure-azure-monitor/create-loganalytics-workspace-02.png) <br><br>  
 
-3. Después de proporcionar la información necesaria en el **el área de trabajo de Log Analytics** panel, haga clic en **Aceptar**.  
+3. Después de proporcionar la información necesaria en el panel **Área de trabajo de Log Analytics**, haga clic en **Aceptar**.  
 
-Mientras se comprueba la información y se crea el área de trabajo, puede seguir su progreso en **notificaciones** en el menú. 
+Mientras se comprueba la información y se crea el espacio de trabajo, puede realizar un seguimiento de su progreso en **Notificaciones** en el menú. 
 
-### <a name="obtain-workspace-id-and-key"></a>Obtener Id. de área de trabajo y clave
-Antes de instalar el Microsoft Monitoring Agent para Windows, necesita el identificador de área de trabajo y la clave del área de trabajo de Log Analytics.  Esta información es necesaria por el Asistente para configuración para configurar al agente y garantizar que puede comunicarse correctamente con Log Analytics correctamente.  
+#### <a name="obtain-workspace-id-and-key"></a>Obtención de la clave y el identificador de área de trabajo
+Antes de instalar Microsoft Monitoring Agent para Windows, necesita la clave y el identificador de área de trabajo para el área de trabajo de Log Analytics.  El asistente de configuración necesita esta información para configurar el agente de la forma adecuada y asegurarse de que puede comunicarse correctamente con Log Analytics.  
 
-1. En el portal de Azure, haga clic en **todos los servicios** se encuentra en la esquina superior izquierda. En la lista de recursos, escriba **Log Analytics**. Cuando empiece a escribir, la lista se filtra según la entrada. Seleccione **de Log Analytics**.
-2. En la lista de áreas de trabajo de Log Analytics, seleccione *DefaultLAWorkspace* creado anteriormente.
-3. Seleccione **configuración avanzada**.<br><br> ![Configuración avanzada de log Analytics](media/configure-azure-monitor/log-analytics-advanced-settings-01.png)<br><br>  
-4. Seleccione **orígenes conectados**y, a continuación, seleccione **servidores Windows**.   
-5. El valor a la derecha del **Id. de área de trabajo** y **Primary Key**. Guarde ambos temporalmente: copie y pegue ambos en su editor favorito por el momento.   
+1. En Azure Portal, haga clic en **Todos los servicios**, en la esquina superior izquierda. En la lista de recursos, escriba **Log Analytics**. Cuando empieza a escribir, la lista se filtra según lo que escribe. Seleccione **Log Analytics**.
+2. En la lista de áreas de trabajo de Log Analytics, seleccione *DefaultLAWorkspace* (creada antes).
+3. Seleccione **Configuración avanzada**.<br><br> ![Configuración avanzada de Log Analytics](media/configure-azure-monitor/log-analytics-advanced-settings-01.png)<br><br>  
+4. Seleccione **Orígenes conectados** y **Servidores Windows**.   
+5. Encontrará los valores a la derecha de **Id. del área de trabajo** y **Clave principal**. Guarde la copia temporalmente y péguela en su editor favorito para que el tiempo sea.   
 
-## <a name="installing-the-agent-on-windows"></a>Instalación del agente en Windows
-Los pasos siguientes instalarán y configuración a Microsoft Monitoring Agent. **Asegúrese de instalar a este agente en cada servidor del clúster y para indicar que desea que el agente para ejecutarse en el inicio de Windows.**
+### <a name="installing-the-agent-on-windows"></a>Instalación del agente en Windows
+En los pasos siguientes se instalan y configuran los Microsoft Monitoring Agent. **Asegúrese de instalar este agente en cada servidor del clúster e indique que desea que el agente se ejecute en el inicio de Windows.**
 
-1. En el **servidores Windows** , seleccione la adecuada **Download Windows Agent** versión para descargar según la arquitectura de procesador del sistema operativo Windows.
+1. En la página **Servidores Windows**, seleccione la versión de **Descargar el agente de Windows** que descargar según la arquitectura del procesador del sistema operativo Windows.
 2. Ejecute el programa de instalación para instalar al agente en el equipo.
-2. En el **bienvenida** página, haga clic en **siguiente**.
-3. En el **términos de licencia** página, lea la licencia y, a continuación, haga clic en **acepto**.
-4. En el **carpeta de destino** página, cambie o mantenga la carpeta de instalación predeterminada y, a continuación, haga clic en **siguiente**.
-5. En el **opciones de configuración de agente** página, elija conectar el agente a Azure Log Analytics y, a continuación, haga clic en **siguiente**.   
-6. En el **Azure Log Analytics** , realice lo siguiente:
-   1. Pegar la **Id. de área de trabajo** y **clave del área de trabajo (clave principal)** que copió anteriormente.    
-    a. Si el equipo necesita comunicarse a través de un servidor proxy para el servicio Log Analytics, haga clic en **avanzadas** y proporcione la dirección URL y el número de puerto del servidor proxy.  Si el servidor proxy requiere autenticación, escriba el nombre de usuario y la contraseña para autenticarse con el servidor proxy y, a continuación, haga clic en **siguiente**.  
-7. Haga clic en **siguiente** una vez que haya terminado de proporcionar los valores de configuración necesarios.<br><br> ![Pegue el Id. de área de trabajo y la clave principal](media/configure-azure-monitor/log-analytics-mma-setup-laworkspace.png)<br><br>
-8. En el **preparado para instalar** , revise las opciones seleccionadas y, a continuación, haga clic en **instalar**.
-9. En el **completó correctamente la configuración** página, haga clic en **finalizar**.
+2. En la **Página principal**, haga clic en **Siguiente**.
+3. En la página **Términos de licencia**, lea la licencia y haga clic en **Acepto**.
+4. En la página e **Carpeta de destino**, cambie o mantenga la carpeta de instalación predeterminada y haga clic en **Siguiente**.
+5. En la página **Opciones de instalación del agente**, elija la opción para conectar el agente a Azure Log Analytics y luego haga clic en **Siguiente**.   
+6. En la página **Azure Log Analytics**, realice lo siguiente:
+   1. Pegue el **Id. del área de trabajo** y la **clave del área de trabajo (clave principal)** que copió anteriormente.    
+    a. Si el equipo necesita comunicarse a través de un servidor proxy con el servicio de Log Analytics, haga clic en **Avanzado** y proporcione la dirección URL y el número de puerto del servidor proxy.  Si el servidor proxy requiere autenticación, escriba el nombre de usuario y la contraseña para autenticar con el servidor proxy y, luego, haga clic en **Siguiente**.  
+7. Haga clic en **Siguiente** cuando haya terminado de proporcionar las opciones de configuración necesarias.<br><br> ![pegar identificador del área de trabajo y clave principal](media/configure-azure-monitor/log-analytics-mma-setup-laworkspace.png)<br><br>
+8. En la página **Preparado para instalar**, revise las opciones seleccionadas y haga clic en **Instalar**.
+9. En la página **La configuración finalizó correctamente**, haga clic en **Finalizar**.
 
-Cuando haya finalizado, el **Microsoft Monitoring Agent** aparece en **Panel de Control**. Puede revisar la configuración y compruebe que el agente está conectado a Log Analytics. Cuando se conecta, en el **Azure Log Analytics** ficha, el agente muestra un mensaje que indica: **Microsoft Monitoring Agent se conectó correctamente al servicio Log Analytics de Microsoft.** 
+Cuando se complete, el **Agente de supervisión de Microsoft** aparece en **Panel de control**. Puede revisar la configuración y comprobar que el agente esté conectado a Log Analytics. Cuando se conecta, en la pestaña **Azure Log Analytics**, el agente muestra un mensaje similar al siguiente: **Microsoft Monitoring Agent se conectó correctamente al servicio Microsoft Log Analytics.** 
 
 ![Estado de la conexión de MMA en Log Analytics](media/configure-azure-monitor/log-analytics-mma-laworkspace-status.png)
 
-Para comprender la configuración admitida, revise [admite los sistemas operativos de Windows](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems) y [configuración de firewall de red](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements).
+Para comprender la configuración compatible, revise los [sistemas operativos Windows admitidos](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems) y la [configuración del firewall de red](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements).
 
-## <a name="collecting-event-and-performance-data"></a>Recopilar datos de rendimiento y eventos
+## <a name="setting-up-alerts-using-windows-admin-center"></a>Configuración de alertas mediante el centro de administración de Windows
 
-Log Analytics puede recopilar eventos desde el registro de eventos de Windows y los contadores de rendimiento que especifique para el análisis del término informes y a largo y actuar cuando se detecte una condición determinada.  Siga estos pasos para configurar la recopilación de eventos desde el registro de eventos de Windows y varios contadores de rendimiento comunes para empezar.  
+En el centro de administración de Windows, puede configurar las alertas predeterminadas que se aplicarán a todos los servidores del área de trabajo Log Analytics. 
 
-1. En el portal de Azure, haga clic en **más servicios** se encuentra en la esquina inferior izquierda. En la lista de recursos, escriba **Log Analytics**. Cuando empiece a escribir, la lista se filtra según la entrada. Seleccione **de Log Analytics**.
-2. Seleccione **configuración avanzada**.<br><br> ![Configuración avanzada de log Analytics](media/configure-azure-monitor/log-analytics-advanced-settings-01.png)<br><br> 
-3. Seleccione **datos**y, a continuación, seleccione **registros de eventos de Windows**.  
-4. En este caso, agregue el canal de eventos del servicio de mantenimiento para ello, escriba el nombre siguiente y haga clic en el signo más **+** .  
+![GIF de configuración de alertas "](media/configure-azure-monitor/setup1.gif)
+
+Estas son las alertas y sus condiciones predeterminadas en las que puede participar:
+
+| Nombre de la alerta                | Condición predeterminada                                  |
+|---------------------------|----------------------------------------------------|
+| Uso de CPU           | Más de 85% durante 10 minutos                            |
+| Uso de la capacidad de disco | Más de 85% durante 10 minutos                            |
+| Uso de memoria        | Memoria disponible inferior a 100 MB durante 10 minutos   |
+| Latido                 | Menos de 2 pulsaciones durante 5 minutos                   |
+| Error crítico del sistema     | Cualquier alerta crítica en el registro de eventos del sistema del clúster |
+| Alerta de servicio de mantenimiento      | Cualquier error del servicio de mantenimiento en el clúster            |
+
+Una vez configuradas las alertas en el centro de administración de Windows, puede ver las alertas en el área de trabajo de log Analytics en Azure.
+
+![GIF de configuración de alertas "](media/configure-azure-monitor/setup2.gif)
+
+Durante este flujo de incorporación, los pasos siguientes se están produciendo en el capó. Se explica cómo configurarlos en detalle en caso de que quiera configurar manualmente el clúster. 
+
+### <a name="collecting-event-and-performance-data"></a>Recopilación de datos de eventos y rendimiento
+
+Log Analytics puede recopilar eventos de los registros de eventos de Windows, así como de los contadores de rendimiento que especifique para los informes y análisis a largo plazo, y actuar cuando se detecte una condición determinada.  Siga estos pasos para configurar la colección de eventos desde el Registro de eventos de Windows, así como desde varios contadores de rendimiento comunes, para empezar.  
+
+1. En Azure Portal, haga clic en **Más servicios**, en la esquina inferior izquierda. En la lista de recursos, escriba **Log Analytics**. Cuando empieza a escribir, la lista se filtra según lo que escribe. Seleccione **Log Analytics**.
+2. Seleccione **Configuración avanzada**.<br><br> ![Configuración avanzada de Log Analytics](media/configure-azure-monitor/log-analytics-advanced-settings-01.png)<br><br> 
+3. Seleccione **Datos** y, a continuación, **Registros de eventos de Windows**.  
+4. Aquí, agregue el canal de eventos Servicio de mantenimiento escribiendo en el nombre que aparece a continuación y haga clic en el signo más **+** .  
    ```
    Event Channel: Microsoft-Windows-Health/Operational
    ```
-5. En la tabla, compruebe las gravedades **Error** y **advertencia**.   
-6. Haga clic en **guardar** en la parte superior de la página para guardar la configuración.
-7. Seleccione **los contadores de rendimiento de Windows** para habilitar la recopilación de contadores de rendimiento en un equipo Windows. 
-8. Al configurar los contadores de rendimiento de Windows para una nueva área de trabajo de Log Analytics en primer lugar, tiene la opción para crear rápidamente varios contadores comunes. Aparecen con una casilla junto a cada uno.<br> ![Contadores de rendimiento Windows predeterminados seleccionados](media/configure-azure-monitor/windows-perfcounters-default.png)<br> Haga clic en **agregar los contadores de rendimiento seleccionados**.  Se agregan y el valor preestablecidos con un intervalo de muestra de recopilación de diez segundos.  
-9. Haga clic en **guardar** en la parte superior de la página para guardar la configuración.
+5. En la tabla, compruebe los niveles de gravedad **Error** y **Advertencia**.   
+6. Haga clic en **Guardar** en la parte superior de la página para guardar la configuración.
+7. Seleccione **Windows Performance Counters** (Contadores de rendimiento de Windows) para habilitar la recopilación de contadores de rendimiento en un equipo Windows. 
+8. La primera vez que se configuran los contadores de rendimiento Windows para un área de trabajo de Log Analytics nueva, se ofrece la opción de crear rápidamente varios contadores comunes. Se muestran todos con una casilla junto a cada uno.<br> ![Contadores de rendimiento predeterminados de Windows seleccionados](media/configure-azure-monitor/windows-perfcounters-default.png)<br> Haga clic en **Agregar los contadores de rendimiento seleccionados**.  Se agregan con el valor preestablecido de un intervalo de ejemplo de recopilación de diez segundos.  
+9. Haga clic en **Guardar** en la parte superior de la página para guardar la configuración.
 
 ## <a name="creating-alerts-based-on-log-data"></a>Crear alertas basadas en datos de registro
 
-Si se logró esto ahora, el clúster debe estar enviando los registros y contadores de rendimiento a Log Analytics. El siguiente paso es crear reglas de alerta que se ejecutan automáticamente búsquedas de registros a intervalos regulares. Si los resultados de la búsqueda de registros coinciden con determinados criterios, se activará una alerta que le envíe una notificación de correo electrónico o texto. Vamos a examinar esto a continuación.
+Si lo ha hecho hasta ahora, el clúster debe enviar los registros y los contadores de rendimiento a Log Analytics. El siguiente paso consiste en crear reglas de alerta que ejecutan automáticamente búsquedas de registros a intervalos regulares. Si los resultados de la búsqueda de registros coinciden con determinados criterios, se desencadena una alerta que le envía una notificación de texto o correo electrónico. Vamos a explorar esto a continuación.
 
 ### <a name="create-a-query"></a>Crear una consulta
 
-Comience abriendo el portal de búsqueda de registros.   
+En primer lugar, abra el portal de búsqueda de registros.   
 
-1. En el portal de Azure, haga clic en **todos los servicios**. En la lista de recursos, escriba **Monitor**. Cuando empiece a escribir, la lista se filtra según la entrada. Seleccione **Monitor**.
+1. En Azure Portal, haga clic en **Todos los servicios**. En la lista de recursos, escriba **Monitor**. Cuando empieza a escribir, la lista se filtra según lo que escribe. Seleccione **Monitor**.
 2. En el menú de navegación del Monitor, seleccione **Log Analytics** y, a continuación, seleccione un área de trabajo.
 
-Recuperar algunos datos para trabajar con la forma más rápida es una consulta simple que devuelve todos los registros en la tabla. Escriba las siguientes consultas en el cuadro de búsqueda y haga clic en el botón de búsqueda.  
+La forma más rápida de recuperar algunos datos con los que trabajar es con una consulta simple que devuelve todos los registros en una tabla. Escriba las siguientes consultas en el cuadro de búsqueda y haga clic en el botón Buscar.  
 
 ```
 Event
 ```
 
-Se devuelven los datos en la vista de lista predeterminada y puede ver el número total de registros se han devuelto.
+Se devuelven los datos en la vista de lista predeterminada y puede ver el número total de registros que se han devuelto.
 
-![Consulta simple](media/configure-azure-monitor/log-analytics-portal-eventlist-01.png)
+![Consulta sencilla](media/configure-azure-monitor/log-analytics-portal-eventlist-01.png)
 
-En el lado izquierdo de la pantalla es el panel de filtro que permite agregar filtros a la consulta sin modificarlo directamente.  Se muestran varias propiedades de registro para ese tipo de registro, y puede seleccionar uno o más valores de propiedad para restringir los resultados de búsqueda.
+En el lado izquierdo de la pantalla está el panel de filtros que le permite agregar filtros a la consulta sin necesidad de modificarla directamente.  Se muestran varias propiedades de registro para ese tipo de registro y puede seleccionar uno o más valores de propiedad para restringir los resultados de búsqueda.
 
-Active la casilla de verificación junto a **Error** en **EVENTLEVELNAME** o escriba lo siguiente para limitar los resultados a los eventos de error.
+Active la casilla junto a **error** en **EVENTLEVELNAME** o escriba lo siguiente para limitar los resultados a los eventos de error.
 
 ```
 Event | where (EventLevelName == "Error")
@@ -173,43 +204,48 @@ Event | where (EventLevelName == "Error")
 
 ![Filtro](media/configure-azure-monitor/log-analytics-portal-eventlist-02.png)
 
-Una vez que las consultas apropiados para los eventos que le interesan, guárdelos para el paso siguiente.
+Una vez realizadas las consultas de apropiados para los eventos que le interesan, guárdelas en el paso siguiente.
 
-### <a name="create-alerts"></a>Creación de alertas
-Ahora, veamos un ejemplo para crear una alerta.
+### <a name="create-alerts"></a>Crear alertas
+Ahora, vamos a examinar un ejemplo para crear una alerta.
 
-1. En el portal de Azure, haga clic en **todos los servicios**. En la lista de recursos, escriba **Log Analytics**. Cuando empiece a escribir, la lista se filtra según la entrada. Seleccione **de Log Analytics**.
-2. En el panel izquierdo, seleccione **alertas** y, a continuación, haga clic en **nueva regla de alerta** desde la parte superior de la página para crear una nueva alerta.<br><br> ![Crear nueva regla de alerta](media/configure-azure-monitor/alert-rule-02.png)<br>
-3. Para el primer paso, en el **crear alerta** sección, va a seleccionar el área de trabajo de Log Analytics como el recurso, ya que se trata de una señal de alerta en función de registro.  Filtrar los resultados seleccionando la específica **suscripción** en la lista desplegable si tiene más de uno, que contiene el área de trabajo de Log Analytics creado anteriormente.  Filtro del **tipo de recurso** seleccionando **Log Analytics** en la lista desplegable.  Por último, seleccione el **recursos** **DefaultLAWorkspace** y, a continuación, haga clic en **realiza**.<br><br> ![Crear tarea de alerta paso 1](media/configure-azure-monitor/alert-rule-03.png)<br>
-4. En la sección **criterios de alerta**, haga clic en **agregar criterios** para seleccionar la consulta guardada y, a continuación, especificar la lógica que sigue la regla de alerta.
+1. En Azure Portal, haga clic en **Todos los servicios**. En la lista de recursos, escriba **Log Analytics**. Cuando empieza a escribir, la lista se filtra según lo que escribe. Seleccione **Log Analytics**.
+2. En el panel izquierdo, seleccione **Alertas** y, a continuación, haga clic en **Nueva regla de alertas** en la parte superior de la página para crear una nueva alerta.<br><br> ![Crear nueva regla de alertas](media/configure-azure-monitor/alert-rule-02.png)<br>
+3. Como primer paso, en la sección **Crear alerta**, seleccione el área de trabajo de Log Analytics como el recurso, ya que se trata de una señal de alerta basada en el registro.  Filtre los resultados seleccionando la **suscripción** específica de la lista desplegable si tiene más de una, que contiene log Analytics área de trabajo creada anteriormente.  Filtre el **Tipo de recurso** seleccionando **Log Analytics** en la lista desplegable.  Por último, seleccione el **recurso** **DefaultLAWorkspace** y, a continuación, haga clic en **listo**.<br><br> ![Tarea del paso 1 de creación de alertas](media/configure-azure-monitor/alert-rule-03.png)<br>
+4. En la sección **criterios de alerta**, haga clic en **Agregar criterios** para seleccionar la consulta guardada y, a continuación, especifique la lógica que sigue la regla de alerta.
 5. Configure la alerta con la siguiente información:  
-   a. Desde el **según** lista desplegable, seleccione **unidades métricas**.  Una métrica medida creará una alerta para cada objeto en la consulta con un valor que supera el umbral especificado.  
-   b. Para el **condición**, seleccione **mayor** y especifique un thershold.  
-   c. A continuación, defina cuándo se debe desencadenar la alerta. Por ejemplo, podría seleccionar **infracciones consecutivas** y en la lista desplegable, seleccione **mayor** un valor de 3.  
-   d. Bajo basándose en la sección de evaluación, modifique la **período** valor **30** minutos y **frecuencia** a 5. La regla se ejecute cada cinco minutos y devolver los registros que se crearon en los últimos treinta minutos desde la hora actual.  Establecer el período de tiempo en una ventana más amplia de cuentas para el potencial de latencia de datos y garantiza que la consulta devuelve datos para evitar un falso negativo donde la alerta nunca se activa.  
-6. Haga clic en **realiza** para completar la regla de alerta.<br><br> ![Configurar la señal de alerta](media/configure-azure-monitor/alert-signal-logic-02.png)<br> 
-7. Mover ahora en el segundo paso, proporcione un nombre de la alerta en el **nombre de regla de alerta** campo, como **alerta en todos los eventos de Error**.  Especifique un **descripción** que detalla los detalles de la alerta y seleccione **crítico (gravedad 0)** para el **gravedad** valor entre las opciones proporcionadas.
-8. Para activar inmediatamente la regla de alertas, acepte el valor predeterminado para **Habilitar regla tras la creación**.
-9. Para el tercer y último paso, especificará un **grupo de acciones**, lo que garantiza que las mismas acciones se realizan cada vez una alerta se desencadena y se puede usar para cada regla que defina. Configurar un nuevo grupo de acciones con la siguiente información:  
-   a. Seleccione **nuevo grupo de acciones** y **Agregar grupo de acciones** aparecerá el panel.  
-   b. Para **nombre del grupo de acción**, especifique un nombre como **notificar las operaciones de TI -** y un **nombre corto** como **itops n**.  
-   c. Compruebe los valores predeterminados de **suscripción** y **grupo de recursos** son correctos. Si no es así, seleccione la correcta en la lista desplegable.   
-   d. En la sección Acciones, especifique un nombre para la acción, como **enviar correo electrónico** y en **tipo de acción** seleccione **correo electrónico o SMS/Push, voz** en la lista desplegable. El **correo electrónico o SMS/Push, voz** se abrirá el panel de propiedades a la derecha con el fin de proporcionar información adicional.  
-   e. En el **correo electrónico o SMS/Push, voz** panel, seleccionar y configurar sus preferencias. Por ejemplo, habilitar **correo electrónico** y proporcione un dirección SMTP para entregar el mensaje de correo electrónico válida.  
+   a. En la lista desplegable **Basado en**, seleccione **Unidades métricas**.  Una medida de métricas creará una alerta por cada objeto de la consulta con un valor que supere el umbral especificado.  
+   b. En **condición**, seleccione **mayor que** y especifique un thershold.  
+   c. A continuación, defina Cuándo desencadenar la alerta. Por ejemplo, puede seleccionar **infracciones consecutivas** y, en la lista desplegable, seleccionar **mayor que** un valor de 3.  
+   d. En la sección evaluación basada en, modifique el valor de **período** en **30** minutos y la **frecuencia** en 5. La regla se ejecutará cada cinco minutos y devolverá los registros que se crearon dentro de los últimos 30 minutos desde la hora actual.  El hecho de establecer el período de tiempo en una ventana más amplia justifica la posibilidad de latencia en los datos y garantiza que la consulta devuelve datos para evitar un falso negativo en aquellos casos en los que la alerta nunca se activa.  
+6. Haga clic en **Listo** para finalizar la regla de alertas.<br><br> ![Configurar la señal de alerta](media/configure-azure-monitor/alert-signal-logic-02.png)<br> 
+7. Ahora, en el segundo paso, proporcione un nombre de la alerta en el campo Nombre de la **regla de alerta** , como **alerta en todos los eventos de error**.  Especifique una **Descripción** con los detalles específicos de la alerta y seleccione **Crítico (Gravedad 0)** para el valor **Gravedad** de las opciones proporcionadas.
+8. Para activar inmediatamente la regla de alertas en la creación, acepte el valor predeterminado de **Habilitar regla tras la creación**.
+9. En el paso tercero y último, especifique un **Grupo de acciones**, lo que garantiza que se realizan las mismas acciones cada vez que se desencadena una alerta y se puede utilizar para cada regla que se define. Configure un nuevo grupo de acciones con la información siguiente:  
+   a. Seleccione **Nuevo grupo de acciones** y aparecerá el panel **Agregar grupo de acciones**.  
+   b. En **Nombre del grupo de acciones**, especifique un nombre, como **Notificar las operaciones de TI -** y un **Nombre corto**, como **itops-n**.  
+   c. Compruebe que los valores predeterminados de **Suscripción** y **Grupo de recursos** son correctos. Si no es así, seleccione los valores correctos en la lista desplegable.   
+   d. En la sección Acciones, especifique un nombre para la acción, como **Enviar correo electrónico** y en **Tipo de acción**, seleccione **Correo electrónico/SMS/Push/Voz** en la lista desplegable. El panel de propiedades **Correo electrónico/SMS/Push/Voz** se abrirá a la derecha para proporcionar información adicional.  
+   e. En el panel **correo electrónico/SMS/enviar/voz** , seleccione y configure sus preferencias. Por ejemplo, habilite el **correo electrónico** y proporcione una dirección SMTP de correo electrónico válida para enviar el mensaje a.  
    f. Haga clic en **Aceptar** para guardar los cambios.<br><br> 
 
-    ![Crear nuevo grupo de acciones](media/configure-azure-monitor/action-group-properties-01.png)
+    ![Creación de un grupo de acciones](media/configure-azure-monitor/action-group-properties-01.png)
 
-10. Haga clic en **Aceptar** para completar el grupo de acciones. 
-11. Haga clic en **crear regla de alertas** para completar la regla de alerta. Empieza a ejecutarse inmediatamente.<br><br> ![Completar la creación de nueva regla de alerta](media/configure-azure-monitor/alert-rule-01.png)<br> 
+10. Seleccione **Aceptar** para crear el grupo de acciones. 
+11. Haga clic en **Crear regla de alertas** para finalizar la regla de alertas. Se iniciará la ejecución de inmediato.<br><br> ![Completar la creación de nueva regla de alertas](media/configure-azure-monitor/alert-rule-01.png)<br> 
 
-### <a name="test-alerts"></a>Alertas de prueba
+## <a name="see-alerts"></a>Ver alertas
 
-Como referencia, este es el aspecto de una alerta de ejemplo:
+Como referencia, este es el aspecto de una alerta de ejemplo en Azure.
+
+![GIF de la alerta en Azure "](media/configure-azure-monitor/alert.gif)
+
+A continuación se muestra un ejemplo del correo electrónico que se enviará mediante Azure Monitor:
 
 ![Ejemplo de correo electrónico de alerta](media/configure-azure-monitor/warning.png)
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
-- [Información general de espacios directo de almacenamiento](storage-spaces-direct-overview.md)
-- Para obtener más información, lea el [documentación de Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-viewdata).
+- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
+- Para obtener información más detallada, lea la [documentación de Azure monitor](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-viewdata).
+- Lea este tema para obtener información general sobre cómo [conectarse a otros servicios híbridos de Azure](../../manage/windows-admin-center/azure/index.md).

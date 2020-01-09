@@ -1,4 +1,4 @@
-# Comenzar
+# Introducción
 ## [Introducción a Windows Server 2016](Server-Basics.md)
 ## [Novedades de Windows Server](whats-new-in-windows-server.md)
 ### [Novedades de Windows Server 2019](../get-started-19/whats-new-19.md)
@@ -8,6 +8,7 @@
 ## [Comparación de los canales de mantenimiento](..\get-started-19\servicing-channels-19.md)
 ## [Instalación y actualización de las versiones de Windows Server](Installation-and-Upgrade.md)
 ## [Actualizar Windows Server 2008 y Windows Server 2008 R2](modernize-windows-server-2008.md)
+### [Actualizaciones de seguridad extendida de Windows Server 2008/2008 R2](extended-security-updates.md)
 ### [Cargar una imagen especializada de Windows Server 2008/2008 R2 en Azure](uploading-specialized-WS08-image-to-azure.md)
 ## [Migración de roles y características de Windows Server](Migrate-Roles-and-Features.md)
 ## [Requisitos del sistema de Windows Server 2016](System-Requirements.md)

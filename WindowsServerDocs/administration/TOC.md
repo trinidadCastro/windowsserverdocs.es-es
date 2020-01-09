@@ -2,8 +2,7 @@
 ## [Uso de Windows Admin Center para administrar el entorno (¡nuevo!)](../manage/windows-admin-center/overview.md)
 ## Administrar los sistemas y entornos de Windows Server
 ### [Administrar la impresión en la nube híbrida de Windows Server](hybrid-cloud-print/hybrid-cloud-print-overview.md)
-#### [Implementar la impresión en la nube híbrida de Windows Server con la autenticación previa](hybrid-cloud-print/hybrid-cloud-print-deploy.md)
-#### [Implementar la impresión en la nube híbrida de Windows Server con la autenticación de acceso directo](hybrid-cloud-print/hybrid-cloud-print-deploy-passthrough.md)
+#### [Implementar la impresión en la nube híbrida de Windows Server](hybrid-cloud-print/hybrid-cloud-print-deploy.md)
 ### [¿Qué es la opción de instalación de Server Core?](server-core/what-is-server-core.md)
 #### [¿Qué se incluye en la opción de instalación de Server Core?](server-core/server-core-roles-and-services.md)
 #### [Tareas de administración básicas en Server Core](server-core/server-core-administer.md)

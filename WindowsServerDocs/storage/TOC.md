@@ -41,6 +41,17 @@
 ### [Introducción a NTFS](file-server/ntfs-overview.md)
 ### [Servicio de instantáneas de volumen](file-server/volume-shadow-copy-service.md)
 ### [Uso del liberador de espacio en disco](file-server/disk-cleanup.md)
+### [Solución avanzada de problemas de SMB](file-server/Troubleshoot/troubleshooting-smb.md)
+#### [Detectar, habilitar y deshabilitar SMBv1, SMBv2 y SMBv3](file-server/Troubleshoot/detect-enable-and-disable-smbv1-v2-v3.md)
+#### [SMBv1 no está instalado de forma predeterminada](file-server/Troubleshoot/smbv1-not-installed-by-default-in-windows.md)
+### [Problemas conocidos de SMB](file-server/Troubleshoot/smb-known-issues.md)
+#### [Error de protocolo TCP de enlace de tres vías](file-server/Troubleshoot/tcp-three-way-handshake-fails.md)
+#### [Errores de negociación, configuración de sesión y conexión de árbol](file-server/Troubleshoot/negotiate-session-setup-tree-connect-fails.md)
+#### [La conexión TCP se anula durante la negociación de la validación](file-server/Troubleshoot/abort-during-validate-negotiate.md)
+#### [Velocidad de transferencia de archivos SMB lenta](file-server/Troubleshoot/slow-file-transfer.md)
+#### [Uso elevado de la CPU](file-server/Troubleshoot/high-cpu-usage-issue-on-smb-server.md)
+#### [Solución de problemas del identificador de evento 50](file-server/Troubleshoot/troubleshoot-event-id-50-error.md)
+#### [Solución de problemas de SMB multicanal](file-server/Troubleshoot/smb-multichannel-troubleshooting.md)
 ## [Administrador de recursos del servidor de archivos](fsrm/fsrm-overview.md)
 ### [Lista de comprobación: Aplicar una cuota a un volumen o carpeta](fsrm/checklist-apply-quota-to-volume-or-folder.md)
 ### [Lista de comprobación: Lista de comprobación: aplicar un filtro de archivos a un volumen o carpeta](fsrm/checklist-apply-file-screen-to-volume-or-folder.md)
@@ -152,7 +163,7 @@
 #### [Delimitar la asignación de volúmenes](storage-spaces/delimit-volume-allocation.md)
 #### [Supervisión con Azure Monitor](storage-spaces/configure-azure-monitor.md)
 
-### Solucionar problemas
+### Solución de problemas
 #### [Escenarios de solución de problemas](storage-spaces/troubleshooting-storage-spaces.md)
 #### [Mantenimiento y estados operativos](storage-spaces/storage-spaces-states.md)
 #### [Recopilar datos](storage-spaces/data-collection.md)

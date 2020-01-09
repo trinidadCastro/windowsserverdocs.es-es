@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c54fee98247b1ce0aa3ef3a2502cf18f314e763
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: edf714bc0d6b39dbe7c5e800e953d7820fe9abc5
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394365"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352609"
 ---
 # <a name="enable-optimized-moves-of-redirected-folders"></a>Habilitar movimientos optimizados de carpetas redirigidas
 
@@ -30,7 +30,7 @@ El movimiento optimizado tiene los siguientes requisitos:
 - La redirección de carpetas debe estar configurada. Para obtener más información, consulte implementación de la [redirección de carpetas con archivos sin conexión](deploy-folder-redirection.md).
 - Los equipos cliente deben ejecutar Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 o Windows Server (canal semianual).
 
-## <a name="step-1-enable-optimized-move-in-group-policy"></a>Paso 1: Habilitar el movimiento optimizado en directiva de grupo
+## <a name="step-1-enable-optimized-move-in-group-policy"></a>Paso 1: habilitar el movimiento optimizado en directiva de grupo
 
 Para optimizar la reubicación de los datos de redireccionamiento de carpetas, use directiva de grupo para habilitar la configuración de directiva **Habilitar el movimiento optimizado de contenido en la caché de archivos sin conexión en la ruta de acceso del servidor de redireccionamiento de carpetas** para el objeto de directiva de grupo (GPO) adecuado. La configuración de esta directiva como **deshabilitada** o **no configurada** hace que el cliente Copie todo el contenido de redirección de carpetas en la nueva ubicación y, a continuación, elimine el contenido de la ubicación anterior si cambia la ruta de acceso del servidor.
 
@@ -41,9 +41,9 @@ Aquí se muestra cómo habilitar el movimiento optimizado de carpetas redirigida
 3. Haga clic con el botón derecho en **Habilitar el movimiento de contenido optimizado en la caché de archivos sin conexión en la redirección de carpetas cambiar ruta de acceso del servidor**y seleccione **Editar**.
 4. Seleccione **habilitado**y haga clic en **Aceptar**.
 
-## <a name="step-2-relocate-the-file-share-for-redirected-folders"></a>Paso 2: Reubicar el recurso compartido de archivos para carpetas redirigidas
+## <a name="step-2-relocate-the-file-share-for-redirected-folders"></a>Paso 2: reubicar el recurso compartido de archivos para las carpetas redirigidas
 
-Al mover el recurso compartido de archivos que contiene las carpetas redirigidas de los usuarios, se importa para tomar las precauciones necesarias para asegurarse de que las carpetas se reubican correctamente.
+Al mover el recurso compartido de archivos que contiene las carpetas redirigidas de los usuarios, es importante tomar las precauciones necesarias para asegurarse de que las carpetas se reubican correctamente.
 
 >[!IMPORTANT]
 >Si los archivos de los usuarios están en uso o si el estado del archivo completo no se conserva en el traslado, es posible que los usuarios experimenten un bajo rendimiento a medida que los archivos se copian a través de la red, los conflictos de sincronización generados por Archivos sin conexión o incluso la pérdida de datos.
@@ -59,7 +59,7 @@ Al mover el recurso compartido de archivos que contiene las carpetas redirigidas
 
     Los usuarios trabajarán sin conexión mediante Archivos sin conexión hasta que se complete el traslado y reciban la configuración de redirección de carpetas actualizada de directiva de grupo.
 
-3. Mediante una cuenta con privilegios de copia de seguridad, mueva el contenido del recurso compartido de archivos a la nueva ubicación mediante un método que conserva las marcas de tiempo de los archivos, como una utilidad de copia de seguridad y restauración. Para usar el comando **Robocopy** , abra un símbolo del sistema con privilegios elevados y, a continuación, ```<Source>``` escriba el siguiente comando, donde es la ubicación actual ```<Destination>``` del recurso compartido de archivos y es la nueva ubicación:
+3. Mediante una cuenta con privilegios de copia de seguridad, mueva el contenido del recurso compartido de archivos a la nueva ubicación mediante un método que conserva las marcas de tiempo de los archivos, como una utilidad de copia de seguridad y restauración. Para usar el comando **Robocopy** , abra un símbolo del sistema con privilegios elevados y, a continuación, escriba el siguiente comando, donde ```<Source>``` es la ubicación actual del recurso compartido de archivos y ```<Destination>``` es la nueva ubicación:
 
     ```PowerShell
     Robocopy /B <Source> <Destination> /Copyall /MIR /EFSRAW
@@ -72,7 +72,7 @@ Al mover el recurso compartido de archivos que contiene las carpetas redirigidas
 
     Los usuarios deben iniciar sesión en todos los equipos al menos una vez para asegurarse de que los datos se reubican correctamente en cada Archivos sin conexión caché.
 
-## <a name="more-information"></a>Más información
+## <a name="more-information"></a>Información adicional
 
 * [Implementar el redireccionamiento de carpetas con Archivos sin conexión](deploy-folder-redirection.md)
 * [Implementar perfiles de usuario móviles](deploy-roaming-user-profiles.md)

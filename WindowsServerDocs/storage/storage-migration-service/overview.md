@@ -8,12 +8,12 @@ ms.date: 10/25/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 5963035846814f2ec3fd3417e629f71b146cc73e
-ms.sourcegitcommit: ac9946deb4fa70203a9b05e0386deb4244b8ca55
+ms.openlocfilehash: 968122612845a9be105ca7d3231edc0faa039e76
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310380"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352685"
 ---
 # <a name="storage-migration-service-overview"></a>Información general del servicio de migración de almacenamiento
 
@@ -66,7 +66,7 @@ Se recomienda encarecidamente que el orquestador y los equipos de destino tengan
 - Los equipos de origen y de destino deben tener las siguientes reglas de Firewall habilitadas de *entrada* (aunque es posible que ya estén habilitadas):
   - Compartir archivos e impresoras (SMB de entrada)
   - Servicio NetLogon (NP-in)
-  - Instrumental de administración de Windows (DCOM-in)
+  - Instrumental de administración de Windows (DCOM-In)
   - Instrumental de administración de Windows (WMI-In)
   
   > [!TIP]
@@ -80,9 +80,9 @@ Se recomienda encarecidamente que el orquestador y los equipos de destino tengan
 El servidor de origen debe ejecutar uno de los siguientes sistemas operativos:
 
 - Windows Server, Canal semianual
-- Windows Server 2019
+- Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
+- R2 de Windows 2012 Server
 - Windows Server 2012
 - Windows Server 2008 R2
 - Windows Server 2008
@@ -93,11 +93,11 @@ El servidor de origen debe ejecutar uno de los siguientes sistemas operativos:
 - Windows Small Business Server 2011
 - Windows Server 2012 Essentials
 - Windows Server 2012 R2 Essentials
-- Windows Server 2016 Essentials
+- Windows Server 2016 Essentials
 - Windows Server 2019 Essentials
 - Windows Storage Server 2008
-- Windows Storage Server 2008 R2
-- Windows Storage Server 2012
+- Windows Storage Server 2008 R2
+- Windows Storage Server 2012
 - Windows Storage Server 2012 R2
 - Windows Storage Server 2016
 
@@ -105,10 +105,10 @@ Nota: Windows Small Business Server y Windows Server Essentials son controladore
 
 Puede migrar los siguientes tipos de origen adicionales si el orquestador ejecuta Windows Server, versión 1903 o posterior, o si el orquestador está ejecutando una versión anterior de Windows Server con [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) instalado:
 
-- Clústeres de conmutación por error
+- Clústeres de conmutación por error que ejecutan Windows Server 2012, Windows Server 2012 R2, Windows Server 2016, Windows Server 2019
 - Servidores Linux que usan Samba. Hemos probado lo siguiente:
-    - 8 a 7
-    - Debian GNU/Linux 8
+    - CentOS 7
+    - Debian GNU/Linux 8
     - RedHat Enterprise Linux 7,6
     - SUSE Linux Enterprise Server (SLES) 11 SP4
     - Ubuntu 16,04 LTS y 12.04.5 LTS
@@ -119,9 +119,9 @@ Puede migrar los siguientes tipos de origen adicionales si el orquestador ejecut
 El servidor de destino debe ejecutar uno de los siguientes sistemas operativos:
 
 - Windows Server, Canal semianual
-- Windows Server 2019
+- Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
+- R2 de Windows 2012 Server
 
 > [!TIP]
 > Los servidores de destino que ejecutan Windows Server 2019 o Windows Server, canal semianual o posterior, tienen el doble de rendimiento de transferencia de versiones anteriores de Windows Server. Esta mejora del rendimiento se debe a la inclusión de un servicio de proxy de servicio de migración de almacenamiento integrado, que también abre los puertos de Firewall necesarios si aún no están abiertos.
@@ -136,7 +136,7 @@ Las siguientes características nuevas están disponibles al ejecutar el orquest
 - Sincronizar más fácilmente los recursos compartidos migrados en Azure mediante Azure File Sync.
 - Migrar a nuevas redes, como Azure.
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Consulta también
 
 - [Migración de un servidor de archivos mediante el servicio de migración de almacenamiento](migrate-data.md)
 - [Preguntas más frecuentes (p + f) sobre Storage Migration Services](faq.md)
