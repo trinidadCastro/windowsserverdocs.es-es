@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 1ae6f881e1bd4b9b317e5622f18958f25f692eec
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: 26ff5e27494e2f42a0c8e4d28e2b9820f8d19e6a
+ms.sourcegitcommit: 471464a674a53c468a2f1e28575c91245ce9badf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940801"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75548190"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>Máquinas virtuales blindadas para inquilinos: creación de datos de blindaje para definir una máquina virtual blindada
 
@@ -77,7 +77,7 @@ Al crear un archivo Unattend. XML para máquinas virtuales blindadas, tenga en c
     | Elemento reemplazable | Cadena de sustitución |
     |-----------|-----------|
     | ComputerName        | @ComputerName@      |
-    | TimeZone            | @TimeZone@          |
+    | Zona horaria            | @TimeZone@          |
     | ProductKey          | @ProductKey@        |
     | IPAddr4-1           | @IP4Addr-1@         |
     | IPAddr6-1           | @IP6Addr-1@         |
@@ -91,13 +91,13 @@ Al crear un archivo Unattend. XML para máquinas virtuales blindadas, tenga en c
 
     | Cadena de sustitución | Sustitución de ejemplo |
     |---------------------|----------------------|
-    | @IP4Addr-1@         | 192.168.1.10         |
+    | @IP4Addr-1@         | 192.168.1.10/24      |
     | @MACAddr-1@         | Ethernet             |
-    | @Prefix-1-1@        | 192.168.1.0/24       |
+    | @Prefix-1-1@        | 24                   |
     | @NextHop-1-1@       | 192.168.1.254        |
-    | @IP4Addr-2@         | 10.0.20.30           |
+    | @IP4Addr-2@         | 10.0.20.30/24        |
     | @MACAddr-2@         | Ethernet 2           |
-    | @Prefix-2-1@        | 10.0.20.0/24         |
+    | @Prefix-2-1@        | 24                   |
     | @NextHop-2-1@       | 10.0.20.1            |
 
 Al usar cadenas de sustitución, es importante asegurarse de que las cadenas se rellenarán durante el proceso de aprovisionamiento de la máquina virtual. Si no se proporciona una cadena como @ProductKey@ en el momento de la implementación, lo que deja en blanco el nodo &lt;ProductKey&gt; en el archivo de instalación desatendida, se producirá un error en el proceso de especialización y no podrá conectarse a la máquina virtual.
@@ -255,7 +255,7 @@ Por último, si tiene otros archivos que deben acompañar el archivo de respuest
 
 Consulte la documentación del cmdlet para [New-ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps) y [New-VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps) para obtener información sobre otras formas de configurar el archivo de datos de blindaje.
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Consulta también
 
 - [Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)
