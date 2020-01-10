@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2cd84949dddf75730aca6302f1244f784b5933d0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b6b8ebfe0a6b42fe174d4b376b981641f043cf58
+ms.sourcegitcommit: 3d5a8357491b6bbd180d1238ea98f23bfc544ac7
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388567"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75827682"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>Paso 1 configurar la infraestructura de DirectAccess básica
 
@@ -82,7 +82,7 @@ Configura el enrutamiento en la red corporativa de la siguiente manera:
 -   Configura manualmente las rutas de IPv4 e IPv6 de la organización en los servidores de acceso remoto. Agrega una ruta publicada para que todo el tráfico con un prefijo IPv6 (/48) de organización se reenvíe a la red interna. Además, para el tráfico IPv4, agrega rutas explícitas para que el tráfico IPv4 se reenvíe a la red interna.  
   
 ## <a name="ConfigFirewalls"></a>Configuración de firewalls  
-Si usa firewalls adicionales en la implementación, aplique las siguientes excepciones del firewall con conexión a Internet para el tráfico de acceso remoto cuando el servidor de acceso remoto se encuentra en Internet IPv4:  
+Si usas firewalls adicionales en la implementación, aplica las siguientes excepciones del firewall con conexión a Internet para el tráfico de acceso remoto cuando el servidor de acceso remoto se encuentra en Internet IPv4:  
   
 -   tráfico 6to4: protocolo IP 41 entrante y saliente.  
   
@@ -94,7 +94,7 @@ Si usa firewalls adicionales en la implementación, aplique las siguientes excep
 > [!NOTE]  
 > Para el tráfico Teredo y 6to4, estas excepciones se deben aplicar para las dos direcciones IPv4 públicas consecutivas con conexión a Internet del servidor de acceso remoto. Para IP-HTTPS, las excepciones solo se deben aplicar a la dirección en la que se resuelve el nombre externo del servidor.  
   
-Si usa firewalls adicionales, aplique las siguientes excepciones del firewall con conexión a Internet para el tráfico de acceso remoto cuando el servidor de acceso remoto se encuentra en Internet IPv6:  
+Si usas firewalls adicionales, aplica las siguientes excepciones del firewall con conexión a Internet para el tráfico de acceso remoto cuando el servidor de acceso remoto se encuentra en Internet IPv6:  
   
 -   Protocolo IP 50  
   
@@ -151,7 +151,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
   
 2.  En el cuadro de diálogo **propiedades del sistema** , haga clic en la pestaña **nombre de equipo** . En la pestaña **nombre de equipo** , haga clic en **cambiar**.  
   
-3.  En **Nombre de equipo**, escriba el nombre del equipo si también está cambiando el nombre del equipo al unir el servidor al dominio. En **Miembro de**, haga clic en **Dominio** y, a continuación, escriba el nombre del dominio al que desea unir el servidor, por ejemplo corp.contoso.com, y haga clic en **Aceptar**.  
+3.  En **Nombre de equipo**, escriba el nombre del equipo si también está cambiando el nombre del equipo al unir el servidor al dominio. En **Miembro de**, haga clic en **Dominio**y, a continuación, escriba el nombre del dominio al que desea unir el servidor, por ejemplo corp.contoso.com, y haga clic en **Aceptar**.  
   
 4.  Cuando se le solicite un nombre de usuario y una contraseña, escriba el nombre de usuario y la contraseña de un usuario con derechos para unir equipos al dominio y, a continuación, haga clic en **Aceptar**.  
   
@@ -173,7 +173,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
   
 4.  En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre de equipo** haz clic en **Cambiar**.  
   
-5.  En **Nombre de equipo**, escribe el nombre del equipo si también estás cambiando el nombre del equipo al unir el servidor al dominio. En **Miembro de**, haga clic en **Dominio** y, a continuación, escriba el nombre del dominio al que desea unir el servidor, por ejemplo corp.contoso.com, y haga clic en **Aceptar**.  
+5.  En **Nombre de equipo**, escribe el nombre del equipo si también estás cambiando el nombre del equipo al unir el servidor al dominio. En **Miembro de**, haga clic en **Dominio**y, a continuación, escriba el nombre del dominio al que desea unir el servidor, por ejemplo corp.contoso.com, y haga clic en **Aceptar**.  
   
 6.  Cuando se le solicite un nombre de usuario y una contraseña, escriba el nombre de usuario y la contraseña de un usuario con derechos para unir equipos al dominio y, a continuación, haga clic en **Aceptar**.  
   
@@ -208,7 +208,10 @@ Para crear un objeto de directiva de grupo, vea [crear y editar un objeto de dir
 > 4.  Si la unidad organizativa no se vinculó antes de ejecutar el asistente de DirectAccess, una vez finalizada la configuración, el administrador puede vincular los objetos de directiva de grupo de DirectAccess a las unidades organizativas necesarias. El vínculo al dominio puede eliminarse. [Aquí](https://technet.microsoft.com/library/cc732979.aspx) encontrará los pasos para vincular un objeto de directiva de grupo a una unidad organizativa.  
   
 > [!NOTE]  
-> Si un objeto de directiva de grupo se creó manualmente, es posible que durante la configuración de DirectAccess el objeto de directiva de grupo no esté disponible. Es posible que el objeto de directiva de grupo no se haya replicado en el controlador de dominio más cercano al equipo de administración. En este caso, el administrador puede esperar a que la replicación finalice, o bien forzarla.  
+> Si un objeto de directiva de grupo se creó manualmente, es posible que durante la configuración de DirectAccess el objeto de directiva de grupo no esté disponible. Es posible que el objeto de directiva de grupo no se haya replicado en el controlador de dominio más cercano al equipo de administración. En este caso, el administrador puede esperar a que la replicación finalice, o bien forzarla.
+
+> [!Warning]
+> No se admite el uso de ningún medio que no sea el Asistente para configuración de DirectAccess para configurar DirectAccess, como la modificación de objetos de directiva de grupo de DirectAccess directamente o la modificación manual de la configuración de directivas predeterminada en el servidor o cliente.
   
 ## <a name="ConfigSGs"></a>Configurar grupos de seguridad  
 La configuración de DirectAccess contenida en los objetos de directiva de grupo del equipo cliente solo se aplica a los equipos que son miembros de los grupos de seguridad que se especifican al configurar el acceso remoto.  
