@@ -7,18 +7,18 @@ ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: spatnaik
-ms.date: 09/23/2016
+ms.date: 12/06/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 047b08be-7f91-4194-a641-5b6941b92515
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: e3a70f420d841311481962040f9d9ee78c08dd6a
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 9f0758679353efebfcea85eeb082f1dbe188a7ec
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923795"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351842"
 ---
 # <a name="plan-and-design-your-remote-desktop-services-environment"></a>Planear y diseñar su entorno de Servicios de Escritorio remoto
 
@@ -28,7 +28,7 @@ Es clave diseñar para un rendimiento óptimo y escalado horizontal. Usa los sig
 Usa la siguiente información para planear y diseñar su implementación:
 
 - [Compilación en cualquier lugar](rds-plan-build-anywhere.md)
-- [Destinado a distintos tipos de usuarios](rds-plan-cater-to-users.md)
+- [Guía de red](network-guidance.md)
 - [Acceso desde cualquier lugar](rds-plan-access-from-anywhere.md)
 - [Alta disponibilidad](rds-plan-high-availability.md)
 - [Autenticación multifactor](rds-plan-mfa.md)
