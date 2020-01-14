@@ -3,20 +3,18 @@ title: Comprender y configurar Azure Monitor
 description: Información de configuración detallada sobre qué es Azure Monitor y cómo configurar el correo electrónico y las alertas de SMS para el clúster de espacios de almacenamiento directo en Windows Server 2016 y 2019.
 keywords: Espacios de almacenamiento directo, Azure monitor, notificaciones, correo electrónico, SMS
 ms.assetid: ''
-ms.prod: ''
+ms.prod: windows-server-threshold
 ms.author: adagashe
 ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
-ms.date: 3/26/2019
-ms.localizationpriority: ''
-ms.openlocfilehash: 4a11ad670bdd26cdc771bb5ae357db4928995bb8
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.date: 01/10/2020
+ms.openlocfilehash: 933a22dad76f80b8ff76f604089bfd7c9bf3e207
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352635"
----
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919979"
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>Usar Azure Monitor para enviar correos electrónicos de Servicio de mantenimiento errores
 
@@ -26,6 +24,14 @@ Azure Monitor maximiza la disponibilidad y el rendimiento de las aplicaciones co
 
 Esto es especialmente útil para el clúster hiperconvergido local. Con Azure Monitor integrado, podrá configurar el correo electrónico, el texto (SMS) y otras alertas para hacer ping cuando haya algún problema con el clúster (o cuando desee marcar alguna otra actividad en función de los datos recopilados). A continuación, explicaremos brevemente cómo funciona Azure Monitor, cómo instalar Azure Monitor y cómo configurarlo para que le envíe notificaciones.
 
+Si usa System Center, consulte el [módulo de administración de espacios de almacenamiento directo](https://www.microsoft.com/download/details.aspx?id=100782) que supervisa los clústeres de windows Server 2019 y windows server 2016 espacios de almacenamiento directo.
+
+Este módulo de administración incluye:
+
+* Supervisión del rendimiento y el estado del disco físico
+* Supervisión de estado y rendimiento del nodo de almacenamiento
+* Supervisión de estado y rendimiento del bloque de almacenamiento
+* Estado de tipo de resistencia de volumen y desduplicación
 
 ## <a name="understanding-azure-monitor"></a>Descripción de Azure Monitor
 
@@ -234,11 +240,11 @@ Ahora, vamos a examinar un ejemplo para crear una alerta.
 10. Seleccione **Aceptar** para crear el grupo de acciones. 
 11. Haga clic en **Crear regla de alertas** para finalizar la regla de alertas. Se iniciará la ejecución de inmediato.<br><br> ![Completar la creación de nueva regla de alertas](media/configure-azure-monitor/alert-rule-01.png)<br> 
 
-## <a name="see-alerts"></a>Ver alertas
+### <a name="example-alert"></a>Alerta de ejemplo
 
 Como referencia, este es el aspecto de una alerta de ejemplo en Azure.
 
-![GIF de la alerta en Azure "](media/configure-azure-monitor/alert.gif)
+![GIF de la alerta en Azure](media/configure-azure-monitor/alert.gif)
 
 A continuación se muestra un ejemplo del correo electrónico que se enviará mediante Azure Monitor:
 
