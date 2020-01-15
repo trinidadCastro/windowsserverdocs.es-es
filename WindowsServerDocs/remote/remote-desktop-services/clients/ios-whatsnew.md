@@ -11,31 +11,38 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 12/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a13c7ccb7e1c72534ef63ba6d09f3055af174cb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1edc7c78e2abe5fe4e2bf9cd2c48a6a19d89dbdd
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387767"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351831"
 ---
 # <a name="whats-new-in-the-ios-client"></a>Novedades del cliente de iOS
 
-El [cliente de Escritorio remoto para iOS](remote-desktop-ios.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
+El [cliente de Escritorio remoto para iOS](remote-desktop-ios.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. En esta página encontrarás las actualizaciones más recientes.
 
-## <a name="remote-desktop-ios-beta-client"></a>Cliente beta de Escritorio remoto para iOS
+## <a name="updates-for-version-1000"></a>Actualizaciones de la versión 10.0.0
 
-*Fecha de publicación: 20/02/2019*
+*Fecha de publicación: 13/12/19*
 
-El [cliente beta de Escritorio remoto para iOS](remote-desktop-ios.md#download-the-remote-desktop-ios-beta-client-from-apple-testflight) está disponible ahora en TestFlight. Al probar al cliente beta para iOS, ten en cuenta que se trata de una versión preliminar del nuevo cliente de iOS y no se garantiza que sea tan estable como las versiones de producción. Seguiremos actualizando este cliente periódicamente con nuevas características y correcciones. A continuación se destacan varias características del cliente beta para iOS:
+Ha transcurrido un año desde la última vez que se actualizó el cliente de Escritorio remoto para iOS. Pero aquí estamos con una nueva e impresionante actualización. A partir de ahora, se publicarán muchas más actualizaciones de forma periódica. Estas son las novedades de la versión 10.0.0:
 
-- Experiencia mejorada en los dispositivos iOS más recientes.
-- Compatibilidad con los ratones físicos Swiftpoint GT y ProPoint. Consulta la [lista de dispositivos de entrada compatibles](remote-desktop-ios.md#supported-input-devices) para el cliente beta de iOS.
-- Compatibilidad con [Escritorio virtual de Windows](https://aka.ms/wvd).
-- Redireccionamiento del almacenamiento del micrófono y iPhone.
-- Compatibilidad con AVC420 y AVC444.
-- Compatibilidad de aceleración de hardware para Metal.
+- Soporte técnico para el servicio Windows Virtual Desktop.
+- Nueva interfaz de usuario del Centro de conexión.
+- Nueva interfaz de usuario en la sesión que puede cambiar entre aplicaciones y equipos conectados.
+- Nuevo diseño para el teclado en pantalla auxiliar.
+- Compatibilidad mejorada con el teclado externo.
+- Compatibilidad con el mouse Bluetooth SwiftPoint.
+- Compatibilidad con el redireccionamiento del micrófono.
+- Compatibilidad con el redireccionamiento del almacenamiento local.
+- Compatibilidad con el redireccionamiento de la cámara (solo disponible para Windows 10, versión 1809 o posterior).
+- Compatibilidad con los nuevos dispositivos iPhone y iPad.
+- Compatibilidad con los temas oscuro y claro.
+- Control de la posibilidad de bloquear el teléfono cuando se conecta a una aplicación o un equipo remoto.
+- Ahora puedes contraer la barra de conexión en la sesión. Para hacerlo, mantén pulsado el botón del logotipo de Escritorio remoto.
 
 ## <a name="updates-for-version-8142"></a>Actualizaciones de la versión 8.1.42
 
@@ -48,3 +55,7 @@ El [cliente beta de Escritorio remoto para iOS](remote-desktop-ios.md#download-t
 *Fecha de publicación: 28/03/2018*
 
 - Actualizaciones para abordar la corrección de oráculo de cifrado de CredSSP que se describe en CVE-2018-0886.
+
+## <a name="how-to-report-issues"></a>Notificación de problemas
+
+Nos comprometemos a hacer que esta aplicación sea lo mejor posible y a valorar tus comentarios. Para notificarnos problemas, ve a **Configuración** > **Notificar un problema** en el cliente.

@@ -11,20 +11,53 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/18/2019
+ms.date: 01/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b44f7c14dce8a8c319f9240c24ebcd8e2d4f7202
-ms.sourcegitcommit: b60fdd2efa57ff23834a324b75de8fe245a7631f
+ms.openlocfilehash: 614962cacbc29a26b0db246812ad17e24fc9859e
+ms.sourcegitcommit: fdb3412a6139ca62913606fa18036a91c093cd51
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74166166"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75688120"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novedades del cliente de macOS
 
 El [cliente de Escritorio remoto para macOS](remote-desktop-mac.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
 
 Si tienes algún problema, puedes ponerte en contacto con nosotros a través **Ayuda** > **Notificar un problema**.
+
+## <a name="updates-for-version-1037"></a>Actualizaciones de la versión 10.3.7
+
+*Fecha de publicación: 6/1/20*
+
+En nuestra última actualización del año, ajustamos algún código y corregimos los siguientes comportamientos:
+
+- Al copiar elementos de la sesión remota en un recurso compartido de red o en una unidad USB ya no se crean archivos vacíos.
+- Al especificar una contraseña vacía en una cuenta de usuario, ya no se produce una solicitud de certificado doble.
+
+## <a name="updates-for-version-1036"></a>Actualizaciones de la versión 10.3.6
+
+*Fecha de publicación: 6/1/20*
+
+En esta versión, se ha solucionado un problema en que se creaban archivos de longitud cero cada vez que se copiaba una carpeta de la sesión remota en el equipo local mediante la operación de copiar y pegar archivos.
+
+## <a name="updates-for-version-1035"></a>Actualizaciones de la versión 10.3.5
+
+*Fecha de publicación: 6/1/20*
+
+Esta actualización se ha realizado con la ayuda de todos los usuarios que han notificado problemas. En esta versión, hemos realizado los cambios siguientes:
+
+- Ahora, las carpetas redirigidas se pueden marcar como de solo lectura para evitar que su contenido se modifique en la sesión remota.
+- Hemos corregido un error 0x607 que aparecía al establecer la conexión mediante escenarios de Puerta de enlace de Escritorio remoto RPC sobre HTTPS.
+- Se han corregido los casos en que se realizaban solicitudes dobles de credenciales a los usuarios.
+- Se han corregido los casos en que los usuarios recibían el mensaje de advertencia de certificado dos veces.
+- Se ha agregado la heurística para mejorar el desplazamiento con el panel táctil.
+- El cliente ya no muestra el grupo "Equipos de escritorio guardados" si no hay ningún grupo creado por el usuario.
+- Se ha actualizado la interfaz de usuario para los iconos de la vista de PC.
+- Se han realizado correcciones para solucionar los bloqueos que recibidos a través de la telemetría de la aplicación.
+
+> [!NOTE]
+> En esta versión, ahora solo se aceptan comentarios del cliente Mac a través de [UserVoice](https://remotedesktop.uservoice.com/forums/287834-remote-desktop-for-mac).
 
 ## <a name="updates-for-version-1034"></a>Actualizaciones de la versión 10.3.4
 

@@ -1,19 +1,19 @@
 ---
 title: Conversión de un disco dinámico en un disco básico
 description: Describe cómo convertir un disco dinámico en un disco básico.
-ms.date: 06/07/2019
+ms.date: 12/18/2019
 ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c24935e1e1921c2a041ef307ebeb71d10e2a4fe2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8ad14225592d627b6ff88b9e2286b686aa549392
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386011"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351941"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>Conversión de un disco dinámico en un disco básico
 
@@ -24,23 +24,19 @@ En este tema se describe cómo eliminar todo el contenido de un disco dinámico 
 > [!WARNING]
 > Para convertir un disco dinámico en un disco básico, debes eliminar todos los volúmenes del disco, lo que borra de forma permanente todos los datos del disco. Asegúrate de realizar copias de seguridad de todos los datos que quieras conservar antes de proceder.
 
-## <a name="changing-a-dynamic-disk-back-to-a-basic-disk"></a>Cambiar un disco dinámico por un disco básico
-
--   [Uso de la interfaz de Windows](#to-change-a-dynamic-disk-back-to-a-basic-disk-using-the-windows-interface)
--   [Uso de la línea de comandos](#to-change-a-dynamic-disk-back-to-a-basic-disk-using-a-command-line)
-
-> [!NOTE]
-> Debes ser miembro del grupo **Operadores de copia de seguridad** o **Administradores**, como mínimo, para completar estos pasos.
-
-#### <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-using-the-windows-interface"></a>Para cambiar un disco dinámico por un disco básico mediante la interfaz de Windows
+## <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-by-using-disk-management"></a>Para cambiar un disco dinámico por un disco básico mediante Administración de discos
 
 1.  Realiza una copia de seguridad de todos los volúmenes del disco que quieras convertir de dinámicos a básicos.
 
-2.  En Administración de discos, haz clic con el botón derecho en cada volumen del disco dinámico que quieras convertir en un disco básico y luego haz clic en **Eliminar volumen** en cada volumen del disco.
+2. Abre Administración de discos con permisos de administrador.
+
+   Una manera fácil de hacerlo es escribir **Administración de equipos** en el cuadro de búsqueda de la barra de tareas, seleccionar y mantener pulsado (o hacer clic con el botón derecho) **Administración de equipos** y, después, seleccionar **Ejecutar como administrador** > **Sí**. Cuando se abra Administración de equipos, ve a **Almacenamiento** > **Administración de discos**.
+
+2.  En Administración de discos, selecciona y mantén pulsado (o haz clic con el botón derecho) cada volumen del disco dinámico que quieras convertir en un disco básico y luego haz clic en **Eliminar volumen**.
 
 3.  Cuando todos los volúmenes del disco se hayan eliminado, haz clic con el botón derecho en el disco y luego haz clic en **Convertir en disco básico**.
 
-#### <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-using-a-command-line"></a>Para cambiar un disco dinámico por un disco básico mediante una línea de comandos
+## <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-by-using-a-command-line"></a>Para cambiar un disco dinámico por un disco básico mediante una línea de comandos
 
 1.  Realiza una copia de seguridad de todos los volúmenes del disco que quieras convertir de dinámicos a básicos.
 
@@ -50,7 +46,7 @@ En este tema se describe cómo eliminar todo el contenido de un disco dinámico 
 
 4.  En el símbolo del sistema **DISKPART**, escribe `select disk <disknumber>`.
 
-5.  En el símbolo del sistema **DISKPART**, escribe `detail disk <disknumber>`.
+5.  En el símbolo del sistema **DISKPART**, escribe `detail disk`.
 
 6.  Para cada volumen del disco, en el símbolo de sistema **DISKPART**, escribe `select volume= <volumenumber>` y luego escribe `delete volume`.
 
@@ -58,8 +54,7 @@ En este tema se describe cómo eliminar todo el contenido de un disco dinámico 
 
 8.  En el símbolo del sistema **DISKPART**, escribe `convert basic`.
 
-
-| Valor  | Descripción |
+| Value  | Descripción |
 | --- | --- |
 | **list disk**                         | Muestra una lista de discos e información sobre ellos, como su tamaño, la cantidad de espacio disponible, si se trata de un disco básico o dinámico y si el disco utiliza el estilo de partición de Registro de arranque maestro (MBR) o Tabla de particiones GUID (GPT). El disco marcado con un asterisco (*) tiene el foco. |
 | **select disk** <em>disknumber</em>   | Selecciona el disco especificado, donde <em>disknumber</em> es el número de disco y el que recibe el foco.  |
