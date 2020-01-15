@@ -10,14 +10,14 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/04/2018
-ms.openlocfilehash: 850aa376e8cd0060992573561a0c32af563b88ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3bbb70657cb009ce760ccfe273b24c6df17d3ca7
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405161"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949901"
 ---
-## <a name="resolve-vrss-issues"></a>Resolver problemas de vRSS
+# <a name="resolve-vrss-issues"></a>Resolver problemas de vRSS
 
 Si ha completado todos los pasos de preparación y sigue sin ver el tráfico de equilibrio de carga de vRSS en los LPs de la máquina virtual, hay diferentes problemas posibles.
 
@@ -34,7 +34,7 @@ Si ha completado todos los pasos de preparación y sigue sin ver el tráfico de 
 
    **Vea la configuración actual:** 
 
-   Ejecute el siguiente cmdlet de PowerShell en la\(máquina virtual para vrss en\) una máquina virtual o \(en el host para\)el host VNIC vrss.
+   Ejecute el siguiente cmdlet de PowerShell en la máquina virtual\(para vRSS en una máquina virtual\) o en el \(host de la\)vRSS del host vNIC.
 
    ```PowerShell
    Get-NetAdapterRss
@@ -48,7 +48,7 @@ Si ha completado todos los pasos de preparación y sigue sin ver el tráfico de 
    Enable-NetAdapterRss *
    ```
    
-   Otra forma de configurar RSS es usar netsh. Usar 
+   Otra forma de configurar RSS es usar netsh. Usa el modo 
    
     ```cmd
    netsh int tcp show global

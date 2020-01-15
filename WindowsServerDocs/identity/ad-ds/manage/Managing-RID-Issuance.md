@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: dd265fecce06b849bd14d4d6b81503aba7311656
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 712fc6c4cf47b642cb2ab028fea693047d60c30e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390075"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948872"
 ---
 # <a name="managing-rid-issuance"></a>Administrar la emisión de RID
 
@@ -26,7 +26,7 @@ En este tema, se explica el cambio al rol FSMO del maestro de RID. Incluye la nu
   
 -   [Solución de problemas de emisión de RID](../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_Tshoot)  
   
-Puede encontrar más información en el [blog de preguntar a servicios](http://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx).  
+Puede encontrar más información en el [blog de preguntar a servicios](https://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx).  
   
 ## <a name="BKMK_Manage"></a>Administrar la emisión de RID  
 De forma predeterminada, cada dominio tiene capacidad para, aproximadamente, mil millones de entidades de seguridad, como usuarios, grupos y equipos. Obviamente, no hay ningún dominio en el que se utilicen activamente tantos objetos. Sin embargo, el servicio de asistencia al cliente de Microsoft encontró casos en los que:  
@@ -255,54 +255,54 @@ En los controladores de dominio de Windows Server 2012, se registran los sigui
   
 |||  
 |-|-|  
-|Id. de evento|16653|  
-|`Source`|Directory-Services-SAM|  
-|Severity|Advertencia|  
+|Identificador de evento|16653|  
+|Origen|Directory-Services-SAM|  
+|Gravedad|Advertencia|  
 |Mensaje|Un tamaño de grupo para los identificadores de la cuenta (RID) configurado por un administrador es mayor que el máximo admitido. Se usará el valor máximo de %1 cuando el controlador del dominio sea el maestro RID.<br /><br />Para obtener más información, vea el tema sobre [límite de tamaño de los bloques de RID](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_RIDBlockMaxSize).|  
 |Notas y resolución|Ahora, el valor máximo del tamaño de los bloques de RID es 15000 decimal (3A98 hexadecimal). Un solo controlador de dominio no puede solicitar más de 15.000 RID. Este evento se registra con cada arranque hasta que el valor se configura con un valor que no supere este máximo.|  
   
 |||  
 |-|-|  
-|Id. de evento|16654|  
-|`Source`|Directory-Services-SAM|  
-|Severity|Informativo|  
-|Mensaje|Se invalidó un grupo de identificadores de cuenta (RID). Esto puede suceder en los siguientes casos previstos:<br /><br />1. Se restaura un controlador de dominio desde una copia de seguridad.<br /><br />2. Un controlador de dominio que se ejecuta en una máquina virtual se restaura desde una instantánea.<br /><br />3. Un administrador invalidó el grupo manualmente.<br /><br />Consulte https://go.microsoft.com/fwlink/?LinkId=226247 para obtener más información.|  
+|Identificador de evento|16654|  
+|Origen|Directory-Services-SAM|  
+|Gravedad|Informativo|  
+|Mensaje|Se invalidó un grupo de identificadores de cuenta (RID). Esto puede suceder en los siguientes casos previstos:<br /><br />1. un controlador de dominio se restaura a partir de una copia de seguridad.<br /><br />2. un controlador de dominio que se ejecuta en una máquina virtual se restaura desde una instantánea.<br /><br />3. un administrador invalidó el grupo manualmente.<br /><br />Consulte https://go.microsoft.com/fwlink/?LinkId=226247 para obtener más información.|  
 |Notas y resolución|Si este evento no se esperaba, ponte en contacto con los administradores de todos los dominios y averigua cuál de ellos llevó a cabo esta acción. El registro de eventos de los Servicios de directorio también contiene información adicional sobre el momento en el que se realizó uno de estos pasos.|  
   
 |||  
 |-|-|  
-|Id. de evento|16655|  
-|`Source`|Directory-Services-SAM|  
-|Severity|Informativo|  
+|Identificador de evento|16655|  
+|Origen|Directory-Services-SAM|  
+|Gravedad|Informativo|  
 |Mensaje|El máximo global para identificadores de cuenta (RID) se ha incrementado a %1.|  
 |Notas y resolución|Si este evento no se esperaba, ponte en contacto con los administradores de todos los dominios y averigua cuál de ellos llevó a cabo esta acción. Este evento indica que el tamaño total del grupo de RID aumentó hasta superar el valor predeterminado de 2<sup>30</sup>. No aparece de forma automática: solamente por una acción administrativa.|  
   
 |||  
 |-|-|  
-|Id. de evento|16656|  
-|`Source`|Directory-Services-SAM|  
-|Severity|Advertencia|  
+|Identificador de evento|16656|  
+|Origen|Directory-Services-SAM|  
+|Gravedad|Advertencia|  
 |Mensaje|El máximo global para identificadores de cuenta (RID) se ha incrementado a %1.|  
-|Notas y resolución|Acción requerida. Se asignó un grupo de identificadores de cuenta (RID) a este controlador de dominio. El valor del grupo indica que este dominio consumió una parte considerable del total de identificadores de cuenta disponibles.<br /><br />Se activará un mecanismo de protección cuando el dominio alcance el siguiente umbral de número total de identificadores de cuenta disponibles restantes:% 1.  El mecanismo de protección impedirá que se creen más cuentas hasta que vuelvas a habilitar manualmente la asignación de identificadores de cuenta en el controlador de dominio del maestro de RID.<br /><br />Consulte https://go.microsoft.com/fwlink/?LinkId=228610 para obtener más información.|  
+|Notas y resolución|Acción requerida. Se asignó un grupo de identificadores de cuenta (RID) a este controlador de dominio. El valor del grupo indica que este dominio consumió una parte considerable del total de identificadores de cuenta disponibles.<br /><br />Se activará un mecanismo de protección cuando el dominio alcance el siguiente umbral de número total de identificadores de cuenta disponibles restantes: %1.  El mecanismo de protección impedirá que se creen más cuentas hasta que vuelvas a habilitar manualmente la asignación de identificadores de cuenta en el controlador de dominio del maestro de RID.<br /><br />Consulte https://go.microsoft.com/fwlink/?LinkId=228610 para obtener más información.|  
   
 |||  
 |-|-|  
-|Id. de evento|16657|  
-|`Source`|Directory-Services-SAM|  
-|Severity|Error|  
-|Mensaje|Acción requerida. Este dominio consumió una parte considerable del total de identificadores de cuenta (RID) disponibles. Se activó un mecanismo de protección porque el número total de identificadores de cuenta disponibles restantes es menor que: X% [argumento del límite superior artificial].<br /><br />El mecanismo de protección impide que se creen más cuentas hasta que vuelvas a habilitar manualmente la asignación de identificadores de cuenta en el controlador de dominio del maestro de RID.<br /><br />Es extremadamente importante que se realicen determinados diagnósticos antes de volver a habilitar la creación de cuentas, para comprobar que este dominio no está consumiendo identificadores de cuenta con una frecuencia inusualmente alta. Todos los problemas que se identifiquen se deben resolver antes de volver a habilitar la creación de cuentas.<br /><br />Si no se diagnostican y se corrigen los problemas subyacentes que provocan el consumo de identificadores de cuenta a una frecuencia inusualmente alta, es posible que se agoten los identificadores de cuenta del dominio. Si esto ocurre, la creación de cuentas quedará deshabilitada permanentemente en este dominio.<br /><br />Consulte https://go.microsoft.com/fwlink/?LinkId=228610 para obtener más información.|  
+|Identificador de evento|16657|  
+|Origen|Directory-Services-SAM|  
+|Gravedad|Error de :|  
+|Mensaje|Acción requerida. Este dominio consumió una parte considerable del total de identificadores de cuenta (RID) disponibles. Se ha activado un mecanismo de protección porque el número total de identificadores de cuenta disponibles restante es inferior a: X% [argumento de techo artificial].<br /><br />El mecanismo de protección impide que se creen más cuentas hasta que vuelvas a habilitar manualmente la asignación de identificadores de cuenta en el controlador de dominio del maestro de RID.<br /><br />Es extremadamente importante que se realicen determinados diagnósticos antes de volver a habilitar la creación de cuentas, para comprobar que este dominio no está consumiendo identificadores de cuenta con una frecuencia inusualmente alta. Todos los problemas que se identifiquen se deben resolver antes de volver a habilitar la creación de cuentas.<br /><br />Si no se diagnostican y se corrigen los problemas subyacentes que provocan el consumo de identificadores de cuenta a una frecuencia inusualmente alta, es posible que se agoten los identificadores de cuenta del dominio. Si esto ocurre, la creación de cuentas quedará deshabilitada permanentemente en este dominio.<br /><br />Consulte https://go.microsoft.com/fwlink/?LinkId=228610 para obtener más información.|  
 |Notas y resolución|Ponte en contacto con los administradores de todos los dominios e infórmales de que no se pueden crear más entidades de seguridad en este dominio hasta que se invalide esta protección. Para más información sobre cómo invalidar la protección y, posiblemente, incrementar el grupo de RID en general, consulta [Desbloqueo del tamaño del espacio global de RID](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_GlobalRidSpaceUnlock).|  
   
 |||  
 |-|-|  
-|Id. de evento|16658|  
-|`Source`|Directory-Services-SAM|  
-|Severity|Advertencia|  
-|Mensaje|Este evento es una actualización periódica sobre la cantidad total restante de identificadores de cuenta disponibles (RID). El número de identificadores de cuenta restantes es aproximadamente:% 1.<br /><br />Los identificadores de cuenta se usan a medida que se crean cuentas, cuando se agotan, no se pueden crear nuevas cuentas en el dominio.<br /><br />Consulte https://go.microsoft.com/fwlink/?LinkId=228745 para obtener más información.|  
+|Identificador de evento|16658|  
+|Origen|Directory-Services-SAM|  
+|Gravedad|Advertencia|  
+|Mensaje|Este evento es una actualización periódica sobre la cantidad total restante de identificadores de cuenta disponibles (RID). El número de identificadores de cuenta restantes es aproximadamente: %1.<br /><br />Los identificadores de cuenta se usan a medida que se crean cuentas, cuando se agotan, no se pueden crear nuevas cuentas en el dominio.<br /><br />Consulte https://go.microsoft.com/fwlink/?LinkId=228745 para obtener más información.|  
 |Notas y resolución|Ponte en contacto con los administradores de todos los dominios e infórmales de que el consumo de RID alcanzó un hito principal. Para averiguar si este comportamiento se esperaba o no, revisa los patrones de creación de elementos de confianza de seguridad. Es muy poco habitual que aparezca este evento: significa que se asignaron, al menos, unos 100 millones de RID.|  
   
-## <a name="see-also"></a>Vea también  
-[Administrar la emisión de RID en Windows Server 2012](http://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx)  
+## <a name="see-also"></a>Consulta también  
+[Administrar la emisión de RID en Windows Server 2012](https://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx)  
   
 
 

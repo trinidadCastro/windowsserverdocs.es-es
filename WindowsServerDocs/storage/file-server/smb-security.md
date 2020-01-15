@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7221d3ea94ff9f2d7fca8e95cee66597e2dc6270
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d7b96574dcfc2a4417aa36780d7bd87c2556f61f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402062"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950262"
 ---
 # <a name="smb-security-enhancements"></a>Mejoras de seguridad SMB
 
->Se aplica a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
+>Se aplica a: Windows Server 2012 R2, Windows Server 2012 y Windows Server 2016
 
 En este tema se explican las mejoras de seguridad de SMB en Windows Server 2012 R2, Windows Server 2012 y Windows Server 2016.
 
@@ -78,7 +78,7 @@ La funcionalidad de negociación de dialectos segura que se describe en la secci
 >[!NOTE]
 >* El cifrado SMB usa el algoritmo Estándar de cifrado avanzado (AES)-CCM para cifrar y descifrar los datos. AES-CCM también proporciona validación de integridad de datos (firma) para recursos compartidos de archivos cifrados, independientemente de la configuración de firma de SMB. Si desea habilitar la firma SMB sin cifrado, puede continuar. Para obtener más información, consulte [los conceptos básicos de la firma de SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
 >* Puede encontrar problemas al intentar tener acceso al recurso compartido de archivos o al servidor si su organización usa dispositivos de aceleración de red de área extensa (WAN).
->* Con una configuración predeterminada (donde no se permite el acceso sin cifrar a los recursos compartidos de archivos cifrados), si los clientes que no admiten SMB 3,0 intentan acceder a un recurso compartido de archivos cifrado, se registra el ID. de evento 1003 en el registro de eventos Microsoft-Windows-SmbServer/Operational y el cliente recibirá un mensaje de error de **acceso denegado** .
+>* Con una configuración predeterminada (donde no se permite el acceso sin cifrar a los recursos compartidos de archivos cifrados), si los clientes que no admiten SMB 3,0 intentan acceder a un recurso compartido de archivos cifrado, el identificador de evento 1003 se registra en el registro de eventos Microsoft-Windows-SmbServer/Operational y el cliente recibirá un mensaje de error de **denegación**
 >* El cifrado SMB y el Sistema de cifrado de archivos (EFS) del sistema de archivos NTFS no están relacionados y el cifrado SMB no requiere ni depende del uso de EFS.
 >* El cifrado SMB y el Cifrado de unidad BitLocker no están relacionados, y el cifrado SMB no requiere ni depende del uso de Cifrado de unidad BitLocker.
 
@@ -86,11 +86,11 @@ La funcionalidad de negociación de dialectos segura que se describe en la secci
 
 SMB 3,0 es capaz de detectar ataques de tipo "Man in the Middle" que intentan degradar el protocolo SMB 2,0 o SMB 3,0 o las capacidades que el cliente y el servidor negocian. Cuando el cliente o el servidor detecta este tipo de ataque, la conexión se desconecta y se registra el ID. de evento 1005 en el registro de eventos Microsoft-Windows-SmbServer/Operational. La negociación de dialectos seguros no puede detectar ni impedir la degradación de SMB 2,0 o 3,0 a SMB 1,0. Por esta razón, y para aprovechar las capacidades completas de cifrado SMB, se recomienda encarecidamente deshabilitar el servidor SMB 1,0. Para obtener más información, vea [deshabilitar SMB 1,0](#disabling-smb-10).
 
-La funcionalidad de negociación de dialectos segura que se describe en la sección siguiente evita que un ataque de tipo "Man in the Middle" cambie de una conexión de SMB 3 a SMB 2 (que usaría acceso sin cifrar). sin embargo, no impide la degradación en SMB 1, lo que también daría lugar a un acceso no cifrado. Para obtener más información sobre los posibles problemas de las implementaciones anteriores de SMB que no son de Windows, consulte [Microsoft Knowledge Base](http://support.microsoft.com/kb/2686098).
+La funcionalidad de negociación de dialectos segura que se describe en la sección siguiente evita que un ataque de tipo "Man in the Middle" cambie de una conexión de SMB 3 a SMB 2 (que usaría acceso sin cifrar). sin embargo, no impide la degradación en SMB 1, lo que también daría lugar a un acceso no cifrado. Para obtener más información sobre los posibles problemas de las implementaciones anteriores de SMB que no son de Windows, consulte [Microsoft Knowledge Base](https://support.microsoft.com/kb/2686098).
 
 ## <a name="new-signing-algorithm"></a>Nuevo algoritmo de firma
 
-SMB 3,0 usa un algoritmo de cifrado más reciente para la firma: Estándar de cifrado avanzado (AES): código de autenticación de mensajes basado en cifrado (CMAC). SMB 2,0 usó el algoritmo de cifrado HMAC-SHA256 anterior. AES-CMAC y AES-CCM pueden acelerar significativamente el cifrado de datos en la mayoría de las CPU modernas que tienen compatibilidad con las instrucciones AES. Para obtener más información, consulte [los conceptos básicos de la firma de SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
+SMB 3,0 usa un algoritmo de cifrado más reciente para firmar: código de autenticación de mensajes basado en cifrado (CMAC) de Estándar de cifrado avanzado (AES). SMB 2,0 usó el algoritmo de cifrado HMAC-SHA256 anterior. AES-CMAC y AES-CCM pueden acelerar significativamente el cifrado de datos en la mayoría de las CPU modernas que tienen compatibilidad con las instrucciones AES. Para obtener más información, consulte [los conceptos básicos de la firma de SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
 
 ## <a name="disabling-smb-10"></a>Deshabilitar SMB 1,0
 
@@ -117,7 +117,7 @@ Set-SmbServerConfiguration –EnableSMB1Protocol $false
 >[!NOTE]
 >Si se deniega una conexión de cliente SMB porque se ha deshabilitado el servidor que ejecuta SMB 1,0, se registrará el ID. de evento 1001 en el registro de eventos Microsoft-Windows-SmbServer/Operational.
 
-## <a name="more-information"></a>Más información
+## <a name="more-information"></a>Información adicional
 
 Estos son algunos recursos adicionales sobre SMB y tecnologías relacionadas en Windows Server 2012.
 

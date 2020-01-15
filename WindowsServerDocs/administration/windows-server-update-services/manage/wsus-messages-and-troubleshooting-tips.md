@@ -1,5 +1,5 @@
 ---
-title: Sugerencias para solucionar problemas y mensajes WSUS
+title: Mensajes WSUS y consejos para solucionar problemas
 description: 'Tema de Windows Server Update Service (WSUS): solución de problemas con mensajes de WSUS'
 ms.prod: windows-server
 ms.reviewer: na
@@ -12,14 +12,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e432a962662995cf570b28d0b9496594f3e10e6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0c66e655ea6b6c44ee3ba375f75e6532fab74bfb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369860"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948487"
 ---
-# <a name="wsus-messages-and-troubleshooting-tips"></a>Sugerencias para solucionar problemas y mensajes WSUS
+# <a name="wsus-messages-and-troubleshooting-tips"></a>Mensajes WSUS y consejos para solucionar problemas
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -29,7 +29,7 @@ Este tema contiene información acerca de los siguientes mensajes de WSUS:
 
 -   "ID. de mensaje 6703-error de sincronización de WSUS"
 
--   "Error 0x80070643: Error irrecuperable durante la instalación "
+-   "Error 0x80070643: error irrecuperable durante la instalación"
 
 -   "Algunos servicios no se están ejecutando. Compruebe los siguientes servicios [...] "
 
@@ -47,17 +47,17 @@ Los motivos más comunes son:
 -   El equipo está apagado. (Se ha cerrado o está en modo de suspensión o hibernación).
 
 ## <a name="message-id-6703---wsus-synchronization-failed"></a>ID. de mensaje 6703-error de sincronización de WSUS
-> Mensaje: Error en la solicitud con el Estado HTTP 503: Servicio no disponible.
+> Mensaje: error en la solicitud con el Estado HTTP 503: servicio no disponible.
 > 
 > Origen: Microsoft. UpdateServices. Administration. AdminProxy. createUpdateServer.
 
 Cuando intente abrir los servicios de actualización en el servidor WSUS, recibirá el siguiente error:
 
-> Error: Error de conexión
+> Error: error de conexión
 > 
 > Error al intentar conectarse al servidor WSUS. Este error puede producirse por una serie de motivos. Si el problema persiste, póngase en contacto con el administrador de red. Haga clic en el nodo restablecer servidor para conectarse de nuevo al servidor.
 
-Además de lo anterior, los intentos de acceso a la dirección URL del sitio web de administración de WSUS (es decir, `http://CM12CAS:8530`) producen el error:
+Además de lo anterior, se produce un error al intentar obtener acceso a la dirección URL del sitio web de administración de WSUS (es decir, `http://CM12CAS:8530`):
 
 > Error 503 de HTTP. El servicio no está disponible
 
@@ -65,18 +65,18 @@ En esta situación, la causa más probable es que el grupo de aplicaciones WsusP
 
 Además, es probable que el límite de memoria privada (KB) para el grupo de aplicaciones esté establecido en el valor predeterminado de 1843200 KB. Si se produce este problema, aumente el límite de memoria privada a 4 GB (4 millones KB) y reinicie el grupo de aplicaciones. Para aumentar el límite de memoria privada, seleccione el grupo de aplicaciones de WsusPool y haga clic en configuración avanzada en editar grupo de aplicaciones. A continuación, establezca el límite de memoria privada en 4 GB (4 millones KB). Una vez reiniciado el grupo de aplicaciones, supervise el estado del componente SMS_WSUS_SYNC_MANAGER, WCM. log y archivo wsyncmgr. log en busca de errores. Tenga en cuenta que puede ser necesario aumentar el límite de memoria privada a 8 GB (8 millones KB) o superior según el entorno.
 
-Para obtener más información, consulte: [Error de HTTP 503 en la sincronización de WSUS en ConfigMgr 2012](http://blogs.technet.com/b/sus/archive/2015/03/23/configmgr-2012-support-tip-wsus-sync-fails-with-http-503-errors.aspx)
+Para obtener más información, consulte: [error de HTTP 503 en la sincronización de WSUS en ConfigMgr 2012](https://blogs.technet.com/b/sus/archive/2015/03/23/configmgr-2012-support-tip-wsus-sync-fails-with-http-503-errors.aspx) .
 
-## <a name="error-0x80070643-fatal-error-during-installation"></a>0x80070643 de error: Error irrecuperable durante la instalación
+## <a name="error-0x80070643-fatal-error-during-installation"></a>Error 0x80070643: error irrecuperable durante la instalación
 El programa de instalación de WSUS usa Microsoft SQL Server para realizar la instalación. Este problema se produce porque el usuario que ejecuta el programa de instalación de WSUS no tiene permisos de administrador del sistema en SQL Server.
 
 Para resolver este problema, conceda permisos de administrador del sistema a una cuenta de usuario o a una cuenta de grupo en SQL Server y, a continuación, ejecute de nuevo el programa de instalación de WSUS.
 
 ## <a name="some-services-are-not-running-check-the-following-services"></a>Algunos servicios no se están ejecutando. Compruebe los servicios siguientes:
 
-- **Selfupdate** Consulte [actualizaciones automáticas se debe actualizar](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx) para obtener información acerca de la solución de problemas del servicio selfupdate.
+- **Selfupdate:** Consulte [actualizaciones automáticas se debe actualizar](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx) para obtener información acerca de la solución de problemas del servicio selfupdate.
 
-- **WSSUService. exe:** Este servicio facilita la sincronización. Si tiene problemas con la sincronización, acceda a WSUSService. exe. para ello, haga clic en **Inicio**, seleccione **herramientas administrativas**, haga clic en **servicios**y, a continuación, busque **Windows Server Update Service** en la lista de servicios. Haga lo siguiente:
+- **WSSUService. exe:** Este servicio facilita la sincronización. Si tiene problemas con la sincronización, acceda a WSUSService. exe. para ello, haga clic en **Inicio**, seleccione **herramientas administrativas**, haga clic en **servicios**y, a continuación, busque **Windows Server Update Service** en la lista de servicios. Haz lo siguiente:
     
     -   Compruebe que este servicio se está ejecutando. Haga clic en **iniciar** si se detiene o en **reiniciar** para actualizar el servicio.
     

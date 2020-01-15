@@ -7,12 +7,12 @@ ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
 ms.date: 03/27/2018
-ms.openlocfilehash: f7d20a099f287d2ee05ae6e908c173e1eb3cfc66
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc1799db76f528a599ef70eec5093da0a76206a2
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361843"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948536"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>Actualización gradual del sistema operativo del clúster
 
@@ -52,7 +52,7 @@ Complete los requisitos siguientes antes de comenzar el proceso de actualizació
 - No se admite la actualización de un clúster de Espacios de almacenamiento directo a Windows Server, versión 1709.
 - Si la carga de trabajo del clúster son máquinas virtuales de Hyper-V, o Servidor de archivos de escalabilidad horizontal, puede esperar una actualización sin tiempo de inactividad.
 - Compruebe que los nodos de Hyper-V tienen CPU que admiten la tabla de direcciones de segundo nivel (SLAT) mediante uno de los métodos siguientes:  
-        -Revisar [¿es compatible con slat? ](http://blogs.msdn.com/b/devfish/archive/2012/11/06/are-you-slat-compatible-wp8-sdk-tip-01.aspx)Artículo de la sugerencia 01 del SDK de WP8 que describe dos métodos para comprobar si una CPU admite SLATs  
+        -Revisar [¿es compatible con slat? ](https://blogs.msdn.com/b/devfish/archive/2012/11/06/are-you-slat-compatible-wp8-sdk-tip-01.aspx)Artículo de la sugerencia 01 del SDK de WP8 que describe dos métodos para comprobar si una CPU admite SLATs  
         -Descargue la herramienta [Coreinfo v 3.31](https://technet.microsoft.com/sysinternals/cc835722) para determinar si una CPU es compatible con slat.
 
 ## <a name="cluster-transition-states-during-cluster-os-rolling-upgrade"></a>Estados de transición del clúster durante la actualización gradual del sistema operativo del clúster
@@ -277,7 +277,7 @@ Aunque nos centramos en escenarios de nube privada, específicamente Hyper-V y c
 **¿Puedo usar System Center 2016 Virtual Machine Manager (SCVMM) para automatizar el proceso de actualización gradual del sistema operativo del clúster?**  
     Sí, puede automatizar el proceso de actualización gradual del sistema operativo del clúster mediante VMM en System Center 2016.  
 
-## <a name="see-also"></a>Consulte también  
+## <a name="see-also"></a>Consulta también  
 -   [Notas de la versión: problemas importantes en Windows Server 2016](../get-started/Release-Notes--Important-Issues-in-Windows-Server-2016-Technical-Preview.md)  
 -   [Novedades en Windows Server 2016](../get-started/What-s-New-in-windows-server-2016.md)  
 -   [Novedades de los clústeres de conmutación por error en Windows Server](whats-new-in-failover-clustering.md)  

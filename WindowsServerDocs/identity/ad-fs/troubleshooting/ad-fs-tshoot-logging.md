@@ -8,15 +8,15 @@ ms.date: 02/21/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5985fc022a084e0e36e12ea60f18d1650c8c6b51
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e42c5b6d53cd3985fefc2c93ab10b59383a35af0
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366203"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950182"
 ---
 # <a name="ad-fs-troubleshooting---events-and-logging"></a>Solución de problemas de AD FS: eventos y registro
-AD FS proporciona dos registros principales que se pueden usar en la solución de problemas.  Estas sobrecargas son:
+AD FS proporciona dos registros principales que se pueden usar en la solución de problemas.  Estos son:
 
 - el registro de administración
 - Registro de seguimiento  
@@ -30,7 +30,7 @@ El registro de administración proporciona información de alto nivel sobre los 
 1.  Abre el Visor de eventos
 2.  Expanda **registros de aplicaciones y servicios**.
 3.  Expanda **AD FS**.
-4.  Haga clic en **Administrador**.
+4.  Haga clic en **Admin** (Administrador).
 
 ![mejoras de auditoría](media/ad-fs-tshoot-logging/event1.PNG)  
 
@@ -39,7 +39,7 @@ El registro de seguimiento es donde se registran los mensajes detallados y será
 
 ### <a name="to-enable-and-view-the-trace-log"></a>Para habilitar y ver el registro de seguimiento
 1.  Abre el Visor de eventos
-2.  Haga clic con el botón derecho en el **registro de aplicaciones y servicios** y seleccione Ver y haga clic en **Mostrar registros analíticos y**de depuración.  Esto mostrará nodos adicionales a la izquierda.
+2.  Haga clic con el botón derecho en el **registro de aplicaciones y servicios** y seleccione Ver y haga clic en **Mostrar registros analíticos y de depuración**.  Esto mostrará nodos adicionales a la izquierda.
 ![mejoras de auditoría](media/ad-fs-tshoot-logging/event2.PNG)  
 3.  Expandir seguimiento de AD FS
 4.  Haga clic con el botón derecho en depurar y seleccione **Habilitar registro**.
@@ -57,15 +57,15 @@ En la tabla siguiente se explican los niveles de auditoría disponibles.
 
 |Nivel de auditoría|Sintaxis de PowerShell|Descripción|  
 |----- | ----- | ----- |
-|Ninguno|Set-AdfsProperties-AuditLevel ninguno|La auditoría está deshabilitada y no se registrará ningún evento.|  
+|Ninguna|Set-AdfsProperties-AuditLevel ninguno|La auditoría está deshabilitada y no se registrará ningún evento.|  
 |Básico (predeterminado)|Set-AdfsProperties-AuditLevel Basic|No se registrarán más de 5 eventos para una única solicitud.|  
 |Verbose|Set-AdfsProperties-AuditLevel verbose|Se registrarán todos los eventos.  Esto registrará una cantidad significativa de información por solicitud.|  
   
-Para ver el nivel de auditoría actual, puede usar el cmdlt de PowerShell:  Get-AdfsProperties.  
+Para ver el nivel de auditoría actual, puede usar el cmdlt de PowerShell: get-AdfsProperties.  
   
 ![mejoras de auditoría](media/ad-fs-tshoot-logging/ADFS_Audit_1.PNG)  
   
-El nivel de auditoría se puede aumentar o reducir mediante el cmdlt de PowerShell:  Set-AdfsProperties-AuditLevel.  
+El nivel de auditoría se puede aumentar o reducir mediante el cmdlt de PowerShell: set-AdfsProperties-AuditLevel.  
   
 ![mejoras de auditoría](media/ad-fs-tshoot-logging/ADFS_Audit_2.png)  
   
@@ -74,7 +74,7 @@ AD FS eventos pueden ser de tipos diferentes, en función de los diferentes tipo
 
 En la tabla siguiente se describen los tipos básicos de eventos.  
   
-|Tipo de evento|Id. de evento|Descripción| 
+|Tipo de evento|Identificador de evento|Descripción| 
 |----- | ----- | ----- | 
 |Validación de nueva credencial correcta|1202|Una solicitud en la que el Servicio de federación valida correctamente las credenciales nuevas. Esto incluye los puntos de conexión de WS-Trust, WS-Federation, SAML-P (primer segmento para generar SSO) y OAuth Authorize.|  
 |Error de validación de credenciales nuevas|1203|Una solicitud en la que se produjo un error en la validación de credenciales nuevas en el Servicio de federación. Esto incluye los puntos de conexión de WS-Trust, WS-FED, SAML-P (primer segmento para generar SSO) y OAuth Authorize.|  
@@ -91,15 +91,15 @@ En ocasiones, la auditoría de seguridad de la cuenta de servicio de AD FS puede
 ### <a name="to-enable-security-auditing"></a>Para habilitar la auditoría de seguridad
 1. Haga clic en Inicio, seleccione **programas**, seleccione **herramientas administrativas**y, a continuación, haga clic en **Directiva de seguridad local**.
 2. Navegue a la carpeta **Configuración de seguridad\Directivas locales\Administración de permisos del usuario** y haga doble clic en **Generar auditorías de seguridad**.
-3. En la pestaña **configuración de seguridad local** , compruebe que aparece la cuenta de servicio AD FS. Si no está presente, haga clic en Agregar usuario o grupo, agréguelo a la lista y, a continuación, haga clic en Aceptar.
+3. En la pestaña **Configuración de seguridad local** , compruebe que aparezca la cuenta de servicio de AD FS. Si no aparece, haga clic en Agregar usuario o grupo y agréguelo a la lista; después, haga clic en Aceptar.
 4. Abra un símbolo del sistema con privilegios elevados y ejecute el siguiente comando para habilitar la auditoría Auditpol. exe/Set/subcategory: "aplicación generada"/Failure: enable/Success: enable
 5. Cierre **Directiva de seguridad local**y, a continuación, abra el complemento administración de AD FS.
  
 Para abrir el complemento Administración de AD FS, haga clic en Inicio, seleccione programas, seleccione Herramientas administrativas y, a continuación, haga clic en administración de AD FS.
  
 6. En el panel acciones, haga clic en Editar Servicio de federación propiedades.
-7. En el cuadro de diálogo Propiedades de Servicio de federación, haga clic en la pestaña eventos.
-8. Active las casillas auditorías de aciertos y auditorías de **errores** .
+7. En el cuadro de diálogo Propiedades del servicio de federación, haga clic en la pestaña Eventos.
+8. Active las casillas **Auditorías de aciertos** y **Auditorías de errores**.
 9. Haga clic en Aceptar.
 
 ![mejoras de auditoría](media/ad-fs-tshoot-logging/event4.PNG)  
@@ -139,16 +139,16 @@ Este ID. de actividad sigue siendo el mismo para toda la duración de la solicit
 ![ActivityId](media/ad-fs-tshoot-logging/activityid2.png)
 
 Para ayudar en el proceso de solución de problemas, AD FS también registra el evento de identificador del llamador cada vez que se produce un error en el proceso de emisión de tokens en un servidor de AD FS. Este evento contiene el tipo de notificaciones y el valor de uno de los siguientes tipos de notificaciones, suponiendo que esta información se pasó al Servicio de federación como parte de una solicitud de token:
-- http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountnameh
+- https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountnameh
 - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier
 - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upnh
-- http://schemas.microsoft.com/ws/2008/06/identity/claims/upn
+- https://schemas.microsoft.com/ws/2008/06/identity/claims/upn
 - http://schemas.xmlsoap.org/claims/UPN
 - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddressh
-- http://schemas.microsoft.com/ws/2008/06/identity/claims/emailaddress 
+- https://schemas.microsoft.com/ws/2008/06/identity/claims/emailaddress 
 - http://schemas.xmlsoap.org/claims/EmailAddress
 - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name
-- http://schemas.microsoft.com/ws/2008/06/identity/claims/name
+- https://schemas.microsoft.com/ws/2008/06/identity/claims/name
 - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier 
 
 El evento de identificador de llamada también registra el ID. de actividad para que pueda usar ese ID. de actividad para filtrar o buscar en los registros de eventos una solicitud determinada.
@@ -156,6 +156,6 @@ El evento de identificador de llamada también registra el ID. de actividad para
 
 
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 
 - [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)

@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 9a116cc9d86dfe0bb4450efa0f18580a062af722
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: ddc8eea67cde9d6677836af1201e169c911e77e0
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903724"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950483"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Administrar servidores con el centro de administración de Windows
 
@@ -21,7 +21,7 @@ ms.locfileid: "74903724"
 
 > [!Tip]
 > ¿Novedad en Windows Admin Center?
-> [Obtén más información acerca de Windows Admin Center](../understand/windows-admin-center.md) o [descárgalo ahora](https://aka.ms/windowsadmincenter).
+> [Descargue u obtenga más información sobre el centro de administración de Windows](../overview.md).
 
 ## <a name="managing-windows-server-machines"></a>Administrar las máquinas de Windows Server
 
@@ -53,7 +53,7 @@ Las siguientes herramientas están disponibles para las conexiones de servidor:
 | [Active Directory](#active-directory-preview) | Administrar Active Directory |
 | [Backup](#backup) | Ver y configurar Azure Backup |  
 | [Certificados](#certificates) | Ver y modificar certificados |
-| [Containers](#containers) | Ver contenedores |
+| [Contenedores](#containers) | Ver contenedores |
 | [Dispositivos](#devices) | Ver y modificar dispositivos |
 | [DHCP](#dhcp) | Ver y administrar la configuración del servidor DHCP |
 | [DNS](#dns) | Ver y administrar la configuración del servidor DNS |
@@ -62,7 +62,7 @@ Las siguientes herramientas están disponibles para las conexiones de servidor:
 | [Firewall](#firewall) | Ver y modificar las reglas de Firewall |
 | [Aplicaciones instaladas](#installed-apps) | Visualización y eliminación de las aplicaciones instaladas |
 | [Usuarios y grupos locales](#local-users-and-groups) | Ver y modificar usuarios y grupos locales |
-| [Network](#network) | Ver y modificar dispositivos de red |
+| [Red](#network) | Ver y modificar dispositivos de red |
 | [Supervisión de paquetes](https://aka.ms/wac1908) | Supervisión de paquetes de red |
 | [Monitor de rendimiento](https://aka.ms/perfmon-blog) | Ver informes y contadores de rendimiento |
 | [PowerShell](#powershell) | Interacción con el servidor a través de PowerShell |
@@ -85,7 +85,7 @@ Las siguientes herramientas están disponibles para las conexiones de servidor:
 
 **Información general** le permite ver el estado actual de la CPU, la memoria y el rendimiento de la red, así como realizar operaciones y modificar la configuración de un equipo o servidor de destino.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 En Administrador del servidor información general, se admiten las siguientes características:
 
@@ -105,7 +105,7 @@ En Administrador del servidor información general, se admiten las siguientes ca
 
 **Active Directory** es una versión preliminar temprana que está disponible en la [fuente de extensión](../configure/using-extensions.md).
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Están disponibles las siguientes opciones de administración de Active Directory:
 
@@ -128,7 +128,7 @@ La **copia de seguridad** le permite proteger su servidor de Windows frente a da
 
 [Proporcionar comentarios sobre la copia de seguridad en el centro de administración de Windows](https://aka.ms/backup-wac-feedback)
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Las siguientes características se admiten en la copia de seguridad:
 
@@ -143,7 +143,7 @@ Las siguientes características se admiten en la copia de seguridad:
 
 Los **certificados** permiten administrar almacenes de certificados en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 En los certificados se admiten las siguientes características:
 
@@ -166,7 +166,7 @@ Los **contenedores** permiten ver los contenedores de un host de contenedor de W
 
 Los **dispositivos** permiten administrar dispositivos conectados en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Se admiten las siguientes características en los dispositivos:
 
@@ -181,7 +181,7 @@ Se admiten las siguientes características en los dispositivos:
 
 **DHCP** permite administrar dispositivos conectados en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 - Crear/configurar/ver ámbitos IPV4 e IPV6
 - Crear exclusiones de direcciones y configurar la dirección IP inicial y final
@@ -193,7 +193,7 @@ Se admiten las siguientes características en los dispositivos:
 
 **DNS** permite administrar dispositivos conectados en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 - Ver detalles de las zonas de búsqueda directa de DNS, las zonas de búsqueda inversa y los registros DNS
 - Crear zonas de búsqueda directa (principal, secundaria o de código auxiliar) y configurar las propiedades de la zona de búsqueda directa
@@ -208,7 +208,7 @@ Se admiten las siguientes características en los dispositivos:
 
 **Los eventos** permiten administrar registros de eventos en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Se admiten las siguientes características en eventos:
 
@@ -223,13 +223,13 @@ Se admiten las siguientes características en eventos:
 
 **Archivos** permite administrar archivos y carpetas en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Se admiten las siguientes características en los archivos:
 
 - Examen de archivos y carpetas
 - Buscar un archivo o una carpeta
-- Crear una carpeta nueva
+- crear una nueva carpeta
 - Eliminar un archivo o una carpeta
 - Descargar un archivo o una carpeta
 - Carga de un archivo o una carpeta
@@ -245,7 +245,7 @@ Se admiten las siguientes características en los archivos:
 
 **Firewall** le permite administrar la configuración y las reglas de firewall en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Se admiten las siguientes características en el Firewall:
 
@@ -271,7 +271,7 @@ Se admiten las siguientes características en el Firewall:
 
 **Usuarios y grupos locales** permite administrar grupos de seguridad y usuarios que existen de forma local en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Las siguientes características se admiten en usuarios y grupos locales:
 
@@ -288,7 +288,7 @@ Las siguientes características se admiten en usuarios y grupos locales:
 
 La **red** le permite administrar la configuración y los dispositivos de red en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 En la red se admiten las siguientes características:
 
@@ -303,7 +303,7 @@ En la red se admiten las siguientes características:
 
 **PowerShell** le permite interactuar con un equipo o un servidor a través de una sesión de PowerShell.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Las siguientes características se admiten en PowerShell:
 
@@ -316,7 +316,7 @@ Las siguientes características se admiten en PowerShell:
 
 **Procesos** permite administrar procesos en ejecución en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Se admiten las siguientes características en los procesos:
 
@@ -333,7 +333,7 @@ Se admiten las siguientes características en los procesos:
 
 El **registro** permite administrar valores y claves del registro en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Las siguientes características se admiten en el registro:
 
@@ -347,7 +347,7 @@ Las siguientes características se admiten en el registro:
 
 **Escritorio remoto** le permite interactuar con un equipo o servidor a través de una sesión de escritorio interactiva.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Las siguientes características se admiten en Escritorio remoto:
 
@@ -361,7 +361,7 @@ Las siguientes características se admiten en Escritorio remoto:
 
 **Roles y características** permite administrar roles y características en un servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Se admiten las siguientes características en roles y características:
 
@@ -376,7 +376,7 @@ Se admiten las siguientes características en roles y características:
 
 **Tareas programadas** permite administrar tareas programadas en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Las siguientes características se admiten en tareas programadas:
 
@@ -392,7 +392,7 @@ Las siguientes características se admiten en tareas programadas:
 
 **Servicios** permite administrar los servicios en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 En los servicios se admiten las siguientes características:
 
@@ -408,7 +408,7 @@ En los servicios se admiten las siguientes características:
 
 La **configuración** es una ubicación central para administrar la configuración de un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 - Ver y modificar las variables de entorno del sistema y del usuario
 - Permite ver la configuración de las alertas de supervisión desde [Azure monitor](azure-monitor.md)
@@ -421,7 +421,7 @@ La **configuración** es una ubicación central para administrar la configuraci�
 
 El **almacenamiento** le permite administrar dispositivos de almacenamiento en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Se admiten las siguientes características en el almacenamiento:
 
@@ -465,13 +465,13 @@ Use **réplica de almacenamiento** para administrar la replicación de almacenam
 
 **Actualizaciones** le permite administrar las actualizaciones de Microsoft y/o Windows en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Las siguientes características se admiten en las actualizaciones de:
 
 - Ver las actualizaciones de Windows o de Microsoft disponibles
 - Ver una lista de historial de actualizaciones
-- Instalación de actualizaciones
+- Instalar actualizaciones
 - Buscar actualizaciones en línea desde Microsoft Update
 - Administración de la integración de [Azure Update Management](https://docs.microsoft.com/azure/automation/automation-update-management)
 
@@ -485,7 +485,7 @@ Vea [administrar virtual machines con el centro de administración de Windows](m
 
 Los **conmutadores virtuales** permiten administrar conmutadores virtuales de Hyper-V en un equipo o servidor.
 
-### <a name="features"></a>Características
+### <a name="features"></a>Funciones
 
 Se admiten las siguientes características en conmutadores virtuales:
 

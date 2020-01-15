@@ -9,12 +9,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: 'Cómo usar Microsoft Azure para hospedar el testigo para un clúster de conmutación por error de Windows Server en la nube: también se ha aprendido a implementar un testigo en la nube.'
-ms.openlocfilehash: 1f38a1a436cfced8637b743817dc1b3d150f7fa6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ad5ff47a72319fee7650d1d9c0d0616cfaaa22d3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369883"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948174"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>Implementación de un testigo en la nube para conmutación de clústeres por error
 
@@ -26,7 +26,7 @@ El testigo en la nube es un tipo de testigo de cuórum del clúster de conmutaci
 
 En la figura 1 se muestra una configuración de cuórum de clúster de conmutación por error extendida de varios sitios con Windows Server 2016. En esta configuración de ejemplo (Ilustración 1), hay 2 nodos en dos centros de recursos (denominados sitios). Tenga en cuenta que un clúster puede abarcar más de 2 centros de recursos. Además, cada centro de información puede tener más de 2 nodos. Una configuración típica de cuórum de clúster en esta instalación (acuerdo de nivel de servicio de conmutación por error automática) asigna a cada nodo un voto. Se da un voto adicional al testigo de cuórum para permitir que el clúster siga ejecutándose incluso si uno de los centros de Datacenter experimenta una interrupción del suministro eléctrico. La expresión matemática es sencilla: hay 5 votos totales y se necesitan 3 votos para el clúster para mantenerla en ejecución.  
 
-![Testigo de recurso compartido de archivos en un tercer sitio independiente con 2 nodos en otros dos sitios testigo de](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_1.png "recurso compartido de archivos")  
+![Testigo de recurso compartido de archivos en un tercer sitio independiente con 2 nodos en otros dos sitios](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_1.png "Recurso compartido de archivos")  
 **Figura 1: uso de un testigo de recurso compartido de archivos como testigo de cuórum**  
 
 En caso de que se produzca una interrupción de la alimentación en un centro de centros de recursos, para dar la misma oportunidad para que el clúster de otro centro de recursos lo siga ejecutando, se recomienda hospedar el testigo de cuórum en una ubicación distinta a la de los dos centros de recursos. Normalmente, esto significa requerir un tercer centro de recursos independiente (sitio) para hospedar un servidor de archivos que realiza una copia de seguridad del recurso compartido de archivos que se usa como testigo de cuórum (testigo de recurso compartido de archivos).  
@@ -75,15 +75,15 @@ Cuando se usa la misma cuenta de Azure Storage para configurar el testigo de nub
 
 ### <a name="to-create-an-azure-storage-account"></a>Para crear una cuenta de almacenamiento de Azure
 
-1. Inicie sesión en el [portal de Azure](http://portal.azure.com).
-2. En el menú del concentrador, seleccione Nuevo-> datos y almacenamiento > cuenta de almacenamiento.
+1. Inicie sesión en [Azure Portal](https://portal.azure.com).
+2. En el menú del concentrador, seleccione Nuevo -> Datos y almacenamiento -> Cuenta de almacenamiento.
 3. En la página crear una cuenta de almacenamiento, haga lo siguiente:
     1. Escriba un nombre para la cuenta de almacenamiento.
-    <br>Los nombres de las cuentas de almacenamiento deben tener entre 3 y 24 caracteres de longitud y solo pueden contener números y letras minúsculas. El nombre de la cuenta de almacenamiento también debe ser único en Azure.
+    <br>Los nombres de las cuentas de almacenamiento deben tener entre 3 y 24 caracteres y solo pueden incluir números y letras en minúscula. El nombre de la cuenta de almacenamiento también debe ser único en Azure.
         
     2. En **tipo de cuenta**, seleccione **uso general**.
     <br>No se puede usar una cuenta de almacenamiento de blobs para un testigo en la nube.
-    3. En **rendimiento**, seleccione **estándar**.
+    3. En **Rendimiento**, seleccione **Estándar**.
     <br>No se puede usar Azure Premium Storage para un testigo en la nube.
     2. En **replicación**, seleccione **almacenamiento con redundancia local (LRS)** .
     <br>Los clústeres de conmutación por error usan el archivo de BLOB como punto de arbitraje, lo que requiere algunas garantías de coherencia al leer los datos. Por lo tanto, debe seleccionar **el almacenamiento con redundancia local para el** tipo de **replicación** .

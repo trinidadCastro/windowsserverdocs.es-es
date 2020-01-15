@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 9abe199399e577eb06044377c30d5a2dc0e35dd1
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: dccbfd7d3ff6d95615e9efecf840a840b42d0d27
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945224"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949645"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -40,7 +40,7 @@ Revise el archivo Léame para su uso.
 
 Cuando se usa la versión 1809 del centro de administración de Windows para administrar un orquestador de Windows Server 2019, no se ve la opción de la herramienta para el servicio de migración de almacenamiento. 
 
-La extensión del servicio de migración de almacenamiento del centro de administración de Windows está enlazada a la versión para administrar solo los sistemas operativos Windows Server 2019 versión 1809 o posterior. Si la usa para administrar sistemas operativos anteriores de Windows Server o versiones preliminares de Insider, la herramienta no aparecerá. Este comportamiento es así por diseño. 
+La extensión del servicio de migración de almacenamiento del centro de administración de Windows está enlazada a la versión para administrar solo los sistemas operativos Windows Server 2019 versión 1809 o posterior. Si la usa para administrar sistemas operativos anteriores de Windows Server o versiones preliminares de Insider, la herramienta no aparecerá. Este es el comportamiento esperado. 
 
 Para resolverlo, use o actualice a Windows Server 2019 Build 1809 o posterior.
 
@@ -320,6 +320,35 @@ Después de completar una transferencia y, a continuación, ejecutar una retrans
 
 Este es el comportamiento esperado cuando se transfiere un número muy grande de archivos y carpetas anidadas. El tamaño de los datos no es relevante. Primero hemos realizado mejoras en este comportamiento en [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) y continúan optimizando el rendimiento de la transferencia. Para optimizar aún más el rendimiento, revise [optimización del inventario y rendimiento](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)de la transferencia.
 
+## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>Los datos no se transfieren, el usuario cambia el nombre al migrar a o desde un controlador de dominio.
+
+Después de iniciar la transferencia desde o a un controlador de dominio:
+
+ 1. No se migra ningún dato y no se crean recursos compartidos en el destino.
+ 2. Aparece un símbolo de error rojo en el centro de administración de Windows sin ningún mensaje de error
+ 3. Uno o varios usuarios de AD y grupos locales de dominio tienen su nombre y/o el atributo de inicio de sesión anterior a Windows 2000 cambiado
+ 4. Verá el evento 3509 en SMS Orchestrator:
+ 
+ Nombre de registro: Microsoft-Windows-StorageMigrationService/admin Source: Microsoft-Windows-StorageMigrationService Date: 1/10/2020 2:53:48 PM ID. de evento: 3509, categoría de tarea: None LEVEL: Palabras clave de error:      
+ Usuario: equipo de servicio de red: orc2019-rtm.corp.contoso.com Descripción: no se pudo transferir el almacenamiento de un equipo.
+
+ Trabajo: dctest3 equipo: dc02-2019.corp.contoso.com destino equipo: dc03-2019.corp.contoso.com estado: error: 53251 mensaje de error: error de migración de cuentas locales con el sistema. excepción:-2147467259 en Microsoft. StorageMigration. Service. DeviceHelper. MigrateSecurity (IDeviceRecord sourceDeviceRecord, IDeviceRecord destinationDeviceRecord, TransferConfiguration config, GUID proxyId, CancellationToken cancelToken)
+
+Este es el comportamiento esperado si intenta migrar desde o a un controlador de dominio con el servicio de migración de almacenamiento y usó la opción "migrar usuarios y grupos" para cambiar el nombre o volver a usar cuentas. en lugar de seleccionar "no transferir usuarios y grupos". No se admite la migración [de DC con el servicio de migración de almacenamiento](faq.md). Dado que un controlador de dominio no tiene usuarios y grupos locales verdaderos, el servicio de migración de almacenamiento trata a estas entidades de seguridad como si se realizara la migración entre dos servidores miembro e intenta ajustar las ACL como se indicó, lo que conduce a los errores y a las cuentas alteradas o copiadas. 
+
+Si ya ha ejecutado la transferencia una y varias veces:
+
+ 1. Use el siguiente comando de PowerShell de AD en un controlador de dominio para localizar los usuarios o grupos modificados (cambiando SearchBase para que coincida con su nombre de dinstringuished de dominio): 
+
+    ```PowerShell
+    Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
+    ```
+   
+ 2. En el caso de los usuarios devueltos con su nombre original, edite el "nombre de inicio de sesión de usuario (anterior a Windows 2000)" para quitar el sufijo de carácter aleatorio agregado por el servicio de migración de almacenamiento, de modo que este perdedor pueda iniciar sesión.
+ 3. En el caso de los grupos devueltos con su nombre original, edite el "nombre de grupo (anterior a Windows 2000)" para quitar el sufijo de carácter aleatorio agregado por el servicio de migración de almacenamiento.
+ 4. En el caso de los usuarios o grupos deshabilitados con nombres que ahora contengan un sufijo agregado por el servicio de migración de almacenamiento, puede eliminar estas cuentas. Puede confirmar que las cuentas de usuario se agregaron posteriormente porque solo contendrán el grupo usuarios del dominio y tendrá una fecha y hora de creación que coincidan con la hora de inicio de la transferencia del servicio de migración de almacenamiento.
+ 
+ Si desea usar el servicio de migración de almacenamiento con controladores de dominio para la transferencia, asegúrese de seleccionar siempre "no transferir usuarios y grupos" en la página Configuración de transferencia del centro de administración de Windows.
 
 ## <a name="see-also"></a>Consulta también
 

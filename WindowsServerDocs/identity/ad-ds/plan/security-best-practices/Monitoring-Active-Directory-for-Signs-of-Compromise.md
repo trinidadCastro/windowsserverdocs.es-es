@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ba67a5fcc127bbe6ffce9454ff98fd3bc3725e55
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e51b7ea151db1ca5d53a8cacef3b042e345175de
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367708"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949633"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Supervisión de Active Directory en busca de indicios de riesgo
 
@@ -32,10 +32,10 @@ Esta falta de supervisión de los registros de eventos activos sigue siendo una 
 
 A continuación se incluyen vínculos al blog de soporte técnico de Microsoft Official Enterprise. El contenido de estos blogs proporciona consejos, instrucciones y recomendaciones sobre la auditoría que le ayudarán a mejorar la seguridad de la infraestructura de Active Directory y son un recurso valioso al diseñar una directiva de auditoría.  
   
-* La [Auditoría de acceso a objetos global es mágica](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx) : describe un mecanismo de control denominado configuración de directiva de auditoría avanzada que se agregó a Windows 7 y windows Server 2008 R2 que le permite establecer los tipos de datos que desea auditar fácilmente y no los scripts y Auditpol. exe.  
-* [Introducción a los cambios de auditoría en windows 2008](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx) : presenta los cambios de auditoría realizados en windows Server 2008.  
-* [Trucos de auditoría fantásticos en vista y 2008](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx) : se explican las características de auditoría interesantes de Windows Vista y windows Server 2008 que se pueden usar para solucionar problemas o ver lo que sucede en su entorno.  
-* [Tienda única para la auditoría en Windows server 2008 y Windows Vista](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx) : contiene una compilación de características de auditoría e información contenida en windows Server 2008 y Windows Vista.  
+* La [Auditoría de acceso a objetos global es mágica](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx) : describe un mecanismo de control denominado configuración de directiva de auditoría avanzada que se agregó a Windows 7 y windows Server 2008 R2 que le permite establecer los tipos de datos que desea auditar fácilmente y no los scripts y Auditpol. exe.  
+* [Introducción a los cambios de auditoría en windows 2008](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx) : presenta los cambios de auditoría realizados en windows Server 2008.  
+* [Trucos de auditoría fantásticos en vista y 2008](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx) : se explican las características de auditoría interesantes de Windows Vista y windows Server 2008 que se pueden usar para solucionar problemas o ver lo que sucede en su entorno.  
+* [Tienda única para la auditoría en Windows server 2008 y Windows Vista](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx) : contiene una compilación de características de auditoría e información contenida en windows Server 2008 y Windows Vista.  
   
 Los vínculos siguientes proporcionan información acerca de las mejoras en la auditoría de Windows en Windows 8 y Windows Server 2012, e información sobre la auditoría de AD DS en Windows Server 2008.  
   
@@ -114,7 +114,7 @@ En la captura de pantalla siguiente se muestra un ejemplo de Auditpol. exe que e
 ![supervisar AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_5.gif)  
   
 > [!NOTE]  
-> Directiva de grupo no notifica siempre con precisión el estado de todas las directivas de auditoría habilitadas, mientras que Auditpol. exe sí lo hace. Consulte [obtención de la Directiva de auditoría efectiva en Windows 7 y 2008 R2](http://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx) para obtener más detalles.  
+> Directiva de grupo no notifica siempre con precisión el estado de todas las directivas de auditoría habilitadas, mientras que Auditpol. exe sí lo hace. Consulte [obtención de la Directiva de auditoría efectiva en Windows 7 y 2008 R2](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx) para obtener más detalles.  
   
 Cada categoría principal tiene varias subcategorías. A continuación se muestra una lista de categorías, sus subcategorías y una descripción de sus funciones.  
   
@@ -150,7 +150,7 @@ En entornos de dominio, la mayoría de los eventos de inicio de sesión de cuent
   
 #### <a name="account-management"></a>Administración de cuentas  
   
-##### <a name="user-account-management"></a>Administración de cuentas de usuario  
+##### <a name="user-account-management"></a>User Account Management (Administración de cuentas de usuario)  
 Esta subcategoría informa de cada evento de la administración de cuentas de usuario, como cuando se crea, cambia o elimina una cuenta de usuario. se cambia el nombre de una cuenta de usuario, se deshabilita o se habilita; o bien, se establece o se cambia una contraseña. Si esta configuración de directiva de auditoría está habilitada, los administradores pueden realizar un seguimiento de los eventos para detectar la creación de cuentas de usuario malintencionadas, accidentales y autorizadas.  
   
 ##### <a name="computer-account-management"></a>Administración de cuentas de equipo  
@@ -170,7 +170,7 @@ Esta subcategoría notifica otros eventos de administración de la cuenta.
   
 #### <a name="detailed-process-tracking"></a>Seguimiento detallado de procesos  
   
-##### <a name="process-creation"></a>Creación de procesos  
+##### <a name="process-creation"></a>Creación de un proceso  
 Esta subcategoría informa de la creación de un proceso y el nombre del usuario o programa que lo creó.  
   
 ##### <a name="process-termination"></a>Finalización del proceso  
@@ -190,7 +190,7 @@ Esta subcategoría informa cuando se tiene acceso a un objeto de AD DS. Solo los
 ##### <a name="directory-service-changes"></a>Cambios en el servicio de directorio  
 Esta subcategoría informa de los cambios en los objetos de AD DS. Los tipos de cambios que se indican son las operaciones de creación, modificación, movimiento y eliminación que se realizan en un objeto. La auditoría de cambios del servicio de directorio, si procede, indica los valores antiguos y nuevos de las propiedades cambiadas de los objetos que se cambiaron. Solo los objetos con SACL provocan que se generen eventos de auditoría y solo cuando se tiene acceso a ellos de forma que coincida con sus entradas SACL. Algunos objetos y propiedades no hacen que se generen eventos de auditoría debido a la configuración de la clase de objeto en el esquema. Esta subcategoría solo se aplica a los controladores de dominio.  
   
-##### <a name="directory-service-replication"></a>Replicación del servicio de directorio  
+##### <a name="directory-service-replication"></a>Replicación de servicio de directorio  
 Esta subcategoría informa cuando se inicia y finaliza la replicación entre dos controladores de dominio.  
   
 ##### <a name="detailed-directory-service-replication"></a>Replicación de servicio de directorio detallada  
@@ -198,7 +198,7 @@ Esta subcategoría informa de información detallada acerca de la información r
   
 #### <a name="logonlogoff"></a>Inicio/cierre de sesión  
   
-##### <a name="logon"></a>Expire  
+##### <a name="logon"></a>Inicio de sesión  
 Esta subcategoría informa cuando un usuario intenta iniciar sesión en el sistema. Estos eventos se producen en el equipo al que se accede. En el caso de los inicios de sesión interactivos, la generación de estos eventos se produce en el equipo en el que se ha iniciado sesión. Si se produce un inicio de sesión de red para tener acceso a un recurso compartido, estos eventos se generan en el equipo que hospeda el recurso al que se accede. Si esta opción se configura como **sin auditoría**, es difícil o imposible determinar qué usuario ha tenido acceso o ha intentado tener acceso a los equipos de la organización.  
   
 ##### <a name="network-policy-server"></a>Servidor de directivas de redes  
@@ -355,7 +355,7 @@ Ejemplos de sintaxis de Auditpol. exe:
 
 Microsoft proporciona un [script de ejemplo](https://support.microsoft.com/kb/921469) para los administradores que desean establecer una directiva de auditoría avanzada mediante el uso de un script en lugar de escribir manualmente en cada comando Auditpol. exe.  
   
-**Nota:** Directiva de grupo no notifica siempre con precisión el estado de todas las directivas de auditoría habilitadas, mientras que Auditpol. exe sí lo hace. Consulte [obtención de la Directiva de auditoría efectiva en Windows 7 y windows 2008 R2](http://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx) para obtener más detalles.  
+**Nota:** Directiva de grupo no notifica siempre con precisión el estado de todas las directivas de auditoría habilitadas, mientras que Auditpol. exe sí lo hace. Consulte [obtención de la Directiva de auditoría efectiva en Windows 7 y windows 2008 R2](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx) para obtener más detalles.  
   
 #### <a name="other-auditpol-commands"></a>Otros comandos Auditpol
 

@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: 0e848260dd4ba3b37d1351fba7c24dd3cd283e69
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 11d8abfc23cb0f192ed74a1082e83c8e0c8e87e9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393935"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950095"
 ---
 # <a name="storage-quality-of-service"></a>Calidad de servicio de almacenamiento
 
@@ -31,7 +31,7 @@ Puede utilizar la calidad de servicio de almacenamiento en Windows Server 2016 p
 
 En este documento se describe cómo se puede beneficiar su negocio de la nueva funcionalidad de calidad de servicio de almacenamiento. Para seguirlo, se supone que tiene conocimientos prácticos anteriores de Windows Server, clústeres de conmutación por error de Windows Server, el servidor de archivos de escalabilidad horizontal, Hyper-V y Windows PowerShell.
 
-## <a name="BKMK_Overview"></a>Visión  
+## <a name="BKMK_Overview"></a>Información general  
 En esta sección se describen los requisitos para usar la calidad de servicio de almacenamiento y, además, se incluye información general de una solución definida por software que usa calidad de servicio de almacenamiento y una lista de términos relacionados con la calidad de servicio de almacenamiento.  
 
 ### <a name="BKMK_Requirements"></a>Requisitos de QoS de almacenamiento  
@@ -45,7 +45,7 @@ La calidad de servicio de almacenamiento admite dos escenarios de implementació
 
     En el caso de la calidad de servicio de almacenamiento, el clúster de conmutación por error es necesario en los servidores de almacenamiento, pero no es obligatorio que los servidores de proceso estén en un clúster de conmutación por error. Todos los servidores (que se usan para Almacenamiento y Proceso) deben estar ejecutando Windows Server 2016.  
 
-    Si no tiene un clúster de servidores de archivos de escalabilidad horizontal implementado con fines de evaluación, compile uno usando los servidores o las máquinas virtuales existentes; para ello, siga las instrucciones detalladas contenidas en [Windows Server 2012 R2 Storage: Step-by-step with Storage Spaces, SMB Scale-Out and Shared VHDX (Physical)](http://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx) (Almacenamiento de Windows Server 2012 R2: paso a paso con espacios de almacenamiento, Escala horizontal SMB y VHDX compartido [físico]).  
+    Si no tiene un clúster de servidores de archivos de escalabilidad horizontal implementado con fines de evaluación, compile uno usando los servidores o las máquinas virtuales existentes; para ello, siga las instrucciones detalladas contenidas en [Windows Server 2012 R2 Storage: Step-by-step with Storage Spaces, SMB Scale-Out and Shared VHDX (Physical)](https://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx) (Almacenamiento de Windows Server 2012 R2: paso a paso con espacios de almacenamiento, Escala horizontal SMB y VHDX compartido [físico]).  
 
 -   **Hyper-V con volúmenes compartidos de clúster.** Este escenario presenta dos requisitos:  
 
@@ -74,8 +74,8 @@ Cuando hay cambios en las directivas de calidad de servicio de almacenamiento o 
 |Flujo|Cada identificador de archivos abierto por un servidor de Hyper-V en un archivo VHD o VHDX se considera un "flujo". Si una máquina virtual tiene dos discos duros virtuales conectados, tendrá 1 flujo al clúster de servidores de archivos por archivo. Si se comparte un VHDX con varias máquinas virtuales, este tendrá un 1 flujo por cada máquina virtual.|  
 |InitiatorName|Nombre de la máquina virtual que se notifica al servidor de archivos de escalabilidad horizontal para cada flujo.|  
 |InitiatorID|Un identificador que coincide con el identificador de la máquina virtual.  Siempre puede utilizarse para identificar de manera única máquinas virtuales de flujos individuales, incluso si las máquinas virtuales tienen el mismo valor en InitiatorName.|  
-|Directiva|Las directivas de calidad de servicio de almacenamiento se almacenan en la base de datos del clúster y tienen las siguientes propiedades: PolicyId, MinimumIOPS, MaximumIOPS, ParentPolicy y PolicyType.|  
-|`PolicyId`|Identificador único de una directiva.  Se genera de forma predeterminada, pero puede especificarse si se desea.|  
+|Directiva de|Las directivas de calidad de servicio de almacenamiento se almacenan en la base de datos del clúster y tienen las siguientes propiedades: PolicyId, MinimumIOPS, MaximumIOPS, ParentPolicy y PolicyType.|  
+|PolicyId|Identificador único de una directiva.  Se genera de forma predeterminada, pero puede especificarse si se desea.|  
 |MinimumIOPS|La E/S por segundo mínima normalizada que ofrecerá una directiva.  También conocido como "Reserva".|  
 |MaximumIOPS|La E/S por segundo máxima normalizada que estará limitada por una directiva.  También se conoce como "Límite".|  
 |Agregado |Tipo de directiva donde los valores MinimumIOPS y MaximumIOPS y el ancho de banda se comparten entre todos los flujos asignados a la directiva. Los VHD asignados a la directiva en ese sistema de almacenamiento tienen una sola asignación de ancho de banda de E/S para compartir entre todos.|  
@@ -122,7 +122,7 @@ La característica opcional **RSAT-Hyper-V-Tools** incluye el módulo de Windows
 -   Windows PowerShell: Add-WindowsFeature RSAT-Hyper-V-Tools  
 
 #### <a name="deploy-virtual-machines-to-run-workloads-for-testing"></a>Implementación de máquinas virtuales para ejecutar cargas de trabajo con fines de prueba  
-Necesitará algunas máquinas virtuales almacenadas en el servidor de archivos de escalabilidad horizontal con cargas de trabajo relevantes.  Si desea obtener algunas sugerencias acerca de cómo simular la carga y realizar pruebas de esfuerzo, vea la página siguiente de una herramienta recomendada (DiskSpd) y algunos ejemplos de su uso: [DiskSpd, PowerShell and storage performance: measuring IOPs, throughput and latency for both local disks and SMB file shares](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx) (DiskSpd, PowerShell y rendimiento del almacenamiento: medir E/S por segundo, rendimiento y latencia para discos locales y recursos compartidos de archivos de SMB).  
+Necesitará algunas máquinas virtuales almacenadas en el servidor de archivos de escalabilidad horizontal con cargas de trabajo relevantes.  Si desea obtener algunas sugerencias acerca de cómo simular la carga y realizar pruebas de esfuerzo, vea la página siguiente de una herramienta recomendada (DiskSpd) y algunos ejemplos de su uso: [DiskSpd, PowerShell and storage performance: measuring IOPs, throughput and latency for both local disks and SMB file shares](https://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx) (DiskSpd, PowerShell y rendimiento del almacenamiento: medir E/S por segundo, rendimiento y latencia para discos locales y recursos compartidos de archivos de SMB).  
 
 Los escenarios de ejemplo que se incluyen en esta guía contienen cinco máquinas virtuales. BuildVM1, BuildVM2, BuildVM3 y BuildVM4 están ejecutando una carga de trabajo de escritorio con demandas de almacenamiento de bajas a moderadas. TestVm1 está ejecutando una prueba comparativa de procesamiento de transacciones en línea con una demanda de almacenamiento alta.  
 
@@ -812,7 +812,7 @@ while ($true)
 }  
 ```  
 
-## <a name="frequently-asked-questions"></a>Preguntas más frecuentes  
+## <a name="frequently-asked-questions"></a>Preguntas frecuentes  
 
 ### <a name="how-do-i-retain-a-storage-qos-policy-being-enforced-for-my-virtual-machine-if-i-move-its-vhdvhdx-files-to-another-storage-cluster"></a>¿Cómo se puede mantener una directiva de calidad de servicio de almacenamiento aplicada a mi máquina virtual si muevo sus archivos VHD/VHDx a otro clúster de almacenamiento?  
 

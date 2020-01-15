@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: 506cd5cb44d93c9d7d221917505f76a2c5625baa
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 51768dc65128f27dcbf78cbfc776500ac3832615
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870555"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949832"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Inicio del viaje de Reglamento general de protección de datos (RGPD) para Windows Server 
 
@@ -28,7 +28,7 @@ Microsoft y nuestros clientes se encuentran ahora en el camino de lograr los obj
 
 Hemos explicado nuestro compromiso con la GDPR y la manera en que damos soporte a nuestros clientes en la entrada de blog [Get GDPR compliant with the Microsoft Cloud](https://blogs.microsoft.com/on-the-issues/2017/02/15/get-gdpr-compliant-with-the-microsoft-cloud/#hv52B68OZTwhUj2c.99) de nuestro Director de privacidad [Brendon Lynch](https://blogs.microsoft.com/on-the-issues/author/brendonlynch/) y la entrada de blog [Earning your trust with contractual commitments to the General Data Protection Regulation](https://blogs.microsoft.com/on-the-issues/2017/04/17/earning-trust-contractual-commitments-general-data-protection-regulation/#6QbqoGWXCLavGM63.99)"de [Rich Sauer](https://blogs.microsoft.com/on-the-issues/author/rsauer/), vicepresidente corporativo y consejero general adjunto de Microsoft.
 
-Aunque su viaje hasta el cumplimiento de GDPR puede parecer un desafío, estamos aquí para ayudarte. Para obtener información específica sobre la GDPR, nuestros compromisos y cómo comenzar el viaje, visita la [sección GDPR del Microsoft Trust Center](https://www.microsoft.com/en-us/trustcenter/privacy/gdpr).
+Aunque su viaje hasta el cumplimiento de GDPR puede parecer un desafío, estamos aquí para ayudarte. Para obtener información específica sobre la GDPR, nuestros compromisos y cómo comenzar el viaje, visita la [sección GDPR del Microsoft Trust Center](https://www.microsoft.com/trustcenter/privacy/gdpr).
 
 ## <a name="gdpr-and-its-implications"></a>GDPR y sus implicaciones
 La GDPR es una normativa compleja que puede requerir cambios importantes respecto a cómo se recopila, usan y administran datos personales. Microsoft cuenta con una larga trayectoria ayudando a nuestros clientes a cumplir complejas disposiciones reglamentarias y, en lo referente a tu preparación para la GDPR, somos tu partner en este viaje.
@@ -53,7 +53,7 @@ RGPD introduce definiciones específicas para datos genéticos (como, por ejempl
 ### <a name="examples-of-info-relating-to-an-identified-or-identifiable-natural-person-data-subject"></a>Ejemplos de información relacionada con una persona natural identificada o identificable (interesado)
 En esta lista se proporcionan ejemplos de varios tipos de información que se regularán a través de GDPR. No se trata de una lista exhaustiva.
 
--   NOMBRE
+-   Nombre
 
 -   Número de identificación (por ejemplo, SSN)
 
@@ -80,7 +80,7 @@ Dado todo lo que implica el cumplimiento de la GDPR, te recomendamos encarecidam
 
     ![Diagrama sobre cómo funcionan conjuntamente los 4 pasos clave de GDPR](../media/GDPR-Windows-Server-Overview/gdpr-steps-diagram.png)
 
-Para cada uno de los pasos, hemos descrito herramientas de ejemplo, recursos y características en distintas soluciones de Microsoft, que se pueden usar para ayudarte a cumplir los requisitos de ese paso. Aunque este artículo no es una guía completa de "procedimientos", hemos incluido vínculos para obtener más detalles y hay más información disponible en la [sección RGPD del centro de confianza de Microsoft](https://www.microsoft.com/en-us/trustcenter/privacy/gdpr).
+Para cada uno de los pasos, hemos descrito herramientas de ejemplo, recursos y características en distintas soluciones de Microsoft, que se pueden usar para ayudarte a cumplir los requisitos de ese paso. Aunque este artículo no es una guía completa de "procedimientos", hemos incluido vínculos para obtener más detalles y hay más información disponible en la [sección RGPD del centro de confianza de Microsoft](https://www.microsoft.com/trustcenter/privacy/gdpr).
 
 ## <a name="windows-server-security-and-privacy"></a>Seguridad y privacidad de Windows Server
 RGPD requiere la implementación de las medidas de seguridad técnicas y organizativas adecuadas para proteger los datos personales y los sistemas de procesamiento. En el contexto del RGPD, los entornos de servidores físicos y virtuales pueden procesar potencialmente datos personales y confidenciales. El procesamiento puede significar cualquier operación o conjunto de operaciones, como la recopilación, el almacenamiento y la recuperación de datos.
@@ -145,7 +145,7 @@ El chip incluye varios mecanismos de seguridad física que hacen que sea resiste
 
 La protección de dispositivo avanzada adicional relevante para el funcionamiento sin las infracciones de datos incluyen el Arranque seguro de Windows para ayudar a mantener la integridad del sistema al garantizar que el malware no se puede iniciar antes de las defensas del sistema.
 
-## <a name="windows-server-supporting-your-gdpr-compliance-journey"></a>Windows Server: Compatibilidad con el recorrido de cumplimiento de RGPD
+## <a name="windows-server-supporting-your-gdpr-compliance-journey"></a>Windows Server: compatibilidad con el recorrido de cumplimiento de RGPD
 Las principales características de Windows Server pueden ayudarle a implementar de forma eficaz y eficaz los mecanismos de seguridad y privacidad que RGPD requiere para el cumplimiento. Aunque el uso de estas características no garantizará su cumplimiento, se apoyará en sus esfuerzos por hacerlo.
 
 El sistema operativo del servidor se encuentra en una capa estratégica de la infraestructura de la organización, lo que ofrece nuevas oportunidades para crear niveles de protección frente a ataques que podrían robar datos e interrumpir su negocio. Los aspectos clave del RGPD, como la privacidad por diseño, la protección de datos y Access Control deben abordarse dentro de la infraestructura de TI en el nivel de servidor.
@@ -185,24 +185,24 @@ Si el administrador de DNS necesita realizar una actualización a uno de sus ser
 
 Imagínese este escenario si se robaron las credenciales del administrador de DNS. En primer lugar, puesto que las credenciales no tienen privilegios de administrador adjuntos, el atacante no podrá obtener acceso al servidor DNS (ni a ningún otro sistema) para realizar cambios. Si el atacante intenta solicitar privilegios para el servidor DNS, la autenticación de segundo factor le pedirá que confirmen su identidad. Puesto que no es probable que el atacante tenga el teléfono móvil del administrador de DNS, la autenticación no se realizará correctamente. Esto bloquearía el atacante del sistema y avisaría a la organización de TI de que las credenciales podrían estar en peligro.
 
-Además, muchas organizaciones usan la solución de [contraseña de administrador local gratuita (laps)](http://aka.ms/laps) como un mecanismo de administración JIT sencillo pero eficaz para sus sistemas de servidor y cliente. La capacidad de LAPS proporciona la administración de contraseñas de cuentas locales de equipos Unidos a un dominio. Las contraseñas se almacenan en Active Directory (AD) y se protegen mediante y Access Control lista (ACL), por lo que solo los usuarios válidos pueden leerla o solicitar su restablecimiento.
+Además, muchas organizaciones usan la solución de [contraseña de administrador local gratuita (laps)](https://aka.ms/laps) como un mecanismo de administración JIT sencillo pero eficaz para sus sistemas de servidor y cliente. La capacidad de LAPS proporciona la administración de contraseñas de cuentas locales de equipos Unidos a un dominio. Las contraseñas se almacenan en Active Directory (AD) y se protegen mediante y Access Control lista (ACL), por lo que solo los usuarios válidos pueden leerla o solicitar su restablecimiento.
 
-Como se indica en la [Guía de mitigación de robo de credenciales de Windows](https://www.microsoft.com/en-us/download/confirmation.aspx?id=54095), 
+Como se indica en la [Guía de mitigación de robo de credenciales de Windows](https://www.microsoft.com/download/confirmation.aspx?id=54095), 
 
-> "_las herramientas y las técnicas que los delincuentes usan para llevar a cabo el robo de credenciales y los ataques de reutilización mejoran, los atacantes malintencionados están encontrando más fácilmente alcanzar sus objetivos. El robo de credenciales suele basarse en prácticas operativas o en la exposición de credenciales de usuario, de modo que las mitigaciones eficaces requieren un enfoque holístico que aborda personas, procesos y tecnología. Además, estos ataques se basan en el ataque de robo de credenciales después de poner en peligro un sistema para expandir o conservar el acceso, por lo que las organizaciones deben contener infracciones rápidamente mediante la implementación de estrategias que impidan que los atacantes se muevan libremente y no se detecten en una red en peligro._ "
+> "_las herramientas y las técnicas que los delincuentes usan para llevar a cabo el robo de credenciales y los ataques de reutilización mejoran, los atacantes malintencionados están encontrando más fácilmente alcanzar sus objetivos. El robo de credenciales suele basarse en prácticas operativas o en la exposición de credenciales de usuario, de modo que las mitigaciones eficaces requieren un enfoque holístico que aborda personas, procesos y tecnología. Además, estos ataques se basan en el ataque de robo de credenciales después de poner en peligro un sistema para expandir o conservar el acceso, por lo que las organizaciones deben contener infracciones rápidamente mediante la implementación de estrategias que impidan que los atacantes se muevan libremente y no se detecten en una red en peligro "._
 
 Una consideración de diseño importante para Windows Server fue la mitigación del robo de credenciales, en particular, las credenciales derivadas. Credential Guard proporciona una seguridad significativamente mejorada contra el robo de credenciales derivadas y la reutilización mediante la implementación de un importante cambio arquitectónico en Windows diseñado para ayudar a eliminar ataques de aislamiento basados en hardware en lugar de simplemente intentar defenderse contra ellos.
 
 Al usar credenciales de protección de credenciales de Windows Defender, NTLM y Kerberos derivadas protegidas mediante la seguridad basada en la virtualización, se bloquean las técnicas y las herramientas de ataque de robo de credenciales usadas en muchos ataques dirigidos. Con la ejecución de malware en el sistema operativo con privilegios administrativos no se pueden extraer secretos que están protegidos con la seguridad basada en la virtualización. Aunque la protección de credenciales de Windows Defender es una mitigación eficaz, los ataques de amenazas persistentes probablemente se desplazarán a nuevas técnicas de ataque y también debe incorporar Device Guard, tal y como se describe a continuación, junto con otras estrategias de seguridad y arquitecturas.
 
-#### <a name="windows-defender-credential-guard"></a>Protección de credenciales de Windows Defender
+#### <a name="windows-defender-credential-guard"></a>Credential Guard de Windows Defender
 Credential Guard de Windows Defender utiliza la seguridad basada en la virtualización para aislar la información de credenciales, evitando que se intercepten los hash de contraseña o los vales de Kerberos. Utiliza un proceso de autoridad de seguridad local (LSA) aislado totalmente nuevo, al que no puede acceder el resto del sistema operativo. Todos los archivos binarios usados por la LSA aislada están firmados con certificados que se validan antes de iniciarlos en el entorno protegido, lo que hace que los ataques de tipo Pass-The-hash sean completamente ineficaces.
 
 Credential Guard de Windows Defender usa:
 
 - Seguridad basada en la virtualización (obligatorio). También se requiere:
 
-    - CPU de 64 bits
+    - CPU de 64 bits
 
     - Extensiones de virtualización de CPU, además de tablas de páginas extendidas
 
@@ -302,11 +302,11 @@ Puede proteger el TPM virtual (vTPM) mediante las claves de cifrado locales alma
 Una manera de mejorar la protección en entornos virtualizados es segmentar la red de forma que permita que las máquinas virtuales se comuniquen solo con los sistemas específicos que se necesitan para funcionar. Por ejemplo, si la aplicación no necesita conectarse a Internet, puede crear particiones y eliminar esos sistemas como destinos de atacantes externos. Las redes definidas por software (SDN) en Windows Server 2016 incluyen un firewall de red distribuida que le permite crear dinámicamente las directivas de seguridad que pueden proteger sus aplicaciones frente a ataques procedentes de dentro o fuera de una red. Este Firewall de red distribuido agrega capas a la seguridad permitiéndole aislar las aplicaciones en la red. Las directivas se pueden aplicar en cualquier parte de la infraestructura de red virtual, aislar el tráfico de máquina virtual a máquina virtual, el tráfico de máquina virtual a host o el tráfico de máquina virtual a Internet cuando sea necesario, ya sea para sistemas individuales que puedan estar en peligro o mediante programación en varias subredes. Las capacidades de red definidas por software de Windows Server 2016 también permiten enrutar o reflejar el tráfico entrante en dispositivos virtuales que no son de Microsoft. Por ejemplo, podría optar por enviar todo el tráfico de correo electrónico a través de una aplicación virtual de Barracuda para la protección adicional del filtrado de correo no deseado. Esto le permite disponer fácilmente en capas de seguridad adicionales tanto en el entorno local como en la nube.
 
 ### <a name="other-gdpr-considerations-for-servers"></a>Otras consideraciones de RGPD para servidores
-RGPD incluye requisitos explícitos para la notificación de brechas en los que una infracción de datos personales significa "_una infracción de seguridad que conduce a la destrucción accidental o ilícita, la pérdida, la alteración, la divulgación no autorizada de datos personales, o el acceso a ellos. se transmiten, almacenan o procesan de otra manera._ "  Obviamente, no puede empezar a avanzar para cumplir los estrictos requisitos de notificación de RGPD en 72 horas si no puede detectar la brecha en primer lugar.
+RGPD incluye requisitos explícitos para la notificación de brechas en los que una infracción de datos personales significa "_una infracción de seguridad que conduce a la destrucción, pérdida, alteración o divulgación accidental o ilícita de datos personales transmitidos, almacenados o procesados de otro modo"._  Obviamente, no puede empezar a avanzar para cumplir los estrictos requisitos de notificación de RGPD en 72 horas si no puede detectar la brecha en primer lugar.
 
-Como se indicó en las notas del producto de [Security Center de Windows, infracción de post: Tratamiento de amenazas avanzadas](http://wincom.blob.core.windows.net/documents/Post_Breach_Dealing_with_Advanced_Threats_Whitepaper.pdf)
+Como se indicó en las notas del producto de Windows Security Center, [post infracción: tratamiento de amenazas avanzadas](http://wincom.blob.core.windows.net/documents/Post_Breach_Dealing_with_Advanced_Threats_Whitepaper.pdf)
 
-> "_A diferencia de la prefracción previa, la infracción posterior supone que ya se ha producido una infracción: actuar como una caja negra y un investigador de la escena de delitos (CSI). Después del incumplimiento, los equipos de seguridad proporcionan la información y el conjunto de herramientas necesarios para identificar, investigar y responder a los ataques que de otro modo permanecerán sin detectar y por debajo del radar._ "
+> "_A diferencia de la prefracción previa, la infracción posterior supone que ya se ha producido una infracción: actuar como una caja negra y un investigador de la escena de delitos (CSI). La infracción posterior proporciona a los equipos de seguridad la información y el conjunto de herramientas necesarios para identificar, investigar y responder a los ataques que, de lo contrario, permanecerán sin detectar y por debajo del radar "._
 
 En esta sección, veremos cómo Windows Server puede ayudarle a cumplir sus obligaciones de notificación de incumplimiento de RGPD. Esto comienza con la comprensión de los datos de amenazas subyacentes disponibles para Microsoft que se recopilan y analizan para su beneficio y cómo, a través de protección contra amenazas avanzada (ATP) de Windows Defender, los datos pueden ser críticos para usted.
 
@@ -317,7 +317,7 @@ Al aplicar una combinación de procesos manuales y automatizados, aprendizaje au
 
 ![Gráfico de seguridad de Microsoft Intelligence](../media/GDPR-Windows-Server-Overview/gdpr-intelligent-security-graph.png)
 
-El ámbito de los intervalos de inteligencia de amenazas de Microsoft, literalmente, miles de millones de puntos de datos: 35 mil millones mensajes examinados mensualmente, 1 mil millones clientes a través de segmentos de consumidores y empresas que obtienen acceso a más de 200 servicios en la nube y 14 mil millones autenticaciones realizadas a diario. Microsoft reúne todos estos datos en su nombre para crear los Intelligent Security Graph que pueden ayudarle a proteger la puerta de la puerta de una forma dinámica de mantener la seguridad, ser productivo y cumplir los requisitos de RGPD.
+El ámbito de los intervalos de inteligencia de amenazas de Microsoft, literalmente, miles de millones de puntos de datos: 35 mil millones mensajes examinados mensualmente, 1 mil millones clientes a través de segmentos de empresa y de consumidores que obtienen acceso a más de 200 servicios en la nube y 14 mil millones autenticaciones realizadas diario. Microsoft reúne todos estos datos en su nombre para crear los Intelligent Security Graph que pueden ayudarle a proteger la puerta de la puerta de una forma dinámica de mantener la seguridad, ser productivo y cumplir los requisitos de RGPD.
 
 #### <a name="detecting-attacks-and-forensic-investigation"></a>Detección de ataques e investigación forense
 Incluso las mejores defensas de extremo se pueden infringir a la larga, a medida que los ciberataques se vuelven más sofisticados y dirigidos. Se pueden usar dos funciones para ayudar a detectar posibles infracciones: protección contra amenazas avanzada (ATP) de Windows Defender y Microsoft Advanced Threat Analytics (ATA).
@@ -341,9 +341,9 @@ ATA es un producto local que ayuda a detectar el riesgo de identidad en una orga
 
 |Tipo de ataque |Descripción |
 |---------|---------|
-|Ataques malintencionados |Estos ataques se detectan mediante la búsqueda de ataques a partir de una lista conocida de tipos de ataque, incluidos:<ul><li>Pass-The-ticket (PtT)</li><li>Pass-The-hash (PtH)</li><li>Overpass-The-hash</li><li>PAC falsificada (MS14-068)</li><li>Golden Ticket</li><li>Replicaciones malintencionadas</li><li>Reconocimiento</li><li>Fuerza bruta</li><li>Ejecución remota</li></ul>Para obtener una lista completa de los ataques malintencionados que se pueden detectar y su descripción, vea [¿qué actividades sospechosas puede detectar ATA?](https://docs.microsoft.com/advanced-threat-analytics/understand-explore/ata-threats).|
-|Comportamiento anómalo |Estos ataques se detectan mediante el análisis de comportamiento y usan el aprendizaje automático para identificar actividades cuestionables, entre las que se incluyen:<ul><li>Inicios de sesión anómalos</li><li>Amenazas desconocidas</li><li>Uso compartido de contraseñas</li><li>Movimiento lateral</li></ul>|
-|Problemas y riesgos de seguridad |Estos ataques se detectan examinando la configuración actual de la red y del sistema, incluidos:<ul><li>Confianza rota</li><li>Protocolos débiles</li><li>Vulnerabilidades de protocolo conocidas</li></ul>|
+|Ataques malintencionados |Estos ataques se detectan mediante la búsqueda de ataques a partir de una lista conocida de tipos de ataque, incluidos:<ul><li>Pass-the-Ticket (PtT)</li><li>Pass-the-Hash (PtH)</li><li>Overpass-the-Hash</li><li>PAC falsificado (MS14-068)</li><li>Golden ticket</li><li>Replicaciones malintencionadas</li><li>Reconocimiento</li><li>Fuerza bruta</li><li>Ejecución remota</li></ul>Para obtener una lista completa de los ataques malintencionados que se pueden detectar y su descripción, vea [¿qué actividades sospechosas puede detectar ATA?](https://docs.microsoft.com/advanced-threat-analytics/understand-explore/ata-threats).|
+|Comportamiento anómalo |Estos ataques se detectan mediante el análisis de comportamiento y usan el aprendizaje automático para identificar actividades cuestionables, entre las que se incluyen:<ul><li>Inicios de sesión anómalos</li><li>Amenazas desconocidas</li><li>Uso compartido de contraseña</li><li>Movimiento lateral</li></ul>|
+|Problemas y riesgos de seguridad |Estos ataques se detectan examinando la configuración actual de la red y del sistema, incluidos:<ul><li>Confianza rota</li><li>Protocolos débiles</li><li>Vulnerabilidades conocidas de protocolos</li></ul>|
 
 Puede usar ATA para ayudar a detectar atacantes que intenten poner en peligro las identidades con privilegios. Para obtener más información sobre la implementación de ATA, consulte los temas planeación, diseño e implementación de la [documentación de Advanced Threat Analytics](https://docs.microsoft.com/advanced-threat-analytics/).
 
@@ -359,9 +359,9 @@ Puede usar ATA para ayudar a detectar atacantes que intenten poner en peligro la
 
 - **Protección de flujo de control:** https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx
 
-- **Seguridad y garantía:** https://docs.microsoft.com/windows-server/security/security-and-assurance
+- **Seguridad y seguros:** https://docs.microsoft.com/windows-server/security/security-and-assurance
 
-## <a name="disclaimer"></a>Declinación de responsabilidades
+## <a name="disclaimer"></a>Descargo de responsabilidades
 Este artículo es un comentario sobre la GDPR, como la interpreta Microsoft, desde la fecha de publicación. Hemos dedicado mucho tiempo a RGPD y me gustaría pensar en su intención y el significado. Pero la aplicación de GDPR se refiere a hechos muy concretos y no todos los aspectos y las interpretaciones de la GDPR están bien establecidos.
 
 Como resultado, este artículo se proporciona solo con fines informativos y no se debería usar como asesoramiento legal o para determinar la manera en que la GDPR puede aplicarse para ti y tu organización. Te animamos a trabajar con un profesional con cualificación legal para hablar de la GDPR, de cómo se aplica de manera específica a tu organización y de la mejor manera para garantizar el cumplimiento.

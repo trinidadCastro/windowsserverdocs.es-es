@@ -7,12 +7,12 @@ audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 88f707cc02514dc13c212c6462c47e4d3a94b5f5
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 433221f9846e9e071557b5537974b5739131742b
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654586"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949694"
 ---
 # <a name="advanced-troubleshooting-server-message-block-smb"></a>Solución avanzada de problemas de bloque de mensajes del servidor (SMB)
 
@@ -158,7 +158,7 @@ Tanto el cliente SMB como el servidor SMB tienen una estructura de registro de e
 
 ## <a name="smb-related-system-files"></a>Archivos del sistema relacionados con SMB
 
-En esta sección se enumeran los archivos del sistema relacionados con SMB. Para mantener actualizados los archivos del sistema, asegúrese de que está instalado el [paquete acumulativo de actualizaciones](https://support.microsoft.com/en-us/help/4498140/windows-10-update-history) más reciente.
+En esta sección se enumeran los archivos del sistema relacionados con SMB. Para mantener actualizados los archivos del sistema, asegúrese de que está instalado el [paquete acumulativo de actualizaciones](https://support.microsoft.com/help/4498140/windows-10-update-history) más reciente.
 
 Los archivos binarios de cliente SMB que se enumeran en **% WINDIR%\\system32\\controladores**:
 

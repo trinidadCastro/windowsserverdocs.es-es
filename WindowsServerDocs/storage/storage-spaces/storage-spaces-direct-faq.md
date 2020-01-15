@@ -9,12 +9,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: df9dac8c761a83a13fb937a99cba3697dce95201
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 19dcc1c57fe7c7eea74b003553a0b0a6ab5508aa
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402792"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950235"
 ---
 # <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>Espacios de almacenamiento directo preguntas más frecuentes (p + f)
 
@@ -44,7 +44,7 @@ De forma predeterminada, al configurar Espacios de almacenamiento directo median
 
 No. De forma predeterminada, si usa el tipo de dispositivo único para crear el grupo, no configurará los discos de caché y se usarán todos los discos para la capacidad. Puede agregar discos de NVME a la configuración y los discos de NVME se configurarán para la memoria caché.
  
-## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>He configurado un dominio de error de 2 bastidores: El bastidor 1 tiene 2 dominios de error, el bastidor 2 tiene un dominio de error. Cada servidor tiene 4 dispositivos de capacidad 100 GB. ¿Puedo usar todos los 1.200 GB de espacio del grupo?
+## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>He configurado un dominio de error de 2 bastidores: el bastidor 1 tiene 2 dominios de error, el bastidor 2 tiene un dominio de error. Cada servidor tiene 4 dispositivos de capacidad 100 GB. ¿Puedo usar todos los 1.200 GB de espacio del grupo?
 
 No, solo puede usar 800 GB. En un dominio de error de bastidor, debe asegurarse de que tiene una configuración de reflejo bidireccional para que cada Chuck y sus elementos duplicados se coloquen en un bastidor diferente.
  
@@ -58,7 +58,7 @@ Use la utilidad integrada PerfMon para inspeccionar los errores de caché. Revis
  
 ## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>¿Hay una calculadora que muestre el tamaño exacto de los discos que se reservan para la caché, la capacidad y la resistencia que me permitan planear mejor?
 
-Puede usar la calculadora de espacios de almacenamiento para ayudarle con la planeación. Está disponible en http://aka.ms/s2dcalc.
+Puede usar la calculadora de espacios de almacenamiento para ayudarle con la planeación. Está disponible en https://aka.ms/s2dcalc.
  
 ## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>¿Cuál es la mejor configuración que se recomienda al configurar 6 servidores y 3 bastidores?
 
@@ -76,7 +76,7 @@ Get-PhysicalDisk -SerialNumber <SerialNumber> | Enable-StorageMaintenanceMode
 
 Se recomienda que se ponga en contacto con el proveedor de hardware para comprobar la compatibilidad. Los proveedores de hardware prueban la solución en su hardware y comentan si es compatible o no. Por ejemplo, en el momento de redactar este documento, los servidores como R730/R730xd/R630 con más de 8 ranuras de unidad pueden admitir SES y son compatibles con Espacios de almacenamiento directo. Dell solo admite el HBA330 con Espacios de almacenamiento directo. R620 no admite SES y no es compatible con Espacios de almacenamiento directo.
 
-Para obtener más información de compatibilidad de hardware, visite el siguiente sitio web: Catálogo de Windows Server
+Para obtener más información de compatibilidad de hardware, visite el siguiente sitio web: Catálogo de Windows Server
  
 ## <a name="how-does-storage-spaces-direct-make-use-of-ses"></a>¿Cómo Espacios de almacenamiento directo usar SES?
 

@@ -1,5 +1,5 @@
 ---
-title: Información general de NTLM
+title: NTLM Overview
 description: Seguridad de Windows Server
 ms.custom: na
 ms.prod: windows-server
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: b8dec2877646fd2bfe00da9d5c9047e8edfd6f1d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 74e6e05df037041b6c80239e26b39b5566474326
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386258"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949755"
 ---
-# <a name="ntlm-overview"></a>Información general de NTLM
+# <a name="ntlm-overview"></a>NTLM Overview
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
@@ -55,9 +55,9 @@ En la tabla siguiente, se enumeran los recursos relevantes para NTLM y otras tec
 |**Evaluación del producto**|[Introducción a la restricción de la autenticación NTLM](https://technet.microsoft.com/library/dd560653.aspx)<br /><br />[Cambios en la autenticación NTLM](https://technet.microsoft.com/library/dd566199.aspx)|
 |**Planeamiento**|[Guía de modelado de amenazas de infraestructura de ti](https://technet.microsoft.com/library/dd941826.aspx)<br /><br />[Amenazas y contramedidas: configuración de seguridad en Windows Server 2003 y Windows XP](https://technet.microsoft.com/library/dd162275.aspx)<br /><br />[Guía de amenazas y contramedidas: configuración de seguridad en Windows Server 2008 y Windows Vista](https://technet.microsoft.com/library/dd349791.aspx)<br /><br />[Guía de amenazas y contramedidas: configuración de seguridad en Windows Server 2008 R2 y Windows 7](https://technet.microsoft.com/library/hh125921.aspx)|
 |**Implementación**|[protección ampliada para la autenticación](https://support.microsoft.com/kb/968389)<br /><br />[Guía de auditoría y restricción del uso de NTLM](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)<br /><br />[Pregunte al equipo de servicios de directorio: bloqueo de NTLM y las metodologías de análisis y auditoría de la aplicación en Windows 7.](https://blogs.technet.com/askds/archive/2009/10/08/ntlm-blocking-and-you-application-analysis-and-auditing-methodologies-in-windows-7.aspx)<br /><br />[Blog de autenticación de Windows](https://blogs.technet.com/authentication/)<br /><br />[Configuración de MaxConcurrentAPI para el paso de NTLM\-a través de la autenticación](https://social.technet.microsoft.com/wiki/contents/articles/9759.configuring-maxconcurrentapi-for-ntlm-pass-through-authentication.aspx)|
-|**DevelopMentor**|[Microsoft NTLM \(Windows\)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)<br /><br />[\[MS\-NLMP\]: NT LAN Manager \(NTLM\) especificación del Protocolo de autenticación](https://msdn.microsoft.com/library/cc236621(PROT.10).aspx)<br /><br />[\[MS\-NNTP\]: NT LAN Manager \(NTLM\) Authentication: Protocolo de transferencia de noticias de red \(extensión NNTP\)](https://msdn.microsoft.com/library/cc236774(PROT.10).aspx)<br /><br />[\[MS\-NTHT\]: especificación del Protocolo NTLM a través de HTTP](https://msdn.microsoft.com/library/cc237488(PROT.10).aspx)|
+|**Desarrollo**|[Microsoft NTLM \(Windows\)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)<br /><br />[\[MS\-NLMP\]: NT LAN Manager \(NTLM\) especificación del Protocolo de autenticación](https://msdn.microsoft.com/library/cc236621(PROT.10).aspx)<br /><br />[\[MS\-NNTP\]: NT LAN Manager \(NTLM\) Authentication: Protocolo de transferencia de noticias de red \(extensión NNTP\)](https://msdn.microsoft.com/library/cc236774(PROT.10).aspx)<br /><br />[\[MS\-NTHT\]: especificación del Protocolo NTLM a través de HTTP](https://msdn.microsoft.com/library/cc237488(PROT.10).aspx)|
 |**Solución de problemas**|No disponible aún|
-|**Recursos de la comunidad**|[Este caballo está inactivo todavía: cuellos de botella de NTLM y el tiempo de ejecución de RPC](http://blogs.technet.com/b/askds/archive/2011/09/15/is-this-horse-dead-yet-ntlm-bottlenecks-and-the-rpc-runtime.aspx)|
+|**Recursos de la comunidad**|[Este caballo está inactivo todavía: cuellos de botella de NTLM y el tiempo de ejecución de RPC](https://blogs.technet.com/b/askds/archive/2011/09/15/is-this-horse-dead-yet-ntlm-bottlenecks-and-the-rpc-runtime.aspx)|
 
 
 

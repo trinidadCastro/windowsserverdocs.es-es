@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 498e72377197bd2185a518949520275c36295a77
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee14a2bd9290dbaa5653640a80528d163635142d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355078"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947211"
 ---
 # <a name="additional-performance-tuning-resources"></a>Recursos adicionales para ajustar el rendimiento
 
@@ -25,7 +25,7 @@ Use los vínculos de este tema para obtener más información sobre los concepto
 
 -   [El Consejo de rendimiento de procesamiento de transacciones](http://www.tpc.org/)
 
--   [Windows Assessment and Deployment Kit](https://developer.microsoft.com/en-us/windows/hardware/windows-assessment-deployment-kit)
+-   [Windows Assessment and Deployment Kit](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
 
 ## <a name="power-management-tuning-resources"></a>Recursos de optimización de la administración de energía
 
@@ -33,25 +33,25 @@ Use los vínculos de este tema para obtener más información sobre los concepto
 
 -   [Usar PowerCfg para evaluar la eficacia energética del sistema](https://technet.microsoft.com/library/cc748940.aspx)
 
--   [Herramienta de directiva de afinidad de interrupción](https://support.microsoft.com/en-us/kb/252867)
+-   [Herramienta de directiva de afinidad de interrupción](https://support.microsoft.com/kb/252867)
 
 ## <a name="networking-subsystem-tuning-resources"></a>Recursos de ajuste del subsistema de red
 
--   [Redes escalables: Eliminar el cuello de botella de procesamiento de recepción: Introducción a RSS](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc)
+-   [Redes escalables: eliminar el cuello de botella de procesamiento de recepción: Introducción a RSS](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc)
 
 -   [Plataforma de filtrado de Windows](https://msdn.microsoft.com/windows/hardware/gg463267.aspx)
 
--   [Guía de implementación de redes: Implementación de características de red de alta velocidad](https://technet.microsoft.com/library/gg162681.aspx)
+-   [Guía de implementación de redes: implementación de características de red de alta velocidad](https://technet.microsoft.com/library/gg162681.aspx)
 
 ## <a name="storage-subsystem-tuning-resources"></a>Recursos de ajuste del subsistema de almacenamiento
 
--   [Análisis de rendimiento del subsistema de disco para Windows](https://download.microsoft.com/download/e/b/a/eba1050f-a31d-436b-9281-92cdfeae4b45/subsys_perf.doc) (Las partes de este documento no están actualizadas, pero muchas de las observaciones y directrices generales capturadas siguen siendo precisas y relevantes).
+-   [Análisis de rendimiento del subsistema de disco para Windows](https://download.microsoft.com/download/e/b/a/eba1050f-a31d-436b-9281-92cdfeae4b45/subsys_perf.doc) (las partes de este documento no están actualizadas, pero muchas de las observaciones y directrices generales capturadas siguen siendo precisas y relevantes).
 
 ## <a name="file-server-tuning-resources"></a>Recursos de optimización del servidor de archivos
 
 -   [Directrices para la optimización del rendimiento de los servicios de Microsoft para Network File System](https://technet.microsoft.com/library/bb463205.aspx)
 
--   [\[MS-FSSO\]: Información general del sistema de servicios de acceso a archivos](https://download.microsoft.com/download/5/0/1/501ED102-E53F-4CE0-AA6B-B0F93629DDC6/Windows/%5bMS-FSSO%5d.pdf)
+-   [\[MS-FSSO\]: información general del sistema de servicios de acceso a archivos](https://download.microsoft.com/download/5/0/1/501ED102-E53F-4CE0-AA6B-B0F93629DDC6/Windows/%5bMS-FSSO%5d.pdf)
 
 -   [Deshabilitación de la herramienta de diagnóstico de autoajuste de TCP](https://support.microsoft.com/kb/967475)
 
@@ -65,17 +65,17 @@ Use los vínculos de este tema para obtener más información sobre los concepto
 
 -   [Guía de configuración de Memoria dinámica de Hyper-V](https://technet.microsoft.com/library/ff817651.aspx)
 
--   [Equilibrio de nodo NUMA](http://blogs.technet.com/b/winserverperformance/archive/2009/12/10/numa-node-balancing.aspx)
+-   [Equilibrio de nodo NUMA](https://blogs.technet.com/b/winserverperformance/archive/2009/12/10/numa-node-balancing.aspx)
 
 -   [Proveedor WMI de Hyper-V](https://msdn2.microsoft.com/library/cc136992(VS.85).aspx)
 
 -   [Clases WMI de Hyper-V](https://msdn.microsoft.com/library/cc136986(VS.85).aspx)
 
--   [Acerca de los sistemas operativos Virtual Machines e invitados](https://technet.microsoft.com/library/cc794868(v=ws.10))
+-   [Acerca de las máquinas virtuales y sistemas operativos invitados.](https://technet.microsoft.com/library/cc794868(v=ws.10))
 
--   [Optimización y solución de problemas de almacenamiento de Hyper-V](http://blogs.msdn.com/b/microsoft_press/archive/2013/07/24/new-book-optimizing-and-troubleshooting-hyper-v-storage.aspx)
+-   [Optimización y solución de problemas de almacenamiento de Hyper-V](https://blogs.msdn.com/b/microsoft_press/archive/2013/07/24/new-book-optimizing-and-troubleshooting-hyper-v-storage.aspx)
 
--   [Optimización y solución de problemas de redes de Hyper-V](http://blogs.msdn.com/b/microsoft_press/archive/2013/07/12/rtm-d-today-optimizing-and-troubleshooting-hyper-v-networking.aspx)
+-   [Optimización y solución de problemas de redes de Hyper-V](https://blogs.msdn.com/b/microsoft_press/archive/2013/07/12/rtm-d-today-optimizing-and-troubleshooting-hyper-v-networking.aspx)
 
 ## <a name="print-server-tuning-resources"></a>Recursos de optimización del servidor de impresión
 
@@ -97,9 +97,9 @@ Use los vínculos de este tema para obtener más información sobre los concepto
 
 -   [Optimización del rendimiento para el procesamiento de transacciones en línea (OLTP)](https://msdn.microsoft.com/library/windows/hardware/dn567642(v=vs.85).aspx)
 
--   [Cómo: Configuración de SQL Server para que use NUMA de software](https://go.microsoft.com/fwlink/?LinkId=98292)
+-   [Cómo: configurar SQL Server para que use NUMA de software](https://go.microsoft.com/fwlink/?LinkId=98292)
 
--   [Cómo: Asignación de puertos TCP/IP a nodos NUMA](https://go.microsoft.com/fwlink/?LinkId=98293)
+-   [Cómo: asignar puertos TCP/IP a nodos NUMA](https://go.microsoft.com/fwlink/?LinkId=98293)
 
 -   [ALTER SERVER CONFIGURATION (Transact-SQL)](https://msdn.microsoft.com/library/ee210585.aspx)
 

@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0d6133a6fb43b8624dc1329db632fb5dd4aa070
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4f5d2cfa8383bcf3c0813b272f8c4828473b8df9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358455"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948607"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>Directivas de Access Control de cliente en AD FS 2,0
 Las directivas de acceso de cliente en Servicios de federación de Active Directory (AD FS) 2,0 permiten restringir o conceder a los usuarios acceso a los recursos.  En este documento se describe cómo habilitar las directivas de acceso de cliente en AD FS 2,0 y cómo configurar los escenarios más comunes.
@@ -25,7 +25,7 @@ Para habilitar la Directiva de acceso de cliente, siga los pasos que se indican 
 
 ### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>Paso 1: instalar el paquete acumulativo de actualizaciones 2 para AD FS paquete 2,0 en los servidores de AD FS
 
-Descargue el paquete [acumulativo de actualizaciones 2 para servicios de Federación de Active Directory (AD FS) (AD FS) 2,0](https://support.microsoft.com/en-us/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0) e instálelo en todos los servidores proxy de Federación y de servidor de Federación.
+Descargue el paquete [acumulativo de actualizaciones 2 para servicios de Federación de Active Directory (AD FS) (AD FS) 2,0](https://support.microsoft.com/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0) e instálelo en todos los servidores proxy de Federación y de servidor de Federación.
 
 ### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>Paso 2: agregar cinco reglas de notificación a la Active Directory confianza del proveedor de notificaciones
 
@@ -45,7 +45,7 @@ En la Active Directory confianza del proveedor de notificaciones, cree una nueva
 5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. en tipo de notificaciones entrantes, escriba la siguiente dirección URL de tipo de notificaciones y, después, seleccione pasar por todos los valores de notificaciones.</br>
         `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`</br>
 6. Para comprobar la regla, selecciónela en la lista, haga clic en Editar regla y, a continuación, haga clic en ver lenguaje de reglas. El lenguaje de reglas de notificaciones debe aparecer de la siguiente manera: `c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
-7. Haga clic en finalizar.
+7. Haga clic en Finalizar.
 8. En el cuadro de diálogo editar reglas de notificaciones, haga clic en Aceptar para guardar las reglas.
 9. Repita los pasos del 2 al 6 para crear una regla de notificaciones adicional para cada uno de los cuatro tipos de notificaciones restantes que se muestran a continuación hasta que se hayan creado las cinco reglas.
 
@@ -83,7 +83,7 @@ Este escenario de directiva de acceso de cliente permite el acceso desde todos l
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");` 
-6. Haga clic en finalizar. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
+6. Haga clic en Finalizar. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
 7. Para guardar la regla, en el cuadro de diálogo editar reglas de notificaciones, haga clic en Aceptar.
 
 >[!NOTE]
@@ -110,7 +110,7 @@ En el ejemplo siguiente se permite el acceso a todas las aplicaciones de Office 
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
-6. Haga clic en finalizar. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
+6. Haga clic en Finalizar. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
 7. Para guardar la regla, en el cuadro de diálogo editar reglas de notificaciones, haga clic en Aceptar.
 
 >[!NOTE]
@@ -136,7 +136,7 @@ El conjunto de reglas se basa en la regla de autorización de emisión predeterm
     Value=~"customer-provided public ip address regex"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value == "/adfs/ls/"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
-6. Haga clic en finalizar. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
+6. Haga clic en Finalizar. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
 7. Para guardar la regla, en el cuadro de diálogo editar reglas de notificaciones, haga clic en Aceptar.
 
 ### <a name="scenario-4-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>Escenario 4: bloquear todo el acceso externo a Office 365 para los grupos de Active Directory designados
@@ -156,7 +156,7 @@ En el ejemplo siguiente se habilita el acceso desde clientes internos basados en
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
-6. Haga clic en finalizar. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
+6. Haga clic en Finalizar. Compruebe que la nueva regla aparece inmediatamente debajo de la regla permitir el acceso a todos los usuarios de la lista reglas de autorización de emisión.
 7. Para guardar la regla, en el cuadro de diálogo editar reglas de notificaciones, haga clic en Aceptar.
 
 

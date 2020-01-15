@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: v-tea; kenbrunf
 author: Teresa-Motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: 8b17d7f5c7774c1c332d49962b14fe31128f1a27
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c1cad3242d3abf2838a5aaf71d21c68152bc9b7f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370433"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947276"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Planeación de la capacidad para Active Directory Domain Services
 
@@ -79,10 +79,10 @@ Teniendo en cuenta estas consideraciones, el ciclo de planeamiento de la capacid
 
 Para optimizar el rendimiento, asegúrese de que estos componentes principales se seleccionan correctamente y se optimizan para las cargas de la aplicación:
 
-1. Memoria
+1. Memory
 1. Red
 1. Almacenamiento
-1. Procesador
+1. Encargado del tratamiento de datos
 1. Inicio de sesión de red
 
 Los requisitos básicos de almacenamiento de AD DS y el comportamiento general del software cliente bien escrito permiten entornos con un máximo de 10.000 a 20.000 usuarios a una gran inversión en el planeamiento de la capacidad con respecto al hardware físico, como casi cualquier servidor moderno. el sistema de clase controlará la carga. Dicho esto, en la tabla siguiente se resume cómo evaluar un entorno existente para seleccionar el hardware adecuado. Cada componente se analiza en detalle en secciones posteriores para ayudar a AD DS los administradores a evaluar su infraestructura mediante recomendaciones de línea de base y entidades de seguridad específicas del entorno.
@@ -99,10 +99,10 @@ En general:
 
 #### <a name="new-environment"></a>Nuevo entorno
 
-| Componente | Cálculos |
+| Componente | Estimaciones |
 |-|-|
 |Almacenamiento/tamaño de la base de datos|de 40 KB a 60 KB para cada usuario|
-|RAM|Tamaño de la base de datos<br />Recomendaciones del sistema operativo base<br />Aplicaciones de terceros|
+|MEMORIA RAM|Tamaño de la base de datos<br />Recomendaciones del sistema operativo base<br />Aplicaciones de terceros|
 |Red|1 GB|
 |CPU|1000 usuarios simultáneos para cada núcleo|
 
@@ -112,7 +112,7 @@ En general:
 |-|-|-|
 |Almacenamiento/tamaño de la base de datos|La sección titulada "para activar el registro de espacio en disco que ha liberado la desfragmentación" en [límites de almacenamiento](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10))| |
 |Rendimiento de almacenamiento/base de datos|<ul><li>"LogicalDisk ( *\<unidad\>de base de datos Ntds*) \Avg segundos/lectura," "LogicalDisk ( *\<unidad\>de base de datos Ntds*) \Avg de disco/escritura", "LogicalDisk ( *\<unidad de base de datos Ntds) )\>* \Avg de segundos de disco/transferencia "</li><li>"LogicalDisk ( *\<unidad\>de base de datos Ntds*) \ lecturas/seg." "LogicalDisk ( *\<unidad\>de base de datos Ntds*) \ escrituras/seg." "LogicalDisk ( *\<unidad\>debasededatosNtds*) \ Transferencias/s "</li></ul>|<ul><li>El almacenamiento tiene dos preocupaciones<ul><li>El espacio disponible, que con el tamaño del almacenamiento basado en el eje actual y en la SSD, es irrelevante para la mayoría de los entornos de AD.</li> <li>Operaciones de entrada/salida (e/s) disponibles: en muchos entornos, a menudo se pasa por alto. Pero es importante evaluar solo los entornos en los que no hay suficiente RAM para cargar toda la base de datos NTDS en la memoria.</li></ul><li>El almacenamiento puede ser un tema complejo y debe implicar la experiencia del fabricante del hardware para que el tamaño sea adecuado. Especialmente con escenarios más complejos, como escenarios SAN, NAS e iSCSI. Sin embargo, en general, el costo por Gigabyte de almacenamiento suele ser la oposición directa del costo por e/s:<ul><li>RAID 5 tiene un costo menor por Gigabyte que RAID 1, pero RAID 1 tiene un costo menor por e/s</li><li>Las unidades de disco duro basadas en el eje tienen un costo menor por Gigabyte, pero las SSD tienen un costo menor por e/s</li></ul><li>Después de reiniciar el equipo o el servicio Active Directory Domain Services, la caché del motor de almacenamiento extensible (ESE) está vacía y el rendimiento se enlazará en disco mientras se calienta la memoria caché.</li><li>En la mayoría de los entornos, AD es una e/s de lectura intensiva en un patrón aleatorio a los discos, lo que evita muchas de las ventajas del almacenamiento en caché y las estrategias de optimización de lectura.  Además, AD tiene una caché más grande en la memoria que la mayoría de las memorias caché del sistema de almacenamiento.</li></ul>
-|RAM|<ul><li>Tamaño de la base de datos</li><li>Recomendaciones del sistema operativo base</li><li>Aplicaciones de terceros</li></ul>|<ul><li>El almacenamiento es el componente más lento de un equipo. Cuanto más pueda residir en la RAM, menos será necesario ir a disco.</li><li>Asegúrese de que hay suficiente RAM asignada para almacenar el sistema operativo, los agentes (antivirus, copia de seguridad, supervisión), la base de datos NTDS y el crecimiento a lo largo del tiempo.</li><li>En el caso de los entornos en los que maximizar la cantidad de memoria RAM no es rentable (como una ubicación satélite) o no factible (DIT es demasiado grande), haga referencia a la sección Storage para asegurarse de que el almacenamiento tenga el tamaño adecuado.</li></ul>|
+|MEMORIA RAM|<ul><li>Tamaño de la base de datos</li><li>Recomendaciones del sistema operativo base</li><li>Aplicaciones de terceros</li></ul>|<ul><li>El almacenamiento es el componente más lento de un equipo. Cuanto más pueda residir en la RAM, menos será necesario ir a disco.</li><li>Asegúrese de que hay suficiente RAM asignada para almacenar el sistema operativo, los agentes (antivirus, copia de seguridad, supervisión), la base de datos NTDS y el crecimiento a lo largo del tiempo.</li><li>En el caso de los entornos en los que maximizar la cantidad de memoria RAM no es rentable (como una ubicación satélite) o no factible (DIT es demasiado grande), haga referencia a la sección Storage para asegurarse de que el almacenamiento tenga el tamaño adecuado.</li></ul>|
 |Red|<ul><li>"Interfaz de red (\*) \Bytes recibidos por segundo"</li><li>"Interfaz de red (\*) \Bytes enviados por segundo"|<ul><li>En general, el tráfico enviado desde un controlador de dominio supera mucho el tráfico enviado a un controlador de dominio.</li><li>Como conexión Ethernet conmutada, el tráfico de red de entrada y salida de dúplex completo debe ajustarse de forma independiente.</li><li>La consolidación del número de controladores de dominio aumentará la cantidad de ancho de banda que se usa para devolver las respuestas a las solicitudes de cliente para cada controlador de dominio, pero estará suficientemente cerca para lineal en todo el sitio.</li><li>Si quita los controladores de dominio de Ubicación satélite, no olvide agregar el ancho de banda para el controlador de dominio satélite en los controladores de dominio del concentrador y usarlo para evaluar la cantidad de tráfico WAN que habrá.</li></ul>|
 |CPU|<ul><li>"Disco lógico ( *\<unidad de base de datos NTDS\>* ) \Avg segundos de disco/lectura"</li><li>"Proceso (LSASS)\\% de tiempo de procesador"</li></ul>|<ul><li>Después de eliminar el almacenamiento como cuello de botella, solucione la cantidad de potencia de proceso necesaria.</li><li>Aunque no es absolutamente lineal, el número de núcleos de procesador consumido en todos los servidores dentro de un ámbito específico (por ejemplo, un sitio) se puede usar para medir el número de procesadores necesarios para admitir la carga total de clientes. Agregue el mínimo necesario para mantener el nivel actual de servicio en todos los sistemas dentro del ámbito.</li><li>Los cambios en la velocidad del procesador, incluidos los cambios relacionados con la administración de energía, los números de impacto derivados del entorno actual. Por lo general, es imposible evaluar con exactitud cómo pasar de un procesador de 2,5 GHz a un procesador de 3 GHz reducirá el número de CPU necesarias.</li></ul>|
 |NetLogon|<ul><li>"Netlogon (\*) \Semaphore adquiere"</li><li>"Netlogon (\*) tiempos de espera de \Semaphore"</li><li>"Netlogon (\*) \Average de tiempo de espera del semáforo"</li></ul>|<ul><li>Net Logon Secure Channel/MaxConcurrentAPI solo afecta a entornos con autenticaciones NTLM y/o la validación de PAC. La validación de PAC está activada de forma predeterminada en versiones de sistema operativo anteriores a Windows Server 2008. Se trata de una configuración de cliente, por lo que los controladores de sesión se verán afectados hasta que esté desactivada en todos los sistemas cliente.</li><li>Los entornos con una autenticación de confianza cruzada importante, que incluye confianzas dentro de bosques, tienen un mayor riesgo si no tienen un tamaño adecuado.</li><li>Las consolidaciones de servidor aumentarán la simultaneidad de la autenticación entre confianzas.</li><li>Es necesario acomodar los picos, como las conmutaciones por error de los clústeres, a medida que los usuarios vuelven a autenticarse en el nuevo nodo de clúster.</li><li>Es posible que los sistemas cliente individuales (por ejemplo, un clúster) también necesiten la optimización.</li></ul>|
@@ -123,7 +123,7 @@ Durante mucho tiempo, la recomendación de la comunidad de ajustar el tamaño de
 
 La siguiente orientación es, por lo tanto, sobre cómo determinar y planear las demandas de Active Directory como un servicio independientemente de si se implementa en una combinación física, física o virtual, o un escenario meramente virtualizado. Como tal, se desglosará la evaluación en cada uno de los cuatro componentes principales: almacenamiento, memoria, red y procesador. En Resumen, para maximizar el rendimiento en AD DS, el objetivo es llegar lo más cerca posible al procesador.
 
-## <a name="ram"></a>RAM
+## <a name="ram"></a>MEMORIA RAM
 
 Simplemente, cuanto más se puede almacenar en la memoria caché, menos es necesario ir a disco. Para maximizar la escalabilidad del servidor, la cantidad mínima de RAM debe ser la suma del tamaño actual de la base de datos, el tamaño total de SYSVOL, la cantidad recomendada de sistema operativo y las recomendaciones de proveedor para los agentes (antivirus, supervisión, copia de seguridad, etc.). ). Se debe agregar una cantidad adicional para acomodar el crecimiento de la duración del servidor. Esto será subjetiva en el entorno en función de las estimaciones de crecimiento de la base de datos en función de los cambios del entorno.
 
@@ -131,7 +131,7 @@ En el caso de los entornos en los que maximizar la cantidad de memoria RAM no es
 
 Una consecuencia que se genera en el contexto general de tamaño de la memoria es el tamaño del archivo de paginación. En el mismo contexto que cualquier otra memoria relacionada, el objetivo es minimizar el disco más lento. Por lo tanto, la pregunta debe ir de "¿cómo se debe ajustar el tamaño del archivo de paginación?" "¿cuánta RAM se necesita para minimizar la paginación?" En el resto de esta sección se describe la respuesta a la última pregunta. Esto deja la mayor parte del análisis para el ajuste de tamaño del archivo de paginación en el dominio de recomendaciones generales del sistema operativo y la necesidad de configurar el sistema para volcados de memoria, que no están relacionados con el rendimiento de la AD DS.
 
-### <a name="evaluating"></a>Evaluar
+### <a name="evaluating"></a>Evaluando
 
 La cantidad de RAM que necesita un controlador de dominio (DC) es realmente un ejercicio complejo por estos motivos:
 
@@ -158,7 +158,7 @@ Evite la confirmación de la memoria en el host. El objetivo fundamental de la o
 |Componente|Memoria estimada (ejemplo)|
 |-|-|
 |RAM recomendada del sistema operativo base (Windows Server 2008)|2 GB|
-|Tareas internas de LSASS|200 MB|
+|Tareas internas de LSASS|200 MB|
 |Agente de supervisión|100 MB|
 |Antivirus|100 MB|
 |Base de datos (catálogo global)|8,5 GB está seguro de que???|
@@ -171,11 +171,11 @@ Con el tiempo, se puede suponer que se agregarán más datos a la base de datos 
 
 ## <a name="network"></a>Red
 
-### <a name="evaluating"></a>Evaluar
+### <a name="evaluating"></a>Evaluando
 Esta sección no trata sobre la evaluación de las demandas en relación con el tráfico de replicación, que se centra en el tráfico que atraviesa la WAN y que se trata exhaustivamente en [Active Directory tráfico de replicación](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742457(v=technet.10)), que se refiere a la evaluación del ancho de banda total y la capacidad de red necesaria, incluidos las consultas de cliente, las aplicaciones de directiva de grupo, etc. En el caso de los entornos existentes, se puede recopilar mediante los contadores de\*rendimiento "interfaz de red \Bytes recibidos/seg.\*" y "interfaz de red \Bytes enviados/seg." Intervalos de muestra para los contadores de la interfaz de red en 15, 30 o 60 minutos. Todo menos normalmente será demasiado volátil para las mediciones correctas; cualquier valor mayor suavizará las búsquedas diarias de forma excesiva.
 
 > [!NOTE]
-> Por lo general, la mayoría del tráfico de red en un controlador de dominio es saliente, ya que el controlador de dominio responde a las consultas de cliente. Este es el motivo por el que se centra en el tráfico de salida, aunque se recomienda evaluar también cada entorno para el tráfico de entrada. Se pueden usar los mismos enfoques para abordar y revisar los requisitos de tráfico de red de entrada. Para obtener más información, vea el artículo 929851 de Knowledge base [: el intervalo de puertos dinámicos predeterminado para TCP/IP ha cambiado en Windows Vista y en Windows Server 2008](http://support.microsoft.com/kb/929851).
+> Por lo general, la mayoría del tráfico de red en un controlador de dominio es saliente, ya que el controlador de dominio responde a las consultas de cliente. Este es el motivo por el que se centra en el tráfico de salida, aunque se recomienda evaluar también cada entorno para el tráfico de entrada. Se pueden usar los mismos enfoques para abordar y revisar los requisitos de tráfico de red de entrada. Para obtener más información, vea el artículo 929851 de Knowledge base [: el intervalo de puertos dinámicos predeterminado para TCP/IP ha cambiado en Windows Vista y en Windows Server 2008](https://support.microsoft.com/kb/929851).
 
 ### <a name="bandwidth-needs"></a>Necesidades de ancho de banda
 
@@ -260,8 +260,8 @@ La única recomendación a tener en cuenta es asegurarse de que el 110% del tama
 
 La primera consideración y la más importante es evaluar el tamaño de NTDS. DIT y SYSVOL. Estas medidas darán lugar a un ajuste de la asignación de disco fijo y RAM. Debido al bajo costo (relativamente) de estos componentes, no es necesario que el cálculo sea riguroso y preciso. El contenido sobre cómo evaluar esto para los entornos nuevos y existentes se puede encontrar en la serie de artículos de [almacenamiento de datos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961771(v=technet.10)) . En concreto, consulte los siguientes artículos:
 
-- **Para entornos existentes &ndash;** La sección titulada "para activar el registro de espacio en disco que se libera mediante la desfragmentación" en el artículo [límites de almacenamiento](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10)).
-- **Para entornos nuevos &ndash;** El artículo titulado [estimaciones de crecimiento para Active Directory usuarios y unidades organizativas](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc961779(v=technet.10)).
+- **Para entornos existentes &ndash;** La sección titulada "para activar el registro de espacio en disco que se libera mediante la desfragmentación" en el artículo [límites de almacenamiento](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961769(v=technet.10)).
+- **Para entornos nuevos &ndash;** El artículo titulado [estimaciones de crecimiento para Active Directory usuarios y unidades organizativas](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc961779(v=technet.10)).
 
   > [!NOTE]
   > Los artículos se basan en las estimaciones de tamaño de datos realizadas en el momento de la publicación de Active Directory en Windows 2000. Use tamaños de objeto que reflejen el tamaño real de los objetos de su entorno.
@@ -320,7 +320,7 @@ Se deben muestrear en intervalos de 15/30/60 minutos para realizar pruebas compa
 #### <a name="evaluating-the-results"></a>Evaluación de los resultados
 
 > [!NOTE]
-> El enfoque se centra en las lecturas de la base de datos, ya que suele ser el componente más exigente, la misma lógica se puede aplicar a las escrituras en el archivo de registro mediante la sustitución del disco lógico LogicalDisk ( *\<Registro\>NTDS*) \Avg en segundos/escritura y LogicalDisk (*Registro\<NTDS) \ escrituras/seg.):\>*
+> El enfoque se centra en las lecturas de la base de datos, ya que suele ser el componente más exigente, la misma lógica se puede aplicar a las escrituras en el archivo de registro mediante la sustitución del disco lógico LogicalDisk ( *\<Registro\>NTDS*) \Avg en segundos/escritura y LogicalDisk (*Registro\>NTDS) \ escrituras/seg.):\<*
 >  
 > - LogicalDisk ( *\<NTDS\>* ) \Avg en segundos/lectura indica si el tamaño del almacenamiento actual es el adecuado.  Si los resultados son aproximadamente iguales a la hora de acceso al disco para el tipo de disco, LogicalDisk ( *\<NTDS\>* ) \ lecturas por segundo es una medida válida.  Compruebe las especificaciones del fabricante para el almacenamiento en el back-end, pero los intervalos buenos para LogicalDisk ( *\<NTDS\>* ) \Avg Disk sec/Read serían aproximadamente:
 >   - de 7200 a 12,5 milisegundos (MS)
@@ -353,7 +353,7 @@ Determinar la cantidad de e/s necesaria para un sistema en buen estado en condic
 
 - LogicalDisk ( *\<unidad de base de datos NTDS\>* ) \ transferencias por segundo durante el período de máximo 15 minutos 
 - Para determinar la cantidad de e/s necesaria para el almacenamiento donde se supera la capacidad del almacenamiento subyacente:
-  >*IOPS necesarios* = (LogicalDisk ( *\<unidad\>de base de datos Ntds*) \Avg en &divide; segundos/  *\<\>lectura destino promedio de*segundos de disco/lectura&times;) LogicalDisk ( *\< NTDS (unidad\>de base de datos*) \ lectura/s
+  >*IOPS necesarios* = (LogicalDisk ( *\<unidad\>de base de datos Ntds*) \Avg en &divide; segundos/ &times; *\<lectura destino promedio de\>segundos de disco/lectura*) LogicalDisk ( *\< NTDS (unidad\>de base de datos*) \ lectura/s
 
 |Contador|Valor|
 |-|-|
@@ -412,7 +412,7 @@ Desafortunadamente, debido a la enorme variabilidad de las aplicaciones cliente 
 
 Como se mencionó anteriormente, al planear la capacidad de un sitio completo, el objetivo es destinar un diseño con un diseño de capacidad *N* + 1, de modo que el error de un sistema durante el período máximo permitirá la continuación del servicio con un nivel de calidad razonable. Esto significa que en un escenario "*N*", la carga en todos los cuadros debe ser inferior al 100% (mejor aún, menor que 80%). durante los períodos de máxima actividad.
 
-Además, si las aplicaciones y los clientes del sitio usan los procedimientos recomendados para buscar controladores de dominio (es decir, con la [función DsGetDcName](http://msdn.microsoft.com/en-us/library/windows/desktop/ms675983(v=vs.85).aspx)), los clientes deben distribuirse relativamente uniformemente con picos transitorios menores debido a cualquier número de factores.
+Además, si las aplicaciones y los clientes del sitio usan los procedimientos recomendados para buscar controladores de dominio (es decir, con la [función DsGetDcName](https://msdn.microsoft.com/library/windows/desktop/ms675983(v=vs.85).aspx)), los clientes deben distribuirse relativamente uniformemente con picos transitorios menores debido a cualquier número de factores.
 
 En el ejemplo siguiente se realizan las suposiciones siguientes:
 
@@ -461,7 +461,7 @@ En la carga máxima, LSASS consume aproximadamente el 485% de una CPU o 4,85 CPU
 
 ### <a name="when-to-tune-ldap-weights"></a>Cuándo optimizar pesos LDAP
 
-Hay varios escenarios en los que se debe tener en cuenta la optimización de [LdapSrvWeight](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc957291(v=technet.10)) . En el contexto del planeamiento de la capacidad, esto se haría cuando las cargas de la aplicación o del usuario no se equilibran uniformemente, o los sistemas subyacentes no están equilibrados uniformemente en lo que respecta a la capacidad. Los motivos para hacerlo más allá del planeamiento de la capacidad están fuera del ámbito de este artículo.
+Hay varios escenarios en los que se debe tener en cuenta la optimización de [LdapSrvWeight](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc957291(v=technet.10)) . En el contexto del planeamiento de la capacidad, esto se haría cuando las cargas de la aplicación o del usuario no se equilibran uniformemente, o los sistemas subyacentes no están equilibrados uniformemente en lo que respecta a la capacidad. Los motivos para hacerlo más allá del planeamiento de la capacidad están fuera del ámbito de este artículo.
 
 Hay dos razones comunes para optimizar pesos LDAP:
 
@@ -496,7 +496,7 @@ No obstante, tenga cuidado con estos escenarios. Como se puede observar más arr
 
 | |Uso optimizado|Nuevo LdapSrvWeight|Nueva utilización estimada|
 |-|-|-|-|
-|DC 1 (emulador de PDC)|40 %|85|47%|
+|DC 1 (emulador de PDC)|40 %|85|47 %|
 |DC 2|40 %|100|53%|
 |DC 3|40 %|100|53%|
 
@@ -550,9 +550,9 @@ Para optimizar **MaxConcurrentAPI** en un servidor existente, la ecuación es:
 
 > *New_MaxConcurrentApi_setting* &ge; (*semaphore_acquires*  +  *semaphore_time-outs*) &times; *average_semaphore_hold_time* &divide; *time_collection_length*
 
-Para obtener más información, vea [el artículo de KB 2688798: Cómo optimizar el rendimiento para la autenticación NTLM mediante el uso de la configuración MaxConcurrentApi](http://support.microsoft.com/kb/2688798).
+Para obtener más información, vea [el artículo de KB 2688798: Cómo optimizar el rendimiento para la autenticación NTLM mediante el uso de la configuración MaxConcurrentApi](https://support.microsoft.com/kb/2688798).
 
-## <a name="virtualization-considerations"></a>Consideraciones de virtualización
+## <a name="virtualization-considerations"></a>Consideraciones sobre la virtualización
 
 Ninguno, se trata de una configuración de optimización del sistema operativo.
 
@@ -574,14 +574,14 @@ Para este sistema durante este período de tiempo, los valores predeterminados s
 
 En este artículo, se ha explicado que la planeación y el escalado van hacia los objetivos de uso. Este es un gráfico de Resumen de los umbrales recomendados que deben supervisarse para asegurarse de que los sistemas funcionan con los umbrales de capacidad adecuados. Tenga en cuenta que estos no son umbrales de rendimiento, sino umbrales de planeamiento de capacidad. Un servidor que opere en exceso de estos umbrales funcionará, pero es el momento de iniciar la validación de que todas las aplicaciones están bien compartidas. Si estas aplicaciones están bien compartidas, es el momento de empezar a evaluar las actualizaciones de hardware u otros cambios de configuración.
 
-|Categoría|Contador de rendimiento|Intervalo/muestreo|Destino|Advertencia|
+|Categoría|Contador de rendimiento|Intervalo/muestreo|Target|Advertencia|
 |-|-|-|-|-|
-|Procesador|Información del procesador (_Total)\\% utilidad de procesador|60 mín.|40 %|60 %|
-|RAM (Windows Server 2008 R2 o versiones anteriores)|Memoria\mbytes MB|< 100 MB|N/D|< 100 MB|
+|Encargado del tratamiento de datos|Información del procesador (_Total)\\% utilidad de procesador|60 min|40 %|60 %|
+|RAM (Windows Server 2008 R2 o versiones anteriores)|Memoria\mbytes MB|< 100 MB|N/A|< 100 MB|
 |RAM (Windows Server 2012)|Duración media de la caché en espera Memory\Long-Term (s)|30 minutos|Se debe probar|Se debe probar|
 |Red|Interfaz de red (\*) \Bytes enviados/seg.<br /><br />Interfaz de red (\*) \Bytes recibidos/seg.|30 minutos|40 %|60 %|
-|Almacenamiento|LogicalDisk ( *\<unidad de base de datos NTDS\>* ) \Avg en segundos/lectura<br /><br />LogicalDisk ( *\<unidad de base de datos NTDS\>* ) \Avg en segundos/escritura|60 mín.|10 ms|15 ms|
-|Servicios de AD|\Average de tiempo de espera del semáforo de Netlogon (\*)|60 mín.|0|1 segundo|
+|Almacenamiento|LogicalDisk ( *\<unidad de base de datos NTDS\>* ) \Avg en segundos/lectura<br /><br />LogicalDisk ( *\<unidad de base de datos NTDS\>* ) \Avg en segundos/escritura|60 min|10 ms|15 ms|
+|Servicios de AD|\Average de tiempo de espera del semáforo de Netlogon (\*)|60 min|0|1 segundo|
 
 ## <a name="appendix-a-cpu-sizing-criteria"></a>Apéndice A: criterios de ajuste de tamaño de la CPU
 
@@ -603,7 +603,7 @@ Como los sistemas de servidor de hoy en día tienen varios procesadores, varios 
 
 ### <a name="thread-level-parallelism"></a>Paralelismo en el nivel de subprocesos
 
-Cada subproceso es una tarea independiente, ya que cada subproceso tiene su propia pila e instrucciones. Dado que AD DS es multiproceso y el número de subprocesos disponibles se puede optimizar mediante el uso de [Cómo ver y establecer la Directiva LDAP en Active Directory mediante el uso de Ntdsutil. exe](http://support.microsoft.com/kb/315071), se escala bien en varios procesadores lógicos.
+Cada subproceso es una tarea independiente, ya que cada subproceso tiene su propia pila e instrucciones. Dado que AD DS es multiproceso y el número de subprocesos disponibles se puede optimizar mediante el uso de [Cómo ver y establecer la Directiva LDAP en Active Directory mediante el uso de Ntdsutil. exe](https://support.microsoft.com/kb/315071), se escala bien en varios procesadores lógicos.
 
 ### <a name="data-level-parallelism"></a>Paralelismo de nivel de datos
 
@@ -636,7 +636,7 @@ Donde *U* k es el porcentaje de uso, *B* es la cantidad de tiempo ocupado y *T* 
 
 La teoría de puesta en cola también proporciona la fórmula: *N* = *u* k &divide; (1 &ndash; *u* k) para estimar el número de elementos en espera en función del uso ( *N* es la longitud de la cola). En el gráfico de este procedimiento sobre todos los intervalos de uso se proporciona el siguiente cálculo de cuánto tiempo la cola se debe obtener en el procesador en cualquier carga de CPU determinada.
 
-![Longitud de cola](media/capacity-planning-considerations-queue-length.png)
+![Longitud de la cola](media/capacity-planning-considerations-queue-length.png)
 
 Se observa que después del 50% de la carga de la CPU, como promedio, siempre hay una espera de otro elemento de la cola, con un aumento notablemente rápido tras aproximadamente el 70% de uso de la CPU.
 
@@ -648,9 +648,9 @@ Volviendo a la analogía de conducción utilizada anteriormente en esta sección
 Este es el motivo por el que los promedios a largo plazo de la capacidad estimada con cautela en el 40% permiten la sala principal para picos anómalos en la carga, ya se trate de picos transitorios (por ejemplo, consultas mal codificadas que se ejecutan durante unos minutos) o ráfagas anómalas en la carga general (la mañana de el primer día después de un fin de semana largo).
 
 La instrucción anterior en relación con el cálculo del porcentaje de tiempo de procesador es la misma que la ley de uso es un poco de una simplificación para la facilidad del lector general. Para aquellos más rigurosamente rigurosos:  
-- Trasladar el [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/en-us/previous-versions/windows/embedded/ms901169(v=msdn.10))
-  - *B* = el número de subprocesos de 100-NS "inactivo" emplea en el procesador lógico. El cambio en la variable "*X*" en el cálculo de [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/en-us/previous-versions/windows/embedded/ms901169(v=msdn.10))
-  - *T* = el número total de intervalos 100-NS en un intervalo de tiempo determinado. Cambio de la variable "*Y*" en el cálculo de [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/en-us/previous-versions/windows/embedded/ms901169(v=msdn.10)) .
+- Trasladar el [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10))
+  - *B* = el número de subprocesos de 100-NS "inactivo" emplea en el procesador lógico. El cambio en la variable "*X*" en el cálculo de [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10))
+  - *T* = el número total de intervalos 100-NS en un intervalo de tiempo determinado. Cambio de la variable "*Y*" en el cálculo de [PERF_100NSEC_TIMER_INV](https://docs.microsoft.com/previous-versions/windows/embedded/ms901169(v=msdn.10)) .
   - *U* k = el porcentaje de uso del procesador lógico en el "subproceso inactivo" o en el% de tiempo de inactividad.  
 - Cómo trabajar con las matemáticas:
   - *U* k = 1:% de tiempo de procesador
@@ -769,10 +769,10 @@ Una vez identificados los componentes, una idea de la cantidad de datos que pued
   
   |E/s compatible con el bus SCSI por tamaño de bloque|tamaño de bloque de 2 KB|tamaño de bloque de 8 KB (AD jet) (SQL Server 7.0/SQL Server 2000)
   |-|-|-|
-  |20 MB/s|10.000|2\.500|
-  |40 MB/s|20.000|5\.000|
-  |128 MB/s|65.536|16.384|
-  |320 MB/s|160.000|40.000|
+  |20 MB/s|10 000|2,500|
+  |40 MB/s|20 000|5 000|
+  |128 MB/s|65 536|16 384|
+  |320 MB/s|160 000|40 000|
 
   Como puede determinarse a partir de este gráfico, en el escenario que se presenta, independientemente de cuál sea el uso, el bus nunca será un cuello de botella, ya que el máximo del eje es 100 e/s, por debajo de los umbrales anteriores.
 
@@ -822,7 +822,7 @@ Cuando se conoce la proporción de lecturas en las escrituras y el número de ej
 
 > *Máximo IOPS por eje* &times; 2 Ejes &times; [( *%Leer* +  *%Escribir*) &divide; ( *%Leer* + 2 &times; *%Escribir*)] = *Total IOPS*
 
-RAID 1 + 0, se comporta exactamente igual que RAID 1 con respecto a los gastos de lectura y escritura. Sin embargo, la e/s ahora se divide en cada conjunto reflejado. Si  
+RAID 1 + 0, se comporta exactamente igual que RAID 1 con respecto a los gastos de lectura y escritura. Sin embargo, la e/s ahora se divide en cada conjunto reflejado. En el caso de que  
 
 > *Máximo IOPS por eje* &times; 2 Ejes &times; [( *%Leer* +  *%Escribir*) &divide; ( *%Leer* + 2 &times; *%Escribir*)] = *Total IOPS*  
 

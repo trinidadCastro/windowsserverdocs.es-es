@@ -10,12 +10,12 @@ author: stevenek
 ms.date: 06/07/2019
 description: Instrucciones paso a paso para implementar el almacenamiento definido por software con Espacios de almacenamiento directo en Windows Server como una infraestructura hiperconvergida o una infraestructura convergente (también conocida como desagregada).
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ab96f737f7700e202c9d0382c06859c4ea84118
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 60b29cbebb19cd8f1ce364d1eb7e920759375285
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402821"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950019"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implementar espacios de almacenamiento directo
 
@@ -43,7 +43,7 @@ Recopile la información siguiente:
 
 - **Redes RDMA.** Hay dos tipos de protocolos RDMA: iWarp y RoCE. Observe cuál de los adaptadores de red usa y, si RoCE, tenga en cuenta también la versión (V1 o V2). En el caso de RoCE, tenga en cuenta también el modelo del conmutador para parte superior del rack.
 
-- **IDENTIFICADOR DE VLAN.** Tenga en cuenta el identificador de VLAN que se usará para los adaptadores de red del sistema operativo de administración en los servidores, si hay alguno. Podrá obtenerlo del administrador de red.
+- **IDENTIFICADOR DE VLAN.** Tenga en cuenta el identificador de VLAN que se usará para los adaptadores de red del sistema operativo de administración en los servidores, si hay alguno. Deberías poder obtenerlo del administrador de red.
 
 ## <a name="step-1-deploy-windows-server"></a>Paso 1: Implementar Windows Server
 
@@ -102,7 +102,7 @@ En el sistema de administración, abra una consola de PowerShell con privilegios
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force  
 ```
 
-Si la cuenta de administrador de almacenamiento no es miembro del grupo Admins. del dominio, agregue su cuenta de administrador de almacenamiento al grupo de administradores locales en cada nodo, o bien, agregue el grupo que usa para los administradores de almacenamiento. Puede usar el siguiente comando (o escribir una función de Windows PowerShell para hacerlo; consulte [uso de PowerShell para agregar usuarios de dominio a un grupo local](http://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx) para obtener más información):
+Si la cuenta de administrador de almacenamiento no es miembro del grupo Admins. del dominio, agregue su cuenta de administrador de almacenamiento al grupo de administradores locales en cada nodo, o bien, agregue el grupo que usa para los administradores de almacenamiento. Puede usar el siguiente comando (o escribir una función de Windows PowerShell para hacerlo; consulte [uso de PowerShell para agregar usuarios de dominio a un grupo local](https://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx) para obtener más información):
 
 ```
 Net localgroup Administrators <Domain\Account> /add
@@ -112,7 +112,7 @@ Net localgroup Administrators <Domain\Account> /add
 
 El siguiente paso consiste en instalar roles de servidor en cada servidor. Para ello, puede usar el [centro de administración de Windows](../../manage/windows-admin-center/use/manage-servers.md), [Administrador del servidor](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)) o PowerShell. Estos son los roles que se van a instalar:
 
-- Clústeres de conmutación por error
+- Clúster de conmutación por error
 - Hyper-V
 - Servidor de archivos (si desea hospedar recursos compartidos de archivos, como en el caso de una implementación convergente)
 - Protocolo de puente del centro de datos (si usas RoCEv2 en lugar de adaptadores de red iWARP)
@@ -138,7 +138,7 @@ Invoke-Command ($ServerList) {
 }
 ```
 
-## <a name="step-2-configure-the-network"></a>Paso 2: Configurar la red
+## <a name="step-2-configure-the-network"></a>Paso 2: Configurar la red
 
 Si va a implementar Espacios de almacenamiento directo en máquinas virtuales, omita esta sección.
 
@@ -225,7 +225,7 @@ Al crear el clúster, obtendrá una advertencia que indica: "hubo problemas al c
 > New-Cluster –Name <ClusterName> –Node <MachineName1,MachineName2,MachineName3,MachineName4> –NoStorage
 > ```
 
-Después de crear el clúster, puede tardar tiempo la replicación de la entrada DNS para el nombre del clúster. El tiempo depende del entorno y de la configuración de replicación de DNS. Si la resolución del clúster no se realiza correctamente, en la mayoría de los casos puede solucionarlo correctamente mediante el uso del nombre de la máquina de un nodo que sea un miembro activo del clúster que pueda utilizarse en lugar del nombre de clúster.
+Después de crear el clúster, puede tardar tiempo la replicación de la entrada DNS para el nombre del clúster. El tiempo depende del entorno y de la configuración de replicación de DNS. Si la resolución del clúster no se realiza correctamente, en la mayoría de los casos puedes solucionarlo mediante el uso del nombre de máquina de un nodo que sea miembro activo del clúster en lugar del nombre de clúster.
 
 ### <a name="step-34-configure-a-cluster-witness"></a>Paso 3,4: configurar un testigo de clúster
 
@@ -307,7 +307,7 @@ El siguiente paso para configurar los servicios de clúster para el servidor de 
 4. En la página **punto de acceso de cliente** , escriba un nombre para el servidor de archivos de escalabilidad horizontal.
 5. Para comprobar que el rol se configuró correctamente, vaya a **roles** y confirme que la columna **Estado** muestra en **ejecución** junto al rol de servidor de archivos en clúster que ha creado, tal como se muestra en la figura 1.
 
-   ![Captura de pantalla de administrador de clústeres de conmutación por error muestra el](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "Administrador de clústeres de conmutación por error de servidor de archivos de escalabilidad horizontal que muestra la servidor de archivos de escalabilidad horizontal")
+   ![Captura de pantalla de Administrador de clústeres de conmutación por error que muestra el Servidor de archivos de escalabilidad horizontal](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "Administrador de clústeres de conmutación por error que muestra el Servidor de archivos de escalabilidad horizontal")
 
     **Figura 1** Administrador de clústeres de conmutación por error mostrar el Servidor de archivos de escalabilidad horizontal con el estado en ejecución
 
@@ -329,14 +329,14 @@ Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 
 Después de crear los discos virtuales y agregarlos a CSV, es el momento de crear recursos compartidos de archivos en ellos: un recurso compartido de archivos por CSV por cada disco virtual. System Center Virtual Machine Manager (VMM) es probablemente la forma handiest de hacerlo porque controla los permisos, pero si no lo tiene en su entorno, puede usar Windows PowerShell para automatizar parcialmente la implementación.
 
-Use los scripts incluidos en el script [configuración de recurso compartido SMB para cargas de trabajo de Hyper-V](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a) , que automatiza parcialmente el proceso de creación de grupos y recursos compartidos. Está diseñado para cargas de trabajo de Hyper-V, por lo que si va a implementar otras cargas de trabajo, es posible que tenga que modificar la configuración o realizar pasos adicionales después de crear los recursos compartidos. Por ejemplo, si utiliza Microsoft SQL Server, se debe conceder control total a la cuenta de servicio de SQL Server en el recurso compartido y el sistema de archivos.
+Use los scripts incluidos en el script [configuración de recurso compartido SMB para cargas de trabajo de Hyper-V](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a) , que automatiza parcialmente el proceso de creación de grupos y recursos compartidos. Está diseñado para cargas de trabajo de Hyper-V, por lo que si va a implementar otras cargas de trabajo, es posible que tenga que modificar la configuración o realizar pasos adicionales después de crear los recursos compartidos. Por ejemplo, si utiliza Microsoft SQL Server, se debe conceder control total a la cuenta de servicio de SQL Server en el recurso compartido y el sistema de archivos.
 
 > [!NOTE]
 >  Tendrá que actualizar la pertenencia a grupos al agregar nodos de clúster, a menos que use System Center Virtual Machine Manager para crear sus recursos compartidos.
 
 Para crear recursos compartidos de archivos mediante scripts de PowerShell, haga lo siguiente:
 
-1. Descargue los scripts incluidos en la [configuración de recursos compartidos SMB para cargas de trabajo de Hyper-V](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a) en uno de los nodos del clúster de servidores de archivos.
+1. Descargue los scripts incluidos en la [configuración de recursos compartidos SMB para cargas de trabajo de Hyper-V](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a) en uno de los nodos del clúster de servidores de archivos.
 2. Abra una sesión de Windows PowerShell con credenciales de administrador de dominio en el sistema de administración y, a continuación, use el siguiente script para crear un grupo de Active Directory para los objetos de equipo de Hyper-V, y cambie los valores de las variables según corresponda para su entorno
 
     ```PowerShell
@@ -371,7 +371,7 @@ Para crear recursos compartidos de archivos mediante scripts de PowerShell, haga
 
 ### <a name="step-43-enable-kerberos-constrained-delegation"></a>Paso 4,3 habilitación de la delegación restringida de Kerberos
 
-Para configurar la delegación restringida de Kerberos para la administración remota de escenarios y aumentar Migración en vivo seguridad, desde uno de los nodos de clúster de almacenamiento, use el script KCDSetup. PS1 incluido en la [configuración de recursos compartidos de SMB para cargas de trabajo de Hyper-V](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a). Este es un pequeño contenedor del script:
+Para configurar la delegación restringida de Kerberos para la administración remota de escenarios y aumentar Migración en vivo seguridad, desde uno de los nodos de clúster de almacenamiento, use el script KCDSetup. PS1 incluido en la [configuración de recursos compartidos de SMB para cargas de trabajo de Hyper-V](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a). Este es un pequeño contenedor del script:
 
 ```PowerShell
 $HyperVClusterName = "Compute01"
@@ -386,7 +386,7 @@ CD $ScriptFolder
 
 Después de implementar el servidor de archivos en clúster, se recomienda probar el rendimiento de la solución mediante cargas de trabajo sintéticas antes de que se muestren las cargas de trabajo reales. Esto le permite confirmar que la solución funciona correctamente y solucionar cualquier problema persistente antes de agregar la complejidad de las cargas de trabajo. Para obtener más información, vea rendimiento de los [espacios de almacenamiento de prueba con cargas de trabajo sintéticas](https://technet.microsoft.com/library/dn894707.aspx).
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Consulta también
 
 -   [Espacios de almacenamiento directo en Windows Server 2016](storage-spaces-direct-overview.md)
 -   [Descripción de la memoria caché en Espacios de almacenamiento directo](understand-the-cache.md)

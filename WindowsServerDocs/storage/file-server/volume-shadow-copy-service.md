@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 19e07504dad49c5e23cc49630015529e2a746aa7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f2e8d3bfb5ef907ffb522b5b7be31d1def3001c8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394446"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949683"
 ---
 # <a name="volume-shadow-copy-service"></a>Servicio de instantáneas de volumen
 
@@ -39,16 +39,16 @@ VSS coordina las acciones necesarias para crear una instantánea coherente (tamb
 
 Entre las características y aplicaciones de Windows que usan VSS se incluyen las siguientes:
 
-  - [Copias de seguridad de Windows Server](http://go.microsoft.com/fwlink/?linkid=180891) (http://go.microsoft.com/fwlink/?LinkId=180891)  
+  - [Copias de seguridad de Windows Server](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkId=180891)  
       
-  - [Instantáneas de carpetas compartidas](http://go.microsoft.com/fwlink/?linkid=142874) (http://go.microsoft.com/fwlink/?LinkId=142874)  
+  - [Instantáneas de carpetas compartidas](https://go.microsoft.com/fwlink/?linkid=142874) (https://go.microsoft.com/fwlink/?LinkId=142874)  
       
-  - [System Center Data Protection Manager](http://go.microsoft.com/fwlink/?linkid=180892) (http://go.microsoft.com/fwlink/?LinkId=180892)  
+  - [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=180892) (https://go.microsoft.com/fwlink/?LinkId=180892)  
       
-  - [Restaurar sistema](http://go.microsoft.com/fwlink/?linkid=180893) (http://go.microsoft.com/fwlink/?LinkId=180893)  
+  - [Restaurar sistema](https://go.microsoft.com/fwlink/?linkid=180893) (https://go.microsoft.com/fwlink/?LinkId=180893)  
       
 
-## <a name="how-volume-shadow-copy-service-works"></a>Cómo funciona Servicio de instantáneas de volumen
+## <a name="how-volume-shadow-copy-service-works"></a>Funcionamiento del Servicio de instantáneas de volumen
 
 Una solución completa de VSS requiere todos los elementos básicos siguientes:
 
@@ -227,7 +227,7 @@ Un proveedor de instantáneas basado en software debe mantener una vista "a un m
 
 Un proveedor de software es aplicable a una amplia gama de plataformas de almacenamiento que un proveedor basado en hardware, y debe funcionar con discos básicos o volúmenes lógicos igualmente bien. (Un volumen lógico es un volumen que se crea mediante la combinación de espacio libre de dos o más discos). A diferencia de las instantáneas de hardware, los proveedores de software consumen recursos del sistema operativo para mantener la instantánea.
 
-Para obtener más información acerca de los discos básicos, consulte [¿Qué son los discos y volúmenes básicos?](http://go.microsoft.com/fwlink/?linkid=180894) (http://go.microsoft.com/fwlink/?LinkId=180894) en TechNet.
+Para obtener más información acerca de los discos básicos, consulte [¿Qué son los discos y volúmenes básicos?](https://go.microsoft.com/fwlink/?linkid=180894) (https://go.microsoft.com/fwlink/?LinkId=180894) en TechNet.
 
 ### <a name="system-provider"></a>Proveedor del sistema
 
@@ -247,11 +247,11 @@ El sistema operativo Windows incluye un conjunto de escritores de VSS que son re
 
 Para obtener más información acerca de estos escritores, vea los siguientes sitios web de Microsoft:
 
-  - [Escritores de VSS integrados](http://go.microsoft.com/fwlink/?linkid=180895) (http://go.microsoft.com/fwlink/?LinkId=180895)  
+  - [Escritores de VSS integrados](https://go.microsoft.com/fwlink/?linkid=180895) (https://go.microsoft.com/fwlink/?LinkId=180895)  
       
-  - [Nuevos escritores de VSS integrados para Windows Server 2008 y Windows Vista SP1](http://go.microsoft.com/fwlink/?linkid=180896) (http://go.microsoft.com/fwlink/?LinkId=180896)  
+  - [Nuevos escritores de VSS integrados para Windows Server 2008 y Windows Vista SP1](https://go.microsoft.com/fwlink/?linkid=180896) (https://go.microsoft.com/fwlink/?LinkId=180896)  
       
-  - [Nuevos escritores de VSS integrados para Windows Server 2008 R2 y Windows 7](http://go.microsoft.com/fwlink/?linkid=180897) (http://go.microsoft.com/fwlink/?LinkId=180897)  
+  - [Nuevos escritores de VSS integrados para Windows Server 2008 R2 y Windows 7](https://go.microsoft.com/fwlink/?linkid=180897) (https://go.microsoft.com/fwlink/?LinkId=180897)  
       
 
 ## <a name="how-shadow-copies-are-used"></a>Cómo se usan las instantáneas
@@ -298,7 +298,7 @@ La resincronización de LUN es diferente del intercambio de LUN. Un intercambio 
 
 Instantáneas para carpetas compartidas usa el Servicio de instantáneas de volumen para proporcionar copias en un momento dado de los archivos que se encuentran en un recurso compartido de red, como un servidor de archivos. Con Instantáneas para carpetas compartidas, los usuarios pueden recuperar rápidamente archivos eliminados o modificados que se almacenan en la red. Dado que pueden hacerlo sin la ayuda del administrador, Instantáneas para carpetas compartidas pueden aumentar la productividad y reducir los costos administrativos.
 
-Para obtener más información acerca de instantáneas para carpetas compartidas, vea [instantáneas para carpetas compartidas](http://go.microsoft.com/fwlink/?linkid=180898) (http://go.microsoft.com/fwlink/?LinkId=180898) en TechNet).
+Para obtener más información acerca de instantáneas para carpetas compartidas, vea [instantáneas para carpetas compartidas](https://go.microsoft.com/fwlink/?linkid=180898) (https://go.microsoft.com/fwlink/?LinkId=180898) en TechNet).
 
 ### <a name="data-mining-by-using-transportable-shadow-copies"></a>Minería de datos mediante instantáneas transportables
 
@@ -328,9 +328,9 @@ Las instantáneas son de solo lectura. Si desea convertir una instantánea en un
 
 Servicio de instantáneas de volumen transporte es una solución avanzada en equipos que ejecutan Windows Server 2003 Enterprise Edition, Windows Server 2003 Datacenter Edition, Windows Server 2008 o Windows Server 2008 R2. Solo funciona si hay un proveedor de hardware en la matriz de almacenamiento. El transporte de instantáneas se puede utilizar para varios propósitos, como copias de seguridad en cinta, minería de datos y pruebas.
 
-## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
+## <a name="frequently-asked-questions"></a>Preguntas frecuentes
 
-Estas preguntas más frecuentes responden a preguntas sobre Servicio de instantáneas de volumen (VSS) para los administradores del sistema. Para obtener información sobre las interfaces de programación de aplicaciones de VSS, vea [servicio de instantáneas de volumen](http://go.microsoft.com/fwlink/?linkid=180899) (http://go.microsoft.com/fwlink/?LinkId=180899) en la biblioteca del centro para desarrolladores de Windows.
+Estas preguntas más frecuentes responden a preguntas sobre Servicio de instantáneas de volumen (VSS) para los administradores del sistema. Para obtener información sobre las interfaces de programación de aplicaciones de VSS, vea [servicio de instantáneas de volumen](https://go.microsoft.com/fwlink/?linkid=180899) (https://go.microsoft.com/fwlink/?LinkId=180899) en la biblioteca del centro para desarrolladores de Windows.
 
 ### <a name="when-was-volume-shadow-copy-service-introduced-on-which-windows-operating-system-versions-is-it-available"></a>¿Cuándo se ha Servicio de instantáneas de volumen introducido? ¿En qué versiones del sistema operativo Windows está disponible?
 
@@ -362,9 +362,9 @@ Es posible deshabilitar el Servicio de instantáneas de volumen mediante Microso
 
 Para obtener más información, vea los siguientes sitios web de Microsoft TechNet:
 
-  - [Restaurar sistema](http://go.microsoft.com/fwlink/?linkid=157113) (http://go.microsoft.com/fwlink/?LinkID=157113)  
+  - [Restaurar sistema](https://go.microsoft.com/fwlink/?linkid=157113) (https://go.microsoft.com/fwlink/?LinkID=157113)  
       
-  - [Copias de seguridad de Windows Server](http://go.microsoft.com/fwlink/?linkid=180891) (http://go.microsoft.com/fwlink/?LinkID=180891)  
+  - [Copias de seguridad de Windows Server](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkID=180891)  
       
 
 ### <a name="can-i-exclude-files-from-a-shadow-copy-to-save-space"></a>¿Puedo excluir archivos de una instantánea para ahorrar espacio?
@@ -384,15 +384,15 @@ Para excluir archivos específicos de instantáneas, use la siguiente clave del 
 > <LI>Los archivos se eliminan de una instantánea en función del mejor esfuerzo. Esto significa que no se garantiza que se eliminen.<BR><BR></LI></UL>
 
 
-Para obtener más información, vea [excluir archivos de instantáneas](http://go.microsoft.com/fwlink/?linkid=180904) (http://go.microsoft.com/fwlink/?LinkId=180904) en MSDN.
+Para obtener más información, vea [excluir archivos de instantáneas](https://go.microsoft.com/fwlink/?linkid=180904) (https://go.microsoft.com/fwlink/?LinkId=180904) en MSDN.
 
-### <a name="my-non-microsoft-backup-program-failed-with-a-vss-error-what-can-i-do"></a>Error de VSS en mi programa de copia de seguridad que no es de Microsoft. ¿Qué puedo hacer?
+### <a name="my-non-microsoft-backup-program-failed-with-a-vss-error-what-can-i-do"></a>Error de VSS en mi programa de copia de seguridad que no es de Microsoft. ¿Qué se puede hacer?
 
 Consulte la sección de soporte técnico del sitio web de la compañía que creó el programa de copia de seguridad. Puede que haya una actualización de producto que puede descargar e instalar para solucionar el problema. Si no es así, póngase en contacto con el Departamento de soporte técnico de la empresa.
 
 Los administradores del sistema pueden usar la información de solución de problemas de VSS en el siguiente sitio web de la biblioteca de Microsoft TechNet para recopilar información de diagnóstico acerca de los problemas relacionados con VSS.
 
-Para obtener más información, vea [servicio de instantáneas de volumen](http://go.microsoft.com/fwlink/?linkid=180905) (http://go.microsoft.com/fwlink/?LinkId=180905) en TechNet).
+Para obtener más información, vea [servicio de instantáneas de volumen](https://go.microsoft.com/fwlink/?linkid=180905) (https://go.microsoft.com/fwlink/?LinkId=180905) en TechNet).
 
 ### <a name="what-is-the-diff-area"></a>¿Qué es el "área de diferencias"?
 
@@ -431,7 +431,7 @@ El número máximo de instantáneas de software para cada volumen es 512. Sin em
 
 Escriba el comando **vssadmin Resize shadowstorage** .
 
-Para obtener más información, vea [vssadmin Resize shadowstorage](http://go.microsoft.com/fwlink/?linkid=180906) (http://go.microsoft.com/fwlink/?LinkId=180906) en TechNet.
+Para obtener más información, vea [vssadmin Resize shadowstorage](https://go.microsoft.com/fwlink/?linkid=180906) (https://go.microsoft.com/fwlink/?LinkId=180906) en TechNet.
 
 ### <a name="what-happens-when-i-run-out-of-space"></a>¿Qué ocurre cuando se queda sin espacio?
 
@@ -441,9 +441,9 @@ Se eliminan las instantáneas del volumen a partir de la instantánea más antig
 
 El sistema operativo Windows proporciona las siguientes herramientas para trabajar con VSS:
 
-  - [DiskShadow](http://go.microsoft.com/fwlink/?linkid=180907) (http://go.microsoft.com/fwlink/?LinkId=180907)  
+  - [DiskShadow](https://go.microsoft.com/fwlink/?linkid=180907) (https://go.microsoft.com/fwlink/?LinkId=180907)  
       
-  - [VssAdmin](http://go.microsoft.com/fwlink/?linkid=84008) (http://go.microsoft.com/fwlink/?LinkId=84008)  
+  - [VssAdmin](https://go.microsoft.com/fwlink/?linkid=84008) (https://go.microsoft.com/fwlink/?LinkId=84008)  
       
 
 ### <a name="diskshadow"></a>DiskShadow
@@ -503,9 +503,9 @@ Esta clave se usa para especificar qué usuarios tienen acceso a las instantáne
 
 Para obtener más información, vea las siguientes entradas en el sitio web de MSDN:
 
-  - [Consideraciones de seguridad para escritores](http://go.microsoft.com/fwlink/?linkid=157739) (http://go.microsoft.com/fwlink/?LinkId=157739)  
+  - [Consideraciones de seguridad para escritores](https://go.microsoft.com/fwlink/?linkid=157739) (https://go.microsoft.com/fwlink/?LinkId=157739)  
       
-  - [Consideraciones de seguridad para los solicitantes](http://go.microsoft.com/fwlink/?linkid=180908) (http://go.microsoft.com/fwlink/?LinkId=180908)  
+  - [Consideraciones de seguridad para los solicitantes](https://go.microsoft.com/fwlink/?linkid=180908) (https://go.microsoft.com/fwlink/?LinkId=180908)  
       
 
 ### <a name="maxshadowcopies"></a>MaxShadowCopies
@@ -514,7 +514,7 @@ Esta clave especifica el número máximo de instantáneas accesibles para el cli
 
 Para obtener más información, vea la siguiente entrada en el sitio web de MSDN:
 
-**MaxShadowCopies** en [las claves del registro para copias de seguridad y restauración](http://go.microsoft.com/fwlink/?linkid=180909) (http://go.microsoft.com/fwlink/?LinkId=180909)
+**MaxShadowCopies** en [las claves del registro para copias de seguridad y restauración](https://go.microsoft.com/fwlink/?linkid=180909) (https://go.microsoft.com/fwlink/?LinkId=180909)
 
 ### <a name="mindiffareafilesize"></a>MinDiffAreaFileSize
 
@@ -522,7 +522,7 @@ Esta clave especifica el tamaño mínimo inicial, en MB, del área de almacenami
 
 Para obtener más información, vea la siguiente entrada en el sitio web de MSDN:
 
-**MinDiffAreaFileSize** en [las claves del registro para copias de seguridad y restauración](http://go.microsoft.com/fwlink/?linkid=180910) (http://go.microsoft.com/fwlink/?LinkId=180910)
+**MinDiffAreaFileSize** en [las claves del registro para copias de seguridad y restauración](https://go.microsoft.com/fwlink/?linkid=180910) (https://go.microsoft.com/fwlink/?LinkId=180910)
 
 `##`# ' versiones admitidas del sistema operativo
 
@@ -598,7 +598,7 @@ En la tabla siguiente se enumeran las versiones de sistema operativo mínimas ad
 <td><p>Windows Server 2008</p></td>
 </tr>
 <tr class="even">
-<td><p>Instantáneas para carpetas compartidas</p></td>
+<td><p>Instantáneas de carpetas compartidas</p></td>
 <td><p>No se admite ninguno</p></td>
 <td><p>Windows Server 2003</p></td>
 </tr>
@@ -609,7 +609,7 @@ En la tabla siguiente se enumeran las versiones de sistema operativo mínimas ad
 </tr>
 <tr class="even">
 <td><p>Sesiones de copia de seguridad simultáneas (hasta 64)</p></td>
-<td><p>Windows XP</p></td>
+<td><p>Windows XP</p></td>
 <td><p>Windows Server 2003</p></td>
 </tr>
 <tr class="odd">
@@ -625,6 +625,6 @@ En la tabla siguiente se enumeran las versiones de sistema operativo mínimas ad
 </tbody>
 </table>
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Consulta también
 
 [Servicio de instantáneas de volumen en el centro para desarrolladores de Windows](https://docs.microsoft.com/windows/desktop/vss/volume-shadow-copy-service-overview)

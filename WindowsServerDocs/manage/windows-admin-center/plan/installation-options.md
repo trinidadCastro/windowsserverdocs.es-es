@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 12/02/2019
-ms.openlocfilehash: d4046cc10a5e0fdc12cfb9587eef10d4263c2ddd
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 503cd64cac0673829fe21bc15e8ad9d6a83bbb15
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74904033"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950516"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>¿Qué tipo de instalación es el adecuado para ti?
 
@@ -33,7 +33,7 @@ Puede **instalar** el centro de administración de Windows en los siguientes sis
 
 | **Plataforma**                       | **Modo de instalación** |
 | -----------------------------------| --------------------- |
-| Windows 10                         | Cliente local |
+| 10 de Windows                         | Cliente local |
 | Canal semianual de Windows Server | Servidor de puerta de enlace, servidor administrado, clúster de conmutación por error |
 | Windows Server 2016                | Servidor de puerta de enlace, servidor administrado, clúster de conmutación por error |
 | Windows Server 2019                | Servidor de puerta de enlace, servidor administrado, clúster de conmutación por error |
@@ -54,24 +54,24 @@ Microsoft Edge (incluido [Microsoft Edge Insider](https://microsoftedgeinsider.c
 
 Puede **administrar** los siguientes sistemas operativos de Windows mediante el centro de administración de Windows:
 
-| Versión | Administrar *nodo* a través de *Administrador del servidor* | Administrar mediante el *Administrador de clústeres* |
+| Version | Administrar *nodo* a través de *Administrador del servidor* | Administrar mediante el *Administrador de clústeres* |
 | ------------------------- |--------------- | ----- |
-| Windows 10 | Sí (a través de administración de equipos) | N/D |
+| 10 de Windows | Sí (a través de administración de equipos) | N/A |
 | Canal semianual de Windows Server | Sí | Sí |
 | Windows Server 2019 | Sí | Sí |
 | Windows Server 2016 | Sí | Sí, con la [última actualización acumulativa](../use/manage-hyper-converged.md#prepare-your-windows-server-2016-cluster-for-windows-admin-center) |
 | Microsoft Hyper-V Server 2016 | Sí | Sí |
-| Windows Server 2012 R2 | Sí | Sí |
+| R2 de Windows 2012 Server | Sí | Sí |
 | Microsoft Hyper-V Server 2012 R2 | Sí | Sí |
 | Windows Server 2012 | Sí | Sí |
-| Windows Server 2008 R2 | Sí, funcionalidad limitada | N/D |
+| Windows Server 2008 R2 | Sí, funcionalidad limitada | N/A |
 
 > [!NOTE]
 > El centro de administración de Windows requiere características de PowerShell que no están incluidas en Windows Server 2008 R2, 2012 y 2012 R2. Si va a administrarlos con el centro de administración de Windows, tendrá que instalar Windows Management Framework (WMF) versión 5,1 o superior en esos servidores.
 > 
 > Escribe `$PSVersiontable` en PowerShell para comprobar que esté instalado WMF y que la versión sea 5.1 o posterior. 
 > 
-> Si WMF no está instalado, puede [Descargar wmf 5,1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
+> Si WMF no está instalado, puede [Descargar wmf 5,1](https://www.microsoft.com/download/details.aspx?id=54616).
 
 ## <a name="high-availability"></a>Alta disponibilidad
 

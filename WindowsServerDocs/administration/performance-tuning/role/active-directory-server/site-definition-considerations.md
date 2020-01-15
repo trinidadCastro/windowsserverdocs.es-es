@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ba3c9e8792b425fd24d01ab997a5f7c2ac573814
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 66c6f94f1f3fee924ba0d9a3bfa0c712d62bb095
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370252"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947103"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Ubicación adecuada de los controladores de dominio y consideraciones del sitio
 
@@ -34,7 +34,7 @@ Las referencias son el modo en que se redirigen las consultas LDAP cuando el con
 
 ## <a name="optimization-considerations-for-trusts"></a>Consideraciones de optimización para confianzas
 
-En un escenario de bosque interno, las confianzas se procesan según la siguiente jerarquía de dominio: Dominio de la raíz del bosque de dominio secundario &gt; secundario-&gt; de dominio secundario-&gt; dominio secundario-&gt; dominio secundario. Esto significa que los canales seguros en la raíz del bosque y cada elemento primario se pueden sobrecargar debido a la agregación de solicitudes de autenticación que transitan por los controladores de seguridad de la jerarquía de confianza. Esto también puede provocar retrasos en Active Directory de grandes dispersaciones geográficas cuando la autenticación también tiene que pasar vínculos de alta latencia para afectar al flujo anterior. Las sobrecargas pueden producirse en escenarios de confianza de nivel inferior y entre bosques. Las siguientes recomendaciones se aplican a todos los escenarios:
+En un escenario dentro de un bosque, las confianzas se procesan de acuerdo con la siguiente jerarquía de dominio: dominio secundario&gt; secundario del dominio secundario&gt; dominio raíz del bosque-&gt; dominio secundario&gt; dominio secundario. Esto significa que los canales seguros en la raíz del bosque y cada elemento primario se pueden sobrecargar debido a la agregación de solicitudes de autenticación que transitan por los controladores de seguridad de la jerarquía de confianza. Esto también puede provocar retrasos en Active Directory de grandes dispersaciones geográficas cuando la autenticación también tiene que pasar vínculos de alta latencia para afectar al flujo anterior. Las sobrecargas pueden producirse en escenarios de confianza de nivel inferior y entre bosques. Las siguientes recomendaciones se aplican a todos los escenarios:
 
 -   Ajuste correctamente el MaxConcurrentAPI para admitir la carga a través del canal seguro. Para obtener más información, vea [Cómo realizar el ajuste del rendimiento para la autenticación NTLM mediante la configuración MaxConcurrentApi](https://support.microsoft.com/kb/2688798/EN-US).
 
@@ -58,7 +58,7 @@ Los escenarios de confianza entre dominios son un área que ha sido sistemática
 
     -   Para obtener más información sobre cómo funciona ubicador, consulte [Buscar un controlador de dominio en el sitio más cercano](https://technet.microsoft.com/library/cc978016.aspx).
 
-    -   Converge los nombres de sitio entre los dominios de confianza y de confianza para reflejar el controlador de dominio en la misma ubicación. Asegúrese de que las asignaciones de subred y dirección IP estén vinculadas correctamente a sitios de ambos bosques. Para obtener más información, consulte [localizador de dominios a través de una confianza de bosque](http://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx).
+    -   Converge los nombres de sitio entre los dominios de confianza y de confianza para reflejar el controlador de dominio en la misma ubicación. Asegúrese de que las asignaciones de subred y dirección IP estén vinculadas correctamente a sitios de ambos bosques. Para obtener más información, consulte [localizador de dominios a través de una confianza de bosque](https://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx).
 
     -   Asegúrese de que los puertos están abiertos, según las necesidades de ubicador, para la ubicación del controlador de dominio. Si existen firewalls entre los dominios, asegúrese de que los firewalls estén configurados correctamente para todas las confianzas. Si los firewalls no están abiertos, el controlador de dominio que confía seguirá intentando tener acceso al dominio de confianza. Si se produce un error en la comunicación por cualquier motivo, el controlador de dominio que confía finalmente agotará el tiempo de espera de la solicitud al controlador de dominio de confianza. Sin embargo, estos tiempos de espera pueden tardar varios segundos por solicitud y pueden agotar los puertos de red en el controlador de dominio que confía si el volumen de solicitudes entrantes es elevado. El cliente puede experimentar el tiempo de espera para el controlador de dominio como subprocesos bloqueados, que podrían traducirse en aplicaciones bloqueadas (si la aplicación ejecuta la solicitud en el subproceso en primer plano). Para obtener más información, consulte [configuración de un firewall para dominios y confianzas](https://support.microsoft.com/kb/179442).
 
@@ -76,9 +76,9 @@ En todos los escenarios de confianza, las credenciales se enrutan según el domi
 
 -   Deshabilitar el paso de solicitudes de autenticación con un dominio nulo especificado en todas las confianzas disponibles. [El proceso Lsass. exe puede dejar de responder si tiene muchas confianzas externas en un controlador de dominio de Active Directory](https://support.microsoft.com/kb/923241/EN-US)
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 - [Optimizar el rendimiento de servidores Active Directory](index.md)
-- [Consideraciones de hardware](hardware-considerations.md)
+- [Consideraciones de hardware](hardware-considerations.md).
 - [Consideraciones de LDAP](ldap-considerations.md)
 - [Solución de problemas de rendimiento de AD DS](troubleshoot.md) 
 - [Capacity Planning for Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566) (Planeamiento de la capacidad para Active Directory Domain Services)

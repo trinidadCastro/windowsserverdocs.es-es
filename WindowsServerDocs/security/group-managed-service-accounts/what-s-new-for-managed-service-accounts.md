@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: de4d64e3dbe4bc7c7cba32f066a696636632224d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 82d0ce962dfab0f7c9e5180e4b471894f507fb26
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403731"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950345"
 ---
 # <a name="what39s-new-for-managed-service-accounts"></a>Novedades&#39;de las cuentas de servicio administradas
 
@@ -31,7 +31,7 @@ La cuenta de servicio administrada se ha diseñado para proporcionar servicios y
 ## <a name="versions"></a>Novedades de las cuentas de servicio administradas en Windows Server 2012 y Windows 8
 A continuación se describen los cambios en la funcionalidad que se realizaron en MSA en Windows Server 2012 y Windows 8.
 
-### <a name="group-managed-service-accounts"></a>Cuentas de servicio administradas de grupo
+### <a name="group-managed-service-accounts"></a>Group Managed Service Accounts
 Cuando una cuenta de dominio se configura para un servidor de dominio, el equipo cliente puede autenticarse y conectarse a ese servicio. Antes, solo dos tipos de cuenta ofrecían identidad sin requerir administración de contraseñas. Sin embargo, estos tipos de cuenta tienen limitaciones:
 
 -   La cuenta de equipo se limita a un servidor de dominio y el equipo administra las contraseñas.
@@ -51,12 +51,12 @@ En los equipos que ejecutan Windows Server 2012 o Windows 8, se puede crear una 
 ### <a name="interoperability"></a>Funcionalidad eliminada o desusada
 En Windows Server 2012, los cmdlets de Windows PowerShell predeterminados para administrar las cuentas de servicio administradas de grupo en lugar de las cuentas de servicio administradas del servidor.
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Consulta también
 
--   [Introducción a las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)
+-   [Información general de las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)
 
 -   [Introducción a Active Directory Domain Services](active-directory-domain-services-overview.md)
 
--   [Cuentas de servicio administradas: Descripción, implementación, procedimientos recomendados y solución de problemas](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
+-   [Cuentas de servicio administradas: Descripción, implementación, procedimientos recomendados y solución de problemas](https://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 
 

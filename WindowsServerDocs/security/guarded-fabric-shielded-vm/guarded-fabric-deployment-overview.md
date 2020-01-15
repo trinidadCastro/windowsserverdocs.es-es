@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 8359532113e04e2247b4af34effc7f5b89d36f34
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e2b8400fc7b7f0e01e000fcb2f6472bdb4059ac8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402419"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949799"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>Inicio rápido para la implementación de tejido protegido
 
@@ -22,7 +22,7 @@ ms.locfileid: "71402419"
 
 En este tema se explica qué es un tejido protegido, sus requisitos y un resumen del proceso de implementación. Para obtener pasos detallados de implementación, consulte [implementación del servicio de protección de host para hosts protegidos y máquinas virtuales blindadas](https://technet.microsoft.com/windows-server-docs/security/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview).
 
-¿Prefieres el vídeo? Vea el curso de Microsoft Virtual Academy [implementación de máquinas virtuales blindadas y un tejido protegido con Windows Server 2016](https://mva.microsoft.com/en-US/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474).
+¿Prefieres el vídeo? Vea el curso de Microsoft Virtual Academy [implementación de máquinas virtuales blindadas y un tejido protegido con Windows Server 2016](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474).
 
 ## <a name="what-is-a-guarded-fabric"></a>Qué es un tejido protegido
 

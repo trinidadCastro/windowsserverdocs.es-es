@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 826769c1405648f37c86f97b4b9134871f4d30ed
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: 227d66dafffd67b0b2e4f67158498cf43c7b59f8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791185"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950366"
 ---
 # <a name="protected-users-security-group"></a>Grupo de seguridad de usuarios protegidos
 
@@ -26,7 +26,7 @@ ms.locfileid: "74791185"
 
 En este tema dirigido a profesionales de TI se describe el grupo de seguridad de usuarios protegidos de Active Directory y se explica cómo funciona. Este grupo se presentó en los controladores de dominio de Windows Server 2012 R2.
 
-## <a name="BKMK_ProtectedUsers"></a>Visión
+## <a name="BKMK_ProtectedUsers"></a>Información general
 
 Este grupo de seguridad está diseñado como parte de una estrategia para administrar la exposición de credenciales en la empresa. Las cuentas de los miembros de este grupo reciben automáticamente protecciones que no son configurables. La pertenencia al grupo de usuarios protegidos es de naturaleza restrictiva y segura proactivamente de forma predeterminada. El único método con el que estas protecciones de cuenta se pueden modificar consiste en quitar la cuenta del grupo de seguridad.
 
@@ -67,12 +67,12 @@ En la siguiente tabla se especifican las propiedades del grupo de usuarios prote
 |SID/RID conocido|S-1-5-21-<domain>-525|
 |Escribe|Global de dominio|
 |Contenedor predeterminado|CN=Usuarios, DC=<domain>, DC=|
-|Miembros predeterminados|Ninguno|
-|Miembro predeterminado de|Ninguno|
+|Miembros predeterminados|Ninguna|
+|Miembro predeterminado de|Ninguna|
 |¿Protegido por ADMINSDHOLDER?|No|
 |¿Es seguro sacarlo del contenedor predeterminado?|Sí|
 |¿Es seguro delegar la administración de este grupo en administradores que no son de servicio?|No|
-|Derechos de usuario predeterminados|No hay derechos de usuario predeterminados.|
+|Derechos de usuario predeterminados|No hay derechos de usuario predeterminados|
 
 ## <a name="BKMK_HowItWorks"></a>Cómo funciona el grupo de usuarios protegidos
 En esta sección se describe el funcionamiento del grupo de usuarios protegidos en las siguientes circunstancias:
@@ -89,7 +89,7 @@ Cuando el usuario que ha iniciado sesión es miembro del grupo usuarios protegid
 - A partir de Windows 8.1 y Windows Server 2012 R2, el Resumen de Windows no almacenará en caché las credenciales de texto sin formato del usuario aunque el Resumen de Windows esté habilitado.
 
 > [!Note]
-> Después de instalar el [aviso de seguridad de Microsoft 2871997](https://technet.microsoft.com/library/security/2871997) el Resumen de Windows seguirá almacenando credenciales en caché hasta que se configure la clave del registro. Vea el [aviso de seguridad de Microsoft: actualización para mejorar la protección y la administración de las credenciales: 13 de mayo de 2014](https://support.microsoft.com/en-us/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) para obtener instrucciones.
+> Después de instalar el [aviso de seguridad de Microsoft 2871997](https://technet.microsoft.com/library/security/2871997) el Resumen de Windows seguirá almacenando credenciales en caché hasta que se configure la clave del registro. Vea el [aviso de seguridad de Microsoft: actualización para mejorar la protección y la administración de las credenciales: 13 de mayo de 2014](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) para obtener instrucciones.
 
 - NTLM no almacenará en caché las credenciales de texto sin formato del usuario ni la función unidireccional NT (NTOWF).
 
@@ -112,7 +112,7 @@ Las cuentas que son miembros del grupo de usuarios protegidos que se autentican 
 
 Las opciones no configurables de expiración de los TGT se establecen en cada cuenta individual del grupo de usuarios protegidos. Por lo general, el controlador de dominio establece la vigencia y renovación de los TGT según las directivas de dominio **Vigencia máxima del vale de usuario** y **Vigencia máxima de renovación de vales de usuario**. En el caso del grupo de usuarios protegidos, estas directivas de dominio están establecidas en 600 minutos.
 
-Para obtener más información, consulta [Configurar cuentas protegidas](how-to-configure-protected-accounts.md).
+Para obtener más información, consulte [How to Configure Protected Accounts](how-to-configure-protected-accounts.md).
 
 ## <a name="troubleshooting"></a>de solución de problemas
 Existen dos registros administrativos funcionales que son de ayuda a la hora de resolver problemas de eventos relacionados con el grupo de usuarios protegidos. Estos dos nuevos registros se ubican en el Visor de eventos y están deshabilitados de forma predeterminada. Los encontrarás en **Registros de aplicaciones y servicios\Microsoft\Windows\Microsoft\Authentication**.

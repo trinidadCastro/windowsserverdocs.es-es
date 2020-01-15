@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ae1b23244f141cd0806ee14d3c40117ba72aeebb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a7c37638e25fc0d16447ab57bf369255dab9c859
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402061"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950256"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>Introducción al redireccionamiento de carpetas, archivos sin conexión y perfiles de usuario móvil
 
@@ -23,7 +23,7 @@ En este tema se describen las tecnologías de redirección de carpetas, Archivos
 
 ## <a name="technology-description"></a>Descripción de la tecnología
 
-El redireccionamiento de carpetas y los archivos sin conexión se usan conjuntamente para redireccionar la ruta de acceso de las carpetas locales (como la carpeta Mis documentos) a una ubicación de red, mientras se almacena en memoria caché local el contenido para lograr una mayor velocidad y disponibilidad. Los perfiles de usuarios móviles se usan para redireccionar un perfil de usuario a una ubicación de red. Estas características se conocían como Intellimirror.
+El redireccionamiento de carpetas y los archivos sin conexión se usan conjuntamente para redireccionar la ruta de acceso de las carpetas locales (como la carpeta Mis documentos) a una ubicación de red, mientras se almacena en memoria caché local el contenido para lograr una mayor velocidad y disponibilidad. La opción Perfiles de usuario móvil se usa para redireccionar un perfil de usuario a una ubicación de red. Estas características se conocían como Intellimirror.
 
 - La **redirección de carpetas** permite a los usuarios y administradores redirigir la ruta de acceso de una carpeta conocida a una nueva ubicación, manualmente o mediante Directiva de grupo. La nueva ubicación puede ser una carpeta en el equipo local o un directorio en un recurso compartido de archivos. Los usuarios interactúan con los archivos en la carpeta redireccionada como si aún existiesen en la unidad local. Por ejemplo, es posible redirigir la carpeta Mis documentos, que normalmente está almacenada en la unidad de disco duro local del equipo, a una ubicación de red. De esta manera, los archivos en la carpeta están disponibles para el usuario desde cualquier equipo de la red.
 - **Archivos sin conexión** hace que los archivos de red estén disponibles para un usuario, incluso si la conexión de red con el servidor no está disponible o es lenta. Cuando se trabaja en línea, el rendimiento de acceso a archivos es el de la velocidad de la red y del servidor. Cuando se trabaja sin conexión, los archivos se recuperan desde la carpeta Archivos sin conexión a velocidades de acceso local. El equipo cambia a modo Sin conexión cuando:
@@ -48,9 +48,9 @@ En la siguiente tabla, se describen algunos de los principales cambios en el red
 
 | Característica/funcionalidad | ¿Nueva o actualizada? | Descripción |
 | --- | --- | --- |
-| Modo Siempre sin conexión | Nuevo | Proporciona un acceso más rápido a los archivos y un menor uso de ancho de banda ya que siempre trabaja sin conexión, incluso cuando se encuentra conectado a través de una conexión de red de alta velocidad. |
-| Sincronización con control costo | Nuevo | Ayuda a los usuarios a evitar los costos de uso de datos elevados de la sincronización al usar conexiones de uso medido que tienen límites de uso, o en itinerancia en la red de otro proveedor. |
-| Soporte de equipo principal | Nuevo | Permite limitar el uso de la redirección de carpetas, los perfiles de usuario móviles o ambos a los equipos principales de un usuario. |
+| Modo Siempre sin conexión | New | Proporciona un acceso más rápido a los archivos y un menor uso de ancho de banda ya que siempre trabaja sin conexión, incluso cuando se encuentra conectado a través de una conexión de red de alta velocidad. |
+| Sincronización con control costo | New | Ayuda a los usuarios a evitar los costos de uso de datos elevados de la sincronización al usar conexiones de uso medido que tienen límites de uso, o en itinerancia en la red de otro proveedor. |
+| Soporte de equipo principal | New | Permite limitar el uso de la redirección de carpetas, los perfiles de usuario móviles o ambos a los equipos principales de un usuario. |
 
 ## <a name="always-offline-mode"></a>Modo Siempre sin conexión
 
@@ -67,7 +67,7 @@ El modo Siempre sin conexión proporciona los siguientes beneficios:
 
 Antes de Windows 8, Windows Server 2012, los usuarios pasaban de los modos en línea y sin conexión, según la disponibilidad y las condiciones de la red, aunque el modo de vínculo de baja velocidad (también conocido como modo de conexión lenta) estuviera habilitado y establecido en 1 milisegundo. umbral de latencia.
 
-Con el modo siempre sin conexión, los equipos nunca pasan al modo en línea cuando se configura la opción **configurar el modo de vínculo de baja velocidad** Directiva de grupo y el parámetro umbral de **latencia** se establece en 1 milisegundo. Los cambios se sincronizan en segundo plano cada 120 minutos, de manera predeterminada, pero la sincronización puede definirse mediante la configuración de directiva de grupo **Configurar sincronización en segundo plano**.
+Con el modo siempre sin conexión, los equipos nunca pasan al modo en línea cuando se configura la opción **configurar el modo de vínculo de baja velocidad** Directiva de grupo y el parámetro umbral de **latencia** se establece en 1 milisegundo. Los cambios se sincronizan en segundo plano cada 120 minutos de manera predeterminada, pero la sincronización se puede definir mediante la configuración de directiva de grupo **Configure Background Sync** .
 
 Para obtener más información, consulte [Enable the Always Offline Mode to Provide Faster Access to Files](enable-always-offline.md).
 
@@ -108,11 +108,11 @@ Hay cuatro beneficios importantes en la designación de equipos principales para
 Para limitar la descarga de datos de usuario privados en equipos principales, las tecnologías de redireccionamiento de carpetas y perfiles de usuarios móviles realizan las siguientes comprobaciones lógicas cuando un usuario inicia sesión en un equipo:
 
 1. El sistema operativo Windows comprueba la nueva configuración de directiva de grupo (**Descargar perfiles móviles solo en equipos principales** y **redirigir carpetas solo en equipos principales**) para determinar si el atributo **MsDS-primary-Computer** de Active Directory Domain Services (AD DS) debe influir en la decisión de desplazar el perfil del usuario o aplicar la redirección de carpetas.
-2. Si la configuración de directiva permite el soporte de equipo principal, Windows comprueba que el esquema AD DS admita el atributo **msDS-Primary-Computer**. Si lo admite, Windows determina de la siguiente manera si el equipo en el que está iniciando sesión el usuario se designa como equipo principal del usuario:
+2. Si la configuración de directiva permite el soporte de equipo principal, Windows comprueba que el esquema AD DS admita el atributo **msDS-Primary-Computer** . Si lo admite, Windows determina de la siguiente manera si el equipo en el que está iniciando sesión el usuario se designa como equipo principal del usuario:
     1. Si el equipo es uno de los equipos principales del usuario, Windows aplica la configuración de perfiles de usuario móviles y redirección de carpetas.
     2. Si el equipo no es uno de los equipos principales del usuario, Windows carga el perfil local almacenado en caché del usuario, si está presente, o crea un nuevo perfil local. Windows también quita las carpetas redireccionadas existentes de acuerdo con la acción de eliminación que especificó la configuración de directiva de grupo aplicada previamente, que se mantiene en la configuración de redireccionamiento de carpeta local.
 
-Para obtener más información, consulte [implementar equipos principales para redirección de carpetas y perfiles de usuario móviles](deploy-primary-computers.md)
+Para obtener más información, vea [Deploy Primary Computers for Folder Redirection and Roaming User Profiles](deploy-primary-computers.md)
 
 ## <a name="hardware-requirements"></a>Requisitos de hardware
 
@@ -125,14 +125,14 @@ Para designar equipos principales, el entorno debe cumplir con los siguientes re
 - El esquema de Active Directory Domain Services (AD DS) debe actualizarse para incluir el esquema y las condiciones de Windows Server 2012 (la instalación de un controlador de dominio de Windows Server 2012 o posterior actualiza automáticamente el esquema). Para obtener más información acerca de cómo actualizar el esquema de AD DS, vea [actualizar controladores de dominio a Windows Server 2016](../../identity/ad-ds/deploy/upgrade-domain-controllers.md).
 - Los equipos cliente deben ejecutar Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 y unirse al dominio de Active Directory que está administrando.
 
-## <a name="more-information"></a>Más información
+## <a name="more-information"></a>Información adicional
 
-Para obtener más información relacionada, vea los siguientes recursos.
+Para obtener más información relacionada, consulta los siguientes recursos.
 
 | Tipo de contenido | Referencias |
 | --- | --- |
 | Evaluación del producto | [Compatibilidad con los trabajadores de la información con almacenamiento y servicios de archivos confiables](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>Novedades [de archivos sin conexión](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>) (Windows 7 y windows Server 2008 R2)<br>[Novedades de Archivos sin conexión para Windows Vista](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Cambios en archivos sin conexión en Windows Vista](<https://technet.microsoft.com/library/2007.11.offline.aspx>) (revista de TechNet) |
-| Implementación | [Implementar el redireccionamiento de carpetas, los Archivos sin conexión y los perfiles de usuario móviles](deploy-folder-redirection.md)<br>[Implementación de una solución de centralización de datos de usuario final: la redirección de carpetas y la validación e implementación de tecnología de Archivos sin conexión](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[Guía de implementación de datos de usuarios móviles](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Guía paso a paso para configurar nuevas características de Archivos sin conexión para equipos con Windows 7](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[Usar redirección de carpetas](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[Implementación de la redirección de carpetas](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
+| Implementación | [Implementar el redireccionamiento de carpetas, los Archivos sin conexión y los perfiles de usuario móviles](deploy-folder-redirection.md)<br>[Implementación de una solución de centralización de datos de usuario final: la redirección de carpetas y la validación e implementación de tecnología de Archivos sin conexión](https://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[Guía de implementación de datos de usuarios móviles](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Guía paso a paso para configurar nuevas características de Archivos sin conexión para equipos con Windows 7](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[Usar redirección de carpetas](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[Implementación de la redirección de carpetas](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
 | Herramientas y configuración | [Archivos sin conexión en MSDN](https://msdn.microsoft.com/library/cc296092.aspx)<br>[Referencia de Archivos sin conexión Directiva de grupo](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000) |
 | Recursos de la comunidad | [Foro de almacenamiento y servicios de archivos](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[¡ Hola, chicos del scripting! ¿Cómo puedo trabajar con la característica Archivos sin conexión de Windows?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[¡ Hola, chicos del scripting! ¿Cómo puedo habilitar y deshabilitar Archivos sin conexión?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
 | Tecnologías relacionadas|[Identidad y acceso en Windows Server](../../identity/identity-and-access.md)<br>[Almacenamiento en Windows Server](../storage.md)<br>[Administración de acceso remoto y servidor](../../remote/index.md) |

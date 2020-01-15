@@ -9,12 +9,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 311789fdec160faeeeba0ecf26491d1e0cd6105d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 76c34dc518f4578b4ae2ead3459f1d79c191b3d7
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407392"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949195"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS la configuración de inicio de sesión único
 
@@ -46,7 +46,7 @@ Si el dispositivo no está registrado pero un usuario selecciona la opción "man
   
  Como se mencionó anteriormente, los usuarios de los dispositivos registrados siempre obtendrán un SSO persistente a menos que el SSO persistente esté deshabilitado. En el caso de los dispositivos no registrados, se puede lograr SSO persistente habilitando la característica "mantener la sesión iniciada" (KMSI). 
  
- En Windows Server 2012 R2, para habilitar PSSO para el escenario "mantener la sesión iniciada", debe instalar esta [revisión](https://support.microsoft.com/en-us/kb/2958298/) , que también forma parte del [paquete acumulativo de actualizaciones de agosto de 2014 para Windows RT 8,1, Windows 8.1 y Windows Server 2012 R2](https://support.microsoft.com/en-us/kb/2975719).   
+ En Windows Server 2012 R2, para habilitar PSSO para el escenario "mantener la sesión iniciada", debe instalar esta [revisión](https://support.microsoft.com/kb/2958298/) , que también forma parte del [paquete acumulativo de actualizaciones de agosto de 2014 para Windows RT 8,1, Windows 8.1 y Windows Server 2012 R2](https://support.microsoft.com/kb/2975719).   
 
 Tarea | PowerShell | Descripción
 ------------ | ------------- | -------------
@@ -127,18 +127,18 @@ Set-AdfsProperties -PersistentSsoCutoffTime <DateTime>
 ```
   
 ## <a name="enable-psso-for-office-365-users-to-access-sharepoint-online"></a>Habilitación de PSSO para que los usuarios de Office 365 tengan acceso a SharePoint Online  
- Una vez que PSSO está habilitado y configurado en AD FS, AD FS escribirá una cookie persistente después de que un usuario se haya autenticado. La próxima vez que el usuario entra en, si una cookie persistente sigue siendo válida, no es necesario que el usuario proporcione credenciales para autenticarse de nuevo. También puede evitar el aviso de autenticación adicional para los usuarios de Office 365 y SharePoint Online mediante la configuración de las dos siguientes reglas de notificaciones en AD FS para desencadenar la persistencia en Microsoft Azure AD y SharePoint Online.  Para permitir que los usuarios de PSSO para Office 365 tengan acceso a SharePoint Online, debe instalar esta [revisión](https://support.microsoft.com/en-us/kb/2958298/) , que también forma parte del [paquete acumulativo de actualizaciones de agosto de 2014 para Windows RT 8,1, Windows 8.1 y Windows Server 2012 R2](https://support.microsoft.com/en-us/kb/2975719).  
+ Una vez que PSSO está habilitado y configurado en AD FS, AD FS escribirá una cookie persistente después de que un usuario se haya autenticado. La próxima vez que el usuario entra en, si una cookie persistente sigue siendo válida, no es necesario que el usuario proporcione credenciales para autenticarse de nuevo. También puede evitar el aviso de autenticación adicional para los usuarios de Office 365 y SharePoint Online mediante la configuración de las dos siguientes reglas de notificaciones en AD FS para desencadenar la persistencia en Microsoft Azure AD y SharePoint Online.  Para permitir que los usuarios de PSSO para Office 365 tengan acceso a SharePoint Online, debe instalar esta [revisión](https://support.microsoft.com/kb/2958298/) , que también forma parte del [paquete acumulativo de actualizaciones de agosto de 2014 para Windows RT 8,1, Windows 8.1 y Windows Server 2012 R2](https://support.microsoft.com/kb/2975719).  
   
  Una regla de transformación de emisión para pasar a través de la demanda de InsideCorporateNetwork  
   
 ```  
 @RuleTemplate = "PassThroughClaims"  
 @RuleName = "Pass through claim - InsideCorporateNetwork"  
-c:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"]  
+c:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"]  
 => issue(claim = c);   
 A custom Issuance Transform rule to pass through the persistent SSO claim  
 @RuleName = "Pass Through Claim - Psso"  
-c:[Type == "http://schemas.microsoft.com/2014/03/psso"]  
+c:[Type == "https://schemas.microsoft.com/2014/03/psso"]  
 => issue(claim = c);  
   
 ```
@@ -165,21 +165,21 @@ En Resumen:
  <tr align="center">
     <td>SSO =&gt;establecer token de actualización =&gt;</td>
     <td>8 horas</td>
-    <td>N/D</td>
-    <td>N/D</td>
+    <td>N/A</td>
+    <td>N/A</td>
     <th></th>
     <td>8 horas</td>
-    <td>N/D</td>
-    <td>N/D</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
 
  <tr align="center">
     <td>PSSO =&gt;establecer token de actualización =&gt;</td>
-    <td>N/D</td>
+    <td>N/A</td>
     <td>24 horas</td>
     <td>7 días</td>
     <th></th>
-    <td>N/D</td>
+    <td>N/A</td>
     <td>24 horas</td>
     <td>Ventana máx. 90 días con 14 días</td>
   </tr>
@@ -199,7 +199,7 @@ En Resumen:
 **¿El dispositivo está registrado?** Obtiene un SSO PSSO/persistente. <br>
 **¿No se ha registrado el dispositivo?** Obtiene un inicio de sesión único (SSO) <br>
 **¿No se ha registrado el dispositivo pero KMSI?** Obtiene un SSO PSSO/persistente. <p>
-CUANDO
+Cuando
  - [x] el administrador ha habilitado la característica KMSI [y]
  - [x] el usuario hace clic en la casilla KMSI en la página de inicio de sesión de formularios.
  

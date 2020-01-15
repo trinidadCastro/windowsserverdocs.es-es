@@ -11,12 +11,12 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: high
-ms.openlocfilehash: a29c43a87ccb55e85b018bc1b6dfe84bc53495b9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fe2022ba3ff382d1070495b28dfdb03a34f9be42
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403443"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950315"
 ---
 # <a name="security--assurance"></a>Seguridad | Control
 
@@ -86,7 +86,7 @@ La seguridad de Windows Server proporciona capas de protección integradas en el
                             </div>
                           </a>
                         </li><li>
- <a href="http://blogs.technet.com/b/windowsserver/archive/2015/11/18/protecting-your-datacenter-and-cloud-november-update.aspx">
+ <a href="https://blogs.technet.com/b/windowsserver/archive/2015/11/18/protecting-your-datacenter-and-cloud-november-update.aspx">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -104,7 +104,7 @@ La seguridad de Windows Server proporciona capas de protección integradas en el
                             </div>
                           </a>
                         </li><li>
- <a href="http://channel9.msdn.com/events/ignite/2015/brk2482">
+ <a href="https://channel9.msdn.com/events/ignite/2015/brk2482">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -139,13 +139,13 @@ La seguridad de Windows Server proporciona capas de protección integradas en el
                     <div class="cardText">
                         <h3>Virtualización segura con máquinas virtuales blindada</h3>
 <HR />
-                        <p><h3><a href="http://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016">Máquina virtual blindada en Channel 9</a></h3>Un tutorial de la tecnología de máquina virtual blindada y sus beneficios</p>
+                        <p><h3><a href="https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016">Máquina virtual blindada en Channel 9</a></h3>Un tutorial de la tecnología de máquina virtual blindada y sus beneficios</p>
 <HR />
                         <p><h3><a href="https://www.youtube.com/watch?v=xip5Qtk-7d8">Demostración de máquina virtual blindada</a></h3>En este vídeo de 4 minutos se describe el valor de las máquinas virtuales blindadas y las diferencias entre una máquina virtual blindada y una no blindada.</p>
 <HR />
                         <p><h3><a href="http://microsoft-cloud.cloudguides.com/Guides/Shielded%Virtual%Machines%in%Windows%Server.htm">Tutorial de vídeo sobre las máquinas virtuales blindadas en Windows Server</a></h3>En este tutorial de vídeo se muestra cómo el Servicio de protección de host habilita máquinas virtuales blindadas para que los datos confidenciales estén protegidos del acceso no autorizado por administradores del host de Hyper-V.</p>
 <HR />
-                        <p><h3><a href="http://channel9.msdn.com/events/ignite/2015/brk3457">Protección del tejido: protección de los secretos de inquilino en Hyper-V (vídeo de Ignite)</a></h3>En esta presentación de Ignite se describen las mejoras en Hyper-V, Virtual Machine Manager y un nuevo rol de servidor de protección de host para habilitar VM blindadas. </p>
+                        <p><h3><a href="https://channel9.msdn.com/events/ignite/2015/brk3457">Protección del tejido: protección de los secretos de inquilino en Hyper-V (vídeo de Ignite)</a></h3>En esta presentación de Ignite se describen las mejoras en Hyper-V, Virtual Machine Manager y un nuevo rol de servidor de protección de host para habilitar VM blindadas. </p>
 <HR />
                         <p><h3><a href="guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview.md">Guía de implementación del tejido protegido</a></h3>En esta guía se proporciona información sobre la instalación y la validación de Windows Server y System Center Virtual Machine Manager para los host de tejido protegido y las máquinas virtuales blindadas.</p>
 <HR />
@@ -201,9 +201,9 @@ La seguridad de Windows Server proporciona capas de protección integradas en el
 <HR />
                         <p><h3><a href="https://technet.microsoft.com/library/mt150258.aspx">Administración Just-in Time con Microsoft Identity Manager</a></h3> En este artículo se describen las características y funcionalidades incluidas en Microsoft Identity Manager, como la compatibilidad con Privileged Access Management Just In Time (JIT).</p>
 <HR />
-                        <p><h3><a href="http://channel9.msdn.com/events/ignite/2015/brk3873">Protección de Windows y Microsoft Azure Active Directory con Privileged Access Management</a></h3>En esta presentación de Ignite se tratan la estrategia de Microsoft y las inversiones en Windows Server, PowerShell, Active Directory, Identity Manager y Azure Active Directory para abordar los riesgos del acceso de administrador mediante autenticación segura y la administración del acceso mediante Just-in-Time y Just Enough Administration (JEA).</p>
+                        <p><h3><a href="https://channel9.msdn.com/events/ignite/2015/brk3873">Protección de Windows y Microsoft Azure Active Directory con Privileged Access Management</a></h3>En esta presentación de Ignite se tratan la estrategia de Microsoft y las inversiones en Windows Server, PowerShell, Active Directory, Identity Manager y Azure Active Directory para abordar los riesgos del acceso de administrador mediante autenticación segura y la administración del acceso mediante Just-in-Time y Just Enough Administration (JEA).</p>
 <HR />
-                        <p><h3><a href="http://aka.ms/JEA">Just Enough Administration (JEA)</a></h3>En este documento se comparten la versión y los detalles técnicos de Just Enough Administration, un conjunto de herramientas de PowerShell diseñado para ayudar a las organizaciones a reducir el riesgo al restringir a los operadores el acceso a solo el necesario para realizar tareas específicas.</p>
+                        <p><h3><a href="https://aka.ms/JEA">Just Enough Administration (JEA)</a></h3>En este documento se comparten la versión y los detalles técnicos de Just Enough Administration, un conjunto de herramientas de PowerShell diseñado para ayudar a las organizaciones a reducir el riesgo al restringir a los operadores el acceso a solo el necesario para realizar tareas específicas.</p>
 <HR />
                         <p><h3><a href="https://www.youtube.com/watch?v=xnBrbkY9P20">Vídeo de demostración de Just Enough Administration</a></h3>Tutorial de demostración de Just Enough Administration.</p>
                     </div>
@@ -223,7 +223,7 @@ La seguridad de Windows Server proporciona capas de protección integradas en el
                     <div class="cardText">
                         <h3>Protección de credenciales</h3>
 <HR />
-                        <p><h3><a href="https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard">Proteger las credenciales de dominio derivadas con Credential Guard</a></h3>Credential Guard usa la seguridad basada en virtualización para aislar los secretos de forma que solo el software de sistema con privilegios pueda acceder a ellos. El acceso no autorizado a estos secretos puede derivar en ataques de robo de credenciales, como ataques pass-the-hash o pass-the-ticket.</a> Credential Guard impide estos ataques mediante la protección de los hash de contraseña NTLM y los vales de concesión de vales Kerberos.</p>
+                        <p><h3><a href="https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard">Proteger las credenciales de dominio derivadas con Credential Guard</a></h3>Credential Guard usa la seguridad basada en virtualización para aislar los secretos de forma que solo el software de sistema con privilegios pueda acceder a ellos. El acceso no autorizado a estos secretos puede derivar en ataques de robo de credenciales, como ataques pass-the-hash o pass-the-ticket.</a> Credential Guard impide estos ataques al proteger los hash de contraseña de NTLM y los vales de concesión de vales de Kerberos.</p>
 <HR />
                         <p><h3><a href="https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard">Proteger las credenciales de Escritorio remoto con Credential Guard remoto</a></h3> Credential Guard remoto ayuda a proteger las credenciales a través de una conexión a Escritorio remoto al redirigir las solicitudes de Kerberos de vuelta al dispositivo que solicita la conexión. También proporciona experiencias de inicio de sesión único para sesiones de Escritorio remoto. </p>
 <HR />
@@ -253,7 +253,7 @@ La seguridad de Windows Server proporciona capas de protección integradas en el
 <HR />
                         <p><h3><a href="https://www.youtube.com/watch?v=_SaDw1dRy2k">OMS y Windows Server 2016</a></h3>En este vídeo de 3 minutos se muestra cómo OMS puede ayudar a detectar posibles comportamientos malintencionados bloqueados por Windows Server.</p>
 <HR />
-                        <p><h3><a href="http://blogs.technet.com/b/ad/archive/2015/07/22/microsoft-advanced-threat-analytics-coming-next-month.aspx">Microsoft Advanced Threat Analytics</a></h3>En esta entrada de blog se analiza Microsoft Advanced Threat Analytics, un producto local que usa el tráfico de red de Active Directory y los datos de SIEM para detectar posibles amenazas y alertar sobre ellas.</p>
+                        <p><h3><a href="https://blogs.technet.com/b/ad/archive/2015/07/22/microsoft-advanced-threat-analytics-coming-next-month.aspx">Microsoft Advanced Threat Analytics</a></h3>En esta entrada de blog se analiza Microsoft Advanced Threat Analytics, un producto local que usa el tráfico de red de Active Directory y los datos de SIEM para detectar posibles amenazas y alertar sobre ellas.</p>
                     </div>
                 </div>
             </div>

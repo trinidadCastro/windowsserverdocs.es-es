@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8880f26acd8b32a4ab8a32ede067d158f2d6aed1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 834aa2611ff2b965c9184524fa6782fb4477a4cd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369213"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949134"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Anexo I: creación de cuentas de administración para cuentas protegidas y grupos en Active Directory
 
@@ -81,9 +81,9 @@ Para crear un grupo con el fin de habilitar y deshabilitar cuentas de administra
   
 7.  En la pestaña **seguridad** , quite los grupos a los que no se les permite el acceso a este grupo. Por ejemplo, si no desea que los usuarios autenticados puedan leer el nombre y las propiedades generales del grupo, puede quitar esa ACE. También puede quitar las ACE, como las de los operadores de cuentas y el acceso compatible con versiones anteriores a Windows 2000 Server. Sin embargo, debe dejar un conjunto mínimo de permisos de objeto en su lugar. Deje intactas las siguientes ACE:  
   
-    -   MISMO  
+    -   SELF  
   
-    -   INTEGRADO  
+    -   SISTEMA  
   
     -   Admins. del dominio  
   
@@ -133,7 +133,7 @@ Para crear las cuentas de administración, realice los pasos siguientes:
 
 7. Haga clic con el botón secundario en el objeto de usuario que acaba de crear y haga clic en **propiedades**.  
 
-8. Haga clic en la pestaña **cuenta** .  
+8. Haga clic en la pestaña **Account** (Cuenta).  
 
 9. En el campo **Opciones de cuenta** , seleccione la marca la **cuenta es importante y no se puede delegar** , seleccione la marca de cifrado la **cuenta compatible con Kerberos AES 128 bits** y/o **esta cuenta es compatible con Kerberos AES 256** y haga clic en **Aceptar**.  
 
@@ -144,7 +144,7 @@ Para crear las cuentas de administración, realice los pasos siguientes:
    >
    > Aunque la implementación de tipos de cifrado más seguros para los hosts no mitiga los ataques de robo de credenciales, es el uso y la configuración adecuados de los hosts seguros. El establecimiento de tipos de cifrado más seguros para los hosts que solo usan las cuentas con privilegios reduce la superficie de ataque general de los equipos.  
    >
-   > Para obtener más información acerca de la configuración de tipos de cifrado en sistemas y cuentas, consulte [configuraciones de Windows para el tipo de cifrado compatible con Kerberos](http://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx).  
+   > Para obtener más información acerca de la configuración de tipos de cifrado en sistemas y cuentas, consulte [configuraciones de Windows para el tipo de cifrado compatible con Kerberos](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx).  
    >
    > Esta configuración solo se admite en equipos que ejecutan Windows Server 2012, Windows Server 2008 R2, Windows 8 o Windows 7.  
   

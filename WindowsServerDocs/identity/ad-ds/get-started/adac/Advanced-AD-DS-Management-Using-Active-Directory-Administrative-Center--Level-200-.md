@@ -9,12 +9,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 00e307da35911189114257eea88ccaf90ceab1ae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6ec8ac4936889356ef92e82c0c89491e5c853a95
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390717"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949337"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
@@ -64,7 +64,7 @@ La papelera de reciclaje de Active Directory requiere un nivel funcional de bosq
   
 ### <a name="enabling-active-directory-recycle-bin-using-active-directory-administrative-center"></a>Habilitar la papelera de reciclaje de Active Directory mediante el Centro de administración de Active Directory
 
-Para habilitar la papelera de reciclaje de Active Directory, abre el **Centro de administración de Active Directory** y haz clic en el nombre del bosque en el panel de navegación. En el panel **Tareas**, haz clic en **Habilitar papelera de reciclaje**.  
+Para habilitar la papelera de reciclaje de Active Directory, abre el **Centro de administración de Active Directory** y haz clic en el nombre del bosque en el panel de navegación. En el panel **Tareas** , haz clic en **Habilitar papelera de reciclaje**.  
   
 ![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBin.png)  
   
@@ -98,7 +98,7 @@ La papelera de reciclaje de Active Directory conserva todos los objetos eliminad
   
 El contenedor **Objetos eliminados** muestra todos los objetos restaurables en la partición de dominio. Los objetos eliminados anteriores a **msDS-deletedObjectLifetime** se conocen como objetos reciclados. El Centro de administración de Active Directory no muestra los objetos reciclados y estos objetos no se pueden restaurar usando el Centro de administración de Active Directory.  
   
-Para obtener una explicación detallada de la arquitectura y las reglas de procesamiento de la papelera de reciclaje, consulte [La papelera de reciclaje de AD: Descripción, implementación, procedimientos recomendados y solución de problemas](http://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx).  
+Para obtener una explicación detallada de la arquitectura y las reglas de procesamiento de la papelera de reciclaje, consulte [La papelera de reciclaje de AD: Descripción, implementación, procedimientos recomendados y solución de problemas](https://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx).  
   
 El Centro de administración de Active Directory limita artificialmente a 20.000 el número predeterminado de objetos que se devuelven de un contenedor. Puedes aumentar este límite hasta 100.000 objetos haciendo clic en el menú **Administrar** y, después, **Opciones de la lista de administración**.  
   
@@ -122,7 +122,7 @@ La operación de restauración admite todas las opciones de criterios de filtrad
 - Nombre  
 - Al eliminar  
 - Principal último conocido  
-- Tipo  
+- Escribe  
 - Descripción  
 - Ciudad  
 - País o región  
@@ -130,7 +130,7 @@ La operación de restauración admite todas las opciones de criterios de filtrad
 - Id. de empleado  
 - Nombre  
 - Puesto  
-- Apellidos  
+- Apellido  
 - SAMaccountname  
 - Estado o provincia  
 - Número de teléfono  
@@ -217,7 +217,7 @@ La funcionalidad del cmdlet **Restore-ADObject** no cambió de Windows Server 20
 Es posible que, con el tiempo, el contenedor de objetos eliminados acumule más de 20.000 (o incluso 100.000) objetos en organizaciones de tamaño medio y grande, y que tenga dificultades para mostrarlos todos. Como el mecanismo de filtrado en el Centro de administración de Active Directory usa el filtrado del lado del cliente, no puede mostrar estos objetos adicionales. Para evitar esta limitación, sigue estos pasos para realizar una búsqueda del lado del servidor:  
   
 1. Haz clic con el botón derecho en el contenedor **Objetos eliminados** y haz clic en **Buscar en este nodo**.  
-2. Haz clic en el botón de contenido adicional para exponer el menú **+Agregar criterios** y selecciona y agrega **Última modificación entre las fechas indicadas**. La hora de Última modificación (el atributo **whenChanged**) es una aproximación cercana a la hora de eliminación; en la mayoría de los entornos, es idéntica. Esta consulta realiza una búsqueda en el lado del servidor.  
+2. Haz clic en el botón de contenido adicional para exponer el menú **+Agregar criterios** y selecciona y agrega **Última modificación entre las fechas indicadas**. La hora de Última modificación (el atributo **whenChanged** ) es una aproximación cercana a la hora de eliminación; en la mayoría de los entornos, es idéntica. Esta consulta realiza una búsqueda en el lado del servidor.  
 3. Busca los objetos eliminados que quieres restaurar usando más filtrado y ordenación, entre otros, en los resultados mostrados, y restáuralos normalmente.  
   
 ## <a name="BKMK_FGPP"></a>Configuración y administración de directivas de contraseña específica mediante Centro de administración de Active Directory  
@@ -228,13 +228,13 @@ El Centro de administración de Active Directory permite crear y administrar obj
   
 Para obtener más información sobre la directiva de contraseña específica, consulte la [Guía paso a paso para la configuración de directivas de bloqueo de cuenta y contraseña específica de AD DS (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx).  
   
-En el panel de navegación, haz clic en la Vista de árbol, en tu dominio, en **Sistema**, en **Contenedor de configuraciones de contraseña** y, en el panel tareas, haz clic en **Nuevo** y **Configuración de contraseña**.  
+En el panel de navegación, haz clic en la Vista de árbol, en tu dominio, en **Sistema**, en **Contenedor de configuraciones de contraseña**y, en el panel tareas, haz clic en **Nuevo** y **Configuración de contraseña**.  
   
 ![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_PasswordSettings.png)  
   
 ### <a name="managing-fine-grained-password-policies"></a>Administrar directivas de contraseña específica
 
-Al crear una nueva FGPP o editar una existente, se abre el editor **Configuración de contraseña**. Aquí puedes configurar todas las directivas de contraseña que quieras, como harías en Windows Server 2008 o Windows Server 2008 R2, solo que ahora con un editor creado específicamente para ello.  
+Al crear una nueva FGPP o editar una existente, se abre el editor **Configuración de contraseña** . Aquí puedes configurar todas las directivas de contraseña que quieras, como harías en Windows Server 2008 o Windows Server 2008 R2, solo que ahora con un editor creado específicamente para ello.  
   
 ![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_CreatePasswordSettings.png)  
   
@@ -348,7 +348,7 @@ Crea el contenido siguiente:
 </system.diagnostics>
 ```
 
-Los niveles de detalle de **DsacLogLevel** son **None**, **Error**, **Warning**, **Info** y **Verbose**. El nombre del archivo de salida se puede configurar y se escribe en la misma carpeta que dsac.exe. El archivo de salida proporciona más información sobre cómo funciona ADAC, con qué controladores de dominio se puso en contacto, qué comandos de Windows PowerShell se ejecutaron, cuáles fueron las respuestas y más información.  
+Los niveles de detalle de **DsacLogLevel** son **None**, **Error**, **Warning**, **Info**y **Verbose**. El nombre del archivo de salida se puede configurar y se escribe en la misma carpeta que dsac.exe. El archivo de salida proporciona más información sobre cómo funciona ADAC, con qué controladores de dominio se puso en contacto, qué comandos de Windows PowerShell se ejecutaron, cuáles fueron las respuestas y más información.  
 
 Por ejemplo, al usar el nivel INFO, que devuelve todos los resultados excepto el detalle del nivel de seguimiento:  
   
@@ -447,7 +447,7 @@ Cuando se establece el nivel Verbose, también se muestran las pilas de .NET de 
 
 Los errores que se muestran cuando no hay disponibles instancias de Servicios web de Active Directory son:  
   
-|Error|Operación|
+|Error de :|Operación|
 | --- | --- |  
 |"No se pudo conectar a ningún dominio. Actualice o vuelva a intentarlo cuando la conexión esté disponible"|Se muestra al iniciar la aplicación Centro de administración de Active Directory.|
 |"No se puede encontrar un servidor disponible en el dominio de *<NetBIOS domain name>* que ejecuta el servicio Web Active Directory (ADWs)"|Se muestra al intentar seleccionar un nodo del dominio en la aplicación Centro de administración de Active Directory.|

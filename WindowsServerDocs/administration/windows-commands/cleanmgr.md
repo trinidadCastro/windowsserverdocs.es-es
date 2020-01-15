@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 20bc60abc747e6bab0ef59f38d0a392f18d75abe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0646922f409d4ea8abb85c927a329013e32016de
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379374"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947586"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
@@ -33,15 +33,15 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 |      Parámetro      |    Descripción     |
 | ------------------- | ------------------ |
-|  /d \<driveletter >          | Especifica la unidad que desea que limpie el liberador de espacio en disco.<br>**Nota:** La opción/d no se emplea con/sagerun: n. |
+|  /d \<letraDeUnidad >          | Especifica la unidad que desea que limpie el liberador de espacio en disco.<br>**Nota:** La opción/d no se emplea con/sagerun: n. |
 | /sageset: n | Muestra el cuadro de diálogo Configuración de limpieza de disco y también crea una clave del registro para almacenar la configuración seleccionada. El valor `n`, que se almacena en el registro, le permite especificar las tareas para que se ejecute el liberador de espacio en disco. El valor de `n` puede ser cualquier valor entero comprendido entre 0 y 65535. Para que todas las opciones estén disponibles cuando se usa la opción/sageset, especifique la unidad donde está instalado Windows.  |
 |  /sagerun: n  |  Ejecuta las tareas especificadas que se asignan al valor n si se utiliza la opción \sageset. Se enumeran todas las unidades del equipo y se ejecuta el perfil seleccionado en cada unidad.           |
-| /TUNEUP: n    | Ejecute/sageset y/sagerun para el mismo `n`. |
+| /TUNEUP: n    | Ejecute/sageset y/sagerun para la misma `n`. |
 | /LOWDISK     | Ejecute con la configuración predeterminada. |
 | /VERYLOWDISK | Ejecute con la configuración predeterminada, sin mensajes de usuario. |
 | /?           | Mostrar ayuda. |
 
-## <a name="options"></a>Opciones
+## <a name="options"></a>botón
 
 Las opciones de los archivos que puede especificar para el liberador de espacio en disco mediante/sageset y/sagerun incluyen:
 
@@ -89,4 +89,4 @@ cleanmgr /tuneup:1
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-[Liberar espacio de la unidad en Windows 10](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
+[Liberar espacio de la unidad en Windows 10](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)

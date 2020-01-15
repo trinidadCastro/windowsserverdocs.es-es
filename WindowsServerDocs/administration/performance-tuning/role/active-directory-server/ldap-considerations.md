@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f6670c8cfd718360518869f0551461c45e5aed27
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e407f9f32339e3f9c75e3722ad218228b608b9d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370281"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947112"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>Consideraciones de LDAP en agrega optimización del rendimiento
 
@@ -60,7 +60,7 @@ Estos escenarios se pueden detectar mediante uno o varios de los métodos siguie
 
 -   [Seguimiento de búsquedas costosas e ineficaces](https://msdn.microsoft.com/library/ms808539.aspx)
 
--   Active Directory conjunto de recopiladores de datos de diagnóstico en el monitor de rendimiento ([hijo de spa: conjuntos de recopiladores de datos de AD en Win2008 y versiones posteriores](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx))
+-   Active Directory conjunto de recopiladores de datos de diagnóstico en el monitor de rendimiento ([hijo de spa: conjuntos de recopiladores de datos de AD en Win2008 y versiones posteriores](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx))
 
 -   [Asesor de rendimiento de servidor de Microsoft](../../../server-performance-advisor/microsoft-server-performance-advisor.md) Paquete de Active Directory Advisor
 
@@ -98,7 +98,7 @@ Para obtener más información, vea lo siguiente:
 
 -   [Atributos indizados](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Consulta también
 
 - [Optimizar el rendimiento de servidores Active Directory](index.md)
 - [Consideraciones de hardware](hardware-considerations.md).

@@ -12,12 +12,12 @@ ms.author: coreyp
 manager: dongill
 ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 75a565eb9e26e03c1aad221059b327943485c81c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6490bd9a6cb7b305ba9746a357a8c909c7b84555
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403897"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950468"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Centro de datos definido por software de Windows Server
 
@@ -33,13 +33,13 @@ La implementación de Microsoft del SDDC consta de las tecnologías de Windows S
 
 Las tecnologías integradas en Windows Server y System Center son los bloques de creación principales de la experiencia de SDDC de Windows Server. Pero, aunque sea una plataforma virtualizada, aún es necesario el hardware adecuado. Los asociados de Microsoft que participan en las **soluciones definidas por software de Windows Server (WSSD)** y los programas de **soluciones HCI Azure Stack** pueden ayudar a su empresa a adquirir el hardware adecuado y ponerlo en marcha en el día cero.
 
-![](media/sddc/video.png) **[ver un vídeo para obtener más información sobre los SDDC de Microsoft](https://mva.microsoft.com/en-US/training-courses/whats-new-in-windows-server-2016-16457?l=YcsJR6sXC_1006218965)**
+![](media/sddc/video.png) **[ver un vídeo para obtener más información sobre los SDDC de Microsoft](https://mva.microsoft.com/training-courses/whats-new-in-windows-server-2016-16457?l=YcsJR6sXC_1006218965)**
 
 ![](media/sddc/poster-ico.png) **[descargar un archivo. pdf de tamaño de póster de esta página](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/WindowsServerDocs/media/sddc/sddc_poster_0801417_ANSI-E.pdf)**
 
 ![](media/sddc/spacer1.png)<a href="https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/WindowsServerDocs//media/sddc/sddc_poster_0801417_ANSI-E.pdf"><img src="media/sddc/poster.png"></a>
 
-## <a name="azure-stack-hci-solutions"></a>Azure Stack soluciones HCI
+## <a name="azure-stack-hci-solutions"></a>Soluciones de Azure Stack HCI
 
 La creación del centro de bits definido por software de Windows Server en la infraestructura de hardware correcta es un primer paso fundamental para el éxito. Este es el motivo por el que nos hemos asociado con 15 asociados para crear diseños de SDDC validados por Microsoft y procedimientos recomendados para la implementación.
 
@@ -47,7 +47,7 @@ Los asociados de Microsoft ofrecen una serie de soluciones que funcionan con el 
 
 ![](media/sddc/learn.png) **[obtener más información acerca de las soluciones HCI de Azure Stack](https://azure.microsoft.com/overview/azure-stack/hci)**
 
-![](media/sddc/learn.png) **[obtener más información sobre las soluciones de WSSD](https://www.microsoft.com/en-us/cloud-platform/software-defined-datacenter)**
+![](media/sddc/learn.png) **[obtener más información sobre las soluciones de WSSD](https://www.microsoft.com/cloud-platform/software-defined-datacenter)**
 
 ## <a name="windows-server-virtualized-technologies"></a>Tecnologías virtualizadas de Windows Server ##
 
@@ -71,7 +71,7 @@ Hyper-V es una tecnología de virtualización basada en el hipervisor para Windo
 
 ![](media/sddc/spacer1.png)![](media/sddc/hypervisor.png)
 
-![](media/sddc/learn.png) **[obtener más información sobre el hipervisor de Hyper-V](https://www.microsoft.com/en-us/cloud-platform/server-virtualization)**
+![](media/sddc/learn.png) **[obtener más información sobre el hipervisor de Hyper-V](https://www.microsoft.com/cloud-platform/server-virtualization)**
 
 ### <a name="guest-clustering-with-shared-vhdx"></a>Agrupación en clústeres invitados con VHDX compartido
 
@@ -149,7 +149,7 @@ SLB permite habilitar múltiples servidores para que hospeden la misma carga de 
 
 ![](media/sddc/storage.png)
 
-### <a name="storage-spaces-direct"></a>Espacios de almacenamiento directo
+### <a name="storage-spaces-direct"></a>Espacios de almacenamiento directos
 
 ![](media/sddc/storage-line.png)
 
@@ -184,13 +184,13 @@ La preparación y recuperación ante desastres hacen que no se pierda ningún da
 
 Replicación sincrónica
 
-1. La aplicación escribe los datos.
-2. Se escriben los datos de registro y estos se replican en el sitio remoto.
-3. Se escriben los datos de registro en el sitio remoto.
+1. La aplicación escribe los datos
+2. Se escriben los datos de registro y estos se replican en el sitio remoto
+3. Se escriben los datos de registro en el sitio remoto
 4. Confirmación del sitio remoto.
 5. Confirmación de escritura en la aplicación
 
-t & t1: Datos vaciados en el volumen, los registros siempre se escriben a través.
+t & t1: datos vaciados en el volumen, los registros siempre se escriben a través
 
 ![](media/sddc/learn.png) **[obtener más información acerca de réplica de almacenamiento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-overview)**
 
@@ -230,7 +230,7 @@ El Servicio de protección de host cuenta con claves para tejidos legítimos, as
 
 ![](media/sddc/learn.png) **[obtener más información sobre el servicio de protección de host](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-manage-hgs)**
 
-### <a name="device-health-attestation"></a>Certificación de estado del dispositivo
+### <a name="device-health-attestation"></a>Atestación de estado de dispositivo
 
 ![](media/sddc/security-line.png)
 

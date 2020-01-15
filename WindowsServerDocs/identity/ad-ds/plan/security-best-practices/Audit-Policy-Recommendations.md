@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c902f9a438afd226dfb58dbde9f3c00d57b0ed58
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6cecf2edcb834a963c706fa4a63e7d15b13f7888
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408598"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949626"
 ---
 # <a name="audit-policy-recommendations"></a>Recomendaciones de la directiva de auditoría
 
@@ -38,11 +38,11 @@ Esta sección contiene tablas que enumeran las recomendaciones de configuración
 
 -   Windows Server 2012  
 
--   Windows Server 2012 R2  
+-   R2 de Windows 2012 Server  
 
 -   Windows Server 2008  
 
--   Windows 10
+-   10 de Windows
 
 -   Windows 8.1  
 
@@ -57,7 +57,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |**Notación**|**Recomendación**|  
 |SÍ|Habilitar en escenarios generales|  
 |NO|**No** habilitar en escenarios generales|  
-|Cuando|Habilitar si es necesario para un escenario concreto, o si se instala en el equipo un rol o característica para el que se desea la auditoría|  
+|IF|Habilitar si es necesario para un escenario concreto, o si se instala en el equipo un rol o característica para el que se desea la auditoría|  
 |DC|Habilitar en controladores de dominio|  
 |En blanco|Ninguna recomendación|  
 
@@ -107,7 +107,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar recurso compartido de archivos||||  
 |Auditar sistema de archivos||||  
 |Auditar conexión de Plataforma de filtrado||||  
-|Auditar colocación de paquetes de la Plataforma de filtrado||||  
+|Auditar colocación de paquetes de Plataforma de filtrado||||  
 |Auditar manipulación de identificadores||||  
 |Auditar objeto de kernel||||  
 |Auditar otros eventos de acceso a objetos||||  
@@ -119,14 +119,14 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar cambio de directiva de auditoría|Sí no|Sí sí|Sí sí|  
 |Auditar cambio de directiva de autenticación|Sí no|Sí no|Sí sí|  
 |Auditar cambio de directiva de autorización||||  
-|Auditar cambio de directiva de la Plataforma de filtrado||||  
+|Auditar cambio de directiva de Plataforma de filtrado||||  
 |Auditar cambio de directiva del nivel de reglas de MPSSVC|||Sí  |  
 |Auditar otros eventos de cambio de directiva||||  
 |**Uso de privilegios**||||  
 |Auditar uso de privilegios no confidenciales||||  
 |Auditar otros eventos de uso de privilegios||||  
 |Auditar uso de privilegios confidenciales||||  
-|**Integrado**||||  
+|**System** (Sistema)||||  
 |Auditar controlador IPsec||Sí sí|Sí sí|  
 |Auditar otros eventos del sistema|Sí sí|||  
 |Auditar cambio de estado de seguridad|Sí no|Sí sí|Sí sí|  
@@ -185,7 +185,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar recurso compartido de archivos||||  
 |Auditar sistema de archivos||||  
 |Auditar conexión de Plataforma de filtrado||||  
-|Auditar colocación de paquetes de la Plataforma de filtrado||||  
+|Auditar colocación de paquetes de Plataforma de filtrado||||  
 |Auditar manipulación de identificadores||||  
 |Auditar objeto de kernel||||  
 |Auditar otros eventos de acceso a objetos||||  
@@ -197,14 +197,14 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar cambio de directiva de auditoría|Sí no|Sí sí|Sí sí|  
 |Auditar cambio de directiva de autenticación|Sí no|Sí no|Sí sí|  
 |Auditar cambio de directiva de autorización||||  
-|Auditar cambio de directiva de la Plataforma de filtrado||||  
+|Auditar cambio de directiva de Plataforma de filtrado||||  
 |Auditar cambio de directiva del nivel de reglas de MPSSVC|||Sí  |  
 |Auditar otros eventos de cambio de directiva||||  
 |**Uso de privilegios**||||  
 |Auditar uso de privilegios no confidenciales||||  
 |Auditar otros eventos de uso de privilegios||||  
 |Auditar uso de privilegios confidenciales||||  
-|**Integrado**||||  
+|**System** (Sistema)||||  
 |Auditar controlador IPsec||Sí sí|Sí sí|  
 |Auditar otros eventos del sistema|Sí sí|||  
 |Auditar cambio de estado de seguridad|Sí no|Sí sí|Sí sí|  
@@ -285,13 +285,13 @@ Consulte [Apéndice L: events to Monitor](../../../ad-ds/plan/Appendix-L--Events
 ## <a name="additional-information-for-monitoring-active-directory-domain-services"></a>Información adicional para la supervisión de Active Directory Domain Services  
 Revise los siguientes vínculos para obtener información adicional sobre la supervisión de AD DS:  
   
--   La [Auditoría de acceso a objetos global es mágica](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx) : proporciona información sobre la configuración y el uso de la configuración de directivas de auditoría avanzada que se agregó a Windows 7 y windows Server 2008 R2.  
+-   La [Auditoría de acceso a objetos global es mágica](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx) : proporciona información sobre la configuración y el uso de la configuración de directivas de auditoría avanzada que se agregó a Windows 7 y windows Server 2008 R2.  
 
--   [Introducción a los cambios de auditoría en windows 2008](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx) : presenta los cambios de auditoría realizados en Windows 2008.  
+-   [Introducción a los cambios de auditoría en windows 2008](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx) : presenta los cambios de auditoría realizados en Windows 2008.  
 
--   [Trucos de auditoría fantásticos en vista y 2008](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx) : se explican las nuevas características interesantes de la auditoría en Windows Vista y windows Server 2008 que se pueden usar para solucionar problemas o ver lo que sucede en su entorno.  
+-   [Trucos de auditoría fantásticos en vista y 2008](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx) : se explican las nuevas características interesantes de la auditoría en Windows Vista y windows Server 2008 que se pueden usar para solucionar problemas o ver lo que sucede en su entorno.  
 
--   [Tienda única para la auditoría en Windows server 2008 y Windows Vista](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx) : contiene una compilación de características de auditoría e información contenida en windows Server 2008 y Windows Vista.  
+-   [Tienda única para la auditoría en Windows server 2008 y Windows Vista](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx) : contiene una compilación de características de auditoría e información contenida en windows Server 2008 y Windows Vista.  
 
 -   [AD DS guía paso a paso de auditoría](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx) : describe la nueva característica de auditoría de Active Directory Domain Services (AD DS) en Windows Server 2008. También se proporcionan procedimientos para implementar esta nueva característica.  
 

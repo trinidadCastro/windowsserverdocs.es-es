@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 27d456dd274b917233f0484f055b679dc8c73214
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cce76e006272104033e1437e0ccf6cad5bc47f3f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403507"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950304"
 ---
 # <a name="passwords-overview"></a>Información general sobre contraseñas
 
@@ -50,11 +50,11 @@ En esta tabla se enumeran recursos adicionales para las características de cont
 
 |Tipo de contenido|Referencias|
 |--------|-------|
-|**Documentación del escenario**|[Protección de su identidad digital](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
+|**Documentación del escenario**|[Protección de su identidad digital](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
 |**Operaciones**|[Active Directory usuarios y equipos](https://technet.microsoft.com/library/cc754217.aspx)|
-|**Solución de problemas**|[Averigüe cuándo expira la contraseña \- Active Directory blog de PowerShell](http://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
+|**Solución de problemas**|[Averigüe cuándo expira la contraseña \- Active Directory blog de PowerShell](https://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
 |**Seguridad**| [Guía de amenazas y contramedidas de](https://technet.microsoft.com/library/hh125920(v=ws.10).aspx) windows Server 2008 R2 y Windows 7: directivas de cuenta<br /><br />Instrucciones para [cambiar y crear contraseñas seguras](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)|
 |**Herramientas y configuración**|[Referencia de la configuración de directiva de grupo para Windows y Windows Server en el centro de descarga de Microsoft](https://www.microsoft.com/download/en/details.aspx?amp;displaylang=en&displaylang=en&id=25250)|
-|**Recursos de la comunidad**|[Protección de su identidad digital](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[Iniciar sesión en Windows 8 con un Windows Live ID](http://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[Iniciar sesión con una contraseña de imagen](http://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[Optimización de la seguridad de la contraseña de imagen](http://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
+|**Recursos de la comunidad**|[Protección de su identidad digital](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[Iniciar sesión en Windows 8 con un Windows Live ID](https://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[Iniciar sesión con una contraseña de imagen](https://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[Optimización de la seguridad de la contraseña de imagen](https://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
 
 

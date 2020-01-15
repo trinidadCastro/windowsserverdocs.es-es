@@ -11,19 +11,19 @@ ms.topic: landing-page
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 03/08/2019
-ms.openlocfilehash: eadac31cb623a15dd308f7e33f984fe1fb46ffe5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7e7fbd6ce3fcef6b0f8da88927d83f28d3fff0a8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365929"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950227"
 ---
 # <a name="storage"></a>Almacenamiento
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 >[!TIP]
-> ¿Buscas información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
+> ¿Busca información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puede [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
 
 <hr />
 El almacenamiento en Windows Server proporciona funciones nuevas y mejoradas para los clientes de centros de datos definidos por software (SDDC) que se centran en las cargas de trabajo virtualizadas. Windows Server también proporciona una extensa compatibilidad para clientes empresariales que usan servidores de archivos con cargas de trabajo existentes.
@@ -86,7 +86,7 @@ El almacenamiento en Windows Server proporciona funciones nuevas y mejoradas par
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Servidores de archivos de propósito general</h3>
+                        <h3>Servidores de archivos de uso general</h3>
 <HR />
                         <p><h3><a href="storage-migration-service/overview.md">Servicio de migración de almacenamiento</a></h3>Migrar los servidores a una versión más reciente de Windows Server mediante una herramienta gráfica que informan sobre los datos en los servidores, transfiere los datos y la configuración a los servidores más recientes y, de forma opcional, mueve las identidades de los servidores antiguos a los nuevos servidores para que las aplicaciones y los usuarios no es necesario cambiar nada.</p>
 <HR />
@@ -124,7 +124,7 @@ El almacenamiento en Windows Server proporciona funciones nuevas y mejoradas par
 <HR />
                         <p><h3><a href="refs/refs-overview.md">ReFS</a></h3> Un sistema de archivos resistente que maximiza la disponibilidad de los datos, se escala de forma eficiente a conjuntos de datos de gran tamaño en diversas cargas de trabajo y proporciona integridad de los datos por medio de la resistencia a los daños (independientemente de los errores de software o hardware).<p>
 <HR />
-                        <p><h3><a href="file-server/file-server-smb-overview.md">Protocolo de bloque de mensajes del servidor (SMB)</a></h3> Protocolo de uso compartido de archivos de red que permite a las aplicaciones de un equipo leer y escribir en archivos y solicitar servicios de programas de servidor en una red de equipos. El protocolo SMB puede usarse sobre el protocolo TCP/IP u otros protocolos de red. Con el uso de un protocolo SMB, una aplicación (o el usuario de una aplicación) puede acceder a los archivos u otros recursos de un servidor remoto. Esto permite que las aplicaciones puedan leer, crear y actualizar archivos en un servidor remoto. También puede comunicarse con cualquier programa del servidor que esté configurado para recibir la solicitud de un cliente SMB.<p>
+                        <p><h3><a href="file-server/file-server-smb-overview.md">Protocolo Bloque de mensajes del servidor (SMB)</a></h3> Protocolo de uso compartido de archivos de red que permite a las aplicaciones de un equipo leer y escribir en archivos y solicitar servicios de programas de servidor en una red de equipos. El protocolo SMB puede usarse sobre el protocolo TCP/IP u otros protocolos de red. Con el uso de un protocolo SMB, una aplicación (o el usuario de una aplicación) puede acceder a los archivos u otros recursos de un servidor remoto. Esto permite que las aplicaciones puedan leer, crear y actualizar archivos en un servidor remoto. También puedes comunicarse con cualquier programa del servidor que esté configurado para recibir la solicitud de un cliente SMB.<p>
 <HR />
                         <p><h3><a href="storage-spaces/Storage-class-memory-health.md">Memoria de clase de almacenamiento</a></h3> Proporciona un rendimiento similar a la memoria del equipo (muy rápido), pero con la persistencia de datos de las unidades de almacenamiento normales. Windows trata la memoria de clase de almacenamiento de manera similar a las unidades normales (simplemente, más rápido), pero hay algunas diferencias en la manera en que se administra el estado del dispositivo.<p>
 <HR />
@@ -145,5 +145,5 @@ El almacenamiento en Windows Server proporciona funciones nuevas y mejoradas par
 
 ## <a name="in-azure"></a>En Azure
 
-* [Azure Storage](https://azure.microsoft.com/documentation/services/storage/)
-* [StorSimple de Azure](https://www.microsoft.com/en-us/cloud-platform/azure-storsimple)
+* [Azure Storage](https://azure.microsoft.com/documentation/services/storage/)
+* [StorSimple de Azure](https://www.microsoft.com/cloud-platform/azure-storsimple)

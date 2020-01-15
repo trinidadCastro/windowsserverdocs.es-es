@@ -8,12 +8,12 @@ ms.date: 05/23/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2ef16ddeb241d55b61b484805ff91cb247985d8d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bc881efcd932e36e40f4483ae5a8378884db64a6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358882"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948863"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>Crear un método de autenticación personalizado para AD FS en Windows Server
 
@@ -60,7 +60,7 @@ En este tutorial se usa Visual Studio 2012.  El proyecto se puede compilar con c
 
 2.  Seleccione biblioteca de clases y asegúrese de que tiene como destino .NET 4,5.
 
-    ![crear el]proveedor(media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "crear el proveedor")
+    ![crear el proveedor](media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "creación del proveedor")
 
 3.  Haga una copia de **Microsoft. IdentityServer. Web. dll** de% windir%\\ADFS en el servidor de Windows Server 2012 R2, donde se ha instalado AD FS y péguelo en la carpeta del proyecto en el equipo de desarrollo.
 
@@ -70,13 +70,13 @@ En este tutorial se usa Visual Studio 2012.  El proyecto se puede compilar con c
 
 6.  Haga clic en **Aceptar** para confirmar la nueva referencia:
 
-    ![crear el]proveedor(media/ad-fs-build-custom-auth-method/Dn783423.f18df353-9259-4744-b4b6-dd780ce90951(MSDN.10).jpg "crear el proveedor")
+    ![crear el proveedor](media/ad-fs-build-custom-auth-method/Dn783423.f18df353-9259-4744-b4b6-dd780ce90951(MSDN.10).jpg "creación del proveedor")
 
     Ahora debería estar configurado para resolver todos los tipos necesarios para el proveedor. 
 
 7.  Agregue una nueva clase al proyecto (haga clic con el botón derecho en el proyecto, **Agregar... Clase...** ) y asígnele un nombre como **adaptador**, que se muestra a continuación:
 
-    ![crear el]proveedor(media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "crear el proveedor")
+    ![crear el proveedor](media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "creación del proveedor")
 
 8.  En el nuevo archivo MyAdapter.cs, reemplace el código existente por lo siguiente:
 
@@ -227,10 +227,10 @@ En este tutorial se usa Visual Studio 2012.  El proyecto se puede compilar con c
          /// Returns an array indicating the type of claim that the adapter uses to identify the user being authenticated.
          /// Note that although the property is an array, only the first element is currently used.
          /// MUST BE ONE OF THE FOLLOWING
-         /// "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"
+         /// "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"
          /// "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn"
          /// "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"
-         /// "http://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid"
+         /// "https://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid"
          public string[] IdentityClaims
          {
          get { return new[] { "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn" }; }
@@ -343,7 +343,7 @@ En este tutorial se usa Visual Studio 2012.  El proyecto se puede compilar con c
 
 14. Después, seleccione **proyecto-\>Agregar componente...** El archivo de recursos y el nombre de los **recursos**de archivo y haga clic en **Agregar:**
 
-   ![crear el]proveedor(media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "crear el proveedor")
+   ![crear el proveedor](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "creación del proveedor")
 
 15. Después, en el archivo **Resources. resx** , elija **Agregar recurso... Agregar archivo existente**.  Navegue hasta el archivo de texto (que contiene el fragmento html) que guardó anteriormente.
 
@@ -361,7 +361,7 @@ El adaptador debe estar integrado en un ensamblado .NET con nombre seguro que se
 
 2.  En la pestaña **firma** , Active **firmar el ensamblado** y elija **\<nuevo...\>** en **elegir un archivo de clave de nombre seguro:** escriba un nombre de archivo de clave y una contraseña y haga clic en **Aceptar**.  A continuación, asegúrese **de que la opción firmar el ensamblado** está activada y desactivado **solo firmar** .  La página de **firma** de propiedades debe tener el siguiente aspecto:
 
-    ![compilar]el proveedor(media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "compilar el proveedor")
+    ![compilar el proveedor](media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "creación del proveedor")
 
 3.  A continuación, compile la solución.
 
@@ -405,7 +405,7 @@ Una vez cumplidos los requisitos previos anteriores, abra una ventana de comando
 
 2.  Reinicie el servicio AD FS (mediante el complemento Servicios de Windows, por ejemplo).
 
-3.  Ejecute el siguiente comando: `Get-AdfsAuthenticationProvider`.
+3.  Ejecute el comando siguiente: `Get-AdfsAuthenticationProvider`.
 
     Esto muestra el proveedor como uno de los proveedores del sistema.
 
@@ -432,7 +432,7 @@ Una vez cumplidos los requisitos previos anteriores, abra una ventana de comando
 
 3.  En el panel central, en **multi-factor Authentication**, haga clic en el vínculo **Editar** situado a la derecha de **configuración global**.
 
-4.  En **seleccionar métodos de autenticación adicionales** en la parte inferior de la página, active la casilla de adminName del proveedor. Haga clic en **Aplicar**.
+4.  En **seleccionar métodos de autenticación adicionales** en la parte inferior de la página, active la casilla de adminName del proveedor. Haz clic en **Apply**.
 
 5.  Para proporcionar un "desencadenador" para invocar MFA con el adaptador, en **ubicaciones** , Compruebe la **extranet** y la **intranet**, por ejemplo. Haz clic en **Aceptar**. (Para configurar desencadenadores por usuario de confianza, vea "crear la Directiva de autenticación mediante Windows PowerShell" a continuación).
 
@@ -460,12 +460,12 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 2. A continuación, configure reglas globales o específicas del usuario de confianza para desencadenar MFA:
 
-   Ejemplo 1: crear una regla global para requerir MFA para solicitudes externas:`PS C:\>Set-AdfsAdditionalAuthenticationRule –AdditionalAuthenticationRules 'c:[type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "http://schemas.microsoft.com/claims/multipleauthn" );'`
+   Ejemplo 1: crear una regla global para requerir MFA para solicitudes externas:`PS C:\>Set-AdfsAdditionalAuthenticationRule –AdditionalAuthenticationRules 'c:[type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type = "https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn" );'`
 
    Ejemplo 2: crear reglas de MFA para requerir MFA para solicitudes externas a un usuario de confianza específico.  (Tenga en cuenta que los proveedores individuales no se pueden conectar a usuarios de confianza individuales en AD FS en Windows Server 2012 R2).
 
        PS C:\>$rp = Get-AdfsRelyingPartyTrust –Name <Relying Party Name>
-       PS C:\>Set-AdfsRelyingPartyTrust –TargetRelyingParty $rp –AdditionalAuthenticationRules 'c:[type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "http://schemas.microsoft.com/claims/multipleauthn" );'
+       PS C:\>Set-AdfsRelyingPartyTrust –TargetRelyingParty $rp –AdditionalAuthenticationRules 'c:[type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type = "https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn" );'
 
 ### <a name="authenticate-with-mfa-using-your-adapter"></a>Autenticación con MFA mediante el adaptador
 
@@ -487,9 +487,9 @@ Por último, realice los pasos siguientes para probar el adaptador:
 
     Si tiene más de un adaptador configurado, verá la página de opciones MFA con el nombre descriptivo anterior.
 
-    ![autenticar con el adaptador](media/ad-fs-build-custom-auth-method/Dn783423.c98d2712-cbd3-4cb9-ac03-2838b81c4f63(MSDN.10).jpg "autenticar con el adaptador")
+    ![autenticar con el adaptador](media/ad-fs-build-custom-auth-method/Dn783423.c98d2712-cbd3-4cb9-ac03-2838b81c4f63(MSDN.10).jpg "autenticación con adaptador")
 
-    ![autenticar con el adaptador](media/ad-fs-build-custom-auth-method/Dn783423.fd3aefc0-ef6c-4a8c-a737-4914c78ff2d2(MSDN.10).jpg "autenticar con el adaptador")
+    ![autenticar con el adaptador](media/ad-fs-build-custom-auth-method/Dn783423.fd3aefc0-ef6c-4a8c-a737-4914c78ff2d2(MSDN.10).jpg "autenticación con adaptador")
 
 Ahora tiene una implementación en funcionamiento de la interfaz y tiene conocimientos sobre cómo funciona el modelo. Puede Trym como ejemplo adicional para establecer puntos de interrupción en BeginAuthentication y TryEndAuthentication.  Observe cómo se ejecuta BeginAuthentication cuando el usuario entra por primera vez en el formulario MFA, mientras que TryEndAuthentication se desencadena en cada envío del formulario.
 
@@ -539,7 +539,7 @@ A continuación, actualice TryEndAuthentication como se indica a continuación:
      outgoingClaims = new[] 
      {
      // Return the required authentication method claim, indicating the particulate authentication method used.
-     new Claim( "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", 
+     new Claim( "https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", 
      "http://example.com/myauthenticationmethod1" )
      };
      return null;
@@ -559,7 +559,7 @@ Ahora tiene que actualizar el adaptador en el cuadro prueba.  Primero debe desha
 
 Desactive todas las casillas relacionadas con MFA en la interfaz de usuario de MFA, que se muestra a continuación, y haga clic en Aceptar.
 
-![Borrar]directiva(media/ad-fs-build-custom-auth-method/Dn783423.c111b4e7-5b05-413c-8b0f-222a0e91ac1f(MSDN.10).jpg "Borrar Directiva")
+![borrar Directiva](media/ad-fs-build-custom-auth-method/Dn783423.c111b4e7-5b05-413c-8b0f-222a0e91ac1f(MSDN.10).jpg "desactivación de directiva")
 
 ### <a name="unregister-provider-windows-powershell"></a>Anular el registro del proveedor (Windows PowerShell)
 
@@ -607,7 +607,7 @@ Asegúrese de pegar el archivo. dll actualizado en primer lugar. `C:\>.\gacutil.
 
 3.  En **multi-factor Authentication**, haga clic en el vínculo **Editar** a la derecha de **configuración global**.
 
-4.  En **seleccionar métodos de autenticación adicionales**, active la casilla de adminName de su proveedor. Haga clic en **Aplicar**.
+4.  En **seleccionar métodos de autenticación adicionales**, active la casilla de adminName de su proveedor. Haz clic en **Apply**.
 
 5.  Para proporcionar un "desencadenador" para invocar MFA con el adaptador, en ubicaciones, Compruebe la **extranet** y la **intranet**, por ejemplo. Haz clic en **Aceptar**.
 
@@ -633,9 +633,9 @@ Por último, realice los pasos siguientes para probar el adaptador:
 
 Debería ver un inicio de sesión correcto al escribir "adfabric" en la página de autenticación de MFA.
 
-![iniciar sesión con]el adaptador(media/ad-fs-build-custom-auth-method/Dn783423.630d8a91-3bfe-4cba-8acf-03eae21530ee(MSDN.10).jpg "iniciar sesión con el adaptador")
+![iniciar sesión con el adaptador](media/ad-fs-build-custom-auth-method/Dn783423.630d8a91-3bfe-4cba-8acf-03eae21530ee(MSDN.10).jpg "inicio de sesión con adaptador")
 
-![iniciar sesión con]el adaptador(media/ad-fs-build-custom-auth-method/Dn783423.c340fa73-f70f-4870-b8dd-07900fea4469(MSDN.10).jpg "iniciar sesión con el adaptador")
+![iniciar sesión con el adaptador](media/ad-fs-build-custom-auth-method/Dn783423.c340fa73-f70f-4870-b8dd-07900fea4469(MSDN.10).jpg "inicio de sesión con adaptador")
 
 ## <a name="see-also"></a>Consulta también
 

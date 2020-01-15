@@ -8,30 +8,30 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 870dbb4303d216f05bc372610f3121ff08fc8c25
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f28e5feccb7544046104658585ab3f739f659957
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407840"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949503"
 ---
-# <a name="scenario-web-app-server-app-calling-web-api"></a>Escenario: Aplicación web (aplicación de servidor) llamada a Web API 
+# <a name="scenario-web-app-server-app-calling-web-api"></a>Escenario: aplicación web (aplicación de servidor) llamada a Web API 
 >Se aplica a: AD FS 2019 y versiones posteriores 
  
 Obtenga información sobre cómo crear un usuario que inicie sesión en una aplicación web autenticado por AD FS 2019 y adquirir tokens mediante la [biblioteca MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki) para llamar a las API Web.  
  
 Antes de leer este artículo, debe estar familiarizado con los [conceptos de AD FS](../ad-fs-openid-connect-oauth-concepts.md) y el flujo de concesión de código de [autorización](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md#authorization-code-grant-flow)
  
-## <a name="overview"></a>Información general 
+## <a name="overview"></a>Introducción 
  
 ![Información general de la aplicación web que llama a la API Web](media/adfs-msal-web-app-web-api/webapp1.png)
 
-En este flujo, agregará autenticación a la aplicación web (aplicación de servidor), que puede iniciar sesión a los usuarios y llamar a una API Web. Desde la aplicación Web, para llamar a la API Web, use el método de adquisición de tokens de [AcquireTokenByAuthorizationCode](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identity.client.acquiretokenbyauthorizationcodeparameterbuilder?view=azure-dotnet) de MSAL. Usará el flujo de código de autorización y almacenará el token adquirido en la caché de tokens. Después, el controlador adquirirá los tokens de la caché de forma silenciosa cuando sea necesario. MSAL actualiza el token si es necesario. 
+En este flujo, agregará autenticación a la aplicación web (aplicación de servidor), que puede iniciar sesión a los usuarios y llamar a una API Web. Desde la aplicación Web, para llamar a la API Web, use el método de adquisición de tokens de [AcquireTokenByAuthorizationCode](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.acquiretokenbyauthorizationcodeparameterbuilder?view=azure-dotnet) de MSAL. Usará el flujo del código de autorización y almacenará el token adquirido en la caché de tokens. A continuación, el controlador adquirirá tokens de forma silenciosa de la caché cuando sea necesario. MSAL actualizará el token si es necesario. 
 
 Web Apps que llama a las API Web: 
 
 
-- son aplicaciones cliente confidenciales. 
+- Son aplicaciones cliente confidenciales. 
 - Esta es la razón por la que han registrado un secreto (secreto compartido de aplicación, certificado o cuenta de AD) con AD FS. Este secreto se pasa durante la llamada a AD FS para obtener un token.  
 
 Para comprender mejor cómo registrar una aplicación web en ADFS y configurarla para que adquiera tokens para llamar a una API Web, vamos a usar un ejemplo disponible [aquí](https://github.com/microsoft/adfs-sample-msal-dotnet-webapp-to-webapi) y se le guiará por el registro de la aplicación y los pasos de configuración del código.  
@@ -41,7 +41,7 @@ Para comprender mejor cómo registrar una aplicación web en ADFS y configurarla
 
 - Herramientas de cliente de GitHub 
 - AD FS 2019 o posterior configurado y en ejecución 
-- Visual Studio 2013 o posterior 
+- Visual Studio 2013 o posterior. 
  
 ## <a name="app-registration-in-ad-fs"></a>Registro de aplicaciones en AD FS 
 En esta sección se muestra cómo registrar la aplicación web como cliente confidencial y API Web como un usuario de confianza (RP) en AD FS. 
@@ -51,7 +51,7 @@ En esta sección se muestra cómo registrar la aplicación web como cliente conf
   
       ![Agregar grupo de aplicaciones](media/adfs-msal-web-app-web-api/webapp2.png)
   
-  3. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ida: ClientID** en el archivo **Web. config** de aplicaciones. Escriba lo siguiente para el **URI de redirección:**  - https://localhost:44326. Haz clic en Agregar. Haz clic en **Siguiente**. 
+  3. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ida: ClientID** en el archivo **Web. config** de aplicaciones. Escriba lo siguiente en **URI de redirección:**  - https://localhost:44326. Haz clic en Agregar. Haz clic en **Siguiente**. 
   
       ![Agregar grupo de aplicaciones](media/adfs-msal-web-app-web-api/webapp3.png)
   
@@ -67,7 +67,7 @@ En esta sección se muestra cómo registrar la aplicación web como cliente conf
   
       ![Agregar grupo de aplicaciones](media/adfs-msal-web-app-web-api/webapp6.png)
   
-  7. En la pantalla configurar permisos de aplicación, asegúrese de que **OpenID** y **user_impersonation** están seleccionados y haga clic en **siguiente**. 
+  7. En la pantalla configurar permisos de aplicación, asegúrese de que **OpenID** y **user_impersonation** estén seleccionados y haga clic en **siguiente**. 
   
       ![Agregar grupo de aplicaciones](media/adfs-msal-web-app-web-api/webapp7.png)
   
@@ -95,7 +95,7 @@ En esta sección se muestra cómo configurar una aplicación Web de ASP.NET para
           ![Agregar grupo de aplicaciones](media/adfs-msal-web-app-web-api/webapp8.png)
  
  
-### <a name="test-the-sample"></a>Probar el ejemplo 
+### <a name="test-the-sample"></a>Prueba del ejemplo 
 En esta sección se muestra cómo probar el ejemplo configurado anteriormente. 
 
   1. Una vez realizados los cambios en el código, vuelva a generar la solución 
@@ -120,6 +120,6 @@ En esta sección se muestra cómo probar el ejemplo configurado anteriormente.
   
       ![Agregar grupo de aplicaciones](media/adfs-msal-web-app-web-api/webapp13.png)
  
- ## <a name="next-steps"></a>Pasos siguientes
+ ## <a name="next-steps"></a>Pasos a seguir
 [Flujos de AD FS OpenID Connect/OAuth y escenarios de aplicación](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
  

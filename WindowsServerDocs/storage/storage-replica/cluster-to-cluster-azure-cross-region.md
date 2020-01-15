@@ -9,21 +9,21 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 26eba76c836d1157f4d4c10d7a989a3a7dcc1538
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 806857d5de067c0f4640344ed80338b474dd758e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393830"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950061"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Intercambio entre regiones de la Réplica de almacenamiento de clúster a clúster en Azure
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 Puede configurar las réplicas de almacenamiento de clúster a clúster para aplicaciones entre regiones de Azure. En los ejemplos siguientes, usamos un clúster de dos nodos, pero la réplica de almacenamiento de clúster a clúster no está restringida a un clúster de dos nodos. La ilustración siguiente es un clúster de espacio de almacenamiento directo de dos nodos que se puede comunicar entre sí, que se encuentra en el mismo dominio y que son entre regiones.
 
 Vea el vídeo siguiente para obtener un tutorial completo del proceso.
-> [!video https://www.microsoft.com/en-us/videoplayer/embed/RE26xeW]
+> [!video https://www.microsoft.com/videoplayer/embed/RE26xeW]
 
 ![El diagrama de arquitectura que presenta C2C SR en Azure con la misma región.](media/Cluster-to-cluster-azure-cross-region/architecture.png)
 > [!IMPORTANT]
@@ -59,7 +59,7 @@ Vea el vídeo siguiente para obtener un tutorial completo del proceso.
       - Agregue al menos dos discos administrados a cada equipo.
       - Instalar clústeres de conmutación por error y la característica réplica de almacenamiento
 
-   Cree dos máquinas virtuales (**azcross1**, **azcross2**) en el grupo de recursos (**Sr-AZCROSS**) mediante la red virtual (**AZCROSS-VNET**) y el grupo de seguridad de red (**AZCROSS-NSG**) en el conjunto de disponibilidad (**AZCROSS-as**) . Asignar una dirección IP pública estándar a cada máquina virtual durante la creación propiamente dicha
+   Cree dos máquinas virtuales (**azcross1**, **azcross2**) en el grupo de recursos (**Sr-AZCROSS**) mediante la red virtual (**AZCROSS-VNET**) y el grupo de seguridad de red (**AZCROSS-NSG**) en el conjunto de disponibilidad (**AZCROSS-as**). Asignar una dirección IP pública estándar a cada máquina virtual durante la creación propiamente dicha
       - Agregue al menos dos discos administrados a cada equipo.
       - Instalar clústeres de conmutación por error y la característica réplica de almacenamiento
 
@@ -93,16 +93,16 @@ Vea el vídeo siguiente para obtener un tutorial completo del proceso.
 8. Cree una SKU estándar interna [load balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM) para cada clúster (**azlbr1**, **azlbazcross**).
 
    Proporcione la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
-      - azlbr1 = > IP de front-end: 10.3.0.100 (seleccione una dirección IP no usada de la subred de la red virtual (**az2az-Vnet**))
+      - azlbr1 = > front-end IP: 10.3.0.100 (seleccione una dirección IP no usada de la subred de red virtual (**az2az-Vnet**))
       - Cree un grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociados.
       - Crear sondeo de estado: Puerto 59999
-      - Cree una regla de equilibrio de carga: Permita puertos de alta disponibilidad con IP flotante habilitada.
+      - Cree una regla de equilibrio de carga: permita puertos de alta disponibilidad con IP flotante habilitada.
 
    Proporcione la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga. 
-      - azlbazcross = > IP de front-end: 10.0.0.10 (seleccione una dirección IP no usada de la subred de la red virtual (**azcross-VNET**))
+      - azlbazcross = > front-end IP: 10.0.0.10 (seleccione una dirección IP no usada de la subred de red virtual (**azcross-VNET**))
       - Cree un grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociados.
       - Crear sondeo de estado: Puerto 59999
-      - Cree una regla de equilibrio de carga: Permita puertos de alta disponibilidad con IP flotante habilitada. 
+      - Cree una regla de equilibrio de carga: permita puertos de alta disponibilidad con IP flotante habilitada. 
 
 9. Cree una [puerta de enlace de red virtual](https://ms.portal.azure.com/#create/Microsoft.VirtualNetworkGateway-ARM) para la conectividad de Vnet a Vnet.
 

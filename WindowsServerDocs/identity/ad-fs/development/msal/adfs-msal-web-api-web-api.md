@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 106262b63b5aad0eddb08618eb808d2d9ff5b425
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: 9fb1b91ff389f6abacccaa7464276fc8556c11c5
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "71407800"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948914"
 ---
 # <a name="scenario-web-api-calling-web-api-on-behalf-of-scenario"></a>Escenario: API Web que llama a la API Web (en nombre de escenario) 
 > Se aplica a: AD FS 2019 y versiones posteriores 
@@ -26,8 +26,8 @@ Antes de leer este artículo, debe estar familiarizado con los [conceptos de AD 
 
 
 - Un cliente (aplicación web), no representado en el diagrama siguiente, llama a una API Web protegida y proporciona un token de portador JWT en su encabezado HTTP "Authorization". 
-- La API Web protegida valida el token y usa el método de MSAL [AcquireTokenOnBehalfOf](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_) para solicitar (desde AD FS) otro token, de modo que se pueda llamar a una segunda API Web (llamada API Web de bajada) en nombre del usuario. 
-- La API Web protegida usa este token para llamar a una API de nivel inferior. También puede llamar a AcquireTokenSilentlater para solicitar tokens para otras API de nivel inferior (pero todavía en nombre del mismo usuario). AcquireTokenSilent actualiza el token cuando sea necesario.  
+- La API Web protegida valida el token y usa el método de MSAL [AcquireTokenOnBehalfOf](https://docs.microsoft.com/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_) para solicitar (desde AD FS) otro token, de modo que se pueda llamar a una segunda API Web (llamada API Web de bajada) en nombre del usuario. 
+- La API web protegida usa este token para llamar a una API de bajada. También puede llamar a AcquireTokenSilentlater para solicitar tokens para otras API de nivel inferior (pero todavía en nombre del mismo usuario). AcquireTokenSilent actualiza el token cuando sea necesario.  
  
      ![introducción](media/adfs-msal-web-api-web-api/webapi1.png)
  
@@ -37,7 +37,7 @@ Para comprender mejor cómo configurar en nombre del escenario de autenticación
 
 - Herramientas de cliente de GitHub 
 - AD FS 2019 o posterior configurado y en ejecución 
-- Visual Studio 2013 o posterior 
+- Visual Studio 2013 o posterior. 
  
 ## <a name="app-registration-in-ad-fs"></a>Registro de aplicaciones en AD FS 
 
@@ -164,7 +164,7 @@ En esta sección se muestra cómo configurar una API Web para llamar a otra API 
   
   2. Abrir el ejemplo con Visual Studio 
   
-  3. Abra el archivo app. config. Modifique lo siguiente: 
+  3. Abra el archivo App.config. Modifique lo siguiente: 
        - ida: autoridad: escriba https://[su nombre de host de AD FS]/ADFS/
        - ida: ClientId: escriba el valor de #3 en el registro de la aplicación en AD FS sección anterior. 
        - ida: RedirectUri: escriba el valor de #3 en el registro de la aplicación en AD FS sección anterior. 
@@ -190,7 +190,7 @@ En esta sección se muestra cómo configurar una API Web para llamar a otra API 
  
           ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi27.png)
  
-## <a name="test-the-sample"></a>Probar el ejemplo 
+## <a name="test-the-sample"></a>Prueba del ejemplo 
 
 En esta sección se muestra cómo probar el ejemplo configurado anteriormente. 
 
@@ -222,7 +222,7 @@ Una vez realizados los cambios en el código, vuelva a generar la solución
  
       ![REG. de aplicación](media/adfs-msal-web-api-web-api/webapi33.png)
  
- ## <a name="next-steps"></a>Pasos siguientes
+ ## <a name="next-steps"></a>Pasos a seguir
 [Flujos de AD FS OpenID Connect/OAuth y escenarios de aplicación](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
  
  

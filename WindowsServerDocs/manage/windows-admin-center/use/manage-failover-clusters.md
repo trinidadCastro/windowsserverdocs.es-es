@@ -8,25 +8,25 @@ ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 16e758f0a8746d41adcdafb2bc1be2d91a3fc29c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b7f015ac4c9906447069501bf0922b36306a51d7
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406801"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950494"
 ---
 # <a name="manage-failover-clusters-with-windows-admin-center"></a>Administrar clústeres de conmutación por error con el centro de administración de Windows
 
->Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
 
 > [!Tip]
 > ¿Novedad en Windows Admin Center?
-> [Obtén más información acerca de Windows Admin Center](../understand/windows-admin-center.md) o [descárgalo ahora](https://aka.ms/windowsadmincenter).
+> [Descargue u obtenga más información sobre el centro de administración de Windows](../overview.md).
 
 ## <a name="managing-failover-clusters"></a>Administración de clústeres de conmutación por error
 Los [clústeres de conmutación por error](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview) son una característica de Windows Server que permite agrupar varios servidores en un clúster tolerante a errores para aumentar la disponibilidad y la escalabilidad de aplicaciones y servicios, como servidor de archivos de escalabilidad horizontal, Hyper-V y Microsoft SQL Server.
 
-Aunque puede administrar los nodos de clúster de conmutación por error como servidores individuales agregándolos como [conexiones de servidor](manage-servers.md) en el centro de administración de Windows, también puede agregarlos como clústeres de conmutación por error para ver y administrar los recursos del clúster, almacenamiento, red, nodos, roles, virtual máquinas y conmutadores virtuales.
+Aunque puede administrar los nodos del clúster de conmutación por error como servidores individuales agregándolos como [conexiones del servidor](manage-servers.md) en el centro de administración de Windows, también puede agregarlos como clústeres de conmutación por error para ver y administrar los recursos del clúster, el almacenamiento, la red, los nodos, los roles, las máquinas virtuales y los conmutadores virtuales.
 
 ![Pantalla de introducción al clúster de conmutación por error](../media/manage-failover-clusters/fcm-overview.png)
 
@@ -50,7 +50,7 @@ Las siguientes herramientas están disponibles para las conexiones de clúster d
 
 | Herramienta | Descripción |
 | ---- | ----------- |
-| Información general | Ver detalles de clúster de conmutación por error y administrar recursos de clúster |
+| Introducción | Ver detalles de clúster de conmutación por error y administrar recursos de clúster |
 | Discos | Visualización de volúmenes y discos compartidos de clúster |
 | Redes | Visualización de redes en el clúster |
 | Nodos | Visualización y administración de nodos de clúster |

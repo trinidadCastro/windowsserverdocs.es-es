@@ -8,16 +8,16 @@ manager: dongill
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 26417f0fdbe2c4c8c374b3a1b8955c6297865397
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40342f43f7afbf020ba20f27586650767218fe83
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360828"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948033"
 ---
-# <a name="whats-new-in-failover-clustering"></a>What's new in Failover Clustering (Novedades de los clústeres de conmutación por error)
+# <a name="whats-new-in-failover-clustering"></a>Novedades de los clústeres de conmutación por error
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se explica la funcionalidad nueva y modificada de los clústeres de conmutación por error para Windows Server 2019 y Windows Server 2016.
 
@@ -53,7 +53,7 @@ En este tema se explica la funcionalidad nueva y modificada de los clústeres de
   - Acceso a Internet ausente o extremadamente deficiente debido a una ubicación remota, lo que impide el uso de un testigo en la nube. 
   - Falta de unidades compartidas para un testigo de disco. Puede tratarse de una configuración Espacios de almacenamiento directo hiperconvergida, una SQL Server Always On grupos de disponibilidad (AG) o un grupo de disponibilidad de base de datos de Exchange (DAG), ninguno de los cuales usa discos compartidos. 
   - Falta de una conexión de controlador de dominio debido a que el clúster está detrás de una red perimetral. 
-  - Un clúster de grupo de trabajo o entre dominios para el que no hay Active Directory objeto de nombre de clúster (CNO). Obtenga más información sobre estas mejoras en la siguiente entrada de blog sobre la administración de & Server: Testigo de recurso compartido de archivos de clúster de conmutación por error y DFS.
+  - Un clúster de grupo de trabajo o entre dominios para el que no hay Active Directory objeto de nombre de clúster (CNO). Obtenga más información sobre estas mejoras en la siguiente entrada de blog de administración de & de servidor: testigo de recurso compartido de archivos de clúster de conmutación por error y DFS.
     
     Ahora también se bloquea explícitamente el uso de un recurso compartido de espacios de nombres DFS como ubicación. La adición de un testigo de recurso compartido de archivos a un recurso compartido DFS puede provocar problemas de estabilidad para el clúster, y esta configuración no se ha admitido nunca. Hemos agregado lógica para detectar si un recurso compartido usa espacios de nombres DFS y, si se detectan espacios de nombres DFS, Administrador de clústeres de conmutación por error bloquea la creación del testigo y muestra un mensaje de error que indica que no se admite.
 - **Refuerzo de clústeres**
@@ -72,11 +72,11 @@ La actualización gradual del sistema operativo de clústeres permite a un admin
 
 **¿Qué valor aporta este cambio?**  
 
-La actualización de un clúster de Hyper-V o Servidor de archivos de escalabilidad horizontal de Windows Server 2012 R2 a Windows Server 2016 ya no requiere tiempo de inactividad. El clúster seguirá funcionando en el nivel de Windows Server 2012 R2 hasta que todos los nodos del clúster ejecuten Windows Server 2016. El nivel funcional del clúster se actualiza a Windows Server 2016 mediante el cmdlt de Windows PowerShell `Update-ClusterFunctionalLevel`. 
+La actualización de un clúster de Hyper-V o Servidor de archivos de escalabilidad horizontal de Windows Server 2012 R2 a Windows Server 2016 ya no requiere tiempo de inactividad. El clúster seguirá funcionando en el nivel de Windows Server 2012 R2 hasta que todos los nodos del clúster ejecuten Windows Server 2016. El nivel funcional del clúster se actualiza a Windows Server 2016 mediante el `Update-ClusterFunctionalLevel`cmdlt de Windows PowerShell. 
 
 > [!WARNING]  
 > -   Después de actualizar el nivel funcional del clúster, no puede volver a un nivel funcional del clúster de Windows Server 2012 R2. 
-> -   Hasta que se ejecuta el cmdlet `Update-ClusterFunctionalLevel`, el proceso es reversible y se pueden agregar nodos de Windows Server 2012 R2 y se pueden quitar los nodos de Windows Server 2016. 
+> -   Hasta que se ejecuta el cmdlet de `Update-ClusterFunctionalLevel`, el proceso es reversible y se pueden agregar nodos de Windows Server 2012 R2 y se pueden quitar los nodos de Windows Server 2016. 
 
 **¿Qué funciona de manera diferente?**  
 
@@ -158,7 +158,7 @@ Esta funcionalidad es nueva en Windows Server 2016.
 
 -   **Poner en cuarentena los nodos en mal estado:** Los nodos incorrectos están en cuarentena y ya no se les permite unirse al clúster. Esto evita que los nodos oscilantes afecten negativamente a otros nodos y al clúster global. 
 
-Para obtener más información sobre el flujo de trabajo de resistencia de proceso de máquina virtual y la configuración de cuarentena de nodo que controlan el modo en que el nodo se coloca en aislamiento o en cuarentena, consulte [resistencia de proceso de máquina virtual en Windows Server 2016](http://blogs.msdn.com/b/clustering/archive/2015/06/03/10619308.aspx). 
+Para obtener más información sobre el flujo de trabajo de resistencia de proceso de máquina virtual y la configuración de cuarentena de nodo que controlan el modo en que el nodo se coloca en aislamiento o en cuarentena, consulte [resistencia de proceso de máquina virtual en Windows Server 2016](https://blogs.msdn.com/b/clustering/archive/2015/06/03/10619308.aspx). 
 
 **Resistencia de almacenamiento** En Windows Server 2016, las máquinas virtuales son más resistentes a los errores de almacenamiento transitorios. La mejora de la resistencia de las máquinas virtuales ayuda a conservar los Estados de sesión de máquina virtual del inquilino en caso de que se produzca una interrupción del almacenamiento. Esto se logra mediante una respuesta de máquina virtual rápida y inteligente a los problemas de la infraestructura de almacenamiento. 
 
@@ -169,12 +169,12 @@ En Windows Server 2016, la resistencia de almacenamiento de máquinas virtuales 
 ### <a name="BKMK_Diagnostics"></a>Mejoras de diagnóstico en los clústeres de conmutación por error  
 Para ayudar a diagnosticar problemas con los clústeres de conmutación por error, Windows Server 2016 incluye lo siguiente:  
 
--   Varias mejoras en los archivos de registro del clúster (como información de zona horaria y registro de DiagnosticVerbose) que facilita la solución de problemas de clústeres de conmutación por error. Para obtener más información, vea [mejoras en la solución de problemas del clúster de conmutación por error de Windows Server 2016: registro de clúster](http://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx). 
+-   Varias mejoras en los archivos de registro del clúster (como información de zona horaria y registro de DiagnosticVerbose) que facilita la solución de problemas de clústeres de conmutación por error. Para obtener más información, vea [mejoras en la solución de problemas del clúster de conmutación por error de Windows Server 2016: registro de clúster](https://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx). 
 
--   Un nuevo tipo de volcado de **memoria activo**, que filtra la mayoría de las páginas de memoria asignadas a las máquinas virtuales y, por tanto, hace que Memory. DMP sea mucho más pequeño y más fácil de guardar o copiar. Para obtener más información, consulte [mejoras en la solución de problemas del clúster de conmutación por error de Windows Server 2016: volcado activo](http://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx). 
+-   Un nuevo tipo de volcado de **memoria activo**, que filtra la mayoría de las páginas de memoria asignadas a las máquinas virtuales y, por tanto, hace que Memory. DMP sea mucho más pequeño y más fácil de guardar o copiar. Para obtener más información, consulte [mejoras en la solución de problemas del clúster de conmutación por error de Windows Server 2016: volcado activo](https://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx). 
 
 ### <a name="BKMK_SiteAware"></a>Clústeres de conmutación por error que reconocen el sitio  
-Windows Server 2016 incluye clústeres de conmutación por error que reconocen el sitio y que habilitan nodos de grupo en clústeres extendidos en función de su ubicación física (sitio). El reconocimiento de sitios de clúster mejora las operaciones clave durante el ciclo de vida del clúster, como el comportamiento de la conmutación por error, las directivas de colocación, el latido entre los nodos y el comportamiento del cuórum. Para obtener más información, consulte [clústeres de conmutación por error que reconocen el sitio en Windows Server 2016](http://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx). 
+Windows Server 2016 incluye clústeres de conmutación por error que reconocen el sitio y que habilitan nodos de grupo en clústeres extendidos en función de su ubicación física (sitio). El reconocimiento de sitios de clúster mejora las operaciones clave durante el ciclo de vida del clúster, como el comportamiento de la conmutación por error, las directivas de colocación, el latido entre los nodos y el comportamiento del cuórum. Para obtener más información, consulte [clústeres de conmutación por error que reconocen el sitio en Windows Server 2016](https://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx). 
 
 ### <a name="BKMK_multidomainclusters"></a>Clústeres de grupo de trabajo y de varios dominios  
 En Windows Server 2012 R2 y versiones anteriores, un clúster solo se puede crear entre nodos de miembro Unidos al mismo dominio. Windows Server 2016 rompe estas barreras y presenta la capacidad para crear un clúster de conmutación por error sin dependencias de Active Directory. Ahora puede crear clústeres de conmutación por error en las siguientes configuraciones:  
@@ -185,7 +185,7 @@ En Windows Server 2012 R2 y versiones anteriores, un clúster solo se puede crea
 
 -   **Clústeres de grupo de trabajo.** Clústeres con nodos que son servidores miembro/Grupo de trabajo (no Unidos a un dominio). 
 
-Para obtener más información, consulte [clústeres de grupos de trabajo y varios dominios en Windows Server 2016](http://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)  
+Para obtener más información, consulte [clústeres de grupos de trabajo y varios dominios en Windows Server 2016](https://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)  
 ### <a name="BKMK_VMLoadBalancing"></a>Equilibrio de carga de máquinas virtuales  
 El equilibrio de carga de máquinas virtuales es una característica nueva de los clústeres de conmutación por error que facilita el equilibrio de carga sin problemas de las máquinas virtuales entre los nodos de un clúster. Los nodos sobrecargados se identifican en función de la memoria de la máquina virtual y el uso de CPU en el nodo. Después, las máquinas virtuales se mueven (se migran en vivo) desde un nodo sobrecargado a los nodos con el ancho de banda disponible (si procede). La agresividad del equilibrio se puede optimizar para garantizar un rendimiento óptimo del clúster y el uso. El equilibrio de carga está habilitado de forma predeterminada en Windows Server 2016 Technical Preview. Sin embargo, el equilibrio de carga se deshabilita cuando está habilitada la optimización dinámica de SCVMM. 
 
@@ -197,6 +197,6 @@ Las redes de clústeres de conmutación por error ya no se limitan a una única 
 
 Para más información, consulte [redes de clústeres de varias NIC y SMB multicanal simplificado](smb-multichannel.md).
 
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 * [Almacenamiento](../storage/storage.md)  
 * [Novedades de almacenamiento en Windows Server 2016](../storage/whats-new-in-storage.md)  

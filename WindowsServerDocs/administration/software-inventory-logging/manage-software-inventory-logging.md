@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd8a26d158f53121074881ac8ff204287f9a19ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a14233e01c19df650d1059e1b60cd5398b05709a
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382967"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946993"
 ---
 # <a name="manage-software-inventory-logging"></a>Administrar el Registro de inventario de software
 
@@ -31,20 +31,20 @@ La característica registro de inventario de software también puede agregarse a
 - **Windows Server 2012 (Standard o Datacenter Edition)** 
 
 > [!NOTE] 
-> Asegúrese de que tiene [WMF 4,0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) instalado antes de aplicar el paquete de actualización siguiente.
+> Asegúrese de que tiene [WMF 4,0](https://www.microsoft.com/download/details.aspx?id=40855) instalado antes de aplicar el paquete de actualización siguiente.
 
--  Actualización de WMF 4.0 para Windows Server 2012: [KB 3119938](https://support.microsoft.com/en-us/kb/3119938)
+-  Actualización de WMF 4.0 para Windows Server 2012: [KB 3119938](https://support.microsoft.com/kb/3119938)
 
 - **Windows Server 2008 R2 SP1**
 
 > [!NOTE] 
-> Asegúrese de que tiene [WMF 4,0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) instalado antes de aplicar el paquete de actualización siguiente.
+> Asegúrese de que tiene [WMF 4,0](https://www.microsoft.com/download/details.aspx?id=40855) instalado antes de aplicar el paquete de actualización siguiente.
 
 
-- Requiere [.NET Framework 4.5](https://www.microsoft.com/en-us/download/details.aspx?id=30653)
+- Requiere [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)
 
 
-- Actualización de WMF 4.0 para Windows Server 2008 R2: [KB 3109118](https://support.microsoft.com/en-us/kb/3109118)
+- Actualización de WMF 4.0 para Windows Server 2008 R2: [KB 3109118](https://support.microsoft.com/kb/3109118)
 
 
 Hay dos métodos principales para realizar un inventario con esta característica:  
@@ -90,7 +90,7 @@ Las opciones de configuración que se abordan en este documento son:
 -   [Uso del registro de inventario de software en un entorno de Hyper-V de Windows Server 2012 R2 sin KB 3000850](manage-software-inventory-logging.md#BKMK_Step12)  
   
 > [!NOTE]  
-> Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, consulte uso de cmdlets.
+> Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para obtener más información, vea Usar cmdlets.
 
   
 ## <a name="BKMK_Step1"></a>Inicio y detención del registro de inventario de software  
@@ -199,7 +199,7 @@ SystemManufacturer        : Microsoft Corporation
 > [!NOTE]  
 > El resultado de este cmdlet es el mismo que el de todos los demás cmdlets **Get-Sil** para esta característica combinados, pero se ofrece a la consola de forma asincrónica, por lo que puede que el orden de los objetos no sea siempre el mismo.  
 >   
-> No es necesario que el Registro de inventario de software se haya iniciado para poder usar los cmdlets **Get-Sil**.  
+> No es necesario que el Registro de inventario de software se haya iniciado para poder usar los cmdlets **Get-Sil** .  
   
 ## <a name="BKMK_Step4"></a>Eliminación de datos registrados por el registro de inventario de software  
 El Registro de inventario de software no pretende ser un componente crítico. Está diseñado para tener un impacto mínimo en las operaciones del sistema local, si bien manteniendo un gran nivel de confiabilidad. Esto también permite al administrador eliminar manualmente la base de datos de registro de inventario de software y los archivos auxiliares (todos los archivos del directorio \Windows\System32\LogFiles\SIL) para satisfacer las necesidades operativas.  
@@ -208,7 +208,7 @@ El Registro de inventario de software no pretende ser un componente crítico. Es
   
 1. En PowerShell, detenga el Registro de inventario de software con el comando **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)** .  
   
-2. Abra el Explorador de Windows.  
+2. Abre Windows Explorer.  
   
 3. Vaya a **\Windows\System32\Logfiles\SIL\\**  
   
@@ -248,10 +248,10 @@ Para admitir estos usos, el Registro de inventario de software tiene entradas de
   
 |||||  
 |-|-|-|-|  
-|**Funcionalidad**|**Nombre del valor**|**Datos**|**Cmdlet correspondiente (disponible solo en el sistema operativo en ejecución)**|  
+|**Función**|**Nombre del valor**|**Datos**|**Cmdlet correspondiente (disponible solo en el sistema operativo en ejecución)**|  
 |Iniciar o detener la característica|CollectionState|1 o 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx), [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|  
-|Especifica el punto de agregación de destino en la red|TargetUri|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|  
-|Especifica la huella digital del certificado o el hash del certificado usado para la autenticación SSL del servidor web de destino|CertificateThumbprint|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|  
+|Especifica el punto de agregación de destino en la red|TargetUri|cadena|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|  
+|Especifica la huella digital del certificado o el hash del certificado usado para la autenticación SSL del servidor web de destino|CertificateThumbprint|cadena|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|  
 |Especifica la fecha y hora en que debe iniciarse la característica (si el valor establecido es futuro, según la hora del sistema local)|CollectionTime|Valor predeterminado: 2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|  
   
 Para modificar estos valores en un VHD sin conexión (sin que el sistema operativo de la máquina virtual se ejecute), primero se debe montar un VHD y, después, podrán usarse los comandos siguientes para realizar cambios:  

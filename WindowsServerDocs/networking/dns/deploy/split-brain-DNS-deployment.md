@@ -1,5 +1,5 @@
 ---
-title: Uso de la directiva DNS para la implementación de DNS de cerebro dividido
+title: Uso de la directiva de DNS para la implementación de DNS de cerebro dividido
 description: Este tema forma parte de la guía del escenario de la Directiva DNS para Windows Server 2016
 manager: brianlic
 ms.prod: windows-server
@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5449c9e96a5a9ecd08ca35e703a76927f4e27158
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9f611f61150508d9170a6fe6757844bc29759886
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356017"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950474"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Uso de la Directiva de DNS para la implementación de DNS de cerebro dividido\-
 
@@ -36,7 +36,7 @@ En este tema se incluyen las siguientes secciones.
 ## <a name="bkmk_sbexample"></a>Ejemplo de implementación de división de cerebro de DNS
 El siguiente es un ejemplo de cómo se puede usar la Directiva de DNS para llevar a cabo el escenario descrito anteriormente de DNS de cerebro dividido.
 
-Esta sección contiene los temas siguientes.
+Esta sección contiene los siguientes temas.
 
 - [Cómo funciona la implementación de división de cerebro de DNS](#bkmk_sbhow)
 - [Configuración de la implementación de división de cerebro de DNS](#bkmk_sbconfigure)
@@ -132,7 +132,7 @@ Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](ht
 
 A continuación se expone un ejemplo de cómo se puede usar la Directiva de DNS para llevar a cabo el escenario descrito previamente del control de recursividad selectiva de DNS.
 
-Esta sección contiene los temas siguientes.
+Esta sección contiene los siguientes temas.
 
 - [Cómo funciona el control de recursividad selectiva de DNS](#bkmk_recursionhow)
 - [Cómo configurar el control de recursividad selectiva de DNS](#bkmk_recursionconfigure)
@@ -156,13 +156,13 @@ En la ilustración siguiente se muestra este escenario.
 
 ### <a name="bkmk_recursionhow"></a>Cómo funciona el control de recursividad selectiva de DNS
 
-Si se recibe una consulta para la que el servidor DNS de Contoso no es autoritativo, como para www.microsoft.com, la solicitud de resolución de nombres se evalúa con respecto a las directivas del servidor DNS. 
+Si se recibe una consulta para la que el servidor DNS de Contoso no es autoritativo, como por ejemplo https://www.microsoft.com, la solicitud de resolución de nombres se evalúa con respecto a las directivas del servidor DNS. 
 
 Dado que estas consultas no se encuentran en ninguna zona, las directivas de nivel de zona \(tal y como se definen en el ejemplo de división-cerebro\) no se evalúan. 
 
 El servidor DNS evalúa las directivas de recursividad y las consultas que se reciben en la interfaz privada coinciden con el **SplitBrainRecursionPolicy**. Esta directiva apunta a un ámbito de recursividad en el que se habilita la recursividad.
 
-A continuación, el servidor DNS realiza la recursividad para obtener la respuesta de www.microsoft.com desde Internet y almacena en caché la respuesta de forma local. 
+A continuación, el servidor DNS realiza la recursividad para obtener la respuesta de https://www.microsoft.com desde Internet y almacena en caché la respuesta de forma local. 
 
 Si la consulta se recibe en la interfaz externa, no coinciden las directivas DNS y se aplica la configuración de recursividad predeterminada, que en este caso está **deshabilitada** .
 

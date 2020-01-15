@@ -9,19 +9,19 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0685e0935a031b2f73474d59b025b70fc735902d
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 7fd06c06a2ea7af93b87c471f77b788ac51bddac
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935043"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949214"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>Personalización de encabezados de respuesta de seguridad HTTP con AD FS 2019 
  
 Para proteger contra las vulnerabilidades de seguridad comunes y proporcionar a los administradores la posibilidad de aprovechar los últimos avances en los mecanismos de protección basados en explorador, AD FS 2019 agregó la funcionalidad para personalizar los encabezados de respuesta de seguridad HTTP. Enviado por AD FS. Esto se logra mediante la introducción de dos nuevos cmdlets: `Get-AdfsResponseHeaders` y `Set-AdfsResponseHeaders`.  
 
 >[!NOTE]
->La funcionalidad para personalizar los encabezados de respuesta de seguridad http (excepto los encabezados CORS) mediante cmdlets `Get-AdfsResponseHeaders` : `Set-AdfsResponseHeaders` y se ha trasladado a AD FS 2016. Puede Agregar la funcionalidad a la AD FS 2016 mediante la instalación de [KB4493473](https://support.microsoft.com/en-us/help/4493473/windows-10-update-kb4493473) y [KB4507459](https://support.microsoft.com/en-us/help/4507459/windows-10-update-kb4507459). 
+>La funcionalidad para personalizar los encabezados de respuesta de seguridad HTTP (excepto los encabezados CORS) mediante cmdlets: `Get-AdfsResponseHeaders` y `Set-AdfsResponseHeaders` se han trasladado a AD FS 2016. Puede Agregar la funcionalidad a la AD FS 2016 mediante la instalación de [KB4493473](https://support.microsoft.com/help/4493473/windows-10-update-kb4493473) y [KB4507459](https://support.microsoft.com/help/4507459/windows-10-update-kb4507459). 
 
 En este documento se tratarán los encabezados de respuesta de seguridad que se usan habitualmente para demostrar cómo personalizar los encabezados enviados por AD FS 2019.   
  
@@ -40,11 +40,11 @@ Antes de analizar los encabezados, echemos un vistazo a algunos escenarios para 
 
  
 ## <a name="http-security-response-headers"></a>Encabezados de respuesta de seguridad HTTP 
-Los encabezados de respuesta se incluyen en la respuesta HTTP de salida enviada por AD FS a un explorador Web. Los encabezados se pueden enumerar con el `Get-AdfsResponseHeaders` cmdlet, como se muestra a continuación.  
+Los encabezados de respuesta se incluyen en la respuesta HTTP de salida enviada por AD FS a un explorador Web. Los encabezados se pueden enumerar mediante el cmdlet `Get-AdfsResponseHeaders`, como se muestra a continuación.  
 
 ![Respuesta de encabezado](media/customize-http-security-headers-ad-fs/header1.png)
 
-El `ResponseHeaders` atributo de la captura de pantalla anterior identifica los encabezados de seguridad que se incluirán AD FS en cada respuesta http. Los encabezados de respuesta se enviarán solo si `ResponseHeadersEnabled` se establece en `True` (valor predeterminado). El valor se puede establecer en `False` para evitar que AD FS incluido cualquiera de los encabezados de seguridad en la respuesta http. Sin embargo, esto no es recomendable.  Para ello, use lo siguiente:
+El `ResponseHeaders` atributo de la captura de pantalla anterior identifica los encabezados de seguridad que se incluirán en AD FS en cada respuesta HTTP. Los encabezados de respuesta se enviarán solo si `ResponseHeadersEnabled` está establecido en `True` (valor predeterminado). El valor se puede establecer en `False` para evitar que AD FS incluido cualquiera de los encabezados de seguridad en la respuesta HTTP. Sin embargo, esto no es recomendable.  Para ello, use lo siguiente:
 
 ```PowerShell
 Set-AdfsResponseHeaders -EnableResponseHeaders $false
@@ -55,23 +55,23 @@ HSTS es un mecanismo de directiva de seguridad Web que ayuda a mitigar los ataqu
  
 Todos los puntos de conexión de AD FS para el tráfico de autenticación Web se abren exclusivamente a través de HTTPS. Como resultado, AD FS mitiga eficazmente las amenazas que proporciona el mecanismo de la Directiva de seguridad de transporte HTTP STRICT (de forma predeterminada, no hay ninguna degradación de HTTP, ya que no hay agentes de escucha en HTTP). El encabezado se puede personalizar estableciendo los parámetros siguientes:
  
-- **Max-Age =&lt;expire-Time&gt;**  : el tiempo de expiración (en segundos) especifica cuánto tiempo se debe tener acceso al sitio solo mediante HTTPS. El valor predeterminado y el recomendado es de 31536000 segundos (1 año).  
+- **Max-Age =&lt;&gt;de tiempo de expiración** : el tiempo de expiración (en segundos) especifica cuánto tiempo se debe tener acceso al sitio solo mediante HTTPS. El valor predeterminado y el recomendado es de 31536000 segundos (1 año).  
 - **includeSubDomains** : este es un parámetro opcional. Si se especifica, la regla HSTS se aplica también a todos los subdominios.  
  
 #### <a name="hsts-customization"></a>Personalización de HSTS 
-De forma predeterminada, el encabezado está habilitado y `max-age` establecido en 1 año; sin embargo, los administradores pueden modificar (no se recomienda reducir el `max-age` valor de Max-Age) o habilitar HSTS para subdominios mediante el `Set-AdfsResponseHeaders` cmdlet.  
+De forma predeterminada, el encabezado está habilitado y `max-age` establece en 1 año; sin embargo, los administradores pueden modificar el `max-age` (no se recomienda reducir el valor de Max-Age) ni habilitar HSTS para subdominios mediante el cmdlet `Set-AdfsResponseHeaders`.  
  
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderValue "max-age=<seconds>; includeSubDomains" 
 ``` 
 
-Ejemplo: 
+Por ejemplo: 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderValue "max-age=31536000; includeSubDomains" 
  ```
 
-De forma predeterminada, el encabezado se incluye en `ResponseHeaders` el atributo; sin embargo, los administradores pueden quitar el encabezado `Set-AdfsResponseHeaders` a través del cmdlet.  
+De forma predeterminada, el encabezado se incluye en el `ResponseHeaders` atributo; sin embargo, los administradores pueden quitar el encabezado a través del cmdlet `Set-AdfsResponseHeaders`.  
  
 ```PowerShell
 Set-AdfsResponseHeaders -RemoveHeaders "Strict-Transport-Security" 
@@ -82,25 +82,25 @@ De forma predeterminada, AD FS no permite que las aplicaciones externas usen iFr
  
 Sin embargo, en algunos casos poco frecuentes, puede confiar en una aplicación específica que requiera compatibilidad con iFrame interactivo AD FS página de inicio de sesión. Para este fin se usa el encabezado "X-Frame-Options".  
  
-Este encabezado de respuesta de seguridad http se usa para comunicar con el explorador si puede representar una página en &lt;un&gt;iframe&gt;de marco/&lt;. El encabezado se puede establecer en uno de los siguientes valores: 
+Este encabezado de respuesta de seguridad HTTP se usa para comunicar con el explorador si puede representar una página en un marco de &lt;&gt;/&lt;iframe&gt;. El encabezado se puede establecer en uno de los siguientes valores: 
  
 - **Deny** : no se mostrará la página de un marco. Esta es la configuración predeterminada y recomendada.  
 - **sameorigin** : la página solo se mostrará en el marco si el origen es el mismo que el origen de la Página Web. La opción no es muy útil a menos que todos los antecesores estén también en el mismo origen.  
-- **Allow-from <specified origin>**  -la página solo se mostrará en el marco si el origen (por ejemplo, https://www. "). com) coincide con el origen específico del encabezado. 
+- **permitir-desde <specified origin>** : la página solo se mostrará en el marco si el origen (por ejemplo, https://www". com) coincide con el origen específico del encabezado. 
 
 #### <a name="x-frame-options-customization"></a>Personalización X-Frame-Options  
-De forma predeterminada, header se establecerá en deny; sin embargo, los administradores pueden modificar el valor a `Set-AdfsResponseHeaders` través del cmdlet.  
+De forma predeterminada, header se establecerá en deny; sin embargo, los administradores pueden modificar el valor a través del cmdlet `Set-AdfsResponseHeaders`.  
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "<deny/sameorigin/allow-from<specified origin>>" 
  ```
 
-Ejemplo: 
+Por ejemplo: 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "allow-from https://www.example.com" 
  ```
 
-De forma predeterminada, el encabezado se incluye en `ResponseHeaders` el atributo; sin embargo, los administradores pueden quitar el encabezado `Set-AdfsResponseHeaders` a través del cmdlet.  
+De forma predeterminada, el encabezado se incluye en el `ResponseHeaders` atributo; sin embargo, los administradores pueden quitar el encabezado a través del cmdlet `Set-AdfsResponseHeaders`.  
 
 ```PowerShell
 Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options" 
@@ -109,24 +109,24 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options"
 ### <a name="x-xss-protection"></a>Protección de X-XSS 
 Este encabezado de respuesta de seguridad HTTP se usa para impedir que se carguen las páginas web cuando los exploradores detectan ataques de scripting entre sitios (XSS). Esto se conoce como filtrado XSS. El encabezado se puede establecer en uno de los siguientes valores:
  
-- **0** : deshabilita el filtrado XSS. No se recomienda.  
+- **0** : deshabilita el filtrado XSS. No recomendado.  
 - **1** : habilita el filtrado XSS. Si se detecta un ataque XSS, el explorador desaverá la página.   
 - **1; modo = bloque** : habilita el filtrado XSS. Si se detecta un ataque XSS, el explorador evitará la representación de la página. Esta es la configuración predeterminada y recomendada.  
 
 #### <a name="x-xss-protection-customization"></a>Personalización de la protección X-XSS 
-De forma predeterminada, el encabezado se establecerá en 1; Mode = bloque; sin embargo, los administradores pueden modificar el valor a `Set-AdfsResponseHeaders` través del cmdlet.  
+De forma predeterminada, el encabezado se establecerá en 1; Mode = bloque; sin embargo, los administradores pueden modificar el valor a través del cmdlet `Set-AdfsResponseHeaders`.  
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "<0/1/1; mode=block/1; report=<reporting-uri>>" 
 ``` 
 
-Ejemplo: 
+Por ejemplo: 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "1" 
  ```
 
-De forma predeterminada, el encabezado se incluye en `ResponseHeaders` el atributo; sin embargo, los administradores pueden quitar el encabezado `Set-AdfsResponseHeaders` a través del cmdlet. 
+De forma predeterminada, el encabezado se incluye en el `ResponseHeaders` atributo; sin embargo, los administradores pueden quitar el encabezado a través del cmdlet `Set-AdfsResponseHeaders`. 
 
 ```PowerShell
 Set-AdfsResponseHeaders -RemoveHeaders "X-XSS-Protection" 
@@ -205,7 +205,7 @@ Se pueden definir los siguientes orígenes para la directiva predeterminada-src:
 - ' Unsafe-inline ': especificar esto en la Directiva permite el uso de JavaScript y CSS en línea 
 - ' Unsafe-eval ': especificar esto en la Directiva permite el uso de texto en mecanismos de JavaScript como eval 
 - ' none ': si se especifica, se restringe el contenido de cualquier origen que se va a cargar. 
-- datos:-especificar datos: Los URI permiten a los creadores de contenido insertar pequeños archivos insertados en los documentos. Uso no recomendado.  
+- datos:-especificar datos: los URI permiten a los creadores de contenido incrustar archivos pequeños insertados en los documentos. Uso no recomendado.  
  
 >[!NOTE]
 >AD FS usa JavaScript en el proceso de autenticación y, por lo tanto, habilita JavaScript mediante la inclusión de orígenes ' Unsafe-inline ' y ' Unsafe-eval ' en la directiva predeterminada.  
@@ -213,7 +213,7 @@ Se pueden definir los siguientes orígenes para la directiva predeterminada-src:
 ### <a name="custom-headers"></a>Encabezados personalizados 
 Además de los encabezados de respuesta de seguridad enumerados anteriormente (HSTS, CSP, X-Frame-Options, X-XSS-Protection y CORS), AD FS 2019 proporciona la capacidad de establecer nuevos encabezados.  
  
-Ejemplo: Para establecer un nuevo encabezado "TestHeader" con el valor "TestHeaderValue" 
+Ejemplo: para establecer un nuevo encabezado "TestHeader" con el valor "TestHeaderValue" 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderValue" 
@@ -230,7 +230,7 @@ Utilice la tabla y los vínculos siguientes para determinar qué exploradores We
 |-----|-----|
 |HTTP STRICT-Transport-Security (HSTS)|[Compatibilidad del explorador de HSTS](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security#Browser_compatibility)|
 |X-Frame-Options|[Compatibilidad del explorador X-Frame-Options](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility)| 
-|Protección de X-XSS|[Compatibilidad del explorador X-XSS-Protection](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection#Browser_compatibility)| 
+|Protección de X-XSS|[Compatibilidad del explorador X-XSS-Protection](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-XSS-Protection#Browser_compatibility)| 
 |Uso compartido de recursos entre orígenes (CORS)|[Compatibilidad del explorador CORS](https://developer.mozilla.org/docs/Web/HTTP/CORS#Browser_compatibility) 
 |Directiva de seguridad de contenido (CSP)|[Compatibilidad del explorador de CSP](https://developer.mozilla.org/docs/Web/HTTP/CSP#Browser_compatibility) 
 

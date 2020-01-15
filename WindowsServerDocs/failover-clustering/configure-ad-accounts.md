@@ -6,12 +6,12 @@ ms.technology: storage-failover-clustering
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 8a540361cdd07f6adfc1c929d77c510ef8433d6d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 47f3a515379eb79f628a0ee97ef2c7965c4d8d50
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369895"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948153"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>Configuración de cuentas de clúster en Active Directory
 
@@ -81,7 +81,7 @@ En el diagrama siguiente se muestra el uso y la creación de cuentas de equipo (
 
 ![](media/configure-ad-accounts/Cc731002.e8a7686c-9ba8-4ddf-87b1-175b7b51f65d(WS.10).gif)
 
-Tenga en cuenta que el diagrama anterior muestra un único administrador que ejecuta el Asistente para crear clúster y el Asistente para alta disponibilidad. Sin embargo, podrían ser dos administradores diferentes que usaran dos cuentas de usuario distintas, si ambas cuentas tuvieran permisos suficientes. Los permisos se describen con más detalle en requisitos relacionados con los clústeres de conmutación por error, los dominios de Active Directory y las cuentas, más adelante en esta guía.
+Tenga en cuenta que el diagrama anterior muestra un único administrador que ejecuta el Asistente para crear clúster y el Asistente para alta disponibilidad. Sin embargo, podrían ser dos administradores diferentes que usaran dos cuentas de usuario distintas, si ambas cuentas tuvieran permisos suficientes. Los permisos se describen con más detalle en Requisitos relacionados con los clústeres de conmutación por error, dominios de Active Directory y cuentas, más adelante en esta guía.
 
 ### <a name="how-problems-can-result-if-accounts-needed-by-the-cluster-are-changed"></a>Qué problemas pueden producirse si se cambian las cuentas que necesita el clúster
 
@@ -89,7 +89,7 @@ En el diagrama siguiente se muestra qué problemas pueden producirse si se cambi
 
 ![](media/configure-ad-accounts/Cc731002.beecc4f7-049c-4945-8fad-2cceafd6a4a5(WS.10).gif)
 
-Si se produce el tipo de problema mostrado en el diagrama, se registrará un evento determinado (1193, 1194, 1206 ó 1207) en el Visor de eventos. Para obtener más información acerca de estos eventos [http://go.microsoft.com/fwlink/?LinkId=118271](http://go.microsoft.com/fwlink/?linkid=118271), vea.
+Si se produce el tipo de problema mostrado en el diagrama, se registrará un evento determinado (1193, 1194, 1206 ó 1207) en el Visor de eventos. Para obtener más información sobre estos eventos, vea [https://go.microsoft.com/fwlink/?LinkId=118271](https://go.microsoft.com/fwlink/?linkid=118271).
 
 Tenga en cuenta que se puede producir un problema similar con la creación de una cuenta para un servicio o una aplicación en clúster si se ha alcanzado la cuota para todo el dominio respecto a la creación de objetos de equipo (de forma predeterminada, 10). En tal caso, podría ser adecuado consultar con el administrador del dominio cómo aumentar la cuota, aunque se trata de una configuración para todo el dominio y solo se debe modificar después de haberlo estudiado detenidamente y solo después de confirmar que el diagrama anterior no describe su situación. Para obtener más información, vea [Pasos para solucionar problemas debidos a cambios en las cuentas de Active Directory relacionadas con el clúster](#steps-for-troubleshooting-problems-caused-by-changes-in-cluster-related-active-directory-accounts), más adelante en esta guía.
 
@@ -97,9 +97,9 @@ Tenga en cuenta que se puede producir un problema similar con la creación de un
 
 Tal y como se describe en las tres secciones anteriores, se deben cumplir ciertos requisitos antes de poder configurar correctamente los servicios y las aplicaciones en clúster en un clúster de conmutación por error. Los requisitos más básicos se refieren a la ubicación de los nodos de clúster (dentro de un único dominio) y el nivel de permisos de la cuenta de la persona que instala el clúster. Si se cumplen estos requisitos, los asistentes para clúster de conmutación por error pueden crear automáticamente las demás cuentas requeridas por el clúster. En la lista siguiente se proporcionan detalles sobre estos requisitos básicos.
 
-  - **Nodos** todos los nodos deben estar en el mismo dominio de Active Directory. (El dominio no puede estar basado en Windows NT 4.0, que no incluye Active Directory.)  
+  - **Nodos:** Todos los nodos deben estar en el mismo dominio Active Directory. (El dominio no puede estar basado en Windows NT 4.0, que no incluye Active Directory.)  
       
-  - **Cuenta de la persona que instala el clúster:** la persona que instala el clúster debe utilizar una cuenta con las siguientes características:  
+  - **Cuenta de la persona que instala el clúster:** La persona que instala el clúster debe usar una cuenta con las siguientes características:  
       
       - La cuenta debe ser una cuenta de dominio. No tiene por qué ser una cuenta de administrador de dominio. Puede ser una cuenta de usuario del dominio si cumple los demás requisitos de esta lista.  
           
@@ -118,15 +118,15 @@ A veces, los administradores de clústeres de conmutación por error pueden nece
 
 La cuenta de la persona que instala el clúster es importante porque proporciona la base a partir de la cual se crea una cuenta de equipo para el propio clúster.
 
-La pertenencia a grupos mínima necesaria para completar el procedimiento siguiente depende de si está creando la cuenta de dominio y asignándole los permisos necesarios en el dominio, o si solo está poniendo la cuenta (creada por otra persona) en el grupo local **Administradores** en los servidores que serán nodos del clúster de conmutación por error. Si la primera, la pertenencia a **operadores de cuenta** o equivalente, es el requisito mínimo para completar este procedimiento. En el segundo caso, la pertenencia al grupo local **Administradores** de los servidores que serán nodos del clúster de conmutación por error, o un equivalente, es todo lo necesario. Revise los detalles sobre el uso de las cuentas adecuadas y [http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)las pertenencias a grupos en.
+La pertenencia a grupos mínima necesaria para completar el procedimiento siguiente depende de si está creando la cuenta de dominio y asignándole los permisos necesarios en el dominio, o si solo está poniendo la cuenta (creada por otra persona) en el grupo local **Administradores** en los servidores que serán nodos del clúster de conmutación por error. Si la primera, la pertenencia a **operadores de cuenta** o equivalente, es el requisito mínimo para completar este procedimiento. En el segundo caso, la pertenencia al grupo local **Administradores** de los servidores que serán nodos del clúster de conmutación por error, o un equivalente, es todo lo necesario. Revise los detalles sobre el uso de las cuentas adecuadas y las pertenencias a grupos en [https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477).
 
 #### <a name="to-configure-the-account-for-the-person-who-installs-the-cluster"></a>Para configurar la cuenta para la persona que instala el clúster
 
 1.  Cree u obtenga una cuenta de dominio para la persona que instala el clúster. Esta cuenta puede ser una cuenta de usuario de dominio o una cuenta de **operadores de cuentas** . Si utiliza una cuenta de usuario estándar, tendrá que concederle algunos permisos adicionales posteriormente en este procedimiento.
 
-2.  Si la cuenta que se creó u obtuvo en el paso 1 no se incluye automáticamente en el grupo de **administradores** locales en los equipos del dominio, agregue la cuenta al grupo local **administradores** en los servidores que serán nodos de la conmutación por error. por
+2.  Si la cuenta que se creó u obtuvo en el paso 1 no se incluye automáticamente en el grupo de **administradores** locales en los equipos del dominio, agregue la cuenta al grupo local **administradores** en los servidores que serán nodos del clúster de conmutación por error:
     
-    1.  Haga clic en **Inicio**, **Herramientas administrativas** y **Administrador del servidor**.  
+    1.  Haga clic en **Inicio**, **Herramientas administrativas**y **Administrador del servidor**.  
           
     2.  En el árbol de consola, expanda sucesivamente **Configuración**, **Usuarios y grupos locales**, y **Grupos**.  
           
@@ -143,7 +143,7 @@ La pertenencia a grupos mínima necesaria para completar el procedimiento siguie
 
 3. Si la cuenta que se creó u obtuvo en el paso 1 es una cuenta de administrador de dominio, omita el resto de este procedimiento. De lo contrario, conceda a la cuenta los permisos **Crear objetos de equipo** y **Leer todas las propiedades** en el contenedor que se utiliza para las cuentas de equipo en el dominio:
     
-   1.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.  
+   1.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.  
           
    2.  En el menú **Ver**, asegúrese de que está seleccionado **Características avanzadas**.  
           
@@ -163,13 +163,13 @@ La pertenencia a grupos mínima necesaria para completar el procedimiento siguie
 
 Normalmente es más sencillo si no preconfigura la cuenta de nombre de clúster, sino que permite crear y configurar automáticamente la cuenta al ejecutar el Asistente para crear clúster. Sin embargo, si es necesario preconfigurar la cuenta de nombre de clúster debido a los requisitos de su organización, utilice el procedimiento siguiente.
 
-El requisito mínimo para completar este procedimiento es la pertenencia al grupo **Admins. del dominio** u otro equivalente. Revise los detalles sobre el uso de las cuentas adecuadas y [http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)las pertenencias a grupos en. Observe que para este procedimiento puede utilizar la misma cuenta que usará al crear el clúster.
+El requisito mínimo para completar este procedimiento es la pertenencia al grupo **Admins. del dominio** u otro equivalente. Revise los detalles sobre el uso de las cuentas adecuadas y las pertenencias a grupos en [https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477). Observe que para este procedimiento puede utilizar la misma cuenta que usará al crear el clúster.
 
 #### <a name="to-prestage-a-cluster-name-account"></a>Para preconfigurar una cuenta de nombre de clúster
 
 1.  Asegúrese de que sabe el nombre que tendrá el clúster y el nombre de la cuenta de usuario que utilizará la persona que crea el clúster. (Puede utilizar esa cuenta para realizar este procedimiento.)
 
-2.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.
+2.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.
 
 3.  En el árbol de consola, haga clic con el botón secundario en **Equipos** o en el contenedor predeterminado donde se crean las cuentas de equipo en su dominio. **Equipos** se encuentra en <b>Active Directory usuarios y equipos/</b><i>dominio-nodo</i><b>/equipos</b>.
 
@@ -203,7 +203,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
           
     2.  Haga clic con el botón secundario en la cuenta de equipo recién creada y, a continuación, haga clic en **Propiedades**.  
           
-    3.  En la pestaña **Seguridad**, haga clic en **Agregar**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.  
+    3.  En la pestaña **Seguridad**, haz clic en **Agregar**. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.  
           
     4.  Utilice el cuadro de diálogo **Seleccionar usuarios, equipos o grupos** para especificar la cuenta de usuario que se utilizará al crear el clúster. A continuación, haga clic en **Aceptar**.  
           
@@ -215,13 +215,13 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 Normalmente es más sencillo si no preconfigura la cuenta de equipo para un servicio o una aplicación en clúster, sino que permite crear y configurar automáticamente la cuenta al ejecutar el Asistente para alta disponibilidad. Sin embargo, si es necesario preconfigurar cuentas debido a los requisitos de su organización, utilice el procedimiento siguiente.
 
-El requisito mínimo para completar este procedimiento es la pertenencia al grupo **Opers. de cuentas** u otro equivalente. Revise los detalles sobre el uso de las cuentas adecuadas y [http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)las pertenencias a grupos en.
+El requisito mínimo para completar este procedimiento es la pertenencia al grupo **Opers. de cuentas** u otro equivalente. Revise los detalles sobre el uso de las cuentas adecuadas y las pertenencias a grupos en [https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477).
 
 #### <a name="to-prestage-an-account-for-a-clustered-service-or-application"></a>Para preconfigurar una cuenta para un servicio o una aplicación en clúster
 
 1.  Asegúrese de que sabe el nombre que tendrán el clúster y el servicio o la aplicación en clúster.
 
-2.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.
+2.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.
 
 3.  En el árbol de consola, haga clic con el botón secundario en **Equipos** o en el contenedor predeterminado donde se crean las cuentas de equipo en su dominio. **Equipos** se encuentra en <b>Active Directory usuarios y equipos/</b><i>dominio-nodo</i><b>/equipos</b>.
 
@@ -235,7 +235,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 7.  Haga clic con el botón secundario en la cuenta de equipo recién creada y, a continuación, haga clic en **Propiedades**.
 
-8.  En la pestaña **Seguridad**, haga clic en **Agregar**.
+8.  En la pestaña **Seguridad**, haz clic en **Agregar**.
 
 9.  Haga clic en **Tipos de objeto**, asegúrese de que se ha seleccionad **Equipos** y, a continuación, haga clic en **Aceptar**. Después, en **Escriba el nombre de objeto para seleccionar**, escriba la cuenta de nombre de clúster y, a continuación, haga clic en **Aceptar**. Si aparece un mensaje que indica que está a punto de agregar un objeto deshabilitado, haga clic en **Aceptar**.
 
@@ -260,9 +260,9 @@ Utilice este procedimiento si hay un mensaje de evento sobre los objetos de equi
 
 Los mensajes de evento que se ajustan a la descripción anterior indican que la contraseña para la cuenta de nombre de clúster y la contraseña correspondiente almacenada por el software de clúster ya no coinciden.
 
-Para obtener información acerca de cómo asegurarse de que los administradores de clústeres tienen los permisos correctos para realizar el siguiente procedimiento según sea necesario, consulte planeación previa de restablecimientos de contraseña y otro mantenimiento de cuentas, anteriormente en esta guía.
+Para obtener información sobre cómo asegurarse de que los administradores de clústeres tienen los permisos correctos para realizar el siguiente procedimiento de la manera necesaria, vea Planear de antemano los restablecimientos de la contraseña y otras tareas de mantenimiento de la cuenta, anteriormente en esta guía.
 
-Para completar este procedimiento, se requiere como mínimo la pertenencia al grupo local **Administradores** o equivalente. Además, se debe conceder a su cuenta el permiso **Restablecer contraseña** para la cuenta de nombre de clúster (a menos que sea una cuenta **Admins. del dominio** o sea el creador propietario de la cuenta de nombre de clúster). Se puede utilizar para este procedimiento la cuenta empleada por la persona que instaló el clúster. Revise los detalles sobre el uso de las cuentas adecuadas y [http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)las pertenencias a grupos en.
+Para completar este procedimiento, se requiere como mínimo la pertenencia al grupo local **Administradores** o equivalente. Además, se debe conceder a su cuenta el permiso **Restablecer contraseña** para la cuenta de nombre de clúster (a menos que sea una cuenta **Admins. del dominio** o sea el creador propietario de la cuenta de nombre de clúster). Se puede utilizar para este procedimiento la cuenta empleada por la persona que instaló el clúster. Revise los detalles sobre el uso de las cuentas adecuadas y las pertenencias a grupos en [https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477).
 
 #### <a name="to-troubleshoot-password-problems-with-the-cluster-name-account"></a>Para solucionar problemas de contraseña con la cuenta de nombre de clúster
 
@@ -276,13 +276,13 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia al gr
 
 ### <a name="steps-for-troubleshooting-problems-caused-by-changes-in-cluster-related-active-directory-accounts"></a>Pasos para solucionar problemas debidos a cambios en las cuentas de Active Directory relacionadas con el clúster
 
-Si se elimina la cuenta de nombre de clúster o se quitan permisos de ella, se producirán problemas cuando intente configurar un nuevo servicio o aplicación en clúster. Para solucionar un problema en el que esta podría ser la causa, utilice el complemento Usuarios y equipos de Active Directory para ver o cambiar la cuenta de nombre de clúster y otras cuentas relacionadas. Para obtener información acerca de los eventos que se registran cuando se produce este tipo de problema (evento 1193, 1194, 1206 o 1207 [http://go.microsoft.com/fwlink/?LinkId=118271](http://go.microsoft.com/fwlink/?linkid=118271)), vea.
+Si se elimina la cuenta de nombre de clúster o se quitan permisos de ella, se producirán problemas cuando intente configurar un nuevo servicio o aplicación en clúster. Para solucionar un problema en el que esta podría ser la causa, utilice el complemento Usuarios y equipos de Active Directory para ver o cambiar la cuenta de nombre de clúster y otras cuentas relacionadas. Para obtener información sobre los eventos que se registran cuando se produce este tipo de problema (evento 1193, 1194, 1206 o 1207), consulte [https://go.microsoft.com/fwlink/?LinkId=118271](https://go.microsoft.com/fwlink/?linkid=118271).
 
-El requisito mínimo para completar este procedimiento es la pertenencia al grupo **Admins. del dominio** u otro equivalente. Revise los detalles sobre el uso de las cuentas adecuadas y [http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)las pertenencias a grupos en.
+El requisito mínimo para completar este procedimiento es la pertenencia al grupo **Admins. del dominio** u otro equivalente. Revise los detalles sobre el uso de las cuentas adecuadas y las pertenencias a grupos en [https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477).
 
 #### <a name="to-troubleshoot-problems-caused-by-changes-in-cluster-related-active-directory-accounts"></a>Para solucionar problemas debidos a cambios en las cuentas de Active Directory relacionadas con el clúster
 
-1.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.
+1.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.
 
 2.  Expanda el contenedor predeterminado **Equipos** o la carpeta donde se encuentra la cuenta de nombre de clúster (la cuenta de equipo del clúster). **Equipos** se encuentra en <b>Active Directory usuarios y equipos/</b><i>dominio-nodo</i><b>/equipos</b>.
 
@@ -294,7 +294,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 5.  Haga clic con el botón secundario en el contenedor predeterminado **Equipos** o en la carpeta donde se encuentra la cuenta de nombre de clúster.
 
-6.  Haga clic en **Propiedades**.
+6.  Haz clic en **Propiedades**.
 
 7.  En la pestaña **Seguridad** , haga clic en **Opciones avanzadas**.
 

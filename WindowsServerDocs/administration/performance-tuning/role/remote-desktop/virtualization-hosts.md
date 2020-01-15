@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: dbdf211138ddcd553171f3c8ce9c2e915ccf0057
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: 1b66f6404df5debee2a4c52ffc9166c8eabb9f81
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812274"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947128"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Optimización del rendimiento Escritorio remoto hosts de virtualización
 
@@ -41,7 +41,7 @@ Enable-DedupVolume <volume> -UsageType HyperV
 > [!NOTE]
 > La optimización de desduplicación de datos de archivos abiertos solo se admite en escenarios de VDI con Hyper-V mediante el almacenamiento remoto a través de SMB 3,0.
 
-### <a name="memory"></a>Memoria
+### <a name="memory"></a>Memory
 
 El uso de memoria del servidor está controlado por tres factores principales:
 
@@ -81,7 +81,7 @@ Esta configuración de implementación garantiza un rendimiento rentable en el q
 
 ### <a name="csv-cache"></a>Caché de CSV
 
-Los clústeres de conmutación por error en Windows Server 2012 y versiones posteriores proporcionan almacenamiento en caché en volúmenes compartidos de clúster (CSV). Esto resulta muy ventajoso para las colecciones de escritorios virtuales agrupados, donde la mayoría de las operaciones de e/s de lectura proceden del sistema operativo de administración. La memoria caché de CSV proporciona mayor rendimiento en varios órdenes de magnitud porque almacena en caché bloques que se leen más de una vez y los entrega desde la memoria del sistema, lo que reduce la e/s. Para obtener más información sobre la memoria caché de CSV, consulte [Cómo habilitar la caché de CSV](http://blogs.msdn.com/b/clustering/archive/2012/03/22/10286676.aspx).
+Los clústeres de conmutación por error en Windows Server 2012 y versiones posteriores proporcionan almacenamiento en caché en volúmenes compartidos de clúster (CSV). Esto resulta muy ventajoso para las colecciones de escritorios virtuales agrupados, donde la mayoría de las operaciones de e/s de lectura proceden del sistema operativo de administración. La memoria caché de CSV proporciona mayor rendimiento en varios órdenes de magnitud porque almacena en caché bloques que se leen más de una vez y los entrega desde la memoria del sistema, lo que reduce la e/s. Para obtener más información sobre la memoria caché de CSV, consulte [Cómo habilitar la caché de CSV](https://blogs.msdn.com/b/clustering/archive/2012/03/22/10286676.aspx).
 
 ### <a name="pooled-virtual-desktops"></a>Escritorios virtuales agrupados
 
@@ -106,7 +106,7 @@ Cada servicio específico debe evaluarse correctamente antes de cualquier implem
 | Conexión compartida a Internet                  | Servicio centrado en el consumidor                                                                                                                                                                                  |
 | Servicios extendidos de Media Center               | Servicio centrado en el consumidor                                                                                                                                                                                  |
 > [!NOTE]
-> Esta lista no pretende ser una lista completa, ya que los cambios afectarán a los objetivos y escenarios previstos. Para obtener más información, vea [las prensas más calientes, obtenerla ahora, el script de optimización de VDI de Windows 8, cortesía de PFE!](http://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx).
+> Esta lista no pretende ser una lista completa, ya que los cambios afectarán a los objetivos y escenarios previstos. Para obtener más información, vea [las prensas más calientes, obtenerla ahora, el script de optimización de VDI de Windows 8, cortesía de PFE!](https://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx).
 
 
 > [!NOTE]

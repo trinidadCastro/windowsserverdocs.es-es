@@ -8,39 +8,39 @@ author: larsiwer
 ms.asset: b78ab493-e7c3-41f5-ab36-29397f086f32
 ms.author: kathydav
 ms.date: 11/03/2016
-ms.openlocfilehash: e1e374a75c11321820393bede83ca9ea225f5424
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2232f62090e171060f25e4c2513a217e2ab98eaa
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392816"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950548"
 ---
 # <a name="about-dump-encryption"></a>Acerca del cifrado de volcado
 El cifrado de volcado se puede usar para cifrar volcados de memoria y volcados en directo generados para un sistema. Los volcados de memoria se cifran mediante una clave de cifrado simétrica que se genera para cada volcado. Esta clave se cifra a continuación con la clave pública especificada por el administrador de confianza del host (protector de la clave de cifrado de volcado). Esto garantiza que solo alguien que tenga la clave privada correspondiente puede descifrar y, por tanto, tener acceso al contenido del volcado. Esta funcionalidad se aprovecha en un tejido protegido.
 Nota: Si configura el cifrado de volcado, deshabilite también Informe de errores de Windows. WER no puede leer volcados de memoria cifrados.
 
-# <a name="configuring-dump-encryption"></a>Configuración del cifrado de volcado
-## <a name="manual-configuration"></a>Configuración manual
-Para activar el cifrado de volcado mediante el registro, configure los siguientes valores del registro en`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl`
+## <a name="configuring-dump-encryption"></a>Configuración del cifrado de volcado
+### <a name="manual-configuration"></a>Configuración manual
+Para activar el cifrado de volcado mediante el registro, configure los siguientes valores del registro en `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl`
 
-| Nombre del valor | Tipo | Valor |
+| Nombre del valor | Escribe | Valor |
 | ---------- | ---- | ----- |
 | DumpEncryptionEnabled | DWORD | 1 para habilitar el cifrado de volcado, 0 para deshabilitar el cifrado de volcado |
-| EncryptionCertificates\Certificate.1::P ublicKey | Binary | Clave pública (RSA, 2048 bits) que se debe usar para cifrar volcados de memoria. Este debe tener el formato [BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx). |
+| EncryptionCertificates\Certificate.1::P ublicKey | Binario | Clave pública (RSA, 2048 bits) que se debe usar para cifrar volcados de memoria. Esto tiene que tener el formato [BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx). |
 | EncryptionCertificates\Certificate.1:: Thumbprint | Cadena | Huella digital del certificado para permitir la búsqueda automática de la clave privada en el almacén de certificados local al descifrar un volcado de memoria. |
 
 
-## <a name="configuration-using-script"></a>Configuración mediante script
+### <a name="configuration-using-script"></a>Configuración mediante script
 Para simplificar la configuración, hay disponible un [script de ejemplo](https://github.com/Microsoft/Virtualization-Documentation/tree/live/hyperv-tools/DumpEncryption) para habilitar el cifrado de volcado en función de una clave pública de un certificado.
 
-1. En un entorno de confianza: Cree un certificado con una clave RSA de 2048 bits y exporte el certificado público.
-2. En hosts de destino: Importar el certificado público en el almacén de certificados local
+1. En un entorno de confianza: cree un certificado con una clave RSA de 2048 bits y exporte el certificado público.
+2. En hosts de destino: importe el certificado público al almacén de certificados local.
 3. Ejecutar el script de configuración de ejemplo 
     ```
     .\Set-DumpEncryptionConfiguration.ps1 -Certificate (Cert:\CurrentUser\My\093568AB328DF385544FAFD57EE53D73EFAAF519) -Force
     ```
 
-# <a name="decrypting-encrypted-dumps"></a>Descifrado de volcados de memoria
+## <a name="decrypting-encrypted-dumps"></a>Descifrado de volcados de memoria
 Para descifrar un archivo de volcado de memoria existente, debe descargar e instalar las herramientas de depuración para Windows. Este conjunto de herramientas contiene KernelDumpDecrypt. exe, que se puede usar para descifrar un archivo de volcado de memoria cifrado.
 Si el certificado que incluye la clave privada está presente en el almacén de certificados del usuario actual, el archivo de volcado de memoria se puede descifrar mediante una llamada a
 
@@ -49,13 +49,13 @@ Si el certificado que incluye la clave privada está presente en el almacén de 
 ```
 Después del descifrado, las herramientas como WinDbg pueden abrir el archivo de volcado descifrado.
 
-# <a name="troubleshooting-dump-encryption"></a>Solucionar problemas de cifrado de volcado
-Si el cifrado de volcado está habilitado en un sistema pero no se genera ningún volcado, compruebe el `System` registro de eventos `Kernel-IO` del sistema en busca del evento 1207. Cuando no se puede inicializar el cifrado de volcado, se crea este evento y se deshabilitan los volcados.
+## <a name="troubleshooting-dump-encryption"></a>Solucionar problemas de cifrado de volcado
+Si el cifrado de volcado está habilitado en un sistema pero no se está generando ningún volcado, compruebe el registro de eventos del `System` del sistema en busca de `Kernel-IO` evento 1207. Cuando no se puede inicializar el cifrado de volcado, se crea este evento y se deshabilitan los volcados.
 
-| Mensaje de error detallado | Pasos para mitigar |
+| Mensajes de error detallados | Pasos para mitigar |
 | ---------------------- | ----------------- |
 | Falta el registro de la clave pública o huella digital | Compruebe si los dos valores del registro existen en la ubicación esperada |
 | Clave pública no válida | Asegúrese de que la clave pública almacenada en el valor del registro PublicKey esté almacenada como [BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx). |
 | Tamaño de clave pública no compatible | Actualmente, solo se admiten claves RSA de 2048 bits. Configurar una clave que coincida con este requisito |
 
-Compruebe también si el valor `GuardedHost` de `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl\ForceDumpsDisabled` se establece en un valor distinto de 0. Esto deshabilita los volcados de memoria por completo. Si es así, establézcalo en 0.
+Compruebe también si el valor `GuardedHost` en `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl\ForceDumpsDisabled` está establecido en un valor distinto de 0. Esto deshabilita los volcados de memoria por completo. Si es así, establézcalo en 0.

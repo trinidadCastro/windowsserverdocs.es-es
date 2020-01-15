@@ -9,12 +9,12 @@ ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
 ms.author: pashort
 author: JMesser81
 ms.date: 08/14/2018
-ms.openlocfilehash: 22dcfb318a0e60bd1694496288f3e63b2780d643
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2782419f0c3d99e7ec7f4ee3389f174df400bd55
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355500"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949924"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Solución de problemas de la pila de redes definidas por software de Windows Server
 
@@ -69,7 +69,7 @@ Estos cmdlets están documentados en TechNet en el [tema del cmdlet de diagnóst
 
 _Debug-VirtualMachineQueueOperation_, _Get-CustomerRoute_, _Get-PACAMapping_, _Get-ProviderAddress_, _Get-VMNetworkAdapterPortId_, _Get-VMSwitchExternalPortId_y _Test-EncapOverheadSettings_ son todas las pruebas locales que se pueden ejecutar desde cualquier host de Hyper-V. Los otros cmdlets invocan las pruebas de ruta de acceso a datos a través de la controladora de red y, por tanto, necesitan tener acceso al controlador de red como descried anterior.
 
-### <a name="github"></a>GitHub
+### <a name="github"></a>Github
 El [repositorio de github de Microsoft/Sdn](https://github.com/microsoft/sdn) tiene una serie de scripts y flujos de trabajo de ejemplo que se basan en estos cmdlets integrados. En concreto, los scripts de diagnóstico se pueden encontrar en la carpeta [Diagnostics](https://github.com/Microsoft/sdn/diagnostics) . Ayúdenos a obtener estos scripts mediante el envío de solicitudes de incorporación de cambios.
 
 ## <a name="troubleshooting-workflows-and-guides"></a>Solución de problemas de flujos de trabajo y guías  
@@ -121,7 +121,7 @@ Message:          Host is not Connected.
 En la tabla siguiente se muestra la lista de códigos de error, mensajes y acciones de seguimiento que se deben realizar en función del estado de configuración observado.
 
 
-| **Codifica**| **Mensaje**| **Acción**|  
+| **Código**| **Message**| **Acción**|  
 |--------|-----------|----------|  
 | Unknown| Error desconocido| |  
 | HostUnreachable                       | No se puede tener acceso al equipo host | Comprobar la conectividad de red de administración entre la controladora de red y el host |  
@@ -606,7 +606,7 @@ Consulte la API de REST de la controladora de red que se encuentra en el entorno
     $uri = "https://sa18n30nc.sa18.nttest.microsoft.com"
     Get-NetworkControllerAccessControlList -ConnectionUri $uri 
 
-# <a name="look-at-ip-configuration-and-virtual-subnets-which-are-referencing-this-acl"></a>Vea la configuración de IP y las subredes virtuales que hacen referencia a esta ACL
+## <a name="look-at-ip-configuration-and-virtual-subnets-which-are-referencing-this-acl"></a>Vea la configuración de IP y las subredes virtuales que hacen referencia a esta ACL
 
 1. Hosting Ejecute ``Get-ProviderAddress`` en ambos hosts de Hyper-V que hospeden las dos máquinas virtuales de inquilino en cuestión y, a continuación, ejecute ``Test-LogicalNetworkConnection`` o ``ping -c <compartment>`` desde el host de Hyper-V para validar la conectividad en la red lógica del proveedor de HNV
 2.  Hosting Asegúrese de que la configuración de MTU sea correcta en los hosts de Hyper-V y en cualquier dispositivo de conmutación de capa 2 entre los hosts de Hyper-V. Ejecute ``Test-EncapOverheadValue`` en todos los hosts de Hyper-V en cuestión. Compruebe también que todos los conmutadores de nivel 2 entre tienen la MTU establecida en menos de 1674 bytes para tener en cuenta la sobrecarga máxima de 160 bytes.  
@@ -658,7 +658,7 @@ Si no se ha especificado la ubicación de un archivo, se usará el registro loca
 - NCApplicationLogs
 - PerfCounters
 - SDNDiagnostics
-- Tene
+- Seguimientos
 
 La controladora de red utiliza (Azure) Service Fabric. Los registros de Service Fabric pueden ser necesarios para solucionar determinados problemas. Estos registros se pueden encontrar en cada nodo de la controladora de red en C:\ProgramData\Microsoft\Service fabric.
 

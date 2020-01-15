@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ee1416a00fc0d347b7e05cb12c83f3d3532d693f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d3d08e954b7a2a9ce58eb61dec54f2848ab68c12
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360141"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949159"
 ---
 # <a name="planning-for-compromise"></a>Planeación de compromiso
 
@@ -108,7 +108,7 @@ En una migración de Active Directory tradicional de un bosque a otro, el atribu
   
 Sin embargo, mantener el historial de SID ha demostrado un problema en algunos entornos, ya que el rellenado de los tokens de acceso de los usuarios con SID actuales e históricos puede producir una recarga de tokens. La saturación de tokens es un problema en el que el número de SID que debe almacenarse en el token de acceso de un usuario usa o supera la cantidad de espacio disponible en el token.  
   
-Aunque los tamaños de los tokens se pueden aumentar hasta una extensión limitada, la solución final al aumento de los tokens es reducir el número de SID asociados a las cuentas de usuario, ya sea mediante la racionalización de la pertenencia a grupos, la eliminación del historial de SID o una combinación de ambos. Para obtener más información acerca de la saturación de tokens, consulte [MaxTokenSize y el incremento de los tokens de Kerberos](http://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx).  
+Aunque los tamaños de los tokens se pueden aumentar hasta una extensión limitada, la solución final al aumento de los tokens es reducir el número de SID asociados a las cuentas de usuario, ya sea mediante la racionalización de la pertenencia a grupos, la eliminación del historial de SID o una combinación de ambos. Para obtener más información acerca de la saturación de tokens, consulte [MaxTokenSize y el incremento de los tokens de Kerberos](https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx).  
   
 En lugar de migrar a los usuarios desde un entorno heredado (especialmente uno en el que se puedan poner en peligro las pertenencias a grupos y los historiales de SID) mediante el historial de SID, considere la posibilidad de aprovechar las aplicaciones de Metadirectorios para "migrar" usuarios, sin tener que llevar historiales de SID en el nuevo bosque. Cuando se crean cuentas de usuario en el nuevo bosque, puede usar una aplicación de metadirectorio para asignar las cuentas a sus cuentas correspondientes en el bosque heredado.  
   
@@ -144,7 +144,7 @@ En la mayoría de las organizaciones, los usuarios que tienen acceso a la inform
   
 Por ejemplo, puede definir una directiva en la que los ejecutivos y otras VIP deban usar estaciones de trabajo seguras para acceder a datos confidenciales y sistemas, lo que les permite usar sus otros dispositivos para acceder a datos menos confidenciales. Este es un principio sencillo que los usuarios deben recordar, pero puede implementar una serie de controles de back-end para ayudar a aplicar el enfoque.  
 
-Puede usar la [garantía del mecanismo de autenticación](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx) para permitir que los usuarios accedan a datos confidenciales solo si han iniciado sesión en sus sistemas seguros con sus tarjetas inteligentes y pueden usar las restricciones de derechos de usuario y IPSec para controlar los sistemas desde los que pueden conectarse a los repositorios de datos confidenciales. Puede usar el [Kit de herramientas de clasificación de datos de Microsoft](https://www.microsoft.com/download/details.aspx?id=27123) para crear una sólida infraestructura de clasificación de archivos, y puede implementar [Access Control dinámicas](http://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx) para restringir el acceso a los datos en función de las características de un intento de acceso, trasladando las reglas de negocios a controles técnicos.  
+Puede usar la [garantía del mecanismo de autenticación](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx) para permitir que los usuarios accedan a datos confidenciales solo si han iniciado sesión en sus sistemas seguros con sus tarjetas inteligentes y pueden usar las restricciones de derechos de usuario y IPSec para controlar los sistemas desde los que pueden conectarse a los repositorios de datos confidenciales. Puede usar el [Kit de herramientas de clasificación de datos de Microsoft](https://www.microsoft.com/download/details.aspx?id=27123) para crear una sólida infraestructura de clasificación de archivos, y puede implementar [Access Control dinámicas](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx) para restringir el acceso a los datos en función de las características de un intento de acceso, trasladando las reglas de negocios a controles técnicos.  
   
 Desde la perspectiva del usuario, el acceso a datos confidenciales desde un sistema protegido "simplemente funciona" y al intentar hacerlo desde un sistema no seguro "no solo". Sin embargo, desde el punto de vista de la supervisión y la administración de su entorno, está ayudando a crear patrones identificables en la forma en que los usuarios acceden a los sistemas y datos confidenciales, lo que facilita la detección de intentos de acceso anómalos.  
   

@@ -8,12 +8,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 1399ed6a50085baa37f06c09b8c3e18ca8bca98b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e8e9e86f81596c85219c37c07d8fd2e95cc3a49
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395708"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953077"
 ---
 # <a name="accurate-time-for-windows-server-2016"></a>Hora precisa para Windows Server 2016
 
@@ -22,12 +22,12 @@ ms.locfileid: "71395708"
 El servicio de hora de Windows es un componente que utiliza un modelo de complemento para los proveedores de sincronización de tiempo de cliente y de servidor.  Hay dos proveedores de clientes integrados en Windows y hay complementos de terceros disponibles. Un proveedor usa [NTP (RFC 1305)](https://tools.ietf.org/html/rfc1305) o [MS-NTP](https://msdn.microsoft.com/library/cc246877.aspx) para sincronizar la hora del sistema local con un servidor de referencia compatible con NTP o MS-NTP. El otro proveedor es para Hyper-V y sincroniza las máquinas virtuales (VM) con el host de Hyper-V.  Cuando existan varios proveedores, Windows elegirá el mejor proveedor mediante el nivel de capa primero, seguido del retraso raíz, la dispersión raíz y, por último, el desplazamiento de la hora.
 
 > [!NOTE]
-> Para obtener una introducción rápida al servicio de hora de Windows, eche un vistazo a este [vídeo de información general de alto nivel](https://aka.ms/WS2016TimeVideo).
+> Para obtener información general rápida del servicio Horario de Windows, eche un vistazo a este [vídeo de información general de alto nivel](https://aka.ms/WS2016TimeVideo).
 
 En este tema, trataremos... estos temas se refieren a la habilitación del tiempo exacto: 
 
-- Aumento
-- Mediciones
+- Mejoras a la
+- Medidas
 - Procedimientos recomendados
 
 > [!IMPORTANT]
@@ -39,7 +39,7 @@ En este tema, trataremos... estos temas se refieren a la habilitación del tiemp
 ## <a name="domain-hierarchy"></a>Jerarquía de dominios
 Las configuraciones de dominio y independientes funcionan de manera diferente.
 
-- Los miembros del dominio usan un protocolo NTP seguro, que usa la autenticación de para garantizar la seguridad y la autenticidad de la referencia de hora.  Los miembros de dominio se sincronizan con un reloj maestro determinado por la jerarquía de dominios y un sistema de puntuación.  En un dominio, hay una capa jerárquica de transformaciones de tiempo, en la que cada DC apunta a un controlador de dominio principal con un estrato de tiempo más preciso.  La jerarquía se resuelve en el PDC o en un controlador de dominio del bosque raíz, o un controlador de dominio con la marca de dominio GTIMESERV, que indica un buen servidor de tiempo para el dominio.  Vea la sección [especificar un servicio de hora local de confianza con GTIMESERV](#GTIMESERV) a continuación.
+- Los miembros del dominio usan un protocolo NTP seguro, que usa la autenticación de para garantizar la seguridad y la autenticidad de la referencia de hora.  Los miembros de dominio se sincronizan con un reloj maestro determinado por la jerarquía de dominios y un sistema de puntuación.  En un dominio, hay una capa jerárquica de transformaciones de tiempo, en la que cada DC apunta a un controlador de dominio principal con un estrato de tiempo más preciso.  La jerarquía se resuelve en el PDC o en un controlador de dominio del bosque raíz, o un controlador de dominio con la marca de dominio GTIMESERV, que indica un buen servidor de tiempo para el dominio.  Vea la sección [Especificación de un servicio de hora local confiable con GTIMESERV a continuación.
 
 - Las máquinas independientes están configuradas para usar time.windows.com de forma predeterminada.  El servidor DNS resuelve este nombre, que debe apuntar a un recurso propiedad de Microsoft.  Al igual que todas las referencias de tiempo localizadas de forma remota, las interrupciones de red pueden impedir la sincronización.  Las cargas de tráfico de red y las rutas de acceso de red asimétricas pueden reducir la precisión de la sincronización de la hora.  Para una precisión de 1 MS, no puede depender de orígenes de hora remotos.
 

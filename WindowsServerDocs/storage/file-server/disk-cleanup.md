@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 2de3452a3528122beb26f403fb0c73d7ff13efd7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb93ec15fd138ee65797c9d27413552c3a1759a6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402112"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949671"
 ---
 # <a name="using-disk-cleanup-on-windows-server"></a>Uso del liberador de espacio en disco en Windows Server
 
@@ -29,9 +29,9 @@ También puede ejecutar el liberador de espacio en disco mediante el [comando de
 
 Siga estos pasos para usar el Asistente para agregar roles y características para instalar la experiencia de escritorio en un servidor que ejecute Windows Server 2012 R2 o una versión anterior, que también instala el liberador de espacio en disco.
 
-1. Si ya se ha abierto el Administrador del servidor, vaya al siguiente paso. Si todavía no se ha abierto el Administrador del servidor, ábralo mediante una de las siguientes acciones.
+1. Si el administrador de servidores ya está abierto, ve al paso siguiente. Si el Administrador de servidores aún no está abierto, ábrelo siguiendo uno de los procedimientos siguientes.
 
-   - En el escritorio de Windows, haga clic en **Administrador del servidor** en la barra de tareas de Windows para iniciar el Administrador del servidor.
+   - En el escritorio de Windows, inicie el Administrador de servidores haciendo clic en **Administrador de servidores** en la barra de tareas de Windows.
 
    - Vaya a **Inicio** y seleccione el icono de administrador del servidor.
 
@@ -41,7 +41,7 @@ Siga estos pasos para usar el Asistente para agregar roles y características pa
 
 1. En la página **Seleccionar tipo de instalación** , seleccione Instalación basada en **características o en roles** para instalar todas las características de las partes en un solo servidor. Selecciona **Siguiente**.
 
-1. En la página **Seleccionar servidor de destino**, seleccione un servidor del grupo de servidores o un VHD sin conexión. Selecciona **Siguiente**.
+1. En la página **Seleccionar servidor de destino** , seleccione un servidor del grupo de servidores o un VHD sin conexión. Selecciona **Siguiente**.
 
 1. En la página **Seleccionar roles de servidor** , seleccione **siguiente**.
 
@@ -63,8 +63,8 @@ Para usar cleanmgr. exe, instale la experiencia de escritorio como se describió
 
 | Sistema operativo  | Arquitectura  | Ubicación del archivo  |
 | ----------------- | -------------- | --------------- |
-| Windows Server 2008 R2 | 64 bits | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr_31bf3856ad364e35_6.1.7600.16385_none_c9392808773cd7da\cleanmgr.exe 
-| Windows Server 2008 R2 | 64 bits | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr.resources_31bf3856ad364e35_6.1.7600.16385_en-us_b9cb6194b257cc63\cleanmgr.exe.mui |
+| Windows Server 2008 R2 | 64 bits | C:\Windows\winsxs\ amd64_microsoft-Windows-cleanmgr_31bf3856ad364e35_6.1.7600.16385_none_c9392808773cd7da \cleanmgr.exe 
+| Windows Server 2008 R2 | 64 bits | C:\Windows\winsxs\ amd64_microsoft-Windows-cleanmgr. resources_31bf3856ad364e35_6.1.7600.16385_en-us_b9cb6194b257cc63 \cleanmgr.exe.MUI |
 
 Busque cleanmgr. exe y mueva el archivo a **%SystemRoot%\System32**.
 
@@ -76,6 +76,6 @@ Para que aparezca el botón liberador de espacio en disco en el cuadro de diálo
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-[Liberar espacio de la unidad en Windows 10](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
+[Liberar espacio de la unidad en Windows 10](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)
 
 [cleanmgr](../../administration/windows-commands/cleanmgr.md)

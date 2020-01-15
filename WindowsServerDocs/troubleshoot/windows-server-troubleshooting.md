@@ -10,19 +10,19 @@ ms.date: 10/17/2019
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: 829ae15495d54aca8c476909988ea5a44ea487e7
-ms.sourcegitcommit: 8a017624682fe0172076f9169a9fa17aa972907f
+ms.openlocfilehash: 5e6312075fffd62b599fb62f39cc94ca1f309a44
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74852632"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950160"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Solucionar problemas de componentes de Windows Server
 
 >- [!TIP]
 > ¿Busca información sobre versiones anteriores de Windows Server? Consulte nuestras otras bibliotecas de [Windows Server](/previous-versions/windows/) en docs.Microsoft.com. También puede buscar información específica en [este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) .
 
-Microsoft publica regularmente ambas actualizaciones para Windows Server. Para garantizar que los servidores pueden recibir actualizaciones futuras, incluidas las actualizaciones de seguridad, es importante mantenerlos actualizados. Consulte el historial de actualizaciones de [Windows 10 y Windows Server 2016](https://support.microsoft.com/en-us/help/4000825/windows-10-windows-server-2016-update-history) para obtener una lista completa de las actualizaciones publicadas.
+Microsoft publica regularmente ambas actualizaciones para Windows Server. Para garantizar que los servidores pueden recibir actualizaciones futuras, incluidas las actualizaciones de seguridad, es importante mantenerlos actualizados. Consulte el historial de actualizaciones de [Windows 10 y Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history) para obtener una lista completa de las actualizaciones publicadas.
 
 Esta sección contiene temas de solución de problemas avanzados y vínculos para ayudarle a resolver problemas con Windows Server. Se agregarán temas adicionales a medida que estén disponibles.
 
@@ -122,7 +122,7 @@ Esta sección contiene temas de solución de problemas avanzados y vínculos par
 
 ## <a name="troubleshoot-sdn"></a>Solucionar problemas de SDN
 - [Solucionar problemas de SDN](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-software-defined-networking)
-- [Solución de problemas de la pila de redes definidas por software de Windows Server](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
+- [Solución de problemas de la pila de redes definidas por software de Windows Server](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
 
 ## <a name="troubleshoot-rds-session-connectivity"></a>Solucionar problemas de conectividad de sesión de RDS
 - [Solución de problemas generales de conexión con Escritorio remoto](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/rdp-error-general-troubleshooting)

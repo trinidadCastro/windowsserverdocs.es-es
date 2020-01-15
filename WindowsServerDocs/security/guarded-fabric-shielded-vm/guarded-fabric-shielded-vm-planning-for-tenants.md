@@ -7,12 +7,12 @@ ms.assetid: 392af37f-a02d-4d40-a25d-384211cbbfdd
 manager: dongill
 author: nirb-ms
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: c439a53abea07041e69e50d5d5148dae95243265
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 255429960735d70ff3a4d260bd9090b95882b6bd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386432"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949773"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-tenants"></a>Guía de planificación de máquinas virtuales blindadas y tejido protegido para inquilinos
 
@@ -74,7 +74,7 @@ Al crear una máquina virtual blindada o compatible con el cifrado o al converti
 
 **¿Cuántos archivos de datos de blindaje necesito?** Se puede usar un único archivo de datos de blindaje para crear cada máquina virtual blindada. Sin embargo, si una máquina virtual blindada determinada requiere que cualquiera de los cuatro elementos sea diferente, es necesario un archivo de datos de blindaje adicional. Por ejemplo, podría tener un archivo de datos de blindaje para el Departamento de ti y un archivo de datos de blindaje diferente para el Departamento de recursos humanos porque la contraseña de administrador inicial y los certificados RDP diferían.
 
-Aunque es posible usar archivos de datos de blindaje independientes para cada máquina virtual blindada, no es necesariamente la opción óptima y debe realizarse por las razones adecuadas. Por ejemplo, si todas las máquinas virtuales blindadas necesitan tener una contraseña de administrador diferente, considere la posibilidad de usar en su lugar un servicio de administración de contraseñas o una herramienta como [la solución de contraseña de administrador local de Microsoft (laps)](https://www.microsoft.com/en-us/download/details.aspx?id=46899).
+Aunque es posible usar archivos de datos de blindaje independientes para cada máquina virtual blindada, no es necesariamente la opción óptima y debe realizarse por las razones adecuadas. Por ejemplo, si todas las máquinas virtuales blindadas necesitan tener una contraseña de administrador diferente, considere la posibilidad de usar en su lugar un servicio de administración de contraseñas o una herramienta como [la solución de contraseña de administrador local de Microsoft (laps)](https://www.microsoft.com/download/details.aspx?id=46899).
 
 ## <a name="creating-a-shielded-vm-on-a-virtualization-fabric"></a>Creación de una máquina virtual blindada en un tejido de virtualización
 

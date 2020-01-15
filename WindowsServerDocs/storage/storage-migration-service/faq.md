@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 6895c4b5f74beb237378060f82135d6f578986b7
-ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
+ms.openlocfilehash: b7a6dd37cfc054ead153d274ffa7f0d13844305e
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973862"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953030"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>Preguntas más frecuentes sobre el servicio de migración de almacenamiento (p + f)
 
@@ -42,7 +42,7 @@ El servicio de migración de almacenamiento admite la migración de usuarios y g
 
 ## <a name="is-domain-controller-migration-supported"></a>¿Se admite la migración del controlador de dominio?
 
-El servicio de migración de almacenamiento no migra actualmente controladores de dominio en Windows Server 2019. Como solución alternativa, siempre que tenga más de un controlador de dominio en el dominio Active Directory, disminuya el nivel del controlador de dominio antes de migrarlo y, a continuación, promueva el destino después de que se complete el corte.
+El servicio de migración de almacenamiento no migra actualmente controladores de dominio en Windows Server 2019. Como solución alternativa, siempre que tenga más de un controlador de dominio en el dominio Active Directory, disminuya el nivel del controlador de dominio antes de migrarlo y, a continuación, promueva el destino después de que se complete el corte. Si decide migrar el origen o el destino de un controlador de dominio, no podrá cambiar. Nunca debe migrar usuarios y grupos al migrar desde o a un controlador de dominio.
 
 ## <a name="what-attributes-are-migrated-by-the-storage-migration-service"></a>¿Qué atributos migra el servicio de migración de almacenamiento?
 
@@ -61,15 +61,15 @@ El servicio de migración de almacenamiento migra todas las marcas, la configura
     - Descripción           
     - Cifrar datos
     - Comunicación remota de identidad
-    - Infraestructura
+    - Infraestructura de
     - Nombre
-    - Path
-    - Ámbito
+    - Ruta
+    - Con ámbito
     - Nombre de ámbito
     - Descriptor de seguridad
-    - Instantánea
-    - Special
-    - Temporal
+    - Instantáneas
+    - Especial
+    - Almacenamiento
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>¿Puedo consolidar varios servidores en un solo servidor?
 
@@ -89,9 +89,9 @@ El servicio de migración de almacenamiento contiene un motor de lectura y copia
 
 - **Use Windows Server 2019 para el sistema operativo de destino.** Windows Server 2019 contiene el servicio de proxy del servicio de migración de almacenamiento. Al instalar esta característica y migrar a destinos de Windows Server 2019, todas las transferencias funcionan como línea directa de visión entre el origen y el destino. Este servicio se ejecuta en el orquestador durante la transferencia si los equipos de destino son Windows Server 2012 R2 o Windows Server 2016, lo que significa que las transferencias de doble salto y serán mucho más lentas. Si hay varios trabajos que se ejecutan con los destinos Windows Server 2012 R2 o Windows Server 2016, el orquestador se convertirá en un cuello de botella. 
 
-- **Modifique los subprocesos de transferencia predeterminados.** El servicio del proxy del servicio de migración de almacenamiento copia ocho archivos simultáneamente en un trabajo determinado. Puede aumentar el número de subprocesos de copia simultáneos si ajusta el siguiente nombre de valor REG_DWORD del registro en decimal en cada nodo que ejecute el proxy del servicio de migración de almacenamiento:
+- **Modifique los subprocesos de transferencia predeterminados.** El servicio del proxy del servicio de migración de almacenamiento copia ocho archivos simultáneamente en un trabajo determinado. Puede aumentar el número de subprocesos de copia simultáneos si ajusta el siguiente registro REG_DWORD nombre de valor en decimal en cada nodo que ejecute el proxy del servicio de migración de almacenamiento:
 
-    HKEY_Local_Machine\Software\Microsoft\SMSProxy
+    HKEY_Local_Machine \Software\Microsoft\SMSProxy
     
     FileTransferThreadCount
 
@@ -110,7 +110,7 @@ El servicio de migración de almacenamiento contiene un motor de lectura y copia
    - Uno o más adaptadores de red que se configuran mediante la formación de equipos NIC
    - Un adaptador de red o más que admita RDMA
 
-- **Actualice los controladores.** Según corresponda, instale el firmware y los controladores más recientes de almacenamiento y alojamiento de proveedores, los controladores de HBA de proveedor más recientes, el firmware UEFI o BIOS de proveedor más reciente, los últimos controladores de red de proveedor y los controladores de conjunto de chips de placa base más recientes en origen, destino servidores. Reinicie los nodos según sea necesario. Consulte la documentación del proveedor de hardware para configurar el almacenamiento compartido y el hardware de red.
+- **Actualice los controladores.** Según corresponda, instale el firmware y los controladores más recientes de almacenamiento y alojamiento de proveedores, los controladores de HBA de proveedor más recientes, el firmware UEFI o BIOS de proveedor más reciente, los últimos controladores de red de proveedor y los controladores de conjunto de chips de placa base más recientes en servidores de origen, destino y Reinicie los nodos según sea necesario. Consulte la documentación del proveedor de hardware para configurar el almacenamiento compartido y el hardware de red.
 
 - **Habilitar el procesamiento de alto rendimiento.** Asegúrese de que la configuración de BIOS o UEFI para los servidores permite un alto rendimiento; por ejemplo, deshabilite el estado C, establezca la velocidad de QPI, habilite NUMA y configure la frecuencia de la memoria en el valor más elevado. Asegúrese de que la administración de energía en Windows Server está establecida en alto rendimiento. Reinicie si es necesario. No olvide devolverlos a los Estados correspondientes después de completar la migración. 
 
@@ -132,9 +132,9 @@ El servicio de migración de almacenamiento utiliza una base de datos del motor 
 2. Tomar posesión de la carpeta `%programdata%/Microsoft/StorageMigrationService`
 3. Agregue su cuenta de usuario para tener control total sobre ese recurso compartido y todos sus archivos y subcarpetas.
 4. Mueva la carpeta a otra unidad del equipo del orquestador.
-5. Establezca el siguiente valor REG_SZ del registro:
+5. Establezca el siguiente valor del REG_SZ del registro:
 
-    HKEY_Local_Machine\Software\Microsoft\SMS DatabasePath = *path a la nueva carpeta de base de datos en un volumen diferente* . 
+    HKEY_Local_Machine \Software\Microsoft\SMS DatabasePath = *path a la nueva carpeta de base de datos en un volumen diferente* . 
 6. Asegúrese de que el sistema tenga control total sobre todos los archivos y subcarpetas de la carpeta.
 7. Quite los permisos de sus propias cuentas.
 8. Inicie el servicio de "servicio de migración de almacenamiento".
@@ -145,7 +145,7 @@ Para proporcionar comentarios sobre el servicio de migración de almacenamiento:
 
 - Use la herramienta centro de comentarios que se incluye en Windows 10, haciendo clic en "sugerir una característica" y especificando la categoría de "Windows Server" y la subcategoría de "migración de almacenamiento".
 - Usar el sitio web de [Windows Server UserVoice](https://windowsserver.uservoice.com)
-- Correo electrónico smsfeed@microsoft.com
+- Un correo electrónico a smsfeed@microsoft.com
 
 Para archivos errores:
 
@@ -158,6 +158,6 @@ Para obtener soporte técnico:
  - Publicación en el [Foro de TechNet de Windows Server 2019](https://social.technet.microsoft.com/Forums/en-US/home?forum=ws2019&filter=alltypes&sort=lastpostdesc) 
  - Abra un caso de soporte técnico a través de [soporte técnico de Microsoft](https://support.microsoft.com)
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 - [Información general del servicio de migración de almacenamiento](overview.md)

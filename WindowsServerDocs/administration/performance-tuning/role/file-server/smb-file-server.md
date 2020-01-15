@@ -7,12 +7,12 @@ ms.topic: article
 author: phstee
 ms.author: NedPyle; Danlo; DKruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 5383d16ac4c98651aa6afe996dbad88a6d60ee7a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 918d21139a068da1a46fbda1fa5034e14c8379c0
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370226"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947061"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>Optimización del rendimiento para servidores de archivos SMB
 
@@ -54,7 +54,7 @@ Para obtener más información sobre SMB multicanal, consulte [implementar SMB m
 
 El escalado horizontal de SMB permite a SMB 3,0 en una configuración de clúster mostrar un recurso compartido en todos los nodos de un clúster. Esta configuración activa/activa permite escalar los clústeres de servidores de archivos aún más, sin una configuración compleja con varios volúmenes, recursos compartidos y recursos de clúster. El ancho de banda máximo del recurso compartido es el ancho de banda total de todos los nodos del clúster de servidores de archivos. El ancho de banda total ya no está limitado por el ancho de banda de un solo nodo de clúster, sino que depende de la capacidad del sistema de almacenamiento de respaldo. Puede aumentar el ancho de banda total al agregar nodos.
 
-Para obtener más información sobre el escalado horizontal de SMB, consulte [servidor de archivos de escalabilidad horizontal para información general sobre los datos de aplicación](https://technet.microsoft.com/library/hh831349.aspx) y la entrada de blog [para escalar horizontalmente o no escalar horizontalmente, esa es la cuestión](http://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx).
+Para obtener más información sobre el escalado horizontal de SMB, consulte [servidor de archivos de escalabilidad horizontal para información general sobre los datos de aplicación](https://technet.microsoft.com/library/hh831349.aspx) y la entrada de blog [para escalar horizontalmente o no escalar horizontalmente, esa es la cuestión](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx).
 
 ### <a name="performance-counters-for-smb-30"></a>Contadores de rendimiento para SMB 3,0
 
@@ -64,7 +64,7 @@ Los siguientes contadores de rendimiento de SMB se introdujeron en Windows Serve
 
     Estos contadores muestran información sobre los recursos compartidos de archivos del servidor a los que tiene acceso un cliente que usa SMB 2,0 o versiones posteriores.
 
-    Si está familiarizado con los contadores de disco normales en Windows, es posible que observe una determinada similitud. Eso no es accidental. Los contadores de rendimiento de recursos compartidos de cliente SMB se diseñaron para coincidir exactamente con los contadores de disco. De esta manera, puede volver a usar fácilmente cualquier orientación sobre el ajuste del rendimiento del disco de aplicación que tiene actualmente. Para obtener más información sobre la asignación de contadores, consulte [blog de contadores de rendimiento por recurso compartido](http://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx).
+    Si está familiarizado con los contadores de disco normales en Windows, es posible que observe una determinada similitud. Eso no es accidental. Los contadores de rendimiento de recursos compartidos de cliente SMB se diseñaron para coincidir exactamente con los contadores de disco. De esta manera, puede volver a usar fácilmente cualquier orientación sobre el ajuste del rendimiento del disco de aplicación que tiene actualmente. Para obtener más información sobre la asignación de contadores, consulte [blog de contadores de rendimiento por recurso compartido](https://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx).
 
 -   **Recursos compartidos de servidor SMB**
 
@@ -86,7 +86,7 @@ Los siguientes contadores de rendimiento de SMB se introdujeron en Windows Serve
 
 -   **Relaciones de contador de rendimiento de disco físico, SMB y CSV FS**
 
-    Para obtener más información sobre cómo se relacionan los contadores de disco físico, SMB y CSV FS (sistema de archivos), vea la siguiente entrada de blog: [volumen compartido de clúster contadores de rendimiento](http://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx).
+    Para obtener más información sobre cómo se relacionan los contadores de disco físico, SMB y CSV FS (sistema de archivos), vea la siguiente entrada de blog: [volumen compartido de clúster contadores de rendimiento](https://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx).
 
 ## <a name="tuning-parameters-for-smb-file-servers"></a>Parámetros de optimización para servidores de archivos SMB
 
@@ -156,4 +156,4 @@ La siguiente configuración puede optimizar un equipo para el rendimiento del se
 
 ### <a name="smb-client-performance-monitor-counters"></a>Contadores del monitor de rendimiento del cliente SMB
 
-Para obtener más información acerca de los contadores del cliente SMB, vea [información del servidor de archivos de Windows Server 2012: los nuevos contadores de rendimiento de cliente SMB por recurso compartido proporcionan una visión excelente](http://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx).
+Para obtener más información acerca de los contadores del cliente SMB, vea [información del servidor de archivos de Windows Server 2012: los nuevos contadores de rendimiento de cliente SMB por recurso compartido proporcionan una visión excelente](https://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx).

@@ -9,26 +9,26 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 55d9c600c86b6b64efdb5c7d4437697539f887ae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3e620b5597a2d25a7bb02daf80c5812d25f6a987
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402945"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950034"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Réplica de almacenamiento de clúster a clúster en la misma región de Azure
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 Puede configurar la replicación de clúster a almacenamiento de clúster en la misma región de Azure. En los ejemplos siguientes, usamos un clúster de dos nodos, pero la réplica de almacenamiento de clúster a clúster no está restringida a un clúster de dos nodos. La ilustración siguiente es un clúster de espacio de almacenamiento directo de dos nodos que se puede comunicar entre sí, que se encuentra en el mismo dominio y dentro de la misma región.
 
 Vea los vídeos siguientes para ver un tutorial completo del proceso.
 
 Parte uno
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE26f2Y]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE26f2Y]
 
 Parte dos
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE269Pq]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE269Pq]
 
 ![El diagrama de arquitectura que muestra la réplica de almacenamiento de clúster a clúster en Azure dentro de la misma región.](media/Cluster-to-cluster-azure-one-region/architecture.png)
 > [!IMPORTANT]
@@ -76,16 +76,16 @@ Parte dos
 11. Cree una SKU estándar interna [load balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM) para cada clúster (**azlbr1**,**azlbr2**). 
    
     Proporcione la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
-    - azlbr1 = > IP de front-end: 10.3.0.100 (seleccione una dirección IP no usada de la subred de la red virtual (**az2az-Vnet**))
+    - azlbr1 = > front-end IP: 10.3.0.100 (seleccione una dirección IP no usada de la subred de red virtual (**az2az-Vnet**))
     - Cree un grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociados.
     - Crear sondeo de estado: Puerto 59999
-    - Cree una regla de equilibrio de carga: Permita puertos de alta disponibilidad con IP flotante habilitada. 
+    - Cree una regla de equilibrio de carga: permita puertos de alta disponibilidad con IP flotante habilitada. 
    
     Proporcione la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
-    - azlbr2 = > IP de front-end: 10.3.0.101 (seleccione una dirección IP no usada de la subred de la red virtual (**az2az-Vnet**))
+    - azlbr2 = > front-end IP: 10.3.0.101 (seleccione una dirección IP no usada de la subred de red virtual (**az2az-Vnet**))
     - Cree un grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociados.
     - Crear sondeo de estado: Puerto 59999
-    - Cree una regla de equilibrio de carga: Permita puertos de alta disponibilidad con IP flotante habilitada. 
+    - Cree una regla de equilibrio de carga: permita puertos de alta disponibilidad con IP flotante habilitada. 
    
 12. En cada nodo del clúster, abra el puerto 59999 (sondeo de estado). 
    
@@ -139,7 +139,7 @@ Parte dos
    
     Conceder acceso de un clúster a otro en ambas direcciones:
 
-    En nuestro ejemplo:
+    En el ejemplo:
 
     ```PowerShell
       Grant-SRAccess -ComputerName az2az1 -Cluster SRAZC2
@@ -159,7 +159,7 @@ Parte dos
     - Ubicación del volumen:-c:\ClusterStorage\DataDisk2
     - Ubicación del registro:-g:
 
-Ejecute el siguiente comando:
+Ejecuta el siguiente comando:
 
 ```PowerShell
 

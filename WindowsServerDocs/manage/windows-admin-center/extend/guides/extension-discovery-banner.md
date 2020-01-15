@@ -8,16 +8,16 @@ ms.author: jol
 ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: fb549d84f565feeea348d2f50a9188218e7638d1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d761ba61ae5680373c334889799e82e5d092a0d4
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357080"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950106"
 ---
 # <a name="enabling-the-extension-discovery-banner"></a>Habilitación del banner de detección de extensión
 
->Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
 
 Una nueva característica disponible en el centro de administración de Windows Preview 1903 es el banner de detección de la extensión. Esta característica permite a una extensión declarar el fabricante del hardware de servidor y los modelos que admite, y cuando un usuario se conecta a un servidor o clúster para el que hay una extensión disponible, se muestra un banner de notificación para instalar la extensión fácilmente. Los desarrolladores de extensiones podrán obtener más visibilidad de sus extensiones y los usuarios podrán detectar fácilmente más capacidades de administración para sus servidores.
 
@@ -29,13 +29,13 @@ Cuando se inicia el centro de administración de Windows, se conectará a las fu
 
 ## <a name="how-to-implement-the-extension-discovery-banner"></a>Cómo implementar el banner de detección de extensión
 
-Los metadatos de "Tags" del archivo. nuspec se usan para declarar qué fabricante de hardware o modelos admite su extensión. Las etiquetas están delimitadas por espacios y puede Agregar un fabricante o una etiqueta de modelo, o ambos, para declarar el fabricante o los modelos admitidos. El formato de etiqueta es ``"[value type]_[value condition]"``, donde [tipo de valor] es "manufacturer" o "Model" (distingue mayúsculas de minúsculas) y [condición de valor] es una [expresión regular de JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) que define el fabricante o la cadena de modelo, y [tipo de valor] y [condición de valor] se separan por un carácter de subrayado. A continuación, esta cadena se codifica mediante la codificación de URI y se agrega a la cadena de metadatos "Tags" de. nuspec.
+Los metadatos de "Tags" del archivo. nuspec se usan para declarar qué fabricante de hardware o modelos admite su extensión. Las etiquetas están delimitadas por espacios y puede Agregar un fabricante o una etiqueta de modelo, o ambos, para declarar el fabricante o los modelos admitidos. El formato de etiqueta es ``"[value type]_[value condition]"`` donde [tipo de valor] es "manufacturer" o "Model" (distingue mayúsculas de minúsculas) y [valor Condition] es una [expresión regular de JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions) que define el fabricante o la cadena de modelo, y [tipo de valor] y [condición de valor] están separadas por un carácter de subrayado. A continuación, esta cadena se codifica mediante la codificación de URI y se agrega a la cadena de metadatos "Tags" de. nuspec.
 
 ### <a name="example"></a>Ejemplo
 
 Supongamos que he desarrollado una extensión que admite servidores de una empresa denominada contoso Inc., con el nombre de modelo R3xx y R4xx.
 
-1. La etiqueta del fabricante sería ``"Manufacturer_/Contoso Inc./"``. La etiqueta de los modelos puede ser ``"Model_/^R[34][0-9]{2}$/"``. Dependiendo de cómo desee definir la condición de coincidencia, habrá diferentes maneras de definir la expresión regular. También puede separar las etiquetas de fabricante o modelo en varias etiquetas; por ejemplo, la etiqueta del modelo también podría ser ``"Model_/R3../ Model_/R4../"``.
+1. La etiqueta del fabricante sería ``"Manufacturer_/Contoso Inc./"``. La etiqueta de los modelos se puede ``"Model_/^R[34][0-9]{2}$/"``. Dependiendo de cómo desee definir la condición de coincidencia, habrá diferentes maneras de definir la expresión regular. También puede separar las etiquetas de fabricante o modelo en varias etiquetas; por ejemplo, la etiqueta del modelo también se puede ``"Model_/R3../ Model_/R4../"``.
 2. Puede probar la expresión regular con la consola de DevTools del explorador Web. En Edge o Chrome, presione F12 para abrir la ventana de DevTools y, en la pestaña consola, escriba lo siguiente y presione ENTRAR:
 
    ```javascript
@@ -67,4 +67,4 @@ Supongamos que he desarrollado una extensión que admite servidores de una empre
    ```
 
 > [!Tip]
-> Sabemos que un fabricante de hardware puede tener una amplia gama de nombres de modelo de los que algunos se pueden admitir, mientras que otros no. Tenga en cuenta que esta característica está pensada para ayudar con la **detección** de la extensión, pero no tiene que ser un inventario absolutamente actualizado de todos los modelos. Puede definir la expresión regular para que sea una expresión más sencilla que coincida con un subconjunto de los modelos. Es posible que un usuario no vea el banner de detección si se conecta por primera vez a un modelo de servidor que no coincide con la condición, pero antes o después se conectará a otro servidor que lo haga y detectará e instalará la extensión. También puede considerar la posibilidad de definir una expresión regular simple que solo coincida con el nombre del fabricante. En algunos casos, es posible que la extensión no admita realmente un modelo específico, pero puede usar la característica de visualización de la [herramienta dinámica](./dynamic-tool-display.md) para definir un script de PowerShell personalizado para comprobar la compatibilidad con modelos y mostrar solo la extensión cuando sea aplicable, o bien proporcionar un límite funcionalidad de la extensión para los modelos que no admiten todas las funcionalidades.
+> Sabemos que un fabricante de hardware puede tener una amplia gama de nombres de modelo de los que algunos se pueden admitir, mientras que otros no. Tenga en cuenta que esta característica está pensada para ayudar con la **detección** de la extensión, pero no tiene que ser un inventario absolutamente actualizado de todos los modelos. Puede definir la expresión regular para que sea una expresión más sencilla que coincida con un subconjunto de los modelos. Es posible que un usuario no vea el banner de detección si se conecta por primera vez a un modelo de servidor que no coincide con la condición, pero antes o después se conectará a otro servidor que lo haga y detectará e instalará la extensión. También puede considerar la posibilidad de definir una expresión regular simple que solo coincida con el nombre del fabricante. En algunos casos, es posible que la extensión no admita realmente un modelo específico, pero puede usar la característica de visualización de la [herramienta dinámica](./dynamic-tool-display.md) para definir un script de PowerShell personalizado para comprobar la compatibilidad con modelos y mostrar solo la extensión cuando sea aplicable, o bien proporcionar una funcionalidad limitada en la extensión para los modelos que no admiten todas las funcionalidades.

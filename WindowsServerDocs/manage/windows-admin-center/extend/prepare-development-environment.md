@@ -8,16 +8,16 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 09/18/2018
 ms.prod: windows-server
-ms.openlocfilehash: 2aff8c0e43c6813c543511e643471c9cd9bcc292
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 67bd2a476cedd6d522daeaae54081b02fd893fbd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357037"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949973"
 ---
 # <a name="prepare-your-development-environment"></a>Preparar el entorno de desarrollo
 
->Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
 
 Vamos a empezar a desarrollar extensiones con el SDK del centro de administración de Windows.  En este documento, trataremos el proceso para poner en marcha su entorno para compilar y probar una extensión para el centro de administración de Windows.
 
@@ -30,8 +30,8 @@ Para preparar el entorno de desarrollo, realiza los pasos siguientes:
 
 Para empezar a desarrollar con el SDK, descarga e instala los requisitos previos siguientes:
 
-* [Centro de administración de Windows](https://aka.ms/WACDownloadPage) (Versión de disponibilidad general o versión preliminar)
-* Visual Studio o [Visual Studio Code](http://code.visualstudio.com)
+* [Centro de administración de Windows](https://aka.ms/WACDownloadPage) (GA o versión preliminar)
+* Visual Studio o [Visual Studio Code](https://code.visualstudio.com)
 * [Administrador de paquetes de node](https://npmjs.com/get-npm) (8.12.0 o posterior)
 * [Nuget](https://www.nuget.org/downloads) (para publicación de extensiones)
 
@@ -58,7 +58,7 @@ npm install -g windows-admin-center-cli
 ```
 
 >[!NOTE]
->Puede instalar una versión posterior de; @angular/clisin embargo, tenga en cuenta que si instala una versión mayor que 1.6.5, recibirá una advertencia durante el paso de compilación de Gulp que indica que la versión de la CLI local no coincide con la versión instalada.
+>Puede instalar una versión posterior de @angular/cli, sin embargo, tenga en cuenta que si instala una versión mayor que 1.6.5, recibirá una advertencia durante el paso de compilación de Gulp que indica que la versión de la CLI local no coincide con la versión instalada.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

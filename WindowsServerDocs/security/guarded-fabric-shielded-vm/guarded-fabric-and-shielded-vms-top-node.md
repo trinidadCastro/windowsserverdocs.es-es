@@ -9,12 +9,12 @@ author: rpsqrd
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: c06432a039341978956066344710920652187b97
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f23d0be0d860695b014f57fd55d8e321e81a70ca
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403662"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950337"
 ---
 # <a name="guarded-fabric-and-shielded-vms"></a>Máquinas virtuales blindadas y tejido protegido
 
@@ -27,12 +27,12 @@ Uno de los objetivos más importantes de proporcionar un entorno hospedado es ga
 
 ## <a name="videos-blog-and-overview-topic-about-guarded-fabrics-and-shielded-vms"></a>Vídeos, blog e información general sobre tejidos protegidos y máquinas virtuales blindadas
 
-- Video: [Cómo proteger el tejido de virtualización de amenazas internas con Windows Server 2019](https://myignite.techcommunity.microsoft.com/sessions/64690)
-- Video: [Introducción a la Virtual Machines blindada en Windows Server 2016](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
-- Video: [Profundice en máquinas virtuales blindadas con Windows Server 2016 Hyper-V](https://channel9.msdn.com/events/Ignite/2016/BRK3124)
-- Video: [Implementación de máquinas virtuales blindadas y un tejido protegido con Windows Server 2016](https://mva.microsoft.com/en-US/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)
-- Blog: [Blog de seguridad de centro de seguridad y nube privada](https://blogs.technet.microsoft.com/datacentersecurity/)
-- Información general: [Información general sobre máquinas virtuales blindadas y tejido protegido](Guarded-Fabric-and-Shielded-VMs.md)
+- Vídeo: [Cómo proteger el tejido de virtualización de amenazas internas con Windows Server 2019](https://myignite.techcommunity.microsoft.com/sessions/64690)
+- Vídeo: [Introducción a la virtual machines blindada en Windows Server 2016](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
+- Vídeo: [profundizar en máquinas virtuales blindadas con Windows Server 2016 Hyper-V](https://channel9.msdn.com/events/Ignite/2016/BRK3124)
+- Vídeo: [implementación de máquinas virtuales blindadas y un tejido protegido con Windows Server 2016](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)
+- Blog: [blog de seguridad de centro de seguridad y nube privada](https://blogs.technet.microsoft.com/datacentersecurity/)
+- Información general: [información general sobre el tejido protegido y las máquinas virtuales blindadas](Guarded-Fabric-and-Shielded-VMs.md)
 
 ## <a name="planning-topics"></a>Temas de planeación
 

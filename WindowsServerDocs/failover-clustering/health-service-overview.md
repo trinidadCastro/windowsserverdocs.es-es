@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
-ms.openlocfilehash: df455dfb0d2936192a3c2d7825e2d6d031cfe892
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 158681e2038e3d8015933771d06d3bfb24d31586
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361068"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948476"
 ---
 # <a name="health-service-in-windows-server"></a>Servicio de mantenimiento en Windows Server
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 El Servicio de mantenimiento es una nueva característica de Windows Server 2016 que mejora la supervisión cotidiana y la experiencia operativa de los clústeres que ejecutan Espacios de almacenamiento directo.
 
@@ -92,15 +92,15 @@ El Servicio de mantenimiento proporciona un mecanismo de cumplimiento para restr
 
 ### <a name="usage"></a>Uso  
 
-El documento de componentes compatibles utiliza una sintaxis inspirada en XML. Se recomienda usar su editor de texto favorito, como el [Visual Studio Code](http://code.visualstudio.com/) gratuito o el Bloc de notas, para crear un documento XML que puede guardar y volver a usar.
+El documento de componentes compatibles utiliza una sintaxis inspirada en XML. Se recomienda usar su editor de texto favorito, como el [Visual Studio Code](https://code.visualstudio.com/) gratuito o el Bloc de notas, para crear un documento XML que puede guardar y volver a usar.
 
-#### <a name="sections"></a>Sección
+#### <a name="sections"></a>Secciones
 
 El documento tiene dos secciones independientes: `Disks` y `Cache`.
 
-Si se proporciona la sección `Disks`, solo se permite a las unidades enumeradas (como `Disk`) unirse a grupos. Las unidades que no figuran en la lista no se pueden unir a grupos, lo que impide su uso en producción. Si esta sección se deja vacía, se permitirá a cualquier unidad unirse a grupos.
+Si se proporciona la sección `Disks`, solo se permite unir grupos a las unidades enumeradas (como `Disk`). Las unidades que no figuran en la lista no se pueden unir a grupos, lo que impide su uso en producción. Si esta sección se deja vacía, se permitirá a cualquier unidad unirse a grupos.
 
-Si se proporciona la sección `Cache`, solo se usan las unidades enumeradas (como `CacheDisk`) para el almacenamiento en caché. Si esta sección se deja vacía, Espacios de almacenamiento directo intenta [adivinar según el tipo de medio y el tipo de bus](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically). Las unidades que se enumeran aquí deben aparecer también en `Disks`.
+Si se proporciona la sección `Cache`, solo se usan para el almacenamiento en caché las unidades enumeradas (como `CacheDisk`). Si esta sección se deja vacía, Espacios de almacenamiento directo intenta [adivinar según el tipo de medio y el tipo de bus](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically). Las unidades que se muestran aquí también deben aparecer en `Disks`.
 
 >[!IMPORTANT]
 > El documento componentes admitidos no se aplica de forma retroactiva a las unidades ya agrupadas y en uso.  
@@ -141,7 +141,7 @@ Si se proporciona la sección `Cache`, solo se usan las unidades enumeradas (com
 
 ```
 
-Para enumerar varias unidades, simplemente agregue etiquetas `<Disk>` o `<CacheDisk>` adicionales.
+Para enumerar varias unidades, simplemente agregue `<Disk>` o `<CacheDisk>` etiquetas adicionales.
 
 Para insertar este XML al implementar Espacios de almacenamiento directo, use el parámetro `-XML`:
 
@@ -170,7 +170,7 @@ Get-PhysicalDisk | Select Model, Manufacturer, FirmwareVersion
 
 Consulte [configuración de servicio de mantenimiento](health-service-settings.md).
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 - [Servicio de mantenimiento informes](health-service-reports.md)
 - [Errores de Servicio de mantenimiento](health-service-faults.md)

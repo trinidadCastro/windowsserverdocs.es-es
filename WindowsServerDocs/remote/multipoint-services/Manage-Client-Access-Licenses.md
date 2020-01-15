@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 0ca951c5e4c4fcdba06d0b475a7d7536a9c7f91f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4d809ab1bf2a18dff537bf63620623d576c0b25d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395455"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949883"
 ---
 # <a name="manage-client-access-licenses"></a>Administrar licencias de acceso de cliente
 Cada estación que se conecta a un sistema Multipoint Services, incluido el equipo que ejecuta Multipoint Services que se usa como estación, debe tener una licencia de *acceso de cliente (cal)* de escritorio remoto por usuario válida.
@@ -31,7 +31,7 @@ Si usa escritorios virtuales de estación en lugar de estaciones físicas, debe 
   
 3.  Haga clic en la pestaña **Inicio** y, a continuación, haga clic en **Agregar licencias de acceso de cliente**.  Se abrirá la herramienta de administración de licencias de CAL.
 
-# <a name="set-the-licensing-mode-manually"></a>Establecer el modo de licencia manualmente
+## <a name="set-the-licensing-mode-manually"></a>Establecer el modo de licencia manualmente
 Si no se ha configurado correctamente, la configuración de Multipoint Services le pedirá una notificación sobre el período de gracia que ha expirado. Siga estos pasos para establecer el modo de licencia:
 
 1. Inicie **Editor de directivas de grupo local** (gpedit. msc).
@@ -41,13 +41,13 @@ Si no se ha configurado correctamente, la configuración de Multipoint Services 
 3. En el panel derecho, haga clic con el botón derecho en **usar el escritorio remoto servidores de licencias especificados** y seleccione **Editar**:
    - En el cuadro de diálogo Editor de directivas de grupo, seleccione **habilitado** .
    - Escriba el nombre del equipo local en el campo **servidores de licencias que se usarán** .
-   - Seleccione **Aceptar** .
+   - Haga clic en **Aceptar**
   
 4. En el panel derecho, haga clic con el botón derecho en **establecer el modo de licencia de escritorio remoto** y seleccione **Editar** .
    - En el cuadro de diálogo Editor de directivas de grupo, seleccione **habilitado** .
    - Establecer el **modo de licencia** en por dispositivo/por usuario
-   - Seleccione **Aceptar** . 
+   - Haga clic en **Aceptar** 
 
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Administrar tareas del sistema mediante MultiPoint Manager](Manage-System-Tasks-Using-MultiPoint-Manager.md)

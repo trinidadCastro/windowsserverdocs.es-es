@@ -1,6 +1,6 @@
 ---
 ms.assetid: ba7f2b9f-7351-4680-b7d8-a5f270614f1c
-title: Novedades sobre la instalación y eliminación de Servicios de dominio de Active Directory (AD DS)
+title: Novedades sobre la instalación y eliminación de Active Directory Domain Services (AD DS)
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -9,28 +9,28 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 286d3ee6e9c2b9959a4cc60a710b1cb078612201
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f24615491391d932609d7f80549985818ced8c1
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369563"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947904"
 ---
-# <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Novedades sobre la instalación y eliminación de Servicios de dominio de Active Directory (AD DS)
+# <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Novedades sobre la instalación y eliminación de Active Directory Domain Services (AD DS)
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-La implementación de Active Directory Domain Services (AD DS) en Windows Server 2012 es más sencilla y más rápida que las versiones anteriores de Windows Server. El proceso de instalación de AD DS ahora se genera en Windows PowerShell y está integrado con Administrador del servidor. Se reduce el número de pasos necesarios para introducir controladores de dominio en un entorno de Active Directory. De este modo, el proceso de creación de un nuevo entorno de Active Directory resulta más sencillo y más eficiente. El nuevo proceso de implementación de AD DS minimiza las posibilidades de error que podrían bloquear a la instalación.  
+La implementación de Active Directory Domain Services (AD DS) en Windows Server 2012 es más sencilla y más rápida que las versiones anteriores de Windows Server. El proceso de instalación de AD DS ahora se genera en Windows PowerShell y está integrado con Administrador del servidor. Se reduce el número de pasos necesarios para introducir controladores de dominio en un entorno de Active Directory. De este modo, el proceso de creación de un nuevo entorno de Active Directory resulta más sencillo y más eficiente. El nuevo proceso de implementación de AD DS minimiza las posibilidades de error que podrían bloquear a la instalación.  
   
 Además, puede instalar los binarios de rol del servidor de AD DS (es decir, el rol del servidor de AD DS) en varios servidores al mismo tiempo. También puede ejecutar el asistente para la instalación de AD DS de forma remota en un servidor individual. Estas mejoras proporcionan más flexibilidad para implementar controladores de dominio que ejecutan Windows Server 2012, especialmente para implementaciones globales a gran escala donde es necesario implementar muchos controladores de dominio en oficinas de diferentes regiones.  
   
-En la instalación de AD DS se incluyen las siguientes características:  
+En la instalación de AD DS se incluyen las siguientes características:  
   
 - **Integración de adprep.exe en el proceso de instalación de AD DS.** Los pasos engorrosos y necesarios para preparar un Active Directory ya existente, tales como la necesidad de usar varias credenciales diferentes, copiar los archivos adprep.exe o iniciar sesión en controladores de dominio específicos, se simplifican o suceden automáticamente. De este modo, se reduce el tiempo necesario para instalar AD DS y disminuyen las posibilidades de errores que podrían bloquear la promoción del controlador de dominio.  
 
    Para entornos donde es preferible ejecutar comandos adprep.exe antes de la instalación de un nuevo controlador de dominio, aún puede ejecutar comandos adprep.exe separadamente de la instalación de AD DS. La versión 2012 de Windows Server de adprep. exe se ejecuta de forma remota, por lo que puede ejecutar todos los comandos necesarios desde un servidor que ejecute una versión de 64 bits de Windows Server 2008 o posterior.  
 
-- **La nueva instalación de AD DS se genera en Windows PowerShell y se puede invocar remotamente.** La nueva instalación de AD DS está integrada con Administrador del servidor, de modo que, para instalar AD DS, se puede utilizar la misma interfaz que se utiliza para instalar otros roles del servidor. Para los usuarios de Windows PowerShell, los cmdlets de implementación de AD DS proporcionan mayor funcionalidad y flexibilidad. Existe paridad funcional entre las opciones de instalación de GUI y la línea de comandos.  
+- **La nueva instalación de AD DS se genera en Windows PowerShell y se puede invocar remotamente.** La nueva instalación de AD DS está integrada con Administrador del servidor, de modo que, para instalar AD DS, se puede utilizar la misma interfaz que se utiliza para instalar otros roles del servidor. Para los usuarios de Windows PowerShell, los cmdlets de implementación de AD DS proporcionan mayor funcionalidad y flexibilidad. Existe paridad funcional entre las opciones de instalación de GUI y la línea de comandos.  
 - **La nueva instalación de AD DS incluye la validación de requisitos previos.** Los posibles errores se identifican antes de que comience la instalación. Se pueden corregir los errores antes de que ocurran y evitar así los riesgos de una actualización parcialmente completada. Por ejemplo, si es necesario ejecutar adprep /domainprep, el asistente para la instalación comprueba que el usuario tenga derechos suficientes como para ejecutar la operación.  
 - **Las páginas de configuración se agrupan en una secuencia que refleja los requisitos de las opciones de promoción más comunes con las opciones relacionadas agrupadas en menos páginas de asistente.** Esto ofrece un mejor contexto para tomar decisiones de instalación.  
 - **Puede exportar un script de Windows PowerShell que contenga todas las opciones que se especificaron durante la instalación gráfica.** Al final de la instalación o eliminación, puede exportar la configuración a un script de Windows PowerShell para su uso con la automatización de la misma operación.  
@@ -38,12 +38,12 @@ En la instalación de AD DS se incluyen las siguientes características:
 
 ## <a name="BKMK_ADConfigurationWizard"></a>Asistente para configuración de Active Directory Domain Services
 
-A partir de Windows Server 2012, el Asistente para configuración de Active Directory Domain Services reemplaza el Asistente para instalación de Active Directory Domain Services heredado como la opción de interfaz de usuario (UI) para especificar la configuración cuando se instala un controlador de dominio. El Asistente para configuración de Servicios de dominio de Active Directory comienza después de que el Asistente para agregar roles ha terminado.  
+A partir de Windows Server 2012, el Asistente para configuración de Active Directory Domain Services reemplaza el Asistente para instalación de Active Directory Domain Services heredado como la opción de interfaz de usuario (UI) para especificar la configuración cuando se instala un controlador de dominio. El Asistente para configuración de Active Directory Domain Services comienza después de que el Asistente para agregar roles ha terminado.  
 
 > [!WARNING]  
 > El Asistente para instalación de Active Directory Domain Services heredado (Dcpromo. exe) está en desuso a partir de Windows Server 2012.  
 
-En el [nivel &#40;de instalación&#41;de Active Directory Domain Services 100](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md), los procedimientos de la interfaz de usuario muestran cómo iniciar el Asistente para agregar roles para instalar los archivos binarios de la función AD DS Server y, a continuación, ejecutar el Asistente para configuración de Active Directory Domain Services para completar la instalación del controlador de dominio. En los ejemplos de Windows PowerShell se muestra cómo completar ambos pasos con un cmdlet de implementación de AD DS.  
+En el [nivel &#40;de instalación&#41;de Active Directory Domain Services 100](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md), los procedimientos de la interfaz de usuario muestran cómo iniciar el Asistente para agregar roles para instalar los archivos binarios de la función AD DS Server y, a continuación, ejecutar el Asistente para configuración de Active Directory Domain Services para completar la instalación del controlador de dominio. En los ejemplos de Windows PowerShell se muestra cómo completar ambos pasos con un cmdlet de implementación de AD DS.  
   
 ## <a name="BKMK_NewAdprep"></a>Integración de adprep. exe
 
@@ -70,7 +70,7 @@ Para cada comando (/forestprep, /domainprep o /rodcprep), Adprep realiza una com
   
 Los parámetros/User y/userdomain son nuevos para adprep. exe en Windows Server 2012. Estos parámetros especifican el nombre de cuenta de usuario y el dominio de usuario, respectivamente, del usuario que ejecuta el comando adprep. La utilidad de la línea de comandos Adprep.exe bloquea y especifica uno de /userdomain y /user pero omite el otro.  
   
-Sin embargo, las operaciones Adprep también se pueden ejecutar como parte de una instalación de AD DS con Windows PowerShell o Administrador del servidor. Esas experiencias comparten la misma implementación subyacente (adprep.dll) como adprep.exe. Las experiencias de Windows PowerShell y Administrador del servidor tienen entradas de credenciales separadas, lo cual no impone los mismos requisitos que adprep.exe. Con Windows PowerShell o Administrador del servidor, es posible pasar un valor para /user pero no para /userdomain a adprep.dll. Si se especifica/User pero no se especifica/userdomain, se usa el dominio del equipo local para realizar la comprobación. Si el equipo no está unido al dominio, no se puede comprobar la pertenencia a grupos.  
+Sin embargo, las operaciones Adprep también se pueden ejecutar como parte de una instalación de AD DS con Windows PowerShell o Administrador del servidor. Esas experiencias comparten la misma implementación subyacente (adprep.dll) como adprep.exe. Las experiencias de Windows PowerShell y Administrador del servidor tienen entradas de credenciales separadas, lo cual no impone los mismos requisitos que adprep.exe. Con Windows PowerShell o Administrador del servidor, es posible pasar un valor para /user pero no para /userdomain a adprep.dll. Si se especifica/User pero no se especifica/userdomain, se usa el dominio del equipo local para realizar la comprobación. Si el equipo no está unido al dominio, no se puede comprobar la pertenencia a grupos.  
   
 Cuando la pertenencia a grupos no se puede comprobar, Adprep muestra un mensaje de advertencia en los archivos de registro de adprep y continúa:  
 
@@ -80,11 +80,11 @@ Adprep was unable to check the specified user's group membership. This could hap
 
 Si ejecuta Adprep.exe sin especificar los parámetros /user y /userdomain y el maestro de operaciones está ejecutando Windows Server 2003, Adprep.exe se pone en contacto con un controlador de dominio en el dominio del usuario conectado actualmente. Si el usuario conectado actualmente no es una cuenta de dominio, Adprep.exe no puede realizar la comprobación de pertenencia a grupos. Adprep.exe tampoco puede realizar la comprobación de pertenencia a grupos si se usan credenciales de tarjeta inteligente, incluso aunque se especifiquen /user y /userdomain.  
   
-Si Adprep finaliza correctamente, no se requiere ninguna acción. Si se producen errores de acceso en Adprep durante la ejecución, proporcione una cuenta con la pertenencia correcta. Para obtener más información, consulte [Requisitos de credenciales para ejecutar Adprep.exe e instalar Active Directory Domain Services](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds).  
+Si Adprep finaliza correctamente, no se requiere ninguna acción. Si se producen errores de acceso en Adprep durante la ejecución, proporcione una cuenta con la pertenencia correcta. Para obtener más información, consulte [Credential requirements to run Adprep.exe and install Active Directory Domain Services](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds).  
   
-### <a name="syntax-for-adprep-in-windows-server-2012"></a>Sintaxis para Adprep en Windows Server 2012
+### <a name="syntax-for-adprep-in-windows-server-2012"></a>Sintaxis para Adprep en Windows Server 2012
 
-Utilice la siguiente sintaxis para ejecutar adprep independientemente de una instalación AD DS:  
+Utilice la siguiente sintaxis para ejecutar adprep independientemente de una instalación AD DS:  
 
 ```
 Adprep.exe /forestprep /forest <forest name> /userdomain <user domain name> /user <user name> /password *  
@@ -100,7 +100,7 @@ Adprep.exe requiere /userdomain si se especifica /user. Para las credenciales de
 
 ### <a name="adprep-domainprep-gpprep-command-is-not-run-automatically"></a>El comando adprep /domainprep /gpprep no se ejecuta automáticamente
 
-El comando adprep /domainprep /gpprep no se ejecuta como parte de la instalación de AD DS. Este comando establece permisos que son necesarios para la funcionalidad del modo de planeamiento del Conjunto resultante de directivas (RSOP). Para más información sobre este comando, consulte el [artículo 324392 de Microsoft Knowledge Base](https://support.microsoft.com/kb/324392). Si es necesario que el comando se ejecute en el dominio de Active Directory, puede ejecutarlo independientemente de la instalación de AD DS. Si el comando ya se ejecutó en la preparación de la implementación de controladores de dominio que ejecutan Windows Server 2003 SP1 o posterior, no es necesario ejecutar el comando otra vez.  
+El comando adprep /domainprep /gpprep no se ejecuta como parte de la instalación de AD DS. Este comando establece permisos que son necesarios para la funcionalidad del modo de planeamiento del Conjunto resultante de directivas (RSOP). Para más información sobre este comando, consulte el [artículo 324392 de Microsoft Knowledge Base](https://support.microsoft.com/kb/324392). Si es necesario que el comando se ejecute en el dominio de Active Directory, puede ejecutarlo independientemente de la instalación de AD DS. Si el comando ya se ejecutó en la preparación de la implementación de controladores de dominio que ejecutan Windows Server 2003 SP1 o posterior, no es necesario ejecutar el comando otra vez.  
 
 Puede Agregar de forma segura controladores de dominio que ejecutan Windows Server 2012 a un dominio existente sin ejecutar Adprep/DomainPrep/gpprep, pero el modo de planeamiento de RSOP no funcionará correctamente.  
 
@@ -176,12 +176,12 @@ En esta sección se enumeran algunos de los problemas conocidos que afectan a la
 
    En este caso, debe ejecutar el cmdlet de ADDSDeployment independientemente del cmdlet que no admite procesos nativos de 64 bits.  
 
-- Hay un nuevo sistema de archivos en Windows Server 2012 llamado sistema de archivos resistente. No almacene SYSVOL, archivos de registro o la base de datos de Active Directory en un volumen de datos formateado con el Sistema de archivos resistente (ReFS). Para obtener más información sobre ReFS, consulte el tema sobre cómo [crear el sistema de archivos de la próxima generación para Windows: ReFS](http://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)(en inglés).  
+- Hay un nuevo sistema de archivos en Windows Server 2012 llamado sistema de archivos resistente. No almacene SYSVOL, archivos de registro o la base de datos de Active Directory en un volumen de datos formateado con el Sistema de archivos resistente (ReFS). Para obtener más información sobre ReFS, consulte el tema sobre cómo [crear el sistema de archivos de la próxima generación para Windows: ReFS](https://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)(en inglés).  
 - En Administrador del servidor, los servidores que ejecutan AD DS u otros roles de servidor en una instalación Server Core y se han actualizado a Windows Server 2012, el rol de servidor puede aparecer con estado rojo, aunque los eventos y el estado se recopilen según lo previsto. Los servidores que ejecutan una instalación Server Core de una versión preliminar de Windows Server 2012 también pueden verse afectados.  
 
-### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>Si un error impide la replicación crítica, la instalación de Servicios de dominio de Active Directory no responde
+### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>Si un error impide la replicación crítica, la instalación de Active Directory Domain Services no responde
 
-Si la instalación de AD DS encuentra un error durante la fase de replicación crítica, la instalación puede fallar indefinidamente. Por ejemplo, si se producen errores de red que impiden que se complete la replicación crítica, la instalación no continuará.  
+Si la instalación de AD DS encuentra un error durante la fase de replicación crítica, la instalación puede fallar indefinidamente. Por ejemplo, si se producen errores de red que impiden que se complete la replicación crítica, la instalación no continuará.  
   
 Si está intentando instalar mediante el Administrador del servidor, es posible que vea que la página de progreso de la instalación permanece abierta, pero en la pantalla no se notifica de ningún error, y puede que el progreso no cambie en unos 15 minutos. Si usa Windows PowerShell, el progreso que se muestra en la ventana de Windows PowerShell no cambiará por más de 15 minutos.  
   
@@ -232,7 +232,7 @@ Si experimenta este problema, vea el archivo dcpromo.log en la carpeta %systemro
 
 ### <a name="BKMK_nonnormalDNSNameWarning"></a>Active Directory Domain Services Asistente para configuración advierte cuando se especifica un nombre DNS no normalizado
 
-Si crea un nuevo dominio o bosque y especifica un nombre de dominio DNS que incluye caracteres internacionalizados que no están normalizados, el Asistente para configuración de Active Directory Domain Services mostrará una advertencia de que las consultas DNS del nombre pueden dar errores. Aunque el nombre de dominio DNS se especifica en la página de configuración de implementación, la advertencia aparece en la página de comprobación de requisitos previos más adelante en el asistente.  
+Si crea un nuevo dominio o bosque y especifica un nombre de dominio DNS que incluye caracteres internacionalizados que no están normalizados, el Asistente para configuración de Servicios de dominio de Active Directory mostrará una advertencia de que las consultas DNS del nombre pueden dar errores. Aunque el nombre de dominio DNS se especifica en la página de configuración de implementación, la advertencia aparece en la página de comprobación de requisitos previos más adelante en el asistente.  
 
 Si se especifica un nombre de dominio DNS con un nombre no normalizado como füßball. com o ' ΣΤ '. com (las versiones normalizadas son: füssball.com y βστα. com), las aplicaciones cliente que intentan obtener acceso a ella con WinHTTP normalizarán el nombre antes de llamar a las API de resolución de nombres. Si el usuario escribe "ΣΤ". com "en algún cuadro de diálogo, la consulta DNS se enviará como" βστα. com "y ningún servidor DNS coincidirá con un registro de recursos para" "ΣΤ". com ". El usuario no podrá resolver nombre.  
 
@@ -245,6 +245,6 @@ En el siguiente ejemplo se explica uno de los problemas que puede ocurrir cuando
 5. Debido a la normalización, el nombre se convierte en nps.füssball.com y se consulta a través de la conexión como NPS. füßball. com  
 6. La aplicación cliente no puede resolver el nombre porque el nombre registrado es NPS. füßball. com  
 
-Si aparece la advertencia en la página de comprobación de requisitos previos en el Asistente para configuración de Servicios de dominio de Active Directory, regrese a la página de configuración de implementación y especifique un nombre de dominio DNS normalizado. Si está instalando un nuevo dominio con Windows PowerShell, especifique un nombre DNS normalizado para la opción -DomainName.  
+Si aparece la advertencia en la página de comprobación de requisitos previos en el Asistente para configuración de Active Directory Domain Services, regrese a la página de configuración de implementación y especifique un nombre de dominio DNS normalizado. Si está instalando un nuevo dominio con Windows PowerShell, especifique un nombre DNS normalizado para la opción -DomainName.  
 
 Para obtener más información sobre IDN, consulte el tema sobre el [tratamiento de nombres de dominio internacionalizados (IDN)](https://msdn.microsoft.com/library/windows/desktop/dd318142(v=vs.85).aspx).  

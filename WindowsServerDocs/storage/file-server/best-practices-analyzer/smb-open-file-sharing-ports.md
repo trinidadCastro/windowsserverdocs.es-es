@@ -7,12 +7,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 22cd926fdb873538631a6f6850157dceb5a020d7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 80cc75f983d4593e4ee98309d1fa39c024b7b379
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385829"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950295"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: Los puertos de compartir archivos e impresoras deben estar abiertos
 
@@ -21,7 +21,7 @@ Actualizado: 2 de febrero de 2011
 
 Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012, Windows Server 2008 R2
 
-*El objetivo de este tema es resolver un problema específico identificado por un análisis de analizador de procedimientos recomendados. Debe aplicar la información de este tema únicamente a los equipos que tienen los servicios de archivo Analizador de procedimientos recomendados ejecutarse en ellos y que experimentan el problema que se trata en este tema. Para obtener más información sobre los análisis y los procedimientos recomendados, consulte* [analizador de procedimientos recomendados](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a).
+*El objetivo de este tema es resolver un problema específico identificado por un análisis de analizador de procedimientos recomendados. Debe aplicar la información de este tema únicamente a los equipos que tienen los servicios de archivo Analizador de procedimientos recomendados ejecutarse en ellos y que experimentan el problema que se trata en este tema. Para obtener más información sobre los análisis y los procedimientos recomendados, consulte* [analizador de procedimientos recomendados](https://go.microsoft.com/fwlink/?linkid=122786%0d%0a).
 
 
 <table>
@@ -40,7 +40,7 @@ Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y 
 </tr>
 <tr class="odd">
 <td><p><strong>Gravedad</strong></p></td>
-<td><p>Error</p></td>
+<td><p>Error de :</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Categoría</strong></p></td>
@@ -71,7 +71,7 @@ Para completar este procedimiento, se requiere como mínimo pertenecer al grupo 
 
 3.  En **reglas de entrada**, busque las reglas **compartir archivos e impresoras (sesión NB)** e **compartir impresoras y archivos (SMB de entrada)** .
 
-4.  Para cada regla, haga clic con el botón secundario en la regla y, a continuación, haga clic en **Habilitar regla**.
+4.  Para cada regla, haga clic con el botón derecho en la regla y, a continuación, haga clic en **Habilitar regla**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
