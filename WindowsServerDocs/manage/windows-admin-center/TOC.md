@@ -1,12 +1,10 @@
 # [Windows Admin Center](overview.md)
 
 ## Descripción
-### [¡Hola, Windows Admin Center!](understand/windows-admin-center.md)
 ### [¿Qué es Windows Admin Center?](understand/what-is.md)
 ### [Preguntas más frecuentes](understand/faq.md)
 ### [Casos prácticos](understand/case-studies.md)
 ### [Productos de administración relacionadas](understand/related-management.md)
-### [Vídeos](understand/videos.md)
 
 ## Planear
 ### [¿Qué tipo de instalación es el adecuado para usted?](plan/installation-options.md)
@@ -34,7 +32,6 @@
 ### [Administrar máquinas virtuales de Hyper-V](use/manage-virtual-machines.md)
 ### [Inicio de sesión](use/logging.md)
 
-
 ## Conexión a Azure AD
 ### [Azure Hybrid Services](azure/index.md)
 #### [Azure Backup](azure/azure-backup.md)
@@ -46,13 +43,14 @@
 ### [Implementación de Windows Admin Center en Azure](azure/deploy-wac-in-azure.md)
 ### [Administrar las VM de Azure con Windows Admin Center](azure/manage-azure-vms.md)
 
-## Soporte
+## Soporte técnico
+### [Historial de versiones](support/release-history.md)
 ### [Directiva de soporte](support/index.md)
 ### [Pasos de solución de problemas comunes](support/troubleshooting.md)
 ### [Problemas conocidos](support/known-issues.md)
 ### [Términos de licencia de Windows Admin Center](../../windows-server-licensing/windows-admin-center-licensing.md)
 
-## Extend
+## Extensión
 ### [Información general de extensiones](extend/extensibility-overview.md)
 ### [Descripción de extensiones](extend/understand-extensions.md)
 ### [Desarrollar una extensión](extend/developing-extensions.md)

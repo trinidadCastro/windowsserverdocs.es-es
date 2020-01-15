@@ -1,6 +1,6 @@
 ---
 ms.assetid: c9844427-27cf-4d76-b5bb-e06368b092f7
-title: Clústeres de conmutación por error
+title: Clúster de conmutación por error
 ms.prod: windows-server
 layout: LandingPage
 ms.topic: landing-page
@@ -10,12 +10,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 116627059856f5815ec0d89ce63094a0852913ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fdb840aed4d78578edf8383e703a6786a5dc15c7
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361118"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948039"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Conmutación de clústeres por error en Windows Server
 
@@ -46,6 +46,6 @@ La Conmutación de clústeres por error tiene muchas aplicaciones prácticas, in
 |**Administrar**  |  **Herramientas y configuración**  |  **Recursos de la comunidad**       |
 | ------------- |  -------------- | --------------------- |
 | [Actualización compatible con clústeres](cluster-aware-updating.md)    |   [Cmdlets de Windows PowerShell de clúster de conmutación por error](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)      |  [Foro sobre alta disponibilidad (clúster)](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
-|  [Servicio de mantenimiento](health-service-overview.md)   |   [Cmdlets de PowerShell de actualización compatible con clústeres](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)      | [Blog del equipo de Clústeres de conmutación por error y Equilibrio de carga de red](http://blogs.msdn.com/b/clustering/)        |
+|  [Servicio de mantenimiento](health-service-overview.md)   |   [Cmdlets de PowerShell de actualización compatible con clústeres](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)      | [Blog del equipo de Clústeres de conmutación por error y Equilibrio de carga de red](https://blogs.msdn.com/b/clustering/)        |
 |  [Migración del dominio del clúster](cluster-domain-migration.md)   |         |         |
 |  [Solución de problemas de uso del Informe de errores de Windows](troubleshooting-using-wer-reports.md)   |         |         |

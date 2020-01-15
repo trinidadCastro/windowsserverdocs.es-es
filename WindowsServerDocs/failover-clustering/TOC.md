@@ -36,4 +36,5 @@
 #### [Configuración](health-service-settings.md)
 ### [Migración del dominio del clúster](cluster-domain-migration.md)
 ### [Solución de problemas de uso del Informe de errores de Windows](troubleshooting-using-WER-reports.md)
+### [Eventos de registro del sistema de clúster](system-events.md)
 ## [Historial de cambios para temas relacionados con clústeres de conmutación por error](clustering-change-history.md)
