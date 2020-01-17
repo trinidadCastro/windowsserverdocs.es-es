@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 99167850ff9ee193aca888d34d98503ea0554c30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2db9cd83ed08673835a38e443e90c5eb092f43ac
+ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408554"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162486"
 ---
 # <a name="ad-fs-operations"></a>Operaciones de AD FS
 
@@ -29,7 +29,8 @@ Este documento contiene una lista de todas las operaciones de documentación par
 - [Adición de un almacén de atributos](../ad-fs/operations/Add-an-Attribute-Store.md)
 - [Personalización de encabezados de respuesta de seguridad HTTP con AD FS 2019](../ad-fs/operations/customize-http-security-headers-ad-fs.md)
 - [Delegar el acceso de Commandlet de Powershell de AD FS a los usuarios que no son administradores](../ad-fs/operations/delegate-ad-fs-pshell-access.md)
-- [Ajustar SQL y la latencia de direcciones](../ad-fs/operations/adfs-sql-latency.md) 
+- [Ajustar SQL y la latencia de direcciones](../ad-fs/operations/adfs-sql-latency.md)
+- [Grupos de disponibilidad AlwaysOn](../ad-fs/operations/ad-fs-always-on.md) 
 
 
 ## <a name="authentication-configuration"></a>Configuración de autenticación
@@ -82,8 +83,8 @@ Este documento contiene una lista de todas las operaciones de documentación par
 - [Administración de riesgos con la autenticación multifactor adicional para aplicaciones confidenciales](../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [Administración de riesgos con control de acceso condicional](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 - [Configuración de un entorno de laboratorio de AD FS](../ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
-- [Guía de tutorial: Administración de riesgos con Multi-Factor Authentication adicionales para aplicaciones confidenciales](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
-- [Guía de tutorial: administración de riesgos con control de acceso condicional](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
+- [Guía de tutorial: administración de riesgos con Multi-Factor Authentication adicionales para aplicaciones confidenciales](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+- [Guía de tutorial: administración de riesgos con Access Control condicional](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
 - [Tutorial: Workplace Join con un dispositivo Windows](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 - [Tutorial: Workplace Join con un dispositivo iOS](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
