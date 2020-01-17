@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: b7a6dd37cfc054ead153d274ffa7f0d13844305e
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 02829919c53e3488ad7f229ad8bee0d3ead14c9a
+ms.sourcegitcommit: 3f54036c74c5a67799fbc06a8a18a078ccb327f9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953030"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124903"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>Preguntas más frecuentes sobre el servicio de migración de almacenamiento (p + f)
 
@@ -138,6 +138,10 @@ El servicio de migración de almacenamiento utiliza una base de datos del motor 
 6. Asegúrese de que el sistema tenga control total sobre todos los archivos y subcarpetas de la carpeta.
 7. Quite los permisos de sus propias cuentas.
 8. Inicie el servicio de "servicio de migración de almacenamiento".
+
+## <a name="does-the-storage-migration-service-migrate-locally-installed-applications-from-the-source-computer"></a>¿Migra el servicio de migración de almacenamiento las aplicaciones instaladas localmente desde el equipo de origen?
+
+No, el servicio de migración de almacenamiento no migra las aplicaciones instaladas localmente. Después de completar la migración, vuelva a instalar las aplicaciones en el equipo de destino que se estaban ejecutando en el equipo de origen. No es necesario volver a configurar ningún usuario ni sus aplicaciones; el servicio de migración de almacenamiento está diseñado para hacer que el servidor cambie invisible para los clientes. 
 
 ## <a name="give-feedback"></a>¿Cuáles son mis opciones para proporcionar comentarios, errores de archivos u obtener soporte técnico?
 

@@ -9,12 +9,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b5f2202313c225d57b29997753b090e10b9c2e6c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c36555a8bca7882125451b2c86a0707e3de9b2db
+ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949293"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145931"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configuración de AD FS para la autenticación de certificados de usuario
 
@@ -54,7 +54,7 @@ Para obtener más información sobre cómo configurar esto para Chrome, consulte
 Este documento se centra en problemas comunes de solución de problemas cuando AD FS está configurado para la autenticación de certificados para los usuarios. 
 
 ### <a name="check-if-certificate-trusted-issuers-is-configured-properly-in-all-the-ad-fswap-servers"></a>Comprobar si los emisores de confianza de certificados están configurados correctamente en todos los servidores AD FS/WAP
-*Síntoma común: HTTP 204 "no hay contenido de https\://certuath.adfs.contoso.com"*
+*Síntoma común: HTTP 204 "no hay contenido de https\://certauth.adfs.contoso.com"*
 
 AD FS utiliza el sistema operativo Windows subyacente para demostrar la posesión del certificado de usuario y asegurarse de que coincide con un emisor de confianza mediante la validación de la cadena de confianza de certificados. Para que coincida con el emisor de confianza, debe asegurarse de que todas las autoridades raíz e intermedias estén configuradas como emisores de confianza en el almacén de entidades de certificación del equipo local. Para validar esto automáticamente, use la [herramienta analizador de diagnóstico de AD FS](https://adfshelp.microsoft.com/DiagnosticsAnalyzer/Analyze). La herramienta consulta todos los servidores y garantiza que los certificados correctos se hayan aprovisionado correctamente. 
 1)  Descargue y ejecute la herramienta según las instrucciones proporcionadas en el vínculo anterior.
