@@ -12,19 +12,19 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80d6cdd3056d9c7e0a0815ce5856f961d79fcc34
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 434b79508dbf88a90348840573255c3084d6e989
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391783"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948453"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>Desarrollo de cmdlets de PowerShell para Nano Server
 
 >Se aplica a: Windows Server 2016
 
 > [!IMPORTANT]
-> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
+> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Consulta [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
   
 ## <a name="overview"></a>Introducción  
 Nano Server incluye PowerShell Core de forma predeterminada en todas las instalaciones de Nano Server. PowerShell Core es una edición de superficie reducida de PowerShell que se basa en .NET Core y se ejecuta en las ediciones de superficie reducida de Windows, como Nano Server y Windows IoT Core. PowerShell Core funciona de la misma manera que otras ediciones de PowerShell, como Windows PowerShell se ejecutan en Windows Server 2016. Sin embargo, la superficie reducida de Nano Server significa que no todas las características de PowerShell de Windows Server 2016 están disponibles en PowerShell Core en Nano Server.  
@@ -138,7 +138,7 @@ Por lo general, estos cmdlets deben funcionar en Nano Server sin que sea necesar
 ### <a name="building-c-for-nano-server"></a>Compilación en C++ para Nano Server  
 Para que los archivos DLL escritos en C++ funcionen en Nano Server, compílelos para Nano Server en lugar de para una edición específica.  
   
-Para consultar los requisitos previos y un tutorial de desarrollo con C++ en Nano Server, vea [Developing Native Apps on Nano Server](http://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx) (Desarrollo de aplicaciones nativas en Nano Server).  
+Para consultar los requisitos previos y un tutorial de desarrollo con C++ en Nano Server, vea [Developing Native Apps on Nano Server](https://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx) (Desarrollo de aplicaciones nativas en Nano Server).  
   
   
 ## <a name="porting-net-cmdlets"></a>Migración de los cmdlets de .NET  
@@ -151,7 +151,7 @@ El módulo "Microsoft.PowerShell.NanoServer.SDK" está disponible en la [Galerí
   
 El módulo del SDK de PowerShell Core expone cmdlets para configurar los ensamblados de referencia de CoreCLR y PowerShell Core correctos, crear un proyecto de C# en Visual Studio 2015 para esos ensamblados de referencia y configurar el depurador remoto en una máquina Nano Server, para que los desarrolladores puedan depurar los cmdlets de .NET que ejecutan de forma remota para Nano Server en Visual Studio 2015.  
   
-El módulo del SDK de PowerShell Core requiere Visual Studio 2015 Update 2. Si no tiene instalado Visual Studio 2015, puede instalar [Visual Studio Community 2015](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx).  
+El módulo del SDK de PowerShell Core requiere Visual Studio 2015 Update 2. Si no tiene instalado Visual Studio 2015, puede instalar [Visual Studio Community 2015](https://www.visualstudio.com/products/visual-studio-community-vs.aspx).  
   
 El módulo de SDK también depende de la característica siguiente que se va a instalar en Visual Studio 2015:  
   

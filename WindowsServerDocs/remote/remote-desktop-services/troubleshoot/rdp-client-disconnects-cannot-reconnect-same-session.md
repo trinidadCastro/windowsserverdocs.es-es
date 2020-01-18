@@ -9,16 +9,16 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 007668d1c0f8f2a6701813385b0e0bb7a09b29a0
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 0932bbbb87c6fcae9dc0b871bd605302acdb25cc
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529955"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265917"
 ---
 # <a name="remote-desktop-client-disconnects-and-cant-reconnect-to-the-same-session"></a>El cliente de Escritorio remoto se desconecta y no se puede volver a conectar a la misma sesión
 
@@ -40,7 +40,7 @@ Este problema también se puede corregir si se vuelven a configurar las opciones
 
 > [!NOTE]  
 >  - Cuando las comunicaciones entre los clientes y los servidores de Host de sesión de Escritorio remoto requieran el máximo nivel de cifrado, usa el cifrado compatible con FIPS.
->  - Todos los valores de nivel de cifrado que configures en la directiva de grupo anulan los que establezcas mediante la herramienta de configuración de Servicios de Escritorio remoto. Además, si habilita la directiva[Criptografía de sistema: usar algoritmos que cumplan FIPS para el cifrado, la firma y las operaciones hash ](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing), esta configuración anula la directiva**Establecer el nivel de cifrado de conexión de cliente** . La directiva de criptografía del sistema está en la carpeta **Configuración del equipo\\Configuración de Windows\\Configuración de seguridad\\Directivas locales\\Opciones de seguridad**.
+>  - Todos los valores de nivel de cifrado que configures en la directiva de grupo anulan los que establezcas mediante la herramienta de configuración de Servicios de Escritorio remoto. Además, si habilita la directiva[Criptografía de sistema: usar algoritmos que cumplan FIPS para el cifrado, la firma y las operaciones hash ](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing), esta configuración anula la directiva**Establecer el nivel de cifrado de conexión de cliente** . La directiva de criptografía del sistema está en la carpeta **Configuración del equipo\\Configuración de Windows\\Configuración de seguridad\\Directivas locales\\Opciones de seguridad**.
 >  - Al cambiar el nivel de cifrado, el nuevo nivel de cifrado surte efecto la próxima vez que un usuario inicie sesión. Si requiere varios niveles de cifrado en un servidor, instale varios adaptadores de red y configure cada uno de ellos por separado.
 >  - Para comprobar que el certificado tiene una clave privada correspondiente, vete a Configuración de Servicios de Escritorio remoto, haz clic con el botón derecho en la conexión para la que quieras ver el certificado, selecciona **General** y después **Editar**. Después de eso, selecciona **Ver certificado**. En la pestaña **General**, si hay una clave deberías ver el mensaje "Tiene una clave privada correspondiente a este certificado". También puedes ver esta información mediante el complemento Certificados.
 >  - El cifrado compatible con FIPS (la directiva **Criptografía de sistema: usar algoritmos que cumplan la norma FIPS para cifrado, aplicación de algoritmo hash y operaciones hash** o el valor **Compatible con FIPS** de la configuración de Servidor de Escritorio remoto) cifra y descifra los datos enviados entre el servidor y el cliente con los algoritmos de cifrado del Estándar federal de procesamiento de información (FIPS) 140-1 que usan módulos criptográficos de Microsoft. Para más información, consulte [Validación FIPS 140](https://docs.microsoft.com/windows/security/threat-protection/fips-140-validation).

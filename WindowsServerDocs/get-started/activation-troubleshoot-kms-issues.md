@@ -9,12 +9,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: dab8294837a5f9116328e59364de9beb139a4b77
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.openlocfilehash: 110e3a685293c447d03158eac57d38fedd28b0cd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71963011"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948315"
 ---
 # <a name="kms-activation-known-issues"></a>Activación de KMS: problemas conocidos
 
@@ -35,7 +35,7 @@ En el equipo cliente de KMS, abre el panel de control del **Sistema** y busca el
 
 ## <a name="the-kms-client-computer-does-not-activate"></a>El equipo cliente de KMS no se activa
 
-Verifica si se cumple el umbral de activación de KMS. En el equipo host de KMS, ejecuta Slmgr.vbs y usa la opción de línea de comandos **/dli** para conocer el recuento actual del host. Hasta que el host de KMS tenga un recuento de 25, no se pueden activar los equipos cliente de Windows 7. Los clientes de KMS de Windows Server 2008 R2 requieren un recuento de KMS de 5 para la activación. Para obtener más información sobre los requisitos de KMS, consulta la [Guía de planeación de la activación por volumen](http://go.microsoft.com/fwlink/?linkid=155926). 
+Verifica si se cumple el umbral de activación de KMS. En el equipo host de KMS, ejecuta Slmgr.vbs y usa la opción de línea de comandos **/dli** para conocer el recuento actual del host. Hasta que el host de KMS tenga un recuento de 25, no se pueden activar los equipos cliente de Windows 7. Los clientes de KMS de Windows Server 2008 R2 requieren un recuento de KMS de 5 para la activación. Para obtener más información sobre los requisitos de KMS, consulta la [Guía de planeación de la activación por volumen](https://go.microsoft.com/fwlink/?linkid=155926). 
 
 En el equipo cliente de KMS, busca el Id. de evento 12289 en el registro de eventos de aplicación. Comprueba este evento para obtener la información siguiente:
 
@@ -86,4 +86,4 @@ Las claves de KMS deben instalarse solo en hosts de KMS, no en clientes de KMS. 
 
 Si se produce un error en un host de KMS, debes instalar una clave de host de KMS en un nuevo host y, luego, activar el host. Asegúrate de que el nuevo host de KMS tenga un RR de SRV en la base de datos de DNS. Si instalas el nuevo host de KMS con el mismo nombre de equipo y la misma dirección IP que el host de KMS erróneo, el nuevo host de KMS puede usar el registro SRV de DNS del host erróneo. Si el nuevo host tiene un nombre de equipo diferente, puedes quitar manualmente el RR de SRV de DNS del host erróneo o (si la limpieza está habilitada en DNS) permitir que DNS lo quite automáticamente. Si la red usa DDNS, el nuevo host de KMS crea automáticamente un nuevo RR de SRV en el servidor DNS. A continuación, el nuevo host de KMS comienza a recopilar las solicitudes de renovación de clientes y comienza a activar los clientes en cuanto se alcanza el umbral de activación de KMS.
 
-Si los clientes de KMS usan la detección automática, seleccionan automáticamente otro host de KMS si el host de KMS original no responde a las solicitudes de renovación. Si los clientes no usan la detección automática, debes actualizar manualmente los equipos cliente de KMS que se asignaron al host de KMS erróneo mediante la ejecución de **slmgr.vbs /skms**. Para evitar este escenario, configura los clientes de KMS para que usen la detección automática. Para obtener más información, consulte la [Guía de implementación de activación de licencias por volumen](http://go.microsoft.com/fwlink/?linkid=150083).
+Si los clientes de KMS usan la detección automática, seleccionan automáticamente otro host de KMS si el host de KMS original no responde a las solicitudes de renovación. Si los clientes no usan la detección automática, debes actualizar manualmente los equipos cliente de KMS que se asignaron al host de KMS erróneo mediante la ejecución de **slmgr.vbs /skms**. Para evitar este escenario, configura los clientes de KMS para que usen la detección automática. Para obtener más información, consulte la [Guía de implementación de activación de licencias por volumen](https://go.microsoft.com/fwlink/?linkid=150083).

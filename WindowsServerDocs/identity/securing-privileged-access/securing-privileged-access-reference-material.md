@@ -9,16 +9,16 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 56e1c028a9b18db7b23e8f04e943e4113837b66b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 16d711a288843163b134b0226ed4b8513d7070eb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407227"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950054"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Modelo de nivel administrativo de Active Directory
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 El propósito de este modelo de niveles es proteger los sistemas de identidad con un conjunto de zonas de búfer entre el control total del entorno (nivel 0) y los recursos de la estación de trabajo de alto riesgo que los atacantes comprometen con frecuencia.
 
@@ -139,7 +139,7 @@ Debido a la gran cantidad de recursos que dependen de sistemas de identidad como
 
 ![Diagrama que muestra que se debe minimizar el número de sistemas de los que Active Directory y los controladores de dominio dependen](../media/securing-privileged-access-reference-material/PAW_RM_Fig010.JPG)
 
-Para más información sobre la consolidación de los riesgos más importantes de Active Directory, consulte [esta página](http://aka.ms/hardenAD).
+Para más información sobre la consolidación de los riesgos más importantes de Active Directory, consulte [esta página](https://aka.ms/hardenAD).
 
 ## <a name="operational-standards-based-on-clean-source-principle"></a>Estándares operativos basados en el principio de origen limpio
 
@@ -168,12 +168,12 @@ Los estándares de esta sección asumen que la organización tiene los siguiente
 - Todas las estaciones de trabajo que se van a administrar ejecutan Windows 7 o una versión posterior y tienen habilitado el modo RestrictedAdmin de RDP.
 
    > [!NOTE]
-   > Para habilitar el modo RestrictedAdmin de RDP, consulte [esta página](http://aka.ms/RDPRA).
+   > Para habilitar el modo RestrictedAdmin de RDP, consulte [esta página](https://aka.ms/RDPRA).
 
 - Las tarjetas inteligentes están disponibles y se emiten a todas las cuentas administrativas.
 - *Builtin\Administrator* de cada dominio se ha designado como una cuenta de acceso de emergencia.
 - Se implementa una solución de administración de identidades de empresa.
-- [LAP](http://aka.ms/laps) se ha implementado en servidores y estaciones de trabajo para administrar la contraseña de la cuenta Administrador local
+- [LAP](https://aka.ms/laps) se ha implementado en servidores y estaciones de trabajo para administrar la contraseña de la cuenta Administrador local
 - Hay una solución instalada de administración del acceso con privilegios, como Microsoft Identity Manager, o hay un plan para adoptar una.
 - Se asigna personal para supervisar las alertas de seguridad y responder a ellas.
 - Está disponible la funcionalidad técnica para aplicar rápidamente las actualizaciones de seguridad de Microsoft.
@@ -314,7 +314,7 @@ Los administradores solo pueden iniciar sesión en estaciones de trabajo de admi
 > [!NOTE]
 > Esto es necesario porque el inicio de sesión en un host concede de forma interactiva el control de las credenciales a ese host.
 >
-> Consulte la sección [Herramientas administrativas y tipos de inicio de sesión](http://aka.ms/admintoolsecurity) para más información sobre los tipos de inicio de sesión, herramientas de administración comunes y exposición de credenciales.
+> Consulte la sección [Herramientas administrativas y tipos de inicio de sesión](https://aka.ms/admintoolsecurity) para más información sobre los tipos de inicio de sesión, herramientas de administración comunes y exposición de credenciales.
 
 ##### <a name="use-of-approved-support-technology-and-methods"></a>Uso de métodos y de tecnología de soporte aprobados
 
@@ -330,7 +330,7 @@ Los administradores que admiten usuarios y sistemas remotos deben seguir estas d
 Asegúrese de que se aplican las prácticas siguientes a este escenario:
 
 - **Soporte técnico del servidor remoto**: al acceder de manera remota a un servidor, los administradores de nivel 0 deben seguir estas directrices:
-  - **Principal (herramienta)** : herramientas remotas que usan inicios de sesión de red (tipo 3). Para más información, consulte [Herramientas administrativas y tipos de inicio de sesión](http://aka.ms/admintoolsecurity).
+  - **Principal (herramienta)** : herramientas remotas que usan inicios de sesión de red (tipo 3). Para más información, consulte [Herramientas administrativas y tipos de inicio de sesión](https://aka.ms/admintoolsecurity).
   - **Principal (interactiva)** : use RDP RestrictedAdmin o una sesión RDP estándar desde una estación de trabajo de administración con una cuenta de dominio
 
     > [!NOTE]
@@ -366,7 +366,7 @@ Las organizaciones de soporte técnico de usuario y el departamento de soporte t
    - **Principal**: se puede proporcionar soporte con "consentimiento temporal" sin herramientas.
    - **Prohibido**: no se permite en este escenario iniciar sesión con credenciales administrativas de la cuenta de dominio. Cambie el soporte de la estación de trabajo del puesto de trabajo si se requieren privilegios administrativos.
 - **Soporte técnico de usuario remoto**: el personal de soporte técnico de nivel 2 está físicamente alejado del usuario.
-   - **Principal**: se puede usar la asistencia remota, Skype empresarial o uso compartido de pantalla de usuario similar. Para más información, consulte [¿Qué es la asistencia remota de Windows?](https://windows.microsoft.com/en-us/windows/what-is-windows-remote-assistance)
+   - **Principal**: se puede usar la asistencia remota, Skype empresarial o uso compartido de pantalla de usuario similar. Para más información, consulte [¿Qué es la asistencia remota de Windows?](https://windows.microsoft.com/windows/what-is-windows-remote-assistance)
    - **Prohibido**: no se permite en este escenario iniciar sesión con credenciales administrativas de la cuenta de dominio. Cambie al soporte técnico de la estación de trabajo si se requieren privilegios administrativos.
 - **Soporte técnico de la estación de trabajo**: las tareas incluyen el mantenimiento de la estación de trabajo o la solución de problemas que requieren acceso a un sistema para ver los registros, instalar software o actualizar controladores, entre otras.
    - **Soporte técnico de la estación de trabajo en el puesto de trabajo**: el personal de soporte técnico del nivel 2 está físicamente en la estación de trabajo del usuario.
@@ -489,7 +489,7 @@ El diseño de un bosque administrativo debe incluir las consideraciones siguient
 
 - **Sistema de protección de estación de trabajo**: cree las estaciones de trabajo administrativas mediante las [estaciones de trabajo de acceso con privilegios](../securing-privileged-access/privileged-access-workstations.md) (a través de la fase 3), pero cambie la pertenencia al dominio en el bosque administrativo en lugar de en el entorno de producción.
 - **Servidor y sistema de protección del controlador de dominio**: para todos los controladores de dominio y servidores del bosque administrativo:
-   - Asegúrese de que todos los medios se validen siguiendo la [guía de origen limpio para medios de instalación](http://aka.ms/cleansource).
+   - Asegúrese de que todos los medios se validen siguiendo la [guía de origen limpio para medios de instalación](https://aka.ms/cleansource).
    - Asegúrese de que los servidores de bosque administrativos tengan los últimos sistemas operativos instalados, aunque esto no sea posible en producción.
    - Las actualizaciones de seguridad se deben aplicar automáticamente a los hosts del bosque administrativo.
 
@@ -523,7 +523,7 @@ El diseño de un bosque administrativo debe incluir las consideraciones siguient
    - Análisis de la superficie expuesta a ataques, para evitar el ingreso de nuevos vectores de ataque a Windows durante la instalación de software nuevo.
 
       > [!NOTE]
-      > El uso de herramientas como el [analizador de superficie expuesta a ataques (ASA)](https://www.microsoft.com/en-us/download/details.aspx?id=24487) ayudará a evaluar las opciones de configuración de un host y a identificar los vectores de ataque que ingresaron debido a los cambios en la configuración o un software.
+      > El uso de herramientas como el [analizador de superficie expuesta a ataques (ASA)](https://www.microsoft.com/download/details.aspx?id=24487) ayudará a evaluar las opciones de configuración de un host y a identificar los vectores de ataque que ingresaron debido a los cambios en la configuración o un software.
 
 - Sistema de protección de la cuenta
    - Debe configurarse la autenticación multifactor para todas las cuentas en el bosque de administración, excepto una cuenta. Al menos una cuenta administrativa debe estar basada en contraseña para asegurar que el acceso funcionará en caso de que se rompa el proceso de la autenticación multifactor. Esta cuenta debe protegerse mediante un estricto proceso de control físico.
@@ -568,7 +568,7 @@ En un escenario de administración remota, las credenciales siempre se exponen e
 
 En esta tabla se incluye orientación para las herramientas administrativas más comunes y los métodos de conexión:
 
-|Método de conexión|Tipo de inicio de sesión|Credenciales reutilizables en destino|Observaciones|
+|Método de conexión|Tipo de inicio de sesión|Credenciales reutilizables en destino|Comentarios|
 |-----------|-------|--------------------|------|
 |Iniciar sesión en consola|Interactive (Interactivo)|v|Incluye el acceso remoto de hardware y apaga los KVM de red y de tarjetas.|
 |RUNAS|Interactive (Interactivo)|v||
@@ -577,15 +577,15 @@ En esta tabla se incluye orientación para las herramientas administrativas más
 |Escritorio remoto (error: el tipo de inicio de sesión se ha denegado)|RemoteInteractive|-|De forma predeterminada, si se produce un error de sesión de RDP, solo se almacena durante un breve período. Esto puede no ser el caso si el equipo está en peligro.|
 |NET use * \\\SERVER|Red|-||
 |Net use * \\\SERVER /u:user|Red|-||
-|Complementos MMC para un equipo remoto|Red|-|Por ejemplo: administración del equipo, visor de sucesos, administrador de dispositivos, servicios|
-|PowerShell WinRM|Red|-|Por ejemplo: Enter-PSSession server|
+|Complementos MMC para un equipo remoto|Red|-|Ejemplo: administración del equipo, visor de sucesos, administrador de dispositivos, servicios|
+|PowerShell WinRM|Red|-|Ejemplo: Enter-PSSession server|
 |PowerShell WinRM con CredSSP|NetworkClearText|v|New-PSSession<br />-Authentication Credssp<br />-Credential cred|
-|PsExec sin credenciales explícitas|Red|-|Por ejemplo: PsExec \\\server cmd|
+|PsExec sin credenciales explícitas|Red|-|Ejemplo: PsExec \\\server cmd|
 |PsExec con credenciales explícitas|Red + interactivo|v|PsExec \\\server -u user -p pwd cmd<br />Crea varias sesiones de inicio de sesión.|
 |Registro remoto|Red|-||
 |Puerta de enlace de Escritorio remoto|Red|-|Autenticación en Puerta de enlace de Escritorio remoto.|
 |Tarea programada|Batch|v|La contraseña también se guardará como secreto de LSA en el disco.|
-|Ejecutar herramientas como un servicio|Servicio|v|La contraseña también se guardará como secreto de LSA en el disco.|
+|Ejecutar herramientas como un servicio|Service|v|La contraseña también se guardará como secreto de LSA en el disco.|
 |Detectores de vulnerabilidades|Red|-|La mayoría de los detectores usan de forma predeterminada los inicios de sesión de red, aunque algunos proveedores pueden implementar inicios de sesión sin conexión de red y presentan mayor riesgo de robo de credenciales.|
 
 Para la autenticación web, utilice la referencia de la tabla siguiente:
@@ -617,7 +617,7 @@ En los equipos basados en Windows, se procesan todas las autenticaciones como un
 |Interactivo (conocido como inicio de sesión local)|2|Contraseña, tarjeta inteligente,<br />otro|Sí|Inicio de sesión de la consola;<br />RUNAS;<br />Soluciones de control remoto de hardware (como KVM de red o Acceso remoto / apagado de tarjeta en el servidor)<br />Autenticación básica de IIS (antes de IIS 6.0)|
 |Red|3|Contraseña,<br />Hash de NT,<br />Vale de Kerberos|N (excepto si la delegación está habilitada, vales de Kerberos presentes)|USO DE NET;<br />Llamadas RPC;<br />Registro remoto;<br />Autenticación de Windows integrada IIS;<br />Autenticación de Windows SQL;|
 |Batch|4|Contraseña (almacenada normalmente como secreto de LSA)|Sí|Tareas programadas|
-|Servicio|5|Contraseña (almacenada normalmente como secreto de LSA)|Sí|Servicios de Windows|
+|Service|5|Contraseña (almacenada normalmente como secreto de LSA)|Sí|Servicios de Windows|
 |NetworkCleartext|8|Contraseña|Sí|Autenticación básica de IIS (IIS 6.0 y posterior);<br />Windows PowerShell con CredSSP|
 |NewCredentials|9|Contraseña|Sí|RUNAS /NETWORK|
 |RemoteInteractive|10|Contraseña, tarjeta inteligente,<br />otro|Sí|Escritorio remoto (anteriormente conocido como "Terminal Services")|

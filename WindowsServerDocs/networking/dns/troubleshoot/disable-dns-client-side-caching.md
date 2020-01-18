@@ -1,19 +1,19 @@
 ---
 title: Deshabilitar el almacenamiento en caché del lado cliente DNS en clientes DNS
 description: En este artículo se describe cómo deshabilitar el almacenamiento en caché del lado cliente DNS en clientes DNS.
-manager: willchen
+manager: dcscontentpm
 ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 3aeb7cb06f82b6f2220e42866682ce918389bf1d
-ms.sourcegitcommit: b17ccf7f81e58e8f4dd844be8acf784debbb20ae
+ms.openlocfilehash: 51a9dbfd05402a9d018aec3bfea8a5c89e9e5d5e
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69023897"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265847"
 ---
 # <a name="disable-dns-client-side-caching-on-dns-clients"></a>Deshabilitar el almacenamiento en caché del lado cliente DNS en clientes DNS
 
@@ -32,7 +32,7 @@ sc servername stop dnscache
 ```
 
 
-Para deshabilitar la caché de DNS de forma permanente en Windows, use la herramienta controlador de servicio o la herramienta servicios para establecer el tipode inicio del servicio cliente DNS en deshabilitado. Tenga en cuenta que el nombre del servicio cliente DNS de Windows también puede aparecer como "dnscache". 
+Para deshabilitar la caché de DNS de forma permanente en Windows, use la herramienta controlador de servicio o la herramienta servicios para establecer el tipo de inicio del servicio cliente DNS en **deshabilitado**. Tenga en cuenta que el nombre del servicio cliente DNS de Windows también puede aparecer como "dnscache". 
 
 > [!NOTE]
 > Si se desactiva la memoria caché de la resolución DNS, el rendimiento general del equipo cliente disminuye y aumenta el tráfico de red de las consultas DNS. 
@@ -47,16 +47,16 @@ Puede usar la herramienta ipconfig para ver y vaciar la memoria caché de la res
 ipconfig /displaydns 
 ```
 
-Este comando muestra el contenido de la memoria caché de resolución DNS, incluidos los registros de recursos DNS que se cargan previamente desde el archivo de hosts y los nombres consultados recientemente que el sistema resolvió. Después de un tiempo, el solucionador descarta el registro de la memoria caché. El período de tiempo se especifica mediante el valor de período **de vida (TTL)** asociado al registro de recursos DNS. También puede vaciar la memoria caché manualmente. Después de vaciar la memoria caché, el equipo debe consultar de nuevo los servidores DNS para cualquier registro de recursos DNS que el equipo haya resuelto previamente. Para eliminar las entradas de la memoria caché de la resolución DNS, `ipconfig /flushdns` ejecute en un símbolo del sistema.
+Este comando muestra el contenido de la memoria caché de resolución DNS, incluidos los registros de recursos DNS que se cargan previamente desde el archivo de hosts y los nombres consultados recientemente que el sistema resolvió. Después de un tiempo, el solucionador descarta el registro de la memoria caché. El período de tiempo se especifica mediante el valor de período **de vida (TTL)** asociado al registro de recursos DNS. También puede vaciar la memoria caché manualmente. Después de vaciar la memoria caché, el equipo debe consultar de nuevo los servidores DNS para cualquier registro de recursos DNS que el equipo haya resuelto previamente. Para eliminar las entradas de la memoria caché de la resolución DNS, ejecute `ipconfig /flushdns` en un símbolo del sistema.
 
 ## <a name="using-the-registry-to-control-the-caching-time"></a>Usar el registro para controlar el tiempo de almacenamiento en caché
 
 > [!IMPORTANT]  
-> Sigue meticulosamente los pasos que se describen en esta sección. Pueden producirse problemas graves si modifica el Registro de manera incorrecta. Antes de modificarlo, [haz una copia de seguridad del registro para restaurarlo](https://support.microsoft.com/help/322756), por si se produjeran problemas.
+> Sigue meticulosamente los pasos que se describen en esta sección. Pueden producirse problemas graves si modificas el registro de manera incorrecta. Antes de modificarlo, [haz una copia de seguridad del registro para restaurarlo](https://support.microsoft.com/help/322756), por si se produjeran problemas.
 
 El período de tiempo durante el que una respuesta positiva o negativa se almacena en caché depende de los valores de las entradas de la siguiente clave del registro:
 
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNSCache\Parameters**
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\DNSCache\Parameters**
 
 El TTL para las respuestas positivas es el menor de los siguientes valores: 
 
@@ -76,7 +76,7 @@ Para establecer la hora de almacenamiento en caché en un equipo cliente:
 
 2. Busque y, a continuación, haga clic en la clave siguiente en el registro:
 
-   **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters**
+   **HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\Dnscache\Parameters**
 
 3. En el menú Edición, seleccione nuevo, haga clic en valor DWORD y, a continuación, agregue los siguientes valores del registro:
 
@@ -84,7 +84,7 @@ Para establecer la hora de almacenamiento en caché en un equipo cliente:
 
      Tipo de datos: REG_DWORD
 
-     Información del valor: Valor predeterminado 86400 segundos. 
+     Datos del valor: valor predeterminado 86400 segundos. 
      
      Si reduce el valor de TTL máximo en la memoria caché de DNS del cliente a 1 segundo, esto da la impresión de que la memoria caché de DNS del cliente se ha deshabilitado.    
 
@@ -92,7 +92,7 @@ Para establecer la hora de almacenamiento en caché en un equipo cliente:
 
      Tipo de datos: REG_DWORD
 
-     Información del valor: Valor predeterminado 900 segundos. 
+     Datos del valor: valor predeterminado 900 segundos. 
      
      Establezca el valor en 0 si no desea que se almacenen en caché las respuestas negativas.
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd7857251b0b6a943f2eea33f56732ec57e7e8d1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8518fffc4f271369b13899e149ebd30145726b8
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375482"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259025"
 ---
 # <a name="if"></a>If
 
@@ -58,7 +58,7 @@ if defined <Variable> <Command> [else <Expression>]
 |      \<expresión >      |                                                                                                                                                                   Especifica un comando de línea de comandos y los parámetros que se van a pasar al comando en una cláusula **else** .                                                                                                                                                                   |
 |           /?            |                                                                                                                                                                                                    Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                                                    |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Si la condición especificada en una cláusula **If** es true, se lleva a cabo el comando que sigue a la condición. Si la condición es falsa, se omite el comando de la cláusula **If** y el comando ejecuta cualquier comando que se especifique en la cláusula **else** .
 -   Cuando un programa se detiene, devuelve un código de salida. Para usar códigos de salida como condiciones, use **ERRORLEVEL**.
@@ -68,7 +68,7 @@ if defined <Variable> <Command> [else <Expression>]
     -   **% cmdextversion%** se expande en la representación de cadena del valor actual de **cmdextversion**. Se supone que no existe una variable de entorno con el nombre CMDEXTVERSION; si es así, obtendrá el valor CMDEXTVERSION en su lugar.
 -   Debe usar la cláusula **else** en la misma línea que el comando después de **If**.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="BKMK_examples"></a>Ejemplos
 
 Para mostrar el mensaje "no se puede encontrar el archivo de datos" si no se encuentra el archivo product. dat, escriba:
 ```
@@ -102,9 +102,10 @@ echo The Product.dat file is missing.
 > ```
 > goto answer%errorlevel%
 > :answer1
-> echo Program had return code 1
+> echo The program returned error level 1
+> goto end
 > :answer0
-> echo Program had return code 0
+> echo The program returned error level 0
 > goto end
 > :end
 > echo Done! 
@@ -118,6 +119,6 @@ echo The Product.dat file is missing.
 
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-[Cuando](if.md)
+[If](if.md)
 
 [Goto](goto.md)

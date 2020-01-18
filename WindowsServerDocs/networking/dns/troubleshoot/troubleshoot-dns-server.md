@@ -1,19 +1,19 @@
 ---
 title: Solución de problemas de servidores DNS
 description: En este artículo se explica cómo solucionar problemas de DNS desde el lado servidor.
-manager: willchen
+manager: dcscontentpm
 ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: b0547436cfa0f07ba9cbc4e3dd1825f8d33bc093
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 23e51adafa5ab6da0a9317a1b0fad88bd3901073
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68917772"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265807"
 ---
 # <a name="troubleshooting-dns-servers"></a>Solución de problemas de servidores DNS
 
@@ -23,9 +23,9 @@ En este artículo se describe cómo solucionar problemas en los servidores DNS.
 
 1. Ejecute `ipconfig /all` en un símbolo del sistema y Compruebe la dirección IP, la máscara de subred y la puerta de enlace predeterminada.
 
-2. Compruebe si el servidor DNS es autoritativo para el nombre que se está buscando. Si es así, consulte [comprobación de problemas con datos](#checking-for-problems-with-authoritative-data)autoritativos.
+2. Compruebe si el servidor DNS es autoritativo para el nombre que se está buscando. Si es así, consulte [comprobación de problemas con datos autoritativos](#checking-for-problems-with-authoritative-data).
 
-3. Ejecute el siguiente comando:
+3. Ejecuta el siguiente comando:
 
    ```cmd
    nslookup <name> <IP address of the DNS server>
@@ -54,7 +54,7 @@ En este artículo se describe cómo solucionar problemas en los servidores DNS.
 
 Compruebe los registros siguientes para ver si hay errores registrados:
 
-- Application
+- Aplicación
 
 - Sistema
 
@@ -123,13 +123,13 @@ Para que la recursividad funcione correctamente, todos los servidores DNS que se
 
 - Un servidor que se usa durante la consulta proporciona datos incorrectos.
 
-Inicie la solución de problemas en el servidor que se usó en la consulta original. Compruebe si este servidor reenvía consultas a otro servidor mediante el examen de la ficha reenviadores en las propiedades del servidor en la consola DNS. Si la casilla **Habilitar** reenviadores está activada y se enumeran uno o varios servidores, este servidor reenvía las consultas.
+Inicie la solución de problemas en el servidor que se usó en la consulta original. Compruebe si este servidor reenvía consultas a otro servidor mediante el examen de la ficha **reenviadores** en las propiedades del servidor en la consola DNS. Si la casilla **Habilitar reenviadores** está activada y se enumeran uno o varios servidores, este servidor reenvía las consultas.
 
 Si este servidor reenvía consultas a otro servidor, compruebe si hay problemas que afecten al servidor al que este servidor reenvía consultas. Para comprobar si hay problemas, consulte [comprobación de problemas del servidor DNS](#check-dns-server-problems). Cuando esa sección le indica que realice una tarea en el cliente, realice la ejecución en el servidor en su lugar.
 
 Si el servidor está en buen estado y puede reenviar consultas, repita este paso y examine el servidor al que este servidor reenvía las consultas.
 
-Si este servidor no reenvía consultas a otro servidor, compruebe si este servidor puede consultar un servidor raíz. Para ello, ejecute el comando siguiente:
+Si este servidor no reenvía consultas a otro servidor, compruebe si este servidor puede consultar un servidor raíz. Para ello, ejecuta el comando siguiente:
 
 ```cmd
 nslookup
@@ -161,7 +161,7 @@ Comience las pruebas en el procedimiento siguiente consultando un servidor raíz
 
    - Si la respuesta no contiene un registro de recursos "NS", tiene una delegación rota.
    
-   - Si la respuesta contiene registros de recursos "NS", pero no registros de recursos "A", escriba recursividad de **conjunto**y consulte individualmente los registros de recursos de "a" de los servidores que se enumeran en los registros "NS". Si no encuentra al menos una dirección IP válida de un registro de recursos "A" para cada registro de recursos NS de una zona, tiene una delegación rota.
+   - Si la respuesta contiene registros de recursos "NS", pero no registros de recursos "A", escriba **recursividad de conjunto**y consulte individualmente los registros de recursos de "a" de los servidores que se enumeran en los registros "NS". Si no encuentra al menos una dirección IP válida de un registro de recursos "A" para cada registro de recursos NS de una zona, tiene una delegación rota.
 
 3. Si determina que tiene una delegación rota, corríjalo agregando o actualizando un registro de recursos "A" en la zona principal mediante una dirección IP válida para un servidor DNS correcto para la zona delegada.
 
@@ -189,7 +189,7 @@ Ejecute las siguientes comprobaciones:
 
 - Compruebe el servidor maestro para ver si se rechaza el envío de la transferencia por seguridad. 
 
-- Compruebe la ficha transferencias de **zona** de las propiedades de la zona en la consola DNS. Si el servidor restringe las transferencias de zona a una lista de servidores, como los que aparecen en la pestaña **servidores de nombres** de las propiedades de la zona, asegúrese de que el servidor secundario se encuentra en esa lista. Asegúrese de que el servidor está configurado para enviar transferencias de zona.
+- Compruebe la ficha **transferencias de zona** de las propiedades de la zona en la consola DNS. Si el servidor restringe las transferencias de zona a una lista de servidores, como los que aparecen en la pestaña **servidores de nombres** de las propiedades de la zona, asegúrese de que el servidor secundario se encuentra en esa lista. Asegúrese de que el servidor está configurado para enviar transferencias de zona.
 
 - Para comprobar si hay problemas en el servidor principal, siga los pasos de la sección comprobación de los [problemas del servidor DNS](#check-dns-server-problems) . Cuando se le pida que realice una tarea en el cliente, realice la tarea en el servidor secundario en su lugar.
 

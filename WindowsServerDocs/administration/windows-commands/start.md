@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e481048c23e634869b0238188d4a0ef8b49cb3e
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.openlocfilehash: 48197b1bc1d1c9f91a6a35b5fb8aad81b229eb6b
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781312"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259090"
 ---
 # <a name="start"></a>start
 
@@ -31,7 +31,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 ## <a name="syntax"></a>Sintaxis
 
 ```
-start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b {<Command> | <Program>} [<Parameters>]]
+start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b] [<Command> [<Parameter>... ] | <Program> [<Parameter>... ]]
 ```
 
 ## <a name="parameters"></a>Parámetros
@@ -45,26 +45,26 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 |/Separate \|/Shared|Inicia programas de 16 bits en un espacio de memoria independiente ( **/separate**) o en un espacio de memoria compartido ( **/Shared**). Estas opciones no se admiten en las plataformas de 64 bits.|
 |/Low \|/normal \|/High \|/Realtime \|/abovenormal \|/BelowNormal|Inicia una aplicación en la clase de prioridad especificada. Los valores válidos de la clase Priority son **/Low**, **/normal**, **/High**, **/Realtime**, **/abovenormal**y **/BelowNormal**.|
 |/Affinity \<HexAffinity >|Aplica la máscara de afinidad de procesador especificada (expresada como un número hexadecimal) a la nueva aplicación.|
-|/Wait|Inicia una aplicación y espera a que finalice.|
+|/wait|Inicia una aplicación y espera a que finalice.|
 |/elevate|Ejecuta la aplicación como administrador.|
-|b|Inicia una aplicación sin abrir una nueva ventana del símbolo del sistema. El control de CTRL + C se omite a menos que la aplicación habilite el procesamiento de CTRL + C. Use CTRL + INTER para interrumpir la aplicación.|
-|/b \<> de comandos \| \<programa >|Especifica el comando o el programa que se va a iniciar.|
-|\<parámetros >|Especifica los parámetros que se van a pasar al comando o programa.|
+|/b|Inicia una aplicación sin abrir una nueva ventana del símbolo del sistema. El control de CTRL + C se omite a menos que la aplicación habilite el procesamiento de CTRL + C. Use CTRL + INTER para interrumpir la aplicación.|
+|\<> de comandos \| \<programa >|Especifica el comando o el programa que se va a iniciar.|
+|\<> de parámetros...|Especifica los parámetros que se van a pasar al comando o al programa.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 - Puede ejecutar archivos no ejecutables a través de su asociación de archivo escribiendo el nombre del archivo como un comando.
 - Cuando se ejecuta un comando que contiene la cadena "CMD" como primer token sin un calificador de extensión o ruta de acceso, "CMD" se reemplaza por el valor de la variable comspec. Esto impide a los usuarios seleccionar **cmd** desde el directorio actual.
 - Al ejecutar una aplicación de interfaz gráfica de usuario (GUI) de 32 bits, **cmd** no espera a que la aplicación se cierre antes de volver al símbolo del sistema. Este comportamiento no se produce si ejecuta la aplicación desde un script de comandos.
 - Cuando se ejecuta un comando que usa un primer token que no contiene una extensión, cmd. exe usa el valor de la variable de entorno PATHEXT para determinar qué extensiones se deben buscar y en qué orden. El valor predeterminado de la variable PATHEXT es:  
   ```
-  .COM;.EXE;.BAT;.CMD 
+  .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC 
   ```  
   Tenga en cuenta que la sintaxis es la misma que la variable PATH, con puntos y comas que separan cada extensión.
 - Cuando busca un archivo ejecutable, si no hay ninguna coincidencia en ninguna extensión, **inicie** comprobaciones para ver si el nombre coincide con un nombre de directorio. Si lo hace, **iniciar** abre Explorer. exe en esa ruta de acceso.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="BKMK_examples"></a>Ejemplos
 
 Para iniciar el programa MyApp en el símbolo del sistema y conservar el uso de la ventana del símbolo del sistema actual, escriba:
 ```

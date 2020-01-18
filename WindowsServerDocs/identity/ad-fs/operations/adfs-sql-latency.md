@@ -8,12 +8,12 @@ ms.date: 06/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 785ecd4de86c06dd12eb57e41efaa1103f2afdc5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e5e90119066285ae8e04b392a13ab1a38488f5ee
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357807"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265757"
 ---
 # <a name="fine-tuning-sql-and-addressing-latency-issues-with-ad-fs"></a>Ajustar SQL y abordar problemas de latencia con AD FS
 En una actualización de [AD FS 2016](https://support.microsoft.com/help/4503294/windows-10-update-kb4503294) se presentaron las siguientes mejoras para reducir la latencia entre bases de datos. Una próxima actualización de AD FS 2019 incluirá estas mejoras.
@@ -23,10 +23,12 @@ En las implementaciones anteriores de disponibilidad de AlwaysOn (AoA), la laten
 
 En la actualización más reciente de AD FS, una reducción de la latencia se destina a través de la adición de un subproceso en segundo plano para actualizar la memoria caché de configuración de AD FS y una configuración para establecer el período de tiempo de actualización. El tiempo empleado para una búsqueda en la base de datos se reduce significativamente en el subproceso de solicitud, ya que las actualizaciones de la caché de base de datos se mueven al subproceso en segundo plano.  
 
-`backgroundCacheRefreshEnabled` Cuando se establece en true, AD FS permitirá al subproceso en segundo plano ejecutar actualizaciones de caché. La frecuencia de captura de datos de la memoria caché se puede personalizar a un valor `cacheRefreshIntervalSecs`de tiempo estableciendo. El valor predeterminado se establece en 300 segundos cuando `backgroundCacheRefreshEnabled` se establece en true. Después de la duración del valor establecido, AD FS comienza a actualizar su memoria caché y mientras la actualización está en curso, se seguirán usando los datos de la memoria caché antiguos.  
+Cuando el `backgroundCacheRefreshEnabled` está establecido en true, AD FS permitirá al subproceso en segundo plano ejecutar actualizaciones de caché. La frecuencia de captura de datos de la memoria caché se puede personalizar a un valor de tiempo estableciendo `cacheRefreshIntervalSecs`. El valor predeterminado se establece en 300 segundos cuando `backgroundCacheRefreshEnabled` está establecido en true. Después de la duración del valor establecido, AD FS comienza a actualizar su memoria caché y mientras la actualización está en curso, se seguirán usando los datos de la memoria caché antiguos.  
+
+Cuando AD FS recibe una solicitud de una aplicación, AD FS recupera la aplicación de SQL y la agrega a la caché. En el valor de `cacheRefreshIntervalSecs`, la aplicación en la memoria caché se actualiza mediante el subproceso en segundo plano. Mientras exista una entrada en la memoria caché, las solicitudes entrantes usarán la caché mientras la actualización en segundo plano está en curso. Si no se tiene acceso a una entrada durante 5 * `cacheRefreshIntervalSecs`, se quita de la memoria caché. La entrada más antigua también se puede quitar de la caché una vez que se alcanza el valor de `maxRelyingPartyEntries` configurable.
 
 >[!NOTE]
-> Los datos de la memoria caché se actualizarán fuera del `cacheRefreshIntervalSecs` valor si ADFS recibe una notificación de SQL que indica que se ha producido un cambio en la base de datos. Esta notificación desencadenará la memoria caché que se va a actualizar. 
+> Los datos de la memoria caché se actualizarán fuera del valor `cacheRefreshIntervalSecs` si ADFS recibe una notificación de SQL que indica que se ha producido un cambio en la base de datos. Esta notificación desencadenará la memoria caché que se va a actualizar. 
 
 ### <a name="recommendations-for-setting-the-cache-refresh"></a>Recomendaciones para establecer la actualización de la memoria caché 
 El valor predeterminado de la actualización de la memoria caché es de **cinco minutos**. Se recomienda establecerlo en **1 hora** para reducir una actualización de datos innecesaria por AD FS porque los datos de la memoria caché se actualizarán en caso de que se produzcan cambios en SQL.  
@@ -42,8 +44,8 @@ En el ejemplo siguiente se habilita la actualización de la caché en segundo pl
 
   1. Navegue hasta el archivo de configuración de AD FS y, en la sección "Microsoft. IdentityServer. Service", agregue la entrada siguiente:  
   
-  - `backgroundCacheRefreshEnabled`: Especifica si la característica de caché de fondo está habilitada. valores "true/false".
-  - `cacheRefreshIntervalSecs`: Valor en segundos en el que ADFS actualizará la memoria caché. AD FS actualizará la memoria caché si hay algún cambio en SQL. AD FS recibirá una notificación de SQL y actualizará la memoria caché.  
+  - `backgroundCacheRefreshEnabled`: especifica si la característica de caché de fondo está habilitada. valores "true/false".
+  - `cacheRefreshIntervalSecs`: valor en segundos en el que ADFS actualizará la memoria caché. AD FS actualizará la memoria caché si hay algún cambio en SQL. AD FS recibirá una notificación de SQL y actualizará la memoria caché.  
  
  >[!NOTE]
  > Todas las entradas del archivo de configuración distinguen mayúsculas de minúsculas.  
@@ -65,9 +67,9 @@ Los entornos híbridos también se admiten con esta configuración.
 
 ### <a name="requirements"></a>Requisitos: 
 Antes de configurar la compatibilidad con varias bases de datos de artefactos, ejecute una actualización en todos los nodos y actualice los archivos binarios, ya que las llamadas de varios nodos se producen a través de esta característica. 
-  1. Generar script de implementación para crear la base de de artefacto: Para implementar varias instancias de base de los artefactos, un administrador tendrá que generar el script de implementación de SQL para la base de de artefacto. Como parte de esta actualización, el cmdlet `Export-AdfsDeploymentSQLScript`existente se ha actualizado para tomar opcionalmente un parámetro que especifica la base de datos de AD FS para la que se va a generar un script de implementación de SQL. 
+  1. Generar script de implementación para crear la base de archivo de artefacto: para implementar varias instancias de base de los artefactos, un administrador tendrá que generar el script de implementación de SQL para la base de de artefacto. Como parte de esta actualización, el cmdlet de `Export-AdfsDeploymentSQLScript`existente se ha actualizado para tomar opcionalmente en un parámetro que especifica la base de datos de AD FS para la que se va a generar un script de implementación de SQL. 
  
- Por ejemplo, para generar el script de implementación solo para la base de archivo de `-DatabaseType` artefacto, especifique el parámetro y pase el valor "artefacto". El parámetro `-DatabaseType` opcional especifica el tipo de base de datos AD FS y se puede establecer en: All (valor predeterminado), artefacto o Configuration. Si no `-DatabaseType` se especifica ningún parámetro, el script configurará el artefacto y los scripts de configuración.  
+ Por ejemplo, para generar el script de implementación solo para la base de archivo de artefacto, especifique el parámetro `-DatabaseType` y pase el valor "artefacto". El parámetro `-DatabaseType` opcional especifica el tipo de base de datos AD FS y se puede establecer en: ALL (valor predeterminado), artefacto o Configuration. Si no se especifica ningún parámetro `-DatabaseType`, el script configurará el artefacto y los scripts de configuración.  
 
    ```PowerShell
    PS C:\> Export-AdfsDeploymentSQLScript -DestinationFolder <script folder where scripts will be created> -ServiceAccountName <domain\serviceaccount> -DatabaseType "Artifact" 

@@ -1,19 +1,19 @@
 ---
 title: Solución de problemas de clientes DNS
 description: En este artículo se explica cómo solucionar problemas de DNS desde el lado cliente.
-manager: willchen
+manager: dcscontentpm
 ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 1f18159d6232bd9e7864b13419b3648c12b9f44f
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: dd34fae73cdcb20a896750e20d4a28f8777a378a
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68917822"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265777"
 ---
 # <a name="troubleshooting-dns-clients"></a>Solución de problemas de clientes DNS
 
@@ -23,7 +23,7 @@ En este artículo se describe cómo solucionar problemas de clientes DNS.
 
 1. Abra una ventana del símbolo del sistema como administrador en el equipo cliente.
 
-2. Ejecute el siguiente comando:
+2. Ejecuta el siguiente comando:
 
    ```cmd
    ipconfig /all
@@ -37,9 +37,9 @@ En este artículo se describe cómo solucionar problemas de clientes DNS.
 
 Si el cliente no tiene una configuración de TCP/IP válida, use uno de los métodos siguientes:
 
-* En el caso de los clientes configurados dinámicamente, use el `ipconfig /renew` comando para forzar manualmente al cliente a renovar la configuración de la dirección IP con el servidor DHCP.
+* En el caso de los clientes configurados dinámicamente, use el comando `ipconfig /renew` para forzar manualmente al cliente a renovar la configuración de la dirección IP con el servidor DHCP.
 
-* En el caso de los clientes configurados estáticamente, modifique las propiedades de TCP/IP del cliente para usar valores de configuración válidos o completar su configuración de DNS para la red.
+* Para los clientes configurados estáticamente, modifique las propiedades de TCP/IP del cliente para usar parámetros de configuración válidos o complete su configuración de DNS para la red.
 
 ## <a name="check-network-connection"></a>Comprobar conexión de red
 
@@ -57,7 +57,7 @@ Si ningún servidor DNS configurado responde a un ping directo de su dirección 
 
 ### <a name="dns-query-tests"></a>Pruebas de consultas de DNS
 
-Si el cliente DNS puede hacer ping en el equipo servidor DNS, intente usar los `nslookup` comandos siguientes para comprobar si el servidor puede responder a los clientes DNS. Dado que nslookup no utiliza la memoria caché de DNS del cliente, la resolución de nombres usará el servidor DNS configurado del cliente.
+Si el cliente DNS puede hacer ping en el equipo servidor DNS, intente usar los siguientes comandos de `nslookup` para comprobar si el servidor puede responder a los clientes DNS. Dado que nslookup no utiliza la memoria caché de DNS del cliente, la resolución de nombres usará el servidor DNS configurado del cliente.
 
 #### <a name="test-a-client"></a>Probar un cliente
 
@@ -124,9 +124,9 @@ Por ejemplo:
 nslookup bing.com
 ```
 
-Si las cuatro pruebas se realizaron correctamente, ejecute `ipconfig /displaydns` y compruebe el resultado del nombre en el que se produjo el error. Si ve el error "el nombre no existe" en el nombre con error, se devolvió una respuesta negativa desde un servidor DNS y se almacenó en caché en el cliente. 
+Si las cuatro pruebas se realizaron correctamente, ejecute `ipconfig /displaydns` y Compruebe la salida del nombre en el que se produjo el error. Si ve el error "el nombre no existe" en el nombre con error, se devolvió una respuesta negativa desde un servidor DNS y se almacenó en caché en el cliente. 
 
-Para resolver el problema, borre la memoria caché. `ipconfig /flushdns`para ello, ejecute.
+Para resolver el problema, ejecute `ipconfig /flushdns`para borrar la memoria caché.
 
 ## <a name="next-step"></a>Paso siguiente
 

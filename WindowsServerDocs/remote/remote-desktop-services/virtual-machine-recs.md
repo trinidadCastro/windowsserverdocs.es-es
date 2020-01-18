@@ -11,13 +11,13 @@ ms.date: 12/02/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 author: Heidilohr
-manager: daveba
-ms.openlocfilehash: 964dba2fc1a3cc1cf0e9cfe2392d40b9ea8f5ece
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+manager: lizross
+ms.openlocfilehash: 9564643e02a0b659914736c4047a8d723816976f
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700914"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919937"
 ---
 # <a name="virtual-machine-sizing-guidance"></a>Guía de ajuste del tamaño de la máquina virtual
 
@@ -29,10 +29,10 @@ En la tabla siguiente se indica el número máximo sugerido de usuarios por unid
 
 | Tipo de carga de trabajo | Número máximo de usuarios por vCPU | Mínimo de vCPU/RAM/almacenamiento de SO | Instancias de Azure de ejemplo | Almacenamiento mínimo del contenedor de perfiles |
 | --- | --- | --- | --- | --- |
-| Claro | 6 | 2 vCPUs, 8 GB de RAM, 16 GB de almacenamiento | D2s_v3, F2s_v2 | 30 GB |
+| Ligero | 6 | 2 vCPUs, 8 GB de RAM, 16 GB de almacenamiento | D2s_v3, F2s_v2 | 30 GB |
 | Medio | 4 | 4 vCPUs, 16 GB de RAM, 32 GB de almacenamiento | D4s_v3, F4s_v2 | 30 GB |
 | Pesado | 2 | 4 vCPUs, 16 GB de RAM, 32 GB de almacenamiento | D4s_v3, F4s_v2 | 30 GB |
-| Alimentación | 1 | 6 vCPUs, 56 GB de RAM, 340 GB de almacenamiento | D4s_v3, F4s_v2, NV6 | 30 GB |
+| Potencia | 1 | 6 vCPUs, 56 GB de RAM, 340 GB de almacenamiento | D4s_v3, F4s_v2, NV6 | 30 GB |
 
 ## <a name="single-session-recommendations"></a>Recomendaciones para una única sesión
 

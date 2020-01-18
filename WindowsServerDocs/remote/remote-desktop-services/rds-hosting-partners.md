@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 9a3cb426-fb39-40c5-ae07-26dbe9e3aed9
 author: lizap
 manager: dongill
-ms.openlocfilehash: 8433aa50d585300df03222b78cf0823985237aa5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4d9a6d4885566204bf9fc29cd9513d25d1b39deb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403966"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949853"
 ---
 # <a name="remote-desktop-services-hosting-partners-and-assessment"></a>Partners de hospedaje de Servicios de Escritorio remoto y evaluación
 
@@ -29,7 +29,7 @@ Si eres partner de Microsoft y quieres que se te incluya en la lista de partners
 1. Conviértete en [Microsoft Partner](https://partner.microsoft.com/), si aún no lo eres.
 2. Ve la sesión de entrenamiento ["Hospedaje de Escritorio de Windows y aplicaciones mediante Servicios de Escritorio remoto en Azure"](https://mspartnerlp.partner.microsoft.com/LearningPath/LearningPath/DLPaths?trackId=2915&rowId=3603).
 3. Completa la [evaluación técnica](https://mspartnerlp.partner.microsoft.com/LearningPath/LearningPath/DLPaths?trackId=1660&rowId=2220&trackPathId=9871).
-4. Asegúrate de cumplir los [requisitos para la competencia de plataformas en la nube](https://partner.microsoft.com/en-us/membership/cloud-platform-competency).
+4. Asegúrate de cumplir los [requisitos para la competencia de plataformas en la nube](https://partner.microsoft.com/membership/cloud-platform-competency).
 
 ¿Ya eres partner de Microsoft y tienes alguna pregunta? Ponte en contacto con el equipo de Escritorio remoto en <rdhostingpartners@microsoft.com>.  
 

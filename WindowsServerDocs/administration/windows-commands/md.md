@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 965a5c506535a2c52d6cc7b3557c6104182c12a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3751b185677bfee9d0519b9a617bea1df063c1e7
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373688"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259080"
 ---
 # <a name="md"></a>Md
 
@@ -46,11 +46,11 @@ mkdir [<Drive>:]<Path>
 |\<ruta de acceso >|Obligatorio. Especifica el nombre y la ubicación del nuevo directorio. El sistema de archivos determina la longitud máxima de cualquier ruta de acceso única.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 Las extensiones de comandos, que están habilitadas de forma predeterminada, permiten usar un único comando **MD** para crear directorios intermedios en una ruta de acceso especificada.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="BKMK_examples"></a>Ejemplos
 
 Para crear un directorio denominado Directory1 en el directorio actual, escriba:
 ```
@@ -63,10 +63,8 @@ md \Taxes\Property\Current
 Para crear el árbol de directorios Taxes\Property\Current en el directorio raíz como en el ejemplo anterior, pero con extensiones de comando deshabilitadas, escriba la siguiente secuencia de comandos:
 ```
 md \Taxes
-cd \Taxes 
-md Property
-cd Property
-md Current
+md \Taxes\Property
+md \Taxes\Property\Current
 ```
 
 #### <a name="additional-references"></a>Referencias adicionales

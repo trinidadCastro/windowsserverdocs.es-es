@@ -9,16 +9,16 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 70aaad61cf068fe38fa95127700655db2a186dd1
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: df43a69fa4777a9286cbe27cfa2d241111f7edf6
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529875"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265877"
 ---
 # <a name="remote-laptop-disconnects-from-wireless-network"></a>Los portátiles remotos se desconectan de la red inalámbrica
 

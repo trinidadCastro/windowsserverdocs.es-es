@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: bcc4bf7b3fbdbff1aed2c8dd07b90346fe9eebab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 577014f6fd7e3a3eb58567b1a644d44360f9e498
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383431"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259053"
 ---
 # <a name="administer-a-server-core-server"></a>Administrar un servidor Server Core
 
@@ -124,7 +124,7 @@ Use la siguiente información de referencia para realizar tareas administrativas
 |         Cambiar el nombre de un equipo en un grupo de trabajo         |                                                                                                                                                                **Netdom renamecomputer \<currentcomputername\>/NewName:\<newcomputername\>** <br>Reinicie el equipo.                                                                                                                                                                 |
 |                Deshabilitar la administración de archivos de paginación                 |                                                                                                                                                                        **WMIC ComputerSystem donde name = "\<COMPUTERNAME\>" Set AutomaticManagedPagefile = false**                                                                                                                                                                         |
 |                   Configurar el archivo de paginación                   |                                                            **WMIC pagefileset donde name = "\<path/FILENAME\>" Set InitialSize =\<InitialSize\>, Tamañomáximo =\<MaxSize\>** <br>Donde *path/FILENAME* es la ruta de acceso y el nombre del archivo de paginación, *initialsize* es el tamaño inicial del archivo de paginación, en bytes, y *MaxSize* es el tamaño máximo del archivo de paginación, en bytes.                                                             |
-|                 Cambiar a una dirección IP estática                 | **ipconfig/all** <br>Grabe la información relevante o redirijala a un archivo de texto (**ipconfig/all > ipconfig. txt**).<br>**netsh interface IPv4 show interfaces**<br>Compruebe que haya una lista de interfaces.<br>**netsh interface IPv4 Set Address Name \<ID from interface List\> Source = static Address =\<dirección IP preferida\> Gateway =\<dirección de puerta de enlace\>**<br>Ejecute **ipconfig/all** para comprobar que DHCP habilitado está establecido en **no**. |
+|                 Cambiar a una dirección IP estática                 | **ipconfig/all** <br>Grabe la información relevante o redirijala a un archivo de texto (**ipconfig/all > ipconfig. txt**).<br>**netsh interface IPv4 show interfaces**<br>Compruebe que haya una lista de interfaces.<br>**netsh interface IPv4 Set Address \<nombre ID from interface List\> Source = static Address =\<dirección IP preferida\> Gateway =\<dirección de puerta de enlace\>**<br>Ejecute **ipconfig/all** para comprobar que DHCP habilitado está establecido en **no**. |
 |                   Establezca una dirección DNS estática.                   |   <strong>netsh interface IPv4 Add dnsserver Name =\<nombre o ID. de la tarjeta de interfaz de red\> Address =\<dirección IP del servidor DNS principal\> index = 1 <br></strong>netsh interface IPv4 Add dnsserver Name =\<nombre del servidor DNS secundario\> Address =\<dirección IP del servidor DNS secundario\> index = 2\*\* <br> Repita los pasos necesarios para agregar más servidores.<br>Ejecute **ipconfig/all** para comprobar que las direcciones son correctas.   |
 | Cambiar una dirección IP estática por una dirección IP proporcionada por DHCP |                                                                                                                                      **netsh interface IPv4 Set Address Name =\<dirección IP del sistema local\> Source = DHCP** <br>Ejecute **ipconfig/all** para comprobar que DCHP habilitado está establecido en **sí**.                                                                                                                                      |
 |                      Escribir una clave de producto                      |                                                                                                                                                                                                   **slmgr. vbs – IPK \<clave de producto\>**                                                                                                                                                                                                    |
@@ -140,7 +140,7 @@ Use la siguiente información de referencia para realizar tareas administrativas
 |Mostrar o modificar la configuración de IPSEC|**netsh ipsec**| 
 |Mostrar o modificar la configuración de NAP|**netsh NAP**| 
 |Mostrar o modificar la traducción de direcciones IP a física|**arp**| 
-|Mostrar o configurar la tabla de enrutamiento local|**distribuya**| 
+|Mostrar o configurar la tabla de enrutamiento local|**route**| 
 |Ver o configurar los valores del servidor DNS|**nslookup**| 
 |Mostrar las estadísticas de protocolo y las conexiones de red TCP/IP actuales|**netstat**| 
 |Mostrar las estadísticas de protocolo y las conexiones TCP/IP actuales mediante NetBIOS a través de TCP/IP (NBT)|**nbtstat**| 

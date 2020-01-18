@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0a2bbeeb459fd364db728579dc20015a2474fd25
-ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
+ms.openlocfilehash: 48d93f515a5f3e5f8ce2c3ff9a1b40f300ca57ed
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74163092"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265747"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS preguntas más frecuentes (p + f)
 
@@ -48,7 +48,7 @@ La compatibilidad con HTTP/2 se agregó en Windows Server 2016, pero HTTP/2 no s
 Sí, se admite esta configuración; sin embargo, no se admitirán nuevas características AD FS 2016 en esta configuración.  Esta configuración está pensada para ser temporal durante la fase de migración desde AD FS 2012 R2 a AD FS 2016 y no debe implementarse durante largos períodos de tiempo.
 
 ### <a name="is-it-possible-to-deploy-ad-fs-for-office-365-without-publishing-a-proxy-to-office-365"></a>¿Es posible implementar AD FS para Office 365 sin publicar un proxy en Office 365?
-Sí, se admite. Sin embargo, como efecto secundario
+Sí, este procedimiento se admite. Sin embargo, como efecto secundario
 
 1. Deberá administrar manualmente los certificados de firma de tokens de actualización, ya que Azure AD no podrán tener acceso a los metadatos de Federación. Para obtener más información sobre la actualización manual del certificado de firma de tokens [, lea renovación de certificados de Federación para Office 365 y Azure Active Directory](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)
 2. No podrá aprovechar los flujos de autenticación heredados (por ejemplo, el flujo de autenticación de proxy de ExO)
@@ -66,7 +66,7 @@ AD FS es un sistema sin estado. Por lo tanto, el equilibrio de carga es bastante
 
 ### <a name="what-multi-forest-configurations-are-supported-by-ad-fs"></a>¿Qué configuraciones de varios bosques admite AD FS?
 
-AD FS admite varias configuraciones de varios bosques y se basa en la red de confianza de AD DS subyacente para autenticar a los usuarios en varios dominios de confianza. Nos recomendamos encarecidamente que confíe en los bosques bidireccionales, ya que es una configuración más sencilla para garantizar que el subsistema de confianza funcione correctamente sin problemas. Adem
+AD FS admite varias configuraciones de varios bosques y se basa en la red de confianza de AD DS subyacente para autenticar a los usuarios en varios dominios de confianza. Nos recomendamos encarecidamente que confíe en los bosques bidireccionales, ya que es una configuración más sencilla para garantizar que el subsistema de confianza funcione correctamente sin problemas. Además:
 
 - En el caso de una confianza de bosque unidireccional, como un bosque DMZ que contiene identidades de asociados, se recomienda implementar ADFS en el bosque Corp y tratar el bosque DMZ como otra relación de confianza para proveedor de notificaciones local conectada a través de LDAP. En este caso, la autenticación integrada de Windows no funcionará para los usuarios del bosque DMZ y se les pedirá que realice la autenticación con contraseña, ya que es el único mecanismo admitido para LDAP. En caso de que no pueda seguir esta opción, deberá configurar otro ADFS en el bosque DMZ y agregarlo como confianza del proveedor de notificaciones en ADFS en el bosque Corp. Los usuarios deberán realizar la detección del dominio de inicio, pero la autenticación integrada de Windows y la autenticación de contraseña funcionarán. Realice los cambios adecuados en las reglas de emisión en ADFS en el bosque de la red perimetral, ya que ADFS en el bosque Corp no podrá obtener información adicional sobre el usuario del bosque DMZ.
 - Aunque se admiten las confianzas de nivel de dominio y pueden funcionar, se recomienda encarecidamente pasar a un modelo de confianza de nivel de bosque. Además, debe asegurarse de que el enrutamiento UPN y la resolución de nombres NETBIOS de los nombres deben funcionar con precisión.
@@ -307,4 +307,7 @@ En AD FS 2016, el enlace de tokens se habilita automáticamente y provoca varios
 `Set-AdfsProperties -IgnoreTokenBinding $true`
 
 ### <a name="i-have-upgraded-my-farm-from-ad-fs-in-windows-server-2016-to-ad-fs-in-windows-server-2019-the-farm-behavior-level-for-the-ad-fs-farm-has-been-successfully-raised-to-2019-but-the-web-application-proxy-configuration-is-still-displayed-as-windows-server-2016"></a>He actualizado mi granja de servidores de AD FS en Windows Server 2016 a AD FS en Windows Server 2019. El nivel de comportamiento de la granja de servidores de AD FS se ha generado correctamente en 2019 pero la configuración del proxy de aplicación web todavía se muestra como Windows Server 2016?
-Después de una actualización a Windows Server 2019, la versión de configuración del proxy de aplicación web se seguirá mostrando como Windows Server 2016. El proxy de aplicación web no tiene nuevas características específicas de la versión para Windows Server 2019 y, si el nivel de comportamiento de la granja se ha generado correctamente en AD FS, el proxy de aplicación web seguirá mostrando Windows Server 2016 por diseño. 
+Después de una actualización a Windows Server 2019, la versión de configuración del proxy de aplicación web se seguirá mostrando como Windows Server 2016. El proxy de aplicación web no tiene nuevas características específicas de la versión para Windows Server 2019 y, si el nivel de comportamiento de la granja se ha generado correctamente en AD FS, el proxy de aplicación web seguirá mostrando Windows Server 2016 por diseño.
+
+### <a name="can-i-estimate-the-size-of-the-adfsartifactstore-before-enabling-esl"></a>¿Puedo calcular el tamaño de ADFSArtifactStore antes de habilitar ESL?
+Con ESL habilitado, AD FS realiza un seguimiento de la actividad de la cuenta y de las ubicaciones conocidas de los usuarios en la base de datos ADFSArtifactStore. Esta base de datos se escala en función del número de usuarios y de las ubicaciones conocidas a las que se realiza el seguimiento. Al planear la habilitación de ESL, puede calcular el tamaño de la base de datos de ADFSArtifactStore para que crezca a una velocidad de hasta 1 GB por 100.000 usuarios. Si la granja de AD FS usa Windows Internal Database (WID), la ubicación predeterminada de los archivos de base de datos es C:\Windows\WID\Data. Para evitar que se llene esta unidad, asegúrese de tener un mínimo de 5 GB de almacenamiento libre antes de habilitar ESL. Además de almacenamiento en disco, planee el aumento de la memoria de proceso total después de habilitar ESL hasta un 1 GB de RAM adicional para los rellenados de usuarios de 500.000 o menos.

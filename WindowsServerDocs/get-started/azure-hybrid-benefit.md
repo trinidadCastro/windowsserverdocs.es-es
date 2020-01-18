@@ -8,16 +8,16 @@ ms.topic: article
 author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
-ms.openlocfilehash: 187abe06b469abe511d4bbbfb0aac9237d3c650a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 946c1266f1c2cdc78cedac6794abb9f8d26696cd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868522"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947699"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Ventaja híbrida de Azure para Windows Server
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 ## <a name="benefit-description-rules-and-use-cases"></a>Descripción de la ventaja, las reglas y los casos de uso
 
@@ -84,7 +84,7 @@ A continuación, puedes rellenar los resultados en la **Herramienta de recuento 
 
 Asegúrate de realizar un inventario en cada suscripción que poseas para generar una vista completa de la posición de la licencia.
 
-[Herramienta de recuento de Microsoft Software Assurance de Ventaja híbrida de Azure WS](http://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
+[Herramienta de recuento de Microsoft Software Assurance de Ventaja híbrida de Azure WS](https://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
 
 Si has realizado lo anterior y confirmado que tienes todas las licencias necesarias para el número de instancias de Ventaja híbrida de Azure que estás ejecutando, no es necesaria ninguna otra acción. Si descubres que puedes cubrir VM incrementales con la ventaja, puede que te interese optimizar aun más los costes cambiando a ejecutar instancias con la ventaja frente al coste sin reducción.
 

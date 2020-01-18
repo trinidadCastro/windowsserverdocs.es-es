@@ -8,12 +8,12 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f54548e8e68a0ee693c5d8ec80e67057b3d5b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 864a15d7336abb56572ddc783ce41a35d6fc13bf
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387660"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950416"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configuración del cliente web de Escritorio remoto para los usuarios
 
@@ -28,7 +28,7 @@ Antes de comenzar, ten en cuenta lo siguiente:
 
 * Asegúrate de que tu [implementación de Escritorio remoto](../rds-deploy-infrastructure.md) tiene los roles Puerta de enlace de Escritorio remoto, Agente de conexión a Escritorio remoto y Acceso web de Escritorio remoto que se ejecutan en Windows Server 2016 o 2019.
 * Asegúrate de que tu implementación esté configurada para [licencias de acceso de cliente por usuario](../rds-client-access-license.md) (CAL) en lugar de por dispositivo; de lo contrario, se consumirán todas las licencias.
-* Instala la [actualización KB4025334 de Windows 10](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334) en la puerta de enlace de Escritorio remoto. Es posible que las actualizaciones acumulativas posteriores ya contengan esta KB.
+* Instala la [actualización KB4025334 de Windows 10](https://support.microsoft.com/help/4025334/windows-10-update-kb4025334) en la puerta de enlace de Escritorio remoto. Es posible que las actualizaciones acumulativas posteriores ya contengan esta KB.
 * Asegúrate de que se configuran los certificados de confianza pública para los roles Puerta de enlace de Escritorio remoto y Acceso web de Escritorio remoto.
 * Asegúrate de que todos los equipos a los que se conecten tus usuarios estén ejecutando una de las versiones más recientes del sistema operativo:
   * Windows 10
@@ -285,7 +285,7 @@ Para restablecer un valor del cliente web en el nivel de implementación a la co
     Reset-RDWebClientDeploymentSetting -Name "SuppressTelemetry"
    ```
 
-## <a name="troubleshooting"></a>Solución de problemas
+## <a name="troubleshooting"></a>Solucionar problemas
 
 Si un usuario informa de cualquiera de los siguientes problemas al abrir el cliente web por primera vez, las siguientes secciones le indicarán qué hacer para solucionarlos.
 
@@ -300,7 +300,7 @@ Si esto no funciona, es posible que el nombre del servidor en la dirección URL 
 Si el usuario informa que no puede conectarse con el cliente web aunque pueda ver los recursos enumerados, comprueba lo siguiente:
 
 * ¿Está configurado correctamente el rol Puerta de enlace de Escritorio remoto para utilizar un certificado público de confianza?
-* ¿El servidor de Puerta de enlace de Escritorio remoto tiene instaladas las actualizaciones necesarias? Asegúrate de que el servidor tiene la [actualización KB4025334](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334) instalada.
+* ¿El servidor de Puerta de enlace de Escritorio remoto tiene instaladas las actualizaciones necesarias? Asegúrate de que el servidor tiene la [actualización KB4025334](https://support.microsoft.com/help/4025334/windows-10-update-kb4025334) instalada.
 
 Si el usuario recibe un mensaje de error por un certificado de autenticación de servidor inesperado al intentar conectarse, el mensaje mostrará la huella digital del certificado. Busca el administrador de certificados del servidor del agente de Escritorio remoto con esta huella digital para buscar el certificado correcto. Comprueba que el certificado está configurado para usarse para el rol Agente de Escritorio remoto en la página de propiedades de implementación de Escritorio remoto. Después de asegurarte de que el certificado no ha caducado, copia el certificado en formato de archivo .cer en el servidor de Acceso web de RD y ejecuta el siguiente comando en el servidor de Acceso web de RD con el valor entre corchetes sustituido por la ruta de acceso del archivo del certificado:
 

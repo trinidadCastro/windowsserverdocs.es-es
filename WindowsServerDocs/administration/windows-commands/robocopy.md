@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 07/25/2018
-ms.openlocfilehash: b814134dd8ca82a4338f80aba26c5a7dcee3b90a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f675f66eaafbfd79ac6b452a92417159d8ebb28c
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384500"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259035"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -32,12 +32,12 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 
 ## <a name="parameters"></a>Parámetros
 
-|   Parámetro    |                                                                                            Descripción                                                                                             |
-|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   > de \<de origen    |                                                                            Especifica la ruta de acceso al directorio de origen.                                                                             |
-| > de destino de \< |                                                                          Especifica la ruta de acceso al directorio de destino.                                                                          |
-|    \<> de archivo     | Especifica el archivo o los archivos que se van a copiar. Si lo desea, puede usar **&#42;** caracteres comodín (o **?** ). Si no se especifica el parámetro **File** , se utiliza **\*.\\** \* como valor predeterminado. |
-|   \<Opciones >   |                                                                    Especifica las opciones que se van a usar con el comando **Robocopy** .                                                                     |
+|   Parámetro    |                                                                                            Descripción                                                                                           |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   > de \<de origen    |                                                                            Especifica la ruta de acceso del directorio de origen.                                                                           |
+| > de destino de \< |                                                                          Especifica la ruta de acceso del directorio de destino.                                                                        |
+|    \<> de archivo     | Especifica el archivo o los archivos que se van a copiar. Si lo desea, puede usar **&#42;** caracteres comodín (o **?** ). Si no se especifica el parámetro **File** , **\*.\*** se utiliza como valor predeterminado. |
+|   \<Opciones >   |                                                                    Especifica las opciones que se van a usar con el comando **Robocopy** .                                                                   |
 
 ### <a name="copy-options"></a>Opciones de copia
 
@@ -47,12 +47,12 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/e|Copia subdirectorios. Tenga en cuenta que esta opción incluye directorios vacíos. Para obtener más información, vea la [sección Comentarios](#remarks).|
 |/Lev:\<N >|Copia solo los *N* niveles principales del árbol de directorio de origen.|
 |/z|Copia los archivos en modo reiniciable.|
-|b|Copia los archivos en modo de copia de seguridad.|
+|/b|Copia los archivos en modo de copia de seguridad.|
 |/zb|Utiliza el modo reiniciable. Si se deniega el acceso, esta opción utiliza el modo de copia de seguridad.|
 |/efsraw|Copia todos los archivos cifrados en modo RAW de EFS.|
 |/Copy:\<CopyFlags >|Especifica las propiedades de archivo que se van a copiar. Estos son los valores válidos para esta opción:</br>Datos **D**</br>**Atributos**</br>Marcas de tiempo de **T**</br>**S** lista de control de acceso (ACL) de NTFS</br>**O** información de propietario</br>**U** información de auditoría</br>El valor predeterminado de **CopyFlags** es **DAT** (datos, atributos y marcas de tiempo).|
 |/dcopy:\<copyflags\>|Define qué copiar para los directorios. El valor predeterminado es DA. Las opciones son D = Data, A = Attributes y T = timestamps.|
-|s|Copia los archivos con seguridad (equivalente a **/Copy: DATS**).|
+|/s|Copia los archivos con seguridad (equivalente a **/Copy: DATS**).|
 |/copyall|Copia toda la información de archivo (equivalente a **/Copy: DATSOU**).|
 |/nocopy|No copia ninguna información de archivo (útil con **/Purge**).|
 |/secfix|Corrige la seguridad de los archivos en todos los archivos, incluso los omitidos.|
@@ -63,12 +63,12 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/Move|Mueve archivos y directorios, y los elimina del origen una vez copiados.|
 |/a +: [RASHCNET]|Agrega los atributos especificados a los archivos copiados.|
 |/a-(: [RASHCNET]|Quita los atributos especificados de los archivos copiados.|
-|/Create|Solo crea un árbol de directorios y archivos de longitud cero.|
+|/create|Solo crea un árbol de directorios y archivos de longitud cero.|
 |/fat|Crea archivos de destino usando únicamente nombres de archivo FAT de longitud de caracteres 8,3.|
 |/256|Desactiva la compatibilidad con rutas de acceso muy largas (más de 256 caracteres).|
 |/Mon:\<N >|Supervisa el origen y vuelve a ejecutarse cuando se detectan más de *N* cambios.|
 |/MOT:\<M >|Supervisa el origen y vuelve a ejecutarse en *M* minutos si se detectan cambios.|
-|/MT [: N]|Crea copias multiproceso con *N* subprocesos. *N* debe ser un entero comprendido entre 1 y 128. El valor predeterminado de *N* es 8.</br>El parámetro **/MT** no se puede usar con los parámetros **/IPG** y **/EFSRAW** .</br>Redirija la salida mediante la opción **/log** para obtener un mejor rendimiento.</br>Nota: el parámetro/MT se aplica a Windows Server 2008 R2 y Windows 7.|
+|/MT[:N]|Crea copias multiproceso con *N* subprocesos. *N* debe ser un entero comprendido entre 1 y 128. El valor predeterminado de *N* es 8.</br>El parámetro **/MT** no se puede usar con los parámetros **/IPG** y **/EFSRAW** .</br>Redirija la salida mediante la opción **/log** para obtener un mejor rendimiento.</br>Nota: el parámetro/MT se aplica a Windows Server 2008 R2 y Windows 7.|
 |/RH: hhmm-hhmm|Especifica los tiempos de ejecución cuando se pueden iniciar nuevas copias.|
 |/PF|Comprueba los tiempos de ejecución por archivo (no por paso).|
 |/IPG: n|Especifica el intervalo entre paquetes para el ancho de banda libre en líneas lentas.|
@@ -106,7 +106,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/maxlad:\<N >|Especifica la última fecha de acceso máxima (excluye los archivos no usados desde *N*).|
 |/minlad:\<N >|Especifica la última fecha de acceso mínima (excluye los archivos usados desde *n*) si *n* es menor que 1900, *n* especifica el número de días. De lo contrario, *N* especifica una fecha con el formato AAAAMMDD.|
 |/xj|Excluye los puntos de Unión, que normalmente se incluyen de forma predeterminada.|
-|/fft|Supone un tiempo de archivo FAT (precisión de dos segundos).|
+|/fft|Se da por supuesto que se trata de tiempos de archivos FAT (precisión de dos segundos).|
 |/DST|Compensa las diferencias de hora de horario de verano de una hora.|
 |/xjd|Excluye los puntos de unión de los directorios.|
 |/xjf|Excluye los puntos de Unión para los archivos.|
@@ -128,17 +128,17 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/x|Informa de todos los archivos adicionales, no solo de los que están seleccionados.|
 |/v|Genera una salida detallada y muestra todos los archivos omitidos.|
 |/TS|Incluye marcas de tiempo de archivo de origen en el resultado.|
-|/FP|Incluye los nombres de ruta de acceso completa de los archivos en la salida.|
+|/fp|Incluye los nombres de ruta de acceso completa de los archivos en la salida.|
 |/bytes|Imprime los tamaños, como bytes.|
 |/NS|Especifica que no se van a registrar los tamaños de archivo.|
 |/nc|Especifica que no se registrarán las clases de archivo.|
-|/nfl|Especifica que no se van a registrar los nombres de archivo.|
-|/ndl|Especifica que no se van a registrar los nombres de directorio.|
+|/nfl|Especifica que los nombres de archivo no se van a registrar.|
+|/ndl|Especifica que los nombres de directorio no se van a registrar.|
 |/np|Especifica que no se mostrará el progreso de la operación de copia (el número de archivos o directorios copiados hasta el momento).|
 |/eta|Muestra el tiempo estimado de llegada (ETA) de los archivos copiados.|
-|/log:\<archivo de registro >|Escribe la salida de estado en el archivo de registro (sobrescribe el archivo de registro existente).|
+|/log:\<archivo de registro >|Escribe la salida del estado en el archivo de registro (sobrescribe el archivo de registro existente).|
 |/log +:\<archivo de registro >|Escribe la salida de estado en el archivo de registro (anexa la salida al archivo de registro existente).|
-|/Unicode|Muestra la salida de estado como texto Unicode.|
+|/unicode|Muestra la salida de estado como texto Unicode.|
 |/UNILOG:\<LogFile >|Escribe la salida de estado en el archivo de registro como texto Unicode (sobrescribe el archivo de registro existente).|
 |/UNILOG +:\<LogFile >|Escribe la salida de estado en el archivo de registro como texto Unicode (anexa la salida al archivo de registro existente).|
 |/tee|Escribe la salida de estado en la ventana de la consola, así como en el archivo de registro.|
@@ -172,7 +172,7 @@ Valor | Descripción
 > [!NOTE]
 > Cualquier valor mayor que 8 indica que se produjo al menos un error durante la operación de copia.
 
-### <a name="remarks"></a>Observaciones
+### <a name="remarks"></a>Comentarios
 
 -   La opción **/Mir** es equivalente a las opciones **/e** Plus **/Purge** con una pequeña diferencia en el comportamiento:  
     -   Con las opciones **/e** Plus **/Purge** , si el directorio de destino existe, no se sobrescribe la configuración de seguridad del directorio de destino.
