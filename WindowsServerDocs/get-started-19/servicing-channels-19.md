@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 814bcf3e989e9aa9b83ba447d07c45ee95309a5a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3d443ff123cc041196f59d93d156415c34bdf70f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391975"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947869"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Canales de servicio de Windows Server: LTSC y SAC
 
@@ -36,7 +36,7 @@ El canal semianual es ideal para los clientes que innovan de forma rápida para 
 
 La mayoría de las funciones presentadas en el Canal semianual se acumularán en la próxima versión del Canal de mantenimiento a largo plazo de Windows Server. Las ediciones, la funcionalidad y el contenido de soporte pueden variar entre las distintas versiones, en función de los comentarios de los clientes.
 
-El Canal semianual estará disponible para los clientes de licencias por volumen con [Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx), así como a través de Azure Marketplace u otros proveedores de servicios de hosting/nube y programas de fidelidad como, por ejemplo, Suscripciones de Visual Studio.
+El Canal semianual estará disponible para los clientes de licencias por volumen con [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx), así como a través de Azure Marketplace u otros proveedores de servicios de hosting/nube y programas de fidelidad como, por ejemplo, Suscripciones de Visual Studio.
 
 > [!Note]  
 > **La versión actual del Canal semianual es Windows Server, versión 1903**. Si quieres poner servidores en este canal, debes instalar Windows Server, versión 1903, que puede instalarse en modo Server Core o en modo Nano Server ejecutado en un contenedor. No se admiten actualizaciones en contexto desde una versión de Canal de mantenimiento a largo plazo porque se encuentran en **canales de lanzamiento distintos**. Los lanzamientos del Canal semianual no son actualizaciones: son la siguiente versión de Windows Server en este canal.
@@ -57,7 +57,7 @@ La siguiente tabla resume las principales diferencias entre los canales:
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
 | Escenarios recomendados | Servidores de archivos de uso general, cargas de trabajo de Microsoft y otras que no lo son, aplicaciones tradicionales, roles de infraestructura, centro de datos definido mediante software e infraestructura hiperconvergida | Aplicaciones en contenedor, hosts de contenedor y escenarios de aplicaciones que se benefician de una innovación más rápida |
 |     Nuevas versiones      |                                                                               Cada 2–3 años                                                                                |                                              Cada 6 meses                                              |
-|        Soporte        |                                                       5 años de soporte estándar, más 5 años de soporte ampliado                                                        |                                                18 meses                                                 |
+|        Soporte técnico        |                                                       5 años de soporte estándar, más 5 años de soporte ampliado                                                        |                                                18 meses                                                 |
 |       Ediciones        |                                                                    Todas las ediciones de Windows Server disponibles                                                                     |                                     Ediciones Standard y Datacenter                                     |
 |      ¿Quién puede usarlas?      |                                                                      Todos los clientes a través de todos los canales                                                                      |                               Solo clientes de Software Assurance y de la nube                                |
 | Opciones de instalación  |                                                                Server Core y Server con experiencia de escritorio                                                                |                 Server Core para host de contenedor e imagen de contenedor de Nano Server                 |
@@ -70,13 +70,13 @@ A menos que se indique lo contrario, los requisitos mínimos de hardware para ej
 
 Tanto los lanzamientos del Canal de mantenimiento a largo plazo como los del Canal semianual serán compatibles con las actualizaciones de seguridad y las no relacionadas con la seguridad. La diferencia es el período de tiempo que el lanzamiento es compatible, tal y como se ha indicado anteriormente.
 
-### <a name="servicing-tools"></a>Herramienta de mantenimiento
+### <a name="servicing-tools"></a>Herramientas de mantenimiento
 
-Existen muchas herramientas con las que los profesionales de TI pueden realizar el mantenimiento de Windows Server. Cada opción tiene sus ventajas y desventajas, que van desde las funcionalidades y el control hasta la simplicidad y los escasos requisitos administrativos. Los siguientes son ejemplos de las herramientas de mantenimiento disponibles para administrar las actualizaciones de mantenimiento:
+Existen muchas herramientas con las que los profesionales de TI pueden realizar el mantenimiento de Windows Server. Cada opción tiene sus ventajas y desventajas: desde las funcionalidades y el control hasta la simplicidad y los escasos requisitos administrativos. Los siguientes son ejemplos de las herramientas de mantenimiento disponibles para administrar las actualizaciones de mantenimiento:
 
 - **Windows Update (independiente)** : esta opción solo está disponible para servidores que están conectados a Internet con Windows Update habilitado.
-- **Windows Server Update Services (WSUS)** ofrece un amplio control sobre las actualizaciones de Windows 10 y Windows Server, y se encuentra disponible de forma nativa en el sistema operativo Windows Server. Además de la posibilidad de aplazar actualizaciones, las organizaciones pueden agregar una capa de aprobación para las actualizaciones y optar por implementarlas en equipos específicos o grupos de equipos cuando estén preparados.
-- **System Center Configuration Manager** ofrece un control más amplio sobre el mantenimiento. Los profesionales de TI pueden aplazar y aprobar actualizaciones, y tienen varias opciones para seleccionar el destino de las implementaciones y administrar el uso del ancho de banda y los tiempos de implementación.
+- **Windows Server Update Services (WSUS)** ofrece un amplio control sobre las actualizaciones de Windows 10 y Windows Server, y se encuentra disponible de forma nativa en el sistema operativo Windows Server. Además de la posibilidad de aplazar las actualizaciones, las organizaciones pueden agregar un nivel de aprobación para las actualizaciones y optar por implementarlas en equipos o grupos de equipos específicos cuando estén preparados.
+- **System Center Configuration Manager** ofrece un control más amplio sobre el mantenimiento. Los profesionales de TI pueden aplazar y aprobar las actualizaciones, y tienen varias opciones para seleccionar el destino de las implementaciones y administrar el uso del ancho de banda y las horas de implementación.
 
 Es probable que ya hayas elegido usar al menos una de estas opciones en función de tus recursos, personal y experiencia. Puedes seguir usando el mismo proceso para los lanzamientos del Canal semianual: por ejemplo, si ya usas System Center Configuration Manager para administrar las actualizaciones, puedes seguir usándolo. De manera similar, si usas WSUS, puedes seguir usándolo.
 
@@ -84,9 +84,9 @@ Es probable que ya hayas elegido usar al menos una de estas opciones en función
 
 Las versiones del Canal semianual deben instalarse como una instalación limpia.
 
-- Centro de servicio de licencias por volumen (VLSC): los clientes de licencias por volumen con [Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx) pueden obtener esta versión si se dirigen al [Centro de servicios de licencias por volumen](https://www.microsoft.com/Licensing/servicecenter/default.aspx) y haces clic en **Inicio de sesión**. Luego haz clic en **Descargas y claves** y busca esta versión. 
+- Centro de servicio de licencias por volumen (VLSC): los clientes de licencias por volumen con [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx) pueden obtener esta versión si se dirigen al [Centro de servicios de licencias por volumen](https://www.microsoft.com/Licensing/servicecenter/default.aspx) y haces clic en **Inicio de sesión**. Luego haz clic en **Descargas y claves** y busca esta versión. 
 
-- Las versiones del Canal semianual también están disponibles en [Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.WindowsServer?tab=Overview).
+- Las versiones del Canal semianual también están disponibles en [Microsoft Azure](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer?tab=Overview).
 
 - Suscripciones a Visual Studio: Los suscriptores de Visual Studio pueden obtener versiones del canal semianual descargándolas desde la [página de descargas del suscriptor de Visual Studio](https://my.visualstudio.com/downloads?pid=2347). Si ya no eres un suscriptor, dirígete a [Suscripciones de Visual Studio](https://www.visualstudio.com/subscriptions/) para registrarte y luego visita la [página de descarga de suscriptor de Visual Studio](https://my.visualstudio.com/downloads?pid=2347) tal y como se indica anteriormente. Las versiones obtenidas a través de suscripciones de Visual Studio son solo para desarrollo y pruebas.
 
@@ -171,7 +171,7 @@ Name    :     ServerCore.AppCompatibility~~~~0.0.1.0
 State   :     Installed
 ````
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Consulta también
 
 [Cambios en Nano Server en la versión de Windows Server del Canal semianual](../get-started/nano-in-semi-annual-channel.md)
 

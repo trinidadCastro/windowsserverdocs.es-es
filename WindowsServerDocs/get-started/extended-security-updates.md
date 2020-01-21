@@ -9,12 +9,12 @@ ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 12/16/2019
-ms.openlocfilehash: a5af1ad5a730f1dc90111734a9b8b1aacc91201b
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 83ab3663b2c03017ba1bf613a49c394be0511002
+ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75466348"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162506"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Uso de las actualizaciones de seguridad extendidas (ESU) de Windows Server 2008 y 2008 R2
 
@@ -49,6 +49,17 @@ Para usar las actualizaciones de seguridad extendidas, cree una clave de activac
 
 > [!NOTE]
 > Si ejecuta máquinas virtuales con Windows Server 2008/2008 R2 en Azure, no es preciso que realice los pasos siguientes. Las máquinas virtuales de Azure se habilitan automáticamente para las actualizaciones de seguridad extendidas. No es necesario crear una clave y un recurso de actualización de seguridad extendida, y no se realiza ningún cargo adicional por el uso de actualizaciones de seguridad extendidas con máquinas virtuales de Azure.
+
+> [!NOTE]
+> Antes de seguir los pasos que se indican a continuación, envía un mensaje de correo electrónico a [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com) con esta información para que se incluya como elemento aprobado en la lista de permitidos:
+> * Nombre del cliente:
+> * Suscripción de Azure:
+> * Número de contrato EA (para ESU):
+> * Número de servidores ESU:
+> 
+> El equipo revisará la información proporcionada y agregará el usuario o la suscripción a la lista de permitidos.
+> 
+> Si el solicitante no está en la lista de permitidos, es posible que se devuelva este error: [No se pudo encontrar el tipo de recurso en el espacio de nombres "Microsoft.WindowsESU"](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version).
 
 Para registrar máquinas virtuales que no sean de Azure para actualizaciones de seguridad extendidas y crear una clave, siga estos pasos en Azure Portal:
 
