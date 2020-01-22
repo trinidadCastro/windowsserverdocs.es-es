@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1512589315489f5bc351ff105a56694e0947463b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e73511709bfbee69a6dcbaaff4341c8b067079f3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404139"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949866"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introducción al cliente de macOS
 
@@ -169,7 +169,7 @@ Windows Server 2012 R2 introdujo la compatibilidad con un nuevo método de aut
 > [!IMPORTANT]
 > No se admiten los modelos personalizados de autenticación y autorización antes de Windows 8.1, a pesar de que se analizan en el artículo mencionado.
 
-Para más información sobre esta característica, revisa [http://aka.ms/paa-sample](http://aka.ms/paa-sample).
+Para más información sobre esta característica, revisa [https://aka.ms/paa-sample](https://aka.ms/paa-sample).
 
 
 > [!TIP]

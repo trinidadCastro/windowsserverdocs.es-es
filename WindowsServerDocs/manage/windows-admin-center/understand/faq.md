@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 12/02/2019
 ms.prod: windows-server
-ms.openlocfilehash: 6d04b641c56e9461f0134bfc4734fea36955106c
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 4ce42420430e9a12dd6123ec18c9ded25abc97bb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74904069"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949967"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Preguntas más frecuentes acerca de Windows Admin Center
 
@@ -86,7 +86,7 @@ Sí. Se agregó la [característica Showscript](../use/get-started.md#view-power
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-windows-server-2008-r2-or-earlier"></a>¿Existen planes para que Windows Admin Center administre Windows Server 2008 R2 o una versión anterior?
 
-Windows Admin Center ahora admite una funcionalidad **limitada** para administrar Windows Server 2008 R2. Windows Admin Center se basa en funcionalidades de PowerShell y tecnologías de plataforma que no existen en Windows Server 2008 R2 y versiones anteriores, lo que hace que la compatibilidad total no sea factible. Windows Server 2008/2008 R2 llegará al final de su soporte en enero de 2020, por lo que Microsoft recomienda a los clientes [trasladarse a Azure o actualizar a Windows Server 2016](https://www.microsoft.com/en-us/cloud-platform/windows-server-2008).
+Windows Admin Center ahora admite una funcionalidad **limitada** para administrar Windows Server 2008 R2. Windows Admin Center se basa en funcionalidades de PowerShell y tecnologías de plataforma que no existen en Windows Server 2008 R2 y versiones anteriores, lo que hace que la compatibilidad total no sea factible. Windows Server 2008/2008 R2 llegará al final de su soporte en enero de 2020, por lo que Microsoft recomienda a los clientes [trasladarse a Azure o actualizar a Windows Server 2016](https://www.microsoft.com/cloud-platform/windows-server-2008).
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-linux-connections"></a>¿Existen planes para que Windows Admin Center administre conexiones de Linux?
 
@@ -150,7 +150,7 @@ Hay dos versiones de Windows Admin Center disponibles para su descarga:
 ### <a name="windows-admin-center-preview"></a>Versión preliminar de Windows Admin Center
 
 * Esta versión es para administradores de TI que desean las características mejores y más recientes en una cadencia regular. Nuestra intención es proporcionar actualizaciones todos los meses aproximadamente. La plataforma principal sigue estando lista para la producción y la licencia proporciona derechos de uso de producción. Sin embargo, ten en cuenta que podrás ver la introducción de nuevas herramientas y funciones que están marcadas claramente como VERSIÓN PRELIMINAR y son adecuadas para evaluar y probar.
-* Para obtener la última versión de Insider Preview, los usuarios de Insider registrados pueden descargar la versión preliminar de Windows Admin Center directamente desde la [página de descargas de Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), con el cuadro desplegable de descargas adicionales. Si aún no te has registrado como usuario de Insider, consulta la [Introducción a Windows Server](https://insider.windows.com/en-us/for-business-getting-started-server/) en el portal de Windows Insider para empresas.
+* Para obtener la última versión de Insider Preview, los usuarios de Insider registrados pueden descargar la versión preliminar de Windows Admin Center directamente desde la [página de descargas de Windows Server Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver), con el cuadro desplegable de descargas adicionales. Si aún no te has registrado como usuario de Insider, consulta la [Introducción a Windows Server](https://insider.windows.com/en-us/for-business-getting-started-server/) en el portal de Windows Insider para empresas.
 
 ## <a name="why-was-windows-admin-center-chosen-as-the-final-name-for-project-honolulu"></a>¿Por qué se ha seleccionado "Windows Admin Center" como el nombre final para el "Proyecto Honolulu"?
 
@@ -162,7 +162,7 @@ Nuestra [página de inicio](https://aka.ms/WindowsAdminCenter) es el mejor punto
 
 ## <a name="what-is-the-version-history-of-windows-admin-center"></a>¿Qué es el historial de versiones de Windows Admin Center?
 
-[Consulta el historial de versiones aquí.](../overview.md#release-history)
+[Consulta el historial de versiones aquí.](../support/release-history.md)
 
 ## <a name="im-having-an-issue-with-windows-admin-center-where-can-i-get-help"></a>Tengo un problema con Windows Admin Center, ¿dónde puedo obtener ayuda?
 

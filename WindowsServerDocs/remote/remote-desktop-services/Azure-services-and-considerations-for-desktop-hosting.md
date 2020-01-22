@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0f402ae3-5391-4c7d-afea-2c5c9044de46
 author: heidilohr
-manager: dougkim
-ms.openlocfilehash: 5c3b1ef044be70002918b7ef1379513bdbfb930c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+manager: lizross
+ms.openlocfilehash: 111f96e2ed0ffb20dcd3103d1c939bc678aecd27
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387960"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919963"
 ---
 # <a name="azure-services-and-considerations-for-desktop-hosting"></a>Servicios de Azure y consideraciones para el hospedaje de escritorio
 
@@ -26,7 +26,7 @@ ms.locfileid: "71387960"
 
 Las secciones siguientes describen los Servicios de infraestructura de Azure.
   
-## <a name="azure-portal"></a>Portal de Azure
+## <a name="azure-portal"></a>Azure Portal
 
 Después de que el proveedor crea una suscripción de Azure, se puede usar Azure Portal para crear manualmente cada entorno del inquilino. Este proceso también se puede automatizar mediante scripts de PowerShell.  
 

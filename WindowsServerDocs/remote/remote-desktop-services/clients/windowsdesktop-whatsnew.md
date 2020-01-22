@@ -9,16 +9,16 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
-ms.date: 12/04/2019
+ms.date: 01/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5526d401ba26cabcaccfc0b88df9b0e69f8149a5
-ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
+ms.openlocfilehash: f1f4d6b32b8b7d717d2d424e0a60c5edc96f4cac
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74829608"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953073"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -28,16 +28,29 @@ Puedes obtener más información detallada sobre el cliente de escritorio de Win
 
 El cliente se puede configurar para distintos [grupos de usuarios](windowsdesktop-admin.md#configure-user-groups). En la tabla siguiente se enumeran las versiones actuales disponibles para cada grupo de usuarios:
 
-|Grupo de usuarios |Versión  |
+|Grupo de usuarios |Version  |
 |-----------|---------|
-|Public     |1.2.535  |
-|Insider    |1.2.535  |
+|Público     |1.2.535  |
+|Insider    |1.2.594  |
+
+## <a name="updates-for-version-12594"></a>Actualizaciones de la versión 1.2.594
+
+*Fecha de publicación: 14/01/2020*
+
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cC), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cI), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oh9C)
+
+- Ahora puedes seleccionar las pantallas que se van a usar para las conexiones de escritorio. Para cambiar esta configuración, haz clic con el botón derecho en el icono de conexión a escritorio y selecciona **Configuración**.
+- Se corrigió un problema que provocaba que la configuración de conexión no mostrara los factores de escala disponibles correctos.
+- Se corrigió un problema que provocaba que el Narrador no pudiera leer el cuadro de diálogo mostrado mientras se iniciaba la conexión.
+- Se corrigió un problema que provocaba que se mostrara un nombre de usuario incorrecto cuando los nombres de Azure Active Directory y Active Directory no coincidían.
+- Se corrigió un problema que provocaba que el cliente dejara de responder al iniciar una conexión mientras no estaba conectado a ninguna red.
+- Se corrigió un problema que provocaba que el cliente dejara de responder al conectar un casco.
 
 ## <a name="updates-for-version-12535"></a>Actualizaciones para la versión 1.2.535
 
 *Fecha de publicación: 04/12/2019*
 
-Descargar: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jH), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jL), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k27O)
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jH), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jL), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k27O)
 
 - Ahora puedes obtener acceso directo a la información sobre las actualizaciones, gracias al botón para obtener más opciones de la barra de comandos que está en la parte superior del cliente.
 - Ahora puedes notificar los comentarios desde la barra de comandos del cliente.
@@ -50,7 +63,7 @@ Descargar: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/
 
 *Fecha de publicación: 12/11/2019*
 
-Descargar: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48kow), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48koA), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48zYj)
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48kow), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48koA), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48zYj)
 
 - Ya están disponibles las versiones de 32 bits y ARM64 del cliente.
 - Ahora, el cliente guarda los cambios que realizas en la barra de conexión (como su posición, tamaño y estado anclado) y aplica los cambios en las sesiones.
@@ -70,7 +83,7 @@ Descargar: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/
 
 *Fecha de publicación: 17/09/2019*
 
-Descargar: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3LkSa)
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3LkSa)
 
 - Se han mejorado los idiomas de reserva para la versión localizada. (Por ejemplo, FR-CA se mostrará correctamente en francés, en lugar de en inglés).
 - Al quitar una suscripción, el cliente ahora quita correctamente las credenciales guardadas del Administrador de credenciales.

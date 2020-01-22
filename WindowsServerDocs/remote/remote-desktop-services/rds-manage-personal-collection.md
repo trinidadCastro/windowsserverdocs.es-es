@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 6bf0ad3a2cd35c9794fd13631ed29df94725685c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7be6b2bfe1105357811927f5da7092e8c16c3446
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387410"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949846"
 ---
-## <a name="manage-your-personal-desktop-session-collections"></a>Administrar tus colecciones de sesiones de escritorios personales
+# <a name="manage-your-personal-desktop-session-collections"></a>Administrar tus colecciones de sesiones de escritorios personales
 
 Usa la siguiente información para administrar una colección de sesiones de escritorios personales en los Servicios de Escritorio remoto.
 
-### <a name="manually-assign-a-user-to-a-personal-session-host"></a>Asignar manualmente un usuario a un host de sesión personal
+## <a name="manually-assign-a-user-to-a-personal-session-host"></a>Asignar manualmente un usuario a un host de sesión personal
 Usa el cmdlet **Set-RDPersonalSessionDesktopAssignment** para asignar manualmente un usuario a un servidor host de sesión personal en la colección. El cmdlet admite los parámetros siguientes:
 
 -CollectionName \<cadena\>
@@ -49,7 +49,7 @@ El cmdlet **Import-RDPersonalSessionDesktopAssignment** importa las asociaciones
 
 **–Path**: Especifica la ruta de acceso y el nombre del archivo que se va a importar.
  
-### <a name="removing-a-user-assignment-from-a-personal-session-host"></a>Quitar una asignación de usuario de un host de sesión personal
+## <a name="removing-a-user-assignment-from-a-personal-session-host"></a>Quitar una asignación de usuario de un host de sesión personal
 Usa el cmdlet **Remove-RDPersonalSessionDesktopAssignment** para quitar la asociación entre un escritorio de sesión personal y un usuario. El cmdlet admite los parámetros siguientes:
 
 -CollectionName \<cadena\>
@@ -64,7 +64,7 @@ Usa el cmdlet **Remove-RDPersonalSessionDesktopAssignment** para quitar la asoci
 
 **–Force**: Obliga al comando a ejecutarse sin solicitar la confirmación del usuario.
 
-### <a name="query-user-assignments"></a>Consultar las asignaciones de usuario
+## <a name="query-user-assignments"></a>Consultar las asignaciones de usuario
 Usa el cmdlet **Get-RDPersonalSessionDesktopAssignment** para obtener una lista de los escritorios de sesión personal y las cuentas de usuario asociadas. El cmdlet admite los parámetros siguientes:
 
 -CollectionName \<cadena\>
@@ -87,4 +87,4 @@ El cmdlet **Export-RDPersonalPersonalDesktopAssignment** exporta las asociacione
 -Path \<cadena\>
 
 
-Todos los nuevos cmdlets admiten los parámetros comunes: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer y -OutVariable. Para obtener más información, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/p/?LinkID=113216).
+Todos los nuevos cmdlets admiten los parámetros comunes: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer y -OutVariable. Para obtener más información, consulta [about_CommonParameters](https://go.microsoft.com/fwlink/p/?LinkID=113216).

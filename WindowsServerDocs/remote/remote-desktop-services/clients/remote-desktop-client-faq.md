@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 54ed455955053ebb234864f827759385ecf3d3c5
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 8ab42d7781c547d516a51c89e9c8ecba0ff72ad6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935035"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950429"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>Preguntas más frecuentes sobre los clientes de Escritorio remoto
 
@@ -67,7 +67,7 @@ Toma nota del nombre de este equipo en **How to connect to this PC** (Cómo cone
 Puedes conceder permiso para que usuarios específicos accedan a este equipo; para hacerlo, haz clic en **Select users that can remotely access this PC** (Seleccionar los usuarios que pueden obtener acceso remoto a este equipo).
 Los miembros del grupo de administradores tienen acceso de forma automática.
 
-En Windows 8.1, sigue las instrucciones para permitir conexiones remotas que aparecen en [Conectarse a otro equipo mediante Conexión a Escritorio remoto](https://support.microsoft.com/en-us/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection#1TC=windows-8).
+En Windows 8.1, sigue las instrucciones para permitir conexiones remotas que aparecen en [Conectarse a otro equipo mediante Conexión a Escritorio remoto](https://support.microsoft.com/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection#1TC=windows-8).
 
 
 

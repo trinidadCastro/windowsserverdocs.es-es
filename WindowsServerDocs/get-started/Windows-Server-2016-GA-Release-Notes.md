@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 4e2f7cbaed42dd1c1b1884438467cf59f1529f0c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 64c0daa8ecc2d6b196d4305e3246dadeebf7075a
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391541"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948341"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>Notas de la versión: Problemas importantes en Windows Server 2016
 
@@ -42,7 +42,7 @@ Para evitar esta situación, tras el primer inicio, defina el administrador de t
 ## <a name="containers"></a>Contenedores
 
 [comment]: # (ID: 371; Remitente: taylorb; estado: firmado)
-- Antes de que uses los contenedores, instala la [Actualización de la pila de mantenimiento de Windows 10, versión 1607: 23 de agosto de 2016](https://support.microsoft.com/en-us/kb/3176936) o cualquier actualización posterior disponible. De lo contrario, puede producirse una serie de problemas, incluidos los errores de compilación, inicio o ejecución de contenedores, y errores similares a "Error de CreateProcess en Win32: El servidor RPC no está disponible".
+- Antes de que uses los contenedores, instala la [Actualización de la pila de mantenimiento de Windows 10, versión 1607: 23 de agosto de 2016](https://support.microsoft.com/kb/3176936) o cualquier actualización posterior disponible. De lo contrario, puede producirse una serie de problemas, incluidos los errores de compilación, inicio o ejecución de contenedores, y errores similares a "Error de CreateProcess en Win32: El servidor RPC no está disponible".
 
 [comment]: # (ID: 373; Remitente: plang; estado: firmado)
 - El proveedor de NanoServerPackage OneGet no funciona en los contenedores de Windows. Para solucionar este problema, utilice Find-NanoServerPackage y Save-NanoServerPackage en un equipo diferente (no en un contenedor) para descargar el paquete necesario. Después copie los paquetes en el contenedor e instálelos.
@@ -50,12 +50,12 @@ Para evitar esta situación, tras el primer inicio, defina el administrador de t
 ## <a name="device-guard"></a>Device Guard
 
 [comment]: # (ID: 369; Remitente: nirb; estado: firmado)
-Si usas la protección basada en virtualización de la integridad del código o de máquinas virtuales blindadas (que utilizan protección basada en virtualización de la integridad del código), debes tener en cuenta que estas tecnologías podrían ser incompatibles con algunos dispositivos y aplicaciones. Te recomendamos que pruebes estas configuraciones en el laboratorio antes de habilitar las características en sistemas de producción. Si no lo haces, podrían producirse pérdidas de datos inesperadas o errores de detención.
+Si usas la protección basada en virtualización de la integridad del código o máquinas virtuales blindadas (que utilizan protección basada en virtualización de la integridad del código), debes tener en cuenta que estas tecnologías podrían ser incompatibles con algunos dispositivos y aplicaciones. Te recomendamos que pruebes estas configuraciones en el laboratorio antes de habilitar las características en sistemas de producción. Si no lo haces, podrían producirse pérdidas de datos inesperadas o errores de detención.
 
 ## <a name="microsoft-exchange"></a>Microsoft Exchange
 
 [comment]: # (ID: 375; Remitente: wgries; estado: firmado)
-Si intentas ejecutar Microsoft Exchange 2016 CU3 en Windows Server 2016, se producirán errores en el proceso del host IIS W3WP.exe. Por el momento no hay ninguna solución alternativa al respecto. Deberías posponer la implementación de Exchange 2016 CU3 en Windows Server 2016 hasta que esté disponible una corrección compatible.
+Si intentas ejecutar Microsoft Exchange 2016 CU3 en Windows Server 2016, se producirán errores en el proceso del host IIS W3WP.exe. Por el momento no hay ninguna solución alternativa al respecto. Deberías posponer la implementación de Exchange 2016 CU3 en Windows Server 2016 hasta que haya disponible una corrección compatible.
 
 ## <a name="remote-server-administration-tools-rsat"></a>Herramientas de administración remota del servidor (RSAT)
 
@@ -69,7 +69,7 @@ Para evitar esto, actualice el equipo cliente a la Actualización de aniversario
 [comment]: # (ID: 369; Remitente: nirb; estado: firmado)  
 - Asegúrate de que has instalado todas las actualizaciones disponibles antes de implementar las máquinas virtuales blindadas en la producción.
 
-- Si usas la protección basada en virtualización de la integridad del código o de máquinas virtuales blindadas (que utilizan protección basada en virtualización de la integridad del código), debes tener en cuenta que estas tecnologías podrían ser incompatibles con algunos dispositivos y aplicaciones. Te recomendamos que pruebes estas configuraciones en el laboratorio antes de habilitar las características en sistemas de producción. Si no lo haces, podrían producirse pérdidas de datos inesperadas o errores de detención.
+- Si usas la protección basada en virtualización de la integridad del código o máquinas virtuales blindadas (que utilizan protección basada en virtualización de la integridad del código), debes tener en cuenta que estas tecnologías podrían ser incompatibles con algunos dispositivos y aplicaciones. Te recomendamos que pruebes estas configuraciones en el laboratorio antes de habilitar las características en sistemas de producción. Si no lo haces, podrían producirse pérdidas de datos inesperadas o errores de detención.
 
 ## <a name="start-menu"></a>Menú Inicio
 
@@ -88,7 +88,7 @@ Algunos sistemas pueden presentar un rendimiento de almacenamiento reducido al e
 
 Este documento se proporciona “tal cual”. La información y las vistas expresadas en este documento, incluidas las direcciones URL y otras referencias a sitios web de Internet, pueden cambiar sin previo aviso.  
 
-Este documento no le proporciona derechos legales sobre ninguna propiedad intelectual en ningún producto de Microsoft. Puedes copiarlo y usarlo como referencia interna.  
+Este documento no le proporciona derechos legales sobre ninguna propiedad intelectual en ningún producto de Microsoft. Puede copiar y usar este documento para su referencia interna.  
 
 &copy; 2016 Microsoft Corporation. Todos los derechos reservados.  
 

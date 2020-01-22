@@ -11,13 +11,13 @@ ms.date: 07/06/2018
 ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: dougkim
-ms.openlocfilehash: 7ff88368c937890d3d5c4f650f6c4c08d404069f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+manager: lizross
+ms.openlocfilehash: cf189b15ca15fb556424b5e4931f19d4be356d4d
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387863"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919956"
 ---
 # <a name="desktop-hosting-service"></a>Servicio de hospedaje de escritorio
 
@@ -31,7 +31,7 @@ Como se indica en [Roles de servicio de Escritorio remoto](rds-roles.md), cada r
 
 El servicio de hospedaje de escritorio del proveedor se implementa como un conjunto de entornos de inquilino aislados. El entorno de cada inquilino consta de un contenedor de almacenamiento, un conjunto de máquinas virtuales y una combinación de servicios de Azure, donde todos se comunican a través de una red virtual aislada. Cada máquina virtual contiene uno o varios de los componentes que constituyen el entorno de escritorio hospedado del inquilino. En los siguientes apartados se describen los componentes que constituyen el entorno de escritorio hospedado de cada inquilino.
 
-## <a name="active-directory-domain-services"></a>Active Directory Domain Services
+## <a name="active-directory-domain-services"></a>Servicios de dominio de Active Directory
 
 Active Directory Domain Services (AD DS) proporciona información sobre el dominio y el bosque de tal forma que los usuarios del inquilino pueden iniciar sesión en los escritorios y aplicaciones para realizar sus cargas de trabajo. Esto también te permite configurar los recursos compartidos de archivos y bases de datos (o conectarte a ellos) que necesitan las aplicaciones de Windows.
 

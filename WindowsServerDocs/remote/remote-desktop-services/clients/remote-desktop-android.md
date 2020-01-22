@@ -10,16 +10,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
 ms.date: 12/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a1349f1181cdf2ead51a263a3ba62c1789c76b3b
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+ms.openlocfilehash: cb0fa7009c4a8fe53810f8b5f058e659c2391dc1
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700168"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919836"
 ---
 # <a name="get-started-with-the-android-client"></a>Introducción al cliente de Android
 
@@ -219,13 +219,13 @@ El cliente utiliza gestos táctiles estándar. También se pueden usar gestos t�
 > [!NOTE]
 > Los gestos táctiles nativos se admiten en el modo de toque directo de Windows 8 o versiones posteriores.
 
-| Modo de mouse    | Acción del mouse         | Gesto                                                                 |
+| Modo del mouse    | Acción del mouse         | Gesto                                                                 |
 |---------------|----------------------|-------------------------------------------------------------------------|
 | Toque directo  | Clic con el botón izquierdo           | Pulsar con un dedo                                                     |
-| Toque directo  | Haz clic con el botón secundario          | Mantener pulsado con un dedo y soltar después                              |
+| Toque directo  | Haga clic con el botón secundario en          | Mantener pulsado con un dedo y soltar después                              |
 | Puntero | Zoom                 | Usa dos dedos y acércalos para alejar o sepáralos para acercar. |
 | Puntero | Clic con el botón izquierdo           | Pulsar con un dedo                                                     |
 | Puntero | Hacer clic con el botón izquierdo y arrastrar  | Pulsar dos veces con un dedo y mantener pulsado y, a continuación, arrastrar                          |
-| Puntero | Haz clic con el botón secundario          | Pulsar con dos dedos                                                    |
+| Puntero | Haga clic con el botón secundario en          | Pulsar con dos dedos                                                    |
 | Puntero | Clic con el botón derecho y arrastrar | Pulsar dos veces con dos dedos y mantener pulsado y, a continuación, arrastrar                         |
 | Puntero | Rueda del ratón          | Mantener pulsado con dos dedos y, a continuación, arrastrar hacia arriba o hacia abajo.                     |

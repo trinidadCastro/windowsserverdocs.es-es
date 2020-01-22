@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 11/12/2019
 ms.topic: get-started-article
-ms.openlocfilehash: e2879c56b1dd41b8d357959cca473dd69da77d10
-ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
+ms.openlocfilehash: f2320b80fb372a227098f952dc8e7f0758420f34
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73956079"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947828"
 ---
 # <a name="kms-client-setup-keys"></a>Claves de configuración del cliente KMS
 
@@ -32,9 +32,9 @@ Si convierte un equipo de un host de KMS, MAK o edición comercial de Windows a 
 | Si desea...    | ...use estos recursos   |
 |--------------------|------------------------|
 | Activar Windows fuera de un escenario de activación por volumen (es decir, estás intentando activar una versión comercial de Windows), **estas claves no funcionarán**. | Use estos vínculos para versiones comerciales de Windows: |
-| Resolver este error que aparece al intentar activar un sistema Windows 8.1, Windows Server 2012 R2 o un sistema más reciente: "Error: 0xC004F050 El Servicio de licencias de software notificó que la clave de producto no es válida"… | [Instale esta actualización](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) en el host de KMS si está ejecutando Windows 8.1, Windows Server 2012 R2, Windows 8 o Windows Server 2012. |
+| Resolver este error que aparece al intentar activar un sistema Windows 8.1, Windows Server 2012 R2 o un sistema más reciente: “Error: 0xC004F050 El Servicio de licencias de software notificó que la clave de producto no es válida"… | [Instale esta actualización](https://support.microsoft.com/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) en el host de KMS si está ejecutando Windows 8.1, Windows Server 2012 R2, Windows 8 o Windows Server 2012. |
 
--   [Obtener Windows 10](https://www.microsoft.com/en-us/windows/get-windows-10)
+-   [Obtener Windows 10](https://www.microsoft.com/windows/get-windows-10)
 
 -   [Obtener una clave de producto nueva de Windows](https://support.microsoft.com/help/10749/windows-product-key)
 
@@ -54,7 +54,7 @@ Si convierte un equipo de un host de KMS, MAK o edición comercial de Windows a 
 
 ## <a name="windows-server-ltscltsb-versions"></a>Versiones LTSC/LTSB de Windows Server
 
-### <a name="windows-server-2019"></a>Windows Server 2019
+### <a name="windows-server-2019"></a>Windows Server 2019
 | Edición de sistema operativo       | Clave de configuración de cliente de KMS          |
 |--------------------------------|-------------------------------|
 | Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG  | 
@@ -66,12 +66,12 @@ Si convierte un equipo de un host de KMS, MAK o edición comercial de Windows a 
 | Edición de sistema operativo       | Clave de configuración de cliente de KMS          |
 |--------------------------------|-------------------------------|
 | Windows Server 2016 Datacenter | CB7KF-BWN84-R7R2Y-793K2-8XDDG |
-| Windows Server 2016 Standard   | WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY |
+| Windows Server 2016 Standard   | WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY |
 | Windows Server 2016 Essentials | JCKRF-N37P4-C2D82-9YXRT-4M63B |
 
 ## <a name="windows-10-all-supported-semi-annual-channel-versions"></a>Windows 10, todas las versiones admitidas de canal semianual
 
-Consulta la [hoja de información del ciclo de vida de Windows](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet) para obtener información acerca de las versiones compatibles y el final de las fechas de servicio.
+Consulta la [hoja de información del ciclo de vida de Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet) para obtener información acerca de las versiones compatibles y el final de las fechas de servicio.
 
 | Edición de sistema operativo          | Clave de configuración de cliente de KMS          |
 |-----------------------------------|-------------------------------|
@@ -79,11 +79,11 @@ Consulta la [hoja de información del ciclo de vida de Windows](https://support.
 |Windows 10 Pro N|MH37W-N47XK-V7XM9-C7227-GCQG9|
 |Windows 10 Pro for Workstations|NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J|
 |Windows 10 Pro for Workstations N|9FNHH-K3HBT-3W4TD-6383H-6XYWF|
-|Windows 10 Pro Education|6TP4R-GNPTD-KYYHQ-7B7DP-J447Y|
+|Windows 10 Pro Education|6TP4R-GNPTD-KYYHQ-7B7DP-J447Y|
 |Windows 10 Pro Education N|YVWGF-BXNMC-HTQYQ-CPQ99-66QFC|
-|Windows 10 Education|NW6C2-QMPVW-D7KKK-3GKT6-VCFB2|
+|Windows 10 Education|NW6C2-QMPVW-D7KKK-3GKT6-VCFB2|
 |Windows 10 Education N |2WH4N-8QGBV-H22JP-CT43Q-MDWWJ|
-|Windows 10 Enterprise  |NPPR9-FWDCX-D2C8J-H872K-2YT43|
+|Windows 10 Enterprise  |NPPR9-FWDCX-D2C8J-H872K-2YT43|
 |Windows 10 Enterprise N    |DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4|
 |Windows 10 Enterprise G|YYVX9-NTFWV-6MDM3-9PT4T-4M68B|
 |Windows 10 Enterprise G N|44RPN-FTY23-9VTTB-MP9BX-T84FV|
@@ -127,7 +127,7 @@ Consulta la [hoja de información del ciclo de vida de Windows](https://support.
 | Windows Server Datacenter | 6Y6KB-N82V8-D8CQV-23MJW-BWTG6  | 
 | Windows Server Standard   | DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4  |
 
-### <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
+### <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
 
 | Edición de sistema operativo               | Clave de configuración de cliente de KMS          |
 |----------------------------------------|-------------------------------|
@@ -176,7 +176,7 @@ Consulta la [hoja de información del ciclo de vida de Windows](https://support.
 
 ## <a name="earlier-versions-of-windows"></a>Versiones anteriores de Windows
 
-### <a name="windows-81"></a>Windows 8.1
+### <a name="windows-81"></a>Windows 8.1
 
 | Edición de sistema operativo               | Clave de configuración de cliente de KMS          |
 |----------------------------------------|-------------------------------|
@@ -207,7 +207,7 @@ Consulta la [hoja de información del ciclo de vida de Windows](https://support.
 | Windows 7 Enterprise E                           | C29WB-22CC8-VJ326-GHFJW-H9DH4 |
 
 
-Consulte también
+Consulta también
 
 • [Plan de activación de volumen](https://technet.microsoft.com/library/jj134042(v=ws.11).aspx)
 

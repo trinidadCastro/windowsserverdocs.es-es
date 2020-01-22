@@ -7,13 +7,13 @@ ms.author: helohr
 ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
-manager: dougkim
-ms.openlocfilehash: f26f75b8ce3f5438362c15b84aeca9339b95ebbc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+manager: lizross
+ms.openlocfilehash: 44b98b485b69720a1459f052b68d15617954bffe
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387203"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949823"
 ---
 # <a name="remote-desktop-services-roles"></a>Roles de Servicios de Escritorio remoto
 
@@ -21,7 +21,7 @@ ms.locfileid: "71387203"
 
 En este artículo se describen los roles de un entorno de Servicios de Escritorio remoto.
 
-## <a name="remote-desktop-session-host"></a>Host de sesión de Escritorio remoto
+## <a name="remote-desktop-session-host"></a>Host de sesión de escritorio remoto
 
 El host de sesión de Escritorio remoto contiene las aplicaciones y escritorios basados en sesiones que compartes con los usuarios. Los usuarios acceden a estos escritorios y aplicaciones mediante alguno de los clientes de Escritorio remoto que se ejecutan en Windows, MacOS, iOS y Android. Los usuarios también pueden conectarse mediante un explorador compatible con el cliente web.
 
@@ -101,4 +101,4 @@ Para obtener más información, consulta los artículos siguientes:
 * [Licencia para la implementación de RDS con licencias de acceso de cliente (CAL)](rds-client-access-license.md)
 * [Activación del servidor de licencias de Servicios de Escritorio remoto](rds-activate-license-server.md)
 * [Seguimiento de las licencias de acceso de cliente para Servicios de Escritorio remoto (CAL de RDS)](rds-track-cals.md)
-* [Programa de licencias por volumen de Microsoft: Opciones de licencia para los proveedores de servicios](https://www.microsoft.com/en-us/Licensing/licensing-programs/spla-program.aspx)
+* [Programa de licencias por volumen de Microsoft: Opciones de licencia para los proveedores de servicios](https://www.microsoft.com/Licensing/licensing-programs/spla-program.aspx)

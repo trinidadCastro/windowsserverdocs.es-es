@@ -14,16 +14,16 @@ manager: dongill
 ms.author: elizapo
 date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 700d419d06c0b007ed05be4f82137828f52143e1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8361d1171c2526e701a5418696761a8400c47ca3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404145"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949871"
 ---
 # <a name="get-started-with-the-ios-client"></a>Introducción al cliente de iOS
 
->Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016 y Windows Server 2012 R2
+>Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016 y Windows Server 2012 R2
 
 El cliente Escritorio remoto para iOS se puede usar para trabajar con aplicaciones, recursos y equipos de escritorio de Windows desde un dispositivo iOS (iPhone e iPad).
 
@@ -87,7 +87,7 @@ Los recursos remotos se mostrarán en el Centro de conexión.
 Sigue estos pasos para empezar a usar Escritorio remoto en un dispositivo iOS:
 
 1. Descarga el cliente de Escritorio remoto de Microsoft de [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8).
-2. [Configura el equipo para que acepte conexiones remotas](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop).
+2. [Configura tu equipo para que acepte conexiones remotas](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop).
 3. Agrega una [conexión a Escritorio remoto](#add-a-remote-desktop-connection) o un [recurso remoto](#add-a-remote-resource). Usa una conexión para conectarte directamente a un equipo Windows y un recurso remoto para usar un programa de RemoteApp, un escritorio basado en sesión o un escritorio virtual publicado de forma local mediante Conexión de RemoteApp y Escritorio. Esta característica está disponible habitualmente en entornos corporativos.
 
 ### <a name="add-a-remote-desktop-connection"></a>Adición de una conexión a Escritorio remoto
@@ -200,9 +200,9 @@ La barra de comandos ha reemplazado a la barra de utilidad, que comenzó en la v
 El cliente utiliza gestos táctiles estándar. También se pueden usar gestos táctiles para replicar acciones del ratón en el escritorio remoto. Los modos del ratón disponibles se definen en la tabla siguiente.
 
 > [!NOTE]
-> En la interacción con Windows 8, o las versiones más recientes, se admiten los gestos táctiles nativos en modo de toque directo. Para más información acerca de los gestos de Windows 8, consulta[Entrada táctil: deslizar el dedo, pulsar y mucho más](https://windows.microsoft.com/en-US/windows-8/touch-swipe-tap-beyond).
+> En la interacción con Windows 8, o las versiones más recientes, se admiten los gestos táctiles nativos en modo de toque directo. Para más información acerca de los gestos de Windows 8, consulta[Entrada táctil: deslizar el dedo, pulsar y mucho más](https://windows.microsoft.com/windows-8/touch-swipe-tap-beyond).
 
-| Modo de mouse    | Operación del ratón      | Gesto                                                    |
+| Modo del mouse    | Operación del ratón      | Gesto                                                    |
 |---------------|----------------------|------------------------------------------------------------|
 | Toque directo  | Hacer clic con el botón izquierdo           | Pulsación con un dedo                                               |
 | Toque directo  | Hacer clic con el botón derecho          | Mantener pulsado con un dedo                                      |

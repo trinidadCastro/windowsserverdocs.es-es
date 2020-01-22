@@ -10,14 +10,14 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 76cfd0f0cca18fb072883a9e14fae420516bd329
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: afcda1d3f94c5f6fa7524317ac21c5540c07895c
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391361"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948263"
 ---
-# <a name="whats-new-in-windows-server-2016"></a>Novedades en Windows Server 2016
+# <a name="whats-new-in-windows-server-2016"></a>What's New in Windows Server 2016 (Novedades en Windows Server 2016)
 
 >Se aplica a: Windows Server 2016
 
@@ -65,7 +65,7 @@ Las nuevas características de Identidad aumentan la capacidad de las organizaci
 ### <a name="active-directory-certificate-services"></a>Servicios de certificados de Active Directory  
 Servicios de certificados de Active Directory (AD CS) en Windows Server 2016 aumenta la compatibilidad para la atestación de claves de TPM: ahora puedes usar el KSP de tarjeta inteligente para atestación de la clave, y los dispositivos que no están unidos al dominio ahora pueden utilizar la inscripción NDES para obtener los certificados que pueden recibir atestación para las claves que están en TPM.  
 
-### <a name="active-directory-domain-services"></a>Active Directory Domain Services  
+### <a name="active-directory-domain-services"></a>Servicios de dominio de Active Directory  
 Los Servicios de dominio de Active Directory incluyen mejoras que ayudan a las organizaciones a proteger los entornos de Active Directory y mejoran la administración de identidades tanto para dispositivos personales como corporativos. Para más información, vea [What's new in Active Directory Domain Services (AD DS) in Windows Server 2016](../identity/whats-new-active-directory-domain-services.md) (Novedades de Active Directory Domain Services para Windows Server 2016).   
 
 ### <a name="active-directory-federation-services"></a>Servicios de federación de Active Directory (AD FS)  
@@ -98,7 +98,7 @@ Para ayudar al equipo responsable a investigar sistemas comprometidos, a veces c
 
 Para obtener información, consulta [PowerShell ♥ the Blue Team](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/).
 
-## <a name="networkingnetworkingnetworkingmd"></a>[Funciones de red](../networking/Networking.md)  
+## <a name="networkingnetworkingnetworkingmd"></a>[Redes](../networking/Networking.md)  
 Esta área abarca los productos y las características de redes dirigidos al profesional de TI para diseñar, implementar y mantener Windows Server 2016.  
 
 ### <a name="software-defined-networking"></a>Redes definidas por software
@@ -136,7 +136,7 @@ Protección de flujo de control (CFG) es una característica de seguridad de pla
 
 El almacenamiento en Windows Server 2016 incluye nuevas características y mejoras de almacenamiento definido por el software, así como servidores de archivos tradicionales. A continuación se muestran algunas de las nuevas características; para consultar más mejoras y detalles, vea [Novedades de Espacios de almacenamiento en Windows Server 2016](../storage/whats-new-in-storage.md).
 
-### <a name="storage-spaces-direct"></a>Espacios de almacenamiento directo
+### <a name="storage-spaces-direct"></a>Espacios de almacenamiento directos
 
 Espacios de almacenamiento directo permite la creación de almacenamiento altamente disponible y escalable con servidores de almacenamiento local. Simplifica la implementación y administración de los sistemas de almacenamiento definidos por software y desbloquea el uso de las nuevas clases de dispositivos de disco, como SSD de SATA y dispositivos de disco NVMe, que no estaban disponibles con Espacios de almacenamiento de clúster con discos compartidos.
 
@@ -195,10 +195,10 @@ En Microsoft Windows 10 y Windows Server 2016, se agregaron tres característica
 
 - El límite de nombre DSN se amplió de 256 bytes a 3072 bytes. Para obtener más información, consulta [IDtcToXaHelperFactory::Create](https://msdn.microsoft.com/library/ms686861(v=vs.85).aspx), [IDtcToXaHelperSinglePipe::XARMCreate](https://msdn.microsoft.com/library/ms679248(v=vs.85).aspx) o [IDtcToXaMapper::RequestNewResourceManager](https://msdn.microsoft.com/library/ms680310(v=vs.85).aspx).
 
-- Se mejoró el seguimiento, lo que te permite establecer una clave del registro para incluir una ruta de acceso del archivo de imagen en el nombre de archivo del registro de seguimiento, para que puedas saber qué archivo del registro de seguimiento debes comprobar. Para obtener más información sobre cómo configurar el seguimiento de MSDTC, consulta [Cómo habilitar el seguimiento de diagnóstico para MS DTC en un equipo basado en Windows](https://support.microsoft.com/en-us/kb/926099).
+- Se mejoró el seguimiento, lo que te permite establecer una clave del registro para incluir una ruta de acceso del archivo de imagen en el nombre de archivo del registro de seguimiento, para que puedas saber qué archivo del registro de seguimiento debes comprobar. Para obtener más información sobre cómo configurar el seguimiento de MSDTC, consulta [Cómo habilitar el seguimiento de diagnóstico para MS DTC en un equipo basado en Windows](https://support.microsoft.com/kb/926099).
 
 
 
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Consulte también  
 -   [Notas de la versión: Problemas importantes en Windows Server 2016](Windows-Server-2016-GA-Release-Notes.md)  
 

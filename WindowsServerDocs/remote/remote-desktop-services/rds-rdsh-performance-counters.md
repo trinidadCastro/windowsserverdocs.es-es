@@ -10,12 +10,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: b59d93d576967ee83b3efecc2630034eab919bf2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7b222104abd5b0b964bac748c3be15049075191d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403906"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950425"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Uso de contadores de rendimiento para diagnosticar problemas de rendimiento de las aplicaciones en los hosts de sesión de Escritorio remoto
 
@@ -140,7 +140,7 @@ Las herramientas de supervisión pueden consumir este contador mediante el uso d
 
 ## <a name="download-windows-server-insider-software"></a>Descarga del software Windows Server Insider
 
-Los usuarios registrados de Insider puede ir directamente a la [página de descarga de Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) para obtener las descargas más recientes del software Insider.  Para aprender a registrarse como usuario de Insider, consulte [Introducción a Windows Server](https://insider.windows.com/en-us/for-business-getting-started-server/).
+Los usuarios registrados de Insider puede ir directamente a la [página de descarga de Windows Server Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver) para obtener las descargas más recientes del software Insider.  Para aprender a registrarse como usuario de Insider, consulte [Introducción a Windows Server](https://insider.windows.com/en-us/for-business-getting-started-server/).
 
 ## <a name="share-your-feedback"></a>Comparte tus comentarios
 

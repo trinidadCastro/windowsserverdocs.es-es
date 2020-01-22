@@ -11,13 +11,13 @@ ms.date: 12/02/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 author: Heidilohr
-manager: daveba
-ms.openlocfilehash: 32781946ad2c49ec51e11dfe1e8af078425d35b0
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+manager: lizross
+ms.openlocfilehash: 693d1abd91fbfa2d44a6af42dd9f5338bd461927
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700934"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919941"
 ---
 # <a name="remote-desktop-workloads"></a>Cargas de trabajo de Escritorio remoto
 
@@ -27,9 +27,9 @@ En la tabla siguiente se describe cada carga de trabajo. Los "usuarios de ejempl
 
 | Tipo de carga de trabajo | Usuarios de ejemplo | Aplicaciones de ejemplo |
 | --- | --- | --- |
-| Claro | Usuarios que realizan tareas básicas de entrada de datos | Aplicaciones de entrada de base de datos, interfaces de línea de comandos |
+| Ligero | Usuarios que realizan tareas básicas de entrada de datos | Aplicaciones de entrada de base de datos, interfaces de línea de comandos |
 | Medio | Consultores e investigadores de mercados | Aplicaciones de entrada de base de datos, interfaces de línea de comandos, Microsoft Word, páginas web estáticas |
 | Pesado | Ingenieros de software, creadores de contenido | Aplicaciones de entrada de base de datos, interfaces de línea de comandos, Microsoft Word, páginas web estáticas, Microsoft Outlook, Microsoft PowerPoint, páginas web dinámicas |
-| Alimentación | Diseñadores gráficos, responsables de modelos 3D, investigadores de aprendizaje automático | Aplicaciones de entrada de base de datos, interfaces de línea de comandos, Microsoft Word, páginas web estáticas, Microsoft Outlook, Microsoft PowerPoint, páginas web dinámicas, Adobe Photoshop, Adobe Illustrator, diseño asistido por ordenador (CAD), fabricación asistida por ordenador (CAM) |
+| Potencia | Diseñadores gráficos, responsables de modelos 3D, investigadores de aprendizaje automático | Aplicaciones de entrada de base de datos, interfaces de línea de comandos, Microsoft Word, páginas web estáticas, Microsoft Outlook, Microsoft PowerPoint, páginas web dinámicas, Adobe Photoshop, Adobe Illustrator, diseño asistido por ordenador (CAD), fabricación asistida por ordenador (CAM) |
 
 Para obtener información acerca de las recomendaciones de ajuste de tamaño, consulta [guía de tamaños de máquina virtual](virtual-machine-recs.md).

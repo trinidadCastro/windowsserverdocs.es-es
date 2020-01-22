@@ -9,16 +9,16 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: e6ff22d0563fa11aa633004966b2cd2648ba5877
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d60ba6ffd661aeb284a2ade775e14b9108cbb6c9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357704"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950535"
 ---
 # <a name="securing-privileged-access"></a>Protección del acceso con privilegios
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 La protección del acceso con privilegios es un primer paso crítico para establecer controles de seguridad para los recursos empresariales de una organización moderna. La seguridad de la mayoría, si no todos, los recursos empresariales de una organización de TI depende de la integridad de las cuentas con privilegios que realizan tareas de administración, gestión y desarrollo. Normalmente, a esas cuentas y otros elementos de acceso con privilegios se dirigen los ciberatacantes para obtener acceso a datos y sistemas mediante ataques de robo de credenciales como [pass-the-hash y pass-the-ticket](https://www.microsoft.com/pth).
 
@@ -90,7 +90,7 @@ Sigue las instrucciones del artículo [Administración de cuentas de acceso de e
 
 ### <a name="2-just-in-time-local-admin-passwords"></a>2. Contraseñas de administrador local Just-in-Time
 
-Para mitigar el riesgo de que un adversario robe un hash de contraseña de la cuenta de administrador local desde la base de datos SAM local y lo use para atacar a otros equipos, las organizaciones deben asegurarse de que cada equipo tenga una contraseña de administrador local única. La herramienta de la solución de contraseñas de administrador local (LAPS) puede configurar contraseñas aleatorias únicas en cada estación de trabajo y almacenarlas en un servidor de Active Directory (AD) protegido mediante una ACL. Solo los usuarios autorizados válidos pueden leer o solicitar el restablecimiento de estas contraseñas de cuenta de administrador local. Puedes obtener la solución de contraseñas de administrador local para su uso en estaciones de trabajo y servidores desde el [Centro de descarga de Microsoft](http://Aka.ms/LAPS).
+Para mitigar el riesgo de que un adversario robe un hash de contraseña de la cuenta de administrador local desde la base de datos SAM local y lo use para atacar a otros equipos, las organizaciones deben asegurarse de que cada equipo tenga una contraseña de administrador local única. La herramienta de la solución de contraseñas de administrador local (LAPS) puede configurar contraseñas aleatorias únicas en cada estación de trabajo y almacenarlas en un servidor de Active Directory (AD) protegido mediante una ACL. Solo los usuarios autorizados válidos pueden leer o solicitar el restablecimiento de estas contraseñas de cuenta de administrador local. Puedes obtener la solución de contraseñas de administrador local para su uso en estaciones de trabajo y servidores desde el [Centro de descarga de Microsoft](https://aka.ms/LAPS).
 
 Puedes consultar instrucciones adicionales sobre el funcionamiento de un entorno con LAPS y PAW en la sección [Estándares operativos basados en el principio de origen limpio](securing-privileged-access-reference-material.md#operational-standards-based-on-clean-source-principle).
 

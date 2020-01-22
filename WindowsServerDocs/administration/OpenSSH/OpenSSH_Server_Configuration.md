@@ -6,12 +6,12 @@ contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
 title: Configuración del servidor de OpenSSH para Windows
-ms.openlocfilehash: ed424c33c4cd2c19a9b5e985ab6083bcbcb9fbdc
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 5eb3d86950d169fd01512d330f0c04669beeffae
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546264"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259048"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>Configuración del servidor de OpenSSH para Windows 10, 1809 y Windows Server 2019
 
@@ -27,7 +27,7 @@ Para establecer el shell de comandos predeterminado, primero confirma que la car
 
 Shell de comandos | Comando que se va a usar
 ------------- | -------------- 
-Comando | ruta de acceso
+Comando | path
 PowerShell | $env:path
 
 La configuración del shell de SSH predeterminado se realiza en el registro de Windows. Para ello, se agrega la ruta de acceso completa al ejecutable del shell a Computer\HKEY_LOCAL_MACHINE\SOFTWARE\OpenSSH en el valor de cadena DefaultShell. 
@@ -84,7 +84,7 @@ Esta directiva solo es compatible con las sesiones SFTP. Una sesión remota en c
 
 ### <a name="hostkey"></a>HostKey
 
-Los valores predeterminados son %programdata%/ssh/ssh_host_ecdsa_key, %programdata%/ssh/ssh_host_ed25519_key y %programdata%/ssh/ssh_host_rsa_key. Si los valores predeterminados no están presentes, sshd los genera automáticamente durante un inicio del servicio.
+Los valores predeterminados son %programdata%/ssh/ssh_host_ecdsa_key, %programdata%/ssh/ssh_host_ed25519_key, %programdata%/ssh/ssh_host_dsa_key y %programdata%/ssh/ssh_host_rsa_key. Si los valores predeterminados no están presentes, sshd los genera automáticamente durante un inicio del servicio.
 
 ### <a name="match"></a>Coincidencia
 
@@ -99,7 +99,7 @@ No se aplica en Windows. Para evitar el inicio de sesión de administrador, usa 
 Si necesitas un registro basado en archivos, usa LOCAL0. Los registros se generan en %programdata%\ssh\logs.
 Cualquier otro valor, incluido el valor predeterminado AUTH, dirige los registros a ETW. Para obtener más información, consulta Instalaciones de registro en Windows.
 
-### <a name="not-supported"></a>No se admite 
+### <a name="not-supported"></a>Incompatible 
 
 Las siguientes opciones de configuración no están disponibles en la versión de OpenSSH que se incluye con Windows Server 2019 y Windows 10, 1809:
 

@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a875f8bddd934ac9fb70ca9c0b86772d9fa63b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de08101ed1d4d4527242778d657778f1a16b3dad
+ms.sourcegitcommit: 5b055fc1d73375f68149c214152f1d63396dd6ca
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404175"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76248407"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc"></a>Escritorio remoto: permitir el acceso al equipo
 
@@ -28,7 +28,7 @@ ms.locfileid: "71404175"
 Puedes usar Escritorio remoto para conectarte y controlar el equipo desde un dispositivo remoto mediante un [cliente de Escritorio remoto de Microsoft ](remote-desktop-clients.md) (disponible para Windows, iOS, macOS y Android). Cuando permites las conexiones remotas a tu equipo, puedes usar otro dispositivo para conectar tu equipo y tener acceso a todas las aplicaciones, archivos y recursos de red como si estuvieras sentado delante de su escritorio.  
 
 > [!NOTE]
-> Puedes usar Escritorio remoto para conectarte a Windows 10 Pro y Enterprise, Windows 8.1 y 8 Enterprise y Pro, Windows 7 Professional, Enterprise y Ultimate, y a las versiones de Windows Server más recientes que Windows Server 2008. No puedes conectarte a equipos que ejecutan la edición Home (como Windows 10 Home). 
+> Puedes usar Escritorio remoto para conectarte a Windows 10 Pro y Enterprise, Windows 8.1 y 8 Enterprise y Pro, Windows 7 Professional, Enterprise y Ultimate, y a las versiones de Windows Server posteriores a Windows Server 2008. No puedes conectarte a equipos que ejecutan una edición Home (como Windows 10 Home). 
 
 Para conectarse a un equipo remoto, ese equipo debe estar activado, debe tener una conexión de red, Escritorio remoto debe estar habilitado, debes tener acceso de red al equipo remoto (puede ser a través de Internet) y debes tener permiso para conectarte. Para tener permiso para conectarte, debes encontrarte en la lista de usuarios. Antes de iniciar una conexión, es una buena idea buscar el nombre del equipo al que te estás conectando y asegurarte de que las conexiones de Escritorio remoto estén permitidas a través de su firewall.
 
@@ -57,7 +57,7 @@ Para habilitar Escritorio remoto mediante las propiedades del sistema heredado, 
 
 ## <a name="should-i-enable-remote-desktop"></a>¿Cómo se habilita el Escritorio remoto?
 
-Si solo quieres acceder a tu equipo cuando estás físicamente sentado delante de él, no necesitas habilitar el Escritorio remoto. Al habilitar el Escritorio remoto, se abre un puerto en el equipo que esté visible para la red local. Solo debes habilitar el Escritorio remoto en redes de confianza, como las de tu casa. Tampoco quieres habilitar el Escritorio remoto en ningún equipo en el que el acceso esté estrictamente controlado.
+Si solo quieres acceder a tu equipo para usarlo físicamente, no necesitas habilitar el Escritorio remoto. Al habilitar el Escritorio remoto, se abre un puerto en el equipo que esté visible para la red local. Solo debes habilitar el Escritorio remoto en redes de confianza, como las de tu casa. Tampoco quieres habilitar el Escritorio remoto en ningún equipo en el que el acceso esté estrictamente controlado.
 
 Ten en cuenta que, cuando habilitas el acceso al Escritorio remoto, estás otorgando a cualquier usuario del grupo Administradores, así como a cualquier usuario adicional que selecciones, la capacidad de acceder de forma remota a tus cuentas en el equipo.
 

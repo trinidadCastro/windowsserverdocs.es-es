@@ -11,16 +11,16 @@ ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: 7f16d58eb6c5074c75f49ba7936c4d312a3dbda4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53793fc62b1bc1444c567f92c9f18642245fded9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390978"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948186"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Niveles funcionales de bosque y dominio
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 Los niveles funcionales determinan las funcionalidades disponibles de dominio o bosque de Active Directory Domain Services (AD DS). También determinan los sistemas operativos Windows Server que se pueden ejecutar en los controladores de dominio del dominio o del bosque. Sin embargo, los niveles funcionales no afectan a los sistemas operativos que se pueden ejecutar en las estaciones de trabajo y los servidores miembro que están unidos al dominio o al bosque.
 
@@ -28,9 +28,9 @@ Cuando implementes AD DS, establece los niveles funcionales de dominio y bosque
 
 Con el fin del ciclo de vida de Windows 2003, los controladores de dominio (DC) de Windows 2003 deben actualizarse a Windows Server 2008, 2008R2, 2012, 2012R2, 2016 o 2019. Como resultado, todos los controladores de dominio que ejecuten Windows Server 2003 deben quitarse del dominio.
 
-En los niveles funcionales de dominio de Windows Server 2008 y superior, se usa la Replicación del sistema de archivos distribuido (DFS) para replicar el contenido de la carpeta SYSVOL entre controladores de dominio. Si creas un nuevo dominio en el nivel funcional del dominio de Windows Server 2008 o superior, se usa automáticamente Replicación DFS para replicar SYSVOL. Si has creado el dominio en un nivel funcional inferior, tendrás que migrar del uso de FRS a la replicación DFS para SYSVOL. En el caso de los pasos de migración, puedes seguir los [procedimientos de TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) o puedes consultar el [conjunto de pasos simplificado en el blog de contenedor de archivos del equipo de almacenamiento](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).
+En los niveles funcionales de dominio de Windows Server 2008 y superior, se usa la Replicación del sistema de archivos distribuido (DFS) para replicar el contenido de la carpeta SYSVOL entre controladores de dominio. Si creas un nuevo dominio en el nivel funcional del dominio de Windows Server 2008 o superior, se usa automáticamente Replicación DFS para replicar SYSVOL. Si has creado el dominio en un nivel funcional inferior, tendrás que migrar del uso de FRS a la replicación DFS para SYSVOL. En el caso de los pasos de migración, puedes seguir los [procedimientos de TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) o puedes consultar el [conjunto de pasos simplificado en el blog de contenedor de archivos del equipo de almacenamiento](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).
 
-## <a name="windows-server-2019"></a>Windows Server 2019
+## <a name="windows-server-2019"></a>Windows Server 2019
 
 No se ha agregado ningún nuevo nivel funcional de bosque o dominio en esta versión.
 
@@ -40,7 +40,7 @@ El requisito mínimo para agregar un controlador de dominio de Windows Server 20
 
 Sistema operativo de controlador de dominio admitido:
 
-* Windows Server 2019
+* Windows Server 2019
 * Windows Server 2016
 
 ### <a name="windows-server-2016-forest-functional-level-features"></a>Características del nivel funcional de bosque de Windows Server 2016
@@ -61,9 +61,9 @@ Sistema operativo de controlador de dominio admitido:
 
 Sistema operativo de controlador de dominio admitido:
 
-* Windows Server 2019
+* Windows Server 2019
 * Windows Server 2016
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 
 ### <a name="windows-server-2012r2-forest-functional-level-features"></a>Características del nivel funcional de bosque de Windows Server 2012R2
 
@@ -86,9 +86,9 @@ Sistema operativo de controlador de dominio admitido:
 
 Sistema operativo de controlador de dominio admitido:
 
-* Windows Server 2019
+* Windows Server 2019
 * Windows Server 2016
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2012
 
 ### <a name="windows-server-2012-forest-functional-level-features"></a>Características del nivel funcional de bosque de Windows Server 2012
@@ -104,9 +104,9 @@ Sistema operativo de controlador de dominio admitido:
 
 Sistema operativo de controlador de dominio admitido:
 
-* Windows Server 2019
+* Windows Server 2019
 * Windows Server 2016
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
 
@@ -125,9 +125,9 @@ Sistema operativo de controlador de dominio admitido:
 
 Sistema operativo de controlador de dominio admitido:
 
-* Windows Server 2019
+* Windows Server 2019
 * Windows Server 2016
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
 * Windows Server 2008
@@ -165,7 +165,7 @@ Sistema operativo de controlador de dominio admitido:
 
 Sistema operativo de controlador de dominio admitido:
 
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
 * Windows Server 2008
@@ -225,7 +225,7 @@ Sistema operativo de controlador de dominio admitido:
    * La conversión de grupos, que permite la conversión entre grupos de seguridad y grupos de distribución.
    * El historial de identificadores de seguridad (SID).
 
-## <a name="next-steps"></a>Pasos siguientes
+## <a name="next-steps"></a>Pasos a seguir
 
 * [Elevar el nivel funcional del dominio](https://technet.microsoft.com/library/cc753104.aspx)  
 * [Elevar el nivel funcional del bosque](https://technet.microsoft.com/library/cc730985.aspx)

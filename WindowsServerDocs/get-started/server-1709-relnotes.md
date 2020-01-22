@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d5f899964414c10350cc22a594a959c940a1514
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dcd50b287ad0f3dd49a0df3c1fe531379bd4078e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391519"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948237"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1709"></a>Notas de la versión: Problemas importantes en Windows Server, versión 1709
 
@@ -29,7 +29,7 @@ En estas notas se resumen los problemas más críticos del sistema operativo Win
 
 Este documento se actualiza continuamente. Habida cuenta de que se detectan problemas críticos que necesitan una solución alternativa, se agregan, al igual que las nuevas soluciones alternativas y correcciones, a medida que están disponibles.  
   
-## <a name="storage-spaces-direct"></a>Espacios de almacenamiento directo
+## <a name="storage-spaces-direct"></a>Espacios de almacenamiento directos
 [comment]: # (Id.: desconocido; Remitente: stevenek; estado: aprobado)  
 Espacios de almacenamiento directo no se incluye en Windows Server, versión 1709. Si llamas a *Enable-ClusterStorageSpacesDirect* o a su alias *Enable-ClusterS2D* en un servidor que ejecuta Windows Server, versión 1709, recibirás un error con el mensaje "No se admite la operación solicitada".
 
@@ -41,4 +41,4 @@ El Canal semianual de Windows Server se centra en contenedores y escenarios de 
 
 Espacios de almacenamiento directo se presentó en Windows Server 2016 y es la base de nuestra plataforma hiperconvergida. Estamos encantados con la adopción positiva de la plataforma hiperconvergida de Microsoft y nos comprometemos con nuestros clientes.
 
-Hemos escuchado vuestros comentarios y estamos trabajando para ofrecer el [próximo conjunto de innovaciones](https://blogs.technet.microsoft.com/windowsserver/2017/09/07/sneak-peek-2-windows-server-version-1709-hyper-converged-infrastructure/) para nuestra plataforma hiperconvergida. Estas características están disponibles actualmente en las compilaciones de [Windows Insider](https://insider.windows.com/for-business/) y nos encantaría que las probaras y compartieras tu opinión. Para aquellos clientes que buscan una solución hiperconvergida validada, recomendamos el programa de [Windows Server definido por software](http://microsoft.com/wssd).
+Hemos escuchado vuestros comentarios y estamos trabajando para ofrecer el [próximo conjunto de innovaciones](https://blogs.technet.microsoft.com/windowsserver/2017/09/07/sneak-peek-2-windows-server-version-1709-hyper-converged-infrastructure/) para nuestra plataforma hiperconvergida. Estas características están disponibles actualmente en las compilaciones de [Windows Insider](https://insider.windows.com/for-business/) y nos encantaría que las probaras y compartieras tu opinión. Para aquellos clientes que buscan una solución hiperconvergida validada, recomendamos el programa de [Windows Server definido por software](https://microsoft.com/wssd).

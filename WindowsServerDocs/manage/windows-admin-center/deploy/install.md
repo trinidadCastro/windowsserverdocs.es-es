@@ -1,6 +1,6 @@
 ---
-title: Instalar Windows Admin Center
-description: Cómo instalar el centro de administración de Windows en un equipo Windows o en un servidor para que varios usuarios puedan tener acceso al centro de administración de Windows mediante un explorador Web.
+title: Instalación de Windows Admin Center
+description: Cómo instalar Windows Admin Center en un PC Windows o en un servidor para que varios usuarios puedan acceder a este desde un explorador web.
 ms.technology: manage
 ms.topic: article
 author: jwwool
@@ -8,56 +8,56 @@ ms.author: jeffrew
 ms.date: 07/17/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: c7adb3ef50d5d88565463d15e664b8fe1add8d4c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.openlocfilehash: cab128a3da9fa58c598cebcdf188058631c33977
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357235"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950008"
 ---
-# <a name="install-windows-admin-center"></a>Instalar Windows Admin Center
+# <a name="install-windows-admin-center"></a>Instalación de Windows Admin Center
 
 > Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-En este tema se describe cómo instalar el centro de administración de Windows en un equipo Windows o en un servidor para que varios usuarios puedan tener acceso al centro de administración de Windows mediante un explorador Web.
+En este tema se describe cómo instalar Windows Admin Center en un PC Windows o en un servidor para que varios usuarios puedan acceder a este desde un explorador web.
 
 > [!Tip]
-> ¿Novedad en Windows Admin Center?
-> [Obtén más información acerca de Windows Admin Center](../understand/windows-admin-center.md) o [descárgalo ahora](https://aka.ms/windowsadmincenter).
+> ¿No estás familiarizado con Windows Admin Center?
+> [Obtén más información acerca de Windows Admin Center](../overview.md) o [descárgalo ahora](https://aka.ms/windowsadmincenter).
 
-## <a name="determine-your-installation-type"></a>Determinar el tipo de instalación
+## <a name="determine-your-installation-type"></a>Determinación del tipo de instalación
 
-Revise las [Opciones de instalación](../plan/installation-options.md) que incluye los [sistemas operativos compatibles](https://docs.microsoft.com/windows-server/manage/windows-admin-center/plan/installation-options#installation-supported-operating-systems). Para instalar el centro de administración de Windows en una máquina virtual de Azure, consulte [implementación del centro de administración de Windows en Azure](../azure/deploy-wac-in-azure.md).
+Revisa las [opciones de instalación ](../plan/installation-options.md), que incluyen los [sistemas operativos compatibles](https://docs.microsoft.com/windows-server/manage/windows-admin-center/plan/installation-options#installation-supported-operating-systems). Para instalar Windows Admin Center en una VM en Azure, consulta [Implementación de Windows Admin Center en Azure](../azure/deploy-wac-in-azure.md).
 
-## <a name="install-on-windows-10"></a>Instalar en Windows 10
+## <a name="install-on-windows-10"></a>Instalar en Windows 10
 
-Cuando instalas Windows Admin Center en Windows 10, utiliza el puerto 6516 de forma predeterminada, pero tiene la opción para especificar un puerto diferente. También puedes crear un acceso directo al escritorio y permitir que Windows Admin Center administre tus TrustedHosts.
+Cuando instalas Windows Admin Center en Windows 10, usa el puerto 6516 de forma predeterminada, pero puedes especificar otro. También puedes crear un acceso directo al escritorio y dejar que Windows Admin Center administre TrustedHosts.
 
 > [!NOTE]
-> Es necesaria modificar TrustedHosts en un entorno de grupo de trabajo o al usar credenciales de administrador local en un dominio. Si optas por pasar por alto esta configuración, debes [configurar TrustedHosts manualmente](../support/troubleshooting.md#configure-trustedhosts).
+> Es necesario modificar TrustedHosts en un entorno de grupo de trabajo o al usar credenciales de administrador locales en un dominio. Si eliges pasar por alto esta configuración, debes [configurar TrustedHosts manualmente](../support/troubleshooting.md#configure-trustedhosts).
 
 Cuando inicias Windows Admin Center desde el menú **Inicio**, se abre en el explorador predeterminado.
 
-Cuando inicias Windows Admin Center por primera vez, verás un icono en el área de notificación de tu escritorio. Haz clic con el botón derecho en este icono y elige **Abrir** para abrir la herramienta en el navegador predeterminado, o elige **Salir** para salir del proceso en segundo plano.
+Cuando inicies Windows Admin Center por primera vez, verás un icono en el área de notificación del escritorio. Haz clic con el botón derecho en este icono y elige **Abrir** para abrir la herramienta en el navegador predeterminado, o elige **Salir** para salir del proceso en segundo plano.
 
 ## <a name="install-on-windows-server-with-desktop-experience"></a>Instalar en Windows Server con experiencia de escritorio
 
-En Windows Server, Windows Admin Center se instala como un servicio de red. Debes especificar el puerto en el que el servicio escucha y requiere un certificado para HTTPS. El instalador puede crear un certificado autofirmado para pruebas o puedes proporcionar la huella digital de un certificado ya instalado en el equipo. Si usas el certificado generado, coincidirá con el nombre DNS del servidor. Si usa su propio certificado, asegúrese de que el nombre proporcionado en el certificado coincide con el nombre de la máquina (no se admiten certificados comodín). También se le ofrece la opción de dejar que el centro de administración de Windows administre su TrustedHosts.
+En Windows Server, Windows Admin Center se instala como servicio de red. Debes especificar el puerto en el que escucha el servicio. Se requiere un certificado para HTTPS. El instalador puede crear un certificado autofirmado para pruebas o puedes proporcionar la huella digital de un certificado ya instalado en el equipo. Si usas el certificado generado, coincidirá con el nombre DNS del servidor. Si usas tu propio certificado, asegúrate de que el nombre proporcionado en el certificado coincide con el nombre de la máquina (no se admiten los certificados comodín). También tienes la opción de permitir que Windows Admin Center administre TrustedHosts.
 
 > [!NOTE]
-> Es necesaria modificar TrustedHosts en un entorno de grupo de trabajo o al usar credenciales de administrador local en un dominio. Si optas por pasar por alto esta configuración, debes [configurar TrustedHosts manualmente](../support/troubleshooting.md#configure-trustedhosts).
+> Es necesario modificar TrustedHosts en un entorno de grupo de trabajo o al usar credenciales de administrador locales en un dominio. Si optas por pasar por alto esta configuración, debes [configurar TrustedHosts manualmente](../support/troubleshooting.md#configure-trustedhosts).
 
-Una vez completada la instalación, abra un explorador desde un equipo remoto y navegue a la dirección URL presentada en el último paso del instalador.
+Una vez completada la instalación, abre un explorador desde un equipo remoto y navega a la dirección URL presentada en el último paso del instalador.
 
 > [!WARNING]
 > Los certificados generados automáticamente vencen 60 días después de la instalación.
 
 ## <a name="install-on-server-core"></a>Instalar en Server Core
 
-Si tienes una instalación Server Core de Windows Server, puedes instalar Windows Admin Center desde el símbolo del sistema (ejecutando como Administrador). Especifica un puerto y el certificado SSL utilizando los argumentos `SME_PORT` y `SSL_CERTIFICATE_OPTION` respectivamente. Si vas a usar un certificado existente, usa la `SME_THUMBPRINT` para especificar su huella digital.
+Si tienes una instalación de Server Core de Windows Server, puedes instalar Windows Admin Center desde el símbolo del sistema (como Administrador). Especifica un puerto y el certificado SSL mediante los argumentos `SME_PORT` y `SSL_CERTIFICATE_OPTION`, respectivamente. Si vas a usar un certificado existente, usa `SME_THUMBPRINT` para especificar su huella digital.
 
 > [!WARNING]
-> Al instalar el centro de administración de Windows, se reiniciará el servicio WinRM, que dará como servidor todas las sesiones remotas de PowerShell. Se recomienda instalar desde un cmd local o PowerShell. Si va a instalar con una solución de automatización que se interrumpirá al reiniciar el servicio WinRM, puede Agregar el parámetro ```RESTART_WINRM=0``` a los argumentos de instalación, pero WinRM debe reiniciarse para que el centro de administración de Windows funcione.
+> Al instalar Windows Admin Center, se reiniciará el servicio WinRM, lo que desconectará todas las sesiones remotas de PowerShell. Es recomendable realizar la instalación desde PowerShell o un cmd local. Si vas a realizar la instalación con una solución de automatización que se interrumpiría si se reinicia el servicio WinRM, agrega el parámetro ```RESTART_WINRM=0``` a los argumentos de instalación, pero es necesario reiniciar WinRM para que Windows Admin Center funcione.
 
 Ejecuta el siguiente comando para instalar Windows Admin Center y generar automáticamente un certificado autofirmado:
 
@@ -72,14 +72,14 @@ msiexec /i <WindowsAdminCenterInstallerName>.msi /qn /L*v log.txt SME_PORT=<port
 ```
 
 > [!WARNING]
-> No invoques `msiexec` desde PowerShell utilizando la notación de ruta de acceso relativa del punto con una barra diagonal (como, `.\<WindowsAdminCenterInstallerName>.msi`). No se admite esa notación, se producirá un error en la instalación. Quita el prefijo `.\` o especifica la ruta de acceso completa al MSI.
+> No invoques `msiexec` desde PowerShell usando la notación de ruta de acceso relativa del punto con una barra diagonal (por ejemplo, `.\<WindowsAdminCenterInstallerName>.msi`). Esta notación no se admite y provocará un error en la instalación. Quita el prefijo `.\` o especifica la ruta de acceso completa al MSI.
 
-## <a name="upgrading-to-a-new-version-of-windows-admin-center"></a>Actualizar a una nueva versión del centro de administración de Windows
+## <a name="upgrading-to-a-new-version-of-windows-admin-center"></a>Actualización a una nueva versión de Windows Admin Center
 
 Puede actualizar versiones no preliminares de Windows Admin Center mediante Microsoft Update o mediante la instalación manual.
 
-La configuración se conserva al actualizar a una nueva versión del centro de administración de Windows. No se admite oficialmente la actualización de las versiones de Insider Preview del centro de administración de Windows. creemos que es mejor realizar una instalación limpia, pero no la bloqueamos.
+La configuración se conserva al actualizar a una nueva versión de Windows Admin Center. Oficialmente, no admitimos la actualización de versiones Insider Preview de Windows Admin Center, ya que consideramos que es mejor realizar una instalación limpia, pero tampoco la bloqueamos.
 
-## <a name="updating-the-certificate-used-by-windows-admin-center"></a>Actualizar el certificado usado por el centro de administración de Windows
+## <a name="updating-the-certificate-used-by-windows-admin-center"></a>Actualización del certificado que usa Windows Admin Center
 
-Cuando el centro de administración de Windows se implementa como un servicio, debe proporcionar un certificado para HTTPS. Para actualizar este certificado en otro momento, vuelva a ejecutar el instalador y elija ```change```.
+Si tienes Windows Admin Center implementado como servicio, debes proporcionar un certificado para HTTPS. Para actualizar este certificado en otro momento, vuelve a ejecutar el instalador y elige ```change```.

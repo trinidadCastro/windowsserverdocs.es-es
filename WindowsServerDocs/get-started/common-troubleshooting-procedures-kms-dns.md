@@ -8,26 +8,26 @@ ms.assetid: ''
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 3165c926c50c2f91544895e0d328f1dae7424b4a
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: 17d4dc0ce531327db21d660481386fcc56498ae3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588038"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948284"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>Instrucciones para solucionar problemas de activación relacionados con DNS
 
 Es posible que tenga que usar algunos de estos métodos si una o varias de las condiciones siguientes son "true":
 
 - Use los medios con licencias por volumen y una&nbsp;clave de producto genérica de licencia por volumen para instalar uno de los siguientes sistemas operativos:
-   - Windows Server 2019
+   - Windows Server 2019
    - Windows Server 2016
-   - Windows Server 2012 R2
+   - Windows Server 2012 R2
    - Windows Server 2012
    - Windows Server 2008 R2
    - Windows Server 2008
    - Windows 10
-   - Windows 8.1
+   - Windows 8.1
    - Windows 8
 - El Asistente para activación no puede conectarse a un equipo host de KMS.
 
@@ -88,7 +88,7 @@ Verifique la conectividad de IP básica con el servidor DNS mediante el comando 
 
 Compruebe el registro del servidor host de KMS para determinar si se está registrando con DNS. De forma predeterminada, un servidor host de KMS registra dinámicamente un registro SRV de DNS una vez cada 24 horas. 
 > [!IMPORTANT]
-> Sigue meticulosamente los pasos que se describen en esta sección. Pueden producirse problemas graves si modifica el Registro de manera incorrecta. Antes de modificarlo, [haz una copia de seguridad del registro para restaurarlo](https://support.microsoft.com/en-us/help/322756), por si se produjeran problemas.  
+> Sigue meticulosamente los pasos que se describen en esta sección. Pueden producirse problemas graves si modifica el Registro de manera incorrecta. Antes de modificarlo, [haz una copia de seguridad del registro para restaurarlo](https://support.microsoft.com/help/322756), por si se produjeran problemas.  
 
 Para seleccionar esta configuración, realice estos pasos:
 1. Inicia el Editor del Registro. Para ello, haga clic con el botón derecho en **Inicio**, seleccione **Ejecutar**, escriba **regedit** y, a continuación, presione ENTRAR.
