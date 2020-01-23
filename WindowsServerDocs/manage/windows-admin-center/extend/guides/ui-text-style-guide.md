@@ -5,19 +5,19 @@ ms.technology: manage
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
-ms.date: 10/17/2018
+ms.date: 01/17/2020
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 159202fcb8c6125134154094e67e862ce8eb12ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ba3cdb8dbd81ee85b0679905444f35174b8138e0
+ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357032"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519467"
 ---
 # <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Guía de estilo de texto y diseño de la interfaz de usuario de Windows Admin Center
 
->Se aplica a: Windows Admin Center
+>Se aplica a: Centro de administración de Windows
 
 En este tema se describe el método general para escribir el texto de la interfaz de usuario (IU) de Windows Admin Center, así como algunas convenciones específicas y soluciones que estamos aportando.
 
@@ -33,7 +33,7 @@ Windows Admin Center y las extensiones deben seguir los [principios de voz de Mi
 
 Seguimos el estilo de Microsoft para el [uso de mayúsculas](https://docs.microsoft.com/style-guide/capitalization): uso de mayúsculas con estilo de oración para casi todo.
 
-| Elemento de la interfaz de usuario              |Uso de mayúsculas|Comentarios|
+| Elemento de la interfaz de usuario              |Uso de mayúsculas|Observaciones|
 |-------------------------|--------------|--------|
 |Distintivos (como VISTA PREVIA) |Todo en mayúsculas      ||
 |Todo lo demás          |Estilo de frase|Sin embargo, hay algunas excepciones donde nos encontramos con propiedades de objetos de WMI o PowerShell que se encuentran fuera de nuestro control.|
@@ -73,24 +73,24 @@ Cuando un usuario visita por primera vez una página, tienes la oportunidad de a
 
 Estas son algunas sugerencias de nuestra guía de estilo de Windows:
 
-### <a name="1-be-helpful"></a>1. Se útil
+### <a name="1-be-helpful"></a>1. Sé útil
 
 - Evita lenguaje y estilo de marketing.
 - Cuando Demo o sugiera algo, asegúrese de que el resultado final es claro; con solo mostrar al cliente cómo hacer algo no es efectivo si no saben por qué lo hacen.
 - No presente sugerencias si el cliente no las necesita.
 
-### <a name="2-show-dont-tell"></a>2. Mostrar, no decir
+### <a name="2-show-dont-tell"></a>2. Muestra, no indiques
 
 Mantén un texto lo más simple posible (piensa en animaciones o vídeos pequeños).
 
-### <a name="3-dont-overwhelm"></a>3. No sobrecargar
+### <a name="3-dont-overwhelm"></a>3. No abrumes
 
 - Limita los elementos emergentes y sugerencias a 4 por sesión de uso combinado, incluidas las notificaciones del sistema y las notificaciones del shell.
 - Asegúrate de que la sincronización de los elementos emergentes sea útil.
 - No Evite que el cliente haga algo.
 - Asegúrate de que los elementos emergentes se cierren fácilmente.
 
-### <a name="4-keep-it-contextual"></a>4. Mantener contextual
+### <a name="4-keep-it-contextual"></a>4. Consigue que sea contextual
 
 - Los momentos didácticos son más eficaces cuando se presentan en el momento adecuado.
 - Si creas tutoriales o presentaciones, la información debe ser concreta.
@@ -98,7 +98,7 @@ Mantén un texto lo más simple posible (piensa en animaciones o vídeos pequeñ
 - Proporcionar una manera para que los clientes vuelvan al tutorial más adelante, si es pertinente (a menudo, las personas no conservan la información por primera vez, pero las instrucciones de configuración pueden ser solo relevantes una vez).
 - La mensajería con estado vacío es un lugar natural para aprender y/o deleitar, haz que sean simples e informativos.
 
-### <a name="5-minimize-painful-setup"></a>5. Minimizar la configuración complicada
+### <a name="5-minimize-painful-setup"></a>5. Minimiza las configuraciones difíciles
 
 Cuando necesites que el cliente realice otra acción para experimentar el valor completo (iniciar sesión en un servicio en línea, etc.), hazlo de la forma más sencilla posible.
 
@@ -107,7 +107,7 @@ Cuando necesites que el cliente realice otra acción para experimentar el valor 
 - Si es posible, posibilita la opción de hacerlo más adelante y, a continuación, recuérdales la posibilidad de hacerlo más adelante.
 - Si los sacas de su experiencia, proporciona una forma de volver de forma rápida y sencilla.
 
-## <a name="help-links"></a>Vínculos de ayuda
+## <a name="help-links"></a>Vínculos a la Ayuda
 
 Estas son algunas sugerencias de nuestra guía de estilo de Windows:
 
@@ -135,8 +135,8 @@ Los desarrolladores de Microsoft deben usar un FWLink, excepto cuando se trata d
 - Usar oraciones completas.
 - No incluya signos de puntuación finales salvo los signos de interrogación. 
 - No es necesario usar el mismo texto que el título de la tarea. Use texto que tenga sentido en el contexto de la interfaz de usuario, pero asegúrese de que hay una conexión lógica entre los dos. Por ejemplo: 
-- Vínculo de ayuda: ¿Cuáles son los riesgos de permitir excepciones? 
-- Título del tema de ayuda: "Permitir que un programa se comunique a través de Firewall de Windows"
+- Vínculo de ayuda: ¿Cuál es el riesgo de permitir excepciones? 
+- Título del tema de ayuda: "permitir que un programa se comunique a través de Firewall de Windows"
 - Sea lo más específico posible sobre el contenido del tema de ayuda. 
     - Nuestro estilo
         - ¿Cómo ayuda Firewall de Windows a proteger el equipo?
@@ -187,7 +187,7 @@ Use un mensaje por caso de error.
 - Escriba el texto del botón para que sea una respuesta específica a la instrucción principal. Si no es posible, use "cerrar" para el texto del botón descartado (en lugar de "Aceptar" o "listo").
 - Si tiene más de un botón, haga que el botón situado más a la izquierda sea la acción que el usuario debe realizar. Haga que el botón situado más a la derecha sea la acción más conservadora, como "Cancelar".
 
-#### <a name="help-links"></a>Vínculos de ayuda
+#### <a name="help-links"></a>Vínculos a la Ayuda
 
 Tenga en cuenta solo los vínculos de ayuda para los mensajes de error que no puede hacer específicos y que se puedan realizar en acción.
 
@@ -227,7 +227,7 @@ Los mensajes de estado constan de notificaciones y mensajes emergentes (notifica
 |Tipo de cadena         | Notas                               |
 |------------        |-------------------------------------|
 |Notificación del sistema               |Tipo oración con puntuación final: idealmente con una variable de objeto para que los usuarios puedan comprender a qué objeto se aplica el mensaje en caso de que hayan salido del objeto|
-|Encabezado de notificación|Tipo de oración sin puntuación final (se trata de un encabezado): ideal con una variable de objeto|
+|Encabezado de la notificación (título) |Caso de oración sin puntuación final (es un encabezado), idealmente con una variable de objeto|
 |Detalles de notificación|Oraciones completas, idealmente con un vínculo a la interfaz de usuario que muestre el objeto|
 
 A continuación presentamos algunas recomendaciones detalladas para mensajes de notificación:
@@ -235,11 +235,11 @@ A continuación presentamos algunas recomendaciones detalladas para mensajes de 
 |Tipo de cadena         | Notas                               |
 |------------        |-------------------------------------|
 |Iniciado             |Omítelo siempre que sea posible: normalmente puedes saltar al mensaje en curso para minimizar el número de distracciones.|
-|En curso         |Empieza por el verbo de la acción que estés realizando y termina con puntos suspensivos para indicar una operación en curso. Por ejemplo:<br> *Creando el volumen "datos de cliente"...*|
-|Correcto             |Empieza con lo que el software acaba de hacer y termina con "correctamente". Por ejemplo:<br> *Se creó correctamente el volumen "datos del cliente".*|
-|Error             |Empieza por "No se ha podido" y termina con lo que no ha podido hacer el software. Por ejemplo:<br> *No se pudo crear el volumen "datos del cliente".*|
+|En curso         |Empieza por el verbo de la acción que estés realizando y termina con puntos suspensivos para indicar una operación en curso. A continuación te mostramos un ejemplo:<br> *Creando el volumen ' datos del cliente '...* <br><br>Cuando haya varias variables, use este patrón: <br>*Eliminando la siguiente máquina virtual: {0}; Host: {1}* |
+|Correcto             |Empieza con lo que el software acaba de hacer y termina con "correctamente". A continuación te mostramos un ejemplo:<br> *El volumen ' datos del cliente ' se creó correctamente.*|
+|Error             |Empieza por "No se ha podido" y termina con lo que no ha podido hacer el software. A continuación te mostramos un ejemplo:<br> *No se pudo crear el volumen ' datos del cliente '.*|
 
-## <a name="tooltips"></a>Información sobre herramientas
+## <a name="tooltips"></a>Información de herramientas
 
 Una buena información sobre herramientas describe brevemente los controles sin etiqueta o proporciona un poco de información adicional para los controles etiquetados, cuando esto resulta útil. También pueden ayudar a los clientes a navegar por la interfaz de usuario ofreciendo información adicional, no redundante, sobre etiquetas de control, iconos, vínculos, etc.
 
@@ -249,5 +249,5 @@ La información sobre herramientas debe usarse con moderación o no. Pueden ser 
 |    -----------------------                 |    -------------------------    |
 |Cuando un control o un elemento de la interfaz de usuario no tiene etiqueta...|Use una frase de nombre simple y descriptiva. Por ejemplo:<br> Lápiz de resaltado |
 |Cuando se etiqueta un elemento de la interfaz de usuario, pero su propósito necesita aclaración...|<ul><li>Describa brevemente lo que puede hacer con este elemento de la interfaz de usuario. </li><li>Use el formulario de verbo imperativo. Por ejemplo, "buscar texto en este archivo" (no "busca texto en este archivo").</li><li>No incluya signos de puntuación finales a menos que haya varias oraciones completas.</li> </ul>|
-|Cuando una etiqueta de texto se trunca o es probable que se trunque en algunos lenguajes...|<ul><li>Proporcione la etiqueta untruncada en la información sobre herramientas.</li><li>Opcional: En otra línea, proporcione una descripción clara, pero solo si es necesario.</li><li>No proporcione información sobre herramientas si la información no truncada se proporciona en otra parte de la página o el flujo.</li></ul>|
-|Si hay disponible un método abreviado de teclado...|<ul><li>Opcional: Proporcione el método abreviado de teclado entre paréntesis después de la etiqueta o frase descriptiva, por ejemplo, "Imprimir (Ctrl + P)" o "buscar texto en este archivo (Ctrl + F)"</li><li>Es correcto agregar un método abreviado de teclado útil a la información sobre herramientas de clarificación, pero evite agregar información sobre herramientas solo para mostrar un método abreviado de teclado. </li></ul>|
+|Cuando una etiqueta de texto se trunca o es probable que se trunque en algunos lenguajes...|<ul><li>Proporcione la etiqueta untruncada en la información sobre herramientas.</li><li>Opcional: en otra línea, proporcione una descripción clara, pero solo si es necesario.</li><li>No proporcione información sobre herramientas si la información no truncada se proporciona en otra parte de la página o el flujo.</li></ul>|
+|Si hay disponible un método abreviado de teclado...|<ul><li>Opcional: proporcione el método abreviado de teclado entre paréntesis después de la etiqueta o frase descriptiva, por ejemplo, "Imprimir (Ctrl + P)" o "buscar texto en este archivo (Ctrl + F)".</li><li>Es correcto agregar un método abreviado de teclado útil a la información sobre herramientas de clarificación, pero evite agregar información sobre herramientas solo para mostrar un método abreviado de teclado. </li></ul>|

@@ -5,16 +5,16 @@ description: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 04/23/2019
+ms.date: 01/22/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6294c7b6ead0a9fa338f8b2cc8134b750f7e3e8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: adce37d8d06399d3a00221a12f3449244720ade7
+ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385551"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519487"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Novedades de Servicios de federación de Active Directory (AD FS)
 
@@ -87,9 +87,8 @@ Anteriormente, AD FS necesitaba que el recurso y el ámbito desearan estar en un
  
 Con AD FS en el servidor 2019, ahora puede pasar el valor de recurso incrustado en el parámetro de ámbito. Esto es coherente con el modo en que se puede realizar la autenticación en Azure AD también. 
 
-Ahora, el parámetro de ámbito se puede organizar como una lista separada por espacios donde cada entrada es una estructura como recurso/ámbito. Por ejemplo,  
+Ahora, el parámetro de ámbito se puede organizar como una lista separada por espacios donde cada entrada es una estructura como recurso/ámbito. 
 
-**< crear una solicitud de ejemplo válida >**
 > [!NOTE]
 > Solo se puede especificar un recurso en la solicitud de autenticación. Si se incluye más de un recurso en la solicitud, AD FS devolverá un error y la autenticación no se realizará correctamente. 
 
@@ -106,15 +105,15 @@ B. El extremo de autorización responde como de costumbre pero registra "t (code
 
 C. Después, el cliente envía el código de autorización en la solicitud de token de acceso como de costumbre, pero incluye el secreto "code_verifier" generado en (A). 
 
-d. El AD FS transforma "code_verifier" y lo compara con "t (code_verifier)" de (B).  Se deniega el acceso si no son iguales. 
+D. El AD FS transforma "code_verifier" y lo compara con "t (code_verifier)" de (B).  Se deniega el acceso si no son iguales. 
 
-#### <a name="faq"></a>Preguntas más frecuentes 
-**Respuestas.** ¿Puedo pasar el valor del recurso como parte del valor del ámbito, como la forma en que se realizan las solicitudes en Azure AD? 
-</br>**Un.** Con AD FS en el servidor 2019, ahora puede pasar el valor de recurso incrustado en el parámetro de ámbito. Ahora, el parámetro de ámbito se puede organizar como una lista separada por espacios donde cada entrada es una estructura como recurso/ámbito. Por ejemplo,  
+#### <a name="faq"></a>Preguntas frecuentes 
+**P.** ¿Puedo pasar el valor del recurso como parte del valor del ámbito, como la forma en que se realizan las solicitudes en Azure AD? 
+</br>**A.** Con AD FS en el servidor 2019, ahora puede pasar el valor de recurso incrustado en el parámetro de ámbito. Ahora, el parámetro de ámbito se puede organizar como una lista separada por espacios donde cada entrada es una estructura como recurso/ámbito. Por ejemplo,  
 **< crear una solicitud de ejemplo válida >**
 
-**Respuestas.** ¿AD FS admite la extensión PKCE?
-</br>**Un.** AD FS en el servidor 2019 admite la clave de prueba para el intercambio de código (PKCE) para el flujo de concesión de código de autorización OAuth 
+**P.** ¿AD FS admite la extensión PKCE?
+</br>**A.** AD FS en el servidor 2019 admite la clave de prueba para el intercambio de código (PKCE) para el flujo de concesión de código de autorización OAuth 
 
 ## <a name="whats-new-in-active-directory-federation-services-for-windows-server-2016"></a>Novedades en Servicios de federación de Active Directory (AD FS) para Windows Server 2016   
 Si busca información sobre versiones anteriores de AD FS, consulte los siguientes artículos:  
@@ -154,13 +153,17 @@ AD FS proporciona el componente local de las directivas de acceso condicional en
 ![novedades](media/whats-new-in-active-directory-federation-services-for-windows-server-2016/ADFS_ITPRO4.png)  
 
  Para más información sobre el uso del acceso condicional basado en dispositivos en la nube   
- *  [Azure Active Directory el acceso condicional](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)
+ *  [Acceso condicional de Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)
 
 Para obtener más información acerca del uso del acceso condicional basado en dispositivos con AD FS
 *  [Planeación del acceso condicional basado en dispositivos con AD FS](../../ad-fs/deployment/Plan-Device-based-Conditional-Access-on-Premises.md)  
 * [Directivas de Access Control en AD FS](../../ad-fs/operations/Access-Control-Policies-in-AD-FS.md)  
 
-### <a name="sign-in-with-windows-hello-for-business"></a>Iniciar sesión con Windows Hello para empresas   
+### <a name="sign-in-with-windows-hello-for-business"></a>Iniciar sesión con Windows Hello para empresas  
+
+> [!NOTE]
+> Actualmente, Google Chrome y el [nuevo Microsoft Edge basado en](https://www.microsoft.com/edge?form=MB110A&OCID=MB110A) los exploradores de proyectos de código abierto de cromo no se admiten para el inicio de sesión único (SSO) basado en explorador con Microsoft Windows Hello para empresas. Use Internet Explorer o una versión anterior de Microsoft Edge.  
+
 Los dispositivos de Windows 10 presentan Windows Hello y Windows Hello para empresas, y reemplazan las contraseñas de usuario con credenciales de usuario enlazadas a un dispositivo seguro protegidas por el gesto de un usuario (un PIN, un gesto biométrico como una huella digital o reconocimiento facial). AD FS 2016 admite estas nuevas funcionalidades de Windows 10 para que los usuarios puedan iniciar sesión en AD FS aplicaciones desde la intranet o la extranet sin necesidad de proporcionar una contraseña.
 
 Para obtener más información acerca del uso de Microsoft Windows Hello para empresas en su organización
