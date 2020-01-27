@@ -9,15 +9,14 @@ ms.date: 3/29/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 31f6c00f829569586630629d2fa18c1fb65cd1d6
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0850145c9281c769c5a2b6532ccb56615abd11b3
+ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949463"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725790"
 ---
 # <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>Actualizaciones necesarias para Servicios de federación de Active Directory (AD FS) (AD FS) y el proxy de aplicación web (WAP)
-
 
 A partir del 2016 de octubre, todas las actualizaciones de todos los componentes de Windows Server solo se publican a través de Windows Update (WU).  No hay más revisiones ni descargas individuales.
 Esto se aplica a Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 y Windows Server 2008 R2 SP1.
@@ -27,10 +26,10 @@ En esta página se enumeran los paquetes de Resumen de especial interés para AD
 ## <a name="updates-for-ad-fs-and-wap-in-windows-server-2016"></a>Actualizaciones para AD FS y WAP en Windows Server 2016
 Las actualizaciones para Windows Server 2016 se entregan mensualmente a través de Windows Update y son acumulativas. El paquete de actualización que se indica a continuación se recomienda para todos los servidores AD FS y WAP 2016 e incluye todas las actualizaciones necesarias anteriormente, así como las correcciones más recientes.
 
-|Ó # |Descripción|Fecha de publicación
+|Ó # |Descripción|Fecha de lanzamiento
 |----- | ----- |-----
-|[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | Esta actualización de seguridad soluciona una vulnerabilidad en Servicios de federación de Active Directory (AD FS) (AD FS) que podría permitir que un atacante omitiera la Directiva de bloqueo de la extranet. |Julio de 2019|
-|[4489889 (compilación del sistema operativo 14393,2879)](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | Soluciona un problema en Servicios de federación de Active Directory (AD FS) (AD FS) que hace que aparezca una relación de confianza para usuario autenticado duplicada en la consola de administración de AD FS. Esto se produce al crear o ver las relaciones de confianza para usuario autenticado mediante la consola de administración de AD FS.</br></br> Soluciona un problema de latencia del proxy de aplicación web (WAP) de alta Servicios de federación de Active Directory (AD FS) (ADFS) (más de 10, 000 MS) que se produce mientras se habilita el bloqueo inteligente de extranet (ESL) en AD FS 2016. Esta actualización de seguridad soluciona la vulnerabilidad descrita en [CVE-2018-16794](https://nvd.nist.gov/vuln/detail/CVE-2018-16794). |Marzo de 2019|
+|[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | Esta actualización de seguridad soluciona una vulnerabilidad en Servicios de federación de Active Directory (AD FS) (AD FS) que podría permitir que un atacante omitiera la Directiva de bloqueo de la extranet. |2019 de julio|
+|[4489889 (compilación del sistema operativo 14393,2879)](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | Soluciona un problema en Servicios de federación de Active Directory (AD FS) (AD FS) que hace que aparezca una relación de confianza para usuario autenticado duplicada en la consola de administración de AD FS. Esto se produce al crear o ver las relaciones de confianza para usuario autenticado mediante la consola de administración de AD FS.</br></br> Soluciona un problema de latencia del proxy de aplicación web (WAP) de alta Servicios de federación de Active Directory (AD FS) (ADFS) (más de 10, 000 MS) que se produce mientras se habilita el bloqueo inteligente de extranet (ESL) en AD FS 2016. Esta actualización de seguridad soluciona la vulnerabilidad descrita en [CVE-2018-16794](https://nvd.nist.gov/vuln/detail/CVE-2018-16794). |2019 de marzo|
 |[4487006 (compilación del sistema operativo 14393,2828)](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) | Soluciona un problema que hace que se produzcan errores en las actualizaciones a una relación de confianza para usuario autenticado cuando se usa PowerShell o la consola de administración de Servicios de federación de Active Directory (AD FS) (AD FS). Este problema se produce si configura una relación de confianza para usuario autenticado para usar una dirección URL de metadatos en línea que publica más de un PassiveRequestorEndpoint. El error es "MSIS7615: los puntos de conexión de confianza especificados en una relación de confianza para usuario autenticado deben ser únicos para esa relación de confianza para usuario autenticado".  </br></br>Soluciona un problema que muestra un mensaje de error específico para los cambios de contraseña de complejidad externa debido a las directivas de protección de contraseñas de Azure. |Febrero de 2019|
 |[4462928 (compilación del sistema operativo 14393,2580)](https://support.microsoft.com/help/4462928/windows-10-update-kb4462928)|Soluciona los problemas de interoperación entre el bloqueo inteligente de la extranet de Servicios de federación de Active Directory (AD FS) (ADFS) y el identificador de inicio de sesión alternativo. Cuando el identificador de inicio de sesión alternativo está habilitado, las llamadas a AD FS cmdlets de PowerShell, Get-AdfsAccountActivity y RESET-AdfsAccountLockout, devuelven errores de "cuenta no encontrada". Cuando se llama a set-AdfsAccountActivity, se agrega una nueva entrada en lugar de editar una existente.|Octubre de 2018|
 |[4343884 (compilación del sistema operativo 14393,2457)](https://support.microsoft.com/help/4343884/windows-10-update-kb4343884)|Soluciona un problema de Servicios de federación de Active Directory (AD FS) (AD FS) en el que Multi-Factor Authentication no funciona correctamente con los dispositivos móviles que usan definiciones de referencia cultural personalizadas. </br></br>Soluciona un problema en Windows Hello para empresas que produce un retraso significativo (15 segundos) en la nueva inscripción de usuario. Este problema se produce cuando se usa un módulo de seguridad de hardware para almacenar un certificado de entidad de registro de ADFS (RA).|Agosto de 2018|
@@ -49,9 +48,9 @@ Las actualizaciones para Windows Server 2016 se entregan mensualmente a través 
 ## <a name="updates-for-ad-fs-and-wap-in-windows-server-2012-r2"></a>Actualizaciones para AD FS y WAP en Windows Server 2012 R2
 A continuación se muestra la lista de revisiones y paquetes acumulativos de actualizaciones que se han publicado para Servicios de federación de Active Directory (AD FS) (AD FS) en Windows Server 2012 R2.
 
-|Ó # |Descripción|Fecha de publicación
+|Ó # |Descripción|Fecha de lanzamiento
 |----- | ----- |-----
-|[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| Esta actualización de seguridad soluciona una vulnerabilidad en Servicios de federación de Active Directory (AD FS) (AD FS) que podría permitir que un atacante omitiera la Directiva de bloqueo de la extranet. |Julio de 2019
+|[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| Esta actualización de seguridad soluciona una vulnerabilidad en Servicios de federación de Active Directory (AD FS) (AD FS) que podría permitir que un atacante omitiera la Directiva de bloqueo de la extranet. |2019 de julio
 |[4041685](https://support.microsoft.com/kb/4041685)|Se ha solucionado un problema AD FS en el que las cookies de MSISConext de los encabezados de solicitud pueden desbordar el límite de tamaño de los encabezados y provocar un error en la autenticación con el código de Estado HTTP 400 "solicitud incorrecta de encabezado demasiado largo".</br></br>Se corrigió un problema por el que ADFS ya no puede omitir "prompt = login" durante la autenticación. Se ha agregado una opción "deshabilitada" para restaurar escenarios en los que se usa la autenticación que no es de contraseña.|Versión preliminar de octubre de 2017 de paquete acumulativo de actualizaciones
 |[4019217](https://support.microsoft.com/kb/4019217)|Los clientes de carpetas de trabajo que usan el agente de tokens no funcionan cuando se usa un servidor 2012 R2 AD FS Server|Paquete acumulativo de actualizaciones de mayo de 2017
 |[4015550](https://support.microsoft.com/kb/4015550)|Se ha corregido un problema con AD FS no autenticar a los usuarios externos y AD FS WAP no puede reenviar la solicitud de forma aleatoria|Paquete acumulativo de actualizaciones de abril de 2017
@@ -68,8 +67,8 @@ A continuación se muestra la lista de revisiones y paquetes acumulativos de act
 |[3080778](https://support.microsoft.com/kb/3080778)|AD FS no llama a OnError cuando el adaptador de MFA inicia una excepción en Windows Server 2012 R2|Julio de 2015
 |[3075610](https://support.microsoft.com/kb/3075610)|Las relaciones de confianza se pierden en el servidor de AD FS secundario después de agregar o quitar el proveedor de notificaciones en Windows Server 2012 R2|Julio de 2015
 |[3070080](https://support.microsoft.com/kb/3070080)|Detección del dominio de inicio no funciona correctamente para la relación de confianza para usuario autenticado no compatible con notificaciones|Junio de 2015
-|[3052122](https://support.microsoft.com/kb/3052122)|La actualización agrega compatibilidad con las notificaciones de identificador compuesto en tokens de AD FS en Windows Server 2012 R2|May. 2015
-|[3045711](https://support.microsoft.com/kb/3045711)|MS15-040: una vulnerabilidad en Servicios de federación de Active Directory (AD FS) podría permitir la divulgación de información|Abril de 2015
+|[3052122](https://support.microsoft.com/kb/3052122)|La actualización agrega compatibilidad con las notificaciones de identificador compuesto en tokens de AD FS en Windows Server 2012 R2|2015 de mayo
+|[3045711](https://support.microsoft.com/kb/3045711)|MS15-040: una vulnerabilidad en Servicios de federación de Active Directory (AD FS) podría permitir la divulgación de información|2015 de abril
 |[3042127](https://support.microsoft.com/kb/3042127)|Error "HTTP 400-solicitud incorrecta" al abrir un buzón compartido mediante WAP en Windows Server 2012 R2|Marzo de 2015
 |[3042121](https://support.microsoft.com/kb/3042121)|AD FS protección de reproducción de tokens para los tokens de autenticación del proxy de aplicación web en Windows Server 2012 R2|Marzo de 2015
 |[3035025](https://support.microsoft.com/kb/3035025)|Revisión de la característica de actualización de contraseña para que no sea necesario que los usuarios usen el dispositivo registrado en Windows Server 2012 R2|Enero de 2015
@@ -84,28 +83,28 @@ A continuación se muestra la lista de revisiones y paquetes acumulativos de act
 |[2975719](https://support.microsoft.com/kb/2975719)|Acumulación de actualizaciones de Windows Server 2012 R2|Agosto de 2014
 |[2967917](https://support.microsoft.com/kb/2967917)|Acumulación de actualizaciones de Windows Server 2012 R2|Julio de 2014
 |[2962409](https://support.microsoft.com/kb/2962409)|Acumulación de actualizaciones de Windows Server 2012 R2|Junio de 2014
-|[2955164](https://support.microsoft.com/kb/2955164)|Acumulación de actualizaciones de Windows Server 2012 R2|Mayo 2014
-|[2919355](https://support.microsoft.com/kb/2919355)|Acumulación de actualizaciones de Windows Server 2012 R2|Abril de 2014
+|[2955164](https://support.microsoft.com/kb/2955164)|Acumulación de actualizaciones de Windows Server 2012 R2|2014 de mayo
+|[2919355](https://support.microsoft.com/kb/2919355)|Acumulación de actualizaciones de Windows Server 2012 R2|2014 de abril
 
 ## <a name="updates-for-ad-fs-in-windows-server-2012-ad-fs-21-and-ad-fs-20"></a>Actualizaciones para AD FS en Windows Server 2012 (AD FS 2,1) y AD FS 2,0
 A continuación se muestra la lista de revisiones y paquetes acumulativos de actualizaciones que se han publicado para AD FS 2,0 y 2,1.
 
-|Ó # |Descripción|Fecha de publicación|Se aplica a:
+|Ó # |Descripción|Fecha de lanzamiento|Se aplica a:
 |----- | ----- |-----|-----
 |[3197878](https://support.microsoft.com/kb/3197878)|Se produce un error de autenticación a través de proxy en Windows Server 2012 (esta es la versión general de la revisión 3094446)|Resumen de calidad del 2016 de noviembre|AD FS 2,1
-|[3197869](https://support.microsoft.com/kb/3197869)|Se produce un error de autenticación a través de proxy en Windows Server 2008 R2 SP1 (esta es la versión general de la revisión 3094446)|Resumen de calidad del 2016 de noviembre|AD FS 2.0
-|[3094446](https://support.microsoft.com/kb/3094446)|Se produce un error de autenticación a través de proxy en Windows Server 2012 o Windows Server 2008 R2 SP1|Septiembre de 2015|AD FS 2,0 y 2,1
+|[3197869](https://support.microsoft.com/kb/3197869)|Se produce un error de autenticación a través de proxy en Windows Server 2008 R2 SP1 (esta es la versión general de la revisión 3094446)|Resumen de calidad del 2016 de noviembre|AD FS 2,0
+|[3094446](https://support.microsoft.com/kb/3094446)|Se produce un error de autenticación a través de proxy en Windows Server 2012 o Windows Server 2008 R2 SP1|2015 de septiembre|AD FS 2,0 y 2,1
 |[3070078](https://support.microsoft.com/kb/3070078)|AD FS 2,1 produce una excepción cuando se autentica con un certificado de cifrado en Windows Server 2012|Julio de 2015|AD FS 2,1
 |[3062577](https://support.microsoft.com/kb/3062577)|MS15-062: una vulnerabilidad en Active Directory servicios de Federación podría permitir la elevación de privilegios|Junio de 2015|AD FS 2,0/2,1
 |[3003381](https://support.microsoft.com/kb/3003381)|MS14-077: una vulnerabilidad en Servicios de federación de Active Directory (AD FS) podría permitir la divulgación de información: 14 de abril de 2015|noviembre de 2014|AD FS 2,0/2,1
 |[2987843](https://support.microsoft.com/kb/2987843)|El uso de memoria del servidor de Federación de AD FS sigue aumentando cuando muchos usuarios inician sesión en una aplicación web en Windows Server 2012|Julio de 2014|AD FS 2,1
-|[2957619](https://support.microsoft.com/kb/2957619)|La relación de confianza para usuario autenticado en AD FS se detiene cuando se realiza una solicitud para AD FS para un token delegado|Mayo 2014|AD FS 2,1
+|[2957619](https://support.microsoft.com/kb/2957619)|La relación de confianza para usuario autenticado en AD FS se detiene cuando se realiza una solicitud para AD FS para un token delegado|2014 de mayo|AD FS 2,1
 |[2926658](https://support.microsoft.com/kb/2926658)|Se produce un error en la implementación de la granja SQL de ADFS si no tiene permisos SQL|octubre de 2014|AD FS 2,1
-|[2896713](https://support.microsoft.com/kb/2896713) o [2989956](https://support.microsoft.com/kb/2989956)|La actualización está disponible para corregir varios problemas después de instalar la actualización de seguridad 2843638 en un servidor de AD FS|noviembre de 2013</br></br>Septiembre de 2014|AD FS 2,0/2,1
+|[2896713](https://support.microsoft.com/kb/2896713) o [2989956](https://support.microsoft.com/kb/2989956)|La actualización está disponible para corregir varios problemas después de instalar la actualización de seguridad 2843638 en un servidor de AD FS|2013 de noviembre</br></br>2014 de septiembre|AD FS 2,0/2,1
 |[2877424](https://support.microsoft.com/kb/2877424)|La actualización le permite usar un certificado para varias relaciones de confianza para usuario autenticado en una granja AD FS 2,1|Octubre de 2013|AD FS 2,1
-|[2873168](https://support.microsoft.com/kb/2873168)|CORRECCIÓN: se produce un error cuando se usa un CSP y un HSM de terceros y, a continuación, se configura una confianza de proveedor de notificaciones en el paquete acumulativo de actualizaciones 3 para AD FS 2,0 en Windows Server 2008 R2 Service Pack 1|Septiembre de 2013|AD FS 2.0
-|[2861090](https://support.microsoft.com/kb/2861090)|Una coma en el nombre de sujeto de un certificado de cifrado produce una excepción en Windows Server 2008 R2 SP1|Agosto 2013|AD FS 2.0
-|[2843639](https://support.microsoft.com/kb/2843639)|Bursátil Una vulnerabilidad en Servicios de federación de Active Directory (AD FS) podría permitir la divulgación de información|noviembre de 2013|AD FS 2,1
-|[2843638](https://support.microsoft.com/kb/2843638)|MS13-066: Descripción de la actualización de seguridad para Servicios de federación de Active Directory (AD FS) 2,0:13 de agosto de 2013|Agosto 2013|AD FS 2.0
-|[2827748](https://support.microsoft.com/kb/2827748)|El archivo Federationmetadata. XML no contiene la información del punto de conexión MEX para los puntos de conexión de WS-Trust y WS-Federation en Windows Server 2012|Mayo de 2013|AD FS 2,1
-|[2790338](https://support.microsoft.com/kb/2790338)|Descripción del paquete acumulativo de actualizaciones 3 para Servicios de federación de Active Directory (AD FS) (AD FS) 2,0|Marzo de 2013|AD FS 2.0
+|[2873168](https://support.microsoft.com/kb/2873168)|CORRECCIÓN: se produce un error cuando se usa un CSP y un HSM de terceros y, a continuación, se configura una confianza de proveedor de notificaciones en el paquete acumulativo de actualizaciones 3 para AD FS 2,0 en Windows Server 2008 R2 Service Pack 1|2013 de septiembre|AD FS 2,0
+|[2861090](https://support.microsoft.com/kb/2861090)|Una coma en el nombre de sujeto de un certificado de cifrado produce una excepción en Windows Server 2008 R2 SP1|Agosto 2013|AD FS 2,0
+|[2843639](https://support.microsoft.com/kb/2843639)|Bursátil Una vulnerabilidad en Servicios de federación de Active Directory (AD FS) podría permitir la divulgación de información|2013 de noviembre|AD FS 2,1
+|[2843638](https://support.microsoft.com/kb/2843638)|MS13-066: Descripción de la actualización de seguridad para Servicios de federación de Active Directory (AD FS) 2,0:13 de agosto de 2013|Agosto 2013|AD FS 2,0
+|[2827748](https://support.microsoft.com/kb/2827748)|El archivo Federationmetadata. XML no contiene la información del punto de conexión MEX para los puntos de conexión de WS-Trust y WS-Federation en Windows Server 2012|2013 de mayo|AD FS 2,1
+|[2790338](https://support.microsoft.com/kb/2790338)|Descripción del paquete acumulativo de actualizaciones 3 para Servicios de federación de Active Directory (AD FS) (AD FS) 2,0|Marzo de 2013|AD FS 2,0

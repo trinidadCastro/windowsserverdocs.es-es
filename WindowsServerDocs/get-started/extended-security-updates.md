@@ -8,13 +8,13 @@ author: iainfoulds
 ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.date: 12/16/2019
-ms.openlocfilehash: 83ab3663b2c03017ba1bf613a49c394be0511002
-ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
+ms.date: 01/23/2020
+ms.openlocfilehash: 0f3ea0dacc200adaaec5064d19754ad6de0042a6
+ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76162506"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725780"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Uso de las actualizaciones de seguridad extendidas (ESU) de Windows Server 2008 y 2008 R2
 
@@ -43,23 +43,38 @@ Las actualizaciones de seguridad extendidas (ESU) para Windows Server incluyen a
 
 Para más información, consulte [Preguntas más frecuentes sobre las Actualizaciones de seguridad extendidas](https://www.microsoft.com/cloud-platform/extended-security-updates).
 
+## <a name="how-to-use-extended-security-updates"></a>Cómo usar las actualizaciones de seguridad extendidas
+
+Si ejecutas máquinas virtuales de Windows Server 2008/2008 R2 en Azure, estas se habilitan automáticamente para las actualizaciones de seguridad extendidas. No es necesario realizar ninguna configuración y no se aplica ningún cargo adicional por el uso de actualizaciones de seguridad extendidas con las máquinas virtuales de Azure. Las actualizaciones de seguridad extendidas se entregan automáticamente a las máquinas virtuales de Azure si están configuradas para recibir actualizaciones.
+
+En el caso de otros entornos, como las máquinas virtuales locales o los servidores físicos, debes solicitar y configurar manualmente las actualizaciones de seguridad extendidas. Si ya has adquirido actualizaciones de seguridad extendidas (disponibles a través de programas de licencias por volumen, como Contrato Enterprise [EA], Contrato Enterprise Subscription [EAS], Enrollment for Education Solutions [EES] o Inscripción del servidor y la nube [SCE]), puedes usar uno de los siguientes pasos para obtener una clave de activación:
+
+* Inicia sesión en el [Centro de servicios de licencias por volumen](https://www.microsoft.com/Licensing/servicecenter/default.aspx) para ver y obtener las claves de activación.
+* Regístrate para obtener las actualizaciones de seguridad extendidas en Azure Portal. De este modo, podrás obtener las claves de activación de Windows Server 2008/R2.
+    * Consulta los pasos siguientes de este artículo para saber cómo completar el proceso.
+
 ## <a name="register-for-extended-security-updates"></a>Registro para actualizaciones de seguridad extendidas
 
 Para usar las actualizaciones de seguridad extendidas, cree una clave de activación múltiple (MAK) y aplíquela a los equipos con Windows Server 2008 y 2008 R2. Esta clave permite que los servidores de Windows Update sepan que puede seguir recibiendo actualizaciones de seguridad. Regístrese para las actualizaciones de seguridad extendidas y administre estas claves desde Azure Portal, aunque solo use equipos locales.
 
 > [!NOTE]
-> Si ejecuta máquinas virtuales con Windows Server 2008/2008 R2 en Azure, no es preciso que realice los pasos siguientes. Las máquinas virtuales de Azure se habilitan automáticamente para las actualizaciones de seguridad extendidas. No es necesario crear una clave y un recurso de actualización de seguridad extendida, y no se realiza ningún cargo adicional por el uso de actualizaciones de seguridad extendidas con máquinas virtuales de Azure.
+>
+> No es necesario registrarse para las actualizaciones de seguridad extendidas si ejecutas Windows Server 2008 y 2008 R2 en máquinas virtuales de Azure. En el caso de otros entornos, como las máquinas virtuales locales o los servidores físicos, [adquiere actualizaciones de seguridad extendidas](https://www.microsoft.com/licensing/how-to-buy/how-to-buy) antes de registrarte y tratar de usarlas.
 
-> [!NOTE]
-> Antes de seguir los pasos que se indican a continuación, envía un mensaje de correo electrónico a [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com) con esta información para que se incluya como elemento aprobado en la lista de permitidos:
+> [!IMPORTANT]
+>
+> Asegúrate de seguir los pasos anteriores para adquirir actualizaciones de seguridad extendidas a través del programa de licencias por volumen. Antes de realizar los pasos que se indican a continuación, envía un correo electrónico a [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com) con la siguiente información para que se apruebe el uso de la característica:
+>
 > * Nombre del cliente:
 > * Suscripción de Azure:
 > * Número de contrato EA (para ESU):
 > * Número de servidores ESU:
-> 
-> El equipo revisará la información proporcionada y agregará el usuario o la suscripción a la lista de permitidos.
-> 
-> Si el solicitante no está en la lista de permitidos, es posible que se devuelva este error: [No se pudo encontrar el tipo de recurso en el espacio de nombres "Microsoft.WindowsESU"](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version).
+>
+> El equipo revisará la información proporcionada y agregará el usuario o la suscripción a la lista de aprobados.
+>
+> Si el solicitante no recibe la aprobación, es posible que se devuelva este error:
+>
+> [No se pudo encontrar el tipo de recurso en el espacio de nombres "Microsoft.WindowsESU"](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version).
 
 Para registrar máquinas virtuales que no sean de Azure para actualizaciones de seguridad extendidas y crear una clave, siga estos pasos en Azure Portal:
 

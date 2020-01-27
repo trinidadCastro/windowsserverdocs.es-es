@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7fd06c06a2ea7af93b87c471f77b788ac51bddac
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b81d498c6e601fcce0a0760cb4877fcc98c8beb9
+ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949214"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725800"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>Personalización de encabezados de respuesta de seguridad HTTP con AD FS 2019 
  
@@ -32,11 +32,11 @@ En este documento se tratarán los encabezados de respuesta de seguridad que se 
 Antes de analizar los encabezados, echemos un vistazo a algunos escenarios para crear la necesidad de que los administradores personalicen los encabezados de seguridad. 
  
 ## <a name="scenarios"></a>Escenarios 
-1. El administrador ha habilitado [**http STRICT-Transport-Security (HSTS)** ](#http-strict-transport-security-hsts) (fuerza a todas las conexiones a través del cifrado https) para proteger a los usuarios que pueden tener acceso a la aplicación Web mediante http desde un punto de acceso Wi-Fi público que podría ser atacado. Desea reforzar aún más la seguridad habilitando HSTS para los subdominios.  
-2. El administrador ha configurado el encabezado de respuesta [**X-Frame-Options**](#x-frame-options) (impide la representación de una página web en un iframe) para proteger las páginas web de clickjacked. Sin embargo, tiene que personalizar el valor del encabezado debido a un nuevo requisito empresarial para mostrar los datos (en iFrame) de una aplicación con un origen diferente (dominio).
-3. El administrador ha habilitado [**X-XSS-Protection**](#x-xss-protection) (evita ataques de scripting cruzados) para corregir y bloquear la página si el explorador detecta ataques de scripting cruzados. Sin embargo, tiene que personalizar el encabezado para permitir que la página se cargue una vez que se haya limpiado.  
+1. El administrador ha habilitado [**http STRICT-Transport-Security (HSTS)** ](#http-strict-transport-security-hsts) (fuerza a todas las conexiones a través del cifrado https) para proteger a los usuarios que pueden tener acceso a la aplicación Web mediante http desde un punto de acceso Wi-Fi público que podría ser atacado. Les gustaría reforzar aún más la seguridad habilitando HSTS para los subdominios.  
+2. El administrador ha configurado el encabezado de respuesta [**X-Frame-Options**](#x-frame-options) (impide la representación de una página web en un iframe) para proteger las páginas web de clickjacked. Sin embargo, necesitan personalizar el valor del encabezado debido a un nuevo requisito empresarial para mostrar los datos (en iFrame) de una aplicación con un origen diferente (dominio).
+3. El administrador ha habilitado [**X-XSS-Protection**](#x-xss-protection) (evita ataques de scripting cruzados) para corregir y bloquear la página si el explorador detecta ataques de scripting cruzados. Sin embargo, necesitan personalizar el encabezado para permitir que la página se cargue una vez sanear.  
 4. El administrador debe habilitar el [**uso compartido de recursos entre orígenes (CORS)** ](#cross-origin-resource-sharing-cors-headers) y establecer el origen (dominio) en AD FS para permitir que una aplicación de una sola página tenga acceso a una API Web con otro dominio.  
-5. El administrador ha habilitado el encabezado de la [**Directiva de seguridad de contenido (CSP)** ](#content-security-policy-csp) para evitar ataques de inserción de datos y de scripts entre sitios al no permitir solicitudes entre dominios. Sin embargo, debido a un nuevo requisito empresarial, necesita personalizar el encabezado para permitir que la página web Cargue imágenes de cualquier origen y restrinja los medios a los proveedores de confianza.  
+5. El administrador ha habilitado el encabezado de la [**Directiva de seguridad de contenido (CSP)** ](#content-security-policy-csp) para evitar ataques de inserción de datos y de scripts entre sitios al no permitir solicitudes entre dominios. Sin embargo, debido a un nuevo requisito empresarial, necesitan personalizar el encabezado para permitir que la página web Cargue imágenes de cualquier origen y restrinja los medios a los proveedores de confianza.  
 
  
 ## <a name="http-security-response-headers"></a>Encabezados de respuesta de seguridad HTTP 
@@ -109,7 +109,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options"
 ### <a name="x-xss-protection"></a>Protección de X-XSS 
 Este encabezado de respuesta de seguridad HTTP se usa para impedir que se carguen las páginas web cuando los exploradores detectan ataques de scripting entre sitios (XSS). Esto se conoce como filtrado XSS. El encabezado se puede establecer en uno de los siguientes valores:
  
-- **0** : deshabilita el filtrado XSS. No recomendado.  
+- **0** : deshabilita el filtrado XSS. No se recomienda.  
 - **1** : habilita el filtrado XSS. Si se detecta un ataque XSS, el explorador desaverá la página.   
 - **1; modo = bloque** : habilita el filtrado XSS. Si se detecta un ataque XSS, el explorador evitará la representación de la página. Esta es la configuración predeterminada y recomendada.  
 
