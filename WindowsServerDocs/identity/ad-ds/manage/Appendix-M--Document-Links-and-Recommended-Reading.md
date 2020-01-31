@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 99a7df77f5f87b95ccd69ada7148b433a26d0f78
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c48b5330ee1b9a186885645aaa4c1ac79f1782e7
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948935"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822748"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>Anexo M: vínculos a documentos y lecturas recomendadas
 
@@ -28,7 +28,7 @@ La tabla siguiente contiene una lista de vínculos a documentos externos y sus d
   
 |||  
 |-|-|  
-|**Links**|**Direcciones URL**|  
+|**Links**|**URL**|  
 |[10 leyes inmutables de administración de seguridad](https://technet.microsoft.com/library/cc722488.aspx)|[https://technet.microsoft.com/library/cc722488.aspx](https://technet.microsoft.com/library/cc722488.aspx)|  
 |[Administrador de cumplimiento de seguridad de Microsoft](https://technet.microsoft.com/library/cc677002.aspx)|[https://technet.microsoft.com/library/cc677002.aspx](https://technet.microsoft.com/library/cc677002.aspx)|  
 |[Gartner Symposium ITXPO](http://www.gartner.com/technology/symposium/orlando/)|[http://www.gartner.com/technology/symposium/orlando/](http://www.gartner.com/technology/symposium/orlando/)|  
@@ -80,7 +80,7 @@ La tabla siguiente contiene una lista de vínculos a documentos externos y sus d
 |[Administrar MDM de absoluta](http://www.absolute.com/landing/Google/MDM-google/mobile-device-management)|[http://www.absolute.com/landing/Google/MDM-google/mobile-device-management](http://www.absolute.com/landing/Google/MDM-google/mobile-device-management)|  
 |[SolarWinds](http://www.solarwinds.com/eminentware-products.aspx)|[http://www.solarwinds.com/eminentware-products.aspx](http://www.solarwinds.com/eminentware-products.aspx)|  
 |[Paquete de extensión de WSUS de EminentWare](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-WSUS-Extension-Pack-005-Datasheet2.pdf)|[http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-WSUS-Extension-Pack-005-Datasheet2.pdf](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-WSUS-Extension-Pack-005-Datasheet2.pdf)|  
-|[Paquete de extensiones de System Center Configuration Manager EminentWare](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|[http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|  
+|[Paquete de extensiones de Configuration Manager EminentWare](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|[http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|  
 |[GFI Software](http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA)|[http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA](http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA)|  
 |[GFI LanGuard](http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g)|[http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g](http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g)|  
 |[Secunia](http://secunia.com/)|[http://secunia.com/](http://secunia.com/)|  
@@ -97,11 +97,11 @@ La tabla siguiente contiene una lista de vínculos a documentos externos y sus d
 |[Acceder a este equipo desde la red](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_1)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_1](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_1)|  
 |[Actuar como parte del sistema operativo](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_3)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_3](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_3)|  
 |[Agregar estaciones de trabajo al dominio](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_4)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_4](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_4)|  
-|[Ajustar las cuotas de memoria de un proceso](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5)|  
+|[Ajustar cuotas de memoria para un proceso](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5)|  
 |[Permitir el inicio de sesión local](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_6)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_6](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_6)|  
 |[Permitir el inicio de sesión a través de Terminal Services](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_7)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_7](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_7)|  
 |[Copia de seguridad de archivos y directorios](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_8)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_8](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_8)|  
-|[Omisión de la comprobación transversal](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_9)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_9](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_9)|  
+|[Omitir comprobación de recorrido](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_9)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_9](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_9)|  
 |[Cambiar la hora del sistema](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_10)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_10](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_10)|  
 |[Cambiar la zona horaria](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_11)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_11](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_11)|  
 |[Crear un archivo de paginación](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_12)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_12](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_12)|  
@@ -126,10 +126,10 @@ La tabla siguiente contiene una lista de vínculos a documentos externos y sus d
 |[Iniciar sesión como un trabajo por lotes](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_30)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_30](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_30)|  
 |[Iniciar sesión como servicio](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_31)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_31](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_31)|  
 |[Administrar registro de seguridad y auditoría](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_32)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_32](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_32)|  
-|[Modificar la etiqueta de un objeto](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33)|  
-|[Modificar valores de entorno firmware](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34)|  
-|[Realizar tareas de mantenimiento del volumen](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35)|  
-|[Analizar un solo proceso](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36)|  
+|[Modificar una etiqueta de objeto](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33)|  
+|[Modificar valores de entorno de firmware](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34)|  
+|[Realizar tareas de mantenimiento de volumen](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35)|  
+|[Generar perfiles de un solo proceso](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36)|  
 |[Generar perfiles del rendimiento del sistema](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_37)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_37](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_37)|  
 |[Quitar equipo de la estación de acoplamiento](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_38)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_38](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_38)|  
 |[Reemplazar un token de nivel de proceso](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_39)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_39](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_39)|  
@@ -137,10 +137,10 @@ La tabla siguiente contiene una lista de vínculos a documentos externos y sus d
 |[Apagar el sistema](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_41)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_41](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_41)|  
 |[Sincronizar datos del servicio de directorio](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_42)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_42](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_42)|  
 |[Tomar posesión de archivos u otros objetos](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_43)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_43](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_43)|  
-|[Control de acceso](https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx)|[https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx](https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx)|  
+|[Access Control](https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx)|[https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx](https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx)|  
 |[Soporte técnico de Microsoft artículo 251343](https://support.microsoft.com/kb/251343)|[https://support.microsoft.com/kb/251343](https://support.microsoft.com/kb/251343)|  
 |[Operaciones de modificación de rootDSE](https://msdn.microsoft.com/library/cc223297.aspx)|[https://msdn.microsoft.com/library/cc223297.aspx](https://msdn.microsoft.com/library/cc223297.aspx)|  
-|[Guía paso a paso para la copia de seguridad y recuperación de AD DS](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)|[https://technet.microsoft.com/library/cc771290(v=ws.10).aspx](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)|  
+|[Guía paso a paso de AD DS copias de seguridad y recuperación](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)|[https://technet.microsoft.com/library/cc771290(v=ws.10).aspx](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)|  
 |[Configuraciones de Windows para el tipo de cifrado compatible con Kerberos](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)|[https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)|  
 |[Procesos e interacciones de UAC](https://technet.microsoft.com/library/dd835561(v=WS.10).aspx)|[https://technet.microsoft.com/library/dd835561(v=WS.10).aspx#1](https://technet.microsoft.com/library/dd835561(v=WS.10).aspx)|  
 |[EmpowerID](http://www.empowerid.com/products/authorizationservices)|[http://www.empowerid.com/products/authorizationservices](http://www.empowerid.com/products/authorizationservices)|  
@@ -164,7 +164,7 @@ La tabla siguiente contiene una lista de vínculos a documentos externos y sus d
 |[La guía de planeación de seguridad de las cuentas de administrador](https://www.microsoft.com/download/details.aspx?id=19406)|[https://www.microsoft.com/download/details.aspx?id=19406](https://www.microsoft.com/download/details.aspx?id=19406)|  
 |[Guía de procedimientos recomendados para proteger las instalaciones de Active Directory](https://www.microsoft.com/download/details.aspx?id=16755) para Windows Server 2003|[https://www.microsoft.com/download/details.aspx?id=16755](https://www.microsoft.com/download/details.aspx?id=16755)|  
 |[Prácticas recomendadas para delegar la administración de Active Directory](https://www.microsoft.com/download/details.aspx?id=21678) para Windows Server 2003|[https://www.microsoft.com/download/details.aspx?id=21678](https://www.microsoft.com/download/details.aspx?id=21678)|  
-|[Directiva de ciclo de vida de Microsoft](https://support.microsoft.com/lifecycle/)|[https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx](https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx)|  
+|[Ciclo de vida de Soporte técnico de Microsoft](https://support.microsoft.com/lifecycle/)|[https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx](https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx)|  
 |[Active Directory especificaciones técnicas](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|[https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|  
 |[Mensaje de error cuando los usuarios que no son administradores con control delegado intentan unir equipos a un controlador de dominio basado en Windows Server 2003 o Windows Server 2008: "acceso denegado"](https://support.microsoft.com/kb/932455)|[https://support.microsoft.com/kb/932455](https://support.microsoft.com/kb/932455)| 
 |[Comprobación del mecanismo de autenticación de AD DS en la Guía paso a paso de Windows Server 2008 R2](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|[https://technet.microsoft.com/library/dd378897(WS.10).aspx](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|  
@@ -175,7 +175,7 @@ La tabla siguiente contiene una lista de lecturas recomendadas que le ayudarán 
   
 ||  
 |---|  
-|**Lecturas recomendadas**|  
+|**Lectura recomendada**|  
 |[Nuevas amenazas de Cyber Tech en el informe de 2014](http://www.gtsecuritysummit.com/2014Report.pdf)|  
 |[Informe de inteligencia de seguridad de Microsoft](https://www.microsoft.com/security/sir/default.aspx)|  
 |[Mitigar los ataques Pass-The-hash (PTH) y otras técnicas de robo de credenciales](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|  
@@ -187,7 +187,7 @@ La tabla siguiente contiene una lista de lecturas recomendadas que le ayudarán 
 |[La guía de planeación de seguridad de las cuentas de administrador](https://www.microsoft.com/download/details.aspx?id=19406)|  
 |[Guía de procedimientos recomendados para proteger las instalaciones de Active Directory](https://www.microsoft.com/download/details.aspx?id=16755) para Windows Server 2003|  
 |[Prácticas recomendadas para delegar la administración de Active Directory](https://www.microsoft.com/download/details.aspx?id=21678) para Windows Server 2003|  
-|[Directiva de ciclo de vida de Microsoft](https://support.microsoft.com/lifecycle/)|  
+|[Ciclo de vida de Soporte técnico de Microsoft](https://support.microsoft.com/lifecycle/)|  
 |[Active Directory especificaciones técnicas](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx) -dSHeuristics|  
 |[Mensaje de error cuando los usuarios que no son administradores con control delegado intentan unir equipos a un controlador de dominio basado en Windows Server 2003 o Windows Server 2008: "acceso denegado"](https://support.microsoft.com/kb/932455)|  
 |[Guía de procedimientos recomendados para proteger las instalaciones de Active Directory. doc](https://go.microsoft.com/fwlink/?LinkId=140862)|  
@@ -198,15 +198,15 @@ La tabla siguiente contiene una lista de lecturas recomendadas que le ayudarán 
 #### <a name="copyright-information"></a>Información de copyright  
 La información incluida en este documento representa la perspectiva actual de Microsoft Corporation en cuanto a los temas tratados hasta la fecha de su publicación. Puesto que Microsoft debe responder a las condiciones cambiantes del mercado, no debe interpretarse como un compromiso por parte de Microsoft, y Microsoft no puede garantizar la exactitud de ninguna información que se presente tras la fecha de publicación.  
   
-Estas notas del producto se proporcionan solo con fines informativo. Microsoft no otorga ninguna garantía, ni expresa ni implícita, en este documento.  
+Estas notas del producto solo tienen fines informativos. Microsoft no otorga ninguna garantía, ni expresa ni implícita, en este documento.  
   
-El cumplimiento de todas las leyes de propiedad intelectual aplicables es responsabilidad del usuario. Ninguna parte de este documento puede ser reproducida, almacenada o introducida en un sistema de recuperación, o transmitida de ninguna forma, ni por ningún medio (ya sea electrónico, mecánico, por fotocopia, grabación o de otra manera) con ningún propósito, sin la previa autorización expresa por escrito de Microsoft Corporation, sin que ello suponga ninguna limitación a los derechos de propiedad industrial o intelectual.  
+El cumplimiento de todas las leyes de propiedad intelectual aplicables es responsabilidad del usuario. Sin limitar los derechos de propiedad intelectual, ninguna parte de este documento puede reproducirse, almacenarse o introducirse en un sistema de recuperación, ni transmitirse de ninguna forma ni por ningún medio (electrónico, mecánico, Fotocopiado, grabación o de otro tipo), ni para ningún propósito , sin el permiso expreso por escrito de Microsoft Corporation.  
   
 Microsoft puede tener patentes, solicitudes de patente, marcas, propiedades intelectuales u otros derechos de propiedad intelectual e industrial en relación con los asuntos tratados en este documento. La entrega de este documento no le otorga ninguna licencia sobre dichas patentes, marcas, derechos de autor u otros derechos de propiedad industrial o intelectual, a menos que así se prevea en un contrato escrito de licencia de Microsoft.  
   
 Microsoft, Active Directory, BitLocker, Hyper-V, Internet Explorer, Windows Vista, Windows y Windows Server son marcas registradas o marcas comerciales de Microsoft Corporation en el Estados Unidos y/o en otros países. Las demás marcas comerciales pertenecen a sus respectivos propietarios.  
   
-Los nombres de las compañías, organizaciones, productos, nombres de dominio, direcciones de correo electrónico, logotipos, personas, lugares y eventos mencionados son ficticios. No se pretende indicar ni debe deducirse ninguna asociación con compañías, organizaciones, productos, nombres de dominio, direcciones de correo electrónico, logotipos, personas, lugares o eventos reales.  
+Las compañías, organizaciones, productos, nombres de dominio, direcciones de correo electrónico, logotipos, personas, lugares y eventos que se describen aquí son ficticios. No se pretende indicar ni debe deducirse ninguna asociación con compañías, organizaciones, productos, nombres de dominio, direcciones de correo electrónico, logotipos, personas, lugares o eventos reales.  
   
 ? 2013 Microsoft Corporation. Todos los derechos reservados.  
   

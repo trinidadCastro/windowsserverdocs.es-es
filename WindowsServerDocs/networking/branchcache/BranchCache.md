@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: a4587cff-c086-49f1-a0bf-cd74b8a44440
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7fe8d948a5f43fdab394490f543f3583167bdfe9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 15d57d12679d7441da080ad671264ca1e5e1f42c
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406768"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822808"
 ---
 # <a name="branchcache"></a>BranchCache
 
@@ -136,7 +136,7 @@ Estos servidores de archivos usan el Bloque de mensajes del servidor (SMB) para 
 
 Los servidores de aplicaciones admitidos son equipos que ejecutan Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2 con Servicio de transferencia inteligente en segundo plano (BITS) instalados y habilitados. 
 
-Además, el servidor web debe tener la característica BranchCache instalada. Como ejemplos de servidores de aplicaciones, puede implementar servidores de Microsoft Windows Server Update Services (WSUS) y de punto de distribución de sucursal de Microsoft System Center Configuration Manager como servidores de contenido de BranchCache.
+Además, el servidor web debe tener la característica BranchCache instalada. Como ejemplos de servidores de aplicaciones, puede implementar servidores de punto de distribución de Microsoft Windows Server Update Services (WSUS) y Microsoft Endpoint Configuration Manager como servidores de contenido de BranchCache.
 
 ## <a name="BKMK_3a"></a>BranchCache y la nube
 
@@ -196,7 +196,7 @@ Puede usar Administrador del servidor en Windows Server 2016 para instalar la ca
 |Servidor de caché hospedada|Sucursal|Característica de BranchCache con modo de servidor de caché hospedada habilitado|
 |Equipo cliente habilitado para BranchCache|Sucursal|No se necesita ninguna instalación; simplemente habilite BranchCache y un modo de BranchCache \(\) distribuido o hospedado en el cliente.|
 
-Para instalar el servicio de rol o la característica, abra el Administrador del servidor y seleccione los equipos en los que desea habilitar la funcionalidad de BranchCache. En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**. Se abre el asistente para **Agregar roles y características** . Cuando ejecute el asistente, realice las siguientes selecciones:
+Para instalar el servicio de rol o la característica, abra el Administrador del servidor y seleccione los equipos en los que desea habilitar la funcionalidad de BranchCache. En el Administrador del servidor, haga clic en **Administrar**y en **Agregar roles y características**. Se abre el asistente para **Agregar roles y características** . Cuando ejecute el asistente, realice las siguientes selecciones:
 
 - En la página del asistente **Seleccionar tipo de instalación**, seleccione **Instalación basada en características o en roles**.
 
@@ -214,7 +214,7 @@ Los sistemas operativos siguientes proporcionan a BranchCache compatibilidad con
 
 - Windows 10 Enterprise
 
-- Windows 10 Education
+- Windows 10 Education
 
 - Windows 8.1 Enterprise
 

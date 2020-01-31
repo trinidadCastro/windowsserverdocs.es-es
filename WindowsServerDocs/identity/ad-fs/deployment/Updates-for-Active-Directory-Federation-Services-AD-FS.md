@@ -9,12 +9,12 @@ ms.date: 3/29/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0850145c9281c769c5a2b6532ccb56615abd11b3
-ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
+ms.openlocfilehash: b50b1b7b43002c91ee849f352e255f520f6d96f0
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725790"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822738"
 ---
 # <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>Actualizaciones necesarias para Servicios de federación de Active Directory (AD FS) (AD FS) y el proxy de aplicación web (WAP)
 
@@ -28,6 +28,7 @@ Las actualizaciones para Windows Server 2016 se entregan mensualmente a través 
 
 |Ó # |Descripción|Fecha de lanzamiento
 |----- | ----- |-----
+|[4534271](https://support.microsoft.com/help/4534271/windows-10-update-kb4534271) | Soluciona un posible error de Chrome AD FS debido a la compatibilidad con nuevas directivas de cookies de [SameSite](https://www.chromestatus.com/feature/5088147346030592) de forma predeterminada para la versión 80 de Google Chrome. Para obtener más información, consulte [aquí](https://docs.microsoft.com/office365/troubleshoot/miscellaneous/chrome-behavior-affects-applications). |2020 de enero|
 |[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | Esta actualización de seguridad soluciona una vulnerabilidad en Servicios de federación de Active Directory (AD FS) (AD FS) que podría permitir que un atacante omitiera la Directiva de bloqueo de la extranet. |2019 de julio|
 |[4489889 (compilación del sistema operativo 14393,2879)](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | Soluciona un problema en Servicios de federación de Active Directory (AD FS) (AD FS) que hace que aparezca una relación de confianza para usuario autenticado duplicada en la consola de administración de AD FS. Esto se produce al crear o ver las relaciones de confianza para usuario autenticado mediante la consola de administración de AD FS.</br></br> Soluciona un problema de latencia del proxy de aplicación web (WAP) de alta Servicios de federación de Active Directory (AD FS) (ADFS) (más de 10, 000 MS) que se produce mientras se habilita el bloqueo inteligente de extranet (ESL) en AD FS 2016. Esta actualización de seguridad soluciona la vulnerabilidad descrita en [CVE-2018-16794](https://nvd.nist.gov/vuln/detail/CVE-2018-16794). |2019 de marzo|
 |[4487006 (compilación del sistema operativo 14393,2828)](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) | Soluciona un problema que hace que se produzcan errores en las actualizaciones a una relación de confianza para usuario autenticado cuando se usa PowerShell o la consola de administración de Servicios de federación de Active Directory (AD FS) (AD FS). Este problema se produce si configura una relación de confianza para usuario autenticado para usar una dirección URL de metadatos en línea que publica más de un PassiveRequestorEndpoint. El error es "MSIS7615: los puntos de conexión de confianza especificados en una relación de confianza para usuario autenticado deben ser únicos para esa relación de confianza para usuario autenticado".  </br></br>Soluciona un problema que muestra un mensaje de error específico para los cambios de contraseña de complejidad externa debido a las directivas de protección de contraseñas de Azure. |Febrero de 2019|
@@ -50,6 +51,7 @@ A continuación se muestra la lista de revisiones y paquetes acumulativos de act
 
 |Ó # |Descripción|Fecha de lanzamiento
 |----- | ----- |-----
+|[4534309](https://support.microsoft.com/help/4534309/windows-8-1-kb4534309)| Soluciona un posible error de Chrome AD FS debido a la compatibilidad con nuevas directivas de cookies de [SameSite](https://www.chromestatus.com/feature/5088147346030592) de forma predeterminada para la versión 80 de Google Chrome. Para obtener más información, consulte [aquí](https://docs.microsoft.com/office365/troubleshoot/miscellaneous/chrome-behavior-affects-applications). |2020 de enero
 |[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| Esta actualización de seguridad soluciona una vulnerabilidad en Servicios de federación de Active Directory (AD FS) (AD FS) que podría permitir que un atacante omitiera la Directiva de bloqueo de la extranet. |2019 de julio
 |[4041685](https://support.microsoft.com/kb/4041685)|Se ha solucionado un problema AD FS en el que las cookies de MSISConext de los encabezados de solicitud pueden desbordar el límite de tamaño de los encabezados y provocar un error en la autenticación con el código de Estado HTTP 400 "solicitud incorrecta de encabezado demasiado largo".</br></br>Se corrigió un problema por el que ADFS ya no puede omitir "prompt = login" durante la autenticación. Se ha agregado una opción "deshabilitada" para restaurar escenarios en los que se usa la autenticación que no es de contraseña.|Versión preliminar de octubre de 2017 de paquete acumulativo de actualizaciones
 |[4019217](https://support.microsoft.com/kb/4019217)|Los clientes de carpetas de trabajo que usan el agente de tokens no funcionan cuando se usa un servidor 2012 R2 AD FS Server|Paquete acumulativo de actualizaciones de mayo de 2017

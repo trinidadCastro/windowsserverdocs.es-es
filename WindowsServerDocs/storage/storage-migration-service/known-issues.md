@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 0f549310d568142f819e22422d41a72d38b306e2
-ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
+ms.openlocfilehash: e5832843dce05832a231ed3a4d7e20cf90f1d183
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145941"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822598"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -64,7 +64,7 @@ Hemos corregido este problema en una versión posterior de Windows Server.
 
 Al usar el centro de administración de Windows o PowerShell para descargar el registro CSV de operaciones de transferencia de errores detallados, recibe el error:
 
- >   Transferir registro: Compruebe que el uso compartido de archivos está permitido en el firewall. : Esta operación de solicitud enviada a net. TCP: psico: 28940/SMS/Service/1/Transfer no recibió una respuesta dentro del tiempo de espera configurado (00:01:00). El tiempo asignado a esta operación puede haber sido una parte de un tiempo de espera mayor. La razón puede ser que el servicio sigue procesando la operación o que no pudo enviar un mensaje de respuesta. Considere la posibilidad de aumentar el tiempo de espera de la operación (convirtiendo el canal o el proxy a IContextChannel y estableciendo la propiedad OperationTimeout) y asegúrese de que el servicio pueda conectarse al cliente.
+ >   Transferir registro: Compruebe que el uso compartido de archivos está permitido en el firewall. : Esta operación de solicitud enviada a net. TCP: psico: 28940/SMS/Service/1/Transfer no recibió una respuesta dentro del tiempo de espera configurado (00:01:00). El tiempo asignado a esta operación puede haber sido una parte de un tiempo de espera mayor. Esto puede deberse a que el servicio sigue procesando la operación o a que el servicio no pudo enviar un mensaje de respuesta. Considere la posibilidad de aumentar el tiempo de espera de la operación (convirtiendo el canal o el proxy a IContextChannel y estableciendo la propiedad OperationTimeout) y asegúrese de que el servicio pueda conectarse al cliente.
 
 Este problema se debe a un gran número de archivos transferidos que no se pueden filtrar en el tiempo de espera predeterminado de un minuto permitido por el servicio de migración de almacenamiento. 
 
@@ -90,7 +90,7 @@ Para solucionar este problema:
 7. Haga clic con el botón secundario en "WcfOperationTimeoutInMinutes" y, a continuación, haga clic en modificar. 
 8. En el cuadro datos base, haga clic en "decimal".
 9. En el cuadro información del valor, escriba "10" y, a continuación, haga clic en Aceptar.
-10. Salga del Editor del Registro.
+10. Salga del editor del registro.
 11. Intente descargar el archivo CSV de solo errores de nuevo. 
 
 Tenemos previsto cambiar este comportamiento en una versión posterior de Windows Server 2019.  
@@ -220,7 +220,7 @@ Como alternativa alternativa:
    ```
 ## <a name="error-dll-was-not-found-when-running-inventory-from-a-cluster-node"></a>Error "no se encontró el archivo dll" al ejecutar el inventario desde un nodo de clúster
 
-Al intentar ejecutar el inventario con el orquestador del servicio de migración de almacenamiento instalado en un nodo de clúster de conmutación por error de Windows Server 2019 y establecer como destino un clúster de conmutación por error de Windows Server general usar el origen del servidor de archivos, recibirá el siguiente error:
+Al intentar ejecutar el inventario con el servicio de migración de almacenamiento y establecer como destino un clúster de conmutación por error de Windows Server general usar el origen del servidor de archivos, recibirá los siguientes errores:
 
     DLL not found
     [Error] Failed device discovery stage VolumeInfo with error: (0x80131524) Unable to load DLL 'Microsoft.FailoverClusters.FrameworkSupport.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)   

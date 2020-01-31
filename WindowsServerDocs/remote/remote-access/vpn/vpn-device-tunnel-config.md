@@ -9,12 +9,12 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: a216c490c92461e07fd5093783ec2c3049e8accb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b5be8827cee22b35fb31bf08d1c960b150dcad84
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388032"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822658"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Configuración de túneles de dispositivo VPN en Windows 10
 
@@ -46,9 +46,9 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="vpn-device-tunnel-configuration"></a>Configuración de túnel de dispositivo VPN
 
-El XML de Perfil de ejemplo siguiente proporciona una buena guía para escenarios en los que solo se requieren las extracciones iniciadas por el cliente a través del túnel de dispositivo.  Los filtros de tráfico se aprovechan para restringir el túnel de dispositivo solo al tráfico de administración.  Esta configuración funciona bien en escenarios de actualización de Windows Update, directiva de grupo típicos y System Center Configuration Manager (SCCM), así como la conectividad VPN para el primer inicio de sesión sin credenciales almacenadas en caché o escenarios de restablecimiento de contraseña. 
+El XML de Perfil de ejemplo siguiente proporciona una buena guía para escenarios en los que solo se requieren las extracciones iniciadas por el cliente a través del túnel de dispositivo.  Los filtros de tráfico se aprovechan para restringir el túnel de dispositivo solo al tráfico de administración.  Esta configuración funciona bien para los escenarios de Windows Update, directiva de grupo típicos (GP) y Microsoft Endpoint Configuration Manager Update, así como la conectividad VPN para el primer inicio de sesión sin credenciales almacenadas en caché o escenarios de restablecimiento de contraseña. 
 
-Para casos de inserciones iniciados por el servidor, como Administración remota de Windows (WinRM), remotos de GPUpdate y escenarios de actualización de SCCM remotos, debe permitir el tráfico entrante en el túnel de dispositivo, por lo que no se pueden usar filtros de tráfico.  Si en el perfil de túnel de dispositivo activa los filtros de tráfico, el túnel de dispositivo deniega el tráfico entrante.  Esta limitación se va a quitar en futuras versiones.
+En el caso de los casos de inserciones iniciados por el servidor, como Administración remota de Windows (WinRM), los escenarios de la actualización remota de los Configuration Manager y los de actualización, debe permitir el tráfico entrante en el túnel del dispositivo, por lo que no se pueden usar filtros de tráfico.  Si en el perfil de túnel de dispositivo activa los filtros de tráfico, el túnel de dispositivo deniega el tráfico entrante.  Esta limitación se va a quitar en futuras versiones.
 
 
 ### <a name="sample-vpn-profilexml"></a>ProfileXML de VPN de ejemplo
@@ -173,7 +173,7 @@ Los siguientes son recursos adicionales que le ayudarán en la implementación d
 
 Los siguientes son recursos de configuración de cliente de VPN.
 
-- [Cómo crear perfiles de VPN en System Center Configuration Manager](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)
+- [Cómo crear perfiles de VPN en Configuration Manager](https://docs.microsoft.com/configmgr/protect/deploy-use/create-vpn-profiles)
 - [Configuración de conexiones VPN de Always On cliente de Windows 10](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 - [Opciones de Perfil de VPN](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
 

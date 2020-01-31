@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 56986f2ea9f49bdfc1194ae5342798793524e86c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 241418b87fd0f1e6fa64c4b1267e6d9fcde6b0d3
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408617"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822768"
 ---
 # <a name="implementing-secure-administrative-hosts"></a>Implementación de hosts administrativos seguros
 
@@ -84,7 +84,7 @@ Aunque la configuración específica variará en función de la arquitectura de 
 Debe permitir los inicios de sesión interactivos por parte de usuarios autorizados y quitar o incluso bloquear otros tipos de inicio de sesión que no sean necesarios para el acceso al servidor.  
   
 ### <a name="patch-and-configuration-management"></a>Administración de revisiones y configuraciones  
-Las organizaciones más pequeñas pueden confiar en ofertas como Windows Update o [Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) (WSUS) para administrar la implementación de actualizaciones en sistemas Windows, mientras que las organizaciones más grandes pueden implementar software de administración de configuración y revisión empresarial como System Center Configuration Manager. Sin tener en cuenta los mecanismos que se usan para implementar actualizaciones en el servidor general y la población de la estación de trabajo, se deben considerar implementaciones independientes para sistemas altamente seguros, como controladores de dominio, entidades de certificación y hosts administrativos. Al separar estos sistemas de la infraestructura de administración general, si el software de administración o las cuentas de servicio están en peligro, el riesgo no se puede ampliar fácilmente a los sistemas más seguros de la infraestructura.  
+Las organizaciones más pequeñas pueden confiar en ofertas como Windows Update o [Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) (WSUS) para administrar la implementación de actualizaciones en sistemas Windows, mientras que las organizaciones más grandes pueden implementar software de administración de configuración y revisión empresarial, como Microsoft Endpoint Configuration Manager. Sin tener en cuenta los mecanismos que se usan para implementar actualizaciones en el servidor general y la población de la estación de trabajo, se deben considerar implementaciones independientes para sistemas altamente seguros, como controladores de dominio, entidades de certificación y hosts administrativos. Al separar estos sistemas de la infraestructura de administración general, si el software de administración o las cuentas de servicio están en peligro, el riesgo no se puede ampliar fácilmente a los sistemas más seguros de la infraestructura.  
   
 Aunque no debe implementar procesos de actualización manuales para sistemas seguros, debe configurar una infraestructura independiente para actualizar sistemas seguros. Incluso en organizaciones de gran tamaño, esta infraestructura normalmente se puede implementar a través de servidores WSUS dedicados y GPO para sistemas protegidos.  
   

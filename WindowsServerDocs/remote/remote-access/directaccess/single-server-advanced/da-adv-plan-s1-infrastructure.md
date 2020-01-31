@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9fa6fe4de0c8723c17f6a61717281d0a38d1b579
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb8bb6dda6eab27413b462a4c7f17176fbed85a1
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388663"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822778"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>Paso 1 planear la infraestructura de DirectAccess avanzada
 
@@ -264,7 +264,7 @@ Para usar IP-HTTPS en un puerto no estándar, sigue estos pasos en el controlado
   
     3.  Abre la configuración de estado de IP-HTTPS y cambia la dirección URL por **https://<nombre del servidor de DirectAccess (por ejemplo, server.contoso.com)>:44500/IPHTTPS**.  
   
-    4.  Haga clic en **Aplicar**.  
+    4.  Haz clic en **Apply**.  
   
 2.  Modifica la configuración del cliente de proxy Kerberos en el GPO de cliente.  
   
@@ -272,7 +272,7 @@ Para usar IP-HTTPS en un puerto no estándar, sigue estos pasos en el controlado
   
     2.  Abre la configuración de estado de IPHTTPS y cambia la dirección URL por **https://<nombre del servidor de DirectAccess (por ejemplo, server.contoso.com)>:44500/IPHTTPS**.  
   
-    3.  Haga clic en **Aplicar**.  
+    3.  Haz clic en **Apply**.  
   
 3.  Modifica la configuración de la directiva de IPsec del cliente para usar ComputerKerb y UserKerb.  
   
@@ -465,9 +465,9 @@ Los clientes de DirectAccess inician las comunicaciones con los servidores de ad
   
 -   Controladores de dominio: la detección automática de controladores de dominio se realiza para todos los dominios del mismo bosque que los equipos cliente y servidor de DirectAccess.  
   
--   Servidores de System Center Configuration Manager: la detección automática de servidores de System Center Configuration Manager se realiza para todos los dominios del mismo bosque que los equipos cliente y servidor de DirectAccess.  
+-   Servidores de punto de conexión de Microsoft Configuration Manager: la detección automática de servidores de Configuration Manager se realiza para todos los dominios del mismo bosque que los equipos cliente y servidor de DirectAccess.  
   
-Los controladores de dominio y los servidores de System Center Configuration Manager se detectan automáticamente la primera vez que se configura DirectAccess. Los controladores de dominio detectados no se muestran en la consola, pero la configuración se puede recuperar mediante el cmdlet de Windows PowerShell **Get-DAMgmtServer-Type All**. Si el controlador de dominio o los servidores de System Center Configuration Manager se modifican, al hacer clic en **Actualizar servidores de administración** en la Consola de administración de acceso remoto se actualiza la lista de servidores de administración.  
+Los controladores de dominio y los servidores de Configuration Manager se detectan automáticamente la primera vez que se configura DirectAccess. Los controladores de dominio detectados no se muestran en la consola, pero la configuración se puede recuperar mediante el cmdlet de Windows PowerShell **Get-DAMgmtServer-Type All**. Si el controlador de dominio o los servidores de Configuration Manager se modifican, al hacer clic en **actualizar servidores de administración** en la consola de administración de acceso remoto se actualiza la lista de servidores de administración.  
   
 **Requisitos del servidor de administración**  
   
@@ -475,8 +475,8 @@ Los controladores de dominio y los servidores de System Center Configuration Man
   
 -   Los servidores de administración que inician conexiones con los clientes de DirectAccess deben ser totalmente compatibles con IPv6, mediante una dirección IPv6 nativa o mediante una asignada por ISATAP.  
   
-## <a name="17-plan-active-directory-domain-services"></a>1.7 Planear Active Directory Domain Services  
-En esta sección se explica cómo usa DirectAccess los Servicios de dominio de Active Directory (AD DS), e incluye las siguientes subsecciones:  
+## <a name="17-plan-active-directory-domain-services"></a>1.7 Planear los Servicios de dominio de Active Directory  
+En esta sección se explica cómo usa DirectAccess los Active Directory Domain Services (AD DS), e incluye las siguientes subsecciones:  
   
 -   [1.7.1 planear la autenticación del cliente](#171-plan-client-authentication)  
   

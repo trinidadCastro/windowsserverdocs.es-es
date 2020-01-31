@@ -8,18 +8,18 @@ ms.topic: get-started-article
 ms.assetid: 0f00ae6e-ae1b-41e3-8c50-65226b5b9c9e
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ab33f5066daa0ef339c38974e4022cf8e61ace57
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9287408446b81805e3c13ff876535a615ecb03d5
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406444"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822798"
 ---
 # <a name="install-content-servers-that-use-the-branchcache-feature"></a>Instalar servidores de contenido que utilizan la característica BranchCache
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Para implementar servidores de contenido que son servidores web HTTPS (protocolo seguro de transferencia de hipertexto), servidores Web de protocolo de transferencia de hipertexto (HTTP) y servidores de aplicaciones basados en el servicio de transferencia inteligente en segundo plano (BITS), como Windows Server Update Services ( WSUS) y System Center Configuration Manager servidores de sistema de sitio de distribución de ramas, debe instalar la característica BranchCache, iniciar el servicio BranchCache y (solo para los servidores WSUS) realizar pasos de configuración adicionales.  
+Para implementar servidores de contenido que son servidores web HTTPS (protocolo seguro de transferencia de hipertexto), servidores Web de protocolo de transferencia de hipertexto (HTTP) y servidores de aplicaciones basados en el servicio de transferencia inteligente en segundo plano (BITS), como Windows Server Update Services ( WSUS) y el punto de conexión de Microsoft Configuration Manager servidores de sistema de sitio de distribución de ramas, debe instalar la característica BranchCache, iniciar el servicio BranchCache y (solo para los servidores WSUS) realizar pasos de configuración adicionales.  
   
 Vea los temas siguientes para implementar servidores de contenido.  
   

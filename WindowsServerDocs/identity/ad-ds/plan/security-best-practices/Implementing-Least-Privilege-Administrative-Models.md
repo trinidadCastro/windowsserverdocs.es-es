@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c8ad9b00070d5daef2e5aee43cfdee2d192bddae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f61bc1ccb7d9b09a17713946b5b8c2cc352f43ac
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367732"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822098"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>Implementación de modelos administrativos de menor privilegio
 
@@ -253,7 +253,7 @@ En otros casos, puede que necesite crear grupos de seguridad y delegar derechos 
 3. A qué usuarios se les debe conceder la pertenencia a un rol.  
 4. Cómo se realizará la administración de pertenencias a roles.  
 
-En muchos entornos, la creación manual de controles de acceso basados en roles para la administración de un entorno de Active Directory puede ser difícil de implementar y mantener. Si tiene roles y responsabilidades claramente definidos para la administración de la infraestructura de ti, es posible que desee aprovechar las herramientas adicionales que le ayudarán a crear una implementación de RBAC nativa administrable. Por ejemplo, si Forefront Identity Manager (FIM) está en uso en su entorno, puede usar FIM para automatizar la creación y el rellenado de roles administrativos, lo que puede facilitar la administración continuada. Si usa System Center Configuration Manager (SCCM) y System Center Operations Manager (SCOM), puede usar roles específicos de la aplicación para delegar funciones de administración y supervisión, y también aplicar una configuración y auditoría coherentes entre sistemas en el dominio. Si ha implementado una infraestructura de clave pública (PKI), puede emitir y requerir tarjetas inteligentes para el personal de TI responsable de la administración del entorno. Con la administración de credenciales de FIM (FIM CM), puede incluso combinar la administración de roles y credenciales para el personal administrativo.  
+En muchos entornos, la creación manual de controles de acceso basados en roles para la administración de un entorno de Active Directory puede ser difícil de implementar y mantener. Si tiene roles y responsabilidades claramente definidos para la administración de la infraestructura de ti, es posible que desee aprovechar las herramientas adicionales que le ayudarán a crear una implementación de RBAC nativa administrable. Por ejemplo, si Forefront Identity Manager (FIM) está en uso en su entorno, puede usar FIM para automatizar la creación y el rellenado de roles administrativos, lo que puede facilitar la administración continuada. Si usa Microsoft Endpoint Configuration Manager y System Center Operations Manager (SCOM), puede usar roles específicos de la aplicación para delegar funciones de administración y supervisión, y también aplicar una configuración y auditoría coherentes en todos los sistemas de el dominio. Si ha implementado una infraestructura de clave pública (PKI), puede emitir y requerir tarjetas inteligentes para el personal de TI responsable de la administración del entorno. Con la administración de credenciales de FIM (FIM CM), puede incluso combinar la administración de roles y credenciales para el personal administrativo.  
 
 En otros casos, puede ser preferible que una organización considere la posibilidad de implementar software RBAC de terceros que proporcione la funcionalidad "de la caja". Una serie de proveedores ofrecen soluciones comerciales, de un solo uso (COTS) para RBAC para Active Directory, Windows y directorios y sistemas operativos que no son de Windows. Al elegir entre soluciones nativas y productos de terceros, debe tener en cuenta los siguientes factores:  
 

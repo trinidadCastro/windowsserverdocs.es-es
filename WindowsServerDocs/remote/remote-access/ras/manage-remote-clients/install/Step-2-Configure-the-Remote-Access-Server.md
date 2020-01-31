@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: c0257b98-5633-4264-9df6-b6ffae80592c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b4e3c2f4a27652e7b28b826981d192d6a4c6c107
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0c112898217eb05ad2fd9b387f401ce129b47e54
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404553"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822698"
 ---
 # <a name="step-2-configure-the-remote-access-server"></a>Paso 2 configurar el servidor de acceso remoto
 
@@ -59,7 +59,7 @@ Debe instalar el rol de acceso remoto en un servidor de su organización que act
   
 7. Haga clic en **Siguiente**y después en **Instalar**.  
   
-8.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
+8.  En el cuadro de diálogo **Progreso de la instalación** , compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
   
 ![](../../../../media/Step-2-Configure-the-Remote-Access-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
@@ -177,7 +177,7 @@ Para configurar los servidores de infraestructura en una implementación de acce
   
 4.  En la página **lista de búsqueda de sufijos DNS** , el servidor de acceso remoto detecta automáticamente los sufijos de dominio en la implementación. Use los botones **Agregar** y **quitar** para crear la lista de sufijos de dominio que desea usar. Para agregar un nuevo sufijo de dominio, especifica el sufijo en el campo **Nuevo sufijo** y haz clic en **Agregar**. Haz clic en **Siguiente**.  
   
-5.  En la página **Administración** , agregue los servidores de administración que no se detecten automáticamente y, a continuación, haga clic en **siguiente**. Acceso remoto agrega automáticamente los controladores de dominio y los servidores de System Center Configuration Manager.  
+5.  En la página **Administración** , agregue los servidores de administración que no se detecten automáticamente y, a continuación, haga clic en **siguiente**. El acceso remoto agrega automáticamente controladores de dominio y servidores de Configuration Manager.  
   
 6.  Haz clic en **Finalizar**.  
   

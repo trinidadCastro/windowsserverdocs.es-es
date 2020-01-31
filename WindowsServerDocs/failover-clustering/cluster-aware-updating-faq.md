@@ -8,12 +8,12 @@ ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 description: Respuestas a las preguntas más frecuentes sobre la actualización compatible con clústeres en Windows Server.
-ms.openlocfilehash: a08366c7e64d9612d63e348d4cecdb4b2389737a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 736b49222ae4c9e2a27229341f0d886bd3e0343c
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361350"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822138"
 ---
 # <a name="cluster-aware-updating-frequently-asked-questions"></a>Actualización compatible con clústeres: Preguntas más frecuentes
 
@@ -57,7 +57,7 @@ Sí. La CAU admite los siguientes modos de actualización (ambos permiten progra
 ## <a name="can-i-schedule-updates-to-apply-during-a-backup"></a>¿Se pueden programar actualizaciones para que se apliquen durante una copia de seguridad?  
 Sí. La CAU no impone ninguna restricción en este sentido. Sin embargo, no se recomienda realizar actualizaciones de software en un servidor \(con los posibles reinicios asociados\) mientras se está realizando una copia de seguridad del servidor. Tenga en cuenta que la CAU depende solo de las API en clúster para determinar conmutaciones por error y conmutación por recuperación de recursos; de este modo, la CAU ignora el estado de la copia de seguridad del servidor.  
   
-## <a name="can-cau-work-with-system-center-configuration-manager"></a>¿Puede la CAU trabajar con System Center Configuration Manager?  
+## <a name="can-cau-work-with-configuration-manager"></a>¿Puede la CAU trabajar con Configuration Manager?  
 La CAU es una herramienta que coordina las actualizaciones de software en un nodo de clúster y Configuration Manager también realiza actualizaciones de software de servidor. Es importante configurar estas herramientas para que no tengan una cobertura superpuesta de los mismos servidores en cualquier implementación del centro de recursos, incluido el uso de diferentes servidores de Windows Server Update Services. Esto garantiza que el objetivo subyacente al uso de la CAU no se derrota accidentalmente, porque Configuration Manager actualización controlada por\-no incorpora el conocimiento del clúster.  
   
 ## <a name="do-i-need-administrative-credentials-to-run-cau"></a>¿Necesito credenciales administrativas para ejecutar la CAU?  
@@ -118,7 +118,7 @@ La CAU ofrece opciones de exportación a través de la interfaz de línea de com
   
 **Opciones de la interfaz de usuario:**  
   
--   Copie los resultados del informe desde la pantalla **Vista previa de actualizaciones**. Resultado: CSV  
+-   Copie los resultados del informe desde la pantalla **Vista previa de actualizaciones** . Resultado: CSV  
   
 -   Copie los resultados del informe desde la pantalla **Generar informe** . Resultado: CSV  
   
@@ -158,7 +158,7 @@ Sí. La CAU admite una cantidad de opciones de ejecución de actualización que 
   
 -   [\-del complemento de actualización compatible con clústeres en el ejemplo](https://code.msdn.microsoft.com/windowsdesktop/Cluster-Aware-Updating-6a8854c9)  
   
-## <a name="see-also"></a>Consulte también  
+## <a name="see-also"></a>Consulta también  
   
--   [Información general sobre la actualización compatible con\-de clúster](cluster-aware-updating.md)  
+-   [Introducción a la actualización compatible con clústeres](cluster-aware-updating.md)  
   

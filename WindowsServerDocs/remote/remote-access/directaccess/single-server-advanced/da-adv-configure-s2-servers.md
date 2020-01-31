@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 35afec8e-39a4-463b-839a-3c300ab01174
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0ba2154338871827aae03936e5e39a356a43d675
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2c5fec6d9dafa350f46dfb5b2f213d628391b87f
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388635"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822788"
 ---
 # <a name="step-2-configure-advanced-directaccess-servers"></a>Paso 2 configuración de servidores de DirectAccess avanzados
 
@@ -52,7 +52,7 @@ Para implementar acceso remoto debes instalar el rol de acceso remoto en un serv
   
 4.  Haz clic cinco veces en **Siguiente**.  
   
-5.  En la página **Confirmar selecciones de instalación** , haga clic en **Instalar**.  
+5.  En la página **Confirm installation selections**, haz clic en **Install**.  
   
 6.  En la página **Progreso de la instalación**, comprueba que la instalación se ha completado correctamente y haz clic en **Cerrar**.  
   
@@ -97,7 +97,7 @@ Para que un equipo cliente se aprovisione para el uso de DirectAccess, este debe
 4.  En el cuadro de diálogo **Seleccionar grupos**, selecciona los grupos de seguridad que contienen los equipos cliente de DirectAccess.  
   
     > [!NOTE]  
-    > Si el grupo de seguridad está ubicado en un bosque distinto al del servidor de acceso remoto, completa el Asistente para la instalación de acceso remoto y después haz clic en **Actualizar servidores de administración** en el panel **Tareas** para detectar los controladores de dominio y los servidores de System Center Configuration Manager en el nuevo bosque.  
+    > Si el grupo de seguridad se encuentra en un bosque diferente al del servidor de acceso remoto, después de completar el Asistente para la instalación de acceso remoto, haga clic en **actualizar servidores de administración** en el panel de **tareas** para detectar los controladores de dominio y los servidores de Configuration Manager en el nuevo bosque.  
   
 5.  Si fuera necesario, selecciona la casilla **Habilitar DirectAccess solo para equipos móviles** para que solo puedan acceder equipos móviles a la red interna.  
   
@@ -165,10 +165,10 @@ Para configurar los servidores de infraestructura en una implementación de acce
   
 4.  En la página **Lista de búsqueda de sufijos DNS**, el servidor de acceso remoto detecta automáticamente los sufijos de dominio de la implementación. Usa los botones **Agregar** y **Quitar** para agregar y quitar sufijos de dominio de la lista de sufijos de dominio que quieras usar. Para agregar un nuevo sufijo de dominio, especifica el sufijo en el campo **Nuevo sufijo** y haz clic en **Agregar**. Haz clic en **Siguiente**.  
   
-5.  En la página **Administración**, agrega los servidores de administración que no se detecten automáticamente y después haz clic en **Siguiente**. Acceso remoto agrega automáticamente los controladores de dominio y los servidores de System Center Configuration Manager.  
+5.  En la página **Administración**, agrega los servidores de administración que no se detecten automáticamente y después haz clic en **Siguiente**. El acceso remoto agrega automáticamente controladores de dominio y servidores de Configuration Manager.  
   
     > [!NOTE]  
-    > Aunque los servidores se agregan automáticamente, no aparecen en la lista. Después de aplicar la configuración por primera vez, los servidores de System Center Configuration Manager aparecerán en la lista.  
+    > Aunque los servidores se agregan automáticamente, no aparecen en la lista. Después de aplicar la configuración por primera vez, los servidores Configuration Manager aparecen en la lista.  
   
 6.  Haz clic en **Finalizar**.  
   

@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: ea7ecd52-4c12-4a49-92fd-b8c08cec42a9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ccfde5d13b9b2b722498e824d497a9b790875e14
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3ae66c125548e31603318a7e600c36c00df9d005
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404502"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822558"
 ---
 # <a name="step-3-configure-the-multisite-deployment"></a>Paso 3 Configuración de la implementación multisitio
 
@@ -38,7 +38,7 @@ Después de configurar la infraestructura multisitio, siga estos pasos para conf
 > [!NOTE]  
 > Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_ConfigServer"></a>3,1. Configurar servidores de acceso remoto  
+## <a name="BKMK_ConfigServer"></a>3.1. Configurar servidores de acceso remoto  
 
   
 ### <a name="to-install-the-remote-access-role"></a>Para instalar el rol de acceso remoto  
@@ -63,7 +63,7 @@ Después de configurar la infraestructura multisitio, siga estos pasos para conf
   
 10. Haga clic en **Siguiente**y después en **Instalar**.  
   
-11.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
+11.  En el cuadro de diálogo **Progreso de la instalación** , compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
   
   
 ![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
@@ -77,7 +77,7 @@ Los siguientes cmdlets de Windows PowerShell realizan la misma función que el p
 Install-WindowsFeature RemoteAccess -IncludeManagementTools  
 ```  
   
-## <a name="BKMK_Admin"></a>3,2. Conceder acceso de administrador  
+## <a name="BKMK_Admin"></a>3.2. Conceder acceso de administrador  
   
 #### <a name="to-grant-administrator-permissions"></a>Para conceder permisos de administrador  
   
@@ -99,7 +99,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 9. Repita este procedimiento en todos los servidores de acceso remoto que formarán parte de la implementación multisitio.  
   
-## <a name="BKMK_IPHTTPS"></a>3,3. Configuración de IP-HTTPS para una implementación multisitio  
+## <a name="BKMK_IPHTTPS"></a>3.3. Configuración de IP-HTTPS para una implementación multisitio  
 En cada servidor de acceso remoto que se va a agregar a la implementación multisitio, se requiere un certificado SSL para comprobar la conexión HTTPS con el servidor Web IP-HTTPS. Para completar este procedimiento, se requiere como mínimo la pertenencia al grupo local **Administradores** o equivalente.  
   
 #### <a name="to-obtain-an-ip-https-certificate"></a>Para obtener un certificado IP-HTTPS  
@@ -338,7 +338,7 @@ Después de habilitar multisite en la implementación, puede Agregar puntos de e
 15. En el cuadro de diálogo **Agregar punto de entrada** , haga clic en **cerrar** y, a continuación, en el Asistente para agregar un punto de entrada, haga clic en **cerrar**.  
   
     > [!NOTE]  
-    > Si el punto de entrada que se agregó está en un bosque diferente al de los puntos de entrada o equipos cliente existentes, es necesario hacer clic en **actualizar servidores de administración** en el panel de **tareas** para detectar los controladores de dominio y System Center Configuration Manager en el nuevo bosque.  
+    > Si el punto de entrada que se agregó está en un bosque diferente al de los puntos de entrada o equipos cliente existentes, es necesario hacer clic en **actualizar servidores de administración** en el panel de **tareas** para detectar los controladores de dominio y Configuration Manager en el nuevo bosque.  
   
 16. Repita este procedimiento desde el paso 2 para cada punto de entrada que desee agregar a la implementación multisitio.  
   

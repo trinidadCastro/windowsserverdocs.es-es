@@ -15,12 +15,12 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 016d9d2dcc26572f8d248ef2f4a922da2e456b83
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 804b7314054691fa0abc19f1cc4e4bffbd6457cf
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949894"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822448"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>Paso 7.5. Creación de perfiles de VPNv2 basados en OMA-DM en dispositivos de Windows 10
 
@@ -29,13 +29,13 @@ ms.locfileid: "75949894"
 - [**Anterior:** Paso 7,4. Implementar certificados raíz de acceso condicional en AD local](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
 - [**Siguiente:** Obtener información sobre cómo funciona el acceso condicional para VPN](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)
 
-En este paso, puede crear perfiles de VPNv2 basados en OMA-DM mediante Intune para implementar una directiva de configuración de dispositivos VPN. Si quiere usar SCCM o el script de PowerShell para crear perfiles de VPNv2, consulte [configuración de CSP de VPNv2](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) para obtener más detalles. 
+En este paso, puede crear perfiles de VPNv2 basados en OMA-DM mediante Intune para implementar una directiva de configuración de dispositivos VPN. Si desea usar el punto de conexión de Microsoft Configuration Manager o el script de PowerShell para crear perfiles de VPNv2, consulte [configuración de CSP de VPNv2](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) para obtener más detalles. 
 
 ## <a name="managed-deployment-using-intune"></a>Implementación administrada con Intune
 
 Todo lo que se describe en esta sección es el mínimo necesario para que la VPN funcione con el acceso condicional. No se trata la tunelización dividida, el uso de WIP, la creación de perfiles de configuración de dispositivos de Intune personalizados para obtener AutoVPN en funcionamiento o SSO. Integre la configuración siguiente en el perfil de VPN que creó anteriormente en el [paso 5. Configure conexiones VPN Always On de cliente de Windows 10](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md).  En este ejemplo, se integran en el [configuración del cliente VPN](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune) mediante la Directiva de Intune. 
 
-**Requisito previo:**
+**Requisitos previos**
 
 El equipo cliente de Windows 10 ya se configuró con una conexión VPN mediante Intune.   
 
@@ -90,7 +90,7 @@ Si el perfil de VPN no aparece en el dispositivo cliente, en configuración\\red
 
 Ha terminado de configurar el perfil de VPN para usar Azure AD el acceso condicional. 
 
-|Si quiere...  |A continuación, vea...  |
+|Si desea...  |A continuación, vea...  |
 |---------|---------|
 |Más información sobre cómo funciona el acceso condicional con las VPN  |[VPN y acceso condicional](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access): esta página proporciona más información acerca de cómo funciona el acceso condicional con las VPN.      |
 |Más información acerca de las características avanzadas de VPN  |[Características avanzadas de VPN](always-on-vpn/deploy/always-on-vpn-adv-options.md#advanced-vpn-features): en esta página se proporcionan instrucciones sobre cómo habilitar los filtros de tráfico VPN, cómo configurar conexiones VPN automáticas mediante desencadenadores de aplicaciones y cómo configurar NPS para permitir solo las conexiones VPN de los clientes que usan certificados emitidos por Azure ad.        |

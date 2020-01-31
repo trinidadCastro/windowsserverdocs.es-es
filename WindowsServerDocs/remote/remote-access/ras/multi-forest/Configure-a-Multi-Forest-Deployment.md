@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 3c8feff2-cae1-4376-9dfa-21ad3e4d5d99
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 41c4de30482ff09cb0db8a113fa324b7299af43d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 08bd945bf808843286d390a089d9ac070b9a8813
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404537"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822688"
 ---
 # <a name="configure-a-multi-forest-deployment"></a>Configure a Multi-Forest Deployment
 
@@ -175,19 +175,19 @@ La lista de búsqueda de sufijos DNS permite que los clientes usen nombres de et
   
 1.  En el área **Paso 3: Servidores de infraestructura** del panel central de la Consola de administración de acceso remoto, haga clic en **Editar**.  
   
-2.  En la página **Servidor de ubicación de red**, haga clic en **Siguiente**.  
+2.  En la página **Servidor de ubicación de red** , haga clic en **Siguiente**.  
   
-3.  En la tabla de la página **DNS** , especifique los sufijos de nombre adicionales que formen parte de la red corporativa en Bosque2. En **Dirección de servidor DNS**, especifique la dirección del servidor DNS, ya sea manualmente o haciendo clic en **Detectar**. Si no especifica la dirección, las nuevas entradas se aplican como exenciones de NRPT. Haga clic en **Siguiente**.  
+3.  En la tabla de la página **DNS** , especifique los sufijos de nombre adicionales que formen parte de la red corporativa en Bosque2. En **Dirección de servidor DNS**, especifique la dirección del servidor DNS, ya sea manualmente o haciendo clic en **Detectar**. Si no especifica la dirección, las nuevas entradas se aplican como exenciones de NRPT. Después haz clic en **Next**.  
   
-4.  Opcional: En la página **Lista de búsqueda de sufijos DNS** , agregue sufijos DNS especificándolos en el cuadro **Nuevo sufijo** y haciendo clic en **Agregar**. Haga clic en **Siguiente**.  
+4.  Opcional: En la página **Lista de búsqueda de sufijos DNS** , agregue sufijos DNS especificándolos en el cuadro **Nuevo sufijo** y haciendo clic en **Agregar**. Después haz clic en **Next**.  
   
 5.  En la página **Administración** , haga clic en **Finalizar**.  
   
-6.  Haga clic en **Finalizar** en el panel central de la Consola de administración de acceso remoto.  
+6.  Haga clic en **Finalizar**en el panel central de la Consola de administración de acceso remoto.  
   
 7.  En el cuadro de diálogo **Revisión de acceso remoto** , haga clic en **Aplicar**.  
   
-8.  En el cuadro de diálogo **Aplicar la configuración del Asistente para instalación de acceso remoto**, haga clic en **Cerrar**.  
+8.  En el cuadro de diálogo **Aplicar la configuración del Asistente para instalación de acceso remoto** , haga clic en **Cerrar**.  
   
 ### <a name="IPv6Prefix"></a>Agregar prefijo IPv6 interno  
   
@@ -202,15 +202,15 @@ Acceso remoto administra una lista de prefijos IPv6 para los recursos corporativ
   
 2.  En el Asistente para instalación de acceso remoto, haga clic en **Configuración de prefijo**.  
   
-3.  En **Prefijos IPv6 de la red interna** en dichapágina, agregue prefijos IPv6 separados por puntos y coma (por ejemplo, 2001:db8:1::/64;2001:db8:2::/64). Haga clic en **Siguiente**.  
+3.  En **Prefijos IPv6 de la red interna** en dichapágina, agregue prefijos IPv6 separados por puntos y coma (por ejemplo, 2001:db8:1::/64;2001:db8:2::/64). Después haz clic en **Next**.  
   
 4.  En la página **Autenticación** , haga clic en **Finalizar**.  
   
-5.  Haga clic en **Finalizar** en el panel central de la Consola de administración de acceso remoto.  
+5.  Haga clic en **Finalizar**en el panel central de la Consola de administración de acceso remoto.  
   
 6.  En el cuadro de diálogo **Revisión de acceso remoto** , haga clic en **Aplicar**.  
   
-7.  En el cuadro de diálogo **Aplicar la configuración del Asistente para instalación de acceso remoto**, haga clic en **Cerrar**.  
+7.  En el cuadro de diálogo **Aplicar la configuración del Asistente para instalación de acceso remoto** , haga clic en **Cerrar**.  
   
 ### <a name="SGs"></a>Agregar grupos de seguridad de cliente  
 Para permitir que los equipos cliente de Windows 8 de Bosque2 tengan acceso a los recursos a través de DirectAccess, debe agregar el grupo de seguridad de Bosque2 a la implementación de acceso remoto.  
@@ -219,28 +219,28 @@ Para permitir que los equipos cliente de Windows 8 de Bosque2 tengan acceso a lo
   
 1.  En el área **Paso 1: Clientes remoto** del panel central de la Consola de administración de acceso remoto, haga clic en **Editar**.  
   
-2.  En el Asistente para la instalación del cliente de DirectAccess, haga clic en **Seleccionar grupos** y, en la página **Seleccionar grupos**, haga clic en **Agregar**.  
+2.  En el Asistente para la instalación del cliente de DirectAccess, haga clic en **Seleccionar grupos**y, en la página con el mismo nombre, haga clic en **Agregar**.  
   
-3.  En el cuadro de diálogo **Seleccionar grupos**, seleccione los grupos de seguridad que contengan a los equipos cliente de DirectAccess. Haga clic en **Siguiente**.  
+3.  En el cuadro de diálogo **Seleccionar grupos** , seleccione los grupos de seguridad que contengan a los equipos cliente de DirectAccess. Después haz clic en **Next**.  
   
-4.  En la página **Asistente para la conectividad de red**, haga clic en **Finalizar**.  
+4.  En la página **Asistente para la conectividad de red** , haga clic en **Finalizar**.  
   
-5.  Haga clic en **Finalizar** en el panel central de la Consola de administración de acceso remoto.  
+5.  Haga clic en **Finalizar**en el panel central de la Consola de administración de acceso remoto.  
   
 6.  En el cuadro de diálogo **Revisión de acceso remoto** , haga clic en **Aplicar**.  
   
-7.  En el cuadro de diálogo **Aplicar la configuración del Asistente para instalación de acceso remoto**, haga clic en **Cerrar**.  
+7.  En el cuadro de diálogo **Aplicar la configuración del Asistente para instalación de acceso remoto** , haga clic en **Cerrar**.  
   
 Para permitir que los equipos cliente de Windows 7 de Bosque2 tengan acceso a los recursos a través de DirectAccess cuando se habilita multisitio, debe agregar el grupo de seguridad de Bosque2 a la implementación de acceso remoto para cada punto de entrada. Para obtener información acerca de cómo agregar grupos de seguridad de Windows 7, consulte la descripción de la página de **soporte técnico de cliente** en 3,6. Habilitar la implementación multisitio.  
   
 ### <a name="RefreshMgmtServers"></a>Actualizar la lista de servidores de administración  
 Acceso remoto detecta de manera automática los servidores de infraestructura que hay en todos los bosques que contienen GPO de configuración de DirectAccess. Si DirectAccess se implementó en un servidor de Bosque1, el GPO de servidor se escribirá en su dominio de Bosque1. Si se permitió el acceso a DirectAccess a los clientes de Bosque2, el GPO de cliente se escribirá en un dominio de Bosque2.  
   
-El proceso de detección automática de servidores de infraestructura es necesario para permitir el acceso mediante DirectAccess a los controladores de dominio y a System Center Configuration Manager. Debe iniciar el proceso de detección manualmente.  
+El proceso de detección automática de servidores de infraestructura es necesario para permitir el acceso a través de DirectAccess a los controladores de dominio y al punto de conexión de Microsoft Configuration Manager. Debe iniciar el proceso de detección manualmente.  
   
 ##### <a name="to-refresh-the-management-servers-list"></a>Para actualizar la lista de servidores de administración  
   
-1.  En la Consola de administración de acceso remoto, haga clic en **Configuración** y, en el panel **Tareas**, haga clic en **Actualizar servidores de administración**.  
+1.  En la Consola de administración de acceso remoto, haga clic en **Configuración**y, en el panel **Tareas** , haga clic en **Actualizar servidores de administración**.  
   
 2.  En el cuadro de diálogo **Actualizando servidores de administración** , haga clic en **Cerrar**.  
   

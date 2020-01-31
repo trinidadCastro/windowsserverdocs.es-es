@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 59c659041c7553d8e97a3bfbefbc3bde24098ef2
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 4a91d09d6824795a21a9a7cdc7695c407aa70756
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949935"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822708"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conocidos de Windows Admin Center
 
@@ -82,7 +82,7 @@ Escribe `$PSVersiontable` en PowerShell para comprobar que esté instalado WMF y
 
 Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616).
 
-## <a name="role-based-access-control-rbac"></a>Control de acceso basado en roles (RBAC)
+## <a name="role-based-access-control-rbac"></a>Access Control basado en roles (RBAC)
 
 - La implementación de RBAC no se realizará correctamente en equipos configurados para usar Control de aplicaciones de Windows Defender Control de aplicación de Windows Defender (WDAC, anteriormente conocido como Integridad de código). [16568455]
 
@@ -201,7 +201,7 @@ La solución de administración de equipos contiene un subconjunto de herramient
 
 - Al administrar un clúster, (ya sea Hiperconvergido o traditional) podrías encontrar un error del tipo **no se encontró el shell**. Si esto ocurre, vuelve a cargar el explorador o desplázate a otra herramienta y vuelve. [13882442]
 
-- Puede producirse un problema al administrar un clúster de nivel inferior (Windows Server 2012 o 2012 R2) que no se haya configurado completamente. La solución para este problema es asegurarse de que la característica de Windows **RSAT-Clustering-PowerShell** se ha instalado y habilitado en **cada nodo miembro** del clúster. Para hacer esto con PowerShell, escribe el comando `Install-WindowsFeature -Name RSAT-Windows-PowerShell` en todos los nodos del clúster. [12524664]
+- Puede producirse un problema al administrar un clúster de nivel inferior (Windows Server 2012 o 2012 R2) que no se haya configurado completamente. La solución para este problema es asegurarse de que la característica de Windows **RSAT-Clustering-PowerShell** se ha instalado y habilitado en **cada nodo miembro** del clúster. Para hacer esto con PowerShell, escribe el comando `Install-WindowsFeature -Name RSAT-Clustering-PowerShell` en todos los nodos del clúster. [12524664]
 
 - Es posible que se deba agregar el clúster con el FQDN completo para que se detecte correctamente.
 

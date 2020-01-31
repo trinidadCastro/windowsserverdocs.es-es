@@ -1,6 +1,6 @@
 ---
 ms.assetid: c5eb3fa0-550c-4a2f-a0bc-698b690c4199
-title: Planeación del acceso condicional basado en dispositivos a nivel local
+title: Planificación del acceso condicional basado en dispositivos a nivel local
 description: ''
 author: billmath
 ms.author: billmath
@@ -9,14 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 79dfc7fbf9e2dcc753829cc53d914f374010f925
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 00a7edf9529e1f116d951fd69d3bfa381d6d413a
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408330"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822758"
 ---
-# <a name="plan-device-based-conditional-access-on-premises"></a>Planeación del acceso condicional basado en dispositivos a nivel local
+# <a name="plan-device-based-conditional-access-on-premises"></a>Planificación del acceso condicional basado en dispositivos a nivel local
 
 
 En este documento se describen las directivas de acceso condicional basadas en dispositivos en un escenario híbrido en el que los directorios locales están conectados a Azure AD mediante Azure AD Connect.     
@@ -25,7 +25,7 @@ En este documento se describen las directivas de acceso condicional basadas en d
 
 AD FS proporciona el componente local de las directivas de acceso condicional en un escenario híbrido.  Al registrar los dispositivos con Azure AD para el acceso condicional a los recursos en la nube, la funcionalidad de reescritura de dispositivos Azure AD Connect hace que la información de registro de dispositivos esté disponible en el entorno local para que las directivas de AD FS utilicen y apliquen.  De este modo, tiene un enfoque coherente para las directivas de control de acceso para los recursos locales y en la nube.  
 
-![Acceso condicional](media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
+![acceso condicional](media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
 
 ### <a name="types-of-registered-devices"></a>Tipos de dispositivos registrados  
 Hay tres tipos de dispositivos registrados, todos ellos se representan como objetos de dispositivo en Azure AD y se pueden usar para el acceso condicional con AD FS también local.  
@@ -34,7 +34,7 @@ Hay tres tipos de dispositivos registrados, todos ellos se representan como obje
 | --- | --- |--- | --- |
 |Descripción    |  Los usuarios agregan su cuenta profesional o educativa a su dispositivo BYOD de forma interactiva.  **Nota:** Agregar una cuenta profesional o educativa es el reemplazo de Workplace Join en Windows 8/8.1       | Los usuarios unen su dispositivo de trabajo de Windows 10 a Azure AD.|Los dispositivos Unidos a un dominio de Windows 10 se registran automáticamente con Azure AD.|           
 |Cómo los usuarios inician sesión en el dispositivo     |  No hay inicio de sesión en Windows como cuenta profesional o educativa.  Inicie sesión con un cuenta de Microsoft.       |   Inicie sesión en Windows como cuenta (profesional o educativa) que registró el dispositivo.      |     Inicie sesión con la cuenta de AD.|      
-|Cómo se administran los dispositivos    |      Directivas MDM (con inscripción de Intune adicional)   | Directivas MDM (con inscripción de Intune adicional)        |   Directiva de grupo, System Center Configuration Manager (SCCM) |
+|Cómo se administran los dispositivos    |      Directivas MDM (con inscripción de Intune adicional)   | Directivas MDM (con inscripción de Intune adicional)        |   Directiva de grupo, Configuration Manager |
 |Tipo de confianza Azure AD|Unido al área de trabajo|Azure AD unida|Pertenencia a un dominio  |     
 |Ubicación de configuración de W10    | Configuración > cuentas > la cuenta > agregar una cuenta profesional o educativa        | Configuración > > del sistema acerca de > join Azure AD       |   Configuración > > del sistema acerca de > unirse a un dominio |       
 |¿También está disponible para dispositivos iOS y Android?   |    Sí     |       No  |   No   |   
