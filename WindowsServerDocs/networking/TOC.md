@@ -1,4 +1,4 @@
-# [Funciones de red](Networking.md)
+# [Redes](Networking.md)
 ## [Escenarios de redes admitidos por Windows Server](windows-server-supported-networking-scenarios.md)
 
 ## [Novedades de redes](What-s-New-in-Networking.md)
@@ -253,7 +253,7 @@
 ### [Plan para SDN](sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)
 #### [Instalación y requisitos de preparación para la implementación de controladora de red](sdn/plan/Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md)
 
-### [Implementar SDN](sdn/deploy/Deploy-Software-Defined-Networking.md)
+### Implementar SDN
 #### [Implementar una infraestructura de SDN](sdn/deploy/Deploy-a-Software-Defined-Network-Infrastructure.md)
 ##### [Implementar una infraestructura SDN con scripts](sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)
 #### [Implementación de tecnologías SDN con Windows PowerShell](sdn/deploy/Deploy-Software-Defined-Network-Technologies-using-Windows-powershell.md)
