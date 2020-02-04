@@ -65,7 +65,7 @@ De forma predeterminada, el encabezado está habilitado y `max-age` establece en
 Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderValue "max-age=<seconds>; includeSubDomains" 
 ``` 
 
-Por ejemplo: 
+Ejemplo: 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderValue "max-age=31536000; includeSubDomains" 
@@ -94,7 +94,7 @@ De forma predeterminada, header se establecerá en deny; sin embargo, los admini
 Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "<deny/sameorigin/allow-from<specified origin>>" 
  ```
 
-Por ejemplo: 
+Ejemplo: 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "allow-from https://www.example.com" 
@@ -109,7 +109,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options"
 ### <a name="x-xss-protection"></a>Protección de X-XSS 
 Este encabezado de respuesta de seguridad HTTP se usa para impedir que se carguen las páginas web cuando los exploradores detectan ataques de scripting entre sitios (XSS). Esto se conoce como filtrado XSS. El encabezado se puede establecer en uno de los siguientes valores:
  
-- **0** : deshabilita el filtrado XSS. No se recomienda.  
+- **0** : deshabilita el filtrado XSS. No recomendado.  
 - **1** : habilita el filtrado XSS. Si se detecta un ataque XSS, el explorador desaverá la página.   
 - **1; modo = bloque** : habilita el filtrado XSS. Si se detecta un ataque XSS, el explorador evitará la representación de la página. Esta es la configuración predeterminada y recomendada.  
 
@@ -120,7 +120,7 @@ De forma predeterminada, el encabezado se establecerá en 1; Mode = bloque; sin 
 Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "<0/1/1; mode=block/1; report=<reporting-uri>>" 
 ``` 
 
-Por ejemplo: 
+Ejemplo: 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "1" 
