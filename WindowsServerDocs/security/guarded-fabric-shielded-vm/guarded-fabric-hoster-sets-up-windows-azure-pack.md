@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: d388da2b7416543c307bd931636902b4a7543e1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7336637bd3186f885db6d94eeffd0d2311edf3ac
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403660"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001844"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>Máquinas virtuales blindadas: el proveedor de servicios de hosting configura Microsoft Azure Pack
 
@@ -48,7 +48,7 @@ Instale y configure Windows Azure Pack (WAP) en el equipo en el que desea hosped
 
 1.  Revisar [los requisitos del sistema WAP](https://technet.microsoft.com/library/dn296442.aspx) e instalar el [software necesario](https://technet.microsoft.com/library/dn469335.aspx).
 
-2.  Descargue e instale el [instalador de plataforma web](https://www.microsoft.com/web/downloads/platform.aspx). Si el equipo no está conectado a Internet, siga las [instrucciones de instalación sin conexión](http://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release).
+2.  Descargue e instale el [instalador de plataforma web](https://www.microsoft.com/web/downloads/platform.aspx). Si el equipo no está conectado a Internet, siga las [instrucciones de instalación sin conexión](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release).
 
 3.  Abra el instalador de plataforma web y busque **Windows Azure Pack: portal y API Express** en la pestaña **productos** . Haga clic en **Agregar**y luego en **instalar** en la parte inferior de la ventana.
 
@@ -113,7 +113,7 @@ Para permitir que los inquilinos creen máquinas virtuales en WAP, primero debe 
 
     En este momento, se configura Windows Azure Pack y los inquilinos podrán suscribirse al plan que acaba de crear e implementar máquinas virtuales blindadas. Para conocer los pasos adicionales que los inquilinos deben completar, consulte [máquinas virtuales blindadas para inquilinos: implementación de una máquina virtual blindada mediante Windows Azure Pack](guarded-fabric-shielded-vm-windows-azure-pack.md).
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Consulta también
 
 - [Pasos de configuración del proveedor de servicios de hospedaje para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

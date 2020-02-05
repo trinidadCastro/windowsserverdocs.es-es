@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Qizha;TristanB
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fcb1601169fa8f8b45a8a89b6495179092a0adc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2f1d5e2f3f17c40f262b8cea98c04e3347790ba8
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370538"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001830"
 ---
 # <a name="power-and-performance-tuning"></a>Ajuste de potencia y rendimiento
 
@@ -40,7 +40,7 @@ Debe establecer una medición de energía de línea base antes de optimizar el s
 
 Si el servidor tiene la compatibilidad necesaria, puede usar las características de disponibilidad y presupuestabilidad de energía de Windows Server 2016 para ver el consumo de energía de nivel de sistema mediante el monitor de rendimiento.
 
-Una manera de determinar si el servidor es compatible con la medición y el presupuesto es revisar el [Catálogo de Windows Server](http://www.windowsservercatalog.com). Si el modelo de servidor cumple las nuevas calificaciones de administración de energía mejoradas en el programa de certificación de hardware de Windows, se garantiza que admite la funcionalidad de medición y presupuestabilidad.
+Una manera de determinar si el servidor es compatible con la medición y el presupuesto es revisar el [Catálogo de Windows Server](https://www.windowsservercatalog.com). Si el modelo de servidor cumple las nuevas calificaciones de administración de energía mejoradas en el programa de certificación de hardware de Windows, se garantiza que admite la funcionalidad de medición y presupuestabilidad.
 
 Otra manera de comprobar la compatibilidad con la medición es buscar manualmente los contadores en el monitor de rendimiento. Abra el monitor de rendimiento, seleccione **Agregar contadores**y, a continuación, busque el grupo de contadores de **medidor de energía** .
 
@@ -71,7 +71,7 @@ Para obtener más información acerca de PowerCfg. exe, consulte [uso de powercf
 
 Windows Server 2016 tiene tres planes de energía integrados diseñados para satisfacer diferentes conjuntos de necesidades empresariales. Estos planes proporcionan una manera sencilla de personalizar un servidor para satisfacer los objetivos de potencia o rendimiento. En la tabla siguiente se describen los planes, se enumeran los escenarios comunes en los que se usa cada plan y se proporcionan algunos detalles de implementación para cada plan.
 
-| **Plan** | **Descripción** | **Escenarios aplicables comunes** | **Aspectos destacados de la implementación** |
+| **Planificar** | **Descripción** | **Escenarios aplicables comunes** | **Aspectos destacados de la implementación** |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Equilibrado (recomendado) | Configuración predeterminada. Se dirige a una buena eficacia energética con un impacto mínimo en el rendimiento. | Informática general | Coincide con la capacidad de demanda. Las características de ahorro de energía equilibran la eficacia y el rendimiento. |
 | Alto rendimiento | Aumenta el rendimiento a costa de un consumo de energía elevado. Se aplican las limitaciones de energía y térmica, los gastos operativos y las consideraciones de confiabilidad. | Aplicaciones de baja latencia y código de la aplicación que es sensible a los cambios de rendimiento del procesador | Los procesadores siempre están bloqueados en el estado de rendimiento más alto (incluidas las frecuencias "Turbo"). Se desactivan todos los núcleos. La salida térmica puede ser significativa. |
@@ -110,11 +110,11 @@ En el caso del control basado en CPPC, las opciones están deshabilitadas y habi
 
 En Windows Server 2016, el valor predeterminado para el modo Boost es 3.
 
-| **Name** | **Comportamiento basado en el estado P** | **Comportamiento de CPPC** |
+| **Nombre** | **Comportamiento basado en el estado P** | **Comportamiento de CPPC** |
 |--------------------------|------------------------|-------------------|
 | 0 (deshabilitado) | Deshabilitada | Deshabilitada |
-| 1 (habilitado) | Enabled | Eficaz habilitado |
-| 2 (agresivo) | Enabled | Agresiva |
+| 1 (habilitado) | Habilitado | Eficaz habilitado |
+| 2 (agresivo) | Habilitado | Agresiva |
 | 3 (eficaz habilitado) | Eficaz | Eficaz habilitado |
 | 4 (agresiva eficaz) | Eficaz | Agresiva |
 
@@ -129,7 +129,7 @@ Powercfg -setactive scheme_current
 > [!Important]
 > Debe ejecutar el comando **powercfg-SETACTIVE** para habilitar la nueva configuración. No es necesario reiniciar el servidor.
 
-Para establecer este valor para planes de energía distintos del plan seleccionado actualmente, puede usar alias como el esquema\_máximo (economizador de energía), el esquema\_mínimo (alto\_rendimiento) y el esquema equilibrado (equilibrado) en lugar del esquema.\_Actual. Reemplace "Scheme Current" en los comandos powercfg-SETACTIVE mostrados anteriormente con el alias deseado para habilitar ese plan de energía.
+Para establecer este valor para planes de energía distintos del plan seleccionado actualmente, puede usar alias como esquema\_máximo (economizador de energía), esquema\_mínimo (alto rendimiento) y esquema\_EQUILIBRAda (equilibrada) en lugar del esquema\_actual. Reemplace "Scheme Current" en los comandos powercfg-SETACTIVE mostrados anteriormente con el alias deseado para habilitar ese plan de energía.
 
 Por ejemplo, para ajustar el modo de mejora en el plan economizador de energía y hacer que el economizador de energía sea el plan actual, ejecute los siguientes comandos:
 
@@ -189,11 +189,11 @@ Los núcleos que se detienen normalmente no tienen ningún subproceso programado
 
 Para la mayoría de los servidores, el comportamiento predeterminado del estacionamiento de núcleos proporciona un equilibrio razonable entre rendimiento y eficiencia energética. En el caso de los procesadores en los que es posible que el estacionamiento básico no muestre tanta ventaja en las cargas de trabajo genéricas, se puede deshabilitar de forma predeterminada.
 
-Si el servidor tiene requisitos de estacionamiento de núcleos específicos, puede controlar el número de núcleos que están disponibles para estacion mediante el parámetro de **núcleos máximos de aparcamiento de núcleos de rendimiento** del procesador o los **núcleos mínimos del aparcamiento de núcleos de rendimiento del procesador.** en Windows Server 2016.
+Si el servidor tiene requisitos de estacionamiento de núcleos específicos, puede controlar el número de núcleos que están disponibles para el parque mediante el parámetro núcleos **máximos de aparcamiento de núcleos de rendimiento de procesador** o el parámetro de núcleos **mínimos de estacionamiento de núcleos de rendimiento** en Windows Server 2016.
 
 Un escenario en el que el estacionamiento básico no es siempre óptimo para es cuando hay uno o más subprocesos activos afinidad con a un subconjunto no trivial de CPU en un nodo NUMA (es decir, más de 1 CPU, pero menor que el conjunto completo de CPU en el nodo). Cuando el algoritmo de estacionamiento principal es la selección de núcleos para desactivación (suponiendo que se produzca un aumento en la intensidad de la carga de trabajo), puede que no siempre elija los núcleos del subconjunto (o subconjuntos) afinidad con activos para desactivarlos y, por tanto, puede acabar con la reactivación de núcleos que no sean realmente utiliza.
 
-Los valores de estos parámetros son porcentajes en el intervalo comprendido entre 0 y 100. El parámetro **núcleos máximos de estacionamiento de núcleos de rendimiento** controla el porcentaje máximo de núcleos que se pueden desactivar (disponibles para ejecutar subprocesos) en cualquier momento, mientras que el parámetro **Core performance Processor estacionamiento Core** controla el porcentaje mínimo de núcleos que se pueden desactivar. Para desactivar el estacionamiento de núcleos, establezca el parámetro de **núcleos mínimos de estacionamiento de rendimiento de procesador** en 100 por ciento mediante los siguientes comandos:
+Los valores de estos parámetros son porcentajes en el intervalo comprendido entre 0 y 100. El parámetro **núcleos máximos de estacionamiento de núcleos de rendimiento** controla el porcentaje máximo de núcleos que se pueden desactivar (disponibles para ejecutar subprocesos) en cualquier momento, mientras que el parámetro Core **performance Core estacionamiento** el número mínimo de núcleos que pueden desactivarse. Para desactivar el estacionamiento de núcleos, establezca el parámetro de **núcleos mínimos de estacionamiento de rendimiento de procesador** en 100 por ciento mediante los siguientes comandos:
 
 ``` syntax
 Powercfg -setacvalueindex scheme_current sub_processor CPMINCORES 100
@@ -220,7 +220,7 @@ Powercfg -setacvalueindex scheme_current sub_processor DISTRIBUTEUTIL 0
 Powercfg -setactive scheme_current
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 - [Consideraciones de rendimiento de hardware de servidor](../index.md)
 - [Server Hardware Power Considerations](../power.md) (Consideraciones de alimentación del hardware de servidor)
 - [Processor Power Management Tuning](processor-power-management-tuning.md) (Optimización de la administración de energía del procesador)

@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 15906e8cc1e5e85a471f1b8725435eb60852f6f5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f69a1fe4f3c17123f91ade3b6aebdb5f7bab9982
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382869"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001790"
 ---
 # <a name="get-started-with-user-access-logging"></a>Introducción al registro de acceso de usuarios
 
@@ -54,12 +54,12 @@ UAL admite los siguientes roles de servidor y servicios:
   
 -   BranchCache  
   
--   Sistema de nombres de dominio (DNS)  
+-   Domain Name System (DNS)  
   
     > [!NOTE]  
     > UAL recopila datos DNS cada 24 horas y hay un cmdlet de UAL independiente para este escenario.  
   
--   Protocolo de configuración dinámica de host (DHCP)  
+-   Dynamic Host Configuration Protocol (DHCP)  
   
 -   Servidor de fax  
   
@@ -75,13 +75,13 @@ UAL admite los siguientes roles de servidor y servicios:
 -   Servidor web (IIS)  
   
     > [!WARNING]  
-    > Para usar UAL con IIS, debe utilizar iisual.exe. Para obtener más información, consulte [Análisis de datos de uso del cliente con el Registro de acceso de usuarios de IIS](http://www.iis.net/learn/manage/configuring-security/analyzing-client-usage-data-with-iis-user-access-logging).  
+    > Para usar UAL con IIS, debe utilizar iisual.exe. Para obtener más información, consulte [Análisis de datos de uso del cliente con el Registro de acceso de usuarios de IIS](https://www.iis.net/learn/manage/configuring-security/analyzing-client-usage-data-with-iis-user-access-logging).  
   
 -   Servicios de la cola de mensajes Microsoft Message Queue (MSMQ)  
   
--   Servicios de acceso y directivas de redes  
+-   Network Policy and Access Services  
   
--   Servicios de impresión y documentos  
+-   Print and Document Services  
   
 -   Servicio de enrutamiento y acceso remoto (RRAS)  
   
@@ -131,7 +131,7 @@ Los siguientes datos relacionados con el dispositivo se registran con UAL.
 ## <a name="BKMK_SOFT"></a>Requisitos de software  
 UAL se puede usar en cualquier equipo que ejecute versiones de Windows Server después de Windows Server 2012.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Registro de acceso de usuarios](https://msdn.microsoft.com/library/windows/desktop/hh437528(v=vs.85).aspx) en MSDN.  
 [Administrar el Registro de acceso de usuarios](Manage-User-Access-Logging.md)  
   

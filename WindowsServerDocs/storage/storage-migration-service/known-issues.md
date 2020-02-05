@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: e5832843dce05832a231ed3a4d7e20cf90f1d183
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: a98c560306debc0e10c2c0ac44b41e12141b6e9f
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822598"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001890"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -123,7 +123,7 @@ Para resolver este problema, instale [Windows Update el 2 de abril de 2019: KB44
 
 ## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>Los hashes de DFSR no coinciden al usar el servicio de migración de almacenamiento para preinicializar datos
 
-Al usar el servicio de migración de almacenamiento para transferir archivos a un nuevo destino, configurando el Replicación DFS (DFSR) para replicar los datos con un servidor DFSR existente a través de la replicación preinicializada o la clonación de la base de datos DFSR, todos los archivos experiemce un hash no coinciden y se vuelven a replicar. Parece que todos los flujos de datos, secuencias de seguridad, tamaños y atributos están exactamente coincidentes después de usar SMS para transferirlos. El examen de los archivos con ICACLS o el registro de depuración de la clonación de la base de datos de DFSR revela:
+Al usar el servicio de migración de almacenamiento para transferir archivos a un nuevo destino, la configuración del Replicación DFS (DFSR) para replicar los datos con un servidor DFSR existente a través de la replicación preinicializada o la clonación de la base de datos DFSR, todos los archivos experimentan un hash no coinciden y se vuelven a replicar. Parece que todos los flujos de datos, secuencias de seguridad, tamaños y atributos están exactamente coincidentes después de usar SMS para transferirlos. El examen de los archivos con ICACLS o el registro de depuración de la clonación de la base de datos de DFSR revela:
 
 Archivo de origen:
 
