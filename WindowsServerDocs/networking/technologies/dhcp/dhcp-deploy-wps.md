@@ -8,12 +8,12 @@ ms.assetid: 7110ad21-a33e-48d5-bb3c-129982913bc8
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 1e750a72ac8d47f99ea3382d076b8854acc24576
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
-ms.translationtype: HT
+ms.openlocfilehash: 16900809c2c6b877d2b5c45f1c3ca26e55c6bea9
+ms.sourcegitcommit: 7df2bd3a7d07a50ace86477335ed6fbfb2dac373
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001900"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77027940"
 ---
 # <a name="deploy-dhcp-using-windows-powershell"></a>Deploy DHCP Using Windows PowerShell (Implementar DHCP mediante Windows PowerShell)
 
@@ -335,8 +335,8 @@ Restart-Computer
 
 Para obtener más información acerca de estos comandos, vea los temas siguientes.
 
-- [Cambiar nombre de equipo](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/rename-computer)
-- [Restart-Computer](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/restart-computer)
+- [Cambiar nombre de equipo](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-computer)
+- [Restart-Computer](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-computer)
 
 ### <a name="join-the-computer-to-the-domain-optional"></a>Unir el equipo al dominio \(\) opcional
 
@@ -455,8 +455,8 @@ Set-DhcpServerDnsCredential -Credential $Credential -ComputerName "DHCP1.corp.co
 
 Para obtener más información acerca de estos comandos, vea los temas siguientes.
 
-- [Set-DhcpServerv4DnsSetting](https://docs.microsoft.com/en-us/powershell/module/dhcpserver/set-dhcpserverv4dnssetting)
-- [Set-DhcpServerDnsCredential](https://docs.microsoft.com/en-us/powershell/module/dhcpserver/set-dhcpserverdnscredential)
+- [Set-DhcpServerv4DnsSetting](https://docs.microsoft.com/powershell/module/dhcpserver/set-dhcpserverv4dnssetting)
+- [Set-DhcpServerDnsCredential](https://docs.microsoft.com/powershell/module/dhcpserver/set-dhcpserverdnscredential)
 
 ### <a name="configure-the-corpnet-scope"></a>Configuración del ámbito de la red corporativa
 
@@ -508,7 +508,7 @@ La siguiente referencia proporciona descripciones de comandos y sintaxis para to
 > [!NOTE]
 > No puede usar los comandos de Windows Server 2016 en Windows Server 2012 R2.
 
-- [Módulo DhcpServer](https://docs.microsoft.com/en-us/powershell/module/dhcpserver/)
+- [Módulo DhcpServer](https://docs.microsoft.com/powershell/module/dhcpserver/)
 
 La siguiente referencia proporciona descripciones de comandos y sintaxis para todos los comandos de Windows PowerShell del servidor DHCP para Windows Server 2012 R2. En el tema se enumeran los comandos en orden alfabético según el verbo que aparece al principio de los comandos, como **Get** o **set**.
 
