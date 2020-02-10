@@ -12,19 +12,19 @@ ms.assetid: 16984724-2d77-4d7b-9738-3dff375ed68c
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 04c2d7eab2f149505758ab21f08cd6b8bdb74b85
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 96a5e5f23ad3cdfc829fd141c3c90f6c200f06c9
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360305"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001810"
 ---
 # <a name="iis-on-nano-server"></a>IIS en Nano Server
 
 >Se aplica a: Windows Server 2016
 
 > [!IMPORTANT]
-> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
+> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Consulta [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
 
 Puede instalar el rol de servidor de Internet Information Services (IIS) en Nano Server mediante el parámetro -Package con Microsoft-NanoServer-IIS-Package. Para obtener información sobre cómo configurar Nano Server, incluida la instalación de paquetes, vea [Instalación de Nano Server](Getting-Started-with-Nano-Server.md).  
 
@@ -65,7 +65,7 @@ En esta versión de Nano Server, están disponibles las siguientes característi
 |**Herramientas de administración**||  
 |Módulo IISAdministration para Windows PowerShell|x|  
 
-Una serie de artículos sobre otras configuraciones de IIS (por ejemplo, con ASP.NET, PHP y Java) y otros relacionados con el contenido están publicados en [http://iis.net/learn](http://iis.net/learn).  
+Una serie de artículos sobre otras configuraciones de IIS (por ejemplo, con ASP.NET, PHP y Java) y otros relacionados con el contenido están publicados en [http://iis.net/learn](https://iis.net/learn).  
 
 ## <a name="installing-iis-on-nano-server"></a>Instalación de IIS en Nano Server  
 Puede instalar este rol de servidor sin conexión (con Nano Server desactivado) o en línea (con Nano Server activado); la instalación sin conexión es la opción recomendada.  
@@ -242,7 +242,7 @@ Use la utilidad Certoc.exe para importar certificados, como en este ejemplo, que
     $sm.CommitChanges()  
     ```  
 
-    También puedes usar la Indicación de nombre de servidor (SNI) mediante un nombre de host específico con esta sintaxis: `$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
+    También puedes usar la Indicación de nombre de servidor (SNI) mediante un nombre de host específico con esta sintaxis: `$sm.Sites["Default Web Site"].Bindings.Add("*:443: www.foo.bar.com", $hash, "My", "Sni".`  
 
 ## <a name="appendix-1-list-of-iis-sub-features"></a>Apéndice 1: Lista de subcaracterísticas de IIS
 
