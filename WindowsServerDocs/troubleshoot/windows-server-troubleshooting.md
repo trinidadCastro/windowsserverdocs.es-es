@@ -14,12 +14,12 @@ ms.date: 1/24/2020
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: 593fc4abbdce3ed53fa8d7ef73d529558b100bcc
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: cd4e61a9fac5b1a1f6a1b66309e514ef75b1e4db
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001800"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125136"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Solucionar problemas de componentes de Windows Server
 
@@ -46,17 +46,17 @@ Esta sección contiene temas de solución de problemas avanzados y vínculos par
 
 ## <a name="troubleshoot-startup-and-restart"></a>Solucionar problemas de inicio y reinicio
 
-- [Solución avanzada de problemas de inicio de Windows](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup.md)
-- [Cómo determinar el tamaño de archivo de página adecuado para las versiones de 64 bits de Windows](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size.md)
-- [Generar un volcado de memoria de kernel o completo](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump.md)
-- [Introducción al archivo de paginación](https://docs.microsoft.com/windows/client-management/introduction-page-file.md)
-- [Configurar las opciones de recuperación y errores del sistema en Windows](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options.md)
-- [Solución avanzada de problemas de arranque de Windows](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems.md)
-- [Solución avanzada de problemas de inmovilización de equipos basados en Windows](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze.md)
-- [Solución avanzada de problemas de error de detención o de pantalla azul](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors.md)
-- [Solución avanzada de problemas para detener el error 7B o Inaccessible_Boot_Device](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device.md)
-- [Solución avanzada de problemas para el ID. de evento 41 "el sistema se ha reiniciado sin cerrarse primero correctamente"](https://docs.microsoft.com/windows/client-management/troubleshoot-event-id-41-restart.md)
-- [Se produce un error de detención al actualizar el controlador del adaptador de red de Broadcom en la caja](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-error-on-broadcom-driver-update.md)
+- [Solución avanzada de problemas de inicio de Windows](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup)
+- [Cómo determinar el tamaño de archivo de página adecuado para las versiones de 64 bits de Windows](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size)
+- [Generar un volcado de memoria de kernel o completo](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump)
+- [Introducción al archivo de paginación](https://docs.microsoft.com/windows/client-management/introduction-page-file)
+- [Configurar las opciones de recuperación y errores del sistema en Windows](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options)
+- [Solución avanzada de problemas de arranque de Windows](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
+- [Solución avanzada de problemas de inmovilización de equipos basados en Windows](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze)
+- [Solución avanzada de problemas de error de detención o de pantalla azul](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors)
+- [Solución avanzada de problemas para detener el error 7B o Inaccessible_Boot_Device](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device)
+- [Solución avanzada de problemas para el ID. de evento 41 "el sistema se ha reiniciado sin cerrarse primero correctamente"](https://docs.microsoft.com/windows/client-management/troubleshoot-event-id-41-restart)
+- [Se produce un error de detención al actualizar el controlador del adaptador de red de Broadcom en la caja](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-error-on-broadcom-driver-update)
 
 ## <a name="troubleshoot-ad-forest-recovery"></a>Solucionar problemas de la recuperación del bosque de AD
 

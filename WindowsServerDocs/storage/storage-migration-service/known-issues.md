@@ -4,16 +4,16 @@ description: Problemas conocidos y solución de problemas para el servicio de mi
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 10/09/2019
+ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a98c560306debc0e10c2c0ac44b41e12141b6e9f
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 77a23e5787283aa93d6f2f303cf45b461ccf52dd
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001890"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125116"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -64,11 +64,11 @@ Hemos corregido este problema en una versión posterior de Windows Server.
 
 Al usar el centro de administración de Windows o PowerShell para descargar el registro CSV de operaciones de transferencia de errores detallados, recibe el error:
 
- >   Transferir registro: Compruebe que el uso compartido de archivos está permitido en el firewall. : Esta operación de solicitud enviada a net. TCP: psico: 28940/SMS/Service/1/Transfer no recibió una respuesta dentro del tiempo de espera configurado (00:01:00). El tiempo asignado a esta operación puede haber sido una parte de un tiempo de espera mayor. Esto puede deberse a que el servicio sigue procesando la operación o a que el servicio no pudo enviar un mensaje de respuesta. Considere la posibilidad de aumentar el tiempo de espera de la operación (convirtiendo el canal o el proxy a IContextChannel y estableciendo la propiedad OperationTimeout) y asegúrese de que el servicio pueda conectarse al cliente.
+ >   Transferir registro: Compruebe que el uso compartido de archivos está permitido en el firewall. : Esta operación de solicitud enviada a net. TCP: psico: 28940/SMS/Service/1/Transfer no recibió una respuesta dentro del tiempo de espera configurado (00:01:00). El tiempo asignado a esta operación puede haber sido una parte de un tiempo de espera mayor. La razón puede ser que el servicio sigue procesando la operación o que no pudo enviar un mensaje de respuesta. Considere la posibilidad de aumentar el tiempo de espera de la operación (convirtiendo el canal o el proxy a IContextChannel y estableciendo la propiedad OperationTimeout) y asegúrese de que el servicio pueda conectarse al cliente.
 
 Este problema se debe a un gran número de archivos transferidos que no se pueden filtrar en el tiempo de espera predeterminado de un minuto permitido por el servicio de migración de almacenamiento. 
 
-Para solucionar este problema:
+Para evitar este problema:
 
 1. En el equipo de Orchestrator, edite el archivo *%systemroot%\SMS\Microsoft.StorageMigration.Service.exe.config* con Notepad. exe para cambiar el valor de "sendTimeout" de su valor predeterminado de 1 minuto a 10 minutos.
 
@@ -85,7 +85,7 @@ Para solucionar este problema:
 
    `HKEY_LOCAL_MACHINE\Software\Microsoft\SMSPowershell`
 
-5. En el menú Edición, seleccione Nuevo y haga clic en Valor DWORD. 
+5. En el menú Editar, seleccione Nuevo y a continuación, haga clic en Valor DWORD. 
 6. Escriba "WcfOperationTimeoutInMinutes" como nombre de la DWORD y, a continuación, presione Entrar.
 7. Haga clic con el botón secundario en "WcfOperationTimeoutInMinutes" y, a continuación, haga clic en modificar. 
 8. En el cuadro datos base, haga clic en "decimal".
@@ -349,7 +349,66 @@ Si ya ha ejecutado la transferencia una y varias veces:
  4. En el caso de los usuarios o grupos deshabilitados con nombres que ahora contengan un sufijo agregado por el servicio de migración de almacenamiento, puede eliminar estas cuentas. Puede confirmar que las cuentas de usuario se agregaron posteriormente porque solo contendrán el grupo usuarios del dominio y tendrá una fecha y hora de creación que coincidan con la hora de inicio de la transferencia del servicio de migración de almacenamiento.
  
  Si desea usar el servicio de migración de almacenamiento con controladores de dominio para la transferencia, asegúrese de seleccionar siempre "no transferir usuarios y grupos" en la página Configuración de transferencia del centro de administración de Windows.
+ 
+ ## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>Error 53, "no se pudieron inventariar todos los dispositivos especificados" al ejecutar el inventario. 
 
-## <a name="see-also"></a>Consulta también
+Al intentar ejecutar el inventario, recibirá lo siguiente:
+
+    Failed to inventory all specified devices 
+    
+    Log Name:      Microsoft-Windows-StorageMigrationService/Admin
+    Source:        Microsoft-Windows-StorageMigrationService
+    Date:          1/16/2020 8:31:17 AM
+    Event ID:      2516
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      ned.corp.contoso.com
+    Description:
+    Couldn't inventory files on the specified endpoint.
+    Job: ned1
+    Computer: ned.corp.contoso.com
+    Endpoint: hithere
+    State: Failed
+    File Count: 0
+    File Size in KB: 0
+    Error: 53
+    Error Message: Endpoint scan failed
+    Guidance: Check the detailed error and make sure the inventory requirements are met. This could be because of missing permissions on the source computer.
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Debug
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          1/16/2020 8:31:17 AM
+    Event ID:      10004
+    Task Category: None
+    Level:         Critical
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      ned.corp.contoso.com
+    Description:
+    01/16/2020-08:31:17.031 [Crit] Consumer Task failed with error:The network path was not found.
+    . StackTrace=   at Microsoft.Win32.RegistryKey.Win32ErrorStatic(Int32 errorCode, String str)
+       at Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(RegistryHive hKey, String machineName, RegistryView view)
+       at Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetEnvironmentPathFolders(String ServerName, Boolean IsServerLocal)
+       at Microsoft.StorageMigration.Proxy.Service.Discovery.ScanUtils.<ScanSMBEndpoint>d__3.MoveNext()
+       at Microsoft.StorageMigration.Proxy.EndpointScanOperation.Run()
+       at Microsoft.StorageMigration.Proxy.Service.Discovery.EndpointScanRequestHandler.ProcessRequest(EndpointScanRequest scanRequest, Guid operationId)
+       at Microsoft.StorageMigration.Proxy.Service.Discovery.EndpointScanRequestHandler.ProcessRequest(Object request)
+       at Microsoft.StorageMigration.Proxy.Common.ProducerConsumerManager`3.Consume(CancellationToken token)    
+       
+    01/16/2020-08:31:10.015 [Erro] Endpoint Scan failed. Error: (53) The network path was not found.
+    Stack trace:
+       at Microsoft.Win32.RegistryKey.Win32ErrorStatic(Int32 errorCode, String str)
+       at Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(RegistryHive hKey, String machineName, RegistryView view)
+
+En esta fase, el orquestador del servicio de migración de almacenamiento está intentando lecturas remotas del registro para determinar la configuración de la máquina de origen, pero el servidor de origen rechaza la ruta de acceso del registro. Esto puede deberse a:
+
+ - El servicio de registro remoto no se está ejecutando en el equipo de origen.
+ - el Firewall no permite conexiones remotas del registro con el servidor de origen desde el orquestador.
+ - La cuenta de migración de origen no tiene permisos de registro remoto para conectarse al equipo de origen.
+ - La cuenta de migración de origen no tiene permisos de lectura en el registro del equipo de origen, en "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" o en "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\ LanManServer
+
+## <a name="see-also"></a>Vea también
 
 - [Información general del servicio de migración de almacenamiento](overview.md)
