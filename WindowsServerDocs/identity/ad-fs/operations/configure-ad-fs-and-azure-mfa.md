@@ -9,12 +9,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c3a7e7c420ef63adc906e6558ed7aff6819e983c
-ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
+ms.openlocfilehash: b658644d1ba7cec1b02a2a51331cd7b7152efc77
+ms.sourcegitcommit: 75e611fd5de8b8aa03fc26c2a3d5dbf8211b8ce3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013060"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77145488"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>Configuración de Azure MFA como proveedor de autenticación con AD FS
 
@@ -133,7 +133,7 @@ Set-AdfsAzureMfaTenant -TenantId <tenant ID> -ClientId 981f26a1-7f43-403b-a875-f
 Windows Server sin el Service Pack más reciente no admite el parámetro `-Environment` para el cmdlet [set-AdfsAzureMfaTenant](https://docs.microsoft.com/powershell/module/adfs/export-adfsauthenticationproviderconfigurationdata) . Si usa Azure Government nube y en los pasos anteriores no se pudo configurar el inquilino de Azure debido a la falta de `-Environment` parámetro, realice los pasos siguientes para crear manualmente las entradas del registro. Omita estos pasos si el cmdlet anterior registró correctamente la información del inquilino o no está en la nube de Azure Government:
 
 1. Abra el **Editor del registro** en el servidor de AD FS.
-1. Ve a `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ADFS`. Cree los siguientes valores de clave del registro:
+1. Vaya a `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ADFS`. Cree los siguientes valores de clave del registro:
 
     | Clave del Registro       | Valor |
     |--------------------|-----------------------------------|
@@ -160,11 +160,14 @@ En cada servidor de AD FS, en el equipo local mi tienda, habrá un certificado a
 
 Si el período de validez de los certificados está llegando al final, inicie el proceso de renovación mediante la generación de un nuevo certificado de Azure MFA en cada servidor de AD FS. En una ventana de comandos de PowerShell, genere un nuevo certificado en cada servidor de AD FS con el siguiente cmdlet:
 
+> [!CAUTION]
+> Si el certificado ya ha expirado, no agregue el parámetro `-Renew $true` al siguiente comando. En este escenario, el certificado expirado existente se sustituye por uno nuevo en lugar de dejarse en vigor y se crea un certificado adicional.
+
 ```
 PS C:\> $newcert = New-AdfsAzureMfaTenantCertificate -TenantId <tenant id such as contoso.onmicrosoft.com> -Renew $true
 ```
 
-Como resultado de este cmdlet, se generará un nuevo certificado válido de 2 días en el futuro a 2 días + 2 años.  Las operaciones de AD FS y Azure MFA no se verán afectadas por este cmdlet ni por el nuevo certificado. (Nota: el retraso de 2 días es intencionado y proporciona el tiempo de ejecución de los pasos siguientes para configurar el nuevo certificado en el inquilino antes de que AD FS empiece a usarlo para Azure MFA).
+Si el certificado no ha expirado, se genera un nuevo certificado válido de 2 días en el futuro a 2 días + 2 años. Las operaciones de AD FS y Azure MFA no se ven afectadas por este cmdlet ni por el nuevo certificado. (Nota: el retraso de 2 días es intencionado y proporciona el tiempo de ejecución de los pasos siguientes para configurar el nuevo certificado en el inquilino antes de que AD FS empiece a usarlo para Azure MFA).
 
 ### <a name="configure-each-new-ad-fs-azure-mfa-certificate-in-the-azure-ad-tenant"></a>Configuración de cada nuevo AD FS certificado de Azure MFA en el inquilino de Azure AD
 
@@ -174,7 +177,7 @@ Con el módulo de Azure AD PowerShell, para cada nuevo certificado (en cada serv
 PS C:/> New-MsolServicePrincipalCredential -AppPrincipalId 981f26a1-7f43-403b-a875-f8b09b8cd720 -Type Asymmetric -Usage Verify -Value $newcert
 ```
 
-`$newcert` es el nuevo certificado. Para obtener el certificado codificado en Base64, exporte el certificado (sin la clave privada) como un archivo codificado DER y ábralo en Notepad. exe. a continuación, Copie/pegue en la sesión de PowerShell y asigne a la variable `$newcert`.
+Si el certificado anterior ya expiró, reinicie el servicio AD FS para recoger el nuevo certificado. No es necesario reiniciar el servicio AD FS si renovó un certificado antes de que expirara.
 
 ### <a name="verify-that-the-new-certificates-will-be-used-for-azure-mfa"></a>Compruebe que los nuevos certificados se usarán para Azure MFA.
 
