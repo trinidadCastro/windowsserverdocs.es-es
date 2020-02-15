@@ -1,6 +1,6 @@
 ---
-title: Usar Robocopy para preinicializar archivos para Replicación DFS
-description: Cómo usar Robocopy. exe para preinicializar archivos para Replicación DFS.
+title: Uso de Robocopy para preinicializar archivos para Replicación DFS
+description: Cómo usar Robocopy.exe para preinicializar archivos para Replicación DFS.
 ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
@@ -10,88 +10,88 @@ ms.date: 05/18/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: ea5cd954dde6d4fa8fcaa7874f75cb9588115ab1
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71402123"
 ---
-# <a name="use-robocopy-to-preseed-files-for-dfs-replication"></a>Usar Robocopy para preinicializar archivos para Replicación DFS
+# <a name="use-robocopy-to-preseed-files-for-dfs-replication"></a>Uso de Robocopy para preinicializar archivos para Replicación DFS
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
-En este tema se explica cómo usar la herramienta de línea de comandos, **Robocopy. exe**, para preinicializar los archivos al configurar la replicación para la replicación sistema de archivos distribuido (DFS) (también conocida como DFSR o DFS-R) en Windows Server. Al preinicializar los archivos antes de configurar Replicación DFS, agregar un nuevo asociado de replicación o reemplazar un servidor, puede acelerar la sincronización inicial y habilitar la clonación de la base de datos Replicación DFS en Windows Server 2012 R2. El método Robocopy es uno de varios métodos de prepropagación. para obtener información general, consulte [Step 1: preseed files for replicación DFS](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495046(v%3dws.11)>).
+En este tema se explica cómo usar la herramienta de línea de comandos **Robocopy.exe** para preinicializar los archivos al configurar la replicación para la replicación del Sistema de archivos distribuido (DFS) (también conocida como DFSR o DFS-R) en Windows Server. Al preinicializar los archivos antes de configurar la Replicación DFS, agregar un nuevo asociado de replicación o reemplazar un servidor, puedes acelerar la sincronización inicial y habilitar la clonación de la base de datos de Replicación DFS en Windows Server 2012 R2. El método Robocopy es uno de varios métodos de preinicialización; para obtener información general, consulta [Paso 1: Preinicializar archivos para Replicación DFS](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495046(v%3dws.11)>).
 
-La utilidad de línea de comandos Robocopy (copia de archivos robusta) se incluye con Windows Server. La utilidad proporciona amplias opciones que incluyen la copia de seguridad, la compatibilidad con la API de copia de seguridad, las capacidades de reintento y el registro. Las versiones posteriores incluyen compatibilidad con subprocesamiento múltiple y sin almacenamiento en búfer.
+La utilidad de línea de comandos Robocopy (copia eficaz de archivos) se incluye con Windows Server. La utilidad proporciona amplias opciones que incluyen la seguridad las copias, la compatibilidad con la API de copia de seguridad, funcionalidades de reintento y registro. Las versiones posteriores incluyen compatibilidad con subprocesamiento múltiple y E/S sin almacenamiento en búfer.
 
 >[!IMPORTANT]
->Robocopy no copia archivos bloqueados exclusivamente. Si los usuarios tienden a bloquear muchos archivos durante largos períodos en los servidores de archivos, considere la posibilidad de usar un método de prepropagación diferente. La inicialización previa no requiere una coincidencia perfecta entre las listas de archivos en los servidores de origen y de destino, pero los más archivos que no existen cuando la sincronización inicial se realiza para Replicación DFS, la inicialización menos efectiva es. Para minimizar los conflictos de bloqueo, use Robocopy durante las horas de poca actividad de la organización. Examine siempre los registros de Robocopy después de la inicialización previa para asegurarse de que comprende qué archivos se omitieron debido a bloqueos exclusivos.
+>Robocopy no copia archivos bloqueados exclusivamente. Si los usuarios suelen bloquear muchos archivos durante largos períodos en los servidores de archivos, considera la posibilidad de usar otro método de preinicialización. La preinicialización no requiere una coincidencia perfecta entre las listas de archivos en los servidores de origen y de destino, pero cuantos más archivos no existan cuando se hace la sincronización inicial para Replicación DFS, menos efectiva será la preinicialización. Para minimizar los conflictos de bloqueo, usa Robocopy durante las horas de poca actividad de tu organización. Examina siempre los registros de Robocopy después de la preinicialización para asegurarte de comprender qué archivos se omitieron debido a bloqueos exclusivos.
 
-Para usar Robocopy para preinicializar archivos para Replicación DFS, siga estos pasos:
+Para usar Robocopy para preinicializar archivos para Replicación DFS, sigue estos pasos:
 
-1. [Descargue e instale la versión más reciente de Robocopy.](#step-1-download-and-install-the-latest-version-of-robocopy)
-2. [Estabilice los archivos que se van a replicar.](#step-2-stabilize-files-that-will-be-replicated)
-3. [Copie los archivos replicados en el servidor de destino.](#step-3-copy-the-replicated-files-to-the-destination-server)
+1. [Descargar e instalar la versión más reciente de Robocopy.](#step-1-download-and-install-the-latest-version-of-robocopy)
+2. [Estabilizar los archivos que se van a replicar.](#step-2-stabilize-files-that-will-be-replicated)
+3. [Copiar los archivos replicados en el servidor de destino.](#step-3-copy-the-replicated-files-to-the-destination-server)
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-Dado que la prepropagación no implica directamente Replicación DFS, solo necesita cumplir los requisitos para realizar una copia de archivos con Robocopy.
+Dado que la preinicialización no implica directamente la Replicación DFS, solo tienes que cumplir los requisitos para hacer una copia de archivos con Robocopy.
 
-- Necesita una cuenta que sea miembro del grupo de administradores locales tanto en el servidor de origen como en el de destino.
+- Necesitas una cuenta que sea miembro del grupo de administradores locales tanto en el servidor de origen como en el de destino.
 
-- Instale la versión más reciente de Robocopy en el servidor que va a usar para copiar los archivos, ya sea el servidor de origen o el servidor de destino. tendrá que instalar la versión más reciente de la versión del sistema operativo. Para obtener instrucciones, [consulte el paso 2: Estabilice los archivos que se van a](#step-2-stabilize-files-that-will-be-replicated)replicar. A menos que esté preinicializando archivos de un servidor que ejecute Windows Server 2003 R2, puede ejecutar Robocopy en el servidor de origen o de destino. El servidor de destino, que normalmente tiene la versión más reciente del sistema operativo, le proporciona acceso a la versión más reciente de Robocopy.
+- Instala la versión más reciente de Robocopy en el servidor que vas a usar para copiar los archivos, ya sea el servidor de origen o el servidor de destino. Tendrás que instalar la versión más reciente del sistema operativo. Para obtener instrucciones, consulta el [Paso 2: Estabilizar los archivos que se van a replicar](#step-2-stabilize-files-that-will-be-replicated). A menos que estés preinicializando archivos de un servidor que ejecute Windows Server 2003 R2, puedes ejecutar Robocopy en el servidor de origen o de destino. El servidor de destino, que normalmente tiene la versión más reciente del sistema operativo, te da acceso a la versión más reciente de Robocopy.
 
-- Asegúrese de que haya suficiente espacio de almacenamiento disponible en la unidad de destino. No cree una carpeta en la ruta de acceso en la que va a copiar: Robocopy debe crear la carpeta raíz.
+- Asegúrate de que haya suficiente espacio de almacenamiento disponible en la unidad de destino. No crees una carpeta en la ruta de acceso en la que vas a hacer la copia: Robocopy tiene que crear la carpeta raíz.
     
     >[!NOTE]
-    >Cuando decida cuánto espacio desea asignar para los archivos preiniciados, tenga en cuenta el crecimiento esperado de los datos en el tiempo y los requisitos de almacenamiento para Replicación DFS. Para planear la ayuda, consulte [editar el tamaño de cuota de la carpeta provisional y la carpeta conflictos y eliminaciones](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754229(v=ws.11)) en [Administración de replicación DFS](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>).
+    >Cuando decidas cuánto espacio quieres asignar para los archivos preinicializados, ten en cuenta el crecimiento esperado de los datos a lo largo del tiempo y los requisitos de almacenamiento para Replicación DFS. Como ayuda para la planificación, consulta [Editar el tamaño de cuota de la carpeta de almacenamiento provisional y la carpeta Conflictos y eliminaciones](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754229(v=ws.11)) en [Administración de Replicación DFS](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>).
 
-- En el servidor de origen, opcionalmente, instale el monitor de procesos o el explorador de procesos, que puede usar para comprobar si hay aplicaciones que bloqueen archivos. Para obtener información sobre la descarga, consulte [monitor de procesos](https://docs.microsoft.com/sysinternals/downloads/procmon) y [Explorador de procesos](https://docs.microsoft.com/sysinternals/downloads/process-explorer).
+- Como opción, en el servidor de origen instala Process Monitor o Process Explorer, que puedes usar para comprobar si hay aplicaciones que están bloqueando archivos. Para obtener información sobre la descarga, consulta [Process Monitos](https://docs.microsoft.com/sysinternals/downloads/procmon) y [Process Explorer](https://docs.microsoft.com/sysinternals/downloads/process-explorer).
 
 ## <a name="step-1-download-and-install-the-latest-version-of-robocopy"></a>Paso 1: Descargar e instalar la versión más reciente de Robocopy
 
-Antes de usar Robocopy para preinicializar archivos, debe descargar e instalar la versión más reciente de **Robocopy. exe**. Esto garantiza que Replicación DFS no omita archivos debido a problemas en las versiones de envío de Robocopy.
+Antes de usar Robocopy para preinicializar archivos, tienes que descargar e instalar la versión más reciente de **Robocopy.exe**. Esto garantiza que Replicación DFS no omita archivos debido a problemas en las versiones de envío de Robocopy.
 
-El origen de la última versión de Robocopy compatible depende de la versión de Windows Server que se esté ejecutando en el servidor. Para obtener información acerca de cómo descargar la revisión con la versión más reciente de Robocopy para Windows Server 2008 R2 o Windows Server 2008, consulte la [lista de revisiones disponibles actualmente para las tecnologías de sistema de archivos distribuido (DFS) en Windows server 2008 y en Windows Server 2008 R2](https://support.microsoft.com/help/968429/list-of-currently-available-hotfixes-for-distributed-file-system-dfs-t).
+El origen de la versión más reciente de Robocopy compatible depende de la versión de Windows Server que se ejecute en el servidor. Para obtener información sobre cómo descargar la revisión con la versión más reciente de Robocopy para Windows Server 2008 R2 o Windows Server 2008, consulta [Lista de revisiones disponibles actualmente para las tecnologías de sistema de archivos distribuido (DFS) en Windows Server 2008 y en Windows Server 2008 R2](https://support.microsoft.com/help/968429/list-of-currently-available-hotfixes-for-distributed-file-system-dfs-t).
 
-Como alternativa, puede buscar e instalar la revisión más reciente para un sistema operativo realizando los pasos siguientes.
+Como alternativa, puedes buscar e instalar la revisión más reciente para un sistema operativo siguiendo los pasos a continuación.
 
-### <a name="locate-and-install-the-latest-version-of-robocopy-for-a-specific-version-of-windows-server"></a>Busque e instale la versión más reciente de Robocopy para una versión específica de Windows Server
+### <a name="locate-and-install-the-latest-version-of-robocopy-for-a-specific-version-of-windows-server"></a>Búsqueda e instalación de la versión más reciente de Robocopy para una versión específica de Windows Server
 
-1. En un explorador Web, Abra [https://support.microsoft.com](https://support.microsoft.com/).
+1. En un explorador web, abre [https://support.microsoft.com](https://support.microsoft.com/).
 
-2. En **soporte técnico de búsqueda**, escriba la siguiente cadena `<operating system version>` , reemplazando por el sistema operativo adecuado y, a continuación, presione la tecla entrar:
+2. En **Buscar ayuda**, escribe la cadena siguiente, reemplazando `<operating system version>` por el sistema operativo adecuado y, a continuación, presiona la tecla Entrar:
     
     ```robocopy.exe kbqfe "<operating system version>"```
     
-    Por ejemplo, escriba **Robocopy. exe kbqfe "Windows Server 2008 R2"** .
+    Por ejemplo, escribe **Robocopy.exe kbqfe "Windows Server 2008 R2"** .
 
-3. Busque y descargue la revisión con el número de identificación más alto (es decir, la versión más reciente).
+3. Busca y descarga la revisión con el número de identificación más alto (es decir, la versión más reciente).
 
-4. Instale la revisión en el servidor.
+4. Instala la revisión en el servidor.
 
 ## <a name="step-2-stabilize-files-that-will-be-replicated"></a>Paso 2: Estabilizar los archivos que se van a replicar
 
-Después de instalar la versión más reciente de Robocopy en el servidor, debe evitar que los archivos bloqueados bloqueen la copia con los métodos descritos en la tabla siguiente. La mayoría de las aplicaciones no bloquea exclusivamente los archivos. Sin embargo, durante las operaciones normales, es posible que un pequeño porcentaje de archivos esté bloqueado en los servidores de archivos.
+Después de instalar la versión más reciente de Robocopy en el servidor, tienes que evitar que los archivos bloqueados impidan la copia; para ello, usa los métodos descritos en la tabla siguiente. La mayoría de las aplicaciones no bloquea exclusivamente los archivos. Sin embargo, durante las operaciones normales, es posible que un pequeño porcentaje de archivos quede bloqueado en los servidores de archivos.
 
 |Origen del bloqueo|Explicación|Solución|
 |---|---|---|
-|Los usuarios abren archivos en recursos compartidos de forma remota.|Los empleados se conectan a un servidor de archivos estándar y editan documentos, contenido multimedia u otros archivos. A veces se conoce como la carpeta particular tradicional o las cargas de trabajo de datos compartidos.|Realice operaciones de Robocopy solo durante horas de poca actividad y no comerciales. Esto minimiza el número de archivos que Robocopy debe omitir durante la inicialización.<br><br>Considere la posibilidad de configurar temporalmente el acceso de solo lectura en los recursos compartidos de archivos que se van a replicar mediante los cmdlets **Grant-SmbShareAccess** y **Close-SmbSession** de Windows PowerShell. Si establece permisos para un grupo común, como todos o usuarios autenticados que se van a leer, es menos probable que los usuarios estándar abran archivos con bloqueos exclusivos (si sus aplicaciones detectan el acceso de solo lectura cuando se abren archivos).<br><br>También puede considerar la posibilidad de establecer una regla de Firewall temporal para el puerto SMB 445 entrante a ese servidor para bloquear el acceso a los archivos o usar el cmdlet **Block-SmbShareAccess** . Sin embargo, ambos métodos son muy molestos para las operaciones de usuario.|
-|Aplicaciones abrir archivos local.|Las cargas de trabajo de aplicaciones que se ejecutan en un servidor de archivos a veces bloquean los archivos.|Deshabilite o desinstale temporalmente las aplicaciones que están bloqueando archivos. Puede usar el monitor de procesos o el explorador de procesos para determinar qué aplicaciones están bloqueando archivos. Para descargar el monitor de procesos o el explorador de procesos, visite las páginas [monitor](https://docs.microsoft.com/sysinternals/downloads/procmon) de procesos y [Explorador de procesos](https://docs.microsoft.com/sysinternals/downloads/process-explorer) .|
+|Los usuarios abren archivos en recursos compartidos de forma remota.|Los empleados se conectan a un servidor de archivos estándar y editan documentos, contenido multimedia u otros archivos. A veces se conoce como la carpeta de inicio tradicional o cargas de trabajo de datos compartidos.|Completa las operaciones de Robocopy únicamente fuera de las horas pico y fuera del horario comercial. Esto minimiza el número de archivos que Robocopy debe omitir durante la preinicialización.<br><br>Piensa en la posibilidad de configurar temporalmente el acceso de solo lectura en los recursos compartidos de archivos que se van a replicar con los cmdlets de Windows PowerShell **Grant-SmbShareAccess** y **Close-SmbSession**. Si estableces permisos de Lectura para un grupo común, como Todos o Usuarios autenticados, es menos probable que los usuarios estándar abran archivos con bloqueos exclusivos (si sus aplicaciones detectan el acceso de solo lectura cuando se abren archivos).<br><br>También puedes considerar la posibilidad de establecer una regla de firewall temporal para el puerto 445 de entrada de SMB a ese servidor para bloquear el acceso a los archivos o usar el cmdlet **Block-SmbShareAccess**. Sin embargo, ambos métodos son muy molestos para las operaciones de los usuarios.|
+|Las aplicaciones abren archivos localmente.|Las cargas de trabajo de aplicaciones que se ejecutan en un servidor de archivos a veces bloquean los archivos.|Deshabilita o desinstala temporalmente las aplicaciones que bloquean los archivos. Puedes usar Process Monitor o Process Explorer para determinar qué aplicaciones están bloqueando archivos. Para descargar Process Monitor o Process Explorer, visita las páginas de [Process Explorer](https://docs.microsoft.com/sysinternals/downloads/procmon) y [Process Monitor](https://docs.microsoft.com/sysinternals/downloads/process-explorer).|
 
 ## <a name="step-3-copy-the-replicated-files-to-the-destination-server"></a>Paso 3: Copiar los archivos replicados en el servidor de destino
 
-Después de minimizar los bloqueos en los archivos que se van a replicar, puede preinicializar los archivos del servidor de origen en el servidor de destino.
+Después de minimizar los bloqueos en los archivos que se van a replicar, puedes preinicializar los archivos del servidor de origen en el servidor de destino.
 
 >[!NOTE]
->Puede ejecutar Robocopy en el equipo de origen o en el equipo de destino. En el procedimiento siguiente se describe la ejecución de Robocopy en el servidor de destino, que normalmente ejecuta un sistema operativo más reciente, para aprovechar las funcionalidades de Robocopy adicionales que pueda proporcionar el sistema operativo más reciente.
+>Puedes ejecutar Robocopy en el equipo de origen o en el equipo de destino. En el procedimiento siguiente se describe la ejecución de Robocopy en el servidor de destino, que normalmente ejecuta un sistema operativo más reciente, para aprovechar las funcionalidades adicionales de Robocopy que pueda proporcionar el sistema operativo más reciente.
 
-### <a name="preseed-the-replicated-files-onto-the-destination-server-with-robocopy"></a>Preinicializar los archivos replicados en el servidor de destino con Robocopy
+### <a name="preseed-the-replicated-files-onto-the-destination-server-with-robocopy"></a>Preinicialización de los archivos replicados en el servidor de destino con Robocopy
 
-1. Inicie sesión en el servidor de destino con una cuenta que sea miembro del grupo local Administradores en los servidores de origen y de destino.
+1. Inicia sesión en el servidor de destino con una cuenta que sea miembro del grupo de administradores locales tanto en el servidor de origen como en el de destino.
 
-2. Abre un símbolo del sistema con privilegios elevados.
+2. Abra un símbolo del sistema con privilegios elevados.
 
-3. Para preinicializar los archivos del servidor de origen al de destino, ejecute el siguiente comando, sustituyendo sus propias rutas de acceso de origen, destino y archivo de registro por los valores entre corchetes:
+3. Para preinicializar los archivos del servidor de origen al de destino, ejecuta el siguiente comando, sustituyendo tus propias rutas de acceso de origen, destino y archivo de registro por los valores entre llaves:
     
     ```PowerShell
     robocopy "<source replicated folder path>" "<destination replicated folder path>" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:<log file path> /v
@@ -101,35 +101,35 @@ Después de minimizar los bloqueos en los archivos que se van a replicar, puede 
     
     |Parámetro|Descripción|
     |---|---|
-    |"\<ruta de acceso\>de la carpeta replicada de origen"|Especifica la carpeta de origen para el preinicialización en el servidor de destino.|
-    |"\<ruta\>de la carpeta replicada de destino"|Especifica la ruta de acceso a la carpeta que almacenará los archivos preinicializados.<br><br>La carpeta de destino no debe existir ya en el servidor de destino. Para obtener los hash de archivo coincidentes, Robocopy debe crear la carpeta raíz cuando se preparan los archivos.|
-    |/e|Copia subdirectorios y sus archivos, así como subdirectorios vacíos.|
-    |b|Copia los archivos en modo de copia de seguridad.|
-    |/copyall|Copia toda la información de los archivos, incluidos los datos, los atributos, las marcas de tiempo, la lista de control de acceso (ACL) de NTFS, la información de propietario y la información de auditoría.|
-    |/r: 6|Vuelve a intentar la operación seis veces cuando se produce un error.|
-    |/w: 5|Espera 5 segundos entre reintentos.|
-    |MT: 64|Copia los archivos de 64 simultáneamente.|
-    |/XD DfsrPrivate|Excluye la carpeta DfsrPrivate.|
+    |"\<ruta de acceso de la carpeta replicada de origen\>"|Especifica la carpeta de origen que se va a preinicializar en el servidor de destino.|
+    |"\<ruta de acceso de la carpeta replicada de destino\>"|Especifica la ruta de acceso a la carpeta que almacenará los archivos preinicializados.<br><br>La carpeta de destino no debe existir ya en el servidor de destino. Para obtener los hash de archivo coincidentes, Robocopy tiene que crear la carpeta raíz cuando se preinicializan los archivos.|
+    |/e|Copia los subdirectorios y sus archivos, así como los subdirectorios vacíos.|
+    |/b|Copia los archivos en modo de copia de seguridad.|
+    |/copyall|Copia la información de todos los archivos, incluidos los datos, los atributos, las marcas de tiempo, la lista de control de acceso (ACL) de NTFS, la información de propietarios y la información de auditoría.|
+    |/r:6|Vuelve a intentar la operación seis veces cuando se produce un error.|
+    |/w:5|Espera 5 segundos entre los reintentos.|
+    |MT:64|Copia 64 archivos simultáneamente.|
+    |/xd DfsrPrivate|Excluye la carpeta DfsrPrivate.|
     |/tee|Escribe la salida de estado en la ventana de la consola, así como en el archivo de registro.|
-    |Ruta \<del archivo de registro de/log >|Especifica el archivo de registro que se va a escribir. Sobrescribe el contenido existente del archivo. (Para anexar las entradas al archivo de registro existente, `/log+ <log file path>`use).|
-    |/v|Genera una salida detallada que incluye archivos omitidos.|
+    |/log \<ruta de acceso del archivo de registro>|Especifica el archivo de registro que se va a escribir. Sobrescribe el contenido existente del archivo. (Para anexar las entradas al archivo de registro existente, usa `/log+ <log file path>`).|
+    |/v|Genera una salida detallada que incluye los archivos omitidos.|
     
-    Por ejemplo, el siguiente comando replica los archivos de la carpeta replicada de origen, E\\: RF01, en la unidad de datos D en el servidor de destino:
+    Por ejemplo, el siguiente comando replica los archivos de la carpeta replicada de origen, E:\\RF01, en la unidad de datos D del servidor de destino:
     
     ```PowerShell
     robocopy.exe "\\srv01\e$\rf01" "d:\rf01" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:c:\temp\preseedsrv02.log
     ```
     
     >[!NOTE]
-    >Se recomienda usar los parámetros descritos anteriormente al usar Robocopy para preinicializar archivos para Replicación DFS. Sin embargo, puede cambiar algunos de sus valores o agregar parámetros adicionales. Por ejemplo, puede que vea las pruebas de que tiene la capacidad de establecer un valor mayor (recuento de subprocesos) para el parámetro */MT* . Además, si va a replicar principalmente archivos de mayor tamaño, es posible que pueda aumentar el rendimiento de las copias agregando la opción **/j** para e/s no almacenadas en búfer. Para obtener más información sobre los parámetros de Robocopy, consulte la referencia de línea de comandos de [Robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) .
+    >Se recomienda usar los parámetros descritos anteriormente al usar Robocopy para preinicializar archivos para Replicación DFS. Sin embargo, puedes cambiar algunos de sus valores o agregar parámetros adicionales. Por ejemplo, puede que mediante pruebas descubras que tienes la capacidad de establecer un valor mayor (recuento de subprocesos) para el parámetro */MT*. Además, si principalmente vas a replicar archivos de mayor tamaño, es posible que puedas aumentar el rendimiento de las copias si agregas la opción **/j** para la E/S no almacenada en búfer. Para obtener más información acerca de los parámetros de Robocopy, consulta la referencia de la línea de comandos de [Robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy).
 
     >[!WARNING]
-    >Para evitar la posible pérdida de datos cuando se utiliza Robocopy para preinicializar archivos para Replicación DFS, no realice los cambios siguientes en los parámetros recomendados:
-    >- No use el parámetro */Mir* (que refleje un árbol de directorios) o el parámetro */MOV* (que mueve los archivos y, a continuación, Los elimina del origen).
-    >-  No quite las opciones **/e**, **/b**y **/copyall** .
+    >Para evitar la posible pérdida de datos cuando uses Robocopy para preinicializar archivos para Replicación DFS, no hagas los cambios siguientes en los parámetros recomendados:
+    >- No uses el parámetro */mir* (que refleje un árbol de directorios) ni el parámetro */mov* (que mueve los archivos y, luego, los elimina del origen).
+    >-  No quites las opciones **/e**, **/b** y **/copyall**.
 
-4. Una vez completada la copia, examine el registro en busca de errores o archivos omitidos. Use Robocopy para copiar los archivos omitidos individualmente en lugar de recopiar todo el conjunto de archivos. Si los archivos se omitieron debido a bloqueos exclusivos, intente copiar archivos individuales con Robocopy posteriormente, o bien acepte que esos archivos requieran la replicación por cable mediante la Replicación DFS durante la sincronización inicial.
+4. Una vez completada la copia, examina el registro en busca de errores o archivos omitidos. Usa Robocopy para copiar individualmente los archivos omitidos, en lugar de volver a copiar todo el conjunto de archivos. Si los archivos se omitieron debido a bloqueos exclusivos, intenta copiar los archivos individuales con Robocopy más adelante, o bien acepta que esos archivos requerirán la replicación por cable mediante la Replicación DFS durante la sincronización inicial.
 
 ## <a name="next-step"></a>Paso siguiente
 
-Después de completar la copia inicial y usar Robocopy para resolver problemas con tantos archivos omitidos como sea posible, debe usar el cmdlet **Get-DfsrFileHash** en Windows PowerShell o el comando **Dfsrdiag** para validar los archivos preinicializados comparando hash de archivo en los servidores de origen y de destino. Para obtener instrucciones detalladas [, consulte el paso 2: Valide los archivos preinicializados para](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495042(v%3dws.11)>)replicación DFS.
+Después de completar la copia inicial y usar Robocopy para resolver los problemas con la mayor cantidad de archivos omitidos como sea posible, usarás el cmdlet **Get-DfsrFileHash** de Windows PowerShell o el comando **Dfsrdiag** para validar los archivos preinicializados al comparar los hash de archivo en los servidores de origen y de destino. Para obtener instrucciones detalladas, consulta [Paso 2: Validar archivos preinicializados para Replicación DFS](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495042(v%3dws.11)>).
