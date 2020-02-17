@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/04/2019
+ms.date: 01/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ff5e2252a71f11f2488c6bdd872fe4e2de35519c
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: 1753780474332a6d5786a5804fc1b4fe5e3d8883
+ms.sourcegitcommit: 9077469e372d2aafcad890cbc4e4a24c58a3838c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919695"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76889439"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introducción al cliente de escritorio de Windows
 
@@ -103,17 +103,14 @@ Las áreas de trabajo pueden contener varios recursos administrados, incluidos l
 
 ### <a name="desktop-settings"></a>Configuración del escritorio
 
-Puedes configurar algunas de las opciones de configuración de los recursos de escritorio para asegurarte de que la experiencia satisface tus necesidades. Para acceder a la lista de opciones de configuración disponibles:
-
-1. En Connection Center (Centro de conexión), haz clic con el botón derecho en un recurso de escritorio.
-2. Selecciona **Detalles** en el menú desplegable.
-3. El panel Configuración aparece en el lado derecho del cliente que muestra el nombre del escritorio.
+Puedes configurar algunas de las opciones de configuración de los recursos de escritorio para asegurarte de que la experiencia satisface tus necesidades. Para acceder a la lista de opciones de configuración disponibles, haz clic con el botón derecho en el recurso de escritorio y selecciona **Configuración**.
 
 El cliente usará las opciones que configuró el administrador, a menos que se desactive la opción **Usar configuración predeterminada**. Esto te permite configurar las siguientes opciones:
 
-- La opción **Use all monitors** (Usar todos los monitores) cambia la sesión de escritorio entre el uso de todos los monitores locales disponibles y un solo monitor.
-- La opción **Start in full screen** (Iniciar en pantalla completa) determina si la sesión se iniciará en modo de pantalla completa o de ventana. Esta configuración se habilita automáticamente cuando se utilizan todos los monitores.
-- La opción **Update the resolution on resize** (Actualizar la resolución al cambiar de tamaño) cambia el comportamiento al cambiar el tamaño de la sesión en modo de ventana. Si está habilitada, la resolución del escritorio remoto se actualizará para que coincida con el tamaño de la ventana local. Si está deshabilitada, la sesión conservará la resolución especificada en **Resolución** durante toda su duración. Esta configuración se habilita automáticamente cuando se utilizan todos los monitores.
+- La opción **Use multiple displays** (Usar varias pantallas) cambia la sesión de escritorio entre el uso de una o varias pantallas.
+- La opción **Select the displays to use for the session** (Seleccionar las pantallas que se van a usar para la sesión) especifica qué pantallas locales se usarán para la sesión. Todas las pantallas seleccionadas deben ser adyacentes entre sí. Esta configuración se deshabilita automáticamente cuando se usa una sola pantalla.
+- La opción **Start in full screen** (Iniciar en pantalla completa) determina si la sesión se iniciará en modo de pantalla completa o de ventana. Esta configuración se habilita automáticamente cuando se usan varias pantallas.
+- La opción **Update the resolution on resize** (Actualizar la resolución al cambiar el tamaño) hace que la resolución del Escritorio remoto se actualice automáticamente al cambiar el tamaño de la sesión en modo de ventana. Cuando está deshabilitada, la sesión siempre permanece en la resolución que especifiques en **Resolución**. Esta configuración se habilita automáticamente cuando se usan varias pantallas.
 - La opción **Resolución** te permite especificar la resolución del escritorio remoto. La sesión conservará esta resolución durante toda la duración. Esta configuración se deshabilita automáticamente si la resolución está establecida para actualizarse al cambiar el tamaño.
 - La opción **Change the size of the text and apps** (Cambiar el tamaño del texto y las aplicaciones) especifica el tamaño del contenido de la sesión. Esta configuración solo se aplica al conectarse con Windows 8.1 y versiones posteriores o Windows Server 2012 R2 y versiones posteriores. Esta configuración se deshabilita automáticamente si la resolución está establecida para actualizarse al cambiar el tamaño.
 - La opción **Fit session to window** (Ajustar sesión a la ventana) determina cómo se muestra la sesión cuando la resolución del escritorio remoto difiere del tamaño de la ventana local. Cuando se habilite, se cambiará el tamaño del contenido de la sesión para ajustarse dentro de la ventana, a la vez que se conservará la relación de aspecto de la sesión. Cuando se deshabilite, las barras de desplazamiento o las áreas negras se mostrarán cuando la resolución y el tamaño de la ventana no coincidan.

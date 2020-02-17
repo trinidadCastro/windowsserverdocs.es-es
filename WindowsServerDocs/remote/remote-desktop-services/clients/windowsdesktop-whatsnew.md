@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/14/2020
+ms.date: 01/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f1f4d6b32b8b7d717d2d424e0a60c5edc96f4cac
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: b2d5215c7089ce1aadbeae68890dca1a0ae1c294
+ms.sourcegitcommit: 9077469e372d2aafcad890cbc4e4a24c58a3838c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953073"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76889449"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -30,14 +30,14 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 |Grupo de usuarios |Version  |
 |-----------|---------|
-|Público     |1.2.535  |
-|Insider    |1.2.594  |
+|Público     |1.2.605  |
+|Insider    |1.2.605  |
 
-## <a name="updates-for-version-12594"></a>Actualizaciones de la versión 1.2.594
+## <a name="updates-for-version-12605"></a>Actualizaciones para la versión 1.2.605
 
-*Fecha de publicación: 14/01/2020*
+*Fecha de publicación: 29/01/2020*
 
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cC), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cI), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oh9C)
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oHrD), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oJZs), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oXhD)
 
 - Ahora puedes seleccionar las pantallas que se van a usar para las conexiones de escritorio. Para cambiar esta configuración, haz clic con el botón derecho en el icono de conexión a escritorio y selecciona **Configuración**.
 - Se corrigió un problema que provocaba que la configuración de conexión no mostrara los factores de escala disponibles correctos.

@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 64c0daa8ecc2d6b196d4305e3246dadeebf7075a
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: f4568e1781dbe385d8abe8a96f07841391506738
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948341"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822168"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>Notas de la versión: Problemas importantes en Windows Server 2016
 
@@ -29,7 +29,7 @@ Este documento se actualiza continuamente. Habida cuenta de que se detectan prob
 
 ## <a name="express-updates-available-starting-in-november-2018-new"></a>Actualizaciones rápidas disponibles a partir de noviembre de 2018 (NUEVO)
 
-A partir de la actualización del "martes de actualizaciones" de noviembre de 2018, Windows volverá a publicará las [actualizaciones rápidas](express-updates.md) para Windows Server 2016. Si usa WSUS y System Center Configuration Manager (SCCM), volverás a ver dos paquetes para la actualización de Windows Server 2016: una actualización completa y una actualización rápida. Si quieres usar la actualización rápida para tus entornos de servidor, deberás confirmar que el servidor ha hecho una actualización completa desde noviembre de 2017 (KB 4048953) para garantizar que la actualización rápida se instale correctamente. Si intentas realizar una actualización rápida en un servidor que no se ha actualizado desde la actualización 11B de 2017 (KB 4048953), recibirás varios errores que consumen ancho de banda y recursos de CPU en un bucle infinito. Si te encuentras con este escenario, deja de intentar la actualización rápida y, en su lugar, intenta una actualización completa reciente para detener el bucle de errores.
+A partir de la actualización del "martes de actualizaciones" de noviembre de 2018, Windows volverá a publicará las [actualizaciones rápidas](express-updates.md) para Windows Server 2016. Si usas WSUS y Configuration Manager, volverás a ver dos paquetes para la actualización de Windows Server 2016: una actualización completa y una rápida. Si quieres usar la actualización rápida para tus entornos de servidor, deberás confirmar que el servidor ha hecho una actualización completa desde noviembre de 2017 (KB 4048953) para garantizar que la actualización rápida se instale correctamente. Si intentas realizar una actualización rápida en un servidor que no se ha actualizado desde la actualización 11B de 2017 (KB 4048953), recibirás varios errores que consumen ancho de banda y recursos de CPU en un bucle infinito. Si te encuentras con este escenario, deja de intentar la actualización rápida y, en su lugar, intenta una actualización completa reciente para detener el bucle de errores.
 
 ## <a name="server-core-installation-option"></a>Opción de instalación Server Core
 

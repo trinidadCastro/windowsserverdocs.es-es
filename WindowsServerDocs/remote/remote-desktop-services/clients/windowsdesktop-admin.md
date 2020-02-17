@@ -13,12 +13,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2195c3bafaa01a1b1c16c17889d5e04d7213a5b6
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: c0a9f11aea9e24cc1a2bab275aae8dc0a81e9cba
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919707"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822366"
 ---
 # <a name="windows-desktop-client-for-admins"></a>Cliente de escritorio de Windows para administradores
 
@@ -28,7 +28,7 @@ En este tema se incluye información adicional sobre el cliente de escritorio de
 
 ## <a name="installation-options"></a>Opciones de instalación
 
-Aunque los usuarios pueden instalar el cliente directamente después de descargarlo, si vas a realizar la implementación en varios dispositivos, también puede que quieras implementar el cliente a través de otros medios. La implementación mediante directivas de grupo o System Center Configuration Manager te permite ejecutar el instalador silenciosamente mediante la línea de comandos. Ejecuta los siguientes comandos para implementar el cliente por dispositivo o por usuario.
+Aunque los usuarios pueden instalar el cliente directamente después de descargarlo, si vas a realizar la implementación en varios dispositivos, también puede que quieras implementar el cliente a través de otros medios. La implementación mediante directivas de grupo o Microsoft Endpoint Configuration Manager te permite ejecutar el instalador silenciosamente mediante la línea de comandos. Ejecuta los siguientes comandos para implementar el cliente por dispositivo o por usuario.
 
 ### <a name="per-device-installation"></a>Instalación por dispositivo
 
