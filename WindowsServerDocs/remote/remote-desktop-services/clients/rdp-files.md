@@ -13,12 +13,12 @@ manager: dongill
 ms.author: helohr
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 43cffc007970245ab9bd96c7cae9bb5137a8030b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6a596bcd29fdb80f8b2b0fa86ee808755dd09f43
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387802"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125097"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>Configuración admitida del archivo RDP de Escritorio remoto
 
@@ -40,6 +40,7 @@ Consulta [esta documentación](https://go.microsoft.com/fwlink/?linkid=2098243&c
 | desktop size id:i:value | Especifica las dimensiones del escritorio de sesión remota desde un conjunto de opciones predefinidas. Esta configuración se anula si se especifica desktopheight o desktopwidth.| -0: 640×480<br>- 1: 800×600<br>- 2: 1024×768<br>- 3: 1280×1024<br>- 4: 1600×1200 | 0 | x | x | x |
 | desktopheight:i:value | Determina la altura de resolución (en píxeles) en el equipo remoto cuando se conecta mediante la Conexión a Escritorio remoto. Esta configuración corresponde a la selección en el control deslizante Mostrar configuración de la pestaña Pantalla en Opciones de RDC. | Valor numérico entre 200 y 2048 | El valor predeterminado se establece en la resolución del equipo local | x | x | x |
 | desktopwidth:i:value | Determina el ancho de resolución (en píxeles) en el equipo remoto cuando se conecta mediante la Conexión a Escritorio remoto. Esta configuración corresponde a la selección en el control deslizante Mostrar configuración de la pestaña Pantalla en Opciones de RDC. | Valor numérico entre 200 y 4096 | El valor predeterminado se establece en la resolución del equipo local | x | x | x |
+| devicestoredirect:s:value | Determina qué dispositivos en el equipo cliente se redirigirán y estarán disponibles en la sesión remota. | - *: redirigir todos los dispositivos compatibles, incluidos los que se conectan posteriormente<br> - Identificador de hardware válido de uno o varios dispositivos | | x | x | x |
 | disableconnectionsharing:i:value | Determina si el cliente de Escritorio remoto se vuelve a conectar a las conexiones abiertas existentes o inicia una nueva conexión cuando se inicia RemoteApp o un escritorio | - 0: Volver a conectar a cualquier sesión existente<br>- 1: Iniciar nueva conexión | 0 | x | x | x |
 | domain:s:value | Especifica el nombre del dominio donde se encuentra la cuenta de usuario que se usará para iniciar sesión en el equipo remoto. | Un nombre de dominio válidos, como "CONTOSO" | Sin valor predeterminado | x | x | x |
 | drivestoredirect:s:value | Determina qué unidades de disco locales en el equipo cliente se redirigirán y estarán disponibles en la sesión remota. | - Ningún valor especificado: no redirigir ninguna unidad<br>- * : Redirigir todas las unidades de disco, incluidas las unidades que se conecten más adelante<br>- DynamicDrives: redirigir las unidades que se conecten más adelante<br>- La unidad y las etiquetas para una o más unidades, como "drivestoredirect:s:C:;E:;": redirigir las unidades especificadas| Ningún valor especificado: no redirigir ninguna unidad | x | x    | |

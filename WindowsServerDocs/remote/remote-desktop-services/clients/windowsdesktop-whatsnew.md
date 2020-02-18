@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/29/2020
+ms.date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b2d5215c7089ce1aadbeae68890dca1a0ae1c294
-ms.sourcegitcommit: 9077469e372d2aafcad890cbc4e4a24c58a3838c
+ms.openlocfilehash: 3f8b035eef5bb956012627b5e2c7c59adaa8cd32
+ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76889449"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77155389"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -31,7 +31,20 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 |Grupo de usuarios |Version  |
 |-----------|---------|
 |Público     |1.2.605  |
-|Insider    |1.2.605  |
+|Insider    |1.2.673  |
+
+## <a name="updates-for-version-12673"></a>Actualizaciones para la versión 1.2.673
+
+*Fecha de publicación: 11/02/2020*
+
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pPJm), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pFbw), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pN07)
+
+- Ahora se bloquean las conexiones con el escritorio virtual de Windows si falta la firma en el archivo RDP o si se ha modificado alguna de las propiedades de signscope.
+- Cuando un área de trabajo está vacía o se ha quitado, el centro de conexión ya no parece estar vacío.
+- Se ha agregado el identificador de actividad y el código de error en los mensajes de desconexión para mejorar la solución de problemas. Puedes copiar el mensaje del cuadro de diálogo con **Control + C**.
+- Se corrigió un problema que hacía que la configuración de conexión del escritorio no detectase las pantallas.
+- Las actualizaciones de cliente ya no reinician automáticamente el equipo.
+- Los iconos sin ventanas ya no deberían aparecer en la barra de tareas.
 
 ## <a name="updates-for-version-12605"></a>Actualizaciones para la versión 1.2.605
 

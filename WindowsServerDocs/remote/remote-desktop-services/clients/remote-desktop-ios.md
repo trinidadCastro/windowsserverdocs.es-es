@@ -9,17 +9,17 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
-author: lizap
-manager: dongill
-ms.author: elizapo
-date: 08/27/2019
+author: Heidilohr
+manager: lizross
+ms.author: helohr
+date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8361d1171c2526e701a5418696761a8400c47ca3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1724f24a794003aaae0ac89ee892269eed045114
+ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949871"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77179359"
 ---
 # <a name="get-started-with-the-ios-client"></a>Introducción al cliente de iOS
 
@@ -33,60 +33,13 @@ Usa la siguiente información para comenzar. Asegúrate de consultar la sección
 > - ¿Tienes curiosidad acerca de las nuevas versiones para el cliente iOS? Consulta [Novedades de Escritorio remoto en iOS](ios-whatsnew.md)
 > - El cliente iOS admite dispositivos que usen iOS 6.x, y cualquier versión posterior.
 
-## <a name="get-the-remote-desktop-beta-client-and-start-using-it"></a>Obtener el cliente beta de Escritorio remoto y comenzar a usarlo
-El cliente beta de iOS está disponible hoy a través de Apple TestFlight admite conexiones a recursos de Escritorio virtual de Windows.
-
-### <a name="download-the-remote-desktop-ios-beta-client-from-apple-testflight"></a>Descarga del cliente beta de Escritorio remoto para iOS de Apple TestFlight
-Aquí se muestra cómo configurar el cliente beta de Escritorio remoto en tu dispositivo iOS:
-
-1. Instala la aplicación [Apple TestFlight](https://apps.apple.com/us/app/testflight/id899247664) en tu dispositivo iOS.
-2. En el dispositivo iOS, abre un explorador y ve a [aka.ms/rdiosbeta](https://aka.ms/rdiosbeta).
-3. En la etiqueta **Paso 2, Únete a la versión beta**, selecciona **Empezar las pruebas**.
-4. Cuando se te redirija a la aplicación TestFlight, selecciona **Aceptar** y luego **instala** el cliente.
-
-### <a name="add-a-connection-to-a-pc"></a>Adición de una conexión a un equipo
-Para crear una conexión remota a un equipo:
-
-1. En el Centro de conexión, pulsa **+** y, después, pulsa **Add PC** (Agregar PC).
-2. Escribe el nombre del equipo remoto en **Nombre de PC**. Puede ser un nombre de equipo Windows, un nombre de dominio de Internet o una dirección IP. También puedes anexar la información del puerto al nombre de equipo (por ejemplo, **MyDesktop:3389** o **10.0.0.1:3389**).
-3. Selecciona la **Cuenta de usuario** que usarás para acceder al equipo remoto.
-   - Selecciona **Preguntarme cada vez** para que el cliente te pida las credenciales cada vez que te conectes al equipo remoto.
-   - Seleccione **Agregar cuenta de usuario** para guardar una cuenta que usas con frecuencia, para que no tengas que escribir las credenciales cada vez que inicies sesión. Sigue [estas instrucciones](#manage-your-user-accounts) para administrar las cuentas de usuario.
-4. También puedes configurar los siguientes parámetros opcionales:
-   - En **Nombre descriptivo**, puedes escribir un nombre fácil de recordar para el equipo al que te conectas.
-   - El **Modo de administrador** te permite conectarte a una sesión de administrador en el equipo remoto.
-   - **Intercambiar botones del mouse** cambia los comandos enviados por los movimientos del mouse a la derecha y a la izquierda. Ideal para los usuarios zurdos.
-   - **Puerta de enlace** es la puerta de enlace del Escritorio remoto que usarás para conectarte a un equipo desde una red externa. Para más información, ponte en contacto con el administrador del sistema.
-   - **Sonido** selecciona el dispositivo que usa la sesión remota para el audio. Puedes elegir reproducir el sonido en un dispositivo local, en el dispositivo remoto o no reproducirlo.
-   - **Micrófono** permite el redireccionamiento del micrófono. Esta opción está deshabilitada de forma predeterminada.
-   - **Cámara** permite el redireccionamiento de la cámara. Esta opción está deshabilitada de forma predeterminada.
-   - **Portapapeles** permite el redireccionamiento del portapapeles. Esta opción está habilitada de forma predeterminada.
-   - **Almacenamiento** permite el redireccionamiento del almacenamiento local. Esta opción está deshabilitada de forma predeterminada.
-5. Selecciona **Guardar** para agregar la conexión de equipo remoto.
-
-### <a name="add-remote-resources"></a>Agregar recursos remotos
-Los recursos remotos son programas RemoteApp, escritorios basados en sesión y escritorios virtuales publicados por el administrador. El cliente de iOS admite los recursos publicados desde **Servicios de escritorio remoto** y las implementaciones de **Windows Virtual Desktop**. Para agregar recursos remotos:
-
-1. En el Centro de conexión, pulsa **+** y, después, pulsa **Agregar área de trabajo**.
-2. Escribe la **Dirección URL de fuente**. Puede ser una dirección URL o una dirección de correo electrónico:
-   - La **dirección URL** es la dirección URL del servidor de acceso web de Escritorio remoto, proporcionada por el administrador. Si tienes acceso a recursos de Windows Virtual Desktop, puedes usar `https://rdweb.wvd.microsoft.com`.
-   - Si tienes previsto usar **Correo electrónico**, escribe tu dirección de correo electrónico en este campo. Esto indica al cliente que busque un servidor de acceso web de Escritorio remoto asociado a tu dirección de correo electrónico si el administrador lo ha configurado.
-3. Pulsa **Siguiente**.
-4. Escribe la información de inicio de sesión cuando se te pida. Esto puede variar en función de la implementación y puede incluir:
-   - **Nombre de usuario**, el nombre de usuario que tiene permiso para acceder a los recursos.
-   - **Contraseña**, la contraseña asociada con el nombre de usuario.
-   - **Additional factor** (Factor adicional), que se te puede pedir si el administrador ha configurado la autenticación.
-5. Pulsa **Guardar**.
-
-Los recursos remotos se mostrarán en el Centro de conexión.
-
 ## <a name="get-the-remote-desktop-client-and-start-using-it"></a>Obtención del cliente de Escritorio remoto y su primer uso
 
 ### <a name="download-the-remote-desktop-client-from-the-ios-store"></a>Descarga del cliente de Escritorio remoto de la tienda iOS
 
 Sigue estos pasos para empezar a usar Escritorio remoto en un dispositivo iOS:
 
-1. Descarga el cliente de Escritorio remoto de Microsoft de [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8).
+1. Descarga el cliente de Escritorio remoto de Microsoft desde [iOS App Store](https://aka.ms/rdios) o [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8).
 2. [Configura tu equipo para que acepte conexiones remotas](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop).
 3. Agrega una [conexión a Escritorio remoto](#add-a-remote-desktop-connection) o un [recurso remoto](#add-a-remote-resource). Usa una conexión para conectarte directamente a un equipo Windows y un recurso remoto para usar un programa de RemoteApp, un escritorio basado en sesión o un escritorio virtual publicado de forma local mediante Conexión de RemoteApp y Escritorio. Esta característica está disponible habitualmente en entornos corporativos.
 
@@ -143,7 +96,7 @@ Para eliminar una cuenta de usuario:
 
 1. En el Centro de conexión, pulsa **Configuración**y luego pulsa **Cuentas de usuario**.
 2. Selecciona la cuenta que quieres eliminar.
-3. Pulsa **Eliminar**.   
+3. Pulsa **Eliminar**.
 
 ## <a name="connect-to-an-rd-gateway-to-access-internal-assets"></a>Conexión a una puerta de enlace de Escritorio remoto para acceder a recursos internos
 
@@ -158,6 +111,7 @@ Para configurar una puerta de enlace nueva:
    - **Nombre de usuario**: el nombre de usuario y la contraseña que se van a usar para la puerta de enlace de Escritorio remoto a la que se va a conectar. También puedes seleccionar **Usar credenciales de conexión** para usar el mismo nombre de usuario y la misma contraseña que para la conexión a Escritorio remoto.
 
 ## <a name="navigate-the-remote-desktop-session"></a>Desplazamiento a la sesión de Escritorio remoto
+
 Al iniciar una sesión de Escritorio remoto, hay varias herramientas disponibles que se pueden usar para desplazarse por la sesión.
 
 ### <a name="start-a-remote-desktop-connection"></a>Inicio de una conexión a Escritorio remoto
@@ -178,6 +132,7 @@ La barra de conexión te permite acceder a más controles de navegación.
 - **Mover la barra de conexión**: Mantén pulsada la barra de conexión, arrástrala y colócala en una nueva ubicación en la parte superior de la pantalla.
 
 ### <a name="session-selection"></a>Selección de la sesión
+
 Puede tener varias conexiones abiertas en equipos diferentes al mismo tiempo. Pulsa la barra de conexión para mostrar la barra de selección de sesión en el lado izquierdo de la pantalla. La barra de selección de sesión permite ver las conexiones abiertas y cambiar de una a otra.
 
 - Cambia entre aplicaciones en una sesión de recursos remotos abierta.
@@ -215,9 +170,7 @@ El cliente utiliza gestos táctiles estándar. También se pueden usar gestos t�
 
 ## <a name="supported-input-devices"></a>Dispositivos de entrada compatibles
 
-El [cliente beta iOS de Escritorio remoto](https://aka.ms/rdiosbeta) es compatible con los ratones físicos Swiftpoint GT y ProPoint. Swiftpoint ofrece un [descuento exclusivo](https://www.swiftpoint.com/microsoft/) en el GT a los usuarios del cliente de la versión beta de iOS.
-
-Actualmente, el cliente de iOS solo admite ratones Swiftpoint. Consulte la página [Novedades del cliente de iOS](ios-whatsnew.md) y el [App Store de iOS](https://aka.ms/rdios) para obtener información acerca de la compatibilidad con otros dispositivos en el futuro.
+Actualmente, el cliente de iOS solo admite los dispositivos de mouse Swiftpoint GT y ProPoint. Para obtener más información sobre la compatibilidad con dispositivos, consulta [Novedades del cliente de iOS](ios-whatsnew.md) e [iOS App Store](https://aka.ms/rdios).
 
 ## <a name="use-a-keyboard-in-a-remote-session"></a>Uso de un teclado en una sesión remota
 

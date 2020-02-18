@@ -8,12 +8,12 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 864a15d7336abb56572ddc783ce41a35d6fc13bf
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a8521eae302ade84904e3ba09c001eac21fffd6a
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950416"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125156"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configuración del cliente web de Escritorio remoto para los usuarios
 
@@ -170,10 +170,12 @@ Sigue estos pasos para implementar el cliente web en un servidor de Acceso web d
 
 Sigue las instrucciones de [Publicación del cliente web de Escritorio remoto](remote-desktop-web-client-admin.md#how-to-publish-the-remote-desktop-web-client), reemplazando los pasos 4 y 5 por lo siguiente.
 
-4. Importa el módulo de PowerShell de administración de clientes web de Escritorio remoto desde la carpeta local:
-    ```PowerShell
-    Import-Module -Name "C:\WebClient\"
-    ```
+4. Tienes dos opciones para recuperar el módulo de PowerShell de administración de clientes web más reciente:
+    - Importar el módulo de PowerShell de administración de clientes web de Escritorio remoto:
+      ```PowerShell
+      Import-Module -Name RDWebClientManagement
+      ```
+    - Copiar la carpeta RDWebClientManagement descargada en una de las carpetas locales del módulo de PowerShell que aparecen en **$env:p smodulePath**, o bien agregar la ruta de acceso a la carpeta con los archivos descargados en **$env:psmodulePath**.
 
 5. Implementa la última versión del cliente web de Escritorio remoto desde la carpeta local (reemplázala por el archivo zip correspondiente):
     ```PowerShell
