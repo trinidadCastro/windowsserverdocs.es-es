@@ -10,16 +10,16 @@ author: cosmosdarwin
 ms.date: 11/06/2017
 description: Cómo agregar servidores o unidades a un clúster de Espacios de almacenamiento directo
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d5949b8fce7253371ee7ecea5118596f713f037
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f5fb9da903bb76de3a075fa7feeeaba468d802c2
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393780"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465629"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>Agregar servidores o unidades a espacios de almacenamiento directo
 
->Se aplica a: Windows Server 2019 y Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se describe cómo agregar servidores o unidades a espacios de almacenamiento directo.
 
@@ -55,7 +55,7 @@ Add-ClusterNode -Name NewNode
 
 ![Agregar un tercer servidor a un clúster de dos nodos](media/add-nodes/Scaling-2-to-3.png)
 
-Con dos servidores, solo puedes crear volúmenes reflejados bidireccionales (compáralo con un volumen RAID-1 distribuido). Con tres servidores, puedes crear volúmenes de reflejo triple para una mayor tolerancia a errores. Te recomendamos que uses la creación de reflejo triple siempre que sea posible.
+Con dos servidores, solo puedes crear volúmenes reflejados bidireccionales (compáralo con un volumen RAID-1 distribuido). Con tres servidores, puedes crear volúmenes de reflejo triple para una mayor tolerancia a errores. Le recomendamos que use la creación de reflejo triple siempre que sea posible.
 
 Los volúmenes de reflejos dobles no pueden actualizarse en contexto a los reflejos triples. En su lugar, puedes crear un nuevo volumen y migrar (copiar, como mediante el uso de la [réplica de almacenamiento](../storage-replica/server-to-server-storage-replication.md)) los datos a la base de datos y, a continuación, eliminar el volumen antiguo.
 
@@ -121,7 +121,7 @@ Para ello, debes actualizar la configuración de las plantillas **StorageTier** 
 
 #### <a name="option-3"></a>Opción 3
 
-Tal vez te resulte más sencillo eliminar la plantilla de capa y crear dos nuevas. Esto no afectará a los volúmenes ya existentes que se crearon haciendo referencia a la plantilla de capa: es solo una plantilla.
+Tal vez te resulte más sencillo eliminar la plantilla de capa y crear dos nuevas. Esto no afectará a los volúmenes previamente existentes que se crearon mediante la referencia a la plantilla de nivel: es solo una plantilla.
 
 ```PowerShell
 Remove-StorageTier -FriendlyName Capacity
@@ -142,7 +142,7 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 
 A medida que escala más allá de cuatro servidores, los volúmenes nuevos se pueden beneficiar de una eficiencia de codificación de paridad cada vez mayor. Por ejemplo, entre seis y siete servidores, la eficiencia mejora de un 50,0 % a un 66,7 %, ya que se puede usar Reed-Solomon 4+2 (en lugar de 2+2). No es necesario realizar ningún paso para empezar a disfrutar de esta nueva eficiencia. La mejor codificación posible se determina automáticamente cada vez que se crea un volumen.
 
-Pero los volúmenes ya existentes *no* se “convertirán” a la codificación nueva más amplia. Una razón es que, para hacerlo, sería necesario realizar un cálculo masivo que afectaría literalmente a *cada fragmento* de toda la implementación. Si quieres que los datos preexistentes se codifiquen con la eficiencia superior, puedes migrarlos a volúmenes nuevos.
+Pero los volúmenes ya existentes *no* se “convertirán” a la codificación nueva más amplia. Una razón es que, para hacerlo, sería necesario realizar un cálculo masivo que afectaría literalmente a *cada fragmento* de toda la implementación. Si quiere que los datos preexistentes se codifiquen con la eficiencia superior, puede migrarlos a volúmenes nuevos.
 
 Para más información, consulta [Tolerancia a errores y eficiencia del almacenamiento](storage-spaces-fault-tolerance.md).
 
@@ -150,7 +150,7 @@ Para más información, consulta [Tolerancia a errores y eficiencia del almacena
 
 Si la implementación usa la tolerancia a errores de chasis o bastidor, debes especificar el chasis o el bastidor de los servidores nuevos antes de agregarlos al clúster. Esto le indica a Espacios de almacenamiento directo la mejor forma de distribuir los datos para maximizar la tolerancia a errores.
 
-1. Crea un dominio de error temporal para el nodo. Para ello, abre una sesión de PowerShell con privilegios elevados y, después, usa el comando siguiente, donde *\<NewNode>* es el nombre del nuevo nodo de clúster:
+1. Cree un dominio de error temporal para el nodo. Para ello, abra una sesión de PowerShell con privilegios elevados y, después, use el comando siguiente, donde *\<NewNode>* es el nombre del nuevo nodo de clúster:
 
    ```PowerShell
    New-ClusterFaultDomain -Type Node -Name <NewNode> 
@@ -175,15 +175,15 @@ Mediante la adición de unidades (también conocida como escalado vertical) se a
 
 ![Animación que muestra cómo agregar unidades a un mismo](media/add-nodes/Scale-Up.gif)
 
-Para escalar verticalmente, conecta las unidades y comprueba que Windows las detecta. Deben aparecer en la salida del cmdlet **Get-PhysicalDisk** de PowerShell con la propiedad de **CanPool** establecida como **True**. Si se muestran como **CanPool = False**, puedes ver porqué echando un vistazo a la propiedad **CannotPoolReason**.
+Para escalar verticalmente, conecte las unidades y compruebe que Windows las detecta. Deben aparecer en la salida del cmdlet **Get-PhysicalDisk** de PowerShell con la propiedad de **CanPool** establecida como **True**. Si se muestran como **CanPool = False**, puedes ver porqué echando un vistazo a la propiedad **CannotPoolReason**.
 
 ```PowerShell
 Get-PhysicalDisk | Select SerialNumber, CanPool, CannotPoolReason
 ```
 
-Al poco tiempo, Espacios de almacenamiento directo reclamará automáticamente las unidades válidas, las agregará al grupo de almacenamiento y los volúmenes [se redistribuirán automáticamente de manera uniforme entre todas las unidades.](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/). En este punto, has terminado y estás listo para [ampliar los volúmenes](resize-volumes.md) o [crea otros nuevos](create-volumes.md).
+Al poco tiempo, Espacios de almacenamiento directo reclamará automáticamente las unidades válidas, las agregará al grupo de almacenamiento y los volúmenes [se redistribuirán automáticamente de manera uniforme entre todas las unidades](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/). En este punto, has terminado y estás listo para [ampliar los volúmenes](resize-volumes.md) o [crea otros nuevos](create-volumes.md).
 
-Si las unidades no aparecen, busque manualmente si se han producido cambios en el hardware. Esto puede hacerse mediante el **Administrador de dispositivos** en el menú **Acción**. Si contienen datos o metadatos antiguos, considera la posibilidad de volver a formatearlas. Esto puede hacerse con **Disk Management** o con el cmdlet **Reset-PhysicalDisk**.
+Si las unidades no aparecen, busque manualmente si se han producido cambios en el hardware. Esto puede hacerse mediante el **Administrador de dispositivos** en el menú **Acción**. Si contienen datos o metadatos antiguos, considere la posibilidad de volver a formatearlas. Esto puede hacerse con **Disk Management** o con el cmdlet **Reset-PhysicalDisk**.
 
    >[!NOTE]
    > La agrupación automática depende de que solo tenga un grupo. Si has sorteado la configuración estándar para crear varios grupos, tendrás que agregar unidades nuevas a tu grupo preferido mediante **Add-PhysicalDisk**.
