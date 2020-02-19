@@ -10,24 +10,24 @@ ms.topic: article
 author: adagashe
 ms.date: 10/24/2018
 ms.localizationpriority: ''
-ms.openlocfilehash: 67f35e3afa8e9eafabe7b22eb60cc85c7be6cb23
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0d64e6188b24b5a1ec45242c3d99366fdde5a623
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402874"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465219"
 ---
 # <a name="collect-diagnostic-data-with-storage-spaces-direct"></a>Recopilación de datos de diagnóstico con Espacios de almacenamiento directo
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 Hay varias herramientas de diagnóstico que se pueden usar para recopilar los datos necesarios para solucionar problemas de Espacios de almacenamiento directo y el clúster de conmutación por error. En este artículo, nos centraremos en **Get-SDDCDiagnosticInfo** : una herramienta táctil que recopilará toda la información relevante para ayudarle a diagnosticar el clúster.
 
-Dado que los registros y otra información que **Get-SDDCDiagnosticInfo** son densas, la información sobre la solución de problemas que se presenta a continuación será útil para solucionar problemas avanzados que se han escalado y que pueden requerir que se envíen datos a Microsoft para la clasificación.
+Dado que los registros y otra información que **Get-SDDCDiagnosticInfo** son densas, la información sobre la solución de problemas que se presenta a continuación será útil para solucionar problemas avanzados que se han escalado y que pueden requerir que los datos se envíen a Microsoft para la clasificación.
 
 ## <a name="installing-get-sddcdiagnosticinfo"></a>Instalación de Get-SDDCDiagnosticInfo
 
-El cmdlet **Get-SDDCDiagnosticInfo** de PowerShell (también conocido como **Get-PCStorageDiagnosticInfo**, conocido anteriormente como **Test-StorageHealth**) se puede usar para recopilar registros y realizar comprobaciones de estado de los clústeres de conmutación por error (clúster, recursos, redes, nodos), espacios de almacenamiento (discos físicos, alojamientos, etc.). Discos virtuales), volúmenes compartidos de clúster, recursos compartidos de archivos SMB y desduplicación. 
+El cmdlet **Get-SDDCDiagnosticInfo** de PowerShell (también conocido como **Get-PCStorageDiagnosticInfo**, conocido anteriormente como **Test-StorageHealth**) se puede usar para recopilar registros y realizar comprobaciones de estado de los clústeres de conmutación por error (clúster, recursos, redes, nodos), espacios de almacenamiento (discos físicos, contenedores, discos virtuales), volúmenes compartidos de clúster, recursos compartidos de archivos SMB y desduplicación. 
 
 Hay dos métodos para instalar el script, los cuales se describen a continuación.
 
@@ -35,12 +35,15 @@ Hay dos métodos para instalar el script, los cuales se describen a continuació
 
 El [Galería de PowerShell](https://www.powershellgallery.com/packages/PrivateCloud.DiagnosticInfo) es una instantánea del repositorio de github. Tenga en cuenta que la instalación de elementos desde el Galería de PowerShell requiere la versión más reciente del módulo PowerShellGet, que está disponible en Windows 10, en Windows Management Framework (WMF) 5,0 o en el instalador basado en MSI (para PowerShell 3 y 4).
 
+Se instala la versión más reciente de las [herramientas de diagnóstico de redes de Microsoft](https://www.powershellgallery.com/packages/MSFT.Network.Diag) durante este proceso, ya que get-SDDCDiagnosticInfo se basa en esto. Este módulo de manifiesto contiene la herramienta de diagnóstico y solución de problemas de red, que se mantiene en el grupo de productos de redes principales de Microsoft en Microsoft.
+
 Puede instalar el módulo mediante la ejecución del siguiente comando en PowerShell con privilegios de administrador:
 
 ``` PowerShell
 Install-PackageProvider NuGet -Force
 Install-Module PrivateCloud.DiagnosticInfo -Force
 Import-Module PrivateCloud.DiagnosticInfo -Force
+Install-Module -Name MSFT.Network.Diag
 ```
 
 Para actualizar el módulo, ejecute el siguiente comando en PowerShell:
@@ -51,7 +54,7 @@ Update-Module PrivateCloud.DiagnosticInfo
 
 ### <a name="github"></a>GitHub
 
-El [repositorio de github](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/) es la versión más actualizada del módulo, ya que continuamente se realiza una iteración. Para instalar el módulo desde GitHub, descargue el módulo más reciente del [archivo](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/archive/master.zip) y extraiga el directorio PrivateCloud. DiagnosticInfo a la ruta correcta de los módulos de PowerShell que apunta ```$env:PSModulePath```.
+El [repositorio de github](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/) es la versión más actualizada del módulo, ya que continuamente se realiza una iteración. Para instalar el módulo desde GitHub, descargue el módulo más reciente del [archivo](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/archive/master.zip) y extraiga el directorio PrivateCloud. DiagnosticInfo a la ruta correcta de los módulos de PowerShell a la que apunta ```$env:PSModulePath```
 
 ``` PowerShell
 # Allowing Tls12 and Tls11 -- e.g. github now requires Tls12

@@ -13,16 +13,16 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: 90622fba1fc33966bd064c19056204013ff0c33b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 131fbacaab97c1c2c42920a518ce96ba1b8f5d2b
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869158"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465569"
 ---
 # <a name="understanding-capabilities"></a>Descripción de funcionalidades
 
->Se aplica a: Windows Server 2019
+>Se aplica a: Windows Server 2019
 
 En este tema se define el concepto de capacidades de System Insights y se presentan las capacidades predeterminadas disponibles en Windows Server 2019. 
 
@@ -55,7 +55,7 @@ En Windows Server 2019, System Insights presenta cuatro funciones predeterminada
 - **Previsión de consumo de almacenamiento total** : pronostica el consumo total de almacenamiento en todas las unidades locales. 
 - **Previsión del consumo de volumen** : pronostica el consumo de almacenamiento de cada volumen.
 
-Cada capacidad analiza los datos históricos anteriores para predecir el uso futuro, y **todas las capacidades de previsión están diseñadas para pronosticar tendencias a largo plazo en lugar de un comportamiento a corto plazo**, ayudando a los administradores a aprovisionar correctamente el hardware y la optimización sus cargas de trabajo para evitar la contención de recursos futura. Dado que estas funcionalidades se centran en el uso a largo plazo, estas funciones analizan los datos diarios. 
+Cada capacidad analiza los datos históricos anteriores para predecir el uso futuro, y **todas las capacidades de previsión están diseñadas para pronosticar tendencias a largo plazo en lugar de un comportamiento a corto plazo**, ayudando a los administradores a aprovisionar correctamente el hardware y ajustar sus cargas de trabajo para evitar la contención de recursos en el futuro. Dado que estas funcionalidades se centran en el uso a largo plazo, estas funciones analizan los datos diarios. 
 
 ### <a name="forecasting-model"></a>Modelo de previsión
 Las funciones predeterminadas usan un modelo de previsión para predecir el uso futuro y, para cada predicción, el modelo se entrena localmente en los datos de la máquina. Este modelo se ha diseñado para ayudar a detectar tendencias a largo plazo y el reciclaje en cada instancia de Windows Server permite que la capacidad se adapte al comportamiento específico y a los matices del uso de cada máquina.
@@ -80,7 +80,7 @@ Cada capacidad analiza los datos diarios para pronosticar el uso futuro. Sin emb
 | --------------- | -------------- | ---------------- |
  Previsión del consumo de volumen          | Tamaño del volumen                    | Uso diario máximo              
  Previsión total del consumo de almacenamiento   | Suma de los tamaños de volumen, suma de los tamaños de disco              | Uso diario máximo             
- Previsión de la capacidad de CPU                | % Processor Time  | Promedio máximo de 2 horas por día   
+ Previsión de la capacidad de CPU                | % del tiempo de procesador  | Promedio máximo de 2 horas por día   
  Previsión de la capacidad de red         | Bytes totales/seg.         | Promedio máximo de 2 horas por día  
 
 Al evaluar la lógica de filtrado anterior, es importante tener en cuenta que cada funcionalidad intenta informar a los administradores cuando el uso futuro va a superar la capacidad disponible, aunque momentáneamente la CPU alcanza el 100% de uso, el uso de la CPU puede no tener provocó una degradación significativa del rendimiento o la contención de recursos. En cuanto a CPU y redes, debe haber un uso elevado sostenido en lugar de picos momentáneos. Sin embargo, si se calcula el promedio del uso de la CPU y de la red a lo largo del día, se perdería información de uso importante, ya que algunas horas de uso intensivo de la CPU o de la red pueden afectar de forma significativa al rendimiento de las cargas de trabajo críticas. La media máxima de 2 horas durante cada día evita estos extremos y todavía genera datos significativos para cada capacidad de análisis.
@@ -89,11 +89,11 @@ En el caso del uso de almacenamiento total y de volumen, sin embargo, el uso de 
 
 ### <a name="forecasting-statuses"></a>Estados de previsión
 Todas las funcionalidades de System Insights deben generar un estado asociado a cada predicción. Cada capacidad predeterminada utiliza la lógica siguiente para definir cada estado de predicción:
-- **ACEPTAR**: La previsión no supera la capacidad disponible.
-- **Advertencia**: La previsión supera la capacidad disponible en los próximos 30 días. 
-- **Crítico**: La previsión supera la capacidad disponible en los próximos 7 días. 
-- **Error**: Se produjo un error inesperado en la funcionalidad. 
-- **Ninguna**: No hay suficientes datos para hacer una predicción. Esto puede deberse a una falta de datos o a que no se ha incomunicado ningún dato recientemente.
+- **OK**: la previsión no supera la capacidad disponible.
+- **ADVERTENCIA**: la previsión supera la capacidad disponible en los próximos 30 días. 
+- **Crítico**: la previsión supera la capacidad disponible en los próximos 7 días. 
+- **Error**: se produjo un error inesperado en la funcionalidad. 
+- **Ninguno**: no hay suficientes datos para hacer una predicción. Esto puede deberse a una falta de datos o a que no se ha incomunicado ningún dato recientemente.
 
 >[!NOTE]
 >Si una capacidad se pronostica en varias instancias, como varios volúmenes o adaptadores de red, el estado refleja el estado más grave en todas las instancias. Los Estados individuales de cada volumen o adaptador de red están visibles en el centro de administración de Windows o en los datos contenidos en la salida de cada funcionalidad. Para obtener instrucciones sobre cómo analizar la salida JSON de las funciones predeterminadas, visite [este blog](https://aka.ms/systeminsights-mitigationscripts). 

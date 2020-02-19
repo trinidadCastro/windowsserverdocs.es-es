@@ -9,12 +9,12 @@ ms.prod: windows-server-hyper-v
 ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: c7c2de8354d067faf0dcf1787c3e178421e2ac03
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8ba413b831c7b11780113ee2ffd3cce598781a44
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872026"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465579"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>Administrar tipos de programador de hipervisor de Hyper-V
 
@@ -25,7 +25,7 @@ En este artículo se describen los nuevos modos de la lógica de programación d
 >[!NOTE]
 >Las actualizaciones son necesarias para usar las características del programador de hipervisor descritas en este documento. Para obtener más información, consulte [actualizaciones necesarias](#required-updates).
 
-## <a name="background"></a>Background
+## <a name="background"></a>Fondo
 
 Antes de analizar la lógica y los controles que hay detrás de la programación del procesador virtual de Hyper-V, resulta útil revisar los conceptos básicos que se tratan en este artículo.
 
@@ -66,7 +66,7 @@ A partir de Windows Server 2016, el hipervisor de Hyper-V admite varios modos de
 
 El programador clásico es el valor predeterminado para todas las versiones del hipervisor de Hyper-V de Windows desde su inicio, incluido Windows Server 2016 Hyper-V. El programador clásico proporciona un modelo de programación de uso compartido equitativo y preventivo para los procesadores virtuales invitados.
 
-El tipo de programador clásico es el más apropiado para la mayoría de los usos tradicionales de Hyper-V: para nubes privadas, proveedores de hospedaje, etc. Las características de rendimiento se entienden bien y se optimizan mejor para admitir una amplia gama de escenarios de virtualización, como la suscripción excesiva de VPs a LPs, la ejecución simultánea de muchas máquinas virtuales y cargas de trabajo heterogéneas. Máquinas virtuales de rendimiento, que admiten el conjunto completo de características de Hyper-V sin restricciones y mucho más.
+El tipo de programador clásico es el más apropiado para la mayoría de los usos tradicionales de Hyper-V: para nubes privadas, proveedores de hospedaje, etc. Las características de rendimiento se entienden bien y se optimizan mejor para admitir una amplia gama de escenarios de virtualización, como la suscripción excesiva de VPs a LPs, la ejecución simultánea de muchas máquinas virtuales y cargas de trabajo heterogéneas, lo que permite una mayor escala Máquinas virtuales de rendimiento, que admiten el conjunto completo de características de Hyper-V sin restricciones y mucho más.
 
 ### <a name="the-core-scheduler"></a>Programador principal
 
@@ -122,8 +122,8 @@ Para habilitar SMT en una máquina virtual invitada, abra una ventana de PowerSh
 Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 ```
 
-Donde <n> es el número de subprocesos de SMT por núcleo que verá la máquina virtual invitada.  
-Tenga en <n> cuenta que = 0 establecerá el valor de HwThreadCountPerCore para que coincida con el número de subprocesos SMT del host por valor principal.
+Donde <n> es el número de subprocesos SMT por núcleo que verá la máquina virtual invitada.  
+Tenga en cuenta que <n> = 0 establecerá el valor de HwThreadCountPerCore para que coincida con el número de subprocesos SMT del host por valor principal.
 
 >[!NOTE] 
 >La configuración de HwThreadCountPerCore = 0 se admite a partir de Windows Server 2019.
@@ -148,12 +148,12 @@ Para ayudar a garantizar que los hosts de Hyper-V se implementan en la configura
 >[!NOTE]
 >Las siguientes actualizaciones son necesarias para usar las características del programador de hipervisor descritas en este documento. Estas actualizaciones incluyen cambios para admitir la nueva opción de BCD ' hypervisorschedulertype ', que es necesaria para la configuración del host.
 
-| `Version` | Release  | Actualización necesaria | Artículo de Knowledge base |
+| Versión | Versión  | Actualización necesaria | Artículo de Knowledge base |
 |--------------------|------|---------|-------------:|
 |Windows Server 2016 | 1607 | 2018,07 C | [KB4338822](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822) |
 |Windows Server 2016 | 1703 | 2018,07 C | [KB4338827](https://support.microsoft.com/help/4338827/windows-10-update-kb4338827) |
 |Windows Server 2016 | 1709 | 2018,07 C | [KB4338817](https://support.microsoft.com/help/4338817/windows-10-update-kb4338817) |
-|Windows Server 2019 | 1804 | None | None |
+|Windows Server 2019 | 1804 | Ninguno | Ninguno |
 
 ## <a name="selecting-the-hypervisor-scheduler-type-on-windows-server"></a>Selección del tipo de programador de hipervisor en Windows Server
 
@@ -165,9 +165,9 @@ Para seleccionar un tipo de programador, abra un símbolo del sistema con privil
      bcdedit /set hypervisorschedulertype type
 ```
 
-Donde `type` es uno de los siguientes:
+Donde `type` es uno de:
 
-* Clásico
+* Classic
 * Core
 * Raíz
 

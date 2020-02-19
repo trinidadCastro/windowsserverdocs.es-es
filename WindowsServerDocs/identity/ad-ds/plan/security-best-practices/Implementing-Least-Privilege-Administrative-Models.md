@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f61bc1ccb7d9b09a17713946b5b8c2cc352f43ac
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: a2b4bd25c50eb8e76627bb6532345f3c187e4f0e
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822098"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465539"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>Implementación de modelos administrativos de menor privilegio
 
@@ -225,7 +225,7 @@ De forma predeterminada, los administradores son los propietarios de la mayoría
    - Esto impedirá que los miembros del grupo administradores se usen para iniciar sesión o conectarse a estaciones de trabajo o servidores miembro (a menos que se infrinjan primero varios controles), donde sus credenciales se pueden almacenar en caché y, por tanto, estar en peligro. Nunca se debe usar una cuenta con privilegios para iniciar sesión en un sistema con menos privilegios y aplicar estos controles ofrece protección contra una serie de ataques.  
 
 3. En la unidad organizativa controladores de dominio de cada dominio del bosque, al grupo administradores se le deben conceder los siguientes derechos de usuario (si aún no tienen estos derechos), lo que permitirá a los miembros del grupo administradores realizar las funciones necesarias para un escenario de recuperación ante desastres en todo el bosque:  
-   - Obtener acceso a este equipo desde la red  
+   - Tener acceso a este equipo desde la red  
    - Permitir el inicio de sesión local  
    - Permitir inicio de sesión a través de Servicios de Escritorio remoto  
 

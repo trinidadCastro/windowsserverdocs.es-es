@@ -9,12 +9,12 @@ ms.date: 10/16/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: manage
-ms.openlocfilehash: 6a6ccedeeb007b9d3ab32c308fae991deb526442
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3b29a7e10cc6a862873516b9adc16182d64dd926
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383091"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465469"
 ---
 # <a name="server-performance-advisor-users-guide"></a>Guía de usuario de Server Performance Advisor
 
@@ -28,7 +28,7 @@ SPA puede ayudarle con lo siguiente:
 
 * Proporcionar informes de datos y recomendaciones sobre problemas comunes de configuración y rendimiento.
 
-* Proporcione las mejores recomendaciones de pratice en función de los datos recopilados.
+* Proporcionar recomendaciones de procedimientos recomendados en función de los datos recopilados.
 
 > [!NOTE]
 > La consola de SPA no realiza ningún cambio en los servidores.
@@ -122,19 +122,19 @@ Las interfaces e interacciones de usuario de la consola de SPA se compilan como 
 
 La consola de SPA puede ejecutarse en los siguientes sistemas operativos:
 
-* Windows 8.1
+* Windows 8.1
 
 * Windows 8
 
 * Windows 7
 
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 
 * Windows Server 2012
 
-* Windows Server 2008 R2
+* Windows Server 2008 R2
 
-* Windows Server 2008
+* Windows Server 2008
 
 En una aplicación empresarial típica, hay tres niveles: el nivel de presentación, la capa de lógica de negocios y la capa de almacenamiento. SPA está diseñado como un producto de dos niveles en la consola y en la base de datos. La consola de actúa como una capa de presentación con cierta lógica relacionada con el proceso y la base de datos sirve como la capa de almacenamiento y la capa de lógica de negocios. La consola captura los datos proporcionados por el usuario y controla los pasos para la recopilación de datos, el procesamiento de datos y la generación de informes. SPA no depende de los servicios del sistema de Windows.
 
@@ -222,7 +222,7 @@ Una vez que todo está configurado, puede crear su primer proyecto de SPA. Como 
 
     * Agregar servidores a la lista de servidores de destino
 
-3.  Haz clic en **Siguiente**. La página **crear base de datos del proyecto** le pide que proporcione el nombre de la Microsoft SQL Server instancia en la que desea crear la base de datos. Por ejemplo, si se encuentra en el mismo equipo que la consola de, puede usar **localhost\\&lt;el nombre de SQL server&gt;** .
+3.  Haga clic en **Siguiente**. La página **crear base de datos del proyecto** le pide que proporcione el nombre de la Microsoft SQL Server instancia en la que desea crear la base de datos. Por ejemplo, si se encuentra en el mismo equipo que la consola de, puede usar **localhost\\&lt;el nombre de SQL server&gt;** .
 
     **Nota:** El nombre de instancia predeterminado para una instalación SQL Server 2008 R2 Express es SQLExpress. En el caso de una instancia de SQL Server 2008 R2 Express instalada en el equipo local, la base de datos suele tener como valor predeterminado **localhost\\SQLEXPRESS**. Sin embargo, es posible que se haya cambiado durante la instalación de SQL Server, por lo que debe asegurarse de que usa el nombre de instancia de SQL Server correcto.
 

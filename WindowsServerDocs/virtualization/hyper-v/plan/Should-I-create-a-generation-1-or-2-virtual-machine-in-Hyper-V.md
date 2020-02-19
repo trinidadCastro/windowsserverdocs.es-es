@@ -11,19 +11,19 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: bd0b50534096bc06edb41390ef2c4ec3554d8406
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fce9b45f538b0d506b621b888d413c99590b1362
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364081"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465559"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>¿Debo crear una máquina virtual de generación 1 o 2 en Hyper-V?
 
 >Se aplica a: Windows 10, Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
 
 > [!NOTE]
-> Si tiene previsto cargar una máquina virtual (VM) de Windows desde una ubicación local a Microsoft Azure, se admiten las máquinas virtuales de generación 1 y generación 2 en el formato de archivo VHD y tienen un disco de tamaño fijo. Consulte [máquinas virtuales de segunda generación en Azure](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) para más información sobre las capacidades de generación 2 que se admiten en Azure. Para obtener más información sobre cómo cargar un VHD de Windows o VHDX, consulte [preparación de un VHD de Windows o vhdx para cargarlos en Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image).
+> Si tiene previsto cargar máquinas virtuales (VM) de Windows desde una ubicación local a Microsoft Azure, se admiten las máquinas virtuales de generación 1 y generación 2 en el formato de archivo VHD y tienen un disco de tamaño fijo. Consulte [máquinas virtuales de segunda generación en Azure](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) para más información sobre las capacidades de generación 2 que se admiten en Azure. Para obtener más información sobre cómo cargar un VHD de Windows o VHDX, consulte [preparación de un VHD de Windows o vhdx para cargarlos en Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image).
 
 La opción de crear una máquina virtual de generación 1 o de generación 2 depende del sistema operativo invitado que desea instalar y el método de arranque que desea usar para implementar la máquina virtual. Se recomienda crear una máquina virtual de generación 2 para aprovechar las ventajas de las características como el arranque seguro, a menos que se cumpla una de las siguientes instrucciones:  
 
@@ -59,14 +59,14 @@ En la tabla siguiente se muestran las versiones de Windows de 64 bits que puede 
 
 |versiones de 64 bits de Windows|Generación 1|Generación 2|  
 |-------------------------------|----------------|----------------|  
-| Windows Server 2019 |&#10004;|&#10004;|  
+| Windows Server 2019 |&#10004;|&#10004;|  
 | Windows Server 2016 |&#10004;|&#10004;|  
-| Windows Server 2012 R2 |&#10004;|&#10004;|  
+| Windows Server 2012 R2 |&#10004;|&#10004;|  
 | Windows Server 2012 |&#10004;|&#10004;|  
-|Windows Server 2008 R2|&#10004;| &#10006;|  
-|Windows Server 2008|&#10004;| &#10006;|  
+|Windows Server 2008 R2|&#10004;| &#10006;|  
+|Windows Server 2008|&#10004;| &#10006;|  
 |Windows 10|&#10004;|&#10004;|  
-|Windows 8.1|&#10004;|&#10004;|  
+|Windows 8.1|&#10004;|&#10004;|  
 |Windows 8|&#10004;|&#10004;|  
 |Windows 7|&#10004;| &#10006;|
 
@@ -75,7 +75,7 @@ En la tabla siguiente se muestran las versiones de Windows de 32 bits que puede 
 |versiones de 32 bits de Windows|Generación 1|Generación 2|  
 |-------------------------------|----------------|----------------|  
 |Windows 10|&#10004;| &#10006;|  
-|Windows 8.1|&#10004;| &#10006;|  
+|Windows 8.1|&#10004;| &#10006;|  
 |Windows 8|&#10004;| &#10006;|  
 |Windows 7|&#10004;| &#10006;|  
 
@@ -251,7 +251,7 @@ Para agregar un puerto COM:
 > [!NOTE]  
 > Los puertos COM configurados no aparecen en la configuración de una máquina virtual en el administrador de Hyper-V.
 
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
 
 - [Virtual Machines de Linux y FreeBSD en Hyper-V](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 - [Usar recursos locales en una máquina virtual de Hyper-V con VMConnect](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)

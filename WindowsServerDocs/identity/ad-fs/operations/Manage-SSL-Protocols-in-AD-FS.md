@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 44fb4c02421a431edb502daecaa38f00fb4dd2ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e0c581a29db92cfb73e4225c72e7e1c2bad4ca68
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407539"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465285"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>Administración de los protocolos SSL/TLS y los conjuntos de cifrado para AD FS
 La siguiente documentación proporciona información sobre cómo deshabilitar y habilitar determinados protocolos TLS/SSL y conjuntos de cifrado que se usan en AD FS
@@ -34,7 +34,7 @@ AD FS usa Schannel. dll para realizar las interacciones de comunicaciones segura
 
 ## <a name="managing-the-tlsssl-protocols-and-cipher-suites"></a>Administrar los protocolos TLS/SSL y los conjuntos de cifrado
 > [!IMPORTANT]
-> Esta sección contiene pasos que indican cómo modificar el registro. Sin embargo, pueden producirse problemas graves si modifica el registro de forma incorrecta. Por lo tanto, asegúrese de seguir estos pasos con cuidado. 
+> Esta sección contiene pasos que indican cómo modificar el registro. Sin embargo, pueden aparecer problemas graves si modifica el Registro incorrectamente. Por tanto, asegúrese de seguir estos pasos con cuidado. 
 > 
 > Tenga en cuenta que el cambio de la configuración de seguridad predeterminada para SCHANNEL podría interrumpir o impedir la comunicación entre determinados clientes y servidores.  Esto ocurrirá si se requiere una comunicación segura y no dispone de un protocolo para negociar las comunicaciones con.
 > 

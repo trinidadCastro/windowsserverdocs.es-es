@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 0479309efe629d204bdc98fe11a7ccb4447a7369
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: ec885670ca6808e89c63848781c4ff3dc27799b8
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940730"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465609"
 ---
 # <a name="troubleshooting-guarded-hosts"></a>Solución de problemas de hosts protegidos
 
@@ -51,11 +51,11 @@ AttestationStatus         | Explicación
 Expirado                   | El host ha pasado la atestación anteriormente, pero el certificado de mantenimiento que se emitió ha expirado. Asegúrese de que el host y el tiempo del HGS están sincronizados.
 InsecureHostConfiguration | El host no pasó la atestación porque no cumplía con las directivas de atestación configuradas en HGS. Consulte la tabla AttestationSubStatus para obtener más información.
 NotConfigured             | El host no está configurado para usar un HGS para la atestación y protección de claves. En su lugar, se configura para el modo local. Si este host se encuentra en un tejido protegido, use [set-HgsClientConfiguration](https://technet.microsoft.com/library/dn914494.aspx) para proporcionarle las direcciones URL del servidor de HGS.
-Ha                    | El host ha pasado la atestación.
+Correcto                    | El host ha pasado la atestación.
 TransientError            | No se pudo realizar el último intento de atestación debido a un error de red, un servicio u otro error temporal. Vuelva a intentar la última operación.
 TpmError                  | El host no pudo completar su último intento de atestación debido a un error con el TPM. Consulte los registros de TPM para obtener más información.
 UnauthorizedHost          | El host no pasó la atestación porque no estaba autorizado para ejecutar máquinas virtuales blindadas. Asegúrese de que el host pertenece a un grupo de seguridad de confianza de HGS para ejecutar máquinas virtuales blindadas.
-Unknown                   | El host todavía no ha intentado atestar con HGS.
+Desconocida                   | El host todavía no ha intentado atestar con HGS.
 
 Cuando **AttestationStatus** se notifique como **InsecureHostConfiguration**, se rellenarán una o varias razones en el campo **AttestationSubStatus** .
 En la tabla siguiente se explican los posibles valores de AttestationSubStatus y sugerencias sobre cómo resolver el problema.
@@ -71,7 +71,7 @@ FullBoot                   | El host reanudó desde un estado de suspensión o h
 HibernationEnabled         | El host está configurado para permitir la hibernación sin cifrar el archivo de hibernación, lo que no se permite en las directivas de HGS. Deshabilite la hibernación y reinicie el host, o [Configure el cifrado de volcado](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption).
 HypervisorEnforcedCodeIntegrityPolicy | El host no está configurado para usar una directiva de integridad de código forzada por hipervisor. Compruebe que la integridad del código está habilitada, configurada y aplicada por el hipervisor. Para obtener más información, consulte la [Guía de implementación de Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-deploy-code-integrity-policies) .
 IOMMU                      | Las características de seguridad basadas en la virtualización del host no están configuradas para requerir un dispositivo IOMMU para la protección frente a ataques de acceso directo a memoria, según las directivas de HGS. Compruebe que el host tiene un IOMMU, que está habilitado y que Device Guard está [configurado para requerir protecciones DMA](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#enable-virtualization-based-security-vbs-and-device-guard) al iniciar vbs.
-PagefileEncryption         | El cifrado del archivo de paginación no está habilitado en el host. Para resolver este paso, ejecute `fsutil behavior set encryptpagingfile 1` para habilitar el cifrado del archivo de paginación. Para obtener más información, vea [fsutil Behavior](https://technet.microsoft.com/library/cc785435.aspx).
+PagefileEncryption         | El cifrado del archivo de paginación no está habilitado en el host. Para resolverlo, ejecute `fsutil behavior set encryptpagingfile 1` para habilitar el cifrado del archivo de paginación. Para obtener más información, vea [fsutil Behavior](https://technet.microsoft.com/library/cc785435.aspx).
 SecureBoot                 | El arranque seguro no está habilitado en este host o no utiliza la plantilla de arranque seguro de Microsoft. [Habilite el arranque seguro](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/disabling-secure-boot#enable_secure_boot) con la plantilla de arranque seguro de Microsoft para resolver este problema.
 SecureBootSettings         | La línea de base de TPM de este host no coincide con ninguno de los que es de confianza para HGS. Esto puede ocurrir cuando las entidades de inicio de UEFI, la variable DBX, la marca de depuración o las directivas personalizadas de arranque seguro se cambian mediante la instalación de nuevo hardware o software. Si confía en la configuración de hardware, firmware y software actual de este equipo, puede [capturar una nueva línea base de TPM](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#capture-the-tpm-baseline-for-each-unique-class-of-hardware) y [registrarla con HGS](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts).
 TcgLogVerification         | No se puede obtener o comprobar el registro de TCG (línea base de TPM). Esto puede indicar un problema con el firmware del host, el TPM u otros componentes de hardware. Si el host está configurado para intentar el arranque de PXE antes del arranque de Windows, un programa de arranque de red (NBP) anticuado también puede producir este error. Asegúrese de que todos los NBP están actualizados cuando está habilitado el arranque de PXE.

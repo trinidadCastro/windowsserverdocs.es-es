@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 70281f581974493d3182fb6fdd8f35cb37bed4bf
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 028396bffff6449a296e2922846fe2fc379fe624
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001910"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465619"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>Compilar una aplicación de varios niveles mediante "en nombre de" (OBO) mediante OAuth con AD FS 2016 o posterior.
 
@@ -23,7 +23,7 @@ En este tutorial se proporcionan instrucciones para implementar una autenticaci�
 
 >ADVERTENCIA: el ejemplo que se puede compilar aquí es solo con fines educativos. Estas instrucciones son para la implementación más sencilla y mínima posible para exponer los elementos necesarios del modelo. Es posible que el ejemplo no incluya todos los aspectos del control de errores y otras funciones de relación y se Centre solo en obtener una autenticación OBO correcta.
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 
 En este ejemplo, vamos a crear un flujo de autenticación donde un cliente tendrá acceso a un servicio Web de nivel intermedio y el servicio Web actuará en nombre del cliente autenticado para obtener un token de acceso.
 
@@ -59,7 +59,7 @@ En este tutorial se usa Visual Studio 2015. El proyecto usa mucho Biblioteca de 
 
 En el ejemplo también se usa SQL LocalDB v 11.0. Instale SQL LocalDB antes de trabajar en el ejemplo.
 
-## <a name="setting-up-the-environment"></a>Configuración del entorno
+## <a name="setting-up-the-environment"></a>Configurar el entorno
 Vamos a trabajar con una configuración básica de:
 
 1. **DC**: controlador de dominio para el dominio en el que se hospedará AD FS
@@ -274,7 +274,7 @@ Continúe con el resto del asistente, igual que cuando se configuró ToDoListSer
 * Abra el archivo Web. config.
 * Modificar las claves siguientes
 
-| Tecla                      | Valor                                                                                                                                                                                                                   |
+| Key                      | Valor                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ida: audiencia             | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo, https://localhost:44321/                                                                                         |
 | ida: ClientID             | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo, <https://localhost:44321/> </br>**Es muy importante que ida: Audience y ida: ClientID coincidan entre sí.** |
@@ -494,10 +494,10 @@ Si la operación se realiza correctamente, verá que el elemento se ha agregado 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 También puede ver los seguimientos detallados de Fiddler. Inicie Fiddler y habilite el descifrado HTTPS. Puede ver que realizamos dos solicitudes al punto de conexión/ADFS/oautincludes.
-En la primera interacción, presentamos el código de acceso al punto de conexión del token y obtenemos un token de acceso para https://localhost:44321/ ![ AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
+En la primera interacción, presentamos el código de acceso al punto de conexión del token y obtenemos un token de acceso para https://localhost:44321/ ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
 En la segunda interacción con el punto de conexión del token, puede ver que hemos **requested_token_use** establecido como **on_behalf_of** y estamos usando el token de acceso obtenido para el servicio Web de nivel intermedio, es decir, https://localhost:44321/ como la aserción para obtener el token en nombre de.
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 [Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)  

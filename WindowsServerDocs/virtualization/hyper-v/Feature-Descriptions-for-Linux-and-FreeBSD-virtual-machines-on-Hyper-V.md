@@ -11,12 +11,12 @@ ms.assetid: a9ee931d-91fc-40cf-9a15-ed6fa6965cb6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 1690230d326d7e32175ccde5da1e5fae421a76d0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 829a3897ef54155e34ced75721ec048ba16b342a
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366801"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465179"
 ---
 # <a name="feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v"></a>Descripciones de características de máquinas virtuales Linux y FreeBSD en Hyper-V
 
@@ -26,7 +26,7 @@ En este artículo se describen las características disponibles en componentes c
 
 ## <a name="core"></a>Core
 
-|**Característica**|**Descripción**|
+|**Ofrecen**|**Descripción**|
 |-|-|
 |Apagado integrado|Con esta característica, un administrador puede apagar las máquinas virtuales desde el administrador de Hyper-V. Para obtener más información, consulte [apagado del sistema operativo](https://technet.microsoft.com/library/dn798297(WS.11).aspx#BKMK_Shutdown).|
 |Sincronización de hora|Esta característica garantiza que el tiempo de mantenimiento dentro de una máquina virtual se mantiene sincronizado con el tiempo de mantenimiento del host. Para obtener más información, consulte [sincronización de hora](https://technet.microsoft.com/library/dn798297(WS.11).aspx#BKMK_time).|
@@ -39,7 +39,7 @@ En este artículo se describen las características disponibles en componentes c
 
 ## <a name="networking"></a>Funciones de red
 
-|**Característica**|**Descripción**|
+|**Ofrecen**|**Descripción**|
 |-|-|
 |Tramas gigantes|Con esta característica, un administrador puede aumentar el tamaño de los fotogramas de red más allá de 1500 bytes, lo que da lugar a un aumento significativo del rendimiento de la red.|
 |Etiquetado y Troncalización de VLAN|Esta característica permite configurar el tráfico de LAN virtual (VLAN) para las máquinas virtuales.|
@@ -52,7 +52,7 @@ En este artículo se describen las características disponibles en componentes c
 
 ## <a name="storage"></a>Almacenamiento
 
-|**Característica**|**Descripción**|
+|**Ofrecen**|**Descripción**|
 |-|-|
 |Cambiar el tamaño de VHDX|Con esta característica, un administrador puede cambiar el tamaño de un archivo. vhdx de tamaño fijo que está conectado a una máquina virtual. Para obtener más información, vea [información general sobre el cambio de tamaño de los discos duros virtuales en línea](https://technet.microsoft.com/library/dn282286.aspx).|
 |Canal de fibra virtual|Con esta característica, las máquinas virtuales pueden reconocer un dispositivo de canal de fibra y montarlo de forma nativa. Para más información, vea [Información general del canal de fibra virtual de Hyper-V](https://technet.microsoft.com/library/hh831413.aspx).|
@@ -62,7 +62,7 @@ En este artículo se describen las características disponibles en componentes c
 
 ## <a name="memory"></a>Memoria
 
-|**Característica**|**Descripción**|
+|**Ofrecen**|**Descripción**|
 |-|-|
 |Compatibilidad con el kernel PAE|La tecnología de extensión de dirección física (PAE) permite que un kernel de 32 bits tenga acceso a un espacio de direcciones física superior a 4 GB. Las distribuciones de Linux anteriores, como RHEL 5. x, se usan para enviar un kernel independiente que estaba habilitado con PAE. Las distribuciones más recientes, como RHEL 6. x, tienen compatibilidad con PAE pregenerada.|
 |Configuración de la brecha de MMIO|Con esta característica, los fabricantes de dispositivos pueden configurar la ubicación de la brecha de e/s de memoria asignada (MMIO). La brecha de MMIO se usa normalmente para dividir la memoria física disponible entre los sistemas operativos que son suficientes para el dispositivo (JeOS) y la infraestructura de software real que impulsa el dispositivo.|
@@ -72,13 +72,13 @@ En este artículo se describen las características disponibles en componentes c
 
 ## <a name="video"></a>Vídeo
 
-|**Característica**|**Descripción**|
+|**Ofrecen**|**Descripción**|
 |-|-|
 |Dispositivo de vídeo específico de Hyper-V|Esta característica proporciona gráficos de alto rendimiento y una resolución superior para las máquinas virtuales. Este dispositivo no proporciona las funcionalidades de RemoteFX o el modo de sesión mejorada.|
 
 ## <a name="miscellaneous"></a>Varios
 
-|**Característica**|**Descripción**|
+|**Ofrecen**|**Descripción**|
 |-|-|
 |Intercambio de KVP (par de clave-valor)|Esta característica proporciona un servicio de intercambio de pares clave-valor (KVP) para las máquinas virtuales. Normalmente, los administradores usan el mecanismo KVP para realizar operaciones de lectura y escritura de datos personalizados en una máquina virtual. Para obtener más información, vea [intercambio de datos: uso de pares de clave y valor para compartir información entre el host y el invitado en Hyper-V](https://technet.microsoft.com/library/dn798287.aspx).|
 |Interrupción no enmascarable|Con esta característica, un administrador puede emitir interrupciones no Enmascarables (NMI) a una máquina virtual. NMIs son útiles para obtener volcados de memoria de sistemas operativos que han dejado de responder debido a errores en la aplicación. Estos volcados de memoria se pueden diagnosticar después de reiniciar.|
@@ -89,12 +89,12 @@ En este artículo se describen las características disponibles en componentes c
 
 ## <a name="generation-2-virtual-machines"></a>Máquinas virtuales de generación 2
 
-|**Característica**|**Descripción**|
+|**Ofrecen**|**Descripción**|
 |-|-|
 |Arranque mediante UEFI|Esta característica permite que las máquinas virtuales arranquen mediante Unified Extensible Firmware Interface (UEFI).<br /><br />Para obtener más información, vea el artículo de [información general acerca de las máquinas virtuales de generación 2](https://technet.microsoft.com/library/dn282285.aspx).|
 |Arranque seguro|Esta característica permite que las máquinas virtuales usen el modo de arranque seguro basado en UEFI. Cuando una máquina virtual arranca en modo seguro, se comprueban varios componentes del sistema operativo mediante firmas presentes en el almacén de datos UEFI.<br /><br />Para obtener más información, consulta [Arranque seguro](https://technet.microsoft.com/library/dn486875.aspx).|
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 * [Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

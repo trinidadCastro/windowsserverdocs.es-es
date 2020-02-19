@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 0b4e02e6759bdb91ea51b5dcf5e1d0ae307d13b4
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 5df216d8c7b829a6c60db4e5d771824a7bacdb47
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567097"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465329"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Solución de problemas de Windows Admin Center
 
@@ -165,8 +165,10 @@ Al instalar Windows Admin Center, se proporciona la opción de permitir que Wind
 
    > [!TIP]
    > Para una forma sencilla de establecer TrustedHosts enseguida, puedes usar un carácter comodín.
-   > 
-   >     Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*'
+   >
+   > ```powershell
+   > Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*'
+   > ```
 
 4. Cuando hayas terminado las pruebas, puedes emitir el comando siguiente desde una sesión de PowerShell con privilegios elevados para borrar la configuración de TrustedHosts:
 
@@ -193,7 +195,7 @@ netsh http delete urlacl url=https://+:443/
 
 Edge tiene [problemas conocidos](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge) relacionados con las zonas de seguridad que afectan al inicio de sesión de Azure en el centro de administración de Windows. Si tiene problemas con las características de Azure al usar Edge, intente agregar https://login.microsoftonline.com, https://login.live.com y la dirección URL de la puerta de enlace como sitios de confianza y a sitios permitidos para la configuración del bloqueador de elementos emergentes perimetrales en el explorador del lado cliente. 
 
-Para ello:
+Para hacerlo:
 1. Buscar **Opciones de Internet** en el menú Inicio de Windows
 2. Vaya a la pestaña **seguridad** .
 3. En la opción **sitios de confianza** , haga clic en el botón **sitios** y agregue las direcciones URL en el cuadro de diálogo que se abre. Deberá agregar la dirección URL de la puerta de enlace, así como https://login.microsoftonline.com y https://login.live.com.

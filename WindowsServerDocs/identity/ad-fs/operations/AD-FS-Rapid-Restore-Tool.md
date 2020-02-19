@@ -9,16 +9,16 @@ ms.date: 07/02/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8b47cdc4770b1ed6478d1502ed5264164e99352b
-ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
+ms.openlocfilehash: 2570aae52da2925a62dd6c9262af325fb5461fff
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013050"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465269"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>Herramienta de restauración rápida de AD FS
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 Hoy en día AD FS tiene una alta disponibilidad mediante la configuración de una granja de AD FS. Algunas organizaciones desean una manera de tener un solo servidor AD FS implementación, lo que elimina la necesidad de varios servidores de AD FS y de la infraestructura de equilibrio de carga de red, a la vez que se garantiza que el servicio se puede restaurar rápidamente en caso de que se produzca un problema.
 La nueva herramienta de restauración rápida AD FS proporciona una manera de restaurar AD FS datos sin necesidad de una copia de seguridad y restauración completa del sistema operativo o del estado del sistema. Puede usar la nueva herramienta para exportar AD FS configuración a Azure o a una ubicación local.  A continuación, puede aplicar los datos exportados a una instalación nueva AD FS, volver a crear o duplicar el entorno de AD FS. 
 
@@ -29,6 +29,9 @@ La herramienta de restauración rápida de AD FS se puede usar en los escenarios
     - Use la herramienta para crear una instalación en espera pasiva de AD FS que se pueda implementar rápidamente en lugar del servidor de AD FS en línea.
 2. Implementación de entornos de prueba y producción idénticos
     - Use la herramienta para crear rápidamente una copia precisa de los AD FS de producción en un entorno de prueba o para implementar rápidamente una configuración de prueba validada en producción.
+3. Migración de una configuración basada en SQL a WID y viceversa
+    - Use la herramienta para pasar de una configuración de granja basada en SQL a WID o viceversa. 
+
 
 >[!NOTE] 
 >Si usa la replicación de mezcla de SQL o los grupos de disponibilidad AlwaysOn, no se admite la herramienta de restauración rápida. Se recomienda usar copias de seguridad basadas en SQL y una copia de seguridad del certificado SSL como alternativa.
@@ -207,7 +210,7 @@ Cada documento que se crea como parte de la copia de seguridad se cifra mediante
 
 RngCryptoServiceProvider se usa para generar el valor Salt que usa AES y la clase Rfc2898DeriveBytes. 
 
-## <a name="log-files"></a>Archivos de registro de
+## <a name="log-files"></a>Archivos de registro
 Cada vez que se realiza una copia de seguridad o una restauración, se crea un archivo de registro. Se pueden encontrar en la siguiente ubicación:
 
 - **%localappdata%\ADFSRapidRecreationTool**

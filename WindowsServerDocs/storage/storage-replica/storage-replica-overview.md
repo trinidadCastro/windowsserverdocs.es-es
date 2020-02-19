@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 4/26/2019
 ms.assetid: e9b18e14-e692-458a-a39f-d5b569ae76c5
-ms.openlocfilehash: 620ab75fc5f44af7cd754847e3e5b717eece5057
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d95feb67001dc7b5eff68a0062d5f944672bad80
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393821"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465234"
 ---
 # <a name="storage-replica-overview"></a>Información general sobre Réplica de almacenamiento
 
@@ -87,9 +87,9 @@ La réplica de almacenamiento incluye las siguientes características:
 
 | Característica | Detalles |
 | ----------- | ----------- |  
-| Tipo | Base en host |
-| Sincrónico | Sí |
-| Asincrónico | Sí |
+| Tipo | Basadas en host |
+| Synchronous | Sí |
+| Asynchronous | Sí |
 | Independiente del hardware de almacenamiento | Sí |
 | Unidad de replicación | Volumen (partición) |
 | Creación de clústeres de stretch de Windows Server | Sí |
@@ -188,7 +188,7 @@ En esta guía se usan con frecuencia los términos siguientes:
 
 Para obtener una lista de las nuevas características de réplica de almacenamiento en Windows Server 2019, consulte [what's New in Storage (novedades de almacenamiento](../whats-new-in-storage.md#storage-replica2019) ).
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 
 - [Replicación de clúster extendido con almacenamiento compartido](stretch-cluster-replication-using-shared-storage.md)  
 - [Replicación de almacenamiento de servidor a servidor](server-to-server-storage-replication.md)  
