@@ -7,7 +7,7 @@ Import-Module "$env:ProgramFiles\windows admin center\PowerShell\Modules\Connect
 Export-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
 # Import connections (including tags) from a .csv file
 Import-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
-# Import connections (including tags) from .csv files, and remove any connections that are not explictly in the imported file using the -prune switch parameter 
+# Import connections (including tags) from .csv files, and remove any connections that are not explicitly in the imported file using the -prune switch parameter 
 Import-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv" -prune
 ```
 ### <a name="csv-file-format-for-importing-connections"></a>Formato de archivo CSV para importar conexiones
@@ -20,7 +20,7 @@ El formato del archivo CSV comienza con los cuatro encabezados ```"name","type",
 
 | Tipo de conexión | Cadena de conexión |
 |------|-------------------------------|
-| Windows Server | msft.sme.connection-type.server |
+| Windows Server | msft.sme.connection-type.server |
 | Equipo con Windows 10 | msft.sme.connection-type.windows-client |
 | Clúster de conmutación por error | msft.sme.connection-type.cluster |
 | Clúster hiperconvergido | msft.sme.connection-type.hyper-converged-cluster |
