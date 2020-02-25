@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: ebcc679b2bc5ab3c6d7c70c9e84ba45697c80165
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 913e45e52c5c6c137d2bf798bb5b86a65f9d1caa
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265597"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517580"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>Actualización a AD FS en Windows Server 2016 mediante una base de datos WID
 
@@ -149,3 +149,16 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 ```
 
 Esto completará la actualización de los servidores WAP.
+
+
+> [!NOTE] 
+> Existe un problema de PRT conocido en AD FS 2019 si se realiza Windows Hello para empresas con una confianza de certificado híbrido. Puede encontrar este error en los registros de eventos de administración de ADFS: solicitud de OAuth no válida recibida. El cliente ' nombre ' está prohibido para acceder al recurso con el ámbito ' UGS '. Para corregir este error: 
+> 1. Inicie la consola de administración de AD FS. A "descripciones de ámbito de > de servicios"
+> 2. Haga clic con el botón derecho en "descripciones de ámbito" y seleccione "agregar Descripción de ámbito"
+> 3. En nombre, escriba "UGS" y haga clic en aplicar > Aceptar.
+> 4. Inicio de PowerShell como administrador
+> 5. Ejecute el comando "Get-AdfsApplicationPermission". Busque ScopeNames: {OpenID, AZA} que tenga ClientRoleIdentifier. Tome nota del ObjectIdentifier.
+> 6. Ejecute el comando "Set-AdfsApplicationPermission-TargetIdentifier < ObjectIdentifier del paso 5 >-parámetro addscope ' UGS '
+> 7. Reinicie el servicio ADFS.
+> 8. En el cliente: reinicie el cliente. Se le pedirá al usuario que aprovisione WHPE.
+> 9. Si la ventana de aprovisionamiento no aparece, debe recopilar los registros de seguimiento de NGC y solucionar el problema.

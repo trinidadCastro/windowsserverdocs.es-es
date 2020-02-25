@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 720c20437f7e6da875b809b2816f0d4df5d210d6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 34ea5ca29672cb7bc0080a1c27b1910d5cf6b92e
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359193"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517530"
 ---
 # <a name="ad-fs-requirements"></a>Requisitos de AD FS
 
@@ -28,9 +28,9 @@ A continuación se indican los diversos requisitos que se deben cumplir al imple
   
 -   [Requisitos de AD DS](AD-FS-Requirements.md#BKMK_4)  
   
--   [Requisitos de la base de datos de configuración](AD-FS-Requirements.md#BKMK_5)  
+-   [Requisitos de bases de datos de configuración](AD-FS-Requirements.md#BKMK_5)  
   
--   [Requisitos del explorador](AD-FS-Requirements.md#BKMK_6)  
+-   [Requisitos de exploradores](AD-FS-Requirements.md#BKMK_6)  
   
 -   [Requisitos de extranet](AD-FS-Requirements.md#BKMK_extranet)  
   
@@ -48,7 +48,7 @@ A continuación se indican los diversos requisitos que se deben cumplir al imple
   
 -   [Requisitos de permisos](AD-FS-Requirements.md#BKMK_13)  
   
-## <a name="BKMK_1"></a>Requisitos de certificado  
+## <a name="BKMK_1"></a>Requisitos de certificados  
 Los certificados desempeñan el rol más importante en la protección de las comunicaciones entre los servidores de Federación, los servidores proxy de aplicación Web, las notificaciones\-las aplicaciones compatibles y los clientes Web. Los requisitos de los certificados varían en función de si está configurando un servidor de Federación o un equipo proxy, como se describe en esta sección.  
   
 **Certificados de servidor de Federación**  
@@ -62,7 +62,7 @@ Los certificados desempeñan el rol más importante en la protección de las com
 |**Descifrado de\-de tokens\/certificado de cifrado:** Se trata de un certificado X509 estándar que se usa para descifrar\/cifrar los tokens entrantes. También se publica en los metadatos de federación.|: De forma predeterminada, AD FS crea un certificado auto\-firmado con claves de 2048 bits.<br />-Los certificados emitidos por CA también se admiten y se pueden cambiar mediante el\-de AD FS de administración en<br />-Los certificados emitidos por la CA deben almacenarse & tener acceso a través de un proveedor de cifrado de CSP.<br />-El certificado de descifrado de\-de tokens\/cifrado no puede ser un certificado que use claves CNG.<br />: De forma predeterminada, AD FS genera y usa sus propios certificados, generados internamente y auto\-firmados para el descifrado de tokens.  AD FS no requiere certificados inscritos externamente para este fin.<br />    Además, AD FS renueva automáticamente estos certificados Auto\-firmados antes de que expiren.<br />    **Se recomienda usar los certificados generados automáticamente de forma predeterminada para el descifrado de tokens.**<br />    Si su organización tiene directivas que requieren que se configuren certificados diferentes para el descifrado de tokens, puede especificar los certificados en el momento de la instalación mediante PowerShell \(usar el parámetro – DecryptionCertificateThumbprint del cmdlet install\-AdfsFarm\).  Después de la instalación, puede ver y administrar los certificados de descifrado de tokens con la consola de administración de AD FS o los cmdlets de PowerShell establecidos\-AdfsCertificate y obtener\-AdfsCertificate.<br />    **Cuando los certificados inscritos externamente se usan para descifrar el token, AD FS no realiza la renovación automática del certificado.  Este proceso lo debe realizar un administrador**.<br />-La cuenta de servicio de AD FS debe tener acceso al token\-clave privada del certificado de firma en el almacén personal del equipo local. Esto se encarga del programa de instalación. También puede usar el complemento de administración de AD FS\-en para garantizar este acceso si posteriormente cambia el token\-certificado de firma.|  
   
 > [!CAUTION]  
-> Los certificados que se usan para la firma de token\-y el descifrado de tokens\-descifrado\/el cifrado son fundamentales para la estabilidad del Servicio de federación. Los clientes que administran su propio token\-la firma de tokens de &\-el descifrado\/los certificados de cifrado deben asegurarse de que se realice una copia de seguridad de estos certificados y estén disponibles de forma independiente durante un evento de recuperación.  
+> Los certificados que se usan para la firma de tokens y el descifrado\-cifrado de tokens son cruciales para la estabilidad del servicio de federación. Los clientes que administran sus propios certificados de firma de tokens y de descifrado\-cifrado de tokens deben asegurarse de que estos certificados tengan una copia de seguridad y estén disponibles de forma independiente durante un evento de recuperación.  
   
 > [!NOTE]  
 > En AD FS puede cambiar el algoritmo hash seguro \(el nivel SHA\) que se usa para las firmas digitales a SHA\-1 o SHA\-256 \(\)más seguro. AD FS no admite el uso de certificados con otros métodos hash, como MD5 \(el algoritmo hash predeterminado que se usa con la herramienta de línea de\-de comandos Makecert. exe\). Como práctica recomendada de seguridad, se recomienda usar SHA\-256 \(, que se establece de forma predeterminada\) para todas las firmas. Se recomienda el uso de SHA\-1 solo en escenarios en los que se debe interoperar con un producto que no admite las comunicaciones que usan SHA\-256, como un producto no\-Microsoft o versiones heredadas de AD FS.  
@@ -76,16 +76,16 @@ Los siguientes requisitos de hardware mínimos y recomendados se aplican a los s
 ||||  
 |-|-|-|  
 |**Requisito de hardware**|**Requisito mínimo**|**Requisito recomendado**|  
-|Velocidad de CPU|procesador de\-bits 64 de 1,4 GHz|Quad\-Core, 2 GHz|  
-|RAM|512 MB|4 GB|  
-|Espacio en disco|32 GB|100 GB|  
+|Velocidad de la CPU|procesador de\-bits 64 de 1,4 GHz|Quad\-Core, 2 GHz|  
+|RAM|512 MB|4 GB|  
+|Espacio en disco|32 GB|100 GB|  
   
 ## <a name="BKMK_3"></a>Requisitos de software  
 Los siguientes requisitos de AD FS son para la funcionalidad de servidor integrada en el sistema operativo Windows Server® 2012 R2:  
   
 -   Para el acceso de extranet, debe implementar el servicio de rol de proxy de aplicación web \- parte del rol de servidor de acceso remoto de Windows Server® 2012 R2. Las versiones anteriores de un servidor proxy de Federación no se admiten con AD FS en Windows Server® 2012 R2.  
   
--   Un servidor de Federación y el servicio de rol de proxy de aplicación web no se pueden instalar en el mismo equipo.  
+-   No se puede instalar un servidor de federación y el servicio de rol de Proxy de aplicación web en el mismo equipo.  
   
 ## <a name="BKMK_4"></a>Requisitos de AD DS  
 **Requisitos del controlador de dominio**  
@@ -94,22 +94,27 @@ Los controladores de dominio de todos los dominios de usuario y el dominio al qu
   
 > [!NOTE]  
 > Toda la compatibilidad con entornos con controladores de dominio de Windows Server 2003 finalizará después de la fecha de finalización de soporte extendido de Windows Server 2003. Se recomienda encarecidamente a los clientes que actualicen los controladores de dominio lo antes posible. Visite [esta página](https://support.microsoft.com/lifecycle/search/default.aspx?sort=PN&alpha=Windows+Server+2003&Filter=FilterNO) para obtener información adicional sobre el ciclo de vida de soporte técnico de Microsoft. En el caso de los problemas detectados que son específicos de los entornos de controlador de dominio de Windows Server 2003, solo se emitirán correcciones para los problemas de seguridad y si se puede emitir una corrección antes de la expiración del soporte extendido para Windows Server 2003.  
+
+
+
+>[!NOTE]
+> AD FS requiere que un controlador de dominio de escritura completo funcione en lugar de un controlador de dominio de solo lectura. Si una topología planeada incluye un controlador de dominio de solo lectura, el controlador de dominio de solo lectura se puede usar para la autenticación, pero el procesamiento de notificaciones LDAP requerirá una conexión al controlador de dominio de escritura.
   
-**Requisitos de nivel funcional de\-de dominio**  
+**Requisitos de nivel funcional de dominio\-  
   
-Todos los dominios de cuentas de usuario y el dominio al que se unen los servidores AD FS deben funcionar en el nivel funcional de dominio de Windows Server 2003 o posterior.  
+Todos los dominios de cuentas de usuario y el dominio al cual se unen los servidores de AD FS deben funcionar en el nivel funcional de dominio de Windows Server 2003 o posterior.  
   
 La mayoría de las características de AD FS no requieren modificaciones de nivel funcional AD DS\-para que funcionen correctamente. Sin embargo, se requiere un nivel funcional de dominio de Windows Server 2008 o superior para que la autenticación del certificado de cliente funcione correctamente, si dicho certificado está asignado explícitamente a una cuenta de usuario en AD DS.  
   
-**Requisitos de esquema**  
+**Requisitos de esquemas**  
   
 -   AD FS no requiere cambios de esquema o modificaciones de nivel funcional de\-en AD DS.  
   
 -   Para usar la funcionalidad de Workplace Join, el esquema del bosque al que se unen AD FS servidores se debe establecer en Windows Server 2012 R2.  
   
-**Requisitos de la cuenta de servicio**  
+**Requisitos de cuentas de servicio**  
   
--   Se puede usar cualquier cuenta de servicio estándar como cuenta de servicio para AD FS. También se admiten las cuentas de servicio administradas de grupo. Esto requiere al menos un controlador de dominio \(se recomienda implementar dos o más\) que ejecute Windows Server 2012 o posterior.  
+-   Se puede usar cualquier cuenta de servicio estándar como cuenta de servicio para AD FS. También se admiten cuentas de servicio administradas de grupo. Esto requiere al menos un controlador de dominio \(se recomienda implementar dos o más\) que ejecute Windows Server 2012 o posterior.  
   
 -   Para que la autenticación Kerberos funcione entre\-clientes Unidos a un dominio y AD FS, el servicio "HOST\/< ADFS\_nombre\_" debe estar registrado como un SPN en la cuenta de servicio. De forma predeterminada, AD FS lo configurará al crear una nueva granja de AD FS si tiene permisos suficientes para realizar esta operación.  
   
@@ -117,7 +122,7 @@ La mayoría de las características de AD FS no requieren modificaciones de nive
   
 **Requisitos de dominio**  
   
--   Todos los servidores AD FS deben estar Unidos a un dominio AD DS.  
+-   Todos los servidores de AD FS deben estar unidos a un dominio AD DS.  
   
 -   Todos los servidores de AD FS de una granja de servidores se deben implementar en un único dominio.  
   
@@ -129,7 +134,7 @@ La mayoría de las características de AD FS no requieren modificaciones de nive
   
 -   La cuenta de servicio de AD FS debe ser de confianza en todos los dominios de usuario que contengan usuarios que se autentiquen en el servicio AD FS.  
   
-## <a name="BKMK_5"></a>Requisitos de la base de datos de configuración  
+## <a name="BKMK_5"></a>Requisitos de bases de datos de configuración  
 A continuación se indican los requisitos y las restricciones que se aplican en función del tipo de almacén de configuración:  
   
 **WID**  
@@ -145,21 +150,21 @@ En la tabla siguiente se proporciona un resumen del uso de una granja de servido
 ||||  
 |-|-|-|  
 ||1 \- confianzas de RP de 100|Más de 100 confianzas RP|  
-|1 \- 30 nodos AD FS|WID compatible|No se admite con WID \- SQL requerido|  
+|1 \- 30 nodos AD FS|Compatible con WID|No se admite con WID \- SQL requerido|  
 |Más de 30 nodos AD FS|No se admite con WID \- SQL requerido|No se admite con WID \- SQL requerido|  
   
 **SQL Server**  
   
 Por AD FS en Windows Server 2012 R2, puede usar SQL Server 2008 y versiones posteriores.  
   
-## <a name="BKMK_6"></a>Requisitos del explorador  
-Cuando AD FS la autenticación se realiza a través de un explorador o un control de explorador, el explorador debe cumplir los siguientes requisitos:  
+## <a name="BKMK_6"></a>Requisitos de exploradores  
+Cuando la autenticación de AD FS se hace a través de un explorador o un control de explorador, el explorador tiene que cumplir los siguientes requisitos:  
   
--   JavaScript debe estar habilitado  
+-   JavaScript debe estar habilitado.  
   
 -   Las cookies deben estar activadas  
   
--   Se debe admitir Indicación de nombre de servidor \(SNI\)  
+-   Se debe admitir Indicación de nombre de servidor \(SNI\).  
   
 -   Para el certificado de usuario & autenticación de certificado de dispositivo \(funcionalidad de unión al área de trabajo\), el explorador debe admitir la autenticación de certificados de cliente SSL  
   
@@ -170,7 +175,7 @@ Varios exploradores y plataformas clave se han sometido a la validación de la r
 |**Exploradores**|**Select**|  
 |IE 10,0|Windows 7, Windows 8.1, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2|  
 |IE 11,0|Windows7, Windows 8.1, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2|  
-|Agente de autenticación Web de Windows|Windows 8.1|  
+|Agente de autenticación Web de Windows|Windows 8.1|  
 |Firefox \[V21\]|Windows 7, Windows 8.1|  
 |Safari \[V7\]|iOS 6, Mac OS\-X 10,7|  
 |Chrome \[V27\]|Windows 7, Windows 8.1, Windows Server 2012, Windows Server 2012 R2 Mac OS\-X 10,7|  
@@ -192,10 +197,13 @@ La configuración adecuada de los siguientes servicios de red es fundamental par
   
 **Configuración del Firewall corporativo**  
   
-Tanto el firewall que se encuentra entre el proxy de aplicación web y la granja de servidores de Federación como el Firewall entre los clientes y el proxy de aplicación web deben tener el puerto TCP 443 habilitado de entrada.  
+Tanto el firewall que se encuentra entre el Proxy de aplicación web y la granja de servidores de federación como el firewall entre los clientes y el Proxy de aplicación web deben tener el puerto 443 TCP habilitado para la entrada.  
   
-Además, si se requiere la autenticación de certificados de usuario de cliente \(autenticación de clientTLS mediante certificados de usuario X509\), AD FS en Windows Server 2012 R2 requiere que el puerto TCP 49443 esté habilitado en el Firewall entre los clientes y el proxy de aplicación Web. Esto no es necesario en el Firewall entre el proxy de aplicación web y los servidores de Federación\).  
-  
+Además, si se requiere la autenticación de certificados de usuario de cliente \(autenticación de clientTLS mediante certificados de usuario X509\), AD FS en Windows Server 2012 R2 requiere que el puerto TCP 49443 esté habilitado en el Firewall entre los clientes y el proxy de aplicación Web. (Esto no es necesario en el firewall entre el Proxy de aplicación web y los servidores de federación\).  
+
+> [!NOTE]
+> también Asegúrese de que el puerto 49443 no lo use ningún otro servicio en el servidor proxy de aplicación Web.
+
 **Configuring DNS** (Configuración de DNS)  
   
 -   Para el acceso a la intranet, todos los clientes que tienen acceso a AD FS servicio dentro de la red corporativa interna \(\) de la intranet deben poder resolver el nombre del servicio AD FS \(nombre proporcionado por el certificado SSL\) al equilibrador de carga para los servidores de AD FS o el servidor de AD FS.  
@@ -348,4 +356,3 @@ El administrador que realiza la instalación y la configuración inicial de AD F
 ## <a name="see-also"></a>Consulta también  
 [Guía de diseño de AD FS en Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
-

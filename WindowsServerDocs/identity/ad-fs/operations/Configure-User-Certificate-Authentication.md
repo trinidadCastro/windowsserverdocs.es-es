@@ -9,12 +9,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c36555a8bca7882125451b2c86a0707e3de9b2db
-ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
+ms.openlocfilehash: 6c8a3b30a337c164227bf344b5704cc7e782461a
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145931"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517520"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configuración de AD FS para la autenticación de certificados de usuario
 
@@ -41,6 +41,8 @@ Si está configurando AD FS para la autenticación de certificados de Azure AD, 
 Además, hay algunos aspectos opcionales.
 - Si desea usar notificaciones basadas en campos y extensiones de certificado además de EKU (tipo de notificación https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku), configure las reglas de paso de notificación adicionales en la Active Directory confianza del proveedor de notificaciones.  A continuación encontrará una lista completa de las notificaciones de certificado disponibles.  
 - Si necesita restringir el acceso en función del tipo de certificado, puede usar las propiedades adicionales en el certificado en AD FS reglas de autorización de emisión para la aplicación. Los escenarios comunes son "permitir solo certificados aprovisionados por un proveedor de MDM" o "permitir solo certificados de tarjeta inteligente"
+>[!IMPORTANT]
+> Los clientes que usan el flujo de código de dispositivo para la autenticación y la autenticación de dispositivos con un IDP distinto de Azure AD (por ejemplo, AD FS) no podrán aplicar el acceso basado en dispositivos (por ejemplo, permitir solo los dispositivos administrados que usan un servicio MDM de terceros) para Azure AD recursos. Para proteger el acceso a los recursos corporativos en Azure AD y evitar la fuga de datos, los clientes deben configurar Azure AD el acceso condicional basado en el dispositivo (es decir, "requerir que el dispositivo se marque como queja" en Azure AD acceso condicional).
 - Configure las entidades de certificación de emisión permitidas para los certificados de cliente siguiendo las instrucciones de la sección "administración de emisores de confianza para la autenticación de cliente" en [este artículo](https://technet.microsoft.com/library/dn786429(v=ws.11).aspx).
 - Puede que desee considerar la posibilidad de modificar las páginas de inicio de sesión para que se adapten a las necesidades de los usuarios finales al realizar la autenticación de certificados. Los casos comunes son para (a) cambiar el "Inicio de sesión con el certificado X509" por algo más descriptivo para el usuario final
 
@@ -90,7 +92,7 @@ AD FS requiere que el dispositivo cliente (o los exploradores) y los equilibrado
     *   Escribir en `netsh http add sslcert ipport=0.0.0.0:{your_certauth_port} certhash={your_certhash} appid={your_applicaitonGUID}`
 
 ### <a name="check-if-the-client-device-has-been-provisioned-with-the-certificate-correctly"></a>Compruebe si el dispositivo cliente se ha aprovisionado correctamente con el certificado.
-Es posible que observe que algunos dispositivos funcionan correctamente, pero otros no. En este caso, normalmente se debe a que el certificado de usuario no se ha aprovisionado correctamente en el dispositivo cliente. Siga estos pasos: 
+Es posible que observe que algunos dispositivos funcionan correctamente, pero otros no. En este caso, normalmente se debe a que el certificado de usuario no se ha aprovisionado correctamente en el dispositivo cliente. Siga los pasos que se indican a continuación. 
 1)  Si el problema es específico de un dispositivo Android, el problema más común es que la cadena de certificados no es de plena confianza en el dispositivo Android.  Consulte al proveedor de MDM para asegurarse de que el certificado se ha aprovisionado correctamente y de que toda la cadena es de plena confianza en el dispositivo Android. 
 2)  Si el problema es específico de un dispositivo Windows, compruebe si el certificado se ha aprovisionado correctamente comprobando el almacén de certificados de Windows para el usuario que ha iniciado sesión (no sistema/equipo).
 3)  Exporte el certificado de usuario cliente al archivo. cer y ejecute el comando "certutil-f-urlfetch-Verify certificatefilename. cer".
@@ -106,7 +108,7 @@ Muchas aplicaciones de Office 365 envían prompt = login a Azure AD. De forma pr
 
 Para obtener más información, consulte [este vínculo](ad-fs-prompt-login.md). 
 
-### <a name="additional-troubleshooting"></a>Más soluciones de problemas
+### <a name="additional-troubleshooting"></a>Solución de problemas adicionales
 Se trata de casos poco frecuentes
 1)  Si las listas de CRL son muy largas, puede agotar el tiempo de espera al intentar la descarga. En ese caso, debe actualizar "MaxFieldLength" y "MaxRequestByte" por https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows
 

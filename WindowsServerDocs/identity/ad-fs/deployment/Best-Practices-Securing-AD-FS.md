@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b96a66c9e28454752fd4999fcfe74cbb15a3ae7d
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 717308a157d7f4a5f54e3aef2e829fbed9f12152
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265817"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517550"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>Prácticas recomendadas para proteger Servicios de federación de Active Directory (AD FS)
 
@@ -41,30 +41,30 @@ En el diagrama siguiente se muestran los puertos de firewall que se deben habili
 > El puerto 808 (Windows Server 2012R2) o el puerto 1501 (Windows Server 2016 +) es el puerto net. TCP AD FS usa para que el punto de conexión de WCF local transfiera los datos de configuración al proceso de servicio y PowerShell. Este puerto se puede ver mediante la ejecución de Get-AdfsProperties | Seleccione NetTcpPort. Se trata de un puerto local que no necesitará abrirse en el firewall, pero se mostrará en un examen de puerto. 
 
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Servidores de Azure AD Connect y Federación/WAP
-En esta tabla se describen los puertos y protocolos que son necesarios para la comunicación entre el servidor de Azure AD Connect y servidores de federación/WAP.  
+En esta tabla se describen los puertos y protocolos necesarios para la comunicación entre el servidor de Azure AD Connect y los servidores de Federación/WAP.  
 
 Protocolo |Puertos |Descripción
 --------- | --------- |---------
-HTTP|80 (TCP/UDP)|Se usa para descargar CRL (listas de revocación de certificados) para comprobar certificados SSL.
-HTTPS|443 (TCP/UDP)|Se usa para sincronizar con Azure AD.
+HTTP|80 (TCP/UDP)|Se usa para descargar CRL (listas de revocación de certificados) para comprobar los certificados SSL.
+HTTPS|443 (TCP/UDP)|Se utiliza para sincronizar con Azure AD.
 WinRM|5985| Agente de escucha de WinRM
 
 ### <a name="wap-and-federation-servers"></a>Servidores WAP y de Federación
-En esta tabla se describen los puertos y protocolos que son necesarios para la comunicación entre los servidores de federación y los servidores WAP.
+En esta tabla se describen los puertos y protocolos necesarios para la comunicación entre los servidores de Federación y los servidores WAP.
 
 Protocolo |Puertos |Descripción
 --------- | --------- |---------
-HTTPS|443 (TCP/UDP)|Se usa para autenticación.
+HTTPS|443 (TCP/UDP)|Se utiliza para la autenticación.
 
 ### <a name="wap-and-users"></a>WAP y usuarios
-En esta tabla se describen los puertos y protocolos que son necesarios para la comunicación entre los usuarios y los servidores WAP.
+En esta tabla se describen los puertos y protocolos necesarios para la comunicación entre los usuarios y los servidores WAP.
 
 Protocolo |Puertos |Descripción
 --------- | --------- |--------- |
 HTTPS|443 (TCP/UDP)|Se usa para la autenticación de dispositivos.
-TCP|49443 (TCP)|Se usa para la autenticación de certificados.
+TCP|49443 (TCP)|Se utiliza para la autenticación de certificados.
 
-Para obtener más información sobre los puertos y protocolos necesarios para las implementaciones híbridas, consulte el documento [aquí](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-ports/).
+Para obtener más información sobre los puertos y protocolos necesarios para las implementaciones híbridas, consulte el documento [aquí](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-ports).
 
 Para obtener información detallada sobre los puertos y protocolos necesarios para una Azure AD y la implementación de Office 365, consulte el documento [aquí](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US).
 
