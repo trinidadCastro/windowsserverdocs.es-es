@@ -8,12 +8,12 @@ manager: alanth
 author: michikos
 ms.technology: security-authentication
 ms.date: 08/18/2017
-ms.openlocfilehash: 616ebf1a8e01f84618d22d535609a0dc8414d718
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c9c4342281ee2036e152c8034fa72e421487a45b
+ms.sourcegitcommit: 9bc7a0478d72944f714f8041fa4506e0d1ed0366
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403499"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607078"
 ---
 # <a name="domain-joined-device-public-key-authentication"></a>Autenticación de clave pública de dispositivo unido al dominio
 
@@ -25,12 +25,12 @@ Kerberos agregó compatibilidad para que los dispositivos Unidos a un dominio in
 
 A partir de Windows 10, versión 1507 y Windows Server 2016, los dispositivos Unidos a un dominio aprovisionan automáticamente una clave pública enlazada a un controlador de dominio (DC) de Windows Server 2016. Una vez que se aprovisiona una clave, Windows puede usar la autenticación de clave pública en el dominio.
 
-### <a name="public-key-generation"></a>Generación de clave pública
-Si el dispositivo está ejecutando Credential Guard, se crea una clave pública protegida por Credential Guard. 
+### <a name="key-generation"></a>Generación de claves
+Si el dispositivo está ejecutando Credential Guard, se crea un par de claves pública y privada protegido por Credential Guard. 
 
-Si Credential Guard no está disponible y un TPM es, se crea una clave pública protegida por el TPM. 
+Si Credential Guard no está disponible y un TPM es, se crea un par de claves pública y privada protegido por el TPM. 
 
-Si ninguno está disponible, no se genera una clave y el dispositivo solo puede autenticarse mediante la contraseña.
+Si ninguno está disponible, no se genera un par de claves y el dispositivo solo puede autenticarse mediante la contraseña.
 
 ### <a name="provisioning-computer-account-public-key"></a>Clave pública de la cuenta de equipo de aprovisionamiento
 Cuando se inicia Windows, comprueba si se ha aprovisionado una clave pública para su cuenta de equipo. Si no es así, genera una clave pública enlazada y la configura para su cuenta en AD con un controlador de dominio de Windows Server 2016 o posterior. Si todos los controladores de DC son de nivel inferior, no se aprovisiona ninguna clave.

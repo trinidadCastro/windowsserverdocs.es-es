@@ -7,19 +7,19 @@ author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
-ms.date: 06/06/2019
-ms.openlocfilehash: 8c17671f2f15d1373973dcf2fbafc753f0a163a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 02/25/2020
+ms.openlocfilehash: fb53ae74e471d590f83e1017662f33bb5a4b7c1d
+ms.sourcegitcommit: 92e0e4224563106adc9a7f1e90f27da468859d90
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402890"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77608800"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>Crear volúmenes en Espacios de almacenamiento directo
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
-En este tema se describe cómo crear volúmenes en un clúster de Espacios de almacenamiento directo mediante el centro de administración de Windows, PowerShell o Administrador de clústeres de conmutación por error.
+En este tema se describe cómo crear volúmenes en un clúster de Espacios de almacenamiento directo mediante el centro de administración de Windows y PowerShell.
 
 > [!TIP]
 > Si aún no lo hiciste, echa un vistazo primero a [Planificación de volúmenes en Espacios de almacenamiento directo](plan-volumes.md).
@@ -32,7 +32,7 @@ Para crear un volumen de reflejo triple en el centro de administración de Windo
 2. En la página volúmenes, seleccione la pestaña **inventario** y, a continuación, seleccione **crear volumen**.
 3. En el panel **crear volumen** , escriba un nombre para el volumen y deje **resistencia** como **reflejo triple**.
 4. En **tamaño en HDD**, especifique el tamaño del volumen. Por ejemplo, 5 TB (terabytes).
-5. Selecciona **Crear**.
+5. Seleccione **Crear**.
 
 En función del tamaño, la creación del volumen puede tardar unos minutos. Las notificaciones en la parte superior derecha le indicarán Cuándo se crea el volumen. El nuevo volumen aparece en la lista de inventario.
 
@@ -51,7 +51,7 @@ Para crear un volumen con paridad acelerada para reflejo en el centro de adminis
 3. En el panel **crear volumen** , escriba un nombre para el volumen.
 4. En **resistencia**, seleccione **paridad con aceleración de reflejo**.
 5. En **porcentaje de paridad**, seleccione el porcentaje de paridad.
-6. Selecciona **Crear**.
+6. Seleccione **Crear**.
 
 Vea un vídeo rápido sobre cómo crear un volumen de paridad acelerado para reflejo.
 
@@ -88,7 +88,7 @@ La desduplicación y la compresión se administran por volumen. La desduplicaci�
 
     En lugar de configuraciones complicadas, el centro de administración de Windows permite elegir entre perfiles preparados para diferentes cargas de trabajo. Si no está seguro, use la configuración predeterminada.
 
-6. Selecciona **Habilitar**.
+6. Seleccione **Habilitar**.
 
 Vea un vídeo rápido sobre cómo activar la desduplicación y la compresión.
 
@@ -100,15 +100,15 @@ Te recomendamos usar el cmdlet **New-Volume** para crear volúmenes para Espacio
 
 El cmdlet **New-Volume** tiene cuatro parámetros que siempre tendrás que proporcionar:
 
-- **FriendlyName** Cualquier cadena que desee, por ejemplo *"volume1"*
-- **Systems** **CSVFS_ReFS** (recomendado) o **CSVFS_NTFS**
-- **StoragePoolFriendlyName:** El nombre del bloque de almacenamiento, por ejemplo *"S2D en ClusterName"*
-- **Tamaño:** El tamaño del volumen, por ejemplo *"10 TB"*
+- **FriendlyName:** cualquier cadena que quiera, por ejemplo *"Volume1"*
+- **FileSystem:** ya sea **CSVFS_ReFS** (recomendado) o **CSVFS_NTFS**
+- **StoragePoolFriendlyName:** el nombre de tu grupo de almacenamiento, por ejemplo *"S2D en NombreDeClúster"*
+- **Size:** el tamaño del volumen, por ejemplo *"10TB"*
 
    > [!NOTE]
    > Windows, incluido PowerShell, cuenta con números binarios (base 2), mientras que las unidades a menudo se etiquetan con números decimales (base 10). Esto explica por qué una unidad de "un terabyte", definida como 1 000 000 000 000 bytes, en Windows aparece como aproximadamente "909 GB". Esto es de esperar. Al crear volúmenes con **New-Volume**, debes especificar el parámetro **Size** en números binarios (base 2). Por ejemplo, especificar "909GB" o "0.909495 TB" creará un volumen de aproximadamente 1 000 000 000 000 bytes.
 
-### <a name="example-with-2-or-3-servers"></a>Ejemplo: Con 2 o 3 servidores
+### <a name="example-with-2-or-3-servers"></a>Ejemplo: con 2 o 3 servidores
 
 Para facilitar las cosas, si la implementación tiene tan solo dos servidores, Espacios de almacenamiento directo usará automáticamente la creación de reflejos dobles para resistencia. Si la implementación tiene solo tres servidores, usará automáticamente la creación de reflejos triple.
 
@@ -116,11 +116,11 @@ Para facilitar las cosas, si la implementación tiene tan solo dos servidores, E
 New-Volume -FriendlyName "Volume1" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB
 ```
 
-### <a name="example-with-4-servers"></a>Ejemplo: Con más de 4 servidores
+### <a name="example-with-4-servers"></a>Ejemplo: con 4 servidores o más
 
 Si tienes cuatro servidores o más, puedes usar el parámetro **ResiliencySettingName** opcional para elegir el tipo de resistencia.
 
--   **ResiliencySettingName** **Reflejo** o **paridad**.
+-   **ResiliencySettingName:** ya sea **Reflejo** o **Paridad**.
 
 En el siguiente ejemplo, *"Volume2"* usa la creación de reflejos triple, y *"Volume3"* usa paridad dual (a menudo llamada "codificación de borrado").
 
@@ -129,7 +129,7 @@ New-Volume -FriendlyName "Volume2" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 New-Volume -FriendlyName "Volume3" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB -ResiliencySettingName Parity
 ```
 
-### <a name="example-using-storage-tiers"></a>Ejemplo: Usar capas de almacenamiento
+### <a name="example-using-storage-tiers"></a>Ejemplo: con capas de almacenamiento
 
 En las implementaciones con tres tipos de unidades, un volumen puede abarcar las capas SSD y HDD para residir parcialmente en cada una. De igual modo, en las implementaciones con cuatro servidores o más, un volumen puede combinar creación de reflejos y paridad dual para residir parcialmente en cada una.
 
@@ -149,41 +149,7 @@ Para crear volúmenes en capas, haz referencia a estas plantillas de capas con l
 New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 300GB, 700GB
 ```
 
-## <a name="create-volumes-using-failover-cluster-manager"></a>Crear volúmenes con el Administrador de clústeres de conmutación por error
-
-También puedes crear volúmenes con el *Asistente para nuevo disco virtual (Espacios de almacenamiento directo)* seguido por el *Asistente para nuevo volumen* desde el Administrador de clústeres de conmutación por error, si bien este flujo de trabajo tiene muchos más pasos manuales y no se recomienda.
-
-Hay tres pasos principales:
-
-### <a name="step-1-create-virtual-disk"></a>Paso 1: Crear disco virtual
-
-![Nuevo disco Virtual](media/creating-volumes/GUI-Step-1.png)
-
-1. En el Administrador de clústeres de conmutación por error, navega a **Almacenamiento** -> **Grupos**.
-2. Selecciona **Nuevo disco virtual** desde el panel Acciones a la derecha, o haz clic con el botón derecho en el grupo y selecciona **Nuevo disco virtual**.
-3. Seleccione el grupo de almacenamiento y haz clic en **Aceptar**. Se abre el *Asistente para nuevo disco virtual (Espacios de almacenamiento directo)* .
-4. Usa el asistente para ponerle nombre al disco virtual y especificar su tamaño.
-5. Revisa las opciones seleccionadas y haz clic en **Crear**.
-6. Asegúrate de marcar la casilla **Crear un volumen cuando este asistente se cierre** antes de cerrar.
-
-### <a name="step-2-create-volume"></a>Paso 2: Crear volumen
-
-Se abre el *Asistente para nuevo volumen*.
-
-7. Selecciona el disco virtual que acabas de crear y haz clic en **Siguiente**.
-8. Especifica el tamaño del volumen (valor predeterminado: el mismo tamaño que el disco virtual) y haz clic en **Siguiente**. 
-9. Asigna el volumen a una letra de unidad o elige **No asignar a una letra de unidad** y haz clic en **Siguiente**.
-10. Especifica el sistema de archivos que se usará, deja el tamaño de unidad de asignación como *Predeterminado*, ponle nombre al volumen y haz clic en **Siguiente**.
-11. Revisa las opciones seleccionadas y haz clic en **Crear** y luego en **Cerrar**.
-
-### <a name="step-3-add-to-cluster-shared-volumes"></a>Paso 3: Agregar a volúmenes compartidos de clúster
-
-![Agregar a volúmenes compartidos de clúster](media/creating-volumes/GUI-Step-2.png)
-
-12. En el Administrador de clústeres de conmutación por error, navega a **Almacenamiento** -> **Discos**.
-13. Selecciona el disco virtual que acabas de crear y selecciona **Agregar a volúmenes compartidos de clúster** desde el panel Acciones a la derecha, o haz clic con el botón derecho en el disco virtual y selecciona **Agregar a volúmenes compartidos de clúster**.
-
-¡Has terminado! Repite según sea necesario para crear más de un volumen.
+Ha terminado. Repite según sea necesario para crear más de un volumen.
 
 ## <a name="see-also"></a>Vea también
 
