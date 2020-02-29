@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5323210962298ff3f2d0b159cba7726adfbb89d1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b7da68fa9cbe71f8a67e74671d64d11908ae4654
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361625"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169565"
 ---
 # <a name="running-wsus-replica-mode"></a>Ejecución del modo de réplica de WSUS
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Un servidor WSUS que se ejecuta en modo de réplica hereda las aprobaciones de actualización y los grupos de equipos creados en un servidor de administración. En un escenario en el que se usa el modo de réplica, normalmente tiene un único servidor de administración y uno o varios servidores WSUS de réplica subordinada se propagan por toda la organización, en función de la topografía del sitio o de la organización. Se aprueban las actualizaciones y se crean grupos de equipos en el servidor de administración, que a continuación se reflejarán los servidores del modo de réplica. Los servidores en modo de réplica solo se pueden configurar durante la instalación de WSUS y, si ha implementado este escenario, es probable que sea importante en su organización que las aprobaciones de actualización y los grupos de equipos se administren de forma centralizada.
 

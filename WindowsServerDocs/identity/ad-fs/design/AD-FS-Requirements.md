@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 34ea5ca29672cb7bc0080a1c27b1910d5cf6b92e
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: b299ddc823b3fbbd5818f96202e3c01faf0762d7
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517530"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169605"
 ---
 # <a name="ad-fs-requirements"></a>Requisitos de AD FS
 
@@ -104,7 +104,7 @@ Los controladores de dominio de todos los dominios de usuario y el dominio al qu
   
 Todos los dominios de cuentas de usuario y el dominio al cual se unen los servidores de AD FS deben funcionar en el nivel funcional de dominio de Windows Server 2003 o posterior.  
   
-La mayoría de las características de AD FS no requieren modificaciones de nivel funcional AD DS\-para que funcionen correctamente. Sin embargo, se requiere un nivel funcional de dominio de Windows Server 2008 o superior para que la autenticación del certificado de cliente funcione correctamente, si dicho certificado está asignado explícitamente a una cuenta de usuario en AD DS.  
+La mayoría de las características de AD FS no requieren modificaciones de nivel funcional AD DS\-para que funcionen correctamente. Sin embargo, se requiere un nivel funcional de dominio de Windows Server 2008 o superior para que la autenticación del certificado de cliente funcione correctamente, si dicho certificado está asignado explícitamente a una cuenta de usuario en AD DS.  
   
 **Requisitos de esquemas**  
   
@@ -185,7 +185,7 @@ Varios exploradores y plataformas clave se han sometido a la validación de la r
   
 **Propias**  
   
-AD FS crea cookies basadas en\-de sesión y persistentes que deben almacenarse en los equipos cliente para proporcionar el inicio de sesión\-en, el signo\-, el\-de inicio de sesión único en \(SSO\)y otras funciones. Por lo tanto, el explorador cliente debe estar configurado para aceptar cookies. Las cookies que se usan para la autenticación son siempre el protocolo seguro de transferencia de hipertexto \(HTTPS\) las cookies de sesión escritas para el servidor de origen. Si el explorador cliente no está configurado para permitir estas cookies, AD FS no funcionará correctamente. Las cookies persistentes se usan para conservar la selección del usuario del proveedor de notificaciones. Puede deshabilitarlos mediante el uso de una opción de configuración en el archivo de configuración para el AD FS firmar\-en páginas. Se requiere compatibilidad con TLS\/SSL por motivos de seguridad.  
+AD FS crea cookies basadas en\-de sesión y persistentes que deben almacenarse en los equipos cliente para proporcionar el inicio de sesión\-en, el signo\-, el\-de inicio de sesión único en \(SSO\)y otras funciones. Por lo tanto, el explorador cliente debe estar configurado para aceptar cookies. Las cookies que se usan para la autenticación son siempre el protocolo seguro de transferencia de hipertexto \(HTTPS\) las cookies de sesión escritas para el servidor de origen. Si el explorador cliente no está configurado para permitir estas cookies, AD FS no funcionará correctamente. Las cookies persistentes se usan para conservar la selección del usuario del proveedor de notificaciones. Puede deshabilitarlos mediante el uso de una opción de configuración en el archivo de configuración para el AD FS firmar\-en páginas. Se requiere compatibilidad con TLS\/SSL por motivos de seguridad.  
   
 ## <a name="BKMK_extranet"></a>Requisitos de extranet  
 Para proporcionar acceso a la extranet al servicio AD FS, debe implementar el servicio de rol de proxy de aplicación web como el rol orientado a extranet que pone en proxy las solicitudes de autenticación de forma segura para el servicio AD FS. Esto proporciona aislamiento de los puntos de conexión del servicio AD FS, así como el aislamiento de todas las claves de seguridad \(como los certificados de firma de tokens\) de las solicitudes que se originan en Internet. Además, características como el bloqueo de la cuenta de extranet de software requieren el uso del proxy de aplicación Web. Para obtener más información sobre el proxy de aplicación Web, vea [proxy de aplicación web](https://technet.microsoft.com/library/dn584107.aspx).  
@@ -202,7 +202,7 @@ Tanto el firewall que se encuentra entre el Proxy de aplicación web y la granja
 Además, si se requiere la autenticación de certificados de usuario de cliente \(autenticación de clientTLS mediante certificados de usuario X509\), AD FS en Windows Server 2012 R2 requiere que el puerto TCP 49443 esté habilitado en el Firewall entre los clientes y el proxy de aplicación Web. (Esto no es necesario en el firewall entre el Proxy de aplicación web y los servidores de federación\).  
 
 > [!NOTE]
-> también Asegúrese de que el puerto 49443 no lo use ningún otro servicio en el servidor proxy de aplicación Web.
+> también Asegúrese de que el puerto 49443 no lo use ningún otro servicio en el servidor proxy de aplicación web y AD FS.
 
 **Configuring DNS** (Configuración de DNS)  
   
@@ -353,6 +353,6 @@ En la tabla siguiente se proporciona información adicional sobre la compatibili
 ## <a name="BKMK_13"></a>Requisitos de permisos  
 El administrador que realiza la instalación y la configuración inicial de AD FS deben tener permisos de administrador de dominio en el dominio local \(en otras palabras, el dominio al que está unido el servidor de Federación.\)  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
 [Guía de diseño de AD FS en Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
