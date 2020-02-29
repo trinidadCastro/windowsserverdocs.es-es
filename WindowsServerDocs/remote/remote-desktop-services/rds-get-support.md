@@ -13,18 +13,17 @@ ms.topic: article
 ms.assetid: 938adb3d-71ab-488b-b2f2-57b29df210d7
 author: evaseydl
 manager: scottman
-ms.openlocfilehash: 4280491b8f47ce2d16ecf2cb33dbdb21ac35365b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: eaf3aa737718ce2c0e4654319bea7079e3f92373
+ms.sourcegitcommit: a4b489d0597b6a73c905d3448d5bc332efd6191b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403981"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77675356"
 ---
 # <a name="additional-remote-desktop-resources"></a>Recursos adicionales de Escritorio remoto
 
 Además de la información de la biblioteca de Windows Server 2016, puedes usar los siguientes recursos para obtener más información y obtener ayuda con los Servicios de Escritorio remoto:
 
-- ¿Estás en Twitter? Nosotros también: [@RDS4U](https://twitter.com/RDS4U)
 - Participa en debates generales acerca de los Servicios de Escritorio remoto en el [foro de TechNet de RDS](https://aka.ms/technetforum-rds).
 - Para obtener información sobre las aplicaciones o clientes de Escritorio remoto para Windows, Android, iOS y Mac, visita el [foro de TechNet de los clientes de Escritorio remoto](https://aka.ms/technetforum-rdc).
 - En cuanto a MultiPoint, echa un vistazo al [foro de TechNet de MultiPoint](https://aka.ms/multipoint-forum).
