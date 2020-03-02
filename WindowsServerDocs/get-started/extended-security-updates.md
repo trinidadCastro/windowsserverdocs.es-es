@@ -8,30 +8,30 @@ author: iainfoulds
 ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.date: 01/23/2020
-ms.openlocfilehash: 0f3ea0dacc200adaaec5064d19754ad6de0042a6
-ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
+ms.date: 02/21/2020
+ms.openlocfilehash: 6c9d732b6ec3d8ceb65c691ab143f09dd8f10f23
+ms.sourcegitcommit: 47d2e744a28a3f19347ec4773b7df5f1961ea192
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725780"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77552540"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Uso de las actualizaciones de seguridad extendidas (ESU) de Windows Server 2008 y 2008 R2
 
->Se aplica a: Windows Server 2008/2008 R2
+>Se aplica a: Windows Server 2008 y Windows Server 2008 R2
 
-Windows Server 2008 y Windows Server 2008 R2 llegan al final del ciclo de vida de soporte técnico el 14 de enero de 2020. El Canal de mantenimiento a largo plazo (LTSC) de Windows Server tiene un mínimo de diez años de soporte técnico: cinco de soporte técnico estándar y otros cinco de soporte extendido. Este soporte incluye actualizaciones de seguridad periódicas.
+Windows Server 2008 y Windows Server 2008 R2 llegaron al final del ciclo de vida de soporte técnico el 14 de enero de 2020. El Canal de mantenimiento a largo plazo (LTSC) de Windows Server ofrece un mínimo de diez años de soporte técnico: cinco de soporte técnico estándar y otros cinco de soporte extendido. Este soporte incluye actualizaciones de seguridad periódicas.
 
 El final del soporte técnico también significa el final de las actualizaciones de seguridad. Este escenario puede provocar problemas de seguridad o de cumplimiento, así como poner en peligro las aplicaciones empresariales. Para disfrutar de la seguridad avanzada, el máximo rendimiento y la mayor innovación posible, Microsoft recomienda [actualizarse a la versión actual de Windows Server](modernize-windows-server-2008.md).
 
-Si no puede actualizar todos los servidores antes de alcanzar la fecha límite del ciclo de vida de soporte técnico, las siguientes opciones pueden servir de ayuda para las aplicaciones y los datos durante la transición de la actualización:
+Si aún no has actualizado los servidores, las siguientes opciones te ayudarán a proteger tus aplicaciones y datos durante la transición:
 
 * Migre las cargas de trabajo existentes de Windows Server 2008 y 2008 R2 tal cual a las máquinas virtuales de Azure.
-    * Esta migración a Azure proporciona automáticamente otros tres años de actualizaciones de seguridad extendidas (ESU). Estas actualizaciones no suponen cargo adicional alguno sobre el costo de las máquinas virtuales de Azure y, además, no se requiere ninguna configuración adicional.
+  * Esta migración a Azure proporciona automáticamente otros tres años de actualizaciones de seguridad extendidas (ESU). Estas actualizaciones no suponen cargo adicional alguno sobre el costo de las máquinas virtuales de Azure y, además, no se requiere ninguna configuración adicional.
 * Si compra una suscripción de actualización de seguridad extendida para los servidores, estará protegido hasta que esté preparado para realizar actualizar a una versión más reciente de Windows Server.
-    * Estas actualizaciones se proporcionan para un máximo de tres años después de la fecha de finalización del ciclo de vida de soporte técnico.
+  * Estas actualizaciones se proporcionan para un máximo de tres años después de la fecha de finalización del ciclo de vida de soporte técnico.
 
-Tras ese período hay ninguna otra opción para que los equipos reciban actualizaciones adicionales.
+Después del período de tres años de actualizaciones extendidas, dejaremos de actualizar Windows Server 2008 y 2008 R2. Recomendamos actualizar la versión de Windows Server a una versión más reciente lo antes posible.
 
 ## <a name="what-are-extended-security-updates-for-windows-server"></a>¿Qué son las actualizaciones de seguridad extendidas para Windows Server?
 
@@ -45,58 +45,65 @@ Para más información, consulte [Preguntas más frecuentes sobre las Actualizac
 
 ## <a name="how-to-use-extended-security-updates"></a>Cómo usar las actualizaciones de seguridad extendidas
 
-Si ejecutas máquinas virtuales de Windows Server 2008/2008 R2 en Azure, estas se habilitan automáticamente para las actualizaciones de seguridad extendidas. No es necesario realizar ninguna configuración y no se aplica ningún cargo adicional por el uso de actualizaciones de seguridad extendidas con las máquinas virtuales de Azure. Las actualizaciones de seguridad extendidas se entregan automáticamente a las máquinas virtuales de Azure si están configuradas para recibir actualizaciones.
+Si ejecutas máquinas virtuales de Windows Server 2008 o 2008 R2 en Azure, estas se habilitan automáticamente para las actualizaciones de seguridad extendidas. No es necesario realizar ninguna configuración y no se aplica ningún cargo adicional por el uso de las actualizaciones de seguridad extendidas con las máquinas virtuales de Azure. Las actualizaciones de seguridad extendidas se entregan automáticamente a las máquinas virtuales de Azure si están configuradas para recibir actualizaciones.
 
-En el caso de otros entornos, como las máquinas virtuales locales o los servidores físicos, debes solicitar y configurar manualmente las actualizaciones de seguridad extendidas. Si ya has adquirido actualizaciones de seguridad extendidas (disponibles a través de programas de licencias por volumen, como Contrato Enterprise [EA], Contrato Enterprise Subscription [EAS], Enrollment for Education Solutions [EES] o Inscripción del servidor y la nube [SCE]), puedes usar uno de los siguientes pasos para obtener una clave de activación:
+En el caso de otros entornos, como las máquinas virtuales locales o los servidores físicos, debes solicitar y configurar manualmente las actualizaciones de seguridad extendidas. Puedes adquirir actualizaciones de seguridad extendidas a través de programas de licencias por volumen, como Contrato Enterprise (EA), Contrato Enterprise Subscription (EAS), Enrollment for Education Solutions (EES) o Inscripción del servidor y la nube (SCE).
 
-* Inicia sesión en el [Centro de servicios de licencias por volumen](https://www.microsoft.com/Licensing/servicecenter/default.aspx) para ver y obtener las claves de activación.
-* Regístrate para obtener las actualizaciones de seguridad extendidas en Azure Portal. De este modo, podrás obtener las claves de activación de Windows Server 2008/R2.
-    * Consulta los pasos siguientes de este artículo para saber cómo completar el proceso.
+Cuando hayas adquirido actualizaciones de seguridad extendidas, puedes usar uno de los métodos siguientes para obtener sus claves:
 
-## <a name="register-for-extended-security-updates"></a>Registro para actualizaciones de seguridad extendidas
+* Si quieres obtener las claves de las actualizaciones de seguridad extendidas en Azure Portal, puedes [registrarte para las actualizaciones de seguridad extendidas en Azure Portal](#register-for-extended-security-updates-on-azure-portal).
+* También puedes [iniciar sesión en el Centro de servicios de licencias por volumen de Microsoft](#sign-in-to-the-microsoft-volume-licensing-service-center) para obtener tus claves sin usar Azure Portal.
 
-Para usar las actualizaciones de seguridad extendidas, cree una clave de activación múltiple (MAK) y aplíquela a los equipos con Windows Server 2008 y 2008 R2. Esta clave permite que los servidores de Windows Update sepan que puede seguir recibiendo actualizaciones de seguridad. Regístrese para las actualizaciones de seguridad extendidas y administre estas claves desde Azure Portal, aunque solo use equipos locales.
+### <a name="register-for-extended-security-updates-on-azure-portal"></a>Registro para actualizaciones de seguridad extendidas en Azure Portal
+
+Para usar las actualizaciones de seguridad extendidas en máquinas virtuales que no son de Azure, crea una clave de activación múltiple (MAK) y aplícala a los equipos con Windows Server 2008 y 2008 R2. Esta clave MAK permite que los servidores de Windows Update sepan que puedes seguir recibiendo actualizaciones de seguridad. Regístrate para las actualizaciones de seguridad extendidas y administra estas claves desde Azure Portal, aunque solo uses equipos locales.
 
 > [!NOTE]
->
 > No es necesario registrarse para las actualizaciones de seguridad extendidas si ejecutas Windows Server 2008 y 2008 R2 en máquinas virtuales de Azure. En el caso de otros entornos, como las máquinas virtuales locales o los servidores físicos, [adquiere actualizaciones de seguridad extendidas](https://www.microsoft.com/licensing/how-to-buy/how-to-buy) antes de registrarte y tratar de usarlas.
 
-> [!IMPORTANT]
->
-> Asegúrate de seguir los pasos anteriores para adquirir actualizaciones de seguridad extendidas a través del programa de licencias por volumen. Antes de realizar los pasos que se indican a continuación, envía un correo electrónico a [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com) con la siguiente información para que se apruebe el uso de la característica:
->
-> * Nombre del cliente:
-> * Suscripción de Azure:
-> * Número de contrato EA (para ESU):
-> * Número de servidores ESU:
->
-> El equipo revisará la información proporcionada y agregará el usuario o la suscripción a la lista de aprobados.
->
-> Si el solicitante no recibe la aprobación, es posible que se devuelva este error:
->
-> [No se pudo encontrar el tipo de recurso en el espacio de nombres "Microsoft.WindowsESU"](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version).
+Para registrar la máquina virtual para las actualizaciones de seguridad extendidas y crear una clave, abre Azure Portal y sigue estas instrucciones:
 
-Para registrar máquinas virtuales que no sean de Azure para actualizaciones de seguridad extendidas y crear una clave, siga estos pasos en Azure Portal:
+1. Inicia sesión en [Azure Portal](https://portal.azure.com/).
+2. En el cuadro de búsqueda de la parte superior de Azure Portal, busca y selecciona **Extended Security Updates** (Actualizaciones de seguridad extendidas).
 
-1. Inicie sesión en [Azure Portal](https://portal.azure.com/).
-1. En el cuadro de búsqueda de la parte superior de Azure Portal, busque y seleccione **Actualizaciones de seguridad extendidas**.
+    ![Búsqueda de actualizaciones de seguridad extendidas en Azure Portal](media/extended-security-updates/esu-portal-search.png)
 
-    ![Buscar actualizaciones de seguridad extendidas en Azure Portal](media/extended-security-updates/esu-portal-search.png)
+    Si es la primera vez que usas este tipo de actualizaciones, primero selecciona **+ Crear** para crear un recurso de actualizaciones de seguridad extendidas. Si ya lo ha usado, seleccione el recurso en la lista.
 
-    Si es la primera vez que usa este tipo de actualizaciones, primero elija **+ Crear** un recurso de actualizaciones de seguridad extendidas. Si ya lo ha usado, seleccione el recurso en la lista.
-
-1. En **Register for Extended Service Updates** (Registro para actualizaciones de servicio extendidas), seleccione **Get started** (Comenzar).
+3. En **Register for Extended Service Updates** (Registro para actualizaciones de servicio extendidas), seleccione **Get started** (Comenzar).
 
     ![Introducción a las actualizaciones de seguridad extendidas en Azure Portal](media/extended-security-updates/get-started-with-esu.png)
 
-1. Para crear la primera clave, seleccione **Get key** (Obtener clave).
+4. Para crear la primera clave, seleccione **Get key** (Obtener clave).
 
-    ![Elija crear una clave en Azure Portal](media/extended-security-updates/get-key.png)
+    ![Elección de la creación de una clave en Azure Portal](media/extended-security-updates/get-key.png)
 
-    > [!NOTE]
-    > Para crear el recurso y la clave de la actualización de seguridad extendida, necesita una suscripción de Azure asociada a su cuenta. Si no la tiene, inicie sesión con otra cuenta de usuario o cree una suscripción de Azure mediante los pasos guiados que se muestran en el portal.
+    Para crear el recurso y la clave de la actualización de seguridad extendida, necesitas una suscripción de Azure asociada a tu cuenta. Si no la tienes, inicia sesión con otra cuenta de usuario o crea una suscripción de Azure en Azure Portal.
 
-1. En **Detalles de Azure**, seleccione su suscripción de Azure, un grupo de recursos y una ubicación para la clave.
+    También debes asignar el rol Colaborador a la suscripción de Azure para que la actualización de seguridad funcione. Para comprobar el rol, escribe "Suscripciones" en el cuadro de búsqueda. Verás una tabla que te mostrará el rol junto al identificador y el nombre de la suscripción.
+
+    Si no eres Colaborador, puedes solicitar al propietario de la suscripción que cambie tu rol. Para averiguar quién es el propietario de tu suscripción, ve a la tabla de roles descrita en el párrafo anterior y selecciona el nombre de tu suscripción. A continuación, ve al menú del lado izquierdo de la página y selecciona **Control de acceso (IAM)**  > **Asignaciones de roles** y busca la sección "Propietarios" en la tabla.
+
+5. Si ves una página que dice "Register to get a Multiple Activation Key" (Registrarse para obtener una clave de activación múltiple), significa que debes solicitar acceso a la versión preliminar privada antes de poder usar las actualizaciones de seguridad extendidas. Si no ves esta página, ve al paso 6.
+
+   Para solicitar acceso, selecciona **join the private preview** (unirse a la versión preliminar privada). Se abrirá una ventana de mensaje de correo electrónico. Este correo electrónico es la solicitud de acceso al equipo del producto.
+  
+    Incluye la siguiente información en tu solicitud:
+
+    * Nombre de cliente
+    * Id. de suscripción de Azure
+    * Número de contrato EA (para ESU)
+    * Número de servidores ESU
+
+    Cuando hayas terminado, envía el correo electrónico.
+
+    El equipo revisará la información que proporciones en el correo electrónico de la solicitud. Si todo parece correcto, te agregarán a la lista de aprobados.
+
+    Si el equipo no aprueba tu solicitud, verás el siguiente error:
+
+    [No se pudo encontrar el tipo de recurso en el espacio de nombres "Microsoft.WindowsESU"](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version).
+
+6. En **Detalles de Azure**, seleccione su suscripción de Azure, un grupo de recursos y una ubicación para la clave.
 
     En **Detalles de registro**, escriba la siguiente información:
 
@@ -109,7 +116,12 @@ Para registrar máquinas virtuales que no sean de Azure para actualizaciones de 
 
     Cuando esté preparado, seleccione **Examinar y registrar**.
 
-1. Una vez que la validación ha finalizado correctamente, se muestra un resumen de las opciones del nuevo recurso del registro. Si fuera necesario, corrija los errores de validación o actualice la opción de configuración. Están disponibles los [términos de uso ](https://azure.microsoft.com/support/legal/) y la [directiva de privacidad](https://privacy.microsoft.com/privacystatement) de Azure.
+    >[!NOTE]
+    >Asegúrate de que has seleccionado la suscripción de Azure a cuya la versión preliminar privada te uniste en el filtro global. Selecciona el botón **Filtrar** en la cinta de opciones de Azure Portal para comprobar el filtro de suscripción global.
+    >
+    > ![Una imagen de la cinta de opciones de Azure Portal con el botón Filtrar seleccionado](media/azure-ribbon-filter.png)
+
+7. Una vez que la validación ha finalizado correctamente, se muestra un resumen de las opciones del nuevo recurso del registro. Si fuera necesario, corrija los errores de validación o actualice la opción de configuración. Están disponibles los [términos de uso ](https://azure.microsoft.com/support/legal/) y la [directiva de privacidad](https://privacy.microsoft.com/privacystatement) de Azure.
 
     Active la casilla para confirmar que tiene equipos aptos y que la clave solo se va a usar dentro de su organización:
 
@@ -117,7 +129,19 @@ Para registrar máquinas virtuales que no sean de Azure para actualizaciones de 
 
     Cuando esté preparado, seleccione **Crear** para generar la clave de activación múltiple.
 
-El registro de las actualizaciones de seguridad extendidas ya está disponible para que lo use con los equipos. La clave creada debe aplicarse a los equipos con Windows Server 2008 y 2008 R2 que desee que sigan siendo aptos para las actualizaciones de seguridad.
+El registro de las actualizaciones de seguridad extendidas ya está disponible para que lo uses con los equipos. La clave creada debe aplicarse a los equipos con Windows Server 2008 y 2008 R2 que desee que sigan siendo aptos para las actualizaciones de seguridad.
+
+### <a name="sign-in-to-the-microsoft-volume-licensing-service-center"></a>Inicio de sesión en el Centro de servicios de licencias por volumen de Microsoft
+
+Si no tienes acceso a Azure Portal, puedes usar el Centro de servicios de licencias por volumen para ver y descargar las claves de activación.
+
+Para obtener las claves en el Centro de servicios de licencias por volumen:
+
+1. Ve a la [página del Centro de servicios de licencias por volumen](https://www.microsoft.com/vlsc) e inicia sesión con tus credenciales de Azure.
+
+2. Selecciona **Licencias** > **Resumen de relación** > **Id. de licencia** > **Claves de producto**.
+
+Para más información sobre cómo obtener actualizaciones de seguridad extendidas para dispositivos Windows válidos, consulta [esta publicación de Tech Community](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/obtaining-extended-security-updates-for-eligible-windows-devices/ba-p/1167091#).
 
 ## <a name="download-and-apply-extended-security-updates"></a>Descarga y aplicación de actualizaciones de seguridad extendidas
 

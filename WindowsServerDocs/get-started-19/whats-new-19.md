@@ -8,16 +8,16 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 13eed225dfc144d5e7e59be13dbed14d4de8bb01
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dd8cd6700323075a380aa062bfa1d208b3e30f83
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360781"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465499"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novedades de Windows Server 2019
 
-> Se aplica a: Windows Server 2019
+> Se aplica a: Windows Server 2019
 
 En este tema se describen algunas de las nuevas características de Windows Server 2019. Windows Server 2019 se basa en Windows Server 2016 e incluye numerosas innovaciones en cuatro temas claves: nube híbrida, seguridad, plataforma de aplicaciones e infraestructuras hiperconvergidas (HCI).
 
@@ -115,7 +115,7 @@ Estos son algunos de los cambios que hemos realizado para el almacenamiento en W
 
 Servicio de migración de almacenamiento es una nueva tecnología que facilita migrar servidores a una versión más reciente de Windows Server. Proporciona una herramienta gráfica que inventaría los datos en los servidores, transfiere los datos y la configuración a servidores más recientes y entonces, opcionalmente, pasa las identidades de los servidores antiguos a los nuevos servidores, para que las aplicaciones y los usuarios no tengan que cambiar nada. Para obtener más información, consulta [Servicio de migración de almacenamiento](../storage/storage-migration-service/overview.md).
 
-### <a name="storage-spaces-direct"></a>Espacios de almacenamiento directo
+### <a name="storage-spaces-direct"></a>Espacios de almacenamiento directos
 
 Esta es una lista de novedades de Espacios de almacenamiento directo. Para obtener más información, consulta [Novedades de Espacios de almacenamiento directo](../storage/whats-new-in-storage.md#storage-spaces-direct). Consulta también [Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview) para más información acerca de cómo adquirir sistemas de espacio de almacenamiento directo validados.
 
@@ -139,7 +139,7 @@ Estas son las novedades de Réplica de almacenamiento. Para obtener más informa
 - Mejoras de rendimiento de registro de Réplica de almacenamiento
 - Soporte técnico de Windows Admin Center
 
-## <a name="failover-clustering"></a>Clústeres de conmutación por error
+## <a name="failover-clustering"></a>Clúster de conmutación por error
 
 Esta es una lista de novedades de clústeres de conmutación por error. Para obtener más información, consulta [Novedades de clústeres de conmutación por error](../failover-clustering/whats-new-in-failover-clustering.md).
 
