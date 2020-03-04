@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: f2e8d3bfb5ef907ffb522b5b7be31d1def3001c8
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1ab941e25da7171349bb24762940af3bf886c165
+ms.sourcegitcommit: a4b489d0597b6a73c905d3448d5bc332efd6191b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949683"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77675366"
 ---
 # <a name="volume-shadow-copy-service"></a>Servicio de instantáneas de volumen
 
@@ -19,34 +19,34 @@ Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
 La copia de seguridad y la restauración de datos empresariales críticos puede ser una operación muy compleja debido a los siguientes problemas:
 
-  - Normalmente es necesario realizar una copia de seguridad de los datos mientras las aplicaciones que los generan siguen en ejecución. Esto significa que algunos de los archivos de datos pueden estar abiertos o que podrían estar en un estado incoherente.  
-      
-  - Si el conjunto de datos es de gran tamaño, puede resultar difícil realizar una copia de seguridad de todo el contenido al mismo tiempo.  
-      
+  - Normalmente es necesario realizar una copia de seguridad de los datos mientras las aplicaciones que los generan siguen en ejecución. Esto significa que algunos de los archivos de datos pueden estar abiertos o que podrían estar en un estado incoherente.
+
+  - Si el conjunto de datos es de gran tamaño, puede resultar difícil realizar una copia de seguridad de todo el contenido al mismo tiempo.
+
 
 La realización correcta de las operaciones de copia de seguridad y restauración requiere una estrecha coordinación entre las aplicaciones de copia de seguridad, las aplicaciones de línea de negocio de las que se realiza la copia de seguridad, y el hardware y software de administración del almacenamiento. El Servicio de instantáneas de volumen (VSS), que se presentó en Windows Server® 2003, facilita la conversación entre estos componentes para permitirles funcionar mejor juntos. Cuando todos los componentes son compatibles con VSS, puedes usarlos para realizar una copia de seguridad de los datos de la aplicación sin desconectar las aplicaciones.
 
 VSS coordina las acciones necesarias para crear una instantánea coherente (también conocida como copia de un momento específico) de los datos de los que se va a hacer una copia de seguridad. La instantánea se puede usar tal cual o en escenarios como los siguientes:
 
-  - Quieres realizar una copia de seguridad de los datos de aplicación y la información de estado del sistema, incluido el archivado de datos en otra unidad de disco duro, cinta u otros medios extraíbles.  
-      
-  - Realizas minería de datos.  
-      
-  - Vas a realizar copias de seguridad de disco a disco.  
-      
-  - Necesitas recuperarte rápidamente de una pérdida de datos mediante la restauración de los datos en el LUN original o en un LUN completamente nuevo que reemplace al LUN original que produjo el error.  
-      
+  - Quieres realizar una copia de seguridad de los datos de aplicación y la información de estado del sistema, incluido el archivado de datos en otra unidad de disco duro, cinta u otros medios extraíbles.
+
+  - Realizas minería de datos.
+
+  - Vas a realizar copias de seguridad de disco a disco.
+
+  - Necesitas recuperarte rápidamente de una pérdida de datos mediante la restauración de los datos en el LUN original o en un LUN completamente nuevo que reemplace al LUN original que produjo el error.
+
 
 Entre las características y aplicaciones de Windows que usan VSS, se incluyen las siguientes:
 
-  - [Copias de seguridad de Windows Server](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkId=180891)  
-      
-  - [Instantáneas de carpetas compartidas](https://go.microsoft.com/fwlink/?linkid=142874) (https://go.microsoft.com/fwlink/?LinkId=142874)  
-      
-  - [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=180892) (https://go.microsoft.com/fwlink/?LinkId=180892)  
-      
-  - [Restaurar sistema](https://go.microsoft.com/fwlink/?linkid=180893) (https://go.microsoft.com/fwlink/?LinkId=180893)  
-      
+  - [Copias de seguridad de Windows Server](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkId=180891)
+
+  - [Instantáneas de carpetas compartidas](https://go.microsoft.com/fwlink/?linkid=142874) (https://go.microsoft.com/fwlink/?LinkId=142874)
+
+  - [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=180892) (https://go.microsoft.com/fwlink/?LinkId=180892)
+
+  - [Restaurar sistema](https://go.microsoft.com/fwlink/?linkid=180893) (https://go.microsoft.com/fwlink/?LinkId=180893)
+
 
 ## <a name="how-volume-shadow-copy-service-works"></a>Funcionamiento del Servicio de instantáneas de volumen
 
@@ -76,31 +76,31 @@ En esta sección se contextualizan los distintos roles del solicitante, el escri
 
 Para crear una instantánea, el solicitante, el escritor y el proveedor realizan las siguientes acciones:
 
-1.  El solicitante pide al Servicio de instantáneas de volumen que enumere a los escritores, recopile los metadatos del escritor y se prepare para la creación de la instantánea.  
-      
-2.  Cada escritor crea una descripción XML de los componentes y almacenes de datos de los que es necesario hacer una copia de seguridad y se la proporciona al Servicio de instantáneas de volumen. El escritor también define un método de restauración, que se utiliza para todos los componentes. El Servicio de instantáneas de volumen proporciona la descripción del escritor al solicitante, que selecciona los componentes para los que se hará una copia de seguridad.  
-      
-3.  El Servicio de instantáneas de volumen notifica a todos los escritores que preparen sus datos para realizar una instantánea.  
-      
-4.  Cada escritor prepara los datos según corresponda; por ejemplo, finaliza todas las transacciones abiertas, actualiza los registros de transacciones y vacía las memorias caché. Cuando los datos están listos para crear una instantánea de ellos, el escritor informa al Servicio de instantáneas de volumen.  
-      
-5.  El Servicio de instantáneas de volumen indica a los escritores que inmovilicen temporalmente las solicitudes de E/S de escritura de la aplicación (las solicitudes de E/S de lectura siguen estando disponibles) durante los segundos que se requieren para crear la instantánea del volumen o volúmenes. No se permite que la inmovilización de la aplicación dure más de 60 segundos. El Servicio de instantáneas de volumen vacía los búferes del sistema de archivos y, a continuación, inmoviliza el sistema de archivos, lo que garantiza que los metadatos del sistema de archivos se registran correctamente y que los datos de los que se va a realizar una instantánea se escriben en un orden coherente.  
-      
-6.  El Servicio de instantáneas de volumen indica al proveedor que cree la instantánea. El proceso de creación de instantáneas no dura más de 10 segundos, durante los cuales todas las solicitudes de E/S de escritura en el sistema de archivos permanecen inmovilizadas.  
-      
-7.  El Servicio de instantáneas de volumen libera las solicitudes de E/S de escritura del sistema de archivos.  
-      
-8.  VSS indica a los escritores que reanuden las solicitudes de E/S de escritura de la aplicación. En este momento, las aplicaciones pueden reanudar la escritura de datos en el disco del que se ha realizado la instantánea.  
-      
+1.  El solicitante pide al Servicio de instantáneas de volumen que enumere a los escritores, recopile los metadatos del escritor y se prepare para la creación de la instantánea.
+
+2.  Cada escritor crea una descripción XML de los componentes y almacenes de datos de los que es necesario hacer una copia de seguridad y se la proporciona al Servicio de instantáneas de volumen. El escritor también define un método de restauración, que se utiliza para todos los componentes. El Servicio de instantáneas de volumen proporciona la descripción del escritor al solicitante, que selecciona los componentes para los que se hará una copia de seguridad.
+
+3.  El Servicio de instantáneas de volumen notifica a todos los escritores que preparen sus datos para realizar una instantánea.
+
+4.  Cada escritor prepara los datos según corresponda; por ejemplo, finaliza todas las transacciones abiertas, actualiza los registros de transacciones y vacía las memorias caché. Cuando los datos están listos para crear una instantánea de ellos, el escritor informa al Servicio de instantáneas de volumen.
+
+5.  El Servicio de instantáneas de volumen indica a los escritores que inmovilicen temporalmente las solicitudes de E/S de escritura de la aplicación (las solicitudes de E/S de lectura siguen estando disponibles) durante los segundos que se requieren para crear la instantánea del volumen o volúmenes. No se permite que la inmovilización de la aplicación dure más de 60 segundos. El Servicio de instantáneas de volumen vacía los búferes del sistema de archivos y, a continuación, inmoviliza el sistema de archivos, lo que garantiza que los metadatos del sistema de archivos se registran correctamente y que los datos de los que se va a realizar una instantánea se escriben en un orden coherente.
+
+6.  El Servicio de instantáneas de volumen indica al proveedor que cree la instantánea. El proceso de creación de instantáneas no dura más de 10 segundos, durante los cuales todas las solicitudes de E/S de escritura en el sistema de archivos permanecen inmovilizadas.
+
+7.  El Servicio de instantáneas de volumen libera las solicitudes de E/S de escritura del sistema de archivos.
+
+8.  VSS indica a los escritores que reanuden las solicitudes de E/S de escritura de la aplicación. En este momento, las aplicaciones pueden reanudar la escritura de datos en el disco del que se ha realizado la instantánea.
+
 
 > [!NOTE]
-> Se puede anular la creación de instantáneas si los escritores se mantienen en estado de inmovilización durante más de 60 segundos o si los proveedores tardan más de 10 segundos en confirmar la instantánea. 
+> Se puede anular la creación de instantáneas si los escritores se mantienen en estado de inmovilización durante más de 60 segundos o si los proveedores tardan más de 10 segundos en confirmar la instantánea.
 <br>
 
-9. El solicitante puede reintentar el proceso (volver al paso 1) o notificar al administrador que vuelva a intentarlo más tarde.  
-      
-10. Si la instantánea se crea de forma correcta, el Servicio de instantáneas de volumen devuelve la información de ubicación de la instantánea al solicitante. En algunos casos, la instantánea puede estar disponible temporalmente como un volumen de lectura y escritura para que VSS y una o varias aplicaciones puedan modificar su contenido antes de que esté terminada. Una vez que VSS y las aplicaciones realizan las modificaciones, la instantánea cambia al modo de solo lectura. Esta fase se denomina Recuperación automática y se usa para deshacer cualquier transacción del sistema de archivos o de la aplicación en el volumen de instantáneas que no se haya completado antes de crear la instantánea.  
-      
+9. El solicitante puede reintentar el proceso (volver al paso 1) o notificar al administrador que vuelva a intentarlo más tarde.
+
+10. Si la instantánea se crea de forma correcta, el Servicio de instantáneas de volumen devuelve la información de ubicación de la instantánea al solicitante. En algunos casos, la instantánea puede estar disponible temporalmente como un volumen de lectura y escritura para que VSS y una o varias aplicaciones puedan modificar su contenido antes de que esté terminada. Una vez que VSS y las aplicaciones realizan las modificaciones, la instantánea cambia al modo de solo lectura. Esta fase se denomina Recuperación automática y se usa para deshacer cualquier transacción del sistema de archivos o de la aplicación en el volumen de instantáneas que no se haya completado antes de crear la instantánea.
+
 
 ### <a name="how-the-provider-creates-a-shadow-copy"></a>Cómo el proveedor crea una instantánea
 
@@ -116,10 +116,10 @@ Un proveedor de instantáneas de hardware o software usa alguno de los métodos 
 
 Normalmente se crea una copia completa mediante la creación de un "reflejo dividido" como se indica a continuación:
 
-1.  El volumen original y el volumen de la instantánea son un conjunto de volúmenes reflejado.  
-      
-2.  El volumen de la instantánea se separa del volumen original. De este modo, se interrumpe la conexión de reflejo.  
-      
+1. El volumen original y el volumen de la instantánea son un conjunto de volúmenes reflejado.
+
+2. El volumen de la instantánea se separa del volumen original. De este modo, se interrumpe la conexión de reflejo.
+
 
 Una vez interrumpida la conexión de reflejo, el volumen original y el volumen de la instantánea son independientes. El volumen original continúa aceptando todos los cambios (solicitudes de E/S de escritura), mientras que el volumen de la instantánea sigue siendo una copia exacta de solo lectura de los datos originales en el momento de la interrupción.
 
@@ -245,25 +245,21 @@ Los archivos de componentes que componen al proveedor del sistema son swprv.dll 
 
 El sistema operativo Windows incluye un conjunto de VSS Writer que son responsables de enumerar los datos que diversas características de Windows requieren.
 
-Para obtener más información acerca de dichos escritores, visita los siguientes sitios web de Microsoft:
+Para más información sobre estos escritores, visita la siguiente página web de Microsoft Docs:
 
-  - [Instancias de VSS Writer incluidas](https://go.microsoft.com/fwlink/?linkid=180895) (https://go.microsoft.com/fwlink/?LinkId=180895)  
-      
-  - [Nuevos VSS Writer incluidos para Windows Server 2008 y Windows Vista SP1](https://go.microsoft.com/fwlink/?linkid=180896) (https://go.microsoft.com/fwlink/?LinkId=180896)  
-      
-  - [Nuevos VSS Writer incluidos para Windows Server 2008 R2 y Windows 7](https://go.microsoft.com/fwlink/?linkid=180897) (https://go.microsoft.com/fwlink/?LinkId=180897)  
-      
+- [Instancias de VSS Writer incluidas](https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers) (https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers)
+
 
 ## <a name="how-shadow-copies-are-used"></a>Uso de las instantáneas
 
 Además de realizar copias de seguridad de los datos de la aplicación y de la información de estado del sistema, las instantáneas se pueden usar con varios fines, entre los que se incluyen los siguientes:
 
-  - Restauración de LUN (resincronización e intercambio de LUN)  
-      
-  - Restauración de archivos individuales (Instantáneas para carpetas compartidas)  
-      
-  - Minería de datos mediante instantáneas transportables  
-      
+  - Restauración de LUN (resincronización e intercambio de LUN)
+
+  - Restauración de archivos individuales (Instantáneas para carpetas compartidas)
+
+  - Minería de datos mediante instantáneas transportables
+
 
 ### <a name="restoring-luns-lun-resynchronization-and-lun-swapping"></a>Restauración de LUN (resincronización e intercambio de LUN)
 
@@ -273,7 +269,7 @@ La instantánea puede ser un clon completo o una instantánea diferencial. En am
 
 
 > [!NOTE]
-> La instantánea debe ser de hardware transportable. 
+> La instantánea debe ser de hardware transportable.
 <br>
 
 
@@ -281,16 +277,15 @@ La mayoría de las matrices permiten que las operaciones de E/S de producción s
 
 La resincronización de LUN es diferente del intercambio de LUN. Un intercambio de LUN es un escenario de recuperación rápida que es compatible con VSS desde Windows Server 2003 SP1. En un intercambio de LUN, la instantánea se importa y luego se convierte en un volumen de lectura y escritura. La conversión es una operación irreversible, y tanto el volumen como el LUN subyacente no se pueden controlar con las API de VSS posteriormente. En la lista siguiente se describen las diferencias entre la resincronización de LUN y el intercambio de LUN:
 
-  - En la resincronización de LUN, la instantánea no se modifica, por lo que se puede usar varias veces. En el intercambio de LUN, la instantánea solo se puede usar una vez para una recuperación. Para los administradores más preocupados por la seguridad, esto es importante. Cuando se usa la resincronización de LUN, el solicitante puede reintentar toda la operación de restauración si se produce un error la primera vez.  
-      
-  - Al final de un intercambio de LUN, el LUN de instantánea se usa para las solicitudes de E/S de producción. Por este motivo, el LUN de instantánea debe usar la misma calidad de almacenamiento que el LUN de producción original, para garantizar que el rendimiento no se vea afectado después de la operación de recuperación. Si en su lugar se usa la resincronización de LUN, el proveedor de hardware puede mantener la instantánea en un almacenamiento que sea más económico que el almacenamiento de calidad de producción.  
-      
-  - Si el LUN de destino no se puede usar y debe volver a crearse, el intercambio de LUN puede resultar más económico, ya que no requiere un LUN de destino.  
-      
+  - En la resincronización de LUN, la instantánea no se modifica, por lo que se puede usar varias veces. En el intercambio de LUN, la instantánea solo se puede usar una vez para una recuperación. Para los administradores más preocupados por la seguridad, esto es importante. Cuando se usa la resincronización de LUN, el solicitante puede reintentar toda la operación de restauración si se produce un error la primera vez.
+
+  - Al final de un intercambio de LUN, el LUN de instantánea se usa para las solicitudes de E/S de producción. Por este motivo, el LUN de instantánea debe usar la misma calidad de almacenamiento que el LUN de producción original, para garantizar que el rendimiento no se vea afectado después de la operación de recuperación. Si en su lugar se usa la resincronización de LUN, el proveedor de hardware puede mantener la instantánea en un almacenamiento que sea más económico que el almacenamiento de calidad de producción.
+
+  - Si el LUN de destino no se puede usar y debe volver a crearse, el intercambio de LUN puede resultar más económico, ya que no requiere un LUN de destino.
 
 
 > [!WARNING]
-> Todas las operaciones mencionadas son operaciones de nivel de LUN. Si intentas recuperar un volumen específico mediante la resincronización de LUN, revertirás involuntariamente todos los demás volúmenes que comparten el LUN. 
+> Todas las operaciones mencionadas son operaciones de nivel de LUN. Si intentas recuperar un volumen específico mediante la resincronización de LUN, revertirás involuntariamente todos los demás volúmenes que comparten el LUN.
 <br>
 
 
@@ -320,7 +315,7 @@ Con el Servicio de instantáneas de volumen y una matriz de almacenamiento con u
 
 
 > [!NOTE]
-> Las instantáneas transportables que se crean en Windows Server 2003 no se pueden importar a un servidor que ejecute Windows Server 2008 o Windows Server 2008 R2. Las instantáneas transportables que se crearon en Windows Server 2008 o Windows Server 2008 R2 no se pueden importar a un servidor que ejecuta Windows Server 2003. No obstante, una instantánea creada en Windows Server 2008 no se puede importar a un servidor que ejecute Windows Server 2008 R2 y viceversa. 
+> Las instantáneas transportables que se crean en Windows Server 2003 no se pueden importar a un servidor que ejecute Windows Server 2008 o Windows Server 2008 R2. Las instantáneas transportables que se crearon en Windows Server 2008 o Windows Server 2008 R2 no se pueden importar a un servidor que ejecuta Windows Server 2003. No obstante, una instantánea creada en Windows Server 2008 no se puede importar a un servidor que ejecute Windows Server 2008 R2 y viceversa.
 <br>
 
 
@@ -362,10 +357,10 @@ Es posible deshabilitar el Servicio de instantáneas de volumen mediante Microso
 
 Para obtener más información, visita los siguientes sitios web de Microsoft TechNet:
 
-  - [Restaurar sistema](https://go.microsoft.com/fwlink/?linkid=157113) (https://go.microsoft.com/fwlink/?LinkID=157113)  
-      
-  - [Copias de seguridad de Windows Server](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkID=180891)  
-      
+- [Restaurar sistema](https://go.microsoft.com/fwlink/?linkid=157113) (https://go.microsoft.com/fwlink/?LinkID=157113)
+
+- [Copias de seguridad de Windows Server](https://go.microsoft.com/fwlink/?linkid=180891) (https://go.microsoft.com/fwlink/?LinkID=180891)
+
 
 ### <a name="can-i-exclude-files-from-a-shadow-copy-to-save-space"></a>¿Puedo excluir archivos de una instantánea para ahorrar espacio?
 
@@ -406,14 +401,14 @@ El área de diferencia puede encontrarse en cualquier volumen local. Sin embargo
 
 Se evalúan los siguientes criterios, en este orden, para determinar la ubicación del área de diferencia:
 
-  - Si un volumen ya tiene una instantánea, se utiliza esa ubicación.  
-      
-  - Si hay una asociación manual preconfigurada entre el volumen original y la ubicación del volumen de instantáneas, se utiliza esa ubicación.  
-      
-  - Si los dos criterios anteriores no proporcionan una ubicación, el servicio de instantáneas elige una ubicación en función del espacio libre disponible. Si se va a realizar una instantánea de más de un volumen, el servicio de instantáneas crea una lista de posibles ubicaciones de instantáneas en función de la cantidad de espacio libre, en orden descendente. El número de ubicaciones proporcionadas es igual al número de volúmenes de los que se está realizando una instantánea.  
-      
-  - Si el volumen del que se está realizando la instantánea es una de las ubicaciones posibles, se crea una asociación local. De lo contrario, se crea una asociación con el volumen que tiene el mayor espacio disponible.  
-      
+  - Si un volumen ya tiene una instantánea, se utiliza esa ubicación.
+
+  - Si hay una asociación manual preconfigurada entre el volumen original y la ubicación del volumen de instantáneas, se utiliza esa ubicación.
+
+  - Si los dos criterios anteriores no proporcionan una ubicación, el servicio de instantáneas elige una ubicación en función del espacio libre disponible. Si se va a realizar una instantánea de más de un volumen, el servicio de instantáneas crea una lista de posibles ubicaciones de instantáneas en función de la cantidad de espacio libre, en orden descendente. El número de ubicaciones proporcionadas es igual al número de volúmenes de los que se está realizando una instantánea.
+
+  - Si el volumen del que se está realizando la instantánea es una de las ubicaciones posibles, se crea una asociación local. De lo contrario, se crea una asociación con el volumen que tiene el mayor espacio disponible.
+
 
 ### <a name="can-vss-create-shadow-copies-of-non-ntfs-volumes"></a>¿VSS puede crear instantáneas de volúmenes que no son NTFS?
 
@@ -441,25 +436,25 @@ Se eliminan las instantáneas del volumen, comenzando por la instantánea más a
 
 El sistema operativo Windows proporciona las siguientes herramientas para trabajar con VSS:
 
-  - [DiskShadow](https://go.microsoft.com/fwlink/?linkid=180907) (https://go.microsoft.com/fwlink/?LinkId=180907)  
-      
-  - [VssAdmin](https://go.microsoft.com/fwlink/?linkid=84008) (https://go.microsoft.com/fwlink/?LinkId=84008)  
-      
+  - [DiskShadow](https://go.microsoft.com/fwlink/?linkid=180907) (https://go.microsoft.com/fwlink/?LinkId=180907)
+
+  - [VssAdmin](https://go.microsoft.com/fwlink/?linkid=84008) (https://go.microsoft.com/fwlink/?LinkId=84008)
+
 
 ### <a name="diskshadow"></a>DiskShadow
 
 DiskShadow es un solicitante de VSS que puedes usar para administrar todas las instantáneas de hardware y software que se pueden tener en un sistema. DiskShadow incluye comandos como los siguientes:
 
-  - **list**: enumera los escritores y proveedores de VSS, además de las instantáneas.  
-      
-  - **create**: crea una nueva instantánea.  
-      
-  - **import**: importa una instantánea transportable.  
-      
-  - **expose**: expone una instantánea persistente (como una letra de unidad, por ejemplo).  
-      
-  - **revert**: revierte un volumen a una instantánea especificada.  
-      
+  - **list**: enumera los escritores y proveedores de VSS, además de las instantáneas.
+
+  - **create**: crea una nueva instantánea.
+
+  - **import**: importa una instantánea transportable.
+
+  - **expose**: expone una instantánea persistente (como una letra de unidad, por ejemplo).
+
+  - **revert**: revierte un volumen a una instantánea especificada.
+
 
 Esta herramienta está pensada para que la usen los profesionales de TI, aunque también puede resultar útil para los desarrolladores cuando realizan pruebas para VSS Writer o un proveedor de VSS.
 
@@ -471,16 +466,16 @@ VssAdmin se usa para crear, eliminar y mostrar información sobre las instantán
 
 VssAdmin incluye comandos como los siguientes:
 
-  - **create shadow**: crea una nueva instantánea.  
-      
-  - **delete shadows**: elimina las instantáneas.  
-      
-  - **list providers**: enumera todos los proveedores de VSS registrados.  
-      
-  - **list writers**: enumera todos los VSS Writer suscritos.  
-      
-  - **resize shadowstorage**: cambia el tamaño máximo del área de almacenamiento de instantáneas.  
-      
+  - **create shadow**: crea una nueva instantánea.
+
+  - **delete shadows**: elimina las instantáneas.
+
+  - **list providers**: enumera todos los proveedores de VSS registrados.
+
+  - **list writers**: enumera todos los VSS Writer suscritos.
+
+  - **resize shadowstorage**: cambia el tamaño máximo del área de almacenamiento de instantáneas.
+
 
 VssAdmin solo se puede usar para administrar las instantáneas creadas por el proveedor de software del sistema.
 
@@ -490,12 +485,12 @@ VssAdmin está disponible en las versiones de sistema operativo cliente de Windo
 
 Las siguientes claves del registro están disponibles para usarse con VSS:
 
-  - **VssAccessControl**  
-      
-  - **MaxShadowCopies**  
-      
-  - **MinDiffAreaFileSize**  
-      
+  - **VssAccessControl**
+
+  - **MaxShadowCopies**
+
+  - **MinDiffAreaFileSize**
+
 
 ### <a name="vssaccesscontrol"></a>VssAccessControl
 
@@ -503,10 +498,10 @@ Esta clave se usa para especificar qué usuarios tienen acceso a las instantáne
 
 Para obtener más información, consulta las siguientes publicaciones en el sitio web de MSDN:
 
-  - [Consideraciones de seguridad para escritores](https://go.microsoft.com/fwlink/?linkid=157739) (https://go.microsoft.com/fwlink/?LinkId=157739)  
-      
-  - [Consideraciones de seguridad para solicitantes](https://go.microsoft.com/fwlink/?linkid=180908) (https://go.microsoft.com/fwlink/?LinkId=180908)  
-      
+  - [Consideraciones de seguridad para escritores](https://go.microsoft.com/fwlink/?linkid=157739) (https://go.microsoft.com/fwlink/?LinkId=157739)
+
+  - [Consideraciones de seguridad para solicitantes](https://go.microsoft.com/fwlink/?linkid=180908) (https://go.microsoft.com/fwlink/?LinkId=180908)
+
 
 ### <a name="maxshadowcopies"></a>MaxShadowCopies
 
@@ -524,7 +519,7 @@ Para obtener más información, consulta la siguiente publicación en el sitio w
 
 **MinDiffAreaFileSize** en [claves del registro para Copias de seguridad y restauración](https://go.microsoft.com/fwlink/?linkid=180910) (https://go.microsoft.com/fwlink/?LinkId=180910)
 
-`##`#` Versiones de sistema operativo compatibles
+### <a name="supported-operating-system-versions"></a>Versiones de sistema operativo compatibles
 
 En la tabla siguiente se enumeran las versiones de sistema operativo mínimas compatibles con las características de VSS.
 

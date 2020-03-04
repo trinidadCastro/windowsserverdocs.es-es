@@ -204,6 +204,7 @@
 ### [Archivo por lotes de ejemplo de Shell (Netsh) de red](technologies/netsh/netsh-wins.md)
 ### [Comandos http Netsh](technologies/netsh/netsh-http.md)
 ### [Comandos de proxy de puerto de interfaz de netsh](technologies/netsh/netsh-interface-portproxy.md)
+### [Comandos mbn Netsh](technologies/netsh/netsh-mbn.md)
 
 ## [Ajuste del rendimiento del subsistema de red](technologies/network-subsystem/net-sub-performance-top.md)
 ### [Elección de un adaptador de red](technologies/network-subsystem/net-sub-choose-nic.md)

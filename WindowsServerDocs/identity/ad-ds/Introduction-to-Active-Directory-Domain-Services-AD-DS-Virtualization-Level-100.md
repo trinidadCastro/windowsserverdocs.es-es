@@ -9,16 +9,16 @@ manager: mtillman
 ms.date: 03/22/2019
 ms.technology: identity-adds
 ms.assetid: 7a3114c8-bda8-49bb-83a8-4e04340ab221
-ms.openlocfilehash: 67e35a47467b1f5f66bfd073c6f9db06094ea3f9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 25a5c2222f50b37bff2bcfe41184d6d9fa35995c
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391029"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465509"
 ---
 # <a name="safely-virtualizing-active-directory-domain-services-ad-ds"></a>Virtualización segura de Servicios de dominio de Active Directory (AD DS)
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 A partir de Windows Server 2012, AD DS proporciona una mayor compatibilidad con la virtualización de controladores de dominio gracias a la introducción de recursos seguros para virtualización. En este artículo se explica el rol de los USN e id. de invocación en la replicación del controlador de dominio y se describen algunos posibles problemas que pueden producirse.
 
@@ -131,5 +131,5 @@ También puedes usar la instantánea como origen de una copia de seguridad. O bi
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-* Para obtener más información acerca de la solución de problemas de controladores de dominio virtualizados, consulte el tema relativo a la [solución de problemas de controladores de dominio virtualizados](../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md).
+* Para obtener más información de solución de problemas sobre los controladores de dominio virtualizados, consulte [Virtualized Domain Controller Troubleshooting](../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md).
 * [Información detallada sobre el servicio de hora de Windows (W32Time)](../../networking/windows-time-service/windows-time-service-top.md)

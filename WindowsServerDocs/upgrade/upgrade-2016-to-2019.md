@@ -7,12 +7,12 @@ ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 62fe4f00cef121e6241a403ee339047cda9488b5
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: 8510b37c652dc7dfa95569a64dff8b1b75372a2d
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591087"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517570"
 ---
 # <a name="upgrade-windows-server-2016-to-windows-server-2019"></a>Actualización de Windows Server 2016 a Windows Server 2019
 
@@ -32,7 +32,7 @@ Antes de iniciar la actualización de Windows Server, se recomienda recopilar i
 
 4. Abre el editor del registro, ve a la clave `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion` y, a continuación, copia y pega las propiedades **BuildLabEx** (versión) y **EditionID** (edición) de Windows Server en la misma ubicación que se indicó anteriormente.
 
-Después de recopilar toda la información relacionada con Windows Server, se recomienda realizar una copia de seguridad del sistema operativo, las aplicaciones y las máquinas virtuales. También debes **apagar**, **migrar rápidamente** o **migrar en vivo** todas las máquinas virtuales que están en ejecución actualmente en el servidor. Ninguna de las máquinas virtuales puede estar en ejecución durante la actualización en contexto.
+Después de recopilar toda la información relacionada con Windows Server, se recomienda realizar una copia de seguridad del sistema operativo, las aplicaciones y las máquinas virtuales. También debes **apagar**, **migrar rápidamente** o **migrar en vivo** todas las máquinas virtuales que están en ejecución actualmente en el servidor. Ninguna de las máquinas virtuales puede estar en ejecución durante la actualización local.
 
 ## <a name="to-perform-the-upgrade"></a>Para realizar la actualización
 
@@ -54,23 +54,23 @@ Después de recopilar toda la información relacionada con Windows Server, se r
 
 6. En función del canal de distribución del que recibiste los medios de Windows Server (versión comercial, licencia por volumen, OEM, ODM, etc.) y la licencia del servidor, se te podría solicitar que escribas una clave de licencia para continuar.
 
-7. Selecciona la edición de Windows Server 2019 que quieres instalar y, a continuación, selecciona **Siguiente**.
+7. Selecciona la edición de Windows Server 2019 que quieres instalar y, a continuación, selecciona **Siguiente**.
 
-    ![Pantalla para elegir la edición de Windows Server 2016 que se va a instalar](media/upgrade-2016-2019/select-os-edition.png)
+    ![Pantalla para elegir la edición de Windows Server 2019 que se va a instalar](media/upgrade-2016-2019/select-os-edition.png)
 
 8. Selecciona **Aceptar** para aceptar los términos del contrato de licencia, en función del canal de distribución (por ejemplo, versión comercial, licencia por volumen, OEM, ODM, etc.).
 
     ![Pantalla para aceptar el contrato de licencia](media/upgrade-2016-2019/license-terms.png)
 
-9. Selecciona **Conservar los archivos personales y las aplicaciones** para elegir una actualización en contexto y, a continuación, selecciona **Siguiente**.
+9. Selecciona **Conservar los archivos personales y las aplicaciones** para elegir la opción de actualización local y, a continuación, selecciona **Siguiente**.
 
     ![Pantalla para elegir el tipo de instalación](media/upgrade-2016-2019/choose-install-upgrade.png)
 
-10. Después de que el programa de instalación analice el dispositivo, te pedirá que continúes con la actualización al seleccionar **Instalar**.
+10. Después de que el programa de instalación analice el dispositivo, te pedirá que selecciones **Instalar** para continuar con la actualización.
 
     ![Pantalla que muestra que estás listo para iniciar la actualización](media/upgrade-2016-2019/ready-to-install.png)
 
-    Se inicia la actualización en contexto y se muestra la pantalla **Actualizando Windows** con su progreso. Una vez finalizada la actualización, el servidor se reiniciará.
+    Se inicia la actualización local y se muestra la pantalla **Actualizando Windows** con su progreso. Una vez finalizada la actualización, el servidor se reiniciará.
 
     ![Pantalla que muestra el progreso de la actualización](media/upgrade-2016-2019/upgrading-windows-with-progress.png)
 
@@ -82,7 +82,7 @@ Una vez completada la actualización, debes asegurarte de que la actualización 
 
 1. Abre el editor del registro, ve a la clave `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion` y consulta **ProductName**. Debería mostrarse tu edición de Windows Server 2019; por ejemplo **Windows Server 2019 Datacenter**.
 
-2. Asegúrate de que todas las aplicaciones se están ejecutando y que las conexiones de cliente a las aplicaciones se realizaron correctamente.
+2. Asegúrate de que todas las aplicaciones se están ejecutando y de que las conexiones de cliente a las aplicaciones se realizaron correctamente.
 
 Si crees que algo podría haber ido mal durante la actualización, copia y comprime el directorio `%SystemRoot%\Panther` (normalmente `C:\Windows\Panther`) y ponte en contacto con el soporte técnico de Microsoft.
 

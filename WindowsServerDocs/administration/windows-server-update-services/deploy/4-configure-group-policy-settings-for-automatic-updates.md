@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a01d8881e8f0f7ca6feff691938f926a12460db0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f8ebe1f82cd6f616d42521729c5efc14821c20fa
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361663"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169585"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>Paso 4: Configurar la directiva de grupo para las actualizaciones automáticas
 
->Se aplica a: Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 En un entorno de Active Directory, puedes usar la directiva de grupo para definir la forma en que los equipos y los usuarios (que en este documento se denominan clientes de WSUS) pueden interactuar con las actualizaciones de Windows para obtener actualizaciones automáticas de Windows Server Update Services (WSUS).
 
@@ -621,7 +621,7 @@ En el procedimiento siguiente se describe cómo abrir GPMC en el controlador de 
 
 3.  En el panel izquierdo, haz doble clic en **Dominios** y, a continuación, haz doble clic en el dominio para el que deseas administrar un objeto de directiva de grupo. Por ejemplo, haz doble clic en **example.com**.
 
-4.  Realiza una de las siguientes acciones:
+4.  Realice una de las siguientes acciones:
 
     -  **Si deseas abrir un GPO de nivel de dominio existente para editarlo**, haz doble clic en el dominio que contiene el objeto de directiva de grupo que quieres administrar, haz clic con el botón derecho en la directiva de dominio que deseas administrar y, a continuación, haz clic en **Editar**. Se abre el Editor de administración de directivas de grupo (GPME).
 
@@ -661,7 +661,7 @@ Si deseas obtener más información sobre la directiva de grupo, consulta [Infor
 
 3.  En **Opciones**, si aparece alguna opción, conserva los valores predeterminados o modifícalos según sea necesario.
 
-4.  Realiza una de las siguientes acciones:
+4.  Realice una de las siguientes acciones:
 
     -   Para guardar los cambios y continuar con la configuración siguiente, haz clic en **Aplicar** y, después, en **Valor siguiente**.
 

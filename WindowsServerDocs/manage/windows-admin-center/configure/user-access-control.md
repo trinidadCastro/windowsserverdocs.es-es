@@ -8,12 +8,12 @@ ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 96e47a94cb0139e42960baac6d07dbcb61750555
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 39af45506ff7023cebe437992e90f6d4ec051333
+ms.sourcegitcommit: da6c4fa55a6a72924ac363753d04c5b682cee55b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903917"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77624899"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>Configuración de los permisos y el control de acceso de usuarios
 

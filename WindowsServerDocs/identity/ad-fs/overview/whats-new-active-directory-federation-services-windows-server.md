@@ -9,12 +9,12 @@ ms.date: 01/22/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: adce37d8d06399d3a00221a12f3449244720ade7
-ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
+ms.openlocfilehash: 8061f41dab0f02bccd59a659e0bcd209bd73a249
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519487"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517560"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Novedades de Servicios de federación de Active Directory (AD FS)
 
@@ -108,8 +108,20 @@ C. Después, el cliente envía el código de autorización en la solicitud de to
 D. AD FS transforma el secreto "code_verifier" y lo compara con "t(code_verifier)" de (B).  Se deniega el acceso si no son iguales. 
 
 #### <a name="faq"></a>Preguntas más frecuentes 
+> [!NOTE] 
+> Puedes encontrar este error en los registros de eventos del administrador de ADFS: Se ha recibido una solicitud de OAuth no válida. El cliente "NOMBRE" no tiene permiso para acceder al recurso con el ámbito "ugs". Para corregir este error: 
+> 1. Inicia la consola de administración de AD FS. Ve a "Servicios > Descripciones de ámbito"
+> 2. Haz clic con el botón derecho en "Descripciones de ámbito" y selecciona "Agregar descripción de ámbito"
+> 3. Para el nombre, escribe "ugs" y haz clic en Aplicar > Aceptar
+> 4. Inicia PowerShell como administrador.
+> 5. Ejecuta el comando "Get-AdfsApplicationPermission". Busca el elemento ScopeNames: {openid, aza} que contenga ClientRoleIdentifier. Toma nota del elemento ObjectIdentifier.
+> 6. Ejecuta el comando "Set-AdfsApplicationPermission -TargetIdentifier <ObjectIdentifier del paso 5> -AddScope "ugs"
+> 7. Reinicia el servicio ADFS.
+> 8. En el cliente: Reinicia el cliente. Se pedirá al usuario que aprovisione WHPB.
+> 9. Si la ventana de aprovisionamiento no aparece, tienes que recopilar los registros de seguimiento de NGC y solucionar el problema.
+
 **P.** ¿Puedo pasar el valor del recurso como parte del valor de ámbito, de la misma forma en que se realizan las solicitudes en Azure AD? 
-</br>**R.** Con AD FS en Server 2019, ahora puedes pasar el valor de recurso insertado en el parámetro de ámbito. Ahora, el parámetro de ámbito se puede organizar como una lista separada por espacios donde cada entrada está estructurada como recurso/ámbito. Por ejemplo  
+</br>**R.** Con AD FS en Server 2019, ahora puedes pasar el valor de recurso insertado en el parámetro de ámbito. Ahora, el parámetro de ámbito se puede organizar como una lista separada por espacios en la que cada entrada está estructurada como recurso/ámbito. Por ejemplo:  
 **< crear una solicitud de ejemplo válida >**
 
 **P.** ¿AD FS admite la extensión PKCE?

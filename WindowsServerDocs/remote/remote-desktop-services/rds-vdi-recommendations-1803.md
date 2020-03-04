@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: 6287b6233306a47d71951b589b5d3cb84ac0d761
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: e7708ffe5639c80067ed0dbc2794c4d6694e6247
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950395"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517510"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>Optimización de Windows 10, versión 1803, para un rol de infraestructura de escritorio virtual (VDI)
 
@@ -91,7 +91,7 @@ Dependiendo de la arquitectura de la VM de VDI, cosas como PreFetch y SuperFetch
 
 ### <a name="to-sysprep-or-not-sysprep"></a>Sysprep o no Sysprep
 
-Windows 10 tiene una funcionalidad incorporada llamada [Herramienta de preparación del sistema](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview) (a menudo abreviada como "Sysprep"). La herramienta Sysprep se usa para preparar para la duplicación una imagen de Windows 10 personalizada. El proceso de Sysprep garantiza que el sistema operativo resultante sea único y se pueda ejecutar en la producción.
+Windows 10 tiene una funcionalidad integrada llamada [Herramienta de preparación del sistema](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview) (a menudo abreviada como "Sysprep"). La herramienta Sysprep se usa para preparar para la duplicación una imagen de Windows 10 personalizada. El proceso de Sysprep garantiza que el sistema operativo resultante sea único y se pueda ejecutar en la producción.
 
 Existen varias razones a favor y en contra de ejecutar Sysprep. En el caso de VDI, es posible que quieras personalizar el perfil de usuario predeterminado que se usará como plantilla de perfil para los usuarios subsiguientes que inicien sesión con esta imagen. También es posible que tengas aplicaciones que quieras instalar y que también quieras tener la posibilidad de controlar la configuración de cada aplicación.
 

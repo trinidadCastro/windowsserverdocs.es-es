@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 37e37e33b5d8dd571f8519aaa48251856503578d
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 2723868251f90429fb0ad5e966c9222a6a22ab0c
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953091"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77520717"
 ---
 # <a name="windows-server-2016-improvements"></a>Mejoras en Windows Server 2016
 
@@ -39,7 +39,7 @@ Se han agregado contadores del monitor de rendimiento. Permiten establecer la pr
 |----- | ----- |
 |Desfase de hora calculado| Desfase de hora absoluto entre el reloj del sistema y el origen de la hora elegido, calculado por el servicio W32Time en microsegundos. Cuando hay una nueva muestra válida disponible, la hora calculada se actualiza con el desfase de hora que se indica en el ejemplo. Este es el desfase de hora del reloj local. W32Time inicia la corrección del reloj con este desfase y actualiza la hora calculada entre las muestras con el desfase de hora restante que se debe aplicar al reloj local. Se puede realizar un seguimiento de la precisión del reloj mediante este contador de rendimiento con un intervalo de sondeo bajo (p. ej., 256 segundos o menos) y buscando un valor del contador menor que el límite de precisión del reloj deseado.|
 |Ajuste de frecuencia del reloj| Ajuste de frecuencia del reloj absoluto que realizó W32Time en el reloj del sistema local (en partes por mil millones). Este contador ayuda a visualizar las acciones que realiza W32Time.|
-|Retraso del recorrido de ida y vuelta de NTP| Retraso del recorrido de ida y vuelta más reciente que experimentó el cliente NTP al recibir una respuesta del servidor en microsegundos. Es el tiempo transcurrido en el cliente NTP entre la transmisión de una solicitud al |servidor NTP y la recepción de una respuesta válida desde el servidor. Este contador permite caracterizar los retrasos que experimenta el cliente NTP. Los recorridos de ida y vuelta mayores o variables pueden agregar ruido a los cálculos de tiempo de NTP, lo que a su vez puede afectar a la precisión de la sincronización de la hora a través de NTP.|
+|Retraso del recorrido de ida y vuelta de NTP| Retraso del recorrido de ida y vuelta más reciente que experimentó el cliente NTP al recibir una respuesta del servidor en microsegundos. Es el tiempo transcurrido en el cliente NTP entre la transmisión de una solicitud al servidor NTP y la recepción de una respuesta válida desde el servidor. Este contador permite caracterizar los retrasos que experimenta el cliente NTP. Los recorridos de ida y vuelta mayores o variables pueden agregar ruido a los cálculos de tiempo de NTP, lo que a su vez puede afectar a la precisión de la sincronización de la hora a través de NTP.|
 |Recuento de orígenes de cliente NTP| Número activo de orígenes de la hora NTP que usa el cliente NTP. Se trata de un recuento de direcciones IP distintas y activas de los servidores horarios que responden a las solicitudes de este cliente. Este número puede ser mayor o menor que el de los elementos del mismo nivel configurados, en función de la resolución de DNS de los nombres del mismo nivel y de la capacidad de alcance actual.|
 |Solicitudes entrantes del servidor NTP| Número de solicitudes recibidas por el servidor NTP (solicitudes por segundo).|
 |Respuestas salientes del servidor NTP| Número de solicitudes respondidas por el servidor NTP (solicitudes por segundo).|
@@ -218,7 +218,7 @@ Para comprobar que los cambios se han realizado correctamente, puedes ejecutar l
 
  w32tm /query /configuration
 
-Valor|Configuración esperada|
+Value|Configuración esperada|
 ----- | ----- |
 AnnounceFlags| 5 (Local)|
 NtpServer |(Local)|
@@ -228,13 +228,13 @@ NtpClient| (Local)|
 
  w32tm /query /status /verbose
 
-Valor| Configuración esperada|
+Value| Configuración esperada|
 ----- | ----- |
 Stratum| 1 (primary reference - syncd by radio clock)|
 ReferenceId| 0x4C4F434C (source name: "LOCAL")|
 Origen| Local CMOS Clock|
 Phase Offset| 0.0000000s|
-Server Role| 576 (Reliable Time Service)|
+Rol de servidor| 576 (Reliable Time Service)|
 
 #### <a name="windows-server-2016-on-3rd-party-virtual-platforms"></a>Windows Server 2016 en plataformas virtuales de terceros
 Cuando Windows se virtualiza, el hipervisor es responsable de proporcionar la hora de forma predeterminada. Sin embargo, los miembros unidos a un dominio deben sincronizarse con el controlador de dominio para que Active Directory funcione correctamente. Lo ideal es deshabilitar la virtualización en cualquier momento entre el invitado y el host de cualquier plataforma virtual de terceros.

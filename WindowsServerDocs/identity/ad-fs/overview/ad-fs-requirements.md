@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c8ab160699bc6a961f4fbed6c58cf072a395a313
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a2f4c9ac05e72083fab3e3a926dbdd2876214a7b
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407426"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517540"
 ---
 # <a name="ad-fs-requirements"></a>Requisitos de AD FS
 
@@ -206,7 +206,7 @@ Cuando la autenticación de AD FS se hace a través de un explorador o un contr
   
 Tanto el firewall que se encuentra entre el Proxy de aplicación web y la granja de servidores de federación como el firewall entre los clientes y el Proxy de aplicación web deben tener el puerto 443 TCP habilitado para la entrada.  
   
-Además, si se requiere la autenticación de certificados de usuario de cliente \(autenticación de clientTLS mediante certificados de usuario X509\) y el punto de conexión certauth en el puerto 443 no está habilitado, AD FS 2016 requiere que el puerto 49443 TCP esté habilitado en el firewall entre los clientes y el Proxy de aplicación web. (Esto no es necesario en el firewall entre el Proxy de aplicación web y los servidores de federación\). 
+Además, si se requiere la autenticación de certificados de usuario de cliente \(autenticación de clientTLS mediante certificados de usuario X509\) y el punto de conexión certauth en el puerto 443 no está habilitado, AD FS 2016 requiere que el puerto 49443 TCP esté habilitado en el firewall entre los clientes y el Proxy de aplicación web. Esto no es necesario en el firewall entre el Proxy de aplicación web y los servidores de federación. 
 
 Para obtener información adicional sobre los requisitos de puerto híbrido, consulta [Puertos y protocolos requeridos para Identidad híbrida](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-ports). 
 

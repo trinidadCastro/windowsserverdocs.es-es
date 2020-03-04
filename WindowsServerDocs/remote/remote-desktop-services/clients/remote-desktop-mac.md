@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e73511709bfbee69a6dcbaaff4341c8b067079f3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: ca68087ad238cbbd06c56e41dd65f318adae5222
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949866"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465479"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introducción al cliente de macOS
 
@@ -40,7 +40,7 @@ Sigue estos pasos para empezar a usar Escritorio remoto en un equipo Mac:
 3. Agrega una conexión a Escritorio remoto o un recurso remoto. Usa una conexión para conectarte directamente a un PC Windows y un recurso remoto para usar un programa de RemoteApp, un escritorio basado en sesión o un escritorio virtual publicado de forma local mediante Conexión de RemoteApp y Escritorio. Esta característica está disponible habitualmente en entornos corporativos.
 
 ## <a name="what-about-the-mac-beta-client"></a>¿Qué pasa con el cliente beta de Mac?
-Estamos probando características nuevas en el canal de versión preliminar en HockeyApp. ¿Quieres echarle un vistazo? Ve a [Escritorio remoto de Microsoft para Mac](https://go.microsoft.com/fwlink/?LinkID=619698) y haz clic en **Descargar**. No es necesario que crees una cuenta ni que inicies sesión en HockeyApp para descargar el cliente beta.
+Estamos probando características nuevas en el canal de versión preliminar en AppCenter. ¿Quieres echarle un vistazo? Ve a [Escritorio remoto de Microsoft para Mac](https://aka.ms/rdmacbeta) y haz clic en **Descargar**. No es necesario que crees una cuenta ni que inicies sesión en AppCenter para descargar el cliente beta.
 
 Si ya tienes el cliente, puedes comprobar las actualizaciones para asegurarte de que tienes la última versión. En el cliente beta, haz clic en **Microsoft Remote Desktop Beta** (Beta de Escritorio remoto de Microsoft) en la parte superior y, luego, haz clic en **Check for updates** (Buscar actualizaciones). 
 
