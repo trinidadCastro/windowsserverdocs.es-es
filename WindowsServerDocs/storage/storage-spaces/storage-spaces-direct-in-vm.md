@@ -9,16 +9,16 @@ author: eldenchristensen
 ms.date: 10/25/2017
 description: Cómo implementar Espacios de almacenamiento directo en un clúster invitado de máquina virtual, por ejemplo, en Microsoft Azure.
 ms.localizationpriority: medium
-ms.openlocfilehash: ab0ce792c5a948e763a48493a78ccdac7a6fe74c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 34241183a56cdb9be4690e1edd68b56320cc01de
+ms.sourcegitcommit: a6ec589a39ef104ec2be958cd09d2f679816a5ab
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366049"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78261924"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>Uso de Espacios de almacenamiento directo en clústeres de máquinas virtuales invitadas
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 Puede implementar Espacios de almacenamiento directo en un clúster de servidores físicos o en clústeres invitados de máquinas virtuales, como se describe en este tema. Este tipo de implementación ofrece almacenamiento virtual compartido en un conjunto de máquinas virtuales sobre una nube privada o pública para que las soluciones de alta disponibilidad de la aplicación se puedan usar para aumentar la disponibilidad de las aplicaciones.
 
@@ -65,10 +65,6 @@ Las consideraciones siguientes se aplican al implementar Espacios de almacenamie
     Get-storagesubsystem clus* | set-storagehealthsetting -name “System.Storage.PhysicalDisk.AutoReplace.Enabled” -value “False”
     ```
 
--   No compatible: Instantánea o restauración de disco virtual de nivel de host
-
-    En su lugar, use soluciones tradicionales de copia de seguridad de nivel de invitado para realizar copias de seguridad y restaurar los datos en los volúmenes de Espacios de almacenamiento directo.
-
 -   Aumente el valor de tiempo de espera de e/s de espacios de almacenamiento para proporcionar mayor resistencia a la latencia de almacenamiento VHD/VHDX/VMDK posible en los clústeres invitados.
 
     `HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\spaceport\\Parameters\\HwTimeout`
@@ -76,6 +72,16 @@ Las consideraciones siguientes se aplican al implementar Espacios de almacenamie
     `dword: 00007530`
 
     El equivalente decimal del hexadecimal 7530 es 30000, que es de 30 segundos. Tenga en cuenta que el valor predeterminado es 1770 hexadecimal o 6000 decimal, que es de 6 segundos.
+
+## <a name="not-supported"></a>Incompatible
+
+-   Instantánea o restauración de disco virtual de nivel de host
+
+    En su lugar, use soluciones tradicionales de copia de seguridad de nivel de invitado para realizar copias de seguridad y restaurar los datos en los volúmenes de Espacios de almacenamiento directo.
+
+-   Cambio de tamaño de disco virtual de nivel de host
+
+    Los discos virtuales expuestos a través de la máquina virtual deben tener el mismo tamaño y características. La adición de más capacidad al grupo de almacenamiento se puede realizar agregando más discos virtuales a cada una de las máquinas virtuales y agregándolas al grupo. Se recomienda encarecidamente usar discos virtuales del mismo tamaño y características que los discos virtuales actuales.
 
 ## <a name="see-also"></a>Vea también
 
