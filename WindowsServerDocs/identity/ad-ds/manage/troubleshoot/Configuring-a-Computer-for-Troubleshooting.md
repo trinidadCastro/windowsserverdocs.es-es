@@ -9,12 +9,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8e11883de9f89d0b95ed0fc35b4f5f3941ef82a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53af8acd7da8f9008c88ad7c6c14b00e63801847
+ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368897"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278560"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>Configuración de un equipo para la solución de problemas
 
@@ -42,19 +42,19 @@ El monitor de confiabilidad y rendimiento también incluye el monitor de confiab
 
 ### <a name="set-logging-levels"></a>Establecer los niveles de registro
 
-Si la información que recibe en el registro del servicio de directorio Visor de eventos no es suficiente para solucionar problemas, aumente los niveles de registro mediante la entrada del registro adecuada en **HKEY_LOCAL_ MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics**.
+Si la información que recibe en el registro del servicio de directorio Visor de eventos no es suficiente para solucionar problemas, aumente los niveles de registro mediante la entrada del registro adecuada en **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\ntds\diagnostics**.
 
 De forma predeterminada, los niveles de registro para todas las entradas se establecen en **0**, lo que proporciona la cantidad mínima de información. El nivel de registro más alto es **5**. Al aumentar el nivel de una entrada, se registran eventos adicionales en el registro de eventos del servicio de directorio.
 
-Utilice el procedimiento siguiente para cambiar el nivel de registro de una entrada de diagnóstico. Para completar este procedimiento, se requiere como mínimo la pertenencia a **Admins. del dominio** o equivalente.
+Utilice el procedimiento siguiente para cambiar el nivel de registro de una entrada de diagnóstico. La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo necesario para completar este procedimiento.
 
 > [!WARNING]
-> Te recomendamos que no modifiques directamente el registro a menos que no haya ninguna otra alternativa. El editor del registro o Windows no validan las modificaciones del registro antes de que se apliquen y, como resultado, se pueden almacenar valores incorrectos. Esto puede dar lugar a errores irrecuperables en el sistema. Cuando sea posible, use directiva de grupo u otras herramientas de Windows, como los complementos de MMC, para llevar a cabo tareas, en lugar de editar el registro directamente. Si tienes que modificar el registro, ten mucha precaución.
+> Te recomendamos que no modifiques directamente el registro a menos que no haya ninguna otra alternativa. Ni el editor del Registro ni Windows validan las modificaciones del Registro antes de que se apliquen. Como resultado, se pueden almacenar valores incorrectos. Esto puede dar lugar a errores irrecuperables en el sistema. Cuando sea posible, use directiva de grupo u otras herramientas de Windows, como los complementos de MMC, para llevar a cabo tareas, en lugar de editar el registro directamente. Si tienes que modificar el registro, ten mucha precaución.
 >
 
 Para cambiar el nivel de registro de una entrada de diagnóstico
 
-1. Haga clic en **iniciar** > **Ejecutar** > escriba **regedit** > haga clic en **Aceptar**.
+1. Haga clic en **inicio** > **Ejecutar** > escriba **regedit** > haga clic en **Aceptar**.
 2. Desplácese a la entrada para la que desea establecer el inicio de sesión.
    * EJEMPLO: HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics
 3. Haga doble clic en la entrada y, en **base**, haga clic en **decimal**.

@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45c9946cc53fe3a901c3f6ee53f082a5b3d086c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 71525e4051a079eb9a3d0c8c197c8157b53e5e67
+ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379652"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278550"
 ---
 # <a name="certutil"></a>certutil
 
 Certutil. exe es un programa de línea de comandos que se instala como parte de los servicios de Certificate Server. Puede usar certutil. exe para volcar y mostrar la información de configuración de la entidad de certificación (CA), configurar servicios de Certificate Server, realizar copias de seguridad y restaurar componentes de CA y comprobar certificados, pares de claves y cadenas de certificados.
 
-Cuando se ejecuta certutil en una entidad de certificación sin parámetros adicionales, se muestra la configuración de la entidad de certificación actual. Cuando cerutil se ejecuta en una entidad de certificación que no es de, el comando tiene como valor predeterminado ejecutar el verbo certutil [-dump](#-dump) .
+Cuando se ejecuta certutil en una entidad de certificación sin parámetros adicionales, se muestra la configuración de la entidad de certificación actual. Cuando se ejecuta certutil en una entidad de certificación que no sea de, el comando toma como valor predeterminado el verbo certutil [-dump](#-dump) .
 
 > [!WARNING]
 > Es posible que las versiones anteriores de certutil no proporcionen todas las opciones que se describen en este documento. Puede ver todas las opciones que proporciona una versión específica de certutil; para ello, ejecute los comandos que se muestran en la sección [notación de sintaxis](#syntax-notations) .
@@ -143,17 +143,17 @@ En la tabla siguiente se describen los verbos que se pueden utilizar con el coma
   - `certutil -v -? > certutilhelp.txt`
   - `notepad certutilhelp.txt`
 
-En la tabla siguiente se describe la notación que se usa para indicar la sintaxis de línea de comandos.
+La siguiente tabla describe la notación que se usa para indicar la sintaxis de línea de comandos.
 
 
 |            Notación             |                  Descripción                  |
 |---------------------------------|-----------------------------------------------|
-| Texto sin corchetes o llaves |         Elementos que debe escribir como se muestra          |
-|  \<texto dentro de los corchetes angulares >  | Marcador de posición para el que se debe proporcionar un valor. |
+| Texto sin corchetes ni llaves |         Elementos que se deben escribir como se muestran          |
+|  \<texto dentro de los corchetes angulares >  | Marcador de posición para el que debe proporcionar un valor |
 |  [Texto entre corchetes]  |                Elementos opcionales                 |
-|      {Texto entre llaves}       |       Conjunto de elementos necesarios; Elija una       |
-|         Barra vertical (          |                       ) simple                       |
-|          Puntos suspensivos (...)           |          Elementos que se pueden repetir           |
+|      {Texto entre llaves}       |       Conjunto de elementos requeridos; elija uno.       |
+|         Barra vertical (          |                       )                       |
+|          Puntos suspensivos (…)           |          Elementos que pueden estar repetidos           |
 
 [Menú](#menu) volver a
 
@@ -1703,16 +1703,16 @@ En esta sección se definen las opciones que se pueden especificar con el comand
 |-------|-----------|
 |-nullsign|Usar hash de datos como Signatura|
 |-f|Forzar sobrescritura|
-|-Enterprise|Usar el almacén de certificados del registro de la máquina local|
+|-enterprise|Usar el almacén de certificados del registro de la máquina local|
 |-usuario|Usar claves de HKEY_CURRENT_USER o el almacén de certificados|
 |-GroupPolicy|Usar directiva de grupo almacén de certificados|
-|-UT|Mostrar plantillas de usuario|
+|-ut|Mostrar plantillas de usuario|
 |-MT|Mostrar plantillas de equipo|
 |-Unicode|Escribir la salida redirigida en Unicode|
 |-UnicodeText|Escribir archivo de salida en Unicode|
 |-GMT|Mostrar horas como GMT|
 |-segundos|Mostrar horas con segundos y milisegundos|
-|-silencioso|Usar marca silenciosa para adquirir el contexto de cifrado|
+|-silent|Usar marca silenciosa para adquirir el contexto de cifrado|
 |-División|Dividir elementos ASN. 1 incrustados y guardar en archivos|
 |-v|Operación detallada|
 |-PrivateKey|Mostrar datos de contraseña y de clave privada|
@@ -1720,7 +1720,7 @@ En esta sección se definen las opciones que se pueden especificar con el comand
 |-urlfetch|Recuperación y comprobación de certificados AIA y CRL de CDP|
 |-config Machine\CAName|Cadena de nombre de equipo y CA|
 |-PolicyServer URLOrId|Identificador o dirección URL del servidor de directivas. Para la selección U/I, use-PolicyServer. Para todos los servidores de directivas, use-PolicyServer \*|
-|-Anónimo|Usar credenciales SSL anónimas|
+|-Anonymous|Usar credenciales SSL anónimas|
 |-Kerberos|Usar credenciales SSL de Kerberos|
 |-ClientCertificate ClientCertId|Use las credenciales SSL del certificado X. 509. Para la selección U/I, use-clientCertificate.|
 |-UserName nombredeusuario|Use una cuenta con nombre para las credenciales SSL. Para la selección U/I, use-UserName.|
@@ -1728,7 +1728,7 @@ En esta sección se definen las opciones que se pueden especificar con el comand
 |-controlador de dominio Nombrededc|Establecer como destino un controlador de dominio específico|
 |-Restrict RestrictionList|Lista de restricciones separadas por comas. Cada restricción consta de un nombre de columna, un operador relacional y un entero constante, una cadena o una fecha. Un nombre de columna puede ir precedido de un signo más o menos para indicar el criterio de ordenación. Ejemplos:</br>"RequestId = 47"</br>"+ RequesterName > = a, RequesterName < b"</br>"-RequesterName > dominio, disposición = 21"|
 |-out ColumnList|Lista de columnas separadas por comas|
-|-p contraseña|Contraseña|
+|-p contraseña|Password|
 |-Protectto SAMNameAndSIDList|Lista de SID/nombre SAM separados por comas|
 |-Proveedor de CSP|Proveedor|
 |-t tiempo de espera|Tiempo de espera de captura de URL en milisegundos|

@@ -1,5 +1,5 @@
 ---
-title: llamada
+title: call
 description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 0e5f9f2b0102c12ee0925bb434fdeddde85e34cd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 89097ec5d3711b3d8831f8c33b3778ed0752246f
+ms.sourcegitcommit: ee8fa8e1293f29229b5ce1b0f3d4a07ba99568f5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379721"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280196"
 ---
-# <a name="call"></a>llamada
+# <a name="call"></a>call
 
 
 
@@ -45,7 +45,7 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 |      \<BatchParameters >       |                                            Especifica la información de línea de comandos requerida por el programa por lotes.                                             |
 |           :\<etiqueta >           |                                            Especifica la etiqueta a la que desea que salte un control de programa por lotes.                                             |
 |         \<argumentos >          |                     Especifica la información de la línea de comandos que se va a pasar a la nueva instancia del programa por lotes, a partir de *: etiqueta.*                     |
-|              /?               |                                                             Muestra la ayuda en el símbolo del sistema.                                                             |
+|              /?               |                                                             Muestra la Ayuda en el símbolo del sistema.                                                             |
 
 ## <a name="batch-parameters"></a>Parámetros de Batch
 
@@ -78,9 +78,9 @@ En la tabla siguiente se muestra cómo se pueden combinar modificadores con los 
 |% ~ DP $ ruta de acceso: 1|Busca en los directorios que aparecen en la variable de entorno PATH de **%1**y, a continuación, se expande a la letra de unidad y la ruta de acceso del primer directorio encontrado.|
 |% ~ ftza1|Expande **%1** para mostrar una salida similar al comando **dir** .|
 
-En los ejemplos anteriores, **%1** y path se pueden reemplazar por otros valores válidos. La sintaxis de <strong>%~</strong> finaliza con un número de argumento válido. Los modificadores de <strong>%~</strong> no se pueden usar con **%\\\*** .
+En los ejemplos anteriores, **%1** y path se pueden reemplazar por otros valores válidos. La sintaxis de <strong>%~</strong> finaliza con un número de argumento válido. Los modificadores de <strong>%~</strong> no se pueden usar con **%\*** .
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Usar parámetros de Batch
 
@@ -98,7 +98,7 @@ En los ejemplos anteriores, **%1** y path se pueden reemplazar por otros valores
 
     Si las extensiones de comando están habilitadas, **Call** acepta la *etiqueta* como destino de la llamada. La sintaxis correcta es la siguiente:
 
-    `call :\<Label> <Arguments>`
+    `call :<Label> <Arguments>`
 
 ## <a name="BKMK_examples"></a>Example
 
