@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: a0d32edd7ebc23fa724439710c6511642d9c49a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407642"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371498"
 ---
 # <a name="create-a-relying-party-trust"></a>Creación de una relación de confianza para usuario autenticado
 
@@ -25,7 +25,7 @@ En el siguiente documento se proporciona información sobre la creación manual 
 
 Para agregar una nueva relación de confianza para usuario autenticado mediante el complemento de administración de AD FS\-en y configurar manualmente los valores, realice el siguiente procedimiento en un servidor de Federación.  
 
-El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).
+La pertenencia al grupo **Administradores** o equivalente en el equipo local es el requisito mínimo necesario para completar este procedimiento.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).
   
 1. En Administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **Administración de AD FS**.  
   
@@ -35,7 +35,7 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 3.  En la página de **bienvenida** , elija **reconocimiento de notificaciones** y haga clic en **iniciar**.  
 ![usuario de confianza](media/Create-a-Relying-Party-Trust/addtrust2.PNG) 
   
-4.  En la página **Seleccionar origen de datos**, haga clic en **Escribir manualmente los datos acerca del usuario de confianza** y, a continuación, en **Siguiente**.  
+4.  En la página **Seleccionar origen de datos**, haz clic en **Escribir manualmente los datos acerca del usuario de confianza** y luego en **Siguiente**.  
 ![usuario de confianza](media/Create-a-Relying-Party-Trust/addtrust3.PNG) 
   
 5.  En la **página especificar nombre para mostrar** , escriba un nombre en **nombre para mostrar**, en **notas** escriba una descripción para esta relación de confianza para usuario autenticado y, a continuación, haga clic en **siguiente**.  
@@ -48,7 +48,7 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
   
     -   Active la casilla **Habilitar compatibilidad para el protocolo WS\-Federation Passive** . En el usuario de **confianza WS\-dirección URL del Protocolo de Federación pasiva**, escriba la dirección URL de esta relación de confianza para usuario autenticado y, a continuación, haga clic en **siguiente**.  
   
-    -   Active la casilla **Habilitar compatibilidad con el protocolo SAML 2.0 WebSSO**. En **dirección URL del servicio SSO del usuario de confianza SAML 2,0**, escriba el lenguaje de marcado de ASERCIÓN de seguridad \(SAML\) dirección URL del punto de conexión de servicio para esta relación de confianza para usuario autenticado y, a continuación, haga clic en **siguiente**.  
+    -   Activa la casilla **Habilitar compatibilidad con el protocolo SAML 2.0 WebSSO**. En **dirección URL del servicio SSO del usuario de confianza SAML 2,0**, escriba el lenguaje de marcado de ASERCIÓN de seguridad \(SAML\) dirección URL del punto de conexión de servicio para esta relación de confianza para usuario autenticado y, a continuación, haga clic en **siguiente**.  
 ![usuario de confianza](media/Create-a-Relying-Party-Trust/addtrust6.PNG)   
 
 8. En la página **Configurar identificadores**, especifica uno o varios identificadores para este usuario de confianza, haz clic en **Agregar** para agregarlos a la lista y haz clic en **Siguiente**.  
@@ -57,7 +57,7 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 9.  En la **Directiva elegir Access Control** , seleccione una directiva y haga clic en **siguiente**.  Para obtener más información acerca de las directivas de Access Control, consulte [directivas de Access Control en AD FS](Access-Control-Policies-in-AD-FS.md). 
 ![usuario de confianza](media/Create-a-Relying-Party-Trust/addtrust9.PNG)
 
-10. En la página **Listo para agregar confianza** , revisa la configuración y haz clic en **Siguiente** para guardar la información de la relación de confianza para usuario autenticado.  
+10. En la página **Listo para agregar confianza**, revisa la configuración y haz clic en **Siguiente** para guardar la información de la relación de confianza para usuario autenticado.  
    ![usuario de confianza](media/Create-a-Relying-Party-Trust/addtrust10.PNG) 
 11. En la página **Finalizar**, haga clic en **Cerrar**. Esta acción muestra automáticamente el cuadro de diálogo **Editar reglas de notificaciones**.  
 ![usuario de confianza](media/Create-a-Relying-Party-Trust/addtrust11.PNG) 
@@ -69,7 +69,7 @@ Para agregar una nueva relación de confianza para usuario autenticado con el co
 >[!NOTE]
 >Aunque la práctica habitual es usar certificados con nombres de host sin calificar como https://myserver, estos certificados no tienen ningún valor de seguridad y pueden permitir que un atacante suplante un Servicio de federación que está publicando metadatos de Federación. Por lo tanto, al consultar los metadatos de Federación, solo debe usar un nombre de dominio completo como https://myserver.contoso.com.
 
-El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).
+La pertenencia al grupo **Administradores** o equivalente en el equipo local es el requisito mínimo necesario para completar este procedimiento.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).
 
 
 1. En Administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **Administración de AD FS**.  
@@ -89,7 +89,7 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 
 7. En la página listo para agregar confianza, revisa la configuración y haz clic en **siguiente** para guardar la información de la relación de confianza para usuario autenticado.
 
-8. En la página finalizar, haga clic en **cerrar**. Esta acción muestra automáticamente el cuadro de diálogo editar reglas de notificaciones. Para obtener más información sobre cómo continuar agregando reglas de notificaciones para esta relación de confianza para usuario autenticado, consulta Referencias adicionales.
+8. En la página finalizar, haga clic en **cerrar**. Esta acción muestra automáticamente el cuadro de diálogo Editar reglas de notificaciones. Para obtener más información sobre cómo continuar agregando reglas de notificaciones para esta relación de confianza para usuario autenticado, consulta Referencias adicionales.
 
 
 
