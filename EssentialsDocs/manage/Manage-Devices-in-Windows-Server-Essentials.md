@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 48eb7009215e484fb00e704c7b328340240321d2
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865154"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371243"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>Administrar dispositivos en Windows Server Essentials
 
@@ -74,7 +74,7 @@ ms.locfileid: "70865154"
   
 ### <a name="computer-tasks-in-the-dashboard"></a>Tareas de equipo en el panel  
   
-|Nombre de la tarea|Descripción|  
+|Nombre de tarea|Descripción|  
 |---------------|-----------------|  
 |Ver las propiedades del equipo|Se muestra información general del equipo seleccionado y se le permite ver los detalles de las copias de seguridad del equipo.|  
 |Configurar las copias de seguridad de este equipo|Se ejecuta el asistente para la configuración de copias de seguridad.|  
@@ -100,7 +100,7 @@ ms.locfileid: "70865154"
   
 3.  En la lista de cuentas de usuario, seleccione la cuenta de usuario que quiera cambiar.  
   
-4.  En el panel **tareas de\> la cuenta de usuario de <** , haga clic en **ver las propiedades de la cuenta**. Aparece la página **Propiedades** de la cuenta de usuario.  
+4.  En el panel tareas de la **cuenta de usuario de <\>** , haga clic en **ver las propiedades de la cuenta**. Aparece la página **Propiedades** de la cuenta de usuario.  
   
 5.  En la pestaña **Acceso al equipo**, seleccione el equipo al que este usuario puede acceder de forma remota y, a continuación, haga clic en **Aceptar**.  
   
@@ -114,7 +114,7 @@ ms.locfileid: "70865154"
   
 1.  Abra el panel de Windows Server Essentials.  
   
-2.  En la barra de navegación, haga clic en la pestaña **Dispositivos** .  
+2.  En la barra de navegación, haga clic en la pestaña **Dispositivos**.  
   
 3.  En la lista de equipos, haga clic en el equipo que quiera quitar de la red y, a continuación, haga clic en **Quitar el equipo**.  
   
@@ -127,15 +127,15 @@ ms.locfileid: "70865154"
   
 2.  En la barra de navegación, haga clic en **DISPOSITIVOS**.  
   
-3.  Para Windows Server Essentials: En el panel global **Tareas de los usuarios**, haga clic en **Implementar directiva de grupo**.  
+3.  En Windows Server Essentials: en el panel **tareas de usuarios** globales, haga clic en **implementar Directiva de grupo**.  
   
-     Para Windows Server Essentials: En el panel global **Tareas de los dispositivos**, haga clic en **Implementar directiva de grupo**.  
+     En Windows Server Essentials: en el panel **tareas de dispositivos** globales, haga clic en **implementar Directiva de grupo**.  
   
 4.  Se abrirá el asistente para implementar directivas de grupo.  
   
 5.  En la página **Habilitar la directiva de grupo de redirección de carpetas** del asistente, puede elegir las carpetas de usuario que quiera redirigir.  
   
-6.  En la página **Habilitar la configuración de directivas de seguridad** del asistente, puede habilitar la configuración de directiva de grupo para **Windows Update**, **Windows Defender**y el **firewall de red**.  
+6.  En la página **Habilitar la configuración de directivas de seguridad** del asistente, puede habilitar la configuración de directiva de grupo para **Windows Update**, **Windows Defender** y el **firewall de red**.  
   
 7.  Haga clic en **Finalizar** para implementar la configuración de directiva de grupo.  
   
@@ -175,7 +175,7 @@ ms.locfileid: "70865154"
   
 1.  En la lista de equipos, seleccione la cuenta en la que quiera ver o cambiar las propiedades.  
   
-2.  En el panel **tareas\> de < nombreDeEquipo** , haga clic en **ver las propiedades del equipo**. Aparece la página **Propiedades** para los equipos.  
+2.  En el panel **tareas de < nombredeequipo\>** , haga clic en **ver las propiedades del equipo**. Aparece la página **Propiedades** para los equipos.  
   
 3.  Haga clic en una pestaña para ver las propiedades de ese equipo.  
   
