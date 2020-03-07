@@ -9,11 +9,11 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
 ms.openlocfilehash: 9024557dd42ede27144bf10aa5873b6bb12d585c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403488"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371475"
 ---
 # <a name="review-prerequisites-for-the-host-guardian-service"></a>Revisar los requisitos previos para el servicio de protección de host
 
@@ -28,11 +28,11 @@ En este tema se tratan los requisitos previos de HGS y los pasos iniciales para 
 
     Si desea ejecutar HGS como un clúster físico de tres nodos (para disponibilidad), debe tener tres servidores físicos. (Como procedimiento recomendado para la agrupación en clústeres, los tres servidores deben tener hardware muy similar).
   
--   **Sistema operativo**: La atestación de clave de host requiere Windows Server 2019 Standard o Datacenter Edition que funcione con la [atestación V2](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#versioned-attestation-policies). En el caso de la atestación basada en TPM, HGS puede ejecutar Windows Server 2019 o Windows Server 2016, Standard o Datacenter Edition.
+-   **Sistema operativo**: la atestación de clave de host requiere Windows Server 2019 Standard o Datacenter Edition que funcione con la [atestación V2](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#versioned-attestation-policies). En el caso de la atestación basada en TPM, HGS puede ejecutar Windows Server 2019 o Windows Server 2016, Standard o Datacenter Edition.
 
--   **Roles de servidor**: Servicio de protección de host y roles de servidor de soporte.
+-   **Roles de servidor**: servicio de protección de host y roles de servidor de soporte.
 
--   **Permisos y privilegios de configuración para el dominio de tejido (host)** : Tendrá que configurar el reenvío de DNS entre el dominio de tejido (host) y el dominio de HGS. 
+-   **Permisos y privilegios de configuración para el dominio de tejido (host)** : deberá configurar el reenvío de DNS entre el dominio de tejido (host) y el dominio de HGS. 
     
 ## <a name="upgrading-hgs"></a>Actualización de HGS
 
