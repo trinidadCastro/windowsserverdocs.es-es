@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 3eace9281d9fcdea5262274ac7fb20ec30d30fb4
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590574"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371241"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>Administrar Acceso web remoto en Windows Server Essentials
 
@@ -74,9 +74,9 @@ ms.locfileid: "68590574"
   
 2.  Haga clic en **Configuración** y, a continuación, en la pestaña **Acceso desde cualquier lugar**.  
   
-3.  Haga clic en **configurar**. Se muestra el asistente para configuración de Acceso desde cualquier lugar.  
+3.  Haga clic en **Configurar**. Se muestra el asistente para configuración de Acceso desde cualquier lugar.  
   
-4.  En la página **Elegir las características de Acceso desde cualquier lugar que desea habilitar** , active la casilla **Acceso Web remoto** .  
+4.  En la página **Elegir las características de Acceso desde cualquier lugar que desea habilitar**, active la casilla **Acceso Web remoto**.  
   
 5.  Siga las instrucciones para completar el asistente.  
   
@@ -102,9 +102,9 @@ ms.locfileid: "68590574"
   
 2. Haga clic en la cuenta de usuario que desea administrar y en **Ver las propiedades de la cuenta** en el **Panel de tareas**.  
   
-3. En el cuadro de diálogo **Propiedades** , haga clic en la pestaña **Acceso desde cualquier lugar** .  
+3. En el cuadro de diálogo **Propiedades**, haga clic en la pestaña **Acceso desde cualquier lugar**.  
   
-4. En la pestaña **Acceso desde cualquier lugar** , active la casilla **Permitir el Acceso Web remoto y obtener acceso a las aplicaciones de servicios web** para permitir que un usuario se conecte al servidor con acceso Web remoto.  
+4. En la pestaña **Acceso desde cualquier lugar**, active la casilla **Permitir el Acceso Web remoto y obtener acceso a las aplicaciones de servicios web** para permitir que un usuario se conecte al servidor con acceso Web remoto.  
   
 5. Haga clic en **Aplicar** y en **Aceptar**.  
   
@@ -127,15 +127,15 @@ ms.locfileid: "68590574"
   
 3.  En la lista de cuentas de usuario, seleccione aquella a la que desea conceder permisos de acceso remoto al escritorio.  
   
-4.  En el panel **tareas de\> la cuenta de usuario de <** , haga clic en **propiedades**.  
+4.  En el panel tareas de la **cuenta de usuario de <\>** , haga clic en **propiedades**.  
   
-5.  En **< propiedades de\> la cuenta de usuario**, haga clic en la pestaña **acceso desde cualquier lugar** .  
+5.  En **< cuenta de usuario\> propiedades**, haga clic en la pestaña **acceso desde cualquier lugar** .  
   
 6.  En la pestaña **Acceso desde cualquier lugar**, haga lo siguiente:  
   
     1.  Para permitir que un usuario se conecte al servidor mediante VPN, active la casilla **Permitir red privada virtual (VPN)** .  
   
-    2.  Para permitir que un usuario se conecte al servidor mediante acceso Web remoto, active la casilla **Permitir el Acceso Web remoto y obtener acceso a las aplicaciones de servicios web** .  
+    2.  Para permitir que un usuario se conecte al servidor mediante acceso Web remoto, active la casilla **Permitir el Acceso Web remoto y obtener acceso a las aplicaciones de servicios web**.  
   
 7.  Haga clic en **Aplicar** y en **Aceptar**.  
   
@@ -165,7 +165,7 @@ ms.locfileid: "68590574"
   
 1.  En el panel de Windows Server Essentials, haga clic en **Configuración**.  
   
-2.  Haga clic en la pestaña **Acceso desde cualquier lugar** y, en la sección **Enrutador** , haga clic en **Configurar**. Se iniciará el Asistente para configurar el enrutador.  
+2.  Haga clic en la pestaña **Acceso desde cualquier lugar** y, en la sección **Enrutador**, haga clic en **Configurar**. Se iniciará el Asistente para configurar el enrutador.  
   
 3.  Siga las instrucciones del asistente para terminar de configurar el enrutador nuevo.  
   
@@ -189,11 +189,11 @@ ms.locfileid: "68590574"
   
 ##### <a name="to-enable-remote-desktop-services-activex-controls"></a>Para habilitar los controles ActiveX de Servicios de Escritorio remoto:  
   
-1.  En Internet Explorer, haga clic en **Herramientas**y **Opciones de Internet**.  
+1.  En Internet Explorer, haga clic en **Herramientas** y **Opciones de Internet**.  
   
-2.  En la pestaña **Seguridad** , haga clic en **Nivel personalizado**.  
+2.  En la pestaña **Seguridad**, haga clic en **Nivel personalizado**.  
   
-3.  En la sección **Controles y complementos de ActiveX** , haga lo siguiente:  
+3.  En la sección **Controles y complementos de ActiveX**, haga lo siguiente:  
   
     1.  En **Descargar controles ActiveX firmados**, haga clic en **Pedir datos**.  
   
@@ -248,7 +248,7 @@ ms.locfileid: "68590574"
 >  Windows Live admite caracteres especiales en la contraseña de cuenta de Microsoft que el servidor no acepta. Si usa un dominio personalizado de Microsoft, asegúrese de que la contraseña de cuenta de Microsoft contiene solo caracteres compatibles con el servidor. El servidor no admite el uso de los caracteres $, /, ' y %.  
   
 ###  <a name="BKMK_UseNewName"></a>Usar un nombre de dominio nuevo o existente  
- Para configurar automáticamente el nombre de dominio en un servidor que ejecuta Windows Server Essentials, debe usar uno de los proveedores de servicios de nombres de dominio que aparecen en el Asistente para configurar el nombre de dominio. Puede obtener un nuevo nombre de dominio o usar uno existente. Realiza una de las siguientes acciones:  
+ Para configurar automáticamente el nombre de dominio en un servidor que ejecuta Windows Server Essentials, debe usar uno de los proveedores de servicios de nombres de dominio que aparecen en el Asistente para configurar el nombre de dominio. Puede obtener un nuevo nombre de dominio o usar uno existente. Realice una de las siguientes acciones:  
   
 -   Si desea obtener un nuevo nombre de dominio de uno de los proveedores de servicios de nombres de dominio que aparecen en el asistente, haga clic en **Deseo configurar un nombre de dominio nuevo**.  
   
@@ -287,7 +287,7 @@ ms.locfileid: "68590574"
 -   Letras (en inglés o con los caracteres localizados), números o guiones (-). El nombre debe comenzar y terminar con una letra o un número.  
   
     > [!NOTE]
-    >  Los nombres de dominio no distinguen mayúsculas de minúsculas.  
+    >  Los nombres de dominio no diferencian mayúsculas de minúsculas.  
   
 ###  <a name="BKMK_Prefixes"></a>Elegir un prefijo de nombre de dominio  
  Un nombre de dominio se compone de etiquetas jerárquicas.  
@@ -420,7 +420,7 @@ ms.locfileid: "68590574"
 #### <a name="image-file-types"></a>Tipos de archivo de imagen  
  Puede reemplazar la imagen de fondo y el logotipo del sitio web predeterminados por los tipos de archivo de imagen siguientes:  
   
--   Mapa de bits (*. \*BMP,. \*DIB,. RLE)  
+-   Mapa de bits (*. bmp, \*. dib, \*. RLE)  
   
 -   GIF (*.gif)  
   
@@ -444,9 +444,9 @@ ms.locfileid: "68590574"
   
 2.  Haga clic en **Configuración** y, a continuación, en la pestaña **Acceso desde cualquier lugar**.  
   
-3.  Haga clic en **Reparar**. Se iniciará el **Asistente para reparación del acceso Web remoto** .  
+3.  Haga clic en **Reparar**. Se iniciará el **Asistente para reparación del acceso Web remoto**.  
   
-4.  Haga clic en **Next**. El asistente analiza el acceso Web remoto, identifica el problema e intenta repararlo.  
+4.  Haga clic en **Siguiente**. El asistente analiza el acceso Web remoto, identifica el problema e intenta repararlo.  
   
 5.  Si recibe una alerta cuando finalice el asistente, haga clic en **Reintentar** para volver a intentar la reparación. Si recibe otra alerta, compruébela para obtener información adicional sobre el problema y los pasos necesarios para solucionarlo.  
   

@@ -8,15 +8,15 @@ ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 7c1a70e36dfac9b23ded8f920ffcc8cccbfff023
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
-ms.translationtype: HT
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903956"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371123"
 ---
 # <a name="install-and-manage-extensions"></a>Instalar y administrar extensiones
 
->Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
 
 Windows Admin Center se ha creado como una plataforma extensible en que cada herramienta y tipo de conexión es una extensión que se puede instalar, desinstalar y actualizar de forma individual. Puedes buscar nuevas extensiones publicadas por Microsoft y otros desarrolladores, así como instalarlas y actualizarlas de forma individual sin tener que actualizar toda la instalación de Windows Admin Center. También puedes configurar un recurso compartido de archivos o fuente de NuGet independiente y distribuir extensiones para usarlas internamente en tu organización.
 
@@ -36,7 +36,7 @@ Windows Admin Center admite varias fuentes y puede ver y administrar paquetes de
 1. Haz clic en el botón **Configuración** de la parte superior derecha. A continuación, en el panel izquierdo, haz clic en **Extensiones**.
 2. En el panel de la derecha, haz clic en la pestaña **Fuentes**.
 3. Haz clic en el botón **Agregar** para agregar otra fuente. Para una fuente de NuGet, escribe la dirección URL de la fuente de NuGet V2. El proveedor o el administrador de la fuente de NuGet debe poder proporcionar la información de la dirección URL. En un recurso compartido de archivos, escribe la ruta de acceso completa del recurso compartido de archivos en el que se almacenan los archivos de paquete de extensión (.nupkg).
-4. Haz clic en **Agregar**. Si la puerta de enlace debe ejecutarse en un modo con privilegios elevados para realizar este cambio, se te presentará una petición de elevación de UAC.
+4. Haga clic en **Agregar**. Si la puerta de enlace debe ejecutarse en modo con privilegios elevados para realizar este cambio, se te presentará una petición de elevación de UAC.
 
 La lista **Extensiones disponibles** mostrará las extensiones de todas las fuentes registradas. Puede comprobar de qué fuente es cada extensión en la columna**Fuente del paquete**.
 
@@ -86,4 +86,4 @@ La versión preliminar de Windows Admin Center incluye un módulo de PowerShell 
 
 [!INCLUDE [ps-extensions](../includes/ps-extensions.md)]
 
-### <a name="learn-more-about-building-an-extension-with-the-windows-admin-center-sdkextendextensibility-overviewmd"></a>[Más información sobre la creación de una extensión con el SDK de Windows Admin Center](../extend/extensibility-overview.md).
+### <a name="learn-more-about-building-an-extension-with-the-windows-admin-center-sdk"></a>[Más información sobre la creación de una extensión con el SDK de Windows Admin Center](../extend/extensibility-overview.md).
