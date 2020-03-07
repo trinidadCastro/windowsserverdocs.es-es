@@ -11,11 +11,11 @@ ms.date: 06/07/2019
 description: Instrucciones paso a paso para implementar el almacenamiento definido por software con Espacios de almacenamiento directo en Windows Server como una infraestructura hiperconvergida o una infraestructura convergente (también conocida como desagregada).
 ms.localizationpriority: medium
 ms.openlocfilehash: 60b29cbebb19cd8f1ce364d1eb7e920759375285
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950019"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371777"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implementar espacios de almacenamiento directo
 
@@ -43,7 +43,7 @@ Recopile la información siguiente:
 
 - **Redes RDMA.** Hay dos tipos de protocolos RDMA: iWarp y RoCE. Observe cuál de los adaptadores de red usa y, si RoCE, tenga en cuenta también la versión (V1 o V2). En el caso de RoCE, tenga en cuenta también el modelo del conmutador para parte superior del rack.
 
-- **IDENTIFICADOR DE VLAN.** Tenga en cuenta el identificador de VLAN que se usará para los adaptadores de red del sistema operativo de administración en los servidores, si hay alguno. Deberías poder obtenerlo del administrador de red.
+- **IDENTIFICADOR DE VLAN.** Tenga en cuenta el identificador de VLAN que se usará para los adaptadores de red del sistema operativo de administración en los servidores, si hay alguno. Podrá obtenerlo del administrador de red.
 
 ## <a name="step-1-deploy-windows-server"></a>Paso 1: Implementar Windows Server
 
@@ -112,7 +112,7 @@ Net localgroup Administrators <Domain\Account> /add
 
 El siguiente paso consiste en instalar roles de servidor en cada servidor. Para ello, puede usar el [centro de administración de Windows](../../manage/windows-admin-center/use/manage-servers.md), [Administrador del servidor](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)) o PowerShell. Estos son los roles que se van a instalar:
 
-- Clúster de conmutación por error
+- Clústeres de conmutación por error
 - Hyper-V
 - Servidor de archivos (si desea hospedar recursos compartidos de archivos, como en el caso de una implementación convergente)
 - Protocolo de puente del centro de datos (si usas RoCEv2 en lugar de adaptadores de red iWARP)
@@ -138,7 +138,7 @@ Invoke-Command ($ServerList) {
 }
 ```
 
-## <a name="step-2-configure-the-network"></a>Paso 2: Configurar la red
+## <a name="step-2-configure-the-network"></a>Paso 2: Configurar la red
 
 Si va a implementar Espacios de almacenamiento directo en máquinas virtuales, omita esta sección.
 
@@ -216,7 +216,7 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 
 En este paso, creará un clúster con los nodos que ha validado para la creación del clúster en el paso anterior mediante el siguiente cmdlet de PowerShell.
 
-Al crear el clúster, obtendrá una advertencia que indica: "hubo problemas al crear el rol en clúster que puede impedir que se inicie. Para obtener más información, consulte el archivo de informe siguiente." Puede omitir con seguridad esta advertencia. Es debido a no hay ningún disco disponible para el cuórum de clúster. Se recomienda configurar un testigo del recurso compartido de archivos o un testigo en la nube después de crear el clúster.
+Al crear el clúster, obtendrá una advertencia que indica: "hubo problemas al crear el rol en clúster que puede impedir que se inicie. Para obtener más información, consulte el archivo de informe siguiente." Puede omitir esta advertencia de forma segura. Es debido a no hay ningún disco disponible para el cuórum de clúster. Se recomienda configurar un testigo del recurso compartido de archivos o un testigo en la nube después de crear el clúster.
 
 > [!Note]
 > Si los servidores están usando direcciones IP estáticas, modifique el siguiente comando para reflejar la dirección IP estática agregando el parámetro siguiente y especificando la dirección IP: -StaticAddress &lt;X.X.X.X&gt;.
@@ -225,7 +225,7 @@ Al crear el clúster, obtendrá una advertencia que indica: "hubo problemas al c
 > New-Cluster –Name <ClusterName> –Node <MachineName1,MachineName2,MachineName3,MachineName4> –NoStorage
 > ```
 
-Después de crear el clúster, puede tardar tiempo la replicación de la entrada DNS para el nombre del clúster. El tiempo depende del entorno y de la configuración de replicación de DNS. Si la resolución del clúster no se realiza correctamente, en la mayoría de los casos puedes solucionarlo mediante el uso del nombre de máquina de un nodo que sea miembro activo del clúster en lugar del nombre de clúster.
+Después de crear el clúster, puede tardar tiempo la replicación de la entrada DNS para el nombre del clúster. El tiempo depende del entorno y de la configuración de replicación de DNS. Si la resolución del clúster no se realiza correctamente, en la mayoría de los casos puede solucionarlo correctamente mediante el uso del nombre de la máquina de un nodo que sea un miembro activo del clúster que pueda utilizarse en lugar del nombre de clúster.
 
 ### <a name="step-34-configure-a-cluster-witness"></a>Paso 3,4: configurar un testigo de clúster
 
@@ -386,7 +386,7 @@ CD $ScriptFolder
 
 Después de implementar el servidor de archivos en clúster, se recomienda probar el rendimiento de la solución mediante cargas de trabajo sintéticas antes de que se muestren las cargas de trabajo reales. Esto le permite confirmar que la solución funciona correctamente y solucionar cualquier problema persistente antes de agregar la complejidad de las cargas de trabajo. Para obtener más información, vea rendimiento de los [espacios de almacenamiento de prueba con cargas de trabajo sintéticas](https://technet.microsoft.com/library/dn894707.aspx).
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 -   [Espacios de almacenamiento directo en Windows Server 2016](storage-spaces-direct-overview.md)
 -   [Descripción de la memoria caché en Espacios de almacenamiento directo](understand-the-cache.md)
