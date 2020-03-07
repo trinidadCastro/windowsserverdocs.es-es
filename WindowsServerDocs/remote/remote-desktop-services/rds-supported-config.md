@@ -14,11 +14,11 @@ ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
 ms.openlocfilehash: e501d550e5371c668f7e243f00106a0b79f694dc
-ms.sourcegitcommit: 214847318401cebdcb7f1924a731b4439c9d8a24
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74187882"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370697"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>Configuraciones admitidas para Servicios de Escritorio remoto
 
@@ -31,7 +31,7 @@ Con esto en mente, estas son las directrices básicas para las configuraciones c
 > [!NOTE]
 > Asegúrate de revisar los [requisitos del sistema para Windows Server 2016](../../get-started/system-requirements.md) y los [requisitos del sistema para Windows Server 2019](../../get-started-19/sys-reqs-19.md).
 
-## <a name="best-practices"></a>Procedimiento recomendado
+## <a name="best-practices"></a>Procedimientos recomendados
 
 - Usa Windows Server 2019 para tu infraestructura de Escritorio remoto (acceso web, puerta de enlace, agente de conexión y servidor de licencias). Windows Server 2019 es compatible con versiones anteriores de estos componentes, lo que significa que un host de sesión de Escritorio remoto de Windows Server 2016 o Windows Server 2012 R2 puede conectarse a un agente de conexión de Escritorio remoto de 2019, pero no al revés.
 
@@ -49,9 +49,9 @@ Windows Server 2016 elimina la restricción del número de agentes de conexió
 
 |Más de tres agentes de conexión de alta disponibilidad|RDSH o RDVH 2019|RDSH o RDVH 2016|RDSH o RDVH 2012 R2|
 |---|---|---|---|
- |Agente de conexión de Windows Server 2019|Se admite|Se admite|Se admite|
- |Agente de conexión de Windows Server 2016|N/D|Se admite|Se admite|
- |Agente de conexión de Windows Server 2012 R2|N/D|N/D|No se admite|
+ |Agente de conexión de Windows Server 2019|Compatible|Compatible|Compatible|
+ |Agente de conexión de Windows Server 2016|N/A|Compatible|Compatible|
+ |Agente de conexión de Windows Server 2012 R2|N/A|N/A|No admitido|
 
 ## <a name="support-for-graphics-processing-unit-gpu-acceleration"></a>Compatibilidad con la aceleración de la unidad de procesamiento de gráficos (GPU)
 
@@ -69,7 +69,7 @@ Las GPU que se presentan mediante hipervisores o plataformas en la nube que no s
 
 En la tabla siguiente se muestran los escenarios compatibles con diferentes versiones de hosts de RDSH.
 
-|Característica|Windows Server 2008 R2|Windows Server 2012 R2|Windows Server 2016|Windows Server 2019|
+|Característica|Windows Server 2008 R2|Windows Server 2012 R2|Windows Server 2016|Windows Server 2019|
 |---|---|---|---|---|
 |Uso de GPU de hardware para todas las sesiones de RDP|No|Sí|Sí|Sí|
 |Codificación de hardware H.264/AVC (si es compatible con la GPU)|No|No|Sí|Sí|
@@ -81,7 +81,7 @@ En la tabla siguiente se muestran los escenarios compatibles con diferentes vers
 
 En la tabla siguiente se muestra la compatibilidad con escenarios de GPU en el sistema operativo del cliente.
 
-|Característica|Windows 7 SP1|Windows 8.1|Windows 10|
+|Característica|Windows 7 SP1|Windows 8.1|Windows 10|
 |---|---|---|---|
 |Uso de GPU de hardware para todas las sesiones de RDP|No|Sí|Sí|
 |Codificación de hardware H.264/AVC (si es compatible con la GPU)|No|No|Windows 10 1703 y versiones posteriores|
@@ -94,7 +94,7 @@ En la tabla siguiente se muestra la compatibilidad con escenarios de GPU en el s
 Los Servicios de Escritorio remoto admiten vGPU de RemoteFX cuando la máquina virtual se ejecuta como invitado de Hyper-V en Windows Server 2012 R2 o Windows Server 2016. Los siguientes sistemas operativos invitados son compatibles con la vGPU de RemoteFX:
 
 - Windows 7 SP1
-- Windows 8.1
+- Windows 8.1
 - Windows 10 1703 o posterior
 - Windows Server 2016 solo en una implementación de sesión única
 - Windows Server 2019 solo en una implementación de sesión única
@@ -108,7 +108,7 @@ Los Servicios de Escritorio remoto admiten las GPU físicas que se presentan con
 
 Los servidores host de virtualización de Escritorio remoto de Windows Server 2016 y Windows Server 2019 son compatibles con los siguientes sistemas operativos invitados:
 
-- Windows 10 Enterprise
+- Windows 10 Enterprise
 - Windows 8.1 Enterprise
 - Windows 7 SP1 Enterprise
 

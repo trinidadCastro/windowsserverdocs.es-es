@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: d9002a1530e114f490ddf1cfb0e5706ddec52431
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433157"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371239"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>Administrar el mantenimiento del sistema en Windows Server Essentials
 
@@ -26,17 +26,17 @@ ms.locfileid: "66433157"
  En este tema se explica cómo ver y responder a todas las alertas de la red mediante el panel.  
   
 > [!NOTE]
->  En Windows Server Essentials y Windows Server 2012 R2 con el rol experiencia con Windows Server Essentials instalado, ya no se muestran en el Visor de alertas de las alertas de estado para el servidor y los equipos cliente de la red, pero en su lugar, se pueden ver en el  **Informes de mantenimiento** pestaña de la **inicio** página.  
+>  En Windows Server Essentials y Windows Server 2012 R2 con el rol de experiencia con Windows Server Essentials instalado, las alertas de estado de los equipos cliente y servidor de la red ya no se muestran en el visor de alertas, sino que se pueden ver en la pestaña **informes de mantenimiento** de la página **principal** .  
   
- Windows Server Essentials supervisa activamente cada equipo que está conectado al servidor y alerta al administrador de problemas relacionados con el estado del sistema, incluidas las actualizaciones críticas, falta de protección contra malware, las definiciones de virus obsoletas en cliente los equipos y otros problemas importantes que requieren acción. Estos problemas se muestran como alertas en el Visor de alertas, que se puede iniciar desde el panel del servidor o Launchpad del equipo cliente en Windows Server Essentials, o en el **informes de mantenimiento** ficha en Windows Server Essentials. De forma predeterminada, las alertas se actualizan cada 30 minutos, pero puede evaluar la red en busca de alertas en cualquier momento haciendo clic en **Actualizar** en el Visor de alertas o en la pestaña **Informes de mantenimiento**.  
+ Windows Server Essentials supervisa activamente cada equipo que está conectado al servidor y alerta al administrador de problemas relacionados con el estado del sistema, incluidas las actualizaciones críticas, la falta de protección contra malware, las definiciones de virus no actualizadas en el cliente. equipos y otros problemas importantes que requieren una acción. Estos problemas se muestran como alertas en el visor de alertas, que se puede iniciar desde el panel del servidor o desde el Launchpad del equipo cliente en Windows Server Essentials, o en la pestaña **informes de mantenimiento** de Windows Server Essentials. De forma predeterminada, las alertas se actualizan cada 30 minutos, pero puede evaluar la red en busca de alertas en cualquier momento haciendo clic en **Actualizar** en el Visor de alertas o en la pestaña **Informes de mantenimiento**.  
   
  Los siguientes temas le ayudarán a comprender, ver y responder a las alertas del Visor de alertas y también le proporcionan instrucciones para configurar el servidor de modo que reciba notificaciones de alerta por correo electrónico:  
   
--   [Acerca del mantenimiento de informes en Agregar](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_AddIn)  
+-   [Acerca del complemento de informes de mantenimiento](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_AddIn)  
   
--   [Ver alertas mediante el Visor de alertas](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_View)  
+-   [Ver alertas mediante el visor de alertas](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_View)  
   
--   [Organizar las alertas en el Visor de alertas](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Organize)  
+-   [Organizar alertas en el visor de alertas](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Organize)  
   
 -   [Responder a alertas](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Respond)  
   
@@ -44,28 +44,28 @@ ms.locfileid: "66433157"
   
 -   [Posibles alertas de equipo](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Potential)  
   
-##  <a name="BKMK_AddIn"></a> Acerca del mantenimiento de informes en Agregar  
- El complemento de informes de mantenimiento para Windows Server Essentials le da información consolidada sobre la red de Windows Server Essentials y le permite distribuir esta información a otras personas. Esta información se puede ver en la pestaña **Informes** del panel. Con la pestaña **Informes** , puede hacer lo siguiente:  
+##  <a name="BKMK_AddIn"></a>Acerca del complemento de informes de mantenimiento  
+ El complemento de informes de mantenimiento para Windows Server Essentials le da información consolidada sobre la red de Windows Server Essentials y le permite distribuir esta información a otras personas. Esta información se puede ver en la pestaña **Informes** del panel. Con la pestaña **Informes**, puede hacer lo siguiente:  
   
--   [Generar un informe a petición o mediante programación](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Generate)  
+-   [Generar un informe a petición o según la programación](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Generate)  
   
 -   [Personalizar el contenido del informe](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Customize)  
   
--   [El informe de correo electrónico](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_emailreport)  
+-   [Enviar el informe por correo electrónico](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_emailreport)  
   
 > [!NOTE]
->  **Windows Server Essentials:** Puede descargar el complemento en el informe de mantenimiento para Windows Server Essentials desde el [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?LinkId=266342).  
+>  **Windows Server Essentials:** Puede descargar el complemento de informes de mantenimiento para Windows Server Essentials desde el centro de [descarga de Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=266342).  
 >   
->  **Windows Server Essentials:** De forma predeterminada, el complemento de informe de mantenimiento se integra con Windows Server Essentials o Windows Server 2012 R2 con el rol experiencia con Windows Server Essentials instalado, y los informes de mantenimiento se muestran en el **informes de mantenimiento** ficha el escritorio **inicio** página.  
+>  **Windows Server Essentials:** De forma predeterminada, el complemento de informes de mantenimiento se integra con Windows Server Essentials o Windows Server 2012 R2 con el rol de experiencia con Windows Server Essentials instalado, y los informes de mantenimiento se muestran en la pestaña **informes de mantenimiento** de la página **principal** del panel.  
   
-###  <a name="BKMK_Generate"></a> Generar un informe a petición o mediante programación  
- Después de instalar el complemento de informes de mantenimiento y reiniciar el panel, se agrega al panel una nueva pestaña, **Informes** . Puede generar un informe de mantenimiento a petición en cualquier momento haciendo clic en la tarea **Generar un informe de mantenimiento** de la pestaña **Informes** .  
+###  <a name="BKMK_Generate"></a>Generar un informe a petición o según la programación  
+ Después de instalar el complemento de informes de mantenimiento y reiniciar el panel, se agrega al panel una nueva pestaña, **Informes**. Puede generar un informe de mantenimiento a petición en cualquier momento haciendo clic en la tarea **Generar un informe de mantenimiento** de la pestaña **Informes**.  
   
  Cuando se genera un informe de mantenimiento, se crea un nuevo elemento en el panel de la lista, identificado por la fecha y la hora en que se generó el informe. Para abrir un elemento, puede hacer doble clic en el panel de la lista o seleccionarlo y después hacer clic en **Abrir el informe de mantenimiento** en el panel de tareas. El informe se muestra en una nueva ventana en formato HTML.  
   
- Además de generar un informe manualmente, también puede generar un informe de forma automática cada día o cada hora si lo prefiere. Para hacerlo, haga clic en **Personalizar la configuración del informe de mantenimiento** en el panel de tareas y después haga clic en la pestaña **Programación y correo electrónico**. La característica **Programación** está desactivada de forma predeterminada y puede activarla si selecciona la casilla de verificación **Generar un informe de mantenimiento a la hora programada**.  
+ Además de generar un informe manualmente, también puede generar un informe de forma automática cada día o cada hora si lo prefiere. Para ello, en el panel de tareas, haga clic en **personalizar la configuración del informe de mantenimiento**y, a continuación, haga clic en la pestaña **programación y correo electrónico** . La característica **programación** está desactivada de forma predeterminada y puede activarla activando la casilla **generar un informe de mantenimiento a la hora programada** .  
   
-###  <a name="BKMK_Customize"></a> Personalizar el contenido del informe  
+###  <a name="BKMK_Customize"></a>Personalizar el contenido del informe  
  El informe de mantenimiento contiene lo siguiente:  
   
 - **Alertas críticas y advertencias** . Esto es coherente con las alertas críticas y advertencias que aparecen en el Visor de alertas del panel. Las alertas de información no se incluyen en el informe de mantenimiento.  
@@ -80,18 +80,18 @@ ms.locfileid: "66433157"
   
 - **Almacenamiento**. La lista de unidades y su capacidad aparece en la sección **Detalles**.  
   
-  En el informe de mantenimiento, vea primero el **Resumen**y luego, si hay elementos que tengan un icono rojo de error o un icono amarillo de advertencia, haga clic en el vínculo **Detalles** de la misma fila para ver los detalles sobre ellos.  
+  En el informe de mantenimiento, vea primero el **Resumen** y luego, si hay elementos que tengan un icono rojo de error o un icono amarillo de advertencia, haga clic en el vínculo **Detalles** de la misma fila para ver los detalles sobre ellos.  
   
-  Si no está interesado en algunos de los puntos de datos que se incluyen en el informe de forma predeterminada, puede personalizar el contenido del informe haciendo clic en **Personalizar la configuración del informe de mantenimiento** en el panel de tareas y después en la pestaña **Contenido**. Desactive las casillas de verificación para el contenido que no desea ver en el informe. Por ejemplo, si tiene su propio plan de copia de seguridad de servidor y no desea ver las advertencias sobre las copias de seguridad de servidor, puede excluir las copias de seguridad del servidor desde el informe desactivando el **copia de seguridad de servidor** casilla de verificación.  
+  Si no está interesado en algunos de los puntos de datos que se incluyen en el informe de forma predeterminada, puede personalizar el contenido del informe haciendo clic en **personalizar la configuración del informe de mantenimiento** en el panel de tareas y, a continuación, haciendo clic en la pestaña **contenido** . Desactive las casillas de verificación del contenido que no desea ver en el informe. Por ejemplo, si tiene su propio plan de copia de seguridad del servidor y no quiere ver las advertencias sobre las copias de seguridad del servidor, puede excluir las copias de seguridad del servidor del informe desactivando la casilla **copia de seguridad del servidor** .  
   
-###  <a name="BKMK_emailreport"></a> El informe de correo electrónico  
+###  <a name="BKMK_emailreport"></a>Enviar el informe por correo electrónico  
  Tener que iniciar sesión en el panel para leer informes sigue siendo poco práctico para algunos administradores, especialmente si tienen que administrar más de un servidor. Con la característica de correo electrónico activada, después de generarse un informe, se envía un correo electrónico con el contenido del informe a una lista de direcciones de correo electrónico especificadas. El administrador puede ver fácilmente este informe desde cualquier dispositivo o aplicación cliente y asegurarse de que el servidor está funcionando de forma óptima.  
   
- En el cuadro de diálogo **Personalizar la configuración del informe de mantenimiento**, después de habilitar el correo electrónico, cambiar la configuración de SMTP y especificar una lista de los destinatarios de correo electrónico, observará que aparece una nueva tarea en el panel de tareas: **Enviar el informe de mantenimiento por correo electrónico**. Para obtener más información acerca de la configuración de SMTP, consulte [Set up email notifications for alerts](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Email).  
+ En el cuadro de diálogo **Personalizar la configuración del informe de mantenimiento**, después de habilitar el correo electrónico, cambiar la configuración de SMTP y especificar una lista de los destinatarios de correo electrónico, observará que aparece una nueva tarea en el panel de tareas: **Enviar el informe de mantenimiento por correo electrónico**. Para más información sobre la configuración de SMTP, vea [Configurar notificaciones por correo electrónico para alertas](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Email).  
   
  Puede seleccionar un informe existente y después hacer clic en **Enviar el informe de mantenimiento por correo electrónico**. También puede generar un nuevo informe y hacer que se envíe automáticamente a su bandeja de entrada. Si ha configurado una programación para que el informe se genere automáticamente, lo recibirá automáticamente en su bandeja de entrada después de generarse cada día (o cada hora) según esté programado.  
   
-##  <a name="BKMK_View"></a> Ver alertas mediante el Visor de alertas  
+##  <a name="BKMK_View"></a>Ver alertas mediante el visor de alertas  
  En esta sección se describe cómo usar el panel o Launchpad para abrir el Visor de alertas a fin de consultar el estado de todos los equipos de la red del servidor.  
   
 #### <a name="to-open-the-alert-viewer-by-using-the-dashboard"></a>Para abrir el Visor de alertas mediante el panel  
@@ -106,7 +106,7 @@ ms.locfileid: "66433157"
   
 2.  Haga clic en cualquiera de los iconos de alerta mostrados (alerta crítica, advertencia e informativa) en la parte inferior de Launchpad para abrir el Visor de alertas y después siga las instrucciones del panel de detalles del Visor de alertas para resolver la alerta.  
   
-##  <a name="BKMK_Organize"></a> Organizar las alertas en el Visor de alertas  
+##  <a name="BKMK_Organize"></a>Organizar alertas en el visor de alertas  
  Puede organizar las alertas en el Visor de alertas y hacer que se muestren en función de su gravedad (alerta crítica, advertencia o informativa) o en función del nombre del equipo.  
   
 #### <a name="to-organize-alerts-in-the-alert-viewer"></a>Para organizar las alertas en el Visor de alertas  
@@ -117,11 +117,11 @@ ms.locfileid: "66433157"
   
 3.  Expanda la lista desplegable **Organizar** y después elija una de las siguientes acciones:  
   
-    1.  Seleccione **Filtrar por equipo**y haga clic en el nombre del equipo del que quiere ver las alertas. Esto muestra solo las alertas del equipo seleccionado en el Visor de alertas.  
+    1.  Seleccione **Filtrar por equipo** y haga clic en el nombre del equipo del que quiere ver las alertas. Esto muestra solo las alertas del equipo seleccionado en el Visor de alertas.  
   
-    2.  Seleccione **Filtrar por tipo de alerta**y haga clic en el tipo de alerta (crítica, advertencia o informativa) que quiere ver. Esto muestra solo el tipo de alerta seleccionado en el Visor de alertas.  
+    2.  Seleccione **Filtrar por tipo de alerta** y haga clic en el tipo de alerta (crítica, advertencia o informativa) que quiere ver. Esto muestra solo el tipo de alerta seleccionado en el Visor de alertas.  
   
-##  <a name="BKMK_Respond"></a> Responder a alertas  
+##  <a name="BKMK_Respond"></a>Responder a alertas  
  Cuando se detecta una alerta, puede optar por tomar una de las medidas siguientes:  
   
 -   [Resolver una alerta](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Resolve)  
@@ -132,13 +132,13 @@ ms.locfileid: "66433157"
   
 -   [Eliminar una alerta](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_4)  
   
-###  <a name="BKMK_Resolve"></a> Resolver una alerta  
+###  <a name="BKMK_Resolve"></a>Resolver una alerta  
  Siga las instrucciones de resolución del Visor de alertas para resolver la alerta. Una vez resuelta una alerta, aún se muestra en el Visor de alertas hasta que se actualice.  
   
-###  <a name="BKMK_3"></a> Omitir una alerta  
+###  <a name="BKMK_3"></a>Omitir una alerta  
  Puede omitir una alerta si prefiere responder a ella más adelante. Cuando se omite una alerta, sigue apareciendo en el Visor de alertas, pero está deshabilitada y atenuada. Una alerta omitida no se incluye en la evaluación del mantenimiento global del equipo. Para solucionar una alerta omitida, primero hay que habilitarla.  
   
-##### <a name="to-ignore-an-alert"></a>Para omitir una alerta  
+##### <a name="to-ignore-an-alert"></a>Omitir una alerta  
   
 1. Abra Launchpad en un equipo que esté conectado al servidor de Windows Server Essentials.  
   
@@ -148,7 +148,7 @@ ms.locfileid: "66433157"
   
    Para responder a una alerta deshabilitada, deberá habilitarla.  
   
-###  <a name="BKMK_5"></a> Habilitar una alerta  
+###  <a name="BKMK_5"></a>Habilitar una alerta  
  Puede habilitar una alerta que había decidido omitir anteriormente. Después de habilitar la alerta, puede resolverla o eliminarla según sea necesario. La alerta aparece como deshabilitada cuando se marca para omitirse. Cuando se habilita una alerta que se ha deshabilitado previamente, se activa y se vuelve a incluir en la evaluación del mantenimiento general de los equipos.  
   
 ##### <a name="to-enable-an-alert"></a>Para habilitar una alerta  
@@ -159,7 +159,7 @@ ms.locfileid: "66433157"
   
 3.  En el Visor de alertas, haga clic con el botón secundario en la alerta que quiere habilitar y después haga clic en **Habilitar la alerta**.  
   
-###  <a name="BKMK_4"></a> Eliminar una alerta  
+###  <a name="BKMK_4"></a>Eliminar una alerta  
  Puede eliminar una alerta si no quiere resolverla ni omitirla. Puede usar el Visor de alertas en Launchpad para eliminar las alertas generadas para el equipo. Si elimina una alerta y el servidor vuelve a detectar el problema en el siguiente ciclo de evaluación del mantenimiento de la red, se genera una alerta nueva.  
   
 ##### <a name="to-delete-an-alert"></a>Para eliminar una alerta  
@@ -170,14 +170,14 @@ ms.locfileid: "66433157"
   
 3.  En el Visor de alertas, haga clic con el botón secundario en la alerta que quiere eliminar y después haga clic en **Eliminar la alerta**.  
   
-##  <a name="BKMK_Email"></a> Configurar notificaciones por correo electrónico para alertas  
+##  <a name="BKMK_Email"></a>Configurar notificaciones por correo electrónico para alertas  
  Puede configurar el servidor para que le notifique por correo electrónico cuando se produzcan alertas. Las notificaciones por correo electrónico para estas alertas contienen información sobre los problemas de red y los pasos de resolución, que es idéntica a la información que se muestra en el Visor de alertas. Algunas de las evaluaciones del mantenimiento de la red se hacen mediante programación.  
   
  Al configurar el servidor para que envíe notificaciones de alertas por correo electrónico, se envía una notificación por correo electrónico de las alertas que se encuentren durante la evaluación del mantenimiento de la red. Sin embargo, no todas las alertas que se muestran en el Visor de alertas se incluyen en el correo electrónico.  
   
  Cada 30 minutos, se ejecuta en el servidor la tarea de evaluación de alertas por correo electrónico, que evalúa la red en busca de alertas. Se envía una notificación por correo electrónico si se produce una alerta que esté configurada para ese tipo de notificación. Si la alerta sigue activa en el siguiente ciclo de evaluación, no se envía una segunda notificación para no saturar su bandeja de entrada. Sin embargo, si se detecta una alerta nueva en un ciclo posterior de evaluación de alertas, se envía una notificación por correo electrónico que incluye las alertas anteriores y las nuevas.  
   
-###  <a name="BKMK_list"></a> Alertas que dan lugar a notificaciones de correo electrónico  
+###  <a name="BKMK_list"></a>Alertas que dan lugar a notificaciones por correo electrónico  
  Las siguientes alertas del Visor de alertas dan lugar a notificaciones por correo electrónico si se configura el servidor para que envíe notificaciones por correo electrónico en caso de alertas:  
   
 -   Hay errores en una copia de seguridad del equipo cliente.  
@@ -224,7 +224,7 @@ ms.locfileid: "66433157"
   
 -   Error de licencia: Directivas de carga de cumplimiento.  
   
--   Error de licencia: Active Directory Domain Services.  
+-   Error de licencia: Servicios de dominio de Active Directory.  
   
 -   La suscripción a Office 365 ha caducado.  
   
@@ -260,11 +260,11 @@ ms.locfileid: "66433157"
   
 -   Una o varias unidades no funcionan y están desconectadas.  
   
-###  <a name="BKMK_SMTP"></a> Configuración de SMTP en el servidor para enviar notificaciones de alerta por correo electrónico en Windows Server Essentials  
+###  <a name="BKMK_SMTP"></a>Configuración de SMTP en el servidor para enviar notificaciones de alerta por correo electrónico en Windows Server Essentials  
  En esta sección se explica cómo configurar el servidor para enviar notificaciones por correo electrónico en caso de alertas.  
   
 > [!NOTE]
->  Puede descargar el complemento en el informe de mantenimiento para Windows Server Essentials desde el [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?LinkId=266342).  
+>  Puede descargar el complemento de informes de mantenimiento para Windows Server Essentials desde el centro de [descarga de Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=266342).  
   
 ##### <a name="to-set-up-email-notification-for-alerts"></a>Para configurar la notificación de alertas por correo electrónico  
   
@@ -278,7 +278,7 @@ ms.locfileid: "66433157"
   
     1.  En **Desde la dirección de correo electrónico**, escriba la dirección de correo electrónico desde la que quiere que se envíen alertas por correo electrónico. Esta dirección de correo electrónico se mostrará como la dirección del remitente en la notificación de alerta.  
   
-    2.  En **Nombre del servidor SMTP**, en el cuadro de texto **Desde la dirección de correo electrónico** , escriba el nombre del servidor SMTP que especificó en el paso 4a. (Consulte la tabla 1 para ver una lista de algunos nombres de servidor SMTP).  
+    2.  En **Nombre del servidor SMTP**, en el cuadro de texto **Desde la dirección de correo electrónico**, escriba el nombre del servidor SMTP que especificó en el paso 4a. (Consulte la tabla 1 para ver una lista de algunos nombres de servidor SMTP).  
   
     3.  En **Puerto SMTP**, escriba el número de puerto que usa el servidor SMTP para enviar y recibir correo electrónico. (Consulte la tabla 1 para ver los números de puerto que usan algunos de los servidores SMTP).  
   
@@ -291,14 +291,14 @@ ms.locfileid: "66433157"
   
      **Tabla 1** Ejemplos de nombres, requisitos de autenticación y de cifrado SSL y de números de puerto del servidor SMTP  
   
-    |Servidor SMTP|Se requiere SSL|Se requiere autenticación|Número de puerto|Nombre de cuenta/nombre de inicio de sesión|  
+    |SMTP Server|Requiere SSL|Se requiere autenticación|Número de puerto|Nombre de cuenta/nombre de inicio de sesión|  
     |-----------------|------------------|-----------------------------|-----------------|------------------------------|  
     |smtp.gmail.com|Sí|Sí|587|Proporcione la dirección de correo electrónico completa con el nombre de dominio y la contraseña para la autenticación.|  
     |smtp.live.com|Sí|Sí|587|Proporcione la dirección de correo electrónico completa con el nombre de dominio y la contraseña para la autenticación.|  
     |smtp.comcast.net|Sí|No|587|Proporcione la dirección de correo electrónico completa con el nombre de dominio y la contraseña para la autenticación.|  
     |smtp.mail.yahoo.com|No|Sí|25|Proporcione solo la dirección de correo electrónico sin nombre de dominio para el nombre de usuario.|  
   
-5.  En la opción **Destinatarios de correo electrónico**de **Configurar notificación de alertas**, escriba las direcciones de correo electrónico de las personas que quiere que reciban notificaciones de alertas por correo electrónico. Asegúrese de separar cada dirección de correo electrónico con un punto y coma (;).  
+5.  En la opción **Destinatarios de correo electrónico** de **Configurar notificación de alertas**, escriba las direcciones de correo electrónico de las personas que quiere que reciban notificaciones de alertas por correo electrónico. Asegúrese de separar cada dirección de correo electrónico con un punto y coma (;).  
   
 6.  Para comprobar que haya configurado los valores del servidor SMTP correctamente para enviar notificaciones por correo electrónico en caso de alertas, haga clic en **Aplicar y enviar correo electrónico**.  
   
@@ -309,19 +309,19 @@ ms.locfileid: "66433157"
  En esta sección se explica cómo configurar los valores de SMTP para el servidor de modo que pueda recibir informes de mantenimiento por correo electrónico.  
   
 > [!NOTE]
->  De forma predeterminada, el complemento de informe de mantenimiento se integra con Windows Server Essentials o Windows Server 2012 R2 con el rol experiencia con Windows Server Essentials instalado, y los informes de mantenimiento se muestran en el **informes de mantenimiento** ficha el escritorio **inicio** página.  
+>  De forma predeterminada, el complemento de informes de mantenimiento se integra con Windows Server Essentials o Windows Server 2012 R2 con el rol de experiencia con Windows Server Essentials instalado, y los informes de mantenimiento se muestran en la pestaña **informes de mantenimiento** de la página **principal** del panel.  
   
 ##### <a name="to-set-up-email-notification-for-health-reports"></a>Para configurar la notificación de informes de mantenimiento por correo electrónico  
   
 1.  En el **panel**, haga clic en la pestaña **Informes**.  
   
-2.  En el panel de tareas **Tareas de informe de mantenimiento** , haga clic en **Personalizar la configuración del informe de mantenimiento**.  
+2.  En el panel de tareas **Tareas de informe de mantenimiento**, haga clic en **Personalizar la configuración del informe de mantenimiento**.  
   
-3.  En la ventana **Personalizar la configuración del informe de mantenimiento** , haga clic en la pestaña **Programación y correo electrónico** .  
+3.  En la ventana **Personalizar la configuración del informe de mantenimiento**, haga clic en la pestaña **Programación y correo electrónico**.  
   
 4.  En la sección **Correo electrónico** de la pestaña **Programación y correo electrónico**, haga lo siguiente:  
   
-    1.  Haga clic en **Habilitar**y escriba la dirección de correo electrónico desde la que quiere que se envíen los informes de mantenimiento. Esta dirección de correo electrónico se mostrará como la dirección del remitente en los informes de mantenimiento que se envían por correo electrónico.  
+    1.  Haga clic en **Habilitar** y escriba la dirección de correo electrónico desde la que quiere que se envíen los informes de mantenimiento. Esta dirección de correo electrónico se mostrará como la dirección del remitente en los informes de mantenimiento que se envían por correo electrónico.  
   
         1.  En **Nombre del servidor SMTP**, escriba el nombre del servidor SMTP. (Consulte la tabla 1 para ver una lista de algunos nombres de servidor SMTP).  
   
@@ -341,7 +341,7 @@ ms.locfileid: "66433157"
   
      **Tabla 1** Ejemplos de nombres, requisitos de autenticación y de cifrado SSL y de números de puerto del servidor SMTP  
   
-    |Servidor SMTP|Se requiere SSL|Se requiere autenticación|Número de puerto|Nombre de cuenta/nombre de inicio de sesión|  
+    |SMTP Server|Requiere SSL|Se requiere autenticación|Número de puerto|Nombre de cuenta/nombre de inicio de sesión|  
     |-----------------|------------------|-----------------------------|-----------------|------------------------------|  
     |smtp.gmail.com|Sí|Sí|587|Proporcione la dirección de correo electrónico completa con el nombre de dominio y la contraseña para la autenticación.|  
     |smtp.live.com|Sí|Sí|587|Proporcione la dirección de correo electrónico completa con el nombre de dominio y la contraseña para la autenticación.|  
@@ -352,7 +352,7 @@ ms.locfileid: "66433157"
   
 7.  Para comprobar que ha configurado el servidor SMTP correctamente para enviar informes de mantenimiento por correo electrónico, en la pestaña Informe de mantenimiento del panel, seleccione un informe y haga clic en **Enviar el informe de mantenimiento por correo electrónico** desde el panel de tareas.  
   
-##  <a name="BKMK_Potential"></a> Posibles alertas de equipo  
+##  <a name="BKMK_Potential"></a>Posibles alertas de equipo  
  En esta sección se describe cómo se deben comprender y administrar las alertas que son específicas de su equipo conectado al servidor y que aparecen en el Launchpad de su equipo.  
   
  En la tabla siguiente se enumeran algunas de las alertas de equipo que se pueden generar y se muestran en el Visor de alertas si son aplicables a su equipo.  
@@ -365,13 +365,13 @@ ms.locfileid: "66433157"
 |Windows Update está desactivado.|No podrá beneficiarse de las características nuevas y corregidas de las actualizaciones si Windows Update está desactivado. Para activar Windows Update, haga clic en **Abrir Windows Update** en el Visor de alertas.<br /><br /> Si no se muestra la tarea **Abrir Windows Update**, es que no ha iniciado sesión en el equipo donde se ha generado la alerta. Debe haber iniciado sesión en el equipo en el que se ha generado la alerta para ejecutar esta tarea en el Visor de alertas.|  
 |Las actualizaciones importantes deben instalarse.|No podrá beneficiarse de las características nuevas y corregidas de las actualizaciones si Windows Update está desactivado. Para activar Windows Update, haga clic en **Abrir Windows Update** en el Visor de alertas.<br /><br /> Si no se muestra la tarea **Abrir Windows Update**, es que no ha iniciado sesión en el equipo donde se ha generado la alerta. Debe haber iniciado sesión en el equipo en el que se ha generado la alerta para ejecutar esta tarea en el Visor de alertas.|  
 |Reinicie el equipo para aplicar las actualizaciones.|No podrá beneficiarse de las características nuevas y corregidas de las actualizaciones hasta que se apliquen. Guarde todos los datos y reinicie el equipo para aplicar las actualizaciones.|  
-|No hay suficiente espacio disponible en las unidades de disco duro.|Si no se libera espacio, es posible que no pueda guardar más información. Para liberar espacio en el equipo, considere las siguientes opciones:<br /><br /> -Agregar una nueva unidad de disco dura.<br /><br /> -Ejecute **Liberador de espacio en disco** para quitar archivos temporales y antiguos.<br /><br /> -Mover los archivos a una carpeta compartida en otro equipo.<br /><br /> -Guardar los archivos en medios extraíbles, como un CD, DVD o un disco duro externo.|  
+|No hay suficiente espacio disponible en las unidades de disco duro.|Si no se libera espacio, es posible que no pueda guardar más información. Para liberar espacio en el equipo, considere las siguientes opciones:<br /><br /> -Agregar una nueva unidad de disco duro.<br /><br /> -Ejecute el **liberador de espacio en disco** para quitar los archivos antiguos y temporales.<br /><br /> -Mueva los archivos a una carpeta compartida de otro equipo.<br /><br /> -Archivos de almacenamiento en medios extraíbles, como un CD, un DVD o una unidad de disco duro externa.|  
 |El agente **Historial de archivos** no está configurado correctamente en este equipo.|No se pueden crear copias de seguridad del Historial de archivos.|  
 |No se están ejecutando uno o varios servicios.||  
 |Cambie la contraseña de Windows.||  
 |La contraseña de Microsoft Office 365 no es la misma que la contraseña de Windows.||  
   
-###  <a name="BKMK_Protect"></a> Para proteger su equipo  
+###  <a name="BKMK_Protect"></a>Para proteger el equipo  
   
 1.  Abra el Centro de seguridad.  
   
