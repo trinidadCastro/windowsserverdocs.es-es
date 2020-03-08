@@ -8,11 +8,11 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
 ms.openlocfilehash: ace6eb30ae6df2dc29aacc05eb7852e03145df4f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386858"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370659"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>Información general sobre máquinas virtuales blindadas y tejido protegido
 
@@ -34,7 +34,7 @@ Cuando un inquilino crea máquinas virtuales blindadas que se ejecutan en un tej
 
 ![Tejido de host protegido](../media/Guarded-Fabric-Shielded-VM/Guarded-Host-Overview-Diagram.png)
 
-## <a name="video-introduction-to-shielded-virtual-machines"></a>Video: Introducción a las máquinas virtuales blindadas 
+## <a name="video-introduction-to-shielded-virtual-machines"></a>Vídeo: Introducción a las máquinas virtuales blindadas 
 
 <iframe src="https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016/player" width="650" height="440" allowFullScreen frameBorder="0"></iframe>
 
@@ -49,7 +49,7 @@ Se recomienda la atestación de confianza de TPM porque ofrece comprobaciones m�
 
 | **Modo de atestación que elija para los hosts**                                            | **Garantías de host** |
 |-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|**Atestación de confianza de TPM:** Ofrece las protecciones más fuertes posibles, pero también requiere más pasos de configuración. El hardware y el firmware del host deben incluir TPM 2,0 y UEFI 2.3.1 con el arranque seguro habilitado. | Los hosts protegidos se aprueban en función de su identidad de TPM, la secuencia de arranque medida y las directivas de integridad de código para asegurarse de que solo ejecutan código aprobado.| 
+|**Atestación de confianza de TPM:** ofrece los mecanismos de protección más eficaces posible, pero también requiere más pasos de configuración. El hardware y el firmware del host deben incluir TPM 2,0 y UEFI 2.3.1 con el arranque seguro habilitado. | Los hosts protegidos se aprueban en función de su identidad de TPM, la secuencia de arranque medida y las directivas de integridad de código para asegurarse de que solo ejecutan código aprobado.| 
 | **Atestación de clave de host:** Diseñado para admitir el hardware del host existente donde TPM 2,0 no está disponible. Requiere menos pasos de configuración y es compatible con el hardware de servidor más habitual. | Los hosts protegidos se aprueban en función de la posesión de la clave. | 
 
 Otro modo denominado **atestación de confianza de administrador** está en desuso a partir de Windows Server 2019. Este modo se basó en la pertenencia a un host protegido en un grupo de seguridad de Active Directory Domain Services (AD DS) designado. La atestación de clave de host proporciona una identificación de host similar y es más fácil de configurar. 
@@ -99,21 +99,21 @@ Las máquinas virtuales blindadas están diseñadas para su uso en tejidos en do
 
 En la tabla siguiente se resumen las diferencias entre las máquinas virtuales blindadas y compatibles con el cifrado.
 
-| Capacidad        | Generación 2 - Cifrado admitido     | Generación 2 - Blindado         |
+| Capability        | Generación 2 - Cifrado admitido     | Generación 2 - Blindado         |
 |----------|--------------------|----------------|
 |Arranque seguro        | Sí, necesario pero configurable        | Sí, necesario y exigido    |
 |Vtpm               | Sí, necesario pero configurable        | Sí, necesario y exigido    |
 |Cifrar el estado de la máquina virtual y tráfico de migración en vivo | Sí, necesario pero configurable |  Sí, necesario y exigido  |
 |Componentes de integración | Configurable por el administrador de tejido      | Algunos componentes de integración bloqueados (por ejemplo, intercambio de datos, PowerShell Direct) |
 |Conexión a máquina virtual (consola), dispositivos HID (por ejemplo, teclado, mouse) | Activado, no se puede deshabilitar | Habilitada en hosts a partir de la versión 1803 de Windows Server; Deshabilitado en hosts anteriores |
-|Puertos COM/serie   | Se admite                             | Deshabilitado (no se puede habilitar) |
-|Asociar un depurador (al proceso de la máquina virtual)<sup>1</sup>| Se admite          | Deshabilitado (no se puede habilitar) |
+|Puertos COM/serie   | Compatible                             | Deshabilitado (no se puede habilitar) |
+|Asociar un depurador (al proceso de la máquina virtual)<sup>1</sup>| Compatible          | Deshabilitado (no se puede habilitar) |
 
 <sup>1</sup> los depuradores tradicionales que se asocian directamente a un proceso, como WinDbg. exe, se bloquean para las máquinas virtuales blindadas porque el proceso de trabajo de la máquina virtual (VMWP. exe) es una luz de proceso protegido (PPL). Las técnicas de depuración alternativas, como las utilizadas por LiveKd. exe, no se bloquean. A diferencia de las máquinas virtuales blindadas, el proceso de trabajo para las máquinas virtuales compatibles con el cifrado no se ejecuta como PPL, por lo que los depuradores tradicionales como WinDbg. exe seguirán funcionando con normalidad. 
 
 Tanto las máquinas virtuales blindadas como las máquinas virtuales que admiten el cifrado seguirán admitiendo las funcionalidades de administración comunes del tejido, tales como la migración en vivo, réplica de Hyper-V o los puntos de control de máquina virtual, entre otras.
 
-## <a name="the-host-guardian-service-in-action-how-a-shielded-vm-is-powered-on"></a>El servicio de protección de host en acción: Cómo se enciende una máquina virtual blindada
+## <a name="the-host-guardian-service-in-action-how-a-shielded-vm-is-powered-on"></a>El Servicio de protección de host en acción: cómo se enciende una máquina virtual blindada
 
 ![Archivo de datos de blindaje](../media/Guarded-Fabric-Shielded-VM/shielded-vms-how-a-shielded-vm-is-powered-on.png)
 
@@ -125,7 +125,7 @@ Tanto las máquinas virtuales blindadas como las máquinas virtuales que admiten
 
     El host protegido solicita atestación. El modo de atestación viene determinado por el Servicio de protección de host:
 
-    **Atestación de confianza de TPM**: El host de Hyper-V envía información que incluye:
+    **Atestación de confianza de TPM**: el host de Hyper-V envía información que incluye:
 
        - Información de identificación de TPM (su clave de aprobación)
        - Información sobre los procesos que se iniciaron durante la secuencia de arranque más reciente (el registro TCG)
@@ -133,9 +133,9 @@ Tanto las máquinas virtuales blindadas como las máquinas virtuales que admiten
 
        Attestation happens when the host starts and every 8 hours thereafter. If for some reason a host doesn't have an attestation certificate when a VM tries to start, this also triggers attestation.
 
-    **Atestación de clave de host**: El host de Hyper-V envía la mitad pública del par de claves. HGS valida que la clave de host está registrada. 
+    **Atestación de clave de host**: el host de Hyper-V envía la mitad pública del par de claves. HGS valida que la clave de host está registrada. 
     
-    **Atestación de administrador de confianza**: El host de Hyper-V envía un vale de Kerberos, que identifica los grupos de seguridad en los que se encuentra el host. HGS valida que el host pertenezca a un grupo de seguridad que se configuró anteriormente en el administrador de HGS de confianza.
+    **Atestación de administrador de confianza**: el host de Hyper-V envía un vale de Kerberos, que identifica los grupos de seguridad en los que se encuentra el host. HGS valida que el host pertenezca a un grupo de seguridad que se configuró anteriormente en el administrador de HGS de confianza.
 
 3. La atestación se realiza correctamente (o se produce un error).
 
@@ -179,6 +179,6 @@ Tanto las máquinas virtuales blindadas como las máquinas virtuales que admiten
 ## <a name="see-also"></a>Vea también
 
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)
-- Blog: [Blog de seguridad de centro de seguridad y nube privada](https://blogs.technet.microsoft.com/datacentersecurity/)
-- Video: [Introducción a Virtual Machines blindado](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
-- Video: [Profundice en máquinas virtuales blindadas con Windows Server 2016 Hyper-V](https://channel9.msdn.com/events/Ignite/2016/BRK3124)
+- Blog: [blog de seguridad de centro de seguridad y nube privada](https://blogs.technet.microsoft.com/datacentersecurity/)
+- Vídeo: [Introducción a los virtual machines blindados](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
+- Vídeo: [profundizar en máquinas virtuales blindadas con Windows Server 2016 Hyper-V](https://channel9.msdn.com/events/Ignite/2016/BRK3124)

@@ -1,5 +1,5 @@
 ---
-title: Información técnica de Directivas de restricción de software
+title: Introducción técnica a las directivas de restricción de software
 description: Seguridad de Windows Server
 ms.custom: na
 ms.prod: windows-server
@@ -14,13 +14,13 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: 293239c9f746f939b06d45d6e8c1a50b59e2bc43
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407130"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371747"
 ---
-# <a name="software-restriction-policies-technical-overview"></a>Información técnica de Directivas de restricción de software
+# <a name="software-restriction-policies-technical-overview"></a>Introducción técnica a las directivas de restricción de software
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -75,7 +75,7 @@ Concretamente, los administradores pueden usar las directivas de restricción de
 ## <a name="BKMK_Diffs_Changes"></a>Diferencias y cambios en la funcionalidad
 No hay ningún cambio en la funcionalidad de SRP para Windows Server 2012 y Windows 8.
 
-**Versiones compatibles**
+**Versiones admitidas**
 
 Las directivas de restricción de software solo se pueden configurar y aplicar en equipos que ejecuten como mínimo Windows Server 2003, incluido Windows Server 2012 y, como mínimo, Windows XP, incluido Windows 8.
 
@@ -88,7 +88,7 @@ En la tabla siguiente se comparan las características y funciones de la caracte
 
 |Función de control de aplicaciones|SRP|AppLocker|
 |----------------|----|-------|
-|Scope|Las directivas de SRP se pueden aplicar a todos los sistemas operativos Windows a partir de Windows XP y Windows Server 2003.|Las directivas de AppLocker solo se aplican a Windows Server 2008 R2, Windows Server 2012, Windows 7 y Windows 8.|
+|Ámbito|Las directivas de SRP se pueden aplicar a todos los sistemas operativos Windows a partir de Windows XP y Windows Server 2003.|Las directivas de AppLocker solo se aplican a Windows Server 2008 R2, Windows Server 2012, Windows 7 y Windows 8.|
 |Creación de directivas|Las directivas de SRP se mantienen a través de la directiva de grupo y solo el administrador del GPO puede actualizar la directiva de SRP. El administrador del equipo local puede modificar las directivas de SRP definidas en el GPO local.|Las directivas de AppLocker se mantienen a través de la directiva de grupo y solo el administrador del GPO puede actualizar la directiva. El administrador del equipo local puede modificar las directivas de AppLocker definidas en el GPO local.<br /><br />AppLocker permite la personalización de mensajes de error con el fin de dirigir a los usuarios a una página web para obtener ayuda.|
 |Mantenimiento de directivas|Las directivas de SRP deben actualizarse mediante el complemento de directiva de seguridad local (si se crean las directivas localmente) o la consola de administración de directiva de grupo (GPMC).|Las directivas de AppLocker pueden actualizarse mediante el complemento de directiva de seguridad local (si se crean las directivas localmente), los GPMC o los cmdlets de Windows PowerShell AppLocker.|
 |Aplicación de la directiva|Las directivas de SRP se distribuyen a través de la directiva de grupo.|Las directivas de AppLocker se distribuyen a través de la directiva de grupo.|
@@ -97,7 +97,7 @@ En la tabla siguiente se comparan las características y funciones de la caracte
 |Tipos de archivo designados|SRP admite una lista extensible de tipos de archivo que se consideran ejecutables. Los administradores pueden agregar extensiones a los archivos que deben considerarse ejecutables.|AppLocker no admite esto. AppLocker admite actualmente las siguientes extensiones de archivo:<br /><br />-Ejecutables (. exe,. com)<br />-DLL (. ocx,. dll)<br />-Scripts (. vbs,. js,. ps1,. cmd,. bat)<br />-Instaladores de Windows (. msi,. MST,. msp)<br />-Instaladores de aplicaciones empaquetadas (. appx)|
 |Tipos de regla|SRP admite cuatro tipos de reglas:<br /><br />-Hash<br />-Path<br />-Signature<br />-Zona de Internet|AppLocker admite tres tipos de reglas:<br /><br />-Hash<br />-Path<br />-Publicador|
 |Editar el valor de hash|SRP permite a los administradores proporcionar valores hash personalizados.|AppLocker calcula el valor de hash por su cuenta. Utiliza internamente el hash SHA1 Authenticode para los archivos ejecutables portables (exe y dll) y los instaladores de Windows y un hash de archivo sin formato SHA1 para el resto.|
-|Compatibilidad con diferentes niveles de seguridad|Los administradores de SRP pueden especificar los permisos con los que se puede ejecutar una aplicación. Por lo tanto, un administrador puede configurar una regla de modo que el Bloc de notas siempre se ejecute con permisos restringidos y nunca con privilegios de administrador.<br /><br />SRP en Windows Vista y varios niveles de seguridad anteriores compatibles. En Windows 7, esa lista se restringe a solo dos niveles: No permitido y no restringido (el usuario básico se traduce en no permitido).|AppLocker no admite niveles de seguridad.|
+|Compatibilidad con diferentes niveles de seguridad|Los administradores de SRP pueden especificar los permisos con los que se puede ejecutar una aplicación. Por lo tanto, un administrador puede configurar una regla de modo que el Bloc de notas siempre se ejecute con permisos restringidos y nunca con privilegios de administrador.<br /><br />SRP en Windows Vista y varios niveles de seguridad anteriores compatibles. En Windows 7, esa lista se restringe a solo dos niveles: no permitido y no restringido (el usuario básico se traduce en no permitido).|AppLocker no admite niveles de seguridad.|
 |Administración de aplicaciones empaquetadas e instaladores de aplicaciones empaquetadas|No se puede|.appx es un tipo de archivo válido que puede administrar AppLocker.|
 |Selección del destino de una regla para un usuario o un grupo de usuarios|Las reglas de SRP se aplican a todos los usuarios en un equipo determinado.|Las reglas de AppLocker pueden destinarse a un usuario específico o un grupo de usuarios.|
 |Compatibilidad con las excepciones de regla|SRP no admite excepciones de reglas.|Las reglas de AppLocker pueden tener excepciones que permiten a los administradores crear reglas como "permitir todo desde Windows excepto regedit. exe".|

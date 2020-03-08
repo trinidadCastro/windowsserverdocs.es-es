@@ -12,11 +12,11 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
 ms.openlocfilehash: 96678dfab2a3d5b6f503d8ce9d00850a3c437b35
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392934"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370609"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>Actualización de la versión de la máquina virtual en Hyper-V en Windows 10 o Windows Server
 
@@ -30,7 +30,7 @@ Haga que las características de Hyper-V más recientes estén disponibles en la
 
 Para obtener más información, consulte [actualización gradual del sistema operativo de clúster](../../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md) y [realizar una actualización gradual de un clúster de hosts de Hyper-V en VMM](https://docs.microsoft.com/system-center/vmm/hyper-v-rolling-upgrade).
 
-## <a name="step-1-check-the-virtual-machine-configuration-versions"></a>Paso 1: Comprobar las versiones de configuración de la máquina virtual
+## <a name="step-1-check-the-virtual-machine-configuration-versions"></a>Paso 1: comprobar las versiones de configuración de la máquina virtual
 
 1. En el Escritorio de Windows, haga clic en el botón Inicio y escriba cualquier parte del nombre **Windows PowerShell**.
 2. Haga clic con el botón derecho en Windows PowerShell y seleccione **Ejecutar como administrador**.
@@ -42,7 +42,7 @@ Get-VM * | Format-Table Name, Version
 
 También puede ver la versión de configuración en el administrador de Hyper-V. para ello, seleccione la máquina virtual y mire en la pestaña **Resumen** .
 
-## <a name="step-2-upgrade-the-virtual-machine-configuration-version"></a>Paso 2: Actualizar la versión de configuración de la máquina virtual
+## <a name="step-2-upgrade-the-virtual-machine-configuration-version"></a>Paso 2: actualización de la versión de configuración de la máquina virtual
 
 1. Apague la máquina virtual en el administrador de Hyper-V.
 2. Seleccione acción > Actualizar versión de configuración. Si esta opción no está disponible para la máquina virtual, ya está en la versión de configuración más alta compatible con el host de Hyper-V.
@@ -76,13 +76,13 @@ En la tabla siguiente se enumeran las versiones de configuración de máquina vi
 
 | Versión de Windows del host de Hyper-V | 9,1 | 9,0 | 8.3 | 8.2 | 8.1 | 8.0 | 7.1 | 7.0 | 6.2 | 5.0 |
 | --- |---|---|---|---|---|---|---|---|---|---|
-|Windows Server 2019|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows 10 Enterprise LTSC 2019|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows Server 2019|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows 10 Enterprise LTSC 2019|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows 10 Enterprise 2016 LTSB|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows 10 Enterprise 2015 LTSB|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|
-|Windows Server 2012 R2|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|
-|Windows 8.1|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|
+|Windows Server 2012 R2|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|
+|Windows 8.1|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|
 
 ### <a name="supported-vm-configuration-versions-for-semi-annual-channel-hosts"></a>Versiones de configuración de máquina virtual admitidas para hosts de canal semianual
 
@@ -110,11 +110,11 @@ En la tabla siguiente se enumeran las descripciones, las extensiones de nombre d
 
  |Tipos de archivo de máquina virtual | Descripción|
  |---|---|
-|Configuración |Información de configuración de la máquina virtual que se almacena en formato de archivo binario. <br /> Extensión de nombre de archivo:. vmcx <br /> Ubicación predeterminada: C:\Archivos de Programa\Microsoft\Windows\Hyper-V\Virtual Machines|
- |Estado de tiempo de ejecución|Información de estado de tiempo de ejecución de la máquina virtual que se almacena en formato de archivo binario. <br />Extensión de nombre de archivo:. VMRS y. vmgs <br />Ubicación predeterminada: C:\Archivos de Programa\Microsoft\Windows\Hyper-V\Virtual Machines|
-|Disco duro virtual|Almacena los discos duros virtuales de la máquina virtual. <br /> Extensión de nombre de archivo:. vhd o. vhdx <br />Ubicación predeterminada: Discos duros Programa\microsoft\windows\hyper-v\virtual|
- |Disco duro virtual automático |Archivos de disco de diferenciación usados para los puntos de control de la máquina virtual. <br /> Extensión de nombre de archivo:. avhdx <br /> Ubicación predeterminada: Discos duros Programa\microsoft\windows\hyper-v\virtual|
- |Checkpoint|Los puntos de control se almacenan en varios archivos de puntos de control. Cada punto de control crea un archivo de configuración y un archivo de estado del tiempo de ejecución. <br /> Extensiones de nombre de archivo:. VMRS y. vmcx <br />Ubicación predeterminada: C:\Archivos de programa\Microsoft\Windows\Snapshots|
+|Configuración |Información de configuración de la máquina virtual que se almacena en formato de archivo binario. <br /> Extensión de nombre de archivo:. vmcx <br /> Ubicación predeterminada: máquinas Programa\microsoft\windows\hyper-v\virtual|
+ |Estado de tiempo de ejecución|Información de estado de tiempo de ejecución de la máquina virtual que se almacena en formato de archivo binario. <br />Extensión de nombre de archivo:. VMRS y. vmgs <br />Ubicación predeterminada: máquinas Programa\microsoft\windows\hyper-v\virtual|
+|Disco duro virtual|Almacena los discos duros virtuales de la máquina virtual. <br /> Extensión de nombre de archivo:. vhd o. vhdx <br />Ubicación predeterminada: discos duros de Programa\microsoft\windows\hyper-v\virtual|
+ |Disco duro virtual automático |Archivos de disco de diferenciación usados para los puntos de control de la máquina virtual. <br /> Extensión de nombre de archivo:. avhdx <br /> Ubicación predeterminada: discos duros de Programa\microsoft\windows\hyper-v\virtual|
+ |Punto de control|Los puntos de control se almacenan en varios archivos de puntos de control. Cada punto de control crea un archivo de configuración y un archivo de estado del tiempo de ejecución. <br /> Extensiones de nombre de archivo:. VMRS y. vmcx <br />Ubicación predeterminada: Programa\microsoft\windows\snapshots|
 
 ## <a name="what-happens-if-i-dont-upgrade-the-virtual-machine-configuration-version"></a>¿Qué ocurre si no actualizo la versión de configuración de la máquina virtual?
 

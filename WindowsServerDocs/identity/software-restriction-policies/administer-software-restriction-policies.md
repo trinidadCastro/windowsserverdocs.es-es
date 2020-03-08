@@ -14,11 +14,11 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: c75c7813041870f79ed95250857a5c7d1576c7dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407187"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371746"
 ---
 # <a name="administer-software-restriction-policies"></a>Administración de las directivas de restricción de software
 
@@ -74,7 +74,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
     -   Configuración de seguridad/directivas de restricción de software
 
 > [!NOTE]
-> Para llevar a cabo este procedimiento, debe ser miembro del grupo Administradores en el equipo local o tener delegada la autoridad correspondiente.
+> Para realizar este procedimiento, debe ser miembro del grupo Administradores en el equipo local o tienen que delegarle la autoridad adecuada.
 
 ### <a name="BKMK_2"></a>Para un dominio, un sitio o una unidad organizativa, y se encuentra en un servidor miembro o en una estación de trabajo que está unida a un dominio
 
@@ -128,7 +128,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 
     **Mientras?**
 
-    -   Sitios y servicios de Active Directory [*Domain_Controller_Name. nombre_dominio*]/sites/site
+    -   Sitios y servicios de Active Directory [*Domain_Controller_Name. Domain_Name*]/sites/site
 
 3.  Haga clic en una entrada de **Directiva de grupo vínculos de objeto** para seleccionar un objeto Directiva de grupo existente (GPO) y, a continuación, haga clic en **Editar**. También puede hacer clic en **Nuevo** para crear un nuevo GPO y, a continuación, haga clic en **Editar**.
 
@@ -141,7 +141,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
         Configuración de usuario/configuración de Windows/configuración de seguridad/directivas de restricción de software
 
 > [!NOTE]
-> -   Para llevar a cabo este procedimiento, debe ser miembro del grupo Administradores en el equipo local o tener delegada la autoridad correspondiente. Si el equipo está unido a un dominio, los miembros del grupo Administradores de dominio podrían llevar a cabo este procedimiento.
+> -   Para realizar este procedimiento, debe ser miembro del grupo Administradores en el equipo local o tienen que delegarle la autoridad adecuada. Si el equipo está unido a un dominio, los miembros del grupo Administradores del dominio podrían realizar este procedimiento.
 > -   Para establecer la configuración de directiva que se aplicará a los equipos, independientemente de los usuarios que inicien sesión en ellos, haga clic en **configuración del equipo**.
 > -   Para establecer la configuración de directiva que se aplicará a los usuarios, independientemente del equipo en el que inicien sesión, haga clic en **configuración de usuario**.
 
@@ -154,7 +154,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 > [!WARNING]
 > -   Dependiendo de su entorno, se requieren diferentes credenciales administrativas para realizar este procedimiento:
 > 
->     -   Si crea nuevas directivas de restricción de software para el equipo local: Para completar este procedimiento, se requiere como mínimo la pertenencia al grupo local **Administradores** o equivalente.
+>     -   Si crea nuevas directivas de restricción de software para el equipo local: la pertenencia al grupo local **administradores** , o equivalente, es lo mínimo necesario para completar este procedimiento.
 >     -   Si crea nuevas directivas de restricción de software para un equipo unido a un dominio, los miembros del grupo de Administradores de dominio pueden llevar a cabo este procedimiento.
 > -   Si ya se han creado directivas de restricción de software para un objeto de directiva de grupo (GPO), el comando **Nuevas directivas de restricción de software** no aparece en el menú **Acción**. Para eliminar las directivas de restricción de software aplicadas a un GPO, en el árbol de consola, haga clic con el botón secundario en **Directivas de restricción de software** y, luego, en **Eliminar directivas de restricción de software**. Al eliminar las directivas de restricción de software para un GPO, también se eliminan todas las reglas de directivas de restricción de software para ese GPO. Después de eliminar las directivas de restricción de software, puede crear nuevas directivas de restricción de software para ese GPO.
 
@@ -164,7 +164,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 
 2.  En el panel de detalles, haga doble clic en **Tipos de archivo designados**.
 
-3.  Realiza una de las siguientes acciones:
+3.  Realice una de las siguientes acciones:
 
     -   Para agregar un tipo de archivo, en **Extensión de nombre de archivo**, escriba la extensión de nombre de archivo y, a continuación, haga clic en **Agregar**.
 
@@ -173,7 +173,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 > [!NOTE]
 > -   Dependiendo del entorno en el que agregue o elimine un tipo de archivo designado, se requieren diferentes credenciales administrativas para realizar este procedimiento:
 > 
->     -   Si agrega o elimina un tipo de archivo designado en el equipo local: Para completar este procedimiento, se requiere como mínimo la pertenencia al grupo local **Administradores** o equivalente.
+>     -   Si agrega o elimina un tipo de archivo designado para el equipo local: la pertenencia al grupo local **administradores** , o equivalente, es lo mínimo necesario para completar este procedimiento.
 >     -   Si crea nuevas directivas de restricción de software para un equipo unido a un dominio, los miembros del grupo de Administradores de dominio pueden llevar a cabo este procedimiento.
 > -   Es posible que sea necesario crear una nueva configuración de directiva de restricción de software para el objeto de directiva de grupo (GPO), si aun no lo ha hecho.
 > -   Todas las reglas de configuración del equipo y configuración de usuario de un GPO comparten la lista de tipos de archivos designados.
@@ -187,7 +187,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 3.  En **Aplicar directivas de restricción de software a los siguientes usuarios**, haga clic en **Todos los usuarios salvo administradores locales**.
 
 > [!WARNING]
-> -   Para completar este procedimiento, se requiere como mínimo la pertenencia al grupo local **Administradores** o equivalente.
+> -   La pertenencia al grupo local **Administradores**, o equivalente, es el requisito mínimo necesario para completar este procedimiento.
 > -   Es posible que sea necesario crear una nueva configuración de directiva de restricción de software para el objeto de directiva de grupo (GPO), si aun no lo ha hecho.
 > -   Si es común que los usuarios sean miembros del grupo local de Administradores en los equipos de su organización, es posible que no quiera habilitar esta opción.
 > -   Si define una configuración de directiva de restricción de software para el equipo local, use este procedimiento para impedir que las directivas de restricción de software se apliquen a los administradores locales. Si define una configuración de directiva de restricción de software para la red, filtre la configuración de directiva de usuario en función de la pertenencia a grupos de seguridad a través de directiva de grupo.
@@ -219,7 +219,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 3.  En **Aplicar directivas de restricción de software al siguiente**, haga clic en **Todos los archivos de software**.
 
 > [!NOTE]
-> -   Para llevar a cabo este procedimiento, debe ser miembro del grupo Administradores en el equipo local o tener delegada la autoridad correspondiente. Si el equipo está unido a un dominio, los miembros del grupo Administradores de dominio podrían llevar a cabo este procedimiento.
+> -   Para realizar este procedimiento, debe ser miembro del grupo Administradores en el equipo local o tienen que delegarle la autoridad adecuada. Si el equipo está unido a un dominio, los miembros del grupo Administradores del dominio podrían realizar este procedimiento.
 > -   De manera predeterminada, las directivas de restricción de software no comprueban las bibliotecas de vínculos dinámicos (DLL). Comprobar las DLL puede reducir el rendimiento del sistema, porque las directivas de restricción de software deben ser evaluadas cada vez que se carga una DLL. Sin embargo, puede elegir comprobar las DLL si le preocupa recibir un virus que ataque las DLL. Si el nivel de seguridad predeterminado se establece en no **permitido**y habilita la comprobación de dll, debe crear reglas de directivas de restricción de software que permitan la ejecución de cada dll.
 
 

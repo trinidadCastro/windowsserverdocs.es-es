@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: aefcd597a580de526a758c6d026c6c91d02d10c8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407469"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371667"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>Guía de tutorial: Administración de riesgos con control de acceso condicional
 
@@ -66,31 +66,31 @@ En este paso comprobará el mecanismo de control de acceso predeterminado de AD 
     Se le concederá acceso a la aplicación.
 
 ## <a name="BKMK_3"></a>Paso 3: configurar la Directiva de control de acceso condicional según los datos del usuario
-En este paso configurará una directiva de control de acceso basándose en los datos de pertenencia a grupos del usuario. Es decir, configurará una **Regla de autorización de emisión** en el servidor de federación para una relación de confianza para usuario autenticado que represente a la aplicación de ejemplo **claimapp**. Según la lógica de esta regla, el usuario de ad de **Robert Hatley** recibirá las notificaciones necesarias para tener acceso a esta aplicación, ya que pertenece a un grupo de **finanzas** . Ha agregado la cuenta **Robert Hatley** al grupo **Finance** en [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
+En este paso configurará una directiva de control de acceso basándose en los datos de pertenencia a grupos del usuario. Es decir, configurará una **Regla de autorización de emisión** en el servidor de federación para una relación de confianza para usuario autenticado que represente a la aplicación de ejemplo, **claimapp**. Según la lógica de esta regla, el usuario de ad de **Robert Hatley** recibirá las notificaciones necesarias para tener acceso a esta aplicación, ya que pertenece a un grupo de **finanzas** . Ha agregado la cuenta **Robert Hatley** al grupo **Finance** en [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
 
 Puede completar esta tarea mediante la Consola de administración de AD FS o Windows PowerShell.
 
 #### <a name="to-configure-conditional-access-control-policy-based-on-user-data-via-the-ad-fs-management-console"></a>Para configurar la directiva de control de acceso condicional según los datos de usuario mediante la Consola de administración de AD FS
 
-1.  En la Consola de administración de AD FS, vaya a **Relaciones de confianza**y, a continuación, a **Relaciones de confianza para usuario autenticado**.
+1.  En la Consola de administración de AD FS, vaya a **Relaciones de confianza** y, a continuación, a **Relaciones de confianza para usuario autenticado**.
 
-2.  Seleccione la relación de confianza para usuario autenticado que represente a la aplicación de ejemplo (**claimapp**) y, a continuación, en el panel **Acciones** o haciendo clic con el botón secundario en esta relación de confianza para usuario autenticado, seleccione **Editar reglas de notificación**.
+2.  Seleccione la relación de confianza para usuario autenticado que represente a la aplicación de ejemplo (**claimapp**) y, después, en el panel **Acciones** o haciendo clic con el botón derecho en esta relación de confianza para usuario autenticado, seleccione **Editar reglas de notificación**.
 
-3.  En la ventana **Editar reglas de notificación para claimapp** , seleccione la pestaña **Reglas de autorización de emisión** y haga clic en **Agregar regla**.
+3.  En la ventana **Editar reglas de notificación para claimapp**, seleccione la pestaña **Reglas de autorización de emisión** y haga clic en **Agregar regla**.
 
-4.  En la página **Seleccionar plantilla de regla**del **Asistente para agregar reglas de notificación de autorización de emisión**, seleccione la plantilla de regla de notificación **Permitir o denegar el acceso a los usuarios según una notificación entrante** y haga clic en **Siguiente**.
+4.  En la página **Seleccionar plantilla de regla** del **Asistente para agregar reglas de notificación de autorización de emisión**, seleccione la plantilla de regla de notificación **Permitir o denegar el acceso a los usuarios según una notificación entrante** y haga clic en **Siguiente**.
 
-5.  En la página **Configurar regla** , realice todas las acciones siguientes y, a continuación, haga clic en **Finalizar**:
+5.  En la página **Configurar regla**, realice todas las acciones siguientes y, a continuación, haga clic en **Finalizar**:
 
     1.  Escriba un nombre para la regla de notificación, por ejemplo, **TestRule**.
 
     2.  Seleccione **SID de grupo** como **Tipo de notificación entrante**.
 
-    3.  Haga clic en **Examinar**, escriba **Finance** como nombre del grupo de prueba de AD y resuélvalo para el campo **Valor de notificación entrante** .
+    3.  Haga clic en **Examinar**, escriba **Finance** como nombre del grupo de prueba de AD y resuélvalo para el campo **Valor de notificación entrante**.
 
-    4.  Seleccione la opción **Denegar acceso a los usuarios con esta notificación entrante** .
+    4.  Seleccione la opción **Denegar acceso a los usuarios con esta notificación entrante**.
 
-6.  En la ventana **Editar reglas de notificación para claimapp** , asegúrese de eliminar la regla **Permitir el acceso a todos los usuarios** que se creó de manera predeterminada al crear esta relación de confianza para usuario autenticado.
+6.  En la ventana **Editar reglas de notificación para claimapp**, asegúrese de eliminar la regla **Permitir el acceso a todos los usuarios** que se creó de manera predeterminada al crear esta relación de confianza para usuario autenticado.
 
 #### <a name="to-configure-conditional-access-control-policy-based-on-user-data-via-windows-powershell"></a>Para configurar la directiva de control de acceso condicional según los datos de usuario mediante Windows PowerShell
 
@@ -102,7 +102,7 @@ Puede completar esta tarea mediante la Consola de administración de AD FS o Win
 ~~~
 
 
-2. En la misma ventana de Windows PowerShell, ejecute el siguiente comando:
+2. En la misma ventana de comandos de Windows PowerShell, ejecuta el siguiente comando:
 
 
 ~~~
@@ -128,7 +128,7 @@ En este paso comprobará la directiva de control de acceso condicional que confi
 
     En este momento, debido a la Directiva de control de acceso que configuró en el paso anterior, se muestra un mensaje "acceso denegado" para este usuario de AD que no pertenece al grupo **Finance** . El texto del mensaje predeterminado es **no está autorizado para tener acceso a este sitio. Haga clic aquí para cerrar la sesión y volver a iniciarla o póngase en contacto con el administrador para obtener los permisos.** No obstante, este texto se puede personalizar. Para obtener más información sobre cómo personalizar la experiencia de inicio de sesión, consulte [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx).
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 [Administración de riesgos con Access Control condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 

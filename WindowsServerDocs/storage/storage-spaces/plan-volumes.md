@@ -10,11 +10,11 @@ author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 52c600068d5dd447ff9faa7c40788664e222a83a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366891"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370749"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>Planificar volúmenes en Espacios de almacenamiento directo
 
@@ -41,7 +41,7 @@ Te recomendamos que el número de volúmenes sea un múltiplo del número de ser
 
 Se recomienda limitar el número total de volúmenes a:
 
-| Windows Server 2016          | Windows Server 2019          |
+| Windows Server 2016          | Windows Server 2019          |
 |------------------------------|------------------------------|
 | Hasta 32 volúmenes por clúster | Hasta 64 volúmenes por clúster |
 
@@ -128,7 +128,7 @@ En las implementaciones con los tres tipos de unidad, únicamente las unidades m
 
 Se recomienda limitar el tamaño de cada volumen a:
 
-| Windows Server 2016 | Windows Server 2019 |
+| Windows Server 2016 | Windows Server 2019 |
 | ------------------- | ------------------- |
 | Hasta 32 TB         | Hasta 64 TB         |
 
@@ -151,7 +151,7 @@ Si se deja sin asignar parte de la capacidad en el grupo de almacenamiento, se d
 
 Te recomendamos reservar el equivalente a una unidad de capacidad por servidor, hasta 4 unidades. A tu criterio, puedes reservar más, pero esta recomendación mínima garantiza que una reparación local inmediata en paralelo se realice correctamente tras el error de cualquiera de las unidades.
 
-![reserva](media/plan-volumes/reserve.png)
+![reserve](media/plan-volumes/reserve.png)
 
 Por ejemplo, si tienes 2 servidores y usas unidades de capacidad de 1 TB, aparta 2 x 1 = 2 TB del grupo como reserva. Si tienes 3 servidores y unidades de capacidad de 1 TB, aparta 3 x 1 = 3 TB como reserva. Si tienes 4 servidores o más y unidades de capacidad de 1 TB, aparta 4 x 1 = 4 TB como reserva.
 
@@ -199,7 +199,7 @@ Por cuestiones de simplicidad, a lo largo de este ejemplo se usan decimales (bas
 
 Consulta [Crear volúmenes en Espacios de almacenamiento directo](create-volumes.md).
 
-### <a name="see-also"></a>Consulte también
+### <a name="see-also"></a>Vea también
 
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Elección de unidades para Espacios de almacenamiento directo](choosing-drives.md)

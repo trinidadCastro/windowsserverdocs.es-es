@@ -8,11 +8,11 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.openlocfilehash: 41912c90beacbb0c0c285ea4da8305c1afdf2a51
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386543"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370649"
 ---
 # <a name="managing-the-host-guardian-service"></a>Administración del servicio de protección de host
 
@@ -363,7 +363,7 @@ Para autorizar que un nuevo host se convierta en un host protegido (por ejemplo,
 Los pasos para autorizar un nuevo host difieren en función del modo de atestación para el que HGS está configurado actualmente.
 Para comprobar el modo de atestación del tejido protegido, ejecute `Get-HgsServer` en cualquier nodo de HGS.
 
-#### <a name="software-configuration"></a>Configuración de software
+#### <a name="software-configuration"></a>Configuración del software
 En el nuevo host de Hyper-V, asegúrese de que está instalado Windows Server 2016 Datacenter Edition.
 Windows Server 2016 Standard no puede ejecutar máquinas virtuales blindadas en un tejido protegido.
 Es posible que el host esté instalado en Desktop Experience o Server Core.

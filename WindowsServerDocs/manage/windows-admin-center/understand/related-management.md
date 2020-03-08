@@ -8,15 +8,15 @@ ms.author: harowl
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: d681e5007cd3ae3c14de774df0bc85abc23b51d7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: HT
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406839"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371696"
 ---
 # <a name="windows-admin-center-and-related-management-solutions-from-microsoft"></a>Windows Admin Center y soluciones de administración relacionadas de Microsoft
 
->Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
 
 [Windows Admin Center](windows-admin-center.md) es la evolución de las herramientas de administración tradicionales de servidores incluidas para situaciones en las que puede haber utilizado Escritorio remoto (RDP) para conectarse a un servidor para la solución de problemas o la configuración. No pretende sustituir a otras soluciones de administración de Microsoft existentes, sino que complementa a estas soluciones, tal y como se describe a continuación.
 
@@ -43,8 +43,8 @@ ms.locfileid: "71406839"
 | Administración **ligera** y remota basada en explorador de las instancias de Windows Server, **en cualquier lugar**; alternativa a RDP | Administración y supervisión de sistemas **heterogéneos** **a escala**, incluidos Linux, VMware y Hyper-V |
 |Exploración en **profundidad** con un único servidor único y clúster para solucionar problemas de configuración y mantenimiento|Aprovisionamiento de infraestructura; automatización y autoservicio; **variedad** de supervisión de infraestructuras y cargas de trabajo|
 |Administración optimizada de clústeres **HCI** de 2 a 4 nodos **individuales**, integración de Hyper-V, espacios de almacenamiento directo y SDN|Implementación y administración de Hyper-V, clústeres de Windows Server a **escala del centro de datos** desde una **reconstrucción completa** con SCVMM|
-|**Supervisión solo en HCI**; el servicio de mantenimiento de clústeres almacena el historial. Plataforma extensible para las **extensiones de herramientas de administración** propias y de terceros|Plataforma de **supervisión extensible** y **escalable** plataforma en SCOM, con alertas, notificaciones, supervisión de la carga de trabajo de otros fabricantes; SQL para historial|
+|**Supervisión solo en HCI**; el servicio de mantenimiento de clústeres almacena el historial. Plataforma extensible para las **extensiones de herramientas de administración** propias y de terceros|Plataforma de **supervisión extensible** y  & escalable** plataforma en SCOM, con alertas, notificaciones, supervisión de la carga de trabajo de otros fabricantes; SQL para historial|
 |Puente más sencillo a **híbrido**; incorporación y uso de una variedad de servicios de Azure para protección de datos, replicación, actualizaciones y mucho más|Protección de datos, replicación, actualizaciones **integradas** (DPM/VMM/SCCM). Integración híbrida con Log Analytics y Service Map|
-|**Principales características de la plataforma** de Windows Server: Servicio de migración de almacenamiento, réplica de almacenamiento, información del sistema, etc.|**Plataformas adicionales**: Automatización de Orchestrator y SMA. Integraciones con SCSM y otras herramientas de administración de servicios|
+|Se **encienden las características** de la plataforma de Windows Server: servicio de migración de almacenamiento, réplica de almacenamiento, información del sistema, etc.|**Plataformas adicionales**: automatización en Orchestrator/SMA. Integraciones con SCSM & otras herramientas de administración de servicios|
 
 #### <a name="each-delivers-targeted-value-independently-better-together-with-complementary-capabilities"></a>Cada una entrega un valor objetivo de forma independiente; **mejor juntas** con funcionalidades complementarias.

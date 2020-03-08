@@ -14,11 +14,11 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.openlocfilehash: 7b8f757d552bf54cd7f4eed0783ba8e0062b9d30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405077"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371827"
 ---
 # <a name="multipoint--stations"></a>Estaciones Multipoint
 En un entorno del sistema Multipoint Services, las *estaciones* son los puntos de conexión de usuario para conectarse al equipo que ejecuta Multipoint Services. Cada estación proporciona al usuario una experiencia independiente de Windows 10. Se admiten los siguientes tipos de estación:  
@@ -92,7 +92,7 @@ Desde la perspectiva de la implementación y la administración, existen las sig
   
 ## <a name="additional-configuration-options"></a>Opciones de configuración adicionales  
   
-### <a name="split-screen-stations"></a>Estaciones con pantalla dividida  
+### <a name="split-screen-stations"></a>Estaciones de pantalla dividida  
 Multipoint Services ofrece una opción de pantalla dividida en los equipos con estaciones conectadas a vídeo directo o estaciones conectadas por el cliente USB a cero. Una pantalla dividida proporciona la capacidad de crear una estación adicional por monitor. En lugar de requerir dos monitores, puede usar un monitor con dos configuraciones de concentrador de estaciones para crear dos estaciones con un monitor. Puede aumentar rápidamente el número de estaciones disponibles sin necesidad de adquirir monitores adicionales, clientes USB-cero ni tarjetas de vídeo.  
   
 Las ventajas de usar una estación de pantalla dividida pueden incluir:  
@@ -109,7 +109,7 @@ Para crear estaciones de pantalla dividida, configure una estación conectada di
   
 Una vez que se divide una estación, un usuario puede iniciar sesión en la estación izquierda mientras otro usuario inicia sesión en la estación adecuada.  
   
-![Estaciones con pantalla dividida](./media/WMS_diagram3.gif)  
+![Estaciones de pantalla dividida](./media/WMS_diagram3.gif)  
   
 **Figura 4** Sistema Multipoint Services con estaciones de pantalla divididas  
   
