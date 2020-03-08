@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 7e40a4675cf77d55a3047b41e0ab852fd7cd9de9
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433214"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371238"
 ---
 # <a name="manage-server-backup-in-windows-server-essentials"></a>Administrar copias de seguridad del servidor en Windows Server Essentials
 
@@ -29,19 +29,19 @@ ms.locfileid: "66433214"
   
 -   [Configurar o personalizar la copia de seguridad del servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [Detener copia de seguridad de servidor en curso](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [Detener la copia de seguridad del servidor en curso](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_2)  
   
 -   [Administrar las copias de seguridad de forma remota](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_3)  
   
--   [Deshabilitar copia de seguridad de servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_4)  
+-   [Deshabilitar la copia de seguridad del servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_4)  
   
--   [Más información sobre cómo configurar la copia de seguridad de servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_5)  
+-   [Más información sobre la configuración de copias de seguridad del servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_5)  
   
 -   [Volver a particionar una unidad de disco duro en el servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_6)  
   
--   [Restaurar archivos y carpetas desde una copia de seguridad de servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_7)  
+-   [Restaurar archivos y carpetas desde una copia de seguridad del servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_7)  
   
-##  <a name="BKMK_WhichBackup"></a> ¿Qué copia de seguridad debo elegir?  
+##  <a name="BKMK_WhichBackup"></a>¿Qué copia de seguridad debo elegir?  
  La elección de una copia de seguridad del servidor puede ser sencilla si dispone de una copia de seguridad correcta reciente y está seguro de que contiene todos sus datos importantes. Si intenta restaurar al servidor o a un equipo desde una copia de seguridad antigua, el hecho de elegir una buena copia de seguridad para la restauración puede requerir cierta investigación y, posiblemente, transigir en algunas exigencias.  
   
 #### <a name="to-choose-a-backup"></a>Para seleccionar una copia de seguridad  
@@ -54,10 +54,10 @@ ms.locfileid: "66433214"
   
 4.  Como práctica recomendada, puede restaurar archivos y carpetas en una ubicación alternativa y, a continuación, permitir que el propietario de los archivos y carpetas pueda mover a la ubicación original los que necesite. Al finalizar se pueden eliminar los archivos y carpetas que permanezcan en la ubicación alternativa.  
   
-##  <a name="BKMK_1"></a> Configurar o personalizar la copia de seguridad de servidor  
+##  <a name="BKMK_1"></a>Configurar o personalizar la copia de seguridad del servidor  
  La copia de seguridad del servidor no se configura automáticamente durante la instalación. Debe proteger el servidor y sus datos de forma automática programando copias de seguridad diarias. Se recomienda mantener un plan de copias de seguridad diario porque la mayoría de las empresas no puede permitirse perder los datos creados durante varios días. Para obtener más información, vea cómo [configurar o personalizar una copia de seguridad del servidor](Set-up-or-customize-server-backup.md).  
   
-##  <a name="BKMK_2"></a> Detener copia de seguridad de servidor en curso  
+##  <a name="BKMK_2"></a>Detener la copia de seguridad del servidor en curso  
  Tanto si se inicia una copia de seguridad del servidor en una hora programada de manera regular como si inicia una copia de seguridad manualmente, puede detener la copia de seguridad en curso.  
   
 #### <a name="to-stop-a-backup-in-progress"></a>Para detener una copia de seguridad en curso  
@@ -66,11 +66,11 @@ ms.locfileid: "66433214"
   
 2.  En la barra de navegación, haga clic en **Dispositivos**.  
   
-3.  En la lista de equipos, haga clic en el servidor y, a continuación, haga clic en **Detener copia de seguridad del servidor** en el panel **Tareas** .  
+3.  En la lista de equipos, haga clic en el servidor y, a continuación, haga clic en **Detener copia de seguridad del servidor** en el panel **Tareas**.  
   
 4.  Haga clic en **Sí** para confirmar la acción.  
   
-##  <a name="BKMK_3"></a> Administrar las copias de seguridad de forma remota  
+##  <a name="BKMK_3"></a>Administrar las copias de seguridad de forma remota  
  Cuando esté fuera de la oficina podrá usar Acceso Web remoto de Windows Server Essentials para tener acceso al panel de Windows Server Essentials y administrar el servidor.  
   
 #### <a name="to-use-remote-web-access-to-manage-your-server"></a>Para usar Acceso Web remoto y administrar el servidor  
@@ -81,13 +81,13 @@ ms.locfileid: "66433214"
   
 3. Cuando se le solicite, escriba el nombre de usuario y la contraseña.  
   
-4. Al hacer clic en el nombre del servidor de acceso Web remoto, se muestra la página de inicio de sesión en el panel.  
+4. Al hacer clic en el nombre del servidor en acceso Web remoto, se muestra la página de inicio de sesión del panel.  
   
 5. Inicie sesión en el panel como administrador y, a continuación, haga clic en **Dispositivos**.  
   
-   Para obtener más información sobre el acceso Web remoto, consulte [Introducción al acceso Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview).  
+   Para obtener más información sobre el acceso Web remoto, vea [información general sobre el acceso Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview).  
   
-##  <a name="BKMK_4"></a> Deshabilitar copia de seguridad de servidor  
+##  <a name="BKMK_4"></a>Deshabilitar la copia de seguridad del servidor  
  Debe proteger el servidor y sus datos de forma automática programando copias de seguridad diarias. Se recomienda mantener un plan de copias de seguridad diario porque la mayoría de las empresas no puede permitirse perder los datos creados durante varios días.  
   
  Si ya tiene configurada la copia de seguridad del servidor y posteriormente quiere usar una aplicación de terceros para hacer una copia de seguridad del servidor, puede deshabilitar la copia de seguridad del servidor de Windows Server Essentials.  
@@ -101,20 +101,20 @@ ms.locfileid: "66433214"
 3.  En el panel de tareas, haga clic en **Personalizar la copia de seguridad para el servidor**.  
   
     > [!NOTE]
-    >  Se muestra la tarea **Personalizar la copia de seguridad para el servidor** tras configurar la copia de seguridad del servidor con el asistente Configurar copias de seguridad del servidor. Para obtener más información acerca de cómo configurar la copia de seguridad de servidor, consulte [Set up or customize server backup](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1).  
+    >  Se muestra la tarea **Personalizar la copia de seguridad para el servidor** tras configurar la copia de seguridad del servidor con el asistente Configurar copias de seguridad del servidor. Para obtener más información acerca de cómo configurar las copias de seguridad del servidor, vea [Configurar o personalizar las copias de seguridad del servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1).  
   
 4.  Aparece el asistente Personalizar la copia de seguridad del servidor.  
   
 5.  En la página **Opciones de configuración**, haga clic en **Deshabilitar copia de seguridad del servidor**. Siga las instrucciones del asistente.  
   
-##  <a name="BKMK_5"></a> Más información sobre cómo configurar la copia de seguridad de servidor  
+##  <a name="BKMK_5"></a>Más información sobre la configuración de copias de seguridad del servidor  
  La copia de seguridad del servidor no está habilitada durante la configuración del servidor.  
   
 > [!NOTE]
 >  Al configurar la copia de seguridad del servidor debe conectar como mínimo una unidad de disco duro externo al servidor para usarla como unidad de disco duro de destino de la copia de seguridad.  
   
-###  <a name="BKMK_Target"></a> Unidad de destino de copia de seguridad  
- Puede usar varias unidades de almacenamiento externo para efectuar las copias de seguridad y puede rotar las unidades entre ubicaciones de almacenamiento en el sitio y fuera del sitio. Esto puede mejorar la planificación de preparación ante desastres ayudando a recuperar los datos si se producen daños físicos en el hardware de las instalaciones.  
+###  <a name="BKMK_Target"></a>Unidad de destino de copia de seguridad  
+ Puede usar varias unidades de almacenamiento externo para efectuar las copias de seguridad y puede rotar las unidades entre ubicaciones de almacenamiento en el sitio y fuera del sitio. De esta forma puede mejorar la planeación de la preparación ante desastres, ya que se pueden recuperar los datos si se producen daños físicos en el hardware de las instalaciones.  
   
  Al elegir una unidad de almacenamiento para la copia de seguridad del servidor, tenga en cuenta los siguientes aspectos:  
   
@@ -143,7 +143,7 @@ ms.locfileid: "66433214"
 >    2. En el cuadro de texto Buscar, escriba **Defragment**.  
 >    3. En la sección de resultados, haga clic en **Desfragmentar y optimizar unidades**.  
 >    4. En la página **Optimizar unidades**, seleccione una unidad y haga clic en **Cambiar la configuración**.  
->    5. En la ventana **Programación de la optimización** , desactive la casilla **Ejecución programada (recomendado)** y, a continuación, haga clic en **Aceptar** para guardar el cambio.  
+>    5. En la ventana **Programación de la optimización**, desactive la casilla **Ejecución programada (recomendado)** y, a continuación, haga clic en **Aceptar** para guardar el cambio.  
   
 ### <a name="items-to-be-backed-up"></a>Elementos para la copia de seguridad  
  De manera predeterminada se seleccionan todos los archivos y carpetas del sistema operativo para efectuar la copia de seguridad. Puede elegir hacer una copia de seguridad de todos los discos duros, archivos y carpetas del servidor, o seleccionar únicamente determinados discos duros, archivos o carpetas para la copia de seguridad. Para agregar o quitar elementos de la copia de seguridad, realice una de las acciones siguientes:  
@@ -159,7 +159,7 @@ ms.locfileid: "66433214"
   
  Por ejemplo, es posible que tenga una carpeta que contiene programas de televisión grabados que emplea una gran cantidad de espacio de disco duro. Puede elegir no hacer una copia de estos archivos porque normalmente los elimina después de verlos. Asimismo, también es posible que tenga una carpeta que contiene archivos temporales que no quiere conservar.  
   
-##  <a name="BKMK_6"></a> Volver a particionar una unidad de disco duro en el servidor  
+##  <a name="BKMK_6"></a>Volver a particionar una unidad de disco duro en el servidor  
  Cuando se detecta una unidad de disco duro interna sin formato en el servidor de Windows Server Essentials se genera una alerta de estado que contiene un vínculo al asistente Agregar un nuevo disco duro. El asistente Agregar un nuevo disco duro le guiará por las distintas opciones que permiten formatear la unidad de disco duro. Cuando el asistente haya finalizado, se crearán una o varias unidades lógicas de disco duro (en función del tamaño de la unidad) en la unidad de disco duro y con el formato NTFS.  
   
  Si es necesario volver a particionar una unidad de disco duro, siga estas instrucciones:  
@@ -182,7 +182,7 @@ ms.locfileid: "66433214"
     > [!NOTE]
     >  Repita este paso hasta que se use todo el espacio sin asignar de la unidad de disco duro.  
   
-##  <a name="BKMK_7"></a> Restaurar archivos y carpetas desde una copia de seguridad de servidor  
+##  <a name="BKMK_7"></a>Restaurar archivos y carpetas desde una copia de seguridad del servidor  
  Puede examinar y restaurar archivos y carpetas individuales desde una copia de seguridad del servidor.  
   
 #### <a name="to-restore-files-and-folders-from-a-server-backup"></a>Para restaurar archivos y carpetas desde una copia de seguridad del servidor  

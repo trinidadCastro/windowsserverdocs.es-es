@@ -11,11 +11,11 @@ ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 140f67a9dab5cf1f10cdb0c5c51a031a0dfb9dd3
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66443552"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371595"
 ---
 # <a name="windows-server-installation-and-upgrade"></a>Instalación y actualización de Windows Server
 
@@ -98,11 +98,11 @@ Tabla de referencia rápida de rutas de actualización admitidas desde ediciones
 
 |Si ejecuta:|Puede realizar una actualización a estas ediciones:|
 |-------------------------|---------------------------|
-|Windows Server 2008 R2 Datacenter con SP1|Windows Server 2012 R2 Datacenter|
+|Windows Server 2008 R2 Datacenter con SP1|Windows Server 2012 R2 Datacenter|
 |Windows Server 2008 R2 Enterprise con SP1|Windows Server 2012 R2 Standard o Windows Server 2012 R2 Datacenter|
 |Windows Server 2008 R2 Standard con SP1|Windows Server 2012 R2 Standard o Windows Server 2012 R2 Datacenter|
 |Windows Web Server 2008 R2 con SP1|Windows Server 2012 R2 Standard|
-|Windows Server 2012 Datacenter|Windows Server 2012 R2 Datacenter|
+|Windows Server 2012 Datacenter|Windows Server 2012 R2 Datacenter|
 |Windows Server 2012 Standard|Windows Server 2012 R2 Standard o Windows Server 2012 R2 Datacenter|
 |Hyper-V Server 2012|Hyper-V Server 2012 R2|
 

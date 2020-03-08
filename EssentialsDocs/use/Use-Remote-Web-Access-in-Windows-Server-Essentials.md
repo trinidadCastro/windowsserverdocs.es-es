@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: f6a5d6fd42c5cd7e92821e1157748054c741ef04
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914681"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371183"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>Administrar Acceso web remoto en Windows Server Essentials
 
@@ -27,7 +27,7 @@ ms.locfileid: "68914681"
   
   El Acceso web remoto le permite estar conectado a la red de Windows Server Essentials cuando lo utilice. Al iniciar sesión en acceso Web remoto, puede conectarse a los equipos de la red de Windows Server Essentials, abrir el panel para administrar la red de Windows Server Essentials y acceder a todas las carpetas compartidas y archivos multimedia del servidor.  
   
- Este tema incluye las siguientes secciones:  
+ En este tema se incluyen las secciones siguientes:  
   
 
 -   [Conectarse al acceso Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
@@ -100,10 +100,10 @@ ms.locfileid: "68914681"
      La conexión del equipo está bloqueada por un firewall o el escritorio remoto está deshabilitado en el equipo o por la directiva de grupo. Este estado puede tardar hasta 6 horas en actualizarse en el servidor si se produce algún cambio.  
   
 #### <a name="to-connect-to-a-computer-on-your-network"></a>Para conectarse a un equipo de la red  
- En la pestaña **DISPOSITIVOS** , haga clic en el nombre del equipo. Puede seleccionar solo los equipos con estado **Disponible**.  
+ En la pestaña **DISPOSITIVOS**, haga clic en el nombre del equipo. Puede seleccionar solo los equipos con estado **Disponible**.  
   
 #### <a name="to-connect-to-the-server-dashboard"></a>Para conectarse al panel del servidor  
- En la pestaña **DISPOSITIVOS** , haga clic en el nombre de su servidor. Puede seleccionar solo los equipos con estado **Disponible**. Debe ser capaz de proporcionar una cuenta de usuario administrador y la contraseña en el servidor para usar el panel.  
+ En la pestaña **DISPOSITIVOS**, haga clic en el nombre de su servidor. Puede seleccionar solo los equipos con estado **Disponible**. Debe ser capaz de proporcionar una cuenta de usuario administrador y la contraseña en el servidor para usar el panel.  
   
 ##  <a name="BKMK_SharedFolders"></a>Compartir archivos y carpetas  
   
@@ -123,7 +123,7 @@ ms.locfileid: "68914681"
 -   Cargar (enviar) archivos desde el equipo a Windows Server Essentials.  
   
     > [!NOTE]
-    >  Solo puede cargar los archivos en el Acceso web remoto, pero no las carpetas. Si desea tener la misma jerarquía de archivos y carpetas de **Carpetas compartidas** en el servidor y en el equipo, debe crear las carpetas en el servidor del Acceso web remoto y, a continuación, cargar los archivos en la carpeta que creó. Para obtener información sobre cómo crear carpetas de servidor, consulte [Add or move a server folder](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).  
+    >  Solo puede cargar los archivos en el Acceso web remoto, pero no las carpetas. Si desea tener la misma jerarquía de archivos y carpetas de **Carpetas compartidas** en el servidor y en el equipo, debe crear las carpetas en el servidor del Acceso web remoto y, a continuación, cargar los archivos en la carpeta que creó. Para obtener información sobre cómo crear carpetas de servidor, consulte [agregar o mover una carpeta de servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).  
   
 -   Descargar (recibir) archivos y carpetas desde Windows Server Essentials a su equipo.  
   
@@ -220,7 +220,7 @@ ms.locfileid: "68914681"
   
 3.  Haga clic en **Descargar** para comenzar la descarga.  
   
-4.  En el cuadro de diálogo **Elija un formato de descarga** , haga clic para seleccionar la opción de formato de descarga que prefiera y, a continuación, haga clic en **Aceptar**. El archivo comprimido está preparado en la opción de formato que ha seleccionado.  
+4.  En el cuadro de diálogo **Elija un formato de descarga**, haga clic para seleccionar la opción de formato de descarga que prefiera y, a continuación, haga clic en **Aceptar**. El archivo comprimido está preparado en la opción de formato que ha seleccionado.  
   
 5.  En el cuadro de diálogo **Descarga de archivos**, haga clic en **Guardar** para guardar el archivo en el equipo.  
   
@@ -252,9 +252,9 @@ ms.locfileid: "68914681"
  Puede usar el Acceso web remoto para crear nuevas carpetas en una carpeta compartida existente, cambiar el nombre de archivos y carpetas, moverlos y copiarlos y eliminarlos del servidor.  
   
 > [!NOTE]
->  Para agregar nuevas carpetas compartidas en un servidor que ejecuta Windows Server Essentials, debe usar el panel. Para conectarse a la consola del servidor desde el Acceso web remoto, en la pestaña **Equipos**, haga clic en el nombre del servidor, en **Conectar** y, a continuación, siga las instrucciones para iniciar sesión en el servidor. Para obtener información sobre cómo crear carpetas compartidas, consulte [Add or move a server folder](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).  
+>  Para agregar nuevas carpetas compartidas en un servidor que ejecuta Windows Server Essentials, debe usar el panel. Para conectarse a la consola del servidor desde el Acceso web remoto, en la pestaña **Equipos**, haga clic en el nombre del servidor, en **Conectar** y, a continuación, siga las instrucciones para iniciar sesión en el servidor. Para obtener información sobre cómo crear carpetas compartidas, vea cómo [agregar o mover una carpeta del servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).  
   
-##### <a name="to-create-a-new-folder"></a>Para crear una nueva carpeta  
+##### <a name="to-create-a-new-folder"></a>Crear una nueva carpeta  
   
 1.  En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, después, haga clic en un vínculo de la carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.  
   
