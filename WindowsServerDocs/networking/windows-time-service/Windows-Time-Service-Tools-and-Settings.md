@@ -14,11 +14,11 @@ ms.custom:
 - CSSTroubleshoot
 audience: Admin
 ms.openlocfilehash: e99c07428a1689e3c079ff2570759c849a61e945
-ms.sourcegitcommit: 839fc8e38bdd7a2389ea7c06c5d4f86c8938740f
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77652207"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370619"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Configuración y herramientas del servicio de hora de Windows
 
