@@ -9,11 +9,11 @@ ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.openlocfilehash: 158681e2038e3d8015933771d06d3bfb24d31586
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948476"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865404"
 ---
 # <a name="health-service-in-windows-server"></a>Servicio de mantenimiento en Windows Server
 
@@ -37,7 +37,7 @@ Vea [errores de servicio de mantenimiento](health-service-faults.md).
 
 Consulte [servicio de mantenimiento acciones](health-service-actions.md).
 
-## <a name="automation"></a>Automatización  
+## <a name="automation"></a>Automation  
 
 En esta sección se describen los flujos de trabajo que se automatizan mediante el servicio de mantenimiento en el ciclo de vida del disco.  
 
@@ -94,7 +94,7 @@ El Servicio de mantenimiento proporciona un mecanismo de cumplimiento para restr
 
 El documento de componentes compatibles utiliza una sintaxis inspirada en XML. Se recomienda usar su editor de texto favorito, como el [Visual Studio Code](https://code.visualstudio.com/) gratuito o el Bloc de notas, para crear un documento XML que puede guardar y volver a usar.
 
-#### <a name="sections"></a>Secciones
+#### <a name="sections"></a>Sección
 
 El documento tiene dos secciones independientes: `Disks` y `Cache`.
 
@@ -170,7 +170,7 @@ Get-PhysicalDisk | Select Model, Manufacturer, FirmwareVersion
 
 Consulte [configuración de servicio de mantenimiento](health-service-settings.md).
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 - [Servicio de mantenimiento informes](health-service-reports.md)
 - [Errores de Servicio de mantenimiento](health-service-faults.md)

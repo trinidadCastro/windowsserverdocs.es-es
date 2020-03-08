@@ -3,17 +3,17 @@ title: Problemas conocidos del servicio de migración de almacenamiento
 description: Problemas conocidos y solución de problemas para el servicio de migración de almacenamiento, como la recopilación de registros para Soporte técnico de Microsoft.
 author: nedpyle
 ms.author: nedpyle
-manager: siroy
+manager: tiaascs
 ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 92742929e3826fca3cf87cb84341d3aecec0d55d
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: a9759f0ea8835c8e07bcd298b75024e3ee29c9ed
+ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517500"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856349"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -295,13 +295,15 @@ Para solucionar este problema, instale las "herramientas de administración del 
 
 ## <a name="error-there-are-no-more-endpoints-available-from-the-endpoint-mapper-when-running-inventory-against-a-windows-server-2003-source-computer"></a>Error "no hay más extremos disponibles desde el asignador de extremos" al ejecutar el inventario en un equipo de origen de Windows Server 2003
 
-Al intentar ejecutar el inventario con el servidor de servicio de migración de almacenamiento revisado con la actualización acumulativa de [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) o una versión posterior, recibe el siguiente error:
+Al intentar ejecutar el inventario con el orquestador del servicio de migración de almacenamiento en un equipo de origen de Windows Server 2003, recibirá el siguiente error:
 
     There are no more endpoints available from the endpoint mapper  
 
-Para solucionar este problema, desinstale temporalmente la actualización acumulativa KB4512534 (y cualquier reemplazada) del equipo de Orchestrator del servicio de migración de almacenamiento. Una vez completada la migración, vuelva a instalar la actualización acumulativa más reciente.  
+Este problema se resuelve con la actualización de [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) .
 
-Tenga en cuenta que, en algunas circunstancias, la desinstalación de KB4512534 o de las actualizaciones de reemplazo puede hacer que el servicio de migración de almacenamiento ya no se inicie. Para resolver este problema, puede hacer una copia de seguridad y eliminar la base de datos del servicio de migración de almacenamiento:
+## <a name="uninstalling-a-cumulutative-update-prevents-storage-migration-service-from-starting"></a>Al desinstalar una actualización de cumulutative se impide que se inicie el servicio de migración de almacenamiento
+
+La desinstalación de las actualizaciones acumulativas de Windows Server puede impedir que se inicie el servicio de migración de almacenamiento. Para resolver este problema, puede hacer una copia de seguridad y eliminar la base de datos del servicio de migración de almacenamiento:
 
 1.  Abra un símbolo del sistema con privilegios elevados, donde sea miembro de los administradores en el servidor de servicio de migración de almacenamiento y ejecute:
 
@@ -343,7 +345,7 @@ Al intentar ejecutar el corte en un origen de clúster de Windows Server 2008 R2
 
 Este problema se debe a que falta una API en versiones anteriores de Windows Server. Actualmente no hay ninguna manera de migrar los clústeres de Windows Server 2008 y Windows Server 2003. Puede realizar el inventario y la transferencia sin problemas en los clústeres de Windows Server 2008 R2 y, a continuación, realizar manualmente el traslado mediante el cambio manual de la dirección IP y el servidor de archivos de origen del clúster. Dirección que debe coincidir con el origen original. 
 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>El total de bloqueos en "38% está asignando interfaces de red en el equipo de origen..." 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>El total de bloqueos en "38% está asignando interfaces de red en el equipo de origen..." al usar DHCP 
 
 Al intentar ejecutar el recorte de un equipo de origen, cuando se establece que el equipo de origen use una nueva dirección IP estática (no DHCP) en una o varias interfaces de red, el cambio se bloquea en la fase "38% de la asignación de interfaces de red en el origen comnputer..." y recibe el siguiente error en el registro de eventos de SMS:
 
@@ -372,13 +374,7 @@ Al examinar el equipo de origen, se muestra que no se puede cambiar la direcció
 
 Este problema no se produce si seleccionó "usar DHCP" en la pantalla "configurar el traslado" del centro de administración de Windows, solo si especifica una nueva dirección IP estática, una subred y una puerta de enlace. 
 
-Este problema se debe a una regresión en la actualización de [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) . Actualmente hay dos soluciones alternativas para este problema:
-
-  - Antes de la reutilización: en lugar de establecer una nueva dirección IP estática en el campo de traslado, seleccione "usar DHCP" y asegúrese de que un ámbito DHCP cubre esa subred. SMS configurará el equipo de origen para usar DHCP en las interfaces de equipo de origen y la reutilización continuará con normalidad. 
-  
-  - Si el cambio de uso ya está bloqueado: inicie sesión en el equipo de origen y habilite DHCP en sus interfaces de red, después de asegurarse de que un ámbito DHCP cubre esa subred. Cuando el equipo de origen adquiere una dirección IP proporcionada por DHCP, SMS continuará con el corte de forma normal.
-  
-En ambas soluciones alternativas, después de que se complete el corte, puede establecer una dirección IP estática en el equipo de origen anterior como considere conveniente y dejar de usar DHCP.   
+Este problema se resuelve con la actualización de [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) .
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>Rendimiento más lento que el rendimiento de retransferencia esperado
 
@@ -489,6 +485,48 @@ En esta fase, el orquestador del servicio de migración de almacenamiento está 
  - el Firewall no permite conexiones remotas del registro con el servidor de origen desde el orquestador.
  - La cuenta de migración de origen no tiene permisos de registro remoto para conectarse al equipo de origen.
  - La cuenta de migración de origen no tiene permisos de lectura en el registro del equipo de origen, en "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" o en "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\ LanManServer
+ 
+ ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>El total de bloqueos en "38% está asignando interfaces de red en el equipo de origen..." 
+
+Al intentar ejecutar el recorte de un equipo de origen, el cambio se detiene en la fase "38% de la asignación de interfaces de red en el origen comnputer..." y recibe el siguiente error en el registro de eventos de SMS:
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          1/11/2020 8:51:14 AM
+    Event ID:      20505
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      nedwardo.contosocom
+    Description:
+    Couldn't establish a CIM session with the computer.
+
+    Computer: 172.16.10.37
+    User Name: nedwardo\MsftSmsStorMigratSvc
+    Error: 40970
+    Error Message: Unknown error (0xa00a)
+
+    Guidance: Confirm that the Netlogon service on the computer is reachable through RPC and that the credentials provided are correct.
+
+Este problema se debe a directiva de grupo que establece el siguiente valor del registro en el equipo de origen:
+
+ "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System LocalAccountTokenFilterPolicy = 0"
+ 
+Esta configuración no forma parte de la directiva de grupo estándar, sino que es un complemento configurado mediante el [Kit de herramientas de cumplimiento de seguridad de Microsoft](https://www.microsoft.com/download/details.aspx?id=55319):
+ 
+ - Windows Server 2012 R2: "configuración del Equipo\plantillas Templates\SCM: pasar las restricciones de UAC Mitigations\Apply de hash a las cuentas locales en los inicios de sesión de red"
+ - Viudas Server 2016: "configuración del Equipo\plantillas Templates\MS de seguridad de Guide\Apply de UAC para cuentas locales en inicios de sesión de red"
+ 
+También se puede establecer mediante preferencias de directiva de grupo con una configuración de registro personalizada. Puede usar la herramienta GPRESULT para determinar qué directiva está aplicando esta configuración en el equipo de origen.
+
+El servicio de migración de almacenamiento habilita temporalmente [LocalAccountTokenFilterPolicy](https://support.microsoft.com/help/951016/description-of-user-account-control-and-remote-restrictions-in-windows) como parte del proceso de cortar y, a continuación, lo quita cuando ha terminado. Cuando directiva de grupo aplica un objeto de directiva de grupo en conflicto (GPO), invalida el servicio de migración de almacenamiento e impide el cambio.
+
+Para solucionar este problema, use una de las siguientes opciones:
+
+1. Mueva temporalmente el equipo de origen desde la unidad organizativa Active Directory que aplica este GPO en conflicto. 
+2. Deshabilitar temporalmente el GPO que aplica esta directiva en conflicto.
+3. Cree temporalmente un nuevo GPO que establezca esta opción en deshabilitado y se aplique a una unidad organizativa específica de servidores de origen, con una prioridad más alta que cualquier otro GPO.
 
 ## <a name="see-also"></a>Vea también
 

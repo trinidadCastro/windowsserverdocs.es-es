@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9b74c57059346e87c5091c83d648b034f4cd049e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 09172b3fcfcedf0888205d099409647a6e077577
+ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358081"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856359"
 ---
 # <a name="configuring-intranet-forms-based-authentication-for-devices-that-do-not-support-wia"></a>Configuración de la autenticación basada en formularios de la intranet para dispositivos que no admiten WIA
 
@@ -24,10 +24,10 @@ De forma predeterminada, la autenticación integrada de Windows (WIA) está habi
 AD FS en Windows Server 2016 y Windows Server 2012 R2 proporcionan a los administradores la capacidad de configurar la lista de agentes de usuario que admiten la reserva para la autenticación basada en formularios. La reserva se hace posible mediante dos configuraciones:
 
 
-- La propiedad **WIASupportedUserAgentStrings** de `Set-ADFSProperties` commandlet
-- La propiedad **WindowsIntegratedFallbackEnabled** de `Set-AdfsGlobalAuthenticationPolicy` commandlet
+- La propiedad **WIASupportedUserAgentStrings** de la `Set-ADFSProperties` commandlet
+- La propiedad **WindowsIntegratedFallbackEnabled** de la `Set-AdfsGlobalAuthenticationPolicy` commandlet
 
-**WIASupportedUserAgentStrings** define los agentes de usuario que admiten WIA. AD FS analiza la cadena del agente de usuario al realizar inicios de sesión en un explorador o control del explorador. Si el componente de la cadena de agente de usuario no coincide con ninguno de los componentes de las cadenas de agente de usuario configuradas en la propiedad **WIASupportedUserAgentStrings** , AD FS revertirá para proporcionar autenticación basada en formularios, siempre que el **valor de** La marca WindowsIntegratedFallbackEnabled se establece en true.
+**WIASupportedUserAgentStrings** define los agentes de usuario que admiten WIA. AD FS analiza la cadena del agente de usuario al realizar inicios de sesión en un explorador o control del explorador. Si el componente de la cadena de agente de usuario no coincide con ninguno de los componentes de las cadenas de agente de usuario configuradas en la propiedad **WIASupportedUserAgentStrings** , AD FS revertirá para proporcionar la autenticación basada en formularios, siempre que la marca **WindowsIntegratedFallbackEnabled** esté establecida en true.
 
 De forma predeterminada, una nueva instalación de AD FS tiene un conjunto de coincidencias de cadena de agente de usuario creadas. Sin embargo, es posible que no estén actualizados según los cambios en los exploradores y dispositivos. En particular, los dispositivos de Windows tienen cadenas de agente de usuario similares con pequeñas variaciones en los tokens. El siguiente ejemplo de Windows PowerShell proporciona la mejor orientación para el conjunto actual de dispositivos que se encuentran en el mercado hoy en día que admiten WIA sin problemas:
 
@@ -59,11 +59,11 @@ Puede Agregar cromo u otros agentes de usuario a la configuración de AD FS que 
 
 En AD FS configuración, agregue una cadena de agente de usuario para Chrome en plataformas basadas en Windows:
 
-    Set-AdfsProperties -WIASupportedUserAgents ((Get-ADFSProperties | Select -ExpandProperty WIASupportedUserAgents) + "Mozilla/5.0 (Windows NT")
+    Set-AdfsProperties -WIASupportedUserAgents ((Get-ADFSProperties | Select -ExpandProperty WIASupportedUserAgents) + "Mozilla/5.0 (Windows NT)")
 
 Y, de forma similar, para Chrome en Apple macOS, agregue la siguiente cadena de agente de usuario a la configuración de AD FS:
 
-    Set-AdfsProperties -WIASupportedUserAgents ((Get-ADFSProperties | Select -ExpandProperty WIASupportedUserAgents) + "Mozilla/5.0 (Macintosh; Intel Mac OS X")
+    Set-AdfsProperties -WIASupportedUserAgents ((Get-ADFSProperties | Select -ExpandProperty WIASupportedUserAgents) + "Mozilla/5.0 (Macintosh; Intel Mac OS X)")
 
 Confirme que la cadena de agente de usuario para Chrome ahora está establecida en el AD FS propiedades:
 
@@ -73,5 +73,4 @@ Confirme que la cadena de agente de usuario para Chrome ahora está establecida 
 
 >[!NOTE]   
 > A medida que se lancen nuevos exploradores y dispositivos, se recomienda reconciliar las capacidades de esos agentes de usuario y actualizar la configuración de AD FS en consecuencia para optimizar la experiencia de autenticación del usuario cuando se usa el explorador y los dispositivos. Más concretamente, se recomienda volver a evaluar la configuración **WIASupportedUserAgents** en AD FS al agregar un nuevo tipo de dispositivo o explorador a la matriz de compatibilidad para WIA.
-
 
