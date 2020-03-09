@@ -14,11 +14,11 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.openlocfilehash: 744e49f47f7144dac82dbe68c885060b0c08490d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389596"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371882"
 ---
 # <a name="multipoint-services-site-planning"></a>Planeación del sitio de MultiPoint Services
 Debe considerar la ubicación en la que se implementarán uno o más equipos que ejecuten Multipoint Services y sus estaciones asociadas.  
@@ -116,7 +116,7 @@ Los concentradores intermedios deben ser USB 2,0 o posterior, y deben alimentars
 ### <a name="downstream-hubs"></a>Downstream hubs  
 Un concentrador de bajada se conecta a un concentrador de estaciones para agregar más puertos disponibles para los dispositivos de estación. Un concentrador de bajada puede alimentarse externamente o de bus, dependiendo de los dispositivos que estén conectados al concentrador.  
   
-![Varias conexiones de cliente USB sin](./media/WMS_diagram4.gif "WMS_diagram4")  
+![Varias conexiones de cliente USB sin conexión](./media/WMS_diagram4.gif "WMS_diagram4")  
   
 **Figura 7** Sistema Multipoint Services con un concentrador intermedio, un concentrador de estaciones y un concentrador de nivel inferior  
   
@@ -126,9 +126,9 @@ El número de estaciones que necesitará depende del número de personas que ten
 ## <a name="power-considerations"></a>Consideraciones de energía  
 Los componentes siguientes requieren acceso a una franja de alimentación o una toma:  
   
--   Servidor  
+-   Server  
 -   Monitores
--   Concentradores \(intermedios si se usan\) 
+-   Los concentradores intermedios \(si se usan\) 
 -   Algunos clientes USB sin  
 -   Dispositivos USB alimentados, como algunos dispositivos de almacenamiento externo y unidades de DVD  
   
@@ -154,6 +154,6 @@ En función del mobiliario disponible, del tamaño de la habitación, del númer
   
 ![Centro de actividades de Multipoint Services](./media/WMSActivityCenter.gif)  
   
-**Oficina de pequeña empresa** En esta configuración, el equipo que ejecuta Multipoint Services se coloca en una ubicación central y los usuarios de la oficina se conectan a él mediante una LAN \(\)de red de área local.  
+**Oficina de pequeña empresa** En esta configuración, el equipo que ejecuta Multipoint Services se coloca en una ubicación central y los usuarios de la oficina se conectan a él mediante una red de área local \(LAN\).  
   
 ![Estación conectada a Zero Client mediante USB](./media/Diagram1.gif)

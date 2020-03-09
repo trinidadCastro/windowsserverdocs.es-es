@@ -10,15 +10,15 @@ author: cosmosdarwin
 ms.date: 07/17/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: f2c2e0435d06c18dbacab4e85db770ba86e654b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366005"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865424"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>Descripción de la memoria caché de Espacios de almacenamiento directo
 
->Se aplica a: Windows Server 2019 y Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 [Espacios de almacenamiento directo](storage-spaces-direct-overview.md) presenta una memoria caché del lado del servidor integrada para maximizar el rendimiento del almacenamiento. Se trata de una caché de lectura *y* escritura grande, persistente y en tiempo real. La memoria caché se configura automáticamente cuando se habilita Espacios de almacenamiento directo. En la mayoría de los casos, no se necesita administración manual.
 El funcionamiento de la memoria caché depende de los tipos de unidades presentes.
@@ -109,7 +109,7 @@ Como resultado, las características de escritura, como la latencia de escritura
 
 ### <a name="readwrite-caching-for-hybrid-deployments"></a>Almacenamiento en caché de lecturas y escrituras para implementaciones híbridas
 
-Al almacenar en caché para unidades de disco duro (HDD), las lecturas *y* las escrituras se almacenan en caché, con el propósito de ofrecer una latencia similar a la memoria flash (suele ser ~10 veces mejor) para ambas. La caché de lectura almacena datos tanto leídos recientemente como leídos con frecuencia para permitir un acceso rápido y minimizar el tráfico aleatorio hacia las unidades de disco duro. (Debido a los retrasos de búsqueda y rotación, la latencia y el tiempo perdido incurrido por el acceso aleatorio a una unidad de disco duro son significativos). Las escrituras se almacenan en la memoria caché para absorber ráfagas y, como antes, fusionar las escrituras y volver a escribir y minimizar el tráfico acumulativo a las unidades de capacidad.
+Al almacenar en caché para unidades de disco duro (HDD), las lecturas *y* las escrituras se almacenan en caché, con el propósito de ofrecer una latencia similar a la memoria flash (suele ser ~10 veces mejor) para ambas. La caché de lectura almacena datos tanto leídos recientemente como leídos con frecuencia para permitir un acceso rápido y minimizar el tráfico aleatorio hacia las unidades de disco duro. (Debido a los retrasos por búsqueda y rotación, la latencia y la pérdida de tiempo que provoca el acceso aleatorio a una unidad de disco duro es importante). Las escrituras se almacenan en caché para absorber las ráfagas y, al igual que antes, para fusionar las escrituras y las reescrituras y minimizar el tráfico acumulativo hacia las unidades de capacidad.
 
 Espacios de almacenamiento directo implementa un algoritmo que elimina la aleatoriedad de las escrituras antes de moverlas, para emular un modelo de E/S en disco que parezca secuencial aunque la E/S real proveniente de la carga de trabajo (por ejemplo, máquinas virtuales) sea aleatoria. Esto maximiza la E/S por segundo (IOPS) y el rendimiento en las unidades de disco duro.
 
@@ -242,7 +242,7 @@ CacheModeHDD : ReadWrite
 CacheModeSSD : WriteOnly
 ```
 
-A continuación, haga lo siguiente:
+Luego, haga lo siguiente:
 
 ```PowerShell
 Set-ClusterStorageSpacesDirect -CacheModeSSD ReadWrite
