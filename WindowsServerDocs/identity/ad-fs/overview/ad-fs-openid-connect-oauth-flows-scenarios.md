@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e1e0235e50945fadd09fe9dd5ffeaf6d7119e482
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 875edcf191596d181ec0d70a83f9f3c20f5d5f4a
+ms.sourcegitcommit: a6ec589a39ef104ec2be958cd09d2f679816a5ab
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385605"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78261944"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>Flujos de AD FS OpenID Connect/OAuth y escenarios de aplicación
 Se aplica a AD FS 2016 y versiones posteriores
@@ -292,7 +292,7 @@ Los pasos siguientes constituyen el flujo con derechos delegados y se explican c
 
   1. La aplicación cliente realiza una solicitud a la API A con el token A.  
   Nota: Mientras configuras el flujo con permisos delegados en AD FS, asegúrate de que el ámbito `user_impersonation` esté seleccionado y de que el cliente solicite el ámbito `user_impersonation` en la solicitud. 
-  2. La API A se autentica en el punto de conexión de emisión de tokens de AD FS y solicita un token para acceder a la API B. Nota: Al configurar este flujo en AD FS, asegúrate de que la API A también se registre como una aplicación de servidor, cuyo valor de clientID coincida con el identificador de recurso de la API A. Para obtener más detalles, consulta el ejemplo En nombre de en Agregar vínculo.  
+  2. La API A se autentica en el punto de conexión de emisión de tokens de AD FS y solicita un token para acceder a la API B. Nota: Al configurar este flujo en AD FS, asegúrate de que la API A también se registre como una aplicación de servidor, cuyo valor de clientID coincida con el identificador de recurso de la API A.
   3. El punto de conexión de emisión de tokens de AD FS valida las credenciales de la API A con el token A y emite el token de acceso para la API B (token B). 
   4. El token B se establece en el encabezado de autorización de la solicitud a la API B. 
   5. La API B devuelve los datos del recurso protegido. 
@@ -592,7 +592,7 @@ Una respuesta correcta será un objeto JSON que contenga la información necesar
 |verification_uri_complete|URI al que debe acudir el usuario con el parámetro user_code para poder iniciar sesión. Se rellenará previamente con user_code de forma que el usuario no tenga que escribirlo.| 
 |expires_in|Número de segundos antes de que expiren los códigos de device_code y user_code.| 
 |interval|Número de segundos que el cliente debe esperar entre las solicitudes de sondeo.| 
-|mensaje|Cadena legible con instrucciones para el usuario. Para localizarla, se puede incluir un parámetro de consulta en la solicitud del formulario ?mkt=xx-XX y rellenar el código de referencia cultural del idioma adecuado.  
+|message|Cadena legible con instrucciones para el usuario. Para localizarla, se puede incluir un parámetro de consulta en la solicitud del formulario ?mkt=xx-XX y rellenar el código de referencia cultural del idioma adecuado.  
 
 ### <a name="authenticating-the-user"></a>Autenticación del usuario 
 Después de recibir los valores de user_code y verification_uri, el cliente los muestra al usuario y le indica que inicie sesión con su teléfono móvil o el explorador del equipo. Además, el cliente puede usar un código QR o un mecanismo similar para mostrar el parámetro verfication_uri_complete, con lo que el parámetro user_code se escribirá automáticamente. Mientras el usuario se autentica en verification_uri, el cliente debe sondear el punto de conexión /token del token solicitado mediante el valor de device_code. 
