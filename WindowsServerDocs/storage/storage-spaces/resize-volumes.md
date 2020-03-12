@@ -7,18 +7,21 @@ author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
-ms.date: 05/07/2019
-ms.openlocfilehash: 20482fe1728b12d4fe56dcfa397352fbb4b4f981
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 03/10/2020
+ms.openlocfilehash: 4ce41da1da3dc90f698008902170d7cc1541619c
+ms.sourcegitcommit: bb2eb0b12f2a32113899a59aa5644bc6e8cab3d2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366093"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79089356"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>Ampliar volúmenes en Espacios de almacenamiento directo
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se proporcionan instrucciones para cambiar el tamaño de los volúmenes en un clúster de [espacios de almacenamiento directo](storage-spaces-direct-overview.md) mediante el centro de administración de Windows.
+
+> [!WARNING]
+> **No se admite: cambiar el tamaño del almacenamiento subyacente utilizado por Espacios de almacenamiento directo.** Si está ejecutando Espacios de almacenamiento directo en un entorno de almacenamiento virtualizado, incluido en Azure, no se admite el cambio de tamaño o la modificación de las características de los dispositivos de almacenamiento usados por las máquinas virtuales y se producirán inaccesibles los datos. En su lugar, siga las instrucciones de la sección [agregar servidores o unidades](add-nodes.md) para agregar capacidad adicional antes de ampliar los volúmenes.
 
 Vea un vídeo rápido sobre cómo cambiar el tamaño de un volumen.
 
