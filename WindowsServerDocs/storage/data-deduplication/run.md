@@ -9,11 +9,11 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: 86aff55b4c548ccf4fcbb04cc477dd63a889bebd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403205"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322637"
 ---
 # <a name="running-data-deduplication"></a>Ejecución de Desduplicación de datos
 
@@ -22,9 +22,9 @@ ms.locfileid: "71403205"
 ## <a id="running-dedup-jobs-manually"></a>Ejecución manual de trabajos de desduplicación de datos
 
 Es posible ejecutar cada trabajo de Desduplicación de datos programado manualmente con los siguientes cmdlets de PowerShell:
-* [`Start-DedupJob`](https://technet.microsoft.com/library/hh848442.aspx): Inicia un nuevo trabajo de desduplicación de datos
-* [`Stop-DedupJob`](https://technet.microsoft.com/library/hh848439.aspx): Detiene un trabajo de desduplicación de datos ya en curso (o lo quita de la cola)
-* [`Get-DedupJob`](https://technet.microsoft.com/library/hh848452.aspx): Muestra todos los trabajos de desduplicación de datos activos y en cola
+* [`Start-DedupJob`](https://technet.microsoft.com/library/hh848442.aspx): inicia un nuevo trabajo de Desduplicación de datos.
+* [`Stop-DedupJob`](https://technet.microsoft.com/library/hh848439.aspx): detiene un trabajo de Desduplicación de datos ya en curso (o lo quita de la cola).
+* [`Get-DedupJob`](https://technet.microsoft.com/library/hh848452.aspx): muestra todos los trabajos de Desduplicación de datos activos y en cola.
 
 Todas las [opciones que están disponibles al programar un trabajo de Desduplicación de datos](advanced-settings.md#modifying-job-schedules-available-settings) también están disponibles cuando se inicia un trabajo manualmente, excepto los valores específicos de la programación. Por ejemplo, para iniciar un trabajo de [Optimización](understand.md#job-info-optimization) manualmente con alta prioridad y uso máximo de CPU y memoria, ejecute el siguiente comando de PowerShell con privilegios de administrador:
 

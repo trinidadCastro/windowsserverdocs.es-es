@@ -7,11 +7,11 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.openlocfilehash: 5a07553e6662fd79230d566ba2049c5e8997f4d6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403573"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322507"
 ---
 # <a name="branch-office-considerations"></a>Consideraciones sobre la sucursal
 
@@ -24,7 +24,7 @@ En este artículo se describen los procedimientos recomendados para ejecutar má
 A partir de la versión 1709 de Windows Server, puede configurar un conjunto adicional de direcciones URL del servicio de protección de host en los hosts de Hyper-V para su uso cuando el HGS principal no responde.
 Esto le permite ejecutar un clúster de HGS local que se usa como servidor principal para mejorar el rendimiento con la capacidad de revertir al HGS del centro de datos corporativo si los servidores locales están inactivos.
 
-Para usar la opción de reserva, debe configurar dos servidores HGS. Pueden ejecutar Windows Server 2019 o Windows Server 2016 y formar parte de los mismos clústeres o de uno diferente. Si son clústeres diferentes, querrá establecer prácticas operativas para asegurarse de que las directivas de atestación estén sincronizadas entre los dos servidores. Ambos deben ser capaces de autorizar correctamente el host de Hyper-V para ejecutar máquinas virtuales blindadas y tener el material de clave necesario para iniciar las máquinas virtuales blindadas. Puede optar por tener un par de certificados de cifrado y firma compartidos entre los dos clústeres, o bien usar certificados independientes y configurar la máquina virtual blindada HGS para autorizar a ambos tutores (pares de certificados de cifrado y firma) en los datos de blindaje. filesystem.
+Para usar la opción de reserva, debe configurar dos servidores HGS. Pueden ejecutar Windows Server 2019 o Windows Server 2016 y formar parte de los mismos clústeres o de uno diferente. Si son clústeres diferentes, querrá establecer prácticas operativas para asegurarse de que las directivas de atestación estén sincronizadas entre los dos servidores. Ambos deben ser capaces de autorizar correctamente el host de Hyper-V para ejecutar máquinas virtuales blindadas y tener el material de clave necesario para iniciar las máquinas virtuales blindadas. Puede elegir tener un par de certificados de cifrado y firma compartidos entre los dos clústeres, o bien usar certificados independientes y configurar la máquina virtual blindada HGS para autorizar a ambos tutores (pares de certificados de cifrado y firma) en el archivo de datos de blindaje.
 
 Después, actualice los hosts de Hyper-V a Windows Server versión 1709 o Windows Server 2019 y ejecute el siguiente comando:
 ```powershell
@@ -61,4 +61,4 @@ Set-HgsKeyProtectionConfiguration -AllowKeyMaterialCaching:$true
 ```
 
 Dado que los protectores de clave que se pueden almacenar en caché son únicos para cada máquina virtual blindada, tendrá que apagar completamente (no reiniciar) e iniciar las máquinas virtuales blindadas para obtener un protector de clave en caché después de habilitar esta opción en HGS.
-Si la máquina virtual blindada se migra a un host de Hyper-V que ejecuta una versión anterior de Windows Server, u obtiene un nuevo protector de clave de una versión anterior de HGS, no podrá iniciarse en el modo sin conexión, pero puede seguir ejecutándose en el modo en línea cuando el acceso a HGS esté disponible. permite.
+Si la máquina virtual blindada se migra a un host de Hyper-V que ejecuta una versión anterior de Windows Server, u obtiene un nuevo protector de clave de una versión anterior de HGS, no podrá iniciarse en el modo sin conexión, pero puede seguir ejecutándose en el modo en línea cuando el acceso a HGS sea disponible.

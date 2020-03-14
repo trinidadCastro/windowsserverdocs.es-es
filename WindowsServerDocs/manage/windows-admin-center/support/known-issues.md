@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
 ms.openlocfilehash: 4a91d09d6824795a21a9a7cdc7695c407aa70756
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822708"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322927"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conocidos de Windows Admin Center
 
@@ -27,7 +27,7 @@ Si encuentras un problema no descrito en esta página, [háznoslo saber](https:/
 
 - No se admite el uso de un puerto inferior a 1024. En el modo de servicio, puede configurar opcionalmente el puerto 80 para redirigir al puerto especificado.
 
-## <a name="general"></a>General,
+## <a name="general"></a>General
 
 - Si tiene el centro de administración de Windows instalado como puerta de enlace en **Windows Server 2016** bajo un uso intensivo, el servicio puede bloquearse con un error en el registro de eventos que contiene ```Faulting application name: sme.exe``` y ```Faulting module name: WsmSvc.dll```. Esto se debe a un error que se ha corregido en Windows Server 2019. La revisión para Windows Server 2016 se incluyó la actualización acumulativa de febrero de 2019, [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977).
 
@@ -53,7 +53,7 @@ Si encuentras un problema no descrito en esta página, [háznoslo saber](https:/
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- Si tiene el centro de administración de Windows implementado como un servicio y usa Microsoft Edge como su explorador, es posible que se produzca un error al conectar la puerta de enlace a Azure después de generar una nueva ventana del explorador. Intente solucionar este problema agregando https://login.microsoftonline.com , https://login.live.com y la dirección URL de la puerta de enlace como sitios de confianza y sitios permitidos para la configuración del bloqueador de elementos emergentes en el explorador del lado cliente. Para obtener más información sobre cómo solucionar este [problema](troubleshooting.md#azure-features-dont-work-properly-in-edge)en la guía de solución de problemas. [17990376]
+- Si tiene el centro de administración de Windows implementado como un servicio y usa Microsoft Edge como su explorador, es posible que se produzca un error al conectar la puerta de enlace a Azure después de generar una nueva ventana del explorador. Intente solucionar este problema agregando https://login.microsoftonline.com, https://login.live.comy la dirección URL de la puerta de enlace como sitios de confianza y sitios permitidos para la configuración del bloqueador de elementos emergentes en el explorador del lado cliente. Para obtener más información sobre cómo solucionar este [problema](troubleshooting.md#azure-features-dont-work-properly-in-edge)en la guía de solución de problemas. [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -78,9 +78,9 @@ Los módulos Escritorio remoto, PowerShell y Eventos en Windows Admin Center uti
 > [!NOTE]
 > El centro de administración de Windows requiere características de PowerShell que no están incluidas en Windows Server 2012 R2, 2012 o 2008 R2. Si va a administrar Windows Server con el centro de administración de Windows, tendrá que instalar la versión 5,1 o superior de WMF en esos servidores.
 
-Escribe `$PSVersiontable` en PowerShell para comprobar que esté instalado WMF y que la versión sea 5.1 o posterior.
+Escribe `$PSVersiontable` en PowerShell para verificar que esté instalado WMF y que la versión sea 5.1 o posterior.
 
-Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616).
+Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616).
 
 ## <a name="role-based-access-control-rbac"></a>Access Control basado en roles (RBAC)
 
@@ -104,7 +104,7 @@ Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microso
 
   - Para resolver este error, use el siguiente comando en un símbolo del sistema con privilegios elevados en el equipo de puerta de enlace: ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
-### <a name="files"></a>Archivos
+### <a name="files"></a>Files
 
 - Aún no se admite la carga o descarga de archivos grandes. (\~límite de 100 MB) [12524234]
 
@@ -118,7 +118,7 @@ Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microso
 
 - Cuando reduces el tamaño de la ventana de Windows Admin Center, se distribuye el contenido del terminal, pero cuando se agranda de nuevo, el contenido puede que no vuelva a su estado anterior. Si se embrollan las cosas, puedes intentar Clear-Host o desconecta y volver a conectar con el botón encima del terminal.
 
-### <a name="registry-editor"></a>Editor del registro
+### <a name="registry-editor"></a>Editor del Registro
 
 - No implementada la funcionalidad de búsqueda. [13820009]
 

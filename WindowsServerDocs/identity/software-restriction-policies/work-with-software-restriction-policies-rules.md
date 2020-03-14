@@ -14,11 +14,11 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: bb5e56fe541a06b1100de2f25fc10f4db46b8d24
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407154"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322957"
 ---
 # <a name="work-with-software-restriction-policies-rules"></a>Trabajo con reglas de directivas de restricción de software
 
@@ -164,7 +164,7 @@ Dependiendo del entorno, existen diferentes procedimientos para habilitar las re
 > Debe llevar a cabo este procedimiento antes de que el certificado pueda surtir efecto.
 
 ### <a name="set-trusted-publisher-options"></a>Establecer opciones de editores de confianza
-La firma de software se usa cada vez más entre los publicadores de software y los programadores para comprobar si las aplicaciones proceden de un origen de confianza. No obstante, muchos usuarios no entienden o prestan poca atención a los certificados de firma asociados a las aplicaciones que instalan.
+La firma de software se usa cada vez más entre los editores de software y los programadores para comprobar si las aplicaciones proceden de un origen de confianza. No obstante, muchos usuarios no entienden o prestan poca atención a los certificados de firma asociados a las aplicaciones que instalan.
 
 La configuración de directiva de la pestaña **Editores de confianza** de la directiva de validación de rutas de certificados permite a los administradores controlar qué certificados se pueden aceptar como procedentes de un editor de confianza.
 
@@ -180,7 +180,7 @@ La configuración de directiva de la pestaña **Editores de confianza** de la di
 
 ##### <a name="to-configure-the-trusted-publishers-policy-settings-for-a-domain"></a>Para establecer la configuración de la directiva Editores de confianza en un dominio
 
-1.  Abra **Administración de directiva de grupo**.
+1.  Abre **Administración de directivas de grupo**.
 
 2.  En el árbol de consola, haga doble clic en **Directiva de grupo objetos** del bosque y el dominio que contengan el objeto de directiva de grupo de **Directiva de dominio** (GPO) predeterminado que desee editar.
 
@@ -192,7 +192,7 @@ La configuración de directiva de la pestaña **Editores de confianza** de la di
 
 6.  Active la casilla **Definir esta configuración de directiva**, seleccione la configuración de directiva que desea aplicar y, a continuación, haga clic en **Aceptar** para aplicar la nueva configuración.
 
-##### <a name="to-allow-only-administrators-to-manage-certificates-used-for-code-signing-for-a-local-computer"></a>Para que solo los administradores puedan administrar los certificados usados para la firma de código en un equipo local
+##### <a name="to-allow-only-administrators-to-manage-certificates-used-for-code-signing-for-a-local-computer"></a>Para que sólo los administradores puedan administrar los certificados usados para la firma de código en un equipo local
 
 1.  En la pantalla **Inicio** , escriba, **gpedit. msc** en **Buscar programas y archivos** o en Windows 8, en el escritorio y, a continuación, presione Entrar.
 
@@ -204,9 +204,9 @@ La configuración de directiva de la pestaña **Editores de confianza** de la di
 
 5.  En **Administración de editores de confianza**, haga clic en **Permitir que solo los administradores administren editores de confianza** y, a continuación, haga clic en **Aceptar** para aplicar la nueva configuración.
 
-##### <a name="to-allow-only-administrators-to-manage-certificates-used-for-code-signing-for-a-domain"></a>Para que solo los administradores puedan administrar los certificados usados para la firma de código en un dominio
+##### <a name="to-allow-only-administrators-to-manage-certificates-used-for-code-signing-for-a-domain"></a>Para que sólo los administradores puedan administrar los certificados usados para la firma de código en un dominio
 
-1.  Abra **Administración de directiva de grupo**.
+1.  Abre **Administración de directivas de grupo**.
 
 2.  En el árbol de consola, haga doble clic en **Directiva de grupo objetos** del bosque y el dominio que contiene el GPO de **Directiva de dominio predeterminado** que desea editar.
 

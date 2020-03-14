@@ -9,15 +9,15 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: e26d285f1802e78b2cbf84e38407ff134e7b7035
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403226"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322397"
 ---
 # <a name="understanding-data-deduplication"></a>Información acerca de Desduplicación de datos
 
-> Se aplica a:  Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 En este documento se describe cómo funciona la [Desduplicación de datos](overview.md).
 
@@ -89,7 +89,7 @@ Desduplicación de datos usa una estrategia de procesamiento posterior para opti
 > [!Warning]  
 > A menos que lo indique el personal de soporte técnico de Microsoft autorizado, no intente modificar manualmente el almacén de fragmentos. Si lo hace, podrían producirse daños en los datos o la pérdida de estos.
 
-## <a name="frequently-asked-questions"></a>Preguntas frecuentes
+## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 **¿En qué se diferencia desduplicación de datos de otros productos de optimización?**  
 Hay varias diferencias importantes entre Desduplicación de datos y otros productos de optimización de almacenamiento comunes:
 

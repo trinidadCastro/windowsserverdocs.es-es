@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: e8673b9e66a0aa3b6bea89b91ae5022efb26c65c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390510"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323157"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>Arquitectura de controladores de dominio virtualizados
 
@@ -28,8 +28,8 @@ En este tema se describe la arquitectura de clonación de controles de dominio v
   
 ## <a name="BKMK_CloneArch"></a>Arquitectura de clonación de controladores de dominio virtualizados  
   
-### <a name="overview"></a>Introducción  
-La clonación de controles de dominio virtualizados depende de la plataforma del hipervisor para exponer un identificador llamado **identificador de generación de VM** a fin de detectar la creación de máquinas virtuales. AD DS almacena inicialmente el valor de este identificador en su base de datos (NTDS.DIT) durante la promoción de controladores de dominio. Cuando se arranca la máquina virtual, el valor actual del identificador de generación de VM de esta se compara con el valor de la base de datos. Si los valores son distintos, el controlador de dominio restaurará el identificador de invocación y descartará el grupo RID, lo que evita que USN pueda volver a crear entidades de seguridad duplicadas. El controlador de dominio buscará un archivo DCCloneConfig.xml en las ubicaciones mencionadas en el paso 3 en [Cloning Detailed Processing](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneProcessDetails). Si se encuentra el archivo DCCloneConfig.xml, entonces asumirá que se ha implementado como clon, por lo que iniciará la clonación para aprovisionarse como controlador de dominio adicional (para ello, vuelve a promocionarse mediante los contenidos de NTDS.DIT y de SYSVOL copiados desde el medio de origen).  
+### <a name="overview"></a>Información general  
+La clonación de controles de dominio virtualizados depende de la plataforma del hipervisor para exponer un identificador llamado **identificador de generación de VM** a fin de detectar la creación de máquinas virtuales. AD DS almacena inicialmente el valor de este identificador en su base de datos (NTDS.DIT) durante la promoción de controladores de dominio. Cuando se arranca la máquina virtual, el valor actual del identificador de generación de VM de esta se compara con el valor de la base de datos. Si los valores son distintos, el controlador de dominio restaurará el identificador de invocación y descartará el grupo RID, lo que evita que USN pueda volver a crear entidades de seguridad duplicadas. El controlador de dominio buscará el archivo DCCloneConfig.xml en las ubicaciones invocadas en el paso 3 en [Procesamiento detallado de clonación](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneProcessDetails). Si se encuentra el archivo DCCloneConfig.xml, entonces asumirá que se ha implementado como clon, por lo que iniciará la clonación para aprovisionarse como controlador de dominio adicional (para ello, vuelve a promocionarse mediante los contenidos de NTDS.DIT y de SYSVOL copiados desde el medio de origen).  
   
 En un entorno mixto, donde algunos hipervisores admiten VM-GenerationID y otros no, es posible que se implemente por error un medio clonado en un hipervisor que no admita VM-GenerationID. La presencia del archivo DCCloneConfig.xml indica el intento administrativo de clonar un controlador de dominio (DC). Por lo tanto, si se encuentra un archivo DCCloneConfig.xml durante el arranque, pero el host no proporciona ningún VM-GenerationID, el DC clonado se iniciará en el modo de restauración de servicios de directorio (DSRM) para que no afecte al resto del entorno. El medio clonado se puede mover posteriormente a un hipervisor que admita VM-GenerationID y, después, se puede volver a intentar la clonación.  
   
@@ -60,7 +60,7 @@ En los pasos siguientes se explica el proceso con más detalle:
   
     1.  Si los identificadores coinciden, quiere decir que no se trata de una máquina virtual nueva y, por lo tanto, no se realizará la clonación. Si existe un archivo DCCloneConfig.xml, el controlador de dominio cambiará el nombre del archivo con una marca de fecha y hora para evitar la clonación. El servidor continuará con el arranque normal. Así funcionan los reinicios de todos los controladores de dominio virtuales en Windows Server 2012.  
   
-    2.  Si los identificadores no coinciden, quiere decir que se trata de una máquina virtual nueva que contiene un NTDS.DIT de un controlador de dominio anterior (o que es una instantánea restaurada). Si existe el archivo DCCloneConfig.xml, el controlador de dominio realizará las operaciones de clonación. En caso contrario, continuará con las operaciones de restauración de instantánea. Consulte [Virtualized domain controller safe restore architecture](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch).  
+    2.  Si los identificadores no coinciden, quiere decir que se trata de una máquina virtual nueva que contiene un NTDS.DIT de un controlador de dominio anterior (o que es una instantánea restaurada). Si existe el archivo DCCloneConfig.xml, el controlador de dominio realizará las operaciones de clonación. En caso contrario, continuará con las operaciones de restauración de instantánea. Consulta [Arquitectura de restauración segura de controladores de dominio virtualizados](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch).  
   
     3.  Si el hipervisor no proporciona ningún identificador de generación de VM para compararlo, pero existe un archivo DCCloneConfig.xml, el invitado cambiará el nombre del archivo y, después, se iniciará en el modo DSRM para evitar que se cree un controlador de dominio duplicado en la red. Si no existe el archivo DCCloneConfig.xml, el invitado se iniciará en modo normal (con la posibilidad de que se cree un controlador de dominio duplicado en la red). Para obtener más información sobre cómo recuperar este controlador de dominio duplicado, consulta el artículo [2742970](https://support.microsoft.com/kb/2742970)de Microsoft KB.  
   
@@ -144,7 +144,7 @@ En los pasos siguientes se explica el proceso con más detalle:
   
 ## <a name="BKMK_SafeRestoreArch"></a>Arquitectura de restauración segura de controladores de dominio virtualizados  
   
-### <a name="overview"></a>Introducción  
+### <a name="overview"></a>Información general  
 AD DS depende de la plataforma del hipervisor para exponer un identificador llamado **identificador de generación de VM** a fin de detectar la restauración de instantáneas de máquinas virtuales. AD DS almacena inicialmente el valor de este identificador en su base de datos (NTDS.DIT) durante la promoción de controladores de dominio. Cuando un administrador restaura una máquina virtual a partir de una instantánea anterior, el valor actual del identificador de generación de VM de esta se compara con el valor de la base de datos. Si los valores son distintos, el controlador de dominio restaurará el identificador de invocación y descartará el grupo RID, lo que evita que USN pueda volver a crear entidades de seguridad duplicadas. Existen dos escenarios en los que se puede producir una restauración segura:  
   
 -   Cuando se inicia un controlador de dominio virtual después de restaurar una instantánea cuando esta estaba apagada  

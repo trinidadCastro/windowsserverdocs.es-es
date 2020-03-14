@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: 4539e8abd1af1eca7bacb51971e6d355bb0aab28
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407657"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323087"
 ---
 # <a name="create-a-claims-provider-trust"></a>Creación de una confianza de proveedor de notificaciones
 
@@ -29,7 +29,7 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
 2.  En **acciones**, haga clic en **Agregar confianza de proveedor de notificaciones**.  
 ![de confianza del proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim1.PNG)   
   
-3.  En la **página principal**, haga clic en **Iniciar**. 
+3.  En la **página principal**, haz clic en **Iniciar**. 
 ![de confianza del proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim2.PNG)    
   
 4.  En la página **Seleccionar origen de datos**, haga clic en **Escribir los datos de la confianza del proveedor de notificaciones manualmente** y, a continuación, en **Siguiente**.  
@@ -64,7 +64,7 @@ Para agregar una nueva confianza de proveedor de notificaciones mediante el comp
 2.  En **acciones**, haga clic en **Agregar confianza de proveedor de notificaciones**.  
 ![de confianza del proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim1.PNG)   
   
-3.  En la **página principal**, haga clic en **Iniciar**. 
+3.  En la **página principal**, haz clic en **Iniciar**. 
 ![de confianza del proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim2.PNG)    
   
 4.  En la página **Seleccionar origen de datos**, haga clic en **Importar los datos acerca del proveedor de notificaciones publicados en línea o en una red local**. En dirección de metadatos de Federación (nombre de host o dirección URL), escriba la **dirección URL de metadatos de Federación** o el nombre de host del asociado y, a continuación, haga clic en **siguiente**.

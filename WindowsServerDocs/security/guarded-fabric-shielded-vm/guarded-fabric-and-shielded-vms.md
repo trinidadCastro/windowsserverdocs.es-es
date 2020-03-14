@@ -8,11 +8,11 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
 ms.openlocfilehash: ace6eb30ae6df2dc29aacc05eb7852e03145df4f
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78370659"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79321997"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>Información general sobre máquinas virtuales blindadas y tejido protegido
 
@@ -106,8 +106,8 @@ En la tabla siguiente se resumen las diferencias entre las máquinas virtuales b
 |Cifrar el estado de la máquina virtual y tráfico de migración en vivo | Sí, necesario pero configurable |  Sí, necesario y exigido  |
 |Componentes de integración | Configurable por el administrador de tejido      | Algunos componentes de integración bloqueados (por ejemplo, intercambio de datos, PowerShell Direct) |
 |Conexión a máquina virtual (consola), dispositivos HID (por ejemplo, teclado, mouse) | Activado, no se puede deshabilitar | Habilitada en hosts a partir de la versión 1803 de Windows Server; Deshabilitado en hosts anteriores |
-|Puertos COM/serie   | Compatible                             | Deshabilitado (no se puede habilitar) |
-|Asociar un depurador (al proceso de la máquina virtual)<sup>1</sup>| Compatible          | Deshabilitado (no se puede habilitar) |
+|Puertos COM/serie   | Se admite                             | Deshabilitado (no se puede habilitar) |
+|Asociar un depurador (al proceso de la máquina virtual)<sup>1</sup>| Se admite          | Deshabilitado (no se puede habilitar) |
 
 <sup>1</sup> los depuradores tradicionales que se asocian directamente a un proceso, como WinDbg. exe, se bloquean para las máquinas virtuales blindadas porque el proceso de trabajo de la máquina virtual (VMWP. exe) es una luz de proceso protegido (PPL). Las técnicas de depuración alternativas, como las utilizadas por LiveKd. exe, no se bloquean. A diferencia de las máquinas virtuales blindadas, el proceso de trabajo para las máquinas virtuales compatibles con el cifrado no se ejecuta como PPL, por lo que los depuradores tradicionales como WinDbg. exe seguirán funcionando con normalidad. 
 

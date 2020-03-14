@@ -13,15 +13,15 @@ ms.author: justinha
 manager: brianlic-msft
 ms.date: 02/28/2019
 ms.openlocfilehash: 60202e537093bd21515043ba56f70f3895c91d42
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403404"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322407"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>Configuración del registro de seguridad de la capa de transporte (TLS)
 
->Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016 y Windows 10
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016 y Windows 10
 
 Este tema de referencia para profesionales de ti contiene información de configuración del registro compatible para la implementación de Windows del protocolo seguridad de la capa de transporte (TLS) y el protocolo Capa de sockets seguros (SSL) a través de la compatibilidad con la seguridad Schannel. Proveedor (SSP). Las subclaves del registro y las entradas que se describen en este tema le ayudan a administrar y solucionar problemas de Schannel SSP, específicamente los protocolos TLS y SSL. 
 
@@ -51,7 +51,7 @@ De forma predeterminada, el proveedor de Schannel usará los cuatro métodos de 
 3. Asignación uno a uno (también conocida como asignación sujeto/emisor)
 4. Asignación de varios a uno
 
-Versiones aplicables: Como se indica en la lista **Aplicable a** que está al principio de este tema.
+Versiones aplicables: como se indica en la lista **se aplica a** que se encuentra al principio de este tema.
 
 Ruta de acceso del registro: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
@@ -87,14 +87,14 @@ El grapado del Protocolo de estado de certificados en línea (OCSP) permite que 
 Además de IIS, los servicios web sobre http. sys también pueden beneficiarse de esta configuración, como Servicios de federación de Active Directory (AD FS) (AD FS) y el proxy de aplicación web (WAP). 
 
 De forma predeterminada, la compatibilidad con OCSP está habilitada para sitios web de IIS que tienen un enlace seguro simple (SSL/TLS). Sin embargo, esta compatibilidad no está habilitada de forma predeterminada si el sitio web de IIS usa uno o ambos de los siguientes tipos de enlaces seguros (SSL/TLS):
-- Requerir Indicación de nombre de servidor
+- Requerir la indicación de nombre de servidor
 - Usar almacén de certificados centralizados
 
-En este caso, la respuesta de Hello del servidor durante el protocolo de enlace TLS no incluirá un estado de OCSP grapado de forma predeterminada. Este comportamiento mejora el rendimiento: La implementación de grapado de OCSP de Windows se escala a cientos de certificados de servidor. Dado que SNI y CCS permiten que IIS se escale a miles de sitios web que pueden tener miles de certificados de servidor, establecer este comportamiento en habilitado de forma predeterminada puede provocar problemas de rendimiento.
+En este caso, la respuesta de Hello del servidor durante el protocolo de enlace TLS no incluirá un estado de OCSP grapado de forma predeterminada. Este comportamiento mejora el rendimiento: la implementación de grapado de OCSP de Windows se escala a cientos de certificados de servidor. Dado que SNI y CCS permiten que IIS se escale a miles de sitios web que pueden tener miles de certificados de servidor, establecer este comportamiento en habilitado de forma predeterminada puede provocar problemas de rendimiento.
 
-Versiones aplicables: Todas las versiones a partir de Windows Server 2012 y Windows 8. 
+Versiones aplicables: todas las versiones a partir de Windows Server 2012 y Windows 8. 
 
-Ruta de acceso del registro: [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
+Ruta de acceso del registro: [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
 
 Agregue la siguiente clave:
 
@@ -109,13 +109,13 @@ Para deshabilitar, establezca el valor DWORD en 0:
 
 ## <a name="fipsalgorithmpolicy"></a>FIPSAlgorithmPolicy
 
-Esta entrada controla el cumplimiento del Estándar federal de procesamiento de información (FIPS). El valor predeterminado es 0.
+Esta entrada controla el cumplimiento del Estándar federal de procesamiento de información (FIPS). El valor predeterminado es 0.
 
-Versiones aplicables: Todas las versiones a partir de Windows Server 2012 y Windows 8. 
+Versiones aplicables: todas las versiones a partir de Windows Server 2012 y Windows 8. 
 
 Ruta de acceso del registro: HKLM SYSTEM\CurrentControlSet\Control\LSA
 
-Conjuntos de cifrado de FIPS de Windows Server: Consulte [los conjuntos de cifrado y los protocolos admitidos en el SSP de Schannel](https://technet.microsoft.com/library/dn786419.aspx).
+Conjuntos de cifrado FIPS de Windows Server: consulte [los conjuntos de cifrado y los protocolos admitidos en el SSP de Schannel](https://technet.microsoft.com/library/dn786419.aspx).
 
 ## <a name="hashes"></a>Hashes
 
@@ -127,7 +127,7 @@ Esta entrada controla el tamaño de la memoria caché del emisor y se usa con la
 
 Para evitar esto, el servidor tiene una memoria caché negativa, por lo que si un nombre de emisor no se asigna a una cuenta, se agrega a la memoria caché y Schannel SSP no intentará volver a asignar el nombre del emisor hasta que expire la entrada de caché. Esta entrada del registro especifica el tamaño de la caché. Esta entrada no existe en el registro de forma predeterminada. El valor predeterminado es 100. 
 
-Versiones aplicables: Todas las versiones a partir de Windows Server 2008 y Windows Vista.
+Versiones aplicables: todas las versiones a partir de Windows Server 2008 y Windows Vista.
 
 Ruta de acceso del registro: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
@@ -137,7 +137,7 @@ Esta entrada controla la longitud del intervalo de tiempo de espera de la caché
 
 Para evitar esto, el servidor tiene una memoria caché negativa, por lo que si un nombre de emisor no se asigna a una cuenta, se agrega a la memoria caché y Schannel SSP no intentará volver a asignar el nombre del emisor hasta que expire la entrada de caché. Esta caché se mantiene por motivos de rendimiento, para que el sistema no siga intentando asignar a los mismos emisores. Esta entrada no existe en el registro de forma predeterminada. El valor predeterminado es 10 minutos.
 
-Versiones aplicables: Todas las versiones a partir de Windows Server 2008 y Windows Vista.
+Versiones aplicables: todas las versiones a partir de Windows Server 2008 y Windows Vista.
 
 Ruta de acceso del registro: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
@@ -175,7 +175,7 @@ Para especificar la longitud de bit de clave Diffie-Helman para el servidor TLS 
 
 Esta entrada controla el número máximo de elementos almacenados en la caché. Al establecer MaximumCacheSize en 0 se deshabilita la caché de sesión del lado del servidor y se evita volver a conectarse. Al aumentar MaximumCacheSize por encima de los valores predeterminados, se hace que Lsass.exe consuma memoria adicional. Normalmente, cada elemento de la caché de sesión requiere de 2 a 4 KB de memoria. Esta entrada no existe en el registro de forma predeterminada. El valor predeterminado es 20.000 elementos. 
 
-Versiones aplicables: Todas las versiones a partir de Windows Server 2008 y Windows Vista.
+Versiones aplicables: todas las versiones a partir de Windows Server 2008 y Windows Vista.
 
 Ruta de acceso del registro: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
@@ -211,12 +211,12 @@ Esta entrada no existe en el registro de forma predeterminada.
 
 Comportamiento predeterminado de enviar lista de emisores de confianza
 
-| Versión de Windows | Time |
+| Versión de Windows | Tiempo |
 |-----------------|------|
 | Windows Server 2012 y Windows 8 y versiones posteriores | FALSE |
 | Windows Server 2008 R2 y Windows 7 y versiones anteriores | TRUE |
 
-Versiones aplicables: Todas las versiones a partir de Windows Server 2008 y Windows Vista.
+Versiones aplicables: todas las versiones a partir de Windows Server 2008 y Windows Vista.
 
 Ruta de acceso del registro: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
@@ -224,7 +224,7 @@ Ruta de acceso del registro: HKLM SYSTEM\CurrentControlSet\Control\SecurityProvi
 
 Esta entrada controla la cantidad de tiempo en milisegundos que tarda el sistema operativo en expirar las entradas de caché del lado del servidor. Un valor de 0 deshabilita la caché de sesión del lado del servidor y evita volver a conectarse. Al aumentar ServerCacheTime por encima de los valores predeterminados, se hace que Lsass.exe consuma memoria adicional. Normalmente, cada elemento de la caché de sesión requiere de 2 a 4 KB de memoria. Esta entrada no existe en el registro de forma predeterminada. 
 
-Versiones aplicables: Todas las versiones a partir de Windows Server 2008 y Windows Vista.
+Versiones aplicables: todas las versiones a partir de Windows Server 2008 y Windows Vista.
 
 Ruta de acceso del registro: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
@@ -245,8 +245,8 @@ Tabla de subclaves de SSL 2,0
 
 | Subclave | Descripción |
 |--------|-------------|
-| Remoto | Controla el uso de SSL 2,0 en el cliente SSL. |
-| Servidor | Controla el uso de SSL 2,0 en el servidor SSL. |
+| Cliente | Controla el uso de SSL 2,0 en el cliente SSL. |
+| Server | Controla el uso de SSL 2,0 en el servidor SSL. |
 
 Para deshabilitar SSL 2,0 para el cliente o el servidor, cambie el valor DWORD a 0. Si una aplicación SSPI solicita usar SSL 2,0, se le denegará. 
 
@@ -272,8 +272,8 @@ Tabla de subclaves de SSL 3,0
 
 | Subclave | Descripción |
 |--------|-------------|
-| Remoto | Controla el uso de SSL 3,0 en el cliente SSL. |
-| Servidor | Controla el uso de SSL 3,0 en el servidor SSL. |
+| Cliente | Controla el uso de SSL 3,0 en el cliente SSL. |
+| Server | Controla el uso de SSL 3,0 en el servidor SSL. |
 
 Para deshabilitar SSL 3,0 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita usar SSL 3,0, se le denegará. 
@@ -298,8 +298,8 @@ Tabla de subclave TLS 1,0
 
 | Subclave | Descripción |
 |--------|-------------|
-| Remoto | Controla el uso de TLS 1,0 en el cliente TLS. |
-| Servidor | Controla el uso de TLS 1,0 en el servidor TLS. |
+| Cliente | Controla el uso de TLS 1,0 en el cliente TLS. |
+| Server | Controla el uso de TLS 1,0 en el servidor TLS. |
 
 Para deshabilitar TLS 1,0 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita usar TLS 1,0, se le denegará. 
@@ -324,8 +324,8 @@ Tabla de subclave TLS 1,1
 
 | Subclave | Descripción |
 |--------|-------------|
-| Remoto | Controla el uso de TLS 1,1 en el cliente TLS. |
-| Servidor | Controla el uso de TLS 1,1 en el servidor TLS. |
+| Cliente | Controla el uso de TLS 1,1 en el cliente TLS. |
+| Server | Controla el uso de TLS 1,1 en el servidor TLS. |
 
 Para deshabilitar TLS 1,1 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita usar TLS 1,1, se le denegará. 
@@ -350,8 +350,8 @@ Tabla de subclave TLS 1,2
 
 | Subclave | Descripción |
 |--------|-------------|
-| Remoto | Controla el uso de TLS 1,2 en el cliente TLS. |
-| Servidor | Controla el uso de TLS 1,2 en el servidor TLS. |
+| Cliente | Controla el uso de TLS 1,2 en el cliente TLS. |
+| Server | Controla el uso de TLS 1,2 en el servidor TLS. |
 
 Para deshabilitar TLS 1,2 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita usar TLS 1,2, se le denegará. 
@@ -376,8 +376,8 @@ Tabla de subclave DTLS 1,0
 
 | Subclave | Descripción |
 |--------|-------------|
-| Remoto | Controla el uso de DTLS 1,0 en el cliente de DTLS. |
-| Servidor | Controla el uso de DTLS 1,0 en el servidor de DTLS. |
+| Cliente | Controla el uso de DTLS 1,0 en el cliente de DTLS. |
+| Server | Controla el uso de DTLS 1,0 en el servidor de DTLS. |
 
 Para deshabilitar DTLS 1,0 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita que use DTLS 1,0, se le denegará. 
@@ -402,8 +402,8 @@ Tabla de subclave DTLS 1,2
 
 | Subclave | Descripción |
 |--------|-------------|
-| Remoto | Controla el uso de DTLS 1,2 en el cliente de DTLS. |
-| Servidor | Controla el uso de DTLS 1,2 en el servidor de DTLS. |
+| Cliente | Controla el uso de DTLS 1,2 en el cliente de DTLS. |
+| Server | Controla el uso de DTLS 1,2 en el servidor de DTLS. |
 
 
 Para deshabilitar DTLS 1,2 para el cliente o el servidor, cambie el valor DWORD a 0.

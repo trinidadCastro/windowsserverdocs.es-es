@@ -13,11 +13,11 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.openlocfilehash: cf189b15ca15fb556424b5e4931f19d4be356d4d
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78370779"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323377"
 ---
 # <a name="desktop-hosting-service"></a>Servicio de hospedaje de escritorio
 

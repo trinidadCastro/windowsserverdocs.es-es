@@ -9,11 +9,11 @@ ms.assetid: fe77655a-e2be-4949-92e1-aaaa215d86ea
 ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: a2bde42ba9b9489ddcd8fb3673ec5ddf1fd4d970
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396362"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322567"
 ---
 # <a name="configure-network-policies"></a>Configurar las directivas de red
 
@@ -21,40 +21,40 @@ ms.locfileid: "71396362"
 
 Puede usar este tema para configurar directivas de red en NPS.
 
-## <a name="add-a-network-policy"></a>Agregar una directiva de red
+## <a name="add-a-network-policy"></a>Add a Network Policy
 
 Servidor de directivas de redes \(NPS\) usa directivas de red y las propiedades de acceso telefónico de las cuentas de usuario para determinar si una solicitud de conexión está autorizada para conectarse a la red.
 
 Puede usar este procedimiento para configurar una nueva Directiva de red en la consola de NPS o en la consola de acceso remoto.
 
-### <a name="performing-authorization"></a>Realización de la autorización
+### <a name="performing-authorization"></a>Proceso de autorización
 
-Cuando NPS realiza la autorización de una solicitud de conexión, compara la solicitud con cada directiva de red de la lista ordenada de directivas, comenzando por la primera Directiva y, a continuación, desplazando la lista de directivas configuradas. Si NPS encuentra una directiva cuyas condiciones coinciden con la solicitud de conexión, NPS usa la Directiva de coincidencia y las propiedades de acceso telefónico de la cuenta de usuario para realizar la autorización. Si las propiedades de acceso telefónico de la cuenta de usuario están configuradas para conceder acceso o controlar el acceso a través de la Directiva de red y la solicitud de conexión está autorizada, NPS aplica la configuración establecida en la Directiva de red a la conexión.
+Cuando NPS autoriza una solicitud de conexión, compara la solicitud con cada una de las directivas de red de la lista ordenada de directivas, comenzando por la primera y, posteriormente, desplazándose en sentido descendente por el resto de las directivas. Si NPS encuentra una directiva cuyas condiciones coinciden con la solicitud de conexión, usa la directiva coincidente y las propiedades de acceso telefónico de la cuenta de usuario para realizar la autorización. Si las propiedades de acceso telefónico de la cuenta de usuario se configuran para conceder acceso o controlar el acceso a través de la directiva de red y la solicitud de conexión se autoriza, NPS aplica los valores configurados en la directiva de red para la conexión.
 
-Si NPS no encuentra una directiva de red que coincida con la solicitud de conexión, se rechazará la solicitud de conexión a menos que las propiedades de acceso telefónico de la cuenta de usuario estén configuradas para conceder acceso.
+Si NPS no encuentra una directiva de red que coincida con la solicitud de conexión, la solicitud se rechazará a menos que las propiedades de acceso telefónico de la cuenta de usuario se hayan configurado para conceder acceso.
 
-Si las propiedades de acceso telefónico de la cuenta de usuario están configuradas para denegar el acceso, NPS rechaza la solicitud de conexión.
+Si las propiedades de acceso telefónico de la cuenta de usuario se configuran para denegar el acceso, NPS rechazará la solicitud de conexión.
 
-### <a name="key-settings"></a>Configuración de claves
+### <a name="key-settings"></a>Configuración importante
 
 Cuando se usa el Asistente para nueva Directiva de red para crear una directiva de red, el valor que se especifica en el **método de conexión de red** se usa para configurar automáticamente la condición de tipo de **Directiva** : 
 
 - Si mantiene el valor predeterminado de sin especificar, NPS evalúa la Directiva de red que cree para todos los tipos de conexión de red que usan cualquier tipo de servidor de acceso a la red (NAS).
-- Si especifica un método de conexión de red, NPS evalúa la Directiva de red solo si la solicitud de conexión se origina en el tipo de servidor de acceso a la red que especifique.
+- Si especifica un método de conexión a red, NPS sólo evalúa la directiva de red si la solicitud de conexión se origina en el tipo de servidor de acceso a red que haya especificado.
 
 En la página **permiso de acceso** , debe seleccionar **acceso concedido** si desea que la Directiva permita a los usuarios conectarse a la red. Si desea que la Directiva impida que los usuarios se conecten a la red, seleccione **acceso denegado**. 
 
 Si desea que el permiso de acceso esté determinado por las propiedades de acceso telefónico de la cuenta de usuario en Active Directory&reg; servicios de dominio \(AD DS\), puede seleccionar la casilla el **acceso se determina mediante las propiedades de marcado del usuario** .
 
-Para completar este procedimiento, se requiere como mínimo la pertenencia a **Admins. del dominio** o equivalente.
+La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo necesario para completar este procedimiento.
 
 ### <a name="to-add-a-network-policy"></a>Para agregar una directiva de red 
 
 1. Abra la consola de NPS y, a continuación, haga doble clic en **directivas**.
 
-2. En el árbol de consola, haga clic con el botón secundario en **directivas de red**y haga clic en **nuevo**. Se abre el Asistente para nueva Directiva de red.
+2. En el árbol de consola, haga clic con el botón secundario en **directivas de red**y haga clic en **nuevo**. Se abre el asistente para nueva directiva de red.
 
-3. Use el Asistente para nueva Directiva de red para crear una directiva.
+3. Use este asistente para crear una directiva.
 
 ## <a name="create-network-policies-for-dial-up-or-vpn-with-a-wizard"></a>Crear directivas de red para acceso telefónico o VPN con un asistente
 
@@ -65,24 +65,24 @@ Puede usar este procedimiento para crear las directivas de solicitud de conexió
 
 En este procedimiento se explica cómo abrir el Asistente para nuevas conexiones de acceso telefónico o de red privada virtual en NPS.
 
-Después de ejecutar el asistente, se crean las siguientes directivas:
+Una vez que ejecute el asistente, se crean las siguientes directivas:
 
 - Una directiva de solicitud de conexión
 - Una directiva de red
 
-Puede ejecutar el Asistente para nuevas conexiones de acceso telefónico o de red privada virtual cada vez que necesite crear nuevas directivas para los servidores de acceso telefónico y los servidores VPN.
+Puede ejecutar el asistente para nuevas conexiones de acceso telefónico o de red privada virtual cada vez que necesite crear nuevas directivas para servidores de acceso telefónico y servidores VPN.
 
-Ejecutar el Asistente para nuevas conexiones de acceso telefónico o de red privada virtual no es el único paso necesario para implementar servidores de acceso telefónico o VPN como clientes RADIUS en el NPS. Ambos métodos de acceso a la red requieren que se implementen componentes adicionales de hardware y software.
+Ejecutar el Asistente para nuevas conexiones de acceso telefónico o de red privada virtual no es el único paso necesario para implementar servidores de acceso telefónico o VPN como clientes RADIUS en el NPS. Ambos métodos de acceso a la red precisan la implementación de componentes adicionales de hardware y software.
 
-Para completar este procedimiento, se requiere como mínimo la pertenencia a **Admins. del dominio** o equivalente.
+La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo necesario para completar este procedimiento.
 
-### <a name="to-create-policies-for-dial-up-or-vpn-with-a-wizard"></a>Para crear directivas de acceso telefónico o VPN con un asistente
+### <a name="to-create-policies-for-dial-up-or-vpn-with-a-wizard"></a>Para crear directivas para acceso telefónico o VPN con un asistente
 
 1. Abra la consola de NPS. Si aún no está seleccionada, haga clic en **NPS \(\)local** . Si desea crear directivas en un NPS remoto, seleccione el servidor.
 
-2. En **Introducción** y **Configuración estándar**, seleccione **servidor RADIUS para conexiones VPN o de acceso telefónico**. El texto y los vínculos debajo del texto cambian para reflejar la selección.
+2. En **Introducción** y **Configuración estándar**, seleccione **servidor RADIUS para conexiones VPN o de acceso telefónico**. El texto y los vínculos del texto cambian para reflejar la selección.
 
-3. Haga clic en **Configurar VPN o acceso telefónico con un asistente**. Se abre el Asistente para nuevas conexiones de acceso telefónico o de red privada virtual.
+3. Haga clic en **Configurar VPN o acceso telefónico con un asistente**. Se abre el asistente para nueva conexión de acceso telefónico o de red privada virtual.
 
 4. Siga las instrucciones del Asistente para completar la creación de las nuevas directivas.
 
@@ -92,26 +92,26 @@ Puede usar este procedimiento para crear la Directiva de solicitud de conexión 
 
 En este procedimiento se explica cómo iniciar el nuevo Asistente para conexiones inalámbricas y cableadas seguras IEEE 802.1 X en NPS.
 
-Después de ejecutar el asistente, se crean las siguientes directivas:
+Una vez que ejecute el asistente, se crean las siguientes directivas:
 
 - Una directiva de solicitud de conexión
 - Una directiva de red
 
-Puede ejecutar el Asistente para nuevas conexiones cableadas e inalámbricas seguras de IEEE 802.1 X cada vez que necesite crear nuevas directivas para el acceso a 802.1 X.
+Puede ejecutar el asistente para Nuevas conexiones cableadas e inalámbricas seguras IEEE 802.1X todas las veces que necesite para crear nuevas directivas para acceso 802.1X.
 
-La ejecución del Asistente para nuevas conexiones cableadas e inalámbricas de IEEE 802.1 X Secure no es el único paso necesario para implementar conmutadores de autenticación de 802.1 X y puntos de acceso inalámbricos como clientes RADIUS en NPS. Ambos métodos de acceso a la red requieren que se implementen componentes adicionales de hardware y software.
+La ejecución del Asistente para nuevas conexiones cableadas e inalámbricas de IEEE 802.1 X Secure no es el único paso necesario para implementar conmutadores de autenticación de 802.1 X y puntos de acceso inalámbricos como clientes RADIUS en NPS. Ambos métodos de acceso a la red precisan la implementación de componentes adicionales de hardware y software.
 
-Para completar este procedimiento, se requiere como mínimo la pertenencia a **Admins. del dominio** o equivalente.
+La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo necesario para completar este procedimiento.
 
-### <a name="to-create-policies-for-8021x-wired-or-wireless-with-a-wizard"></a>Para crear directivas para 802.1 X cableadas o inalámbricas con un asistente
+### <a name="to-create-policies-for-8021x-wired-or-wireless-with-a-wizard"></a>Para crear directivas para conexiones cableadas o inalámbricas 802.1X con un asistente
 
 1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS. 
 
 2. Si aún no está seleccionada, haga clic en **NPS \(\)local** . Si desea crear directivas en un NPS remoto, seleccione el servidor.
 
-3. En **Introducción** y **Configuración estándar**, seleccione **servidor RADIUS para conexiones cableadas o inalámbricas 802.1 x**. El texto y los vínculos debajo del texto cambian para reflejar la selección.
+3. En **Introducción** y **Configuración estándar**, seleccione **servidor RADIUS para conexiones cableadas o inalámbricas 802.1 x**. El texto y los vínculos del texto cambian para reflejar la selección.
 
-4. Haga clic en **configurar 802.1 x con un asistente**. Se abre el nuevo Asistente para conexiones cableadas e inalámbricas seguras de IEEE 802.1 X.
+4. Haga clic en **configurar 802.1 x con un asistente**. Se abre el asistente para Nuevas conexiones cableadas e inalámbricas seguras IEEE 802.1X.
 
 5. Siga las instrucciones del Asistente para completar la creación de las nuevas directivas.
 

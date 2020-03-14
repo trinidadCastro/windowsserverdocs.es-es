@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 3563c30e86c53435c10cafc840a71c7b8c526943
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391205"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323257"
 ---
 # <a name="ad-ds-installation-and-removal-wizard-page-descriptions"></a>Descripciones de la página del Asistente para la instalación y eliminación de AD DS
 
@@ -61,7 +61,7 @@ Cuando se crea un nuevo bosque aparecen las siguientes opciones.
   
 -   Cuando se crea un nuevo bosque, se debe especificar un nombre para el dominio raíz del bosque. El nombre de dominio raíz del bosque no puede tener una etiqueta única (por ejemplo, debe ser "contoso.com" en lugar de "Contoso"). Debe usar convenciones de nomenclatura de dominio DNS permitidas. Se puede especificar un nombre de dominio internacionalizado (IDN). Para obtener más información acerca de las convenciones de nomenclatura de dominios DNS, consulte [KB 909264](https://support.microsoft.com/kb/909264).  
   
--   No cree bosques nuevos de Active Directory con el mismo nombre que el del DNS externo. Por ejemplo, si la dirección URL de DNS de Internet es http: \//contoso. com, debe elegir un nombre diferente para el bosque interno con el fin de evitar problemas de compatibilidad en el futuro. Ese nombre debe ser único y poco probable que corresponda al tráfico web, como por ejemplo corp.contoso.com.  
+-   No cree bosques nuevos de Active Directory con el mismo nombre que el del DNS externo. Por ejemplo, si la dirección URL de DNS de Internet es http:\//contoso.com, debe elegir un nombre diferente para el bosque interno con el fin de evitar problemas de compatibilidad en el futuro. Ese nombre debe ser único y poco probable que corresponda al tráfico web, como por ejemplo corp.contoso.com.  
   
 -   Debe ser miembro del grupo Administradores en el servidor donde desea crear el nuevo bosque.  
   
@@ -148,7 +148,7 @@ Si instalas el servidor DNS, aparece la siguiente página **Opciones de DNS**:
   
 Cuando se instala el servidor DNS, los registros de delegación que apuntan al servidor DNS como autoritativos para la zona deben crearse en la zona primaria del Sistema de nombres de dominio (DNS). Los registros de delegación transfieren la autoridad de resolución de nombres y proporcionan referencias correctas a otros servidores y clientes DNS de los nuevos servidores que van a ser autoritativos para la nueva zona. Estos registros de recursos incluyen:  
   
--   Un registro de recursos de servidor de nombres (NS) para realizar la delegación. Este registro de recursos indica que el servidor con el nombre ns1.na.example.microsoft.com es un servidor autoritativo para el subdominio delegado.  
+-   Un registro de recursos de servidor de nombres (NS) para realizar la delegación. Este registro de recursos indica que el servidor con el nombre ns1.na.ejemplo.microsoft.com es un servidor autoritativo para el subdominio delegado.  
   
 -   Un registro de recursos de host (A o AAAA) también conocido como registro de adherencia debe estar presente para resolver el nombre del servidor especificado en el registro de recursos de servidor de nombres (NS) en su dirección IP. En ocasiones, el proceso de resolver el nombre de host de este registro de recursos en el servidor DNS delegado del registro de recursos de servidor de nombres (NS) se denomina "búsqueda de adherencias".  
   
@@ -175,7 +175,7 @@ Las siguientes opciones aparecen cuando se instala un controlador de dominio de 
   
 -   Las cuentas de administrador delegadas obtienen permisos administrativos locales para RODC. Estos usuarios pueden trabajar con privilegios equivalentes al grupo de administradores del equipo local. No son miembros de los grupos Admins del dominio o de las cuentas predefinidas de administrador del dominio. Esta opción es útil para delegar la administración de la sucursal sin dar permisos administrativos de dominio. No es necesario configurar la delegación de la administración. Para obtener más información, consulte [separación de roles de administrador](https://technet.microsoft.com/library/cc753170(v=WS.10).aspx).  
   
--   La Directiva de replicación de contraseñas actúa como una lista de control de acceso (ACL). Determina si un RODC puede almacenar en memoria caché una contraseña. Después de que el RODC recibe una solicitud de inicio de sesión de un usuario o equipo autenticado, se remite a la Directiva de replicación de contraseñas para determinar si se debe almacenar en memoria caché la contraseña de la cuenta. La misma cuenta podrá iniciar sesiones posteriores en forma más eficiente.  
+-   La Directiva de replicación de contraseñas actúa como una lista de control de acceso (ACL). Determina si un RODC puede almacenar en memoria caché una contraseña. Después de que el RODC reciba una solicitud de inicio de sesión de un equipo o usuario autenticado, consulta la Directiva de replicación de contraseñas para determinar si se debería almacenar en caché la contraseña de la cuenta. La misma cuenta podrá iniciar sesiones posteriores en forma más eficiente.  
   
     La Directiva de replicación de contraseñas (PRP) muestra una lista de cuentas cuyas contraseñas pueden almacenarse en memoria caché, y de cuentas en las cuales se deniega en forma explícita que sus contraseñas se almacenen en memoria caché. La lista de cuentas de usuario y equipo en que se permite el almacenamiento en memoria caché no implica que el RODC haya almacenado necesariamente en memoria caché las contraseñas de esas cuentas. Un administrador puede, por ejemplo, especificar de antemano las cuentas que el RODC almacenará en memoria caché. De esta manera, el RODC puede autenticar aquellas cuentas, aunque el vínculo WAN al sitio del concentrador se encuentre sin conexión.  
   
@@ -210,7 +210,7 @@ Especifique la ubicación para la base de datos de AD DS (NTDS.DIT), archivos d
 ## <a name="BKMK_AdprepCreds"></a>Opciones de preparación  
 ![AD DS instalar](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_PreparationOptions.gif)  
   
-Si actualmente no ha iniciado sesión con suficientes credenciales para ejecutar los comandos de adprep.exe y es necesario que adprep se ejecute para completar la instalación de AD DS, se le pide que proporcione las credenciales para ejecutar adprep.exe. Se requiere que Adprep se ejecute para agregar el primer controlador de dominio que ejecuta Windows Server 2012 a un dominio o bosque existente. Más concretamente:  
+Si actualmente no ha iniciado sesión con suficientes credenciales para ejecutar los comandos de adprep.exe y es necesario que adprep se ejecute para completar la instalación de AD DS, se le pide que proporcione las credenciales para ejecutar adprep.exe. Se requiere que Adprep se ejecute para agregar el primer controlador de dominio que ejecuta Windows Server 2012 a un dominio o bosque existente. Más específicamente:  
   
 -   Se debe ejecutar Adprep/ForestPrep para agregar el primer controlador de dominio que ejecuta Windows Server 2012 a un bosque existente. Este comando debe ejecutarse por un miembro de los grupos Administradores de empresas, Administradores de esquema y Admins. del dominio del dominio que hospeda el maestro de esquema. Para que este comando se complete correctamente, debe haber conectividad entre el equipo en que se ejecuta el comando y el maestro de esquema para el bosque.  
   
@@ -274,9 +274,9 @@ Debe hacer clic en **Continuar con la eliminación** para reconocer que los role
   
 Si se fuerza la eliminación de un controlador de dominio, los cambios en los objetos de Active Directory que no se hayan replicado con otros controladores de dominio en el dominio se perderán. Además, si el controlador de dominio hospeda roles de maestro de operaciones, el catálogo global o el rol de servidor DNS, podrá impactar de la siguiente manera en las operaciones críticas en el dominio y bosque. Antes de quitar un controlador de dominio que hospeda roles maestros de operaciones, intente transferir el rol a otro controlador de dominio. Si no es posible transferir el rol, primero quite Active Directory Domain Services de este equipo y, a continuación, use Ntdsutil.exe para asumir el rol. Use Ntdsutil en el controlador de dominio al que planea asumir el rol; si es posible, use un asociado de replicación reciente en el mismo sitio que este controlador de dominio. Para obtener más información acerca de cómo transferir y asumir roles de maestro de operaciones, consulte el [artículo 255504](https://go.microsoft.com/fwlink/?LinkId=80395) en Microsoft Knowledge base. Si el asistente no puede determinar si el controlador de dominio hospeda un rol maestro de operaciones, ejecute el comando netdom.exe para determinar si este controlador de dominio realiza roles maestros de operaciones.  
   
--   Catálogo global: Es posible que los usuarios tengan problemas para iniciar sesión en los dominios del bosque. Antes de quitar un servidor de catálogo global, asegúrese de que haya suficientes servidores de catálogo global en este bosque y sitio para prestar servicio a los inicios de sesión de los usuarios. Si es necesario, designe otro servidor de catálogo global y actualice los clientes y aplicaciones con la nueva información.  
+-   Catálogo global: los usuarios podrían tener problemas para iniciar sesión en los dominios del bosque. Antes de quitar un servidor de catálogo global, asegúrese de que haya suficientes servidores de catálogo global en este bosque y sitio para prestar servicio a los inicios de sesión de los usuarios. Si es necesario, designe otro servidor de catálogo global y actualice los clientes y aplicaciones con la nueva información.  
   
--   Servidor DNS: Se perderán todos los datos DNS que se almacenan en zonas integradas Active Directory. Después de quitar AD DS, este servidor DNS no podrá realizar la resolución de nombres para las zonas DNS que estaban integradas con Active Directory. Por lo tanto, se recomienda que actualice la configuración de DNS de todos los equipos que actualmente hacen referencia a la dirección IP de este servidor DNS para la resolución de nombres con la dirección IP de un nuevo servidor DNS.  
+-   Servidor DNS: todos los datos DNS almacenados en zonas integradas de Active Directory se perderán. Después de quitar AD DS, este servidor DNS no podrá realizar la resolución de nombres para las zonas DNS que estaban integradas con Active Directory. Por lo tanto, se recomienda que actualice la configuración de DNS de todos los equipos que actualmente hacen referencia a la dirección IP de este servidor DNS para la resolución de nombres con la dirección IP de un nuevo servidor DNS.  
   
 -   Maestro de infraestructura: es posible que a los clientes del dominio les sea difícil encontrar objetos en otros dominios. Antes de continuar, transfiera el rol maestro de infraestructura a un controlador de dominio que no sea un servidor de catálogo global.  
   

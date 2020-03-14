@@ -9,15 +9,15 @@ ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
 ms.openlocfilehash: ffcff036a7e30018e523def055ce3aeb8d30c225
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365841"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322337"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Novedades de almacenamiento en Windows Server
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 En este tema se explica la funcionalidad nueva y modificada del almacenamiento en Windows Server 2019, Windows Server 2016 y las versiones de canal semianual de Windows Server.
 
@@ -128,7 +128,7 @@ Para obtener el mayor rendimiento, todos los miembros del grupo de replicación 
 
 #### <a name="test-failover"></a>Conmutaciones por error de prueba
 
-Ahora puede montar temporalmente una instantánea del almacenamiento replicado en un servidor de destino con fines de prueba o de copia de seguridad. Para obtener más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq).
+Ahora puede montar temporalmente una instantánea del almacenamiento replicado en un servidor de destino con fines de prueba o de copia de seguridad. Para más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq).
 
 #### <a name="windows-admin-center-support"></a>Soporte técnico de Windows Admin Center
 
@@ -143,24 +143,24 @@ Réplica de almacenamiento también contiene las siguientes mejoras:
 
 ### <a name="smb"></a>SMB
 
-- **Eliminación de la autenticación de invitados y SMB1**: Windows Server ya no instala el cliente y el servidor de SMB1 de forma predeterminada. Además, la capacidad de autenticar como invitado en SMB2 y versiones posteriores está desactivada de forma predeterminada. Para más información, revisa [SMBv1 no está instalado de manera predeterminada en Windows 10, versión 1709 y Windows Server, versión 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
+- **SMB1 y eliminación**de la autenticación de invitado: Windows Server ya no instala el cliente y el servidor de smb1 de forma predeterminada. Además, la capacidad de autenticar como invitado en SMB2 y versiones posteriores está desactivada de manera predeterminada. Para más información, revisa [SMBv1 no está instalado de manera predeterminada en Windows 10, versión 1709 y Windows Server, versión 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
 
-- **Compatibilidad y seguridad de SMB2/SMB3**: se agregaron opciones adicionales de compatibilidad de seguridad y aplicaciones, incluida la capacidad de desactivar bloqueos oportunistas en SMB2+ para aplicaciones heredadas, además de requerir inicio de sesión o cifrado en función de la base por conexión de un cliente. Para obtener más información, revisa la Ayuda del módulo de SMBShare PowerShell.
+- **Compatibilidad y seguridad de SMB2/SMB3**: se añadieron opciones adicionales de compatibilidad de seguridad y aplicaciones, incluida la capacidad de desactivar bloqueos oportunistas en SMB2+ para aplicaciones heredadas, además de requerir inicio de sesión o cifrado en función de la base por conexión de un cliente. Para más información, revisa la Ayuda del módulo de SMBShare de PowerShell.
 
 ### <a name="data-deduplication"></a>Desduplicación de datos
 
-- **Ahora Desduplicación de datos admite ReFS**: ya no tienes que elegir entre las ventajas de un sistema de archivos moderno con ReFS y Desduplicación de datos, ya que ahora puedes habilitar Desduplicación de datos siempre que puedas habilitar ReFS. Aumenta la eficacia del almacenamiento hasta un 95 % con ReFS.
-- **DataPort API para la entrada o salida optimizadas de volúmenes desduplicados**: los desarrolladores ahora pueden aprovechar el conocimiento que tiene Desduplicación de datos sobre cómo almacenar datos para mover datos entre volúmenes, servidores y clústeres de manera eficaz.
+- **La Desduplicación de datos ahora admite ReFS**: ya no tienes que elegir entre las ventajas de un sistema de archivos moderno con ReFS y la Desduplicación de datos, ya que ahora puedes habilitar la Desduplicación de datos siempre que puedas habilitar ReFS. Aumenta la eficacia del almacenamiento hasta un 95 % con ReFS.
+- **API de DataPort para entrada/salida optimizadas de volúmenes desduplicados**: los desarrolladores pueden ahora sacar partido de la Desduplicación de datos de información con el fin de almacenar datos de forma eficaz para mover datos entre volúmenes, servidores y clústeres.
 
-### <a name="file-server-resource-manager"></a>Administrador de recursos del servidor de archivos
+### <a name="file-server-resource-manager"></a>File Server Resource Manager
 
-Windows Server 2019 incluye la posibilidad de impedir que el servidor de archivos Administrador de recursos servicio cree un diario de cambios (también conocido como diario USN) en todos los volúmenes cuando se inicia el servicio. Esto puede ahorrar espacio en cada volumen, pero deshabilitará la clasificación de archivos en tiempo real. Para obtener más información, consulta [Información general sobre el Administrador de recursos del servidor de archivos](fsrm/fsrm-overview.md).
+Windows Server 2019 incluye la posibilidad de impedir que el servidor de archivos Administrador de recursos servicio cree un diario de cambios (también conocido como diario USN) en todos los volúmenes cuando se inicia el servicio. Esto puede ahorrar espacio en cada volumen, pero deshabilitará la clasificación de archivos en tiempo real. Para obtener más información, vea [Introducción al Administrador de recursos del servidor de archivos](fsrm/fsrm-overview.md).
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1803"></a>Novedades de Storage en Windows Server, versión 1803
 
-### <a name="file-server-resource-manager"></a>Administrador de recursos del servidor de archivos
+### <a name="file-server-resource-manager"></a>File Server Resource Manager
 
-Windows Server, versión 1803 incluye la posibilidad de impedir que el servidor de archivos Administrador de recursos servicio cree un diario de cambios (también conocido como un diario USN) en todos los volúmenes cuando se inicia el servicio. Esto puede ahorrar espacio en cada volumen, pero deshabilitará la clasificación de archivos en tiempo real. Para obtener más información, consulta [Información general sobre el Administrador de recursos del servidor de archivos](fsrm/fsrm-overview.md).
+Windows Server, versión 1803 incluye la posibilidad de impedir que el servidor de archivos Administrador de recursos servicio cree un diario de cambios (también conocido como un diario USN) en todos los volúmenes cuando se inicia el servicio. Esto puede ahorrar espacio en cada volumen, pero deshabilitará la clasificación de archivos en tiempo real. Para obtener más información, vea [Introducción al Administrador de recursos del servidor de archivos](fsrm/fsrm-overview.md).
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1709"></a>Novedades de Storage en Windows Server, versión 1709
 
@@ -172,8 +172,8 @@ Para obtener más información, consulta [Introducción al Canal semianual de Wi
 
 La protección de recuperación ante desastres agregada por réplica de almacenamiento se ha ampliado para incluir:
 
-- **Conmutación por error de prueba**: la opción para montar el almacenamiento de destino ya es posible a través de la característica Conmutación por error de prueba. Puedes montar una instantánea del almacenamiento replicado en los nodos de destino temporalmente para realizar pruebas o copias de seguridad. Para obtener más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq).
-- **Compatibilidad con el centro de administración de Windows**: La compatibilidad con la administración gráfica de la replicación ahora está disponible en el centro de administración de Windows a través de la herramienta Administrador del servidor. Esto incluye la replicación de servidor a servidor, de clúster a clúster, así como de la replicación de clúster extendido.
+- **Conmutación por error de prueba**: la opción para montar el almacenamiento de destino ya es posible mediante la característica Conmutación por error de prueba. Puedes montar una instantánea del almacenamiento replicado en los nodos de destino temporalmente para realizar pruebas o copias de seguridad. Para más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq).
+- **Compatibilidad con el centro de administración de Windows**: la compatibilidad con la administración gráfica de la replicación ahora está disponible en el centro de administración de Windows a través de la herramienta Administrador del servidor. Esto incluye la replicación de servidor a servidor, de clúster a clúster, así como de la replicación de clúster extendido.
 
 Réplica de almacenamiento también contiene las siguientes mejoras:
 
@@ -182,14 +182,14 @@ Réplica de almacenamiento también contiene las siguientes mejoras:
 
 ### <a name="smb"></a>SMB
 
-- **Eliminación de la autenticación de invitados y SMB1**: Windows Server, versión 1709 ya no instala el servidor y el cliente SMB1 de manera predeterminada. Además, la capacidad de autenticar como invitado en SMB2 y versiones posteriores está desactivada de manera predeterminada. Para más información, revisa [SMBv1 no está instalado de manera predeterminada en Windows 10, versión 1709 y Windows Server, versión 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
+- **Eliminación de autenticación de invitados y SMB1**: Windows Server, versión 1709 ya no instala el cliente SMB1 y el servidor de forma predeterminada. Además, la capacidad de autenticar como invitado en SMB2 y versiones posteriores está desactivada de manera predeterminada. Para más información, revisa [SMBv1 no está instalado de manera predeterminada en Windows 10, versión 1709 y Windows Server, versión 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
 
-- **Compatibilidad y seguridad de SMB2/SMB3**: se agregaron opciones adicionales de compatibilidad de seguridad y aplicaciones, incluida la capacidad de desactivar bloqueos oportunistas en SMB2+ para aplicaciones heredadas, además de requerir inicio de sesión o cifrado en función de la base por conexión de un cliente. Para obtener más información, revisa la Ayuda del módulo de SMBShare PowerShell.
+- **Compatibilidad y seguridad de SMB2/SMB3**: se añadieron opciones adicionales de compatibilidad de seguridad y aplicaciones, incluida la capacidad de desactivar bloqueos oportunistas en SMB2+ para aplicaciones heredadas, además de requerir inicio de sesión o cifrado en función de la base por conexión de un cliente. Para más información, revisa la Ayuda del módulo de SMBShare de PowerShell.
 
 ### <a name="data-deduplication"></a>Desduplicación de datos
 
-- **Ahora Desduplicación de datos admite ReFS**: ya no tienes que elegir entre las ventajas de un sistema de archivos moderno con ReFS y Desduplicación de datos, ya que ahora puedes habilitar Desduplicación de datos siempre que puedas habilitar ReFS. Aumenta la eficacia del almacenamiento hasta un 95 % con ReFS.
-- **DataPort API para la entrada o salida optimizadas de volúmenes desduplicados**: los desarrolladores ahora pueden aprovechar el conocimiento que tiene Desduplicación de datos sobre cómo almacenar datos para mover datos entre volúmenes, servidores y clústeres de manera eficaz.
+- **La Desduplicación de datos ahora admite ReFS**: ya no tienes que elegir entre las ventajas de un sistema de archivos moderno con ReFS y la Desduplicación de datos, ya que ahora puedes habilitar la Desduplicación de datos siempre que puedas habilitar ReFS. Aumenta la eficacia del almacenamiento hasta un 95 % con ReFS.
+- **API de DataPort para entrada/salida optimizadas de volúmenes desduplicados**: los desarrolladores pueden ahora sacar partido de la Desduplicación de datos de información con el fin de almacenar datos de forma eficaz para mover datos entre volúmenes, servidores y clústeres.
 
 ## <a name="whats-new-in-storage-in-windows-server-2016"></a>Novedades de Espacios de almacenamiento en Windows Server 2016
 
@@ -269,7 +269,7 @@ Si la firma SMB y la autenticación mutua no están disponibles, un equipo con W
 > [!NOTE]  
 > Los valores del Registro para esta configuración no están presentes de forma predeterminada, pero se siguen aplicando las reglas de protección hasta que se reemplacen por la Directiva de grupo u otros valores del registro.  
 
-Para obtener más información sobre estas mejoras de seguridad (también conocidas como protección UNC), vea el artículo [3000483](https://support.microsoft.com/kb/3000483) de Microsoft [Knowledge base y MS15-011 & MS15-014: Protección de directiva de grupo](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy).  
+Para más información sobre estas mejoras de seguridad (también conocidas como protección UNC), vea el artículo de Microsoft Knowledge Base [3000483](https://support.microsoft.com/kb/3000483) y [MS15-011 & MS15-014: Hardening Group Policy](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy) (Protección de directiva de grupo).  
 
 ### <a name="work-folders"></a>Carpetas de trabajo
 Se ha mejorado la notificación de cambios cuando el servidor de carpetas de trabajo ejecuta Windows Server 2016 y el cliente de carpetas de trabajo es Windows 10.

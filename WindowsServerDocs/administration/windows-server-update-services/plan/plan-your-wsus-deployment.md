@@ -11,27 +11,27 @@ ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
 ms.openlocfilehash: 37e3a7788ccd409f4002f5fe2d7ea087e89b3419
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
-ms.translationtype: MT
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371647"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323527"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planear la implementación de WSUS
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 El primer paso de la implementación de Windows Server Update Services (WSUS) es tomar decisiones importantes, tales como determinar el escenario de implementación de WSUS, elegir una topología de red y comprender los requisitos del sistema. La siguiente lista de comprobación resume los pasos para preparar la implementación de WSUS.
 
 |Tarea|Descripción|
 |----|--------|
-|[1,1. revisar las consideraciones y los requisitos del sistema](#11-review-considerations-and-system-requirements)|Revise la lista de consideraciones y requisitos del sistema para asegurarse de tener todo el hardware y software necesario para implementar WSUS.|
-|[1,2. elegir un escenario de implementación de WSUS](#12-choose-a-wsus-deployment-scenario)|Decida el escenario de implementación de WSUS que se va a usar.|
-|[1,3. elegir una estrategia de almacenamiento de WSUS](#13-choose-a-wsus-storage-strategy)|Decida cuál es la estrategia de almacenamiento de WSUS que mejor se adapta a su implementación.|
-|[1,4. elegir idiomas de actualización de WSUS](#14-choose-wsus-update-languages)|Decida los idiomas de actualización de WSUS que se van a instalar.|
-|[1,5. planear grupos de equipos WSUS](#15-plan-wsus-computer-groups)|Planee el enfoque de grupos de equipos WSUS que usará en la implementación.|
-|[1,6. planear consideraciones de rendimiento de WSUS: Servicio de transferencia inteligente en segundo plano](#16-plan-wsus-performance-considerations)|Planee un diseño de WSUS para su mejor rendimiento.|
-|[1,7. plan Actualizaciones automáticas configuración](#17-plan-automatic-updates-settings)|Planee la manera en que configurará las actualizaciones automáticas en su escenario.|
+|[1.1. Revisar consideraciones iniciales y requisitos del sistema](#11-review-considerations-and-system-requirements)|Revise la lista de consideraciones y requisitos del sistema para asegurarse de tener todo el hardware y software necesario para implementar WSUS.|
+|[1.2. Elegir el escenario de implementación de WSUS](#12-choose-a-wsus-deployment-scenario)|Decida el escenario de implementación de WSUS que se va a usar.|
+|[1.3. Elegir la estrategia de almacenamiento de WSUS](#13-choose-a-wsus-storage-strategy)|Decida cuál es la estrategia de almacenamiento de WSUS que mejor se adapta a su implementación.|
+|[1.4. Elegir idiomas de actualización de WSUS](#14-choose-wsus-update-languages)|Decida los idiomas de actualización de WSUS que se van a instalar.|
+|[1.5. Planear grupos de equipos WSUS](#15-plan-wsus-computer-groups)|Planee el enfoque de grupos de equipos WSUS que usará en la implementación.|
+|[1.6. Planear consideraciones sobre el rendimiento de WSUS: servicio de transferencia inteligente en segundo plano](#16-plan-wsus-performance-considerations)|Planee un diseño de WSUS para su mejor rendimiento.|
+|[1.7. Planear la configuración de actualizaciones automáticas](#17-plan-automatic-updates-settings)|Planee la manera en que configurará las actualizaciones automáticas en su escenario.|
 
 ## <a name="11-review-considerations-and-system-requirements"></a>1.1. Revisar consideraciones iniciales y requisitos del sistema
 
@@ -41,13 +41,13 @@ Antes de habilitar el rol de servidor de WSUS, compruebe que el servidor cumpla 
 
 -   Los requisitos de hardware del servidor para habilitar el rol de WSUS están enlazados a los requisitos del hardware. Los requisitos mínimos de hardware para WSUS son:
 
-    -   **Procesador:** procesador x64 de 1,4 gigahercios (GHz) (se recomienda 2 GHz o más rápido)
+    -   **Procesador:** procesador x64 de 1,4 gigahercios (GHz) (se recomienda de 2 Ghz o más rápido)
 
-    -   **Memoria:** WSUS requiere 2 GB adicionales de RAM más de lo que necesita el servidor y todos los demás servicios o software.
+    -   **Memoria:** WSUS requiere 2 GB adicionales de RAM más de lo que requiere el servidor y los demás servicios o software.
 
-    -   **Espacio disponible en disco:** 10 GB (se recomienda 40 GB o superior)
+    -   **Espacio en disco disponible:** 10 GB (40 GB o más recomendado)
 
-    -   **Adaptador de red:** 100 megabits por segundo (Mbps) o superior
+    -   **Adaptador de red:** 100 megabits por segundo (Mbps) o superior
 
 -   Requisitos de software:
 
@@ -125,7 +125,7 @@ WSUS requiere una de las siguientes bases de datos:
 
 Las siguientes ediciones de SQL Server son compatibles con WSUS:
 
--   Estándar
+-   Standard
 
 -   Enterprise
 
@@ -195,7 +195,7 @@ Puede aprovechar la característica de sucursal de Windows para optimizar la imp
 
 2.  La característica de sucursal también se puede usar en sucursales que tengan conexiones de ancho de banda reducido con la oficina central, pero conexiones de ancho de banda alto con Internet. En este caso, quizás desee configurar servidores WSUS que siguen en la cadena para que obtengan información sobre las actualizaciones que se deben instalar desde el servidor WSUS central, pero que las descarguen desde Microsoft Update.
 
-### <a name="network-load-balancing"></a>Equilibrio de carga de red
+### <a name="network-load-balancing"></a>Network Load Balancing
 El equilibrio de carga de red (NLB) aumenta la confiabilidad y el rendimiento de la red WSUS. Puedes configurar varios servidores WSUS para que compartan un solo clúster de conmutación por error que ejecuta SQL Server, como SQL Server 2008 R2 SP1. En esta configuración, debe usar una instalación completa de SQL Server, no la instalación de Windows Internal Database que se proporciona con WSUS, y el rol de base de datos debe instalarse en todos los servidores WSUS front-end. Además puede hacer que todos los servidores WSUS usen un sistema de archivos distribuido (DFS) para almacenar su contenido.
 
 **Programa de instalación de WSUS para NLB:** en comparación con el programa de instalación de WSUS 3.2 para NLB, ya no son necesarios ni parámetros ni una llamada de configuración especial para configurar WSUS para NLB. Solo es necesario instalar los servidores WSUS con las consideraciones siguientes.
@@ -314,12 +314,12 @@ La elección de idiomas de un servidor que precede en la cadena no es lo mismo q
 
 #### <a name="to-choose-update-languages-for-a-downstream-server"></a>Elección de idiomas de actualización para un servidor que sigue en la cadena
 
-1.  Si el servidor que precede en la cadena se configuró para descargar archivos de actualización de un subconjunto de idiomas: en el Asistente para configuración de WSUS, haga clic en **Descargar actualizaciones solamente en estos idiomas (el servidor que precede en la cadena solo admite los idiomas marcados con un asterisco)** y luego seleccione los idiomas para los que quiere actualizaciones.
+1.  Si el servidor que precede en la cadena se configuró para descargar archivos de actualización de un subconjunto de idiomas: En el Asistente para configuración de WSUS, haga clic en **Descargar actualizaciones solamente en estos idiomas (el servidor que precede en la cadena solo admite los idiomas marcados con un asterisco)** y luego seleccione los idiomas para los que quiere actualizaciones.
 
 > [!NOTE]
 > Debe hacer esto aunque quiera que el servidor que sigue en la cadena descargue los mismos idiomas que el servidor que precede en la cadena.
 
-2. Si el servidor que precede en la cadena se configuró para descargar archivos de actualización de todos los idiomas: en el Asistente para configuración de WSUS, haga clic en **Descargar actualizaciones en todos los idiomas que admite el servidor que precede en la cadena**.
+2. Si el servidor que precede en la cadena se configuró para descargar archivos de actualización de todos los idiomas: En el Asistente para configuración de WSUS, haga clic en **Descargar actualizaciones en todos los idiomas que admite el servidor que precede en**.
 
 > [!NOTE]
 > Debe hacer esto aunque quiera que el servidor que sigue en la cadena descargue los mismos idiomas que el servidor que precede en la cadena. Esta configuración hace que el servidor que precede en la cadena descargue actualizaciones en todos los idiomas, incluidos los idiomas que no se configuraron originalmente para el servidor que precede en la cadena. Si agrega idiomas al servidor que precede en la cadena, debe copiar las nuevas actualizaciones en sus servidores de réplica.
@@ -342,18 +342,18 @@ Puede asignar equipos a grupos de equipos por medio de dos métodos: asignación
 
 -   **Asignación del lado servidor**: se asigna de forma manual uno o más equipos cliente a varios grupos simultáneamente.
 
--   **Asignación del lado cliente**: se usa la directiva de grupo o se modifica la configuración del Registro en los equipos cliente para habilitar esos equipos de manera que se agreguen automáticamente a los grupos de equipos creados anteriormente.
+-   **Asignación del lado cliente**: se usa la directiva de grupo o se modifica la configuración del registro en los equipos cliente para habilitar esos equipos de manera que se agreguen automáticamente a los grupos de equipos creados anteriormente.
 
 ### <a name="conflict-resolution"></a>Resolución de conflictos
 El servidor aplica las siguientes reglas para resolver conflictos y determinar la acción correspondiente en los clientes:
 
-1.  Priority
+1.  Prioridad
 
 2.  Instalar o desinstalar
 
 3.  Fecha límite
 
-#### <a name="priority"></a>Priority
+#### <a name="priority"></a>Prioridad
 Las acciones asociadas al grupo de mayor prioridad reemplazan las acciones de otros grupos. Cuanto mayor sea la profundidad de un grupo dentro de la jerarquía de grupos, mayor será su prioridad. La prioridad solo se asigna en función de la profundidad; todas las ramas tienen la misma prioridad. Por ejemplo, un grupo dos niveles por debajo de la rama Equipos de escritorio tiene una prioridad más alta que un grupo un nivel por debajo de la rama Servidor.
 
 En el siguiente ejemplo de texto del panel de jerarquías de la consola de Update Services, para un servidor WSUS denominado WSUS-01, se han agregado grupos de equipos denominados Equipos de escritorio y Servidor al grupo predeterminado **Todos los equipos** . Tanto el grupo Equipos de escritorio como el grupo Servidor tienen el mismo nivel jerárquico.
@@ -403,9 +403,9 @@ Antes de implementar WSUS, debes planear con cuidado algunas áreas para obtener
 
 -   Descarga diferida
 
--   Filtros.
+-   Filtros
 
--   Installation
+-   Instalación
 
 -   Implementaciones de actualizaciones grandes
 
@@ -425,12 +425,12 @@ En una jerarquía de servidores WSUS, WSUS establece automáticamente la configu
 
 Si implementa una jerarquía de servidores WSUS conectados, se recomienda que no anide servidores con profundidad. Si habilitas las descargas diferidas y un servidor que sigue en la cadena solicita una actualización no aprobada en el servidor que precede, esta solicitud fuerza una descarga en el servidor que precede. El servidor que sigue en la cadena después descarga la actualización en una sincronización posterior. En una jerarquía profunda de servidores WSUS, se pueden producir demoras porque las actualizaciones se solicitan, se descargan y después se pasan a través de la jerarquía. De manera predeterminada, las descargas diferidas se habilitan cuando las actualizaciones se guardan de forma local. Puede cambiar esta opción manualmente.
 
-### <a name="filters"></a>Filtros.
+### <a name="filters"></a>Filtros
 WSUS le permite filtrar sincronizaciones de actualizaciones por idioma, producto y clasificación. En una jerarquía de servidores WSUS, WSUS establece automáticamente las opciones de filtrado seleccionadas en el servidor WSUS raíz en todos los servidores que siguen en la cadena. Puede volver a configurar los servidores de descarga para que reciban un subconjunto de idiomas únicamente.
 
 De manera predeterminada, los productos que se van actualizar son Windows y Office, y las clasificaciones predeterminadas son actualizaciones críticas, de seguridad y de definiciones. Para conservar el ancho de banda y el espacio en disco, se recomienda limitar los idiomas a aquellos que realmente usa.
 
-### <a name="installation"></a>Installation
+### <a name="installation"></a>Instalación
 Las actualizaciones normalmente consisten en nuevas versiones de archivos que ya existen en un equipo que se está actualizando. En un nivel binario, estos archivos existentes podrían no diferir demasiado de las versiones actualizadas. La característica de archivos de instalación rápida identifica el número exacto de bytes entre versiones, crea y distribuye actualizaciones solo para esas diferencias y después combina el archivo existente con los bytes actualizados.
 
 A veces esta característica se denomina "entrega de diferencia" porque descarga únicamente la diferencia (delta) entre dos versiones de un archivo. Los archivos de instalación rápida son más grandes que las actualizaciones que se distribuyen a equipos cliente, porque un archivo de instalación rápida contiene todas las versiones posibles de cada archivo que se va a actualizar.
@@ -449,7 +449,7 @@ Cuando implementa actualizaciones grandes (como Service Packs), puede evitar que
 3.  Use grupos de equipos para controlar el lanzamiento. Un equipo cliente se identifica a sí mismo como miembro de un determinado grupo de equipos, cuando envía información al servidor WSUS. El servidor WSUS usa esta información para determinar las actualizaciones que deben implementarse en ese equipo. Puede configurar varios grupos de equipos y aprobar secuencialmente grandes descargas de Service Packs para un subconjunto de estos grupos.
 
 ### <a name="background-intelligent-transfer-service"></a>Servicio de transferencia inteligente en segundo plano
-WSUS usa el protocolo Servicio de transferencia inteligente en segundo plano (BITS) para todas sus tareas de transferencia de archivos. Esto incluye descargas a equipos cliente y sincronizaciones de servidores. BITS habilita programas para que descarguen archivos usando ancho de banda de reserva. BITS mantiene las transferencias de archivos cuando se producen desconexiones de red y se reinicia el equipo. Para más información, consulte: [Servicio de transferencia inteligente en segundo plano](https://msdn.microsoft.com/library/bb968799.aspx).
+WSUS usa el protocolo Servicio de transferencia inteligente en segundo plano (BITS) para todas sus tareas de transferencia de archivos. Esto incluye descargas a equipos cliente y sincronizaciones de servidores. BITS habilita programas para que descarguen archivos usando ancho de banda de reserva. BITS mantiene las transferencias de archivos cuando se producen desconexiones de red y se reinicia el equipo. Para obtener más información, consulte: [Servicio de transferencia inteligente en segundo plano](https://msdn.microsoft.com/library/bb968799.aspx).
 
 ## <a name="17-plan-automatic-updates-settings"></a>1.7. Planear la configuración de actualizaciones automáticas
 Puede especificar una fecha límite para aprobar actualizaciones en el servidor WSUS. La fecha límite hace que los equipos cliente instalen la actualización en un momento específico, pero hay situaciones que varían según si la fecha límite expiró, si hay otras actualizaciones en la cola para instalarse en el equipo y si la actualización (u otra actualización en la cola) requiere el reinicio.

@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 04d09574046474da5bee4437628ade9646cf58ca
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371240"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322127"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>Conéctese en Windows Server Essentials
 
@@ -196,9 +196,9 @@ ms.locfileid: "78371240"
 
 - Windows 10 Pro  
 
-- Windows 10 Enterprise  
+- Windows 10 Enterprise  
 
-- Windows 10 Education  
+- Windows 10 Education  
 
   **Equipos cliente Mac**  
 
@@ -244,9 +244,9 @@ ms.locfileid: "78371240"
 
 - Windows 10 Pro  
 
-- Windows 10 Enterprise  
+- Windows 10 Enterprise  
 
-- Windows 10 Education  
+- Windows 10 Education  
 
   **Equipos cliente Mac**  
 
@@ -328,16 +328,16 @@ ms.locfileid: "78371240"
 
 ##### <a name="to-remove-a-computer-from-a-windows-domain"></a>Para quitar un equipo de un dominio de Windows  
 
-1.  Haga clic en **Inicio**, haga clic con el botón secundario en **Equipo** y después haga clic en **Propiedades**.  
+1.  Haga clic en **Inicio**, haga clic con el botón secundario en **Equipo**y después haga clic en **Propiedades**.  
 
 2.  En **Configuración de nombre, dominio y grupo de trabajo del equipo**, haga clic en **Cambiar configuración**.  
 
     > [!NOTE]
     >  Si se le pide una contraseña de administrador o una confirmación, escriba la contraseña del dominio o dé su confirmación.  
 
-3.  En el cuadro de diálogo **Propiedades del sistema**, haga clic en la pestaña **Nombre de equipo** y después haga clic en **Cambiar**.  
+3.  En el cuadro de diálogo **Propiedades del sistema** , haga clic en la pestaña **Nombre de equipo** y después haga clic en **Cambiar**.  
 
-4.  En el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** , en **Miembro de**, haga clic en **Grupo de trabajo**y después elija una de las siguientes opciones:  
+4.  En el cuadro de diálogo **Cambios en el dominio o el nombre del equipo**, en **Miembro de**, haga clic en **Grupo de trabajo** y después elija una de las siguientes opciones:  
 
     1.  Para unirse a un grupo de trabajo existente, escriba el nombre del grupo de trabajo al que quiere unirse y después haga clic en **Aceptar**.  
 
@@ -431,7 +431,7 @@ ms.locfileid: "78371240"
 
     2.  En la página **Buscar mi servidor**, detecte automáticamente el servidor en las redes locales y seleccione el servidor al que quiere conectarse. O bien, si tiene la información, puede introducir manualmente el nombre del servidor o la dirección de dominio.  
 
-    3.  En la página **Escriba su nuevo nombre de usuario y contraseña de red** , realice el procedimiento siguiente:  
+    3.  En la página **Escriba su nuevo nombre de usuario y contraseña de red**, realice el procedimiento siguiente:  
 
         -   Si se trata del primer equipo que conecta al servidor y es el que va a usar para administrarlo, utilice la cuenta de administrador que creó durante la instalación.  
 
@@ -439,7 +439,7 @@ ms.locfileid: "78371240"
 
     4.  Si el equipo ejecuta Windows 8, Windows 8.1 o Windows 10, omita este paso. Si su equipo ejecuta Windows 7 y tiene documentos, imágenes o preferencias personales (por ejemplo, fondos de escritorio, protectores de pantalla o favoritos de Internet Explorer) que desea conservar después de unir el equipo a la nueva red, en la página **Elija si desea mover los datos y la configuración existentes** del asistente, seleccione la opción **Mover mis datos y configuración a la nueva cuenta de usuario de red**.  
 
-    5.  Elija si desea reactivar este equipo automáticamente para crear una copia de seguridad en la página **Seleccione si desea reactivar el equipo para crear su copia de seguridad** .  
+    5.  Elija si desea reactivar este equipo automáticamente para crear una copia de seguridad en la página **Seleccione si desea reactivar el equipo para crear su copia de seguridad**.  
 
     6.  Siga las demás instrucciones del asistente para unir el equipo a la red.  
 
@@ -452,9 +452,9 @@ ms.locfileid: "78371240"
 
     -   Si el equipo ejecuta Windows 8, Windows 8.1 o Windows 10, el panel y el conector bandeja se podrán buscar como una aplicación.  
 
-    -   Desde la aplicación de bandeja del Conector, puede habilitar o deshabilitar la característica **Mantenerme conectado de manera remota**. También puede hacer doble clic en la aplicación de bandeja para iniciar Launchpad. Desde Launchpad puede acceder al acceso directo de Carpetas compartidas, configurar copias de seguridad del equipo, abordar alertas y abrir el sitio del acceso web remoto.  
+    -   Desde la aplicación de bandeja del Conector, puede habilitar o deshabilitar la característica **Mantenerme conectado de manera remota** . También puede hacer doble clic en la aplicación de bandeja para iniciar Launchpad. Desde Launchpad puede acceder al acceso directo de Carpetas compartidas, configurar copias de seguridad del equipo, abordar alertas y abrir el sitio del acceso web remoto.  
 
-    -   Desde el vínculo del **Panel**, puede administrar el servidor.  
+    -   Desde el vínculo del **Panel** , puede administrar el servidor.  
 
 ###  <a name="BKMK_10"></a>Conectar equipos a un servidor de Windows Server Essentials sin unirse al dominio  
  En este tema se describe cómo agregar un equipo con Windows 7, Windows 8, Windows 8.1 o Windows 10 a una red de Windows Server Essentials sin unir el equipo al dominio de Windows Server Essentials en una implementación de cliente local. Este método de conexión se admite en Windows Server Essentials y Windows Server Essentials.  
@@ -505,7 +505,7 @@ ms.locfileid: "78371240"
 
     -   En Windows 10, haga clic en el botón **Inicio** , seleccione **todas las aplicaciones** -> **herramientas del sistema de Windows** -> **símbolo**del sistema, haga clic con el botón secundario en símbolo del sistema y, a continuación, haga clic en **Ejecutar como administrador**.  
 
-    -   En Windows 8, en la página **Inicio** , escriba **comando** y, a continuación, presione Entrar. En los resultados, haga clic con el botón secundario en **Símbolo del sistema** y después haga clic en **Ejecutar como administrador**.  
+    -   En Windows 8, en la página **Inicio** , escriba **comando** y, a continuación, presione Entrar. En los resultados, haga clic con el botón secundario en **Símbolo del sistema**y después haga clic en **Ejecutar como administrador**.  
 
     -   En Windows 7, en el menú **Inicio** , escriba **Command** en el cuadro de búsqueda, haga clic con el botón secundario en **símbolo del sistema**y, a continuación, haga clic en **Ejecutar como administrador**.  
 
@@ -533,7 +533,7 @@ ms.locfileid: "78371240"
 
     2.  Agregue el sitio web de **http://< servername\>/Connect** a los sitios web de confianza de la siguiente manera:  
 
-        1.  En el panel de navegación del explorador, haga clic en **Herramientas** y después, en **Opciones de Internet**.  
+        1.  En el panel de navegación del explorador, haga clic en **Herramientas**y después, en **Opciones de Internet**.  
 
         2.  Haga clic en la pestaña **Seguridad** y después, en **Sitios de confianza**.  
 
@@ -571,7 +571,7 @@ ms.locfileid: "78371240"
 
 - No hay ningún punto de entrada para la aplicación de bandeja, Launchpad y el cliente de escritorio.  
 
-- El segundo servidor aparece dentro del grupo **Servidores** de la pestaña **Dispositivos**.  
+- El segundo servidor aparece dentro del grupo **Servidores** de la pestaña **Dispositivos** .  
 
 - Como no se admite la copia de seguridad del equipo cliente para el segundo servidor, el estado de la copia de seguridad se muestra como **No compatible**. Además, si selecciona el segundo servidor y hace clic con el botón secundario, no se muestra ninguna tarea relacionada con copias de seguridad y restauración para el segundo servidor.  
 

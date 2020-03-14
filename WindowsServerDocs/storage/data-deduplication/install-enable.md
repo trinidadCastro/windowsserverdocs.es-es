@@ -10,11 +10,11 @@ ms.author: wgries
 ms.date: 05/09/2017
 description: Cómo instalar Desduplicación de datos en Windows Server, determinar si una carga de trabajo es un buen candidato para la desduplicación y habilitar la desduplicación en volúmenes.
 ms.openlocfilehash: 36c9894fd8916643340134698f36af3bd50c34d8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402314"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322427"
 ---
 # <a name="install-and-enable-data-deduplication"></a>Instalar y habilitar Desduplicación de datos
 > Se aplica a Windows Server (canal semianual), Windows Server 2016

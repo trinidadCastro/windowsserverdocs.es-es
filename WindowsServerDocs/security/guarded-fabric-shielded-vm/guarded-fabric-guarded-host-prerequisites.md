@@ -8,11 +8,11 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
 ms.openlocfilehash: 8a9273eef906130b11b98148cf1e84f7e18812b0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402380"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322497"
 ---
 # <a name="prerequisites-for-guarded-hosts"></a>Requisitos previos de los hosts protegidos
 
@@ -24,7 +24,7 @@ Revise los requisitos previos de host para el modo de atestación elegido y, a c
 
 Los hosts protegidos que usan el modo TPM deben cumplir los siguientes requisitos previos:
 
--   **Hardware**: Se requiere un host para la implementación inicial. Para probar la migración en vivo de Hyper-V para máquinas virtuales blindadas, debe tener al menos dos hosts.
+-   **Hardware**: se requiere un host para la implementación inicial. Para probar la migración en vivo de Hyper-V para máquinas virtuales blindadas, debe tener al menos dos hosts.
 
     Los hosts deben tener:
     
@@ -39,7 +39,7 @@ Los hosts protegidos que usan el modo TPM deben cumplir los siguientes requisito
     > [!IMPORTANT]
     > Asegúrese de instalar la [actualización acumulativa más reciente](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).  
 
--   **Rol y características**: Rol de Hyper-V y la característica de compatibilidad de Hyper-V de protección de host. La característica de compatibilidad de Hyper-V de protección de host solo está disponible en las ediciones Datacenter de Windows Server. 
+-   **Rol y características**: rol de Hyper-v y la característica de compatibilidad de Hyper-v de protección de host. La característica de compatibilidad de Hyper-V de protección de host solo está disponible en las ediciones Datacenter de Windows Server. 
 
 > [!WARNING]
 > La característica de compatibilidad de Hyper-V de protección de host permite la protección basada en la virtualización de la integridad de código que puede ser incompatible con algunos dispositivos. Se recomienda encarecidamente probar esta configuración en el laboratorio antes de habilitar esta característica. Si no lo haces pueden producirse errores inesperados, incluida la pérdida de datos o un error de pantalla azul (también llamado error grave). Para obtener más información, vea [hardware compatible con la protección basada en la virtualización de Windows Server de la integridad de código](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md).
@@ -52,9 +52,9 @@ Los hosts protegidos que usan el modo TPM deben cumplir los siguientes requisito
 
 Los hosts protegidos que usan la atestación de clave de host deben cumplir los siguientes requisitos previos:
 
-- **Hardware**: Cualquier servidor capaz de ejecutar Hyper-V a partir de Windows Server 2019
-- **Sistema operativo**: Windows Server 2019 Datacenter Edition
-- **Rol y características**: Rol de Hyper-V y la característica de compatibilidad de Hyper-V de protección de host 
+- **Hardware**: cualquier servidor capaz de ejecutar Hyper-V a partir de Windows Server 2019
+- **Sistema operativo**: Windows Server 2019 Datacenter Edition
+- **Rol y características**: rol de Hyper-v y la característica de compatibilidad de Hyper-v de protección de host 
 
 El host se puede unir a un dominio o a un grupo de trabajo. 
 
@@ -71,14 +71,14 @@ En el caso de la atestación de clave de host, HGS debe ejecutar Windows Server 
 
 Los hosts de Hyper-V deben cumplir los siguientes requisitos previos para el modo AD:
 
--   **Hardware**: Cualquier servidor capaz de ejecutar Hyper-V a partir de Windows Server 2016. Se requiere un host para la implementación inicial. Para probar la migración en vivo de Hyper-V para máquinas virtuales blindadas, necesita al menos dos hosts.
+-   **Hardware**: cualquier servidor capaz de ejecutar Hyper-V a partir de Windows Server 2016. Se requiere un host para la implementación inicial. Para probar la migración en vivo de Hyper-V para máquinas virtuales blindadas, necesita al menos dos hosts.
 
 -   **Sistema operativo**: Windows Server 2016 Datacenter Edition
 
     > [!IMPORTANT]
     > Instale la [actualización acumulativa más reciente](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).
 
--   **Rol y características**: Rol de Hyper-V y la característica de compatibilidad de Hyper-V de protección de host, que solo está disponible en Windows Server 2016 Datacenter Edition. 
+-   **Rol y características**: rol de Hyper-v y la característica de compatibilidad de Hyper-v de protección de host, que solo está disponible en Windows Server 2016 Datacenter Edition. 
 
 > [!WARNING]
 > La característica de compatibilidad de Hyper-V de protección de host permite la protección basada en la virtualización de la integridad de código que puede ser incompatible con algunos dispositivos. Se recomienda encarecidamente probar esta configuración en el laboratorio antes de habilitar esta característica. Si no lo haces pueden producirse errores inesperados, incluida la pérdida de datos o un error de pantalla azul (también llamado error grave). Para obtener más información, consulte [hardware compatible con la protección basada en la virtualización de Windows Server 2016 de la integridad de código](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md).

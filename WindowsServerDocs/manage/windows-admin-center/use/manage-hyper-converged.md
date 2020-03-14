@@ -9,11 +9,11 @@ ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 6795464bfbadd12fc220e941ad2175eb83d0f050
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949942"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322867"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Administrar la infraestructura hiperconvergida con el centro de administración de Windows
 
@@ -96,7 +96,7 @@ La implementación tardará aproximadamente entre 30 y 45 minutos.
 
 Una vez implementada la infraestructura hiperconvergida, puede administrarla mediante el centro de administración de Windows.
 
-### <a name="install-windows-admin-center"></a>Instalar Windows Admin Center
+### <a name="install-windows-admin-center"></a>Instalación de Windows Admin Center
 
 Si todavía no lo ha hecho, descargue e instale el centro de administración de Windows. La forma más rápida de empezar a trabajar es instalarla en el equipo con Windows 10 y administrar los servidores de forma remota. Esto tarda menos de cinco minutos. [Descargue ahora](https://aka.ms/windowsadmincenter) u [Obtenga más información sobre otras opciones de instalación](../deploy/install.md).
 
@@ -131,7 +131,7 @@ El clúster se agregará a la lista de conexiones. Haga clic en él para iniciar
 > [!Important]
 > Actualmente no se admiten los entornos de SDN con autenticación Kerberos para la comunicación de Northbound.
 
-## <a name="frequently-asked-questions"></a>Preguntas frecuentes
+## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
 ### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019"></a>¿Existen diferencias entre la administración de Windows Server 2016 y Windows Server 2019?
 
@@ -169,7 +169,7 @@ No.
 
 Aunque el centro de administración de Windows ofrece una integración eficaz y cómoda con la nube de Microsoft Azure, la experiencia de administración y supervisión básica para la infraestructura hiperconvergida es totalmente local. Se puede instalar y usar sin conexión a Internet.
 
-## <a name="things-to-try"></a>Opciones que puede probar
+## <a name="things-to-try"></a>Cosas que debe probar
 
 Si acaba de empezar, estos son algunos tutoriales rápidos que le ayudarán a saber cómo se organiza y funciona el centro de administración de Windows para la infraestructura hiperconvergida. Utilice buenos juicios y tenga cuidado con los entornos de producción. Estos vídeos se grabaron con la versión 1804 del centro de administración de Windows y una compilación de Insider Preview de Windows Server 2019.
 
@@ -259,7 +259,7 @@ Si acaba de empezar, estos son algunos tutoriales rápidos que le ayudarán a sa
 2. Haga clic en **nuevo** para crear una nueva red virtual y subredes, o elija una red virtual existente y haga clic en **configuración** para modificar su configuración.
 3. Haga clic en una red virtual existente para ver las conexiones de máquinas virtuales a las subredes de la red virtual y a las listas de control de acceso aplicadas a las subredes de la red virtual.
 
-![Administración de redes virtuales](../media/manage-hyper-converged/manage-virtual-networks.png)
+![Administrar redes virtuales](../media/manage-hyper-converged/manage-virtual-networks.png)
 
 ### <a name="connect-a-virtual-machine-to-a-virtual-network-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>Conectar una máquina virtual a una red virtual (clústeres HCI habilitados para SDN mediante la versión preliminar del centro de administración de Windows)
 
@@ -286,7 +286,7 @@ También puede configurar la red virtual al crear una máquina virtual.
 - [Únase al foro del centro de administración de Windows en Microsoft Tech Community](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
 - Tweet en `@servermgmt`
 
-### <a name="see-also"></a>Consulta también
+### <a name="see-also"></a>Vea también
 
 - [Windows Admin Center](../overview.md)
 - [Espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)

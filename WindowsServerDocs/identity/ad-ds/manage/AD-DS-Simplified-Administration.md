@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 4f12b1e88414a17c8fb82a707bd4399505df4c6c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369449"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323167"
 ---
 # <a name="ad-ds-simplified-administration"></a>Administración simplificada de AD DS
 
@@ -66,7 +66,7 @@ El Administrador del servidor actúa como concentrador de las tareas de administ
   
 Active Directory Domain Services es uno de esos roles de concentrador; al ejecutar Administrador del servidor en un controlador de dominio o en el Herramientas de administración remota del servidor en Windows 8, verá problemas importantes recientes en los controladores de dominio del bosque.  
   
-Estas vistas incluyen:  
+Dichas vistas son las siguientes:  
   
 - Disponibilidad del servidor  
 - Alertas del monitor de rendimiento por un elevado uso de CPU y memoria  
@@ -114,7 +114,7 @@ Para obtener más información sobre la replicación y la topología de sitio de
 
 Active Directory de Windows 2000 introdujo el maestro RID, que emite grupos de identificadores relativos para controladores de dominio, con el fin de crear identificadores de seguridad (SID) de elementos de confianza de seguridad, como usuarios, grupos y equipos.  De manera predeterminada, este espacio global de RID se limita a 2<sup>30</sup> (o 1.073.741.823) SID totales creados en un dominio. Los SID no pueden regresar al grupo o volver a emitirse. Con el paso del tiempo, los RID podrían empezar a escasear en un dominio grande, o podrían producirse accidentes que conllevaran la disminución innecesaria de los RID y su agotamiento final.  
   
-Windows Server 2012 aborda una serie de problemas de emisión y administración de RID que descubrieron los clientes y el Servicio de soporte al cliente de Microsoft a medida que AD DS se iban desarrollando desde la creación de los primeros dominios de Active Directory en 1999. Entre ellas se incluyen las siguientes:  
+Windows Server 2012 aborda una serie de problemas de emisión y administración de RID que descubrieron los clientes y el Servicio de soporte al cliente de Microsoft a medida que AD DS se iban desarrollando desde la creación de los primeros dominios de Active Directory en 1999. Entre ellos se incluyen los siguientes:  
 
 - Las advertencias de consumo de RID periódico se escriben en el registro de eventos  
 - Los eventos se registran cuando un administrador invalida un grupo de RID  
@@ -195,11 +195,11 @@ En general, no es necesario ejecutar estos cmdlets; se ejecutan automáticamente
 
 ||||  
 |-|-|-|  
-|Nombre de la prueba|Protocolos<br /><br />usados|Explicación y notas|  
+|Nombre de la prueba|Protocolos<br /><br />usado|Explicación y notas|  
 |VerifyAdminTrusted<br /><br />ForDelegationProvider|LDAP|Comprueba que tienes el privilegio "Habilitar confianza con el equipo y las cuentas de usuario para delegación" (SeEnableDelegationPrivilege) en el controlador de dominio asociado existente. Para ello es necesario tener acceso al atributo tokenGroups construido.<br /><br />No se utiliza al contactar con controladores de dominio de Windows Server 2003. Debes confirmar manualmente este privilegio antes de la promoción.|  
 |VerifyADPrep<br /><br />Prerequisites (forest)|LDAP|Detecta y contacta con el maestro de esquema mediante el atributo namingContexts de rootDSE y el atributo fsmoRoleOwner de contexto de nombre de esquema. Determina qué operaciones de preparación (forestprep, domainprep o rodcprep) son necesarias para la instalación de AD DS. Comprueba que se espera el objectVersion de esquema y si necesita más extensión.|  
 |VerifyADPrep<br /><br />Prerequisites (domain and RODC)|LDAP|Detecta y contacta con el maestro de infraestructura mediante el atributo namingContexts de rootDSE y el atributo fsmoRoleOwner de contenedor de infraestructura. En el caso de una instalación de RODC, esta prueba descubre el maestro de nomenclatura de dominios y se asegura de que está en línea.|  
-|CheckGroup<br /><br />Membership|LDAP,<br /><br />RPC a través de SMB (LSARPC)|Comprueba que el usuario pertenece al grupo Administradores del dominio o Administradores de organización, en función de la operación (el primero para agregar o disminuir de nivel un controlador de dominio, el segundo para agregar o quitar un dominio).|  
+|CheckGroup<br /><br />Pertenencia|LDAP,<br /><br />RPC a través de SMB (LSARPC)|Comprueba que el usuario pertenece al grupo Administradores del dominio o Administradores de organización, en función de la operación (el primero para agregar o disminuir de nivel un controlador de dominio, el segundo para agregar o quitar un dominio).|  
 |CheckForestPrep<br /><br />GroupMembership|LDAP,<br /><br />RPC a través de SMB (LSARPC)|Comprueba que el usuario pertenece a los grupos Administradores de esquema y Administradores de organización y que tiene el privilegio Administrar registros de eventos de auditoría y seguridad (SesScurityPrivilege) en los controladores de dominio existentes.|  
 |CheckDomainPrep<br /><br />GroupMembership|LDAP,<br /><br />RPC a través de SMB (LSARPC)|Comprueba que el usuario pertenece al grupo Administradores de dominio y que tiene el privilegio Administrar registros de eventos de auditoría y seguridad (SesScurityPrivilege) en los controladores de dominio existentes.|  
 |CheckRODCPrep<br /><br />GroupMembership|LDAP,<br /><br />RPC a través de SMB (LSARPC)|Comprueba que el usuario pertenece al grupo Administradores de organización y que tiene el privilegio Administrar registros de eventos de auditoría y seguridad (SesScurityPrivilege) en los controladores de dominio existentes.|  
@@ -209,5 +209,5 @@ En general, no es necesario ejecutar estos cmdlets; se ejecutan automáticamente
 |VerifyWin2KSchema<br /><br />Consistency|LDAP|Comprueba que el esquema de bosque existente tiene clases y atributos básicos coherentes (no modificados incorrectamente por terceros).|  
 |DCPromo|DRSR a través de RPC,<br /><br />LDAP,<br /><br />DNS<br /><br />RPC a través de SMB (SAMR)|Comprueba la sintaxis de línea de comandos que ha pasado al código de promoción y a la promoción de prueba. Comprueba que el bosque o dominio todavía no existe cuando se crea uno nuevo.|  
 |VerifyOutbound<br /><br />ReplicationEnabled|LDAP, DRSR a través de SMB, RPC a través de SMB (LSARPC)|Comprueba que el controlador de dominio existente especificado como asociado de replicación tiene la replicación de salida habilitada mediante la comprobación del atributo de opciones del objeto de configuración NTDS para NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004)|  
-|VerifyMachineAdmin<br /><br />Contraseña|DRSR a través de RPC,<br /><br />LDAP,<br /><br />DNS<br /><br />RPC a través de SMB (SAMR)|Comprueba que la contraseña del modo seguro establecida para DSRM cumple los requisitos de complejidad del dominio.|  
+|VerifyMachineAdmin<br /><br />Password|DRSR a través de RPC,<br /><br />LDAP,<br /><br />DNS<br /><br />RPC a través de SMB (SAMR)|Comprueba que la contraseña del modo seguro establecida para DSRM cumple los requisitos de complejidad del dominio.|  
 |VerifySafeModePassword|*N/D*|Comprueba que la contraseña establecida para el administrador local cumple los requisitos de complejidad de la directiva de seguridad del equipo.|  

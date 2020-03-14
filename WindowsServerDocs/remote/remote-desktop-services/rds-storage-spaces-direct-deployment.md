@@ -13,16 +13,16 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 manager: scottman
-ms.openlocfilehash: 2d82379dfbc03d28ec174e66862f130f2a3c50a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e320f0eb04e81d80f7288d4d7b20b5369e209932
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387133"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79319989"
 ---
 # <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>Implementar un servidor de archivos de escalabilidad horizontal de Espacios de almacenamiento directo de dos nodos para almacenar UPD en Azure
 
->Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
 Los Servicios de Escritorio remoto (RDS) requieren un servidor de archivos unido al dominio para los discos de perfil de usuario (UPD). Para implementar un servidor de archivos de escalabilidad horizontal unido al dominio de alta disponibilidad (SOFS) en Azure, usa Espacios de almacenamiento directo con Windows Server 2016. Si no estás familiarizado con los UPD o los Servicios de Escritorio Remoto, consulta [Bienvenida a Servicios de Escritorio remoto](welcome-to-rds.md).
 
@@ -131,8 +131,8 @@ Sigue estos pasos para crear un controlador de dominio (el nuestro tiene el nomb
     7. Crea un nuevo recurso compartido de archivos SMB en el clúster SOFS.
 
        ```powershell
-       New-Item -Path C:\ClusterStorage\Volume1\Data -ItemType Directory
-       New-SmbShare -Name UpdStorage -Path C:\ClusterStorage\Volume1\Data
+       New-Item -Path C:\ClusterStorage\VDisk01\Data -ItemType Directory
+       New-SmbShare -Name UpdStorage -Path C:\ClusterStorage\VDisk01\Data
        ```
 
 Ya tienes un recurso compartido en `\\my-sofs1\UpdStorage`, que se puede usar para el almacenamiento de UPD cuando [habilites UPD](https://social.technet.microsoft.com/wiki/contents/articles/15304.installing-and-configuring-user-profile-disks-upd-in-windows-server-2012.aspx) para los usuarios. 

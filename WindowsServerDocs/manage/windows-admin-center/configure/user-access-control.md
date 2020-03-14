@@ -9,15 +9,15 @@ ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 39af45506ff7023cebe437992e90f6d4ec051333
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
-ms.translationtype: MT
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371717"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323597"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>Configuración de los permisos y el control de acceso de usuarios
 
-> Se aplica a: Centro de administración de Windows, versión preliminar del centro de administración de Windows
+> Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
 Si aún no lo has hecho, familiarízate con las [opciones de control de acceso de usuarios de Windows Admin Center](../plan/user-access-options.md)
 
@@ -72,7 +72,7 @@ Si quieres conceder a usuarios o grupos específicos de Azure AD acceso de admi
     -   También puedes buscar la aplicación en Azure Portal. Para ello, ve a **Azure Active Directory** > **Aplicaciones empresariales** > **Todas las aplicaciones** y busca **WindowsAdminCenter** (la aplicación de Azure AD se denominará WindowsAdminCenter-<gateway name>). Si no obtienes ningún resultado de búsqueda, asegúrate de que la opción **Mostrar** está establecida en **todas las aplicaciones**, **estado de la aplicación** en **cualquiera** y haz clic en Aplicar. A continuación, intenta realizar la búsqueda. Una vez que hayas encontrado la aplicación, ve a **Usuarios y grupos**
 2.  En la pestaña Propiedades, establece **Asignación de usuarios necesaria** en Sí.
     Una vez hecho esto, solo los miembros que se muestran en la pestaña **Usuarios y grupos** podrán acceder a la puerta de enlace de Windows Admin Center.
-3.  En la pestaña Usuarios y grupos, selecciona **Agregar usuario**. Debes asignar un rol de administrador o usuario de puerta de enlace para cada usuario o grupo agregado.
+3.  En la pestaña Usuarios y grupos, selecciona **Agregar usuario**. Debes asignar un rol de administrador o usuario de puerta de enlace a cada usuario o grupo agregado.
 
 Una vez activada la autenticación de Azure AD, se reiniciará el servicio de la puerta de enlace y deberás actualizar el explorador. Puedes actualizar el acceso de usuario para la aplicación de Azure AD de SME en Azure Portal en cualquier momento.
 
@@ -105,13 +105,13 @@ Una de las ventajas de usar Azure AD como un nivel adicional de seguridad para 
 
 [Más información sobre cómo configurar el acceso condicional con Azure Active Directory.](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
-## <a name="configure-single-sign-on"></a>Configurar inicio de sesión único
+## <a name="configure-single-sign-on"></a>Configurar el inicio de sesión único
 
 **Inicio de sesión único cuando se implementa como servicio en Windows Server**
 
 Al instalar Windows Admin Center en Windows 10, ya está listo para usar el inicio de sesión único. Sin embargo, si vas a usar Windows Admin Center en Windows Server, debes configurar alguna forma de delegación de Kerberos en tu entorno para poder usar el inicio de sesión único. La delegación configura el equipo de puerta de enlace como de confianza para delegar en el nodo de destino. 
 
-Para configurar la [delegación restringida basada en recursos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview) en el entorno, usa el siguiente ejemplo de PowerShell. En este ejemplo se muestra cómo configurar un servidor de Windows [node01.contoso.com] para aceptar la delegación de la puerta de enlace del centro de administración de Windows [wac.contoso.com] en el dominio contoso.com.
+Para configurar la [delegación restringida basada en recursos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview) en el entorno, usa el siguiente ejemplo de PowerShell. En este ejemplo se muestra cómo configurar Windows Server [node01.contoso.com] para aceptar la delegación de la puerta de enlace de Windows Admin Center [wac.contoso.com] en el dominio contoso.com.
 
 ```powershell
 Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToAccount (Get-ADComputer wac)

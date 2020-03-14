@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 05/31/2019
 ms.openlocfilehash: b82d2eaa9283d99993102f1656262e2eda86cfff
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
-ms.translationtype: MT
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371757"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323327"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>Conexión de Windows Server con los servicios híbridos de Azure
 
@@ -155,7 +155,7 @@ Aprovecha Azure Cloud Shell para obtener una experiencia de Bash o PowerShell en
 Para obtener más información, consulta [Introducción a Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 - [Conexión de Windows Admin Center con Azure](azure-integration.md)
 - [Implementación de Windows Admin Center en Azure](deploy-wac-in-azure.md)

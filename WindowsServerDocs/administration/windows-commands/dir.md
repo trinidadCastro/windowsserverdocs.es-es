@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b073b0557cd011f6742a8a8e532165f53b0a6974
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8aeb2b3b7d62ae62ba9b8fa70988cf64060673ca
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377882"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79320019"
 ---
 # <a name="dir"></a>dir
 
@@ -44,19 +44,19 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 |/q|Muestra información de propiedad del archivo.|
 |/w|Muestra la lista en formato ancho, con un máximo de cinco nombres de archivo o de directorio en cada línea.|
 |/d|Muestra la lista en el mismo formato que **/w**, pero los archivos se ordenan por columna.|
-|/a [[:]\<atributos >]|Muestra solo los nombres de los directorios y archivos con los atributos que especifique. Si omite **/a**, **dir** mostrará los nombres de todos los archivos excepto los archivos ocultos y del sistema. Si usa **/a** sin especificar *atributos*, **dir** mostrará los nombres de todos los archivos, incluidos los archivos ocultos y del sistema.</br>La lista siguiente describe cada uno de los valores que puede usar para *los atributos*. Usar dos puntos (:) es opcional. Use cualquier combinación de estos valores y no separe los valores con espacios.</br>directorios **d**</br>**h** archivos ocultos</br>archivos **del sistema**</br>**l** puntos de reanálisis</br>archivos de solo lectura de **r**</br>**archivos listos** para archivar</br>**no** archivos indizados del contenido</br>**-** Significado del prefijo "no"|
+|/a [[:]\<atributos >]|Muestra solo los nombres de los directorios y archivos con los atributos que especifique. Si omite **/a**, **dir** mostrará los nombres de todos los archivos excepto los archivos ocultos y del sistema. Si usa **/a** sin especificar *atributos*, **dir** mostrará los nombres de todos los archivos, incluidos los archivos ocultos y del sistema.</br>La lista siguiente describe cada uno de los valores que puede usar para *los atributos*. Usar dos puntos (:) es opcional. Use cualquier combinación de estos valores y no separe los valores con espacios.</br>directorios **d**</br>**h** archivos ocultos</br>archivos **del sistema**</br>**l** puntos de reanálisis</br>archivos de solo lectura de **r**</br>**archivos listos** para archivar</br>**no hay** archivos indizados de contenido</br>**-** Significado del prefijo "no"|
 |/o [[:]\<SortOrder >]|Ordena la salida según *SortOrder*, que puede ser cualquier combinación de los valores siguientes:</br>**n** por nombre (alfabético)</br>**e** por extensión (en orden alfabético)</br>**g** primero directorios de grupo</br>**s** por tamaño (el más pequeño primero)</br>**d** por fecha y hora (más antiguo primero)</br>**-** Prefijo para el orden inverso</br>Nota: el uso de un signo de dos puntos es opcional. Se procesan varios valores en el orden en que se enumeran. No separe varios valores con espacios.</br>Si no se especifica *SortOrder* , **dir/o** enumera los directorios en orden alfabético, seguidos de los archivos, que también se ordenan en orden alfabético.|
 |/t [[:]\<TimeField >]|Especifica el campo de tiempo que se va a mostrar o usar para la ordenación. La lista siguiente describe cada uno de los valores que puede usar para *TimeField*:</br>creación de **c**</br>**último acceso**</br>**w** escritos por última vez|
 |/s|Muestra todas las apariciones del nombre de archivo especificado en el directorio especificado y en todos los subdirectorios.|
-|b|Muestra una lista completa de directorios y archivos, sin información adicional. **/b** invalida **/w**.|
+|/b|Muestra una lista completa de directorios y archivos, sin información adicional. **/b** invalida **/w**.|
 |/l|Muestra los nombres de directorio y los nombres de archivo sin ordenar en minúsculas.|
 |/n|Muestra un formato de lista larga con nombres de archivo en el extremo derecho de la pantalla.|
 |/x|Muestra los nombres cortos generados para los nombres de archivo no 8.3. La pantalla es la misma que la que se muestra para **/n**, pero el nombre corto se inserta antes del nombre largo.|
 |/c|Muestra el separador de miles en los tamaños de archivo. Este es el comportamiento predeterminado. Use **/-c** para ocultar los separadores.|
 |/4|Muestra los años en formato de cuatro dígitos.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 - Para usar varios parámetros de *nombre* de archivo, separe cada nombre de archivo con un espacio, una coma o un punto y coma.
 - Puede usar caracteres comodín ( **&#42;** o **?** ) para representar uno o varios caracteres de un nombre de archivo y mostrar un subconjunto de archivos o subdirectorios.
@@ -64,7 +64,7 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
   **Asterisco (\*):** Use el asterisco como sustituto de cualquier cadena de caracteres, por ejemplo:  
   - **dir \*. txt** enumera todos los archivos del directorio actual con extensiones que comienzan por. txt, como. txt,. txt1,. txt_old.
   - **dir read\*. txt** enumera todos los archivos del directorio actual que comienzan por "Read" y con extensiones que comienzan por. txt, como. txt,. txt1 o. txt_old.
-  - **dir read\*.\\** * enumera todos los archivos del directorio actual que comienzan por "Read" con cualquier extensión.
+  - **dir read\*.\*** enumera todos los archivos del directorio actual que comienzan por "Read" con cualquier extensión.
 
   El carácter comodín de asterisco siempre usa la asignación de nombres de archivo cortos, por lo que podría obtener resultados inesperados. Por ejemplo, el directorio siguiente contiene dos archivos (t. txt2 y T97. txt): 
  
