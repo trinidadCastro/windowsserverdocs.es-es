@@ -9,11 +9,11 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: 1d0677cec134ddeb4c706d0f1231f2c26b39967e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403216"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322647"
 ---
 # <a name="advanced-data-deduplication-settings"></a>Configuración avanzada de Desduplicación de datos
 
@@ -88,13 +88,13 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Este valor es necesario porque es el tipo de trabajo que quiere programar. No se puede cambiar este valor después una vez programada la tarea.</td>
         </tr>
         <tr>
-            <td>Prioridad</td>
+            <td>Priority</td>
             <td>La prioridad del trabajo programado del sistema</td>
             <td>
                 <ul>
                     <li>Alto</li>
-                    <li>Medio</li>
-                    <li>Baja</li>
+                    <li>Media</li>
+                    <li>Bajo</li>
                 </ul>
             </td>
             <td>Este valor ayuda a que el sistema determinar cómo asignar el tiempo de CPU. <em>High</em> utilizará más tiempo de CPU, <em>Low</em> utilizará menos.</td>
@@ -114,7 +114,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Las tareas programadas se tienen que ejecutar en al menos un día.</td>
         </tr>
         <tr>
-            <td>Cores</td>
+            <td>Núcleos</td>
             <td>El porcentaje de núcleos en el sistema que debe usar un trabajo</td>
             <td>Enteros de 0 a 100 (indica un porcentaje)</td>
             <td>Para controlar qué nivel de impacto tendrá un trabajo en los recursos de proceso en el sistema</td>
@@ -132,7 +132,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Para deshabilitar un trabajo sin quitarlo</td>
         </tr>
         <tr>
-            <td>Completo</td>
+            <td>Full</td>
             <td>Para programar un trabajo de recolección completa de elementos no utilizados</td>
             <td>Modificador (verdadero/falso)</td>
             <td>De forma predeterminada, cada cuarto trabajo es un trabajo de recolección completa de elementos no utilizados. Con este modificador, puede programar la recolección completa de elementos no utilizados con más frecuencia.</td>
@@ -150,9 +150,9 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Para controlar qué nivel de impacto tendrá un trabajo en los recursos de memoria del sistema</td>
         </tr>
         <tr>
-            <td>Nombre</td>
+            <td>Name</td>
             <td>Nombre del trabajo programado</td>
-            <td>Cadena</td>
+            <td>String</td>
             <td>Un trabajo debe tener un nombre identificable de forma única.</td>
         </tr>
         <tr>
@@ -162,7 +162,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Quiere restaurar manualmente los archivos que residen en las secciones defectuosas del disco.</td>
         </tr>
         <tr>
-            <td>Comienzo</td>
+            <td>Iniciar</td>
             <td>Especifica la hora en la que se debe iniciar un trabajo.</td>
             <td><code>System.DateTime</code></td>
             <td>La parte de la <em>fecha</em> del <code>System.Datetime</code> proporcionado para <em>iniciar</em> es irrelevante (siempre y cuando&#39;se hayan pasado), pero la parte de <em>hora</em> especifica cuándo debe comenzar el trabajo.</td>
