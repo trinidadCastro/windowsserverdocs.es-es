@@ -8,16 +8,16 @@ ms.author: jol
 ms.date: 09/17/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: ee8c0203be25b30f173b1887de506844d5b58738
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 90f5b670744b812769164a7a2c70fc673fe4089f
+ms.sourcegitcommit: 3cb84bc0bd4be0f9333b7c85cda858c38730cb3a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406915"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79432454"
 ---
 # <a name="extensions-for-windows-admin-center"></a>Extensiones para Windows Admin Center
 
->Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
 
 Windows Admin Center se ha creado como una plataforma extensible para permitir a partners y desarrolladores sacar provecho de las capacidades existentes en Windows Admin Center, integrarse sin ningún problema con otros productos y soluciones de administración de TI y proporcionar valor adicional a los clientes. Cada solución y herramienta de Windows Admin Center se ha creado como una extensión usando las mismas características de extensibilidad disponibles para que partners y desarrolladores puedan crear herramientas potentes como las que están disponibles actualmente en Windows Admin Center.
 
@@ -27,10 +27,10 @@ Las extensiones de Windows Admin Center se han creado utilizando tecnologías we
 
 Este es el valor que puede aportar a su producto y a los clientes mediante el desarrollo de extensiones para el centro de administración de Windows:
 
-- **Integre con las herramientas del centro de administración de Windows:** Integre sus productos y servicios con las herramientas de administración de servidores y clústeres en el centro de administración de Windows y entregue experiencias de supervisión, administración y solución de problemas de un extremo a otro de manera unificada y sin problemas a sus clientes.
-- **Aproveche las capacidades de seguridad, identidad y administración de la plataforma:** Habilite la compatibilidad con Azure Active Directory (AAD), la Multi-Factor Authentication, el Access Control basado en roles (RBAC), el registro, la auditoría de sus productos y servicios aprovechando las capacidades de la plataforma del centro de administración de Windows para satisfacer los requisitos complejos de hoy en día Organizaciones de ti.
-- **Desarrolle con las tecnologías web más recientes:** Cree rápidamente atractivas experiencias de usuario mediante tecnologías web modernas, como HTML5, CSS, angular, TypeScript y jQuery, y controles de interfaz de usuario enriquecidos y eficaces incluidos en el SDK del centro de administración de Windows.
-- **Amplíe el alcance de los productos:** Conviértase en parte del nuevo ecosistema del centro de administración de Windows con alcance para nuestra creciente base de clientes y aproveche el momento de lanzamiento de Windows Server 2019 más adelante este año.
+- **Integrar con las herramientas de Windows Admin Center:** Integra tus productos y servicios con herramientas de administración de servidor y clúster en Windows Admin Center y ofrece experiencias integrales de supervisión, administración y solución de problemas a tus clientes.
+- **Aproveche las capacidades de seguridad, identidad y administración de la plataforma:** Habilite la compatibilidad con Azure Active Directory (AAD), la Multi-Factor Authentication, el Access Control basado en roles (RBAC), el registro, la auditoría de sus productos y servicios aprovechando las capacidades de la plataforma del centro de administración de Windows para satisfacer los complejos requisitos de las organizaciones de TI actuales.
+- **Desarrollar usando las tecnologías web más recientes:** Crea rápidamente experiencias de usuario atractivas usando tecnologías web modernas que incluyen HTML5, CSS, Angular, TypeScript and jQuery y controles de interfaz de usuario enriquecidos y potentes incluidos en el SDK de Windows Admin Center.
+- **Extender el alcance del producto:** Conviértete en parte del nuevo ecosistema de Windows Admin Center con un alcance a nuestra base de clientes de rápido y aprovecha el impulso del lanzamiento de Windows Server 2019 más adelante este año.
 
 ## <a name="start-developing-with-the-windows-admin-center-sdk"></a>Empezar a desarrollar con el SDK del centro de administración de Windows
 
@@ -38,7 +38,7 @@ Empezar a trabajar con el desarrollo del centro de administración de Windows es
 
 Hemos creado un kit de herramientas de [diseño de SDK](https://github.com/Microsoft/windows-admin-center-sdk/blob/master/WindowsAdminCenterDesignToolkit.zip) para el centro de administración de Windows que le ayuda a simular rápidamente extensiones en PowerPoint mediante los estilos, los controles y las plantillas de página del centro de administración de Windows. Vea Cuál puede ser su extensión en el centro de administración de Windows antes de comenzar a codificar.
 
-También tenemos código de ejemplo hospedado en GitHub: [Herramientas de desarrollo](https://aka.ms/wacsdk) es una extensión de solución de ejemplo que contiene una colección enriquecida de controles que puede examinar y usar en su propia extensión. Herramientas de desarrollo es una extensión totalmente funcional que puede cargarse en Windows Admin Center en modo de desarrollador.
+También tenemos código de ejemplo hospedado en GitHub: [herramientas de desarrollo](https://aka.ms/wacsdk) es una extensión de solución de ejemplo que contiene una colección enriquecida de controles que puede examinar y usar en su propia extensión. Herramientas de desarrollo es una extensión totalmente funcional que puede cargarse en Windows Admin Center en modo de desarrollador.
 
 Consulta los temas siguientes para obtener más información sobre el SDK y empezar a trabajar:
 
@@ -85,9 +85,3 @@ El almacenamiento puro proporciona soluciones de almacenamiento de datos empresa
 La extensión de QCT Management Suite complementa el centro de administración de Windows al proporcionar supervisión y administración de servidores físicos para sistemas certificados de QCT Azure Stack HCl. La extensión QCT Management Suite muestra información de hardware del servidor y proporciona una interfaz de usuario de asistente intuitiva para ayudar a reemplazar los discos físicos de forma eficaz, las herramientas del registro de eventos de hardware y S.M.A.R.T. Administración de discos predictivo basada en. [Obtenga más información sobre la extensión de QCT Management Suite](case-studies/qct.md).
 
 ![Extensión QCT](../media/extensibility-overview/qct-extension.png)
-
-### <a name="squared-up"></a>Squared Up
-
-Squared Up proporciona la experiencia de supervisión mejor de su clase basada en System Center Operations Manager y la integración con Azure Log Analytics, Application Insights y otras soluciones de supervisión. La [extensión de Squared Up](https://squaredup.com/product/honolulu/windows-admin-center-extension/?utm_source=microsoft-docs&utm_medium=public-relations&utm_campaign=honolulu) aporta datos históricos de rendimiento así como dependencias y topologías de aplicaciones en directo que existen en el contexto administración de servidor y clúster que Windows Admin Center proporciona, y los primeros clientes han reconocido el valor de incorporar un gran número de datos en una única experiencia. [Obtén más información sobre la extensión de Squared Up y su experiencia de desarrollo](case-studies/squared-up.md).
-
-![Extensión de Squared Up](../media/extensibility-overview/squaredup-extension.png)

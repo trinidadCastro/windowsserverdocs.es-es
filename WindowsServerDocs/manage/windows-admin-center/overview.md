@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: 7b3a75258086a73fbd618c2e8221454d7e616556
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bb2f6d7fcbf18ef9bc67534982d1a98fdc5172a1
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949982"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79320039"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -37,7 +37,7 @@ Estas son algunas de las cosas que puedes hacer con Windows Admin Center:
 
 |     |     |
 | --- | --- |
-| ![](media/simple-icon.png)| **Simplificar la administración de servidores** <br/> Administra los servidores y clústeres con versiones actualizadas de herramientas conocidas como el Administrador del servidor. Instálalo en menos de 5 minutos y administra los servidores de tu entorno inmediatamente: no se requiere ninguna configuración de destino. Para obtener más detalles, consulta [¿Qué es Windows Admin Center?](understand/what-is.md) |
+| ![](media/simple-icon.png)| **Simplificar la administración de servidores** <br/> Administra los servidores y clústeres con versiones actualizadas de herramientas conocidas como el Administrador del servidor. Instálalo en menos de 5 minutos y administra los servidores de tu entorno inmediatamente: no se requiere ninguna configuración adicional. Para obtener más detalles, consulta [¿Qué es Windows Admin Center?](understand/what-is.md) |
 | ![](media/future-icon.png)| **Trabajar con soluciones híbridas** <br/> La integración con Azure te ayuda a conectar de forma opcional tus servidores locales con los servicios en la nube pertinentes. Para obtener más información, consulta [Servicios híbridos de Azure](azure/index.md) |
 | ![](media/secure-icon.png)| **Simplificar la administración hiperconvergida** <br/> Simplifica la administración de los clústeres hiperconvergidos de Windows Server o Azure Stack HCI. Usa cargas de trabajo simplificadas para crear y administrar VM, volúmenes de Espacios de almacenamiento directo, redes definidas por software y mucho más. Para obtener más detalles, consulta [Administrar la infraestructura hiperconvergida con Windows Admin Center](use/manage-hyper-converged.md)|
 

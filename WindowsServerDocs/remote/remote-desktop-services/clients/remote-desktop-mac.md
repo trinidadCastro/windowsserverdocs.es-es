@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ca68087ad238cbbd06c56e41dd65f318adae5222
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 1b2ea23e95796f6cce90a1dc90de896c2242084a
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465479"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79319999"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introducción al cliente de macOS
 
@@ -164,7 +164,7 @@ De manera predeterminada, la sesión remota usará la misma configuración regio
 
 ## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>Compatibilidad con la autorización y autenticación acoplables de la puerta de enlace de Escritorio remoto
 
-Windows Server 2012 R2 introdujo la compatibilidad con un nuevo método de autenticación, la autorización y autenticación acoplables de la puerta de enlace de Escritorio remoto, que proporciona más flexibilidad para las rutinas de autenticación personalizadas. Ahora puedes usar este modelo de autenticación con el cliente de Mac. 
+Windows Server 2012 R2 introdujo la compatibilidad con un nuevo método de autenticación, la autorización y autenticación acoplables de la puerta de enlace de Escritorio remoto, que proporciona más flexibilidad para las rutinas de autenticación personalizadas. Ahora puedes probar este modelo de autenticación con el cliente de Mac. 
 
 > [!IMPORTANT]
 > No se admiten los modelos personalizados de autenticación y autorización antes de Windows 8.1, a pesar de que se analizan en el artículo mencionado.
@@ -174,4 +174,3 @@ Para más información sobre esta característica, revisa [https://aka.ms/paa-sa
 
 > [!TIP]
 > Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, NO publiques una solicitud de ayuda para solucionar problemas con la característica de comentario del final de este artículo. En su lugar, ve al [foro del cliente de Escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicia una nueva conversación. ¿Tienes alguna sugerencia de característica? Realízala en el [foro de usuarios de clientes](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
-

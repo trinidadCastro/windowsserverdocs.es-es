@@ -12,14 +12,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 12/02/2019
+ms.date: 03/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cb0fa7009c4a8fe53810f8b5f058e659c2391dc1
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.openlocfilehash: d4ef08107c816aebf6563e57e5e76b12b793d472
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78370699"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323427"
 ---
 # <a name="get-started-with-the-android-client"></a>Introducción al cliente de Android
 
@@ -185,7 +185,7 @@ Esta es una breve introducción a la forma de abrir y navegar por la sesión de 
 ### <a name="start-a-remote-desktop-connection"></a>Inicio de una conexión a Escritorio remoto
 
 1. Pulsa en **el nombre de la conexión de Escritorio remoto** para iniciar la sesión.
-2. Si se te pide que verifiques el certificado del escritorio remoto, pulsa **Conectar**. También puedes seleccionar **No volver a preguntar las conexiones a este equipo** para aceptar siempre el certificado de forma predeterminada.
+2. Si se te pide que verifiques el certificado del escritorio remoto, pulsa **Conectar**. También puedes seleccionar **No volver a preguntarme sobre conexiones a este equipo** para aceptar siempre el certificado de forma predeterminada.
 
 ### <a name="connection-bar"></a>Barra de conexión
 
@@ -229,3 +229,11 @@ El cliente utiliza gestos táctiles estándar. También se pueden usar gestos t�
 | Puntero | Haga clic con el botón secundario en          | Pulsar con dos dedos                                                    |
 | Puntero | Clic con el botón derecho y arrastrar | Pulsar dos veces con dos dedos y mantener pulsado y, a continuación, arrastrar                         |
 | Puntero | Rueda del ratón          | Mantener pulsado con dos dedos y, a continuación, arrastrar hacia arriba o hacia abajo.                     |
+
+## <a name="join-the-beta-channel"></a>Unión al canal beta
+
+Si quieres acceder a las características más recientes antes que el resto o si quieres ayudar a detectar los problemas antes de que se publiquen nuevas versiones, el canal beta es para ti. El canal beta también es una excelente manera de que los administradores de empresas validen las nuevas versiones del cliente de Android para los usuarios en su entorno.
+
+Para unirte a beta, solo tienes que dar tu consentimiento para acceder a las versiones preliminares y descargar el cliente. Recibirás versiones preliminares directamente a través de Google Play Store.
+
+[Unirse a beta](https://play.google.com/apps/testing/com.microsoft.rdc.androidx)

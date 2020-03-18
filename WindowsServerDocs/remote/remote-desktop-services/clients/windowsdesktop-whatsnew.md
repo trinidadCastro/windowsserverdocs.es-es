@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 02/25/2020
+ms.date: 03/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f435892f0a200056c08094cac1831c710a47a6be
-ms.sourcegitcommit: 92e0e4224563106adc9a7f1e90f27da468859d90
+ms.openlocfilehash: 981a9071b3f5daf1ca97dcde8a8b32b2a2588d99
+ms.sourcegitcommit: fc900eb19ac26c3d6bc2de179cc4b2c1e971043e
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77608795"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79038068"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -31,7 +31,21 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 |Grupo de usuarios |Version  |
 |-----------|---------|
 |Público     |1.2.675  |
-|Insider    |1.2.675  |
+|Insider    |1.2.787  |
+
+## <a name="updates-for-version-12787"></a>Actualizaciones para la versión 1.2.787
+
+*Fecha de publicación: 10/03/2020*
+
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qZVh), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qXhC), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qRVA)
+
+- Se ha cambiado el nombre de la acción "Actualizar" de las áreas de trabajo por "Actualizar" para mantener la coherencia con otros clientes de Escritorio remoto.
+- Ahora puedes actualizar un área de trabajo directamente desde su menú contextual.
+- La actualización manual de un área de trabajo ahora garantiza que se actualice todo el contenido local.
+- Ahora puedes restablecer los datos de usuario del cliente desde la página Acerca de sin necesidad de desinstalar la aplicación.
+- También puedes restablecer los datos de usuario del cliente mediante msrdcw.exe/reset con un parámetro /f opcional para omitir el mensaje.
+- Ahora buscaremos automáticamente una actualización de cliente al navegar a la página Acerca de.
+- Se ha actualizado el color de los botones para mantener la coherencia.
 
 ## <a name="updates-for-version-12675"></a>Actualizaciones de la versión 1.2.675
 
@@ -53,9 +67,9 @@ Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/a
 Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oHrD), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oJZs), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oXhD)
 
 - Ahora puedes seleccionar las pantallas que se van a usar para las conexiones de escritorio. Para cambiar esta configuración, haz clic con el botón derecho en el icono de conexión a escritorio y selecciona **Configuración**.
-- Se corrigió un problema que provocaba que la configuración de conexión no mostrara los factores de escala disponibles correctos.
-- Se corrigió un problema que provocaba que el Narrador no pudiera leer el cuadro de diálogo mostrado mientras se iniciaba la conexión.
-- Se corrigió un problema que provocaba que se mostrara un nombre de usuario incorrecto cuando los nombres de Azure Active Directory y Active Directory no coincidían.
+- Se ha corregido un problema que provocaba que la configuración de conexión no mostrara los factores de escala disponibles correctos.
+- Se ha corregido un problema que provocaba que el Narrador no pudiera leer el cuadro de diálogo mostrado mientras se iniciaba la conexión.
+- Se ha corregido un problema que provocaba que se mostrara un nombre de usuario incorrecto cuando los nombres de Azure Active Directory y Active Directory no coincidían.
 - Se corrigió un problema que provocaba que el cliente dejara de responder al iniciar una conexión mientras no estaba conectado a ninguna red.
 - Se corrigió un problema que provocaba que el cliente dejara de responder al conectar un casco.
 
