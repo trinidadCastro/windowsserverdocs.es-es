@@ -8,16 +8,16 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: 11d8abfc23cb0f192ed74a1082e83c8e0c8e87e9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: ed7d7ca4f41784f2ae12220eb2e30077e2467175
+ms.sourcegitcommit: 056d355516f199e8a505c32b9aa685d0cde89e44
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950095"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79518750"
 ---
 # <a name="storage-quality-of-service"></a>Calidad de servicio de almacenamiento
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 La calidad de servicio (QoS) de almacenamiento en Windows Server 2016 ofrece un medio de supervisar y administrar centralmente el rendimiento del almacenamiento para máquinas virtuales con Hyper-V y los roles de servidor de archivos de escalabilidad horizontal. La característica mejora automáticamente la imparcialidad de los recursos de almacenamiento entre varias máquinas virtuales que usan el mismo clúster de servidores de archivos y permite la configuración de objetivos de rendimiento máximos y mínimos basados en directiva en unidades de E/S por segundo normalizadas.  
 
@@ -31,7 +31,7 @@ Puede utilizar la calidad de servicio de almacenamiento en Windows Server 2016 p
 
 En este documento se describe cómo se puede beneficiar su negocio de la nueva funcionalidad de calidad de servicio de almacenamiento. Para seguirlo, se supone que tiene conocimientos prácticos anteriores de Windows Server, clústeres de conmutación por error de Windows Server, el servidor de archivos de escalabilidad horizontal, Hyper-V y Windows PowerShell.
 
-## <a name="BKMK_Overview"></a>Información general  
+## <a name="BKMK_Overview"></a>Visión  
 En esta sección se describen los requisitos para usar la calidad de servicio de almacenamiento y, además, se incluye información general de una solución definida por software que usa calidad de servicio de almacenamiento y una lista de términos relacionados con la calidad de servicio de almacenamiento.  
 
 ### <a name="BKMK_Requirements"></a>Requisitos de QoS de almacenamiento  
@@ -74,7 +74,7 @@ Cuando hay cambios en las directivas de calidad de servicio de almacenamiento o 
 |Flujo|Cada identificador de archivos abierto por un servidor de Hyper-V en un archivo VHD o VHDX se considera un "flujo". Si una máquina virtual tiene dos discos duros virtuales conectados, tendrá 1 flujo al clúster de servidores de archivos por archivo. Si se comparte un VHDX con varias máquinas virtuales, este tendrá un 1 flujo por cada máquina virtual.|  
 |InitiatorName|Nombre de la máquina virtual que se notifica al servidor de archivos de escalabilidad horizontal para cada flujo.|  
 |InitiatorID|Un identificador que coincide con el identificador de la máquina virtual.  Siempre puede utilizarse para identificar de manera única máquinas virtuales de flujos individuales, incluso si las máquinas virtuales tienen el mismo valor en InitiatorName.|  
-|Directiva de|Las directivas de calidad de servicio de almacenamiento se almacenan en la base de datos del clúster y tienen las siguientes propiedades: PolicyId, MinimumIOPS, MaximumIOPS, ParentPolicy y PolicyType.|  
+|Directiva|Las directivas de calidad de servicio de almacenamiento se almacenan en la base de datos del clúster y tienen las siguientes propiedades: PolicyId, MinimumIOPS, MaximumIOPS, ParentPolicy y PolicyType.|  
 |PolicyId|Identificador único de una directiva.  Se genera de forma predeterminada, pero puede especificarse si se desea.|  
 |MinimumIOPS|La E/S por segundo mínima normalizada que ofrecerá una directiva.  También conocido como "Reserva".|  
 |MaximumIOPS|La E/S por segundo máxima normalizada que estará limitada por una directiva.  También se conoce como "Límite".|  
@@ -812,7 +812,7 @@ while ($true)
 }  
 ```  
 
-## <a name="frequently-asked-questions"></a>Preguntas frecuentes  
+## <a name="frequently-asked-questions"></a>Preguntas más frecuentes  
 
 ### <a name="how-do-i-retain-a-storage-qos-policy-being-enforced-for-my-virtual-machine-if-i-move-its-vhdvhdx-files-to-another-storage-cluster"></a>¿Cómo se puede mantener una directiva de calidad de servicio de almacenamiento aplicada a mi máquina virtual si muevo sus archivos VHD/VHDx a otro clúster de almacenamiento?  
 
