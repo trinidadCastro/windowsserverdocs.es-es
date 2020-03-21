@@ -5,14 +5,15 @@ ms.prod: windows-server
 ms.date: 11/10/2017
 ms.technology: server-general
 ms.topic: article
+author: eross-msft
 ms.author: chrisrin
 ms.localizationpriority: high
-ms.openlocfilehash: 9b6c7742428d278de363f561211018b77d6a3ddf
-ms.sourcegitcommit: 5197a87e659589bcc8d2a32069803ae736b02892
+ms.openlocfilehash: 90d3a9c2d5355d1059e944485414a2b6d0e5d0bc
+ms.sourcegitcommit: 3cb84bc0bd4be0f9333b7c85cda858c38730cb3a
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79376272"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79432444"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Ventaja híbrida de Azure para Windows Server
 
