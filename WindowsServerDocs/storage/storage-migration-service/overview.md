@@ -8,12 +8,12 @@ ms.date: 01/17/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 1a98de21e91fc7bdc431e7413c44089ce750bc05
-ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
+ms.openlocfilehash: 70ce4ebca35e071cf6e27fe429d3c4e6f67d342c
+ms.sourcegitcommit: 8b801bd86e2ddf8255899b11f547daa920e5f651
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519477"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80110678"
 ---
 # <a name="storage-migration-service-overview"></a>Información general del servicio de migración de almacenamiento
 
@@ -70,7 +70,7 @@ Se recomienda encarecidamente que el orquestador y los equipos de destino tengan
 - Los equipos de origen y de destino deben tener las siguientes reglas de Firewall habilitadas de *entrada* (aunque es posible que ya estén habilitadas):
   - Compartir archivos e impresoras (SMB de entrada)
   - Servicio NetLogon (NP-in)
-  - Instrumental de administración de Windows (DCOM-In)
+  - Instrumental de administración de Windows (DCOM-in)
   - Instrumental de administración de Windows (WMI-In)
   
   > [!TIP]
@@ -86,7 +86,7 @@ El servidor de origen debe ejecutar uno de los siguientes sistemas operativos:
 - Windows Server, Canal semianual
 - Windows Server 2019
 - Windows Server 2016
-- R2 de Windows 2012 Server
+- Windows Server 2012 R2
 - Windows Server 2012
 - Windows Server 2008 R2
 - Windows Server 2008
@@ -95,13 +95,13 @@ El servidor de origen debe ejecutar uno de los siguientes sistemas operativos:
 - Windows Small Business Server 2003 R2
 - Windows Small Business Server 2008
 - Windows Small Business Server 2011
-- Windows Server 2012 Essentials
+- Windows Server 2012 Essentials
 - Windows Server 2012 R2 Essentials
-- Windows Server 2016 Essentials
+- Windows Server 2016 Essentials
 - Windows Server 2019 Essentials
 - Windows Storage Server 2008
-- Windows Storage Server 2008 R2
-- Windows Storage Server 2012
+- Windows Storage Server 2008 R2
+- Windows Storage Server 2012
 - Windows Storage Server 2012 R2
 - Windows Storage Server 2016
 
@@ -111,8 +111,8 @@ Puede migrar los siguientes tipos de origen adicionales si el orquestador ejecut
 
 - Clústeres de conmutación por error que ejecutan Windows Server 2012, Windows Server 2012 R2, Windows Server 2016, Windows Server 2019
 - Servidores Linux que usan Samba. Hemos probado lo siguiente:
-    - CentOS 7
-    - Debian GNU/Linux 8
+    - 8 a 7
+    - Debian GNU/Linux 8
     - RedHat Enterprise Linux 7,6
     - SUSE Linux Enterprise Server (SLES) 11 SP4
     - Ubuntu 16,04 LTS y 12.04.5 LTS
@@ -125,10 +125,14 @@ El servidor de destino debe ejecutar uno de los siguientes sistemas operativos:
 - Windows Server, Canal semianual
 - Windows Server 2019
 - Windows Server 2016
-- R2 de Windows 2012 Server
+- Windows Server 2012 R2
 
 > [!TIP]
 > Los servidores de destino que ejecutan Windows Server 2019 o Windows Server, canal semianual o posterior, tienen el doble de rendimiento de transferencia de versiones anteriores de Windows Server. Esta mejora del rendimiento se debe a la inclusión de un servicio de proxy de servicio de migración de almacenamiento integrado, que también abre los puertos de Firewall necesarios si aún no están abiertos.
+
+## <a name="azure-vm-migration"></a>Migración de máquinas virtuales de Azure
+
+La versión 1910 del centro de administración de Windows permite implementar máquinas virtuales de Azure. Esto integra la implementación de la máquina virtual en el servicio de migración de almacenamiento. En lugar de crear nuevos servidores y máquinas virtuales en Azure portal manualmente antes de implementar la carga de trabajo, y posiblemente faltan los pasos necesarios y la configuración: el centro de administración de Windows puede implementar la máquina virtual de Azure, configurar su almacenamiento, unirse al dominio, instalar roles y a continuación, configure el sistema distribuido. 
 
 ## <a name="whats-new-in-storage-migration-service"></a>Novedades de Storage Migration Service
 
@@ -140,7 +144,7 @@ Las siguientes características nuevas están disponibles al ejecutar el orquest
 - Sincronizar más fácilmente los recursos compartidos migrados en Azure mediante Azure File Sync.
 - Migrar a nuevas redes, como Azure.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 - [Migración de un servidor de archivos mediante el servicio de migración de almacenamiento](migrate-data.md)
 - [Preguntas más frecuentes (p + f) sobre Storage Migration Services](faq.md)

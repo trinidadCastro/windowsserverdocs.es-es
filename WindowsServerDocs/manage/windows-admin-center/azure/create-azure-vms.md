@@ -9,12 +9,12 @@ manager: jgerend
 ms.date: 01/28/2020
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 1a31fac97a6697909774a084045ad5746b7241f3
-ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
+ms.openlocfilehash: 08135ed3454bb22db1c2b0fa3a14a8342fbc2dab
+ms.sourcegitcommit: 8b801bd86e2ddf8255899b11f547daa920e5f651
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76918268"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80110668"
 ---
 # <a name="deploy-azure-virtual-machines-from-within-windows-admin-center"></a>Implementar máquinas virtuales de Azure desde el centro de administración de Windows
 
@@ -60,7 +60,15 @@ Esto inicia una herramienta de creación paso a paso que selecciona una máquina
 Esto inicia un proceso que selecciona automáticamente una máquina virtual de Azure de Windows Server 2016 o Windows Server 2019 como destino del origen de la migración. El servicio de migración de almacenamiento recomienda tamaños de máquina virtual para que coincidan con el origen, pero puede invalidar esto seleccionando **Ver todos los tamaños**. Los datos de inventario se usan para configurar automáticamente los discos administrados y sus sistemas de archivos, así como para unir la nueva máquina virtual de Azure a su dominio de Active Directory. 
 3. Después de que el centro de administración de Windows cree la máquina virtual de Azure, proporcione un nombre de grupo de replicación y, después, seleccione **crear**. Después, el centro de administración de Windows inicia el proceso de sincronización inicial de la réplica de almacenamiento normal para empezar a proteger los datos.
 
+Este es un vídeo que muestra cómo usar la réplica de almacenamiento para migrar a máquinas virtuales de Azure.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/_VqD7HjTewQ] 
+
 ### <a name="deploying-a-new-standalone-azure-vm"></a>Implementación de una nueva máquina virtual de Azure independiente
 
 1. En la página *todas las conexiones* del centro de administración de Windows, seleccione **Agregar**.
 2. En la sección *máquina virtual de Azure* , seleccione **crear nuevo**.<br><br> Esto inicia una herramienta de creación paso a paso que le permitirá seleccionar una máquina virtual de Azure con Windows Server 2012 R2, Windows Server 2016 o Windows Server 2019, elegir un tamaño, agregar discos administrados y, opcionalmente, unirse a su dominio de Active Directory.
+
+Este es un vídeo que muestra cómo usar el centro de administración de Windows para crear máquinas virtuales de Azure.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/__A8J9aC_Jk] 
