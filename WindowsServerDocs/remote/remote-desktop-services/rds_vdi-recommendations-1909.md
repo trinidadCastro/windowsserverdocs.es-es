@@ -462,7 +462,7 @@ Las siguientes configuraciones se eligieron para no contrarrestar ni entrar en c
 | *Microsoft Edge | Permitir sugerencias en la lista desplegable de la barra de direcciones |  | Deshabilitada |
 | *Microsoft Edge | Permitir actualizaciones de configuración para la biblioteca de libros |  | Deshabilitado. Desactiva las listas de compatibilidad en Microsoft Edge. |
 | *Microsoft Edge | Permitir la lista de compatibilidad de Microsoft |  | Deshabilitado. Si deshabilitas esta configuración, la lista de compatibilidad de Microsoft no se usa durante la navegación del explorador. |
-| *Microsoft Edge | Permitir contenido web en la página Nueva pestaña |  | Deshabilitado. Indica que Edge se abra con contenido en blanco cuando se abre una nueva pestaña. |
+| *Microsoft Edge | Permitir contenido web en la página Nueva pestaña |  | Deshabilitado. Indica que Microsoft Edge se abra con contenido en blanco cuando se abre una nueva pestaña. |
 | *Microsoft Edge | Configurar Autorrellenar |  | Deshabilitado. Deshabilita la función de autorrellenar en la barra de direcciones. |
 | *Microsoft Edge | Configurar No realizar seguimiento |  | Habilitado. Si habilitas esta configuración, siempre se enviarán solicitudes No realizar seguimiento a los sitios web que piden información de seguimiento. |
 | *Microsoft Edge | Configurar el Administrador de contraseñas |  | Deshabilitado. Si deshabilitas esta configuración, los empleados no podrán usar el Administrador de contraseñas para guardar sus contraseñas localmente. |
