@@ -7,12 +7,12 @@ audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 9a6e9778e0ce1e50a70e68832390321fb2d9f971
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 27869820e49257d059d124bac3f515ac91fef7b0
+ms.sourcegitcommit: 30afd51d74cb6472720fb13ec47d80cf42b20c27
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654366"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80272321"
 ---
 # <a name="smbv1-is-not-installed-by-default-in-windows-10-version-1709-windows-server-version-1709-and-later-versions"></a>SMBv1 no se instala de forma predeterminada en Windows 10 versión 1709, Windows Server versión 1709 y versiones posteriores
 
@@ -146,7 +146,21 @@ Todos los dispositivos de Windows de esa subred que tienen esta configuración a
 Si no puede usar ninguna de estas soluciones alternativas o si el fabricante de la aplicación no puede proporcionar versiones compatibles de SMB, puede volver a habilitar SMBv1 manualmente siguiendo los pasos descritos en [Cómo detectar, habilitar y deshabilitar SMBv1, SMBv2 y SMBv3 en Windows](detect-enable-and-disable-smbv1-v2-v3.md).
 
 > [!IMPORTANT]
-> Le recomendamos encarecidamente que no vuelva a instalar SMBv1. Esto se debe a que este protocolo más antiguo tiene problemas de seguridad conocidos relacionados con ransomware y otro malware.   
+> Le recomendamos encarecidamente que no vuelva a instalar SMBv1. Esto se debe a que este protocolo más antiguo tiene problemas de seguridad conocidos relacionados con ransomware y otro malware.  
+
+#### <a name="windows-server-best-practices-analyzer-messaging"></a>Mensajería del analizador de procedimientos recomendados de Windows Server
+
+Los sistemas de operaciones de servidor Windows Server 2012 y versiones posteriores contienen un analizador de procedimientos recomendados (BPA) para los servidores de archivos. Si ha seguido las instrucciones en línea correctas para desinstalar SMB1, la ejecución de este BPA devolverá un mensaje de advertencia contradictorio:
+
+    Title: The SMB 1.0 file sharing protocol should be enabled
+    Severity: Warning
+    Date: 3/25/2020 12:38:47 PM
+    Category: Configuration
+    Problem: The Server Message Block 1.0 (SMB 1.0) file sharing protocol is disabled on this file server.
+    Impact: SMB not in a default configuration, which could lead to less than optimal behavior.
+    Resolution: Use Registry Editor to enable the SMB 1.0 protocol.
+
+Debe omitir la guía de esta regla de BPA específica, que está en desuso. Repetimos: no habilite SMB 1,0.
 
 ## <a name="references"></a>Referencias
 
