@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 11584b73-f9e2-4530-afa5-b8df970e6b24
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e870863b497c17b4b56265d99d91274e34690767
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 223ffd17f1e623f974e97c787fb8b18a806e5d0c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356537"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319267"
 ---
 # <a name="enable-hash-publication-for-non-domain-member-file-servers"></a>Habilitar la publicación de hash para servidores de archivos que no son miembros del dominio
 
@@ -30,13 +30,13 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
   
 ### <a name="to-enable-hash-publication-for-one-file-server"></a>Para habilitar la publicación de hash para un servidor de archivos  
   
-1.  Abra Windows PowerShell, escriba **mmc**y presione ENTRAR. Se abrirá Microsoft Management Console (MMC).  
+1.  Abra Windows PowerShell, escriba **mmv** y presione ENTRAR. Se abrirá Microsoft Management Console (MMC).  
   
 2.  En MMC, en el menú **Archivo**, haga clic en **Agregar o quitar complemento**. Se abre el cuadro de diálogo **Agregar o quitar complementos**.  
   
-3.  En **Agregar o quitar complementos**, en **Complementos disponibles**, haga doble clic en **Editor de objetos de directiva de grupo**. Se abre el Asistente para directivas de grupo con el objeto Equipo local seleccionado. Haga clic en **Finalizar**y, a continuación, en **Aceptar**.  
+3.  En **Agregar o quitar complementos**, en **Complementos disponibles**, haga doble clic en **Editor de objetos de directiva de grupo**. Se abre el Asistente para directivas de grupo con el objeto Equipo local seleccionado. Haz clic en **Finalizar** y, a continuación, en **Aceptar**.  
   
-4.  En MMC, en el Editor de directivas de grupo local, expanda la siguiente ruta de acceso: **Directiva de equipo local**, **configuración del equipo**, **plantillas administrativas**, **red**, **servidor LanMan**. Haga clic en **Servidor Lanman**.  
+4.  En el Editor de directivas de grupo local MMC, expanda la siguiente ruta de acceso: **Directiva de equipo local**, **configuración del equipo**, **plantillas administrativas**, **red**, **servidor LanMan**. Haga clic en **Servidor Lanman**.  
   
 5.  En el panel de detalles, haga doble clic en **Publicación de hash para BranchCache**. Se abre el cuadro de diálogo **Publicación de hash para BranchCache**.  
   

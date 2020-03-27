@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 4235231c-4732-4ea9-9330-2a8c8a616d39
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 49e74132dba2909b7e5b639c95ef50064cf23e8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1da6df19933d3a4b9866b0428fb0088ac5f862b9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356380"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319093"
 ---
 # <a name="deploy-branchcache-hosted-cache-mode"></a>Implementar el modo de caché hospedada de BranchCache
 
@@ -44,7 +44,7 @@ En esta guía se incluyen las siguientes secciones.
 
 - [Recursos adicionales](11-Bc-Hcm-additional-resources.md)
 
-## <a name="bkmk_pre"></a>Requisitos previos para usar esta guía
+## <a name="prerequisites-for-using-this-guide"></a><a name="bkmk_pre"></a>Requisitos previos para usar esta guía
 
 Esta es una guía complementaria de la guía de red principal de Windows Server 2016. Para implementar BranchCache en modo de caché hospedada con esta guía, primero tienes que hacer lo siguiente.
 
@@ -60,7 +60,7 @@ Esta es una guía complementaria de la guía de red principal de Windows Server 
 - Implemente los equipos cliente de la sucursal que ejecuten uno de los siguientes sistemas operativos, que proporcionan a BranchCache compatibilidad con Servicio de transferencia inteligente en segundo plano (BITS), el protocolo de transferencia de hipertexto (HTTP) y el bloque de mensajes del servidor (SMB). .
     - Windows 10 Enterprise
     - Windows 10 Education
-    - Windows 8.1 Enterprise
+    - Windows 8,1 Enterprise
     - Windows 8 Enterprise
 
 > [!NOTE]
@@ -69,13 +69,13 @@ Esta es una guía complementaria de la guía de red principal de Windows Server 
 >     - Windows 8.1 Pro, solo compatible con BITS
 >     - Windows 8 Pro, solo compatible con BITS
 
-## <a name="bkmk_about"></a>Acerca de esta guía
+## <a name="about-this-guide"></a><a name="bkmk_about"></a>Acerca de esta guía
 
 Esta guía está diseñada para administradores de red y de sistema que han seguido las instrucciones de la guía de red principal de Windows Server 2016 o la guía de red principal de Windows Server 2012 para implementar una red principal. o para aquellos que han implementado previamente las tecnologías incluidas en la guía de red principal, como Active Directory Domain Services \(AD DS\), el servicio de nombres de dominio \(DNS\), el protocolo de configuración dinámica de host \(DHCP\)y TCP\/IP V4.
 
 Se recomienda que revises las guías de diseño e implementación de todas las tecnologías que se usan en este escenario de implementación. Estas guías pueden ayudarte a determinar si este escenario de implementación ofrece los servicios y la configuración que necesitas para la red de tu organización.
 
-## <a name="bkmk_not"></a>Qué no proporciona esta guía
+## <a name="what-this-guide-does-not-provide"></a><a name="bkmk_not"></a>Qué no proporciona esta guía
 
 Esta guía no proporciona información conceptual sobre BranchCache, incluyendo la información sobre los modos y capacidades de BranchCache.  
 
@@ -88,7 +88,7 @@ Además, si tiene equipos que ejecutan Windows 7, debe configurar el servidor de
 > [!IMPORTANT]
 > Si los servidores de caché hospedada ejecutan Windows Server 2008 R2, use la guía de [implementación de BranchCache](https://technet.microsoft.com/library/ee649232(v=ws.10).aspx) de windows Server 2008 R2 en lugar de esta guía para implementar BranchCache en modo caché hospedada. Aplique la configuración de directiva de grupo que se describe en esa guía a todos los clientes de BranchCache que ejecutan versiones de Windows de Windows 7 a Windows 10. Los equipos que ejecutan Windows Server 2008 R2 no se pueden configurar siguiendo los pasos de esta guía.
 
-## <a name="bkmk_tech"></a>Información general sobre tecnología
+## <a name="technology-overviews"></a><a name="bkmk_tech"></a>Información general sobre tecnología
 
 En esta guía complementaria, BranchCache es la única tecnología que necesitas para la instalación y configuración. Tienes que ejecutar los comandos de Windows PowerShell BranchCache en los servidores de contenido, como los servidores web y de archivos, sin embargo, no necesitas cambiar o volver a configurar los servidores de contenido de ninguna otra forma. Además, debe configurar los equipos cliente mediante directiva de grupo en los controladores de dominio que ejecutan AD DS en Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012.
 

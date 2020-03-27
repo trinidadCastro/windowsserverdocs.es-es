@@ -7,16 +7,16 @@ ms.technology: networking-ras
 ms.workload: identity
 ms.topic: article
 ms.date: 06/28/2019
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 41e98648ab963347f8370233c320f5e38b5d4d96
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: def4c0d7437dd297460d0a863cd2568325825ca9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388006"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319032"
 ---
 # <a name="step-72-create-conditional-access-root-certificates-for-vpn-authentication-with-azure-ad"></a>Paso 7.2. Crear certificados raíz de acceso condicional para la autenticación de VPN con Azure AD
 
@@ -49,7 +49,7 @@ A continuación, el cliente VPN envía los problemas de certificado Azure AD a l
 4. En la página **acceso condicional** , en la sección **administrar** , haga clic en **Conectividad VPN (vista previa)** .
 5. En la página **Conectividad VPN** , haga clic en **nuevo certificado**.
 6. En la página **nuevo** , realice los pasos siguientes: a. En **seleccionar duración**, seleccione 1, 2 o 3 años.
-   b. Selecciona **Crear**.
+   b. Seleccione **Crear**.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

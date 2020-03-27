@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 7ebaa271-2557-4c24-a679-c3d863e6bf9e
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7ebff972d670f3fd0b8d12959d161bce03ac487e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e62b92fbb78dc267dbd9cd09927bf54c62d8245f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401850"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316606"
 ---
 # <a name="network-related-performance-counters"></a>Contadores de rendimiento relacionados con la red
 
@@ -27,7 +27,7 @@ En este tema se enumeran los contadores que son relevantes para la administraci�
   
 -   [Rendimiento de fusión del lado de recepción (RSC)](#bkmk_rsc)  
   
-##  <a name="bkmk_ru"></a>Utilización de recursos  
+##  <a name="resource-utilization"></a><a name="bkmk_ru"></a>Utilización de recursos  
 
 Los siguientes contadores de rendimiento son relevantes para el uso de recursos de red.  
   
@@ -61,7 +61,7 @@ Los siguientes contadores de rendimiento son relevantes para el uso de recursos 
   
 - Información del procesador  
   
-  - % Processor Time  
+  - % del tiempo de procesador  
   
   - Interrupciones/seg.  
   
@@ -69,7 +69,7 @@ Los siguientes contadores de rendimiento son relevantes para el uso de recursos 
   
     Este contador es una velocidad media a la que se agregaron las DPC a la cola de DPC del procesador lógico. Cada procesador lógico tiene su propia cola de DPC. Este contador mide la velocidad a la que se agregan las DPC a la cola, no el número de DPC en la cola. Muestra la diferencia entre los valores observados en las dos últimas muestras, dividida por la duración del intervalo de ejemplo.  
   
-##  <a name="bkmk_np"></a>Posibles problemas de red  
+##  <a name="potential-network-problems"></a><a name="bkmk_np"></a>Posibles problemas de red  
 
 Los siguientes contadores de rendimiento son relevantes para posibles problemas de red.  
   
@@ -119,7 +119,7 @@ Los siguientes contadores de rendimiento son relevantes para posibles problemas 
   
     -   Conexiones rechazadas/s  
   
-##  <a name="bkmk_rsc"></a>Rendimiento de fusión del lado de recepción (RSC)  
+##  <a name="receive-side-coalescing-rsc-performance"></a><a name="bkmk_rsc"></a>Rendimiento de fusión del lado de recepción (RSC)  
 
 Los siguientes contadores de rendimiento son relevantes para el rendimiento de RSC.  
   

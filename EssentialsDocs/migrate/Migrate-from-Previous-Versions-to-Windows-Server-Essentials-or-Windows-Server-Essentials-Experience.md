@@ -2,18 +2,18 @@
 title: Migración desde versiones anteriores a Windows Server R2 Essentials o a Experiencia con Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f58a8f83fed4185ee51145b988cfef1074f889c7
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: 55b31785de6e17232a717d534fcb21a24d9052bd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945136"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318892"
 ---
 # <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>Migración desde versiones anteriores a Windows Server R2 Essentials o a Experiencia con Windows Server Essentials
 
@@ -54,21 +54,21 @@ En esta guía se describe cómo migrar desde versiones anteriores de Windows Sma
   
    Algunos de los procedimientos de migración requieren que abra una ventana del símbolo del sistema como administrador. Los procedimientos siguientes explican cómo hacerlo.  
   
-###  <a name="BKMK_OpenACommandPromptAsAdmin"></a>Para abrir una ventana del símbolo del sistema en el servidor de origen como administrador  
+###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>Para abrir una ventana del símbolo del sistema en el servidor de origen como administrador  
   
-1.  Haz clic en **Inicio**.  
+1.  Haga clic en **Inicio**.  
   
 2.  En el cuadro de búsqueda, escriba **cmd**.  
   
-3.  En la lista de resultados, haga clic con el botón secundario en **cmd**y, después, haga clic de nuevo en **Ejecutar como administrador**.  
+3.  En la lista de resultados, haga clic con el botón secundario en **cmd** y, después, haga clic de nuevo en **Ejecutar como administrador**.  
   
 #### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>Para abrir una ventana del símbolo del sistema como administrador en el servidor de destino  
   
 1.  En la pantalla **Inicio**, en el cuadro de búsqueda, escriba **cmd**.  
   
-2.  En la lista de resultados, haga clic con el botón secundario en **cmd**y, después, haga clic de nuevo en **Ejecutar como administrador**.  
+2.  En la lista de resultados, haga clic con el botón secundario en **cmd** y, después, haga clic de nuevo en **Ejecutar como administrador**.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
   
 -   [Migrar datos del servidor a Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
 
