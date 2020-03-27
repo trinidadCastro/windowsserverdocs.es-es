@@ -1,19 +1,19 @@
 ---
-title: Uso de la directiva de DNS para la implementación de DNS de cerebro dividido
+title: Uso de la directiva DNS para la implementación de DNS de cerebro dividido
 description: Este tema forma parte de la guía del escenario de la Directiva DNS para Windows Server 2016
 manager: brianlic
 ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9f611f61150508d9170a6fe6757844bc29759886
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 75da22fa4b1e59a7a666ee1a2c8f4e88cf7beeef
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950474"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317729"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Uso de la Directiva de DNS para la implementación de DNS de cerebro dividido\-
 
@@ -28,15 +28,15 @@ Anteriormente, este escenario requería que los administradores de DNS mantengan
 
 Otro escenario de configuración para la implementación de división de cerebro es el control de recursividad selectiva para la resolución de nombres DNS. En algunas circunstancias, se espera que los servidores DNS empresariales realicen una resolución recursiva a través de Internet para los usuarios internos, mientras que también deben actuar como servidores de nombres autoritativos para los usuarios externos y bloquear la recursividad para ellos. 
 
-En este tema se incluyen las siguientes secciones.
+Este tema contiene las siguientes secciones.
 
 - [Ejemplo de implementación de división de cerebro de DNS](#bkmk_sbexample)
 - [Ejemplo de control de recursividad selectiva de DNS](#bkmk_recursion)
 
-## <a name="bkmk_sbexample"></a>Ejemplo de implementación de división de cerebro de DNS
+## <a name="example-of-dns-split-brain-deployment"></a><a name="bkmk_sbexample"></a>Ejemplo de implementación de división de cerebro de DNS
 El siguiente es un ejemplo de cómo se puede usar la Directiva de DNS para llevar a cabo el escenario descrito anteriormente de DNS de cerebro dividido.
 
-Esta sección contiene los siguientes temas.
+Esta sección contiene los temas siguientes.
 
 - [Cómo funciona la implementación de división de cerebro de DNS](#bkmk_sbhow)
 - [Configuración de la implementación de división de cerebro de DNS](#bkmk_sbconfigure)
@@ -57,7 +57,7 @@ En la ilustración siguiente se muestra este escenario.
 ![Implementación de DNS de cerebro dividido](../../media/DNS-Split-Brain/Dns-Split-Brain-01.jpg)  
 
 
-## <a name="bkmk_sbhow"></a>Cómo funciona la implementación de división de cerebro de DNS
+## <a name="how-dns-split-brain-deployment-works"></a><a name="bkmk_sbhow"></a>Cómo funciona la implementación de división de cerebro de DNS
 
 Cuando el servidor DNS está configurado con las directivas DNS necesarias, cada solicitud de resolución de nombres se evalúa con respecto a las directivas del servidor DNS.
 
@@ -67,7 +67,7 @@ Si la interfaz de servidor en la que se recibe la consulta coincide con cualquie
 
 Por lo tanto, en nuestro ejemplo, las consultas de DNS para www.career.contoso.com que se reciben en la IP privada (10.0.0.56) reciben una respuesta DNS que contiene una dirección IP interna. y las consultas DNS que se reciben en la interfaz de red pública reciben una respuesta DNS que contiene la dirección IP pública en el ámbito de zona predeterminado (esto es lo mismo que la resolución de consultas normal).  
 
-## <a name="bkmk_sbconfigure"></a>Configuración de la implementación de división de cerebro de DNS
+## <a name="how-to-configure-dns-split-brain-deployment"></a><a name="bkmk_sbconfigure"></a>Configuración de la implementación de división de cerebro de DNS
 Para configurar la implementación de un cerebro dividido en DNS mediante la Directiva DNS, debe seguir estos pasos.
 
 - [Crear los ámbitos de zona](#bkmk_zscopes)  
@@ -79,7 +79,7 @@ En las secciones siguientes se proporcionan instrucciones de configuración deta
 >[!IMPORTANT]
 >En las secciones siguientes se incluyen comandos de Windows PowerShell de ejemplo que contienen valores de ejemplo para muchos parámetros. Asegúrese de reemplazar los valores de ejemplo de estos comandos por los valores adecuados para su implementación antes de ejecutar estos comandos. 
 
-### <a name="bkmk_zscopes"></a>Crear los ámbitos de zona
+### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes"></a>Crear los ámbitos de zona
 
 Un ámbito de zona es una instancia única de la zona. Una zona DNS puede tener varios ámbitos de zona, con cada ámbito de zona que contenga su propio conjunto de registros DNS. El mismo registro puede estar presente en varios ámbitos, con direcciones IP diferentes o con las mismas direcciones IP. 
 
@@ -92,7 +92,7 @@ Puede usar el siguiente comando de ejemplo para particionar el ámbito de zona c
 
 Para obtener más información, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-### <a name="bkmk_records"></a>Agregar registros a los ámbitos de zona
+### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Agregar registros a los ámbitos de zona
 
 El siguiente paso consiste en agregar los registros que representan el host del servidor Web en los dos ámbitos de zona: interno y predeterminado (para clientes externos). 
 
@@ -109,7 +109,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 Para obtener más información, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
-### <a name="bkmk_policies"></a>Crear las directivas de DNS
+### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>Crear las directivas de DNS
 
 Una vez que haya identificado las interfaces de servidor para la red externa y la red interna y haya creado los ámbitos de zona, debe crear directivas DNS que conecten los ámbitos de zona externa y interna.
 
@@ -128,11 +128,11 @@ En el siguiente comando de ejemplo, 10.0.0.56 es la dirección IP de la interfaz
 Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).  
 
 
-## <a name="bkmk_recursion"></a>Ejemplo de control de recursividad selectiva de DNS
+## <a name="example-of-dns-selective-recursion-control"></a><a name="bkmk_recursion"></a>Ejemplo de control de recursividad selectiva de DNS
 
 A continuación se expone un ejemplo de cómo se puede usar la Directiva de DNS para llevar a cabo el escenario descrito previamente del control de recursividad selectiva de DNS.
 
-Esta sección contiene los siguientes temas.
+Esta sección contiene los temas siguientes.
 
 - [Cómo funciona el control de recursividad selectiva de DNS](#bkmk_recursionhow)
 - [Cómo configurar el control de recursividad selectiva de DNS](#bkmk_recursionconfigure)
@@ -154,7 +154,7 @@ En la ilustración siguiente se muestra este escenario.
 ![Control de recursividad selectivo](../../media/DNS-Split-Brain/Dns-Split-Brain-02.jpg) 
 
 
-### <a name="bkmk_recursionhow"></a>Cómo funciona el control de recursividad selectiva de DNS
+### <a name="how-dns-selective-recursion-control-works"></a><a name="bkmk_recursionhow"></a>Cómo funciona el control de recursividad selectiva de DNS
 
 Si se recibe una consulta para la que el servidor DNS de Contoso no es autoritativo, como por ejemplo https://www.microsoft.com, la solicitud de resolución de nombres se evalúa con respecto a las directivas del servidor DNS. 
 
@@ -168,14 +168,14 @@ Si la consulta se recibe en la interfaz externa, no coinciden las directivas DNS
 
 Esto evita que el servidor actúe como un solucionador abierto para clientes externos, mientras actúa como un solucionador de almacenamiento en caché para los clientes internos. 
 
-### <a name="bkmk_recursionconfigure"></a>Cómo configurar el control de recursividad selectiva de DNS
+### <a name="how-to-configure-dns-selective-recursion-control"></a><a name="bkmk_recursionconfigure"></a>Cómo configurar el control de recursividad selectiva de DNS
 
 Para configurar el control de recursividad selectiva de DNS mediante la Directiva DNS, debe seguir estos pasos.
 
 - [Crear ámbitos de recursividad de DNS](#bkmk_recscopes)
 - [Crear directivas de recursividad de DNS](#bkmk_recpolicy)
 
-#### <a name="bkmk_recscopes"></a>Crear ámbitos de recursividad de DNS
+#### <a name="create-dns-recursion-scopes"></a><a name="bkmk_recscopes"></a>Crear ámbitos de recursividad de DNS
 
 Los ámbitos de recursividad son instancias únicas de un grupo de valores de configuración que controlan la recursividad en un servidor DNS. Un ámbito de recursividad contiene una lista de reenviadores y especifica si está habilitada la recursividad. Un servidor DNS puede tener muchos ámbitos de recursividad. 
 
@@ -190,7 +190,7 @@ En este ejemplo, la configuración de recursividad predeterminada está deshabil
 
 Para obtener más información, consulte [Add-DnsServerRecursionScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
 
-#### <a name="bkmk_recpolicy"></a>Crear directivas de recursividad de DNS
+#### <a name="create-dns-recursion-policies"></a><a name="bkmk_recpolicy"></a>Crear directivas de recursividad de DNS
 
 Puede crear directivas de recursividad de servidor DNS para elegir un ámbito de recursividad para un conjunto de consultas que coincidan con criterios específicos. 
 

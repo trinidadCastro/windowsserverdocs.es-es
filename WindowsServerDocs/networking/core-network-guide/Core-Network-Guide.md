@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cae789974c3f2b4f83c9120558d77dbe27f4190a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a0da2265f8f66256ed2ba71d4847bf8a548626f8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356412"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319143"
 ---
 # <a name="core-network-components"></a>Componentes de la red principal
 
@@ -38,7 +38,7 @@ En esta guía se incluyen las siguientes secciones.
 
 - [Apéndices de la a a la E](#BKMK_appendix)
 
-## <a name="BKMK_about"></a>Acerca de esta guía
+## <a name="about-this-guide"></a><a name="BKMK_about"></a>Acerca de esta guía
 Esta guía está diseñada para administradores de sistema y de red que están instalando una nueva red o que desean crear una red basada en dominios para reemplazar una red compuesta por grupos de trabajo. El escenario de implementación que se proporciona en esta guía es particularmente útil si prevé la necesidad de agregar más servicios y características a la red en el futuro.
 
 Se recomienda que revise las guías de diseño e implementación de todas las tecnologías que se usan en este escenario de implementación para ayudarle a determinar si esta guía proporciona los servicios y la configuración que necesita.
@@ -91,14 +91,14 @@ Esta guía no proporciona instrucciones para implementar lo siguiente:
 ## <a name="technology-overviews"></a>Introducción a las tecnologías
 En las siguientes secciones, se ofrece información general sobre las tecnologías necesarias que se implementan para crear una red principal.
 
-### <a name="active-directory-domain-services"></a>Active Directory Domain Services
+### <a name="active-directory-domain-services"></a>Servicios de dominio de Active Directory
 Un directorio es una estructura jerárquica que almacena información sobre objetos en la red, como usuarios y equipos. Un servicio de directorio, como AD DS, proporciona los métodos para almacenar los datos de directorio y hacer que estos datos estén disponibles para los usuarios y administradores de la red. Por ejemplo, AD DS almacena información acerca de las cuentas de usuario, incluidos los nombres, las direcciones de correo electrónico, las contraseñas y los números de teléfono, y permite que otros usuarios autorizados de la misma red tengan acceso a esta información.
 
 ### <a name="dns"></a>DNS
 DNS es un protocolo de resolución de nombres para redes TCP/IP, como Internet o una red de organización. Los servidores DNS hospedan la información que permite a los equipos cliente y a los servicios resolver nombres DNS alfanuméricos fácilmente reconocibles en las direcciones IP que usan los equipos para comunicarse entre ellos.
 
 ### <a name="dhcp"></a>DHCP
-DHCP es un estándar IP que sirve para simplificar la administración de la configuración IP del host. El estándar DHCP ofrece el uso de servidores DHCP como una forma de administrar la asignación dinámica de direcciones IP y demás detalles de configuración relacionados para los clientes habilitados para DHCP de la red.
+DHCP es un estándar IP que sirve para simplificar la administración de la configuración IP del host. El estándar DHCP proporciona el uso de servidores DHCP como un método para administrar la asignación dinámica de direcciones IP y otros detalles de configuración relacionados para los clientes de la red habilitados para DHCP.
 
 DHCP le permite usar un servidor DHCP para asignar dinámicamente una dirección IP a un equipo o a otro dispositivo (como una impresora) de la red local. Cada equipo de una red TCP/IP debe tener una dirección IP única, ya que la dirección IP y su máscara de subred relacionada identifican el equipo host y la subred a la cual está conectado el equipo. Si usa DHCP, puede estar seguro de que todos los equipos que están configurados como clientes DHCP reciben una dirección IP que sea apropiada para la ubicación de red y la subred; además, al usar las opciones de DHCP, como puertas de enlace y servidores DNS predeterminados, puede proporcionar de forma automática a los clientes de DHCP la información que necesitan para funcionar correctamente en la red.
 
@@ -123,9 +123,9 @@ TCP/IP proporciona utilidades de TCP/IP básicas que permiten a los equipos basa
 
 -   Windows 10
 
--    Windows Server 2012 R2
+-    Windows Server 2012 R2
 
--   Windows 8.1
+-   Windows 8.1
 
 -    Windows Server 2012
 
@@ -135,7 +135,7 @@ TCP/IP proporciona utilidades de TCP/IP básicas que permiten a los equipos basa
 
 -    Windows 7
 
--    Windows Server 2008
+-    Windows Server 2008
 
 -   Windows Vista
 
@@ -153,7 +153,7 @@ TCP/IP proporciona utilidades de TCP/IP básicas que permiten a los equipos basa
 
 -   Tabletas y teléfonos móviles con tecnología cableada Ethernet o inalámbrica 802,11 habilitada
 
-## <a name="BKMK_overview"></a>Introducción a la red principal
+## <a name="core-network-overview"></a><a name="BKMK_overview"></a>Introducción a la red principal
 En la siguiente ilustración se muestra la topología de una red principal de Windows Server.
 
 ![Topología de red de Windows Server Core](../media/Core-Network-Guide/cng16_overview.jpg)
@@ -179,7 +179,7 @@ El servidor DHCP, llamado DHCP1, se configura con un ámbito que proporciona con
 ##### <a name="client-computers"></a>Equipos cliente
 Los equipos que ejecutan sistemas operativos de cliente de Windows se configuran de forma predeterminada como clientes DHCP, que obtienen direcciones IP y opciones de DHCP de forma automática desde el servidor DHCP.
 
-## <a name="BKMK_planning"></a>Planeación de red principal
+## <a name="core-network-planning"></a><a name="BKMK_planning"></a>Planeación de red principal
 Antes de implementar una red principal, es necesario planear los siguientes elementos.
 
 -   [Planeación de subredes](#bkmk_NetFndtn_Pln_Subnt)
@@ -197,7 +197,7 @@ Las siguientes secciones contienen información más detallada sobre cada uno de
 > [!NOTE]
 > Para obtener ayuda con la planeación de la implementación, consulte también el [Apéndice E: hoja de preparación de planeación de red principal](#BKMK_E).
 
-### <a name="bkmk_NetFndtn_Pln_Subnt"></a>Planeación de subredes
+### <a name="planning-subnets"></a><a name="bkmk_NetFndtn_Pln_Subnt"></a>Planeación de subredes
 En una red con protocolo TCP/IP, los enrutadores sirven para interconectar el hardware y software usados en los distintos segmentos de la red física llamados subredes. Los enrutadores también se usan para reenviar paquetes IP entre cada una de las subredes. Averigüe cuál es el diseño físico de la red, incluido el número de enrutadores y subredes necesario, antes de continuar con las instrucciones de esta guía.
 
 Además, para configurar los servidores en la red con direcciones IP estáticas, debe determinar el intervalo de direcciones IP que desea usar para la subred en la que están ubicados los servidores principales de la red. En esta guía, los intervalos de direcciones IP privadas 10.0.0.1-10.0.0.254 y 10.0.1.1-10.0.1.254 se usan como ejemplos, pero puede usar cualquier intervalo de direcciones IP privado que prefiera.
@@ -220,7 +220,7 @@ Cuando se usan los intervalos de direcciones IP privadas especificados en la RFC
 
 Para obtener más información, vea la sección [Planear la implementación de DHCP1](#bkmk_NetFndtn_Pln_DHCP-01).
 
-### <a name="bkmk_NetFndtn_Pln_AllSrvrs"></a>Planeación de la configuración básica de todos los servidores
+### <a name="planning-basic-configuration-of-all-servers"></a><a name="bkmk_NetFndtn_Pln_AllSrvrs"></a>Planeación de la configuración básica de todos los servidores
 Para cada servidor de la red principal, debe cambiar el nombre del equipo y asignar y configurar una dirección IPv4 estática y otras propiedades TCP/IP para el equipo.
 
 #### <a name="planning-naming-conventions-for-computers-and-devices"></a>Planear las convenciones de nomenclatura para equipos y dispositivos
@@ -251,7 +251,7 @@ La siguiente tabla proporciona valores de ejemplo para la configuración de dire
 > [!NOTE]
 > Si piensa implementar más de un servidor DNS, también puede planear la dirección IP del servidor DNS alternativo.
 
-### <a name="bkmk_NetFndtn_Pln_AD-DNS-01"></a>Planeación de la implementación de DC1
+### <a name="planning-the-deployment-of-dc1"></a><a name="bkmk_NetFndtn_Pln_AD-DNS-01"></a>Planeación de la implementación de DC1
 A continuación se indican los pasos clave de planeación antes de instalar Active Directory Domain Services (AD DS) y DNS en DC1.
 
 #### <a name="planning-the-name-of-the-forest-root-domain"></a>Planear el nombre del dominio raíz del bosque
@@ -296,7 +296,7 @@ En los servidores DNS principales integrados en Active Directory, se crea una zo
 
 Cuando se crea una zona de búsqueda inversa, se configura en DNS el dominio in-addr.arpa, que se define en los estándares DNS y se reservó en el espacio de nombres DNS de Internet para proporcionar una forma práctica y confiable de llevar a cabo consultas inversas. Para crear el espacio de nombres inverso, se forman subdominios dentro del dominio in-addr.arpa, con la clasificación inversa de los números en la notación decimal con punto de direcciones IP.
 
-El dominio in-addr. arpa se aplica a todas las redes TCP/IP basadas en el direccionamiento del Protocolo de Internet versión 4 (IPv4). El Asistente para nueva zona da por supuesto que se usa este dominio al crear una zona de búsqueda inversa.
+El dominio in-addr. arpa se aplica a todas las redes TCP/IP basadas en el direccionamiento del Protocolo de Internet versión 4 (IPv4). El Asistente para nueva zona da por supuesto que se usa este dominio al crear una zona de búsqueda inversa nueva.
 
 Al ejecutar el Asistente para nueva zona, se recomienda realizar las siguientes selecciones:
 
@@ -308,7 +308,7 @@ Al ejecutar el Asistente para nueva zona, se recomienda realizar las siguientes 
 |Segunda página del asistente Nombre de la zona de búsqueda inversa|ID de red = 10.0.0.|
 |Actualizaciones dinámicas|**Permitir solo actualizaciones dinámicas seguras**|
 
-### <a name="bkmk_NetFndtn_Pln_DomAccess"></a>Planeación del acceso al dominio
+### <a name="planning-domain-access"></a><a name="bkmk_NetFndtn_Pln_DomAccess"></a>Planeación del acceso al dominio
 Para iniciar sesión en el dominio, el equipo debe ser un equipo miembro del dominio y la cuenta de usuario se debe crear en AD DS antes del intento de inicio de sesión.
 
 > [!NOTE]
@@ -324,7 +324,7 @@ Antes de iniciar una sesión en el dominio:
 
 -   Una el equipo al dominio. Todos los equipos que proporcionen recursos de red o tengan acceso a ellos deben unirse al dominio. Para obtener más información, vea [Unir equipos servidor al dominio e iniciar sesión](#BKMK_joinlogserver) y [Unir equipos cliente al dominio e iniciar sesión](#BKMK_joinlogclients).
 
-### <a name="bkmk_NetFndtn_Pln_DHCP-01"></a>Planeación de la implementación de DHCP1
+### <a name="planning-the-deployment-of-dhcp1"></a><a name="bkmk_NetFndtn_Pln_DHCP-01"></a>Planeación de la implementación de DHCP1
 A continuación se describen los principales pasos de planeación necesarios previos a la instalación del rol de servidor DHCP en DHCP1.
 
 #### <a name="planning-dhcp-servers-and-dhcp-forwarding"></a>Planear servidores DHCP y reenvío DHCP
@@ -339,17 +339,17 @@ En la mayoría de los casos, configurar los enrutadores para reenviar mensajes d
 #### <a name="planning-ip-address-ranges"></a>Planear intervalos de direcciones IP
 Cada subred debe tener su propio intervalo de direcciones IP únicas. En un servidor DHCP, dichos intervalos se representan con ámbitos.
 
-Un ámbito es una agrupación administrativa de direcciones IP para equipos de una subred que usa el servicio DHCP. El administrador crea primero un ámbito para cada subred física y, a continuación, lo usa para definir los parámetros usados por los clientes.
+U ámbito es una agrupación administrativa de direcciones IP para equipos de una subred que usa el servicio DHCP. En primer lugar, el administrador crea un ámbito para cada subred física y, a continuación, usa el ámbito para definir los parámetros usados por los clientes.
 
-Un ámbito tiene las siguientes propiedades:
+Un ámbito tiene las propiedades siguientes:
 
 -   Un intervalo de direcciones IP desde el que incluir o excluir las direcciones usadas para las ofertas de concesión de servicio DHCP.
 
 -   Una máscara de subred, que determina el prefijo de subred para una dirección IP determinada.
 
--   Un nombre de ámbito asignado al crearlo.
+-   Un nombre de ámbito asignado cuando se creó.
 
--   Valores de duración de la concesión, asignados a los clientes DHCP que reciben las direcciones IP asignadas dinámicamente.
+-   Los valores de duración de la concesión asignados a los clientes DHCP que reciben direcciones IP asignadas de forma dinámica.
 
 -   Todas las opciones de ámbito DHCP configuradas para la asignación a clientes DHCP (por ejemplo, dirección IP del servidor DNS y dirección IP de la puerta de enlace predeterminada o enrutador).
 
@@ -415,7 +415,7 @@ En la tabla siguiente se proporcionan elementos de configuración de ejemplo adi
 |Valores del cuadro de diálogo Agregar ámbito<br /><br />1. nombre del ámbito<br />2. dirección IP inicial<br />3. dirección IP final<br />4. máscara de subred<br />5. puerta de enlace predeterminada (opcional)<br />6. duración de la concesión|1. subred principal<br />2.10.0.0.1<br />3.10.0.0.254<br />4.255.255.255.0<br />5.10.0.0.1<br />6.8 días|
 |Modo de funcionamiento del servidor DHCP IPv6|No habilitado|
 
-## <a name="BKMK_deployment"></a>Implementación de red principal
+## <a name="core-network-deployment"></a><a name="BKMK_deployment"></a>Implementación de red principal
 Para implementar una red principal, los pasos básicos son los siguientes:
 
 1.  [Configurar todos los servidores](#BKMK_configuringAll)
@@ -434,7 +434,7 @@ Para implementar una red principal, los pasos básicos son los siguientes:
 > -   En esta guía se proporcionan comandos de Windows PowerShell equivalentes para la mayoría de los procedimientos. Antes de ejecutar estas cmdlets en Windows PowerShell, reemplace los valores de ejemplo por los valores apropiados según su implementación de red. Además, debe introducir cada cmdlet en una sola línea en Windows PowerShell, aunque en esta guía podrían aparecer cmdlets individuales en varias líneas debido a las restricciones de formato y la visualización del documento con el explorador u otra aplicación.
 > -   Los procedimientos de esta guía no incluyen instrucciones para los casos en los que se abre el cuadro de diálogo **Control de cuentas de usuario** para solicitar permiso para continuar. Si aparece este cuadro de diálogo en respuesta a sus acciones mientras realiza los procedimientos de esta guía, haga clic en **Continuar**.
 
-### <a name="BKMK_configuringAll"></a>Configurar todos los servidores
+### <a name="configuring-all-servers"></a><a name="BKMK_configuringAll"></a>Configurar todos los servidores
 Antes de instalar otras tecnologías, como Active Directory Domain Services o DHCP, es importante configurar los siguientes elementos.
 
 -   [Cambiar el nombre del equipo](#BKMK_rename)
@@ -445,7 +445,7 @@ Puede usar las secciones siguientes para realizar estas acciones en cada servido
 
 El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o grupo equivalente.
 
-#### <a name="BKMK_rename"></a>Cambiar el nombre del equipo
+#### <a name="rename-the-computer"></a><a name="BKMK_rename"></a>Cambiar el nombre del equipo
 Puede usar el procedimiento de esta sección para cambiar el nombre de un equipo. Cambiar el nombre del equipo resulta útil para situaciones en las que el sistema operativo ha creado automáticamente un nombre de equipo que no desea usar.
 
 > [!NOTE]
@@ -468,7 +468,7 @@ Puede usar el procedimiento de esta sección para cambiar el nombre de un equipo
 > [!NOTE]
 > Para obtener información acerca de cómo cambiar el nombre de los equipos que ejecutan otros sistemas operativos de Microsoft, consulte [apéndice a: cambiar el nombre de los equipos](#BKMK_A).
 
-#### <a name="BKMK_ip"></a>Configurar una dirección IP estática
+#### <a name="configure-a-static-ip-address"></a><a name="BKMK_ip"></a>Configurar una dirección IP estática
 Puede usar los procedimientos de este tema para configurar las propiedades del Protocolo de Internet versión 4 (IPv4) de una conexión de red con una dirección IP estática para los equipos que ejecutan Windows Server 2016.
 
 > [!NOTE]
@@ -506,7 +506,7 @@ Puede usar los procedimientos de este tema para configurar las propiedades del P
 > [!NOTE]
 > Para obtener información acerca de cómo configurar una dirección IP estática en equipos que ejecutan otros sistemas operativos de Microsoft, consulte [el Apéndice B: configuración de direcciones IP estáticas](#BKMK_B).
 
-#### <a name="BKMK_deployADDNS01"></a>Implementar DC1
+#### <a name="deploying-dc1"></a><a name="BKMK_deployADDNS01"></a>Implementar DC1
 Para implementar DC1, que es el equipo que ejecuta Active Directory Domain Services (AD DS) y DNS, debe completar estos pasos en el siguiente orden:
 
 -   Completar los pasos de la sección [Configurar todos los servidores](#BKMK_configuringAll)
@@ -535,7 +535,7 @@ Todos los miembros del grupo Usuarios del dominio pueden iniciar sesión en cual
 
 Puede configurar cuentas de usuario para designar los días y horas en que se permite al usuario iniciar sesión en el equipo. Igualmente, puede designar qué equipos puede utilizar cada usuario. Para configurar estos parámetros, abra Usuarios y equipos de Active Directory, busque la cuenta de usuario que desea configurar y haga doble clic en ella. En **Propiedades** de la cuenta de usuario, haga clic en la pestaña **Cuenta** y después en **Horas de inicio de sesión** o **Iniciar sesión en**.
 
-#### <a name="BKMK_installAD-DNS"></a>Instalación de AD DS y DNS para un nuevo bosque
+#### <a name="install-ad-ds-and-dns-for-a-new-forest"></a><a name="BKMK_installAD-DNS"></a>Instalación de AD DS y DNS para un nuevo bosque
 
 Puede usar uno de los procedimientos siguientes para instalar Active Directory Domain Services (AD DS) y DNS, y para crear un nuevo dominio en un bosque nuevo. 
 
@@ -615,21 +615,21 @@ Los resultados de este comando se muestran en Windows PowerShell y deben ser sim
 
 3.  En **Seleccionar tipo de instalación**, asegúrese de que la opción **Instalación basada en características o en roles** está seleccionada y, a continuación, haga clic en **Siguiente**.
 
-4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haz clic en **Siguiente**.
+4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haga clic en **Siguiente**.
 
-5.  En **Seleccionar roles de servidor**, en **Roles**, haga clic en **Active Directory Domain Services**. En **¿Desea agregar características requeridas para Active Directory Domain Services?** , haga clic en **Agregar características**. Haz clic en **Siguiente**.
+5.  En **Seleccionar roles de servidor**, en **Roles**, haga clic en **Active Directory Domain Services**. En **¿Desea agregar características requeridas para Active Directory Domain Services?** , haga clic en **Agregar características**. Haga clic en **Siguiente**.
 
 6.  En **Seleccionar características**, haga clic en **Siguiente**. En **Active Directory Domain Services**, repase la información proporcionada y haga clic en **Siguiente**.
 
 7.  En **Confirmar selecciones de instalación**, haga clic en **Instalar**. La página Progreso de la instalación muestra el estado durante el proceso de instalación. Cuando el proceso finalice, haga clic en **Promover este servidor a controlador de dominio** en los detalles del mensaje. Se abre el Asistente para configuración de Active Directory Domain Services.
 
-8.  En **Configuración de implementación**, seleccione **Agregar un nuevo bosque**. En **Nombre de dominio raíz**, escriba el nombre de dominio completo (FQDN) del dominio. Por ejemplo, si el FQDN es corp.contoso.com, escriba **corp.contoso.com**. Haz clic en **Siguiente**.
+8.  En **Configuración de implementación**, seleccione **Agregar un nuevo bosque**. En **Nombre de dominio raíz**, escriba el nombre de dominio completo (FQDN) del dominio. Por ejemplo, si el FQDN es corp.contoso.com, escriba **corp.contoso.com**. Haga clic en **Siguiente**.
 
-9. En **Opciones del controlador de dominio**, en **Seleccionar nivel funcional del nuevo bosque y dominio raíz**, seleccione el nivel funcional del bosque y del dominio que quiera usar. En **Especificar capacidades del controlador de dominio**, asegúrese de que **Servidor de Sistema de nombres de dominio (DNS)** y **Catálogo global (GC)** están seleccionados. En **Contraseña** y **Confirmar contraseña**, escriba la contraseña del Modo de restauración de servicios de directorio (DSRM) que desea usar. Haz clic en **Siguiente**.
+9. En **Opciones del controlador de dominio**, en **Seleccionar nivel funcional del nuevo bosque y dominio raíz**, seleccione el nivel funcional del bosque y del dominio que quiera usar. En **Especificar capacidades del controlador de dominio**, asegúrese de que **Servidor de Sistema de nombres de dominio (DNS)** y **Catálogo global (GC)** están seleccionados. En **Contraseña** y **Confirmar contraseña**, escriba la contraseña del Modo de restauración de servicios de directorio (DSRM) que desea usar. Haga clic en **Siguiente**.
 
 10. En **Opciones de DNS**, haga clic en **Siguiente**.
 
-11. En **Opciones adicionales**, confirme el nombre NetBIOS asignado al dominio y cámbielo solamente si es necesario. Haz clic en **Siguiente**.
+11. En **Opciones adicionales**, confirme el nombre NetBIOS asignado al dominio y cámbielo solamente si es necesario. Haga clic en **Siguiente**.
 
 12. En **Rutas de acceso**, en **Especificar la ubicación de la base de datos de AD DS, archivos de registro y SYSVOL**, haga lo siguiente:
 
@@ -637,17 +637,17 @@ Los resultados de este comando se muestran en Windows PowerShell y deben ser sim
 
     -   Escriba las ubicaciones de las carpetas que desea usar para **Carpeta de la base de datos**, **Carpeta de archivos de registro** y **Carpeta SYSVOL**.
 
-13. Haz clic en **Siguiente**.
+13. Haga clic en **Siguiente**.
 
 14. En **Revisar opciones**, repase las selecciones realizadas.
 
-15. Si desea exportar la configuración a un script de Windows PowerShell, haga clic en **Ver script**. El script se abre en el Bloc de notas y puede guardarlo en la ubicación de carpeta que desee. Haz clic en **Siguiente**. Las selecciones realizadas se validan en **Comprobación de requisitos previos**. Cuando finalice la comprobación, haga clic en **Instalar**. Cuando Windows se lo solicite, haga clic en **Cerrar**. El servidor se reinicia para completar la instalación de AD DS y DNS.
+15. Si desea exportar la configuración a un script de Windows PowerShell, haga clic en **Ver script**. El script se abre en el Bloc de notas y puede guardarlo en la ubicación de carpeta que desee. Haga clic en **Siguiente**. Las selecciones realizadas se validan en **Comprobación de requisitos previos**. Cuando finalice la comprobación, haga clic en **Instalar**. Cuando Windows se lo solicite, haga clic en **Cerrar**. El servidor se reinicia para completar la instalación de AD DS y DNS.
 
 16. Para comprobar que la instalación se ha realizado correctamente, consulte la consola de Administrador del servidor una vez que se haya reiniciado el servidor. Tanto AD DS como DNS deben aparecer en el panel izquierdo, como los elementos resaltados en la imagen siguiente.
 
 ![AD DS y DNS en Administrador del servidor](../media/Core-Network-Guide/server-roles-installed-sm.jpg)
 
-##### <a name="BKMK_createUA"></a>Crear una cuenta de usuario en Active Directory usuarios y equipos
+##### <a name="create-a-user-account-in-active-directory-users-and-computers"></a><a name="BKMK_createUA"></a>Crear una cuenta de usuario en Active Directory usuarios y equipos
 Puede usar este procedimiento para crear una cuenta de usuario de dominio en el complemento Microsoft Management Console (MMC) de Usuarios y equipos de Active Directory.
 
 El requisito mínimo para llevar a cabo este procedimiento consiste en pertenecer a **Admins. del dominio** o grupo equivalente.
@@ -683,13 +683,13 @@ El requisito mínimo para llevar a cabo este procedimiento consiste en pertenece
 
 7.  Modifique **Nombre completo** para agregar iniciales o invertir el orden del nombre y los apellidos.
 
-8.  En **Nombre de inicio de sesión de usuario**, escriba el nombre correspondiente. Haz clic en **Siguiente**.
+8.  En **Nombre de inicio de sesión de usuario**, escriba el nombre correspondiente. Haga clic en **Siguiente**.
 
 9. En **Nuevo objeto: usuario**, en **Contraseña** y en **Confirmar contraseña**, escriba la contraseña del usuario y, a continuación, seleccione las opciones apropiadas para la contraseña.
 
 10. Haga clic en **Siguiente**, revise la configuración de la nueva cuenta de usuario y, a continuación, haga clic en **Finalizar**.
 
-##### <a name="BKMK_assigngroup"></a>Asignar pertenencia a grupos
+##### <a name="assign-group-membership"></a><a name="BKMK_assigngroup"></a>Asignar pertenencia a grupos
 Puede usar este procedimiento para agregar un usuario, equipo o grupo a un grupo en Microsoft Management Console (MMC) de Usuarios y equipos de Active Directory.
 
 El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Admins. del dominio** o grupo equivalente.
@@ -712,7 +712,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 6.  Para asignar pertenencia a grupos para otros usuarios, grupos o equipos, repita los pasos 4 y 5 de este procedimiento.
 
-##### <a name="BKMK_reverse"></a>Configurar una zona de búsqueda inversa de DNS
+##### <a name="configure-a-dns-reverse-lookup-zone"></a><a name="BKMK_reverse"></a>Configurar una zona de búsqueda inversa de DNS
 Puede usar este procedimiento para configurar una zona de búsqueda inversa en el Sistema de nombres de dominio (DNS).
 
 El requisito mínimo para llevar a cabo este procedimiento es la pertenencia al grupo **Admins. del dominio**.
@@ -735,23 +735,23 @@ El requisito mínimo para llevar a cabo este procedimiento es la pertenencia al 
 
 5.  En **Tipo de zona**, seleccione **Zona principal**.
 
-6.  Si el servidor DNS es un controlador de dominio grabable, asegúrese de que la opción **Almacenar la zona en Active Directory** está seleccionada. Haz clic en **Siguiente**.
+6.  Si el servidor DNS es un controlador de dominio grabable, asegúrese de que la opción **Almacenar la zona en Active Directory** está seleccionada. Haga clic en **Siguiente**.
 
-7.  En **Ámbito de replicación de zona de Active Directory**, seleccione **Para todos los servidores DNS que se ejecutan en controladores de dominio en este dominio**, a menos que tenga un motivo específico para elegir una opción diferente. Haz clic en **Siguiente**.
+7.  En **Ámbito de replicación de zona de Active Directory**, seleccione **Para todos los servidores DNS que se ejecutan en controladores de dominio en este dominio**, a menos que tenga un motivo específico para elegir una opción diferente. Haga clic en **Siguiente**.
 
-8.  En la primera página del asistente **Nombre de la zona de búsqueda inversa**, seleccione **Zona de búsqueda inversa para IPv4**. Haz clic en **Siguiente**.
+8.  En la primera página del asistente **Nombre de la zona de búsqueda inversa**, seleccione **Zona de búsqueda inversa para IPv4**. Haga clic en **Siguiente**.
 
 9. En la segunda página del asistente **Nombre de la zona de búsqueda inversa**, realice una de las siguientes acciones:
 
     -   En **Id. de red**, escriba el identificador de red del intervalo de direcciones IP. Por ejemplo, si el intervalo de direcciones IP oscila entre 10.0.0.1 y 10.0.0.254, escriba **10.0.0**.
 
-    -   En **Nombre de la zona de búsqueda inversa**, el nombre de la zona de búsqueda inversa para IPv4 se agrega automáticamente. Haz clic en **Siguiente**.
+    -   En **Nombre de la zona de búsqueda inversa**, el nombre de la zona de búsqueda inversa para IPv4 se agrega automáticamente. Haga clic en **Siguiente**.
 
-10. En **Actualización dinámica**, seleccione el tipo de actualizaciones dinámicas que desea permitir. Haz clic en **Siguiente**.
+10. En **Actualización dinámica**, seleccione el tipo de actualizaciones dinámicas que desea permitir. Haga clic en **Siguiente**.
 
 11. En **Finalización del Asistente para nueva zona**, repase sus opciones y, a continuación, haga clic en **Finalizar**.
 
-#### <a name="BKMK_joinlogserver"></a>Unir equipos servidor al dominio e iniciar sesión
+#### <a name="joining-server-computers-to-the-domain-and-logging-on"></a><a name="BKMK_joinlogserver"></a>Unir equipos servidor al dominio e iniciar sesión
 Una vez que haya instalado Active Directory Domain Services (AD DS) y creado una o más cuentas de usuario con permisos para unir un equipo al dominio, puede unir servidores de red principal al dominio e iniciar sesión en los servidores para poder instalar más tecnologías, como el protocolo de configuración dinámica de host (DHCP).
 
 En todos los servidores que va a implementar, excepto en el caso del servidor que ejecuta AD DS, haga lo siguiente:
@@ -773,15 +773,15 @@ En todos los servidores que va a implementar, excepto en el caso del servidor qu
 
 1.  En el Administrador del servidor, haga clic en **Servidor local**. En el panel de detalles, haga clic en **GRUPO DE TRABAJO**. Se abre el cuadro de diálogo **Propiedades del sistema**.
 
-2.  En el cuadro de diálogo **Propiedades del sistema** , haga clic en **Cambiar**. Se abre el cuadro de diálogo **Cambios en el dominio o el nombre del equipo**.
+2.  En el cuadro de diálogo **Propiedades del sistema**, haga clic en **Cambiar**. Se abre el cuadro de diálogo **Cambios en el dominio o el nombre del equipo**.
 
 3.  En **Nombre del equipo**, en **Miembro del**, haga clic en **Dominio** y, a continuación, escriba el nombre del dominio al que quiere unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-4.  Haz clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+4.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-5.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haz clic en **Aceptar**.
+5.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
 
-6.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haz clic en **Aceptar**.
+6.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
 
 7.  En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
@@ -803,7 +803,7 @@ En todos los servidores que va a implementar, excepto en el caso del servidor qu
 > [!NOTE]
 > Para obtener información acerca de cómo iniciar sesión en el dominio con equipos que ejecutan otros sistemas operativos de Microsoft, consulte [Apéndice D: Inicio de sesión en el dominio](#BKMK_D).
 
-#### <a name="BKMK_deployDHCP01"></a>Implementación de DHCP1
+#### <a name="deploying-dhcp1"></a><a name="BKMK_deployDHCP01"></a>Implementación de DHCP1
 Antes de implementar este componente de la red principal, debe hacer lo siguiente:
 
 -   Completar los pasos de la sección [Configurar todos los servidores](#BKMK_configuringAll)
@@ -837,7 +837,7 @@ Para implementar DHCP1, que es el equipo que ejecuta el rol de servidor del Prot
 >
 > `Add-DhcpServerInDC -DnsName DHCP1.corp.contoso.com`
 
-##### <a name="BKMK_installDHCP"></a>Instalar el protocolo de configuración dinámica de host (DHCP)
+##### <a name="install-dynamic-host-configuration-protocol-dhcp"></a><a name="BKMK_installDHCP"></a>Instalar el protocolo de configuración dinámica de host (DHCP)
 Puede usar este procedimiento para instalar y configurar el rol de servidor DHCP con el Asistente para agregar roles y características.
 
 El requisito mínimo para llevar a cabo este procedimiento consiste en pertenecer a **Admins. del dominio** o grupo equivalente.
@@ -853,17 +853,17 @@ El requisito mínimo para llevar a cabo este procedimiento consiste en pertenece
 
 3.  En **Seleccionar tipo de instalación**, asegúrese de que la opción **Instalación basada en características o en roles** está seleccionada y, a continuación, haga clic en **Siguiente**.
 
-4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haz clic en **Siguiente**.
+4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haga clic en **Siguiente**.
 
-5.  En **Seleccionar roles de servidor**, en **roles**, seleccione **servidor DHCP**. En **¿Desea agregar características requeridas para servidor DHCP?** , haga clic en **Agregar características**. Haz clic en **Siguiente**.
+5.  En **Seleccionar roles de servidor**, en **roles**, seleccione **servidor DHCP**. En **¿Desea agregar características requeridas para servidor DHCP?** , haga clic en **Agregar características**. Haga clic en **Siguiente**.
 
 6.  En **Seleccionar características**, haga clic en **Siguiente**. En **Servidor DHCP**, repase la información proporcionada y haga clic en **Siguiente**.
 
-7.  En **Confirmar selecciones de instalación**, haga clic en **Reiniciar automáticamente el servidor de destino en caso necesario**. Si se le pide confirmar la selección, haga clic en **Sí** y, a continuación, haga clic en **Instalar**. La página progreso de la **instalación** muestra el estado durante el proceso de instalación. Cuando se complete el proceso, el mensaje "Configuración requerida. Se muestra instalación correcta en *NombreDeEquipo*", donde *NombreDeEquipo* es el nombre del equipo en el que instaló el servidor DHCP. En la ventana del mensaje, haga clic en **Completar configuración de DHCP**. Se abre el Asistente posterior a la instalación de DHCP. Haz clic en **Siguiente**.
+7.  En **Confirmar selecciones de instalación**, haga clic en **Reiniciar automáticamente el servidor de destino en caso necesario**. Si se le pide confirmar la selección, haga clic en **Sí** y, a continuación, haga clic en **Instalar**. La página progreso de la **instalación** muestra el estado durante el proceso de instalación. Cuando se complete el proceso, el mensaje "Configuración requerida. Se muestra instalación correcta en *NombreDeEquipo*", donde *NombreDeEquipo* es el nombre del equipo en el que instaló el servidor DHCP. En la ventana del mensaje, haga clic en **Completar configuración de DHCP**. Se abre el Asistente posterior a la instalación de DHCP. Haga clic en **Siguiente**.
 
 8.  En **Autorización**, escriba las credenciales que desea usar para autorizar el servidor DHCP en Active Directory Domain Services y, a continuación, haga clic en **Confirmar**. Cuando se haya completado la autorización, haga clic en **Cerrar**.
 
-##### <a name="BKMK_newscopeDHCP"></a>Crear y activar un nuevo ámbito DHCP
+##### <a name="create-and-activate-a-new-dhcp-scope"></a><a name="BKMK_newscopeDHCP"></a>Crear y activar un nuevo ámbito DHCP
 Puede usar este procedimiento para crear un nuevo ámbito DHCP por medio de Microsoft Management Console (MMC) de DHCP. Cuando complete el procedimiento, el ámbito se activa y el intervalo de exclusión que cree impide que el servidor DHCP conceda direcciones IP que se usen para configurar estáticamente los servidores y otros dispositivos que requieren una dirección IP estática.
 
 El requisito mínimo para realizar este procedimiento consiste en pertenecer a **Administradores de DHCP** o grupo equivalente.
@@ -890,7 +890,7 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 
     3.  Si fuera necesario, modifique los valores de **Longitud** o **Máscara de subred** para su esquema de direcciones.
 
-    4.  Haz clic en **Siguiente**.
+    4.  Haga clic en **Siguiente**.
 
 8.  En **Agregar exclusiones**, realice lo siguiente:
 
@@ -898,7 +898,7 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 
     2.  En **Dirección IP final**, especifique la última dirección IP del intervalo de exclusión. Por ejemplo, escriba **10.0.0.15**.
 
-9. Haga clic en **Agregar** y, a continuación, en **Siguiente**.
+9. Haz clic en **Agregar** y, después, en **Siguiente**.
 
 10. En **Duración de la concesión**, modifique los valores predeterminados relativos a **Días**, **Horas** y **Minutos** según sea preciso para la red y, a continuación, haga clic en **Siguiente**.
 
@@ -908,7 +908,7 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 
     -   Si no dispone de enrutadores en la red, haga clic en **Siguiente**.
 
-    -   En **Dirección IP**, escriba la dirección IP del enrutador o de la puerta de enlace predeterminada. Por ejemplo, escriba **10.0.0.1**. Haga clic en **Agregar** y, a continuación, en **Siguiente**.
+    -   En **Dirección IP**, escriba la dirección IP del enrutador o de la puerta de enlace predeterminada. Por ejemplo, escriba **10.0.0.1**. Haz clic en **Agregar** y, después, en **Siguiente**.
 
 13. En **Nombre de dominio y servidores DNS**, realice lo siguiente:
 
@@ -927,7 +927,7 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 > [!IMPORTANT]
 > Para crear ámbitos para otras subredes, repita este procedimiento. Use un intervalo de direcciones IP diferente por cada subred que desee implementar y asegúrese de que el reenvío de mensajes DHCP está habilitado en todos los enrutadores que llevan a otras subredes.
 
-### <a name="BKMK_joinlogclients"></a>Unir equipos cliente al dominio e iniciar sesión
+### <a name="joining-client-computers-to-the-domain-and-logging-on"></a><a name="BKMK_joinlogclients"></a>Unir equipos cliente al dominio e iniciar sesión
 
 > [!NOTE]
 > Para llevar a cabo este procedimiento con Windows PowerShell, abra PowerShell, escriba el siguiente cmdlet y después presione ENTRAR. También debe reemplazar el nombre de dominio por el nombre que quiera usar.
@@ -950,11 +950,11 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 
 5.  En **cambios en el dominio o el nombre del equipo** , en **miembro de**, haga clic en **dominio**y, a continuación, escriba el nombre del dominio al que desea unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-6.  Haz clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+6.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haz clic en **Aceptar**.
+7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
 
-8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haz clic en **Aceptar**.
+8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
 
 9. En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
@@ -970,11 +970,11 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 
 5.  En **cambios en el dominio o el nombre del equipo** , en **miembro de**, haga clic en **dominio**y, a continuación, escriba el nombre del dominio al que desea unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-6.  Haz clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+6.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haz clic en **Aceptar**.
+7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
 
-8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haz clic en **Aceptar**.
+8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
 
 9. En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
@@ -990,7 +990,7 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 
 5.  En **Contraseña**, escriba la contraseña del dominio y, a continuación, haga clic en la flecha o presione Entrar.
 
-### <a name="BKMK_optionalfeatures"></a>Implementación de características opcionales para la autenticación de acceso a la red y los servicios Web
+### <a name="deploying-optional-features-for-network-access-authentication-and-web-services"></a><a name="BKMK_optionalfeatures"></a>Implementación de características opcionales para la autenticación de acceso a la red y los servicios Web
 Si tiene previsto implementar servidores de acceso a la red, como puntos de acceso inalámbrico o servidores VPN, después de instalar la red principal, se recomienda implementar un NPS y un servidor Web. Para las implementaciones de acceso a redes, se recomienda usar métodos de autenticación segura basada en certificados. Puede usar NPS para administrar directivas de acceso a redes e implementar métodos de autenticación segura. Puede usar un servidor web para publicar la lista de revocación de certificados (CRL) de la autoridad de certificación (CA) que suministra los certificados para la autenticación segura.
 
 > [!NOTE]
@@ -1006,7 +1006,7 @@ En las siguientes secciones se proporciona información sobre cómo agregar serv
 
 -   [Implementación de WEB1](#BKMK_IIS)
 
-#### <a name="BKMK_deployNPS1"></a>Implementación de NPS1
+#### <a name="deploying-nps1"></a><a name="BKMK_deployNPS1"></a>Implementación de NPS1
 El Servidor de directivas de redes (NPS) se instala como un paso previo a la implementación de otras tecnologías de acceso a redes, como servidores de red privada virtual (VPN), puntos de acceso inalámbrico y conmutadores de autenticación 802.1X.
 
 El servidor de directivas de redes (NPS) permite configurar y administrar de forma centralizada las directivas de red con las siguientes características: servidor de Servicio de autenticación remota telefónica de usuario (RADIUS) y proxy RADIUS.
@@ -1035,7 +1035,7 @@ Para implementar NPS1, que es el equipo que ejecuta el servicio de rol de Servid
 > [!NOTE]
 > En esta guía se proporcionan instrucciones para implementar NPS en un servidor independiente o en una máquina virtual denominada NPS1.  Otro modelo de implementación recomendado es la instalación de NPS en un controlador de dominio. Si prefiere instalar NPS en un controlador de dominio en lugar de en un servidor independiente, instale NPS en DC1.
 
-##### <a name="bkmk_NetFndtn_Pln_NPS-01"></a>Planeación de la implementación de NPS1
+##### <a name="planning-the-deployment-of-nps1"></a><a name="bkmk_NetFndtn_Pln_NPS-01"></a>Planeación de la implementación de NPS1
 Si tiene previsto implementar servidores de acceso a la red, como puntos de acceso inalámbrico o servidores VPN, después de implementar la red principal, se recomienda implementar NPS.
 
 Cuando NPS se usa como un servidor RADIUS, se encarga de autenticar y autorizar las solicitudes de conexión a través de los servidores de acceso a la red. NPS también permite configurar y administrar de forma centralizada las directivas de red que determinan quién puede tener acceso a la red, cómo y cuándo.
@@ -1046,7 +1046,7 @@ A continuación se indican los pasos clave de planeación necesarios previos a l
 
 - Planear la contabilización de cuentas RADIUS. NPS permite registrar los datos de la contabilización de cuentas en una base de datos SQL Server o en un archivo de texto en el equipo local. Si desea usar el registro de SQL Server, planee la instalación y configuración del servidor que ejecuta SQL Server.
 
-##### <a name="BKMK_installNPS"></a>Instalación del servidor de directivas de redes (NPS)
+##### <a name="install-network-policy-server-nps"></a><a name="BKMK_installNPS"></a>Instalación del servidor de directivas de redes (NPS)
 Puede usar este procedimiento para instalar el servidor de directivas de redes (NPS) mediante el Asistente para agregar roles y características. NPS es un servicio de rol del rol de servidor Servicios de acceso y directivas de redes.
 
 > [!NOTE]
@@ -1072,17 +1072,17 @@ Para completar este procedimiento, debe ser miembro del grupo **Admins. del domi
 
 3.  En **Seleccionar tipo de instalación**, asegúrese de que la opción **Instalación basada en características o en roles** está seleccionada y, a continuación, haga clic en **Siguiente**.
 
-4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haz clic en **Siguiente**.
+4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haga clic en **Siguiente**.
 
-5.  En **Seleccionar roles de servidor**, en **roles**, seleccione **servicios de acceso y directivas de redes**. Se abre un cuadro de diálogo en el que se pregunta si debe agregar características necesarias para servicios de acceso y directivas de redes. Haz clic en **Agregar características requeridas**y, a continuación, haz clic en **Siguiente**.
+5.  En **Seleccionar roles de servidor**, en **roles**, seleccione **servicios de acceso y directivas de redes**. Se abre un cuadro de diálogo en el que se pregunta si debe agregar características necesarias para servicios de acceso y directivas de redes. Haz clic en **Agregar características requeridas** y, a continuación, haz clic en **Siguiente**.
 
 6.  En **Seleccionar características**, haga clic en **Siguiente**. En **Servicios de acceso y directivas de redes**, repase la información proporcionada y haga clic en **Siguiente**.
 
-7.  En **Seleccionar servicios de rol**, haga clic en **Servidor de directivas de redes**.  En **¿Desea agregar características requeridas para Servidor de directivas de redes?** , haga clic en **Agregar características**. Haz clic en **Siguiente**.
+7.  En **Seleccionar servicios de rol**, haga clic en **Servidor de directivas de redes**.  En **¿Desea agregar características requeridas para Servidor de directivas de redes?** , haga clic en **Agregar características**. Haga clic en **Siguiente**.
 
 8.  En **Confirmar selecciones de instalación**, haga clic en **Reiniciar automáticamente el servidor de destino en caso necesario**. Si se le pide confirmar la selección, haga clic en **Sí** y, a continuación, haga clic en **Instalar**. La página Progreso de la instalación muestra el estado durante el proceso de instalación. Una vez completado el proceso, se muestra el mensaje "instalación correcta en *NombreDeEquipo*", donde *NombreDeEquipo* es el nombre del equipo en el que instaló el servidor de directivas de redes. Haga clic en **Cerrar**.
 
-##### <a name="BKMK_registerNPS"></a>Registrar el NPS en el dominio predeterminado
+##### <a name="register-the-nps-in-the-default-domain"></a><a name="BKMK_registerNPS"></a>Registrar el NPS en el dominio predeterminado
 Puede usar este procedimiento para registrar un NPS en el dominio en el que el servidor es miembro del dominio.
 
 NPSs debe estar registrado en Active Directory para que tengan permiso para leer las propiedades de acceso telefónico de las cuentas de usuario durante el proceso de autorización. El registro de un NPS agrega el servidor al grupo de **servidores RAS e IAS** en Active Directory.
@@ -1106,7 +1106,7 @@ Para completar este procedimiento, debe ser miembro del grupo **Admins. del domi
 
 Para obtener más información sobre el servidor de directivas de redes, consulte [servidor de directivas de redes (NPS)](../technologies/nps/nps-top.md).
 
-#### <a name="BKMK_IIS"></a>Implementación de WEB1
+#### <a name="deploying-web1"></a><a name="BKMK_IIS"></a>Implementación de WEB1
 
 El rol de servidor Web (IIS) en Windows Server 2016 proporciona una plataforma segura, fácil de administrar, modular y extensible para hospedar sitios web, servicios y aplicaciones de forma confiable. Con Internet Information Services (IIS), puede compartir información con usuarios en Internet, en una intranet o en una extranet. IIS es una plataforma web unificada que integra IIS, ASP.NET, servicios FTP, PHP y Windows Communication Foundation (WCF).
 
@@ -1130,7 +1130,7 @@ Para implementar WEB1, que es el equipo que ejecuta el rol Servidor web (IIS), d
 
 -   [Instalar el rol de servidor servidor Web (IIS)](#BKMK_install_IIS)
 
-##### <a name="BKMK_install_IIS"></a>Instalar el rol de servidor servidor Web (IIS)
+##### <a name="install-the-web-server-iis-server-role"></a><a name="BKMK_install_IIS"></a>Instalar el rol de servidor servidor Web (IIS)
 Para completar este procedimiento, debe pertenecer al grupo **Administradores**.
 
 > [!NOTE]
@@ -1149,13 +1149,13 @@ Para completar este procedimiento, debe pertenecer al grupo **Administradores**.
 
 4.  En la página **Seleccionar servidor de destino** , asegúrese de que el equipo local está seleccionado y, a continuación, haga clic en **siguiente**.
 
-5.  En la página **Seleccionar roles de servidor** , desplácese a y seleccione **servidor Web (IIS)** . Se abre el cuadro **de diálogo Agregar características necesarias para el servidor Web (IIS)** . Haz clic en **Agregar características requeridas**y, a continuación, haz clic en **Siguiente**.
+5.  En la página **Seleccionar roles de servidor** , desplácese a y seleccione **servidor Web (IIS)** . Se abre el cuadro **de diálogo Agregar características necesarias para el servidor Web (IIS)** . Haz clic en **Agregar características requeridas** y, a continuación, haz clic en **Siguiente**.
 
 6.  Haga clic en **Siguiente** hasta haber aceptado todas las configuraciones predeterminadas del servidor web y, a continuación, haga clic en **Instalar**.
 
 7.  Compruebe que todas las instalaciones se realizaron correctamente y, a continuación, haga clic en **Cerrar**.
 
-## <a name="BKMK_resources"></a>Recursos técnicos adicionales
+## <a name="additional-technical-resources"></a><a name="BKMK_resources"></a>Recursos técnicos adicionales
 Para obtener más información sobre las tecnologías de esta guía, vea los siguientes recursos:
 
  Recursos de la biblioteca técnica de Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
@@ -1174,7 +1174,7 @@ Para obtener más información sobre las tecnologías de esta guía, vea los sig
 
 -   [Introducción al servidor Web (IIS)](https://technet.microsoft.com/library/hh831725.aspx) en https://technet.microsoft.com/library/hh831725.aspx.
 
-## <a name="BKMK_appendix"></a>Apéndices de la a a la E
+## <a name="appendices-a-through-e"></a><a name="BKMK_appendix"></a>Apéndices de la a a la E
 Las secciones siguientes contienen información de configuración adicional para equipos que ejecutan sistemas operativos que no son Windows Server 2016, Windows 10, Windows Server 2012 y Windows 8. Además, se proporciona una hoja de cálculo de preparación de red para ayudarle con la implementación.
 
 1.  [Apéndice A: cambiar el nombre de los equipos](#BKMK_A)
@@ -1187,14 +1187,14 @@ Las secciones siguientes contienen información de configuración adicional para
 
 5.  [Apéndice E: hoja de preparación de planeación de red principal](#BKMK_E)
 
-## <a name="BKMK_A"></a>Apéndice A: cambiar el nombre de los equipos
+## <a name="appendix-a---renaming-computers"></a><a name="BKMK_A"></a>Apéndice A: cambiar el nombre de los equipos
 Puede usar los procedimientos de esta sección para proporcionar a los equipos que ejecutan Windows Server 2008 R2, Windows 7, Windows Server 2008 y Windows Vista un nombre de equipo diferente.
 
 -   [Windows Server 2008 R2 y Windows 7](#bkmk_NetFndtn_Pln_rename_R2)
 
 -   [Windows Server 2008 y Windows Vista](#bkmk_NetFndtn_Pln_Renam08)
 
-### <a name="bkmk_NetFndtn_Pln_rename_R2"></a>Windows Server 2008 R2 y Windows 7
+### <a name="windows-server-2008-r2-and-windows-7"></a><a name="bkmk_NetFndtn_Pln_rename_R2"></a>Windows Server 2008 R2 y Windows 7
 El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o grupo equivalente.
 
 ##### <a name="to-rename-computers-running-windows-server-2008-r2-and-windows-7"></a>Para cambiar el nombre de los equipos que ejecutan Windows Server 2008 R2 y Windows 7
@@ -1212,7 +1212,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 5.  Haga clic dos veces en **Aceptar**, haga clic en **Cerrar** y, a continuación, haga clic en **Reiniciar ahora** para reiniciar el equipo.
 
-### <a name="bkmk_NetFndtn_Pln_Renam08"></a>Windows Server 2008 y Windows Vista
+### <a name="windows-server-2008-and-windows-vista"></a><a name="bkmk_NetFndtn_Pln_Renam08"></a>Windows Server 2008 y Windows Vista
 El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o grupo equivalente.
 
 ##### <a name="to-rename-computers-running-windows-server-2008-and-windows-vista"></a>Para cambiar el nombre de los equipos que ejecutan Windows Server 2008 y Windows Vista
@@ -1230,14 +1230,14 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 5.  Haga clic dos veces en **Aceptar**, haga clic en **Cerrar** y, a continuación, haga clic en **Reiniciar ahora** para reiniciar el equipo.
 
-## <a name="BKMK_B"></a>Apéndice B: configuración de direcciones IP estáticas
+## <a name="appendix-b---configuring-static-ip-addresses"></a><a name="BKMK_B"></a>Apéndice B: configuración de direcciones IP estáticas
 En este tema se incluyen los procedimientos necesarios para configurar direcciones IP estáticas en equipos que ejecutan los siguientes sistemas operativos:
 
 -   [Windows Server 2008 R2](#bkmk_R2Cng_WS08R2IP)
 
 -   [Windows Server 2008](#bkmk_NetFndtn_Pln_CfgStatic08)
 
-### <a name="bkmk_R2Cng_WS08R2IP"></a>Windows Server 2008 R2
+### <a name="windows-server-2008-r2"></a><a name="bkmk_R2Cng_WS08R2IP"></a>Windows Server 2008 R2
 El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o grupo equivalente.
 
 ##### <a name="to-configure-a-static-ip-address-on-a-computer-running-windows-server-2008-r2"></a>Para configurar una dirección IP estática en un equipo que ejecuta Windows Server 2008 R2
@@ -1266,7 +1266,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 11. Haga clic en **Aceptar** y, a continuación, en **Cerrar**.
 
-### <a name="bkmk_NetFndtn_Pln_CfgStatic08"></a>Windows Server 2008
+### <a name="windows-server-2008"></a><a name="bkmk_NetFndtn_Pln_CfgStatic08"></a>Windows Server 2008
 El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o grupo equivalente.
 
 ##### <a name="to-configure-a-static-ip-address-on-a-computer-running-windows-server-2008"></a>Para configurar una dirección IP estática en un equipo que ejecuta Windows Server 2008
@@ -1293,7 +1293,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 11. Haga clic en **Aceptar** y, a continuación, en **Cerrar**.
 
-## <a name="BKMK_C"></a>Apéndice C: unir equipos al dominio
+## <a name="appendix-c---joining-computers-to-the-domain"></a><a name="BKMK_C"></a>Apéndice C: unir equipos al dominio
 Puede usar estos procedimientos para unir equipos que ejecutan Windows Server 2008 R2, Windows 7, Windows Server 2008 y Windows Vista al dominio.
 
 -   [Windows Server 2008 R2 y Windows 7](#BKMK_c1)
@@ -1303,7 +1303,7 @@ Puede usar estos procedimientos para unir equipos que ejecutan Windows Server 20
 > [!IMPORTANT]
 > Para unir un equipo a un dominio, debe iniciar sesión en el equipo con la cuenta de administrador local o, si inicia sesión en el equipo con una cuenta de usuario que no tiene credenciales administrativas en el equipo local, debe proporcionar las credenciales para la cuenta de administrador local durante el proceso de unión del equipo al dominio. Además, debe tener una cuenta de usuario en el dominio al que quiere unir el equipo. Durante el proceso de unión del equipo al dominio, se le pedirán las credenciales de su cuenta de dominio (nombre de usuario y contraseña).
 
-### <a name="BKMK_c1"></a>Windows Server 2008 R2 y Windows 7
+### <a name="windows-server-2008-r2-and-windows-7"></a><a name="BKMK_c1"></a>Windows Server 2008 R2 y Windows 7
 El requisito mínimo para completar este procedimiento es la pertenencia al grupo **Usuarios del dominio** o grupo equivalente.
 
 ##### <a name="to-join-computers-running-windows-server-2008-r2-and-windows-7-to-the-domain"></a>Para unir equipos que ejecutan Windows Server 2008 R2 y Windows 7 al dominio
@@ -1321,15 +1321,15 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 5.  En **Nombre del equipo**, en **Miembro del**, seleccione **Dominio** y, a continuación, escriba el nombre del dominio al que quiere unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-6.  Haz clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+6.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haz clic en **Aceptar**.
+7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
 
-8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haz clic en **Aceptar**.
+8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
 
 9. En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
-### <a name="BKMK_c2"></a>Windows Server 2008 y Windows Vista
+### <a name="windows-server-2008-and-windows-vista"></a><a name="BKMK_c2"></a>Windows Server 2008 y Windows Vista
 El requisito mínimo para completar este procedimiento es la pertenencia al grupo **Usuarios del dominio** o grupo equivalente.
 
 ##### <a name="to-join-computers-running-windows-server-2008-and-windows-vista-to-the-domain"></a>Para unir equipos que ejecutan Windows Server 2008 y Windows Vista al dominio
@@ -1344,22 +1344,22 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 5.  En **Nombre del equipo**, en **Miembro del**, seleccione **Dominio** y, a continuación, escriba el nombre del dominio al que quiere unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-6.  Haz clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+6.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haz clic en **Aceptar**.
+7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
 
-8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haz clic en **Aceptar**.
+8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
 
 9. En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
-## <a name="BKMK_D"></a>Apéndice D: Inicio de sesión en el dominio
+## <a name="appendix-d---log-on-to-the-domain"></a><a name="BKMK_D"></a>Apéndice D: Inicio de sesión en el dominio
 Puede usar estos procedimientos para iniciar sesión en el dominio con equipos que ejecutan Windows Server 2008 R2, Windows 7, Windows Server 2008 y Windows Vista.
 
 -   [Windows Server 2008 R2 y Windows 7](#BKMK_d1)
 
 -   [Windows Server 2008 y Windows Vista](#BKMK_d2)
 
-### <a name="BKMK_d1"></a>Windows Server 2008 R2 y Windows 7
+### <a name="windows-server-2008-r2-and-windows-7"></a><a name="BKMK_d1"></a>Windows Server 2008 R2 y Windows 7
 El requisito mínimo para completar este procedimiento es la pertenencia al grupo **Usuarios del dominio** o grupo equivalente.
 
 ##### <a name="log-on-to-the-domain-using-computers-running-windows-server-2008-r2-and-windows-7"></a>Iniciar sesión en el dominio con equipos que ejecutan Windows Server 2008 R2 y Windows 7
@@ -1374,7 +1374,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 5.  En **Contraseña**, escriba la contraseña del dominio y, a continuación, haga clic en la flecha o presione Entrar.
 
-### <a name="BKMK_d2"></a>Windows Server 2008 y Windows Vista
+### <a name="windows-server-2008-and-windows-vista"></a><a name="BKMK_d2"></a>Windows Server 2008 y Windows Vista
 El requisito mínimo para completar este procedimiento es la pertenencia al grupo **Usuarios del dominio** o grupo equivalente.
 
 ##### <a name="log-on-to-the-domain-using-computers-running-windows-server-2008-and-windows-vista"></a>Iniciar sesión en el dominio con equipos que ejecutan Windows Server 2008 y Windows Vista
@@ -1389,7 +1389,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 5.  En **Contraseña**, escriba la contraseña del dominio y, a continuación, haga clic en la flecha o presione Entrar.
 
-## <a name="BKMK_E"></a>Apéndice E: hoja de preparación de planeación de red principal
+## <a name="appendix-e---core-network-planning-preparation-sheet"></a><a name="BKMK_E"></a>Apéndice E: hoja de preparación de planeación de red principal
 Puede usar esta Hoja de preparación de planeamiento de red para recopilar la información necesaria para instalar una red principal. En este tema se proporcionan tablas que contienen los elementos de configuración individuales de cada equipo servidor para el que se debe suministrar información o valores específicos durante la instalación o el proceso de configuración. Se incluyen valores de ejemplo para cada elemento de configuración.
 
 De cara a posibles tareas de planeamiento y seguimiento, también se proporcionan espacios en cada tabla donde se pueden especificar los valores usados para la implementación. Si se registran valores relacionados con la seguridad en estas tablas, se debe almacenar la información en una ubicación segura.
@@ -1408,7 +1408,7 @@ Los siguientes vínculos llevan a las secciones de este tema que proporcionan el
 
 3.  [Instalación del servidor de directivas de redes (opcional)](#BKMK_FndtnPrep_InstallNPS)
 
-### <a name="BKMK_FndtnPrep_InstallAD"></a>Instalación de Active Directory Domain Services y DNS
+### <a name="installing-active-directory-domain-services-and-dns"></a><a name="BKMK_FndtnPrep_InstallAD"></a>Instalación de Active Directory Domain Services y DNS
 En las tablas de esta sección se enumeran los elementos de configuración para la preinstalación y la instalación de Active Directory Domain Services (AD DS) y DNS.
 
 ##### <a name="pre-installation-configuration-items-for-ad-ds-and-dns"></a>Elementos de configuración de la instalación previa para AD DS y DNS
@@ -1428,7 +1428,7 @@ Las siguientes tablas recogen elementos de configuración de la preinstalación 
 
 |Elemento de configuración|Valor de ejemplo|Valor|
 |----------------------|-----------------|---------|
-|Nombre de equipo|DC1||
+|Nombre del equipo|DC1||
 
 ##### <a name="ad-ds-and-dns-installation-configuration-items"></a>Elementos de configuración de la instalación de AD DS y DNS
 Elementos de configuración para el procedimiento de implementación de una red principal de Windows Server [Instalar AD DS y DNS para un bosque nuevo](#BKMK_installAD-DNS):
@@ -1443,7 +1443,7 @@ Elementos de configuración para el procedimiento de implementación de una red 
 |Contraseña de administrador para el modo de restauración de directorios|J*p2leO4$F||
 |Nombre del archivo de respuesta (opcional)|DS_AnswerFile de AD||
 
-#### <a name="BKMK_FndtnPrep_DNSRevrsLook"></a>Configuración de una zona de búsqueda inversa de DNS
+#### <a name="configuring-a-dns-reverse-lookup-zone"></a><a name="BKMK_FndtnPrep_DNSRevrsLook"></a>Configuración de una zona de búsqueda inversa de DNS
 
 |Elementos de configuración|Valores de ejemplo|Valores|
 |-----------------------|------------------|----------|
@@ -1453,7 +1453,7 @@ Elementos de configuración para el procedimiento de implementación de una red 
 |Nombre de zona de búsqueda inversa<br /><br />(tipo de IP)|-Zona de búsqueda inversa IPv4<br />-Zona de búsqueda inversa IPv6||
 |Nombre de zona de búsqueda inversa<br /><br />(identificador de red)|10.0.0||
 
-### <a name="BKMK_FndtnPrep_InstallDHCP"></a>Instalación de DHCP
+### <a name="installing-dhcp"></a><a name="BKMK_FndtnPrep_InstallDHCP"></a>Instalación de DHCP
 Las tablas de esta sección muestran elementos de configuración para la preinstalación e instalación de DHCP.
 
 ##### <a name="pre-installation-configuration-items-for-dhcp"></a>Elementos de configuración de la preinstalación para DHCP
@@ -1473,7 +1473,7 @@ Las siguientes tablas recogen elementos de configuración de la preinstalación 
 
 |Elemento de configuración|Valor de ejemplo|Valor|
 |----------------------|-----------------|---------|
-|Nombre de equipo|DHCP1||
+|Nombre del equipo|DHCP1||
 
 ##### <a name="dhcp-installation-configuration-items"></a>Elementos de configuración de la instalación de DHCP
 Elementos de configuración para el procedimiento de implementación de una red principal de Windows Server [Instalar Protocolo de configuración dinámica de host (DHCP)](#BKMK_installDHCP):
@@ -1492,7 +1492,7 @@ Elementos de configuración para el procedimiento de implementación de una red 
 |Duración de la concesión|8 días||
 |Modo de funcionamiento del servidor DHCP IPv6|No habilitado||
 
-#### <a name="BKMK_FndtnPrep_DHCP_Exclusn"></a>Crear un intervalo de exclusión en DHCP
+#### <a name="creating-an-exclusion-range-in-dhcp"></a><a name="BKMK_FndtnPrep_DHCP_Exclusn"></a>Crear un intervalo de exclusión en DHCP
 Elementos de configuración para crear un intervalo de exclusión al crear un ámbito en DHCP.
 
 |Elementos de configuración|Valores de ejemplo|Valores|
@@ -1502,7 +1502,7 @@ Elementos de configuración para crear un intervalo de exclusión al crear un á
 |Dirección IP inicial del intervalo de exclusión|10.0.0.1||
 |Dirección IP final del intervalo de exclusión|10.0.0.15||
 
-#### <a name="bkmk_NetFndtn_Pln_DHCP_NewScope"></a>Crear un nuevo ámbito DHCP
+#### <a name="creating-a-new-dhcp-scope"></a><a name="bkmk_NetFndtn_Pln_DHCP_NewScope"></a>Crear un nuevo ámbito DHCP
 Elementos de configuración para el procedimiento de implementación de Windows Server Core [Crear y activar un nuevo ámbito DHCP](#BKMK_newscopeDHCP):
 
 |Elementos de configuración|Valores de ejemplo|Valores|
@@ -1515,12 +1515,12 @@ Elementos de configuración para el procedimiento de implementación de Windows 
 |Máscara de subred|255.255.255.0||
 |(Intervalo de exclusión) Dirección IP inicial|10.0.1.1||
 |Dirección IP final del intervalo de exclusión|10.0.1.15||
-|Duración de la concesión<br /><br />Days<br /><br />Horas<br /><br />Minutos|-8<br />-   0<br />-   0||
+|Duración de la concesión<br /><br />Days<br /><br />Hours<br /><br />Minutos|-8<br />-   0<br />-   0||
 |Enrutador (puerta de enlace predeterminada)<br /><br />Dirección IP|10.0.1.1||
 |Dominio DNS principal|corp.contoso.com||
 |Servidor DNS<br /><br />Dirección IP|10.0.0.2||
 
-### <a name="BKMK_FndtnPrep_InstallNPS"></a>Instalación del servidor de directivas de redes (opcional)
+### <a name="installing-network-policy-server-optional"></a><a name="BKMK_FndtnPrep_InstallNPS"></a>Instalación del servidor de directivas de redes (opcional)
 Las tablas de esta sección muestran elementos de configuración para la preinstalación e instalación de NPS.
 
 ##### <a name="pre-installation-configuration-items"></a>Elementos de configuración de la preinstalación
@@ -1540,7 +1540,7 @@ Las tres tablas siguientes muestran elementos de configuración de la preinstala
 
 |Elemento de configuración|Valor de ejemplo|Valor|
 |----------------------|-----------------|---------|
-|Nombre de equipo|NPS1||
+|Nombre del equipo|NPS1||
 
 ##### <a name="network-policy-server-installation-configuration-items"></a>Elementos de configuración de la instalación del Servidor de directivas de redes
 Elementos de configuración para los procedimientos de implementación de NPS de red principal de Windows Server [instalar el servidor de directivas de redes (NPS)](#BKMK_installNPS) y [registrar el NPS en el dominio predeterminado](#BKMK_registerNPS).

@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5a7252d0-6db8-4a9d-98ee-75082ecd2929
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fa89745d6efcae3591bba2aa5a694ee651bc9912
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 491533ae5d141de4ab4f15126d8977cf15c8f7f4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404861"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314686"
 ---
 # <a name="step-7-test-connectivity-when-returning-to-the-corpnet"></a>Paso 7 probar la conectividad al volver a la red corporativa
 
@@ -31,7 +31,7 @@ Muchos de los usuarios se moverán entre ubicaciones remotas y la red corporativ
   
 2. Abra una ventana de Windows PowerShell con privilegios elevados, escriba **ipconfig/all**y presione Entrar. La salida indicará que CLIENT1 tiene una dirección IP local y que no hay ningún túnel de IP-HTTPS, 6to4 o Teredo activo.  
   
-3. Pruebe la conectividad con el recurso compartido de red en APP2. En la pantalla **Inicio** , escriba<strong>\\ \ APP2\Files</strong>y, a continuación, presione Entrar. Podrá abrir el archivo en esa carpeta.  
+3. Pruebe la conectividad con el recurso compartido de red en APP2. En la pantalla **Inicio** , escriba<strong>\\\APP2\Files</strong>y, a continuación, presione Entrar. Podrá abrir el archivo en esa carpeta.  
   
 
 

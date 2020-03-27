@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f04eb11e-ed5f-42a1-a77b-57a248ba2d10
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3dad1db575bd9b9b4a70a24da44d1d030273f021
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: cb869ad1617d52562e73eb6965a9f1c2184a56a7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404870"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310783"
 ---
 # <a name="step-3-install-and-configure-edge2"></a>Paso 3 instalación y configuración de EDGE2
 
@@ -27,17 +27,17 @@ EDGE2 es el segundo miembro de un clúster de acceso remoto. EDGE2 se instala y 
 
 Realice los pasos siguientes para configurar EDGE2:
 
-## <a name="installOS"></a>Instalación del sistema operativo en EDGE2  
+## <a name="install-the-operating-system-on-edge2"></a><a name="installOS"></a>Instalación del sistema operativo en EDGE2  
   
 1.  En EDGE2, inicie la instalación de Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012.  
   
-2.  Siga las instrucciones para completar la instalación, especificando Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 (instalación completa) y una contraseña segura para la cuenta de administrador local. Inicie sesión con la cuenta Administrador local.  
+2.  Siga las instrucciones para completar la instalación, especificando Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 (instalación completa) y una contraseña segura para la cuenta de administrador local. Inicie sesión con la cuenta de administrador local.  
   
 3.  Conecte EDGE2 a una red que tenga acceso a Internet y ejecute Windows Update para instalar las actualizaciones más recientes para Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 y, a continuación, desconéctese de Internet.  
   
 4.  Conecte un adaptador de red a la subred de la red corporativa o al conmutador virtual que representa la subred corporativa y el otro a la subred de Internet o al conmutador virtual que representa la subred de Internet.  
   
-## <a name="TCP"></a>Configurar las propiedades de TCP/IP  
+## <a name="configure-tcpip-properties"></a><a name="TCP"></a>Configurar las propiedades de TCP/IP  
   
 1.  En la consola de Administrador del servidor, haga clic en **servidor local**y, a continuación, en el área **propiedades** , junto a **conexión cableada Ethernet**, haga clic en el vínculo.  
   
@@ -53,7 +53,7 @@ Realice los pasos siguientes para configurar EDGE2:
   
 7.  Haga clic en **Usar las siguientes direcciones de servidor DNS**. En **Servidor DNS preferido**, escriba **10.0.0.1**.  
   
-8.  Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.  
+8.  Haga clic en  **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.  
   
 9. En **sufijo DNS para esta conexión**, escriba **Corp.contoso.com**y haga clic en **Aceptar** dos veces.  
   
@@ -63,7 +63,7 @@ Realice los pasos siguientes para configurar EDGE2:
   
 12. Haga clic en **Usar las siguientes direcciones de servidor DNS**. En **servidor DNS preferido**, escriba **2001: db8:1:: 1**.  
   
-13. Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.  
+13. Haga clic en  **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.  
   
 14. En **sufijo DNS para esta conexión**, escriba **Corp.contoso.com**, haga clic en **Aceptar** dos veces y, a continuación, haga clic en **cerrar**.  
   
@@ -89,7 +89,7 @@ Realice los pasos siguientes para configurar EDGE2:
   
 25. Cierre la ventana del símbolo del sistema.  
   
-## <a name="rename"></a>Cambiar el nombre de EDGE2 y unirlo al dominio  
+## <a name="rename-edge2-and-join-it-to-the-domain"></a><a name="rename"></a>Cambiar el nombre de EDGE2 y unirlo al dominio  
   
 1.  En la consola de Administrador del servidor, en **servidor local**, en el área **propiedades** , junto a **nombre de equipo**, haga clic en el vínculo.  
   
@@ -97,7 +97,7 @@ Realice los pasos siguientes para configurar EDGE2:
   
 3.  En el cuadro de diálogo cambios en el **dominio o el nombre del equipo** , en el cuadro **nombre de equipo** , escriba **EDGE2**. En el área **miembro de** , haga clic en **dominio**y, en el cuadro de texto, escriba **Corp.contoso.com**y, a continuación, haga clic en **Aceptar**.  
   
-4.  Cuando se le pida un nombre de usuario y una contraseña, escriba **User1** y su contraseña, y haga clic en **Aceptar**.  
+4.  Cuando se le pida un nombre de usuario y una contraseña, escriba **User1** y su contraseña y después haga clic en **Aceptar**.  
   
 5.  Cuando vea un cuadro de diálogo en el que se le da la bienvenida al dominio corp.contoso.com, haga clic en **Aceptar**.  
   
@@ -109,9 +109,9 @@ Realice los pasos siguientes para configurar EDGE2:
   
 9. Después de reiniciar, inicie sesión como CORP\User1.  
   
-## <a name="IPHTTPSCert"></a>Instalación del certificado IP-HTTPS  
+## <a name="install-the-ip-https-certificate"></a><a name="IPHTTPSCert"></a>Instalación del certificado IP-HTTPS  
   
-1.  En la pantalla **Inicio** , escriba**MMC. exe**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+1.  En la pantalla **Inicio** , escriba**MMC. exe**y, a continuación, presione Entrar. Si aparece el cuadro de **Control de cuentas de usuario**, confirma que la acción que se muestra es la que deseas realizar y haz clic en **Sí**.  
   
 2.  En la consola MMC, en el menú **Archivo**, haz clic en **Agregar o quitar complemento**.  
   
@@ -139,7 +139,7 @@ Realice los pasos siguientes para configurar EDGE2:
   
 14. Cierre la ventana de la consola. Si se le pide que guarde la configuración, haga clic en **no**.  
   
-## <a name="InstallDA"></a>Instalar el rol de acceso remoto en EDGE2  
+## <a name="install-the-remote-access-role-on-edge2"></a><a name="InstallDA"></a>Instalar el rol de acceso remoto en EDGE2  
   
 1.  En la consola de Administrador del servidor, en el **Panel**, haga clic en **Agregar roles y características**.  
   
@@ -149,9 +149,9 @@ Realice los pasos siguientes para configurar EDGE2:
   
 4.  Haz clic cinco veces en **Siguiente**.  
   
-5.  En el cuadro de diálogo **Confirmar selecciones de instalación** , haga clic en **Instalar**.  
+5.  En el cuadro de diálogo **Confirmar selecciones de instalación**, haz clic en **Instalar**.  
   
-6.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
+6.  En el cuadro de diálogo **Progreso de la instalación**, comprueba que la instalación se realiza correctamente y, a continuación, haz clic en **Cerrar**.  
   
 
 

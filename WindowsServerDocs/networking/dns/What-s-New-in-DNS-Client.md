@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 6edaba84-4595-4fd8-95d7-64d4d975a38a
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 696ea0b499a4132d630cc0cda15a1d7efdac37a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a02aea149a658be2696195a2a17429b506dec1fa
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356056"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317981"
 ---
 # <a name="whats-new-in-dns-client-in-windows-server-2016"></a>Novedades del cliente DNS en Windows Server 2016
 
@@ -23,7 +23,7 @@ En este tema se describen las funciones de cliente del sistema de nombres de dom
   
 ## <a name="updates-to-dns-client"></a>Actualizaciones del cliente DNS
 
-**Enlace de servicio de cliente DNS**: En Windows 10, el servicio cliente DNS ofrece compatibilidad mejorada para equipos con más de una interfaz de red. En el caso de los equipos de host múltiple, la resolución de DNS se optimiza de las siguientes maneras:  
+**Enlace de servicio de cliente DNS**: en Windows 10, el servicio cliente DNS ofrece compatibilidad mejorada para equipos con más de una interfaz de red. En el caso de los equipos de host múltiple, la resolución de DNS se optimiza de las siguientes maneras:  
   
 -   Cuando se usa un servidor DNS que está configurado en una interfaz específica para resolver una consulta DNS, el servicio cliente DNS se enlazará a esta interfaz antes de enviar la consulta DNS.  
   

@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: eca02eeb-d92d-463e-aae0-1f7038ba26fe
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e8406286599e5b03173ce1b5d6c34c35245a9094
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d34630b4faa8012eee73967a99bc0541f1305a09
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366952"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313519"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>Paso 3 planear la implementación de certificados OTP
 
@@ -41,10 +41,10 @@ Después de planear el servidor RADIUS, debe planear los requisitos de entidad d
 |[3,2 planeamiento de la plantilla de certificado OTP](#bkmk_3_2_OTP_Cert)|Planee la plantilla de certificado OTP.|
 |[3,3 planear el certificado de la autoridad de registro](#bkmk_33RACert)|Planifique el certificado de la autoridad de registro para firmar todas las solicitudes de certificado de autenticación de OTP.|
 
-## <a name="bkmk_3_1_CA"></a>3,1 planear la CA de OTP  
+## <a name="31-plan-the-otp-ca"></a><a name="bkmk_3_1_CA"></a>3,1 planear la CA de OTP  
 Para implementar DirectAccess con la autenticación de contraseña de un solo uso (OTP), necesita una CA interna para emitir los certificados de autenticación de OTP a los equipos cliente de DirectAccess. Para ello, puede usar la misma entidad de certificación interna que usa para emitir los certificados que se usan para la autenticación normal de equipos con IPsec.  
   
-## <a name="bkmk_3_2_OTP_Cert"></a>3,2 planeamiento de la plantilla de certificado OTP  
+## <a name="32-plan-the-otp-certificate-template"></a><a name="bkmk_3_2_OTP_Cert"></a>3,2 planeamiento de la plantilla de certificado OTP  
 Cada cliente de DirectAccess requiere un certificado de autenticación de OTP para obtener acceso a la red interna. Debe configurar una plantilla en la entidad de certificación interna para el certificado OTP. Tenga en cuenta lo siguiente al configurar la plantilla de certificado OTP:  
   
 -   Todos los usuarios que necesiten realizar la autenticación de OTP deben tener permisos de lectura e inscripción para esta plantilla.  
@@ -70,10 +70,10 @@ Cada cliente de DirectAccess requiere un certificado de autenticación de OTP pa
   
     -   Para la plantilla de certificado de autenticación OTP, use la clave 1.3.6.1.4.1.311.20.2.2 de clave.  
   
-## <a name="bkmk_33RACert"></a>3,3 planear el certificado de la autoridad de registro  
+## <a name="33-plan-the-registration-authority-certificate"></a><a name="bkmk_33RACert"></a>3,3 planear el certificado de la autoridad de registro  
 Cuando los clientes de DirectAccess solicitan un certificado OTP, el servidor de acceso remoto recibe la solicitud del cliente. El servidor de acceso remoto firma todas las solicitudes de certificados OTP de los clientes que usan el certificado de la entidad de registro. La CA emite certificados solo si la solicitud está firmada por el certificado de la autoridad de registro en el servidor de acceso remoto. El certificado debe estar emitido por una CA interna, el certificado no se puede firmar automáticamente. No es necesario que lo emita la CA que emitió los certificados OTP, pero la CA que emite los certificados OTP debe confiar en la CA que emite el certificado de firma de autoridad de registro.  
   
-## <a name="BKMK_Links"></a>Vea también  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también  
   
 -   [Paso 4: planear la OTP para el servidor de acceso remoto](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)  
   

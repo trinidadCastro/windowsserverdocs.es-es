@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: fa4a8c41-8c2a-425c-8511-736fe5d196ac
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5d53cbba37699346db110f0748a9c3e0c834c18e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3319715e70c1e68739a10a4c67a9fa404d5ad80e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356285"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318414"
 ---
 # <a name="configure-web1-to-distribute-certificate-revocation-lists-crls"></a>Configurar WEB1 para distribuir listas de revocación de certificados (CRL)
 
@@ -30,7 +30,7 @@ Para llevar a cabo este procedimiento, debe ser miembro del **grupo Admins**. de
   
 #### <a name="to-configure-web1-to-distribute-certificates-and-crls"></a>Para configurar WEB1 para distribuir certificados y CRL  
   
-1.  En WEB1, ejecute Windows PowerShell como administrador, escriba `explorer c:\` y, a continuación, presione Entrar. El explorador de Windows se abre para la unidad C.   
+1.  En WEB1, ejecute Windows PowerShell como administrador, escriba `explorer c:\`y, a continuación, presione Entrar. El explorador de Windows se abre para la unidad C.   
   
 2.  Cree una nueva carpeta denominada PKI en la unidad C:. Para ello, haga clic en **Inicio**y, a continuación, haga clic en **nueva carpeta**. Se crea una nueva carpeta con el nombre temporal resaltado. Escriba **PKI** y, a continuación, presione Entrar.  
   
@@ -44,7 +44,7 @@ Para llevar a cabo este procedimiento, debe ser miembro del **grupo Admins**. de
   
 7.  En el árbol de la consola del administrador de Internet Information Services (IIS), expanda **web1**. Si se le invita a ver una introducción a la Plataforma web de Microsoft, haga clic en **Cancelar**.  
   
-8.  Expanda **Sitios** y haga clic con el botón secundario en **Sitio web predeterminado**; a continuación, haga clic en **Agregar directorio virtual**.  
+8.  Expanda **Sitios** y haga clic con el botón secundario en **Default Web Site**; a continuación, haga clic en **Agregar directorio virtual**.  
   
 9. En **alias**, escriba **PKI**. En **ruta de acceso física** , escriba **C:\pki**y haga clic en **Aceptar**.  
   
@@ -58,7 +58,7 @@ Para llevar a cabo este procedimiento, debe ser miembro del **grupo Admins**. de
   
     4.  En la pestaña **Seguridad**, haga clic en **Editar**.  
   
-    5.  En el cuadro de diálogo **Permisos de pki** , haga clic en **Agregar**.  
+    5.  En el cuadro de diálogo **Permisos de pki**, haga clic en **Agregar**.  
   
     6.  En **Seleccionar usuarios, equipos, cuentas de servicio o grupos**, escriba **Inicio de sesión anónimo; Todos** y, a continuación, haga clic en **Comprobar nombres**. Haga clic en **Aceptar**.  
   
@@ -68,9 +68,9 @@ Para llevar a cabo este procedimiento, debe ser miembro del **grupo Admins**. de
   
 11. Haga clic en **Aceptar** en el cuadro de diálogo **propiedades de PKI** .  
   
-12. En el panel **Página principal de pki** , haga doble clic en **Filtrado de solicitudes**.  
+12. En el panel **Página principal de pki**, haga doble clic en **Filtrado de solicitudes**.  
   
-13. La pestaña **Extensiones de nombre de archivo** se selecciona de manera predeterminada en el panel **Filtrado de solicitudes**. En el panel **Acciones** , haga clic en **Modificar configuración de característica**.  
+13. La pestaña **Extensiones de nombre de archivo** se selecciona de manera predeterminada en el panel **Filtrado de solicitudes**. En el panel **Acciones**, haga clic en **Modificar configuración de característica**.  
   
 14. En **Modificar configuración del filtrado de solicitudes**, active **Permitir doble escape** y, a continuación, haga clic en **Aceptar**.  
   

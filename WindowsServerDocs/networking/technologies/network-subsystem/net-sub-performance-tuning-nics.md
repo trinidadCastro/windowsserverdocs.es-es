@@ -1,5 +1,5 @@
 ---
-title: Ajustar el rendimiento de los adaptadores de red
+title: Adaptadores de red de optimización de rendimiento
 description: Este tema forma parte de la guía de optimización del rendimiento del subsistema de red para Windows Server 2016.
 audience: Admin
 ms.custom:
@@ -10,17 +10,17 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0b9b0f80-415c-4f5e-8377-c09b51d9c5dd
 manager: dcscontentpm
-ms.author: pashort
+ms.author: lizross
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: 3feec719934fb16ca34cebe1e653768da5fb9eb7
-ms.sourcegitcommit: 33c89b76ac902927490b9727f3cf92b374754699
+ms.openlocfilehash: f802804d64b3047a2612b7f346de03aff61c30cd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728436"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316541"
 ---
-# <a name="performance-tuning-network-adapters"></a>Ajustar el rendimiento de los adaptadores de red
+# <a name="performance-tuning-network-adapters"></a>Adaptadores de red de optimización de rendimiento
 
 > Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
@@ -35,7 +35,7 @@ La configuración de optimización correcta para los adaptadores de red depende 
 
 En las siguientes secciones se describen algunas de las opciones de ajuste del rendimiento.  
 
-##  <a name="bkmk_offload"></a>Habilitar las características de descarga
+##  <a name="enabling-offload-features"></a><a name="bkmk_offload"></a>Habilitar las características de descarga
 
 Activar las características de descarga del adaptador de red suele ser beneficioso. Sin embargo, es posible que el adaptador de red no sea lo suficientemente eficaz como para controlar las capacidades de descarga con un alto rendimiento.
 
@@ -48,7 +48,7 @@ En ese caso, la habilitación de las características de descarga de segmentaci�
 > [!NOTE]  
 > Algunos adaptadores de red requieren que se habiliten las características de descarga de forma independiente para las rutas de acceso de envío y recepción.
 
-##  <a name="bkmk_rss_web"></a>Habilitar el ajuste de escala en lado de recepción (RSS) para servidores Web
+##  <a name="enabling-receive-side-scaling-rss-for-web-servers"></a><a name="bkmk_rss_web"></a>Habilitar el ajuste de escala en lado de recepción (RSS) para servidores Web
 
 RSS puede mejorar la escalabilidad y el rendimiento web cuando hay menos adaptadores de red que procesadores lógicos en el servidor. Cuando todo el tráfico web atraviesa los adaptadores de red compatibles con RSS, el servidor puede procesar las solicitudes Web entrantes de distintas conexiones simultáneamente entre distintas CPU.
 
@@ -63,7 +63,7 @@ El perfil predefinido de RSS predeterminado es **NUMAStatic**, que difiere del v
 
 Por ejemplo, si abre el administrador de tareas y revisa los procesadores lógicos en el servidor y parecen estar infrautilizados para recibir tráfico, puede intentar aumentar el número de colas RSS desde el valor predeterminado de dos hasta el máximo que admita el adaptador de red. Quizás el adaptador de red tenga opciones para cambiar el número de colas RSS como parte del controlador.
 
-##  <a name="bkmk_resources"></a>Aumentar los recursos del adaptador de red
+##  <a name="increasing-network-adapter-resources"></a><a name="bkmk_resources"></a>Aumentar los recursos del adaptador de red
 
 En el caso de los adaptadores de red que permiten configurar manualmente recursos como los búferes de envío y recepción, debe aumentar los recursos asignados.  
 
@@ -78,7 +78,7 @@ Para controlar la moderación de interrupciones, algunos adaptadores de red expo
 
 Debe considerar la moderación de interrupciones para cargas de trabajo enlazadas a la CPU. Al usar la moderación de interrupciones, tenga en cuenta el equilibrio entre el ahorro y la latencia de la CPU del host frente al aumento del ahorro de CPU del host debido a más interrupciones y menos latencia. Si el adaptador de red no realiza la moderación de interrupciones, pero expone la fusión del búfer, puede mejorar el rendimiento si aumenta el número de búferes fusionados para permitir más búferes por envío o recepción.
 
-##  <a name="bkmk_low"></a>Optimización del rendimiento para el procesamiento de paquetes de baja latencia
+##  <a name="performance-tuning-for-low-latency-packet-processing"></a><a name="bkmk_low"></a>Optimización del rendimiento para el procesamiento de paquetes de baja latencia
 
 Muchos adaptadores de red ofrecen opciones para optimizar la latencia inducida por el sistema operativo. La latencia es el tiempo que transcurre desde que el controlador de red procesa un paquete de entrada hasta que lo envía de vuelta. Este tiempo suele medirse en microsegundos. En comparación, el tiempo de transmisión en transmisiones de paquetes en grandes distancias suele medirse en milisegundos (un orden de magnitud mayor). Este ajuste no reducirá el tiempo que un paquete está en tránsito.
 
@@ -98,7 +98,7 @@ Las siguientes son algunas sugerencias de ajuste para redes con una sensibilidad
 
 - Administra las interrupciones y DPC de los adaptadores de red en un procesador de núcleo que comparta la memoria caché de la CPU con el núcleo usado por el programa (subproceso de usuario) que está administrando el paquete. Para ello, se puede usar el ajuste de la afinidad de la CPU para dirigir un proceso a determinados procesadores lógicos junto con la configuración de RSS. Cuando se usa el mismo núcleo para la interrupción, el DPC y el subproceso del modo de usuario, el rendimiento es menor porque la carga aumenta debido a que el ISR, DPC y el subproceso luchan por usar el núcleo.
 
-##  <a name="bkmk_smi"></a>Interrupciones de administración del sistema
+##  <a name="system-management-interrupts"></a><a name="bkmk_smi"></a>Interrupciones de administración del sistema
 
 Muchos sistemas de hardware usan interrupciones de administración del sistema (SMI) para diversas funciones de mantenimiento, como la notificación de errores de memoria de código de corrección de errores (ECC), el mantenimiento de la compatibilidad con USB heredada, el control del ventilador y la administración de energía controlada por BIOS Configuración.
 
@@ -111,11 +111,11 @@ Si necesitas lograr la menor latencia, debes solicitar a tu proveedor de hardwar
 > [!NOTE]  
 > El sistema operativo no puede controlar SMIs porque el procesador lógico se está ejecutando en un modo de mantenimiento especial, lo que impide la intervención del sistema operativo.
 
-##  <a name="bkmk_tcp"></a>Ajuste del rendimiento de TCP
+##  <a name="performance-tuning-tcp"></a><a name="bkmk_tcp"></a>Ajuste del rendimiento de TCP
 
  Puede usar los siguientes elementos para optimizar el rendimiento de TCP.
 
-###  <a name="bkmk_tcp_params"></a>Ajuste automático de la ventana de recepción de TCP
+###  <a name="tcp-receive-window-autotuning"></a><a name="bkmk_tcp_params"></a>Ajuste automático de la ventana de recepción de TCP
 
 En Windows Vista, Windows Server 2008 y versiones posteriores de Windows, la pila de red de Windows usa una característica denominada nivel de optimización automática de la *ventana de recepción de TCP* para negociar el tamaño de la ventana de recepción de TCP. Esta característica puede negociar un tamaño de ventana de recepción definido para cada comunicación TCP durante el protocolo de enlace TCP.
 
@@ -231,13 +231,13 @@ Para obtener más información sobre estos cmdlets, consulte los siguientes art�
 
 Puede establecer el ajuste automático de la ventana de recepción en cinco niveles. El nivel predeterminado es **normal**. En la tabla siguiente se describen los niveles.
 
-|Nivel |Valor hexadecimal |Observaciones |
+|Level |Valor hexadecimal |Comentarios |
 | --- | --- | --- |
 |Normal (opción predeterminada) |0x8 (factor de escala de 8) |Establezca el tamaño de la ventana de recepción de TCP para que se adapte a casi todos los escenarios. |
-|Deshabilitada |No hay ningún factor de escala disponible |Establezca la ventana de recepción TCP en su valor predeterminado. |
+|Deshabilitado |No hay ningún factor de escala disponible |Establezca la ventana de recepción TCP en su valor predeterminado. |
 |Restricted (Restringida) |0x4 (factor de escala de 4) |Establezca la ventana de recepción TCP para que supere su valor predeterminado, pero limite dicho crecimiento en algunos escenarios. |
 |Muy restringido |0X2 (factor de escala de 2) |Establezca la ventana de recepción TCP para que crezca más allá de su valor predeterminado, pero hágalo con mucha cautela. |
-|Experimental |0xE (factor de escala de 14) |Establezca la ventana de recepción de TCP en crecimiento para adaptarse a escenarios extremos. |
+|ensayo |0xE (factor de escala de 14) |Establezca la ventana de recepción de TCP en crecimiento para adaptarse a escenarios extremos. |
 
 Si utiliza una aplicación para capturar paquetes de red, la aplicación debe notificar datos similares a los siguientes para diferentes valores de nivel de ajuste automático de ventana.
 
@@ -376,7 +376,7 @@ Todas estas opciones se encontraban en la subclave del Registro siguiente:
 
 > **HKEY_LOCAL_MACHINE \System\CurrentControlSet\Services\Tcpip\Parameters**  
 
-###  <a name="bkmk_wfp"></a>Plataforma de filtrado de Windows
+###  <a name="windows-filtering-platform"></a><a name="bkmk_wfp"></a>Plataforma de filtrado de Windows
 
 Windows Vista y Windows Server 2008 presentaron la plataforma de filtrado de Windows (WFP). WFP proporciona API a proveedores de software independientes (ISV) que no son de Microsoft para crear filtros de procesamiento de paquetes. Algunos ejemplos son firewall y software antivirus.
 

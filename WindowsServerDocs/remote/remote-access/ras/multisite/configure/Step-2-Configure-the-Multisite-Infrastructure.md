@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: faec70ac-88c0-4b0a-85c7-f0fe21e28257
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b345ce7cdbb0cf9ff91ec99275232da5ba34edb0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6f020dc2bf5c0dc11d18e886346a98a4a40f3855
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367197"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314055"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>Paso 2 configuración de la infraestructura multisitio
 
@@ -35,7 +35,7 @@ Para configurar una implementación multisitio, hay una serie de pasos necesario
 > [!NOTE]  
 > Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_ConfigAD"></a>2,1. Configurar sitios de Active Directory adicionales  
+## <a name="21-configure-additional-active-directory-sites"></a><a name="BKMK_ConfigAD"></a>2,1. Configurar sitios de Active Directory adicionales  
 Todos los puntos de entrada pueden residir en un único sitio Active Directory. Por lo tanto, se requiere al menos un sitio Active Directory para la implementación de servidores de acceso remoto en una configuración multisitio. Utilice este procedimiento si necesita crear el primer Active Directory sitio o si desea usar sitios de Active Directory adicionales para la implementación multisitio. Use el complemento sitios y servicios de Active Directory para crear nuevos sitios en la red de la organización.  
 
 Para completar este procedimiento, es necesario pertenecer al grupo **administradores de empresas** del bosque o al grupo **Admins** . del dominio del dominio raíz del bosque, o un grupo equivalente. Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).  
@@ -62,7 +62,7 @@ Para obtener más información, consulte [Agregar un sitio al bosque](https://te
   
 ![](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
   
 Para instalar la característica de Windows "Active Directory módulo para Windows PowerShell":  
   
@@ -92,7 +92,7 @@ New-ADReplicationSubnet -Name "10.2.0.0/24" -Site "Second-Site"
 New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"  
 ```  
   
-## <a name="BKMK_AddDC"></a>2,2. Configurar controladores de dominio adicionales  
+## <a name="22-configure-additional-domain-controllers"></a><a name="BKMK_AddDC"></a>2,2. Configurar controladores de dominio adicionales  
 Para configurar una implementación multisitio en un único dominio, se recomienda tener al menos un controlador de dominio grabable para cada sitio de la implementación.  
   
 Para llevar a cabo este procedimiento, debe ser, como mínimo, miembro del grupo Admins. del dominio en el dominio en el que se va a instalar el controlador de dominio.  
@@ -148,8 +148,8 @@ Para obtener más información, consulte [instalación de un controlador de domi
   
 15. Reinicie el equipo si no se reinició automáticamente.  
   
-## <a name="BKMK_ConfigSG"></a>2,3. Configurar grupos de seguridad  
-Una implementación multisitio requiere un grupo de seguridad adicional para equipos cliente de Windows 7 para cada punto de entrada de la implementación que permita el acceso a los equipos cliente de Windows 7. Si hay varios dominios que contienen equipos cliente de Windows 7, se recomienda crear un grupo de seguridad en cada dominio para el mismo punto de entrada. Como alternativa, se puede usar un grupo de seguridad universal que contenga los equipos cliente de ambos dominios. Por ejemplo, en un entorno con dos dominios, si desea permitir el acceso a los equipos cliente de Windows 7 en los puntos de entrada 1 y 3, pero no en el punto de entrada 2, cree dos nuevos grupos de seguridad que contengan los equipos cliente de Windows 7 para cada punto de entrada de cada uno de los  Dominios.  
+## <a name="23-configure-security-groups"></a><a name="BKMK_ConfigSG"></a>2,3. Configurar grupos de seguridad  
+Una implementación multisitio requiere un grupo de seguridad adicional para equipos cliente de Windows 7 para cada punto de entrada de la implementación que permita el acceso a los equipos cliente de Windows 7. Si hay varios dominios que contienen equipos cliente de Windows 7, se recomienda crear un grupo de seguridad en cada dominio para el mismo punto de entrada. Como alternativa, se puede usar un grupo de seguridad universal que contenga los equipos cliente de ambos dominios. Por ejemplo, en un entorno con dos dominios, si desea permitir el acceso a los equipos cliente de Windows 7 en los puntos de entrada 1 y 3, pero no en el punto de entrada 2, cree dos nuevos grupos de seguridad que contengan los equipos cliente de Windows 7 para cada punto de entrada de cada uno de los Dominios.  
   
 ### <a name="to-configure-additional-security-groups"></a>Para configurar grupos de seguridad adicionales  
   
@@ -163,7 +163,7 @@ Una implementación multisitio requiere un grupo de seguridad adicional para equ
   
 5.  Para agregar equipos al nuevo grupo de seguridad, haga doble clic en el grupo de seguridad y, en el < cuadro de diálogo **propiedades de Group_Name >** , haga clic en la pestaña **miembros** .  
   
-6.  En la pestaña **Miembros** , haga clic en **Agregar**.  
+6.  En la pestaña **Miembros**, haga clic en **Agregar**.  
   
 7.  Seleccione los equipos con Windows 7 que se van a agregar a este grupo de seguridad y, a continuación, haga clic en **Aceptar**.  
   
@@ -171,7 +171,7 @@ Una implementación multisitio requiere un grupo de seguridad adicional para equ
   
 ![](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
   
 Para instalar la característica de Windows "Active Directory módulo para Windows PowerShell":  
   
@@ -194,7 +194,7 @@ New-ADGroup -GroupScope universal -Name Win7_Clients_Entrypoint1
 Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$  
 ```  
   
-## <a name="ConfigGPOs"></a>2,4. Configurar GPO  
+## <a name="24-configure-gpos"></a><a name="ConfigGPOs"></a>2,4. Configurar GPO  
 Una implementación de acceso remoto multisitio requiere los siguientes objetos de directiva de grupo:  
   
 -   Un GPO para cada punto de entrada para el servidor de acceso remoto.  
@@ -213,7 +213,7 @@ Al configurar el acceso remoto, el asistente crea automáticamente los objetos d
   
 Para crear directiva de grupo objetos, vea [crear y editar un objeto Directiva de grupo](https://technet.microsoft.com/library/cc754740.aspx).  
   
-### <a name="DCMaintandDowntime"></a>Mantenimiento y tiempo de inactividad del controlador de dominio  
+### <a name="domain-controller-maintenance-and-downtime"></a><a name="DCMaintandDowntime"></a>Mantenimiento y tiempo de inactividad del controlador de dominio  
 Cuando un controlador de dominio que se ejecuta como el emulador de PDC o controladores de dominio que administran los GPO de servidor experimentan tiempo de inactividad, no es posible cargar o modificar la configuración de acceso remoto. Esto no afecta a la conectividad de cliente si hay otros controladores de dominio disponibles.  
   
 Para cargar o modificar la configuración de acceso remoto, puede transferir el rol de emulador de PDC a un controlador de dominio diferente para los GPO de cliente o de servidor de aplicaciones. en el caso de los GPO de servidor, cambie los controladores de dominio que administran los GPO de servidor.  
@@ -224,7 +224,7 @@ Para cargar o modificar la configuración de acceso remoto, puede transferir el 
 > [!NOTE]  
 > Antes de modificar la Asociación del controlador de dominio, asegúrese de que todos los GPO de la implementación de acceso remoto se han replicado en todos los controladores de dominio del dominio. Si el GPO no está sincronizado, los cambios de configuración recientes pueden perderse después de modificar la Asociación del controlador de dominio, lo que puede dar lugar a una configuración dañada. Para comprobar la sincronización de GPO, consulte comprobar el estado de la [infraestructura de directiva de grupo](https://technet.microsoft.com/library/jj134176.aspx).  
   
-#### <a name="TransferPDC"></a>Para transferir el rol de emulador de PDC  
+#### <a name="to-transfer-the-pdc-emulator-role"></a><a name="TransferPDC"></a>Para transferir el rol de emulador de PDC  
   
 1.  En la pantalla **Inicio** , escriba**DSA. msc**y, a continuación, presione Entrar.  
   
@@ -239,7 +239,7 @@ Para cargar o modificar la configuración de acceso remoto, puede transferir el 
   
 5.  Haga clic en **sí** para confirmar que desea transferir el rol y, a continuación, haga clic en **cerrar**.  
   
-#### <a name="ChangeDC"></a>Para cambiar el controlador de dominio que administra los GPO de servidor  
+#### <a name="to-change-the-domain-controller-that-manages-server-gpos"></a><a name="ChangeDC"></a>Para cambiar el controlador de dominio que administra los GPO de servidor  
   
 -   Ejecute el cmdlet de Windows PowerShell `HYPERLINK "https://technet.microsoft.com/library/hh918412.aspx" Set-DAEntryPointDC` en el servidor de acceso remoto y especifique el nombre del controlador de dominio inaccesible para el parámetro *ExistingDC* . Este comando modifica la Asociación del controlador de dominio para los GPO de servidor de los puntos de entrada administrados actualmente por ese controlador de dominio.  
   
@@ -255,7 +255,7 @@ Para cargar o modificar la configuración de acceso remoto, puede transferir el 
         Set-DAEntryPointDC "ExistingDC 'dc1.corp.contoso.com' "ComputerName 'DA1.corp.contoso.com' "ErrorAction Inquire  
         ```  
   
-### <a name="ChangeTwoDCs"></a>Cambiar dos o más controladores de dominio que administran GPO de servidor  
+### <a name="change-two-or-more-domain-controllers-that-manage-server-gpos"></a><a name="ChangeTwoDCs"></a>Cambiar dos o más controladores de dominio que administran GPO de servidor  
 En un número mínimo de casos, dos o más controladores de dominio que administran GPO de servidor no están disponibles. Si esto ocurre, se necesitan más pasos para cambiar la Asociación del controlador de dominio para los GPO de servidor.  
   
 La información de asociación del controlador de dominio se almacena en el registro de los servidores de acceso remoto y en todos los GPO de servidor. En el ejemplo siguiente, hay dos puntos de entrada con dos servidores de acceso remoto, "DA1" en "Entry Point 1" y "DA2" en "Entry Point 2". El GPO de servidor de "punto de entrada 1" se administra en el controlador de dominio "DC1", mientras que el GPO de servidor de "punto de entrada 2" se administra en el controlador de dominio "DC2". "DC1" y "DC2" no están disponibles. Un tercer controlador de dominio sigue estando disponible en el dominio, "DC3", y los datos de "DC1" y "DC2" ya se han replicado en "DC3".  
@@ -299,7 +299,7 @@ La información de asociación del controlador de dominio se almacena en el regi
   
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
-### <a name="ConfigDistOptimization"></a>Optimización de la distribución de la configuración  
+### <a name="optimization-of-configuration-distribution"></a><a name="ConfigDistOptimization"></a>Optimización de la distribución de la configuración  
 Al realizar cambios de configuración, los cambios se aplican solo después de que los GPO de servidor se propaguen a los servidores de acceso remoto. Para reducir el tiempo de distribución de la configuración, el acceso remoto selecciona automáticamente un controlador de dominio de escritura que es el hipervínculo "<https://technet.microsoft.com/library/cc978016.aspx>" más próximo al servidor de acceso remoto al crear su GPO de servidor.  
   
 En algunos escenarios, puede ser necesario modificar manualmente el controlador de dominio que administra un GPO de servidor para optimizar el tiempo de distribución de la configuración:  
@@ -332,7 +332,7 @@ Para optimizar el tiempo de distribución de la configuración, realice una de l
     > [!NOTE]  
     > Al modificar el controlador de dominio asociado a un punto de entrada específico, debe especificar un servidor de acceso remoto que sea miembro de ese punto de entrada para el parámetro *ComputerName* .  
   
-## <a name="BKMK_Links"></a>Vea también  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también  
   
 -   [Paso 3: configurar la implementación multisitio](Step-3-Configure-the-Multisite-Deployment.md)  
 -   [Paso 1: implementar una implementación de acceso remoto de un solo servidor](Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md)  

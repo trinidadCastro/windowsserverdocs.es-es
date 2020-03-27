@@ -3,7 +3,7 @@ title: Mover la configuración y los datos de Windows SBS 2008 al servidor de de
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 4950469d-d800-430d-8d10-53bafc4a9932
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 82a7a5b3ce3662574260379bc893da484baf1caa
-ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
+ms.openlocfilehash: a62f4fa385b7dfab83f08dae969255843b833e9f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863409"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318876"
 ---
 # <a name="move-windows-sbs-2008-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover la configuración y los datos de Windows SBS 2008 al servidor de destino para la migración a Windows Server Essentials
 
@@ -55,8 +55,8 @@ Antes de copiar los datos del servidor de origen en el servidor de destino, real
     `robocopy \\<SourceServerName> \<SharedSourceFolderName> \\<DestinationServerName> \<SharedDestinationFolderName> /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt` 
 
  Donde:
- - \<Nombreservidororigen\> es el nombre del servidor de origen.
- - \<Nombredecarpetadeorigencompartida\> es el nombre de la carpeta compartida en el servidor de origen.
+ - \<Nombreservidororigen\> es el nombre del servidor de origen
+ - \<Nombredecarpetadeorigencompartida\> es el nombre de la carpeta compartida en el servidor de origen
  - \<Nombreservidordestino\> es el nombre del servidor de destino.
  - \<Nombredecarpetadedestinocompartida\> es la carpeta compartida en el servidor de destino en la que se copiarán los datos. 
 
@@ -82,7 +82,7 @@ Antes de copiar los datos del servidor de origen en el servidor de destino, real
  
 1. Desactive el servicio DHCP en el servidor de origen del siguiente modo: 
 
-    1. En el servidor de origen, haga clic en **Inicio**, haga clic en **Herramientas administrativas**y, después, haga clic en **Servicios**. 
+    1. En el servidor de origen, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, después, haga clic en **Servicios**. 
 
     2. En la lista de servicios que se están ejecutando, haga clic con el botón derecho en **Servidor DHCP** y, después, haga clic en **Propiedades**. 
 
@@ -112,9 +112,9 @@ Antes de copiar los datos del servidor de origen en el servidor de destino, real
  
  Si el enrutador no es compatible con el entorno UPnP, o si este se ha deshabilitado, puede aparecer un icono de advertencia amarillo junto al nombre del enrutador. Asegúrese de que los puertos siguientes están abiertos y dirigidos a la dirección IP del servidor de destino: 
  
-- Puerto 80: Tráfico web HTTP 
+- Puerto 80: tráfico web HTTP 
  
-- Puerto 443: Tráfico web HTTPS 
+- Puerto 443: tráfico web HTTPS 
  
 > [!NOTE]
 > Si ha configurado un servidor local de Exchange en un segundo servidor debe asegurarse de que el puerto 25 (para SMTP) también está abierto y de que se redirige a la dirección IP del servidor local de Exchange.
@@ -131,9 +131,9 @@ Los objetos de directiva de grupo (GPO) se actualizan para Windows Server Essent
  
 2. Haga clic en **Inicio** y, después, en **Administración de servidores**. 
  
-3. En el panel de navegación, haga clic en **Administración avanzada**, en **Administración de directiva de grupo**y, a continuación, en **bosque:** _< sudominio\>_ . 
+3. En el panel de navegación, haga clic en **Administración avanzada**, en **Administración de directiva de grupo**y, a continuación, haga clic en **bosque:** _< sudominio\>_ . 
  
-4. Haga clic en **dominios**, haga clic en *<\>sudominio*y, a continuación, haga clic en **Directiva de grupo objetos**. 
+4. Haga clic en **dominios**, haga clic en *< sudominio\>* y, a continuación, haga clic en **objetos Directiva de grupo**. 
  
 5. Haga clic con el botón secundario en **Directiva de auditoría de Small Business Server**, en **Eliminar** y, a continuación, en **Aceptar**. 
  
@@ -175,11 +175,11 @@ Se recomienda configurar la Directiva de contraseñas en Windows Server Essentia
  
 3. En el panel de navegación, haga clic en **Administración avanzada**, en **Administración de directiva de grupo**y, a continuación, en **bosque:** _< nombredominiored\>_ 
  
-4. Haga clic en **dominios**, haga clic en *<\>nombredominiored*y, a continuación, en **filtros WMI**. 
+4. Haga clic en **dominios**, haga clic en *< nombredominiored\>* y, a continuación, haga clic en **filtros WMI**. 
  
-5. Haga clic con el botón secundario en **PostSP2**, haga clic en **Eliminar**y, a continuación, haga clic en **Sí**. 
+5. Haga clic con el botón secundario en **PostSP2**, haga clic en **Eliminar** y, a continuación, haga clic en **Sí**. 
  
-6. Haga clic con el botón secundario en **PreSP2**, haga clic en **Eliminar**y, a continuación, haga clic en **Sí**. 
+6. Haga clic con el botón secundario en **PreSP2**, haga clic en **Eliminar** y, a continuación, haga clic en **Sí**. 
  
 7. Compruebe que se hayan eliminado los tres filtros WMI. 
  

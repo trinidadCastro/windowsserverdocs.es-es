@@ -3,7 +3,7 @@ title: Solucionar problemas de supervisión del equipo en Windows Server Essenti
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,27 +12,27 @@ ms.assetid: f1e6b377-4a24-4d28-9b25-05910914826b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1adf8ae2dd8763d0bc5a514609bb2470de6acde4
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 968c8c82bfde350e631f1f6ae4830a4fd920aa4b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436070"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318605"
 ---
 # <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Solucionar problemas de supervisión del equipo en Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Este tema proporciona una solución de problemas que surgen al supervisar el estado de los equipos en el Visor de alertas y mediante notificaciones por correo electrónico en Windows Server Essentials.  
+En este tema se describe la solución de problemas detectados al supervisar el estado de mantenimiento de los equipos en el visor de alertas y mediante notificaciones por correo electrónico en Windows Server Essentials.  
   
 > [!NOTE]
->  Para la información de solución de problemas más reciente de la Comunidad de Windows Server Essentials, le recomendamos que visite el [foro de Windows Server Essentials](https://social.technet.microsoft.com/Forums/winserveressentials/threads). El foro de Windows Server Essentials es un buen lugar para buscar ayuda o realizar una pregunta.  
+>  Para obtener la información más reciente sobre la solución de problemas de la comunidad de Windows Server Essentials, se recomienda visitar el [Foro de Windows Server Essentials](https://social.technet.microsoft.com/Forums/winserveressentials/threads). El foro de Windows Server Essentials es un buen lugar para buscar ayuda o realizar una pregunta.  
   
-##  <a name="BKMK_TS"></a> Solución de problemas de notificaciones de correo electrónico para alertas  
+##  <a name="troubleshooting-email-notifications-for-alerts"></a><a name="BKMK_TS"></a>Solución de problemas de notificaciones de correo electrónico para alertas  
  Esta sección presenta diversos problemas que pueden aparecer al usar notificaciones de alerta por correo electrónico.  
   
 ### <a name="cannot-send-the-test-email-for-the-alert"></a>No se puede enviar el mensaje de prueba de la alerta  
- **Problema** produce un error mensaje que dice, no se puede enviar el correo electrónico de prueba para la alerta.  
+ **Problema** de Aparece un mensaje de error que indica que no se puede enviar el correo electrónico de prueba para la alerta.  
   
  **Causa** Este error puede producirse por cualquiera de los siguientes problemas en la configuración de las notificaciones de alerta:  
   
@@ -53,7 +53,7 @@ Este tema proporciona una solución de problemas que surgen al supervisar el est
      %ProgramData%\Microsoft\Windows Server\Logs\SharedServiceHost-AlertServiceConfig.log  
   
     > [!TIP]
-    >  Para ver la carpeta ProgramData, debe ocultar los elementos mostrados. Si no ve la carpeta ProgramData, en la cinta de opciones **vista** ficha la **mostrar u ocultar** grupo, seleccione el **elementos ocultos** cuadro de texto.  
+    >  Para ver la carpeta ProgramData, debe ocultar los elementos mostrados. Si no ve la carpeta ProgramData, en la pestaña **vista** de la cinta de opciones, en el grupo **Mostrar u ocultar** , seleccione el cuadro de texto **elementos ocultos** .  
   
 ##### <a name="to-update-your-email-notification-setup-for-alerts"></a>Para actualizar la configuración de notificaciones de correo electrónico para alertas  
   

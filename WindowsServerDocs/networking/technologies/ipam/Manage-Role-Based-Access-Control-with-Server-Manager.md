@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 77b6ac92-eaff-46d7-95db-ee6fc96742ed
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5dfc3c8f31d25f5b72f39e33759d6e26917ae70f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a3fb0a4e09e348040a2e89f97c73371aca62bef0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405630"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316796"
 ---
 # <a name="manage-role-based-access-control-with-server-manager"></a>Administración del control de acceso basado en roles con el Administrador del servidor
 
@@ -37,7 +37,7 @@ Puede usar los temas siguientes para administrar el control de acceso basado en 
   
 Como alternativa, puede usar Windows PowerShell para administrar el control de acceso basado en roles de IPAM. Para obtener más información, consulte [Administración de Access Control basado en roles con Windows PowerShell](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md).
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Administrar IPAM](Manage-IPAM.md)  
   
 

@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a030ff51-a815-4fc4-b26d-aae41c3e4ce5
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: dbd46ad129a4b3e5bbbe55f584f1bae43bd077c3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a9762d15d0b95954623bbefdec38696885676975
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355417"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312636"
 ---
 # <a name="create-a-dns-zone"></a>Creación de una zona DNS
 
@@ -41,7 +41,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
   
     ![Propiedades avanzadas](../../media/Create-a-DNS-Zone/ipam_CreateDNSZone_02a.jpg)  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Administración de zonas DNS](DNS-Zone-Management.md)  
 [Administrar IPAM](Manage-IPAM.md)  
   

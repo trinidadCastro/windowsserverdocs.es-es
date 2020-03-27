@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 05/29/2018
-ms.openlocfilehash: d3ea6f0e29803b8a709f31811f77678bf03201a8
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: bd4d0d4d3b165a4e89a00cd2975ace20687aed7d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822588"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314985"
 ---
 # <a name="overview-of-the-directaccess-to-always-on-vpn-migration"></a>Información general de la migración de DirectAccess a la VPN de Always On 
 
@@ -69,7 +69,7 @@ Existen muchos escenarios y opciones de implementación de DirectAccess, por lo 
 | Único servidor de DirectAccess            | Sí                                                                                                            |
 | Topología de red                      | Traducción de direcciones de red (NAT) detrás de un firewall perimetral con dos adaptadores de red                            |
 | Modo de acceso                           | De extremo a extremo                                                                                                    |
-| Tunelización                             | Túnel dividido                                                                                                   |
+| Túneles                             | Túnel dividido                                                                                                   |
 | Autenticación                        | Autenticación de infraestructura de clave pública (PKI) estándar con certificado de equipo más Kerberos (no KerbProxy) |
 | Protocolos                             | IP sobre HTTPS (IP-HTTPS)                                                                                       |
 | Servidor de ubicación de red (NLS) sin conexión | Sí                                                                                                            |

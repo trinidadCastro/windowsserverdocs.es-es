@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: 78d5d2144e0def8e69a2a4ae5fdc2d7718936710
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: adf282222674130dcb16b0c7bfe0cf3ff05ed720
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355770"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317397"
 ---
 # <a name="kerberos-with-service-principal-name-spn"></a>Kerberos con nombre de entidad de seguridad de servicio (SPN)
 
@@ -30,7 +30,7 @@ La controladora de red configura automáticamente el SPN. Lo único que debe hac
 
 1.  En el equipo del controlador de dominio, inicie **Active Directory usuarios y equipos**.
 
-2.  Seleccione **Ver \> avanzado**.
+2.  Seleccione **ver \> opciones avanzadas**.
 
 3.  En **equipos**, busque una de las cuentas de equipo de la controladora de red y, a continuación, haga clic con el botón derecho y seleccione **propiedades**.
 
@@ -58,7 +58,7 @@ La controladora de red configura automáticamente el SPN. Lo único que debe hac
 
 ## <a name="failure-to-provide-permissions-for-spn-registrationmodification"></a>Error al proporcionar permisos para la modificación o el registro de SPN
 
-En una **nueva** implementación de Windows Server 2019, si elige Kerberos para la autenticación del cliente de REST y no concede permiso para que los nodos de la controladora de red registren o modifiquen el SPN, las operaciones de REST en el controlador de red no le impiden administrar el SDN.
+En una **nueva** implementación de Windows Server 2019, si elige Kerberos para la autenticación del cliente REST y no concede permiso para que los nodos de la controladora de red registren o modifiquen el SPN, las operaciones Rest en el controlador de red producirán un error que le impedirá administrar el Sdn.
 
 Para una actualización de Windows Server 2016 a Windows Server 2019 y elige Kerberos para la autenticación de cliente de REST, las operaciones de REST no se bloquean, lo que garantiza la transparencia de las implementaciones de producción existentes. 
 
@@ -66,7 +66,7 @@ Si el SPN no está registrado, la autenticación del cliente de REST utiliza NTL
 
 
 >[!TIP]
->Normalmente, puede configurar el controlador de red para que use una dirección IP o un nombre DNS para las operaciones basadas en REST. Sin embargo, cuando se configura Kerberos, no se puede usar una dirección IP para las consultas REST a la controladora de red. Por \<ejemplo, puede utilizar https://networkcontroller.consotso.com\>, pero no puede usar \< https://192.34.21.3\>. Los nombres de entidad de seguridad de servicio no pueden funcionar si se usan direcciones IP.
+>Normalmente, puede configurar el controlador de red para que use una dirección IP o un nombre DNS para las operaciones basadas en REST. Sin embargo, cuando se configura Kerberos, no se puede usar una dirección IP para las consultas REST a la controladora de red. Por ejemplo, puede usar \<https://networkcontroller.consotso.com\>, pero no puede usar \<https://192.34.21.3\>. Los nombres de entidad de seguridad de servicio no pueden funcionar si se usan direcciones IP.
 >
 >Si usa la dirección IP para las operaciones REST junto con la autenticación Kerberos en Windows Server 2016, la comunicación real habría estado sobre la autenticación NTLM. En este tipo de implementación, una vez que actualice a Windows Server 2019, seguirá usando la autenticación basada en NTLM. Para pasar a la autenticación basada en Kerberos, debe usar el nombre DNS de la controladora de red para las operaciones REST y proporcionar permiso para que los nodos de la controladora de red registren el SPN.
 

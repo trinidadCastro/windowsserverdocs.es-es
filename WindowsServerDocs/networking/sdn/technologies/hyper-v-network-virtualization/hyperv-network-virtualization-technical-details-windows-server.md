@@ -11,18 +11,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9efe0231-94c1-4de7-be8e-becc2af84e69
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e692384e9416e21e00556af6ada9af8df1713a03
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a8628404de8a1b9caccc7f7f51b063cabb1caf27
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405853"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317205"
 ---
 # <a name="hyper-v-network-virtualization-technical-details-in-windows-server-2016"></a>Detalles técnicos de la virtualización de red de Hyper-V en Windows Server 2016
 
->Se aplica a:  Windows Server 2016
+>Se aplica a: Windows Server 2016
 
 La virtualización de servidores permite que se ejecuten varias instancias de servidor al mismo tiempo en un solo host físico; aunque las instancias del servidor estén aisladas entre sí. Cada máquina virtual básicamente funciona como si fuera el único servidor que se ejecuta en el equipo físico.  
 
@@ -43,7 +43,7 @@ Hay dos implementaciones de HNV que estarán disponibles en Windows Server 2016:
 
     • ESTABLECER la formación de equipos y HNV v1 no es compatible con la plataforma.
 
-    o para usar NVGRE puertas de enlace de alta disponibilidad, los usuarios deben usar el equipo LBFO o ningún equipo. O bien
+    o para usar NVGRE puertas de enlace de alta disponibilidad, los usuarios deben usar el equipo LBFO o ningún equipo. O
 
     o use puertas de enlace implementadas por la controladora de red con el conmutador establecido en equipo.
 
@@ -55,13 +55,13 @@ Hay dos implementaciones de HNV que estarán disponibles en Windows Server 2016:
     > [!IMPORTANT]  
     > Este tema se centra en HNVv2.  
 
-### <a name="VirtualNetworks"></a>Red virtual  
+### <a name="virtual-network"></a><a name="VirtualNetworks"></a>Red virtual  
 
 -   Cada red virtual se compone de una o más subredes virtuales. Una red virtual forma un límite de aislamiento donde las máquinas virtuales dentro de una red virtual solo pueden comunicarse entre sí. Tradicionalmente, este aislamiento se aplicó mediante VLAN con un intervalo de direcciones IP segregado y una etiqueta 802.1 q o ID. de VLAN. Pero con HNV, el aislamiento se aplica mediante la encapsulación NVGRE o VXLAN para crear redes de superposición con la posibilidad de que se superpongan subredes IP entre los clientes o los inquilinos.  
 
 -   Cada red virtual tiene un identificador de dominio de enrutamiento único (RDID) en el host. Este RDID se asigna aproximadamente a un identificador de recurso para identificar el recurso de REST de red virtual en el controlador de red. Se hace referencia al recurso REST de red virtual mediante un espacio de nombres de identificador uniforme de recursos (URI) con el identificador de recurso anexado.  
 
-### <a name="VirtualSubnets"></a>Subredes virtuales  
+### <a name="virtual-subnets"></a><a name="VirtualSubnets"></a>Subredes virtuales  
 
 -   Una subred virtual implementa la semántica de la subred IP de capa 3 para las máquinas virtuales de la misma subred virtual. La subred virtual forma un dominio de difusión (similar a una VLAN) y el aislamiento se aplica mediante el campo Identificador de red de inquilino de NVGRE (TNI) o identificador de red de VXLAN (VNI).  
 
@@ -71,7 +71,7 @@ Una ventaja clave de la red virtual y el dominio de enrutamiento es que permite 
 
 ![Redes de cliente y subredes virtuales](../../../media/hyper-v-network-virtualization-technical-details-in-windows-server/VNetF6.gif)  
 
-Figura 2: Redes de cliente y subredes virtuales  
+Figura 2: Redes del cliente y subredes virtuales  
 
 **Reenvío de capa 2**  
 
@@ -146,7 +146,7 @@ Esta simple comparación destacó los aspectos clave de la virtualización de re
 
 -   Las asignaciones de CA-PA deben permitir a los hosts diferenciar paquetes de diferentes equipos virtuales del cliente.  
 
-Como resultado, el mecanismo para virtualizar la red es virtualizar las direcciones de red que utilizan las máquinas virtuales. La controladora de red es responsable de la asignación de direcciones y el agente de host mantiene la base de datos de asignación con el esquema MS_VTEP. En la próxima sección se describe el mecanismo real de virtualización de direcciones.  
+Como resultado, el mecanismo para virtualizar la red es virtualizar las direcciones de red que utilizan las máquinas virtuales. La controladora de red es responsable de la asignación de direcciones y el agente de host mantiene la base de datos de asignación mediante el esquema de MS_VTEP. En la próxima sección se describe el mecanismo real de virtualización de direcciones.  
 
 ## <a name="network-virtualization-through-address-virtualization"></a>Virtualización de red a través de virtualización de direcciones  
 HNV implementa redes de inquilinos superpuesto mediante encapsulación de enrutamiento genérico de virtualización de red (NVGRE) o la red de área local extensible (VXLAN).  VXLAN es el valor predeterminado.  
@@ -161,7 +161,7 @@ Este mecanismo de virtualización de red usa la encapsulación de enrutamiento g
 
 ![Encapsulación NVGRE](../../../media/hyper-v-network-virtualization-technical-details-in-windows-server/VNetF3.gif)  
 
-Figura 7: Virtualización de red: encapsulación de NVGRE  
+Figura 7: Virtualización de red - Encapsulación NVGRE  
 
 El identificador de subred virtual permite a los hosts identificar la máquina virtual del cliente para cualquier paquete dado, aunque las PA y las CA de los paquetes puedan superponerse. Esto permite a las máquinas virtuales del mismo host compartir una sola PA, como se muestra en la Figura 7.  
 
@@ -176,7 +176,7 @@ En el diagrama siguiente se muestra un ejemplo de implementación de dos cliente
 
 ![Ejemplo de implementación multiinquilino](../../../media/hyper-v-network-virtualization-technical-details-in-windows-server/VNetF5.png)  
 
-Figura 8: Ejemplo de implementación multiinquilino  
+Figura 8: Ejemplo de implementación multiempresa  
 
 Considere el ejemplo en la Figura 8. Antes de pasar al servicio IaaS compartido del proveedor de hospedaje:  
 
@@ -190,9 +190,9 @@ Con la controladora de red, Contoso Corp y Fabrikam Corp crearán su red virtual
 
 A ambas empresas se les asigna el siguiente identificador de subred virtual (debajo) mediante la controladora de red, como se indica a continuación.  El agente de host de cada uno de los hosts de Hyper-V recibe las direcciones IP de PA asignadas de la controladora de red y crea dos VNIC de host de PA en un compartimiento de red no predeterminado. Se asigna una interfaz de red a cada uno de estos hosts VNIC donde se asigna la dirección IP de PA, como se muestra a continuación:  
 
--   Las máquinas virtuales de Contoso Corp y PAs: **No es** 5001, **SQL PA** es 192.168.1.10, **Web PA** es 192.168.2.20  
+-   Las máquinas virtuales de Contoso Corp y **PAS: no** se 5001, **SQL PA** es 192.168.1.10, **Web PA** es 192.168.2.20  
 
--   Las máquinas virtuales de Fabrikam Corp y PAs: **No es** 6001, **SQL PA** es 192.168.1.10, **Web PA** es 192.168.2.20  
+-   Las máquinas virtuales de Fabrikam Corp y **PAS: no** se 6001, **SQL PA** es 192.168.1.10, **Web PA** es 192.168.2.20  
 
 La controladora de red sondea todas las directivas de red (incluida la asignación de CA-PA) con el agente de host de SDN que mantendrá la Directiva en un almacén persistente (en las tablas de base de datos OVSDB).  
 
@@ -233,7 +233,7 @@ Cuando la máquina virtual web de Contoso Corp (10.1.1.12) en el host 2 de Hyper
 
 -   A continuación, el motor VFP reenvía el paquete al puerto vSwitch al que está conectada la máquina virtual de destino.  
 
-Un proceso similar para el tráfico entre el **sitio web** de Fabrikam Corp y las máquinas virtuales **SQL** usa la configuración de directiva HNV para Fabrikam Corp. Como resultado, con HNV, las máquinas virtuales de Fabrikam Corp y Contoso Corp interactúan como si estuvieran en sus intranets originales. Nunca pueden interactuar entre sí aunque usen las mismas direcciones IP.  
+Un proceso similar para el tráfico entre las máquinas virtuales de Fabrikam Corp **Web** y **SQL** usa la configuración de la directiva de HNV de Fabrikam Corp. Como resultado, con HNV, las máquinas virtuales de Fabrikam Corp y Contoso Corp interactúan como si estuviesen en las intranet originales. Nunca pueden interactuar entre sí aunque usen las mismas direcciones IP.  
 
 Las direcciones independientes (CAs y PAs), la configuración de directiva de los hosts de Hyper-V y la traducción de direcciones entre la CA y la PA para el tráfico de la máquina virtual entrante y saliente aíslan estos conjuntos de servidores mediante la clave NVGRE o VNID VLXAN. Además, las asignaciones de virtualización y la transformación desacoplan la arquitectura de la red virtual de la infraestructura de la red física. Si bien Contoso **SQL** y **Web** y Fabrikam **SQL** y **Web** residen en sus propias subredes IP CA (10.1.1/24), las implementaciones físicas se producen en dos hosts de diferentes subredes PA, 192.168.1/24 y 192.168.2/24, respectivamente. La implicación es que el aprovisionamiento de máquinas virtuales entre subredes y la migración en vivo son posibles con HNV.  
 
@@ -262,7 +262,7 @@ La jerarquía de objetos para el vSwitch y la extensión de reenvío de VFP es l
 
             -   Tabla Flow  
 
-            -   Agrupar  
+            -   Grupo  
 
             -   Regla  
 
@@ -286,18 +286,18 @@ El agente de host programa la Directiva HNV. Cada adaptador de red de máquina v
 
 ![Arquitectura HNV](../../../media/hyper-v-network-virtualization-technical-details-in-windows-server/VNetF7.png)  
 
-Figura 9: Arquitectura HNV  
+Figura 9: Arquitectura de HNV  
 
 ## <a name="summary"></a>Resumen  
 Los centros de datos basados en la nube pueden proporcionar muchos beneficios como mayor escalabilidad y mejor utilización de los recursos. Advertir estos beneficios potenciales requiere una tecnología que fundamentalmente aborde los problemas de escalabilidad multiempresa en un entorno dinámico. HNV se diseñó para abordar estos problemas y también mejorar la eficacia operativa del centro de datos al desacoplar la topología de red virtual para la topología de red física. Basándose en un estándar existente, HNV se ejecuta en el centro de información de hoy en día y funciona con la infraestructura VXLAN existente. Ahora, los clientes con HNV pueden consolidar sus centros de recursos en una nube privada o ampliar sin problemas sus centros de recursos al entorno de un proveedor de servidores de hospedaje con una nube híbrida.  
 
-## <a name="BKMK_LINKS"></a>Vea también  
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>Vea también  
 Para obtener más información sobre HNVv2, consulte los siguientes vínculos:  
 
 
 |       Tipo de contenido       |                                                                                                                                              Referencias                                                                                                                                              |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Recursos de la comunidad**  |                                                                [blog de arquitectura de nube privada](https://blogs.technet.com/b/privatecloud) -   <br />-Formular preguntas: [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)                                                                |
-|         **NORMA**          |                                                                   -   [borrador de RFC NVGRE](https://www.ietf.org/id/draft-sridharan-virtualization-nvgre-07.txt)<br />-   [VXLAN-RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                    |
-| **Tecnologías relacionadas** | -Para obtener detalles técnicos de virtualización de red de Hyper-V en Windows Server 2012 R2, consulte [detalles técnicos de la virtualización de red de Hyper-v](https://technet.microsoft.com/library/jj134174.aspx)<br />[controladora de red](../../../sdn/technologies/network-controller/Network-Controller.md) -    |
+|         **NORMA**          |                                                                   RFC de -   [NVGRE draft](https://www.ietf.org/id/draft-sridharan-virtualization-nvgre-07.txt)<br />-   [VXLAN-RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                    |
+| **Tecnologías relacionadas** | -Para obtener detalles técnicos de virtualización de red de Hyper-V en Windows Server 2012 R2, consulte [detalles técnicos de la virtualización de red de Hyper-v](https://technet.microsoft.com/library/jj134174.aspx)<br />-   [controladora de red](../../../sdn/technologies/network-controller/Network-Controller.md) |
 

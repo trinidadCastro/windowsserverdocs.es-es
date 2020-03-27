@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/08/2018
-ms.openlocfilehash: 40150e312f4776ec093c9230eedb646eec277f49
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e68da9be84e9567458467c9ebd89155e7c405c5c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405807"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312822"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>Configurar el cifrado para una subred virtual
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 El cifrado de red virtual permite el cifrado del tráfico de red virtual entre máquinas virtuales que se comunican entre sí dentro de subredes marcadas como "cifrado habilitado". También utiliza la Seguridad de la capa de transporte de datagrama (DTLS) en la subred virtual para cifrar los paquetes. DTLS protege frente a las interceptaciones, alteraciones y falsificaciones realizadas por cualquier persona con acceso a la red física.
 
@@ -118,7 +118,7 @@ Después de ejecutar el script, aparece un nuevo certificado en el almacén My:
 
 3. Instalar los certificados en cada uno de los hosts de Hyper-v 
 
-   PS c:\> dir c:\$subjectname. *
+   PS C:\> dir c:\$subjectname. *
 
 
 ~~~
@@ -175,7 +175,7 @@ Mode                LastWriteTime         Length Name
 
 6. Compruebe la instalación del certificado.<p>Compruebe los certificados comprobando el contenido de los almacenes de certificados raíz y My:
 
-   PS C:\> Enter-pssession Servidor1
+   PS C:\> Enter-pssession server1
 
 ~~~
 [Server1]: PS C:\> get-childitem cert://localmachine/my,cert://localmachine/root | ? {$_.Subject -eq "CN=EncryptedVirtualNetworks"}

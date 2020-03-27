@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: c3d33bed-83ef-4eb8-acf9-0719ecb4a931
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 10230b57075943a5d92dce7155e794293157cba4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e546705d022bbac2588ace5b3e2c6c807c96da63
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356639"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319306"
 ---
 # <a name="create-the-branchcache-hash-publication-group-policy-object"></a>Crear el objeto de directiva de grupo Publicación de hash para BranchCache
 
@@ -28,13 +28,13 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
   
 ### <a name="to-create-the-branchcache-hash-publication-group-policy-object"></a>Para crear la publicación de hash de BranchCache directiva de grupo objeto  
   
-1.  Abra Windows PowerShell, escriba **mmc**y presione ENTRAR. Se abrirá Microsoft Management Console (MMC).  
+1.  Abra Windows PowerShell, escriba **mmv** y presione ENTRAR. Se abrirá Microsoft Management Console (MMC).  
   
 2.  En MMC, en el menú **Archivo**, haga clic en **Agregar o quitar complemento**. Se abre el cuadro de diálogo **Agregar o quitar complementos**.  
   
 3.  En **Agregar o quitar complementos**, en **Complementos disponibles**, haga doble clic en **Administración de directivas de grupo** y, a continuación, haga clic en **Aceptar**.  
   
-4.  En MMC de Administración de directivas de grupo, expanda la ruta de acceso a la unidad organizativa para servidores de archivos de BranchCache que creó previamente. Por ejemplo, si el nombre de su bosque es ejemplo.com, el de su dominio es ejemplo1.com y el de su unidad organizativa es Servidores de archivo de BranchCache, expanda la siguiente ruta de acceso: **Administración de directiva de grupo**, **bosque: example.com**, **dominios**, **example1.com**, servidores de **archivos de BranchCache**.  
+4.  En MMC de Administración de directivas de grupo, expanda la ruta de acceso a la unidad organizativa para servidores de archivos de BranchCache que creó previamente. Por ejemplo, si el bosque se denomina example.com, el dominio se denomina example1.com y la unidad organizativa se denomina servidores de archivos de BranchCache, expanda la ruta de acceso siguiente: **Directiva de grupo Management**, **Forest: example.com**, **Domains**, **example1.com**, **BranchCache file servers**.  
   
 5.  Haga clic con el botón secundario en **servidores de archivos de BranchCache**y, a continuación, haga clic en **crear un GPO en este dominio y vincularlo aquí**. Se abre el cuadro de diálogo **Nuevo GPO**. En **nombre**, escriba un nombre para el nuevo GPO. Por ejemplo, si desea que el nombre del objeto sea Publicación de hash para BranchCache, escriba **Publicación de hash para BranchCache**. Haga clic en **Aceptar**.  
   

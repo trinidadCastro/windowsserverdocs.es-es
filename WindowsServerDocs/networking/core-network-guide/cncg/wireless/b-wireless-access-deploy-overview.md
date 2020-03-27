@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 29ae0f54-f045-465a-a08e-5867979345f2
-author: shortpatti
-ms.author: pashort
-ms.openlocfilehash: 93fb80c550771e4e7d8bc400d647b520b0c67fdf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+author: eross-msft
+ms.author: lizross
+ms.openlocfilehash: 476e86dd4b762a46a97dca0b9ec100b245a58f81
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356090"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318114"
 ---
 # <a name="wireless-access-deployment-overview"></a>Información general de implementación de acceso inalámbrico
 
@@ -37,7 +37,7 @@ Una vez que los servicios de infraestructura de red necesarios que admiten la re
 
 - Seleccione las frecuencias de canal para los AP inalámbricos.
 
-### <a name="active-directory-domain-services"></a>Active Directory Domain Services
+### <a name="active-directory-domain-services"></a>Servicios de dominio de Active Directory
 Los siguientes elementos de AD DS son necesarios para la implementación de acceso inalámbrico.
 
 #### <a name="users-and-computers"></a>Usuarios y equipos

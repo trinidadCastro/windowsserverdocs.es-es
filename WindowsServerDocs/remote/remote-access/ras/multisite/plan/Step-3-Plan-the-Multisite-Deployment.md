@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1320a5c8b8c267f270dae43e764533d9289006a4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e85998138f3aa3627b5e212766d491cd3fc8305f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404452"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313863"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>Paso 3 planeación de la implementación multisitio
 
@@ -27,7 +27,7 @@ Después de planear la infraestructura multisitio, planee los requisitos de cert
 
 En las secciones siguientes se proporciona información detallada sobre Planeación.
   
-## <a name="bkmk_3_1_IPHTTPS"></a>3,1 planear certificados IP-HTTPS  
+## <a name="31-plan-ip-https-certificates"></a><a name="bkmk_3_1_IPHTTPS"></a>3,1 planear certificados IP-HTTPS  
 Al configurar los puntos de entrada, configure cada punto de entrada con una dirección ConnectTo específica. El certificado IP-HTTPS para cada punto de entrada debe coincidir con la dirección ConnectTo. Tenga en cuenta lo siguiente al obtener el certificado:  
   
 -   Este tipo de certificados no se puede usar en una implementación multisitio.  
@@ -48,7 +48,7 @@ Al configurar los puntos de entrada, configure cada punto de entrada con una dir
   
 -   El certificado IP-HTTPS se debe importar directamente en el almacén personal del equipo y no en el usuario.  
   
-## <a name="bkmk_3_2_NLS"></a>3,2 planear el servidor de ubicación de red  
+## <a name="32-plan-the-network-location-server"></a><a name="bkmk_3_2_NLS"></a>3,2 planear el servidor de ubicación de red  
 El sitio web del servidor de ubicación de red se puede hospedar en el servidor de acceso remoto o en otro servidor de la organización. Si hospeda el servidor de ubicación de red en el servidor de acceso remoto, el sitio web se crea automáticamente al implementar el acceso remoto. Si hospeda el servidor de ubicación de red en otro servidor que ejecuta un sistema operativo de Windows en su organización, debe asegurarse de que Internet Information Services (IIS) está instalado para crear el sitio Web.  
   
 ### <a name="321-certificate-requirements-for-the-network-location-server"></a>3.2.1 requisitos de certificado para el servidor de ubicación de red  
@@ -79,7 +79,7 @@ A la hora de obtener el certificado de sitio web que se va a usar para el servid
 3.  En el campo puntos de distribución CRL, use un punto de distribución CRL al que puedan tener acceso los clientes de DirectAccess que estén conectados a la intranet.  
   
 ### <a name="322dns-for-the-network-location-server"></a>3.2.2 DNS para el servidor de ubicación de red  
-Si hospeda el servidor de ubicación de red en el servidor de acceso remoto, debe agregar una entrada DNS para el sitio web del servidor de ubicación de red para cada punto de entrada de la implementación. Ten en cuenta esto:  
+Si hospeda el servidor de ubicación de red en el servidor de acceso remoto, debe agregar una entrada DNS para el sitio web del servidor de ubicación de red para cada punto de entrada de la implementación. Observe lo siguiente:  
   
 -   El nombre de sujeto del primer certificado de servidor de ubicación de red en la implementación multisitio se utiliza como dirección URL del servidor de ubicación de red para todos los puntos de entrada, por lo tanto, el nombre de sujeto y la dirección URL del servidor de ubicación de red no pueden ser iguales que el nombre de equipo del primer servidor de acceso remoto en la implementación. Debe ser un FQDN dedicado para el servidor de ubicación de red.  
   
@@ -89,7 +89,7 @@ Si hospeda el servidor de ubicación de red en el servidor de acceso remoto, deb
   
 -   La infraestructura del servidor de ubicación de red (configuración de certificados y DNS) para un punto de entrada debe crearse antes de agregar el punto de entrada.  
   
-## <a name="bkmk_3_3_IPsec"></a>3,3 planear el certificado raíz de IPsec para todos los servidores de acceso remoto  
+## <a name="33-plan-the-ipsec-root-certificate-for-all-remote-access-servers"></a><a name="bkmk_3_3_IPsec"></a>3,3 planear el certificado raíz de IPsec para todos los servidores de acceso remoto  
 Tenga en cuenta lo siguiente al planear la autenticación del cliente de IPsec en una implementación multisitio:  
   
 1.  Si optó por usar el proxy Kerberos integrado para la autenticación de equipos al configurar el único servidor de acceso remoto, debe cambiar la configuración para usar certificados de equipo emitidos por una CA interna, ya que el proxy Kerberos no es compatible con un multisitio planta.  
@@ -100,7 +100,7 @@ Tenga en cuenta lo siguiente al planear la autenticación del cliente de IPsec e
   
 4.  El mismo certificado de raíz IPsec o intermedio debe estar instalado en todos los servidores de acceso remoto de la implementación multisitio.  
   
-## <a name="bkmk_3_4_GSLB"></a>3,4 planear el equilibrio de carga del servidor global  
+## <a name="34-plan-global-server-load-balancing"></a><a name="bkmk_3_4_GSLB"></a>3,4 planear el equilibrio de carga del servidor global  
 En una implementación multisitio, también puede configurar un equilibrador de carga de servidor global. Un equilibrador de carga de servidor global puede ser útil para su organización si la implementación cubre una distribución geográfica grande, ya que puede distribuir la carga del tráfico entre los puntos de entrada.  El equilibrador de carga global del servidor se puede configurar para proporcionar a los clientes de DirectAccess la información de punto de entrada del punto de entrada más cercano. El proceso funciona de la siguiente manera:  
   
 1.  Los equipos cliente que ejecutan Windows 10 o Windows 8 tienen una lista de direcciones IP del equilibrador de carga del servidor global, cada una asociada a un punto de entrada.  
@@ -111,7 +111,7 @@ En una implementación multisitio, también puede configurar un equilibrador de 
   
 Para obtener una lista de los dispositivos globales de equilibrio de carga del servidor que admiten el acceso remoto, vaya a la página buscar un partner en [Microsoft Server y en la plataforma en la nube](https://www.microsoft.com/server-cloud/).  
   
-## <a name="bkmk_3_5_EP_Selection"></a>3,5 planear la selección del punto de entrada de cliente de DirectAccess  
+## <a name="35-plan-directaccess-client-entry-point-selection"></a><a name="bkmk_3_5_EP_Selection"></a>3,5 planear la selección del punto de entrada de cliente de DirectAccess  
 Al configurar una implementación multisitio, de forma predeterminada, los equipos cliente de Windows 10 y Windows 8 se configuran con la información necesaria para conectarse a todos los puntos de entrada de la implementación y para conectarse automáticamente a un único punto de entrada en función de una selección. algoritmo. También puede configurar la implementación para permitir que los equipos cliente de Windows 10 y Windows 8 seleccionen manualmente el punto de entrada al que se conectarán. Si un equipo cliente de Windows 10 o Windows 8 está conectado actualmente al punto de entrada de Estados Unidos y la selección de punto de entrada automático está habilitada, si el punto de entrada de Estados Unidos deja de estar disponible, después de unos minutos el equipo cliente intentará conectarse. a través del punto de entrada de Europa. Se recomienda usar la selección automática de puntos de entrada; sin embargo, permitir la selección manual de puntos de entrada permite que los usuarios finales se conecten a un punto de entrada diferente en función de las condiciones de la red actual. Por ejemplo, si un equipo está conectado al punto de entrada de Estados Unidos y la conexión a la red interna se vuelve mucho más lenta de lo esperado. En esta situación, el usuario final puede seleccionar manualmente para conectarse al punto de entrada de Europa para mejorar la conexión a la red interna.  
   
 > [!NOTE]  
@@ -119,7 +119,7 @@ Al configurar una implementación multisitio, de forma predeterminada, los equip
   
  Los equipos cliente de Windows 7 se configuran con la información necesaria para conectarse a un único punto de entrada en la implementación multisitio. No pueden almacenar la información de varios puntos de entrada simultáneamente. Por ejemplo, se puede configurar un equipo cliente de Windows 7 para que se conecte al punto de entrada de Estados Unidos, pero no al punto de entrada de Europa. Si el punto de entrada de Estados Unidos es inaccesible, el equipo cliente de Windows 7 perderá la conectividad a la red interna hasta que el punto de entrada sea accesible. El usuario final no puede realizar ningún cambio para intentar conectarse al punto de entrada de Europa.  
   
-## <a name="bkmk_3_6_IPv6"></a>3,6 prefijos y enrutamiento del plan  
+## <a name="36-plan-prefixes-and-routing"></a><a name="bkmk_3_6_IPv6"></a>3,6 prefijos y enrutamiento del plan  
   
 ### <a name="internal-ipv6-prefix"></a>Prefijo IPv6 interno  
 Durante la implementación del único servidor de acceso remoto planeado, los prefijos IPv6 de la red interna tienen en cuenta lo siguiente en una implementación multisitio:  
@@ -205,7 +205,7 @@ Si su organización usa una topología de Active Directory con prefijos IPv6 esp
   
 3.  Al modificar el parámetro EntryPointRange, asegúrese de que no quita los prefijos de 128 bits existentes que pertenecen a los extremos del túnel IPsec y la dirección DNS64.  
   
-## <a name="bkmk_3_7_TransitionIPv6"></a>3,7 planear la transición a IPv6 cuando se implementa el acceso remoto multisitio  
+## <a name="37-plan-the-transition-to-ipv6-when-multisite-remote-access-is-deployed"></a><a name="bkmk_3_7_TransitionIPv6"></a>3,7 planear la transición a IPv6 cuando se implementa el acceso remoto multisitio  
 Muchas organizaciones usan el protocolo IPv4 en la red corporativa. Con el agotamiento de los prefijos IPv4 disponibles, muchas organizaciones están realizando la transición de solo IPv4 a redes solo IPv6.  
   
 Es más probable que esta transición tenga lugar en dos fases:  
@@ -216,7 +216,7 @@ Es más probable que esta transición tenga lugar en dos fases:
   
 En cada parte, la transición se puede realizar en fases. En cada fase solo se puede cambiar una subred de la red a la nueva configuración de red. Por lo tanto, se requiere una implementación multisitio de DirectAccess para admitir una implementación híbrida donde, por ejemplo, algunos de los puntos de entrada pertenezcan a una subred solo IPv4 y otros pertenezcan a una subred IPv6 + IPv4. Además, los cambios de configuración durante los procesos de transición no deben interrumpir la conectividad de cliente a través de DirectAccess.  
   
-### <a name="TransitionIPv4toMixed"></a>Transición de una red corporativa IPv6 + IPv4 solo a IPv4  
+### <a name="transition-from-an-ipv4-only-to-an-ipv6ipv4-corporate-network"></a><a name="TransitionIPv4toMixed"></a>Transición de una red corporativa IPv6 + IPv4 solo a IPv4  
 Al agregar direcciones IPv6 a una red corporativa solo IPv4, puede que desee agregar una dirección IPv6 a un servidor de DirectAccess ya implementado. Además, puede que desee agregar un punto de entrada o un nodo a un clúster con equilibrio de carga con direcciones IPv4 e IPv6 a la implementación de DirectAccess.  
   
 El acceso remoto permite agregar servidores con direcciones IPv4 e IPv6 a una implementación que se configuró originalmente solo con direcciones IPv4. Estos servidores se agregan como servidores de solo IPv4 y DirectAccess omite sus direcciones IPv6. por lo tanto, su organización no puede aprovechar las ventajas de la conectividad IPv6 nativa en estos nuevos servidores.  
@@ -226,7 +226,7 @@ Para transformar la implementación en una implementación de IPv6 + IPv4 y apro
 > [!NOTE]  
 > Al igual que con una red IPv4, en una red IPv4 + IPv6 mixta, la dirección del servidor DNS que se usa para resolver las solicitudes DNS del cliente debe configurarse con el DNS64 que se implementa en los propios servidores de acceso remoto y no con un DNS corporativo.  
   
-### <a name="TransitionMixedtoIPv6"></a>Transición de IPv6 + IPv4 a una red corporativa solo IPv6  
+### <a name="transition-from-an-ipv6ipv4-to-an-ipv6-only-corporate-network"></a><a name="TransitionMixedtoIPv6"></a>Transición de IPv6 + IPv4 a una red corporativa solo IPv6  
 DirectAccess permite agregar únicamente puntos de entrada de IPv6 si el primer servidor de acceso remoto de la implementación tenía originalmente direcciones IPv4 e IPv6, o solo una dirección IPv6. Es decir, no se puede realizar la transición desde una red solo IPv4 a una red solo IPv6 en un solo paso sin volver a instalar DirectAccess. Para realizar la transición directamente desde una red solo IPv4 a una red solo IPv6, consulte transición de una implementación solo IPv4 a una implementación de solo IPv6 con dos implementaciones de DirectAccess.  
   
 Después de haber completado la transición de una implementación solo IPv4 a una implementación de IPv6 + IPv4, puede realizar la transición a una red solo IPv6. Durante y después de la transición, tenga en cuenta lo siguiente:  
@@ -239,7 +239,7 @@ Después de haber completado la transición de una implementación solo IPv4 a u
   
 Para admitir la conectividad de cliente a la red corporativa, debe asegurarse de que el servidor DNS corporativo puede resolver el servidor de ubicación de red en su dirección IPv6. También se puede establecer una dirección IPv4 adicional, pero no es necesario.  
   
-### <a name="DualDeployment"></a>Transición de solo IPv4 a una implementación de solo IPv6 mediante implementaciones de DirectAccess duales  
+### <a name="transition-from-an-ipv4-only-to-an-ipv6-only-deployment-using-dual-directaccess-deployments"></a><a name="DualDeployment"></a>Transición de solo IPv4 a una implementación de solo IPv6 mediante implementaciones de DirectAccess duales  
 La transición de solo IPv4 a una red corporativa de solo IPv6 no se puede realizar sin volver a instalar la implementación de DirectAccess. Para mantener la conectividad de cliente durante la transición, puede usar otra implementación de DirectAccess. Se requiere una implementación dual cuando finaliza la primera fase de transición (la red solo IPv4 se actualiza a IPv4 + IPv6) y tiene previsto prepararse para una transición futura a una red corporativa solo de IPv6 y aprovechar las ventajas de conectividad IPv6 nativa. La implementación dual se describe en los siguientes pasos generales:  
   
 1.  Instale una segunda implementación de DirectAccess. Puede instalar DirectAccess en nuevos servidores o quitar servidores de la primera implementación y usarlos para la segunda implementación.  

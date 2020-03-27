@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 566bc270-81c7-48c3-a904-3cba942ad463
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 613bb7f43b382389dc0db953a48668147cfaee88
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a6fe98dea50dd194c2bb2303a663968f93818332
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356046"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317963"
 ---
 # <a name="dns-policies-overview"></a>Información general de las directivas DNS
 
@@ -51,7 +51,7 @@ Puede usar las directivas de resolución de consultas DNS para especificar cómo
 
 |Campo|Descripción|Valores posibles|  
 |---------|---------------|-------------------|  
-|**Nombre**|Nombre de directiva|-Hasta 256 caracteres<br />-Puede contener cualquier carácter válido para un nombre de archivo|  
+|**Nombre**|Nombre de la directiva|-Hasta 256 caracteres<br />-Puede contener cualquier carácter válido para un nombre de archivo|  
 |**Estado**|Estado de la Directiva|-Enable (valor predeterminado)<br />-Deshabilitado|  
 |**Dosis**|Nivel de Directiva|-Servidor<br />-Zona|  
 |**Orden de procesamiento**|Una vez que una consulta se clasifica por nivel y se aplica en, el servidor encuentra la primera Directiva para la que la consulta coincide con los criterios y la aplica a la consulta.|-Valor numérico<br />-Valor único por directiva que contiene el mismo nivel y se aplica al valor|  
@@ -65,7 +65,7 @@ Puede usar las directivas de resolución de consultas DNS para especificar cómo
 El campo criterios de la Directiva de DNS se compone de dos elementos:
 
 
-|              Nombre               |                                         Descripción                                          |                                                                                                                               Valores de ejemplo                                                                                                                               |
+|              Name               |                                         Descripción                                          |                                                                                                                               Valores de ejemplo                                                                                                                               |
 |---------------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        **Subred de cliente**        | Nombre de una subred de cliente predefinida. Se utiliza para comprobar la subred desde la que se envió la consulta. |                             -   **EQ, España, Francia** : se resuelve como true si la subred se identifica como España o Francia<br />-   **NE, Canadá, México,** se resuelve como true si la subred del cliente es cualquier subred que no sea Canadá y México.                             |
 |     **Protocolo de transporte**      |        Protocolo de transporte utilizado en la consulta. Las entradas posibles son **UDP** y **TCP**        |                                                                                                                    -   **EQ, TCP**<br />-   **EQ, UDP**                                                                                                                     |
@@ -77,7 +77,7 @@ El campo criterios de la Directiva de DNS se compone de dos elementos:
 
 Con la tabla anterior como punto de partida, la tabla siguiente podría usarse para definir un criterio que se usa para hacer coincidir las consultas para cualquier tipo de registro, pero los registros SRV del dominio contoso.com proceden de un cliente en la subred 10.0.0.0/24 a través de TCP entre 8 y 10 PM a través de la interfaz 10.0.0.3:  
 
-|Nombre|Valor|  
+|Name|Valor|  
 |--------|---------|  
 |Subred de cliente|EQ, 10.0.0.0/24|  
 |Protocolo de transporte|EQ, TCP|  
@@ -97,7 +97,7 @@ Puede usar directivas de recursividad para implementar una configuración de DNS
 
 Las directivas de recursividad contienen los mismos elementos que contiene una directiva de resolución de consultas DNS normal, junto con los elementos de la tabla siguiente:  
 
-|Nombre|Descripción|  
+|Name|Descripción|  
 |--------|---------------|  
 |**Aplicar en la recursividad**|Especifica que esta directiva solo se debe usar para la recursividad.|  
 |**Ámbito de recursividad**|Nombre del ámbito de recursividad.|  

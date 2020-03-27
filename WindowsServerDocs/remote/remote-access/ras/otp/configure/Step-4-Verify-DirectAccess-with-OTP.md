@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ed49a0a3-1c45-42e5-8f13-cad20c1c1d68
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 83ea3c4e4feefacde3e1ed7be6b605d8c0e644a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9a3d3fadbe2f187ae6b5a77137393b7ad7be338b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366973"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313631"
 ---
 # <a name="step-4-verify-directaccess-with-otp"></a>Paso 4 comprobar DirectAccess con OTP
 
@@ -36,7 +36,7 @@ En este tema se describe cómo comprobar que ha configurado correctamente Direct
 4. Compruebe que el estado de OTP muestra el icono verde y que funciona.  
   
     > [!NOTE]  
-    > El intervalo de actualización del estado de mantenimiento será un máximo de la suma de los valores de la clave del registro HKLM\SYSTEM\CCS\Services\Ramgmtsvc\parameters\HealthRefreshTimeout y el **intervalo de tiempo para la actividad del servidor** que se estableció en el acceso remoto. configuraciones.  
+    > El intervalo de actualización del estado de mantenimiento será un máximo de la suma de los valores de la clave del registro HKLM\SYSTEM\CCS\Services\Ramgmtsvc\parameters\HealthRefreshTimeout y el **intervalo de tiempo para la actividad del servidor** que se estableció en la configuración de acceso remoto.  
   
 ### <a name="to-verify-access-to-internal-resources-using-otp-authentication"></a>Para comprobar el acceso a los recursos internos mediante la autenticación de OTP  
   

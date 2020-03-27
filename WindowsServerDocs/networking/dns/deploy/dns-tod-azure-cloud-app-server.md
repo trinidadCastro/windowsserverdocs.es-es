@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4307ce1512980277af819e0710e0447d8dbac8c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: be0604a850e54f4945e7416298fad30ce3dbf083
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406200"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317845"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>Respuestas DNS basadas en la hora del día con un servidor de aplicaciones en la nube de Azure
 
@@ -57,7 +57,7 @@ En la ilustración siguiente se muestra este escenario.
  
 En este artículo se muestra cómo configurar el servidor DNS para responder a las consultas DNS con dos direcciones IP diferentes del servidor de aplicaciones: un servidor web está en Seattle y el otro está en un centro de recursos de Azure.
 
-Después de la configuración de una nueva Directiva de DNS que se basa en las horas punta de 6 PM a 9 PM en Seattle, el servidor DNS envía 70 por ciento de las respuestas DNS a los clientes que contienen la dirección IP del servidor Web de Seattle y el 30 por ciento de las respuestas DNS a clien NTS que contiene la dirección IP del servidor Web de Azure, con lo que se dirige el tráfico de cliente al nuevo servidor Web de Azure y se impide que el servidor Web de Seattle se sobrecargue. 
+Después de la configuración de una nueva Directiva de DNS que se basa en las horas punta de 6 PM a 9 PM en Seattle, el servidor DNS envía 70 por ciento de las respuestas DNS a los clientes que contienen la dirección IP del servidor Web de Seattle y el 30 por ciento de las respuestas DNS a los clientes. que contiene la dirección IP del servidor Web de Azure, con lo que se dirige el tráfico de cliente al nuevo servidor Web de Azure y se impide que el servidor Web de Seattle se sobrecargue. 
 
 En todas las demás horas del día, se realiza el procesamiento de consultas normal y se envían las respuestas desde el ámbito de zona predeterminado que contiene un registro para el servidor Web en el centro de recursos local. 
 

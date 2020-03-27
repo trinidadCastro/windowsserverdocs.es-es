@@ -3,7 +3,7 @@ title: Solucionar problemas del firewall en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 51d94b67-8b9b-4159-80dd-f652d73a43cb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 11372589528fcc78e0053bc7002449b53cb3181d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 15a2361284d041898d9ad7240643fdb55aa5b866
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436044"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318585"
 ---
 # <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>Solucionar problemas del firewall en Windows Server Essentials
  
@@ -47,9 +47,9 @@ ms.locfileid: "66436044"
   
 -   [Usar acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Administrar acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Administrar el acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Administrar acceso ilimitado](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
+-   [Administrar el acceso desde cualquier lugar](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [Administrar Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
   

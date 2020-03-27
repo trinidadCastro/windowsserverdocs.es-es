@@ -10,15 +10,15 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: ab9a8e309c8031108d58c73d82357e913d5ce398
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc9ab0fa3d1da0e7af8a7a1d7a8706ba6d128648
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396471"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316484"
 ---
 # <a name="nic-teaming-settings"></a>Configuración de la formación de equipos NIC
 En este tema se proporciona información general sobre las propiedades del equipo NIC, como la formación de equipos y los modos de equilibrio de carga. También se proporcionan detalles acerca de la configuración del adaptador en espera y la propiedad de la interfaz de equipo principal. Si tiene al menos dos adaptadores de red en un equipo NIC, no es necesario designar un adaptador en espera para la tolerancia a errores.
@@ -82,7 +82,7 @@ Dado que el conmutador adyacente siempre ve una dirección MAC determinada en un
   
 Sin embargo, si el host tiene solo algunas máquinas virtuales, este modo podría no ser lo suficientemente granular para lograr una distribución bien equilibrada. Este modo también limitará siempre una única máquina virtual (es decir, el tráfico de un solo puerto de conmutador) al ancho de banda que está disponible en una sola interfaz. La formación de equipos NIC usa el puerto del conmutador virtual de Hyper-V como identificador en lugar de usar la dirección MAC de origen porque, en algunos casos, una máquina virtual puede estar configurada con más de una dirección MAC en un puerto de conmutador.  
   
-### <a name="dynamic"></a>Dinámico
+### <a name="dynamic"></a>Dynamic
   
 [!INCLUDE [dynamic-shortdesc-include](../../includes/dynamic-shortdesc-include.md)]
   

@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b1b2fe70-7956-46e8-a3e3-43848868df09
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: d0de5f459e31e1dfac40e49cd6cc83de8722df4d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5b86cbe970c60f0684f3f6e5198fa91bbb9745b1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404422"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313685"
 ---
 # <a name="deploy-remote-access-with-otp-authentication"></a>Implementar el acceso remoto con autenticación OTP
 
@@ -25,7 +25,7 @@ ms.locfileid: "71404422"
 
  Windows Server 2016 y Windows Server 2012 combinan DirectAccess y el servicio de enrutamiento y acceso remoto \(RRAS\) VPN en un solo rol de acceso remoto.   
 
-## <a name="BKMK_OVER"></a>Descripción del escenario  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>Descripción del escenario  
 En este escenario, se configura un servidor de acceso remoto con DirectAccess habilitado para autenticar a los usuarios del cliente de DirectAccess con dos\-factor de contraseña de un solo vez \(OTP\) la autenticación, además de las credenciales de Active Directory estándar.  
   
 ## <a name="prerequisites"></a>Requisitos previos  
@@ -54,7 +54,7 @@ El escenario de autenticación OTP incluye varios pasos:
   
 4.  [Solución de problemas de una implementación de OTP] ((/troubleshoot/Troubleshoot-an-OTP-Deployment.md). Esta sección de solución de problemas describe una serie de los errores más comunes que se pueden producir al implementar el acceso remoto con la autenticación de OTP.  
   
-## <a name="BKMK_APP"></a>Aplicaciones prácticas  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicaciones prácticas  
 Aumentar la seguridad: el uso de OTP aumenta la seguridad de la implementación de DirectAccess. Un usuario requiere credenciales de OTP para obtener acceso a la red interna. Un usuario proporciona credenciales de OTP a través de las conexiones de área de trabajo disponibles en las conexiones de red en el equipo cliente de Windows 10 o Windows 8, o mediante el Asistente de conectividad de DirectAccess \(DCA\) en equipos cliente que ejecutan Windows 7. El proceso de autenticación de OTP funciona de la siguiente manera:  
   
 1.  El cliente de DirectAccess entra en las credenciales de dominio para tener acceso a los servidores de infraestructura de DirectAccess \(a través del túnel de infraestructura\).  Si no se encuentra disponible ninguna conexión a la red interna, debido a un error específico de IKE, la conexión del área de trabajo del equipo de cliente notifica al usuario que se requieren credenciales. En los equipos cliente que ejecutan Windows 7, aparece un pop\-la solicitud de credenciales de tarjeta inteligente.  
@@ -69,7 +69,7 @@ Aumentar la seguridad: el uso de OTP aumenta la seguridad de la implementación 
   
 6.  Con este certificado, el equipo cliente realiza una autenticación Kerberos de tarjeta inteligente estándar en forma transparente.  
   
-## <a name="BKMK_NEW"></a>Roles y características incluidos en este escenario  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Roles y características incluidos en este escenario  
 En la siguiente tabla, se muestran los roles y características requeridos para el escenario:  
   
 |Característica de\/de roles|Compatibilidad con este escenario|  
@@ -77,7 +77,7 @@ En la siguiente tabla, se muestran los roles y características requeridos para 
 |*Rol de administración de acceso remoto*|El rol se instala y desinstala mediante la consola del Administrador del servidor. Este rol incluye tanto DirectAccess, que antes era una característica de Windows Server 2008 R2, como los servicios de enrutamiento y acceso remoto, que antes eran un servicio de rol en los servicios de acceso y directivas de redes \(NPAS\) rol de servidor. El rol de acceso remoto consta de dos componentes:<br /><br />1. los servicios de enrutamiento y acceso remoto \(RRAS\) VPN: DirectAccess y VPN se administran conjuntamente en la consola de administración de acceso remoto.<br />2. enrutamiento RRAS: las características de enrutamiento RRAS se administran en la consola de enrutamiento y acceso remoto heredada.<br /><br />El rol de acceso remoto depende de las siguientes características del servidor:<br /><br />-Internet Information Services \(servidor Web\) IIS: esta característica es necesaria para configurar el servidor de ubicación de red, para el uso de la autenticación OTP y para configurar el sondeo Web predeterminado.<br />-Windows Internal Database: se usa para las cuentas locales en el servidor de acceso remoto.|  
 |Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<br /><br />-Se instala de forma predeterminada en un servidor de acceso remoto cuando se instala el rol de acceso remoto y es compatible con la interfaz de usuario de la consola de administración remota.<br />-Se puede instalar opcionalmente en un servidor que no ejecute el rol de servidor de acceso remoto. En este caso, se usa para la administración remota de un equipo de acceso remoto que ejecuta DirectAccess y VPN.<br /><br />La característica de herramientas de administración de acceso remoto consiste de los siguientes elementos:<br /><br />-Herramientas de línea de comandos y GUI de acceso remoto<br />-Módulo de acceso remoto para Windows PowerShell<br /><br />Las dependencias incluyen:<br /><br />-Consola de administración de directivas de grupo<br />-Kit de administración del administrador de conexiones RAS \(CMAK\)<br />-Windows PowerShell 3,0<br />-Infraestructura y herramientas de administración de gráficos|  
   
-## <a name="BKMK_HARD"></a>Requisitos de hardware  
+## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>Requisitos de hardware  
 Los requisitos de hardware para este escenario incluyen los siguientes:  
   
 -   Un equipo que cumpla los requisitos de hardware para Windows Server 2016 o Windows Server 2012.  
@@ -88,7 +88,7 @@ Los requisitos de hardware para este escenario incluyen los siguientes:
   
 -   Un token de software o hardware de OTP.  
   
-## <a name="BKMK_SOFT"></a>Requisitos de software  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>Requisitos de software  
 Hay varios requisitos para este escenario:  
   
 1.  Requisitos de software para la implementación de un solo servidor. Para obtener más información, vea [implementar un único servidor de DirectAccess con configuración avanzada](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md).  
@@ -103,7 +103,7 @@ Hay varios requisitos para este escenario:
   
     4.  Requisitos de\-de cliente: para equipos cliente de Windows 10 y Windows 8, el Asistente de conectividad de red \(servicio NCA\) se usa para detectar si se requieren credenciales de OTP. Si es así, el administrador de medios de DirectAccess solicitará las credenciales.  NCA se incluye en el sistema operativo y no se requiere ninguna instalación o implementación. En el caso de los equipos cliente de Windows 7, se requiere el Asistente de conectividad de DirectAccess \(DCA\) 2,0. Esto se puede descargar en el [Centro de descargas de Microsoft](https://www.microsoft.com/download/details.aspx?id=29039).  
   
-    5.  Ten en cuenta esto:  
+    5.  Observe lo siguiente:  
   
         1.  La autenticación de OTP puede usarse en paralelo con la tarjeta inteligente y Módulo de plataforma segura \(TPM\)la autenticación basada en \-. Habilitar la autenticación de OTP en la consola de Administración de acceso remoto también permite el uso de la autenticación de tarjeta inteligente.  
   
@@ -113,13 +113,13 @@ Hay varios requisitos para este escenario:
   
         4.  En una implementación multisitio de acceso remoto, la configuración de OTP es global y se identifica para todos los puntos de entrada. Si se configuran varios servidores RADIUS o CA para OTP, se ordenan para cada servidor de acceso remoto de acuerdo con la disponibilidad y proximidad.  
   
-        5.  Al configurar OTP en un entorno de bosque multi\-de acceso remoto, las CA de OTP solo deben ser del bosque de recursos y la inscripción de certificados se debe configurar en las confianzas de bosque. Para obtener más información, consulta [AD CS:  inscripción del certificado entre bosques con Windows Server 2008 R2](https://technet.microsoft.com/library/ff955842.aspx).  
+        5.  Al configurar OTP en un entorno de bosque multi\-de acceso remoto, las CA de OTP solo deben ser del bosque de recursos y la inscripción de certificados se debe configurar en las confianzas de bosque. Si desea obtener más información, consulte el tema sobre [AD CS: inscripción del certificado entre bosques con Windows Server 2008 R2](https://technet.microsoft.com/library/ff955842.aspx).  
   
         6.  Los usuarios que usan un token de OTP de KEY FOB deben insertar el PIN seguido por el código de token \(sin separadores\) en el cuadro de diálogo de OTP de DirectAccess. Los usuarios que están usando el token PIN PAD OTP solo deben insertar el código de token en el cuadro de diálogo.  
   
         7.  Cuando se habilita WEBDAV no se debe habilitar OTP.  
   
-## <a name="KnownIssues"></a>Problemas conocidos  
+## <a name="known-issues"></a><a name="KnownIssues"></a>Problemas conocidos  
 Los problemas que se mencionan a continuación son problemas conocidos de la configuración de un escenario de OTP:  
   
 -   El acceso remoto usa un mecanismo de sondeo para comprobar la conectividad a los servidores OTP basados en\-RADIUS. En algunos casos esto puede provocar un error que se va a emitir en el servidor OTP. Para evitar este problema, haz lo siguiente en el servidor OTP:  

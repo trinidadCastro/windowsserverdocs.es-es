@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: c9cecb94-3cd5-4da7-9a3e-084148b8226b
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: de502d7be023d12e3350063e467a60356b2472c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 26d9a532f8c2276a81e8718e76290d41c78f6633
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406239"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317978"
 ---
 # <a name="whats-new-in-dns-server-in-windows-server"></a>Novedades del servidor DNS en Windows Server
 
@@ -150,7 +150,7 @@ Para obtener más información, vea los siguientes temas de referencia de comand
 - [Módulo DnsServer](https://docs.microsoft.com/powershell/module/dnsserver/?view=win10-ps)
 - [Módulo DnsClient](https://docs.microsoft.com/powershell/module/dnsclient/?view=win10-ps)
 
-## <a name="see-also"></a>Consulte también  
+## <a name="see-also"></a>Vea también  
   
 -   [Novedades del cliente DNS](What-s-New-in-DNS-Client.md)  
   

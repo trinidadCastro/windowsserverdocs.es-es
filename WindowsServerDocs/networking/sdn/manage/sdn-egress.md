@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 10/02/2018
-ms.openlocfilehash: e68a3889867b75152ea941ac1d8eb113b9acd3cb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5425a562264addd3b2fc416f659f8ba79d6d99d6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406008"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317497"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>Medición de salida en una red virtual
 
@@ -51,7 +51,7 @@ La salida tendrá un aspecto similar al siguiente:
    ```
 
 
-## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>Ejemplo: Administrar los intervalos de direcciones sin facturar de una red virtual
+## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>Ejemplo: administración de los intervalos de direcciones sin facturar de una red virtual
 
 Puede administrar el conjunto de prefijos de subred IP para excluir de la medición de salida facturada mediante el establecimiento de la propiedad **UnbilledAddressRange** de una red virtual.  Todo el tráfico enviado por interfaces de red en la red virtual con una dirección IP de destino que coincida con uno de los prefijos no se incluirá en la propiedad BilledEgressBytes.
 

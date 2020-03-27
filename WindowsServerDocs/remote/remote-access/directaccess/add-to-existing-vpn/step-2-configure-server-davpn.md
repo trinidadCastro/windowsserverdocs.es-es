@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fe221fc9-c7d9-4508-b8a1-000d2515283c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7ee691a02df385e29bdac9656d50bc2c6d3af087
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c26f1fbcfa2d94c001579aabd6794c6537bd06f8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388738"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314745"
 ---
 #  <a name="step-2-configure-the-directaccess-vpn-server"></a>Paso 2: configurar el servidor VPN de DirectAccess
 
@@ -40,7 +40,7 @@ En la tabla siguiente se proporciona información general sobre los pasos que pu
 
 2. Si el asistente no se inicia automáticamente, haga clic con el botón secundario en el nodo del servidor en el árbol enrutamiento y acceso remoto y, a continuación, haga clic en **Habilitar DirectAccess**.
 
-3. Haz clic en **Siguiente**.
+3. Haga clic en **Siguiente**.
 
 ## <a name="configure-directaccess-clients"></a>Configurar los clientes de DirectAccess
 
@@ -54,7 +54,7 @@ Para que un equipo cliente esté aprovisionado para utilizar DirectAccess, debe 
 
 4. Activa la casilla **Usar túnel forzado** para enrutar todo el tráfico cliente (a la red interna y a Internet) a través del servidor de acceso remoto.
 
-5. Haz clic en **Siguiente**.
+5. Haga clic en **Siguiente**.
 
 ## <a name="configure-the-network-topology"></a>Configurar la topología de red
 
@@ -64,7 +64,7 @@ Para implementar el acceso remoto, debes configurar el servidor de acceso remoto
 
 ## <a name="configure-the-dns-suffix-search-list"></a>Configurar la lista de búsqueda de sufijos DNS
 
-En el caso de los clientes DNS, puedes configurar una lista de búsqueda de sufijos de dominio DNS que amplíe o revise sus capacidades de búsqueda DNS. Al añadir sufijos a la lista, puedes buscar nombres de equipos cortos e incompletos en más de un dominio DNS especificado. A continuación, si se produce un error en una consulta DNS, el servicio cliente DNS puede usar esta lista para anexar otros finales de sufijo de nombre al nombre original y repetir las consultas DNS en el servidor DNS para estos FQDN alternativos.
+En el caso de clientes DNS, puede configurar una lista de búsqueda de sufijos DNS que amplíe o revise sus capacidades de búsqueda DNS. Al agregar sufijos adicionales a la lista, puede buscar nombres de equipo cortos y no completos en más de un dominio DNS especificado. A continuación, si se produce un error en una consulta DNS, el servicio Cliente DNS puede usar esta lista para agregar otras finalizaciones de sufijo de nombre al nombre original y repetir las consultas DNS en el servidor DNS en busca de estos FQDN alternativos.
 
 1. Selecciona **Configurar clientes de DirectAccess con la lista de búsqueda de sufijos de cliente DNS** para especificar otros sufijos para las búsquedas de nombres de clientes.
 
@@ -83,9 +83,9 @@ Cuando la lista de búsqueda de sufijos no está vacía y tiene al menos un sufi
 Si las consultas de todos los FQDN formados como resultado de anexar e intentar cada sufijo de la lista no se resuelven, el proceso de consulta produce un error y genera el resultado "nombre no encontrado". 
 
 > [!WARNING]
-> Si se utiliza la lista de sufijos de dominio, los clientes siguen enviando consultas alternativas basadas en diferentes nombres de dominio DNS cuando una consulta no se responda o no se resuelva. Si un nombre se resuelve al utilizar una entrada de la lista de sufijos, no se intentarán las entradas de la lista que no se han usado. Por esta razón, lo más eficaz es ordenar la lista con los sufijos de dominio más utilizados en primer lugar.
+> Si se usa la lista de sufijos de domino, los clientes siguen enviando consultas alternativas adicionales basadas en diferentes nombres de dominio DNS cuando no se responde o no se resuelve una consulta. Si un nombre se resuelve al utilizar una entrada de la lista de sufijos, no se intentarán las entradas de la lista que no se han usado. Por esta razón, lo más eficaz es ordenar la lista con los sufijos de dominio más utilizados en primer lugar.
 > 
-> Las búsquedas de sufijos de nombres de dominio se usan únicamente cuando una entrada de nombre DNS no está completa. Para completar un nombre DNS, debe ponerse un punto (.) al final del nombre.
+> Las búsquedas de sufijos de nombres de domino únicamente se usan cuando una entrada de nombre DNS no está completa. Para completar un nombre DNS, debe ponerse un punto (.) al final del nombre.
 
 ## <a name="gpo-configuration"></a>Configuración del GPO
 

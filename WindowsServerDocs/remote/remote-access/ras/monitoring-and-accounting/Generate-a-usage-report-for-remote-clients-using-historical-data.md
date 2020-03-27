@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0305467b-ce39-4532-a05a-2cc5ff946f55
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: bae50345e8a6fd4018857e2a754d0274ce02855d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ce5219feca1d55191352d95f2aac017709a5a449
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367252"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314291"
 ---
 # <a name="generate-a-usage-report-for-remote-clients-using-historical-data"></a>Generar un informe de uso para clientes remotos mediante datos históricos
 
@@ -61,7 +61,7 @@ La consola de administración de en el servidor de acceso remoto se puede usar p
   
 ![](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
   
 En el script siguiente, cambie el intervalo de fechas para el que desea un informe en los parámetros **-StartDateTime** y **-fechahorafin** .  
   

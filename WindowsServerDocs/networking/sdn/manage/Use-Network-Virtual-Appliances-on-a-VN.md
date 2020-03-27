@@ -10,15 +10,15 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.assetid: 3c361575-1050-46f4-ac94-fa42102f83c1
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 158183bab74e6e45c36c579f3259fc2095a939b5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db634af114610cce0bdbcacd58986ceb5f00dd99
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406042"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317585"
 ---
 # <a name="use-network-virtual-appliances-on-a-virtual-network"></a>Usar dispositivos de red virtual en una red virtual
 
@@ -44,7 +44,7 @@ Algunos dispositivos requieren varios adaptadores de red virtual. Normalmente, u
 Una vez que haya implementado la aplicación virtual de red, puede usar el dispositivo para el enrutamiento definido, la migración de reflejo o ambos. 
 
 
-## <a name="example-user-defined-routing"></a>Ejemplo: Enrutamiento definido por el usuario
+## <a name="example-user-defined-routing"></a>Ejemplo: enrutamiento definido por el usuario
 
 Para la mayoría de los entornos, solo necesita las rutas del sistema ya definidas por el enrutador distribuido de la red virtual. Sin embargo, es posible que necesite crear una tabla de enrutamiento y agregar una o varias rutas en casos concretos, como:
 
@@ -93,11 +93,11 @@ Las subredes dependen de las rutas del sistema hasta que se asocia una tabla de 
 
 En cuanto se aplica la tabla de enrutamiento a la red virtual, el tráfico se reenvía a la aplicación virtual. Debe configurar la tabla de enrutamiento en el dispositivo virtual para reenviar el tráfico de la manera que sea adecuada para su entorno.
 
-## <a name="example-port-mirroring"></a>Ejemplo: Creación de reflejo del puerto
+## <a name="example-port-mirroring"></a>Ejemplo: creación de reflejo del puerto
 
 En este ejemplo, configurará el tráfico de MyVM_Ethernet1 para reflejar Appliance_Ethernet1.  Damos por hecho que ha implementado dos máquinas virtuales, una como el dispositivo y la otra como la máquina virtual que se va a supervisar con la creación de reflejo. 
 
-El dispositivo debe tener una segunda interfaz de red para la administración. Después de habilitar la creación de reflejo como un destino en Appliciance_Ethernet1, ya no recibe el tráfico destinado a la interfaz IP configurada ahí.
+El dispositivo debe tener una segunda interfaz de red para la administración. Después de habilitar la creación de reflejo como destino en Appliciance_Ethernet1, ya no recibe el tráfico destinado a la interfaz IP configurada ahí.
 
 
 **Pasos**
@@ -168,6 +168,6 @@ El dispositivo debe tener una segunda interfaz de red para la administración. D
    $srcNic = New-NetworkControllerNetworkInterface -ConnectionUri $uri  -Properties $srcNic.Properties -ResourceId $srcNic.ResourceId
    ```
 
-Después de completar estos pasos, la interfaz Appliance_Ethernet1 refleja el tráfico de la interfaz MyVM_Ethernet1.
+Después de completar estos pasos, la interfaz de Appliance_Ethernet1 refleja el tráfico de la interfaz de MyVM_Ethernet1.
  
 ---

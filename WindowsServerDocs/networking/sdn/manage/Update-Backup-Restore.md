@@ -7,14 +7,14 @@ ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: e9a8f2fd-48fe-4a90-9250-f6b32488b7a4
 ms.author: grcusanz
-author: shortpatti
+author: eross-msft
 ms.date: 08/27/2018
-ms.openlocfilehash: 7f385e094ca70027d1b036bf53af23c1fc4a1bd1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fbb173224797d32bd05fbdadb1bf4cefdc475cb6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406055"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317605"
 ---
 # <a name="upgrade-backup-and-restore-sdn-infrastructure"></a>Actualización, copia de seguridad y restauración de la infraestructura de SDN
 
@@ -43,7 +43,7 @@ Al actualizar cada componente, puede usar cualquiera de los métodos estándar p
 
 2. En la primera máquina virtual de controladora de red, instale todas las actualizaciones y reinicie.
 
-3. Antes de continuar con la siguiente máquina virtual de controladora de `get-networkcontrollernode` red, use el cmdlet para comprobar el estado del nodo que ha actualizado y reiniciado.
+3. Antes de continuar con la siguiente máquina virtual de controladora de red, use el cmdlet `get-networkcontrollernode` para comprobar el estado del nodo que ha actualizado y reiniciado.
 
 4. Durante el ciclo de reinicio, espere a que el nodo de la controladora de red se apague y vuelva a aparecer.<p>Después de reiniciar la máquina virtual, pueden transcurrir varios minutos antes de volver al estado **_activo_** . Para obtener un ejemplo de la salida, vea. 
 
@@ -64,9 +64,9 @@ Al actualizar cada componente, puede usar cualquiera de los métodos estándar p
     f. Repita el procedimiento para cada host adicional que contenga una puerta de enlace en espera.<p>Si no hay ninguna puerta de enlace en espera, siga estos mismos pasos para todos los hosts restantes.
 
 
-### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>Ejemplo: Usar el cmdlet Get-networkcontrollernode 
+### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>Ejemplo: uso del cmdlet Get-networkcontrollernode 
 
-En este ejemplo, verá que la salida `get-networkcontrollernode` del cmdlet se ejecuta en una de las máquinas virtuales de la controladora de red.  
+En este ejemplo, verá la salida del cmdlet `get-networkcontrollernode` que se ejecuta en una de las máquinas virtuales de la controladora de red.  
 
 El estado de los nodos que se ven en el resultado del ejemplo es:
 
@@ -80,7 +80,7 @@ El estado de los nodos que se ven en el resultado del ejemplo es:
 Una vez que haya actualizado todos los nodos de la controladora de red, la controladora de red actualizará los microservicios que se ejecutan en el clúster de la controladora de red en un plazo de una hora. 
 
 >[!TIP]
->Puede desencadenar una actualización inmediata mediante el `update-networkcontroller` cmdlet.
+>Puede desencadenar una actualización inmediata mediante el cmdlet `update-networkcontroller`.
 
 
 ```Powershell
@@ -107,8 +107,8 @@ NodeCertificate :
 Status          : Up
 ```
 
-### <a name="example-use-the-update-networkcontroller-cmdlet"></a>Ejemplo: Usar el cmdlet Update-networkcontroller
-En este ejemplo, verá la salida del cmdlet para `update-networkcontroller` forzar la actualización de la controladora de red. 
+### <a name="example-use-the-update-networkcontroller-cmdlet"></a>Ejemplo: uso del cmdlet Update-networkcontroller
+En este ejemplo, verá la salida del cmdlet `update-networkcontroller` para forzar la actualización de la controladora de red. 
 
 >[!IMPORTANT]
 >Ejecute este cmdlet cuando no tenga más actualizaciones para instalar.
@@ -138,15 +138,15 @@ Copias de seguridad periódicas de la base de datos de la controladora de red ga
    >[!IMPORTANT]
    >No vuelva a iniciar el servicio SCVMM hasta que se complete la copia de seguridad de la controladora de red.
 
-3. Realice una copia de seguridad de la `new-networkcontrollerbackup` base de datos del controlador de red con el cmdlet.
+3. Realice una copia de seguridad de la base de datos del controlador de red con el cmdlet `new-networkcontrollerbackup`.
 
-4. Compruebe la finalización y el éxito de la copia `get-networkcontrollerbackup` de seguridad con el cmdlet.
+4. Compruebe la finalización y el éxito de la copia de seguridad con el cmdlet `get-networkcontrollerbackup`.
 
 5. Si usa SCVMM, inicie el servicio SCVMM.
 
 
 
-### <a name="example-backing-up-the-network-controller-database"></a>Ejemplo: Copia de seguridad de la base de datos de controladora de red
+### <a name="example-backing-up-the-network-controller-database"></a>Ejemplo: copia de seguridad de la base de datos de la controladora de red
 
 ```Powershell
 $URI = "https://NC.contoso.com"
@@ -177,7 +177,7 @@ $BackupProperties.Credential = $ShareCredential
 $Backup = New-NetworkControllerBackup -ConnectionURI $URI -Credential $Credential -Properties $BackupProperties -ResourceId $BackupTime -Force
 ```
 
-### <a name="example-checking-the-status-of-a-network-controller-backup-operation"></a>Ejemplo: Comprobando el estado de una operación de copia de seguridad de la controladora de red
+### <a name="example-checking-the-status-of-a-network-controller-backup-operation"></a>Ejemplo: comprobar el estado de una operación de copia de seguridad de la controladora de red
 
 ```Powershell
 PS C:\ > Get-NetworkControllerBackup -ConnectionUri $URI -Credential $Credential -ResourceId $Backup.ResourceId
@@ -286,7 +286,7 @@ Cuando se restauran todos los componentes necesarios de la copia de seguridad, e
 
 5. Detenga las máquinas virtuales de SLB Mux.
 
-6. Restaure la controladora de `new-networkcontrollerrestore` red con el cmdlet.
+6. Restaure la controladora de red con el cmdlet `new-networkcontrollerrestore`.
 
 7. Compruebe la **ProvisioningState** de restauración para saber cuándo se completó correctamente la restauración.
 
@@ -309,7 +309,7 @@ Fetching ResourceType:     loadbalancerMuxes
 Fetching ResourceType:     Gateways
 ```
 
-### <a name="example-restoring-a-network-controller-database"></a>Ejemplo: Restaurar una base de datos de controladora de red
+### <a name="example-restoring-a-network-controller-database"></a>Ejemplo: restaurar una base de datos de controladora de red
  
 ```Powershell
 $URI = "https://NC.contoso.com"
@@ -326,7 +326,7 @@ $RestoreTime = (Get-Date).ToString("s").Replace(":", "_")
 New-NetworkControllerRestore -ConnectionURI $URI -Credential $Credential -Properties $RestoreProperties -ResourceId $RestoreTime -Force
 ```
 
-### <a name="example-checking-the-status-of-a-network-controller-database-restore"></a>Ejemplo: Comprobando el estado de una restauración de la base de datos de la controladora de red
+### <a name="example-checking-the-status-of-a-network-controller-database-restore"></a>Ejemplo: comprobar el estado de una restauración de la base de datos de la controladora de red
 
 ```PowerShell
 PS C:\ > get-networkcontrollerrestore -connectionuri $uri -credential $cred -ResourceId $restoreTime | convertto-json -depth 10

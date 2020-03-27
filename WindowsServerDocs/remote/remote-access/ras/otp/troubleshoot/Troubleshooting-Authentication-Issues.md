@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 71307757-f8f4-4f82-b8b3-ffd4fd8c5d6d
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 73fe8458910cbe7dfaf000a6546bcba9263a9683
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 74e332fff194374c6f3a5eeae5e26e8e4f5cfb42
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404307"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313451"
 ---
 # <a name="troubleshooting-authentication-issues"></a>Solucionar problemas relacionados con la autenticación
 
@@ -26,9 +26,9 @@ ms.locfileid: "71404307"
 Este tema contiene información para la solución de problemas relacionados con los problemas que los usuarios pueden tener al intentar conectarse a DirectAccess mediante la autenticación de OTP. Los eventos relacionados con OTP de DirectAccerss se registran en el equipo cliente en Visor de eventos en **registros de aplicaciones y servicios/Microsoft/Windows/OtpCredentialProvider**. Asegúrese de que este registro esté habilitado al solucionar problemas con OTP de DirectAccess.  
   
 ## <a name="failed-to-access-the-ca-that-issues-otp-certificates"></a>No se pudo obtener acceso a la entidad de certificación que emite certificados OTP  
-**Escenario**. El usuario no se puede autenticar con OTP con el error: "Error de autenticación debido a un error interno"  
+**Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"  
   
-**Error recibido** (registro de eventos de cliente). Error en la inscripción del certificado OTP para el usuario <username> en el servidor CA < CA_name >, error en la solicitud, posibles causas del error: No se puede resolver el nombre del servidor de CA, no se puede tener acceso al servidor de CA a través del primer túnel de DirectAccess o no se puede establecer la conexión con el servidor de CA.  
+**Error recibido** (registro de eventos de cliente). No se pudo realizar la inscripción de certificados OTP para el usuario <username> en el servidor de CA < CA_name >, error en la solicitud, posibles causas del error: no se puede resolver el nombre del servidor CA, no se puede tener acceso al servidor CA a través del primer túnel de DirectAccess o no se puede establecer la conexión con el servidor de CA.  
   
 **Causa**  
   
@@ -42,20 +42,20 @@ En el servidor de DirectAccess, ejecute los siguientes comandos de Windows Power
   
 2.  Asegúrese de que las CA estén configuradas como servidores de administración: `Get-DAMgmtServer -Type All`  
   
-3.  Asegúrese de que el equipo cliente ha establecido el túnel de infraestructura: En la consola Firewall de Windows con seguridad avanzada, expanda **supervisión/asociaciones de seguridad**, haga clic en **modo principal**y asegúrese de que las asociaciones de seguridad de IPSec aparecen con las direcciones remotas correctas para su DirectAccess. configuraciones.  
+3.  Asegúrese de que el equipo cliente ha establecido el túnel de infraestructura: en la consola Firewall de Windows con seguridad avanzada, expanda **supervisión/asociaciones de seguridad**, haga clic en **modo principal**y asegúrese de que las asociaciones de seguridad de IPSec aparecen con las direcciones remotas correctas para la configuración de DirectAccess.  
   
 ## <a name="directaccess-server-connectivity-issues"></a>Problemas de Conectividad del servidor de DirectAccess  
-**Escenario**. El usuario no se puede autenticar con OTP con el error: "Error de autenticación debido a un error interno"  
+**Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"  
   
 **Error recibido** (registro de eventos de cliente)  
   
 Uno de los siguientes errores:  
   
--   No se puede establecer una conexión con el servidor de acceso remoto < DirectAccess_server_hostname > mediante la ruta de acceso base < OTP_authentication_path > y el puerto < OTP_authentication_port >. Código de error: < > internal_error_code.  
+-   No se puede establecer una conexión con el servidor de acceso remoto < DirectAccess_server_hostname > mediante la ruta de acceso base < OTP_authentication_path > y el puerto < OTP_authentication_port >. Código de error: > de internal_error_code de <.  
   
--   Las credenciales de usuario no se pueden enviar al servidor de acceso remoto < DirectAccess_server_hostname > mediante la ruta de acceso base < OTP_authentication_path > y el puerto < OTP_authentication_port >. Código de error: < > internal_error_code.  
+-   Las credenciales de usuario no se pueden enviar al servidor de acceso remoto < DirectAccess_server_hostname > mediante la ruta de acceso base < OTP_authentication_path > y el puerto < OTP_authentication_port >. Código de error: > de internal_error_code de <.  
   
--   No se recibió una respuesta desde el servidor de acceso remoto < DirectAccess_server_hostname > mediante la ruta de acceso base < OTP_authentication_path > y el puerto < OTP_authentication_port >. Código de error: < > internal_error_code.  
+-   No se recibió una respuesta del servidor de acceso remoto < DirectAccess_server_hostname > mediante la ruta de acceso base < OTP_authentication_path > y el puerto < OTP_authentication_port >. Código de error: > de internal_error_code de <.  
   
 **Causa**  
   
@@ -66,9 +66,9 @@ El equipo cliente no puede tener acceso al servidor de DirectAccess a través de
 Asegúrese de que la conexión a Internet en el equipo cliente funciona y asegúrese de que el servicio de DirectAccess se está ejecutando y es accesible a través de Internet.  
   
 ## <a name="failed-to-enroll-for-the-directaccess-otp-logon-certificate"></a>No se pudo inscribir el certificado de inicio de sesión OTP de DirectAccess  
-**Escenario**. El usuario no se puede autenticar con OTP con el error: "Error de autenticación debido a un error interno"  
+**Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"  
   
-**Error recibido** (registro de eventos de cliente). Error de inscripción de certificado de CA < CA_name >. La solicitud no se firmó según lo esperado por el certificado de firma de OTP o el usuario no tiene permiso para inscribirse.  
+**Error recibido** (registro de eventos de cliente). No se pudo realizar la inscripción de certificados desde la CA < CA_name >. La solicitud no se firmó según lo esperado por el certificado de firma de OTP o el usuario no tiene permiso para inscribirse.  
   
 **Causa**  
   
@@ -79,7 +79,7 @@ La contraseña de un solo uso que proporciona el usuario era correcta, pero la e
 Asegúrese de que los usuarios OTP de DirectAccess tengan permiso para inscribirse en el certificado de inicio de sesión OTP de DirectAccess y que la "Directiva de aplicación" adecuada esté incluida en la plantilla de firma de autoridad de registro de OTP de DA. Asegúrese también de que el certificado de la entidad de registro de DirectAccess en el servidor de acceso remoto sea válido. Consulte 3,2 planeación de la plantilla de certificado OTP y 3,3 planear el certificado de la entidad de registro.  
   
 ## <a name="missing-or-invalid-computer-account-certificate"></a>Falta el certificado de cuenta de equipo o no es válido  
-**Escenario**. El usuario no se puede autenticar con OTP con el error: "Error de autenticación debido a un error interno"  
+**Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"  
   
 **Error recibido** (registro de eventos de cliente).  No se puede completar la autenticación de OTP porque el certificado de equipo necesario para OTP no se encuentra en el almacén de certificados de la máquina local.  
   
@@ -100,7 +100,7 @@ Asegúrese de que el certificado de equipo existe y es válido:
 Si no se encuentra un certificado válido, elimine el certificado no válido (si existe) y vuelva a inscribirse en el certificado de equipo ejecutando `gpupdate /Force` desde un símbolo del sistema con privilegios elevados o reiniciando el equipo cliente.  
   
 ## <a name="missing-ca-that-issues-otp-certificates"></a>Falta una entidad de certificación que emite certificados OTP  
-**Escenario**. El usuario no se puede autenticar con OTP con el error: "Error de autenticación debido a un error interno"  
+**Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"  
   
 **Error recibido** (registro de eventos de cliente). No se puede completar la autenticación de OTP porque el servidor de DA no devolvió una dirección de una CA emisora.  
   
@@ -114,16 +114,16 @@ No hay ninguna CA que emita certificados OTP configurados o todas las CA configu
   
 2.  Si no hay ninguna CA configurada:  
   
-    1.  Use el comando `Set-DAOtpAuthentication` o la consola de administración de acceso remoto para configurar las CA que emiten el certificado de inicio de sesión OTP de DirectAccess.  
+    1.  Use el `Set-DAOtpAuthentication` de comandos o la consola de administración de acceso remoto para configurar las CA que emiten el certificado de inicio de sesión OTP de DirectAccess.  
   
     2.  Aplique la nueva configuración y fuerce a los clientes a actualizar la configuración de GPO de DirectAccess ejecutando `gpupdate /Force` desde un símbolo del sistema con privilegios elevados o reiniciando el equipo cliente.  
   
 3.  Si hay CA configuradas, asegúrese de que están en línea y responde a las solicitudes de inscripción.  
   
 ## <a name="misconfigured-directaccess-server-address"></a>Dirección de servidor de DirectAccess configurada incorrectamente  
-**Escenario**. El usuario no se puede autenticar con OTP con el error: "Error de autenticación debido a un error interno"  
+**Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"  
   
-**Error recibido** (registro de eventos de cliente). La autenticación de OTP no se puede completar según lo esperado. No se puede determinar el nombre o la dirección del servidor de acceso remoto.  Código de error: < > error_code. El administrador del servidor debe validar la configuración de DirectAccess.  
+**Error recibido** (registro de eventos de cliente). La autenticación de OTP no se puede completar según lo esperado. No se puede determinar el nombre o la dirección del servidor de acceso remoto.  Código de error: > de error_code de <. El administrador del servidor debe validar la configuración de DirectAccess.  
   
 **Causa**  
   
@@ -133,10 +133,10 @@ La dirección del servidor de DirectAccess no está configurada correctamente.
   
 Compruebe la dirección de servidor de DirectAccess configurada mediante `Get-DirectAccess` y corrija la dirección si está mal configurada.  
   
-Asegúrese de que la configuración más reciente está implementada en el equipo cliente; para ello, ejecute `gpupdate /force` desde un símbolo del sistema con privilegios elevados o reinicie el equipo cliente.  
+Asegúrese de que la configuración más reciente está implementada en el equipo cliente. para ello, ejecute `gpupdate /force` desde un símbolo del sistema con privilegios elevados o reinicie el equipo cliente.  
   
 ## <a name="failed-to-generate-the-otp-logon-certificate-request"></a>No se pudo generar la solicitud de certificado de inicio de sesión OTP  
-**Escenario**. El usuario no se puede autenticar con OTP con el error: "Error de autenticación debido a un error interno"  
+**Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"  
   
 **Error recibido** (registro de eventos de cliente). No se puede inicializar la solicitud de certificado para la autenticación de OTP. No se puede generar una clave privada o el usuario <username> no puede tener acceso a la plantilla de certificado < OTP_template_name > en el controlador de dominio.  
   
@@ -155,9 +155,9 @@ Hay dos causas posibles de este error:
 -   Asegúrese de que el controlador de dominio está configurado como un servidor de administración y que el equipo cliente puede tener acceso al controlador de dominio a través del túnel de infraestructura. Consulte 3,2 planeamiento de la plantilla de certificado OTP.  
   
 ## <a name="no-connection-to-the-domain-controller"></a>No hay conexión con el controlador de dominio  
-**Escenario**. El usuario no se puede autenticar con OTP con el error: "Error de autenticación debido a un error interno"  
+**Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"  
   
-**Error recibido** (registro de eventos de cliente). No se puede establecer una conexión con el controlador de dominio para la autenticación de OTP. Código de error: < > error_code.  
+**Error recibido** (registro de eventos de cliente). No se puede establecer una conexión con el controlador de dominio para la autenticación de OTP. Código de error: > de error_code de <.  
   
 **Causa**  
   
@@ -174,7 +174,7 @@ Hay dos causas posibles de este error:
 -   Asegúrese de que el equipo cliente puede tener acceso al controlador de dominio a través del túnel de infraestructura.  
   
 ## <a name="otp-provider-requires-challengeresponse"></a>El proveedor de OTP requiere desafío/respuesta  
-**Escenario**. El usuario no se puede autenticar con OTP con el error: "Error de autenticación debido a un error interno"  
+**Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"  
   
 **Error recibido** (registro de eventos de cliente). La autenticación de OTP con el servidor de acceso remoto (< DirectAccess_server_name >) para el usuario (<username>) requiere un desafío del usuario.  
   
@@ -187,7 +187,7 @@ El proveedor de OTP usado requiere que el usuario proporcione credenciales adici
 Configure el proveedor de OTP para que no requiera desafío/respuesta en ningún escenario.  
   
 ## <a name="incorrect-otp-logon-template-used"></a>Plantilla de inicio de sesión OTP incorrecta usada  
-**Escenario**. El usuario no se puede autenticar con OTP con el error: "Error de autenticación debido a un error interno"  
+**Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"  
   
 **Error recibido** (registro de eventos de cliente). La plantilla de CA desde la que el usuario <username> solicitó un certificado no está configurado para emitir certificados OTP.  
   
@@ -204,7 +204,7 @@ Asegúrese de que el equipo cliente usa la configuración de OTP más reciente; 
 -   Reinicia el equipo cliente.  
   
 ## <a name="missing-otp-signing-certificate"></a>Falta el certificado de firma de OTP  
-**Escenario**. El usuario no se puede autenticar con OTP con el error: "Error de autenticación debido a un error interno"  
+**Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"  
   
 **Error recibido** (registro de eventos de cliente). No se encuentra un certificado de firma de OTP. No se puede firmar la solicitud de inscripción de certificado OTP.  
   
@@ -225,19 +225,19 @@ Siga estos pasos en el servidor de acceso remoto.
 Para crear la plantilla de certificado de firma de OTP, consulte 3,3 planear el certificado de la entidad de registro.  
   
 ## <a name="missing-or-incorrect-upndn-for-the-user"></a>Falta un UPN o un DN incorrecto para el usuario  
-**Escenario**. El usuario no se puede autenticar con OTP con el error: "Error de autenticación debido a un error interno"  
+**Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"  
   
 **Error recibido** (registro de eventos de cliente)  
   
 Uno de los siguientes errores:  
   
--   El usuario <username> no se puede autenticar con OTP. Asegúrese de que se ha definido un UPN para el nombre de usuario en Active Directory. Código de error: < > error_code.  
+-   La <username> de usuario no se puede autenticar con OTP. Asegúrese de que se ha definido un UPN para el nombre de usuario en Active Directory. Código de error: > de error_code de <.  
   
--   El usuario <username> no se puede autenticar con OTP. Asegúrese de que se ha definido un DN para el nombre de usuario en Active Directory. Código de error: < > error_code.  
+-   La <username> de usuario no se puede autenticar con OTP. Asegúrese de que se ha definido un DN para el nombre de usuario en Active Directory. Código de error: > de error_code de <.  
   
 **Error recibido** (registro de eventos de servidor)  
   
-El nombre de usuario <username> especificado para la autenticación OTP no existe.  
+No existe el nombre de usuario <username> especificado para la autenticación de OTP.  
   
 **Causa**  
   
@@ -248,7 +248,7 @@ El usuario no tiene los atributos nombre principal de usuario (UPN) o nombre dis
 Use la consola de usuarios y equipos de Active Directory en el controlador de dominio para comprobar que ambos atributos están establecidos correctamente para el usuario que realiza la autenticación.  
   
 ## <a name="otp-certificate-is-not-trusted-for-login"></a>El certificado OTP no es de confianza para el inicio de sesión  
-**Escenario**. El usuario no se puede autenticar con OTP con el error: "Error de autenticación debido a un error interno"  
+**Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"  
   
 **Causa**  
   
@@ -259,7 +259,7 @@ La CA que emite certificados OTP no está en el almacén Enterprise NTAuth. por 
 Asegúrese de que el certificado de la raíz de la jerarquía de CA que emite certificados OTP está instalado en el almacén de certificados Enterprise NTAuth del dominio en el que el usuario está intentando autenticarse.  
   
 ## <a name="windows-could-not-verify-user-credentials"></a>Windows no pudo comprobar las credenciales de usuario  
-**Escenario**. El usuario no se puede autenticar con OTP con el error: "Error de autenticación debido a un error interno"  
+**Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"  
   
 **Error recibido** (equipo cliente). Se produjo un error mientras Windows estaba comprobando sus credenciales. Vuelva a intentarlo o pida ayuda al administrador.  
   

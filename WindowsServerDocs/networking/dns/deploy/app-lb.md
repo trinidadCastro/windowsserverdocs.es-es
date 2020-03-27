@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 356c61c2cc5b60f43a69f17966c97f3c69d05cda
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 86ce83142cafe8ebe61aff2fb193e9b646172651
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356038"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317886"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>Uso de la directiva de DNS para el equilibrio de carga de aplicación
 
@@ -79,7 +79,7 @@ Puede usar los siguientes comandos de Windows PowerShell para crear ámbitos de 
 
 Para obtener más información, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-#### <a name="bkmk_records"></a>Agregar registros a los ámbitos de zona
+#### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Agregar registros a los ámbitos de zona
 
 Ahora debe agregar los registros que representan el host del servidor Web en los ámbitos de zona.
 
@@ -100,7 +100,7 @@ Puede usar los siguientes comandos de Windows PowerShell para agregar registros 
 
 Para obtener más información, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
-#### <a name="bkmk_policies"></a>Crear las directivas de DNS
+#### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>Crear las directivas de DNS
 
 Después de haber creado las particiones (ámbitos de zona) y de haber agregado registros, debe crear directivas DNS que distribuyan las consultas entrantes en estos ámbitos para que el 50% de las consultas de contosogiftservices.com se respondan con la dirección IP para la Web. el servidor en el centro de recursos de Seattle y el resto se distribuyen equitativamente entre los centros de recursos de Chicago y Dallas.
 

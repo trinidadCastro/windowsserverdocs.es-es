@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: da74fea7-52b2-4d6d-9d21-19184eedbe3c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: bae0d3dff22205f3311020e233a26835527186f5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 660a4979aa5e29a6dd22cb2e0e6659966d077a8e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406498"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319337"
 ---
 # <a name="configure-the-branchcache-hash-publication-group-policy-object"></a>Configurar el objeto de directiva de grupo Publicación de hash para BranchCache
 
@@ -34,11 +34,11 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
   
 3.  En **Agregar o quitar complementos**, en **Complementos disponibles**, haga doble clic en **Administración de directivas de grupo** y, a continuación, haga clic en **Aceptar**.  
   
-4.  En MMC de Administración de directivas de grupo, expanda la ruta de acceso al objeto de directiva de grupo Publicación de hash para BranchCache que creó previamente. Por ejemplo, si el nombre de su bosque es ejemplo.com, el de su dominio es ejemplo1.com y el de su objeto de directiva de grupo es **Publicación de hash para BranchCache**, expanda la siguiente ruta de acceso: **Administración de directiva de grupo**, **bosque: example.com**, **dominios**, **Example1.com**, **objetos Directiva de grupo**, **publicación de hash de BranchCache**.  
+4.  En MMC de Administración de directivas de grupo, expanda la ruta de acceso al objeto de directiva de grupo Publicación de hash para BranchCache que creó previamente. Por ejemplo, si el bosque se denomina example.com, el dominio se denomina example1.com y el GPO se llama **publicación de hash de BranchCache**, expanda la ruta de acceso siguiente: **Directiva de grupo Management**, **Forest: example.com**, **Domains**, **example1.com**, **Directiva de grupo Objects**, **BranchCache hash Publication**.  
   
 5.  Haga clic con el botón secundario en el objeto de directiva de grupo **Publicación de hash para BranchCache** y haga clic en **Editar**. Se abre la consola de Editor de administración de directivas de grupo.  
   
-6.  En la consola de Editor de administración de directivas de grupo, expanda la siguiente ruta de acceso: **Configuración del equipo**, **Directivas**, **Plantillas administrativas**, **Red**, **Servidor Lanman**.  
+6.  En la consola de Editor de administración de directivas de grupo, expanda la siguiente ruta de acceso: **configuración del equipo**, **directivas**, **plantillas administrativas**, **red**, **servidor LanMan**.  
   
 7.  En la consola de Editor de administración de directivas de grupo, haga clic en **Servidor Lanman**. En el panel de detalles, haga doble clic en **Publicación de hash para BranchCache**. Se abre el cuadro de diálogo **Publicación de hash para BranchCache**.  
   

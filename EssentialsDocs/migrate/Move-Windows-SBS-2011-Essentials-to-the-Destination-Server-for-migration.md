@@ -3,7 +3,7 @@ title: Mover la configuración y los datos de Windows SBS 2011 Essentials al ser
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 47548994-9fa0-42e0-afa4-c2ccbd063acb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 506975db4238abca6ba2d07845281e936e82a76e
-ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
+ms.openlocfilehash: 78047680840d5d63f7f8dd884107e9c30658fdbe
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828569"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318862"
 ---
 # <a name="move-windows-sbs-2011-essentials-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover la configuración y los datos de Windows SBS 2011 Essentials al servidor de destino para la migración a Windows Server Essentials
 
@@ -28,13 +28,13 @@ Para mover la configuración y los datos al servidor de destino, haga lo siguien
 
 1.  [Copiar datos en el servidor de destino](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_CopyData)  
   
-2.  [Importar cuentas de usuario de Active Directory al panel de Windows Server Essentials (opcional)](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_ImportADaccounts)  
+2.  [Importar Active Directory cuentas de usuario en el panel de Windows Server Essentials (opcional)](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_ImportADaccounts)  
   
 3.  [Configurar la red](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_Network)  
   
-4.  [Asignar los equipos permitidos a cuentas de usuario](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_MapPermittedComputers)  
+4.  [Asignar equipos permitidos a cuentas de usuario](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_MapPermittedComputers)  
  
-##  <a name="BKMK_CopyData"></a> Copiar datos en el servidor de destino  
+##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a>Copiar datos en el servidor de destino  
  Antes de copiar los datos del servidor de origen en el servidor de destino, realice las siguientes tareas:  
   
 -   Revise la lista de carpetas compartidas en el servidor de origen, incluidos los permisos para cada carpeta. Cree o personalice las carpetas en el servidor de destino para que coincidan con la estructura de carpetas que va a migrar desde el servidor de origen.  
@@ -54,15 +54,15 @@ Para mover la configuración y los datos al servidor de destino, haga lo siguien
      Donde:
      - \<Nombreservidororigen\> es el nombre del servidor de origen
      - \<Nombredecarpetadeorigencompartida\> es el nombre de la carpeta compartida en el servidor de origen
-     - \<NombreDeServidorDeDestino\> es el nombre del servidor de destino,
-     - \<Nombredecarpetadedestinocompartida\> es la carpeta compartida del servidor de destino al que se copiarán los datos.  
+     - \<Nombreservidordestino\> es el nombre del servidor de destino.
+     - \<Nombredecarpetadedestinocompartida\> es la carpeta compartida en el servidor de destino en la que se copiarán los datos.  
         
 3.  Repita el paso anterior para cada carpeta compartida que vaya a migrar desde el servidor de origen.  
   
-##  <a name="BKMK_ImportADaccounts"></a> Importar cuentas de usuario de Active Directory al panel de Windows Server Essentials (opcional)  
+##  <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard-optional"></a><a name="BKMK_ImportADaccounts"></a>Importar Active Directory cuentas de usuario en el panel de Windows Server Essentials (opcional)  
  De forma predeterminada, todas las cuentas de usuario creadas en el servidor de origen se migran automáticamente al panel en Windows Server Essentials. Sin embargo, si las propiedades no cumplen los requisitos de migración, se producirá un error en la migración automática de una cuenta de usuario de Active Directory. Puede usar el siguiente cmdlet de Windows PowerShell para importar usuarios de Active Directory.  
   
-#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Para importar una cuenta de usuario de Active Directory en el panel de Windows Server Essentials  
+#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Para importar una cuenta de usuario Active Directory en el panel de Windows Server Essentials  
   
 1.  Inicie sesión en el servidor de destino como administrador del dominio.  
   
@@ -72,7 +72,7 @@ Para mover la configuración y los datos al servidor de destino, haga lo siguien
   
      `Import-WssUser  SamAccountName [AD username]`  
   
-##  <a name="BKMK_Network"></a> Configurar la red  
+##  <a name="configure-the-network"></a><a name="BKMK_Network"></a>Configurar la red  
   
 #### <a name="to-configure-the-network"></a>Para configurar la red  
   
@@ -84,11 +84,11 @@ Para mover la configuración y los datos al servidor de destino, haga lo siguien
   
    Si el enrutador no es compatible con el entorno UPnP, o si este se ha deshabilitado, puede aparecer un icono de advertencia amarillo junto al nombre del enrutador. Asegúrese de que los puertos siguientes están abiertos y dirigidos a la dirección IP del servidor de destino:  
   
--   Puerto 80: Tráfico web HTTP  
+-   Puerto 80: tráfico web HTTP  
   
--   Puerto 443: Tráfico web HTTPS  
+-   Puerto 443: tráfico web HTTPS  
   
-##  <a name="BKMK_MapPermittedComputers"></a> Asignar los equipos permitidos a cuentas de usuario  
+##  <a name="map-permitted-computers-to-user-accounts"></a><a name="BKMK_MapPermittedComputers"></a>Asignar equipos permitidos a cuentas de usuario  
  Todas las cuentas de usuario que se migren desde Windows Small Business Server 2011 Essentials deben asignarse a uno o más equipos.  
   
 #### <a name="to-map-user-accounts-to-computers"></a>Para asignar las cuentas de usuario a equipos:  

@@ -8,14 +8,14 @@ ms.assetid: 61ae242e-82a8-430d-b07d-52b86c01e686
 ms.localizationpriority: medium
 manager: dougkim
 ms.date: 09/05/2018
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5c7feb696c6ee9014032229543a4f43fb5884527
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0ee9bf121d64eebe98798df907a2584747a00c7a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395849"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315367"
 ---
 # <a name="vrss-frequently-asked-questions"></a>Preguntas más frecuentes sobre vRSS
 
@@ -23,23 +23,23 @@ En este tema, encontrará algunas preguntas y respuestas frecuentes sobre el uso
 
 ## <a name="what-are-the-requirements-for-the-physical-network-adapters-that-i-use-with-vrss"></a>¿Cuáles son los requisitos para los adaptadores de red físicos que utilizo con vRSS?
 
-Los adaptadores de red deben ser compatibles con \(Virtual Machine Queue\) VMQ y deben tener una velocidad de vínculo de 10 Gbps o más.
+Los adaptadores de red deben ser compatibles con Virtual Machine Queue \(VMQ\) y deben tener una velocidad de vínculo de 10 Gbps o más.
 
 Para obtener más información, consulte [planear el uso de vRSS](vrss-plan.md).
 
-## <a name="does-vrss-work-with-hyper-threaded-processor-cores"></a>¿Funciona vRSS con núcleos de procesador Hyper\--Threading?
+## <a name="does-vrss-work-with-hyper-threaded-processor-cores"></a>¿Funciona vRSS con núcleos de procesador de subprocesos de Hyper\-?
 
-No. VRSS y VMQ omiten los\-núcleos de procesador de Hyper-Threading.
+No. VRSS y VMQ omiten los núcleos de procesador de subprocesos de Hyper\-.
 
-## <a name="does-vrss-work-for-host-virtual-nics-vnics"></a>¿Funciona vRSS para NIC \(virtuales de host VNIC?\)
+## <a name="does-vrss-work-for-host-virtual-nics-vnics"></a>¿Funciona vRSS para NIC virtuales de host \(VNIC\)?
 
-Sí. Use el parámetro **-managementos** en lugar del nombre de VM \(\) de la máquina virtual en el comando **set-VMNetworkAdapter** de Windows PowerShell y **enable-NetAdapterRss** en el host VNIC.
+Sí. Use el parámetro **-managementos** en lugar del nombre de la máquina virtual \(VM\) en el comando **set-VMNetworkAdapter** de Windows PowerShell y **enable-NetAdapterRss** en el host VNIC.
 
 Para obtener más información, vea [comandos de Windows PowerShell para RSS y vRSS](vrss-wps.md).
 
 ## <a name="how-many-logical-processors-does-a-vm-need-to-use-vrss"></a>¿Cuántos procesadores lógicos necesita una máquina virtual para usar vRSS?
 
-Las máquinas virtuales necesitan dos o más \(procesadores\) lógicos LPS para poder usar vRSS.
+Las máquinas virtuales necesitan dos o más procesadores lógicos \(LPs\) para poder usar vRSS.
 
 Para obtener más información, consulte [planear el uso de vRSS](vrss-plan.md).
 
@@ -57,7 +57,7 @@ Si la máquina virtual está recibiendo varias sesiones TCP, pero no ve más de 
 
 ## <a name="im-looking-at-the-host-and-not-all-of-the-processors-are-being-used-it-looks-like-every-other-one-is-being-skipped"></a>Estoy observando el host y no se usan todos los procesadores. Parece como si se omitiera uno de cada dos.
   
-Compruebe si Hyper-Threading está habilitado. VMQ y vRSS están diseñados para omitir núcleos de Hyper\--Threading.
+Compruebe si Hyper-Threading está habilitado. VMQ y vRSS están diseñados para omitir núcleos de subprocesos de Hyper\-.
 
 ## <a name="are-there-different-windows-powershell-commands-for-rss-and-vrss"></a>¿Existen distintos comandos de Windows PowerShell para RSS y vRSS?
 

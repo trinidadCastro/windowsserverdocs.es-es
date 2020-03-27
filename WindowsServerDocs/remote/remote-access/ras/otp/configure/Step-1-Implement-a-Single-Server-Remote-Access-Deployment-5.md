@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c0f4d665-d44e-4348-a89f-5f9191bd96fd
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7d67af8419ce9533243f9d2eac230825bacb28b2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d2c326c3783fee589e5551351a8b93d413c4120c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404404"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313655"
 ---
 # <a name="step-1-implement-a-single-server-remote-access-deployment"></a>Paso 1 implementar una implementación de acceso remoto de un solo servidor
 
@@ -28,7 +28,7 @@ El primer paso de configuración para implementar el acceso remoto con OTP es im
 ## <a name="implement-a-single-server-deployment"></a>Implementar una implementación de un solo servidor  
 Para poder configurar el acceso remoto con OTP, debe configurar una implementación avanzada de acceso remoto de un solo servidor, como se describe en [implementar un único servidor de DirectAccess con configuración avanzada](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings).  
   
-## <a name="BKMK_Links"></a>Vea también  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también  
   
 -   [Paso 2: configurar el servidor RADIUS](Step-2-Configure-the-RADIUS-Server.md)  
   

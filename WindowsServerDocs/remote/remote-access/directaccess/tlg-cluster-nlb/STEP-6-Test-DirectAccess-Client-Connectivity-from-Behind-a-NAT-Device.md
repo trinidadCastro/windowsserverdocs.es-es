@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aded2881-99ed-4f18-868b-b765ab926597
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 472c1dc6c5531a7c8d41e40bc926bb3e25f73448
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 82e9720bc09593ea7b8d7af4b2102ac3e3ba3e3d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367598"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314702"
 ---
 # <a name="step-6-test-directaccess-client-connectivity-from-behind-a-nat-device"></a>Paso 6 probar la Conectividad del cliente de DirectAccess desde detrás de un dispositivo NAT
 
@@ -50,7 +50,7 @@ Inicia EDGE1 y EDGE2 si todavía no se están ejecutando.
   
 2. Examina el resultado del comando ipconfig.  
   
-   CLIENT1 está ahora conectado a Internet desde detrás de un dispositivo NAT y se le ha asignado una dirección IPv4 privada. Cuando el cliente de DirectAccess está detrás de un dispositivo NAT y se le asigna una dirección IPv4 privada, la tecnología de transición IPv6 preferida es Teredo. Si observa el resultado del comando ipconfig, debería ver una sección para la Pseudointerfaz de tunelización Teredo del adaptador de túnel y, a continuación, una descripción del adaptador de túnel Teredo de Microsoft, con una dirección IP que empieza por 2001: coherente con un Teredo. Dirección. Si no ve la sección Teredo, habilite Teredo con el siguiente comando: **netsh interface Teredo set state enterpriseclient** y vuelva a ejecutar el comando ipconfig. No verás ninguna puerta de enlace predeterminada para el adaptador de túnel Teredo.  
+   CLIENT1 está ahora conectado a Internet desde detrás de un dispositivo NAT y se le ha asignado una dirección IPv4 privada. Cuando el cliente de DirectAccess está detrás de un dispositivo NAT y se le asigna una dirección IPv4 privada, la tecnología de transición IPv6 preferida es Teredo. Si observas el resultado del comando ipconfig, deberías ver una sección para la pseudointerfaz de túnel Teredo para el adaptador de túnel seguida de la descripción Adaptador de túnel Teredo de Microsoft, con una dirección IP que empieza por 2001, lo que es coherente con una dirección Teredo. Si no ve la sección Teredo, habilite Teredo con el siguiente comando: **netsh interface Teredo set state enterpriseclient** y vuelva a ejecutar el comando ipconfig. No verás ninguna puerta de enlace predeterminada para el adaptador de túnel Teredo.  
   
 3. En la ventana de Windows PowerShell, escriba **ipconfig/flushdns** y presione Entrar.  
   
@@ -70,15 +70,15 @@ Inicia EDGE1 y EDGE2 si todavía no se están ejecutando.
   
 9. En la barra de direcciones de Internet Explorer, escriba **https://app2/** y presione Entrar. Verás el sitio web predeterminado en APP2.  
   
-10. En la pantalla **Inicio** , escriba<strong>\\ \ App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.  
+10. En la pantalla **Inicio** , escriba<strong>\\\App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.  
   
 ## <a name="test-ip-https-connectivity"></a>Probar la conectividad IP-HTTPS  
   
-1. Abra una ventana de Windows PowerShell con privilegios elevados, escriba **netsh interface Teredo Set state disabled** y presione Entrar. Esto deshabilita Teredo en el equipo cliente y permite que el equipo cliente se configure a sí mismo para usar IP-HTTPS. Cuando se completa el comando, aparece la respuesta **Aceptar** .  
+1. Abra una ventana de Windows PowerShell con privilegios elevados, escriba **netsh interface Teredo Set state disabled** y presione Entrar. Esto deshabilita Teredo en el equipo cliente y permite que el equipo cliente se configure a sí mismo para usar IP-HTTPS. Cuando se completa el comando, aparece la respuesta **Aceptar**.  
   
 2. En la ventana de Windows PowerShell, escriba **ipconfig/all** y presione Entrar.  
   
-3. Examina el resultado del comando ipconfig. El equipo está ahora conectado a Internet desde detrás de un dispositivo NAT y se le ha asignado una dirección IPv4 privada. Teredo está deshabilitado y el cliente de DirectAccess vuelve a IP-HTTPS. Cuando examine la salida del comando ipconfig, verá una sección para el adaptador de túnel iphttpsinterface con una dirección IP que empieza por 2001: db8:1: 100 coherente, siendo una dirección IP-HTTPS basada en el prefijo que se configuró al configurar DirectAccess. No verás ninguna puerta de enlace predeterminada para el adaptador de túnel IP-HTTPS.  
+3. Examina el resultado del comando ipconfig. El equipo está ahora conectado a Internet desde detrás de un dispositivo NAT y se le ha asignado una dirección IPv4 privada. Teredo está deshabilitado y el cliente de DirectAccess vuelve a IP-HTTPS. Si observas el resultado del comando ipconfig, verás una sección para el adaptador de túnel iphttpsinterface con una dirección IP que empieza por 2001:db8:1:100, lo que es coherente con una dirección IP-HTTPS basada en el prefijo que se estableció al configurar DirectAccess. No verás ninguna puerta de enlace predeterminada para el adaptador de túnel IP-HTTPS.  
   
 4. En la ventana de Windows PowerShell, escriba **ipconfig/flushdns** y presione Entrar. De este modo, se vaciarán las entradas de resolución de nombres que todavía existan en la caché de DNS de cliente desde el momento en que el equipo cliente se conectó a corpnet.  
   
@@ -90,4 +90,4 @@ Inicia EDGE1 y EDGE2 si todavía no se están ejecutando.
   
 8. En la barra de direcciones de Internet Explorer, escriba **https://app2/** y presione Entrar. Verás el sitio web predeterminado en APP2.  
   
-9. En la pantalla **Inicio** , escriba<strong>\\ \ App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.
+9. En la pantalla **Inicio** , escriba<strong>\\\App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.

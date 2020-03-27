@@ -7,14 +7,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 3a6e4352-ff62-4290-b8a4-5c83740070fc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8b656bbd823a10f1e36d1757bb53c4565d4e828c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b8a3e1ede1cdec1ca5ee66be8d53d4420bec673b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405839"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317134"
 ---
 # <a name="install-the-network-controller-server-role-using-server-manager"></a>Instale el rol de servidor de la controladora de red mediante Administrador del servidor
 
@@ -29,7 +29,7 @@ Después de instalar el controlador de red, debe usar comandos de Windows PowerS
   
 ### <a name="to-install-network-controller"></a>Para instalar el controlador de red  
   
-1.  En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**. Se abre el Asistente para agregar roles y características. Haz clic en **Siguiente**.  
+1.  En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**. Se abre el Asistente para agregar roles y características. Haga clic en **Siguiente**.  
   
 2.  En **Seleccionar tipo de instalación**, mantenga la configuración predeterminada y haga clic en **siguiente**.  
   
@@ -45,13 +45,13 @@ Después de instalar el controlador de red, debe usar comandos de Windows PowerS
   
 6.  En **Seleccionar roles de servidor**, haga clic en **siguiente**.  
   
-    ![Haga clic en siguiente](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_07.jpg)  
+    ![Haga clic en Siguiente.](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_07.jpg)  
   
 7.  En **seleccionar características**, haga clic en **siguiente**.  
   
 8.  En **controlador de red** , haga clic en **siguiente**.  
   
-9. En **confirmar selecciones de instalación**, revise las opciones. La instalación de la controladora de red requiere que reinicie el equipo después de que se ejecute el asistente. Debido a esto, haga clic en **reiniciar el servidor de destino automáticamente si es necesario**. Se abre el cuadro de diálogo **Asistente para agregar roles y características** . Haz clic en **Sí**.  
+9. En **confirmar selecciones de instalación**, revise las opciones. La instalación de la controladora de red requiere que reinicie el equipo después de que se ejecute el asistente. Debido a esto, haga clic en **reiniciar el servidor de destino automáticamente si es necesario**. Se abre el cuadro de diálogo **Asistente para agregar roles y características** . Haga clic en **Sí**.  
   
     ![Asistente para agregar roles y características](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_11.jpg)  
   

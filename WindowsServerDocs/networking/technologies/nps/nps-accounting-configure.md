@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: dfde2e21-f3d5-41e8-8492-cb3f0d028afb
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 05/25/2018
-ms.openlocfilehash: 0c154d4d4534f4c343107eecd158974b92903e39
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 26edf4d1ae4a30ccd9219392c7c4ee3604dcdad9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405563"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316363"
 ---
 # <a name="configure-network-policy-server-accounting"></a>Configurar las cuentas de servidor de directivas de redes
 
@@ -22,9 +22,9 @@ Hay tres tipos de registro para el servidor de directivas de redes \(\)NPS:
 
 - **Registro de eventos**. Se usa principalmente para la auditoría y la solución de problemas de intentos de conexión. Puede configurar el registro de eventos de NPS mediante la obtención de las propiedades de NPS en la consola de NPS.
 
-- **Registro de solicitudes de autenticación y cuentas de usuario en un archivo local**. Se usa principalmente para el análisis de la conexión y la facturación. También es útil como herramienta de investigación de seguridad, ya que proporciona un método para realizar el seguimiento de la actividad de un usuario malintencionado después de un ataque. Puede configurar el registro de archivos local mediante el Asistente para configuración de cuentas.
+- **Registro de solicitudes de autenticación y cuentas de usuario en un archivo local**. Se usa principalmente para realizar el análisis de las conexiones y para la facturación. Además, resulta útil como herramienta de investigación de seguridad, ya que le proporciona un método para realizar un seguimiento de la actividad de un usuario malintencionado después de un ataque. Puede configurar el registro de archivos local mediante el Asistente para configuración de cuentas.
 
-- **Registro de solicitudes de autenticación y cuentas de usuario en una base de datos compatible con XML Microsoft SQL Server**. Se usa para permitir que varios servidores que ejecutan NPS tengan un origen de datos. También proporciona las ventajas de usar una base de datos relacional. Puede configurar el registro de SQL Server mediante el Asistente para configuración de cuentas.
+- **Registro de solicitudes de autenticación y cuentas de usuario en una base de datos compatible con XML Microsoft SQL Server**. Se usa para permitir que varios servidores que ejecuten NPS tengan un origen de datos. Además, ofrece las ventajas de usar una base de datos relacional. Puede configurar el registro de SQL Server mediante el Asistente para configuración de cuentas.
 
 ## <a name="use-the-accounting-configuration-wizard"></a>Usar el Asistente para configuración de cuentas
 
@@ -51,17 +51,17 @@ Puede configurar el servidor de directivas de redes (NPS) para realizar cuentas 
 
 Para obtener más información sobre cómo interpretar los archivos de registro, vea [interpretar los archivos de registro de formato de base de datos NPS](https://technet.microsoft.com/library/cc771748.aspx).
 
-Para evitar que los archivos de registro llenen la unidad de disco duro, se recomienda mantenerlos en una partición independiente de la partición del sistema. A continuación se proporciona más información sobre la configuración de cuentas para NPS:
+Para evitar que los archivos de registro llenen el disco duro, se recomienda mantenerlos en una partición diferente de la del sistema. A continuación se proporciona más información sobre la configuración de cuentas para NPS:
 
-- Para enviar los datos del archivo de registro para la recopilación por otro proceso, puede configurar NPS para que escriba en una canalización con nombre. Para usar canalizaciones con nombre, establezca la carpeta de archivos de registro en \\.\pipe o \\ComputerName\pipe. El programa de servidor de canalización con nombre crea una canalización con nombre denominada \\.\pipe\iaslog.log para aceptar los datos. En el cuadro de diálogo Propiedades del archivo local, en crear un nuevo archivo de registro, seleccione nunca (tamaño de archivo ilimitado) al usar canalizaciones con nombre.
+- Para enviar los datos del archivo de registro para que sean recopilados por otro proceso, puede configurar NPS para que escriba en una canalización con nombre. Para usar canalizaciones con nombre, establezca la carpeta de archivos de registro en \\.\pipe o \\ComputerName\pipe. El programa de servidor de canalización con nombre crea una canalización con nombre denominada \\.\pipe\iaslog.log para aceptar los datos. En el cuadro de diálogo de propiedades de Archivo local, en Crear un nuevo archivo de registro, seleccione Nunca (tamaño de archivo ilimitado) al utilizar canalizaciones con nombre.
 
-- El directorio del archivo de registro se puede crear mediante variables de entorno del sistema (en lugar de variables de usuario), como% SystemDrive%,% SystemRoot% y% WINDIR%. Por ejemplo, la siguiente ruta de acceso, con la variable de entorno% WINDIR%, busca el archivo de registro en el directorio del sistema en la subcarpeta \System32\Logs (es decir,%windir%\System32\Logs\).
+- El directorio de archivo de registro se puede crear mediante variables de entorno del sistema (en lugar de variables de usuario), como %unidadDelSistema%, %raízDelSistema% y %windir%. Por ejemplo, la siguiente ruta de acceso, con la variable de entorno% WINDIR%, busca el archivo de registro en el directorio del sistema en la subcarpeta \System32\Logs (es decir,%windir%\System32\Logs\).
 
-- Cambiar los formatos de archivo de registro no hace que se cree un nuevo registro. Si cambia los formatos de archivo de registro, el archivo que está activo en el momento del cambio contendrá una mezcla de los dos formatos (los registros al principio del registro tendrán el formato anterior y los registros al final del registro tendrán el formato nuevo).
+- El cambio de los formatos de archivo de registro no hace que se cree otro registro. Si cambia los formatos de archivo de registro, el archivo que está activo en el momento del cambio contendrá una mezcla de ambos formatos (los registros al principio del registro tendrán el formato anterior, mientras que los que están en el final del registro tendrán el formato nuevo).
 
-- Si se produce un error en la contabilidad RADIUS debido a una unidad de disco duro completa u otras causas, NPS detiene el procesamiento de solicitudes de conexión, evitando que los usuarios tengan acceso a los recursos de red.
+- Si la cuenta RADIUS presenta un error debido a que el disco duro está lleno o por otros motivos, NPS deja de procesar las solicitudes de conexión, con lo que impide que los usuarios tengan acceso a los recursos de red.
 
-- NPS ofrece la posibilidad de iniciar sesión en una base de datos de™ de Microsoft® SQL Server, además de registrarse en un archivo local, o en lugar de hacerlo.
+- NPS proporciona la capacidad de registro en una base de datos de Microsoft® SQL Server™ además de, o en lugar de, registro en un archivo local.
 
 El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Admins** . del dominio.
 
@@ -74,13 +74,13 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 4. En **propiedades del archivo de registro**, en la pestaña **configuración** , en **registrar la información siguiente**, asegúrese de que elige registrar suficiente información para lograr los objetivos de contabilidad. Por ejemplo, si los registros necesitan realizar la correlación de la sesión, active todas las casillas.
 5. En **acción de registro de errores**, seleccione **si se produce un error en el registro, descartar solicitudes de conexión** si desea que NPS detenga el procesamiento de mensajes de solicitud de acceso cuando los archivos de registro estén llenos o no estén disponibles por algún motivo. Si desea que NPS siga procesando solicitudes de conexión si se produce un error en el registro, no active esta casilla.
 6. En el cuadro de diálogo **propiedades del archivo de registro** , haga clic en la pestaña archivo de **registro** .
-7. En la pestaña **archivo de registro** , en **directorio**, escriba la ubicación donde desea almacenar los archivos de registro de NPS. La ubicación predeterminada es la carpeta systemroot\System32\LogFiles.<br>Si no proporciona una instrucción de ruta de acceso completa en el **directorio del archivo de registro**, se usa la ruta de acceso predeterminada. Por ejemplo, si escribe **archivoderegistronps** en el **directorio del archivo de registro**, el archivo se encuentra en%systemroot%\System32\NPSLogFile.
+7. En la pestaña **archivo de registro** , en **directorio**, escriba la ubicación donde desea almacenar los archivos de registro de NPS. La ubicación predeterminada es la carpeta raízDelSistema\System32\archivosDeRegistro.<br>Si no proporciona una instrucción de ruta de acceso completa en el **directorio del archivo de registro**, se usa la ruta de acceso predeterminada. Por ejemplo, si escribe **archivoderegistronps** en el **directorio del archivo de registro**, el archivo se encuentra en%systemroot%\System32\NPSLogFile.
 8. En **formato**, haga clic en **compatible con DTS**. Si lo prefiere, puede seleccionar un formato de archivo heredado, como **ODBC \(heredado\)** o **IAS \(\)heredado** .<br>Los tipos de archivos heredados de **ODBC** e **IAS** contienen un subconjunto de la información que NPS envía a su base de datos de SQL Server. El formato XML del tipo de archivo **compatible con DTS** es idéntico al formato XML que usa NPS para importar datos en su SQL Server base de datos. Por lo tanto, el formato de archivo **compatible con DTS** proporciona una transferencia más eficaz y completa de los datos en la base de datos de SQL Server estándar para NPS.
 9. En **crear un nuevo archivo de registro**, para configurar NPS para que inicie nuevos archivos de registro a intervalos especificados, haga clic en el intervalo que desea usar:
     - Para una actividad de registro y volumen de transacciones pesadas, haga clic en **diariamente**.
     - En el caso de los volúmenes de transacciones menores y la actividad de registro, haga clic en **semanal** o **mensualmente**.
     - Para almacenar todas las transacciones en un archivo de registro, haga clic en **nunca \(tamaño de archivo ilimitado\)** .
-    - Para limitar el tamaño de cada archivo de registro, haga clic en **cuando el archivo de registro alcance este tamaño**y, a continuación, escriba un tamaño de archivo después del cual se crea un nuevo registro. El tamaño predeterminado es 10 megabytes (MB).
+    - Para limitar el tamaño de cada archivo de registro, haga clic en **cuando el archivo de registro alcance este tamaño**y, a continuación, escriba un tamaño de archivo después del cual se crea un nuevo registro. El tamaño predeterminado es 10 megabytes (MB).
 10. Si desea que NPS elimine los archivos de registro antiguos con el fin de crear espacio en disco para los nuevos archivos de registro cuando el disco duro esté cerca de la capacidad, asegúrese de que esté seleccionado el **disco eliminar archivos de registro más antiguos** . Sin embargo, esta opción no está disponible si el valor de **crear un nuevo archivo** de registro **nunca es \(tamaño de archivo ilimitado\)** . Además, si el archivo de registro más antiguo es el archivo de registro actual, no se elimina.
 
 ## <a name="configure-nps-sql-server-logging"></a>Configuración del registro de SQL Server de NPS
@@ -90,7 +90,7 @@ Puede usar este procedimiento para registrar datos de cuentas RADIUS en una base
 >[!NOTE]
 >NPS da formato a los datos de cuentas como un documento XML que envía al **report_event** procedimiento almacenado en la base de datos SQL Server que se designa en NPS. Para que el registro de SQL Server funcione correctamente, debe tener un procedimiento almacenado denominado **report_event** en la base de datos SQL Server que pueda recibir y analizar los documentos XML de NPS.
 
-La pertenencia al grupo Admins. del dominio, o equivalente, es lo mínimo necesario para completar este procedimiento.
+El requisito mínimo necesario para completar este procedimiento es ser miembro del grupo Administradores del equipo u otro equivalente.
 
 ### <a name="to-configure-sql-server-logging-in-nps"></a>Para configurar el registro de SQL Server en NPS
 
@@ -113,16 +113,16 @@ La pertenencia al grupo Admins. del dominio, o equivalente, es lo mínimo necesa
 8. En **acción de registro de errores**, seleccione **Habilitar el registro de archivos de texto para conmutación por error** si desea que NPS continúe con el registro de archivos de texto si se produce un error en el registro de SQL Server. 
 9. En **acción de registro de errores**, seleccione **si se produce un error en el registro, descartar solicitudes de conexión** si desea que NPS detenga el procesamiento de mensajes de solicitud de acceso cuando los archivos de registro estén llenos o no estén disponibles por algún motivo. Si desea que NPS siga procesando solicitudes de conexión si se produce un error en el registro, no active esta casilla.
 
-## <a name="ping-user-name"></a>Ping User-Name
+## <a name="ping-user-name"></a>Ping user-name
 
-Algunos servidores proxy RADIUS y servidores de acceso a la red envían periódicamente solicitudes de autenticación y cuentas (conocidas como solicitudes ping) para comprobar que el NPS está presente en la red. Estas solicitudes ping incluyen nombres de usuario ficticios. Cuando NPS procesa estas solicitudes, los registros de eventos y cuentas se rellenan con registros de rechazo de acceso, lo que hace más difícil realizar un seguimiento de los registros válidos.
+Algunos servidores proxy RADIUS y servidores de acceso a la red envían periódicamente solicitudes de autenticación y cuentas (conocidas como solicitudes ping) para comprobar que el NPS está presente en la red. Estas solicitudes ping incluyen nombres de usuario ficticios. Cuando NPS procesa dichas solicitudes, los archivos de registro de eventos y cuentas se llenan de registros de rechazos de acceso, lo que hace más difícil realizar un seguimiento de los registros válidos.
 
-Cuando se configura una entrada del registro para **ping User-Name**, NPS compara el valor de la entrada del registro con el valor de nombre de usuario en las solicitudes ping de otros servidores. Una entrada de registro de **ping User-Name** especifica el nombre de usuario ficticio (o un patrón de nombre de usuario, con variables, que coincide con el nombre de usuario ficticio) enviado por servidores proxy RADIUS y servidores de acceso a la red. Cuando NPS recibe solicitudes de ping que coinciden con el valor de la entrada del registro **ping User-Name** , NPS rechaza las solicitudes de autenticación sin procesar la solicitud. NPS no registra las transacciones que implican el nombre de usuario ficticio en los archivos de registro, lo que facilita la interpretación del registro de eventos.
+Cuando se configura una entrada del registro para **ping User-Name**, NPS compara el valor de la entrada del registro con el valor de nombre de usuario en las solicitudes ping de otros servidores. Una entrada de registro de **ping User-Name** especifica el nombre de usuario ficticio (o un patrón de nombre de usuario, con variables, que coincide con el nombre de usuario ficticio) enviado por servidores proxy RADIUS y servidores de acceso a la red. Cuando NPS recibe solicitudes de ping que coinciden con el valor de la entrada del registro **ping User-Name** , NPS rechaza las solicitudes de autenticación sin procesar la solicitud. NPS no registra las transacciones relacionadas con el nombre de usuario ficticio de los archivos de registro, lo que facilita la interpretación del registro de eventos.
 
-**Ping User-Name** no se instala de forma predeterminada. Debe agregar **ping User-Name** al registro. Puede Agregar una entrada al registro mediante el editor del registro.
+**Ping User-Name** no se instala de forma predeterminada. Debe agregar **ping User-Name** al registro. Puede agregar una entrada al Registro mediante el Editor del Registro.
 
 >[!CAUTION]
->la modificación incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
+>Si se modifica incorrectamente el Registro, se puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
 
 ### <a name="to-add-ping-user-name-to-the-registry"></a>Para agregar ping User-Name al registro
 
