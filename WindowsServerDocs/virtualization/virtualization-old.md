@@ -5,23 +5,23 @@ ms.prod: windows-server
 manager: dougkim
 ms.technology: compute
 ms.topic: article
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 ms.localizationpriority: medium
 ms.date: 03/16/2018
-ms.openlocfilehash: bbbd8ea812a25b0d538dcb87a380184412235b99
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d5a3390f1a072e5d155f19a97fe90ef481436f33
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364036"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307916"
 ---
 # <a name="virtualization"></a>Virtualización
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016 
 
 >[!TIP]
-> ¿Buscas información sobre versiones anteriores de Windows Server? Echa un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
+> ¿Busca información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puede [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
 
 <img src="../media/landing-icons/virtualization.png" style='float:left; padding:.5em;' alt="Icon showing a box with spokes"> La virtualización en Windows Server 2016 es una de las tecnologías fundamentales necesarias para crear tu infraestructura definida por software. Junto con las redes y el almacenamiento, las funciones de virtualización ofrecen la flexibilidad que necesitas para impulsar las cargas de trabajo para tus clientes.
 
@@ -128,7 +128,7 @@ Las tecnologías de virtualización de Windows Server incluyen actualizaciones d
                     </div>
                     <div class="cardText">
                         <h3>Contenedores de Windows</h3>
-                        <p>Los contenedores de Windows proporcionan virtualización en el nivel del sistema operativo que permite que varias aplicaciones aisladas se ejecuten en un solo sistema. Se incluyen dos tipos diferentes de contenedores en tiempo de ejecución con la función, cada uno de ellos con distintos grados de aislamiento de aplicaciones.</p>
+                        <p>Los contenedores de Windows proporcionan una virtualización a nivel de sistema operativo que permite ejecutar varias aplicaciones aisladas en un solo sistema. Se incluyen dos tipos diferentes de contenedores en tiempo de ejecución con la función, cada uno de ellos con distintos grados de aislamiento de aplicaciones.</p>
                     </div>
                 </div>
             </div>
@@ -139,7 +139,7 @@ Las tecnologías de virtualización de Windows Server incluyen actualizaciones d
 
 
 
-## <a name="related"></a>Relacionados
+## <a name="related"></a>Relacionado
 
 Hyper-V requiere hardware específico para crear el entorno de virtualización. Para obtener detalles, consulta [Requisitos del sistema para Hyper-V en Windows Server 2016](./hyper-v/system-requirements-for-hyper-v-on-windows.md). 
 

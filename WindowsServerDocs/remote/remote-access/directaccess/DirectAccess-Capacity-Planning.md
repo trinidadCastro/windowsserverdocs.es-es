@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 456e5971-3aa7-4a24-bc5d-0c21fec7687e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9969cade328b19f16dbdbad432b96dabb5518007
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e63b4c4f266d286b766c89b61676493328aa8652
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394838"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310982"
 ---
 # <a name="directaccess-capacity-planning"></a>Planeación de la capacidad de DirectAccess
 
@@ -54,16 +54,16 @@ Las pruebas se realizaron con 1000 y con 750 clientes.  En todos los casos, la 
   
 En las siguientes secciones se detallan las pruebas una a una. Cada título de sección denota los elementos clave de cada prueba, y tras él se muestra un resumen de los resultados y un gráfico con los datos detallados de los resultados.  
   
-**Low-fin de rendimiento:  750 clientes, 70/30 divididos, rendimiento de 84,17 Mbits/s:**  
+**Rendimiento de low-end: 750 clientes, 70/30 divididos, 84,17 Mbits/seg.**  
   
 Las tres pruebas siguientes representan el hardware de bajo perfil.  En la siguiente serie de pruebas hubo 750 clientes con un rendimiento de 84,17 Mbits/s y una distribución del tráfico de 562 para Teredo y 188 para IPHTTPS. La MTU de Teredo se estableció en 1472 y la derivación de Teredo estaba habilitada. La media de uso de CPU fue de 46,42 % en las tres pruebas, mientras que la media de uso de memoria (expresada como un porcentaje de bytes asignados de los 4 GB de memoria total disponible) fue de 25,95 %.  
   
 ||||||||  
 |-|-|-|-|-|-|-|  
 |**Escenario**|**CPUAvg (del contador)**|**Mbit/s (Corp.)**|**Mbit/s (Internet)**|**Active QMSA**|**Active MMSA**|**Uso de memoria (sistema de 4 GIG)**|  
-|**Low-fin de HW.  562 clientes Teredo.  188 clientes IPHTTPS.**|47.7472542|84.3|119.13|1502.05|1502.1|26.27 %|  
-|**Low-fin de HW.  562 clientes Teredo.  188 clientes IPHTTPS.**|46.3889778|84.146|118.73|1501.25|1501.2|25,90 %|  
-|**Low-fin de HW.  562 clientes Teredo.  188 clientes IPHTTPS.**|45.113082|84.0494|118.43|1546.14|1546.1|25,68 %|  
+|**HW de bajo nivel.  562 clientes Teredo.  188 clientes IPHTTPS.**|47.7472542|84.3|119.13|1502.05|1502.1|26.27 %|  
+|**HW de bajo nivel.  562 clientes Teredo.  188 clientes IPHTTPS.**|46.3889778|84.146|118.73|1501.25|1501.2|25,90 %|  
+|**HW de bajo nivel.  562 clientes Teredo.  188 clientes IPHTTPS.**|45.113082|84.0494|118.43|1546.14|1546.1|25,68 %|  
   
 **1000 clientes, 70/30 divididos, rendimiento de 78 Mbits/s:**  
   
@@ -72,9 +72,9 @@ Las tres pruebas siguientes representan el rendimiento de hardware de bajo perfi
 ||||||||  
 |-|-|-|-|-|-|-|  
 |**Escenario**|**CPUAvg (del contador)**|**Mbit/s (Corp.)**|**Mbit/s (Internet)**|**Active QMSA**|**Active MMSA**|**Uso de memoria (sistema de 4 GIG)**|  
-|**Low-fin de HW.  700 clientes Teredo.  300 clientes IPHTTPS.**|51.28406247|78.6432|113.19|2002.42|1502.1|25,59 %|  
-|**Low-fin de HW.  700 clientes Teredo.  300 clientes IPHTTPS.**|51.06993128|78.6402|113.22|2001.4|1501.2|30,87 %|  
-|**Low-fin de HW.  700 clientes Teredo.  300 clientes IPHTTPS.**|49.75235617|78.6387|113.2|2002.6|1546.1|30,66 %|  
+|**HW de bajo nivel.  700 clientes Teredo.  300 clientes IPHTTPS.**|51.28406247|78.6432|113.19|2002.42|1502.1|25,59 %|  
+|**HW de bajo nivel.  700 clientes Teredo.  300 clientes IPHTTPS.**|51.06993128|78.6402|113.22|2001.4|1501.2|30,87 %|  
+|**HW de bajo nivel.  700 clientes Teredo.  300 clientes IPHTTPS.**|49.75235617|78.6387|113.2|2002.6|1546.1|30,66 %|  
   
 **1000 clientes, 70/30 divididos, rendimiento de 109 Mbits/s:**  
   
@@ -83,9 +83,9 @@ En la siguiente serie de pruebas hubo 1000 clientes con un rendimiento medio de 
 ||||||||  
 |-|-|-|-|-|-|-|  
 |**Escenario**|**CPUAvg (del contador)**|**Mbit/s (Corp.)**|**Mbit/s (Internet)**|**Active QMSA**|**Active MMSA**|**Uso de memoria (sistema de 4 GIG)**|  
-|**Low-fin de HW.  700 clientes Teredo.  300 clientes IPHTTPS.**|59.81640675|108.305|153.14|2001.64|2001.6|24,38 %|  
-|**Low-fin de HW.  700 clientes Teredo.  300 clientes IPHTTPS.**|59.46473798|110.969|157.53|2005.22|2005.2|28,72 %|  
-|**Low-fin de HW.  700 clientes Teredo.  300 clientes IPHTTPS.**|57.89089768|108.305|153.14|1999.53|2018.3|24,38 %|  
+|**HW de bajo nivel.  700 clientes Teredo.  300 clientes IPHTTPS.**|59.81640675|108.305|153.14|2001.64|2001.6|24,38 %|  
+|**HW de bajo nivel.  700 clientes Teredo.  300 clientes IPHTTPS.**|59.46473798|110.969|157.53|2005.22|2005.2|28,72 %|  
+|**HW de bajo nivel.  700 clientes Teredo.  300 clientes IPHTTPS.**|57.89089768|108.305|153.14|1999.53|2018.3|24,38 %|  
   
 ## <a name="testing-results-for-high-end-hardware"></a>Resultados de las pruebas en hardware de tecnología avanzada:  
 Las pruebas se realizaron con 1500 clientes. La distribución del tráfico fue de 70 % para Teredo y de 30 % para IPHTTPS. En todas las pruebas se usó tráfico TCP a través de Nat64 mediante dos túneles IPsec por cliente. En todas las pruebas, el uso de memoria fue moderado y el uso de CPU, aceptable.  
@@ -101,12 +101,12 @@ Las cinco pruebas siguientes representan el hardware de tecnología avanzada. En
 ||||||||  
 |-|-|-|-|-|-|-|  
 |**Escenario**|**CPUAvg (del contador)**|**Mbit/s (Corp.)**|**Mbit/s (Internet)**|**Active QMSA**|**Active MMSA**|**Uso de memoria (sistema de 4 GIG)**|  
-|**High-fin de HW.  1050 clientes Teredo.  450 clientes IPHTTPS.**|51.712437|157.029|216.29|3000.31|3046|21,58 %|  
-|**High-fin de HW.  1050 clientes Teredo.  450 clientes IPHTTPS.**|48.86020205|151.012|206.53|3002.86|3045.3|21,15 %|  
-|**High-fin de HW.  1050 clientes Teredo.  450 clientes IPHTTPS.**|52.23979519|155.511|213.45|3001.15|3002.9|22,90 %|  
-|**High-fin de HW.  1050 clientes Teredo.  450 clientes IPHTTPS.**|51.26269767|155.09|212.92|3000.74|3002.4|22,91 %|  
-|**High-fin de HW.  1050 clientes Teredo.  450 clientes IPHTTPS.**|50.15751307|154.772|211.92|3000.9|3002.1|22,93 %|  
-|**High-fin de HW.  1050 clientes Teredo.  450 clientes IPHTTPS.**|49.83665607|145.994|201.92|3000.51|3006|22,03 %|  
+|**HW de tecnología avanzada.  1050 clientes Teredo.  450 clientes IPHTTPS.**|51.712437|157.029|216.29|3000.31|3046|21,58 %|  
+|**HW de tecnología avanzada.  1050 clientes Teredo.  450 clientes IPHTTPS.**|48.86020205|151.012|206.53|3002.86|3045.3|21,15 %|  
+|**HW de tecnología avanzada.  1050 clientes Teredo.  450 clientes IPHTTPS.**|52.23979519|155.511|213.45|3001.15|3002.9|22,90 %|  
+|**HW de tecnología avanzada.  1050 clientes Teredo.  450 clientes IPHTTPS.**|51.26269767|155.09|212.92|3000.74|3002.4|22,91 %|  
+|**HW de tecnología avanzada.  1050 clientes Teredo.  450 clientes IPHTTPS.**|50.15751307|154.772|211.92|3000.9|3002.1|22,93 %|  
+|**HW de tecnología avanzada.  1050 clientes Teredo.  450 clientes IPHTTPS.**|49.83665607|145.994|201.92|3000.51|3006|22,03 %|  
   
 ![Resultados de pruebas de hardware de alta gama](../../media/DirectAccess-Capacity-Planning/DACapacityPlanning3.gif)  
   

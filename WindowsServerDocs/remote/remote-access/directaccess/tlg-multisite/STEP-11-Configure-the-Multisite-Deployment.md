@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8cbdeb1d-5f7c-4360-bcc1-ab40d3cd8040
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3a80697665eeb67c2dda0d4d25201c7d02ed0c7e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d90b20716c49b2ea0b1cd002a1c1933fbd6e26e5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404810"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314575"
 ---
 # <a name="step-11-configure-the-multisite-deployment"></a>Paso 11 configuración de la implementación multisitio
 
@@ -31,9 +31,9 @@ Para configurar una implementación multisitio, realice cambios en el Asistente 
   
 - Agregar 2-EDGE1 como segundo punto de entrada  
   
-## <a name="configDA"></a>Configurar el acceso remoto en EDGE1  
+## <a name="configure-remote-access-on-edge1"></a><a name="configDA"></a>Configurar el acceso remoto en EDGE1  
   
-1.  En la pantalla **Inicio** , escriba**RAMgmtUI. exe**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+1.  En la pantalla **Inicio** , escriba**RAMgmtUI. exe**y, a continuación, presione Entrar. Si aparece el cuadro de **Control de cuentas de usuario**, confirma que la acción que se muestra es la que deseas realizar y haz clic en **Sí**.  
   
 2.  En la consola de administración de acceso remoto, haga clic en **Configuración**.  
   
@@ -43,7 +43,7 @@ Para configurar una implementación multisitio, realice cambios en el Asistente 
   
 5.  En el panel central de la consola, en el área de **servidores de infraestructura paso 3** , haga clic en **Editar**.  
   
-6.  Haga clic en **lista de búsqueda de sufijos DNS**. En la página **lista de búsqueda de sufijos DNS** , asegúrese de que la casilla **configurar clientes de DirectAccess con la lista de búsqueda de sufijos de cliente DNS** está activada y de que los sufijos de dominio **Corp.contoso.com** y **Corp2.Corp.contoso.com** aparecen en la lista **sufijos de dominio que se van a usar** , haga clic en **siguiente**y, a continuación, en finalizar.  
+6.  Haga clic en **lista de búsqueda de sufijos DNS**. En la página **lista de búsqueda de sufijos DNS** , asegúrese de que la casilla **configurar clientes de DirectAccess con la lista de búsqueda de sufijos de cliente DNS** está activada y que los sufijos de dominio **Corp.contoso.com** y **Corp2.Corp.contoso.com** aparecen en la lista **sufijos de dominio que se van a usar** , haga clic en **siguiente**y, a continuación, haga clic en finalizar.  
   
 7.  En el panel central de la consola, haga clic en **Finalizar**.  
   
@@ -51,7 +51,7 @@ Para configurar una implementación multisitio, realice cambios en el Asistente 
   
 9. En el panel **tareas** , haga clic en **actualizar servidores de administración**y haga clic en **cerrar** cuando termine.  
   
-## <a name="EnabledMultisite"></a>Habilitar la configuración multisitio en EDGE1  
+## <a name="enable-multisite-configuration-on-edge1"></a><a name="EnabledMultisite"></a>Habilitar la configuración multisitio en EDGE1  
   
 1.  En el panel **tareas** de la consola de administración de acceso remoto, haga clic en **Habilitar multisitio**.  
   
@@ -73,7 +73,7 @@ Para configurar una implementación multisitio, realice cambios en el Asistente 
   
 10. En el cuadro de diálogo **Habilitar la implementación multisitio** , haga clic en **cerrar** y, a continuación, en el Asistente para habilitar la implementación multisitio, haga clic en **cerrar**.  
   
-## <a name="AddEP"></a>Agregar 2-EDGE1 como segundo punto de entrada  
+## <a name="add-2-edge1-as-a-second-entry-point"></a><a name="AddEP"></a>Agregar 2-EDGE1 como segundo punto de entrada  
   
 1.  En el panel **tareas** de la consola de administración de acceso remoto, haga clic en **Agregar un punto de entrada**.  
   

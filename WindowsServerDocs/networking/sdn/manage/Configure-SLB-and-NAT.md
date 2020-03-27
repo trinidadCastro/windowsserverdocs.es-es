@@ -10,29 +10,29 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 73bff8ba-939d-40d8-b1e5-3ba3ed5439c3
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: 80f1319c1abc845d7e63a2d53868bf7a3c381019
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a12d9a1ea953b587918fed8367ee21626697e256
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406098"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309882"
 ---
 # <a name="configure-the-software-load-balancer-for-load-balancing-and-network-address-translation-nat"></a>Configuración del equilibrador de carga de software para el equilibrio de carga y la traducción de direcciones de red (NAT)
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este tema para obtener información sobre cómo usar el \( \(SLB\) del equilibrador\) de carga de software de redes definidas por software Sdn para proporcionar \(NAT\)de traducción de direcciones de red salientes. NAT de entrada o equilibrio de carga entre varias instancias de una aplicación.
+Puede usar este tema para aprender a usar las redes definidas por software \(SDN\) el equilibrador de carga de software \(SLB\) para proporcionar la traducción de direcciones de red salientes \(NAT, NAT de entrada o equilibrio de carga entre varias instancias de una aplicación.\)
 
 ## <a name="software-load-balancer-overview"></a>Información general de Load Balancer de software
 
-El software de Sdn \(load balancer\) SLB ofrece alta disponibilidad y rendimiento de red a las aplicaciones. Es un equilibrador de \(carga TCP de\) nivel 4, UDP que distribuye el tráfico entrante entre las instancias de servicio en buen estado en Cloud Services o máquinas virtuales definidas en un conjunto de equilibrador de carga.
+El software de SDN Load Balancer \(SLB\) ofrece alta disponibilidad y rendimiento de red a las aplicaciones. Es un equilibrador de carga de nivel 4 \(TCP, UDP\) que distribuye el tráfico entrante entre las instancias de servicio en buen estado en Cloud Services o máquinas virtuales definidas en un conjunto de equilibrador de carga.
 
 Configure SLB para hacer lo siguiente:
 
-- Equilibre la carga del tráfico entrante externo a una red virtual a \(las\)máquinas virtuales de virtual machines, también denominado equilibrio de carga VIP público.
+- Equilibre la carga del tráfico entrante externo a una red virtual a máquinas virtuales \(máquinas virtuales\), también denominado equilibrio de carga VIP público.
 - Equilibre la carga del tráfico entrante entre máquinas virtuales de una red virtual, entre máquinas virtuales de Cloud Services o entre equipos locales y máquinas virtuales en una red virtual entre locales. 
 - Reenvíe el tráfico de red de VM desde la red virtual a destinos externos mediante la traducción de direcciones de red (NAT), también denominada NAT de salida.
 - Reenviar el tráfico externo a una máquina virtual específica, también denominada NAT entrante.
@@ -40,7 +40,7 @@ Configure SLB para hacer lo siguiente:
 
 
 
-## <a name="example-create-a-public-vip-for-load-balancing-a-pool-of-two-vms-on-a-virtual-network"></a>Ejemplo: Creación de una VIP pública para el equilibrio de carga de un grupo de dos máquinas virtuales en una red virtual
+## <a name="example-create-a-public-vip-for-load-balancing-a-pool-of-two-vms-on-a-virtual-network"></a>Ejemplo: creación de una VIP pública para el equilibrio de carga de un grupo de dos máquinas virtuales en una red virtual
 
 En este ejemplo, creará un objeto de equilibrador de carga con una VIP pública y dos máquinas virtuales como miembros del grupo para atender las solicitudes a la dirección VIP. Este código de ejemplo también agrega un sondeo de Estado HTTP para detectar si uno de los miembros del grupo deja de responder.
 
@@ -136,7 +136,7 @@ En este ejemplo, creará un objeto de equilibrador de carga con una VIP pública
 7. Siga el ejemplo siguiente para agregar las interfaces de red a este grupo de back-end.
 
 
-## <a name="example-use-slb-for-outbound-nat"></a>Ejemplo: Uso de SLB para NAT de salida
+## <a name="example-use-slb-for-outbound-nat"></a>Ejemplo: uso de SLB para NAT de salida
 
 En este ejemplo, se configura SLB con un grupo de back-end para proporcionar la funcionalidad NAT saliente para una máquina virtual en el espacio de direcciones privadas de una red virtual para llegar a la salida a Internet. 
 
@@ -195,7 +195,7 @@ En este ejemplo, se configura SLB con un grupo de back-end para proporcionar la 
 
 4. Siga el siguiente ejemplo para agregar las interfaces de red a las que desea proporcionar acceso a Internet.
 
-## <a name="example-add-network-interfaces-to-the-back-end-pool"></a>Ejemplo: Agregar interfaces de red al grupo de back-end
+## <a name="example-add-network-interfaces-to-the-back-end-pool"></a>Ejemplo: agregar interfaces de red al grupo de back-end
 En este ejemplo, agregará interfaces de red al grupo de back-end.  Debe repetir este paso para cada interfaz de red que pueda procesar las solicitudes realizadas a la VIP. 
 
 También puede repetir este proceso en una sola interfaz de red para agregarlo a varios objetos de equilibrador de carga. Por ejemplo, si tiene un objeto de equilibrador de carga para una VIP de servidor Web y un objeto de equilibrador de carga independiente para proporcionar NAT de salida.
@@ -221,7 +221,7 @@ También puede repetir este proceso en una sola interfaz de red para agregarlo a
    ``` 
 
 
-## <a name="example-use-the-software-load-balancer-for-forwarding-traffic"></a>Ejemplo: Usar el Load Balancer de software para reenviar el tráfico
+## <a name="example-use-the-software-load-balancer-for-forwarding-traffic"></a>Ejemplo: usar el Load Balancer de software para reenviar el tráfico
 Si necesita asignar una dirección IP virtual a una sola interfaz de red en una red virtual sin definir puertos individuales, puede crear una regla de reenvío L3.  Esta regla reenvía todo el tráfico hacia y desde la máquina virtual a través de la VIP asignada contenida en un objeto PublicIPAddress.
 
 Si ha definido la dirección VIP y la DIP como la misma subred, es equivalente a realizar el reenvío L3 sin NAT.
@@ -248,7 +248,7 @@ Si ha definido la dirección VIP y la DIP como la misma subred, es equivalente a
    New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties -PassInnerException
    ```
 
-## <a name="example-use-the-software-load-balancer-for-forwarding-traffic-with-a-dynamically-allocated-vip"></a>Ejemplo: Usar el Load Balancer de software para reenviar el tráfico con una VIP asignada dinámicamente
+## <a name="example-use-the-software-load-balancer-for-forwarding-traffic-with-a-dynamically-allocated-vip"></a>Ejemplo: usar el Load Balancer de software para reenviar el tráfico con una VIP asignada dinámicamente
 En este ejemplo se repite la misma acción que en el ejemplo anterior, pero se asigna automáticamente la dirección VIP del grupo de direcciones VIP disponibles en el equilibrador de carga en lugar de especificar una dirección IP específica. 
 
 1. Cree un objeto de dirección IP pública que contenga la dirección VIP.
@@ -287,7 +287,7 @@ En este ejemplo se repite la misma acción que en el ejemplo anterior, pero se a
    $nic.properties.IpConfigurations[0].Properties.PublicIPAddress = $publicIP
    New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties -PassInnerException
    ```
-   ## <a name="example-remove-a-publicip-address-that-is-being-used-for-forwarding-traffic-and-return-it-to-the-vip-pool"></a>Ejemplo: Quitar una dirección PublicIP que se usa para reenviar el tráfico y devolverla al grupo VIP
+   ## <a name="example-remove-a-publicip-address-that-is-being-used-for-forwarding-traffic-and-return-it-to-the-vip-pool"></a>Ejemplo: quitar una dirección PublicIP que se usa para reenviar el tráfico y devolverla al grupo VIP
    En este ejemplo se quita el recurso PublicIPAddress creado por los ejemplos anteriores.  Una vez que se quita el PublicIPAddress, la referencia a PublicIPAddress se quitará automáticamente de la interfaz de red, el tráfico dejará de reenviarse y la dirección IP se devolverá al grupo de VIP público para reutilizarlo.  
 
 4. Quitar la PublicIP

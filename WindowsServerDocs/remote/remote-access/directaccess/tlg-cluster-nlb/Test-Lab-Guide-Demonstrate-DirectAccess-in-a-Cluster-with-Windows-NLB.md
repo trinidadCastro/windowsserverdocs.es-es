@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: db15dcf5-4d64-48d7-818a-06c2839e1289
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e0c82f9f56ea680c11cd612e17326fe7cf96aeca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 563ccf1cf68fc6ffd67a29533b3fb3b579a55ee6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388431"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308848"
 ---
 # <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>Guía del laboratorio de prueba: mostrar DirectAccess en un clúster con Windows NLB
 
@@ -31,12 +31,12 @@ Esta guía contiene instrucciones para configurar y mostrar el acceso remoto usa
 > [!IMPORTANT]  
 > Este laboratorio sirve como prueba de concepto con la cantidad mínima de equipos. La configuración que se detalla en esta guía es para fines de laboratorio únicamente y no se debe usar en un entorno de producción.  
   
-## <a name="KnownIssues"></a>Problemas conocidos  
+## <a name="known-issues"></a><a name="KnownIssues"></a>Problemas conocidos  
 Los problemas que se mencionan a continuación son problemas conocidos de la configuración de un escenario de clúster:  
   
 -   Después de configurar DirectAccess en una implementación de solo IPv4 con un solo adaptador de red y después de que el valor predeterminado de DNS64 (la dirección IPv6 que contiene ":3333::") se configure automáticamente en el adaptador de red, al intentar habilitar el equilibrio de carga a través de la Consola de administración de acceso remoto se muestra un mensaje al usuario que le indica que proporcione una DIP de IPv6. Si se proporciona una DIP de IPv6, después de hacer clic en **Confirmar** , se produce el siguiente error de configuración: el parámetro es incorrecto.  
   
-    Para resolver este problema:  
+    Para solucionar este problema:  
   
     1.  Descargue la copia de seguridad y restaure los scripts desde [Back up and Restore Remote Access Configuration](https://gallery.technet.microsoft.com/Back-up-and-Restore-Remote-e157e6a6).  
   

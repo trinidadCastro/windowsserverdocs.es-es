@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/22/2018
-ms.openlocfilehash: 58e85c15723126f2976fac3ccc21b3cfc6585750
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8cdf4e100c65fae11637c681924746115444f71
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355928"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313024"
 ---
 # <a name="windows-server-2019-gateway-performance"></a>Rendimiento de puerta de enlace de Windows Server 2019
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 
 En Windows Server 2016, una de las preocupaciones del cliente era la incapacidad de la puerta de enlace de SDN para satisfacer los requisitos de rendimiento de las redes modernas. El rendimiento de red de los túneles de IPsec y GRE tenía limitaciones con el rendimiento de conexión única para la conectividad de IPsec de aproximadamente 300 Mbps y para la conectividad GRE de aproximadamente 2,5 Gbps.

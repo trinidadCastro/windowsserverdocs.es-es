@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d98d6f7a-a2e6-45b1-9c63-08e2986a5c03
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7044a0d219decceb7669e92e884c78bcd9e3a61c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 7d21d80f4970a501e31a053483c37268bdddb811
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388395"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314612"
 ---
 # <a name="step-10-install-and-configure-2-edge1"></a>PASO 10: instalación y configuración de 2-EDGE1
 
@@ -41,17 +41,17 @@ ms.locfileid: "71388395"
   
 2-EDGE1 debe tener instalados dos adaptadores de red.  
   
-## <a name="installOS"></a>Instalación del sistema operativo en 2-EDGE1  
+## <a name="install-the-operating-system-on-2-edge1"></a><a name="installOS"></a>Instalación del sistema operativo en 2-EDGE1  
   
 1.  Inicie la instalación de Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012.  
   
-2.  Siga las instrucciones para completar la instalación, especificando Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 (instalación completa) y una contraseña segura para la cuenta de administrador local. Inicie sesión con la cuenta Administrador local.  
+2.  Siga las instrucciones para completar la instalación, especificando Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 (instalación completa) y una contraseña segura para la cuenta de administrador local. Inicie sesión con la cuenta de administrador local.  
   
 3.  Conecte 2-EDGE1 a una red que tenga acceso a Internet y ejecute Windows Update para instalar las actualizaciones más recientes para Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 y, a continuación, desconéctese de Internet.  
   
 4.  Conecte un adaptador de red a la subred 2-CorpNet y el otro a la red Internet simulada.  
   
-## <a name="tcpip"></a>Configurar las propiedades de TCP/IP  
+## <a name="configure-tcpip-properties"></a><a name="tcpip"></a>Configurar las propiedades de TCP/IP  
   
 1.  En la consola de Administrador del servidor, haga clic en **servidor local**y, a continuación, en el área **propiedades** , junto a **conexión cableada Ethernet**, haga clic en el vínculo.  
   
@@ -65,7 +65,7 @@ ms.locfileid: "71388395"
   
 6.  Haga clic en **Usar las siguientes direcciones de servidor DNS**. En **servidor DNS preferido**, escriba **10.2.0.1**y, en **servidor DNS alternativo**, escriba **10.0.0.1**.  
   
-7.  Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.  
+7.  Haga clic en  **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.  
   
 8.  En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com**y, a continuación, haga clic en **Aceptar** dos veces.  
   
@@ -73,7 +73,7 @@ ms.locfileid: "71388395"
   
 10. Haga clic en **usar la siguiente dirección IPv6**. En **dirección IPv6**, escriba **2001: db8:2:: 20**, en **longitud de prefijo de subred**, escriba **64**. Haga clic en **usar las siguientes direcciones de servidor DNS**y, en **servidor DNS preferido**, escriba **2001: db8:2:: 1**, en **servidor DNS alternativo**, escriba **2001: db8:1:: 1**.  
   
-11. Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.  
+11. Haga clic en  **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.  
   
 12. En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com**y, a continuación, haga clic en **Aceptar** dos veces.  
   
@@ -87,7 +87,7 @@ ms.locfileid: "71388395"
   
 17. Haga clic en **Usar la siguiente dirección IP**. En **dirección IP**, escriba **131.107.0.20**. En **Máscara de subred**, escriba **255.255.255.0**.  
   
-18. Haga clic en **Avanzada**. En la ficha **Configuración de IP**, en el área **Direcciones IP**, haga clic en **Agregar**. En el cuadro de diálogo **Dirección TCP/IP** , en tipo de **dirección IP** **131.107.0.21**, en **máscara de subred** , escriba **255.255.255.0**y, a continuación, haga clic en **Agregar**.  
+18. Haga clic en **Opciones avanzadas**. En la ficha **Configuración de IP**, en el área **Direcciones IP**, haga clic en **Agregar**. En el cuadro de diálogo **Dirección TCP/IP** , en tipo de **dirección IP** **131.107.0.21**, en **máscara de subred** , escriba **255.255.255.0**y, a continuación, haga clic en **Agregar**.  
   
 19. Haga clic en la pestaña **DNS**.  
   
@@ -95,7 +95,7 @@ ms.locfileid: "71388395"
   
 21. Cierre la ventana **Conexiones de red**.  
   
-## <a name="routing"></a>Configurar el enrutamiento entre subredes  
+## <a name="configure-routing-between-subnets"></a><a name="routing"></a>Configurar el enrutamiento entre subredes  
   
 1.  En la pantalla **Inicio** , escriba**cmd. exe**y, a continuación, presione Entrar.  
   
@@ -112,7 +112,7 @@ ms.locfileid: "71388395"
   
 5.  Cierre la ventana del símbolo del sistema.  
   
-## <a name="Join"></a>Unión 2-EDGE1 al dominio CORP2  
+## <a name="join-2-edge1-to-the-corp2-domain"></a><a name="Join"></a>Unión 2-EDGE1 al dominio CORP2  
   
 1.  En la consola de Administrador del servidor, en **servidor local**, en el área **propiedades** , junto a **nombre de equipo**, haga clic en el vínculo.  
   
@@ -132,7 +132,7 @@ ms.locfileid: "71388395"
   
 9. Una vez reiniciado el equipo, haga clic en **cambiar de usuario**y, a continuación, haga clic en **otro usuario** e inicie sesión en el dominio CORP2 con la cuenta de administrador.  
   
-## <a name="certs"></a>Obtención de certificados en 2 EDGE1  
+## <a name="obtain-certificates-on-2-edge1"></a><a name="certs"></a>Obtención de certificados en 2 EDGE1  
   
 1.  En la pantalla **Inicio** , escriba**MMC. exe**y, a continuación, presione Entrar.  
   
@@ -164,7 +164,7 @@ ms.locfileid: "71388395"
   
 15. Cierre la ventana de la consola. Si se le pide que guarde la configuración, haga clic en **no**.  
   
-## <a name="Access"></a>Proporcionar acceso a CORP\User1  
+## <a name="provide-access-to-corpuser1"></a><a name="Access"></a>Proporcionar acceso a CORP\User1  
   
 1.  En la pantalla **Inicio** , escriba**compmgmt. msc**y, a continuación, presione Entrar.  
   
@@ -182,7 +182,7 @@ ms.locfileid: "71388395"
   
 8.  Cierre la ventana Administración de equipos.  
   
-## <a name="InstallDA"></a>Instalar el rol de acceso remoto en 2-EDGE1  
+## <a name="install-the-remote-access-role-on-2-edge1"></a><a name="InstallDA"></a>Instalar el rol de acceso remoto en 2-EDGE1  
   
 1.  En la consola de Administrador del servidor, en el **Panel**, haga clic en **Agregar roles y características**.  
   
@@ -192,9 +192,9 @@ ms.locfileid: "71388395"
   
 4.  Haz clic cinco veces en **Siguiente**.  
   
-5.  En el cuadro de diálogo **Confirmar selecciones de instalación** , haga clic en **Instalar**.  
+5.  En el cuadro de diálogo **Confirmar selecciones de instalación**, haz clic en **Instalar**.  
   
-6.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
+6.  En el cuadro de diálogo **Progreso de la instalación**, comprueba que la instalación se realiza correctamente y, a continuación, haz clic en **Cerrar**.  
   
 
 

@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ecdfc589-fa14-4bb3-ab7e-456ebc719385
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cf6b8418482b606c86bac77b2790e3365e80bf5d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dc4dc26a5079a34cdaa3d455e59f6bfb4d1f74c1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355160"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309519"
 ---
 # <a name="role-based-access-control"></a>Control de acceso basado en roles
 
@@ -42,7 +42,7 @@ Puede configurar el control de acceso para que los usuarios estén restringidos 
   
 -   Los usuarios pueden editar los registros de recursos DNS para zonas específicas  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Administrar Access Control basado en roles con Administrador del servidor](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Server-Manager.md)  
 [Administrar Access Control basado en roles con Windows PowerShell](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md)  
 [Administrar IPAM](Manage-IPAM.md)  

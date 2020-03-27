@@ -1,19 +1,19 @@
 ---
 title: Plan de aceleración de GPU en Windows Server
 description: Obtenga información sobre las diferentes tecnologías de Hyper-V para la aceleración de GPU, incluido DDA y vGPU de RemoteFX
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: rickman
 author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 08/21/2019
-ms.openlocfilehash: f62357de1ab167d0a6be4eb63b9d6d23bfac7371
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 7ca8d29b58dc8682575d9cb8b0f26aa49b257335
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923907"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307855"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>Plan de aceleración de GPU en Windows Server
 
@@ -26,7 +26,7 @@ En este artículo se presentan las capacidades de virtualización de gráficos d
 En función de la carga de trabajo, es posible que desee considerar la aceleración de la GPU. Esto es lo que debe tener en cuenta antes de elegir la aceleración de GPU:
 
 - **Cargas de trabajo de aplicaciones y de escritorio remoto (VDI/DaaS)** : Si va a compilar una aplicación o un servicio de comunicación remota de escritorio con Windows Server, tenga en cuenta el catálogo de aplicaciones que espera que los usuarios ejecuten. Algunos tipos de aplicaciones, como las aplicaciones CAD/CAM, las aplicaciones de simulación, los juegos y las aplicaciones de representación y visualización, se basan en gran medida en la representación 3D para ofrecer interactividad fluida y receptiva. La mayoría de los clientes consideran las GPU una necesidad de una experiencia de usuario razonable con estos tipos de aplicaciones.
-- **Cargas de trabajo de representación, codificación y visualización remotas**: estas cargas de trabajo orientadas a gráficos tienden a basarse en gran medida en las funcionalidades especializadas de una GPU, como la representación 3D eficaz y la codificación/descodificación de fotogramas, con el fin de lograrlo. objetivos de rendimiento y rentabilidad. Para este tipo de carga de trabajo, una sola máquina virtual habilitada para GPU puede coincidir con el rendimiento de muchas máquinas virtuales solo de CPU.
+- **Cargas de trabajo de representación, codificación y visualización remotas**: estas cargas de trabajo orientadas a gráficos tienden a basarse en gran medida en las funcionalidades especializadas de una GPU, como la representación 3D eficaz y la codificación/descodificación de fotogramas, con el fin de lograr objetivos de rentabilidad y rendimiento. Para este tipo de carga de trabajo, una sola máquina virtual habilitada para GPU puede coincidir con el rendimiento de muchas máquinas virtuales solo de CPU.
 - **Cargas de trabajo de HPC y ml**: en el caso de cargas de trabajo informáticas en paralelo de gran nivel de datos, como el entrenamiento o la inferencia del modelo de proceso de alto rendimiento y de aprendizaje automático, las GPU pueden reducir drásticamente el tiempo de inferencia y el tiempo de entrenamiento. Como alternativa, pueden ofrecer una mejor rentabilidad que una arquitectura solo de CPU en un nivel de rendimiento comparable. Muchos marcos de trabajo de HPC y machine learning tienen una opción para habilitar la aceleración de GPU; considere si esto puede beneficiar a su carga de trabajo específica.
 
 ## <a name="gpu-virtualization-in-windows-server"></a>Virtualización de GPU en Windows Server
@@ -60,19 +60,19 @@ VGPU de RemoteFX es una tecnología de virtualización de gráficos que permite 
 
 Para obtener más información, consulta estos temas:
 
-- [Implementación de dispositivos de gráficos mediante vGPU de RemoteFX](../deploy/deploy-graphics-devices-using-remotefx-vgpu.md)
+- [Implementar dispositivos gráficos con RemoteFX vGPU](../deploy/deploy-graphics-devices-using-remotefx-vgpu.md)
 - [Compatibilidad con el adaptador de vídeo RemoteFX 3D (vGPU)](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)
 
 ## <a name="comparing-dda-and-remotefx-vgpu"></a>Comparar DDA y vGPU de RemoteFX
 
 Tenga en cuenta la siguiente funcionalidad y admita diferencias entre las tecnologías de virtualización de gráficos al planear la implementación:
 
-|                       | RemoteFX vGPU                                                                       | Asignación discreta de dispositivos                                                          |
+|                       | RemoteFX vGPU                                                                       | Asignación de dispositivos discreta                                                          |
 |-----------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
 | Modelo de recursos de GPU    | Dedicada o compartida                                                                 | Solo dedicado                                                                      |
 | Densidad de máquinas virtuales            | Alta (una o más GPU en muchas máquinas virtuales)                                                 | Bajo (una o más GPU en una VM)                                                    |
 | Compatibilidad de aplicaciones     | DX 11.1, OpenGL 4.4, OpenCL 1.1                                                     | Todas las funcionalidades de GPU proporcionadas por el proveedor (DX 12, OpenGL, CUDA)                       |
-| AVC444                | Habilitado de forma predeterminada                                                                  | Disponible a través de directiva de grupo                                                      |
+| AVC444                | Habilitada de manera predeterminada                                                                  | Disponible a través de directiva de grupo                                                      |
 | VRAM de GPU              | Hasta 1 GB de VRAM dedicada                                                           | Hasta la VRAM que admita la GPU                                                     |
 | Velocidad de fotogramas            | Hasta 30 fps                                                                         | Hasta 60 fps                                                                         |
 | Controlador de GPU en invitado   | Controlador de pantalla de adaptador 3D de RemoteFX (Microsoft)                                      | Controlador del proveedor de GPU (NVIDIA, AMD, Intel)                                              |

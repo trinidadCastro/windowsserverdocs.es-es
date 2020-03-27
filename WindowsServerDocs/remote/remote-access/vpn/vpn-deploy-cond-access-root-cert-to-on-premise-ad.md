@@ -7,16 +7,16 @@ ms.technology: networking-ras
 ms.workload: identity
 ms.topic: article
 ms.date: 06/28/2019
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 60be590d0d133f00817018018af42cfc23f1bee5
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: aeb35d8c3eafd436330b66ca7d5be68d78045df0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822398"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307847"
 ---
 # <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>Paso 7.4. Implementar certificados raíz de acceso condicional en AD local
 

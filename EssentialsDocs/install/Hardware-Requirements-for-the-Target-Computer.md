@@ -3,7 +3,7 @@ title: Requisitos de hardware para el equipo de destino
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: c20b06b9-ce0d-4c20-bf49-257c3f5dc01b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: aa8964d9cc7e0aea20b48756e378c053dfa60d9a
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 2ab2608095ffe6c0f2006f9f52cce106ff68cffc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001860"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313255"
 ---
 # <a name="hardware-requirements-for-the-target-computer"></a>Requisitos de hardware para el equipo de destino
 
@@ -30,7 +30,7 @@ En esta sección se proporcionan los requisitos de hardware para Windows Server 
   
 ### <a name="table-1--system-requirements-for-windows-server-essentials"></a>Tabla 1: requisitos del sistema para Windows Server Essentials  
   
-|Componente|Mínimo|Recomendado*|Máximo|  
+|Componente|Mínima|Recomendado*|Máximo|  
 |---------------|-------------|-------------------|-------------|  
 |Socket de la CPU|1,4 GHz (procesador de 64 bits) o superior en el caso de un núcleo único<br /><br /> 1,3 GHz (procesador de 64 bits) o superior en el caso de varios núcleos|3,1 GHz (procesador de 64 bits) o superior en el caso de varios núcleos|2 zócalos|  
 |Memoria (RAM)|2 GB|16 GB|64 GB|  
@@ -53,7 +53,7 @@ En esta sección se proporcionan los requisitos de hardware para Windows Server 
   
  Para obtener más información acerca de los requisitos de hardware, consulte el [Catálogo de Windows Server](https://www.windowsservercatalog.com).  
   
- Todo el hardware del servidor debe cumplir los requisitos establecidos para el programa del logotipo de Windows Server 2012 para sistemas. Para obtener más información, consulte [Programa del logotipo de Windows](https://www.microsoft.com/whdc/winlogo/hwrequirements.mspx).  
+ Todo el hardware del servidor debe cumplir los requisitos establecidos para el programa del logotipo de Windows Server 2012 para sistemas. Para obtener más información, consulte [Windows 7 Logo Program (Programa del logotipo de Windows)](https://www.microsoft.com/whdc/winlogo/hwrequirements.mspx).  
   
 ## <a name="see-also"></a>Consulta también  
 

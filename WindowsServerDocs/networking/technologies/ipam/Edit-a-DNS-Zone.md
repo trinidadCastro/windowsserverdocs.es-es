@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a35164e1-11ad-47c8-9843-580d30c70d07
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2175cf9c740d7b727ba017922a77c94d4379c891
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b2fa8ff6742dc393a5a2cc962c7f849049b5ef31
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355275"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312420"
 ---
 # <a name="edit-a-dns-zone"></a>Edición de una zona DNS
 
@@ -49,7 +49,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
   
     ![Editar zona DNS](../../media/Edit-a-DNS-Zone/ipam_EditZone_02.jpg)  
   
-6.  Se abre el cuadro de diálogo **Editar zona DNS** con la página **General** seleccionada. Si es necesario, edite las propiedades de la zona general: **Servidor DNS**, **categoría de zona**y **tipo de zona**y, a continuación, haga clic en **aplicar** o, si las ediciones están completas, en **Aceptar**.  
+6.  Se abre el cuadro de diálogo **Editar zona DNS** con la página **General** seleccionada. Si es necesario, edite las propiedades de la zona general: **servidor DNS**, **categoría de zona**y **tipo de zona**y, a continuación, haga clic en **aplicar** o, si las ediciones están completas, en **Aceptar**.  
   
     ![Editar propiedades de la zona y guardar](../../media/Edit-a-DNS-Zone/ipam_EditZone_03a.jpg)  
   
@@ -59,7 +59,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
   
 8.  Si es necesario, seleccione los nombres de página de propiedades de zona adicionales (servidores de nombres, SOA, transferencias de zona), realice las modificaciones y haga clic en **aplicar** o en **Aceptar**. Para revisar todas las ediciones de la zona, haga clic en **Resumen**y, a continuación, haga clic en **Aceptar**.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Administración de zonas DNS](DNS-Zone-Management.md)  
 [Administrar IPAM](Manage-IPAM.md)  
   

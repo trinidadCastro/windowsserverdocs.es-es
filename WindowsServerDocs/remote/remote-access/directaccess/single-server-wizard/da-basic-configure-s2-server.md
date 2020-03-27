@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82bf5fed-93b3-4fa6-8e71-522146eccdb1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a21e5799824c968b29c719585ca16b6b45a9ef37
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6faa40428df424f60637fb206641d8bae2774c79
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404913"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308934"
 ---
 # <a name="step-2-configure-the-basic-directaccess-server"></a>Paso 2 configurar el servidor de DirectAccess básico
 
@@ -34,7 +34,7 @@ En este tema se describe cómo configurar los ajustes de servidor y cliente nece
 > [!NOTE]  
 > Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_Role"></a>Instalar el rol de acceso remoto  
+## <a name="install-the-remote-access-role"></a><a name="BKMK_Role"></a>Instalar el rol de acceso remoto  
 Para implementar acceso remoto debes instalar el rol de acceso remoto en un servidor de la organización que actúe como el servidor de acceso remoto.  
   
 #### <a name="to-install-the-remote-access-role"></a>Para instalar el rol de acceso remoto  
@@ -43,7 +43,7 @@ Para implementar acceso remoto debes instalar el rol de acceso remoto en un serv
   
 2.  Haga clic en **Siguiente** tres veces para ir a la pantalla de selección de roles del servidor.  
   
-3.  En el cuadro de diálogo **Seleccionar roles de servidor** , seleccione **Acceso remoto**y, a continuación, haga clic en **Siguiente**.  
+3.  En el cuadro de diálogo **Seleccionar roles de servidor**, selecciona **Acceso remoto** y luego haz clic en **Siguiente**.  
   
 4.  En el cuadro de diálogo **Seleccionar características**, haga clic en **Siguiente**.  
   
@@ -51,7 +51,7 @@ Para implementar acceso remoto debes instalar el rol de acceso remoto en un serv
   
 6.  Haga clic en **Agregar características**, haga clic en **siguiente**y, a continuación, haga clic en **instalar**.  
   
-7.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
+7.  En el cuadro de diálogo **Progreso de la instalación**, comprueba que la instalación se realiza correctamente y, a continuación, haz clic en **Cerrar**.  
   
 ![](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
@@ -90,12 +90,12 @@ El siguiente cmdlet o cmdlets de Windows PowerShell instala el rol de acceso rem
   
 3.  Haga clic en **Implementar solo DirectAccess**.  
   
-4.  Seleccione la topología de la configuración de red y escriba el nombre público al cual se conectarán los clientes de acceso remoto. Haz clic en **Siguiente**.  
+4.  Seleccione la topología de la configuración de red y escriba el nombre público al cual se conectarán los clientes de acceso remoto. Haga clic en **Siguiente**.  
   
     > [!NOTE]  
     > De forma predeterminada, el Asistente para introducción implementa DirectAccess en todos los equipos portátiles del dominio al aplicar un filtro WMI a la configuración GPO de cliente.  
   
-5.  Haz clic en **Finalizar**.  
+5.  Haga clic en **Finalizar**.  
   
 6.  Dado que no se usa ninguna PKI en esta implementación, si no se encuentran los certificados, el asistente aprovisionará automáticamente certificados autofirmados para IP-HTTPS y el servidor de ubicación de red, y habilitará automáticamente el proxy Kerberos. El asistente también habilitará NAT64 y DNS64 para la traducción de protocolo en el entorno de solo IPv4. Una vez que el asistente haya terminado de aplicar la configuración correctamente, haga clic en **Cerrar**.  
   
@@ -119,7 +119,7 @@ El siguiente cmdlet o cmdlets de Windows PowerShell instala el rol de acceso rem
   
 6.  Escriba **Get-DAConnectionStatus** y presione **ENTRAR**. Debido a que el cliente puede acceder a la dirección URL del servidor de ubicación de red, el estado aparecerá como **ConectadoLocalmente**.  
   
-## <a name="BKMK_Links"></a>Paso anterior  
+## <a name="previous-step"></a><a name="BKMK_Links"></a>Paso anterior  
   
 -   [Paso 1: configurar la infraestructura de DirectAccess](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
   

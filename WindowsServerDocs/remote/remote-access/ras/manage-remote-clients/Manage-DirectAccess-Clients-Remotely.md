@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 36255d80-a13e-4af7-a5c0-ab4c8f302622
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ecfbd6dc09f251d5197a16b166aa76e6a37b933a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a0e717b75e1d973f1594b254e1ea5c4eb55536b8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367281"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308235"
 ---
 # <a name="manage-directaccess-clients-remotely"></a>Administrar clientes de DirectAccess de forma remota
 
@@ -53,9 +53,9 @@ Antes de comenzar a supervisar y contabilizar las tareas de clientes remotos, de
   
 La supervisión de clientes remotos se basa en las conexiones. Hay dos tipos de conexiones de túnel que los clientes de DirectAccess establecen:  
   
--   **Conexiones de tráfico de túnel de equipo**: este túnel lo establece el equipo, en el contexto del sistema, para acceder a los servidores que se necesitan para la resolución de nombres, autenticación, actualización de remedios, etc.  
+-   **Conexiones de tráfico de túnel de equipo**: este túnel lo establece el equipo, en el contexto del sistema, para obtener acceso a los servidores necesarios para la resolución de nombres, la autenticación, la actualización de correcciones, etc.  
   
--   **Conexiones de tráfico de túnel de usuario**: este túnel lo establece la cuenta de usuario en el equipo, en un contexto de usuario, cuando este intenta acceder a un recurso en la red corporativa. En función de los requisitos de implementación, un usuario podría tener que proporcionar credenciales seguras (por ejemplo, mediante una tarjeta inteligente o con una contraseña de un solo uso) para acceder a los recursos de la red corporativa.  
+-   **Conexiones de tráfico de túnel de usuario**: este túnel lo establece la cuenta de usuario en el equipo, en un contexto de usuario, cuando el usuario intenta obtener acceso a un recurso de la red corporativa. En función de los requisitos de implementación, un usuario podría tener que proporcionar credenciales seguras (por ejemplo, mediante una tarjeta inteligente o con una contraseña de un solo uso) para acceder a los recursos de la red corporativa.  
   
 En el caso de DirectAccess, una conexión se identifica de forma única por la dirección IP del cliente remoto. Por ejemplo, si un túnel de equipo está abierto para un equipo cliente y un usuario está conectado desde ese equipo, se utilizará la misma conexión. Si el usuario se desconecta y se vuelve a conectar mientras el túnel de equipo está activo, es una sola conexión.  
   

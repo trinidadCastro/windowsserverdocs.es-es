@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 509eaa08-c49d-448d-a71e-c1c45519ccd5
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f888ebadfaa91b35f0924b23e9818da1c32f26e5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c2f855512b978462f89b8f32b1f7edf59180f563
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388478"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310776"
 ---
 # <a name="step-4-create-the-network-load-balanced-remote-access-cluster"></a>Paso 4 crear el clúster de acceso remoto con equilibrio de carga de red
 
@@ -62,7 +62,7 @@ Para configurar EDGE1 y EDGE2 en un clúster, debe instalar la característica d
   
 3.  En el cuadro de diálogo **seleccionar características** , seleccione **equilibrio de carga de red**, haga clic en **Agregar características**, haga clic en **siguiente**y, a continuación, haga clic en **instalar**.  
   
-4.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
+4.  En el cuadro de diálogo **Progreso de la instalación**, comprueba que la instalación se realiza correctamente y, a continuación, haz clic en **Cerrar**.  
   
 5.  Repita este procedimiento en EDGE2.  
   
@@ -71,7 +71,7 @@ Use este procedimiento para habilitar el equilibrio de carga y configurar las nu
   
 ### <a name="enable-load-balancing"></a>Habilitar el equilibrio de carga  
   
-1.  En EDGE1, haga clic en **Inicio**, escriba **RAMgmtUI. exe**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+1.  En EDGE1, haga clic en **Inicio**, escriba **RAMgmtUI. exe**y, a continuación, presione Entrar. Si aparece el cuadro de **Control de cuentas de usuario**, confirma que la acción que se muestra es la que deseas realizar y haz clic en **Sí**.  
   
 2.  En el panel izquierdo de la consola de administración de acceso remoto, haga clic en **configuración**y, a continuación, en el panel **tareas** , haga clic en **Habilitar equilibrio de carga**.  
   
@@ -117,7 +117,7 @@ Use este procedimiento para agregar EDGE2 al clúster de NLB.
   
 8.  En el cuadro de diálogo **Agregar y quitar servidores** , haga clic en **cerrar**.  
   
-9. En la pantalla **Inicio** , escriba**nlbmgr. exe**y presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+9. En la pantalla **Inicio** , escriba**nlbmgr. exe**y presione Entrar. Si aparece el cuadro de **Control de cuentas de usuario**, confirma que la acción que se muestra es la que deseas realizar y haz clic en **Sí**.  
   
 10. En el **Administrador de equilibrio de carga de red**, haga clic en **clúster de das interno**. En el panel de detalles, asegúrese de que tanto **EDGE1 (CorpNet)** como **EDGE2 (CorpNet)** tienen el estado **convergido**.  
   

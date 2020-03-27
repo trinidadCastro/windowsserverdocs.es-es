@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0bc6746f-2adb-43d8-a503-52f473833164
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 297044397088bfb64b51e1553d3f69d5b933e81b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c20c21c39e44d7eb3da812bbe71f175d0688d6c0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405895"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309657"
 ---
 # <a name="troubleshooting-converged-nic-configurations"></a>Solución de problemas de configuraciones de NIC convergentes
 
@@ -82,7 +82,7 @@ El host vNIC debe aparecer también como compatible con RDMA desde la perspectiv
 
 ## <a name="get-netadapterqos"></a>Get-NetAdapterQos
 
-Para ver la configuración de QoS \(\) de calidad de servicio del adaptador de red, ejecute el siguiente comando de Windows PowerShell.
+Puede ver la configuración de calidad de servicio \(QoS del adaptador de red\) mediante la ejecución del siguiente comando de Windows PowerShell.
 
     Get-NetAdapterQos
 
@@ -96,14 +96,14 @@ Las prioridades y las clases de tráfico deben mostrarse según el primer paso d
 
 Si los resultados son inesperados, realice los pasos siguientes.
 
-1. Asegurarse de que el adaptador de red físico es compatible \(con\) el protocolo de puente de los centros de datos DCB y QoS
+1. Asegúrese de que el adaptador de red físico admite el protocolo de puente del centro de datos \(DCB\) y QoS
 2. Asegúrese de que los controladores del adaptador de red estén actualizados.
 
 --- 
 
 ## <a name="get-smbmultichannelconnection"></a>Get-SmbMultiChannelConnection
 
-Puede usar el siguiente comando de Windows PowerShell para comprobar que la dirección IP del nodo remoto es compatible\-con RDMA.
+Puede usar el siguiente comando de Windows PowerShell para comprobar que la dirección IP del nodo remoto es RDMA\-compatible.
 
     Get-SmbMultiChannelConnection
 
@@ -125,7 +125,7 @@ Si los resultados son inesperados, realice los pasos siguientes.
 
 ## <a name="get-smbclientnetworkinterface"></a>Get-SmbClientNetworkInterface
 
-Puede usar el siguiente comando para comprobar que la NIC virtual que habilitó para RDMA se notifique como compatible con\-RDMA mediante SMB.
+Puede usar el siguiente comando para comprobar que la NIC virtual que habilitó para RDMA se notifique como RDMA\-compatible con SMB.
 
     Get-SmbClientNetworkInterface
 
@@ -145,9 +145,9 @@ Si los resultados son inesperados, realice los pasos siguientes.
 
 --- 
 
-## <a name="vstat-mellanox-specific"></a>específico de la Mellanox de vstat \(\)
+## <a name="vstat-mellanox-specific"></a>vstat \(\) de Mellanox específico
 
-Si utiliza adaptadores de red de Mellanox, puede usar el comando **vstat** para comprobar la versión de RoCE \(\) Ethernet convergente en los nodos de Hyper-V.
+Si usa adaptadores de red Mellanox, puede usar el comando **vstat** para comprobar la versión de RDMA sobre Ethernet convergente \(RoCE\) en los nodos de Hyper-V.
 
 ### <a name="vstat-expected-results"></a>resultados esperados de vstat
 

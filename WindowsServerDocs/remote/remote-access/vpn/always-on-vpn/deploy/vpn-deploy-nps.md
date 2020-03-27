@@ -6,22 +6,22 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 5cb0d342afec9c28259efb7a2e15666358f3cb5b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18fa85189b082a4a88a8a0bc0d6df11e21e7c97d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404260"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307697"
 ---
 # <a name="step-4-install-and-configure-the-network-policy-server-nps"></a>Paso 4. Instalación y configuración del servidor de directivas de redes (NPS)
 
 > Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2 y Windows 10
 
-- [**Nueva** Paso 3. Configurar el servidor de acceso remoto para VPN de Always On](vpn-deploy-ras.md)
-- [**Nueva** Paso 5. Definir el DNS y la configuración del firewall](vpn-deploy-dns-firewall.md)
+- [**Siguiente:** Paso 3. Configurar el servidor de acceso remoto para Always On VPN](vpn-deploy-ras.md)
+- [**Siguiente:** Paso 5. Configuración de DNS y firewall](vpn-deploy-dns-firewall.md)
 
 En este paso, instalará el servidor de directivas de redes (NPS) para el procesamiento de las solicitudes de conexión enviadas por el servidor VPN:
 
@@ -88,7 +88,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
     
     En la página progreso de la instalación se muestra el estado durante el proceso de instalación. Una vez completado el proceso, se muestra el mensaje "instalación correcta en *NombreDeEquipo*", donde *NombreDeEquipo* es el nombre del equipo en el que instaló el servidor de directivas de redes.
 
-13. Selecciona **Cerrar**.
+13. Seleccione **Cerrar**.
 
 ## <a name="configure-nps"></a>Configuración de NPS
 
@@ -104,7 +104,7 @@ En este procedimiento, registrará el servidor en Active Directory para que teng
 
 2.  En la consola de NPS, haga clic con el botón derecho en **NPS (local)** y, a continuación, seleccione **registrar servidor en Active Directory**.
    
-     Se abre el cuadro de diálogo servidor de directivas de redes.
+     Se abrirá el cuadro de diálogo Servidor de directivas de redes.
 
 3.  En el cuadro de diálogo servidor de directivas de redes, seleccione **Aceptar** dos veces.
 
@@ -116,9 +116,9 @@ En este procedimiento, configure las cuentas del servidor de directivas de redes
 
 - **Registro de eventos**. Se usa principalmente para la auditoría y la solución de problemas de intentos de conexión. Puede configurar el registro de eventos NPS mediante la obtención de las propiedades del servidor NPS en la consola NPS.
 
-- **Registro de solicitudes de autenticación y cuentas de usuario en un archivo local**. Se usa principalmente para el análisis de la conexión y la facturación. También se usa como herramienta de investigación de seguridad, ya que proporciona un método para realizar el seguimiento de la actividad de un usuario malintencionado después de un ataque. Puede configurar el registro de archivos local mediante el Asistente para configuración de cuentas.
+- **Registro de solicitudes de autenticación y cuentas de usuario en un archivo local**. Se usa principalmente para realizar el análisis de las conexiones y para la facturación. También se usa como herramienta de investigación de seguridad, ya que proporciona un método para realizar el seguimiento de la actividad de un usuario malintencionado después de un ataque. Puede configurar el registro de archivos local mediante el Asistente para configuración de cuentas.
 
-- **Registro de solicitudes de autenticación y cuentas de usuario en una base de datos compatible con XML Microsoft SQL Server**. Se usa para permitir que varios servidores que ejecutan NPS tengan un origen de datos. También proporciona las ventajas de usar una base de datos relacional. Puede configurar el registro de SQL Server mediante el Asistente para configuración de cuentas.
+- **Registro de solicitudes de autenticación y cuentas de usuario en una base de datos compatible con XML Microsoft SQL Server**. Se usa para permitir que varios servidores que ejecuten NPS tengan un origen de datos. Además, ofrece las ventajas de usar una base de datos relacional. Puede configurar el registro de SQL Server mediante el Asistente para configuración de cuentas.
 
 Para configurar las cuentas de servidor de directivas de redes, consulte Configuración de las [cuentas de servidor de directivas de redes](../../../../../networking/technologies/nps/nps-accounting-configure.md).
 
@@ -171,7 +171,7 @@ En este procedimiento, configurará NPS como un servidor RADIUS en la red de la 
 
 4. En especificar el servidor de acceso telefónico o VPN, en clientes RADIUS, seleccione el nombre del servidor VPN que agregó en el paso anterior. Por ejemplo, si el nombre NetBIOS del servidor VPN es RAS1, seleccione **RAS1**.
 
-5. Selecciona **Siguiente**.
+5. Seleccione **Siguiente**.
 
 6. En configurar métodos de autenticación, realice los pasos siguientes:
 
@@ -191,15 +191,15 @@ En este procedimiento, configurará NPS como un servidor RADIUS en la red de la 
 
     7. Seleccione **Aceptar** para cerrar editar propiedades de EAP protegido.
 
-7. Selecciona **Siguiente**.
+7. Seleccione **Siguiente**.
 
 8. En especificar grupos de usuarios, siga estos pasos:
 
-    1. Seleccione **Agregar**. Se abre el cuadro de diálogo Seleccionar usuarios, equipos, cuentas de servicio o grupos.
+    1. Seleccione **Agregar**. Se abre el cuadro de diálogo Seleccionar Usuarios, Equipos, Cuentas de servicio o Grupos.
 
     2. Escriba **usuarios de VPN**y, luego, haga clic en **Aceptar**.
 
-    3. Selecciona **Siguiente**.
+    3. Seleccione **Siguiente**.
 
 9. En especificar filtros IP, seleccione **siguiente**.
 
@@ -228,4 +228,4 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Paso 5. Configuración de DNS y firewall para Always On VPN](vpn-deploy-dns-firewall.md): En este paso, instalará Administrador del servidor el servidor de directivas de redes (NPS) mediante Windows PowerShell o el Asistente para agregar roles y características. También puede configurar NPS para que controle todas las tareas de autenticación, autorización y contabilidad para las solicitudes de conexión que recibe desde el servidor VPN.
+[Paso 5. Configuración de DNS y del firewall para Always On VPN](vpn-deploy-dns-firewall.md): en este paso, instalará el servidor de directivas de redes (NPS) mediante Windows PowerShell o el Asistente para agregar roles y características administrador del servidor. También puede configurar NPS para que controle todas las tareas de autenticación, autorización y contabilidad para las solicitudes de conexión que recibe desde el servidor VPN.

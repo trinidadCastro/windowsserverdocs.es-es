@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 673c5bfb-b590-4932-8e54-ca0a466d90cc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 17aadbb789052be7f33822ce49f3b797f2211d55
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 608bc4b2805639e2638ac12f74b712c812ce165f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367380"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308241"
 ---
 # <a name="step-2-plan-cluster-servers"></a>Paso 2 planear los servidores de clúster
 
@@ -30,11 +30,11 @@ Después de implementar un solo servidor de acceso remoto, tiene previsto agrega
 |[2,1 instalar roles y características](#BKMK_Install).|Para cada servidor que se agregará al clúster, planee la instalación del rol de acceso remoto y la característica NLB de Windows (si es necesario), planee la topología, el direccionamiento IP, el enrutamiento y el reenvío.|  
 |[2,2 configuración del servidor](#BKMK_Config)|Configure los valores de cada servidor que se agregará al clúster. Tenga en cuenta que puede configurar un clúster de servidores con equilibrio de carga mediante máquinas virtuales. Para que el enrutamiento y la conectividad funcionen correctamente, debe configurar las máquinas virtuales para que usen la suplantación de direcciones MAC.|  
   
-## <a name="BKMK_Install"></a>2,1 instalar roles y características  
+## <a name="21-installing-roles-and-features"></a><a name="BKMK_Install"></a>2,1 instalar roles y características  
 Para cada servidor que desee unir al clúster, Planee instalar el rol de acceso remoto. Además, tiene previsto instalar la característica de equilibrio de carga de red (NLB) Si desea equilibrar la carga del tráfico en el clúster mediante Windows NLB. Para obtener más información, consulte [equilibrio de carga de red](https://technet.microsoft.com/windows-server-docs/networking/technologies/network-load-balancing).  
   
-## <a name="BKMK_Config"></a>2,2 configuración del servidor  
-Para cada servidor que se agregará al clúster, planee la dirección IP y la configuración del dominio. Tenga en cuenta lo siguiente:  
+## <a name="22-configure-server-settings"></a><a name="BKMK_Config"></a>2,2 configuración del servidor  
+Para cada servidor que se agregará al clúster, planee la dirección IP y la configuración del dominio. Observe lo siguiente:  
   
 1.  Todos los servidores del clúster deben pertenecer al mismo dominio.  
   

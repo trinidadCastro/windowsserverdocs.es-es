@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7540c17b-81de-47de-a04f-3247afa26f70
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: beb2f5ce27115bf328917e38910198794f523547
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1a195be9c00ef35f80a7e1975b52128681fca1f0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404611"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308212"
 ---
 # <a name="step-3-plan-a-load-balanced-cluster-deployment"></a>Paso 3: planear la implementación de un clúster con equilibrio de carga
 
@@ -32,7 +32,7 @@ El siguiente paso consiste en planear la configuración de equilibrio de carga y
 |3,3 plan para conexiones de cliente VPN|Tenga en cuenta los requisitos para las conexiones de cliente VPN.|  
 |3,4 planear el servidor de ubicación de red|Si el sitio web del servidor de ubicación de red se hospeda en el servidor de acceso remoto y no se usa un certificado autofirmado, asegúrese de que cada servidor del clúster tenga un certificado de servidor para autenticar la conexión al sitio Web.|  
   
-## <a name="bkmk_2_1_Plan_LB"></a>3,1 planear el equilibrio de carga  
+## <a name="31-plan-load-balancing"></a><a name="bkmk_2_1_Plan_LB"></a>3,1 planear el equilibrio de carga  
 El acceso remoto se puede implementar en un solo servidor o en un clúster de servidores de acceso remoto. Se puede equilibrar la carga del tráfico al clúster para proporcionar alta disponibilidad y escalabilidad a los clientes de DirectAccess. Hay dos opciones de equilibrio de carga:  
   
 -   **Windows NLB**: Windows NLB es una característica de Windows Server. Para usarlo, no necesita hardware adicional, ya que todos los servidores del clúster son responsables de administrar la carga de tráfico. Windows NLB admite un máximo de ocho servidores en un clúster de acceso remoto.  
@@ -47,7 +47,7 @@ El acceso remoto se puede implementar en un solo servidor o en un clúster de se
   
     -   El administrador puede cambiar de NLB de Windows a equilibrador de carga externo y viceversa. Tenga en cuenta que el administrador no puede cambiar de load balancer externo a NLB de Windows si tiene más de 8 servidores en la implementación del equilibrador de carga externo.  
   
-### <a name="ELBConfigEx"></a>3.1.1 ejemplo de configuración de Load Balancer externa  
+### <a name="311-external-load-balancer-configuration-example"></a><a name="ELBConfigEx"></a>3.1.1 ejemplo de configuración de Load Balancer externa  
 En esta sección se describen los pasos de configuración para habilitar un equilibrador de carga externo en una nueva implementación de acceso remoto. Cuando se usa un equilibrador de carga externo, el clúster de acceso remoto puede ser similar a la siguiente ilustración, donde los servidores de acceso remoto están conectados a la red corporativa a través de un equilibrador de carga en la red interna y a Internet a través de un equilibrador de carga conectado a la red externa:  
   
 ![Ejemplo de configuración de Load Balancer externo](../../../../media/Step-3-Plan-a-Load-Balanced-Cluster-Deployment/ELBDiagram-URA_Enterprise_NLB-.png)  
@@ -85,7 +85,7 @@ En esta sección se describen los pasos de configuración para habilitar un equi
   
 6.  El servidor de acceso remoto se configurará con las direcciones IP planeadas y las direcciones IP externas e internas del clúster se configurarán según las direcciones IP planeadas.  
   
-## <a name="bkmk_2_2_NLB"></a>3,2 plan IP-HTTPS  
+## <a name="32-plan-ip-https"></a><a name="bkmk_2_2_NLB"></a>3,2 plan IP-HTTPS  
   
 1.  **Requisitos de certificado**: durante la implementación del único servidor de acceso remoto, seleccionó usar un certificado IP-https emitido por una entidad de certificación (CA) pública o interna, o un certificado autofirmado. En la implementación de clústeres, debe usar un tipo de certificado idéntico en cada miembro del clúster de acceso remoto. Es decir, si usó un certificado emitido por una CA pública (recomendado), debe instalar un certificado emitido por una CA pública en cada miembro del clúster. El nombre de sujeto del certificado nuevo debe ser idéntico al nombre de sujeto del certificado IP-HTTPS que se usa actualmente en la implementación. Tenga en cuenta que si usa certificados autofirmados, estos se configurarán automáticamente en cada servidor durante la implementación del clúster.  
   
@@ -94,7 +94,7 @@ En esta sección se describen los pasos de configuración para habilitar un equi
     > [!NOTE]  
     > Los requisitos de prefijo solo son relevantes en una red interna habilitada para IPv6 (solo IPv6 o IPV4 + IPv6). En una red corporativa solo IPv4, el prefijo de cliente se configura automáticamente y el administrador no puede cambiarlo.  
   
-## <a name="BKMK_3.3"></a>3,3 plan para conexiones de cliente VPN  
+## <a name="33-plan-for-vpn-client-connections"></a><a name="BKMK_3.3"></a>3,3 plan para conexiones de cliente VPN  
 Hay una serie de consideraciones para las conexiones de cliente VPN:  
   
 -   No se puede equilibrar la carga del tráfico de clientes VPN si se asignan direcciones de cliente VPN mediante DHCP. Se requiere un grupo de direcciones estáticas.  
@@ -105,8 +105,8 @@ Hay una serie de consideraciones para las conexiones de cliente VPN:
   
 -   Para permitir que el tráfico de cliente IPv6 de VPN tenga equilibrio de carga, debe especificar un prefijo IPv6 de 59 bits.  
   
-## <a name="BKMK_nls"></a>3,4 planear el servidor de ubicación de red  
-Si está ejecutando el sitio web del servidor de ubicación de red en el único servidor de acceso remoto, durante la implementación seleccionó para usar un certificado emitido por una entidad de certificación (CA) interna o un certificado autofirmado.  Tenga en cuenta lo siguiente:  
+## <a name="34-plan-the-network-location-server"></a><a name="BKMK_nls"></a>3,4 planear el servidor de ubicación de red  
+Si está ejecutando el sitio web del servidor de ubicación de red en el único servidor de acceso remoto, durante la implementación seleccionó para usar un certificado emitido por una entidad de certificación (CA) interna o un certificado autofirmado.  Observe lo siguiente:  
   
 1.  Cada miembro del clúster de acceso remoto debe tener un certificado para el servidor de ubicación de red correspondiente a la entrada DNS para el sitio web del servidor de ubicación de red.  
   

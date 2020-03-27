@@ -3,7 +3,7 @@ title: Agregar nombres de dominio de tercer nivel
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: e5b4a362-1881-4024-ae4e-cc3b05e50103
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 64bf24e45155fdd981e2061b3de7ebce1c53b36c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5608fb5417b9e958b45d150879daccc3b7767e59
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833326"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310234"
 ---
 # <a name="add-third-level-domain-names"></a>Agregar nombres de dominio de tercer nivel
 
@@ -28,26 +28,26 @@ Para habilitar la solicitud de nombres de dominio de tercer nivel por parte de l
 ## <a name="create-a-provider-of-third-level-domain-names"></a>Cree un proveedor de nombres de dominio de tercer nivel  
  Si desea que los nombres de dominio de tercer nivel estén disponibles, cree e instale un ensamblado de código que proporcione los nombres de dominio al asistente. Para ello deberá completar las tareas siguientes:  
   
--   [Agregue una implementación de la interfaz de IDomainSignupProvider al ensamblado](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)  
+-   [Agregar una implementación de la interfaz IDomainSignupProvider al ensamblado](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)  
   
--   [Agregue una implementación de la interfaz de IDomainMaintenanceProvider al ensamblado](Add-Third-Level-Domain-Names.md#BKMK_DomainMaintenance)  
+-   [Agregar una implementación de la interfaz IDomainMaintenanceProvider al ensamblado](Add-Third-Level-Domain-Names.md#BKMK_DomainMaintenance)  
   
 -   [Firmar el ensamblado con una firma Authenticode](Add-Third-Level-Domain-Names.md#BKMK_SignAssembly)  
   
--   [Instale al ensamblado en el equipo de referencia](Add-Third-Level-Domain-Names.md#BKMK_InstallAssembly)  
+-   [Instalar el ensamblado en el equipo de referencia](Add-Third-Level-Domain-Names.md#BKMK_InstallAssembly)  
   
--   [Reinicie el servicio de administración de nombres de dominio de Windows Server](Add-Third-Level-Domain-Names.md#BKMK_RestartService)  
+-   [Reiniciar el servicio de administración de nombres de dominio de Windows Server](Add-Third-Level-Domain-Names.md#BKMK_RestartService)  
   
-###  <a name="BKMK_DomainSignup"></a> Agregue una implementación de la interfaz de IDomainSignupProvider al ensamblado  
+###  <a name="add-an-implementation-of-the-idomainsignupprovider-interface-to-the-assembly"></a><a name="BKMK_DomainSignup"></a>Agregar una implementación de la interfaz IDomainSignupProvider al ensamblado  
  La interfaz de IDomainSignupProvider se utiliza para agregar ofertas de dominios al asistente.  
   
 ##### <a name="to-add-the-idomainsignupprovider-code-to-the-assembly"></a>Para agregar el código de IDomainSignupProvider al ensamblado  
   
 1.  Abra Visual Studio 2008 como administrador; para ello, haga clic con el botón derecho en el menú **Inicio** y seleccione **Ejecutar como administrador**.  
   
-2.  Haga clic en **Archivo**, **Nuevo**y a continuación haga clic en **Proyecto**.  
+2.  Haga clic en **Archivo**, **Nuevo** y a continuación haga clic en **Proyecto**.  
   
-3.  En el cuadro de diálogo **Nuevo proyecto** , haga clic en **Visual C#**, **Biblioteca de clases**, escriba un nombre para la solución y a continuación haga clic en **Aceptar**.  
+3.  En el cuadro de diálogo **Nuevo proyecto**, haga clic en **Visual C#** , **Biblioteca de clases**, escriba un nombre para la solución y a continuación haga clic en **Aceptar**.  
   
 4.  Cambie el nombre del archivo Class1.cs. Por ejemplo, MyDomainNameProvider.cs  
   
@@ -278,7 +278,7 @@ Para habilitar la solicitud de nombres de dominio de tercer nivel por parte de l
   
 21. Guarde el proyecto y no lo cierre, ya que lo agregará en el procedimiento siguiente. No podrá generar el proyecto hasta que complete el procedimiento siguiente.  
   
-###  <a name="BKMK_DomainMaintenance"></a> Agregue una implementación de la interfaz de IDomainMaintenanceProvider al ensamblado  
+###  <a name="add-an-implementation-of-the-idomainmaintenanceprovider-interface-to-the-assembly"></a><a name="BKMK_DomainMaintenance"></a>Agregar una implementación de la interfaz IDomainMaintenanceProvider al ensamblado  
  IDomainMaintenanceProvider se utiliza para mantener el dominio después de su creación.  
   
 ##### <a name="to-add-the-idomainmaintenanceprovider-code-to-the-assembly"></a>Para agregar el código de IDomainMaintenanceProvider al ensamblado  
@@ -517,10 +517,10 @@ Para habilitar la solicitud de nombres de dominio de tercer nivel por parte de l
   
 14. Guarde y genere la solución.  
   
-###  <a name="BKMK_SignAssembly"></a> Firmar el ensamblado con una firma Authenticode  
+###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>Firmar el ensamblado con una firma Authenticode  
  Para poder utilizar el ensamblado en el sistema operativo es necesario firmarlo mediante Authenticode. Para obtener más información acerca de cómo firmar el ensamblado, consulte [Signing and Checking Code with Authenticode (Firma y comprobación de código con Authenticode)](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode).  
   
-###  <a name="BKMK_InstallAssembly"></a> Instale al ensamblado en el equipo de referencia  
+###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a>Instalar el ensamblado en el equipo de referencia  
  Coloque el ensamblado en un equipo de referencia. Anote la ruta de la carpeta, ya que deberá introducirla en el registro en el paso siguiente.  
   
 ### <a name="add-a-key-to-the-registry"></a>Agregue una clave al registro  
@@ -528,7 +528,7 @@ Para habilitar la solicitud de nombres de dominio de tercer nivel por parte de l
   
 ##### <a name="to-add-a-key-to-the-registry"></a>Para agregar una clave al registro  
   
-1.  En el equipo de referencia. haga clic en **Inicio**, escriba **regedit**y después presione **Entrar**.  
+1.  En el equipo de referencia. haga clic en **Inicio**, escriba **regedit** y después presione **Entrar**.  
   
 2.  En el panel izquierdo, expanda **HKEY_LOCAL_MACHINE**, **SOFTWARE**, **Microsoft**, **Windows Server**, **Domain Managers** y finalmente **Providers**.  
   
@@ -550,7 +550,7 @@ Para habilitar la solicitud de nombres de dominio de tercer nivel por parte de l
   
 11. Haga clic con el botón secundario sobre la nueva cadena **Enabled** en el panel derecho y a continuación haga clic en **Modificar**.  
   
-12. Escriba **True**y haga clic en **Aceptar**.  
+12. Escriba **True** y haga clic en **Aceptar**.  
   
 13. Vuelva a hacer clic con el botón secundario del ratón y a continuación haga clic en **Valor de cadena**.  
   
@@ -560,27 +560,27 @@ Para habilitar la solicitud de nombres de dominio de tercer nivel por parte de l
   
 16. Escriba el nombre de clase completo del proveedor que se haya definido en el ensamblado y a continuación haga clic en **Aceptar**.  
   
-###  <a name="BKMK_RestartService"></a> Reinicie el servicio de administración de nombres de dominio de Windows Server  
+###  <a name="restart-the-windows-server-domain-name-management-service"></a><a name="BKMK_RestartService"></a>Reiniciar el servicio de administración de nombres de dominio de Windows Server  
  Deberá reiniciar el Servicio Windows Server Domain Management para que el proveedor esté disponible en el sistema operativo.  
   
 ##### <a name="restart-the-service"></a>Reinicio del servicio  
   
-1.  Haga clic en **Inicio**, escriba **mmc**y después presione **Entrar**.  
+1.  Haga clic en **Inicio**, escriba **mmc** y después presione **Entrar**.  
   
 2.  Si el complemento Servicios no aparece en la consola, siga los pasos que se indican a continuación para agregarlo:  
   
     1.  Haga clic en **Archivo** y, a continuación, en **Agregar o quitar complemento**.  
   
-    2.  En la lista **Complementos disponibles** , haga clic en **Servicios**y, a continuación, en **Agregar**.  
+    2.  En la lista **Complementos disponibles**, haga clic en **Servicios** y, a continuación, en **Agregar**.  
   
     3.  En el cuadro de diálogo **Servicios**, asegúrese de que se haya seleccionado **equipo local** y a continuación haga clic en **Finalizar**.  
   
     4.  Haga clic en **Aceptar** para cerrar el cuadro de diálogo **Agregar/eliminar complementos**.  
   
-3.  Haga doble clic en **Servicios**, desplácese hacia abajo hasta **Windows Server Domain Management**y a continuación haga clic en **Reiniciar el servicio**.  
+3.  Haga doble clic en **Servicios**, desplácese hacia abajo hasta **Windows Server Domain Management** y a continuación haga clic en **Reiniciar el servicio**.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

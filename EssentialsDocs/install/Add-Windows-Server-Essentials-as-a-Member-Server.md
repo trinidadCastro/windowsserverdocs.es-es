@@ -3,7 +3,7 @@ title: Agregar Windows Server Essentials como servidor miembro
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: d09dd82f-f7d2-47ce-862d-fd9869f2021c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 09943f9708af3839ff21717316853fab9ba0283b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 4b87c066885ed2bf0ac6dfa29496317310b062d9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865050"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310177"
 ---
 # <a name="add-windows-server-essentials-as-a-member-server"></a>Agregar Windows Server Essentials como servidor miembro
 
@@ -84,7 +84,7 @@ Este tema se aplica a un servidor que ejecuta Windows Server 2012 R2 Standard, W
   
 6.  Haga clic en **Configurar** para empezar la configuración. El proceso de configuración tarda aproximadamente 10 minutos en completarse.  
   
-7.  En el escritorio, haga clic en el icono de escritorio para iniciar el panel del servidor. En la página principal, complete las tareas **Introducción** que se indican en la pestaña **Instalación** .  
+7.  En el escritorio, haga clic en el icono de escritorio para iniciar el panel del servidor. En la página principal, complete las tareas **Introducción** que se indican en la pestaña **Instalación**.  
   
 ## <a name="see-also"></a>Vea también  
   

@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 2448d381-55aa-4c14-997a-202c537c6727
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: 294466ef70a9ffc230953b48bb292938be519eac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee3aa93c02419667b05a987f548ef4d14285231d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406118"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313070"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>Implementación de controladora de red con Windows PowerShell
 
@@ -29,7 +29,7 @@ En este tema se proporcionan instrucciones sobre el uso de Windows PowerShell pa
 >[!IMPORTANT]
 >No implemente el rol de servidor de la controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \(máquina virtual\) instalada en un host de Hyper-V. Después de haber instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper\-V diferentes, debe habilitar los hosts de Hyper\-V para redes definidas por software \(SDN\) agregando los hosts a la controladora de red mediante el comando de Windows PowerShell **New-NetworkControllerServer**. Al hacerlo, habilita el Load Balancer de software de SDN para que funcione. Para obtener más información, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
 
-En este tema se incluyen las siguientes secciones.
+Este tema contiene las siguientes secciones.
 
 - [Instalar el rol de servidor de controlador de red](#install-the-network-controller-server-role)
 
@@ -88,8 +88,8 @@ En la tabla siguiente se proporcionan descripciones para cada parámetro del com
 
 |Parámetro|Descripción|
 |-------------|---------------|
-|Nombre|El parámetro **Name** especifica el nombre descriptivo del servidor que desea agregar al clúster.|
-|Servidor|El parámetro **Server** especifica el nombre de host, el nombre de dominio completo (FQDN) o la dirección IP del servidor que desea agregar al clúster. En el caso de los equipos Unidos a un dominio, se requiere FQDN.|
+|Name|El parámetro **Name** especifica el nombre descriptivo del servidor que desea agregar al clúster.|
+|Server|El parámetro **Server** especifica el nombre de host, el nombre de dominio completo (FQDN) o la dirección IP del servidor que desea agregar al clúster. En el caso de los equipos Unidos a un dominio, se requiere FQDN.|
 |FaultDomain|El parámetro **FaultDomain** especifica el dominio de error del servidor que se va a agregar al clúster. Este parámetro define los servidores que pueden experimentar errores al mismo tiempo que el servidor que se va a agregar al clúster. Este error puede deberse a las dependencias físicas compartidas, como fuentes de alimentación y redes. Normalmente, los dominios de error representan jerarquías que están relacionadas con estas dependencias compartidas, con más servidores que es probable que produzcan errores juntos desde un punto superior en el árbol de dominios de error. Durante el tiempo de ejecución, la controladora de red considera los dominios de error del clúster e intenta distribuir los servicios de la controladora de red para que estén en dominios de error independientes. Este proceso ayuda a garantizar, en caso de error de un dominio de error, que la disponibilidad de ese servicio y su estado no se vean comprometidas. Los dominios de error se especifican en un formato jerárquico. Por ejemplo: "FD:/DC1/Bastidor1/Host1", donde DC1 es el nombre del centro de recursos, Bastidor1 es el nombre del bastidor y Host1 es el nombre del host en el que se coloca el nodo.|
 |RestInterface|El parámetro **RestInterface** especifica el nombre de la interfaz en el nodo donde se termina la comunicación de transferencia de estado REPRESENTACIONAL (REST). Esta interfaz de controladora de red recibe solicitudes de API de Northbound desde el nivel de administración de la red.|
 |NodeCertificate|El parámetro **NodeCertificate** especifica el certificado que usa la controladora de red para la autenticación del equipo. El certificado es necesario si usa la autenticación basada en certificados para la comunicación dentro del clúster. el certificado también se utiliza para el cifrado del tráfico entre los servicios de la controladora de red. El nombre del firmante del certificado debe ser el mismo que el nombre DNS del nodo.|
@@ -112,10 +112,10 @@ En la tabla siguiente se proporcionan descripciones para cada parámetro del com
 |DiagnosticLogLocation|El parámetro **DiagnosticLogLocation** especifica la ubicación del recurso compartido donde se cargan periódicamente los registros de diagnóstico. Si no especifica un valor para este parámetro, los registros se almacenan localmente en cada nodo. Los registros se almacenan localmente en la carpeta%systemdrive%\Windows\tracing\SDNDiagnostics. Los registros del clúster se almacenan localmente en la carpeta%systemdrive%\ProgramData\Microsoft\Service Fabric\log\Traces.|
 |LogLocationCredential|El parámetro **LogLocationCredential** especifica las credenciales necesarias para tener acceso a la ubicación del recurso compartido donde se almacenan los registros.|
 |CredentialEncryptionCertificate|El parámetro **CredentialEncryptionCertificate** especifica el certificado que la controladora de red usa para cifrar las credenciales que se usan para tener acceso a los archivos binarios de la controladora de red y **LogLocationCredential**, si se especifica. El certificado debe aprovisionarse en todos los nodos de la controladora de red antes de ejecutar este comando y el mismo certificado debe inscribirse en todos los nodos del clúster. Se recomienda usar este parámetro para proteger los registros y los archivos binarios de la controladora de red en entornos de producción. Sin este parámetro, las credenciales se almacenan en texto no cifrado y se pueden usar de forma inusada por cualquier usuario no autorizado.|
-|Credential|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **Credential** especifica una cuenta de usuario que tiene permiso para ejecutar este comando en el equipo de destino.|
+|Credenciales|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **Credential** especifica una cuenta de usuario que tiene permiso para ejecutar este comando en el equipo de destino.|
 |CertificateThumbprint|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **CertificateThumbprint** especifica el certificado de clave pública digital (X509) de una cuenta de usuario que tiene permiso para ejecutar este comando en el equipo de destino.|
 |UseSSL|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **UseSSL** especifica el protocolo capa de sockets seguros (SSL) que se usa para establecer una conexión con el equipo remoto. De forma predeterminada, no se usa SSL.|
-|ComputerName|El parámetro **ComputerName** especifica el nodo de la controladora de red en el que se ejecuta este comando. Si no especifica un valor para este parámetro, se utiliza el equipo local de forma predeterminada.|
+|nombreDeEquipo|El parámetro **ComputerName** especifica el nodo de la controladora de red en el que se ejecuta este comando. Si no especifica un valor para este parámetro, se utiliza el equipo local de forma predeterminada.|
 |LogSizeLimitInMBs|Este parámetro especifica el tamaño máximo del registro, en MB, que puede almacenar la controladora de red. Los registros se almacenan de manera circular. Si se proporciona DiagnosticLogLocation, el valor predeterminado de este parámetro es 40 GB. Si no se proporciona DiagnosticLogLocation, los registros se almacenan en los nodos de la controladora de red y el valor predeterminado de este parámetro es 15 GB.|
 |LogTimeLimitInDays|Este parámetro especifica el límite de duración, en días, durante el que se almacenan los registros. Los registros se almacenan de manera circular. El valor predeterminado de este parámetro es 3 días.|
 
@@ -137,7 +137,7 @@ En la tabla siguiente se proporcionan descripciones para cada parámetro del com
 |RESTIPAddress|No es necesario especificar un valor para **RESTIPAddress** con una implementación de un solo nodo de la controladora de red. En el caso de implementaciones de varios nodos, el parámetro **RESTIPAddress** especifica la dirección IP del punto de conexión Rest en la notación CIDR. Por ejemplo, 192.168.1.10/24. El valor de nombre de sujeto de **ServerCertificate** debe resolverse en el valor del parámetro **RESTIPAddress** . Este parámetro debe especificarse para todas las implementaciones de controlador de red de varios nodos cuando todos los nodos están en la misma subred. Si los nodos están en subredes diferentes, debe usar el parámetro **RestName** en lugar de usar **RESTIPAddress**.|
 |RestName|No es necesario especificar un valor para **RestName** con una implementación de un solo nodo de la controladora de red. La única vez que debe especificar un valor para **RestName** es cuando las implementaciones de varios nodos tienen nodos que se encuentran en subredes diferentes. En el caso de implementaciones de varios nodos, el parámetro **RestName** especifica el FQDN del clúster de controladora de red.|
 |ClientSecurityGroup|El parámetro **ClientSecurityGroup** especifica el nombre del grupo de seguridad de Active Directory cuyos miembros son clientes de la controladora de red. Este parámetro solo es necesario si se usa la autenticación Kerberos para **ClientAuthentication**. El grupo de seguridad debe contener las cuentas desde las que se tiene acceso a las API de REST y debe crear el grupo de seguridad y agregar miembros antes de ejecutar este comando.|
-|Credential|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **Credential** especifica una cuenta de usuario que tiene permiso para ejecutar este comando en el equipo de destino.|
+|Credenciales|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **Credential** especifica una cuenta de usuario que tiene permiso para ejecutar este comando en el equipo de destino.|
 |CertificateThumbprint|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **CertificateThumbprint** especifica el certificado de clave pública digital (X509) de una cuenta de usuario que tiene permiso para ejecutar este comando en el equipo de destino.|
 |UseSSL|Este parámetro solo es necesario si ejecuta este comando desde un equipo remoto. El parámetro **UseSSL** especifica el protocolo capa de sockets seguros (SSL) que se usa para establecer una conexión con el equipo remoto. De forma predeterminada, no se usa SSL.|
 

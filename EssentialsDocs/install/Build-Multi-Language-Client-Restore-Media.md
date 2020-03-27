@@ -3,7 +3,7 @@ title: Compilar medios de restauración de cliente multilingüe
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,19 +12,19 @@ ms.assetid: 2fdbc016-d464-43cb-bd75-8a63e61588a2
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1ad934d297c3092050bd6adbb6bb0f50d1ec6f36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2b9d98c8c370e41ef87f96befdcd7746b0bb59f2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879876"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310084"
 ---
 # <a name="build-multi-language-client-restore-media"></a>Compilar medios de restauración de cliente multilingüe
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 > [!NOTE]
->  En primer lugar debe crear una imagen de Windows multilingüe tal y como se describe en el [Tutorial: Creación de imágenes de Windows multilingües](https://technet.microsoft.com/library/jj126995) antes de agregar el paquete de idioma de Windows Server Essentials a install.wim.  
+>  Primero debe crear una imagen de Windows multilingüe tal y como se describe en el [Tutorial: creación de imágenes de Windows multilingüe](https://technet.microsoft.com/library/jj126995) antes de agregar el paquete de idioma de Windows Server Essentials a install. Wim.  
   
  Al generar el DVD de instalación de servidor multilingüe, se instalarán los paquetes de idioma para install.wim de Windows Server. Los recursos localizados para el asistente de restauración se instalarán como parte del paquete de idioma.  
   
@@ -89,15 +89,15 @@ ms.locfileid: "59879876"
     dism /unmount-wim /mountdir:c:\mount /commit  
     ```  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
 
  [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparar la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 

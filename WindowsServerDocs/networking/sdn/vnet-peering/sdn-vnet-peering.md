@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/08/2018
-ms.openlocfilehash: ccdcbb953939345ef5e9a45dff87fc7af62eb7bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 01c768aefa685b688c2ed3f777c44a4665b5e4a7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355490"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309681"
 ---
 # <a name="virtual-network-peering"></a>Interconexión de red virtual
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 El emparejamiento de redes virtuales permite conectar dos redes virtuales sin problemas. Una vez emparejadas, para fines de conectividad, las redes virtuales aparecen como una sola. 
 
@@ -83,14 +83,14 @@ Cuando se emparejan dos redes virtuales, se debe configurar un emparejamiento pa
 
 Puede supervisar el estado de la conexión de emparejamiento, que puede estar en uno de los siguientes Estados:
 
--   **Indexa** Se muestra cuando se crea el emparejamiento desde la primera red virtual a la segunda red virtual.
+-   **Iniciado:** Se muestra cuando se crea el emparejamiento desde la primera red virtual a la segunda red virtual.
 
--   **Conectó** Se muestra después de haber creado el emparejamiento desde la segunda red virtual a la primera red virtual. El estado de emparejamiento de la primera red virtual cambia de iniciado a conectado. Ambos equipos del mismo nivel de red virtual deben tener el estado conectado antes de establecer un emparejamiento de red virtual correctamente.
+-   **Conectado:** Se muestra después de haber creado el emparejamiento desde la segunda red virtual a la primera red virtual. El estado de emparejamiento de la primera red virtual cambia de iniciado a conectado. Ambos equipos del mismo nivel de red virtual deben tener el estado conectado antes de establecer un emparejamiento de red virtual correctamente.
 
--   **Desconectado** Se muestra si una red virtual se desconecta de otra red virtual.
+-   **Desconectado:** Se muestra si una red virtual se desconecta de otra red virtual.
 
 [infografía de los Estados]
 
 ## <a name="next-steps"></a>Pasos siguientes
-[Configure el emparejamiento de red virtual](sdn-configure-vnet-peering.md): En este procedimiento, usará Windows PowerShell para buscar la red lógica del proveedor de HNV para crear dos redes virtuales, cada una con una subred. También se configura el emparejamiento entre las dos redes virtuales.
+[Configurar el emparejamiento de redes virtuales](sdn-configure-vnet-peering.md): en este procedimiento, se usa Windows PowerShell para buscar la red lógica del proveedor de HNV para crear dos redes virtuales, cada una con una subred. También se configura el emparejamiento entre las dos redes virtuales.
 

@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 79df3bbe-48fd-4eff-8df6-35f6317566f3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 338d5a285f2524932a91a66db186554cd0f50e2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1d5d5aaae5983e062dae203c60a7001f36e5629b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355663"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309818"
 ---
 # <a name="network-function-virtualization"></a>Virtualización de función de red
 
@@ -33,7 +33,7 @@ Puede usar este tema para obtener información sobre la virtualización de funci
   
 En los centros de recursos definidos por software de hoy en día, las funciones de red que realizan los dispositivos de hardware (como equilibradores de carga, firewalls, enrutadores, conmutadores, etc.) se virtualizan cada vez más como aplicaciones virtuales. Esta “virtualización de las funciones de red” es la progresión natural de la virtualización de los servidores y de la red. Las aplicaciones virtuales están surgiendo rápidamente y crean un nuevo mercado. Continúan generando interés y ganar impulsos en las plataformas de virtualización y en los servicios en la nube.  
   
-Microsoft incluyó una puerta de enlace independiente como un dispositivo virtual a partir de Windows Server 2012 R2. Para obtener más información, consulte [Puerta de enlace de Windows Server](https://technet.microsoft.com/library/dn313101.aspx). Ahora con Windows Server 2016, Microsoft continúa expandiendo e invirtiendo en el mercado de virtualización de función de red.  
+Microsoft incluyó una puerta de enlace independiente como un dispositivo virtual a partir de Windows Server 2012 R2. Para obtener más información, vea [Puerta de enlace de Windows Server](https://technet.microsoft.com/library/dn313101.aspx). Ahora con Windows Server 2016, Microsoft continúa expandiendo e invirtiendo en el mercado de virtualización de función de red.  
   
 ## <a name="virtual-appliance-benefits"></a>Ventajas del dispositivo virtual  
 Un dispositivo virtual es dinámico y fácil de cambiar porque es una máquina virtual pregenerada y personalizada. Puede ser una o varias máquinas virtuales empaquetadas, actualizadas y mantenidas como una unidad. Junto con las redes definidas por software (SDN), obtiene la agilidad y la flexibilidad que se necesitan en la infraestructura basada en la nube de hoy en día. Por ejemplo:  
@@ -79,7 +79,7 @@ El Marketplace de las funciones de red virtualizada está creciendo rápidamente
   
     -   Enrutadores  
   
-    -   Centrales  
+    -   Conmutadores  
   
     -   NAT  
   

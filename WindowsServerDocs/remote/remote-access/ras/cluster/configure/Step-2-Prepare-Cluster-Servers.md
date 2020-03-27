@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35d68abb-6914-42e0-91e8-803933cf785e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 87983076ee8a7d5546a5ac491ed4ca88153798f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 74aac416a5aa69a0cd935d58e3ecb931e4b5fd02
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367409"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308337"
 ---
 # <a name="step-2-prepare-cluster-servers"></a>Paso 2 preparación de los servidores de clúster
 
@@ -31,7 +31,7 @@ Antes de poder configurar una implementación de clúster, debe preparar servido
 |[2,2 instalar el rol de acceso remoto](#BKMK_Install)|En cada servidor adicional que desee agregar al clúster, instale el rol de acceso remoto.|  
 |[2,3 instalación de NLB](#BKMK_NLB)|En el servidor de acceso remoto implementado y en cada servidor adicional que desee agregar al clúster, instale la característica NLB. Tenga en cuenta que este paso no es necesario cuando se usa un Load Balancer externo.|  
   
-## <a name="BKMK_config"></a>2,1 configuración de la infraestructura de acceso remoto  
+## <a name="21-configure-the-remote-access-infrastructure"></a><a name="BKMK_config"></a>2,1 configuración de la infraestructura de acceso remoto  
 Para configurar un clúster de acceso remoto, debe configurar la topología del servidor, el direccionamiento IP, el enrutamiento y el reenvío en cada servidor que formará parte del clúster.  
   
 ### <a name="to-configure-the-remote-access-infrastructure"></a>Para configurar la infraestructura de acceso remoto  
@@ -42,7 +42,7 @@ Para configurar un clúster de acceso remoto, debe configurar la topología del 
   
 3.  Unir cada uno de los servidores que estarán en el clúster al mismo dominio que el primer servidor de acceso remoto.  
   
-## <a name="BKMK_Install"></a>2,2 instalar el rol de acceso remoto  
+## <a name="22-install-the-remote-access-role"></a><a name="BKMK_Install"></a>2,2 instalar el rol de acceso remoto  
 Para configurar un clúster de acceso remoto, debe instalar el rol de acceso remoto en cada servidor que formará parte del clúster.  
   
 ### <a name="to-install-the-remote-access-role-on-always-on-vpn-servers"></a>Para instalar el rol de acceso remoto en Always On servidores VPN  
@@ -59,13 +59,13 @@ Para configurar un clúster de acceso remoto, debe instalar el rol de acceso rem
   
 6.  Seleccione **enrutamiento**, **proxy de aplicación web**, haga clic en **Agregar características**y, a continuación, haga clic en **siguiente**.  
   
-7. Haga clic en **Siguiente**y después en **Instalar**.  
+7. Haga clic en **Siguiente** y, después, en **Instalar**.  
   
-8.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
+8.  En el cuadro de diálogo **Progreso de la instalación**, comprueba que la instalación se realiza correctamente y, a continuación, haz clic en **Cerrar**.  
   
 9.  Repita este procedimiento en todos los servidores que desee que sean miembros del clúster.  
   
-## <a name="BKMK_NLB"></a>2,3 instalación de NLB  
+## <a name="23-install-nlb"></a><a name="BKMK_NLB"></a>2,3 instalación de NLB  
 Para configurar un clúster de acceso remoto, debe instalar la característica de equilibrio de carga de red en cada servidor que formará parte del clúster.  
   
 > [!NOTE]  
@@ -79,11 +79,11 @@ Para configurar un clúster de acceso remoto, debe instalar la característica d
   
 3.  En el cuadro de diálogo **seleccionar características** , seleccione **equilibrio de carga de red**, haga clic en **Agregar características**, haga clic en **siguiente**y, a continuación, haga clic en **instalar**.  
   
-4.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
+4.  En el cuadro de diálogo **Progreso de la instalación**, comprueba que la instalación se realiza correctamente y, a continuación, haz clic en **Cerrar**.  
   
 5.  Repita este procedimiento en todos los servidores que desee que sean miembros del clúster.  
   
-## <a name="BKMK_Links"></a>Vea también  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también  
   
 -   [Paso 3: configurar un clúster con equilibrio de carga](Step-3-Configure-a-Load-Balanced-Cluster.md)  
   

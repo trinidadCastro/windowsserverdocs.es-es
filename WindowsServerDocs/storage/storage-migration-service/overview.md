@@ -4,16 +4,16 @@ description: El servicio de migración de almacenamiento facilita la migración 
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 01/17/2020
+ms.date: 03/26/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 70ce4ebca35e071cf6e27fe429d3c4e6f67d342c
-ms.sourcegitcommit: 8b801bd86e2ddf8255899b11f547daa920e5f651
+ms.openlocfilehash: 0765c43333f23fb09c0f69ceca1ff21cfce25874
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80110678"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310504"
 ---
 # <a name="storage-migration-service-overview"></a>Información general del servicio de migración de almacenamiento
 
@@ -21,7 +21,7 @@ ms.locfileid: "80110678"
 
 El servicio de migración de almacenamiento facilita la migración de almacenamiento a Windows Server o a Azure. Proporciona una herramienta gráfica que inventa datos en servidores Windows y Linux y, a continuación, transfiere los datos a servidores más recientes o a máquinas virtuales de Azure. El servicio de migración de almacenamiento también proporciona la opción de transferir la identidad de un servidor al servidor de destino para que las aplicaciones y los usuarios puedan acceder a sus datos sin cambiar los vínculos o las rutas de acceso.
 
-En este tema se explica por qué desea usar el servicio de migración de almacenamiento, cómo funciona el proceso de migración y cuáles son los requisitos para los servidores de origen y de destino.
+En este tema se explica por qué desea usar el servicio de migración de almacenamiento, cómo funciona el proceso de migración, cuáles son los requisitos para los servidores de origen y destino, y las novedades [de Storage Migration Service](#whats-new-in-storage-migration-service).
 
 ## <a name="why-use-storage-migration-service"></a>Por qué usar el servicio de migración de almacenamiento
 
@@ -134,7 +134,12 @@ El servidor de destino debe ejecutar uno de los siguientes sistemas operativos:
 
 La versión 1910 del centro de administración de Windows permite implementar máquinas virtuales de Azure. Esto integra la implementación de la máquina virtual en el servicio de migración de almacenamiento. En lugar de crear nuevos servidores y máquinas virtuales en Azure portal manualmente antes de implementar la carga de trabajo, y posiblemente faltan los pasos necesarios y la configuración: el centro de administración de Windows puede implementar la máquina virtual de Azure, configurar su almacenamiento, unirse al dominio, instalar roles y a continuación, configure el sistema distribuido. 
 
+   Este es un vídeo que muestra cómo usar el servicio de migración de almacenamiento para migrar a máquinas virtuales de Azure.
+   > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ] 
+
 ## <a name="whats-new-in-storage-migration-service"></a>Novedades de Storage Migration Service
+
+La versión 1910 del centro de administración de Windows agrega la capacidad de implementar máquinas virtuales de Azure. Esto integra la implementación de máquinas virtuales de Azure en el servicio de migración de almacenamiento. Para obtener más información, consulte [migración de máquinas virtuales de Azure](#azure-vm-migration).
 
 Las siguientes características nuevas están disponibles al ejecutar el orquestador del servidor de migración de almacenamiento en Windows Server, versión 1903 o posterior, o una versión anterior de Windows Server con [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) instalado:
 

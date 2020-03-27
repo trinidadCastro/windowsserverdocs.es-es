@@ -3,7 +3,7 @@ title: Sustitución de la dirección URL de extremo de compra/prueba del módulo
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,19 +12,19 @@ ms.assetid: 9860a6b9-baea-4bf0-9a9f-6f1a288f996e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b690cedd2f692cc6d11af6e05dd0cd4b4ea5a1d6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 11e18d7d61edb0a618fb71791f77c4df84c9d708
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833106"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311543"
 ---
 # <a name="replace-o365-integration-module-buy-try-endpoint-url-in-support-of-microsoft-online-service-reseller-agreement"></a>Sustitución de la dirección URL de extremo de compra/prueba del módulo de integración de O365 en el soporte del contrato de revendedor de servicio en línea de Microsoft
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 ##  <a name="BKMK_O365"></a>   
- Si es un asociado de acuerdo de revendedor de servicio en línea de Microsoft (MOSRA), para asegurarse de que se procesan las transacciones de la suscripción de cliente a través de su portal, deberá reemplazar las direcciones URL de punto de conexión usadas por el módulo de integración de Office 365 de Windows Server Essentials.  
+ Si es socio comercial del acuerdo de revendedor de servicios en línea de Microsoft (MOSRA), para asegurarse de que las transacciones de suscripción de clientes se procesan a través de su portal, deberá reemplazar las direcciones URL de extremo que usa el módulo de integración de Office 365 de Windows Server Essentials.  
   
  El módulo de integración utiliza las cuatro direcciones URL de extremo siguientes:  
   
@@ -48,7 +48,7 @@ ms.locfileid: "59833106"
   
     -   Valor = *xxxxx*, donde xxxxx es la dirección URL de compra de suscripciones de la empresa. Por ejemplo, valor = http://syndicatepartner.office365.com/enterprisetry.html  
   
-3.  Un extremo de compra de suscripciones de Office 365 pequeña empresa Premium.  
+3.  Un punto de conexión de compra de suscripción de Office 365 de pequeña empresa Premium.  
   
     -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO\  
   
@@ -58,7 +58,7 @@ ms.locfileid: "59833106"
   
     -   Valor = *xxxxx*, donde xxxxx es la dirección URL de compra de suscripciones de la empresa. Por ejemplo, valor = http://syndicatepartner.office365.com/smallbizbuy.html  
   
-4.  Un extremo de evaluación de suscripciones de Office 365 pequeña empresa Premium.  
+4.  Un punto de conexión de evaluación de la suscripción de Office 365 de pequeña empresa Premium.  
   
     -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO\  
   
@@ -92,13 +92,13 @@ ms.locfileid: "59833106"
   
 7.  Repita los pasos 4 a 6 para cada nombre de cadena que se enumera en el paso 4.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
- [Probar la experiencia del cliente](Testing-the-Customer-Experience.md) [crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
+ [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del usuario](Testing-the-Customer-Experience.md) [crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparar la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 

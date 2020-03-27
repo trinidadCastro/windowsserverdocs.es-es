@@ -4,16 +4,16 @@ description: Breve descripción del tema de los resultados del motor de búsqued
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 02/13/2019
+ms.date: 03/25/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 20aa5fbc40efc5a3a439361dadfac0f47f4b41d8
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: cb1ac2fc1c7d4ed0a7f57bbe95cb9989bc85e99e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822628"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310558"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Usar el servicio de migración de almacenamiento para migrar un servidor
 
@@ -60,12 +60,15 @@ En este paso, transferirá los datos después de especificar dónde colocarlos e
 1. En la página **transferir datos** > **escribir credenciales** , escriba las credenciales de administrador que funcionan en los servidores de destino a los que desea migrar y, a continuación, seleccione **siguiente**.
 2. En la página **Agregar un dispositivo de destino y asignaciones** , se muestra el primer servidor de origen. Escriba el nombre del servidor o el servidor de archivos en clúster al que desea migrar y, a continuación, seleccione **scan Device**. Si realiza la migración desde un equipo de origen unido a un dominio, el servidor de destino debe estar unido al mismo dominio. También puede hacer clic en "crear una nueva máquina virtual de Azure" y después usar el Asistente para implementar un nuevo servidor de destino en Azure. Esto ajustará automáticamente el tamaño de la máquina virtual, aprovisionará el almacenamiento, formateará los discos, unirá el dominio y agregará el proxy del servicio de migración de almacenamiento a un destino de Windows Server 2019. Puede elegir entre las máquinas virtuales de Windows Server 2019 (recomendado), Windows Server 2016 y Windows Server 2012 R2 de cualquier tamaño y usar discos administrados.   
 
- > [!NOTE]
-   > El uso de "creación de una nueva máquina virtual de Azure" requiere lo siguiente:
-   > - Una suscripción válida de Azure.
-   > - Un grupo de recursos de Azure Compute existente en el que haya creado derechos.
-   > - Un Virtual Network de Azure y una subred existentes. 
-   > - Una solución de expressroute o VPN de Azure Expressroute vinculada a la Virtual Network y la subred que permite la conectividad desde esta máquina virtual de IaaS de Azure a los clientes locales, los controladores de dominio, el equipo del orquestador de migración de almacenamiento, el equipo del centro de administración de Windows, y el equipo de origen que se va a migrar.
+    > [!NOTE]
+    > El uso de "creación de una nueva máquina virtual de Azure" requiere lo siguiente:
+    > - Una suscripción válida de Azure.
+    > - Un grupo de recursos de Azure Compute existente en el que haya creado derechos.
+    > - Un Virtual Network de Azure y una subred existentes. 
+    > - Una solución de expressroute o VPN de Azure Expressroute vinculada a la Virtual Network y la subred que permite la conectividad desde esta máquina virtual de IaaS de Azure a los clientes locales, los controladores de dominio, el equipo del orquestador de migración de almacenamiento, el equipo del centro de administración de Windows, y el equipo de origen que se va a migrar.
+   
+    Este es un vídeo que muestra cómo usar el servicio de migración de almacenamiento para migrar a máquinas virtuales de Azure.
+    > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ] 
 
 3. Asigne los volúmenes de origen a los volúmenes de destino, desactive la casilla **incluir** para los recursos compartidos que no desea transferir (incluidos los recursos compartidos administrativos ubicados en la carpeta del sistema de Windows) y, a continuación, seleccione **siguiente**.
    ![captura de pantalla que muestra un servidor de origen y sus volúmenes y recursos compartidos y a los que se transferirán en el destino](media/migrate/transfer.png) **figura 3: un servidor de origen y el lugar al que se transferirá el almacenamiento**
@@ -111,7 +114,7 @@ En este paso, se recortan de los servidores de origen a los servidores de destin
 7. Seleccione **validar** en la página **validar el dispositivo de origen y de destino** y, a continuación, seleccione **siguiente**.
 8. Cuando esté listo para realizar el traslado, seleccione **iniciar el traslado**. <br>Es posible que los usuarios y las aplicaciones experimenten una interrupción mientras se mueven la dirección y los nombres y los servidores se reinician varias veces, pero no se verán afectados por la migración. El tiempo que tarda la transferencia depende de la rapidez con que se reinicien los servidores, así como de los tiempos de replicación de DNS y Active Directory.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 - [Información general del servicio de migración de almacenamiento](overview.md)
 - [Preguntas más frecuentes (p + f) sobre Storage Migration Services](faq.md)

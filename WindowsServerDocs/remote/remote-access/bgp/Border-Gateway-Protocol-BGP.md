@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78cc2ce3-a48e-45db-b402-e480b493fab1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ae6fddce1564e44ad72a5630c6abb16cdb6735d1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3e04c732cbacb182731717215a4cf99cf3cc1f76
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388982"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309290"
 ---
 # <a name="border-gateway-protocol-bgp"></a>Protocolo de puerta de enlace de borde (BGP)
 
@@ -30,7 +30,7 @@ Puede usar este tema para obtener una descripción del Protocolo de puerta de en
 >   
 > -   [Referencia de comandos de Windows PowerShell de BGP](../../remote-access/bgp/BGP-Windows-PowerShell-Command-Reference.md)  
   
-En este tema se incluyen las siguientes secciones.  
+Este tema contiene las siguientes secciones.  
   
 -   [Topologías de implementación compatibles con BGP](#bkmk_top)  
   
@@ -61,7 +61,7 @@ Enable-RemoteAccessRoutingDomain -Name $Contoso_RoutingDomain -Type All -PassThr
 Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassThru  
 ```  
   
-## <a name="bkmk_top"></a>Topologías de implementación compatibles con BGP  
+## <a name="bgp-supported-deployment-topologies"></a><a name="bkmk_top"></a>Topologías de implementación compatibles con BGP  
 A continuación se enumeran las topologías de implementación compatibles, en las que los sitios de empresa se conectan a un centro de datos del proveedor de servicios de nube (CSP).  
   
 En todos los escenarios, la puerta de enlace de CSP es una puerta de enlace RAS de Windows Server 2016 en el perímetro. La puerta de enlace RAS, que es capaz de controlar varias conexiones de varios inquilinos, consta de un host de Hyper-V y una máquina virtual que realmente está configurada como puerta de enlace. Esta puerta de enlace de perímetro se configura con conexiones VPN de sitio a sitio como un enrutador BGP multiinquilino para intercambiar rutas de subred CSP y de empresa.  
@@ -80,7 +80,7 @@ Se admiten las siguientes topologías de implementación.
   
 Las secciones siguientes contienen información adicional sobre cada topología BGP compatible.  
   
-### <a name="bkmk_top1"></a>Puerta de enlace de sitio a sitio de VPN RAS con BGP en el perímetro del sitio de empresa  
+### <a name="ras-vpn-site-to-site-gateway-with-bgp-at-enterprise-site-edge"></a><a name="bkmk_top1"></a>Puerta de enlace de sitio a sitio de VPN RAS con BGP en el perímetro del sitio de empresa  
 Esta topología muestra un sitio de empresa conectado a un CSP. La topología de enrutamiento de empresa incluye un enrutador interno, una puerta de enlace RAS de Windows Server 2016 configurada para las conexiones VPN de sitio a sitio con el CSP y un dispositivo de firewall perimetral. La puerta de enlace RAS finaliza las conexiones VPN S2S y BGP.  
   
 ![Puerta de enlace de sitio a sitio de VPN RAS](../../media/Border-Gateway-Protocol-BGP/bgp_01.jpg)  
@@ -97,7 +97,7 @@ En este escenario, BGP funciona de la manera siguiente.
   
     -   El dispositivo perimetral puede configurarse con rutas o interfaces estáticas para seleccionar rutas para anunciarlas mediante BGP. El dispositivo perimetral también distribuye las rutas de acceso externas a otros enrutadores locales mediante un IGP.  
   
-### <a name="bkmk_top2"></a>Puerta de enlace de terceros con BGP en el perímetro del sitio de empresa  
+### <a name="third-party-gateway-with-bgp-at-enterprise-site-edge"></a><a name="bkmk_top2"></a>Puerta de enlace de terceros con BGP en el perímetro del sitio de empresa  
 Esta topología describe un sitio de empresa mediante un enrutador perimetral de terceros para conectarse a un CSP. El enrutador perimetral también actúa como una puerta de enlace VPN de sitio a sitio.  
   
 ![Puerta de enlace de terceros con BGP en el perímetro del sitio de empresa](../../media/Border-Gateway-Protocol-BGP/bgp_02.jpg)  
@@ -108,7 +108,7 @@ El enrutador perimetral de empresa aprende las rutas internas locales a través 
   
 -   El dispositivo perimetral implementa un protocolo de puerta de enlace interior (IGP) y participa directamente en el enrutamiento interno.  
   
-### <a name="bkmk_top3"></a>Varios sitios de empresa que se conectan al centro de recursos de nube de CSP  
+### <a name="multiple-enterprise-sites-connecting-to-csp-cloud-datacenter"></a><a name="bkmk_top3"></a>Varios sitios de empresa que se conectan al centro de recursos de nube de CSP  
 Esta topología muestra varios sitios de empresa que usan las puertas de enlace de terceros para conectarse a un CSP. Los dispositivos perimetrales de terceros actúan como puertas de enlace VPN de sitio a sitio y como enrutadores BGP.  
   
 ![Varios sitios de empresa que se conectan al centro de recursos de nube de CSP](../../media/Border-Gateway-Protocol-BGP/bgp_03.jpg)  
@@ -125,7 +125,7 @@ Cada sitio de empresa aprende las rutas de red hospedadas directamente y mediant
   
 Si el enrutador BGP del sitio de empresa 1 no se puede conectar con el enrutador BGP del sitio de empresa 2 porque se produjo un error en la conectividad, el enrutador BGP de sitio 1 comienza de forma dinámica a conocer las rutas a la red del sitio 2 de empresa desde el enrutador BGP de CSP y el tráfico se produce sin problemas se vuelve a enrutar del sitio 1 al sitio 2 a través del enrutador BGP de Windows Server en el CSP.  
   
-### <a name="bkmk_top4"></a>Puntos de terminación independientes para BGP y VPN  
+### <a name="separate-termination-points-for-bgp-and-vpn"></a><a name="bkmk_top4"></a>Puntos de terminación independientes para BGP y VPN  
 Esta topología muestra una empresa que usa dos enrutadores diferentes como extremos BGP y VPN de sitio a sitio. La VPN de sitio a sitio se termina en la puerta de enlace RAS de Windows Server 2016, mientras que BGP se termina en un enrutador interno. En el lado de CSP de las conexiones, el CSP termina las conexiones VPN y BGP con la puerta de enlace de RAS. Con esta configuración, el hardware del enrutador interno de terceros debe admitir la redistribución de rutas IGP a BGP, así como la redistribución de rutas BGP a IGP.  
   
 ![Puntos de terminación independientes para BGP y VPN](../../media/Border-Gateway-Protocol-BGP/bgp_04.jpg)  
@@ -144,7 +144,7 @@ Con esta implementación, la puerta de enlace RAS de la empresa tiene una conexi
   
 A partir de este punto, el enrutador interno de empresa y la puerta de enlace de CSP RAS intercambian información de enrutamiento. Y el enrutador BGP de RAS de la empresa aprende las rutas de CSP y las rutas de empresa para enrutar paquetes entre las redes físicamente.  
   
-## <a name="bkmk_features"></a>Características de BGP  
+## <a name="bgp-features"></a><a name="bkmk_features"></a>Características de BGP  
 A continuación se muestran las características del enrutador BGP de puerta de enlace de RAS.  
   
 **Enrutamiento de BGP como un servicio de rol de acceso remoto**. Ahora puede instalar el servicio de rol **enrutamiento** del rol de servidor acceso remoto sin necesidad de instalar el servicio de rol **servicio de acceso remoto (RAS)** cuando quiera usar el acceso remoto como un enrutador LAN BGP.  Esto reduce la superficie de memoria del enrutador BGP e instala solo los componentes necesarios para el enrutamiento BGP dinámico. El servicio de rol enrutamiento es útil cuando solo se requiere una máquina virtual de enrutador BGP y no se requiere el uso de DirectAccess o VPN. Además, el uso de acceso remoto como un enrutador LAN con BGP proporciona las ventajas de enrutamiento dinámico de BGP en la red interna.  

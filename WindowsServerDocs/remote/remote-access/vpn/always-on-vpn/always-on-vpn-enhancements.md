@@ -5,16 +5,16 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a79e590a273d7d7ccb673e5043bed2fcd1aeace
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 8ebdceedbe793eba545e57fd991114158cb647be
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822678"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313376"
 ---
 # <a name="always-on-vpn-enhancements"></a>Mejoras de VPN de Always On
 
@@ -72,7 +72,7 @@ A continuación se enumeran las mejoras principales en Always On la conectividad
 |            **Detección de redes de confianza**            |                                                                                    Always On VPN incluye esta característica para asegurarse de que la conectividad VPN no se desencadene si un usuario está conectado a una red de confianza dentro del límite corporativo. Puede combinar esta característica con cualquiera de los métodos de activación mencionados anteriormente para proporcionar una experiencia de usuario "solo conectarse cuando sea necesario".                                                                                     |
 | **[Túnel de dispositivo](../vpn-device-tunnel-config.md)** | Always On VPN le ofrece la posibilidad de crear un perfil de VPN dedicado para el dispositivo o la máquina. A diferencia del *túnel de usuario*, que solo se conecta después de que un usuario inicie sesión en el dispositivo o equipo, el túnel de *dispositivo* permite que la VPN establezca la conectividad antes de que el usuario inicie sesión. Tanto el túnel de dispositivo como el túnel de usuario funcionan de forma independiente con sus perfiles de VPN, se pueden conectar al mismo tiempo y pueden usar diferentes métodos de autenticación y otras opciones de configuración de VPN según corresponda. |
 
-## <a name="networking"></a>Funciones de red de
+## <a name="networking"></a>Funciones de red
 
 A continuación se muestran algunas de las mejoras de red en Always On VPN:
 

@@ -3,7 +3,7 @@ title: Requisitos del sistema para Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/31/2013
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 0951a67d-492f-41ad-9ae5-8e4cd25e3041
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 265f57745f909e0899e5e3f207aaeec2d96f6429
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 1b1c34646050c3459c88b10f608d8e003e72fdef
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001780"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310437"
 ---
 # <a name="system-requirements-for-windows-server-essentials"></a>Requisitos del sistema para Windows Server Essentials
 
@@ -28,7 +28,7 @@ ms.locfileid: "77001780"
   
 ## <a name="table-1-system-requirements-for-windows-server-essentials"></a>Tabla 1. Requisitos del sistema para Windows Server Essentials  
   
-|Componente|Mínimo|Recomendado*|Máximo|  
+|Componente|Mínima|Recomendado*|Máximo|  
 |---------------|-------------|-------------------|-------------|  
 |Socket de la CPU|1,4 GHz (procesador de 64 bits) o superior en el caso de un núcleo único<br /><br /> 1,3 GHz (procesador de 64 bits) o superior en el caso de varios núcleos|3,1 GHz (procesador de 64 bits) o superior en el caso de varios núcleos|2 zócalos|  
 |Memoria (RAM)|2 GB<br /><br /> 4 GB si implementa Windows Server Essentials como máquina virtual|16 GB|64 GB|  
@@ -50,12 +50,12 @@ ms.locfileid: "77001780"
   
  Para obtener más información acerca de los requisitos de hardware, consulte el [Catálogo de Windows Server](https://www.windowsservercatalog.com/).  
   
- Todo el hardware del servidor debe cumplir los requisitos establecidos para el programa del logotipo de Windows Server 2012 R2 para sistemas. Para obtener más información, consulte [Programa del logotipo de Windows](https://msdn.microsoft.com/windows/hardware/gg487403.aspx).  
+ Todo el hardware del servidor debe cumplir los requisitos establecidos para el programa del logotipo de Windows Server 2012 R2 para sistemas. Para obtener más información, consulte [Windows 7 Logo Program (Programa del logotipo de Windows)](https://msdn.microsoft.com/windows/hardware/gg487403.aspx).  
 
 > [!IMPORTANT]
 > Los discos dinámicos no se admiten en Windows Server Essentials.
 
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
  
 -   [Instalación de Windows Server 2012 Essentials](../install/Install-Windows-Server-Essentials.md)  
   

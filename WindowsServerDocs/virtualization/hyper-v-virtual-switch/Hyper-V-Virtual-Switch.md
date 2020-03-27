@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: article
 ms.assetid: 398440ac-5988-41ce-b91e-eab343a255d3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c508005af67e9dd5b0c9a22693aca25eb19e8e48
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fb2ebf485b5004e457558fc16d8535662c0c5ff2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366830"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307981"
 ---
 # <a name="hyper-v-virtual-switch"></a>Conmutador virtual de Hyper-V
 
@@ -57,7 +57,7 @@ Las funcionalidades del conmutador virtual de Hyper-V proporcionan más opciones
 >[!NOTE]
 > En Windows Server 2016, una máquina virtual con una NIC virtual muestra con precisión el rendimiento máximo de la NIC virtual. Para ver la velocidad de la NIC virtual en **conexiones de red**, haga clic con el botón derecho en el icono de NIC virtual que desee y, a continuación, haga clic en **Estado**. Se abre el cuadro de diálogo **Estado** de la NIC virtual. En **conexión**, el valor de **velocidad** coincide con la velocidad de la NIC física instalada en el servidor.
   
-## <a name="bkmk_apps"></a>Usos del conmutador virtual de Hyper-V
+## <a name="uses-for-hyper-v-virtual-switch"></a><a name="bkmk_apps"></a>Usos del conmutador virtual de Hyper-V
 
 A continuación se muestran algunos escenarios de casos de uso para el conmutador virtual de Hyper-V.
 
@@ -69,7 +69,7 @@ A continuación se muestran algunos escenarios de casos de uso para el conmutado
   
 La **extensión de reenvío administra el ID. de VLAN**: una empresa de conmutador principal está creando una extensión de reenvío que aplica todas las directivas para las redes. Uno de los elementos que se administran son los identificadores de red de área local virtual (VLAN). El conmutador virtual cede el control de la VLAN a una extensión de reenvío. La instalación de la compañía del conmutador llama mediante programación a una interfaz de programación de aplicaciones (API) de Instrumental de administración de Windows (WMI) que activa la transparencia, indicando al conmutador virtual de Hyper-V que pase y no realice ninguna acción en las etiquetas VLAN.  
   
-## <a name="bkmk_func"></a>Funcionalidad de conmutador virtual de Hyper-V
+## <a name="hyper-v-virtual-switch-functionality"></a><a name="bkmk_func"></a>Funcionalidad de conmutador virtual de Hyper-V
  
 A continuación, se enumeran algunas de las características principales incluidas en el conmutador virtual de Hyper-V:  
   

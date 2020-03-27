@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 796825c3-5e3e-4745-a921-25ab90b95ede
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 41701592c0d9b143c84ad3fbad3fd77491eff5a0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a4c944a61c44b9b67831bfd4e2852941e577e6b5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404712"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308782"
 ---
 # <a name="step-13-test-directaccess-connectivity-from-behind-a-nat-device"></a>Paso 13 probar la conectividad de DirectAccess desde detrás de un dispositivo NAT
 
@@ -36,7 +36,7 @@ Inicie EDGE1 y 2-EDGE1 si aún no se están ejecutando y asegúrese de que está
   
 Antes de realizar estas pruebas, desconecte CLIENT1 y cliente2 del conmutador de Internet y conéctelas al conmutador HomeNet Si se le pregunta qué tipo de red desea definir la red actual, seleccione **red doméstica**.  
   
-## <a name="TeredoCLIENT1"></a>Probar la conectividad Teredo  
+## <a name="test-teredo-connectivity"></a><a name="TeredoCLIENT1"></a>Probar la conectividad Teredo  
   
 1. En CLIENT1, abra una ventana de Windows PowerShell con privilegios elevados.  
   
@@ -62,13 +62,13 @@ Antes de realizar estas pruebas, desconecte CLIENT1 y cliente2 del conmutador de
   
 10. En la barra de direcciones de Internet Explorer, escriba **https://app2/** y presione Entrar. Verás el sitio web predeterminado en APP2.  
   
-11. En la pantalla **Inicio** , escriba<strong>\\ \ App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.  
+11. En la pantalla **Inicio** , escriba<strong>\\\App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.  
   
 12. Repita este procedimiento en cliente2.  
   
-## <a name="IPHTTPS_CLIENT1"></a>Probar la conectividad IP-HTTPS  
+## <a name="test-ip-https-connectivity"></a><a name="IPHTTPS_CLIENT1"></a>Probar la conectividad IP-HTTPS  
   
-1. En CLIENT1, abra una ventana de Windows PowerShell con privilegios elevados y escriba **netsh interface Teredo Set state disabled** y presione Entrar. Esto deshabilita Teredo en el equipo cliente y permite que el equipo cliente se configure a sí mismo para usar IP-HTTPS. Cuando se completa el comando, aparece la respuesta **Aceptar** .  
+1. En CLIENT1, abra una ventana de Windows PowerShell con privilegios elevados y escriba **netsh interface Teredo Set state disabled** y presione Entrar. Esto deshabilita Teredo en el equipo cliente y permite que el equipo cliente se configure a sí mismo para usar IP-HTTPS. Cuando se completa el comando, aparece la respuesta **Aceptar**.  
   
 2. En la ventana de Windows PowerShell, escriba **ipconfig/all** y presione Entrar.  
   
@@ -86,7 +86,7 @@ Antes de realizar estas pruebas, desconecte CLIENT1 y cliente2 del conmutador de
   
 9. En la barra de direcciones de Internet Explorer, escriba **https://app2/** y presione Entrar. Verás el sitio web predeterminado en APP2.  
   
-10. En la pantalla **Inicio** , escriba<strong>\\ \ App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.  
+10. En la pantalla **Inicio** , escriba<strong>\\\App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.  
   
 11. Repita este procedimiento en cliente2.  
   

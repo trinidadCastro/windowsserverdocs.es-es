@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a211dde-80eb-4888-b5bb-4e28fe8dc7df
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6155cee3f1924486f1358632dcef2fba7046edb3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 870acde822fb5c8c038139710facb71208df3387
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355128"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309564"
 ---
 # <a name="set-access-scope-for-a-dns-zone"></a>Establecer el ámbito de acceso para una zona DNS
 
@@ -43,7 +43,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
   
     ![Comprobar que se ha cambiado el ámbito de acceso de la zona](../../media/Set-Access-Scope-for-a-DNS-Zone/ipam_SetAccessScopeOfZone_04.jpg)  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Access Control basado en roles](Role-based-Access-Control.md)  
 [Administrar IPAM](Manage-IPAM.md)  
   

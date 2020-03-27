@@ -7,15 +7,15 @@ ms.service: virtual-network
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: 29013827d0cde0447c48afa7a42551760ab9e940
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1a17d5f5fec0a05b4258b295eb37b6dc80cdaee1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355998"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313054"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>Implementación de una infraestructura de red definida por software con scripts
 
@@ -31,7 +31,7 @@ También puede implementar una infraestructura de SDN mediante Virtual Machine M
 ## <a name="pre-deployment"></a>Anterior a la implementación  
 
 > [!IMPORTANT]  
-> Antes de comenzar la implementación, debe planear y configurar los hosts y la infraestructura de red física. Para más información, consulta [Planificación de una infraestructura de red definida por software](../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md).  
+> Antes de comenzar la implementación, debe planear y configurar los hosts y la infraestructura de red física. Para más información, consulta [Planeación de una infraestructura de red definida por software](../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md).  
 
 Todos los hosts de Hyper-V deben tener instalado Windows Server 2016.  
 
@@ -93,7 +93,7 @@ Para empezar, configure el conmutador virtual de Hyper-v (servidores físicos) y
    e. Escriba las credenciales de nombre de usuario y contraseña cuando se le solicite.  
    f. Reinicie el servidor.  
 
-### <a name="validation"></a>Resultados  
+### <a name="validation"></a>Validación  
 Siga los pasos siguientes para validar que la red de host está configurada correctamente.  
 
 1. Asegúrese de que el conmutador de máquina virtual se ha creado correctamente:  
@@ -127,7 +127,7 @@ Si usa nano como hosts de Hyper-V (servidores físicos) para la implementación,
 1. Todos los nodos de nano deben tener el paquete de DSC instalado con el paquete de idioma:  
 
    - Microsoft-NanoServer-DSC-Package. cab  
-   - Microsoft-NanoServer-DSC-Package_en-us. cab
+   - Microsoft-nanoserver-DSC-Package_en-US. cab
 
      ``dism /online /add-package /packagepath:<Path> /loglevel:4``  
 
@@ -152,7 +152,7 @@ Si usa nano como hosts de Hyper-V (servidores físicos) para la implementación,
 5. Navegue hasta la carpeta `C:\SDNExpress`.<p>Verá las siguientes carpetas:  
 
 
-   | Nombre de carpeta |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+   | Folder Name |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    |  AgentConf  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Contiene copias actualizadas de los esquemas de OVSDB que usa el agente de host de SDN en cada host de Hyper-V de Windows Server 2016 para programar directivas de red.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
    |    Certificados    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Ubicación compartida temporal para el archivo de certificado de NC.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -165,7 +165,7 @@ Si usa nano como hosts de Hyper-V (servidores físicos) para la implementación,
 
 6. Compruebe que el archivo VHDX de Windows Server 2016 está en la carpeta **images** .  
 
-7. Personalice el archivo SDNExpress\scripts\FabricConfig.psd1 cambiando el **< < reemplazar >** etiquetas de > con valores específicos para que se adapten a la infraestructura del laboratorio, incluidos los nombres de host, los nombres de dominio, los nombres de usuario y las contraseñas, y la información de red para el redes que aparecen en el tema Planificación de la red.  
+7. Personalice el archivo SDNExpress\scripts\FabricConfig.psd1 cambiando el **< < reemplazar >** etiquetas de > con valores específicos para que se adapten a la infraestructura del laboratorio, incluidos los nombres de host, los nombres de dominio, los nombres de usuario y las contraseñas, así como la información de red de las redes que aparecen en el tema Planificación de la red.  
 
 8. Cree un registro de host A en DNS para NetworkControllerRestName (FQDN) y NetworkControllerRestIP.  
 
@@ -177,7 +177,7 @@ Si usa nano como hosts de Hyper-V (servidores físicos) para la implementación,
 
     ``SDNExpress\scripts\SDNExpressUndo.ps1 -ConfigurationDataFile FabricConfig.psd1 -Verbose``  
 
-#### <a name="validation"></a>Resultados  
+#### <a name="validation"></a>Validación  
 
 Suponiendo que el script de SDN Express se ejecutó hasta completarse sin informar de ningún error, puede realizar el siguiente paso para asegurarse de que los recursos del tejido se han implementado correctamente y están disponibles para la implementación de inquilinos.  
 
@@ -190,7 +190,7 @@ Use [herramientas de diagnóstico](https://docs.microsoft.com/windows-server/net
 
 Ahora que se han implementado los recursos del tejido, puede validar la implementación de SDN de un extremo a otro mediante la implementación de una carga de trabajo de inquilino de ejemplo. Esta carga de trabajo de inquilino consta de dos subredes virtuales (nivel de base de datos y capa Web) protegidas a través de reglas de lista de Access Control (ACL) mediante el Firewall distribuido de SDN. La subred virtual del nivel Web es accesible a través de SLB/MUX mediante una dirección IP virtual (VIP). El script implementa automáticamente dos máquinas virtuales de nivel Web y una máquina virtual de nivel de base de datos y las conecta a las subredes virtuales.  
 
-1.  Personalice el archivo SDNExpress\scripts\TenantConfig.psd1 cambiando el **< < reemplazar >** etiquetas de > con valores específicos (por ejemplo: Nombre de la imagen de VHD, nombre de REST de la controladora de red, nombre de vSwitch, etc., como se definió anteriormente en el archivo FabricConfig. psd1)  
+1.  Personalice el archivo SDNExpress\scripts\TenantConfig.psd1 cambiando el **< < reemplazar >** etiquetas de > con valores específicos (por ejemplo: nombre de la imagen de VHD, nombre de REST de la controladora de red, nombre de vSwitch, etc., como se ha definido anteriormente en el archivo FabricConfig. psd1)  
 
 2.  Ejecute el script. Por ejemplo:  
 
@@ -200,7 +200,7 @@ Ahora que se han implementado los recursos del tejido, puede validar la implemen
 
     ``SDNExpress\scripts\SDNExpressTenant.ps1 -Undo -ConfigurationDataFile TenantConfig.psd1 -Verbose``  
 
-#### <a name="validation"></a>Resultados  
+#### <a name="validation"></a>Validación  
 
 Para validar que la implementación de inquilinos se realizó correctamente, haga lo siguiente:
 
@@ -219,6 +219,6 @@ Para validar que la implementación de inquilinos se realizó correctamente, hag
    >[!TIP]
    >Busque la variable `VIPIP` en TenantConfig. psd1.
 
-   Ejecute este varios veces para ver el conmutador del equilibrador de carga entre las DIP disponibles. También puede observar este comportamiento mediante un explorador Web. Vaya a `<VIP IP address>/unique.htm`. Cierre el explorador y abra una nueva instancia y vuelva a examinar. Verá la página azul y la página verde alternativa, excepto cuando el explorador almacena en caché la página antes de que se agote el tiempo de espera de la caché.
+   Ejecute este varios veces para ver el conmutador del equilibrador de carga entre las DIP disponibles. También puede observar este comportamiento mediante un explorador Web. Busque `<VIP IP address>/unique.htm`. Cierre el explorador y abra una nueva instancia y vuelva a examinar. Verá la página azul y la página verde alternativa, excepto cuando el explorador almacena en caché la página antes de que se agote el tiempo de espera de la caché.
 
 ---

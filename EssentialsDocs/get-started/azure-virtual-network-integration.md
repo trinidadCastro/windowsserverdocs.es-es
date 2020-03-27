@@ -1,9 +1,9 @@
 ---
-title: Integración de Azure Virtual network
+title: Integración de Azure Virtual Network
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,64 +12,64 @@ ms.assetid: d7d38505-cff5-4f15-9fd5-ae6dba15ce88
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 673cb5a2292bab113aefb1de37f80bf4d880b467
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 92c8241d861e72d5f9f409a334e6edbeed5eae4c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433904"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310578"
 ---
-# <a name="azure-virtual-network-integration"></a>Integración de Azure Virtual network
+# <a name="azure-virtual-network-integration"></a>Integración de Azure Virtual Network
 
 >Se aplica a: Windows Server 2016 Essentials
 
-Como las organizaciones lleguen a la informática en nube, rara vez se les mover todos sus recursos de 100% a la vez, pero asumir un enfoque donde algunos recursos se encuentran en la nube y algunos son todavía en el entorno local. Este enfoque híbrido, facilita que las organizaciones no solo para mover algunos recursos informáticos en la nube, pero también pueden aumentar su infraestructura de TI sin tener que adquirir nuevo hardware.
+A medida que las organizaciones hacen su forma de computación en la nube, rara vez moverán todos los recursos del 100% al mismo tiempo, sino que adoptarán un enfoque en el que algunos recursos estén en la nube y otros aún en el entorno local. Este enfoque híbrido facilita a las organizaciones no solo a mover algunos recursos informáticos a la nube, sino que también les permite aumentar su infraestructura de TI sin tener que adquirir hardware nuevo.
 
-Al implementar este enfoque híbrido de informática, es necesaria una forma sencilla para los recursos en ambas ubicaciones para comunicarse entre sí. Las redes virtuales de Azure son un servicio de Azure que permite a las organizaciones crear un punto a punto (P2P) o el sitio a sitio (S2S) red privada virtual que hace que los recursos que se ejecutan en Azure (por ejemplo, máquinas virtuales y almacenamiento) Buscar como si fueran en la red local para el acceso sin problemas de aplicaciones y recursos.
+Cuando se implementa este enfoque híbrido en informática, se requiere una manera sin problemas de que los recursos en ambas ubicaciones se comuniquen entre sí. La red virtual de Azure es un servicio de Azure que permite a las organizaciones crear una red privada virtual de punto a punto (P2P) o de sitio a sitio (S2S) que hace que los recursos que se ejecutan en Azure (como máquinas virtuales y almacenamiento) parezcan en la red local para obtener acceso a los recursos y aplicaciones sin problemas.
 
-Configuración de una red Virtual de Azure puede ser compleja. Con Windows Server Essentials 2016 se puede configurar fácilmente la red Virtual de Azure a través de un sencillo asistente que le ayudará a elegir los valores predeterminados más adecuados para su entorno de red. Como se muestra en la captura de pantalla siguiente, se ha agregado una nueva tarea de integración de red Virtual de Azure a la sección de servicios en la nube de Microsoft del panel Essentials de Windows para introducir una red Virtual de Azure, así como para proporcionar un vínculo rápido para iniciar la integración .
+La configuración de una red virtual de Azure puede ser compleja. Con Windows Server Essentials 2016 puede configurar fácilmente la red virtual de Azure mediante un sencillo asistente que le ayuda a elegir los valores predeterminados más adecuados para su entorno en red. Como se muestra en la captura de pantalla siguiente, se ha agregado una nueva tarea de integración de red virtual de Azure a la sección Microsoft Cloud Services del panel de Windows Essentials para introducir la red virtual de Azure y proporcionar un vínculo rápido para iniciar la integración. .
 
-![Captura de pantalla que muestra la pestaña de empezar a trabajar en la página principal del panel de Windows Server Essentials. En la ficha empezar a trabajar, se ha seleccionado la sección de servicios y el panel se indica en la integración de servicios en la nube de Microsoft que la red Virtual de Azure está deshabilitada actualmente.](media/azure-virtual-network-1.PNG)
+![Captura de pantalla que muestra la pestaña introducción en la Página principal del panel de Windows Server Essentials. En la pestaña introducción, se ha seleccionado la sección servicios y el panel indica en Microsoft Cloud integración de servicios que Azure Virtual Network está actualmente deshabilitada.](media/azure-virtual-network-1.PNG)
 
-Al hacer clic en el **integrar ahora** vincular redes virtuales de Azure en la captura de pantalla anterior, aparecerá un cuadro de diálogo que le pide que inicie sesión en su cuenta de Microsoft Azure. Si no tiene una cuenta de Microsoft Azure, tendrá la opción de registro de uno en esta pantalla, que se redirigirá al portal de registro de cuenta de Azure:
+Al hacer clic en el vínculo **integrar ahora** para la red virtual de Azure en la captura de pantalla anterior, aparecerá un cuadro de diálogo en el que se le pedirá que inicie sesión en su cuenta de Microsoft Azure. Si no tiene una cuenta de Microsoft Azure, tendrá la opción de suscribirse a una en esta pantalla, lo que le redirigirá al portal de registro de la cuenta de Azure:
 
-![Captura de pantalla que muestra la página de inicio de sesión en Microsoft Azure del Asistente para la integración con Azure Virtual network.](media/azure-virtual-network-2.PNG)
+![Una captura de pantalla que muestra la página iniciar sesión en Microsoft Azure del Asistente para la integración con Azure Virtual Network.](media/azure-virtual-network-2.PNG)
 
-Después de iniciar sesión en Azure, se le mostrará con la opción de elegir qué suscripción que desean asociar con Azure Virtual networking service:
+Una vez que inicie sesión en Azure, se le presentará la opción de elegir qué suscripción desea asociar con el servicio de red virtual de Azure:
 
-![Captura de pantalla que muestra la página de mi suscripción a Microsoft Azure de la integración con el Asistente para la red Virtual de Azure.](media/azure-virtual-network-3.PNG)
+![Una captura de pantalla que muestra la página mi Microsoft Azure suscripción del Asistente para la integración con Azure Virtual Network.](media/azure-virtual-network-3.PNG)
 
-Una vez que ha elegido qué suscripción de Azure que desea usar para las redes virtuales de Azure, aparecerá la opción para crear una nueva red Virtual de Azure, o si uno ya ha sido el programa de instalación en esta suscripción, se mostrará el cuadro de lista desplegable que está disponible. También debe elegir un nombre para la red Local que usará la red Virtual de Azure para identificar los recursos en la red local. Por último, decide qué región de Azure en el que desea que su red Virtual de Azure que se va a hospedar. Elegir una ubicación que esté físicamente más cercano a la red local es normalmente más adecuado para optimizar la velocidad de ancho de banda para la comunicación con los recursos que puede hospedar en sus servicios de Azure:
+Una vez que haya elegido la suscripción de Azure que quiere usar para la red virtual de Azure, se le presentará la opción de crear una nueva red virtual de Azure, o bien, si ya se ha configurado una en esta suscripción, el cuadro desplegable mostrará que está disponible. También debe elegir un nombre para la red local que la red virtual de Azure usará para identificar los recursos en la red local. Por último, deberá elegir la región de Azure en la que desea hospedar la red virtual de Azure. La elección de una ubicación físicamente más cercana a la red local suele ser mejor para optimizar la velocidad de ancho de banda para la comunicación con los recursos que puede hospedar en sus servicios de Azure:
 
-![Captura de pantalla que muestra la página establecer seguridad de Azure Virtual de red del Asistente para la integración con Azure Virtual network.](media/azure-virtual-network-4.PNG)
+![Una captura de pantalla que muestra la página configurar red virtual de Azure del Asistente para la integración con Azure Virtual Network.](media/azure-virtual-network-4.PNG)
 
-Es el último paso del proceso de integración configurar el dispositivo VPN que se usará para la conexión VPN de S2S. Dado que las empresas más pequeñas tienen sólo unos pocos servidores en su entorno y falta el personal de TI para configurar correctamente un enrutador VPN para conectarse a Microsoft Azure, será la selección predeterminada configurar el servidor de Windows Server Essentials como servidor VPN que los recursos en la red local se conectará a fin de obtener acceso a recursos de la red Virtual de Azure. Sin embargo, si prefiere utilizar otro servidor en su entorno que el servidor VPN o prefiere usar un enrutador VPN, puede seleccionar estas opciones.
+El último paso del proceso de integración es configurar el dispositivo VPN que se usará para la conexión VPN S2S. Dado que la mayoría de las pequeñas empresas tienen solo unos pocos servidores en su entorno y carecen del personal de TI para configurar correctamente un enrutador VPN para conectarse a Microsoft Azure, la selección predeterminada será configurar el servidor de Windows Server Essentials como servidor VPN que requieran los recursos en la red local se conectará a para tener acceso a los recursos de la red virtual de Azure. Sin embargo, si prefiere usar otro servidor en su entorno como el servidor VPN o prefiere usar un enrutador VPN, puede seleccionar esas opciones.
 
-Debido a la variación en los modelos y los tipos de enrutadores, Windows Server Essentials no intenta configurar automáticamente el enrutador VPN. Seleccionar el enrutador VPN en este asistente para la integración solo notifica a una red Virtual de Azure del tipo de dispositivo para configuraciones de enrutamiento adecuados en Azure es necesarios para la conectividad.
+Debido a la variación en los modelos y tipos de enrutadores, Windows Server Essentials no intenta configurar automáticamente el enrutador VPN. La selección del enrutador VPN en el Asistente para la integración solo notifica a la red virtual de Azure del tipo de dispositivo las configuraciones de enrutamiento adecuadas necesarias en Azure para la conectividad.
 
-Al finalizar al Asistente de integración, una nueva pestaña será visible en el panel de Windows Server Essentials para las redes virtuales de Azure:
+Al completar el Asistente para la integración, se mostrará una nueva pestaña en el panel de Windows Server Essentials para la red virtual de Azure:
 
-![Captura de pantalla que muestra la página de la red virtual de Azure del panel de Windows Server Essentials. La pestaña de la red Virtual de Azure está seleccionada y muestra el estado de configuración.](media/azure-virtual-network-5.PNG)
+![Una captura de pantalla que muestra la página red virtual de Azure del panel de Windows Server Essentials. La pestaña red virtual de Azure está seleccionada y muestra el estado en configuración.](media/azure-virtual-network-5.PNG)
 
->! Tenga en cuenta la finalización de la configuración de una red Virtual de Azure en la nube puede tardar mucho tiempo, hacia arriba en 30 minutos. Durante este tiempo, el estado de configuración estará presente en la página de estado de red Virtual de Azure del panel.
+>! Nota: completar la configuración de una red virtual de Azure en la nube puede tardar mucho tiempo, hasta 30 minutos. Durante este tiempo, el estado de la configuración estará presente en la página estado de Azure Virtual Network del panel.
 
-Una vez completada la configuración de la red Virtual de Azure, el estado se cambia a conectado y mostrar los detalles de la red Virtual de Azure como datos de entrada/salida, dirección IP de puerta de enlace, detalles de dirección y la cuenta locales de IP:
+Una vez completada la configuración de la red virtual de Azure, el estado cambiará a conectado y mostrará los detalles de la red virtual de Azure, como los datos de salida y de salida, la dirección IP de puerta de enlace, la dirección IP local y los detalles de la cuenta:
 
-![Captura de pantalla que muestra la página de la red virtual de Azure del panel de Windows Server Essentials. La pestaña de la red Virtual de Azure está seleccionada y muestra el estado conectado y en esta información de estado se muestran los detalles de la red virtual.](media/azure-virtual-network-6.PNG)
+![Una captura de pantalla que muestra la página red virtual de Azure del panel de Windows Server Essentials. La pestaña red virtual de Azure está seleccionada y muestra el estado conectado y, en esta información de estado, se muestran los detalles de la red virtual.](media/azure-virtual-network-6.PNG)
 
-En el panel de tareas en el lado derecho del panel son las diversas tareas que la puede llevar a cabo con la red Virtual de Azure.
+En el panel de tareas del lado derecho del panel se encuentran las diversas tareas que puede realizar con la red virtual de Azure.
 
--   **Desconexión de red virtual de Azure** la configuración de una red Virtual de Azure es gratuita, pero hay un cargo por la puerta de enlace VPN que se conecta a un entorno local y otras redes virtuales en Azure. Desconectando la red virtual de Azure, detiene toda la facturación.
+-   **Desconexión de la red virtual de Azure** La configuración de una red virtual de Azure es gratuita, pero hay un cargo por la puerta de enlace de VPN que se conecta a local y a otras redes virtuales en Azure. La desconexión de la red virtual de Azure detiene toda la facturación.
 
--   **Cambiar a través de dispositivo VPN** en caso de que desea cambiar de un servidor VPN a un enrutador VPN, esta tarea le permitirá realizar el cambio y notificar a la red virtual de Azure.
+-   **Cambiar a través de un dispositivo VPN** En el caso de que desee cambiar de un servidor VPN a un enrutador VPN, esta tarea le permitirá hacer el cambio y notificar a la red virtual de Azure.
 
--   **Configurar la red virtual de Azure** esta tarea permite cambiar las opciones de configuración avanzada de la red virtual de Azure mediante el redireccionamiento a la página de configuración del portal de Azure para la red virtual de Azure.
+-   **Configuración de la red virtual de Azure** Esta tarea permite cambiar las opciones de configuración avanzada de la red virtual de Azure redirigiendo a la página de configuración de Azure Portal de la red virtual de Azure.
 
--   **Actualizar estado** actualiza la página de estado, actualizar el estado de conexión de la red virtual de Azure incluidos los datos de entrada/salida.
+-   **Actualizar estado** Actualiza la página de estado, actualizando el estado de conexión de la red virtual de Azure, incluidos los datos de salida.
 
--   **Deshabilitar la integración de red virtual de Azure** se desconecta de la red virtual de Azure y quita la integración desde el panel de Windows Server Essentials. Tenga en cuenta esto no elimina la red virtual de Azure, configuración todavía se conserva en Azure si desea más adelante vuelve a integrar red virtual de Azure con el panel.
+-   **Deshabilitación de Azure integración con red virtual** Desconecta la red virtual de Azure y quita la integración del panel de Windows Server Essentials. Tenga en cuenta que esto no elimina la red virtual de Azure, por lo que la configuración se conserva en Azure si posteriormente quiere volver a integrar la red virtual de Azure con el panel.
 
--   **Más información sobre la red virtual de Azure** [ https://azure.microsoft.com/services/virtual-network/ ](https://azure.microsoft.com/services/virtual-network/).
+-   **Más información acerca de la red virtual de Azure** [https://azure.microsoft.com/services/virtual-network/](https://azure.microsoft.com/services/virtual-network/).
 
 <a name="see-also"></a>Vea también
 --------

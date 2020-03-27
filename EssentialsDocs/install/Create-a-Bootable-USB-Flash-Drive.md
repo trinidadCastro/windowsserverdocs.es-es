@@ -3,7 +3,7 @@ title: Crear una unidad flash USB de arranque
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 05/04/2018
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,22 +12,22 @@ ms.assetid: 2fe8e35c-69f9-40b3-a270-22e2402510d8
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cb62a460c09fdb2874bcc051176a05e88cee19e7
-ms.sourcegitcommit: 7cb939320fa2613b7582163a19727d7b77debe4b
+ms.openlocfilehash: 88ae4bc7b560b0571ca339138cb99843c2d078c8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65621283"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312125"
 ---
 # <a name="create-a-bootable-usb-flash-drive"></a>Crear una unidad flash USB de arranque
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Puede crear una unidad flash USB de arranque a usar para implementar Windows Server Essentials. El primer paso es preparar la unidad flash USB con DiskPart, una utilidad de línea de comandos. Para obtener información sobre DiskPart, consulte [Opciones de línea de comandos de DiskPart](https://go.microsoft.com/fwlink/?LinkId=207073).  
+Puede crear una unidad flash USB de arranque para usarla para implementar Windows Server Essentials. El primer paso es preparar la unidad flash USB con DiskPart, una utilidad de línea de comandos. Para obtener información sobre DiskPart, consulte [Opciones de línea de comandos de DiskPart](https://go.microsoft.com/fwlink/?LinkId=207073).  
 
 
 > [!TIP]
-> Para crear una unidad flash USB de arranque para su uso en la recuperación o volver a instalar Windows en un equipo en lugar de un servidor, consulte [crear una unidad de recuperación](https://support.microsoft.com/help/4026852/windows-create-a-recovery-drive).
+> Para crear una unidad flash USB de arranque para su uso en la recuperación o reinstalación de Windows en un equipo en lugar de un servidor, consulte [crear una unidad de recuperación](https://support.microsoft.com/help/4026852/windows-create-a-recovery-drive).
   
  Para otros escenarios en los que quiera crear o usar una unidad flash USB de arranque, vea los temas siguientes:  
   
@@ -65,18 +65,18 @@ Puede crear una unidad flash USB de arranque a usar para implementar Windows Ser
   
 12. Cuando haya terminado de preparar la imagen personalizada, guárdela en la raíz de la unidad flash USB.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 
- [Introducción al ADK de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Introducción con el ADK de Windows Server essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)   
 
- [Introducción al ADK de Windows Server Essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Introducción con el ADK de Windows Server essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparar la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)   
 
  [¿Cómo podemos ayudarle?](https://windows.microsoft.com/windows/support)

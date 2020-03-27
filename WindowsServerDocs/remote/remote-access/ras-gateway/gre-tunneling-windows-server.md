@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: df2023bf-ba64-481e-b222-6f709edaa5c1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: be57bc0ce1b509c49f269618765c79f380fd3b12
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d246f0e56681f75e4336ed225d1557a0e05c581b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404674"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308553"
 ---
 # <a name="gre-tunneling-in-windows-server-2016"></a>Tunelización de GRE en Windows Server 2016
 
@@ -64,19 +64,19 @@ Estos son algunos escenarios de ejemplo:
 
 Los siguientes son escenarios clave a los que se dirige la característica de túnel GRE.  
   
-### <a name="BKMK_Access"></a>Acceso desde redes virtuales de inquilino a redes físicas de inquilino
+### <a name="access-from-tenant-virtual-networks-to-tenant-physical-networks"></a><a name="BKMK_Access"></a>Acceso desde redes virtuales de inquilino a redes físicas de inquilino
 
 Este escenario permite una manera escalable de proporcionar acceso desde las redes virtuales de inquilino a las redes físicas de inquilino ubicadas en las instalaciones del proveedor del servicio de hospedaje. Se establece un punto de conexión de túnel GRE en la puerta de enlace para varios inquilinos, el otro extremo del túnel GRE se establece en un dispositivo de otro fabricante en la red física. El tráfico de nivel 3 se enruta entre las máquinas virtuales de la red virtual y el dispositivo de terceros en la red física.  
   
 ![Túnel GRE que conecta la red física y la red virtual de inquilino](../../media/gre-tunneling-in-windows-server/GRE_.png)  
   
-### <a name="BKMK_Speed"></a>Conectividad de alta velocidad
+### <a name="high-speed-connectivity"></a><a name="BKMK_Speed"></a>Conectividad de alta velocidad
 
 Este escenario permite una manera escalable de proporcionar conectividad de alta velocidad desde la red local del inquilino a su red virtual ubicada en la red del proveedor de servicios de hosting. Un inquilino se conecta a la red del proveedor de servicios a través de conmutación de etiquetas multiprotocolo (MPLS), donde se establece un túnel GRE entre el enrutador perimetral del proveedor de servicios de hospedaje y la puerta de enlace multiinquilino a la red virtual del inquilino.  
   
 ![Túnel GRE conectando la red de inquilinos de empresa MPLS y la red virtual de inquilino](../../media/gre-tunneling-in-windows-server/GRE-.png)  
   
-### <a name="BKMK_Integration"></a>Integración con aislamiento basado en VLAN
+### <a name="integration-with-vlan-based-isolation"></a><a name="BKMK_Integration"></a>Integración con aislamiento basado en VLAN
 
 Este escenario le permite integrar el aislamiento basado en VLAN con virtualización de red de Hyper-V. Una red física de la red del proveedor de hospedaje contiene un equilibrador de carga que usa el aislamiento basado en VLAN. Una puerta de enlace para varios inquilinos establece túneles GRE entre el equilibrador de carga de la red física y la puerta de enlace multiinquilino en la red virtual.  
   
@@ -84,7 +84,7 @@ Se pueden establecer varios túneles entre el origen y el destino, y la clave GR
   
 ![Varios túneles GRE que conectan redes virtuales de inquilinos](../../media/gre-tunneling-in-windows-server/GRE-VLANIsolation.png)  
   
-### <a name="BKMK_Shared"></a>Acceder a recursos compartidos
+### <a name="access-shared-resources"></a><a name="BKMK_Shared"></a>Acceder a recursos compartidos
 
 Este escenario permite tener acceso a recursos compartidos en una red física ubicada en la red del proveedor de hospedaje.  
   
@@ -96,7 +96,7 @@ En este escenario, la puerta de enlace de un solo inquilino se puede reemplazar 
   
 ![Una puerta de enlace de un solo inquilino que usa varios túneles para conectar varias redes virtuales](../../media/gre-tunneling-in-windows-server/GRE-SharedResource.png)  
   
-### <a name="BKMK_thirdparty"></a>Servicios de dispositivos de terceros a los inquilinos
+### <a name="services-of-third-party-devices-to-tenants"></a><a name="BKMK_thirdparty"></a>Servicios de dispositivos de terceros a los inquilinos
 
 Este escenario se puede usar para integrar dispositivos de terceros (por ejemplo, equilibradores de carga de hardware) en el flujo de tráfico de la red virtual del inquilino. Por ejemplo, el tráfico procedente de un sitio de empresa pasa a través de un túnel S2S a la puerta de enlace multiinquilino. El tráfico se enruta al equilibrador de carga a través de un túnel GRE. El equilibrador de carga enruta el tráfico a varias máquinas virtuales de la red virtual de la empresa. Lo mismo ocurre para otro inquilino con direcciones IP potencialmente superpuestas en las redes virtuales. El tráfico de red está aislado en el equilibrador de carga mediante las VLAN y es aplicable a todos los dispositivos de nivel 3 compatibles con VLAN.  
   

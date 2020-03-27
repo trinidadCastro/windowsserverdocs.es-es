@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7b3bd47052e482b562e84d5c44b928c0744b223c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 91d8081261d3cbc5e2da61cc2b5a9737e76a0dc7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405912"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309802"
 ---
 # <a name="ras-gateway-deployment-architecture"></a>Arquitectura de implementación de puerta de enlace de RAS
 
@@ -29,7 +29,7 @@ En las secciones siguientes se proporciona información general sobre algunas de
   
 Además, se proporciona una implementación de ejemplo, que incluye información sobre el proceso de agregar nuevos inquilinos, la sincronización de rutas y el enrutamiento del plano de datos, la conmutación por error de reflector de enrutamiento y puerta de enlace, etc.  
   
-En este tema se incluyen las siguientes secciones.  
+Este tema contiene las siguientes secciones.  
   
 -   [Uso de las nuevas características de puerta de enlace RAS para diseñar la implementación](#bkmk_new)  
   
@@ -43,7 +43,7 @@ En este tema se incluyen las siguientes secciones.
   
 -   [Ventajas del uso de las nuevas características de puerta de enlace RAS](#bkmk_advantages)  
   
-## <a name="bkmk_new"></a>Uso de las nuevas características de puerta de enlace RAS para diseñar la implementación  
+## <a name="using-ras-gateway-new-features-to-design-your--deployment"></a><a name="bkmk_new"></a>Uso de las nuevas características de puerta de enlace RAS para diseñar la implementación  
 La puerta de enlace RAS incluye varias características nuevas que cambian y mejoran la manera en que se implementa la infraestructura de puerta de enlace en el centro de recursos.  
   
 ### <a name="bgp-route-reflector"></a>Reflector de rutas BGP  
@@ -51,22 +51,22 @@ La funcionalidad de reflector de rutas de Protocolo de puerta de enlace de borde
   
 Para obtener más información, consulte [novedades de puerta de enlace de Ras](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md).  
   
-### <a name="bkmk_pools"></a>Grupos de puerta de enlace  
+### <a name="gateway-pools"></a><a name="bkmk_pools"></a>Grupos de puerta de enlace  
 En Windows Server 2016, puede crear muchos grupos de puertas de enlace de distintos tipos. Los grupos de puertas de enlace contienen muchas instancias de puerta de enlace RAS y enrutan el tráfico de red entre las redes físicas y virtuales.  
   
 Para obtener más información, consulte [novedades de puerta de enlace ras](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) y [alta disponibilidad de puerta de enlace ras](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md).  
   
-### <a name="bkmk_gps"></a>Escalabilidad del grupo de puerta de enlace  
+### <a name="gateway-pool-scalability"></a><a name="bkmk_gps"></a>Escalabilidad del grupo de puerta de enlace  
 Puede escalar o reducir verticalmente un grupo de puerta de enlace fácilmente agregando o quitando máquinas virtuales de puerta de enlace en el grupo. La eliminación o adición de puertas de enlace no interrumpe los servicios proporcionados por un grupo. También puede Agregar y quitar grupos de puertas de enlace completos.  
   
 Para obtener más información, consulte [novedades de puerta de enlace ras](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) y [alta disponibilidad de puerta de enlace ras](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md).  
   
-### <a name="bkmk_m"></a>Redundancia de grupo de puerta de enlace M + N  
+### <a name="mn-gateway-pool-redundancy"></a><a name="bkmk_m"></a>Redundancia de grupo de puerta de enlace M + N  
 Cada grupo de puerta de enlace es M + N redundante. Esto significa que se realiza una copia de seguridad de un número de máquinas virtuales de puerta de enlace activo con un número "N" de máquinas virtuales de puerta de enlace en espera. La redundancia M + N proporciona más flexibilidad a la hora de determinar el nivel de confiabilidad que necesita al implementar la puerta de enlace de RAS.  
   
 Para obtener más información, consulte [novedades de puerta de enlace ras](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) y [alta disponibilidad de puerta de enlace ras](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md).  
   
-## <a name="bkmk_example"></a>Ejemplo de implementación  
+## <a name="example-deployment"></a><a name="bkmk_example"></a>Ejemplo de implementación  
 En la ilustración siguiente se proporciona un ejemplo con el emparejamiento de eBGP en las conexiones VPN de sitio a sitio configuradas entre dos inquilinos, contoso y Woodgrove, y el centro de información de Fabrikam CSP.  
   
 ![emparejamiento de eBGP a través de VPN de sitio a sitio](../../../media/RAS-Gateway-Deployment-Architecture/ras_gateway_architecture.png)  
@@ -82,7 +82,7 @@ Como reflectores de ruta, GW2 envía rutas de espacio de CA de Contoso a la cont
   
 La controladora de red envía directivas de virtualización de red de Hyper-V a las redes virtuales contoso y Woodgrove, así como directivas de RAS a las puertas de enlace RAS y directivas de equilibrio de carga a los multiplexores (MUX) configurados como equilibrio de carga de software. Fondo.  
   
-## <a name="bkmk_tenant"></a>Agregar nuevos inquilinos y el espacio de direcciones de cliente (CA) eBGP emparejamiento  
+## <a name="adding-new-tenants-and-customer-address-ca-space-ebgp-peering"></a><a name="bkmk_tenant"></a>Agregar nuevos inquilinos y el espacio de direcciones de cliente (CA) eBGP emparejamiento  
 Al firmar un cliente nuevo y agregar el cliente como un nuevo inquilino en su centro de recursos, puede usar el proceso siguiente, gran parte de lo que realizan automáticamente los enrutadores eBGP de la puerta de enlace de RAS y la controladora de red.  
   
 1.  Aprovisione una nueva red virtual y cargas de trabajo de acuerdo con los requisitos de su inquilino.  
@@ -103,7 +103,7 @@ Al firmar un cliente nuevo y agregar el cliente como un nuevo inquilino en su ce
   
 6.  Con el enrutamiento BGP de espacio de CA, también se establece el emparejamiento de eBGP entre los sitios de empresa y el reflector de rutas de puerta de enlace RAS de CSP.  
   
-## <a name="bkmk_route"></a>Sincronización de rutas y enrutamiento de plano de datos  
+## <a name="route-synchronization-and-data-plane-routing"></a><a name="bkmk_route"></a>Sincronización de rutas y enrutamiento de plano de datos  
 Después de establecer el emparejamiento de eBGP entre los sitios de empresa y el reflector de enrutamiento de puerta de enlace RAS de CSP, el reflector de rutas aprende todas las rutas empresariales mediante el enrutamiento BGP dinámico. El reflector de rutas sincroniza estas rutas entre todos los clientes de reflector de rutas para que todos estén configurados con el mismo conjunto de rutas.  
   
 El reflector de rutas también actualiza estas rutas consolidadas, mediante la sincronización de rutas, a la controladora de red. A continuación, la controladora de red traduce las rutas a las directivas de virtualización de red de Hyper-V y configura la red de tejido para asegurarse de que se aprovisiona el enrutamiento de rutas de acceso de datos de un extremo a otro. Este proceso hace que la red virtual de inquilino sea accesible desde los sitios empresariales de inquilinos.  
@@ -114,7 +114,7 @@ De forma similar, con las directivas de virtualización de red de Hyper-V aplica
   
 Además. devolver el tráfico de la red virtual de inquilino al sitio de empresa de inquilino remoto omite SLBs, un proceso llamado Direct Server Return (DSR).  
   
-## <a name="bkmk_failover"></a>Cómo responde el controlador de red a la puerta de enlace RAS y la conmutación por error de reflector  
+## <a name="how-network-controller-responds-to-ras-gateway-and-route-reflector-failover"></a><a name="bkmk_failover"></a>Cómo responde el controlador de red a la puerta de enlace RAS y la conmutación por error de reflector  
 A continuación se muestran dos escenarios posibles de conmutación por error: uno para los clientes de reflector de enrutamiento de puerta de enlace RAS y otro para los reflectores de ruta de puerta de enlace RAS, incluida información sobre cómo controla la conmutación por error las máquinas virtuales en cualquier configuración.  
   
 ### <a name="vm-failure-of-a-ras-gateway-bgp-route-reflector-client"></a>Error de máquina virtual de un cliente reflector de enrutamiento BGP de puerta de enlace RAS  
@@ -146,7 +146,7 @@ La controladora de red realiza las siguientes acciones cuando se produce un erro
   
 -   Después de la selección de la ruta BGP, el reflector de enrutamiento BGP de puerta de enlace RAS actualiza los clientes de reflector de rutas de inquilino en el centro de datos y sincroniza las rutas con el controlador de red, lo que permite que la ruta de acceso a los datos de un extremo a otro esté disponible para el tráfico  
   
-## <a name="bkmk_advantages"></a>Ventajas del uso de las nuevas características de puerta de enlace RAS  
+## <a name="advantages-of-using-new-ras-gateway-features"></a><a name="bkmk_advantages"></a>Ventajas del uso de las nuevas características de puerta de enlace RAS  
 A continuación se enumeran algunas de las ventajas de usar estas nuevas características de puerta de enlace RAS al diseñar la implementación de puerta de enlace RAS.  
   
 **Escalabilidad de puerta de enlace RAS**  

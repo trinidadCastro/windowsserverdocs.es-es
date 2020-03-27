@@ -3,7 +3,7 @@ title: Administrar aplicaciones en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,24 +12,24 @@ ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1a60a9e7fd958d447b4770431a69546f0ad6f229
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 7701cbc11ec691b4d4aadd5668dce6438eb9a076
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433351"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311416"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>Administrar aplicaciones en Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
  
- El panel del servidor en Windows Server Essentials y Windows Server 2012 R2 con el rol experiencia con Windows Server Essentials instalado hace posible realizar tareas administrativas comunes. Para realizar estas tareas, vea lo siguiente:  
+ El panel del servidor en Windows Server Essentials y Windows Server 2012 R2 con el rol de experiencia con Windows Server Essentials instalado permite realizar tareas administrativas comunes. Para realizar estas tareas, vea lo siguiente:  
   
 -   [Tareas de administración de aplicaciones en el panel](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_1)  
   
 -   [Instalar o quitar complementos mediante el panel](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_2)  
   
-##  <a name="BKMK_1"></a> Tareas de administración de aplicaciones en el panel  
+##  <a name="application-management-tasks-in-the-dashboard"></a><a name="BKMK_1"></a>Tareas de administración de aplicaciones en el panel  
  En la página de administración **Aplicaciones** del panel encontrará lo siguiente:  
   
 - Una lista de complementos instalados, que muestra:  
@@ -48,7 +48,7 @@ ms.locfileid: "66433351"
   
   En la tabla siguiente se describen las diversas tareas de administración del complemento que están disponibles en el panel del servidor. Algunas de las tareas son para complementos, por lo que solo están visibles cuando se selecciona un complemento en la lista.  
   
-|Nombre de la tarea|Descripción|  
+|Nombre de tarea|Descripción|  
 |---------------|-----------------|  
 |Quitar el complemento|Quita el complemento seleccionado desde el servidor y de todos los demás equipos de la red.|  
 |Instalar el complemento en los equipos de la red|Ayuda a programar la instalación del complemento seleccionado en todos los equipos de la red.|  
@@ -58,14 +58,14 @@ ms.locfileid: "66433351"
 |Leer la declaración de privacidad para el complemento|Se abre un sitio web en el explorador en el que podrá leer la declaración de privacidad.|  
 |¿Cómo instalo o quito complementos?|Abre una página web en el explorador que muestra el tema de ayuda correspondiente.|  
   
-##  <a name="BKMK_2"></a> Instalar o quitar complementos mediante el panel  
+##  <a name="install-or-remove-add-ins-using-the-dashboard"></a><a name="BKMK_2"></a>Instalar o quitar complementos mediante el panel  
  Un complemento es una aplicación de software que ofrece características adicionales y funciones para servidores. Hay cada vez más complementos de Microsoft y de otros proveedores de software independientes (ISV).  
   
  Para aprovechar las funciones extendidas de un complemento, debe instalar el complemento en el servidor.  
   
 #### <a name="to-install-an-add-in-from-microsoft-pinpoint"></a>Para instalar un complemento de Microsoft Pinpoint  
   
-1.  En el panel del servidor, haga clic en **Aplicaciones** y, a continuación, en la pestaña **Microsoft Pinpoint**.  Aparecerá una lista de complementos disponibles.  
+1.  En el panel del servidor, haga clic en **aplicaciones**y, a continuación, haga clic en la pestaña **Microsoft Pinpoint** .  Aparece una lista de complementos disponibles.  
   
 2.  Haga clic en el complemento que quiera instalar. Aparecerá la página de información.  
   
@@ -91,7 +91,7 @@ ms.locfileid: "66433351"
   
 2.  Haga clic en la pestaña **Aplicaciones**.  
   
-3.  En la pestaña **Complementos** , seleccione el complemento que quiera quitar y, a continuación, haga clic en **Quitar el complemento**.  
+3.  En la pestaña **Complementos**, seleccione el complemento que quiera quitar y, a continuación, haga clic en **Quitar el complemento**.  
   
 4.  En la ventana **Quitar complemento**, haga clic en **Quitar**.  
   
@@ -100,6 +100,6 @@ ms.locfileid: "66433351"
   
 ## <a name="see-also"></a>Vea también  
   
--   [Introducción al panel](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)  
+-   [Información general del panel](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)  
   
 -   [Administrar Windows Server Essentials](Manage-Windows-Server-Essentials.md)

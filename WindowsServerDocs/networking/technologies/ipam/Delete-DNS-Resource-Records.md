@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 366e6fd5-d563-4de3-9551-5614cbb8f2cb
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fcaaf89989a44cc7a0e84e296ce16083fe021577
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8c93af6a5d43086320ab27982f7a0c0308ee551d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405659"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312461"
 ---
 # <a name="delete-dns-resource-records"></a>Eliminación de registros de recursos DNS
 
@@ -47,7 +47,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
   
     ![Comprobar que el servidor DNS correcto está seleccionado y eliminar registros](../../media/Delete-DNS-Resource-Records/ipam_DeleteRR_03.jpg)  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Administración de registros de recursos DNS](DNS-Resource-Record-Management.md)  
 [Administrar IPAM](Manage-IPAM.md)  
   

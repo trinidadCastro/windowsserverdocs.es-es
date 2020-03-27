@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc20b1a0-540d-4531-a176-50b87c071600
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0c6bff2acc15b7ff90731e0113ae0d5a429c635c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3cd73f1a5e2612f4551be1f16e49e9645c5e12c0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404796"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308732"
 ---
 # <a name="step-2-install-and-configure-router1"></a>Paso 2 Instalación y configuración de ENRUTADOR1
 
@@ -40,7 +40,7 @@ En primer lugar, instale Windows Server 2016, Windows Server 2012 R2 o Windows S
   
 1.  Inicie la instalación de Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 (instalación completa).  
   
-2.  Siga las instrucciones para completar la instalación, especificando una contraseña segura para la cuenta Administrador local. Inicie sesión con la cuenta Administrador local.  
+2.  Siga las instrucciones para completar la instalación, especificando una contraseña segura para la cuenta Administrador local. Inicie sesión con la cuenta de administrador local.  
   
 3.  Conecte ENRUTADOR1 a una red que tenga acceso a Internet y ejecute Windows Update para instalar las actualizaciones más recientes para Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 y, a continuación, desconéctese de Internet.  
   
