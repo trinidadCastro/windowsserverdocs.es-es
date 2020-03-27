@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9271cf4e5f50adf93f421e830a226507034ac454
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5e1ed095b3180f3aebd25381ec9086445bb141ec
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517480"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316623"
 ---
 # <a name="choosing-a-network-adapter"></a>Elección de un adaptador de red
 
@@ -26,7 +26,7 @@ Las aplicaciones que consumen muchos recursos de red requieren adaptadores de re
 > [!TIP]
 >  Puede establecer la configuración del adaptador de red mediante Windows PowerShell. Para obtener más información, consulte [cmdlets de adaptador de red en Windows PowerShell](https://docs.microsoft.com/powershell/module/netadapter).
 
-##  <a name="bkmk_offload"></a>Funcionalidades de descarga
+##  <a name="offload-capabilities"></a><a name="bkmk_offload"></a>Funcionalidades de descarga
 
 La descarga de tareas de la unidad central de procesamiento \(CPU\) al adaptador de red puede reducir el uso de CPU en el servidor, lo que mejora el rendimiento global del sistema.
 
@@ -42,7 +42,7 @@ La pila de red de los productos de Microsoft puede descargar una o más tareas e
 |Ajuste de escala en lado de recepción \(RSS\)|RSS es una tecnología de controlador de red que permite la distribución eficaz del procesamiento de recepción de red entre varias CPU en sistemas multiprocesador. Más adelante en este tema se proporciona más información sobre RSS.|  
 |Fusión de segmentos de recepción \(\) RSC|RSC es la capacidad de agrupar paquetes para minimizar el procesamiento de encabezados necesario para que el host realice la ejecución. Un máximo de 64 KB de carga útil recibida puede combinarse en un único paquete mayor para su procesamiento. Más adelante en este tema se proporciona más información sobre RSC.|  
   
-###  <a name="bkmk_rss"></a>Ajuste de escala en lado de recepción
+###  <a name="receive-side-scaling"></a><a name="bkmk_rss"></a>Ajuste de escala en lado de recepción
 
 Windows Server 2016, Windows Server 2012, Windows Server 2012 R2, Windows Server 2008 R2 y Windows Server 2008 admiten el ajuste de escala en lado de recepción \(\)RSS. 
 
@@ -158,7 +158,7 @@ Para utilizar las CPU por completo, el número de colas de recepción RSS debe s
 
 RSS se puede habilitar en un adaptador de red que esté agrupado con otra tarjeta de interfaz de red mediante la formación de equipos NIC. En este escenario, solo se puede configurar el adaptador de red físico subyacente para usar RSS. Un usuario no puede establecer cmdlets de RSS en el adaptador de red agrupado.
   
-###  <a name="bkmk_rsc"></a>Fusión de segmentos de recepción (RSC)
+###  <a name="receive-segment-coalescing-rsc"></a><a name="bkmk_rsc"></a>Fusión de segmentos de recepción (RSC)
 
 La fusión de segmentos de recepción \(RSC\) ayuda al rendimiento al reducir el número de encabezados IP que se procesan para una cantidad determinada de datos recibidos. Debe usarse para ayudar a escalar el rendimiento de los datos recibidos mediante la agrupación de \(o la fusión\) los paquetes más pequeños en unidades más grandes.
 
@@ -206,7 +206,7 @@ RSC solo se admite en el host físico cuando el adaptador de red del host no est
 
 RSC se puede habilitar para una máquina virtual cuando está habilitada la virtualización de entrada/salida de raíz única \(SR-IOV\). En este caso, las funciones virtuales admiten la funcionalidad de RSC; por lo tanto, las máquinas virtuales también obtienen la ventaja de RSC.
 
-##  <a name="bkmk_resources"></a>Recursos de adaptador de red
+##  <a name="network-adapter-resources"></a><a name="bkmk_resources"></a>Recursos de adaptador de red
 
 Algunos adaptadores de red administran activamente sus recursos para lograr un rendimiento óptimo. Varios adaptadores de red permiten configurar los recursos manualmente mediante la ficha **redes avanzadas** del adaptador. Para estos adaptadores, puede establecer los valores de una serie de parámetros, incluido el número de búferes de recepción y búferes de envío.
 

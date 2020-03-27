@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4f13f78e-0114-4e41-9a28-82a4feccecfc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: dec5c9b9b5d5fe858e063af70ff0a8e16991e632
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a5cd347b849948052f4f7caa7fa8a863808e8c26
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355222"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309537"
 ---
 # <a name="manage-role-based-access-control-with-windows-powershell"></a>Administración del control de acceso basado en roles con Windows PowerShell
 
@@ -32,7 +32,7 @@ Los nuevos comandos IPAM de Windows PowerShell le proporcionan la capacidad de r
   
 |Objeto IPAM|Comando|Descripción|  
 |---------------|-----------|---------------|  
-|Servidor DNS|Get-IpamDnsServer|Este cmdlet devuelve el objeto de servidor DNS en IPAM|  
+|DNS Server|Get-IpamDnsServer|Este cmdlet devuelve el objeto de servidor DNS en IPAM|  
 |Zona DNS|Get-IpamDnsZone|Este cmdlet devuelve el objeto de zona DNS en IPAM|  
 |Registro de recursos DNS|Get-IpamResourceRecord|Este cmdlet devuelve el objeto de registro de recursos DNS en IPAM|  
 |Reenviador condicional de DNS|Get-IpamDnsConditionalForwarder|Este cmdlet devuelve el objeto de reenviador condicional de DNS en IPAM|  
@@ -66,13 +66,13 @@ Puede establecer ámbitos de acceso en objetos IPAM mediante el comando `Set-Ipa
   
 -   Registros de recursos DNS  
   
--   Servidor DNS  
+-   DNS Server  
   
 -   Zona DNS  
   
 -   IP Address Block  
   
--   Intervalo de direcciones IP  
+-   IP Address Range  
   
 -   Espacio de direcciones IP  
   

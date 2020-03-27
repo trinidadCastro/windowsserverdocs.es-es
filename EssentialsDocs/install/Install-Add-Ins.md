@@ -3,7 +3,7 @@ title: Instalar complementos
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: e62e4f07-c2ba-4c5e-b30c-bdc287cd654e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d00cb6886e812ee2b780ad79e1fba44442e279ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9f3c952df01f44f29d1e7b39e1ffb8e04c931945
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833076"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311685"
 ---
 # <a name="install-add-ins"></a>Instalar complementos
 
@@ -32,7 +32,7 @@ Para incluir complementos en todos los servidores o equipos cliente, instálelos
   
 1.  (Opcional) Si instala el complemento utilizando un archivo .wssx, siga los pasos que se indican a continuación:  
   
-    1.  Guardar el < nombre de complemento\>archivo .wssx en el equipo de referencia.  
+    1.  Guarde el archivo < AddinName\>. WSSX en el equipo de referencia.  
   
     2.  Haga doble clic en el archivo .wssx para abrir el Asistente de instalación de complementos.  
   
@@ -40,8 +40,8 @@ Para incluir complementos en todos los servidores o equipos cliente, instálelos
   
 2.  (Opcional) Instale los archivos individuales del complemento en las ubicaciones correspondientes como se indica en el SDK de cada tipo de complemento.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: 8ff610e2-43ca-407f-a828-06d9366e02f0
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 35d5875c78dcd92f3b40b919568dabcf0d45d673
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fc4ba05466c2d87e6d6e9f7c0d5cee1bb405c79a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356759"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318391"
 ---
 # <a name="configure-the-server-certificate-template"></a>Configurar la plantilla de certificado de servidor
 
@@ -36,13 +36,13 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
   
 2.  En MMC, haga doble clic en el nombre de la entidad de certificación, haga clic con el botón secundario en **plantillas de certificado**y, a continuación, haga clic en **administrar**.  
   
-3.  Se abre la consola de plantillas de certificado. Todas las plantillas de certificado se muestran en el panel de detalles.  
+3.  Se abre la consola de plantillas de certificado. Se mostrarán todas las plantillas de certificado en el panel de detalles.  
   
 4.  En el panel de detalles, haga clic en la plantilla **servidor RAS e IAS** .  
   
 5.  Haga clic en el menú **acción** y, a continuación, haga clic en **plantilla duplicada**. Se abrirá el cuadro de diálogo **propiedades** de la plantilla.  
   
-6.  Haga clic en la pestaña **Seguridad**.   
+6.  Haga clic en la pestaña **Security**.   
   
 7.  En la pestaña **seguridad** , en **nombres de grupos o usuarios**, haga clic en **servidores RAS e IAS**.  
   

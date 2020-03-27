@@ -7,14 +7,14 @@ ms.suite: na
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: c635fa48-d064-4b8b-9dce-9f26abfbcfa4
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8734942e6d048df4be0107c67af7a2f741845e8b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a03a4bc51429daea0d1a6cfaeb3da2f8805e711e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406404"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318481"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment"></a>Implementación de modo de caché hospedada de BranchCache
 

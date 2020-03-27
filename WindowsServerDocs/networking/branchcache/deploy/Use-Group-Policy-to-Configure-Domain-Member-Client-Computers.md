@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 911c1538-f79d-42e9-ba38-f4618f87b008
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 06/02/2018
-ms.openlocfilehash: 6f093e605ce735d8f86f7f4d479a646d144e8829
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6ca1ff8fabb559628afd2dd1abafc56a908909a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356520"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319193"
 ---
 # <a name="use-group-policy-to-configure-domain-member-client-computers"></a>Usar directiva de grupo para configurar equipos cliente miembros del dominio
 
@@ -35,13 +35,13 @@ Esta sección contiene los siguientes procedimientos.
   
 Debe ser miembro de **Admins**. del dominio o equivalente para realizar estos procedimientos.  
   
-## <a name="bkmk_gp"></a>Para crear un objeto directiva de grupo y configurar los modos de BranchCache  
+## <a name="to-create-a-group-policy-object-and-configure-branchcache-modes"></a><a name="bkmk_gp"></a>Para crear un objeto directiva de grupo y configurar los modos de BranchCache  
   
-1.  En un equipo en el que esté instalado el rol de servidor Active Directory Domain Services, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **Administración de directiva de grupo**. Se abre la consola de administración de directiva de grupo.  
+1.  En un equipo en el que esté instalado el rol de servidor Active Directory Domain Services, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **Administración de directiva de grupo**. Se abre la Consola de administración de directivas de grupo.  
   
 2.  En la consola de administración de directiva de grupo, expanda la siguiente ruta de acceso: **bosque:** *example.com*, **dominios**, *example.com* **Directiva de grupo objetos**, donde *example.com* es el nombre del dominio donde se encuentran las cuentas de equipo cliente de BranchCache que desea configurar.  
   
-3.  Haga clic con el botón secundario en **Objetos de directiva de grupo** y, a continuación, haga clic en **Nuevo**. Se abre el cuadro de diálogo **Nuevo GPO**. En **nombre**, escriba un nombre para el nuevo objeto de directiva de grupo (GPO). Por ejemplo, si desea asignar al objeto el nombre Equipos cliente de BranchCache, escriba **Equipos cliente de BranchCache**. Haz clic en **Aceptar**.  
+3.  Haga clic con el botón secundario en **Objetos de directiva de grupo** y, a continuación, haga clic en **Nuevo**. Se abre el cuadro de diálogo **Nuevo GPO**. En **nombre**, escriba un nombre para el nuevo objeto de directiva de grupo (GPO). Por ejemplo, si desea asignar al objeto el nombre Equipos cliente de BranchCache, escriba **Equipos cliente de BranchCache**. Haga clic en **Aceptar**.  
   
 4.  En la Consola de administración de directivas de grupo, asegúrese de que esté seleccionada la opción **Objetos de directiva de grupo** y, en el panel de detalles, haga clic con el botón secundario en el objeto de directiva de grupo que acaba de crear. Por ejemplo, si ha asignado al objeto de directiva de grupo el nombre Equipos cliente de BranchCache, haga clic con el botón secundario en **Equipos cliente de BranchCache**. Haga clic en **Editar**. Se abre la consola de Editor de administración de directivas de grupo.  
   
@@ -64,7 +64,7 @@ Debe ser miembro de **Admins**. del dominio o equivalente para realizar estos pr
   
 12. Use los procedimientos siguientes para configurar las opciones de firewall en los equipos cliente mediante directiva de grupo.  
   
-## <a name="bkmk_inbound"></a>Para configurar las reglas de tráfico de entrada de Firewall de Windows con seguridad avanzada  
+## <a name="to-configure-windows-firewall-with-advanced-security-inbound-traffic-rules"></a><a name="bkmk_inbound"></a>Para configurar las reglas de tráfico de entrada de Firewall de Windows con seguridad avanzada  
   
 1.  En la consola de administración de directiva de grupo, expanda la siguiente ruta de acceso: **bosque:** *example.com*, **dominios**, *example.com* **Directiva de grupo objetos**, donde *example.com* es el nombre del dominio donde se encuentran las cuentas de equipo cliente de BranchCache que desea configurar.  
   
@@ -74,7 +74,7 @@ Debe ser miembro de **Admins**. del dominio o equivalente para realizar estos pr
   
 4.  Haga clic con el botón secundario en **Reglas de entrada** y, a continuación, en **Nueva regla**. Se abre el Asistente para nueva regla de entrada.  
   
-5.  En **tipo de regla**, haga clic en **predefinida**, expanda la lista de opciones y, a continuación, haga clic en **BranchCache: recuperación de contenido (utiliza http)** . Haz clic en **Siguiente**.  
+5.  En **tipo de regla**, haga clic en **predefinida**, expanda la lista de opciones y, a continuación, haga clic en **BranchCache: recuperación de contenido (utiliza http)** . Haga clic en **Siguiente**.  
   
 6.  En **Reglas predefinidas**, haga clic en **Siguiente**.  
   
@@ -85,7 +85,7 @@ Debe ser miembro de **Admins**. del dominio o equivalente para realizar estos pr
   
 8.  Para crear la excepción de firewall para WS-Discovery, vuelva a hacer clic con el botón secundario en **Reglas de entrada** y, a continuación, haga clic en **Nueva regla**. Se abre el Asistente para nueva regla de entrada.  
   
-9. En **tipo de regla**, haga clic en **predefinida**, expanda la lista de opciones y, a continuación, haga clic en **BranchCache: detección de pares (usa WSD)** . Haz clic en **Siguiente**.  
+9. En **tipo de regla**, haga clic en **predefinida**, expanda la lista de opciones y, a continuación, haga clic en **BranchCache: detección de pares (usa WSD)** . Haga clic en **Siguiente**.  
   
 10. En **Reglas predefinidas**, haga clic en **Siguiente**.  
   
@@ -94,11 +94,11 @@ Debe ser miembro de **Admins**. del dominio o equivalente para realizar estos pr
     > [!IMPORTANT]  
     > Debe seleccionar la opción **Permitir la conexión** para que el cliente de BranchCache pueda recibir tráfico en este puerto.  
   
-## <a name="bkmk_outbound"></a>Para configurar las reglas de tráfico de salida de Firewall de Windows con seguridad avanzada  
+## <a name="to-configure-windows-firewall-with-advanced-security-outbound-traffic-rules"></a><a name="bkmk_outbound"></a>Para configurar las reglas de tráfico de salida de Firewall de Windows con seguridad avanzada  
   
 1.  En la consola de Editor de administración de directivas de grupo, haga clic con el botón secundario en **Reglas de salida** y, a continuación, haga clic en **Nueva regla**. Se abre el Asistente para nueva regla de salida.  
   
-2.  En **tipo de regla**, haga clic en **predefinida**, expanda la lista de opciones y, a continuación, haga clic en **BranchCache: recuperación de contenido (utiliza http)** . Haz clic en **Siguiente**.  
+2.  En **tipo de regla**, haga clic en **predefinida**, expanda la lista de opciones y, a continuación, haga clic en **BranchCache: recuperación de contenido (utiliza http)** . Haga clic en **Siguiente**.  
   
 3.  En **Reglas predefinidas**, haga clic en **Siguiente**.  
   
@@ -109,7 +109,7 @@ Debe ser miembro de **Admins**. del dominio o equivalente para realizar estos pr
   
 5.  Para crear la excepción de firewall para WS-Discovery, vuelva a hacer clic con el botón secundario en **Reglas de salida** y, a continuación, haga clic en **Nueva regla**. Se abre el Asistente para nueva regla de salida.  
   
-6.  En **tipo de regla**, haga clic en **predefinida**, expanda la lista de opciones y, a continuación, haga clic en **BranchCache: detección de pares (usa WSD)** . Haz clic en **Siguiente**.  
+6.  En **tipo de regla**, haga clic en **predefinida**, expanda la lista de opciones y, a continuación, haga clic en **BranchCache: detección de pares (usa WSD)** . Haga clic en **Siguiente**.  
   
 7.  En **Reglas predefinidas**, haga clic en **Siguiente**.  
   

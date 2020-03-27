@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/20/2018
-ms.openlocfilehash: 8c354d53db983d0437749de918b2d5f12ede0f5b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a83a36ce7a47f0ebde35bf93bdca20796dd37a28
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405700"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316881"
 ---
 # <a name="software-only-so-features-and-technologies"></a>Funciones y tecnologías de solo software
 Las características de solo software se implementan como parte del sistema operativo y son independientes de las NIC subyacentes. A veces, estas características requieren cierta optimización de la NIC para una operación óptima. Algunos ejemplos son las características de Hyper-v, como la calidad de servicio de las máquinas virtuales (vmQoS), las listas de Access Control (ACL) y las características que no son de Hyper-V, como la formación de equipos NIC.

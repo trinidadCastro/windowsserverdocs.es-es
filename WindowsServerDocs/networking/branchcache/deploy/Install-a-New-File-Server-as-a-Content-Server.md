@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 1f49fc3c-28a6-4d3d-b787-1be9e61e792f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 489006c50ccbfa1f452d56b1a18217692d45cb1f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5abe1520de24d366df43210219119ae9f806adc4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406458"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319233"
 ---
 # <a name="install-a-new-file-server-as-a-content-server"></a>Instalar un nuevo servidor de archivos como servidor de contenido
 
@@ -49,7 +49,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
     > [!TIP]  
     > Se recomienda que active también la casilla de **desduplicación de datos**.
   
-    Haz clic en **Siguiente**.  
+    Haga clic en **Siguiente**.  
   
 6.  En **seleccionar características**, haga clic en **siguiente**.  
   

@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
-ms.author: pashort
+ms.author: lizross
 author: JMesser81
 ms.date: 08/14/2018
-ms.openlocfilehash: 2782419f0c3d99e7ec7f4ee3389f174df400bd55
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5827ad3b23d6f084e0138bf34ad47223eccb4e76
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949924"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312847"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Solución de problemas de la pila de redes definidas por software de Windows Server
 
@@ -69,7 +69,7 @@ Estos cmdlets están documentados en TechNet en el [tema del cmdlet de diagnóst
 
 _Debug-VirtualMachineQueueOperation_, _Get-CustomerRoute_, _Get-PACAMapping_, _Get-ProviderAddress_, _Get-VMNetworkAdapterPortId_, _Get-VMSwitchExternalPortId_y _Test-EncapOverheadSettings_ son todas las pruebas locales que se pueden ejecutar desde cualquier host de Hyper-V. Los otros cmdlets invocan las pruebas de ruta de acceso a datos a través de la controladora de red y, por tanto, necesitan tener acceso al controlador de red como descried anterior.
 
-### <a name="github"></a>Github
+### <a name="github"></a>GitHub
 El [repositorio de github de Microsoft/Sdn](https://github.com/microsoft/sdn) tiene una serie de scripts y flujos de trabajo de ejemplo que se basan en estos cmdlets integrados. En concreto, los scripts de diagnóstico se pueden encontrar en la carpeta [Diagnostics](https://github.com/Microsoft/sdn/diagnostics) . Ayúdenos a obtener estos scripts mediante el envío de solicitudes de incorporación de cambios.
 
 ## <a name="troubleshooting-workflows-and-guides"></a>Solución de problemas de flujos de trabajo y guías  
@@ -121,9 +121,9 @@ Message:          Host is not Connected.
 En la tabla siguiente se muestra la lista de códigos de error, mensajes y acciones de seguimiento que se deben realizar en función del estado de configuración observado.
 
 
-| **Código**| **Message**| **Acción**|  
+| **Codifica**| **Mensaje**| **Acción**|  
 |--------|-----------|----------|  
-| Unknown| Error desconocido| |  
+| Desconocida| Error desconocido| |  
 | HostUnreachable                       | No se puede tener acceso al equipo host | Comprobar la conectividad de red de administración entre la controladora de red y el host |  
 | PAIpAddressExhausted                  | Direcciones IP de PA agotadas | Aumento del tamaño del grupo de direcciones IP de la subred lógica del proveedor de HNV |  
 | PAMacAddressExhausted                 | Direcciones MAC de PA agotadas | Aumentar el intervalo de grupo de direcciones MAC |  
@@ -266,7 +266,7 @@ Thumbprint                                Subject
 
 También puede comprobar los siguientes parámetros de cada certificado para asegurarse de que el nombre del sujeto es el que se espera (nombre de host o FQDN o IP de REST de NC), que el certificado no ha expirado y que todas las entidades de certificación de la cadena de certificados están incluidas en la raíz de confianza. entidad certificación.
 
-- Nombre del firmante  
+- Nombre de sujeto  
 - Fecha de expiración  
 - De confianza de la entidad de certificación raíz  
 
@@ -295,7 +295,7 @@ Collecting Diagnostics data from NC Nodes
 La información de estado de configuración de SLB se puede encontrar en el archivo _Diagnostics-slbstateResults. JSON_ de este directorio.
 
 Este archivo JSON se puede dividir en las siguientes secciones:
- * Tejido
+ * Fabric
    * SlbmVips: en esta sección se muestra la dirección IP de la dirección VIP del administrador SLB usada por la controladora de red para coodinate la configuración y el estado entre los agentes de host de SLB MUX y SLB.
    * MuxState: en esta sección se enumera un valor para cada MUX de SLB implementado, lo que proporciona el estado del MUX
    * Configuración del enrutador: en esta sección se enumera el número de sistema autónomo (ASN) del enrutador ascendente (ASN), la dirección IP de tránsito y el identificador. También se mostrará el ASN MUX de SLB y la IP de tránsito.
@@ -597,7 +597,7 @@ Información de enrutamiento de PA:
     Local PA IP: 10.10.182.66
     Remote PA IP: 10.10.182.65
 
- <snip> ...
+ <snip>...
 
 4. Inquilino Compruebe que no se ha especificado ninguna directiva de Firewall distribuido en las interfaces de red de VM o subred virtual que bloquearían el tráfico.    
 
@@ -658,7 +658,7 @@ Si no se ha especificado la ubicación de un archivo, se usará el registro loca
 - NCApplicationLogs
 - PerfCounters
 - SDNDiagnostics
-- Seguimientos
+- Traces
 
 La controladora de red utiliza (Azure) Service Fabric. Los registros de Service Fabric pueden ser necesarios para solucionar determinados problemas. Estos registros se pueden encontrar en cada nodo de la controladora de red en C:\ProgramData\Microsoft\Service fabric.
 

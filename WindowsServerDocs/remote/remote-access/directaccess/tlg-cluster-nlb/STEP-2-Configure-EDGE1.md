@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 84457351-1ca7-4e7c-8e2c-53d55b1fcdc0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b9eb37433e26c174ccae85482163c976577ff479
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: eea83bd9788ffd704b6169c140adc68465f9325d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388514"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310842"
 ---
 # <a name="step-2-configure-edge1"></a>Paso 2 configurar EDGE1
 
@@ -27,7 +27,7 @@ El siguiente procedimiento se realiza en el servidor de DirectAccess:
 
 ## <a name="to-configure-directaccess-on-edge1"></a>Para configurar DirectAccess en EDGE1
   
-1.  En la pantalla **Inicio** , escriba**RAMgmtUI. exe**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+1.  En la pantalla **Inicio** , escriba**RAMgmtUI. exe**y, a continuación, presione Entrar. Si aparece el cuadro de **Control de cuentas de usuario**, confirma que la acción que se muestra es la que deseas realizar y haz clic en **Sí**.  
   
 2.  En el panel izquierdo de la consola de administración de acceso remoto, haga clic en **configuración**.  
   

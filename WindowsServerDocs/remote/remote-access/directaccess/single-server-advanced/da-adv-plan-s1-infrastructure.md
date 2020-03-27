@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: bb8bb6dda6eab27413b462a4c7f17176fbed85a1
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a1dbd7bad0a6954d0cf66c372a48507a2a8d61be
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822778"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309076"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>Paso 1 planear la infraestructura de DirectAccess avanzada
 
@@ -66,8 +66,8 @@ En esta sección se explica cómo planear tu red, incluido:
   
     ||Adaptador de red externo|Adaptador de red interno|Requisitos de enrutamiento|  
     |-|--------------|--------------|------------|  
-    |Internet IPv4 e intranet IPv4|Configura dos direcciones IPv4 públicas estáticas consecutivas con las máscaras de subred adecuadas (solo se necesita para Teredo).<br/><br/>Configura también la dirección IPv4 de la puerta de enlace predeterminada del firewall de Internet o del enrutador del proveedor de acceso a Internet (ISP). **Nota:** El servidor de DirectAccess requiere dos direcciones IPv4 públicas consecutivas para que pueda actuar como un servidor Teredo y los clientes basados en Windows puedan usar el servidor de DirectAccess para detectar el tipo de dispositivo NAT que están detrás.|Configura lo siguiente:<br/><br/>-Una dirección de intranet IPv4 con la máscara de subred adecuada.<br/>-El sufijo DNS específico de la conexión del espacio de nombres de la intranet. También se debería configurar un servidor DNS en la interfaz interna. **PRECAUCIÓN:** No configure una puerta de enlace predeterminada en ninguna interfaz de la intranet.|Para configurar el servidor de DirectAccess de manera que tenga acceso a todas las subredes de la red IPv4 interna, haz lo siguiente:<br/><br/>-Enumere los espacios de direcciones IPv4 para todas las ubicaciones de la intranet.<br/>-Use la **ruta Add-p** o el comando**netsh interface IPv4 Add Route** para agregar los espacios de direcciones IPv4 como rutas estáticas en la tabla de enrutamiento IPv4 del servidor de DirectAccess.|  
-    |Internet IPv6 e intranet IPv6|Configura lo siguiente:<br/><br/>-Use la configuración de la dirección proporcionada por su ISP.<br/>-Use el comando **Route Print** para asegurarse de que existe una ruta IPv6 predeterminada y que apunta al enrutador del ISP en la tabla de enrutamiento IPv6.<br/>: Determine si los enrutadores del ISP y de la intranet están usando las preferencias de enrutador predeterminadas descritas en RFC 4191 y el uso de una preferencia predeterminada mayor que los enrutadores de la Intranet local.<br/>    Si ambas condiciones se cumplen, no se necesita ninguna otra configuración para la ruta predeterminada. La preferencia mayor para el enrutador del ISP asegura que la ruta IPv6 predeterminada activa del servidor de DirectAccess señala a Internet por IPv6.<br/><br/>Como el servidor de DirectAccess es un enrutador IPv6, si tienes una infraestructura IPv6 nativa, la interfaz de Internet también puede tener acceso a los controladores de dominio de la intranet. En este caso, agrega filtros de paquetes al controlador de dominio de la red perimetral que impidan que el servidor de DirectAccess conecte con la dirección IPv6 de la interfaz accesible desde Internet.|Configura lo siguiente:<br/><br/>-Si no está usando los niveles de preferencia predeterminados, puede configurar las interfaces de la intranet con el siguiente comando**netsh interface ipv6 set InterfaceIndex ignoredefaultroutes = Enabled**.<br/>    Este comando garantiza que las rutas predeterminadas adicionales que apunten a enrutadores de la intranet no se agregarán a la tabla de enrutamiento IPv6. Puedes obtener el índice de interfaz de las interfaces de la intranet con el siguiente comando: **netsh interface ipv6 show interface**.|Si la intranet es IPv6, haz lo siguiente para configurar el servidor de DirectAccess para que tenga acceso a todas las ubicaciones IPv6:<br/><br/>-Enumere los espacios de direcciones IPv6 para todas las ubicaciones de la intranet.<br/>-Use el comando **netsh interface ipv6 add Route** para agregar los espacios de direcciones IPv6 como rutas estáticas en la tabla de enrutamiento IPv6 del servidor de DirectAccess.|  
+    |Internet IPv4 e intranet IPv4|Configura dos direcciones IPv4 públicas estáticas consecutivas con las máscaras de subred adecuadas (solo se necesita para Teredo).<br/><br/>Configura también la dirección IPv4 de la puerta de enlace predeterminada del firewall de Internet o del enrutador del proveedor de acceso a Internet (ISP). **Nota:** El servidor de DirectAccess requiere dos direcciones IPv4 públicas consecutivas para que pueda actuar como un servidor Teredo y los clientes basados en Windows puedan usar el servidor de DirectAccess para detectar el tipo de dispositivo NAT que están detrás.|Configure lo siguiente:<br/><br/>-Una dirección de intranet IPv4 con la máscara de subred adecuada.<br/>-El sufijo DNS específico de la conexión del espacio de nombres de la intranet. También se debería configurar un servidor DNS en la interfaz interna. **PRECAUCIÓN:** No configure una puerta de enlace predeterminada en ninguna interfaz de la intranet.|Para configurar el servidor de DirectAccess de manera que tenga acceso a todas las subredes de la red IPv4 interna, haz lo siguiente:<br/><br/>-Enumere los espacios de direcciones IPv4 para todas las ubicaciones de la intranet.<br/>-Use la **ruta Add-p** o el comando**netsh interface IPv4 Add Route** para agregar los espacios de direcciones IPv4 como rutas estáticas en la tabla de enrutamiento IPv4 del servidor de DirectAccess.|  
+    |Internet IPv6 e intranet IPv6|Configure lo siguiente:<br/><br/>-Use la configuración de la dirección proporcionada por su ISP.<br/>-Use el comando **Route Print** para asegurarse de que existe una ruta IPv6 predeterminada y que apunta al enrutador del ISP en la tabla de enrutamiento IPv6.<br/>: Determine si los enrutadores del ISP y de la intranet están usando las preferencias de enrutador predeterminadas descritas en RFC 4191 y el uso de una preferencia predeterminada mayor que los enrutadores de la Intranet local.<br/>    Si ambas condiciones se cumplen, no se necesita ninguna otra configuración para la ruta predeterminada. La preferencia mayor para el enrutador del ISP asegura que la ruta IPv6 predeterminada activa del servidor de DirectAccess señala a Internet por IPv6.<br/><br/>Como el servidor de DirectAccess es un enrutador IPv6, si tienes una infraestructura IPv6 nativa, la interfaz de Internet también puede tener acceso a los controladores de dominio de la intranet. En este caso, agrega filtros de paquetes al controlador de dominio de la red perimetral que impidan que el servidor de DirectAccess conecte con la dirección IPv6 de la interfaz accesible desde Internet.|Configure lo siguiente:<br/><br/>-Si no está usando los niveles de preferencia predeterminados, puede configurar las interfaces de la intranet con el siguiente comando**netsh interface ipv6 set InterfaceIndex ignoredefaultroutes = Enabled**.<br/>    Este comando garantiza que las rutas predeterminadas adicionales que apunten a enrutadores de la intranet no se agregarán a la tabla de enrutamiento IPv6. Puedes obtener el índice de interfaz de las interfaces de la intranet con el siguiente comando: **netsh interface ipv6 show interface**.|Si la intranet es IPv6, haz lo siguiente para configurar el servidor de DirectAccess para que tenga acceso a todas las ubicaciones IPv6:<br/><br/>-Enumere los espacios de direcciones IPv6 para todas las ubicaciones de la intranet.<br/>-Use el comando **netsh interface ipv6 add Route** para agregar los espacios de direcciones IPv6 como rutas estáticas en la tabla de enrutamiento IPv6 del servidor de DirectAccess.|  
     |Internet IPv4 e intranet IPv6|El servidor de DirectAccess reenvía el tráfico de la ruta IPv6 predeterminada a través del adaptador 6to4 de Microsoft con una retransmisión 6to4 en Internet IPv4. Puede configurar un servidor de DirectAccess para la dirección IPv4 del adaptador 6to4 de Microsoft con el siguiente comando: `netsh interface ipv6 6to4 set relay name=<ipaddress> state=enabled`.|||  
   
     > [!NOTE]  
@@ -264,7 +264,7 @@ Para usar IP-HTTPS en un puerto no estándar, sigue estos pasos en el controlado
   
     3.  Abre la configuración de estado de IP-HTTPS y cambia la dirección URL por **https://<nombre del servidor de DirectAccess (por ejemplo, server.contoso.com)>:44500/IPHTTPS**.  
   
-    4.  Haz clic en **Apply**.  
+    4.  Haga clic en **Aplicar**.  
   
 2.  Modifica la configuración del cliente de proxy Kerberos en el GPO de cliente.  
   
@@ -272,7 +272,7 @@ Para usar IP-HTTPS en un puerto no estándar, sigue estos pasos en el controlado
   
     2.  Abre la configuración de estado de IPHTTPS y cambia la dirección URL por **https://<nombre del servidor de DirectAccess (por ejemplo, server.contoso.com)>:44500/IPHTTPS**.  
   
-    3.  Haz clic en **Apply**.  
+    3.  Haga clic en **Aplicar**.  
   
 3.  Modifica la configuración de la directiva de IPsec del cliente para usar ComputerKerb y UserKerb.  
   
@@ -475,8 +475,8 @@ Los controladores de dominio y los servidores de Configuration Manager se detect
   
 -   Los servidores de administración que inician conexiones con los clientes de DirectAccess deben ser totalmente compatibles con IPv6, mediante una dirección IPv6 nativa o mediante una asignada por ISATAP.  
   
-## <a name="17-plan-active-directory-domain-services"></a>1.7 Planear los Servicios de dominio de Active Directory  
-En esta sección se explica cómo usa DirectAccess los Active Directory Domain Services (AD DS), e incluye las siguientes subsecciones:  
+## <a name="17-plan-active-directory-domain-services"></a>1.7 Planear Active Directory Domain Services  
+En esta sección se explica cómo usa DirectAccess los Servicios de dominio de Active Directory (AD DS), e incluye las siguientes subsecciones:  
   
 -   [1.7.1 planear la autenticación del cliente](#171-plan-client-authentication)  
   

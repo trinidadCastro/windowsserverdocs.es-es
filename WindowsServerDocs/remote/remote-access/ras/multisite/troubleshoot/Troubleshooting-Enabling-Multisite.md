@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 570c81d6-c4f4-464c-bee9-0acbd4993584
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fc42040d68b8a22dcfc46aa30db3a2a3c3bc060a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 59db462e3772b551f0d80819e7cd79519e95fb14
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367058"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313819"
 ---
 # <a name="troubleshooting-enabling-multisite"></a>Solucionar problemas relacionados con la activación de multisitio
 
@@ -118,7 +118,7 @@ En la implementación de DirectAccess existente, se habilitó la compatibilidad 
 DirectAccess requiere al menos un grupo de seguridad para todos los equipos cliente de Windows 8 y un grupo de seguridad para equipos cliente de Windows 7 para cada punto de entrada. Cada equipo cliente debe estar en un solo grupo de seguridad. Por lo tanto, debe asegurarse de que el grupo de seguridad para clientes de Windows 8 solo contiene equipos que ejecutan Windows 8 y que cada equipo cliente de Windows 7 pertenece a un solo grupo de seguridad dedicado para el punto de entrada relevante y que no hay clientes de Windows 8. pertenecer a los grupos de seguridad de Windows 7.  
   
 ## <a name="active-directory-site"></a>Sitio de Active Directory  
-**Error recibido**. El servidor < nombre_servidor > no está asociado a un sitio Active Directory.  
+**Error recibido**. El > de server_name del servidor < no está asociado a un sitio Active Directory.  
   
 **Causa**  
   
@@ -128,8 +128,8 @@ DirectAccess no pudo determinar el sitio de Active Directory. En la consola Siti
   
 Confirme que se trata de este problema; para ello, ejecute el comando `nltest /dsgetsite` en el servidor de acceso remoto. Si lo es, el comando devolverá ERROR_NO_SITENAME. Para solucionarlo, en el controlador de dominio, asegúrese de que existe una subred que contiene la dirección IP de servidor interna y de que está definida con un sitio de Active Directory.  
   
-## <a name="SaveGPOSettings"></a>Guardando configuración de GPO de servidor  
-**Error recibido**. Se produjo un error al guardar la configuración de acceso remoto en el GPO < GPO_name >.  
+## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>Guardando configuración de GPO de servidor  
+**Error recibido**. Error al guardar la configuración de acceso remoto en el GPO < GPO_name >.  
   
 **Causa**  
   
@@ -139,7 +139,7 @@ No se pudieron guardar los cambios en el GPO de servidor debido a problemas de c
   
 Asegúrese de que hay conectividad entre el servidor de acceso remoto y el controlador de dominio. Si la hay, compruebe en el controlador de dominio si otro usuario ha bloqueado el archivo registry.pol y, en caso necesario, finalice la sesión de dicho usuario para desbloquearlo.  
   
-## <a name="InternalServerError"></a>Se produjo un error interno  
+## <a name="internal-error-occurred"></a><a name="InternalServerError"></a>Se produjo un error interno  
 **Error recibido**. Error interno.  
   
 **Causa**  

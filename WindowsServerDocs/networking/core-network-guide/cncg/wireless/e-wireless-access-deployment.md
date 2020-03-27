@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f07520dcdefa04cb43760c5e5c66e28c0d1ce878
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ddc5ebd5f2e00251bcd1cdd915702902dcdb14ae
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322117"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318092"
 ---
 # <a name="wireless-access-deployment"></a>Implementación de acceso inalámbrico
 
@@ -31,7 +31,7 @@ Siga estos pasos para implementar el acceso inalámbrico:
 
 - [Unir nuevos equipos inalámbricos al dominio](#bkmk_domain)
 
-## <a name="bkmk_aps"></a>Implementación y configuración de AP inalámbricos
+## <a name="deploy-and-configure-wireless-aps"></a><a name="bkmk_aps"></a>Implementación y configuración de AP inalámbricos
 
 Siga estos pasos para implementar y configurar los AP inalámbricos:
 
@@ -42,7 +42,7 @@ Siga estos pasos para implementar y configurar los AP inalámbricos:
 >[!NOTE]
 >Los procedimientos de esta guía no incluyen instrucciones para los casos en que se abre el cuadro de diálogo **Control de cuentas de usuario** para solicitar permiso para continuar. Si aparece este cuadro de diálogo en respuesta a sus acciones mientras realiza los procedimientos de esta guía, haga clic en **Continuar**.
 
-### <a name="bkmk_channel"></a>Especificar frecuencias de canal de AP inalámbrico
+### <a name="specify-wireless-ap-channel-frequencies"></a><a name="bkmk_channel"></a>Especificar frecuencias de canal de AP inalámbrico
 
 Cuando se implementan varios puntos de conexión inalámbricos en un único sitio geográfico, se deben configurar puntos de conexión inalámbricos que tengan señales superpuestas para usar frecuencias de canal únicas para reducir las interferencias entre los AP inalámbricos.
 
@@ -52,7 +52,7 @@ Puede usar las siguientes directrices para ayudarle a elegir las frecuencias de 
 
 - Identifique señales inalámbricas superpuestas en plantas adyacentes dentro de su propia organización. Después de identificar las áreas de cobertura superpuestas fuera y dentro de la organización, asigne frecuencias de canal para los AP inalámbricos, asegurándose de que se asignan frecuencias de canal diferentes a dos AP inalámbricos con cobertura superpuesta.
 
-### <a name="bkmk_wirelessaps"></a>Configuración de AP inalámbricos
+### <a name="configure-wireless-aps"></a><a name="bkmk_wirelessaps"></a>Configuración de AP inalámbricos
 
 Use la siguiente información junto con la documentación del producto proporcionada por el fabricante de AP inalámbricos para configurar los AP inalámbricos.
 
@@ -95,7 +95,7 @@ Siga estos pasos para crear uno o más grupos de seguridad de usuarios inalámbr
 
 - [Agregar usuarios al grupo de seguridad inalámbrica](#bkmk_addusers)
 
-### <a name="bkmk_groups"></a>Crear un grupo de seguridad de usuarios inalámbricos
+### <a name="create-a-wireless-users-security-group"></a><a name="bkmk_groups"></a>Crear un grupo de seguridad de usuarios inalámbricos
 
 Puede usar este procedimiento para crear un grupo de seguridad inalámbrica en el Active Directory usuarios y equipos Microsoft Management Console \(MMC\)\-en.  
 
@@ -123,7 +123,7 @@ El requisito mínimo para llevar a cabo este procedimiento consiste en pertenece
 
 Si necesita más de un grupo de seguridad para los usuarios inalámbricos, repita estos pasos para crear grupos de usuarios inalámbricos adicionales. Más adelante, puede crear directivas de red individuales en NPS para aplicar diferentes condiciones y restricciones a cada grupo, proporcionándoles diferentes permisos de acceso y reglas de conectividad.
 
-### <a name="bkmk_addusers"></a>Agregar usuarios al grupo de seguridad usuarios inalámbricos
+### <a name="add-users-to-the-wireless-users-security-group"></a><a name="bkmk_addusers"></a>Agregar usuarios al grupo de seguridad usuarios inalámbricos
 
 Puede usar este procedimiento para agregar un usuario, equipo o grupo al grupo de seguridad inalámbrica en el Active Directory usuarios y equipos Microsoft Management Console \(MMC\)\-en.
 
@@ -155,7 +155,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 4. Para asignar la pertenencia a grupos a otros equipos, repita los pasos del 1\-3 de este procedimiento.
 
-## <a name="bkmk_policies"></a>Configurar directivas de \(IEEE 802,11\) de red inalámbrica
+## <a name="configure-wireless-network-ieee-80211-policies"></a><a name="bkmk_policies"></a>Configurar directivas de \(IEEE 802,11\) de red inalámbrica
 
 Siga estos pasos para configurar la red inalámbrica \(la extensión IEEE 802,11\) Policies directiva de grupo:
 
@@ -165,7 +165,7 @@ Siga estos pasos para configurar la red inalámbrica \(la extensión IEEE 802,11
 
 - [Configuración de la nueva Directiva de red inalámbrica](#bkmk_policyconfig)
 
-### <a name="bkmk_opengpme"></a>Abrir o agregar y abrir un objeto directiva de grupo
+### <a name="open-or-add-and-open-a-group-policy-object"></a><a name="bkmk_opengpme"></a>Abrir o agregar y abrir un objeto directiva de grupo
 
 De forma predeterminada, la característica de administración de directiva de grupo se instala en los equipos que ejecutan Windows Server 2016 cuando está instalado el Active Directory Domain Services \(AD DS\) rol de servidor y el servidor está configurado como controlador de dominio. El siguiente procedimiento describe cómo abrir el Consola de administración de directivas de grupo \(\) de GPMC en el controlador de dominio. A continuación, el procedimiento describe cómo abrir un objeto de nivel de\-de dominio existente directiva de grupo \(\) de GPO para su edición, o crear un nuevo GPO de dominio y abrirlo para su edición.
 
@@ -191,7 +191,7 @@ El requisito mínimo para llevar a cabo este procedimiento consiste en pertenece
 
 En la siguiente sección usará Editor de administración de directivas de grupo para crear la Directiva inalámbrica.
 
-### <a name="bkmk_activate"></a>Activar la red inalámbrica predeterminada \(las directivas de\) IEEE 802,11
+### <a name="activate-default-wireless-network-ieee-80211-policies"></a><a name="bkmk_activate"></a>Activar la red inalámbrica predeterminada \(las directivas de\) IEEE 802,11
 
 En este procedimiento se describe cómo activar la red inalámbrica predeterminada \(las directivas de\) IEEE 802,11 mediante el\)de Editor de administración de directivas de grupo \(GPME.
 
@@ -220,7 +220,7 @@ El requisito mínimo para llevar a cabo este procedimiento consiste en pertenece
 
 En la siguiente sección puede realizar la configuración de directivas, el orden de preferencia de procesamiento de directivas y los permisos de red.
 
-### <a name="bkmk_policyconfig"></a>Configuración de la nueva Directiva de red inalámbrica
+### <a name="configure-the-new-wireless-network-policy"></a><a name="bkmk_policyconfig"></a>Configuración de la nueva Directiva de red inalámbrica
 
 Puede usar los procedimientos de esta sección para configurar la Directiva de red inalámbrica \(IEEE 802,11\). Esta directiva le permite configurar las opciones de seguridad y autenticación, administrar perfiles inalámbricos y especificar permisos para redes inalámbricas que no estén configuradas como redes preferidas.
 
@@ -230,7 +230,7 @@ Puede usar los procedimientos de esta sección para configurar la Directiva de r
 
 - [Definir permisos de red](#bkmk_permissions)  
 
-#### <a name="bkmk_configureprofile"></a>Configuración de un perfil de conexión inalámbrica para PEAP\-MS\-CHAP V2
+#### <a name="configure-a-wireless-connection-profile-for-peap-ms-chap-v2"></a><a name="bkmk_configureprofile"></a>Configuración de un perfil de conexión inalámbrica para PEAP\-MS\-CHAP V2
 
 Este procedimiento proporciona los pasos necesarios para configurar un perfil inalámbrico PEAP\-MS\-CHAP v2.  
 
@@ -309,7 +309,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 En la sección siguiente, puede ordenar los perfiles de directiva para obtener una seguridad óptima.
 
-#### <a name="bkmk_preferenceorder"></a>Establecer el orden de preferencia para los perfiles de conexión inalámbrica
+#### <a name="set-the-preference-order-for-wireless-connection-profiles"></a><a name="bkmk_preferenceorder"></a>Establecer el orden de preferencia para los perfiles de conexión inalámbrica
 Puede usar este procedimiento si ha creado varios perfiles inalámbricos en la Directiva de red inalámbrica y desea ordenar los perfiles para lograr una eficacia y una seguridad óptimas.
 
 Para asegurarse de que los clientes inalámbricos se conectan con el nivel de seguridad más alto que pueden admitir, coloque las directivas más restrictivas en la parte superior de la lista.
@@ -332,7 +332,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 En la sección siguiente, puede definir los permisos de red para la Directiva inalámbrica.
 
-#### <a name="bkmk_permissions"></a>Definir permisos de red
+#### <a name="define-network-permissions"></a><a name="bkmk_permissions"></a>Definir permisos de red
 Puede configurar las opciones de la ficha **permisos de red** para los miembros del dominio a los que se aplican las directivas de red inalámbrica \(IEEE 802,11\).
 
 Solo puede aplicar la configuración siguiente para redes inalámbricas que no estén configuradas en la ficha **General** de la página de propiedades de la **Directiva de red inalámbrica** :
@@ -382,7 +382,7 @@ El requisito mínimo para completar estos procedimientos es la pertenencia al gr
 
     -   Para especificar que los usuarios solo pueden conectarse a redes permitidas mediante el uso de perfiles de directiva de grupo, seleccione **usar solo perfiles de directiva de grupo para redes permitidas**.
 
-## <a name="bkmk_nps"></a>Configuración de NPSs
+## <a name="configure-your-npss"></a><a name="bkmk_nps"></a>Configuración de NPSs
 Siga estos pasos para configurar NPSs para realizar la autenticación de 802.1 X para el acceso inalámbrico:
 
 - [Registrar NPS en Active Directory Domain Services](#bkmk_npsreg)
@@ -391,7 +391,7 @@ Siga estos pasos para configurar NPSs para realizar la autenticación de 802.1 X
 
 - [Creación de directivas NPS para la red inalámbrica 802.1 X mediante un asistente](#bkmk_npspolicy)
 
-### <a name="bkmk_npsreg"></a>Registrar NPS en Active Directory Domain Services
+### <a name="register-nps-in-active-directory-domain-services"></a><a name="bkmk_npsreg"></a>Registrar NPS en Active Directory Domain Services
 Puede usar este procedimiento para registrar un servidor que ejecute el servidor de directivas de redes \(\) de NPS en Active Directory Domain Services \(AD DS\) en el dominio al que pertenece el NPS. Para que NPSs tenga permiso para leer los\-de marcado en las propiedades de las cuentas de usuario durante el proceso de autorización, cada NPS debe estar registrado en AD DS. El registro de un NPS agrega el servidor al grupo de seguridad **servidores RAS e IAS** en AD DS.
 
 >[!NOTE]
@@ -409,7 +409,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 3. En **Servidor de directivas de redes**, haga clic en **Aceptar** y, a continuación, en **Aceptar** de nuevo.
 
-### <a name="bkmk_radiusclient"></a>Configuración de un punto de conexión inalámbrico como un cliente RADIUS NPS
+### <a name="configure-a-wireless-ap-as-an-nps-radius-client"></a><a name="bkmk_radiusclient"></a>Configuración de un punto de conexión inalámbrico como un cliente RADIUS NPS
 Puede usar este procedimiento para configurar un punto de conexión, también conocido como *servidor de acceso a la red \(\)de NAS* , como un acceso telefónico de autenticación remota\-en el servicio de usuario \(RADIUS\) cliente mediante el\-de complemento de NPS en. 
 
 >[!IMPORTANT]
@@ -450,7 +450,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 9. Haga clic en **Aceptar**. El NAS aparece en la lista de clientes RADIUS configurados en el NPS.
 
-### <a name="bkmk_npspolicy"></a>Creación de directivas NPS para la red inalámbrica 802.1 X mediante un asistente
+### <a name="create-nps-policies-for-8021x-wireless-using-a-wizard"></a><a name="bkmk_npspolicy"></a>Creación de directivas NPS para la red inalámbrica 802.1 X mediante un asistente
 Puede usar este procedimiento para crear las directivas de solicitud de conexión y las directivas de red necesarias para implementar puntos de acceso inalámbricos compatibles con 802.1 X\-como\-de marcado de autenticación remota en el servicio de usuario \(RADIUS\) clientes al servidor RADIUS que ejecuta el servidor de directivas de redes \(NPS\).  
 Una vez que ejecute el asistente, se crean las siguientes directivas:
 
@@ -512,7 +512,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 Ahora se crean las directivas de NPS y puede pasar a la Unión de equipos inalámbricos al dominio.
 
-## <a name="bkmk_domain"></a>Unir nuevos equipos inalámbricos al dominio
+## <a name="join-new-wireless-computers-to-the-domain"></a><a name="bkmk_domain"></a>Unir nuevos equipos inalámbricos al dominio
 El método más sencillo para unir nuevos equipos inalámbricos al dominio consiste en conectar físicamente el equipo a un segmento de la LAN cableada \(un segmento no controlado por un conmutador de 802.1 X\) antes de unir el equipo al dominio. Esto es más sencillo porque la configuración de la Directiva de grupo inalámbrica se aplica de forma automática y inmediata y, si ha implementado su propia PKI, el equipo recibe el certificado de CA y lo coloca en el almacén de certificados de entidades de certificación raíz de confianza. permitir que el cliente inalámbrico confíe en NPSs con certificados de servidor emitidos por la CA.
 
 Del mismo modo, después de que un nuevo equipo inalámbrico se une al dominio, el método preferido para que los usuarios inicien sesión en el dominio es realizar el inicio de sesión mediante una conexión cableada a la red.
@@ -528,7 +528,7 @@ Para obtener más información, consulte la sección [Unión del dominio e inici
 
 Para obtener más información, consulte la sección [Unión del dominio e inicio de sesión mediante la configuración del perfil inalámbrico de bootstrap por parte de los usuarios](#bkmk_userbootstrap).
 
-### <a name="bkmk_itstaff"></a>Unirse al dominio e iniciar sesión mediante el método de configuración de equipo del personal de ti
+### <a name="join-the-domain-and-log-on-by-using-the-it-staff-computer-configuration-method"></a><a name="bkmk_itstaff"></a>Unirse al dominio e iniciar sesión mediante el método de configuración de equipo del personal de ti
 Los usuarios miembros del dominio con equipos cliente inalámbricos Unidos a\-pueden usar un perfil inalámbrico temporal para conectarse a una red inalámbrica autenticada mediante 802.1 X\-sin necesidad de conectarse primero a la LAN cableada. Este perfil inalámbrico temporal se denomina *perfil inalámbrico de bootstrap*.
 
 Un perfil inalámbrico de bootstrap requiere que el usuario especifique manualmente las credenciales de su cuenta de usuario de dominio y no valida el certificado del\-de marcado de autenticación remota en el servicio de usuario \(RADIUS\) servidor que ejecuta el servidor de directivas de redes \(NPS\).
@@ -560,7 +560,7 @@ Después de unir el equipo al dominio, use este procedimiento para configurar un
 
 Cuando el usuario inicia el equipo, Windows solicita al usuario que escriba su nombre de cuenta de usuario de dominio y contraseña. Dado que el inicio de sesión único está habilitado, el equipo usa las credenciales de la cuenta de usuario de dominio para establecer primero una conexión con la red inalámbrica y, a continuación, iniciar sesión en el dominio.
 
-#### <a name="bkmk_w10"></a>Inicio de sesión en el dominio con equipos que ejecutan Windows 10
+#### <a name="log-on-to-the-domain-using-computers-running-windows-10"></a><a name="bkmk_w10"></a>Inicio de sesión en el dominio con equipos que ejecutan Windows 10
 
 1. Cierre la sesión del equipo o reinicie el equipo.
 
@@ -575,7 +575,7 @@ Cuando el usuario inicia el equipo, Windows solicita al usuario que escriba su n
 >[!NOTE]
 >Si la pantalla de **otro usuario** no incluye el **Inicio de sesión** de texto en: y el nombre de dominio, debe escribir el nombre de usuario en el formato *dominio\\usuario*. Por ejemplo, para iniciar sesión en el dominio example.com con una cuenta denominada **user\-01**, escriba **example\\User\-01**.
 
-### <a name="bkmk_userbootstrap"></a>Unir el dominio e iniciar sesión mediante la configuración de perfil inalámbrico de bootstrap por parte de los usuarios
+### <a name="join-the-domain-and-log-on-by-using-bootstrap-wireless-profile-configuration-by-users"></a><a name="bkmk_userbootstrap"></a>Unir el dominio e iniciar sesión mediante la configuración de perfil inalámbrico de bootstrap por parte de los usuarios
 Con este método, complete los pasos de la sección de pasos generales y, a continuación, proporcione al dominio\-usuarios miembros con las instrucciones sobre cómo configurar manualmente un equipo inalámbrico con un perfil inalámbrico de arranque. El perfil inalámbrico de Bootstrap permite al usuario establecer una conexión inalámbrica y luego unirse al dominio. Una vez que el equipo se ha unido al dominio y se ha reiniciado, el usuario puede iniciar sesión en el dominio a través de una conexión inalámbrica.
 
 #### <a name="general-steps"></a>Pasos generales

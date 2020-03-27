@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: cde37849-ce79-4c26-aa14-cd0ef31cae18
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6870029e02ae91b1ef5bf4d4302ac2bed2e27d84
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b7bc75ea81133c91ad7e9883f03c3e32f085b5eb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405295"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315701"
 ---
 # <a name="configure-radius-clients"></a>Configurar clientes RADIUS
 
@@ -65,7 +65,7 @@ Para completar este procedimiento, debe pertenecer al grupo **Administradores**.
     - Asegúrese de que la opción **manual** está seleccionada y, a continuación, en **secreto compartido**, escriba la contraseña segura que se ha escrito también en el NAS. Vuelva a escribir el secreto compartido en **confirmar secreto compartido**.
     - Seleccione **generar**y, a continuación, haga clic en **generar** para generar automáticamente un secreto compartido. Guarde el secreto compartido generado para la configuración en el servidor NAS para que pueda comunicarse con el NPS.
 7. En el **nuevo cliente RADIUS**, en **opciones adicionales**, si usa métodos de autenticación que no sean EAP y PEAP, y si el NAS admite el uso del atributo de autenticador de mensaje, seleccione **los mensajes de solicitud de acceso deben contener el atributo de autenticador de mensaje**.
-8. Haz clic en **Aceptar**. El NAS aparece en la lista de clientes RADIUS configurados en el NPS.
+8. Haga clic en **Aceptar**. El NAS aparece en la lista de clientes RADIUS configurados en el NPS.
 
 ## <a name="configure-radius-clients-by-ip-address-range-in-windows-server-2016-datacenter"></a>Configurar clientes RADIUS por intervalo de direcciones IP en Windows Server 2016 Datacenter
 
@@ -90,7 +90,7 @@ Para completar este procedimiento, debe pertenecer al grupo **Administradores**.
     - Asegúrese de que la opción **manual** está seleccionada y, a continuación, en **secreto compartido**, escriba la contraseña segura que se ha escrito también en el NAS. Vuelva a escribir el secreto compartido en **confirmar secreto compartido**.
     - Seleccione **generar**y, a continuación, haga clic en **generar** para generar automáticamente un secreto compartido. Guarde el secreto compartido generado para la configuración en el servidor NAS para que pueda comunicarse con el NPS.
 7. En el **nuevo cliente RADIUS**, en **opciones adicionales**, si usa métodos de autenticación que no sean EAP y PEAP, y si todos los NAS admiten el uso del atributo de autenticador de mensaje, seleccione **los mensajes de solicitud de acceso deben contener el atributo de autenticador de mensaje**.
-8. Haz clic en **Aceptar**. Los NAS aparecen en la lista de clientes RADIUS configurados en el NPS.
+8. Haga clic en **Aceptar**. Los NAS aparecen en la lista de clientes RADIUS configurados en el NPS.
 
 Para obtener más información, consulte [clientes RADIUS](nps-radius-clients.md).
 

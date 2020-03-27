@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: 7eb746e0-1046-4123-b532-77d5683ded44
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1ec5bc315381f85434753f9becc94409a74271b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2da57ab750cc556b521329f4096fb088e212a903
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356108"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318215"
 ---
 # <a name="server-certificate-deployment-planning"></a>Planeación de la implementación del certificado de servidor
 
@@ -37,25 +37,25 @@ Antes de implementar los certificados de servidor, debe planear los siguientes e
   
 -   [Planear la configuración de la plantilla de certificado de servidor en la CA](#bkmk_template)  
   
-## <a name="bkmk_basic"></a>Planear la configuración básica del servidor  
+## <a name="plan-basic-server-configuration"></a><a name="bkmk_basic"></a>Planear la configuración básica del servidor  
 Después de instalar Windows Server 2016 en los equipos que piensa usar como entidad de certificación y servidor Web, debe cambiar el nombre del equipo y asignar y configurar una dirección IP estática para el equipo local.  
   
 Para obtener más información, consulte la guía de [red principal](../../../core-network-guide/Core-Network-Guide.md)de Windows Server 2016.  
   
-## <a name="bkmk_domain"></a>Planear el acceso a dominios  
+## <a name="plan-domain-access"></a><a name="bkmk_domain"></a>Planear el acceso a dominios  
 Para iniciar sesión en el dominio, el equipo debe ser un equipo miembro del dominio y la cuenta de usuario se debe crear en AD DS antes del intento de inicio de sesión. Además, la mayoría de los procedimientos de esta guía requieren que la cuenta de usuario sea miembro de los grupos administradores de organización o Admins. del dominio en Active Directory usuarios y equipos, por lo que debe iniciar sesión en la entidad de certificación con una cuenta que tenga la pertenencia al grupo adecuada.  
   
 Para obtener más información, consulte la guía de [red principal](../../../core-network-guide/Core-Network-Guide.md)de Windows Server 2016.  
   
-## <a name="bkmk_virtual"></a>Planear la ubicación y el nombre del directorio virtual en el servidor Web  
+## <a name="plan-the-location-and-name-of-the-virtual-directory-on-your-web-server"></a><a name="bkmk_virtual"></a>Planear la ubicación y el nombre del directorio virtual en el servidor Web  
 Para proporcionar acceso a la CRL y al certificado de la entidad de certificación en otros equipos, debe almacenar estos elementos en un directorio virtual del servidor Web. En esta guía, el directorio virtual se encuentra en el servidor Web WEB1. Esta carpeta se encuentra en la unidad "C:" y se denomina "PKI". Puede buscar el directorio virtual en el servidor Web en cualquier ubicación de carpeta que sea adecuada para su implementación.  
   
-## <a name="bkmk_cname"></a>Planear un registro de alias DNS (CNAME) para el servidor Web  
-Los registros de recursos de alias (CNAME) también se denominan a veces registros de recursos de nombres canónicos. Con estos registros, puede usar más de un nombre para señalar a un solo host, lo que facilita hacer cosas como hospedar un servidor File Transfer Protocol (FTP) y un servidor Web en el mismo equipo. Por ejemplo, los nombres de servidor conocidos (FTP, www) se registran mediante registros de recursos de alias (CNAME) que se asignan al nombre de host del sistema de nombres de dominio (DNS), como WEB1, para el equipo servidor que hospeda estos servicios.  
+## <a name="plan-a-dns-alias-cname-record-for-your-web-server"></a><a name="bkmk_cname"></a>Planear un registro de alias DNS (CNAME) para el servidor Web  
+Los registros de recursos de alias (CNAME) a veces se denominan registros de recursos de nombre canónico. Con estos registros, puede usar más de un nombre para señalar a un solo host, lo que facilita tareas como el hospedaje de un servidor FTP (Protocolo de transferencia de archivos) y un servidor web en el mismo equipo. Por ejemplo, los nombres de servidor conocidos (FTP, www) se registran mediante registros de recursos de alias (CNAME) que se asignan al nombre de host del sistema de nombres de dominio (DNS), como WEB1, para el equipo servidor que hospeda estos servicios.  
   
 En esta guía se proporcionan instrucciones para configurar el servidor web para hospedar la lista de revocación de certificados (CRL) de la entidad de certificación (CA). Dado que es posible que también desee usar el servidor web para otros propósitos, como hospedar un sitio web o FTP, es una buena idea crear un registro de recursos de alias en DNS para el servidor Web. En esta guía, el registro CNAME se denomina "PKI", pero puede elegir un nombre que sea adecuado para su implementación.  
   
-## <a name="bkmk_capolicy"></a>Planear la configuración de CAPolicy. inf  
+## <a name="plan-configuration-of-capolicyinf"></a><a name="bkmk_capolicy"></a>Planear la configuración de CAPolicy. inf  
 Antes de instalar AD CS, debe configurar CAPolicy. inf en la CA con información que sea correcta para su implementación. Un archivo CAPolicy. inf contiene la siguiente información:  
   
 ```  
@@ -99,7 +99,7 @@ Critical=Yes
 > [!IMPORTANT]  
 > No se recomienda cambiar otras opciones del archivo CAPolicy. inf a menos que tenga una razón concreta para hacerlo.  
   
-## <a name="bkmk_cdp"></a>Planeación de la configuración de las extensiones de CDP y AIA en CA1  
+## <a name="plan-configuration-of-the-cdp-and-aia-extensions-on-ca1"></a><a name="bkmk_cdp"></a>Planeación de la configuración de las extensiones de CDP y AIA en CA1  
 Al configurar el punto de distribución de la lista de revocación de certificados (CRL) y la configuración de acceso a la información de entidad (AIA) en CA1, necesitará el nombre del servidor Web y el nombre de dominio. También necesita el nombre del directorio virtual que crea en el servidor web donde se almacenan la lista de revocación de certificados (CRL) y el certificado de la entidad de certificación.  
   
 La ubicación de CDP que debe especificar durante este paso de implementación tiene el formato:  
@@ -118,10 +118,10 @@ Por ejemplo, si el servidor Web se denomina WEB1 y el registro CNAME de alias DN
       
     `http:\/\/pki.corp.contoso.com\/pki\/<ServerDNSName>\_<CaName><CertificateName>.crt`  
       
-## <a name="bkmk_copy"></a>Planeación de la operación de copia entre la CA y el servidor Web  
+## <a name="plan-the-copy-operation-between-the-ca-and-the-web-server"></a><a name="bkmk_copy"></a>Planeación de la operación de copia entre la CA y el servidor Web  
 Para publicar la CRL y el certificado de CA de la CA en el directorio virtual del servidor Web, puede ejecutar el comando certutil-CRL después de configurar las ubicaciones de CDP y AIA en la CA. Asegúrese de configurar las rutas de acceso correctas en la pestaña **extensiones** de las propiedades de la entidad de certificación antes de ejecutar este comando siguiendo las instrucciones de esta guía. Además, para copiar el certificado de entidad de certificación empresarial en el servidor Web, debe haber creado el directorio virtual en el servidor Web y configurado la carpeta como una carpeta compartida.  
   
-## <a name="bkmk_template"></a>Planear la configuración de la plantilla de certificado de servidor en la CA  
+## <a name="plan-the-configuration-of-the-server-certificate-template-on-the-ca"></a><a name="bkmk_template"></a>Planear la configuración de la plantilla de certificado de servidor en la CA  
 Para implementar certificados de servidor de inscripción automática, debe copiar la plantilla de certificado denominada **RAS e IAS Server**. De forma predeterminada, esta copia se denomina **copia del servidor RAS e IAS**. Si desea cambiar el nombre de esta copia de plantilla, planee el nombre que desea usar durante este paso de implementación.  
   
 > [!NOTE]  

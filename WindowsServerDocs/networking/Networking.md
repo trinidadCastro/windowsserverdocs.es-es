@@ -1,5 +1,5 @@
 ---
-title: Funciones de red de
+title: Funciones de red
 description: Este tema proporciona una visión general de las tecnologías de redes definidas por software y plataforma de redes que están disponibles en Windows Server 2016.
 ms.prod: windows-server
 layout: LandingPage
@@ -7,17 +7,17 @@ ms.technology: networking
 ms.topic: landing-page
 ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
-ms.openlocfilehash: f3b580b108677b391065ad83f61e52504fe9ac91
-ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
+ms.openlocfilehash: e625bb537ef514ff68241669c3e75f482a61f068
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74823848"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318577"
 ---
-# <a name="networking"></a>Funciones de red de
+# <a name="networking"></a>Funciones de red
 
 >[!TIP]
 > ¿Busca información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puede [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
@@ -68,7 +68,7 @@ Esta coherencia significa que las aplicaciones son ahora más fáciles de escala
                     <div class="cardText">
                         <h3><a href="https://docs.microsoft.com/windows-server/networking/sdn/">Redes definidas por software (SDN)</a></h3>
                         <hr />
-                        <p>Puedes usar este tema para obtener información sobre las tecnologías de SDN que se proporcionan en Windows Server, System Center y Microsoft Azure.</p>
+                        <p>Puede usar este tema para obtener información sobre las tecnologías de SDN que se proporcionan en Windows Server, System Center y Microsoft Azure.</p>
                         <p><b>Nota:</b> En el caso de los hosts de Hyper-V y las máquinas virtuales (VM) que ejecutan servidores de infraestructura de SDN, como los nodos de equilibrio de carga de software y controladora de red, debe instalar Windows Server Datacenter Edition. En el caso de los hosts de Hyper-V que contienen solo máquinas virtuales de carga de trabajo de inquilino que están conectadas a redes controladas por SDN, puede ejecutar Windows Server Standard Edition.</p>
                     </div>
                 </div>
@@ -193,7 +193,7 @@ Esta coherencia significa que las aplicaciones son ahora más fáciles de escala
 
 <hr />
 
-## <a name="bkmk_networking"></a>Tecnologías de red
+## <a name="networking-technologies"></a><a name="bkmk_networking"></a>Tecnologías de red
 
 <ul class="cardsF panelContent">
     <li>
@@ -322,7 +322,7 @@ Esta coherencia significa que las aplicaciones son ahora más fáciles de escala
                     <div class="cardText">
                         <h3><a href="../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md">Conmutador virtual de Hyper-V</a></h3>
                         <hr />
-                        <p>El conmutador virtual de Hyper-V es un conmutador de red Ethernet de nivel 2 basado en software que está disponible en el Administrador de Hyper-V cuando se instala el rol de servidor de Hyper-V. El conmutador incluye mediante programación funcionalidades extensibles y administradas para conectar máquinas virtuales a la red física y a redes virtuales. Además, el conmutador virtual de Hyper-V exige la aplicación de la directiva en los niveles de servicio, aislamiento y seguridad. </p>
+                        <p>El conmutador virtual de Hyper-V es un conmutador de red Ethernet de nivel 2 basado en software que está disponible en el Administrador de Hyper-V cuando se instala el rol de servidor de Hyper-V. El conmutador incluye mediante programación funcionalidades extensibles y administradas para conectar máquinas virtuales a la red física y a redes virtuales. Además el conmutador virtual de Hyper-V exige la aplicación de la directiva en los niveles de servicio, aislamiento y seguridad. </p>
                     </div>
                 </div>
             </div>
@@ -537,7 +537,7 @@ Esta coherencia significa que las aplicaciones son ahora más fáciles de escala
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><a href="https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture">Redes de contenedores de Windows</a></h3>
+                        <h3><a href="https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture">Red de contenedores de Windows</a></h3>
                         <hr />
                         <p>Redes de contenedores de Windows te permite crear y administrar redes para conectar terminales de contenedores en hosts de Windows 10 y Windows Server, usando herramientas y flujos de trabajo estándares del sector. Las redes de contenedores de Windows admiten varias topologías, incluyendo la privada, la plana L2 y la enrutada L3.</p>
                         <p>También se admiten las superposiciones que se pueden crear localmente en el host mediante Docker, Kubernetes o Windows PowerShell a través de complementos que se comunican con el servicio de red de host de Windows (SNP). Puede crear y administrar redes de clúster de varios nodos a través de sistemas de orquestación de nivel superior mediante la comunicación a través de un agente local con el SNP de cada nodo.</p>

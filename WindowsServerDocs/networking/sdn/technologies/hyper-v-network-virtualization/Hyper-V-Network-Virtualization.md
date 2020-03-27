@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 150976f0-ccd5-487a-a458-92261444a846
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 30e843e40f903bc6415159bfce13b9bc95eb05ef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a99fed5fb173ed2ef0698ab5c10bcf872e9abea8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405880"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317244"
 ---
 # <a name="hyper-v-network-virtualization"></a>Virtualización de red de Hyper-V
 
@@ -33,4 +33,4 @@ Para obtener más información, vea los temas siguientes:
   
 |||  
 |-|-|  
-|![Nube](../../../media/Hyper-V-Network-Virtualization/All_Symbols_Cloud.png)|¿Sabía que Microsoft Azure proporciona una funcionalidad similar en la nube? Obtenga más información sobre [soluciones de virtualización de Microsoft Azure](https://aka.ms/f9bh7g).<br /><br />Crear una solución de virtualización híbrida en Microsoft Azure:<br />- [Conecte una red local a Azure mediante una VPN de sitio a sitio y extienda Active Directory a un controlador de dominio de máquina virtual de IaaS en Azure](https://aka.ms/d1dinb)|  
+|![Nube](../../../media/Hyper-V-Network-Virtualization/All_Symbols_Cloud.png)|¿Sabía que Microsoft Azure proporciona una funcionalidad similar en la nube? Obtenga más información sobre [soluciones de virtualización de Microsoft Azure](https://aka.ms/f9bh7g).<br /><br />Crear una solución de virtualización híbrida en Microsoft Azure:<br />- [conectar una red local a Azure mediante una VPN de sitio a sitio y extender Active Directory a un controlador de dominio de máquina virtual de IaaS en Azure](https://aka.ms/d1dinb)|  

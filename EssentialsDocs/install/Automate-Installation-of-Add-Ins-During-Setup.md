@@ -3,7 +3,7 @@ title: Automatizar la instalación de complementos durante la instalación
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,19 +12,19 @@ ms.assetid: 2e6ff6e4-8d68-4d49-9e38-8088bc8bf95e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c2345726a17a074fc7022c8c4dc9b2443e9ad384
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 579ed4e6e780c261ca582e943cebf2fc18b5ef62
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433641"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310110"
 ---
 # <a name="automate-installation-of-add-ins-during-setup"></a>Automatizar la instalación de complementos durante la instalación
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-##  <a name="BKMK_AddIns"></a> Automatizar instalar complementos durante la instalación  
- Para instalar complementos durante la instalación, utilice el método PostIC.cmd que se describe en la sección [Creación del archivo PostIC.cmd para ejecutar las tareas posteriores a la configuración inicial](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) de este documento.  
+##  <a name="automate-installing-add-ins-during-setup"></a><a name="BKMK_AddIns"></a>Automatizar la instalación de complementos durante la instalación  
+ Para instalar complementos durante la instalación, use el método PostIC.cmd, que se describe en la sección [Cómo crear el archivo PostIC.cmd para ejecutar tareas posteriores a la configuración inicial](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) de este documento.  
   
  Agregue la siguiente entrada al archivo PostIC.cmd:  
   
@@ -117,8 +117,8 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
   
   Cualquier fallo que invoque exefile llevará al mismo comportamiento, ya que exefile devuelve un código diferente de 0 o 1.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

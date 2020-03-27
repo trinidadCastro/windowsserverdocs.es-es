@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: cd6fc1b8-26b0-47a4-b27d-f6fa9da0d447
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b283406d320ba98a9e5923dd4694a397623d0b4c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d7552a53ecdaae7c2238c8f6952e219280985c90
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395990"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315715"
 ---
 # <a name="plan-network-policy-server"></a>Planear el servidor de directivas de redes
 

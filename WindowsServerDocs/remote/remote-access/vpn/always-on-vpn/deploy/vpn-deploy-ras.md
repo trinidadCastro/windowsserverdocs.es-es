@@ -6,23 +6,23 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: c04074338cf4ba0189eb1e9bc45a80b948fdbfbf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9d3afb21c466ef1010a20ec811df45b9dcb2b711
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388045"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312249"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-always-on-vpn"></a>Paso 3. Configurar el servidor de acceso remoto para VPN de Always On
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-- [**Previo** Paso 2. Configurar la infraestructura de servidor](vpn-deploy-server-infrastructure.md)
-- [**Previo** Paso 4. Instalación y configuración del servidor de directivas de redes (NPS)](vpn-deploy-nps.md)
+- [**Anterior:** Paso 2. Configurar la infraestructura de servidor](vpn-deploy-server-infrastructure.md)
+- [**Anterior:** Paso 4. Instalación y configuración del servidor de directivas de redes (NPS)](vpn-deploy-nps.md)
 
 RRAS está diseñado para funcionar bien como un enrutador y un servidor de acceso remoto, ya que admite una amplia gama de características. Para los fines de esta implementación, solo necesita un pequeño subconjunto de estas características: compatibilidad con conexiones VPN de IKEv2 y enrutamiento de LAN.
 
@@ -169,11 +169,11 @@ En esta sección, puede configurar VPN de acceso remoto para permitir conexiones
 
 13. Si es necesario, cambie los valores para que coincidan con los requisitos de su entorno y seleccione **Aceptar**.
 
-    Un NAS es un dispositivo que proporciona cierto nivel de acceso a una red de mayor tamaño. Un NAS que usa una infraestructura de RADIUS también es un cliente RADIUS, que envía solicitudes de conexión y mensajes de cuentas a un servidor RADIUS para la autenticación, la autorización y las cuentas.
+    Un NAS es un dispositivo que proporciona cierto nivel de acceso a una red de mayor tamaño. Un NAS que usa una infraestructura RADIUS es también un cliente RADIUS, que envía solicitudes de conexión y mensajes de cuentas a un servidor RADIUS para su autenticación, autorización y administración de cuentas.
 
 14. Revise la configuración del **proveedor de cuentas**:
 
-    |                    Si desea...                     |                                                     En ese caso…                                                      |
+    |                    Si desea...                     |                                                     Entonces...                                                      |
     |-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
     | Actividad de acceso remoto registrada en el servidor de acceso remoto |                               Asegúrese de que la opción **contabilidad de Windows** está seleccionada.                               |
     |        NPS para realizar servicios de contabilidad para VPN         | Cambie el **proveedor de cuentas** a **cuentas RADIUS** y, a continuación, configure el NPS como proveedor de cuentas. |
@@ -198,7 +198,7 @@ En esta sección, puede configurar VPN de acceso remoto para permitir conexiones
 
     a. Derecho: conexiones a la Directiva de red del **servidor de enrutamiento y acceso remoto de Microsoft** y seleccione **propiedades**.
 
-    b. **Seleccione conceder acceso. Conceda acceso si la solicitud de conexión coincide** con esta opción de directiva.
+    b. Seleccione **conceder acceso. Conceda acceso si la solicitud de conexión coincide con esta opción de directiva** .
 
     c. En tipo de servidor de acceso a la red, seleccione **servidor de acceso remoto (VPN, acceso telefónico)** en la lista desplegable.
 
@@ -234,4 +234,4 @@ En esta sección, puede configurar VPN de acceso remoto para permitir conexiones
 
 ## <a name="next-step"></a>Paso siguiente
 
-[Paso 4. Instale y configure el servidor de directivas de redes](vpn-deploy-nps.md)(NPS): En este paso, instalará Administrador del servidor el servidor de directivas de redes (NPS) mediante Windows PowerShell o el Asistente para agregar roles y características. También puede configurar NPS para que controle todas las tareas de autenticación, autorización y contabilidad para las solicitudes de conexión que recibe desde el servidor VPN.
+[Paso 4. Instalar y configurar el servidor de directivas de redes (NPS)](vpn-deploy-nps.md): en este paso, se instala el servidor de directivas de redes (NPS) mediante Windows PowerShell o administrador del servidor el Asistente para agregar roles y características. También puede configurar NPS para que controle todas las tareas de autenticación, autorización y contabilidad para las solicitudes de conexión que recibe desde el servidor VPN.

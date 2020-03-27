@@ -3,7 +3,7 @@ title: Preparación de la imagen para su distribución
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 681c6cad-7fde-494f-86a5-f4c7c15d23f9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 16411ab073e9417c52592aa9a6b13707dd461537
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: aac776253c094c4a77269720bcc5762d6c41d720
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838536"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311551"
 ---
 # <a name="preparing-the-image-for-deployment"></a>Preparación de la imagen para su distribución
 
@@ -123,7 +123,7 @@ Una herramienta típica para preparar una imagen es sysprep.exe. Ejecutando esta
     ```  
   
     > [!IMPORTANT]
-    >  También puede agregar el archivo unattend.xml bajo %systemdrive% en lugar de como un parámetro de sysprep. Si el archivo está ubicado en c:\ explicará por la configuración de usuario s, pero si se usa como un parámetro de sysprep, no se tratan por la configuración de usuario s. El archivo unattend.xml bajo %systemdrive% se eliminará cada vez que se reinicie el servidor. Por lo tanto, asegúrese de que después de crear el archivo unattend.xml bajo %systemdrive%, el servidor no se reinicie.  
+    >  También puede agregar el archivo unattend.xml bajo %systemdrive% en lugar de como un parámetro de sysprep. Si el archivo se encuentra en c:\ se cubrirá según la configuración del usuario, pero si se usa como parámetro de Sysprep, no se cubrirá según la configuración del usuario. El archivo unattend.xml bajo %systemdrive% se eliminará cada vez que se reinicie el servidor. Por lo tanto, asegúrese de que después de crear el archivo unattend.xml bajo %systemdrive%, el servidor no se reinicie.  
   
 10. Ejecute el siguiente comando para agregar la clave de registro y así omitir la página clave OOBE de Windows.  
   

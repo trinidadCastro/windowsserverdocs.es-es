@@ -3,7 +3,7 @@ title: Usar Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 86f158a5-c807-4242-b73d-e97b604adb5f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7b440215d7ddf2c9119ee4adb8f1c98c7ea1bb34
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 830570565d865861af404954031723451ec794bd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822606"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313117"
 ---
 # <a name="use-windows-server-essentials"></a>Usar Windows Server Essentials
 
@@ -25,7 +25,7 @@ ms.locfileid: "59822606"
 
 Los siguientes temas contienen información que le ayudará a empezar a usar Windows Server Essentials:  
   
--   [Conéctate](Get-Connected-in-Windows-Server-Essentials.md)  
+-   [Conéctese](Get-Connected-in-Windows-Server-Essentials.md)  
   
 -   [Usar carpetas compartidas](Use-Shared-Folders-in-Windows-Server-Essentials.md)  
   
@@ -35,10 +35,10 @@ Los siguientes temas contienen información que le ayudará a empezar a usar Win
   
 ## <a name="see-also"></a>Vea también  
   
--   [Instalar Windows Server Essentials](../install/Install-Windows-Server-Essentials.md)  
+-   [Instalación de Windows Server 2012 Essentials](../install/Install-Windows-Server-Essentials.md)  
   
 -   [Migrar datos del servidor a Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)  
   
 -   [Administrar Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
   
--   [Compatibilidad con Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)
+-   [Soporte técnico de Windows Server Essentials](../support/Support-Windows-Server-Essentials.md)

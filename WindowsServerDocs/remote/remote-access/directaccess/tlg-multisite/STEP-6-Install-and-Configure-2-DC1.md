@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3d66901a-c40b-474c-9948-f989f399cfea
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4c7a8243922f58f9705a85cd30b2a68cf4d876c6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 558c99c187ab01f3084621410964f3a01c0dace8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404776"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308663"
 ---
 # <a name="step-6-install-and-configure-2-dc1"></a>Paso 6: instalación y configuración de 2-DC1
 
@@ -50,7 +50,7 @@ En primer lugar, instale Windows Server 2016, Windows Server 2012 R2 o Windows S
   
 1.  Inicie la instalación de Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012.  
   
-2.  Siga las instrucciones para completar la instalación, especificando Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 (instalación completa) y una contraseña segura para la cuenta de administrador local. Inicie sesión con la cuenta Administrador local.  
+2.  Siga las instrucciones para completar la instalación, especificando Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 (instalación completa) y una contraseña segura para la cuenta de administrador local. Inicie sesión con la cuenta de administrador local.  
   
 3.  Conecte 2-DC1 a una red que tenga acceso a Internet y ejecute Windows Update para instalar las actualizaciones más recientes para Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 y, a continuación, desconéctese de Internet.  
   
@@ -69,7 +69,7 @@ Configure el protocolo TCP/IP con direcciones IP estáticas.
   
 4.  Haga clic en **Usar la siguiente dirección IP**. En **dirección IP**, escriba **10.2.0.1**. En **Máscara de subred**, escriba **255.255.255.0**. En **puerta de enlace predeterminada**, escriba **10.2.0.254**. Haga clic en **usar las siguientes direcciones de servidor DNS**, en **servidor DNS preferido**, escriba **10.2.0.1**y, en **servidor DNS alternativo**, escriba **10.0.0.1**.  
   
-5.  Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.  
+5.  Haga clic en  **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.  
   
 6.  En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com**y, a continuación, haga clic en **Aceptar** dos veces.  
   
@@ -77,7 +77,7 @@ Configure el protocolo TCP/IP con direcciones IP estáticas.
   
 8.  Haga clic en **usar la siguiente dirección IPv6**. En **dirección IPv6**, escriba **2001: db8:2:: 1**. En **longitud del prefijo de subred**, escriba **64**. En **puerta de enlace predeterminada**, escriba **2001: db8:2:: fe**. Haga clic en **usar las siguientes direcciones de servidor DNS**, en **servidor DNS preferido**, escriba **2001: db8:2:: 1**y, en **servidor DNS alternativo**, escriba **2001: db8:1:: 1**.  
   
-9. Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.  
+9. Haga clic en  **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.  
   
 10. En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com**y, a continuación, haga clic en **Aceptar** dos veces.  
   
@@ -181,13 +181,13 @@ Los equipos del dominio CORP2 deben obtener certificados de equipo de la entidad
   
 6.  En **Escriba los nombres de objeto que desea seleccionar**, escriba **Admins. del dominio; Equipos del dominio** y, a continuación, haga clic en **Aceptar**.  
   
-7.  En el cuadro de diálogo **propiedades de autenticación cliente-servidor** , en **nombres de grupos o usuarios**, haga clic en **Admins. del dominio (administradores de CORP2\Domain)** y, en **permisos de administradores de dominio**, en la columna **permitir** , seleccione **escribir** . e **inscribirse**.  
+7.  En el cuadro de diálogo **propiedades de autenticación cliente-servidor** , en **nombres de grupos o usuarios**, haga clic en **Admins. del dominio (administradores de CORP2\Domain)** y, en **permisos de administradores de dominio**, en la columna **permitir** , seleccione **escribir** e **inscribir**.  
   
 8.  En **nombres de grupos o usuarios**, haga clic en **equipos del dominio (equipos CORP2\Domain)** y, en **permisos de equipos del dominio**, en la columna **permitir** , seleccione **inscribir** e **inscripción automática**y, a continuación, haga clic en **Aceptar**.  
   
-9. Cierra la Consola de plantillas de certificado.  
+9. Cierre la Consola de plantillas de certificado.  
   
-## <a name="replication"></a>Forzar la replicación entre DC1 y 2-DC1  
+## <a name="force-replication-between-dc1-and-2-dc1"></a><a name="replication"></a>Forzar la replicación entre DC1 y 2-DC1  
 Para poder inscribirse en los certificados en 2-EDGE1, debe forzar la replicación de la configuración de DC1 a 2-DC1. Esta operación debe realizarse en DC1.  
   
 ### <a name="to-force-replication"></a>Para forzar la replicación  
@@ -200,7 +200,7 @@ Para poder inscribirse en los certificados en 2-EDGE1, debe forzar la replicaci�
   
 4.  En el cuadro de diálogo **propiedades de DEFAULTIPSITELINK** , en **costo**, escriba **1**, en **replicar cada**, escriba **15**y, a continuación, haga clic en **Aceptar**. Espere 15 minutos para que se complete la replicación.  
   
-5.  Para forzar la replicación ahora en el árbol de consola, expanda **configuración de Sites\Default-First-Site-name\Servers\DC1\NTDS**, en el panel de detalles, haga clic con el botón secundario en **<automatically generated>** , haga clic en **Replicar ahora**y, a continuación, en el cuadro de diálogo **Replicar ahora** , Haga clic en **Aceptar**.  
+5.  Para forzar la replicación ahora en el árbol de consola, expanda **configuración de Sites\Default-First-Site-name\Servers\DC1\NTDS**, en el panel de detalles, haga clic con el botón secundario en **<automatically generated>** , haga clic en **Replicar ahora**y, a continuación, en el cuadro de diálogo **Replicar ahora** , haga clic en **Aceptar**.  
   
 6.  Para asegurarse de que la replicación se ha completado correctamente, haga lo siguiente:  
   

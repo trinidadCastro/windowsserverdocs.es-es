@@ -10,14 +10,14 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 26d105e0-afc3-44b5-bb5e-0c884a4c5d62
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3ff03dae44600ff79ed22d298ee338c570e61e36
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d8e7130d5774c19cc3d51045786bfef319cf7d16
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405490"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316431"
 ---
 # <a name="nic-teaming-mac-address-use-and-management"></a>Administración y uso de direcciones MAC en formación de equipos NIC
 
@@ -34,7 +34,7 @@ Puede establecer la dirección MAC del equipo NIC en una dirección MAC específ
 ## <a name="mac-address-use-on-transmitted-packets"></a>Uso de direcciones MAC en los paquetes transmitidos  
 Al configurar un equipo NIC en el modo independiente del conmutador y en la distribución de la carga dinámica o el hash de la dirección, los paquetes de un solo origen (por ejemplo, una sola máquina virtual) se distribuyen simultáneamente entre varios miembros del equipo. Para evitar confundir los conmutadores y evitar las alarmas de MAC, la dirección MAC de origen se sustituye por una dirección MAC diferente en los fotogramas transmitidos en los miembros del equipo que no sean el miembro principal del equipo. Por este motivo, cada miembro del equipo utiliza una dirección MAC diferente y los conflictos de direcciones MAC se evitan a menos que se produzca un error.  
   
-Cuando se detecta un error en la NIC principal, el software de formación de equipos NIC comienza a usar la dirección MAC del miembro del equipo principal en el miembro del equipo que se elige para que actúe como el miembro del equipo principal temporal (es decir, el que ahora se mostrará al conmutador como el equipo principal mero).  Este cambio solo se aplica al tráfico que se va a enviar en el miembro del equipo principal con la dirección MAC del miembro del equipo principal como su dirección MAC de origen. Se sigue enviando otro tráfico con cualquier dirección MAC de origen que hubiera usado antes del error.  
+Cuando se detecta un error en la NIC principal, el software de formación de equipos NIC comienza a usar la dirección MAC del miembro del equipo principal en el miembro del equipo que se elige para que actúe como el miembro del equipo principal temporal (es decir, el que ahora se mostrará al conmutador como equipo principal). miembro).  Este cambio solo se aplica al tráfico que se va a enviar en el miembro del equipo principal con la dirección MAC del miembro del equipo principal como su dirección MAC de origen. Se sigue enviando otro tráfico con cualquier dirección MAC de origen que hubiera usado antes del error.  
   
 A continuación se muestran las listas que describen el comportamiento de sustitución de direcciones MAC de formación de equipos NIC, en función de cómo esté configurado el equipo:  
   
@@ -69,13 +69,13 @@ A continuación se muestran las listas que describen el comportamiento de sustit
     -   No se realiza ningún reemplazo de dirección MAC de origen  
   
 ## <a name="related-topics"></a>Temas relacionados
-- [Formación de equipos NIC](NIC-Teaming.md): En este tema se proporciona información general sobre la formación de equipos de tarjeta de interfaz de red (NIC) en Windows Server 2016. La formación de equipos NIC le permite agrupar entre uno y 32 adaptadores de red Ethernet físicos en uno o varios adaptadores de red virtuales basados en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.  
+- [Formación de equipos NIC](NIC-Teaming.md): en este tema se proporciona información general sobre la formación de equipos de tarjetas de interfaz de red (NIC) en Windows Server 2016. La formación de equipos NIC le permite agrupar entre uno y 32 adaptadores de red Ethernet físicos en uno o varios adaptadores de red virtuales basados en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.  
 
-- [Configuración de la formación de equipos NIC](nic-teaming-settings.md): En este tema se proporciona información general sobre las propiedades del equipo NIC, como la formación de equipos y los modos de equilibrio de carga. También se proporcionan detalles acerca de la configuración del adaptador en espera y la propiedad de la interfaz de equipo principal. Si tiene al menos dos adaptadores de red en un equipo NIC, no es necesario designar un adaptador en espera para la tolerancia a errores.
+- [Configuración de la formación de equipos NIC](nic-teaming-settings.md): en este tema se proporciona información general de las propiedades del equipo NIC, como la formación de equipos y los modos de equilibrio de carga. También se proporcionan detalles acerca de la configuración del adaptador en espera y la propiedad de la interfaz de equipo principal. Si tiene al menos dos adaptadores de red en un equipo NIC, no es necesario designar un adaptador en espera para la tolerancia a errores.
   
-- [Cree un nuevo equipo NIC en un equipo host o una máquina virtual](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md): En este tema, creará un nuevo equipo NIC en un equipo host o en una máquina virtual (VM) de Hyper-V que ejecuta Windows Server 2016.
+- [Crear un nuevo equipo NIC en un equipo host o una máquina](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md)virtual: en este tema, creará un nuevo equipo NIC en un equipo host o en una máquina virtual (VM) de Hyper-V que ejecute Windows Server 2016.
 
-- [Solución de problemas de formación de equipos NIC](Troubleshooting-NIC-Teaming.md): En este tema se describen las formas de solucionar problemas de formación de equipos NIC, como hardware, los valores de los conmutadores físicos y la deshabilitación o habilitación de adaptadores de red con Windows PowerShell. 
+- [Solución de problemas de formación de equipos NIC](Troubleshooting-NIC-Teaming.md): en este tema se describen las formas de solucionar problemas de formación de equipos NIC, como hardware, los valores de los conmutadores físicos y la deshabilitación o habilitación de adaptadores de red con Windows PowerShell. 
   
 
 

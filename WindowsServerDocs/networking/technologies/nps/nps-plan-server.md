@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 2900dd2c-0f70-4f8d-9650-ed83d51d509a
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: bbcf3338f2cd6d8662a84faf263b486e31b140e5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0e012746841bcf736b7698afb5d7c807194bbec0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405339"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315731"
 ---
 # <a name="plan-nps-as-a-radius-server"></a>Planear NPS como servidor RADIUS
 
@@ -87,7 +87,7 @@ Debido a la reconexión rápida y la seguridad que proporciona PEAP-MS-CHAP V2, 
 
 En el caso de las conexiones VPN, EAP-TLS es un método de autenticación basado en certificados que proporciona una seguridad segura que protege el tráfico de red incluso cuando se transmite a través de Internet desde equipos domésticos o móviles a los servidores VPN de la organización.
 
-### <a name="certificate-based-authentication-methods"></a>Métodos de autenticación basados en certificados
+### <a name="certificate-based-authentication-methods"></a>Métodos de autenticación basados en certificados.
 
 Los métodos de autenticación basados en certificados tienen la ventaja de proporcionar una seguridad sólida. y tienen la desventaja de ser más difíciles de implementar que los métodos de autenticación basados en contraseñas.
 

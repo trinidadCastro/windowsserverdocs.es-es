@@ -3,7 +3,7 @@ title: Cree el archivo Cfg.ini
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 93a73556-22ef-402d-b8d4-582b74c22bcf
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 967db5f36ea27fb04eab9a6682a106ba0072d45d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0702fb8616ced4e7e00de344da47995d540f074d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820126"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312075"
 ---
 # <a name="create-the-cfgini-file"></a>Cree el archivo Cfg.ini
 
@@ -25,9 +25,9 @@ ms.locfileid: "59820126"
 
 El archivo cfg.ini se usa para automatizar una instalación del sistema operativo en el siguiente escenario:  
   
--   Al comprobar la experiencia del usuario final con una imagen preinstalada en un equipo de destino, la sección Configuración inicial se utiliza para guiar al usuario en la instalación, ya sea en modo atendido o desatendido. Para ello, consulte [Create the Initial Configuration section](Create-the-Cfg.ini-File.md#BKMK_CreateInit2).  
+-   Al comprobar la experiencia del usuario final con una imagen preinstalada en un equipo de destino, la sección Configuración inicial se utiliza para guiar al usuario en la instalación, ya sea en modo atendido o desatendido. Para ello, consulte [Cómo crear la sección de Configuración inicial](Create-the-Cfg.ini-File.md#BKMK_CreateInit2).  
   
-##  <a name="BKMK_CreateInit2"></a> Creación de la sección de configuración inicial  
+##  <a name="create-the-initial-configuration-section"></a><a name="BKMK_CreateInit2"></a>Crear la sección de configuración inicial  
  Use la sección Configuración inicial del archivo cfg.ini para recibir asistencia durante la instalación, ya sea en modo atendido o desatendido.  
   
 #### <a name="to-define-the-initial-configuration-section"></a>Para definir la sección de Configuración inicial  
@@ -104,17 +104,17 @@ El archivo cfg.ini se usa para automatizar una instalación del sistema operativ
     |--------------------|---------------------------|  
     |*AcceptEula*|Indica que el usuario acepta los Términos de licencia de software de Microsoft. El valor puede ser verdadero o falso, pero la instalación solo se realizará cuando se especifica verdadero.|  
     |*AcceptOEMEula*|(Opcional) Indica que el usuario acepta el contrato de licencia del asociado. El valor puede ser verdadero o falso. Este campo solo se requiere si el servidor se adquirió a través de un asociado que proporciona un contrato de licencia aparte.|  
-    |*CompanyName*|(Opcional) Nombre de la empresa. El nombre de la empresa se usa para asociar el servidor con la empresa y personalizar los informes de la empresa. Puede tener hasta 254 caracteres|  
-    |*País*|(Opcional) Cadena que representa la región/país deseado. Por ejemplo: US para Estados Unidos.|  
-    |*ServerName*|El nombre del servidor identifica de forma única el servidor en la red. El nombre del servidor debe cumplir los criterios siguientes:<br /><br /> -Puede tener hasta 15 caracteres.<br /><br /> -Puede contener letras, números y guiones (-).<br /><br /> -No debe empezar con un guión.<br /><br /> -No puede contener espacios en blanco.<br /><br /> -No puede contener solo números.<br /><br /> Por ejemplo: ContosoServer.|  
+    |*Compañía*|(Opcional) Nombre de la empresa. El nombre de la empresa se usa para asociar el servidor con la empresa y personalizar los informes de la empresa. Puede tener hasta 254 caracteres|  
+    |*Pais*|(Opcional) Cadena que representa la región/país deseado. Ejemplo: US para Estados Unidos.|  
+    |*ServerName*|El nombre del servidor identifica de forma única el servidor en la red. El nombre del servidor debe cumplir los criterios siguientes:<br /><br /> -Puede tener una longitud de hasta 15 caracteres.<br /><br /> : Puede contener letras, números y guiones (-).<br /><br /> -No debe comenzar con un guión.<br /><br /> : No debe contener espacios.<br /><br /> -No debe contener solo números.<br /><br /> Ejemplo: ContosoServer.|  
     |*DNSName*|Un dominio interno agrupa el servidor y los equipos cliente para compartir una base de datos común de nombres de usuario, contraseñas y otros datos comunes. Los usuarios ven este nombre al iniciar sesión en sus equipos, pero solo se usa internamente y no coincide con el nombre de dominio de Internet. El nombre de dominio interno debe cumplir los mismos criterios especificados para *ServerName*.<br /><br /> Ejemplo: contoso.local.|  
-    |*NetbiosName*|Un nombre NetBIOS se usa para identificar recursos que se ejecutan en el servidor. Puede tener hasta 15 caracteres Por ejemplo: Contoso.|  
+    |*NetbiosName*|Un nombre NetBIOS se usa para identificar recursos que se ejecutan en el servidor. Puede tener hasta 15 caracteres Ejemplo: Contoso.|  
     |*Idioma*|(Opcional) Especifica el idioma que se mostrará. Solo puede ser uno de los idiomas instalados. Ejemplo: en-us para la variedad de inglés de los Estados Unidos.|  
-    |*Locale*|(Opcional) Especifica el formato de hora y moneda con el formato *LocaleID* . Ejemplo: en-us para el formato de hora y moneda mostrado en inglés según los estándares usados en los Estados Unidos.|  
-    |*Teclado*|El teclado debe tener uno de los dos formatos siguientes:<br /><br /> - **diseño de teclado: idioma de entrada.** Por ejemplo, 0409:00000409, donde 0409 antes de **:** es el idioma de entrada y **00000409** es la disposición de teclado. Puede encontrar la lista de disposiciones de teclado en la clave del Registro **HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Keyboard Layouts**.<br /><br /> - **idioma de entrada: el identificador IME.** Abajo se muestra una lista completa de identificadores IME.<br /><br /> -Método de entrada Amárico {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{8F96574E-C86C-4bd6-9666-3F7327D4CBE8}<br /><br /> -{81d4e9c9-1d3b-41bc-9e6c-4b40bf79e35e}{FA550B04-5AD7-411F-A5AC-CA038EC515D7} Microsoft Pinyin - Simple rápido (chino simplificado)<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{B2F9C502-1742-11D4-9790-0080C882687E} chino (tradicional) - nuevo fonético<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{4BDF9F03-C7D3-11D4-B2AB-0080C882687E} chino (tradicional) - ChangJie<br /><br /> Quick - {531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{6024B45F-5C54-11D4-B921-0080C882687E} chino (tradicional)-<br /><br /> -Matriz tradicional de chino {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{D38EFF65-AA46-4FD5-91A7-67845FB02F5B}<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{037B2C25-480C-4D7F-B027-D6CA6B69788A} DaYi tradicional chino<br /><br /> -{03B5835F-F03C-411B-9CE2-AA23E1171E36}{A76C93D9-5523-4E90-AAFA-4DB112F9AC76} Microsoft IME (japonés)<br /><br /> - {A028AE76-01B1-46C2-99C4-ACD9858AE02F}{B5FE1F02-D5F2-4445-9C03-C568F23C99A1}             Microsoft IME (Korean)<br /><br /> -{A1E2B86B-924A-4D43-80F6-8A820DF7190F}{B60AF051-257A-46BC-B9D3-84DAD819BAFB} IME antiguo de Hangul (coreano)<br /><br /> -Método de entrada Yi {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{409C8376-007B-4357-AE8E-26316EE3FB0D}<br /><br /> -Método de entrada Tigriña {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{3CAB88B7-CC3E-46A6-9765-B772AD7761FF}|  
-    |*Configuración*|Especifica la selección del usuario para las actualizaciones. Use uno de los siguientes valores:<br /><br /> **-Todas** equivale a usar la configuración recomendada.<br /><br /> **-Actualiza** equivale a instala las actualizaciones importantes. Solo<br /><br /> **-None** equals no buscar actualizaciones.|  
-    |*UserName*|-El nombre de la nueva cuenta de administrador que se crea durante la instalación. El nombre de su cuenta de administrador y usuario estándar debe satisfacer los criterios siguientes:<br /><br /> -Puede tener hasta 19 caracteres.<br /><br /> -No puede contener / \ [] &#124; < > + =; , ? *<br /><br /> -No se debe empezar ni terminar con un punto.<br /><br /> -No puede contener dos puntos consecutivos.<br /><br /> -No se debe ser el mismo que el nombre del servidor o el nombre de dominio interno.<br /><br /> -No se debe ser el mismo que el nombre de usuario predefinido como administrador o invitado.|  
-    |*PlainTextPassword*|Se trata de la contraseña de la nueva cuenta de administrador que se creó durante la instalación.<br /><br /> -Debe ser al menos ocho caracteres de longitud.<br /><br /> -Debe contener al menos tres de las cuatro categorías siguientes:<br /><br /> -Caracteres en mayúsculas.<br /><br /> -Caracteres en minúsculas.<br /><br /> -Números.<br /><br /> -Los símbolos.|  
+    |*Configuración regional*|(Opcional) Especifica el formato de hora y moneda con el formato *LocaleID*. Ejemplo: en-us para el formato de hora y moneda mostrado en inglés según los estándares usados en los Estados Unidos.|  
+    |*Teclado*|El teclado debe tener uno de los dos formatos siguientes:<br /><br /> - **idioma de entrada: distribución del teclado.** Por ejemplo, 0409:00000409, donde 0409 antes de **:** es el idioma de entrada y **00000409** es la disposición de teclado. Puede encontrar la lista de disposiciones de teclado en la clave del Registro **HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Keyboard Layouts**.<br /><br /> - **idioma de entrada: el identificador de IME.** Abajo se muestra una lista completa de identificadores IME.<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {8F96574E-C86C-4bd6-9666-3F7327D4CBE8} método de entrada de amárico<br /><br /> -{81d4e9c9-1d3b-41bc-9e6c-4b40bf79e35e} {FA550B04-5AD7-411F-A5AC-CA038EC515D7} Microsoft pinyin-simple rápido (Chino Simplificado)<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {B2F9C502-1742-11D4-9790-0080C882687E} chino (tradicional)-fonética nueva<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {4BDF9F03-C7D3-11D4-B2AB-0080C882687E} chino (tradicional)-ChangJie<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732} {6024B45F-5C54-11D4-B921-0080C882687E} chino (tradicional)-Quick<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {D38EFF65-AA46-4FD5-91A7-67845FB02F5B} matriz de chino tradicional<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {037B2C25-480C-4D7F-B027-D6CA6B69788A} chino tradicional DaYi<br /><br /> -{03B5835F-F03C-411B-9CE2-AA23E1171E36} {A76C93D9-5523-4E90-AAFA-4DB112F9AC76} Microsoft IME (japonés)<br /><br /> -{A028AE76-01B1-46C2-99C4-ACD9858AE02F} {B5FE1F02-D5F2-4445-9C03-C568F23C99A1} Microsoft IME (Coreano)<br /><br /> -{A1E2B86B-924A-4D43-80F6-8A820DF7190F} {B60AF051-257A-46BC-B9D3-84DAD819BAFB} IME hangul antiguo (Coreano)<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {409C8376-007B-4357-AE8E-26316EE3FB0D} método de entrada Yi<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1} {3CAB88B7-CC3E-46A6-9765-B772AD7761FF} Tigrinya método de entrada|  
+    |*Configuración*|Especifica la selección del usuario para las actualizaciones. Use uno de los siguientes valores:<br /><br /> **-Todos los** equivalentes usan la configuración recomendada.<br /><br /> **-Actualizaciones es la instalación de** actualizaciones importantes. solo<br /><br /> **-Ninguno** es igual a no buscar actualizaciones.|  
+    |*Nombre*|: El nombre de la nueva cuenta de administrador que se creó durante la instalación. El nombre de su cuenta de administrador y usuario estándar debe satisfacer los criterios siguientes:<br /><br /> -Puede tener una longitud de hasta 19 caracteres.<br /><br /> -No puede contener/\ [ &#124; ] < > + =; , ? *<br /><br /> -No debe comenzar ni terminar con un punto.<br /><br /> -No debe contener dos puntos consecutivos.<br /><br /> -No debe ser el mismo que el nombre del servidor o el nombre del dominio interno.<br /><br /> -No debe ser igual que un nombre de usuario predefinido, como administrador o invitado.|  
+    |*PlainTextPassword*|Se trata de la contraseña de la nueva cuenta de administrador que se creó durante la instalación.<br /><br /> -Debe tener una longitud de ocho caracteres como mínimo.<br /><br /> -Debe contener al menos tres de las cuatro categorías siguientes:<br /><br /> -Caracteres en mayúsculas.<br /><br /> -Caracteres en minúsculas.<br /><br /> Los.<br /><br /> Euro.|  
     |*StdUserName*|El nombre de la nueva cuenta de usuario estándar que se creó durante la instalación. Consulte el parámetro *UserName* para conocer los requisitos.|  
     |*StdUserPlainTextPassword*|La contraseña de la cuenta de usuario estándar que se creó durante la instalación.|  
     |WebDomainName|(Opcional) Configure el nombre de dominio de Internet del servidor. Este archivo le permite configurar el nombre de dominio de forma similar al método utilizado para la configuración manual en el asistente de configuración de nombre de dominio.|  
@@ -134,10 +134,10 @@ El archivo cfg.ini se usa para automatizar una instalación del sistema operativ
     |StaticIPv6Gateway|(Opcional) Especifique una dirección predeterminada de la puerta de enlace si desea configurar una dirección IP estática en lugar de una dinámica.|  
     |ClientBackupOn|(Opcional) Desactivar la copia de seguridad de servidor de forma predeterminada cuando nuevos clientes se unen al servidor.|  
     |FileHistoryOn|(Opcional) Desactivar la copia de seguridad del historial de archivos cuando nuevos clientes con Windows 8 Consumer Preview se unen al servidor.|  
-    |EnableRWA|Permitirá el acceso Web remoto al instalar Windows Server Essentials, pero se omitirá la configuración del enrutador. Esto solo se admite en una instalación limpia del producto. El valor predeterminado es falso.|  
+    |EnableRWA|Habilitará el acceso Web remoto al instalar Windows Server Essentials, pero omitirá la configuración del enrutador. Esto solo se admite en una instalación limpia del producto. El valor predeterminado es false.|  
     |IPv4DNSForwarder|Define el reenviador de DNS de las direcciones IPv4.|  
     |IPv6DNSForwarder|Define el reenviador de DNS de las direcciones IPv6.|  
-    |LaunchPadHiddenTasks|-(Opcional) puede ocultar la entrada de copia de seguridad o / entrada de panel en Launchpad.<br /><br /> -Para deshabilitar el panel: LaunchPadHiddenTasks=Microsoft.LaunchPad.AdminDashboard<br /><br /> -Para deshabilitar la copia de seguridad: LaunchPadHiddenTasks=Microsoft.LaunchPad.Backup<br /><br /> -Para deshabilitar la copia de seguridad y el panel: LaunchPadHiddenTasks=Microsoft.LaunchPad.Backup,Microsoft.LaunchPad.AdminDashboard|  
+    |LaunchPadHiddenTasks|-(Opcional) puede ocultar la entrada de copia de seguridad o la entrada del panel de administración en Launchpad.<br /><br /> -Para deshabilitar el panel: LaunchPadHiddenTasks = Microsoft. LaunchPad. AdminDashboard<br /><br /> -Para deshabilitar la copia de seguridad: LaunchPadHiddenTasks = Microsoft. LaunchPad. backup<br /><br /> -Para deshabilitar la copia de seguridad y el panel: LaunchPadHiddenTasks = Microsoft. LaunchPad. backup, Microsoft. LaunchPad. AdminDashboard|  
   
 3.  Guarde el archivo. Asegúrese de guardar el archivo como cfg.ini, y no como cfg.ini.txt.  
   
@@ -147,17 +147,17 @@ El archivo cfg.ini se usa para automatizar una instalación del sistema operativ
 > [!IMPORTANT]
 >  La sección Configuración inicial del archivo cfg.ini solo debe ser usada por el usuario final para personalizar el servidor o para que un asociado compruebe la experiencia del usuario del servidor al utilizar un archivo de respuestas desatendido. Esta sección del archivo no se utiliza para crear la imagen.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 
- [Introducción al ADK de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Introducción con el ADK de Windows Server essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
 
- [Introducción al ADK de Windows Server Essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Introducción con el ADK de Windows Server essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparar la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 

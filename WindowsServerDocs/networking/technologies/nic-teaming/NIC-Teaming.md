@@ -10,15 +10,15 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/10/2018
-ms.openlocfilehash: 2356de674bfc6e57c9444136b1244934464a2d02
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f4d9dd20d626f998bee0a8414c281cd27b2d3dbb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396505"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316443"
 ---
 # <a name="nic-teaming"></a>Formación de equipos NIC
 
@@ -88,7 +88,7 @@ Este es el motivo:
   
 -   Cuando el equipo está en modo independiente del conmutador y usa el equilibrio de carga de hash de dirección, el tráfico entrante siempre entra en una NIC (el miembro del equipo principal), todo ello en un solo miembro del equipo. Dado que otros miembros del equipo no están tratando con el tráfico entrante, se programan con las mismas colas que el miembro principal, de modo que si se produce un error en el miembro principal, cualquier otro miembro del equipo puede usarse para recoger el tráfico entrante y las colas ya están en su lugar.  
 
-- La mayoría de las NIC tienen colas usadas para el ajuste de escala en lado de recepción (RSS) o VMQ, pero no al mismo tiempo. Parece que algunas opciones de VMQ son la configuración de las colas de RSS pero que son la configuración de las colas genéricas que usan RSS y VMQ, dependiendo de qué característica esté actualmente en uso. Cada NIC tiene, en sus propiedades avanzadas, los valores de * RssBaseProcNumber \*y MaxRssProcessors. A continuación se muestran algunos valores de VMQ que proporcionan un mejor rendimiento del sistema.  
+- La mayoría de las NIC tienen colas usadas para el ajuste de escala en lado de recepción (RSS) o VMQ, pero no al mismo tiempo. Parece que algunas opciones de VMQ son la configuración de las colas de RSS pero que son la configuración de las colas genéricas que usan RSS y VMQ, dependiendo de qué característica esté actualmente en uso. Cada NIC tiene, en sus propiedades avanzadas, los valores de * RssBaseProcNumber y \*MaxRssProcessors. A continuación se muestran algunos valores de VMQ que proporcionan un mejor rendimiento del sistema.  
   
 -   Idealmente, cada NIC debe tener el valor * RssBaseProcNumber establecido en un número par mayor o igual que dos (2). El primer procesador físico, Core 0 (procesadores lógicos 0 y 1), normalmente realiza la mayor parte del procesamiento del sistema, por lo que el procesamiento de la red debe dirigirse fuera de este procesador físico. Algunas arquitecturas de máquina no tienen dos procesadores lógicos por procesador físico, por lo que para tales máquinas, el procesador base debe ser mayor o igual que 1. En caso de duda, supongamos que el host usa un procesador lógico 2 por cada arquitectura de procesador física.  
   
@@ -155,11 +155,11 @@ Dado que la conmutación por error entre las NIC de una máquina virtual puede p
 
 ## <a name="related-topics"></a>Temas relacionados
 
-- [Administración y uso de direcciones MAC de formación de equipos NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): Al configurar un equipo NIC con el modo independiente del conmutador y la distribución de la carga dinámica o el hash de la dirección, el equipo usa la dirección Media Access Control (MAC) del miembro del equipo NIC principal en el tráfico saliente. El miembro del equipo NIC principal es un adaptador de red seleccionado por el sistema operativo del conjunto inicial de miembros del equipo.
+- [Administración y uso de direcciones MAC de formación de equipos NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): cuando se configura un equipo NIC con el modo independiente del conmutador y con una distribución de carga dinámica o de hash de dirección, el equipo usa la dirección Media Access Control (Mac) del miembro del equipo NIC principal en el tráfico saliente. El miembro del equipo NIC principal es un adaptador de red seleccionado por el sistema operativo del conjunto inicial de miembros del equipo.
 
-- [Configuración de la formación de equipos NIC](nic-teaming-settings.md): En este tema se proporciona información general sobre las propiedades del equipo NIC, como la formación de equipos y los modos de equilibrio de carga. También se proporcionan detalles acerca de la configuración del adaptador en espera y la propiedad de la interfaz de equipo principal. Si tiene al menos dos adaptadores de red en un equipo NIC, no es necesario designar un adaptador en espera para la tolerancia a errores.
+- [Configuración de la formación de equipos NIC](nic-teaming-settings.md): en este tema se proporciona información general de las propiedades del equipo NIC, como la formación de equipos y los modos de equilibrio de carga. También se proporcionan detalles acerca de la configuración del adaptador en espera y la propiedad de la interfaz de equipo principal. Si tiene al menos dos adaptadores de red en un equipo NIC, no es necesario designar un adaptador en espera para la tolerancia a errores.
   
-- [Cree un nuevo equipo NIC en un equipo host o una máquina virtual](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md): En este tema, creará un nuevo equipo NIC en un equipo host o en una máquina virtual (VM) de Hyper-V que ejecuta Windows Server 2016.
+- [Crear un nuevo equipo NIC en un equipo host o una máquina](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md)virtual: en este tema, creará un nuevo equipo NIC en un equipo host o en una máquina virtual (VM) de Hyper-V que ejecute Windows Server 2016.
 
-- [Solución de problemas de formación de equipos NIC](Troubleshooting-NIC-Teaming.md): En este tema se describen las formas de solucionar problemas de formación de equipos NIC, como hardware, los valores de los conmutadores físicos y la deshabilitación o habilitación de adaptadores de red con Windows PowerShell. 
+- [Solución de problemas de formación de equipos NIC](Troubleshooting-NIC-Teaming.md): en este tema se describen las formas de solucionar problemas de formación de equipos NIC, como hardware, los valores de los conmutadores físicos y la deshabilitación o habilitación de adaptadores de red con Windows PowerShell. 
  

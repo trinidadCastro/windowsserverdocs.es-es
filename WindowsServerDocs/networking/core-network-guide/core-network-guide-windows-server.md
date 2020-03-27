@@ -7,14 +7,14 @@ ms.technology: networking
 ms.topic: article
 ms.date: ''
 ms.assetid: 9b3ef3eb-4246-4e0e-8bf1-53224ca5f2f9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 52f8b9e1446b5b3f3b1e7060cc737204771d1eae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 62bac410d92e63f4f5cb759b04f7a51ef17d18b0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356067"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318047"
 ---
 # <a name="core-network-guidance-for-windows-server"></a>Orientación de red principal para Windows Server
 
@@ -26,7 +26,7 @@ En este tema se proporciona información general sobre la guía de red principal
   
 -   [Guía de red principal para Windows Server](#bkmk_core)  
   
-## <a name="bkmk_intro"></a>Introducción a la red principal de Windows Server
+## <a name="introduction-to-the-windows-server-core-network"></a><a name="bkmk_intro"></a>Introducción a la red principal de Windows Server
 
 Una red principal es una colección de hardware, dispositivos y software de red que proporciona los servicios fundamentales para satisfacer las necesidades de las tecnologías de la información (TI) de la organización.
 
@@ -46,7 +46,7 @@ Una red principal de Windows Server le ofrece muchas ventajas, entre las que se 
 
 Una red principal también le permite escalar la red a medida que crece la organización y cambian los requisitos de TI. Por ejemplo, con una red principal se pueden agregar dominios, subredes IP, servicios de acceso remoto, servicios inalámbricos y otras características y roles de servidor proporcionados por Windows Server 2016.
 
-## <a name="bkmk_core"></a>Guía de red principal para Windows Server
+## <a name="core-network-guide-for-windows-server"></a><a name="bkmk_core"></a>Guía de red principal para Windows Server
 
 La guía de red principal de Windows Server 2016 proporciona instrucciones sobre cómo planear e implementar los componentes principales necesarios para una red totalmente operativa y un nuevo Active Directory&reg; dominio en un bosque nuevo. Por medio de esta guía, podrá implementar equipos configurados con los siguientes componentes de servidor de Windows:
 

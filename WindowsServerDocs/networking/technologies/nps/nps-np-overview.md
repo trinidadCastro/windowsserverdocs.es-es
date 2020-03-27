@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: e4a9b134-6d1d-40d7-a49c-5f46d5fdb419
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c241191f54080ed92a1f1a274c0b2aff0b8c564c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4ee256184cd551c5f2c2fcdb8544e4d061ea2bf3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405345"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315765"
 ---
 # <a name="network-policies"></a>Directivas de red
 
@@ -26,44 +26,44 @@ Puede usar este tema para obtener información general sobre las directivas de r
 > - [Permiso de acceso](nps-np-access.md)
 > - [Configurar las directivas de red](nps-np-configure.md)
 
-Las directivas de red son conjuntos de condiciones, restricciones y valores de configuración que le permiten designar quién está autorizado para conectarse a la red y las circunstancias en las que pueden o no pueden conectarse.
+Las directivas de red son conjuntos de condiciones, restricciones y valores de configuración que le permiten designar quién está autorizado para conectarse a la red y bajo qué condiciones podrá o no conectarse.
 
-Al procesar las solicitudes de conexión como un servidor Servicio de autenticación remota telefónica de usuario (RADIUS), NPS realiza la autenticación y autorización para la solicitud de conexión. Durante el proceso de autenticación, NPS comprueba la identidad del usuario o equipo que se está conectando a la red. Durante el proceso de autorización, NPS determina si el usuario o el equipo pueden tener acceso a la red.
+Al procesar las solicitudes de conexión como un servidor Servicio de autenticación remota telefónica de usuario (RADIUS), NPS realiza la autenticación y autorización para la solicitud de conexión. Durante el proceso de autenticación, NPS comprueba la identidad del usuario o equipo que se está conectando a la red. Durante el proceso de autorización, NPS determina si el usuario o equipo tiene permitido el acceso a la red.
 
 Para efectuar estas determinaciones, NPS usa directivas de red que se configuran en la consola de NPS. NPS también examina las propiedades de acceso telefónico de la cuenta de usuario en Active Directory&reg; servicios de dominio \(AD DS\) para realizar la autorización.
 
 ## <a name="network-policies---an-ordered-set-of-rules"></a>Directivas de red: un conjunto ordenado de reglas
 
-Las directivas de red se pueden ver como reglas. Cada regla tiene un conjunto de condiciones y valores de configuración. NPS compara las condiciones de la regla con las propiedades de las solicitudes de conexión. Si se produce una coincidencia entre la regla y la solicitud de conexión, la configuración definida en la regla se aplica a la conexión.
+Las directivas de red se pueden ver como unas reglas. Cada regla tiene un conjunto de condiciones y valores de configuración. NPS compara las condiciones de la regla con las propiedades de las solicitudes de conexión. Si se produce una coincidencia entre la regla y la solicitud de conexión, los valores de configuración definidos en la regla se aplican a la conexión.
 
-Cuando se configuran varias directivas de red en NPS, son un conjunto ordenado de reglas. NPS comprueba cada solicitud de conexión con la primera regla de la lista, el segundo, etc. hasta que se encuentra una coincidencia.
+Cuando hay varias directivas de red configuradas en NPS, son un conjunto ordenado de reglas. NPS comprueba cada solicitud de conexión con la primera regla de la lista, después con la segunda y así sucesivamente hasta que se encuentra una coincidencia.
 
-Cada directiva de red tiene una configuración de **Estado de directiva** que le permite habilitar o deshabilitar la Directiva. Cuando se deshabilita una directiva de red, NPS no evalúa la Directiva al autorizar solicitudes de conexión.
+Cada directiva de red tiene una configuración de **Estado de directiva** que le permite habilitar o deshabilitar la Directiva. Si se deshabilita una directiva de red, NPS no evaluará la directiva durante la autorización de solicitudes de conexión.
 
 >[!NOTE]
 >Si desea que NPS evalúe una directiva de red al realizar la autorización de las solicitudes de conexión, debe establecer la configuración de estado de la **Directiva** activando la casilla Directiva habilitada.
 
-## <a name="network-policy-properties"></a>Propiedades de directiva de red
+## <a name="network-policy-properties"></a>Propiedades de las directivas de red
 
-Hay cuatro categorías de propiedades para cada directiva de red:
+Existen cuatro categorías de propiedades para cada directiva de red:
 
-### <a name="overview"></a>Introducción
+### <a name="overview"></a>Información general
 
- Estas propiedades permiten especificar si la Directiva está habilitada, si la Directiva concede o deniega el acceso y si se requiere un método de conexión de red específico, o un tipo de servidor de acceso a la red (NAS), para las solicitudes de conexión. Las propiedades de información general también permiten especificar si se omiten las propiedades de acceso telefónico de las cuentas de usuario de AD DS. Si selecciona esta opción, NPS solo usará la configuración de la Directiva de red para determinar si la conexión está autorizada.
+ Estas propiedades permiten especificar si la Directiva está habilitada, si la Directiva concede o deniega el acceso y si se requiere un método de conexión de red específico, o un tipo de servidor de acceso a la red (NAS), para las solicitudes de conexión. Las propiedades de información general también permiten especificar si se omiten las propiedades de acceso telefónico de las cuentas de usuario de AD DS. Si selecciona esta opción, NPS sólo usará los valores de configuración de la directiva de red para determinar si la conexión está autorizada.
 
 
 ### <a name="conditions"></a>Condiciones
 
- Estas propiedades permiten especificar las condiciones que debe tener la solicitud de conexión para que coincida con la Directiva de red. Si las condiciones configuradas en la Directiva coinciden con la solicitud de conexión, NPS aplica la configuración designada en la Directiva de red a la conexión. Por ejemplo, si especifica la dirección IPv4 de NAS como una condición de la Directiva de red y NPS recibe una solicitud de conexión de un servidor NAS que tiene la dirección IP especificada, la condición de la Directiva coincide con la solicitud de conexión. 
+ Estas propiedades permiten especificar las condiciones que debe cumplir la solicitud de conexión para que coincida con la directiva de red; si las condiciones configuradas en la directiva coinciden con la solicitud de conexión, NPS aplicará a la conexión los valores de configuración designados en la directiva de red. Por ejemplo, si especifica la dirección IPv4 de NAS como una condición de la Directiva de red y NPS recibe una solicitud de conexión de un servidor NAS que tiene la dirección IP especificada, la condición de la Directiva coincide con la solicitud de conexión. 
 
 
 ### <a name="constraints"></a>Restricciones
 
- Las restricciones son parámetros adicionales de la Directiva de red que deben coincidir con la solicitud de conexión. Si la solicitud de conexión no coincide con una restricción, NPS rechaza automáticamente la solicitud. A diferencia de la respuesta NPS a condiciones no coincidentes en la Directiva de red, si una restricción no coincide, NPS deniega la solicitud de conexión sin evaluar las directivas de red adicionales.
+ Las restricciones son parámetros adicionales de la directiva de red que deben coincidir con la solicitud de conexión. Si la solicitud de conexión no cumple una de las restricciones, NPS rechazará automáticamente la solicitud. A diferencia de la respuesta NPS a condiciones no coincidentes en la Directiva de red, si una restricción no coincide, NPS deniega la solicitud de conexión sin evaluar las directivas de red adicionales.
 
 ### <a name="settings"></a>Configuración
 
- Estas propiedades permiten especificar la configuración que NPS aplica a la solicitud de conexión si se cumplen todas las condiciones de la Directiva de red de la Directiva.
+ Estas propiedades permiten especificar la configuración que NPS aplicará a la solicitud de conexión si se cumplen todas las condiciones de la directiva de red.
 
 Al agregar una nueva Directiva de red mediante la consola de NPS, debe usar el Asistente para nueva Directiva de red. Después de crear una directiva de red mediante el asistente, puede personalizar la Directiva haciendo doble clic en la Directiva en la consola de NPS para obtener las propiedades de la Directiva.
 

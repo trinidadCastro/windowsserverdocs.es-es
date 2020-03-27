@@ -3,7 +3,7 @@ title: Solucionar los problemas de conectividad del acceso Web remoto en Windows
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: fda0b5a227fe25b4e8780915089e97ee48620383
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6db623308184c5be2968fa1d8991de2b48eef5b7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432432"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318631"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Solucionar los problemas de conectividad del acceso Web remoto en Windows Server Essentials
  
@@ -43,7 +43,7 @@ ms.locfileid: "66432432"
   
 - Compruebe que el dispositivo de banda ancha que se conecta al proveedor de servicios de Internet (ISP) está activado y funciona correctamente, y que el enrutador está conectado al dispositivo de banda ancha.  
   
-- Active la configuración de DHCP del enrutador. Conéctese a la página web de configuración del enrutador activar la configuración de UPnP. Para obtener información acerca de cómo iniciar sesión en el enrutador y cómo activar la configuración de UPnP, consulte la documentación del enrutador. Después de activar la configuración de UPnP, ejecute la active en Web Asistente para acceso remoto para configurar el enrutador.  
+- Active la configuración de DHCP del enrutador. Conéctese a la página web de configuración del enrutador activar la configuración de UPnP. Para obtener información acerca de cómo iniciar sesión en el enrutador y cómo activar la configuración de UPnP, consulte la documentación del enrutador. Después de activar la configuración de UPnP, vuelva a ejecutar el Asistente para activar el acceso Web remoto para configurar el enrutador.  
   
 - Si el enrutador no es totalmente compatible con el estándar UPnP, no se puede configurar automáticamente. Debe configurar manualmente el enrutador o comprar un enrutador que admita el estándar UPnP.  
   
@@ -62,7 +62,7 @@ ms.locfileid: "66432432"
     |HTTP|TCP 80|  
     |HTTPS|TCP 443|  
   
-    Para obtener información acerca de cómo configurar manualmente el reenvío de puerto en el enrutador, consulte la documentación del fabricante.  
+    Para obtener información acerca de cómo configurar manualmente el reenvío de puertos en el enrutador, consulte la documentación del fabricante.  
   
     Una página de configuración de enrutador típica incluye una tabla similar a la siguiente.  
   
@@ -74,7 +74,7 @@ ms.locfileid: "66432432"
   |192.168.0.100|TCP 80|Siempre|Permitir todo|  
   |192.168.0.100|TCP 443|Siempre|Permitir todo|  
   
-   Después de configurar manualmente el enrutador, ejecute la active en Web Asistente para acceso remoto, asegurándose de seleccionar la **omitir la configuración del enrutador** opción el **Introducción** página.  
+   Después de configurar manualmente el enrutador, ejecute el Asistente para activar el acceso Web remoto, asegurándose de seleccionar la opción **omitir la instalación del enrutador** en la página **Introducción** .  
   
 - Compre un enrutador nuevo si su enrutador no es totalmente compatible con el estándar UPnP.  
   
@@ -85,9 +85,9 @@ ms.locfileid: "66432432"
   
 -   [Usar acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Administrar acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Administrar el acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Administrar acceso ilimitado](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
+-   [Administrar el acceso desde cualquier lugar](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [Administrar Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
   

@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac2f6015-50a5-4909-8f67-8565f9d332a2
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: da23f3082e1d97f1bcfbee7365b863d29ba2d020
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4b9da54822c1b7610bbd7a095beeb305eb243bb1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404492"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314034"
 ---
 # <a name="deploy-multiple-remote-access-servers-in-a-multisite-deployment"></a>Implementación de varios servidores de acceso remoto en una implementación multisitio
 
@@ -25,7 +25,7 @@ ms.locfileid: "71404492"
 
  Windows Server 2016 y Windows Server 2012 combinan la VPN de DirectAccess y el servicio de acceso remoto (RAS) en un solo rol de acceso remoto. El acceso remoto se puede implementar en diversos escenarios de empresas. Esta información general proporciona una introducción al escenario empresarial para implementar servidores de acceso remoto en una configuración multisitio.  
   
-## <a name="BKMK_OVER"></a>Descripción del escenario  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>Descripción del escenario  
 En una implementación multisitio, dos o más servidores de acceso remoto o clústeres de servidores se implementan y configuran como puntos de entrada diferentes en una sola ubicación o en ubicaciones geográficas dispersas. La implementación de varios puntos de entrada en una sola ubicación permite la redundancia del servidor o la alineación de los servidores de acceso remoto con la arquitectura de red existente. La implementación por ubicación geográfica garantiza un uso eficaz de los recursos, ya que los equipos cliente remotos pueden conectarse a recursos de la red interna mediante un punto de entrada más cercano a ellos. El tráfico a través de una implementación multisitio se puede distribuir y equilibrar con un equilibrador de carga global externo.  
   
 Una implementación multisitio es compatible con equipos cliente que ejecutan Windows 10, Windows 8 o Windows 7. Los equipos cliente que ejecutan Windows 10 o Windows 8 identifican automáticamente un punto de entrada, o bien el usuario puede seleccionar manualmente un punto de entrada. La asignación automática se produce en el siguiente orden de prioridad:  
@@ -64,14 +64,14 @@ El escenario de implementación multisitio incluye una serie de pasos:
   
 4. [Solucionar problemas de una implementación multisitio](troubleshoot/Troubleshoot-a-Multisite-Deployment.md). Esta sección de solución de problemas describe una serie de los errores más comunes que se pueden producir al implementar el acceso remoto en una implementación multisitio.
   
-## <a name="BKMK_APP"></a>Aplicaciones prácticas  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicaciones prácticas  
 Una implementación multisitio proporciona lo siguiente:  
   
 -   Rendimiento mejorado: una implementación multisitio permite que los equipos cliente tengan acceso a recursos internos mediante el acceso remoto para conectarse con el punto de entrada más cercano y adecuado. El acceso del cliente a los recursos internos de forma eficaz y la velocidad de las solicitudes de Internet de cliente enrutadas a través de DirectAccess se ha mejorado. Se puede equilibrar el tráfico entre los puntos de entrada mediante un equilibrador de carga global externo.  
   
 -   Facilidad de administración: multisitio permite a los administradores alinear la implementación de acceso remoto con una implementación de sitios Active Directory, lo que proporciona una arquitectura simplificada. La configuración compartida se puede establecer fácilmente en los servidores de punto de entrada o en los clústeres. La configuración de acceso remoto se puede administrar desde cualquiera de los servidores de la implementación, o de forma remota mediante Herramientas de administración remota del servidor (RSAT). Además, se puede supervisar toda la implementación multisitio desde una sola consola de administración de acceso remoto.  
   
-## <a name="BKMK_NEW"></a>Roles y características incluidos en este escenario  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Roles y características incluidos en este escenario  
 En la tabla siguiente se enumeran los roles y las características que se usan en este escenario.  
   
 |Rol/característica|Compatibilidad con este escenario|  
@@ -79,7 +79,7 @@ En la tabla siguiente se enumeran los roles y las características que se usan e
 |Rol de acceso remoto|El rol se instala y desinstala mediante la consola del Administrador del servidor. Incluye tanto DirectAccess, que antes era una característica de Windows Server 2008 R2, como los servicios de enrutamiento y acceso remoto (RRAS), que antes eran un servicio de roles de los Servicios de acceso y directivas de redes (NPAS). El rol de acceso remoto consta de dos componentes:<br /><br />-DirectAccess y VPN de servicios de enrutamiento y acceso remoto (RRAS): DirectAccess y VPN se administran juntos en la consola de administración de acceso remoto.<br />-Enrutamiento RRAS: las características de enrutamiento RRAS se administran en la consola de enrutamiento y acceso remoto heredada.<br /><br />Las dependencias son las siguientes:<br /><br />-Servidor web-Internet Information Services (IIS): esta característica es necesaria para configurar el servidor de ubicación de red y el sondeo Web predeterminado.<br />-Windows Internal Database: se usa para las cuentas locales en el servidor de acceso remoto.|  
 |Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<br /><br />-Se instala de forma predeterminada en un servidor de acceso remoto cuando se instala el rol de acceso remoto y es compatible con la interfaz de usuario de la consola de administración remota.<br />-Se puede instalar opcionalmente en un servidor que no ejecute el rol de servidor de acceso remoto. En este caso, se usa para la administración remota de un equipo de acceso remoto que ejecuta DirectAccess y VPN.<br /><br />La característica de herramientas de administración de acceso remoto consiste de los siguientes elementos:<br /><br />-Herramientas de línea de comandos y GUI de acceso remoto<br />-Módulo de acceso remoto para Windows PowerShell<br /><br />Las dependencias incluyen:<br /><br />-Consola de administración de directivas de grupo<br />-Kit de administración del administrador de conexiones RAS (CMAK)<br />-Windows PowerShell 3,0<br />-Infraestructura y herramientas de administración de gráficos|  
   
-## <a name="BKMK_HARD"></a>Requisitos de hardware  
+## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>Requisitos de hardware  
 Los requisitos de hardware para este escenario incluyen los siguientes:  
   
 -   Al menos dos equipos de acceso remoto que se van a recopilar en una implementación multisitio.   
@@ -88,7 +88,7 @@ Los requisitos de hardware para este escenario incluyen los siguientes:
   
 -   Para equilibrar la carga del tráfico entre servidores de punto de entrada, se requiere un equilibrador de carga global externo de terceros.  
   
-## <a name="BKMK_SOFT"></a>Requisitos de software  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>Requisitos de software  
 Los requisitos de software para este escenario son los siguientes:  
   
 -   Requisitos de software para la implementación de un solo servidor.  
@@ -117,7 +117,7 @@ Los requisitos de software para este escenario son los siguientes:
   
         -   Se requiere un GPO de cliente de Windows 7 único para cada punto de entrada habilitado para la compatibilidad con clientes de Windows 7 para cada dominio.  
   
-## <a name="KnownIssues"></a>Problemas conocidos  
+## <a name="known-issues"></a><a name="KnownIssues"></a>Problemas conocidos  
 A continuación se indican problemas conocidos al configurar un escenario de multisitio:  
   
 -   **Varios puntos de entrada en la misma subred IPv4**. La adición de varios puntos de entrada en la misma subred IPv4 producirá un mensaje de conflicto de direcciones IP y la dirección DNS64 para el punto de entrada no se configurará según lo esperado. Este problema se produce cuando IPv6 no se ha implementado en las interfaces internas de los servidores de la red corporativa. Para evitar este problema, ejecute el siguiente comando de Windows PowerShell en todos los servidores de acceso remoto actuales y futuros:  

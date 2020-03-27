@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8acc260f-d6d1-4d32-9e3a-1fd0b2a71586
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2a0f04a3ff7797d18f7647416dc99319860c7030
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8e483f5986a5a23123495e3a13440ddc57a6c521
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404516"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314041"
 ---
 # <a name="plan-a-multi-forest-deployment"></a>Planear una implementación con varios bosques
 
@@ -38,7 +38,7 @@ Al configurar Acceso remoto, se actualizan (y, a veces, crean) GPO en cada uno d
   
 Además, este administrador debe ser un administrador local en todos los servidores de Acceso remoto, incluidos los servidores de Acceso remoto del nuevo bosque que se han agregado a la implementación de Acceso remoto original como puntos de entrada.  
   
-## <a name="ClientSG"></a>Planeación de grupos de seguridad de cliente  
+## <a name="plan-client-security-groups"></a><a name="ClientSG"></a>Planeación de grupos de seguridad de cliente  
 En el nuevo bosque se debe configurar al menos un grupo de seguridad para los equipos cliente de DirectAccess que haya en dicho bosque. La razón es que un solo grupo de seguridad no puede contener cuentas de diversos bosques.  
   
 > [!NOTE]  

@@ -3,7 +3,7 @@ title: Crear el archivo Oobe.xml, incluyendo el logotipo y los términos de lice
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 8a7b3cc1-21bb-4344-8110-f5d5959b370d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5d7dac41ba6d6f73b0d3d65d3481fe45ff99a6bc
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 58d98aa84b8851e3226ebc76c86cffd574400c42
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433612"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312055"
 ---
 # <a name="create-the-oobexml-file-including-logo-and-eula"></a>Crear el archivo Oobe.xml, incluyendo el logotipo y los términos de licencia
 
@@ -31,11 +31,11 @@ Puede agregar su propio Contrato de licencia para el usuario final (CLUF) a la C
   
 1. Abra el archivo Oobe.xml en un editor de textos como el Bloc de notas.  
   
-2. En el < logopath\>< / logopath\> etiquetas, escriba la ruta de acceso absoluta al archivo de logotipo. El archivo debe contener un archivo .png (portable network graphics) de 32 bits de 240 x 100 píxeles.  
+2. En las etiquetas < logopath\></logopath\>, escriba la ruta de acceso absoluta al archivo del logotipo. El archivo debe contener un archivo .png (portable network graphics) de 32 bits de 240 x 100 píxeles.  
   
-3. En el < eulafilename\>< / eulafilename\> etiquetas, escriba la ruta de acceso absoluta al archivo del CLUF. El archivo del CLUF debe estar en formato .rtf (texto enriquecido).  
+3. En las etiquetas < eulafilename\></eulafilename\>, escriba la ruta de acceso absoluta al archivo del CLUF. El archivo del CLUF debe estar en formato .rtf (texto enriquecido).  
   
-4. En el < nombre\>< / nombre de\> etiquetas, escriba el nombre de su empresa.  
+4. En el nombre de la <\></name\> etiquetas, escriba el nombre de la empresa.  
   
     En el ejemplo siguiente se muestra el formato del archivo Oobe.xml:  
   
@@ -59,9 +59,9 @@ Puede agregar su propio Contrato de licencia para el usuario final (CLUF) a la C
   
    |Ubicación de Oobe.xml|Condición para determinar la ubicación|  
    |-----------------------|----------------------------------------|  
-   |%WINDIR%\System32\Oobe\Info\|el servidor se envía en un solo país/región y un sistema de idioma único.|  
-   |%windir%\system32\oobe\info\default\\<language\>|El servidor se envía a un solo país/región y para sistemas de varios idiomas.|  
-   |%WINDIR%\System32\Oobe\Info\\< país/región > \ y %windir%\system32\oobe\info\\< país/región >\\< idioma\>\|el servidor se envía a más de un país / región y la configuración requiere personalizaciones distintas para una base por país/región, cada uno con un solo idioma. Donde < país/región > es la versión decimal del identificador de ubicación geográfica (GeoID) del país o región donde se implementa el servidor, y < idioma\> es la versión decimal del identificador de configuración regional (LCID).|  
+   |%WINDIR%\system32\oobe\info\|el servidor se envía a un solo país o región y a un sistema de un solo idioma.|  
+   |\> de idioma de < de%WINDIR%\system32\oobe\info\default\\|El servidor se envía a un solo país/región y para sistemas de varios idiomas.|  
+   |%WINDIR%\system32\oobe\info\\< país o región > \ y%WINDIR%\system32\oobe\info\\< país o región >\\<\>\|el servidor se envía a más de un país o región y la configuración requiere personalizaciones por país y región, cada uno con un solo idioma. En < país o región > es la versión decimal del identificador de ubicación geográfica (GeoID) del país o la región donde se implementa el servidor y < idioma\> es la versión decimal del identificador de configuración regional (LCID).|  
   
    Si tiene un logotipo de empresa alternativo con texto de color blanco, puede que se visualice mejor en el flujo de instalación debido al azul del fondo.  Opcionalmente puede especificar este logotipo configurando una clave del Registro y un valor.  
   
@@ -71,9 +71,9 @@ Puede agregar su propio Contrato de licencia para el usuario final (CLUF) a la C
   
 2.  En el cuadro de búsqueda, escriba **regedit** y después haga clic en la aplicación Regedit.  
   
-3.  En el panel de navegación, vaya a  **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, **Microsoft**y, finalmente, **Windows Server**. Si la clave del OEM no existe, créela de la manera siguiente:  
+3.  En el panel de navegación, vaya a  **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, **Microsoft** y, finalmente, **Windows Server**. Si la clave del OEM no existe, créela de la manera siguiente:  
   
-    1.  Haga clic con el botón secundario en **Windows Server**, en **Nuevo**y, a continuación, en **Clave**.  
+    1.  Haga clic con el botón secundario en **Windows Server**, en **Nuevo** y, a continuación, en **Clave**.  
   
     2.  Como nombre de clave, escriba **OEM**.  
   
@@ -87,9 +87,9 @@ Puede agregar su propio Contrato de licencia para el usuario final (CLUF) a la C
   
 8.  Escriba la ruta de acceso que contiene la imagen del logotipo y, a continuación, haga clic en Aceptar.  
   
-## <a name="see-also"></a>Vea también  
- [Introducción al ADK de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+## <a name="see-also"></a>Consulta también  
+ [Introducción con el ADK de Windows Server essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

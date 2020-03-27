@@ -3,7 +3,7 @@ title: Mover la configuración y los datos al servidor de destino para la migrac
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 2b882e87-347a-4010-b7fd-9599d61198dd
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8e173de32230a219bec99586e1b5b533bbe84b73
-ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
+ms.openlocfilehash: 4f4ba08c17429f70ef754b0861553e38ba116e5d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826979"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318838"
 ---
 # <a name="move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover la configuración y los datos al servidor de destino para la migración a Windows Server Essentials
 
@@ -29,7 +29,7 @@ Para mover la configuración y los datos al servidor de destino, haga lo siguien
 
 2. [Configurar la red](#configure-the-network) 
 
-3. [Asignar los equipos permitidos a cuentas de usuario](#map-permitted-computers-to-user-accounts)
+3. [Asignar equipos permitidos a cuentas de usuario](#map-permitted-computers-to-user-accounts)
  
 ## <a name="copy-data-to-the-destination-server"></a>Copiar los datos en el servidor de destino
  Antes de copiar los datos del servidor de origen en el servidor de destino, realice las siguientes tareas: 
@@ -51,8 +51,8 @@ Para mover la configuración y los datos al servidor de destino, haga lo siguien
  Donde:
  - \<Nombreservidororigen\> es el nombre del servidor de origen
  - \<Nombredecarpetadeorigencompartida\> es el nombre de la carpeta compartida en el servidor de origen
- - \<NombreDeServidorDeDestino\> es el nombre del servidor de destino,
- - \<Nombredecarpetadedestinocompartida\> es la carpeta compartida del servidor de destino al que se copiarán los datos. 
+ - \<Nombreservidordestino\> es el nombre del servidor de destino.
+ - \<Nombredecarpetadedestinocompartida\> es la carpeta compartida en el servidor de destino en la que se copiarán los datos. 
  
 3. Repita el paso anterior para cada carpeta compartida que vaya a migrar desde el servidor de origen. 
  
@@ -69,9 +69,9 @@ Para mover la configuración y los datos al servidor de destino, haga lo siguien
  
  Si el enrutador no es compatible con el entorno UPnP, o si este se ha deshabilitado, puede aparecer un icono de advertencia amarillo junto al nombre del enrutador. Asegúrese de que los puertos siguientes están abiertos y dirigidos a la dirección IP del servidor de destino: 
  
-- Puerto 80: Tráfico web HTTP 
+- Puerto 80: tráfico web HTTP 
  
-- Puerto 443: Tráfico web HTTPS 
+- Puerto 443: tráfico web HTTPS 
  
 ## <a name="map-permitted-computers-to-user-accounts"></a>Asignar los equipos permitidos a cuentas de usuario
  Cada cuenta de usuario que se migra desde el servidor de origen debe asignarse a uno o más equipos. 

@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 04fdfa54-6600-43d4-8945-35f75e15275a
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4b8f10ab7b3da05fbefabb735ee2b8bb4ef1cb8a
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 36c30372b6cac40b603658eca9636a265801fb1a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781352"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315441"
 ---
 # <a name="manage-qos-policy"></a>Administrar la directiva QoS
 
@@ -32,7 +32,7 @@ En los sistemas operativos Windows, la directiva QoS combina la funcionalidad de
 
 -  [Ver, editar o eliminar una directiva de QoS](#bkmk_editpolicy)
 
-##  <a name="bkmk_createpolicy"></a>Crear una directiva de QoS
+##  <a name="create-a-qos-policy"></a><a name="bkmk_createpolicy"></a>Crear una directiva de QoS
 
 Antes de crear una directiva de QoS, es importante que comprenda los dos controles clave de QoS que se usan para administrar el tráfico de red:
 
@@ -49,32 +49,32 @@ Tal y como se describe en RFC 2474, DSCP permite especificar valores de 0 a 63 e
 > [!NOTE]
 >  De forma predeterminada, el tráfico de Windows tiene un valor de DSCP de 0.
   
-El número de colas y su comportamiento de asignación de prioridades deben diseñarse como parte de la estrategia de QoS de la organización. Por ejemplo, su organización puede elegir tener cinco colas: tráfico sensible a la latencia, tráfico de control, tráfico crítico para la empresa, tráfico de mejor esfuerzo y tráfico de transferencia de datos masivos.  
+El número de colas y su prioridad debe diseñarse como parte de la estrategia de QoS de la organización. Por ejemplo, su organización puede elegir tener cinco colas: tráfico sensible a la latencia, tráfico de control, tráfico crítico para la empresa, tráfico de mejor esfuerzo y tráfico de transferencia de datos masivos.  
   
-### <a name="throttling-traffic"></a>Limitar el tráfico
+### <a name="throttling-traffic"></a>Limitación del tráfico
 
-Junto con los valores de DSCP, la limitación es otro control clave para administrar el ancho de banda de red. Como se mencionó anteriormente, puede usar la opción **especificar velocidad del acelerador** para configurar una directiva de QoS con una velocidad de limitación específica para el tráfico de salida. Mediante el uso de la limitación, una directiva de QoS limita el tráfico de red saliente a una velocidad de limitación especificada. Tanto el límite como el marcado de DSCP se pueden utilizar en conjunto para administrar el tráfico de manera eficaz.
+Junto con los valores de DSCP, la limitación es otro control clave para administrar el ancho de banda de red. Como se mencionó anteriormente, puede usar la opción **especificar velocidad del acelerador** para configurar una directiva de QoS con una velocidad de limitación específica para el tráfico de salida. Mediante el uso de la limitación, una directiva de QoS limita el tráfico de red saliente a una velocidad de limitación especificada. Tanto la limitación como el marcado de DSCP pueden usarse conjuntamente para administrar el tráfico de forma eficaz.
 
 >[!NOTE]
 >De forma predeterminada, la casilla **Especificar velocidad del acelerador** no está activada.
 
 Para crear una directiva de QoS, edite la configuración de un objeto de directiva de grupo (GPO) desde la herramienta Consola de administración de directivas de grupo (GPMC). Después, GPMC abre el Editor de objetos de directiva de grupo.
 
-Los nombres de las directivas QoS deben ser exclusivos. La forma en que se aplican las directivas a los servidores y los usuarios finales depende de dónde se almacena la Directiva de QoS en el Editor de objetos de directiva de grupo:
+Los nombres de directiva de QoS deben ser únicos. La forma en que se aplican las directivas a los servidores y los usuarios finales depende de dónde se almacena la Directiva de QoS en el Editor de objetos de directiva de grupo:
 
-- Una directiva de QoS de la Directiva de Settings\QoS de equipo \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Por lo general, se utilizan directivas Qos basadas en equipos para los equipos de servidores.
+- Una directiva QoS ubicada en Configuración del equipo\Configuración de Windows\QoS basada en directivas se aplica a equipos, independientemente del usuario que tenga iniciada la sesión actualmente. Normalmente, las directivas de QoS basadas en equipo se usan para equipos servidor.
 
-- Una directiva de QoS de la Directiva de Settings\QoS de usuario \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+- Una directiva QoS ubicada en Configuración de usuario\Configuración de Windows\QoS basada en directivas se aplica a los usuarios después de que iniciaron sesión, independientemente del equipo en el que iniciaron sesión.
 
 #### <a name="to-create-a-new-qos-policy-with-the-qos-policy-wizard"></a>Para crear una nueva Directiva de QoS con el Asistente para directivas de QoS
 
 -   En Editor de objetos de directiva de grupo, haga clic con el botón secundario en cualquiera de los nodos de la **Directiva de QoS** y, a continuación, haga clic en **crear una nueva Directiva**.
 
-### <a name="wizard-page-1---policy-profile"></a>Asistente Página 1-Perfil de Directiva
+### <a name="wizard-page-1---policy-profile"></a>Asistente (página 1): Perfil de directiva
 
 En la primera página del Asistente para directivas de QoS, puede especificar un nombre de directiva y configurar el modo en que QoS controla el tráfico de red saliente.
 
-#### <a name="to-configure-the-policy-profile-page-of-the-qos-based-policy-wizard"></a>Para configurar la página Perfil de directiva del Asistente para directiva basada en QoS
+#### <a name="to-configure-the-policy-profile-page-of-the-qos-based-policy-wizard"></a>Para configurar la página Perfil de directiva del asistente para QoS basada en directiva
 
 1. En **Nombre de directiva**, escriba un nombre para la directiva QoS. El nombre debe identificar de forma única la Directiva.
 
@@ -82,9 +82,9 @@ En la primera página del Asistente para directivas de QoS, puede especificar un
 
 3. De forma opcional, use **Especificar velocidad del acelerador** para habilitar el límite de tráfico y configurar la velocidad del acelerador. El valor de velocidad del acelerador debe ser mayor que 1 y puede especificar unidades de kilobytes por segundo \(KBps\) o megabytes por segundo \(MBps\).
 
-4. Haz clic en **Siguiente**.
+4. Haga clic en **Siguiente**.
 
-### <a name="wizard-page-2---application-name"></a>Asistente (Página 2): nombre de la aplicación
+### <a name="wizard-page-2---application-name"></a>Asistente (página 2): Nombre de la aplicación
 
 En la segunda página del Asistente para directivas de QoS puede aplicar la Directiva a todas las aplicaciones, a una aplicación específica, identificada por su nombre de archivo ejecutable, a una ruta de acceso y un nombre de aplicación, o a las aplicaciones de servidor HTTP que controlan las solicitudes de una dirección URL específica.
 
@@ -94,7 +94,7 @@ En la segunda página del Asistente para directivas de QoS puede aplicar la Dire
 
 - **Solo las aplicaciones de servidor HTTP que responden a las solicitudes de esta dirección URL** especifican que la configuración de administración de tráfico de la primera página del Asistente para directivas de QoS se aplique solo a determinadas aplicaciones de servidor http.
 
-Opcionalmente, puede especificar la ruta de acceso de la aplicación. Para especificar la ruta de acceso de una aplicación, incluya la ruta de acceso con el nombre de la aplicación. La ruta de acceso puede incluir variables de entorno. Por ejemplo, %ProgramFiles%\ruta de acceso de aplicación\MyApp.exe, o c:\archivos de programa\ruta de acceso de aplicación\myapp.exe.
+Opcionalmente, puede especificar la ruta de acceso de la aplicación. Para especificar una ruta de acceso de aplicación, incluya la ruta con el nombre de la aplicación. La ruta de acceso puede incluir variables de entorno. Por ejemplo, %ProgramFiles%\ruta de acceso de aplicación\MyApp.exe, o c:\archivos de programa\ruta de acceso de aplicación\myapp.exe.
 
 >[!NOTE]
 >La ruta de acceso de la aplicación no puede incluir una ruta de acceso que se resuelva como un vínculo simbólico.
@@ -111,13 +111,13 @@ Opcionalmente, puede activar **incluir subdirectorios y archivos** para realizar
 
 2. Si selecciona **Sólo las aplicaciones con el siguiente nombre de archivo ejecutable**, especifique un archivo ejecutable que termine con la extensión de nombre de archivo .exe.
 
-3. Haz clic en **Siguiente**.
+3. Haga clic en **Siguiente**.
 
-### <a name="wizard-page-3---ip-addresses"></a>Asistente página 3-direcciones IP
+### <a name="wizard-page-3---ip-addresses"></a>Asistente (página 3): Direcciones IP
 
 En la tercera página del Asistente para directivas de QoS puede especificar las condiciones de dirección IP de la Directiva de QoS, incluidas las siguientes:
 
-- Todas las direcciones IPv4 o IPv6 de origen o direcciones IPv4 o IPv6 de orígenes específicos
+- Todas las direcciones IPv4 o IPv6 de origen (o las especificadas)
 
 - Todas las direcciones IPv4 o IPv6 de destino o direcciones IPv4 o IPv6 de destino específicas
 
@@ -147,11 +147,11 @@ Esto es así porque la dirección IP de origen es la dirección del servidor HTT
 
 4. Si seleccionó **sólo para la siguiente dirección IP de destino**, especifique una dirección o un prefijo IPv4 o IPv6 que se corresponda con el tipo de dirección o prefijo especificado para la dirección de origen.
 
-5.  Haz clic en **Siguiente**.  
+5.  Haga clic en **Siguiente**.  
 
-### <a name="wizard-page-4---protocols-and-ports"></a>Asistente página 4: protocolos y puertos
+### <a name="wizard-page-4---protocols-and-ports"></a>Asistente (página 4): Protocolos y puertos
 
-En la cuarta página del Asistente para directivas de QoS, puede especificar los tipos de tráfico y los puertos que se controlan mediante la configuración de la primera página del asistente. Se puede especificar:  
+En la cuarta página del Asistente para directivas de QoS, puede especificar los tipos de tráfico y los puertos que se controlan mediante la configuración de la primera página del asistente. Puede especificar:  
 -   Tráfico TCP, tráfico UDP o ambos  
 
 -   Todos los puertos de origen, un intervalo de puertos de origen o un puerto de origen específico
@@ -172,29 +172,29 @@ En la cuarta página del Asistente para directivas de QoS, puede especificar los
 
 5. Si seleccionó **A este intervalo o número de puerto de destino** en el paso anterior, escriba un número de puerto entre 1 y 65535.
 
-Para completar la creación de la nueva Directiva de QoS, haga clic en **Finalizar** en la página **protocolos y puertos** del Asistente para directivas de QoS. Una vez finalizada, la nueva Directiva de QoS se muestra en el panel de detalles del Editor de objetos de directiva de grupo.  
+Para completar la creación de la nueva Directiva de QoS, haga clic en **Finalizar** en la página **protocolos y puertos** del Asistente para directivas de QoS. Una vez finalizada, la nueva directiva de QoS se muestra en el panel de detalles del Editor de objetos de directiva de grupo.  
   
 Para aplicar la configuración de la Directiva de QoS a usuarios o equipos, vincule el GPO en el que se encuentran las directivas de QoS a un contenedor Active Directory Domain Services, como un dominio, un sitio o una unidad organizativa (OU).  
   
-##  <a name="bkmk_editpolicy"></a>Ver, editar o eliminar una directiva de QoS
+##  <a name="view-edit-or-delete-a-qos-policy"></a><a name="bkmk_editpolicy"></a>Ver, editar o eliminar una directiva de QoS
 
 Las páginas del Asistente para directivas de QoS descritas anteriormente corresponden a las páginas de propiedades que se muestran al ver o editar las propiedades de una directiva.  
   
-### <a name="to-view-the-properties-of-a-qos-policy"></a>Para visualizar las propiedades de una directiva QoS  
+### <a name="to-view-the-properties-of-a-qos-policy"></a>Para ver las propiedades de una directiva de QoS  
   
 -   Haga clic con el botón secundario en el nombre de la Directiva en el panel de detalles del Editor de objetos de directiva de grupo y, a continuación, haga clic en **propiedades**.  
   
-     En el Editor de objetos de directiva de grupo se muestra la página de propiedades con las siguientes pestañas:  
+     El Editor de objetos de directiva de grupo muestra la página de propiedades con las fichas siguientes:  
   
     -   Perfil de directiva  
   
-    -   Nombre de la aplicación  
+    -   Nombre de aplicación  
   
     -   Direcciones IP  
   
     -   Protocolos y puertos  
   
-### <a name="to-edit-a-qos-policy"></a>Para editar una directiva QoS  
+### <a name="to-edit-a-qos-policy"></a>Para editar una directiva de QoS  
   
 -   Haga clic con el botón secundario en el nombre de la Directiva en el panel de detalles del Editor de objetos de directiva de grupo y, a continuación, haga clic en **Editar directiva existente**.  
   
@@ -291,7 +291,7 @@ La [Alianza Wi-Fi](https://go.microsoft.com/fwlink/?LinkId=160769) ha establecid
 
 Puede crear directivas de QoS que usen estos valores de DSCP para asegurarse de que los equipos portátiles con certificados Wi\-Fi™ para los adaptadores inalámbricos de WMM reciban un control de prioridades cuando estén asociados a Wi\-fi Certified for WMM Access Points.
   
-### <a name="BKMK_precedencerules"></a>Reglas de prioridad de la directiva QoS
+### <a name="qos-policy-precedence-rules"></a><a name="BKMK_precedencerules"></a>Reglas de prioridad de la directiva QoS
 
 De forma similar a las prioridades de los GPO, las directivas de QoS tienen reglas de prioridad para resolver conflictos cuando se aplican varias directivas de QoS a un conjunto específico de tráfico. En el tráfico TCP o UDP saliente, solo se puede aplicar una directiva de QoS a la vez, lo que significa que las directivas QoS no tienen un efecto acumulativo, como cuando se suman las tasas de limitación.
 

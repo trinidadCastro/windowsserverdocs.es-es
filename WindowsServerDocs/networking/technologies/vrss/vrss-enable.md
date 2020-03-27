@@ -8,14 +8,14 @@ ms.assetid: cb48315c-0204-4927-aa24-64f6789c2e20
 manager: dougkim
 ms.localizationpriority: medium
 ms.date: 09/05/2018
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8f2886f01e4835cf2edb86fcae0a1fe77bc03d25
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e4be9060da4a738e3ad8e4976d037f3a05467da3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405254"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315372"
 ---
 # <a name="enable-vrss-on-a-virtual-network-adapter"></a>Habilitar vRSS en un adaptador de Virtual Network
 
@@ -53,7 +53,7 @@ Puede usar este procedimiento para habilitar vRSS mediante Device Manager.
 
 7.  Asegúrese de que la selección de **valor** está **habilitada**. 
 
-8.  Haz clic en **Aceptar**.
+8.  Haga clic en **Aceptar**.
   
 > [!NOTE]
 > En la pestaña **Opciones avanzadas** , algunos adaptadores de red también muestran el número de colas RSS que admite el adaptador.

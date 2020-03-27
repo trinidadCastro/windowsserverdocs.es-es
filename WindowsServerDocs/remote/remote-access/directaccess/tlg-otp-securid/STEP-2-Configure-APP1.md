@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 19a7a4a6-9a04-42ea-a5d0-ecb28a34dbaa
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ea96a30caeedc188a5a41c097a5c8a90e2b5dbc7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dbeba9f1646cfb13d709cb4f7987802f69708adb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388215"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314424"
 ---
 # <a name="step-2-configure-app1"></a>Paso 2 configurar APP1
 
@@ -32,7 +32,7 @@ Siga estos pasos para preparar APP1 para la compatibilidad con OTP:
 > [!WARNING]  
 > El diseño de esta guía del laboratorio de pruebas incluye servidores de infraestructura, como un controlador de dominio y una entidad de certificación (CA) que ejecutan Windows Server 2012 R2 o Windows Server 2012. El uso de esta guía del laboratorio de pruebas para configurar los servidores de infraestructura que ejecutan otros sistemas operativos no se ha probado y las instrucciones para configurar otros sistemas operativos no se incluyen en esta guía.  
   
-## <a name="DAOTPRA"></a>Para crear e implementar una plantilla de certificado usada para firmar solicitudes de certificados OTP  
+## <a name="to-create-and-deploy-a-certificate-template-used-to-sign-otp-certificate-requests"></a><a name="DAOTPRA"></a>Para crear e implementar una plantilla de certificado usada para firmar solicitudes de certificados OTP  
   
 1.  Ejecute **certtmpl. msc**y, a continuación, presione Entrar.  
   
@@ -52,7 +52,7 @@ Siga estos pasos para preparar APP1 para la compatibilidad con OTP:
   
 9. Haga clic en la pestaña **extensiones** , seleccione **directivas de aplicación** y, a continuación, haga clic en **Editar**. Quite todas las directivas de aplicación existentes. Haga clic en **Agregar**y, en el cuadro de diálogo **Agregar Directiva de aplicación** , haga clic en **nuevo**, escriba **da OTP RA** en el campo **nombre:** y **1.3.6.1.4.1.311.81.1.1** en el campo **identificador de objeto:** y haga clic en **Aceptar**. En el cuadro de diálogo **Agregar Directiva de aplicación** , haga clic en **Aceptar**. En la **extensión editar directivas de aplicación**, haga clic en **Aceptar**. En el cuadro **de diálogo Propiedades de plantilla nueva** , haga clic en **Aceptar**.  
   
-## <a name="DAOTPLogon"></a>Para crear e implementar una plantilla de certificado para certificados OTP emitidos por la entidad de certificación corporativa  
+## <a name="to-create-and-deploy-a-certificate-template-for-otp-certificates-issued-by-the-corporate-ca"></a><a name="DAOTPLogon"></a>Para crear e implementar una plantilla de certificado para certificados OTP emitidos por la entidad de certificación corporativa  
   
 1.  En la consola de plantillas de certificado, en el panel de detalles, haga clic con el botón secundario en la plantilla de **Inicio de sesión de tarjeta inteligente** y haga clic en **plantilla duplicada**.  
   
@@ -65,19 +65,19 @@ Siga estos pasos para preparar APP1 para la compatibilidad con OTP:
     > [!IMPORTANT]  
     > **CA de Windows Server 2003**. En situaciones en las que la entidad de certificación (CA) se encuentra en un equipo que ejecuta Windows Server 2003, la plantilla de certificado debe configurarse en un equipo diferente. Esto es necesario porque no es posible establecer el **período de validez** en horas cuando se ejecutan versiones de Windows anteriores a windows Server 2008 y Windows Vista. Si el equipo que utiliza para configurar la plantilla no tiene instalado el rol de servidor de servicios de Certificate Server de Active Directory o si es un equipo cliente, es posible que tenga que instalar el complemento plantillas de certificado. Para obtener más información, vea [instalar el complemento plantillas de certificado](https://technet.microsoft.com/library/cc732445.aspx).  
     >   
-    > **CA de Windows Server 2008 R2**. Si ya ha implementado una entidad de certificación (CA) que ejecuta Windows Server 2008 R2, debe configurar el **período de renovación** de la plantilla de certificado en 1 o 2 horas y el **período de validez** será mayor que el período de **renovación**. pero no más de 4 horas. Si configura un **período de validez** de plantilla de certificado de más de 4 horas con una CA que ejecuta Windows Server 2008 R2, el Asistente para la instalación de DirectAccess no puede detectar la plantilla de certificado y se produce un error en la instalación de DirectAccess.  
+    > **CA de Windows Server 2008 R2**. Si ya ha implementado una entidad de certificación (CA) que ejecuta Windows Server 2008 R2, debe configurar el **período de renovación** de la plantilla de certificado en 1 o 2 horas y el **período de validez** será mayor que el período de **renovación**, pero no más de 4 horas. Si configura un **período de validez** de plantilla de certificado de más de 4 horas con una CA que ejecuta Windows Server 2008 R2, el Asistente para la instalación de DirectAccess no puede detectar la plantilla de certificado y se produce un error en la instalación de DirectAccess.  
   
 5.  Haga clic en la pestaña **seguridad** , seleccione **usuarios autenticados**, en la columna **permitir** y active las casillas **leer** e **inscribir** . Haga clic en **Aceptar**. Haga clic en **Admins** . del dominio y **administradores de organización**y haga clic en **control total** en la columna **permitir** para ambos. Haga clic en **Aplicar**.  
   
 6.  Haga clic en la pestaña **nombre de sujeto** y, a continuación, haga clic en **compilar a partir de esta información Active Directory**. En la lista **formato de nombre de sujeto:** seleccione **nombre**completo, asegúrese de que el cuadro **nombre principal de usuario (UPN)** está activado y haga clic en **aplicar**.  
   
-7.  Haga clic en la pestaña **servidor** , active la casilla no **almacenar certificados y solicitudes en la base de datos de CA** , desactive la casilla no **incluir información de revocación en los certificados emitidos** y, a continuación, en las **propiedades de plantilla nueva** , haga clic en **aplicar**.  
+7.  Haga clic en la pestaña **servidor** , active la casilla no **almacenar certificados y solicitudes en la base de datos de CA** , desactive la casilla no **incluir información de revocación en los certificados emitidos** y, a continuación, en el cuadro **de diálogo Propiedades de plantilla nueva** , haga clic en **aplicar**.  
   
 8.  Haga clic en la pestaña **requisitos de emisión** , active la casilla **este número de firmas autorizadas:** , establezca el valor en 1. En el **tipo de directiva necesario en firma:** lista, seleccione **Directiva de aplicación**y, en la lista **Directiva de aplicación** , seleccione **da OTP RA**. En el cuadro **de diálogo Propiedades de plantilla nueva** , haga clic en **Aceptar**.  
   
 9. Haga clic en la pestaña **extensiones** y, en **directivas de aplicación** , haga clic en **Editar**. Elimine la **autenticación del cliente**, mantenga **iniciosesióntarjetainteligente marcando**y haga clic en **Aceptar** dos veces.  
   
-10. Cierra la Consola de plantillas de certificado.  
+10. Cierre la Consola de plantillas de certificado.  
   
 11. En la pantalla **Inicio** , escriba**CertSrv. msc**y, a continuación, presione Entrar.  
   
@@ -85,13 +85,13 @@ Siga estos pasos para preparar APP1 para la compatibilidad con OTP:
   
 13. En la lista de plantillas de certificado, haga clic en **DAOTPRA** y **DAOTPLogon**y, a continuación, haga clic en **Aceptar**.  
   
-14. En el panel de detalles de la consola de, debería ver la plantilla de certificado **DAOTPRA** con un **propósito planteado** de **das OTP RA** y la plantilla de certificado **DAOTPLogon** con un **propósito planteado** de **Inicio de sesión de tarjeta inteligente** . .  
+14. En el panel de detalles de la consola de, debería ver la plantilla de certificado **DAOTPRA** con un **propósito planteado** de **das OTP RA** y la plantilla de certificado **DAOTPLogon** con un **propósito planteado** de **Inicio de sesión de tarjeta inteligente**.  
   
 15. Reinicie los servicios.  
   
-16. Cierre la consola de entidad de certificación.  
+16. Cierre la consola Entidad de certificación.  
   
-17. Abre un símbolo del sistema con privilegios elevados. Escriba **certutil. exe-SetReg DBFlags + DBFLAGS_ENABLEVOLATILEREQUESTS**y presione Entrar.  
+17. Abra un símbolo del sistema con privilegios elevados. Escriba **certutil. exe-SetReg DBFlags + DBFLAGS_ENABLEVOLATILEREQUESTS**y presione Entrar.  
   
 18. Deje abierta la ventana del símbolo del sistema para el siguiente paso.  
   

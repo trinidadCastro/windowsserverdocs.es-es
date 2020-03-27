@@ -3,7 +3,7 @@ title: Versión hospedada de Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: fda5628c-ad23-49de-8d94-430a4f253802
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 84464c69d4b8576906e5fb0d0a7de7e382a59537
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 76319f87a246c6fabbe0befaf7dc4c74d1416ac4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947507"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311755"
 ---
 # <a name="hosted-windows-server-essentials"></a>Versión hospedada de Windows Server Essentials
 
@@ -57,10 +57,10 @@ En este documento se incluye información específica de los proveedores de serv
   
    Si está utilizando Virtual Machine Manager, puede crear una plantilla mediante la instancia en ejecución. Al crear una plantilla, la instancia se preparará para el sistema y se apagará el servidor. Después de almacenarla en su biblioteca, puede utilizar la instancia caso por caso.  
   
-##  <a name="BKMK_automatedeployment"></a>Cómo automatizar la implementación  
+##  <a name="how-do-i-automate-the-deployment"></a><a name="BKMK_automatedeployment"></a>Cómo automatizar la implementación  
  Después de obtener la imagen personalizada, puede realizar la implementación con su propia imagen. Para realizar una instalación semidesatendida, deberá proporcionar o implementar el archivo unattend.xml para la instalación de WinPE. Para realizar una instalación completamente desatendida, también debe proporcionar el archivo CFG. ini para la configuración inicial de Windows Server Essentials.  
   
-1. Realice únicamente la instalación desatendida de WinPE. De esta manera se automatizará solamente la instalación de WinPE, y permitirá que la instalación se detenga antes de la configuración inicial de modo que los usuarios finales puedan proporcionar por sí mismos información sobre la corporación, el dominio y el administrador después de RDP en la sesión de servidor. Para ello:  
+1. Realice únicamente la instalación desatendida de WinPE. De esta manera se automatizará solamente la instalación de WinPE, y permitirá que la instalación se detenga antes de la configuración inicial de modo que los usuarios finales puedan proporcionar por sí mismos información sobre la corporación, el dominio y el administrador después de RDP en la sesión de servidor. Para hacerlo:  
   
    1.  Proporcione el archivo unattend.xml de Windows. Siga el [Windows 8.1 ADK](https://go.microsoft.com/fwlink/?LinkId=248694) para generar el archivo y proporcione toda la información necesaria, como el nombre del servidor, las claves de producto y la contraseña de administrador. En la sección Microsoft-Windows-Setup del archivo Unattend. XML, proporcione la información que aparece a continuación.  
   
@@ -84,7 +84,7 @@ En este documento se incluye información específica de los proveedores de serv
   
    Si va a utilizar Virtual Machine Manager, puede especificar la contraseña del administrador en la consola cuando cree una nueva instancia a partir de la plantilla.  
   
-2. Realice la instalación desatendida completa, incluida la configuración inicial desatendida. Para ello:  
+2. Realice la instalación desatendida completa, incluida la configuración inicial desatendida. Para hacerlo:  
   
    1.  Proporcione el archivo unattend.xml como hizo anteriormente, si la implementación se inicia a partir de la instalación de WinPE.  
   
@@ -203,7 +203,7 @@ En este documento se incluye información específica de los proveedores de serv
 Enable-WssRemoteWebAccess [-SkipRouter] [-DenyAccessByDefault] [-ApplyToExistingUsers]  
 ```  
   
- Por ejemplo:  
+ Ejemplo:  
   
 ```  
 $Enable-WssRemoteWebAccess  œDenyAccessByDefault  œApplyToExistingUsers  
@@ -217,7 +217,7 @@ $Enable-WssRemoteWebAccess  œDenyAccessByDefault  œApplyToExistingUsers
 Add-WssUser [-Name] <string> [-Password] <securestring> [-AccessLevel <string> {User | Administrator}] [-FirstName <string>] [-LastName <string>] [-AllowRemoteAccess] [-AllowVpnAccess]   [<CommonParameters>]  
 ```  
   
- Por ejemplo:  
+ Ejemplo:  
   
 ```  
 $password = ConvertTo-SecureString "Passw0rd!" -asplaintext  œforce  
@@ -228,7 +228,7 @@ $Add-WssUser -Name User2Test -Password $password -Accesslevel Administrator -Fir
   
  **Habilitar o deshabilitar el usuario**  
   
- Por ejemplo:  
+ Ejemplo:  
   
 ```  
 $CurrentUser = get-wssuser  œname user2test  
@@ -244,7 +244,7 @@ $CurrentUser.Commit()
 Add-WssFolder [-Name] <string> [-Path] <string> [[-Description] <string>] [-KeepPermissions] [<CommonParameters>]  
 ```  
   
- Por ejemplo:  
+ Ejemplo:  
   
 ```  
 $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"  
@@ -310,7 +310,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
 - Si tiene otro mecanismo para realizar una copia de seguridad de la máquina virtual de Windows Server Essentials y no desea que el usuario vea la característica de copia de seguridad del servidor nativa de Windows Server Essentials, puede desactivarla y quitar todas las interfaces de usuario relacionadas de Windows Server Essentials. Consola. Para obtener más información, consulte la sección personalizar la copia de seguridad del servidor del [documento de ADK](https://go.microsoft.com/fwlink/p/?LinkID=249124).  
   
-  La**copia de seguridad no local** le permite realizar copia de seguridad periódica de los datos del servidor en un servicio de nube. Puede descargar e instalar el módulo de integración de Microsoft Azure Backup para Windows Server Essentials para aprovechar las Azure Backup proporcionadas por Microsoft.  
+  La **copia de seguridad no local** le permite realizar copia de seguridad periódica de los datos del servidor en un servicio de nube. Puede descargar e instalar el módulo de integración de Microsoft Azure Backup para Windows Server Essentials para aprovechar las Azure Backup proporcionadas por Microsoft.  
   
   Si usted o sus usuarios prefieren otro servicio de nube, debe:  
   
@@ -340,7 +340,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
   El **historial de archivos** es una característica Windows 8.1 para la copia de seguridad de datos de perfil (bibliotecas, escritorio, contactos, favoritos) en un recurso compartido de red. En Windows Server Essentials, se permite la administración central de la configuración del historial de archivos de todos los clientes de Windows 8.1 Unidos a Windows Server Essentials. Los datos de la copia de seguridad se almacenan en el servidor que ejecuta Windows Server Essentials. Puede desactivar esta característica siguiendo los pasos descritos en la sección creación del archivo CFG. ini del documento de [ADK](https://technet.microsoft.com/library/jj200150).  
   
-### <a name="storage-management"></a>Administración de almacenamiento  
+### <a name="storage-management"></a>Administración del almacenamiento  
  La [nueva característica Espacios de almacenamiento](https://technet.microsoft.com/library/hh831739.aspx) le permite agregar la capacidad de almacenamiento físico de unidades de disco duro separadas, agregar unidades de disco duro de forma dinámica y crear volúmenes de datos con niveles especificados de resistencia. También puede conectar un disco iSCSI a Windows Server Essentials para expandir su almacenamiento.  
   
 ## <a name="what-are-the-main-scenarios-i-should-test"></a>¿Cuáles son los principales escenarios que se deben probar?  
@@ -401,7 +401,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 ## <a name="where-can-i-get-more-support"></a>¿Dónde se puede obtener más ayuda?  
  Puede obtener los documentos de SDK y ADK desde los siguientes vínculos:  
   
-- [SDK](https://go.microsoft.com/fwlink/p/?LinkID=248648)  
+- [SKD](https://go.microsoft.com/fwlink/p/?LinkID=248648)  
   
 - [ADK](https://go.microsoft.com/fwlink/p/?LinkID=249124)  
   

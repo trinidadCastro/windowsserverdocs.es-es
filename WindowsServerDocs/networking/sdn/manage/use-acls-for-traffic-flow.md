@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a7ac5af-85e9-4440-a631-6a3a38e9015d
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/27/2018
-ms.openlocfilehash: 6a1d210d25309be322359add20da4eb8d0eee091
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f18ad9ddb0ea1a7575f6fcb26189f36f818ada2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355810"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317482"
 ---
 # <a name="use-access-control-lists-acls-to-manage-datacenter-network-traffic-flow"></a>Usar listas de control de acceso (ACL) para administrar el flujo de tráfico de red del centro de recursos
 
@@ -35,14 +35,14 @@ Una vez que implemente SDN, debe probar la conectividad de red básica en el nue
 Use las entradas de la tabla siguiente para crear un conjunto de reglas que permitan todo el tráfico de red entrante y saliente.
 
 
-| IP de origen | IP de destino | Protocol | Puerto de origen | Puerto de destino | Direction | . | Prioridad |
+| IP de origen | IP de destino | Protocolo | Puerto de origen | Puerto de destino | Direction | Acción | Priority |
 |:---------:|:--------------:|:--------:|:-----------:|:----------------:|:---------:|:------:|:--------:|
 |    \*     |       \*       |   Todos    |     \*      |        \*        |  Entrante  | Permitir  |   100    |
 |    \*     |       \*       |   Todos    |     \*      |        \*        | Saliente  | Permitir  |   110    |
 
 ---       
 
-### <a name="example-create-an-acl"></a>Ejemplo: Crear una ACL 
+### <a name="example-create-an-acl"></a>Ejemplo: crear una ACL 
 En este ejemplo, creará una ACL con dos reglas:
 
 1. **AllowAll_Inbound** : permite que todo el tráfico de red pase a la interfaz de red donde está configurada esta ACL.    
@@ -90,7 +90,7 @@ New-NetworkControllerAccessControlList -ResourceId "AllowAll" -Properties $aclli
 En este ejemplo, creará una ACL que impide que las máquinas virtuales de la subred 192.168.0.0/24 se comuniquen entre sí. Este tipo de ACL es útil para limitar la posibilidad de que un atacante se extienda posteriormente dentro de la subred, a la vez que permite que las máquinas virtuales reciban solicitudes desde fuera de la subred, así como para comunicarse con otros servicios en otras subredes.   
 
 
-|   IP de origen    | IP de destino | Protocol | Puerto de origen | Puerto de destino | Direction | . | Prioridad |
+|   IP de origen    | IP de destino | Protocolo | Puerto de origen | Puerto de destino | Direction | Acción | Priority |
 |:--------------:|:--------------:|:--------:|:-----------:|:----------------:|:---------:|:------:|:--------:|
 |  192.168.0.1   |       \*       |   Todos    |     \*      |        \*        |  Entrante  | Permitir  |   100    |
 |       \*       |  192.168.0.1   |   Todos    |     \*      |        \*        | Saliente  | Permitir  |   101    |

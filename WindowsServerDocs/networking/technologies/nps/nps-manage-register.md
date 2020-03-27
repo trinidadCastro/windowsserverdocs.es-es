@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 2de954fd-a7d8-4cc6-85b1-b0c3c06f788f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6b72624f5817d2da5d2fb4e8622883e1ef4559cb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 63d630250b0b24937a3dfc01bcba7ec63faa3c3e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396176"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315965"
 ---
 # <a name="register-an-nps-in-an-active-directory-domain"></a>Registrar un NPS en un dominio de Active Directory
 
@@ -61,7 +61,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 1. Abra el símbolo del sistema o Windows PowerShell. 
 
-2. Escriba lo siguiente en el símbolo del sistema: **netsh NPS Add registeredserver** &nbsp;*Domain* &nbsp;*Server*y, a continuación, presione Entrar.
+2. Escriba lo siguiente en el símbolo del sistema: **netsh NPS Add registeredserver** &nbsp;*dominio* &nbsp;*Server*y, a continuación, presione Entrar.
 
 >[!NOTE]
 >En el comando anterior, *Domain* es el nombre de dominio DNS del dominio en el que desea registrar el NPS y *Server* es el nombre del equipo NPS.

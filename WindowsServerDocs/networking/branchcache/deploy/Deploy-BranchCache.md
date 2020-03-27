@@ -7,14 +7,14 @@ ms.technology: networking-bc
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 30b0a6d9-d6d5-4019-b8dc-ed5365d9921f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7126be417702eab54a36765c146acff14d8a8c88
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6fe2cf5d593500565b02f60efb0976000095dd9e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406476"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319289"
 ---
 # <a name="deploy-branchcache"></a>Implementar BranchCache
 

@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1cc0abc6-be4d-4cbe-bd0c-cc448bf294f6
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c5a316e1230692fb800c088d752c26ec4a0f3349
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fddffbc2954ef7f0687fc7865ec295295b32983a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388262"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314519"
 ---
 # <a name="step-7-install-and-configure-2-app1"></a>Paso 7: instalación y configuración 2-APP1
 
@@ -35,20 +35,20 @@ ms.locfileid: "71388262"
   
 - Crear una carpeta compartida en 2-APP1 
   
-## <a name="bkmk_InstallOS"></a>Instalar el sistema operativo en 2-APP1  
+## <a name="install-the-operating-system-on-2-app1"></a><a name="bkmk_InstallOS"></a>Instalar el sistema operativo en 2-APP1  
 En primer lugar, instale Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012.  
   
 #### <a name="to-install-the-operating-system-on-2-app1"></a>Para instalar el sistema operativo en 2-APP1  
   
 1.  Inicie la instalación de Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 (instalación completa).  
   
-2.  Siga las instrucciones para completar la instalación, especificando una contraseña segura para la cuenta Administrador local. Inicie sesión con la cuenta Administrador local.  
+2.  Siga las instrucciones para completar la instalación, especificando una contraseña segura para la cuenta Administrador local. Inicie sesión con la cuenta de administrador local.  
   
 3.  Conecte 2-APP1 a una red que tenga acceso a Internet y ejecute Windows Update para instalar las actualizaciones más recientes para Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 y, a continuación, desconéctese de Internet.  
   
 4.  Conecte 2-APP1 a la subred 2-CorpNet.  
   
-## <a name="bkmk_TCP"></a>Configurar las propiedades de TCP/IP  
+## <a name="configure-tcpip-properties"></a><a name="bkmk_TCP"></a>Configurar las propiedades de TCP/IP  
 Configure las propiedades TCP/IP en 2-APP1.  
   
 #### <a name="to-configure-tcpip-properties"></a>Para configurar las propiedades TCP/IP  
@@ -63,13 +63,13 @@ Configure las propiedades TCP/IP en 2-APP1.
   
 5.  Haga clic en **Usar las siguientes direcciones de servidor DNS**. En **servidor DNS preferido**, escriba **10.2.0.1**.  
   
-6.  Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**. En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com**y haga clic en **Aceptar** dos veces.  
+6.  Haga clic en **Opciones avanzadas**y, a continuación, haga clic en la pestaña **DNS** . En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com**y haga clic en **Aceptar** dos veces.  
   
 7.  Haga clic en **Protocolo de Internet versión 6 (TCP/IPv6)** y, a continuación, haga clic en **Propiedades**.  
   
 8.  Haga clic en **usar la siguiente dirección IPv6**. En **dirección IPv6**, escriba **2001: db8:2:: 3**. En **longitud del prefijo de subred**, escriba **64**. En **puerta de enlace predeterminada**, escriba **2001: db8:2:: fe**. Haga clic en **usar las siguientes direcciones de servidor DNS**y, en **servidor DNS preferido**, escriba **2001: db8:2:: 1**.  
   
-9. Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.  
+9. Haga clic en  **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.  
   
 10. En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com**y, a continuación, haga clic en **Aceptar** dos veces.  
   
@@ -77,7 +77,7 @@ Configure las propiedades TCP/IP en 2-APP1.
   
 12. Cierre la ventana **Conexiones de red**.  
   
-## <a name="bkmk_JoinDomain"></a>Unir 2-APP1 al dominio CORP2  
+## <a name="join-2-app1-to-the-corp2-domain"></a><a name="bkmk_JoinDomain"></a>Unir 2-APP1 al dominio CORP2  
 Únase 2-APP1 al dominio corp2.corp.contoso.com.  
   
 #### <a name="to-join-2-app1-to-the-corp2-domain"></a>Para unir 2-APP1 al dominio CORP2  
@@ -100,7 +100,7 @@ Configure las propiedades TCP/IP en 2-APP1.
   
 9. Una vez reiniciado el equipo, haga clic en **cambiar de usuario**y, a continuación, haga clic en **otro usuario** e inicie sesión en el dominio CORP2 con la cuenta de administrador.  
   
-## <a name="bkmk_IIS"></a>Instalar el rol de servidor Web (IIS) en 2-APP1  
+## <a name="install-the-web-server-iis-role-on-2-app1"></a><a name="bkmk_IIS"></a>Instalar el rol de servidor Web (IIS) en 2-APP1  
 Instale el rol de servidor Web (IIS) para hacer que 2-APP1 sea un servidor Web.  
   
 #### <a name="to-install-the-web-server-iis-role"></a>Para instalar el rol servidor Web (IIS)  
@@ -115,7 +115,7 @@ Instale el rol de servidor Web (IIS) para hacer que 2-APP1 sea un servidor Web.
   
 5.  Compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **cerrar**.  
   
-## <a name="bkmk_Share"></a>Crear una carpeta compartida en 2-APP1  
+## <a name="create-a-shared-folder-on-2-app1"></a><a name="bkmk_Share"></a>Crear una carpeta compartida en 2-APP1  
 Cree una carpeta compartida y un archivo de texto dentro de la carpeta en 2-APP1.  
   
 #### <a name="to-create-a-shared-folder"></a>Para crear una carpeta compartida  

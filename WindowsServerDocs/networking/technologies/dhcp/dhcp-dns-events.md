@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dhcp
 ms.topic: get-started-article
 ms.assetid: beb8c188-6fcf-4520-8825-d17f8ee9fb04
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ccd8024af30f1103afa8eac52926a6b42d32940a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5d167666e632aa1a8d92de71feafc9014b66e7ce
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355428"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312603"
 ---
 # <a name="dhcp-logging-events-for-dns-registrations"></a>Eventos de registro de DHCP para registros DNS
 
@@ -26,7 +26,7 @@ Los registros de eventos del servidor DHCP ahora proporcionan información detal
 
 Los siguientes eventos DHCP nuevos le ayudan a identificar fácilmente Cuándo se producen errores en los registros DNS debido a una configuración incorrecta o a que falta una zona de búsqueda inversa de DNS\-.
 
-|Id.|Evento|Valor|
+|ID.|Evento|Valor|
 |-----|--------------------|--------------------------------------------------------|
 |20317|DHCPv4. ForwardRecordDNSFailure|Error %3 en el registro de registro de reenvío para la dirección IPv4% 1 y el FQDN %2. Es probable que esto se deba a que la zona de búsqueda directa para este registro no existe en el servidor DNS.|
 |20318|DHCPv4. ForwardRecordDNSTimeout|Error %3 en el registro de registro de reenvío para la dirección IPv4% 1 y el FQDN %2.|

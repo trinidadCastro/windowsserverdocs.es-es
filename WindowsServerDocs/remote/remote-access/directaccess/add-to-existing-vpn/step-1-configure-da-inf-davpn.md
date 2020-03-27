@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5dc529f7-7bc3-48dd-b83d-92a09e4055c4
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4437101c6cde25ebb370fe54a2f8ef821997f15d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 09cfde5bdd9e213e166345fb6844dcff08275b3f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388772"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314767"
 ---
 # <a name="step-1-configure-the-directaccess-infrastructure"></a>Paso 1 configurar la infraestructura de DirectAccess
 
@@ -37,7 +37,7 @@ En este tema se describe cómo configurar la infraestructura necesaria para habi
 |Configurar grupos de seguridad|Configura los grupos de seguridad que contendrán equipos cliente de DirectAccess, y cualquier otro grupo de seguridad necesario en la implementación.|  
 |Configurar el servidor de ubicación de red|El asistente para habilitar DirectAccess configura el servidor de ubicación de red en el servidor de DirectAccess.|  
   
-## <a name="ConfigNetworkSettings"></a>Configurar las opciones de red del servidor  
+## <a name="configure-server-network-settings"></a><a name="ConfigNetworkSettings"></a>Configurar las opciones de red del servidor  
 Los siguientes valores de la interfaz de red son necesarios para una implementación de un solo servidor en un entorno con IPv4 e IPv6. Todas las direcciones IP se configuran mediante **Cambiar configuración del adaptador** en el **Centro de redes y recursos compartidos de Windows**.  
   
 -   Topología perimetral  
@@ -66,14 +66,14 @@ Los siguientes valores de la interfaz de red son necesarios para una implementac
 >     Save-NetGPO -GPOSession $gposession  
 >     ```  
   
-## <a name="ConfigRouting"></a>Configurar el enrutamiento en la red corporativa  
+## <a name="configure-routing-in-the-corporate-network"></a><a name="ConfigRouting"></a>Configurar el enrutamiento en la red corporativa  
 Configura el enrutamiento en la red corporativa de la siguiente manera:  
   
 -   Si se implementa IPv6 nativa en la organización, agrega una ruta para que los enrutadores de la red interna enruten el tráfico IPv6 a través del servidor de acceso remoto.  
   
 -   Configura manualmente las rutas de IPv4 e IPv6 de la organización en los servidores de acceso remoto. Agrega una ruta publicada para que todo el tráfico con un prefijo IPv6 (/48) de organización se reenvíe a la red interna. Además, para el tráfico IPv4, agrega rutas explícitas para que el tráfico IPv4 se reenvíe a la red interna.  
   
-## <a name="ConfigFirewalls"></a>Configuración de firewalls  
+## <a name="configure-firewalls"></a><a name="ConfigFirewalls"></a>Configuración de firewalls  
 Si usa firewalls adicionales en la implementación, aplique las siguientes excepciones del firewall con conexión a Internet para el tráfico de acceso remoto cuando el servidor de acceso remoto se encuentra en Internet IPv4:  
   
 -   tráfico 6to4: protocolo IP 41 entrante y saliente.  
@@ -92,10 +92,10 @@ Si usa firewalls adicionales, aplique las siguientes excepciones de firewall de 
   
 -   TCP/UDP para todo el tráfico IPv4/IPv6  
   
-## <a name="ConfigCAs"></a>Configurar entidades de certificación y certificados  
+## <a name="configure-cas-and-certificates"></a><a name="ConfigCAs"></a>Configurar entidades de certificación y certificados  
 El asistente para habilitar DirectAccess configura un proxy Kerberos integrado que autentica utilizando nombres de usuario y contraseñas. También configura un certificado IP-HTTPS en el servidor de acceso remoto.  
   
-### <a name="ConfigCertTemp"></a>Configurar plantillas de certificado  
+### <a name="configure-certificate-templates"></a><a name="ConfigCertTemp"></a>Configurar plantillas de certificado  
 Cuando uses una CA interna para emitir certificados, debes configurar una plantilla de certificado para el certificado IP-HTTPS y el certificado del sitio web del servidor de ubicación de red.  
   
 ##### <a name="to-configure-a-certificate-template"></a>Para configurar una plantilla de certificado  
@@ -174,10 +174,10 @@ Asegúrate de que el certificado de sitio web utilizado para la autenticación I
   
 15. En el panel de detalles del complemento Certificados, comprueba que se inscribió un nuevo certificado con el valor Propósitos planteados de autenticación del servidor.  
   
-## <a name="ConfigDNS"></a>Configurar el servidor DNS  
+## <a name="configure-the-dns-server"></a><a name="ConfigDNS"></a>Configurar el servidor DNS  
 Debes configurar manualmente una entrada DNS para el sitio web del servidor de ubicación de red para la red interna de tu implementación.  
   
-### <a name="NLS_DNS"></a>Para crear el servidor de ubicación de red y los registros DNS de sondeo Web  
+### <a name="to-create-the-network-location-server-and-web-probe-dns-records"></a><a name="NLS_DNS"></a>Para crear el servidor de ubicación de red y los registros DNS de sondeo Web  
   
 1.  En el servidor DNS de la red interna: en la pantalla **Inicio** , escriba * * DNSMgmt. msc * * y, a continuación, presione Entrar.  
   
@@ -185,13 +185,13 @@ Debes configurar manualmente una entrada DNS para el sitio web del servidor de u
   
 3.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)** , escribe el nombre DNS del sitio web del servidor de ubicación de red (es el nombre que los clientes de DirectAccess usan para conectarse al servidor de ubicación de red). En el cuadro **Dirección IP**, escribe la dirección IPv4 del servidor de ubicación de red y haz clic en **Agregar host**. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.  
   
-4.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)** , escribe el nombre DNS del sondeo web (el nombre del sondeo web predeterminado es directaccess-webprobehost). En el cuadro **Dirección IP**, escribe la dirección IPv4 del sondeo web y haz clic en **Agregar host**. Repite este proceso para directaccess-corpconnectivityhost y todos los comprobadores de conectividad creados manualmente. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.  
+4.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)** , escribe el nombre DNS del sondeo web (el nombre del sondeo web predeterminado es directaccess-webprobehost). En el cuadro **Dirección IP**, escribe la dirección IPv4 del sondeo web y haz clic en **Agregar host**. Repite este proceso para directaccess-corpconnectivityhost y para los comprobadores de conectividad creados de forma manual. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.  
   
-5.  Haz clic en **Listo**.  
+5.  Haga clic en **Done** (Listo).  
 
 ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
   
 ```  
 Add-DnsServerResourceRecordA -Name <network_location_server_name> -ZoneName <DNS_zone_name> -IPv4Address <network_location_server_IPv4_address>  
@@ -204,7 +204,7 @@ También debes configurar entradas DNS para los siguiente:
   
 -   **Comprobación de revocación de CRL**: DirectAccess usa la comprobación de revocación de certificados para la conexión IP-https entre los clientes de DirectAccess y el servidor de acceso remoto, y para la conexión basada en https entre el cliente de DirectAccess y el servidor de ubicación de red. En ambos casos, los clientes de DirectAccess deben ser capaces de resolver y acceder a la ubicación del punto de distribución de CRL.  
   
-## <a name="ConfigAD"></a>Configurar Active Directory  
+## <a name="configure-active-directory"></a><a name="ConfigAD"></a>Configurar Active Directory  
 El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben estar unidos a un dominio de Active Directory. Los equipos cliente de DirectAccess deben pertenecer a uno de los siguientes tipos de dominio:  
   
 -   Dominios que pertenecen al mismo bosque que el servidor de acceso remoto.  
@@ -235,7 +235,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
   
 ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
   
 Tenga en cuenta que debe proporcionar credenciales de dominio después de introducir el comando Add-Computer a continuación.  
   
@@ -244,7 +244,7 @@ Add-Computer -DomainName <domain_name>
 Restart-Computer  
 ```  
   
-## <a name="ConfigGPOs"></a>Configurar GPO  
+## <a name="configure-gpos"></a><a name="ConfigGPOs"></a>Configurar GPO  
 Para implementar el acceso remoto, se requiere un mínimo de dos objetos directiva de grupo: uno directiva de grupo objeto contiene la configuración para el servidor de acceso remoto y otro contiene la configuración de los equipos cliente de DirectAccess. Al configurar el acceso remoto, el asistente crea automáticamente los objetos directiva de grupo necesarios. Sin embargo, si su organización exige una Convención de nomenclatura, o si no tiene los permisos necesarios para crear o editar objetos directiva de grupo, se deben crear antes de configurar el acceso remoto.  
   
 Para crear directiva de grupo objetos, vea [crear y editar un objeto Directiva de grupo](https://technet.microsoft.com/library/cc754740.aspx).  
@@ -260,10 +260,10 @@ Para crear directiva de grupo objetos, vea [crear y editar un objeto Directiva d
 > [!NOTE]  
 > Si un objeto de directiva de grupo se creó manualmente, es posible que durante la configuración de DirectAccess el objeto de directiva de grupo no esté disponible. Es posible que el objeto de directiva de grupo no se haya replicado en el controlador de dominio más próximo al equipo de administración. En este caso, el administrador puede esperar a que la replicación finalice, o bien forzarla.  
   
-## <a name="ConfigSGs"></a>Configurar grupos de seguridad  
+## <a name="configure-security-groups"></a><a name="ConfigSGs"></a>Configurar grupos de seguridad  
 La configuración de DirectAccess contenida en el objeto de directiva de grupo equipo cliente solo se aplica a los equipos que son miembros de los grupos de seguridad que se especifican al configurar el acceso remoto. Además, si usas grupos de seguridad para administrar tus servidores de aplicación, debes crear un grupo de seguridad para dichos servidores.  
   
-### <a name="Sec_Group"></a>Para crear un grupo de seguridad para clientes de DirectAccess  
+### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>Para crear un grupo de seguridad para clientes de DirectAccess  
   
 1.  En la pantalla **Inicio** , escriba**DSA. msc**y, a continuación, presione Entrar. En la consola **Usuarios y equipos de Active Directory**, en el panel izquierdo, expande el dominio que contendrá el grupo de seguridad, haz clic con el botón secundario en **Usuarios**, elige **Nuevo** y haz clic en **Grupo**.  
   
@@ -273,20 +273,20 @@ La configuración de DirectAccess contenida en el objeto de directiva de grupo e
   
 4.  Haz doble clic en el grupo de seguridad de equipos cliente de DirectAccess y, en el cuadro de diálogo de propiedades, haz clic en la pestaña **Miembros**.  
   
-5.  En la pestaña **Miembros** , haga clic en **Agregar**.  
+5.  En la pestaña **Miembros**, haga clic en **Agregar**.  
   
 6.  En el cuadro de diálogo **Seleccionar Usuarios, Contactos, Equipos o Cuentas de servicio**, selecciona los equipos cliente que deseas habilitar para DirectAccess y haz clic en **Aceptar**.  
   
 ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**comandos equivalentes** de Windows PowerShell Windows PowerShell  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
   
 ```  
 New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>  
 Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_name>  
 ```  
   
-## <a name="ConfigNLS"></a>Configurar el servidor de ubicación de red  
+## <a name="configure-the-network-location-server"></a><a name="ConfigNLS"></a>Configurar el servidor de ubicación de red  
 El servidor de ubicación de red debe encontrarse en un servidor con alta disponibilidad y un certificado SSL válido de confianza para los clientes de DirectAccess. Hay dos opciones de certificados para el certificado de servidor de ubicación de red:  
   
 -   **Privado**: se necesita lo siguiente, si aún no existen:  

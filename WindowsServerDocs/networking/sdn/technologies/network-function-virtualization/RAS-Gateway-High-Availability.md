@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 34d826c9-65bc-401f-889d-cf84e12f0144
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7d9c37629c0e0d9964554ba90887aa45f74a330a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5fca4fc6a636bcde155e60b6da3c827bc9313606
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355610"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313046"
 ---
 # <a name="ras-gateway-high-availability"></a>Alta disponibilidad de la puerta de enlace de RAS
 
@@ -25,7 +25,7 @@ ms.locfileid: "71355610"
 
 Puede usar este tema para obtener información sobre las configuraciones de alta disponibilidad para la puerta de enlace multiinquilino de RAS para redes definidas por software (SDN).  
   
-En este tema se incluyen las siguientes secciones.  
+Este tema contiene las siguientes secciones.  
   
 -   [Introducción a la puerta de enlace RAS](#bkmk_overview)  
   
@@ -35,7 +35,7 @@ En este tema se incluyen las siguientes secciones.
   
 -   [Integración de puerta de enlace RAS con controladora de red](#bkmk_integration)  
   
-## <a name="bkmk_overview"></a>Introducción a la puerta de enlace RAS  
+## <a name="ras-gateway-overview"></a><a name="bkmk_overview"></a>Introducción a la puerta de enlace RAS  
 Si su organización es un proveedor de servicios en la nube (CSP) o una empresa con varios inquilinos, puede implementar la puerta de enlace RAS en modo multiempresa para proporcionar el enrutamiento del tráfico de red hacia y desde redes físicas y virtuales, incluido Internet.  
   
 Puede implementar la puerta de enlace RAS en el modo multiinquilino como puerta de enlace perimetral para enrutar el tráfico de red del cliente del inquilino a los recursos y las redes virtuales de inquilino.  
@@ -46,7 +46,7 @@ Este problema se resuelve en Windows Server 2016, que proporciona varios grupos 
   
 Para obtener información general sobre la puerta de enlace RAS, consulte [puerta de enlace ras](../../../../remote/remote-access/ras-gateway/RAS-Gateway.md).  
   
-## <a name="bkmk_pools"></a>Introducción a los grupos de puerta de enlace  
+## <a name="gateway-pools-overview"></a><a name="bkmk_pools"></a>Introducción a los grupos de puerta de enlace  
 En Windows Server 2016, puede implementar puertas de enlace en uno o más grupos.  
   
 En la ilustración siguiente se muestran diferentes tipos de grupos de puertas de enlace que proporcionan enrutamiento de tráfico entre redes virtuales.  
@@ -73,7 +73,7 @@ Los grupos de puerta de enlace también proporcionan la flexibilidad para habili
   
 -   Varios grupos pueden proporcionar la misma función de puerta de enlace pero distintas capacidades. Por ejemplo, puede crear un grupo de puerta de enlace que admita tanto conexiones de nivel de sitio de IKEv2 de alto rendimiento como de bajo rendimiento.  
   
-## <a name="bkmk_deployment"></a>Introducción a la implementación de puerta de enlace RAS  
+## <a name="ras-gateway-deployment-overview"></a><a name="bkmk_deployment"></a>Introducción a la implementación de puerta de enlace RAS  
 En la ilustración siguiente se muestra una implementación típica de proveedor de servicios en la nube (CSP) de puerta de enlace RAS.  
   
 ![Introducción a la implementación de puerta de enlace RAS](../../../media/RAS-Gateway-High-Availability/ras_csp_deploy.png)  
@@ -84,7 +84,7 @@ En la ilustración, el dispositivo MT BGP es una puerta de enlace multiinquilino
   
 El enrutador BGP se separa en el diagrama para describir este concepto de enrutamiento centralizado. La implementación de BGP de puerta de enlace también proporciona enrutamiento de tránsito, que permite que la nube actúe como punto de tránsito para el enrutamiento entre dos sitios de inquilino. Estas funcionalidades de BGP son aplicables a todas las funciones de puerta de enlace.  
   
-## <a name="bkmk_integration"></a>Integración de puerta de enlace RAS con controladora de red  
+## <a name="ras-gateway-integration-with-network-controller"></a><a name="bkmk_integration"></a>Integración de puerta de enlace RAS con controladora de red  
 La puerta de enlace RAS está totalmente integrada con la controladora de red en Windows Server 2016. Cuando se implementa la puerta de enlace de RAS y la controladora de red, la controladora de red realiza las siguientes funciones.  
   
 -   Implementación de los grupos de puerta de enlace  
@@ -103,7 +103,7 @@ En las secciones siguientes se proporciona información detallada sobre la puert
   
 -   [Alta disponibilidad para puertas de enlace de reenvío L3](#bkmk_l3)  
   
-### <a name="bkmk_provisioning"></a>Aprovisionamiento y equilibrio de carga de las conexiones de puerta de enlace (IKEv2, L3 y GRE)  
+### <a name="provisioning-and-load-balancing-of-gateway-connections-ikev2-l3-and-gre"></a><a name="bkmk_provisioning"></a>Aprovisionamiento y equilibrio de carga de las conexiones de puerta de enlace (IKEv2, L3 y GRE)  
 Cuando un inquilino solicita una conexión de puerta de enlace, la solicitud se envía a la controladora de red. La controladora de red está configurada con información sobre todos los grupos de puerta de enlace, incluida la capacidad de cada grupo y cada puerta de enlace en cada grupo. Controladora de red selecciona el grupo y la puerta de enlace correctos para la conexión. Esta selección se basa en el requisito de ancho de banda para la conexión. La controladora de red usa un algoritmo de "ajuste perfecto" para elegir las conexiones de forma eficaz en un grupo. El punto de emparejamiento de BGP para la conexión también se designa en este momento si se trata de la primera conexión del inquilino.  
   
 Después de que la controladora de red Seleccione una puerta de enlace RAS para la conexión, la controladora de red aprovisiona la configuración necesaria para la conexión en la puerta de enlace. Si la conexión es una conexión de S2S a través de IKEv2, la controladora de red también aprovisiona una regla de traducción de direcciones de red (NAT) en el grupo SLB; Esta regla NAT en el grupo SLB dirige las solicitudes de conexión desde el inquilino a la puerta de enlace designada. Los inquilinos se diferencian por la IP de origen, que se espera que sea único.  
@@ -113,7 +113,7 @@ Después de que la controladora de red Seleccione una puerta de enlace RAS para 
   
 Si el enrutamiento de BGP está habilitado para la conexión, el emparejamiento BGP lo inicia la puerta de enlace de RAS y las rutas se intercambian entre las puertas de enlace locales y en la nube. Las rutas que se aprenden mediante BGP (o que son rutas configuradas de forma estática Si no se usa BGP) se envían a la controladora de red. Después, el controlador de red sondea las rutas hasta los hosts de Hyper-V en los que se instalan las máquinas virtuales de inquilino. En este momento, el tráfico de inquilinos se puede enrutar al sitio local correcto. La controladora de red también crea directivas de virtualización de red de Hyper-V asociadas que especifican ubicaciones de puerta de enlace y las sondea con los hosts de Hyper-V.  
   
-### <a name="bkmk_ike"></a>Alta disponibilidad de IKEv2 S2S  
+### <a name="high-availability-for-ikev2-s2s"></a><a name="bkmk_ike"></a>Alta disponibilidad de IKEv2 S2S  
 Una puerta de enlace RAS de un grupo consta de las conexiones y el emparejamiento BGP de distintos inquilinos. Cada grupo tiene "puertas de enlace activas y" N "puertas de enlace en espera.  
   
 La controladora de red controla el error de las puertas de enlace de la siguiente manera.  
@@ -140,8 +140,8 @@ La controladora de red controla el error de las puertas de enlace de la siguient
   
 -   Al mismo tiempo, a medida que la configuración aparece en la nueva puerta de enlace activa, se restablecen las conexiones de S2S y el emparejamiento BGP. La puerta de enlace en la nube o la puerta de enlace local pueden iniciar las conexiones y el emparejamiento BGP. Las puertas de enlace actualizan sus rutas y las envían a la controladora de red. Una vez que el controlador de red aprende las nuevas rutas detectadas por las puertas de enlace, la controladora de red envía las rutas y las directivas de virtualización de red de Hyper-V asociadas a los hosts de Hyper-V donde residen las máquinas virtuales de los inquilinos afectados por errores. Esta actividad de la controladora de red es similar a la circunstancia de una nueva configuración de conexión, solo se produce en una escala mayor.  
   
-### <a name="bkmk_gre"></a>Alta disponibilidad para GRE  
-El proceso de respuesta de conmutación por error de puerta de enlace RAS de la controladora de red, incluida la detección de errores, la copia de la configuración de conexión y enrutamiento en la puerta de enlace en espera, la conmutación por error del enrutamiento BGP/estático de las conexiones afectadas (incluida la retirada y la reestructuración de rutas en hosts de proceso y el cambio de emparejamiento de BGP) y la reconfiguración de las directivas de virtualización de red de Hyper-V en hosts de proceso son las mismas para las conexiones y las puertas de enlace GRE. Sin embargo, el restablecimiento de las conexiones GRE se produce de manera diferente y la solución de alta disponibilidad para GRE tiene algunos requisitos adicionales.  
+### <a name="high-availability-for-gre"></a><a name="bkmk_gre"></a>Alta disponibilidad para GRE  
+El proceso de respuesta de conmutación por error de puerta de enlace RAS por controladora de red (incluida la detección de errores) la copia de la configuración de conexión y enrutamiento en la puerta de enlace en espera, la conmutación por error del enrutamiento BGP/estático de las conexiones afectadas (incluida la retirada y reestructuración de rutas en hosts de proceso y el cambio de emparejamiento de BGP) y la reconfiguración de las directivas de virtualización de red de Hyper-V en hosts de proceso son las mismas para las conexiones Sin embargo, el restablecimiento de las conexiones GRE se produce de manera diferente y la solución de alta disponibilidad para GRE tiene algunos requisitos adicionales.  
   
 ![Alta disponibilidad para GRE](../../../media/RAS-Gateway-High-Availability/ras_ha.png)  
   
@@ -151,7 +151,7 @@ En el momento del aprovisionamiento de la conexión GRE, el controlador de red s
   
 Cuando se produce un error en una puerta de enlace, la controladora de red copia la dirección VIP de la puerta de enlace errónea y otros datos de configuración en la puerta de enlace en espera. Cuando la puerta de enlace en espera se activa, anuncia la dirección VIP a su conmutador TOR y más adelante en la red física. Los enrutadores remotos continúan conectando los túneles GRE a la misma VIP y la infraestructura de enrutamiento garantiza que los paquetes se enruten a la nueva puerta de enlace activa.  
   
-### <a name="bkmk_l3"></a>Alta disponibilidad para puertas de enlace de reenvío L3  
+### <a name="high-availability-for-l3-forwarding-gateways"></a><a name="bkmk_l3"></a>Alta disponibilidad para puertas de enlace de reenvío L3  
 Una puerta de enlace de reenvío L3 de virtualización de red de Hyper-V es un puente entre la infraestructura física del centro de bits y la infraestructura virtualizada en la nube de virtualización de red de Hyper-V. En una puerta de enlace de reenvío L3 multiinquilino, cada inquilino usa su propia red lógica con etiqueta VLAN para la conectividad con la red física del inquilino.  
   
 Cuando un nuevo inquilino crea una nueva puerta de enlace L3, la puerta de enlace de la controladora de red Service Manager selecciona una máquina virtual de puerta de enlace disponible y configura una nueva interfaz de inquilino con una dirección IP de espacio de direcciones de cliente (CA) de alta disponibilidad (de la red lógica etiquetada VLAN del inquilino. ). La dirección IP se usa como dirección IP del mismo nivel en la puerta de enlace remota (red física) y es el próximo salto para llegar a la red de virtualización de red de Hyper-V del inquilino.  
@@ -165,9 +165,9 @@ A diferencia de las conexiones de red de IPsec o GRE, el conmutador TOR no apren
   
 A continuación se muestran configuraciones de puerta de enlace de inquilino de ejemplo, tal como se muestra en la ilustración siguiente.  
   
-|Nombre del inquilino|Dirección IP de puerta de enlace L3|ID. DE VLAN|Dirección IP del mismo nivel|  
+|Nombre de inquilino|Dirección IP de puerta de enlace L3|ID. DE VLAN|Dirección IP del mismo nivel|  
 |---------------|-------------------------|-----------|-------------------|  
-|Senda|10.127.134.50|1001|10.127.134.55|  
+|Contoso|10.127.134.50|1001|10.127.134.55|  
 |Externa|10.127.134.60|1002|10.127.134.65|  
   
 A continuación se ilustra la ilustración de estas configuraciones en un centro de recursos de CSP.  

@@ -10,14 +10,14 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7b66c09d-e401-4f70-9a2a-6047dd629bfa
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8fe318a8ac17c650d8dbf2339e72b561de529c4a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3aa20913a01a23291879b98d6f53fe60a7138670
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405679"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312450"
 ---
 # <a name="dns-resource-record-management"></a>Administración de registros de recursos DNS
 
@@ -75,11 +75,11 @@ A continuación se muestra una lista de los tipos de registro de recursos DNS qu
   
 -   Ubicación del servicio  
   
--   ORIENTE  
+-   SOA  
   
 -   SRV  
   
--   Text  
+-   Texto  
   
 -   Servicios conocidos  
   
@@ -113,7 +113,7 @@ IPAM le permite realizar las siguientes operaciones en los registros de recursos
   
 IPAM registra automáticamente todos los cambios de configuración de DNS que realice mediante la consola de IPAM.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Administrar IPAM](Manage-IPAM.md)  
   
 

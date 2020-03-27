@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 5a09d9f1-1049-447f-a9bf-74adf779af27
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1a0694ebe30c5a927fb2f1152adc792f8b0c9157
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 7fe43b3a7c8dc7906e678a219b67ed096aa951d4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356393"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319127"
 ---
 # <a name="prehashing-and-preloading-content-on-hosted-cache-servers-optional"></a>Aplicación de hash previo y carga previa de contenido en servidores de caché hospedada (opcional)
 
@@ -33,6 +33,6 @@ Debe ser miembro de **los administradores**o equivalente para realizar este proc
   
 4.  Mueva el archivo de paquete de datos a los servidores de caché hospedada remota mediante la tecnología de transferencia de archivos que prefiera.  FTP, SMB, HTTP, DVD y discos duros portátiles son transportes viables.  
   
-5.  Importe el archivo de paquete de datos en los servidores de caché hospedada remota mediante el comando `Import-BCCachePackage`.  
+5.  Importe el archivo de paquete de datos en los servidores de caché hospedada remotamente mediante el comando `Import-BCCachePackage`.  
   
 

@@ -10,15 +10,15 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 1785b34741ce525a5bdd27b77a0e52fc2ca6c1b6
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: 1463d3b9a596436b93423806a0acdb40728a15fb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591100"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316695"
 ---
 # <a name="create-a-new-nic-team-on-a-host-computer-or-vm"></a>Crear un nuevo equipo NIC en un equipo host o una máquina virtual
 
@@ -58,7 +58,7 @@ Debe ser miembro de **los administradores**o un grupo equivalente.
 
 2.  En el administrador de conmutadores virtuales, asegúrese de que **external** está seleccionado y, a continuación, haga clic en **crear conmutador virtual**.  
 
-   ![Crear conmutador virtual](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hv_02.jpg)  
+   ![Creación de un conmutador virtual](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hv_02.jpg)  
 
 3.  En propiedades de conmutador virtual, escriba un **nombre** para el conmutador virtual y agregue **notas** según sea necesario.  
 
@@ -99,7 +99,7 @@ Debe ser miembro de **los administradores**o un grupo equivalente.
 
     c. Haga clic para seleccionar **habilitar este adaptador de red para que forme parte de un equipo en el sistema operativo invitado**. 
 
-    d. Haz clic en **Aceptar**.  
+    d. Haga clic en **Aceptar**.  
 
     ![Agregar un adaptador de red a un equipo](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hvs_05.jpg)  
 
@@ -119,7 +119,7 @@ Debe ser miembro de **los administradores**o un grupo equivalente.
 
 17. Haga clic en **características avanzadas**, desplácese hacia abajo hasta **formación de equipos NIC**y haga clic para seleccionar **habilitar este adaptador de red para que forme parte de un equipo en el sistema operativo invitado**. 
 
-18. Haz clic en **Aceptar**.  
+18. Haga clic en **Aceptar**.  
 
 _**Finaliza!**_  Ha configurado la red física y virtual.  Ahora puede continuar con la creación de un nuevo equipo NIC.  
 
@@ -204,7 +204,7 @@ Debe ser miembro de **los administradores**o un grupo equivalente.
 
    -   Configurar la pertenencia a VLAN: haga clic en **VLAN específica** y escriba la información de la VLAN. Por ejemplo, si desea agregar este equipo NIC al número 44 de la VLAN de contabilidad, escriba Accounting 44-VLAN.   
 
-9. Haz clic en **Aceptar**.  
+9. Haga clic en **Aceptar**.  
 
 _**Finaliza!**_  Ha creado un nuevo equipo NIC en un equipo host o máquina virtual.
 
@@ -212,7 +212,7 @@ _**Finaliza!**_  Ha creado un nuevo equipo NIC en un equipo host o máquina virt
 
 - [Formación de equipos NIC](NIC-Teaming.md): en este tema se proporciona información general sobre la formación de equipos de tarjetas de interfaz de red (NIC) en Windows Server 2016. La formación de equipos NIC le permite agrupar entre uno y 32 adaptadores de red Ethernet físicos en uno o varios adaptadores de red virtuales basados en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.   
 
-- [Administración y uso de direcciones MAC de formación de equipos NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): al configurar un equipo NIC con el modo independiente del conmutador y la distribución de la carga dinámica o el hash de la dirección, el equipo usa la dirección Media Access Control (Mac) del miembro del equipo NIC principal en el saliente. entrante. El miembro del equipo NIC principal es un adaptador de red seleccionado por el sistema operativo del conjunto inicial de miembros del equipo.
+- [Administración y uso de direcciones MAC de formación de equipos NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): cuando se configura un equipo NIC con el modo independiente del conmutador y con una distribución de carga dinámica o de hash de dirección, el equipo usa la dirección Media Access Control (Mac) del miembro del equipo NIC principal en el tráfico saliente. El miembro del equipo NIC principal es un adaptador de red seleccionado por el sistema operativo del conjunto inicial de miembros del equipo.
 
 - [Configuración de la formación de equipos NIC](nic-teaming-settings.md): en este tema se proporciona información general de las propiedades del equipo NIC, como la formación de equipos y los modos de equilibrio de carga. También se proporcionan detalles acerca de la configuración del adaptador en espera y la propiedad de la interfaz de equipo principal. Si tiene al menos dos adaptadores de red en un equipo NIC, no es necesario designar un adaptador en espera para la tolerancia a errores.
 

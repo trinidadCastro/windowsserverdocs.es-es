@@ -3,7 +3,7 @@ title: Cambiar la combinación de colores del Panel y de LaunchPad
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: b2913e51-7979-4d48-a431-d2ec5f1042be
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f7079c9e59c44907fa203db48ce366c2b5a1102b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a3ffac0b89a62b04b73aada0a49cb755c7e7bd9a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879646"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312282"
 ---
 # <a name="change-the-color-scheme-of-the-dashboard-and-launchpad"></a>Cambiar la combinación de colores del Panel y de LaunchPad
 
@@ -118,7 +118,7 @@ Para cambiar la combinación de colores del Panel y de LaunchPad, defina los col
 > [!NOTE]
 >  Todos los valores del atributo HexValue son ejemplos de valores hexadecimales para colores. Puede escribir cualquier valor hexadecimal del color que desee utilizar.  
   
- Utilice el Bloc de notas o Visual Studio 2010 para crear el archivo .xml que contenga las etiquetas de las áreas que desee personalizar. El archivo puede tener cualquier nombre, pero la extensión debe ser .xml. Para obtener una descripción de las áreas que se pueden personalizar en el panel y Launchpad, consulte [Dashboard and Launchpad areas that can be changed](Change-the-Color-Scheme-of-the-Dashboard-and-Launchpad.md#BKMK_Dashboard).  
+ Utilice el Bloc de notas o Visual Studio 2010 para crear el archivo .xml que contenga las etiquetas de las áreas que desee personalizar. El archivo puede tener cualquier nombre, pero la extensión debe ser .xml. Para obtener una descripción de las áreas que se pueden personalizar en el Panel y en LaunchPad, consulte [Áreas del Panel y de LaunchPad que se pueden cambiar](Change-the-Color-Scheme-of-the-Dashboard-and-Launchpad.md#BKMK_Dashboard).  
   
 #### <a name="to-install-the-xml-file"></a>Para instalar el archivo .xml  
   
@@ -126,13 +126,13 @@ Para cambiar la combinación de colores del Panel y de LaunchPad, defina los col
   
 2.  En el cuadro de búsqueda, escriba **regedit**y después haga clic en la aplicación **Regedit** .  
   
-3.  En el panel izquierdo, expanda **HKEY_LOCAL_MACHINE**, **SOFTWARE**, **Microsoft**y finalmente **Windows Server**. Si la clave **OEM** no existe, siga los pasos que se indican a continuación para crearla:  
+3.  En el panel izquierdo, expanda **HKEY_LOCAL_MACHINE**, **SOFTWARE**, **Microsoft** y finalmente **Windows Server**. Si la clave **OEM** no existe, siga los pasos que se indican a continuación para crearla:  
   
     1.  Haga clic con el botón secundario en **Windows Server**, seleccione **Nuevo** y a continuación haga clic en **Clave**.  
   
     2.  Escriba **OEM** como nombre de la clave.  
   
-4.  Haga clic con el botón secundario en **OEM**, seleccione **Nuevo**y a continuación haga clic en **Valor de cadena**.  
+4.  Haga clic con el botón secundario en **OEM**, seleccione **Nuevo** y a continuación haga clic en **Valor de cadena**.  
   
 5.  Escriba **CustomColorScheme** como nombre de la cadena y después presione **Entrar**.  
   
@@ -142,37 +142,37 @@ Para cambiar la combinación de colores del Panel y de LaunchPad, defina los col
   
 8.  Copie el archivo en %programFiles%\Windows Server\Bin\OEM. Si la clave RemoteUserPortal no existe, créela.  
   
-##  <a name="BKMK_Dashboard"></a> Áreas del panel y Launchpad que se pueden cambiar  
+##  <a name="dashboard-and-launchpad-areas-that-can-be-changed"></a><a name="BKMK_Dashboard"></a>Áreas del panel y de Launchpad que se pueden cambiar  
  Esta sección incluye ejemplos de áreas del Panel y el Launchpad que se pueden personalizar.  
   
 ### <a name="examples"></a>Ejemplos  
   
-####  <a name="BKMK_Figure1"></a> Figura 1: Página de inicio de sesión del panel  
+####  <a name="figure-1-sign-in-page-of-the-dashboard"></a><a name="BKMK_Figure1"></a>Figura 1: Página de inicio de sesión del panel  
  ![Panel de Windows Server Essentials](media/SBS8_ADK_Dashboard_Signin_RC.png "SBS8_ADK_Dashboard_Signin_RC")  
   
-####  <a name="BKMK_Figure2"></a> Figura 2: Launchpad  
- ![Inicio de sesión de Launchpad de Windows SBS&#45;en](media/SBS8_ADK_LaunchpadSignin2.png "SBS8_ADK_LaunchpadSignin2")  
+####  <a name="figure-2-launchpad"></a><a name="BKMK_Figure2"></a>Figura 2: launchpad  
+ ![Inicio de sesión&#45;de Launchpad de Windows SBS](media/SBS8_ADK_LaunchpadSignin2.png "SBS8_ADK_LaunchpadSignin2")  
   
-####  <a name="BKMK_Figure3"></a> Figura 3: Página de inicio de sesión de Launchpad  
- ![Windows Server Essentials Launchpad](media/SBS8_ADK_Launchpad_Signin_RC.png "SBS8_ADK_Launchpad_Signin_RC")  
+####  <a name="figure-3-sign-in-page-of-the-launchpad"></a><a name="BKMK_Figure3"></a>Figura 3: Página de inicio de sesión de Launchpad  
+ ![Launchpad de Windows Server Essentials](media/SBS8_ADK_Launchpad_Signin_RC.png "SBS8_ADK_Launchpad_Signin_RC")  
   
-####  <a name="BKMK_Figure4"></a> Figura 4: Texto del panel  
+####  <a name="figure-4-dashboard-text"></a><a name="BKMK_Figure4"></a>Figura 4: texto del panel  
  ![Panel de navegación de Windows Server Essentials](media/SBS8_ADK_Navigation_RC.png "SBS8_ADK_Navigation_RC")  
   
-####  <a name="BKMK_Figure5"></a> Figura 5: Borde de subpestaña  
- ![Borde de subpestaña de Windows SBS panel](media/SBS8_ADK_DashboardSubtabborder.png "SBS8_ADK_DashboardSubtabborder")  
+####  <a name="figure-5-subtab-border"></a><a name="BKMK_Figure5"></a>Figura 5: borde de subficha  
+ ![Borde de subpestaña de panel de Windows SBS](media/SBS8_ADK_DashboardSubtabborder.png "SBS8_ADK_DashboardSubtabborder")  
   
-####  <a name="BKMK_Figure6"></a> Figura 6: Panel de tareas  
- ![Panel de tareas de Windows SBS panel](media/SBS8_ADK_DashboardTaskPane.png "SBS8_ADK_DashboardTaskPane")  
+####  <a name="figure-6-task-pane"></a><a name="BKMK_Figure6"></a>Figura 6: panel de tareas  
+ ![Panel de tareas del panel de Windows SBS](media/SBS8_ADK_DashboardTaskPane.png "SBS8_ADK_DashboardTaskPane")  
   
-####  <a name="BKMK_Figure9"></a> Figura 7a: Pantalla de presentación de productos  
+####  <a name="figure-7a-product-splash-screen"></a><a name="BKMK_Figure9"></a>Figura 7A: pantalla de presentación del producto  
  ![Pantalla de presentación de Windows Server Essentials](media/SBS8_ADK_productspalshscreen_RC.png "SBS8_ADK_productspalshscreen_RC")  
   
 #### <a name="figure-7b-home-page"></a>Figura 7b: Página principal  
  ![Página principal de Windows Server Essentials](media/SBS8_ADK_Dashboard_HomePage_RC.png "SBS8_ADK_Dashboard_HomePage_RC")  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

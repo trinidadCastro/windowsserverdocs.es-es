@@ -6,18 +6,18 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 528280e6-b47e-489f-b310-b257d434aa0d
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2d138b9891fb3cfa8e15060be312ff945942c660
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 10a33494365f5a10923dd9ce46c3575675099b27
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405425"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315972"
 ---
 # <a name="nps-proxy-server-load-balancing"></a>Equilibrio de carga del servidor proxy NPS
 
-Se aplica a: Windows Server 2016
+Se aplica a: Windows Server 2016
 
 Los clientes Servicio de autenticación remota telefónica de usuario (RADIUS), que son servidores de acceso a la red, como los servidores de red privada virtual (VPN) y los puntos de acceso inalámbrico, crean solicitudes de conexión y las envían a servidores RADIUS como NPS. En algunos casos, un NPS podría recibir demasiadas solicitudes de conexión al mismo tiempo, lo que produce un rendimiento degradado o una sobrecarga. Cuando un NPS está sobrecargado, es una buena idea agregar más NPSs a la red y configurar el equilibrio de carga. Cuando se distribuyen uniformemente las solicitudes de conexión entrantes entre varios NPSs para evitar la sobrecarga de una o varias NPSs, se denomina equilibrio de carga.
 

@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 55686a9c-60dd-47f4-9f1f-fe72c2873a44
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: dc6ade92eb5fe04271033973911ccb98e871d236
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2ac8dc289cf321266d39016f841c243899fe6cf4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406379"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319059"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment-overview"></a>Información general de implementación de modo de caché hospedada de BranchCache
 
@@ -23,7 +23,7 @@ Puede usar esta guía para implementar un servidor de caché hospedada de Branch
 
 En esta información general se incluye la infraestructura de BranchCache que necesita, así como una sencilla introducción paso a paso de la implementación.
 
-## <a name="bkmk_components"></a>Infraestructura de implementación de servidor de caché hospedada
+## <a name="hosted-cache-server-deployment-infrastructure"></a><a name="bkmk_components"></a>Infraestructura de implementación de servidor de caché hospedada
 
 En esta implementación, el servidor de caché hospedada se implementa mediante puntos de conexión de servicio en Active Directory Domain Services \(AD DS\)y tiene la opción con BranchCache en Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012, para prehacer previamente el contenido compartido en servidores web y de contenido basado en archivos y, a continuación, cargar previamente el contenido en servidores de caché hospedada.
 
@@ -56,7 +56,7 @@ Cuando directiva de grupo actualizan los equipos cliente de la rama y se aplica 
 
 Debe actualizar directiva de grupo en los equipos cliente para aplicar la nueva configuración de directiva de grupo de BranchCache y permitir que los clientes busquen y utilicen el servidor de caché hospedada.
 
-## <a name="bkmk_overview"></a>Información general del proceso de implementación de servidor de caché hospedada
+## <a name="hosted-cache-server-deployment-process-overview"></a><a name="bkmk_overview"></a>Información general del proceso de implementación de servidor de caché hospedada
 
 >[!NOTE]
 >Los detalles de cómo realizar estos pasos se proporcionan en la sección [implementación de modo de caché hospedada de BranchCache](4-Bc-Hcm-Deployment.md).

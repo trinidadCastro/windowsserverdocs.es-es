@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: c81e85cb-ecb8-442a-ad27-442c2f9e40df
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c0803e369d9b48547190dc242617fed6e72d9ce4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9c85c4fd9026155fe1ca880ecb05f4c9358a2309
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406340"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318421"
 ---
 # <a name="configure-certificate-auto-enrollment"></a>Configurar la inscripción automática de certificados
 
@@ -34,7 +34,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 4. En **Objeto de directiva de grupo**, haga clic en **Examinar**. Se abre el cuadro de diálogo **Buscar un objeto de directiva de grupo**.
 5. En **Dominios, unidades organizativas y objetos de directiva de grupo vinculados**, haga clic en **Directiva predeterminada de dominio** y, a continuación, haga clic en **Aceptar**.
-6. Haga clic en **Finalizar**y, a continuación, en **Aceptar**.
+6. Haz clic en **Finalizar** y, a continuación, en **Aceptar**.
 7. Haga doble clic en **Directiva predeterminada de dominio**. En la consola de, expanda la siguiente ruta de acceso: **configuración del equipo**, **directivas**, **configuración de Windows**, configuración de **seguridad**y, a continuación, **directivas de clave pública**.
 8. Haga clic en **Directivas de clave pública**. En el panel de detalles, haz doble clic en **Cliente de Servicios de servidor de certificados - Inscripción automática**. Se abrirá el cuadro de diálogo **propiedades** . Configure los siguientes elementos y haga clic en **Aceptar**:
 
@@ -42,7 +42,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
      2. Active la casilla **Renovar certificados expirados, actualizar certificados pendientes y quitar certificados revocados**.
      3. Active la casilla **Actualizar certificados que usan plantillas de certificado**.
 
-9. Haz clic en **Aceptar**.
+9. Haga clic en **Aceptar**.
 
 ## <a name="configure-user-certificate-auto-enrollment"></a>Configurar la inscripción automática de certificados de usuario
 
@@ -55,7 +55,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 4. En **Objeto de directiva de grupo**, haga clic en **Examinar**. Se abre el cuadro de diálogo **Buscar un objeto de directiva de grupo**.
 5. En **Dominios, unidades organizativas y objetos de directiva de grupo vinculados**, haga clic en **Directiva predeterminada de dominio** y, a continuación, haga clic en **Aceptar**.
-6. Haga clic en **Finalizar**y, a continuación, en **Aceptar**.
+6. Haz clic en **Finalizar** y, a continuación, en **Aceptar**.
 7. Haga doble clic en **Directiva predeterminada de dominio**. En la consola de, expanda la siguiente ruta de acceso: **configuración de usuario**, **directivas**, **configuración de Windows**, configuración de **seguridad**.
 8. Haga clic en **Directivas de clave pública**. En el panel de detalles, haz doble clic en **Cliente de Servicios de servidor de certificados - Inscripción automática**. Se abrirá el cuadro de diálogo **propiedades** . Configure los siguientes elementos y haga clic en **Aceptar**:
 
@@ -63,7 +63,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
      2. Active la casilla **Renovar certificados expirados, actualizar certificados pendientes y quitar certificados revocados**.
      3. Active la casilla **Actualizar certificados que usan plantillas de certificado**.
 
-9. Haz clic en **Aceptar**.
+9. Haga clic en **Aceptar**.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

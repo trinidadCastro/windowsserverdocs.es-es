@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 54a8b9490fdf83d04c6b69fa88f4e8beca4f703a
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 196a124533b98c6945186ee827494b206028d2c8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259070"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317400"
 ---
 # <a name="secure-the-network-controller"></a>Proteger la controladora de red
 
@@ -46,7 +46,7 @@ La controladora de red admite los tres modos de autenticación entre los cliente
 
 2. **X509**. Use X509 para la autenticación basada en\-de certificados para los clientes de administración que no estén Unidos a un dominio Active Directory. Debe inscribir los certificados en todos los nodos de clúster de la controladora de red y los clientes de administración. Además, todos los nodos y clientes de administración deben confiar en los certificados de todos los demás.
 
-3. **Ninguno**. No use ninguno para realizar pruebas en un entorno de prueba y, por lo tanto, no se recomienda para su uso en un entorno de producción. Al elegir este modo, no se realiza ninguna autenticación entre los nodos y los clientes de administración.
+3. **Ninguna**. No use ninguno para realizar pruebas en un entorno de prueba y, por lo tanto, no se recomienda para su uso en un entorno de producción. Al elegir este modo, no se realiza ninguna autenticación entre los nodos y los clientes de administración.
 
 Puede configurar el modo de autenticación para la comunicación de Northbound mediante el comando de Windows PowerShell **[install-NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** con el parámetro _ClientAuthentication_ . 
 
@@ -61,7 +61,7 @@ Use los siguientes métodos de autorización para cada uno de los modos de auten
 
 2.  **X509**. Cuando se usa el método de autenticación X509, la controladora de red solo acepta solicitudes de clientes de administración cuyas huellas digitales de certificado son conocidas para la controladora de red. Puede configurar estas huellas digitales mediante el parámetro _ClientCertificateThumbprint_ del comando **[install-NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** de Windows PowerShell. Puede agregar otras huellas digitales de cliente en cualquier momento mediante el comando **[set-NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/Set-NetworkController)** .
 
-3.  **Ninguno**. Al elegir este modo, no se realiza ninguna autenticación entre los nodos y los clientes de administración. No use ninguno para realizar pruebas en un entorno de prueba y, por lo tanto, no se recomienda para su uso en un entorno de producción. 
+3.  **Ninguna**. Al elegir este modo, no se realiza ninguna autenticación entre los nodos y los clientes de administración. No use ninguno para realizar pruebas en un entorno de prueba y, por lo tanto, no se recomienda para su uso en un entorno de producción. 
 
 
 ### <a name="encryption"></a>Cifrado
@@ -107,7 +107,7 @@ La controladora de red admite los siguientes tres modos de autenticación entre 
 
 2. **X509**. X509 es la autenticación basada en certificados\-. Puede usar la autenticación X509 cuando los nodos del clúster de la controladora de red no están Unidos a un dominio de Active Directory. Para usar X509, debe inscribir certificados en todos los nodos de clúster de la controladora de red y todos los nodos deben confiar en los certificados. Además, el nombre de sujeto del certificado que está inscrito en cada nodo debe ser el mismo que el nombre DNS del nodo.
 
-3. **Ninguno**. Al elegir este modo, no se realiza ninguna autenticación entre los nodos de la controladora de red. Este modo se proporciona solo para fines de prueba y no se recomienda para su uso en un entorno de producción.
+3. **Ninguna**. Al elegir este modo, no se realiza ninguna autenticación entre los nodos de la controladora de red. Este modo se proporciona solo para fines de prueba y no se recomienda para su uso en un entorno de producción.
 
 ### <a name="authorization"></a>Autorización
 
@@ -119,13 +119,13 @@ Para cada uno de los modos de autenticación admitidos por la controladora de re
 
 2. **X509**. Los nodos de controladora de red aceptan solicitudes de comunicación solo de otras cuentas de equipo de la controladora de red. Puede configurar estas cuentas al implementar la controladora de red mediante el parámetro **Name** del comando de Windows PowerShell [New-NetworkControllerNodeObject](https://docs.microsoft.com/powershell/module/networkcontroller/new-networkcontrollernodeobject) .
 
-3. **Ninguno**. Al elegir este modo, no se realiza ninguna autorización entre los nodos de la controladora de red. Este modo se proporciona solo para fines de prueba y no se recomienda para su uso en un entorno de producción.
+3. **Ninguna**. Al elegir este modo, no se realiza ninguna autorización entre los nodos de la controladora de red. Este modo se proporciona solo para fines de prueba y no se recomienda para su uso en un entorno de producción.
 
 ### <a name="encryption"></a>Cifrado
 
 La comunicación entre los nodos de la controladora de red se cifra mediante el cifrado de nivel de transporte WCF. Esta forma de cifrado se utiliza cuando los métodos de autenticación y autorización son certificados de Kerberos o X509. Para obtener más información, vea los temas siguientes:
 
-- [Cómo proteger un servicio con credenciales de Windows](https://docs.microsoft.com/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
+- [Cómo: proteger un servicio con credenciales de Windows](https://docs.microsoft.com/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
 - [Cómo: proteger un servicio con certificados X. 509](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-secure-a-service-with-an-x-509-certificate).
 
 ## <a name="southbound-communication"></a>Comunicación de southbound

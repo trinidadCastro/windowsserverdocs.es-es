@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: acaa46b7-09b1-4707-9562-116df8db17eb
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 05/23/2018
-ms.openlocfilehash: ebf2cc840be771707f23d7976b670baae96c1343
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 762ba98a57db1411098c6ae6a8394e9a9b063181
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367495"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308519"
 ---
 # <a name="ras-gateway"></a>Puerta de enlace RAS
 
@@ -47,7 +47,7 @@ Si es administrador del sistema, arquitecto de redes u otro profesional de ti, l
  
 En este tema, destinado a los profesionales de tecnologías de la información (TI), se proporciona información general sobre la puerta de enlace RAS, incluidos los modos y características de implementación de puerta de enlace RAS. 
   
-En este tema se incluyen las siguientes secciones.  
+Este tema contiene las siguientes secciones.  
   
   
 -   [Modos de implementación de puerta de enlace RAS](#bkmk_modes)  
@@ -63,7 +63,7 @@ En este tema se incluyen las siguientes secciones.
 
 
   
-## <a name="bkmk_modes"></a>Modos de implementación de puerta de enlace RAS  
+## <a name="ras-gateway-deployment-modes"></a><a name="bkmk_modes"></a>Modos de implementación de puerta de enlace RAS  
 La puerta de enlace RAS incluye los siguientes modos de implementación.  
   
 ### <a name="single-tenant-mode"></a>Modo de un solo inquilino  
@@ -81,7 +81,7 @@ Las redes virtuales se crean con virtualización de red de Hyper-V, que es una t
 La virtualización de red de Hyper-V proporciona la capacidad de implementar una red de máquina virtual (VM) que es independiente de la red física subyacente. Con las redes de VM, que se componen de una o más subredes virtuales, la ubicación física exacta de una subred IP está desacoplada de la topología de red virtual. Como resultado, puede trasladar fácilmente sus subredes locales a la nube, a la vez que conserva las direcciones IP y la topología existentes en la nube. Esta capacidad de preservar la infraestructura permite a los servicios existentes seguir trabajando, sin tener en cuenta la ubicación física de las subredes. Es decir, Virtualización de red de Hyper-V hace posible una nube híbrida perfecta.  
   
 > [!NOTE]  
-> Virtualización de red de Hyper-V es una tecnología de superposición de red que usa la encapsulación de enrutamiento genérico ([NVGRE](https://tools.ietf.org/html/draft-sridharan-virtualization-nvgre-00)) de virtualización de red, que permite a los inquilinos traer su propio espacio de direcciones y permite a los CSP una mejor escalabilidad de lo que es posible con VLAN para el aislamiento de inquilinos.  
+> La virtualización de red de Hyper-V es una tecnología de superposición de red que usa la encapsulación de enrutamiento genérico ([NVGRE](https://tools.ietf.org/html/draft-sridharan-virtualization-nvgre-00)) de virtualización de red, que permite a los inquilinos traer su propio espacio de direcciones y permite a los CSP una mejor escalabilidad que la posible mediante el uso de redes VLAN para el aislamiento de inquilinos.  
   
 En Windows Server 2016, la puerta de enlace RAS enruta el tráfico de red entre la red física y los recursos de red de VM, independientemente de dónde se encuentren los recursos. Puede usar la puerta de enlace RAS para enrutar el tráfico de red entre las redes físicas y virtuales en la misma ubicación física o en muchas ubicaciones físicas distintas.  
   
@@ -91,7 +91,7 @@ En otro ejemplo, si las redes virtuales existen en la nube, el CSP puede impleme
   
 Para obtener más información, consulte [alta disponibilidad de puerta de enlace de Ras](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md).  
   
-## <a name="bkmk_clustering"></a>Agrupación en clústeres de puerta de enlace RAS para alta disponibilidad  
+## <a name="clustering-ras-gateway-for-high-availability"></a><a name="bkmk_clustering"></a>Agrupación en clústeres de puerta de enlace RAS para alta disponibilidad  
 La puerta de enlace RAS se implementa en un equipo dedicado que ejecuta Hyper-V y que está configurado con una máquina virtual. Después, la máquina virtual se configura como puerta de enlace de RAS.  
   
 Para lograr una alta disponibilidad de los recursos de red, puede implementar la puerta de enlace RAS con conmutación por error mediante dos servidores host físicos que ejecutan Hyper-V y cada uno de ellos ejecuta también una máquina virtual (VM) configurada como puerta de enlace. Las VM de la puerta de enlace están configuradas, por lo tanto, como clúster para proporcionar protección de conmutación por error frente a las interrupciones de red y los errores de hardware.  
@@ -102,7 +102,7 @@ En otro ejemplo, si su organización es un proveedor de servicios en la nube (CS
   
 Cuando se implementa la puerta de enlace de RAS, los servidores de host que ejecutan Hyper-V y las máquinas virtuales que se configuran como puertas de enlace deben ejecutar Windows Server 2012 R2 o Windows Server 2016.  
   
-## <a name="bkmk_features"></a>Características de puerta de enlace RAS  
+## <a name="ras-gateway-features"></a><a name="bkmk_features"></a>Características de puerta de enlace RAS  
 La puerta de enlace RAS incluye las siguientes capacidades.  
   
 -   **VPN de sitio a sitio**. Esta característica de puerta de enlace RAS le permite conectar dos redes en diferentes ubicaciones físicas a través de Internet mediante una conexión VPN de sitio a sitio. Si tiene una oficina principal y varias sucursales, puede implementar una puerta de enlace RAS perimetral en cada ubicación y crear conexiones de sitio a sitio para proporcionar el flujo de tráfico de red entre las ubicaciones. Para los CSP que hospedan muchos inquilinos en su centro de recursos, la puerta de enlace RAS proporciona una solución de puerta de enlace multiinquilino que permite a los inquilinos tener acceso a sus recursos y administrarlos a través de conexiones VPN de sitio a sitio desde sitios remotos y que permite el flujo de tráfico de red entre recursos virtuales en su centro de Datacenter y su red física.  
@@ -114,19 +114,19 @@ La puerta de enlace RAS incluye las siguientes capacidades.
 -   **Traducción de direcciones de red (NAT)** . La traducción de direcciones de red (NAT) permite compartir una conexión a Internet pública a través de una única interfaz con una sola dirección IP pública. Los equipos de la red privada utilizan direcciones privadas no enrutables. NAT asigna las direcciones privadas a la dirección pública. Esta característica de puerta de enlace RAS permite que los empleados de la organización con implementaciones de un solo inquilino tengan acceso a recursos de Internet desde detrás de la puerta de enlace. En el caso de los CSP, esta característica permite que las aplicaciones que se ejecutan en máquinas virtuales de inquilino tengan acceso a Internet. Por ejemplo, una máquina virtual de inquilino que está configurada como un servidor web puede ponerse en contacto con los recursos financieros externos para procesar las transacciones de tarjetas de crédito.  
 
   
-## <a name="bkmk_deploy"></a>Escenarios de implementación de puerta de enlace RAS  
+## <a name="ras-gateway-deployment-scenarios"></a><a name="bkmk_deploy"></a>Escenarios de implementación de puerta de enlace RAS  
 A continuación se indican los escenarios de implementación recomendados para la puerta de enlace RAS.  
   
 -   **Perimetral empresarial: implementación de un solo inquilino**. Con la implementación empresarial de un solo inquilino, puede conectar una física a varias ubicaciones físicas a través de Internet mediante el uso de la característica VPN de sitio a sitio, y Protocolo de puerta de enlace de borde (BGP) le permite usar el enrutamiento dinámico. También puede proporcionar a los empleados remotos acceso a la red de la organización con conexiones VPN de punto a sitio y conexiones de DirectAccess. (Las conexiones de DirectAccess están siempre activadas y también ofrecen la ventaja de que puede administrar fácilmente los equipos que están conectados mediante DirectAccess, ya que están conectados siempre que están conectados a Internet). También puede configurar puertas de enlace RAS de empresa de un solo inquilino con NAT, de modo que los equipos de la intranet puedan comunicarse fácilmente con Internet.  
   
 -   **Perimetral del proveedor de servicios en la nube: implementación multiinquilino**. La implementación multiinquilino de puerta de enlace RAS para CSP le permite ofrecer a sus inquilinos todas las características que están disponibles con la implementación de un solo inquilino de Enterprise Edge. Las conexiones VPN de sitio a sitio entre las redes virtuales de inquilino de su centro de recursos y las ubicaciones de red de inquilinos a través de Internet significan que los inquilinos tienen acceso sin problemas a sus recursos en la nube todo el tiempo. El acceso a VPN de punto a sitio para inquilinos significa que los administradores de inquilinos siempre pueden conectarse a sus redes virtuales en el centro de recursos para administrar sus recursos. BGP proporciona enrutamiento dinámico y mantiene los inquilinos conectados a sus activos incluso cuando se producen problemas de red en Internet o en otro lugar. Y NAT permite que las máquinas virtuales de inquilino se conecten a los recursos de Internet, como los recursos de procesamiento de tarjetas de crédito.  
   
-## <a name="bkmk_manage"></a>Herramientas de administración de puerta de enlace RAS  
+## <a name="ras-gateway-management-tools"></a><a name="bkmk_manage"></a>Herramientas de administración de puerta de enlace RAS  
 A continuación se muestran las herramientas de administración para la puerta de enlace RAS.  
   
 -   En Windows Server 2016, para implementar un enrutador de puerta de enlace RAS, debe usar los comandos de Windows PowerShell. Para obtener más información, consulte [cmdlets de acceso remoto](https://docs.microsoft.com/powershell/module/remoteaccess) para windows Server 2016 y Windows 10.  
   
--   En System Center 2012 R2 Virtual Machine Manager (VMM), la puerta de enlace RAS se denomina puerta de enlace de Windows Server. Hay disponible un conjunto limitado de opciones de configuración de Protocolo de puerta de enlace de borde (BGP) en la interfaz de software de VMM, incluidas la **dirección IP BGP local** y **los números de sistema autónomo (ASN)** , la **lista de direcciones IP del par BGP**y **los valores de ASN.** . Puede, no obstante, utilizar los comandos de Windows PowerShell BGP de acceso remoto para configurar el resto de características de la puerta de enlace de Windows Server. Para obtener más información, consulte [Virtual Machine Manager (VMM)](https://technet.microsoft.com/system-center-docs/vmm/vmm) y [cmdlets de acceso remoto](https://technet.microsoft.com/library/hh918399.aspx) para Windows Server 2016 y Windows 10.  
+-   En System Center 2012 R2 Virtual Machine Manager (VMM), la puerta de enlace RAS se denomina puerta de enlace de Windows Server. Hay disponible un conjunto limitado de opciones de configuración de Protocolo de puerta de enlace de borde (BGP) en la interfaz de software de VMM, incluidas la **dirección IP BGP local** y **los números de sistema autónomo (ASN)** , la **lista de direcciones IP del par BGP**y **los valores de ASN**. Puede, no obstante, utilizar los comandos de Windows PowerShell BGP de acceso remoto para configurar el resto de características de la puerta de enlace de Windows Server. Para obtener más información, consulte [Virtual Machine Manager (VMM)](https://technet.microsoft.com/system-center-docs/vmm/vmm) y [cmdlets de acceso remoto](https://technet.microsoft.com/library/hh918399.aspx) para Windows Server 2016 y Windows 10.  
   
 ## <a name="related-topics"></a>Temas relacionados
 - [Alta disponibilidad de puerta de enlace RAS](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)  

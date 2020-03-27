@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dhcp
 ms.topic: get-started-article
 ms.assetid: c6f36998-5b64-45d1-b1f0-0f0d6604dbe3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8032b7c8e78170d57b0367775672577d9fd900e2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 58d849fa1003148b034cc426817b97d3a70d4421
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355450"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312693"
 ---
 # <a name="whats-new-in-dhcp"></a>Novedades del DHCP
 
@@ -51,7 +51,7 @@ La compatibilidad con NAP se presentó al rol de servidor DHCP con Windows Serve
 | Windows Server 2008 |Se admite|  
 | Windows Server 2008 R2 |Se admite|  
 | Windows Server 2012 |Se admite|  
-| Windows Server 2012 R2 |Se admite|  
+| Windows Server 2012 R2 |Se admite|  
 | Windows Server 2016|No se admite|  
   
 En una implementación de NAP, un servidor DHCP que ejecute un sistema operativo que admita NAP puede funcionar como un punto de cumplimiento NAP para el método de cumplimiento NAP DHCP. Para obtener más información acerca de DHCP en NAP, consulte [lista de comprobación: implementar un diseño de cumplimiento DHCP](https://technet.microsoft.com/library/dd314186.aspx).  
@@ -60,7 +60,7 @@ En Windows Server 2016, los servidores DHCP no aplican directivas de NAP y los �
 
 Si los servidores que ejecutan Windows Server 2016 son proxies RADIUS que reenvían las solicitudes de autenticación a un servidor de directivas de redes \(\) NPS que admite NAP, NPS evalúa estos clientes NAP como no compatibles con NAP\-y se produce un error en el procesamiento de NAP.
   
-## <a name="see-also"></a>Consulte también  
+## <a name="see-also"></a>Vea también  
   
 -   [Protocolo de configuración dinámica de host (DHCP)](Dynamic-Host-Configuration-Protocol--DHCP-.md)  
   

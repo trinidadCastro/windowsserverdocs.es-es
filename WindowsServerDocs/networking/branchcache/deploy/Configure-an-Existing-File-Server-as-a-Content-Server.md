@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: bdac7d2a-25b4-4f61-bed1-b290700c18f3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f675322c32db0816d5afb155d53fad9f096ad650
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0568bf051fee3c9ee4fd5d1f403f5110f7669ad3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356688"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319340"
 ---
 # <a name="configure-an-existing-file-server-as-a-content-server"></a>Configurar un servidor de archivos existente como servidor de contenido
 
@@ -37,7 +37,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
   
 ### <a name="to-install-the-branchcache-for-network-files-role-service"></a>Para instalar el servicio de rol BranchCache para archivos de red  
   
-1.  En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**. Se abre el Asistente para agregar roles y características. Haz clic en **Siguiente**.  
+1.  En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**. Se abre el Asistente para agregar roles y características. Haga clic en **Siguiente**.  
   
 2.  En **Seleccionar tipo de instalación**, asegúrese de que esté seleccionada la opción instalación basada en **características o en roles** y, a continuación, haga clic en **siguiente**.  
   
@@ -50,7 +50,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
     > [!TIP]  
     > Si todavía no lo ha hecho, se recomienda que active también la casilla de **desduplicación de datos**.  
   
-    Haz clic en **Siguiente**.  
+    Haga clic en **Siguiente**.  
   
 6.  En **seleccionar características**, haga clic en **siguiente**.  
   

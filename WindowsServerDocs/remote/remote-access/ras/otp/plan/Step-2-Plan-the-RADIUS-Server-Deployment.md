@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d6ad863-02a5-49b0-9aff-d189e78b2b80
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a991b312a0938a3809acd2b94c00aa678f5b41da
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 44f8514bd046d2c5f526e85309af430383bf1ec1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404400"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313576"
 ---
 # <a name="step-2-plan-the-radius-server-deployment"></a>Paso 2 planear la implementación del servidor RADIUS
 
@@ -29,7 +29,7 @@ Después de implementar un solo servidor de acceso remoto, planee el servidor de
 |----|--------|  
 |2,1 planear el servidor RADIUS|Para el servidor de autenticación OTP, el acceso remoto en Windows Server 2016 y Windows Server 2012 admite cualquier servidor OTP habilitado para RADIUS que admita el protocolo de autenticación de contraseña (PAP).|  
   
-## <a name="BKMK_1.1"></a>2,1 planear el servidor RADIUS  
+## <a name="21-plan-the-radius-server"></a><a name="BKMK_1.1"></a>2,1 planear el servidor RADIUS  
 Tenga en cuenta lo siguiente al planear un servidor RADIUS para la autenticación de OTP:  
   
 -   Para la mayoría de los tipos de implementaciones de OTP, debe configurar el servidor de acceso remoto como agente RADIUS. Para obtener más información, consulte la documentación del proveedor de OTP.  

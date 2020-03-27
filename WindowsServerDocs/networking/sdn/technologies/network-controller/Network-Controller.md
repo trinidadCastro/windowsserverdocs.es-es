@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 13f535b9a91f26b30600b637b46817cfa33ccd7b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ad13e41e756f0185a748fe9e17df64c71a8754bc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355649"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317070"
 ---
 # <a name="network-controller"></a>Controladora de red
 
@@ -32,7 +32,7 @@ Con Controladora de red puede automatizar la configuración de la infraestructur
 > - [Pasos posteriores a la implementación de la controladora de red](post-deploy-steps-nc.md)
 > - [Cmdlets de controladora de red](https://technet.microsoft.com/library/mt576401.aspx) 
 
-## <a name="bkmk_overview"></a>Información general de la controladora de red
+## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>Información general de la controladora de red
 
 La controladora de red es un rol de servidor escalable y de alta disponibilidad, y proporciona una interfaz de programación de aplicaciones \(\) de API que permite a la controladora de red comunicarse con la red y una segunda API que le permite comunicarse con el controlador de red.
 
@@ -70,7 +70,7 @@ Si va a implementar la controladora de red en un entorno de laboratorio de prueb
 
 Para lograr una alta disponibilidad en centros de recursos de mayor tamaño, puede implementar un clúster con tres máquinas virtuales que estén instaladas en tres o más hosts de Hyper-V. Para obtener más información, consulte [alta disponibilidad de la controladora de red](network-controller-high-availability.md).
 
-## <a name="bkmk_features"></a>Características de la controladora de red
+## <a name="network-controller-features"></a><a name="bkmk_features"></a>Características de la controladora de red
 
 Las siguientes características de Controladora de red le permiten configurar y administrar dispositivos y servicios de red físicos y virtuales.  
   
@@ -85,25 +85,25 @@ Las siguientes características de Controladora de red le permiten configurar y 
 >[!IMPORTANT]
 >La copia de seguridad y restauración de la controladora de red no está disponible actualmente en Windows Server 2016.
   
-### <a name="bkmk_firewall"></a>Administración de Firewall
+### <a name="firewall-management"></a><a name="bkmk_firewall"></a>Administración de Firewall
 
 Esta característica de Controladora de red le permite configurar y administrar reglas de Access Control (permitir/denegar) del firewall en las MV de carga de trabajo, tanto en el tráfico de red este/oeste y como en el norte/sur de su centro de datos. Las reglas de firewall se aplican en el puerto vSwitch de las MV de carga de trabajo, por lo que se distribuyen por la carga de trabajo en el centro de datos. Con la API Northbound puede definir las reglas de firewall para el tráfico entrante y saliente de la MV de carga de trabajo. También puede configurar cada regla de firewall para que registre el tráfico al que permite o deniega el paso.  
 
 Para obtener más información, consulte [información general sobre el firewall del centro](../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)de datos.
 
-### <a name="bkmk_slb"></a>Administración de Load Balancer de software
+### <a name="software-load-balancer-management"></a><a name="bkmk_slb"></a>Administración de Load Balancer de software
 
 Esta característica de red le permite habilitar múltiples servidores para que alojen la misma carga de trabajo, lo que proporciona alta disponibilidad y escalabilidad.  
   
 Para más información, consulte [ &#40;equilibrio de carga de&#41; software SLB para Sdn](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).  
   
-### <a name="bkmk_virtual"></a>Administración de Virtual Network
+### <a name="virtual-network-management"></a><a name="bkmk_virtual"></a>Administración de Virtual Network
 
 Esta característica de Controladora de red le permite implementar y configurar en MV individuales la virtualización de red Hyper-V, lo que incluye el Conmutador virtual de Hyper-V y adaptadores de red virtuales, así como almacenar y distribuir directivas de red virtual.
 
 Controladora de red es compatible con Network Virtualization Generic Routing Encapsulation (NVGRE) y Virtual Extensible Local Area Network (VXLAN).
 
-### <a name="bkmk_gateway"></a>Administración de puerta de enlace RAS
+### <a name="ras-gateway-management"></a><a name="bkmk_gateway"></a>Administración de puerta de enlace RAS
 
 Esta característica de controladora de red le permite implementar, configurar y administrar máquinas virtuales (VM) que son miembros de un grupo de puerta de enlace de RAS, proporcionando servicios de puerta de enlace a los inquilinos. La controladora de red le permite implementar automáticamente máquinas virtuales que ejecutan la puerta de enlace RAS con las siguientes características de puerta de enlace:
 

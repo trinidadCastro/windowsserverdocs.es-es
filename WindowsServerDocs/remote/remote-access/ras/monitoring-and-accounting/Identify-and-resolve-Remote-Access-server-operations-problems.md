@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7ce84c9f-fd1f-4463-8fc7-d2f33344a2c9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 831f484db8325bf9a27e9065ac5cf74913d0805c
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1fd3a20cb6429d60f450478f5e817a7506b28346
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791163"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314248"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>Identificar y resolver los problemas de operaciones del servidor de acceso remoto
 
@@ -38,7 +38,7 @@ En este tema se incluye información acerca de cómo realizar las siguientes tar
   
 - Restaurar el servicio auxiliar de IP  
   
-### <a name="BKMK_Simulate"></a>Simular un problema de operaciones  
+### <a name="simulate-an-operations-issue"></a><a name="BKMK_Simulate"></a>Simular un problema de operaciones  
   
 > [!CAUTION]  
 > Dado que es probable que el servidor de acceso remoto esté configurado correctamente y no experimente problemas, puede usar el siguiente procedimiento para simular un problema de las operaciones. Si el servidor está atendiendo actualmente a los clientes en un entorno de producción, es posible que no desee realizar estas acciones en este momento. En su lugar, puede leer los pasos para entender cómo solucionar los problemas que pueden surgir en el servidor de acceso remoto en el futuro.  
@@ -51,7 +51,7 @@ El servicio auxiliar de IP (IPHlpSvc) hospeda las tecnologías de transición IP
   
 2.  En la lista de **servicios**, desplácese hacia abajo y haga clic con el botón secundario en **aplicación auxiliar de IP**y, a continuación, haga clic en **detener**.  
   
-### <a name="BKMK_Identify"></a>Identificar el problema de las operaciones y tomar medidas correctivas  
+### <a name="identify-the-operations-issue-and-take-corrective-action"></a><a name="BKMK_Identify"></a>Identificar el problema de las operaciones y tomar medidas correctivas  
 La desactivación del servicio auxiliar de IP producirá un error grave en el servidor de acceso remoto. El panel de supervisión mostrará el estado de las operaciones del servidor y los detalles del problema.  
   
 ##### <a name="to-identify-the-details-and-take-corrective-action"></a>Para identificar los detalles y tomar medidas correctivas  
@@ -82,7 +82,7 @@ La desactivación del servicio auxiliar de IP producirá un error grave en el se
   
     3.  Para reiniciar el servicio, escriba **restart-Service Iphlpsvc** desde un símbolo del sistema de Windows PowerShell con privilegios elevados.  
   
-### <a name="BKMK_Restart"></a>Restaurar el servicio auxiliar de IP  
+### <a name="restore-the-ip-helper-service"></a><a name="BKMK_Restart"></a>Restaurar el servicio auxiliar de IP  
 Para restaurar el servicio auxiliar de IP en el servidor de acceso remoto, puede seguir los pasos de resolución anteriores para iniciar o reiniciar el servicio, o puede usar el procedimiento siguiente para revertir el procedimiento que usó para simular el error del servicio de aplicación auxiliar de IP.  
   
 ##### <a name="to-restart-the-ip-helper-service-on-the-remote-access-server"></a>Para reiniciar el servicio auxiliar de IP en el servidor de acceso remoto  
@@ -93,7 +93,7 @@ Para restaurar el servicio auxiliar de IP en el servidor de acceso remoto, puede
   
 ![](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
   
 ```PowerShell
 PS> Get-RemoteAccessHealth | Where-Object {$_.Component -eq "IP-HTTPS"} | Format-List -Property *  

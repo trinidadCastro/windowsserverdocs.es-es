@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 97abf182-4725-4026-801c-122db96964ed
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 35743d9e1a25c71a35eed018a4a3882a3d094d76
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1e7870e045f9af79ed46ec1ad998dbc1f1474afd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355568"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312902"
 ---
 # <a name="software-load-balancing-slb-for-sdn"></a>Equilibrio de carga de software \(SLB\) para SDN
 
@@ -114,7 +114,7 @@ SLB incluye sondeos de estado para validar el estado de la infraestructura de re
   
 A diferencia de un dispositivo de equilibrador de carga tradicional en el que el sondeo se origina en el dispositivo y se desplaza por la conexión a la DIP, el sondeo de SLB se origina en el host donde se encuentra la DIP y va directamente desde el agente de host de SLB a la DIP, con lo que se distribuye el trabajar en los hosts.  
   
-## <a name="bkmk_infrastructure"></a>Infraestructura de equilibrio de carga de software  
+## <a name="software-load-balancing-infrastructure"></a><a name="bkmk_infrastructure"></a>Infraestructura de equilibrio de carga de software  
 Para implementar SLB de Windows Server, primero debe implementar la controladora de red en Windows Server 2016 y una o varias máquinas virtuales SLB MUX.  
   
 Además, debe configurar hosts de Hyper-V con el conmutador virtual de Hyper-V habilitado para SDN y asegurarse de que se está ejecutando el agente de host de SLB.  Los enrutadores que atienden a los hosts deben ser compatibles con el enrutamiento y Protocolo de puerta de enlace de borde (BGP) de múltiples rutas de costo (ECMP) y deben configurarse para aceptar solicitudes de emparejamiento de BGP desde el MUX de SLB.  
@@ -179,7 +179,7 @@ El enrutador BGP realiza las siguientes acciones para SLB.
   
 -   Quita SLB MUX de la rotación de SLB si se produce un error de Keep Alive.  
   
-## <a name="bkmk_features"></a>Características de equilibrio de carga de software  
+## <a name="software-load-balancing-features"></a><a name="bkmk_features"></a>Características de equilibrio de carga de software  
 A continuación se muestran algunas de las características y capacidades de SLB.  
   
 **Funcionalidad básica**  

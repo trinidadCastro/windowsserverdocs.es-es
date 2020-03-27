@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6a7836160fc7363ec3d7b2fb11e194db82970f9a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f9bc1a35016ca5946eddeada2088a83f1fa8ca05
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406156"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317750"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>Uso de directiva DNS para la administración del tráfico basada en la ubicación geográfica con implementaciones primarias-secundarias
 
@@ -80,7 +80,7 @@ Para cualquier actualización adicional en un ámbito de zona, se envía una not
   
 ## <a name="how-to-configure-dns-policy-for-primary-secondary-geo-location-based-traffic-management"></a>Configuración de la Directiva de DNS para la administración del tráfico basada en la ubicación geográfica principal y secundaria
 
-Antes de comenzar, asegúrese de que ha completado todos los pasos del tema [uso de la Directiva de DNS para la administración del tráfico basado en la ubicación geográfica con los servidores principales](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md), y el servidor DNS principal se configura con zonas, ámbitos de zona, subredes de cliente DNS y DNS directivas.  
+Antes de comenzar, asegúrese de que ha completado todos los pasos del tema [uso de la Directiva de DNS para la administración del tráfico basado en la ubicación geográfica con los servidores principales](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md), y el servidor DNS principal se configura con zonas, ámbitos de zona, subredes de cliente DNS y la Directiva DNS.  
   
 > [!NOTE]
 > Las instrucciones de este tema para copiar las subredes de cliente DNS, los ámbitos de zona y las directivas de DNS de los servidores principales DNS a los servidores secundarios DNS son para la configuración inicial y la validación de DNS. En el futuro, es posible que desee cambiar las opciones de subredes de cliente DNS, ámbitos de zona y directivas en el servidor principal. En este caso, puede crear scripts de automatización para mantener sincronizados los servidores secundarios con el servidor principal.  

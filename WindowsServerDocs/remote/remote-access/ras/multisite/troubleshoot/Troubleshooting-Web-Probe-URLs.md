@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6dfffd1e-f4f4-43b6-9e3c-49015ce34338
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 132db4811ee135d2ebff99efed6f53b5db1356ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fd09c8e9c7a6f0ea7192ca20440c18f21ba65c93
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404441"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313751"
 ---
 # <a name="troubleshooting-web-probe-urls"></a>Solucionar problemas relacionados con las direcciones URL de sondeo web
 
@@ -25,15 +25,15 @@ ms.locfileid: "71404441"
 
 En este tema encontrará información para solucionar problemas relacionados con el comando `Set-DAEntryPointDC`. Para confirmar que el error recibido está relacionado con el establecimiento del controlador de dominio del punto de entrada, consulte el identificador de evento 10065 en el Registro de eventos de Windows.  
   
-## <a name="SaveGPOSettings"></a>Guardando configuración de GPO de servidor  
+## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>Guardando configuración de GPO de servidor  
 **Error recibido**. Error al guardar la configuración de acceso remoto en el GPO < GPO_name >.  
   
-Para solucionar este error, consulte guardar la configuración de GPO de servidor.  
+Para resolverlo, consulte Guardar la configuración del GPO de servidor.  
   
 ## <a name="remote-access-is-not-configured"></a>Acceso remoto no está configurado  
 **Error recibido**. El acceso remoto no está configurado en < server_name >. Especifique el nombre de un servidor que forme parte de una implementación multisitio.  
   
-O bien  
+O  
   
 El acceso remoto no está configurado en el servidor < server_name >. Especifique un equipo con DirectAccess habilitado.  
   
@@ -65,7 +65,7 @@ El cmdlet `Set-DaEntryPointDC` permite cambiar el controlador de dominio asociad
   
 **Error recibido**. No se especificaron parámetros necesarios. Proporcione el nombre de un punto de entrada o de un controlador de dominio existente.  
   
-O bien  
+O  
   
 Faltan todos los parámetros obligatorios en el cmdlet `Set-DaEntryPointDC`.  
   
