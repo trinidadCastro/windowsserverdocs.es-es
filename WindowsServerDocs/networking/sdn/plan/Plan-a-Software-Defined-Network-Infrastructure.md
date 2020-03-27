@@ -11,15 +11,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/10/2018
-ms.openlocfilehash: ed2dc8861366b929de346d5bd5b3d40998cc8dd5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 83f94d3770c475fca7f5d4b8cc2f5a5ade1a20d7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355790"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317464"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>Planeación de una infraestructura de red definida por software
 
@@ -60,7 +60,7 @@ Un servidor DHCP puede asignar automáticamente direcciones IP para la red de ad
 >La controladora de red asigna una dirección IP del proveedor de HNV a un host de proceso físico solo después de que el agente de host de la controladora de red reciba la Directiva de red para una máquina virtual de inquilino específica. 
 
 
-|                                                               Si...                                                               |                                                                                                                                                                          En ese caso...                                                                                                                                                                           |
+|                                                               Si...                                                               |                                                                                                                                                                          Entonces...                                                                                                                                                                           |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                                  Las redes lógicas usan VLAN,                                                  |                                                                 el host de proceso físico debe conectarse a un puerto de conmutador troncal que tenga acceso a estas VLAN. Es importante tener en cuenta que los adaptadores de red físicos del host del equipo no deben tener activado ningún filtrado de VLAN.                                                                 |
 |                Usar la formación de equipos incrustada (establecida) y tener varios miembros del equipo NIC, como adaptadores de red,                |                                                                                                                        debe conectar todos los miembros del equipo NIC para ese host determinado al mismo dominio de difusión de nivel 2.                                                                                                                         |
@@ -93,7 +93,7 @@ Cambie los prefijos de subred IP de ejemplo y los identificadores de VLAN para s
 
 | **Nombre de red** |  **ID**  | **Máscara** | **IDENTIFICADOR de VLAN en camión** | **Puerta**  |                                                           **Reservas (ejemplos)**                                                           |
 |------------------|--------------|----------|----------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-|    Management    | 10.184.108.0 |    24    |          7           | 10.184.108.1 | 10.184.108.1 – router 10.184.108.4-10.184.108.10 de la controladora de red-Compute host 110.184.108.11-Compute host 210.184.108. X-Compute host X |
+|    Administración    | 10.184.108.0 |    24    |          7           | 10.184.108.1 | 10.184.108.1 – router 10.184.108.4-10.184.108.10 de la controladora de red-Compute host 110.184.108.11-Compute host 210.184.108. X-Compute host X |
 |   Proveedor HNV   |  10.10.56.0  |    23    |          11          |  10.10.56.1  |                                                    10.10.56.1: enrutador 10.10.56.2-SLB/MUX1                                                     |
 |     Tránsito      |  red 10.10.10.0  |    24    |          10          |  10.10.10.1  |                                                               10.10.10.1: enrutador                                                               |
 |    VIP pública    |  41.40.40.0  |    27    |          N/A          |  41.40.40.1  |                                    41.40.40.1 – router 41.40.40.2-SLB/MUX VIP 41.40.40.3-IPSec S2S VPN VIP                                    |
@@ -111,8 +111,8 @@ Si usa el almacenamiento basado en RDMA, defina una VLAN y una subred para cada 
 
 | **Nombre de red** |  **ID**  | **Máscara** | **IDENTIFICADOR de VLAN en camión** | **Puerta**  |                                                           **Reservas (ejemplos)**                                                            |
 |------------------|--------------|----------|----------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-|     storage1     |  10.60.36.0  |    25    |          8           |  10.60.36.1  |  10.60.36.1: enrutador<p>10.60.36. x: host de proceso X<p>10.60.36. y-compute host Y<p>10.60.36. V: clúster de proceso<p>10.60.36. W: clúster de almacenamiento  |
-|     storage2     | 10.60.36.128 |    25    |          9           | 10.60.36.129 | 10.60.36.129: enrutador<p>10.60.36. x: host de proceso X<p>10.60.36. y-compute host Y<p>10.60.36. V: clúster de proceso<p>10.60.36. W: clúster de almacenamiento |
+|     Storage1     |  10.60.36.0  |    25    |          8           |  10.60.36.1  |  10.60.36.1: enrutador<p>10.60.36. x: host de proceso X<p>10.60.36. y-compute host Y<p>10.60.36. V: clúster de proceso<p>10.60.36. W: clúster de almacenamiento  |
+|     Storage2     | 10.60.36.128 |    25    |          9           | 10.60.36.129 | 10.60.36.129: enrutador<p>10.60.36. x: host de proceso X<p>10.60.36. y-compute host Y<p>10.60.36. V: clúster de proceso<p>10.60.36. W: clúster de almacenamiento |
 
 ---
 
@@ -121,11 +121,11 @@ Si usa el almacenamiento basado en RDMA, defina una VLAN y una subred para cada 
 
 Si va a implementar la infraestructura de SDN mediante scripts, las subredes administración, proveedor de HNV, tránsito y VIP deben ser enrutables entre sí en la red física.     
 
-La información \(de enrutamiento, por ejemplo\) , el próximo salto para las subredes VIP se anuncia por las puertas de enlace de SLB/MUX y ras en la red física mediante el emparejamiento BGP interno. Las redes lógicas de VIP no tienen una VLAN asignada y no está preconfigurada en el conmutador de capa 2 (por ejemplo, conmutador para parte superior del rack).  
+La información de enrutamiento \(por ejemplo, el\) de próximo salto para las subredes VIP se anuncia mediante las puertas de enlace de SLB/MUX y RAS en la red física mediante el emparejamiento BGP interno. Las redes lógicas de VIP no tienen una VLAN asignada y no está preconfigurada en el conmutador de capa 2 (por ejemplo, conmutador para parte superior del rack).  
 
 Debe crear un par BGP en el enrutador que usa la infraestructura de SDN para recibir rutas para las redes lógicas de VIP anunciadas por las puertas de enlace de SLB/MUX y RAS. El emparejamiento BGP solo tiene que producirse de una manera (desde el SLB/MUX o la puerta de enlace de RAS al par BGP externo).  Por encima de la primera capa de enrutamiento puede utilizar rutas estáticas u otro protocolo de enrutamiento dinámico como OSPF; sin embargo, como se indicó anteriormente, el prefijo de subred IP para las redes lógicas VIP debe ser enrutable desde la red física al par BGP externo.   
 
-El emparejamiento BGP normalmente se configura en un conmutador o enrutador administrado como parte de la infraestructura de red. El par BGP también puede configurarse en un servidor Windows con el rol de servidor de acceso remoto (RAS) instalado en un modo de solo enrutamiento. Este enrutador BGP del mismo nivel en la infraestructura de red debe configurarse para que tenga su propio ASN y permitir el emparejamiento de un ASN \(que esté asignado a los componentes de\)Sdn SLB/MUX y las puertas de enlace de Ras. Debe obtener la siguiente información del enrutador físico o del administrador de red en el control del enrutador:
+El emparejamiento BGP normalmente se configura en un conmutador o enrutador administrado como parte de la infraestructura de red. El par BGP también puede configurarse en un servidor Windows con el rol de servidor de acceso remoto (RAS) instalado en un modo de solo enrutamiento. Este enrutador BGP del mismo nivel en la infraestructura de red debe configurarse para que tenga su propio ASN y permitir el emparejamiento de un ASN que esté asignado a los componentes de SDN \(las puertas de enlace de SLB/MUX y RAS\). Debe obtener la siguiente información del enrutador físico o del administrador de red en el control del enrutador:
 
 - ASN de enrutador  
 - Dirección IP del enrutador  
@@ -165,28 +165,28 @@ Switch Embedded Teaming (SET) es una solución alternativa de formación de equi
 
 Para obtener más información, vea [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](../../../virtualization//hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).   
 
-Para tener en cuenta la sobrecarga en el tráfico de red virtual de inquilinos causada por los encabezados de encapsulación VXLAN o NVGRE, la MTU de la red de tejido de capa 2 (conmutadores y hosts) debe establecerse \(en un valor mayor o igual que 1674 bytes, como Ethernet de capa 2. \)encabezados. 
+Para tener en cuenta la sobrecarga en el tráfico de red virtual de inquilinos causada por los encabezados de encapsulación VXLAN o NVGRE, la MTU de la red de tejido de capa 2 (conmutadores y hosts) debe establecerse en un valor mayor o igual que 1674 bytes \(incluidos los encabezados Ethernet de capa 2\). 
 
-Las NIC que admiten la nueva palabra clave de adaptador avanzado *EncapOverhead* establecen la MTU automáticamente a través del agente de host de la controladora de red. Las NIC que no admiten la palabra clave New *EncapOverhead* deben establecer el tamaño de MTU manualmente en cada host físico mediante la palabra\) clave *JumboPacket* \(o equivalente. 
+Las NIC que admiten la nueva palabra clave de adaptador avanzado *EncapOverhead* establecen la MTU automáticamente a través del agente de host de la controladora de red. Las NIC que no admiten la palabra clave New *EncapOverhead* deben establecer el tamaño de MTU manualmente en cada host físico mediante la palabra clave *JumboPacket* \(o equivalente\). 
 
 
-### <a name="switches"></a>Centrales
+### <a name="switches"></a>Conmutadores
 
 Al seleccionar un conmutador físico y un enrutador para su entorno, asegúrese de que admite el siguiente conjunto de capacidades:  
 
-- Configuración \(de MTU de switchport requerida\)  
-- MTU establecida en > = 1674 bytes \(, incluido el encabezado L2-Ethernet\)  
-- Protocolos \(L3 necesarios\)  
+- \(requiere la configuración de MTU de switchport\)  
+- MTU establecida en > = 1674 bytes \(incluido el encabezado L2-Ethernet\)  
+- Protocolos L3 \(necesarios\)  
 - ECMP  
-- ECMP \(basado en BGP\)IETF RFC 4271\-
+- BGP \(IETF RFC 4271\)basado en \-ECMP
 
 Las implementaciones deben admitir las instrucciones debe en los estándares IETF siguientes.
 
-- RFC 2545: "Extensiones multiprotocolo de BGP-4 para el enrutamiento entre dominios IPv6"  
-- RFC 4760: "Extensiones multiprotocolo para BGP-4"  
-- RFC 4893: "Compatibilidad con BGP para cuatro octetos como espacio de número"  
-- RFC 4456: "Reflexión de rutas BGP: Una alternativa a BGP interno de la malla completa (IBGP)  
-- RFC 4724: "Mecanismo de reinicio estable para BGP"  
+- RFC 2545: "extensiones multiprotocolo BGP-4 para el enrutamiento entre dominios IPv6"  
+- RFC 4760: "extensiones multiprotocolo para BGP-4"  
+- RFC 4893: "compatibilidad con BGP para cuatro octetos como espacio de número"  
+- RFC 4456: "reflexión de la ruta BGP: alternativa al BGP interno de la malla completa (IBGP)"  
+- RFC 4724: "mecanismo de reinicio estable para BGP"  
 
 Se requieren los siguientes protocolos de etiquetado.
 
@@ -195,9 +195,9 @@ Se requieren los siguientes protocolos de etiquetado.
 
 Los elementos siguientes proporcionan el control de vínculos.
 
-- Solo se requiere \(PFC de calidad de servicio si se usa RoCE\)
-- Selección \(de tráfico mejorada 802.1 QAZ\)
-- Control \(de flujo basado en prioridades 802.1 p/Q y 802.1 QBB\)
+- Calidad de servicio \(PFC solo es necesario si se usa RoCE\)
+- Selección de tráfico mejorada \(802.1 QAZ\)
+- Control de flujo basado en la prioridad \(802.1 p/Q y 802.1 QBB\)
 
 Los elementos siguientes proporcionan disponibilidad y redundancia.
 
@@ -209,8 +209,8 @@ Los elementos siguientes proporcionan capacidades de administración.
 **Evaluación**
 
 - SNMP V1 o SNMP V2 (obligatorio si se usa la controladora de red para la supervisión de conmutadores físicos)  
-- MIB \(de SNMP necesarios si usa la controladora de red para la supervisión de conmutadores físicos\)  
-- MIB-II (RFC 1213), LLDP, interfaz MIB \(RFC 2863\), if-MIB, IP-MIB, IP-Forward-MIB, Q-Bridge-MIB, Bridge-MIB, LLDB-MIB, Entity-MIB, IEEE8023-lag-MIB  
+- Las MIB SNMP \(requieren si usa la controladora de red para la supervisión de conmutadores físicos\)  
+- MIB-II (RFC 1213), LLDP, interfaz MIB \(RFC 2863\), IF-MIB, IP-MIB, IP-FORWARD-MIB, Q-BRIDGE-MIB, BRIDGE-MIB, LLDB-MIB, Entity-MIB, IEEE8023-LAG-MIB  
 
 En los diagramas siguientes se muestra un ejemplo de configuración de cuatro nodos. Por motivos de claridad, el primer diagrama muestra solo el controlador de red, el segundo muestra el controlador de red más el equilibrador de carga de software y el tercer diagrama muestra la controladora de red, el equilibrador de carga de software y la puerta de enlace.  
 
@@ -231,19 +231,19 @@ Todos los hosts de Hyper-V deben tener instalado Windows Server 2016, Hyper-V ha
 Se puede usar cualquier tipo de almacenamiento que sea compatible con Hyper-V, compartido o local.   
 
 > [!TIP]  
-> Es conveniente usar el mismo nombre para todos los conmutadores virtuales, pero no es obligatorio. Si planea implementar con scripts, vea el comentario asociado a la `vSwitchName` variable en el archivo config. psd1.  
+> Es conveniente usar el mismo nombre para todos los conmutadores virtuales, pero no es obligatorio. Si planea implementar con scripts, vea el comentario asociado a la variable `vSwitchName` en el archivo config. psd1.  
 
 **Requisitos de proceso del host**  
 En la tabla siguiente se muestran los requisitos mínimos de hardware y software para los cuatro hosts físicos usados en la implementación de ejemplo.  
 
 Host|Requisitos de hardware|Requisitos de software|  
 --------|-------------------------|-------------------------  
-|Host de Hyper-v físico|CPU de 4 núcleos a 2,66 GHz<br /><br />32 GB de RAM<br /><br />300 GB de espacio en disco<br /><br />adaptador de red físico de 1 GB/s (o superior)|OPERATIVOS Windows Server 2016<br /><br />Rol de Hyper-V instalado|  
+|Host de Hyper-v físico|CPU de 4 núcleos a 2,66 GHz<br /><br />32 GB de RAM<br /><br />300 GB de espacio en disco<br /><br />adaptador de red físico de 1 GB/s (o superior)|SO: Windows Server 2016<br /><br />Rol de Hyper-V instalado|  
 
 
 **Requisitos de rol de máquina virtual de infraestructura de SDN**  
 
-Rol|requisitos de vCPU|Requisitos de memoria|Requisitos de disco|  
+Role|requisitos de vCPU|Requisitos de memoria|Requisitos de disco|  
 --------|---------------------|-----------------------|---------------------  
 |Controladora de red (tres nodos)|4 vCPU|4 GB como mínimo (se recomiendan 8 GB)|75 GB para la unidad del sistema operativo  
 |SLB/MUX (tres nodos)|8 vCPU|se recomiendan 8 GB|75 GB para la unidad del sistema operativo  
@@ -259,7 +259,7 @@ Los requisitos de tamaño y recursos de la infraestructura dependen de las máqu
 Cuando las máquinas virtuales de carga de trabajo de inquilinos empiecen a consumir demasiados recursos en los hosts de Hyper-V físicos, puede ampliar la infraestructura mediante la adición de hosts físicos adicionales. Esto se puede hacer con Virtual Machine Manager o mediante scripts de PowerShell (en función de cómo se implementó inicialmente la infraestructura) para crear nuevos recursos de servidor a través de la controladora de red. Si necesita agregar más direcciones IP para la red del proveedor de HNV, puede crear nuevas subredes lógicas (con los grupos de direcciones IP correspondientes) que los hosts pueden usar.  
 
 
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Requisitos de instalación y preparación para la implementación de la controladora de red](Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md)  
 [Redes &#40;definidas por software Sdn&#41;](../Software-Defined-Networking--SDN-.md)  
 

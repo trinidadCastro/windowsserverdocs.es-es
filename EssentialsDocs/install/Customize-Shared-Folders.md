@@ -3,7 +3,7 @@ title: Personalizar carpetas compartidas
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d8f52cbe76204bb00cb15c3093f69daf3d8abb6e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 387f9570e87bd2bd65266489b0f3eac6c945e3be
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433533"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311918"
 ---
 # <a name="customize-shared-folders"></a>Personalizar carpetas compartidas
 
@@ -35,25 +35,25 @@ De forma predeterminada, las carpetas del servidor se crean en la última partic
   
    3.  En el panel de navegación, expanda **HKEY_LOCAL_MACHINE**, **SOFTWARE** y finalmente **Microsoft**.  
   
-   4.  Haga clic con el botón secundario en **Windows Server**, en **Nuevo**y, a continuación, en **Clave**.  
+   4.  Haga clic con el botón secundario en **Windows Server**, en **Nuevo** y, a continuación, en **Clave**.  
   
    5.  Use **Storage** como el nombre de la clave.  
   
    6.  En el panel de navegación, haga clic con el botón secundario en la clave del Registro Storage, en **Nueva** y, a continuación, en **Valor de DWORD (32 bits)** .  
   
-   7.  Use el nombre **CreateFoldersOnSystem**para la cadena.  
+   7.  Use el nombre **CreateFoldersOnSystem** para la cadena.  
   
-   8.  Haga clic con el botón secundario en **CreateFoldersOnSystem**y, a continuación, en **Modificar**. Se abrirá el cuadro de diálogo **Editar cadena**.  
+   8.  Haga clic con el botón secundario en **CreateFoldersOnSystem** y, a continuación, en **Modificar**. Se abrirá el cuadro de diálogo **Editar cadena**.  
   
-   9. Escriba **1**como el valor de la nueva clave y, a continuación, haga clic en **Aceptar**.  
+   9. Escriba **1** como el valor de la nueva clave y, a continuación, haga clic en **Aceptar**.  
   
-2. Utilice el script PostIC.cmd para mover las carpetas a otra ubicación o para crear carpetas adicionales. Vea el ejemplo siguiente: [Ejemplo 1: Crear una carpeta personalizada y mover las carpetas predeterminadas a una nueva ubicación de PostIC.cmd mediante Windows PowerShell](Customize-Shared-Folders.md#BKMK_Example1).  
+2. Utilice el script PostIC.cmd para mover las carpetas a otra ubicación o para crear carpetas adicionales. Vea el ejemplo siguiente: [Ejemplo 1: Crear una carpeta personalizada y mover las carpetas personalizadas a una nueva ubicación de PostIC.cmd mediante Windows PowerShell](Customize-Shared-Folders.md#BKMK_Example1).  
   
-3. Utilice el SDK de Soluciones de Windows Server para mover las carpetas a otra ubicación o para crear carpetas adicionales. Vea el ejemplo siguiente: [Ejemplo 2: Crear una carpeta personalizada y mover una carpeta existente mediante el SDK de soluciones de Windows Server](Customize-Shared-Folders.md#BKMK_Example2).  
+3. Utilice el SDK de Soluciones de Windows Server para mover las carpetas a otra ubicación o para crear carpetas adicionales. Vea el ejemplo siguiente: [Ejemplo 2: Crear una carpeta personalizada y mover una carpeta existente mediante el SDK de Soluciones de Windows Server](Customize-Shared-Folders.md#BKMK_Example2).  
   
    Los asociados tienen la opción de mantener las carpetas de datos en la unidad C. Esto permite que el usuario final o el revendedor determine el diseño de las carpetas de datos en las unidades de datos.  
   
-###  <a name="BKMK_Example1"></a> Ejemplo 1: Crear una carpeta personalizada y mover las carpetas predeterminadas a una nueva ubicación desde PostIC.cmd mediante Windows PowerShell  
+###  <a name="example-1-create-a-custom-folder-and-move-the-default-folders-to-a-new-location-from-posticcmd-by-using-windows-powershell"></a><a name="BKMK_Example1"></a>Ejemplo 1: crear una carpeta personalizada y trasladar las carpetas predeterminadas a una nueva ubicación desde Postic. cmd mediante Windows PowerShell  
   
 1.  Cree un archivo PostIC.cmd para ejecutar tareas de configuración inicial, tal y como se describe en la sección [Cómo crear el archivo PostIC.cmd para ejecutar tareas posteriores a la configuración inicial](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md).  
   
@@ -99,7 +99,7 @@ De forma predeterminada, las carpetas del servidor se crean en la última partic
     Set ERRORLEVEL=%error_level%  
     ```  
   
-###  <a name="BKMK_Example2"></a> Ejemplo 2: Crear una carpeta personalizada y mover una carpeta existente mediante el SDK de Soluciones de Windows Server  
+###  <a name="example-2-create-a-custom-folder-and-move-an-existing-folder-by-using-the-windows-server-solutions-sdk"></a><a name="BKMK_Example2"></a>Ejemplo 2: crear una carpeta personalizada y desplace una carpeta existente mediante el SDK de soluciones de Windows Server  
  El código que cree puede ser considerado como un ejecutable y posteriormente llamado desde el archivo PostIC.cmd o directamente desde un complemento instalado.  
   
 ```  
@@ -143,8 +143,8 @@ static void Main(string[] args)
 }  
 ```  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

@@ -3,7 +3,7 @@ title: Personalizar la tarea Suscribirse a Microsoft Online Backup Service
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: a7eafbb3-7728-487e-b287-90bbd6fee7f0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cd148e0e58cd80dbff7f7884ead95dc1e46b6257
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f6e0a499fd149706dc3d7cce21935a7f8b5c5a48
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879936"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311903"
 ---
 # <a name="customize-sign-up-for-microsoft-online-backup-service-task"></a>Personalizar la tarea Suscribirse a Microsoft Online Backup Service
 
@@ -27,12 +27,12 @@ De forma predeterminada, la tarea **Suscribirse a Microsoft Online Backup Servic
   
  La tarea **Suscribirse a Microsoft Online Backup Service** se puede personalizar de dos formas:  
   
--   Puede sustituir la URL del sitio web predeterminado por una URL que represente una experiencia del cliente personalizada. Para reemplazar la dirección URL predeterminada, abra el Editor del registro, cree la clave del Registro: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\LinkUrl** y después asigne la dirección URL personalizada como valor de la clave.  
+-   Puede sustituir la URL del sitio web predeterminado por una URL que represente una experiencia del cliente personalizada. Para sustituir la URL predeterminada, abra el Editor del Registro, cree la clave del Registro: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\LinkUrl**y, a continuación, asigne la URL personalizada como valor de la clave.  
   
--   Puede ocultar la tarea: Para ocultar la tarea, abra el Editor del registro y cree la clave del Registro: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\OnlineBackupInstalled**.  
+-   Puede ocultar la tarea: Para ocultar la tarea, abra el Editor del Registro y cree la clave del Registro: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\OnlineBackupInstalled**.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

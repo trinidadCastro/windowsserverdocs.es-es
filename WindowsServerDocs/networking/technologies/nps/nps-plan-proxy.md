@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: ca77d64a-065b-4bf2-8252-3e75f71b7734
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 29a48275dfd56cbf223e0fca0c9c276f35a675cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d64fceaf7242b7fe44912f105229c132ef9ee3b3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396015"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315753"
 ---
 # <a name="plan-nps-as-a-radius-proxy"></a>Planear NPS como proxy RADIUS
 
@@ -107,9 +107,9 @@ Sin embargo, si tiene más de una ubicación a la que desea reenviar las solicit
 
 Puede crear reglas para los siguientes atributos.
 
-- IDENTIFICADOR de estación llamada. Número de teléfono del servidor de acceso a la red (NAS). El valor de este atributo es una cadena de caracteres. Puede usar la sintaxis de coincidencia de patrones para especificar códigos de área.
+- IDENTIFICADOR de estación llamada. Número de teléfono del servidor de acceso a la red (NAS). El valor de este atributo es una cadena de caracteres. Puede usar una sintaxis de coincidencia de patrón para especificar códigos de área.
 
-- IDENTIFICADOR de la estación de llamada. Número de teléfono usado por el autor de la llamada. El valor de este atributo es una cadena de caracteres. Puede usar la sintaxis de coincidencia de patrones para especificar códigos de área.
+- IDENTIFICADOR de la estación de llamada. Número de teléfono usado por el autor de la llamada. El valor de este atributo es una cadena de caracteres. Puede usar una sintaxis de coincidencia de patrón para especificar códigos de área.
 
 - Nombre del usuario. El nombre de usuario proporcionado por el cliente de acceso y que el NAS incluye en el mensaje de solicitud de acceso de RADIUS. El valor de este atributo es una cadena de caracteres que normalmente contiene un nombre de dominio Kerberos y un nombre de cuenta de usuario.
 

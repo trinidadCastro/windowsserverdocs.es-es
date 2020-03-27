@@ -3,7 +3,7 @@ title: Configurar el almacenamiento de servidor
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: ef7ddcdd-3a74-40ca-9487-c3a6fc5155a5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 718080c050dadc20837ab6b11a677029227e1709
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 3d7c2b49afc9d740e6a4b3fa7ed659e8358c8dc6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865036"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312141"
 ---
 # <a name="configure-server-storage"></a>Configurar el almacenamiento de servidor
 
@@ -32,7 +32,7 @@ ms.locfileid: "70865036"
 |Nivel de servidor|Configuración del disco|  
 |------------------|------------------------|  
 |Entrada|-Dos discos físicos<br /><br /> -Configurado como un conjunto reflejado RAID 1 que contiene lo siguiente:<br /><br /> -C: volumen? 60 GB<br /><br /> -D: volumen? 1000 GB|  
-|Medio|-Tres discos físicos<br /><br /> -Configurado como un conjunto RAID 5 que contiene lo siguiente:<br /><br /> -C: volumen? 60 GB<br /><br /> -D: volumen? 1500 GB|  
+|Media|-Tres discos físicos<br /><br /> -Configurado como un conjunto RAID 5 que contiene lo siguiente:<br /><br /> -C: volumen? 60 GB<br /><br /> -D: volumen? 1500 GB|  
 |Alto|-Cinco o más discos físicos en total<br /><br /> -Dos discos en un conjunto reflejado RAID 1 que contiene el volumen C: 100 GB<br /><br /> -Todos los discos restantes en un conjunto RAID 5 que contiene lo siguiente:<br /><br /> -D: volumen? 1500 GB<br /><br /> -E: volumen? 1500 GB|  
   
  Estas recomendaciones tienen en cuenta el tamaño del sistema operativo instalado, el tamaño promedio del almacenamiento de datos que usa el servidor y el crecimiento del almacenamiento de datos previsto durante toda la vida útil del servidor. Los volúmenes pueden ser particiones de un único disco físico o se pueden incluir en discos físicos separados. Dado que el servidor almacena datos importantes para el cliente, se recomienda usar varios discos físicos y ayudar a proteger los datos del cliente mediante RAID de hardware o espacios de almacenamiento.  

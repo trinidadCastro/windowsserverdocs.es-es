@@ -6,22 +6,22 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 3c9de3ec-4bbd-4db0-b47a-03507a315383
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 11/05/2018
-ms.openlocfilehash: f92cfdbe13633dd4c59012f566c6888fdc7fc7a1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e0e061a38170242a3808fbad0c82a4154bf9c536
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388160"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313303"
 ---
 # <a name="step-1-plan-the-always-on-vpn-deployment"></a>Paso 1. Planear la implementación de VPN de Always On
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-- [**Previo** Más información sobre el flujo de trabajo para implementar Always On VPN](always-on-vpn-deploy-deployment.md)
-- [**Nueva** Paso 2. Configurar la infraestructura de servidor](vpn-deploy-server-infrastructure.md)
+- [**Anterior:** Más información sobre el flujo de trabajo para implementar Always On VPN](always-on-vpn-deploy-deployment.md)
+- [**Siguiente:** Paso 2. Configurar la infraestructura de servidor](vpn-deploy-server-infrastructure.md)
 
 En este paso, comenzará a planear y preparar la implementación de VPN Always On. Antes de instalar el rol de servidor de acceso remoto en el equipo en el que está planeando usar como servidor VPN, realice las siguientes tareas. Después de la planeación adecuada, puede implementar Always On VPN y, opcionalmente, configurar el acceso condicional para la conectividad VPN mediante Azure AD.
 
@@ -73,4 +73,4 @@ En la mayoría de los entornos, para llegar a la nueva red perimetral interna, a
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-[Paso 2. Configurar la infraestructura](vpn-deploy-server-infrastructure.md)de servidor: En este paso, instalará y configurará los componentes del lado servidor necesarios para admitir la VPN. Los componentes del lado servidor incluyen la configuración de la PKI para distribuir los certificados usados por los usuarios, el servidor VPN y el servidor NPS.
+[Paso 2. Configurar la infraestructura de servidor](vpn-deploy-server-infrastructure.md): en este paso, instalará y configurará los componentes del lado servidor necesarios para admitir la VPN. Los componentes del lado servidor incluyen la configuración de la PKI para distribuir los certificados usados por los usuarios, el servidor VPN y el servidor NPS.

@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/10/2018
-ms.openlocfilehash: 38d104bc3ceca478f0e261b3a364b5d4448b22f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a16d82e4db1e92a5dd20f6b4feb88f0619d50cc4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406016"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317511"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>Requisitos para implementar la controladora de red
 
@@ -61,7 +61,7 @@ Lo siguiente que desea hacer es configurar las ubicaciones de archivo para almac
 Por último, lo siguiente que desea hacer es implementar nodos de clúster de controladora de red en la misma subred o en subredes diferentes. 
 
 
-|         Si...         |                                                                                                                                                         En ese caso...                                                                                                                                                         |
+|         Si...         |                                                                                                                                                         Entonces...                                                                                                                                                         |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  En la misma subred,  |                                                                                                                                Debe proporcionar la dirección IP de REST de la controladora de red.                                                                                                                                 |
 | En subredes diferentes, | Debe proporcionar el nombre DNS de REST de la controladora de red, que se crea durante el proceso de implementación. También debe hacer lo siguiente:<ul><li>Configure las actualizaciones dinámicas de DNS para el nombre DNS de la controladora de red en el servidor DNS.</li><li>Restrinja las actualizaciones dinámicas de DNS solo a los nodos de la controladora de red.</li></ul> |
@@ -81,11 +81,11 @@ Por último, lo siguiente que desea hacer es implementar nodos de clúster de co
 
 2. Configurar permisos de seguridad de zona DNS para los nodos de controladora de red
 
-   a.  Haga clic en la pestaña **Seguridad** y, a continuación, en **Opciones avanzadas**. 
+   a.  Haz clic en la pestaña **Seguridad** y, después, en **Avanzadas**. 
 
    b. En **configuración de seguridad avanzada**, haga clic en **Agregar**. 
 
-   c. Haz clic en **Seleccionar una entidad de seguridad**. 
+   c. Haga clic en **Seleccionar una entidad de seguridad**. 
 
    d. En el cuadro de diálogo **Seleccionar usuarios, equipos, cuentas de servicio o grupos** , haga clic en **tipos de objeto**. 
 

@@ -3,7 +3,7 @@ title: 'Paso 1: Preparar el servidor de origen para la migración a Windows Serv
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f95ebfec13c2ec1f374c60f48d5f8af6c4b22324
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: cb0cffdda0e0f1528887d3c94a1905a99c5c55c3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947390"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318781"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>Paso 1: Preparar el servidor de origen para la migración a Windows Server Essentials
 
@@ -38,7 +38,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
 5.  [Crear un plan para migrar aplicaciones de línea de negocio](Step-1--Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md#BKMK_MigrateLOB)  
 
-###  <a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a>Hacer una copia de seguridad del servidor de origen  
+###  <a name="back-up-your-source-server"></a><a name="BKMK_BackUpYourSourceServerToPrepareForMigration"></a>Hacer una copia de seguridad del servidor de origen  
  Haga una copia de seguridad del servidor de origen antes de iniciar el proceso de migración. Esto ayudará a proteger los datos de una pérdida accidental si se produce un error irrecuperable durante la migración.  
 
 ##### <a name="to-back-up-the-source-server"></a>Para realizar copias de seguridad del servidor de origen  
@@ -56,27 +56,27 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
    |Windows Small Business Server 2011 Standard|[Administrar copias de seguridad del servidor](https://technet.microsoft.com/library/cc527488.aspx)  
    |Windows Server Essentials|[Administrar copias de seguridad y restaurar en Windows Server Essentials](https://technet.microsoft.com/library/jj713536.aspx)
 
-###  <a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>Instalar los Service Packs más recientes  
+###  <a name="install-the-most-recent-service-packs"></a><a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>Instalar los Service Packs más recientes  
  Debe instalar las actualizaciones y Service Packs más recientes en el servidor de origen antes de la migración.  
 
-###  <a name="BKMK_DeleteSvcAcctSetting"></a>Eliminar la configuración de cuenta de inicio de sesión como servicio  
+###  <a name="delete-the-log-on-as-a-service-account-setting"></a><a name="BKMK_DeleteSvcAcctSetting"></a>Eliminar la configuración de cuenta de inicio de sesión como servicio  
  Si efectúa una migración desde Windows Small Business Server 2003 o Windows Server 2003, elimine la configuración de cuenta **Iniciar sesión como servicio** de la directiva de grupo.  
 
 ##### <a name="to-delete-the-log-on-as-a-service-account-setting"></a>Para eliminar la configuración de cuenta de inicio de sesión como servicio  
 
-1.  Para abrir la herramienta **Administración de directivas de grupo** , haga clic en **Inicio**, en **Panel de Control**, en **Herramientas administrativas**y, a continuación, en **Administración de directivas de grupo**.  
+1.  Para abrir la herramienta **Administración de directivas de grupo**, haga clic en **Inicio**, en **Panel de Control**, en **Herramientas administrativas** y, a continuación, en **Administración de directivas de grupo**.  
 
-2.  Haga clic con el botón derecho en **Directiva predeterminada de controladores de dominio**y, a continuación, haga clic en **Editar**.  
+2.  Haga clic con el botón derecho en **Directiva predeterminada de controladores de dominio** y, a continuación, haga clic en **Editar**.  
 
 3.  Vaya a **Configuración de equipo\Configuración de Windows\Configuración de seguridad\Directivas locales\Asignación de derechos de usuario**.  
 
 4.  En el panel de detalles, haga doble clic en **Iniciar sesión como servicio**.  
 
-5.  Desactive la casilla **Definir esta configuración de directiva** .  
+5.  Desactive la casilla **Definir esta configuración de directiva**.  
 
 6.  Elimine \\\localhost\SYSVOL\\< domainname\>\scripts\ SBS_LOGIN_SCRIPT. bat.  
 
-###  <a name="BKMK_EvaluateHealth"></a>Evaluar el estado del servidor de origen  
+###  <a name="evaluate-the-health-of-the-source-server"></a><a name="BKMK_EvaluateHealth"></a>Evaluar el estado del servidor de origen  
  Es importante evaluar el estado de su servidor de origen antes de empezar la migración. Use los siguientes procedimientos para asegurarse de que las actualizaciones están actualizadas, para generar un informe de mantenimiento del sistema y para ejecutar el Analizador de procedimientos recomendados (BPA) de Soluciones de Windows Server.  
 
 #### <a name="download-and-install-critical-and-security-updates"></a>Descargar e instalar actualizaciones críticas y de seguridad  
@@ -84,7 +84,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
 ###### <a name="to-check-for-the-latest-updates"></a>Para comprobar las actualizaciones más recientes  
 
-1.  En el servidor de origen, haga clic en **Inicio**, en **Todos los programas**y, a continuación, en **Windows Update**.  
+1.  En el servidor de origen, haga clic en **Inicio**, en **Todos los programas** y, a continuación, en **Windows Update**.  
 
 2.  Haga clic en **Buscar actualizaciones**.  
 
@@ -112,7 +112,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
    |     Windows Server Essentials o Windows Server 2012     |                                                          El panel del servidor                                                           |
 
 
-2. Una vez completada la descarga, haga clic en **Inicio**, seleccione **Todos los programas**y haga clic en **Herramienta Analizador de procedimientos recomendados de SBS**.  
+2. Una vez completada la descarga, haga clic en **Inicio**, seleccione **Todos los programas** y haga clic en **Herramienta Analizador de procedimientos recomendados de SBS**.  
 
    > [!NOTE]
    >  Compruebe si hay actualizaciones antes de examinar el servidor.  
@@ -123,7 +123,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
    1.  Inicie sesión en el servidor de destino como administrador y abra el panel.  
 
-   2.  En el panel, haga clic en la pestaña **Dispositivos** .  
+   2.  En el panel, haga clic en la pestaña **Dispositivos**.  
 
    3.  En el panel **tareas** de >de <**Server** , haga clic en **analizador de procedimientos recomendados**.  
 
@@ -140,14 +140,14 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
 Para ver la descripción y las soluciones para un problema, haga clic en el problema en el informe. No todos los problemas notificados por la herramienta BPA afectan a la migración, pero debe resolver todos los problemas posibles para asegurarse de que la migración se realice correctamente.  
 
-####  <a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>Sincronizar la hora del servidor de origen con un origen de hora externo  
+####  <a name="synchronize-the-source-server-time-with-an-external-time-source"></a><a name="BKMK_SynchronizeTheSourceServerTimeWithAnExternalTimeSource"></a>Sincronizar la hora del servidor de origen con un origen de hora externo  
  La hora del servidor de origen no debe tener una diferencia mayor a cinco minutos con la hora del servidor de destino, y la fecha y la zona horaria deben coincidir en los dos servidores. Si el servidor de origen se está ejecutando en una máquina virtual, la fecha, la hora y la zona horaria en el servidor host deben coincidir con las del servidor de origen y el servidor de destino. Para asegurarse de que Windows Server Essentials se instala correctamente, debe sincronizar la hora del servidor de origen con el servidor NTP (Protocolo de tiempo de red) en Internet.  
 
 ###### <a name="to-synchronize-the-source-server-time-with-the-ntp-server"></a>Para sincronizar la hora del servidor de origen con el servidor NTP  
 
 1.  Inicie sesión en el servidor de origen con una cuenta y una contraseña de administrador de dominio.  
 
-2.  Haga clic en **Inicio**y en **Ejecutar**. Luego escriba **cmd** en el cuadro de texto y presione ENTRAR.  
+2.  Haga clic en **Inicio** y en **Ejecutar**. Luego escriba **cmd** en el cuadro de texto y presione ENTRAR.  
 
 3.  En el símbolo del sistema, escriba w32tm /config /syncfromflags:domhier /reliable:no /update y presione ENTRAR.  
 
@@ -158,7 +158,7 @@ Para ver la descripción y las soluciones para un problema, haga clic en el prob
 > [!IMPORTANT]
 >  Durante la instalación de Windows Server Essentials, tiene la oportunidad de comprobar la hora en el servidor de destino y cambiarla si es necesario. Asegúrese de que la diferencia de hora es inferior a cinco minutos respecto a la hora establecida en el servidor de origen. Una vez terminada la instalación, el servidor de destino se sincroniza con el NTP. Todos los equipos unidos a dominio, incluido el servidor de origen, se sincronizan con el servidor de destino, que asume el rol de maestro emulador de controlador de dominio principal (PDC).  
 
-###  <a name="BKMK_MigrateLOB"></a>Crear un plan para migrar aplicaciones de línea de negocio  
+###  <a name="create-a-plan-to-migrate-line-of-business-applications"></a><a name="BKMK_MigrateLOB"></a>Crear un plan para migrar aplicaciones de línea de negocio  
  Una aplicación de línea de negocio (LOB) es una aplicación informática crítica y fundamental para dirigir un negocio. Las aplicaciones LOB incluyen aplicaciones contables, de administración de la cadena de suministro y de planificación de recursos.  
 
  Al planificar la migración de aplicaciones LOB, consulte a los proveedores de aplicaciones LOB para determinar el método adecuado para la migración de cada aplicación. También debe ubicar los medios que se usan para instalar las aplicaciones LOB en el servidor de destino.  

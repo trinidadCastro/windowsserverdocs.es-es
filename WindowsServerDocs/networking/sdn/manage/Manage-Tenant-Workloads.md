@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 16359b15-a0e4-4f42-9d70-6ef0d851d219
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/26/2018
-ms.openlocfilehash: 0d90c9d5f03be5ae69b0f781d8acb51876dc4f8d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9518bab68b2d2f24f6c05c46e064035cc08d777f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406072"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312986"
 ---
 # <a name="manage-tenant-workloads"></a>Administración de cargas de trabajo de inquilinos
 

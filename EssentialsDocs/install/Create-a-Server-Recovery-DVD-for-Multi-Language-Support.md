@@ -2,26 +2,26 @@
 title: Crear un DVD de recuperación del servidor para compatibilidad con varios idiomas
 description: Describe cómo usar Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: 59d8d41e5836ba88b405a058c8340f454b081c06
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: b71fc748f7cc8d82420b7a62fe502135036db727
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980243"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312114"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>Crear un DVD de recuperación del servidor para compatibilidad con varios idiomas
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-##  <a name="BKMK_MLHeadedRecovery"></a>Crear un DVD de configuración del servidor y de recuperación del servidor para compatibilidad con varios idiomas en servidores administrados localmente  
+##  <a name="create-a-server-setup-and-server-recovery-dvd-for-multiple-language-support-on-locally-administered-servers"></a><a name="BKMK_MLHeadedRecovery"></a>Crear un DVD de configuración del servidor y de recuperación del servidor para compatibilidad con varios idiomas en servidores administrados localmente  
   
 > [!NOTE]
->  Primero debe crear una imagen de Windows multilingüe tal y como [se describe en el tutorial: Creación](https://technet.microsoft.com/library/jj126995) de imágenes de Windows multilingües antes de agregar el paquete de idioma de Windows Server Essentials a install. Wim.  
+>  Primero debe crear una imagen de Windows multilingüe tal y como se describe en el [Tutorial: creación de imágenes de Windows multilingüe](https://technet.microsoft.com/library/jj126995) antes de agregar el paquete de idioma de Windows Server Essentials a install. Wim.  
   
  La instalación consta de dos fases: el entorno de preinstalación de Windows (Windows PE) y la configuración inicial. De forma predeterminada, la página de selección de idioma de la configuración inicial no se mostrará.  
   
@@ -57,16 +57,16 @@ ms.locfileid: "69980243"
   
 -   Un DVD de paquete de idioma de Windows Server Essentials.  
   
-###  <a name="BKMK_Steps"></a>Incorporación de compatibilidad con varios idiomas  
+###  <a name="adding-multiple-language-support"></a><a name="BKMK_Steps"></a>Incorporación de compatibilidad con varios idiomas  
  Para agregar compatibilidad con varios idiomas a instalación de Windows actualice el archivo install. Wim mediante la adición de los paquetes de idioma de Windows Server 2012 y Windows Server Essentials.  
   
 #### <a name="update-installwim"></a>Actualizar Install.wim  
  En este paso, agregará los paquetes de idioma de Windows Server 2012 y Windows Server Essentials a install. Wim.  
   
 > [!NOTE]
->  Compruebe que ha instalado los paquetes de idioma para Windows Server 2012. Esto garantiza la personalización de marca adecuada. Los paquetes de idioma de la interfaz de usuario multilingüe de Windows Server 2012 están disponibles en [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx). Siga las instrucciones que se describen en el [Tutorial: Creación de imágenes de Windows multilingües](https://technet.microsoft.com/library/jj126995.aspx) al crear una imagen de Windows multilingüe antes de agregar el paquete de idioma de Windows Server Essentials a install. Wim.  
+>  Compruebe que ha instalado los paquetes de idioma para Windows Server 2012. Esto garantiza la personalización de marca adecuada. Los paquetes de idioma de la interfaz de usuario multilingüe de Windows Server 2012 están disponibles en [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx). Siga las instrucciones que se describen en el [Tutorial: creación de imágenes de Windows multilingües sobre la creación de un multilingüe](https://technet.microsoft.com/library/jj126995.aspx) en la creación de una imagen de Windows multilingüe antes de agregar el paquete de idioma de Windows Server Essentials a install. Wim.  
 >   
->  Los paquetes de idioma de Windows Server Essentials están disponibles en el medio del paquete de\\idioma en\>\Paquetes packs < CultureName.  
+>  Los paquetes de idioma de Windows Server Essentials están disponibles en el medio del paquete de idioma en \Paquetes packs\\< CultureName\>.  
   
 > [!NOTE]
 >  Es posible que no todos los paquetes de idioma estén disponibles antes del lanzamiento de Windows Server 2012.  
@@ -102,15 +102,15 @@ ms.locfileid: "69980243"
     Dism /Unmount-Wim /MountDir:C:\InstallMount /Commit  
     ```  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 
- [Creación y personalización de la imagen](Creating-and-Customizing-the-Image.md)   
+ [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
 
- [Creación y personalización de la imagen](../install/Creating-and-Customizing-the-Image.md)   
+ [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparar la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
+ [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 

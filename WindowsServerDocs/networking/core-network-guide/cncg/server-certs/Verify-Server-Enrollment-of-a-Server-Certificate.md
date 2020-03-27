@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: bd80a018-5a30-47c3-89fc-aacb9f5ad298
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5f87db78d6f07d11c36193b1a56cf66bd44e7160
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b55988d9e5d4832acf6c74039815c9e8c9a8a6ca
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356097"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318135"
 ---
 # <a name="verify-server-enrollment-of-a-server-certificate"></a>Comprobar la inscripción de servidor de un certificado de servidor
 
@@ -34,7 +34,7 @@ Para comprobar que un certificado de servidor está configurado correctamente y 
   
 1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre Microsoft Management Console (MMC) del servidor de directivas de redes.  
   
-2.  Haga doble clic en **directivas**, haga clic con el botón secundario en **directivas de red**y haga clic en **nuevo**. Se abre el Asistente para nueva Directiva de red.  
+2.  Haga doble clic en **directivas**, haga clic con el botón secundario en **directivas de red**y haga clic en **nuevo**. Se abre el asistente para nueva directiva de red.  
   
 3.  En **especificar el nombre de la Directiva de red y el tipo de conexión**, en **nombre de directiva**, escriba Directiva de **prueba**. Asegúrese de que el **tipo de servidor de acceso a la red** tiene el valor **sin especificar**y, a continuación, haga clic en **siguiente**.  
   

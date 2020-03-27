@@ -1,9 +1,9 @@
 ---
-title: Unir equipos a la nueva network1 de Windows Server Essentials
+title: Unir equipos al nuevo network1 de Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,14 +12,14 @@ ms.assetid: d94de050-3300-4323-a5ea-c824cb9cecc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 62f31f859ed3fd0f77baf37d3467d4702b24ad95
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 48703ed78ee7d604e67be06b540d4206617d4578
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432915"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318984"
 ---
-# <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>Unir equipos a la nueva network1 de Windows Server Essentials
+# <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>Unir equipos al nuevo network1 de Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
@@ -49,7 +49,7 @@ ms.locfileid: "66432915"
   
 2.  En el símbolo del sistema, escriba **GPRESULT /R** y presione INTRO.  
   
-3.  Revise el resultado de la sección Directiva de grupo aplicada desde: y asegúrese de que el servidor de destino, como **DestinationSrv.Domain.local**. Por ejemplo:  
+3.  Revise la salida resultante de la sección directiva de grupo se aplicó desde: y asegúrese de que muestra el servidor de destino, como **DestinationSrv. domain. local**. Por ejemplo:  
   
     ```  
     USER SETTINGS  
@@ -63,12 +63,12 @@ ms.locfileid: "66432915"
   
     ```  
   
-4.  Si no aparece el servidor de destino, escriba **gpupdate /force**en el símbolo del sistema, y, a continuación, presione INTRO para actualizar la configuración de directiva de grupo. Vuelva a realizar el procedimiento anterior.  
+4.  Si no aparece el servidor de destino, escriba **gpupdate /force** en el símbolo del sistema, y, a continuación, presione INTRO para actualizar la configuración de directiva de grupo. Vuelva a realizar el procedimiento anterior.  
   
 5.  Si aún no aparece el servidor de destino, puede haber un error en la configuración de directiva de grupo o que esta no se haya aplicado correctamente en el equipo cliente en cuestión. Si no aparece el servidor de destino, siga los pasos siguientes:  
   
     1.  Haga clic en **Inicio** y luego en **Ejecutar**. Escriba **rsop.msc** (conjunto resultante de directivas) y, a continuación, presione INTRO.  
   
-    2.  Expanda el árbol con la X hasta llegar a un nodo.  
+    2.  Expanda el árbol que contiene la X hasta llegar a un nodo.  
   
     3.  Haga clic en el nodo y, luego, en **Ver error** para saber por qué se producen errores en la configuración de directiva de grupo en el equipo que se muestra.

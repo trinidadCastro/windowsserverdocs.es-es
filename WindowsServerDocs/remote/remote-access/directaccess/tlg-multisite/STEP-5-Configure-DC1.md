@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 70357156-fcb0-4346-a61e-4ea963e3ffb0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: aa251ccc0cc48e3805667a247047711c2ae4fcf6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 698bc250b428fe5efc4d111f8783483005d48dc5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388303"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308678"
 ---
 # <a name="step-5-configure-dc1"></a>Paso 5 configurar DC1
 
@@ -68,7 +68,7 @@ Cree los grupos de seguridad de DirectAccess para Windows 7 con el procedimiento
   
 5.  Haga doble clic en el grupo de seguridad **Win7_Clients_Site1** y, en el cuadro de diálogo **propiedades de Win7_Clients_Site1** , haga clic en la pestaña **miembros** .  
   
-6.  En la pestaña **Miembros** , haga clic en **Agregar**.  
+6.  En la pestaña **Miembros**, haga clic en **Agregar**.  
   
 7.  En el cuadro de diálogo **Seleccionar usuarios, contactos, equipos o cuentas de servicio** , haga clic en **tipos de objeto**. En el cuadro de diálogo **tipos de objeto** , seleccione **equipos**y, a continuación, haga clic en **Aceptar**.  
   

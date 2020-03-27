@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: 0a39ecae-39cc-4f26-bd6f-b71ed02fc4ad
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0dce886555167ad651704045120fb92eff0dcea1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0636fc321b4e94351628fd577526a8e81b4fc4cf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356178"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318310"
 ---
 # <a name="deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>Implementación de certificados de servidor para las implementaciones cableadas e inalámbricas de 802.1X
 
@@ -61,7 +61,7 @@ La inscripción automática de certificados de servidor, también denominada ins
 - Simplicidad. Los servidores que inscriben certificados de servidor se especifican mediante Active Directory cuentas de grupo y la pertenencia a grupos.   
 - Al implementar certificados de servidor, los certificados se basan en una plantilla que se configura con las instrucciones de esta guía. Esto significa que puede personalizar distintas plantillas de certificado para tipos de servidor específicos, o puede usar la misma plantilla para todos los certificados de servidor que desee emitir.  
 
-## <a name="bkmk_pre"></a>Requisitos previos para usar esta guía  
+## <a name="prerequisites-for-using-this-guide"></a><a name="bkmk_pre"></a>Requisitos previos para usar esta guía  
 
 En esta guía se proporcionan instrucciones sobre cómo implementar certificados de servidor mediante AD CS y el rol de servidor servidor Web (IIS) en Windows Server 2016. A continuación se indican los requisitos previos para realizar los procedimientos de esta guía.  
 
@@ -71,15 +71,15 @@ En esta guía se proporcionan instrucciones sobre cómo implementar certificados
 
 - Debe leer la sección de planeación de esta guía para asegurarse de que está preparado para esta implementación antes de realizar la implementación.  
 - Debe realizar los pasos de esta guía en el orden en que se presentan. No avance e implemente la CA sin realizar los pasos que conducen a la implementación del servidor, o bien se producirá un error en la implementación.  
-- Debe estar preparado para implementar dos nuevos servidores en la red: un servidor en el que se instalará AD CS como una CA raíz de empresa y un servidor en el que se instalará el servidor Web (IIS) para que la CA pueda publicar la lista de revocación de certificados (CRL) en la web se rVer.   
+- Debe estar preparado para implementar dos nuevos servidores en la red: un servidor en el que se instalará AD CS como una CA raíz de empresa y un servidor en el que se instalará el servidor Web (IIS) para que la CA pueda publicar la lista de revocación de certificados (CRL) en la Web. servidor.   
 
 >[!NOTE]  
 >Está preparado para asignar una dirección IP estática a los servidores web y AD CS que implemente con esta guía, así como para asignar nombres a los equipos según las convenciones de nomenclatura de su organización. Además, debe unir los equipos al dominio.  
 
-## <a name="bkmk_not"></a>Qué no proporciona esta guía  
+## <a name="what-this-guide-does-not-provide"></a><a name="bkmk_not"></a>Qué no proporciona esta guía  
 En esta guía no se proporcionan instrucciones completas para diseñar e implementar una infraestructura de clave pública (PKI) mediante AD CS. Se recomienda revisar la documentación de AD CS y la documentación de diseño de PKI antes de implementar las tecnologías de esta guía.   
 
-## <a name="bkmk_tech"></a>Información general sobre tecnología  
+## <a name="technology-overviews"></a><a name="bkmk_tech"></a>Información general sobre tecnología  
 A continuación se muestran información general sobre la tecnología de AD CS y el servidor Web (IIS).  
 
 ### <a name="active-directory-certificate-services"></a>Servicios de certificados de Active Directory  

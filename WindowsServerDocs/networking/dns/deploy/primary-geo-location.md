@@ -6,20 +6,20 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: ef9828f8-c0ad-431d-ae52-e2065532e68f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9c313b88e2502a99baf5962a1f2eb224d67a38dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5c74ca9fe60374d1bc1396d95c2e34cc5cd1fdd6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406181"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317765"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-servers"></a>Uso de directiva DNS para la administración del tráfico basada en la ubicación geográfica con servidores principales
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este tema para obtener información sobre cómo configurar la Directiva de DNS para permitir que los servidores DNS principales respondan a las consultas de cliente DNS en función de la ubicación geográfica del cliente y el recurso al que el cliente intenta conectarse, proporcionando el cliente con la dirección IP ad. traje del recurso más cercano.  
+Puede usar este tema para obtener información sobre cómo configurar la Directiva de DNS para permitir que los servidores DNS principales respondan a las consultas de cliente DNS en función de la ubicación geográfica del cliente y el recurso al que el cliente intenta conectarse, proporcionando el cliente con la dirección IP. Dirección del recurso más cercano.  
   
 >[!IMPORTANT]  
 >En este escenario se muestra cómo implementar la Directiva DNS para la administración del tráfico basada en la ubicación geográfica cuando solo se usan servidores DNS principales. También puede realizar la administración de tráfico basada en la ubicación geográfica cuando tenga servidores DNS principales y secundarios. Si tiene una implementación primaria-secundaria, complete primero los pasos descritos en este tema y, a continuación, complete los pasos que se proporcionan en el tema [uso de la Directiva DNS para la administración del tráfico basado en la ubicación geográfica con las implementaciones principales y secundarias](primary-secondary-geo-location.md).
@@ -42,7 +42,7 @@ Puede combinar los criterios siguientes con un operador lógico (y/o) para formu
 - **Denegar** El servidor DNS responde a esa consulta con una respuesta de error.          
 - **Permitir** El servidor DNS responde con la respuesta administrada por el tráfico.          
   
-##  <a name="bkmk_example"></a>Ejemplo de administración de tráfico basada en la ubicación geográfica
+##  <a name="geo-location-based-traffic-management-example"></a><a name="bkmk_example"></a>Ejemplo de administración de tráfico basada en la ubicación geográfica
 
 A continuación se ofrece un ejemplo de cómo se puede usar la Directiva de DNS para lograr el redireccionamiento del tráfico en función de la ubicación física del cliente que realiza una consulta DNS.   
   
@@ -56,7 +56,7 @@ En la ilustración siguiente se muestra este escenario.
   
 ![Ejemplo de administración de tráfico basada en la ubicación geográfica](../../media/DNS-Policy-Geo1/dns_policy_geo1.png)  
   
-##  <a name="bkmk_works"></a>Cómo funciona el proceso de resolución de nombres DNS  
+##  <a name="how-the-dns-name-resolution-process-works"></a><a name="bkmk_works"></a>Cómo funciona el proceso de resolución de nombres DNS  
   
 Durante el proceso de resolución de nombres, el usuario intenta conectarse a www.woodgrove.com. Esto da como resultado una solicitud de resolución de nombres DNS que se envía al servidor DNS que está configurado en las propiedades de conexión de red en el equipo del usuario. Normalmente, se trata del servidor DNS proporcionado por el ISP local actuando como un solucionador de almacenamiento en caché y se conoce como LDNS.   
   
@@ -69,7 +69,7 @@ En este escenario, el servidor DNS autoritativo suele ver la solicitud de resolu
 >[!NOTE]  
 >Las directivas DNS usan la dirección IP del remitente en el paquete UDP/TCP que contiene la consulta DNS. Si la consulta alcanza el servidor principal a través de varios saltos de resolución/LDNS, la Directiva solo tendrá en cuenta la dirección IP del último solucionador desde el que el servidor DNS recibe la consulta.  
   
-##  <a name="bkmk_config"></a>Configuración de la Directiva de DNS para las respuestas de consultas basadas en la ubicación geográfica  
+##  <a name="how-to-configure-dns-policy-for-geo-location-based-query-responses"></a><a name="bkmk_config"></a>Configuración de la Directiva de DNS para las respuestas de consultas basadas en la ubicación geográfica  
 Para configurar la Directiva de DNS para las respuestas de consultas basadas en la ubicación geográfica, debe realizar los pasos siguientes.  
   
 1. [Crear las subredes de cliente DNS](#bkmk_subnets)  
@@ -85,7 +85,7 @@ En las secciones siguientes se proporcionan instrucciones de configuración deta
 >[!IMPORTANT]  
 >En las secciones siguientes se incluyen comandos de Windows PowerShell de ejemplo que contienen valores de ejemplo para muchos parámetros. Asegúrese de reemplazar los valores de ejemplo de estos comandos por los valores adecuados para su implementación antes de ejecutar estos comandos.  
   
-### <a name="bkmk_subnets"></a>Crear las subredes de cliente DNS  
+### <a name="create-the-dns-client-subnets"></a><a name="bkmk_subnets"></a>Crear las subredes de cliente DNS  
   
 El primer paso consiste en identificar las subredes o el espacio de direcciones IP de las regiones para las que desea redirigir el tráfico. Por ejemplo, si desea redirigir el tráfico para los Estados Unidos y Europa, debe identificar las subredes o los espacios de direcciones IP de estas regiones.  
   
@@ -101,7 +101,7 @@ Puede usar los siguientes comandos de Windows PowerShell para crear subredes de 
   
 Para obtener más información, consulte [Add-DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).  
   
-### <a name="bkmk_scopes"></a>Crear ámbitos de zona  
+### <a name="create-zone-scopes"></a><a name="bkmk_scopes"></a>Crear ámbitos de zona  
 Una vez configuradas las subredes de cliente, debe particionar la zona cuyo tráfico desea redirigir en dos ámbitos de zona diferentes, un ámbito para cada una de las subredes de cliente DNS que ha configurado.   
   
 Por ejemplo, si desea redirigir el tráfico para el nombre DNS www.woodgrove.com, debe crear dos ámbitos de zona diferentes en la zona woodgrove.com, uno para los Estados Unidos y otro para Europa.  
@@ -120,7 +120,7 @@ Puede usar los siguientes comandos de Windows PowerShell para crear ámbitos de 
 
 Para obtener más información, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).  
   
-### <a name="bkmk_records"></a>Agregar registros a los ámbitos de zona  
+### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Agregar registros a los ámbitos de zona  
 Ahora debe agregar los registros que representan el host del servidor Web en los dos ámbitos de zona.   
   
 Por ejemplo, **USZoneScope** y **EuropeZoneScope**. En USZoneScope, puede Agregar el registro www.woodgrove.com con la dirección IP 192.0.0.1, que se encuentra en un centro de centros de Estados Unidos; y en EuropeZoneScope puede Agregar el mismo registro (www.woodgrove.com) con la dirección IP 141.1.0.1 en el centro de centros de recursos europeo.   
@@ -145,7 +145,7 @@ El parámetro **ZoneScope** no se incluye al agregar un registro en el ámbito p
   
 Para obtener más información, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).  
   
-### <a name="bkmk_policies"></a>Crear las directivas  
+### <a name="create-the-policies"></a><a name="bkmk_policies"></a>Crear las directivas  
 Después de crear las subredes, las particiones (ámbitos de zona) y los registros agregados, debe crear directivas que conecten las subredes y las particiones, de modo que cuando una consulta provenga de un origen en una de las subredes de cliente DNS, la respuesta de la consulta se devuelva desde el ámbito correcto de la zona. No se requieren directivas para asignar el ámbito de zona predeterminado.   
   
 Puede usar los siguientes comandos de Windows PowerShell para crear una directiva DNS que vincule las subredes de cliente DNS y los ámbitos de zona.   

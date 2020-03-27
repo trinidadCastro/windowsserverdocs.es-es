@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 55528736-6c19-40bd-99e8-5668169ef3c7
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 229e2955c7f382ff630829990a9dd6485d62652e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 09ed401fa4912a48033e4a51a29309e3fd4cc998
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388879"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310903"
 ---
 # <a name="directaccess-offline-domain-join"></a>Unión a dominio sin conexión de DirectAccess
 
@@ -44,12 +44,12 @@ En Windows Server 2008 R2, los controladores de dominio incluyen una caracterís
   
 3.  Reinicie el equipo de destino y el equipo se unirá al dominio.  
   
-### <a name="BKMK_ODJOverview"></a>Información general del escenario de unión a dominio sin conexión con directivas de DirectAccess  
+### <a name="offline-domain-join-with-directaccess-policies-scenario-overview"></a><a name="BKMK_ODJOverview"></a>Información general del escenario de unión a dominio sin conexión con directivas de DirectAccess  
 La Unión a un dominio sin conexión de DirectAccess es un proceso por el que los equipos que ejecutan Windows Server 2016, Windows Server 2012, Windows 10 y Windows 8 pueden usar para unirse a un dominio sin estar Unidos físicamente a la red corporativa ni conectarse a través de VPN. Esto permite unir equipos a un dominio desde ubicaciones en las que no hay conectividad a una red corporativa. Unión a un dominio sin conexión para DirectAccess proporciona directivas de DirectAccess a los clientes para permitir el aprovisionamiento remoto.  
   
 Una Unión a un dominio crea una cuenta de equipo y establece una relación de confianza entre un equipo que ejecuta un sistema operativo Windows y un dominio de Active Directory.  
   
-## <a name="BKMK_ODJRequirements"></a>Preparación para la Unión a un dominio sin conexión  
+## <a name="prepare-for-offline-domain-join"></a><a name="BKMK_ODJRequirements"></a>Preparación para la Unión a un dominio sin conexión  
   
 1.  Cree la cuenta de la máquina.  
   
@@ -59,7 +59,7 @@ Una Unión a un dominio crea una cuenta de equipo y establece una relación de c
   
 . En las siguientes secciones se explican los requisitos del sistema operativo y los requisitos de credenciales para realizar una Unión de dominio sin conexión de DirectAccess con Djoin. exe.  
   
-### <a name="operating-system-requirements"></a>Requisitos de sistema operativo  
+### <a name="operating-system-requirements"></a>Requisitos del sistema operativo  
 Puede ejecutar Djoin. exe para DirectAccess solo en equipos que ejecutan Windows Server 2016, Windows Server 2012 o Windows 8. El equipo en el que se ejecuta Djoin. exe para aprovisionar los datos de la cuenta de equipo en AD DS debe ejecutar Windows Server 2016, Windows 10, Windows Server 2012 o Windows 8. El equipo que desea unir al dominio también debe ejecutar Windows Server 2016, Windows 10, Windows Server 2012 o Windows 8.  
   
 ### <a name="credential-requirements"></a>Requisitos de credenciales  
@@ -84,7 +84,7 @@ La pertenencia al grupo **Admins**. del dominio, o equivalente, es lo mínimo ne
   
 2.  Haga doble clic en el nombre del bosque, haga doble clic en **dominios**, haga doble clic en el nombre del dominio al que desea unirse un equipo, haga clic con el botón secundario en **directiva predeterminada de dominio**y, a continuación, haga clic en **Editar**.  
   
-3.  En el árbol de consola, haga doble clic en **configuración del equipo**, haga doble clic en **directivas**, haga doble clic en **configuración de Windows**, haga doble clic en **configuración de seguridad**, haga doble clic en **Directivas locales**y, a continuación, haga doble clic en  **Asignación de derechos de usuario**.  
+3.  En el árbol de consola, haga doble clic en **configuración del equipo**, haga doble clic en **directivas**, haga doble clic en **configuración de Windows**, haga doble clic en **configuración de seguridad**, haga doble clic en **Directivas locales**y, a continuación, haga doble clic en **asignación de derechos de usuario**.  
   
 4.  En el panel de detalles, haga doble clic en **Agregar estaciones de trabajo al dominio**.  
   
@@ -92,12 +92,12 @@ La pertenencia al grupo **Admins**. del dominio, o equivalente, es lo mínimo ne
   
 6.  Escriba el nombre de la cuenta a la que desea conceder derechos de usuario y, a continuación, haga clic en **Aceptar** dos veces.  
   
-## <a name="BKMK_ODKSxS"></a>Proceso de unión a dominio sin conexión  
+## <a name="offline-domain-join-process"></a><a name="BKMK_ODKSxS"></a>Proceso de unión a dominio sin conexión  
 Ejecute Djoin. exe en un símbolo del sistema con privilegios elevados para aprovisionar los metadatos de la cuenta de equipo. Al ejecutar el comando de aprovisionamiento, los metadatos de la cuenta de equipo se crean en un archivo binario que se especifica como parte del comando.  
   
-Para obtener más información sobre la función NetProvisionComputerAccount que se usa para aprovisionar la cuenta de equipo durante una Unión a un dominio sin conexión, consulte [función NetProvisionComputerAccount](https://go.microsoft.com/fwlink/?LinkId=162426) (https://go.microsoft.com/fwlink/?LinkId=162426). Para obtener más información acerca de la función NetRequestOfflineDomainJoin que se ejecuta localmente en el equipo de destino, consulte [función NetRequestOfflineDomainJoin](https://go.microsoft.com/fwlink/?LinkId=162427) (https://go.microsoft.com/fwlink/?LinkId=162427).  
+Para obtener más información sobre la función NetProvisionComputerAccount que se usa para aprovisionar la cuenta de equipo durante una Unión a un dominio sin conexión, vea [función NetProvisionComputerAccount](https://go.microsoft.com/fwlink/?LinkId=162426) (https://go.microsoft.com/fwlink/?LinkId=162426). Para obtener más información acerca de la función NetRequestOfflineDomainJoin que se ejecuta localmente en el equipo de destino, consulte [función NetRequestOfflineDomainJoin](https://go.microsoft.com/fwlink/?LinkId=162427) (https://go.microsoft.com/fwlink/?LinkId=162427).  
   
-## <a name="BKMK_ODJSteps"></a>Pasos para realizar una Unión a un dominio sin conexión de DirectAccess  
+## <a name="steps-for-performing-a-directaccess-offline-domain-join"></a><a name="BKMK_ODJSteps"></a>Pasos para realizar una Unión a un dominio sin conexión de DirectAccess  
 El proceso de unión al dominio sin conexión incluye los pasos siguientes:  
   
 1.  Cree una nueva cuenta de equipo para cada uno de los clientes remotos y genere un paquete de aprovisionamiento mediante el comando Djoin. exe desde un equipo unido a un dominio ya existente en la red corporativa.  
@@ -114,7 +114,7 @@ Hay dos opciones que se deben tener en cuenta al crear el paquete de aprovisiona
   
 Complete los pasos siguientes para realizar la Unión a un dominio sin conexión:  
   
-##### <a name="option1-create-a-provisioning-package-for-the-client-without-pki"></a>Opción 1: Crear un paquete de aprovisionamiento para el cliente sin PKI  
+##### <a name="option1-create-a-provisioning-package-for-the-client-without-pki"></a>Opción1: crear un paquete de aprovisionamiento para el cliente sin PKI  
   
 1.  En un símbolo del sistema del servidor de acceso remoto, escriba el siguiente comando para aprovisionar la cuenta de equipo:  
   
@@ -122,7 +122,7 @@ Complete los pasos siguientes para realizar la Unión a un dominio sin conexión
     Djoin /provision /domain <your domain name> /machine <remote machine name> /policynames DA Client GPO name /rootcacerts /savefile c:\files\provision.txt /reuse  
     ```  
   
-##### <a name="option2-create-a-provisioning-package-for-the-client-with-pki"></a>Opción2 Crear un paquete de aprovisionamiento para el cliente con PKI  
+##### <a name="option2-create-a-provisioning-package-for-the-client-with-pki"></a>Opción2: crear un paquete de aprovisionamiento para el cliente con PKI  
   
 1.  En un símbolo del sistema del servidor de acceso remoto, escriba el siguiente comando para aprovisionar la cuenta de equipo:  
   
@@ -138,7 +138,7 @@ Complete los pasos siguientes para realizar la Unión a un dominio sin conexión
   
 3.  En el panel de detalles, haga clic con el botón secundario en **clientesdirectaccess**y haga clic en **propiedades**.  
   
-4.  En la pestaña **Miembros** , haga clic en **Agregar**.  
+4.  En la pestaña **Miembros**, haga clic en **Agregar**.  
   
 5.  Haga clic en **Tipos de objeto**, seleccione **Equipos** y, a continuación, haga clic en **Aceptar**.  
   
@@ -158,7 +158,7 @@ Complete los pasos siguientes para realizar la Unión a un dominio sin conexión
   
 3.  Reinicie el equipo cliente. El equipo se unirá al dominio. Después del reinicio, el cliente se unirá al dominio y tendrá conectividad con la red corporativa con DirectAccess.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [NetProvisionComputerAccount función)](https://go.microsoft.com/fwlink/?LinkId=162426)  
 [NetRequestOfflineDomainJoin función)](https://go.microsoft.com/fwlink/?LinkId=162427)  
   

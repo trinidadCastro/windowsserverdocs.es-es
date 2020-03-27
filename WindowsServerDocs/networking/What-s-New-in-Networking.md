@@ -5,14 +5,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: get-started-article
 ms.assetid: 08fb7563-d319-48a9-b181-ca0ca3032c18
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: da2166d28edda5662797824d9b26ad930f51083c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 35c3c3b2610918e8b0fd69ccf04422e3f6df4d0e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406758"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318548"
 ---
 # <a name="whats-new-in-networking"></a>Novedades de redes
 
@@ -25,7 +25,7 @@ A continuación se enumeran las tecnologías de red nuevas o mejoradas en Window
   
 -   [Nuevas características para tecnologías de red adicionales](#bkmk_existing)  
   
-## <a name="bkmk_features"></a>Nuevas características y tecnologías de red
+## <a name="new-networking-features-and-technologies"></a><a name="bkmk_features"></a>Nuevas características y tecnologías de red
 
 La red es una parte fundamental de la plataforma del centro de centros de recursos (SDDC) de software, y Windows Server 2016 proporciona tecnologías de redes definidas por software (SDN) nuevas y mejoradas que le ayudarán a migrar a una solución de SDDC completa para su organización.  
   
@@ -72,28 +72,28 @@ Los siguientes aspectos básicos de la escala de nube ahora están disponibles.
   
 -   **Cambiar la formación de equipos incrustada (establecer)** .        SET es una solución de formación de equipos NIC que se integra en el conmutador virtual de Hyper-V. SET permite la formación de equipos de hasta ocho NIC físicas en un único equipo de conjunto, lo que mejora la disponibilidad y proporciona conmutación por error. En Windows Server 2016, puede crear equipos de conjunto restringidos al uso del bloque de mensajes del servidor (SMB) y RDMA. Además, puede usar SET Teams para distribuir el tráfico de red para la virtualización de red de Hyper-V. Para obtener más información, vea [acceso directo a &#40;memoria&#41; remota RDMA y switch Embedded &#40;Teaming set&#41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).  
   
-## <a name="bkmk_existing"></a>Nuevas características para tecnologías de red adicionales
+## <a name="new-features-for-additional-networking-technologies"></a><a name="bkmk_existing"></a>Nuevas características para tecnologías de red adicionales
 
 Esta sección contiene información acerca de las nuevas características de las tecnologías de red conocidas.
   
-## <a name="bkmk_dhcp"></a>DHCP  
+## <a name="dhcp"></a><a name="bkmk_dhcp"></a>DHCP  
 DHCP es una norma del Grupo de trabajo en ingeniería de Internet (IETF) diseñada para reducir la carga administrativa y la complejidad de configurar hosts en una red TCP/IP, como una intranet privada. Al usar el servicio del servidor DHCP, el proceso de configuración de TCP/IP en clientes DHCP es automático.  
   
 Para obtener más información, consulte [novedades de DHCP](technologies/dhcp/What-s-New-in-DHCP.md).  
   
-## <a name="bkmk_dns"></a>DN  
-DNS es un sistema que se usa en redes TCP/IP para nombrar equipos y servicios de red. Los nombres de DNS ubican equipos y servicios a través de nombres descriptivos. Cuando un usuario escriba un nombre DNS en una aplicación, los servicios DNS pueden traducir el nombre a otra información que está asociada a dicho nombre, como una dirección IP.  
+## <a name="dns"></a><a name="bkmk_dns"></a>DN  
+DNS es un sistema que se usa en redes TCP/IP para nombrar equipos y servicios de red. Los nombres de DNS ubican equipos y servicios a través de nombres descriptivos. Cuando un usuario escriba un nombre DNS en una aplicación, los servicios DNS puden traducir el nombre a otra información que está asociada a dicho nombre, como una dirección IP.  
   
 A continuación se encuentra información sobre el cliente DNS y el servidor DNS.  
   
-### <a name="bkmk_dnsc"></a>Cliente DNS  
+### <a name="dns-client"></a><a name="bkmk_dnsc"></a>Cliente DNS  
 A continuación se indican las tecnologías cliente DNS nuevas o mejoradas.  
   
 -   **Enlace de servicio de cliente DNS**. En Windows 10, el servicio cliente DNS ofrece compatibilidad mejorada para equipos con más de una interfaz de red.  
   
 Para obtener más información, vea [novedades del cliente DNS en Windows Server 2016](dns/What-s-New-in-DNS-Client.md)  
   
-### <a name="bkmk_dnss"></a>Servidor DNS  
+### <a name="dns-server"></a><a name="bkmk_dnss"></a>Servidor DNS  
 A continuación se indican las tecnologías de servidor DNS nuevas o mejoradas.  
   
 -   **Directivas DNS**.  Puede configurar directivas DNS para especificar el modo en que un servidor DNS responde a las consultas DNS. Las respuestas DNS pueden basarse en la dirección IP del cliente (ubicación), la hora del día y otros parámetros. Las directivas de DNS permiten el DNS, la administración del tráfico, el equilibrio de carga, el DNS de cerebro dividido y otros escenarios que tienen en cuenta la ubicación.  
@@ -118,17 +118,17 @@ A continuación se indican las tecnologías de servidor DNS nuevas o mejoradas.
   
 Para obtener más información, consulta [What's New in DNS Server in Windows server 2016](dns/What-s-New-in-DNS-Server.md)  
   
-## <a name="bkmk_GRE"></a>Tunelización de GRE  
+## <a name="gre-tunneling"></a><a name="bkmk_GRE"></a>Tunelización de GRE  
 La puerta de enlace RAS admite ahora túneles de encapsulación de enrutamiento genérico (GRE) de alta disponibilidad para las conexiones de sitio a sitio y la redundancia M + N de las puertas de enlace. GRE es un protocolo de túnel ligero que puede encapsular una amplia variedad de protocolos de capa de red dentro de los vínculos de punto a punto virtuales en una conexión entre redes de protocolo de Internet.  
   
 Para obtener más información, consulte [tunelización de GRE en Windows Server 2016](../remote/remote-access/ras-gateway/gre-tunneling-windows-server.md).  
   
-## <a name="HNV"></a>Virtualización de red de Hyper-V  
+## <a name="hyper-v-network-virtualization"></a><a name="HNV"></a>Virtualización de red de Hyper-V  
 La virtualización de red de Hyper-V (HNV), que se presentó en Windows Server 2012, permite la virtualización de redes de clientes sobre una infraestructura de red física compartida. Con los cambios mínimos necesarios en el tejido de red físico, HNV ofrece a los proveedores de servicios la agilidad para implementar y migrar cargas de trabajo de inquilino en cualquier parte de las tres nubes: la nube del proveedor de servicios, la nube privada o la Microsoft Azure nube pública.  
   
 Para obtener más información, consulte [novedades de virtualización de red de Hyper-V en Windows Server 2016](sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md)  
   
-## <a name="bkmk_ipam"></a>IPAM  
+## <a name="ipam"></a><a name="bkmk_ipam"></a>IPAM  
 IPAM proporciona capacidades de supervisión y administración muy personalizables para la dirección IP y la infraestructura DNS en una red de la organización. Con IPAM, puede supervisar, auditar y administrar servidores que ejecutan el protocolo de configuración dinámica de host (DHCP) y el sistema de nombres de dominio (DNS).  
   
 -   **Administración mejorada de direcciones IP**.  

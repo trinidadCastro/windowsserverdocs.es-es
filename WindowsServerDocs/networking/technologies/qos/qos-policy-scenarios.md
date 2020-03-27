@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: c4306f06-a117-4f65-b78b-9fd0d1133f95
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9ac5ab31db1b8c184fd179ecb3e6b87f7fffd2ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 927232a3b191be86ae91b1dd0d6af767d4f024ae
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405233"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315422"
 ---
 # <a name="qos-policy-scenarios"></a>Escenarios de directivas QoS
 
@@ -29,15 +29,15 @@ Los dos escenarios de este tema son:
 >[!NOTE]
 >En algunas secciones de este tema se incluyen los pasos generales que puede seguir para realizar las acciones descritas. Para obtener instrucciones más detalladas sobre la administración de la directiva QoS, consulte [Administración de directivas QoS](qos-policy-manage.md).
 
-## <a name="scenario-1-prioritize-network-traffic-for-a-line-of-business-application"></a>Escenario 1: Priorizar el tráfico de red para una aplicación de línea de negocio
+## <a name="scenario-1-prioritize-network-traffic-for-a-line-of-business-application"></a>Escenario 1: priorizar el tráfico de red para una aplicación de línea de negocio
 
 En este escenario, un departamento de TI tiene varios objetivos que pueden lograr mediante el uso de la Directiva de QoS:
 
-- Ofrezca un mejor rendimiento de red\-para las aplicaciones críticas.
+- Ofrezca un mejor rendimiento de red para las aplicaciones críticas de\-.
 - Proporcionar un mejor rendimiento de red para un conjunto de claves de usuarios mientras usan una aplicación específica.
-- Asegúrese de que la\-aplicación de copia de seguridad de datos de toda la compañía no impide el rendimiento de la red al usar demasiado ancho de banda al mismo tiempo.
+- Asegúrese de que la empresa\-aplicación de copia de seguridad de datos anchos no impiden el rendimiento de la red usando demasiado ancho de banda al mismo tiempo.
 
-El Departamento de ti decide configurar la Directiva de QoS para priorizar aplicaciones específicas mediante el uso de \(valores\) de DSCP de punto de código de servicio de diferenciación para clasificar el tráfico de red y para configurar los enrutadores para que proporcionen tratamiento de tráfico de prioridad más alta. 
+El Departamento de ti decide configurar la Directiva de QoS para priorizar aplicaciones específicas mediante la diferenciación de puntos de código de servicio \(DSCP\) valores para clasificar el tráfico de red y para configurar los enrutadores para proporcionar el tratamiento preferencial para el tráfico de mayor prioridad. 
 
 >[!NOTE]
 >Para obtener más información sobre DSCP, consulte la sección **definir la prioridad de QoS a través de un punto de código servicios diferenciados** en la [Directiva calidad de servicio (QoS)](qos-policy-top.md).
@@ -50,11 +50,11 @@ Con tres objetivos independientes para lograr, el administrador de ti decide cre
 
 #### <a name="qos-policy-for-lob-app-servers"></a>Directiva QoS para servidores de aplicaciones LOB
 
-La primera\-aplicación crítica para la que el Departamento de ti crea una directiva de QoS es\-una aplicación ERP\) de \(planeamiento de recursos empresariales de toda la empresa. La aplicación ERP se hospeda en varios equipos que ejecutan Windows Server 2016. En Active Directory Domain Services, estos equipos son miembros de la unidad organizativa \(\) de unidades organizativas que se creó para los servidores \(de\) aplicaciones LOB de línea de negocio. El componente\-del lado cliente de la aplicación ERP se instala en los equipos que ejecutan Windows 10 y Windows 8.1.
+La primera misión\-aplicación crítica para la que el Departamento de ti crea una directiva de QoS es una empresa\-gran envergadura de recursos empresariales \(aplicación ERP\). La aplicación ERP se hospeda en varios equipos que ejecutan Windows Server 2016. En Active Directory Domain Services, estos equipos son miembros de una unidad organizativa \(OU\) que se creó para los servidores de aplicaciones de línea de negocio \(LOB\). El componente del lado cliente\-de la aplicación ERP se instala en los equipos que ejecutan Windows 10 y Windows 8.1.
 
-En Directiva de grupo, un administrador de ti selecciona el GPO \(\) de objeto Directiva de grupo en el que se aplicará la directiva QoS. Mediante el Asistente para directivas de QoS, el administrador de ti crea una directiva de QoS denominada "Directiva de LOB del servidor\-" que especifica un valor de DSCP de alta prioridad de 44 para todas las aplicaciones, cualquier dirección IP, TCP, UDP y número de puerto.
+En directiva de grupo, un administrador de ti selecciona el objeto directiva de grupo \(GPO\) en el que se aplicará la directiva QoS. Mediante el Asistente para directivas de QoS, el administrador de ti crea una directiva de QoS denominada "Directiva de LOB del servidor" que especifica un valor de DSCP de alta\-prioridad de 44 para todas las aplicaciones, cualquier dirección IP, TCP y UDP y número de puerto.
 
-La Directiva de QoS se aplica solo a los servidores LOB vinculando el GPO a la unidad organizativa que solo contiene estos servidores, a \(través\) de la herramienta consola de administración de directivas de grupo GPMC. Esta directiva de LOB del servidor inicial aplica\-el valor de DSCP de alta prioridad siempre que el equipo envía tráfico de red. Esta directiva de QoS se puede editar \(posteriormente en la herramienta\) editor de objetos de directiva de grupo para incluir los números de puerto de la aplicación ERP, lo que limita la Directiva que se va a aplicar solo cuando se usa el número de puerto especificado.
+La Directiva de QoS se aplica solo a los servidores de LOB vinculando el GPO a la unidad organizativa que contiene solo estos servidores, a través de la herramienta de\) \(de Consola de administración de directivas de grupo GPMC. Esta directiva de LOB del servidor inicial aplica el valor de DSCP de prioridad alta\-cada vez que el equipo envía tráfico de red. Esta directiva de QoS se puede editar posteriormente \(en la herramienta de Editor de objetos de directiva de grupo\) para incluir los números de puerto de la aplicación ERP, lo que limita la Directiva a aplicar solo cuando se usa el número de puerto especificado.
 
 #### <a name="qos-policy-for-the-finance-group"></a>Directiva QoS para el grupo Finance
 
@@ -77,7 +77,7 @@ Se crea un tercer GPO y se implementa para todos los equipos cliente del dominio
 
 En la tabla siguiente se resumen las directivas de QoS para este escenario.
   
-|Nombre de directiva|Valor de DSCP|Velocidad del acelerador|Aplicado a unidades organizativas|Descripción|  
+|Nombre de la directiva|Valor de DSCP|Velocidad del acelerador|Aplicado a unidades organizativas|Descripción|  
 |-----------------|----------------|-------------------|-----------------------------------|-----------------|
 |[Sin directiva]|0|Ninguno|[Sin implementación]|Tratamiento del mejor esfuerzo (valor predeterminado) para el tráfico sin clasificar.|  
 |Datos de copia de seguridad|1|Ninguno|Todos los clientes|Aplica un valor de DSCP de prioridad baja para estos datos masivos.|  
@@ -95,11 +95,11 @@ Cuando el tráfico llega al enrutador con valores de DSCP de "Directiva de LOB d
 
 Para completar esta tarea, asegúrese de que cumple los siguientes requisitos:
 
-- Los equipos implicados ejecutan sistemas\-operativos compatibles con QoS.
+- Los equipos implicados ejecutan sistemas operativos compatibles con\-QoS.
 
-- Los equipos implicados son miembros de un Active Directory Domain Services \(AD DS\) dominio para que se puedan configurar mediante Directiva de grupo.
+- Los equipos implicados son miembros de una Active Directory Domain Services \(AD DS\) dominio de modo que se puedan configurar mediante directiva de grupo.
 
-- Las redes TCP/IP se configuran con los enrutadores configurados para DSCP \(RFC 2474.\) Para obtener más información, consulte [RFC 2474](https://www.ietf.org/rfc/rfc2474.txt).
+- Las redes TCP/IP se configuran con los enrutadores configurados para DSCP \(RFC 2474\). Para obtener más información, consulte [RFC 2474](https://www.ietf.org/rfc/rfc2474.txt).
 
 - Se cumplen los requisitos de credenciales administrativas.
 
@@ -122,19 +122,19 @@ Para configurar el entorno de prueba, complete las siguientes tareas.
 
 Para dar prioridad a una aplicación de línea de negocio, complete las siguientes tareas:
 
-1. Crear y vincular un GPO \(\) de objeto de directiva de grupo con una directiva de QoS.
+1. Crear y vincular un objeto directiva de grupo \(GPO\) con una directiva QoS.
 
 2. Configure los enrutadores para que traten de forma diferencial una aplicación de línea de negocio (mediante el uso de colas) basándose en los valores de DSCP seleccionados. Los procedimientos de esta tarea variarán en función del tipo de enrutadores que tenga.
 
-## <a name="scenario-2-prioritize-network-traffic-for-an-http-server-application"></a>Escenario 2: Priorizar el tráfico de red para una aplicación de servidor HTTP
+## <a name="scenario-2-prioritize-network-traffic-for-an-http-server-application"></a>Escenario 2: priorizar el tráfico de red para una aplicación de servidor HTTP
 
 En Windows Server 2016, QoS basada en Directiva incluye las directivas basadas en la dirección URL de la característica. Las directivas de dirección URL permiten administrar el ancho de banda de los servidores HTTP.
 
-Muchas aplicaciones empresariales se desarrollan para y se hospedan \(en\) Internet Information Services servidores Web de IIS y se tiene acceso a las aplicaciones web desde exploradores en equipos cliente.
+Muchas aplicaciones empresariales se desarrollan para y se hospedan en Internet Information Services \(IIS\) servidores web y se tiene acceso a las aplicaciones web desde exploradores en equipos cliente.
 
 En este escenario, supongamos que administra un conjunto de servidores IIS que hospedan vídeos de aprendizaje para todos los empleados de la organización. El objetivo es asegurarse de que el tráfico procedente de estos servidores de vídeo no sobrecargue la red y de que el tráfico de vídeo se diferencia del tráfico de voz y de datos de la red. 
 
-La tarea es similar a la tarea en el escenario 1. Diseñará y configurará la configuración de administración del tráfico, como el valor de DSCP para el tráfico de vídeo, y la velocidad de limitación igual que haría para las aplicaciones de línea de negocio. Pero cuando se especifica el tráfico, en lugar de proporcionar el nombre de la aplicación, solo se especifica la dirección URL a la que responderá la aplicación de servidor https://hrweb/training http: por ejemplo,.
+La tarea es similar a la tarea en el escenario 1. Diseñará y configurará la configuración de administración del tráfico, como el valor de DSCP para el tráfico de vídeo, y la velocidad de limitación igual que haría para las aplicaciones de línea de negocio. Pero cuando se especifica el tráfico, en lugar de proporcionar el nombre de la aplicación, solo se especifica la dirección URL a la que responderá la aplicación de servidor HTTP: por ejemplo, https://hrweb/training.
   
 > [!NOTE]
 >No se pueden usar directivas QoS basadas en URL para priorizar el tráfico de red en equipos que ejecutan sistemas operativos Windows que se publicaron antes de Windows 7 y Windows Server 2008 R2.
@@ -153,25 +153,25 @@ Todas las direcciones URL siguientes son válidas y se pueden especificar en la 
 
 ¿Pero cuál recibirá la prioridad? Las reglas son sencillas. Las directivas basadas en URL se priorizan en un orden de lectura de izquierda a derecha. Por lo tanto, de la prioridad más alta a la más baja, los campos de dirección URL son:
   
-[1. Esquema de dirección URL](#bkmk_QoS_UrlScheme)
+[1. esquema de dirección URL](#bkmk_QoS_UrlScheme)
 
-[2. Host de URL](#bkmk_QoS_UrlHost)
+[2. host de dirección URL](#bkmk_QoS_UrlHost)
 
 [3. Puerto de dirección URL](#bkmk_QoS_UrlPort)
 
-[4. Ruta de dirección URL](#bkmk_QoS_UrlPath)
+[4. ruta de acceso URL](#bkmk_QoS_UrlPath)
 
 Los detalles son los siguientes:
 
-####  <a name="bkmk_QoS_UrlScheme"></a>dimensional. Esquema de dirección URL
+####  <a name="1-url-scheme"></a><a name="bkmk_QoS_UrlScheme"></a>1. esquema de dirección URL
 
- `https://`tiene una prioridad mayor que `https://`.
+ `https://` tiene una prioridad más alta que la `https://`.
 
-####  <a name="bkmk_QoS_UrlHost"></a>dos. Host de URL
+####  <a name="2-url-host"></a><a name="bkmk_QoS_UrlHost"></a>2. host de dirección URL
 
  De la prioridad más alta a la más baja, son:
 
-1. Nombre de host
+1. nombreDeHost
 
 2. Dirección IPv6
 
@@ -191,11 +191,11 @@ En el caso del nombre de host, un nombre de host con más elementos de puntos (m
   
   **video.Internal.Training.hr.mycompany.com** tiene la prioridad más alta y **selfguide.Training.mycompany.com** tiene la siguiente prioridad más alta. El **entrenamiento** y el recurso compartido de **biblioteca** tienen la misma prioridad mínima.  
   
-####  <a name="bkmk_QoS_UrlPort"></a>3. Puerto de dirección URL
+####  <a name="3-url-port"></a><a name="bkmk_QoS_UrlPort"></a>3. Puerto de dirección URL
 
 Un número de puerto específico o implícito tiene una prioridad más alta que un puerto comodín.
 
-####  <a name="bkmk_QoS_UrlPath"></a>4. Ruta de dirección URL
+####  <a name="4-url-path"></a><a name="bkmk_QoS_UrlPath"></a>4. ruta de acceso URL
 
 Al igual que un nombre de host, una ruta de dirección URL puede constar de varios elementos. El que tiene más elementos siempre tiene una prioridad más alta que la que tiene menos. Por ejemplo, las siguientes rutas de acceso se enumeran por prioridad:  
 

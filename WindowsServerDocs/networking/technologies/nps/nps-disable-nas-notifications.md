@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: a09bfb03-95fc-4534-bf3c-97078ef6b07e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b8ae0ab02a5c14675d543087f635d53ee63e0423
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dd56dfd4db9dd41c98141e2239efcca544a364fe
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396254"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316167"
 ---
 # <a name="disable-nas-notification-forwarding-in-nps"></a>Deshabilitación del reenvío de notificaciones NAS en NPS
 
@@ -21,9 +21,9 @@ ms.locfileid: "71396254"
 
 Puede usar este procedimiento para deshabilitar el reenvío de mensajes de inicio y detención de los servidores de acceso a la red (NAS) a los miembros de un grupo de servidores remotos RADIUS configurado en NPS.
 
-Cuando tiene grupos de servidores RADIUS remotos configurados y, en **directivas de solicitud de conexión**NPS, desactiva la casilla **Reenviar solicitudes de cuentas a este grupo de servidores RADIUS remotos** , estos grupos siguen enviando notificación de inicio y detención de NAS. mensajes. 
+Cuando tiene grupos de servidores RADIUS remotos configurados y, en **las directivas de solicitud de conexión**NPS, desactiva la casilla **Reenviar solicitudes de cuentas a este grupo de servidores RADIUS remotos** , estos grupos siguen enviando mensajes de notificación de inicio y detención de NAS. 
 
-Esto crea un tráfico de red innecesario. Para eliminar este tráfico, deshabilite el reenvío de notificaciones de NAS para servidores individuales en cada grupo de servidores RADIUS remotos.
+Esto genera un tráfico de red innecesario. Para eliminar este tráfico, deshabilite el reenvío de notificaciones de NAS para servidores individuales en cada grupo de servidores RADIUS remotos.
 
 Para completar este procedimiento, debe pertenecer al grupo **Administradores**.
 

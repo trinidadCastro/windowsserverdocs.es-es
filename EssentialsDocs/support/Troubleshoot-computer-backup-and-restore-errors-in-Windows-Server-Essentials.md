@@ -3,7 +3,7 @@ title: Solucionar errores de copias de seguridad del equipo y restauración en W
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 06/25/2013
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 37e79661442ba9f66a564b6c6c8fb57db1978454
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 28e3564c93f192563626bfb44992ef9bc4a49598
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812336"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313246"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Solucionar errores de copias de seguridad del equipo y restauración en Windows Server Essentials
 
@@ -26,9 +26,9 @@ ms.locfileid: "59812336"
 Use estos procedimientos para solucionar problemas de copias de seguridad del equipo en Windows Server Essentials, como por ejemplo los problemas de configuración de copia de seguridad, las copias de seguridad incompletas o erróneas, alertas de estado de copia de seguridad y problemas relacionados con la restauración de archivos, carpetas o la restauración completa del sistema.  
   
 > [!NOTE]
->  Para la información de solución de problemas más reciente de la Comunidad de Windows Server Essentials, visite la [foro de Windows Server Essentials](https://social.technet.microsoft.com/Forums//winserveressentials/threads).  
+>  Para obtener la información más reciente sobre la solución de problemas de la comunidad de Windows Server Essentials, visite el [Foro de Windows Server Essentials](https://social.technet.microsoft.com/Forums//winserveressentials/threads).  
   
-##  <a name="BKMK_TroubleshootBackupConfigurationIssues"></a> Solucionar problemas de configuración de copia de seguridad de un equipo conectado  
+##  <a name="troubleshoot-backup-configuration-issues-for-a-connected-computer"></a><a name="BKMK_TroubleshootBackupConfigurationIssues"></a>Solucionar problemas de configuración de copia de seguridad de un equipo conectado  
  Use estos procedimientos para solucionar problemas relacionados con las configuraciones de copia de seguridad de los equipos en los que se efectúan copias de seguridad en el servidor de Windows Server Essentials.  
   
 ### <a name="errors"></a>Errores  
@@ -39,7 +39,7 @@ Use estos procedimientos para solucionar problemas de copias de seguridad del eq
   
 -   Error al quitar el equipo de la copia de seguridad  
   
-### <a name="resolutions"></a>Resoluciones  
+### <a name="resolutions"></a>Soluciones  
   
 ##### <a name="to-troubleshoot-errors-that-occur-while-you-configure-backups-for-a-connected-computer"></a>Para solucionar los errores que se producen al configurar las copias de seguridad en un equipo conectado  
   
@@ -73,7 +73,7 @@ Use estos procedimientos para solucionar problemas de copias de seguridad del eq
   
 6.  Desinstale el software del conector de Windows Server Essentials del equipo y, a continuación, vuelva a instalarlo. Para obtener más información, vea los temas [Desinstalar el software del conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) e [Instalar el software del conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11).  
   
-##  <a name="BKMK_TroubleshootaBackupThatDidNotCompleteProperly"></a> Solución de problemas de una copia de seguridad que no se completó correctamente  
+##  <a name="troubleshoot-a-backup-that-did-not-complete-properly"></a><a name="BKMK_TroubleshootaBackupThatDidNotCompleteProperly"></a>Solucionar problemas de una copia de seguridad que no se completó correctamente  
  Cuando una copia de seguridad tiene el estado Incorrecto, la copia de seguridad no se ha hecho correctamente y no hay datos disponibles para ser restaurados. Sin embargo, cuando una copia de seguridad tiene el estado Incompleto no se hace una copia de seguridad de todos los elementos especificados en la configuración de copia de seguridad, pero es posible que haya algunos datos disponibles para ser restaurados.  
   
 ### <a name="errors"></a>Errores  
@@ -82,7 +82,7 @@ Use estos procedimientos para solucionar problemas de copias de seguridad del eq
   
 -   Error de copia de seguridad  
   
-### <a name="resolutions"></a>Resoluciones  
+### <a name="resolutions"></a>Soluciones  
   
 ##### <a name="to-identify-volumes-that-were-not-backed-up-successfully"></a>Para identificar los volúmenes de los que no se ha hecho ninguna copia de seguridad correcta  
   
@@ -98,7 +98,7 @@ Use estos procedimientos para solucionar problemas de copias de seguridad del eq
   
 1.  Asegúrese de que el disco duro esté conectado al equipo, esté activado y funcione correctamente.  
   
-2.  Ejecute **chkdsk /f /r** para corregir los errores del disco duro (**/f**) y recuperar información legible de cualquier sector erróneo (**/r**). Para obtener más información sobre la ejecución de **chkdsk**, consulte [CHKDSK](https://go.microsoft.com/fwlink/?LinkId=206562).  
+2.  Ejecute **chkdsk /f /r** para corregir los errores del disco duro ( **/f**) y recuperar información legible de cualquier sector erróneo ( **/r**). Para obtener más información sobre la ejecución de **chkdsk**, consulte [CHKDSK](https://go.microsoft.com/fwlink/?LinkId=206562).  
   
 3.  Asegúrese de que el equipo no se había apagado o desconectado de la red mientras se ejecutaba la copia de seguridad.  
   
@@ -132,7 +132,7 @@ Use estos procedimientos para solucionar problemas de copias de seguridad del eq
   
 6.  Ejecute **vssadmin** en un símbolo del sistema para solucionar problemas del Servicio de instantáneas de volumen (VSS). Para obtener información sobre **vssadmin**, consulte [VSSADMIN](https://go.microsoft.com/fwlink/?LinkID=94332).  
   
-##  <a name="BKMK_TroubleshootBackupHealthAlertIssues"></a> Solucionar problemas de alertas de estado de copia de seguridad  
+##  <a name="troubleshoot-backup-health-alert-issues"></a><a name="BKMK_TroubleshootBackupHealthAlertIssues"></a>Solucionar problemas de alertas de estado de copia de seguridad  
   
 ### <a name="errors"></a>Errores  
   
@@ -140,7 +140,7 @@ Use estos procedimientos para solucionar problemas de copias de seguridad del eq
   
 -   El servicio de proveedor de copias de seguridad de equipos cliente de Windows Server ha dejado de funcionar  
   
-### <a name="resolutions"></a>Resoluciones  
+### <a name="resolutions"></a>Soluciones  
   
 ##### <a name="to-troubleshoot-a-backup-health-alert"></a>Para solucionar problemas de una alerta de mantenimiento de la copia de seguridad  
   
@@ -175,13 +175,13 @@ Use estos procedimientos para solucionar problemas de copias de seguridad del eq
   
 5.  Busque otros problemas que puedan tener efectos en la copia de seguridad del cliente en las alertas de mantenimiento.  
   
-##  <a name="BKMK_FileAndFolder"></a> Solucionar problemas de restauración de un archivo o carpeta  
+##  <a name="troubleshoot-a-file-or-folder-restore"></a><a name="BKMK_FileAndFolder"></a>Solucionar problemas de una restauración de archivos o carpetas  
   
 ### <a name="errors"></a>Errores  
   
 -   La restauración de archivos o carpetas no se ha completado correctamente.  
   
-### <a name="resolutions"></a>Resoluciones  
+### <a name="resolutions"></a>Soluciones  
   
 ##### <a name="to-troubleshoot-an-unsuccessful-file-or-folder-restore"></a>Para solucionar problemas de una restauración incorrecta de archivos o carpetas  
   
@@ -205,7 +205,7 @@ Use estos procedimientos para solucionar problemas de copias de seguridad del eq
   
         1.  Abra un símbolo del sistema con privilegios de administrador y ejecute el siguiente comando:  
   
-             **%ProgramFiles%\Windows Server\Bin\BackupDriverInstaller.exe?  �i**  
+             **%ProgramFiles%\Windows Server\Bin\BackupDriverInstaller.exe? -i**  
   
         2.  Refresh Device Manager. Debe aparecer el controlador.  
   
@@ -223,25 +223,25 @@ Use estos procedimientos para solucionar problemas de copias de seguridad del eq
   
 6.  Desinstale el software del conector de Windows Server Essentials del equipo y, a continuación, vuelva a instalarlo. Para obtener más información, vea los temas [Desinstalar el software del conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) e [Instalar el software del conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11).  
   
-##  <a name="BKMK_Troubleshootfullsystemrestoreissues"></a> Solución de problemas de una restauración completa del sistema  
+##  <a name="troubleshoot-a-full-system-restore"></a><a name="BKMK_Troubleshootfullsystemrestoreissues"></a>Solucionar problemas de una restauración completa del sistema  
   
 ### <a name="errors"></a>Errores  
   
 -   No se puede iniciar sesión en el equipo cliente después de una restauración completa del sistema.  
   
-### <a name="resolutions"></a>Resoluciones  
+### <a name="resolutions"></a>Soluciones  
  Si cambia el nombre de un equipo y más adelante necesita restaurar una copia de seguridad guardada antes del cambio del nombre, después de la restauración, cuando intente iniciar sesión en la cuenta de dominio, recibirá este error: "La base de datos de seguridad en el servidor no tiene una cuenta de equipo para la relación de confianza de esta estación de trabajo." Para volver a tener acceso de red en el equipo, quite el software del conector, quite el equipo del dominio de Windows y, a continuación, vuelva a conectarlo al servidor.  
   
 ##### <a name="to-regain-network-access-to-a-restored-computer-after-a-computer-name-change"></a>Para recuperar el acceso de red a un equipo restaurado después de un cambio de nombre de equipo  
   
 1.  Inicie sesión como administrador local en el equipo.  
   
-2.  Desinstale el software del conector. Para obtener más información, consulte [Uninstall the Connector software](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13).  
+2.  Desinstale el software del conector. Para obtener más información, vea el tema sobre cómo [desinstalar el software del conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13).  
   
-3.  Quite el equipo del dominio. Para obtener más información, consulte [Remove a computer from a Windows domain](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_8).  
+3.  Quite el equipo del dominio. Para obtener más información, vea el tema sobre cómo [quitar un equipo de un dominio de Windows](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_8).  
   
 4.  Vuelva a conectar el equipo al servidor. Para obtener más información, consulte [Conectar los equipos al servidor](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)  
   
 ## <a name="see-also"></a>Vea también  
   
--   [Compatibilidad con Windows Server Essentials](Support-Windows-Server-Essentials.md)
+-   [Soporte técnico de Windows Server Essentials](Support-Windows-Server-Essentials.md)

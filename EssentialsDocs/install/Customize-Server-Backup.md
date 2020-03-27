@@ -3,7 +3,7 @@ title: Personalización de la copia de seguridad del servidor
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 19b2559c-6090-45af-9a08-2eefc28473c8
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d18dca276bccdf672664a5a3c2bd28e0221fff94
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e7224ba49ecbf880dad8d88a2b197cc279e20d27
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838546"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311922"
 ---
 # <a name="customize-server-backup"></a>Personalización de la copia de seguridad del servidor
 
@@ -28,7 +28,7 @@ ms.locfileid: "59838546"
   
  Cuando se establece esta clave, la interfaz de Usuario de copia de seguridad de Windows Server no se mostrará mediante el Panel o Launchpad. Esto le permite utilizar aplicaciones de terceros para Copias de seguridad de Windows Server.  
   
-#### <a name="to-add-serverbackupproviderdisabled-registry-key-and-set-the-value-to-1"></a>¿Para agregar ServerBackup\ProviderDisabled? clave del registro y establezca el valor en 1  
+#### <a name="to-add-serverbackupproviderdisabled-registry-key-and-set-the-value-to-1"></a>Para agregar ServerBackup\ProviderDisabled? clave del registro y establezca el valor en 1.  
   
 1.  En el servidor, haga clic en **Inicio**, **Ejecutar**, escriba **regedit** en el cuadro de texto **Abrir** y haga clic en **Aceptar**.  
   
@@ -45,7 +45,7 @@ ms.locfileid: "59838546"
   
  Debe eliminar la clave **HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Server\ServerBackup\ProviderDisabled** para poder habilitar la copia de seguridad de servidor de forma predeterminada, cambiar el tipo de inicio del Servicio de copia de seguridad del servidor para Windows Server y reiniciar el servidor.  
   
-#### <a name="to-delete-serverbackupproviderdisabled-registry-key"></a>¿Para eliminar ServerBackup\ProviderDisabled? clave del registro  
+#### <a name="to-delete-serverbackupproviderdisabled-registry-key"></a>Para eliminar ServerBackup\ProviderDisabled? clave del registro  
   
 1.  En el servidor, mueva el ratón a la esquina superior derecha de la pantalla y haga clic en **Buscar**.  
   
@@ -53,7 +53,7 @@ ms.locfileid: "59838546"
   
 3.  En el panel de navegación, expanda **HKEY_LOCAL_MACHINE**, **SOFTWARE**, **Microsoft**, **Windows Server** y, finalmente, **ServerBackup**.  
   
-4.  Haga clic con el botón secundario en **ProviderDisabled**y, a continuación, haga clic en **Eliminar**.  
+4.  Haga clic con el botón secundario en **ProviderDisabled** y, a continuación, haga clic en **Eliminar**.  
   
 #### <a name="change-the-start-type-of-windows-server-server-backup-service"></a>Cambie el tipo de inicio del Servicio de copia de seguridad del servidor para Windows Server  
   

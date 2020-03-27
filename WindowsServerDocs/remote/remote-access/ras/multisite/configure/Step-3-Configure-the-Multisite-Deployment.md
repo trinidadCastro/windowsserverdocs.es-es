@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ea7ecd52-4c12-4a49-92fd-b8c08cec42a9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3ae66c125548e31603318a7e600c36c00df9d005
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0ac6e231ac797d1ba1e8dfb314c6aa3df99ff91d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822558"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313961"
 ---
 # <a name="step-3-configure-the-multisite-deployment"></a>Paso 3 Configuración de la implementación multisitio
 
@@ -38,7 +38,7 @@ Después de configurar la infraestructura multisitio, siga estos pasos para conf
 > [!NOTE]  
 > Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_ConfigServer"></a>3.1. Configurar servidores de acceso remoto  
+## <a name="31-configure-remote-access-servers"></a><a name="BKMK_ConfigServer"></a>3.1. Configurar servidores de acceso remoto  
 
   
 ### <a name="to-install-the-remote-access-role"></a>Para instalar el rol de acceso remoto  
@@ -61,9 +61,9 @@ Después de configurar la infraestructura multisitio, siga estos pasos para conf
   
 9.  Seleccione **enrutamiento**, **proxy de aplicación web**, haga clic en **Agregar características**y, a continuación, haga clic en **siguiente**.  
   
-10. Haga clic en **Siguiente**y después en **Instalar**.  
+10. Haga clic en **Siguiente** y, después, en **Instalar**.  
   
-11.  En el cuadro de diálogo **Progreso de la instalación** , compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
+11.  En el cuadro de diálogo **Progreso de la instalación**, comprueba que la instalación se realiza correctamente y, a continuación, haz clic en **Cerrar**.  
   
   
 ![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
@@ -71,13 +71,13 @@ Después de configurar la infraestructura multisitio, siga estos pasos para conf
   
 Los pasos 1-3 deben realizarse manualmente y no se pueden realizar con este cmdlet de Windows PowerShell.  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
   
 ```  
 Install-WindowsFeature RemoteAccess -IncludeManagementTools  
 ```  
   
-## <a name="BKMK_Admin"></a>3.2. Conceder acceso de administrador  
+## <a name="32-grant-administrator-access"></a><a name="BKMK_Admin"></a>3.2. Conceder acceso de administrador  
   
 #### <a name="to-grant-administrator-permissions"></a>Para conceder permisos de administrador  
   
@@ -99,12 +99,12 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 9. Repita este procedimiento en todos los servidores de acceso remoto que formarán parte de la implementación multisitio.  
   
-## <a name="BKMK_IPHTTPS"></a>3.3. Configuración de IP-HTTPS para una implementación multisitio  
-En cada servidor de acceso remoto que se va a agregar a la implementación multisitio, se requiere un certificado SSL para comprobar la conexión HTTPS con el servidor Web IP-HTTPS. Para completar este procedimiento, se requiere como mínimo la pertenencia al grupo local **Administradores** o equivalente.  
+## <a name="33-configure-ip-https-for-a-multisite-deployment"></a><a name="BKMK_IPHTTPS"></a>3.3. Configuración de IP-HTTPS para una implementación multisitio  
+En cada servidor de acceso remoto que se va a agregar a la implementación multisitio, se requiere un certificado SSL para comprobar la conexión HTTPS con el servidor Web IP-HTTPS. La pertenencia al grupo local **Administradores**, o equivalente, es el requisito mínimo necesario para completar este procedimiento.  
   
 #### <a name="to-obtain-an-ip-https-certificate"></a>Para obtener un certificado IP-HTTPS  
   
-1.  En cada servidor de acceso remoto: en la pantalla **Inicio** , escriba **MMC**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+1.  En cada servidor de acceso remoto: en la pantalla **Inicio** , escriba **MMC**y, a continuación, presione Entrar. Si aparece el cuadro de **Control de cuentas de usuario**, confirma que la acción que se muestra es la que deseas realizar y haz clic en **Sí**.  
   
 2.  Haga clic en **Archivo** y, a continuación, haga clic en **Agregar o quitar complementos**.  
   
@@ -137,12 +137,12 @@ En cada servidor de acceso remoto que se va a agregar a la implementación multi
   
 14. Repita este procedimiento en todos los servidores de acceso remoto de la implementación.  
   
-## <a name="BKMK_NLS"></a>3,4. Configurar el servidor de ubicación de red para una implementación multisitio  
-Si seleccionó configurar el sitio web del servidor de ubicación de red en el servidor de acceso remoto al configurar el primer servidor, cada nuevo servidor de acceso remoto que agregue debe configurarse con un certificado de servidor Web que tenga el mismo nombre de sujeto que se seleccionó para t el servidor de ubicación de red para el primer servidor. Cada servidor requiere un certificado para autenticar la conexión al servidor de ubicación de red y los equipos cliente ubicados en la red interna deben poder resolver el nombre del sitio web en DNS.  
+## <a name="34-configure-the-network-location-server-for-a-multisite-deployment"></a><a name="BKMK_NLS"></a>3,4. Configurar el servidor de ubicación de red para una implementación multisitio  
+Si seleccionó configurar el sitio web del servidor de ubicación de red en el servidor de acceso remoto al configurar el primer servidor, cada nuevo servidor de acceso remoto que agregue debe configurarse con un certificado de servidor Web que tenga el mismo nombre de sujeto que se seleccionó para el servidor de ubicación de red para el primer servidor. Cada servidor requiere un certificado para autenticar la conexión al servidor de ubicación de red y los equipos cliente ubicados en la red interna deben poder resolver el nombre del sitio web en DNS.  
   
 #### <a name="to-install-a-certificate-for-network-location"></a>Para instalar un certificado para la ubicación de red  
   
-1.  En el servidor de acceso remoto: en la pantalla **Inicio** , escriba **MMC**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+1.  En el servidor de acceso remoto: en la pantalla **Inicio** , escriba **MMC**y, a continuación, presione Entrar. Si aparece el cuadro de **Control de cuentas de usuario**, confirma que la acción que se muestra es la que deseas realizar y haz clic en **Sí**.  
   
 2.  Haga clic en **Archivo** y, a continuación, haga clic en **Agregar o quitar complementos**.  
   
@@ -178,7 +178,7 @@ Si seleccionó configurar el sitio web del servidor de ubicación de red en el s
   
 14. Repita este procedimiento en todos los servidores de acceso remoto de la implementación.  
   
-### <a name="NLS"></a>Para crear los registros DNS del servidor de ubicación de red  
+### <a name="to-create-the-network-location-server-dns-records"></a><a name="NLS"></a>Para crear los registros DNS del servidor de ubicación de red  
   
 1.  En el servidor DNS: en la pantalla **Inicio** , escriba **DNSMgmt. msc**y, a continuación, presione Entrar.  
   
@@ -190,11 +190,11 @@ Si seleccionó configurar el sitio web del servidor de ubicación de red en el s
   
 5.  Repita los pasos 3 y 4 para cada servidor de acceso remoto de la implementación.  
   
-6.  Haz clic en **Listo**.  
+6.  Haga clic en **Done** (Listo).  
   
 7.  Repita este procedimiento antes de agregar los servidores como puntos de entrada adicionales en la implementación.  
   
-## <a name="BKMK_Client"></a>3,5. Configurar clientes de DirectAccess para una implementación multisitio  
+## <a name="35-configure-directaccess-clients-for-a-multisite-deployment"></a><a name="BKMK_Client"></a>3,5. Configurar clientes de DirectAccess para una implementación multisitio  
 Los equipos cliente de Windows de DirectAccess deben ser miembros de los grupos de seguridad que definen su asociación de DirectAccess. Antes de habilitar el multisitio, estos grupos de seguridad pueden contener clientes de Windows 8 y clientes de Windows 7 (si se seleccionó el modo "de nivel inferior" adecuado). Una vez habilitada la opción multisitio, los grupos de seguridad de cliente existentes, en modo de servidor único, solo se convierten en grupos de seguridad para Windows 8. Una vez habilitada la opción multisitio, los equipos cliente de Windows 7 de DirectAccess deben moverse a los grupos de seguridad de cliente de Windows 7 dedicados correspondientes (que están asociados a puntos de entrada específicos) o no podrán conectarse a través de DirectAccess. Los clientes de Windows 7 se deben quitar primero de los grupos de seguridad existentes que son ahora grupos de seguridad de Windows 8. PRECAUCIÓN: los equipos cliente de Windows 7 que son miembros de los grupos de seguridad de cliente de Windows 7 y Windows 8 perderán la conectividad remota y los clientes de Windows 7 sin SP1 instalado también perderán la conectividad corporativa. Por lo tanto, todos los equipos cliente de Windows 7 deben quitarse de los grupos de seguridad de Windows 8.  
   
 #### <a name="remove--windows-7--clients-from-windows-8-security-groups"></a>Quitar clientes de Windows 7 de grupos de seguridad de Windows 8  
@@ -210,7 +210,7 @@ Los equipos cliente de Windows de DirectAccess deben ser miembros de los grupos 
 > [!IMPORTANT]  
 > Al habilitar una configuración de acceso remoto multisitio, todos los equipos cliente (Windows 7 y Windows 8) perderán la conectividad remota hasta que puedan conectarse a la red corporativa directamente o a través de VPN para actualizar sus directivas de grupo. Esto es así cuando se habilita la funcionalidad de multisitio por primera vez, y también cuando se deshabilita multisitio.  
   
-## <a name="BKMK_Enable"></a>3,6. Habilitar la implementación multisitio  
+## <a name="36-enable-the-multisite-deployment"></a><a name="BKMK_Enable"></a>3,6. Habilitar la implementación multisitio  
 Para configurar una implementación multisitio, habilite la característica multisitio en el servidor de acceso remoto existente. Antes de habilitar el multisitio en su implementación, asegúrese de que tiene la siguiente información:  
   
 1.  Configuración de equilibrador de carga global y direcciones IP si desea equilibrar la carga de las conexiones de cliente de DirectAccess en todos los puntos de entrada de la implementación.  
@@ -219,9 +219,9 @@ Para configurar una implementación multisitio, habilite la característica mult
   
 3.  Directiva de grupo los nombres de objeto, si es necesario usar objetos de directiva de grupo no predeterminados, que se aplican en equipos cliente de Windows 7 para el primer punto de entrada de la implementación, si necesita compatibilidad con equipos cliente de Windows 7.  
   
-### <a name="EnabledMultisite"></a>Para habilitar una configuración multisitio  
+### <a name="to-enable-a-multisite-configuration"></a><a name="EnabledMultisite"></a>Para habilitar una configuración multisitio  
   
-1.  En el servidor de acceso remoto existente: en la pantalla **Inicio** , escriba **RAMgmtUI. exe**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+1.  En el servidor de acceso remoto existente: en la pantalla **Inicio** , escriba **RAMgmtUI. exe**y, a continuación, presione Entrar. Si aparece el cuadro de **Control de cuentas de usuario**, confirma que la acción que se muestra es la que deseas realizar y haz clic en **Sí**.  
   
 2.  En la consola de administración de acceso remoto, haga clic en **configuración**y, en el panel **tareas** , haga clic en **Habilitar multisitio**.  
   
@@ -231,7 +231,7 @@ Para configurar una implementación multisitio, habilite la característica mult
   
 5.  En la página **selección de punto de entrada** , realice una de las acciones siguientes:  
   
-    -   Haga clic en **asignar puntos de entrada automáticamente y permitir que los clientes seleccionen manualmente** para redirigir automáticamente los equipos cliente al punto de entrada más adecuado, a la vez que permite a los equipos cliente seleccionar un punto de entrada de forma manual. La selección de punto de entrada manual solo está disponible para equipos con Windows 8. Haz clic en **Siguiente**.  
+    -   Haga clic en **asignar puntos de entrada automáticamente y permitir que los clientes seleccionen manualmente** para redirigir automáticamente los equipos cliente al punto de entrada más adecuado, a la vez que permite a los equipos cliente seleccionar un punto de entrada de forma manual. La selección de punto de entrada manual solo está disponible para equipos con Windows 8. Haga clic en **Siguiente**.  
   
     -   Haga clic en **asignar puntos de entrada automáticamente** para redirigir automáticamente los equipos cliente al punto de entrada más adecuado y, a continuación, haga clic en **siguiente**.  
   
@@ -262,7 +262,7 @@ Para configurar una implementación multisitio, habilite la característica mult
   
 ![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
   
 Para habilitar una implementación multisitio denominada ' contoso ' en el primer punto de entrada denominado ' Edge1-US '. La implementación permite a los clientes seleccionar manualmente el punto de entrada y no usa un equilibrador de carga global.  
   
@@ -276,7 +276,7 @@ Para permitir el acceso de los equipos cliente de Windows 7 a través del primer
 Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.contoso.com\DA_Clients_US') -DownlevelGpoName @('corp.contoso.com\DA_W7_Clients_GPO_US)  
 ```  
   
-## <a name="BKMK_EntryPoint"></a>3,7. Agregar puntos de entrada a la implementación multisitio  
+## <a name="37-add-entry-points-to-the-multisite-deployment"></a><a name="BKMK_EntryPoint"></a>3,7. Agregar puntos de entrada a la implementación multisitio  
 Después de habilitar multisite en la implementación, puede Agregar puntos de entrada adicionales mediante el Asistente para agregar un punto de entrada. Antes de agregar puntos de entrada, asegúrese de que tiene la siguiente información:  
   
 -   Direcciones IP del equilibrador de carga global para cada nuevo punto de entrada si utiliza el equilibrio de carga global.  
@@ -287,9 +287,9 @@ Después de habilitar multisite en la implementación, puede Agregar puntos de e
   
 -   En el caso de que IPv6 esté implementado en la red de la organización, tendrá que preparar el prefijo IP-HTTPS para el nuevo punto de entrada.  
   
-### <a name="AddEP"></a>Para agregar puntos de entrada a la implementación multisitio  
+### <a name="to-add-entry-points-to-your-multisite-deployment"></a><a name="AddEP"></a>Para agregar puntos de entrada a la implementación multisitio  
   
-1.  En el servidor de acceso remoto existente: en la pantalla **Inicio** , escriba **RAMgmtUI. exe**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+1.  En el servidor de acceso remoto existente: en la pantalla **Inicio** , escriba **RAMgmtUI. exe**y, a continuación, presione Entrar. Si aparece el cuadro de **Control de cuentas de usuario**, confirma que la acción que se muestra es la que deseas realizar y haz clic en **Sí**.  
   
 2.  En la consola de administración de acceso remoto, haga clic en **configuración**y, en el panel **tareas** , haga clic en **Agregar un punto de entrada**.  
   
@@ -302,7 +302,7 @@ Después de habilitar multisite en la implementación, puede Agregar puntos de e
   
 5.  En la página **topología de red** , haga clic en la topología que se corresponda con la topología de red del servidor de acceso remoto que va a agregar y, a continuación, haga clic en **siguiente**.  
   
-6.  En la página **nombre de red o dirección IP** , en **Escriba el nombre público o la dirección IP que usan los clientes para conectarse al servidor de acceso remoto**, escriba el nombre público o la dirección IP que usan los clientes para conectarse al servidor de acceso remoto. El nombre público corresponde al nombre del firmante del certificado IP-HTTPS. En el caso de que se haya implementado la topología de red perimetral, la dirección IP es la del adaptador externo del servidor de acceso remoto. Haz clic en **Siguiente**.  
+6.  En la página **nombre de red o dirección IP** , en **Escriba el nombre público o la dirección IP que usan los clientes para conectarse al servidor de acceso remoto**, escriba el nombre público o la dirección IP que usan los clientes para conectarse al servidor de acceso remoto. El nombre público corresponde al nombre del firmante del certificado IP-HTTPS. En el caso de que se haya implementado la topología de red perimetral, la dirección IP es la del adaptador externo del servidor de acceso remoto. Haga clic en **Siguiente**.  
   
 7.  En la página **adaptadores de red** , realice una de las acciones siguientes:  
   
@@ -310,7 +310,7 @@ Después de habilitar multisite en la implementación, puede Agregar puntos de e
   
     -   Si va a implementar una topología con un adaptador de red, en **adaptador de red**, seleccione el adaptador que está conectado a la red interna.  
   
-8.  En la página **adaptadores de red** , en **Seleccione el certificado usado para autenticar las conexiones IP-https**, haga clic en **examinar** para buscar y seleccionar el certificado IP-https. Haz clic en **Siguiente**.  
+8.  En la página **adaptadores de red** , en **Seleccione el certificado usado para autenticar las conexiones IP-https**, haga clic en **examinar** para buscar y seleccionar el certificado IP-https. Haga clic en **Siguiente**.  
   
 9. Si IPv6 está configurado en la red corporativa, en la página **configuración de prefijo** , en **prefijo IPv6 asignado a equipos cliente**, escriba un prefijo IP-https para asignar direcciones IPv6 a los equipos cliente de DirectAccess y haga clic en **siguiente**.  
   
@@ -344,7 +344,7 @@ Después de habilitar multisite en la implementación, puede Agregar puntos de e
   
 ![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>comandos equivalentes</em> de Windows PowerShell Windows PowerShell***  
   
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
   
 Para agregar el equipo edge2 del dominio Corp2 como un segundo punto de entrada denominado Edge2-Europe. La configuración del punto de entrada es: un prefijo IPv6 de cliente ' 2001: db8:2: 2000::/64 ', una dirección de conexión a (el certificado IP-HTTPS en el equipo edge2) ' edge2.contoso.com ', un GPO de servidor denominado "configuración del servidor de DirectAccess-Edge2-Europe", y las interfaces internas y externas denominadas Internet y Corpnet2, respectivamente:  
   
@@ -358,6 +358,6 @@ Para permitir el acceso de los equipos cliente de Windows 7 a través del segund
 Add-DAClient -EntrypointName 'Edge2-Europe' -DownlevelGpoName @('corp.contoso.com\ DA_W7_Clients_GPO_Europe') -DownlevelSecurityGroupNameList @('corp.contoso.com\DA_Clients_Europe')  
 ```  
   
-## <a name="BKMK_Links"></a>Vea también  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también  
   
 -   [Paso 2: configurar la infraestructura multisitio](Step-2-Configure-the-Multisite-Infrastructure.md)

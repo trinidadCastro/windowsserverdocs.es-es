@@ -3,7 +3,7 @@ title: Soporte técnico de Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: ac12e9a9-ba7a-480a-9249-6e216c70941b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d6855e777ea6e59ce5a9596adc9ba2e186b0a3e5
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 9142f44e61a7361bd4c40bdfdb5869e326d67343
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947382"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318659"
 ---
 # <a name="support-windows-server-essentials"></a>Soporte técnico de Windows Server Essentials
 
@@ -25,7 +25,7 @@ ms.locfileid: "75947382"
 
 En este tema se proporciona soporte técnico y solución de problemas para Windows Server Essentials.  
   
-##  <a name="BKMK_Top"></a>Principales soluciones de soporte técnico y actualizaciones  
+##  <a name="top-support-solutions-and-updates"></a><a name="BKMK_Top"></a>Principales soluciones de soporte técnico y actualizaciones  
   
 -   [Principales soluciones de soporte técnico para Windows Server 2012 R2 y Windows Server 2012](https://blogs.technet.com/b/topsupportsolutions/archive/2014/02/04/top-support-solutions-for-microsoft-windows-server-2012.aspx)  
   
@@ -126,7 +126,7 @@ En este tema se proporciona soporte técnico y solución de problemas para Windo
   
 -    Para obtener información sobre cómo colaborar de forma segura con asociados y proveedores, consulte [mejorar la colaboración en pequeñas y medianas empresas](https://technet.microsoft.com/library/dn747893.aspx).  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
   
 -   [Instalación de Windows Server 2012 Essentials](../install/Install-Windows-Server-Essentials.md)  
   

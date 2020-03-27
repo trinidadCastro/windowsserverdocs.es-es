@@ -3,18 +3,18 @@ ms.assetid: ''
 title: Versión preliminar de Insider para características de HPN en Windows Server 2019
 description: Obtenga información acerca de las nuevas características de red de alto rendimiento en Windows Server 2019.
 manager: dougkim
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 ms.date: 09/12/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: bca603344047ea5cc890bf9976ca5a6c79514136
-ms.sourcegitcommit: 9feb093a0acb8834c9ef3c066667c7062d85e6e1
+ms.openlocfilehash: 03a652372fd86b11a87863330bf9536a28367167
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 03/26/2020
-ms.locfileid: "80289800"
+ms.locfileid: "80316956"
 ---
 # <a name="new-hpn-features-in-windows-server-2019"></a>Nuevas características de HPN en Windows Server 2019
 
