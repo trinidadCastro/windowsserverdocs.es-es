@@ -3,7 +3,7 @@ ms.assetid: 6086947f-f9ef-4e18-9f07-6c7c81d7002c
 title: Configuración y herramientas del servicio de hora de Windows
 description: ''
 author: Teresa-Motiv
-ms.author: pashort
+ms.author: lizross
 manager: dougkim
 ms.date: 02/24/2020
 ms.topic: article
@@ -13,12 +13,12 @@ ms.custom:
 - CI ID 113344
 - CSSTroubleshoot
 audience: Admin
-ms.openlocfilehash: e99c07428a1689e3c079ff2570759c849a61e945
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: e9432aa11446cdd4f00efca3af28c24d757d6019
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323477"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315131"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Configuración y herramientas del servicio de hora de Windows
 
@@ -256,7 +256,7 @@ En las tablas siguientes, "Todas las versiones" hace referencia a las versiones 
 >  
 > Por ejemplo, 5 minutos se convierten en 5 &times; 60 &times; 1000 &times; 10 000 = 3 000 000 000 ciclos de reloj.  
 
-### <a id="config"></a>Entradas de la subclave "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config"
+### <a name="hklmsystemcurrentcontrolsetservicesw32timeconfig-subkey-entries"></a><a id="config"></a>Entradas de la subclave "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config"
 
 |Entrada del Registro |Versiones |Descripción |
 | --- | --- | --- |
@@ -289,7 +289,7 @@ En las tablas siguientes, "Todas las versiones" hace referencia a las versiones 
 |**UpdateInterval** |Todas las versiones |Especifica el número de ciclos de reloj entre los ajustes de corrección de fase. El valor predeterminado para los controladores de dominio es **100**. El valor predeterminado para los miembros del dominio es **30 000**. El valor predeterminado para los servidores y clientes independientes es **360 000**.<br /><br />**Note**<br />Cero no es un valor válido para la entrada del Registro **UpdateInterval**. En equipos que ejecutan Windows Server 2003, Windows Server 2003 R2, Windows Server 2008 y Windows Server 2008 R2, si el valor se establece en **0**, el servicio de hora de Windows lo cambia automáticamente a **1**.|
 |**UtilizeSslTimeData** |Versiones de Windows posteriores a Windows 10 compilación 1511 |El valor **1** indica que W32Time usa varias marcas de tiempo de SSL para inicializar un reloj que es extremadamente impreciso. |
 
-### <a id="parameters"></a>Entradas de la subclave "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters"
+### <a name="hklmsystemcurrentcontrolsetservicesw32timeparameters-subkey-entries"></a><a id="parameters"></a>Entradas de la subclave "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters"
 
 | Entrada del Registro | Versiones | Descripción |
 | --- | --- | --- |
@@ -299,7 +299,7 @@ En las tablas siguientes, "Todas las versiones" hace referencia a las versiones 
 |**ServiceMain** |Todas las versiones |W32Time la mantiene. Contiene datos reservados que se usan en el sistema operativo Windows y los cambios que se realicen en esta configuración pueden producir resultados imprevisibles. El valor predeterminado en los miembros del dominio es **SvchostEntry_W32Time**. El valor predeterminado en los servidores y clientes independientes es **SvchostEntry_W32Time**. |
 |**Type** |Todas las versiones |Indica desde qué elementos del mismo nivel se aceptará la sincronización:  <ul><li>**NoSync**. El servicio de hora no se sincroniza con otros orígenes.</li><li>**NTP**. El servicio de hora se sincroniza desde los servidores especificados en la entrada del Registro **NtpServer** Entrada del Registro.</li><li>**NT5DS**. El servicio de hora se sincroniza desde la jerarquía de dominios.  </li><li>**AllSync**. El servicio de hora usa todos los mecanismos de sincronización disponibles.  </li></ul>El valor predeterminado en los miembros del dominio es **NT5DS**. El valor predeterminado en los servidores y clientes independientes es **NTP**. |
 
-### <a id="ntpclient"></a>Entradas de la clave "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient"
+### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpclient-subkey-entries"></a><a id="ntpclient"></a>Entradas de la clave "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient"
 
 |Entrada del Registro |Version |Descripción |
 | --- | --- | --- |
@@ -316,7 +316,7 @@ En las tablas siguientes, "Todas las versiones" hace referencia a las versiones 
 |**SpecialPollInterval** |Todas las versiones |Especifica el intervalo de sondeo especial, en segundos, para los elementos del mismo nivel manuales. Cuando se habilita la marca **SpecialInterval** 0x1, W32Time usa este intervalo de sondeo en lugar de un intervalo de sondeo determinado por el sistema operativo. El valor predeterminado en los miembros del dominio es **3600**. El valor predeterminado en los servidores y clientes independientes es **604 800**.<br/><br/>Nuevo para la compilación 1702, **SpecialPollInterval** se incluye en los valores del Registro Config **MinPollInterval** y **MaxPollInterval**.|
 |**SpecialPollTimeRemaining** |Todas las versiones |W32Time la mantiene. Contiene datos reservados que se usan en el sistema operativo Windows. Especifica el tiempo, en segundos, antes de que W32Time se vuelva a sincronizar después de reiniciar el equipo. Cualquier cambio en esta opción puede provocar resultados imprevisibles. El valor predeterminado en ambos miembros del dominio y en los servidores y clientes independientes se deja en blanco. |
 
-### <a id="ntpserver"></a>Entradas de la clave "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer"
+### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpserver-subkey-entries"></a><a id="ntpserver"></a>Entradas de la clave "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer"
 
 |Entrada del Registro |Versiones |Descripción |
 | --- | --- | --- |

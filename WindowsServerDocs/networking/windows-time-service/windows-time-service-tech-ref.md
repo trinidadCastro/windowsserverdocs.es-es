@@ -2,18 +2,18 @@
 ms.assetid: e34622ff-b2d0-4f81-8d00-dacd5d6c215e
 title: Referencia técnica del servicio de hora de Windows
 description: El servicio W32Time proporciona sincronización del reloj de red para los equipos sin necesidad de una extensa configuración. El servicio W32Time es esencial para el correcto funcionamiento de la autenticación Kerberos, versión 5, y, por tanto, para la autenticación basada en AD DS.
-author: shortpatti
+author: eross-msft
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 04d39f222fbbc7943cc2074a857a76f38832935d
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: b3d66f47bea99f6eed55aac15f2b54f3401a5755
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919880"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314914"
 ---
 # <a name="windows-time-service-technical-reference"></a>Referencia técnica del servicio de hora de Windows
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10 o posterior

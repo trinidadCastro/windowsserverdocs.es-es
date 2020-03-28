@@ -2,19 +2,19 @@
 ms.assetid: d1953097-63ea-4a0e-b860-2f3b7c175c41
 title: Funcionamiento del servicio Hora de Windows
 description: ''
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 2bf4a887218cd51e9c10954a75bbc1ba2112647f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d8532dedb6473a34591a1f160a94a785cc4ba367
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405142"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315174"
 ---
 # <a name="how-the-windows-time-service-works"></a>Funcionamiento del servicio Hora de Windows
 
@@ -45,7 +45,7 @@ Aunque el servicio de hora de Windows no es una implementación exacta del Proto
 -   La cantidad de recursos de CPU y de red a disposición del servicio de hora de Windows  
   
 > [!IMPORTANT]  
-> Antes de Windows Server 2016, el servicio W32Time no estaba diseñado para satisfacer las necesidades de las aplicaciones sujetas a limitaciones temporales.  Sin embargo, las actualizaciones de Windows Server 2016 ahora permiten implementar una solución con una precisión de 1 ms en el dominio.  Consulte [Hora precisa para Windows Server 2016](accurate-time.md) y [Límite de compatibilidad para configurar el servicio de hora de Windows para entornos de alta precisión](support-boundary.md) para obtener más información.  
+> Antes de Windows Server 2016, el servicio W32Time no estaba diseñado para satisfacer las necesidades de las aplicaciones sujetas a limitaciones temporales.  Sin embargo, las actualizaciones de Windows Server 2016 ahora permiten implementar una solución con una precisión de 1 ms en el dominio.  Consulte [Hora precisa para Windows Server 2016](accurate-time.md) y [Límite de compatibilidad para configurar el servicio de hora de Windows para entornos de alta precisión](support-boundary.md) para obtener más información.  
   
 Los equipos que sincronizan su hora con menos frecuencia o que no están unidos a un dominio están configurados de forma predeterminada para sincronizarse con time.windows.com.  Por lo tanto, no es posible garantizar la exactitud de la hora en los equipos que tienen conexiones de red intermitentes o sin conexión.  
   

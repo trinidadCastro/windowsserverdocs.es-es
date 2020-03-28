@@ -2,19 +2,19 @@
 ms.assetid: ''
 title: Hora de Windows para rastreabilidad
 description: Las normas de muchos sectores exigen que los sistemas puedan rastrearse según la hora UTC.  Esto significa que se pueda dar fe de la diferencia horaria de un sistema con respecto a UTC.
-author: shortpatti
+author: eross-msft
 ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 307739042426088fa92c50e6ea4dc5d2a744f15a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7f7a68d61729813583255d64afbf172475969e3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405205"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314935"
 ---
 # <a name="windows-time-for-traceability"></a>Hora de Windows para rastreabilidad
 >Se aplica a: Windows Server 2016, versión 1709 o posterior, y Windows 10, versión 1703 o posterior
@@ -41,7 +41,7 @@ No se necesita ninguna configuración para usar esta característica.  Estos reg
 
 En la siguiente sección se describen los eventos registrados para su uso en escenarios de rastreabilidad.
 
-# <a name="257tab257"></a>[257](#tab/257)
+# <a name="257"></a>[257](#tab/257)
 Este evento se registra cuando se inicia el servicio de hora de Windows (W32Time) y registra información sobre la hora actual, el recuento de tics actual, la configuración de tiempo de ejecución, los proveedores de hora y la frecuencia actual del reloj.
 
 |||
@@ -71,7 +71,7 @@ w32tm.exe /query /status /verbose
 ```
 
 
-# <a name="258tab258"></a>[258](#tab/258)
+# <a name="258"></a>[258](#tab/258)
 Este evento se registra cuando se detiene el servicio de hora de Windows (W32Time) y registra información sobre la hora actual y el recuento de tics.
 
 |||
@@ -84,7 +84,7 @@ Este evento se registra cuando se detiene el servicio de hora de Windows (W32Tim
 **Texto de ejemplo:** 
 `W32time service is stopping at 2018-03-01T05:42:13.944Z (UTC), System Tick Count 6370250.`
 
-# <a name="259tab259"></a>[259](#tab/259)
+# <a name="259"></a>[259](#tab/259)
 Este evento registra periódicamente su lista actual de orígenes de la hora y el origen de la hora elegido.  Además, registra el recuento actual de tics.  Este evento no se activa cada vez que cambia el origen de la hora.  Otros eventos que se enumeran más adelante en este documento proporcionan esta funcionalidad.
 
 |||
@@ -105,7 +105,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[direcciónIP]:123)server2.fabrika
 *Identificar homólogos*
 `w32tm.exe /query /peers`
 
-# <a name="260tab260"></a>[260](#tab/260)
+# <a name="260"></a>[260](#tab/260)
 
 |||
 |---|---|
@@ -113,7 +113,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[direcciónIP]:123)server2.fabrika
 |Detalles |W32time registra periódicamente su configuración y su estado. Esto es el equivalente a llamar:<br><br>`w32tm /query /configuration /verbose`<br>O<br>`w32tm /query /status /verbose` |
 |Mecanismo de limitación  |Se registra una vez cada 8 horas. |
 
-# <a name="261tab261"></a>[261](#tab/261)
+# <a name="261"></a>[261](#tab/261)
 Registra cada instancia cuando se modifica la hora del sistema mediante la API SetSystemTime.
 
 |||
@@ -121,7 +121,7 @@ Registra cada instancia cuando se modifica la hora del sistema mediante la API S
 |Descripción del evento |La hora del sistema está establecida |
 |Mecanismo de limitación  |Ninguna.<br><br>Esto debería ocurrir con poca frecuencia en sistemas con una sincronización razonable de la hora, y queremos que se registre cada vez que tenga lugar. Omitimos el valor de TimeJumpAuditOffset al registrar este evento, ya que la configuración se diseñó para limitar los eventos del registro de eventos del sistema Windows. |
 
-# <a name="262tab262"></a>[262](#tab/262)
+# <a name="262"></a>[262](#tab/262)
 
 |||
 |---|---|
@@ -129,7 +129,7 @@ Registra cada instancia cuando se modifica la hora del sistema mediante la API S
 |Detalles |W32time modifica constantemente la frecuencia del reloj del sistema cuando el reloj está en estrecha sincronización. Queremos capturar los ajustes "razonablemente significativos" que se realizaron en la frecuencia del reloj sin sobrecargar el registro de eventos. |
 |Mecanismo de limitación  |No se registra ninguno de los ajustes de reloj por debajo de TimeAdjustmentAuditThreshold (mín. = 128 partes por millón, valor predeterminado = 800 partes por millón).<br><br>Un cambio de 2 ppm en la frecuencia del reloj con la granularidad actual produce un cambio de 120 μs/s en la precisión del reloj.<br><br>En un sistema sincronizado, la mayoría de los ajustes está por debajo de este nivel. Si quieres un seguimiento más preciso, este valor se puede ajustar a la baja o puedes usar PerfCounters, o bien puedes hacer ambas cosas. |
 
-# <a name="263tab263"></a>[263](#tab/263)
+# <a name="263"></a>[263](#tab/263)
 
 |||
 |---|---|
@@ -138,7 +138,7 @@ Registra cada instancia cuando se modifica la hora del sistema mediante la API S
 |Mecanismo de limitación  |Ninguna.<br><br>Este evento solo se produce cuando un administrador o actualización de GP cambian los proveedores de hora y, a continuación, inician W32time. Queremos registrar cada instancia de cambio de configuración. |
 
 
-# <a name="264tab264"></a>[264](#tab/264)
+# <a name="264"></a>[264](#tab/264)
 
 |||
 |---|---|
@@ -146,7 +146,7 @@ Registra cada instancia cuando se modifica la hora del sistema mediante la API S
 |Detalles |El cliente NTP registra un evento con el estado actual de los servidores de hora u homólogos cuando cambia el estado del servidor de hora o del homólogo (**Pendiente -> Sincronización**, **Sincronización-> No accesible** u otras transiciones) |
 |Mecanismo de limitación  |Frecuencia máxima: solo una vez cada 5 minutos para proteger el registro frente a problemas transitorios y a una implementación de proveedor incorrecta. |
 
-# <a name="265tab265"></a>[265](#tab/265)
+# <a name="265"></a>[265](#tab/265)
 
 |||
 |---|---|
@@ -155,7 +155,7 @@ Registra cada instancia cuando se modifica la hora del sistema mediante la API S
 |Mecanismo de limitación  |Ninguna. |
 
 
-# <a name="266tab266"></a>[266](#tab/266)
+# <a name="266"></a>[266](#tab/266)
 
 |||
 |---|---|

@@ -2,18 +2,18 @@
 ms.assetid: ''
 title: Configuración de sistemas para alta precisión
 description: La sincronización de la hora en Windows 10 y Windows Server 2016 se ha mejorado considerablemente.  En condiciones de funcionamiento razonables, los sistemas se pueden configurar para mantener una precisión de 1 ms (milisegundos) o mejor (con respecto a la hora UTC).
-author: shortpatti
+author: eross-msft
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: b7cd256fdbbdbe7432e5b5d5b16254314132560f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8cdded0eb0dc663d352011fb1a6765a2ed358764
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405196"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315036"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>Configuración de sistemas para alta precisión
 >Se aplica a: Windows Server 2016 y Windows 10, versión 1607 o superior
@@ -106,7 +106,7 @@ Esta medición puede obtenerse mediante la herramienta de bandeja de entrada w32
 
 #### <a name="registry-settings"></a>Configuración del Registro
 
-# <a name="minpollintervaltabminpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
+# <a name="minpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
 Configura el intervalo más pequeño en log2 segundos permitidos para el sondeo del sistema.
 
 |  |  | 
@@ -120,7 +120,7 @@ El comando siguiente indica a la hora de Windows que recoja la configuración ac
 `w32tm /config /update`
 
 
-# <a name="maxpollintervaltabmaxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
+# <a name="maxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
 Configura el intervalo más grande en log2 segundos permitidos para el sondeo del sistema.
 
 |  |  |  
@@ -133,7 +133,7 @@ El comando siguiente indica a la hora de Windows que recoja la configuración ac
 
 `w32tm /config /update`
 
-# <a name="updateintervaltabupdateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
+# <a name="updateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
 El número de tics del reloj entre los ajustes de corrección de fase.
 
 |  |  |  
@@ -146,7 +146,7 @@ El comando siguiente indica a la hora de Windows que recoja la configuración ac
 
 `w32tm /config /update`
 
-# <a name="specialpollintervaltabspecialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
+# <a name="specialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
 Configura el intervalo de sondeo en segundos cuando la marca SpecialInterval 0x1 está habilitada.
 
 |  |  |  
@@ -159,7 +159,7 @@ El comando siguiente reinicia la hora de Windows para recoger la configuración 
 
 `net stop w32time && net start w32time`
 
-# <a name="frequencycorrectratetabfrequencycorrectrate"></a>[FrequencyCorrectRate](#tab/FrequencyCorrectRate)
+# <a name="frequencycorrectrate"></a>[FrequencyCorrectRate](#tab/FrequencyCorrectRate)
 
 |  |  |  
 |---------|---------|
