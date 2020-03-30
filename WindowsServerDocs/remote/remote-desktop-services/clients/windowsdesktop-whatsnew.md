@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/10/2020
+ms.date: 03/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 981a9071b3f5daf1ca97dcde8a8b32b2a2588d99
-ms.sourcegitcommit: fc900eb19ac26c3d6bc2de179cc4b2c1e971043e
+ms.openlocfilehash: 38b779b12b841e276d8f807af6f6332469c20817
+ms.sourcegitcommit: 9e8fddf683c9a36aad330ebef9b80d57f75ffb43
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79038068"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80233302"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -30,14 +30,14 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 |Grupo de usuarios |Version  |
 |-----------|---------|
-|Público     |1.2.675  |
-|Insider    |1.2.787  |
+|Público     |1.2.790  |
+|Insider    |1.2.790  |
 
-## <a name="updates-for-version-12787"></a>Actualizaciones para la versión 1.2.787
+## <a name="updates-for-version-12790"></a>Actualizaciones para la versión 1.2.790
 
-*Fecha de publicación: 10/03/2020*
+*Fecha de publicación: 24/03/2020*
 
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qZVh), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qXhC), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qRVA)
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSh), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSi), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4sllb)
 
 - Se ha cambiado el nombre de la acción "Actualizar" de las áreas de trabajo por "Actualizar" para mantener la coherencia con otros clientes de Escritorio remoto.
 - Ahora puedes actualizar un área de trabajo directamente desde su menú contextual.
