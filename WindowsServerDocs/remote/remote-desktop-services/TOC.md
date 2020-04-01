@@ -63,7 +63,7 @@
 ### [Optimización de Windows 10, versión 1909, para un rol de Infraestructura de escritorio virtual (VDI)](rds_vdi-recommendations-1909.md)
 ### [Optimización de Windows 10, versión 1803, para un rol de infraestructura de escritorio virtual (VDI)](rds-vdi-recommendations-1803.md)
 ### [Administrar usuarios de la colección de RDS](rds-user-management.md)
-### [Personalizar el título de RDS "Recursos de trabajo" con PowerShell en Windows Server](rds-work-resources.md)
+### [Personalización del título de RDS "Recursos de trabajo" con PowerShell en Windows Server](rds-work-resources.md)
 ### [Diagnosticar problemas de rendimiento de aplicaciones con contadores de rendimiento](rds-rdsh-performance-counters.md)
 
 ## Obtener acceso a los recursos de Escritorio remoto
@@ -93,8 +93,8 @@
 #### [Conceder acceso a su PC desde fuera de la red](clients/remote-desktop-allow-outside-access.md)
 #### [Cambiar el puerto de escucha de Escritorio remoto en su PC](clients/change-listening-port.md)
 ### Información avanzada
-#### [¿Qué clientes funcionan mejor para usted?](clients/remote-desktop-app-compare.md)
-#### [Configuración del archivo RDP de Escritorio remoto](clients/rdp-files.md)
+#### [Comparación de los clientes](clients/remote-desktop-app-compare.md)
+#### [Configuración admitida del archivo RDP de Escritorio remoto](clients/rdp-files.md)
 #### [Esquema de URI de Escritorio remoto](clients/remote-desktop-uri.md)
 #### [Preguntas más frecuentes del cliente de Escritorio remoto](clients/remote-desktop-client-faq.md)
 #### [Configuración de privacidad de las aplicaciones y escritorios administrados](clients/remote-privacy-settings.md)
