@@ -11,12 +11,12 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 60f2f3a6ed885f2da80b9beac51eeb703789ec91
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: 7a717acf5c132d68d6ee041aeb5af5a430aa171b
+ms.sourcegitcommit: 9f7cc76b8c9add44dcbbd97f77b4f881d5a2c073
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791764"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80613006"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Máquinas virtuales de Debian compatibles en Hyper-V
 
@@ -32,7 +32,7 @@ El siguiente mapa de distribución de características indica las característic
 
 * (*en blanco*): característica no disponible
 
-| **Ofrecen**                                                                                                                                  | **Versión del sistema operativo Windows Server** | **10 (validador)** | **9.0-9.6 (Stretch)** | **8.0-8.11 (Jessie)** | **7.0-7.11 (Wheezy)** |
+| **Ofrecen**                                                                                                                                  | **Versión del sistema operativo Windows Server** | **10.0-10.3 (validador)** | **9.0-9.12 (Stretch)** | **8.0-8.11 (Jessie)** | **7.0-7.11 (Wheezy)** |
 |----------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|-----------------------|-----------------------|-----------------------|-----------------------|
 | **Disponibilidad**                                                                                                                             |                                             | Integrado              | Integrado              | Integrado              | Integrado (Nota 6)     |
 | **[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019, 2016, 2012 R2, 2012, 2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
@@ -71,7 +71,7 @@ El siguiente mapa de distribución de características indica las característic
 | Arranque seguro                                                                                                                                  | 2019, 2016                                  | &#10004;              |                       |                       |                       |
 
 
-## <a name="BKMK_notes"></a>Apunte
+## <a name="notes"></a><a name="BKMK_notes"></a>Apunte
 
 1. No se admite la creación de sistemas de archivos en VHD de más de 2 TB.
 
@@ -93,7 +93,7 @@ El siguiente mapa de distribución de características indica las característic
    ```
 8. Las funcionalidades más recientes del kernel de nivel superior solo están disponibles mediante el uso de los [puertos de subpuertos de Debian](https://wiki.debian.org/Backports)de kernel incluidos.
 
-Consulta también
+Vea también
 
 * [Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
