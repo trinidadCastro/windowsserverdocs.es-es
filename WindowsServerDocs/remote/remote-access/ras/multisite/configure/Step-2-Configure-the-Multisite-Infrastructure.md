@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: faec70ac-88c0-4b0a-85c7-f0fe21e28257
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6f020dc2bf5c0dc11d18e886346a98a4a40f3855
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9434f3192da110c8ad61e999d2aecd02bfff3812
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314055"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639837"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>Paso 2 configuración de la infraestructura multisitio
 
@@ -241,7 +241,7 @@ Para cargar o modificar la configuración de acceso remoto, puede transferir el 
   
 #### <a name="to-change-the-domain-controller-that-manages-server-gpos"></a><a name="ChangeDC"></a>Para cambiar el controlador de dominio que administra los GPO de servidor  
   
--   Ejecute el cmdlet de Windows PowerShell `HYPERLINK "https://technet.microsoft.com/library/hh918412.aspx" Set-DAEntryPointDC` en el servidor de acceso remoto y especifique el nombre del controlador de dominio inaccesible para el parámetro *ExistingDC* . Este comando modifica la Asociación del controlador de dominio para los GPO de servidor de los puntos de entrada administrados actualmente por ese controlador de dominio.  
+-   Ejecute el cmdlet de Windows PowerShell [set-DAEntryPointDC](https://docs.microsoft.com/powershell/module/remoteaccess/set-daentrypointdc) en el servidor de acceso remoto y especifique el nombre del controlador de dominio inaccesible para el parámetro *ExistingDC* . Este comando modifica la Asociación del controlador de dominio para los GPO de servidor de los puntos de entrada administrados actualmente por ese controlador de dominio.
   
     -   Para reemplazar el controlador de dominio inaccesible "dc1.corp.contoso.com" con el controlador de dominio "dc2.corp.contoso.com", haga lo siguiente:  
   
@@ -300,7 +300,7 @@ La información de asociación del controlador de dominio se almacena en el regi
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
 ### <a name="optimization-of-configuration-distribution"></a><a name="ConfigDistOptimization"></a>Optimización de la distribución de la configuración  
-Al realizar cambios de configuración, los cambios se aplican solo después de que los GPO de servidor se propaguen a los servidores de acceso remoto. Para reducir el tiempo de distribución de la configuración, el acceso remoto selecciona automáticamente un controlador de dominio de escritura que es el hipervínculo "<https://technet.microsoft.com/library/cc978016.aspx>" más próximo al servidor de acceso remoto al crear su GPO de servidor.  
+Al realizar cambios de configuración, los cambios se aplican solo después de que los GPO de servidor se propaguen a los servidores de acceso remoto. Para reducir el tiempo de distribución de la configuración, el acceso remoto selecciona automáticamente un controlador de dominio de escritura [más cercano al servidor de acceso remoto](https://technet.microsoft.com/library/cc978016.aspx) al crear su GPO de servidor.  
   
 En algunos escenarios, puede ser necesario modificar manualmente el controlador de dominio que administra un GPO de servidor para optimizar el tiempo de distribución de la configuración:  
   
@@ -336,4 +336,3 @@ Para optimizar el tiempo de distribución de la configuración, realice una de l
   
 -   [Paso 3: configurar la implementación multisitio](Step-3-Configure-the-Multisite-Deployment.md)  
 -   [Paso 1: implementar una implementación de acceso remoto de un solo servidor](Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md)  
-

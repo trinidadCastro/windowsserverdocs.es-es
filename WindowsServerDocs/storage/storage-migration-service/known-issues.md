@@ -8,12 +8,12 @@ ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a9759f0ea8835c8e07bcd298b75024e3ee29c9ed
-ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
+ms.openlocfilehash: f8a1e70bba740875e19660d5a729a952c9fae8f2
+ms.sourcegitcommit: d56c042c58833bdaa9a6fe54dd68f540af12fc6e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856349"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80661065"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -23,7 +23,7 @@ El servicio de migración de almacenamiento se publica en dos partes: el servici
 
 Por ejemplo, Windows Server, versión 1903 incluye nuevas características y correcciones para el servicio de migración de almacenamiento, que también están disponibles para Windows Server 2019 y Windows Server, versión 1809 mediante la instalación de [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534).
 
-## <a name="collecting-logs"></a>Cómo recopilar archivos de registro al trabajar con Soporte técnico de Microsoft
+## <a name="how-to-collect-log-files-when-working-with-microsoft-support"></a><a name="collecting-logs"></a>Cómo recopilar archivos de registro al trabajar con Soporte técnico de Microsoft
 
 El servicio de migración de almacenamiento contiene registros de eventos para el servicio Orchestrator y el servicio Proxy. El servidor de Orchestrator siempre contiene los registros de eventos y los servidores de destino con el servicio de proxy instalado contienen los registros del proxy. Estos registros se encuentran en:
 
@@ -343,7 +343,7 @@ Al intentar ejecutar el corte en un origen de clúster de Windows Server 2008 R2
        at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
-Este problema se debe a que falta una API en versiones anteriores de Windows Server. Actualmente no hay ninguna manera de migrar los clústeres de Windows Server 2008 y Windows Server 2003. Puede realizar el inventario y la transferencia sin problemas en los clústeres de Windows Server 2008 R2 y, a continuación, realizar manualmente el traslado mediante el cambio manual de la dirección IP y el servidor de archivos de origen del clúster. Dirección que debe coincidir con el origen original. 
+Este problema se debe a que falta una API en versiones anteriores de Windows Server. Actualmente no hay ninguna manera de migrar los clústeres de Windows Server 2008 y Windows Server 2003. Puede realizar el inventario y la transferencia sin problemas en los clústeres de Windows Server 2008 R2 y, a continuación, realizar manualmente el traslado cambiando manualmente la dirección IP y el recurso del servidor de archivos de origen del clúster y, después, cambiando la dirección IP y el código de acceso del clúster de destino para que coincida con el origen original. 
 
 ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>El total de bloqueos en "38% está asignando interfaces de red en el equipo de origen..." al usar DHCP 
 
@@ -421,7 +421,7 @@ Si ya ha ejecutado la transferencia una y varias veces:
     Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
     ```
    
- 2. En el caso de los usuarios devueltos con su nombre original, edite el "nombre de inicio de sesión de usuario (anterior a Windows 2000)" para quitar el sufijo de carácter aleatorio agregado por el servicio de migración de almacenamiento, de modo que este perdedor pueda iniciar sesión.
+ 2. En el caso de los usuarios devueltos con su nombre original, edite el "nombre de inicio de sesión de usuario (anterior a Windows 2000)" para quitar el sufijo de carácter aleatorio agregado por el servicio de migración de almacenamiento, de modo que este usuario pueda iniciar sesión.
  3. En el caso de los grupos devueltos con su nombre original, edite el "nombre de grupo (anterior a Windows 2000)" para quitar el sufijo de carácter aleatorio agregado por el servicio de migración de almacenamiento.
  4. En el caso de los usuarios o grupos deshabilitados con nombres que ahora contengan un sufijo agregado por el servicio de migración de almacenamiento, puede eliminar estas cuentas. Puede confirmar que las cuentas de usuario se agregaron posteriormente porque solo contendrán el grupo usuarios del dominio y tendrá una fecha y hora de creación que coincidan con la hora de inicio de la transferencia del servicio de migración de almacenamiento.
  
@@ -484,7 +484,7 @@ En esta fase, el orquestador del servicio de migración de almacenamiento está 
  - El servicio de registro remoto no se está ejecutando en el equipo de origen.
  - el Firewall no permite conexiones remotas del registro con el servidor de origen desde el orquestador.
  - La cuenta de migración de origen no tiene permisos de registro remoto para conectarse al equipo de origen.
- - La cuenta de migración de origen no tiene permisos de lectura en el registro del equipo de origen, en "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" o en "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\ LanManServer
+ - La cuenta de migración de origen no tiene permisos de lectura en el registro del equipo de origen, en "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" o en "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer"
  
  ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>El total de bloqueos en "38% está asignando interfaces de red en el equipo de origen..." 
 

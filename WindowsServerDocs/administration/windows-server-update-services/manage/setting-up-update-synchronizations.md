@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4559016388f9b0d765c8e4d76f76fa7ef0a7f0f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c7bca5be7a8ec0e857cba65680fbc3b967af4f8
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361601"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639753"
 ---
 # <a name="setting-up-update-synchronizations"></a>Configuración de sincronizaciones de actualización
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Durante la sincronización, un servidor WSUS descarga actualizaciones (archivos y metadatos de actualización) desde un origen de actualización. También se descargan las clasificaciones y categorías de producto nuevas, si las hay. Cuando el servidor WSUS se sincroniza por primera vez, descargará todas las actualizaciones que especificó al configurar las opciones de sincronización. Después de la primera sincronización, el servidor WSUS descarga solo las actualizaciones del origen de la actualización, así como las revisiones en los metadatos de las actualizaciones existentes y la expiración de las actualizaciones.
 

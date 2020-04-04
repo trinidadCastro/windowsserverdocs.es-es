@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 454fa385dc9fb91218ad836d4ad34e92e9644dac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 36ac4230ae84cae3a859e53e5faa2b83cb7412d5
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361627"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639821"
 ---
 # <a name="managing-wsus-client-computers-and-wsus-computer-groups"></a>Administración de equipos cliente de WSUS y grupos de equipos de WSUS
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 El nodo equipos es punto de acceso central en la consola de administración de WSUS para administrar los dispositivos y equipos cliente de WSUS. En este nodo puede encontrar los distintos grupos que ha configurado (más el grupo predeterminado, los equipos sin asignar).
 

@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 01/30/2019
 description: En este artículo se describe el escenario de conjuntos de clústeres
 ms.localizationpriority: medium
-ms.openlocfilehash: 52d686fa9797d84f56182b15c36a26440792ec13
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db427e8fa4e5574c6eb7837cf0ab4a9fcc180410
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402916"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639965"
 ---
 # <a name="cluster-sets"></a>Conjuntos de clústeres
 
@@ -65,7 +65,7 @@ Un dominio de error es la agrupación de artefactos de software y hardware que e
 
 **Conjunto de disponibilidad**
 
-Un conjunto de disponibilidad ayuda al administrador a configurar la redundancia deseada de las cargas de trabajo en clúster en los dominios de error, al organizarlos en un conjunto de disponibilidad e implementar cargas de trabajo en ese conjunto de disponibilidad. Supongamos que, si va a implementar una aplicación de dos niveles, se recomienda configurar al menos dos máquinas virtuales en un conjunto de disponibilidad para cada nivel, lo que garantizará que cuando un dominio de error de ese conjunto de disponibilidad deje de funcionar, la aplicación tendrá al menos una máquina virtual en cada nivel hospedada en un dominio de error diferente del mismo conjunto de disponibilidad.
+Un conjunto de disponibilidad ayuda al administrador a configurar la redundancia deseada de las cargas de trabajo en clúster en los dominios de error, al organizarlos en un conjunto de disponibilidad e implementar cargas de trabajo en ese conjunto de disponibilidad. Supongamos que, si va a implementar una aplicación de dos niveles, se recomienda configurar al menos dos máquinas virtuales en un conjunto de disponibilidad para cada nivel, lo que garantizará que, cuando un dominio de error en ese conjunto de disponibilidad deje de funcionar, la aplicación tendrá al menos una máquina virtual en cada nivel hospedado en un dominio de error diferente del mismo conjunto de disponibilidad.
 
 ## <a name="why-use-cluster-sets"></a>Por qué usar conjuntos de clústeres
 
@@ -163,7 +163,7 @@ Al crear un conjunto de clústeres, se recomiendan los siguientes requisitos pre
 
         Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterGroup 
 
-8. Para comprobar que el proceso de creación del conjunto de clústeres creó un recurso compartido de SMB (identificado como volume1 o cualquier carpeta CSV con la etiqueta nombre del servidor de archivos de infraestructura y la ruta de acceso) en el SOFS de infraestructura para cada miembro del clúster Volumen CSV:
+8. Para comprobar que el proceso de creación del conjunto de clústeres creó un recurso compartido de SMB (identificado como volume1 o cualquier carpeta CSV con la etiqueta nombre del servidor de archivos de infraestructura y la ruta de acceso como ambos) en el SOFS de infraestructura para el volumen CSV de cada miembro del clúster:
 
         Get-SmbShare -CimSession CSMASTER
 
@@ -171,7 +171,7 @@ Al crear un conjunto de clústeres, se recomiendan los siguientes requisitos pre
 
         Get-ClusterSetLog -ClusterSetCimSession CSMASTER -IncludeClusterLog -IncludeManagementClusterLog -DestinationFolderPath <path>
 
-9. Configure la [delegación restringida](https://blogs.technet.microsoft.com/virtualization/2017/02/01/live-migration-via-constrained-delegation-with-kerberos-in-windows-server-2016/) de Kerberos entre todos los miembros del conjunto de clústeres.
+9. Configure la [delegación restringida](https://techcommunity.microsoft.com/t5/virtualization/live-migration-via-constrained-delegation-with-kerberos-in/ba-p/382334) de Kerberos entre todos los miembros del conjunto de clústeres.
 
 10. Configure el tipo de autenticación de migración en vivo de máquinas virtuales entre clústeres en Kerberos en cada nodo del conjunto de clústeres.
 
@@ -260,7 +260,7 @@ La migración en vivo de una máquina virtual entre clústeres de conjuntos de c
 
 Con los conjuntos de clústeres, estos pasos no son necesarios y solo se necesita un comando.  En primer lugar, debe configurar todas las redes para que estén disponibles para la migración con el comando:
 
-    Set-VMHost -UseAnyNetworkMigration $true
+    Set-VMHost -UseAnyNetworkForMigration $true
 
 Por ejemplo, quiero cambiar una máquina virtual del conjunto de clústeres de CLUSTER1 a NODO2-CL3 en CLUSTER3.  El único comando sería:
 
@@ -323,7 +323,7 @@ Por ejemplo, el comando para quitar el clúster de CLUSTER1 de los conjuntos de 
 
         Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
 
-## <a name="frequently-asked-questions-faq"></a>Preguntas más frecuentes
+## <a name="frequently-asked-questions-faq"></a>Preguntas más frecuentes (P+F)
 
 **Pregunta:** En mi conjunto de clústeres, ¿estoy limitado a usar solo clústeres hiperconvergidos? <br>
 **Respuesta:** No.  Puede mezclar Espacios de almacenamiento directo con los clústeres tradicionales.

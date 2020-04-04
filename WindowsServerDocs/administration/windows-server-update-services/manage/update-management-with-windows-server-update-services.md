@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e80f6763d7b1aa11603cbd2bb8756a426d685092
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8454966af47be4775bb241523e50dd4968c4f92e
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361500"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639810"
 ---
 # <a name="update-management-with-windows-server-update-services"></a>Administración de actualizaciones con Windows Server Update Services
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Debe comprobar la página de inicio de la consola de administración de WSUS con regularidad para ver el estado general de la red y el cumplimiento de las actualizaciones. Compruebe con frecuencia los registros de aplicaciones si sospecha que hay problemas como errores de descarga o equipos de cliente que presentan problemas a la hora de enviar notificaciones al servidor WSUS. Esta guía proporciona información para ayudarle a administrar Windows Server Update Services.  
   

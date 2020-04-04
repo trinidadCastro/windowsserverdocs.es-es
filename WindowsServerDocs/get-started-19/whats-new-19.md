@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: dd8cd6700323075a380aa062bfa1d208b3e30f83
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 47269fbfac6aea3fe46513ad67d2cfa2f0c9b78e
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465499"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639917"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novedades de Windows Server 2019
 
@@ -63,7 +63,7 @@ Los sensores de plataforma profunda y las acciones de respuesta de ATP exponen a
 
 -   [Reducción de la superficie expuesta a ataques (ASR)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard?ocid=cx-blog-mmpc) es un conjunto de controles que las empresas pueden habilitar para impedir que el malware entre en la máquina bloqueando archivos sospechosos malintencionados (por ejemplo, archivos de Office), scripts, desplazamiento lateral, comportamiento de ransomware y amenazas basadas en correo electrónico.
 
--   [Protección de red](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/network-protection-exploit-guard?ocid=cx-blog-mmpc) protege el punto de conexión frente a amenazas basadas en web bloqueando cualquier proceso de salida en el dispositivo para hosts o direcciones IP que no son de confianza a través de SmartScreen de Windows Defender.
+-   [Protección de red](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/network-protection) protege el punto de conexión frente a amenazas basadas en web bloqueando cualquier proceso de salida en el dispositivo para hosts o direcciones IP que no son de confianza a través de SmartScreen de Windows Defender.
 
 -   [Acceso controlado a carpetas](https://cloudblogs.microsoft.com/microsoftsecure/2017/10/23/stopping-ransomware-where-it-counts-protecting-your-data-with-controlled-folder-access/?ocid=cx-blog-mmpc?source=mmpc) protege los datos confidenciales del ransomware bloqueando para los procesos que no son de confianza el acceso a las carpetas protegidas.
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 90e544bd-e826-4093-8c3b-6a6fc2dfd1d6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 278d813aa13ea42b7f597bdbe7eb210f68cee955
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 4e6e6d2612af80bdaaa3900414bb08c3f0c18ea3
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316306"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639909"
 ---
 # <a name="network-policy-server-best-practices"></a>Procedimientos recomendados del servidor de directivas de redes
 
@@ -97,7 +97,7 @@ A continuación se muestran los procedimientos recomendados para el uso de NPS e
 
 - Siempre que sea posible, use nombres principales de usuario para hacer referencia a los usuarios. Un usuario puede tener el mismo nombre principal de usuario al margen del dominio al que pertenezca. Esta práctica proporciona la escalabilidad necesaria a las organizaciones que tienen un elevado número de dominios.
 
-- Si instaló el servidor de directivas de redes \(\) NPS en un equipo que no sea un controlador de dominio y NPS recibe un gran número de solicitudes de autenticación por segundo, puede mejorar el rendimiento de NPS aumentando el número de autenticaciones simultáneas permitidas entre el NPS y el controlador de dominio. Para obtener más información, vea 
+- Si instaló el servidor de directivas de redes \(\) NPS en un equipo que no sea un controlador de dominio y NPS recibe un gran número de solicitudes de autenticación por segundo, puede mejorar el rendimiento de NPS aumentando el número de autenticaciones simultáneas permitidas entre el NPS y el controlador de dominio. Para obtener más información, consulte [aumentar las autenticaciones simultáneas procesadas por NPS](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-concurrent-auth).
 
 ## <a name="security-issues"></a>Aspectos de seguridad
 
