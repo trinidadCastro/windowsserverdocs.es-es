@@ -10,16 +10,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68ff4c893302167815e3e8368d8b03f97d9be131
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7731cc84f946bfab7f53a3446ed90d1be92cae75
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361694"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639797"
 ---
 # <a name="step-3-approve-and-deploy-updates-in-wsus"></a>Paso 3: aprobar e implementar las actualizaciones en WSUS
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Los equipos que pertenecen a un grupo se comunican automáticamente con el servidor WSUS en las siguientes 24 horas, para obtener actualizaciones. La característica de informes de WSUS se puede usar para determinar si esas actualizaciones fueron implementadas en los equipos de prueba. Cuando las pruebas finalizan correctamente, se pueden aprobar las actualizaciones para los grupos de equipos de la organización que correspondan. La siguiente lista de comprobación describe los pasos para aprobar e implementar actualizaciones mediante el uso de la Consola de administración de WSUS.
 
@@ -29,7 +29,7 @@ Los equipos que pertenecen a un grupo se comunican automáticamente con el servi
 |[3.2. Configurar reglas de aprobación automática](3-approve-and-deploy-updates-in-wsus.md#BKM_3.2.a.)|Configure WSUS para aprobar automáticamente la instalación de actualizaciones para grupos seleccionados y el método para aprobar las revisiones de las actualizaciones existentes.|
 |[3.3. Revisar actualizaciones instaladas con informes de WSUS](3-approve-and-deploy-updates-in-wsus.md#BKM_3.3.)|Revise las actualizaciones que se instalaron, los equipos que recibieron esas actualizaciones y otros detalles mediante el uso de la característica de informes de WSUS.|
 
-## <a name="BKM_3.1."></a>3.1. Aprobar e implementar actualizaciones de WSUS
+## <a name="31-approve-and-deploy-wsus-updates"></a><a name="BKM_3.1."></a>3.1. Aprobar e implementar actualizaciones de WSUS
 Use el siguiente procedimiento para aprobar e implementar actualizaciones.
 
 #### <a name="to-approve-and-deploy-wsus-updates"></a>Para aprobar e implementar actualizaciones de WSUS
@@ -38,7 +38,7 @@ Use el siguiente procedimiento para aprobar e implementar actualizaciones.
 
 2.  En la sección **Todas la actualizaciones** , haga clic en **Actualizaciones que los equipos necesitan**.
 
-3.  En la lista de actualizaciones, seleccione las que desee aprobar para su instalación en el grupo de equipos de prueba. Podrá encontrar información sobre una actualización seleccionada, en el panel inferior del panel **Actualizaciones** . Para seleccionar varias actualizaciones contiguas, mantén presionada la tecla **Mayús** mientras haces clic en los nombres de las actualizaciones. Para seleccionar varias actualizaciones no contiguas, mantenga presionada la tecla **CTRL**, mientras hace clic en los nombres de las actualizaciones.
+3.  En la lista de actualizaciones, seleccione las que desee aprobar para su instalación en el grupo de equipos de prueba. Podrá encontrar información sobre una actualización seleccionada, en el panel inferior del panel **Actualizaciones** . Para seleccionar varias actualizaciones contiguas, mantén presionada la tecla **Mayús** mientras haces clic en los nombres de las actualizaciones. Para seleccionar varias actualizaciones no contiguas, mantenga presionada la tecla **CTRL** , mientras hace clic en los nombres de las actualizaciones.
 
 4.  Haga clic con el botón secundario y, a continuación, haga clic en **Aprobar**.
 
@@ -48,7 +48,7 @@ Use el siguiente procedimiento para aprobar e implementar actualizaciones.
 
 7.  Aparecerá la ventana **Progreso de la aprobación** , que muestra el progreso de las tareas relacionadas con la aprobación de actualizaciones. Cuando se haya completado el proceso de aprobación, haga clic en **Cerrar**.
 
-## <a name="BKM_3.2.a."></a>3.2. Configurar reglas de aprobación automática
+## <a name="32-configure-auto-approval-rules"></a><a name="BKM_3.2.a."></a>3.2. Configurar reglas de aprobación automática
 Las aprobaciones automáticas permiten especificar cómo aprobar automáticamente la instalación de actualizaciones de determinados grupos y como aprobar las revisiones de las actualizaciones existentes.
 
 #### <a name="to-configure-automatic-approvals"></a>Para configurar aprobaciones automáticas
@@ -73,7 +73,7 @@ Las aprobaciones automáticas permiten especificar cómo aprobar automáticament
 
 7.  Haga clic en **Aceptar** para cerrar el cuadro de diálogo Aprobaciones automáticas.
 
-## <a name="BKM_3.3."></a>3.3. Revisar actualizaciones instaladas con informes de WSUS
+## <a name="33-review-installed-updates-with-wsus-reports"></a><a name="BKM_3.3."></a>3.3. Revisar actualizaciones instaladas con informes de WSUS
 24 horas después de aprobar las actualizaciones, puede usar la característica de informes de WSUS para determinar si las actualizaciones se implementaron en los equipos del grupo de prueba. Para comprobar el estado de una actualización, use la característica de informes de WSUS de la siguiente manera.
 
 #### <a name="to-review-updates"></a>Para revisar actualizaciones

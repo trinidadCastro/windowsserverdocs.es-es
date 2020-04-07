@@ -10,16 +10,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 37e3a7788ccd409f4002f5fe2d7ea087e89b3419
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 8d284c51bfa1e04a38c32adf5dce2b6f5d948b0a
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323527"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639932"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planear la implementación de WSUS
 
->Se aplica a: Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 El primer paso de la implementación de Windows Server Update Services (WSUS) es tomar decisiones importantes, tales como determinar el escenario de implementación de WSUS, elegir una topología de red y comprender los requisitos del sistema. La siguiente lista de comprobación resume los pasos para preparar la implementación de WSUS.
 
@@ -37,7 +37,7 @@ El primer paso de la implementación de Windows Server Update Services (WSUS) es
 
 ### <a name="system-requirements"></a>Requisitos del sistema
 
-Antes de habilitar el rol de servidor de WSUS, compruebe que el servidor cumpla con los requisitos del sistema y que usted tenga los permisos necesarios para completar la instalación. Para ello, siga estas instrucciones:
+Los requisitos de hardware y de software de base de datos varían en función del número de equipos cliente que se actualizarán en la organización.  Antes de habilitar el rol de servidor de WSUS, compruebe que el servidor cumpla con los requisitos del sistema y que usted tenga los permisos necesarios para completar la instalación. Para ello, siga estas instrucciones:
 
 -   Los requisitos de hardware del servidor para habilitar el rol de WSUS están enlazados a los requisitos del hardware. Los requisitos mínimos de hardware para WSUS son:
 
@@ -45,9 +45,12 @@ Antes de habilitar el rol de servidor de WSUS, compruebe que el servidor cumpla 
 
     -   **Memoria:** WSUS requiere 2 GB adicionales de RAM más de lo que requiere el servidor y los demás servicios o software.
 
-    -   **Espacio en disco disponible:** 10 GB (40 GB o más recomendado)
+    -   **Espacio en disco disponible:** Se recomiendan 40 GB o más
 
-    -   **Adaptador de red:** 100 megabits por segundo (Mbps) o superior
+    -   **Adaptador de red:** 100 megabits por segundo (Mbps) o superior (se recomienda 1 GB)
+
+> [!NOTE] 
+> En estas instrucciones se da por hecho que los clientes de WSUS se sincronizan con el servidor cada ocho horas para un paquete acumulativo de 30 000 clientes. Si la sincronización se realiza más a menudo, habrá un incremento correspondiente en la carga del servidor.  
 
 -   Requisitos de software:
 

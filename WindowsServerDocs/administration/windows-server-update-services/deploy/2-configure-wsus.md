@@ -10,16 +10,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d1a78d2006a45bb2af8f87a91d7bb888964ddbcb
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: c1e68685e3a1e5486360d7946d5aeb36abbdcd3a
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323507"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639867"
 ---
 # <a name="step-2-configure-wsus"></a>Paso 2: Configurar WSUS
 
->Se aplica a: Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Después de instalar el rol de servidor de WSUS en su servidor, debe configurarlo de forma apropiada. La siguiente lista de comprobación resume los pasos de la configuración inicial de tu servidor WSUS.
 
