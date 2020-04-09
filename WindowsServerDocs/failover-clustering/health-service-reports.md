@@ -5,15 +5,14 @@ manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: e65db8834bd0b059dc7bbebbcaf9288fb46da225
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3b47e1abf3805b7e6e3dc180d5d937ddb2723fa4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369677"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827548"
 ---
 # <a name="health-service-reports"></a>Servicio de mantenimiento informes
 > Se aplica a: Windows Server 2019, Windows Server 2016
@@ -215,9 +214,9 @@ Cada métrica tiene solo tres propiedades, por esta tabla.
 
 | **Propiedad** | **Ejemplo**       |
 | -------------|-------------------|
-| Nombre         | IOLatencyAverage  |
+| Name         | IOLatencyAverage  |
 | Valor        | 0,00021           |
-| Participa        | 3                 |
+| Unidades        | 3                 |
 
 Unidades = {0, 1, 2, 3, 4}, donde 0 = "bytes", 1 = "BytesPerSecond", 2 = "CountPerSecond", 3 = "segundos" o 4 = "porcentaje".
 
@@ -282,6 +281,6 @@ A continuación se muestran las métricas disponibles para cada ámbito en Windo
 | IOThroughputTotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 
 - [Servicio de mantenimiento en Windows Server 2016](health-service-overview.md)

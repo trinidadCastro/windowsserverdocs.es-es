@@ -1,24 +1,20 @@
 ---
 title: Introducción con Multipoint Services
 description: Presenta Multipoint Services y le ayuda a empezar a usarlo.
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aca5f0be-f253-46b5-b1e7-0bffa15f3227
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: cf31e62345b006ef9572a2ea97a23e3e0bf41b64
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2213c734831c1cde88ad0e2b6fb172f99a31b89c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395373"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859238"
 ---
 # <a name="getting-started-with-multipoint-services"></a>Introducción con Multipoint Services
 El sistema Multipoint Services permite a muchos usuarios usar varias estaciones que están conectadas físicamente mediante concentradores de estaciones a un solo equipo. Cada estación consta normalmente de un concentrador de estaciones, un mouse, un teclado y un monitor de vídeo. Cada usuario de una estación de Multipoint Services experimenta una sesión de computación de Windows única que puede administrar mediante Multipoint Manager.  
@@ -59,14 +55,14 @@ Entre los tipos de acciones que puede realizar con Multipoint Manager se incluye
   
 -   **Cambiar al modo de consola:** Puede cambiar el sistema Multipoint Services al modo de consola para instalar software nuevo en el sistema Multipoint Services. Puede especificar que todos los usuarios puedan ejecutar el software o que solo pueda usar el software, en función de las opciones de instalación y licencia del software.  
   
--   **Solución** Si tiene problemas con Multipoint Services, consulte la sección de [solución de problemas](Troubleshooting.md) para buscar temas que puedan ayudarle a solucionar el problema.  
+-   **Solución de problemas:** Si tiene problemas con Multipoint Services, consulte la sección de [solución de problemas](Troubleshooting.md) para buscar temas que puedan ayudarle a solucionar el problema.  
   
 ## <a name="overview-of-multipoint-dashboard"></a>Información general sobre el panel de Multipoint  
 Multipoint Dashboard incluye una experiencia de cinta en la que puede elegir entre dos pestañas para tener acceso a las tareas diarias habituales.  
   
 Las pestañas son las siguientes:  
   
--   **Pestaña Inicio:** Bloquear o desbloquear estaciones, establecer opciones de limitación Web, proyectar escritorios en otros equipos de escritorio, iniciar o cerrar aplicaciones, comunicarse a través de mensajería instantánea, ayudar a otros usuarios a través de control de escritorio remoto, ajustar vistas de miniatura del escritorio y habilitar o deshabilitar mensajería instantánea y el inicio automático de aplicaciones. Para obtener más información, consulte el tema [administrar escritorios de usuario mediante Multipoint Dashboard](Manage-User-Desktops-Using-MultiPoint-Dashboard.md) .  
+-   **Pestaña Inicio:** Bloquee o desbloquee las estaciones, establezca opciones de limitación Web, proyectos de escritorio en otros equipos de escritorio, inicie o cierre aplicaciones, comunique a través de mensajería instantánea, ayude a otros usuarios a través de control de escritorio remoto, ajuste las vistas de miniatura del escritorio y habilite o deshabilite la mensajería instantánea y el inicio automático de aplicaciones. Para obtener más información, consulte el tema [administrar escritorios de usuario mediante Multipoint Dashboard](Manage-User-Desktops-Using-MultiPoint-Dashboard.md) .  
   
 -   **Pestaña sistemas:** Reiniciar, apagar o reasignar todos los sistemas seleccionados o todos ellos. Para más información, consulte el tema [Administración de sistemas Multipoint mediante Multipoint Dashboard](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md) .  
   
@@ -95,7 +91,7 @@ Para obtener más información sobre cómo guardar y administrar contenido públ
   
 -   Si un usuario olvida una contraseña, puede restablecer la contraseña en la pestaña **usuarios** , que usa la funcionalidad de administración de cuentas de usuario estándar de Windows. Para obtener más información, vea el tema [actualizar o eliminar una cuenta de usuario](Update-or-Delete-a-User-Account.md) .  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Administración del sistema MultiPoint Server](managing-your-multipoint-services-system.md)  
 [Información importante sobre el cumplimiento de la licencia de software](Important-Information-about-Software-License-Compliance.md)  
 [Administrar tareas del sistema mediante MultiPoint Manager](Manage-System-Tasks-Using-MultiPoint-Manager.md)  

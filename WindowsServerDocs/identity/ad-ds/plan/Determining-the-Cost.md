@@ -1,7 +1,6 @@
 ---
 ms.assetid: e3ea1f67-60d4-4566-b24c-37faa95c3b2a
 title: Determinar el costo
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 0ce7acddbfa9f7536f3d5a190c6968ea0d8cf6b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1bbc75cab2e78d1001fa13d419072807f202fd61
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408871"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822588"
 ---
 # <a name="determining-the-cost"></a>Determinar el costo
 
@@ -30,20 +29,20 @@ En la tabla siguiente se enumeran las velocidades de los distintos tipos de rede
   
 |Tipo de red|Velocidad|  
 |----------------|---------|  
-|Muy lento|56 kilobits por segundo (kbps)|  
-|Nivel lento|64 Kbps|  
+|Muy lento|56 kilobits por segundo (Kbps)|  
+|Lenta|64 Kbps|  
 |Red digital de servicios integrados (RDSI)|64 kbps o 128 kbps|  
 |Frame Relay|Velocidad variable, normalmente entre 56 kbps y 1,5 megabits por segundo (Mbps)|  
-|T1|1,5 Mbps|  
+|T1|1,5 Mbps|  
 |T3|45 Mbps|  
 |10Baset|10 Mbps|  
 |Modo de transferencia asincrónico (ATM)|Velocidad variable, normalmente entre 155 Mbps y 622 Mbps|  
 |100Baset|100 Mbps|  
-|Ethernet Gigabit|1 Gigabit por segundo (Gbps)|  
+|Ethernet Gigabit|1 gigabit por segundo (Gbps)|  
   
 Use la tabla siguiente para calcular el costo de cada vínculo a sitio basado en la velocidad de vínculo de la velocidad de red de área extensa (WAN). Para la velocidad de vínculo WAN que no aparece en la tabla, puede calcular un factor de costo relativo dividiendo 1.024 por el registro del ancho de banda disponible, medido en kbps.  
   
-|Ancho de banda disponible (kbps)|Coste|  
+|Ancho de banda disponible (kbps)|Cost|  
 |--------------------------------|--------|  
 |9,6|1\.042|  
 |19,2|798|  
@@ -54,7 +53,7 @@ Use la tabla siguiente para calcular el costo de cada vínculo a sitio basado en
 |256|425|  
 |512|378|  
 |1\.024|340|  
-|2\.048|309|  
+|2,048|309|  
 |4\.096|283|  
   
 Estos costos no reflejan las diferencias de confiabilidad entre los vínculos de red. Establezca costos mayores en los vínculos de red propensos a errores para que no tenga que depender de esos vínculos para la replicación. Al establecer los costos de vínculo de sitio más altos, puede controlar la conmutación por error de replicación cuando se produce un error en un vínculo de sitio.  

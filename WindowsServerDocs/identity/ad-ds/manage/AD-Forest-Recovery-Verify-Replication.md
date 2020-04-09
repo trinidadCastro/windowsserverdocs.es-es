@@ -1,6 +1,5 @@
 ---
 title: 'Recuperación de bosque de AD: comprobar la replicación'
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 302e522a-fb40-43bc-bc63-83dcc87ebde5
 ms.technology: identity-adds
-ms.openlocfilehash: f6bee5164849d6643c1744ce121b9ce91b5e7f7f
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: af0946674d9185651c7b22a822dcc3a2dd5a1c5d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949040"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823398"
 ---
 # <a name="resources-to-verify-replication-is-working"></a>Recursos para comprobar que la replicación funciona 
 
@@ -27,7 +26,7 @@ Después de restaurar o volver a instalar todos los controladores de sesión, pu
 
 Compruebe el registro de Replicación DFS en Visor de eventos para el ID. de evento 4602 (o el ID. de evento de servicio de replicación de archivos 13516), que indica que se ha inicializado SYSVOL.  
 
-Si el primer registro recuperado registra el ID. de evento 4614 ("el controlador de dominio está esperando para realizar la replicación inicial. La carpeta replicada permanecerá en el estado de sincronización inicial hasta que se haya replicado con su asociado ") en el registro de Replicación DFS, entonces el ID. de evento 4602 no aparece y debe realizar los siguientes pasos manuales para recuperar SYSVOL si lo Replica. DFSR  
+Si el primer registro recuperado registra el ID. de evento 4614 ("el controlador de dominio está esperando para realizar la replicación inicial. La carpeta replicada permanecerá en el estado de sincronización inicial hasta que se haya replicado con su asociado ") en el registro de Replicación DFS, entonces el ID. de evento 4602 no aparece y debe realizar los siguientes pasos manuales para recuperar SYSVOL en caso de que DFSR lo replique:  
 
 1. Cuando aparece el evento 4612 de DFSR en el primer controlador de dominio restaurado, realice una restauración autoritativa manualmente como se describe en [2218556: Cómo forzar una sincronización autoritativa y no autoritativa para SYSVOL replicado con DFSR (como "D4/D2" para FRS)](https://support.microsoft.com/kb/2218556) (https://support.microsoft.com/kb/2218556).  
 2. Establezca la **marca SysvolReady** en 1 manualmente, tal y como se describe en [947022 el recurso compartido Netlogon no está presente después de instalar Active Directory Domain Services en un nuevo controlador de dominio basado en Windows Server 2008 completo o de solo lectura](https://support.microsoft.com/kb/947022).  
@@ -36,7 +35,7 @@ También puede crear un informe de diagnóstico Replicación DFS. Para obtener m
 
 También puede ejecutar la prueba de replicación con DCDiag. exe para comprobar si hay errores de replicación. Para obtener más información, vea el [artículo 249256](https://support.microsoft.com/kb/249256)de Knowledge base.
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Guía de recuperación del bosque de AD](AD-Forest-Recovery-Guide.md)
 - [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)

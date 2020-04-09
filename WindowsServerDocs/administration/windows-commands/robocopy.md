@@ -1,24 +1,20 @@
 ---
 title: robocopy
 description: Obtenga información acerca de cómo usar el comando Robocopy en Windows y Windows Server para copiar archivos
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d4c6e8e9-fcb3-4a4a-9d04-2d8c367b6354
 author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 07/25/2018
-ms.openlocfilehash: f675f66eaafbfd79ac6b452a92417159d8ebb28c
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 27a08aabbfd1c2f19f4c70120182f4092cc2a6c9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259035"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835678"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -30,12 +26,12 @@ Copia los datos de archivo.
 robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |   Parámetro    |                                                                                            Descripción                                                                                           |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   > de \<de origen    |                                                                            Especifica la ruta de acceso del directorio de origen.                                                                           |
-| > de destino de \< |                                                                          Especifica la ruta de acceso del directorio de destino.                                                                        |
+|   > de \<de origen    |                                                                            Especifica la ruta de acceso al directorio de origen.                                                                           |
+| > de destino de \< |                                                                          Especifica la ruta de acceso al directorio de destino.                                                                        |
 |    \<> de archivo     | Especifica el archivo o los archivos que se van a copiar. Si lo desea, puede usar **&#42;** caracteres comodín (o **?** ). Si no se especifica el parámetro **File** , **\*.\*** se utiliza como valor predeterminado. |
 |   \<Opciones >   |                                                                    Especifica las opciones que se van a usar con el comando **Robocopy** .                                                                   |
 
@@ -68,7 +64,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/256|Desactiva la compatibilidad con rutas de acceso muy largas (más de 256 caracteres).|
 |/Mon:\<N >|Supervisa el origen y vuelve a ejecutarse cuando se detectan más de *N* cambios.|
 |/MOT:\<M >|Supervisa el origen y vuelve a ejecutarse en *M* minutos si se detectan cambios.|
-|/MT[:N]|Crea copias multiproceso con *N* subprocesos. *N* debe ser un entero comprendido entre 1 y 128. El valor predeterminado de *N* es 8.</br>El parámetro **/MT** no se puede usar con los parámetros **/IPG** y **/EFSRAW** .</br>Redirija la salida mediante la opción **/log** para obtener un mejor rendimiento.</br>Nota: el parámetro/MT se aplica a Windows Server 2008 R2 y Windows 7.|
+|/MT [: N]|Crea copias multiproceso con *N* subprocesos. *N* debe ser un entero comprendido entre 1 y 128. El valor predeterminado de *N* es 8.</br>El parámetro **/MT** no se puede usar con los parámetros **/IPG** y **/EFSRAW** .</br>Redirija la salida mediante la opción **/log** para obtener un mejor rendimiento.</br>Nota: el parámetro/MT se aplica a Windows Server 2008 R2 y Windows 7.|
 |/RH: hhmm-hhmm|Especifica los tiempos de ejecución cuando se pueden iniciar nuevas copias.|
 |/PF|Comprueba los tiempos de ejecución por archivo (no por paso).|
 |/IPG: n|Especifica el intervalo entre paquetes para el ancho de banda libre en líneas lentas.|
@@ -106,7 +102,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/maxlad:\<N >|Especifica la última fecha de acceso máxima (excluye los archivos no usados desde *N*).|
 |/minlad:\<N >|Especifica la última fecha de acceso mínima (excluye los archivos usados desde *n*) si *n* es menor que 1900, *n* especifica el número de días. De lo contrario, *N* especifica una fecha con el formato AAAAMMDD.|
 |/xj|Excluye los puntos de Unión, que normalmente se incluyen de forma predeterminada.|
-|/fft|Se da por supuesto que se trata de tiempos de archivos FAT (precisión de dos segundos).|
+|/fft|Supone un tiempo de archivo FAT (precisión de dos segundos).|
 |/DST|Compensa las diferencias de hora de horario de verano de una hora.|
 |/xjd|Excluye los puntos de unión de los directorios.|
 |/xjf|Excluye los puntos de Unión para los archivos.|
@@ -128,15 +124,15 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/x|Informa de todos los archivos adicionales, no solo de los que están seleccionados.|
 |/v|Genera una salida detallada y muestra todos los archivos omitidos.|
 |/TS|Incluye marcas de tiempo de archivo de origen en el resultado.|
-|/fp|Incluye los nombres de ruta de acceso completa de los archivos en la salida.|
+|/FP|Incluye los nombres de ruta de acceso completa de los archivos en la salida.|
 |/bytes|Imprime los tamaños, como bytes.|
 |/NS|Especifica que no se van a registrar los tamaños de archivo.|
 |/nc|Especifica que no se registrarán las clases de archivo.|
-|/nfl|Especifica que los nombres de archivo no se van a registrar.|
-|/ndl|Especifica que los nombres de directorio no se van a registrar.|
+|/nfl|Especifica que no se van a registrar los nombres de archivo.|
+|/ndl|Especifica que no se van a registrar los nombres de directorio.|
 |/np|Especifica que no se mostrará el progreso de la operación de copia (el número de archivos o directorios copiados hasta el momento).|
 |/eta|Muestra el tiempo estimado de llegada (ETA) de los archivos copiados.|
-|/log:\<archivo de registro >|Escribe la salida del estado en el archivo de registro (sobrescribe el archivo de registro existente).|
+|/log:\<archivo de registro >|Escribe la salida de estado en el archivo de registro (sobrescribe el archivo de registro existente).|
 |/log +:\<archivo de registro >|Escribe la salida de estado en el archivo de registro (anexa la salida al archivo de registro existente).|
 |/unicode|Muestra la salida de estado como texto Unicode.|
 |/UNILOG:\<LogFile >|Escribe la salida de estado en el archivo de registro como texto Unicode (sobrescribe el archivo de registro existente).|
@@ -178,6 +174,6 @@ Valor | Descripción
     -   Con las opciones **/e** Plus **/Purge** , si el directorio de destino existe, no se sobrescribe la configuración de seguridad del directorio de destino.
     -   Con la opción **/Mir** , si existe el directorio de destino, se sobrescribe la configuración de seguridad del directorio de destino.
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 13fe87d9-75cf-45bc-a954-ef75d4423839
 title: 'Apéndice I: crear cuentas de administración para cuentas y grupos protegidos en Active Directory'
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 834aa2611ff2b965c9184524fa6782fb4477a4cd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c2141e4fad564579fd687b2dfc7e4a12e1634acb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949134"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823488"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Anexo I: creación de cuentas de administración para cuentas protegidas y grupos en Active Directory
 
@@ -22,14 +21,14 @@ ms.locfileid: "75949134"
 
 Uno de los desafíos de la implementación de un modelo de Active Directory que no se basa en la pertenencia permanente a grupos con privilegios elevados es que debe haber un mecanismo para rellenar estos grupos cuando se requiere la pertenencia temporal a los grupos. Algunas soluciones privileged Identity Management requieren la pertenencia permanente a las cuentas de servicio del software en grupos como DA o administradores en cada dominio del bosque. Sin embargo, técnicamente no es necesario que las soluciones Privileged Identity Management (PIM) ejecuten sus servicios en contextos con privilegios elevados.  
   
-Este apéndice proporciona información que puede usar para soluciones PIM de terceros o implementadas de forma nativa para crear cuentas con privilegios limitados y que se pueden controlar rigurosamente, pero que se pueden usar para rellenar grupos con privilegios en Active Directory cuando se requiere una elevación temporal. Si está implementando PIM como una solución nativa, el personal administrativo puede usar estas cuentas para realizar el rellenado temporal del grupo y, si está implementando PIM mediante software de terceros, es posible que pueda adaptar estas cuentas para que funcionen como servicio. contabilidad.  
+En este apéndice se proporciona información que puede usar para soluciones PIM de terceros o implementadas de forma nativa para crear cuentas con privilegios limitados y que se pueden controlar rigurosamente, pero que se pueden usar para rellenar grupos con privilegios en Active Directory cuando se requiere una elevación temporal. Si está implementando PIM como una solución nativa, el personal administrativo puede usar estas cuentas para realizar el rellenado temporal del grupo y, si va a implementar PIM mediante software de terceros, es posible que pueda adaptar estas cuentas para que funcionen como cuentas de servicio.  
   
 > [!NOTE]  
 > Los procedimientos descritos en este apéndice proporcionan un enfoque para la administración de grupos con privilegios elevados en Active Directory. Puede adaptar estos procedimientos para que se adapten a sus necesidades, agregar restricciones adicionales u omitir algunas de las restricciones que se describen aquí.  
   
 ## <a name="creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Creación de cuentas de administración para cuentas y grupos protegidos en Active Directory
 
-La creación de cuentas que se pueden usar para administrar la pertenencia de grupos con privilegios sin necesidad de que se concedan derechos y permisos excesivos a las cuentas de administración consta de cuatro actividades generales que se describen en las instrucciones paso a paso que cumplir  
+La creación de cuentas que se pueden usar para administrar la pertenencia de grupos con privilegios sin necesidad de que se concedan derechos y permisos excesivos a las cuentas de administración consta de cuatro actividades generales que se describen en las instrucciones paso a paso que se indican a continuación:  
   
 1.  En primer lugar, debe crear un grupo que administre las cuentas, ya que estas cuentas deben administrarse mediante un conjunto limitado de usuarios de confianza. Si aún no tiene una estructura de unidad organizativa que admita cuentas y sistemas protegidos con privilegios y protegidos de la población general del dominio, debe crear uno. Aunque en este Apéndice no se proporcionan instrucciones específicas, las capturas de pantallas muestran un ejemplo de este tipo de jerarquía de unidades organizativas.  
   
@@ -39,7 +38,7 @@ La creación de cuentas que se pueden usar para administrar la pertenencia de gr
   
 4.  Configure permisos en el objeto AdminSDHolder de cada dominio para permitir que las cuentas de administración cambien la pertenencia de los grupos con privilegios del dominio.  
   
-Debe probar exhaustivamente todos estos procedimientos y modificarlos según sea necesario para su entorno antes de implementarlos en un entorno de producción. También debe comprobar que todas las configuraciones funcionan según lo previsto (en este apéndice se proporcionan algunos procedimientos de prueba) y debe probar un escenario de recuperación ante desastres en el que las cuentas de administración no estén disponibles para rellenar los grupos protegidos para la recuperación. Fiere. Para obtener más información sobre la copia de seguridad y la restauración de Active Directory, consulte la [Guía paso a paso de AD DS de copia de seguridad y recuperación](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx).  
+Debe probar exhaustivamente todos estos procedimientos y modificarlos según sea necesario para su entorno antes de implementarlos en un entorno de producción. También debe comprobar que todas las configuraciones funcionan según lo previsto (en este apéndice se proporcionan algunos procedimientos de prueba) y debe probar un escenario de recuperación ante desastres en el que las cuentas de administración no estén disponibles para rellenar grupos protegidos con fines de recuperación. Para obtener más información sobre la copia de seguridad y la restauración de Active Directory, consulte la [Guía paso a paso de AD DS de copia de seguridad y recuperación](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx).  
   
 > [!NOTE]  
 > Mediante la implementación de los pasos descritos en este apéndice, creará cuentas que podrán administrar la pertenencia a todos los grupos protegidos de cada dominio, no solo los grupos de Active Directory con privilegios más altos, como EAs, DAs y BAs. Para obtener más información acerca de los grupos protegidos en Active Directory, vea [Apéndice C: cuentas y grupos protegidos en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md).  
@@ -48,7 +47,7 @@ Debe probar exhaustivamente todos estos procedimientos y modificarlos según sea
   
 #### <a name="creating-a-group-to-enable-and-disable-management-accounts"></a>Creación de un grupo para habilitar y deshabilitar cuentas de administración
 
-Las cuentas de administración deben restablecer sus contraseñas en cada uso y deben deshabilitarse cuando se completen las actividades que lo requieren. Aunque también puede considerar la posibilidad de implementar los requisitos de inicio de sesión de tarjeta inteligente para estas cuentas, es una configuración opcional y estas instrucciones suponen que las cuentas de administración se configurarán con un nombre de usuario y una contraseña larga y larga como mínimo. permite. En este paso, creará un grupo con permisos para restablecer la contraseña en las cuentas de administración y para habilitar y deshabilitar las cuentas.  
+Las cuentas de administración deben restablecer sus contraseñas en cada uso y deben deshabilitarse cuando se completen las actividades que lo requieren. Aunque también puede considerar la posibilidad de implementar los requisitos de inicio de sesión de tarjeta inteligente para estas cuentas, es una configuración opcional y estas instrucciones suponen que las cuentas de administración se configurarán con un nombre de usuario y una contraseña larga y compleja como controles mínimos. En este paso, creará un grupo con permisos para restablecer la contraseña en las cuentas de administración y para habilitar y deshabilitar las cuentas.  
   
 Para crear un grupo con el fin de habilitar y deshabilitar cuentas de administración, realice los pasos siguientes:  
   
@@ -81,13 +80,13 @@ Para crear un grupo con el fin de habilitar y deshabilitar cuentas de administra
   
 7.  En la pestaña **seguridad** , quite los grupos a los que no se les permite el acceso a este grupo. Por ejemplo, si no desea que los usuarios autenticados puedan leer el nombre y las propiedades generales del grupo, puede quitar esa ACE. También puede quitar las ACE, como las de los operadores de cuentas y el acceso compatible con versiones anteriores a Windows 2000 Server. Sin embargo, debe dejar un conjunto mínimo de permisos de objeto en su lugar. Deje intactas las siguientes ACE:  
   
-    -   SELF  
+    -   MISMO  
   
     -   SISTEMA  
   
-    -   Admins. del dominio  
+    -   Administradores del dominio  
   
-    -   Administradores de empresas  
+    -   Administradores de organización  
   
     -   Administradores  
   
@@ -106,7 +105,7 @@ Para crear un grupo con el fin de habilitar y deshabilitar cuentas de administra
   
 #### <a name="creating-the-management-accounts"></a>Crear las cuentas de administración
 
-Debe crear al menos una cuenta que se usará para administrar la pertenencia de grupos con privilegios en la instalación de Active Directory y, preferiblemente, una segunda cuenta para que sirva como copia de seguridad. Si decide crear las cuentas de administración en un único dominio del bosque y concederles capacidades de administración para todos los grupos protegidos de los dominios, o si decide implementar cuentas de administración en cada dominio del bosque, los procedimientos son es realmente el mismo.  
+Debe crear al menos una cuenta que se usará para administrar la pertenencia de grupos con privilegios en la instalación de Active Directory y, preferiblemente, una segunda cuenta para que sirva como copia de seguridad. Tanto si decide crear las cuentas de administración en un único dominio del bosque como si decide implementar las capacidades de administración para todos los grupos protegidos de los dominios, o si opta por implementar cuentas de administración en cada dominio del bosque, los procedimientos son realmente los mismos.  
   
 > [!NOTE]  
 > En los pasos de este documento se supone que todavía no ha implementado los controles de acceso basado en roles y Privileged Identity Management para Active Directory. Por lo tanto, algunos procedimientos los debe realizar un usuario cuya cuenta sea miembro del grupo Admins. del dominio para el dominio en cuestión.  
@@ -133,7 +132,7 @@ Para crear las cuentas de administración, realice los pasos siguientes:
 
 7. Haga clic con el botón secundario en el objeto de usuario que acaba de crear y haga clic en **propiedades**.  
 
-8. Haga clic en la pestaña **Account** (Cuenta).  
+8. Haga clic en la pestaña **cuenta** .  
 
 9. En el campo **Opciones de cuenta** , seleccione la marca la **cuenta es importante y no se puede delegar** , seleccione la marca de cifrado la **cuenta compatible con Kerberos AES 128 bits** y/o **esta cuenta es compatible con Kerberos AES 256** y haga clic en **Aceptar**.  
 
@@ -178,15 +177,15 @@ Para crear las cuentas de administración, realice los pasos siguientes:
     > [!NOTE]  
     > No es probable que se use esta cuenta para iniciar sesión en controladores de dominio de solo lectura (RODC) en su entorno. Sin embargo, si alguna vez necesita la cuenta para iniciar sesión en un RODC, debe agregar esta cuenta al grupo de replicación de contraseñas de RODC denegado para que su contraseña no se almacene en caché en el RODC.  
     >
-    > Aunque la contraseña de la cuenta debe restablecerse después de cada uso y la cuenta debe estar deshabilitada, la implementación de esta configuración no tiene un efecto perjudicial en la cuenta y puede ayudar en situaciones en las que un administrador olvida restablecer la contraseña y deshabilitarla.  
+    > Aunque la contraseña de la cuenta debe restablecerse después de cada uso y la cuenta debe estar deshabilitada, la implementación de esta configuración no tiene un efecto perjudicial en la cuenta y puede ayudar en situaciones en las que un administrador olvida restablecer la contraseña de la cuenta y deshabilitarla.  
 
 17. Haga clic en la ficha **Miembro de**.  
 
-18. Haz clic en **Agregar**.  
+18. Haga clic en **Agregar**.  
 
 19. Escriba **denegado grupo de replicación de contraseña RODC** en el cuadro de diálogo **Seleccionar usuarios, contactos, equipos** y haga clic en **Comprobar nombres**. Cuando el nombre del grupo esté subrayado en el selector de objetos, haga clic en **Aceptar** y compruebe que la cuenta es ahora miembro de los dos grupos mostrados en la captura de pantalla siguiente. No agregue la cuenta a ninguno de los grupos protegidos.  
 
-20. Haz clic en **Aceptar**.  
+20. Haga clic en **Aceptar**.  
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_129.png)  
 
@@ -239,7 +238,7 @@ Independientemente de cómo decida crear un grupo en el que se colocan las cuent
 
 Debe configurar la auditoría en la cuenta para registrar, como mínimo, todas las escrituras en la cuenta. Esto le permitirá no solo identificar la habilitación correcta de la cuenta y restablecer su contraseña durante los usos autorizados, sino también identificar los intentos de usuarios no autorizados de manipular la cuenta. Las escrituras erróneas en la cuenta deben capturarse en el sistema de supervisión de eventos y de información de seguridad (SIEM) (si es aplicable) y deben desencadenar alertas que proporcionen notificación al personal responsable de investigar posibles peligros.  
   
-Las soluciones SIEM toman información de eventos de orígenes de seguridad implicados (por ejemplo, registros de eventos, datos de aplicaciones, secuencias de red, productos antimalware y orígenes de detección de intrusiones), intercalan los datos e intentan realizar vistas inteligentes y acciones proactivas. . Hay muchas soluciones de SIEM comerciales y muchas empresas crean implementaciones privadas. Un SIEM bien diseñado y correctamente implementado puede mejorar considerablemente las capacidades de supervisión de la seguridad y respuesta a los incidentes. Sin embargo, las capacidades y la precisión varían enormemente entre las soluciones. Los SIEM están fuera del ámbito de este documento, pero las recomendaciones de eventos específicos que contiene deben tener en cuenta cualquier implementador de SIEM.  
+Las soluciones SIEM toman información de eventos de orígenes de seguridad implicados (por ejemplo, registros de eventos, datos de aplicaciones, secuencias de red, productos antimalware y orígenes de detección de intrusiones), intercalan los datos e intentan realizar vistas inteligentes y acciones proactivas. Hay muchas soluciones de SIEM comerciales y muchas empresas crean implementaciones privadas. Un SIEM bien diseñado y correctamente implementado puede mejorar considerablemente las capacidades de supervisión de la seguridad y respuesta a los incidentes. Sin embargo, las capacidades y la precisión varían enormemente entre las soluciones. Los SIEM están fuera del ámbito de este documento, pero las recomendaciones de eventos específicos que contiene deben tener en cuenta cualquier implementador de SIEM.  
   
 Para obtener más información acerca de las opciones de configuración de auditoría recomendadas para los controladores de dominio, consulte [supervisión Active Directory para ver los signos de riesgo](../../../ad-ds/plan/security-best-practices/Monitoring-Active-Directory-for-Signs-of-Compromise.md). Las opciones de configuración específicas del controlador de dominio se proporcionan en la [supervisión Active Directory los síntomas de riesgo](../../../ad-ds/plan/security-best-practices/Monitoring-Active-Directory-for-Signs-of-Compromise.md).  
   

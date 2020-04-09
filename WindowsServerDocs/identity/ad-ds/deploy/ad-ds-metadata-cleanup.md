@@ -8,18 +8,18 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7c9750a4f59cd17d0495e58dbc2fd8b2d2802c89
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 622ff33437a3aef14a185c9a4157dba68db0a2ee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369527"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824794"
 ---
 # <a name="clean-up-active-directory-domain-controller-server-metadata"></a>Limpiar metadatos de servidor del controlador de Dominio de Active Directory
 
-Se aplica a: Windows Server
+Se aplica a: Windows Server
 
-La limpieza de metadatos es un procedimiento necesario después de una eliminación forzada de Active Directory Domain Services (AD DS). La limpieza de los metadatos se realiza en un controlador de dominio del dominio del controlador de dominio que se ha quitado de manera forzada. La limpieza de metadatos quita datos de AD DS que identifica un controlador de dominio en el sistema de replicación. La limpieza de metadatos también quita las conexiones de replicación del servicio de replicación de archivos (FRS) y Sistema de archivos distribuido (DFS) e intenta transferir o asumir los roles de maestro de operaciones (también conocidos como operaciones de maestro único flexible o FSMO) que el dominio retirado contiene el controlador.
+La limpieza de metadatos es un procedimiento necesario después de una eliminación forzada de Active Directory Domain Services (AD DS). La limpieza de los metadatos se realiza en un controlador de dominio del dominio del controlador de dominio que se ha quitado de manera forzada. La limpieza de metadatos quita datos de AD DS que identifica un controlador de dominio en el sistema de replicación. La limpieza de metadatos también quita las conexiones de replicación del servicio de replicación de archivos (FRS) y Sistema de archivos distribuido (DFS) e intenta transferir o asumir las funciones de maestro de operaciones (también conocidas como operaciones de maestro único flexible o FSMO) que contiene el controlador de dominio retirado.
 
 Hay tres opciones para limpiar los metadatos del servidor:
 
@@ -32,7 +32,7 @@ Hay tres opciones para limpiar los metadatos del servidor:
 
 ## <a name="clean-up-server-metadata-using-gui-tools"></a>Limpiar metadatos de servidor mediante herramientas de GUI
 
-Al usar Herramientas de administración remota del servidor (RSAT) o la consola de usuarios y equipos de Active Directory (DSA. msc) que se incluye con Windows Server para eliminar una cuenta de equipo de controlador de dominio de la unidad organizativa (OU) de controladores de dominio, el la limpieza de los metadatos del servidor se realiza automáticamente. Antes de Windows Server 2008, tenía que realizar un procedimiento de limpieza de metadatos independiente.
+Al usar Herramientas de administración remota del servidor (RSAT) o la consola de usuarios y equipos de Active Directory (DSA. msc) que se incluye con Windows Server para eliminar una cuenta de equipo de controlador de dominio de la unidad organizativa (OU) controladores de dominio, la limpieza de los metadatos del servidor se realiza automáticamente. Antes de Windows Server 2008, tenía que realizar un procedimiento de limpieza de metadatos independiente.
 
 También puede usar la consola sitios y servicios de Active Directory (Dssite. msc) para eliminar la cuenta de equipo de un controlador de dominio, que también completa automáticamente la limpieza de los metadatos. Sin embargo, Active Directory sitios y servicios quita los metadatos automáticamente solo cuando se elimina por primera vez el objeto de configuración NTDS debajo de la cuenta de equipo en Dssite. msc.
 
@@ -43,7 +43,7 @@ El requisito mínimo para completar estos procedimientos es la pertenencia al gr
 ## <a name="clean-up-server-metadata-using-activedirectory-users-and-computers"></a>Limpieza de metadatos de servidor mediante usuarios y equipos de Active Directory
 
 1. Abra **Usuarios y equipos de Active Directory**.
-2. Si ha identificado asociados de replicación como preparación para este procedimiento y si no está conectado a un asociado de replicación del controlador de dominio quitado cuyos metadatos está limpiando, haga clic con el botón secundario en **Active Directory nodo usuarios y equipos** . y, a continuación, haga clic en **cambiar controlador de dominio**. Haga clic en el nombre del controlador de dominio del que desea quitar los metadatos y, a continuación, haga clic en **Aceptar**.
+2. Si ha identificado asociados de replicación como preparación para este procedimiento y, si no está conectado a un asociado de replicación del controlador de dominio quitado cuyos metadatos está limpiando, haga clic con el botón secundario en **Active Directory nodo usuarios y equipos** y, a continuación, haga clic en **cambiar controlador de dominio**. Haga clic en el nombre del controlador de dominio del que desea quitar los metadatos y, a continuación, haga clic en **Aceptar**.
 3. Expanda el dominio del controlador de dominio que se quitó forzosamente y, a continuación, haga clic en **controladores de dominio**.
 4. En el panel de detalles, haga clic con el botón secundario en el objeto de equipo del controlador de dominio cuyos metadatos desea limpiar y, a continuación, haga clic en **eliminar**.
 5. En el cuadro de diálogo **Active Directory Domain Services** , confirme que aparece el nombre del controlador de dominio que desea eliminar y haga clic en **sí** para confirmar la eliminación del objeto de equipo.
@@ -54,7 +54,7 @@ El requisito mínimo para completar estos procedimientos es la pertenencia al gr
 ## <a name="clean-up-server-metadata-using-activedirectory-sites-and-services"></a>Limpieza de metadatos de servidor mediante sitios y servicios de Active Directory
 
 1. Abra Sitios y servicios de Active Directory.
-2. Si ha identificado asociados de replicación como preparación para este procedimiento y no está conectado a un asociado de replicación del controlador de dominio quitado cuyos metadatos está limpiando, haga clic con el botón secundario en **Active Directory sitios y servicios**y a continuación, haga clic en **cambiar controlador de dominio**. Haga clic en el nombre del controlador de dominio del que desea quitar los metadatos y, a continuación, haga clic en **Aceptar**.
+2. Si ha identificado asociados de replicación como preparación para este procedimiento y si no está conectado a un asociado de replicación del controlador de dominio quitado cuyos metadatos está limpiando, haga clic con el botón secundario en **Active Directory sitios y servicios**y, a continuación, haga clic en **cambiar el controlador de dominio**. Haga clic en el nombre del controlador de dominio del que desea quitar los metadatos y, a continuación, haga clic en **Aceptar**.
 3. Expanda el sitio del controlador de dominio que se quitó forzosamente, expanda **servidores**, expanda el nombre del controlador de dominio, haga clic con el botón secundario en el objeto configuración NTDS y, a continuación, haga clic en **eliminar**.
 4. En el cuadro de diálogo **Active Directory sitios y servicios** , haga clic en **sí** para confirmar la eliminación de la configuración NTDS.
 5. En el cuadro de diálogo **eliminando el controlador de dominio** , seleccione **este controlador de dominio está permanentemente sin conexión y ya no se puede disminuir de nivel mediante el Asistente para instalación de Active Directory Domain Services (Dcpromo)** y, a continuación, haga clic en **eliminar**.
@@ -69,7 +69,7 @@ Como alternativa, puede limpiar los metadatos mediante ntdsutil. exe, una herram
 
 ## <a name="to-clean-up-server-metadata-by-using-ntdsutil"></a>Para limpiar los metadatos del servidor mediante ntdsutil
 
-1. Abra un símbolo del sistema como administrador: En el menú **Inicio**, haga clic con el botón secundario en **Símbolo del sistema** y, a continuación, haga clic en **Ejecutar como administrador**. Si aparece el cuadro de diálogo **control de cuentas de usuario** , proporcione las credenciales de un administrador de empresa si es necesario y, a continuación, haga clic en **continuar**.
+1. Abra un símbolo del sistema como administrador: en el menú **Inicio** , haga clic con el botón secundario en **símbolo del sistema**y, a continuación, haga clic en **Ejecutar como administrador**. Si aparece el cuadro de diálogo **control de cuentas de usuario** , proporcione las credenciales de un administrador de empresa si es necesario y, a continuación, haga clic en **continuar**.
 2. En el símbolo del sistema, escriba el siguiente comando y presione ENTRAR:
 
    `ntdsutil`
@@ -86,7 +86,7 @@ Como alternativa, puede limpiar los metadatos mediante ntdsutil. exe, una herram
 
    En este momento, Ntdsutil confirma que el controlador de dominio se quitó correctamente. Si recibe un mensaje de error que indica que no se puede encontrar el objeto, es posible que el controlador de dominio se haya quitado anteriormente.
 
-6. En el `metadata cleanup:` símbolo `ntdsutil:` del sistema de y `quit`, escriba y, a continuación, presione Entrar.
+6. En el `metadata cleanup:` y `ntdsutil:` mensajes, escriba `quit`y, a continuación, presione Entrar.
 
 7. Para confirmar la eliminación del controlador de dominio:
 
@@ -94,7 +94,7 @@ Como alternativa, puede limpiar los metadatos mediante ntdsutil. exe, una herram
 
    Abra Active Directory sitios y servicios. Desplácese hasta el contenedor **servidores** y confirme que el objeto de servidor para el controlador de dominio que quitó no contiene un objeto de configuración NTDS. Si no aparecen objetos secundarios debajo del objeto de servidor, puede eliminar el objeto de servidor. Si aparece un objeto secundario, no elimine el objeto de servidor porque otra aplicación está usando el objeto.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 * [Degradación de controladores de dominio](Demoting-Domain-Controllers-and-Domains--Level-200-.md)
 * [Referencia de comandos de Ntdsutil](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753343(v=ws.10))

@@ -4,15 +4,15 @@ description: Consideraciones de energía de hardware de servidor
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: a9d4653824d497ea0c42337260aa788bab354ba3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 865899e5f33bde97dff97efaff6010b95aafd3e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355016"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851988"
 ---
 # <a name="server-hardware-power-considerations"></a>Consideraciones de energía de hardware de servidor
 
@@ -65,9 +65,9 @@ La terminología del procesador que se usa en este tema refleja la jerarquía de
 -   Core
 -   Procesador lógico
 
-![terminología del procesador](../media/perftune-guide-figure-1.png)
+![Terminología del procesador](../media/perftune-guide-figure-1.png)
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 - [Consideraciones de rendimiento de hardware de servidor](index.md)
 - [Power and Performance Tuning](power/power-performance-tuning.md) (Optimización de potencia y rendimiento)
 - [Processor Power Management Tuning](power/processor-power-management-tuning.md) (Optimización de la administración de energía del procesador)

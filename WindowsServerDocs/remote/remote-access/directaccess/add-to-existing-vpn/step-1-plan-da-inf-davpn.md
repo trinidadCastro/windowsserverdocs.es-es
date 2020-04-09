@@ -2,22 +2,18 @@
 title: Paso 1 planear la infraestructura de DirectAccess
 description: Este tema forma parte de la guía agregar DirectAccess a una implementación de acceso remoto (VPN) existente para Windows Server 2016
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4ca50ea8-6987-4081-acd5-5bf9ead62acd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 726a8dce5dce9ef0c87eee64cea86d979219079c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: be4d7028f1922152b2779e82a7c78d9b3a5b753a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309224"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859558"
 ---
 # <a name="step-1-plan-directaccess-infrastructure"></a>Paso 1 planear la infraestructura de DirectAccess
 

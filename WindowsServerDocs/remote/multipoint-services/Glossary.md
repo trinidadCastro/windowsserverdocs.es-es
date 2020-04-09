@@ -1,24 +1,20 @@
 ---
 title: Glosario
 description: Define palabras, términos y conceptos en Multipoint Services
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 807bce1d-b993-49c6-9783-b01a3c55846c
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 0c966f0c8e1ad239769c58e4648832ae5020d0dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9a5f76f0f41d9ff1726a1a468fde7f53b6a7634d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389651"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859228"
 ---
 # <a name="glossary"></a>Glosario
 **asociar una estación**  
@@ -57,7 +53,7 @@ Consulte *cliente USB Zero*.
 **Sistema Multipoint Services**  
 Una colección de hardware y software que consta de un equipo que tiene instalado Windows Server 2016 con la función Multipoint Services habilitada y al menos una estación multipoint. Para obtener más información sobre las opciones de diseño del sistema, consulte [diseño de sitios de Multipoint Services](MultiPoint-services-Site-Planning.md)  
   
-**partition**  
+**divide**  
 Sección de espacio en un disco físico que funciona como si se tratase de un disco independiente.  
   
 **estación principal**  
@@ -79,13 +75,13 @@ A diferencia de la *estación principal*, que un administrador puede usar para t
 Extremo de usuario para conectarse al equipo que ejecuta Multipoint Services. Se admiten tres tipos de estación: estaciones conectadas directamente a través de la LAN y conectadas por el cliente. Para obtener más información acerca de las estaciones, consulte [estaciones Multipoint](MultiPoint-services-Stations.md).  
   
 **concentrador de estaciones**  
-Un concentrador USB que se ha asociado con un monitor para crear una estación multipoint. Conecta dispositivos periféricos USB a multipoint Services. Consulte también: *Cliente USB cero* y *concentrador USB*.  
+Un concentrador USB que se ha asociado con un monitor para crear una estación multipoint. Conecta dispositivos periféricos USB a multipoint Services. Vea también: *cliente USB cero* y *concentrador USB*.  
   
 **modo de estación**  
 Se puede iniciar uno de los dos modos Multipoint Services. Normalmente, el sistema Multipoint Services está en modo de estación. En el modo de estación, las estaciones de Multipoint Services se comportan como si cada estación es un equipo independiente que ejecuta el sistema operativo Windows y varios usuarios pueden usar el sistema al mismo tiempo. Vea también: *modo de consola*.  
   
 **Concentrador USB**  
-Un concentrador de expansión USB multipuerto genérico que cumple con las especificaciones de bus serie universal (USB) 2,0 o posterior. Estos concentradores suelen tener varios puertos USB, lo que permite que varios dispositivos USB se conecten a un único puerto USB del equipo. Los concentradores USB son normalmente dispositivos independientes que se pueden alimentar de forma *externa* o por *bus*. Otros dispositivos, como algunos teclados y monitores de vídeo, pueden incorporar un concentrador USB en su diseño. Consulte también: *Cliente USB cero*.  
+Un concentrador de expansión USB multipuerto genérico que cumple con las especificaciones de bus serie universal (USB) 2,0 o posterior. Estos concentradores suelen tener varios puertos USB, lo que permite que varios dispositivos USB se conecten a un único puerto USB del equipo. Los concentradores USB son normalmente dispositivos independientes que se pueden alimentar de forma *externa* o por *bus*. Otros dispositivos, como algunos teclados y monitores de vídeo, pueden incorporar un concentrador USB en su diseño. Vea también: *cliente USB cero*.  
   
 **Cliente USB a través de Ethernet cero**  
 Un cliente USB de cero que se conecta al equipo a través de una conexión LAN en lugar de un puerto USB. Este cliente aparece en el servidor como un dispositivo USB incluso a través de los datos que se envían a través de la conexión Ethernet.  

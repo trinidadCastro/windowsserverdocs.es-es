@@ -1,29 +1,25 @@
 ---
 title: Introducción al Kit de evaluación e implementación (ADK) de Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 343e600f-5131-4692-b8aa-69d275a8295b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c10f3e0215033ff4bab14a2c68f73554bcca1bb9
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7e8ba36f9f5b4d919937b3346b81a93de600631d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311763"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817918"
 ---
 # <a name="getting-started-with-the-windows-server-essentials-adk"></a>Introducción al Kit de evaluación e implementación (ADK) de Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Assessment and Deployment Kit (ADK) para el software de servidor de Windows Server Essentials se basa en el ADK para el sistema operativo Windows Server® 2012, por lo que la documentación para ese ADK se aplica aquí, a menos que se indique lo contrario. La información incluida aquí es específica para los asociados que desean preinstalar el sistema operativo de sus clientes.  
+Assessment and Deployment Kit (ADK) para el software de servidor de Windows Server Essentials se basa en el ADK para el sistema operativo Windows Server&reg; 2012, por lo que la documentación para ese ADK se aplica aquí, a menos que se indique lo contrario. La información incluida aquí es específica para los asociados que desean preinstalar el sistema operativo de sus clientes.  
   
 > [!NOTE]
 >  Puede descargar Assessment and Deployment Kit (ADK) para Windows Server Essentials desde el centro de descarga de [Microsoft](https://www.microsoft.com/download/details.aspx?id=34866).  

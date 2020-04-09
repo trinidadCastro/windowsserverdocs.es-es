@@ -1,7 +1,6 @@
 ---
 ms.assetid: 102eeeb1-6c55-42a2-b321-71a7dab46146
 title: Directivas de Control de acceso en AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 27eb5b4b52dd727afae5cffc60e7d9749dd5d59f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6af511ac1aff488f192f75b31801c6fed751cedd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407768"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859428"
 ---
 # <a name="access-control-policies-in-windows-server-2016-ad-fs"></a>Directivas de control de acceso en AD FS para Windows Server 2016
 
@@ -42,20 +41,20 @@ Para crear una plantilla de Directiva, un administrador debe especificar primero
   
 |Permitir a los usuarios|CEPT| 
 | --- | --- | 
- |Desde una red **específica**|Desde una red **específica**<br /><br />De grupos **específicos**<br /><br />Desde dispositivos con niveles de confianza **específicos**<br /><br />Con notificaciones **específicas** en la solicitud|  
-|De grupos **específicos**|Desde una red **específica**<br /><br />De grupos **específicos**<br /><br />Desde dispositivos con niveles de confianza **específicos**<br /><br />Con notificaciones **específicas** en la solicitud|  
-|Desde dispositivos con niveles de confianza **específicos**|Desde una red **específica**<br /><br />De grupos **específicos**<br /><br />Desde dispositivos con niveles de confianza **específicos**<br /><br />Con notificaciones **específicas** en la solicitud|  
-|Con notificaciones **específicas** en la solicitud|Desde una red **específica**<br /><br />De grupos **específicos**<br /><br />Desde dispositivos con niveles de confianza **específicos**<br /><br />Con notificaciones **específicas** en la solicitud|  
-|Y requieren multi-factor Authentication|Desde una red **específica**<br /><br />De grupos **específicos**<br /><br />Desde dispositivos con niveles de confianza **específicos**<br /><br />Con notificaciones **específicas** en la solicitud|  
+ |Desde una red **específica**|Desde una red **específica**<p>De grupos **específicos**<p>Desde dispositivos con niveles de confianza **específicos**<p>Con notificaciones **específicas** en la solicitud|  
+|De grupos **específicos**|Desde una red **específica**<p>De grupos **específicos**<p>Desde dispositivos con niveles de confianza **específicos**<p>Con notificaciones **específicas** en la solicitud|  
+|Desde dispositivos con niveles de confianza **específicos**|Desde una red **específica**<p>De grupos **específicos**<p>Desde dispositivos con niveles de confianza **específicos**<p>Con notificaciones **específicas** en la solicitud|  
+|Con notificaciones **específicas** en la solicitud|Desde una red **específica**<p>De grupos **específicos**<p>Desde dispositivos con niveles de confianza **específicos**<p>Con notificaciones **específicas** en la solicitud|  
+|Y requieren multi-factor Authentication|Desde una red **específica**<p>De grupos **específicos**<p>Desde dispositivos con niveles de confianza **específicos**<p>Con notificaciones **específicas** en la solicitud|  
   
 Si un administrador selecciona varias condiciones, son de la relación **and** . Las acciones se excluyen mutuamente y, para una regla de Directiva, solo puede elegir una acción. Si el administrador selecciona varias excepciones, son de una relación de **o** . A continuación se muestran un par de ejemplos de reglas de directivas:  
   
 |**Directiva**|**Reglas de Directiva**|
 | --- | --- |  
-|El acceso a Extranet requiere MFA<br /><br />Se permiten todos los usuarios|**#1 de reglas**<br /><br />desde **extranet**<br /><br />y con MFA<br /><br />Permitir<br /><br />**Regla n.º 2**<br /><br />desde la **intranet**<br /><br />Permitir|  
-|No se permite el acceso externo excepto FTE<br /><br />Se permite el acceso a la intranet para FTE en dispositivos Unidos al área de trabajo|**#1 de reglas**<br /><br />Desde **extranet**<br /><br />y de grupo **no FTE**<br /><br />Permitir<br /><br />**#2 de reglas**<br /><br />desde la **intranet**<br /><br />y desde un dispositivo **unido al área de trabajo**<br /><br />y desde el grupo **FTE**<br /><br />Permitir|  
-|El acceso a Extranet requiere MFA excepto "administración de servicios"<br /><br />A todos los usuarios se les permite el acceso|**#1 de reglas**<br /><br />desde **extranet**<br /><br />y con MFA<br /><br />Permitir<br /><br />Excepto **grupo de administradores de servicios**<br /><br />**#2 de reglas**<br /><br />Deben<br /><br />Permitir|  
-|el acceso a un dispositivo no laborable Unido desde extranet requiere MFA<br /><br />Permitir el acceso de AD fabric para la intranet y la extranet|**#1 de reglas**<br /><br />desde la **intranet**<br /><br />Y desde el grupo de **fabric de ad**<br /><br />Permitir<br /><br />**#2 de reglas**<br /><br />desde **extranet**<br /><br />y desde dispositivos **no Unidos al área de trabajo**<br /><br />y desde el grupo de **fabric de ad**<br /><br />y con MFA<br /><br />Permitir<br /><br />**#3 de reglas**<br /><br />desde **extranet**<br /><br />y desde un dispositivo **unido al área de trabajo**<br /><br />y desde el grupo de **fabric de ad**<br /><br />Permitir|  
+|El acceso a Extranet requiere MFA<p>Se permiten todos los usuarios|**#1 de reglas**<p>desde **extranet**<p>y con MFA<p>Permitir<p>**Regla n.º 2**<p>desde la **intranet**<p>Permitir|  
+|No se permite el acceso externo excepto FTE<p>Se permite el acceso a la intranet para FTE en dispositivos Unidos al área de trabajo|**#1 de reglas**<p>desde **extranet**<p>y de grupo **no FTE**<p>Permitir<p>**#2 de reglas**<p>desde la **intranet**<p>y desde un dispositivo **unido al área de trabajo**<p>y desde el grupo **FTE**<p>Permitir|  
+|El acceso a Extranet requiere MFA excepto "administración de servicios"<p>A todos los usuarios se les permite el acceso|**#1 de reglas**<p>desde **extranet**<p>y con MFA<p>Permitir<p>Excepto **grupo de administradores de servicios**<p>**#2 de reglas**<p>deben<p>Permitir|  
+|el acceso a un dispositivo no laborable Unido desde extranet requiere MFA<p>Permitir el acceso de AD fabric para la intranet y la extranet|**#1 de reglas**<p>desde la **intranet**<p>y desde el grupo de **fabric de ad**<p>Permitir<p>**#2 de reglas**<p>desde **extranet**<p>y desde dispositivos **no Unidos al área de trabajo**<p>y desde el grupo de **fabric de ad**<p>y con MFA<p>Permitir<p>**#3 de reglas**<p>desde **extranet**<p>y desde un dispositivo **unido al área de trabajo**<p>y desde el grupo de **fabric de ad**<p>Permitir|  
   
 ## <a name="parameterized-policy-template-vs-non-parameterized-policy-template"></a>Plantilla de directiva con parámetros y plantilla de Directiva no parametrizada  
 Las directivas de control de acceso se pueden  
@@ -75,7 +74,7 @@ Para crear una directiva de control de acceso sin parámetros, use el procedimie
   
 1.  En administración de AD FS de la izquierda, seleccione directivas de Access Control y, a la derecha, haga clic en agregar Directiva de Access Control.  
   
-2.  Escriba un nombre y una descripción.  Por ejemplo:  Permitir a los usuarios con dispositivos autenticados.  
+2.  Escriba un nombre y una descripción.  Por ejemplo: permitir usuarios con dispositivos autenticados.  
   
 3.  En **permitir acceso si se cumple alguna de las siguientes reglas**, haga clic en **Agregar**.  
   
@@ -98,7 +97,7 @@ Para crear una directiva de control de acceso con parámetros, use el procedimie
   
 1.  En administración de AD FS de la izquierda, seleccione directivas de Access Control y, a la derecha, haga clic en agregar Directiva de Access Control.  
   
-2.  Escriba un nombre y una descripción.  Por ejemplo:  Permite a los usuarios con una determinada demanda.  
+2.  Escriba un nombre y una descripción.  Por ejemplo: permitir usuarios con una determinada demanda.  
   
 3.  En **permitir acceso si se cumple alguna de las siguientes reglas**, haga clic en **Agregar**.  
   
@@ -121,7 +120,7 @@ Para crear una directiva de control de acceso con una excepción, use el procedi
   
 1.  En administración de AD FS de la izquierda, seleccione directivas de Access Control y, a la derecha, haga clic en agregar Directiva de Access Control.  
   
-2.  Escriba un nombre y una descripción.  Por ejemplo:  Permitir a los usuarios con dispositivos autenticados pero no administrados.  
+2.  Escriba un nombre y una descripción.  Por ejemplo: permitir usuarios con dispositivos autenticados pero no administrados.  
   
 3.  En **permitir acceso si se cumple alguna de las siguientes reglas**, haga clic en **Agregar**.  
   
@@ -148,7 +147,7 @@ Para crear una directiva de control de acceso con varias condiciones de permiso,
   
 1.  En administración de AD FS de la izquierda, seleccione directivas de Access Control y, a la derecha, haga clic en agregar Directiva de Access Control.  
   
-2.  Escriba un nombre y una descripción.  Por ejemplo:  Permite a los usuarios con una determinada demanda y desde un grupo específico.  
+2.  Escriba un nombre y una descripción.  Por ejemplo: permite a los usuarios con una determinada demanda y desde un grupo específico.  
   
 3.  En **permitir acceso si se cumple alguna de las siguientes reglas**, haga clic en **Agregar**.  
   
@@ -180,6 +179,6 @@ Aquí puede seleccionar la Directiva de control de acceso y aplicarla a la aplic
   
 ![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP15.PNG)  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md) 
 

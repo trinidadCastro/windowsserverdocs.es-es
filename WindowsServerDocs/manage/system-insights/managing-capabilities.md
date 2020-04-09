@@ -1,7 +1,6 @@
 ---
 title: Administración de funcionalidades
-description: Sistema Insights expone una variedad de opciones que se pueden configurar para cada capacidad, y se puede ajustar esta configuración a las necesidades específicas de la implementación de dirección. Este tema describe cómo administrar las distintas configuraciones para cada capacidad a través de Windows Admin Center o PowerShell, que proporciona ejemplos básicos de PowerShell y Windows Admin Center capturas de pantalla para mostrar cómo ajustar estos valores.
-ms.custom: na
+description: System Insights expone una variedad de opciones de configuración que se pueden configurar para cada capacidad, y estas opciones se pueden optimizar para satisfacer las necesidades específicas de la implementación. En este tema se describe cómo administrar las distintas opciones de configuración de cada funcionalidad a través del centro de administración de Windows o PowerShell, y se proporcionan ejemplos básicos de PowerShell y capturas de pantallas del centro de administración de Windows para mostrar cómo ajustar esta configuración.
 ms.prod: windows-server
 ms.technology: system-insights
 ms.topic: article
@@ -9,60 +8,60 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: 9081a0b576ab9871b47df38255047b6cbe889419
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b93365474e591ce6fde59867c42b851ec45de50c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868026"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819738"
 ---
 # <a name="managing-capabilities"></a>Administración de funcionalidades
 
->Se aplica a: Windows Server 2019
+>Se aplica a: Windows Server 2019
 
-En Windows Server 2019, sistema Insights expone una variedad de opciones que se pueden configurar para cada capacidad y se puede ajustar esta configuración a las necesidades específicas de la implementación de dirección. Este tema describe cómo administrar las distintas configuraciones para cada capacidad a través de Windows Admin Center o PowerShell, que proporciona ejemplos básicos de PowerShell y Windows Admin Center capturas de pantalla para mostrar cómo ajustar estos valores. 
+En Windows Server 2019, System Insights expone una variedad de opciones de configuración que se pueden configurar para cada capacidad, y estas opciones se pueden optimizar para satisfacer las necesidades específicas de la implementación. En este tema se describe cómo administrar las distintas opciones de configuración de cada funcionalidad a través del centro de administración de Windows o PowerShell, y se proporcionan ejemplos básicos de PowerShell y capturas de pantallas del centro de administración de Windows para mostrar cómo ajustar esta configuración. 
 
 >[!TIP]
->También puede usar estos breves vídeos que le ayudarán a empezar a trabajar y con confianza administrar información del sistema: [Introducción a información del sistema en 10 minutos](https://blogs.technet.microsoft.com/filecab/2018/07/24/getting-started-with-system-insights-in-10-minutes/)
+>También puede usar estos breves vídeos para ayudarle a empezar a trabajar y administrar con confianza System Insights: [Introducción a System Insights en 10 minutos](https://blogs.technet.microsoft.com/filecab/2018/07/24/getting-started-with-system-insights-in-10-minutes/)
 
-Aunque en esta sección se proporciona ejemplos de PowerShell, puede usar el [documentación del sistema de PowerShell de Insights](https://aka.ms/systeminsightspowershell) para ver todos los conjuntos de cmdlets, parámetros y parámetro dentro de la información del sistema. 
+Aunque en esta sección se proporcionan ejemplos de PowerShell, puede usar la [documentación de PowerShell de System Insights](https://aka.ms/systeminsightspowershell) para ver todos los cmdlets, parámetros y conjuntos de parámetros de System Insights. 
 
-## <a name="viewing-capabilities"></a>Capacidades de visualización
+## <a name="viewing-capabilities"></a>Funciones de visualización
 
-Para empezar a trabajar, puede enumerar todas las funcionalidades disponibles mediante el **Get InsightsCapability** cmdlet: 
+Para empezar, puede enumerar todas las funcionalidades disponibles mediante el cmdlet **Get-InsightsCapability** : 
 
 ```PowerShell
 Get-InsightsCapability
 ``` 
-Estas capacidades también están visibles en la extensión de la información del sistema:
+Estas funcionalidades también están visibles en la extensión de System Insights:
 
-![Página de información general de información del sistema que enumerar las funcionalidades disponibles](media/overview-page-contoso.png)
+![Página de información general de System Insights lista de funcionalidades disponibles](media/overview-page-contoso.png)
 
-## <a name="enabling-and-disabling-a-capability"></a>Habilitación y deshabilitación de una capacidad
-Cada capacidad se puede habilitar o deshabilitar. Deshabilitar una funcionalidad impide que esa capacidad que se invoca y para las capacidades no predeterminado, deshabilitar una función detiene toda la recopilación de datos para esa funcionalidad. De forma predeterminada, todas las funcionalidades están habilitadas y puede comprobar el estado de una capacidad mediante la **Get InsightsCapability** cmdlet. 
+## <a name="enabling-and-disabling-a-capability"></a>Habilitación y deshabilitación de una funcionalidad
+Cada capacidad puede estar habilitada o deshabilitada. Deshabilitar una funcionalidad impide que se invoque esa funcionalidad y, para las capacidades no predeterminadas, la deshabilitación de una funcionalidad detiene toda la recopilación de datos de esa capacidad. De forma predeterminada, todas las funcionalidades están habilitadas y puede comprobar el estado de una funcionalidad con el cmdlet **Get-InsightsCapability** . 
 
-Para habilitar o deshabilitar una funcionalidad, use el **Enable InsightsCapability** y **Disable InsightsCapability** cmdlets:
+Para habilitar o deshabilitar una funcionalidad, use los cmdlets **enable-InsightsCapability** y **Disable-InsightsCapability** :
 
 ```PowerShell
 Enable-InsightsCapability -Name "CPU capacity forecasting"
 Disable-InsightsCapability -Name "Networking capacity forecasting"
 ``` 
-También se puede activar o desactivar esta configuración seleccionada una funcionalidad en Windows Admin Center al hacer clic en el **habilitar** o **deshabilitar** botones.
+Esta configuración también se puede alternar seleccionando una capacidad en el centro de administración de Windows al hacer clic en los botones **Habilitar** o **deshabilitar** .
 
-### <a name="invoking-a-capability"></a>Invocar una función
-Invocar una funcionalidad inmediatamente ejecuta la capacidad de recuperar una predicción y los administradores pueden invocar una función de cualquier momento haciendo clic en el **Invoke** botón en Windows Admin Center o mediante el  **InsightsCapability invocar** cmdlet:
+### <a name="invoking-a-capability"></a>Invocar una funcionalidad
+Al invocar una funcionalidad, se ejecuta inmediatamente la funcionalidad para recuperar una predicción, y los administradores pueden invocar una funcionalidad en cualquier momento haciendo clic en el botón **invocar** en el centro de administración de Windows o mediante el cmdlet **Invoke-InsightsCapability** :
 
 ```PowerShell
 Invoke-InsightsCapability -Name "CPU capacity forecasting"
 ```
 
 >[!TIP]
->Para asegurarse de invocar una función no entra en conflicto con las operaciones críticas en el equipo, puede programar las predicciones en off horario.
+>Para asegurarse de que la invocación de una funcionalidad no entra en conflicto con las operaciones críticas en su equipo, considere la posibilidad de programar predicciones fuera del horario comercial.
 
-## <a name="retrieving-capability-results"></a>Al recuperar los resultados de la capacidad
-Una vez que se ha invocado una funcionalidad, los resultados más recientes son visibles utilizando **Get InsightsCapability** o **Get InsightsCapabilityResult**. Estos cmdlets de salida más reciente **estado** y **descripción del estado** de cada función, que describen el resultado de cada predicción. El **estado** y **descripción del estado** campos se describen en la [documento de descripción capacidades](understanding-capabilities.md). 
+## <a name="retrieving-capability-results"></a>Recuperando resultados de funcionalidad
+Una vez que se ha invocado una funcionalidad, los resultados más recientes son visibles mediante **Get-InsightsCapability** o **Get-InsightsCapabilityResult**. Estos cmdlets generan el **Estado** y la **Descripción de estado** más recientes de cada capacidad, que describen el resultado de cada predicción. Los campos de **Estado** y **Descripción del estado** se describen con más detalle en el [documento información sobre capacidades](understanding-capabilities.md). 
 
-Además, puede usar el **Get InsightsCapabilityResult** cmdlet para ver los últimos resultados de predicción de 30 y recuperar los datos asociados con la predicción: 
+Además, puede usar el cmdlet **Get-InsightsCapabilityResult** para ver los últimos 30 resultados de predicción y recuperar los datos asociados a la predicción: 
 
 ```PowerShell
 # Specify the History parameter to see the last 30 prediction results.
@@ -73,43 +72,43 @@ Get-InsightsCapabilityResult -Name "CPU capacity forecasting" -History
 $Output = Get-Content (Get-InsightsCapabilityResult -Name "CPU capacity forecasting").Output -Encoding UTF8 | ConvertFrom-Json
 $Output.ForecastingResults
 ```
-La extensión del sistema Insights automáticamente muestra el historial de predicción y analiza los resultados del resultado JSON, lo que le ofrece un gráfico intuitivo de alta fidelidad de cada previsión:
+La extensión System Insights muestra automáticamente el historial de predicción y analiza los resultados del resultado JSON, lo que le ofrece un gráfico intuitivo y de alta fidelidad de cada previsión:
 
-![Página de capacidad solo que muestra un gráfico de previsión y el historial de predicción](media/cpu-forecast-2.png)
+![Página de funcionalidad única que muestra un gráfico de previsión y el historial de predicción](media/cpu-forecast-2.png)
 
-### <a name="using-the-event-log-to-retrieve-capability-results"></a>Utilice el registro de eventos para recuperar resultados de capacidad
-Información del sistema se registra un evento cada vez que termine de una capacidad de una predicción. Estos eventos están visibles en el **Microsoft-Windows-System-Insights/Admin** información detallada del sistema y canal publica un identificador de evento diferente para cada estado:   
+### <a name="using-the-event-log-to-retrieve-capability-results"></a>Usar el registro de eventos para recuperar los resultados de funcionalidad
+System Insights registra un evento cada vez que una funcionalidad finaliza una predicción. Estos eventos están visibles en el canal **Microsoft-Windows-System-Insights/admin** y System Insights publica un identificador de evento diferente para cada Estado:   
 
 | Estado de predicción | Id. de evento |
 | --------------- | --------------- |
 | Aceptar | 151 |
-| Advertencia | 148 |
-| Crítico | 150 |
+| advertencia | 148 |
+| Crítica | 150 |
 | Error | 149 |
 | Ninguno | 132 |
 
 >[!TIP]
->Use [Azure Monitor](https://azure.microsoft.com/services/monitor/) o [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807) para agregar estos eventos y ver resultados de predicción en un grupo de máquinas.
+>Use [Azure monitor](https://azure.microsoft.com/services/monitor/) o [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807) para agregar estos eventos y ver los resultados de predicción en un grupo de máquinas.
 
 
 ## <a name="setting-a-capability-schedule"></a>Establecer una programación de capacidad
-Además de las predicciones y a petición, puede configurar periódicas predicciones para cada capacidad para que la capacidad especificada se invoca automáticamente según una programación predefinida. Use la **Get InsightsCapabilitySchedule** cmdlet para ver las programaciones de capacidad: 
+Además de las predicciones a petición, puede configurar predicciones periódicas para cada funcionalidad, de modo que la capacidad especificada se invoque automáticamente según una programación predefinida. Use el cmdlet **Get-InsightsCapabilitySchedule** para ver las programaciones de capacidad: 
 
 >[!TIP]
->Use el operador de canalización de PowerShell para ver información de todas las funcionalidades de devuelto por la **Get InsightsCapability** cmdlet.
+>Use el operador de canalización de PowerShell para ver la información de todas las funcionalidades devueltas por el cmdlet **Get-InsightsCapability** .
 
 ```PowerShell
 Get-InsightsCapability | Get-InsightsCapabilitySchedule
 ```
 
-Predicciones periódicas están habilitadas de forma predeterminada aunque puede deshabilitar en cualquier momento mediante el **Enable InsightsCapabilitySchedule** y **Disable InsightsCapabilitySchedule** cmdlets:
+Las predicciones periódicas están habilitadas de forma predeterminada aunque se pueden deshabilitar en cualquier momento mediante los cmdlets **enable-InsightsCapabilitySchedule** y **Disable-InsightsCapabilitySchedule** :
 
 ```PowerShell
 Enable-InsightsCapabilitySchedule -Name "Total storage consumption forecasting"
 Disable-InsightsCapabilitySchedule -Name "Volume consumption forecasting"
 ```
 
-Cada capacidad predeterminada está programada para ejecutarse diariamente a las 3 a.m. Sin embargo, puede crear programaciones personalizadas para cada capacidad, y el sistema Insights admite una variedad de tipos de programación, que se pueden configurar mediante el **conjunto InsightsCapabilitySchedule** cmdlet: 
+Cada función predeterminada está programada para ejecutarse cada día en 3 a.m. Sin embargo, puede crear programaciones personalizadas para cada capacidad y System Insights admite una variedad de tipos de programación, que se pueden configurar mediante el cmdlet **set-InsightsCapabilitySchedule** : 
 
 ```PowerShell
 Set-InsightsCapabilitySchedule -Name "CPU capacity forecasting" -Daily -DaysInterval 2 -At 4:00PM
@@ -118,27 +117,27 @@ Set-InsightsCapabilitySchedule -Name "Total storage consumption forecasting" -Ho
 Set-InsightsCapabilitySchedule -Name "Volume consumption forecasting" -Minute -MinutesInterval 30 
 ```
 >[!NOTE]
->Dado que las características predeterminadas analizan datos diarios, se recomienda utilizar programaciones diarias para estas capacidades. Más información sobre las características predeterminadas [aquí](understanding-capabilities.md).
+>Dado que las funciones predeterminadas analizan los datos diarios, se recomienda usar las programaciones diarias para estas capacidades. Obtenga más información sobre las funcionalidades predeterminadas [aquí](understanding-capabilities.md).
 
-También puede usar Windows Admin Center para ver y establecer las programaciones para cada capacidad haciendo **configuración**. La programación actual se muestra en el **programación** ficha y, puede usar las herramientas de GUI para crear una nueva programación:
+También puede usar el centro de administración de Windows para ver y establecer programaciones para cada funcionalidad haciendo clic en **configuración**. La programación actual se muestra en la pestaña **programación** y puede usar las herramientas de la GUI para crear una nueva programación:
 
-![Programación de configuración de la página que muestra actual](media/schedule-page-contoso.png)
+![Página de configuración que muestra la programación actual](media/schedule-page-contoso.png)
 
-## <a name="creating-remediation-actions"></a>Creación de las acciones de corrección
-Información del sistema le permite dar comienzo a scripts de corrección personalizados en función del resultado de una función. Para cada capacidad, puede configurar un script de PowerShell personalizado para cada estado de predicción, permitiendo a los administradores realizar una acción correctora automáticamente, en lugar de requerir la intervención manual. 
+## <a name="creating-remediation-actions"></a>Crear acciones correctivas
+System Insights le permite iniciar scripts de corrección personalizados basados en el resultado de una capacidad. Para cada capacidad, puede configurar un script de PowerShell personalizado para cada estado de predicción, lo que permite a los administradores tomar medidas correctivas automáticamente, en lugar de requerir la intervención manual. 
 
-Las acciones de corrección de ejemplo incluyen ejecución Liberador de espacio en disco, extender un volumen, ejecuta la desduplicación, en vivo migra máquinas virtuales y configurar Azure File Sync.
+Las acciones correctivas de ejemplo incluyen la ejecución del liberador de espacio en disco, la extensión de un volumen, la ejecución de la desduplicación, la migración en vivo de máquinas virtuales y la configuración de Azure File Sync.
 
-Puede ver las acciones para cada capacidad mediante la **Get InsightsCapabilityAction** cmdlet:
+Puede ver las acciones de cada funcionalidad mediante el cmdlet **Get-InsightsCapabilityAction** :
 
 ```PowerShell
 Get-InsightsCapability | Get-InsightsCapabilityAction
 ```
 
-Puede crear nuevas acciones o eliminar acciones existentes utilizando el **conjunto InsightsCapabilityAction** y **Remove-InsightsCapabilityAction** cmdlets. Cada acción se ejecuta con credenciales que se especifican en el **ActionCredential** parámetro.
+Puede crear nuevas acciones o eliminar acciones existentes mediante los cmdlets **set-InsightsCapabilityAction** y **Remove-InsightsCapabilityAction** . Cada acción se ejecuta con credenciales que se especifican en el parámetro **ActionCredential** .
 
 >[!NOTE]
->En la versión inicial de la información del sistema, debe especificar scripts de corrección fuera de los directorios de usuario. Esto se corregirá en una próxima versión.
+>En la versión inicial de System Insights, debe especificar scripts de corrección fuera de los directorios de usuario. Esto se corregirá en una próxima versión.
 
 ```PowerShell
 $Cred = Get-Credential
@@ -148,15 +147,15 @@ Set-InsightsCapabilityAction -Name "CPU capacity forecasting" -Type Critical -Ac
 Remove-InsightsCapabilityAction -Name "CPU capacity forecasting" -Type Warning
 ```
 
-También puede usar Windows Admin Center para establecer las acciones de corrección mediante el **acciones** pestaña dentro de la **configuración** página:
+También puede usar el centro de administración de Windows para establecer acciones correctivas mediante la pestaña **acciones** de la página **configuración** :
 
-![Página de configuración en el usuario puede especificar las acciones de corrección](media/actions-page-contoso.png)
+![Página de configuración en la que el usuario puede especificar acciones correctivas](media/actions-page-contoso.png)
 
 
 ## <a name="see-also"></a>Vea también
-Para obtener más información acerca de la información del sistema, use los siguientes recursos:
+Para obtener más información acerca de System Insights, utilice los siguientes recursos:
 
-- [Información general de información del sistema](overview.md)
-- [Capacidades de descripción](understanding-capabilities.md)
-- [Agregar y desarrollo de capacidades](adding-and-developing-capabilities.md)
-- [Preguntas más frecuentes del sistema Insights](faq.md)
+- [Información general de System Insights](overview.md)
+- [Descripción de funcionalidades](understanding-capabilities.md)
+- [Funcionalidades de adición y desarrollo](adding-and-developing-capabilities.md)
+- [Preguntas más frecuentes sobre System Insights](faq.md)

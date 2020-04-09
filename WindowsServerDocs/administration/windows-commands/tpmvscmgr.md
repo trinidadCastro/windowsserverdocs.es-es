@@ -1,28 +1,22 @@
 ---
 title: tpmvscmgr
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Windows Commands topic for tpmvscmgr, que es una herramienta de línea de comandos que permite a los usuarios con credenciales administrativas crear y eliminar tarjetas inteligentes virtuales de TPM en un equipo.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8b2c8ff4-5c5d-446d-99e7-4daa1b36a163
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0051750f557786b0a564ec20a32089e089898cc0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4411e0ec3c75cd768b2fe32ad26b17331328e3ca
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385662"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832738"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
-
-
 
 La herramienta de línea de comandos Tpmvscmgr permite a los usuarios con credenciales administrativas crear y eliminar tarjetas inteligentes virtuales de TPM en un equipo. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
 
@@ -35,7 +29,7 @@ Tpmvscmgr create [/name] [/AdminKey DEFAULT | PROMPT | RANDOM] [/PIN DEFAULT | P
 Tpmvscmgr destroy [/instance <instance ID>] [/?]
 ```
 
-### <a name="parameters-for-create-command"></a>Parámetros para Create (comando)
+#### <a name="parameters-for-create-command"></a>Parámetros para Create (comando)
 
 El comando CREATE configura nuevas tarjetas inteligentes virtuales en el sistema del usuario. Devuelve el identificador de instancia de la tarjeta recién creada para que se haga referencia a ella más adelante si se requiere la eliminación. El identificador de instancia tiene el formato **ROOT\SMARTCARDREADER\000n** , donde **n** comienza en 0 y se incrementa en 1 cada vez que se crea una nueva tarjeta inteligente virtual.
 
@@ -49,7 +43,7 @@ El comando CREATE configura nuevas tarjetas inteligentes virtuales en el sistema
 |/Machine|Permite especificar el nombre de un equipo remoto en el que se puede crear la tarjeta inteligente virtual. Esto solo se puede usar en un entorno de dominio y se basa en DCOM. Para que el comando se ejecute correctamente en la creación de una tarjeta inteligente virtual en otro equipo, el usuario que ejecuta este comando debe ser miembro del grupo Administradores local en el equipo remoto.|
 |/?|Muestra ayuda para este comando.|
 
-### <a name="parameters-for-destroy-command"></a>Parámetros del comando Destroy
+#### <a name="parameters-for-destroy-command"></a>Parámetros del comando Destroy
 
 El comando Destroy elimina de forma segura una tarjeta inteligente virtual del equipo del usuario.
 
@@ -67,26 +61,26 @@ La pertenencia al grupo **administradores** (o equivalente) en el equipo de dest
 
 En el caso de las entradas alfanuméricas, se permite el conjunto ASCII de caracteres 127 completo.
 
-## <a name="BKMK_Examples"></a>Example
+## <a name="examples"></a><a name=BKMK_Examples></a>Example
 
 El siguiente comando muestra cómo crear una tarjeta inteligente virtual que se puede administrar más adelante mediante una herramienta de administración de tarjetas inteligentes iniciada desde otro equipo.
 ```
-tpmvscmgr.exe create /name "VirtualSmartCardForCorpAccess" /AdminKey DEFAULT /PIN PROMPT
+tpmvscmgr.exe create /name VirtualSmartCardForCorpAccess /AdminKey DEFAULT /PIN PROMPT
 ```
 Como alternativa, en lugar de usar una clave de administrador predeterminada, puede crear una clave de administrador en la línea de comandos. El siguiente comando muestra cómo crear una clave de administrador.
 ```
-tpmvscmgr.exe create /name "VirtualSmartCardForCorpAccess" /AdminKey PROMPT /PIN PROMPT
+tpmvscmgr.exe create /name VirtualSmartCardForCorpAccess /AdminKey PROMPT /PIN PROMPT
 ```
 El siguiente comando creará la tarjeta inteligente virtual no administrada que se puede usar para inscribir certificados.
 ```
-tpmvscmgr.exe create /name "VirtualSmartCardForCorpAccess" /AdminKey RANDOM /PIN PROMPT /generate
+tpmvscmgr.exe create /name VirtualSmartCardForCorpAccess /AdminKey RANDOM /PIN PROMPT /generate
 ```
 El siguiente comando creará una tarjeta inteligente virtual con una clave de administrador aleatoria. La clave se descarta automáticamente una vez creada la tarjeta. Esto significa que si el usuario olvida el PIN o desea cambiar el PIN, el usuario debe eliminar la tarjeta y volver a crearla. Para eliminar la tarjeta, el usuario puede ejecutar el siguiente comando.
 ```
 tpmvscmgr.exe destroy /instance <instance ID> 
 ```
-donde \<el ID. de instancia > es el valor que se imprime en la pantalla cuando el usuario creó la tarjeta. En concreto, para la primera tarjeta creada, el ID. de instancia es ROOT\SMARTCARDREADER\0000.
+donde \<ID. de instancia > es el valor que se imprime en la pantalla cuando el usuario creó la tarjeta. En concreto, para la primera tarjeta creada, el ID. de instancia es ROOT\SMARTCARDREADER\0000.
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

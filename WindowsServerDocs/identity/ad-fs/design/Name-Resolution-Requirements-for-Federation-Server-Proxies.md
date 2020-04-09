@@ -1,7 +1,6 @@
 ---
 ms.assetid: c28c60ff-693d-49ee-a75b-58f24866217b
 title: Requisitos de resolución de nombres para servidores proxy de federación
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 51176101b471ec940e2b43a95e1a1a8d37b394f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 47c5bd23d3ba82c3df81c71951c2a50db0fe99d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408067"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853048"
 ---
 # <a name="name-resolution-requirements-for-federation-server-proxies"></a>Requisitos de resolución de nombres para servidores proxy de federación
 
@@ -38,7 +37,7 @@ En la ilustración siguiente y los pasos correspondientes se muestra cómo se cu
 Para obtener más información sobre la configuración de una dirección IP de clúster o un FQDN de clúster con NLB, vea [especificar los parámetros de clúster](https://go.microsoft.com/fwlink/?LinkId=75282).  
   
 ### <a name="1-configure-the-hosts-file-on-the-federation-server-proxy"></a>1. Configurar l archivo de hosts en el servidor proxy de federación.  
-Como DNS en la red perimetral está configurado para resolver todas las solicitudes de fs.fabrikam.com en el servidor proxy de Federación de la cuenta, el servidor proxy de Federación del asociado de cuenta tiene una entrada en su archivo de hosts local para resolver fs.fabrikam.com en la dirección IP del servidor de Federación de cuenta real \(o el nombre DNS del clúster para la granja de servidores de Federación\) conectada a la red corporativa. Esto permite que el servidor proxy de Federación de cuentas resuelva el nombre de host fs.fabrikam.com en el servidor de Federación de la cuenta, en lugar de hacerlo en sí mismo, como sucedería si intentase buscar fs.fabrikam.com con el DNS perimetral, de modo que la Federación el proxy del servidor puede comunicarse con el servidor de Federación.  
+Como DNS en la red perimetral está configurado para resolver todas las solicitudes de fs.fabrikam.com en el servidor proxy de Federación de la cuenta, el servidor proxy de Federación del asociado de cuenta tiene una entrada en su archivo de hosts local para resolver fs.fabrikam.com en la dirección IP del servidor de Federación de cuenta real \(o el nombre DNS del clúster para la granja de servidores de Federación\) conectada a la red corporativa. Esto permite que el servidor proxy de Federación de la cuenta resuelva el nombre de host fs.fabrikam.com en el servidor de Federación de la cuenta en lugar de hacerlo en sí mismo, como sucedería si intentase buscar fs.fabrikam.com con el DNS perimetral, de modo que el servidor proxy de Federación pueda comunicarse con el servidor de Federación.  
   
 ### <a name="2-configure-perimeter-dns"></a>2. Configurar DNS perimetral  
 Dado que solo hay un nombre de host AD FS a la que se dirigen los equipos cliente (tanto si están en una intranet como en Internet), los equipos cliente de Internet que usan el servidor DNS perimetral deben resolver el FQDN del servidor de Federación de cuenta \(fs.fabrikam.com\) en la dirección IP del servidor proxy de Federación de la cuenta en la red perimetral. Para que pueda reenviar a los clientes el proxy de servidor de Federación de la cuenta cuando intenten resolver fs.fabrikam.com, el DNS perimetral contiene una zona DNS corp.fabrikam.com limitada con un solo host \(un registro de recursos\) para FS \(fs.fabrikam.com\) y la dirección IP del servidor proxy de Federación de cuenta en la red perimetral.  
@@ -59,7 +58,7 @@ En la ilustración siguiente y los pasos correspondientes se muestra cómo se cu
 ### <a name="1-configure-perimeter-dns"></a>1. Configurar DNS perimetral  
 En este escenario, como se supone que configurará la zona DNS de Internet que controla para resolver las solicitudes que se realizan para una dirección URL de punto de conexión específica \(es decir, fs.fabrikam.com\) al proxy de servidor de Federación en la red perimetral, también debe configurar la zona en el DNS perimetral para enviar estas solicitudes al servidor de Federación en la red corporativa.  
   
-Para que los clientes puedan reenviarse al servidor de Federación de la cuenta cuando intentan resolver fs.fabrikam.com, el DNS perimetral está configurado con un solo host \(un registro de recursos\) para FS \(fs.fabrikam.com\) y la dirección IP del servidor de Federación de cuenta en la red corporativa. Esto permite que el servidor proxy de Federación de cuenta resuelva el nombre de host fs.fabrikam.com en el servidor de Federación de la cuenta, en lugar de hacerlo en sí mismo, como sucedería si intentase buscar fs.fabrikam.com con DNS de Internet, de modo que el servidor de Federación el proxy puede comunicarse con el servidor de Federación.  
+Para que los clientes puedan reenviarse al servidor de Federación de la cuenta cuando intentan resolver fs.fabrikam.com, el DNS perimetral está configurado con un solo host \(un registro de recursos\) para FS \(fs.fabrikam.com\) y la dirección IP del servidor de Federación de cuenta en la red corporativa. Esto permite que el servidor proxy de Federación de la cuenta resuelva el nombre de host fs.fabrikam.com en el servidor de Federación de la cuenta en lugar de hacerlo en sí mismo, como sucedería si intentase buscar fs.fabrikam.com con DNS de Internet, de modo que el servidor proxy de Federación pueda comunicarse con el servidor de Federación.  
   
 ### <a name="2-configure-internet-dns"></a>2. Configurar DNS en Internet  
 Para que la resolución de nombres sea correcta en este escenario, todas las solicitudes de los equipos cliente en Internet a fs.fabrikam.com las debe resolver la zona DNS de Internet que usted controla. Por lo tanto, debe configurar la zona DNS de Internet para que reenvíe las solicitudes de cliente para fs.fabrikam.com a la dirección IP del servidor proxy de Federación de la cuenta en la red perimetral.  

@@ -1,19 +1,19 @@
 ---
 title: 'Máquinas virtuales blindadas para inquilinos: creación de datos de blindaje para definir una máquina virtual blindada'
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 49f4e84d-c1f7-45e5-9143-e7ebbb2ef052
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 26ff5e27494e2f42a0c8e4d28e2b9820f8d19e6a
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 6ff502e7246c899a7b4f29125266bf05d07e40ef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322467"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856458"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>Máquinas virtuales blindadas para inquilinos: creación de datos de blindaje para definir una máquina virtual blindada
 
@@ -39,7 +39,7 @@ Después, puede crear el archivo de datos de blindaje:
 
 ## <a name="optional-obtain-a-certificate-for-remote-desktop-connection"></a>Opta Obtener un certificado para Conexión a Escritorio remoto
 
-Dado que los inquilinos solo pueden conectarse a sus máquinas virtuales blindadas mediante Conexión a Escritorio remoto u otras herramientas de administración remota, es importante asegurarse de que los inquilinos puedan comprobar que se conectan al punto de conexión derecho (es decir, no hay un "hombre en el centro"). interceptar la conexión).
+Dado que los inquilinos solo pueden conectarse a sus máquinas virtuales blindadas mediante Conexión a Escritorio remoto u otras herramientas de administración remota, es importante asegurarse de que los inquilinos puedan comprobar que se están conectando al extremo derecho (es decir, no hay un "hombre en el medio" que intercepta la conexión).
 
 Una manera de comprobar que se está conectando al servidor previsto es instalar y configurar un certificado para que Servicios de Escritorio remoto presente al iniciar una conexión. El equipo cliente que se conecta al servidor comprobará si confía en el certificado y mostrará una advertencia si no lo es. Por lo general, para asegurarse de que el cliente que se conecta confía en el certificado, los certificados RDP se emiten desde la PKI del inquilino. Puede encontrar más información sobre el [uso de certificados en servicios de escritorio remoto](https://technet.microsoft.com/library/dn781533.aspx) en TechNet.
 

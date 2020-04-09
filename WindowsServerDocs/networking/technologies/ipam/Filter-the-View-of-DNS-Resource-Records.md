@@ -2,22 +2,18 @@
 title: Filtrado de la vista de registros de recursos DNS
 description: Este tema forma parte de la guía de administración de la administración de direcciones IP (IPAM) en Windows Server 2016.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5b80294a-7325-476b-84eb-69f0d051e8b2
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4e032e2c5b89dc362fceb34e06525d8632f7b19e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 21e43751981b0b7b945c0c9404f6f93f36c48f16
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312403"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860668"
 ---
 # <a name="filter-the-view-of-dns-resource-records"></a>Filtrado de la vista de registros de recursos DNS
 

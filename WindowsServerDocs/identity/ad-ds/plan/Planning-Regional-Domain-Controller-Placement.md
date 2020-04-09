@@ -1,7 +1,6 @@
 ---
 ms.assetid: eb600904-24b8-4488-a278-c1c971dc2f2d
 title: Planeación de la ubicación del controlador de dominio regional
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2508476f35462516f32877365cb15be919b5b6df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cb1d83d5afca92de85c4de8b3e9125e119250f66
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408739"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822118"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>Planeación de la ubicación del controlador de dominio regional
 
@@ -80,6 +79,6 @@ Por ejemplo, considere una red que tiene sucursales que se conectan a través de
   
 Si reducir el costo de mantenimiento de los controladores de dominio es más importante que el tráfico de red, Centralice los controladores de dominio para ese dominio y no coloque ningún controlador de dominio regional en la ubicación o considere la posibilidad de colocar RODC en la ubicación.  
   
-Para obtener una hoja de cálculo que le ayude a documentar la ubicación de los controladores de dominio regionales y el número de usuarios para cada dominio que se representa en cada ubicación, consulte el [material de trabajo para el kit de implementación de Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558), descargar Job_Aids_Designing_and_ Deploying_Directory_and_Security_Services. zip y abra "Ubicación del controlador de dominio" (DSSTOPO_4. doc).  
+Para obtener una hoja de cálculo que le ayude a documentar la ubicación de los controladores de dominio regionales y el número de usuarios para cada dominio que se representa en cada ubicación, vea el tema [sobre ayudas de trabajo para el kit de implementación de Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558), descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip y abra "Ubicación del controlador de dominio" (DSSTOPO_4. doc).  
   
 Tendrá que consultar la información acerca de las ubicaciones en las que necesita colocar controladores de dominio regionales al implementar dominios regionales. Para obtener más información acerca de la implementación de dominios regionales, consulte [implementación de dominios regionales de Windows Server 2008](https://technet.microsoft.com/library/cc755118.aspx).  

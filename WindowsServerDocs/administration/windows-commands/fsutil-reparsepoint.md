@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: fe274ad9a6dffc72607102d3430ba7527d3cc558
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0b819f15e473738996484283bceac439f482a13d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376854"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844158"
 ---
 # <a name="fsutil-reparsepoint"></a>Fsutil reparsepoint
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7, Windows 2008, Windows Vista
@@ -30,12 +30,12 @@ fsutil reparsepoint [query] <FileName>
 fsutil reparsepoint [delete] <FileName>
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 | Parámetro  |                                                                Descripción                                                                |
 |------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-|   query    |            Recupera los datos del punto de reanálisis asociados al archivo o directorio identificado por el identificador especificado.             |
-|   Eliminar   | Elimina un punto de reanálisis del archivo o directorio identificado por el identificador especificado, pero no elimina el archivo o directorio. |
+|   consulta    |            Recupera los datos del punto de reanálisis asociados al archivo o directorio identificado por el identificador especificado.             |
+|   eliminar   | Elimina un punto de reanálisis del archivo o directorio identificado por el identificador especificado, pero no elimina el archivo o directorio. |
 | <FileName> |             Especifica la ruta de acceso completa al archivo, incluido el nombre de archivo y la extensión, por ejemplo C:\documents\filename.txt.             |
 
 ## <a name="remarks"></a>Comentarios
@@ -46,7 +46,7 @@ fsutil reparsepoint [delete] <FileName>
 
 -   Cuando un programa establece un punto de reanálisis, almacena estos datos, además de una etiqueta de reanálisis, que identifica de forma única los datos almacenados. Cuando el sistema de archivos abre un archivo con un punto de reanálisis, intenta encontrar el filtro del sistema de archivos asociado. Si se encuentra el filtro del sistema de archivos, el filtro procesa el archivo según lo indicado por los datos de reanálisis. Si no se encuentra ningún filtro del sistema de archivos, se producirá un error en la operación de apertura de archivo.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Example
 Para recuperar los datos de punto de reanálisis asociados a C:\Server, escriba:
 
 ```
@@ -59,8 +59,8 @@ Para eliminar un punto de análisis de un archivo o directorio especificado, use
 fsutil reparsepoint delete c:\server
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>Referencias adicionales
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

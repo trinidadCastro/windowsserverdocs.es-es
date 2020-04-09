@@ -1,7 +1,6 @@
 ---
 ms.assetid: 65ed5956-6140-4e06-8d99-8771553637d1
 title: Degradación de controladores de dominio y de dominios (nivel 200)
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e3f320b67196a2400ebedbaeaf0a5b59969400e8
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: b8c5502f50b065e8c75d0167328868ac129dfad1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588093"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825435"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>Degradar controladores de dominio y dominios
 
@@ -36,15 +35,15 @@ En este tema se explica cómo quitar AD DS usando el Administrador del servidor
 |||  
 |-|-|  
 |**Cmdlets ADDSDeployment y ServerManager**|Argumentos (los argumentos en **negrita** son obligatorios. Los argumentos en *cursiva* se pueden especificar con Windows PowerShell o con el Asistente para configuración de AD DS).|  
-|Uninstall-ADDSDomainController|-SkipPreChecks<br /><br />*-LocalAdministratorPassword*<br /><br />-Confirm<br /><br />***-Credential***<br /><br />-DemoteOperationMasterRole<br /><br />*-DNSDelegationRemovalCredential*<br /><br />-Force<br /><br />*-ForceRemoval*<br /><br />*-IgnoreLastDCInDomainMismatch*<br /><br />*-IgnoreLastDNSServerForZone*<br /><br />*-LastDomainControllerInDomain*<br /><br />-Norebootoncompletion<br /><br />*-RemoveApplicationPartitions*<br /><br />*-RemoveDNSDelegation*<br /><br />-RetainDCMetadata|  
-|Uninstall-WindowsFeature/Remove-WindowsFeature|***-Nombre***<br /><br />***-IncludeManagementTools***<br /><br />*-Reiniciar*<br /><br />-Remove<br /><br />-Force<br /><br />-ComputerName<br /><br />-Credential<br /><br />-LogPath<br /><br />-Vhd|  
+|Uninstall-ADDSDomainController|-SkipPreChecks<p>*-LocalAdministratorPassword*<p>-Confirm<p>***-Credential***<p>-DemoteOperationMasterRole<p>*-DNSDelegationRemovalCredential*<p>-Force<p>*-ForceRemoval*<p>*-IgnoreLastDCInDomainMismatch*<p>*-IgnoreLastDNSServerForZone*<p>*-LastDomainControllerInDomain*<p>-Norebootoncompletion<p>*-RemoveApplicationPartitions*<p>*-RemoveDNSDelegation*<p>-RetainDCMetadata|  
+|Uninstall-WindowsFeature/Remove-WindowsFeature|***-Nombre***<p>***-IncludeManagementTools***<p>*-Reiniciar*<p>-Remove<p>-Force<p>-ComputerName<p>-Credential<p>-LogPath<p>-Vhd|  
   
 > [!NOTE]  
 > El argumento **-credential** solo es obligatorio si no se ha iniciado sesión como miembro del grupo Administradores de empresas (disminuyendo de nivel el último DC en un dominio) o del grupo Admins. del dominio (disminuyendo de nivel una réplica de DC). El argumento **-includemanagementtools** solo es obligatorio si se quieren quitar las utilidades de administración de AD DS.  
   
 ## <a name="demote"></a>Disminuir nivel  
   
-### <a name="remove-roles-and-features"></a>Quitar roles y funciones
+### <a name="remove-roles-and-features"></a>Quitar roles y características
 
 El Administrador del servidor ofrece dos interfaces para quitar el rol de Servicios de dominio de Active Directory:  
   
@@ -58,7 +57,7 @@ El Administrador del servidor ofrece dos interfaces para quitar el rol de Servic
 
 Los cmdlets de ServerManager **Uninstall-WindowsFeature** y **Remove-WindowsFeature** impedirán que quite el rol de AD DS hasta que disminuya el nivel del controlador de dominio.
   
-### <a name="server-selection"></a>Selección de servidores
+### <a name="server-selection"></a>Selección del servidor
 
 ![Asistente para quitar roles y características, seleccionar servidor de destino](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection2.png)  
 
@@ -79,7 +78,7 @@ Desactiva la casilla **Servicios de dominio de Active Directory** para disminui
    * La característica Herramientas de AD DS y AD LDS  
    * La característica Centro de administración de Active Directory  
    * La característica Complementos y herramientas de línea de comandos de AD DS  
-   * Servidor DNS  
+   * DNS Server  
    * Consola de administración de directivas de grupo  
   
 Los cmdlets equivalentes en Windows PowerShell para ADDSDeployment y ServerManager son:  
@@ -118,7 +117,7 @@ Los argumentos equivalentes en el módulo ADDSDeployment de Windows PowerShell s
 -lastdomaincontrollerindomain <{ $true | false }>  
 ```
 
-### <a name="warnings"></a>Warnings
+### <a name="warnings"></a>Advertencias
 
 ![Asistente para configuración de Active Directory Domain Services: impacto de las funciones FSMO de credenciales](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Warnings.png)  
 
@@ -236,7 +235,7 @@ Si intenta quitar el rol de AD DS antes de disminuir de nivel el servidor, Windo
 > [!IMPORTANT]
 > Para poder eliminar los archivos binarios del rol AD-Domain-Services, debes reiniciar el equipo después de disminuir el servidor de nivel.
 
-### <a name="results"></a>Resultados
+### <a name="results"></a>Results
 
 ![Está a punto de cerrarse la advertencia tras quitar AD DS](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_DemoteSignoff.png)
 

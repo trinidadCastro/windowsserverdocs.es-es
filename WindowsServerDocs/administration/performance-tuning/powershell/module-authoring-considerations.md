@@ -4,15 +4,15 @@ description: Consideraciones sobre la creación de módulos de PowerShell
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: JasonSh
+ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 8945339e7a7950d3cd722ab2af629b45e7f6dd5d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 25b202e56286b7c26c3150642a656eb31a120808
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370356"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851938"
 ---
 # <a name="powershell-module-authoring-considerations"></a>Consideraciones sobre la creación de módulos de PowerShell
 
@@ -28,10 +28,10 @@ Durante el análisis de módulos, si los comandos exportados se pueden determina
 
 ### <a name="guidelines"></a>Instrucciones
 
-* En el manifiesto del módulo, no use caracteres comodín en las entradas `AliasesToExport`, `CmdletsToExport` y `FunctionsToExport`.
+* En el manifiesto del módulo, no use caracteres comodín en las entradas `AliasesToExport`, `CmdletsToExport`y `FunctionsToExport`.
 
 * Si el módulo no exporta comandos de un tipo determinado, especifíquelo explícitamente en el manifiesto especificando `@()`.
-Una entrada Missing o `$null` equivale a especificar el carácter comodín `*`.
+Una entrada que falta o `$null` es equivalente a especificar el carácter comodín `*`.
 
 Siempre que sea posible, debe evitarse lo siguiente:
 

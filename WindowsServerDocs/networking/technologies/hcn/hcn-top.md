@@ -3,13 +3,14 @@ title: API de servicio de Compute Network (HCN) para máquinas virtuales y conte
 description: La API de servicio de proceso de host (HCN) es una API de Win32 orientada al público que proporciona acceso de nivel de plataforma para administrar las redes virtuales, los puntos de conexión de la red virtual y las directivas asociadas. Juntos, proporciona conectividad y seguridad para máquinas virtuales (VM) y contenedores que se ejecutan en un host de Windows.
 ms.author: jmesser
 author: jmesser81
+ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: e30a778d661fa7c6d2e248234218eb25fba007a1
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: 4afde574802bd63db8ea8ca8db9f5daf1a53dc93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031550"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859848"
 ---
 # <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>API de servicio de Compute Network (HCN) para máquinas virtuales y contenedores
 
@@ -20,20 +21,20 @@ La API de servicio de proceso de host (HCN) es una API de Win32 orientada al pú
 Los desarrolladores usan la API del servicio HCN para administrar las redes de las máquinas virtuales y los contenedores en sus flujos de trabajo de la aplicación. La API de HCN se ha diseñado para proporcionar la mejor experiencia para los desarrolladores. Los usuarios finales no interactúan directamente con estas API.  
 
 ## <a name="features-of-the-hcn-service-api"></a>Características de la API del servicio HCN
--   Se implementa como una API de C hospedada por el servicio de red de host (SNP) en la máquina virtual o en el núcleo.
+-    Se implementa como una API de C hospedada por el servicio de red de host (SNP) en la máquina virtual o en el núcleo.
 
--   Proporciona la capacidad de crear, modificar, eliminar y enumerar objetos HCN como redes, extremos, espacios de nombres y directivas. Las operaciones se realizan en los identificadores de los objetos (por ejemplo, un identificador de red) y, internamente, estos identificadores se implementan mediante identificadores de contexto de RPC.
+-    Proporciona la capacidad de crear, modificar, eliminar y enumerar objetos HCN como redes, extremos, espacios de nombres y directivas. Las operaciones se realizan en los identificadores de los objetos (por ejemplo, un identificador de red) y, internamente, estos identificadores se implementan mediante identificadores de contexto de RPC.
 
--   Basado en esquema. La mayoría de las funciones de la API definen parámetros de entrada y salida como cadenas que contienen los argumentos de la llamada de función como documentos JSON. Los documentos JSON se basan en esquemas fuertemente tipados y con control de versiones; estos esquemas forman parte de la documentación pública. 
+-    Basado en esquema. La mayoría de las funciones de la API definen parámetros de entrada y salida como cadenas que contienen los argumentos de la llamada de función como documentos JSON. Los documentos JSON se basan en esquemas fuertemente tipados y con control de versiones; estos esquemas forman parte de la documentación pública. 
 
--   Se proporciona una API de suscripción/devolución de llamada para permitir que los clientes se registren para notificaciones de eventos de todo el servicio, como creaciones y eliminaciones de red.
+-    Se proporciona una API de suscripción/devolución de llamada para permitir que los clientes se registren para notificaciones de eventos de todo el servicio, como creaciones y eliminaciones de red.
 
--   La API de HCN funciona en Bridge Desktop (también conocido como Centennial) que se ejecutan en servicios del sistema. La API comprueba la ACL recuperando el token de usuario del autor de la llamada.
+-    La API de HCN funciona en Bridge Desktop (también conocido como Centennial) que se ejecutan en servicios del sistema. La API comprueba la ACL recuperando el token de usuario del autor de la llamada.
 
 >[!TIP]
 >La API del servicio HCN se admite en las tareas en segundo plano y en las ventanas que no son de primer plano. 
 
-## <a name="terminology-host-vs-compute"></a>Terminología: Host frente a Proceso
+## <a name="terminology-host-vs-compute"></a>Terminología: host frente a proceso
 El servicio de proceso de host permite a los autores de llamadas crear y administrar máquinas virtuales y contenedores en un solo equipo físico. Se denomina para seguir la terminología del sector. 
 
 - El **host** se utiliza ampliamente en el sector de virtualización para hacer referencia al sistema operativo que proporciona recursos virtualizados.
@@ -44,14 +45,14 @@ El servicio de proceso de host permite a los autores de llamadas crear y adminis
 Los documentos de configuración basados en esquemas bien definidos son un estándar del sector establecido en el espacio de virtualización. La mayoría de las soluciones de virtualización, como Docker y Kubernetes, proporcionan API basadas en documentos de configuración. Varias iniciativas del sector, con la participación de Microsoft, impulsan un ecosistema para definir y validar estos esquemas, como [OpenAPI](https://www.openapis.org/).  Estas iniciativas también controlan la normalización de definiciones de esquema específicas para los esquemas que se usan para los contenedores, como [Open Container Initiative (OCI)](https://www.opencontainers.org/).
 
 El idioma que se usa para crear documentos de configuración es [JSON](https://tools.ietf.org/html/rfc8259), que se usa en combinación con:
--   Definiciones de esquema que definen un modelo de objetos para el documento
--   Validación de si un documento JSON se ajusta a un esquema
--   Conversión automatizada de documentos JSON a y desde representaciones nativas de estos esquemas en los lenguajes de programación usados por los autores de llamadas de las API 
+-    Definiciones de esquema que definen un modelo de objetos para el documento
+-    Validación de si un documento JSON se ajusta a un esquema
+-    Conversión automatizada de documentos JSON a y desde representaciones nativas de estos esquemas en los lenguajes de programación usados por los autores de llamadas de las API 
 
 Las definiciones de esquema usadas con frecuencia son [OpenAPI](https://www.openapis.org/) y el [esquema JSON](http://json-schema.org/), que le permite especificar las definiciones detalladas de las propiedades de un documento, por ejemplo:
--   Conjunto válido de valores para una propiedad, como 0-100 para una propiedad que representa un porcentaje.
--   La definición de las enumeraciones, que se representan como un conjunto de cadenas válidas para una propiedad.
--   Expresión regular para el formato esperado de una cadena. 
+-    Conjunto válido de valores para una propiedad, como 0-100 para una propiedad que representa un porcentaje.
+-    La definición de las enumeraciones, que se representan como un conjunto de cadenas válidas para una propiedad.
+-    Expresión regular para el formato esperado de una cadena. 
 
 Como parte de la documentación de las API de HCN, tenemos previsto publicar el esquema de nuestros documentos JSON como una especificación de OpenAPI. En función de esta especificación, las representaciones específicas del lenguaje del esquema pueden permitir el uso con seguridad de tipos de los objetos de esquema en el lenguaje de programación utilizado por el cliente. 
 

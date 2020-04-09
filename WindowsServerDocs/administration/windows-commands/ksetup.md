@@ -1,24 +1,20 @@
 ---
 title: Ksetup
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4e046f8a-811b-48dc-9a69-18d8e097f353
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 265f67bff65794938485472a41064837551c7699
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b3c61fd81691f9db44330eddbf40d4212d1786ff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374797"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841258"
 ---
 # <a name="ksetup"></a>Ksetup
 
@@ -55,7 +51,7 @@ ksetup
 
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -83,7 +79,7 @@ ksetup
 |[Ksetup:delenctypeattr](ksetup-delenctypeattr.md)|Elimina el atributo de confianza tipos de cifrado del dominio.|
 |/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 **Ksetup** se usa para cambiar la configuración del equipo para buscar dominios Kerberos. En implementaciones que no son de Microsoft, esta información normalmente se mantiene en el archivo Krb5. conf. En los sistemas operativos Windows Server, se mantiene en el registro. Puede usar esta herramienta para modificar esta configuración. Las estaciones de trabajo usan estas opciones para localizar los dominios Kerberos y los controladores de dominio para localizar los dominios Kerberos para las relaciones de confianza entre dominios.
 
@@ -91,6 +87,6 @@ ksetup
 
 El protocolo Kerberos versión 5 es el valor predeterminado para la autenticación de red en equipos que ejecutan Windows XP Professional, Windows Vista y Windows 7. El SSP de Kerberos busca el nombre de dominio del dominio de usuario en el registro y, a continuación, resuelve el nombre en una dirección IP mediante una consulta a un servidor DNS. El protocolo Kerberos puede usar DNS para buscar KDC usando solo el nombre de dominio Kerberos, pero debe configurarse especialmente para ello.
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

@@ -1,24 +1,20 @@
 ---
 title: relog
 description: Aprenda a extraer información de contadores de rendimiento de los archivos de registro de coutner de rendimiento.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7480f6c0-9953-4d70-9b1c-b27e09d8db13
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: daedd85f1557c191a690e7eb750559cfd268d3a0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ecd06b11c2f055761ed06ef6c9332fb491eaaf3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371617"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836188"
 ---
 # <a name="relog"></a>relog
 
@@ -31,7 +27,7 @@ Extrae los contadores de rendimiento de los registros de contadores de rendimien
 relog [<FileName> [<FileName> ...]] [/a] [/c <path> [<path> ...]] [/cf <FileName>] [/f  {bin|csv|tsv|SQL}] [/t <Value>] [/o {OutputFile|DSN!CounterLog}] [/b <M/D/YYYY> [[<HH>:] <MM>:] <SS>] [/e <M/D/YYYY> [[<HH>:] <MM>:] <SS>] [/config {<FileName>|i}] [/q]  
 ```  
 
-### <a name="parameters"></a>Parámetros  
+#### <a name="parameters"></a>Parámetros  
 
 |                                         Parámetro                                          |                                                                                                                                                                  Descripción                                                                                                                                                                   |
 |--------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -44,12 +40,12 @@ relog [<FileName> [<FileName> ...]] [/a] [/c <path> [<path> ...]] [/cf <FileName
 | -o {*OutputFile* \| *"SQL: DSN! Counter_Log*}, donde DSN es un DSN de ODMC definido en el sistema. |                                                   Especifica la ruta de acceso del archivo de salida o la base de datos SQL donde se escribirán los contadores. <br>Nota: para las versiones de 64 bits y 32 bits de relog. exe, debe definir un DSN en el origen de datos ODBC (64 bits y 32 bits, respectivamente).                                                   |
 |                          -b \<*M*/*D*/*yyyy*> [[*HH*:]*mm*:]*SS*                           |                                                                          Especifica la hora de inicio para copiar el primer registro del archivo de entrada. la fecha y la hora deben tener el formato exacto <em>M</em> **/** <em>D</em> **/** <em>YYYYHH</em> **:** <em>mm</em> **:** <em>SS</em>.                                                                          |
 |                          -e \<*M*/*D*/*yyyy*> [[*HH*:]*mm*:]*SS*                           |                                                                           Especifica la hora de finalización para copiar el último registro del archivo de entrada. la fecha y la hora deben tener el formato exacto <em>M</em> **/** <em>D</em> **/** <em>YYYYHH</em> **:** <em>mm</em> **:** <em>SS</em>.                                                                            |
-|                                -config {*FileName* \| *i*}                                 | Especifica la ruta de acceso del archivo de configuración que contiene los parámetros de la línea de comandos. Use *-i* en el archivo de configuración como un marcador de posición para una lista de archivos de entrada que se pueden colocar en la línea de comandos. En la línea de comandos, sin embargo, no deberá usar *i*. También puede usar caracteres comodín, como \*. BLG, para especificar muchos nombres de archivo de entrada. |
+|                                -config {*nombre de archivo* \| *i*}                                 | Especifica la ruta de acceso del archivo de configuración que contiene los parámetros de la línea de comandos. Use *-i* en el archivo de configuración como un marcador de posición para una lista de archivos de entrada que se pueden colocar en la línea de comandos. En la línea de comandos, sin embargo, no es necesario usar *i*. También puede usar caracteres comodín, como \*. BLG, para especificar muchos nombres de archivo de entrada. |
 |                                             -q                                             |                                                                                                                          Muestra los contadores de rendimiento y los intervalos de tiempo de los archivos de registro especificados en el archivo de entrada.                                                                                                                           |
 |                                             -y                                             |                                                                                                                                            Omite preguntar al responder "sí" a todas las preguntas.                                                                                                                                             |
-|                                             /?                                             |                                                                                                                                                      Muestra la ayuda en el símbolo del sistema.                                                                                                                                                      |
+|                                             /?                                             |                                                                                                                                                      Muestra la Ayuda en el símbolo del sistema.                                                                                                                                                      |
 
-## <a name="remarks"></a>Observaciones  
+## <a name="remarks"></a>Comentarios  
 Formato de la ruta de acceso del contador:  
 - El formato general de las rutas de acceso de contador es el siguiente: [\\\<equipo >] \\\<objeto > [\<elemento primario >\\< instancia # Índice >] \\\<contador >] donde los componentes primarios, de instancia, de índice y de contador del formato pueden contener un nombre válido o un carácter comodín. Los componentes equipo, primario, instancia e índice no son necesarios para todos los contadores.  
 - Se determinan las rutas de acceso del contador que se van a usar en función del propio contador. Por ejemplo, el objeto LogicalDisk tiene una instancia <Index>, por lo que debe proporcionar el < #index > o un carácter comodín. Por lo tanto, puede usar el siguiente formato: **\LogicalDisk (\*/\*#\*)** \\\\*  
@@ -74,7 +70,7 @@ Usar la opción **/config** :
 
 Para obtener más información acerca de cómo incorporar **relog** en los scripts de instrumental de administración de Windows (WMI), vea el tema sobre el scripting de WMI en el [sitio web de los kits de recursos de Microsoft Windows](https://go.microsoft.com/fwlink/?LinkId=4665).  
 
-## <a name="BKMK_Examples"></a>Example  
+## <a name="examples"></a><a name="BKMK_Examples"></a>Example  
 Para volver a muestrear los registros de seguimiento existentes a intervalos fijos de 30, enumere las rutas de acceso de contador, los archivos de salida y los formatos:  
 ```  
 relog c:\perflogs\daily_trace_log.blg /cf counter_file.txt /o c:\perflogs\reduced_log.csv /t 30 /f csv  
@@ -89,4 +85,4 @@ relog "c:\perflogs\daily_trace_log.blg" -f sql -o "SQL:sql2016x64odbc!counter_lo
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales  
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  

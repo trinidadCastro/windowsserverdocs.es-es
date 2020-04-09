@@ -1,19 +1,19 @@
 ---
 title: Crear el archivo de respuesta de especialización del sistema operativo
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 299aa38e-28d2-4cbe-af16-5b8c533eba1f
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 4920f9a90bd0190d390a9d35b3d265023d69efac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: be099a234b7e2e73375d23b19161e59876f71d61
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386506"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856508"
 ---
 # <a name="create-os-specialization-answer-file"></a>Crear el archivo de respuesta de especialización del sistema operativo
 
@@ -31,9 +31,9 @@ Puede obtener la función **New-ShieldingDataAnswerFile** de la [Galería de Pow
 Install-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0
 ```
 
-La salida `unattend.xml` se puede empaquetar en los datos de blindaje, junto con artefactos adicionales, para que se pueda usar para crear máquinas virtuales blindadas a partir de plantillas.
+La salida de `unattend.xml` se puede empaquetar en los datos de blindaje, junto con artefactos adicionales, para que se pueda usar para crear máquinas virtuales blindadas a partir de plantillas.
 
-En las secciones siguientes se muestra cómo puede usar los parámetros de función para un archivo `unattend.xml` que contiene varias opciones:
+En las secciones siguientes se muestra cómo puede usar los parámetros de la función para un archivo `unattend.xml` que contiene varias opciones:
 
 - [Archivo de respuesta básico de Windows](#basic-windows-answer-file)
 - [Archivo de respuesta de Windows con Unión a un dominio](#windows-answer-file-with-domain-join)
@@ -76,7 +76,7 @@ New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials
 
 Los siguientes comandos crean un archivo de respuesta de Windows que usa las direcciones IP estáticas proporcionadas en el momento de la implementación por el administrador de tejido, como System Center Virtual Machine Manager.
 
-Virtual Machine Manager proporciona tres componentes a la dirección IP estática mediante el uso de un grupo de direcciones IP: Dirección IPv4, dirección IPv6, dirección de puerta de enlace y dirección DNS. Si desea incluir campos adicionales o requerir una configuración de red personalizada, deberá modificar manualmente el archivo de respuesta generado por el script.
+Virtual Machine Manager proporciona tres componentes a la dirección IP estática mediante un grupo de direcciones IP: dirección IPv4, dirección IPv6, dirección de puerta de enlace y dirección DNS. Si desea incluir campos adicionales o requerir una configuración de red personalizada, deberá modificar manualmente el archivo de respuesta generado por el script.
 
 Las capturas de pantallas siguientes muestran los grupos de direcciones IP que se pueden configurar en Virtual Machine Manager. Estos grupos son necesarios si desea utilizar una dirección IP estática.
 
@@ -92,7 +92,7 @@ Debe configurar el adaptador de red para la máquina virtual. En la captura de p
 
 ![Configurar el hardware para usar la dirección IP estática](../media/Guarded-Fabric-Shielded-VM/guarded-host-unattend-static-ip-address-pool-network-adapter-settings.png)
 
-Después, puede usar el parámetro `-StaticIPPool` para incluir los elementos IP estáticos en el archivo de respuesta. Los parámetros `@IPAddr-1@`, `@NextHop-1-1@` y `@DNSAddr-1-1@` en el archivo de respuesta se reemplazarán por los valores reales que especificó en Virtual Machine Manager en el momento de la implementación.
+A continuación, puede usar el parámetro `-StaticIPPool` para incluir los elementos IP estáticos en el archivo de respuesta. Los parámetros `@IPAddr-1@`, `@NextHop-1-1@`y `@DNSAddr-1-1@` en el archivo de respuesta se reemplazarán por los valores reales que especificó en Virtual Machine Manager en el momento de la implementación.
 
 ```powershell
 $adminCred = Get-Credential -Message "Local administrator account"

@@ -2,21 +2,19 @@
 title: Configuración de redes de área local virtual para Hyper-V
 description: Proporciona instrucciones para configurar una red de área local virtual (VLAN) para que la usen las máquinas virtuales en un host de Hyper-V.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8510a709-001c-4eee-b6d6-c451e8a8a836
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/11/2016
-ms.openlocfilehash: bf40d9ad2612df033db7a7e3b93ca9faf249daf2
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 08c0e5062715ccc11cdedfe228f8cc58f689f555
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465589"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860868"
 ---
 # <a name="configure-virtual-local-area-networks-for-hyper-v"></a>Configuración de redes de área local virtual para Hyper-V
 Las redes de área local virtuales \(VLAN\) ofrecen una manera de aislar el tráfico de red. Las VLAN se configuran en conmutadores y enrutadores que admiten 802.1 q. Si configura varias VLAN y desea que se produzca la comunicación entre ellas, deberá configurar los dispositivos de red para que lo permitan.
@@ -56,6 +54,6 @@ Si la máquina virtual necesita usar más VLAN, realice una de las siguientes ac
 
 - Configure el adaptador de red virtual en el modo de tronco mediante el cmdlet [Set\-VMNetworkAdapterVlan](https://technet.microsoft.com/library/hh848475.aspx) .
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 [Conmutador virtual de Hyper\-V](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/hyper-v-virtual-switch)

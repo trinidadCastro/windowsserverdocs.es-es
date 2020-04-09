@@ -2,22 +2,18 @@
 title: Agregar DirectAccess a una implementación de acceso remoto existente (VPN)
 description: Este tema forma parte de la guía agregar DirectAccess a una implementación de acceso remoto (VPN) existente para Windows Server 2016
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5db01f7-1ae0-46f2-9be7-8d9e121446b2
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1ad1b823cf48a2c322c7ccab1799c76993b1e9bf
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6d948c01721cc960d46da7d026fb4caab12670a6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314813"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854068"
 ---
 # <a name="add-directaccess-to-an-existing-remote-access-vpn-deployment"></a>Agregar DirectAccess a una implementación de acceso remoto existente (VPN)
 
@@ -71,8 +67,8 @@ En la siguiente tabla se recogen los roles y características necesarios en este
   
 |Rol/característica|Compatibilidad con este escenario|  
 |---------|-----------------|  
-|Rol de acceso remoto|El rol se instala y desinstala con la consola del Administrador del servidor o con Windows PowerShell. Este rol incluye tanto DirectAccess (que antes era una característica de Windows Server 2008 R2) como los servicios de enrutamiento y acceso remoto, que antes eran un servicio de rol de Servicios de acceso y directivas de redes (NPAS). El rol de acceso remoto consta de dos componentes:<br /><br />1. DirectAccess y servicios de enrutamiento y acceso remoto (RRAS) VPN: administrados en la consola de administración de acceso remoto.<br />2. enrutamiento de RRAS: administrado en la consola de enrutamiento y acceso remoto.<br /><br />El rol del servidor de acceso remoto depende de las siguientes características del servidor:<br /><br />-Internet Information Services (IIS) servidor Web: se requiere para configurar el servidor de ubicación de red en el servidor de acceso remoto y el sondeo Web predeterminado.<br />-Windows Internal Database: se usa para las cuentas locales en el servidor de acceso remoto.|  
-|Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<br /><br />: De forma predeterminada, en un servidor de acceso remoto, cuando se instala el rol de acceso remoto. Admite la interfaz de usuario de la consola de administración de acceso remoto y cmdlets de Windows PowerShell.<br />-Opcionalmente instalado en un servidor que no ejecuta el rol de servidor de acceso remoto. en cuyo caso se usa para la administración remota de un equipo de acceso remoto que ejecuta DirectAccess y VPN.<br /><br />La característica de herramientas de administración de acceso remoto consiste de los siguientes elementos:<br /><br />-GUI de acceso remoto<br />-Módulo de acceso remoto para Windows PowerShell<br /><br />Las dependencias incluyen:<br /><br />-Consola de administración de directivas de grupo<br />-Kit de administración del administrador de conexiones RAS (CMAK)<br />-Windows PowerShell 3,0<br />-Infraestructura y herramientas de administración de gráficos|  
+|Rol de acceso remoto|El rol se instala y desinstala con la consola del Administrador del servidor o con Windows PowerShell. Este rol incluye tanto DirectAccess (que antes era una característica de Windows Server 2008 R2) como los servicios de enrutamiento y acceso remoto, que antes eran un servicio de rol de Servicios de acceso y directivas de redes (NPAS). El rol de acceso remoto consta de dos componentes:<p>1. DirectAccess y servicios de enrutamiento y acceso remoto (RRAS) VPN: administrados en la consola de administración de acceso remoto.<br />2. enrutamiento de RRAS: administrado en la consola de enrutamiento y acceso remoto.<p>El rol del servidor de acceso remoto depende de las siguientes características del servidor:<p>-Internet Information Services (IIS) servidor Web: se requiere para configurar el servidor de ubicación de red en el servidor de acceso remoto y el sondeo Web predeterminado.<br />-Windows Internal Database: se usa para las cuentas locales en el servidor de acceso remoto.|  
+|Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<p>: De forma predeterminada, en un servidor de acceso remoto, cuando se instala el rol de acceso remoto. Admite la interfaz de usuario de la consola de administración de acceso remoto y cmdlets de Windows PowerShell.<br />-Opcionalmente instalado en un servidor que no ejecuta el rol de servidor de acceso remoto. en cuyo caso se usa para la administración remota de un equipo de acceso remoto que ejecuta DirectAccess y VPN.<p>La característica de herramientas de administración de acceso remoto consiste de los siguientes elementos:<p>-GUI de acceso remoto<br />-Módulo de acceso remoto para Windows PowerShell<p>Las dependencias incluyen:<p>-Consola de administración de directivas de grupo<br />-Kit de administración del administrador de conexiones RAS (CMAK)<br />-Windows PowerShell 3,0<br />-Infraestructura y herramientas de administración de gráficos|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>Requisitos de hardware  
 Los requisitos de hardware para este escenario incluyen los siguientes:  

@@ -1,6 +1,5 @@
 ---
 title: TLS (Schannel SSP)
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: ebd3c40c-b4c0-4f6d-a00c-f90eda4691df
@@ -8,12 +7,12 @@ manager: alanth
 author: justinha
 ms.technology: security-authentication
 ms.date: 05/16/2018
-ms.openlocfilehash: e103e985592e6aed150ccd3e1a87e56f19621dbe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3547c77e8c58bcbb219a7b017c3186f198007805
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403388"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820168"
 ---
 # <a name="tls-schannel-ssp-changes-in-windows-10-and-windows-server-2016"></a>Cambios de TLS (Schannel SSP) en Windows 10 y Windows Server 2016
 
@@ -54,9 +53,9 @@ Windows 10, versión 1507 y Windows Server 2016 agregan opciones de configuraci�
 
 Para obtener más información, consulte [KeyExchangeAlgorithm-Diffie-Hellman clave sizes](tls-registry-settings.md#keyexchangealgorithm---diffie-hellman-key-sizes).
 
-### <a name="sch_use_strong_crypto-option-changes"></a>Cambios de la opción SCH_USE_STRONG_CRYPTO
+### <a name="sch_use_strong_crypto-option-changes"></a>SCH_USE_STRONG_CRYPTO cambios en las opciones
 
-Con Windows 10, versión 1507 y Windows Server 2016, la opción [SCH_USE_STRONG_CRYPTO](https://msdn.microsoft.com/library/windows/desktop/aa379810.aspx) ahora deshabilita los cifrados de los valores NULL, MD5, des y Export.
+Con Windows 10, versión 1507 y Windows Server 2016, [SCH_USE_STRONG_CRYPTO](https://msdn.microsoft.com/library/windows/desktop/aa379810.aspx) opción ahora deshabilita los cifrados de los valores NULL, MD5, des y Export.
 
 ## <a name="elliptical-curve-changes"></a>Cambios de curva elíptica
 
@@ -81,7 +80,7 @@ Windows 10, versión 1607 y Windows Server 2016 agregan compatibilidad con DTLS 
 
 Windows 10, versión 1607 y Windows Server 2016 agregan la configuración del registro del tamaño del grupo de subprocesos utilizado para administrar los protocolos de enlace TLS para HTTP. Sist.
 
-Ruta de acceso del registro: 
+Ruta del Registro: 
 
 HKLM\SYSTEM\CurrentControlSet\Control\LSA
 
@@ -110,7 +109,7 @@ Windows 10, versión 1507 y Windows Server 2016 proporcionan un 30% más de rean
 
 ## <a name="session-hash-and-extended-master-secret-extension"></a>Hash de sesión y extensión secreta maestra extendida
 
-Windows 10, versión 1507 y Windows Server 2016 agregan compatibilidad con RFC 7627: Hash de sesión de seguridad de la capa de transporte (TLS) y extensión de secreto principal extendido.
+Windows 10, versión 1507 y Windows Server 2016 agregan compatibilidad con RFC 7627: hash de sesión de seguridad de la capa de transporte (TLS) y extensión de secreto principal extendido.
 
 Debido a este cambio, Windows 10 y Windows Server 2016 requieren actualizaciones de [proveedor de SSL de CNG](https://msdn.microsoft.com/library/windows/desktop/ff468652.aspx) de terceros para admitir NCRYPT_SSL_INTERFACE_VERSION_3 y para describir esta nueva interfaz.
 
@@ -127,7 +126,7 @@ En TLS 1,2, el cliente usa la [extensión "signature_algorithms"](https://tools.
 
 "Si el cliente proporcionó una extensión" signature_algorithms ", todos los certificados proporcionados por el servidor deben estar firmados por un par de algoritmos hash/firma que aparezca en esa extensión".
 
-En la práctica, algunos clientes TLS de terceros no cumplen con la RFC 1,2 de TLS y no incluyen todos los pares firmados y algoritmos hash que están dispuestos a aceptar en la extensión "signature_algorithms" u omiten la extensión por completo (el último indica a servidor que el cliente solo admite SHA1 con RSA, DSA o ECDSA.
+En la práctica, algunos clientes TLS de terceros no cumplen con la RFC 1,2 de TLS y no incluyen todos los pares firmados y algoritmos hash que están dispuestos a aceptar en la extensión "signature_algorithms" u omiten la extensión por completo (la última indica al servidor que el cliente solo admite SHA1 con RSA, DSA o ECDSA).
 
 A menudo, un servidor TLS solo tiene un certificado configurado por extremo, lo que significa que el servidor no siempre puede proporcionar un certificado que cumpla los requisitos del cliente.
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: a0f7bb11-47a5-47ff-a70c-9e6353382b39
 title: Administración de riesgos con control de acceso condicional
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e73cf77e9590496f0ff3f881fd8ac4556450b5f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 719c8ad0b39ccb4e252243e64385b12f8dbe6a28
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357758"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816228"
 ---
 # <a name="manage-risk-with-conditional-access-control"></a>Administración de riesgos con control de acceso condicional
 
@@ -25,7 +24,7 @@ ms.locfileid: "71357758"
 
 -   [Administración de riesgos con Access Control condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
 
-## <a name="BKMK_1"></a>Conceptos clave: control de acceso condicional en AD FS
+## <a name="key-concepts---conditional-access-control-in-ad-fs"></a><a name="BKMK_1"></a>Conceptos clave: control de acceso condicional en AD FS
 La función general de AD FS es emitir un token de acceso que contenga un conjunto de notificaciones. La decisión con respecto a las notificaciones que AD FS acepta y luego emite se rige por las reglas de notificación.
 
 El control de acceso en AD FS se implementa con reglas de notificación de autorización de emisión que se usan para emitir un permiso o denegar las notificaciones que determinarán si se permitirá a un usuario o a un grupo de usuarios acceder a los recursos protegidos AD FS. Las reglas de autorización solo se pueden establecer en relaciones de confianza para usuario autenticado.
@@ -36,7 +35,7 @@ El control de acceso en AD FS se implementa con reglas de notificación de autor
 |Permitir acceso a los usuarios con esta notificación entrante|Si el tipo de notificación entrante es igual a *tipo de notificación especificado* y el valor es igual a *valor de notificación especificado*, emitir una notificación con un valor igual a *Permitir*|
 |Denegar acceso a los usuarios con esta notificación entrante|Si el tipo de notificación entrante es igual a *tipo de notificación especificado* y el valor es igual a *valor de notificación especificado*, emitir una notificación con un valor igual a *Denegar*|
 
-Para obtener más información sobre estas opciones y la lógica de regla, consulte [When to Use an Authorization Claim Rule](https://technet.microsoft.com/library/ee913560.aspx).
+Para obtener más información acerca de estas opciones y lógica de reglas, vea [Cuándo usar una regla de notificación de autorización](https://technet.microsoft.com/library/ee913560.aspx).
 
 En AD FS en Windows Server 2012 R2, el control de acceso se ha mejorado con varios factores, incluidos los datos de usuario, dispositivo, ubicación y autenticación. Esto es posible porque hay una gran variedad de tipos de notificación disponibles para las reglas de notificación de autorización.  En otras palabras, en AD FS en Windows Server 2012 R2, puede aplicar el control de acceso condicional en función de la identidad del usuario o la pertenencia a grupos, la ubicación de red, el dispositivo (si está unido al área de trabajo, para obtener más información, consulte [unirse al área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en las aplicaciones](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)de la empresa) y
 
@@ -56,15 +55,15 @@ En la tabla siguiente se incluyen todos los tipos de notificaciones disponibles 
 
 |Tipo de notificación|Descripción|
 |--------------|---------------|
-|Dirección de correo electrónico|Dirección de correo electrónico del usuario|
-|Nombre propio|Nombre propio del usuario|
-|Nombre|Nombre del usuario|
+|Email Address|Dirección de correo electrónico del usuario|
+|Nombre|Nombre propio del usuario|
+|Name|Nombre del usuario|
 |UPN|Nombre principal de usuario (UPN) del usuario|
 |Nombre común|Nombre común del usuario|
 |Dirección de correo electrónico para AD FS 1|Dirección de correo electrónico del usuario al interoperar con AD FS 1.1 o AD FS 1.0|
 |Grupo|Grupo al que pertenece el usuario|
 |UPN para AD FS 1|UPN del usuario al interoperar con AD FS 1.1 o AD FS 1.0|
-|Rol|Rol que tiene el usuario|
+|Role|Rol que tiene el usuario|
 |Apellido|Apellido del usuario|
 |PPID|Identificador privado del usuario|
 |Id. de nombre|Identificador de nombre SAML del usuario|
@@ -87,7 +86,7 @@ En la tabla siguiente se incluyen todos los tipos de notificaciones disponibles 
 |IP de cliente reenviada|Dirección IP del usuario|
 |Aplicación cliente|Tipo de aplicación cliente|
 |Agente de usuario del cliente|Tipo de dispositivo usado por el cliente para tener acceso a la aplicación|
-|IP del cliente|Dirección IP del cliente|
+|¿Dirección IP de cliente|Dirección IP del cliente|
 |Ruta de acceso de extremo|Ruta de acceso absoluta al extremo, que se puede usar para determinar si un cliente es activo o pasivo|
 |Proxy|Nombre DNS del servidor proxy de federación que pasó la solicitud|
 |Identificador de la aplicación|Identificador de la aplicación de confianza para usuario autenticado|
@@ -97,7 +96,7 @@ En la tabla siguiente se incluyen todos los tipos de notificaciones disponibles 
 |Uso mejorado de clave|Describe uno de los usos mejorados de clave del certificado.|
 |Emisor|Nombre de la entidad de certificación que emitió el certificado X.509|
 |Nombre del emisor|Nombre distintivo del emisor del certificado|
-|Uso de la clave|Uno de los usos de clave del certificado|
+|Key Usage|Uno de los usos de clave del certificado|
 |Hasta el|Fecha en hora local después de la cual un certificado ya no es válido|
 |A partir del|Fecha en hora local en la cual un certificado empieza a ser válido|
 |Directivas de certificado|Directivas en virtud de las cuales se emitió el certificado|
@@ -108,10 +107,10 @@ En la tabla siguiente se incluyen todos los tipos de notificaciones disponibles 
 |Algoritmo de firma|Algoritmo usado para crear la firma de un certificado|
 |Firmante|Firmante del certificado|
 |Identificador de clave del firmante|Identificador de clave del firmante del certificado|
-|Nombre del firmante|Nombre distintivo del firmante de un certificado|
+|Nombre de sujeto|Nombre distintivo del firmante de un certificado|
 |Nombre de plantilla V2|Es el nombre de la plantilla de certificado de la versión 2 que se usa al emitir o renovar un certificado. Se trata de un valor específico de Microsoft.|
 |Nombre de plantilla V1|Es el nombre de la plantilla de certificado de la versión 1 que se usa al emitir o renovar un certificado. Se trata de un valor específico de Microsoft.|
-|Huella digital|Huella digital del certificado|
+|Thumbprint|Huella digital del certificado.|
 |Versión X.509|Versión en formato X.509 del certificado|
 |Dentro de la red corporativa|Se utiliza para indicar si una solicitud tiene su origen dentro de la red corporativa.|
 |Hora de expiración de la contraseña|Se usa para mostrar la hora en la que expirará la contraseña.|
@@ -119,7 +118,7 @@ En la tabla siguiente se incluyen todos los tipos de notificaciones disponibles 
 |Dirección URL de actualización de contraseña|Se usa para mostrar la dirección web del servicio de actualización de contraseña.|
 |Referencias de métodos de autenticación|Se usa para indicar los métodos de autenticación que se usan para autenticar al usuario.|
 
-## <a name="BKMK_2"></a>Administración de riesgos con Access Control condicional
+## <a name="managing-risk-with-conditional-access-control"></a><a name="BKMK_2"></a>Administración de riesgos con Access Control condicional
 Con la configuración disponible hay muchas maneras de administrar los riesgos mediante la implementación del control de acceso condicional.
 
 ### <a name="common-scenarios"></a>Escenarios habituales

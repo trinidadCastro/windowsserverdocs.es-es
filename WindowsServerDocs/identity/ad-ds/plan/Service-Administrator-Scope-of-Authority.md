@@ -1,7 +1,6 @@
 ---
 ms.assetid: da7b6dcf-53ec-4394-88c0-c087d92f3893
 title: Ámbito de autoridad del administrador de servicios
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2c54279f591545c6207dfec1536f16e29e69aa99
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3a891ade46fdee1dffc35df31a11c6d138e71e8a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408667"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821898"
 ---
 # <a name="service-administrator-scope-of-authority"></a>Ámbito de autoridad del administrador de servicios
 
@@ -38,7 +37,7 @@ Por esta razón, los grupos que almacenan datos en unidades organizativas (OU) e
   
 -   Se puede confiar en el propietario del bosque para que actúe en interés del grupo y no tenga razón para que actúe de forma malintencionada con respecto al grupo.  
   
--   El propietario del bosque restringe de forma adecuada el acceso físico a los controladores de dominio. Los controladores de dominio dentro de un bosque no se pueden aislar entre sí. Es posible que un atacante que tenga acceso físico a un solo controlador de dominio realice cambios sin conexión en la base de datos de directorio y, al hacerlo, interfiera con el funcionamiento de cualquier dominio del bosque, vea o manipule los datos almacenados en cualquier lugar del bosque. y ver o manipular los datos almacenados en cualquier equipo unido al bosque. Por esta razón, el acceso físico a los controladores de dominio debe estar restringido a personal de confianza.  
+-   El propietario del bosque restringe de forma adecuada el acceso físico a los controladores de dominio. Los controladores de dominio dentro de un bosque no se pueden aislar entre sí. Es posible que un atacante que tenga acceso físico a un solo controlador de dominio realice cambios sin conexión en la base de datos de directorio y, al hacerlo, interfiera con el funcionamiento de cualquier dominio del bosque, vea o manipule los datos almacenados en cualquier lugar del bosque y vea o manipule los datos almacenados en cualquier equipo unido al bosque. Por esta razón, el acceso físico a los controladores de dominio debe estar restringido a personal de confianza.  
   
 -   Comprende y acepta el riesgo potencial de que los administradores de servicios de confianza se puedan convertir en poner en peligro la seguridad del sistema.  
   

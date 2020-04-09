@@ -1,24 +1,20 @@
 ---
 title: Escenarios de inicio de sesión de Windows
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-windows-auth
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 66b7c568-67b7-4ac9-a479-a5a3b8a66142
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 07bfb538e1b43fc0c734b3c59b906c027ef985c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9a953b22b39a20557103fa84a5d6d5e42e753444
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403292"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861708"
 ---
 # <a name="windows-logon-scenarios"></a>Escenarios de inicio de sesión de Windows
 
@@ -44,7 +40,7 @@ En este tema se describen los siguientes escenarios:
 
 -   [Inicio de sesión biométrico](#BKMK_BioLogon)
 
-## <a name="BKMK_InteractiveLogon"></a>Inicio de sesión interactivo
+## <a name="interactive-logon"></a><a name="BKMK_InteractiveLogon"></a>Inicio de sesión interactivo
 El proceso de inicio de sesión comienza cuando un usuario escribe las credenciales en el cuadro de diálogo entrada de credenciales, o cuando el usuario inserta una tarjeta inteligente en el lector de tarjeta inteligente, o cuando el usuario interactúa con un dispositivo biométrico. Los usuarios pueden realizar un inicio de sesión interactivo mediante una cuenta de usuario local o una cuenta de dominio para iniciar sesión en un equipo.
 
 El siguiente diagrama muestra los elementos de inicio de sesión interactivos y el proceso de inicio de sesión.
@@ -53,7 +49,7 @@ El siguiente diagrama muestra los elementos de inicio de sesión interactivos y 
 
 **Arquitectura de autenticación de cliente de Windows**
 
-### <a name="BKMK_LocaDomainLogon"></a>Inicio de sesión local y de dominio
+### <a name="local-and-domain-logon"></a><a name="BKMK_LocaDomainLogon"></a>Inicio de sesión local y de dominio
 Las credenciales que el usuario presenta para un inicio de sesión de dominio contienen todos los elementos necesarios para un inicio de sesión local, como el nombre de cuenta, la contraseña o el certificado, y Active Directory información del dominio. El proceso confirma la identificación del usuario en la base de datos de seguridad del equipo local del usuario o en un dominio de Active Directory. Este proceso de inicio de sesión obligatorio no se puede desactivar para los usuarios de un dominio.
 
 Los usuarios pueden realizar un inicio de sesión interactivo en un equipo de dos maneras:
@@ -74,12 +70,12 @@ Un inicio de sesión local concede a un usuario permiso para obtener acceso a lo
 
 Un inicio de sesión de dominio concede a un usuario permiso para obtener acceso a recursos locales y de dominio. Un inicio de sesión de dominio requiere que el usuario tenga una cuenta de usuario en Active Directory. El equipo debe tener una cuenta en el dominio de Active Directory y estar físicamente conectado a la red. Los usuarios también deben tener derechos de usuario para iniciar sesión en un equipo local o en un dominio. La información de la cuenta de usuario de dominio y la información de pertenencia a grupos se utilizan para administrar el acceso a los recursos locales y de dominio.
 
-### <a name="BKMK_RemoteLogon"></a>Inicio de sesión remoto
+### <a name="remote-logon"></a><a name="BKMK_RemoteLogon"></a>Inicio de sesión remoto
 En Windows, el acceso a otro equipo a través del inicio de sesión remoto se basa en el Protocolo de escritorio remoto (RDP). Debido a que el usuario ya debe haber iniciado sesión correctamente en el equipo cliente antes de intentar una conexión remota, los procesos de inicio de sesión interactivos han finalizado correctamente.
 
 RDP administra las credenciales que el usuario especifica mediante el Escritorio remoto cliente. Dichas credenciales están pensadas para el equipo de destino y el usuario debe tener una cuenta en ese equipo de destino. Además, el equipo de destino debe estar configurado para aceptar una conexión remota. Las credenciales del equipo de destino se envían para intentar realizar el proceso de autenticación. Si la autenticación es correcta, el usuario se conecta a recursos locales y de red a los que se puede tener acceso mediante las credenciales proporcionadas.
 
-## <a name="BKMK_NetworkLogon"></a>Inicio de sesión de red
+## <a name="network-logon"></a><a name="BKMK_NetworkLogon"></a>Inicio de sesión de red
 Solo se puede usar un inicio de sesión de red después de que se haya realizado la autenticación del usuario, el servicio o el equipo. Durante el inicio de sesión de red, el proceso no utiliza los cuadros de diálogo de entrada de credenciales para recopilar datos. En su lugar, se usan credenciales establecidas previamente u otro método para recopilar credenciales. Este proceso confirma la identidad del usuario para cualquier servicio de red al que el usuario está intentando obtener acceso. Este proceso suele ser invisible para el usuario a menos que se deban proporcionar credenciales alternativas.
 
 Para proporcionar este tipo de autenticación, el sistema de seguridad incluye estos mecanismos de autenticación:
@@ -96,7 +92,7 @@ Para proporcionar este tipo de autenticación, el sistema de seguridad incluye e
 
 Para obtener información sobre los elementos y los procesos, consulte el diagrama de inicio de sesión interactivo anterior.
 
-## <a name="BKMK_SmartCardLogon"></a>Inicio de sesión con tarjeta inteligente
+## <a name="smart-card-logon"></a><a name="BKMK_SmartCardLogon"></a>Inicio de sesión con tarjeta inteligente
 Las tarjetas inteligentes solo pueden usarse para iniciar sesión en cuentas de dominio, no en cuentas locales. La autenticación mediante tarjeta inteligente requiere el uso del Protocolo de autenticación Kerberos. Introducido en el servidor de Windows 2000, en los sistemas operativos basados en Windows, se implementa una extensión de clave pública para la solicitud de autenticación inicial del protocolo Kerberos. A diferencia de la criptografía de clave secreta compartida, la criptografía de clave pública es asimétrica, es decir, se necesitan dos claves diferentes: una para cifrar, otra para descifrar. Juntas, las claves necesarias para realizar ambas operaciones componen un par de claves privada y pública.
 
 Para iniciar una sesión de inicio de sesión típica, el usuario debe demostrar su identidad proporcionando información que solo el usuario y la infraestructura de protocolo Kerberos subyacente conocen. La información secreta es una clave compartida criptográfica derivada de la contraseña del usuario. Una clave secreta compartida es simétrica, lo que significa que se utiliza la misma clave para el cifrado y el descifrado.
@@ -111,7 +107,7 @@ Cuando se usa una tarjeta inteligente en lugar de una contraseña, un par de cla
 
 Para obtener más información acerca del proceso de inicio de sesión con tarjeta inteligente en Windows, consulte Cómo funciona el inicio de [sesión con tarjeta inteligente en Windows](https://technet.microsoft.com/library/ff404285.aspx).
 
-## <a name="BKMK_BioLogon"></a>Inicio de sesión biométrico
+## <a name="biometric-logon"></a><a name="BKMK_BioLogon"></a>Inicio de sesión biométrico
 Un dispositivo se usa para capturar y compilar una característica digital de un artefacto, como una huella digital. Esta representación digital se compara a continuación con una muestra del mismo artefacto y, cuando las dos se comparan correctamente, se puede producir la autenticación. Los equipos que ejecutan cualquiera de los sistemas operativos designados en la lista **se aplica a** al principio de este tema se pueden configurar para aceptar esta forma de inicio de sesión. Sin embargo, si el inicio de sesión biométrico solo está configurado para el inicio de sesión local, el usuario debe presentar credenciales de dominio al obtener acceso a un dominio de Active Directory.
 
 ## <a name="additional-resources"></a>Recursos adicionales

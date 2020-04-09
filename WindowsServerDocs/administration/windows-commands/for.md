@@ -1,24 +1,20 @@
 ---
 title: para
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e275726c-035f-4a74-8062-013c37f5ded1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db0bf54e35e4226cb020b040d5fc36ddd88dc02b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7040e4cb8e0f38e58ce5e868535dcfb2d897fbd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377125"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844538"
 ---
 # <a name="for"></a>para
 
@@ -34,7 +30,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -42,9 +38,9 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 |(\<Set >)|Obligatorio. Especifica uno o más archivos, directorios o cadenas de texto, o un intervalo de valores en el que se ejecuta el comando. Los paréntesis son obligatorios.|
 |\<> de comandos|Obligatorio. Especifica el comando que se desea llevar a cabo en cada archivo, directorio o cadena de texto, o en el intervalo de valores incluidos en el *conjunto*.|
 |\<CommandLineOptions >|Especifica las opciones de línea de comandos que desea utilizar con el comando especificado.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 - Usar **para**
 
@@ -104,17 +100,17 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     Las sintaxis son:  
     ```
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in ("<LiteralString>") do <Command> [<CommandLineOptions>]
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in ('<Command>') do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in (<LiteralString>) do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in ('<Command>') do <Command> [<CommandLineOptions>]
     ```  
     El argumento *set* especifica uno o más nombres de archivo. Cada archivo se abre, se lee y se procesa antes de pasar al siguiente archivo del *conjunto*. Para invalidar el comportamiento de análisis predeterminado, especifique *ParsingKeywords*. Se trata de una cadena entre comillas que contiene una o más palabras clave para especificar diferentes opciones de análisis.
 
     Si usa la opción **usebackq** , use una de las siguientes sintaxis:  
     ```
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in ("<Set>") do <Command> [<CommandLineOptions>]
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in ('<LiteralString>') do <Command> [<CommandLineOptions>]
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in (`<Command>`) do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in ('<LiteralString>') do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in (`<Command>`) do <Command> [<CommandLineOptions>]
     ```  
     En la tabla siguiente se enumeran las palabras clave de análisis que puede usar para *ParsingKeywords*.  
 
@@ -133,7 +129,7 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     |Variable con modificador|Descripción|
     |----------------------|-----------|
-    |% ~ I|Expande **% I** que quita las comillas adyacentes ("").|
+    |% ~ I|Expande **% I** que quita las comillas adyacentes ().|
     |% ~ fI|Expande **% I** a un nombre de ruta de acceso completo.|
     |% ~ dI|Expande **% I** solo a una letra de unidad.|
     |% ~ pI|Expande **% I** a solo una ruta de acceso.|
@@ -160,12 +156,12 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
     Mediante el uso de nombres de variables en mayúsculas como **% I**, puede hacer que el código sea más legible y evitar la confusión con los modificadores, que no distinguen mayúsculas de minúsculas.
 - Analizar una cadena
 
-  Puede usar la lógica **de análisis de for/f** en una cadena inmediata ajustando *\<LiteralString\>* en: comillas dobles (*sin* "usebackq") o entre comillas simples (*con* "usebackq"), por ejemplo, ("String") o ("String"). *\<\>LiteralString* se trata como una sola línea de entrada de un archivo. Al analizar *\<\>LiteralString* entre comillas dobles, los símbolos de comando (como **\\ \& \|** \> \< \^) se tratan como caracteres ordinarios.
+  Puede usar la lógica **de análisis de for/f** en una cadena inmediata ajustando *\<LiteralString\>* en: comillas dobles (*sin* usebackq) o entre comillas simples (*con* usebackq) (por ejemplo, (String) o (' String '). *\<\>LiteralString* se trata como una sola línea de entrada de un archivo. Al analizar *\<\>LiteralString* entre comillas dobles, los símbolos de comando (como **\\ \& \|** \> \< \^) se tratan como caracteres ordinarios.
 - Resultados de análisis
 
   Puede usar el comando **for/f** para analizar la salida de un comando colocando un *\>de comando\<* entre comillas entre paréntesis. Se trata como una línea de comandos, que se pasa a un archivo CMD. exe secundario. La salida se captura en la memoria y se analiza como si se tratase de un archivo.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para utilizar **para** en un archivo por lotes, use la siguiente sintaxis:
 ```
@@ -179,17 +175,17 @@ En el ejemplo anterior, cada archivo que tiene la extensión. doc o. txt en el d
 
 Para analizar un archivo, omitiendo las líneas comentadas, escriba:
 ```
-for /f "eol=; tokens=2,3* delims=," %i in (myfile.txt) do @echo %i %j %k
+for /f eol=; tokens=2,3* delims=, %i in (myfile.txt) do @echo %i %j %k
 ```
-Este comando analiza cada línea en el archivo. txt. Omite las líneas que comienzan por un punto y coma y pasa el segundo y el tercer token de cada línea al cuerpo **for** (los tokens se delimitan mediante comas o espacios). El cuerpo de la instrucción **for** hace referencia a **% i** para obtener el segundo token, **% j** para obtener el tercer token y **% k** para obtener todos los tokens restantes. Si los nombres de archivo que proporciona contienen espacios, utilice comillas alrededor del texto (por ejemplo, "nombre de archivo"). Para usar comillas, debe utilizar **usebackq**. De lo contrario, las comillas se interpretan como la definición de una cadena literal que se va a analizar.
+Este comando analiza cada línea en el archivo. txt. Omite las líneas que comienzan por un punto y coma y pasa el segundo y el tercer token de cada línea al cuerpo **for** (los tokens se delimitan mediante comas o espacios). El cuerpo de la instrucción **for** hace referencia a **% i** para obtener el segundo token, **% j** para obtener el tercer token y **% k** para obtener todos los tokens restantes. Si los nombres de archivo que proporciona contienen espacios, utilice comillas alrededor del texto (por ejemplo, nombre de archivo). Para usar comillas, debe utilizar **usebackq**. De lo contrario, las comillas se interpretan como la definición de una cadena literal que se va a analizar.
 
-**% i** se declaró explícitamente en la instrucción **for** . **% j** y **% k** se declaran implícitamente mediante **tokens =** . Puede usar **tokens =** para especificar hasta 26 tokens, siempre que no se intente declarar una variable mayor que la letra "z" o "z".
+**% i** se declaró explícitamente en la instrucción **for** . **% j** y **% k** se declaran implícitamente mediante **tokens =** . Puede usar **tokens =** para especificar hasta 26 tokens, siempre que no se intente declarar una variable superior a la letra Z o z.
 
 En el ejemplo siguiente se enumeran los nombres de las variables de entorno en el entorno actual. Para analizar la salida de un comando colocando el *conjunto* entre paréntesis, escriba:
 ```
-for /f "usebackq delims==" %i in ('set') do @echo %i 
+for /f usebackq delims== %i in ('set') do @echo %i 
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

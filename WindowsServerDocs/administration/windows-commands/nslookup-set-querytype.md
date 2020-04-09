@@ -1,24 +1,20 @@
 ---
 title: nslookup set querytype
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5af54ac5-fc1a-4af6-977b-f8e97c8eba90
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc0eb19fd66e738b4bfc110a2bbc172153a12d98
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1c066277a22325e5db8383f58cda31038aa656e0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372903"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838438"
 ---
 # <a name="nslookup-set-querytype"></a>nslookup set querytype
 
@@ -29,7 +25,7 @@ Cambia el tipo de registro de recursos de la consulta.
 ```
 set querytype=<ResourceRecordtype>
 ```
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 <ResourceRecordtype> especifica un tipo de registro de recursos DNS. El tipo de registro de recursos predeterminado es. En la tabla siguiente se enumeran los valores válidos para este comando.
 
 | Valor |                                                   Descripción                                                   |
@@ -46,7 +42,7 @@ set querytype=<ResourceRecordtype>
 |  MX   |                                          Especifica el intercambiador de correo.                                          |
 |  NS   |                                 Especifica un servidor de nombres DNS para la zona con nombre.                                 |
 |  ANOTA  | Especifica un nombre de equipo si la consulta es una dirección IP; de lo contrario, especifica el puntero a otra información. |
-|  Oriente  |                                Especifica el inicio de autoridad de una zona DNS.                                 |
+|  SOA  |                                Especifica el inicio de autoridad de una zona DNS.                                 |
 |  TXT  |                                         Especifica la información de texto.                                         |
 |  UID  |                                         Especifica el identificador de usuario.                                          |
 | UINFO |                                         Especifica la información del usuario.                                         |
@@ -54,9 +50,8 @@ set querytype=<ResourceRecordtype>
 | {ayuda |                                                       ?}                                                        |
 
 Muestra un breve resumen de los subcomandos de <strong>nslookup</strong>
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 - El comando <strong>set Type</strong> realiza la misma función que el comando <strong>set QueryType</strong> .
 - Para obtener más información acerca de los tipos de registro de recursos, consulte la solicitud de comentarios (RFC) 1035.
-  ## <a name="additional-references"></a>referencias adicionales
-  <a href="command-line-syntax-key.md" data-raw-source="[Command-Line Syntax Key](command-line-syntax-key.md)">Clave de sintaxis de línea de comandos</a>
-  <a href="nslookup-set-type.md" data-raw-source="[nslookup set type](nslookup-set-type.md)">tipo de conjunto nslookup</a>
+  ## <a name="additional-references"></a>Referencias adicionales
+  < a href = Command-Line-Syntax-key.md Data-RAW-source =- [línea de comandos key](command-line-syntax-key.md)> sintaxis de la línea de comandos</a> < a href = nslookup-set-Type.MD Data-RAW-source =[nslookup Set Type](nslookup-set-type.md)> nslookup Set Type</a>

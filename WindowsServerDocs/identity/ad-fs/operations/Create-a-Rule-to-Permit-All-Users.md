@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8c179884-f0d9-4c7a-973d-820119cf3c38
 title: Crear una regla para permitir a todos los usuarios
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1356218c5f9f47073f007286e8acfdf4c3608b73
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 894857813115002f3998a9ab5000d57b944fd448
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407627"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816788"
 ---
 # <a name="create-a-rule-to-permit-all-users"></a>Crear una regla para permitir a todos los usuarios
 
@@ -24,7 +23,7 @@ Puede usar reglas de autorización adicionales para restringir aún más el acce
   
 Puede usar los procedimientos siguientes para crear una regla de notificaciones con el complemento de administración de AD FS\-en.  
   
-El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477). 
+La pertenencia al grupo **Administradores** o equivalente en el equipo local es el requisito mínimo necesario para completar este procedimiento.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477). 
 
 ## <a name="to-create-a-rule-to-permit-all-users-in-windows-server-2016"></a>Para crear una regla que permita a todos los usuarios de Windows Server 2016
 

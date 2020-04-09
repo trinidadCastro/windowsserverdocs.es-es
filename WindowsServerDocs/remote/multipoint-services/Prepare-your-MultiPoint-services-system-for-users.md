@@ -1,24 +1,20 @@
 ---
 title: Preparación del sistema de Windows MultiPoint Services para los usuarios
 description: Tema de navegación para la planeación de la administración de usuarios en Multipoint Services
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e392f423-a64b-4825-91ab-334058721c4d
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 2323e23c91e4e4bdfa98654ccf3ab32b2eb36e53
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b9bfb245277439ce28c2993534abd817d45eee8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405030"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853368"
 ---
 # <a name="prepare-your-multipoint-services-system-for-users"></a>Preparación del sistema Multipoint Services para los usuarios
 Después de instalar y configurar Multipoint Services y realizar las configuraciones de hardware y configuración adicionales, está listo para proporcionar a los usuarios acceso al sistema. Tendrá que planear y crear cuentas de usuario. En algunos entornos, también debe configurar estaciones para el inicio de sesión automático y permitir varias sesiones para las cuentas de usuario compartidas. Además, debe decidir cómo configurar el uso compartido de archivos para los usuarios. Todos estos temas se tratan en esta sección.  

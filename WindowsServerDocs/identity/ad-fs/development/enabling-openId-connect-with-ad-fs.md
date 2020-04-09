@@ -1,7 +1,6 @@
 ---
 ms.assetid: d282bb4e-38a0-4c7c-83d8-f6ea89278057
 title: Compilación de una aplicación web con OpenID Connect con AD FS 2016 y versiones posteriores
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9b3d64558c27e7b4bda20b6af27e02d55431c94d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 49d952a49cf474708f57a0ae2a7760d2470af607
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358791"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857498"
 ---
 # <a name="build-a-web-application-using-openid-connect-with-ad-fs-2016-and-later"></a>Compilación de una aplicación web con OpenID Connect con AD FS 2016 y versiones posteriores
 
@@ -34,13 +33,13 @@ En la siguiente sección se describe cómo configurar el grupo de aplicaciones e
 
 1.  En administración de AD FS, haga clic con el botón derecho en grupos de aplicaciones y seleccione **Agregar grupo de aplicaciones**.  
 
-2.  En el Asistente para grupos de aplicaciones, en nombre, escriba **ADFSSSO** y **, en aplicaciones cliente-servidor** , seleccione el **explorador Web que tiene acceso a una plantilla de aplicación web** .  Haz clic en **Siguiente**.
+2.  En el Asistente para grupos de aplicaciones, en nombre, escriba **ADFSSSO** y **, en aplicaciones cliente-servidor** , seleccione el **explorador Web que tiene acceso a una plantilla de aplicación web** .  Haga clic en **Siguiente**.
 
     ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_1.PNG)  
 
 3.  Copie el valor del **identificador de cliente** .  Se usará más adelante como valor de ida: ClientId en el archivo Web. config de aplicaciones.  
 
-4.  Escriba lo siguiente para el **URI de redirección:**  -  **https://localhost:44320/** .  Haz clic en **Agregar**. Haz clic en **Siguiente**.  
+4.  Escriba lo siguiente en **URI de redirección:**  -  **https://localhost:44320/** .  Haga clic en **Agregar**. Haga clic en **Siguiente**.  
 
     ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_2.PNG)  
 

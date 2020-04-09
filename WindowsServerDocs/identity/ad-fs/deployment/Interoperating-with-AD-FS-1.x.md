@@ -1,7 +1,6 @@
 ---
 ms.assetid: 97999892-29c6-4076-be19-5e5259d8ada6
 title: Implementación de servidores de federación
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: f2aaca5ffc846c41af82c276750c564db38b5020
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 800c7fc23c9b126a17e54311fc6df0d3dcf36b4c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359511"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855368"
 ---
 # <a name="interoperating-with-ad-fs-1x"></a>Interoperabilidad con AD FS 1.x
 
-Para la interoperabilidad entre Servicios de federación de Active Directory (AD FS) \(AD FS\) en Windows Server® 2012 y AD FS 1. *x*, realice una o varias de las siguientes tareas, en función de las necesidades de su organización:  
+Para la interoperabilidad entre Servicios de federación de Active Directory (AD FS) \(AD FS\) en Windows Server&reg; 2012 y AD FS 1. *x*, realice una o varias de las siguientes tareas, en función de las necesidades de su organización:  
   
 -   Planee la interoperabilidad entre AD FS en Windows Server 2012 y versiones anteriores de AD FS y obtenga más información sobre el tipo de notificaciones de identificador de nombre. Para obtener más información, consulte [planificación de interoperabilidad con AD FS 1. x](https://technet.microsoft.com/library/ff678040.aspx).  
   
@@ -34,9 +33,9 @@ Aunque la mayoría de las AD FS 1. la configuración de la Servicio de federaci�
 |Configuración de Servicio de federación de AD FS 1. x|AD FS equivalente Servicio de federación en el valor 2012 de Windows Server  
 |----------------------------------------|---------------------------------------------------------------------------------------------------------- 
 |Asociado de cuenta|Confianza de proveedor de notificaciones  
-|Asociado de recurso|Confianza para usuario autenticado 
-|Aplicación|Confianza para usuario autenticado  
-|Propiedades de la aplicación|Propiedades de la relación de confianza para usuario autenticado  
+|Asociado de recurso|Relación de usuario de confianza 
+|Aplicación|Relación de usuario de confianza  
+|Administrar las propiedades de la aplicación|Propiedades de la relación de confianza para usuario autenticado  
 |Dirección URL de la aplicación|Identificador de usuario de confianza y dirección URL de extremo pasivo de Federación de WS\-  
 |URI Servicio de federación|Identificador del Servicio de federación  
 |Servicio de federación dirección URL del extremo|URL de extremo pasivo de Federación de WS\-  

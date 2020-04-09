@@ -1,24 +1,20 @@
 ---
 title: wevtutil
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Comando de comandos de Windows para wevtutil, que le permite recuperar información acerca de los registros y publicadores de eventos.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d4c791e0-7e59-45c5-aa55-0223b77a4822 vhorne
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21f3b721a2a08a7fa101ec09f1f11b5e984f0113
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 62be2b14373457a3b114e8d067e1c7aa32b2182d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362166"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829358"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -40,7 +36,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 [{cl | clear-log} <Logname> [/bu:<Backup>]] [/r:<Remote>] [/u:<Username>] [/p:<Password>] [/a:<Auth>] [/uni:<Unicode>]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -87,19 +83,19 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |   /BU:\<> de copia de seguridad    |                                                                                                                                                                                                      Especifica la ruta de acceso a un archivo en el que se almacenarán los eventos borrados. Incluya la extensión. evtx en el nombre del archivo de copia de seguridad.                                                                                                                                                                                                       |
 |    /r:\<> remoto    |                                                                                                                                                                                            Ejecuta el comando en un equipo remoto. \<> remoto es el nombre del equipo remoto. Los parámetros **im** y **Um** no admiten la operación remota.                                                                                                                                                                                            |
 |   /u:\<nombre de usuario >   |                                                                                                                                                                          Especifica un usuario diferente para iniciar sesión en un equipo remoto. \<nombre de usuario > es un nombre de usuario con el formato dominio\usuario o usuario. Esta opción solo es aplicable cuando se especifica la opción **/r** .                                                                                                                                                                          |
-|   /p:\<contraseña >   |                                                                                                                                               Especifica la contraseña del usuario. Si se usa la opción **/u** y no se especifica esta opción o \<contraseña > es " *", se le pedirá al usuario que escriba una contraseña. Esta opción solo es aplicable cuando se especifica la opción \*\*/u*\*.                                                                                                                                                |
+|   /p:\<contraseña >   |                                                                                                                                               Especifica la contraseña del usuario. Si se usa la opción **/u** y no se especifica esta opción o \<contraseña > es *, se solicitará al usuario que escriba una contraseña. Esta opción solo es aplicable cuando se especifica la opción \*\*/u*\*.                                                                                                                                                |
 |     /a:\<> de autenticación     |                                                                                                                                                                                             Define el tipo de autenticación para conectarse a un equipo remoto. \<auth > puede ser default, Negotiate, Kerberos o NTLM. El valor predeterminado es Negotiate.                                                                                                                                                                                              |
 |  /UNI:\<> Unicode   |                                                                                                                                                                                                             Muestra la salida en Unicode. \<> Unicode puede ser true o false. Si <Unicode> es true, el resultado se encuentra en Unicode.                                                                                                                                                                                                             |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Usar un archivo de configuración con el parámetro SL
 
     El archivo de configuración es un archivo XML con el mismo formato que la salida de wevtutil GL \<logname >/f: XML. En el ejemplo siguiente se muestra el formato de un archivo de configuración que habilita la retención, habilita la copia de seguridad automática y establece el tamaño máximo del registro en el registro de la aplicación:  
     ```
-    <?xml version="1.0" encoding="UTF-8"?>
-    <channel name="Application" isolation="Application"
-    xmlns="https://schemas.microsoft.com/win/2004/08/events">
+    <?xml version=1.0 encoding=UTF-8?>
+    <channel name=Application isolation=Application
+    xmlns=https://schemas.microsoft.com/win/2004/08/events>
     <logging>
     <retention>true</retention>
     <autoBackup>true</autoBackup>
@@ -110,7 +106,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
     </channel>
     ```
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Enumerar los nombres de todos los registros:
 ```
@@ -155,4 +151,4 @@ wevtutil cl Application /bu:C:\admin\backups\a10306.evtx
 
 #### <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

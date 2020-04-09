@@ -1,24 +1,20 @@
 ---
 title: Logman Update API
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6f322e52-0f9f-42b1-bd64-8b8f8fe086fc britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8e5a45270ec0ed70928688728abceb5bcb8bb29
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7739098343f7b98b0812a9b7199dea2da044786e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374370"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840598"
 ---
 # <a name="logman-update-api"></a>Logman Update API
 
@@ -30,7 +26,7 @@ Actualice las propiedades de un recopilador de datos de seguimiento de API exist
 ```  
 logman update api <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parámetros  
+### <a name="parameters"></a>Parámetros  
 
 |                    Parámetro                     |                                                                               Descripción                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,7 +35,7 @@ logman update api <[-n] <name>> [options]
 |                 -config <value>                  |                                                         Especifica el archivo de configuración que contiene opciones de comando.                                                         |
 |                   [-n] <name>                    |                                                                       Nombre del objeto de destino.                                                                        |
 | -f < bin&#124;bincirc&#124;CSV&#124;TSV&#124;SQL > |                                                            Especifica el formato del registro del recopilador de datos.                                                             |
-|             -[-] u < usuario [contraseña] >              | Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
+|             -[-] u < usuario [contraseña] >              | Especifica el usuario que se va a ejecutar como. Al escribir una \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
 |    -m < [Start] [STOP] [[Start] [STOP] [...]] >    |                                                cambie a Inicio o detención manual en lugar de a una hora de inicio o de finalización programada.                                                 |
 |                -RF < [[HH:] mm:] SS >                |                                                        Ejecute el recopilador de datos durante el período de tiempo especificado.                                                         |
 |        -b < M/d/YYYY h:mm: SS [AM&#124;PM] >         |                                                              Comienza a recopilar datos en el momento especificado.                                                               |
@@ -63,11 +59,11 @@ logman update api <[-n] <name>> [options]
 
 ## <a name="remarks"></a>Comentarios  
 Donde [-] aparece en la lista, un archivo extra niega la opción.  
-## <a name="BKMK_examples"></a>Example  
-El siguiente comando actualiza el contador de seguimiento de API existente denominado trace_notepad para el archivo ejecutable c:\WINDOWS\NOTEPAD.exe excluyendo la llamada de API TlsGetValue generada por el módulo Kernel32. dll.  
+## <a name="examples"></a><a name=BKMK_examples></a>Example  
+El siguiente comando actualiza el contador de seguimiento de API existente denominado trace_notepad del archivo ejecutable c:\WINDOWS\NOTEPAD.exe excluyendo la llamada API TlsGetValue generada por el módulo Kernel32. dll.  
 ```  
 logman create api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue  
 ```  
-#### <a name="additional-references"></a>Referencias adicionales  
+## <a name="additional-references"></a>Referencias adicionales  
 [logman](logman.md)  
 [Logman Create API](logman-create-api.md)  

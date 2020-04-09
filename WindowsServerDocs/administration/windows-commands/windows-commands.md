@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
 ms.prod: windows-server
-ms.openlocfilehash: 5cb26bcff99d9cf3a1ee8b3a937ad6098a913c3d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9d68e2becbf9c6522be7e1ff6e6742d44f3a8247
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362065"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829238"
 ---
 # <a name="windows-commands"></a>Comandos de Windows
 
@@ -24,12 +24,30 @@ En este conjunto de documentación se describen los comandos de Windows que se p
 
 Para obtener información acerca de un comando específico, en el siguiente menú A-Z, haga clic en la letra con la que comienza el comando y, a continuación, haga clic en el nombre del comando.
 
-[UN](#a) |
+[Un](#a) |
 [B](#b) | 
 [C](#c) | 
 [D](#d) | 
 [E](#e) | 
-[F](#f)1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L ](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)7[T](#t)9[U](#u)1[V](#v)3 [W](#w)5[X](#x) | S | Z
+[F](#f) | 
+[G](#g) | 
+[H](#h) | 
+[i](#i) |
+[J](#j) | 
+[K](#k) | 
+[L](#l) | 
+[M](#m) | 
+[N](#n) | 
+[O](#o) | 
+[p](#p) | 
+[Q](#q) | 
+[R](#r) | 
+[S](#s) | 
+[t](#t) | 
+[U](#u) | 
+[V](#v) | 
+[W](#w) | 
+[X](#x) | S | Z
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -38,18 +56,18 @@ La información contenida en este tema se aplica a:
 -   Windows Server 2019
 -   Windows Server (Canal semianual)
 -   Windows Server 2016
--   Windows Server 2012 R2
+-   Windows Server 2012 R2
 -   Windows Server 2012 
 -   Windows Server 2008 R2
 -   Windows Server 2008
 -   Windows 10
--   Windows 8.1
+-   Windows 8.1
 
 ### <a name="command-shell-overview"></a>Información general del shell de comandos
 
 El shell de comandos era el primer Shell integrado en Windows para automatizar las tareas rutinarias, como la administración de cuentas de usuario o las copias de seguridad nocturnas, con archivos de Batch (. bat). Con Windows Script Host, podía ejecutar scripts más sofisticados en el shell de comandos. Para obtener más información, vea [cscript](cscript.md) o [Wscript](wscript.md). Puede realizar operaciones de forma más eficaz mediante el uso de scripts que puede usar la interfaz de usuario. Los scripts aceptan todos los comandos que están disponibles en la línea de comandos.
 
-Windows tiene dos shells de comandos: El shell de comandos y [PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6). Cada Shell es un programa de software que proporciona comunicación directa entre usted y el sistema operativo o la aplicación, lo que proporciona un entorno para automatizar las operaciones de ti.
+Windows tiene dos shells de comandos: el shell de comandos y [PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6). Cada Shell es un programa de software que proporciona comunicación directa entre usted y el sistema operativo o la aplicación, lo que proporciona un entorno para automatizar las operaciones de ti.
 
 PowerShell se diseñó para ampliar las funcionalidades del shell de comandos para ejecutar comandos de PowerShell denominados cmdlets. Los cmdlets son similares a los comandos de Windows, pero proporcionan un lenguaje de scripting extensible. Puede ejecutar comandos de Windows y cmdlets de PowerShell en PowerShell, pero el shell de comandos solo puede ejecutar comandos de Windows y no cmdlets de PowerShell.
 
@@ -58,25 +76,43 @@ Para la automatización de Windows más sólida y actualizada, se recomienda usa
 >También puede descargar e instalar [PowerShell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6), la versión de código abierto de PowerShell. 
 
 > [!CAUTION]
-> La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar los siguientes cambios en el registro, debe realizar una copia de seguridad de los datos valiosos del equipo.
+> Una modificación incorrecta del Registro puede provocar daños graves en el sistema. Antes de realizar los siguientes cambios en el registro, debe realizar una copia de seguridad de los datos valiosos del equipo.
 
 > [!NOTE]
-> Para habilitar o deshabilitar la finalización de nombres de archivos y directorios en el shell de comandos de un equipo o una sesión de inicio de sesión de usuario, ejecute **regedit. exe** y establezca el siguiente **valor reg_DWOrd**:
+> Para habilitar o deshabilitar la finalización de nombres de archivos y directorios en el shell de comandos de un equipo o una sesión de inicio de sesión de usuario, ejecute **regedit. exe** y establezca el siguiente **valor de reg_DWOrd**:
 > 
-> HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\completionChar\reg_DWOrd
+> HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\completionChar\ reg_DWOrd
 > 
-> Para establecer el valor **reg_DWOrd** , use el valor hexadecimal de un carácter de control para una función determinada (por ejemplo, **0 9** es Tab y **0 08** es el retroceso). La configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
+> Para establecer el valor de **reg_DWOrd** , use el valor hexadecimal de un carácter de control para una función determinada (por ejemplo, **0 9** es Tab y **0 08** es el retroceso). La configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
 
 ## <a name="command-line-reference-a-z"></a>Referencia a-Z de la línea de comandos
 
 Para obtener información acerca de un comando específico de Windows, en el siguiente menú A-Z, haga clic en la letra con la que comienza el comando y, a continuación, haga clic en el nombre del comando.
 
-[UN](#a) |
+[Un](#a) |
 [B](#b) | 
 [C](#c) | 
 [D](#d) | 
 [E](#e) | 
-[F](#f)1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L ](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)7[T](#t)9[U](#u)1[V](#v)3 [W](#w)5[X](#x) | S | Z
+[F](#f) | 
+[G](#g) | 
+[H](#h) | 
+[i](#i) |
+[J](#j) | 
+[K](#k) | 
+[L](#l) | 
+[M](#m) | 
+[N](#n) | 
+[O](#o) | 
+[p](#p) | 
+[Q](#q) | 
+[R](#r) | 
+[S](#s) | 
+[t](#t) | 
+[U](#u) | 
+[V](#v) | 
+[W](#w) | 
+[X](#x) | S | Z
 
 ### <a name="a"></a>A
 -   [append](append.md)
@@ -266,7 +302,7 @@ Para obtener información acerca de un comando específico de Windows, en el sig
 - [ftype](ftype.md)
 - [fveupdate](fveupdate.md)
 
-### <a name="g"></a>G
+### <a name="g"></a>N
 -   [getmac](getmac.md)
 -   [gettype](gettype.md)
 -   [goto](goto.md)
@@ -280,7 +316,7 @@ Para obtener información acerca de un comando específico de Windows, en el sig
 -   [helpctr](helpctr.md)
 -   [hostname](hostname.md)
 
-### <a name="i"></a>CONFIGUR
+### <a name="i"></a>I
 -   [icacls](icacls.md)
 -   [if](if.md)
 -   [inuse](inuse.md)
@@ -348,13 +384,13 @@ Para obtener información acerca de un comando específico de Windows, en el sig
   -   [Manage-BDE: protectores](manage-bde-protectors.md)
   -   [Manage-BDE: TPM](manage-bde-tpm.md)
   -   [Manage-BDE: setidentifier](manage-bde-setidentifier.md)
-  -   [manage-BDE: ForceRecovery](manage-bde-forcerecovery.md)
+  -   [Manage-BDE: ForceRecovery](manage-bde-forcerecovery.md)
   -   [Manage-BDE: ChangePassword](manage-bde-changepassword.md)
   -   [Manage-BDE: changepin](manage-bde-changepin.md)
   -   [Manage-BDE: changekey](manage-bde-changekey.md)
-  -   [manage-BDE: KeyPackage](manage-bde-keypackage.md)
+  -   [Manage-BDE: KeyPackage](manage-bde-keypackage.md)
   -   [Manage-BDE: actualización](manage-bde-upgrade.md)
-  -   [manage-BDE: WipeFreeSpace](manage-bde-wipefreespace.md)
+  -   [Manage-BDE: WipeFreeSpace](manage-bde-wipefreespace.md)
 - [mapadmin](mapadmin.md)
 - [Md](Md.md)
 - [mkdir](mkdir.md)
@@ -445,7 +481,7 @@ Para obtener información acerca de un comando específico de Windows, en el sig
 ### <a name="q"></a>Q
 -   [qappsrv](qappsrv.md)
 -   [qprocess](qprocess.md)
--   [query](query.md)
+-   [consulta](query.md)
 -   [quser](quser.md)
 -   [qwinsta](qwinsta.md)
 
@@ -545,7 +581,7 @@ Para obtener información acerca de un comando específico de Windows, en el sig
 -   [typeperf](typeperf.md)
 -   [tzutil](tzutil.md)
 
-### <a name="u"></a>5\.50
+### <a name="u"></a>U
 -   [unlodctr](unlodctr_1.md)
 
 ### <a name="v"></a>V
@@ -582,7 +618,6 @@ Para obtener información acerca de un comando específico de Windows, en el sig
 - [winnt32](winnt32.md)
 - [winpop](winpop.md)
 - [winrs](winrs.md)
-- [WLBS](wlbs_1.md)
 - [wmic](wmic.md)
 - [wscript](wscript.md)
 

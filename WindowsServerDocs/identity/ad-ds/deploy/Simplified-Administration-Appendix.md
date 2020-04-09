@@ -1,7 +1,6 @@
 ---
 ms.assetid: c911d6c6-98c6-4532-b1db-5724e1ceb96c
 title: Anexo de administración simplificada
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ffc2849fa5e18f7984814d6187cf83d68566409b
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 545d0541d1f51da7d2df793b9961657e214c789c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323247"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825008"
 ---
 # <a name="simplified-administration-appendix"></a>Anexo de administración simplificada
 
@@ -31,7 +30,7 @@ ms.locfileid: "79323247"
   
 -   [Instalación de Ntdsutil. exe desde cambios de medios](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)  
   
-## <a name="BKMK_AddServers"></a>Administrador del servidor cuadro de diálogo Agregar servidores (Active Directory)  
+## <a name="server-manager-add-servers-dialog-active-directory"></a><a name="BKMK_AddServers"></a>Administrador del servidor cuadro de diálogo Agregar servidores (Active Directory)  
 
 El cuadro de diálogo **agregar servidores** permite buscar Active Directory servidores, por sistema operativo, mediante caracteres comodín y por ubicación. El cuadro de diálogo también permite el uso de consultas DNS por nombre de dominio completo o por nombre de prefijo. Estas búsquedas usan protocolos DNS y LDAP nativos implementados mediante .NET, no AD Windows PowerShell en la puerta de enlace de administración de AD a través de SOAP, lo que significa que los controladores de dominio a los que se ha puesto en contacto con Administrador del servidor pueden incluso ejecutar Windows Server 2003. También puede importar un archivo con nombres de servidor para fines de aprovisionamiento.  
   
@@ -57,12 +56,12 @@ La búsqueda de Active Directory devuelve los siguientes atributos:
   
 ```  
   
-## <a name="BKMK_ServerMgrStatus"></a>Administrador del servidor el estado del servidor remoto  
+## <a name="server-manager-remote-server-status"></a><a name="BKMK_ServerMgrStatus"></a>Administrador del servidor el estado del servidor remoto  
 Administrador del servidor comprueba la accesibilidad del servidor remoto mediante el protocolo de enrutamiento de direcciones. Los servidores que no responden a las solicitudes ARP no aparecen en la lista, aunque estén en el grupo.  
   
 Si ARP responde, las conexiones DCOM y WMI se realizan en el servidor para devolver información de estado. Si no se puede tener acceso a RPC, DCOM y WMI, el administrador del servidor no podrá administrar el servidor por completo.  
   
-## <a name="BKMK_PSLoadModule"></a>Carga del módulo de Windows PowerShell  
+## <a name="windows-powershell-module-loading"></a><a name="BKMK_PSLoadModule"></a>Carga del módulo de Windows PowerShell  
 Windows PowerShell 3,0 implementa la carga dinámica de módulos. Normalmente ya no se requiere el uso del cmdlet **Import-Module** ; en su lugar, basta con invocar el cmdlet, el alias o la función para cargar automáticamente el módulo.  
   
 Para ver los módulos cargados, use el cmdlet **Get-Module** .  
@@ -90,10 +89,10 @@ dir
   
 ```  
   
-## <a name="BKMK_Rid"></a>Revisiones de emisión de RID para sistemas operativos anteriores  
+## <a name="rid-issuance-hotfixes-for-previous-operating-systems"></a><a name="BKMK_Rid"></a>Revisiones de emisión de RID para sistemas operativos anteriores  
 Vea [que hay disponible una actualización para detectar y evitar demasiado consumo del grupo de RID global en un controlador de dominio que ejecuta Windows Server 2008 R2](https://support.microsoft.com/kb/2618669).  
   
-## <a name="BKMK_IFM"></a>Instalación de Ntdsutil. exe desde cambios de medios  
+## <a name="ntdsutilexe-install-from-media-changes"></a><a name="BKMK_IFM"></a>Instalación de Ntdsutil. exe desde cambios de medios  
 Windows Server 2012 agrega dos opciones adicionales a la herramienta de línea de comandos Ntdsutil. exe para el menú **IFM (creación de medios IFM)** . Estos permiten crear almacenes IFM sin realizar primero una desfragmentación sin conexión del NTDS exportado. Archivo de base de datos DIT. Cuando el espacio en disco no es un nivel Premium, se ahorra tiempo al crear el IFM.  
   
 En la tabla siguiente se describen los dos nuevos elementos de menú:  

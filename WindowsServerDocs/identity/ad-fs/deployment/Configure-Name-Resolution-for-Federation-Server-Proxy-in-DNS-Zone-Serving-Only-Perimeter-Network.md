@@ -1,7 +1,6 @@
 ---
 ms.assetid: b7109e46-b66e-4c5c-8b87-a6611d68415a
 title: Configurar la resolución de nombres para un servidor proxy de federación de una zona DNS que da servicio solo a la red perimetral
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: de4627f2e03e6432f4e678cd9ca932819cb483d5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 451ed2bb2b2da9481d33c6e9e339bb582824a4e1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408439"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854928"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-only-the-perimeter-network"></a>Configurar la resolución de nombres para un servidor proxy de federación de una zona DNS que da servicio solo a la red perimetral
 
@@ -31,13 +30,13 @@ Para que la resolución de nombres funcione correctamente en un servidor de Fede
 ## <a name="add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>Agregar la dirección IP de un servidor de Federación al archivo de hosts  
 Para que un servidor proxy de Federación pueda funcionar según lo previsto en la red perimetral de un asociado de cuenta, debe agregar una entrada al archivo de hosts en ese servidor proxy de Federación que apunte al \(nombre de host DNS de un servidor de Federación, por ejemplo, fs.fabrikam.com\) y dirección IP \(por ejemplo, 192.168.1.4\) en la red corporativa del asociado de cuenta. Al agregar esta entrada al archivo de hosts, se impide que el servidor proxy de Federación se ponga en contacto con él mismo para resolver un cliente\-llamada iniciada a un servidor de Federación en el asociado de cuenta.  
   
-El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
+La pertenencia al grupo **Administradores** o equivalente en el equipo local es el requisito mínimo necesario para completar este procedimiento.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
 #### <a name="to-add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>Para agregar la dirección IP de un servidor de Federación al archivo de hosts  
   
 1.  Navegue hasta la carpeta% SystemRoot%\\WinNT\\system32\\del directorio drivers y busque el archivo **hosts** .  
   
-2.  Inicie el Bloc de notas y, a continuación, abra el archivo de **hosts**.  
+2.  Inicia el Bloc de notas y abre el archivo **hosts**.  
   
 3.  Agregue la dirección IP y el nombre de host de un servidor de Federación del asociado de cuenta al archivo de **hosts** , tal como se muestra en el ejemplo siguiente:  
   

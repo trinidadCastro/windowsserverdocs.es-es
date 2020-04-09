@@ -1,24 +1,20 @@
 ---
 title: Manage-BDE TPM
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 11a8530d-edd7-4fe3-ae81-b943766760fe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 577f5f2ecb85ac8c0c28fef2ca343635796454d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b6495bfbfedea7219ae175145f72fc12314ce7ae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373830"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839768"
 ---
 # <a name="manage-bde-tpm"></a>Manage-BDE: TPM
 
@@ -31,7 +27,7 @@ ms.locfileid: "71373830"
 > ```
 > manage-bde -tpm [-turnon] [-takeownership <OwnerPassword>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 > ```
-> ### <a name="parameters"></a>Parámetros
+> #### <a name="parameters"></a>Parámetros
 > 
 > |    Parámetro    |                                                                              Descripción                                                                               |
 > |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,7 +39,7 @@ ms.locfileid: "71373830"
 > |    -? o/?     |                                                               Muestra una breve ayuda en el símbolo del sistema.                                                               |
 > |   -Help o-h   |                                                             Muestra la ayuda completa en el símbolo del sistema.                                                              |
 > 
-> ## <a name="BKMK_Examples"></a>Example
+> ## <a name="examples"></a><a name=BKMK_Examples></a>Example
 > En el siguiente ejemplo se muestra el uso del comando **-TPM** para activar el TPM.
 > ```
 > manage-bde  tpm -turnon
@@ -53,5 +49,5 @@ ms.locfileid: "71373830"
 > manage-bde  tpm  takeownership 0wnerP@ss
 > ```
 > ## <a name="additional-references"></a>Referencias adicionales
-> -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+> -   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 > -   [manage-bde](manage-bde.md)

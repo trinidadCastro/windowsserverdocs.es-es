@@ -1,28 +1,22 @@
 ---
 title: UniqueID
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Windows Commands topic for UniqueID, que muestra o establece el identificador de la tabla de particiones GUID (GPT) o el registro de arranque maestro (MBR) del disco que tiene el foco.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64235a4a-b91c-46da-b9b0-68ee90571c2a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64f097766daa4c87ec84f42dd53f49792a160bb9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 29d7bf0498e76d5192e986aadabb77d575a8102b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363906"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832318"
 ---
 # <a name="uniqueid"></a>UniqueID
-
-
 
 Muestra o establece el identificador de la tabla de particiones GUID (GPT) o la firma del registro de arranque maestro (MBR) del disco que tiene el foco.
 
@@ -35,19 +29,19 @@ Muestra o establece el identificador de la tabla de particiones GUID (GPT) o la 
 uniqueid disk [id={<dword> | <GUID>}] [noerr]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |  Parámetro   |                                                                                             Descripción                                                                                              |
 |--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ID = {\<dword > |                                                                                               <GUID>}                                                                                                |
-|    Noerr     | Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
+| ID = {\<DWORD > |                                                                                               <GUID>}                                                                                                |
+|    noerr     | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
 ## <a name="remarks"></a>Comentarios
 
 -   Este comando funciona en discos básicos y dinámicos.
 -   Se debe seleccionar un disco para que este comando se ejecute correctamente. Use el comando **Seleccionar disco** para seleccionar un disco y desplazar el foco a él.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para mostrar la firma del disco MBR con el foco, escriba:
 ```
@@ -62,5 +56,5 @@ Para establecer el identificador del disco GPT con el foco en baf784e7-6bbd-4cfb
 uniqueid disk id=baf784e7-6bbd-4cfb-aaac-e86c96e166ee
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 

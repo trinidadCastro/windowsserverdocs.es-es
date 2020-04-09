@@ -1,7 +1,6 @@
 ---
 ms.assetid: e2ad9e80-a036-4bac-a4fb-afa83756aa1f
-title: Guía de implementación de AD FS en Windows Server 2012
-description: ''
+title: Guía de implementación de AD FS de Windows Server 2012
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,49 +8,49 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1597230fcfde4fe8a9767f0f14c634bc6fabdceb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: aeb1d9042cea6be77ea15f6c753d720d7f814fe6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408256"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855828"
 ---
-# <a name="windows-server-2012-ad-fs-deployment-guide"></a>Guía de implementación de AD FS en Windows Server 2012
+# <a name="windows-server-2012-ad-fs-deployment-guide"></a>Guía de implementación de AD FS de Windows Server 2012
 
 
-Puede usar Active Directory® servicios \(de Federación AD FS\) con el sistema operativo Windows Server® 2012 para crear una solución de administración de identidades federada que amplíe la identificación distribuida, la autenticación y servicios de autorización para\-aplicaciones basadas en Web a través de los límites de la organización y la plataforma. Mediante la implementación de AD FS, puede ampliar las capacidades existentes de administración de identidades de su organización a Internet.  
+Puede usar Active Directory&reg; servicios de Federación \(AD FS\) con el sistema operativo Windows Server&reg; 2012 para crear una solución de administración de identidades federada que extienda los servicios de identificación, autenticación y autorización distribuidos a aplicaciones basadas en Web\-a través de los límites de la organización y la plataforma. Mediante la implementación de AD FS, puede ampliar las capacidades existentes de administración de identidades de su organización a Internet.  
   
 Puede implementar AD FS para:  
   
--   Proporcionar a los empleados o clientes una experiencia\-de SSO\) de inicio\-de \(sesión único\-basada en Web cuando necesiten acceso remoto a sitios o servicios web hospedados internamente.  
+-   Proporcionar a los empleados o clientes un\-de inicio de sesión\-basado en Web\-en \(experiencia de\) SSO cuando necesiten acceso remoto a sitios o servicios web hospedados internamente.  
   
--   Proporcionar a los empleados o clientes una experiencia\-de SSO basada en Web cuando accedan\-a sitios web o servicios entre organizaciones desde los firewalls de la red.  
+-   Proporcionar a los empleados o clientes una experiencia de SSO basada en\-Web cuando accedan a servicios o sitios web de la organización en varios\-desde los firewalls de la red.  
   
--   Proporcionar a los empleados o clientes un acceso sin problemas\-a los recursos basados en Web en cualquier organización asociada de Federación en Internet sin necesidad de que los empleados o clientes inicien sesión más de una vez.  
+-   Proporcionar a los empleados o clientes un acceso sin problemas a los recursos basados en\-Web en cualquier organización asociada de Federación en Internet sin necesidad de que los empleados o clientes inicien sesión más de una vez.  
   
--   Conserve el control total sobre las identidades de los empleados o clientes\-sin usar \(otros proveedores de inicio de sesión Windows Live ID\), Liberty Alliance, etc.  
+-   Conserve el control total sobre las identidades de los empleados o clientes sin usar otros\-de firma en proveedores \(Windows Live ID, Liberty Alliance y otros\).  
   
 ## <a name="about-this-guide"></a>Acerca de esta guía  
 Esta guía está pensada para administradores de sistemas e ingenieros de sistemas. Proporciona instrucciones detalladas para implementar un diseño de AD FS que ha sido preseleccionado por usted o por un especialista en infraestructuras o un arquitecto de sistemas de su organización.  
   
-Si todavía no se ha seleccionado un diseño, se recomienda esperar a seguir las instrucciones de esta guía hasta después de revisar las opciones de diseño de la guía de [diseño de AD FS en Windows Server 2012](https://technet.microsoft.com/library/dd807036.aspx) y haber seleccionado el diseño más apropiado para su Organización. Para obtener más información sobre el uso de esta guía con un diseño que ya se ha seleccionado, vea [implementar el plan de diseño de AD FS](Implementing-Your-AD-FS-Design-Plan.md).  
+Si todavía no se ha seleccionado un diseño, se recomienda que espere a seguir las instrucciones de esta guía hasta después de revisar las opciones de diseño de la [Guía de diseño de AD FS en Windows Server 2012](https://technet.microsoft.com/library/dd807036.aspx) y de haber seleccionado el diseño más apropiado para su organización. Para obtener más información sobre el uso de esta guía con un diseño que ya se ha seleccionado, vea [implementar el plan de diseño de AD FS](Implementing-Your-AD-FS-Design-Plan.md).  
   
 Después de seleccionar el diseño de la guía de diseño y de recopilar la información necesaria acerca de las notificaciones, los tipos de token, los almacenes de atributos y otros elementos, puede usar esta guía para implementar el diseño de AD FS en el entorno de producción. En esta guía se proporcionan los pasos para implementar cualquiera de los siguientes diseños de AD FS principales:  
   
--   Web SSO  
+-   SSO Web  
   
--   SSO web federado  
+-   SSO Web federado  
   
-Use las listas de comprobación para [implementar el plan de diseño de AD FS](Implementing-Your-AD-FS-Design-Plan.md) para determinar el mejor modo de utilizar las instrucciones de esta guía para implementar su diseño determinado. Para obtener información acerca de los requisitos de hardware y software para implementar AD FS [, consulte el Apéndice A: Revisar los requisitos](https://technet.microsoft.com/library/ff678034.aspx) de AD FS en la guía de diseño de AD FS.  
+Use las listas de comprobación para [implementar el plan de diseño de AD FS](Implementing-Your-AD-FS-Design-Plan.md) para determinar el mejor modo de utilizar las instrucciones de esta guía para implementar su diseño determinado. Para obtener información acerca de los requisitos de hardware y software para implementar AD FS, consulte el [Apéndice A: revisión de los requisitos de AD FS](https://technet.microsoft.com/library/ff678034.aspx) en la guía de diseño de AD FS.  
   
 ### <a name="what-this-guide-does-not-provide"></a>Qué no incluye esta guía  
 Esta guía no proporciona:  
   
 -   Orientación sobre cuándo y dónde colocar los servidores de Federación, los servidores proxy de Federación o los servidores Web en la infraestructura de red existente. Para obtener esta información, consulte planeamiento de la ubicación del [servidor de Federación](https://technet.microsoft.com/library/dd807069.aspx) y [planeación](https://technet.microsoft.com/library/dd807130.aspx) de la colocación del servidor proxy de Federación en la guía de diseño de AD FS.  
   
--   Instrucciones para el uso de \(entidades\) de certificación CA para configurar AD FS  
+-   Instrucciones para el uso de entidades de certificación \(CA\) configurar AD FS  
   
--   Guía para la instalación o configuración de aplicaciones\-específicas basadas en Web  
+-   Instrucciones para configurar o configurar aplicaciones basadas en Web\-específicas  
   
 -   Instrucciones de configuración específicas para configurar un entorno de laboratorio de prueba.  
   
@@ -63,9 +62,9 @@ Esta guía no proporciona:
   
 -   [Implementación del plan de diseño de AD FS](Implementing-Your-AD-FS-Design-Plan.md)  
   
--   [Lista de comprobación: Implementar un diseño de SSO web](Checklist--Implementing-a-Web-SSO-Design.md)  
+-   [Lista de comprobación: implementar un diseño de SSO Web](Checklist--Implementing-a-Web-SSO-Design.md)  
   
--   [Lista de comprobación: Implementar un diseño de SSO web federado](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  
+-   [Lista de comprobación: implementar un diseño de SSO Web federado](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  
   
 -   [Configuración de organizaciones asociadas](Configuring-Partner-Organizations.md)  
   

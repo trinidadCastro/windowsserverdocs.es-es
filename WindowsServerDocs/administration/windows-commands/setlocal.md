@@ -1,28 +1,22 @@
 ---
 title: setlocal
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Temas de comandos de Windows para setlocal, que inicia la localización de variables de entorno en un archivo por lotes.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e4e4b6d3-3f1a-4851-a782-25ee2470e16e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 997c996854f488bb1776f135e3288e3b094e683c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 24ed41289bb517d41db11fd3ebc41e5751b7afd9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384090"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834368"
 ---
 # <a name="setlocal"></a>setlocal
-
-
 
 Inicia la localización de variables de entorno en un archivo por lotes. La localización continúa hasta que se encuentra un comando **endlocal** coincidente o hasta que se alcanza el final del archivo por lotes.
 
@@ -42,7 +36,7 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
 |disableextensions|Deshabilita las extensiones de comando hasta que se encuentre el comando **endlocal** coincidente, independientemente de la configuración anterior a la ejecución del comando **setlocal** .|
 |enabledelayedexpansion|Habilita la expansión de variables de entorno diferida hasta que se encuentre el comando **endlocal** coincidente, independientemente de la configuración anterior a la ejecución del comando **setlocal** .|
 |disabledelayedexpansion|Deshabilita la expansión de la variable de entorno diferida hasta que se encuentre el comando **endlocal** coincidente, independientemente de la configuración anterior a la ejecución del comando **setlocal** .|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
@@ -63,9 +57,9 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
     verify other 2>nul
     if errorlevel 1 echo Unable to enable extensions
     ```  
-    Dado que **cmd** no establece la variable ERRORLEVEL cuando se deshabilitan las extensiones de comando, el comando **Verify** inicializa la variable ERRORLEVEL en un valor distinto de cero cuando se usa con un argumento no válido. Además, si usa el comando **setlocal** con argumentos {**ENABLEEXTENSIONS** | **disableextensions**} o {**enabledelayedexpansion** | **disabledelayedexpansion**} y no establece la variable ERRORLEVEL en **1**, las extensiones de comandos no están disponibles.
+    Dado que **cmd** no establece la variable ERRORLEVEL cuando se deshabilitan las extensiones de comando, el comando **Verify** inicializa la variable ERRORLEVEL en un valor distinto de cero cuando se usa con un argumento no válido. Además, si usa el comando **setlocal** con argumentos {**ENABLEEXTENSIONS** | **disableextensions**} o {**enabledelayedexpansion** | **disabledelayedexpansion**} y no establece la variable ERRORLEVEL en **1**, las extensiones de comando no estarán disponibles.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Puede localizar las variables de entorno en un archivo por lotes, tal y como se muestra en el siguiente script de ejemplo:
 ```
@@ -82,6 +76,6 @@ endlocal
 start notepad c:\superapp.out
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

@@ -1,6 +1,5 @@
 ---
 title: Introducción al enlace de token
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 4623a48c-cefd-4a27-9173-2af58ac212f2
@@ -8,12 +7,12 @@ manager: alanth
 author: justinha
 ms.technology: security-authentication
 ms.date: 11/09/2016
-ms.openlocfilehash: 52ba35808b34eb07ecd6ac92819e9dc7a693b15b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d067db04fe881193143104ce9f75a0c9932907e7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403324"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855898"
 ---
 # <a name="introducing-token-binding"></a>Introducción al enlace de token
 
@@ -30,7 +29,7 @@ Compatibilidad de versiones:
     - Protocolo de enlace de tokens actualizado [[draft-ietf-tokbind-Protocol-01]](https://datatracker.ietf.org/doc/draft-ietf-tokbind-protocol/01/)
     - Extensión TLS para la negociación del enlace de tokens agregada [[draft-Popov-tokbind-negociación-00]](https://tools.ietf.org/html/draft-popov-tokbind-negotiation-00)
     - WinInet & HTTP. Compatibilidad de SYS del enlace de tokens sobre HTTP actualizado [[draft-ietf-tokbind-https-02]](https://datatracker.ietf.org/doc/draft-ietf-tokbind-https/02/)
-- Windows 10, versión 1507 con actualización de mantenimiento [KB4034668](https://support.microsoft.com/kb/KB4034668), Windows 10, versión 1511 con actualización de mantenimiento [KB4034660](https://support.microsoft.com/kb/KB4034660), windows 10, versión 1607 y Windows Server 2016 con actualización de mantenimiento [KB4034658](https://support.microsoft.com/kb/KB4034658) protocolo de enlace de tokens versión 0,10: activado de forma predeterminada
+- Windows 10, versión 1507 con actualización de servicio [KB4034668](https://support.microsoft.com/kb/KB4034668), Windows 10, versión 1511 con actualización de servicio [KB4034660](https://support.microsoft.com/kb/KB4034660), windows 10, versión 1607 y Windows Server 2016 con actualización de mantenimiento [KB4034658](https://support.microsoft.com/kb/KB4034658) de soporte de token de enlace de tokens versión 0,10: activado de forma predeterminada
     - Protocolo de enlace de tokens actualizado [[draft-ietf-tokbind-Protocol-10]](https://datatracker.ietf.org/doc/draft-ietf-tokbind-protocol/10/)
     - Extensión TLS para la negociación del enlace de tokens agregada [[draft-ietf-tokbind-negociación-05]](https://tools.ietf.org/html/draft-ietf-tokbind-negotiation-05)
     - WinInet & HTTP. Compatibilidad de SYS del enlace de tokens sobre HTTP actualizado [[draft-ietf-tokbind-https-06]](https://datatracker.ietf.org/doc/draft-ietf-tokbind-https/06/)

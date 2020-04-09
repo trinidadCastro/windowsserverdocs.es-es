@@ -2,36 +2,34 @@
 title: Introducción a la recopilación de eventos de configuración y arranque
 description: Instalación de recopiladores y objetivos de Recopilación de eventos de configuración y arranque
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-sbec
 ms.localizationpriority: medium
 ms.date: 10/16/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: d1d24cdf481f19b37093f76cf8741702e1b4de60
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1160a5dcf2f647a335a22eba54501589db6695ab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370511"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852078"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>Introducción a la recopilación de eventos de configuración y arranque
 
 >Se aplica a: Windows Server
 
   
-## <a name="overview"></a>Introducción  
-Recopilación de eventos de configuración y arranque es una característica nueva de Windows Server 2016 que permite designar un equipo "recopilador" que puede recopilar una gran variedad de eventos importantes que se producen en otros equipos cuándo arrancan o pasan por el proceso de instalación. Puedes analizar, más adelante, los eventos recopilados con Visor de eventos, Analizador de mensajes, Wevtutil o cmdlets de Windows PowerShell.  
+## <a name="overview"></a>Información general  
+La configuración y la recopilación de eventos de arranque es una característica nueva de Windows Server 2016 que le permite designar un equipo recopilador que puede recopilar diversos eventos importantes que se producen en otros equipos cuando arrancan o pasan por el proceso de instalación. Puedes analizar, más adelante, los eventos recopilados con Visor de eventos, Analizador de mensajes, Wevtutil o cmdlets de Windows PowerShell.  
   
 Anteriormente, ha sido imposible supervisar estos eventos debido a que la infraestructura necesaria para recopilarlos no existe hasta que un equipo ya está configurado. Los tipos de eventos de configuración y arranque que puedes supervisar incluyen:  
   
 -   Carga de módulos de kernel y controladores  
   
--   Enumeración de dispositivos e inicialización de los controladores (incluidos "dispositivos" como tipo de CPU)  
+-   Enumeración de los dispositivos y la inicialización de sus controladores (incluidos los dispositivos como el tipo de CPU)  
   
 -   Verificación y montaje de sistemas de archivos  
   
@@ -45,10 +43,10 @@ El equipo del recopilador debe ejecutar Windows Server 2016 (puede ser en cualqu
   
 |Host de virtualización|Máquina virtual de recopilador|Máquina virtual de destino|  
 |-----------------------|-----------------------------|--------------------------|  
-|Windows 8.1|sí|sí|  
+|Windows 8.1|sí|sí|  
 |Windows 10|sí|sí|  
 |Windows Server 2016|sí|sí|  
-|Windows Server 2012 R2|sí|no|  
+|Windows Server 2012 R2|sí|no|  
   
 ## <a name="installing-the-collector-service"></a>Instalación del servicio de recopilador  
 A partir de la 2016 de Windows Server, el servicio de recopilador de eventos está disponible como una característica opcional. En esta versión, puedes instalarlo mediante DISM.exe con este comando en un símbolo del sistema de Windows PowerShell con privilegios elevados:  
@@ -82,13 +80,13 @@ Puedes habilitar el transporte de eventos remotamente (con Windows PowerShell) o
   
     winrm quickconfig  
   
-2.  Responde a las preguntas siguientes y, a continuación, reinicia el equipo de destino. Si los equipos de destino no están en el mismo dominio que el equipo del recopilador, es posible que tengas que definirlos como hosts de confianza. Para ello:  
+2.  Responde a las preguntas siguientes y, a continuación, reinicia el equipo de destino. Si los equipos de destino no están en el mismo dominio que el equipo del recopilador, es posible que tengas que definirlos como hosts de confianza. Para hacerlo:  
   
 3.  En el equipo del recopilador, ejecuta uno de estos comandos:  
   
-    -   En un símbolo del sistema de Windows PowerShell: `Set-Item -Force WSMan:\localhost\Client\TrustedHosts "<target1>,<target2>,..."`, seguido de `Set-Item -Force WSMan:\localhost\Client\AllowUnencrypted true` donde \<target1 >, etc. son los nombres o las direcciones IP de los equipos de destino.  
+    -   En un símbolo del sistema de Windows PowerShell: `Set-Item -Force WSMan:\localhost\Client\TrustedHosts <target1>,<target2>,...`, seguido de `Set-Item -Force WSMan:\localhost\Client\AllowUnencrypted true` donde \<target1 >, etc. son los nombres o las direcciones IP de los equipos de destino.  
   
-    -   O bien, en un símbolo del sistema: **WinRM Set WinRM/config/Client @ {TrustedHosts = "\<target1 >,\<target2 >,..."; AllowUnencrypted = "true"}**  
+    -   O bien, en un símbolo del sistema: **WinRM Set WinRM/config/Client @ {TrustedHosts =\<target1 >,\<target2 >,...; AllowUnencrypted = true}**  
   
         > [!IMPORTANT]  
         > Esto establece la comunicación sin cifrar; por tanto, no lo hagas fuera de un entorno de laboratorio.  
@@ -107,7 +105,7 @@ Puedes habilitar el transporte de eventos remotamente (con Windows PowerShell) o
   
     Aquí < target_name > es el nombre del equipo de destino, \<IP > es la dirección IP del equipo del recopilador. \<puerto > es el número de puerto en el que se ejecutará el recopilador. La clave <a.b.c.d> es una clave de cifrado requerida para la comunicación e incluye cuatro cadenas alfanuméricas separadas por puntos. Esta misma clave se usa en el equipo del recopilador. Si no especificas una clave, el sistema genera una clave aleatoria; la necesitarás para el equipo del recopilador, por lo que deberás anotarla.  
   
-6.  Si ya has configurado un equipo de recopilador, actualiza el archivo de configuración en el equipo del recopilador con la información del nuevo equipo de destino. Consulta la sección "Configurar el equipo del recopilador" para obtener información detallada.  
+6.  Si ya has configurado un equipo de recopilador, actualiza el archivo de configuración en el equipo del recopilador con la información del nuevo equipo de destino. Consulte la sección configuración del equipo del recopilador para obtener más información.  
   
 ##### <a name="to-enable-event-transport-locally-on-the-target-computer"></a>Para habilitar el transporte de eventos localmente en el equipo de destino  
   
@@ -117,9 +115,9 @@ Puedes habilitar el transporte de eventos remotamente (con Windows PowerShell) o
   
     **bcdedit/eventsettings net HostIP: 1.2.3.4 Port: 50000 Key: a.b.c. d**  
   
-    Aquí "1.2.3.4" es un ejemplo; sustitúyelo por la dirección IP del equipo del recopilador. Sustituye también "50000" por el número de puerto donde se ejecutará el recolector y "a.b.c.d" por la clave de cifrado necesaria para la comunicación. Esta misma clave se usa en el equipo del recopilador. Si no especificas una clave, el sistema genera una clave aleatoria; la necesitarás para el equipo del recopilador, por lo que deberás anotarla.  
+    Aquí 1.2.3.4 es un ejemplo: Reemplácelo por la dirección IP del equipo del recopilador. Reemplace también 50000 por el número de puerto en el que se ejecutará el recopilador y a a.b.c. d con la clave de cifrado necesaria para la comunicación. Esta misma clave se usa en el equipo del recopilador. Si no especificas una clave, el sistema genera una clave aleatoria; la necesitarás para el equipo del recopilador, por lo que deberás anotarla.  
   
-2.  Si ya has configurado un equipo de recopilador, actualiza el archivo de configuración en el equipo del recopilador con la información del nuevo equipo de destino. Consulta la sección "Configurar el equipo del recopilador" para obtener información detallada.  
+2.  Si ya has configurado un equipo de recopilador, actualiza el archivo de configuración en el equipo del recopilador con la información del nuevo equipo de destino. Consulte la sección configuración del equipo del recopilador para obtener más información.  
   
 **Ahora que el propio transporte de eventos está habilitado, debe permitir que el sistema envíe realmente eventos ETW a través de ese transporte.**  
   
@@ -214,7 +212,7 @@ Hay varios detalles que deben tenerse en cuenta con respecto del archivo de conf
   
 -   La clave de cifrado utilizada para la comunicación con el equipo del recopilador  
   
--   El nombre del equipo de destino. Puedes usar la dirección IP, nombre de host o cualquier otro nombre como el nombre del equipo.  
+-   Nombre del equipo de destino. Puedes usar la dirección IP, nombre de host o cualquier otro nombre como el nombre del equipo.  
   
 -   El nombre del archivo ETL que usar y la configuración de tamaño de anillo para él  
   
@@ -227,24 +225,24 @@ Hay varios detalles que deben tenerse en cuenta con respecto del archivo de conf
 3.  Copia este ejemplo de configuración en la ventana del Bloc de notas:  
   
     ```  
-    <collector configVersionMajor="1" statuslog="c:\ProgramData\Microsoft\BootEventCollector\Logs\statuslog.xml">  
+    <collector configVersionMajor=1 statuslog=c:\ProgramData\Microsoft\BootEventCollector\Logs\statuslog.xml>  
       <common>  
-        <collectorport value="50000"/>  
-        <forwarder type="etl">  
-          <set name="file" value="c:\ProgramData\Microsoft\BootEventCollector\Etl\{computer}\{computer}_{#3}.etl"/>  
-          <set name="size" value="10mb"/>  
-          <set name="nfiles" value="10"/>  
-          <set name="toxml" value="none"/>  
+        <collectorport value=50000/>  
+        <forwarder type=etl>  
+          <set name=file value=c:\ProgramData\Microsoft\BootEventCollector\Etl\{computer}\{computer}_{#3}.etl/>  
+          <set name=size value=10mb/>  
+          <set name=nfiles value=10/>  
+          <set name=toxml value=none/>  
         </forwarder>  
         <target>  
-          <ipv4 value="192.168.1.1"/>  
-          <key value="a.b.c.d"/>  
-          <computer value="computer1"/>  
+          <ipv4 value=192.168.1.1/>  
+          <key value=a.b.c.d/>  
+          <computer value=computer1/>  
         </target>  
         <target>  
-          <ipv4 value="192.168.1.2"/>  
-          <key value="d1.e2.f3.g4"/>  
-          <computer value="computer2"/>  
+          <ipv4 value=192.168.1.2/>  
+          <key value=d1.e2.f3.g4/>  
+          <computer value=computer2/>  
         </target>  
       </common>  
     </collector>  
@@ -257,13 +255,13 @@ Hay varios detalles que deben tenerse en cuenta con respecto del archivo de conf
     >   
     > El elemento \<collectorport > define el número de puerto UDP en el que el recopilador escuchará los datos entrantes. Este es el mismo puerto tal y como se especificó en el paso de configuración de destino de Bcdedit. El recolector es compatible con un solo puerto y todos los destinos deben conectarse al mismo puerto.  
     >   
-    > El elemento \<reenviador > especifica cómo se reenviarán los eventos ETW recibidos de los equipos de destino. No hay un único tipo de reenviador, que los escribe en los archivos ETL. Los parámetros especifican el patrón de nombre de archivo, el límite de tamaño de cada archivo en el anillo y el tamaño del anillo de cada equipo. El ajuste "toxml" especifica que los eventos ETW se escribirán en el formato binario tal y como se recibieron, sin conversión a XML. Consulta la sección "Conversión de eventos XML" para obtener información acerca de cómo decidir si se convierten los eventos a XML o no. El patrón de nombre de archivo contiene las siguientes sustituciones: {computer} para el nombre del equipo y {3 #} para el índice del archivo en el anillo.  
+    > El elemento \<reenviador > especifica cómo se reenviarán los eventos ETW recibidos de los equipos de destino. No hay un único tipo de reenviador, que los escribe en los archivos ETL. Los parámetros especifican el patrón de nombre de archivo, el límite de tamaño de cada archivo en el anillo y el tamaño del anillo de cada equipo. El valor ToXml especifica que los eventos ETW se escribirán en el formato binario a medida que se recibieron, sin conversión a XML. Vea la sección conversión de eventos XML para obtener información acerca de cómo conferir los eventos a XML o no. El patrón de nombre de archivo contiene las siguientes sustituciones: {computer} para el nombre del equipo y {3 #} para el índice del archivo en el anillo.  
     >   
-    > En este archivo de ejemplo, dos equipos de destino se definen con el elemento \<> de destino. Cada definición especifica la dirección IP con \<> IPv4, pero también puede usar la dirección MAC (por ejemplo, < Mac Value = "11:22:33:44:55:66"\/> o < Mac Value = "11-22-33-44-55-66"\/>) o el GUID de SMBIOS (por ejemplo, < GUID Value = "{269076F9-4B77-46E1-B03B-CA5003775B88}"\/>) para identificar el equipo de destino. Tenga en cuenta también la clave de cifrado (igual que se ha especificado o generado con Bcdedit en el equipo de destino) y el nombre del equipo.  
+    > En este archivo de ejemplo, dos equipos de destino se definen con el elemento \<> de destino. Cada definición especifica la dirección IP con \<> IPv4, pero también puede usar la dirección MAC (por ejemplo, `<mac value=11:22:33:44:55:66/>` o `<mac value=11-22-33-44-55-66/>`) o el GUID de SMBIOS (por ejemplo, `<guid value={269076F9-4B77-46E1-B03B-CA5003775B88}/>`) para identificar el equipo de destino. Tenga en cuenta también la clave de cifrado (igual que se ha especificado o generado con Bcdedit en el equipo de destino) y el nombre del equipo.  
   
 4.  Escriba los detalles de cada equipo de destino como un elemento de > de destino de \<independiente en el archivo de configuración y, a continuación, guarde documento newconfig. XML y cierre el Bloc de notas.  
   
-5.  Aplica la nueva configuración con `$result = (Get-Content .\newconfig.xml | Set-SbecActiveConfig); $result`. Debe devolver el resultado con el campo de éxito "true". Si obtienes otro resultado, consulta la sección de solución de problemas de este tema.  
+5.  Aplica la nueva configuración con `$result = (Get-Content .\newconfig.xml | Set-SbecActiveConfig); $result`. La salida debe volver con el campo Success true. Si obtienes otro resultado, consulta la sección de solución de problemas de este tema.  
   
 Siempre puedes comprobar la configuración activa actual con `(Get-SbecActiveConfig).text`.  
   
@@ -282,7 +280,7 @@ La interfaz mínima ofrecida por Nano Server puede a veces dificultar el diagnó
   
 1.  Crea la imagen de Nano Server básica. Para obtener información detallada, consulta [Introducción a Nano Server](https://technet.microsoft.com/library/mt126167.aspx) .  
   
-2.  Configura un equipo del recopilador, como se muestra en la sección "Configuración del equipo del recopilador" de este tema.  
+2.  Configure un equipo del recopilador como en la sección configuración del equipo del recopilador de este tema.  
   
 3.  Agrega las claves de registro del Registrador automático para habilitar el envío de mensajes de diagnóstico. Para ello, monta el disco duro virtual Nano Server creado en el paso 1, carga el subárbol del registro y, a continuación, agrega ciertas claves del registro. En este ejemplo, la imagen de Nano Server está en C:\NanoServer; la ruta de acceso podría ser diferente, por tanto ajusta los pasos en consecuencia.  
   
@@ -294,7 +292,7 @@ La interfaz mínima ofrecida por Nano Server puede a veces dificultar el diagnó
   
 4.  Actualiza la configuración de BCD en la imagen de Nano Server para habilitar la marca de eventos y configurar el equipo del recopilador para asegurarse de que los eventos de diagnóstico se envían al servidor correcto. Ten en cuenta la dirección IPv4 del equipo del recopilador, el puerto TCP y la clave de cifrado configurada en el archivo Active.XML del recopilador (se describe en otro sitio de este tema). Use este comando en una consola de Windows PowerShell con permisos elevados: `Enable-SbecBcd -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd -CollectorIp 192.168.100.1 -CollectorPort 50000 -Key a.b.c.d`  
   
-5.  Actualiza el equipo del recopilador para recibir eventos enviados por el equipo de Nano Server agregando el intervalo de direcciones IPv4, la dirección IPv4 específica o la dirección MAC de Nano Server en el archivo Active.XML del equipo del recopilador (consulta la sección "Configuración del equipo del recopilador" de este tema).  
+5.  Actualice el equipo del recopilador para recibir el evento enviado por el equipo de nano Server agregando el intervalo de direcciones IPv4, la dirección IPv4 específica o la dirección MAC de nano Server al archivo. XML activo en el equipo del recopilador (consulte la sección configuración del equipo del recopilador de este tema).  
   
 ## <a name="starting-the-event-collector-service"></a>Inicio del servicio del recopilador de eventos  
 Una vez que se guarda un archivo de configuración válido en el equipo del recopilador y se configura un equipo de destino, tan pronto como se reinicie el equipo de destino, se realiza la conexión al selector y se recopilarán los eventos.  
@@ -305,13 +303,13 @@ El propio registro del servicio del recopilador (que es distinto del programa de
   
 -   En un símbolo del sistema normal: **wevtutil qe Microsoft-Windows-BootEvent-Collector/Admin**  
   
-## <a name="troubleshooting"></a>Solución de problemas  
+## <a name="troubleshooting"></a>Solucionar problemas  
   
 ### <a name="troubleshooting-installation-of-the-feature"></a>Solución de problemas de instalación de la característica  
   
 ||Error|Descripción del error|Síntoma|Posible problema|  
 |-|---------|---------------------|-----------|---------------------|  
-|Dism.exe|87|La opción nombre-característica no se reconoce en este contexto||- Esto puede ocurrir si escribes incorrectamente el nombre de la característica. Comprueba que usas la ortografía correcta e inténtela de nuevo.<br />- Confirma que esta característica está disponible en la versión de sistema operativo que estás utilizando. En Windows PowerShell, ejecuta **dism /online /get-features &#124; ?{$_ -match "boot"}** . Si no se devuelve ninguna coincidencia, probablemente está ejecutando una versión que no es compatible con esta característica.|  
+|Dism.exe|87|La opción nombre-característica no se reconoce en este contexto||- Esto puede ocurrir si escribes incorrectamente el nombre de la característica. Comprueba que usas la ortografía correcta e inténtela de nuevo.<br />- Confirma que esta característica está disponible en la versión de sistema operativo que estás utilizando. En Windows PowerShell, ejecute **DISM/online/Get-Features &#124; ? { $ _-Match boot}** . Si no se devuelve ninguna coincidencia, probablemente está ejecutando una versión que no es compatible con esta característica.|  
 |Dism.exe|0x800f080c|> Se desconoce el nombre de la \<de características.||Igual que arriba|  
   
 ### <a name="troubleshooting-the-collector"></a>Solución de problemas del recopilador  
@@ -323,15 +321,15 @@ En un símbolo del sistema normal: **wevtutil qe Microsoft-Windows-BootEvent-Col
   
 En un símbolo del sistema de Windows PowerShell: `Get-WinEvent -LogName Microsoft-Windows-BootEvent-Collector/Admin` (puedes anexar `-Oldest` para devolver la lista en orden cronológico con los eventos más antiguos en primer lugar)  
   
-Puede ajustar el nivel de detalle en los registros desde "error" hasta "warning", "info" (valor predeterminado), "verbose" y "debug". Niveles más detallados que "info" resultan útiles para diagnosticar problemas con equipos de destino que no se conectan, pero podrían generar una gran cantidad de datos, por lo que debes usarlos con cuidado.  
+Puede ajustar el nivel de detalle en los registros de error, a través de advertencia, información (valor predeterminado), detallado y depuración. Los niveles más detallados de la información son útiles para diagnosticar problemas con los equipos de destino que no se conectan, pero pueden generar una gran cantidad de datos, por lo que puede usarlos con cuidado.  
   
-Establezca el nivel de registro mínimo en el elemento \<Collector > del archivo de configuración. Por ejemplo: < Collector configVersionMajor = "1" minlog\=> "verbose".  
+Establezca el nivel de registro mínimo en el elemento \<Collector > del archivo de configuración. Por ejemplo: < Collector configVersionMajor = 1 minlog\=detallados >.  
   
 El nivel "verbose" inserta un registro por cada paquete recibido a medida que se procesa. El nivel "debug" agrega más detalle de procesamiento y vuelca también el contenido de todos los paquetes ETW recibidos.  
   
 En el nivel "debug", podría ser útil escribir el registro en un archivo, en lugar de intentar verlo en el sistema de registro habitual. Para ello, agregue un elemento adicional en el elemento > del recopilador \<del archivo de configuración:  
   
-< Collector configVersionMajor = "1" minlog = "debug" log\="c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt" >  
+< Collector configVersionMajor = 1 minlog = registro de depuración\=c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt >  
       
  **Un enfoque sugerido para solucionar problemas del recopilador:**  
    
@@ -342,10 +340,10 @@ En el nivel "debug", podría ser útil escribir el registro en un archivo, en lu
    Si devuelve que hay una conexión desde este destino, el problema podría estar en la configuración del registrador automático. Si no devuelve nada, el problema está en la conexión de KDNET con la que comenzar. Para diagnosticar problemas de conexión de KDNET, intenta comprobar la conexión desde ambos extremos (es decir, desde el recolector y desde el destino).  
   
 2. Para ver los diagnósticos extendidos del recopilador, agréguelo al elemento \<Collector > del archivo de configuración:  
-   \<recopilador... minlog = "verbose" >  
+   \<recopilador... minlog = > detallado  
    Esto permitirá mensajes sobre todos los paquetes recibidos.  
 3. Comprueba si se reciben todos los paquetes. De forma opcional, es posible que desees escribir el registro en modo detallado directamente en un archivo en lugar de hacerlo a través de ETW. Para ello, agregue esto al elemento > del recopilador de \<del archivo de configuración:  
-   \<recopilador... minlog = "verbose" log = "c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt" >  
+   \<recopilador... minlog = registro detallado = c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt >  
       
 4. Comprueba los registros de eventos de todos los mensajes sobre los paquetes recibidos. Comprueba si se reciben todos los paquetes. Si se reciben los paquetes pero de forma incorrecta, comprueba los mensajes de eventos para obtener información detallada.  
 5. Desde el lado de destino, KDNET escribe información de diagnóstico en el registro. Buscar en   
@@ -353,7 +351,7 @@ En el nivel "debug", podría ser útil escribir el registro en un archivo, en lu
    KdInitStatus (DWORD) will = 0 en caso de éxito y muestra un código de error en el error  
    KdInitErrorString = explicación del error (también contiene mensajes informativos si no hay error)  
   
-6. Ejecuta Ipconfig.exe en el destino y comprueba el nombre de dispositivo que notifica. Si KDNET se carga correctamente, el nombre del dispositivo debe ser similar a "kdnic" en lugar del nombre de la tarjeta del proveedor original.  
+6. Ejecuta Ipconfig.exe en el destino y comprueba el nombre de dispositivo que notifica. Si KDNET se carga correctamente, el nombre del dispositivo debe ser similar a kdnic en lugar del nombre de la tarjeta del proveedor original.  
 7. Comprueba si DHCP se ha configurado para el destino. KDNET absolutamente requiere DHCP.  
 8. Confirma que el recopilador está en la misma red que el destino. Si no, comprueba si está configurado correctamente el enrutamiento, especialmente la configuración de la puerta de enlace predeterminada de DHCP.  
   
@@ -380,7 +378,7 @@ Como alternativa, si no deseas guardar el resultado en una variable, puedes util
   
 ||Error|Descripción del error|Síntoma|Posible problema|  
 |-|---------|---------------------|-----------|---------------------|  
-|Equipo de destino||El destino no se conecta al recopilador||- El equipo de destino no se reinició después de su configuración. Reinicie el equipo de destino.<br />- El equipo de destino tiene una configuración de BCD incorrecta. Comprueba la configuración en la sección "Validar configuración del equipo de destino". Corrige según sea necesario y, a continuación, reinicia el equipo de destino.<br />- El controlador KDNET/EVENT-NET no podía conectarse a un adaptador de red o estaba conectado al adaptador de red incorrecto. En Windows PowerShell, ejecuta `gwmi Win32_NetworkAdapter` y comprueba la salida de uno con el ServiceName **kdnic**. Si se selecciona el adaptador de red incorrecto, vuelve a realizar los pasos descritos en "Para especificar un adaptador de red". Si el adaptador de red no aparece en absoluto, podría ser que el controlador no admita ninguno de los adaptadores de red.<br>**Consulta también** "Un enfoque sugerido para la solución de problemas del recopilador" más arriba, especialmente los pasos del 5 al 8.|  
-|Recopilador||Ya no veo eventos después de migrar la VM en la que se hospeda mi recopilador.||Comprueba que no haya cambiado la dirección IP del equipo del recopilador. Si ha cambiado, revisa "Para habilitar el envío de eventos ETW a través del transporte de forma remota".|  
+|Equipo de destino||El destino no se conecta al recopilador||- El equipo de destino no se reinició después de su configuración. Reinicie el equipo de destino.<br />- El equipo de destino tiene una configuración de BCD incorrecta. Compruebe la configuración en la sección validar la configuración del equipo de destino. Corrige según sea necesario y, a continuación, reinicia el equipo de destino.<br />- El controlador KDNET/EVENT-NET no podía conectarse a un adaptador de red o estaba conectado al adaptador de red incorrecto. En Windows PowerShell, ejecuta `gwmi Win32_NetworkAdapter` y comprueba la salida de uno con el ServiceName **kdnic**. Si se ha seleccionado el adaptador de red equivocado, vuelva a realizar los pasos de para especificar un adaptador de red. Si el adaptador de red no aparece en absoluto, podría ser que el controlador no admita ninguno de los adaptadores de red.<br>**Vea también** Un enfoque sugerido para solucionar problemas del recopilador anterior, especialmente los pasos 5 a 8.|  
+|Recopilador||Ya no veo eventos después de migrar la VM en la que se hospeda mi recopilador.||Comprueba que no haya cambiado la dirección IP del equipo del recopilador. Si es así, revise para habilitar el envío de eventos ETW a través del transporte de forma remota.|  
 |Recopilador||No se crean los archivos ETL.|`Get-SbecForwarding` muestra que el destino se ha conectado, sin errores, pero no se han creado los archivos ETL.|El equipo de destino probablemente no ha enviado ningún dato aún; los archivos ETL solo se crean cuando se reciben datos.|  
 |Recopilador||Un evento no se muestra en el archivo ETL.|El equipo de destino ha enviado un evento, pero cuando se lee el archivo ETL con el visor de eventos del analizador de mensajes, el evento no está presente.|- El evento aún podría estar en el búfer. Los eventos no se escriben en el archivo ETL hasta que se recopila un búfer completo de 64 KB o se ha producido un tiempo de espera de 10 a 15 segundos sin eventos nuevos. Espere a que el tiempo de espera caduque o vacíe los búferes con `Save-SbecInstance`.<br />- El manifiesto de eventos no está disponible en el equipo del recopilador o el equipo en el que se ejecuta el Visor de eventos o el analizador de mensajes.  En este caso, es posible que el recolector no pueda procesar el evento (comprueba el registro de recopilador) o el Visor podría no ser capaz de mostrarlo.  Es una práctica recomendada tener todos los manifiestos instalados en el equipo del recopilador e instalar las actualizaciones en el equipo del recopilador antes de instalarlos en los equipos de destino.|

@@ -1,7 +1,6 @@
 ---
 ms.assetid: b146f47e-3081-4c8e-bf68-d0f993564db2
 title: Implementación y configuración de controladores de dominio virtualizados
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: be2c919e4379cf615fe25d68446855229ace87dd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 97d726f8bfbbe664dfdfd6b7000988f009174631
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390699"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824698"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>Implementación y configuración de controladores de dominio virtualizados
 
@@ -34,7 +33,7 @@ En esta sección se tratan los siguientes temas:
   
     Explica en detalle las validaciones que se llevan a cabo durante la restauración segura de controladores de dominio virtualizados.  
   
-## <a name="BKMK_InstallConsiderations"></a>Consideraciones de instalación  
+## <a name="installation-considerations"></a><a name="BKMK_InstallConsiderations"></a>Consideraciones de instalación  
 No existe una instalación de características o rol en especial para los controladores de dominio (DC) virtualizados; todos los controladores de dominio contienen automáticamente capacidades de clonación y restauración segura. No puedes eliminar o deshabilitar dichas capacidades.  
   
 El uso de controladores de dominio de Windows Server 2012 requiere un esquema de AD DS de Windows Server 2012 versión 56 o posterior y un nivel funcional de bosque igual a Windows Server 2003 nativo o superior.  
@@ -44,7 +43,7 @@ Tanto los controladores de dominio de escritura como los de solo lectura son com
 > [!IMPORTANT]  
 > El contenedor de rol FSMO del emulador de PDC debe estar en línea cuando comience la clonación.  
   
-### <a name="BKMK_PlatformReqs"></a>Requisitos de la plataforma  
+### <a name="platform-requirements"></a><a name="BKMK_PlatformReqs"></a>Requisitos de la plataforma  
 La clonación de controladores de dominio virtualizados requiere lo siguiente:  
   
 -   Un rol FSMO del emulador de PDC hospedado en un DC de Windows Server 2012  
@@ -93,7 +92,7 @@ Ninguna de estas operaciones está contemplada por la semántica VM-GenerationID
   
 Para obtener más información sobre burbujas de USN y objetos persistentes, consulte [Solución de problemas de operaciones de Active Directory que generan el error 8606: "No se especificaron atributos suficientes para crear un objeto"](https://support.microsoft.com/kb/2028495).  
   
-## <a name="BKMK_VDCCloning"></a>Clonación de controladores de dominio virtualizados  
+## <a name="virtualized-domain-controller-cloning"></a><a name="BKMK_VDCCloning"></a>Clonación de controladores de dominio virtualizados  
 Existen varias fases y pasos en la clonación de un controlador de dominio virtualizado, independientemente de si se utilizan herramientas gráficas o Windows PowerShell. En un nivel alto, las tres fases son las siguientes:  
   
 **Preparar el entorno**  
@@ -268,7 +267,7 @@ Ejecuta el cmdlet en el controlador de dominio de origen propuesto que pretendes
   
 ||||  
 |-|-|-|  
-|**ActiveDirectory**<br /><br />**Cmdlet**|**Argumentos**|**Sobre**|  
+|**ActiveDirectory**<p>**Cmdlet**|**Argumentos**|**Sobre**|  
 |**New-ADDCCloneConfigFile**|*<no argument specified>*|Cree un archivo DcCloneConfig.xml vacío en el Directorio de trabajo de DSA (valor predeterminado: %systemroot%\ntds)|  
 ||-CloneComputerName|Especifica el nombre del equipo del DC que se clona. Tipo de datos de cadena.|  
 ||-Path|Especifica la carpeta para crear el archivo DcCloneConfig.xml. Si no se especifica, escriba en el Directorio de trabajo de DSA (valor predeterminado: %systemroot%\ntds). Tipo de datos de cadena.|  
@@ -451,7 +450,7 @@ Por ejemplo, para exportar toda la cadena de instantáneas de disco de una VM (e
   
 ![Implementación de controlador de dominio virtualizado](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSConvertVhd.png)  
   
-#### <a name="BKMK_Offline"></a>Agregar XML al disco del sistema sin conexión  
+#### <a name="adding-xml-to-the-offline-system-disk"></a><a name="BKMK_Offline"></a>Agregar XML al disco del sistema sin conexión  
 Si copiaste Dccloneconfig.xml en el DC de origen en ejecución, ahora debes copiar el archivo dccloneconfig.xml actualizado en el disco del sistema copiado/exportado sin conexión. En función de las aplicaciones instaladas que se detectaron antes con Get-ADDCCloningExcludedApplicationList, también podrías tener que copiar el archivo CustomDCCloneAllowList.xml en el disco.  
   
 Las siguientes ubicaciones pueden contener el archivo DcCloneConfig.xml:  
@@ -670,7 +669,7 @@ Por ejemplo:
   
 Cuando el equipo se reinicie una vez finalizada la clonación, será un controlador de dominio y podrás iniciar sesión de la manera habitual para confirmar que funciona normalmente. Si se produce algún error, el servidor se configura para iniciarse en el modo de restauración de servicios de directorio para investigarlo.  
   
-## <a name="BKMK_VDCSafeRestore"></a>Medidas de seguridad de virtualización  
+## <a name="virtualization-safeguards"></a><a name="BKMK_VDCSafeRestore"></a>Medidas de seguridad de virtualización  
 A diferencia de lo que sucede en la clonación de controladores de dominio virtualizados, no hay pasos para configurar las medidas de seguridad de virtualización de Windows Server 2012. La característica funciona sin necesidad de intervención, siempre y cuando cumplas unas simples condiciones:  
   
 -   El hipervisor es compatible con el identificador de generación de VM.  

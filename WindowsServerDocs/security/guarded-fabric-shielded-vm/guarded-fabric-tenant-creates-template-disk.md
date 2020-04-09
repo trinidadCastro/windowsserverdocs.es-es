@@ -1,19 +1,19 @@
 ---
 title: 'Máquinas virtuales blindadas para inquilinos: creación de un disco de plantilla: opcional'
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: c1992f8b-6f88-4dbc-b4a5-08368bba2787
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 8e5080dd74506e86687dddb7be0fd35af92f5b56
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f51a0f90f60847929f6fe46732c98f355a6a859
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403440"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856448"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-template-disk-optional"></a>Máquinas virtuales blindadas para inquilinos: creación de un disco de plantilla (opcional)
 
@@ -28,11 +28,11 @@ Para crear una nueva máquina virtual blindada, deberá usar un disco de plantil
 
 Para crear un disco de plantilla blindada, primero debe preparar un disco del sistema operativo que se ejecutará a través del Asistente para crear un disco de plantilla. Este disco se usará como disco del sistema operativo en las máquinas virtuales blindadas. Puede usar cualquier herramienta existente para crear este disco, como Microsoft Desktop Image Service Manager (DISM), o bien configurar manualmente una máquina virtual con un VHDX en blanco e instalar el sistema operativo en ese disco. Al configurar el disco, debe cumplir los siguientes requisitos específicos de la generación 2 o las máquinas virtuales blindadas: 
 
-| Requisito para VHDX | Reason |
+| Requisito para VHDX | Razón |
 |-----------|----|
 |Debe ser un disco de tabla de particiones GUID (GPT) | Necesario para que las máquinas virtuales de generación 2 admitan UEFI|
 |El tipo de disco debe ser **básico** en lugar de **dinámico**. <br>Nota: Esto hace referencia al tipo de disco lógico, no a la característica VHDX de "expansión dinámica" compatible con Hyper-V. | BitLocker no admite discos dinámicos.|
-|El disco tiene al menos dos particiones. Una partición debe incluir la unidad en la que está instalado Windows. Esta es la unidad que BitLocker va a cifrar. La otra partición es la partición activa, que contiene el cargador de inicio y permanece sin cifrar para poder iniciar el equipo.|Necesario para BitLocker|
+|El disco tiene al menos dos particiones. Una partición debe incluir la unidad en la que está instalado Windows. Esta unidad será cifrada por BitLocker. La otra partición es la partición activa, que contiene el cargador de inicio y permanece sin cifrar para poder iniciar el equipo.|Necesario para BitLocker|
 |El sistema de archivos es NTFS | Necesario para BitLocker|
 |El sistema operativo instalado en VHDX es uno de los siguientes:<br>-Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 <br>-Windows 10, Windows 8.1, Windows 8| Necesario para admitir máquinas virtuales de generación 2 y la plantilla de arranque seguro de Microsoft|
 |El sistema operativo debe estar generalizado (ejecute Sysprep. exe) | El aprovisionamiento de plantillas implica máquinas virtuales especializadas para la carga de trabajo de un inquilino específico| 
@@ -86,7 +86,7 @@ Realice los pasos siguientes en un equipo con Windows Server 2016 (no es necesar
 
     Espere hasta que finalice el proceso de firma antes de intentar montar o trasladar el disco de plantilla. Este proceso puede tardar varios minutos en completarse, en función del tamaño del disco. 
 
-9. En la página **Resumen** , se muestra información sobre la plantilla de disco, el certificado usado para firmar la plantilla y el emisor de certificados. Haga clic en **Cerrar** para salir del asistente.
+9. En la página **Resumen** , se muestra información sobre la plantilla de disco, el certificado usado para firmar la plantilla y el emisor de certificados. Haz clic en **Cerrar** para salir del asistente.
 
 
 Proporcione la plantilla de disco blindada al proveedor de servicios de hospedaje, junto con un archivo de datos de blindaje que cree, tal como se describe en [creación de datos de blindaje para definir una máquina virtual blindada](guarded-fabric-tenant-creates-shielding-data.md).

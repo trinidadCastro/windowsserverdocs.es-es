@@ -1,7 +1,6 @@
 ---
 ms.assetid: 864ad4bc-8428-4a8b-8671-cb93b68b0c03
 title: Reducción de la superficie de ataque de Active Directory
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 94bc65d42fa90dd7c93ba759a41d34edec10de09
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dcd0b412e7a0005bc6574638e0f6fce4554c6487
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367647"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821058"
 ---
 # <a name="reducing-the-active-directory-attack-surface"></a>Reducción de la superficie de ataque de Active Directory
 
@@ -38,10 +37,10 @@ Dentro de Active Directory, tres grupos integrados son los grupos de privilegios
   
 #### <a name="highest-privilege-groups-in-active-directory"></a>Grupos de privilegios más altos en Active Directory  
   
-##### <a name="enterprise-admins"></a>Administradores de empresas  
+##### <a name="enterprise-admins"></a>Administradores de organización  
 Administradores de empresas (EA) es un grupo que solo existe en el dominio raíz del bosque y, de forma predeterminada, es miembro del grupo administradores en todos los dominios del bosque. La cuenta predefinida Administrador del dominio raíz del bosque es el único miembro predeterminado del grupo EA. A EAs se le conceden derechos y permisos que les permiten implementar los cambios en todo el bosque (es decir, los cambios que afectan a todos los dominios del bosque), como agregar o quitar dominios, establecer confianzas de bosque o elevar los niveles funcionales del bosque. En un modelo de delegación correctamente diseñado e implementado, la pertenencia a EA solo es necesaria cuando se construye por primera vez el bosque o cuando se realizan ciertos cambios en todo el bosque, como el establecimiento de una confianza de bosque de salida. La mayoría de los derechos y permisos concedidos al grupo EA se pueden delegar a usuarios y grupos con menos privilegios.  
   
-##### <a name="domain-admins"></a>Admins. del dominio  
+##### <a name="domain-admins"></a>Administradores del dominio  
 
 Cada dominio de un bosque tiene su propio grupo Admins. del dominio (DA), que es miembro del grupo de administradores de ese dominio y un miembro del grupo de administradores locales en todos los equipos Unidos al dominio. El único miembro predeterminado del grupo de DA para un dominio es la cuenta de administrador integrada para ese dominio. Los DAs son "todos muy eficaces" dentro de sus dominios, mientras que EAs tiene privilegios en todo el bosque. En un modelo de delegación correctamente diseñado e implementado, la pertenencia a Admins. del dominio solo debe ser necesaria en escenarios de "interrupción" (por ejemplo, situaciones en las que se necesita una cuenta con altos niveles de privilegios en todos los equipos del dominio). Aunque los mecanismos de delegación de Active Directory nativa permiten la delegación hasta el punto en el que es posible usar cuentas de DA solo en escenarios de emergencia, la creación de un modelo de delegación eficaz puede llevar mucho tiempo y muchas organizaciones aprovechan herramientas de terceros para acelerar el proceso.  
   
@@ -55,7 +54,7 @@ El tercer grupo es el grupo de administradores locales de dominio (BA) integrado
 
 Un cuarto grupo con privilegios, administradores de esquemas (SA), solo existe en el dominio raíz del bosque y solo tiene la cuenta de administrador integrada de ese dominio como miembro predeterminado, similar al grupo administradores de empresas. El grupo administradores de esquema se ha diseñado para que se rellene solo de forma temporal y ocasionalmente (cuando se requiere la modificación del esquema AD DS).  
   
-Aunque el grupo SA es el único grupo que puede modificar el esquema de Active Directory (es decir, las estructuras de datos subyacentes del directorio como objetos y atributos), el ámbito de los derechos y permisos del grupo SA es más limitado que el que se ha descrito anteriormente. familias. También es común encontrar que las organizaciones hayan desarrollado prácticas adecuadas para la administración de la pertenencia del grupo SA, ya que la pertenencia al grupo suele ser necesaria con poca frecuencia y solo durante breves períodos de tiempo. Esto es técnicamente cierto en los grupos EA, DA y BA en Active Directory, pero es mucho menos frecuente encontrar que las organizaciones han implementado prácticas similares para estos grupos como para el grupo SA.  
+Aunque el grupo SA es el único grupo que puede modificar el esquema de Active Directory (es decir, las estructuras de datos subyacentes del directorio como objetos y atributos), el ámbito de los derechos y permisos del grupo SA es más limitado que los grupos descritos anteriormente. También es común encontrar que las organizaciones hayan desarrollado prácticas adecuadas para la administración de la pertenencia del grupo SA, ya que la pertenencia al grupo suele ser necesaria con poca frecuencia y solo durante breves períodos de tiempo. Esto es técnicamente cierto en los grupos EA, DA y BA en Active Directory, pero es mucho menos frecuente encontrar que las organizaciones han implementado prácticas similares para estos grupos como para el grupo SA.  
   
 #### <a name="protected-accounts-and-groups-in-active-directory"></a>Cuentas y grupos protegidos en Active Directory  
 Dentro de Active Directory, un conjunto predeterminado de cuentas y grupos con privilegios denominados cuentas y grupos "protegidos" se protegen de forma diferente a otros objetos del directorio. Cualquier cuenta que tenga pertenencia directa o transitiva en cualquier grupo protegido (independientemente de si la pertenencia se deriva de grupos de seguridad o distribución) hereda esta seguridad restringida.  
@@ -76,11 +75,11 @@ En la tabla siguiente se enumeran las cuentas y los grupos protegidos predetermi
 |Administradores|Operadores de cuentas|Operadores de cuentas|Operadores de cuentas|  
 ||Administrador|Administrador|Administrador|  
 ||Administradores|Administradores|Administradores|  
-|Admins. del dominio|Operadores de copia de seguridad|Operadores de copia de seguridad|Operadores de copia de seguridad|  
+|Administradores del dominio|Operadores de copia de seguridad|Operadores de copia de seguridad|Operadores de copia de seguridad|  
 ||Publicadores de certificados|||  
-||Admins. del dominio|Admins. del dominio|Admins. del dominio|  
-|Administradores de empresas|Controladores de dominio|Controladores de dominio|Controladores de dominio|  
-||Administradores de empresas|Administradores de empresas|Administradores de empresas|  
+||Administradores del dominio|Administradores del dominio|Administradores del dominio|  
+|Administradores de organización|Controladores de dominio|Controladores de dominio|Controladores de dominio|  
+||Administradores de organización|Administradores de organización|Administradores de organización|  
 ||Krbtgt|Krbtgt|Krbtgt|  
 ||Opers. de impresión|Opers. de impresión|Opers. de impresión|  
 ||||Controladores de dominio de solo lectura|  
@@ -100,7 +99,7 @@ La herencia de permisos está deshabilitada en grupos y cuentas protegidos, lo q
 ###### <a name="adminsdholder-ownership"></a>Propiedad AdminSDHolder  
 La mayoría de los objetos de Active Directory pertenecen al grupo de BA del dominio. Sin embargo, el objeto AdminSDHolder es, de forma predeterminada, propiedad del grupo de DA del dominio. (Este es un caso en el que DAs no deriva sus derechos y permisos a través de la pertenencia al grupo administradores del dominio).  
   
-En las versiones de Windows anteriores a Windows Server 2008, los propietarios de un objeto pueden cambiar los permisos del objeto, incluida la concesión de los mismos permisos que no tenían originalmente. Por lo tanto, los permisos predeterminados en el objeto AdminSDHolder de un dominio impiden que los usuarios que son miembros de los grupos BA o EA cambien los permisos del objeto AdminSDHolder de un dominio. Sin embargo, los miembros del grupo administradores del dominio pueden tomar posesión del objeto y concederse permisos adicionales, lo que significa que esta protección es rudimentaria y solo protege el objeto contra la modificación accidental por parte de los usuarios no es miembro del grupo de DA en el dominio. Además, los grupos BA y EA (cuando corresponda) tienen permiso para cambiar los atributos del objeto AdminSDHolder en el dominio local (dominio raíz para EA).  
+En las versiones de Windows anteriores a Windows Server 2008, los propietarios de un objeto pueden cambiar los permisos del objeto, incluida la concesión de los mismos permisos que no tenían originalmente. Por lo tanto, los permisos predeterminados en el objeto AdminSDHolder de un dominio impiden que los usuarios que son miembros de los grupos BA o EA cambien los permisos del objeto AdminSDHolder de un dominio. Sin embargo, los miembros del grupo administradores del dominio pueden tomar posesión del objeto y concederse permisos adicionales, lo que significa que esta protección es rudimentaria y solo protege el objeto contra la modificación accidental por parte de usuarios que no son miembros del grupo DA del dominio. Además, los grupos BA y EA (cuando corresponda) tienen permiso para cambiar los atributos del objeto AdminSDHolder en el dominio local (dominio raíz para EA).  
   
 > [!NOTE]  
 > Un atributo del objeto AdminSDHolder, dSHeuristics, permite una personalización limitada (desinstalación) de grupos que se consideran grupos protegidos y que se ven afectados por AdminSDHolder y SDProp. Esta personalización debe considerarse detenidamente si se implementa, aunque hay circunstancias válidas en las que la modificación de dSHeuristics en AdminSDHolder es útil. Puede encontrar más información sobre la modificación del atributo dSHeuristics en un objeto AdminSDHolder en los Soporte técnico de Microsoft artículos [817433](https://support.microsoft.com/?id=817433) y [973840](https://support.microsoft.com/kb/973840)y en el [Apéndice C: cuentas protegidas y grupos en Active Directory](Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md).  

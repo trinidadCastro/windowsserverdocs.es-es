@@ -1,24 +1,19 @@
 ---
 title: Descripción de funcionalidades
 description: En este tema se define el concepto de capacidades de System Insights y se presentan las capacidades predeterminadas disponibles en Windows Server 2019.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: system-insights
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: 131fbacaab97c1c2c42920a518ce96ba1b8f5d2b
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 9b0f043aab5773773785afc7fb48ba0295a76865
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465569"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858748"
 ---
 # <a name="understanding-capabilities"></a>Descripción de funcionalidades
 
@@ -83,7 +78,7 @@ Cada capacidad analiza los datos diarios para pronosticar el uso futuro. Sin emb
  Previsión de la capacidad de CPU                | % del tiempo de procesador  | Promedio máximo de 2 horas por día   
  Previsión de la capacidad de red         | Bytes totales/seg.         | Promedio máximo de 2 horas por día  
 
-Al evaluar la lógica de filtrado anterior, es importante tener en cuenta que cada funcionalidad intenta informar a los administradores cuando el uso futuro va a superar la capacidad disponible, aunque momentáneamente la CPU alcanza el 100% de uso, el uso de la CPU puede no tener provocó una degradación significativa del rendimiento o la contención de recursos. En cuanto a CPU y redes, debe haber un uso elevado sostenido en lugar de picos momentáneos. Sin embargo, si se calcula el promedio del uso de la CPU y de la red a lo largo del día, se perdería información de uso importante, ya que algunas horas de uso intensivo de la CPU o de la red pueden afectar de forma significativa al rendimiento de las cargas de trabajo críticas. La media máxima de 2 horas durante cada día evita estos extremos y todavía genera datos significativos para cada capacidad de análisis.
+Al evaluar la lógica de filtrado anterior, es importante tener en cuenta que cada funcionalidad intenta informar a los administradores cuando el uso futuro va a superar la capacidad disponible, aunque momentáneamente la CPU alcanza el 100% de uso, puede que el uso de la CPU no haya causado una degradación significativa del rendimiento o la contención de recursos. En cuanto a CPU y redes, debe haber un uso elevado sostenido en lugar de picos momentáneos. Sin embargo, si se calcula el promedio del uso de la CPU y de la red a lo largo del día, se perdería información de uso importante, ya que algunas horas de uso intensivo de la CPU o de la red pueden afectar de forma significativa al rendimiento de las cargas de trabajo críticas. La media máxima de 2 horas durante cada día evita estos extremos y todavía genera datos significativos para cada capacidad de análisis.
 
 En el caso del uso de almacenamiento total y de volumen, sin embargo, el uso de almacenamiento no puede superar la capacidad disponible, incluso en breve, por lo que se usa el uso diario máximo para estas funcionalidades. 
 

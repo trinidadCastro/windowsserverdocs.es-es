@@ -2,18 +2,17 @@
 title: Solución de problemas de servidores DNS
 description: En este artículo se explica cómo solucionar problemas de DNS desde el lado servidor.
 manager: dcscontentpm
-ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 23e51adafa5ab6da0a9317a1b0fad88bd3901073
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 4413c60072c43b623f386d5037e3da7ed5dc128d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265807"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861328"
 ---
 # <a name="troubleshooting-dns-servers"></a>Solución de problemas de servidores DNS
 
@@ -56,9 +55,9 @@ Compruebe los registros siguientes para ver si hay errores registrados:
 
 - Aplicación
 
-- Sistema
+- System
 
-- Servidor DNS
+- DNS Server
 
 ### <a name="test-by-using-nslookup-query"></a>Prueba mediante la consulta nslookup
 
@@ -129,7 +128,7 @@ Si este servidor reenvía consultas a otro servidor, compruebe si hay problemas 
 
 Si el servidor está en buen estado y puede reenviar consultas, repita este paso y examine el servidor al que este servidor reenvía las consultas.
 
-Si este servidor no reenvía consultas a otro servidor, compruebe si este servidor puede consultar un servidor raíz. Para ello, ejecuta el comando siguiente:
+Si este servidor no reenvía consultas a otro servidor, compruebe si este servidor puede consultar un servidor raíz. Para ello, ejecute el comando siguiente:
 
 ```cmd
 nslookup

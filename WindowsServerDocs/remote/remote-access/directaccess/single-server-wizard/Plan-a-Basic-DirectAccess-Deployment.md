@@ -2,22 +2,18 @@
 title: Planear una implementación básica de DirectAccess
 description: Este tema forma parte de la guía de implementación de un único servidor de DirectAccess con el Asistente para Introducción para Windows Server 2016
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d12632d7-4f47-4b4e-a4ad-f18322d726e2
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c6515634fe2cbeb56658ee3c326645ad92d0f06c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b732b5ec8df487b69796eb340a297ddc8db1388c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308924"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819478"
 ---
 # <a name="plan-a-basic-directaccess-deployment"></a>Planear una implementación básica de DirectAccess
 

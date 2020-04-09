@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: f9fb3cf46afb7e96c13fb623bc8f4fe67c1f3694
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 70c881cc02f31614160920766d32d73a3a939315
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376807"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844068"
 ---
 # <a name="fsutil-sparse"></a>Fsutil Sparse
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
@@ -32,7 +32,7 @@ fsutil sparse [setflag] <FileName>
 fsutil sparse [setrange] <FileName> <BeginningOffset> <Length>
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |     Parámetro     |                                                    Descripción                                                    |
 |-------------------|-------------------------------------------------------------------------------------------------------------------|
@@ -54,15 +54,15 @@ fsutil sparse [setrange] <FileName> <BeginningOffset> <Length>
 
 -   Si el archivo es disperso o comprimido, NTFS puede desasignar el espacio en disco del archivo. Esto establece el intervalo de bytes en ceros sin extender el tamaño del archivo.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Example
 Para marcar un archivo denominado sample. txt en el directorio C:\Temp como disperso, escriba:
 
 ```
 fsutil sparse setflag c:\temp\sample.txt 
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>Referencias adicionales
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

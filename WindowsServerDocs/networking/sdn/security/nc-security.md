@@ -1,20 +1,20 @@
 ---
 title: Network Controller Security (Seguridad del controlador de red)
 description: Puede usar este tema para aprender a configurar la seguridad de todas las comunicaciones entre la controladora de red y otro software y dispositivos.
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/30/2018
-ms.openlocfilehash: 196a124533b98c6945186ee827494b206028d2c8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 64bcf94c2e439d7999e96de939962a3a14d1246d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317400"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854368"
 ---
 # <a name="secure-the-network-controller"></a>Proteger la controladora de red
 

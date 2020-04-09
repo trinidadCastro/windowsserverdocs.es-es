@@ -1,24 +1,20 @@
 ---
 title: Wbadmin deshabilitar copia de seguridad
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Temas de comandos de Windows para Wbadmin deshabilitar copia de seguridad, que detiene la ejecución de las copias de seguridad diarias programadas existentes.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5176cbd9-0696-4b3f-9c35-272dd84f7898
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 405bbb3c07206032f1a9e3039c563e7c842e362e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e2fb3d22fc3857cce191ee11381ae6e7e6ac1175
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362495"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829858"
 ---
 # <a name="wbadmin-disable-backup"></a>Wbadmin deshabilitar copia de seguridad
 
@@ -35,13 +31,13 @@ wbadmin disable backup
 [-quiet]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
 |-quiet|Ejecuta el subcomando sin preguntar al usuario.|
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

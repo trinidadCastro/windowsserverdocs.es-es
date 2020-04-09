@@ -2,21 +2,19 @@
 title: Configurar hosts para la migración en vivo sin clústeres de conmutación por error
 description: Proporciona instrucciones para configurar la migración en vivo en un entorno no en clúster.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5e3c405-cb76-4ff2-8042-c2284448c435
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 3f0c13ba44eb498635b9b0c049b2921776049840
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: 2c2f671bf59e95de2604c91944fab3d65f82410e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591064"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860888"
 ---
 # <a name="set-up-hosts-for-live-migration-without-failover-clustering"></a>Configurar hosts para la migración en vivo sin clústeres de conmutación por error
 
@@ -52,12 +50,12 @@ Tenga en cuenta cómo desea configurar lo siguiente:
 
 -  **Preferencia de red**: ¿permitirá el tráfico de migración en vivo a través de cualquier red disponible o aislará el tráfico a redes específicas? Un procedimiento recomendado de seguridad es aislar el tráfico en redes privadas de confianza porque el tráfico de migración en vivo no se cifra cuando se envía por la red. El aislamiento de red se puede lograr a través de una red aislada físicamente o de otra tecnología de redes de confianza, como las redes VLAN.
 
-## <a name="BKMK_Step1"></a>Paso 1: configuración de la delegación restringida (opcional)
+## <a name="step-1-configure-constrained-delegation-optional"></a><a name="BKMK_Step1"></a>Paso 1: configuración de la delegación restringida (opcional)
 Si ha decidido usar Kerberos para autenticar el tráfico de migración en vivo, configure la delegación restringida con una cuenta que sea miembro del grupo administradores de dominio.
 
 ### <a name="use-the-users-and-computers-snap-in-to-configure-constrained-delegation"></a>Usar el complemento usuarios y equipos para configurar la delegación restringida
 
-1.  Abra el complemento Usuarios y equipos de Active Directory. (En Administrador del servidor, seleccione el servidor si no está seleccionado, haga clic en **herramientas**  >> **Active Directory usuarios y equipos**).
+1.  Abra el complemento Usuarios y equipos de Active Directory. (En Administrador del servidor, seleccione el servidor si no está seleccionado, haga clic en **herramientas** >> **Active Directory usuarios y equipos**).
 
 2.  En el panel de navegación de **Active Directory usuarios y equipos**, seleccione el dominio y haga doble clic en la carpeta **equipos** .
 
@@ -67,7 +65,7 @@ Si ha decidido usar Kerberos para autenticar el tráfico de migración en vivo, 
 
 5.  En la pestaña delegación, seleccione **confiar en este equipo para la delegación solo a los servicios especificados** y, a continuación, seleccione **usar cualquier protocolo de autenticación**.
 
-6.  Haz clic en **Agregar**.
+6.  Haga clic en **Agregar**.
 
 7.  En **Agregar servicios**, haga clic en **usuarios o equipos**.
 
@@ -79,38 +77,38 @@ Si ha decidido usar Kerberos para autenticar el tráfico de migración en vivo, 
 
     -   Para mover máquinas virtuales, seleccione **Servicio de migración del sistema virtual de Microsoft**.
 
-10. En la pestaña **Delegación** del cuadro de diálogo Propiedades, compruebe que los servicios que seleccionó en el paso anterior se incluyan en lista como los servicios a los que el equipo de destino puede presentarle credenciales delegadas. Haz clic en **Aceptar**.
+10. En la pestaña **Delegación** del cuadro de diálogo Propiedades, compruebe que los servicios que seleccionó en el paso anterior se incluyan en lista como los servicios a los que el equipo de destino puede presentarle credenciales delegadas. Haga clic en **Aceptar**.
 
-11. Desde la carpeta **Computers** , seleccione la cuenta de equipo del servidor de destino y repita el proceso. En el cuadro de diálogo **Seleccionar usuarios o equipos**, asegúrese de especificar el nombre del servidor de origen.
+11. Desde la carpeta **Computers**, seleccione la cuenta de equipo del servidor de destino y repita el proceso. En el cuadro de diálogo **Seleccionar usuarios o equipos**, asegúrese de especificar el nombre del servidor de origen.
 
 Los cambios de configuración surten efecto cuando se producen los siguientes pasos:
 
   -  Los cambios se replican en los controladores de dominio en los que están conectados los servidores que ejecutan Hyper-V.
   -  El controlador de dominio emite un nuevo vale de Kerberos.
 
-## <a name="BKMK_Step2"></a>Paso 2: configurar los equipos de origen y de destino para la migración en vivo
+## <a name="step-2-set-up-the-source-and-destination-computers-for-live-migration"></a><a name="BKMK_Step2"></a>Paso 2: configurar los equipos de origen y de destino para la migración en vivo
 En este paso se incluye la elección de opciones de autenticación y redes. Como práctica recomendada de seguridad, se recomienda seleccionar redes específicas para usar para el tráfico de migración en vivo, como se explicó anteriormente. En este paso también se muestra cómo elegir la opción rendimiento.
 
 ### <a name="use-hyper-v-manager-to-set-up-the-source-and-destination-computers-for-live-migration"></a>Usar el administrador de Hyper-V para configurar los equipos de origen y de destino para la migración en vivo
 
-1.  Abre el Administrador Hyper-V. (En Administrador del servidor, haga clic en **herramientas**  >>**Administrador de Hyper-V**).
+1.  Abre el Administrador Hyper-V. (En Administrador del servidor, haga clic en **herramientas** >>**Administrador de Hyper-V**).
 
 2.  En el panel de navegación, seleccione uno de los servidores. (Si no aparece, haga clic con el botón secundario en **Administrador de Hyper-V**, haga clic en **conectar al servidor**, escriba el nombre del servidor y haga clic en **Aceptar**. Repita este procedimiento para agregar más servidores).
 
-3.  En el panel **acción** , haga clic en **configuración de Hyper-V**  >>**migraciones en vivo**.
+3.  En el panel **acción** , haga clic en **configuración de Hyper-V** >>**migraciones en vivo**.
 
-4.  En el panel **Migraciones en vivo** , active **Habilitar migraciones en vivo entrantes y salientes**.
+4.  En el panel **Migraciones en vivo**, active **Habilitar migraciones en vivo entrantes y salientes**.
 
 5.  En **migraciones en vivo simultáneas**, especifique un número diferente si no desea usar el valor predeterminado de 2.
 
-6.  En **Migraciones en vivo entrantes**, si quiere usar conexiones de red específicas para aceptar tráfico de migración en vivo, haga clic en **Agregar** para escribir la información de la dirección IP. De lo contrario, haga clic en **Usar cualquier red disponible para la migración en vivo**. Haz clic en **Aceptar**.
+6.  En **Migraciones en vivo entrantes**, si quiere usar conexiones de red específicas para aceptar tráfico de migración en vivo, haga clic en **Agregar** para escribir la información de la dirección IP. De lo contrario, haga clic en **Usar cualquier red disponible para la migración en vivo**. Haga clic en **Aceptar**.
 
 7.  Para elegir las opciones de Kerberos y rendimiento, expanda **migraciones en vivo** y, luego, seleccione **características avanzadas**.
 
     - Si ha configurado la delegación restringida, en **Protocolo de autenticación**, seleccione **Kerberos**.
     - En **Opciones de rendimiento**, revise los detalles y elija una opción diferente si es adecuado para su entorno.
 
-8. Haz clic en **Aceptar**.
+8. Haga clic en **Aceptar**.
 
 9. Seleccione el otro servidor en el administrador de Hyper-V y repita los pasos.
 
@@ -143,7 +141,7 @@ En esta tabla se describe cómo funcionan las opciones de rendimiento.
 |----------|---------------|
     |TCP/IP|Copia la memoria de la máquina virtual en el servidor de destino a través de una conexión TCP/IP.|
     |Compresión|Comprime el contenido de la memoria de la máquina virtual antes de copiarla en el servidor de destino a través de una conexión TCP/IP. **Nota:** Esta es la configuración **predeterminada** .|
-    |SMB|Copia la memoria de la máquina virtual en el servidor de destino a través de una conexión SMB 3,0.<br /><br />-SMB directo se usa cuando los adaptadores de red de los servidores de origen y de destino tienen habilitadas las funcionalidades de acceso directo a memoria remota (RDMA).<br />-SMB multicanal detecta y usa automáticamente varias conexiones cuando se identifica una configuración de SMB multicanal adecuada.<br /><br />Para obtener más información, consulte [Improve Performance of a File Server with SMB Direct](https://technet.microsoft.com/library/jj134210(WS.11).aspx).|
+    |SMB|Copia la memoria de la máquina virtual en el servidor de destino a través de una conexión SMB 3,0.<p>-SMB directo se usa cuando los adaptadores de red de los servidores de origen y de destino tienen habilitadas las funcionalidades de acceso directo a memoria remota (RDMA).<br />-SMB multicanal detecta y usa automáticamente varias conexiones cuando se identifica una configuración de SMB multicanal adecuada.<p>Para obtener más información, vea [Mejorar el rendimiento de un servidor de archivos con SMB directo](https://technet.microsoft.com/library/jj134210(WS.11).aspx).|
 
  ## <a name="next-steps"></a>Pasos siguientes
 

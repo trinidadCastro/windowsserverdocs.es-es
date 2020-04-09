@@ -1,7 +1,6 @@
 ---
 ms.assetid: 299e4fb9-8f1a-4275-ad7d-dad4f1594657
 title: 'Tutorial: Workplace Join con un dispositivo iOS'
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5214165c2843461a2da8b574ad28f92b0e0bc64d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7b1d2a5f5c32d55e482f5f53a04668b34fc9aece
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407492"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815998"
 ---
 # <a name="walkthrough-workplace-join-with-an-ios-device"></a>Tutorial: unirse al área de trabajo con un dispositivo iOS
 
@@ -45,13 +44,13 @@ En esta demostración, unes el dispositivo al área de trabajo.
 
 2. Inicie sesión en la página web con una cuenta de dominio de la compañía: <strong>roberth@contoso.com</strong> y contraseña: <strong>P@ssword</strong>.
 
-3. Se te pedirá que instales un perfil. En la pantalla **Instalar perfil** , haz clic en **Instalar**.
+3. Se te pedirá que instales un perfil. En la pantalla **Instalar perfil**, haz clic en **Instalar**.
 
 4. Cuando se te pida que confirmes la instalación del perfil, haz clic en **Instalar ahora**.
 
 5. Si tu dispositivo requiere un PIN para desbloquearlo, se te pedirá que lo escribas.
 
-6. La instalación del perfil termina cuando veas la pantalla **Perfil instalado** . Haga clic en **Listo**.
+6. La instalación del perfil termina cuando veas la pantalla **Perfil instalado**. Haga clic en **Done** (Listo).
 
    Vuelve a Safari. Un mensaje te informa de que puedes cerrar Safari o salir de él.
 

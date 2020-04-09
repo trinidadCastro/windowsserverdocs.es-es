@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7dd905ea-4235-4519-8400-31b4fa0ed1bf
 title: Permitir que los clientes busquen el controlador de dominio más próximo siguiente
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ed7663242ae254ecea945a749ee3ce5fac8f96f6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 55e19728e247240ca35bf7cc7b47b36171f1f195
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408839"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822508"
 ---
 # <a name="enabling-clients-to-locate-the-next-closest-domain-controller"></a>Permitir que los clientes busquen el controlador de dominio más próximo siguiente
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Si tiene un controlador de dominio que ejecuta Windows Server 2008 o una versión más reciente, puede permitir que los equipos cliente que ejecutan Windows Vista o posterior o Windows Server 2008 o posterior busquen controladores de dominio de forma más eficaz al habilitar el **sitio de prueba siguiente más cercano.** Directiva de grupo configuración. Esta configuración mejora el localizador de controladores de dominio (Ubicador de DC) ayudando a simplificar el tráfico de red, especialmente en grandes empresas que tienen muchas sucursales y sitios.
+Si tiene un controlador de dominio que ejecuta Windows Server 2008 o una versión más reciente, puede permitir que los equipos cliente que ejecutan Windows Vista o posterior o Windows Server 2008 o posterior busquen controladores de dominio de forma más eficaz si habilita la opción **intentar el sitio más cercano más próximo** Directiva de grupo. Esta configuración mejora el localizador de controladores de dominio (Ubicador de DC) ayudando a simplificar el tráfico de red, especialmente en grandes empresas que tienen muchas sucursales y sitios.
 
 Esta nueva configuración puede afectar al modo en que se configuran los costos de vínculo a sitios porque afecta al orden en el que se encuentran los controladores de dominio. En el caso de las empresas que tienen muchos sitios de concentrador y sucursales, puede reducir significativamente el tráfico de Active Directory en la red asegurándose de que los clientes conmuten por error al siguiente sitio concentrador más cercano cuando no encuentren un controlador de dominio en el sitio concentrador más cercano.
 
@@ -48,11 +47,11 @@ Por ejemplo, supongamos que una topología de sitio tiene cuatro sitios con los 
 
 ![habilitación de los clientes para buscar DC](media/Enabling-Clients-to-Locate-the-Next-Closest-Domain-Controller/beff4087-fb2a-463b-96ac-d440a9e29b75.gif)
 
-Cuando la opción **intentar el siguiente sitio más cercano** Directiva de grupo está habilitada en este ejemplo, si un equipo cliente de Site_B intenta encontrar un controlador de dominio, primero intenta encontrar un controlador de dominio en su propia Site_B. Si no hay ninguna disponible en Site_B, intenta encontrar un controlador de dominio en Site_A.
+Cuando la opción **intentar el siguiente sitio más cercano** Directiva de grupo está habilitada en este ejemplo, si un equipo cliente de Site_B intenta encontrar un controlador de dominio, primero intenta encontrar un controlador de dominio en su propio Site_B. Si no hay ninguna disponible en Site_B, intenta encontrar un controlador de dominio en Site_A.
 
 Si la opción no está habilitada, el cliente intenta encontrar un controlador de dominio en Site_A, Site_C o Site_D si no hay ningún controlador de dominio disponible en Site_B.
 
 > [!NOTE]
 > La configuración **intentar siguiente sitio más cercano** funciona en coordinación con la cobertura automática de sitios. Por ejemplo, si el siguiente sitio más cercano no tiene ningún controlador de dominio, el ubicador de DC intenta encontrar el controlador de dominio que realiza la cobertura automática de sitios para ese sitio.
 
-Para aplicar la configuración **intentar el siguiente sitio más cercano** , puede crear un objeto de directiva de grupo (GPO) y vincularlo al objeto adecuado para su organización, o bien puede modificar la Directiva de dominio predeterminada para que afecte a todos los clientes que ejecutan Windows Vista o posterior. Windows Server 2008 o una versión más reciente en el dominio. Para obtener más información acerca de cómo establecer la configuración **probar el siguiente sitio más cercano** , consulte [habilitación de clientes para buscar un controlador de dominio en el siguiente sitio más cercano](https://technet.microsoft.com/library/cc772592.aspx).
+Para aplicar la configuración **intentar el siguiente sitio más cercano** , puede crear un objeto de directiva de grupo (GPO) y vincularlo al objeto adecuado para su organización, o bien puede modificar la Directiva de dominio predeterminada para que afecte a todos los clientes que ejecutan Windows Vista o posterior y windows Server 2008 o una versión más reciente en el dominio. Para obtener más información acerca de cómo establecer la configuración **probar el siguiente sitio más cercano** , consulte [habilitación de clientes para buscar un controlador de dominio en el siguiente sitio más cercano](https://technet.microsoft.com/library/cc772592.aspx).

@@ -1,23 +1,19 @@
 ---
 title: Configuración previa del enrutador
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9153ac90-bb0c-4b8d-93b2-e2121ed13636
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bdfa3215b7a2426bcde807119971d99ccc229716
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c39bf3ac260a23b7fc9cc9feec7f34786b1e8aae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311574"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819948"
 ---
 # <a name="preconfiguring-a-router"></a>Configuración previa del enrutador
 
@@ -43,7 +39,7 @@ Normalmente, una nueva instalación del sistema operativo requiere un enrutador 
   
 -   Si el enrutador es compatible con varias subredes, la dirección IP del servidor debe entregarse como un servidor DNS a través de DHCP.  
   
--   Si el enrutador tiene una característica de control de acceso integrada para Active DirectoryÂ® Domain Services, puede automatizar la integración de Active Directory durante la configuración inicial del servidor. También debería exponer esta función mediante el complemento de gestión del enrutador en el Panel.  
+-   Si el enrutador tiene una característica de control de acceso integrada para Active DirectoryÂ&reg; Domain Services, puede automatizar la integración de Active Directory durante la configuración inicial del servidor. También debería exponer esta función mediante el complemento de gestión del enrutador en el Panel.  
   
 > [!NOTE]
 >  Para obtener más información acerca de la configuración de conexiones inalámbricas, consulte [Configure Support for a Wireless Network](Configure-Support-for-a-Wireless-Network.md).  

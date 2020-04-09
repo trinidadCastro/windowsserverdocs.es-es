@@ -1,28 +1,22 @@
 ---
 title: comp
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: El tema comandos de Windows para comp, que compara el contenido de dos archivos o conjuntos de archivos byte a byte.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 40319d23-704d-4da1-be93-8259547275d0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84604cea36b0b4c9543a7169002551c0da4f0493
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2f61743b55f38cfdebb17506368609895f48b4f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379258"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847458"
 ---
 # <a name="comp"></a>comp
-
-
 
 Compara el contenido de dos archivos o conjuntos de archivos byte a byte. Si se usa sin parámetros, **COMP** le pide que escriba los archivos que se van a comparar.
 
@@ -34,7 +28,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -48,7 +42,7 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 |/OFF [línea]|Procesa archivos con el conjunto de atributos sin conexión.|
 |/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Cómo identifica el comando **COMP** la información no coincidente
 
@@ -91,7 +85,7 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 
     Para comparar más archivos, presione Y. El comando **COMP** le pide las ubicaciones y los nombres de los nuevos archivos. Para detener las comparaciones, presione N. Al presionar Y, **COMP** le solicitará las opciones de línea de comandos que debe usar. Si no especifica ninguna opción de línea de comandos, **COMP** usa las que especificó antes.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para comparar el contenido del directorio C:\Informes con el directorio de copia de seguridad \\\\Sales\Backup\April, escriba:
 ```
@@ -102,6 +96,6 @@ Para comparar las diez primeras líneas de los archivos de texto en el directori
 comp \invoice\*.txt \invoice\backup\*.txt /n=10 /d
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

@@ -1,7 +1,6 @@
 ---
 ms.assetid: c0d64566-5530-482e-a332-af029a5fb575
 title: Asignar los requisitos de diseño a los modelos de diseño de bosque
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d65b03dc255de5523c48c2bb9359530b8e7c3167
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9e5a1d17cbbc5a17b98dff2abf72359ce22142f1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408766"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822238"
 ---
 # <a name="mapping-design-requirements-to-forest-design-models"></a>Asignar los requisitos de diseño a los modelos de diseño de bosque
 
@@ -24,26 +23,26 @@ La mayoría de los grupos de su organización pueden compartir un solo bosque de
 
 Dado que el bosque de la organización inicial puede hospedar varios grupos en la organización, el propietario del bosque debe establecer acuerdos de nivel de servicio con cada grupo para que todas las partes sepan lo que se espera. Esto protege tanto los grupos individuales como el propietario del bosque mediante el establecimiento de las expectativas de servicio acordadas.  
 
-Si no todos los grupos de su organización pueden compartir un solo bosque de la organización, debe expandir el diseño del bosque para adaptarse a las necesidades de los diferentes grupos. Esto implica la identificación de los requisitos de diseño que se aplican a los grupos en función de sus necesidades de autonomía y aislamiento, y si tienen una red de conectividad limitada y, a continuación, la identificación del modelo de bosque que se puede usar para acomodarlos. satisfacer. En la tabla siguiente se enumeran los escenarios del modelo de diseño de bosque basados en los factores de autonomía, aislamiento y conectividad. Después de identificar el escenario de diseño de bosque que mejor se adapte a sus requisitos, determine si necesita tomar decisiones adicionales para cumplir sus especificaciones de diseño.  
+Si no todos los grupos de su organización pueden compartir un solo bosque de la organización, debe expandir el diseño del bosque para adaptarse a las necesidades de los diferentes grupos. Esto implica la identificación de los requisitos de diseño que se aplican a los grupos en función de sus necesidades de autonomía y aislamiento, y si tienen o no una red de conectividad limitada y, a continuación, la identificación del modelo de bosque que puede usar para adaptarse a dichos requisitos. En la tabla siguiente se enumeran los escenarios del modelo de diseño de bosque basados en los factores de autonomía, aislamiento y conectividad. Después de identificar el escenario de diseño de bosque que mejor se adapte a sus requisitos, determine si necesita tomar decisiones adicionales para cumplir sus especificaciones de diseño.  
 
 > [!NOTE]  
 > Si un factor aparece como N/A, no es una consideración porque otros requisitos también se ajustan a ese factor.  
 
 |Escenario|Conectividad limitada|Aislamiento de datos|Autonomía de los datos|Aislamiento del servicio|Autonomía del servicio|  
 |------------|------------------------|------------------|-----------------|---------------------|--------------------|  
-|[Escenario 1: unir un bosque existente para la autonomía de los datos](#BKMK_1)|Sin|Sin|Sí|Sin|Sin|  
-|[Escenario 2: usar un bosque o dominio de la organización para la autonomía del servicio](#BKMK_2)|Sin|Sin|N/D|Sin|Sí|  
-|[Escenario 3: usar un bosque de la organización o un bosque de recursos para el aislamiento del servicio](#BKMK_3)|Sin|Sin|N/D|Sí|N/D|  
+|[Escenario 1: unir un bosque existente para la autonomía de los datos](#BKMK_1)|No|No|Sí|No|No|  
+|[Escenario 2: usar un bosque o dominio de la organización para la autonomía del servicio](#BKMK_2)|No|No|N/D|No|Sí|  
+|[Escenario 3: usar un bosque de la organización o un bosque de recursos para el aislamiento del servicio](#BKMK_3)|No|No|N/D|Sí|N/D|  
 |[Escenario 4: usar un bosque de la organización o un bosque de acceso restringido para el aislamiento de datos](#BKMK_4)|N/D|Sí|N/D|N/D|N/D|  
-|[Escenario 5: usar un bosque de la organización o volver a configurar el firewall para una conectividad limitada](#BKMK_5)|Sí|Sin|N/D|Sin|Sin|  
-|[Escenario 6: usar un bosque o dominio de la organización y volver a configurar el firewall para la autonomía del servicio con conectividad limitada](#BKMK_6)|Sí|Sin|N/D|Sin|Sí|  
-|[Escenario 7: usar un bosque de recursos y volver a configurar el firewall para el aislamiento de servicio con conectividad limitada](#BKMK_7)|Sí|Sin|N/D|Sí|N/D|  
+|[Escenario 5: usar un bosque de la organización o volver a configurar el firewall para una conectividad limitada](#BKMK_5)|Sí|No|N/D|No|No|  
+|[Escenario 6: usar un bosque o dominio de la organización y volver a configurar el firewall para la autonomía del servicio con conectividad limitada](#BKMK_6)|Sí|No|N/D|No|Sí|  
+|[Escenario 7: usar un bosque de recursos y volver a configurar el firewall para el aislamiento de servicio con conectividad limitada](#BKMK_7)|Sí|No|N/D|Sí|N/D|  
 
-## <a name="BKMK_1"></a>Escenario 1: unir un bosque existente para la autonomía de los datos  
+## <a name="scenario-1-join-an-existing-forest-for-data-autonomy"></a><a name="BKMK_1"></a>Escenario 1: unir un bosque existente para la autonomía de los datos  
 
 Puede satisfacer un requisito de autonomía de datos con solo hospedar el grupo en unidades organizativas (OU) en un bosque de la organización existente. Delegue el control sobre las unidades organizativas en administradores de datos de ese grupo para lograr la autonomía de los datos. Para obtener más información sobre cómo delegar el control mediante el uso de unidades organizativas, consulte [crear un diseño de unidad organizativa](../../ad-ds/plan/Creating-an-Organizational-Unit-Design.md).  
   
-## <a name="BKMK_2"></a>Escenario 2: usar un bosque o dominio de la organización para la autonomía del servicio  
+## <a name="scenario-2-use-an-organizational-forest-or-domain-for-service-autonomy"></a><a name="BKMK_2"></a>Escenario 2: usar un bosque o dominio de la organización para la autonomía del servicio  
 
 Si un grupo de su organización identifica la autonomía del servicio como requisito, se recomienda que primero reconsidere este requisito. Lograr la autonomía del servicio crea más sobrecarga de administración y costos adicionales para la organización. Asegúrese de que el requisito de autonomía de servicio no sea simplemente por comodidad y de que pueda justificar los costos implicados en el cumplimiento de este requisito.  
   
@@ -55,7 +54,7 @@ Puede cumplir un requisito para la autonomía del servicio mediante una de las s
 
 Para obtener más información sobre el uso de dominios de la organización, vea [usar el modelo de bosque de dominio de la organización](../../ad-ds/plan/../../ad-ds/plan/Using-the-Organizational-Domain-Forest-Model.md).  
 
-## <a name="BKMK_3"></a>Escenario 3: usar un bosque de la organización o un bosque de recursos para el aislamiento del servicio  
+## <a name="scenario-3-use-an-organizational-forest-or-resource-forest-for-service-isolation"></a><a name="BKMK_3"></a>Escenario 3: usar un bosque de la organización o un bosque de recursos para el aislamiento del servicio  
 
 Puede cumplir un requisito para el aislamiento del servicio mediante una de las siguientes acciones:  
 
@@ -77,7 +76,7 @@ Entre las consideraciones sobre el aislamiento de servicio se incluyen las sigui
 
 - El aislamiento del servicio requiere la creación de un bosque adicional. Evalúe si el costo del mantenimiento de la infraestructura para admitir el bosque adicional supera los costos asociados con la pérdida de acceso a los recursos debido a que un bosque de la organización no está disponible.  
 
-## <a name="BKMK_4"></a>Escenario 4: usar un bosque de la organización o un bosque de acceso restringido para el aislamiento de datos  
+## <a name="scenario-4-use-an-organizational-forest-or-restricted-access-forest-for-data-isolation"></a><a name="BKMK_4"></a>Escenario 4: usar un bosque de la organización o un bosque de acceso restringido para el aislamiento de datos  
 
 Puede lograr el aislamiento de datos realizando una de las siguientes acciones:  
 
@@ -104,12 +103,12 @@ Entre las consideraciones para crear bosques para el aislamiento de datos se inc
 
 - Es posible que tenga que establecer un firewall entre el bosque de la organización y los otros bosques de la organización para limitar el acceso de los usuarios a información fuera de su bosque.  
 
-- Aunque la creación de un bosque independiente habilita el aislamiento de datos, siempre que los controladores de dominio del bosque aislado y los equipos que hospedan información protegida sean accesibles en una red, están sujetos a ataques iniciados desde equipos de esa red. Las organizaciones que deciden que el riesgo de ataque es demasiado alto o que la consecuencia de un ataque o una infracción de seguridad es demasiado grande para limitar el acceso a la red o redes que hospedan los controladores de dominio y los equipos que hospedan los datos protegidos. . La limitación del acceso puede realizarse mediante tecnologías como firewalls y el protocolo de seguridad de Internet (IPsec). En casos extremos, las organizaciones pueden optar por mantener los datos protegidos en una red independiente que no tiene ninguna conexión física con ninguna otra red de la organización.  
+- Aunque la creación de un bosque independiente habilita el aislamiento de datos, siempre que los controladores de dominio del bosque aislado y los equipos que hospedan información protegida sean accesibles en una red, están sujetos a ataques iniciados desde equipos de esa red. Las organizaciones que deciden que el riesgo de ataque es demasiado alto o que la consecuencia de un ataque o una infracción de seguridad es demasiado grande para limitar el acceso a la red o redes que hospedan los controladores de dominio y los equipos que hospedan los datos protegidos. La limitación del acceso puede realizarse mediante tecnologías como firewalls y el protocolo de seguridad de Internet (IPsec). En casos extremos, las organizaciones pueden optar por mantener los datos protegidos en una red independiente que no tiene ninguna conexión física con ninguna otra red de la organización.  
 
    > [!NOTE]  
    > Si existe conectividad de red entre un bosque de acceso restringido y otra red, existe la posibilidad de que los datos del área restringida se transmitan a la otra red.  
 
-## <a name="BKMK_5"></a>Escenario 5: usar un bosque de la organización o volver a configurar el firewall para una conectividad limitada  
+## <a name="scenario-5-use-an-organizational-forest-or-reconfigure-the-firewall-for-limited-connectivity"></a><a name="BKMK_5"></a>Escenario 5: usar un bosque de la organización o volver a configurar el firewall para una conectividad limitada  
 
 Para cumplir un requisito de conectividad limitado, puede realizar una de las siguientes acciones:  
 
@@ -119,7 +118,7 @@ Para cumplir un requisito de conectividad limitado, puede realizar una de las si
 
 Para obtener más información acerca de cómo configurar firewalls para su uso con Active Directory Domain Services (AD DS), consulte [Active Directory en redes segmentadas por firewalls](https://go.microsoft.com/fwlink/?LinkId=37928).  
 
-## <a name="BKMK_6"></a>Escenario 6: usar un bosque o dominio de la organización y volver a configurar el firewall para la autonomía del servicio con conectividad limitada  
+## <a name="scenario-6-use-an-organizational-forest-or-domain-and-reconfigure-the-firewall-for-service-autonomy-with-limited-connectivity"></a><a name="BKMK_6"></a>Escenario 6: usar un bosque o dominio de la organización y volver a configurar el firewall para la autonomía del servicio con conectividad limitada  
 
 Si un grupo de su organización identifica la autonomía del servicio como requisito, se recomienda que primero reconsidere este requisito. Lograr la autonomía del servicio crea más sobrecarga de administración y costos adicionales para la organización. Asegúrese de que el requisito de autonomía de servicio no sea simplemente por comodidad y de que pueda justificar los costos implicados en el cumplimiento de este requisito.  
 
@@ -131,7 +130,7 @@ Si la conectividad limitada es un problema y tiene un requisito para la autonom�
 
 También debe abrir el Firewall suficiente para permitir el paso del tráfico Active Directory. Para obtener más información sobre la configuración de firewalls para su uso con AD DS, consulte [Active Directory en redes segmentadas por firewalls](https://go.microsoft.com/fwlink/?LinkId=37928).  
 
-## <a name="BKMK_7"></a>Escenario 7: usar un bosque de recursos y volver a configurar el firewall para el aislamiento de servicio con conectividad limitada  
+## <a name="scenario-7-use-a-resource-forest-and-reconfigure-the-firewall-for-service-isolation-with-limited-connectivity"></a><a name="BKMK_7"></a>Escenario 7: usar un bosque de recursos y volver a configurar el firewall para el aislamiento de servicio con conectividad limitada  
 
 Si la conectividad limitada es un problema y tiene un requisito para el aislamiento del servicio, puede realizar una de las siguientes acciones:  
 

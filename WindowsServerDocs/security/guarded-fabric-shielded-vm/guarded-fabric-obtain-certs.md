@@ -1,19 +1,19 @@
 ---
 title: Obtener certificados para HGS
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: e8f4a3696ec5096281ba1ffd130aa97004530cc1
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: da1ae4bacd5a6b2e38b22930aacf06f65b16bb29
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940734"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856538"
 ---
 # <a name="obtain-certificates-for-hgs"></a>Obtener certificados para HGS
 
@@ -39,8 +39,8 @@ Proveedor de cifrado               | Cualquier proveedor de almacenamiento de cl
 Algoritmo de clave                 | RSA
 Tamaño mínimo de clave              | 2048 bits
 Algoritmo de firma           | Recomendado: SHA256
-Uso de la clave                     | Firma digital *y* cifrado de datos
-Uso mejorado de clave            | Autenticación de servidor
+Uso de claves                     | Firma digital *y* cifrado de datos
+Uso mejorado de clave            | Autenticación del servidor
 Directiva de renovación de claves            | Renovar con la misma clave. La renovación de certificados HGS con claves diferentes impedirá que se inicien las máquinas virtuales blindadas.
 Nombre de sujeto                  | Recomendado: el nombre o la dirección Web de su empresa. Esta información se mostrará a los propietarios de máquinas virtuales en el Asistente para archivos de datos de blindaje.
 
@@ -74,7 +74,7 @@ Remove-Item $encCert.PSPath
 
 ## <a name="request-an-ssl-certificate"></a>Solicitar un certificado SSL
 
-Todas las claves y la información confidencial transmitida entre los hosts de Hyper-V y HGS se cifran en el nivel de mensaje; es decir, la información se cifra con claves conocidas para HGS o Hyper-V, lo que impide que alguien examine el tráfico de red y robe claves. a las máquinas virtuales.
+Todas las claves y la información confidencial transmitida entre los hosts de Hyper-V y HGS se cifran en el nivel de mensaje; es decir, la información se cifra con claves conocidas para HGS o Hyper-V, lo que impide que alguien examine el tráfico de red y robe claves a las máquinas virtuales.
 Sin embargo, si tiene reqiurements de cumplimiento o simplemente prefiere cifrar todas las comunicaciones entre Hyper-V y HGS, puede configurar HGS con un certificado SSL que cifrará todos los datos en el nivel de transporte.
 
 Tanto los hosts de Hyper-V como los nodos HGS deben confiar en el certificado SSL que proporcione, por lo que se recomienda que solicite el certificado SSL de la entidad de certificación de la empresa. Al solicitar el certificado, asegúrese de especificar lo siguiente:

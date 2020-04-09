@@ -1,6 +1,5 @@
 ---
 title: 'Recuperación del bosque de AD: agregar el GC'
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: f82033dd042847c7c735423c25756b936b137230
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6773dbb20ff560ad4d2ae12155f2b6f6a068b3e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369342"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824338"
 ---
 # <a name="ad-forest-recovery---adding-the-gc"></a>Recuperación del bosque de AD: agregar el GC
 

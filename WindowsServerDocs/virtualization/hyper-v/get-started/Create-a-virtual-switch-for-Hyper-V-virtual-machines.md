@@ -2,21 +2,19 @@
 title: Crear un conmutador virtual para máquinas virtuales de Hyper-V
 description: Proporciona instrucciones sobre cómo crear un conmutador virtual con el administrador de Hyper-V o Windows PowerShell.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: f1a814060e763545411b5c4345367638a5161ac2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e27d1286945671d3f44fe2fa3220a2e223ad7c4f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392926"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860848"
 ---
 # <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>Crear un conmutador virtual para máquinas virtuales de Hyper-V
 
@@ -53,7 +51,7 @@ Las redes de máquinas virtuales pueden ser un asunto complejo. Y hay varias car
     |Nombre del valor de configuración|Descripción|  
     |----------------|---------------|  
     |Permitir que el sistema operativo de administración comparta este adaptador de red|Seleccione esta opción si desea permitir que el host de Hyper-V comparta el uso del conmutador virtual y el equipo NIC o NIC con la máquina virtual. Con esta opción habilitada, el host puede usar cualquiera de las opciones que configure para el conmutador virtual, como la configuración de calidad de servicio (QoS), la configuración de seguridad u otras características del conmutador virtual de Hyper-V.|  
-    |Habilitar la virtualización de e/s de raíz única (SR-IOV)|Seleccione esta opción solo si desea permitir que el tráfico de la máquina virtual omita el conmutador de máquina virtual y vaya directamente a la NIC física. Para obtener más información, consulte [virtualización de e/s de raíz única](https://technet.microsoft.com/library/dn641211.aspx#Sec4) en la referencia complementaria del póster: Redes de Hyper-V.|  
+    |Habilitar virtualización de E/S de raíz única (SR-IOV)|Seleccione esta opción solo si desea permitir que el tráfico de la máquina virtual omita el conmutador de máquina virtual y vaya directamente a la NIC física. Para obtener más información, consulte [virtualización de e/s de raíz única](https://technet.microsoft.com/library/dn641211.aspx#Sec4) en la referencia complementaria de póster: redes de Hyper-V.|  
   
 7.  Si desea aislar el tráfico de red del sistema operativo del host de Hyper-V de administración o de otras máquinas virtuales que comparten el mismo conmutador virtual, seleccione **Habilitar la identificación de LAN virtual para el sistema operativo de administración**. Puede cambiar el identificador de VLAN a cualquier número o dejar el valor predeterminado. Este es el número de identificación de LAN virtual que usará el sistema operativo de administración para todas las comunicaciones de red a través de este conmutador virtual.  
   

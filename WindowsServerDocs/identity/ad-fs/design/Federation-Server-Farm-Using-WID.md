@@ -1,7 +1,6 @@
 ---
 ms.assetid: f775cbda-a75d-439d-9aa7-82f3bc8dc932
 title: Granja de servidores de federación con WID
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0a84940018a0e71aaa1b47c7af3aba5966fe0ae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 926848f9d39a4e00cb30a6bbde5aecee0ef31043
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408054"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853088"
 ---
 # <a name="federation-server-farm-using-wid"></a>Granja de servidores de federación con WID
 
@@ -59,7 +58,7 @@ En la tabla siguiente se proporciona un resumen del uso de una granja de servido
   
 || 1 \- confianzas de RP de 100 | Más de 100 confianzas RP |
 | --- | --- | --- |
-|1 \- 30 nodos AD FS|WID compatible|No se admite con WID: SQL requerido 
+|1 \- 30 nodos AD FS|Compatible con WID|No se admite con WID: SQL requerido 
 |Más de 30 nodos AD FS|No se admite con WID: SQL requerido|No se admite con WID: SQL requerido  
   
 ## <a name="server-placement-and-network-layout-recommendations"></a>Recomendaciones de ubicación de servidor y diseño de red  

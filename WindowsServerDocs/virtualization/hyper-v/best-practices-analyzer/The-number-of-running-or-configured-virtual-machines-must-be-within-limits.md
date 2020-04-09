@@ -2,20 +2,19 @@
 title: El número de máquinas virtuales en ejecución o configuradas debe estar dentro de los límites admitidos
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 9d3c4aa3-8416-46ec-a253-26dc98088d7b
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 56d7fd528d7fda20dbdbb16a6262bb072f053ef0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 49013d6a4c9dda6e79d6a803bae0f5641d826817
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364632"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854628"
 ---
 # <a name="the-number-of-running-or-configured-virtual-machines-must-be-within-supported-limits"></a>El número de máquinas virtuales en ejecución o configuradas debe estar dentro de los límites admitidos
 
@@ -23,7 +22,7 @@ ms.locfileid: "71364632"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -90,7 +89,7 @@ Para completar este procedimiento, es necesario pertenecer al grupo **administra
   
 4.  Para permitir que la cuenta de equipo de Hyper-V presente credenciales delegadas en el equipo remoto:  
   
-    1.  Haz clic en **Agregar**.  
+    1.  Haga clic en **Agregar**.  
   
     2.  En el cuadro de diálogo **Agregar servicios** , haga clic en **usuarios o equipos**, seleccione el equipo remoto y, a continuación, haga clic en **Aceptar**.  
   

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 41b56704-c6f9-4d29-af97-62123e300565
 title: Revisar los conceptos de diseño de unidad organizativa
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 6dc2cbb7ddff8725876f8dd4ec2760e828fd4e4c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 67f8ef3ec37146002f3e099caa459fc209fcf5b7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402513"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821979"
 ---
 # <a name="reviewing-ou-design-concepts"></a>Revisar los conceptos de diseño de unidad organizativa
 
@@ -42,7 +41,7 @@ Por ejemplo, puede crear una unidad organizativa denominada ResourceOU y usarla 
   
 Puede refinar la estructura de la unidad organizativa mediante la creación de subárboles de unidades organizativas para fines específicos, como la aplicación de directiva de grupo o para limitar la visibilidad de los objetos protegidos para que solo determinados usuarios puedan verlos. Por ejemplo, si necesita aplicar directiva de grupo a un grupo selecto de usuarios o recursos, puede agregar esos usuarios o recursos a una unidad organizativa y, a continuación, aplicar directiva de grupo a esa unidad organizativa. También puede usar la jerarquía de unidades organizativas para habilitar la delegación adicional del control administrativo.  
   
-Aunque no hay ningún límite técnico en cuanto al número de niveles de la estructura de la unidad organizativa, se recomienda limitar la estructura de la unidad organizativa a una profundidad de no más de 10 niveles. No hay ningún límite técnico para el número de unidades organizativas en cada nivel. Tenga en cuenta que las aplicaciones habilitadas para Active Directory Domain Services (AD DS) pueden tener restricciones en el número de caracteres usados en el nombre distintivo (es decir, la ruta de acceso del Protocolo ligero de acceso a directorios (LDAP) al objeto en el directorio) o en el Profundidad de la unidad organizativa dentro de la jerarquía.  
+Aunque no hay ningún límite técnico en cuanto al número de niveles de la estructura de la unidad organizativa, se recomienda limitar la estructura de la unidad organizativa a una profundidad de no más de 10 niveles. No hay ningún límite técnico para el número de unidades organizativas en cada nivel. Tenga en cuenta que las aplicaciones habilitadas para Active Directory Domain Services (AD DS) pueden tener restricciones en el número de caracteres usados en el nombre distintivo (es decir, la ruta de acceso del Protocolo ligero de acceso a directorios (LDAP) al objeto en el directorio) o en la profundidad de la unidad organizativa dentro de la jerarquía.  
   
 La estructura de la unidad organizativa de AD DS no está pensada para ser visible para los usuarios finales. La estructura de la unidad organizativa es una herramienta administrativa para los administradores de servicios y para los administradores de datos, y es fácil de cambiar. Continúe revisando y actualizando el diseño de la estructura de la unidad organizativa para reflejar los cambios en la estructura administrativa y para admitir la administración basada en directivas.  
   

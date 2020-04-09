@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9779da98ecb43245fe206390d9b70471f15d706e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9807efa2c570b8ed63c2d776327b8e3311846488
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362606"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830118"
 ---
 # <a name="vssadmin-delete-shadows"></a>Vssadmin eliminar sombras
 
@@ -27,14 +27,14 @@ Elimina las instantáneas del volumen especificado.
 vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID>] [/quiet]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---|---|
-|/for = \<ForVolumeSpec >|Especifica la instantánea del volumen que se eliminará.|
+|/for =\<ParaVolumenEspec >|Especifica la instantánea del volumen que se eliminará.|
 |/oldest|Elimina solo la instantánea más antigua.|
-|/All|Elimina todas las instantáneas del volumen especificado.|
-|/Shadow = \<ShadowID >|Elimina la instantánea especificada por ShadowID. Para obtener el identificador de la instantánea, use el comando **vssadmin List Shadows** . Al escribir un identificador de instantánea, use el formato siguiente, donde cada *X* representa un carácter hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
+|/all|Elimina todas las instantáneas del volumen especificado.|
+|/Shadow =\<ShadowID >|Elimina la instantánea especificada por ShadowID. Para obtener el identificador de la instantánea, use el comando **vssadmin List Shadows** . Al escribir un identificador de instantánea, use el formato siguiente, donde cada *X* representa un carácter hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
 |/quiet|Especifica que el comando no mostrará mensajes mientras se ejecuta.|
 
 ## <a name="remarks"></a>Comentarios

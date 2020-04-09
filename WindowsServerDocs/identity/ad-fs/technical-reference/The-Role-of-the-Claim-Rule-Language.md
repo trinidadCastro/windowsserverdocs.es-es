@@ -1,6 +1,5 @@
 ---
 title: El papel del lenguaje de reglas de notificaciones
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
-ms.openlocfilehash: ff4c43bb8dc5582716638f0a3f6e4f6a8022aece
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 742e0ce781225303c623461439f8d4460fec97c9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407374"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860108"
 ---
 # <a name="the-role-of-the-claim-rule-language"></a>El papel del lenguaje de reglas de notificaciones
 El lenguaje de reglas de notificación de Servicios de federación de Active Directory (AD FS) (AD FS) actúa como el bloque de creación administrativo para el comportamiento de las notificaciones entrantes y salientes, mientras que el motor de notificaciones actúa como motor de procesamiento de la lógica en el lenguaje de reglas de notificación que define la regla personalizada. Para obtener más información sobre el modo en que el motor de notificaciones procesa todas las reglas, consulte [The role of the Claims Engine](The-Role-of-the-Claims-Engine.md).  
@@ -75,7 +74,7 @@ En la tabla siguiente se proporciona un ejemplo de condiciones de varias expresi
 
 |                                                                                                                   Descripción de la condición                                                                                                                    |                                        Ejemplo de sintaxis de condición                                        |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| Esta regla tiene una condición para comprobar si dos de entrada notificaciones, cada uno con un tipo de notificación especificado ("<http://test/name>" y "<http://test/email>"). Si las dos notificaciones coincidentes se encuentran en las notificaciones de entrada, la regla copia la notificación de nombre en el conjunto de notificaciones de salida. | ``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );``` |
+| Esta regla tiene una condición para comprobar dos notificaciones de entrada, cada una con un tipo de notificación especificado ("<http://test/name>" y "<http://test/email>"). Si las dos notificaciones coincidentes se encuentran en las notificaciones de entrada, la regla copia la notificación de nombre en el conjunto de notificaciones de salida. | ``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );``` |
 
 #### <a name="regular--condition-examples"></a>Ejemplos de condiciones regulares  
 En la tabla siguiente se proporciona un ejemplo de una condición normal basada en expresiones.  
@@ -144,7 +143,7 @@ Las siguientes propiedades de notificación están disponibles para acceder a el
 
 -   Claim.ValueType  
 
--   Claim. Properties\[propiedad\_nombre\] (esta propiedad devuelve una cadena vacía si no se encuentra la propiedad _name en la colección de propiedades de la demanda. ) simple  
+-   Claim. Properties\[propiedad\_nombre\] (esta propiedad devuelve una cadena vacía si no se encuentra la propiedad _name en la colección de propiedades de la demanda. )  
 
 Puede usar la función RegexReplace llamar a dentro de una expresión. Esta función toma una expresión de entrada y la hace coincidir con el modelo especificado. Si el patrón coincide, el resultado de la coincidencia se reemplaza por el valor de la sustitución.  
 

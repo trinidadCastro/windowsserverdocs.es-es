@@ -1,24 +1,20 @@
 ---
 title: nbtstat
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1d2ea99e-72f1-471f-9525-d2c49bf3be82
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd9148c922ac97e83b3b21bcb8b6585775505bf2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f8077228a6c72302e63a2d1b8123e7f7e0ff6b8e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373320"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839028"
 ---
 # <a name="nbtstat"></a>nbtstat
 
@@ -32,7 +28,7 @@ Muestra las estadísticas de protocolo NetBIOS sobre TCP/IP (NetBT), las tablas 
 nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [<Interval>]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |    Parámetro    |                                                                                                                         Descripción                                                                                                                         |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -46,7 +42,7 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 |       /s        |                                                                          Muestra las sesiones de cliente y servidor NetBIOS, intentando convertir la dirección IP de destino en un nombre.                                                                           |
 |       /S        |                                                                          Muestra las sesiones de cliente y servidor de NetBIOS, que solo muestran los equipos remotos por dirección IP de destino.                                                                          |
 |   <Interval>    | Vuelve a mostrar las estadísticas seleccionadas y pausa el número de segundos especificados en *intervalo* entre cada pantalla. Presione CTRL + C para detener la visualización de las estadísticas. Si se omite este parámetro, **Nbtstat** imprime la información de configuración actual una sola vez. |
-|       /?        |                                                                                                            Muestra la ayuda en el símbolo del sistema.                                                                                                             |
+|       /?        |                                                                                                            Muestra la Ayuda en el símbolo del sistema.                                                                                                             |
 
 ## <a name="remarks"></a>Comentarios
 
@@ -63,7 +59,7 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     |Nombre local|Nombre NetBIOS local asociado a la conexión.|
     |Host remoto|El nombre o la dirección IP asociada al equipo remoto.|
     |< 03 >|El último byte de un nombre NetBIOS convertido en hexadecimal. Cada nombre NetBIOS tiene una longitud de 16 caracteres. Este último byte suele tener una importancia especial, ya que el mismo nombre puede estar presente varias veces en un equipo, que solo difiere en el último byte. Por ejemplo, < 20 > es un espacio en texto ASCII.|
-    |type|Tipo de nombre. Un nombre puede ser un nombre único o un nombre de grupo.|
+    |tipo|Tipo de nombre. Un nombre puede ser un nombre único o un nombre de grupo.|
     |Estado|Si el servicio NetBIOS del equipo remoto se está ejecutando (registrado) o un nombre de equipo duplicado ha registrado el mismo servicio (conflicto).|
     |Estado|El estado de las conexiones NetBIOS.|
 
@@ -73,19 +69,19 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     |-----|--------|
     |Conectado|Se ha establecido una sesión.|
     |asociadas|Se ha creado un extremo de conexión y se ha asociado a una dirección IP.|
-    |Escucha|Este extremo está disponible para una conexión entrante.|
+    |escuchar|Este extremo está disponible para una conexión entrante.|
     |Inactivo|Este punto de conexión se ha abierto pero no puede recibir conexiones.|
-    |Conectarse|Una sesión se encuentra en la fase de conexión y se está resolviendo la asignación de nombre a dirección IP del destino.|
+    |Conectando|Una sesión se encuentra en la fase de conexión y se está resolviendo la asignación de nombre a dirección IP del destino.|
     |Aceptar|Una sesión entrante se está aceptando actualmente y se conectará en breve.|
     |Reconexión|Una sesión está intentando volver a conectarse (no se pudo conectar en el primer intento).|
     |Saliente|Una sesión se encuentra en la fase de conexión y la conexión TCP se está creando actualmente.|
     |Entrante|Una sesión entrante está en la fase de conexión.|
-    |Desconectar|Una sesión se encuentra en el proceso de desconexión.|
+    |Desconectando|Una sesión se encuentra en el proceso de desconexión.|
     |Disconnected|El equipo local ha emitido una desconexión y está esperando la confirmación del sistema remoto.|
 
 -   Este comando solo está disponible si el Protocolo Protocolo de Internet (TCP/IP) se instala como componente en las propiedades de un adaptador de red en las conexiones de red.
 
-## <a name="BKMK_Examples"></a>Example
+## <a name="examples"></a><a name=BKMK_Examples></a>Example
 Para mostrar la tabla de nombres NetBIOS del equipo remoto con el nombre de equipo NetBIOS de CORP07, escriba:
 
 ```
@@ -130,6 +126,6 @@ nbtstat /S 5
 
 ## <a name="additional-references"></a>Referencias adicionales
 
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
 

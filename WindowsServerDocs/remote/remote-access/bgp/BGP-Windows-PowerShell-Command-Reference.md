@@ -2,22 +2,18 @@
 title: Referencia de comandos de Windows PowerShell de BGP
 description: Puede usar este tema como referencia, al escribir scripts de Windows PowerShell en Windows Server 2016, para agregar, configurar y quitar las capacidades de BGP de los enrutadores de puerta de enlace de RAS y de red de área local (LAN) de acceso remoto.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b0240a3-b927-4a1e-b241-5f8f29a9552f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 22f4475df00e975ffc5cd0956a0126673a67f907
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e206ead9d4af53c0ee404eb5077c88fef2b87ba7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309274"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815848"
 ---
 # <a name="bgp-windows-powershell-command-reference"></a>Referencia de comandos de Windows PowerShell de BGP
 

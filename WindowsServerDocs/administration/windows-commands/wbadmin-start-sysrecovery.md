@@ -1,24 +1,20 @@
 ---
 title: Wbadmin Start sysrecovery
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Temas de comandos de Windows para Wbadmin Start sysrecovery, que realiza una recuperación del sistema (reconstrucción completa) mediante los parámetros que especifique.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95b8232f-7c42-452b-838e-15b0cf6faebe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c653fa52a2a56267d6f0df169f8f9924f2aa94d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4e0f1f79f35678b5c4a50022adf3413f3de217a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362281"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829598"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>Wbadmin Start sysrecovery
 
@@ -47,20 +43,20 @@ wbadmin start sysrecovery
 [-quiet]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
-|-versión|Especifica el identificador de la versión de la copia de seguridad que se va a recuperar en formato MM/DD/AAAA-HH: MM. Si no conoce el identificador de la versión, escriba **Wbadmin get Versions**.|
-|-backupTarget|Especifica la ubicación de almacenamiento que contiene la copia de seguridad o las copias de seguridad que desea recuperar. Este parámetro es útil cuando la ubicación de almacenamiento es diferente de donde se almacenan normalmente las copias de seguridad de este equipo.|
+|-version|Especifica el identificador de la versión de la copia de seguridad que se va a recuperar en formato MM/DD/AAAA-HH: MM. Si no conoce el identificador de la versión, escriba **Wbadmin get Versions**.|
+|-backupTarget|Especifica la ubicación de almacenamiento que contiene la copia o copias de seguridad que se desean recuperar. Este parámetro es útil cuando la ubicación de almacenamiento es diferente de donde se almacenan normalmente las copias de seguridad de este equipo.|
 |-equipo|Especifica el nombre del equipo que desea recuperar. Este parámetro es útil cuando se ha realizado una copia de seguridad de varios equipos en la misma ubicación. Debe usarse cuando se especifica el parámetro **-backupTarget** .|
 |-restoreAllVolumes|Recupera todos los volúmenes de la copia de seguridad seleccionada. Si no se especifica este parámetro, solo se recuperan los volúmenes críticos (volúmenes que contienen los componentes del sistema operativo y el estado del sistema). Este parámetro es útil cuando se necesita recuperar volúmenes no críticos durante la recuperación del sistema.|
 |-recreateDisks|Recupera una configuración de disco al estado que tenía cuando se creó la copia de seguridad.</br>ADVERTENCIA: este parámetro elimina todos los datos de los volúmenes que hospedan componentes del sistema operativo. También puede eliminar los datos de los volúmenes de datos.|
 |-excludeDisks|Solo es válido cuando se especifica con el parámetro **-recreateDisks** y debe ser una entrada como una lista delimitada por comas de identificadores de disco (como se muestra en la salida de los **discos de Wbadmin get**). Los discos excluidos no tienen particiones ni tienen formato. Este parámetro ayuda a conservar los datos en los discos que no desea modificar durante la operación de recuperación.|
 |-skipBadClusterCheck|Omite la comprobación de los discos de recuperación para obtener información de clúster incorrecta. Si va a restaurar a un servidor o hardware alternativo, se recomienda que no use este parámetro. Puede ejecutar manualmente **CHKDSK/b** en los discos de recuperación en cualquier momento para comprobarlos en busca de clústeres defectuosos y, a continuación, actualizar la información del sistema de archivos en consecuencia.</br>ADVERTENCIA: hasta que ejecute **CHKDSK** como se describe, es posible que los clústeres incorrectos notificados en el sistema recuperado no sean precisos.|
-|-quiet|Ejecuta el comando sin preguntar al usuario.|
+|-quiet|Ejecuta el comando sin indicaciones al usuario.|
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para iniciar la recuperación de la información de la copia de seguridad que se ejecutó el 31 de marzo de 2013 a las 9:00 A.M., que se encuentra en la unidad d:, escriba:
 ```
@@ -71,8 +67,8 @@ Para iniciar la recuperación de la información de la copia de seguridad que se
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   Cmdlet [Get-WBBareMetalRecovery](https://technet.microsoft.com/library/jj902461.aspx)

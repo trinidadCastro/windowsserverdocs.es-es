@@ -1,24 +1,20 @@
 ---
 title: Kerberos Authentication Overview
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-kerberos
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 646c6309-e865-4be2-b415-44dd125af5c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 33712dc8502035bd9e47e1d2bdd4583eb8347dec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b5ec9bfa5c17a9ee9a5ad15af183d25bd533d7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386309"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856328"
 ---
 # <a name="kerberos-authentication-overview"></a>Kerberos Authentication Overview
 
@@ -26,12 +22,12 @@ ms.locfileid: "71386309"
 
 Kerberos es un protocolo de autenticación que se usa para comprobar la identidad de un usuario o host. Este tema contiene información sobre la autenticación Kerberos en Windows Server 2012 y Windows 8.
 
-## <a name="BKMK_OVER"></a>Descripción de la característica
+## <a name="feature-description"></a><a name="BKMK_OVER"></a>Descripción de la característica
 Los sistemas operativos Windows Server implementan las extensiones y el protocolo de autenticación de la versión 5 de Kerberos para la autenticación de clave pública, el transporte de datos de autorización y la delegación. El cliente de autenticación Kerberos se implementa como un proveedor de compatibilidad para seguridad \(SSP\)y se puede obtener acceso a él a través de la interfaz del proveedor de compatibilidad de seguridad \(\)SSPI. La autenticación inicial de usuario se integra con el inicio de sesión único de Winlogon\-en la arquitectura.
 
 El Centro de distribución de claves Kerberos \(KDC\) está integrado con otros servicios de seguridad de Windows Server que se ejecutan en el controlador de dominio. El KDC usa la base de datos de Active Directory Domain Services del dominio como base de datos de cuentas de seguridad. Active Directory Domain Services es necesario para las implementaciones predeterminadas de Kerberos dentro del dominio o bosque.
 
-## <a name="kerb_tr_Kerb_Benefits"></a>Aplicaciones prácticas
+## <a name="practical-applications"></a><a name="kerb_tr_Kerb_Benefits"></a>Aplicaciones prácticas
 Las ventajas que se obtienen al usar Kerberos para la autenticación basada en\-de dominio son:
 
 -   **Autenticación delegada.**

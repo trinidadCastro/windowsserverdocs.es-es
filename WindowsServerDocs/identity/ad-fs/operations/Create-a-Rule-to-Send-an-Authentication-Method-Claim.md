@@ -1,7 +1,6 @@
 ---
 ms.assetid: 96b9f4e6-f01c-4517-8299-017d187d447e
 title: Crear una regla para enviar una notificación de método de autenticación
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4efcae02b96904c9f869a5ed9e14eba161892b74
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2c011c3b15f6223a6cea2f9c7226d9319641a693
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358161"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816588"
 ---
 # <a name="create-a-rule-to-send-an-authentication-method-claim"></a>Crear una regla para enviar una notificación de método de autenticación
 
@@ -56,7 +55,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 |                            Método de autenticación real                             |                                URI correspondiente                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        Autenticación de nombre de usuario y contraseña                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
-|                               Autenticación de Windows.                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
+|                               Autenticación de Windows                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | Seguridad de la capa de transporte \(TLS\) autenticación mutua que usa certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |                  Autenticación basada en\-X. 509 que no usa TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
@@ -89,7 +88,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 |                            Método de autenticación real                             |                                URI correspondiente                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        Autenticación de nombre de usuario y contraseña                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
-|                               Autenticación de Windows.                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
+|                               Autenticación de Windows                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | Seguridad de la capa de transporte \(TLS\) autenticación mutua que usa certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |                  Autenticación basada en\-X. 509 que no usa TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
@@ -127,7 +126,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 |              Método de autenticación real              |                                URI correspondiente                                 |
 |--------------------------------------------------------|----------------------------------------------------------------------------------|
 |         Autenticación de nombre de usuario y contraseña          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
-|                 Autenticación de Windows.                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
+|                 Autenticación de Windows                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | Autenticación mutua de TLS que usa certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |   Autenticación basada en\-X. 509 que no usa TLS    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
@@ -167,7 +166,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 |              Método de autenticación real              |                                URI correspondiente                                 |
 |--------------------------------------------------------|----------------------------------------------------------------------------------|
 |         Autenticación de nombre de usuario y contraseña          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
-|                 Autenticación de Windows.                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
+|                 Autenticación de Windows                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | Autenticación mutua de TLS que usa certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |   Autenticación basada en\-X. 509 que no usa TLS    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
@@ -229,7 +228,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 |                            Método de autenticación real                             |                                URI correspondiente                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        Autenticación de nombre de usuario y contraseña                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
-|                               Autenticación de Windows.                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
+|                               Autenticación de Windows                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | Seguridad de la capa de transporte \(TLS\) autenticación mutua que usa certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |                  Autenticación basada en\-X. 509 que no usa TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
@@ -278,7 +277,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 |              Método de autenticación real              |                                URI correspondiente                                 |
 |--------------------------------------------------------|----------------------------------------------------------------------------------|
 |         Autenticación de nombre de usuario y contraseña          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
-|                 Autenticación de Windows.                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
+|                 Autenticación de Windows                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | Autenticación mutua de TLS que usa certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |   Autenticación basada en\-X. 509 que no usa TLS    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 

@@ -1,24 +1,20 @@
 ---
 title: freedisk
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 91c15166-5baa-4b80-9e0c-4cd815d00530
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e417a8f9768706fe391f705adde37c62ceaa818
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5d652aa89c689a97bf2ecc67383bc2fd464a3054
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377028"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844448"
 ---
 # <a name="freedisk"></a>freedisk
 
@@ -30,7 +26,7 @@ Comprueba si la cantidad especificada de espacio en disco está disponible antes
 ```
 freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [<Value>]
 ```
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |       Parámetro       |                                                                                         Descripción                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -40,11 +36,11 @@ freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [
 |      /d <Drive>       |                              Especifica la unidad para la que desea averiguar la disponibilidad de espacio disponible. Debe especificar <Drive>para un equipo remoto.                               |
 |        <Value>        |                                     Comprueba una cantidad específica de espacio libre en disco. Puede especificar <Value>en bytes, KB, MB, GB, TB, PB, EB, ZB o YB.                                      |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 - El uso de las opciones de línea de comandos **/s**, **/u**y **/p** solo está disponible cuando se utiliza **/s**. Debe usar **/p** con **/u**para proporcionar la contraseña del usuario.
 - en el caso de las instalaciones desatendidas, puede usar **FREEDISK** en archivos por lotes de instalación para comprobar el espacio disponible en la cantidad de requisitos previos antes de continuar con la instalación.
 - Cuando se usa **FREEDISK** en un archivo por lotes, devuelve **0** si hay espacio suficiente y un **1** si no hay suficiente espacio.
-  ## <a name="BKMK_examples"></a>Example
+  ## <a name="examples"></a><a name=BKMK_examples></a>Example
   Para determinar si hay al menos 50 MB de espacio libre disponible en la unidad C:, escriba:
   ```
   freedisk 50mb 
@@ -53,5 +49,5 @@ freedisk [/s <computer> [/u [<Domain>\]<User> [/p [<Password>]]]] [/d <Drive>] [
   ```
   INFO: The specified 52,428,800 byte(s) of free space is available on current drive.
   ```
-  ## <a name="additional-references"></a>referencias adicionales
-  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+  ## <a name="additional-references"></a>Referencias adicionales
+  - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

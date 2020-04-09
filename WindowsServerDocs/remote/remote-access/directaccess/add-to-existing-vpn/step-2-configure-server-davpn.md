@@ -2,22 +2,18 @@
 title: 'Paso 2: configurar el servidor VPN de DirectAccess'
 description: Este tema forma parte de la guía agregar DirectAccess a una implementación de acceso remoto (VPN) existente para Windows Server 2016
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fe221fc9-c7d9-4508-b8a1-000d2515283c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c26f1fbcfa2d94c001579aabd6794c6537bd06f8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: f055a51c93276474bb1b5d4162a914dfa7bbb69a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314745"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819638"
 ---
 #  <a name="step-2-configure-the-directaccess-vpn-server"></a>Paso 2: configurar el servidor VPN de DirectAccess
 

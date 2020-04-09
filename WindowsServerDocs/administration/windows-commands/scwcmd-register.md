@@ -1,24 +1,20 @@
 ---
 title: Scwcmd registrar
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fe4d126a-9f27-4076-b7b1-fbefa45f378a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e892f7c08461e88d12a072dfb171f9523558ef7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5390b7d81efe8d807dd0b7d7a8c136a1d7092af3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371218"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835158"
 ---
 # <a name="scwcmd-register"></a>Scwcmd: register
 
@@ -32,7 +28,7 @@ Extiende o Personaliza la base de datos de configuración de seguridad del Asist
 scwcmd register /kbname:<MyApp> [/kbfile:<kb.xml>] [/kb:<path>] [/d]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -40,13 +36,13 @@ scwcmd register /kbname:<MyApp> [/kbfile:<kb.xml>] [/kb:<path>] [/d]
 |/KBFile:\<KB. XML >|Especifica la ruta de acceso y el nombre del archivo de base de datos de configuración de seguridad que se utilizará para extender o personalizar la base de datos de configuración de seguridad base. Para validar que el archivo de base de datos de configuración de seguridad es compatible con el esquema de SCW, use el archivo de definición de esquema%windir%\security\KBRegistrationInfo.xsd. Se debe proporcionar esta opción a menos que se especifique el parámetro **/d** .|
 |/KB:\<ruta de acceso >|Especifica la ruta de acceso al directorio que contiene los archivos de base de datos de configuración de seguridad de SCW que se van a actualizar. Si no se especifica esta opción, se utiliza%WINDIR%\security\msscw\kbs.|
 |/d|Anula el registro de una extensión de base de datos de configuración de seguridad de la base de datos de configuración de seguridad. La extensión a la que se va a anular el registro se especifica mediante el parámetro/kbname. (No se debe especificar el parámetro **/KBFile** ). La base de datos de configuración de seguridad de la que se va a anular el registro de la extensión se especifica mediante el parámetro **/KB** .|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 Scwcmd. exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
 
-## <a name="BKMK_Examples"></a>Example
+## <a name="examples"></a><a name=BKMK_Examples></a>Example
 
 Para registrar el archivo de base de datos de configuración de seguridad denominado SCWKBForMyApp. XML bajo el nombre MyApp en la ubicación \\\\kbserver\kb, escriba:
 ```
@@ -57,6 +53,6 @@ Para anular el registro de la base de datos de configuración de seguridad MyApp
 scwcmd register /d /kbname:MyApp /kb:\\kbserver\kb
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

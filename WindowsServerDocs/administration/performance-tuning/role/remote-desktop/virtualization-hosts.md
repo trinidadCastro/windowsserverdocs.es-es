@@ -4,15 +4,15 @@ description: Optimización del rendimiento para hosts de virtualización de Escr
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: HammadBu; VladmiS; denisgun
+ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 1b66f6404df5debee2a4c52ffc9166c8eabb9f81
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 2a0db4d890a01df13c44a9bb7adfbd13bebbdde0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947128"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851708"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Optimización del rendimiento Escritorio remoto hosts de virtualización
 
@@ -41,7 +41,7 @@ Enable-DedupVolume <volume> -UsageType HyperV
 > [!NOTE]
 > La optimización de desduplicación de datos de archivos abiertos solo se admite en escenarios de VDI con Hyper-V mediante el almacenamiento remoto a través de SMB 3,0.
 
-### <a name="memory"></a>Memory
+### <a name="memory"></a>Memoria
 
 El uso de memoria del servidor está controlado por tres factores principales:
 
@@ -69,7 +69,7 @@ Memoria dinámica permite el uso más eficaz de los recursos de memoria del serv
 
 Memoria dinámica le permite aumentar la densidad de las máquinas virtuales con los recursos que ya tiene sin sacrificar el rendimiento o la escalabilidad. El resultado es un uso más eficaz de los recursos de hardware de servidor caros, lo que puede traducirse en una administración más sencilla y reducir los costos.
 
-En los sistemas operativos invitados que ejecutan Windows 8 y versiones posteriores con procesadores virtuales que abarcan varios procesadores lógicos, tenga en cuenta el equilibrio entre ejecutar con Memoria dinámica para minimizar el uso de memoria y deshabilitar Memoria dinámica para mejorar el rendimiento. de una aplicación que tenga en cuenta la topología del equipo. Este tipo de aplicación puede aprovechar la información de la topología para tomar decisiones sobre la programación y la asignación de memoria.
+En los sistemas operativos invitados que ejecutan Windows 8 y versiones posteriores con procesadores virtuales que abarcan varios procesadores lógicos, tenga en cuenta el equilibrio entre ejecutar con Memoria dinámica para minimizar el uso de memoria y deshabilitar Memoria dinámica para mejorar el rendimiento de una aplicación que tenga en cuenta la topología del equipo. Este tipo de aplicación puede aprovechar la información de la topología para tomar decisiones sobre la programación y la asignación de memoria.
 
 ### <a name="tiered-storage"></a>Almacenamiento en capas
 
@@ -93,7 +93,7 @@ Tiene sentido desactivar las características y servicios de Windows que depende
 
 Cada servicio específico debe evaluarse correctamente antes de cualquier implementación amplia. A continuación se indican algunos aspectos iniciales que se deben tener en cuenta:
 
-| Servicio                                      | ¿Por qué?                                                                                                                                                                                                      |
+| Service                                      | ¿Por qué?                                                                                                                                                                                                      |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Actualización automática                                  | Los escritorios virtuales agrupados se actualizan volviendo a crear la plantilla de escritorio virtual.                                                                                                                          |
 | Archivos sin conexión                                | Los escritorios virtuales siempre están en línea y se conectan desde un punto de vista de red.                                                                                                                         |

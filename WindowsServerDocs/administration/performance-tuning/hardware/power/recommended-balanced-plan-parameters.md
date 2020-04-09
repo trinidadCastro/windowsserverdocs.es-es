@@ -4,15 +4,15 @@ description: Parámetros de plan de energía equilibrado recomendados para el ti
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 96037a577c9f2a835e9c49bf9339ed8dc6da1a6b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 288746b5361c550e167f64886a929c96c81ff8d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383515"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851968"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>Parámetros de plan de energía equilibrado recomendados para cargas de trabajo que requieren tiempos de respuesta rápidos
 
@@ -26,7 +26,7 @@ Sin embargo, **el tiempo de respuesta** podría aumentar exponencialmente con au
 | Umbral de aumento de rendimiento de procesador | Umbral de uso por encima del cual se aumenta la frecuencia | 90 | 60 |
 | Umbral de reducción de rendimiento de procesador | Umbral de uso por debajo del cual se va a reducir la frecuencia | 80 | 40 |
 | Tiempo de aumento del rendimiento del procesador | Número de ventanas de comprobación de PPM antes de que la frecuencia sea aumentar | 3 | 1 |
-| Directiva de aumento de rendimiento de procesador | Velocidad de aumento de la frecuencia | Sencilla | Ideal |
+| Directiva de aumento de rendimiento de procesador | Velocidad de aumento de la frecuencia | único | Ideal |
 
 Para establecer los valores propuestos, los usuarios pueden ejecutar los siguientes comandos en una ventana con administrador:
 

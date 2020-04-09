@@ -1,7 +1,6 @@
 ---
 ms.assetid: 22c514b2-401e-49e1-a87e-0cbaa2c1dac1
 title: Funciones del sitio
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 109f576bfdacf68a0eadc7dd84ddb9a4148e6dd9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4443e5a0cfeba0eaee767404359febec256209d4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408678"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821848"
 ---
 # <a name="site-functions"></a>Funciones del sitio
 
@@ -28,7 +27,7 @@ Active Directory Domain Services (AD DS) utiliza un método de replicación con 
 Dentro de los sitios, la replicación está optimizada para la velocidad, las actualizaciones de datos desencadenan la replicación y los datos se envían sin la sobrecarga requerida por la compresión de datos. Por el contrario, la replicación entre sitios se comprime para minimizar el costo de transmisión a través de vínculos de red de área extensa (WAN). Cuando se produce la replicación entre sitios, un solo controlador de dominio por dominio en cada sitio recopila y almacena los cambios de directorio y los comunica a un momento programado en un controlador de dominio de otro sitio.  
   
 ## <a name="client-affinity"></a>Afinidad del cliente  
-Los controladores de dominio usan información del sitio para informar a los clientes de Active Directory acerca de los controladores de dominio presentes en el sitio más cercano como el cliente. Por ejemplo, Imagine un cliente en el sitio de Seattle que no conoce su afiliación al sitio y se pone en contacto con un controlador de dominio desde el sitio de Atlanta. En función de la dirección IP del cliente, el controlador de dominio de Atlanta determina en qué sitio se encuentra realmente el cliente y envía la información del sitio de vuelta al cliente. El controlador de dominio informa también al cliente de si el controlador de dominio elegido es el más cercano. El cliente almacena en caché la información del sitio proporcionada por el controlador de dominio en Atlanta, consultas para el registro de recursos del servicio específico del sitio (SRV) (un registro de recursos del sistema de nombres de dominio (DNS) que se usa para buscar controladores de dominio para AD DS) y, por tanto, encuentra un dominio. controlador dentro del mismo sitio.  
+Los controladores de dominio usan información del sitio para informar a los clientes de Active Directory acerca de los controladores de dominio presentes en el sitio más cercano como el cliente. Por ejemplo, Imagine un cliente en el sitio de Seattle que no conoce su afiliación al sitio y se pone en contacto con un controlador de dominio desde el sitio de Atlanta. En función de la dirección IP del cliente, el controlador de dominio de Atlanta determina en qué sitio se encuentra realmente el cliente y envía la información del sitio de vuelta al cliente. El controlador de dominio informa también al cliente de si el controlador de dominio elegido es el más cercano. El cliente almacena en caché la información del sitio proporcionada por el controlador de dominio en Atlanta, consultas para el registro de recursos del servicio específico del sitio (SRV) (un registro de recursos del sistema de nombres de dominio (DNS) que se usa para buscar controladores de dominio para AD DS) y, por tanto, encuentra un controlador de dominio en el mismo sitio.  
   
 Al buscar un controlador de dominio en el mismo sitio, el cliente evita las comunicaciones a través de vínculos WAN. Si no se encuentra ningún controlador de dominio en el sitio del cliente, un controlador de dominio que tenga las conexiones de costo más bajo en relación con otros sitios conectados se anuncia a sí mismo (registra un registro de recursos de servicio específico del sitio (SRV) en DNS) en el sitio que no tiene un controlador de dominio. Los controladores de dominio que se publican en DNS son los del sitio más cercano, tal como se define en la topología del sitio. Este proceso garantiza que todos los sitios tengan un controlador de dominio preferido para la autenticación.  
   

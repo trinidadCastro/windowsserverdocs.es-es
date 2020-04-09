@@ -1,24 +1,20 @@
 ---
 title: bootcfg copy
-description: 'Tema de comandos de Windows para la **copia de Bootcfg** : realiza una copia de una entrada de arranque existente, a la que puede agregar opciones de la línea de comandos.'
-ms.custom: na
+description: Comando de comandos de Windows para la copia de Bootcfg, que realiza una copia de una entrada de arranque existente, a la que puede agregar opciones de la línea de comandos.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2a236c2a-8675-444d-b695-9cbc9aff643b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42a408443cbe6722c25780f7c27d70b05da7eb8e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5194418a07aece4f15a84c3eccbc044431a865b9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380122"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848688"
 ---
 # <a name="bootcfg-copy"></a>bootcfg copy
 
@@ -30,7 +26,7 @@ Realiza una copia de una entrada de arranque existente, a la que puede agregar o
 ```
 bootcfg /copy [/s <computer> [/u <Domain>\<User> /p <Password>]] [/d <Description>] [/id <OSEntryLineNum>]
 ```
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |      Parámetro       |                                                                                             Descripción                                                                                             |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,12 +35,12 @@ bootcfg /copy [/s <computer> [/u <Domain>\<User> /p <Password>]] [/d <Descriptio
 |    /p <Password>     |                                                        Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                        |
 |   /d <Description>   |                                                                    Especifica la descripción de la nueva entrada de sistema operativo.                                                                    |
 | /ID <OSEntryLineNum> |         Especifica el número de línea de entrada del sistema operativo en la sección [operating systems] del archivo boot. ini que se va a copiar. La primera línea después del encabezado de la sección [operating systems] es 1.         |
-|          /?          |                                                                                Muestra la ayuda en el símbolo del sistema.                                                                                 |
+|          /?          |                                                                                Muestra la Ayuda en el símbolo del sistema.                                                                                 |
 
-## <a name="BKMK_examples"></a>Example
-En los siguientes ejemplos se muestra cómo se puede usar el comando **bootcfg/Copy** para copiar la entrada de arranque 1 y escribir "\ABC Server\\" como Descripción:
+## <a name="examples"></a><a name=BKMK_examples></a>Example
+En los siguientes ejemplos se muestra cómo se puede usar el comando **bootcfg/Copy** para copiar la entrada de arranque 1 y escribir \ABC Server\\ como Descripción:
 ```
-bootcfg /copy /d "\ABC Server\" /id 1
+bootcfg /copy /d \ABC Server\ /id 1
 ```
-#### <a name="additional-references"></a>referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+## <a name="additional-references"></a>Referencias adicionales
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

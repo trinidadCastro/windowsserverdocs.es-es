@@ -1,15 +1,15 @@
 ---
 title: Escenarios de host de proceso de red (HCN)
-description: ''
 ms.author: jmesser
 author: jmesser81
+ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 91cdafa9699cd213156d872090034dd4ea67108e
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: 2fdf0d13a0a362681a27106356fbe295532ed970
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031532"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859838"
 ---
 # <a name="common-scenarios"></a>Escenarios comunes
 
@@ -96,9 +96,9 @@ void CreateHcnNetwork()
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
-        //  "ErrorCode" : <uint32>,
-        //  "Error" : <string>,
-        //  "Success" : <bool>,
+        //    "ErrorCode" : <uint32>,
+        //    "Error" : <string>,
+        //    "Success" : <bool>,
        //   }
 
         // Failed to create network
@@ -189,7 +189,7 @@ En este ejemplo se muestra cómo usar la API de servicio de red de compute de ho
 ```
 
 
-## <a name="scenario-hcn-endpoint"></a>Escenario: Punto de conexión HCN
+## <a name="scenario-hcn-endpoint"></a>Escenario: punto de conexión de HCN
 
 ### <a name="create-an-hcn-endpoint"></a>Creación de un punto de conexión de HCN
 
@@ -222,7 +222,7 @@ void CreateAndHotAddEndpoint()
             "Suffix" : "net.home",
             "ServerList" : "10.0.0.10",
         }
-    })”;
+    })";
     GUID endpointGuid;  
     HRESULT result = CoCreateGuid(&endpointGuid);
 
@@ -266,7 +266,7 @@ void CreateAndHotAddEndpoint()
 ```
 
 
-### <a name="delete-an-endpoint"></a>Eliminar un punto de conexión
+### <a name="delete-an-endpoint"></a>Eliminar un extremo
 
 En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para eliminar un punto de conexión de red de proceso de host.
 
@@ -381,7 +381,7 @@ En este ejemplo se muestra cómo usar la API de servicio de red de compute de ho
 ```
 
 
-## <a name="scenario-hcn-namespace"></a>Escenario: Espacio de nombres HCN
+## <a name="scenario-hcn-namespace"></a>Escenario: espacio de nombres HCN
 
 ### <a name="create-an-hcn-namespace"></a>Creación de un espacio de nombres HCN
 
@@ -424,9 +424,9 @@ void CreateHcnNamespace()
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
-        //  "ErrorCode" : <uint32>,
-        //  "Error" : <string>,
-        //  "Success" : <bool>,
+        //    "ErrorCode" : <uint32>,
+        //    "Error" : <string>,
+        //    "Success" : <bool>,
        //   }
 
         // Failed to create network
@@ -564,7 +564,7 @@ En este ejemplo se muestra cómo usar la API de servicio de red de compute de ho
 ```
 
 
-## <a name="scenario-hcn-load-balancer"></a>Escenario: Equilibrador de carga de HCN
+## <a name="scenario-hcn-load-balancer"></a>Escenario: HCN load balancer
 
 ### <a name="create-an-hcn-load-balancer"></a>Creación de un equilibrador de carga de HCN
 
@@ -620,9 +620,9 @@ void CreateHcnLoadBalancer()
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
-        //  "ErrorCode" : <uint32>,
-        //  "Error" : <string>,
-        //  "Success" : <bool>,
+        //    "ErrorCode" : <uint32>,
+        //    "Error" : <string>,
+        //    "Success" : <bool>,
        //   }
 
         // Failed to create network
@@ -761,7 +761,7 @@ En este ejemplo se muestra cómo usar la API de servicio de red de compute de ho
 ```
 
 
-## <a name="scenario-hcn-notifications"></a>Escenario: Notificaciones de HCN
+## <a name="scenario-hcn-notifications"></a>Escenario: notificaciones de HCN
 
 ### <a name="register-and-unregister-service-wide-notifications"></a>Registro y anulación del registro de notificaciones de todo el servicio
 

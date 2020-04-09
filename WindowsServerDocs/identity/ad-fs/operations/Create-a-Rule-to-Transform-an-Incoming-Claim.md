@@ -1,7 +1,6 @@
 ---
 ms.assetid: ef83960f-d2cf-441f-b2b6-d97822ec7149
 title: Crear una regla para transformar una notificación entrante
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 15a4583d429de9383e9405cfcd444777aa55c921
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 43768b282005ba77d22985aa9a0d563125a97289
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407577"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816538"
 ---
 # <a name="create-a-rule-to-transform-an-incoming-claim"></a>Crear una regla para transformar una notificación entrante
 
@@ -130,7 +129,7 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
 >   
 > Para obtener más información acerca de los escenarios de Access Control dinámicos, consulte el [mapa de ruta de contenido de Access control dinámico](../../solution-guides/dynamic-access-control--scenario-overview.md) o el [uso de notificaciones de AD DS con AD FS](https://technet.microsoft.com/library/hh831504.aspx).  
   
-7. Haz clic en **Finalizar**.  
+7. Haga clic en **Finalizar**.  
   
 8. En el cuadro de diálogo **editar reglas de notificaciones** , haga clic en **Aceptar** para guardar la regla.  
 

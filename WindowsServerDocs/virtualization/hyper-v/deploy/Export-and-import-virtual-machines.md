@@ -2,19 +2,19 @@
 title: Exportar e importar máquinas virtuales
 description: Muestra cómo exportar e importar máquinas virtuales mediante el administrador de Hyper-V o Windows PowerShell.
 ms.prod: windows-server
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 manager: dongill
 ms.technology: compute-hyper-v
 ms.date: 12/13/2016
 ms.topic: article
 ms.assetid: 7fd996f5-1ea9-4b16-9776-85fb39a3aa34
-ms.openlocfilehash: 6e130ee8a040cd5b56908d77d91bf196a60de6f7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1e9cd8710a53c1e5d9d97e464c32dbf7f17d29a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392979"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860898"
 ---
 >Se aplica a: Windows 10, Windows Server 2016, Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
 
@@ -58,7 +58,7 @@ Para importar una máquina virtual:
 
 1. En el menú **acciones** del administrador de Hyper-V, haga clic en **importar máquina virtual**.
 
-2. Haz clic en **Siguiente**.
+2. Haga clic en **Siguiente**.
 
 3. Seleccione la carpeta que contiene los archivos exportados y haga clic en **siguiente**.
 
@@ -66,7 +66,7 @@ Para importar una máquina virtual:
 
 5. Elija el tipo de importación y haga clic en **siguiente**. (Para obtener descripciones, vea [tipos de importación](#import-types), a continuación).
 
-6. Haz clic en **Finalizar**.
+6. Haga clic en **Finalizar**.
 
 ### <a name="import-using-powershell"></a>Importar mediante PowerShell
 

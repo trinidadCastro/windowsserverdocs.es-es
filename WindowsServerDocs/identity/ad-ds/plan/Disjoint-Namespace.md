@@ -1,7 +1,6 @@
 ---
 ms.assetid: d92731f1-e4d8-4223-9b07-ca1f40bb0e1f
 title: Espacio de nombres separado
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5abe67c89ce4c2f4b5056f6197242b5db8db340e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b21e849bb69068f66b1b80c6b1a3afbdef91459f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408855"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822538"
 ---
 # <a name="disjoint-namespace"></a>Espacio de nombres separado
 
@@ -27,7 +26,7 @@ Un espacio de nombres discontinuo es más complejo de administrar, mantener y so
 ## <a name="support-for-disjoint-namespaces"></a>Compatibilidad con espacios de nombres separados  
 Los equipos miembros del dominio, incluidos los controladores de dominio, pueden funcionar en un espacio de nombres discontinuo. Los equipos miembros del dominio pueden registrar su registro de recursos de host (A) y el registro de recursos de host de IP versión 6 (IPv6) (AAAA) en un espacio de nombres DNS separado. Cuando los equipos miembros del dominio registran sus registros de recursos de esta manera, los controladores de dominio continúan registrando los registros de recursos globales y específicos del sitio (SRV) en la zona DNS que es idéntico al nombre de dominio de Active Directory.  
   
-Por ejemplo, supongamos que un controlador de dominio para el dominio Active Directory denominado na.corp.fabrikam.com que usa un sufijo DNS principal de corp.fabrikam.com registra registros de recursos de host (A) y host IPv6 (AAAA) en la zona DNS corp.fabrikam.com. El controlador de dominio sigue registrando registros de recursos globales y específicos del sitio (SRV) en las zonas DNS _ msdcs. na. Corp. fabrikam. com y na.corp.fabrikam.com, lo que hace posible la ubicación del servicio.  
+Por ejemplo, supongamos que un controlador de dominio para el dominio Active Directory denominado na.corp.fabrikam.com que usa un sufijo DNS principal de corp.fabrikam.com registra registros de recursos de host (A) y host IPv6 (AAAA) en la zona DNS corp.fabrikam.com. El controlador de dominio sigue registrando registros de recursos globales y específicos del sitio (SRV) en las zonas DNS _msdcs. na. Corp. fabrikam. com y na.corp.fabrikam.com, lo que hace posible la ubicación del servicio.  
   
 > [!IMPORTANT]  
 > Aunque los sistemas operativos Windows pueden admitir un espacio de nombres separado, las aplicaciones que se escriben suponen que el sufijo DNS principal es el mismo que el sufijo de dominio de Active Directory puede que no funcione en este tipo de entorno. Por esta razón, debe probar detenidamente todas las aplicaciones y sus respectivos sistemas operativos antes de implementar un espacio de nombres separado.  
@@ -88,18 +87,18 @@ Antes de modificar un espacio de nombres, revise las consideraciones siguientes,
   
 -   Los nombres de entidad de seguridad de servicio (SPN) configurados manualmente ya no pueden coincidir con los nombres DNS tras un cambio de espacio de nombres. Esto puede producir errores de autenticación.  
   
-    Para obtener más información, consulte error de inicios de sesión de servicio debido a la configuración incorrecta de SPN ([https://go.microsoft.com/fwlink/?LinkId=102304](https://go.microsoft.com/fwlink/?LinkId=102304)).  
+    Para obtener más información, vea errores de inicio de sesión de servicio debido a la configuración incorrecta de SPN ([https://go.microsoft.com/fwlink/?LinkId=102304](https://go.microsoft.com/fwlink/?LinkId=102304)).  
   
-    -   Si usa equipos basados en Windows Server 2003 con delegación restringida, es posible que estos equipos requieran configuración adicional para cambiar los SPN. Para obtener más información, consulte el artículo 936628 de Microsoft Knowledge base ([https://go.microsoft.com/fwlink/?LinkId=102306](https://go.microsoft.com/fwlink/?LinkId=102306)).  
+    -   Si usa equipos basados en Windows Server 2003 con delegación restringida, es posible que estos equipos requieran configuración adicional para cambiar los SPN. Para obtener más información, vea el artículo 936628 de Microsoft Knowledge base ([https://go.microsoft.com/fwlink/?LinkId=102306](https://go.microsoft.com/fwlink/?LinkId=102306)).  
   
     -   Si desea delegar permisos para modificar SPN en administradores subordinados, vea delegar autoridad para modificar SPN ([https://go.microsoft.com/fwlink/?LinkId=106639](https://go.microsoft.com/fwlink/?LinkId=106639)).  
   
--   Si usa el Protocolo ligero de acceso a directorios (LDAP) sobre Capa de sockets seguros (SSL) (conocido como LDAPs) con una CA en una implementación que tiene controladores de dominio que están configurados en un espacio de nombres separado, debe usar el nombre de dominio Active Directory apropiado y sufijo DNS principal al configurar los certificados LDAPs.  
+-   Si usa el Protocolo ligero de acceso a directorios (LDAP) sobre Capa de sockets seguros (SSL) (conocido como LDAPs) con una CA en una implementación que tiene controladores de dominio que están configurados en un espacio de nombres separado, debe usar el nombre de dominio de Active Directory apropiado y el sufijo DNS principal al configurar los certificados LDAPs.  
   
-    Para obtener más información sobre los requisitos de certificados de controlador de dominio, consulte el artículo 321051 de Microsoft Knowledge base ([https://go.microsoft.com/fwlink/?LinkId=102307](https://go.microsoft.com/fwlink/?LinkId=102307)).  
+    Para obtener más información acerca de los requisitos de certificado de controlador de dominio, consulte el artículo 321051 en Microsoft Knowledge base ([https://go.microsoft.com/fwlink/?LinkId=102307](https://go.microsoft.com/fwlink/?LinkId=102307)).  
   
     > [!NOTE]  
-    > Los controladores de dominio que usan certificados para LDAPs pueden requerir que vuelva a implementar sus certificados. Al hacerlo, es posible que los controladores de dominio no seleccionen un certificado adecuado hasta que se reinicien. Para obtener más información acerca de la autenticación LDAPs y una actualización relacionada para Windows Server 2003, consulte el artículo 932834 de Microsoft Knowledge base ([https://go.microsoft.com/fwlink/?LinkId=102308](https://go.microsoft.com/fwlink/?LinkId=102308)).  
+    > Los controladores de dominio que usan certificados para LDAPs pueden requerir que vuelva a implementar sus certificados. Al hacerlo, es posible que los controladores de dominio no seleccionen un certificado adecuado hasta que se reinicien. Para obtener más información acerca de la autenticación LDAPs y una actualización relacionada para Windows Server 2003, vea el artículo 932834 de Microsoft Knowledge base ([https://go.microsoft.com/fwlink/?LinkId=102308](https://go.microsoft.com/fwlink/?LinkId=102308)).  
   
 ### <a name="planning-for-disjoint-namespace-deployments"></a>Planeación de implementaciones de espacios de nombres disjuntos  
 Tenga en cuenta las siguientes precauciones si implementa equipos en un entorno que tiene un espacio de nombres separado:  

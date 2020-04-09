@@ -1,7 +1,6 @@
 ---
 ms.assetid: 99a68050-8d19-4c58-ad86-e08a3dcdb4f7
 title: 'Apéndice L: eventos para supervisar'
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 07/30/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e069fe004d9256682e5754fc90ae6cba88ee7cb3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e47b1fbe2df16aca9514e8a29c82d56d8dc96cba
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402724"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822858"
 ---
-# <a name="appendix-l-events-to-monitor"></a>Apéndice L: Eventos para supervisar
+# <a name="appendix-l-events-to-monitor"></a>Anexo L: eventos para supervisar
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 En la tabla siguiente se enumeran los eventos que debe supervisar en su entorno, de acuerdo con las recomendaciones proporcionadas en [supervisión Active Directory para ver los signos de riesgo](../../ad-ds/plan/security-best-practices/Monitoring-Active-Directory-for-Signs-of-Compromise.md). En la tabla siguiente, la columna "ID. de evento de Windows actual" muestra el ID. de evento tal como se implementa en las versiones de Windows y Windows Server que se encuentran actualmente en soporte estándar.  
   
@@ -40,83 +39,83 @@ Una crítica potencial de alto significa que se debe investigar una aparición d
 |5124|N/D|Alto|Se actualizó una configuración de seguridad en el servicio de respuesta de OCSP|  
 |N/D|550|De medio a alto|Posible ataque de denegación de servicio (DoS)|  
 |1102|517|De medio a alto|Se borró el registro de auditoría|  
-|4621|N/D|Medio|El administrador recuperó el sistema del error CrashOnAuditFail. Los usuarios que no sean administradores podrán iniciar sesión ahora. Es posible que no se haya registrado alguna actividad de auditoría.|  
-|4675|N/D|Medio|Se filtraron SID.|  
-|4692|N/D|Medio|Se intentó hacer una copia de seguridad de la clave maestra de protección de datos|  
-|4693|N/D|Medio|Se intentó recuperar la clave maestra de protección de datos|  
-|4706|610|Medio|Se creó una nueva confianza para un dominio|  
-|4713|617|Medio|Se cambió la directiva Kerberos|  
-|4714|618|Medio|Se cambió la directiva de recuperación de datos cifrados|  
-|4715|N/D|Medio|Se cambió la directiva de auditoría (SACL) en un objeto|  
-|4716|620|Medio|Se modificó la información de dominio de confianza|  
-|4724|628|Medio|Se ha realizado un intento de restablecer la contraseña de una cuenta.|  
-|4727|631|Medio|Se creó un grupo global con seguridad habilitada.|  
-|4735|639|Medio|Se cambió un grupo local con seguridad habilitada.|  
-|4737|641|Medio|Se cambió un grupo global con seguridad habilitada.|  
-|4739|643|Medio|Se cambió la directiva de dominio|  
-|4754|658|Medio|Se creó un grupo universal con la seguridad habilitada.|  
-|4755|659|Medio|Se cambió un grupo universal con la seguridad habilitada.|  
-|4764|667|Medio|Se eliminó un grupo con seguridad deshabilitada|  
-|4764|668|Medio|Se cambió el tipo de un grupo.|  
-|4780|684|Medio|Se estableció la ACL en cuentas que son miembros de grupos de administradores.|  
-|4816|N/D|Medio|RPC detectó una infracción de integridad al descifrar un mensaje entrante.|  
-|4865|N/D|Medio|Se agregó una entrada de información de bosque de confianza|  
-|4866|N/D|Medio|Se eliminó una entrada de información de bosque de confianza|  
-|4867|N/D|Medio|Se modificó una entrada de información de bosque de confianza|  
-|4868|772|Medio|El Administrador de certificados ha denegado una solicitud de certificado pendiente.|  
-|4870|774|Medio|Servicios de servidor de certificados revocó un certificado.|  
-|4882|786|Medio|Se cambiaron los permisos de seguridad para Servicios de servidor de certificados.|  
-|4885|789|Medio|Se cambió el filtro de auditoría para Servicios de servidor de certificados.|  
-|4890|794|Medio|Se cambió la configuración del administrador de certificados para Servicios de servidor de certificados.|  
-|4892|796|Medio|Se cambió una propiedad de Servicios de servidor de certificados.%|  
-|4896|800|Medio|Una o más filas se han eliminado de la base de datos de certificados.|  
-|4906|N/D|Medio|Se cambió el valor de CrashOnAuditFail|  
-|4907|N/D|Medio|Se cambió la configuración de auditoría del objeto|  
-|4908|N/D|Medio|Se modificó la tabla de inicio de sesión de grupos especiales|  
-|4912|807|Medio|Se cambió la directiva de auditoría por usuario|  
-|4960|N/D|Medio|IPsec descartó un paquete entrante con un error en la comprobación de integridad. Si el problema continúa, podría indicar un problema de red o que se están modificando los paquetes en tránsito a este equipo. Comprueba que los paquetes enviados desde el equipo remoto sean iguales a los recibidos en este equipo. Este error también puede indicar problemas de interoperabilidad con otras implementaciones de IPsec.|  
-|4961|N/D|Medio|IPsec descartó un paquete entrante con un error en la comprobación de reproducción. Si el problema continúa, podría indicar un ataque de reproducción contra este equipo.|  
-|4962|N/D|Medio|IPsec descartó un paquete entrante con un error en la comprobación de reproducción. El paquete entrante tenía un número de secuencia demasiado bajo para asegurarse de que no fuera una reproducción.|  
-|4963|N/D|Medio|IPsec descartó un paquete de texto no cifrado entrante que debería estar protegido. Esto suele deberse a que el equipo remoto cambió su directiva IPsec sin informar a este equipo. También podría ser un intento de ataque de suplantación.|  
-|4965|N/D|Medio|IPsec recibió un paquete de un equipo remoto con un Índice de parámetro de seguridad (SPI) incorrecto. Esto suele deberse a hardware que funciona incorrectamente y que está dañando los paquetes. Si estos errores continúan, comprueba que los paquetes enviados desde el equipo remoto sean iguales a los recibidos en este equipo. Este error también puede indicar problemas de interoperabilidad con otras implementaciones de IPsec. En ese caso, si no se impide la conectividad, se pueden omitir estos eventos.|  
-|4976|N/D|Medio|Durante la negociación de modo principal, IPsec recibió un paquete de negociación no válido. Si el problema continúa, podría indicar un problema de red o que se está intentando modificar o reproducir esta negociación.|  
-|4977|N/D|Medio|Durante la negociación de modo rápido, IPsec recibió un paquete de negociación no válido. Si el problema continúa, podría indicar un problema de red o que se está intentando modificar o reproducir esta negociación.|  
-|4978|N/D|Medio|Durante la negociación de modo extendido, IPsec recibió un paquete de negociación no válido. Si el problema continúa, podría indicar un problema de red o que se está intentando modificar o reproducir esta negociación.|  
-|4983|N/D|Medio|Error de una negociación de modo extendido de IPsec. Se eliminó la asociación de seguridad de modo principal correspondiente.|  
-|4984|N/D|Medio|Error de una negociación de modo extendido de IPsec. Se eliminó la asociación de seguridad de modo principal correspondiente.|  
-|5027|N/D|Medio|El servicio de Firewall de Windows no pudo recuperar la directiva de seguridad del almacenamiento local. El servicio continuará aplicando la directiva actual.|  
-|5028|N/D|Medio|El servicio Firewall de Windows no pudo analizar la nueva directiva de seguridad. El servicio continuará con la directiva aplicada actualmente.|  
-|5029|N/D|Medio|El servicio Firewall de Windows no pudo inicializar el controlador. El servicio continuará aplicando la directiva actual.|  
-|5030|N/D|Medio|No se pudo iniciar el servicio Firewall de Windows.|  
-|5035|N/D|Medio|No se pudo iniciar el controlador de Firewall de Windows.|  
-|5037|N/D|Medio|El controlador de Firewall de Windows detectó un error en tiempo de ejecución crítico. Finalizando.|  
-|5038|N/D|Medio|Integridad de código determinó que el hash de imagen de un archivo no es válido. El archivo pudo resultar dañado por una modificación no autorizada o el hash no válido podría indicar un posible error de dispositivo de disco.|  
-|5120|N/D|Medio|Servicio de respuesta de OCSP iniciado|  
-|5121|N/D|Medio|Servicio de respuesta de OCSP detenido|  
-|5122|N/D|Medio|Una entrada de configuración cambiada en el servicio de respuesta de OCSP|  
-|5123|N/D|Medio|Una entrada de configuración cambiada en el servicio de respuesta de OCSP|  
-|5376|N/D|Medio|Se hizo una copia de seguridad de las credenciales del Administrador de credenciales.|  
-|5377|N/D|Medio|Se restauraron las credenciales del Administrador de credenciales desde una copia de seguridad.|  
-|5453|N/D|Medio|Error de negociación de IPsec con un equipo remoto. No se inició el servicio de Módulos de creación de claves de IPsec para IKE y AuthIP (IKEEXT).|  
-|5480|N/D|Medio|Error de los servicios IPsec al obtener la lista completa de interfaces de red del equipo. Esto supone un posible riesgo de seguridad porque puede que algunas interfaces de red no obtengan la protección proporcionada por los filtros IPsec aplicados. Usa el complemento Monitor de seguridad IP para diagnosticar el problema.|  
-|5483|N/D|Medio|Error de los servicios IPsec al inicializar el servidor RPC. No se pudieron iniciar los servicios IPsec.|  
-|5484|N/D|Medio|Los servicios IPsec experimentaron un error crítico y se cerraron. El cierre de los servicios IPsec puede suponer un mayor riesgo de ataque a la red para el equipo o exponerlo a posibles riesgos de seguridad.|  
-|5485|N/D|Medio|Error de los servicios IPsec al procesar algunos filtros IPsec en un evento de Plug and Play para interfaces de red. Esto supone un posible riesgo de seguridad porque puede que algunas interfaces de red no obtengan la protección proporcionada por los filtros IPsec aplicados. Usa el complemento Monitor de seguridad IP para diagnosticar el problema.|  
-|6145|N/D|Medio|Se produjeron uno o más errores al procesar la Directiva de seguridad en los objetos de directiva de grupo.|  
-|6273|N/D|Medio|El Servidor de directivas de redes denegó el acceso a un usuario.|  
-|6274|N/D|Medio|El Servidor de directivas de redes rechazó la solicitud de un usuario.|  
-|6275|N/D|Medio|El Servidor de directivas de redes rechazó la solicitud de cuentas de un usuario.|  
-|6276|N/D|Medio|El Servidor de directivas de redes puso en cuarentena un usuario.|  
-|6277|N/D|Medio|El Servidor de directivas de redes concedió acceso a un usuario, pero lo sometió a un período de prueba porque el host no cumplía la directiva de mantenimiento definida.|  
-|6278|N/D|Medio|El Servidor de directivas de redes concedió acceso total a un usuario porque el host cumplía la directiva de mantenimiento definida.|  
-|6279|N/D|Medio|El Servidor de directivas de redes bloqueó la cuenta de usuario debido a varios intentos de autenticación erróneos.|  
-|6280|N/D|Medio|El Servidor de directivas de redes desbloqueó la cuenta de usuario.|  
-|-|640|Medio|Base de datos de cuentas generales modificada|  
-|-|619|Medio|Directiva de calidad de servicio modificada|  
-|24586|N/D|Medio|Se detectó un error al convertir el volumen|  
-|24592|N/D|Medio|Error al intentar reiniciar automáticamente la conversión en el volumen% 2.|  
-|24593|N/D|Medio|Escritura de metadatos: El volumen% 2 devolvió errores al intentar modificar los metadatos. Si continúan los errores, descifre el volumen|  
-|24594|N/D|Medio|Regeneración de metadatos: Error al intentar escribir una copia de metadatos en el volumen% 2 y puede aparecer como daños en el disco. Si los errores continúan, descifre el volumen.|  
+|4621|N/D|Media|El administrador recuperó el sistema del error CrashOnAuditFail. Los usuarios que no sean administradores podrán iniciar sesión ahora. Es posible que no se haya registrado alguna actividad de auditoría.|  
+|4675|N/D|Media|Se filtraron SID.|  
+|4692|N/D|Media|Se intentó hacer una copia de seguridad de la clave maestra de protección de datos|  
+|4693|N/D|Media|Se intentó recuperar la clave maestra de protección de datos|  
+|4706|610|Media|Se creó una nueva confianza para un dominio|  
+|4713|617|Media|Se cambió la directiva Kerberos|  
+|4714|618|Media|Se cambió la directiva de recuperación de datos cifrados|  
+|4715|N/D|Media|Se cambió la directiva de auditoría (SACL) en un objeto|  
+|4716|620|Media|Se modificó la información de dominio de confianza|  
+|4724|628|Media|Se ha realizado un intento de restablecer la contraseña de una cuenta.|  
+|4727|631|Media|Se creó un grupo global con seguridad habilitada.|  
+|4735|639|Media|Se cambió un grupo local con seguridad habilitada.|  
+|4737|641|Media|Se cambió un grupo global con seguridad habilitada.|  
+|4739|643|Media|Se cambió la directiva de dominio|  
+|4754|658|Media|Se creó un grupo universal con la seguridad habilitada.|  
+|4755|659|Media|Se cambió un grupo universal con la seguridad habilitada.|  
+|4764|667|Media|Se eliminó un grupo con seguridad deshabilitada|  
+|4764|668|Media|Se cambió el tipo de un grupo.|  
+|4780|684|Media|Se estableció la ACL en cuentas que son miembros de grupos de administradores.|  
+|4816|N/D|Media|RPC detectó una infracción de integridad al descifrar un mensaje entrante.|  
+|4865|N/D|Media|Se agregó una entrada de información de bosque de confianza|  
+|4866|N/D|Media|Se eliminó una entrada de información de bosque de confianza|  
+|4867|N/D|Media|Se modificó una entrada de información de bosque de confianza|  
+|4868|772|Media|El Administrador de certificados ha denegado una solicitud de certificado pendiente.|  
+|4870|774|Media|Servicios de servidor de certificados revocó un certificado.|  
+|4882|786|Media|Se cambiaron los permisos de seguridad para Servicios de servidor de certificados.|  
+|4885|789|Media|Se cambió el filtro de auditoría para Servicios de servidor de certificados.|  
+|4890|794|Media|Se cambió la configuración del administrador de certificados para Servicios de servidor de certificados.|  
+|4892|796|Media|Se cambió una propiedad de Servicios de servidor de certificados.%|  
+|4896|800|Media|Una o más filas se han eliminado de la base de datos de certificados.|  
+|4906|N/D|Media|Se cambió el valor de CrashOnAuditFail|  
+|4907|N/D|Media|Se cambió la configuración de auditoría del objeto|  
+|4908|N/D|Media|Se modificó la tabla de inicio de sesión de grupos especiales|  
+|4912|807|Media|Se cambió la directiva de auditoría por usuario|  
+|4960|N/D|Media|IPsec descartó un paquete entrante con un error en la comprobación de integridad. Si el problema continúa, podría indicar un problema de red o que se están modificando los paquetes en tránsito a este equipo. Comprueba que los paquetes enviados desde el equipo remoto sean iguales a los recibidos en este equipo. Este error también puede indicar problemas de interoperabilidad con otras implementaciones de IPsec.|  
+|4961|N/D|Media|IPsec descartó un paquete entrante con un error en la comprobación de reproducción. Si el problema continúa, podría indicar un ataque de reproducción contra este equipo.|  
+|4962|N/D|Media|IPsec descartó un paquete entrante con un error en la comprobación de reproducción. El paquete entrante tenía un número de secuencia demasiado bajo para asegurarse de que no fuera una reproducción.|  
+|4963|N/D|Media|IPsec descartó un paquete de texto no cifrado entrante que debería estar protegido. Esto suele deberse a que el equipo remoto cambió su directiva IPsec sin informar a este equipo. También podría ser un intento de ataque de suplantación.|  
+|4965|N/D|Media|IPsec recibió un paquete de un equipo remoto con un Índice de parámetro de seguridad (SPI) incorrecto. Esto suele deberse a hardware que funciona incorrectamente y que está dañando los paquetes. Si estos errores continúan, comprueba que los paquetes enviados desde el equipo remoto sean iguales a los recibidos en este equipo. Este error también puede indicar problemas de interoperabilidad con otras implementaciones de IPsec. En ese caso, si no se impide la conectividad, se pueden omitir estos eventos.|  
+|4976|N/D|Media|Durante la negociación de modo principal, IPsec recibió un paquete de negociación no válido. Si el problema continúa, podría indicar un problema de red o que se está intentando modificar o reproducir esta negociación.|  
+|4977|N/D|Media|Durante la negociación de modo rápido, IPsec recibió un paquete de negociación no válido. Si el problema continúa, podría indicar un problema de red o que se está intentando modificar o reproducir esta negociación.|  
+|4978|N/D|Media|Durante la negociación de modo extendido, IPsec recibió un paquete de negociación no válido. Si el problema continúa, podría indicar un problema de red o que se está intentando modificar o reproducir esta negociación.|  
+|4983|N/D|Media|Error de una negociación de modo extendido de IPsec. Se eliminó la asociación de seguridad de modo principal correspondiente.|  
+|4984|N/D|Media|Error de una negociación de modo extendido de IPsec. Se eliminó la asociación de seguridad de modo principal correspondiente.|  
+|5027|N/D|Media|El servicio de Firewall de Windows no pudo recuperar la directiva de seguridad del almacenamiento local. El servicio continuará aplicando la directiva actual.|  
+|5028|N/D|Media|El servicio Firewall de Windows no pudo analizar la nueva directiva de seguridad. El servicio continuará con la directiva aplicada actualmente.|  
+|5029|N/D|Media|El servicio Firewall de Windows no pudo inicializar el controlador. El servicio continuará aplicando la directiva actual.|  
+|5030|N/D|Media|No se pudo iniciar el servicio Firewall de Windows.|  
+|5035|N/D|Media|No se pudo iniciar el controlador de Firewall de Windows.|  
+|5037|N/D|Media|El controlador de Firewall de Windows detectó un error en tiempo de ejecución crítico. Finalizando.|  
+|5038|N/D|Media|Integridad de código determinó que el hash de imagen de un archivo no es válido. El archivo pudo resultar dañado por una modificación no autorizada o el hash no válido podría indicar un posible error de dispositivo de disco.|  
+|5120|N/D|Media|Servicio de respuesta de OCSP iniciado|  
+|5121|N/D|Media|Servicio de respuesta de OCSP detenido|  
+|5122|N/D|Media|Una entrada de configuración cambiada en el servicio de respuesta de OCSP|  
+|5123|N/D|Media|Una entrada de configuración cambiada en el servicio de respuesta de OCSP|  
+|5376|N/D|Media|Se hizo una copia de seguridad de las credenciales del Administrador de credenciales.|  
+|5377|N/D|Media|Se restauraron las credenciales del Administrador de credenciales desde una copia de seguridad.|  
+|5453|N/D|Media|Error de negociación de IPsec con un equipo remoto. No se inició el servicio de Módulos de creación de claves de IPsec para IKE y AuthIP (IKEEXT).|  
+|5480|N/D|Media|Error de los servicios IPsec al obtener la lista completa de interfaces de red del equipo. Esto supone un posible riesgo de seguridad porque puede que algunas interfaces de red no obtengan la protección proporcionada por los filtros IPsec aplicados. Usa el complemento Monitor de seguridad IP para diagnosticar el problema.|  
+|5483|N/D|Media|Error de los servicios IPsec al inicializar el servidor RPC. No se pudieron iniciar los servicios IPsec.|  
+|5484|N/D|Media|Los servicios IPsec experimentaron un error crítico y se cerraron. El cierre de los servicios IPsec puede suponer un mayor riesgo de ataque a la red para el equipo o exponerlo a posibles riesgos de seguridad.|  
+|5485|N/D|Media|Error de los servicios IPsec al procesar algunos filtros IPsec en un evento de Plug and Play para interfaces de red. Esto supone un posible riesgo de seguridad porque puede que algunas interfaces de red no obtengan la protección proporcionada por los filtros IPsec aplicados. Usa el complemento Monitor de seguridad IP para diagnosticar el problema.|  
+|6145|N/D|Media|Se produjeron uno o más errores al procesar la Directiva de seguridad en los objetos de directiva de grupo.|  
+|6273|N/D|Media|El Servidor de directivas de redes denegó el acceso a un usuario.|  
+|6274|N/D|Media|El Servidor de directivas de redes rechazó la solicitud de un usuario.|  
+|6275|N/D|Media|El Servidor de directivas de redes rechazó la solicitud de cuentas de un usuario.|  
+|6276|N/D|Media|El Servidor de directivas de redes puso en cuarentena un usuario.|  
+|6277|N/D|Media|El Servidor de directivas de redes concedió acceso a un usuario, pero lo sometió a un período de prueba porque el host no cumplía la directiva de mantenimiento definida.|  
+|6278|N/D|Media|El Servidor de directivas de redes concedió acceso total a un usuario porque el host cumplía la directiva de mantenimiento definida.|  
+|6279|N/D|Media|El Servidor de directivas de redes bloqueó la cuenta de usuario debido a varios intentos de autenticación erróneos.|  
+|6280|N/D|Media|El Servidor de directivas de redes desbloqueó la cuenta de usuario.|  
+|-|640|Media|Base de datos de cuentas generales modificada|  
+|-|619|Media|Directiva de calidad de servicio modificada|  
+|24586|N/D|Media|Se detectó un error al convertir el volumen|  
+|24592|N/D|Media|Error al intentar reiniciar automáticamente la conversión en el volumen %2.|  
+|24593|N/D|Media|Escritura de metadatos: el volumen %2 devuelve errores al intentar modificar los metadatos. Si continúan los errores, descifre el volumen|  
+|24594|N/D|Media|Regeneración de metadatos: error al intentar escribir una copia de metadatos en el volumen %2 y puede aparecer como daños en el disco. Si los errores continúan, descifre el volumen.|  
 |4608|512|Bajo|Windows se está iniciando.|  
 |4609|513|Bajo|Windows se está apagando.|  
 |4610|514|Bajo|La Autoridad de seguridad local ha cargado un paquete de autenticación.|  
@@ -174,7 +173,7 @@ Una crítica potencial de alto significa que se debe investigar una aparición d
 |4707|611|Bajo|Se quitó una confianza de un dominio|  
 |4709|N/D|Bajo|Se iniciaron los Servicios IPsec.|  
 |4710|N/D|Bajo|Se deshabilitaron los Servicios IPsec.|  
-|4711|N/D|Bajo|Puede contener: El motor PAStore aplicó una copia almacenada en caché localmente de la directiva IPsec de almacenamiento de Active Directory en el equipo. El motor PAStore aplicó la directiva IPsec de almacenamiento de Active Directory en el equipo. El motor PAStore aplicó una directiva IPsec de almacenamiento del Registro local en el equipo. Error del motor PAStore al aplicar una copia almacenada en caché localmente de la directiva IPsec de almacenamiento de Active Directory en el equipo. Error del motor PAStore al aplicar la directiva IPsec de almacenamiento de Active Directory en el equipo. Error del motor PAStore al aplicar una directiva IPsec de almacenamiento del Registro local en el equipo. Error del motor PAStore al aplicar algunas reglas de la directiva IPsec activa en el equipo. Error del motor PAStore al cargar la directiva IPsec de almacenamiento de directorio en el equipo. El motor PAStore cargó la directiva IPsec de almacenamiento de directorio en el equipo. Error del motor PAStore al cargar la directiva IPsec de almacenamiento local en el equipo. Motor de la restauración cargó la directiva IPsec de almacenamiento local en el equipo. El motor de la Pastore sondeó los cambios en la Directiva de IPsec activa y no detectó ningún cambio. |  
+|4711|N/D|Bajo|Puede contener cualquiera de los siguientes elementos: el motor de la tienda en la que se ha aplicado la copia almacenada localmente en caché de Active Directory directiva IPsec de almacenamiento en el equipo. El motor PAStore aplicó la directiva IPsec de almacenamiento de Active Directory en el equipo. El motor PAStore aplicó una directiva IPsec de almacenamiento del Registro local en el equipo. Error del motor PAStore al aplicar una copia almacenada en caché localmente de la directiva IPsec de almacenamiento de Active Directory en el equipo. Error del motor PAStore al aplicar la directiva IPsec de almacenamiento de Active Directory en el equipo. Error del motor PAStore al aplicar una directiva IPsec de almacenamiento del Registro local en el equipo. Error del motor PAStore al aplicar algunas reglas de la directiva IPsec activa en el equipo. Error del motor PAStore al cargar la directiva IPsec de almacenamiento de directorio en el equipo. El motor PAStore cargó la directiva IPsec de almacenamiento de directorio en el equipo. Error del motor PAStore al cargar la directiva IPsec de almacenamiento local en el equipo. Motor de la restauración cargó la directiva IPsec de almacenamiento local en el equipo. El motor de la Pastore sondeó los cambios en la Directiva de IPsec activa y no detectó ningún cambio. |  
 |4712|N/D|Bajo|Los Servicios IPsec detectaron un error que puede ser importante.|  
 |4717|621|Bajo|Se concedió acceso de seguridad de sistema a una cuenta|  
 |4718|622|Bajo|Se quitó acceso de seguridad de sistema de una cuenta|  
@@ -403,9 +402,9 @@ Una crítica potencial de alto significa que se debe investigar una aparición d
 |24582|N/D|Bajo|Descifrado del volumen completado|  
 |24583|N/D|Bajo|Subproceso de trabajo de conversión para el volumen iniciado|  
 |24584|N/D|Bajo|Subproceso de trabajo de conversión para el volumen detenido temporalmente|  
-|24588|N/D|Bajo|La operación de conversión en el volumen% 2 encontró un error de sector incorrecto. Valide los datos de este volumen.|  
-|24595|N/D|Bajo|El volumen% 2 contiene clústeres no válidos. Estos clústeres se omitirán durante la conversión.|  
-|24621|N/D|Bajo|Comprobación de estado inicial: Transvirtiendo la transacción de conversión de volumen en% 2.|  
+|24588|N/D|Bajo|La operación de conversión en el volumen %2 encontró un error de sector incorrecto. Valide los datos de este volumen.|  
+|24595|N/D|Bajo|El volumen %2 contiene clústeres no válidos. Estos clústeres se omitirán durante la conversión.|  
+|24621|N/D|Bajo|Comprobación de estado inicial: transacción de conversión de volumen gradual en %2.|  
 |5049|N/D|Bajo|Se eliminó una asociación de seguridad de IPsec.|  
 |5478|N/D|Bajo|Los servicios IPsec se iniciaron correctamente.|  
   
@@ -414,4 +413,4 @@ Una crítica potencial de alto significa que se debe investigar una aparición d
 >
 > Ejecute **wevtutil GP Microsoft-Windows-Security-Auditing/GE/GM: true** para obtener una lista detallada de todos los identificadores de eventos de seguridad.  
   
-Para obtener más información sobre los identificadores de eventos de seguridad de Windows y su significado, vea el artículo Soporte técnico de Microsoft [Descripción de los eventos de seguridad en Windows 7 y en Windows Server 2008 R2](https://support.microsoft.com/kb/977519). También puede descargar [eventos de auditoría de seguridad para los detalles de eventos de seguridad de Windows 7 y Windows server 2008 R2](https://www.microsoft.com/download/details.aspx?id=21561) y Windows [8 y Windows Server 2012](https://www.microsoft.com/download/details.aspx?id=35753), que proporcionan información detallada sobre los eventos de los sistemas operativos a los que se hace referencia en la hoja de cálculo. Aplique.  
+Para obtener más información sobre los identificadores de eventos de seguridad de Windows y su significado, vea el artículo Soporte técnico de Microsoft [Descripción de los eventos de seguridad en Windows 7 y en Windows Server 2008 R2](https://support.microsoft.com/kb/977519). También puede descargar [eventos de auditoría de seguridad para los detalles de eventos de seguridad de Windows 7 y Windows server 2008 R2](https://www.microsoft.com/download/details.aspx?id=21561) y Windows [8 y Windows Server 2012](https://www.microsoft.com/download/details.aspx?id=35753), que proporcionan información detallada de eventos para los sistemas operativos a los que se hace referencia en formato de hoja de cálculo.  

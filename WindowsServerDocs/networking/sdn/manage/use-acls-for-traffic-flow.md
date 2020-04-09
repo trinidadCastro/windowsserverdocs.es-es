@@ -1,24 +1,20 @@
 ---
 title: Usar listas de control de acceso (ACL) para administrar el flujo de tráfico de red del centro de recursos
 description: En este tema, aprenderá a configurar las listas de control de acceso (ACL) para administrar el flujo de tráfico de datos mediante el firewall y las ACL del centro de datos en subredes virtuales. Para habilitar y configurar el firewall del centro de seguridad, puede crear ACL que se apliquen a una subred virtual o a una interfaz de red.
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a7ac5af-85e9-4440-a631-6a3a38e9015d
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/27/2018
-ms.openlocfilehash: 1f18ad9ddb0ea1a7575f6fcb26189f36f818ada2
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 2b8a3af119ac11f3bcfd704bb4f43f12c989dbf6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317482"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854418"
 ---
 # <a name="use-access-control-lists-acls-to-manage-datacenter-network-traffic-flow"></a>Usar listas de control de acceso (ACL) para administrar el flujo de tráfico de red del centro de recursos
 

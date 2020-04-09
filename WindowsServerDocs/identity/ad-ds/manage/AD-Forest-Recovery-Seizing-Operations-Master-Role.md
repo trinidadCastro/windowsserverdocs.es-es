@@ -1,6 +1,5 @@
 ---
 title: 'Recuperación de bosque de AD: Asunción de un rol de maestro de operaciones'
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 7e6bb370-f840-4416-b5e2-86b0ba715f4f
 ms.technology: identity-adds
-ms.openlocfilehash: 672dc119845acbe9cf38f82c793bd377d31db3b2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b229215eb7dde23bd1c17e6023b1c5eace0a56bf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390278"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823538"
 ---
 # <a name="ad-forest-recovery---seizing-an-operations-master-role"></a>Recuperación de bosque de AD: Asunción de un rol de maestro de operaciones  
 
@@ -60,13 +59,13 @@ Utilice el procedimiento siguiente para asumir un rol de maestro de operaciones 
 
 6. En función del rol que desee asumir, en el símbolo del sistema **FSMO Maintenance:** , escriba el comando adecuado como se describe en la tabla siguiente y, a continuación, presione Entrar.  
   
-|Rol|Credenciales|Comando|  
+|Role|Credenciales|Comando|  
 |----------|-----------------|-------------|  
-|Maestro de nomenclatura de dominios|Administradores de empresas|**Asunción del maestro de nomenclatura**|  
+|Maestro de nomenclatura de dominios|Administradores de organización|**Asunción del maestro de nomenclatura**|  
 |Maestro de esquema|Administradores de esquema|**Asumir el maestro de esquema**|  
-|Nota del maestro de infraestructura **:**  Después de asumir el rol de maestro de infraestructura, es posible que reciba un error más adelante si necesita ejecutar Adprep/rodcprep. Para obtener más información, consulte el artículo [949257](https://support.microsoft.com/kb/949257)de Knowledge base.|Admins. del dominio|**Asumir el maestro de infraestructura**|  
-|Maestro de emulador de PDC|Admins. del dominio|**Asunción de PDC**|  
-|Maestro de RID de|Admins. del dominio|**Asumir el maestro RID**|  
+|Nota maestra de infraestructura **:** después de asumir el rol de maestro de infraestructura, es posible que reciba un error más adelante si necesita ejecutar Adprep/rodcprep. Para obtener más información, consulte el artículo [949257](https://support.microsoft.com/kb/949257)de Knowledge base.|Administradores del dominio|**Asumir el maestro de infraestructura**|  
+|Maestro de emulador de PDC|Administradores del dominio|**Asunción de PDC**|  
+|Maestro de RID|Administradores del dominio|**Asumir el maestro RID**|  
 
 Después de confirmar la solicitud, Active Directory o AD DS intenta transferir el rol. Cuando se produce un error en la transferencia, aparece cierta información de error y Active Directory o AD DS continúa con el embargo. Una vez completada la Asunción, se muestra una lista de los roles y el nombre del Protocolo ligero de acceso a directorios (LDAP) del servidor que tiene actualmente cada rol. También puede ejecutar **netdom query fsmo** en un símbolo del sistema con privilegios elevados para comprobar los titulares de la función actual.  
   

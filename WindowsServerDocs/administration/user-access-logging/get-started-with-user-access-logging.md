@@ -1,24 +1,20 @@
 ---
 title: Introducción al registro de acceso de usuarios
 desctription: Describes the User Access Logging feature and how to start using it.
-ms.custom: na
 ms.prod: windows-server
 ms.technology: manage-user-access-logging
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5c395b8b-3b35-4042-b9cc-07e438f86d50
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f69a1fe4f3c17123f91ade3b6aebdb5f7bab9982
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: b36253b8dfa10ac8156fdc5526d02aa98ebdc740
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001790"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851408"
 ---
 # <a name="get-started-with-user-access-logging"></a>Introducción al registro de acceso de usuarios
 
@@ -26,12 +22,12 @@ ms.locfileid: "77001790"
 
 El registro de acceso de usuarios (UAL) es una característica de Windows Server que agrega datos de uso del cliente por rol y productos en un servidor local. Ayuda a los administradores de Windows Server a cuantificar las solicitudes de los equipos cliente para los roles y servicios en un servidor local.  
   
-UAL se instala y habilita de forma predeterminada y recopila datos prácticamente en tiempo real. No se necesita ninguna configuración de administrador, aunque UAL se puede habilitar o deshabilitar. Para obtener más información, consulte [Manage User Access Logging](Manage-User-Access-Logging.md). El servicio de registro de acceso de usuarios agrega datos de uso del cliente por roles y productos en archivos de base de datos locales.  Los administradores de TI pueden usar Windows Management Instrumentation (WMI) o cmdlets de Windows PowerShell para recuperar cantidades e instancias por rol de servidor (o producto de software), por usuario, por dispositivo, por el servidor local y por fecha.  
+UAL se instala y habilita de forma predeterminada y recopila datos prácticamente en tiempo real. No se necesita ninguna configuración de administrador, aunque UAL se puede habilitar o deshabilitar. Para obtener más información, vea [Administrar el Registro de acceso de usuarios](Manage-User-Access-Logging.md). El servicio de registro de acceso de usuarios agrega datos de uso del cliente por roles y productos en archivos de base de datos locales.  Los administradores de TI pueden usar Windows Management Instrumentation (WMI) o cmdlets de Windows PowerShell para recuperar cantidades e instancias por rol de servidor (o producto de software), por usuario, por dispositivo, por el servidor local y por fecha.  
   
 > [!NOTE]  
 > UAL admite el [Microsoft Assessment and Planning Toolkit](https://go.microsoft.com/fwlink/?LinkID=111000).  
   
-## <a name="BKMK_APP"></a>Aplicaciones prácticas  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicaciones prácticas  
 UAL agrega eventos de solicitud de usuario y dispositivo de cliente únicos que se registran en una base de datos local. Después, estos registros se ponen a disposición de los usuarios (a través de una consulta realizada por un administrador del servidor) para recuperar cantidades e instancias por rol de servidor, por usuario, por dispositivo, por el servidor local y por fecha.  Además, se ha ampliado UAL para permitir que los desarrolladores de software que no son de Microsoft instrumenten sus eventos de UAL para que los agregue Windows Server.  
   
 UAL puede realizar las siguientes tareas:  
@@ -50,20 +46,20 @@ UAL admite los siguientes roles de servidor y servicios:
   
 -   Servicios de certificados de Active Directory (AD CS)  
   
--   Active Directory Rights Management Services (AD RMS)  
+-   Active Directory Rights Management Services (AD RMS)  
   
 -   BranchCache  
   
--   Domain Name System (DNS)  
+-   Sistema de nombres de dominio (DNS)  
   
     > [!NOTE]  
     > UAL recopila datos DNS cada 24 horas y hay un cmdlet de UAL independiente para este escenario.  
   
--   Dynamic Host Configuration Protocol (DHCP)  
+-   Protocolo de configuración dinámica de host (DHCP)  
   
 -   Servidor de fax  
   
--   Servicios de archivos  
+-   Servicios de archivo  
   
 -   Servidor de Protocolo de transferencia de archivos (FTP)  
   
@@ -79,9 +75,9 @@ UAL admite los siguientes roles de servidor y servicios:
   
 -   Servicios de la cola de mensajes Microsoft Message Queue (MSMQ)  
   
--   Network Policy and Access Services  
+-   Servicios de acceso y directivas de redes  
   
--   Print and Document Services  
+-   Servicios de impresión y documentos  
   
 -   Servicio de enrutamiento y acceso remoto (RRAS)  
   
@@ -92,7 +88,7 @@ UAL admite los siguientes roles de servidor y servicios:
 > [!IMPORTANT]  
 > El uso de UAL no es aconsejable en servidores que se conectan directamente a Internet (como los servidores web de un espacio de direcciones accesible desde Internet) o en escenarios donde la función primordial del servidor es mantener un rendimiento extremadamente alto (como en entornos de carga de trabajo HPC). UAL se destina principalmente a escenarios pequeños, medianos y de intranet empresarial donde se espera un gran volumen, pero no tan alto como las implementaciones que atienden el volumen de tráfico con conexión a Internet de forma regular.  
   
-## <a name="BKMK_NEW"></a>Funcionalidad importante  
+## <a name="important-functionality"></a><a name="BKMK_NEW"></a>Funcionalidad importante  
 En la tabla siguiente se describen las funciones clave de UAL y sus valores posibles.  
   
 |Funcionalidad|Valor|  
@@ -128,10 +124,10 @@ Los siguientes datos relacionados con el dispositivo se registran con UAL.
 |**RoleName**|Nombre del rol, componente o subproducto que está proporcionando los datos de UAL. Esto también está asociado con un ProductName y un RoleGUID.|  
 |**TenantIdentifier**|GUID único para un cliente inquilino de un rol instalado o para un producto que acompaña a los datos de UAL, si procede.|  
   
-## <a name="BKMK_SOFT"></a>Requisitos de software  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>Requisitos de software  
 UAL se puede usar en cualquier equipo que ejecute versiones de Windows Server después de Windows Server 2012.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
 [Registro de acceso de usuarios](https://msdn.microsoft.com/library/windows/desktop/hh437528(v=vs.85).aspx) en MSDN.  
 [Administrar el Registro de acceso de usuarios](Manage-User-Access-Logging.md)  
   

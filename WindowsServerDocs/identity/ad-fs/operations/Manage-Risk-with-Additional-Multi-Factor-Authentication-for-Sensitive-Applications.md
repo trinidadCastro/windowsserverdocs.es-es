@@ -1,7 +1,6 @@
 ---
 ms.assetid: 934ac796-e2ee-490d-8265-6a818be5ee79
 title: administración de riesgos con la autenticación multifactor adicional para aplicaciones confidenciales
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 79319f54ceb14195dffd56b5a4dfe1b17f048df9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc6608713ddd60d20b0b717d4133d93d23fc7b25
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407525"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816258"
 ---
 # <a name="manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>administración de riesgos con la autenticación multifactor adicional para aplicaciones confidenciales
 
@@ -39,7 +38,7 @@ En esta guía se proporciona la siguiente información:
 
     Para obtener instrucciones detalladas del Tutorial paso a paso para configurar y comprobar este escenario, consulte [Guía de tutorial: administración de riesgos con multi-factor Authentication adicionales para aplicaciones confidenciales](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md).
 
-## <a name="BKMK_1"></a>Conceptos clave: mecanismos de autenticación en AD FS
+## <a name="key-concepts---authentication-mechanisms-in-ad-fs"></a><a name="BKMK_1"></a>Conceptos clave: mecanismos de autenticación en AD FS
 
 ### <a name="benefits-of-authentication-mechanisms-in-ad---fs"></a>Ventajas de los mecanismos de autenticación en AD FS
 Servicios de federación de Active Directory (AD FS) (AD FS) en Windows Server 2012 R2 proporciona a los administradores de ti un conjunto de herramientas más completo y flexible para autenticar a los usuarios que quieren tener acceso a los recursos corporativos. Permite a los administradores tener un control flexible de los métodos de autenticación principal y adicionales, proporciona una experiencia de administración enriquecida para configurar las directivas de autenticación (a través de la interfaz de usuario y Windows PowerShell) y mejora la experiencia de los usuarios finales que tienen acceso a las aplicaciones y los servicios protegidos por AD FS. A continuación se muestran algunas de las ventajas de proteger la aplicación y los servicios con AD FS en Windows Server 2012 R2:
@@ -118,7 +117,7 @@ Las opciones siguientes están disponibles para la configuración de MFA (condic
 
 -   Puede requerir MFA cuando la solicitud de acceso a los recursos protegidos provenga de la extranet o la intranet.
 
-## <a name="BKMK_2"></a>Información general del escenario
+## <a name="scenario-overview"></a><a name="BKMK_2"></a>Información general del escenario
 En este escenario, habilitará MFA basándose en los datos de pertenencia a grupos del usuario para una aplicación específica. Es decir, configurará una directiva de autenticación en el servidor de federación que requiera MFA cuando los usuarios que pertenezcan a un grupo concreto soliciten acceso a una aplicación específica hospedada en un servidor web.
 
 Más concretamente, en este escenario habilitará una directiva de autenticación para una aplicación de prueba basada en notificaciones denominada **claimapp**, en la que el usuario de AD **Robert Hatley** estará obligado a someterse a MFA, ya que pertenece al grupo de AD **Finance**.

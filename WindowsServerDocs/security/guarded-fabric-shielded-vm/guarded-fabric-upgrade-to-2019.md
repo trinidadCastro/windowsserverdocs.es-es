@@ -4,14 +4,15 @@ ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 11/21/2018
-ms.openlocfilehash: 621d4175894bb235475155507a896a251dec0f7e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 50e35939031a74173fb031cf963af97bf8bb6dba
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386338"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856358"
 ---
 # <a name="upgrade-a-guarded-fabric-to-windows-server-2019"></a>Actualizar un tejido protegido a Windows Server 2019
 
@@ -54,7 +55,7 @@ Para actualizar el clúster de HGS, es necesario quitar temporalmente un nodo de
 
 Para actualizar el clúster de HGS, realice los pasos siguientes en cada nodo del clúster, un nodo a la vez:
 
-1.  Quite el servidor HGS del clúster mediante la ejecución `Clear-HgsServer` de en un símbolo del sistema de PowerShell con privilegios elevados. Este cmdlet quitará el almacén replicado de HGS, los sitios web de HGS y el nodo del clúster de conmutación por error.
+1.  Quite el servidor HGS del clúster mediante la ejecución de `Clear-HgsServer` en un símbolo del sistema de PowerShell con privilegios elevados. Este cmdlet quitará el almacén replicado de HGS, los sitios web de HGS y el nodo del clúster de conmutación por error.
 2.  Si el servidor HGS es un controlador de dominio (configuración predeterminada), tendrá que ejecutar `adprep /forestprep` y `adprep /domainprep` en el primer nodo que se va a actualizar para preparar el dominio para una actualización del sistema operativo. Consulte la [documentación de actualización de Active Directory Domain Services](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/upgrade-domain-controllers#supported-in-place-upgrade-paths) para obtener más información.
 3.  Realice una [actualización en contexto](../../get-started-19/install-upgrade-migrate-19.md) a Windows Server 2019.
 4.  Ejecute [Initialize-HgsServer](guarded-fabric-configure-additional-hgs-nodes.md) para volver a unir el nodo al clúster.

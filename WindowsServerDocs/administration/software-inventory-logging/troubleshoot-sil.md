@@ -1,23 +1,19 @@
 ---
 title: Troubleshoot Software Inventory Logging (Resolver problemas del Registro de inventario de software)
 description: Describe cómo resolver problemas comunes de implementación de registro de inventario de software.
-ms.custom: na
 ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 author: brentfor
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: fb6e6fbba835e049748ca8578f24a1ff7fc750bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5a02caf63bbd02705aebb8306a7b50a32f3d6c82
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382902"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851418"
 ---
 # <a name="troubleshoot-software-inventory-logging"></a>Troubleshoot Software Inventory Logging (Resolver problemas del Registro de inventario de software) 
 
@@ -29,9 +25,9 @@ Antes de empezar a solucionar problemas de SIL, debe tener una buena comprensió
 
 1. [Introducción al registro de inventario de software (SIL) (10:57)](https://channel9.msdn.com/Blogs/Regular-IT-Guy/An-Introduction-to-Software-Inventory-Logging-SIL)
 
-2. [Registro de inventario de software: Configuración del agregador de SIL (14:34)](https://channel9.msdn.com/Blogs/windowsserver/Software-Inventory-Logging-Setting-up-SIL-Aggregator)
+2. [Registro de inventario de software: configuración del agregador de SIL (14:34)](https://channel9.msdn.com/Blogs/windowsserver/Software-Inventory-Logging-Setting-up-SIL-Aggregator)
 
-3. [Registro de inventario de software: Habilitación del reenvío de SIL (7:20)](https://channel9.msdn.com/Blogs/windowsserver/Software-Inventory-Logging-Enabling-SIL-Forwarding)
+3. [Registro de inventario de software: habilitar el reenvío de SIL (7:20)](https://channel9.msdn.com/Blogs/windowsserver/Software-Inventory-Logging-Enabling-SIL-Forwarding)
 
 ## <a name="how-sil-data-flow-works"></a>Cómo funciona el flujo de datos de SIL
 
@@ -54,7 +50,7 @@ Antes de empezar, necesitará saber cuánto tiempo hace que se inicie el agregad
 >[!IMPORTANT]
 >No habrá ningún dato en el informe hasta que el cubo de datos de SQL se procese en la hora del sistema local de 3 A.M. No continúe con los pasos de solución de problemas hasta que el cubo haya procesado los datos.
 
-Si está solucionando problemas de datos en el informe (o que faltan en el informe) que es más reciente que la última vez que se procesó el cubo o antes de que se haya procesado el cubo (para una instalación nueva), siga estos pasos para procesar el cubo de datos SQL en tiempo real. :
+Si está solucionando problemas de datos en el informe (o que faltan en el informe) que es más reciente que la última vez que se procesó el cubo o antes de que se haya procesado el cubo (para una instalación nueva), siga estos pasos para procesar el cubo de datos SQL en tiempo real:
 
 1. Inicie sesión como administrador de SQL Server y ejecute **SSMS** en un símbolo del sistema.
 2. Conéctese al moto de base de datos.
@@ -69,7 +65,7 @@ Si todavía no hay ningún dato en el informe, continúe con la solución de pro
 
 #### <a name="no-data-in-the-report-when-using-the-publish-silreport-cmdlet-or-data-is-generally-missing"></a>No hay datos en el informe cuando se usa el cmdlet Publish-SilReport (o los datos faltan normalmente)
 
-Si faltan datos, es probable que se deba a que el cubo de datos de SQL aún no se ha procesado. Si se ha procesado recientemente y cree que los datos que faltan deberían haber llegado al agregador antes del procesamiento del cubo, siga la ruta de acceso de los datos en orden inverso. Elija un host único y una máquina virtual única para solucionar los problemas. La ruta de acceso de datos en orden inverso sería **Sila Report** &lt; **Sila Database** &lt; **Sila local Directory** &lt; **Remote virtual host** o **WS VM Running SIL Agent/Task**.
+Si faltan datos, es probable que se deba a que el cubo de datos de SQL aún no se ha procesado. Si se ha procesado recientemente y cree que los datos que faltan deberían haber llegado al agregador antes del procesamiento del cubo, siga la ruta de acceso de los datos en orden inverso. Elija un host único y una máquina virtual única para solucionar los problemas. La ruta de acceso de datos en orden inverso sería **SILA** &lt; **Sila Database** &lt; **Sila local** &lt; **host físico remoto** o **WS VM que ejecuta SIL Agent/Task**.
 
 #### <a name="check-to-see-if-data-is-in-the-database"></a>Compruebe si los datos están en la base de datos
 
@@ -92,9 +88,9 @@ Hay dos maneras de comprobar los datos: **PowerShell** o **SSMS**.
 
 **Otros comandos relacionados**
 
-**Get-SilAggregator-NombreDeEquipo &lt;FQDN de un servidor conocido que inserta&gt;datos**: Esto producirá información de la base de datos acerca de un equipo (VM) incluso antes de que el cubo se haya procesado. Por lo tanto, este cmdlet se puede usar para comprobar los datos de la base de datos para que un servidor de Windows Inserte datos SIL a través de HTTPS, antes o sin, el proceso del cubo en 3 A.M. (o si no ha actualizado el cubo en tiempo real tal y como se describe al principio de esta sección).
+**Get-SilAggregator-Computername &lt;FQDN de un servidor conocido que inserta datos&gt;** : Esto producirá información de la base de datos sobre un equipo (VM) incluso antes de que el cubo se haya procesado. Por lo tanto, este cmdlet se puede usar para comprobar los datos de la base de datos para que un servidor de Windows Inserte datos SIL a través de HTTPS, antes o sin, el proceso del cubo en 3 A.M. (o si no ha actualizado el cubo en tiempo real tal y como se describe al principio de esta sección).
 
-**Get-SilAggregator-VmHostName &lt;FQDN de un host físico sondeado en el que hay un valor en la columna de sondeo reciente al usar el cmdlet&gt;Get-SilVmHost**: Esto producirá información de la base de datos acerca de un host físico incluso antes de que el cubo se haya procesado.
+**Get-SilAggregator-VmHostName &lt;FQDN de un host físico sondeado en el que hay un valor en la columna de sondeo reciente al usar el cmdlet Get-SilVmHost&gt;** : Esto producirá información de la base de datos sobre un host físico incluso antes de que se haya procesado el cubo.
 
 #### <a name="ssms"></a>SSMS
 
@@ -128,7 +124,7 @@ Esto es probable que se produzca en entornos virtuales cuando el agregador de SI
 
         -   Tendrá que esperar una hora después de agregar el host para que se produzca el sondeo (si se establece este intervalo en predeterminado, se puede comprobar mediante el cmdlet **Get-silaggregator** ).
 
-        -   Si ha transcurrido una hora desde que se agregó el host, compruebe que se está ejecutando la tarea de sondeo: En **programador de tareas**, seleccione **agregador de registro de inventario de software** en **Microsoft** &gt; **Windows** y compruebe el historial de la tarea.
+        -   Si ha transcurrido una hora desde que se agregó el host, compruebe que se está ejecutando la tarea de sondeo: en **programador de tareas**, seleccione **agregador de registro de inventario de Software** en **Microsoft** &gt; **Windows** y compruebe el historial de la tarea.
 
     -   Si se muestra un host, pero no hay ningún valor para **RecentPoll**, **HostType**o **HypervisorType**, esto se puede omitir en gran medida. Esto solo se producirá en entornos de HyperV. Estos datos proceden realmente de la máquina virtual de Windows Server, que identifican el host físico en el que se ejecuta a través de HTTPS. Esto puede ser útil para identificar una máquina virtual específica que está notificando, pero requiere la minería de la base de datos mediante el cmdlet **Get-SilAggregatorData** .
 
@@ -156,7 +152,7 @@ Una vez que los hosts sondean correctamente, podrá ver los datos de estos hosts
 
      -  Por último, puede comprobar la siguiente ubicación de los archivos SIL almacenados en caché en el servidor que intenta reenviar o introducir, **\Windows\System32\Logfiles\SIL**. Si **SilLogging** se ha iniciado y se ha estado ejecutando durante más de una hora, o se ha ejecutado recientemente **Publish-SilData** , y no hay archivos en este directorio, el registro del agregador se ha realizado correctamente.
 
-Si no hay ningún error y no hay ningún resultado en la consola, los datos de la instalación/extracción del nodo final de Windows Server al agregador de SIL a través de HTTPS se han realizado correctamente. Para seguir la ruta de acceso de los datos, inicie sesión en el agregador de SIL como administrador y examine los archivos de datos que han llegado. Vaya a **archivos de programa (x86)** &gt; **Microsoft SIL Aggregator** &gt; Sila directorio. Puede ver los archivos de datos que llegan en tiempo real.
+Si no hay ningún error y no hay ningún resultado en la consola, los datos de la instalación/extracción del nodo final de Windows Server al agregador de SIL a través de HTTPS se han realizado correctamente. Para seguir la ruta de acceso de los datos, inicie sesión en el agregador de SIL como administrador y examine los archivos de datos que han llegado. Vaya a **archivos de programa (x86)** &gt; **agregador de Microsoft SIL** &gt; directorio Sila. Puede ver los archivos de datos que llegan en tiempo real.
 
 >[!NOTE] 
 >Es posible que se haya transferido más de un archivo de datos con el cmdlet **Publish-SilData** . SIL en el nodo final almacenará en caché los errores de inserciones durante 30 días. En la siguiente operación de instalación correcta, todos los archivos de datos Irán al agregador para su procesamiento. De esta manera, un agregador de SIL recién configurado podría mostrar los datos de un nodo final bien antes de su propia configuración.

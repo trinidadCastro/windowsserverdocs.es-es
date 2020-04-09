@@ -1,24 +1,20 @@
 ---
 title: nslookup set srchlist
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8486266d-22ac-4ce5-aad6-1cd0c08110a2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb93a9f7cf969161536e88bec929b7e6ba0f0e5d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bbeb09501474ade670147a6021abd2bb25291d71
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372770"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838288"
 ---
 # <a name="nslookup-set-srchlist"></a>nslookup set srchlist
 
@@ -30,7 +26,7 @@ cambia el nombre de dominio y la lista de búsqueda predeterminados del sistema 
 ```
 Set srchlist=<DomainName>[/...]
 ```
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |    Parámetro    |                                                                                        Descripción                                                                                        |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,12 +35,12 @@ Set srchlist=<DomainName>[/...]
 
 ## <a name="remarks"></a>Comentarios
 - El comando **set srchlist**invalida el nombre de dominio DNS y la lista de búsqueda predeterminados del comando **set Domain** . Use el comando **establecer todo** para mostrar la lista.
-  ## <a name="BKMK_examples"></a>Example
+  ## <a name="examples"></a><a name=BKMK_examples></a>Example
   En el ejemplo siguiente se establece el dominio DNS en mfg.widgets.com y la lista de búsqueda en los tres nombres:
   ```
   set srchlist=mfg.widgets.com/mrp2.widgets.com/widgets.com
   ```
   ## <a name="additional-references"></a>Referencias adicionales
-  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-  [nslookup establecer dominio](nslookup-set-domain.md)
-  [nslookup establecer todo](nslookup-set-all.md)
+  - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+  [nslookup Set Domain](nslookup-set-domain.md)
+  [nslookup SET ALL](nslookup-set-all.md)

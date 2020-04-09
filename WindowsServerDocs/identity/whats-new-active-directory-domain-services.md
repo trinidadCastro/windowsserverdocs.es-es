@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6a852428-c1ec-4703-b3b3-a4bfdf8cbb9d
-title: Novedades&#39;de Active Directory Domain Services en Windows Server 2016
-description: ''
+title: Novedades de Active Directory Domain Services en Windows Server 2016
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,22 +8,22 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1ef77613919ea6caf39a7cb41ba575652680466d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a82f45772e5e35afffc632de2b40c02c75b5e5e4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950115"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856288"
 ---
 # <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Novedades de Active Directory Domain Services para Windows Server 2016
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2016
 
-Las siguientes características nuevas de Active Directory Domain Services (AD DS) mejoran la capacidad para que las organizaciones protejan Active Directory entornos y les ayuden a migrar a implementaciones solo en la nube e implementaciones híbridas, donde algunas aplicaciones y servicios son hospedado en la nube y otros se hospedan de forma local. Estas mejoras incluyen:  
+Las siguientes características nuevas de Active Directory Domain Services (AD DS) mejoran la capacidad para que las organizaciones protejan Active Directory entornos y les ayuden a migrar a implementaciones solo en la nube e implementaciones híbridas, donde algunas aplicaciones y servicios se hospedan en la nube y otros se hospedan de forma local. Las mejoras incluyen:  
   
 - [Privileged Access Management](https://docs.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)  
   
-- [Ampliación de las capacidades de nube a dispositivos de Windows 10 a través de Azure Active Directory Join](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)
+- [Extensión de las funcionalidades de nube a dispositivos de Windows 10 a través de Azure Active Directory join](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)
   
 - [Conexión de dispositivos Unidos a un dominio a Azure AD para experiencias de Windows 10](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)
   
@@ -66,7 +65,7 @@ Ventajas:
 - **Disponibilidad de la configuración moderna** en dispositivos Windows de la empresa. Los servicios de oxígeno ya no requieren un cuenta de Microsoft personal: ahora se ejecutan en las cuentas de trabajo existentes de los usuarios para garantizar el cumplimiento. Los servicios de oxígeno funcionarán en equipos Unidos a un dominio de Windows local y equipos y dispositivos que están "Unidos" a su inquilino de Azure AD ("dominio en la nube"). Esta configuración incluye:  
 
    - Itinerancia o personalización, configuración de accesibilidad y credenciales  
-   - Copia de seguridad y restauración  
+   - Copias de seguridad y restauración  
    - Acceso a Microsoft Store con cuenta profesional  
    - Iconos dinámicos y notificaciones  
   

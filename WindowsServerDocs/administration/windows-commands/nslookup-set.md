@@ -1,24 +1,20 @@
 ---
 title: nslookup set
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1fe5b36d-e93e-468b-abca-43b0204b32d1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e584a9727fc0cd552d0c07840ccb12b555428af
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3883e6b032c5a4542711ad14a4e45b31fb605485
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372731"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838148"
 ---
 # <a name="nslookup-set"></a>nslookup set
 
@@ -29,7 +25,7 @@ Cambia los valores de configuración que afectan a cómo funcionan las búsqueda
 ```
 set <KeyWord>[=<Value>]
 ```
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |    Parámetro    |                                                                                                                    Descripción                                                                                                                    |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -37,8 +33,8 @@ set <KeyWord>[=<Value>]
 |     <Value>     |                                                                                      Especifica el valor de configuración de Nslookup para cada subcomando.                                                                                      |
 | {ayuda &#124; ?} |                                                                                               Muestra un breve resumen de los subcomandos de **nslookup** .                                                                                               |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 Use **establecer todo** para ver una lista de los valores actuales.
-## <a name="additional-references"></a>referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+## <a name="additional-references"></a>Referencias adicionales
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 [nslookup SET ALL](nslookup-set-all.md)

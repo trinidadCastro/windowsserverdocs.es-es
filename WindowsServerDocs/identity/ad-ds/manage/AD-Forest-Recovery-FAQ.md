@@ -1,6 +1,5 @@
 ---
 title: 'Recuperación del bosque de AD: preguntas frecuentes'
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: ac9e5a3d-8b1e-41b7-8e02-f64b7acf1359
 ms.technology: identity-adds
-ms.openlocfilehash: 49cd12621c6ddf89393f0463e4856555ca241491
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f32111cf7cc81f8f49b7b1058cc1a0ccc780da7f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369108"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824008"
 ---
 # <a name="ad-forest-recovery---faq"></a>Recuperación del bosque de AD: preguntas frecuentes
 
@@ -24,7 +23,7 @@ Este documento contiene las preguntas más frecuentes (p + f) relacionadas con l
 
 ## <a name="general-recovery"></a>Recuperación general
 
-**RESPUESTAS ¿Qué puedo hacer para acelerar la recuperación?**
+**P: ¿Qué puedo hacer para acelerar la recuperación?**
 
 Aunque la velocidad de recuperación no es el objetivo principal de esta guía, puede lograr tiempos de recuperación más cortos:  
   
@@ -57,7 +56,7 @@ También puede ayudar a acelerar las instalaciones de AD DS mediante la caracter
   
 Las empresas que tienen un contrato de nivel de servicio (SLA) más agresivo pueden considerar la modificación de los procedimientos de recuperación de bosques para acelerar la recuperación.  
   
-**RESPUESTAS ¿Puedo automatizar el proceso de recuperación del bosque?**
+**P: ¿Puedo automatizar el proceso de recuperación del bosque?**
 
 Debido a la naturaleza compleja y crítica del proceso de recuperación del bosque, actualmente no hay ninguna automatización completa del mismo. El proceso de recuperación del bosque es más un desafío logístico y organizacional de restaurar la continuidad empresarial que un problema técnico de la automatización de procesos. Por lo tanto, la persona que administra el entorno debe crear un plan de recuperación de bosque específico para ese entorno y, a continuación, automatizar las secciones que se pueden automatizar correctamente.  
   

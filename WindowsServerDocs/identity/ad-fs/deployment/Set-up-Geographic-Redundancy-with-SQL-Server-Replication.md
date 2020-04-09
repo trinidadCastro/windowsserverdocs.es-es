@@ -1,6 +1,5 @@
 ---
 title: Configuración de la redundancia geográfica con Replicación de SQL Server
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.prod: windows-server
 ms.technology: active-directory-federation-services
 ms.author: billmath
 ms.assetId: 7b9f9a4f-888c-4358-bacd-3237661b1935
-ms.openlocfilehash: 16cf1a237043aa546d4fc24164045aa9f9a1e6ac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 54106ae635d44368542986c7c469560981f9888a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359820"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855848"
 ---
 # <a name="setup-geographic-redundancy-with-sql-server-replication"></a>Configuración de la redundancia geográfica con Replicación de SQL Server
 
@@ -89,7 +88,7 @@ Instalar y configurar una granja de servidores de SQL Server. Para obtener más 
     ![configurar la redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql18.png) </br>   
     Es posible que tenga que crear una cuenta de dominio para el Agente SQL. Siga los pasos descritos en [configurar el inicio de sesión de SQL para la cuenta de dominio CONTOSO\\SQLAgent](Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md#sqlagent) para crear el inicio de sesión de SQL para este nuevo usuario de AD y asignar permisos específicos.  
   
-13. En la página **seguridad del agente** , haga clic en configuración de **seguridad** y escriba el nombre de usuario\/contraseña de una cuenta de dominio \(no un\) de GMSA creado para el Agente SQL y haga clic en **Aceptar**.  Haz clic en **Siguiente**.  
+13. En la página **seguridad del agente** , haga clic en configuración de **seguridad** y escriba el nombre de usuario\/contraseña de una cuenta de dominio \(no un\) de GMSA creado para el Agente SQL y haga clic en **Aceptar**.  Haga clic en **Siguiente**.  
     ![configurar la redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql19.png) </br>  
 
 14. En la página **acciones del asistente** , haga clic en **siguiente**.   
@@ -156,7 +155,7 @@ Asegúrese de que ha creado la configuración del publicador en el SQL Server in
   
 4.  Además, puede buscar en el nodo **Agente SQL Server\\trabajos** para ver el trabajo\(s\) programado para ejecutar las operaciones de la suscripción\/de publicación.  Solo se muestran los trabajos locales, por lo que debe asegurarse de comprobar en el publicador y en el suscriptor para solucionar el problema.  \-haga clic con el botón derecho en un trabajo y seleccione **Ver historial** para ver el historial de ejecución y los resultados.  
   
-## <a name="sqlagent"></a>Configurar el inicio de sesión de SQL para la cuenta de dominio CONTOSO\\SQLAgent  
+## <a name="configure-sql-login-for-the-domain-account-contososqlagent"></a><a name="sqlagent"></a>Configurar el inicio de sesión de SQL para la cuenta de dominio CONTOSO\\SQLAgent  
   
 1.  Cree un nuevo inicio de sesión en el SQL Server principal y de réplica denominado CONTOSO\\SQLAgent \(el nombre del nuevo usuario de dominio que creó y configuró en la página **seguridad del agente** en los procedimientos anteriores.\)  
   

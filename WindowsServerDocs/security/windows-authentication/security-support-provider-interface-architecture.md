@@ -1,24 +1,20 @@
 ---
 title: Security Support Provider Interface Architecture
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-windows-auth
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: de09e099-5711-48f8-adbd-e7b8093a0336
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4db407b24b00bc8313d2e17f1fcf55d9fa160c8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 89e6696c286cae7c3e89346d2044869082cdd8bc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403307"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861738"
 ---
 # <a name="security-support-provider-interface-architecture"></a>Security Support Provider Interface Architecture
 
@@ -58,10 +54,10 @@ También se incluye en este tema:
 
 [Selección del proveedor de compatibilidad con seguridad](security-support-provider-interface-architecture.md#BKMK_SecuritySupportProviderSelection)
 
-### <a name="BKMK_KerbSSP"></a>Proveedor de compatibilidad con seguridad de Kerberos
+### <a name="kerberos-security-support-provider"></a><a name="BKMK_KerbSSP"></a>Proveedor de compatibilidad con seguridad de Kerberos
 Este SSP solo usa el protocolo Kerberos versión 5, tal y como lo implementa Microsoft. Este protocolo se basa en las revisiones RFC 4120 y draft del grupo de trabajo de red. Es un protocolo estándar del sector que se usa con una contraseña o una tarjeta inteligente para un inicio de sesión interactivo. También es el método de autenticación preferido para los servicios de Windows.
 
-Dado que el protocolo Kerberos es el protocolo de autenticación predeterminado desde Windows 2000, todos los servicios de dominio admiten el SSP de Kerberos. Esos servicios incluyen:
+Dado que el protocolo Kerberos es el protocolo de autenticación predeterminado desde Windows 2000, todos los servicios de dominio admiten el SSP de Kerberos. Estos servicios incluyen:
 
 -   Active Directory las consultas que utilizan el Protocolo ligero de acceso a directorios (LDAP)
 
@@ -101,7 +97,7 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 -   [Referencia técnica de autenticación Kerberos](https://technet.microsoft.com/library/cc739058(v=ws.10).aspx)
 
-### <a name="BKMK_NTLMSSP"></a>Proveedor de compatibilidad con seguridad NTLM
+### <a name="ntlm-security-support-provider"></a><a name="BKMK_NTLMSSP"></a>Proveedor de compatibilidad con seguridad NTLM
 El proveedor de compatibilidad para seguridad NTLM (SSP de NTLM) es un protocolo de mensajería binaria que usa la interfaz del proveedor de compatibilidad para seguridad (SSPI) para permitir la autenticación NTLM Challenge-Response y negociar opciones de integridad y confidencialidad. NTLM se usa siempre que se use la autenticación SSPI, incluido el bloque de mensajes del servidor o la autenticación de CIFS, la autenticación HTTP Negotiate (por ejemplo, la autenticación Web de Internet) y el servicio llamada a procedimiento remoto. El SSP de NTLM incluye los protocolos de autenticación NTLM y NTLM versión 2 (NTLMv2).
 
 Los sistemas operativos Windows admitidos pueden usar el SSP de NTLM para lo siguiente:
@@ -128,7 +124,7 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 -   [Guía de auditoría y restricción del uso de NTLM](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)
 
-### <a name="BKMK_DigestSSP"></a>Proveedor de compatibilidad con seguridad implícita
+### <a name="digest-security-support-provider"></a><a name="BKMK_DigestSSP"></a>Proveedor de compatibilidad con seguridad implícita
 La autenticación implícita es un estándar del sector que se usa para el Protocolo ligero de acceso a directorios (LDAP) y la autenticación Web. La autenticación de texto implícita transmite las credenciales a través de la red como un hash MD5 o una síntesis del mensaje.
 
 Digest SSP (Wdigest. dll) se usa para lo siguiente:
@@ -147,7 +143,7 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 -   [\[MS-DPSP\]: extensiones de protocolo Digest](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
 
-### <a name="BKMK_SchannelSSP"></a>Proveedor de compatibilidad con seguridad de Schannel
+### <a name="schannel-security-support-provider"></a><a name="BKMK_SchannelSSP"></a>Proveedor de compatibilidad con seguridad de Schannel
 El canal seguro (Schannel) se usa para la autenticación de servidor basada en Web, como cuando un usuario intenta tener acceso a un servidor Web seguro.
 
 El protocolo TLS, el protocolo SSL, el protocolo de tecnología de comunicaciones privadas (PCT) y el protocolo de capa de transporte de datagramas (DTLS) se basan en la criptografía de clave pública. Schannel proporciona todos estos protocolos. Todos los protocolos de Schannel usan un modelo cliente/servidor. El SSP de SChannel usa certificados de clave pública para autenticar las partes. Al autenticar entidades, Schannel SSP selecciona un protocolo en el siguiente orden de preferencia:
@@ -185,7 +181,7 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 -   [\[MS-TLSP\]: Perfil de seguridad de la capa de transporte (TLS)](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
 
-### <a name="BKMK_NegoSSP"></a>Negociar proveedor de compatibilidad de seguridad
+### <a name="negotiate-security-support-provider"></a><a name="BKMK_NegoSSP"></a>Negociar proveedor de compatibilidad de seguridad
 El mecanismo de negociación simple y protegida de GSS-API (SPNEGO) constituye la base para negociar SSP, whichcan se puede usar para negociar un protocolo de autenticación específico. Cuando una aplicación llama a SSPI para iniciar sesión en una red, puede especificar un SSP para procesar la solicitud. Si la aplicación especifica el SSP Negotiate, analiza la solicitud y selecciona el proveedor adecuado para administrar la solicitud, en función de las directivas de seguridad configuradas por el cliente.
 
 SPNEGO se especifica en RFC 2478.
@@ -204,7 +200,7 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 -   [\[MS-N2HT\]: Negotiate y Nego2 especificación del Protocolo de autenticación HTTP](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
 
-### <a name="BKMK_CredSSP"></a>Proveedor de compatibilidad con seguridad de credenciales
+### <a name="credential-security-support-provider"></a><a name="BKMK_CredSSP"></a>Proveedor de compatibilidad con seguridad de credenciales
 El proveedor de servicios de seguridad de credenciales (CredSSP) proporciona una experiencia de usuario de inicio de sesión único (SSO) al iniciar nuevas sesiones de Terminal Services y Servicios de Escritorio remoto. CredSSP permite a las aplicaciones delegar las credenciales de los usuarios desde el equipo cliente (mediante el SSP del lado cliente) al servidor de destino (a través del SSP del servidor), en función de las directivas del cliente. Las directivas CredSSP se configuran mediante directiva de grupo y la delegación de credenciales está desactivada de forma predeterminada.
 
 Ubicación:%windir%\Windows\System32\credssp.dll
@@ -217,7 +213,7 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 -   [Proveedor de servicios de seguridad de credenciales e inicio de sesión único para Terminal Services](https://technet.microsoft.com/library/cc749211(v=ws.10).aspx)
 
-### <a name="BKMK_NegoExtsSSP"></a>Negociar el proveedor de compatibilidad de seguridad de extensiones
+### <a name="negotiate-extensions-security-support-provider"></a><a name="BKMK_NegoExtsSSP"></a>Negociar el proveedor de compatibilidad de seguridad de extensiones
 Negotiate Extensions (NegoExts) es un paquete de autenticación que negocia el uso de SSP, que no sea NTLM o el protocolo Kerberos, para aplicaciones y escenarios implementados por Microsoft y otras compañías de software.
 
 Esta extensión para el paquete Negotiate permite los siguientes escenarios:
@@ -238,7 +234,7 @@ Ubicación:%windir%\Windows\System32\negoexts.dll
 
 Este proveedor se incluye de forma predeterminada en las versiones designadas en la lista **se aplica a** al principio de este tema, excepto windows Server 2008 y Windows Vista.
 
-### <a name="BKMK_PKU2USSP"></a>Proveedor de compatibilidad con seguridad de PKU2U
+### <a name="pku2u-security-support-provider"></a><a name="BKMK_PKU2USSP"></a>Proveedor de compatibilidad con seguridad de PKU2U
 El protocolo PKU2U se presentó e implementó como SSP en Windows 7 y Windows Server 2008 R2. Este SSP habilita la autenticación punto a punto, especialmente a través de la característica de uso compartido de archivos y medios denominada grupo hogar, que se presentó en Windows 7. La característica permite el uso compartido entre equipos que no son miembros de un dominio.
 
 Ubicación:%windir%\Windows\System32\pku2u.dll
@@ -249,8 +245,8 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 
 -   [Introducción a la integración de identidades en línea](https://technet.microsoft.com/library/dd560662(v=ws.10).aspx)
 
-## <a name="BKMK_SecuritySupportProviderSelection"></a>Selección del proveedor de compatibilidad con seguridad
-Windows SSPI puede usar cualquiera de los protocolos que se admiten a través de los proveedores de compatibilidad de seguridad instalados. Sin embargo, dado que no todos los sistemas operativos son compatibles con los mismos paquetes de SSP que cualquier equipo dado que ejecute Windows Server, los clientes y servidores deben negociar para usar un protocolo que ambos admitan. Windows Server prefiere que los equipos cliente y las aplicaciones usen el protocolo Kerberos, un protocolo seguro basado en estándares, siempre que sea posible, pero el sistema operativo sigue permitiendo a los equipos cliente y a las aplicaciones cliente que no son compatibles con Kerberos. Protocolo para autenticar.
+## <a name="security-support-provider-selection"></a><a name="BKMK_SecuritySupportProviderSelection"></a>Selección del proveedor de compatibilidad con seguridad
+Windows SSPI puede usar cualquiera de los protocolos que se admiten a través de los proveedores de compatibilidad de seguridad instalados. Sin embargo, dado que no todos los sistemas operativos son compatibles con los mismos paquetes de SSP que cualquier equipo dado que ejecute Windows Server, los clientes y servidores deben negociar para usar un protocolo que ambos admitan. Windows Server prefiere que los equipos cliente y las aplicaciones usen el protocolo Kerberos, un protocolo seguro basado en estándares, siempre que sea posible, pero el sistema operativo sigue permitiendo que los equipos cliente y las aplicaciones cliente que no son compatibles con el protocolo Kerberos se autentiquen.
 
 Antes de que se pueda realizar la autenticación, los dos equipos que se comunican deben estar de acuerdo en un protocolo que ambos pueden admitir. Para que cualquier protocolo se pueda usar a través de la SSPI, cada equipo debe tener el SSP adecuado. Por ejemplo, para que un equipo cliente y un servidor utilicen el protocolo de autenticación Kerberos, ambos deben ser compatibles con Kerberos V5. Windows Server usa la función **EnumerateSecurityPackages** para identificar qué SSP se admiten en un equipo y cuáles son las capacidades de esos SSP.
 
@@ -260,7 +256,7 @@ La selección de un protocolo de autenticación puede administrarse de una de la
 
 2.  [Opción Negotiate](#BKMK_Negotiate)
 
-### <a name="BKMK_SingleAuth"></a>Protocolo de autenticación única
+### <a name="single-authentication-protocol"></a><a name="BKMK_SingleAuth"></a>Protocolo de autenticación única
 Cuando se especifica un único protocolo aceptable en el servidor, el equipo cliente debe admitir el protocolo especificado o se produce un error en la comunicación. Cuando se especifica un solo protocolo aceptable, el intercambio de autenticación se realiza de la siguiente manera:
 
 1.  El equipo cliente solicita acceso a un servicio.
@@ -269,7 +265,7 @@ Cuando se especifica un único protocolo aceptable en el servidor, el equipo cli
 
 3.  El equipo cliente examina el contenido de la respuesta y realiza las comprobaciones para determinar si es compatible con el protocolo especificado. Si el equipo cliente es compatible con el protocolo especificado, la autenticación continúa. Si el equipo cliente no admite el protocolo, se produce un error de autenticación, independientemente de si el equipo cliente está autorizado para tener acceso al recurso.
 
-### <a name="BKMK_Negotiate"></a>Opción Negotiate
+### <a name="negotiate-option"></a><a name="BKMK_Negotiate"></a>Opción Negotiate
 La opción Negotiate se puede usar para permitir que el cliente y el servidor intenten encontrar un protocolo aceptable. Esto se basa en el mecanismo de negociación simple y protegida de GSS-API (SPNEGO). Cuando la autenticación comienza con la opción de negociar un protocolo de autenticación, el intercambio SPNEGO se realiza de la siguiente manera:
 
 1.  El equipo cliente solicita acceso a un servicio.
@@ -284,7 +280,7 @@ La opción Negotiate se puede usar para permitir que el cliente y el servidor in
 
     -   Si el equipo cliente no es compatible con ninguno de los protocolos enumerados, se produce un error en el intercambio de autenticación.
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 [Arquitectura de autenticación de Windows](https://technet.microsoft.com/library/dn169024(v=ws.10).aspx)
 
 

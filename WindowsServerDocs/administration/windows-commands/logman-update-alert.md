@@ -1,24 +1,20 @@
 ---
 title: alerta de actualización de Logman
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ede94a76-931c-40ed-9fda-6766bed8ff72 britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc32e3de6078489e59fe24c97f02fb440e86628d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13bd7fbef96b75d9308b1e2c8475389d10bbb921
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374391"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840608"
 ---
 # <a name="logman-update-alert"></a>alerta de actualización de Logman
 
@@ -30,7 +26,7 @@ Actualice las propiedades de un recopilador de datos de alerta existente.
 ```  
 logman update alert <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parámetros  
+### <a name="parameters"></a>Parámetros  
 
 |                 Parámetro                  |                                                                               Descripción                                                                               |
 |--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -38,7 +34,7 @@ logman update alert <[-n] <name>> [options]
 |             -s <computer name>             |                                                          Ejecute el comando en el equipo remoto especificado.                                                          |
 |              -config <value>               |                                                         Especifica el archivo de configuración que contiene opciones de comando.                                                         |
 |                [-n] <name>                 |                                                                       Nombre del objeto de destino.                                                                        |
-|          -[-] u < usuario [contraseña] >           | Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
+|          -[-] u < usuario [contraseña] >           | Especifica el usuario que se va a ejecutar como. Al escribir una \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
 | -m < [Start] [STOP] [[Start] [STOP] [...]] > |                                                cambie a Inicio o detención manual en lugar de a una hora de inicio o de finalización programada.                                                 |
 |             -RF < [[HH:] mm:] SS >             |                                                        Ejecute el recopilador de datos durante el período de tiempo especificado.                                                         |
 |     -b < M/d/YYYY h:mm: SS [AM&#124;PM] >      |                                                              Comienza a recopilar datos en el momento especificado.                                                               |
@@ -62,11 +58,11 @@ logman update alert <[-n] <name>> [options]
 
 ## <a name="remarks"></a>Comentarios  
 Donde [-] aparece en la lista, un archivo extra niega la opción.  
-## <a name="BKMK_examples"></a>Example  
-En el ejemplo siguiente se actualiza el recopilador de datos existente new_alert, estableciendo el valor de umbral para el contador% de tiempo de procesador en el grupo de contadores del procesador (_ total) en 40%.  
+## <a name="examples"></a><a name=BKMK_examples></a>Example  
+En el ejemplo siguiente se actualiza el recopilador de datos existente new_alert, estableciendo el valor de umbral para el contador% de tiempo de procesador en el grupo de contadores del procesador (_Total) en 40%.  
 ```  
-logman update alert new_alert -th "\Processor(_Total)\% Processor time>40"  
+logman update alert new_alert -th \Processor(_Total)\% Processor time>40  
 ```  
-#### <a name="additional-references"></a>Referencias adicionales  
+## <a name="additional-references"></a>Referencias adicionales  
 [logman](logman.md)  
 [Logman crear alerta](logman-create-alert.md)  

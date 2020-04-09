@@ -2,22 +2,18 @@
 title: Implementar el acceso directo en una empresa
 description: En este tema se proporciona una introducción al escenario de DirectAccess en Windows Server 2016 para la empresa.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4781df0a-158b-4562-b8f5-32b27615a4f8
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: aebdbd02ebe256872b52e794c755e0d590b175a5
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6d0a9248865dca4afb3db9609b284048155f9eef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308474"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857438"
 ---
 # <a name="deploy-remote-access-in-an-enterprise"></a>Implementar el acceso directo en una empresa
 
@@ -67,8 +63,8 @@ En la siguiente tabla, se muestran los roles y características que se usan en e
   
 |Rol/característica|Compatibilidad con este escenario|  
 |---------|-----------------|  
-|Rol del servidor de acceso remoto|El rol se instala y desinstala mediante la consola del Administrador del servidor. Este rol incluye tanto DirectAccess, que antes era una característica de Windows Server 2008 R2, como los servicios de enrutamiento y acceso remoto, que antes eran un servicio de rol bajo el rol del servidor Servicios de acceso y directivas de redes (NPAS). El rol de acceso remoto consta de dos componentes:<br /><br />1. VPN de servicios de enrutamiento y acceso remoto (RRAS): DirectAccess y VPN se administran conjuntamente en la consola de administración de acceso remoto.<br />2. enrutamiento RRAS: las características de enrutamiento RRAS se administran en la consola de enrutamiento y acceso remoto heredada.<br /><br />El rol del servidor de acceso remoto depende de las siguientes características del servidor:<br /><br />-Internet Information Services (IIS): esta característica es necesaria para configurar el servidor de ubicación de red y el sondeo Web predeterminado.<br />-Consola de administración de directivas de grupo característica-Feature es necesaria para que DirectAccess cree y administre los objetos de directiva de grupo (GPO) en Active Directory y debe instalarse como una característica necesaria para el rol de servidor.|  
-|Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<br /><br />-Se instala de forma predeterminada en un servidor de acceso remoto cuando se instala el rol de acceso remoto y es compatible con la interfaz de usuario de la consola de administración remota.<br />-Se puede instalar opcionalmente en un servidor que no ejecute el rol de servidor de acceso remoto. En este caso, se usa para la administración remota de un equipo de acceso remoto que ejecuta DirectAccess y VPN.<br /><br />La característica de herramientas de administración de acceso remoto consiste de los siguientes elementos:<br /><br />1. herramientas de línea de comandos y GUI de acceso remoto<br />2. módulo de acceso remoto para Windows PowerShell<br /><br />Las dependencias incluyen:<br /><br />1. Consola de administración de directivas de grupo<br />2. kit de administración del administrador de conexiones RAS (CMAK)<br />3. Windows PowerShell 3,0<br />4. infraestructura y herramientas de administración de gráficos|  
+|Rol del servidor de acceso remoto|El rol se instala y desinstala mediante la consola del Administrador del servidor. Este rol incluye tanto DirectAccess, que antes era una característica de Windows Server 2008 R2, como los servicios de enrutamiento y acceso remoto, que antes eran un servicio de rol bajo el rol del servidor Servicios de acceso y directivas de redes (NPAS). El rol de acceso remoto consta de dos componentes:<p>1. VPN de servicios de enrutamiento y acceso remoto (RRAS): DirectAccess y VPN se administran conjuntamente en la consola de administración de acceso remoto.<br />2. enrutamiento RRAS: las características de enrutamiento RRAS se administran en la consola de enrutamiento y acceso remoto heredada.<p>El rol del servidor de acceso remoto depende de las siguientes características del servidor:<p>-Internet Information Services (IIS): esta característica es necesaria para configurar el servidor de ubicación de red y el sondeo Web predeterminado.<br />-Consola de administración de directivas de grupo característica-Feature es necesaria para que DirectAccess cree y administre los objetos de directiva de grupo (GPO) en Active Directory y debe instalarse como una característica necesaria para el rol de servidor.|  
+|Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<p>-Se instala de forma predeterminada en un servidor de acceso remoto cuando se instala el rol de acceso remoto y es compatible con la interfaz de usuario de la consola de administración remota.<br />-Se puede instalar opcionalmente en un servidor que no ejecute el rol de servidor de acceso remoto. En este caso, se usa para la administración remota de un equipo de acceso remoto que ejecuta DirectAccess y VPN.<p>La característica de herramientas de administración de acceso remoto consiste de los siguientes elementos:<p>1. herramientas de línea de comandos y GUI de acceso remoto<br />2. módulo de acceso remoto para Windows PowerShell<p>Las dependencias incluyen:<p>1. Consola de administración de directivas de grupo<br />2. kit de administración del administrador de conexiones RAS (CMAK)<br />3. Windows PowerShell 3,0<br />4. infraestructura y herramientas de administración de gráficos|  
 |Windows NLB|Esta característica permite el equilibrio de carga de varios servidores de acceso remoto.|  
   
 

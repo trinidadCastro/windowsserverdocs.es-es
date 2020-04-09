@@ -1,19 +1,19 @@
 ---
 title: Solución de problemas del servicio de protección de host
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: d34bbeee1a980aba76b5bed994be8db7fc8c8acf
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: 4cbbb41b965a44b6c81b58adc94990bb4d6af046
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940819"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856408"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>Solución de problemas del servicio de protección de host
 
@@ -108,7 +108,7 @@ Propiedad CSR | Valor obligatorio
 -------------|---------------
 Algoritmo    | RSA
 Tamaño de clave     | Al menos 2048 bits
-Uso de la clave    | Signature/Sign/DigitalSignature
+Key Usage    | Signature/Sign/DigitalSignature
 
 **Certificados de cifrado**
 
@@ -116,7 +116,7 @@ Propiedad CSR | Valor obligatorio
 -------------|---------------
 Algoritmo    | RSA
 Tamaño de clave     | Al menos 2048 bits
-Uso de la clave    | Cifrado/cifrado/DataEncipherment
+Key Usage    | Cifrado/cifrado/DataEncipherment
 
 **Active Directory plantillas de servicios de certificados**
 

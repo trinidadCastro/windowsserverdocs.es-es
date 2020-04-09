@@ -1,23 +1,19 @@
 ---
 title: Configurar o personalizar la copia de seguridad del servidor
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 441c2d6c-435a-42cb-90f2-6d680d279d34
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 06d8381e622cdb6c437b0f5aa4d1cd9293ef779a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 364ba61d42fcb2ae5bc4f91a71083b880eb36ab8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310597"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852628"
 ---
 # <a name="set-up-or-customize-server-backup"></a>Configurar o personalizar la copia de seguridad del servidor
 
@@ -27,7 +23,7 @@ ms.locfileid: "80310597"
   
  Vea las secciones siguientes para configurar o personalizar la copia de seguridad del servidor:  
   
--   [Configurar o cambiar la configuración de copia de seguridad del servidor](Set-up-or-customize-server-backup.md#BKMK_1)  
+-   [Configurar o cambiar la configuración de copia de seguridad del servidor](Set-up-or-customize-server-backup.md#BKMK_1)&reg;
   
 -   [Programación de copias de seguridad del servidor](Set-up-or-customize-server-backup.md#BKMK_2)  
   
