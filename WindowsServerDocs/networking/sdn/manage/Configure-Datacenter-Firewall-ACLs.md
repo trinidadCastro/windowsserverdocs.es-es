@@ -1,24 +1,20 @@
 ---
 title: Configuración de listas de control de acceso (ACL) de Datacenter Firewall
 description: Puede aplicar ACL específicas a las interfaces de red.  Si también se establecen ACL en la subred virtual a la que está conectada la interfaz de red, se aplican ambas ACL, pero las ACL de la interfaz de red se priorizan por encima de las ACL de la subred virtual.
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 25f18927-a63e-44f3-b02a-81ed51933187
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: fdf9f7dbe8fb9541cc8f77cfbce014c5210296d5
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: f6b1078f88b2d377c3c49934e2b1bd219641d82e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317663"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854568"
 ---
 # <a name="configure-datacenter-firewall-access-control-lists-acls"></a>Configurar listas de Access Control de Firewall de centro de seguridad (ACL)
 

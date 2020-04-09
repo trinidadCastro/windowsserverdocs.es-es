@@ -1,29 +1,25 @@
 ---
 title: Administrar hardware de la estación
 description: Proporciona información general sobre cómo administrar el hardware de las estaciones multipoint.
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 429b8539-b17a-4e01-9576-860600466451
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 9ca65352a6f016d5d18bdd92b39b737cdddb9057
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8ffb6fd714293471a0e9aa020390943b201261c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395239"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853528"
 ---
 # <a name="manage-station-hardware"></a>Administrar hardware de la estación
-Un sistema Multipoint Services consta de un solo equipo y de al menos una estación. Normalmente, el hardware de la estación consta de un concentrador de estaciones, un mouse, un teclado y un monitor de vídeo. Por lo general, las estaciones están unidas físicamente mediante un cable al equipo.  
+Un sistema MultiPoint Services consta de un solo equipo y de al menos una estación. El hardware de la estación consta habitualmente de un concentrador de estaciones, un mouse, un teclado y un monitor de vídeo. Por lo general, las estaciones están unidas físicamente mediante un cable al equipo.  
   
-En la ilustración siguiente se muestra un ejemplo de un diseño de un sistema MultiPoint Services que tiene cuatro estaciones. Cada estación está conectada al equipo de Multipoint Services mediante el uso de un concentrador USB y tarjetas de vídeo de varios monitores. Esta ilustración no representa las estaciones que están conectadas mediante concentradores multifunción.  
+En la ilustración siguiente se muestra un ejemplo de un diseño de un sistema MultiPoint Services que tiene cuatro estaciones. Cada estación está conectada al equipo de Multipoint Services mediante el uso de un concentrador USB y tarjetas de vídeo de varios monitores. En esta ilustración no se representan las estaciones conectadas mediante concentradores multifunción.  
    
 ![Imagen del diseño del sistema basado en USB de Multipoint Services](./media/WMSMultiPointServerUSBSystemLayout.gif)  
   
@@ -47,7 +43,7 @@ En el tema [Configurar una estación](Set-Up-a-Station.md) se describe cómo con
   
 Ambos tipos de concentradores de estaciones se conectan al equipo mediante un cable USB. Los procedimientos del tema [Configurar una estación](Set-Up-a-Station.md) describen cómo conectar dispositivos de hardware a cada tipo de concentrador de estaciones.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Ver el estado del hardware](View-Hardware-Status.md)  
 [Trabajar con dispositivos USB](Work-with-USB-Devices.md)  
 [Trabajar con dispositivos de vídeo](Work-with-Video-Devices.md)  

@@ -2,20 +2,19 @@
 title: Windows Vista debe configurarse con la cantidad de memoria recomendada
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 64f4e53b-4adb-4e1d-bc48-c24f5f9d222f
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 698e795a9157383063c54eb3cb06461ff58532f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0fcbe0eb51db94fa8f02ecc5a2246700185007e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364350"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860968"
 ---
 # <a name="windows-vista-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows Vista debe configurarse con la cantidad de memoria recomendada
 
@@ -27,7 +26,7 @@ Para más información acerca de los análisis y los procedimientos recomendados
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
-|**Gravedad**|Advertencia|  
+|**Gravedad**|advertencia|  
 |**Categoría**|Configuración|  
   
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.  

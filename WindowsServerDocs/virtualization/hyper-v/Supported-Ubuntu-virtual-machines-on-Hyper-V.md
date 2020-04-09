@@ -2,21 +2,19 @@
 title: Máquinas virtuales de Ubuntu admitidas en Hyper-V
 description: Enumera las características y servicios de integración de Linux que se incluyen en cada versión
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 author: shirgall
 ms.author: shirgall
 ms.date: 06/13/2019
-ms.openlocfilehash: ed1c1a9f678dd7cb68b59d2df239ca278b7a3688
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 06c836d9671547ea3d40e5582c2ed7b330777ac9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365483"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857998"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Máquinas virtuales de Ubuntu admitidas en Hyper-V
 
@@ -36,7 +34,7 @@ El siguiente mapa de distribución de características indica las característic
 
 * (*en blanco*): característica no disponible
 
-|**Característica**|**Versión del sistema operativo Windows Server**|**18,10/19,04**|**18,04 LTS**|**16,04 LTS**|**14,04 LTS**|**12,04 LTS**|
+|**Ofrecen**|**Versión del sistema operativo Windows Server**|**18,10/19,04**|**18,04 LTS**|**16,04 LTS**|**14,04 LTS**|**12,04 LTS**|
 |-|-|-|-|-|-|-|
 |**Disponibilidad**||Integrados|Integrados|Integrados|Integrados|Integrados|
 |**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -80,7 +78,7 @@ El siguiente mapa de distribución de características indica las característic
 
 2. Al usar dispositivos de canal de fibra virtual, asegúrese de que se ha rellenado el número de unidad lógica 0 (LUN 0). Si LUN 0 no se ha rellenado, es posible que una máquina virtual de Linux no pueda montar los dispositivos de canal de fibra de forma nativa.
 
-3. Si hay identificadores de archivos abiertos durante una operación de copia de seguridad de una máquina virtual activa, en algunos casos, es posible que los VHD de copia de seguridad deban someterse a una comprobación de coherencia del sistema de archivos (`fsck`) en la restauración.
+3. Si hay identificadores de archivo abiertos durante una operación de copia de seguridad de una máquina virtual activa, en algunos casos, los VHD de copia de seguridad podrían tener que someterse a una comprobación de coherencia del sistema de archivos (`fsck`) en la restauración.
 
 4. Las operaciones de copia de seguridad en directo pueden producir errores silenciosamente si la máquina virtual tiene un dispositivo iSCSI conectado o un almacenamiento conectado directamente (también conocido como disco de acceso directo).
 
@@ -171,7 +169,7 @@ El siguiente mapa de distribución de características indica las característic
        # sudo mv shimx64.efi bootx64.efi
        ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 * [Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

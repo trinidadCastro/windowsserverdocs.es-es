@@ -1,20 +1,19 @@
 ---
 title: Medición de salida en la red virtual
 description: 'Un aspecto fundamental de la monetización de la red en la nube es la salida del ancho de banda de red. Por ejemplo: transferencias de datos salientes en Microsoft Azure modelo de negocio. Los datos de salida se cobran en función de la cantidad total de datos que salen de los centros de datos de Azure a través de Internet en un ciclo de facturación determinado.'
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
-ms.assetid: ''
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 10/02/2018
-ms.openlocfilehash: 5425a562264addd3b2fc416f659f8ba79d6d99d6
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: a5d530d5cd1b42206bd6881ee902496713573793
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317497"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854438"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>Medición de salida en una red virtual
 

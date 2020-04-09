@@ -1,24 +1,20 @@
 ---
 title: Kerberos Constrained Delegation Overview
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-kerberos
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 51923b0a-0c1a-47b2-93a0-d36f8e295589
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: e6e62effcb875c0e3a1cdd6c886f3d74923e1b94
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 07717743017c15a7bdabd3c3ce38d75a02980460
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403420"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858868"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
@@ -42,7 +38,7 @@ La implementación de Windows Server 2012 R2 y Windows Server 2012 del protocolo
 
 La delegación restringida proporciona a los administradores de servicios la capacidad de especificar y exigir límites de confianza de aplicaciones limitando el ámbito en el que los servicios de aplicación pueden actuar en nombre de un usuario. Los administradores de servicio pueden configurar qué cuentas de servicio front-end pueden delegar a sus servicios back-end.
 
-Al admitir la delegación restringida entre dominios en Windows Server 2012 R2 y Windows Server 2012, servicios front-end como Microsoft Internet Security and Acceleration (ISA) Server, Microsoft Forefront Threat Management Gateway, Microsoft Exchange Outlook Web Access (OWA) y Microsoft SharePoint Server pueden configurarse para usar la delegación restringida para autenticarse en los servidores de otros dominios. Esto proporciona compatibilidad con soluciones de servicios entre dominios mediante una infraestructura de Kerberos existente. La delegación limitada de Kerberos puede ser administrada por administradores de dominio o administradores de servicios.
+Al admitir la delegación restringida entre dominios en Windows Server 2012 R2 y Windows Server 2012, los servicios front-end como Microsoft Internet Security and Acceleration (ISA) Server, Microsoft Forefront Threat Management Gateway, Microsoft Exchange Outlook Web Access (OWA) y Microsoft SharePoint Server se pueden configurar para que usen la delegación restringida para autenticarse en los servidores de otros dominios. Esto proporciona compatibilidad con soluciones de servicios entre dominios mediante una infraestructura de Kerberos existente. La delegación limitada de Kerberos puede ser administrada por administradores de dominio o administradores de servicios.
 
 ## <a name="resource-based-constrained-delegation-across-domains"></a>Delegación limitada basada en recursos entre dominios
 
@@ -83,7 +79,7 @@ Para configurar un servicio de recurso para que permita que un servicio front-en
 
 -   Para configurar el servicio de recursos, use los cmdlets **New-ADComputer**, **New-ADServiceAccount**, **New-ADUser**, **set-ADComputer**, **set-ADServiceAccount**y **set-ADUser** con el parámetro **PrincipalsAllowedToDelegateToAccount** .
 
-## <a name="BKMK_SOFT"></a>Requisitos de software
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>Requisitos de software
 La delegación restringida basada en recursos solo se puede configurar en un controlador de dominio que ejecute Windows Server 2012 R2 y Windows Server 2012, pero se puede aplicar en un bosque de modo mixto.
 
 Debe aplicar la siguiente revisión a todos los controladores de dominio que ejecutan Windows Server 2012 en dominios de cuenta de usuario en la ruta de acceso de referencia entre los dominios front-end y back-end que ejecutan sistemas operativos anteriores a Windows Server: la delegación restringida basada en recursos KDC_ERR_POLICY error en entornos que tienen controladores de dominio basados en Windows Server 2008 R2 (https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro).

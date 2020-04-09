@@ -2,18 +2,17 @@
 title: Solución de problemas de clientes DNS
 description: En este artículo se explica cómo solucionar problemas de DNS desde el lado cliente.
 manager: dcscontentpm
-ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: dd34fae73cdcb20a896750e20d4a28f8777a378a
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: ffc772bafa0027d516194b2741e7680065c0db4b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265777"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860068"
 ---
 # <a name="troubleshooting-dns-clients"></a>Solución de problemas de clientes DNS
 

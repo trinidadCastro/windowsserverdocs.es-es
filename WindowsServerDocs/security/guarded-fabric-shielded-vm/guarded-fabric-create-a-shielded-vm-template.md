@@ -1,19 +1,19 @@
 ---
 title: Creación de un disco de plantilla de máquina virtual blindada con Windows
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 9c8b84e8-1f5a-47a1-83ca-b1dbd801cb0b
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 04fdd52544b69d2c41abcbee00dd00b31bf5f21c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 766ea9688b7f08914ca68a960cc21393963bd0e9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949785"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856778"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Creación de un disco de plantilla de máquina virtual blindada con Windows
 
@@ -85,7 +85,7 @@ Siga los pasos que se describen a continuación en un equipo que ejecute Windows
     > Los discos de plantilla solo se pueden usar con el proceso de aprovisionamiento seguro de máquinas virtuales blindadas.
     > Si intenta arrancar una máquina virtual normal (sin blindar) con un disco de plantilla, es probable que se produzca un error de detención (pantalla azul) y no se admita.
 
-9. En la página **Resumen** , se muestra información sobre la plantilla de disco, el certificado usado para firmar el VSC y el emisor de certificados. Haga clic en **Cerrar** para salir del asistente.
+9. En la página **Resumen** , se muestra información sobre la plantilla de disco, el certificado usado para firmar el VSC y el emisor de certificados. Haz clic en **Cerrar** para salir del asistente.
 
 Si usa VMM, siga los pasos descritos en las secciones restantes de este tema para incorporar un disco de plantilla a una plantilla de máquina virtual blindada en VMM. 
 
@@ -113,7 +113,7 @@ El icono de escudo pequeño situado junto al nombre del disco indica el disco co
 
 ## <a name="create-the-shielded-vm-template-in-vmm-using-the-prepared-template-disk"></a>Creación de la plantilla de máquina virtual blindada en VMM mediante el disco de plantilla preparado
 
-Con un disco de plantilla preparado en la biblioteca VMM, está listo para crear una plantilla de máquina virtual para máquinas virtuales blindadas. Las plantillas de máquina virtual para máquinas virtuales blindadas difieren ligeramente de las plantillas de máquina virtual tradicionales en que ciertos valores de configuración son fijos (la máquina virtual de segunda generación, UEFI y el arranque seguro están habilitados, etc.) y otros no están disponibles (la personalización de inquilinos se limita a algunos, seleccione Propiedades de la máquina virtual). . Para crear la plantilla de máquina virtual, siga estos pasos:
+Con un disco de plantilla preparado en la biblioteca VMM, está listo para crear una plantilla de máquina virtual para máquinas virtuales blindadas. Las plantillas de máquina virtual para máquinas virtuales blindadas difieren ligeramente de las plantillas de máquina virtual tradicionales en que se han corregido ciertos valores de configuración (máquina virtual de segunda generación, UEFI y arranque seguro habilitados, etc.) y otros no están disponibles (la personalización de inquilinos se limita a algunos, seleccione Propiedades de la máquina virtual). Para crear la plantilla de máquina virtual, siga estos pasos:
 
 1. En el área de trabajo **biblioteca** , haga clic en **Crear plantilla de VM** en la pestaña Inicio en la parte superior.
 
@@ -167,7 +167,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -Vo
 > [!div class="nextstepaction"]
 > [Creación de un archivo de datos de blindaje](guarded-fabric-tenant-creates-shielding-data.md)
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 - [Pasos de configuración del proveedor de servicios de hospedaje para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

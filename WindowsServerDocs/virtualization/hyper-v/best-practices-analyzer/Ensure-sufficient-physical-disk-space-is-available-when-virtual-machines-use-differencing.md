@@ -2,20 +2,19 @@
 title: Asegúrese de que hay suficiente espacio en disco físico disponible cuando las máquinas virtuales usan discos duros virtuales de diferenciación
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 71f99aab-f994-4022-9da0-d661965b95ac
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 3827d149d2d691b4ecd7fe6ae8f6d7255c85a31c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 52e09cfb8695389d2c37def2c39ff43b4091fb76
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364871"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861958"
 ---
 # <a name="ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-differencing-virtual-hard-disks"></a>Asegúrese de que hay suficiente espacio en disco físico disponible cuando las máquinas virtuales usan discos duros virtuales de diferenciación
 
@@ -27,7 +26,7 @@ Para obtener más información sobre los análisis y los procedimientos recomend
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
-|**Gravedad**|Advertencia|  
+|**Gravedad**|advertencia|  
 |**Categoría**|Configuración|  
   
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.  

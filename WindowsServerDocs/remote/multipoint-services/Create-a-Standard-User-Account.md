@@ -1,25 +1,21 @@
 ---
 title: Crear una cuenta de usuario estándar
-ms.custom: na
 description: Creación de una cuenta de usuario básica para Multipoint Services
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1e113666-e45f-48b6-aad8-42c361c9046d
 author: lizap
 manager: dongill
-ms.openlocfilehash: dc1307855b847b3d27f655e953c718e4049f8332
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d92b5b21c5a10e808e52bf5081ebc1ed7a2b9a3d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395479"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859788"
 ---
 # <a name="create-a-standard-user-account"></a>Crear una cuenta de usuario estándar
-Cree *cuentas de usuario estándar* para los usuarios que obtienen acceso a menudo a las estaciones, pero que no administran el sistema MultiPoint Services. Los usuarios con cuentas de usuario estándar pueden ejecutar la mayoría de las aplicaciones y guardar archivos, pero no pueden ejecutar Multipoint Manager. Para ver quién tiene acceso de usuario estándar, en Multipoint Manager, haga clic en la pestaña **usuarios** . Las cuentas de usuario estándar se muestran en la columna Tipo de cuenta como **Estándar**.  
+Cree *cuentas de usuario estándar* para los usuarios que obtienen acceso a menudo a las estaciones, pero que no administran el sistema MultiPoint Services. Los usuarios con cuentas de usuario estándar pueden ejecutar la mayoría de las aplicaciones y guardar archivos, pero no pueden ejecutar Multipoint Manager. Para ver quién tiene acceso de usuario estándar, en Multipoint Manager, haga clic en la pestaña **usuarios** . las cuentas de usuario estándar se muestran en la columna **tipo de cuenta** como **estándar**.  
   
 Si los usuarios de MultiPoint Services van a almacenar documentos privados en Windows, deberían iniciar sesión en el sistema MultiPoint Services con un nombre de usuario y contraseña únicos.  
   

@@ -2,20 +2,19 @@
 title: Windows 8 debe configurarse con al menos la cantidad mínima de memoria
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 519d1091-fa4d-44d7-83ca-83f6aa71fb7d
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 830dc05556f78734341fc86c377e5f34805b44dd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1c979299fbd66ef23ae637488fe3c4f3a3ccbbc6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393221"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857658"
 ---
 # <a name="windows-8-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows 8 debe configurarse con al menos la cantidad mínima de memoria
 
@@ -23,7 +22,7 @@ ms.locfileid: "71393221"
 
 Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
-|Property|Detalles|  
+|Propiedad|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
@@ -67,7 +66,7 @@ En las secciones siguientes se proporcionan detalles sobre el problema específi
 Set-VMMemory <MyVM> -StartupBytes 512MB  
 ```  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Set-VMMemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

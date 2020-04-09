@@ -1,12 +1,8 @@
 ---
-title: Adición de servidores al Administrador de servidores
+title: Add Servers to Server Manager
 description: Administrador de servidores
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aab895f2-fe4d-4408-b66b-cdeadbd8969e
 author: coreyp-at-msft
@@ -14,14 +10,14 @@ ms.author: coreyp
 manager: dongill
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: ad30a8f1c4c1e0aa317512eb68fffbd76413175b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f7b5a5b358fa2df54777e0f1f88b1e86a7dafd80
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383260"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851578"
 ---
-# <a name="add-servers-to-server-manager"></a>Adición de servidores al Administrador de servidores
+# <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -30,22 +26,22 @@ En Windows Server puede administrar varios servidores remotos mediante una sola 
 En este tema se describe cómo agregar servidores al grupo de servidores del Administrador de servidores.
 
 > [!NOTE]
-> En nuestras pruebas, pueden usarse el Administrador de servidores en Windows Server 2012 y versiones posteriores de Windows Server para administrar hasta 100 servidores configurados con una carga de trabajo típica. El número de servidores que se pueden administrar con una sola consola del Administrador de servidores puede variar según la cantidad de datos que solicite de los servidores administrados así como los recursos de hardware y de red disponibles para el equipo que ejecuta el Administrador de servidores. Como la cantidad de datos que desea mostrar se acerca a la capacidad de los recursos del equipo, puede experimentar respuestas lentas del administrador de servidores y retrasos en la finalización de las actualizaciones. Para ayudar a aumentar el número de servidores que se pueden administrar mediante el Administrador de servidores, se recomienda limitar los datos de eventos que el Administrador de servidores obtiene de los servidores administrados utilizando la configuración del cuadro de diálogo **Configurar datos de eventos** . Configurar datos de eventos se puede abrir desde el menú **Tareas** del icono **Eventos** . Si tienes que administrar un número de nivel de empresa de servidores de su organización, se recomienda evaluar productos en la [suite Microsoft System Center](https://go.microsoft.com/fwlink/p/?LinkId=239437).
+> En nuestras pruebas, pueden usarse el Administrador de servidores en Windows Server 2012 y versiones posteriores de Windows Server para administrar hasta 100 servidores configurados con una carga de trabajo típica. El número de servidores que se pueden administrar con una sola consola del Administrador de servidores puede variar según la cantidad de datos que solicite de los servidores administrados así como los recursos de hardware y de red disponibles para el equipo que ejecuta el Administrador de servidores. Como la cantidad de datos que desea mostrar se acerca a la capacidad de los recursos del equipo, puede experimentar respuestas lentas del administrador de servidores y retrasos en la finalización de las actualizaciones. Para ayudar a aumentar el número de servidores que se pueden administrar mediante el Administrador de servidores, se recomienda limitar los datos de eventos que el Administrador de servidores obtiene de los servidores administrados utilizando la configuración del cuadro de diálogo **Configurar datos de eventos** . Configurar datos de eventos se puede abrir desde el menú **Tareas** del icono **Eventos**. Si tienes que administrar un número de nivel de empresa de servidores de su organización, se recomienda evaluar productos en la [suite Microsoft System Center](https://go.microsoft.com/fwlink/p/?LinkId=239437).
 > 
 > El Administrador de servidores solo puede recibir estado en línea o sin conexión de los servidores que ejecutan Windows Server 2003. Aunque puedes usar el Administrador de servidores para realizar las tareas de administración en los servidores que ejecutan Windows Server 2008 R2 o Windows Server 2008, no puedes agregar roles y características a los servidores que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
 > 
 > El Administrador de servidores no se puede usar para administrar una versión más reciente del sistema operativo Windows Server. El Administrador de servidores que se ejecuta en Windows Server 2012 R2, Windows Server 2012, Windows 8.1 o Windows 8 no puede usarse para administrar los servidores que ejecutan Windows Server 2016.
 
-En este tema se incluyen las siguientes secciones.
+Este tema contiene las siguientes secciones.
 
 -   [Agregar servidores para administrar](#BKMK_add)
 
 -   [Proporcionar credenciales con el comando administrar como](#BKMK_creds)
 
-## <a name="BKMK_creds"></a>Proporcionar credenciales con el comando administrar como
-Al agregar servidores remotos al Administrador de servidores, algunos de los servidores que agregue es posible que requieran diferentes credenciales de cuenta de usuario para tener acceso o administrarlos. Para especificar las credenciales para un servidor administrado que sean diferentes de las que se utilizan para iniciar sesión en el equipo en el que ejecuta el Administrador de servidores, usa el comando **Administrar como** después de agregar un servidor al Administrador de servidores, al que se accede haciendo clic en la entrada de un servidor administrado en la ventana **Servidores** de una página principal de rol o de grupo. Al hacer clic en **Administrar como** se abre el cuadro de diálogo **Seguridad de Windows**, en el que puedes proporcionar un nombre de usuario que tenga derechos de acceso en el servidor administrado, en uno de los formatos siguientes.
+## <a name="provide-credentials-with-the-manage-as-command"></a><a name=BKMK_creds></a>Proporcionar credenciales con el comando administrar como
+Al agregar servidores remotos al Administrador de servidores, algunos de los servidores que agregue es posible que requieran diferentes credenciales de cuenta de usuario para tener acceso o administrarlos. Para especificar las credenciales para un servidor administrado que sean diferentes de las que se utilizan para iniciar sesión en el equipo en el que ejecuta el Administrador de servidores, usa el comando **Administrar como** después de agregar un servidor al Administrador de servidores, al que se accede haciendo clic en la entrada de un servidor administrado en la ventana **Servidores** de una página principal de rol o de grupo. Al hacer clic en **Administrar como** se abre el cuadro de diálogo **Windows Security**, en el que puedes proporcionar un nombre de usuario que tenga derechos de acceso en el servidor administrado, en uno de los formatos siguientes.
 
--   *Nombre de usuario.*
+-   *Nombre de usuario*
 
 -   *Nombre de usuario*@example.domain.com
 
@@ -64,7 +60,7 @@ Después de agregar servidores para administrar siguiendo los procedimientos de 
 > [!NOTE]
 > Entre los roles y características que no admiten el comando **Administrar como** se incluyen Servicios de Escritorio remoto (RDS) y Servidor de administración de dirección IP (IPAM). Si no se puede administrar el servidor RDS o IPAM remoto usando las mismas credenciales que se usan en el equipo en el que se ejecuta el Administrador de servidores, intenta agregar la cuenta que se usa normalmente para administrar estos servidores remotos al grupo Administradores del equipo que está ejecutando el Administrador de servidores. A continuación, inicia sesión en el equipo que ejecuta el Administrador de servidores con la cuenta que usa para administrar el servidor remoto que ejecuta rdS o IPAM.
 
-## <a name="BKMK_add"></a>Agregar servidores para administrar
+## <a name="add-servers-to-manage"></a><a name=BKMK_add></a>Agregar servidores para administrar
 Puedes agregar servidores al Administrador de servidores para administrar usando uno de los tres métodos del cuadro de diálogo **Agregar servidores** .
 
 -   **Active Directory Domain Services** agrega servidores para administrar que Active Directory se encuentra en el mismo dominio que el equipo local.
@@ -73,7 +69,7 @@ Puedes agregar servidores al Administrador de servidores para administrar usando
 
 -   **Importar servidores múltiples** Especifica varios servidores para importarlos en un archivo que contiene servidores que aparecen por nombre de equipo o dirección IP.
 
-#### <a name="to-add-servers-to-the-server-pool"></a>Para agregar servidores al grupo de servidores
+#### <a name="to-add-servers-to-the-server-pool"></a>Para agregar servidores en el grupo de servidores
 
 1.  Si ya se ha abierto el Administrador del servidor, vaya al siguiente paso. Si todavía no se ha abierto el Administrador del servidor, ábralo mediante una de las siguientes acciones.
 
@@ -83,7 +79,7 @@ Puedes agregar servidores al Administrador de servidores para administrar usando
 
 2.  En el menú **Administrar**, haz clic en **Agregar servidores**.
 
-3.  Realice una de las siguientes acciones:
+3.  Lleve a cabo cualquiera de las siguientes opciones.
 
     -   En la pestaña **Active Directory**, selecciona los servidores que se encuentran en el dominio actual. Mientras selecciona, presione **Ctrl** para seleccionar varios servidores. Haz clic en el botón de flecha derecha para mover los servidores seleccionados a la lista **seleccionada**.
 
@@ -96,7 +92,7 @@ Puedes agregar servidores al Administrador de servidores para administrar usando
 ### <a name="add-and-manage-servers-in-workgroups"></a>Agregar y administrar servidores en grupos de trabajo
 Aunque se realice correctamente la adición de servidores que se encuentran en grupos de trabajo al Administrador de servidores, después de agregarse, la columna **Capacidad de administración** de la ventana **Servidores** en una página de rol o grupo que incluye un servidor de grupo de trabajo, puedes mostrar errores del tipo **Credenciales no válidas** que se producen al intentar conectarse a o recopilar datos del servidor remoto de grupo de trabajo.
 
-Estos errores o similares pueden producirse en las siguientes condiciones.
+Se pueden producir estos errores o unos similares en las condiciones siguientes.
 
 -   El servidor administrado está en el mismo grupo de trabajo que el equipo que ejecuta el Administrador de servidores.
 
@@ -129,7 +125,7 @@ Estos errores o similares pueden producirse en las siguientes condiciones.
 3.  > [!IMPORTANT]
     > La ejecución de cmdlet en este paso invalida las medidas de Control de cuentas de usuario (UAC) que evitan la ejecución de procesos elevados en equipos del grupo de trabajo a menos que la cuenta predefinida de Administrador o la cuenta del Sistema esté ejecutando los procesos. El cmdlet permite que los miembros del grupo Administradores puedan manejar el servidor del grupo de trabajo sin iniciar sesión con la cuenta predefinida de Administrador. Permitir que otros usuarios administren el servidor del grupo de trabajo puede reducir la seguridad; sin embargo, esto es más seguro que proporcionar credenciales de la cuenta predefinida de administrador a varias personas para administrar el servidor del grupo de trabajo.
 
-    Para invalidar las restricciones UAC en los procesos elevados en ejecución en los equipos del grupo de trabajo, crea una entrada del Registro llamada **LocalAccountTokenFilterPolicy** en el servidor de grupo de trabajo mediante la ejecución del siguiente cmdlet.
+    Para invalidar las restricciones UAC en los procesos elevados en ejecución en los equipos del grupo de trabajo, cree una entrada del Registro llamada **LocalAccountTokenFilterPolicy** en el servidor de grupo de trabajo mediante la ejecución del siguiente cmdlet.
 
     ```
     New-ItemProperty -Name LocalAccountTokenFilterPolicy -path HKLM:\SOFTWARE\Microsoft\Windows\Currentversion\Policies\System -propertytype DWord -value 1

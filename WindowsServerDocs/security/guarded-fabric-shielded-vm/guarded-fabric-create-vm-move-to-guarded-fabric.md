@@ -1,20 +1,20 @@
 ---
 redirect_url: guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md
 title: 'Máquinas virtuales blindadas para inquilinos: creación de una nueva máquina virtual blindada en el entorno local y su traslado a un tejido protegido'
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0ca1efa0-01f9-4b6f-87d4-c66db00d7d70
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: a4b5ff2942c8485a4c10770a4374d56734f7f3c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a5ca3ab29b83d0cb6cb2d55507471790f65800a2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402385"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856728"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-new-shielded-vm-on-premises-and-moving-it-to-a-guarded-fabric"></a>Máquinas virtuales blindadas para inquilinos: creación de una nueva máquina virtual blindada en el entorno local y su traslado a un tejido protegido
 
@@ -28,7 +28,7 @@ Para entender cómo se ajusta este tema en el proceso general de implementación
 
 1.  Antes de comenzar el procedimiento, asegúrese de que se encuentre en un host de Hyper-V que ejecute Windows Server 2016 con los siguientes roles y características instalados:
 
-    - Rol
+    - Role
 
         - Hyper-V
 
@@ -130,7 +130,7 @@ Para ver una ilustración que muestra el protector de clave, que es un elemento 
 
     Importe la máquina virtual blindada mediante el administrador de Hyper-V o Windows PowerShell. Debe importar el archivo de configuración de máquina virtual desde el propietario de la máquina virtual para iniciar la máquina virtual. Esto se debe a que el protector de clave y el TPM virtual de la máquina virtual se almacenan en el archivo de configuración. Si la máquina virtual está configurada para ejecutarse en el tejido protegido, debería poder iniciarse correctamente.
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 
 - [Pasos de configuración del proveedor de servicios de hospedaje para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

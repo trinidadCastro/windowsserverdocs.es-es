@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6b38480e-5b1c-49f0-9d46-8cf22f70f0d2
 title: Configuración del entorno de laboratorio para AD FS en Windows Server 2012 R2
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 52199ab8ca6f82443e78e72c6980746fa561363a
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 44de547b0a9c8636b07886d35c451bca6ec46341
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323127"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855178"
 ---
 # <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>Configuración del entorno de laboratorio para AD FS en Windows Server 2012 R2
 
@@ -43,12 +42,12 @@ Para configurar este entorno de prueba, realiza los siguientes pasos:
 
 4.  [Paso 4: configurar el equipo cliente (Client1)](../../ad-fs/deployment/../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_10)
 
-## <a name="BKMK_1"></a>Paso 1: configurar el controlador de dominio (DC1)
+## <a name="step-1-configure-the-domain-controller-dc1"></a><a name="BKMK_1"></a>Paso 1: configurar el controlador de dominio (DC1)
 Para los fines de este entorno de prueba, puede llamar al dominio raíz Active Directory **contoso.com** y especificar <strong>pass@word1</strong> como contraseña de administrador.
 
 -   Instale el servicio de rol de AD DS e instale Active Directory Domain Services (AD DS) para convertir su equipo en un controlador de dominio en Windows Server 2012 R2. Esta acción actualiza el esquema de AD DS como parte de la creación del controlador de dominio. Para obtener más información e instrucciones paso a paso, vea[https://technet.microsoft.com/library/hh472162.aspx](https://technet.microsoft.com/library/hh472162.aspx).
 
-### <a name="BKMK_2"></a>Crear cuentas de Active Directory de pruebas
+### <a name="create-test-active-directory-accounts"></a><a name="BKMK_2"></a>Crear cuentas de Active Directory de pruebas
 Cuando tu controlador de dominio esté operativo, puedes crear un grupo de prueba y cuentas de usuario de prueba en dicho dominio, y agregar la cuenta de usuario a la cuenta de grupo. Utilizarás estas cuentas para completar los tutoriales de las guías mencionadas anteriormente en este tema.
 
 Crea las cuentas siguientes:
@@ -74,7 +73,7 @@ La cuenta de servicio administrada de grupo (GMSA) es necesaria durante la insta
 
     ```
 
-## <a name="BKMK_4"></a>Paso 2: configurar el servidor de Federación (ADFS1) mediante el servicio de registro de dispositivos
+## <a name="step-2-configure-the-federation-server-adfs1-by-using-device-registration-service"></a><a name="BKMK_4"></a>Paso 2: configurar el servidor de Federación (ADFS1) mediante el servicio de registro de dispositivos
 Para configurar otra máquina virtual, instale Windows Server 2012 R2 y conéctela al dominio **contoso.com**. Configure el equipo después de unirlo al dominio y, a continuación, continúe con la instalación y configuración del rol de AD FS.
 
 Para ver un vídeo, consulte [Serie de vídeos prácticos sobre los Servicios de federación de Active Directory: instalar una granja de servidores de AD FS](https://technet.microsoft.com/video/dn469436).
@@ -202,7 +201,7 @@ Para completar este procedimiento, debes pertenecer como mínimo al grupo Admini
     > [!IMPORTANT]
     > En una implementación real, si tu empresa tiene varios sufijos de nombre principal de usuario (UPN), debes crear varios registros CNAME, uno para cada sufijo UPN en DNS.
 
-## <a name="BKMK_5"></a>Paso 3: configurar el servidor Web (WebServ1) y una aplicación de ejemplo basada en notificaciones
+## <a name="step-3-configure-the-web-server-webserv1-and-a-sample-claims-based-application"></a><a name="BKMK_5"></a>Paso 3: configurar el servidor Web (WebServ1) y una aplicación de ejemplo basada en notificaciones
 Configure una máquina virtual (WebServ1) instalando el sistema operativo Windows Server 2012 R2 y conéctela al dominio **contoso.com**. Cuando esté unida al dominio, puedes instalar y configurar el rol de servidor web.
 
 Para completar los tutoriales mencionados al principio de este tema, debes tener una aplicación de ejemplo protegida por tu servidor de federación (ADFS1).
@@ -222,7 +221,7 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
 
 4.  [Crear una relación de confianza para usuario autenticado en el servidor de Federación](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_11)
 
-### <a name="BKMK_15"></a>Instalar el rol de servidor Web y Windows Identity Foundation
+### <a name="install-the-web-server-role-and-windows-identity-foundation"></a><a name="BKMK_15"></a>Instalar el rol de servidor Web y Windows Identity Foundation
 
 1. > [!NOTE]
    > Debe tener acceso a los medios de instalación de Windows Server 2012 R2.
@@ -247,11 +246,11 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
 
 10. En la página **Confirmar selecciones de instalación**, haz clic en **Especifique una ruta de acceso de origen alternativa**. Escriba la ruta de acceso al directorio SxS que se encuentra en el medio de instalación de Windows Server 2012 R2. Por ejemplo, D:\Sources\Sxs. Haga clic en **Aceptar** y, a continuación, en **Instalar**.
 
-### <a name="BKMK_13"></a>Instalar el SDK de Windows Identity Foundation
+### <a name="install-windows-identity-foundation-sdk"></a><a name="BKMK_13"></a>Instalar el SDK de Windows Identity Foundation
 
 1.  Ejecute WindowsIdentityFoundation-SDK-3.5. msi para instalar el SDK 3,5 de Windows Identity Foundation (https://www.microsoft.com/download/details.aspx?id=4451). Elige todas las opciones predeterminadas.
 
-### <a name="BKMK_9"></a>Configuración de la aplicación de notificaciones sencillas en IIS
+### <a name="configure-the-simple-claims-app-in-iis"></a><a name="BKMK_9"></a>Configuración de la aplicación de notificaciones sencillas en IIS
 
 1.  Instala un certificado SSL válido en el almacén de certificados del equipo. El certificado debe contener el nombre de tu servidor web, **webserv1.contoso.com**.
 
@@ -322,7 +321,7 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
 
 Ahora debe proteger la aplicación de ejemplo que se ejecuta en el servidor Web con AD FS. Puedes hacerlo agregando una relación de confianza para usuario autenticado en el servidor de federación (ADFS1). Para ver un vídeo, consulte [Serie de vídeos prácticos sobre los Servicios de federación de Active Directory: agregar una relación de confianza para usuario autenticado](https://technet.microsoft.com/video/adfs-how-to-add-a-relying-party-trust).
 
-### <a name="BKMK_11"></a>Crear una relación de confianza para usuario autenticado en el servidor de Federación
+### <a name="create-a-relying-party-trust-on-your-federation-server"></a><a name="BKMK_11"></a>Crear una relación de confianza para usuario autenticado en el servidor de Federación
 
 1.  En el servidor de federación (ADFS1), en la **Consola de administración de AD FS**, ve a **Relaciones de confianza para usuario autenticado** y haz clic en **Agregar relación de confianza para usuario autenticado**.
 
@@ -350,7 +349,7 @@ Ahora debe proteger la aplicación de ejemplo que se ejecuta en el servidor Web 
 
 10. Haz clic en **Finalizar** y, a continuación, en **Aceptar**.
 
-## <a name="BKMK_10"></a>Paso 4: configurar el equipo cliente (Client1)
+## <a name="step-4-configure-the-client-computer-client1"></a><a name="BKMK_10"></a>Paso 4: configurar el equipo cliente (Client1)
 Configure otra máquina virtual e instale Windows 8.1. Esta máquina virtual deber encontrarse en la misma red virtual que las demás máquinas. Esta máquina NO debe estar unida al dominio Contoso.
 
 El cliente DEBE confiar en el certificado SSL que se usó para el servidor de federación (ADFS1), que configuró en [Step 2: Configure the federation server (ADFS1) with Device Registration Service](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4). También debe poder validar la información de revocación de certificados de dicho certificado.

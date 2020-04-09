@@ -1,7 +1,6 @@
 ---
 ms.assetid: 41d6b897-1e72-4522-aad6-eece1154a154
 title: Implementación de AD FS en la organización del asociado de recurso
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 55291293349ce77337c5b35585dd3ea8e0d8c9e2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d9afc19be9ee92c23198b7fd8a7716379eb0821d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359171"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853168"
 ---
 # <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>Implementación de AD FS en la organización del asociado de recurso
 

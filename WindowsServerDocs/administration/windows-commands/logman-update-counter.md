@@ -1,24 +1,20 @@
 ---
 title: Logman (actualizar contador)
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 607df6d5-876c-428d-a0b3-f59cb244e2ce britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c0696b6077a919d93106cb39329c986e91883fa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d93ea91fb1b5d105923457aeb8d5515e1ac5b9c5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374354"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840578"
 ---
 # <a name="logman-update-counter"></a>Logman (actualizar contador)
 
@@ -30,7 +26,7 @@ Actualice las propiedades de un recopilador de datos de contador existente.
 ```  
 logman update counter <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parámetros  
+### <a name="parameters"></a>Parámetros  
 
 |                    Parámetro                     |                                                                               Descripción                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,7 +35,7 @@ logman update counter <[-n] <name>> [options]
 |                 -config <value>                  |                                                         Especifica el archivo de configuración que contiene opciones de comando.                                                         |
 |                   [-n] <name>                    |                                                                       Nombre del objeto de destino.                                                                        |
 | -f < bin&#124;bincirc&#124;CSV&#124;TSV&#124;SQL > |                                                            Especifica el formato del registro del recopilador de datos.                                                             |
-|             -[-] u < usuario [contraseña] >              | Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
+|             -[-] u < usuario [contraseña] >              | Especifica el usuario que se va a ejecutar como. Al escribir una \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
 |    -m < [Start] [STOP] [[Start] [STOP] [...]] >    |                                                cambie a Inicio o detención manual en lugar de a una hora de inicio o de finalización programada.                                                 |
 |                -RF < [[HH:] mm:] SS >                |                                                        Ejecute el recopilador de datos durante el período de tiempo especificado.                                                         |
 |        -b < M/d/YYYY h:mm: SS [AM&#124;PM] >         |                                                              Comienza a recopilar datos en el momento especificado.                                                               |
@@ -60,11 +56,11 @@ logman update counter <[-n] <name>> [options]
 
 ## <a name="remarks"></a>Comentarios  
 Donde [-] aparece en la lista, un archivo extra niega la opción.  
-## <a name="BKMK_examples"></a>Example  
-El comando siguiente actualiza el recopilador de datos perf_log, cambiando el intervalo de ejemplo a 10 y el formato de registro a CSV y agregando el control de versiones al nombre del archivo de registro con el formato mmddHHMM.  
+## <a name="examples"></a><a name=BKMK_examples></a>Example  
+El comando siguiente actualiza el perf_log del recopilador de datos, cambiando el intervalo de ejemplo a 10 y el formato del registro a CSV y agregando el control de versiones al nombre del archivo de registro con el formato mmddHHMM.  
 ```  
 logman update perf_log -si 10 -f csv -v mmddhhmm  
 ```  
-#### <a name="additional-references"></a>Referencias adicionales  
+## <a name="additional-references"></a>Referencias adicionales  
 [logman](logman.md)  
 [Logman Create Counter](logman-create-counter.md)  

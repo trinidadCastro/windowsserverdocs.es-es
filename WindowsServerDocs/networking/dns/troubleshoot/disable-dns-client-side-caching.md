@@ -2,18 +2,17 @@
 title: Deshabilitar el almacenamiento en caché del lado cliente DNS en clientes DNS
 description: En este artículo se describe cómo deshabilitar el almacenamiento en caché del lado cliente DNS en clientes DNS.
 manager: dcscontentpm
-ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 51a9dbfd05402a9d018aec3bfea8a5c89e9e5d5e
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 09af41a544cacb0fd0977847b7bc2e6b0d8a59f7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265847"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860078"
 ---
 # <a name="disable-dns-client-side-caching-on-dns-clients"></a>Deshabilitar el almacenamiento en caché del lado cliente DNS en clientes DNS
 
@@ -52,7 +51,7 @@ Este comando muestra el contenido de la memoria caché de resolución DNS, inclu
 ## <a name="using-the-registry-to-control-the-caching-time"></a>Usar el registro para controlar el tiempo de almacenamiento en caché
 
 > [!IMPORTANT]  
-> Sigue meticulosamente los pasos que se describen en esta sección. Pueden producirse problemas graves si modificas el registro de manera incorrecta. Antes de modificarlo, [haz una copia de seguridad del registro para restaurarlo](https://support.microsoft.com/help/322756), por si se produjeran problemas.
+> Sigue meticulosamente los pasos que se describen en esta sección. Podrían producirse problemas graves si lo modifica de forma incorrecta. Antes de modificarlo, [haz una copia de seguridad del registro para restaurarlo](https://support.microsoft.com/help/322756), por si se produjeran problemas.
 
 El período de tiempo durante el que una respuesta positiva o negativa se almacena en caché depende de los valores de las entradas de la siguiente clave del registro:
 

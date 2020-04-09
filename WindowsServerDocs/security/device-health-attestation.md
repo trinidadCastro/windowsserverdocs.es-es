@@ -1,21 +1,17 @@
 ---
 title: Certificación de estado del dispositivo
-H1: N/D
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
 ms.technology: techgroup-security
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8e7b77a4-1c6a-4c21-8844-0df89b63f68d
 author: brianlic-msft
+ms.author: brianlic
 ms.date: 10/12/2016
-ms.openlocfilehash: 888992366f8a722c4834f23e08a393c829b47a26
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 2e810a2a20e7c5bdc404077760e259468cecd24e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544628"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857038"
 ---
 # <a name="device-health-attestation"></a>Certificación de estado del dispositivo
 
@@ -23,11 +19,11 @@ ms.locfileid: "68544628"
 
 Introducido en Windows 10, versión 1507, Atestación de estado de dispositivo (DHA) incluye lo siguiente:
 
--   Se integra con la plataforma de Administración de dispositivos móviles (MDM) de Windows 10 junto con los [estándares de la alianza móvil abierta (OMA)](http://openmobilealliance.org/).
+-    Se integra con la plataforma de Administración de dispositivos móviles (MDM) de Windows 10 junto con los [estándares de la alianza móvil abierta (OMA)](http://openmobilealliance.org/).
 
--   Admite dispositivos que tienen un Módulo de plataforma segura (TPM) aprovisionado en formato discreto o de firmware.
+-    Admite dispositivos que tienen un Módulo de plataforma segura (TPM) aprovisionado en formato discreto o de firmware.
 
--   Permite a las empresas aumentar la seguridad de su organización al supervisar el hardware y atestiguar la seguridad con mínimo impacto, o sin él, en el costo de la operación.
+-    Permite a las empresas aumentar la seguridad de su organización al supervisar el hardware y atestiguar la seguridad con mínimo impacto, o sin él, en el costo de la operación.
 
 A partir de Windows Server 2016, ahora puede ejecutar el servicio DHA como un rol de servidor dentro de su organización. Este tema aprenderá a instalar y configurar el rol de servidor de Atestación de estado de dispositivo.
 
@@ -35,8 +31,8 @@ A partir de Windows Server 2016, ahora puede ejecutar el servicio DHA como un ro
 
 Puede usar DHA para evaluar el estado de dispositivo para:
   
--   Dispositivos Windows 10 y Windows 10 Mobile que admiten TPM 1.2 o 2.0.  
--   Dispositivos locales administrados mediante Active Directory con acceso a Internet, dispositivos administrados mediante Active Directory sin acceso a Internet, dispositivos administrados por Azure Active Directory o una implementación híbrida con Active Directory y Azure Active Directory.
+-    Dispositivos Windows 10 y Windows 10 Mobile que admiten TPM 1.2 o 2.0.  
+-    Dispositivos locales administrados mediante Active Directory con acceso a Internet, dispositivos administrados mediante Active Directory sin acceso a Internet, dispositivos administrados por Azure Active Directory o una implementación híbrida con Active Directory y Azure Active Directory.
 
 
 ### <a name="dha-service"></a>Servicio DHA
@@ -51,8 +47,8 @@ El servicio DHA valida los registros de TPM y PCR para un dispositivo y, a despu
 
 El servicio DHA se integra con las soluciones MDM y proporciona lo siguiente: 
 
--   Combinar la información que reciben de dispositivos (a través de canales de comunicación de administración de dispositivos existentes) con el informe DHA
--   Tomar una decisión de seguridad más segura y confiable basada en el hardware atestiguado y en datos protegidos
+-    Combinar la información que reciben de dispositivos (a través de canales de comunicación de administración de dispositivos existentes) con el informe DHA
+-    Tomar una decisión de seguridad más segura y confiable basada en el hardware atestiguado y en datos protegidos
 
 Este es un ejemplo que muestra cómo puede utilizar DHA para aumentar la protección de seguridad para los recursos de su organización.
 
@@ -71,9 +67,9 @@ Este es un ejemplo que muestra cómo puede utilizar DHA para aumentar la protecc
 
 El servicio en la nube DHA ofrece las siguientes ventajas:
 
--   Revisa los registros de arranque de dispositivos TCG y PCR que recibe de un dispositivo que se inscribe con una solución MDM. 
--   Crea un informe resistente a alteraciones y visible a alteraciones (informe DHA) que describe cómo se inició el dispositivo según los datos que se recopilan y protegen por el chip TPM de un dispositivo. 
--   Proporciona el informe DHA al servidor MDM que solicitó el informe en un canal de comunicación protegido.
+-    Revisa los registros de arranque de dispositivos TCG y PCR que recibe de un dispositivo que se inscribe con una solución MDM. 
+-    Crea un informe resistente a alteraciones y visible a alteraciones (informe DHA) que describe cómo se inició el dispositivo según los datos que se recopilan y protegen por el chip TPM de un dispositivo. 
+-    Proporciona el informe DHA al servidor MDM que solicitó el informe en un canal de comunicación protegido.
 
 #### <a name="dha-on-premises-service"></a>Servicio local DHA
 
@@ -98,7 +94,7 @@ Cuando DHA se ejecuta en modo de validación EKCert, depende de una cadena de ad
 
 Microsoft publica paquetes agregados de raíces de confianza y a una CA intermedia para los fabricantes de TPM aprobados (cuando estén disponibles) en un archivo .cab accesible públicamente. Debe descargar la fuente, validar su integridad e instalarla en el servidor que ejecuta la Atestación de estado de dispositivo.
 
-Un archivo de ejemplo [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)es.
+Un archivo de ejemplo se [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925).
 
 #### <a name="aikcert-validation-mode"></a>Modo de validación AIKCert
 
@@ -131,23 +127,23 @@ Puede instalar el rol de servidor de Atestación de estado de dispositivo y sus 
 
 Después de instalar Windows Server 2016, el dispositivo se reinicia y se abre el Administrador del servidor. Si Administrador del servidor no se inicia automáticamente, haga clic en **Inicio** y después escriba **Administrador del servidor**.
 
-1.  Haga clic en **Agregar roles y características**.
-2.  En la página **Antes de comenzar** , haga clic en **Siguiente**.
-3.  En la página **Seleccionar tipo de instalación**, haga clic en **Instalación basada en características o en roles** y, a continuación, en **Siguiente**.
-4.  En la página **Seleccionar servidor de destino**, haga clic en **Seleccionar un servidor del grupo de servidores**, seleccione un servidor y haga clic en **Siguiente**.
-5.  En la página **Seleccionar roles de servidor**, active la casilla **Atestación de mantenimiento del dispositivo**.
-6.  Haga clic en **Agregar características** para instalar otros servicios de rol y características necesarios.
-7.  Haga clic en **Next**.
-8.  En la página **Seleccionar características**, haga clic en **Siguiente**.
-9.  En la página **Rol Servidor web (IIS)** , haz clic en **Siguiente**.
-10. En la página **Seleccionar servicios de rol**, haga clic en **Siguiente**.
-11. En la página **Servicio de atestación de estado de dispositivo**, haga clic en **Siguiente**.
-12. En la página **Confirmar selecciones de instalación** , haga clic en **Instalar**.
-13. Cuando haya finalizado la instalación, haga clic en **Cerrar**.
+1.    Haga clic en **Agregar roles y características**.
+2.    En la página **Antes de comenzar**, haz clic en **Siguiente**.
+3.    En la página **Seleccionar tipo de instalación**, haga clic en **Instalación basada en características o en roles** y, a continuación, en **Siguiente**.
+4.    En la página **Seleccionar servidor de destino**, haga clic en **Seleccionar un servidor del grupo de servidores**, seleccione un servidor y haga clic en **Siguiente**.
+5.    En la página **Seleccionar roles de servidor**, active la casilla **Atestación de mantenimiento del dispositivo**.
+6.    Haga clic en **Agregar características** para instalar otros servicios de rol y características necesarios.
+7.    Haga clic en **Siguiente**.
+8.    En la página **Seleccionar características**, haz clic en **Siguiente**.
+9.    En la página **Rol Servidor web (IIS)** , haz clic en **Siguiente**.
+10.    En la página **Seleccionar servicios de rol**, haz clic en **Siguiente**.
+11.    En la página **Servicio de atestación de estado de dispositivo**, haga clic en **Siguiente**.
+12.    En la página **Confirmar selecciones de instalación** , haga clic en **Instalar**.
+13.    Cuando haya finalizado la instalación, haga clic en **Cerrar**.
 
 ### <a name="install-the-signing-and-encryption-certificates"></a>Instalación de los certificados de firma y cifrado
 
-Utilice el script de Windows PowerShell siguiente para instalar los certificados de firma y cifrado. Para obtener más información acerca de la huella [digital, consulte How to: Recupera la huella digital de un](https://msdn.microsoft.com/library/ms734695.aspx)certificado.
+Utilice el script de Windows PowerShell siguiente para instalar los certificados de firma y cifrado. Para obtener más información acerca de la huella digital, consulte [Cómo: recuperar la huella digital de un certificado](https://msdn.microsoft.com/library/ms734695.aspx).
 
 ```
 $key = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Thumbprint -like "<thumbprint>"}
@@ -165,7 +161,7 @@ Para instalar el paquete de certificado raíz TPM de confianza, debe extraerlo, 
 
 #### <a name="download-the-trusted-tpm-roots-certificate-package"></a>Descarga del paquete de certificado raíz TPM de confianza
 
-Antes de instalar el paquete de certificado, puede descargar la lista más reciente de raíces de TPM [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)de confianza de.
+Antes de instalar el paquete de certificado, puede descargar la lista más reciente de raíces de TPM de confianza de [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925).
 
 > **Importante:** Antes de instalar el paquete, compruebe que está firmado digitalmente por Microsoft.
 
@@ -180,7 +176,7 @@ expand -F:* .\TrustedTpm.cab .\TrustedTpm
 
 Elimine las carpetas de cualquier cadena de confianza de proveedor TPM que no sea de confianza para su organización.
 
-> **Nota:** Si usa el modo de certificado de AIK, se requiere la carpeta Microsoft para validar los certificados AIK de Microsoft emitidos.
+> **Nota:** Si utiliza el modo de certificado AIK, es preciso que la carpeta de Microsoft valide los certificados de AIK emitidos por Microsoft.
 
 #### <a name="install-the-trusted-certificate-package"></a>Instalación del paquete de certificado de confianza
 Instale el paquete de certificado de confianza mediante la ejecución del script de instalación desde el archivo .cab.
@@ -238,7 +234,7 @@ Get-DHASActiveSigningCertificate
 Set-DHASActiveSigningCertificate -Thumbprint "<hex>" -Force
 ```
 
-> **Nota:** Este certificado debe implementarse en el servidor que ejecuta el servicio DHA en el almacén de certificados **LocalMachine\My** . Cuando se establece el certificado de firma activo, el certificado de firma activo existente se mueve a la lista de certificados de firma inactivos.
+> **Nota:** Este certificado debe implementarse en el servidor que ejecuta el servicio DHA en el almacén de certificados **LocalMachine\My**. Cuando se establece el certificado de firma activo, el certificado de firma activo existente se mueve a la lista de certificados de firma inactivos.
 
 ### <a name="list-the-inactive-signing-certificates"></a>Lista de los certificados de firma inactivos
 ```
@@ -251,7 +247,7 @@ Remove-DHASInactiveSigningCertificates -Force
 Remove-DHASInactiveSigningCertificates  -Thumbprint "<hex>" -Force
 ```
 
-> **Nota:** En cualquier momento solo puede existir *un* certificado inactivo (de cualquier tipo) en el servicio. Los certificados deben quitarse de la lista de certificados inactivos cuando ya no sean necesarios.
+> **Nota:** Solo puede existir *un* certificado inactivo (de cualquier tipo) en el servicio en cualquier momento. Los certificados deben quitarse de la lista de certificados inactivos cuando ya no sean necesarios.
 
 ### <a name="get-the-active-encryption-certificate"></a>Obtención del certificado de cifrado activo
 

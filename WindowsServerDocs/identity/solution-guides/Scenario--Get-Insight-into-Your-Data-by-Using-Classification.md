@@ -1,7 +1,6 @@
 ---
 ms.assetid: ad3f0480-99f7-428a-ab33-6d165a440840
 title: Escenario obtenga información sobre los datos mediante la clasificación
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cd6a6e9d3cb452a2cd0a48c6207aea181d85dc7b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a92f8791d5ceef3a8dbba4541588da1d48c4fbff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357449"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861118"
 ---
-# <a name="scenario-get-insight-into-your-data-by-using-classification"></a>Escenario: Comprender los datos mediante la clasificación
+# <a name="scenario-get-insight-into-your-data-by-using-classification"></a>Scenario: Get Insight into Your Data by Using Classification
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 En la mayoría de las organizaciones ha ido aumentando la dependencia de los datos y los recursos de almacenamiento. Los administradores de TI se enfrentan al creciente desafío que supone la supervisión de infraestructuras de almacenamiento cada vez más grandes y más complejas, al mismo tiempo que se les asigna la responsabilidad de garantizar que el costo total de la propiedad se mantenga en un nivel razonable. La administración de recursos de almacenamiento no se limita solo al volumen o la disponibilidad de datos, sino que implica además cumplir las directivas de la compañía y saber cómo se consume el almacenamiento para permitir un uso y un cumplimiento eficaces que mitiguen el riesgo. La infraestructura de clasificación de archivos permite obtener una idea clara de los datos mediante la automatización de los procesos de clasificación con el fin de poder administrar los datos de manera más eficaz. La infraestructura de clasificación de archivos proporciona los siguientes métodos de clasificación: manual, mediante programación y automática. Este tema se centra en el método de clasificación automática de archivos.  
   
-## <a name="BKMK_OVER"></a>Descripción del escenario  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>Descripción del escenario  
 La infraestructura de clasificación de archivos usa reglas de clasificación para examinar los archivos y clasificarlos según su contenido. Las propiedades de clasificación se definen de forma centralizada en Active Directory para que estas definiciones se puedan compartir en todos los servidores de archivos de la organización. Puedes crear reglas de clasificación que busquen en los archivos una cadena estándar o una cadena que coincida con un patrón (expresión regular). Cuando se encuentra un parámetro de clasificación configurado en un archivo, ese archivo se clasifica como configurado en la regla de clasificación. Algunos ejemplos de reglas de clasificación son:  
   
 -   Clasifique cualquier archivo que contenga la cadena "Contoso Confidential" con un gran impacto empresarial  
@@ -38,12 +37,12 @@ Puede encontrar los pasos para la clasificación automática de archivos en [imp
 ## <a name="in-this-scenario"></a>En este escenario  
 Este escenario forma parte del escenario de control de acceso dinámico. Para obtener más información sobre el control de acceso dinámico, consulta:  
   
--   [Control de acceso dinámico: Información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [Access Control dinámico: información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_APP"></a>Aplicaciones prácticas  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicaciones prácticas  
 La infraestructura de clasificación de archivos de Windows Server 2012 contribuye a la Access Control dinámica, ya que permite a los propietarios de datos empresariales clasificar y etiquetar los datos fácilmente. La información de clasificación que se almacena en la directiva de acceso central permite definir directivas de acceso para las clases de datos que son críticos para la empresa.  
   
-## <a name="BKMK_NEW"></a>Características incluidas en este escenario  
+## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Características incluidas en este escenario  
 En la tabla siguiente, se enumeran las características que forman parte de este escenario y se describe la manera en que son compatibles con él.  
   
 |Característica|Compatibilidad con este escenario|  

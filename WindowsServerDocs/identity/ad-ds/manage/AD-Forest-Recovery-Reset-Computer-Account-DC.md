@@ -1,6 +1,5 @@
 ---
 title: 'Recuperación de bosque de AD: restablecimiento de la cuenta de equipo en el controlador de dominio'
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 4e1a6070-df0a-4dfe-8773-899a010bfabd
 ms.technology: identity-adds
-ms.openlocfilehash: 320d02f789b8dda771b648b0aa9a58f545f3358b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 80bdf4bd78b1d4cd678ff09dc2e7326a290032dd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368871"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823718"
 ---
 # <a name="ad-forest-recovery---resetting-the-computer-account-on-the-dc"></a>Recuperación de bosque de AD: restablecimiento de la cuenta de equipo en el controlador de dominio
 

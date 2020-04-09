@@ -1,7 +1,6 @@
 ---
 ms.assetid: 81c55015-82e5-4ba1-b15e-cc7b49af28fc
 title: Escenario de implementación de la retención de información en servidores de archivos
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b6df28987e9e6d2fa1382b00e9403f2d112fc226
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2f6b55d8a98a0f4fb0c286e16d752a18e61dce1a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406986"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861108"
 ---
-# <a name="scenario-implement-retention-of-information-on-file-servers"></a>Escenario: Implementar la retención de información en servidores de archivos
+# <a name="scenario-implement-retention-of-information-on-file-servers"></a>Scenario: Implement Retention of Information on File Servers
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Un período de retención es la cantidad de tiempo que un documento debería conservarse antes de que expire. El período de retención puede ser distinto en función de la organización. Puedes clasificar archivos en una carpeta según tengan un período de retención a corto, medio o largo plazo y, después, asignar un período de tiempo para cada tipo. Quizás desee conservar un archivo indefinidamente mediante una retención legal.  
   
-## <a name="BKMK_OVER"></a>Descripción del escenario  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>Descripción del escenario  
 La infraestructura de clasificación de archivos y el Administrador de recursos del servidor de archivos utilizan tareas de administración de archivos y la clasificación de archivos para aplicar períodos de retención para un conjunto de archivos. Puede asignar un período de retención en una carpeta y, a continuación, usar una tarea de administración de archivos para configurar la duración de un período de retención asignado. Cuando los archivos de la carpeta están a punto de expirar, el propietario del archivo recibe un correo electrónico de notificación. También puede clasificar un archivo con el estado de retención legal para que la tarea de administración de archivos no haga expirar el archivo.  
   
 Encontrarás más información sobre cómo configurar la retención en [Planificar la retención de información en servidores de archivos](assetId:///edf13190-7077-455a-ac01-f534064a9e0c).  
@@ -35,9 +34,9 @@ Puede encontrar los pasos para clasificar archivos para la retención legal y la
 ## <a name="in-this-scenario"></a>En este escenario  
 Este escenario forma parte del escenario de control de acceso dinámico. Para obtener más información sobre el control de acceso dinámico, consulta:  
   
--   [Control de acceso dinámico: Información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [Access Control dinámico: información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_NEW"></a>Características incluidas en este escenario  
+## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Características incluidas en este escenario  
 En la tabla siguiente, se enumeran las características que forman parte de este escenario y se describe la manera en que son compatibles con él.  
   
 |Característica|Compatibilidad con este escenario|  

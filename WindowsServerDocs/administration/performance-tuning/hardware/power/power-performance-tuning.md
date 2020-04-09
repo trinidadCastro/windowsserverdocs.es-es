@@ -4,15 +4,15 @@ description: Optimización de la administración de energía del procesador (PPM
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f1d5e2f3f17c40f262b8cea98c04e3347790ba8
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 1457328a151c87d2d4cb41c4ee91b4759f4fb8e2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001830"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851998"
 ---
 # <a name="power-and-performance-tuning"></a>Ajuste de potencia y rendimiento
 
@@ -100,7 +100,7 @@ Turbo está habilitado para los planes de energía de alto rendimiento en todos 
 > [!Note]
 > El registro EPB solo se admite en procesadores Intel Westmere y posteriores.
 
-En el caso de los procesadores Intel Nehalem y AMD, turbo está deshabilitada de forma predeterminada en las plataformas basadas en el estado P. Sin embargo, si un sistema admite el control de rendimiento de procesador de colaboración (CPPC), que es un nuevo modo alternativo de comunicación de rendimiento entre el sistema operativo y el hardware (definido en ACPI 5,0), se puede utilizar Turbo si el funcionamiento de Windows el sistema solicita dinámicamente el hardware para ofrecer los mayores niveles de rendimiento posibles.
+En el caso de los procesadores Intel Nehalem y AMD, turbo está deshabilitada de forma predeterminada en las plataformas basadas en el estado P. Sin embargo, si un sistema admite el control de rendimiento de procesador de colaboración (CPPC), que es un nuevo modo alternativo de comunicación de rendimiento entre el sistema operativo y el hardware (definido en ACPI 5,0), se puede utilizar Turbo si el sistema operativo Windows solicita dinámicamente el hardware para ofrecer los mayores niveles de rendimiento posibles.
 
 Para habilitar o deshabilitar la característica Turbo Boost, el administrador debe configurar el parámetro de modo mejora del rendimiento del procesador o la configuración predeterminada del parámetro para el plan de energía elegido. El modo de mejora del rendimiento del procesador tiene cinco valores permitidos, como se muestra en la tabla 5.
 
@@ -112,11 +112,11 @@ En Windows Server 2016, el valor predeterminado para el modo Boost es 3.
 
 | **Nombre** | **Comportamiento basado en el estado P** | **Comportamiento de CPPC** |
 |--------------------------|------------------------|-------------------|
-| 0 (deshabilitado) | Deshabilitada | Deshabilitada |
+| 0 (deshabilitado) | Deshabilitado | Deshabilitado |
 | 1 (habilitado) | Habilitado | Eficaz habilitado |
-| 2 (agresivo) | Habilitado | Agresiva |
+| 2 (agresivo) | Habilitado | Aggressive |
 | 3 (eficaz habilitado) | Eficaz | Eficaz habilitado |
-| 4 (agresiva eficaz) | Eficaz | Agresiva |
+| 4 (agresiva eficaz) | Eficaz | Aggressive |
 
  
 Los siguientes comandos habilitan el modo de mejora del rendimiento del procesador en el plan de energía actual (especifique la Directiva mediante un alias de GUID):
@@ -191,7 +191,7 @@ Para la mayoría de los servidores, el comportamiento predeterminado del estacio
 
 Si el servidor tiene requisitos de estacionamiento de núcleos específicos, puede controlar el número de núcleos que están disponibles para el parque mediante el parámetro núcleos **máximos de aparcamiento de núcleos de rendimiento de procesador** o el parámetro de núcleos **mínimos de estacionamiento de núcleos de rendimiento** en Windows Server 2016.
 
-Un escenario en el que el estacionamiento básico no es siempre óptimo para es cuando hay uno o más subprocesos activos afinidad con a un subconjunto no trivial de CPU en un nodo NUMA (es decir, más de 1 CPU, pero menor que el conjunto completo de CPU en el nodo). Cuando el algoritmo de estacionamiento principal es la selección de núcleos para desactivación (suponiendo que se produzca un aumento en la intensidad de la carga de trabajo), puede que no siempre elija los núcleos del subconjunto (o subconjuntos) afinidad con activos para desactivarlos y, por tanto, puede acabar con la reactivación de núcleos que no sean realmente utiliza.
+Un escenario en el que el estacionamiento básico no es siempre óptimo para es cuando hay uno o más subprocesos activos afinidad con a un subconjunto no trivial de CPU en un nodo NUMA (es decir, más de 1 CPU, pero menor que el conjunto completo de CPU en el nodo). Cuando el algoritmo de estacionamiento principal es la selección de núcleos para desactivarlos (suponiendo que se produzca un aumento en la intensidad de la carga de trabajo), puede que no siempre elija los núcleos del subconjunto (o subconjuntos) afinidad con activos para desactivarlos y, por tanto, puede acabar con los núcleos que no se utilizarán realmente.
 
 Los valores de estos parámetros son porcentajes en el intervalo comprendido entre 0 y 100. El parámetro **núcleos máximos de estacionamiento de núcleos de rendimiento** controla el porcentaje máximo de núcleos que se pueden desactivar (disponibles para ejecutar subprocesos) en cualquier momento, mientras que el parámetro Core **performance Core estacionamiento** el número mínimo de núcleos que pueden desactivarse. Para desactivar el estacionamiento de núcleos, establezca el parámetro de **núcleos mínimos de estacionamiento de rendimiento de procesador** en 100 por ciento mediante los siguientes comandos:
 
