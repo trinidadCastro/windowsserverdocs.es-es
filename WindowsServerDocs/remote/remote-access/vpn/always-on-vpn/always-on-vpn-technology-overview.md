@@ -5,15 +5,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 11/05/2018
-ms.author: lizross
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: a5d65dd9f8fb6328bd00be8a46af37ee69ccd2bf
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 570b96d07f414442a00d5f7ec48de80f270f0a76
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313395"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861318"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Información general sobre la tecnología VPN Always On
 
@@ -68,7 +68,7 @@ En Windows Server 2016, el rol de servidor de acceso remoto está diseñado para
 
 IKEv2 es un protocolo de túnel VPN que se describe en solicitud de fuerza de la tarea de ingeniería de Internet para los comentarios 7296. La principal ventaja de IKEv2 es que tolera las interrupciones en la conexión de red subyacente. Por ejemplo, si la conexión se pierde temporalmente o si un usuario mueve un equipo cliente de una red a otra, IKEv2 restaura automáticamente la conexión VPN cuando se restablece la conexión de red, todo ello sin la intervención del usuario.
 
-Mediante el uso de la puerta de enlace RAS, puede implementar conexiones VPN para proporcionar a los usuarios finales acceso remoto a la red y los recursos de la organización. La implementación de Always On VPN mantiene una conexión persistente entre los clientes y la red de la organización siempre que los equipos remotos estén conectados a Internet. Con la puerta de enlace de RAS, también puede crear una conexión VPN de sitio a sitio entre dos servidores en diferentes ubicaciones, como entre la oficina principal y una sucursal, y usar la traducción de direcciones de red (NAT) para que los usuarios dentro de la red puedan acceder a la ubicación externa. recursos, como Internet. Además, la puerta de enlace RAS admite Protocolo de puerta de enlace de borde (BGP), que proporciona servicios de enrutamiento dinámico cuando las ubicaciones de oficinas remotas también tienen puertas de enlace perimetrales que admiten BGP.
+Mediante el uso de la puerta de enlace RAS, puede implementar conexiones VPN para proporcionar a los usuarios finales acceso remoto a la red y los recursos de la organización. La implementación de Always On VPN mantiene una conexión persistente entre los clientes y la red de la organización siempre que los equipos remotos estén conectados a Internet. Con la puerta de enlace de RAS, también puede crear una conexión VPN de sitio a sitio entre dos servidores en diferentes ubicaciones, como entre la oficina principal y una sucursal, y usar la traducción de direcciones de red (NAT) para que los usuarios dentro de la red puedan tener acceso a recursos externos, como Internet. Además, la puerta de enlace RAS admite Protocolo de puerta de enlace de borde (BGP), que proporciona servicios de enrutamiento dinámico cuando las ubicaciones de oficinas remotas también tienen puertas de enlace perimetrales que admiten BGP.
 
 Puede administrar puertas de enlace del servicio de acceso remoto (RAS) mediante los comandos de Windows PowerShell y Microsoft Management Console (MMC) de acceso remoto.
 
@@ -202,10 +202,10 @@ Windows 10 ofrece muchos CSP, pero esta implementación se centra en el uso del 
 
 - [Sistema de nombres de dominio (DNS)](../../../../networking/dns/dns-top.md): en este tema se proporciona información general sobre los sistemas de nombres de dominio (DNS). En Windows Server 2016, DNS es un rol de servidor que puede instalar mediante Administrador del servidor o comandos de Windows PowerShell. Si va a instalar un nuevo bosque y dominio de Active Directory, DNS se instala automáticamente con Active Directory como el servidor de catálogo global para el bosque y el dominio.
 
-- [Información general sobre servicios de Certificate Server de Active Directory](https://technet.microsoft.com/library/hh831740.aspx): este documento proporciona información general sobre Active Directory servicios de Certificate Server (AD CS) en Windows Server® 2012. AD CS es el rol de servidor que permite crear una infraestructura de clave pública (PKI) y proporcionar criptografía de clave pública, certificados digitales y capacidad de forma digital a su organización.
+- [Información general sobre servicios de Certificate Server de Active Directory](https://technet.microsoft.com/library/hh831740.aspx): este documento proporciona información general sobre Active Directory servicios de Certificate Server (AD CS) en Windows Server&reg; 2012. AD CS es el rol de servidor que permite crear una infraestructura de clave pública (PKI) y proporcionar criptografía de clave pública, certificados digitales y capacidad de forma digital a su organización.
 
 - [Guía de diseño de infraestructura de clave pública](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx): este wiki proporciona instrucciones sobre el diseño de infraestructuras de clave pública (PKI). Antes de configurar una PKI y una jerarquía de entidad de certificación (CA), debe tener en cuenta la Directiva de seguridad de la organización y el informe de prácticas de certificados (CPS).
 
-- [Guía paso a paso de AD CS: implementación de una jerarquía de PKI de dos niveles](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx): en esta guía paso a paso se describen los pasos necesarios para configurar una configuración básica de Active Directory® servicios de Certificate Server (AD CS) en un entorno de laboratorio. AD CS en Windows Server® 2008 R2 proporciona servicios personalizables para la creación y administración de certificados de clave pública usados en sistemas de seguridad de software que emplean tecnologías de clave pública.
+- [Guía paso a paso de AD CS: implementación de una jerarquía de PKI de dos niveles](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx): en esta guía paso a paso se describen los pasos necesarios para configurar una configuración básica de Active Directory&reg; servicios de Certificate Server (AD CS) en un entorno de laboratorio. AD CS en Windows Server&reg; 2008 R2 proporciona servicios personalizables para la creación y administración de certificados de clave pública usados en sistemas de seguridad de software que emplean tecnologías de clave pública.
 
 - [Servidor de directivas de redes (NPS)](../../../../networking/technologies/nps/nps-top.md): en este tema se proporciona información general sobre el servidor de directivas de redes en Windows Server 2016. Servidor de directivas de redes (NPS) te permite crear y aplicar directivas de acceso de red de toda la organización para la autenticación y autorización de solicitudes de conexión.

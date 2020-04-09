@@ -1,7 +1,6 @@
 ---
 ms.assetid: cd4d4902-dcdf-49dd-8059-82a56bf4b585
 title: Exportar la parte de la clave privada de un certificado de autenticación de servidor
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 8e1bbeddc4bae1c420b6cc78b52d6b873320ae8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6baa734e3fc346d94f4387e2ed54d3e707e5af75
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359579"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855428"
 ---
 # <a name="export-the-private-key-portion-of-a-server-authentication-certificate"></a>Exportar la parte de la clave privada de un certificado de autenticación de servidor
 
@@ -27,13 +26,13 @@ Este mismo concepto es aplicable a las granjas de servidores proxy de Federació
   
 Según el rol que represente este equipo, use este procedimiento en el equipo del servidor de Federación o en el servidor proxy de Federación en el que instaló el certificado de autenticación del servidor con la clave privada. Cuando termines el procedimiento, puedes importar este certificado en el sitio web predeterminado de cada servidor de la granja. Para obtener más información, vea [importar un certificado de autenticación de servidor al sitio web predeterminado](Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md).  
   
-El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
+La pertenencia al grupo **Administradores** o equivalente en el equipo local es el requisito mínimo necesario para completar este procedimiento.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
 ### <a name="to-export-the-private-key-portion-of-a-server-authentication-certificate"></a>Para exportar la parte de la clave privada de un certificado de autenticación de servidor  
   
 1. En la pantalla **Inicio** , escriba**Internet Information Services \(administrador de\) IIS**y, a continuación, presione Entrar.  
   
-2. En el árbol de consola, haz clic en **nombreDeEquipo**.  
+2. En el árbol de la consola, haz clic en **ComputerName**.  
   
 3. En el panel central, haga doble\-haga clic en **certificados de servidor**.  
   

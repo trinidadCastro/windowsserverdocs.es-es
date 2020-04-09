@@ -2,25 +2,23 @@
 title: Usar la migración en vivo sin clústeres de conmutación por error para migrar una máquina virtual
 description: Proporciona requisitos previos e instrucciones para realizar una migración en vivo en un entorno independiente.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 75c32e42-97f7-48df-aac9-1d82d34825e1
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 01/17/2017
-ms.openlocfilehash: 55c96ff4696871e4013c3abd6247209d0d4517c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 41d5edb02d4384955e711024d4e4d68cee5d3937
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392556"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858928"
 ---
 # <a name="use-live-migration-without-failover-clustering-to-move-a-virtual-machine"></a>Usar la migración en vivo sin clústeres de conmutación por error para migrar una máquina virtual
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2016
 
 En este artículo se muestra cómo trasladar una máquina virtual mediante una migración en vivo sin usar clústeres de conmutación por error. Una migración en vivo mueve máquinas virtuales en ejecución entre hosts de Hyper-V sin ningún tiempo de inactividad apreciable.   
   
@@ -54,7 +52,7 @@ En el ejemplo siguiente se usa el cmdlet Move-VM para mover una máquina virtual
 PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\LMTest  
 ```  
   
-## <a name="troubleshooting"></a>Solución de problemas
+## <a name="troubleshooting"></a>Solucionar problemas
 
 ### <a name="failed-to-establish-a-connection"></a>No se pudo establecer una conexión 
 
@@ -76,7 +74,7 @@ No se pudo establecer una conexión con el *nombre del equipo*host: no hay crede
 1. En el administrador de Hyper-V, en el panel **virtual machines** , haga clic con el botón secundario en la máquina virtual y haga clic en configuración.
 2. En el panel de navegación, expanda **procesadores** y haga clic en **compatibilidad**.
 3. Active **migrar a un equipo con una versión de procesador diferente**.
-4. Haz clic en **Aceptar**.
+4. Haga clic en **Aceptar**.
  
    Para usar Windows PowerShell, use el cmdlet [set-VMProcessor](https://technet.microsoft.com/library/hh848533.aspx) :
  

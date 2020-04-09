@@ -1,35 +1,31 @@
 ---
 title: Guardar la configuración de conexión en un archivo
 description: Obtenga información sobre cómo crear archivos de conexión para conectarse desde un equipo a otro en Multipoint Services
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 93814c41-60ba-4154-8283-f5d7baf790c0
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 76c49bb6a6d78425b654046902df60d1a12f04ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bc76a9632a58f8a1bbe74442f3be63d47eb5321f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395088"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855668"
 ---
 # <a name="save-connection-settings-to-file"></a>Guardar la configuración de conexión en un archivo
 Si usa Escritorio remoto, puede conectarse a un sistema MultiPoint Services desde otro equipo. Si el equipo remoto es compatible con el Protocolo de escritorio remoto, la conexión al equipo puede establecerse automáticamente.  
   
 Hay tres tipos de archivos de conexión que puede crear:  
   
-- **Archivo de conexión de Multipoint Manager**:  Permite que Multipoint Manager se ejecute en otro equipo como aplicación remota.  
+- **Archivo de conexión de Multipoint Manager**: permite que Multipoint Manager se ejecute en otro equipo como aplicación remota.  
   
-- **Archivo de conexión del panel de Multipoint**: Permite que Multipoint Dashboard se ejecute en otro equipo como aplicación remota.  
+- **Archivo de conexión del panel Multipoint**: permite que Multipoint Dashboard se ejecute en otro equipo como aplicación remota.  
   
-- **Archivo de conexión de estación remota**:  Permite que otro equipo se conecte al sistema Multipoint Services como una estación remota.  
+- **Archivo de conexión de estación remota**: permite que otro equipo se conecte al sistema MultiPoint Services como estación remota.  
   
 ## <a name="to-save-system-connection-settings-to-a-file"></a>Archivo de conexión de estación remota  
   
@@ -37,7 +33,7 @@ Hay tres tipos de archivos de conexión que puede crear:
   
 2.  En la columna **Equipo**, haga clic en el nombre del equipo cuya configuración de conexión quiere guardar en un archivo.  
   
-3.  En ***tareas**nombre del equipo*, haga clic en **Guardar conexiones en archivo**. Se muestra la página **Save Connection Settings to File** (Guardar configuración de conexión en archivo).  
+3.  En ***tareas**nombre del equipo *, haga clic en **Guardar conexiones en archivo**. Se muestra la página **Save Connection Settings to File** (Guardar configuración de conexión en archivo).  
   
 4.  Elija el tipo de archivo de conexión que quiere crear y haga clic en **Aceptar**.  
   

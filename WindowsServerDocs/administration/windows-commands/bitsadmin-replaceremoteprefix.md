@@ -1,51 +1,47 @@
 ---
 title: bitsadmin replaceremoteprefix
-description: 'Tema de comandos de Windows para **bitsadmin replaceremoteprefix** : todos los archivos del trabajo cuya dirección URL remota comienza con *OldPrefix* se cambian para usar *NewPrefix*.'
-ms.custom: na
+description: Windows Commands topic for **bitsadmin replaceremoteprefix**, que cambia la dirección URL remota para todos los archivos del trabajo de *oldprefix* a *newprefix*, según sea necesario.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d0e0abb1-bdb4-4c74-abbc-16c809f5fd81
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ee896a337b571487797967d3ce0bf1f1b17e7507
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0cea0108a292815e31e893e91dc4079305c1da9a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380797"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80849818"
 ---
 # <a name="bitsadmin-replaceremoteprefix"></a>bitsadmin replaceremoteprefix
 
-Todos los archivos del trabajo cuya dirección URL remota comienza con *OldPrefix* se cambian para usar *NewPrefix*.
+Cambia la dirección URL remota para todos los archivos del trabajo de *oldprefix* a *newprefix*, según sea necesario.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-bitsadmin /ReplaceRemotePrefix <Job> <OldPrefix> <NewPrefix
+bitsadmin /replaceremoteprefix <job> <oldprefix> <newprefix>
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|Trabajo|El nombre para mostrar del trabajo o el GUID|
-|OldPrefix|Prefijo de dirección URL existente|
-|NewPrefix|Nuevo prefijo de dirección URL|
+| Parámetro | Descripción |
+| -------------- | -------------- |
+| trabajo | El nombre para mostrar o el GUID del trabajo. |
+| oldprefix | Prefijo de dirección URL existente. |
+| newprefix | Nuevo prefijo de dirección URL. |
 
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se cambian todos los archivos del trabajo denominado *myDownloadJob* cuya dirección URL remota comienza con *http://stageserver* a *http://prodserver* .
+En el ejemplo siguiente se cambia la dirección URL remota para todos los archivos del trabajo denominado *myDownloadJob*, desde *http://stageserver* a *http://prodserver* .
 
 ```
-C:\>bitsadmin /ReplaceRemotePrefix myDownloadJob http://stageserver http://prodserver
+C:\>bitsadmin /replaceremoteprefix myDownloadJob http://stageserver http://prodserver
 ```
 
 ## <a name="additional-information"></a>Información adicional
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

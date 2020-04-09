@@ -1,24 +1,20 @@
 ---
 title: Crear escritorios virtuales de Windows 10 Enterprise para las estaciones
 description: Aprenda a crear escritorios de Windows Server 2016 para la estación
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: cd08caef8228a4d20c6d5f4a40fe5bd90aacbe40
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40af6ea98aa91730f78bde8a71f2ad9a741a6490
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395537"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859808"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>Crear escritorios virtuales de Windows 10 Enterprise para las estaciones
 Esta configuración opcional en Multipoint Services está destinada principalmente a situaciones en las que una aplicación esencial requiere su propia instancia de un sistema operativo cliente para cada usuario. Algunos ejemplos son las aplicaciones que no se pueden instalar en Windows Server y las aplicaciones que no ejecutarán varias instancias en el mismo equipo host.  
@@ -32,7 +28,7 @@ Para preparar la creación de escritorios virtuales de estación, asegúrese de 
 |Hardware|Requisitos|         |
 |------------|----------------|----------------| 
 |CPU (multimedia)|1 núcleo o subproceso por máquina virtual|  
-|Unidad de estado sólido (SSD)|Capacidad > = 20 GB por estación + 40 GB para el sistema operativo host de Multipoint Services<br /><br />IOPS de\/escritura de lectura aleatoria > = 3K por estación|  
+|Unidad de estado sólido (SSD)|Capacidad > = 20 GB por estación + 40 GB para el sistema operativo host de Multipoint Services<p>Lectura aleatoria\/IOPS de escritura > = 3K por estación|  
 |RAM|2 GB por estación + 2 GB para el sistema operativo host de Windows MultiPoint Server|  
 |Gráficos|DX11|  
 |BIOS|Configuración de CPU de BIOS configurada para habilitar la virtualización: traducción de direcciones de segundo nivel (SLAT)|  
@@ -142,7 +138,7 @@ Cuando se complete la tarea, cada estación local se conectará a un escritorio 
 > Si una cuenta de usuario ha iniciado sesión en cualquiera de las estaciones locales, deberá cerrar sesión en la sesión para que la estación se conecte a uno de los escritorios virtuales de la estación recién creados.  
   
 ### <a name="copy-an-existing-virtual-desktop-template"></a>Copia de una plantilla de escritorio virtual existente  
-Use el procedimiento siguiente para crear una copia de una plantilla de escritorio virtual existente que puede personalizar y usar. Esto puede ser útil en las situaciones siguientes:  
+Use el procedimiento siguiente para crear una copia de una plantilla de escritorio virtual existente que puede personalizar y usar. Esto puede resultar útil en las siguientes situaciones:  
   
 -   Para copiar una plantilla maestra desde un recurso compartido de red en un equipo host de MultiPoint Server para que se puedan crear estaciones de escritorios virtuales a partir de la plantilla maestra.  
   
@@ -156,7 +152,7 @@ Use el procedimiento siguiente para crear una copia de una plantilla de escritor
   
 3.  Haga clic en la pestaña **escritorios virtuales** .  
   
-4.  Haga clic en **Importar plantilla de escritorio virtual**y use **examinar** para seleccionar el archivo. vhd (plantilla) que desea importar. Al importar una plantilla, se realiza una copia del archivo. vhd original. De forma predeterminada, Multipoint Services almacena archivos. vhd en la\\carpeta\\C\\: users\\Public\\Hard Disks\\ de Hyper\-V.  
+4.  Haga clic en **Importar plantilla de escritorio virtual**y use **examinar** para seleccionar el archivo. vhd (plantilla) que desea importar. Al importar una plantilla, se realiza una copia del archivo. vhd original. De forma predeterminada, Multipoint Services almacena archivos. vhd en la unidad C:\\usuarios\\documentos\\públicos\\de Hyper\-V\\de discos duros virtuales\\ carpeta.  
   
 5.  Escriba un prefijo para la nueva plantilla y, a continuación, haga clic en **Aceptar**.  
   

@@ -8,12 +8,12 @@ author: larsiwer
 ms.asset: b78ab493-e7c3-41f5-ab36-29397f086f32
 ms.author: kathydav
 ms.date: 11/03/2016
-ms.openlocfilehash: 2232f62090e171060f25e4c2513a217e2ab98eaa
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a7df8de5a828b68a341191eaa1a400f80dd9127b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950548"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852908"
 ---
 # <a name="about-dump-encryption"></a>Acerca del cifrado de volcado
 El cifrado de volcado se puede usar para cifrar volcados de memoria y volcados en directo generados para un sistema. Los volcados de memoria se cifran mediante una clave de cifrado simétrica que se genera para cada volcado. Esta clave se cifra a continuación con la clave pública especificada por el administrador de confianza del host (protector de la clave de cifrado de volcado). Esto garantiza que solo alguien que tenga la clave privada correspondiente puede descifrar y, por tanto, tener acceso al contenido del volcado. Esta funcionalidad se aprovecha en un tejido protegido.
@@ -23,11 +23,11 @@ Nota: Si configura el cifrado de volcado, deshabilite también Informe de errore
 ### <a name="manual-configuration"></a>Configuración manual
 Para activar el cifrado de volcado mediante el registro, configure los siguientes valores del registro en `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl`
 
-| Nombre del valor | Escribe | Valor |
+| Nombre del valor | Tipo | Valor |
 | ---------- | ---- | ----- |
 | DumpEncryptionEnabled | DWORD | 1 para habilitar el cifrado de volcado, 0 para deshabilitar el cifrado de volcado |
-| EncryptionCertificates\Certificate.1::P ublicKey | Binario | Clave pública (RSA, 2048 bits) que se debe usar para cifrar volcados de memoria. Esto tiene que tener el formato [BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx). |
-| EncryptionCertificates\Certificate.1:: Thumbprint | Cadena | Huella digital del certificado para permitir la búsqueda automática de la clave privada en el almacén de certificados local al descifrar un volcado de memoria. |
+| EncryptionCertificates\Certificate.1::P ublicKey | Binary | Clave pública (RSA, 2048 bits) que se debe usar para cifrar volcados de memoria. Esto tiene que tener el formato [BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx). |
+| EncryptionCertificates\Certificate.1:: Thumbprint | String | Huella digital del certificado para permitir la búsqueda automática de la clave privada en el almacén de certificados local al descifrar un volcado de memoria. |
 
 
 ### <a name="configuration-using-script"></a>Configuración mediante script
@@ -52,7 +52,7 @@ Después del descifrado, las herramientas como WinDbg pueden abrir el archivo de
 ## <a name="troubleshooting-dump-encryption"></a>Solucionar problemas de cifrado de volcado
 Si el cifrado de volcado está habilitado en un sistema pero no se está generando ningún volcado, compruebe el registro de eventos del `System` del sistema en busca de `Kernel-IO` evento 1207. Cuando no se puede inicializar el cifrado de volcado, se crea este evento y se deshabilitan los volcados.
 
-| Mensajes de error detallados | Pasos para mitigar |
+| Mensaje de error detallado | Pasos para mitigar |
 | ---------------------- | ----------------- |
 | Falta el registro de la clave pública o huella digital | Compruebe si los dos valores del registro existen en la ubicación esperada |
 | Clave pública no válida | Asegúrese de que la clave pública almacenada en el valor del registro PublicKey esté almacenada como [BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx). |

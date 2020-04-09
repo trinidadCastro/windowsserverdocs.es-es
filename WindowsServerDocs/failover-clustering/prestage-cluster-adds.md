@@ -5,16 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.manager: daveba
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 56bf122923525de6e0005dd6d866220221dc9ce1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b14561a05778ed30e71363a2cd3b3b6fdf24f78e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392063"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827478"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Preconfigurar objetos de equipo de clúster en Active Directory Domain Services
 
@@ -25,7 +25,7 @@ En este tema se muestra el modo de preconfigurar objetos de equipo en clúster e
 Al crear un clúster de conmutación por error con el Asistente para crear clúster o con Windows PowerShell, se debe especificar el nombre del clúster. Si dispone de suficientes permisos al crear el clúster, el proceso de creación del clúster genera automáticamente un objeto de equipo en AD DS que se corresponde con el nombre del clúster. Este objeto se denomina *objeto de nombre de clúster* o CNO. Por medio del CNO, se crean automáticamente objetos de equipo virtual (VCO) cuando se configuran roles en clúster que emplean puntos de acceso cliente. Por ejemplo, si se crea un servidor de archivos de alta disponibilidad con un punto de acceso cliente denominado *ServidorDeArchivos1*, el CNO creará un VCO correspondiente en AD DS.
 
 >[!NOTE]
->Existe la opción de crear un clúster desasociado Active Directory, donde no se crea ningún CNO o VCO en AD DS. Dicha opción está pensada para determinados tipos de implementaciones de clúster. Para obtener más información, consulte [Implementar un clúster desconectado de Active Directory](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>).
+>Existe la opción de crear un clúster desasociado Active Directory, donde no se crea ningún CNO o VCO en AD DS. Dicha opción está pensada para determinados tipos de implementaciones de clúster. Para obtener más información, consulta [Implementar un clúster desconectado de Active Directory](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>).
 
 Para crear el CNO de forma automática, el usuario que crea el clúster de conmutación por error debe tener el permiso **Crear objetos de equipo** en la unidad organizativa o el contenedor donde residen los servidores que conformarán el clúster. Para que un usuario o grupo que no posee este permiso pueda crear un clúster, un usuario con los permisos correspondientes en AD DS (por lo general, un administrador de dominios) puede preconfigurar el CNO en AD DS. Este procedimiento también ofrece al administrador de dominios más control sobre la convención de nomenclatura empleada para el clúster y sobre la unidad organizativa en la que se crean los objetos de clúster.
 
@@ -65,7 +65,7 @@ Como práctica recomendada, se aconseja crear una unidad organizativa para los o
 
 Debe configurar los permisos de manera que la cuenta de usuario que se utilizará para crear el clúster de conmutación por error tenga permisos de control total con respecto al CNO.
 
-El requisito mínimo para completar este paso es la pertenencia al grupo **Opers. de cuentas** .
+El requisito mínimo para completar este paso es la pertenencia al grupo **Opers. de cuentas**.
 
 Aquí se muestra cómo conceder permisos de usuario para crear el clúster:
 
@@ -73,7 +73,7 @@ Aquí se muestra cómo conceder permisos de usuario para crear el clúster:
 2. Busque y, a continuación, haga clic con el botón secundario en el CNO y seleccione **propiedades**.
 3. En la pestaña **seguridad** , seleccione **Agregar**.
 4. En el cuadro de diálogo **Seleccionar usuarios, equipos o grupos** , especifique la cuenta de usuario o el grupo al que desea conceder permisos y, a continuación, seleccione **Aceptar**.
-5. Seleccione la cuenta de usuario o el grupo recién agregado y, junto a **Control total**, active la casilla **Permitir** .
+5. Seleccione la cuenta de usuario o el grupo recién agregado y, junto a **Control total**, active la casilla **Permitir**.
   
    ![Concesión de control total al usuario o grupo que creará el clúster](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
   

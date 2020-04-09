@@ -1,7 +1,6 @@
 ---
 ms.assetid: c60227a8-7b44-40f8-b807-a6532851a4a6
 title: Adición de un almacén de atributos
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0f5c9d3b0f856ab72a16930ddb5c50686d747ecc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b197268de3c5335e30c2a24a74c5a7b01224b500
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358387"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859698"
 ---
 # <a name="add-an-attribute-store"></a>Adición de un almacén de atributos
 
@@ -23,7 +22,7 @@ Las cuentas de usuario y las cuentas de equipo que requieren acceso a un recurso
   
 Puede usar el siguiente procedimiento para agregar un almacén de atributos al Servicio de federación.  
   
-El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
+La pertenencia al grupo **Administradores** o equivalente en el equipo local es el requisito mínimo necesario para completar este procedimiento.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
 #### <a name="to-add-an-attribute-store"></a>Para agregar un almacén de atributos  
   
@@ -46,7 +45,7 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
  
 ![Agregar almacén de atributos](media/Add-an-Attribute-Store/addstore2.PNG) 
 
-4. Haz clic en **Aceptar**.  
+4. Haga clic en **Aceptar**.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
 

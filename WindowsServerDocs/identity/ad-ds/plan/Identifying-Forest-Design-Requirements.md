@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7d957ebb-3476-49d8-b00b-6e93b4a94778
 title: Identificar los requisitos de diseño de bosque
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 41caeca82819eaea3d86d5f1eb4883ab8bbf53cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 33025dc2e08185744ffd0dee7eac4d0c020a0691
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408798"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822408"
 ---
 # <a name="identifying-forest-design-requirements"></a>Identificar los requisitos de diseño de bosque
 
@@ -38,11 +37,11 @@ Los grupos de su organización pueden tener algunos de los siguientes tipos de r
   
 -   **Requisitos legales**. Algunas organizaciones tienen requisitos legales para operar de una manera determinada, por ejemplo, restringir el acceso a cierta información, tal como se especifica en un contrato de negocio. Algunas organizaciones tienen requisitos de seguridad para operar en redes internas aisladas. Si no se cumplen estos requisitos, se puede producir la pérdida del contrato y, posiblemente, de una acción legal.  
   
-Parte de la identificación de los requisitos de diseño de bosque implica la identificación del grado en que los grupos de su organización pueden confiar en los posibles propietarios de bosque y sus administradores de servicios, e identificar los requisitos de aislamiento y autonomía de cada uno Grupo de la organización.  
+Parte de la identificación de los requisitos de diseño de bosque implica la identificación del grado en que los grupos de su organización pueden confiar en los posibles propietarios de bosque y sus administradores de servicios, e identificar los requisitos de aislamiento y autonomía para cada grupo de la organización.  
   
 El equipo de diseño debe documentar los requisitos de aislamiento y autonomía del servicio y la administración de los datos para cada grupo de la organización que pretenda usar AD DS. El equipo también debe tener en cuenta las áreas de conectividad limitada que puedan afectar a la implementación de AD DS.  
   
-El equipo de diseño debe documentar los requisitos de aislamiento y autonomía del servicio y la administración de los datos para cada grupo de la organización que pretenda usar AD DS. El equipo también debe tener en cuenta las áreas de conectividad limitada que puedan afectar a la implementación de AD DS. Para obtener una hoja de cálculo que le ayude a documentar las regiones que identificó, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558) y abra "requisitos de diseño de bosque" ( DSSLOGI_2. doc).  
+El equipo de diseño debe documentar los requisitos de aislamiento y autonomía del servicio y la administración de los datos para cada grupo de la organización que pretenda usar AD DS. El equipo también debe tener en cuenta las áreas de conectividad limitada que puedan afectar a la implementación de AD DS. Para obtener una hoja de cálculo que le ayude a documentar las regiones que identificó, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558) y abra "requisitos de diseño de bosque" (DSSLOGI_2. doc).  
   
 ## <a name="in-this-section"></a>En esta sección  
   

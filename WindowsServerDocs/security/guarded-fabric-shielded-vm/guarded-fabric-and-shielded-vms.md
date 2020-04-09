@@ -1,18 +1,18 @@
 ---
 title: Información general sobre máquinas virtuales blindadas y tejido protegido
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: ace6eb30ae6df2dc29aacc05eb7852e03145df4f
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: edcf2e011b701904fb8c1b27d4f9b7d13415b2a8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79321997"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856908"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>Información general sobre máquinas virtuales blindadas y tejido protegido
 
@@ -89,9 +89,9 @@ La siguiente ilustración muestra el archivo de datos de blindaje y los elemento
 
 Los tejidos protegidos son capaces de ejecutar máquinas virtuales en una de tres maneras posibles:
 
-1.  Una máquina virtual normal que no ofrece ninguna protección más allá de las versiones anteriores de Hyper-V
-2.  Una máquina virtual que admite el cifrado cuyas protecciones se pueden configurar un administrador de tejido
-3.  Una máquina virtual blindada cuyas protecciones se han cambiado y no puede deshabilitarse por un administrador de tejido
+1.    Una máquina virtual normal que no ofrece ninguna protección más allá de las versiones anteriores de Hyper-V
+2.    Una máquina virtual que admite el cifrado cuyas protecciones se pueden configurar un administrador de tejido
+3.    Una máquina virtual blindada cuyas protecciones se han cambiado y no puede deshabilitarse por un administrador de tejido
 
 Las máquinas virtuales que admiten el cifrado están destinadas para usarse donde los administradores de tejido son de plena confianza.  Por ejemplo, una empresa puede implementar un tejido protegido para asegurar que los discos de máquinas virtuales están cifrados en reposo con fines de cumplimiento. Los administradores de tejido pueden seguir utilizando prácticas características de administración, como conexiones de consola de máquina virtual, PowerShell Direct y otras herramientas de solución de problemas y administración diaria.
 

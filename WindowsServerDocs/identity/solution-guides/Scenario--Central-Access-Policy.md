@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7f285c9f-c3e8-4aae-9ff4-a9123815114e
 title: Directiva de acceso central de escenario
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 91fd437895e765d4d73f3a200f76a5f8f96b52f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a22592e5c8af9fa23725de90a14a9a8a46c286d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407098"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861158"
 ---
 # <a name="scenario-central-access-policy"></a>Escenario: Directiva de acceso central
 
@@ -22,7 +21,7 @@ ms.locfileid: "71407098"
 
 Las directivas de acceso central para los archivos permiten a las organizaciones implementar y administrar de manera centralizada las directivas de autorización que incluyen expresiones condicionales que usan grupos e usuarios, notificaciones de usuario, notificaciones de dispositivo y propiedades de recursos. (Las notificaciones son aserciones sobre los atributos del objeto al que están asociadas). Por ejemplo, para tener acceso a datos de alto impacto de negocio (HBI), un usuario tiene que ser un empleado a tiempo completo, obtener acceso desde un dispositivo administrado e iniciar sesión con una tarjeta inteligente. Estas directivas se definen y se hospedan en Servicios de dominio de Active Directory (AD DS).  
   
-El cumplimiento de normas y los requisitos de las normas empresariales controlan las directivas de acceso organizativas. Por ejemplo, si una organización tiene un requisito empresarial de restringir el acceso a la información de identificación personal (PII) en los archivos solo al propietario del archivo y a los miembros del Departamento de recursos humanos (HR) que tienen permiso para ver la información de PII, se aplica esta Directiva. a los archivos PII dondequiera que se encuentren en los servidores de archivos de toda la organización. En este ejemplo, tienes que ser capaz de:  
+El cumplimiento de normas y los requisitos de las normas empresariales controlan las directivas de acceso organizativas. Por ejemplo, si una organización tiene un requisito empresarial de restringir el acceso a la información de identificación personal (PII) en los archivos solo al propietario del archivo y a los miembros del Departamento de recursos humanos (HR) que tienen permiso para ver la información de PII, esta Directiva se aplica a los archivos PII dondequiera que se encuentren en los servidores de archivos de toda la organización. En este ejemplo, tienes que ser capaz de:  
   
 -   Identificar y marcar los archivos que contienen PII.  
   
@@ -83,14 +82,14 @@ La orientación siguiente está disponible para las directivas de acceso central
   
 -   [Implementar una directiva &#40;de acceso central (pasos de demostración)&#41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)  
   
--   [Control de acceso dinámico: Información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [Access Control dinámico: información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_NEW"></a>Roles y características incluidos en este escenario  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Roles y características incluidos en este escenario  
 En la tabla siguiente, se enumeran los roles y las características que forman parte de este escenario y se describe la manera en que son compatibles con él.  
   
 |Rol/característica|Compatibilidad con este escenario|  
 |-----------------|---------------------------------|  
-|Rol de Servicios de dominio de Active Directory|AD DS en Windows Server 2012 presenta una plataforma de autorización basada en notificaciones que permite la creación de notificaciones de usuario y notificaciones de dispositivo, identidad compuesta (notificaciones de usuario más dispositivo), nuevos modelos de directivas de acceso central (CAP) y el uso de la clasificación de archivos información en decisiones de autorización.|  
+|Rol de Servicios de dominio de Active Directory|AD DS en Windows Server 2012 presenta una plataforma de autorización basada en notificaciones que permite la creación de notificaciones de usuario y notificaciones de dispositivo, identidad compuesta (notificaciones de usuario más dispositivo), nuevos modelos de directivas de acceso central (CAP) y el uso de información de clasificación de archivos en decisiones de autorización.|  
 |Rol del servidor de servicios de archivos y almacenamiento|Los servicios de archivos y almacenamiento incluyen tecnologías que te permiten configurar y administrar uno o más servidores de archivos que proporcionan ubicaciones centrales en tu red donde puedes almacenar archivos y compartirlos con los usuarios. Si los usuarios de la red necesitan tener acceso a los mismos archivos y aplicaciones, o si la administración centralizada de archivos y copias de seguridad es importante en su organización, deberá configurar uno o más equipos como servidor de archivos. Para ello, debe agregar a los equipos el rol Servicios de archivos y almacenamiento y los servicios de rol pertinentes.|  
 |Equipo cliente de Windows|Los usuarios pueden acceder a archivos y carpetas de la red a través del equipo cliente.|  
   

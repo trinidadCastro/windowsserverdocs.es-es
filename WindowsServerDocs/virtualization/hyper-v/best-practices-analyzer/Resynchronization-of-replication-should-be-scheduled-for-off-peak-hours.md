@@ -2,20 +2,19 @@
 title: La resincronización de la replicación debe programarse para horas de poca actividad
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 093a7bb7-8e0a-486b-b42b-04edd8809710
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 379f8c8cd6744fe5db176efb55a84f231ce45857
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ae630f93ef50ebc977de2bffcefa3b27b03622ee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393510"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861798"
 ---
 # <a name="resynchronization-of-replication-should-be-scheduled-for-off-peak-hours"></a>La resincronización de la replicación debe programarse para horas de poca actividad
 
@@ -27,7 +26,7 @@ Para obtener más información sobre los análisis y los procedimientos recomend
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
-|**Gravedad**|Advertencia|  
+|**Gravedad**|advertencia|  
 |**Categoría**|Operaciones|  
   
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.  

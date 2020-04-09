@@ -1,24 +1,20 @@
 ---
 title: Planear cuentas de usuario para el entorno de MultiPoint Services
 description: Planeación de la información de cuentas de usuario en Multipoint Services
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d47be540-e891-47bd-85da-6df4bbf93b2f
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 056c3b9773387cf00b40baf6f14e4e1f3583f6c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 28ee7a1475ec55352fe344842b8df7633abb9137
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405007"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853398"
 ---
 # <a name="plan-user-accounts-for-your-multipoint-services-environment"></a>Planear cuentas de usuario para el entorno de MultiPoint Services
 La mejor manera de implementar cuentas de usuario en Multipoint Services depende del tamaño y la complejidad de la implementación:  
@@ -62,7 +58,7 @@ Por el contrario, también es posible replicar cuentas de usuario individuales e
 |UserAccount_04|UserAccount_04|  
 |UserAccount_05|UserAccount_05|  
   
-Una ventaja de este enfoque es que los usuarios tienen una cuenta de usuario local en cada Multipoint Services disponible. Sin embargo, las desventajas pueden superar esta ventaja. Por ejemplo, incluso si el nombre de usuario y la contraseña de una persona determinada son iguales en ambos equipos, las cuentas no se vinculan entre sí. Por lo tanto, si un usuario inicia sesión en su cuenta en el equipo A el lunes, guarda un archivo y, a continuación, inicia sesión en su cuenta del equipo B el martes, no podrá obtener acceso al archivo guardado anteriormente en el equipo A. , la replicación de cuentas de usuario en varios equipos aumenta la sobrecarga administrativa y los requisitos de almacenamiento.  
+Una ventaja de este enfoque es que los usuarios tienen una cuenta de usuario local en cada Multipoint Services disponible. Sin embargo, las desventajas pueden superar esta ventaja. Por ejemplo, incluso si el nombre de usuario y la contraseña de una persona determinada son iguales en ambos equipos, las cuentas no se vinculan entre sí. Por lo tanto, si un usuario inicia sesión en su cuenta en el equipo A el lunes, guarda un archivo y, a continuación, inicia sesión en su cuenta del equipo B el martes, no podrá obtener acceso al archivo guardado anteriormente en el equipo A. Además, la replicación de cuentas de usuario en varios equipos aumenta la sobrecarga administrativa y los requisitos de almacenamiento.  
   
 ### <a name="use-generic-local-user-accounts"></a>Usar cuentas de usuario locales genéricas  
 Si el sistema Multipoint Services no está conectado a un dominio y no desea crear una cuenta individual para cada usuario, puede crear cuentas genéricas para cada estación. Por ejemplo, si tiene dos equipos que ejecutan Multipoint Services y cinco estaciones están asociadas a cada equipo, es posible que decida crear cuentas de usuario similares a las que se muestran en la tabla siguiente.  

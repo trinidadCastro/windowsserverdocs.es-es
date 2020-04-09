@@ -1,7 +1,6 @@
 ---
 ms.assetid: ad0bf21d-2ace-4565-b1f5-ce57c8eb2689
 title: Cuándo se debe crear una granja de servidores proxy de federación
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 247daf1b9b49124188f6bb16bce7da381fe997ef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4b2b889159dee9f3b93a54a2b1924be286792f4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402424"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858498"
 ---
 # <a name="when-to-create-a-federation-server-proxy-farm"></a>Cuándo se debe crear una granja de servidores proxy de federación
 
@@ -31,8 +30,8 @@ En la tabla siguiente se describen las tareas que deben completarse para que cad
   
 |Tarea|Descripción|  
 |--------|---------------|  
-|Señale todos los servidores proxy de la granja al mismo AD FS nombre Servicio de federación|Al crear los servidores proxy de Federación, debe escribir el mismo nombre Servicio de federación en el Asistente para configuración de servidor proxy de Federación de AD FS para todos los servidores proxy de Federación que participarán en la granja. El servidor proxy de Federación utiliza la dirección URL que constituye este nombre de host DNS para determinar en qué AD FS Servicio de federación instancia se pone en contacto.<br /><br />Para obtener más información, consulte [Configure a Computer for the Federation Server Proxy Role](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md).|  
-|Obtener y compartir certificados|Puede obtener un certificado de autenticación de servidor de una entidad de certificación pública \(CA\)(por ejemplo, VeriSign) y, a continuación, configurar el certificado para que todos los servidores proxy de Federación compartan la misma parte de clave privada del mismo certificado en el sitio web predeterminado para cada servidor proxy de Federación. Para compartir el certificado, debe instalar el mismo certificado de autenticación de servidor en el sitio web predeterminado para cada servidor proxy de Federación. Para obtener más información, vea [importar un certificado de autenticación de servidor al sitio web predeterminado](../../ad-fs/deployment/Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md).<br /><br />Para obtener más información, consulte [requisitos de certificados para servidores proxy de federación](Certificate-Requirements-for-Federation-Server-Proxies.md).|  
+|Señale todos los servidores proxy de la granja al mismo AD FS nombre Servicio de federación|Al crear los servidores proxy de Federación, debe escribir el mismo nombre Servicio de federación en el Asistente para configuración de servidor proxy de Federación de AD FS para todos los servidores proxy de Federación que participarán en la granja. El servidor proxy de Federación utiliza la dirección URL que constituye este nombre de host DNS para determinar en qué AD FS Servicio de federación instancia se pone en contacto.<p>Para obtener más información, consulte [Configure a Computer for the Federation Server Proxy Role](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md).|  
+|Obtener y compartir certificados|Puede obtener un certificado de autenticación de servidor de una entidad de certificación pública \(CA\)(por ejemplo, VeriSign) y, a continuación, configurar el certificado para que todos los servidores proxy de Federación compartan la misma parte de clave privada del mismo certificado en el sitio web predeterminado para cada servidor proxy de Federación. Para compartir el certificado, debe instalar el mismo certificado de autenticación de servidor en el sitio web predeterminado para cada servidor proxy de Federación. Para obtener más información, vea [importar un certificado de autenticación de servidor al sitio web predeterminado](../../ad-fs/deployment/Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md).<p>Para obtener más información, consulte [Certificate Requirements for Federation Server Proxies](Certificate-Requirements-for-Federation-Server-Proxies.md).|  
   
 Para obtener más información acerca de cómo agregar nuevos proxies de servidor de Federación para crear una granja de servidores proxy de Federación, vea [lista de comprobación: configurar un servidor proxy de Federación](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md).  
   

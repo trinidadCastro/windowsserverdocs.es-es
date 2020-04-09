@@ -1,26 +1,22 @@
 ---
-title: If
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+title: if
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 698b3fb9-532b-4c2b-af7f-179f8dc57131
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8518fffc4f271369b13899e149ebd30145726b8
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 706ac1569ac3ca7ae504410935f334be360eda3a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259025"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842238"
 ---
-# <a name="if"></a>If
+# <a name="if"></a>if
 
 
 
@@ -42,7 +38,7 @@ if cmdextversion <Number> <Command> [else <Expression>]
 if defined <Variable> <Command> [else <Expression>]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |        Parámetro        |                                                                                                                                                                                                                Descripción                                                                                                                                                                                                                 |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -56,7 +52,7 @@ if defined <Variable> <Command> [else <Expression>]
 | cmdextversion \<número > | Especifica una condición verdadera solo si el número de versión interno asociado a la característica de extensiones de comandos de cmd. exe es igual o mayor que el número especificado. La primera versión es 1. Aumenta en incrementos de uno cuando se agregan mejoras significativas a las extensiones de comando. El condicional **cmdextversion** nunca es true cuando las extensiones de comando están deshabilitadas (de forma predeterminada, las extensiones de comando están habilitadas). |
 |   Variable de \<definida >   |                                                                                                                                                                                            Especifica una condición verdadera si se define la *variable* .                                                                                                                                                                                            |
 |      \<expresión >      |                                                                                                                                                                   Especifica un comando de línea de comandos y los parámetros que se van a pasar al comando en una cláusula **else** .                                                                                                                                                                   |
-|           /?            |                                                                                                                                                                                                    Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                                                    |
+|           /?            |                                                                                                                                                                                                    Muestra la Ayuda en el símbolo del sistema.                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>Comentarios
 
@@ -68,9 +64,9 @@ if defined <Variable> <Command> [else <Expression>]
     -   **% cmdextversion%** se expande en la representación de cadena del valor actual de **cmdextversion**. Se supone que no existe una variable de entorno con el nombre CMDEXTVERSION; si es así, obtendrá el valor CMDEXTVERSION en su lugar.
 -   Debe usar la cláusula **else** en la misma línea que el comando después de **If**.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
-Para mostrar el mensaje "no se puede encontrar el archivo de datos" si no se encuentra el archivo product. dat, escriba:
+Para mostrar el mensaje no se encuentra el archivo de datos si no se encuentra el archivo product. dat, escriba:
 ```
 if not exist product.dat echo Cannot find data file 
 ```
@@ -110,15 +106,15 @@ echo The Product.dat file is missing.
 > :end
 > echo Done! 
 > ```
-> Para ir a la etiqueta "correcto" si el valor de la variable de entorno ERRORLEVEL es menor o igual que 1, escriba:
+> Para ir a la etiqueta correcto si el valor de la variable de entorno ERRORLEVEL es menor o igual que 1, escriba:
 > ```
 > if %errorlevel% LEQ 1 goto okay
 > ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-[If](if.md)
+[Cuando](if.md)
 
 [Goto](goto.md)

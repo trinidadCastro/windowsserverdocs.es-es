@@ -1,6 +1,5 @@
 ---
 title: Cierre de sesión único de OpenID Connect con AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,16 +7,16 @@ ms.date: 11/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5f0127e60243ca81f7e25282adc79e01c54b4b32
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fe176af74ebabb5cb56d8aa74d755c4e35ec94a3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407857"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857318"
 ---
 #  <a name="single-log-out-for-openid-connect-with-ad-fs"></a>Cierre de sesión único de OpenID Connect con AD FS
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 Basándose en la compatibilidad inicial de OAuth en AD FS en Windows Server 2012 R2, AD FS 2016 presentó la compatibilidad con el inicio de sesión de OpenId Connect. Con [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801), AD FS 2016 ahora admite el cierre de sesión único para escenarios de OpenID Connect. En este artículo se proporciona información general sobre el cierre de sesión único para el escenario de OpenId Connect y se proporcionan instrucciones sobre cómo usarlo para las aplicaciones de OpenId Connect en AD FS.
 
 
@@ -77,7 +76,7 @@ Set-ADFSProperties -EnableOAuthLogout $true
 >[!NOTE]
 >frontchannel_logout **solo** se admite después de instalación de [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)
 
-## <a name="client-configuration"></a>Configuración de cliente
+## <a name="client-configuration"></a>Configuración del cliente
 El cliente debe implementar una dirección URL que "cierre la sesión" del usuario que ha iniciado sesión. El administrador puede configurar LogoutUri en la configuración del cliente mediante los siguientes cmdlets de PowerShell. 
 
 

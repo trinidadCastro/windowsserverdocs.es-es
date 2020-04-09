@@ -1,7 +1,6 @@
 ---
 ms.assetid: d254fca3-85a1-424d-ac22-d6687ec3798e
 title: Proporcionar a los usuarios de Active Directory acceso a aplicaciones y servicios habilitados para notificaciones
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 48436f8e98af965f2bc2b38d296c4a15924e4db1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0cb530eacfa8239f3a2a135397e54becfadb602b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407952"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858578"
 ---
 # <a name="provide-your-active-directory-users-access-to-your-claims-aware-applications-and-services"></a>Proporcionar a los usuarios de Active Directory acceso a aplicaciones y servicios habilitados para notificaciones
 
@@ -35,7 +34,7 @@ Los componentes siguientes son necesarios para este objetivo de implementación:
     > [!NOTE]  
     > También puede usar el Protocolo ligero de acceso a directorios \(LDAP\) o Lenguaje de consulta estructurado \(SQL\) para contener las identidades de AD FS generación de tokens.  
   
--   **DNS corporativo:** Esta implementación del sistema de nombres de dominio \(\) DNS contiene un host simple \(un registro de recursos de\) para que los clientes de la intranet puedan encontrar el servidor de Federación de la cuenta. Esta implementación de DNS también puede hospedar otros registros DNS que se requieren en la red corporativa. Para obtener más información, consulte [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md).  
+-   **DNS corporativo:** Esta implementación del sistema de nombres de dominio \(\) DNS contiene un host simple \(un registro de recursos de\) para que los clientes de la intranet puedan encontrar el servidor de Federación de la cuenta. Esta implementación de DNS también puede hospedar otros registros DNS que se requieren en la red corporativa. Para obtener más información, consulta [Requisitos de resolución de nombres para los servidores de federación](Name-Resolution-Requirements-for-Federation-Servers.md).  
   
 -   **Servidor de Federación del asociado de cuenta:** Este servidor de Federación está unido a un dominio del bosque del asociado de cuenta. Autentica las cuentas de usuario de empleados y genera tokens de AD FS. El equipo cliente del empleado realiza la autenticación integrada de Windows en este servidor de Federación para generar un token de AD FS. Para obtener más información, consulte [Review the Role of the Federation Server in the Account Partner](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md).  
   
