@@ -2,22 +2,18 @@
 title: Administrar el acceso remoto
 description: En este tema se proporciona información sobre cómo administrar el acceso remoto en Windows Server 2016.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1459819a-b1b6-4800-8770-4a85d02c7a2b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6437a7aa5a535352ad4f6c6be8fbac2162b6feea
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 19798c5fb29d3b8aea68b29e5a42775970eeca46
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308429"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857458"
 ---
 # <a name="manage-remote-access"></a>Administrar el acceso remoto
 
@@ -86,8 +82,8 @@ En la siguiente tabla, se muestran los roles y características requeridos para 
   
 |Rol o característica|Compatibilidad con este escenario|  
 |----------|-----------------|  
-|*Rol de acceso remoto*|Este rol se instala y desinstala con la consola del Administrador del servidor o con Windows PowerShell. Este rol incluye tanto DirectAccess (que antes era una característica de Windows Server 2008 R2) como los servicios de enrutamiento y acceso remoto, que antes eran un servicio de rol de Servicios de acceso y directivas de redes (NPAS). El rol de acceso remoto consta de dos componentes:<br /><br />1. DirectAccess y VPN de servicios de enrutamiento y acceso remoto (RRAS): DirectAccess y VPN se administran en la consola de administración de acceso remoto.<br />2. RRAS: las características se administran en la consola de enrutamiento y acceso remoto.<br /><br />El rol del servidor de Acceso remoto depende de las siguientes características:<br /><br />-Servidor Web (IIS): se requiere para configurar el servidor de ubicación de red y el sondeo Web predeterminado.<br />-Windows Internal Database: se usa para las cuentas locales en el servidor de acceso remoto.|  
-|Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<br /><br />: De forma predeterminada, en un servidor de acceso remoto, cuando se instala el rol de acceso remoto y es compatible con la interfaz de usuario de la consola de administración remota.<br />-Como opción en un servidor que no ejecuta el rol de servidor de acceso remoto. En ese caso, se usa para la administración remota de un servidor de Acceso remoto.<br /><br />Esta característica consiste en lo siguiente:<br /><br />-Herramientas de línea de comandos y GUI de acceso remoto<br />-Módulo de acceso remoto para Windows PowerShell<br /><br />Las dependencias incluyen:<br /><br />-Consola de administración de directivas de grupo<br />-Kit de administración del administrador de conexiones RAS (CMAK)<br />-Windows PowerShell 3,0<br />-Infraestructura y herramientas de administración de gráficos|  
+|*Rol de acceso remoto*|Este rol se instala y desinstala con la consola del Administrador del servidor o con Windows PowerShell. Este rol incluye tanto DirectAccess (que antes era una característica de Windows Server 2008 R2) como los servicios de enrutamiento y acceso remoto, que antes eran un servicio de rol de Servicios de acceso y directivas de redes (NPAS). El rol de acceso remoto consta de dos componentes:<p>1. DirectAccess y VPN de servicios de enrutamiento y acceso remoto (RRAS): DirectAccess y VPN se administran en la consola de administración de acceso remoto.<br />2. RRAS: las características se administran en la consola de enrutamiento y acceso remoto.<p>El rol del servidor de Acceso remoto depende de las siguientes características:<p>-Servidor Web (IIS): se requiere para configurar el servidor de ubicación de red y el sondeo Web predeterminado.<br />-Windows Internal Database: se usa para las cuentas locales en el servidor de acceso remoto.|  
+|Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<p>: De forma predeterminada, en un servidor de acceso remoto, cuando se instala el rol de acceso remoto y es compatible con la interfaz de usuario de la consola de administración remota.<br />-Como opción en un servidor que no ejecuta el rol de servidor de acceso remoto. En ese caso, se usa para la administración remota de un servidor de Acceso remoto.<p>Esta característica consiste en lo siguiente:<p>-Herramientas de línea de comandos y GUI de acceso remoto<br />-Módulo de acceso remoto para Windows PowerShell<p>Las dependencias incluyen:<p>-Consola de administración de directivas de grupo<br />-Kit de administración del administrador de conexiones RAS (CMAK)<br />-Windows PowerShell 3,0<br />-Infraestructura y herramientas de administración de gráficos|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>Requisitos de hardware  
 Los requisitos de hardware para este escenario incluyen los siguientes:  

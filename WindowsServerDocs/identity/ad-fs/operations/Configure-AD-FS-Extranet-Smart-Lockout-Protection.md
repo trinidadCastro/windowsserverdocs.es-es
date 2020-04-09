@@ -1,7 +1,6 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
 title: Configurar AD FS protección de bloqueo de extranet
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtilman
@@ -9,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9ef595cc98a95caca0f2043b011868e0573a5b19
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 28f7fc4a8c7129d9f88cc030b1b150db44321bf9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407701"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859948"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS el bloqueo de extranet y el bloqueo inteligente de extranet
 
@@ -44,25 +43,25 @@ Todos los nodos secundarios se pondrá en contacto con el nodo maestro en cada i
  Si el nodo secundario no puede ponerse en contacto con el maestro, escribirá los eventos de error en el registro de administración de AD FS. Se seguirán procesando las autenticaciones, pero AD FS solo escribirá el estado actualizado localmente. AD FS intentará ponerse en contacto con el maestro cada 10 minutos y volverá a la maestra una vez que el maestro esté disponible.
 
 ### <a name="terminology"></a>Terminología
-- **FamiliarLocation**: Durante una solicitud de autenticación, ESL comprueba todas las direcciones IP presentadas. Estas direcciones IP serán una combinación de IP de red, IP reenviada y el x-forwarded-for IP opcional. Si la solicitud es correcta, todas las direcciones IP se agregan a la tabla de actividad de la cuenta como "direcciones IP conocidas". Si la solicitud tiene todas las direcciones IP presentes en las "direcciones IP conocidas", la solicitud se tratará como una ubicación "familiar".
-- **UnknownLocation**: Si una solicitud que entra en tiene al menos una dirección IP que no está presente en la lista "FamiliarLocation" existente, la solicitud se tratará como una ubicación "desconocida". Esto es para controlar escenarios de proxy, como la autenticación heredada de Exchange Online, donde las direcciones de Exchange Online controlan las solicitudes correctas y erróneas.  
-- **badPwdCount**: Un valor que representa el número de veces que se envió una contraseña incorrecta y que la autenticación no se realizó correctamente. Para cada usuario, se mantienen contadores independientes para ubicaciones conocidas y ubicaciones desconocidas.
-- **UnknownLockout**: Un valor booleano por usuario si se bloquea el acceso del usuario desde ubicaciones desconocidas. Este valor se calcula en función de los valores de badPwdCountUnfamiliar y ExtranetLockoutThreshold.
-- **ExtranetLockoutThreshold**: Este valor determina el número máximo de intentos de contraseña incorrectos. Cuando se alcanza el umbral, ADFS rechazará las solicitudes de la extranet hasta que se haya superado la ventana de observación.
-- **ExtranetObservationWindow**: Este valor determina la duración de los bloqueos de las solicitudes de nombre de usuario y contraseña de ubicaciones desconocidas. Cuando se haya superado la ventana, ADFS comenzará de nuevo a realizar la autenticación de nombre de usuario y contraseña desde ubicaciones desconocidas.
-- **ExtranetLockoutRequirePDC**: Cuando está habilitada, el bloqueo de extranet requiere un controlador de dominio principal (PDC). Cuando está deshabilitada, el bloqueo de extranet se reservará a otro controlador de dominio en caso de que el PDC no esté disponible.  
-- **ExtranetLockoutMode**: El registro de controles solo y el modo forzado de bloqueo inteligente de extranet
-    - **ADFSSmartLockoutLogOnly**: El bloqueo inteligente de extranet está habilitado, pero AD FS solo escribirá eventos de administración y de auditoría, pero no rechazará las solicitudes de autenticación. Este modo está diseñado para habilitarse inicialmente para que FamiliarLocation se rellenen antes de que ' ADFSSmartLockoutEnforce ' esté habilitado.
-    - **ADFSSmartLockoutEnforce**: Compatibilidad total para bloquear solicitudes de autenticación desconocidas cuando se alcanzan los umbrales.
+- **FamiliarLocation**: durante una solicitud de autenticación, ESL comprueba todas las direcciones IP presentadas. Estas direcciones IP serán una combinación de IP de red, IP reenviada y el x-forwarded-for IP opcional. Si la solicitud es correcta, todas las direcciones IP se agregan a la tabla de actividad de la cuenta como "direcciones IP conocidas". Si la solicitud tiene todas las direcciones IP presentes en las "direcciones IP conocidas", la solicitud se tratará como una ubicación "familiar".
+- **UnknownLocation**: Si una solicitud que entra en tiene al menos una dirección IP que no está presente en la lista de "FamiliarLocation" existente, la solicitud se tratará como una ubicación "desconocida". Esto es para controlar escenarios de proxy, como la autenticación heredada de Exchange Online, donde las direcciones de Exchange Online controlan las solicitudes correctas y erróneas.  
+- **badPwdCount**: un valor que representa el número de veces que se envió una contraseña incorrecta y que la autenticación no se realizó correctamente. Para cada usuario, se mantienen contadores independientes para ubicaciones conocidas y ubicaciones desconocidas.
+- **UnknownLockout**: valor booleano por usuario si se bloquea el acceso del usuario desde ubicaciones desconocidas. Este valor se calcula en función de los valores de badPwdCountUnfamiliar y ExtranetLockoutThreshold.
+- **ExtranetLockoutThreshold**: este valor determina el número máximo de intentos de contraseña incorrectos. Cuando se alcanza el umbral, ADFS rechazará las solicitudes de la extranet hasta que se haya superado la ventana de observación.
+- **ExtranetObservationWindow**: este valor determina la duración del bloqueo de las solicitudes de nombre de usuario y contraseña de ubicaciones desconocidas. Cuando se haya superado la ventana, ADFS comenzará de nuevo a realizar la autenticación de nombre de usuario y contraseña desde ubicaciones desconocidas.
+- **ExtranetLockoutRequirePDC**: cuando está habilitado, el bloqueo de extranet requiere un controlador de dominio principal (PDC). Cuando está deshabilitada, el bloqueo de extranet se reservará a otro controlador de dominio en caso de que el PDC no esté disponible.  
+- **ExtranetLockoutMode**: controla únicamente el modo en que se aplica el modo de bloqueo inteligente de extranet
+    - **ADFSSmartLockoutLogOnly**: el bloqueo inteligente de extranet está habilitado, pero AD FS solo escribirá eventos de administración y de auditoría, pero no rechazará las solicitudes de autenticación. Este modo está diseñado para habilitarse inicialmente para que FamiliarLocation se rellenen antes de que ' ADFSSmartLockoutEnforce ' esté habilitado.
+    - **ADFSSmartLockoutEnforce**: compatibilidad total para el bloqueo de solicitudes de autenticación desconocidas cuando se alcanzan los umbrales.
 
 Se admiten las direcciones IPv4 e IPv6.
 
 ### <a name="anatomy-of-a-transaction"></a>Anatomía de una transacción
-- **Comprobación de autenticación previa**: Durante una solicitud de autenticación, ESL comprueba todas las direcciones IP presentadas. Estas direcciones IP serán una combinación de IP de red, IP reenviada y el x-forwarded-for IP opcional. En los registros de auditoría, estas direcciones IP se enumeran en el <IpAddress> campo en el orden x-MS-forwarded-Client-IP, x-forwarded-for, x-MS-Proxy-Client-IP.
+- **Comprobación previa a la**autenticación: durante una solicitud de autenticación, ESL comprueba todas las direcciones IP presentadas. Estas direcciones IP serán una combinación de IP de red, IP reenviada y el x-forwarded-for IP opcional. En los registros de auditoría, estas direcciones IP se enumeran en el campo <IpAddress> en el orden de x-MS-forwarded-Client-IP, x-forwarded-for, x-MS-Proxy-Client-IP.
 
-  En función de estas direcciones IP, ADFS determina si la solicitud proviene de una ubicación conocida o desconocida y, a continuación, comprueba si el valor de badPwdCount respectivo es menor que el límite del umbral establecido o si el último intento **erróneo** se produjo más tiempo que el tiempo de la ventana de observación. grama. Si se cumple una de estas condiciones, ADFS permite que esta transacción se realice en el procesamiento y la validación de credenciales. Si ambas condiciones son false, la cuenta ya está en estado bloqueado hasta que la ventana de observación pase. Una vez que se pasa la ventana de observación, se permite que el usuario se autentique. Tenga en cuenta que, en 2019, ADFS comprobará el límite de umbral adecuado en función de si la dirección IP coincide o no con una ubicación conocida.
+  En función de estas direcciones IP, ADFS determina si la solicitud proviene de una ubicación conocida o desconocida y, a continuación, comprueba si el valor de badPwdCount respectivo es menor que el límite de umbral establecido o si el último intento **erróneo** se produjo más tiempo que el intervalo de tiempo de la ventana de observación. Si se cumple una de estas condiciones, ADFS permite que esta transacción se realice en el procesamiento y la validación de credenciales. Si ambas condiciones son false, la cuenta ya está en estado bloqueado hasta que la ventana de observación pase. Una vez que se pasa la ventana de observación, se permite que el usuario se autentique. Tenga en cuenta que, en 2019, ADFS comprobará el límite de umbral adecuado en función de si la dirección IP coincide o no con una ubicación conocida.
 - **Inicio de sesión correcto**: Si el inicio de sesión se realiza correctamente, las direcciones IP de la solicitud se agregan a la lista de direcciones IP de ubicación conocida del usuario.  
-- **Inicio de sesión con error**: Si se produce un error en el inicio de sesión, se aumenta el badPwdCount. El usuario pasará a un estado de bloqueo si el atacante envía más contraseñas incorrectas al sistema de las que permite el umbral. (badPwdCount > ExtranetLockoutThreshold)  
+- **Error de inicio de sesión**: si se produce un error en el inicio de sesión, se aumenta el badPwdCount. El usuario pasará a un estado de bloqueo si el atacante envía más contraseñas incorrectas al sistema de las que permite el umbral. (badPwdCount > ExtranetLockoutThreshold)  
 
 ![configuración](media/configure-ad-fs-extranet-smart-lockout-protection/esl2.png)
 
@@ -145,7 +144,7 @@ La tabla AccountActivity se rellena durante el modo ' solo registro ' y el modo 
 Esta característica hace uso de los registros de auditoría de seguridad, por lo que la auditoría debe estar habilitada en AD FS, así como en la directiva local en todos los servidores de AD FS.
 
 ### <a name="configuration-instructions"></a>Instrucciones de configuración
-El bloqueo inteligente de extranet usa la propiedad **ExtranetLockoutEnabled**de ADFS. Esta propiedad se usaba previamente para controlar el "bloqueo flexible de extranet" en el servidor 2012R2. Si se ha habilitado el bloqueo automático de extranet, para ver la configuración ` Get-AdfsProperties` de propiedades actual, ejecute.
+El bloqueo inteligente de extranet usa la propiedad **ExtranetLockoutEnabled**de ADFS. Esta propiedad se usaba previamente para controlar el "bloqueo flexible de extranet" en el servidor 2012R2. Si se ha habilitado el bloqueo automático de extranet, para ver la configuración de propiedades actual, ejecute ` Get-AdfsProperties`.
 
 ### <a name="configuration-recommendations"></a>Recomendaciones de configuración
 Al configurar el bloqueo inteligente de extranet, siga las prácticas recomendadas para establecer umbrales:  
@@ -154,7 +153,7 @@ Al configurar el bloqueo inteligente de extranet, siga las prácticas recomendad
 
 `ExtranetLockoutThreshold: – 2x AD Threshold Value`
 
-Valor de AD: 20 ExtranetLockoutThreshold: 10
+Valor de AD: 20, ExtranetLockoutThreshold: 10
 
 Active Directory el bloqueo funciona independientemente del bloqueo inteligente de extranet. Sin embargo, si está habilitado el bloqueo de Active Directory, ExtranetLockoutThreshold en AD FS < umbral de bloqueo de cuenta en AD
 
@@ -213,13 +212,13 @@ Este comportamiento se puede invalidar pasando el parámetro-Server.
 
 `Get-ADFSAccountActivity user@contoso.com`
 
-  Propiedades
-    - BadPwdCountFamiliar: Se incrementa cuando una autenticación se realiza correctamente desde una ubicación conocida.
-    - BadPwdCountUnknown: Se incrementa cuando una autenticación no se realiza correctamente desde una ubicación desconocida
+  Propiedades:
+    - BadPwdCountFamiliar: se incrementa cuando una autenticación se realiza correctamente desde una ubicación conocida.
+    - BadPwdCountUnknown: se incrementa cuando una autenticación no se realiza correctamente desde una ubicación desconocida
     - LastFailedAuthFamiliar: Si la autenticación no se realizó correctamente desde una ubicación conocida, LastFailedAuthUnknown se establece en hora de la autenticación incorrecta.
-    - LastFailedAuthUnknown: Si la autenticación no se realizó correctamente desde una ubicación desconocida, LastFailedAuthUnknown se establece en hora de la autenticación incorrecta.
-    - FamiliarLockout: Valor booleano que será "true" si "BadPwdCountFamiliar" > ExtranetLockoutThreshold
-    - UnknownLockout: Valor booleano que será "true" si "BadPwdCountUnknown" > ExtranetLockoutThreshold  
+    - LastFailedAuthUnknown: Si la autenticación no se realizó correctamente desde una ubicación desconocida, LastFailedAuthUnknown se establece en la hora de la autenticación incorrecta.
+    - FamiliarLockout: valor booleano que será "true" si "BadPwdCountFamiliar" > ExtranetLockoutThreshold
+    - UnknownLockout: valor booleano que será "true" si "BadPwdCountUnknown" > ExtranetLockoutThreshold  
     - FamiliarIPs: máximo de 20 direcciones IP que son conocidas para el usuario. Cuando esto se supera, se quitará la dirección IP más antigua de la lista.
 -    Set-ADFSAccountActivity
 
@@ -250,14 +249,14 @@ En el modo de solo registro, puede comprobar si hay eventos de bloqueo en el reg
 
 |Id. de evento|Descripción|
 |-----|-----|
-|1203|Este evento se escribe para cada intento de contraseña incorrecta. En cuanto el badPwdCount alcance el valor especificado en ExtranetLockoutThreshold, la cuenta se bloqueará en ADFS durante el tiempo especificado en ExtranetObservationWindow.</br>ID. de actividad:% 1</br>XML:% 2|
-|1201|Este evento se escribe cada vez que se bloquea un usuario. </br>ID. de actividad:% 1</br>XML:% 2|
-|557 (ADFS 2019)| Error al intentar comunicarse con el servicio Rest del almacén de cuentas en el nodo% 1. Si se trata de una granja WID, puede que el nodo principal esté sin conexión. Si se trata de una granja de servidores SQL, ADFS seleccionará automáticamente un nuevo nodo para hospedar el rol de maestro de almacén de usuarios.|
-|562 (ADFS 2019)|Se produjo un error al communcating con el punto de conexión del almacén de cuentas en el servidor% 1.</br>Mensaje de excepción:% 2|
-|563 (ADFS 2019)|Error al calcular el estado de bloqueo de la extranet. Debido al valor de la opción% 1, se permitirá la autenticación para este usuario y la emisión de tokens continuará. Si se trata de una granja WID, puede que el nodo principal esté sin conexión. Si se trata de una granja de servidores SQL, ADFS seleccionará automáticamente un nuevo nodo para hospedar el rol de maestro de almacén de usuarios.</br>Nombre del servidor de almacén de cuentas:% 2</br>ID. de usuario:% 3</br>Mensaje de excepción:% 4|
-|512|La cuenta para el siguiente usuario está bloqueada. Se permite un intento de inicio de sesión debido a la configuración del sistema.</br>ID. de actividad:% 1 </br>Usuario:% 2 </br>IP de cliente:% 3 </br>Recuento de contraseñas no válidas:% 4  </br>Último intento de contraseña incorrecta:% 5|
-|515|La siguiente cuenta de usuario se encontraba en un estado bloqueado y se ha proporcionado la contraseña correcta. Esta cuenta puede estar en peligro.</br>Datos adicionales </br>ID. de actividad:% 1 </br>Usuario:% 2 </br>IP de cliente:% 3 |
-|516|La siguiente cuenta de usuario se ha bloqueado debido a demasiados intentos de contraseña incorrectos.</br>ID. de actividad:% 1  </br>Usuario:% 2  </br>IP de cliente:% 3  </br>Recuento de contraseñas no válidas:% 4  </br>Último intento de contraseña incorrecta:% 5|
+|1203|Este evento se escribe para cada intento de contraseña incorrecta. En cuanto el badPwdCount alcance el valor especificado en ExtranetLockoutThreshold, la cuenta se bloqueará en ADFS durante el tiempo especificado en ExtranetObservationWindow.</br>ID. de actividad: %1</br>XML: %2|
+|1201|Este evento se escribe cada vez que se bloquea un usuario. </br>ID. de actividad: %1</br>XML: %2|
+|557 (ADFS 2019)| Error al intentar comunicarse con el servicio Rest del almacén de cuentas en el nodo %1. Si se trata de una granja WID, puede que el nodo principal esté sin conexión. Si se trata de una granja de servidores SQL, ADFS seleccionará automáticamente un nuevo nodo para hospedar el rol de maestro de almacén de usuarios.|
+|562 (ADFS 2019)|Se produjo un error al communcating con el punto de conexión del almacén de cuentas en el servidor %1.</br>Mensaje de excepción: %2|
+|563 (ADFS 2019)|Error al calcular el estado de bloqueo de la extranet. Debido al valor de la opción %1, se permitirá la autenticación para este usuario y la emisión de tokens continuará. Si se trata de una granja WID, puede que el nodo principal esté sin conexión. Si se trata de una granja de servidores SQL, ADFS seleccionará automáticamente un nuevo nodo para hospedar el rol de maestro de almacén de usuarios.</br>Nombre del servidor de almacén de cuentas: %2</br>ID. de usuario: %3</br>Mensaje de excepción: %4|
+|512|La cuenta para el siguiente usuario está bloqueada. Se permite un intento de inicio de sesión debido a la configuración del sistema.</br>ID. de actividad: %1 </br>Usuario: %2 </br>IP de cliente: %3 </br>Recuento de contraseñas no válidas: %4  </br>Último intento de contraseña incorrecta: %5|
+|515|La siguiente cuenta de usuario se encontraba en un estado bloqueado y se ha proporcionado la contraseña correcta. Esta cuenta puede estar en peligro.</br>Datos adicionales </br>ID. de actividad: %1 </br>Usuario: %2 </br>IP de cliente: %3 |
+|516|La siguiente cuenta de usuario se ha bloqueado debido a demasiados intentos de contraseña incorrectos.</br>ID. de actividad: %1  </br>Usuario: %2  </br>IP de cliente: %3  </br>Recuento de contraseñas no válidas: %4  </br>Último intento de contraseña incorrecta: %5|
 
 ## <a name="esl-frequently-asked-questions"></a>Preguntas más frecuentes sobre ESL
 
@@ -267,24 +266,24 @@ R: Si el bloqueo inteligente de ADFS está establecido en el modo "aplicar", nun
 
 **¿Qué ocurre si ESL está habilitado y el actor incorrecto tiene una contraseña de usuario?** 
 
-R: El objetivo típico del escenario de ataque por fuerza bruta es adivinar una contraseña e iniciar sesión correctamente.  Si un usuario está phish o si se adivina una contraseña, la característica ESL no bloqueará el acceso, ya que el inicio de sesión satisfará los criterios "correctos" de la contraseña correcta y la nueva dirección IP. La dirección IP de actores no válidos aparecería como una "conocida". La mejor mitigación en este escenario es borrar la actividad del usuario en ADFS y requerir autenticación multifactor para los usuarios. Se recomienda encarecidamente instalar la protección de contraseña de AAD para garantizar que las contraseñas adivinables no lleguen al sistema.
+R: el objetivo típico del escenario de ataque por fuerza bruta es adivinar una contraseña e iniciar sesión correctamente.  Si un usuario está phish o si se adivina una contraseña, la característica ESL no bloqueará el acceso, ya que el inicio de sesión satisfará los criterios "correctos" de la contraseña correcta y la nueva dirección IP. La dirección IP de actores no válidos aparecería como una "conocida". La mejor mitigación en este escenario es borrar la actividad del usuario en ADFS y requerir autenticación multifactor para los usuarios. Se recomienda encarecidamente instalar la protección de contraseña de AAD para garantizar que las contraseñas adivinables no lleguen al sistema.
 
 **Si el usuario nunca ha iniciado sesión correctamente desde una dirección IP y, a continuación, intenta con la contraseña incorrecta varias veces, podrá iniciar sesión una vez que escriba la contraseña correctamente.** 
 
-R: Si un usuario envía varias contraseñas no válidas (es decir, de forma legítima y sin escribir) y en el siguiente intento obtiene la contraseña correcta, el usuario se ejecutará inmediatamente para iniciar sesión.  Esto borrará el recuento de contraseñas no válidas y agregará esa dirección IP a la lista FamiliarIPs.  Sin embargo, si superan el umbral de inicios de sesión erróneos de la ubicación desconocida, entrarán en el estado de bloqueo y tendrán que esperar más allá de la ventana de observación e iniciar sesión con una contraseña válida o requerir la intervención del administrador para restablecer su cuenta.  
+R: Si un usuario envía varias contraseñas no válidas (es decir, sin escribir legítimamente) y en el siguiente intento obtiene la contraseña correcta, el usuario se ejecutará inmediatamente para iniciar sesión.  Esto borrará el recuento de contraseñas no válidas y agregará esa dirección IP a la lista FamiliarIPs.  Sin embargo, si superan el umbral de inicios de sesión erróneos de la ubicación desconocida, entrarán en el estado de bloqueo y tendrán que esperar más allá de la ventana de observación e iniciar sesión con una contraseña válida o requerir la intervención del administrador para restablecer su cuenta.  
  
 **¿ESL funciona también en la intranet?**
 
-R: Si los clientes se conectan directamente a los servidores ADFS y no a través de servidores proxy de aplicación Web, no se aplicará el comportamiento de ESL.  
+R: si los clientes se conectan directamente a los servidores de ADFS y no a través de los servidores proxy de aplicación Web, no se aplicará el comportamiento de ESL.  
 
 **Veo direcciones IP de Microsoft en el campo IP de cliente. ¿ESL bloquea los ataques por fuerza bruta en proxy de EXO?**  
 
-R: ESL funcionará bien para evitar escenarios de ataque por fuerza bruta de autenticación heredada de Exchange Online u otros. Una autenticación heredada tiene un "ID. de actividad" de 00000000-0000-0000-0000-000000000000. En estos ataques, el actor incorrecto está aprovechando la autenticación básica de Exchange Online (también conocida como autenticación heredada) para que la dirección IP del cliente aparezca como una Microsoft. Los servidores de Exchange online en el proxy en la nube la comprobación de autenticación en nombre del cliente de Outlook. En estos casos, la dirección IP del remitente malintencionado estará en x-MS-forwarded-Client-IP y la dirección IP del servidor Microsoft Exchange Online se incluirá en el valor x-MS-Client-IP.
+R: ESL funcionará bien para evitar escenarios de ataque por fuerza bruta de Exchange Online u otros. Una autenticación heredada tiene un "ID. de actividad" de 00000000-0000-0000-0000-000000000000. En estos ataques, el actor incorrecto está aprovechando la autenticación básica de Exchange Online (también conocida como autenticación heredada) para que la dirección IP del cliente aparezca como una Microsoft. Los servidores de Exchange online en el proxy en la nube la comprobación de autenticación en nombre del cliente de Outlook. En estos casos, la dirección IP del remitente malintencionado estará en x-MS-forwarded-Client-IP y la dirección IP del servidor Microsoft Exchange Online se incluirá en el valor x-MS-Client-IP.
 El bloqueo inteligente de extranet comprueba las direcciones IP de red, las IP reenviadas, x-forwarded-Client-IP y el valor x-MS-Client-IP. Si la solicitud es correcta, todas las direcciones IP se agregan a la lista familiar. Si entra una solicitud y cualquiera de las direcciones IP presentadas no está en la lista familiar, la solicitud se marcará como desconocida. El usuario conocido podrá iniciar sesión correctamente mientras se bloquearán las solicitudes de las ubicaciones desconocidas.  
 
-\* * P: ¿Puedo calcular el tamaño de ADFSArtifactStore antes de habilitar ESL?
+\* * P: ¿puedo calcular el tamaño de ADFSArtifactStore antes de habilitar ESL?
 
-R: Con ESL habilitado, AD FS realiza un seguimiento de la actividad de la cuenta y de las ubicaciones conocidas de los usuarios en la base de datos ADFSArtifactStore. Esta base de datos se escala en función del número de usuarios y de las ubicaciones conocidas a las que se realiza el seguimiento. Al planear la habilitación de ESL, puede calcular el tamaño de la base de datos de ADFSArtifactStore para que crezca a una velocidad de hasta 1 GB por 100.000 usuarios. Si la granja de AD FS usa Windows Internal Database (WID), la ubicación predeterminada de los archivos de base de datos es C:\Windows\WID\Data\. Para evitar que se llene esta unidad, asegúrese de tener un mínimo de 5 GB de almacenamiento libre antes de habilitar ESL. Además de almacenamiento en disco, planee el aumento de la memoria de proceso total después de habilitar ESL hasta un 1 GB de RAM adicional para los rellenados de usuarios de 500.000 o menos.
+R: con ESL habilitado, AD FS realiza un seguimiento de la actividad de la cuenta y de las ubicaciones conocidas de los usuarios en la base de datos ADFSArtifactStore. Esta base de datos se escala en función del número de usuarios y de las ubicaciones conocidas a las que se realiza un seguimiento. Al planificar la habilitación de ESL, puedes calcular el tamaño de la base de datos ADFSArtifactStore para que crezca a una velocidad de hasta 1 GB por 100 000 usuarios. Si la granja de AD FS usa Windows Internal Database (WID), la ubicación predeterminada de los archivos de base de datos es C:\Windows\WID\Data\. Para evitar que esta unidad se llene, asegúrate de tener un mínimo de 5 GB de almacenamiento disponible antes de habilitar ESL. Además del almacenamiento en disco, planifica un aumento de la memoria de proceso total después de habilitar ESL de hasta un 1 GB de RAM adicional para los rellenados de usuarios de 500 000 o menos.
 
 
 ## <a name="additional-references"></a>Referencias adicionales  

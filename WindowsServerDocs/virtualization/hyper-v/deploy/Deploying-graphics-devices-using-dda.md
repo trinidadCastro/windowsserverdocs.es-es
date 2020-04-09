@@ -2,20 +2,18 @@
 title: Implementación de dispositivos de gráficos mediante la asignación discreta de dispositivos
 description: Obtenga información acerca de cómo usar DDA para implementar dispositivos gráficos en Windows Server
 ms.prod: windows-server
-ms.service: na
 ms.technology: hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
 ms.date: 08/21/2019
-ms.openlocfilehash: 5466cecf9f11a53dc6e205f36d50d7b27b310ea1
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 07f0ba19aaf998bb7b2fe8cf4ef1ba6cf8cae322
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923877"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860918"
 ---
 # <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>Implementación de dispositivos de gráficos mediante la asignación discreta de dispositivos
 
@@ -87,7 +85,7 @@ El paso final consiste en indicar a Hyper-V que una máquina virtual debe tener 
 Add-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 ```
 
-## <a name="whats-next"></a>Pasos siguientes
+## <a name="whats-next"></a>¿Qué debe hacer a continuación?
 Una vez que un dispositivo se monta correctamente en una máquina virtual, ahora puede iniciar la máquina virtual e interactuar con el dispositivo como lo haría normalmente si estuviera ejecutando en un sistema sin sistema operativo.  Esto significa que ahora puede instalar los controladores del proveedor de hardware en la máquina virtual y las aplicaciones podrán ver que el hardware está presente.  Para comprobarlo, abra el administrador de dispositivos en la máquina virtual invitada y vea que el hardware se muestra ahora.
 
 ## <a name="removing-a-device-and-returning-it-to-the-host"></a>Quitar un dispositivo y devolverlo al host
@@ -133,7 +131,7 @@ Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
 Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
 ```
 
-## <a name="troubleshooting"></a>de solución de problemas
+## <a name="troubleshooting"></a>Solucionar problemas
 
 Si ha pasado una GPU a una máquina virtual pero Escritorio remoto o una aplicación no reconoce la GPU, busque los siguientes problemas comunes:
 
@@ -141,4 +139,4 @@ Si ha pasado una GPU a una máquina virtual pero Escritorio remoto o una aplicac
 - Asegúrese de que el dispositivo tiene suficiente espacio MMIO asignado dentro de la máquina virtual. Para obtener más información, vea [espacio de MMIO](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md#mmio-space).
 - Asegúrese de que está usando una GPU que el proveedor admite en esta configuración. Por ejemplo, algunos proveedores impiden que sus tarjetas de consumidor funcionen cuando pasan a una máquina virtual.
 - Asegúrese de que la aplicación que se ejecuta admite la ejecución dentro de una máquina virtual y que la aplicación admite tanto la GPU como sus controladores asociados. Algunas aplicaciones tienen listas de permitidos de GPU y entornos.
-- Si usa el rol host de sesión de Escritorio remoto o Windows MultiPoint Services en el invitado, deberá asegurarse de que una entrada de directiva de grupo específica está establecida para permitir el uso de la GPU predeterminada. Con un objeto de directiva de grupo aplicado al invitado (o al Editor de directivas de grupo local en el invitado), navegue hasta el siguiente elemento de directiva de grupo: **configuración del equipo** > plantillas de **Administrador** > componentes de **Windows** > **Servicios de Escritorio remoto** > **escritorio remoto Host de sesión** > **entorno de sesión remota** > **usar el adaptador de gráficos predeterminado de hardware para todas las sesiones de servicios de escritorio remoto**. Establezca este valor en habilitado y, a continuación, reinicie la máquina virtual una vez que se haya aplicado la Directiva.
+- Si usa el rol host de sesión de Escritorio remoto o Windows MultiPoint Services en el invitado, deberá asegurarse de que una entrada de directiva de grupo específica está establecida para permitir el uso de la GPU predeterminada. Con un objeto de directiva de grupo aplicado al invitado (o al Editor de directivas de grupo local en el invitado), navegue hasta el siguiente elemento de directiva de grupo: **configuración del equipo** > plantillas de **Administrador** > **componentes de Windows** > servicios de escritorio remoto > escritorio remoto host de **sesión** > **entorno de sesión remota** > **usar el adaptador de gráficos predeterminado de hardware para todas las sesiones de servicios de escritorio remoto**. **Remote Desktop Services** Establezca este valor en habilitado y, a continuación, reinicie la máquina virtual una vez que se haya aplicado la Directiva.

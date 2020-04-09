@@ -1,7 +1,6 @@
 ---
 ms.assetid: 22347a94-aeea-44b4-85fb-af2c968f432a
 title: Implementar la auditoría de seguridad con directivas de auditoría central (pasos de demostración)
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ecbaa33d83d7b37f376a426571c0d2df89c7695d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9ad3f069eaea6917d29f56a00c6ecde035ecb01d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407117"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861198"
 ---
 # <a name="deploy-security-auditing-with-central-audit-policies-demonstration-steps"></a>Implementar la auditoría de seguridad con directivas de auditoría central (pasos de demostración)
 
@@ -29,7 +28,7 @@ En este escenario, auditará el acceso a los archivos de la carpeta Finance Docu
 |[Actualizar configuración de directiva de grupo](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_2)|Inicie sesión en el servidor de archivos y aplique la actualización de la directiva de grupo.|  
 |[Comprobar que se ha aplicado la Directiva de acceso a objetos global](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_3)|Visualice los eventos relevantes en el visor de eventos. Los eventos deben incluir metadatos para el país y el tipo de documento.|  
   
-## <a name="BKMK_1"></a>Configuración de la Directiva de acceso a objetos global  
+## <a name="configure-global-object-access-policy"></a><a name="BKMK_1"></a>Configuración de la Directiva de acceso a objetos global  
 En este paso, se configura la directiva de acceso a objetos global en el controlador de dominio.  
   
 #### <a name="to-configure-a-global-object-access-policy"></a>Para configurar una directiva de acceso a objetos global  
@@ -65,7 +64,7 @@ En este paso, se configura la directiva de acceso a objetos global en el control
   
 15. En el panel de navegación, haga clic en **Acceso a objetos**y, en el panel de resultados, haga doble clic en **Auditar manipulación de identificadores**. Haga clic en **Configurar los siguientes eventos de auditoría**, **Correcto**y **Error**, haga clic en **Aceptar**y, a continuación, cierre el GPO de acceso flexible.  
   
-## <a name="BKMK_2"></a>Actualizar configuración de directiva de grupo  
+## <a name="update-group-policy-settings"></a><a name="BKMK_2"></a>Actualizar configuración de directiva de grupo  
 En este paso se actualiza la configuración de directiva de grupo después de haberla creado.  
   
 #### <a name="to-update-group-policy-settings"></a>Para actualizar la configuración de directiva de grupo  
@@ -75,11 +74,11 @@ En este paso se actualiza la configuración de directiva de grupo después de ha
 2. Presione la tecla Windows+R y escriba **cmd** para abrir la ventana del símbolo del sistema.  
   
    > [!NOTE]  
-   > Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+   > Si aparece el cuadro de **Control de cuentas de usuario**, confirma que la acción que se muestra es la que deseas realizar y haz clic en **Sí**.  
   
 3. Escriba **gpupdate /force** y presione ENTRAR.  
   
-## <a name="BKMK_3"></a>Comprobar que se ha aplicado la Directiva de acceso a objetos global  
+## <a name="verify-that-the-global-object-access-policy-has-been-applied"></a><a name="BKMK_3"></a>Comprobar que se ha aplicado la Directiva de acceso a objetos global  
 Una vez aplicada la configuración de directiva de grupo, puede comprobar si la configuración de directiva de auditoría se ha aplicado correctamente.  
   
 #### <a name="to-verify-that-the-global-object-access-policy-has-been-applied"></a>Para comprobar la aplicación de la directiva de acceso a objetos global  
@@ -91,7 +90,7 @@ Una vez aplicada la configuración de directiva de grupo, puede comprobar si la 
 > [!IMPORTANT]  
 > Se genera un nuevo evento de inicio de sesión en el equipo donde se encuentra el recurso, en nombre del usuario para el cual se está comprobando el acceso efectivo. Al analizar los registros de auditoría de seguridad de la actividad de inicio de sesión de los usuarios para diferenciar entre los eventos de inicio de sesión que se generan debido al acceso efectivo y aquellos que se generan debido al inicio de sesión de usuario interactivo en una red, se incluye información de Nivel de suplantación. Cuando se genera el evento de inicio de sesión debido a un acceso efectivo, el Nivel de suplantación será Identidad. Un inicio de sesión de usuario interactivo en la red suele generar un evento de inicio de sesión con Nivel de suplantación = Suplantación o Delegación.  
   
-## <a name="BKMK_Links"></a>Vea también  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también  
   
 -   [Escenario: auditoría de acceso a archivos](Scenario--File-Access-Auditing.md)  
   

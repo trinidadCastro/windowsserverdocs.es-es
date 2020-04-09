@@ -1,23 +1,19 @@
 ---
 title: Novedades de Windows Server 2016 Essentials
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1d5176a69136e9bad36e22472b8fadbd6d0e9e79
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 420d3b043959b8b1201aad7a5b3210fd9bd6a0da
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310304"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817758"
 ---
 # <a name="whats-new-in-windows-server-2016-essentials"></a>Novedades de Windows Server 2016 Essentials
 
@@ -27,7 +23,7 @@ A continuación se enumeran las características nuevas y mejoradas de Windows S
 
 ## <a name="integration-with-azure-site-recovery-services"></a>[Integración con servicios de Azure Site Recovery](azure-site-recovery-services-integration.md)
 
-**Lo que hace** : cuando se produce un error en una máquina virtual protegida, o en el servidor host en el que se ejecuta la máquina virtual protegida, la conmutación por error con los servicios de Azure Site Recovery mantiene la continuidad del negocio hasta que la máquina virtual local o el servidor host se repara y está disponible. 
+**Lo que hace** --&reg;cuando se produce un error en una máquina virtual protegida, o en el servidor host en el que se ejecuta la máquina virtual protegida, la conmutación por error con los servicios de Azure Site Recovery mantiene la continuidad del negocio hasta que la máquina virtual local o el servidor host se repara y está disponible. 
 
 **Cómo funciona** : Azure Site Recovery servicios, que se ofrecen en Microsoft Azure, permite la replicación en tiempo real de las máquinas virtuales (VM) en un almacén de copia de seguridad de Azure. En caso de que el servidor o el sitio deje de funcionar debido a un error de hardware o de otro problema, puede realizar una conmutación por error con los servicios de Azure Site Recovery para que la imagen de máquina virtual almacenada en el almacén de copia de seguridad se aprovisione como una máquina virtual en ejecución en Azure. En combinación con una red virtual de Azure, los equipos cliente que se conectaron anteriormente al servidor local se conectarán de forma transparente al servidor que se ejecuta en Azure.     
                                                                                                                                                                                                                                                                                                                
@@ -52,4 +48,4 @@ Algunas pequeñas empresas más grandes necesitan más funcionalidad y capacidad
 <a name="see-also"></a>Vea también
 --------
 
-[Introducción a Windows Server Essentials](get-started.md)
+Introducción [a Windows Server essentials](get-started.md) &copy;&reg;

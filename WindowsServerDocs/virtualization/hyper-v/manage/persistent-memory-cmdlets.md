@@ -2,24 +2,21 @@
 title: Cmdlets para configurar dispositivos de memoria persistentes para máquinas virtuales de Hyper-V
 description: Configuración de dispositivos de memoria persistentes para máquinas virtuales de Hyper-V
 ms.prod: windows-server
-ms.service: na
-manager: jasgroce
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5715c02-a90f-4de9-a71e-0fc08039ba1d
 author: coreyp-at-msft
 ms.author: coreyp
-ms.openlocfilehash: ecae1fe96bc5088fa840c6e2e24a75bb72a9e8f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b58e2a4e2f31c5bf3e49b89da912b77060e334ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392533"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860428"
 ---
 # <a name="cmdlets-for-configuring-persistent-memory-devices-for-hyper-v-vms"></a>Cmdlets para configurar dispositivos de memoria persistentes para máquinas virtuales de Hyper-V
 
->Se aplica a: Windows Server 2019
+>Se aplica a: Windows Server 2019
 
 En este artículo se proporcionan a los administradores de sistemas y profesionales de ti información sobre la configuración de máquinas virtuales de Hyper-V con memoria persistente (también conocido como memoria de clase de almacenamiento o NVDIMM). Los dispositivos de memoria persistentes basados en JDEC se admiten en Windows Server 2016 y Windows 10, y proporcionan acceso de nivel de bytes a los dispositivos no volátiles de latencia muy baja. Los dispositivos de memoria persistente de máquina virtual se admiten en Windows Server 2019. 
 

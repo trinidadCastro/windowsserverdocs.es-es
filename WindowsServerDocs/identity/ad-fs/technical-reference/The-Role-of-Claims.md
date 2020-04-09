@@ -1,7 +1,6 @@
 ---
 ms.assetid: 22f53391-8c6a-4873-a1f4-08b4760ea621
 title: El papel de las notificaciones
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 851a70bbed606530ca8292f65bc4f776eae77fae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2477152231489e309fc48fd57d38e09a9bf658eb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407341"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860178"
 ---
 # <a name="the-role-of-claims"></a>El papel de las notificaciones
 En el modelo de identidad basado en notificaciones\-, las notificaciones desempeñan un rol dinamizador en el proceso de Federación, son el componente clave por el que se determina el resultado de todas las solicitudes de autenticación y autorización basadas en\-Web. Con este modelo, las organizaciones pueden presentar identidades digitales y derechos (o *notificaciones*) en todo el ámbito empresarial sin ningún tipo de riesgo y de manera estándar.  
@@ -25,7 +24,7 @@ En su forma más sencilla, las notificaciones son simplemente *instrucciones* \(
 ### <a name="how-claims-are-sourced"></a>Cómo se generan notificaciones  
 El Servicio de federación en Servicios de federación de Active Directory (AD FS) \(AD FS\) define qué notificaciones se intercambian entre los asociados federados. Para hacerlo, sin embargo, antes tiene que rellenar o generar la notificación con un valor recuperado o calculado. Cada valor de notificación representa un valor de un usuario, grupo o entidad, y se puede generar de dos formas:  
   
-1.  Cuando el valor de que consta la notificación se recupera de un almacén de atributos, por ejemplo, cuando un valor de atributo del departamento de ventas se obtiene de las propiedades de una cuenta de usuario de Active Directory. Para obtener más información, consulte [The Role of Attribute Stores](The-Role-of-Attribute-Stores.md).  
+1.  Cuando el valor de que consta la notificación se recupera de un almacén de atributos, por ejemplo, cuando un valor de atributo del departamento de ventas se obtiene de las propiedades de una cuenta de usuario de Active Directory. Para obtener más información, consulta [El papel de los almacenes de atributos](The-Role-of-Attribute-Stores.md).  
   
 2.  Cuando el valor de una notificación entrante se transforma en otro valor de acuerdo con la lógica expresada en una regla. Por ejemplo, cuando una notificación entrante con el valor de Admins. del dominio se transforma en un nuevo valor de Administradores antes de enviarse como notificación saliente. Para obtener más información, consulta [El papel de las reglas de notificaciones](The-Role-of-Claim-Rules.md).  
   
@@ -45,22 +44,22 @@ El flujo de notificaciones que tiene lugar en este proceso se conoce como la *ca
 Para obtener más información, consulta [El papel de la canalización de notificaciones](The-Role-of-the-Claims-Pipeline.md).  
   
 ### <a name="how-claims-are-issued"></a>Cómo se emiten las notificaciones  
-Al escribir reglas de notificaciones, el origen de las notificaciones entrantes de dichas reglas varía en función de si las reglas se están escribiendo en una confianza de proveedor de notificaciones o en una confianza para usuario autenticado. Si se escriben para una confianza de proveedor de notificaciones, las notificaciones entrantes son aquellas que se envían desde el proveedor de notificaciones de confianza al Servicio de federación. Si se escriben para una confianza para usuario autenticado, las notificaciones entrantes son aquellas que resultan de las reglas de notificaciones de la confianza de proveedor de notificaciones en cuestión. Para obtener más información acerca de las notificaciones entrantes y salientes, vea [The Role of the Claims Pipeline](The-Role-of-the-Claims-Pipeline.md) y [The Role of the Claims Engine](The-Role-of-the-Claims-Engine.md).  
+Al escribir reglas de notificaciones, el origen de las notificaciones entrantes de dichas reglas varía en función de si las reglas se están escribiendo en una confianza de proveedor de notificaciones o en una confianza para usuario autenticado. Si se escriben para una confianza de proveedor de notificaciones, las notificaciones entrantes son aquellas que se envían desde el proveedor de notificaciones de confianza al Servicio de federación. Si se escriben para una confianza para usuario autenticado, las notificaciones entrantes son aquellas que resultan de las reglas de notificaciones de la confianza de proveedor de notificaciones en cuestión. Para obtener más información sobre las notificaciones entrantes y salientes, consulta [El papel de la canalización de notificaciones](The-Role-of-the-Claims-Pipeline.md) y [El papel del motor de notificaciones](The-Role-of-the-Claims-Engine.md).  
   
 ## <a name="what-are-claim-types"></a>¿Qué son los tipos de notificaciones?  
 Un tipo de notificación ofrece contexto para el valor de la notificación Normalmente, se expresa como un identificador uniforme de recursos \(URI\). AD FS puede admitir cualquier tipo de notificaciones y se configura con los tipos de notificaciones de la siguiente tabla de forma predeterminada.  
   
-|Nombre|Descripción|URI|  
+|Name|Descripción|URI|  
 |--------|---------------|-------|  
 |E\-dirección de correo electrónico|La dirección de correo electrónico\-del usuario|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/Identity\/Claims\/EmailAddress|  
-|Nombre propio|Nombre propio del usuario|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/identidad\/notificaciones\/givenName|  
-|Nombre|Nombre único del usuario|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/Identity\/Claims\/Name|  
+|Nombre|Nombre propio del usuario|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/identidad\/notificaciones\/givenName|  
+|Name|Nombre único del usuario|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/Identity\/Claims\/Name|  
 |UPN|Nombre principal de usuario \(\) UPN del usuario|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/Identity\/Claims\/UPN|  
 |Nombre común|Nombre común del usuario|http:\/\/schemas.xmlsoap.org\/notificaciones\/CommonName|  
 |AD FS 1. x E\-dirección de correo electrónico|La dirección de correo electrónico\-del usuario al interoperar con AD FS 1,1 o ADFS 1,0|http:\/\/schemas.xmlsoap.org\/Claims\/EmailAddress|  
 |Grupo|Grupo al que pertenece el usuario|http:\/\/schemas.xmlsoap.org\/grupo de\/de notificaciones|  
 |UPN para AD FS 1.x|UPN del usuario al interoperar con AD FS 1.1 o AD FS 1.0|http:\/\/schemas.xmlsoap.org\/Claims\/UPN|  
-|Rol|Rol que tiene el usuario|http:\/\/schemas.microsoft.com\/WS\/2008\/06\/identidad\/rol\/de notificaciones|  
+|Role|Rol que tiene el usuario|http:\/\/schemas.microsoft.com\/WS\/2008\/06\/identidad\/rol\/de notificaciones|  
 |Apellido|Apellido del usuario|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/Identity\/Claims\/apellidos|  
 |PPID|Identificador privado del usuario|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/identidad\/notificaciones\/privatepersonalidentifier|  
 |Identificador de nombre|Identificador de nombre SAML del usuario|http:\/\/schemas.xmlsoap.org\/WS\/2005\/05\/identidad\/notificaciones\/nameidentifier|  
@@ -78,7 +77,7 @@ Las descripciones de notificaciones representan una lista de tipos de notificaci
   
 La colección de descripciones de notificaciones que se va a publicar en los metadatos de federación se almacena en la base de datos de configuración de AD FS. Estas descripciones están disponibles para su uso por parte de varios componentes del Servicio de federación.  
   
-De igual modo, cada descripción incluye un URI, un nombre, un estado de publicación y una descripción del tipo de notificación en cuestión. Puede administrar la colección de descripciones de notificaciones mediante el nodo **descripciones de notificaciones** del\-de administración de AD FS en. Puede modificar el estado de publicación de una descripción de notificaciones mediante el\-de ajuste de. Las siguientes configuraciones están disponibles:  
+De igual modo, cada descripción incluye un URI, un nombre, un estado de publicación y una descripción del tipo de notificación en cuestión. Puede administrar la colección de descripciones de notificaciones mediante el nodo **descripciones de notificaciones** del\-de administración de AD FS en. Puede modificar el estado de publicación de una descripción de notificaciones mediante el\-de ajuste de. Están disponibles las opciones siguientes:  
   
 -   **Publicar esta notificación en los metadatos de Federación como un tipo de notificación que este servicio de Federación puede aceptar** \(publicar como aceptado\): indica los tipos de notificaciones que este servicio de Federación va a aceptar de otros proveedores de notificaciones.  
   

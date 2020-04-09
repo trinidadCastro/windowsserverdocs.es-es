@@ -1,24 +1,20 @@
 ---
 title: Protección y administración de credenciales
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e457229c-0126-40fe-948c-101c943e1b57
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 31f0f89099a71f8ea6abcf0064113d6af9608c5a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c836da8f83510e6547e0e182ac06fd2151dd9c41
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403800"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857068"
 ---
 # <a name="credentials-protection-and-management"></a>Protección y administración de credenciales
 
@@ -51,7 +47,7 @@ Los miembros del grupo Usuarios protegidos están también limitados por los sig
 -   El ajuste predeterminado de cuatro horas para la duración de un vale de concesión de vales (TGT) de Kerberos puede configurarse mediante silos y directivas de autenticación, a los que se accede a través del Centro de administración de Active Directory (ADAC). esto quiere decir que, una vez transcurridas esas cuatro horas, el usuario debe volver a autenticarse.
 
 > [!WARNING]
-> Las cuentas de servicio y de equipo no deben ser miembros del grupo de usuarios protegidos. Este grupo no ofrece protección local, ya que la contraseña o certificado siempre está disponible en el host. Se producirá un error de autenticación con el mensaje "el nombre de usuario o la contraseña son incorrectos" para cualquier servicio o equipo que se agregue al grupo usuarios protegidos.
+> Las cuentas de servicio y de equipo no deben ser miembros del grupo Usuarios protegidos. Este grupo no ofrece protección local, ya que la contraseña o certificado siempre está disponible en el host. Se producirá un error de autenticación con el mensaje "el nombre de usuario o la contraseña son incorrectos" para cualquier servicio o equipo que se agregue al grupo usuarios protegidos.
 
 Para obtener más información acerca de este grupo, consulta [Grupo de seguridad Usuarios protegidos](protected-users-security-group.md).
 
@@ -62,7 +58,7 @@ La nueva clase de objeto de Active Directory, la Directiva de autenticación, pe
 
 -   Usuario
 
--   Computer
+-   Equipo
 
 -   Cuenta de servicio administrada
 

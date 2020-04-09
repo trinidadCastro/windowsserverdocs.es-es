@@ -2,19 +2,18 @@
 title: Soluciones principales de soporte técnico para Windows Server
 description: Obtener vínculos a soluciones para problemas de Windows Server
 ms.prod: windows-server
-ms.service: na
 manager: alant
 ms.technology: server-general
 ms.date: 03/16/2018
 ms.topic: article
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: 61c10f25ac97934f73c4f393e2c91c9b36fc59fd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6bd0d22c7df7344e6c4bfbf8360532ab0f36d117
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950175"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820758"
 ---
 # <a name="top-support-solutions-for-windows-server-2016"></a>Soluciones principales de soporte técnico para Windows Server 2016
 
@@ -23,7 +22,7 @@ Microsoft publica periódicamente actualizaciones y soluciones para Windows Serv
 Estas son las mejores soluciones del Soporte técnico de Microsoft para la mayoría de problemas comunes experimentados con Windows Server 2016. Los siguientes vínculos incluyen vínculos a artículos KB, actualizaciones y artículos de la biblioteca.
 
 >[!TIP]
-> ¿Busca información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puede [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
+> ¿Buscas información sobre versiones anteriores de Windows Server? Echa un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
 
 ## <a name="solutions-for-installing-or-upgrading-windows-server"></a>Soluciones para la instalación o actualización de Windows Server
 
@@ -31,7 +30,7 @@ Estas son las mejores soluciones del Soporte técnico de Microsoft para la mayor
 - [Actualización de la pila de mantenimiento para Windows 10 versión 1607 y Windows Server 2016:8 de agosto de 2017](https://support.microsoft.com/help/4035631)
 - [Actualización de compatibilidad para actualizar a Windows 10, versión 1607 y Windows Server 2016:3 de agosto de 2017](https://support.microsoft.com/help/4033524)
 - [No se admite la actualización en contexto del sistema en máquinas virtuales de Azure basadas en Windows](https://support.microsoft.com/help/4014997)
-- [Upgrade and conversion options for Windows Server 2016](../get-started/supported-upgrade-paths.md) (Opciones de actualización y conversión de Windows Server 2016)
+- [Opciones de actualización y conversión para Windows Server 2016](../get-started/supported-upgrade-paths.md)
 - [Matriz de actualización y migración del rol de servidor para Windows Server 2016](../get-started/server-role-upgradeability-table.md)
 - [Instalación y actualización de Windows Server](../get-started/installation-and-upgrade.md)
 - [Notas de la versión: problemas importantes en Windows Server 2016](../get-started/windows-server-2016-ga-release-notes.md)
@@ -39,7 +38,7 @@ Estas son las mejores soluciones del Soporte técnico de Microsoft para la mayor
 
 ## <a name="solutions-for-volume-activation"></a>Soluciones de activación por volumen
 - [Activación de Windows Server 2016](../get-started/server-2016-activation.md)
-- [Review and Select Activation Methods](https://technet.microsoft.com/library/jj134256(ws.11).aspx) (Revisión y selección de métodos de activación)
+- [Revisar y seleccionar métodos de activación](https://technet.microsoft.com/library/jj134256(ws.11).aspx)
 - [Códigos de error de activación para activación de volumen](https://technet.microsoft.com/library/dn502528.aspx)
 - [Cómo solucionar problemas del servicio de administración de claves (KMS)](https://technet.microsoft.com/library/ee939272.aspx)
 - [Solución de problemas de activación de volumen](https://technet.microsoft.com/library/ff793439.aspx)
@@ -52,11 +51,11 @@ Estas son las mejores soluciones del Soporte técnico de Microsoft para la mayor
 - [Compatibilidad de Exchange Server con Windows Server 2016](https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx)
 - [Usar Ntdsutil. exe para transferir o asumir roles FSMO en un controlador de dominio](https://support.microsoft.com/kb/255504)
 - [Solución de problemas de implementación de controladores de dominio](../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md)
-- [Solución de problemas del asistente para la instalación de Active Directory](https://msdn.microsoft.com/library/bb727058.aspx)
+- [Solución de problemas del Asistente para la instalación de Active Directory](https://msdn.microsoft.com/library/bb727058.aspx)
 - [Problemas conocidos de la instalación y eliminación de AD DS](https://technet.microsoft.com/library/cc754463(v=ws.10).aspx)
 
 ## <a name="solutions-for-active-directory-federation-services-ad-fs"></a>Soluciones de Servicios de federación de Active Directory (AD FS)
-- [Configuración del registro automático de dispositivos unidos a un dominio de Windows con Azure Active Directory](/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup)
+- [Cómo configurar el registro automático de dispositivos Unidos a un dominio de Windows con Azure Active Directory](/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup)
 - [Configuración de la emisión de notificaciones](/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims)
 - [Configuración de AD FS para autenticar a los usuarios almacenados en directorios LDAP](../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md)
 - [Compatibilidad de AD FS con el enlace de nombre de host alternativo para la autenticación de certificado](../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)

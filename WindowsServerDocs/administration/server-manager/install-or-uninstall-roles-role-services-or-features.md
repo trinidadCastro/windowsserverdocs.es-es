@@ -1,24 +1,20 @@
 ---
 title: Instalación o desinstalación de roles, servicios de rol o características
 description: Administrador de servidores
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 04f16d84-45c2-4771-84c1-1cc973d0ee02
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cca2e4c7ba2658c4d85b14ef61ef5f79fbc96345
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8c270fbdacf5359af4e3150d61693470207f566b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383191"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851528"
 ---
 # <a name="install-or-uninstall-roles-role-services-or-features"></a>Instalación o desinstalación de roles, servicios de rol o características
 
@@ -33,7 +29,7 @@ Debe haber iniciado sesión en un servidor como administrador para instalar o de
   
 Para obtener más información sobre los roles, servicios de rol y características, vea [roles, servicios de rol y características](https://go.microsoft.com/fwlink/p/?LinkId=239558).  
   
-En este tema se incluyen las siguientes secciones.  
+Este tema contiene las siguientes secciones.  
   
 -   [Instalar roles, servicios de rol y características con el Asistente para agregar roles y características](#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard)  
   
@@ -63,9 +59,9 @@ En una sola sesión del Asistente para agregar roles y características, puede i
   
 2.  En el menú **administrar** , haga clic en **Agregar roles y características**.  
   
-3.  En la página **Antes de comenzar**, compruebe que el servidor de destino y el entorno de red estén preparados para el rol y la característica que desea instalar. Haz clic en **Siguiente**.  
+3.  En la página **Antes de comenzar**, compruebe que el servidor de destino y el entorno de red estén preparados para el rol y la característica que desea instalar. Haga clic en **Siguiente**.  
   
-4.  En la página **Seleccionar tipo de instalación** , seleccione **Instalación basada en características o en roles** para instalar todas las partes de los roles o las características en un solo servidor, o bien seleccione **Instalación de Servicios de Escritorio remoto** para instalar una infraestructura de escritorio basada en máquina virtual o una infraestructura de escritorio basada en sesión para Servicios de Escritorio remoto. La opción **Instalación de Servicios de Escritorio remoto** que distribuye las partes lógicas del rol de Servicios de Escritorio remoto en los diferentes servidores según la necesidad de los administradores. Haz clic en **Siguiente**.  
+4.  En la página **Seleccionar tipo de instalación**, seleccione **Instalación basada en características o en roles** para instalar todas las partes de los roles o las características en un solo servidor, o bien seleccione **Instalación de Servicios de Escritorio remoto** para instalar una infraestructura de escritorio basada en máquina virtual o una infraestructura de escritorio basada en sesión para Servicios de Escritorio remoto. La opción **Instalación de Servicios de Escritorio remoto** que distribuye las partes lógicas del rol de Servicios de Escritorio remoto en los diferentes servidores según la necesidad de los administradores. Haga clic en **Siguiente**.  
   
 5.  En la página **Seleccionar servidor de destino**, seleccione un servidor del grupo de servidores o un VHD sin conexión. Para seleccionar un VHD sin conexión como servidor de destino, primero seleccione el servidor en el que montará el VHD y, a continuación, seleccione el archivo VHD. Para obtener información acerca de cómo agregar servidores al grupo de servidores, consulte [agregar servidores a administrador del servidor](add-servers-to-server-manager.md). Una vez seleccionado el servidor de destino, haga clic en **Siguiente**.  
   
@@ -85,7 +81,7 @@ En una sola sesión del Asistente para agregar roles y características, puede i
   
     Además, si planea administrar el rol de forma remota, desde otro servidor o desde un equipo basado en cliente de Windows que está ejecutando las Herramientas de administración remota del servidor, puede optar por no instalar los complementos y las herramientas de administración para los roles en el servidor de destino. De forma predeterminada, en el Asistente para agregar roles y características, se seleccionan las herramientas de administración para la instalación.  
   
-7.  En la página **Confirmar selecciones de instalación** , revise el rol, la característica y las selecciones de servidor. Si está listo para realizar la instalación, haga clic en **Instalar**.  
+7.  En la página **Confirmar selecciones de instalación**, revise el rol, la característica y las selecciones de servidor. Si está listo para realizar la instalación, haga clic en **Instalar**.  
   
     También puede exportar las selecciones a un archivo de configuración basado en XML que puede usar para instalaciones desatendidas con Windows PowerShell. Para exportar la configuración especificada en esta sesión del Asistente para agregar roles y características, haga clic en **exportar opciones de configuración**y guarde el archivo XML en una ubicación adecuada.  
   
@@ -96,7 +92,7 @@ En una sola sesión del Asistente para agregar roles y características, puede i
 8.  Después de hacer clic en **instalar**, la página progreso de la **instalación** muestra el progreso de la instalación, los resultados y los mensajes como advertencias, errores o pasos de configuración posteriores a la instalación necesarios para los roles o las características que ha instalado. En Windows Server 2012 y versiones posteriores de Windows Server, puede cerrar el Asistente para agregar roles y características mientras la instalación todavía está en curso y ver los resultados de la instalación u otros mensajes en el área **notificaciones** en la parte superior de la consola de administrador del servidor. Haga clic en el icono de la marca **notificaciones** para ver más detalles sobre las instalaciones u otras tareas que está llevando a cabo en Administrador del servidor.  
   
 ## <a name="install-roles-role-services-and-features-by-using-windows-powershell-cmdlets"></a>Instalación de roles, servicios de rol y características mediante los cmdlets de Windows PowerShell  
-Los cmdlets de implementación de Administrador del servidor para Windows PowerShell funcionan de manera similar al Asistente para agregar roles y características basado en GUI y al Asistente para quitar roles y características, con una diferencia importante. En Windows PowerShell, a diferencia del Asistente para agregar roles y características, las herramientas y los complementos de administración para un rol no se incluyen de forma predeterminada. Para incluir herramientas de administración como parte de una instalación de rol, agregue el parámetro `IncludeManagementTools` al cmdlet. Si va a instalar roles y características en un servidor que ejecuta la opción de instalación Server Core de Windows Server 2012 o versiones posteriores, puede Agregar las herramientas de administración de un rol a una instalación, pero no se pueden instalar los complementos y las herramientas de administración basados en GUI. en los servidores que ejecutan la opción de instalación Server Core de Windows Server. Solo las herramientas de administración de Windows PowerShell y la línea de comandos se pueden instalar en la opción de instalación Server Core.  
+Los cmdlets de implementación de Administrador del servidor para Windows PowerShell funcionan de manera similar al Asistente para agregar roles y características basado en GUI y al Asistente para quitar roles y características, con una diferencia importante. En Windows PowerShell, a diferencia del Asistente para agregar roles y características, las herramientas y los complementos de administración para un rol no se incluyen de forma predeterminada. Para incluir herramientas de administración como parte de una instalación de rol, agregue el parámetro `IncludeManagementTools` al cmdlet. Si va a instalar roles y características en un servidor que ejecuta la opción de instalación Server Core de Windows Server 2012 o versiones posteriores, puede Agregar las herramientas de administración de un rol a una instalación, pero no se pueden instalar los complementos y las herramientas de administración basados en GUI en los servidores que ejecutan la opción de instalación Server Core de Windows Server. Solo las herramientas de administración de Windows PowerShell y la línea de comandos se pueden instalar en la opción de instalación Server Core.  
   
 #### <a name="to-install-roles-and-features-by-using-the-install-windowsfeature-cmdlet"></a>Para instalar roles y características mediante el cmdlet Install-WindowsFeature  
   
@@ -157,11 +153,11 @@ Debe haber iniciado sesión en un servidor como administrador para desinstalar r
   
     -   En el escritorio de Windows, haga clic en **Administrador del servidor** en la barra de tareas de Windows para iniciar el Administrador del servidor.  
   
-    -   En la pantalla **Inicio** de Windows, haga clic en el icono **Administrador del servidor** .  
+    -   En la pantalla **Inicio** de Windows, haga clic en el icono **Administrador del servidor**.  
   
 2.  En el menú **Administrar**, haga clic en **Quitar roles y funciones**.  
   
-3.  En la página **Antes de comenzar** , compruebe que ha preparado la eliminación de roles y características de un servidor. Haz clic en **Siguiente**.  
+3.  En la página **Antes de comenzar**, compruebe que ha preparado la eliminación de roles y características de un servidor. Haga clic en **Siguiente**.  
   
 4.  En la página **Seleccionar servidor de destino** , seleccione un servidor del grupo de servidores o seleccione un VHD sin conexión. Para seleccionar un VHD sin conexión, primero seleccione el servidor en el que montará el VHD y, a continuación, seleccione el archivo VHD.  
   
@@ -187,7 +183,7 @@ Debe haber iniciado sesión en un servidor como administrador para desinstalar r
 7.  Después de hacer clic en **quitar**, la página progreso de la **eliminación** muestra el progreso de la eliminación, los resultados y los mensajes como advertencias, errores o pasos de configuración posteriores a la eliminación necesarios, como reiniciar el servidor de destino. En Windows Server 2012 y versiones posteriores de Windows Server, puede cerrar el Asistente para quitar roles y características mientras la eliminación todavía está en curso y ver los resultados de la eliminación u otros mensajes en el área **notificaciones** en la parte superior de la consola de administrador del servidor. Haga clic en la marca **notificaciones** para ver más detalles sobre las eliminaciones u otras tareas que está llevando a cabo en Administrador del servidor.  
   
 ## <a name="remove-roles-role-services-and-features-by-using-windows-powershell-cmdlets"></a>Eliminación de roles, servicios de rol y características mediante los cmdlets de Windows PowerShell  
-Los cmdlets de implementación de Administrador del servidor para Windows PowerShell funcionan de manera similar al Asistente para quitar roles y características basado en GUI, con una diferencia importante. En Windows PowerShell, a diferencia del Asistente para quitar roles y características, los complementos y las herramientas de administración para un rol no se quitan de forma predeterminada. Para eliminar herramientas de administración como parte de una eliminación de rol, agregue el parámetro `IncludeManagementTools` al cmdlet. Si está desinstalando roles y características de un servidor que ejecuta la opción de instalación Server Core de Windows Server 2012 o una versión posterior de Windows Server, este parámetro quita la línea de comandos y las herramientas de administración de Windows PowerShell para el especificado. roles y características.  
+Los cmdlets de implementación de Administrador del servidor para Windows PowerShell funcionan de manera similar al Asistente para quitar roles y características basado en GUI, con una diferencia importante. En Windows PowerShell, a diferencia del Asistente para quitar roles y características, los complementos y las herramientas de administración para un rol no se quitan de forma predeterminada. Para eliminar herramientas de administración como parte de una eliminación de rol, agregue el parámetro `IncludeManagementTools` al cmdlet. Si está desinstalando roles y características de un servidor que ejecuta la opción de instalación Server Core de Windows Server 2012 o una versión posterior de Windows Server, este parámetro quita las herramientas de administración de la línea de comandos y de Windows PowerShell para los roles y características especificados.  
   
 #### <a name="to-remove-roles-and-features-by-using-the-uninstall-windowsfeature-cmdlet"></a>Para eliminar roles y características mediante el cmdlet Uninstall-WindowsFeature  
   
@@ -236,10 +232,10 @@ Los cmdlets de implementación de Administrador del servidor para Windows PowerS
 5. Una vez finalizada la eliminación, compruebe que se han quitado los roles y las características; para ello, abra la página **todos los servidores** en Administrador del servidor, seleccione el servidor del que quitó roles y características y vea el icono **roles y características** en la página del servidor seleccionado. También puede ejecutar el cmdlet `Get-WindowsFeature` destinado al servidor seleccionado (get-WindowsFeature-computerName <*computer_name*>) para ver una lista de los roles y las características que están instalados en el servidor.  
   
 ## <a name="install-roles-and-features-on-multiple-servers-by-running-a-windows-powershell-script"></a>Instalar roles y características en varios servidores ejecutando un script de Windows PowerShell  
-Aunque no puede usar el Asistente para agregar roles y características para instalar roles, servicios de rol y características en más de un servidor de destino en una única sesión del asistente, puede usar un script de Windows PowerShell para instalar roles, servicios de rol y características en varios destinos. servidores que se administran mediante Administrador del servidor. El script que se usa para realizar la implementación por lotes, a medida que se llama a este proceso, apunta a un archivo de configuración XML que puede crear fácilmente con el Asistente para agregar roles y características y hacer clic en **exportar opciones de configuración** después de avanzar por el asistente hasta la página **confirmar selecciones de instalación** del Asistente para agregar roles y características.  
+Aunque no puede usar el Asistente para agregar roles y características para instalar roles, servicios de rol y características en más de un servidor de destino en una única sesión del asistente, puede usar un script de Windows PowerShell para instalar roles, servicios de rol y características en varios servidores de destino que administre mediante Administrador del servidor. El script que se usa para realizar la implementación por lotes, a medida que se llama a este proceso, apunta a un archivo de configuración XML que puede crear fácilmente con el Asistente para agregar roles y características y hacer clic en **exportar opciones de configuración** después de avanzar por el asistente hasta la página **confirmar selecciones de instalación** del Asistente para agregar roles y características.  
   
 > [!IMPORTANT]  
-> Todos los servidores de destino que se especifican en el script deben ejecutar la versión de Windows Server que coincida con la versión de Administrador del servidor que se ejecuta en el equipo local. Por ejemplo, si ejecuta Administrador del servidor en Windows 10, puede instalar roles, servicios de rol y características en servidores que ejecutan Windows Server 2016. Si se agregan herramientas de administración basadas en GUI a la instalación, el proceso de instalación convierte automáticamente los servidores de destino que ejecutan la opción de instalación Server Core de Windows Server en la opción de instalación completa (servidor con una GUI completa, también conocida como como el shell gráfico de servidor en ejecución).  
+> Todos los servidores de destino que se especifican en el script deben ejecutar la versión de Windows Server que coincida con la versión de Administrador del servidor que se ejecuta en el equipo local. Por ejemplo, si ejecuta Administrador del servidor en Windows 10, puede instalar roles, servicios de rol y características en servidores que ejecutan Windows Server 2016. Si se agregan herramientas de administración basadas en GUI a la instalación, el proceso de instalación convierte automáticamente los servidores de destino que ejecutan la opción de instalación Server Core de Windows Server en la opción de instalación completa (servidor con una GUI completa, también conocida como Shell gráfico de servidor en ejecución).  
 >   
 > El script que se proporciona en esta sección es un ejemplo de cómo se puede realizar la implementación de Batch mediante el cmdlet `Install-WindowsFeature` y un script de Windows PowerShell. Hay otros posibles scripts y métodos para realizar la implementación por lotes en varios servidores. Para buscar o proporcionar otros scripts para implementar roles y características, busque en el [Repositorio del Centro de scripts](https://gallery.technet.microsoft.com/ScriptCenter).  
   
@@ -299,11 +295,11 @@ a partir de Windows Server 2012 y Windows 8, los archivos de características de
   
 Para instalar .NET Framework 3.5, realice una de las siguientes acciones.  
   
--   Use [Para instalar .NET Framework 3.5 mediante la ejecución del cmdlet Install-WindowsFeature](#to-install-net-framework-35-by-running-the-install-windowsfeature-cmdlet) para agregar el parámetro `Source` y especifique un origen a partir del cual se van a obtener los archivos de características de .NET Framework 3.5. Si no agrega el parámetro `Source`, el proceso de instalación primero determina si se ha especificado una ruta de acceso a los archivos de características en la configuración de la directiva de grupo y, si no encuentra la ruta de acceso, usa Windows Update para buscar los archivos de características que faltan.  
+-   Vea [Para instalar .NET Framework 3.5 mediante la ejecución del cmdlet Install-WindowsFeature](#to-install-net-framework-35-by-running-the-install-windowsfeature-cmdlet) para agregar el parámetro `Source` y especifique un origen del cual obtener los archivos de características de .NET Framework 3.5. Si no agrega el parámetro `Source`, el proceso de instalación primero determina si se ha especificado una ruta de acceso a los archivos de características en la configuración de la directiva de grupo y, si no encuentra la ruta de acceso, usa Windows Update para buscar los archivos de características que faltan.  
   
 -   Use [para instalar .NET Framework 3,5 mediante el Asistente para agregar roles y características](#to-install-net-framework-35-by-using-the-add-roles-and-features-wizard) para especificar una ubicación de archivo de origen alternativa en la página **confirmar opciones de instalación** del Asistente para agregar roles y características.  
   
--   Use [Para instalar .NET Framework 3.5 mediante DISM](#to-install-net-framework-35-by-using-dism) para obtener los archivos desde Windows Update de manera predeterminada o mediante la especificación de una ruta de acceso de origen para los medios de instalación.  
+-   Vea [Para instalar .NET Framework 3.5 mediante DISM](#to-install-net-framework-35-by-using-dism) para obtener los archivos desde Windows Update de manera predeterminada o mediante la especificación de una ruta de acceso de origen para los medios de instalación.  
   
 [Configurar orígenes alternativos para los archivos de características en la directiva de grupo](#configure-alternate-sources-for-feature-files-in-group-policy) para .NET Framework 3.5 u otras características, si no se encuentran los archivos de características en el equipo local.  
   
@@ -351,11 +347,11 @@ Para instalar .NET Framework 3.5, realice una de las siguientes acciones.
   
    **\\ D:\Sources\SxS**  
   
-   Para especificar un archivo WIM, agregue un prefijo **WIM:** y agregue el índice de la imagen que se usará en el archivo WIM como sufijo, como se muestra en el siguiente ejemplo.  
+   Para especificar un archivo WIM, agregue un prefijo **WIM:** y el índice de la imagen que se usará en el archivo WIM como sufijo, como se muestra en el siguiente ejemplo.  
   
    **Wim:\\\\** <em>SERVER_NAME</em> **\share\install.Wim: 3**  
   
-6. Haga clic en **Aceptar**y, a continuación, en **Instalar**.  
+6. Haga clic en **Aceptar** y, a continuación, en **Instalar**.  
   
 ### <a name="to-install-net-framework-35-by-using-dism"></a>Para instalar .NET Framework 3.5 mediante DISM  
   
@@ -401,7 +397,7 @@ La configuración de la directiva de grupo descrita en esta sección especifica 
   
 2. Sselect **habilitada** para habilitar la configuración de Directiva, si aún no está habilitada.  
   
-3. En el cuadro de texto **Ruta de acceso del archivo de origen alternativa**, en el área **Opciones**, especifique una ruta de acceso completa a una carpeta compartida o a un archivo WIM. Para especificar un archivo WIM como ubicación del archivo de origen alternativa, agregue el prefijo **WIM:** a la ruta de acceso y agregue el índice de la imagen que se usará en el archivo WIM como sufijo. Los siguientes son ejemplos de valores que puede especificar.  
+3. En el cuadro de texto **Ruta de acceso del archivo de origen alternativa**, en el área **Opciones**, especifique una ruta de acceso completa a una carpeta compartida o a un archivo WIM. Para especificar un archivo WIM como ubicación del archivo de origen alternativa, agregue el prefijo **WIM:** a la ruta de acceso y el índice de la imagen que se usará en el archivo WIM como sufijo. Los siguientes son ejemplos de valores que puede especificar.  
   
    - Ruta de acceso a una carpeta compartida: **\\\\** <em>server_name</em> **\share\\** <em>folder_name</em>  
   

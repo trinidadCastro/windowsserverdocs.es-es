@@ -2,20 +2,19 @@
 title: La autenticación basada en certificados está configurada, pero el certificado especificado no está instalado en el servidor réplica ni en los nodos del clúster de conmutación por error
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 4cabbce3-9367-4ddc-a108-1e5e1ab2bcff
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0b107a4760cc3470c7f80d53feef00a2f8f789c5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cc89aa201de4b25e4c221b770e6f88908785c859
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365201"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857688"
 ---
 # <a name="certificate-based-authentication-is-configured-but-the-specified-certificate-is-not-installed-on-the-replica-server-or-failover-cluster-nodes"></a>La autenticación basada en certificados está configurada, pero el certificado especificado no está instalado en el servidor réplica ni en los nodos del clúster de conmutación por error
 

@@ -2,22 +2,19 @@
 title: WSUS y el sitio del catálogo
 description: 'Tema de Windows Server Update Service (WSUS): Cómo importar revisiones en WSUS accediendo al sitio del catálogo de Microsoft Update'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f19a8659-5a96-4fdd-a052-29e4547fe51a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c30fad5f38a1b3088c6b4d12ac92d8b8a15aee83
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 44c5ff9ffe793160b0d378a753c3f4c35e40f282
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361452"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828328"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS y el sitio del catálogo
 

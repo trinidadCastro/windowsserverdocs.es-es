@@ -1,7 +1,6 @@
 ---
 ms.assetid: eefcc989-8763-45ee-8a64-3a97b4397160
 title: Operaciones de AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2db9cd83ed08673835a38e443e90c5eb092f43ac
-ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
+ms.openlocfilehash: cdedcbd5b9491b57ee31170b781dc821853d058f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76162486"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815139"
 ---
 # <a name="ad-fs-operations"></a>Operaciones de AD FS
 
@@ -78,7 +77,7 @@ Este documento contiene una lista de todas las operaciones de documentación par
 - [Configuración de AD FS para enviar notificaciones de expiración de contraseña](../ad-fs/operations/Configure-AD-FS-to-Send-Password-Expiry-Claims.md)
 - [Configuración de autenticación basada en formularios de intranet para dispositivos que no son compatibles con WIA](../ad-fs/operations/Configure-intranet-forms-based-authentication-for-devices-that-do-not-support-WIA.md)
 
-## <a name="other"></a>Otras
+## <a name="other"></a>Otro
 - [Unirse a un área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en todas las aplicaciones de la compañía](../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 - [Administración de riesgos con la autenticación multifactor adicional para aplicaciones confidenciales](../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [Administración de riesgos con control de acceso condicional](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)

@@ -1,18 +1,17 @@
 ---
 title: Configuración de Servicio web de inscripción de certificados para la renovación basada en claves de certificado en un puerto personalizado
-description: ''
 author: Deland-Han
 ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 3d3d08d6abe9daa571dd7365815c1fc61f926501
-ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
+ms.openlocfilehash: a21a34448248658d2ceffcad07d2a4e6e17b9348
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74163102"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856348"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>Configuración de Servicio web de inscripción de certificados para la renovación basada en claves de certificado en un puerto personalizado
 
@@ -21,7 +20,7 @@ Ingeniero de soporte técnico de Ankit Tyagi con el grupo de Windows
 
 ## <a name="summary"></a>Resumen
 
-En este artículo se proporcionan instrucciones paso a paso para implementar el Servicio web de directiva de inscripción de certificados (de procesamiento de eventos complejos) y Servicio web de inscripción de certificados (CES) en un puerto personalizado distinto de 443 para la renovación basada en claves de certificado a fin de aprovechar las ventajas de la función automática característica de renovación de CEP y CES.
+En este artículo se proporcionan instrucciones paso a paso para implementar el Servicio web de directiva de inscripción de certificados (de procesamiento de eventos complejos) y Servicio web de inscripción de certificados (CES) en un puerto personalizado distinto de 443 para la renovación basada en claves de certificado para aprovechar la característica de renovación automática de procesamiento de eventos complejos y CES.
 
 En este artículo también se explica cómo funciona el procesamiento de eventos complejos y CES y se proporcionan instrucciones de configuración.
 
@@ -44,11 +43,11 @@ En este ejemplo, las instrucciones se basan en un entorno que utiliza la configu
 
 - Cuando la duración del certificado está llegando al final, el equipo usa la renovación basada en claves de CES basada en certificado para renovar el certificado a través del mismo canal.
 
-![implantación](media/certificate-enrollment-certificate-key-based-renewal-1.png)
+![implementación](media/certificate-enrollment-certificate-key-based-renewal-1.png)
 
 ## <a name="configuration-instructions"></a>Instrucciones de configuración
 
-### <a name="overview"></a>Introducción 
+### <a name="overview"></a>Información general 
 
 1. Configure la plantilla para la renovación basada en claves.
 
@@ -231,11 +230,11 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
    181https://cepces.contoso.com:49999/ENTCA_CES_Certificate/service.svc/CES1
    ```
    
-   ![Editor ADSI](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
+   ![Edición ADSI](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
 
 #### <a name="configure-the-client-computer"></a>Configurar el equipo cliente
 
-En el equipo cliente, configure las directivas de inscripción y la Directiva de inscripción automática. Para ello, sigue estos pasos:
+En el equipo cliente, configure las directivas de inscripción y la Directiva de inscripción automática. Para ello, realice los pasos siguientes:
 
 1. Seleccione **inicio** > **Ejecutar**y, a continuación, escriba **gpedit. msc**.
 
@@ -287,7 +286,7 @@ Ejecuta el siguiente comando:
 certreq -machine -q -enroll -cert <thumbprint> renew
 ```
 
-![.](media/certificate-enrollment-certificate-key-based-renewal-14.png)
+![comando](media/certificate-enrollment-certificate-key-based-renewal-14.png)
 
 ### <a name="method-2"></a>Método 2
 
@@ -297,7 +296,7 @@ Por ejemplo, la plantilla de certificado tiene una configuración de validez de 
 
 Por lo tanto, si avanza el tiempo hasta 8:10 P.M. el 19 desde que nuestra ventana de renovación se estableció en 8 horas en la plantilla, la ejecución de certutil-Pulse (para desencadenar el motor de AE) inscribe el certificado automáticamente.
 
-![.](media/certificate-enrollment-certificate-key-based-renewal-15.png)
+![comando](media/certificate-enrollment-certificate-key-based-renewal-15.png)
  
 Una vez finalizada la prueba, revierta la configuración de tiempo al valor original y, a continuación, reinicie el equipo cliente.
 
@@ -314,7 +313,7 @@ Una vez finalizada la prueba, revierta la configuración de tiempo al valor orig
 
 [Install-AdcsEnrollmentWebService](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcsenrollmentwebservice?view=win10-ps)
 
-Consulta también
+Vea también
 
 [Foro de seguridad de Windows Server](https://aka.ms/adcsforum)
 

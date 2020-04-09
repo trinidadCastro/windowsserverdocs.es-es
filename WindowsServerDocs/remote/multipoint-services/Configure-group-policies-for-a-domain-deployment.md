@@ -1,24 +1,20 @@
 ---
 title: Configurar directivas de grupo para la implementación de un dominio
 description: Obtenga información sobre cómo configurar directivas de grupo en Multipoint Services
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 13e5fa90-d330-4155-a6b8-78eb650cbbfa
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 5ac6524289d231d152e366d2ba750a59d27ce14f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e851d12dad29de8b3498aad220354d31917fadee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395522"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862188"
 ---
 # <a name="configure-group-policies-for-a-domain-deployment"></a>Configurar directivas de grupo para la implementación de un dominio
 Para asegurarse de que la implementación de su dominio de Multipoint Services funciona correctamente, aplique la siguiente configuración de directiva de grupo a la cuenta de usuario WMSshell en un sistema Multipoint Services.  
@@ -39,14 +35,14 @@ Asigne los valores siguientes:
 |Valor|Valores|  
 |-----------|----------|  
 |Habilitar protector de pantalla|Deshabilitado|  
-|Tiempo de espera del protector de pantalla|Deshabilitado<br /><br />Segundos: XXX|  
+|Tiempo de espera del protector de pantalla|Deshabilitado<p>Segundos: XXX|  
 |Proteger el protector de pantalla mediante contraseña|Deshabilitado|  
   
 **Directiva:** Configuración del equipo > configuración de Windows > configuración de seguridad > directivas locales > asignación **de derechos de usuario > permitir el inicio de sesión local**  
   
 |Valor|Valores|  
 |-----------|----------|  
-|Permitir el inicio de sesión local|Asegúrese de que la lista de cuentas incluye la cuenta WMSshell.<br /><br />**Nota:** De forma predeterminada, la cuenta WMSshell es un miembro del grupo usuarios. Si el grupo de usuarios está en la lista y WMSshell es un miembro del grupo de usuarios, no es necesario que agregue la cuenta de WMSshell a la lista.|  
+|Permitir el inicio de sesión local|Asegúrese de que la lista de cuentas incluye la cuenta WMSshell.<p>**Nota:** De forma predeterminada, la cuenta WMSshell es un miembro del grupo usuarios. Si el grupo de usuarios está en la lista y WMSshell es un miembro del grupo de usuarios, no es necesario que agregue la cuenta de WMSshell a la lista.|  
   
 > [!IMPORTANT]  
 > Cuando establezca directivas de grupo, asegúrese de que las directivas no interfieren con las actualizaciones automáticas y los informes de errores de Windows en el servidor multipoint. Se establecen mediante las opciones **instalar actualizaciones automáticamente** y **automática informe de errores de Windows** que se seleccionaron durante la instalación de Windows MultiPoint Server, configuradas en Multipoint Manager mediante **Editar configuración del servidor**o configurado en actualizaciones programadas para protección de disco.  
@@ -55,7 +51,7 @@ Asigne los valores siguientes:
 Para una implementación de dominio de Multipoint Services, debe actualizar las siguientes subclaves del registro.  
   
 > [!IMPORTANT]  
-> La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.  
+> Una modificación incorrecta del Registro puede provocar daños graves en el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.  
   
 #### <a name="to-update-registry-subkeys-for-a-domain-deployment-of-multipoint-services"></a>Para actualizar las subclaves del registro para una implementación de dominio de Multipoint Services  
   

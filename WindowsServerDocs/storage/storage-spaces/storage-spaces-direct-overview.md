@@ -2,7 +2,7 @@
 title: Información general de Espacios de almacenamiento directos
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: dongill
+manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
@@ -10,18 +10,18 @@ ms.date: 06/26/2019
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: Información general de Espacios de almacenamiento directo, una característica de Windows Server que permite agrupar los servidores de clúster con almacenamiento interno en una solución de almacenamiento definida por software.
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e47adcebf7da87e9d3c96812f5d7d90ca00601b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b032d286398b3c1719d290ca83da8bbc9c6b9f85
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402832"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859138"
 ---
 # <a name="storage-spaces-direct-overview"></a>Información general de Espacios de almacenamiento directos
 
->Se aplica a: Windows Server 2019 y Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
-Espacios de almacenamiento directo usa servidores estándar del sector con unidades conectadas localmente para crear almacenamiento definido por software de alta disponibilidad y escalabilidad por un porcentaje mínimo del costo de las matrices de SAN o NAS tradicionales. Su arquitectura convergente o hiperconvergida simplifica radicalmente el aprovisionamiento y la implementación, mientras que características como el almacenamiento en caché, las capas de almacenamiento y la codificación de borrado, junto con las últimas innovaciones de hardware como redes RDMA y unidades de NVMe, ofrecen eficiencia y rendimiento inigualable.
+Espacios de almacenamiento directo usa servidores estándar del sector con unidades conectadas localmente para crear almacenamiento definido por software de alta disponibilidad y escalabilidad por un porcentaje mínimo del costo de las matrices de SAN o NAS tradicionales. Su arquitectura convergente o hiperconvergida simplifica radicalmente el aprovisionamiento y la implementación, mientras que las características como el almacenamiento en caché, las capas de almacenamiento y la codificación de borrado, junto con las últimas innovaciones de hardware como redes RDMA y unidades de NVMe, ofrecen eficiencia y rendimiento inigualable.
 
 Espacios de almacenamiento directo está incluido en las compilaciones de Windows Server 2019 Datacenter, Windows Server 2016 Datacenter y [Windows Server Insider Preview](https://insider.windows.com/for-business-getting-started-server/). 
 
@@ -29,7 +29,7 @@ Para otras aplicaciones de espacios de almacenamiento, como clústeres de SAS co
 
 |       |       |
 |   -   |   -   |
-| **Descripción**<br><ul><li>Información general (estás aquí)</li><li>[Descripción de la memoria caché](understand-the-cache.md)</li><li>[Tolerancia a errores y eficiencia del almacenamiento](storage-spaces-fault-tolerance.md)<li>[Consideraciones de simetría de unidad](drive-symmetry-considerations.md)</li><li>[Comprender y controlar la resincronización de almacenamiento](understand-storage-resync.md)</li><li>[Descripción del cuórum de clúster y grupo](understand-quorum.md)</li><li>[Conjuntos de clústeres](cluster-sets.md)</li> | **Plan**<br><ul><li>[Requisitos de hardware](storage-spaces-direct-hardware-requirements.md)</li><li>[Usar la caché de lectura en memoria CSV](csv-cache.md)</li><li>[Elegir las unidades](choosing-drives.md)</li><li>[Planificar los volúmenes](plan-volumes.md)</li><li>[Usar clústeres de VM invitados](storage-spaces-direct-in-vm.md)</li><li>[Recuperación ante desastres](storage-spaces-direct-disaster-recovery.md)</li> |
+| **Descripción**<br><ul><li>Información general (estás aquí)</li><li>[Descripción de la memoria caché](understand-the-cache.md)</li><li>[Tolerancia a errores y eficiencia del almacenamiento](storage-spaces-fault-tolerance.md)<li>[Consideraciones de simetría de unidad](drive-symmetry-considerations.md)</li><li>[Comprender y controlar la resincronización de almacenamiento](understand-storage-resync.md)</li><li>[Descripción del cuórum de clúster y grupo](understand-quorum.md)</li><li>[Conjuntos de clústeres](cluster-sets.md)</li> | **Planificar**<br><ul><li>[Requisitos de hardware](storage-spaces-direct-hardware-requirements.md)</li><li>[Usar la caché de lectura en memoria CSV](csv-cache.md)</li><li>[Elegir las unidades](choosing-drives.md)</li><li>[Planificar los volúmenes](plan-volumes.md)</li><li>[Usar clústeres de VM invitados](storage-spaces-direct-in-vm.md)</li><li>[Recuperación ante desastres](storage-spaces-direct-disaster-recovery.md)</li> |
 | **Implementación**<br><ul><li>[Implementar espacios de almacenamiento directo](deploy-storage-spaces-direct.md)</li><li>[Crear volúmenes](create-volumes.md)</li><li>[Resistencia anidada](nested-resiliency.md)</li><li>[Configurar cuórum](../../failover-clustering/manage-cluster-quorum.md)</li><li>[Actualizar un clúster de espacios de almacenamiento directo a Windows Server 2019](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li><li>[Descripción e implementación de una memoria persistente](deploy-pmem.md)</li> | **Administrar**<br><ul><li>[Administrar con Windows Admin Center](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[Agregar servidores o unidades](add-nodes.md)</li><li>[Desconectar un servidor para realizar labores de mantenimiento](maintain-servers.md)</li><li>[Quitar servidores](remove-servers.md)</li><li>[Ampliar volúmenes](resize-volumes.md)</li><li>[Eliminar volúmenes](delete-volumes.md)</li><li>[Actualizar el firmware de la unidad](../update-firmware.md)</li><li>[Historial de rendimiento](performance-history.md)</li><li>[Delimitar la asignación de volúmenes](delimit-volume-allocation.md)</li><li>[Usar Azure Monitor en un clúster hiperconvergido](configure-azure-monitor.md)</li> |
 | **Solución de problemas**<br><ul><li>[Escenarios de solución de problemas](troubleshooting-storage-spaces.md)</li><li>[Solucionar problemas de Estados operativos y de estado](storage-spaces-states.md)</li><li>[Recopilación de datos de diagnóstico con Espacios de almacenamiento directo](data-collection.md)</li><li>[Administración del estado de memoria de clase de almacenamiento](Storage-class-memory-health.md)</li> | **Entradas de blog recientes**<br><ul><li>[13,7 millones IOPS con Espacios de almacenamiento directo: el nuevo registro del sector para la infraestructura hiperconvergida](https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/)</li><li>[Infraestructura hiperconvergida en Windows Server 2019: el reloj de la cuenta atrás comienza ahora.](https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/)</li><li>[Cinco anuncios grandes de la Cumbre de Windows Server](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap)</li><li>[10.000 Espacios de almacenamiento directo clústeres y recuento...](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/)</li> |
 
@@ -112,20 +112,20 @@ Hay [más de 10.000 clústeres](https://blogs.technet.microsoft.com/filecab/2018
 
 Visite [Microsoft.com/HCI](https://www.microsoft.com/hci) para leer sus historias:
 
-[![Grid de los logotipos de cliente](media/storage-spaces-direct-in-windows-server-2016/customer-stories.png)](https://www.microsoft.com/hci)
+[![cuadrícula de logotipos de cliente](media/storage-spaces-direct-in-windows-server-2016/customer-stories.png)](https://www.microsoft.com/hci)
 
 ## <a name="management-tools"></a>Herramientas de administración
 
 Las herramientas siguientes se pueden usar para administrar y/o supervisar Espacios de almacenamiento directo:
 
-| Nombre | ¿Gráfico o línea de comandos? | ¿Está pagado o incluido? |
+| Name | ¿Gráfico o línea de comandos? | ¿Está pagado o incluido? |
 |-----------------|----------------------------|-------------------|
 | [Windows Admin Center](../../manage/windows-admin-center/overview.md)     | Gr    | Incluido |
 | Administrador del servidor & Administrador de clústeres de conmutación por error                                 | Gr    | Incluido |
 | Windows PowerShell                                                        | Línea de comandos | Incluido |
-| [System Center Virtual Machine Manager (SCVMM)](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-storage-spaces-direct-vmm) <br>& [Operations Manager (SCOM)](https://www.microsoft.com/download/details.aspx?id=54700) | Gr    | De pago     |
+| [System Center Virtual Machine Manager (SCVMM)](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-storage-spaces-direct-vmm) <br>[Operations Manager & (SCOM)](https://www.microsoft.com/download/details.aspx?id=54700) | Gr    | Pagado     |
 
-## <a name="get-started"></a>Comenzar
+## <a name="get-started"></a>Introducción
 
 Prueba Espacios de almacenamiento directo [en Microsoft Azure](https://blogs.technet.microsoft.com/filecab/2016/05/05/s2dazuretp5/), o descarga una copia de evaluación con licencia para 180 días de Windows Server desde [Evaluaciones de Windows Server](https://go.microsoft.com/fwlink/?linkid=842602).
 

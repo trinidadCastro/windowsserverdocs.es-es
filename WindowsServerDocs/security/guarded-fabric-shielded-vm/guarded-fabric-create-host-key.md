@@ -1,19 +1,19 @@
 ---
 title: Crear una clave de host y agregarla a HGS
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: a12c8494-388c-4523-8d70-df9400bbc2c0
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 2aea6c8416a0f3af04ad6056c5d09a4d07708eaa
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 664b3cfc1e529fe3591f6477ae0eb0b64e32441a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322017"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856738"
 ---
 # <a name="create-a-host-key-and-add-it-to-hgs"></a>Crear una clave de host y agregarla a HGS
 
@@ -24,14 +24,14 @@ En este tema se describe cómo preparar hosts de Hyper-V para que se conviertan 
 
 ## <a name="create-a-host-key"></a>Crear una clave de host
 
-1.  Instale Windows Server 2019 en el equipo host de Hyper-V.
-2.  Instale las características de compatibilidad con Hyper-V y protección de host de Hyper-V:
+1.    Instale Windows Server 2019 en el equipo host de Hyper-V.
+2.    Instale las características de compatibilidad con Hyper-V y protección de host de Hyper-V:
 
     ```powershell
     Install-WindowsFeature Hyper-V, HostGuardian -IncludeManagementTools -Restart
     ``` 
 
-3.  Generar una clave de host automáticamente o seleccionar un certificado existente. Si usa un certificado personalizado, debe tener al menos una clave RSA de 2048 bits, un EKU de autenticación de cliente y el uso de la clave de firma digital.
+3.    Generar una clave de host automáticamente o seleccionar un certificado existente. Si usa un certificado personalizado, debe tener al menos una clave RSA de 2048 bits, un EKU de autenticación de cliente y el uso de la clave de firma digital.
 
     ```powershell
     Set-HgsClientHostKey
@@ -41,17 +41,17 @@ En este tema se describe cómo preparar hosts de Hyper-V para que se conviertan 
     Esto puede ser útil si desea compartir un certificado entre varios equipos o usar un certificado enlazado a un TPM o a un HSM. A continuación se muestra un ejemplo de creación de un certificado enlazado a TPM (que impide que se robe y se use la clave privada en otra máquina y que solo requiera un TPM 1,2):
 
     ```powershell
-    $tpmBoundCert = New-SelfSignedCertificate -Subject “Host Key Attestation ($env:computername)” -Provider “Microsoft Platform Crypto Provider”
+    $tpmBoundCert = New-SelfSignedCertificate -Subject "Host Key Attestation ($env:computername)" -Provider "Microsoft Platform Crypto Provider"
     Set-HgsClientHostKey -Thumbprint $tpmBoundCert.Thumbprint
     ```
 
-4.  Obtenga la mitad pública de la clave que se va a proporcionar al servidor HGS. Puede usar el siguiente cmdlet de o, si tiene el certificado almacenado en otro lugar, proporcione un. cer que contenga la mitad pública de la clave. Tenga en cuenta que solo almacenamos y validamos la clave pública en HGS; no se conserva ninguna información de certificado ni se valida la cadena de certificados o la fecha de expiración.
+4.    Obtenga la mitad pública de la clave que se va a proporcionar al servidor HGS. Puede usar el siguiente cmdlet de o, si tiene el certificado almacenado en otro lugar, proporcione un. cer que contenga la mitad pública de la clave. Tenga en cuenta que solo almacenamos y validamos la clave pública en HGS; no se conserva ninguna información de certificado ni se valida la cadena de certificados o la fecha de expiración.
 
     ```powershell
     Get-HgsClientHostKey -Path "C:\temp\$env:hostname-HostKey.cer"
     ```
 
-5.  Copie el archivo. cer en el servidor de HGS.
+5.    Copie el archivo. cer en el servidor de HGS.
 
 ## <a name="add-the-host-key-to-the-attestation-service"></a>Agregar la clave de host al servicio de atestación
 

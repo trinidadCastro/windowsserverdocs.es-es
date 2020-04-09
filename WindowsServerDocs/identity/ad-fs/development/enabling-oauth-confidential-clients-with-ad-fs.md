@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5a64e790-6725-4099-aa08-8067d57c3168
 title: Compilar una aplicación del lado servidor con clientes confidenciales de OAuth con AD FS 2016 o posterior
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5b2bf036de1de8300e36c3413c551e51d408a4d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8a8567a497e10df66f77fb996c937791b4aa9e08
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407869"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857568"
 ---
 # <a name="build-a-server-side-application-using-oauth-confidential-clients-with-ad-fs-2016-or-later"></a>Compilar una aplicación del lado servidor con clientes confidenciales de OAuth con AD FS 2016 o posterior
 
@@ -38,7 +37,7 @@ En la siguiente sección se describe cómo configurar el grupo de aplicaciones e
 
 1.  En administración de AD FS, haga clic con el botón derecho en grupos de aplicaciones y seleccione **Agregar grupo de aplicaciones**.  
 
-2.  En el Asistente para grupos de aplicaciones, en **nombre** , escriba **ADFSOAUTHCC** y en **aplicaciones cliente-servidor** seleccione la plantilla **aplicación de servidor que tiene acceso a una API Web** .  Haz clic en **Siguiente**.  
+2.  En el Asistente para grupos de aplicaciones, en **nombre** , escriba **ADFSOAUTHCC** y en **aplicaciones cliente-servidor** seleccione la plantilla **aplicación de servidor que tiene acceso a una API Web** .  Haga clic en **Siguiente**.  
 
     ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_2.PNG)  
 
@@ -46,13 +45,13 @@ En la siguiente sección se describe cómo configurar el grupo de aplicaciones e
 
     ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_3.PNG)  
 
-4.  Escriba lo siguiente para el **URI de redirección:**  -  **https://localhost:44323** .  Haz clic en **Agregar**. Haz clic en **Siguiente**.  
+4.  Escriba lo siguiente en **URI de redirección:**  -  **https://localhost:44323** .  Haga clic en **Agregar**. Haga clic en **Siguiente**.  
 
-5.  En la pantalla **configurar credenciales de aplicación** , active la casilla **generar un secreto compartido** y copie el secreto.  Se usará más adelante como valor de **ida: ClientSecret** en el archivo Web. config de aplicaciones.  Haz clic en **Siguiente**.  
+5.  En la pantalla **configurar credenciales de aplicación** , active la casilla **generar un secreto compartido** y copie el secreto.  Se usará más adelante como valor de **ida: ClientSecret** en el archivo Web. config de aplicaciones.  Haga clic en **Siguiente**.  
 
     ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_4.PNG)   
 
-6. En la pantalla **configurar API Web** , escriba lo siguiente para -  **https://contoso.com/WebApp** Identifier.  Haz clic en **Agregar**. Haz clic en **Siguiente**.  Este valor se usará más adelante para **ida: GraphResourceId** en el archivo Web. config de las aplicaciones.  
+6. En la pantalla **configurar API Web** , escriba lo siguiente en **identificador** -  **https://contoso.com/WebApp** .  Haga clic en **Agregar**. Haga clic en **Siguiente**.  Este valor se usará más adelante para **ida: GraphResourceId** en el archivo Web. config de las aplicaciones.  
 
     ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_9.PNG)  
 
@@ -60,7 +59,7 @@ En la siguiente sección se describe cómo configurar el grupo de aplicaciones e
 
     ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_7.PNG)  
 
-8. En la pantalla **configurar permisos de aplicación** , asegúrese de que **OpenID** y **user_impersonation** están seleccionados y haga clic en **siguiente**.  
+8. En la pantalla **configurar permisos de aplicación** , asegúrese de que **OpenID** y **user_impersonation** estén seleccionados y haga clic en **siguiente**.  
 
     ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_8.PNG)  
 
@@ -115,14 +114,14 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
     ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_18.PNG)  
 
-9.  Ahora, abra el archivo Web. config y reemplace el valor que se encuentra en connectionString por el valor que copió anteriormente.  Guarde el archivo Web. config.  
+9.  Ahora, abra el archivo Web. config y reemplace el valor que se encuentra en connectionString por el valor que copió anteriormente.  Guarde el archivo Web.config.  
 
     > [!NOTE]  
     > Los pasos anteriores son necesarios para que podamos obtener la nueva connectionString.  De lo contrario, cuando ejecute UPDATE-Database debajo, se producirá un error.  
 
     ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_19.PNG)  
 
-10. En la parte superior de Visual Studio, seleccione **ver** ->  otra**consola del administrador de paquetes**de**Windows** -> .  
+10. En la parte superior de Visual Studio, seleccione **ver** -> otra **consola del administrador de paquetes**de **Windows** -> .  
 
     ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_20.PNG)  
 
@@ -173,7 +172,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
         public static readonly string Authority = "https://<your_fsname>/adfs";  
         ```  
 
-        donde < > your_fsname se reemplaza por la parte de DNS de la dirección URL del servicio de Federación, por ejemplo, adfs.contoso.com  
+        donde < your_fsname > se reemplaza por la parte de DNS de la dirección URL del servicio de Federación, por ejemplo adfs.contoso.com  
 
         ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_25.PNG)  
 
@@ -221,7 +220,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
         ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_34.PNG)  
 
-## <a name="test-the-solution"></a>Prueba de la solución  
+## <a name="test-the-solution"></a>Probar la solución  
 En esta sección se probará la solución de cliente confidencial.  Use el procedimiento siguiente para probar la solución.  
 
 #### <a name="testing-the-confidential-client-solution"></a>Probar la solución de cliente confidencial  
@@ -234,7 +233,7 @@ En esta sección se probará la solución de cliente confidencial.  Use el proce
 
    ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_31.PNG)  
 
-3. Observe ahora que el sitio de ASP.NET dice Hello abby@contoso.com!.  Haga clic en **perfil**.  
+3. Observe ahora que el sitio de ASP.NET dice Hola abby@contoso.com!.  Haga clic en **Perfil**.  
 
    ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_32.PNG)  
 

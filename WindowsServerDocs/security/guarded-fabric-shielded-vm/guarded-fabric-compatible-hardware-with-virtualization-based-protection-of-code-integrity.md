@@ -1,19 +1,19 @@
 ---
 title: Hardware compatible con la protección basada en la virtualización de Windows Server de la integridad del código
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 15ded82c-f70f-4efb-9e26-2731127931af
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 5a9a4b91cc3528ce59f8ef3e4952b6162ca5c74e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 32194d6f0634ab9cee90b321ea7a1f3e2769542d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403687"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856878"
 ---
 # <a name="compatible-hardware-with-windows-server-virtualization-based-protection-of-code-integrity"></a>Hardware compatible con la protección basada en la virtualización de Windows Server de la integridad del código
 
@@ -21,7 +21,7 @@ ms.locfileid: "71403687"
 
 Windows Server 2016 presentó una nueva protección de código basada en la virtualización para ayudar a proteger las máquinas virtuales y físicas de los ataques que modifican el código del sistema. Para lograr este alto nivel de protección, Microsoft trabaja conjuntamente con los fabricantes de hardware de los equipos (fabricantes de equipos originales o OEM) para evitar escrituras malintencionadas en el código de ejecución del sistema. Esta protección se puede aplicar a cualquier sistema y se utiliza como uno de los bloques de creación para implementar el estado del host de Hyper-V para máquinas virtuales blindadas (VM). 
 
-Como con cualquier protección basada en hardware, algunos sistemas podrían no ser compatibles debido a problemas como el marcado incorrecto de páginas de memoria como archivos ejecutables o al intentar modificar código en tiempo de ejecución, lo que puede producir errores inesperados, como la pérdida de datos o un color azul error de pantalla (también denominado error de detención). 
+Como con cualquier protección basada en hardware, algunos sistemas podrían no ser compatibles debido a problemas como el marcado incorrecto de páginas de memoria como archivos ejecutables o al intentar modificar código en tiempo de ejecución, lo que puede producir errores inesperados, como la pérdida de datos o un error de pantalla azul (también denominado error de detención). 
 
 Para ser compatible y totalmente compatible con la nueva característica de seguridad, los OEM deben implementar la tabla de direcciones de memoria definida en UEFI 2,6, que se publicó en enero de 2016. La adopción del nuevo estándar UEFI lleva tiempo; mientras tanto, para evitar que los clientes encuentren problemas, queremos proporcionar información sobre los sistemas y las configuraciones que hemos probado en este conjunto de características con, así como los sistemas que sabemos que no son compatibles. 
 

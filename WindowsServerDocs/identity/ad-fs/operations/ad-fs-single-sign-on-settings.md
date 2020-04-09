@@ -1,7 +1,6 @@
 ---
 ms.assetid: 1a443181-7ded-4912-8e40-5aa447faf00c
 title: Configuración de inicio de sesión único de AD FS 2016
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 76c34dc518f4578b4ae2ead3459f1d79c191b3d7
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bad6ad9a95618239825366187c8083c1fe77ae94
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949195"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860088"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS la configuración de inicio de sesión único
 
@@ -40,7 +39,7 @@ AD FS admite varios tipos de experiencias de inicio de sesión único:
   
      En el escenario de OAuth, se usa un token de actualización para mantener el estado de SSO del usuario dentro del ámbito de una aplicación determinada.  
   
-     Si se registra un dispositivo, AD FS establecerá la hora de expiración de un token de actualización en función de la duración de las cookies de SSO persistentes para un dispositivo registrado que tenga siete días de forma predeterminada para AD FS 2012R2 y hasta un máximo de 90 días con AD FS 2016 si usan su dispositivo para acceder a AD FS recursos en un período de 14 días. 
+     Si un dispositivo está registrado, AD FS establecerá la hora de expiración de un token de actualización en función de la duración de las cookies de SSO persistentes para un dispositivo registrado, que es de 7 días de forma predeterminada para AD FS 2012R2 y hasta un máximo de 90 días con AD FS 2016 si usan su dispositivo para acceder a AD FS recursos en un período de 14 días. 
 
 Si el dispositivo no está registrado pero un usuario selecciona la opción "mantener la sesión iniciada", la fecha de expiración del token de actualización será igual a la duración de las cookies de SSO persistentes para "mantener la sesión iniciada", que es 1 día de forma predeterminada con un máximo de 7 días. De lo contrario, la vigencia del token de actualización es igual a la duración de la cookie de SSO de sesión, que es de 8 horas  
   
@@ -165,21 +164,21 @@ En Resumen:
  <tr align="center">
     <td>SSO =&gt;establecer token de actualización =&gt;</td>
     <td>8 horas</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>N/D</td>
+    <td>N/D</td>
     <th></th>
     <td>8 horas</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>N/D</td>
+    <td>N/D</td>
   </tr>
 
  <tr align="center">
     <td>PSSO =&gt;establecer token de actualización =&gt;</td>
-    <td>N/A</td>
+    <td>N/D</td>
     <td>24 horas</td>
     <td>7 días</td>
     <th></th>
-    <td>N/A</td>
+    <td>N/D</td>
     <td>24 horas</td>
     <td>Ventana máx. 90 días con 14 días</td>
   </tr>

@@ -2,21 +2,19 @@
 title: Instalar el rol de Hyper-V en Windows Server
 description: Proporciona instrucciones para la instalación de Hyper-V con Administrador del servidor o Windows PowerShell.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 8e871317-09d2-4314-a6ec-ced12b7aee89
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 12/02/2016
-ms.openlocfilehash: 2687a907852e2a81f03b147df1425cd01b34fb76
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4d8f2343f0935ea7185890319a3e33564750572
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392813"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860828"
 ---
 # <a name="install-the-hyper-v-role-on-windows-server"></a>Instalar el rol de Hyper-V en Windows Server
 
@@ -36,7 +34,7 @@ Si desea instalar solo las herramientas de administración, como el administrado
   
 1. En el menú **Administrador del servidor** del menú **Administrar**, haz clic en **Agregar roles y características**.  
   
-2. En la página **Antes de comenzar**, compruebe que el servidor de destino y el entorno de red estén preparados para el rol y la característica que desea instalar. Haz clic en **Siguiente**.  
+2. En la página **Antes de comenzar**, compruebe que el servidor de destino y el entorno de red estén preparados para el rol y la característica que desea instalar. Haga clic en **Siguiente**.  
   
 3. En la página **Seleccionar tipo de instalación**, seleccione **Instalación basada en características o en roles** y, a continuación, en **Siguiente**.  
   

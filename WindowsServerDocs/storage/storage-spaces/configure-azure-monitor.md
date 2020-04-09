@@ -1,20 +1,18 @@
 ---
 title: Comprender y configurar Azure Monitor
 description: Información de configuración detallada sobre qué es Azure Monitor y cómo configurar el correo electrónico y las alertas de SMS para el clúster de espacios de almacenamiento directo en Windows Server 2016 y 2019.
-keywords: Espacios de almacenamiento directo, Azure monitor, notificaciones, correo electrónico, SMS
-ms.assetid: ''
 ms.prod: windows-server
 ms.author: adagashe
 ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 01/10/2020
-ms.openlocfilehash: 878bbce9543439cf78501e496c59e06e077c5ddc
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: fa4d8793c07cabd39ee6cc0d54b5cddc84eac202
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308179"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859048"
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>Usar Azure Monitor para enviar correos electrónicos de Servicio de mantenimiento errores
 

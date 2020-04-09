@@ -2,22 +2,18 @@
 title: Control de acceso basado en roles
 description: Este tema forma parte de la guía de administración de la administración de direcciones IP (IPAM) en Windows Server 2016.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ecdfc589-fa14-4bb3-ab7e-456ebc719385
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: dc4dc26a5079a34cdaa3d455e59f6bfb4d1f74c1
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ae5e36e9c0931ca5735df6111f73e87ef012ee5d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309519"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860598"
 ---
 # <a name="role-based-access-control"></a>Control de acceso basado en roles
 

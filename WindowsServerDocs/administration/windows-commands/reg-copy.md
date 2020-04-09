@@ -1,24 +1,20 @@
 ---
 title: copiar reg
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3fe74213-39ec-4b2d-ba3d-086243eac997
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a82b17b631d4242fa6affdec0ff67b5b09380550
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2acfdd3c0ad66d93313a11f8025b690ea0157c2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371778"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836538"
 ---
 # <a name="reg-copy"></a>copiar reg
 
@@ -34,7 +30,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 reg copy <KeyName1> <KeyName2> [/s] [/f]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -44,7 +40,7 @@ reg copy <KeyName1> <KeyName2> [/s] [/f]
 |/f|Copia la subclave sin pedir confirmación.|
 |/?|Muestra la ayuda de la copia **reg** en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Reg no pide confirmación al copiar una subclave.
 -   En la tabla siguiente se enumeran los valores devueltos para la operación de **copia de reg** .
@@ -54,7 +50,7 @@ reg copy <KeyName1> <KeyName2> [/s] [/f]
 |0|Correcto|
 |1|Error|
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para copiar todas las subclaves y valores de la clave MyApp en la clave SaveMyApp, escriba:
 ```
@@ -65,6 +61,6 @@ Para copiar todos los valores de la clave MyCo del equipo denominado zodíaco en
 REG COPY \\ZODIAC\HKLM\Software\MyCo HKLM\Software\MyCo1
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

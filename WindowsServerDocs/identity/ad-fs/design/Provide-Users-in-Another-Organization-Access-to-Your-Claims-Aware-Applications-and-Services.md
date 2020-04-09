@@ -1,7 +1,6 @@
 ---
 ms.assetid: de7e1e4a-f96d-4b59-ac9b-f65f5d37a96f
 title: Proporcionar a los usuarios de otra organización acceso a aplicaciones y servicios habilitados para notificaciones
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a0b2429599036f2893f23df7921a11c8232d9f67
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e47197a980c9bcb576d6634a0031a8ae13afbfd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359069"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858608"
 ---
 # <a name="provide-users-in-another-organization-access-to-your-claims-aware-applications-and-services"></a>Proporcionar a los usuarios de otra organización acceso a aplicaciones y servicios habilitados para notificaciones
 
@@ -33,7 +32,7 @@ Los componentes siguientes son necesarios para este objetivo de implementación:
   
 -   **Active Directory Domain Services \(AD DS\):** El servidor de Federación del asociado de recurso debe estar unido a un dominio de Active Directory.  
   
--   **DNS perimetral:** El sistema de nombres de dominio \(\) DNS debe contener un host simple \(un registro de recursos de\) para que los equipos cliente puedan encontrar el servidor de Federación del asociado de recurso y el servidor Web. El servidor DNS puede hospedar otros registros DNS que también son necesarios en la red perimetral. Para obtener más información, consulte [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md).  
+-   **DNS perimetral:** El sistema de nombres de dominio \(\) DNS debe contener un host simple \(un registro de recursos de\) para que los equipos cliente puedan encontrar el servidor de Federación del asociado de recurso y el servidor Web. El servidor DNS puede hospedar otros registros DNS que también son necesarios en la red perimetral. Para obtener más información, consulta [Requisitos de resolución de nombres para los servidores de federación](Name-Resolution-Requirements-for-Federation-Servers.md).  
   
 -   **Servidor de Federación del asociado de recurso:** El servidor de Federación del asociado de recurso valida AD FS tokens que envían los asociados de cuenta. La detección de asociado de cuenta se realiza a través de este servidor de Federación. Para obtener más información, consulte [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md).  
   

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 16a344a9-f9a6-4ae2-9bea-c79a0075fd04
 title: Atestación de clave de TPM
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d7104daaa10cf7093370cb309e0366e1ab2b9b51
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de5a38ff6f811046d06c52a1ca4598f9650b3cfe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389863"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823018"
 ---
 # <a name="tpm-key-attestation"></a>Atestación de clave de TPM
 
@@ -25,7 +24,7 @@ ms.locfileid: "71389863"
 > [!NOTE]  
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.  
   
-## <a name="overview"></a>Introducción  
+## <a name="overview"></a>Información general  
 Aunque la compatibilidad con las claves protegidas con TPM ha existido desde Windows 8, no había ningún mecanismo para que las CA atestiguaran criptográficamente que la clave privada del solicitante de certificados está protegida realmente por un Módulo de plataforma segura (TPM). Esta actualización permite a una CA realizar esa atestación y reflejar la atestación en el certificado emitido.  
   
 > [!NOTE]  
@@ -41,7 +40,7 @@ Aunque la compatibilidad con las claves protegidas con TPM ha existido desde Win
 |EKCert|Certificado EK. Un certificado emitido por el fabricante del TPM para EKPub. No todos los TPM tienen EKCert.|  
 |TPM|Módulo de plataforma segura. Un TPM está diseñado para proporcionar funciones relacionadas con la seguridad basadas en hardware. El chip del TPM es un procesador de criptografía seguro diseñado para realizar operaciones criptográficas. El chip incluye varios mecanismos de seguridad física que hacen que sea resistente a las alteraciones y que las funciones de seguridad no permitan que el software malintencionado realice alteraciones.|  
   
-### <a name="background"></a>Background  
+### <a name="background"></a>Fondo  
 A partir de Windows 8, se puede usar un Módulo de plataforma segura (TPM) para proteger la clave privada de un certificado. El proveedor de almacenamiento de claves (KSP) del proveedor de criptografía de plataforma de Microsoft habilita esta característica. Había dos preocupaciones con la implementación:  
 
 -   No se garantiza que una clave esté realmente protegida por un TPM (alguien puede suplantar fácilmente un KSP de software como un KSP de TPM con credenciales de administrador local).
@@ -67,7 +66,7 @@ En general, la atestación de clave de TPM se basa en los pilares siguientes:
   
 4.  La CA emite un certificado con un OID de directiva de emisión especial para indicar que ahora se ha atestado a la clave para que la proteja un TPM.  
   
-## <a name="BKMK_DeploymentOverview"></a>Información general sobre la implementación  
+## <a name="deployment-overview"></a><a name="BKMK_DeploymentOverview"></a>Información general sobre la implementación  
 En esta implementación, se supone que se ha configurado una CA de Windows Server 2012 R2 Enterprise. Además, los clientes (Windows 8.1) se configuran para inscribirse en esa CA de empresa mediante plantillas de certificado. 
 
 Hay tres pasos para implementar la atestación de clave de TPM:  
@@ -101,9 +100,9 @@ Hay tres pasos para implementar la atestación de clave de TPM:
     > -   No se admite la atestación de clave de TPM para una CA independiente.  
     > -   La atestación de clave de TPM no admite [el procesamiento de certificados no persistente](https://technet.microsoft.com/library/ff934598).  
   
-## <a name="BKMK_DeploymentDetails"></a>Detalles de la implementación  
+## <a name="deployment-details"></a><a name="BKMK_DeploymentDetails"></a>Detalles de la implementación  
   
-### <a name="BKMK_ConfigCertTemplate"></a>Configurar una plantilla de certificado  
+### <a name="configure-a-certificate-template"></a><a name="BKMK_ConfigCertTemplate"></a>Configurar una plantilla de certificado  
 Para configurar la plantilla de certificado para la atestación de clave de TPM, realice los pasos de configuración siguientes:  
   
 1.  Pestaña **compatibilidad**  
@@ -155,8 +154,8 @@ Para configurar la plantilla de certificado para la atestación de clave de TPM,
     |OID|Tipo de atestación de clave|Descripción|Nivel de seguridad|  
     |-------|------------------------|---------------|-------------------|  
     |1.3.6.1.4.1.311.21.30|EK|"EK verificado": para la lista administrada por el administrador de EK|Alto|  
-    |1.3.6.1.4.1.311.21.31|Certificado de aprobación|"Certificado EK comprobado": cuando se valida la cadena de certificados EK|Medio|  
-    |1.3.6.1.4.1.311.21.32|Credenciales de usuario|"EK de confianza en uso": para la EK con atestación del usuario|Baja|  
+    |1.3.6.1.4.1.311.21.31|Certificado de aprobación|"Certificado EK comprobado": cuando se valida la cadena de certificados EK|Media|  
+    |1.3.6.1.4.1.311.21.32|Credenciales de usuario|"EK de confianza en uso": para la EK con atestación del usuario|Bajo|  
   
     Los OID se insertarán en el certificado emitido si se selecciona **incluir directivas de emisión** (la configuración predeterminada).  
   
@@ -165,7 +164,7 @@ Para configurar la plantilla de certificado para la atestación de clave de TPM,
     > [!TIP]  
     > Un uso potencial de tener el OID presente en el certificado es limitar el acceso a redes VPN o inalámbricas a determinados dispositivos. Por ejemplo, la Directiva de acceso podría permitir la conexión (o el acceso a una VLAN diferente) si OID 1.3.6.1.4.1.311.21.30 está presente en el certificado. Esto le permite limitar el acceso a los dispositivos cuyo TPM EK esté presente en la lista EKPUB.  
   
-### <a name="BKMK_CAConfig"></a>Configuración de CA  
+### <a name="ca-configuration"></a><a name="BKMK_CAConfig"></a>Configuración de CA  
   
 1.  **Configuración de almacenes de certificados EKCA y EKROOT en una CA emisora**  
   
@@ -199,9 +198,9 @@ Para configurar la plantilla de certificado para la atestación de clave de TPM,
   
         El comando EndorsementKeyListDirectories en certutil es una configuración del registro como se describe en la tabla siguiente.  
   
-        |Nombre de valor|Tipo|data|  
+        |Nombre de valor|Tipo|Datos|  
         |--------------|--------|--------|  
-        |EndorsementKeyListDirectories|REG_MULTI_SZ|< ruta de acceso LOCAL o UNC a EKPUB permitir listas ><br /><br />Por ejemplo:<br /><br />*\\\blueCA.contoso.com\ekpub*<br /><br />*\\\bluecluster1.contoso.com\ekpub*<br /><br />D:\ekpub|  
+        |EndorsementKeyListDirectories|REG_MULTI_SZ|< ruta de acceso LOCAL o UNC a EKPUB permitir listas ><p>Ejemplo:<p>*\\\blueCA.contoso.com\ekpub*<p>*\\\bluecluster1.contoso.com\ekpub*<p>D:\ekpub|  
   
         \\HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration <CA Sanitized Name>  
   
@@ -218,7 +217,7 @@ Para configurar la plantilla de certificado para la atestación de clave de TPM,
         PS C:>$b=new-item $a.PublicKeyHash -ItemType file  
         ```  
   
-## <a name="troubleshooting"></a>Solución de problemas  
+## <a name="troubleshooting"></a>Solucionar problemas  
   
 ### <a name="key-attestation-fields-are-unavailable-on-a-certificate-template"></a>Los campos de atestación de clave no están disponibles en una plantilla de certificado  
 Los campos de atestación de clave no están disponibles si la configuración de la plantilla no cumple los requisitos de atestación. Los motivos comunes son los siguientes:  

@@ -5,15 +5,15 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
-manager: brianlic
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 5e1ed095b3180f3aebd25381ec9086445bb141ec
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+manager: dcscontentpm
+ms.author: v-tea
+author: Teresa-Motiv
+ms.openlocfilehash: 2e902f3aea4025afe4f475c45193710a8b474dcd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316623"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862228"
 ---
 # <a name="choosing-a-network-adapter"></a>Elección de un adaptador de red
 
@@ -100,27 +100,27 @@ A continuación se muestran los parámetros **set-NetAdapterRss** adicionales qu
 
 - **\* MaxProcessors**: establece el número máximo de procesadores RSS que se van a utilizar. Esto garantiza que el tráfico de la aplicación está enlazado a un número máximo de procesadores en una interfaz determinada. Sintaxis de ejemplo:
 
-     `Set-NetAdapterRss –Name “Ethernet” –MaxProcessors <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –MaxProcessors <value>`
 
 - **\* BaseProcessorGroup**: establece el grupo de procesadores base de un nodo Numa. Esto afecta a la matriz de procesadores que usa RSS. Sintaxis de ejemplo:
 
-     `Set-NetAdapterRss –Name “Ethernet” –BaseProcessorGroup <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –BaseProcessorGroup <value>`
   
 - **\* MaxProcessorGroup**: establece el grupo de procesadores máximo de un nodo Numa. Esto afecta a la matriz de procesadores que usa RSS. Si se establece, se restringirá un grupo de procesadores máximo para que el equilibrio de carga se alinee dentro de un grupo k. Sintaxis de ejemplo:
 
-     `Set-NetAdapterRss –Name “Ethernet” –MaxProcessorGroup <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –MaxProcessorGroup <value>`
 
 - **\* BaseProcessorNumber**: establece el número de procesador base de un nodo Numa. Esto afecta a la matriz de procesadores que usa RSS. Esto permite la creación de particiones en los adaptadores de red. Este es el primer procesador lógico del intervalo de procesadores RSS que se asigna a cada adaptador. Sintaxis de ejemplo:
 
-     `Set-NetAdapterRss –Name “Ethernet” –BaseProcessorNumber <Byte Value>`
+     `Set-NetAdapterRss –Name "Ethernet" –BaseProcessorNumber <Byte Value>`
 
 - **\* NumaNode**: el nodo Numa desde el que cada adaptador de red puede asignar memoria. Puede estar dentro de un grupo k o de distintos grupos k. Sintaxis de ejemplo:
 
-     `Set-NetAdapterRss –Name “Ethernet” –NumaNodeID <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –NumaNodeID <value>`
 
 - **\* NumberofReceiveQueues**: si los procesadores lógicos parecen estar infrautilizados para recibir tráfico \(por ejemplo, como se ve en el administrador de tareas\), puede intentar aumentar el número de colas RSS desde el valor predeterminado de 2 al máximo compatible con el adaptador de red. Es posible que el adaptador de red tenga opciones para cambiar el número de colas de RSS como parte del controlador. Sintaxis de ejemplo:
 
-     `Set-NetAdapterRss –Name “Ethernet” –NumberOfReceiveQueues <value>`
+     `Set-NetAdapterRss –Name "Ethernet" –NumberOfReceiveQueues <value>`
 
 Para obtener más información, haga clic en el siguiente vínculo para descargar [redes escalables: eliminar el cuello de botella de procesamiento de recepción: Introducción a RSS](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc) en formato de Word.
   
@@ -190,7 +190,7 @@ En el escenario anterior, se admite y funciona el RSC IPv4 en la interfaz. Para 
 A continuación se muestra un resultado de ejemplo al ejecutar el cmdlet Get-NetAdapterStatistics.
 
 ```  
-PS C:\Users\Administrator> $x = Get-NetAdapterStatistics “myAdapter”   
+PS C:\Users\Administrator> $x = Get-NetAdapterStatistics "myAdapter"   
 PS C:\Users\Administrator> $x.rscstatistics  
   
 CoalescedBytes       : 0  

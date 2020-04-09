@@ -2,18 +2,18 @@
 title: Espacios de almacenamiento directo caché de lectura en memoria
 ms.prod: windows-server
 ms.author: eldenc
-ms.manager: siroy
+manager: siroy
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 02/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 83fc923f505531f955fc0131d7dcc1ce98974daa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d9ebc40b69373dafbebdb87f2abe624a5a7a4375
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394088"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858958"
 ---
 # <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>Uso de Espacios de almacenamiento directo con la memoria caché de lectura en memoria de CSV
 > Se aplica a: Windows Server 2016, Windows Server 2019
@@ -40,9 +40,9 @@ Puede usar hasta el 80% de la memoria física total para la caché de lectura en
 
 La memoria caché de lectura en memoria de CSV está disponible en Windows Server 2016 y Windows Server 2019 con la misma funcionalidad. En Windows Server 2016, está desactivado de forma predeterminada. En Windows Server 2019, está activado de forma predeterminada con 1 GB asignado.
 
-| Versión del sistema operativo          | Tamaño predeterminado de caché de CSV |
+| Versión de SO          | Tamaño predeterminado de caché de CSV |
 |---------------------|------------------------|
-| Windows Server 2016 | 0 (deshabilitado)           |
+| Windows Server 2016 | 0 (deshabilitada)           |
 | Windows Server 2019 | 1 GiB                   |
 
 Para ver cuánta memoria se asigna mediante PowerShell, ejecute:

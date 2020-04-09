@@ -1,7 +1,6 @@
 ---
 ms.assetid: fd427da3-3869-428f-bf2a-56c4b7d99b40
 title: Bloquear la clonación en ReFS
-description: ''
 author: gawatu
 ms.author: gawatu
 manager: gawatu
@@ -9,16 +8,16 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-file-systems
-ms.openlocfilehash: 81186624e19f9235cbdf8c7f0d44bd2927a68099
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b133e518c4226c516974ca89a457cf0aa64cac7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394023"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861358"
 ---
 # <a name="block-cloning-on-refs"></a>Bloquear la clonación en ReFS
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 La clonación de bloques da la orden al sistema de archivos para que copie un intervalo de bytes del archivo en nombre de una aplicación, en el que el archivo de destino puede que sea el mismo o diferente del archivo de origen. Las operaciones de copia son, desgraciadamente, costosas ya que se desencadenan caras lecturas y escrituras en los datos físicos subyacentes. 
 

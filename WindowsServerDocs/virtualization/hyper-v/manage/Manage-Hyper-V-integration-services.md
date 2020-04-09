@@ -2,20 +2,19 @@
 title: Administrar Integration Services de Hyper-V
 description: Describe cómo activar y desactivar los servicios de integración e instalarlos si es necesario.
 ms.technology: compute-hyper-v
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 manager: dongill
 ms.date: 12/20/2016
 ms.topic: article
 ms.prod: windows-server
-ms.service: na
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: bcf8109530043f5e0a6d141c484233c4364fb307
-ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
+ms.openlocfilehash: 2c5e2d67b391cd53a6995957da5dab108a34e1a9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78169575"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820718"
 ---
 >Se aplica a: Windows 10, Windows Server 2012, Windows Server 2012R2, Windows Server 2016 y Windows Server 2019
 
@@ -267,7 +266,7 @@ Se recomienda mantener actualizados los servicios de integración para obtener e
 | Windows Server, Canal semianual | Windows Update | |
 | Windows Server 2012 R2 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Server 2012 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
-| Windows Server 2008 R2 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
+| Windows Server 2008 R2 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Server 2008 (SP 2) | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Home Server 2011 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Small Business Server 2011 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
@@ -289,7 +288,7 @@ Se recomienda mantener actualizados los servicios de integración para obtener e
 | - | | |
 | Windows Server 2012 R2 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Server 2012 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
-| Windows Server 2008 R2 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes.|
+| Windows Server 2008 R2 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes.|
 | Windows Server 2008 (SP 2) | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Home Server 2011 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
 | Windows Small Business Server 2011 | Disco de servicios de integración | Vea las [instrucciones](#install-or-update-integration-services)siguientes. |
@@ -307,7 +306,7 @@ Para obtener más información sobre los invitados de Linux, consulte [máquinas
 
 Procedimiento para instalar o actualizar manualmente Integration Services:
 
-1.  Abra el Administrador de Hyper-V. En el menú herramientas de Administrador del servidor, haga clic en **Administrador de Hyper-V**.  
+1.  Abre el Administrador Hyper-V. En el menú herramientas de Administrador del servidor, haga clic en **Administrador de Hyper-V**.  
   
 2.  Conéctese a la máquina virtual. Haga clic con el botón secundario en la máquina virtual y haga clic en **conectar**.  
   

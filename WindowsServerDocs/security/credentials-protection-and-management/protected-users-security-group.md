@@ -1,24 +1,20 @@
 ---
 title: Grupo de seguridad de usuarios protegidos
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f296
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 10234611904a4ed5b58939d3fd5ca341221c073c
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: c6883513fdc02f4f4d1b874995780639279cc178
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259150"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857058"
 ---
 # <a name="protected-users-security-group"></a>Grupo de seguridad de usuarios protegidos
 
@@ -26,7 +22,7 @@ ms.locfileid: "76259150"
 
 En este tema dirigido a profesionales de TI se describe el grupo de seguridad de usuarios protegidos de Active Directory y se explica cómo funciona. Este grupo se presentó en los controladores de dominio de Windows Server 2012 R2.
 
-## <a name="BKMK_ProtectedUsers"></a>Información general
+## <a name="overview"></a><a name="BKMK_ProtectedUsers"></a>Visión
 
 Este grupo de seguridad está diseñado como parte de una estrategia para administrar la exposición de credenciales en la empresa. Las cuentas de los miembros de este grupo reciben automáticamente protecciones que no son configurables. La pertenencia al grupo de usuarios protegidos es de naturaleza restrictiva y segura proactivamente de forma predeterminada. El único método con el que estas protecciones de cuenta se pueden modificar consiste en quitar la cuenta del grupo de seguridad.
 
@@ -38,7 +34,7 @@ Este grupo global relacionado con el dominio desencadena una protección no conf
 Para obtener más información, vea [Cómo funciona el grupo de usuarios protegidos](#BKMK_HowItWorks) en este tema.
 
 
-## <a name="BKMK_Requirements"></a>Requisitos de grupo de usuarios protegidos
+## <a name="protected-users-group-requirements"></a><a name="BKMK_Requirements"></a>Requisitos de grupo de usuarios protegidos
 Entre los requisitos para proporcionar protección de dispositivos a los miembros del grupo de usuarios protegidos se incluyen los siguientes:
 
 - El grupo de seguridad global de usuarios protegidos se replica en todos los controladores de dominio del dominio de la cuenta.
@@ -58,23 +54,23 @@ Los controladores de dominio que ejecutan un sistema operativo anterior a Window
 
 El grupo de usuarios protegidos se puede crear [transfiriendo el rol de emulador de controlador de dominio principal (PDC)](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx) a un controlador de dominio que ejecute Windows Server 2012 R2. Una vez replicado ese grupo a otros controladores de dominio, el rol de emulador de PDC se puede hospedar en un controlador de dominio que ejecuta una versión anterior de Windows Server.
 
-### <a name="BKMK_ADgroup"></a>Propiedades de AD del grupo de usuarios protegidos
+### <a name="protected-users-group-ad-properties"></a><a name="BKMK_ADgroup"></a>Propiedades de AD del grupo de usuarios protegidos
 
 En la siguiente tabla se especifican las propiedades del grupo de usuarios protegidos.
 
 |Atributo|Valor|
 |-------|-----|
 |SID/RID conocido|S-1-5-21-<domain>-525|
-|Escribe|Global de dominio|
+|Tipo|Global de dominio|
 |Contenedor predeterminado|CN=Usuarios, DC=<domain>, DC=|
-|Miembros predeterminados|Ninguna|
-|Miembro predeterminado de|Ninguna|
+|Miembros predeterminados|Ninguno|
+|Miembro predeterminado de|Ninguno|
 |¿Protegido por ADMINSDHOLDER?|No|
 |¿Es seguro sacarlo del contenedor predeterminado?|Sí|
 |¿Es seguro delegar la administración de este grupo en administradores que no son de servicio?|No|
-|Derechos de usuario predeterminados|No hay derechos de usuario predeterminados|
+|Derechos de usuario predeterminados|No hay derechos de usuario predeterminados.|
 
-## <a name="BKMK_HowItWorks"></a>Cómo funciona el grupo de usuarios protegidos
+## <a name="how-protected-users-group-works"></a><a name="BKMK_HowItWorks"></a>Cómo funciona el grupo de usuarios protegidos
 En esta sección se describe el funcionamiento del grupo de usuarios protegidos en las siguientes circunstancias:
 
 - Firmado en un dispositivo Windows
@@ -112,18 +108,18 @@ Las cuentas que son miembros del grupo de usuarios protegidos que se autentican 
 
 Las opciones no configurables de expiración de los TGT se establecen en cada cuenta individual del grupo de usuarios protegidos. Por lo general, el controlador de dominio establece la vigencia y renovación de los TGT según las directivas de dominio **Vigencia máxima del vale de usuario** y **Vigencia máxima de renovación de vales de usuario**. En el caso del grupo de usuarios protegidos, estas directivas de dominio están establecidas en 600 minutos.
 
-Para obtener más información, consulte [How to Configure Protected Accounts](how-to-configure-protected-accounts.md).
+Para obtener más información, consulta [Configurar cuentas protegidas](how-to-configure-protected-accounts.md).
 
-## <a name="troubleshooting"></a>de solución de problemas
+## <a name="troubleshooting"></a>Solucionar problemas
 Existen dos registros administrativos funcionales que son de ayuda a la hora de resolver problemas de eventos relacionados con el grupo de usuarios protegidos. Estos nuevos registros se encuentran en Visor de eventos y están deshabilitados de forma predeterminada y se encuentran en **aplicaciones y servicios Logs\Microsoft\Windows\Authentication**.
 
 |Identificador de evento y registro|Descripción|
 |----------|--------|
-|104<br /><br />**ProtectedUser-Client**|Motivo: el paquete de seguridad del cliente no contiene las credenciales.<br /><br />El error se registra en el equipo cliente cuando la cuenta es miembro del grupo de seguridad de usuarios protegidos. Este evento pone de manifiesto que el paquete de seguridad no almacena en caché las credenciales necesarias para autenticarse en el servidor.<br /><br />Incluye el nombre del paquete, el nombre de usuario, el nombre del dominio y el nombre del servidor.|
-|304<br /><br />**ProtectedUser-Client**|Motivo: el paquete de seguridad no almacena las credenciales del usuario protegido.<br /><br />Se registra un evento informativo en el cliente para indicar que el paquete de seguridad no almacena en caché las credenciales de inicio de sesión del usuario. Se espera que la autenticación implícita (WDigest), la delegación de credenciales (CredSSP) y NTLM no puedan tener credenciales para los usuarios protegidos. Las aplicaciones se pueden autenticar correctamente si solicitan credenciales.<br /><br />Incluye el nombre del paquete, el nombre de usuario y el nombre del dominio.|
-|100<br /><br />**ProtectedUserFailures-DomainController**|Motivo: se produce un error de inicio de sesión NTLM para una cuenta que se encuentra en el grupo de seguridad usuarios protegidos.<br /><br />Se registra un error en el controlador de dominio para señalar que la autenticación NTLM no se ha podido llevar a cabo porque la cuenta es miembro del grupo de seguridad de usuarios protegidos.<br /><br />Incluye el nombre de cuenta y el nombre de dispositivo.|
-|104<br /><br />**ProtectedUserFailures-DomainController**|Motivo: los tipos de cifrado DES o RC4 se usan para la autenticación Kerberos y se produce un error de inicio de sesión para un usuario en el grupo de seguridad de usuarios protegidos.<br /><br />La autenticación previa de Kerberos no puede realizarse porque los tipos de cifrado DES y RC4 no se pueden usar cuando la cuenta es miembro del grupo de seguridad de usuarios protegidos.<br /><br />(Se acepta AES.)|
-|303<br /><br />**ProtectedUserSuccesses-DomainController**|Motivo: se emitió correctamente un vale de concesión de vales (TGT) de Kerberos para un miembro del grupo de usuarios protegidos.|
+|104<p>**ProtectedUser-Client**|Motivo: el paquete de seguridad del cliente no contiene las credenciales.<p>El error se registra en el equipo cliente cuando la cuenta es miembro del grupo de seguridad de usuarios protegidos. Este evento pone de manifiesto que el paquete de seguridad no almacena en caché las credenciales necesarias para autenticarse en el servidor.<p>Incluye el nombre del paquete, el nombre de usuario, el nombre del dominio y el nombre del servidor.|
+|304<p>**ProtectedUser-Client**|Motivo: el paquete de seguridad no almacena las credenciales del usuario protegido.<p>Se registra un evento informativo en el cliente para indicar que el paquete de seguridad no almacena en caché las credenciales de inicio de sesión del usuario. Se espera que la autenticación implícita (WDigest), la delegación de credenciales (CredSSP) y NTLM no puedan tener credenciales para los usuarios protegidos. Las aplicaciones se pueden autenticar correctamente si solicitan credenciales.<p>Incluye el nombre del paquete, el nombre de usuario y el nombre del dominio.|
+|100<p>**ProtectedUserFailures-DomainController**|Motivo: se produce un error de inicio de sesión NTLM para una cuenta que se encuentra en el grupo de seguridad usuarios protegidos.<p>Se registra un error en el controlador de dominio para señalar que la autenticación NTLM no se ha podido llevar a cabo porque la cuenta es miembro del grupo de seguridad de usuarios protegidos.<p>Incluye el nombre de cuenta y el nombre de dispositivo.|
+|104<p>**ProtectedUserFailures-DomainController**|Motivo: los tipos de cifrado DES o RC4 se usan para la autenticación Kerberos y se produce un error de inicio de sesión para un usuario en el grupo de seguridad de usuarios protegidos.<p>La autenticación previa de Kerberos no puede realizarse porque los tipos de cifrado DES y RC4 no se pueden usar cuando la cuenta es miembro del grupo de seguridad de usuarios protegidos.<p>(Se acepta AES.)|
+|303<p>**ProtectedUserSuccesses-DomainController**|Motivo: se emitió correctamente un vale de concesión de vales (TGT) de Kerberos para un miembro del grupo de usuarios protegidos.|
 
 
 ## <a name="additional-resources"></a>Recursos adicionales

@@ -1,15 +1,15 @@
 ---
 title: Identificadores de contexto RPC para HCN
-description: ''
 ms.author: jmesser
 author: jmesser81
+ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 0eb620fe52de5ee98a247e17ed73304b2325c7c8
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: d55a990b2158f8dfbc61d8e75e9b0606edc9bf7c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031494"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859868"
 ---
 # <a name="rpc-context-handles-for-hcn"></a>Identificadores de contexto RPC para HCN
 
@@ -18,9 +18,9 @@ ms.locfileid: "70031494"
 
 ## <a name="hcn_network"></a>HCN_Network
 
-Una red HCN es una entidad que se usa para representar una red de proceso de host y sus recursos y directivas de sistema asociados. Por ejemplo, una red HCN normalmente se compone de un conjunto de metadatos (por ejemplo, ID., nombre, tipo), un conmutador virtual, un adaptador de red virtual del host (que actúa como puerta de enlace predeterminada para la red), una instancia de NAT (si es necesario para el tipo de red), un conjunto de grupos de subred y equipos MAC y todas las directivas de red que se van a aplicar (por ejemplo, ACL).
+Una red HCN es una entidad que se usa para representar una red de proceso de host y sus recursos y directivas de sistema asociados. Por ejemplo, normalmente, una red HCN consta de un conjunto de metadatos (por ejemplo, ID., nombre, tipo), un conmutador virtual, un adaptador de red virtual del host (que actúa como puerta de enlace predeterminada para la red), una instancia de NAT (si es necesario para el tipo de red), un conjunto de grupos de subred y equipos MAC, y cualquier directiva de red que se
 
-Las entidades de red HCN se representan mediante identificadores de contexto RPC de HCN_NETWORK.
+Las entidades de red HCN se representan mediante HCN_NETWORK identificadores de contexto RPC.
 
 ```
 
@@ -152,7 +152,7 @@ HcnCloseNetwork(
 ## <a name="hcn_endpoint"></a>HCN_Endpoint
 
 Un punto de conexión de HCN es una entidad que se usa para representar un punto de conexión de IP en una red de HCN y sus recursos y directivas de sistema asociados. Por ejemplo, un punto de conexión de HCN normalmente se compone de un conjunto de metadatos (por ejemplo, identificador, nombre, identificador de red principal), su identidad de red (por ejemplo, la dirección IP, la dirección MAC) y cualquier directiva específica del punto de conexión que se va a aplicar (por ejemplo, ACL, rutas).
-Las entidades del punto de conexión HCN se representan mediante identificadores de contexto RPC de HCN_ENDPOINT.
+Las entidades del punto de conexión de HCN se representan mediante HCN_ENDPOINT identificadores de contexto de RPC.
 
 ```
 
@@ -287,7 +287,7 @@ HcnCloseEndpoint(
 
 Un espacio de nombres HCN es una entidad que se usa para representar un espacio de nombres de red de proceso host. Los espacios de nombres permiten tener entornos de red aislados en un solo host, donde cada espacio de nombres tiene sus propias interfaces de red y su tabla de enrutamiento, separadas de otros espacios de nombres.
 
-Las entidades de espacio de nombres HCN se representan mediante identificadores de contexto RPC HCN_NAMESPACE.
+Las entidades de espacio de nombres HCN se representan mediante HCN_NAMESPACE identificadores de contexto RPC.
 
 ```
 /// Handle to an operation
@@ -422,7 +422,7 @@ HcnCloseNamespace(
 ## <a name="hcn_loadbalancer"></a>HCN_LoadBalancer
 
 Un HCN LoadBalancer es una entidad que se usa para representar un loadbalancer de la red de proceso de host. LoadBalancers permite tener puntos de conexión de red de proceso de host con equilibrio de carga.
-Las entidades HCN LoadBalancer se representan mediante identificadores de contexto RPC de HCN_LOADBALANCER.
+Las entidades HCN LoadBalancer se representan mediante HCN_LOADBALANCER identificadores de contexto de RPC.
 
 ```
 /// Handle to an operation

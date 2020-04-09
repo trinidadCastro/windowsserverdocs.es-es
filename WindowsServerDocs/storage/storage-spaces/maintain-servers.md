@@ -2,24 +2,23 @@
 title: Desconectar el servidor de Espacios de almacenamiento directo para realizar trabajos de mantenimiento
 ms.prod: windows-server
 ms.author: eldenc
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/08/2018
-Keywords: Espacios de almacenamiento directo, S2D, mantenimiento
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 20439a06c255a73f20a297f765e6ed11abfde6f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2ccf8d809354f96277701cd365966ba5e914f64b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402822"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857538"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>Desconectar el servidor de Espacios de almacenamiento directo para realizar trabajos de mantenimiento
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se proporcionan instrucciones para reiniciar o apagar servidores de forma correcta con [Espacios de almacenamiento directo](storage-spaces-direct-overview.md).
 
@@ -72,7 +71,7 @@ Para hacer esto en el Administrador de clústeres de conmutación por error, ve 
 
 ![Pausar y purgar](media/maintain-servers/pause-drain.png)
 
-Todas las máquinas virtuales comenzarán a migrar a otros servidores del clúster. Esto puede tardar unos minutos.
+Todas las máquinas virtuales comenzarán a migrar a otros servidores del clúster. Esto puede tardar varios minutos.
 
    > [!NOTE]
    > Cuando pauses y purgues el nodo del clúster, Windows comprobará de forma automática la seguridad para garantizar que puedas continuar sin problemas. Si hay volúmenes incorrectos, se detendrá el proceso y recibirás una alerta indicando que no es seguro continuar.
@@ -83,7 +82,7 @@ Todas las máquinas virtuales comenzarán a migrar a otros servidores del clúst
 
 Una vez purgado el servidor, se mostrará **En pausa** en PowerShell y en el Administrador de clústeres de conmutación por error.
 
-![Pausado](media/maintain-servers/paused.png)
+![En pausa](media/maintain-servers/paused.png)
 
 Ya puedes reiniciarlo o apagarlo con seguridad, tal como lo harías normalmente (por ejemplo, mediante los cmdlets Restart-Computer o Stop-Computer PowerShell).
 

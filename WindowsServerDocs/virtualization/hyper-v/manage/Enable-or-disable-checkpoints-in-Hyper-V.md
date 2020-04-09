@@ -2,21 +2,19 @@
 title: Habilitar o deshabilitar puntos de control en Hyper-V
 description: Proporciona instrucciones para activar o desactivar la funcionalidad de los puntos de control.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 92e1d0d0-f2c1-4ba2-8510-c8eb091cf5d6
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 645af307b26b56fc3863a47d6bb05d224ccb5710
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e6602b46ee851ca112dd93b82efc6baaa2b7954
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364158"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859448"
 ---
 # <a name="enable-or-disable-checkpoints-in-hyper-v"></a>Habilitar o deshabilitar puntos de control en Hyper-V
 
@@ -30,7 +28,7 @@ Puede elegir habilitar o deshabilitar puntos de control para cada máquina virtu
   
 3.  Para permitir que se tomen puntos de control de esta máquina virtual, asegúrese de que la opción **Habilitar puntos de control** está seleccionada. Para deshabilitar los puntos de control, desactive la casilla **Habilitar puntos de control** .  
   
-4.  Haga clic en **Aplicar** para aplicar los cambios. Si ya ha terminado, haga clic en **Aceptar** para cerrar el cuadro de diálogo.  
+4.  Haga clic en **Aplicar** para aplicar los cambios. Si ya terminó, haga clic en **Aceptar** para cerrar el cuadro de diálogo.  
   
 ## <a name="see-also"></a>Vea también  
   

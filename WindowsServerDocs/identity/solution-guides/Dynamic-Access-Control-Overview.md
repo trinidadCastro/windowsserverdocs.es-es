@@ -1,7 +1,6 @@
 ---
 ms.assetid: 9ee8a6cb-7550-46e2-9c11-78d0545c3a97
 title: Introducción al Control de acceso dinámico
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 343e51f113f54c3965ef45d49f5d8fd64c260991
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2374e2c8a1efb204dbae1ee633bc5ee41d049d57
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357512"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861178"
 ---
 # <a name="dynamic-access-control-overview"></a>Introducción al Control de acceso dinámico
 
@@ -40,12 +39,12 @@ Entre las características y conceptos asociados con el Control de acceso dinám
   
 -   [Permisos propuestos](#BKMK_Permissions2)  
   
-### <a name="BKMK_Rules"></a>Reglas de acceso central  
+### <a name="central-access-rules"></a><a name="BKMK_Rules"></a>Reglas de acceso central  
 Una regla de acceso central es una expresión de reglas de autorización que puede incluir una o más condiciones que competen a grupos de usuarios, notificaciones de usuario, notificaciones de dispositivos y propiedades de recursos. Se pueden combinar varias reglas de acceso central en una directiva de acceso central.  
   
 Si se han definido una o más reglas de acceso central relativas a un dominio, los administradores de recursos compartidos de archivos pueden relacionar reglas específicas a recursos y requisitos empresariales concretos.  
   
-### <a name="BKMK_Policies"></a>Directivas de acceso central  
+### <a name="central-access-policies"></a><a name="BKMK_Policies"></a>Directivas de acceso central  
 Las directivas de acceso central son directivas de autorización que incluyen expresiones condicionales. Por ejemplo, supongamos que una organización tiene un requisito empresarial de restringir el acceso a la información de identificación personal (PII) en los archivos solo al propietario del archivo y a los miembros del Departamento de recursos humanos (HR) que tienen permiso para ver la información de PII. Se trata de una directiva de toda la organización que se aplica a archivos de PII que estén en servidores de archivos de la organización. Para implementar esta directiva, una organización debe ser capaz de:  
   
 -   Identificar y marcar los archivos que contienen PII.  
@@ -56,7 +55,7 @@ Las directivas de acceso central son directivas de autorización que incluyen ex
   
 Las directivas de acceso central actúan como paraguas de seguridad que una organización aplica entre los servidores. Estas directivas son complementarias a las directivas de acceso local o a las listas de control de acceso discrecional (DACL) que se aplican a archivos y carpetas (si bien no las sustituyen).  
   
-### <a name="BKMK_Claims"></a>Surja  
+### <a name="claims"></a><a name="BKMK_Claims"></a>Surja  
 Una notificación es una información única sobre un usuario, un dispositivo o un recurso que publicó un controlador de dominio. El título del usuario, la clasificación del Departamento de un archivo o el estado de mantenimiento de un equipo son ejemplos válidos de una demanda. Una entidad puede conllevar más de una notificación y se puede usar cualquier combinación de notificaciones para autorizar el acceso a los recursos. Están disponibles los siguientes tipos de notificaciones en las versiones admitidas de Windows:  
   
 -   **Notificaciones de usuario**: atributos de Active Directory relacionados con un usuario específico.  
@@ -67,12 +66,12 @@ Una notificación es una información única sobre un usuario, un dispositivo o 
   
 Las notificaciones permiten a los administradores crear instrucciones precisas en toda la organización o la empresa acerca de los usuarios, los dispositivos y los recursos que se pueden incorporar en expresiones, reglas y directivas.  
   
-### <a name="BKMK_Expressions2"></a>Expresiones  
+### <a name="expressions"></a><a name="BKMK_Expressions2"></a>Expresiones  
 Las expresiones condicionales constituyen una mejora en la administración del control de acceso. Con ellas se permite o deniega el acceso a los recursos solo si se cumplen ciertas condiciones, por ejemplo, la pertenencia a un grupo, la ubicación o estado de seguridad del dispositivo. Las expresiones se administran a través del cuadro de diálogo Configuración de seguridad avanzada del Editor ACL o del Editor de reglas de acceso central en el Centro de administración de Active Directory (ADAC).  
   
 Las expresiones ayudan a los administradores a administrar acceso a recursos confidenciales con condiciones flexibles en entornos empresariales cada vez más complejos.  
   
-### <a name="BKMK_Permissions2"></a>Permisos propuestos  
+### <a name="proposed-permissions"></a><a name="BKMK_Permissions2"></a>Permisos propuestos  
 Con los permisos propuestos, un administrador puede modelar con más precisión el impacto de los posibles cambios en la configuración de control de acceso sin materializarlos de facto.  
   
 Predecir el acceso eficaz a un recurso ayuda a planear y configurar permisos para esos recursos antes de implementar dichos cambios.  

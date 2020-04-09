@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7013fc21-9ced-4f9d-9588-cb04d6d60924
 title: Planear la capacidad de los servidores de federación
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 418bc5d53a2bd11afa8563b07bbff76c89495715
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5801196921c1f7632725dfddb2a5c8c2bf4ae2b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407974"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858628"
 ---
 # <a name="planning-for-federation-server-capacity"></a>Planear la capacidad de los servidores de federación
 
@@ -47,7 +46,7 @@ Afortunadamente, los requisitos de memoria, CPU y espacio en disco de los servid
 > [!NOTE]  
 > En las pruebas realizadas por el equipo del producto de AD FS mediante una granja de servidores de Federación configurada con un SQL Server dedicado para almacenar la base de datos de configuración de AD FS, la carga global de la SQL Server se solía ser baja. En una prueba con una granja de servidores de\-de Federación de cuatro\-que se configuró para usar un único SQL Server, el uso de CPU no superó el 10% a pesar de las pruebas que hacían que los servidores de Federación hicieran uso de destino.  
   
-## <a name="bk_estimatefs"></a>Calcular el número de servidores de Federación de la organización  
+## <a name="estimate-the-number-of-federation-servers-for-your-organization"></a><a name="bk_estimatefs"></a>Calcular el número de servidores de Federación de la organización  
 En un esfuerzo por simplificar el proceso de planeación de hardware para los servidores de Federación, el AD FS equipo de producto desarrolló la hoja de cálculo de tamaño de planeación de capacidad AD FS. Esta hoja de cálculo de Excel incluye una calculadora\-como la funcionalidad que tomará los datos de uso esperados que proporcione sobre los usuarios de su organización y devolverá un número óptimo recomendado de servidores de Federación para su entorno de producción AD FS.  
   
 > [!NOTE]  

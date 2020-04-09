@@ -1,19 +1,20 @@
 ---
 title: Conjuntos de clústeres
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 01/30/2019
 description: En este artículo se describe el escenario de conjuntos de clústeres
 ms.localizationpriority: medium
-ms.openlocfilehash: db427e8fa4e5574c6eb7837cf0ab4a9fcc180410
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 3c7ddef1831a82f7fc068ec4241bb1a72bd888bd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639965"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861048"
 ---
 # <a name="cluster-sets"></a>Conjuntos de clústeres
 
@@ -100,13 +101,13 @@ En Windows Server 2019, hay un nuevo rol de servidor de archivos de escalabilida
 
 Las siguientes consideraciones se aplican a un rol de SOFS de infraestructura:
 
-1.  Solo puede haber un rol de clúster de SOFS de infraestructura en un clúster de conmutación por error. El rol de SOFS de infraestructura se crea especificando el parámetro de modificador " **-Infrastructure**" para el cmdlet **Add-ClusterScaleOutFileServerRole** .  Por ejemplo:
+1.    Solo puede haber un rol de clúster de SOFS de infraestructura en un clúster de conmutación por error. El rol de SOFS de infraestructura se crea especificando el parámetro de modificador " **-Infrastructure**" para el cmdlet **Add-ClusterScaleOutFileServerRole** .  Por ejemplo:
 
-        Add-ClusterScaleoutFileServerRole -Name "my_infra_sofs_name" -Infrastructure
+        Add-ClusterScaleoutFileServerRole-name "my_infra_sofs_name"-Infrastructure
 
-2.  Cada volumen CSV creado en la conmutación por error desencadena automáticamente la creación de un recurso compartido de SMB con un nombre generado automáticamente basado en el nombre del volumen CSV. Un administrador no puede crear ni modificar directamente recursos compartidos de SMB con un rol de SOFS, excepto a través de operaciones de creación y modificación de volumen CSV.
+2.    Cada volumen CSV creado en la conmutación por error desencadena automáticamente la creación de un recurso compartido de SMB con un nombre generado automáticamente basado en el nombre del volumen CSV. Un administrador no puede crear ni modificar directamente recursos compartidos de SMB con un rol de SOFS, excepto a través de operaciones de creación y modificación de volumen CSV.
 
-3.  En las configuraciones hiperconvergidas, una infraestructura SOFS permite a un cliente SMB (host de Hyper-V) comunicarse con disponibilidad continua garantizada (CA) en el servidor de infraestructura SOFS SMB. Esta CA de bucle invertido de SMB hiperconvergido se consigue a través de máquinas virtuales que acceden a sus archivos de disco virtual (VHDx), donde se reenvía la identidad de la máquina virtual propietaria entre el cliente y el servidor. Este reenvío de identidad permite la realización de archivos VHDx de la ACL como en las configuraciones de clúster hiperconvergidas estándar como antes.
+3.    En las configuraciones hiperconvergidas, una infraestructura SOFS permite a un cliente SMB (host de Hyper-V) comunicarse con disponibilidad continua garantizada (CA) en el servidor de infraestructura SOFS SMB. Esta CA de bucle invertido de SMB hiperconvergido se consigue a través de máquinas virtuales que acceden a sus archivos de disco virtual (VHDx), donde se reenvía la identidad de la máquina virtual propietaria entre el cliente y el servidor. Este reenvío de identidad permite la realización de archivos VHDx de la ACL como en las configuraciones de clúster hiperconvergidas estándar como antes.
 
 Una vez creado un conjunto de clústeres, el espacio de nombres del conjunto de clústeres se basa en un SOFS de infraestructura en cada uno de los clústeres miembros y, además, en una infraestructura SOFS en el clúster de administración.
 

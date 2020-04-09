@@ -1,23 +1,24 @@
 ---
 title: Escenarios de recuperación ante desastres para la infraestructura hiperconvergida
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 03/29/2018
 description: En este artículo se describen los escenarios disponibles hoy en día para la recuperación ante desastres de HCl de Microsoft (Espacios de almacenamiento directo)
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e6372ec7b4759f672c13f4bd822172afaf3faf3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5f3159e0c215d898848df71c6488cd491b7ded38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393751"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859168"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>Recuperación ante desastres con Espacios de almacenamiento directo
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se proporcionan escenarios en los que se puede configurar la infraestructura hiperconvergida (HCl) para la recuperación ante desastres.
 
@@ -45,10 +46,10 @@ En este escenario, hay dos clústeres independientes independientes. Para config
 
 Al implementar réplica de almacenamiento se aplican las consideraciones siguientes. 
 
-1.  La configuración de la replicación se realiza fuera de los clústeres de conmutación por error. 
-2.  La elección del método de replicación dependerá de los requisitos de RPO y latencia de red. Sincrónico replica los datos en redes de baja latencia con coherencia de bloqueo para garantizar que no se produzcan pérdidas de datos en el momento del error. Asincrónica replica los datos a través de redes con latencias mayores, pero es posible que cada sitio no tenga copias idénticas en un momento del error. 
-3.  En el caso de un desastre, las conmutaciones por error entre los clústeres no son automáticas y deben orquestarse manualmente a través de los cmdlets de PowerShell de réplica de almacenamiento. En el diagrama anterior, Clustera es el principal y ClusterB es el secundario. Si Clustera deja de funcionar, tendrá que establecer manualmente ClusterB como principal para poder poner los recursos en marcha. Una vez que se realiza una copia de seguridad de Clustera, deberá convertirlo en secundario. Una vez que todos los datos se han sincronizado, realice el cambio y intercambie los roles de nuevo a la manera en que se establecieron originalmente.
-4.  Puesto que réplica de almacenamiento solo replica los datos, es necesario crear una nueva máquina virtual o Escalabilidad horizontal servidor de archivos (SOFS) que usa estos datos dentro de Administrador de clústeres de conmutación por error en el asociado de réplica.
+1.    La configuración de la replicación se realiza fuera de los clústeres de conmutación por error. 
+2.    La elección del método de replicación dependerá de los requisitos de RPO y latencia de red. Sincrónico replica los datos en redes de baja latencia con coherencia de bloqueo para garantizar que no se produzcan pérdidas de datos en el momento del error. Asincrónica replica los datos a través de redes con latencias mayores, pero es posible que cada sitio no tenga copias idénticas en un momento del error. 
+3.    En el caso de un desastre, las conmutaciones por error entre los clústeres no son automáticas y deben orquestarse manualmente a través de los cmdlets de PowerShell de réplica de almacenamiento. En el diagrama anterior, Clustera es el principal y ClusterB es el secundario. Si Clustera deja de funcionar, tendrá que establecer manualmente ClusterB como principal para poder poner los recursos en marcha. Una vez que se realiza una copia de seguridad de Clustera, deberá convertirlo en secundario. Una vez que todos los datos se han sincronizado, realice el cambio y intercambie los roles de nuevo a la manera en que se establecieron originalmente.
+4.    Puesto que réplica de almacenamiento solo replica los datos, es necesario crear una nueva máquina virtual o Escalabilidad horizontal servidor de archivos (SOFS) que usa estos datos dentro de Administrador de clústeres de conmutación por error en el asociado de réplica.
 
 La réplica de almacenamiento se puede usar si tiene máquinas virtuales o un SOFS que se ejecuta en el clúster. Poner los recursos en línea en la réplica de HCl puede ser manual o automatizado mediante el uso de scripting de PowerShell.
 
@@ -60,14 +61,14 @@ La réplica de almacenamiento se puede usar si tiene máquinas virtuales o un SO
 
 Con la réplica de Hyper-V, Hyper-V se encarga de la replicación. La primera vez que se habilita una máquina virtual para la replicación, hay tres opciones para el modo en que desea que se envíe la copia inicial a los clústeres de réplica correspondientes.
 
-1.  Enviar la copia inicial a través de la red
-2.  Enviar la copia inicial a medios externos para que se pueda copiar manualmente en el servidor
-3.  Usar una máquina virtual existente ya creada en los hosts de réplica
+1.    Enviar la copia inicial a través de la red
+2.    Enviar la copia inicial a medios externos para que se pueda copiar manualmente en el servidor
+3.    Usar una máquina virtual existente ya creada en los hosts de réplica
 
 La otra opción es para cuando desea que se produzca esta replicación inicial.
 
-1.  Iniciar la replicación inmediatamente
-2.  Programe una hora en la que tenga lugar la replicación inicial. 
+1.    Iniciar la replicación inmediatamente
+2.    Programe una hora en la que tenga lugar la replicación inicial. 
 
 Otras consideraciones que necesitará son:
 
@@ -78,9 +79,9 @@ Otras consideraciones que necesitará son:
 
 Cuando HCI participa en la réplica de Hyper-V, debe tener el recurso del [agente de réplicas de Hyper-v](https://blogs.technet.microsoft.com/virtualization/2012/03/27/why-is-the-hyper-v-replica-broker-required/) creado en cada clúster. Este recurso realiza varias acciones:
 
-1.  Proporciona un espacio de nombres único para cada clúster en el que la réplica de Hyper-V se conecta.
-2.  Determina qué nodo de ese clúster residirá la réplica (o réplica extendida) cuando reciba la copia por primera vez.
-3.  Realiza un seguimiento del nodo que posee la réplica (o réplica extendida) en caso de que la máquina virtual se mueva a otro nodo. Es necesario realizar un seguimiento de esto para que cuando tenga lugar la replicación, pueda enviar la información al nodo adecuado.
+1.    Proporciona un espacio de nombres único para cada clúster en el que la réplica de Hyper-V se conecta.
+2.    Determina qué nodo de ese clúster residirá la réplica (o réplica extendida) cuando reciba la copia por primera vez.
+3.    Realiza un seguimiento del nodo que posee la réplica (o réplica extendida) en caso de que la máquina virtual se mueva a otro nodo. Es necesario realizar un seguimiento de esto para que cuando tenga lugar la replicación, pueda enviar la información al nodo adecuado.
 
 ## <a name="backup-and-restore"></a>Copia de seguridad y restauración
 
@@ -102,13 +103,13 @@ Cuando se inicia una restauración autoritativa en un nodo de clúster, el servi
 
 Para ejecutar una restauración autoritativa, se pueden realizar los siguientes pasos.
 
-1.  Ejecute WBADMIN. EXE desde un símbolo del sistema administrativo para obtener la versión más reciente de las copias de seguridad que desea instalar y asegurarse de que el estado del sistema es uno de los componentes que se pueden restaurar.
+1.    Ejecute WBADMIN. EXE desde un símbolo del sistema administrativo para obtener la versión más reciente de las copias de seguridad que desea instalar y asegurarse de que el estado del sistema es uno de los componentes que se pueden restaurar.
 
     ```powershell
     Wbadmin get versions
     ```
 
-2.  Determine si la copia de seguridad de la versión que tiene contiene la información del registro del clúster como componente. Hay un par de elementos que necesitará de este comando, la versión y la aplicación o componente que se usará en el paso 3. Por ejemplo, para la versión, Imagine que la copia de seguridad se realizó el 3 de enero de 2018 a las 2:04am y esta es la que necesita restaurar.
+2.    Determine si la copia de seguridad de la versión que tiene contiene la información del registro del clúster como componente. Hay un par de elementos que necesitará de este comando, la versión y la aplicación o componente que se usará en el paso 3. Por ejemplo, para la versión, Imagine que la copia de seguridad se realizó el 3 de enero de 2018 a las 2:04am y esta es la que necesita restaurar.
 
     ```powershell
     wbadmin get items -backuptarget:\\backupserver\location

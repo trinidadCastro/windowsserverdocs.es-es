@@ -1,7 +1,6 @@
 ---
 title: Solución de problemas de Espacios de almacenamiento directo
 description: Obtenga información acerca de cómo solucionar problemas de la implementación de Espacios de almacenamiento directo.
-keywords: Espacios de almacenamiento
 ms.prod: windows-server
 ms.author: ''
 ms.technology: storage-spaces
@@ -9,16 +8,16 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ace19b711445106956ae223f17afb6b4181d352d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 429eddf30fddf6bfd035d1f928196a3b66d14646
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365942"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820948"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>Solucionar problemas Espacios de almacenamiento directo
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 Use la siguiente información para solucionar los problemas de la implementación de Espacios de almacenamiento directo.
 
@@ -38,10 +37,10 @@ Los nodos de un Espacios de almacenamiento directo reiniciar el sistema de forma
 
 |FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|Tamaño| PSComputerName|
 |------------|---------------------| -----------------| ------------| --------------|-----| --------------|
-|Disk4| Reflejada| Aceptar|  Correcto| True|  10 TB|  Node-01. cont...|
-|Disk3         |Reflejada                 |Aceptar                          |Correcto       |True            |10 TB | Node-01. cont...|
-|Disk2         |Reflejada                 |Sin redundancia               |Incorrecto     |True            |10 TB | Node-01. cont...|
-|Disk1         |Reflejada                 |{Sin redundancia, inservicio}  |Incorrecto     |True            |10 TB | Node-01. cont...| 
+|Disk4| Crear reflejo| ACEPTAR|  Correcto| True|  10 TB|  Node-01. cont...|
+|Disk3         |Crear reflejo                 |ACEPTAR                          |Correcto       |True            |10 TB | Node-01. cont...|
+|Disk2         |Crear reflejo                 |Sin redundancia               |Incorrecto     |True            |10 TB | Node-01. cont...|
+|Disk1         |Crear reflejo                 |{Sin redundancia, inservicio}  |Incorrecto     |True            |10 TB | Node-01. cont...| 
 
 Además, después de intentar conectar el disco virtual, se registra la siguiente información en el registro del clúster (DiskRecoveryAction).  
 
@@ -101,10 +100,10 @@ A continuación se muestra un ejemplo de la salida del cmdlet **Get-VirtualDisk*
 
 |FriendlyName|  ResiliencySettingName|  OperationalStatus|   HealthStatus|  IsManualAttach|  Tamaño|   PSComputerName|
 |-|-|-|-|-|-|-|
-|Disk4|         Reflejada|                 Aceptar|                  Correcto|       True|            10 TB|  Node-01. cont...|
-|Disk3|         Reflejada|                 Aceptar|                  Correcto|       True|            10 TB|  Node-01. cont...|
-|Disk2|         Reflejada|                 Desasociado|            Unknown|       True|            10 TB|  Node-01. cont...|
-|Disk1|         Reflejada|                 Desasociado|            Unknown|       True|            10 TB|  Node-01. cont...| 
+|Disk4|         Crear reflejo|                 ACEPTAR|                  Correcto|       True|            10 TB|  Node-01. cont...|
+|Disk3|         Crear reflejo|                 ACEPTAR|                  Correcto|       True|            10 TB|  Node-01. cont...|
+|Disk2|         Crear reflejo|                 Desasociado|            Desconocida|       True|            10 TB|  Node-01. cont...|
+|Disk1|         Crear reflejo|                 Desasociado|            Desconocida|       True|            10 TB|  Node-01. cont...| 
 
 
 Además, los siguientes eventos se pueden registrar en los nodos:
@@ -151,7 +150,7 @@ DeviceName:
 Volume Name:
 ``` 
 
-El **estado operativo desasociado** puede producirse si el registro de seguimiento de la región DESFASADA (DRT) está lleno. Los espacios de almacenamiento usan el seguimiento de regiones desfasadas (DRT) para los espacios reflejados para asegurarse de que cuando se produce un error de alimentación, se registran las actualizaciones en curso en los metadatos para asegurarse de que el espacio de almacenamiento puede rehacer o deshacer las operaciones para devolver el espacio de almacenamiento a una y el estado coherente cuando se restaura la alimentación y el sistema vuelve a estar disponible. Si el registro de DRT está lleno, el disco virtual no se puede poner en línea hasta que los metadatos de DRT se sincronicen y se vacíen. Este proceso requiere ejecutar un examen completo, que puede tardar varias horas en completarse.
+El **estado operativo desasociado** puede producirse si el registro de seguimiento de la región DESFASADA (DRT) está lleno. Los espacios de almacenamiento usan el seguimiento de regiones desfasadas (DRT) para los espacios reflejados para asegurarse de que cuando se produce un error de alimentación, se registran las actualizaciones en curso en los metadatos para asegurarse de que el espacio de almacenamiento puede rehacer o deshacer las operaciones para volver a poner el espacio de almacenamiento en un estado flexible y coherente cuando se restaure la energía y el sistema Si el registro de DRT está lleno, el disco virtual no se puede poner en línea hasta que los metadatos de DRT se sincronicen y se vacíen. Este proceso requiere ejecutar un examen completo, que puede tardar varias horas en completarse.
 
 Para corregir este problema, siga estos pasos:
 1. Quite los discos virtuales afectados de CSV.
@@ -206,7 +205,7 @@ Para obtener más información, consulte [solución de problemas de estado de es
 ## <a name="event-5120-with-status_io_timeout-c00000b5"></a>Evento 5120 con STATUS_IO_TIMEOUT c00000b5 
 
 > [!Important]
-> **Para Windows Server 2016:** Para reducir la posibilidad de experimentar estos síntomas mientras se aplica la actualización con la corrección, se recomienda usar el procedimiento de modo de mantenimiento del almacenamiento que se indica a continuación para instalar el [18 de octubre de 2018, la actualización acumulativa para Windows Server 2016](https://support.microsoft.com/help/4462928) o una versión posterior. Cuando los nodos hayan instalado actualmente una actualización acumulativa de Windows Server 2016 publicada del [8 de mayo de 2018](https://support.microsoft.com/help/4103723) al [9 de octubre de 2018](https://support.microsoft.com/help/KB4462917).
+> **Para Windows Server 2016:** Para reducir la posibilidad de experimentar estos síntomas mientras se aplica la actualización con la corrección, se recomienda usar el procedimiento de modo de mantenimiento del almacenamiento que se indica a continuación para instalar la [actualización acumulativa del 18 de octubre de 2018,](https://support.microsoft.com/help/4462928) que se ha lanzado desde 2016 el [2018 8 de mayo](https://support.microsoft.com/help/4103723) de 2016 al [9 de octubre de 2018](https://support.microsoft.com/help/KB4462917).
 
 Es posible que reciba el evento 5120 con STATUS_IO_TIMEOUT c00000b5 después de reiniciar un nodo en Windows Server 2016 con la actualización acumulativa publicada desde el [8 de mayo de 2018 kb 4103723](https://support.microsoft.com/help/4103723) hasta el [9 de octubre de 2018 KB 4462917](https://support.microsoft.com/help/4462917) instalado.
 
@@ -217,7 +216,7 @@ Event Source: Microsoft-Windows-FailoverClustering
 Event ID: 5120
 Description:    Cluster Shared Volume 'CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_IO_TIMEOUT(c00000b5)'. All I/O will temporarily be queued until a path to the volume is reestablished. 
 
-Cluster Shared Volume ‘CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_CONNECTION_DISCONNECTED(c000020c)'. All I/O will temporarily be queued until a path to the volume is reestablished.    
+Cluster Shared Volume 'CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_CONNECTION_DISCONNECTED(c000020c)'. All I/O will temporarily be queued until a path to the volume is reestablished.    
 ```
 
 Cuando se registra un evento 5120, se genera un volcado de memoria en directo para recopilar información de depuración que puede provocar síntomas adicionales o tener un efecto en el rendimiento. La generación del volcado en vivo crea una breve pausa para habilitar la toma de una instantánea de la memoria para escribir el archivo de volcado. Los sistemas que tienen una gran cantidad de memoria y que están sobrecargados pueden provocar que los nodos salgan de la pertenencia al clúster y que también se registre el siguiente evento 1135.
@@ -311,20 +310,20 @@ Hay dos maneras de comprobar:
 
 1. Usar el registro de clúster. Abra el registro del clúster en el editor de texto que prefiera y busque "[= = = SBL Disks = = =]". Se trata de una lista del disco en el nodo en el que se generó el registro. 
 
-     Ejemplo de discos habilitados para caché: Tenga en cuenta que el estado es CacheDiskStateInitializedAndBound y que aquí hay un GUID. 
+     Ejemplos de discos habilitados para caché: tenga en cuenta que el estado es CacheDiskStateInitializedAndBound y aquí hay un GUID. 
 
    ```
    [=== SBL Disks ===]
     {26e2e40f-a243-1196-49e3-8522f987df76},3,false,true,1,48,{1ff348f1-d10d-7a1a-d781-4734f4440481},CacheDiskStateInitializedAndBound,1,8087,54,false,false,HGST    ,HUH721010AL4200 ,        7PG3N2ER,A21D,{d5e27a3b-42fb-410a-81c6-9d8cc12da20c},[R/M 0 R/U 0 R/T 0 W/M 0 W/U 0 W/T 0],
     ```
 
-    Caché no habilitada: Aquí podemos ver que no hay ningún GUID presente y el estado es CacheDiskStateNonHybrid. 
+    Caché no habilitada: aquí podemos ver que no hay ningún GUID presente y el estado es CacheDiskStateNonHybrid. 
     ```
    [=== SBL Disks ===]
     {426f7f04-e975-fc9d-28fd-72a32f811b7d},12,false,true,1,24,{00000000-0000-0000-0000-000000000000},CacheDiskStateNonHybrid,0,0,0,false,false,HGST    ,HUH721010AL4200 ,        7PGXXG6C,A21D,{d5e27a3b-42fb-410a-81c6-9d8cc12da20c},[R/M 0 R/U 0 R/T 0 W/M 0 W/U 0 W/T 0],
     ```
 
-    Caché no habilitada: Cuando todos los discos son del mismo tipo, no está habilitado de forma predeterminada. Aquí podemos ver que no hay ningún GUID presente y el estado es CacheDiskStateIneligibleDataPartition. 
+    Caché no habilitada: cuando todos los discos son del mismo tipo, no está habilitado de forma predeterminada. Aquí podemos ver que no hay ningún GUID presente y el estado es CacheDiskStateIneligibleDataPartition. 
     ```
     {d543f90c-798b-d2fe-7f0a-cb226c77eeed},10,false,false,1,20,{00000000-0000-0000-0000-000000000000},CacheDiskStateIneligibleDataPartition,0,0,0,false,false,NVMe    ,INTEL SSDPE7KX02,  PHLF7330004V2P0LGN,0170,{79b4d631-976f-4c94-a783-df950389fd38},[R/M 0 R/U 0 R/T 0 W/M 0 W/U 0 W/T 0], 
     ```  
@@ -335,17 +334,17 @@ Hay dos maneras de comprobar:
 
    |FriendlyName|  SerialNumber| MediaType| CanPool| OperationalStatus| HealthStatus| Uso| Tamaño|
    |-----------|------------|---------| -------| -----------------| ------------| -----| ----|
-   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| False|   Aceptar|                Correcto|      Selección automática 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  False|    Aceptar|                Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  False|  Aceptar|                Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| False| Aceptar|    Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| False|Aceptar|       Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| False| Aceptar|      Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| False| Aceptar|      Correcto|Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| False| Aceptar|  Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| False| Aceptar| Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| False| Aceptar|Correcto| Selección automática| 1,82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| False| Aceptar| Correcto| Selección automática |1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| False|   ACEPTAR|                Correcto|      Selección automática 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  False|    ACEPTAR|                Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  False|  ACEPTAR|                Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| False| ACEPTAR|    Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| False|ACEPTAR|       Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| False| ACEPTAR|      Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| False| ACEPTAR|      Correcto|Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| False| ACEPTAR|  Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| False| ACEPTAR| Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| False| ACEPTAR|Correcto| Selección automática| 1,82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| False| ACEPTAR| Correcto| Selección automática |1,82 TB|
 
 ## <a name="how-to-destroy-an-existing-cluster-so-you-can-use-the-same-disks-again"></a>Cómo destruir un clúster existente para que pueda volver a usar los mismos discos
 
@@ -360,23 +359,23 @@ Ahora, si ejecuta **Get-PhysicalDisk** en cualquiera de los nodos, verá todos l
 
 |Número| Nombre descriptivo| Número de serie|HealthStatus|OperationalStatus|Tamaño total| Estilo de partición|
 |-|-|-|-|-|-|-|-|
-|0|Msft Virtu...  ||Correcto | Online|  127 GB| GPT|
-||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
-||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
-||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
-||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
-|1|Msft Virtu...||Correcto| Desconectado| 100 GB| SOCKET|
-||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
-|2|Msft Virtu...||Correcto| Desconectado| 100 GB| SOCKET|
-||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
-||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
-||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
-||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
-|4|Msft Virtu...||Correcto| Desconectado| 100 GB| SOCKET|
-|3|Msft Virtu...||Correcto| Desconectado| 100 GB| SOCKET|
-||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
-||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
-||Msft Virtu... ||Correcto| Desconectado| 100 GB| SOCKET|
+|0|Msft Virtu...  ||Correcto | En línea|  127 GB| GPT|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| RAW|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| RAW|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| RAW|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| RAW|
+|1|Msft Virtu...||Correcto| Desconectado| 100 GB| RAW|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| RAW|
+|2|Msft Virtu...||Correcto| Desconectado| 100 GB| RAW|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| RAW|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| RAW|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| RAW|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| RAW|
+|4|Msft Virtu...||Correcto| Desconectado| 100 GB| RAW|
+|3|Msft Virtu...||Correcto| Desconectado| 100 GB| RAW|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| RAW|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| RAW|
+||Msft Virtu... ||Correcto| Desconectado| 100 GB| RAW|
 
 
 ## <a name="error-message-about-unsupported-media-type-when-you-create-an-storage-spaces-direct-cluster-using-enable-clusters2d"></a>Mensaje de error sobre "tipo de medio no admitido" al crear un clúster de Espacios de almacenamiento directo con enable-ClusterS2D  
@@ -394,7 +393,7 @@ Verá la siguiente información en el informe de validación:
     Disk <identifier> connected to node <nodename> returned a SCSI Port Association and the corresponding enclosure device could not be found. The hardware is not compatible with Storage Spaces Direct (S2D), contact the hardware vendor to verify support for SCSI Enclosure Services (SES). 
 
 
-El problema es con la tarjeta de expansión de SAS de HPE que se encuentra entre los discos y la tarjeta HBA. El ampliador SAS crea un identificador duplicado entre la primera unidad conectada al expansor y el propio expansor.  Esto se ha resuelto en [el firmware del ampliador SAS de controladores de matrices inteligentes de HPE: 4,02](https://support.hpe.com/hpsc/swd/public/detail?sp4ts.oid=7304566&swItemId=MTX_ef8d0bf4006542e194854eea6a&swEnvOid=4184#tab3).
+El problema es con la tarjeta de expansión de SAS de HPE que se encuentra entre los discos y la tarjeta HBA. El ampliador SAS crea un identificador duplicado entre la primera unidad conectada al expansor y el propio expansor.  Esto se ha resuelto en el [firmware del ampliador SAS del controlador de HPE Smart Array controllers: 4,02](https://support.hpe.com/hpsc/swd/public/detail?sp4ts.oid=7304566&swItemId=MTX_ef8d0bf4006542e194854eea6a&swEnvOid=4184#tab3).
 
 ## <a name="intel-ssd-dc-p4600-series-has-a-non-unique-nguid"></a>Intel SSD DC P4600 series tiene un NGUID no único
 Es posible que aparezca un problema en el que un dispositivo de la serie P4600 de DC de Intel SSD está informando de un NGUID de 16 bytes similar para varios espacios de nombres como 0100000001000000E4D25C000014E214 o 0100000001000000E4D25C0000EEE214 en el ejemplo siguiente.
@@ -424,7 +423,7 @@ En un clúster de Espacios de almacenamiento directo de Windows Server 2016, pod
 
 Estos son algunos ejemplos en los que se muestra cómo ejecutar el script:
 
-- Use el parámetro **SerialNumber** para especificar el disco que necesita establecer en correcto. Puede obtener el número de serie de **MSFT_PhysicalDisk de WMI** o **Get-PhysicalDisk**. (Vamos a usar solo 0s para el número de serie que aparece a continuación).
+- Use el parámetro **SerialNumber** para especificar el disco que necesita establecer en correcto. Puede obtener el número de serie de **WMI MSFT_PhysicalDisk** o **Get-PhysicalDisk**. (Vamos a usar solo 0s para el número de serie que aparece a continuación).
 
    ```powershell
    Clear-PhysicalDiskHealthData -Intent -Policy -SerialNumber 000000000000000 -Verbose -Force

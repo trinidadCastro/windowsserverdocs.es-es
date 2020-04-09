@@ -2,17 +2,17 @@
 title: Resistencia anidada para Espacios de almacenamiento directo
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: dansimp
+manager: dansimp
 ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: ea1c4b2c249759634e00f6a1ac2caa34f8085ae1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ac4edccf0c1f8882dd2544b2544c3d8555bbc716
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402868"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857348"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>Resistencia anidada para Espacios de almacenamiento directo
 
@@ -22,12 +22,12 @@ La resistencia anidada es una nueva capacidad de [espacios de almacenamiento dir
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-### <a name="green-checkmark-iconmedianested-resiliencysupportedpng-consider-nested-resiliency-if"></a>![Icono de marca de verificación verde.](media/nested-resiliency/supported.png) Considere la resistencia anidada si:
+### <a name="green-checkmark-icon-consider-nested-resiliency-if"></a>![Icono de marca de verificación verde.](media/nested-resiliency/supported.png) Considere la resistencia anidada si:
 
 - El clúster ejecuta Windows Server 2019; etc
 - El clúster tiene exactamente 2 nodos de servidor
 
-### <a name="red-x-iconmedianested-resiliencyunsupportedpng-you-cant-use-nested-resiliency-if"></a>![Icono X de color rojo.](media/nested-resiliency/unsupported.png) No se puede usar la resistencia anidada si:
+### <a name="red-x-icon-you-cant-use-nested-resiliency-if"></a>![Icono X de color rojo.](media/nested-resiliency/unsupported.png) No se puede usar la resistencia anidada si:
 
 - El clúster ejecuta Windows Server 2016; de
 - El clúster tiene 3 o más nodos de servidor
@@ -151,7 +151,7 @@ Una vez que se establece en **true**, el comportamiento de la memoria caché es:
 | Servidor inactivo, primeros 30 minutos   | Lecturas y escrituras en caché, rendimiento completo | No (temporalmente)               |
 | Después de los primeros 30 minutos          | Solo lecturas de caché, impacto en el rendimiento   | Sí (después de que la memoria caché se haya escrito en unidades de capacidad)                           |
 
-## <a name="frequently-asked-questions"></a>Preguntas frecuentes
+## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
 ### <a name="can-i-convert-an-existing-volume-between-two-way-mirror-and-nested-resiliency"></a>¿Se puede convertir un volumen existente entre reflejo doble y resistencia anidada?
 
@@ -184,7 +184,7 @@ No. Para reemplazar un nodo de servidor y sus unidades, siga este orden:
 
 Para obtener más información, consulte el tema [quitar servidores](remove-servers.md) .
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Comprender la tolerancia a errores en Espacios de almacenamiento directo](storage-spaces-fault-tolerance.md)

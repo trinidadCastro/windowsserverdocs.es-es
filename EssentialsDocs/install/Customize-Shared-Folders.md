@@ -1,23 +1,19 @@
 ---
 title: Personalizar carpetas compartidas
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 387f9570e87bd2bd65266489b0f3eac6c945e3be
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 861107035408fc39d0dc5e4d94a4d82d8dfba74e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311918"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818078"
 ---
 # <a name="customize-shared-folders"></a>Personalizar carpetas compartidas
 
@@ -57,7 +53,7 @@ De forma predeterminada, las carpetas del servidor se crean en la última partic
   
 1.  Cree un archivo PostIC.cmd para ejecutar tareas de configuración inicial, tal y como se describe en la sección [Cómo crear el archivo PostIC.cmd para ejecutar tareas posteriores a la configuración inicial](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md).  
   
-2.  Utilice Notepad para crear un archivo llamado **customizefolders.ps1** en la carpeta C:\Windows\Setup\Scripts y, a continuación, pegue los siguientes comandos de Windows PowerShell® en el archivo (desmarque las líneas correspondientes en función del comportamiento deseado).  
+2.  Con el Bloc de notas, cree un archivo denominado **customizefolders. PS1** en la carpeta C:\Windows\Setup\Scripts y, a continuación, pegue los siguientes comandos de Windows PowerShell&reg; en el archivo (Desmarque las líneas correspondientes en función del comportamiento deseado).  
   
     ```  
     # Move the Documents folder to D:\ServerFolders  

@@ -5,15 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 03e155cb9d30bc32da407f0d9ae915308f31494a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 16f141eceb4831f588e33aca5284425f69e9e417
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361016"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827518"
 ---
 # <a name="configure-and-manage-quorum"></a>Configurar y administrar el cuórum
 
@@ -27,7 +28,7 @@ El cuórum para un clúster viene determinado por el número de elementos de vot
 
 ## <a name="quorum-configuration-options"></a>Opciones de configuración de cuórum
 
-El modelo de cuórum en Windows Server es flexible. Si necesita modificar la configuración de quórum para el clúster, puede usar el Asistente para configurar Cuórum de clúster o los cmdlets de Windows PowerShell de clústeres de conmutación por error. Para conocer los pasos y consideraciones para configurar el cuórum, consulte [Configuración del cuórum de clúster](#configure-the-cluster-quorum) más adelante en este tema.
+El modelo de cuórum en Windows Server es flexible. Si necesita modificar la configuración de quórum para el clúster, puede usar el Asistente para configurar Cuórum de clúster o los cmdlets de Windows PowerShell de clústeres de conmutación por error. Consulta los pasos y las consideraciones para configurar el quórum en [Configuración del quórum de clúster](#configure-the-cluster-quorum) más adelante en este tema.
 
 En la tabla siguiente encontrarás las tres opciones de configuración del cuórum que están disponibles en el Asistente para configurar cuórum de clúster.
 
@@ -106,7 +107,7 @@ Cuando el clúster esté en producción, no cambies la configuración de cuórum
 - En caso de errores de nodos o testigos de larga duración
 - Para recuperar un clúster en un escenario de recuperación ante desastres multisitio
 
-Para obtener más información sobre la validación de un clúster de conmutación por error, consulte [Validate Hardware for a Failover Cluster](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)>).
+Para obtener más información acerca de la validación de un clúster de conmutación por error, consulta [Validar hardware para un clúster de conmutación por error](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)>).
 
 ## <a name="configure-the-cluster-quorum"></a>Configuración del cuórum de clúster
 
@@ -125,13 +126,13 @@ Para completar este procedimiento se requiere, como mínimo, pertenecer al grupo
 ### <a name="change-the-quorum-configuration-in-a-failover-cluster-by-using-failover-cluster-manager"></a>Cambiar la configuración de cuórum en un clúster de conmutación por error mediante Administrador de clústeres de conmutación por error
 
 1. En el Administrador de clústeres de conmutación por error, selecciona o especifica lo que quieras cambiar.
-2. Con el clúster seleccionado, en **acciones**, seleccione **más acciones**y, a continuación, seleccione **configurar cuórum de clúster**. Se abrirá el Asistente para configurar cuórum de clúster. Selecciona **Siguiente**.
-3. En la página **Seleccionar opción de configuración de quórum** , selecciona una de las tres opciones de configuración y completa los pasos para dicha opción. Antes de modificar la configuración del cuórum puedes revisar las opciones. Para obtener más información sobre las opciones, vea [Descripción del cuórum](#understanding-quorum), anteriormente en este tema.
+2. Con el clúster seleccionado, en **acciones**, seleccione **más acciones**y, a continuación, seleccione **configurar cuórum de clúster**. Se abrirá el Asistente para configurar cuórum de clúster. Seleccione **Siguiente**.
+3. En la página **Seleccionar opción de configuración de quórum**, selecciona una de las tres opciones de configuración y completa los pasos para dicha opción. Antes de modificar la configuración del cuórum puedes revisar las opciones. Para obtener más información sobre las opciones, vea [Descripción del cuórum](#understanding-quorum), anteriormente en este tema.
 
     - Para permitir que el clúster restablezca automáticamente la configuración de cuórum que sea óptima para la configuración de clúster actual, seleccione **usar la configuración típica** y, a continuación, complete el asistente.
     - Para agregar o cambiar el testigo de quórum, seleccione **Agregar o cambiar el testigo de cuórum**y, a continuación, complete los pasos siguientes. Para obtener más información y conocer consideraciones sobre la configuración de un testigo de quórum, consulta [Configuración de testigos](#witness-configuration) anteriormente en este tema.
 
-      1. En la página **Seleccionar testigo de quórum** , selecciona una opción para configurar un testigo de disco o un testigo de recurso compartido de archivos. El asistente indica las opciones de selección de testigo recomendadas para el clúster.
+      1. En la página **Seleccionar testigo de quórum**, selecciona una opción para configurar un testigo de disco o un testigo de recurso compartido de archivos. El asistente indica las opciones de selección de testigo recomendadas para el clúster.
 
           > [!NOTE]
           > También puedes seleccionar **No configurar un testigo de quórum** y completar el asistente después. No se recomienda tener un número par de nodos de votación en el clúster.
@@ -139,7 +140,7 @@ Para completar este procedimiento se requiere, como mínimo, pertenecer al grupo
       2. Si seleccionas la opción para configurar un testigo de disco, en la página **Configurar testigo de almacenamiento** , selecciona el volumen de almacenamiento que quieras asignar como el testigo de disco y, después, completa el asistente.
       3. Si seleccionas la opción para configurar un testigo de recurso compartido de archivos, en la página **Configurar testigo del recurso compartido de archivos**, escribe o explora hasta un recurso compartido de archivos que quieras usar como el recurso de testigo y, después, completa el asistente.
 
-    - Para configurar las opciones de administración de cuórum y para agregar o cambiar el testigo de cuórum, seleccione **Configuración avanzada de cuórum y selección de testigo**y, después, complete los pasos siguientes. Para obtener información y consideraciones sobre la configuración avanzada de cuórum, consulte [Asignación de votos de nodos](#node-vote-assignment) y [Administración dinámica de cuórum](#dynamic-quorum-management) anteriormente en este tema.
+    - Para configurar las opciones de administración de cuórum y para agregar o cambiar el testigo de cuórum, seleccione **Configuración avanzada de cuórum y selección de testigo**y, después, complete los pasos siguientes. Para obtener información y conocer las consideraciones sobre las opciones de configuración de quórum avanzada, consulta [Asignación de votos de nodos](#node-vote-assignment) y [Administración de quórum dinámico](#dynamic-quorum-management) anteriormente en este tema.
 
       1. En la página **Seleccionar configuración de votación**, selecciona una opción para asignar votos a nodos. De manera predeterminada, todos los nodos tienen asignado un voto. Pero en algunos escenarios puedes asignar votos a un subconjunto específico de nodos.
 
@@ -147,15 +148,15 @@ Para completar este procedimiento se requiere, como mínimo, pertenecer al grupo
           > También puedes seleccionar la opción **Ningún nodo**. Esta opción no suele recomendarse, ya que no permite que los nodos participen en la votación de cuórum y, además, requiere configurar un testigo de disco. Este testigo de disco se convierte en el único punto de error del clúster.
 
       2. En la página **Configurar administración de quórum** puedes habilitar o deshabilitar la opción **Permitir que el clúster administre dinámicamente la asignación de votos de nodos**. Al seleccionar esta opción, se aumenta la disponibilidad del clúster. Esta opción está seleccionada de manera predeterminada y no se recomienda deshabilitarla. Esta opción permite que el clúster continúe ejecutándose en escenarios de error que no son posibles cuando esta opción está deshabilitada.
-      3. En la página **Seleccionar testigo de quórum** , selecciona una opción para configurar un testigo de disco o un testigo de recurso compartido de archivos. El asistente indica las opciones de selección de testigo recomendadas para el clúster.
+      3. En la página **Seleccionar testigo de quórum**, selecciona una opción para configurar un testigo de disco o un testigo de recurso compartido de archivos. El asistente indica las opciones de selección de testigo recomendadas para el clúster.
 
           > [!NOTE]
-          > También puedes seleccionar **No configurar un testigo de quórum**y completar el asistente después. No se recomienda tener un número par de nodos de votación en el clúster.
+          > También puedes seleccionar **No configurar un testigo de quórum** y completar el asistente después. No se recomienda tener un número par de nodos de votación en el clúster.
 
       4. Si seleccionas la opción para configurar un testigo de disco, en la página **Configurar testigo de almacenamiento** , selecciona el volumen de almacenamiento que quieras asignar como el testigo de disco y, después, completa el asistente.
       5. Si seleccionas la opción para configurar un testigo de recurso compartido de archivos, en la página **Configurar testigo del recurso compartido de archivos**, escribe o explora hasta un recurso compartido de archivos que quieras usar como el recurso de testigo y, después, completa el asistente.
 
-4. Selecciona **Siguiente**. Confirme las selecciones en la página de confirmación que aparece y, a continuación, seleccione **siguiente**.
+4. Seleccione **Siguiente**. Confirme las selecciones en la página de confirmación que aparece y, a continuación, seleccione **siguiente**.
 
 Una vez que se ejecute el asistente y aparezca la página **Resumen** , si desea ver un informe de las tareas realizadas por el asistente, seleccione **Ver informe**. El informe más reciente permanecerá en la carpeta <em>systemroot</em> **\\Cluster\\Reports** con el nombre **QuorumConfiguration. mht**.
 
@@ -217,7 +218,7 @@ Después de determinar que no se puede recuperar el clúster si se ponen los nod
 
 Forzar el inicio de un clúster cuando no tenga cuórum puede ser especialmente útil en un clúster multisitio. Imagina un escenario de recuperación ante desastres con un clúster que contenga un sitio primario y un sitio de copia de seguridad en ubicaciones separadas (*SitioA* y *SitioB*). Si se produce un desastre únicamente en el *SitioA*, podría necesitarse una gran cantidad de tiempo para volver a poner en línea el sitio. Puede que quieras obligar a que el *SitioB* esté en línea, incluso aunque no tenga quórum.
 
-Cuando se inicia un clúster con el modo **ForceQuorum** , y después de que vuelva a obtener votos de quórum suficientes, el clúster dejará automáticamente el estado forzado y su comportamiento volverá a ser normal. Por lo tanto, no será necesario volver a iniciar el clúster normalmente. Si el clúster pierde un nodo y también cuórum, volverá a estar sin conexión, ya que no estará en el estado forzado. Para volver a ponerlo en línea cuando no tiene quórum, es necesario forzar el inicio del clúster sin cuórum.
+Cuando se inicia un clúster con el modo **ForceQuorum**, y después de que vuelva a obtener votos de quórum suficientes, el clúster dejará automáticamente el estado forzado y su comportamiento volverá a ser normal. Por lo tanto, no será necesario volver a iniciar el clúster normalmente. Si el clúster pierde un nodo y también cuórum, volverá a estar sin conexión, ya que no estará en el estado forzado. Para volver a ponerlo en línea cuando no tiene quórum, es necesario forzar el inicio del clúster sin cuórum.
 
 > [!IMPORTANT]
 > * Después de forzar el inicio de un clúster, el administrador tendrá control total sobre el clúster.
@@ -228,7 +229,7 @@ Cuando se inicia un clúster con el modo **ForceQuorum** , y después de que vue
 
 Después de obligar a que el clúster se inicie en un nodo, es necesario iniciar el resto de nodos del clúster con una opción para evitar el cuórum. Los nodos iniciados con una opción que evite el cuórum indican al servicio de clúster que se una a un clúster que se esté ejecutando, en lugar de formar una nueva instancia de clúster. Esto evita que los nodos restantes formen un clúster dividido que contenga dos instancias paralelas.
 
-Esto es necesario para recuperar el clúster en algunos escenarios de recuperación ante desastres multisitio después de forzar el inicio del clúster en el sitio de copia de seguridad ( *SitioB*). Para unirse al clúster iniciado de manera forzosa en el *SitioB*, es necesario iniciar los nodos los nodos del sitio principal (*SitioA*) sin permitir el quórum.
+Esto es necesario para recuperar el clúster en algunos escenarios de recuperación ante desastres multisitio después de forzar el inicio del clúster en el sitio de copia de seguridad (*SitioB*). Para unirse al clúster iniciado de manera forzosa en el *SitioB*, es necesario iniciar los nodos los nodos del sitio principal (*SitioA*) sin permitir el quórum.
 
 > [!IMPORTANT]
 > Después de iniciar de manera forzosa un clúster en un nodo, se recomienda iniciar siempre el resto de nodos sin permitir el cuórum.
@@ -258,7 +259,7 @@ Como alternativa, puedes usar el comando siguiente de forma local en el nodo:
 Net Start ClusSvc /FQ
 ```
 
-En el ejemplo siguiente se muestra cómo usar el cmdlet **Start-ClusterNode** para iniciar el servicio de clúster con el cuórum impedido en el nodo *ContosoFCNode1*.
+En el ejemplo siguiente se muestra cómo usar el cmdlet **Start-ClusterNode** para iniciar el servicio de clúster con el quórum impedido en el nodo *ContosoFCNode1*.
 
 ```PowerShell
 Start-ClusterNode –Node ContosoFCNode1 –PQ

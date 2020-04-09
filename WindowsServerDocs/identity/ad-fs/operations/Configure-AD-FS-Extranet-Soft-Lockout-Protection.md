@@ -1,7 +1,6 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
 title: Configurar AD FS protección de bloqueo de extranet
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 02/01/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bb5958f8205271fe3ab2258ed9812ae03f2a0be0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: defe77972dd66f4de27b38bfad3fb172c1f7bee0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358212"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859918"
 ---
 # <a name="configure-ad-fs-extranet-lockout-protection"></a>Configurar AD FS protección de bloqueo de extranet
 
@@ -67,10 +66,10 @@ Echemos un vistazo primero a la Directiva de bloqueo de AD. Hay tres opciones de
 
 Echemos un vistazo a dos ejemplos y veamos cómo **badPwdCount** cambia con el tiempo según la configuración y los Estados diferentes. Supongamos que en ambos ejemplos, **umbral de bloqueo de cuenta** = 4 y **ExtranetLockoutThreshold** = 2. La flecha **roja** representa un intento incorrecto de contraseña, la flecha **verde** representa un buen intento de contraseña. En el ejemplo #1, **ExtranetObservationWindow** &gt; **restablecer el contador de bloqueo de cuenta después**de. En el ejemplo #2, **ExtranetObservationWindow** &lt; **restablecer el contador de bloqueo de cuenta después**de. 
 
-### <a name="example-1"></a>Ejemplo 1
+### <a name="example-1"></a>Ejemplo 1
 ![Example1](media/Configure-AD-FS-Extranet-Lockout-Protection/one.png)
 
-### <a name="example-2"></a>Ejemplo 2
+### <a name="example-2"></a>Ejemplo 2
 ![Example1](media/Configure-AD-FS-Extranet-Lockout-Protection/two.png)
 
 Como puede ver en la anterior, hay dos condiciones en las que **badPwdCount** se restablecerá a 0. Una es cuando se produce un inicio de sesión correcto. La otra es cuando es el momento de restablecer este contador tal y como se define en **restablecer cuenta de bloqueo del contador después** de la configuración. Al **restablecer el contador de bloqueo de cuenta después** de &lt; **ExtranetObservationWindow**, una cuenta no tiene ningún riesgo de que ad lo bloquee. Sin embargo, si se **restablece el contador de bloqueos de la cuenta después** de &gt; **ExtranetObservationWindow**, existe la posibilidad de que ad pueda bloquear una cuenta, pero en un "modo retrasado". Puede tardar un rato en obtener una cuenta bloqueada por AD en función de la configuración, ya que AD FS solo permitirá un intento incorrecto de contraseña durante su ventana de observación hasta que **badPwdCount** alcance el **umbral de bloqueo de cuenta**.

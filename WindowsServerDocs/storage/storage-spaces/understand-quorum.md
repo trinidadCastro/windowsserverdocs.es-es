@@ -1,25 +1,24 @@
 ---
 title: Descripción del cuórum de clúster y grupo
 description: Descripción del Cuórum del clúster y del grupo, con ejemplos específicos para ver los detalles.
-keywords: Espacios de almacenamiento directo, Cuórum, testigo, S2D, Quórum de clúster, Quórum de grupo, clúster, grupo
 ms.prod: windows-server
 ms.author: adagashe
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8950e9d09e3bd07dc02228c295ab223ead969ea6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f13affc3ef15c3a39f4fd3839506897f7807d93a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366015"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820998"
 ---
 # <a name="understanding-cluster-and-pool-quorum"></a>Descripción del cuórum de clúster y grupo
 
->Se aplica a: Windows Server 2019 y Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Los [clústeres de conmutación por error de Windows Server](../../failover-clustering/failover-clustering-overview.md) proporcionan alta disponibilidad para las cargas de trabajo. Estos recursos se consideran de alta disponibilidad si los nodos que hospedan recursos están activados; sin embargo, el clúster requiere generalmente más de la mitad de los nodos que se están ejecutando, lo que se conoce como tener *quórum*.
 
@@ -29,8 +28,8 @@ Cuórum determina el número de errores que el clúster puede admitir mientras p
 
 En Windows Server 2019 y Windows Server 2016, hay dos componentes del sistema que tienen sus propios mecanismos de quórum:
 
-- **Cuórum de clúster**: Esto funciona en el nivel de clúster (es decir, puede perder nodos y hacer que el clúster permanezca activo)
-- **Cuórum de grupo**: Esto funciona en el nivel de grupo cuando Espacios de almacenamiento directo está habilitado (es decir, puede perder nodos y unidades y hacer que el grupo se mantenga activo). Los grupos de almacenamiento se diseñaron para usarse en escenarios agrupados y no agrupados, por lo que tienen un mecanismo de cuórum diferente.
+- **Quórum de clúster**: funciona en el nivel de clúster (es decir, puede perder nodos y hacer que el clúster se mantenga activo)
+- **Cuórum de grupo**: funciona en el nivel de grupo cuando espacios de almacenamiento directo está habilitado (es decir, puede perder nodos y unidades y hacer que el grupo se mantenga activo). Los grupos de almacenamiento se diseñaron para usarse en escenarios agrupados y no agrupados, por lo que tienen un mecanismo de cuórum diferente.
 
 ## <a name="cluster-quorum-overview"></a>Información general de cuórum de clúster
 
@@ -62,7 +61,7 @@ Pero el concepto de *mayoría* solo funciona correctamente cuando el número tot
 Hay dos maneras en que el clúster puede hacer que el *número total de votos* sea extraño:
 
 1. En primer lugar, puede *subir* uno agregando un *testigo* con un voto adicional. Esto requiere la configuración del usuario.
-2.  O bien, puede *reducir* el voto de un nodo sin suerte (se realiza automáticamente según sea necesario).
+2.    O bien, puede *reducir* el voto de un nodo sin suerte (se realiza automáticamente según sea necesario).
 
 Siempre que los nodos supervivientes comprueban que son la *mayoría*, la definición de la *mayoría* se actualiza para que se encuentre entre los supervivientes. Esto permite que el clúster pierda un nodo, luego otro, después otro, etc. Este concepto del *número total de votos* que se adaptan después de los errores sucesivos se conoce como ***cuórum dinámico***.  
 
@@ -99,43 +98,43 @@ El voto de un nodo está cero, por lo que el voto *mayoritario* se determina con
 ![Cuórum explicado en el caso de dos nodos sin un testigo](media/understand-quorum/2-node-no-witness.png)
 
 - Puede sobrevivir a un error del servidor: **50 por ciento de probabilidad**.
-- Puede sobrevivir a un error del servidor y luego a otro: **No**.
-- Puede sobrevivir a dos errores de servidor a la vez: **No**. 
+- Puede sobrevivir a un error del servidor y luego a otro: **no**.
+- Puede sobrevivir a dos errores de servidor a la vez: **no**. 
 
 #### <a name="two-nodes-with-a-witness"></a>Dos nodos con un testigo. 
 Ambos nodos votan, además de los votos del testigo, por lo que la *mayoría* se determina con un total de **3 votos**. Si uno de los dos nodos deja de funcionar, el superviviente tiene 2/3 y el clúster sobrevive.
 
 ![Cuórum explicado en el caso de dos nodos con un testigo](media/understand-quorum/2-node-witness.png)
 
-- Puede sobrevivir a un error del servidor: **Sí**.
-- Puede sobrevivir a un error del servidor y luego a otro: **No**.
-- Puede sobrevivir a dos errores de servidor a la vez: **No**. 
+- Puede sobrevivir a un error del servidor: **sí**.
+- Puede sobrevivir a un error del servidor y luego a otro: **no**.
+- Puede sobrevivir a dos errores de servidor a la vez: **no**. 
 
 #### <a name="three-nodes-without-a-witness"></a>Tres nodos sin un testigo.
 Todos los nodos votan, por lo que la *mayoría* se determina con un total de **3 votos**. Si un nodo deja de funcionar, los supervivientes son 2/3 y el clúster sobrevive. El clúster se convierte en dos nodos sin testigo: en ese momento se encuentra en el escenario 1.
 
 ![Cuórum explicado en el caso de tres nodos sin un testigo](media/understand-quorum/3-node-no-witness.png)
 
-- Puede sobrevivir a un error del servidor: **Sí**.
-- Puede sobrevivir a un error del servidor y luego a otro: **50 por ciento de probabilidad**.
-- Puede sobrevivir a dos errores de servidor a la vez: **No**. 
+- Puede sobrevivir a un error del servidor: **sí**.
+- Puede sobrevivir a un error del servidor y luego a otro: **50 por ciento**de la oportunidad.
+- Puede sobrevivir a dos errores de servidor a la vez: **no**. 
 
 #### <a name="three-nodes-with-a-witness"></a>Tres nodos con un testigo.
 Todos los nodos votan, por lo que el testigo no vota inicialmente. La *mayoría* se determina con un total de **3 votos**. Después de un error, el clúster tiene dos nodos con un testigo, que vuelve al escenario 2. Por lo tanto, ahora los dos nodos y el testigo de la votación.
 
 ![Cuórum explicado en el caso de tres nodos con un testigo](media/understand-quorum/3-node-witness.png)
 
-- Puede sobrevivir a un error del servidor: **Sí**.
-- Puede sobrevivir a un error del servidor y luego a otro: **Sí**.
-- Puede sobrevivir a dos errores de servidor a la vez: **No**. 
+- Puede sobrevivir a un error del servidor: **sí**.
+- Puede sobrevivir a un error del servidor y luego a otro: **sí**.
+- Puede sobrevivir a dos errores de servidor a la vez: **no**. 
 
 #### <a name="four-nodes-without-a-witness"></a>Cuatro nodos sin un testigo
 El voto de un nodo está cero, por lo que la *mayoría* se determina con un total de **3 votos**. Después de un error, el clúster se convierte en tres nodos y se encuentra en el escenario 3.
 
 ![Cuórum explicado en el caso de cuatro nodos sin un testigo](media/understand-quorum/4-node-no-witness.png)
 
-- Puede sobrevivir a un error del servidor: **Sí**.
-- Puede sobrevivir a un error del servidor y luego a otro: **Sí**.
+- Puede sobrevivir a un error del servidor: **sí**.
+- Puede sobrevivir a un error del servidor y luego a otro: **sí**.
 - Puede sobrevivir a dos errores de servidor a la vez: **50 por ciento de probabilidad**. 
 
 #### <a name="four-nodes-with-a-witness"></a>Cuatro nodos con un testigo.
@@ -143,18 +142,18 @@ Todos los votos de los nodos y los votos del testigo, por lo que la *mayoría* s
 
 ![Cuórum explicado en el caso de cuatro nodos con un testigo](media/understand-quorum/4-node-witness.png)
 
-- Puede sobrevivir a un error del servidor: **Sí**.
-- Puede sobrevivir a un error del servidor y luego a otro: **Sí**.
-- Puede sobrevivir a dos errores de servidor a la vez: **Sí**. 
+- Puede sobrevivir a un error del servidor: **sí**.
+- Puede sobrevivir a un error del servidor y luego a otro: **sí**.
+- Puede sobrevivir a dos errores de servidor a la vez: **sí**. 
 
 #### <a name="five-nodes-and-beyond"></a>Cinco nodos y más.
 Todos los nodos votan, o todo menos un voto, lo que hace que el total sea impar. De todos modos, Espacios de almacenamiento directo no puede controlar más de dos nodos, por lo que en este momento no se necesita ningún testigo o es útil.
 
 ![Cuórum explicado en el caso de cinco nodos y más allá](media/understand-quorum/5-nodes.png)
 
-- Puede sobrevivir a un error del servidor: **Sí**.
-- Puede sobrevivir a un error del servidor y luego a otro: **Sí**.
-- Puede sobrevivir a dos errores de servidor a la vez: **Sí**. 
+- Puede sobrevivir a un error del servidor: **sí**.
+- Puede sobrevivir a un error del servidor y luego a otro: **sí**.
+- Puede sobrevivir a dos errores de servidor a la vez: **sí**. 
 
 Ahora que sabemos cómo funciona el cuórum, echemos un vistazo a los tipos de testigos de cuórum.
 
@@ -199,25 +198,25 @@ Cada una de las 16 unidades tiene un voto y el nodo dos también tiene un voto (
 
 ![Cuórum de grupo 1](media/understand-quorum/pool-1.png)
 
-- Puede sobrevivir a un error del servidor: **Sí**.
-- Puede sobrevivir a un error del servidor y luego a otro: **Sí**.
-- Puede sobrevivir a dos errores de servidor a la vez: **Sí**. 
+- Puede sobrevivir a un error del servidor: **sí**.
+- Puede sobrevivir a un error del servidor y luego a otro: **sí**.
+- Puede sobrevivir a dos errores de servidor a la vez: **sí**. 
 
 #### <a name="four-nodes-with-a-symmetrical-layout-and-drive-failure"></a>Cuatro nodos con un diseño simétrico y un error de unidad. 
 Cada una de las 16 unidades tiene un voto y el nodo 2 también tiene un voto (puesto que es el propietario del recurso de grupo). La *mayoría* se determina con un total de **16 votos**. En primer lugar, la unidad 7 deja de funcionar. Si los nodos tres y cuatro están inactivos, el subconjunto superviviente tiene 7 unidades y el propietario del recurso de grupo, que es 8/16 votos. Por lo tanto, el grupo no tiene mayoría y deja de funcionar.
 
 ![Cuórum de grupo 2](media/understand-quorum/pool-2.png)
 
-- Puede sobrevivir a un error del servidor: **Sí**.
-- Puede sobrevivir a un error del servidor y luego a otro: **No**.
-- Puede sobrevivir a dos errores de servidor a la vez: **No**. 
+- Puede sobrevivir a un error del servidor: **sí**.
+- Puede sobrevivir a un error del servidor y luego a otro: **no**.
+- Puede sobrevivir a dos errores de servidor a la vez: **no**. 
 
 #### <a name="four-nodes-with-a-non-symmetrical-layout"></a>Cuatro nodos con un diseño no simétrico. 
 Cada una de las 24 unidades tiene un voto y el nodo dos también tiene un voto (puesto que es el propietario del recurso de grupo). La *mayoría* se determina con un total de **24 votos**. Si los nodos tres y cuatro están inactivos, el subconjunto superviviente tiene 8 unidades y el propietario del recurso de grupo, que es 9/24 votos. Por lo tanto, el grupo no tiene mayoría y deja de funcionar.
 
 ![Cuórum de grupo 3](media/understand-quorum/pool-3.png)
 
-- Puede sobrevivir a un error del servidor: **Sí**.
+- Puede sobrevivir a un error del servidor: **sí**.
 - Puede sobrevivir a un error del servidor y, a continuación, otro: * * depende de * * (no puede sobrevivir si ambos nodos están inactivos, pero pueden sobrevivir a todos los demás escenarios.
 - Puede sobrevivir a dos errores de servidor a la vez: * * depende de * * (no puede sobrevivir si ambos nodos están inactivos, pero pueden sobrevivir a todos los demás escenarios.
 

@@ -2,24 +2,23 @@
 title: Windows Server 2008 debe configurarse con al menos la cantidad mínima de memoria
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: b5065a3f-364d-4aa9-8703-eafa7a46b575
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 95c4fb72a3e17ebe60f3245854fb0fd340f7f6dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e242f4c56d1b4144f905f9433249c28f0a182ae5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393163"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860008"
 ---
 # <a name="windows-server-2008-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Server 2008 debe configurarse con al menos la cantidad mínima de memoria
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2016
 
 Para más información acerca de los análisis y los procedimientos recomendados, vea [Analizador de procedimientos recomendados](https://go.microsoft.com/fwlink/?LinkId=122786).  
   

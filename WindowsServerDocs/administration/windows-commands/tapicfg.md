@@ -1,24 +1,20 @@
 ---
 title: tapicfg
 description: Obtenga información acerca de cómo administrar una partición de directorio de aplicaciones TAPI.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c0e642ce-5d98-4edb-9a65-1dff09aef4e1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5e9e113f0679034a4cd135cad6e7c546dc59c5c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e57826b0997f2cde1dc437ea171d93eb6fc8dd15
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383671"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80833458"
 ---
 # <a name="tapicfg"></a>tapicfg
 
@@ -32,100 +28,100 @@ Crea, quita o muestra una partición de directorio de aplicaciones TAPI, o estab
 -   [Tapicfg show](#BKMK_show)
 -   [Tapicfg makedefault](#BKMK_makedefault)
 
-## <a name="BKMK_install"></a>Tapicfg (instalación)
+## <a name="tapicfg-install"></a><a name="BKMK_install"></a>Tapicfg (instalación)
 Crea una partición de directorio de aplicaciones TAPI.
 
 ### <a name="syntax"></a>Sintaxis
 ```
 tapicfg install /directory:<PartitionName> [/server:<DCName>] [/forcedefault]
 ```
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
 |Instale/Directory:\<PartitionName >|Obligatorio. Especifica el nombre DNS de la partición de directorio de aplicaciones TAPI que se va a crear. Este nombre debe ser un nombre de dominio completo.|
 |/Server: \<Nombrededc >|Especifica el nombre DNS del controlador de dominio en el que se crea la partición del directorio de aplicaciones TAPI. Si no se especifica el nombre del controlador de dominio, se utiliza el nombre del equipo local.|
-|/forcedefault|Especifica que este directorio es la partición del directorio de aplicaciones TAPI predeterminada para el dominio. Puede haber varias particiones de directorio de aplicaciones TAPI en un dominio.<br /><br />Si este directorio es la primera partición del directorio de aplicaciones TAPI creada en el dominio, se establece automáticamente como valor predeterminado, con independencia de si se usa la opción **/forcedefault** .|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/forcedefault|Especifica que este directorio es la partición del directorio de aplicaciones TAPI predeterminada para el dominio. Puede haber varias particiones de directorio de aplicaciones TAPI en un dominio.<p>Si este directorio es la primera partición del directorio de aplicaciones TAPI creada en el dominio, se establece automáticamente como valor predeterminado, con independencia de si se usa la opción **/forcedefault** .|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="BKMK_remove"></a>Tapicfg Remove
+## <a name="tapicfg-remove"></a><a name="BKMK_remove"></a>Tapicfg Remove
 Quita una partición de directorio de aplicaciones TAPI.
 
 ### <a name="syntax"></a>Sintaxis
 ```
 tapicfg remove /directory:<PartitionName>
 ```
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
 |Quite/Directory:\<PartitionName >|Obligatorio. Especifica el nombre DNS de la partición de directorio de aplicaciones TAPI que se va a quitar. Tenga en cuenta que este nombre debe ser un nombre de dominio completo.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="BKMK_publishscp"></a>Tapicfg publishscp
+## <a name="tapicfg-publishscp"></a><a name="BKMK_publishscp"></a>Tapicfg publishscp
 Crea un punto de conexión de servicio para publicar una partición de directorio de aplicaciones TAPI.
 
 ### <a name="syntax"></a>Sintaxis
 ```
 tapicfg publishscp /directory:<PartitionName> [/domain:<DomainName>] [/forcedefault]
 ```
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
 |publishscp/Directory:\<PartitionName >|Obligatorio. Especifica el nombre DNS de la partición del directorio de aplicaciones TAPI que publicará el punto de conexión de servicio.|
 |/Domain:\<nombredominio >|Especifica el nombre DNS del dominio en el que se crea el punto de conexión de servicio. Si no se especifica el nombre de dominio, se utiliza el nombre del dominio local.|
 |/forcedefault|Especifica que este directorio es la partición del directorio de aplicaciones TAPI predeterminada para el dominio. Puede haber varias particiones de directorio de aplicaciones TAPI en un dominio.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="BKMK_removescp"></a>Tapicfg removescp
+## <a name="tapicfg-removescp"></a><a name="BKMK_removescp"></a>Tapicfg removescp
 Quita un punto de conexión de servicio para una partición de directorio de aplicaciones TAPI.
 
 ### <a name="syntax"></a>Sintaxis
 ```
 tapicfg removescp /directory:<PartitionName> [/domain:<DomainName>]
 ```
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
 |removescp/Directory:\<PartitionName >|Obligatorio. Especifica el nombre DNS de la partición de directorio de aplicaciones TAPI para la que se quita un punto de conexión de servicio.|
 |/Domain: \<nombredominio >|Especifica el nombre DNS del dominio desde el que se quita el punto de conexión de servicio. Si no se especifica el nombre de dominio, se utiliza el nombre del dominio local.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="BKMK_show"></a>Tapicfg show
+## <a name="tapicfg-show"></a><a name="BKMK_show"></a>Tapicfg show
 Muestra los nombres y las ubicaciones de las particiones de directorio de aplicaciones TAPI del dominio.
 
 ### <a name="syntax"></a>Sintaxis
 ```
 tapicfg show [/defaultonly][ /domain:<DomainName>]
 ```
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
 |/defaultonly|Muestra los nombres y las ubicaciones de solo la partición del directorio de aplicaciones TAPI predeterminada en el dominio.|
 |/Domain: \<nombredominio >|Especifica el nombre DNS del dominio para el que se muestran las particiones de directorio de aplicaciones TAPI. Si no se especifica el nombre de dominio, se utiliza el nombre del dominio local.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="BKMK_makedefault"></a>Tapicfg makedefault
+## <a name="tapicfg-makedefault"></a><a name="BKMK_makedefault"></a>Tapicfg makedefault
 Establece la partición del directorio de aplicaciones TAPI predeterminado para el dominio.
 
 ### <a name="syntax"></a>Sintaxis
 ```
 tapicfg makedefault /directory:<PartitionName> [/domain:<DomainName>]  
 ```
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
 |makedefault/Directory:\<PartitionName >|Obligatorio. Especifica el nombre DNS del conjunto de particiones del directorio de aplicaciones TAPI como la partición predeterminada del dominio. Tenga en cuenta que este nombre debe ser un nombre de dominio completo. Especifica el nombre DNS del dominio para el que se establece la partición del directorio de aplicaciones TAPI como valor predeterminado. Si no se especifica el nombre de dominio, se utiliza el nombre del dominio local.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 Debe ser miembro del grupo administradores de empresas en Active Directory para ejecutar **Tapicfg install** (para crear una partición de directorio de aplicaciones TAPI) o **Tapicfg Remove** (para quitar una partición de directorio de aplicaciones TAPI).
 
 Esta herramienta de línea de comandos puede ejecutarse en cualquier equipo que sea miembro del dominio.
 
 El texto proporcionado por el usuario (como los nombres de las particiones de directorio de aplicaciones TAPI, los servidores y los dominios) con caracteres internacionales o Unicode solo se muestra correctamente si se instalan las fuentes y la compatibilidad con idiomas correspondientes.
 
-Todavía puede usar servidores ILS (Internet Locator Service) en su organización, si se necesita ILS para admitir determinadas aplicaciones, ya que los clientes TAPI que ejecuten Windows XP o un sistema operativo Windows Server 2003 pueden consultar servidores ILS o aplicaciones TAPI. particiones de directorio.
+Puede seguir usando los servidores del servicio de ubicación de Internet (ILS) en su organización, si se necesita ILS para admitir determinadas aplicaciones, ya que los clientes TAPI que ejecuten Windows XP o un sistema operativo Windows Server 2003 pueden consultar servidores ILS o particiones de directorio de aplicaciones TAPI.
 
-Puede usar **Tapicfg** para crear o quitar puntos de conexión de servicio. Si se cambia el nombre de la partición del directorio de aplicaciones TAPI por cualquier motivo (por ejemplo, si cambia el nombre del dominio en el que reside), debe quitar el punto de conexión de servicio existente y crear uno nuevo que contenga el nuevo nombre DNS del directorio de la aplicación TAPI. partición que se va a publicar. De lo contrario, los clientes TAPI no podrán encontrar ni tener acceso a la partición de directorio de aplicaciones TAPI. También puede quitar un punto de conexión de servicio para fines de mantenimiento o seguridad (por ejemplo, si no desea exponer datos TAPI en una partición de directorio de aplicaciones TAPI específica).
+Puede usar **Tapicfg** para crear o quitar puntos de conexión de servicio. Si se cambia el nombre de la partición del directorio de aplicaciones TAPI por cualquier motivo (por ejemplo, si cambia el nombre del dominio en el que reside), debe quitar el punto de conexión de servicio existente y crear uno nuevo que contenga el nuevo nombre DNS de la partición del directorio de la aplicación TAPI que se va a publicar. De lo contrario, los clientes TAPI no podrán encontrar ni tener acceso a la partición de directorio de aplicaciones TAPI. También puede quitar un punto de conexión de servicio para fines de mantenimiento o seguridad (por ejemplo, si no desea exponer datos TAPI en una partición de directorio de aplicaciones TAPI específica).
 
 ## <a name="examples"></a>Ejemplos
 Para crear una partición de directorio de aplicaciones TAPI denominada tapifiction.testdom.microsoft.com en un servidor denominado testdc.testdom.microsoft.com y, a continuación, establézcalo como la partición del directorio de aplicaciones TAPI predeterminada para el nuevo dominio, escriba:
@@ -137,4 +133,4 @@ Para mostrar el nombre de la partición de directorio de aplicaciones TAPI prede
 tapicfg show /defaultonly
 ```
 ## <a name="additional-references"></a>Referencias adicionales
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

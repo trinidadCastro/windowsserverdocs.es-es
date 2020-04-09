@@ -1,18 +1,18 @@
 ---
 title: Requisitos previos de host protegido
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 8a9273eef906130b11b98148cf1e84f7e18812b0
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: fdd97b90ccfe770564e834f54461a31e2c41a2ea
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322497"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856708"
 ---
 # <a name="prerequisites-for-guarded-hosts"></a>Requisitos previos de los hosts protegidos
 

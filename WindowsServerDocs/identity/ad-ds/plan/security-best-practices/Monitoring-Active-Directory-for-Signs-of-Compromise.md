@@ -1,7 +1,6 @@
 ---
 ms.assetid: a7ef2fba-b05c-4be2-93b2-b9456244c3ad
 title: Supervisión de Active Directory en busca de indicios de riesgo
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e51b7ea151db1ca5d53a8cacef3b042e345175de
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1d00ab702ab6b4ff4307f96f9e266a1cb3420197
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949633"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821148"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Supervisión de Active Directory en busca de indicios de riesgo
 
@@ -150,7 +149,7 @@ En entornos de dominio, la mayoría de los eventos de inicio de sesión de cuent
   
 #### <a name="account-management"></a>Administración de cuentas  
   
-##### <a name="user-account-management"></a>User Account Management (Administración de cuentas de usuario)  
+##### <a name="user-account-management"></a>Administración de cuentas de usuario  
 Esta subcategoría informa de cada evento de la administración de cuentas de usuario, como cuando se crea, cambia o elimina una cuenta de usuario. se cambia el nombre de una cuenta de usuario, se deshabilita o se habilita; o bien, se establece o se cambia una contraseña. Si esta configuración de directiva de auditoría está habilitada, los administradores pueden realizar un seguimiento de los eventos para detectar la creación de cuentas de usuario malintencionadas, accidentales y autorizadas.  
   
 ##### <a name="computer-account-management"></a>Administración de cuentas de equipo  
@@ -170,7 +169,7 @@ Esta subcategoría notifica otros eventos de administración de la cuenta.
   
 #### <a name="detailed-process-tracking"></a>Seguimiento detallado de procesos  
   
-##### <a name="process-creation"></a>Creación de un proceso  
+##### <a name="process-creation"></a>Creación de procesos  
 Esta subcategoría informa de la creación de un proceso y el nombre del usuario o programa que lo creó.  
   
 ##### <a name="process-termination"></a>Finalización del proceso  
@@ -190,7 +189,7 @@ Esta subcategoría informa cuando se tiene acceso a un objeto de AD DS. Solo los
 ##### <a name="directory-service-changes"></a>Cambios en el servicio de directorio  
 Esta subcategoría informa de los cambios en los objetos de AD DS. Los tipos de cambios que se indican son las operaciones de creación, modificación, movimiento y eliminación que se realizan en un objeto. La auditoría de cambios del servicio de directorio, si procede, indica los valores antiguos y nuevos de las propiedades cambiadas de los objetos que se cambiaron. Solo los objetos con SACL provocan que se generen eventos de auditoría y solo cuando se tiene acceso a ellos de forma que coincida con sus entradas SACL. Algunos objetos y propiedades no hacen que se generen eventos de auditoría debido a la configuración de la clase de objeto en el esquema. Esta subcategoría solo se aplica a los controladores de dominio.  
   
-##### <a name="directory-service-replication"></a>Replicación de servicio de directorio  
+##### <a name="directory-service-replication"></a>Replicación del servicio de directorio  
 Esta subcategoría informa cuando se inicia y finaliza la replicación entre dos controladores de dominio.  
   
 ##### <a name="detailed-directory-service-replication"></a>Replicación de servicio de directorio detallada  
@@ -213,7 +212,7 @@ Esta subcategoría informa de los resultados de AuthIP durante las negociaciones
 ##### <a name="other-logonlogoff-events"></a>Otros eventos Logon/Logoff  
 Esta subcategoría informa de otros eventos relacionados con el inicio de sesión y el cierre de sesión, como Servicios de Escritorio remoto sesión se desconecta y se vuelve a conectar, mediante runas para ejecutar procesos en una cuenta diferente y bloquear y desbloquear una estación de trabajo.  
   
-##### <a name="logoff"></a>La opción de cierre de sesión  
+##### <a name="logoff"></a>Logoff  
 Esta subcategoría informa cuando un usuario cierra la sesión del sistema. Estos eventos se producen en el equipo al que se accede. En el caso de los inicios de sesión interactivos, la generación de estos eventos se produce en el equipo en el que se ha iniciado sesión. Si se produce un inicio de sesión de red para tener acceso a un recurso compartido, estos eventos se generan en el equipo que hospeda el recurso al que se accede. Si esta opción se configura como **sin auditoría**, es difícil o imposible determinar qué usuario ha tenido acceso o ha intentado tener acceso a los equipos de la organización.  
   
 ##### <a name="account-lockout"></a>Bloqueo de cuenta  
@@ -248,10 +247,10 @@ Esta subcategoría notifica otros tipos de cambios en la Directiva de seguridad,
 #### <a name="privilege-use"></a>Uso de privilegios  
   
 ##### <a name="sensitive-privilege-use"></a>Uso de privilegios confidenciales  
-Esta subcategoría informa cuando una cuenta de usuario o servicio utiliza un privilegio confidencial. Un privilegio confidencial incluye los siguientes derechos de usuario: actuar como parte del sistema operativo, realizar una copia de seguridad de archivos y directorios, crear un objeto de token, depurar programas, habilitar el equipo y las cuentas de usuario para que sean de confianza para la delegación, generar auditorías de seguridad, suplantar a un cliente tras la autenticación, cargar y descargar controladores de dispositivo, administrar registro de auditoría y de seguridad, modificar valores de entorno de firmware, reemplazar un token de nivel de proceso, restaurar archivos y directorios y tomar posesión de archivos u otros objetos. La auditoría de esta subcategoría creará un gran volumen de eventos.  
+Esta subcategoría informa cuando una cuenta de usuario o servicio utiliza un privilegio confidencial. Un privilegio confidencial incluye los siguientes derechos de usuario: actuar como parte del sistema operativo, realizar una copia de seguridad de archivos y directorios, crear un objeto de token, depurar programas, habilitar el equipo y las cuentas de usuario para que sean de confianza para la delegación, generar auditorías de seguridad, suplantar a un cliente tras la autenticación, cargar y descargar los controladores de dispositivo. , restaurar archivos y directorios, y tomar posesión de archivos u otros objetos. La auditoría de esta subcategoría creará un gran volumen de eventos.  
   
 ##### <a name="nonsensitive-privilege-use"></a>Uso de privilegios no confidenciales  
-Esta subcategoría informa cuando una cuenta de usuario o servicio utiliza un privilegio no confidencial. Un privilegio no confidencial incluye los siguientes derechos de usuario: acceder al administrador de credenciales como llamador de confianza, acceder a este equipo desde la red, agregar estaciones de trabajo al dominio, ajustar cuotas de memoria para un proceso, permitir el inicio de sesión local, permitir el inicio de sesión a través de un equipo remoto Servicios de escritorio, Omitir comprobación de recorrido, cambiar la hora del sistema, crear un archivo de paginación, crear objetos globales, crear objetos compartidos permanentes, crear vínculos simbólicos, denegar el acceso a este equipo desde la red, denegar el inicio de sesión como un trabajo por lotes, denegar el inicio de sesión como servicio, denegar el inicio de sesión local, denegar el inicio de sesión a través de Servicios de Escritorio remoto, forzar el cierre desde un sistema remoto, aumentar un espacio de trabajo del proceso, aumentar la prioridad de programación, bloquear páginas en la memoria, iniciar sesión como un trabajo por lotes, iniciar sesión como servicio, modificar una etiqueta de objeto, realizar un volumen tareas de mantenimiento, generar perfiles de un solo proceso, generar perfiles en el rendimiento del sistema, quitar el equipo de la estación de acoplamiento, apagar el sistema y sincronizar los datos del servicio de directorio. La auditoría de esta subcategoría creará un gran volumen de eventos.  
+Esta subcategoría informa cuando una cuenta de usuario o servicio utiliza un privilegio no confidencial. Un privilegio no confidencial incluye los siguientes derechos de usuario: obtener acceso al administrador de credenciales como llamador de confianza, obtener acceso a este equipo desde la red, agregar estaciones de trabajo al dominio, ajustar cuotas de memoria para un proceso, permitir el inicio de sesión local, permitir el inicio de sesión a través de Servicios de Escritorio remoto, omitir la comprobación de recorrido, cambiar la hora del sistema, crear un , denegar el acceso a este equipo desde la red, denegar el inicio de sesión como un trabajo por lotes, denegar el inicio de sesión como servicio, denegar el inicio de sesión localmente, denegar el inicio de sesión a través de Servicios de Escritorio remoto, forzar el cierre desde un sistema remoto, aumentar un espacio de trabajo del proceso, aumentar la prioridad de programación, cambiar la etiqueta , realizar tareas de mantenimiento del volumen, generar perfiles de un proceso único, generar perfiles de rendimiento del sistema, quitar el equipo de la estación de acoplamiento, apagar el sistema y sincronizar los datos del servicio de directorio. La auditoría de esta subcategoría creará un gran volumen de eventos.  
   
 ##### <a name="other-privilege-use-events"></a>Otros eventos de uso de privilegios  
 Esta configuración de directiva de seguridad no se usa actualmente.  
@@ -293,7 +292,7 @@ Esta subcategoría informa cuando WFP permite o bloquea las conexiones. Estos ev
 ##### <a name="other-object-access-events"></a>Otros eventos de acceso a objetos  
 Esta subcategoría informa sobre otros eventos relacionados con el acceso a objetos, como Programador de tareas trabajos y objetos COM+.  
   
-#### <a name="system"></a>Sistema  
+#### <a name="system"></a>System  
   
 ##### <a name="security-state-change"></a>Cambio de estado de seguridad  
 Esta subcategoría informa de los cambios en el estado de seguridad del sistema, como cuando se inicia y se detiene el subsistema de seguridad.  

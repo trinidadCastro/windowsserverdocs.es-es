@@ -1,31 +1,27 @@
 ---
 title: Variables que afectan al rendimiento del sistema MultiPoint Services
 description: Información de rendimiento de Multipoint Services
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0f3e8875-1b5e-4789-b16c-d06d6e31f38e
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: cba973e3b0a89c26f886a67154c27831adb2c8cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 44f268c958ed32e527b66cebe1a10d33652eb9b0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394828"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858918"
 ---
 # <a name="variables-affecting-multipoint-services-system-performance"></a>Variables que afectan al rendimiento del sistema MultiPoint Services
 Hay muchas variables que pueden afectar al rendimiento general del sistema Multipoint Services. Puede que desee considerarlas al diseñar el sistema.  
   
 ## <a name="usage"></a>Uso  
   
--   **Aplicaciones** de El tipo y el número de aplicaciones que se ejecutan al mismo tiempo\-, especialmente las aplicaciones de gran volumen de gráficos o de memoria, afectarán al rendimiento global del sistema. Para obtener más información, vea [aplicaciones y contenido de Internet](hardware-and-performance-recommendations.md#applications-and-internet-content).  
+-   **Aplicaciones** de El tipo y el número de aplicaciones que se ejecutan al mismo tiempo, especialmente las aplicaciones\-pesadas o de memoria intensivas, afectarán al rendimiento global del sistema. Para obtener más información, vea [aplicaciones y contenido de Internet](hardware-and-performance-recommendations.md#applications-and-internet-content).  
   
 -   **Uso de Internet** Tenga en cuenta si los usuarios van a ver contenido multimedia o páginas web que usan vídeos de movimiento completo. Este tipo de contenido puede sobrecargar el sistema si hay demasiados usuarios viendo simultáneamente.  
   

@@ -2,21 +2,19 @@
 title: Administrar hosts de Hyper-V de forma remota
 description: Describe la compatibilidad de versiones entre los hosts de Hyper-V y el administrador de Hyper-V, y cómo conectarse a hosts remotos en entornos diferentes, incluidos entre dominios y independientes.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d34e98c-6134-479b-8000-3eb360b8b8a3
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 12/06/2016
-ms.openlocfilehash: 677e054fe42978697ef786b73daac75069f0408f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 592bb6352c4ca56770e1a3051ecbc88d9d378467
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392690"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859418"
 ---
 # <a name="remotely-manage-hyper-v-hosts-with-hyper-v-manager"></a>Administrar hosts de Hyper-V de forma remota con el administrador de Hyper-V
 
@@ -51,7 +49,7 @@ Para conectarse a un host de Hyper-V desde el administrador de Hyper-V, haga cli
 
 ## <a name="manage-hyper-v-on-a-local-computer"></a>Administrar Hyper-V en un equipo local
 
-El administrador de Hyper-V no muestra los equipos que hospedan Hyper-V hasta que se agrega el equipo, incluido un equipo local. Para ello:
+El administrador de Hyper-V no muestra los equipos que hospedan Hyper-V hasta que se agrega el equipo, incluido un equipo local. Para hacerlo:
 
 1. En el panel izquierdo, haga clic con el botón secundario en **Administrador de Hyper-V**.
 2. Haga clic en **conectar al servidor**.
@@ -85,7 +83,7 @@ El administrador de Hyper-V en Windows Server 2016 y Windows 10 ofrece más tipo
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-as-a-different-user"></a>Conexión a un host remoto de Windows 2016 o Windows 10 como un usuario diferente
 
-Esto le permite conectarse al host de Hyper-V cuando no se está ejecutando en el equipo local como un usuario que sea miembro del grupo administradores de Hyper-V o del grupo administradores en el host de Hyper-V. Para ello:
+Esto le permite conectarse al host de Hyper-V cuando no se está ejecutando en el equipo local como un usuario que sea miembro del grupo administradores de Hyper-V o del grupo administradores en el host de Hyper-V. Para hacerlo:
 
 1. En el panel izquierdo, haga clic con el botón secundario en **Administrador de Hyper-V**.
 1. Haga clic en **conectar al servidor**.
@@ -97,7 +95,7 @@ Esto le permite conectarse al host de Hyper-V cuando no se está ejecutando en e
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-using-ip-address"></a>Conexión a un host remoto de Windows 2016 o Windows 10 mediante la dirección IP
 
-Para ello:
+Para hacerlo:
 
 1. En el panel izquierdo, haga clic con el botón secundario en **Administrador de Hyper-V**.
 1. Haga clic en **conectar al servidor**.
@@ -108,7 +106,7 @@ Para ello:
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-outside-your-domain-or-with-no-domain"></a>Conexión a un host remoto de Windows 2016 o Windows 10 fuera del dominio o sin dominio
 
-Para ello:
+Para hacerlo:
 
 1. En el host de Hyper-V que se va a administrar, abra una sesión de Windows PowerShell como administrador.
 
@@ -169,7 +167,7 @@ Para usar Windows PowerShell, ejecute el siguiente comando como administrador:
 add-windowsfeature rsat-hyper-v-tools
 ```
 
-## <a name="see-also"></a>Consulte también  
+## <a name="see-also"></a>Vea también  
  
 [Instalar Hyper-V](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md) 
 

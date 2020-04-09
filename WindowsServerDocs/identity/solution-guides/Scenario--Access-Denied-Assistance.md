@@ -1,7 +1,6 @@
 ---
 ms.assetid: aae907eb-11cf-4a87-a046-8680872ed0b1
 title: Escenario de asistencia para acceso denegado
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d3c1354c54cf421e59d6b37a44ce703f52b6f4b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a6418f7ac317f060adb72f32e231e1577a5f8b92
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357479"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861148"
 ---
 # <a name="scenario-access-denied-assistance"></a>Escenario: Asistencia de acceso denegado
 
@@ -33,25 +32,25 @@ La asistencia para acceso denegado es una nueva característica de Windows Serve
   
 La asistencia para acceso denegado en Windows Server 2012 proporciona a los administradores del servidor de archivos los detalles de acceso pertinentes para que puedan determinar el problema y las herramientas apropiadas para que puedan realizar cambios en la configuración para satisfacer la solicitud de acceso. Por ejemplo, un usuario podría seguir este proceso para acceder a un archivo al que actualmente no tiene acceso:  
   
--   El usuario intenta leer un archivo en la carpeta compartida \\ \ financeshares, pero el servidor muestra un mensaje de acceso denegado.  
+-   El usuario intenta leer un archivo en la carpeta compartida \\\financeshares, pero el servidor muestra un mensaje de acceso denegado.  
   
 -    Windows Server 2012 muestra al usuario la información de asistencia para acceso denegado con una opción para solicitar asistencia.  
   
 -   Si el usuario solicita acceso al recurso, el servidor envía al propietario de la carpeta un correo electrónico con información sobre la solicitud de acceso.  
   
-Encontrará información sobre planeación para configurar la asistencia para acceso denegado en [Plan for Access-Denied Assistance](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1).  
+Encontrarás información sobre planeación para configurar la asistencia para acceso denegado en [Planificar la asistencia para acceso denegado](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1).  
   
 Puede encontrar pasos sobre la configuración de la asistencia para acceso denegado en [pasos &#40;&#41;de demostración de la asistencia para acceso denegado](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md).  
   
 ## <a name="in-this-scenario"></a>En este escenario  
 Este escenario forma parte del escenario de control de acceso dinámico. Para obtener más información sobre el control de acceso dinámico, consulta:  
   
--   [Control de acceso dinámico: Información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [Access Control dinámico: información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   
 ## <a name="practical-applications"></a>Aplicaciones prácticas  
 La asistencia para acceso denegado en Windows Server 2012 contribuye a la Access Control dinámica, ya que permite a los usuarios solicitar acceso a archivos y carpetas compartidos directamente desde un mensaje de acceso denegado.  
   
-## <a name="BKMK_NEW"></a>Características incluidas en este escenario  
+## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Características incluidas en este escenario  
 En la tabla siguiente, se enumeran las características que forman parte de este escenario y se describe la manera en que son compatibles con él.  
   
 |Característica|Compatibilidad con este escenario|  

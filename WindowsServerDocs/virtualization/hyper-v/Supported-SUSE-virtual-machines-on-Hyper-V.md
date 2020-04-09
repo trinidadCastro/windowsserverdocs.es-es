@@ -2,21 +2,19 @@
 title: Máquinas virtuales de SUSE compatibles en Hyper-V
 description: Enumera las características y servicios de integración de Linux que se incluyen en cada versión
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 45517c1d381ba55c819b09b53ae563092e161b1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c5daa73e2e0c59a262565237d979d2e1e544ae4f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366729"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858008"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>Máquinas virtuales de SUSE compatibles en Hyper-V
 
@@ -24,7 +22,7 @@ ms.locfileid: "71366729"
 
 A continuación se muestra un mapa de distribución de características que indica las características de cada versión. Los problemas conocidos y las soluciones alternativas para cada distribución se enumeran después de la tabla.
 
-Los Controladores integrados de SUSE Linux Enterprise Service para Hyper-V están certificados por SUSE. En este boletín se puede ver una configuración de ejemplo: [Boletín de certificación de SUSE sí](https://www.suse.com/nbswebapp/yesBulletin.jsp?bulletinNumber=144176).
+Los Controladores integrados de SUSE Linux Enterprise Service para Hyper-V están certificados por SUSE. En este boletín se puede ver una configuración de ejemplo: el [boletín de certificación de SUSE Yes](https://www.suse.com/nbswebapp/yesBulletin.jsp?bulletinNumber=144176).
 
 ## <a name="table-legend"></a>Leyenda de tabla
 
@@ -36,7 +34,7 @@ Los Controladores integrados de SUSE Linux Enterprise Service para Hyper-V está
 
 SLES12 + es solo 64 bits.
 
-|**Característica**|**Versión del sistema operativo Windows Server**|**SLES 15**|**SLES 12 SP3/SP4**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
+|**Ofrecen**|**Versión del sistema operativo Windows Server**|**SLES 15**|**SLES 12 SP3/SP4**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
 |-|-|-|-|-|-|-|-|
 |**Disponibilidad**||Integrados|Integrados|Integrados|Integrados|Integrados|Integrados|
 |**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -74,7 +72,7 @@ SLES12 + es solo 64 bits.
 |Arranque mediante UEFI|2019, 2016, 2012 R2|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9||
 |Arranque seguro|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|||
 
-## <a name="BKMK_notes"></a>Apunte
+## <a name="notes"></a><a name="BKMK_notes"></a>Apunte
 
 1. Es posible que la inyección de direcciones IP estáticas no funcione si se ha configurado el **Administrador de red** para un adaptador de red específico de Hyper-V determinado en la máquina virtual. Para garantizar el correcto funcionamiento de la inyección de IP estática, asegúrese de que el administrador de red esté desactivado completamente o se haya desactivado para un adaptador de red específico a través de su archivo **ifcfg-ethX** .
 
@@ -103,7 +101,7 @@ SLES12 + es solo 64 bits.
 
    ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 * [Set-VMFirmware](https://technet.microsoft.com/library/dn464287.aspx)
 

@@ -1,187 +1,186 @@
 ---
-title: Consideraciones de simetría de unidad para espacios de almacenamiento directo
+title: Consideraciones sobre la simetría de unidades para Espacios de almacenamiento directo
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
-Keywords: Espacios de almacenamiento directo
 ms.localizationpriority: medium
-ms.openlocfilehash: 629e49a0c1919286d8e4f418b3e99d69e720f4fd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b06d69c020ea38a2fb9f23df2cfd9cd4191ae315
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866886"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857558"
 ---
-# <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>Consideraciones de simetría de unidad para espacios de almacenamiento directo 
+# <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>Consideraciones sobre la simetría de unidades para Espacios de almacenamiento directo 
 
 > Se aplica a: Windows Server 2019, Windows Server 2016
 
 [Espacios de almacenamiento directo](storage-spaces-direct-overview.md) funciona mejor cuando cada servidor tiene exactamente las mismas unidades.
 
-En realidad, reconocemos que no siempre resulta práctico: Espacios de almacenamiento directo está diseñado para ejecutarse durante años y escalar a medida que crecen las necesidades de su organización. Hoy en día, puede comprar los 3 TB "espacioso" unidades de disco duro; próximo año, puede que sea imposible encontrar aquellas es pequeño. Por lo tanto, se admite cierta cantidad de opción de mezclar y combinar.
+En realidad, somos conscientes de que esto no siempre es práctico: Espacios de almacenamiento directo está diseñado para ejecutarse durante años y escalarse a medida que crezcan las necesidades de su organización. En la actualidad, puede comprar unidades de disco duro de 3 TB de "espacioso"; el año siguiente, puede ser imposible encontrar unos pequeños. Por lo tanto, se admite cierta cantidad de combinación y coincidencia.
 
-Este tema explica las restricciones y proporciona ejemplos de configuraciones compatibles y no compatibles.
+En este tema se explican las restricciones y se proporcionan ejemplos de configuraciones admitidas y no admitidas.
 
 ## <a name="constraints"></a>Restricciones
 
 ### <a name="type"></a>Tipo
 
-Todos los servidores deben tener el mismo [tipos de unidades](choosing-drives.md#drive-types).
+Todos los servidores deben tener los mismos [tipos de unidades](choosing-drives.md#drive-types).
 
-Por ejemplo, si un servidor tiene NVMe, deberían *todas* tiene NVMe.
+Por ejemplo, si un servidor tiene NVMe, *todos* deben tener nVMe.
 
 ### <a name="number"></a>Número
 
 Todos los servidores deben tener el mismo número de unidades de cada tipo.
 
-Por ejemplo, si un servidor tiene seis SSD, deben *todas* tiene seis SSD.
+Por ejemplo, si un servidor tiene seis SSD, *todos* deben tener seis SSD.
 
    > [!NOTE]
-   > No pasa nada por el número de unidades para diferir temporalmente durante los errores o al agregar o quitar unidades.
+   > Es correcto que el número de unidades difieran temporalmente durante los errores o al agregar o quitar unidades.
 
-### <a name="model"></a>Modelo
+### <a name="model"></a>Model
 
-Se recomienda usar las unidades del mismo modelo y la versión de firmware, siempre que sea posible. Si no es posible, seleccione cuidadosamente las unidades que sean lo más parecidas posible. Se desaconseja mezclar y combinar las unidades del mismo tipo con características de rendimiento o resistencia claramente diferentes (a menos que una memoria caché y la otra es la capacidad) ya que distribuye uniformemente E/S espacios de almacenamiento directo y no restrinja por modelo .
+Siempre que sea posible, se recomienda usar unidades del mismo modelo y versión de firmware. Si no puede, seleccione cuidadosamente las unidades que sean lo más parecidas posible. Se desaconsejan las unidades de combinación y coincidencias del mismo tipo con características de rendimiento o resistencia muy diferentes (a menos que haya una caché y la otra sea de capacidad) porque Espacios de almacenamiento directo distribuye la e/s de forma uniforme y no discrimina según el modelo.
 
    > [!NOTE]
-   > No pasa nada por unidades SATA y SAS similar combinar y hacer coincidir.
+   > Es correcto mezclar y hacer coincidir unidades SATA y SAS similares.
 
 ### <a name="size"></a>Tamaño
 
-Se recomienda usar las unidades de los mismos tamaños siempre que sea posible. Con unidades de capacidad de tamaños diferentes puede provocar cierta capacidad inutilizable y utiliza unidades de caché de diferentes tamaños no puede mejorar el rendimiento de la caché. Consulte la sección siguiente para obtener más información.
+Se recomienda usar unidades del mismo tamaño siempre que sea posible. El uso de unidades de capacidad de distintos tamaños puede dar lugar a una capacidad inutilizable, y el uso de unidades de caché de distintos tamaños podría no mejorar el rendimiento de la memoria caché. Vea la sección siguiente para obtener más información.
 
    > [!WARNING]
-   > Diferentes tamaños de unidades de capacidad a través de servidores pueden dar lugar a pérdida de capacidad.
+   > La diferencia entre los tamaños de unidades de capacidad de los servidores puede dar lugar a una capacidad por debajo del mismo.
 
-## <a name="understand-capacity-imbalance"></a>Descripción: el desequilibrio de capacidad
+## <a name="understand-capacity-imbalance"></a>Descripción: desequilibrio de capacidad
 
-Espacios de almacenamiento directo es sólido para desequilibrio de capacidad en las unidades y entre servidores. Incluso si el desequilibrio es grave, todo lo que seguirá funcionando. Sin embargo, dependiendo de varios factores, capacidad que no está disponible en todos los servidores no pueden utilizable.
+Espacios de almacenamiento directo es robusto para el desequilibrio de capacidad entre las unidades y entre servidores. Incluso si el desequilibrio es grave, todo seguirá funcionando. Sin embargo, en función de varios factores, es posible que no se pueda usar la capacidad que no está disponible en todos los servidores.
 
-Para ver por qué ocurre esto, considere la siguiente ilustración simplificada. Cada cuadro coloreado representa una copia de datos reflejadas. Por ejemplo, los cuadros de marcaron A, un ' y un '' son tres copias de los mismos datos. Dispondrá de tolerancia a errores de servidor, estas copias *debe* se almacenan en servidores diferentes.
+Para ver por qué ocurre esto, considere la ilustración simplificada a continuación. Cada cuadro coloreado representa una copia de los datos reflejados. Por ejemplo, los cuadros marcados como, ' y ' ' son tres copias de los mismos datos. Para respetar la tolerancia a errores del servidor, estas copias *deben* almacenarse en servidores diferentes.
 
-### <a name="stranded-capacity"></a>Pérdida de capacidad
+### <a name="stranded-capacity"></a>Capacidad en desuso
 
-Cuando se dibuja, (10 TB) de servidor 1 y 2 (10 TB) de servidor están llenos. Servidor 3 tiene unidades más grandes, por lo tanto, su capacidad total es más grande (15 TB). Sin embargo almacenar más datos triple 3 Server requeriría copias en el servidor 1 y 2 de servidor, que ya están llenos. No se puede usar la capacidad restante de 5 TB en Server 3: es *"en desuso"* capacidad.
+Como se dibujó, el servidor 1 (10 TB) y el servidor 2 (10 TB) están llenos. El servidor 3 tiene unidades más grandes, por lo que su capacidad total es mayor (15 TB). Sin embargo, para almacenar más datos de reflejo triple en el servidor 3 también se necesitarían copias en el servidor 1 y el servidor 2, que ya están llenos. No se puede usar la capacidad de 5 TB restante en el servidor 3; su capacidad es *"en desuso"* .
 
-![Capacidad triple, tres servidores en desuso](media/drive-symmetry-considerations/Size-Asymmetry-3N-Stranded.png)
+![Reflejo triple, tres servidores, capacidad en desuso](media/drive-symmetry-considerations/Size-Asymmetry-3N-Stranded.png)
 
-### <a name="optimal-placement"></a>Ubicación óptima
+### <a name="optimal-placement"></a>Selección de ubicación óptima
 
-Por el contrario, con cuatro servidores de 10 TB, 10 TB, 10 TB y 15 TB de capacidad y resistencia de reflejo triple, lo *es* posible colocar las copias de una manera que usa toda la capacidad disponible, como dibujado válida. Siempre que sea posible, el asignador de espacios de almacenamiento directo buscarán y usarán la colocación óptima, no dejando pérdida de capacidad.
+Por el contrario, con cuatro servidores de 10 TB, 10 TB, 10 TB y capacidad de 15 TB y resistencia de reflejo triple, es posible colocar copias de manera válida de forma que utilice toda la capacidad disponible, tal como se *ha* dibujado. Siempre que esto sea posible, el asignador de Espacios de almacenamiento directo buscará y usará la ubicación óptima, sin dejar de tener capacidad en desuso.
 
-![Triple, cuatro servidores, no hay pérdida de capacidad](media/drive-symmetry-considerations/Size-Asymmetry-4N-No-Stranded.png)
+![Reflejo triple, cuatro servidores, sin capacidad en desuso](media/drive-symmetry-considerations/Size-Asymmetry-4N-No-Stranded.png)
 
-El número de servidores, la resistencia, la gravedad de desequilibrio de la capacidad y otros factores afectan a si hay pérdida de capacidad. **La regla general más prudente es suponer que se garantiza que solo la capacidad disponible en todos los servidores que se pueda usar.**
+El número de servidores, la resistencia, la gravedad del desequilibrio de capacidad y otros factores influyen en si hay capacidad en desuso. **La regla general más prudente es suponer que solo se puede usar la capacidad disponible en cada servidor.**
 
-## <a name="understand-cache-imbalance"></a>Descripción: el desequilibrio de caché
+## <a name="understand-cache-imbalance"></a>Descripción: desequilibrio de caché
 
-Espacios de almacenamiento directo es sólido para desequilibrio de la memoria caché en las unidades y entre servidores. Incluso si el desequilibrio es grave, todo lo que seguirá funcionando. Además, espacios de almacenamiento directo siempre utiliza toda la memoria caché disponible al máximo.
+Espacios de almacenamiento directo es robusto para almacenar en caché el desequilibrio entre unidades y servidores. Incluso si el desequilibrio es grave, todo seguirá funcionando. Además, Espacios de almacenamiento directo siempre usa toda la memoria caché disponible al máximo.
 
-Sin embargo, con unidades de caché de diferentes tamaños puede no mejorar el rendimiento de la caché uniformemente o predecible: solo E/S a [unidad enlaces](understand-the-cache.md#server-side-architecture) con mayor caché unidades pueden ver un mejor rendimiento. Espacios de almacenamiento directo distribuye E/S uniformemente entre los enlaces y no restrinja en proporción de capacidad de memoria caché.
+Sin embargo, es posible que el uso de unidades de caché de distintos tamaños no mejore el rendimiento de la caché de forma uniforme o predecible: solo los [enlaces](understand-the-cache.md#server-side-architecture) de e/s a unidades de caché más grandes pueden ver un rendimiento mejorado. Espacios de almacenamiento directo distribuye la e/s uniformemente entre enlaces y no discrimina en función de la relación de caché a capacidad.
 
-![Desequilibrio de la memoria caché](media/drive-symmetry-considerations/Cache-Asymmetry.png)
+![Desequilibrio de caché](media/drive-symmetry-considerations/Cache-Asymmetry.png)
 
    > [!TIP]
-   > Consulte [descripción de la memoria caché](understand-the-cache.md) para obtener más información sobre los enlaces de la memoria caché.
+   > Consulte [Descripción de la caché](understand-the-cache.md) para obtener más información sobre los enlaces de caché.
 
 ## <a name="example-configurations"></a>Configuraciones de ejemplo
 
 Estas son algunas configuraciones admitidas y no admitidas:
 
-### <a name="supportedmediadrive-symmetry-considerationssupportedpng-supported-different-models-between-servers"></a>![admitido](media/drive-symmetry-considerations/supported.png) Compatible: diferentes modelos entre servidores
+### <a name="supported-supported-different-models-between-servers"></a>![compatibles](media/drive-symmetry-considerations/supported.png) Compatible: diferentes modelos entre servidores
 
-Los dos primeros servidores utilizan modelo NVMe "X" pero el tercer servidor usa el modelo de NVMe "Z", lo que es muy similar.
+Los dos primeros servidores usan el modelo de NVMe "X", pero el tercer servidor usa el modelo de NVMe "Z", que es muy similar.
 
 | Servidor 1                    | Servidor 2                    | Servidor 3                    |
 |-----------------------------|-----------------------------|-----------------------------|
-| 2 x NVMe modelo X (caché)    | 2 x NVMe modelo X (caché)    | 2 x NVMe modelo Z (caché)    |
-| 10 veces el modelo SSD Y (capacidad) | 10 veces el modelo SSD Y (capacidad) | 10 veces el modelo SSD Y (capacidad) |
+| 2 x modelo de NVMe X (caché)    | 2 x modelo de NVMe X (caché)    | 2 x modelo de NVMe Z (caché)    |
+| 10 modelo SSD Y (capacidad) | 10 modelo SSD Y (capacidad) | 10 modelo SSD Y (capacidad) |
 
-Esto se admite.
+Esta configuración es compatible.
 
-### <a name="supportedmediadrive-symmetry-considerationssupportedpng-supported-different-models-within-server"></a>![admitido](media/drive-symmetry-considerations/supported.png) Compatible: diferentes modelos en el servidor
+### <a name="supported-supported-different-models-within-server"></a>![compatibles](media/drive-symmetry-considerations/supported.png) Compatible: diferentes modelos en el servidor
 
-Cada servidor utiliza una mezcla diferentes de modelos de la unidad de disco duro "Y" y "Z", que son muy similares. Cada servidor tiene 10 unidades de disco duro total.
+Cada servidor utiliza una combinación diferente de modelos HDD "Y" y "Z", que son muy similares. Cada servidor tiene 10 unidades de disco duro en total.
 
 | Servidor 1                   | Servidor 2                   | Servidor 3                   |
 |----------------------------|----------------------------|----------------------------|
-| 2 x SSD modelo X (caché)    | 2 x SSD modelo X (caché)    | 2 x SSD modelo X (caché)    |
-| 7 x Y de modelo de unidad de disco duro (capacidad) | 5 x Y de modelo de unidad de disco duro (capacidad) | 1 x Y de modelo de unidad de disco duro (capacidad) |
-| 3 x HDD modelo Z (capacidad) | 5 x HDD modelo Z (capacidad) | 9 x HDD modelo Z (capacidad) |
+| 2 x modelo de SSD X (caché)    | 2 x modelo de SSD X (caché)    | 2 x modelo de SSD X (caché)    |
+| 7 modelo de HDD Y (capacidad) | 5 modelo HDD Y (capacidad) | 1 x modelo de HDD Y (capacidad) |
+| 3 x modelo HDD Z (capacidad) | 5 x modelo HDD Z (capacidad) | 9 x modelo HDD Z (capacidad) |
 
-Esto se admite.
+Esta configuración es compatible.
 
-### <a name="supportedmediadrive-symmetry-considerationssupportedpng-supported-different-sizes-across-servers"></a>![admitido](media/drive-symmetry-considerations/supported.png) Compatible: diferentes tamaños entre servidores
+### <a name="supported-supported-different-sizes-across-servers"></a>![compatibles](media/drive-symmetry-considerations/supported.png) Compatible: tamaños diferentes entre servidores
 
-Los dos primeros servidores usan la unidad de disco duro de 4 TB sino el tercer servidor muy similar 6 TB HDD.
+Los dos primeros servidores usan una unidad de disco duro de 4 TB, pero el tercer servidor usa una unidad de disco duro de 6 TB muy similar.
 
 | Servidor 1                | Servidor 2                | Servidor 3                |
 |-------------------------|-------------------------|-------------------------|
 | 2 x 800 GB NVMe (caché) | 2 x 800 GB NVMe (caché) | 2 x 800 GB NVMe (caché) |
-| 4 x 4 TB HDD (capacidad) | 4 x 4 TB HDD (capacidad) | 4 x 6 TB HDD (capacidad) |
+| 4 unidades de disco duro de 4 TB (capacidad) | 4 unidades de disco duro de 4 TB (capacidad) | 4 unidades HDD de 6 TB (capacidad) |
 
-Esto es compatible, aunque dará lugar a pérdida de capacidad.
+Se admite, aunque se producirá una capacidad de perdedo.
 
-### <a name="supportedmediadrive-symmetry-considerationssupportedpng-supported-different-sizes-within-server"></a>![admitido](media/drive-symmetry-considerations/supported.png) Compatible: diferentes tamaños de servidor
+### <a name="supported-supported-different-sizes-within-server"></a>![compatibles](media/drive-symmetry-considerations/supported.png) Compatible: tamaños diferentes en el servidor
 
-Todos los servidores de usa una mezcla diferente de 1,2 TB y SSD de TB 1.6 muy similar. Cada servidor tiene 4 SSD total.
+Cada servidor utiliza una combinación diferente de 1,2 TB y SSD de 1,6 TB muy similar. Cada servidor tiene 4 SSD en total.
 
 | Servidor 1                 | Servidor 2                 | Servidor 3                 |
 |--------------------------|--------------------------|--------------------------|
-| 3 x 1,2 TB SSD (caché)   | 2 x 1,2 TB SSD (caché)   | 4 x 1,2 TB SSD (caché)   |
-| 1 x 1,6 TB SSD (caché)   | 2 x 1,6 TB SSD (caché)   | -                        |
-| 20 x 4 TB HDD (capacidad) | 20 x 4 TB HDD (capacidad) | 20 x 4 TB HDD (capacidad) |
+| SSD de 3 x 1,2 TB (caché)   | SSD de 2 x 1,2 TB (caché)   | SSD de 4 x 1,2 TB (caché)   |
+| SSD de 1 x 1,6 TB (caché)   | SSD de 2 x 1,6 TB (caché)   | -                        |
+| HDD de 20 x 4 TB (capacidad) | HDD de 20 x 4 TB (capacidad) | HDD de 20 x 4 TB (capacidad) |
 
-Esto se admite.
+Esta configuración es compatible.
 
-### <a name="unsupportedmediadrive-symmetry-considerationsunsupportedpng-not-supported-different-types-of-drives-across-servers"></a>![no admitido](media/drive-symmetry-considerations/unsupported.png) No se admite: diferentes tipos de unidades entre servidores
+### <a name="unsupported-not-supported-different-types-of-drives-across-servers"></a>![no admitidas](media/drive-symmetry-considerations/unsupported.png) No compatible: diferentes tipos de unidades entre servidores
 
-Servidor 1 tiene NVMe, pero los otros no.
+El servidor 1 tiene NVMe, pero los otros no.
 
 | Servidor 1            | Servidor 2            | Servidor 3            |
 |---------------------|---------------------|---------------------|
 | 6 x NVMe (caché)    | -                   | -                   |
-| -                   | 6 x SSD (caché)     | 6 x SSD (caché)     |
-| 18 x HDD (capacidad) | 18 x HDD (capacidad) | 18 x HDD (capacidad) |
+| -                   | SSD de 6 x (caché)     | SSD de 6 x (caché)     |
+| 18 unidades HDD (capacidad) | 18 unidades HDD (capacidad) | 18 unidades HDD (capacidad) |
 
-No se admite. Los tipos de unidades de disco deben ser el mismo en todos los servidores.
+Esto no se admite. Los tipos de unidades deben ser los mismos en todos los servidores.
 
-### <a name="unsupportedmediadrive-symmetry-considerationsunsupportedpng-not-supported-different-number-of-each-type-across-servers"></a>![no admitido](media/drive-symmetry-considerations/unsupported.png) No se admite: un número diferente de cada tipo a través de servidores
+### <a name="unsupported-not-supported-different-number-of-each-type-across-servers"></a>![no admitidas](media/drive-symmetry-considerations/unsupported.png) No compatible: número diferente de cada tipo entre servidores
 
-Servidor 3 tiene unidades más que los demás.
+El servidor 3 tiene más unidades que las otras.
 
 | Servidor 1            | Servidor 2            | Servidor 3            |
 |---------------------|---------------------|---------------------|
 | 2 x NVMe (caché)    | 2 x NVMe (caché)    | 4 x NVMe (caché)    |
-| 10 x HDD (capacidad) | 10 x HDD (capacidad) | 20 x HDD (capacidad) |
+| 10 unidades HDD (capacidad) | 10 unidades HDD (capacidad) | 20 unidades HDD (capacidad) |
 
-No se admite. El número de unidades de cada tipo debe ser el mismo en todos los servidores.
+Esto no se admite. El número de unidades de cada tipo debe ser el mismo en todos los servidores.
 
-### <a name="unsupportedmediadrive-symmetry-considerationsunsupportedpng-not-supported-only-hdd-drives"></a>![no admitido](media/drive-symmetry-considerations/unsupported.png) No se admite: solo las unidades de disco duro
+### <a name="unsupported-not-supported-only-hdd-drives"></a>![no admitidas](media/drive-symmetry-considerations/unsupported.png) No compatible: solo unidades HDD
 
-Todos los servidores tengan sólo las unidades de disco duro conectadas.
+Todos los servidores solo tienen unidades HDD conectadas.
 
 |Servidor 1|Servidor 2|Servidor 3|
 |-|-|-| 
-|18 x HDD (capacidad) |18 x HDD (capacidad)|18 x HDD (capacidad)|
+|18 unidades HDD (capacidad) |18 unidades HDD (capacidad)|18 unidades HDD (capacidad)|
 
-No se admite. Deberá agregar un mínimo de dos unidades de caché (NvME o SSD) asociado a cada uno de los servidores.
+Esto no se admite. Debe agregar un mínimo de dos unidades de caché (NvME o SSD) conectadas a cada uno de los servidores.
 
 ## <a name="summary"></a>Resumen
 
-Para recapitular, todos los servidores del clúster deben tener los mismos tipos de unidades de disco y el mismo número de cada tipo. Es compatible con los tamaños de unidad según sea necesario, con las consideraciones anteriores y los modelos de la unidad de combinar y hacer coincidir.
+En Resumen, cada servidor del clúster debe tener los mismos tipos de unidades y el mismo número de cada tipo. Se admite para combinar modelos de unidad y tamaños de unidad según sea necesario, con las consideraciones anteriores.
 
-| restricción                               |               |
+| Restricción                               |               |
 |------------------------------------------|---------------|
-| Mismos tipos de unidades en cada servidor     | **Obligatorio**  |
-| Mismo número de cada tipo en todos los servidores | **Obligatorio**  |
-| Modelos de unidad misma en todos los servidores        | Recomendado   |
-| Tamaños de unidad misma en todos los servidores         | Recomendado   |
+| Los mismos tipos de unidades en cada servidor     | **Obligatorio**  |
+| El mismo número de cada tipo en cada servidor | **Obligatorio**  |
+| Los mismos modelos de unidad en cada servidor        | Recomendado   |
+| Los mismos tamaños de unidad en cada servidor         | Recomendado   |
 
 ## <a name="see-also"></a>Vea también
 
-- [Requisitos de hardware de almacenamiento directo en espacios](storage-spaces-direct-hardware-requirements.md)
-- [Información general de espacios directo de almacenamiento](storage-spaces-direct-overview.md)
+- [Requisitos de hardware Espacios de almacenamiento directo](storage-spaces-direct-hardware-requirements.md)
+- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)

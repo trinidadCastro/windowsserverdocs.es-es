@@ -3,22 +3,21 @@ title: Error de protocolo de enlace de tres vías TCP durante la conexión SMB
 description: Presenta el error del Protocolo de enlace de tres vías TCP durante la conexión SMB.
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 8cef47e164b8768747cb383f4d7012130c7cb516
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: cb88fa89344172cfc1ed036865a4496ed73e9a22
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654636"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815328"
 ---
 # <a name="tcp-three-way-handshake-failure-during-smb-connection"></a>Error de protocolo de enlace de tres vías TCP durante la conexión SMB
 
 Cuando se analiza un seguimiento de red, se observa que hay un error de protocolo de enlace de tres vías del Protocolo de control de transmisión (TCP) que hace que se produzca el problema de SMB. En este artículo se describe cómo solucionar este problema.
 
-## <a name="troubleshooting"></a>de solución de problemas
+## <a name="troubleshooting"></a>Solucionar problemas
 
 Por lo general, la causa es un firewall local o de infraestructura que bloquea el tráfico. Este problema puede producirse en cualquiera de los escenarios siguientes.
 
@@ -40,7 +39,7 @@ netstat -ano | findstr :445
 Get-NetTcpConnection -LocalPort 445
 ```
 
-### <a name="step-2"></a>Paso 2
+### <a name="step-2"></a>Paso 2
 
 Asegúrese de que el servicio servidor está iniciado y en ejecución.
 

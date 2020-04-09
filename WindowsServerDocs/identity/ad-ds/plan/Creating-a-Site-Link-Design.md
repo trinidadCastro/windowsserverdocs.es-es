@@ -1,7 +1,6 @@
 ---
 ms.assetid: 206b8072-1d0c-4a0b-ba8a-35a868d67b4c
 title: Crear un diseño de vínculo de sitio
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: fdff477a1fb7cbe42402b2bb608eea55f2f9ec09
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0d9f167a7721fd98179c30b83cc758aa2079dcb1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402710"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822758"
 ---
 # <a name="creating-a-site-link-design"></a>Crear un diseño de vínculo de sitio
 
@@ -32,7 +31,7 @@ Siempre que agregue sitios a un vínculo a sitios recién creado, determine si e
   
 Para identificar los sitios miembro que desea conectar con un vínculo a sitios, use la lista de ubicaciones y ubicaciones vinculadas que registró en la hoja de cálculo "ubicaciones geográficas y vínculos de comunicación" (DSSTOPO_1. doc). Si varios sitios tienen la misma conectividad y disponibilidad entre sí, puede conectarlos con el mismo vínculo a sitios.  
   
-El contenedor de transportes entre sitios proporciona los medios para asignar vínculos de sitio al transporte que utiliza el vínculo. Cuando se crea un objeto de vínculo a sitios, se crea en el contenedor de IP, que asocia el vínculo a sitios con la llamada a procedimiento remoto (RPC) a través de un transporte IP o el contenedor de Protocolo simple de transferencia de correo (SMTP), que asocia el vínculo a sitios con el servidor SMTP. Porta.  
+El contenedor de transportes entre sitios proporciona los medios para asignar vínculos de sitio al transporte que utiliza el vínculo. Cuando se crea un objeto de vínculo a sitios, se crea en el contenedor de IP, que asocia el vínculo a sitios con la llamada a procedimiento remoto (RPC) a través de un transporte IP o el contenedor de Protocolo simple de transferencia de correo (SMTP), que asocia el vínculo a sitios con el transporte SMTP.  
   
 > [!NOTE]  
 > La replicación SMTP no se admitirá en versiones futuras de Active Directory Domain Services (AD DS); por lo tanto, no se recomienda crear objetos de vínculos de sitio en el contenedor de SMTP.  
@@ -41,7 +40,7 @@ Al crear un objeto de vínculo a sitios en el contenedor de transportes entre si
   
 Cuando no hay disponible una conexión IP directa, puede configurar la replicación entre sitios para usar SMTP. Sin embargo, la funcionalidad de replicación de SMTP está limitada y requiere una entidad de certificación (CA) empresarial. SMTP solo puede replicar la configuración, el esquema y las particiones de directorio de aplicaciones, y no admite la replicación de particiones de directorio de dominio.  
   
-Para asignar nombres a los vínculos a sitios, use un esquema de nomenclatura coherente, como name_of_site1-name_of_site2. Grabe la lista de sitios, sitios vinculados y los nombres de los vínculos a sitios que conectan estos sitios en una hoja de cálculo. Para obtener una hoja de cálculo que le ayude a registrar nombres de sitio y nombres de vínculos de sitio asociados, vea el tema [sobre ayudas de trabajo para el kit de implementación de Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558), descargar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip y abrir "sitios y Vínculos a sitios asociados "(DSSTOPO_5. doc).  
+Para asignar nombres a los vínculos a sitios, use un esquema de nomenclatura coherente, como name_of_site1-name_of_site2. Grabe la lista de sitios, sitios vinculados y los nombres de los vínculos a sitios que conectan estos sitios en una hoja de cálculo. Para ver una hoja de cálculo que le ayude a registrar los nombres de sitio y los nombres de vínculos de sitio asociados, vea el tema [sobre ayudas de trabajo para el kit de implementación de Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558), descargar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip y abrir "sitios y vínculos a sitios asociados" (DSSTOPO_5. doc).  
   
 ## <a name="in-this-guide"></a>En esta guía
 

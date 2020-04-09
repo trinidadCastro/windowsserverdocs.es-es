@@ -1,17 +1,17 @@
 ---
 title: Delimite la asignación de volúmenes en Espacios de almacenamiento directo
 ms.author: cosmosdarwin
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: 19e5a38ca406878b7dbc5a187b0057e97e4fe2d1
-ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
+ms.openlocfilehash: 26454881279e1d33392a827f794788370def2cab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76918303"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858978"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>Delimite la asignación de volúmenes en Espacios de almacenamiento directo
 > Se aplica a: Windows Server 2019
@@ -23,12 +23,12 @@ Windows Server 2019 presenta una opción para delimitar manualmente la asignaci�
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-### <a name="green-checkmark-iconmediadelimit-volume-allocationsupportedpng-consider-using-this-option-if"></a>![Icono de marca de verificación verde.](media/delimit-volume-allocation/supported.png) Considere la posibilidad de usar esta opción si:
+### <a name="green-checkmark-icon-consider-using-this-option-if"></a>![Icono de marca de verificación verde.](media/delimit-volume-allocation/supported.png) Considere la posibilidad de usar esta opción si:
 
 - El clúster tiene seis o más servidores; etc
 - El clúster solo usa resistencia [de reflejo triple](storage-spaces-fault-tolerance.md#mirroring)
 
-### <a name="red-x-iconmediadelimit-volume-allocationunsupportedpng-do-not-use-this-option-if"></a>![Icono X de color rojo.](media/delimit-volume-allocation/unsupported.png) No use esta opción si:
+### <a name="red-x-icon-do-not-use-this-option-if"></a>![Icono X de color rojo.](media/delimit-volume-allocation/unsupported.png) No use esta opción si:
 
 - El clúster tiene menos de seis servidores; de
 - El [clúster utiliza la](storage-spaces-fault-tolerance.md#parity) resistencia de paridad de paridad o [de reflejos](storage-spaces-fault-tolerance.md#mirror-accelerated-parity)
@@ -190,7 +190,7 @@ Por el contrario, en el caso extremo en el que se produce un error en una vez m�
 
 Si se producen tres o más errores al mismo tiempo, pero al menos la mitad de los servidores y las unidades siguen en funcionamiento, los volúmenes con asignación delimitada pueden permanecer en línea y ser accesibles, en función de los servidores que tengan errores.
 
-## <a name="frequently-asked-questions"></a>Preguntas frecuentes
+## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
 ### <a name="can-i-delimit-some-volumes-but-not-others"></a>¿Puedo delimitar algunos volúmenes, pero no otros?
 
@@ -200,7 +200,7 @@ Sí. Puede elegir por volumen si quiere o no delimitar la asignación.
 
 No, es lo mismo que con la asignación normal.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Tolerancia a errores en Espacios de almacenamiento directo](storage-spaces-fault-tolerance.md)

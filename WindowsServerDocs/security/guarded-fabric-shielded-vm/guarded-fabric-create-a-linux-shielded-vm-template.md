@@ -1,19 +1,19 @@
 ---
 title: Creación de un disco de plantilla de máquina virtual blindada Linux
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: d0e1d4fb-97fc-4389-9421-c869ba532944
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 66d5f70f747a6209f2856afde58b6f486ea597f8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1a6325a5d8e931f1e62c83ba4013d94760e39f86
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386709"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856798"
 ---
 # <a name="create-a-linux-shielded-vm-template-disk"></a>Creación de un disco de plantilla de máquina virtual blindada Linux
 
@@ -72,7 +72,7 @@ Estos pasos le guiarán a través de los requisitos mínimos para preparar una m
 5.  Mediante el administrador de Hyper-V, [Configure un conmutador externo](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines) en el servidor de virtualización para que la máquina virtual Linux pueda acceder a Internet para obtener actualizaciones.
 
 6.  A continuación, cree una nueva máquina virtual para instalar el sistema operativo Linux en.
-    En el panel acciones, haga clic en **nueva** **máquina virtual**  >  para que aparezca el asistente.
+    En el panel acciones, haga clic en **nuevo** > **máquina virtual** para abrir el asistente.
     Proporcione un nombre descriptivo para la máquina virtual, como "hace plantilla Linux", y haga clic en **siguiente**.
 
 7.  En la segunda página del asistente, seleccione **generación 2** para asegurarse de que la máquina virtual se aprovisiona con un perfil de firmware basado en UEFI.
@@ -171,7 +171,7 @@ Propiedad de certificado | Valor obligatorio
 Algoritmo de clave | RSA
 Tamaño mínimo de clave | 2048 bits
 Algoritmo de firma | SHA256 (recomendado)
-Uso de la clave | Firma digital
+Key Usage | Firma digital
 
 Los detalles sobre este certificado se mostrarán a los inquilinos cuando creen sus archivos de datos de blindaje y estén autorizando los discos en los que confían.
 Por lo tanto, es importante obtener este certificado de una entidad de certificación de confianza mutua para el usuario y los inquilinos.

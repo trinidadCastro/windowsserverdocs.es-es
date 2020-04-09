@@ -1,7 +1,6 @@
 ---
 ms.assetid: e831f781-3c45-4d44-b411-160d121d1324
 title: Lenguaje de reglas de transformación de notificaciones
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 200d592bc68562856bbdee623e70d73d41457c15
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f391c3f8ef2bb5b12f0dd15db55df4f861c05f9b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357581"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861278"
 ---
 # <a name="claims-transformation-rules-language"></a>Lenguaje de reglas de transformación de notificaciones
 
@@ -24,7 +23,7 @@ La característica de transformación de notificaciones entre bosques le permite
   
 Los cmdlets de Windows PowerShell para las directivas de transformación en confianzas entre bosques tienen opciones para establecer directivas simples que se requieren en escenarios comunes. Estos cmdlets traducen la entrada del usuario en directivas y reglas en el lenguaje de reglas de transformación de notificaciones y, después, las almacenan en Active Directory en el formato indicado. Para obtener más información sobre los cmdlets para la transformación de notificaciones, consulte los [cmdlets de AD DS para la Access Control dinámica](https://go.microsoft.com/fwlink/?LinkId=243150).  
   
-En función de la configuración de notificaciones y de los requisitos de la confianza entre bosques en los bosques de Active Directory, las directivas de transformación de notificaciones pueden tener que ser más complejas que las directivas admitidas por los cmdlets de Windows PowerShell para Active Active. Para crear de forma eficaz estas directivas, es esencial comprender la sintaxis y la semántica del lenguaje de reglas de transformación de notificaciones. Este lenguaje de reglas de transformación de notificaciones ("el lenguaje") en Active Directory es un subconjunto del lenguaje que usa [servicios de Federación de Active Directory (AD FS)](https://go.microsoft.com/fwlink/?LinkId=243982) para propósitos similares y tiene una sintaxis y una semántica muy similares. Sin embargo, se permiten menos operaciones y las restricciones de sintaxis adicionales se colocan en la versión Active Directory del lenguaje.  
+En función de la configuración de notificaciones y de los requisitos de la confianza entre bosques en los bosques de Active Directory, las directivas de transformación de notificaciones pueden tener que ser más complejas que las directivas admitidas por los cmdlets de Windows PowerShell para Active Directory. Para crear de forma eficaz estas directivas, es esencial comprender la sintaxis y la semántica del lenguaje de reglas de transformación de notificaciones. Este lenguaje de reglas de transformación de notificaciones ("el lenguaje") en Active Directory es un subconjunto del lenguaje que usa [servicios de Federación de Active Directory (AD FS)](https://go.microsoft.com/fwlink/?LinkId=243982) para propósitos similares y tiene una sintaxis y una semántica muy similares. Sin embargo, se permiten menos operaciones y las restricciones de sintaxis adicionales se colocan en la versión Active Directory del lenguaje.  
   
 En este tema se explica brevemente la sintaxis y la semántica del lenguaje de reglas de transformación de notificaciones en Active Directory y consideraciones que se deben realizar al crear directivas. Proporciona varios conjuntos de reglas de ejemplo para empezar a trabajar y ejemplos de sintaxis incorrecta y los mensajes que generan, para ayudarle a descifrar los mensajes de error al crear las reglas.  
   
@@ -225,7 +224,7 @@ Un analizador personalizado analiza las reglas de transformación de notificacio
   
 En esta sección se muestran algunos ejemplos de reglas que se escriben con una sintaxis incorrecta y los errores de sintaxis correspondientes que genera el analizador.  
   
-1. Por ejemplo:  
+1. Ejemplo:  
   
    ```  
    c1;[]=>Issue(claim=c1);  
@@ -237,7 +236,7 @@ En esta sección se muestran algunos ejemplos de reglas que se escriben con una 
    *Número de línea: 1, número de columna: 2, token de error:;. Línea: ' C1; [] = > problema (Claim = C1); ".*  
    *Error del analizador: ' POLICY0030: error de sintaxis, no esperado '; ', se esperaba uno de los siguientes elementos: ': '. '*  
   
-2. Por ejemplo:  
+2. Ejemplo:  
   
    ```  
    c1:[]=>Issue(claim=c2);  
@@ -247,7 +246,7 @@ En esta sección se muestran algunos ejemplos de reglas que se escriben con una 
    **Mensaje de error**:   
    *POLICY0011: no hay condiciones en la regla de notificaciones que coincidan con la etiqueta de condición especificada en CopyIssuanceStatement: ' C2 '.*  
   
-3. Por ejemplo:  
+3. Ejemplo:  
   
    ```  
    c1:[type=="x1", value=="1", valuetype=="bool"]=>Issue(claim=c1)  
@@ -259,7 +258,7 @@ En esta sección se muestran algunos ejemplos de reglas que se escriben con una 
    Número de línea: 1, número de columna: 39, token de error: "bool". Línea: ' C1: [type = = "x1", Value = = "1", ValueType = = "bool"] = > problema (Claim = C1); ".   
    *Error del analizador: ' POLICY0030: error de sintaxis, ' cadena ' inesperado, se esperaba uno de los siguientes elementos: ' INT64_TYPE ' ' UINT64_TYPE ' ' STRING_TYPE ' ' BOOLEAN_TYPE ' ' identificador '*  
   
-4. Por ejemplo:  
+4. Ejemplo:  
   
    ```  
    c1:[type=="x1", value==1, valuetype=="boolean"]=>Issue(claim=c1);  
@@ -270,7 +269,7 @@ En esta sección se muestran algunos ejemplos de reglas que se escriben con una 
    *POLICY0002: no se pudieron analizar los datos de la Directiva.*  
    *Número de línea: 1, número de columna: 23, token de error: 1. línea: ' C1: [type = = "x1", Value = = 1, ValueType = = "bool"] = > problema (Claim = C1); '.* <em>Error del analizador: ' POLICY0029: entrada inesperada.</em>  
   
-5. Por ejemplo:  
+5. Ejemplo:  
   
    ```  
    c1:[type == "x1", value == "1", valuetype == "boolean"] =>   
@@ -285,7 +284,7 @@ En esta sección se muestran algunos ejemplos de reglas que se escriben con una 
    *ValueType = = "Boolean"] = > problema (Type = C1. Type, Value = "0", ValueType = = "Boolean"); ".*  
    *Error del analizador: ' POLICY0030: error de sintaxis, inesperado ' = = ', se esperaba uno de los siguientes elementos: ' = '*  
   
-6. Por ejemplo:  
+6. Ejemplo:  
   
    ```  
    c1:[type=="x1", value=="boolean", valuetype=="string"] =>   
@@ -295,10 +294,10 @@ En esta sección se muestran algunos ejemplos de reglas que se escriben con una 
   
    Este ejemplo es correcto sintácticamente y semánticamente. Sin embargo, el uso de "Boolean" como valor de cadena se enlaza para causar confusión y debe evitarse. Como se mencionó anteriormente, el uso de los terminales de idioma como valores de notificaciones debe evitarse siempre que sea posible.  
   
-## <a name="BKMK_LT"></a>Terminales de idioma  
+## <a name="language-terminals"></a><a name="BKMK_LT"></a>Terminales de idioma  
 En la tabla siguiente se muestra el conjunto completo de cadenas de terminal y los terminales de idioma asociados que se usan en el lenguaje de reglas de transformación de notificaciones. Estas definiciones usan cadenas UTF-16 que no distinguen mayúsculas de minúsculas.  
   
-|Cadena|Terminal|  
+|String|Terminal|  
 |----------|------------|  
 |"= >"|IMPLICA|  
 |";"|PUNTO Y coma|  
@@ -314,7 +313,7 @@ En la tabla siguiente se muestra el conjunto completo de cadenas de terminal y l
 |"=~"|REGEXP_MATCH|  
 |"!~"|REGEXP_NOT_MATCH|  
 |"="|QUITAR|  
-|"& &"|Y|  
+|"& &"|AND|  
 |publicación|PROBLEMA|  
 |automáticamente|TYPE|  
 |valor|VALOR|  
@@ -324,7 +323,7 @@ En la tabla siguiente se muestra el conjunto completo de cadenas de terminal y l
 |"\\" [^\\"\n] *\\" "|String@|  
 |UInt64|UINT64_TYPE|  
 |Int64|INT64_TYPE|  
-|String@|STRING_TYPE|  
+|"string"|STRING_TYPE|  
 |booleano|BOOLEAN_TYPE|  
   
 ## <a name="language-syntax"></a>Sintaxis del lenguaje  

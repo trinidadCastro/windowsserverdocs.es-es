@@ -1,6 +1,5 @@
 ---
 title: 'Recuperación de bosque de AD: realizar la recuperación inicial'
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: a369347fe889c7f6675d0091d05a6dee93cb4434
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7d592198187d44927f643b45e7a8bb4c2eec2a69
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369067"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823908"
 ---
 # <a name="perform-initial-recovery"></a>Realizar la recuperación inicial  
 
@@ -53,11 +52,11 @@ A continuación, realice los pasos siguientes. Los procedimientos para realizar 
 
       **HKLM\System\CurrentControlSet\Services\NTDS\Parameters\Repl realizar sincronizaciones iniciales**  
   
-      Cree la entrada con el tipo de datos **REG_DWORD** y un valor de **0**. Después de que el bosque se recupere por completo, puede restablecer el valor de esta entrada en **1**, que requiere un controlador de dominio que se reinicie y conserve que los roles de maestro de operaciones tengan éxito AD DS la replicación entrante y saliente con su réplica conocida. asociados antes de anunciarse como controlador de dominio y comienza a proporcionar servicios a los clientes. Para obtener más información sobre los requisitos de sincronización inicial, consulte el artículo de KB [305476](https://support.microsoft.com/kb/305476). 
+      Cree la entrada con el tipo de datos **REG_DWORD** y un valor de **0**. Después de que el bosque se recupere por completo, puede restablecer el valor de esta entrada en **1**, que requiere un controlador de dominio que se reinicie y conserve que los roles de maestro de operaciones tengan éxito AD DS la replicación entrante y saliente con sus asociados de réplica conocidos antes de que se anuncie como controlador de dominio y empiece a proporcionar servicios a los clientes. Para obtener más información sobre los requisitos de sincronización inicial, consulte el artículo de KB [305476](https://support.microsoft.com/kb/305476). 
   
       Continúe con los pasos siguientes solo después de restaurar y comprobar los datos y antes de unir este equipo a la red de producción. 
   
-4. Si sospecha que el error en todo el bosque estaba relacionado con la intrusión de red o un ataque malintencionado, restablezca las contraseñas de cuenta para todas las cuentas administrativas, incluidos los miembros de los administradores de empresas, administradores de dominio, administradores de esquemas, operadores de servidor, cuenta Grupos de operadores, etc. El restablecimiento de contraseñas de cuentas administrativas debe completarse antes de que se instalen controladores de dominio adicionales durante la siguiente fase de la recuperación del bosque. 
+4. Si sospecha que el error en todo el bosque estaba relacionado con la intrusión de red o un ataque malintencionado, restablezca las contraseñas de cuenta para todas las cuentas administrativas, incluidos los miembros de los grupos administradores de empresas, administradores de dominio, administradores de esquema, operadores de servidor, operadores de cuentas, etc. El restablecimiento de contraseñas de cuentas administrativas debe completarse antes de que se instalen controladores de dominio adicionales durante la siguiente fase de la recuperación del bosque. 
 5. En el primer DC restaurado del dominio raíz del bosque, asuma todas las funciones de maestro de operaciones para todo el dominio y para todo el bosque. Se necesitan credenciales de administrador de organización y administradores de esquema para asumir roles de maestro de operaciones en todo el bosque. 
   
      En cada dominio secundario, asuma los roles de maestro de operaciones de todo el dominio. Aunque es posible que se conserven las funciones de maestro de operaciones en el controlador de dominio restaurado solo temporalmente, al asumir estos roles se asegurará de que el controlador de dominio los hospeda en este punto del proceso de recuperación del bosque. Como parte del proceso posterior a la recuperación, puede redistribuir los roles de maestro de operaciones según sea necesario. Para obtener más información acerca de cómo asumir roles de maestro de operaciones, consulte [asumir un rol de maestro de operaciones](AD-forest-recovery-seizing-operations-master-role.md). Para obtener recomendaciones sobre dónde colocar roles de maestro de operaciones, consulte [¿Qué son los maestros de operaciones?](https://technet.microsoft.com/library/cc779716.aspx). 
@@ -77,7 +76,7 @@ A continuación, realice los pasos siguientes. Los procedimientos para realizar 
   
      En cada dominio secundario, configure el controlador de dominio restaurado con la dirección IP del primer servidor DNS del dominio raíz del bosque como su servidor DNS preferido. Puede configurar esta opción en las propiedades de TCP/IP del adaptador de LAN. Para obtener más información, vea [configurar TCP/IP para utilizar DNS](https://technet.microsoft.com/library/cc779282\(WS.10\).aspx). 
   
-     En las zonas _ msdcs y DNS del dominio, elimine los registros NS de los controladores de dominio que ya no existen después de la limpieza de los metadatos. Compruebe si se han quitado los registros SRV de los controladores de seguridad limpiados. Para ayudar a acelerar la eliminación de registros SRV de DNS, ejecute:  
+     En el _msdcs y las zonas DNS de dominio, elimine los registros NS de los controladores de dominio que ya no existen después de la limpieza de metadatos. Compruebe si se han quitado los registros SRV de los controladores de seguridad limpiados. Para ayudar a acelerar la eliminación de registros SRV de DNS, ejecute:  
   
     ```  
     nltest.exe /dsderegdns:server.domain.tld  
@@ -111,7 +110,7 @@ A continuación, realice los pasos siguientes. Los procedimientos para realizar 
   
      Un segundo problema es que una cuenta de usuario que ya no existe podría aparecer en la lista global de direcciones. Un tercer problema es que un grupo universal que ya no existe puede seguir apareciendo en el token de acceso de un usuario. 
   
-     Si restaura un controlador de dominio que era un catálogo global, ya sea por accidente o porque se trata de la copia de seguridad de solitarios de confianza, se recomienda evitar la aparición de objetos persistentes deshabilitando el catálogo global poco después de la operación de restauración. finaliza. Al deshabilitar la marca de catálogo global, el equipo perderá todas las réplicas parciales (particiones) y se relegará a su estado de DC normal. 
+     Si restaura un controlador de dominio que era un catálogo global, ya sea por accidente o porque se trata de la copia de seguridad de solitarios de confianza, se recomienda evitar la aparición de objetos persistentes deshabilitando el catálogo global poco después de que se complete la operación de restauración. Al deshabilitar la marca de catálogo global, el equipo perderá todas las réplicas parciales (particiones) y se relegará a su estado de DC normal. 
   
 13. Configure el servicio de hora de Windows. En el dominio raíz del bosque, configure el emulador de PDC para sincronizar la hora desde un origen de hora externo. Para obtener más información, vea [configurar el servicio de hora de Windows en el emulador de PDC del dominio raíz del bosque](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731191%28v=ws.10%29). 
   
@@ -126,7 +125,7 @@ Después de la validación, una los controladores de red a la red de producción
 
 - Para corregir la resolución de nombres, cree registros de delegación DNS y configure los reenvíos de DNS y las sugerencias de raíz según sea necesario. Ejecute **repadmin/replsum** para comprobar la replicación entre controladores de DC. 
 - Si los DC restaurados no son asociados de replicación directos, la recuperación de la replicación será mucho más rápida mediante la creación de objetos de conexión temporales entre ellos. 
-- Para validar la limpieza de metadatos, ejecute **repadmin/viewlist \\** * para obtener una lista de todos los controladores de DC del bosque. Ejecute **NLTEST/DCList:** *< dominio\>*  para obtener una lista de todos los controladores de dominio del dominio. 
+- Para validar la limpieza de metadatos, ejecute **repadmin/viewlist \\** * para obtener una lista de todos los controladores de DC del bosque. Ejecute **NLTEST/DCList:** *<\>de dominio* para obtener una lista de todos los controladores de dominio del dominio. 
 - Para comprobar el estado de los controladores de dominio y DNS, ejecute DCDiag/v para notificar los errores en todos los controladores de dominio del bosque. 
 
 ## <a name="add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain"></a>Agregar el catálogo global a un controlador de dominio en el dominio raíz del bosque

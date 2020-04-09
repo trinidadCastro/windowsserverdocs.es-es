@@ -1,6 +1,5 @@
 ---
 title: Inicio rápido para la implementación de tejido protegido
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: e060e052-39a0-4154-90bb-b97cc6dde68e
@@ -9,12 +8,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: e2b8400fc7b7f0e01e000fcb2f6472bdb4059ac8
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c0e29abf14ff1dded12e7e20a0c0a74f80a91d8e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949799"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856748"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>Inicio rápido para la implementación de tejido protegido
 
@@ -105,9 +104,9 @@ Como se indicó otra manera, los pasos de validación rigurosos que se usan para
 
 En el modo TPM, se necesitan tres cosas: 
 
-1.  Una _clave de aprobación pública_ (o _EKPUB_) del TPM 2,0 en cada uno de los hosts de Hyper-V. Para capturar EKpub, use `Get-PlatformIdentifier`. 
-2.  _Línea de base de hardware_. Si cada uno de los hosts de Hyper-V es idéntico, se necesita una sola línea de base. Si no es así, necesitará uno para cada clase de hardware. La línea de base está en forma de un archivo de registro de Trustworthy Computing Group o TCGlog. El TCGlog contiene todo lo que el host hizo, desde el firmware UEFI, hasta el kernel, hasta el punto en el que se arranca el host por completo. Para capturar la línea de base de hardware, instale el rol de Hyper-V y la característica de compatibilidad de Hyper-V de protección de host y use `Get-HgsAttestationBaselinePolicy`. 
-3.  Una _Directiva de integridad de código_. Si cada uno de los hosts de Hyper-V es idéntico, solo necesitará una directiva de CI. Si no es así, necesitará uno para cada clase de hardware. Tanto Windows Server 2016 como Windows 10 tienen una nueva forma de cumplimiento de directivas de CI, llamada _integridad de código forzada por hipervisor (HVCI)_ . HVCI proporciona un cumplimiento fuerte y garantiza que un host solo puede ejecutar archivos binarios que un administrador de confianza le permita ejecutar. Estas instrucciones se incluyen en una directiva de CI que se agrega a HGS. HGS mide la Directiva de CI de cada host antes de que se le permita ejecutar máquinas virtuales blindadas. Para capturar una directiva de CI, use `New-CIPolicy`. La Directiva se debe convertir a su formato binario mediante `ConvertFrom-CIPolicy`.
+1.    Una _clave de aprobación pública_ (o _EKPUB_) del TPM 2,0 en cada uno de los hosts de Hyper-V. Para capturar EKpub, use `Get-PlatformIdentifier`. 
+2.    _Línea de base de hardware_. Si cada uno de los hosts de Hyper-V es idéntico, se necesita una sola línea de base. Si no es así, necesitará uno para cada clase de hardware. La línea de base está en forma de un archivo de registro de Trustworthy Computing Group o TCGlog. El TCGlog contiene todo lo que el host hizo, desde el firmware UEFI, hasta el kernel, hasta el punto en el que se arranca el host por completo. Para capturar la línea de base de hardware, instale el rol de Hyper-V y la característica de compatibilidad de Hyper-V de protección de host y use `Get-HgsAttestationBaselinePolicy`. 
+3.    Una _Directiva de integridad de código_. Si cada uno de los hosts de Hyper-V es idéntico, solo necesitará una directiva de CI. Si no es así, necesitará uno para cada clase de hardware. Tanto Windows Server 2016 como Windows 10 tienen una nueva forma de cumplimiento de directivas de CI, llamada _integridad de código forzada por hipervisor (HVCI)_ . HVCI proporciona un cumplimiento fuerte y garantiza que un host solo puede ejecutar archivos binarios que un administrador de confianza le permita ejecutar. Estas instrucciones se incluyen en una directiva de CI que se agrega a HGS. HGS mide la Directiva de CI de cada host antes de que se le permita ejecutar máquinas virtuales blindadas. Para capturar una directiva de CI, use `New-CIPolicy`. La Directiva se debe convertir a su formato binario mediante `ConvertFrom-CIPolicy`.
 
 ![Extraer identidades, línea base y Directiva de CI](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-three-extract-identity-baseline-ci-policy.png)
 

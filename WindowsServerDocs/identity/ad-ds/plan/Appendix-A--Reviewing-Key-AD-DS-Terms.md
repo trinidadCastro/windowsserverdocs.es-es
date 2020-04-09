@@ -1,7 +1,6 @@
 ---
 ms.assetid: 87196b65-a356-409f-9af0-b5950797d668
 title: 'Apéndice A: revisar los términos de la clave AD DS'
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 81beba874440f7a75c2d7932357fae70f046d996
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ad8c1cf769c0c2a22e2d55f7bd2d111095410afe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409015"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822868"
 ---
-# <a name="appendix-a-reviewing-key-ad-ds-terms"></a>Apéndice A: Revisar los términos de la clave AD DS
+# <a name="appendix-a-reviewing-key-ad-ds-terms"></a>Anexo A: revisión de términos de clave de AD DS
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -35,7 +34,7 @@ Una unidad administrativa en una red de equipos que, para facilitar la administr
   
 -   **Replicación**. Un dominio define una partición del árbol de directorios que proporciona los datos adecuados para proporcionar los servicios necesarios y que se replican entre los controladores de dominio. De esta manera, todos los controladores de dominio son del mismo nivel en un dominio y se administran como una unidad.  
   
-## <a name="active-directory-forest"></a>Active Directory bosque  
+## <a name="active-directory-forest"></a>Bosque de Active Directory  
 Colección de uno o más dominios de Active Directory que comparten una estructura lógica común, un esquema de directorio y una configuración de red, así como relaciones de confianza transitivas, bidireccionales y automáticas. Cada bosque es una instancia única del directorio y define un límite de seguridad.  
   
 ## <a name="active-directory-functional-level"></a>Active Directory nivel funcional  
@@ -54,7 +53,7 @@ Proceso de reestructuración que implica la eliminación de AD DS dominios combi
 Proceso de actualización del servicio de directorio de un dominio a una versión posterior del servicio de directorio. Esto incluye la actualización del sistema operativo en todos los controladores de dominio y la elevación del nivel funcional AD DS cuando proceda.  
   
 ## <a name="in-place-domain-upgrade"></a>Actualización de dominio local  
-El proceso de actualización de los sistemas operativos de todos los controladores de dominio de un dominio determinado, por ejemplo, la actualización de Windows Server 2003 a Windows Server 2008 y la elevación del nivel funcional del dominio, si es aplicable, mientras se dejan los objetos de dominio, como los usuarios. y los grupos, en su lugar.  
+Proceso de actualización de los sistemas operativos de todos los controladores de dominio de un dominio determinado, por ejemplo, la actualización de Windows Server 2003 a Windows Server 2008 y la elevación del nivel funcional del dominio, si es aplicable, y el abandono de objetos de dominio, como usuarios y grupos, en su lugar.  
   
 ## <a name="forest-root-domain"></a>Dominio raíz del bosque  
 Primer dominio que se crea en el bosque de Active Directory. Este dominio se designa automáticamente como dominio raíz del bosque. Proporciona la base para la infraestructura de bosque de Active Directory.  

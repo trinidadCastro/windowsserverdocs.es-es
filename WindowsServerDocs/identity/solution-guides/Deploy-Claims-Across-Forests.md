@@ -1,7 +1,6 @@
 ---
 ms.assetid: ceb9ce18-5a94-4166-9edd-2685b81fc15f
 title: Implementación de notificaciones en bosques
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 21ddcbd3b71a8d623950f1600b654e04ecc41f1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 99af1022870c891c75bb2008f57e8d8e171961ff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357566"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861238"
 ---
 # <a name="deploy-claims-across-forests"></a>Implementación de notificaciones en bosques
 
@@ -49,12 +48,12 @@ Para este escenario está disponible la guía siguiente:
   
 -   [Lenguaje de reglas de transformación de notificaciones](Claims-Transformation-Rules-Language.md)  
   
-## <a name="BKMK_NEW"></a>Roles y características incluidos en este escenario  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Roles y características incluidos en este escenario  
 En la tabla siguiente, se enumeran los roles y las características que forman parte de este escenario y se describe la manera en que son compatibles con él.  
   
 |Rol/característica|Compatibilidad con este escenario|  
 |-----------------|---------------------------------|  
-|Active Directory Domain Services|En este escenario, tienes que configurar dos bosques de Active Directory con una confianza bidireccional. Tienes notificaciones en ambos bosques. También puedes establecer directivas de acceso central en el bosque que confía en el que residen los recursos.|  
+|Servicios de dominio de Active Directory|En este escenario, tienes que configurar dos bosques de Active Directory con una confianza bidireccional. Tienes notificaciones en ambos bosques. También puedes establecer directivas de acceso central en el bosque que confía en el que residen los recursos.|  
 |Rol de servicios de archivos y almacenamiento|En este escenario, se aplica la clasificación de datos a los recursos de los servidores de archivos. La directiva de acceso central se aplica a la carpeta donde quieres conceder el acceso al usuario. Después de la transformación, la notificación concede acceso de usuario a los recursos basándose en la directiva de acceso central que se aplica a la carpeta del servidor de archivos.|  
   
 

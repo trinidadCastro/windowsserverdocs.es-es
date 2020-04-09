@@ -1,24 +1,20 @@
 ---
 title: wmic
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Comando comandos de Windows para WMIC, que muestra información de WMI en un shell de comandos interactivo.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 76397c72-d06f-4cea-88cf-c7603315a983
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f5096ab82ebbd01cb4f3a7dc0cf0b15e4b9fae8e
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.openlocfilehash: 03ba4ecb4b12b03e010318bf6ca260dec00f28f3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781332"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829058"
 ---
 # <a name="wmic"></a>wmic
 
@@ -45,7 +41,7 @@ Los siguientes subcomandos están disponibles en todo momento:
 |contexto|Muestra los valores actuales de todos los conmutadores globales.|
 |[salir de \| salir]|Sale del shell de comandos de WMIC.|
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para mostrar los valores actuales de todos los conmutadores globales, escriba:
 ```
@@ -75,6 +71,6 @@ Para cambiar el identificador de idioma usado por la línea de comandos a Inglé
 wmic /locale:ms_409
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

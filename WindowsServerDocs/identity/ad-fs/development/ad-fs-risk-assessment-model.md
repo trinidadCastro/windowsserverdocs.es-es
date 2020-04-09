@@ -1,20 +1,18 @@
 ---
 title: Crear complementos con AD FS modelo de evaluación de riesgos de 2019
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.reviewer: ''
 ms.date: 04/16/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1a4569b1fa3791d1d3b412b0801f216c975aa4dc
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: af7a565fb5b3745531497ed9119976418eb6dcd7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867605"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857528"
 ---
 # <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>Crear complementos con AD FS modelo de evaluación de riesgos de 2019
 
@@ -26,13 +24,13 @@ El modelo de evaluación de riesgos es un conjunto de interfaces y clases que pe
 
 El modelo permite el código de complemento en cualquiera de las tres fases de AD FS canalización de autenticación, como se muestra a continuación
 
-![model](media/ad-fs-risk-assessment-model/risk1.png)
+![modelo](media/ad-fs-risk-assessment-model/risk1.png)
 
-1.  **Fase de solicitud recibida** : permite compilar complementos para permitir o bloquear solicitudes cuando AD FS recibe la solicitud de autenticación, es decir, antes de que el usuario escriba las credenciales. Puede usar el contexto de la solicitud (por ejemplo, la dirección IP del cliente, el método http, el servidor proxy DNS, etc.) disponible en esta fase para realizar la evaluación de riesgos. Por ejemplo, puede crear un complemento para leer la dirección IP desde el contexto de la solicitud y bloquear la solicitud de autenticación si la dirección IP está en la lista predefinida de direcciones IP de riesgo. 
+1.    **Fase de solicitud recibida** : permite compilar complementos para permitir o bloquear solicitudes cuando AD FS recibe la solicitud de autenticación, es decir, antes de que el usuario escriba las credenciales. Puede usar el contexto de la solicitud (por ejemplo, la dirección IP del cliente, el método http, el servidor proxy DNS, etc.) disponible en esta fase para realizar la evaluación de riesgos. Por ejemplo, puede crear un complemento para leer la dirección IP desde el contexto de la solicitud y bloquear la solicitud de autenticación si la dirección IP está en la lista predefinida de direcciones IP de riesgo. 
 
-2.  **Fase de autenticación previa** : permite crear complementos para permitir o bloquear solicitudes en el punto en el que el usuario proporciona las credenciales, pero antes de que AD FS las evalúe. En esta fase, además del contexto de la solicitud, también tiene información sobre el contexto de seguridad (por ejemplo, el token de usuario, el identificador de usuario, etc.) y el contexto de protocolo (por ejemplo, el protocolo de autenticación, ClientID, ResourceID, etc.) que se usarán en la lógica de evaluación de riesgos. Por ejemplo, puede crear un complemento para evitar ataques de pulverización de contraseñas mediante la lectura de la contraseña del usuario desde el token de usuario y el bloqueo de la solicitud de autenticación si la contraseña está en la lista predefinida de contraseñas de riesgo. 
+2.    **Fase de autenticación previa** : permite crear complementos para permitir o bloquear solicitudes en el punto en el que el usuario proporciona las credenciales, pero antes de que AD FS las evalúe. En esta fase, además del contexto de la solicitud, también tiene información sobre el contexto de seguridad (por ejemplo, el token de usuario, el identificador de usuario, etc.) y el contexto de protocolo (por ejemplo, el protocolo de autenticación, ClientID, ResourceID, etc.) que se usarán en la lógica de evaluación de riesgos. Por ejemplo, puede crear un complemento para evitar ataques de pulverización de contraseñas mediante la lectura de la contraseña del usuario desde el token de usuario y el bloqueo de la solicitud de autenticación si la contraseña está en la lista predefinida de contraseñas de riesgo. 
 
-3.  **Posterior a la autenticación** : habilita el complemento de compilación para evaluar el riesgo después de que el usuario haya proporcionado credenciales y AD FS haya realizado la autenticación. En esta fase, además del contexto de la solicitud, el contexto de seguridad y el contexto del Protocolo, también tiene información sobre el resultado de la autenticación (éxito o error). El complemento puede evaluar la puntuación de riesgo en función de la información disponible y pasar la puntuación de riesgo a las reglas de notificaciones y directivas para su posterior evaluación. 
+3.    **Posterior a la autenticación** : habilita el complemento de compilación para evaluar el riesgo después de que el usuario haya proporcionado credenciales y AD FS haya realizado la autenticación. En esta fase, además del contexto de la solicitud, el contexto de seguridad y el contexto del Protocolo, también tiene información sobre el resultado de la autenticación (éxito o error). El complemento puede evaluar la puntuación de riesgo en función de la información disponible y pasar la puntuación de riesgo a las reglas de notificaciones y directivas para su posterior evaluación. 
 
 Para comprender mejor cómo crear un complemento de evaluación de riesgos y ejecutarlo en línea con AD FS proceso, vamos a crear un complemento de ejemplo que bloquee las solicitudes procedentes de ciertas direcciones IP de **extranet** identificadas como peligrosas, registrar el complemento con AD FS y, por último, probar la funcionalidad. 
 
@@ -70,31 +68,31 @@ El siguiente procedimiento le guiará a través de la creación de un archivo dl
 
 5. Agregue una referencia al `Microsoft.IdentityServer.dll` del AD FS como se muestra a continuación
 
-   a.   Haga clic con el botón derecho en **referencias** en el **Explorador de soluciones** y seleccione **Agregar referencia..** .</br> 
+   a.    Haga clic con el botón derecho en **referencias** en el **Explorador de soluciones** y seleccione **Agregar referencia..** .</br> 
    modelo de ![](media/ad-fs-risk-assessment-model/risk3.png)
    
-   b.   En la ventana **Administrador de referencias** , seleccione **examinar**. En el, **Seleccione los archivos a los que se va a hacer referencia...** en el cuadro de diálogo, seleccione `Microsoft.IdentityServer.dll` de la carpeta de instalación de AD FS (en mi caso **C:\Windows\ADFS**) y haga clic en **Agregar**.
+   b.    En la ventana **Administrador de referencias** , seleccione **examinar**. En el, **Seleccione los archivos a los que se va a hacer referencia...** en el cuadro de diálogo, seleccione `Microsoft.IdentityServer.dll` de la carpeta de instalación de AD FS (en mi caso **C:\Windows\ADFS**) y haga clic en **Agregar**.
    
    >[!NOTE]
    >En mi caso, voy a crear el complemento en el propio servidor de AD FS. Si el entorno de desarrollo está en un servidor diferente, copie el `Microsoft.IdentityServer.dll` de la carpeta de instalación de AD FS en el servidor de AD FS en el cuadro de desarrollo.</br> 
    
-   ![model](media/ad-fs-risk-assessment-model/risk4.png)
+   ![modelo](media/ad-fs-risk-assessment-model/risk4.png)
    
-   c.   Haga clic en **Aceptar** en la ventana **Administrador de referencias** después de asegurarse de que `Microsoft.IdentityServer.dll` casilla está activada.</br>
+   c.    Haga clic en **Aceptar** en la ventana **Administrador de referencias** después de asegurarse de que `Microsoft.IdentityServer.dll` casilla está activada.</br>
    ](media/ad-fs-risk-assessment-model/risk5.png) del modelo de ![
  
 6. Todas las clases y referencias están ahora en su lugar para realizar una compilación.   Sin embargo, puesto que la salida de este proyecto es un archivo dll, tendrá que instalarse en la **caché global de ensamblados**(GAC) del servidor de AD FS y la dll debe estar firmada en primer lugar. Esto se puede hacer de la siguiente manera:
 
-   a.   **Haga clic con el botón derecho** en el nombre del proyecto, ThreatDetectionModule. En el menú, haga clic en **propiedades**.</br>
+   a.    **Haga clic con el botón derecho** en el nombre del proyecto, ThreatDetectionModule. En el menú, haga clic en **propiedades**.</br>
    ](media/ad-fs-risk-assessment-model/risk6.png) del modelo de ![
    
-   b.   En la página **propiedades** , haga clic en **firma**, a la izquierda y, a continuación, active la casilla **firmar el ensamblado**. En el menú desplegable **elegir un archivo de clave de nombre seguro**:, seleccione **< nuevo... >**</br>
+   b.    En la página **propiedades** , haga clic en **firma**, a la izquierda y, a continuación, active la casilla **firmar el ensamblado**. En el menú desplegable **elegir un archivo de clave de nombre seguro**:, seleccione **< nuevo... >**</br>
    ](media/ad-fs-risk-assessment-model/risk7.png) del modelo de ![
 
-   c.   En el **cuadro de diálogo crear clave de nombre seguro**, escriba un nombre (puede elegir cualquier nombre) para la clave, desactive la casilla **proteger mi archivo de clave con la contraseña**. A continuación, haga clic en **Aceptar**.
+   c.    En el **cuadro de diálogo crear clave de nombre seguro**, escriba un nombre (puede elegir cualquier nombre) para la clave, desactive la casilla **proteger mi archivo de clave con la contraseña**. A continuación, haga clic en **Aceptar**.
    ](media/ad-fs-risk-assessment-model/risk8.png) del modelo de ![</br>
  
-   d.   Guarde el proyecto como se muestra a continuación</br>
+   d.    Guarde el proyecto como se muestra a continuación</br>
    ](media/ad-fs-risk-assessment-model/risk9.png) del modelo de ![
 
 7. Compile el proyecto haciendo clic en **compilar** y, a continuación, **vuelva a generar la solución** como se muestra a continuación</br>
@@ -116,25 +114,25 @@ Es necesario registrar el archivo dll en AD FS mediante el comando `Register-Adf
 
 2. Inicie el **símbolo del sistema para desarrolladores** para Visual Studio y vaya al directorio que contiene el **archivo SN. exe** (en mi caso, el directorio es c:\Archivos de programa **(x86) \microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools**) ![Model](media/ad-fs-risk-assessment-model/risk12.png)
 
-3. Ejecute el comando **SN** con el parámetro **-T** y la ubicación del archivo (en mi caso `SN -T “C:\extensions\ThreatDetectionModule.dll”`) ![modelo](media/ad-fs-risk-assessment-model/risk13.png)</br>
+3. Ejecute el comando **SN** con el parámetro **-T** y la ubicación del archivo (en mi caso `SN -T "C:\extensions\ThreatDetectionModule.dll"`) ![modelo](media/ad-fs-risk-assessment-model/risk13.png)</br>
    El comando le proporcionará el token de clave pública (para mí, el **token de clave pública es 714697626ef96b35**)
 
 4. Agregue el archivo DLL a la **caché global de ensamblados** del servidor de AD FS. nuestro procedimiento recomendado sería crear un instalador adecuado para el proyecto y usar el instalador para agregar el archivo a la GAC. Otra solución consiste en usar **Gacutil. exe** (más información sobre **Gacutil. exe** disponible [aquí](https://docs.microsoft.com/dotnet/framework/tools/gacutil-exe-gac-tool)) en el equipo de desarrollo.  Puesto que mi Visual Studio está en el mismo servidor que AD FS, usaría **Gacutil. exe** como se indica a continuación.
 
-   a.   En Símbolo del sistema para desarrolladores para Visual Studio y vaya al directorio que contiene **Gacutil. exe** (en mi caso, el directorio es **c:\Archivos de programa (x86) \Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools**)
+   a.    En Símbolo del sistema para desarrolladores para Visual Studio y vaya al directorio que contiene **Gacutil. exe** (en mi caso, el directorio es **c:\Archivos de programa (x86) \Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools**)
 
-   b.   Ejecutar el comando **Gacutil** (en mi caso `Gacutil /IF C:\extensions\ThreatDetectionModule.dll`) ![modelo](media/ad-fs-risk-assessment-model/risk14.png)
+   b.    Ejecutar el comando **Gacutil** (en mi caso `Gacutil /IF C:\extensions\ThreatDetectionModule.dll`) ![modelo](media/ad-fs-risk-assessment-model/risk14.png)
  
    >[!NOTE]
    >Si tiene una granja de AD FS, se debe ejecutar lo anterior en cada servidor AD FS de la granja. 
 
 5. Abra **Windows PowerShell** y ejecute el siguiente comando para registrar el archivo dll.
    ```
-   Register-AdfsThreatDetectionModule -Name "<Add a name>" -TypeName "<class name that implements interface>, <dll name>, Version=10.0.0.0, Culture=neutral, PublicKeyToken=< Add the Public Key Token from Step 2. above>" -ConfigurationFilePath "<path of the .csv file>”
+   Register-AdfsThreatDetectionModule -Name "<Add a name>" -TypeName "<class name that implements interface>, <dll name>, Version=10.0.0.0, Culture=neutral, PublicKeyToken=< Add the Public Key Token from Step 2. above>" -ConfigurationFilePath "<path of the .csv file>"
    ```
    En mi caso, el comando es: 
    ```
-   Register-AdfsThreatDetectionModule -Name "IPBlockPlugin" -TypeName "ThreatDetectionModule.UserRiskAnalyzer, ThreatDetectionModule, Version=10.0.0.0, Culture=neutral, PublicKeyToken=714697626ef96b35" -ConfigurationFilePath "C:\extensions\authconfigdb.csv”
+   Register-AdfsThreatDetectionModule -Name "IPBlockPlugin" -TypeName "ThreatDetectionModule.UserRiskAnalyzer, ThreatDetectionModule, Version=10.0.0.0, Culture=neutral, PublicKeyToken=714697626ef96b35" -ConfigurationFilePath "C:\extensions\authconfigdb.csv"
    ```
  
    >[!NOTE]
@@ -214,9 +212,9 @@ La clase incluye los siguientes métodos y propiedades.
 |[OnAuthenticationPipelineLoad](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) |Hueco|Llamado por AD FS cuando el complemento se carga en su canalización| 
 |[OnAuthenticationPipelineUnload](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineunload?view=adfs-2019) |Hueco|Llamado por AD FS cuando el complemento se descarga de su canalización| 
 |[OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)| Hueco|Llamado por AD FS en la actualización de la configuración |
-|**Propiedad** |**Tipo** |**Definición**|
-|[Lograr](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname?view=adfs-2019)|Cadena |Obtiene el nombre del proveedor propietario del complemento.|
-|[ModuleIdentifier](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier?view=adfs-2019)|Cadena |Obtiene el identificador del complemento.|
+|**Propiedad** |**Type** |**Definición**|
+|[Lograr](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname?view=adfs-2019)|String |Obtiene el nombre del proveedor propietario del complemento.|
+|[ModuleIdentifier](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier?view=adfs-2019)|String |Obtiene el identificador del complemento.|
 
 En nuestro complemento de ejemplo, usamos los métodos [OnAuthenticationPipelineLoad](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) y [OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019) para leer las direcciones IP predefinidas de AD FS dB. Se llama a [OnAuthenticationPipelineLoad](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) cuando el complemento se registra con AD FS mientras se llama a [OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019) cuando se importa el archivo. csv mediante el cmdlet `Import-AdfsThreatDetectionModuleConfiguration`. 
 
@@ -242,7 +240,7 @@ El método devuelve [ThrottleStatus](https://docs.microsoft.com/dotnet/api/micro
 En nuestro complemento de ejemplo, la implementación del método [EvaluateRequest](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule.evaluaterequest?view=adfs-2019) analiza el [clientIpAddress](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext.clientipaddresses?view=adfs-2019#Microsoft_IdentityServer_Public_ThreatDetectionFramework_RequestContext_ClientIpAddresses) desde el parámetro [requestContext](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019) y lo compara con todas las direcciones IP cargadas desde la base de AD FS. Si se encuentra una coincidencia, el método devuelve 2 para el **bloque**; de lo contrario, devuelve 1 para **permitir**. Según el valor devuelto, AD FS bloquea o permite la solicitud. 
 
 >[!NOTE]
->El complemento de ejemplo descrito anteriormente solo implementa la interfaz IRequestReceivedThreatDetectionModule. Sin embargo, el modelo de evaluación de riesgos proporciona dos interfaces adicionales: IPreAuthenticationThreatDetectionModule (para implementar la lógica de evaluación de riesgos de la fase de autenticación previa de durante) y IPostAuthenticationThreatDetectionModule (para implementar el riesgo). lógica de evaluación durante la fase posterior a la autenticación). A continuación se proporcionan los detalles de las dos interfaces. 
+>El complemento de ejemplo descrito anteriormente solo implementa la interfaz IRequestReceivedThreatDetectionModule. Sin embargo, el modelo de evaluación de riesgos proporciona dos interfaces adicionales: IPreAuthenticationThreatDetectionModule (para implementar la lógica de evaluación de riesgos de la fase de autenticación previa de durante) y IPostAuthenticationThreatDetectionModule (para implementar la lógica de evaluación de riesgos durante la fase posterior a la autenticación). A continuación se proporcionan los detalles de las dos interfaces. 
 
 #### <a name="ipreauthenticationthreatdetectionmodule-interface"></a>Interfaz IPreAuthenticationThreatDetectionModule 
 

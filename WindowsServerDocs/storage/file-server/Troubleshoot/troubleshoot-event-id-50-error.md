@@ -3,16 +3,15 @@ title: Solución de problemas del mensaje de error 50 de ID. de evento
 description: Describe cómo solucionar problemas del mensaje de error de ID. de evento 50
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 202e0604fc492ff72cd1794bc8197a12c1ab9163
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 7ce3551b60450a3720c9350b5c55f396368490c1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654386"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815238"
 ---
 # <a name="troubleshoot-the-event-id-50-error-message"></a>Solución de problemas del mensaje de error 50 de ID. de evento
 

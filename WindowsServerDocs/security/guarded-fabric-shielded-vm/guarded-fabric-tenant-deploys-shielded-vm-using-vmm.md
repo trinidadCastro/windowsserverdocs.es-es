@@ -1,19 +1,19 @@
 ---
 title: 'Máquinas virtuales blindadas para inquilinos: implementación de una máquina virtual blindada mediante Virtual Machine Manager'
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 39d5e29c-835d-490a-b74d-798a0dcb3f39
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: bc212ea2477d9be20112771410110bdb170e5793
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 16735b53b490af57f4b0bbe5c2f1d25af9752fd1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386441"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856438"
 ---
 # <a name="shielded-vms-for-tenants---deploying-a-shielded-vm-by-using-virtual-machine-manager"></a>Máquinas virtuales blindadas para inquilinos: implementación de una máquina virtual blindada mediante Virtual Machine Manager
 

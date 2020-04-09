@@ -8,8 +8,8 @@ metadata:
   text: 'Redes definidas por software (SDN) le permite administrar dinámicamente sus redes de centros de datos para cumplir los requisitos de cargas de trabajo y aplicaciones. Las directivas de red pueden implementarse de manera uniforme, a escala, incluso al implementar nuevas cargas de trabajo o mover cargas de trabajo a través de redes físicas o virtuales.'
   keywords: 'Windows Server, Windows Server 2016, redes definidas por software, sdn'
   ms.localizationpriority: medium
-  author: eross-msft
-  ms.author: lizross
+  author: AnirbanPaul
+  ms.author: anpaul
   ms.date: 09/04/2018
   ms.topic: article
   ms.devlang: na

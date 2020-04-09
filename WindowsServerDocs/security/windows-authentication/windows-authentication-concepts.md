@@ -1,24 +1,20 @@
 ---
 title: Conceptos de autenticación de Windows
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-windows-auth
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 29d1db15-cae0-4e3d-9d8e-241ac206bb8b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 46a0f6c4c08146f1d8fcf9de45446b974e48ecac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4051bfea26d5c96d02132b50373f56b7b17ce5fb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402338"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857478"
 ---
 # <a name="windows-authentication-concepts"></a>Conceptos de autenticación de Windows
 
@@ -34,7 +30,7 @@ Almacenar las claves criptográficas en una ubicación central segura hace que e
 
 Las técnicas de autenticación abarcan desde un inicio de sesión simple a un sistema operativo o un inicio de sesión en un servicio o aplicación, que identifica a los usuarios en función de algo que solo el usuario conoce, como una contraseña, a mecanismos de seguridad más eficaces que usan algo que el usuario has'such como tokens, certificados de clave pública, imágenes o atributos biológicos. En un entorno empresarial, los usuario podrían acceder a varias aplicaciones en diversos tipos de servidores dentro de una sola ubicación o entre distintas ubicaciones. Por dichos motivos, la autenticación debe admitir entornos para otras plataformas y para otros sistemas operativos de Windows.
 
-## <a name="authentication-and-authorization-a-travel-analogy"></a>Autenticación y autorización: Una analogía de desplazamiento
+## <a name="authentication-and-authorization-a-travel-analogy"></a>Autenticación y autorización: una analogía de viaje
 Una analogía de viaje puede ayudar a explicar cómo funciona la autenticación. Normalmente es necesario realizar algunas tareas preparatorias para comenzar el recorrido. El viajero debe demostrar su verdadera identidad a sus entidades de hospedaje. Esta prueba puede ser una prueba de ciudadanía, un lugar de nacimiento, un justificante personal, fotografías o cualquier cosa que necesite la ley del país del host. La identidad del viajero se valida mediante la emisión de una cuenta de Passport, que es análoga a una cuenta del sistema emitida y administrada por una organización (la entidad de seguridad). El pasaporte y el destino previsto se basan en un conjunto de reglas y regulaciones emitidos por la autoridad gubernamental.
 
 **El recorrido**
@@ -67,7 +63,7 @@ Una cuenta es un medio para identificar a un solicitante (el usuario o servicio 
 
 Las cuentas integradas y los grupos de seguridad, de los que son miembros, se definen en cada versión de Windows. Mediante el uso de grupos de seguridad, puede asignar los mismos permisos de seguridad a muchos usuarios que se autentican correctamente, lo que simplifica la administración del acceso. Las reglas para emitir pasaportes pueden requerir que el viajero se asigne a determinados grupos, como la empresa, el turista o el gobierno. Este proceso garantiza permisos de seguridad coherentes en todos los miembros de un grupo. El uso de grupos de seguridad para asignar permisos significa que el control de acceso de los recursos sigue siendo constante y fácil de administrar y auditar. Al agregar y quitar usuarios que requieran acceso a los grupos de seguridad adecuados según sea necesario, puede minimizar la frecuencia de los cambios en las listas de control de acceso (ACL).
 
-Las cuentas de servicio administradas independientes y las cuentas virtuales se introdujeron en Windows Server 2008 R2 y Windows 7 para proporcionar las aplicaciones necesarias, como Microsoft Exchange Server y Internet Information Services (IIS), con el aislamiento de su propio dominio. cuenta, a la vez que elimina la necesidad de que un administrador administre manualmente el nombre de entidad de seguridad de servicio (SPN) y las credenciales de estas cuentas. Las cuentas de servicio administradas de grupo se introdujeron en Windows Server 2012 y ofrecen la misma funcionalidad dentro del dominio, pero también amplía esa funcionalidad en varios servidores. Al establecer una conexión con un servicio hospedado en una granja de servidores (como el equilibrio de carga de red), los protocolos de autenticación que admiten la autenticación mutua necesitan que todas las instancias de los servicios usen la misma entidad de seguridad.
+Las cuentas de servicio administradas independientes y las cuentas virtuales se introdujeron en Windows Server 2008 R2 y Windows 7 para proporcionar las aplicaciones necesarias, como Microsoft Exchange Server y Internet Information Services (IIS), con el aislamiento de sus propias cuentas de dominio, a la vez que eliminan la necesidad de que un administrador administre manualmente el nombre principal de servicio (SPN) y las credenciales de estas cuentas. Las cuentas de servicio administradas de grupo se introdujeron en Windows Server 2012 y ofrecen la misma funcionalidad dentro del dominio, pero también amplía esa funcionalidad en varios servidores. Al establecer una conexión con un servicio hospedado en una granja de servidores (como el equilibrio de carga de red), los protocolos de autenticación que admiten la autenticación mutua necesitan que todas las instancias de los servicios usen la misma entidad de seguridad.
 
 Para obtener más información acerca de las cuentas, consulte:
 
@@ -98,7 +94,7 @@ La forma en que una confianza específica pasa solicitudes de autenticación dep
 Para obtener información sobre cómo funciona una confianza, vea [Cómo funcionan las confianzas de dominio y de bosque](https://technet.microsoft.com/library/cc773178(v=ws.10).aspx).
 
 ### <a name="protocol-transition"></a>Transición de protocolo
-La transición de protocolos ayuda a los diseñadores de aplicaciones al permitir que las aplicaciones admitan distintos mecanismos de autenticación en el nivel de autenticación del usuario y al cambiar al protocolo Kerberos para las características de seguridad, como la autenticación mutua y Delegación restringida, en los niveles de aplicación posteriores.
+La transición de protocolos ayuda a los diseñadores de aplicaciones al permitir que las aplicaciones admitan distintos mecanismos de autenticación en el nivel de autenticación del usuario y al cambiar al protocolo Kerberos para las características de seguridad, como la autenticación mutua y la delegación restringida, en los niveles de aplicación posteriores.
 
 Para obtener más información sobre la transición de protocolos, consulte [transición del protocolo Kerberos y delegación restringida](https://technet.microsoft.com/library/cc758097(v=ws.10).aspx).
 

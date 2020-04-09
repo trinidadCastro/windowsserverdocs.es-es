@@ -1,28 +1,24 @@
 ---
 title: Visualización de tareas de detalles y notificaciones
 description: Administrador de servidores
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95117407-2dd3-4f9a-841f-4331be3544c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3dcbac95e60fce75316f8a4427aef54bdfad15b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0047a9f2d4b6b66cec85b2746b1975af2ced3316
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383022"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851458"
 ---
 # <a name="view-task-details-and-notifications"></a>Visualización de tareas de detalles y notificaciones
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2016
 
 En Administrador del servidor en Windows Server 2012 R2 o Windows Server 2012, al realizar tareas de administración como agregar roles y características, iniciar servicios, actualizar datos que se muestran en la consola de Administrador del servidor o crear un grupo personalizado de servidores, se muestra una notificación en el área **notificaciones** del encabezado de la consola de administrador del servidor. Las notificaciones y el cuadro de diálogo **detalles de tarea** que puede abrir desde el menú **notificaciones** haciendo clic en el icono de marca, muestran el estado de las tareas o solicitudes de usuario, muestran si se ha producido un error en una tarea y le ayudan a solucionar problemas al apuntar a mensajes de error detallados sobre los errores de las tareas.
 
@@ -50,7 +46,7 @@ Para eliminar una notificación que ya no desee ver en la lista de **notificacio
 ## <a name="viewing-and-troubleshooting-tasks-by-using-task-details"></a>Ver y solucionar problemas de tareas mediante detalles de tarea
 El comando **detalles de tarea** de la parte inferior del menú **notificaciones** abre el cuadro de diálogo **detalles de tarea** , que proporciona descripciones completas de los eventos de tarea (Inicio, detención, advertencias, aciertos o errores). Al igual que los demás controles de lista de Administrador del servidor, como **los eventos, los** **servicios**y los iconos de **analizador de procedimientos recomendados** , puede filtrar y crear consultas para que se ejecuten en las tareas que se muestran en el cuadro de diálogo **detalles de tarea** . (para obtener más información sobre cómo filtrar y crear consultas en controles de lista, vea [filtrar, ordenar y consultar datos en Administrador del servidor mosaicos](filter-sort-and-query-data-in-server-manager-tiles.md)). En el panel superior, puede revisar las notificaciones tal como se han mostrado en el menú **notificaciones** y ver el número de notificaciones que se han generado sobre la misma tarea. al seleccionar una notificación en el panel superior se muestran los detalles completos sobre la notificación en el panel inferior.
 
-El panel inferior es especialmente útil para solucionar los errores de las tareas. Si Administrador del servidor no se puede conectar a un servidor que es miembro del grupo de servidores ni obtener datos de este, las entradas de este panel contienen a menudo mensajes detallados, incluido el texto completo de los problemas subyacentes de administración remota de Windows (WinRM), redes o seguridad que impedir que Administrador del servidor se comunique con un servidor de destino.
+El panel inferior es especialmente útil para solucionar los errores de las tareas. Si Administrador del servidor no se puede conectar a un servidor que sea miembro del grupo de servidores ni obtener datos de este, las entradas de este panel contienen a menudo mensajes detallados, incluido el texto completo de los problemas subyacentes de administración remota de Windows (WinRM), redes o seguridad que impiden que Administrador del servidor se comunique con un servidor de destino.
 
 ## <a name="see-also"></a>Consulta también
 [Filtrar, ordenar y consultar datos en Administrador del servidor mosaicos](filter-sort-and-query-data-in-server-manager-tiles.md)

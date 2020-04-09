@@ -1,24 +1,20 @@
 ---
 title: mapadmin
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b17332c7-8622-4223-9c43-2fb9cf4d992d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fc4b76c1989298ea83c480b9c838ce0fc18fef5f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5ea60f4d9753ed90c0d13ee48289b011aeafe6b0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373758"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839678"
 ---
 # <a name="mapadmin"></a>mapadmin
 
@@ -57,14 +53,14 @@ Además de los argumentos de comando específicos, **mapadmin** acepta los sigui
 -p &lt;contraseña&gt; especifica la contraseña del usuario. Si se especifica la opción **-u** pero se omite la opción **-p** , se le solicitará la contraseña del usuario.
 La acción específica que realiza **mapadmin** depende del argumento de comando que especifique:
 
-## <a name="parameters"></a>Parámetros
-### <a name="start"></a>start
+### <a name="parameters"></a>Parámetros
+### <a name="start"></a>inicio
 inicia el servicio Asignación de nombres de usuario.
 
 ### <a name="stop"></a>stop
 Detiene el servicio Asignación de nombres de usuario.
 
-### <a name="config"></a>configurar
+### <a name="config"></a>config
 Especifica la configuración general para Asignación de nombres de usuario. Las siguientes opciones están disponibles con este argumento de comando: **-r &lt;dddd&gt;:&lt;hh&gt;:&lt;mm&gt;** -especifica el intervalo de actualización para la actualización de las bases de datos de Windows y NIS en días, horas y minutos. El intervalo mínimo es de 5 minutos.
 **-i {yes | no}** : activa la asignación simple en (**sí**) o desactivada (**no**). De forma predeterminada, la asignación simple está activada.
 **Agregar** : crea una nueva asignación para un usuario o grupo. Las siguientes opciones están disponibles con este argumento de comando:
@@ -135,5 +131,5 @@ Especifica la configuración general para Asignación de nombres de usuario. Las
 -   en el caso de los usuarios de UNIX, use el formato &lt;Dominionis&gt;\\&lt;nombre de usuario&gt;, &lt;nombre de usuario&gt;@&lt;Dominionis&gt;, nombre &lt;de usuario&gt;@PCNFSo PCNFS\\&lt;nombre de usuario&gt;
 -   en el caso de los grupos de UNIX, use el formato &lt;Dominionis&gt;\\&lt;GroupName&gt;, &lt;nombre_grupo&gt;@&lt;Dominionis&gt;, &lt;nombre_grupo&gt;@PCNFSo PCNFS\\&lt;nombre_grupo&gt;
 
-## <a name="additional-references"></a>referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+## <a name="additional-references"></a>Referencias adicionales
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

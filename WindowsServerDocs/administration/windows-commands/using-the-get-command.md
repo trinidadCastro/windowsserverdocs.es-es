@@ -1,30 +1,27 @@
 ---
-title: Usar el comando get
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+title: obtener
+description: Temas de comandos de Windows para get, que recupera propiedades o atributos sobre el objeto especificado.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fbd44c67-0670-4dfe-a1c0-2ab8abe327b5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 35fe9ebf036e82fce0f6b2ff67ddb654d8dad586
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: be532dcb57faf4ec2a86a34c3ab59c921c5b8d0c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363284"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80831148"
 ---
-# <a name="using-the-get-command"></a>Usar el comando get
+# <a name="get"></a>obtener
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Recupera propiedades o atributos sobre el objeto especificado.
+
 ## <a name="subcommands"></a>Subcomandos
 |Subcomando|Descripción|
 |-------|--------|

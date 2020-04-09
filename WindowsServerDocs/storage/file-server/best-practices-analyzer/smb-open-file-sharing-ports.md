@@ -1,18 +1,17 @@
 ---
-title: 'SMB: Los puertos de compartir archivos e impresoras deben estar abiertos'
-TOCTitle: 'SMB: File and printer sharing ports should be open'
+title: 'SMB: los puertos de uso compartido de impresoras y archivos deben estar abiertos'
 ms.date: 07/02/2012
 ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 80cc75f983d4593e4ee98309d1fa39c024b7b379
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a7e98129c2fb4f2259364c547b426d46f0a24ef3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950295"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859468"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: Los puertos de compartir archivos e impresoras deben estar abiertos
 
@@ -32,15 +31,15 @@ Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y 
 <tbody>
 <tr class="odd">
 <td><p><strong>Sistema operativo</strong></p></td>
-<td><p>Windows Server</p></td>
+<td><p>Windows Server</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Producto o característica</strong></p></td>
-<td><p>Servicios de archivos</p></td>
+<td><p>Servicios de archivo</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Gravedad</strong></p></td>
-<td><p>Error de :</p></td>
+<td><p>Error</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Categoría</strong></p></td>
@@ -71,9 +70,9 @@ Para completar este procedimiento, se requiere como mínimo pertenecer al grupo 
 
 3.  En **reglas de entrada**, busque las reglas **compartir archivos e impresoras (sesión NB)** e **compartir impresoras y archivos (SMB de entrada)** .
 
-4.  Para cada regla, haga clic con el botón derecho en la regla y, a continuación, haga clic en **Habilitar regla**.
+4.  Para cada regla, haga clic con el botón secundario en la regla y, a continuación, haga clic en **Habilitar regla**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-[Comprender las carpetas compartidas y el Firewall de Windows](https://technet.microsoft.com/library/cc731402.aspx)(https://technet.microsoft.com/library/cc731402.aspx)
+[Descripción de las carpetas compartidas y el Firewall de Windows](https://technet.microsoft.com/library/cc731402.aspx)(https://technet.microsoft.com/library/cc731402.aspx)
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 68db7f26-d6e3-4e67-859b-80f352e6ab6a
 title: El papel de la base de datos de configuración de AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,22 +8,22 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 22047a93ab67d3f21b3e2318fcce497feab8f996
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9ffdd1876e2dfbc044cebb65d7d6ef80880a64b8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385581"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860168"
 ---
 # <a name="the-role-of-the-ad-fs-configuration-database"></a>El papel de la base de datos de configuración de AD FS
-La base de datos de configuración de AD FS almacena todos los datos de configuración que representan una sola instancia de Servicios de federación de Active Directory (AD FS) \(AD FS\) \(es decir, el servicio de Federación\). La base de datos de configuración de AD FS define el conjunto de parámetros que un servicio de federación necesita para identificar asociados, certificados, almacenes de atributos, notificaciones y diversos datos sobre estas entidades asociadas. Puede almacenar estos datos de configuración en una Microsoft SQL Server® base de datos o en la característica Windows Internal Database \(WID\) que se incluye con Windows Server® 2008, Windows Server 2008 R2 y Windows Server® 2012.  
+La base de datos de configuración de AD FS almacena todos los datos de configuración que representan una sola instancia de Servicios de federación de Active Directory (AD FS) \(AD FS\) \(es decir, el servicio de Federación\). La base de datos de configuración de AD FS define el conjunto de parámetros que un servicio de federación necesita para identificar asociados, certificados, almacenes de atributos, notificaciones y diversos datos sobre estas entidades asociadas. Puede almacenar estos datos de configuración en una Microsoft SQL Server&reg; base de datos o en la característica Windows Internal Database \(WID\) que se incluye con Windows Server&reg; 2008, Windows Server 2008 R2 y Windows Server&reg; 2012.  
   
 > [!NOTE]  
 > El contenido completo de la base de datos de configuración de AD FS se puede almacenar en una instancia de WID o en una instancia de la base de datos de SQL, pero no en ambas. Eso significa que no puedes hacer que unos servidores de federación usen WID y otros usen una base de datos de SQL Server para la misma instancia de la base de datos de configuración de AD FS.  
   
 Puedes usar la información de este tema además del contenido de [Consideraciones sobre la topología de implementación de AD FS](https://technet.microsoft.com/library/gg982489.aspx) para conocer las ventajas y desventajas de elegir WID o SQL Server para almacenar la base de datos de configuración de AD FS:  
   
-WID usa un almacén de datos relacional y no tiene su propia interfaz de usuario de administración \(\)de IU. En su lugar, los administradores pueden modificar el contenido de la base de datos de configuración de AD FS mediante el ajuste de administración de AD FS\-en los cmdlets de™, Fsconfig. exe o Windows PowerShell.  
+WID usa un almacén de datos relacional y no tiene su propia interfaz de usuario de administración \(\)de IU. En su lugar, los administradores pueden modificar el contenido de la base de datos de configuración de AD FS mediante el ajuste de administración de AD FS\-en los cmdlets de&trade;, Fsconfig. exe o Windows PowerShell.  
   
 ## <a name="using-wid-to-store-the-ad-fs-configuration-database"></a>Usar WID para almacenar la base de datos de configuración de AD FS  
 Puede crear la base de datos de configuración de AD FS mediante WID como almacén mediante la herramienta de línea de\-comandos de Fsconfig. exe o el Asistente para la configuración del servidor de Federación de AD FS. Cualquiera de estas herramientas permite elegir las siguientes opciones para crear la topología del servidor de federación. Cada una de estas opciones usa WID para almacenar la base de datos de configuración de AD FS:  
@@ -48,7 +47,7 @@ Si seleccionas la opción de agregar un servidor de federación, WID se configur
 En esta sección se describen conceptos importantes que explican cómo la granja de servidores de federación WID replica los datos entre un servidor de federación principal y los servidores de federación secundarios. .  
   
 #### <a name="primary-federation-server"></a>Servidor de federación principal  
-Un servidor de Federación principal es un equipo que ejecuta Windows Server 2008, Windows Server 2008 R2 o Windows Server® 2012 que se ha configurado en el rol de servidor de Federación con el Asistente para configuración de servidor de Federación de AD FS y que tiene una copia de lectura/escritura de la base de datos de configuración de AD FS. El servidor de Federación principal siempre se crea cuando se usa el Asistente para configuración de servidor de Federación de AD FS y se selecciona la opción para crear un Servicio de federación nuevo y hacer que ese equipo sea el primer servidor de Federación de la granja. Todos los demás servidores de federación de la granja, también conocidos como servidores de federación secundarios, deben sincronizar los cambios que se realicen en el servidor de federación principal con la copia de la base de datos de configuración de AD FS que está almacenada localmente.  
+Un servidor de Federación principal es un equipo que ejecuta Windows Server 2008, Windows Server 2008 R2 o Windows Server&reg; 2012 que se ha configurado en el rol de servidor de Federación con el Asistente para configuración de servidor de Federación de AD FS y que tiene una copia de lectura/escritura de la base de datos de configuración de AD FS. El servidor de Federación principal siempre se crea cuando se usa el Asistente para configuración de servidor de Federación de AD FS y se selecciona la opción para crear un Servicio de federación nuevo y hacer que ese equipo sea el primer servidor de Federación de la granja. Todos los demás servidores de federación de la granja, también conocidos como servidores de federación secundarios, deben sincronizar los cambios que se realicen en el servidor de federación principal con la copia de la base de datos de configuración de AD FS que está almacenada localmente.  
   
 #### <a name="secondary-federation-servers"></a>Servidores de federación secundarios  
 Los servidores de Federación secundarios almacenan una copia de la AD FS base de datos de configuración del servidor de Federación principal, pero estas copias se leen solo\-. Los servidores de federación secundarios se conectan con los datos del servidor de federación principal de la granja y sincronizan los datos sondeándolo a intervalos regulares para comprobar si los datos han cambiado. Los servidores de Federación secundarios existen para proporcionar tolerancia a errores para el servidor de Federación principal mientras actúan para cargar\-equilibrar las solicitudes de acceso que se realizan en sitios diferentes en todo el entorno de red.  
@@ -79,7 +78,7 @@ Puede crear la base de datos de configuración de AD FS mediante una única inst
   
 -   Proporciona compatibilidad con características de la resolución de artefactos de SAML y la detección de reproducción de tokens de Federación de SAML/WS\-\(se describe a continuación\).  
   
-El término “servidor de federación principal” no se aplica cuando la base de datos de configuración de AD FS se almacena en una instancia de base de datos de SQL porque todos los servidores de federación pueden leer y escribir por igual en la base de datos de configuración de AD FS que está usando la misma instancia de SQL Server en clúster, como se muestra en la siguiente ilustración.  
+El término "servidor de Federación principal" no se aplica cuando la base de datos de configuración de AD FS se almacena en una instancia de SQL Database, ya que todos los servidores de Federación pueden leer y escribir igualmente en la base de datos de configuración de AD FS que usa la misma instancia de SQL Server en clúster, tal y como se muestra en la siguiente ilustración.  
   
 ![Roles AD FS](media/adfs2_SQL.png)  
   

@@ -1,24 +1,20 @@
 ---
 title: Hoja de cálculo de planeación para la migración de Multipoint Services
 description: Proporciona hojas de cálculo de planeación para ayudarle a migrar a multipoint Services en Windows Server 2016
-ms.custom: na
 ms.date: 07/29/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 864405bb-47ed-4c83-97a2-8df4c6e6f96b
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: d3d2ecca4062d28d210196d9191e08710eb731c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c0d5976e70bcf8009cd98e54e973dd6f585d7208
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394631"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858908"
 ---
 # <a name="planning-worksheet-for-multipoint-services-migration"></a>Hoja de cálculo de planeación para la migración de Multipoint Services
 
@@ -44,7 +40,7 @@ Puede encontrar la configuración del servidor en la pestaña **Inicio** de Mult
 
 Registre los nombres de los equipos y servidores administrados. Puede encontrar esta información en la pestaña **Inicio** de Multipoint Manager.
 
-| Computer | Nombre de equipo |
+| Equipo | Nombre del equipo |
 |----------|---------------|
 | 1        |               |
 | 2        |               |

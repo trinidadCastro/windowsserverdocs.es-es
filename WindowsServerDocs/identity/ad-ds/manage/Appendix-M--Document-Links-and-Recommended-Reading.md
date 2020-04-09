@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6785de86-4f7d-4ed1-9055-8de0871d59b5
 title: 'Apéndice M: vínculos de documentos y lecturas recomendadas'
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c48b5330ee1b9a186885645aaa4c1ac79f1782e7
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: f1c13f0a7054f236f1ba35201ad9ad62c978d08f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822748"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823298"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>Anexo M: vínculos a documentos y lecturas recomendadas
 
@@ -28,7 +27,7 @@ La tabla siguiente contiene una lista de vínculos a documentos externos y sus d
   
 |||  
 |-|-|  
-|**Links**|**URL**|  
+|**Vínculos**|**URL**|  
 |[10 leyes inmutables de administración de seguridad](https://technet.microsoft.com/library/cc722488.aspx)|[https://technet.microsoft.com/library/cc722488.aspx](https://technet.microsoft.com/library/cc722488.aspx)|  
 |[Administrador de cumplimiento de seguridad de Microsoft](https://technet.microsoft.com/library/cc677002.aspx)|[https://technet.microsoft.com/library/cc677002.aspx](https://technet.microsoft.com/library/cc677002.aspx)|  
 |[Gartner Symposium ITXPO](http://www.gartner.com/technology/symposium/orlando/)|[http://www.gartner.com/technology/symposium/orlando/](http://www.gartner.com/technology/symposium/orlando/)|  
@@ -74,7 +73,7 @@ La tabla siguiente contiene una lista de vínculos a documentos externos y sus d
 |[Recarga de tokens de MaxTokenSize y Kerberos](https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx)|[https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx](https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx)|  
 |[Comprobación del mecanismo de autenticación](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)|[https://technet.microsoft.com/library/dd391847(v=WS.10).aspx](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)|  
 |[Kit de herramientas de clasificación de datos de Microsoft](https://technet.microsoft.com/library/hh204743.aspx)|[https://technet.microsoft.com/library/hh204743.aspx](https://technet.microsoft.com/library/hh204743.aspx)|  
-|[Control de acceso dinámico](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)|[https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)|  
+|[Access Control dinámico](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)|[https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)|  
 |[Software absoluto](http://www.absolute.com/en/landing/Google/absolute-software-google/computrace-and-absolute-manage?gclid=CPPh5P6v3rMCFQtxQgodFEQAnA)|[http://www.absolute.com/en/landing/Google/absolute-software-google/computrace-and-absolute-manage?gclid=CPPh5P6v3rMCFQtxQgodFEQAnA](http://www.absolute.com/en/landing/Google/absolute-software-google/computrace-and-absolute-manage?gclid=CPPh5P6v3rMCFQtxQgodFEQAnA)|  
 |[Administración absoluta](http://www.absolute.com/landing/Google/absolute-manage-google/it-asset-management-software)|[http://www.absolute.com/landing/Google/absolute-manage-google/it-asset-management-software](http://www.absolute.com/landing/Google/absolute-manage-google/it-asset-management-software)|  
 |[Administrar MDM de absoluta](http://www.absolute.com/landing/Google/MDM-google/mobile-device-management)|[http://www.absolute.com/landing/Google/MDM-google/mobile-device-management](http://www.absolute.com/landing/Google/MDM-google/mobile-device-management)|  
@@ -196,17 +195,17 @@ La tabla siguiente contiene una lista de lecturas recomendadas que le ayudarán 
 |[Validación de KDC estricta](https://www.microsoft.com/download/details.aspx?id=6382)|  
   
 #### <a name="copyright-information"></a>Información de copyright  
-La información incluida en este documento representa la perspectiva actual de Microsoft Corporation en cuanto a los temas tratados hasta la fecha de su publicación. Puesto que Microsoft debe responder a las condiciones cambiantes del mercado, no debe interpretarse como un compromiso por parte de Microsoft, y Microsoft no puede garantizar la exactitud de ninguna información que se presente tras la fecha de publicación.  
+La información contenida en este documento representa la visión actual de Microsoft Corporation acerca de los asuntos tratados hasta la fecha de su publicación. Como Microsoft debe responder a condiciones de mercado variables, no debe interpretarse como un compromiso por parte de Microsoft y Microsoft no puede garantizar la precisión de la información que se presente después de la fecha de publicación.  
   
-Estas notas del producto solo tienen fines informativos. Microsoft no otorga ninguna garantía, ni expresa ni implícita, en este documento.  
+Estas notas del producto se proporcionan solo con fines informativo. Microsoft no otorga ninguna garantía, ni expresa ni implícita, en este documento.  
   
-El cumplimiento de todas las leyes de propiedad intelectual aplicables es responsabilidad del usuario. Sin limitar los derechos de propiedad intelectual, ninguna parte de este documento puede reproducirse, almacenarse o introducirse en un sistema de recuperación, ni transmitirse de ninguna forma ni por ningún medio (electrónico, mecánico, Fotocopiado, grabación o de otro tipo), ni para ningún propósito , sin el permiso expreso por escrito de Microsoft Corporation.  
+Es responsabilidad del usuario el cumplimiento de todas las leyes de derechos de autor aplicables. Ninguna parte de este documento puede ser reproducida, almacenada o introducida en un sistema de recuperación, o transmitida de ninguna forma, ni por ningún medio (ya sea electrónico, mecánico, por fotocopia, grabación o de otra manera) con ningún propósito, sin la previa autorización expresa por escrito de Microsoft Corporation, sin que ello suponga ninguna limitación a los derechos de propiedad industrial o intelectual.  
   
-Microsoft puede tener patentes, solicitudes de patente, marcas, propiedades intelectuales u otros derechos de propiedad intelectual e industrial en relación con los asuntos tratados en este documento. La entrega de este documento no le otorga ninguna licencia sobre dichas patentes, marcas, derechos de autor u otros derechos de propiedad industrial o intelectual, a menos que así se prevea en un contrato escrito de licencia de Microsoft.  
+Microsoft puede ser titular de patentes, solicitudes de patentes, marcas, derechos de autor, y otros derechos de propiedad intelectual sobre los contenidos de este documento. El suministro de este documento no le otorga ninguna licencia sobre estas patentes, marcas, derechos de autor, u otros derechos de propiedad intelectual, a menos que ello se prevea en un contrato por escrito de licencia de Microsoft.  
   
-Microsoft, Active Directory, BitLocker, Hyper-V, Internet Explorer, Windows Vista, Windows y Windows Server son marcas registradas o marcas comerciales de Microsoft Corporation en el Estados Unidos y/o en otros países. Las demás marcas comerciales pertenecen a sus respectivos propietarios.  
+Microsoft, Active Directory, BitLocker, Hyper-V, Internet Explorer, Windows Vista, Windows y Windows Server son marcas registradas o marcas comerciales de Microsoft Corporation en el Estados Unidos y/o en otros países. Todas las demás marcas comerciales son propiedad de sus respectivos propietarios.  
   
-Las compañías, organizaciones, productos, nombres de dominio, direcciones de correo electrónico, logotipos, personas, lugares y eventos que se describen aquí son ficticios. No se pretende indicar ni debe deducirse ninguna asociación con compañías, organizaciones, productos, nombres de dominio, direcciones de correo electrónico, logotipos, personas, lugares o eventos reales.  
+Los nombres de las compañías, organizaciones, productos, nombres de dominio, direcciones de correo electrónico, logotipos, personas, lugares y eventos mencionados son ficticios. No se pretende indicar, ni debe deducirse ninguna asociación con compañías, organizaciones, productos, nombres de dominio, direcciones de correo electrónico, logotipos, personas, lugares o hechos real.  
   
 ? 2013 Microsoft Corporation. Todos los derechos reservados.  
   

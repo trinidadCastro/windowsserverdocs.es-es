@@ -1,24 +1,20 @@
 ---
 title: Procesos de las credenciales en la autenticación de Windows
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-windows-auth
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 48c60816-fb8b-447c-9c8e-800c2e05b14f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 051cb88620065ed675f377f3369860f7b04460bd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2de8383ce6a946dfdd80cfc027478c495037169b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402288"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857588"
 ---
 # <a name="credentials-processes-in-windows-authentication"></a>Procesos de las credenciales en la autenticación de Windows
 
@@ -30,7 +26,7 @@ La administración de credenciales de Windows es el proceso por el que el sistem
 
 De forma predeterminada, las credenciales de Windows se validan en la base de datos del administrador de cuentas de seguridad (SAM) en el equipo local o en Active Directory en un equipo unido a un dominio, a través del servicio Winlogon. Las credenciales se recopilan a través de los datos proporcionados por el usuario en la interfaz de usuario de inicio de sesión o mediante programación a través de la interfaz de programación de aplicaciones (API) para presentarse al destino de autenticación.
 
-La información de seguridad local se almacena en el registro en **HKEY_LOCAL_MACHINE\SECURITY**. La información almacenada incluye la configuración de Directiva, los valores de seguridad predeterminados y la información de la cuenta, como las credenciales de inicio de sesión en caché. Aquí también se almacena una copia de la base de datos de SAM, aunque está protegida contra escritura.
+La información de seguridad local se almacena en el registro en **HKEY_LOCAL_MACHINE \Security**. La información almacenada incluye la configuración de Directiva, los valores de seguridad predeterminados y la información de la cuenta, como las credenciales de inicio de sesión en caché. Aquí también se almacena una copia de la base de datos de SAM, aunque está protegida contra escritura.
 
 En el diagrama siguiente se muestran los componentes necesarios y las rutas de acceso que las credenciales toman a través del sistema para autenticar el usuario o el proceso para un inicio de sesión correcto.
 
@@ -43,11 +39,11 @@ En la tabla siguiente se describen los componentes que administran las credencia
 |Componente|Descripción|
 |-------|--------|
 |Inicio de sesión del usuario|Winlogon. exe es el archivo ejecutable responsable de la administración de interacciones de usuario seguras. El servicio Winlogon inicia el proceso de inicio de sesión para los sistemas operativos Windows pasando las credenciales recopiladas por la acción del usuario en el escritorio seguro (IU de inicio de sesión) a la autoridad de seguridad local (LSA) a través de SECUR32. dll.|
-|Inicio de sesión de aplicación|Inicios de sesión de aplicaciones o servicios que no requieren inicio de sesión interactivo. La mayoría de los procesos iniciados por el usuario ejecutan el modo de usuario mediante SECUR32. dll, mientras que los procesos iniciados en el inicio, como los servicios, se ejecutan en modo kernel mediante Ksecdd. sys.<br /><br />Para obtener más información sobre el modo de usuario y el modo kernel, consulte aplicaciones y modo de usuario o servicios y modo kernel en este tema.|
+|Inicio de sesión de aplicación|Inicios de sesión de aplicaciones o servicios que no requieren inicio de sesión interactivo. La mayoría de los procesos iniciados por el usuario ejecutan el modo de usuario mediante SECUR32. dll, mientras que los procesos iniciados en el inicio, como los servicios, se ejecutan en modo kernel mediante Ksecdd. sys.<p>Para obtener más información sobre el modo de usuario y el modo kernel, consulte aplicaciones y modo de usuario o servicios y modo kernel en este tema.|
 |Secur32.dll|Los proveedores de autenticación múltiple que forman la base del proceso de autenticación.|
 |Lsasrv.dll|El servicio LSA Server, que aplica las directivas de seguridad y actúa como el administrador de paquetes de seguridad de la LSA. La LSA contiene la función Negotiate, que selecciona el protocolo NTLM o Kerberos después de determinar qué protocolo debe ser correcto.|
 |Proveedores de compatibilidad para seguridad|Un conjunto de proveedores que pueden invocar individualmente uno o más protocolos de autenticación. El conjunto predeterminado de proveedores puede cambiar con cada versión del sistema operativo Windows y se pueden escribir proveedores personalizados.|
-|Netlogon.dll|Los servicios que realiza el servicio Inicio de sesión de red son los siguientes:<br /><br />-Mantiene el canal seguro del equipo (no debe confundirse con Schannel) con un controlador de dominio.<br />: Pasa las credenciales del usuario a través de un canal seguro al controlador de dominio y devuelve los identificadores de seguridad (SID) del dominio y los derechos de usuario para el usuario.<br />-Publica registros de recursos de servicio en el sistema de nombres de dominio (DNS) y usa DNS para resolver nombres en las direcciones de protocolo de Internet (IP) de los controladores de dominio.<br />-Implementa el protocolo de replicación basado en llamada a procedimiento remoto (RPC) para sincronizar los controladores de dominio principal (PDC) y los controladores de dominio de reserva (BDC).|
+|Netlogon.dll|Los servicios que realiza el servicio Inicio de sesión de red son los siguientes:<p>-Mantiene el canal seguro del equipo (no debe confundirse con Schannel) con un controlador de dominio.<br />: Pasa las credenciales del usuario a través de un canal seguro al controlador de dominio y devuelve los identificadores de seguridad (SID) del dominio y los derechos de usuario para el usuario.<br />-Publica registros de recursos de servicio en el sistema de nombres de dominio (DNS) y usa DNS para resolver nombres en las direcciones de protocolo de Internet (IP) de los controladores de dominio.<br />-Implementa el protocolo de replicación basado en llamada a procedimiento remoto (RPC) para sincronizar los controladores de dominio principal (PDC) y los controladores de dominio de reserva (BDC).|
 |Samsrv. dll|El administrador de cuentas de seguridad (SAM), que almacena las cuentas de seguridad locales, aplica las directivas almacenadas localmente y admite las API.|
 |Registro|El registro contiene una copia de la base de datos SAM, la configuración de la Directiva de seguridad local, los valores de seguridad predeterminados y la información de la cuenta a la que solo puede tener acceso el sistema.|
 
@@ -69,7 +65,7 @@ Este tema contiene las siguientes secciones:
 
 -   [Certificados en la autenticación de Windows](#BKMK_CertificatesInWindowsAuthentication)
 
-## <a name="BKMK_CrentialInputForUserLogon"></a>Entrada de credenciales para el inicio de sesión de usuario
+## <a name="credential-input-for-user-logon"></a><a name="BKMK_CrentialInputForUserLogon"></a>Entrada de credenciales para el inicio de sesión de usuario
 En Windows Server 2008 y Windows Vista, la arquitectura de identificación y autenticación gráfica (GINA) se ha reemplazado por un modelo de proveedor de credenciales, que hizo posible enumerar distintos tipos de inicio de sesión mediante el uso de iconos de inicio de sesión. Ambos modelos se describen a continuación.
 
 **Arquitectura de identificación y autenticación gráfica**
@@ -132,16 +128,16 @@ El proveedor de credenciales enumera los iconos de inicio de sesión en las inst
 
 -   El proveedor de credenciales enumera los mosaicos en respuesta a una solicitud de usuario para cambiar su contraseña u otra información privada, como un PIN. Normalmente, el usuario que ha iniciado sesión actualmente es el icono predeterminado; sin embargo, si hay más de un usuario que ha iniciado sesión, se muestran numerosos iconos.
 
--   El proveedor de credenciales enumera los iconos según las credenciales serializadas que se van a usar para la autenticación en equipos remotos. La interfaz de usuario de credenciales no utiliza la misma instancia del proveedor que la interfaz de usuario de inicio de sesión, desbloquear la estación de trabajo o cambiar la contraseña. Por lo tanto, no se puede mantener la información de estado en el proveedor entre instancias de la interfaz de usuario de credenciales. Esta estructura da como resultado un icono para cada inicio de sesión de equipo remoto, suponiendo que las credenciales se han serializado correctamente. Este escenario también se usa en el control de cuentas de usuario (UAC), que puede ayudar a evitar cambios no autorizados en un equipo solicitando al usuario permiso o una contraseña de administrador antes de permitir acciones que podrían afectar al funcionamiento del equipo. o que podrían cambiar la configuración que afecta a otros usuarios del equipo.
+-   El proveedor de credenciales enumera los iconos según las credenciales serializadas que se van a usar para la autenticación en equipos remotos. La interfaz de usuario de credenciales no utiliza la misma instancia del proveedor que la interfaz de usuario de inicio de sesión, desbloquear la estación de trabajo o cambiar la contraseña. Por lo tanto, no se puede mantener la información de estado en el proveedor entre instancias de la interfaz de usuario de credenciales. Esta estructura da como resultado un icono para cada inicio de sesión de equipo remoto, suponiendo que las credenciales se han serializado correctamente. Este escenario también se usa en el control de cuentas de usuario (UAC), que puede ayudar a evitar cambios no autorizados en un equipo solicitando al usuario permiso o una contraseña de administrador antes de permitir acciones que podrían afectar al funcionamiento del equipo o que podrían cambiar la configuración que afecta a otros usuarios del equipo.
 
 En el siguiente diagrama se muestra el proceso de credenciales para los sistemas operativos designados en la lista **se aplica a que se** encuentra al principio de este tema.
 
 ![Diagrama que muestra el proceso de credenciales para los sistemas operativos designados en la lista * * se aplica a * * al principio de este tema.](../media/credentials-processes-in-windows-authentication/AuthN_CredMan_CredProv.gif)
 
-## <a name="BKMK_CredentialInputForApplicationAndServiceLogon"></a>Entrada de credenciales para el inicio de sesión de aplicación y servicio
+## <a name="credential-input-for-application-and-service-logon"></a><a name="BKMK_CredentialInputForApplicationAndServiceLogon"></a>Entrada de credenciales para el inicio de sesión de aplicación y servicio
 La autenticación de Windows está diseñada para administrar las credenciales de las aplicaciones o servicios que no requieren la interacción del usuario. Las aplicaciones en modo usuario están limitadas en cuanto a los recursos del sistema a los que tienen acceso, mientras que los servicios pueden tener acceso sin restricciones a la memoria del sistema y a los dispositivos externos.
 
-Los servicios del sistema y las aplicaciones de nivel de transporte tienen acceso a un proveedor de compatibilidad para seguridad (SSP) a través de la interfaz del proveedor de compatibilidad para seguridad (SSPI) de Windows, que proporciona funciones para enumerar los paquetes de seguridad disponibles en un sistema, seleccionando un paquete y uso de ese paquete para obtener una conexión autenticada.
+Los servicios del sistema y las aplicaciones de nivel de transporte tienen acceso a un proveedor de compatibilidad para seguridad (SSP) a través de la interfaz del proveedor de compatibilidad para seguridad (SSPI) de Windows, que proporciona funciones para enumerar los paquetes de seguridad disponibles en un sistema, seleccionar un paquete y usar ese paquete para obtener una conexión autenticada.
 
 Cuando se autentica una conexión cliente/servidor:
 
@@ -149,7 +145,7 @@ Cuando se autentica una conexión cliente/servidor:
 
 -   La aplicación en el lado servidor de la conexión responde con la función SSPI `AcceptSecurityContext (General)`.
 
--   Las funciones SSPI `InitializeSecurityContext (General)` y `AcceptSecurityContext (General)` se repiten hasta que todos los mensajes de autenticación necesarios se han intercambiado a una autenticación correcta o errónea.
+-   Las funciones SSPI `InitializeSecurityContext (General)` y `AcceptSecurityContext (General)` se repiten hasta que todos los mensajes de autenticación necesarios se han intercambiado a correcto o error de autenticación.
 
 -   Una vez que se ha autenticado la conexión, la LSA del servidor usa la información del cliente para compilar el contexto de seguridad, que contiene un token de acceso.
 
@@ -157,15 +153,15 @@ Cuando se autentica una conexión cliente/servidor:
 
 **Aplicaciones y modo de usuario**
 
-El modo de usuario de Windows se compone de dos sistemas capaces de pasar las solicitudes de e/s a los controladores adecuados en modo kernel: el sistema de entorno, que ejecuta las aplicaciones escritas para muchos tipos diferentes de sistemas operativos y el sistema entero, que funciona funciones específicas del sistema en nombre del sistema de entorno.
+El modo de usuario de Windows se compone de dos sistemas capaces de pasar las solicitudes de e/s a los controladores adecuados en modo kernel: el sistema de entorno, que ejecuta las aplicaciones escritas para muchos tipos diferentes de sistemas operativos, y el sistema entero, que opera en función de las funciones específicas del sistema en nombre del sistema de entorno.
 
-El sistema entero administra funciones operativas de system'specific en nombre del sistema de entorno y consta de un proceso del sistema de seguridad (LSA), un servicio de estación de trabajo y un servicio de servidor. El proceso del sistema de seguridad se ocupa de los tokens de seguridad, concede o deniega permisos para obtener acceso a las cuentas de usuario en función de los permisos de recursos, controla las solicitudes de inicio de sesión e inicia la autenticación de inicio de sesión y determina qué recursos del sistema es el sistema operativo debe auditar.
+El sistema entero administra funciones operativas de system'specific en nombre del sistema de entorno y consta de un proceso del sistema de seguridad (LSA), un servicio de estación de trabajo y un servicio de servidor. El proceso del sistema de seguridad se encarga de los tokens de seguridad, concede o deniega permisos para obtener acceso a las cuentas de usuario en función de los permisos de recursos, controla las solicitudes de inicio de sesión e inicia la autenticación de inicio de sesión y determina los recursos del sistema que el sistema operativo debe auditar.
 
 Las aplicaciones se pueden ejecutar en modo de usuario, donde la aplicación se puede ejecutar como cualquier entidad de seguridad, incluso en el contexto de seguridad del sistema local (sistema). Las aplicaciones también se pueden ejecutar en modo kernel, donde la aplicación se puede ejecutar en el contexto de seguridad del sistema local (sistema).
 
-SSPI está disponible a través del módulo SECUR32. dll, que es una API que se usa para obtener servicios de seguridad integrados para la autenticación, la integridad del mensaje y la privacidad de los mensajes. Proporciona una capa de abstracción entre los protocolos de nivel de aplicación y los protocolos de seguridad. Dado que las aplicaciones diferentes requieren diferentes maneras de identificar o autenticar a los usuarios y diferentes formas de cifrar los datos a medida que viajan por la red, SSPI proporciona una manera de tener acceso a las bibliotecas de vínculos dinámicos (dll) que contienen una autenticación diferente. y funciones criptográficas. Estos archivos DLL se denominan proveedores de compatibilidad para seguridad (SSP).
+SSPI está disponible a través del módulo SECUR32. dll, que es una API que se usa para obtener servicios de seguridad integrados para la autenticación, la integridad del mensaje y la privacidad de los mensajes. Proporciona una capa de abstracción entre los protocolos de nivel de aplicación y los protocolos de seguridad. Dado que las aplicaciones diferentes requieren diferentes maneras de identificar o autenticar a los usuarios y diferentes maneras de cifrar los datos mientras viajan por la red, SSPI proporciona una manera de tener acceso a las bibliotecas de vínculos dinámicos (dll) que contienen diferentes funciones de autenticación y de cifrado. Estos archivos DLL se denominan proveedores de compatibilidad para seguridad (SSP).
 
-Las cuentas de servicio administradas y las cuentas virtuales se introdujeron en Windows Server 2008 R2 y Windows 7 para proporcionar aplicaciones cruciales, como Microsoft SQL Server y Internet Information Services (IIS), con el aislamiento de sus propias cuentas de dominio, mientras que eliminar la necesidad de que un administrador administre manualmente el nombre de entidad de seguridad de servicio (SPN) y las credenciales de estas cuentas. Para obtener más información sobre estas características y su rol en la autenticación, vea la [documentación sobre las cuentas de servicio administradas para Windows 7 y Windows Server 2008 R2](https://technet.microsoft.com/library/ff641731(v=ws.10).aspx) y la [información general sobre las cuentas de servicio administradas de grupo](../group-managed-service-accounts/group-managed-service-accounts-overview.md).
+Las cuentas de servicio administradas y las cuentas virtuales se introdujeron en Windows Server 2008 R2 y Windows 7 para proporcionar aplicaciones cruciales, como Microsoft SQL Server y Internet Information Services (IIS), con el aislamiento de sus propias cuentas de dominio, a la vez que eliminan la necesidad de que un administrador administre manualmente el nombre de entidad de seguridad de servicio (SPN) y las credenciales de estas cuentas. Para obtener más información sobre estas características y su rol en la autenticación, vea la [documentación sobre las cuentas de servicio administradas para Windows 7 y Windows Server 2008 R2](https://technet.microsoft.com/library/ff641731(v=ws.10).aspx) y la [información general sobre las cuentas de servicio administradas de grupo](../group-managed-service-accounts/group-managed-service-accounts-overview.md).
 
 **Servicios y modo kernel**
 
@@ -180,7 +176,7 @@ El archivo Ksecdd. sys administra y cifra estas credenciales y usa una llamada a
 
 El modo kernel tiene acceso total a los recursos de hardware y del sistema del equipo. El modo kernel impide que los servicios de modo de usuario y las aplicaciones tengan acceso a las áreas críticas del sistema operativo a las que no deberían tener acceso.
 
-## <a name="BKMK_LSA"></a>Autoridad de seguridad local
+## <a name="local-security-authority"></a><a name="BKMK_LSA"></a>Autoridad de seguridad local
 La autoridad de seguridad local (LSA) es un proceso del sistema protegido que autentica los usuarios y los registra en el equipo local. Además, LSA mantiene información sobre todos los aspectos de la seguridad local en un equipo (estos aspectos se conocen colectivamente como la Directiva de seguridad local) y proporcionan varios servicios para la traducción entre los nombres y los identificadores de seguridad (SID). El proceso del sistema de seguridad, el servicio del servidor de autoridad de seguridad local (LSASS), realiza un seguimiento de las directivas de seguridad y las cuentas que están en vigor en un sistema informático.
 
 LSA valida la identidad de un usuario en función de las dos entidades siguientes emitidas por la cuenta del usuario:
@@ -235,7 +231,7 @@ Introducido en Windows 8.1, el sistema operativo cliente proporciona protección
 
 Para obtener más información acerca de estas protecciones adicionales, consulte Configuración de la [protección LSA adicional](../credentials-protection-and-management/configuring-additional-lsa-protection.md).
 
-## <a name="BKMK_CachedCredentialsAndValidation"></a>Credenciales y validación almacenadas en caché
+## <a name="cached-credentials-and-validation"></a><a name="BKMK_CachedCredentialsAndValidation"></a>Credenciales y validación almacenadas en caché
 Los mecanismos de validación dependen de la presentación de credenciales en el momento del inicio de sesión. Sin embargo, cuando el equipo se desconecta de un controlador de dominio y el usuario presenta las credenciales de dominio, Windows usa el proceso de credenciales almacenadas en caché en el mecanismo de validación.
 
 Cada vez que un usuario inicia sesión en un dominio, Windows almacena en caché las credenciales proporcionadas y las almacena en el subárbol de seguridad en el registro del sistema operativo.
@@ -243,7 +239,7 @@ Cada vez que un usuario inicia sesión en un dominio, Windows almacena en caché
 Con las credenciales almacenadas en caché, el usuario puede iniciar sesión en un miembro del dominio sin estar conectado a un controlador de dominio dentro de ese dominio.
 
 
-## <a name="BKMK_CredentialStorageAndValidation"></a>Almacenamiento y validación de credenciales
+## <a name="credential-storage-and-validation"></a><a name="BKMK_CredentialStorageAndValidation"></a>Almacenamiento y validación de credenciales
 No siempre es conveniente usar un conjunto de credenciales para el acceso a diferentes recursos. Por ejemplo, un administrador podría querer usar las credenciales administrativas en lugar de las de usuario al obtener acceso a un servidor remoto. Del mismo modo, si un usuario tiene acceso a recursos externos, como una cuenta bancaria, solo puede usar credenciales que sean diferentes de las credenciales de su dominio. En las secciones siguientes se describen las diferencias en la administración de credenciales entre las versiones actuales de los sistemas operativos Windows y los sistemas operativos Windows Vista y Windows XP.
 
 ### <a name="remote-logon-credential-processes"></a>Procesos de credenciales de inicio de sesión remoto
@@ -259,7 +255,7 @@ Al reiniciar, el usuario inicia sesión automáticamente mediante el mecanismo d
 Para obtener más información sobre ARSO, consulte [Inicio de sesión de reinicio&#41;automático de Winlogon &#40;Arso](winlogon-automatic-restart-sign-on-arso.md).
 
 ### <a name="stored-user-names-and-passwords-in-windows-vista-and-windows-xp"></a>Nombres de usuario y contraseñas almacenados en Windows Vista y Windows XP
-En Windows Server 2008, Windows Server 2003, Windows Vista y Windows XP, **los nombres de usuario y contraseñas almacenados** en el panel de control simplifican la administración y el uso de varios conjuntos de credenciales de inicio de sesión, incluidos los certificados X. 509 utilizados con tarjetas inteligentes y Credenciales de Windows Live (ahora denominados cuenta de Microsoft). Las credenciales: parte del perfil del usuario, se almacenan hasta que sea necesario. Esta acción puede aumentar la seguridad en función de cada recurso asegurándose de que si una contraseña está en peligro, no ponga en peligro toda la seguridad.
+En Windows Server 2008, Windows Server 2003, Windows Vista y Windows XP, **los nombres de usuario y contraseñas almacenados** en el panel de control simplifican la administración y el uso de varios conjuntos de credenciales de inicio de sesión, incluidos los certificados X. 509 usados con tarjetas inteligentes y las credenciales de Windows Live (ahora denominados cuenta de Microsoft). Las credenciales: parte del perfil del usuario, se almacenan hasta que sea necesario. Esta acción puede aumentar la seguridad en función de cada recurso asegurándose de que si una contraseña está en peligro, no ponga en peligro toda la seguridad.
 
 Una vez que un usuario inicia sesión e intenta tener acceso a recursos adicionales protegidos mediante contraseña, como un recurso compartido en un servidor, y si las credenciales de inicio de sesión predeterminadas del usuario no son suficientes para obtener acceso, se consultan **los nombres de usuario y contraseñas almacenados** . Si se han guardado credenciales alternativas con la información de inicio de sesión correcta en **nombres de usuario y contraseñas almacenados**, estas credenciales se usan para obtener acceso. De lo contrario, se solicita al usuario que proporcione nuevas credenciales, que se pueden guardar para su reutilización, ya sea después en la sesión de inicio de sesión o durante una sesión posterior.
 
@@ -269,7 +265,7 @@ Se aplican las restricciones siguientes:
 
 -   **Los nombres de usuario y contraseñas almacenados** almacenan las credenciales solo para NTLM, el protocolo Kerberos, cuenta de Microsoft (anteriormente Windows Live ID) y la autenticación de capa de sockets seguros (SSL). Algunas versiones de Internet Explorer mantienen su propia memoria caché para la autenticación básica.
 
-Estas credenciales se convierten en una parte cifrada del perfil local de un usuario en el directorio \Documents and Settings\Username\Application Data\Microsoft\Credentials Como resultado, estas credenciales pueden moverse con el usuario si la Directiva de red del usuario es compatible con los perfiles de usuario móviles. Sin embargo, si el usuario tiene copias de **nombres de usuario y contraseñas almacenados** en dos equipos diferentes y cambia las credenciales asociadas al recurso en uno de estos equipos, el cambio no se propaga a **los nombres de usuario y contraseñas almacenados.** en el segundo equipo.
+Estas credenciales se convierten en una parte cifrada del perfil local de un usuario en el directorio \Documents and Settings\Username\Application Data\Microsoft\Credentials Como resultado, estas credenciales pueden moverse con el usuario si la Directiva de red del usuario es compatible con los perfiles de usuario móviles. Sin embargo, si el usuario tiene copias de **nombres de usuario y contraseñas almacenados** en dos equipos diferentes y cambia las credenciales asociadas al recurso en uno de estos equipos, el cambio no se propaga a **los nombres de usuario y contraseñas almacenados** en el segundo equipo.
 
 ### <a name="windows-vault-and-credential-manager"></a>Windows Vault y el administrador de credenciales
 El administrador de credenciales se presentó en Windows Server 2008 R2 y Windows 7 como una característica del panel de control para almacenar y administrar nombres de usuario y contraseñas. El administrador de credenciales permite que los usuarios almacenen las credenciales relevantes para otros sistemas y sitios web en el almacén seguro de Windows. Algunas versiones de Internet Explorer usan esta característica para la autenticación en sitios Web.
@@ -280,21 +276,21 @@ Cuando un sitio web, una aplicación u otro equipo solicita la autenticación a 
 
 La próxima vez que se use el servicio, el administrador de credenciales proporcionará automáticamente las credenciales que se almacenan en el almacén de Windows. Si no se acepta, se solicitará al usuario la información de acceso correcta. Si se concede el acceso con las nuevas credenciales, el administrador de credenciales sobrescribe la credencial anterior con la nueva y, a continuación, almacena la nueva credencial en el almacén de Windows.
 
-## <a name="BKMK_SAM"></a>Base de datos del administrador de cuentas de seguridad
+## <a name="security-accounts-manager-database"></a><a name="BKMK_SAM"></a>Base de datos del administrador de cuentas de seguridad
 El administrador de cuentas de seguridad (SAM) es una base de datos que almacena grupos y cuentas de usuario locales. Está presente en todos los sistemas operativos de Windows; sin embargo, cuando un equipo se une a un dominio, Active Directory administra cuentas de dominio en Active Directory dominios.
 
-Por ejemplo, los equipos cliente que ejecutan un sistema operativo Windows participan en un dominio de red mediante la comunicación con un controlador de dominio, incluso cuando ningún usuario humano inicia sesión. Para iniciar las comunicaciones, el equipo debe tener una cuenta activa en el dominio. Antes de aceptar las comunicaciones del equipo, la LSA del controlador de dominio autentica la identidad del equipo y, a continuación, construye el contexto de seguridad del equipo tal y como lo hace para una entidad de seguridad humana. Este contexto de seguridad define la identidad y las capacidades de un usuario o servicio en un equipo determinado o un usuario, un servicio o un equipo de una red. Por ejemplo, el token de acceso contenido dentro del contexto de seguridad define los recursos (por ejemplo, un recurso compartido de archivos o una impresora) a los que se puede tener acceso y las acciones (como lectura, escritura o modificación) que puede realizar esa entidad de seguridad (un usuario, un equipo o un servicio en ese recurso.
+Por ejemplo, los equipos cliente que ejecutan un sistema operativo Windows participan en un dominio de red mediante la comunicación con un controlador de dominio, incluso cuando ningún usuario humano inicia sesión. Para iniciar las comunicaciones, el equipo debe tener una cuenta activa en el dominio. Antes de aceptar las comunicaciones del equipo, la LSA del controlador de dominio autentica la identidad del equipo y, a continuación, construye el contexto de seguridad del equipo tal y como lo hace para una entidad de seguridad humana. Este contexto de seguridad define la identidad y las capacidades de un usuario o servicio en un equipo determinado o un usuario, un servicio o un equipo de una red. Por ejemplo, el token de acceso contenido dentro del contexto de seguridad define los recursos (por ejemplo, un recurso compartido de archivos o una impresora) a los que se puede tener acceso y las acciones (como lectura, escritura o modificación) que puede realizar esa entidad de seguridad (un usuario, un equipo o un servicio en ese recurso).
 
 El contexto de seguridad de un usuario o equipo puede variar de un equipo a otro, por ejemplo, cuando un usuario inicia sesión en un servidor o en una estación de trabajo que no sea la propia estación de trabajo principal del usuario. También puede variar de una sesión a otra, por ejemplo, cuando un administrador modifica los derechos y permisos del usuario. Además, el contexto de seguridad suele ser diferente cuando un usuario o un equipo está trabajando de forma independiente, en una red o como parte de un dominio de Active Directory.
 
-## <a name="BKMK_LocalDomainsAndTrustedDomains"></a>Dominios locales y dominios de confianza
+## <a name="local-domains-and-trusted-domains"></a><a name="BKMK_LocalDomainsAndTrustedDomains"></a>Dominios locales y dominios de confianza
 Cuando existe una confianza entre dos dominios, los mecanismos de autenticación para cada dominio dependen de la validez de las autenticaciones procedentes del otro dominio. Las confianzas ayudan a proporcionar acceso controlado a los recursos compartidos en un dominio de recursos (el dominio que confía) comprobando que las solicitudes de autenticación entrantes proceden de una autoridad de confianza (el dominio de confianza). De esta manera, las confianzas actúan como puentes que permiten que solo las solicitudes de autenticación validadas viajen entre dominios.
 
 La forma en que una confianza específica pasa solicitudes de autenticación depende de cómo esté configurada. Las relaciones de confianza pueden ser unidireccionales, ya que proporcionan acceso desde el dominio de confianza a los recursos del dominio que confía, o bien de forma bidireccional, al proporcionar acceso desde cada dominio a los recursos del otro dominio. Las confianzas también son no transitivas, en cuyo caso solo existe una confianza entre los dos dominios de asociados de confianza, o transitiva, en cuyo caso una confianza se extiende automáticamente a cualquier otro dominio en el que uno de los asociados confíe.
 
 Para obtener información sobre las relaciones de dominio y de confianza de bosque con respecto a la autenticación, vea [autenticación delegada y relaciones de confianza](https://technet.microsoft.com/library/dn169022.aspx).
 
-## <a name="BKMK_CertificatesInWindowsAuthentication"></a>Certificados en la autenticación de Windows
+## <a name="certificates-in-windows-authentication"></a><a name="BKMK_CertificatesInWindowsAuthentication"></a>Certificados en la autenticación de Windows
 Una infraestructura de clave pública (PKI) es la combinación de software, tecnologías de cifrado, procesos y servicios que permiten a una organización proteger sus comunicaciones y transacciones empresariales. La capacidad de una PKI para proteger las comunicaciones y las transacciones empresariales se basa en el intercambio de certificados digitales entre usuarios autenticados y recursos de confianza.
 
 Un certificado digital es un documento electrónico que contiene información sobre la entidad a la que pertenece, la entidad de la que fue emitido, un número de serie único o cualquier otra identificación única, fechas de emisión y de expiración, y una huella digital.
@@ -320,11 +316,11 @@ La tecnología de tarjeta inteligente virtual se presentó en Windows 8. Almacen
 
 **Autenticación remota e inalámbrica**
 
-La autenticación de red remota e inalámbrica es otra tecnología que usa certificados para la autenticación. El servicio de autenticación de Internet (IAS) y los servidores de red privada virtual usan el protocolo de autenticación extensible-seguridad de nivel de transporte (EAP-TLS), el protocolo de autenticación extensible protegido (PEAP) o el protocolo de seguridad de Internet (IPsec) para realizar la autenticación basada en certificados para muchos tipos de acceso de red, incluidas las conexiones de red privada virtual (VPN) y inalámbricas.
+La autenticación de red remota e inalámbrica es otra tecnología que usa certificados para la autenticación. El servicio de autenticación de Internet (IAS) y los servidores de red privada virtual usan el protocolo de autenticación extensible (EAP-TLS), el protocolo de autenticación extensible protegido (PEAP) o el protocolo de seguridad de Internet (IPsec) para realizar la autenticación basada en certificados para muchos tipos de acceso de red, incluidas las conexiones de red privada virtual (VPN) y inalámbricas.
 
 Para obtener información acerca de la autenticación basada en certificados en redes, consulte [autenticación de acceso a la red y certificados](https://technet.microsoft.com/library/cc759575(WS.10).aspx).
 
-## <a name="BKMK_SeeAlso"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_SeeAlso"></a>Vea también
 [Conceptos de autenticación de Windows](https://docs.microsoft.com/windows-server/security/windows-authentication/windows-authentication-concepts)
 
 

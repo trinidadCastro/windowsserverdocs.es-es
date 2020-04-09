@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7be1f2cb-02d5-4209-ba79-edf496a88f47
 title: Auditoría de acceso a archivos de escenario
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 37a3b17360112d958b59a7e9c3f64aed5e6f6a5b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 37ea1cf28e42f74a18cd57b8fa9def5f9d1646be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406998"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861128"
 ---
-# <a name="scenario-file-access-auditing"></a>Escenario: auditoría de acceso a archivos
+# <a name="scenario-file-access-auditing"></a>Scenario: File Access Auditing
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -71,12 +70,12 @@ Los siguientes temas proporcionan más información para este escenario:
   
 -   [Pasos de la demostración de implementación de auditoría &#40;de seguridad con directivas de auditoría central&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)  
   
-## <a name="BKMK_NEW"></a>Roles y características incluidos en este escenario  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Roles y características incluidos en este escenario  
 En la tabla siguiente, se enumeran los roles y las características que forman parte de este escenario y se describe la manera en que son compatibles con él.  
   
 |Rol/característica|Compatibilidad con este escenario|  
 |-----------------|---------------------------------|  
-|Rol de Servicios de dominio de Active Directory|AD DS en Windows Server 2012 presenta una plataforma de autorización basada en notificaciones que permite crear notificaciones de usuario y notificaciones de dispositivo, identidad compuesta (notificaciones de usuario más dispositivo), el nuevo modelo de directivas de acceso central (CAP) y el uso de la clasificación de archivos información en decisiones de autorización.|  
+|Rol de Servicios de dominio de Active Directory|AD DS en Windows Server 2012 presenta una plataforma de autorización basada en notificaciones que permite crear notificaciones de usuario y notificaciones de dispositivo, identidad compuesta (notificaciones de usuario más dispositivo), el nuevo modelo de directivas de acceso central (CAP) y el uso de información de clasificación de archivos en decisiones de autorización.|  
 |Rol de servicios de archivos y almacenamiento|Los servidores de archivos de Windows Server 2012 proporcionan una interfaz de usuario donde los administradores pueden ver los permisos vigentes para los usuarios de un archivo o carpeta, solucionar problemas de acceso y conceder acceso según sea necesario.|  
   
 

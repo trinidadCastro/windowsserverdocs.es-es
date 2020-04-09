@@ -1,6 +1,5 @@
 ---
 title: 'Recuperación del bosque de AD: pasos para restaurar el bosque'
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: 07a043c4361f8eaae30b1dea665c604c0df42333
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 537543bedd68bff002054f637d96240a71f75793
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390289"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823408"
 ---
 # <a name="ad-forest-recovery---steps-for-restoring-the-forest"></a>Recuperación del bosque de AD: pasos para restaurar el bosque
 
@@ -30,7 +29,7 @@ En la lista siguiente se resumen los pasos de recuperación en un nivel alto:
   
 2. [Decidir cómo recuperar el bosque](AD-Forest-Recovery-Determine-how-to-Recover.md)  
 
-   Después de determinar que la recuperación del bosque es necesaria, complete los pasos preliminares para prepararla: Determine la estructura del bosque actual, identifique las funciones que realiza cada controlador de dominio, decida qué DC restaurar para cada dominio y asegúrese de que todos los controladores de dominio que se puede escribir se desconectan.  
+   Después de determinar que la recuperación del bosque es necesaria, complete los pasos preliminares para prepararla: Determine la estructura del bosque actual, identifique las funciones que realiza cada controlador de dominio, decida qué DC restaurar para cada dominio y asegúrese de que todos los controladores de dominio que se pueden escribir están sin conexión.  
 
 3. [Realizar la recuperación inicial](AD-Forest-Recovery-Perform-initial-recovery.md)  
 

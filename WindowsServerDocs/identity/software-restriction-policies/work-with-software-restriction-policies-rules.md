@@ -1,24 +1,20 @@
 ---
 title: Trabajo con reglas de directivas de restricción de software
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4a8047d5-9bb9-4bed-bc8f-583a237731e2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: bb5e56fe541a06b1100de2f25fc10f4db46b8d24
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 249426f7b0ef1b427d903e8d0cac9ca2e0747b68
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322957"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820988"
 ---
 # <a name="work-with-software-restriction-policies-rules"></a>Trabajo con reglas de directivas de restricción de software
 
@@ -47,7 +43,7 @@ Con las directivas de restricción de software, puede proteger su entorno inform
 
 Para obtener información acerca de otras tareas para administrar directivas de restricción de software, consulte [Administrar directivas de restricción de software](administer-software-restriction-policies.md).
 
-## <a name="BKMK_Cert_Rules"></a>Trabajar con reglas de certificado
+## <a name="working-with-certificate-rules"></a><a name="BKMK_Cert_Rules"></a>Trabajar con reglas de certificado
 Las directivas de restricción de software también pueden identificar software por su certificado de firma. Puede crear una regla de certificado que identifique el software y permita o impida la ejecución del software dependiendo del nivel de seguridad. Por ejemplo, puede usar reglas de certificado para confiar automáticamente en un software de un origen de confianza en un dominio sin necesidad de alertar al usuario. También puede emplear reglas de certificado para ejecutar archivos en áreas no permitidas de su sistema operativo. Las reglas de certificado no está habilitadas de forma predeterminada.
 
 Cuando se crean reglas para el dominio mediante directiva de grupo, debe tener permisos para crear o modificar un objeto directiva de grupo. Si crea reglas para un equipo local, debe tener credenciales administrativas en ese equipo.
@@ -82,7 +78,7 @@ Dependiendo del entorno, existen diferentes procedimientos para habilitar las re
 
 -   [Solo para controladores de dominio, y se encuentran en un controlador de dominio o en una estación de trabajo que tiene instalado el paquete de Herramientas de administración remota del servidor](#BKMK_4)
 
-#### <a name="BKMK_1"></a>Para habilitar reglas de certificado para el equipo local
+#### <a name="to-enable-certificate-rules-for-your-local-computer"></a><a name="BKMK_1"></a>Para habilitar reglas de certificado para el equipo local
 
 1.  Abra Configuración de seguridad local
 
@@ -96,7 +92,7 @@ Dependiendo del entorno, existen diferentes procedimientos para habilitar las re
 
     -   Para deshabilitar las reglas de certificado, haga clic en **Deshabilitada**.
 
-#### <a name="BKMK_2"></a>Para habilitar reglas de certificado para un objeto de directiva de grupo y se encuentra en un servidor que está unido a un dominio
+#### <a name="to-enable-certificate-rules-for-a-group-policy-object-and-you-are-on-a-server-that-is-joined-to-a-domain"></a><a name="BKMK_2"></a>Para habilitar reglas de certificado para un objeto de directiva de grupo y se encuentra en un servidor que está unido a un dominio
 
 1.  Abra Microsoft Management Console (MMC).
 
@@ -122,7 +118,7 @@ Dependiendo del entorno, existen diferentes procedimientos para habilitar las re
 
     -   Para deshabilitar las reglas de certificado, haga clic en **Deshabilitada**.
 
-#### <a name="BKMK_3"></a>Para habilitar reglas de certificado para un objeto de directiva de grupo, y se encuentre en un controlador de dominio o en una estación de trabajo que tenga el Herramientas de administración remota del servidor instalado
+#### <a name="to-enable-certificate-rules-for-a-group-policy-object-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_3"></a>Para habilitar reglas de certificado para un objeto de directiva de grupo, y se encuentre en un controlador de dominio o en una estación de trabajo que tenga el Herramientas de administración remota del servidor instalado
 
 1.  Abra Usuarios y equipos de Active Directory.
 
@@ -144,7 +140,7 @@ Dependiendo del entorno, existen diferentes procedimientos para habilitar las re
 
     -   Para deshabilitar las reglas de certificado, haga clic en **Deshabilitada**.
 
-#### <a name="BKMK_4"></a>Para habilitar reglas de certificado solo para controladores de dominio y está en un controlador de dominio o en una estación de trabajo que tiene instalado el Herramientas de administración remota del servidor
+#### <a name="to-enable-certificate-rules-for-only-domain-controllers-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_4"></a>Para habilitar reglas de certificado solo para controladores de dominio y está en un controlador de dominio o en una estación de trabajo que tiene instalado el Herramientas de administración remota del servidor
 
 1.  Abra Configuración de seguridad de controlador de dominio.
 
@@ -218,7 +214,7 @@ La configuración de directiva de la pestaña **Editores de confianza** de la di
 
 6.  Active la casilla **Definir esta configuración de directiva**, realice los cambios oportunos y, a continuación, haga clic en **Aceptar** para aplicar la nueva configuración.
 
-## <a name="BKMK_Hash_Rules"></a>Trabajar con reglas de hash
+## <a name="working-with-hash-rules"></a><a name="BKMK_Hash_Rules"></a>Trabajar con reglas de hash
 Un hash es una serie de bytes con una longitud fija que identifica de forma única un programa de software o un archivo. El hash se calcula mediante un algoritmo hash. Cuando se crea una regla de hash para un programa de software, las directivas de restricción de software calculan el hash del programa. Cuando un usuario intenta abrir un programa de software, el hash del programa se compara con las reglas de hash existentes en las directivas de restricción de software. El hash de un programa de software siempre es el mismo, sin importar la ubicación del programa en el equipo. Sin embargo, si un programa de software se modifica de alguna forma, el hash correspondiente también cambiará y ya no coincidirá con el hash de la regla de hash de las directivas de restricción de software.
 
 Por ejemplo, puede crear una regla de hash y establecer el nivel de seguridad en **No permitido** para impedir que los usuarios ejecuten un archivo determinado. Aunque un archivo se mueva a otra carpeta o se cambie su nombre, el hash resultante será el mismo. Sin embargo, los cambios realizados en el propio archivo también harán que cambie el valor de su hash y permitirán que el archivo omita las restricciones.
@@ -248,7 +244,7 @@ Por ejemplo, puede crear una regla de hash y establecer el nivel de seguridad en
 > -   Para que las directivas de restricción de software surtan efecto, los usuarios deben cerrar la sesión e iniciar sesión en sus equipos.
 > -   Cuando se aplica más de una regla de directivas de restricción de software a la configuración de Directiva, existe una prioridad de reglas para controlar los conflictos.
 
-## <a name="BKMK_Internet_Zone_Rules"></a>Trabajar con reglas de zona de Internet
+## <a name="working-with-internet-zone-rules"></a><a name="BKMK_Internet_Zone_Rules"></a>Trabajar con reglas de zona de Internet
 Las reglas de zona de Internet solo se aplican a los paquetes de Windows Installer. Una regla de zona puede identificar el software de una zona que se especifica a través de Internet Explorer. Estas zonas son Internet, Intranet local, Sitios restringidos, Sitios de confianza y Mi PC. Una regla de zona de Internet está diseñada para impedir que los usuarios descarguen e instalen software.
 
 #### <a name="to-create-an-internet-zone-rule"></a>Para crear una regla de zona de Internet
@@ -267,7 +263,7 @@ Las reglas de zona de Internet solo se aplican a los paquetes de Windows Install
 > -   Para que las directivas de restricción de software surtan efecto, los usuarios deben cerrar la sesión e iniciar sesión en sus equipos.
 > -   Cuando se aplica más de una regla de directivas de restricción de software a la configuración de Directiva, existe una prioridad de reglas para controlar los conflictos.
 
-## <a name="BKMK_Path_Rules"></a>Trabajar con reglas de ruta de acceso
+## <a name="working-with-path-rules"></a><a name="BKMK_Path_Rules"></a>Trabajar con reglas de ruta de acceso
 Una regla de ruta de acceso identifica el software por su ruta de acceso de archivo. Por ejemplo, aunque un equipo tenga establecido el nivel de seguridad predeterminado en **No permitido**, puede permitir el acceso sin restricciones a una determinada carpeta para cada usuario. Para crear una regla de ruta de acceso, puede emplear la ruta de acceso de archivo y establecer el nivel de seguridad de la regla de ruta de acceso en **Sin restricción**. Algunas rutas de acceso comunes para este tipo de regla son %userprofile%, %windir%, %appdata%, %programfiles% y %temp%. También puede crear reglas de ruta de acceso de Registro que utilicen la clave de Registro del software como ruta de acceso.
 
 Como estas reglas se especifican a través de la ruta de acceso, si se mueve un programa de software, la regla de ruta de acceso dejará de aplicarse.

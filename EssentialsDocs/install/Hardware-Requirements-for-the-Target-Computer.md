@@ -1,23 +1,19 @@
 ---
 title: Requisitos de hardware para el equipo de destino
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c20b06b9-ce0d-4c20-bf49-257c3f5dc01b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2ab2608095ffe6c0f2006f9f52cce106ff68cffc
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: a566a8f342ba076ee402d1f19e35f99c58b931e4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313255"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817878"
 ---
 # <a name="hardware-requirements-for-the-target-computer"></a>Requisitos de hardware para el equipo de destino
 
@@ -44,7 +40,7 @@ En esta sección se proporcionan los requisitos de hardware para Windows Server 
 |Componente|Descripción|  
 |---------------|-----------------|  
 |Adaptador de red|Adaptador Ethernet Gigabit (10/100/1000baseT PHY/MAC)|  
-|Internet|Algunas funciones pueden requerir acceso a Internet (es posible que se apliquen costes adicionales) y un ID de cuenta de Windows Live®|  
+|Internet|Algunas funciones pueden requerir acceso a Internet (pueden aplicarse tarifas) o una cuenta de Windows Live&reg; ID.|  
 |Sistemas operativos de cliente compatibles|-Windows 7<br />-Windows 8<br />-Macintosh OS X 10,5 a 10,8.<br /><br /> **Nota:** Algunas características requieren ediciones Professional o superior.<br /><br /> 1 GB de espacio disponible en disco (se liberará una parte del disco después de la instalación)|  
 |Enrutador|Un enrutador o firewall compatible con IPv4 NAT|  
 |Requisitos adicionales|Unidad de DVD-ROM|  

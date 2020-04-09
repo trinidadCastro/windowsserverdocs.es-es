@@ -2,17 +2,17 @@
 title: Información general del Sistema de archivos resistente (ReFS)
 ms.prod: windows-server
 ms.author: gawatu
-ms.manager: mchad
+manager: mchad
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/17/2019
-ms.openlocfilehash: 91fdd5aa696c170cacc8903a65e996beb71c4b8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8d32ef6bc4ce169ff73f9ab147783ac0607617f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403019"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857548"
 ---
 # <a name="resilient-file-system-refs-overview"></a>Información general del Sistema de archivos resistente (ReFS)
 
@@ -64,7 +64,7 @@ ReFS está diseñado para admitir inmensos grupos de datos, millones de terabyte
 
 ## <a name="supported-deployments"></a>Implementaciones admitidas
 
-Microsoft ha desarrollado NTFS específicamente para uso general con una amplia gama de configuraciones y cargas de trabajo, pero para clientes que requieren especial la disponibilidad, la resistencia o la escala que proporciona ReFS, Microsoft admite ReFS para su uso en las siguientes configuraciones y escenarios. 
+Microsoft ha desarrollado NTFS específicamente para uso general con una amplia gama de configuraciones y cargas de trabajo, pero para clientes que requieren especial la disponibilidad, la resistencia o la escala que proporciona ReFS, Microsoft admite ReFS para su uso en los siguientes escenarios y configuraciones. 
 
 > [!NOTE]
 > Todas las configuraciones compatibles con ReFS deben usar hardware certificado con el [Catálogo de Windows Server](https://www.WindowsServerCatalog.com) y cumplir los requisitos de la aplicación.
@@ -122,7 +122,7 @@ La implementación de ReFS como destino de copia de seguridad es la más adecuad
 | Cifrado de BitLocker | Sí | Sí |
 | Desduplicación de datos | Sí<sup>1</sup> | Sí |
 | Compatibilidad con volumen compartido en clúster (CSV) | Sí<sup>2</sup> | Sí |
-| Enlaces simbólicos | Sí | Sí |
+| Vínculos simbólicos | Sí | Sí |
 | Compatibilidad con clústeres de conmutación por error | Sí | Sí |
 | Listas de control de acceso | Sí | Sí |
 | Diario de USN | Sí | Sí |

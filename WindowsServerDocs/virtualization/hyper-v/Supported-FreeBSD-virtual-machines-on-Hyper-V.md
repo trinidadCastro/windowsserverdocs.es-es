@@ -2,21 +2,19 @@
 title: Máquinas virtuales de FreeBSD compatibles en Hyper-V
 description: Enumera las características y servicios de integración de Linux que se incluyen en cada versión
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 author: shirgall
 ms.author: kathydav
 ms.date: 08/30/2017
-ms.openlocfilehash: b7b02e1ec93d6255412a89e7e7d7b8246cf5e50e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ea63a64ee0e1ce36ceb7783bbbc764c6ca5ca9d6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365508"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855958"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Máquinas virtuales de FreeBSD compatibles en Hyper-V
 
@@ -32,7 +30,7 @@ El siguiente mapa de distribución de características indica las característic
 
 * (*en blanco*): característica no disponible
 
-|**Característica**|**Versión del sistema operativo Windows Server**|**11.1/11.2**|**11.0**|**10,3**|**10,2**|**10,0-10,1**|**9,1-9,3, 8,4**|
+|**Ofrecen**|**Versión del sistema operativo Windows Server**|**11.1/11.2**|**11,0**|**10,3**|**10,2**|**10,0-10,1**|**9,1-9,3, 8,4**|
 |-|-|-|-|-|-|-|-|
 |**Disponibilidad**||Integrado|Integrado|Integrado|Integrado|Integrado|[Puerto](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
 |**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004; |
@@ -46,7 +44,7 @@ El siguiente mapa de distribución de características indica las característic
 |Segmentación y descarga de sumas de comprobación TCP|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|||
 |Descarga de recepción de gran tamaño (LRO)|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;||||
 |SR-IOV|2019, 2016|||||||
-|**[Discos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||Nota 1|Nota 1|Nota 1|Nota 1|Nota 1, 2|Nota 1, 2|
+|**[Discos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||Nota 1:|Nota 1:|Nota 1:|Nota 1:|Nota 1, 2|Nota 1, 2|
 |Cambiar el tamaño de VHDX|2019, 2016, 2012 R2|&#10004;Nota 7|&#10004;Nota 7|||||
 |Canal de fibra virtual|2019, 2016, 2012 R2|||||||
 |Copia de seguridad de máquinas virtuales en vivo|2019, 2016, 2012 R2|&#10004;||||||
@@ -71,7 +69,7 @@ El siguiente mapa de distribución de características indica las característic
 |Arranque mediante UEFI|2019, 2016, 2012 R2|&#10004;||||||
 |Arranque seguro|2019, 2016|||||||
 
-## <a name="BKMK_notes"></a>Apunte
+## <a name="notes"></a><a name="BKMK_notes"></a>Apunte
 
 1. Sugerimos que [etiquete los dispositivos de disco]( https://www.freebsd.org/doc/handbook/geom-glabel.html) para evitar un error de montaje raíz durante el inicio.
 
@@ -94,11 +92,11 @@ El siguiente mapa de distribución de características indica las característic
     # dd if=/dev/da1 of=/dev/da1 count=0
     # gpart recover da1
     ```
-   **Notas adicionales**: La matriz de características de 10 Stable y 11 stable es la misma que la versión de FreeBSD 11,1. Además, FreeBSD 10,2 y las versiones anteriores (10,1, 10,0, 9. x, 8. x) están al final del ciclo de vida. Consulte [aquí](https://security.freebsd.org/) para obtener una lista actualizada de las versiones admitidas y los avisos de seguridad más recientes.
+   **Notas adicionales**: la matriz de características de 10 Stable y 11 stable es la misma que la versión de FreeBSD 11,1. Además, FreeBSD 10,2 y las versiones anteriores (10,1, 10,0, 9. x, 8. x) están al final del ciclo de vida. Consulte [aquí](https://security.freebsd.org/) para obtener una lista actualizada de las versiones admitidas y los avisos de seguridad más recientes.
 
-**Notas adicionales**: La matriz de características de 10 Stable y 11 stable es la misma que la versión de FreeBSD 11,1. Además, FreeBSD 10,2 y las versiones anteriores (10,1, 10,0, 9. x, 8. x) están al final del ciclo de vida. Consulte [aquí](https://security.freebsd.org/) para obtener una lista actualizada de las versiones admitidas y los avisos de seguridad más recientes.
+**Notas adicionales**: la matriz de características de 10 Stable y 11 stable es la misma que la versión de FreeBSD 11,1. Además, FreeBSD 10,2 y las versiones anteriores (10,1, 10,0, 9. x, 8. x) están al final del ciclo de vida. Consulte [aquí](https://security.freebsd.org/) para obtener una lista actualizada de las versiones admitidas y los avisos de seguridad más recientes.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 * [Descripciones de características de máquinas virtuales Linux y FreeBSD en Hyper-V](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md)
 * [Prácticas recomendadas para ejecutar FreeBSD en Hyper-V](Best-practices-for-running-FreeBSD-on-Hyper-V.md)

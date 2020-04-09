@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5728847d-dcef-4694-9080-d63bfb1fe24b
 title: Directivas de Control de acceso en AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7ae66fd47953017652ed1e753279e344e0a6c478
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 7355ff9ed49a5e4ee8bca3a3d266a0ec1ecc0780
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949410"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814898"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Access Control directivas en Windows Server 2012 R2 y Windows Server 2012 AD FS
 
@@ -66,7 +65,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 ## <a name="enabling-client-access-policy"></a>Habilitar la Directiva de acceso de cliente  
  Para habilitar la Directiva de acceso de cliente en AD FS en Windows Server 2012 R2, debe actualizar la relación de confianza para usuario autenticado de Microsoft Office 365 de la plataforma de identidad. Elige uno de los siguientes escenarios de ejemplo para configurar las reglas de notificaciones en la **Microsoft Office 365** confianza del usuario de confianza de la plataforma de identidad que mejor se adapte a las necesidades de tu organización.  
 
-###  <a name="scenario1"></a>Escenario 1: bloquear todo el acceso externo a Office 365  
+###  <a name="scenario-1-block-all-external-access-to-office-365"></a><a name="scenario1"></a>Escenario 1: bloquear todo el acceso externo a Office 365  
  Este escenario de directiva de acceso de cliente permite el acceso desde todos los clientes internos y bloquea todos los clientes externos en función de la dirección IP del cliente externo. Puede usar los procedimientos siguientes para agregar las reglas de autorización de emisión correctas a la relación de confianza para usuario autenticado de Office 365 para el escenario elegido.  
 
 ##### <a name="to-create-rules-to-block-all-external-access-to-office-365"></a>Para crear reglas para bloquear todo el acceso externo a Office 365  
@@ -81,7 +80,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 5.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna demanda IP fuera del intervalo deseado, denegar". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  
 `c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
-6.  Haz clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  </br>
+6.  Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  </br>
 
     `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true"); ` 
 
@@ -89,7 +88,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
      ![Reglas de autenticación de emisión](media/Access-Control-Policies-W2K12/clientaccess1.png "ADFS_Client_Access_1")  
 
-###  <a name="scenario2"></a>Escenario 2: bloquear todo el acceso externo a Office 365 excepto Exchange ActiveSync  
+###  <a name="scenario-2-block-all-external-access-to-office-365-except-exchange-activesync"></a><a name="scenario2"></a>Escenario 2: bloquear todo el acceso externo a Office 365 excepto Exchange ActiveSync  
  En el ejemplo siguiente se permite el acceso a todas las aplicaciones de Office 365, incluido Exchange Online, desde clientes internos, incluido Outlook. Bloquea el acceso desde los clientes que se encuentran fuera de la red corporativa, como indica la dirección IP del cliente, excepto en el caso de los clientes de Exchange ActiveSync, como smartphones.  
 
 ##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-exchange-activesync"></a>Para crear reglas para bloquear todo el acceso externo a Office 365 excepto Exchange ActiveSync  
@@ -106,7 +105,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
     `c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 
-6.  Haz clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+6.  Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 7.  A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -119,7 +118,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value != "Microsoft.Exchange.ActiveSync"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 ~~~
 
-10. Haz clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+10. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 11. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -131,7 +130,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
    NOT EXISTS([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"]) => add(Type = "http://custom/xmsapplication", Value = "fail");  
    ```  
 
-14. Haz clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+14. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 15. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -140,12 +139,12 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 17. En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo "denegar a los usuarios con ipoutsiderange true y error de aplicación". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
 
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/xmsapplication", Value == "fail"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`</br>  
-18. Haz clic en **Finalizar**. Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:</br></br>      `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
+18. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:</br></br>      `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
 19. Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas de notificaciones** , haga clic en Aceptar. La lista resultante debería tener un aspecto similar al siguiente.  
 
     ![Reglas de autorización de emisión](media/Access-Control-Policies-W2K12/clientaccess2.png )  
 
-###  <a name="scenario3"></a>Escenario 3: bloquear todo el acceso externo a Office 365 excepto las aplicaciones basadas en explorador  
+###  <a name="scenario-3-block-all-external-access-to-office-365-except-browser-based-applications"></a><a name="scenario3"></a>Escenario 3: bloquear todo el acceso externo a Office 365 excepto las aplicaciones basadas en explorador  
 
 ##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-browser-based-applications"></a>Para crear reglas para bloquear todo el acceso externo a Office 365 excepto las aplicaciones basadas en explorador  
 
@@ -159,7 +158,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 5.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna Claim IP fuera del intervalo deseado, emita ipoutsiderange claim". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  </br>
 `c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`   
-6.  Haz clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+6.  Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 7.  A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -172,7 +171,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
 ~~~
 
-10. Haz clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br></br> Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  
+10. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br></br> Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  
 
    `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`
 
@@ -180,7 +179,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
     ![Emisión](media/Access-Control-Policies-W2K12/clientaccess3.png)  
 
-###  <a name="scenario4"></a>Escenario 4: bloquear todo el acceso externo a Office 365 excepto los grupos de Active Directory designados  
+###  <a name="scenario-4-block-all-external-access-to-office-365-except-for-designated-active-directory-groups"></a><a name="scenario4"></a>Escenario 4: bloquear todo el acceso externo a Office 365 excepto los grupos de Active Directory designados  
  En el ejemplo siguiente se habilita el acceso desde clientes internos basados en la dirección IP. Bloquea el acceso desde los clientes que se encuentran fuera de la red corporativa que tienen una dirección IP de cliente externa, excepto para las personas de un grupo de Active Directory especificado. Use los pasos siguientes para agregar las reglas de autorización de emisión correctas a la relación de confianza para usuario autenticado de la **plataforma de identidad Microsoft Office 365** mediante el Asistente para reglas de notificaciones:  
 
 ##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-for-designated-active-directory-groups"></a>Para crear reglas para bloquear todo el acceso externo a Office 365, excepto los grupos de Active Directory designados  
@@ -200,7 +199,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 `c1:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] && c2:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 ~~~
 
-6. Haz clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+6. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 7. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -210,7 +209,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
     `NOT EXISTS([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-100"]) => add(Type = "http://custom/groupsid", Value = "fail");`  
 
-10. Haz clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+10. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 11. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -220,7 +219,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
    `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/groupsid", Value == "fail"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 
-14. Haz clic en **Finalizar**. Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br></br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  
+14. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br></br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  
 
    `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`  
 
@@ -228,7 +227,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
      ![Emisión](media/Access-Control-Policies-W2K12/clientaccess4.png)  
 
-##  <a name="buildingip"></a>Compilar la expresión de intervalo de direcciones IP  
+##  <a name="building-the-ip-address-range-expression"></a><a name="buildingip"></a>Compilar la expresión de intervalo de direcciones IP  
  La solicitud x-MS-forwarded-Client-IP se rellena a partir de un encabezado HTTP que está establecido actualmente en Exchange Online, que rellena el encabezado al pasar la solicitud de autenticación a AD FS. El valor de la demanda puede ser uno de los siguientes:  
 
 > [!NOTE]

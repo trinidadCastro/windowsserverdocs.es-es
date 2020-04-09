@@ -3,22 +3,22 @@ title: Requisitos de hardware de Espacios de almacenamiento directo
 ms.prod: windows-server
 description: Requisitos de hardware mínimos para las pruebas de Espacios de almacenamiento directo.
 ms.author: eldenc
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a7152ec6abb318a096ac321ae7ccfaaef4d199
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 42022b6e2e3564d1440e2ba1d45f9f98430242c0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402935"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861058"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware de Espacios de almacenamiento directo
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se describen los requisitos mínimos de hardware para Espacios de almacenamiento directo.
 
@@ -29,7 +29,7 @@ En el caso de producción, Microsoft recomienda adquirir una solución de hardwa
 
 ## <a name="base-requirements"></a>Requisitos básicos
 
-Los sistemas, los componentes, los dispositivos y los controladores deben tener **Windows server 2016 certificado** por el [Catálogo de Windows Server](https://www.windowsservercatalog.com). Además, se recomienda que los servidores, las unidades, los adaptadores de bus host y los adaptadores de red tengan el **estándar del centro de datos definido por software (SDDC)** o el **centro de datos definido por software (SDDC) Premium** calificaciones adicionales (AQS), como se indica menor. Hay más de 1.000 componentes con la AQs de SDDC.
+Los sistemas, los componentes, los dispositivos y los controladores deben tener **Windows server 2016 certificado** por el [Catálogo de Windows Server](https://www.windowsservercatalog.com). Además, se recomienda que los servidores, las unidades, los adaptadores de bus host y los adaptadores de red tengan el **estándar del centro de datos definido por software (SDDC)** o el **centro de datos definido por software (SDDC)** , como se muestra a continuación. Hay más de 1.000 componentes con la AQs de SDDC.
 
 ![captura de pantalla del catálogo de Windows Server que muestra la AQs de SDDC](media/hardware-requirements/sddc-aqs.png)
 
@@ -52,11 +52,11 @@ Además, se aplican los siguientes requisitos:
 - Memoria para Windows Server, máquinas virtuales y otras aplicaciones o cargas de trabajo; signos
 - 4 GB de RAM por terabyte (TB) de capacidad de la unidad de caché en cada servidor, para metadatos de Espacios de almacenamiento directo
 
-## <a name="boot"></a>arranque
+## <a name="boot"></a>Arranque
 
 - Cualquier dispositivo de arranque compatible con Windows Server, que [ahora incluye SATADOM](https://cloudblogs.microsoft.com/windowsserver/2017/08/30/announcing-support-for-satadom-boot-drives-in-windows-server-2016/)
 - El reflejo RAID 1 **no** es necesario, pero se admite para el arranque
-- Recomendado: tamaño mínimo de 200 GB
+- Recomendado: 200 GB de tamaño mínimo
 
 ## <a name="networking"></a>Funciones de red
 
@@ -72,8 +72,8 @@ Interconexión recomendada para un alto rendimiento, a escala o a implementacion
 - NIC de 25 Gbps o más rápido
 
 Interconexiones de nodo conmutado o sin conmutador
-- Activado Los conmutadores de red deben estar configurados correctamente para administrar el ancho de banda y el tipo de red.  Si usa RDMA que implementa el protocolo RoCE, la configuración del dispositivo y del conmutador de red es aún más importante. 
-- No modificado: Los nodos se pueden interconectar mediante conexiones directas, evitando el uso de un modificador.  Es necesario que todos los nodos tengan una conexión directa con todos los demás nodos del clúster.
+- Cambiado: los conmutadores de red deben estar configurados correctamente para administrar el ancho de banda y el tipo de red.  Si usa RDMA que implementa el protocolo RoCE, la configuración del dispositivo y del conmutador de red es aún más importante. 
+- Sin conmutador: los nodos se pueden interconectar mediante conexiones directas, evitando el uso de un modificador.  Es necesario que todos los nodos tengan una conexión directa con todos los demás nodos del clúster.
 
 
 ## <a name="drives"></a>Unidades
@@ -87,8 +87,8 @@ Espacios de almacenamiento directo funciona con unidades SATA, SAS o NVMe conect
 - Los dispositivos de caché deben tener 32 GB o más.
 - Al usar dispositivos de memoria persistentes como dispositivos de caché, debe usar dispositivos de capacidad de NVMe o SSD (no puede usar HDD).
 - El controlador de NVMe es el proporcionado por Microsoft que se incluye en Windows. (stornvme. sys)
-- Recomendado: El número de unidades de capacidad es un múltiplo entero del número de unidades de caché
-- Recomendado: Las unidades de caché deben tener una gran resistencia de escritura: al menos 3 unidades-escrituras por día (DWPD) o al menos 4 terabytes escritas (TBW) al día; vea Descripción de las [escrituras de unidad al día (DWPD), terabytes escritos (TBW) y el mínimo recomendado para espacios de almacenamiento directo ](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
+- Recomendado: el número de unidades de capacidad es un múltiplo entero del número de unidades de caché
+- Recomendado: las unidades de caché deben tener una gran resistencia de escritura: al menos 3 unidades-escrituras por día (DWPD) o al menos 4 terabytes escritas (TBW) al día; vea [Descripción de las escrituras de unidad al día (DWPD), terabytes escritos (TBW) y el mínimo recomendado para espacios de almacenamiento directo](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 
 A continuación se muestra cómo se pueden conectar las unidades de Espacios de almacenamiento directo:
 
@@ -96,7 +96,7 @@ A continuación se muestra cómo se pueden conectar las unidades de Espacios de 
 - Unidades de NVMe conectadas directamente
 - Adaptador de bus host (HBA) SAS con unidades SAS
 - Adaptador de bus host (HBA) SAS con unidades SATA
-- **NO COMPATIBLE:** Tarjetas de controlador RAID o almacenamiento SAN (Canal de fibra, iSCSI, FCoE). Las tarjetas del adaptador de bus host (HBA) deben implementar el modo de paso a través simple.
+- **no compatible:** Tarjetas de controlador RAID o almacenamiento SAN (Canal de fibra, iSCSI, FCoE). Las tarjetas del adaptador de bus host (HBA) deben implementar el modo de paso a través simple.
 
 ![diagrama de interconexiones de unidad compatibles](media/hardware-requirements/drive-interconnect-support-1.png)
 
@@ -104,7 +104,7 @@ Las unidades pueden ser internas en el servidor o en un contenedor externo que e
 
 - Unidades internas del servidor
 - Unidades en un contenedor externo ("JBOD") conectadas a un servidor
-- **NO COMPATIBLE:** Alojamientos compartidos de SAS conectados a varios servidores o a cualquier forma de e/s de múltiples rutas (MPIO) en las que se puede tener acceso a las unidades mediante múltiples rutas.
+- **no compatible:** Alojamientos compartidos de SAS conectados a varios servidores o a cualquier forma de e/s de múltiples rutas (MPIO) en las que se puede tener acceso a las unidades mediante múltiples rutas.
 
 ![diagrama de interconexiones de unidad compatibles](media/hardware-requirements/drive-interconnect-support-2.png)
 

@@ -1,19 +1,16 @@
 ---
 title: Minroot
 description: Configuración de controles de recursos de CPU del host
-keywords: windows 10, hyper-v
 author: allenma
 ms.date: 12/15/2017
 ms.topic: article
-ms.prod: windows-10-hyperv
-ms.service: windows-10-hyperv
-ms.assetid: ''
-ms.openlocfilehash: 92de899a39aed05e2f598fcb3aae3fbae3f1cb67
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: de621b3bfdc9792e61e6d21d9f3774da76c55df6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872040"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860788"
 ---
 # <a name="hyper-v-host-cpu-resource-management"></a>Administración de recursos de CPU del host de Hyper-V
 
@@ -21,7 +18,7 @@ Los controles de recursos de CPU del host de Hyper-V introducidos en Windows Ser
 
 Para obtener más información sobre el hardware de los hosts de Hyper-V, consulte [requisitos del sistema de Hyper-v de Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements).
 
-## <a name="background"></a>Background
+## <a name="background"></a>Fondo
 
 Antes de establecer los controles para los recursos de CPU del host de Hyper-V, resulta útil revisar los conceptos básicos de la arquitectura de Hyper-V.  
 Puede encontrar un resumen general en la sección [arquitectura de Hyper-V](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/hyper-v-server/architecture) .
@@ -39,7 +36,7 @@ Estos son los conceptos importantes de este artículo:
 
 ## <a name="the-minimum-root-or-minroot-configuration"></a>La configuración raíz mínima o "Minroot"
 
-Las versiones anteriores de Hyper-V tenían un límite máximo de 64 VPs por partición.  Esto se aplica a las particiones raíz e invitadas.  Como los sistemas con más de 64 procesadores lógicos aparecían en servidores de tecnología avanzada, Hyper-V también ha evolucionado sus límites de escala de host para admitir estos sistemas más grandes, en un punto que admite un host con hasta 320 LPs.  Sin embargo, si se divide el límite del VP 64 por partición en ese momento, se presentaron varios desafíos y se presentaron las complejidades que eran compatibles con más de 64 VPs por partición prohibida.  Para solucionar este paso, Hyper-V limitó el número de VPs dado a la partición raíz a 64, incluso si el equipo subyacente tuviera muchos más procesadores lógicos disponibles.  El hipervisor seguiría usando todos los LPs disponibles para ejecutar VPs de invitado, pero limitaría artificialmente la partición raíz en 64.  Esta configuración se conocía como la configuración de "raíz mínima" o "minroot".  Las pruebas de rendimiento confirmaron que, incluso en sistemas de gran escala con más de 64 LPs, la raíz no necesitaba más de 64 VPs raíz para proporcionar una compatibilidad suficiente con un gran número de máquinas virtuales invitadas y VPs de invitados, de hecho, mucho menor que 64 raíz VPs era a menudo adecuada. , en función del curso sobre el número y el tamaño de las máquinas virtuales invitadas, las cargas de trabajo específicas que se ejecutan, etc.
+Las versiones anteriores de Hyper-V tenían un límite máximo de 64 VPs por partición.  Esto se aplica a las particiones raíz e invitadas.  Como los sistemas con más de 64 procesadores lógicos aparecían en servidores de tecnología avanzada, Hyper-V también ha evolucionado sus límites de escala de host para admitir estos sistemas más grandes, en un punto que admite un host con hasta 320 LPs.  Sin embargo, si se divide el límite del VP 64 por partición en ese momento, se presentaron varios desafíos y se presentaron las complejidades que eran compatibles con más de 64 VPs por partición prohibida.  Para solucionar este paso, Hyper-V limitó el número de VPs dado a la partición raíz a 64, incluso si el equipo subyacente tuviera muchos más procesadores lógicos disponibles.  El hipervisor seguiría usando todos los LPs disponibles para ejecutar VPs de invitado, pero limitaría artificialmente la partición raíz en 64.  Esta configuración se conocía como la configuración de "raíz mínima" o "minroot".  Las pruebas de rendimiento confirmaron que, incluso en sistemas de gran escala con más de 64 LPs, la raíz no necesitaba más de 64 VPs raíz para proporcionar suficiente compatibilidad con un gran número de máquinas virtuales invitadas y VPs de invitados, de hecho, mucho menor que 64 raíz VPs era a menudo adecuada, en función del número y el tamaño de las máquinas virtuales invitadas. , las cargas de trabajo específicas que se ejecutan, etc.
 
 Este concepto "minroot" continúa utilizándose hoy en día.  De hecho, aunque Windows Server 2016 Hyper-V haya aumentado su límite máximo de compatibilidad de arquitectura para el host de LPs a 512 LPs, la partición raíz seguirá estando limitada a un máximo de 320 LPs.
 
@@ -51,13 +48,13 @@ Con el umbral máximo predeterminado de 320 LPs en Windows Server 2016 Hyper-V, 
 La configuración de minroot se controla a través de entradas BCD de hipervisor. Para habilitar minroot, desde un símbolo del sistema con privilegios de administrador:
 
 ```
-    bcdedit /set hypervisorrootproc n
+     bcdedit /set hypervisorrootproc n
 ```
 Donde n es el número de VPs raíz. 
 
 El sistema debe reiniciarse y el nuevo número de procesadores raíz se conservará durante la vigencia del arranque del sistema operativo.  La configuración de minroot no se puede cambiar dinámicamente en tiempo de ejecución.
 
-Si hay varios nodos Numa, cada nodo obtendrá `n/NumaNodeCount` procesadores.
+Si hay varios nodos NUMA, cada nodo obtendrá `n/NumaNodeCount` procesadores.
 
 Tenga en cuenta que con varios nodos NUMA, debe asegurarse de que la topología de la máquina virtual sea tal que haya suficientes LPs LP (es decir, LPs sin VPs raíz) en cada nodo NUMA para ejecutar el nodo NUMA de la máquina virtual correspondiente VPs.
 

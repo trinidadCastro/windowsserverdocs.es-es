@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4deff06a-d0ef-4e5a-9701-5911ba667201
 title: Herramienta de restauración rápida de AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 07/02/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2570aae52da2925a62dd6c9262af325fb5461fff
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 506734812689a42ec17768652ac715f5c7e24401
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465269"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858108"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>Herramienta de restauración rápida de AD FS
 
@@ -79,7 +78,7 @@ Conjuntos de parámetros
 
 - **BackupDKM** : realiza una copia de seguridad del contenedor DKM Active Directory que contiene las claves de AD FS en la configuración predeterminada (los certificados de firma y descifrado de tokens generados automáticamente). Usa una herramienta de AD ' LDIFDE ' para exportar el contenedor de AD y todos sus subárboles.
 
-- -**StorageType &lt;cadena&gt;** : el tipo de almacenamiento que el usuario desea usar. "Sistema de archivos" indica que el usuario desea almacenarlo en una carpeta localmente o en la red "Azure" indica que el usuario desea almacenarlo en el contenedor de Azure Storage cuando el usuario realiza la copia de seguridad, selecciona la ubicación de la copia de seguridad, ya sea el sistema de archivos o en el Administración. Para que se use Azure, se deben pasar Azure Storage credenciales al cmdlet. Las credenciales de almacenamiento contienen el nombre y la clave de la cuenta. Además de esto, también se debe pasar un nombre de contenedor. Si el contenedor no existe, se crea durante la copia de seguridad. Para el sistema de archivos que se va a usar, se debe proporcionar una ruta de acceso de almacenamiento. En ese directorio, se creará un nuevo directorio para cada copia de seguridad. Cada directorio creado contendrá los archivos de los que se ha realizado una copia de seguridad. 
+- -**StorageType &lt;cadena&gt;** : el tipo de almacenamiento que el usuario desea usar. "Sistema de archivos" indica que el usuario desea almacenarlo en una carpeta localmente o en la red "Azure" indica que el usuario desea almacenarlo en el contenedor de Azure Storage cuando el usuario realiza la copia de seguridad, selecciona la ubicación de la copia de seguridad, ya sea el sistema de archivos o en la nube. Para que se use Azure, se deben pasar Azure Storage credenciales al cmdlet. Las credenciales de almacenamiento contienen el nombre y la clave de la cuenta. Además de esto, también se debe pasar un nombre de contenedor. Si el contenedor no existe, se crea durante la copia de seguridad. Para el sistema de archivos que se va a usar, se debe proporcionar una ruta de acceso de almacenamiento. En ese directorio, se creará un nuevo directorio para cada copia de seguridad. Cada directorio creado contendrá los archivos de los que se ha realizado una copia de seguridad. 
 
 - **EncryptionPassword &lt;cadena&gt;** : la contraseña que se va a usar para cifrar todos los archivos de los que se ha realizado una copia de seguridad antes de almacenarlos
 
@@ -117,7 +116,7 @@ Backup-ADFS -StorageType "Azure" -AzureConnectionCredentials $cred -AzureStorage
 
 ### <a name="backup-the-ad-fs-configuration-without-the-dkm-to-the-file-system"></a>Hacer una copia de seguridad de la configuración de AD FS sin el DKM en el sistema de archivos
 
-```powershell   
+```powershell     
 Backup-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\testExport\" -EncryptionPassword "password" -BackupComment "Clean Install of ADFS (FS)"
 ```
 
