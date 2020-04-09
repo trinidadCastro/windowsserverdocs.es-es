@@ -1,7 +1,6 @@
 ---
 ms.assetid: 62708b2e-4090-4cf7-8ae6-a557f31f561f
 title: Descripción del modelo lógico de Active Directory
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c8f1cb2d7e3970ace95f2d0a4fac6b12efba1ca9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cf2b997d601d42a47282df0ed95382e471233ff6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408657"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821618"
 ---
 # <a name="understanding-the-active-directory-logical-model"></a>Descripción del modelo lógico de Active Directory
 
@@ -24,8 +23,8 @@ El diseño de la estructura lógica para Active Directory Domain Services (AD DS
   
 Antes de diseñar la estructura lógica de Active Directory, es importante comprender el modelo lógico de Active Directory. AD DS es una base de datos distribuida que almacena y administra información acerca de los recursos de red, así como datos específicos de la aplicación de aplicaciones habilitadas para el directorio. AD DS permite a los administradores organizar los elementos de una red (como usuarios, equipos y dispositivos) en una estructura de contención jerárquica. El contenedor de nivel superior es el bosque. Dentro de los bosques, los dominios y dentro de los dominios son unidades organizativas (OU). Esto se denomina modelo lógico porque es independiente de los aspectos físicos de la implementación, como el número de controladores de dominio necesarios dentro de cada dominio y topología de red.  
   
-## <a name="active-directory-forest"></a>Active Directory bosque  
-Un bosque es una colección de uno o más dominios Active Directory que comparten una estructura lógica común, un esquema de directorio (definiciones de clase y atributo), una configuración de directorio (información de sitio y replicación) y un catálogo global (búsqueda en todo el bosque). funcionalidades). Los dominios del mismo bosque se vinculan automáticamente con relaciones de confianza transitivas bidireccionales.  
+## <a name="active-directory-forest"></a>Bosque de Active Directory  
+Un bosque es una colección de uno o más dominios Active Directory que comparten una estructura lógica común, un esquema de directorio (definiciones de clase y atributo), la configuración de directorios (información de la replicación y del sitio) y el catálogo global (capacidades de búsqueda en todo el bosque). Los dominios del mismo bosque se vinculan automáticamente con relaciones de confianza transitivas bidireccionales.  
   
 ## <a name="active-directory-domain"></a>Dominio de Active Directory  
 Un dominio es una partición de un bosque de Active Directory. La creación de particiones de datos permite a las organizaciones replicar datos solo en donde sea necesario. De esta manera, el directorio se puede escalar globalmente a través de una red con un ancho de banda disponible limitado. Además, el dominio admite varias funciones principales relacionadas con la administración, entre las que se incluyen:  

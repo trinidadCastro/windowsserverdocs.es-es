@@ -1,54 +1,49 @@
 ---
 title: Funcionalidades de adición y desarrollo
-description: Información del sistema le permite agregar nuevas capacidades predictivas para la información del sistema, sin necesidad de las actualizaciones del sistema operativo. Esto permite a los desarrolladores, incluidos Microsoft y terceros, para crear y entregar la nueva versión de mediados de capacidades para tratar los escenarios que le interesan. Nuevas capacidades pueden especificar datos personalizados para recopilar y analizar, y también se integran con los planos de administración de información del sistema existentes.
-ms.custom: na
+description: System Insights le permite agregar nuevas capacidades de predicción a información del sistema, sin necesidad de ninguna actualización del sistema operativo. Esto permite a los desarrolladores, incluidos Microsoft y terceros, crear y ofrecer nuevas capacidades de versión mediados para abordar los escenarios que le interesan. Las nuevas funcionalidades pueden especificar datos personalizados para recopilar y analizar, y también se integran con los planes de administración de System Insights existentes.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: system-insights
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 8caddead774ac69a38906f3c0a0d2eaf005c1d28
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0dd4e24197d5a8c438d70a849e435ce28792dfce
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817486"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858438"
 ---
-# <a name="adding-and-developing-new-capabilities"></a>Agregar y desarrollar nuevas capacidades
+# <a name="adding-and-developing-new-capabilities"></a>Adición y desarrollo de nuevas capacidades
 
->Se aplica a: Windows Server 2019
+>Se aplica a: Windows Server 2019
 
-Información del sistema le permite agregar nuevas capacidades predictivas para la información del sistema, sin necesidad de las actualizaciones del sistema operativo. Esto permite a los desarrolladores, incluidos Microsoft y terceros, para crear y entregar la nueva versión de mediados de capacidades para tratar los escenarios que le interesan. 
+System Insights le permite agregar nuevas capacidades de predicción a información del sistema, sin necesidad de ninguna actualización del sistema operativo. Esto permite a los desarrolladores, incluidos Microsoft y terceros, crear y ofrecer nuevas capacidades de versión mediados para abordar los escenarios que le interesan. 
 
-Cualquier nueva capacidad puede integrar y ampliar la infraestructura existente de la información del sistema:
+Cualquier nueva funcionalidad puede integrarse con la infraestructura de System Insights existente y ampliarla:
 
-- Nuevas capacidades pueden **especificar cualquier evento del sistema o de contador de rendimiento**, que se recopilan, conserva localmente y se devolverá a la capacidad para el análisis cuando se invoca la capacidad.  
-- Nuevas capacidades pueden **aprovechar el existente de Windows Admin Center y los planos de administración de PowerShell**. No sólo se nuevas capacidades pueden detectarse en el sistema de información, también se benefician de las programaciones personalizadas y las acciones de corrección. 
+- Las nuevas capacidades pueden **especificar cualquier contador de rendimiento o evento del sistema**, que se recopilará, se conservará localmente y se devolverá a la capacidad de análisis cuando se invoque la funcionalidad.  
+- Las nuevas capacidades pueden **aprovechar el centro de administración de Windows existente y los planos de administración de PowerShell**. No solo se podrán detectar nuevas funcionalidades en información del sistema, sino que también se beneficiarán de las programaciones personalizadas y las acciones de corrección. 
 
-## <a name="manage-new-capabilities"></a>Nuevas capacidades de administración
-- [Obtenga información sobre](add-remove-update-capabilities.md) cómo agregar, quitar y actualizar las funciones mediante PowerShell. 
+## <a name="manage-new-capabilities"></a>Administrar nuevas funcionalidades
+- [Obtenga información sobre](add-remove-update-capabilities.md) cómo agregar, quitar y actualizar funcionalidades con PowerShell. 
 
-## <a name="develop-a-capability"></a>Desarrollar una capacidad
-Use los siguientes recursos para ayudarle a empezar a escribir sus propias funciones personalizadas:
-- [Obtenga información sobre](data-sources.md) acerca de los orígenes de datos que puede recopilar.
-- [Descargar](https://www.nuget.org/packages/Microsoft.WindowsServer.SystemInsights/) el paquete NuGet de información del sistema, que contiene las clases e interfaces necesarias para escribir una función.
-- [Visite](https://aka.ms/systeminsights-api) la documentación de API para obtener información sobre las interfaces y clases de información del sistema. 
-- [Use](https://aka.ms/systeminsights-samplecapability) la capacidad de ejemplo de información del sistema que le ayudarán a empezar a trabajar. Esto muestra cómo registrar una funcionalidad, especifique los orígenes de datos para recopilar y empezar a analizar los datos del sistema.
+## <a name="develop-a-capability"></a>Desarrollar una funcionalidad
+Use los siguientes recursos para ayudarle a empezar a escribir sus propias funcionalidades personalizadas:
+- [Obtenga información](data-sources.md) sobre los orígenes de datos que puede recopilar.
+- [Descargue](https://www.nuget.org/packages/Microsoft.WindowsServer.SystemInsights/) el paquete NuGet de System Insights, que contiene las clases e interfaces que necesita para escribir una funcionalidad.
+- [Visite](https://aka.ms/systeminsights-api) la documentación de la API para obtener información sobre las clases e interfaces de System Insights. 
+- [Use](https://aka.ms/systeminsights-samplecapability) la funcionalidad de ejemplo de System Insights para ayudarle a empezar. Esto muestra cómo registrar una funcionalidad, especificar los orígenes de datos que se van a recopilar y empezar a analizar los datos del sistema.
 
 >[!NOTE]
->Se trata de funcionalidad de versión preliminar. Está sujeta a cambios, cuando se agregan nuevas funciones e incorporar comentarios.
+>Esta es la funcionalidad de versión preliminar. Está sujeto a cambios, a medida que agregamos nueva funcionalidad e incorporamos Comentarios.
 
 ## <a name="see-also"></a>Vea también
-Para obtener más información acerca de la información del sistema, use los siguientes recursos:
+Para obtener más información acerca de System Insights, utilice los siguientes recursos:
 
-- [Información general de información del sistema](overview.md)
-- [Capacidades de descripción](understanding-capabilities.md)
-- [Capacidades de administración](managing-capabilities.md)
-- [Agregar, quitar y actualizar las capacidades](add-remove-update-capabilities.md)
-- [Preguntas más frecuentes del sistema Insights](faq.md)
+- [Información general de System Insights](overview.md)
+- [Descripción de funcionalidades](understanding-capabilities.md)
+- [Administración de funcionalidades](managing-capabilities.md)
+- [Funcionalidades de adición, eliminación y actualización](add-remove-update-capabilities.md)
+- [Preguntas más frecuentes sobre System Insights](faq.md)

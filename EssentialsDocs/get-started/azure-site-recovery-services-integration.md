@@ -1,23 +1,19 @@
 ---
 title: Integración de los servicios de Azure Site Recovery
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 10/01/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c04f27d4bf6ff6e615cf06da73247bf79dea1008
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 29db78fdf38a6fab23d9a5ec5539c0606e2fbbaa
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310416"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814488"
 ---
 # <a name="azure-site-recovery-services-integration"></a>Integración de los servicios de Azure Site Recovery
 
@@ -43,7 +39,7 @@ Después de la suscripción y la selección de la región, aparecerá una nueva 
 
 ### <a name="enabling-guest-virtual-machines-for-protection"></a>Habilitación de las máquinas virtuales invitadas para protección
 
-Al seleccionar una máquina virtual presente en la ventana de recuperación de Azure, puede hacer clic en **Habilitar replicación en Azure** en el lado derecho del panel para preparar y copiar la máquina virtual™ imagen de s en Azure:
+Al seleccionar una máquina virtual presente en la ventana de recuperación de Azure, puede hacer clic en **Habilitar replicación en Azure** en el lado derecho del panel para preparar y copiar la máquina virtual &trade;imagen de s en Azure:
 
 ![Una captura de pantalla que muestra el cuadro de diálogo habilitar la replicación en Azure. Se muestra una barra de progreso a medida que se agrega un host.](media/azure-site-recovery-5.PNG)
 

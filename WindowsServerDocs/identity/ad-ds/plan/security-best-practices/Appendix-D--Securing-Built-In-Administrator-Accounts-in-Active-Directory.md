@@ -1,7 +1,6 @@
 ---
 ms.assetid: 11f36f2b-9981-4da0-9e7c-4eca78035f37
 title: 'Apéndice D: protección de cuentas de administrador integradas en Active Directory'
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cc91ccd00c951863f4f9802f3d669e36ff3f3d9a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3e0060e4b732fe77de4371c7b84b77da21de9e20
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367839"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821668"
 ---
 # <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>Anexo D: protección de cuentas de administrador integradas en Active Directory
 
@@ -68,7 +67,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
         -   Denegar inicio de sesión a través de Servicios de Escritorio remoto  
 
 > [!NOTE]  
-> Esta configuración garantizará que la cuenta de administrador integrada del dominio no se puede usar para conectarse a un controlador de dominio, aunque la cuenta, si está habilitada, puede iniciar sesión localmente en los controladores de dominio. Dado que esta cuenta solo se debe habilitar y usar en escenarios de recuperación ante desastres, se prevé que el acceso físico a un controlador de dominio como mínimo estará disponible o que otras cuentas con permisos para tener acceso a los controladores de dominio de forma remota puedan usa.  
+> Esta configuración garantizará que la cuenta de administrador integrada del dominio no se puede usar para conectarse a un controlador de dominio, aunque la cuenta, si está habilitada, puede iniciar sesión localmente en los controladores de dominio. Dado que esta cuenta solo debe habilitarse y usarse en escenarios de recuperación ante desastres, se prevé que el acceso físico a un controlador de dominio como mínimo estará disponible, o que se puedan usar otras cuentas con permisos para tener acceso a los controladores de dominio de forma remota.  
 
 -   Configurar la auditoría de cuentas de administrador  
 
@@ -259,7 +258,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 7.  En **programa/script:** , haga clic en **examinar**, busque y seleccione el archivo por lotes creado en la sección "crear un archivo por lotes" y haga clic en **abrir**.  
 
-8.  Haz clic en **Aceptar**.  
+8.  Haga clic en **Aceptar**.  
 
 9. Haga clic en la pestaña **General**.  
 
@@ -269,7 +268,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 12. Seleccione **ejecutar si el usuario ha iniciado sesión o no** y no **almacena la contraseña**. La tarea solo tendrá acceso a los recursos del equipo local.  
 
-13. Haz clic en **Aceptar**.  
+13. Haga clic en **Aceptar**.  
 
 14. Debe aparecer un cuadro de diálogo que solicite las credenciales de la cuenta de usuario para ejecutar la tarea.  
 
@@ -289,7 +288,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 4.  Busque y haga doble clic en **Administrador de trabajos de impresión**.  
 
-5.  Haga clic en la pestaña **Iniciar sesión**.  
+5.  Haga clic en la ficha **Iniciar sesión**.  
 
 6.  En **iniciar sesión como:** , seleccione **esta cuenta**.  
 
@@ -315,7 +314,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 4.  Busque y haga doble clic en **Administrador de trabajos de impresión**.  
 
-5.  Haga clic en la pestaña **Iniciar sesión**.  
+5.  Haga clic en la ficha **Iniciar sesión**.  
 
 6.  En **iniciar sesión como:** , seleccione la cuenta de **sistema local** y haga clic en **Aceptar**.  
 

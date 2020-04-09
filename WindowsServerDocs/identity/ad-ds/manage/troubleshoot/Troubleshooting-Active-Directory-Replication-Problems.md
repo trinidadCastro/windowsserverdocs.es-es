@@ -1,7 +1,6 @@
 ---
 ms.assetid: b11f7a65-ec7b-4c11-8dc4-d7cabb54cd94
 title: Solución de problemas de replicación de Active Directory
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cf6b50ab3b4991bd8cab8523494261f1284945a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a3e9c3e901f164d793ca40943934efbbccafda38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409062"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822968"
 ---
 # <a name="troubleshooting-active-directory-replication-problems"></a>Solución de problemas de replicación de Active Directory
 
@@ -26,7 +25,7 @@ En el resto de este tema se explican las herramientas y una metodología general
 
 ## <a name="introduction-and-resources-for-troubleshooting-active-directory-replication"></a>Introducción y recursos para la solución de problemas de replicación Active Directory
 
-El error de replicación de entrada o de salida hace que Active Directory objetos que representan la topología de replicación, la programación de replicación, los controladores de dominio, los usuarios, los equipos, las contraseñas, los grupos de seguridad, las pertenencias a grupos y directiva de grupo sean incoherentes. entre controladores de dominio. La incoherencia del directorio y el error de replicación causan errores operativos o resultados incoherentes, según el controlador de dominio con el que se haya establecido contacto para la operación, y pueden impedir la aplicación de los permisos de directiva de grupo y control de acceso. Active Directory Domain Services (AD DS) depende de la conectividad de red, la resolución de nombres, la autenticación y la autorización, la base de datos de directorio, la topología de replicación y el motor de replicación. Cuando la causa principal de un problema de replicación no es evidente de inmediato, la determinación de la causa entre las diversas causas posibles requiere la eliminación sistemática de las causas probables.
+Los errores de replicación de entrada o de salida hacen que Active Directory objetos que representan la topología de replicación, la programación de replicación, los controladores de dominio, los usuarios, los equipos, las contraseñas, los grupos de seguridad, las pertenencias a grupos y directiva de grupo sean incoherentes entre los controladores de dominio. La incoherencia del directorio y el error de replicación causan errores operativos o resultados incoherentes, según el controlador de dominio con el que se haya establecido contacto para la operación, y pueden impedir la aplicación de los permisos de directiva de grupo y control de acceso. Active Directory Domain Services (AD DS) depende de la conectividad de red, la resolución de nombres, la autenticación y la autorización, la base de datos de directorio, la topología de replicación y el motor de replicación. Cuando la causa principal de un problema de replicación no es evidente de inmediato, la determinación de la causa entre las diversas causas posibles requiere la eliminación sistemática de las causas probables.
 
 Para obtener una herramienta basada en la interfaz de usuario que le ayude a supervisar la replicación y a diagnosticar errores, consulte [Active Directory Replication Status Tool](https://www.microsoft.com/download/details.aspx?id=30005)
 
@@ -49,7 +48,7 @@ A veces se producen errores de replicación debido a interrupciones intencionada
 
 ### <a name="intentional-disconnections"></a>Desconexiones intencionadas
 
-Si un controlador de dominio que está intentando realizar la replicación con un controlador de dominio que se ha compilado en un sitio de ensayo ha generado errores de replicación y actualmente está sin conexión esperando su implementación en el sitio de producción final (un sitio remoto, como una sucursal) ), puede tener en cuenta los errores de replicación. Para evitar separar un controlador de dominio de la topología de replicación durante períodos prolongados, lo que provoca errores continuos hasta que el controlador de dominio se vuelve a conectar, considere la posibilidad de agregar estos equipos inicialmente como servidores miembro y mediante la instalación desde el medio ( IFM) para instalar Active Directory Domain Services (AD DS). Puede usar la herramienta de línea de comandos Ntdsutil para crear medios de instalación que puede almacenar en medios extraíbles (CD, DVD u otros medios) y enviarlos al sitio de destino. A continuación, puede usar el medio de instalación de para instalar AD DS en los controladores de dominio en el sitio, sin usar la replicación. 
+Si un controlador de dominio que está intentando realizar la replicación con un controlador de dominio que se ha compilado en un sitio de ensayo está sin conexión y actualmente está desconectado en espera de su implementación en el sitio de producción final (un sitio remoto, como una sucursal), puede tener en cuenta los errores de replicación. Para evitar separar un controlador de dominio de la topología de replicación durante períodos prolongados, lo que provoca errores continuos hasta que el controlador de dominio se vuelve a conectar, considere la posibilidad de agregar estos equipos inicialmente como servidores miembro y usando el método de instalación desde medios (IFM) para instalar Active Directory Domain Services (AD DS). Puede usar la herramienta de línea de comandos Ntdsutil para crear medios de instalación que puede almacenar en medios extraíbles (CD, DVD u otros medios) y enviarlos al sitio de destino. A continuación, puede usar el medio de instalación de para instalar AD DS en los controladores de dominio en el sitio, sin usar la replicación. 
 
 ### <a name="hardware-failures-or-upgradestitle"></a>Errores de hardware o actualizaciones</title>
 
@@ -146,7 +145,7 @@ Herramientas:
 12. Repita el paso 11 para la columna de hora del último error, pero use el valor no es igual a y, a continuación, escriba el valor 0.
 13. Resuelva los errores de replicación.
 
-Para cada controlador de dominio del bosque, la hoja de cálculo muestra el asociado de replicación de origen, la hora en que se produjo la última replicación y el momento en que se produjo el último error de replicación para cada contexto de nomenclatura (partición de directorio). Mediante el uso de Autofiltro en Excel, solo puede ver el estado de la replicación de los controladores de dominio que funcionen, los controladores de dominio que no tienen errores o los controladores de dominio que son los menos actuales, y puede ver los asociados de replicación que se están replicando. successfully.
+Para cada controlador de dominio del bosque, la hoja de cálculo muestra el asociado de replicación de origen, la hora en que se produjo la última replicación y el momento en que se produjo el último error de replicación para cada contexto de nomenclatura (partición de directorio). Mediante el uso de Autofiltro en Excel, solo puede ver el estado de la replicación de los controladores de dominio que funcionen, los controladores de dominio que no tienen errores o los controladores de dominio que son los menos actuales, y puede ver los asociados de replicación que se replican correctamente.
 
 ## <a name="replication-problems-and-resolutions"></a>Problemas de replicación y soluciones
 
@@ -162,7 +161,7 @@ Para identificar Active Directory problemas de replicación, use el comando <sys
 | --- | --- | --- |
 |El tiempo transcurrido desde la última replicación con este servidor superó la duración del desecho.|Un controlador de dominio ha producido un error en la replicación de entrada con el controlador de dominio de origen con nombre suficiente para que una eliminación se haya extinguido, replicado y recolectado como elemento no utilizado de AD DS.|Id. de evento 2042: transcurrió demasiado tiempo desde que se replicó esta máquina|
 |No hay vecinos entrantes.|Si no aparece ningún elemento en la sección "vecinos de entrada" de la salida generada por repadmin/showrepl, el controlador de dominio no pudo establecer vínculos de replicación con otro controlador de dominio.|Solución de problemas de conectividad de replicación (Id. de evento 1925)| 
-|Acceso denegado.|Existe un vínculo de replicación entre dos controladores de dominio, pero la replicación no se puede realizar correctamente como resultado de un error de autenticación.|Solución de problemas de seguridad de replicación| 
+|Se ha denegado el acceso.|Existe un vínculo de replicación entre dos controladores de dominio, pero la replicación no se puede realizar correctamente como resultado de un error de autenticación.|Solución de problemas de seguridad de replicación| 
 |No se pudo realizar el último intento en < > de fecha y hora con el "el nombre de cuenta de destino es incorrecto".|Este problema se puede relacionar con los problemas de conectividad, DNS o autenticación. Si se trata de un error de DNS, el controlador de dominio local no pudo resolver el nombre DNS basado en el identificador único global (GUID) de su asociado de replicación.|Corrección de problemas de búsqueda de DNS de replicación (identificadores de evento 1925, 2087 y 2088) corrección de problemas de seguridad de replicación corrección de problemas de conectividad de replicación (ID. de evento 1925)| 
 |Error 49 de LDAP.|Es posible que la cuenta de equipo del controlador de dominio no esté sincronizada con el Centro de distribución de claves (KDC).|Solución de problemas de seguridad de replicación| 
 |No se puede abrir la conexión LDAP con el host local|La herramienta de administración no pudo ponerse en contacto con AD DS.|Solución de problemas de consulta de DNS de replicación (id. de evento 1925, 2087, 2088)| 

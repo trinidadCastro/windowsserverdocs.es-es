@@ -1,24 +1,20 @@
 ---
 title: Limitar el acceso de los usuarios al servidor
 description: Obtenga información sobre cómo conceder o denegar el acceso a multipoint Services para usuarios y grupos
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4cabd4f1-a764-4be6-bc6e-0a5f5566390c
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 62f2a3f9b94ac3f0474636c34e8ec1f81c568cad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ddc852eea3ed17cd354cc87c79d82066f989bd5d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389059"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820258"
 ---
 # <a name="limit-users-access-to-the-multipoint-server"></a>Limitar el acceso de los usuarios al servidor Multipoint
 Tanto si une MultiPoint Server a un dominio de Active Directory como si usa cuentas de usuario locales, todos los usuarios tendrán acceso a MultiPoint Server de forma predeterminada. Antes de permitir que los usuarios inicien sesión en estaciones en el entorno de Multipoint Services, debe restringir el acceso al servidor.  

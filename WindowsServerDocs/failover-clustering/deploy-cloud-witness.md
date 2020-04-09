@@ -2,27 +2,27 @@
 ms.assetid: 0cd1ac70-532c-416d-9de6-6f920a300a45
 title: Implementación de un testigo en la nube para un clúster de conmutación por error
 ms.prod: windows-server
-manager: eldenc
+manager: lizross
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: 'Cómo usar Microsoft Azure para hospedar el testigo para un clúster de conmutación por error de Windows Server en la nube: también se ha aprendido a implementar un testigo en la nube.'
-ms.openlocfilehash: ad5ff47a72319fee7650d1d9c0d0616cfaaa22d3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0b4ba643dca81d2d19b94b1d27485149f938e1c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948174"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827918"
 ---
-# <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>Implementación de un testigo en la nube para conmutación de clústeres por error
+# <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>Implementación de un testigo en la nube para un clúster de conmutación por error
 
 > Se aplica a: Windows Server 2019, Windows Server 2016
 
 El testigo en la nube es un tipo de testigo de cuórum del clúster de conmutación por error que usa Microsoft Azure para proporcionar un voto en el cuórum del clúster. En este tema se proporciona información general sobre la característica de testigo en la nube, los escenarios que admite e instrucciones sobre cómo configurar un testigo en la nube para un clúster de conmutación por error.
 
-## <a name="CloudWitnessOverview"></a>Información general del testigo en la nube
+## <a name="cloud-witness-overview"></a><a name="CloudWitnessOverview"></a>Información general del testigo en la nube
 
 En la figura 1 se muestra una configuración de cuórum de clúster de conmutación por error extendida de varios sitios con Windows Server 2016. En esta configuración de ejemplo (Ilustración 1), hay 2 nodos en dos centros de recursos (denominados sitios). Tenga en cuenta que un clúster puede abarcar más de 2 centros de recursos. Además, cada centro de información puede tener más de 2 nodos. Una configuración típica de cuórum de clúster en esta instalación (acuerdo de nivel de servicio de conmutación por error automática) asigna a cada nodo un voto. Se da un voto adicional al testigo de cuórum para permitir que el clúster siga ejecutándose incluso si uno de los centros de Datacenter experimenta una interrupción del suministro eléctrico. La expresión matemática es sencilla: hay 5 votos totales y se necesitan 3 votos para el clúster para mantenerla en ejecución.  
 
@@ -47,7 +47,7 @@ Diagrama de ![que ilustra un clúster extendido de varios sitios con el testigo 
 
 Como se muestra en la figura 2, no hay ningún tercer sitio independiente que sea necesario. El testigo en la nube, como cualquier otro testigo de cuórum, obtiene un voto y puede participar en los cálculos de cuórum.  
 
-## <a name="CloudWitnessSupportedScenarios"></a>Testigo en la nube: escenarios admitidos para el tipo de testigo único
+## <a name="cloud-witness-supported-scenarios-for-single-witness-type"></a><a name="CloudWitnessSupportedScenarios"></a>Testigo en la nube: escenarios admitidos para el tipo de testigo único
 Si tiene una implementación de clúster de conmutación por error, donde todos los nodos pueden tener acceso a Internet (por extensión de Azure), se recomienda configurar un testigo en la nube como recurso de testigo de cuórum.  
 
 Algunos de los escenarios compatibles con el uso del testigo en la nube como testigo de quórum son los siguientes:  
@@ -60,7 +60,7 @@ Algunos de los escenarios compatibles con el uso del testigo en la nube como tes
 
 A partir de Windows Server 2012 R2, se recomienda configurar siempre un testigo, ya que el clúster administra automáticamente el voto del testigo y los nodos votan con el Cuórum dinámico.  
 
-## <a name="CloudWitnessSetUp"></a>Configuración de un testigo en la nube para un clúster
+## <a name="set-up-a-cloud-witness-for-a-cluster"></a><a name="CloudWitnessSetUp"></a>Configuración de un testigo en la nube para un clúster
 Para configurar un testigo en la nube como testigo de quórum para el clúster, siga estos pasos:
 1. Creación de una cuenta de Azure Storage para usarla como un testigo en la nube
 2. Configure el testigo de nube como testigo de quórum para el clúster.
@@ -75,15 +75,15 @@ Cuando se usa la misma cuenta de Azure Storage para configurar el testigo de nub
 
 ### <a name="to-create-an-azure-storage-account"></a>Para crear una cuenta de almacenamiento de Azure
 
-1. Inicie sesión en [Azure Portal](https://portal.azure.com).
+1. Inicia sesión en [Azure Portal](https://portal.azure.com).
 2. En el menú del concentrador, seleccione Nuevo -> Datos y almacenamiento -> Cuenta de almacenamiento.
 3. En la página crear una cuenta de almacenamiento, haga lo siguiente:
     1. Escriba un nombre para la cuenta de almacenamiento.
-    <br>Los nombres de las cuentas de almacenamiento deben tener entre 3 y 24 caracteres y solo pueden incluir números y letras en minúscula. El nombre de la cuenta de almacenamiento también debe ser único en Azure.
+    <br>Los nombres de las cuentas de almacenamiento deben tener entre 3 y 24 caracteres de longitud y solo pueden contener números y letras minúsculas. El nombre de la cuenta de almacenamiento también debe ser único en Azure.
         
     2. En **tipo de cuenta**, seleccione **uso general**.
     <br>No se puede usar una cuenta de almacenamiento de blobs para un testigo en la nube.
-    3. En **Rendimiento**, seleccione **Estándar**.
+    3. En **rendimiento**, seleccione **estándar**.
     <br>No se puede usar Azure Premium Storage para un testigo en la nube.
     2. En **replicación**, seleccione **almacenamiento con redundancia local (LRS)** .
     <br>Los clústeres de conmutación por error usan el archivo de BLOB como punto de arbitraje, lo que requiere algunas garantías de coherencia al leer los datos. Por lo tanto, debe seleccionar **el almacenamiento con redundancia local para el** tipo de **replicación** .

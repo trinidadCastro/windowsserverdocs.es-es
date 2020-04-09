@@ -1,24 +1,20 @@
 ---
 title: Trabajar con dispositivos de vídeo
 description: Obtenga información sobre cómo funcionan los monitores de vídeo y los proyectores con las estaciones en Multipoint Services
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2f7f5a97-efd2-4184-8ad3-cf029d615eab
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: b7019000c99295204f196ee918129cded02e084f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b967d4523058fe1dfcb086e5918f84257bd51bf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389247"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820448"
 ---
 # <a name="work-with-video-devices"></a>Trabajar con dispositivos de vídeo
 En este tema se describe cómo funcionan los dispositivos de vídeo, como un monitor o un proyector, cuando están conectados a un equipo en el sistema MultiPoint Services o en una *estación* de MultiPoint Services.  
@@ -53,12 +49,12 @@ Al usar cualquiera de las opciones, tenga en cuenta lo siguiente:
   
 -   Es posible que tenga que conseguir dispositivos adaptadores o convertidores para convertir conectores DVI y VGA.  
   
--   El uso de un cable separador en “Y” puede disminuir la calidad de vídeo en ambos dispositivos de vídeo.  
+-   El uso de un cable divisor "Y" puede reducir la calidad del vídeo en ambos dispositivos de vídeo.  
   
--   Cuando se usa un proyector y un monitor mediante un cable separador en “Y”, MultiPoint Services ajusta la resolución de la pantalla de ambos dispositivos a la resolución mínima de uno de los dispositivos, habitualmente el proyector.  
+-   Cuando se usa un proyector y un monitor mediante un cable divisor "Y", Multipoint Services ajusta la resolución de pantalla de ambos dispositivos a la resolución máxima más baja de cada dispositivo, normalmente el proyector.  
   
 -   Multipoint Services no admite la ampliación de la pantalla de una sola estación en varios monitores.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Administrar hardware de la estación](Manage-Station-Hardware.md)  
 [Configurar una estación](Set-Up-a-Station.md) 

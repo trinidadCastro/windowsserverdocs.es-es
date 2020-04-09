@@ -1,7 +1,6 @@
 ---
 ms.assetid: 341614c6-72c2-444f-8b92-d2663aab7070
 title: Arquitectura de controladores de dominio virtualizados
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e8673b9e66a0aa3b6bea89b91ae5022efb26c65c
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: fa8645198374d91911f8ec7dc15f04bea4865e38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323157"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824448"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>Arquitectura de controladores de dominio virtualizados
 
@@ -26,7 +25,7 @@ En este tema se describe la arquitectura de clonación de controles de dominio v
   
 -   [Arquitectura de restauración segura de controladores de dominio virtualizados](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)  
   
-## <a name="BKMK_CloneArch"></a>Arquitectura de clonación de controladores de dominio virtualizados  
+## <a name="virtualized-domain-controller-cloning-architecture"></a><a name="BKMK_CloneArch"></a>Arquitectura de clonación de controladores de dominio virtualizados  
   
 ### <a name="overview"></a>Información general  
 La clonación de controles de dominio virtualizados depende de la plataforma del hipervisor para exponer un identificador llamado **identificador de generación de VM** a fin de detectar la creación de máquinas virtuales. AD DS almacena inicialmente el valor de este identificador en su base de datos (NTDS.DIT) durante la promoción de controladores de dominio. Cuando se arranca la máquina virtual, el valor actual del identificador de generación de VM de esta se compara con el valor de la base de datos. Si los valores son distintos, el controlador de dominio restaurará el identificador de invocación y descartará el grupo RID, lo que evita que USN pueda volver a crear entidades de seguridad duplicadas. El controlador de dominio buscará el archivo DCCloneConfig.xml en las ubicaciones invocadas en el paso 3 en [Procesamiento detallado de clonación](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneProcessDetails). Si se encuentra el archivo DCCloneConfig.xml, entonces asumirá que se ha implementado como clon, por lo que iniciará la clonación para aprovisionarse como controlador de dominio adicional (para ello, vuelve a promocionarse mediante los contenidos de NTDS.DIT y de SYSVOL copiados desde el medio de origen).  
@@ -35,7 +34,7 @@ En un entorno mixto, donde algunos hipervisores admiten VM-GenerationID y otros 
   
 Si el medio clonado se implementa en un hipervisor que admite VM-GenerationID, pero no se proporciona el archivo DCCloneConfig.xml, como el DC detecta un cambio de VM-GenerationID entre su DIT y el de la nueva VM, activará medidas de seguridad para evitar que se vuelva a usar USN y que se creen SID duplicados. Sin embargo, la clonación no se iniciará, por lo que el DC secundario continuará ejecutándose con la misma identidad que el DC de origen. Este DC secundario debe quitarse de la red lo antes posible para evitar incoherencias en el entorno. Para obtener más información sobre cómo recuperar este DC secundario y asegurarte de que las actualizaciones se replican en el exterior, consulta el artículo [2742970](https://support.microsoft.com/kb/2742970)de Microsoft KB.  
   
-### <a name="BKMK_CloneProcessDetails"></a>Procesamiento detallado de clonación  
+### <a name="cloning-detailed-processing"></a><a name="BKMK_CloneProcessDetails"></a>Procesamiento detallado de clonación  
 En el diagrama siguiente puedes ver la arquitectura de una operación de clonación inicial y de una operación de reintento de clonación. Estos procesos se explican con más detalle posteriormente en este tema.  
   
 **Operación de clonación inicial**  
@@ -142,7 +141,7 @@ En los pasos siguientes se explica el proceso con más detalle:
   
 26. Se reinicia el invitado. Ahora es un controlador de dominio de publicación normal.  
   
-## <a name="BKMK_SafeRestoreArch"></a>Arquitectura de restauración segura de controladores de dominio virtualizados  
+## <a name="virtualized-domain-controller-safe-restore-architecture"></a><a name="BKMK_SafeRestoreArch"></a>Arquitectura de restauración segura de controladores de dominio virtualizados  
   
 ### <a name="overview"></a>Información general  
 AD DS depende de la plataforma del hipervisor para exponer un identificador llamado **identificador de generación de VM** a fin de detectar la restauración de instantáneas de máquinas virtuales. AD DS almacena inicialmente el valor de este identificador en su base de datos (NTDS.DIT) durante la promoción de controladores de dominio. Cuando un administrador restaura una máquina virtual a partir de una instantánea anterior, el valor actual del identificador de generación de VM de esta se compara con el valor de la base de datos. Si los valores son distintos, el controlador de dominio restaurará el identificador de invocación y descartará el grupo RID, lo que evita que USN pueda volver a crear entidades de seguridad duplicadas. Existen dos escenarios en los que se puede producir una restauración segura:  

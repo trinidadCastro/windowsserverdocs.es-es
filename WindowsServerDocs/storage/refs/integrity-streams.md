@@ -1,6 +1,5 @@
 ---
 title: Flujos de integridad de ReFS
-description: ''
 author: gawatu
 ms.author: jgerend
 manager: dmoss
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: 0e41d7ae577bf7e9227ff0c02689d916f1008a3d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e4ce1870d8aea01de0ab621d7efe197026643db
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403034"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861338"
 ---
 # <a name="refs-integrity-streams"></a>Flujos de integridad de ReFS
 >Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server (canal semianual), Windows 10

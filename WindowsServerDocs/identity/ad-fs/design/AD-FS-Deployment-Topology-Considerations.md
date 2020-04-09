@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4ef052f0-61a9-4912-b780-5c96187c850f
 title: Consideraciones sobre la topología de implementación de AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 260d86c0feae0179620ece09e06f12729691b5a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 42db104691bce75c37adf19eb97abba3bf579cf8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359224"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855878"
 ---
 # <a name="ad-fs-deployment-topology-considerations"></a>Consideraciones sobre la topología de implementación de AD FS
 
@@ -30,15 +29,15 @@ AD FS características
 |Característica|¿Compatible con WID?|¿Compatible con SQL Server?|Más información sobre esta característica|  
 |-----------|---------------------|----------------------------|---------------------------------------|  
 |Implementación de una granja de servidores de federación|Sí, con un límite de 30 servidores de Federación para cada granja|Sí. No hay un límite obligatorio para el número de servidores de federación que se pueden implementar en una sola granja|[Determinar la topología de la implementación de AD FS](Determine-Your-AD-FS-Deployment-Topology.md)|  
-|Resolución de artefactos SAML **Nota:** esta característica no es necesaria para los escenarios de Microsoft Online Services, Microsoft Office 365, Microsoft Exchange o Microsoft Office SharePoint.|No|Sí|[El papel de la base de datos de configuración de AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<br /><br />[Procedimientos recomendados para planear e implementar AD FS de forma segura](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)|  
-|Detección de reproducción de tokens de Federación de SAML\/WS\-|No|Sí|[El papel de la base de datos de configuración de AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<br /><br />[Procedimientos recomendados para planear e implementar AD FS de forma segura](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)|  
+|Resolución de artefactos SAML **Nota:** esta característica no es necesaria para los escenarios de Microsoft Online Services, Microsoft Office 365, Microsoft Exchange o Microsoft Office SharePoint.|No|Sí|[El papel de la base de datos de configuración de AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<p>[Procedimientos recomendados para planear e implementar AD FS de forma segura](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)|  
+|Detección de reproducción de tokens de Federación de SAML\/WS\-|No|Sí|[El papel de la base de datos de configuración de AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<p>[Procedimientos recomendados para planear e implementar AD FS de forma segura](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)|  
 
 Características de la base de datos  
 
 |Característica|¿Compatible con WID?|¿Compatible con SQL Server?|Más información sobre esta característica|  
 |-----------|---------------------|----------------------------|---------------------------------------|  
 |Redundancia básica de bases de datos mediante la replicación de extracción, en la que uno o más servidores que hospedan una\-de lectura solo de la solicitud de la base de datos cambian los cambios que se realizan en un servidor de origen que hospeda una copia de lectura\/escritura de la base de datos|Sí|No|[El papel de la base de datos de configuración de AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)|  
-|Redundancia de bases de datos mediante soluciones de alta disponibilidad\-, como clústeres de conmutación por error o creación de reflejo \(solo en el nivel de base de datos\) **Nota:** todas AD FS topologías de implementación admiten la agrupación en clústeres en el nivel de servicio AD FS.|No|Sí|[El papel de la base de datos de configuración de AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<br /><br />[Información general sobre soluciones de alta disponibilidad](https://go.microsoft.com/fwlink/?LinkId=179853)|  
+|Redundancia de bases de datos mediante soluciones de alta disponibilidad\-, como clústeres de conmutación por error o creación de reflejo \(solo en el nivel de base de datos\) **Nota:** todas AD FS topologías de implementación admiten la agrupación en clústeres en el nivel de servicio AD FS.|No|Sí|[El papel de la base de datos de configuración de AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<p>[Información general sobre soluciones de alta disponibilidad](https://go.microsoft.com/fwlink/?LinkId=179853)|  
 
 ### <a name="sql-server-considerations"></a>Consideraciones sobre SQL Server  
 Debe tener en cuenta los siguientes hechos de implementación si selecciona SQL Server como base de datos de configuración para la implementación de AD FS.  
@@ -48,7 +47,7 @@ Debe tener en cuenta los siguientes hechos de implementación si selecciona SQL 
 -   **Número de servidores necesarios para la implementación**. Tendrá que agregar al menos un servidor adicional \(al número total de servidores necesarios para implementar la infraestructura de AD FS\) que actuará como host dedicado de la instancia de SQL Server. Si planea usar el clúster de conmutación por error o la creación de reflejo para proporcionar tolerancia a errores y escalabilidad para la base de datos de configuración de SQL Server, se requiere un mínimo de dos servidores SQL Server.  
 
 ### <a name="how-the-configuration-database-type-you-select-may-impact-hardware-resources"></a>Cómo podría afectar a los recursos de hardware el tipo de base de datos de configuración que selecciones  
-El impacto en los recursos de hardware de un servidor de Federación implementado en una granja de servidores con WID en lugar de un servidor de Federación implementado en una granja de servidores con la SQL Server base de datos no es significativo. Sin embargo, es importante tener en cuenta que cuando se usa WID para la granja, cada servidor de Federación de dicha granja debe almacenar, administrar y mantener los cambios de replicación para su copia local de la base de datos de configuración de AD FS y, al mismo tiempo, seguir proporcionando el operaciones que requiere el Servicio de federación.  
+El impacto en los recursos de hardware de un servidor de Federación implementado en una granja de servidores con WID en lugar de un servidor de Federación implementado en una granja de servidores con la SQL Server base de datos no es significativo. Sin embargo, es importante tener en cuenta que cuando se usa WID para la granja, cada servidor de Federación de dicha granja debe almacenar, administrar y mantener los cambios de replicación para su copia local de la base de datos de configuración de AD FS y, al mismo tiempo, seguir proporcionando las operaciones normales que requiere el Servicio de federación.  
 
 En comparación, los servidores de Federación que se implementan en una granja que utiliza la base de datos SQL Server no contienen necesariamente una instancia local de la base de datos de configuración AD FS. Por tanto, sus demandas de recursos de hardware podrían ser ligeramente inferiores.  
 

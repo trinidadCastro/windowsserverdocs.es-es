@@ -1,7 +1,6 @@
 ---
 ms.assetid: 231158d8-5e81-4630-b8d5-93fee16e0cd3
 title: Identificación de la actualización de nivel funcional
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e43bec8a8d61cd0f6fd82982d5e3a0f01984fc65
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 920f051ef188670f81233098ba38370900e015ae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408788"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822360"
 ---
 # <a name="identifying-your-functional-level-upgrade"></a>Identificación de la actualización de nivel funcional
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Para poder elevar los niveles funcionales de dominio y bosque, debe evaluar el entorno actual e identificar el requisito de nivel funcional que mejor se adapte a las necesidades de su organización. Evalúe el entorno actual mediante la identificación de los dominios del bosque, los controladores de dominio que se encuentran en cada dominio, el sistema operativo y los Service Packs que ejecuta cada controlador de dominio, y la fecha en la que planea actualizar el dominio. Controladores. Si tiene previsto retirar un controlador de dominio, asegúrese de que comprende todo el impacto que tendrá en su entorno.  
+Para poder elevar los niveles funcionales de dominio y bosque, debe evaluar el entorno actual e identificar el requisito de nivel funcional que mejor se adapte a las necesidades de su organización. Evalúe el entorno actual mediante la identificación de los dominios del bosque, los controladores de dominio que se encuentran en cada dominio, el sistema operativo y los Service Packs que ejecuta cada controlador de dominio, y la fecha en la que planea actualizar los controladores de dominio. Si tiene previsto retirar un controlador de dominio, asegúrese de que comprende todo el impacto que tendrá en su entorno.  
   
 Las siguientes circunstancias pueden impedir que se actualice una versión anterior del sistema operativo Windows Server al nivel funcional de Windows Server 2008 o Windows Server 2008 R2:  
   
@@ -85,7 +84,7 @@ Para usar todas las características de nivel de bosque y de nivel de dominio en
 > [!IMPORTANT]  
 >  Windows Server 2008 R2 es un sistema operativo basado en x64. Si el servidor ejecuta una versión basada en x64 de Windows Server 2003, puede realizar correctamente una actualización local del sistema operativo de este equipo a Windows Server 2008 R2. Si el servidor ejecuta una versión basada en x86 de Windows Server 2003, no puede actualizar este equipo para ejecutar Windows Server 2008 R2.  
   
-Para usar todas las características de nivel de dominio de Windows Server 2008 o Windows Server 2008 R2 sin actualizar todo el bosque de Windows Server 2003 a Windows Server 2008 o Windows Server 2008 R2, solo debe elevar el nivel funcional del dominio a Windows Server 2008 o Windows S erver 2008 R2.  
+Para usar todas las características de nivel de dominio de Windows Server 2008 o Windows Server 2008 R2 sin actualizar todo el bosque de Windows Server 2003 a Windows Server 2008 o Windows Server 2008 R2, solo debe elevar el nivel funcional del dominio a Windows Server 2008 o Windows Server 2008 R2.  
   
 > [!NOTE]  
 > Antes de elevar el nivel funcional del dominio, debe actualizar todos los controladores de dominio basados en Windows Server 2003 de ese dominio a Windows Server 2008 o Windows Server 2008 R2.  
@@ -101,7 +100,7 @@ Al instalar el primer controlador de dominio en un nuevo bosque de Windows Serve
   
 -   Nivel funcional del bosque de Windows 2000  
   
-Los niveles funcionales se establecen en estos niveles predeterminados para ofrecer la opción de agregar controladores de dominio basados en Windows 2000 o Windows Server 2003 al nuevo bosque de Windows Server 2008. Después de crear un dominio raíz del bosque, el nivel funcional del dominio para cada dominio que agregue al bosque de Windows Server 2008 se establece en Windows 2000 nativo. Sin embargo, si desea que todos los controladores de dominio del nuevo entorno de Windows Server 2008 ejecuten Windows Server 2008, establezca el nivel funcional del bosque y, a continuación, el nivel funcional del dominio en Windows Server 2008 al instalar el primer controlador de dominio en sus propios h. Esto ahorra tiempo y habilita todas las características de nivel de bosque y de dominio en Windows Server 2008.  
+Los niveles funcionales se establecen en estos niveles predeterminados para ofrecer la opción de agregar controladores de dominio basados en Windows 2000 o Windows Server 2003 al nuevo bosque de Windows Server 2008. Después de crear un dominio raíz del bosque, el nivel funcional del dominio para cada dominio que agregue al bosque de Windows Server 2008 se establece en Windows 2000 nativo. Sin embargo, si desea que todos los controladores de dominio del nuevo entorno de Windows Server 2008 ejecuten Windows Server 2008, establezca el nivel funcional del bosque y, a continuación, el nivel funcional del dominio en Windows Server 2008 al instalar el primer controlador de dominio en el bosque. Esto ahorra tiempo y habilita todas las características de nivel de bosque y de dominio en Windows Server 2008.  
   
 > [!IMPORTANT]  
 > Si el bosque funciona en el nivel funcional de Windows Server 2008 e intenta instalar Active Directory en un servidor miembro basado en Windows Server 2003 o en un servidor miembro basado en Windows 2000, se produce un error en la instalación.  
@@ -115,7 +114,7 @@ Al instalar el primer controlador de dominio en un nuevo bosque de Windows Serve
   
 -   Nivel funcional del bosque de Windows Server 2003  
   
-Los niveles funcionales se establecen en estos niveles predeterminados para ofrecer la opción de agregar controladores de dominio basados en Windows Server 2003 al nuevo bosque de Windows Server 2008 R2. Después de crear un dominio raíz del bosque, el nivel funcional del dominio para cada dominio que agregue al bosque de Windows Server 2008 R2 se establece en Windows Server 2003. Sin embargo, si desea que todos los controladores de dominio del nuevo entorno de Windows Server 2008 R2 ejecuten Windows Server 2008 R2, establezca el nivel funcional del bosque y, a continuación, el nivel funcional del dominio en Windows Server 2008 R2 al instalar el primer controlador de dominio en yo el bosque. Esto ahorra tiempo y habilita todas las características de nivel de bosque y de dominio en Windows Server 2008 R2.  
+Los niveles funcionales se establecen en estos niveles predeterminados para ofrecer la opción de agregar controladores de dominio basados en Windows Server 2003 al nuevo bosque de Windows Server 2008 R2. Después de crear un dominio raíz del bosque, el nivel funcional del dominio para cada dominio que agregue al bosque de Windows Server 2008 R2 se establece en Windows Server 2003. Sin embargo, si desea que todos los controladores de dominio del nuevo entorno de Windows Server 2008 R2 ejecuten Windows Server 2008 R2, establezca el nivel funcional del bosque y, a continuación, el nivel funcional del dominio en Windows Server 2008 R2 al instalar el primer controlador de dominio en el bosque. Esto ahorra tiempo y habilita todas las características de nivel de bosque y de dominio en Windows Server 2008 R2.  
   
 > [!IMPORTANT]  
 > Si el bosque funciona en el nivel funcional de Windows Server 2008 R2 e intenta instalar Active Directory en un servidor miembro basado en Windows Server 2008 o Windows Server 2003, o en un servidor miembro basado en Windows 2000, se produce un error en la instalación.  

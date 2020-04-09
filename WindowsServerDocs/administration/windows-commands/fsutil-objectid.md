@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 509e58b85842826b71cb1bfed72ae4c7e5337e25
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e39b36a6c3126429bc47d5b89d104612cab5db96
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376833"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844288"
 ---
 # <a name="fsutil-objectid"></a>Fsutil objectId
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
@@ -35,13 +35,13 @@ fsutil objectid [query] <FileName>
 fsutil objectid [set] <ObjectID> <BirthVolumeID> <BirthObjectID> <DomainID> <FileName>
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |-------------|---------------|
 |crear|Crea un identificador de objeto si el archivo especificado todavía no tiene uno. Si el archivo ya tiene un identificador de objeto, este subcomando es equivalente al subcomando **query** .|
-|Eliminar|Elimina un identificador de objeto.|
-|query|Consulta un identificador de objeto.|
+|eliminar|Elimina un identificador de objeto.|
+|consulta|Consulta un identificador de objeto.|
 |set|Establece un identificador de objeto.|
 |\<ObjectID >|Establece un identificador hexadecimal de 16 bytes específico del archivo que se garantiza que es único dentro de un volumen. El servicio de cliente de seguimiento de vínculos distribuidos (DLT) y el servicio de replicación de archivos (FRS) utilizan el identificador de objetos para identificar los archivos.|
 |\<BirthVolumeID >|Indica el volumen en el que se encontraba el archivo cuando se obtuvo por primera vez un identificador de objeto. Este valor es un identificador hexadecimal de 16 bytes que usa el servicio cliente DLT.|
@@ -49,11 +49,11 @@ fsutil objectid [set] <ObjectID> <BirthVolumeID> <BirthObjectID> <DomainID> <Fil
 |\<DomainID >|identificador de dominio hexadecimal de 16 bytes. Este valor no se utiliza actualmente y debe establecerse en ceros.|
 |\<nombre de archivo >|Especifica la ruta de acceso completa al archivo, incluido el nombre de archivo y la extensión, por ejemplo C:\documents\filename.txt.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Cualquier archivo que tenga un identificador de objeto también tiene un identificador de volumen de nacimiento, un identificador de objeto de nacimiento y un identificador de dominio. Cuando se mueve un archivo, el identificador del objeto puede cambiar, pero los identificadores del volumen de nacimiento y del objeto de nacimiento siguen siendo los mismos. Este comportamiento permite que el sistema operativo Windows encuentre siempre un archivo, independientemente de dónde se haya pasado.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Example
 Para crear un identificador de objeto, escriba:
 
 `fsutil objectid create c:\temp\sample.txt`
@@ -70,8 +70,8 @@ Para establecer un identificador de objeto, escriba:
 
 `fsutil objectid set 40dff02fc9b4d4118f120090273fa9fc f86ad6865fe8d21183910008c709d19e 40dff02fc9b4d4118f120090273fa9fc 00000000000000000000000000000000 c:\temp\sample.txt`
 
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>Referencias adicionales
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

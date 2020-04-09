@@ -1,6 +1,6 @@
 ---
 title: cleanmgr
-description: Obtenga información acerca de cómo usar las opciones de línea de comandos para configurar la herramienta liberador de espacio en disco (cleanmgr. exe) para limpiar automáticamente determinados archivos.
+description: Obtén información acerca de cómo usar las opciones de línea de comandos para configurar la herramienta Liberador de espacio en disco (cleanmgr.exe) para limpiar automáticamente determinados archivos.
 ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: iangpgh
@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 0646922f409d4ea8abb85c927a329013e32016de
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 9abde0cb0db910cd500df94f98c76e6c370cba2a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947586"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847718"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
@@ -29,7 +29,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#examp
 cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/VERYLOWDISK]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |      Parámetro      |    Descripción     |
 | ------------------- | ------------------ |
@@ -41,7 +41,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 | /VERYLOWDISK | Ejecute con la configuración predeterminada, sin mensajes de usuario. |
 | /?           | Mostrar ayuda. |
 
-## <a name="options"></a>botón
+## <a name="options"></a>Opciones
 
 Las opciones de los archivos que puede especificar para el liberador de espacio en disco mediante/sageset y/sagerun incluyen:
 
@@ -89,4 +89,4 @@ cleanmgr /tuneup:1
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-[Liberar espacio de la unidad en Windows 10](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)
+[Liberar espacio en la unidad en Windows 10](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)

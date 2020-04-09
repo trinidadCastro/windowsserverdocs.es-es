@@ -1,7 +1,6 @@
 ---
 ms.assetid: bd64a766-5362-4f29-b963-5465c2bb79e7
 title: Planear la ubicación del rol de maestro de operaciones
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: eb17ed55ba7d7ba23d21162fd41f4022821948fe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 990f93d44189a6061653d5e190a176b049a280c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402526"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822108"
 ---
 # <a name="planning-operations-master-role-placement"></a>Planear la ubicación del rol de maestro de operaciones
 
@@ -52,11 +51,11 @@ También debe designar maestros de operaciones en espera (alternativos) para tod
 
 El emulador de PDC procesa los cambios de contraseña de cliente. Solo un controlador de dominio actúa como el emulador de PDC en cada dominio del bosque.  
   
-Incluso si todos los controladores de dominio se actualizan a Windows 2000, Windows Server 2003 y Windows Server 2008, y el dominio está funcionando en el nivel funcional nativo de Windows 2000, el emulador de PDC recibe la replicación preferencial de los cambios de contraseña realizados por otros controladores de dominio del dominio. Si se ha cambiado una contraseña recientemente, ese cambio tarda en replicarse en todos los controladores de dominio del dominio. Si se produce un error de autenticación de inicio de sesión en otro controlador de dominio debido a una contraseña incorrecta, el controlador de dominio reenvía la solicitud de autenticación al emulador de PDC antes de decidir si aceptar o rechazar el intento de inicio de sesión.  
+Incluso si todos los controladores de dominio se actualizan a Windows 2000, Windows Server 2003 y Windows Server 2008, y el dominio está funcionando en el nivel funcional nativo de Windows 2000, el emulador de PDC recibe la replicación preferencial de los cambios de contraseña realizados por otros controladores de dominio en el dominio. Si se ha cambiado una contraseña recientemente, ese cambio tarda en replicarse en todos los controladores de dominio del dominio. Si se produce un error de autenticación de inicio de sesión en otro controlador de dominio debido a una contraseña incorrecta, el controlador de dominio reenvía la solicitud de autenticación al emulador de PDC antes de decidir si aceptar o rechazar el intento de inicio de sesión.  
   
 Coloque el emulador de PDC en una ubicación que contenga un gran número de usuarios de ese dominio para operaciones de reenvío de contraseñas, si es necesario. Además, asegúrese de que la ubicación está bien conectada a otras ubicaciones para reducir la latencia de replicación.  
   
-En el caso de una hoja de cálculo que le ayude a documentar la información acerca de dónde planea colocar los emuladores de PDC y el número de usuarios para cada dominio que se representa en cada ubicación, consulte la ayuda del trabajo para el kit de implementación de Windows Server 2003 ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)), trabajo de descarga _Aids_Designing_and_Deploying_Directory_and_Security_Services. zip y abra la ubicación del controlador de dominio (DSSTOPO_4. doc).  
+En el caso de una hoja de cálculo que le ayude a documentar la información sobre dónde planea colocar los emuladores de PDC y el número de usuarios para cada dominio que se representa en cada ubicación, vea la ayuda del trabajo para el kit de implementación de Windows Server 2003 ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)), descargar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip y abrir la ubicación del controlador de dominio (DSSTOPO_4. doc).  
   
 Debe consultar la información acerca de las ubicaciones en las que necesita colocar emuladores de PDC al implementar dominios regionales. Para obtener más información acerca de la implementación de dominios regionales, consulte [implementación de dominios regionales de Windows Server 2008](https://technet.microsoft.com/library/cc755118.aspx).  
   
@@ -83,7 +82,7 @@ Aunque esta configuración produce una replicación correcta entre todos los sit
 - Los controladores de dominio de los sitios C y D no pueden agregar o quitar particiones de directorio, DNS o aplicaciones personalizadas.  
 - Los controladores de dominio de los sitios C y D no pueden realizar cambios en el esquema.  
   
-Para ver una hoja de cálculo que le ayude a planear la ubicación de los roles de maestro de operaciones, consulte el tema [sobre ayudas de trabajo para el kit de implementación de Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558), descargar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip y abrir el controlador de dominio. Placement (DSSTOPO_4. doc).  
+Para ver una hoja de cálculo que le ayude a planear la ubicación de los roles de maestro de operaciones, consulte el [Kit de implementación de Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558), descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip y abra la ubicación del controlador de dominio (DSSTOPO_4. doc).  
   
 Tendrá que consultar esta información al crear el dominio raíz del bosque y los dominios regionales. Para obtener más información acerca de la implementación del dominio raíz del bosque, vea implementar un [dominio raíz del bosque de Windows Server 2008](https://technet.microsoft.com/library/cc731174.aspx). Para obtener más información acerca de la implementación de dominios regionales, consulte [implementación de dominios regionales de Windows Server 2008](https://technet.microsoft.com/library/cc755118.aspx).  
 

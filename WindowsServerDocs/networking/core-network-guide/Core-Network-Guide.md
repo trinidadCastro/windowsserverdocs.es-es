@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a0da2265f8f66256ed2ba71d4847bf8a548626f8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b58fe9eaa66abd91de27713398759529ae6147ae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319143"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861768"
 ---
 # <a name="core-network-components"></a>Componentes de la red principal
 
@@ -283,11 +283,11 @@ En la tabla siguiente se proporcionan elementos de configuración de ejemplo par
 
 |Elementos de configuración:|Valores de ejemplo:|
 |------------------------|-------------------|
-|Nombre DNS completo|Ejemplos:<br /><br />-corp.contoso.com<br />-example.com|
+|Nombre DNS completo|Ejemplos:<p>-corp.contoso.com<br />-example.com|
 |Nivel funcional del bosque|-Windows Server 2008 <br />-Windows Server 2008 R2 <br />-Windows Server 2012 <br />-Windows Server 2012 R2 <br />-Windows Server 2016|
-|Ubicación de la carpeta de bases de datos de Active Directory Domain Services|\\ E:\Configuration<br /><br />O bien, acepte la ubicación predeterminada.|
-|Ubicación de la carpeta de archivos de registro de Active Directory Domain Services|\\ E:\Configuration<br /><br />O bien, acepte la ubicación predeterminada.|
-|Ubicación de la carpeta SYSVOL de Active Directory Domain Services|\\ E:\Configuration<br /><br />O bien, acepte la ubicación predeterminada.|
+|Ubicación de la carpeta de bases de datos de Active Directory Domain Services|\\ E:\Configuration<p>O bien, acepte la ubicación predeterminada.|
+|Ubicación de la carpeta de archivos de registro de Active Directory Domain Services|\\ E:\Configuration<p>O bien, acepte la ubicación predeterminada.|
+|Ubicación de la carpeta SYSVOL de Active Directory Domain Services|\\ E:\Configuration<p>O bien, acepte la ubicación predeterminada.|
 |Contraseña de administrador para el modo de restauración de directorios|**J\*p2leO4 $ F**|
 |Nombre del archivo de respuesta (opcional)|**DS_AnswerFile de AD**|
 
@@ -412,7 +412,7 @@ En la tabla siguiente se proporcionan elementos de configuración de ejemplo adi
 |Enlaces de conexión de red|Ethernet|
 |Configuración del servidor DNS|DC1.corp.contoso.com|
 |Dirección IP del servidor DNS preferido|10.0.0.2|
-|Valores del cuadro de diálogo Agregar ámbito<br /><br />1. nombre del ámbito<br />2. dirección IP inicial<br />3. dirección IP final<br />4. máscara de subred<br />5. puerta de enlace predeterminada (opcional)<br />6. duración de la concesión|1. subred principal<br />2.10.0.0.1<br />3.10.0.0.254<br />4.255.255.255.0<br />5.10.0.0.1<br />6.8 días|
+|Valores del cuadro de diálogo Agregar ámbito<p>1. nombre del ámbito<br />2. dirección IP inicial<br />3. dirección IP final<br />4. máscara de subred<br />5. puerta de enlace predeterminada (opcional)<br />6. duración de la concesión|1. subred principal<br />2.10.0.0.1<br />3.10.0.0.254<br />4.255.255.255.0<br />5.10.0.0.1<br />6.8 días|
 |Modo de funcionamiento del servidor DHCP IPv6|No habilitado|
 
 ## <a name="core-network-deployment"></a><a name="BKMK_deployment"></a>Implementación de red principal
@@ -1437,9 +1437,9 @@ Elementos de configuración para el procedimiento de implementación de una red 
 |-----------------------|------------------|----------|
 |Nombre DNS completo|corp.contoso.com||
 |Nivel funcional del bosque|Windows Server 2003||
-|Ubicación de la carpeta de bases de datos de Active Directory Domain Services|\\ E:\Configuration<br /><br />O bien, acepte la ubicación predeterminada.||
-|Ubicación de la carpeta de archivos de registro de Active Directory Domain Services|\\ E:\Configuration<br /><br />O bien, acepte la ubicación predeterminada.||
-|Ubicación de la carpeta SYSVOL de Active Directory Domain Services|\\ E:\Configuration<br /><br />O bien, acepte la ubicación predeterminada.||
+|Ubicación de la carpeta de bases de datos de Active Directory Domain Services|\\ E:\Configuration<p>O bien, acepte la ubicación predeterminada.||
+|Ubicación de la carpeta de archivos de registro de Active Directory Domain Services|\\ E:\Configuration<p>O bien, acepte la ubicación predeterminada.||
+|Ubicación de la carpeta SYSVOL de Active Directory Domain Services|\\ E:\Configuration<p>O bien, acepte la ubicación predeterminada.||
 |Contraseña de administrador para el modo de restauración de directorios|J*p2leO4$F||
 |Nombre del archivo de respuesta (opcional)|DS_AnswerFile de AD||
 
@@ -1448,10 +1448,10 @@ Elementos de configuración para el procedimiento de implementación de una red 
 |Elementos de configuración|Valores de ejemplo|Valores|
 |-----------------------|------------------|----------|
 |Tipo de zona:|-Zona principal<br />-Zona secundaria<br />-Zona de rutas internas||
-|Tipo de zona<br /><br />**Almacenar la zona en Active Directory**|-Seleccionado<br />-No seleccionado||
+|Tipo de zona<p>**Almacenar la zona en Active Directory**|-Seleccionado<br />-No seleccionado||
 |Ámbito de replicación de zona de Active Directory|-A todos los servidores DNS de este bosque<br />-A todos los servidores DNS de este dominio<br />-A todos los controladores de dominio de este dominio<br />-A todos los controladores de dominio especificados en el ámbito de esta partición de directorio||
-|Nombre de zona de búsqueda inversa<br /><br />(tipo de IP)|-Zona de búsqueda inversa IPv4<br />-Zona de búsqueda inversa IPv6||
-|Nombre de zona de búsqueda inversa<br /><br />(identificador de red)|10.0.0||
+|Nombre de zona de búsqueda inversa<p>(tipo de IP)|-Zona de búsqueda inversa IPv4<br />-Zona de búsqueda inversa IPv6||
+|Nombre de zona de búsqueda inversa<p>(identificador de red)|10.0.0||
 
 ### <a name="installing-dhcp"></a><a name="BKMK_FndtnPrep_InstallDHCP"></a>Instalación de DHCP
 Las tablas de esta sección muestran elementos de configuración para la preinstalación e instalación de DHCP.
@@ -1509,16 +1509,16 @@ Elementos de configuración para el procedimiento de implementación de Windows 
 |-----------------------|------------------|----------|
 |Nombre del nuevo ámbito|Corp2||
 |Descripción del ámbito|Subred 2 de la oficina principal||
-|(intervalo de direcciones IP)<br /><br />Dirección IP inicial|10.0.1.1||
-|(intervalo de direcciones IP)<br /><br />Dirección IP final|10.0.1.254||
+|(intervalo de direcciones IP)<p>Dirección IP inicial|10.0.1.1||
+|(intervalo de direcciones IP)<p>Dirección IP final|10.0.1.254||
 |Duración|8||
 |Máscara de subred|255.255.255.0||
 |(Intervalo de exclusión) Dirección IP inicial|10.0.1.1||
 |Dirección IP final del intervalo de exclusión|10.0.1.15||
-|Duración de la concesión<br /><br />Days<br /><br />Hours<br /><br />Minutos|-8<br />-   0<br />-   0||
-|Enrutador (puerta de enlace predeterminada)<br /><br />Dirección IP|10.0.1.1||
+|Duración de la concesión<p>Days<p>Hours<p>Minutos|-8<br />-   0<br />-   0||
+|Enrutador (puerta de enlace predeterminada)<p>Dirección IP|10.0.1.1||
 |Dominio DNS principal|corp.contoso.com||
-|Servidor DNS<br /><br />Dirección IP|10.0.0.2||
+|Servidor DNS<p>Dirección IP|10.0.0.2||
 
 ### <a name="installing-network-policy-server-optional"></a><a name="BKMK_FndtnPrep_InstallNPS"></a>Instalación del servidor de directivas de redes (opcional)
 Las tablas de esta sección muestran elementos de configuración para la preinstalación e instalación de NPS.

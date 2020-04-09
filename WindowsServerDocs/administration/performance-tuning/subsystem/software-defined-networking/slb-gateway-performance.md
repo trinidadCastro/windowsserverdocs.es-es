@@ -4,15 +4,15 @@ description: Directrices para la optimización del rendimiento de puerta de enla
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: grcusanz; AnPaul
+ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a0d239da2ca321333ec757db22bbaf9a9b8ba30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d1a497f24eba26b3b9b866772ae5171ea0fcbb24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383460"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851588"
 ---
 # <a name="slb-gateway-performance-tuning-in-software-defined-networks"></a>Ajuste del rendimiento de puerta de enlace de SLB en redes definidas por software
 
@@ -26,7 +26,7 @@ Las máquinas virtuales SLB MUX se implementan en una configuración activa-acti
 
 Una conexión individual a una IP virtual (VIP) siempre se enviará al mismo MUX, suponiendo que el número de MUX permanezca constante y, como resultado, su rendimiento se limitará al rendimiento de una sola máquina virtual de Mux.  MUX solo procesa el tráfico entrante destinado a una dirección VIP.  Los paquetes de respuesta van directamente desde la máquina virtual que está enviando la respuesta al conmutador físico que lo reenvía al cliente.
 
-En algunos casos, cuando el origen de la solicitud se origina en un host de SDN que se agrega a la misma controladora de red que administra la VIP, también se realiza una optimización adicional de la ruta de acceso entrante para la solicitud, lo que permite que la mayoría de los paquetes viajen directamente desde el cliente al servidor, omitiendo completamente la máquina virtual de Mux.  No es necesario realizar ninguna configuración adicional para que esta optimización tenga lugar.
+En algunos casos, cuando el origen de la solicitud se origina en un host de SDN que se agrega a la misma controladora de red que administra la VIP, también se realiza una optimización adicional de la ruta de acceso entrante para la solicitud, lo que permite que la mayoría de los paquetes viajen directamente desde el cliente al servidor, omitiendo la máquina virtual de MUX por completo.  No es necesario realizar ninguna configuración adicional para que esta optimización tenga lugar.
 
 Cada máquina virtual MUX de SLB debe tener el tamaño de acuerdo con las instrucciones proporcionadas en la sección requisitos del rol de máquina virtual de infraestructura de SDN del tema [planear una infraestructura de red definida por software](../../../../networking/sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md) .
 

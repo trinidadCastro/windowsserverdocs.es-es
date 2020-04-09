@@ -1,23 +1,19 @@
 ---
 title: wecutil
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Windows Commands topic for wecutil, que le permite crear y administrar suscripciones a eventos que se reenvían desde equipos remotos.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0c82a6cb-d652-429c-9c3d-0f568c78d54b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimps
-ms.openlocfilehash: 78005a715a0dbd20124bfb24be27586a8e153310
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2bb397ace7cc99c8b8d6bbed3598346ff2d0801c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362180"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829447"
 ---
 # <a name="wecutil"></a>wecutil
 
@@ -39,14 +35,14 @@ wecutil  [{es | enum-subscription}]
 [{qc | quick-config} [/q:[<Quiet>]]].
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
 |{es \| enum-subscription}|Muestra los nombres de todas las suscripciones de eventos remotos que existen.|
 |{GS \| Get-subscription} \<subid > [/f:\<formato >] [/UNI:\<Unicode >]|Muestra información de configuración de la suscripción remota. \<subid > es una cadena que identifica de forma única una suscripción. \<subid > es igual que la cadena que se especificó en la etiqueta \<SubscriptionId > del archivo de configuración XML, que se usó para crear la suscripción.|
 |{GR \| Get-subscriptionruntimestatus} \<subid > [\<EventSource >...]|Muestra el estado de tiempo de ejecución de una suscripción. \<subid > es una cadena que identifica de forma única una suscripción. \<subid > es igual que la cadena que se especificó en la etiqueta \<SubscriptionId > del archivo de configuración XML, que se usó para crear la suscripción. \<EventSource > es una cadena que identifica un equipo que actúa como origen de eventos. \<> EventSource debe ser un nombre de dominio completo, un nombre NetBIOS o una dirección IP.|
-|{SS \| Set-subscription} \<subid > [/e: [\<subhabilitado >]] [/esa:\<Address >] [/ese: [\<Srcenabled >]] [/AES] [/RES] [/un:\<username >] [/up:\<password >] [/d:\<DESC >] [/URI:\<URI >] [/cm:\<ConfigMode >] [/ex:\<expira >] [/q:\<consulta >] [/dia:\<Dialect >] [/TN:\<Nombredetransportedered >] [/TP:\<Transportport >] [/DM :\<Deliverymode >] [/DMI:\<Deliverymax >] [/dmlt:\<deliverytime >] [/HI:\<Heartbeat >] [/CF:\<content >] [/l:\<configuración regional >] [/ree: [\<Readexist >]] [/LF:\<logfile >] [/PN:\<PublisherName >] [/ESSP:\<Enableport >] [/HN:\<hostname >] [/CT:\<tipo >]</br>o bien</br>{SS \| Set-subscription/c:\<CONFIGFILE > [/cun:\<comnombredeusuario >/Cup:\<compassword >]|Cambia la configuración de la suscripción. Puede especificar el identificador de suscripción y las opciones adecuadas para cambiar los parámetros de suscripción, o puede especificar un archivo de configuración XML para cambiar los parámetros de suscripción.|
+|{SS \| Set-subscription} \<subid > [/e: [\<subhabilitado >]] [/esa:\<Address >] [/ese: [\<Srcenabled >]] [/AES] [/RES] [/un:\<nombreDeUsuario >] [/up:\<contraseña >] [/d:\<DESC >] [/URI:\<URI >] [/cm:\<ConfigMode >] [/ex:\<expira >] [/q:\<consulta >] [/dia:\<Dialect >] [/TN:\<Nombredetransportedered >] [/TP:\<Transportport >] [/DM:\<Deliverymode >] [/DMI:\<Deliverymax >] [/dmlt:\<deliverytime >] [/HI:\<latido >] [/CF:\<de contenido >] [/l :\<> de configuración regional] [/ree: [\<Readexist >]] [/LF:\<logfile >] [/PN:\<PublisherName >] [/ESSP:\<Enableport >] [/HN:\<hostname >] [/CT:\<tipo >]</br>o bien</br>{SS \| Set-subscription/c:\<CONFIGFILE > [/cun:\<comnombredeusuario >/Cup:\<compassword >]|Cambia la configuración de la suscripción. Puede especificar el identificador de suscripción y las opciones adecuadas para cambiar los parámetros de suscripción, o puede especificar un archivo de configuración XML para cambiar los parámetros de suscripción.|
 |{CS \| Create-subscription} \<CONFIGFILE > [/cun:\<username >/Cup:\<password >]|Crea una suscripción remota. \<CONFIGFILE > especifica la ruta de acceso al archivo XML que contiene la configuración de la suscripción. La ruta de acceso puede ser absoluta o relativa al directorio actual.|
 |{DS \| Delete-subscription} \<subid >|Elimina una suscripción y cancela las suscripciones de todos los orígenes de eventos que entregan eventos en el registro de eventos de la suscripción. Los eventos que ya se hayan recibido y registrado no se eliminarán. \<subid > es una cadena que identifica de forma única una suscripción. \<subid > es igual que la cadena que se especificó en la etiqueta \<SubscriptionId > del archivo de configuración XML, que se usó para crear la suscripción.|
 |{RS \| Retry-subscription} \<subid > [\<EventSource >...]|Intenta establecer una conexión y enviar una solicitud de suscripción remota a una suscripción inactiva. Intenta reactivar todos los orígenes de eventos o los orígenes de eventos especificados. Los orígenes deshabilitados no se reintentan. \<subid > es una cadena que identifica de forma única una suscripción. \<subid > es igual que la cadena que se especificó en la etiqueta \<SubscriptionId > del archivo de configuración XML, que se usó para crear la suscripción. \<EventSource > es una cadena que identifica un equipo que actúa como origen de eventos. \<> EventSource debe ser un nombre de dominio completo, un nombre NetBIOS o una dirección IP.|
@@ -78,7 +74,7 @@ wecutil  [{es | enum-subscription}]
 |/dmlt:\<deliverytime >|Establece la latencia máxima en la entrega de un lote de eventos. \<deliverytime > es el número de milisegundos. Esta opción solo es válida si **/cm** está establecido en Custom.|
 |/HI:\<latido >|Define el intervalo de latido. \<> de latido es el número de milisegundos. Esta opción solo es válida si **/cm** está establecido en Custom.|
 |/CF:\<> de contenido|Especifica el formato de los eventos que se devuelven. \<> de contenido pueden ser eventos o RenderedText. Cuando el valor es RenderedText, los eventos se devuelven con las cadenas localizadas (por ejemplo, la descripción del evento) asociadas al evento. El valor predeterminado es RenderedText.|
-|/l:\<configuración regional >|Especifica la configuración regional para la entrega de las cadenas localizadas en formato RenderedText. \<configuración regional > es un identificador de idioma y de país o región, por ejemplo, "EN-US". Esta opción solo es válida si la opción **/CF** está establecida en RenderedText.|
+|/l:\<configuración regional >|Especifica la configuración regional para la entrega de las cadenas localizadas en formato RenderedText. \<configuración regional > es un identificador de idioma y de país o región, por ejemplo, EN-US. Esta opción solo es válida si la opción **/CF** está establecida en RenderedText.|
 |/ree: [\<Readexist >]|Identifica los eventos que se entregan para la suscripción. \<Readexist > puede ser true o false. Cuando el <Readexist> es true, todos los eventos existentes se leen de los orígenes de eventos de suscripción. Cuando el <Readexist> es false, solo se entregan los eventos futuros (llegados). El valor predeterminado es true para una opción **/REE** sin un valor. Si no se especifica ninguna opción **/REE** , el valor predeterminado es false.|
 |/LF:\<logfile >|Especifica el registro de eventos local que se usa para almacenar los eventos recibidos de los orígenes de eventos.|
 |/PN:\<PublisherName >|Especifica el nombre del publicador. Debe ser un publicador que posea o importe el registro especificado por la opción **/LF** .|
@@ -89,14 +85,14 @@ wecutil  [{es | enum-subscription}]
 |/Cup:\<> de contraseñas|Establece la contraseña de usuario para la credencial de usuario compartido. Cuando \<> de contraseña se establece en * (asterisco), la contraseña se lee desde la consola. Esta opción solo es válida cuando se especifica la opción **/cun** .|
 |/q: [\<Quiet >]|Especifica si el procedimiento de configuración solicita confirmación. \<> silenciosa puede ser true o false. Si <Quiet> es true, el procedimiento de configuración no solicita confirmación. El valor predeterminado de esta opción es false.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 > [!IMPORTANT]
 > Si recibe el mensaje "el servidor RPC no está disponible? al intentar ejecutar wecutil, debe iniciar el servicio Recopilador de eventos de Windows (wecsvc). Para iniciar wecsvc, en un símbolo del sistema con privilegios elevados, escriba net start wecsvc.
 
 - En el ejemplo siguiente se muestra el contenido de un archivo de configuración:  
   ```
-  <Subscription xmlns="https://schemas.microsoft.com/2006/03/windows/events/subscription">
+  <Subscription xmlns=https://schemas.microsoft.com/2006/03/windows/events/subscription>
   <Uri>https://schemas.microsoft.com/wbem/wsman/1/windows/EventLog</Uri>
   <!-- Use Normal (default), Custom, MinLatency, MinBandwidth -->
   <ConfigurationMode>Normal</ConfigurationMode>
@@ -104,24 +100,24 @@ wecutil  [{es | enum-subscription}]
   <SubscriptionId>SampleSubscription</SubscriptionId>
   <Query><![CDATA[
   <QueryList>
-  <Query Path="Application">
+  <Query Path=Application>
   <Select>*</Select>
   </Query>
   </QueryList>
   ]]></Query>
   <EventSources>
-  <EventSource Enabled="true">
+  <EventSource Enabled=true>
   <Address>mySource.myDomain.com</Address>
   <UserName>myUserName</UserName>
   <Password>*</Password>
   </EventSource>
   </EventSources>
   <CredentialsType>Default</CredentialsType>
-  <Locale Language="EN-US"></Locale>
+  <Locale Language=EN-US></Locale>
   </Subscription>
   ```
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Información de configuración de salida de una suscripción denominada Sub1:
 ```
@@ -164,6 +160,6 @@ Elimine una suscripción denominada Sub1:
 wecutil ds sub1
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

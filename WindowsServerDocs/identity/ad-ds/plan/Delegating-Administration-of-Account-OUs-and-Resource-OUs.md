@@ -1,7 +1,6 @@
 ---
 ms.assetid: 19feca0e-a6d0-4d27-93b0-cb44f8c26484
 title: Delegar la administración de unidades organizativas de cuentas y unidades organizativas de recursos
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 63fda63d5a34404563bab44ee54ba2e22d852782
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3043aaf79b2c0894fffe2f896a235ad519222e05
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402695"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822748"
 ---
 # <a name="delegating-administration-of-account-ous-and-resource-ous"></a>Delegar la administración de unidades organizativas de cuentas y unidades organizativas de recursos
 
@@ -31,13 +30,13 @@ En la ilustración siguiente se muestra un ejemplo de una estructura de unidad o
   
 En la tabla siguiente se enumeran y describen las posibles unidades organizativas secundarias que se pueden crear en una estructura de unidad organizativa de cuentas.  
   
-|OU|Finalidad|  
+|OU|Propósito|  
 |------|-----------|  
 |Usuarios|Contiene cuentas de usuario para personal no administrativo.|  
 |Cuentas de servicio|Algunos servicios que requieren acceso a los recursos de red se ejecutan como cuentas de usuario. Esta unidad organizativa se crea para separar las cuentas de usuario de servicio de las cuentas de usuario contenidas en la unidad organizativa usuarios. Además, la colocación de los distintos tipos de cuentas de usuario en unidades organizativas independientes le permite administrarlos de acuerdo con sus requisitos administrativos específicos.|  
 |Equipos|Contiene cuentas para equipos que no son controladores de dominio.|  
-|Grupos|Contiene grupos de todos los tipos, excepto los grupos administrativos, que se administran por separado.|  
-|Administradores|Contiene cuentas de usuario y de grupo para los administradores de datos de la estructura de la unidad organizativa de cuentas para permitir que se administren de forma independiente de los usuarios normales. Habilite la auditoría de esta unidad organizativa para que pueda realizar un seguimiento de los cambios en los usuarios y grupos administrativos.|  
+|Groups|Contiene grupos de todos los tipos, excepto los grupos administrativos, que se administran por separado.|  
+|Admins|Contiene cuentas de usuario y de grupo para los administradores de datos de la estructura de la unidad organizativa de cuentas para permitir que se administren de forma independiente de los usuarios normales. Habilite la auditoría de esta unidad organizativa para que pueda realizar un seguimiento de los cambios en los usuarios y grupos administrativos.|  
   
 En la ilustración siguiente se muestra un ejemplo de un diseño de grupo administrativo para una estructura de unidad organizativa.  
   
@@ -45,7 +44,7 @@ En la ilustración siguiente se muestra un ejemplo de un diseño de grupo admini
   
 A los grupos que administran las unidades organizativas secundarias solo se les concede control total sobre la clase específica de objetos que son responsables de la administración.  
   
-Los tipos de grupos que se usan para delegar el control dentro de una estructura de unidad organizativa se basan en el lugar en el que se encuentran las cuentas en relación con la estructura de la unidad organizativa que se va a administrar. Si todas las cuentas de usuario administrador y la estructura de la unidad organizativa existen en un solo dominio, los grupos que cree para usar para la delegación deben ser grupos globales. Si su organización tiene un departamento que administra sus propias cuentas de usuario y existe en más de una región geográfica, es posible que tenga un grupo de administradores de datos que sean responsables de administrar las unidades organizativas de la cuenta en más de un dominio. Si todas las cuentas de los administradores de datos existen en un solo dominio y tiene estructuras de unidad organizativa en varios dominios en los que es necesario delegar el control, haga que dichas cuentas administrativas sean miembros de grupos globales y delegue el control de las estructuras de las unidades organizativas en cada una de ellas. dominio a esos grupos globales. Si las cuentas de administradores de datos en las que delega el control de una estructura de unidad organizativa proceden de varios dominios, debe usar un grupo universal. Los grupos universales pueden contener usuarios de distintos dominios y, por lo tanto, se pueden usar para delegar el control en varios dominios.  
+Los tipos de grupos que se usan para delegar el control dentro de una estructura de unidad organizativa se basan en el lugar en el que se encuentran las cuentas en relación con la estructura de la unidad organizativa que se va a administrar. Si todas las cuentas de usuario administrador y la estructura de la unidad organizativa existen en un solo dominio, los grupos que cree para usar para la delegación deben ser grupos globales. Si su organización tiene un departamento que administra sus propias cuentas de usuario y existe en más de una región geográfica, es posible que tenga un grupo de administradores de datos que sean responsables de administrar las unidades organizativas de la cuenta en más de un dominio. Si todas las cuentas de los administradores de datos existen en un solo dominio y tiene estructuras de unidad organizativa en varios dominios en los que es necesario delegar el control, haga que dichos miembros de las cuentas administrativas de los grupos globales y dedeleguen el control de las estructuras de las unidades organizativas de cada dominio en esos grupos globales. Si las cuentas de administradores de datos en las que delega el control de una estructura de unidad organizativa proceden de varios dominios, debe usar un grupo universal. Los grupos universales pueden contener usuarios de distintos dominios y, por lo tanto, se pueden usar para delegar el control en varios dominios.  
   
 ## <a name="delegating-administration-of-resource-ous"></a>Delegación de la administración de las unidades organizativas de recursos  
 Las unidades organizativas de recursos se usan para administrar el acceso a los recursos. El propietario de la unidad organizativa de recursos crea cuentas de equipo para los servidores que están Unidos al dominio que incluyen recursos como recursos compartidos de archivos, bases de datos e impresoras. El propietario de la unidad organizativa de recursos también crea grupos para controlar el acceso a esos recursos.  

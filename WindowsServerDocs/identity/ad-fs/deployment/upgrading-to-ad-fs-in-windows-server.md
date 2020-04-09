@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7671e0c9-faf0-40de-808a-62f54645f891
 title: Actualización a AD FS en Windows Server 2016
-description: ''
 author: billmath
 manager: femila
 ms.date: 04/09/2018
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 913e45e52c5c6c137d2bf798bb5b86a65f9d1caa
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 4c13a3ecbcc6ade1455c10dde5f6a89e0303e161
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517580"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857638"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>Actualización a AD FS en Windows Server 2016 mediante una base de datos WID
 
@@ -152,13 +151,13 @@ Esto completará la actualización de los servidores WAP.
 
 
 > [!NOTE] 
-> Existe un problema de PRT conocido en AD FS 2019 si se realiza Windows Hello para empresas con una confianza de certificado híbrido. Puede encontrar este error en los registros de eventos de administración de ADFS: solicitud de OAuth no válida recibida. El cliente ' nombre ' está prohibido para acceder al recurso con el ámbito ' UGS '. Para corregir este error: 
-> 1. Inicie la consola de administración de AD FS. A "descripciones de ámbito de > de servicios"
-> 2. Haga clic con el botón derecho en "descripciones de ámbito" y seleccione "agregar Descripción de ámbito"
-> 3. En nombre, escriba "UGS" y haga clic en aplicar > Aceptar.
-> 4. Inicio de PowerShell como administrador
-> 5. Ejecute el comando "Get-AdfsApplicationPermission". Busque ScopeNames: {OpenID, AZA} que tenga ClientRoleIdentifier. Tome nota del ObjectIdentifier.
-> 6. Ejecute el comando "Set-AdfsApplicationPermission-TargetIdentifier < ObjectIdentifier del paso 5 >-parámetro addscope ' UGS '
-> 7. Reinicie el servicio ADFS.
-> 8. En el cliente: reinicie el cliente. Se le pedirá al usuario que aprovisione WHPE.
-> 9. Si la ventana de aprovisionamiento no aparece, debe recopilar los registros de seguimiento de NGC y solucionar el problema.
+> Existe un problema de PRT conocido en AD FS 2019 si se realiza Windows Hello para empresas con una confianza de certificado híbrido. Puede encontrar este error en los registros de eventos de administración de ADFS: solicitud de OAuth no válida recibida. El cliente "NOMBRE" no tiene permiso para acceder al recurso con el ámbito "ugs". Para corregir este error: 
+> 1. Inicia la consola de administración de AD FS. Ve a "Servicios > Descripciones de ámbito"
+> 2. Haz clic con el botón derecho en "Descripciones de ámbito" y selecciona "Agregar descripción de ámbito"
+> 3. Para el nombre, escribe "ugs" y haz clic en Aplicar > Aceptar
+> 4. Inicia PowerShell como administrador.
+> 5. Ejecuta el comando "Get-AdfsApplicationPermission". Busca el elemento ScopeNames: {openid, aza} que contenga ClientRoleIdentifier. Toma nota del elemento ObjectIdentifier.
+> 6. Ejecuta el comando "Set-AdfsApplicationPermission -TargetIdentifier <ObjectIdentifier del paso 5> -AddScope "ugs"
+> 7. Reinicia el servicio ADFS.
+> 8. En el cliente: reinicie el cliente. Se pedirá al usuario que aprovisione WHPB.
+> 9. Si la ventana de aprovisionamiento no aparece, tienes que recopilar los registros de seguimiento de NGC y solucionar el problema.

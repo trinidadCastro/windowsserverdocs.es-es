@@ -1,22 +1,18 @@
 ---
 title: Novedades de Windows Server 2019 Essentials
 description: Describe los cambios en Windows Server Essentials 2019
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
-ms.openlocfilehash: 11d12d3dc00357e09e156daa47c373a893ac40f7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 321ada3c046b7c78f141d2697191f48e225b93be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310280"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817738"
 ---
 # <a name="whats-new-in-windows-server-2019-essentials"></a>Novedades de Windows Server 2019 Essentials
 
@@ -28,8 +24,8 @@ El rol experiencia con Windows Server Essentials se ha quitado de todas las SKU 
 
 Con el desuso de los roles de experiencia con Server Essentials, las siguientes características ya no están disponibles:
 
--   Copia de seguridad de cliente 
--   Acceso Web remoto 
+-    Copia de seguridad de cliente 
+-    Acceso Web remoto 
 
 ## <a name="microsoft-365-business-the-modern-small-business-solution"></a>Microsoft 365 Empresa: la solución moderna de pequeña empresa 
 

@@ -1,24 +1,20 @@
 ---
 title: Instalación de la copia de seguridad del servidor en MultiPoint Server
 description: Le guía por los pasos necesarios para instalar las herramientas de copia de seguridad y recuperación
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e4331370-ba07-4529-92ab-db14a41bfc3b
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 933a24ee91fa1f5ccbe31ff4cb722a7c3eb54e4b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f8fe5ac8b57105d421af431b12c8dc17250b622d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395122"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820338"
 ---
 # <a name="install-server-backup-on-your-multipoint-server"></a>Instalación de la copia de seguridad del servidor en MultiPoint Server
 Se recomienda que considere un plan de copia de seguridad y recuperación para los servidores multipoint.
@@ -56,7 +52,7 @@ Use los procedimientos siguientes para configurar el tipo de copia de seguridad 
   
     -   Para abrir el complemento Copias de seguridad de Windows Server, en la pantalla **Inicio** , escriba copia de **seguridad**y, a continuación, haga clic en **copias de seguridad de Windows Server** en los resultados.  
   
-    -   Para iniciar la herramienta Wbadmin y ver la sintaxis de sus comandos: En la pantalla **Inicio** , escriba **comando**. En los resultados, haga clic con el botón secundario en **símbolo del sistema**, haga clic en **Ejecutar como administrador** en la parte inferior de la página y, a continuación, haga clic en **sí** en el mensaje de confirmación. En el símbolo del sistema, escriba **Wbadmin/?** y presione Entrar. Debería ver la sintaxis y las descripciones de los comandos de la herramienta.  
+    -   Para iniciar la herramienta Wbadmin y ver la sintaxis de sus comandos: en la pantalla **Inicio** , escriba **Command**. En los resultados, haga clic con el botón secundario en **símbolo del sistema**, haga clic en **Ejecutar como administrador** en la parte inferior de la página y, a continuación, haga clic en **sí** en el mensaje de confirmación. En el símbolo del sistema, escriba **Wbadmin/?** y presione Entrar. Debería ver la sintaxis y las descripciones de los comandos de la herramienta.  
   
 ## <a name="configure-backups-using-windows-server-backup"></a>Configurar copias de seguridad con Copias de seguridad de Windows Server  
   

@@ -1,20 +1,20 @@
 ---
 title: Información general de la Actualización compatible con clústeres
+description: La actualización compatible con clústeres (CAU) automatiza la instalación de actualizaciones de software en clústeres que ejecutan Windows Server.
 ms.topic: article
 ms.prod: windows-server
-ms.manager: dongill
+manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
-description: La actualización compatible con clústeres (CAU) automatiza la instalación de actualizaciones de software en clústeres que ejecutan Windows Server.
 ms.assetid: 3c2993b4-aa81-452b-a5c3-3724ad95d892
-ms.openlocfilehash: e96223e0b4b44e87ade9dc8eb875f9aa7104f451
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6a2b6ad06b8a003f9cbf020956994b08cb8cf194
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361251"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827998"
 ---
 # <a name="cluster-aware-updating-overview"></a>Información general de la Actualización compatible con clústeres
 
@@ -25,7 +25,7 @@ En este tema se proporciona información general sobre la actualización compati
 > [!NOTE]
 > Al actualizar clústeres de [espacios de almacenamiento directo](../storage/storage-spaces/storage-spaces-direct-overview.md) , se recomienda usar la actualización compatible con clústeres.
   
-## <a name="BKMK_OVER"></a>Descripción de la característica  
+## <a name="feature-description"></a><a name="BKMK_OVER"></a>Descripción de la característica  
 La actualización compatible con clústeres es una característica automatizada que permite actualizar servidores en un [clúster de conmutación por error](failover-clustering-overview.md) con poca o ninguna pérdida de disponibilidad durante el proceso de actualización. Durante una ejecución de actualización, la actualización compatible con clústeres realiza de forma transparente las siguientes tareas:  
 
 1. Coloca cada nodo del clúster en modo de mantenimiento de nodo.
@@ -117,16 +117,16 @@ Para conocer los requisitos detallados y los procedimientos recomendados para us
   
 1.  Inicie el Administrador del servidor.  
   
-2.  Realiza una de las siguientes acciones:  
+2.  Realice una de las siguientes acciones:  
   
     -   En el menú **herramientas** , haga clic en **actualización compatible con\-de clúster**.  
   
     -   Si uno o más nodos de clúster, o el clúster, se agregan a Administrador del servidor, en la página **todos los servidores** , haga clic con el botón secundario\-en el nombre de un nodo \(o en el nombre del\)de clúster y, a continuación, haga clic en **Actualizar clúster**.  
   
-## <a name="see-also"></a>Consulte también  
+## <a name="see-also"></a>Vea también  
 Los vínculos siguientes proporcionan más información acerca del uso de la actualización compatible con clústeres.  
   
--   [Requisitos y procedimientos recomendados para la actualización compatible con\-de clúster](cluster-aware-updating.md)  
+-   [Requisitos y procedimientos recomendados para la actualización compatible con clústeres\-  
   
 -   [Actualización compatible con\-de clúster: preguntas más frecuentes](cluster-aware-updating-faq.md)  
   

@@ -1,70 +1,65 @@
 ---
 title: Funcionalidades de adición, eliminación y actualización
-description: Información del sistema le permite crear nuevas capacidades que aprovechan la funcionalidad y la recopilación de datos existente. Es importante que también tiene la compatibilidad de plataforma para administrar la adición, eliminación y las actualizaciones de estas capacidades. Este tema describe la funcionalidad de alto nivel para agregar, quitar y actualizar las capacidades de sistema de información.
-ms.custom: na
+description: System Insights le permite crear nuevas capacidades que aprovechan la funcionalidad de administración y recopilación de datos existente. Es importante que también tenga compatibilidad con la plataforma para administrar la adición, eliminación y actualización de estas funcionalidades. En este tema se describe la funcionalidad de alto nivel para agregar, quitar y actualizar funcionalidades en System Insights.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: system-insights
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 07fb036d1c4aa4a63107594ec1f81cb5be1c7724
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a760f25de79bc89b2aa67aec6bb1e3a493c1310
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880166"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856268"
 ---
 # <a name="adding-removing-and-updating-capabilities"></a>Funcionalidades de adición, eliminación y actualización
 
->Se aplica a: Windows Server 2019
+>Se aplica a: Windows Server 2019
 
-Información del sistema le permite crear nuevas capacidades que aprovechan la funcionalidad y la recopilación de datos existente. Sin embargo, una vez creadas estas capacidades, es igualmente importante que también tiene la compatibilidad de plataforma para administrar la adición, eliminación y las actualizaciones de estas capacidades. 
+System Insights le permite crear nuevas capacidades que aprovechan la funcionalidad de administración y recopilación de datos existente. Sin embargo, una vez creadas estas funcionalidades, es igualmente importante que también tenga la compatibilidad con la plataforma para administrar la adición, eliminación y actualización de estas funcionalidades. 
 
-Este tema describe la funcionalidad de alto nivel para agregar, quitar y actualizar las capacidades de sistema de información. 
+En este tema se describe la funcionalidad de alto nivel para agregar, quitar y actualizar funcionalidades en System Insights. 
 
 ## <a name="adding-a-capability"></a>Agregar una funcionalidad
-Sistema Insights le permite agregar nuevas capacidades en cualquier momento mediante el **agregar InsightsCapability** cmdlet. El **agregar InsightsCapability** requiere que especifique un nombre de función y la biblioteca de capacidad. La biblioteca de capacidad contiene la descripción de la capacidad, los orígenes de datos y lógica de predicción.
+System Insights le permite agregar nuevas funcionalidades en cualquier momento mediante el cmdlet **Add-InsightsCapability** . **Add-InsightsCapability** requiere que se especifique un nombre de funcionalidad y la biblioteca de funciones. La biblioteca de funcionalidad contiene la descripción de la funcionalidad, los orígenes de datos y la lógica de predicción.
 
 ```PowerShell
-Add-InsightsCapability -Name "Sample capability" -Library "C:\SampleCapability.dll"
+Add-InsightsCapability -Name Sample capability -Library C:\SampleCapability.dll
 ```
 
-Una vez agregada una funcionalidad a la información del sistema, puede invocar y administrar la capacidad de usar PowerShell o Windows Admin Center inmediatamente. 
+Una vez agregada una funcionalidad a System Insights, puede invocar y administrar inmediatamente la funcionalidad mediante PowerShell o el centro de administración de Windows. 
 
-## <a name="updating-a-capability"></a>Una característica de actualización
-Información del sistema también le permite actualizar una capacidad mediante la **actualización InsightsCapability** cmdlet.
+## <a name="updating-a-capability"></a>Actualizar una funcionalidad
+System Insights también le permite actualizar una funcionalidad con el cmdlet **Update-InsightsCapability** .
 
 ```PowerShell
-Update-InsightsCapability -Name "Sample capability" -Library "C:\SampleCapabilityv2.dll"
+Update-InsightsCapability -Name Sample capability -Library C:\SampleCapabilityv2.dll
 ```
 
-Una característica de actualización le permite especificar una nueva biblioteca de funcionalidad, que le permite cambiar la descripción de la capacidad, los orígenes de datos y la lógica de predicción asociada con esa capacidad. Lo importante es que, una característica de actualización conserva toda la configuración y la información histórica sobre esa funcionalidad, incluidas las programaciones personalizadas, acciones y resultados de predicción histórica. 
+La actualización de una funcionalidad le permite especificar una nueva biblioteca de funciones, que le permite cambiar la descripción de la funcionalidad, los orígenes de datos y la lógica de predicción asociada a esa capacidad. Lo importante es que la actualización de una funcionalidad conserva toda la configuración e información histórica sobre esa capacidad, incluidas las programaciones personalizadas, las acciones y los resultados de predicción históricos. 
 
-## <a name="removing-a-capability"></a>Eliminación de una capacidad
-También puede quitar funcionalidades en la información del sistema utilizando el **Remove-InsightsCapability** cmdlet. 
+## <a name="removing-a-capability"></a>Quitar una funcionalidad
+También puede quitar funcionalidades de System Insights mediante el cmdlet **Remove-InsightsCapability** . 
 
 ```PowerShell
-Remove-InsightsCapability -Name "Sample capability" 
+Remove-InsightsCapability -Name Sample capability 
 ```
 >[!NOTE]
->No se puede quitar el valor predeterminado funciones de previsión.
+>No se pueden quitar las funciones predeterminadas de previsión.
 
-Al quitar una funcionalidad permanentemente, elimina la capacidad y toda la información asociada, incluidos la programación, las acciones de corrección y últimos resultados de predicción. 
+Al quitar una funcionalidad, se elimina permanentemente la funcionalidad y toda la información asociada, incluida la programación, las acciones correctivas y los resultados de predicción anteriores. 
 
 >[!TIP]
->Considere la posibilidad de deshabilitar una función en lugar de quitarlo si le preocupa eliminar permanentemente toda la información asociada con la capacidad. 
+>Considere la posibilidad de deshabilitar una funcionalidad en lugar de quitarla si le preocupa eliminar permanentemente toda la información asociada a la funcionalidad. 
 
 ## <a name="see-also"></a>Vea también
-Para obtener más información acerca de la información del sistema, use los siguientes recursos:
+Para obtener más información acerca de System Insights, utilice los siguientes recursos:
 
-- [Información general de información del sistema](overview.md)
-- [Capacidades de descripción](understanding-capabilities.md)
-- [Capacidades de administración](managing-capabilities.md)
-- [Agregar y desarrollo de capacidades](adding-and-developing-capabilities.md)
-- [Preguntas más frecuentes del sistema Insights](faq.md)
+- [Información general de System Insights](overview.md)
+- [Descripción de funcionalidades](understanding-capabilities.md)
+- [Administración de funcionalidades](managing-capabilities.md)
+- [Funcionalidades de adición y desarrollo](adding-and-developing-capabilities.md)
+- [Preguntas más frecuentes sobre System Insights](faq.md)

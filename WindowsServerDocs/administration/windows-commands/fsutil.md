@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 0f338c80dca0ed88ca206aea5aeb415bc191e03a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 717c287995be2ab56bd49f2f24d46001f77e0e68
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376672"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843908"
 ---
 # <a name="fsutil"></a>Fsutil
 
@@ -32,14 +32,14 @@ Realiza tareas relacionadas con la tabla de asignación de archivos (FAT) y los 
 >```
 > Se le pedirá que reinicie el equipo una vez instalado. Una vez reiniciado el equipo, podrá ejecutar **fsutil** como administrador.
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Subcomando |Descripción|
 |---|---|
 |[Fsutil 8dot3name](fsutil-8dot3name.md) | Consulta o cambia la configuración del comportamiento de nombre corto en el sistema, por ejemplo, genera nombres de archivo de 8,3 caracteres de longitud. Quita los nombres cortos de todos los archivos de un directorio. Examina un directorio e identifica las claves del registro que podrían verse afectadas si los nombres cortos se han quitado de los archivos del directorio.|
 |[Comportamiento de fsutil](fsutil-behavior.md) |Consulta o establece el comportamiento del volumen.|
 |[Fsutil Dirty](fsutil-dirty.md)| Consulta si el bit de integridad del volumen está establecido o establece el bit de integridad de un volumen. Cuando se establece el bit de integridad de un volumen, **Autochk** comprueba automáticamente si hay errores en el volumen la próxima vez que se reinicie el equipo.|
-|[Fsutil (archivo)](fsutil-file.md)|Busca un archivo por su nombre de usuario (si las cuotas de disco están habilitadas), consulta los intervalos asignados de un archivo, establece el nombre corto de un archivo, establece la longitud de datos válidos de un archivo, establece cero datos para un archivo, crea un nuevo archivo de un tamaño especificado, busca un identificador de archivo si se le da el nombre. , o encuentra un nombre de vínculo de archivo para un identificador de archivo especificado.|
+|[Fsutil (archivo)](fsutil-file.md)|Busca un archivo por su nombre de usuario (si las cuotas de disco están habilitadas), consulta los intervalos asignados de un archivo, establece el nombre corto de un archivo, establece la longitud de datos válidos de un archivo, establece cero datos para un archivo, crea un archivo de un tamaño especificado, busca un identificador de archivo si se le da el nombre o encuentra un nombre de vínculo de|
 |[Fsutil fsinfo](fsutil-fsinfo.md)|Muestra todas las unidades y consulta el tipo de unidad, la información de volumen, la información de volumen específica de NTFS o las estadísticas del sistema de archivos.|
 |[Fsutil hardlink](fsutil-hardlink.md)|Enumera los vínculos físicos de un archivo o crea un vínculo físico (una entrada de directorio para un archivo). Se puede considerar que cada archivo tiene al menos un vínculo físico. En volúmenes NTFS, cada archivo puede tener varios vínculos físicos, por lo que un único archivo puede aparecer en muchos directorios (o incluso en el mismo directorio, con nombres diferentes). Dado que todos los vínculos hacen referencia al mismo archivo, los programas pueden abrir cualquiera de los vínculos y modificar el archivo. Un archivo se elimina del sistema de archivos solo después de que se eliminen todos los vínculos a él. Después de crear un vínculo físico, los programas pueden usarlo como cualquier otro nombre de archivo.|
 |[Fsutil objectId](fsutil-objectid.md)|Administra los identificadores de objeto, que utiliza el sistema operativo Windows para realizar el seguimiento de objetos como archivos y directorios.|
@@ -55,4 +55,4 @@ Realiza tareas relacionadas con la tabla de asignación de archivos (FAT) y los 
 |[Fsutil Wim](fsutil-wim.md)|Proporciona funciones para detectar y administrar archivos respaldados por WIM.|
 
 ## <a name="see-also"></a>Vea también
-[Clave de sintaxis de línea de comandos](Command-Line-Syntax-Key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

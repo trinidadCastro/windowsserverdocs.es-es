@@ -2,21 +2,19 @@
 title: Oracle Linux compatibles con máquinas virtuales en Hyper-V
 description: Enumera las características y servicios de integración de Linux que se incluyen en cada versión
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 author: shirgall
 ms.author: kathydav
 ms.date: 06/01/2017
-ms.openlocfilehash: cc2a864ddb1b2bcbc972c895fbb79105107a84b8
-ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
+ms.openlocfilehash: edf92689f1dbe93c387c65e64694c64635fe3958
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78169635"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858018"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Oracle Linux compatibles con máquinas virtuales en Hyper-V
 
@@ -42,7 +40,7 @@ En esta sección:
 
 * **UEK RxUy** -Unbreakable Enterprise kernel (UEK), donde x es el número de versión e y es la actualización trimestral.
 
-## <a name="BKMK_rhc"></a>Características de las versiones de Oracle Linux con el kernel compatible de Red Hat
+## <a name="features-of-oracle-linux-releases-with-the-red-hat-compatible-kernel"></a><a name="BKMK_rhc"></a>Características de las versiones de Oracle Linux con el kernel compatible de Red Hat
 
 El kernel de 32 bits para la serie 6. x es PAE habilitado. No hay compatibilidad integrada con LIS para Oracle Linux RHCK 6.0-6.3. Los kernels Oracle Linux 7. x solo son de 64 bits.
 
@@ -85,7 +83,7 @@ El kernel de 32 bits para la serie 6. x es PAE habilitado. No hay compatibilidad
 | Arranque seguro                                                                                                                                  | 2019, 2016                         | &#10004;           | &#10004;            |                                                                     |                                                                     |                          |                          |                          |                           |                           |
 
 
-## <a name="BKMK_uek"></a>Oracle Linux versiones con el kernel empresarial ininterrumpido (UEK)
+## <a name="oracle-linux-releases-with-the-unbreakable-enterprise-kernel-uek"></a><a name="BKMK_uek"></a>Oracle Linux versiones con el kernel empresarial ininterrumpido (UEK)
 
 Oracle Linux con el kernel empresarial ininterrumpible (UEK) es solo de 64 bits y tiene la compatibilidad con LIS integrada. 
 
@@ -127,7 +125,7 @@ Oracle Linux con el kernel empresarial ininterrumpible (UEK) es solo de 64 bits 
 | Arranque mediante UEFI                                                                                                                              | 2019, 2016, 2012 R2                | &#10004;                  | &#10004;                  |                           |                           |                      |
 | Arranque seguro                                                                                                                                  | 2019, 2016                         | &#10004;                  | &#10004;                  |                           |                           |                      |
 
-## <a name="BKMK_notes"></a>Apunte
+## <a name="notes"></a><a name="BKMK_notes"></a>Apunte
 
 1. En esta versión de Oracle Linux, el etiquetado de VLAN funciona pero no la Troncalización de VLAN.
 
@@ -176,7 +174,7 @@ Oracle Linux con el kernel empresarial ininterrumpible (UEK) es solo de 64 bits 
 14. Es posible que la inyección de direcciones IP estáticas no funcione si se ha configurado el administrador de red para un adaptador de red sintético determinado en la máquina virtual. Para un funcionamiento sin problemas de la inyección de direcciones IP estáticas, asegúrese de que el administrador de red esté desactivado completamente o se haya desactivado para un adaptador de red específico a través de su archivo ifcfg-ethX.
 
 
-Vea también
+Consulta también
 
 * [Set-VMFirmware](https://technet.microsoft.com/library/dn464287.aspx)
 

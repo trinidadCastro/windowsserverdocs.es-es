@@ -1,19 +1,18 @@
 ---
 title: Historial de rendimiento para servidores
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/05/2018
-Keywords: Espacios de almacenamiento directo
 ms.localizationpriority: medium
-ms.openlocfilehash: bbfc92f7926b93f5f6716514e64672f4aa304c0f
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: cf4bdabb132c832370e5dffec215c24b54aebdd7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945246"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856198"
 ---
 # <a name="performance-history-for-servers"></a>Historial de rendimiento para servidores
 
@@ -28,7 +27,7 @@ Este subtema del [historial de rendimiento de espacios de almacenamiento directo
 
 Estas series se recopilan para cada servidor válido:
 
-| Series                           | Unidad    |
+| Serie                           | Unidad    |
 |----------------------------------|---------|
 | `clusternode.cpu.usage`          | percent |
 | `clusternode.cpu.usage.guest`    | percent |
@@ -43,7 +42,7 @@ Además, las series de unidades como `physicaldisk.size.total` se agregan a toda
 
 ## <a name="how-to-interpret"></a>Cómo interpretar
 
-| Series                           | Cómo interpretar                                                      |
+| Serie                           | Cómo interpretar                                                      |
 |----------------------------------|-----------------------------------------------------------------------|
 | `clusternode.cpu.usage`          | Porcentaje de tiempo de procesador que no está inactivo.                        |
 | `clusternode.cpu.usage.guest`    | Porcentaje de tiempo de procesador usado para la demanda de invitado (máquina virtual). |
@@ -60,7 +59,7 @@ La serie `cpu.*` se recopilan de diferentes contadores de rendimiento en funció
 
 Si Hyper-V está habilitado:
 
-| Series                           | Contador de origen |
+| Serie                           | Contador de origen |
 |----------------------------------|----------------|
 | `clusternode.cpu.usage`          | `Hyper-V Hypervisor Logical Processor` > `_Total` > `% Total Run Time`      |
 | `clusternode.cpu.usage.guest`    | `Hyper-V Hypervisor Virtual Processor` > `_Total` > `% Total Run Time`      |
@@ -70,10 +69,10 @@ El uso de los contadores de `% Total Run Time` garantiza que el historial de ren
 
 Si Hyper-V no está habilitado:
 
-| Series                           | Contador de origen |
+| Serie                           | Contador de origen |
 |----------------------------------|----------------|
 | `clusternode.cpu.usage`          | `Processor` > `_Total` > `% Processor Time` |
-| `clusternode.cpu.usage.guest`    | *zero* |
+| `clusternode.cpu.usage.guest`    | *nulo* |
 | `clusternode.cpu.usage.host`     | *igual que el uso total* |
 
 Sin perjuicio de la sincronización imperfecta, `clusternode.cpu.usage` siempre se `clusternode.cpu.usage.host` más `clusternode.cpu.usage.guest`.
@@ -93,6 +92,6 @@ Use el cmdlet [Get-ClusterNode](https://docs.microsoft.com/powershell/module/fai
 Get-ClusterNode <Name> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 - [Historial de rendimiento de Espacios de almacenamiento directo](performance-history.md)

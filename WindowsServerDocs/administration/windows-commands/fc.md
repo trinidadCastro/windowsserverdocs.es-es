@@ -1,24 +1,20 @@
 ---
 title: fc
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 485fc3d8-b7c5-496d-87be-0011112f27d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f6c004fcebcf5eb743354d9e0a121ff8598217a4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b358b8c1bf44b5b7942cef05bd09fa8cac850a3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377249"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844748"
 ---
 # <a name="fc"></a>fc
 
@@ -35,12 +31,12 @@ fc /a [/c] [/l] [/lb<N>] [/n] [/off[line]] [/t] [/u] [/w] [/<NNNN>] [<Drive1>:][
 fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |            Parámetro             |                                                                                                                                     Descripción                                                                                                                                      |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                /a                |                                                 Abrevia el resultado de una comparación de ASCII. En lugar de mostrar todas las líneas que son diferentes, **FC** solo muestra la primera y la última línea para cada conjunto de diferencias.                                                  |
-|                b                |             Compara los dos archivos en modo binario, byte por byte y no intenta volver a sincronizar los archivos después de encontrar una incoherencia. Este es el modo predeterminado para comparar archivos con las siguientes extensiones de archivo:. exe,. com,. sys,. obj,. lib o. bin.              |
+|                /b                |             Compara los dos archivos en modo binario, byte por byte y no intenta volver a sincronizar los archivos después de encontrar una incoherencia. Este es el modo predeterminado para comparar archivos con las siguientes extensiones de archivo:. exe,. com,. sys,. obj,. lib o. bin.              |
 |                /c                |                                                                                                                               Omite el caso de la letra.                                                                                                                               |
 |                /l                |               Compara los archivos en modo ASCII, línea a línea e intenta volver a sincronizar los archivos después de encontrar una incoherencia. Este es el modo predeterminado para comparar archivos, excepto los archivos con las siguientes extensiones de archivo:. exe,. com,. sys,. obj,. lib o. bin.                |
 |             /lb\<N >              |                         Establece el número de líneas del búfer de línea interno en *N*. La longitud predeterminada del búfer de línea es 100 líneas. Si los archivos que está comparando tienen más de 100 líneas distintas consecutivas, **FC** cancela la comparación.                         |
@@ -52,9 +48,9 @@ fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
 |             /\<NNNN >             | Especifica el número de líneas consecutivas que deben coincidir después de un error de coincidencia, antes de que **FC** considere que los archivos se van a volver a sincronizar. Si el número de líneas coincidentes en los archivos es menor que *nnnn*, **FC** muestra las líneas coincidentes como diferencias. El valor predeterminado es 2. |
 | [\<unidad1 >:] [<Path1>]<FileName1> |                                                                                        Especifica la ubicación y el nombre del primer archivo o conjunto de archivos que se van a comparar. Se requiere *nombreDeArchivo1* .                                                                                        |
 | [\<Unidad2 >:] [<Path2>]<FileName2> |                                                                                       Especifica la ubicación y el nombre del segundo archivo o conjunto de archivos que se van a comparar. Se requiere *Nombredearchivo2* .                                                                                        |
-|                /?                |                                                                                                                         Muestra la ayuda en el símbolo del sistema.                                                                                                                         |
+|                /?                |                                                                                                                         Muestra la Ayuda en el símbolo del sistema.                                                                                                                         |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Este comando es implemeted por c:\WINDOWS\fc.exe. Puede usar este comando en PowerShell, pero asegúrese de deletrear el ejecutable completo (FC. exe) ya que ' FC ' es un alias de Format-Custom.
 
@@ -85,7 +81,7 @@ fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
 
     Al comparar archivos binarios mayores que la memoria disponible, **FC** compara ambos archivos por completo, superponiendo las partes de la memoria con las siguientes partes del disco. El resultado es el mismo que el de los archivos que caben completamente en la memoria.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para realizar una comparación ASCII de dos archivos de texto, Monthly. RPT y sales. RPT, y mostrar los resultados en formato abreviado, escriba:
 ```
@@ -124,6 +120,6 @@ Para comparar cada archivo por lotes del directorio raíz de la unidad C con el 
 fc c:*.bat d:*.bat
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

@@ -1,6 +1,5 @@
 ---
 title: 'Recuperación de bosque de AD: realización de una recuperación de servidor completa'
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 1a1182a6-4462-4a13-806e-0e642a0d5db2
 ms.technology: identity-adds
-ms.openlocfilehash: 1ade1f2e316387fbe84209c1bc7a986fff6f2a71
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bf321ae769aa6f0da1cebce7700ea429161a0956
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390536"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824018"
 ---
 # <a name="ad-forest-recovery---performing-a-full-server-recovery"></a>Recuperación de bosque de AD: realización de una recuperación de servidor completa 
 
@@ -51,8 +50,8 @@ En función de su escenario, use uno de los procedimientos siguientes para reali
    -  Instalación de controladores
    -  Anulación de la selección de las características **avanzadas** de reinicio automático y comprobación de errores de disco. Están habilitados de forma predeterminada.
    ![restaurar servidor](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore6.png)
-8. Haz clic en **Siguiente**.
-9. Haz clic en **Finalizar**. Se le preguntará si está seguro de que desea continuar. Haz clic en **Sí**. 
+8. Haga clic en **Siguiente**.
+9. Haga clic en **Finalizar**. Se le preguntará si está seguro de que desea continuar. Haga clic en **Sí**. 
    ![restaurar servidor](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore11.png) 
 10. Una vez completado este paso, realice una restauración autoritativa de SYSVOL, como se describe en [recuperación del bosque de ad: realización de una sincronización autoritativa de SYSVOL replicada en DFSR](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md).
 
@@ -75,8 +74,8 @@ En función de su escenario, use uno de los procedimientos siguientes para reali
     - Formatear y volver a particionar discos
     - Instalación de controladores
     - Anulación de la selección de las características **avanzadas** de reinicio automático y comprobación de errores de disco. Están habilitados de forma predeterminada.
-12. Haz clic en **Siguiente**.
-13. Haz clic en **Finalizar**. Se le preguntará si está seguro de que desea continuar. Haz clic en **Sí**.  
+12. Haga clic en **Siguiente**.
+13. Haga clic en **Finalizar**. Se le preguntará si está seguro de que desea continuar. Haga clic en **Sí**.  
 14. Una vez completado este paso, realice una restauración autoritativa de SYSVOL, como se describe en [recuperación del bosque de ad: realización de una sincronización autoritativa de SYSVOL replicada en DFSR](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md).
 
 ## <a name="enabling-the-network-adapter-for-a-network-backup"></a>Habilitar el adaptador de red para una copia de seguridad de red
@@ -84,7 +83,7 @@ En función de su escenario, use uno de los procedimientos siguientes para reali
 Si necesita habilitar un adaptador de red desde el símbolo del sistema para restaurar desde un recurso compartido de red, siga estos pasos.
 
 1. Inicie instalación de Windows, especifique el idioma, el formato de hora y moneda y las opciones de teclado y haga clic en **siguiente**. 
-2. Haga clic en **Reparar el equipo**. Configur
+2. Haga clic en **Reparar el equipo**. I
 3. Haga clic en **solucionar problemas**y haga clic en **símbolo del sistema**. 
 4. Escriba el siguiente comando y presione ENTRAR:  
 

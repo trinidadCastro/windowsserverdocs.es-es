@@ -1,6 +1,5 @@
 ---
 title: 'Recuperación de bosque de AD: copia de seguridad de un servidor completo'
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
 ms.technology: identity-adds
-ms.openlocfilehash: 4377c1d993b4f6d30cf8ca8a7d149b741d7f8d2f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1579f8e88ea852ddf3f973b51b1b6ceed7c50a00
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369362"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824283"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>Recuperación de bosque de AD: copia de seguridad de un servidor completo  
 
@@ -22,7 +21,7 @@ ms.locfileid: "71369362"
 
 Se recomienda una copia de seguridad completa del servidor para preparar la recuperación de un bosque, ya que se puede restaurar en otro hardware o en una instancia de sistema operativo diferente.  Con Copias de seguridad de Windows Server puede realizar una copia de seguridad completa del servidor. 
 
-## <a name="windows-server-backup"></a>Copias de seguridad de Windows Server
+## <a name="windows-server-backup"></a>Windows Server Backup
 
 Copias de seguridad de Windows Server no se instala de forma predeterminada. En Windows Server 2016 y Windows Server 2012 R2, instálelo siguiendo los pasos que se indican a continuación.
 

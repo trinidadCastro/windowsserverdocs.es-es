@@ -1,20 +1,20 @@
 ---
 ms.assetid: d44d4430-41e2-483a-9685-92610cdef32a
 title: Cómo funcionan los complementos de actualización compatible con clústeres
+description: Cómo usar complementos para coordinar las actualizaciones cuando se usa la actualización compatible con clústeres en Windows Server para instalar actualizaciones en un clúster.
 ms.topic: article
 ms.prod: windows-server
-manager: dongill
+manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 ms.technology: storage-failover-clustering
-description: Cómo usar complementos para coordinar las actualizaciones cuando se usa la actualización compatible con clústeres en Windows Server para instalar actualizaciones en un clúster.
-ms.openlocfilehash: 5fabd55f54527a2396643cea48980077891e3281
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: ac37e4e7cc18da0d837e9c078382e59415c0edaf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948075"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828038"
 ---
 # <a name="how-cluster-aware-updating-plug-ins-work"></a>Cómo funcionan los complementos de actualización compatible con clústeres
 
@@ -22,7 +22,7 @@ ms.locfileid: "75948075"
 
 La [actualización compatible con clústeres](cluster-aware-updating.md) (CAU) usa complementos para coordinar la instalación de actualizaciones en los nodos de un clúster de conmutación por error. En este tema se proporciona información sobre el uso de los\-integrados en los\-de complementos de CAU u otros complementos de\-que se instalan para la CAU.
 
-## <a name="BKMK_INSTALL"></a>Instalar un\-de plug-in  
+## <a name="install-a-plug-in"></a><a name="BKMK_INSTALL"></a>Instalar un\-de plug-in  
 Un\-de conexión que no sea el\-de plug-ins predeterminado que se instalan con CAU \(**Microsoft. WindowsUpdatePlugin** y **microsoft. HotfixPlugin**\) debe instalarse por separado. Si se usa la CAU en el modo de actualización de\-, el\-de plug-in debe estar instalado en todos los nodos del clúster. Si se usa la CAU en el modo de actualización de\-remoto, el\-de plug-in debe estar instalado en el equipo coordinador de actualizaciones remotas. Un\-de conexión en que instale puede tener requisitos de instalación adicionales en cada nodo.  
   
 Para instalar un complemento\-en, siga las instrucciones de la\-de plug-in del publicador. Para registrar manualmente un\-de plug-in con CAU, ejecute el cmdlet [Register-CauPlugin](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/register-cauplugin) en cada equipo donde esté instalado el\-de plug-in.  
@@ -77,7 +77,7 @@ Para especificar la\-de plug-in en los argumentos mediante los cmdlets de PowerS
 También puede usar una tabla hash de PowerShell predefinida. Para especificar\-de plug-in en argumentos para más de un\-de conexión en, pase varias tablas hash de argumentos, separadas por comas. Pase el\-de conexión de los argumentos de la\-de conexión en orden que se especifica en **CauPluginName**.  
   
 ### <a name="specify-optional-plug-in-arguments"></a>Especificar\-de plug-in opcional en argumentos  
-Los\-de complementos que instala CAU \(**Microsoft. WindowsUpdatePlugin** y **microsoft. HotfixPlugin**\) proporcionan opciones adicionales que puede seleccionar. En la interfaz de usuario de CAU, aparecen en una página **opciones adicionales** después de configurar las opciones de ejecución de actualización para el\-de plug-in. Si usa los cmdlets de PowerShell de CAU, estas opciones se configuran como plug\-opcional en argumentos. Para más información, consulte [Usar Microsoft.WindowsUpdatePlugin](#BKMK_WUP) y [Usar Microsoft.HotfixPlugin](#BKMK_HFP) más adelante en este tema.  
+Los\-de complementos que instala CAU \(**Microsoft. WindowsUpdatePlugin** y **microsoft. HotfixPlugin**\) proporcionan opciones adicionales que puede seleccionar. En la interfaz de usuario de CAU, aparecen en una página **opciones adicionales** después de configurar las opciones de ejecución de actualización para el\-de plug-in. Si usa los cmdlets de PowerShell de CAU, estas opciones se configuran como plug\-opcional en argumentos. Para obtener más información, consulta [Usar Microsoft.WindowsUpdatePlugin](#BKMK_WUP) y [Usar Microsoft.HotfixPlugin](#BKMK_HFP) más adelante en este tema.  
   
 ## <a name="manage-plug-ins-using-windows-powershell-cmdlets"></a>Administrar complementos de\-mediante cmdlets de Windows PowerShell  
   
@@ -87,7 +87,7 @@ Los\-de complementos que instala CAU \(**Microsoft. WindowsUpdatePlugin** y **mi
 |[Register-CauPlugin]((https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin))|Registra un complemento de actualización de software de CAU\-en en el equipo local.|  
 |[Unregister-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/unregister-cauplugin)|Quita un complemento de actualización de software\-de la lista de complementos de\-que puede usar la CAU. **Nota:** No se puede anular el registro de los complementos de\-que se instalan con CAU \(**Microsoft. WindowsUpdatePlugin** y **microsoft. HotfixPlugin**\).|  
   
-## <a name="BKMK_WUP"></a>Usar Microsoft. WindowsUpdatePlugin  
+## <a name="using-the-microsoftwindowsupdateplugin"></a><a name="BKMK_WUP"></a>Usar Microsoft. WindowsUpdatePlugin  
 
 La\-de complementos predeterminada de para CAU, **Microsoft. WindowsUpdatePlugin**, realiza las siguientes acciones:
 - Se comunica con el Agente de Windows Update en los nodos de los clústeres de conmutación por error con el fin de aplicar las actualizaciones necesarias para los productos de Microsoft que estén en ejecución en cada nodo.
@@ -95,13 +95,13 @@ La\-de complementos predeterminada de para CAU, **Microsoft. WindowsUpdatePlugin
 - Instala solo la versión de distribución general seleccionada \(GDR\) actualizaciones. De forma predeterminada, la\-plug in solo aplica actualizaciones de software importantes. No es necesario realizar ninguna configuración. La configuración predeterminada descarga e instala actualizaciones GDR importantes en cada nodo. 
 
 > [!NOTE]
-> Para aplicar actualizaciones distintas de las actualizaciones de software importantes que están seleccionadas de forma predeterminada \(por ejemplo, las actualizaciones de controladores\), puede configurar un\-de conexión opcional en el parámetro. Para obtener más información, consulte [Configurar la cadena de consulta del Agente de Windows Update](#BKMK_QUERY).
+> Para aplicar actualizaciones distintas de las actualizaciones de software importantes que están seleccionadas de forma predeterminada \(por ejemplo, las actualizaciones de controladores\), puede configurar un\-de conexión opcional en el parámetro. Para obtener más información, consulta [Configurar la cadena de consulta del Agente de Windows Update](#BKMK_QUERY).
 
 ### <a name="requirements"></a>Requisitos
 
 - El clúster de conmutación por error y el equipo coordinador de actualizaciones remotas \(si se usan\) deben cumplir los requisitos de CAU y la configuración necesaria para la administración remota enumerada en [requisitos y prácticas recomendadas para Cau](cluster-aware-updating-requirements.md).
 - Consulta las [Recomendaciones para aplicar actualizaciones de Microsoft](cluster-aware-updating-requirements.md#BKMK_BP_WUA) y, a continuación, realiza los cambios necesarios en la configuración de Microsoft Update para los nodos del clúster de conmutación por error.
-- Para obtener los mejores resultados, se recomienda ejecutar el Analizador de procedimientos recomendados de CAU \(BPA\) para asegurarse de que el clúster y el entorno de actualización estén configurados correctamente para aplicar actualizaciones mediante CAU. Para obtener más información, consulte [Test CAU updating readiness](cluster-aware-updating-requirements.md#BKMK_BPA).
+- Para obtener los mejores resultados, se recomienda ejecutar el Analizador de procedimientos recomendados de CAU \(BPA\) para asegurarse de que el clúster y el entorno de actualización estén configurados correctamente para aplicar actualizaciones mediante CAU. Para obtener más información, consulta [Probar la preparación para la actualización de CAU](cluster-aware-updating-requirements.md#BKMK_BPA).
 
 > [!NOTE]
 > Las actualizaciones que requieren la aceptación de términos de licencia de Microsoft o que requieren la interacción del usuario se excluyen y deben instalarse manualmente.
@@ -111,20 +111,20 @@ La\-de complementos predeterminada de para CAU, **Microsoft. WindowsUpdatePlugin
 Opcionalmente, puede especificar los siguientes\-de complementos en argumentos para aumentar o restringir el conjunto de actualizaciones que se aplican mediante el\-de plug-in:
 - Para configurar la\-de plug-in para aplicar las actualizaciones recomendadas además de las actualizaciones importantes en cada nodo, en la interfaz de usuario de CAU, en la página **opciones adicionales** , active la casilla **enviarme actualizaciones recomendadas de la misma manera que recibo actualizaciones importantes** .
 <br>Como alternativa, configure el\-de ' **IncludeRecommendedUpdates '\=' true '** en el argumento.
-- Para configurar la\-de plug-in para filtrar los tipos de actualizaciones GDR que se aplican a cada nodo de clúster, especifique una cadena de consulta del agente de Windows Update mediante un\-**de cadena de consulta en el argumento** . Para obtener más información, consulte [Configurar la cadena de consulta del Agente de Windows Update](#BKMK_QUERY).
+- Para configurar la\-de plug-in para filtrar los tipos de actualizaciones GDR que se aplican a cada nodo de clúster, especifique una cadena de consulta del agente de Windows Update mediante un\-**de cadena de consulta en el argumento** . Para obtener más información, consulta [Configurar la cadena de consulta del Agente de Windows Update](#BKMK_QUERY).
 
-### <a name="BKMK_QUERY"></a>Configurar la cadena de consulta del agente de Windows Update  
+### <a name="configure-the-windows-update-agent-query-string"></a><a name="BKMK_QUERY"></a>Configurar la cadena de consulta del agente de Windows Update  
 Puede configurar un\-de plug-in en el argumento para el\-de complementos predeterminado en, **Microsoft. WindowsUpdatePlugin**, que consta de una cadena de consulta de Windows Update Agent \(WUA\). Esta instrucción usa la API de WUA para identificar uno o más grupos de actualizaciones de Microsoft que se aplicarán a cada nodo, según criterios de selección específicos. Puedes combinar varios criterios mediante un AND lógico o mediante un OR lógico. La cadena de consulta de WUA se especifica en un\-de complemento en el argumento de la manera siguiente:  
   
 **QueryString\="Criterio1\=Value1 y\/o Criterion2\=value2 y\/o..."**  
   
-Por ejemplo, **Microsoft.WindowsUpdatePlugin** selecciona automáticamente actualizaciones importantes mediante un argumento predeterminado **QueryString** que se construye con los criterios **IsInstalled**, **Type**, **IsHidden**y **IsAssigned** :  
+Por ejemplo, **Microsoft.WindowsUpdatePlugin** selecciona automáticamente actualizaciones importantes mediante un argumento **QueryString** predeterminado que se construye con los criterios **IsInstalled**, **Type**, **IsHidden** y **IsAssigned**:  
   
 **QueryString\="IsInstalled\=0 and Type\=" software "y IsHidden\=0 y IsAssigned\=1"**  
   
 Si especifica un argumento **QueryString** , se usa en lugar de la **cadena** de configuración predeterminada que se configura para el\-de complemento en.  
   
-#### <a name="example-1"></a>Ejemplo 1
+#### <a name="example-1"></a>Ejemplo 1
   
 Para configurar un argumento **QueryString** que instale una actualización concreta como identificada por el identificador *f6ce46c1\-971c\-43f9\-a2aa\-783df125f003*:  
   
@@ -135,7 +135,7 @@ Para configurar un argumento **QueryString** que instale una actualización conc
 >   
 > **QueryString\="UpdateID\=' ' f6ce46c1\-971C\-43f9\-a2aa\-783df125f003 ' ' y IsInstalled\=0"**  
   
-#### <a name="example-2"></a>Ejemplo 2
+#### <a name="example-2"></a>Ejemplo 2
   
 Para configurar un argumento **QueryString** que solo instale controladores:  
   
@@ -143,7 +143,7 @@ Para configurar un argumento **QueryString** que solo instale controladores:
   
 Para obtener más información sobre las cadenas de consulta para el\-de plug-in predeterminado en, **Microsoft. WindowsUpdatePlugin**, los criterios de búsqueda \(como **IsInstalled**\)y la sintaxis que puede incluir en las cadenas de consulta, consulte la sección sobre los criterios de búsqueda en la referencia de la [API del agente de Windows Update (WUA)](https://go.microsoft.com/fwlink/p/?LinkId=223304).  
   
-## <a name="BKMK_HFP"></a>Usar Microsoft. HotfixPlugin  
+## <a name="use-the-microsofthotfixplugin"></a><a name="BKMK_HFP"></a>Usar Microsoft. HotfixPlugin  
 La\-de conexión de **Microsoft. HotfixPlugin** se puede usar para aplicar versiones de distribución limitada de Microsoft \(LDR\) actualizaciones \(también denominadas revisiones y anteriormente llamadas QFE\) que se descargan de forma independiente para solucionar problemas de software de Microsoft específicos. El complemento instala las actualizaciones desde una carpeta raíz en un recurso compartido de archivos SMB y también se puede personalizar para aplicar actualizaciones de controladores, firmware y BIOS que no sean de\-Microsoft.
 
 > [!NOTE]
@@ -153,8 +153,8 @@ La\-de conexión de **Microsoft. HotfixPlugin** se puede usar para aplicar versi
 
 - El clúster de conmutación por error y el equipo coordinador de actualizaciones remotas \(si se usan\) deben cumplir los requisitos de CAU y la configuración necesaria para la administración remota enumerada en [requisitos y prácticas recomendadas para Cau](cluster-aware-updating-requirements.md).
 - Consulta [Recomendaciones para usar Microsoft.HotfixPlugin](cluster-aware-updating-requirements.md#BKMK_BP_HF).
-- Para obtener los mejores resultados, se recomienda ejecutar la Analizador de procedimientos recomendados de CAU \(modelo de\) BPA para asegurarse de que el clúster y el entorno de actualización estén configurados correctamente para aplicar actualizaciones mediante CAU. Para obtener más información, consulte [Test CAU updating readiness](cluster-aware-updating-requirements.md#BKMK_BPA).
-- Obtenga las actualizaciones del publicador y cópielos o extráigalos en un bloque de mensajes del servidor \(SMB\) recurso compartido de archivos \(la carpeta raíz de revisiones\) que admita al menos SMB 2,0 y que sea accesible para todos los nodos del clúster y el equipo coordinador de actualizaciones remotas \(si se usa la CAU en el modo de actualización de\-remoto\). Para obtener más información, consulte [Configurar una estructura de carpetas raíz de revisiones](#BKMK_HF_ROOT) más adelante en este tema. 
+- Para obtener los mejores resultados, se recomienda ejecutar la Analizador de procedimientos recomendados de CAU \(modelo de\) BPA para asegurarse de que el clúster y el entorno de actualización estén configurados correctamente para aplicar actualizaciones mediante CAU. Para obtener más información, consulta [Probar la preparación para la actualización de CAU](cluster-aware-updating-requirements.md#BKMK_BPA).
+- Obtenga las actualizaciones del publicador y cópielos o extráigalos en un bloque de mensajes del servidor \(SMB\) recurso compartido de archivos \(la carpeta raíz de revisiones\) que admita al menos SMB 2,0 y que sea accesible para todos los nodos del clúster y el equipo coordinador de actualizaciones remotas \(si se usa la CAU en el modo de actualización de\-remoto\). Para obtener más información, consulta [Configurar una estructura de carpetas raíz de revisiones](#BKMK_HF_ROOT) más adelante en este tema. 
 
     > [!NOTE]
     > De forma predeterminada, esta\-de conexión solo instala revisiones con las siguientes extensiones de nombre de archivo:. msu,. msi y. msp.
@@ -162,33 +162,33 @@ La\-de conexión de **Microsoft. HotfixPlugin** se puede usar para aplicar versi
 - Copie el archivo DefaultHotfixConfig. XML \(que se proporciona en la carpeta **% systemroot%\\System32\\WindowsPowerShell\\v 1.0\\módulos\\ClusterAwareUpdating** de un equipo en el que se instalan las herramientas de Cau\) en la carpeta raíz de revisiones que creó y en la que extrajo las revisiones. Por ejemplo, copie el archivo de configuración en *\\\\de las revisiones\\\\de\\raíz* . 
 
     > [!NOTE]
-    > Para instalar la mayoría de revisiones proporcionadas por Microsoft y otras actualizaciones, se puede usar el archivo de configuración de revisiones predeterminado sin modificaciones. Si tu escenario lo requiere, puedes personalizar el archivo de configuración como tarea avanzada. El archivo de configuración puede incluir reglas personalizadas, por ejemplo, para manipular archivos de revisión que tienen extensiones de archivo específicas o para definir los comportamientos de condiciones de salida específicas. Para obtener más información, consulte [Personalizar el archivo de configuración de revisiones](#BKMK_CONFIG_FILE) más adelante en este tema.
+    > Para instalar la mayoría de revisiones proporcionadas por Microsoft y otras actualizaciones, se puede usar el archivo de configuración de revisiones predeterminado sin modificaciones. Si tu escenario lo requiere, puedes personalizar el archivo de configuración como tarea avanzada. El archivo de configuración puede incluir reglas personalizadas, por ejemplo, para manipular archivos de revisión que tienen extensiones de archivo específicas o para definir los comportamientos de condiciones de salida específicas. Para obtener más información, consulta [Personalizar el archivo de configuración de revisiones](#BKMK_CONFIG_FILE) más adelante en este tema.
 
 ### <a name="configuration"></a>Configuración
 
 Configura las siguientes opciones. Para obtener más información, consulta los vínculos a las secciones más adelante en este tema.
-- La ruta de acceso a la carpeta raíz de revisiones compartida que contiene las actualizaciones que se aplicarán y el archivo de configuración de revisiones. Puede escribir esta ruta de acceso en la interfaz de usuario de CAU o configurar la **ruta de acceso de HotfixRootFolderPath\=\<** PowerShell\-en el argumento. 
+- La ruta de acceso a la carpeta raíz de revisiones compartida que contiene las actualizaciones que se aplicarán y el archivo de configuración de revisiones. Puede escribir esta ruta de acceso en la interfaz de usuario de CAU o configurar la **ruta de acceso de HotfixRootFolderPath\=\<>** PowerShell\-en el argumento. 
 
    > [!NOTE]
    > Puede especificar la carpeta raíz de revisiones como una ruta de carpeta local o como una ruta de acceso UNC con el formato *\\\\nombreservidor\\recurso compartido\\RootFolderName*. Se puede usar una ruta de acceso de espacio de nombres DFS independiente o basada en\-de dominio. Sin embargo, el\-de conexión de las características que comprueban los permisos de acceso en el archivo de configuración de revisiones son incompatibles con una ruta de acceso de espacio de nombres DFS, por lo que si configura uno, debe deshabilitar la comprobación de los permisos de acceso mediante la interfaz de usuario de CAU o configurando el\-de **DisableAclChecks\=' true '** en el argumento.
-- Configuración del servidor que hospeda la carpeta raíz de revisiones para comprobar los permisos adecuados para tener acceso a la carpeta y garantizar la integridad de los datos a los que se tiene acceso desde la carpeta compartida SMB \(la firma SMB o el cifrado SMB\). Para obtener más información, consulte [Restringir el acceso a la carpeta raíz de revisiones](#BKMK_ACL).
+- Configuración del servidor que hospeda la carpeta raíz de revisiones para comprobar los permisos adecuados para tener acceso a la carpeta y garantizar la integridad de los datos a los que se tiene acceso desde la carpeta compartida SMB \(la firma SMB o el cifrado SMB\). Para obtener más información, consulta [Restringir el acceso a la carpeta raíz de revisiones](#BKMK_ACL).
 
 ### <a name="additional-options"></a>Opciones adicionales
 
 - Opcionalmente, configure la\-de complementos en para que se aplique el cifrado SMB al tener acceso a los datos del recurso compartido de archivos de la revisión. En la interfaz de usuario de CAU, en la página **opciones adicionales** , seleccione la opción **requerir cifrado SMB al tener acceso a la carpeta raíz de revisiones** o configure el\-de **RequireSMBEncryption\=' true '** de PowerShell en el argumento. 
   > [!IMPORTANT]
-  > Debes realizar pasos de configuración adicionales en el servidor SMB para habilitar la integridad de datos SMB con la firma o el cifrado SMB. Para más información, consulte el paso 4 en [Restringir el acceso a la carpeta raíz de revisiones](#BKMK_ACL). Si seleccionas la opción para exigir el uso del cifrado SMB y la carpeta raíz de revisiones no está configurada para el acceso mediante el cifrado SMB, la ejecución de actualización generará un error.
+  > Debes realizar pasos de configuración adicionales en el servidor SMB para habilitar la integridad de datos SMB con la firma o el cifrado SMB. Para obtener más información, consulta el paso 4 de [Restringir el acceso a la carpeta raíz de revisiones](#BKMK_ACL). Si seleccionas la opción para exigir el uso del cifrado SMB y la carpeta raíz de revisiones no está configurada para el acceso mediante el cifrado SMB, la ejecución de actualización generará un error.
 - Si lo deseas, puedes deshabilitar las comprobaciones predeterminadas de permisos suficientes para la carpeta raíz de revisiones y el archivo de configuración de revisiones. En la interfaz de usuario de CAU, seleccione **deshabilitar comprobar el acceso de administrador a la carpeta raíz de revisiones y el archivo de configuración**, o configure el\-**DisableAclChecks\=' true '** en el argumento.
 - Opcionalmente, configure el argumento **argumento hotfixinstallertimeoutminutes\=<Integer>** para especificar cuánto tiempo espera el complemento de la revisión\-en esperar a que el proceso del instalador de revisiones devuelva. \(el valor predeterminado es 30 minutos.\) por ejemplo, para especificar un período de tiempo de espera de dos horas, establezca **argumento hotfixinstallertimeoutminutes\=120**.
 - Opcionalmente, configure el **\= HotfixConfigFileName <name>** \-en el argumento para especificar un nombre para el archivo de configuración de revisiones que se encuentra en la carpeta raíz de revisiones. Si no se especifica, se usa el nombre predeterminado DefaultHotfixConfig.xml.
   
-### <a name="BKMK_HF_ROOT"></a>Configurar una estructura de carpetas raíz de revisiones
+### <a name="configure-a-hotfix-root-folder-structure"></a><a name="BKMK_HF_ROOT"></a>Configurar una estructura de carpetas raíz de revisiones
 
 Para que el complemento de revisiones\-de funcione, las revisiones deben almacenarse en una estructura bien\-definida en un recurso compartido de archivos SMB \(carpeta raíz de revisiones\), y debe configurar el\-de la revisión en con la ruta de acceso a la carpeta raíz de revisiones mediante la interfaz de usuario de CAU o los cmdlets de PowerShell de CAU. Esta ruta de acceso se pasa al\-de plug-in como el argumento **HotfixRootFolderPath** . Puedes elegir una de varias estructuras para la carpeta raíz de revisiones, en función de las necesidades de actualización, como se muestra en los siguientes ejemplos. Los archivos o carpetas que no siguen la estructura se ignoran.  
   
 #### <a name="example-1---folder-structure-used-to-apply-hotfixes-to-all-cluster-nodes"></a>Ejemplo 1: estructura de carpetas usada para aplicar revisiones a todos los nodos del clúster
   
-Para especificar que las revisiones se apliquen a todos los nodos del clúster, cópielos en una carpeta denominada **CAUHotfix\_** en la carpeta raíz de revisiones. En este ejemplo, el\-de **HotfixRootFolderPath** de complemento en el argumento se establece en *\\\\de la\\revisiones\\raíz* . La **CAUHotfix\_toda** la carpeta contiene tres actualizaciones con las extensiones. msu,. msi y. MSP que se aplicarán a todos los nodos del clúster. Los nombres de los archivos de actualización solo tienen fines ilustrativos.  
+Para especificar que las revisiones se apliquen a todos los nodos del clúster, cópielos en una carpeta denominada **CAUHotfix\_** en la carpeta raíz de revisiones. En este ejemplo, el\-de **HotfixRootFolderPath** de complemento en el argumento se establece en *\\\\de la\\revisiones\\raíz* .\\ La **CAUHotfix\_toda** la carpeta contiene tres actualizaciones con las extensiones. msu,. msi y. MSP que se aplicarán a todos los nodos del clúster. Los nombres de los archivos de actualización solo tienen fines ilustrativos.  
   
 > [!NOTE]  
 > En este y los ejemplos siguientes, el archivo de configuración de revisiones con su nombre predeterminado DefaultHotfixConfig.xml se muestra en su ubicación requerida en la carpeta raíz de revisiones.  
@@ -205,7 +205,7 @@ Para especificar que las revisiones se apliquen a todos los nodos del clúster, 
   
 #### <a name="example-2---folder-structure-used-to-apply-certain-updates-only-to-a-specific-node"></a>Ejemplo 2: estructura de carpetas usada para aplicar ciertas actualizaciones solo a un nodo específico
   
-Para especificar revisiones que se aplican solo a un nodo específico, usa una subcarpeta de la carpeta raíz de revisiones con el nombre del nodo. Usa el nombre NetBIOS del nodo del clúster, por ejemplo, *ContosoNode1*. A continuación, mueve las actualizaciones que solo se aplican a este nodo a esta subcarpeta. En el ejemplo siguiente, el\-de **HotfixRootFolderPath** de complemento en el argumento se establece en *\\\\de la\\revisiones\\raíz* . Las actualizaciones del **CAUHotfix\_todas** las carpetas se aplicarán a todos los nodos del clúster y el *nodo1\_específico\_Update. msu* solo se aplicará a *ContosoNode1*.  
+Para especificar revisiones que se aplican solo a un nodo específico, usa una subcarpeta de la carpeta raíz de revisiones con el nombre del nodo. Usa el nombre NetBIOS del nodo del clúster, por ejemplo, *ContosoNode1*. A continuación, mueve las actualizaciones que solo se aplican a este nodo a esta subcarpeta. En el ejemplo siguiente, el\-de **HotfixRootFolderPath** de complemento en el argumento se establece en *\\\\de la\\revisiones\\raíz* .\\ Las actualizaciones del **CAUHotfix\_todas** las carpetas se aplicarán a todos los nodos del clúster y el *nodo1\_específico\_Update. msu* solo se aplicará a *ContosoNode1*.  
   
 ```
 \\MyFileServer\Hotfixes\Root\   
@@ -224,7 +224,7 @@ Para especificar revisiones que se aplican solo a un nodo específico, usa una s
   
 De manera predeterminada, **Microsoft.HotfixPlugin** solo aplica actualizaciones con las extensiones .msu, .msi o .msp. No obstante, ciertas actualizaciones podrían tener extensiones diferentes y requerir comandos de instalación distintos. Por ejemplo, es posible que tengas que aplicar una actualización de firmware con la extensión .exe a un nodo del clúster. Puede configurar la carpeta raíz de revisiones con una subcarpeta que indique que se debe instalar un tipo de actualización específico no\-predeterminado. También debes configurar una regla de instalación de carpeta correspondiente que especifique el comando de instalación en el elemento `<FolderRules>` del archivo XML de configuración de revisiones.  
   
-En el ejemplo siguiente, el\-de **HotfixRootFolderPath** de complemento en el argumento se establece en *\\\\de la\\revisiones\\raíz* . Se aplicarán varias actualizaciones a todos los nodos del clúster y se aplicará una actualización de firmware *SpecialHotfix1.exe* a *ContosoNode1* mediante *FolderRule1*. Para obtener información sobre la configuración de *FolderRule1* en el archivo de configuración de revisiones, consulte [Personalizar el archivo de configuración de revisiones](#BKMK_CONFIG_FILE) más adelante en este tema.  
+En el ejemplo siguiente, el\-de **HotfixRootFolderPath** de complemento en el argumento se establece en *\\\\de la\\revisiones\\raíz* .\\ Se aplicarán varias actualizaciones a todos los nodos del clúster y se aplicará una actualización de firmware *SpecialHotfix1.exe* a *ContosoNode1* mediante *FolderRule1*. Para obtener información sobre la configuración de *FolderRule1* en el archivo de configuración de revisiones, consulta [Personalizar el archivo de configuración de revisiones](#BKMK_CONFIG_FILE) más adelante en este tema.  
   
 ```
 \\MyFileServer\Hotfixes\Root\   
@@ -241,7 +241,7 @@ En el ejemplo siguiente, el\-de **HotfixRootFolderPath** de complemento en el ar
       ...  
 ```
 
-### <a name="BKMK_CONFIG_FILE"></a>Personalizar el archivo de configuración de revisiones  
+### <a name="customize-the-hotfix-configuration-file"></a><a name="BKMK_CONFIG_FILE"></a>Personalizar el archivo de configuración de revisiones  
 El archivo de configuración de revisiones controla cómo **Microsoft.HotfixPlugin** instala tipos de archivo de revisión específicos en un clúster de conmutación por error. El esquema XML para el archivo de configuración se define en HotfixConfigSchema.xsd, que está ubicado en la siguiente carpeta en un equipo con las herramientas CAU instaladas:  
   
 **% SystemRoot%\\system32\\WindowsPowerShell\\v 1.0\\módulos\\carpeta ClusterAwareUpdating**  
@@ -255,7 +255,7 @@ De manera predeterminada, el archivo XML de configuración de revisiones define 
   
 -   Archivos de revisión con extensiones que el\-de plug-in puede instalar de forma predeterminada \(archivos. msu,. msi y. MSP\).  
   
-    Se definen como elementos `<ExtensionRules>` en el elemento `<DefaultRules>` . Hay un elemento `<Extension>` para cada uno de los tipos de archivo compatibles predeterminados. La estructura XML general es la siguiente:  
+    Se definen como elementos `<ExtensionRules>` en el elemento `<DefaultRules>`. Hay un elemento `<Extension>` para cada uno de los tipos de archivo compatibles predeterminados. La estructura XML general es la siguiente:  
   
     ```xml  
     <DefaultRules>  
@@ -297,8 +297,8 @@ En las tablas siguientes se describen los atributos `<Template>` y los posibles 
   
 |Atributo `<Template>`|Descripción|  
 |--------------------------|---------------|  
-|`path`|La ruta de acceso completa al programa de instalación del tipo de archivo que se define en el atributo `<Extension name>` .<br /><br />Para especificar la ruta de acceso a un archivo de actualización en la estructura de la carpeta raíz de revisiones, use `$update$`.|  
-|`parameters`|Una cadena de parámetros obligatorios y opcionales para el programa que se especifica en `path`.<br /><br />Para especificar un parámetro que sea la ruta de acceso a un archivo de actualización en la estructura de la carpeta raíz de revisiones, use `$update$`.|  
+|`path`|La ruta de acceso completa al programa de instalación del tipo de archivo que se define en el atributo `<Extension name>` .<p>Para especificar la ruta de acceso a un archivo de actualización en la estructura de la carpeta raíz de revisiones, use `$update$`.|  
+|`parameters`|Una cadena de parámetros obligatorios y opcionales para el programa que se especifica en `path`.<p>Para especificar un parámetro que sea la ruta de acceso a un archivo de actualización en la estructura de la carpeta raíz de revisiones, use `$update$`.|  
   
 |Elemento secundario `<ExitConditions>`|Descripción|  
 |---------------------------------|---------------|  
@@ -311,8 +311,8 @@ En las tablas siguientes se describen los atributos `<Template>` y los posibles 
 > [!IMPORTANT]  
 > Los códigos de salida que no se definan de manera explícita en `<ExitConditions>` se interpretan como un error de actualización y el nodo no se reinicia.  
   
-### <a name="BKMK_ACL"></a>Restringir el acceso a la carpeta raíz de revisiones  
-Debe realizar varios pasos para configurar el servidor de archivos y el recurso compartido de archivos SMB para proteger los archivos de la carpeta raíz de revisiones y el archivo de configuración de revisiones para el acceso solo en el contexto de **Microsoft.HotfixPlugin**. Estos pasos habilitan varias características que ayudan a impedir posibles manipulaciones de los archivos de revisión de manera que se pueda poner en peligro el clúster de conmutación por error.  
+### <a name="restrict-access-to-the-hotfix-root-folder"></a><a name="BKMK_ACL"></a>Restringir el acceso a la carpeta raíz de revisiones  
+Debes seguir varios pasos para configurar el servidor de archivos y el recurso compartido de archivos SMB para proteger los archivos de la carpeta raíz de revisiones y el archivo de configuración de revisiones para el acceso solo en el contexto de **Microsoft.HotfixPlugin**. Estos pasos habilitan varias características que ayudan a impedir posibles manipulaciones de los archivos de revisión de manera que se pueda poner en peligro el clúster de conmutación por error.  
   
 Los pasos generales son los siguientes:  
   
@@ -351,11 +351,11 @@ La cuenta que se usa en CAU para comprobar la configuración de seguridad mientr
   
 3.  En el árbol de consola, haga clic con el botón secundario\-en **control WMI \(\)local** y, a continuación, haga clic en **propiedades**.  
   
-4.  Haz clic en **Seguridad**y, a continuación, expande **Raíz**.  
+4.  Haz clic en **Seguridad** y, a continuación, expande **Raíz**.  
   
-5.  Haz clic en **CIMV2**y, a continuación, haz clic en **Seguridad**.  
+5.  Haz clic en **CIMV2** y, a continuación, haz clic en **Seguridad**.  
   
-6.  Agrega la cuenta que se usa para las actualizaciones de ejecución a la lista **Nombres de grupos o usuarios** .  
+6.  Agrega la cuenta que se usa para las actualizaciones de ejecución a la lista **Nombres de grupos o usuarios**.  
   
 7.  Concede los permisos **Ejecutar métodos** y **Llamada remota habilitada** a la cuenta que se usa para las ejecuciones de actualización.  
   
@@ -371,7 +371,7 @@ Si usa la configuración predeterminada del complemento de revisiones\-en, aseg�
   
 -   Solo se permiten ciertas entidades de seguridad \(pero no son necesarias\) tener permiso de escritura o modificación. Las entidades de seguridad permitidas son el grupo Administradores local, SYSTEM, CREATOR OWNER y TrustedInstaller. No se permite a otras cuentas o grupos tener permisos de escritura o modificación en la carpeta raíz de revisiones.  
   
-Opcionalmente, puede deshabilitar las comprobaciones anteriores que realiza el\-de plug-in de forma predeterminada. Puedes hacerlo de dos maneras:  
+Opcionalmente, puede deshabilitar las comprobaciones anteriores que realiza el\-de plug-in de forma predeterminada. Puedes hacerlo de dos maneras distintas:  
   
 -   Si usa los cmdlets de PowerShell de CAU, configure el argumento **DisableAclChecks\=' true '** en el parámetro **CauPluginArguments** para el\-de complemento de la revisión en.  
   
@@ -402,7 +402,7 @@ Opcionalmente, para exigir el uso del cifrado SMB en las conexiones al servidor 
   
 Debe habilitar la **administración remota del servidor de archivos \(SMB\-en\)** regla en el Firewall de Windows en el servidor de archivos SMB. Esta opción está habilitada de forma predeterminada en Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
   
 -   [Información general sobre la actualización compatible con clústeres](cluster-aware-updating.md)
   

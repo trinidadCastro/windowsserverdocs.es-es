@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 49bee3deac463b68fda94097bb183bcbf1c89810
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cadbacb5225e28118ec71e9cbad6b3c57a6086e0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362595"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830068"
 ---
 # <a name="vssadmin-list-shadows"></a>Vssadmin List Shadows
 
@@ -27,12 +27,12 @@ Muestra todas las instantáneas existentes de un volumen especificado. Si usa es
 vssadmin list shadows [/for=<ForVolumeSpec>] [/shadow=<ShadowID>]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---|---|
-|/for = \<ForVolumeSpec >|Especifica en qué volumen se mostrarán las instantáneas.|
-|/Shadow = \<ShadowID >|Muestra la instantánea especificada por ShadowID. Para obtener el identificador de la instantánea, use el comando **vssadmin List Shadows** . Cuando escriba un identificador de instantánea, use el formato siguiente, donde cada *X* representa un carácter hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
+|/for =\<ParaVolumenEspec >|Especifica en qué volumen se mostrarán las instantáneas.|
+|/Shadow =\<ShadowID >|Muestra la instantánea especificada por ShadowID. Para obtener el identificador de la instantánea, use el comando **vssadmin List Shadows** . Cuando escriba un identificador de instantánea, use el formato siguiente, donde cada *X* representa un carácter hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
 
 ## <a name="additional-references"></a>Referencias adicionales
 

@@ -3,17 +3,17 @@ ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
 title: Solución de problemas de las actualizaciones de firmware de unidad
 ms.prod: windows-server
 ms.author: toklima
-ms.manager: masriniv
+manager: masriniv
 ms.technology: storage
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: 9c9c1083def53e09b063a0ca9879e4d4527e98c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b62fdfe64ea579f61239dc582c639fb10ec1371c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365887"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820888"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>Solución de problemas de las actualizaciones de firmware de unidad
 
@@ -41,7 +41,7 @@ Desde el punto de vista de la arquitectura, esta nueva funcionalidad depende de 
 Las siguientes secciones proporcionan información sobre solución de problemas, dependiendo de si se usan controladores de Microsoft o de terceros.
 
 ## <a name="identifying-inappropriate-hardware"></a>Identificación del hardware inapropiado
-La forma más rápida de identificar si un dispositivo admite el conjunto de comandos correcto es simplemente iniciar PowerShell y pasar un objeto PhysicalDisk que represente al disco en el cmdlet Get-StorageFirmwareInfo. A continuación, se muestra un ejemplo:
+La forma más rápida de identificar si un dispositivo admite el conjunto de comandos correcto es simplemente iniciar PowerShell y pasar un objeto PhysicalDisk que represente al disco en el cmdlet Get-StorageFirmwareInfo. He aquí un ejemplo:
 
 ```powershell
 Get-PhysicalDisk -SerialNumber 15140F55976D | Get-StorageFirmwareInformation
@@ -142,7 +142,7 @@ Los registros de diagnóstico no se muestran de forma predeterminada; si quieres
 
 Para recopilar estas entradas del registro avanzadas, habilita el registro, reproduce el error de actualización del firmware y guarda el registro de diagnóstico.
 
-Este es un ejemplo de una actualización de firmware en un dispositivo SATA que no se puede realizar porque la imagen que se va a descargar no era válida (ID. de evento: 258):
+Este es un ejemplo de una actualización del firmware en un dispositivo SATA que sufre errores porque la imagen que se ha de descargar no era válida (identificador de evento: 258):
 
 ``` 
 EventData
@@ -174,11 +174,11 @@ Parameter8Value 0
 ```
 
 El evento anterior contiene información detallada del dispositivo en los valores de parámetro del 2 al 6. Aquí podemos observar distintos valores de registro de ATA. La especificación ATA ACS puede usarse para descodificar los siguientes de valores correspondientes a errores de un comando Download Microcode:
-- Código de retorno: 0 (0000 0000) (N/A-no tiene sentido porque no se transfirió ninguna carga)
-- Características: 15 (0000 1111) (bit 1 se establece en ' 1 ' e indica "Abort")
+- Código de retorno: 0 (0000 0000) (N/A: no significa nada, ya que no se ha transferido ninguna carga)
+- Características: 15 (0000 1111) (bit 1 se establece en ' 1 ' e indica "anular")
 - SectorCount: 0 (0000 0000) (N/A)
-- DriveHead: 160 (1010 0000) (N/A: solo se establecen los bits obsoletos)
-- Command 146 (1001 0010) (bit 1 está establecido en "1" que indica la disponibilidad de los datos de detección)
+- DriveHead: 160 (1010 0000) (N/A: solo se establecen bits obsoletos)
+- Comando: 146 (1001 0010) (bit 1 está establecido en "1" que indica la disponibilidad de los datos de detección)
 
 Esto nos indica que el dispositivo ha cancelado la operación de actualización del firmware.
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: a91339ef-6ad4-445f-8ecc-a95fbcc04296
 title: Planeación y diseño de AD DS
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5267561e4a3d19514d9105f21122db73f85bffb9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fa596fd3897c9fd2cc368e4c5ef164d05bfc4c20
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409024"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822908"
 ---
 # <a name="ad-ds-design-and-planning"></a>Planeación y diseño de AD DS
 
@@ -48,4 +47,4 @@ Para obtener más información acerca de cómo probar el proceso de implementaci
   
 [Evaluación de ejemplos de estrategia de implementación de AD DS](Evaluating-AD-DS-Deployment-Strategy-Examples.md)  
   
-[Apéndice A: Revisión de términos clave de AD DS](Appendix-A--Reviewing-Key-AD-DS-Terms.md)  
+[Apéndice A: revisar los términos de la clave AD DS](Appendix-A--Reviewing-Key-AD-DS-Terms.md)  

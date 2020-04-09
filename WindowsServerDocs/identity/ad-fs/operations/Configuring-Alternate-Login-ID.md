@@ -1,7 +1,6 @@
 ---
 ms.assetid: f0cbdd78-f5ae-47ff-b5d3-96faf4940f4a
 title: Configuración de identificador de inicio de sesión alternativo
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 026873e231628e93738cba096cfae44c8b053217
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 7e7a881a2e6bae499ed7d4713bd70a804c3412e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948549"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816968"
 ---
 # <a name="configuring-alternate-login-id"></a>Configuración de identificador de inicio de sesión alternativo
 
@@ -36,7 +35,7 @@ Una organización puede tener que usar un identificador alternativo en los escen
    En los escenarios mencionados anteriormente, el identificador alternativo con AD FS permite a los usuarios iniciar sesión en Azure AD sin modificar los UPN locales. 
 
 ## <a name="end-user-experience-with-alternate-login-id"></a>Experiencia del usuario final con ID. de inicio de sesión alternativo
-La experiencia del usuario final varía en función del método de autenticación usado con el identificador de inicio de sesión alternativo.  Actualmente existen tres maneras diferentes en las que se puede lograr el uso del identificador de inicio de sesión alternativo.  Estos son:
+La experiencia del usuario final varía en función del método de autenticación usado con el identificador de inicio de sesión alternativo.  Actualmente existen tres maneras diferentes en las que se puede lograr el uso del identificador de inicio de sesión alternativo.  Son:
 
 - **Autenticación normal (heredada)** : usa el protocolo de autenticación básica.
 - **Autenticación moderna** : proporciona inicio de sesión basado en biblioteca de autenticación de Active Directory (Adal) a las aplicaciones. Esto permite características de inicio de sesión como Multi-Factor Authentication (MFA), proveedores de identidades de terceros basados en SAML con aplicaciones cliente de Office, tarjetas inteligentes y autenticación basada en certificados.
@@ -135,11 +134,11 @@ La versión 1709 y posteriores de Windows han actualizado la lógica de autentic
 ##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>Paso 3. Configurar el registro para los usuarios afectados mediante la Directiva de grupo
 Las aplicaciones de Office se basan en la información insertada por el administrador de directorios para identificar el entorno de identificador alternativo. Las siguientes claves del registro deben configurarse para ayudar a las aplicaciones de Office a autenticar al usuario con el identificador alternativo sin mostrar ningún mensaje adicional.
 
-|RegKey que se va a agregar|Nombre, tipo y valor de datos RegKey|Windows 7/8|10 de Windows|Descripción|
+|RegKey que se va a agregar|Nombre, tipo y valor de datos RegKey|Windows 7/8|Windows 10|Descripción|
 |-----|-----|-----|-----|-----|
-|HKEY_CURRENT_USER \Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|Necesario|Necesario|El valor de esta RegKey es un nombre de dominio personalizado comprobado en el inquilino de la organización. Por ejemplo, Contoso Corp puede proporcionar un valor de Contoso.com en esta RegKey si Contoso.com es uno de los nombres de dominio personalizados comprobados en el inquilino Contoso.onmicrosoft.com.|
+|HKEY_CURRENT_USER \Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|Obligatorio|Obligatorio|El valor de esta RegKey es un nombre de dominio personalizado comprobado en el inquilino de la organización. Por ejemplo, Contoso Corp puede proporcionar un valor de Contoso.com en esta RegKey si Contoso.com es uno de los nombres de dominio personalizados comprobados en el inquilino Contoso.onmicrosoft.com.|
 HKEY_CURRENT_USER \Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Necesario para Outlook 2016 ProPlus|Necesario para Outlook 2016 ProPlus|El valor de esta RegKey puede ser 1/0 para indicar a la aplicación de Outlook si debe interactuar con la lógica de autenticación alternativa mejorada.|
-HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|Necesario|Necesario|Esta clave de instalación se puede usar para establecer el STS como una zona de confianza en la configuración de Internet. La implementación de ADFS estándar recomienda agregar el espacio de nombres de ADFS a la zona de Intranet local para Internet Explorer|
+HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|Obligatorio|Obligatorio|Esta clave de instalación se puede usar para establecer el STS como una zona de confianza en la configuración de Internet. La implementación de ADFS estándar recomienda agregar el espacio de nombres de ADFS a la zona de Intranet local para Internet Explorer|
 
 ## <a name="new-authentication-flow-after-additional-configuration"></a>Nuevo flujo de autenticación después de la configuración adicional
 
@@ -156,7 +155,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 ### <a name="non-exchange-and-skype-for-business-clients"></a>Clientes que no son de Exchange y Skype empresarial
 
-|Cliente|Declaración de compatibilidad|Comentarios|
+|Cliente|Instrucción de soporte técnico|Comentarios|
 | ----- | -----|-----|
 |Microsoft Teams|Se admite|<li>Microsoft Teams admite AD FS (SAML-P, WS-FED, WS-Trust y OAuth) y la autenticación moderna.</li><li> Los principales equipos de Microsoft, como las funcionalidades de canales, chats y archivos, funcionan con un identificador de inicio de sesión alternativo.</li><li>el cliente debe investigar por separado la primera y las aplicaciones de terceros. Esto se debe a que cada aplicación tiene sus propios protocolos de autenticación.</li>|     
 |OneDrive para la Empresa|Compatible: se recomienda la clave del registro del lado cliente |Con el identificador alternativo configurado, verá que el UPN local se rellena previamente en el campo de comprobación. Esto debe cambiarse a la identidad alternativa que se está usando. Se recomienda usar la clave del registro del lado cliente que se indica en este artículo: Office 2013 y Lync 2013 solicitan periódicamente las credenciales a SharePoint Online, OneDrive y Lync Online.|
@@ -185,7 +184,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 -   Cuando está habilitada, la característica de identificador de inicio de sesión alternativo solo está disponible para la autenticación de nombre de usuario y contraseña en todos los protocolos de autenticación de nombre de usuario y contraseña admitidos por AD FS (SAML-P, WS-FED, WS-Trust y OAuth).
 
 
--   Cuando se realiza la autenticación integrada de Windows (WIA) (por ejemplo, cuando los usuarios intentan obtener acceso a una aplicación corporativa en un equipo unido a un dominio desde la intranet y AD FS administrador ha configurado la Directiva de autenticación para usar WIA para intranet), UPN isused para la autenticación. Si ha configurado alguna regla de notificaciones para los usuarios de confianza para la característica de identificador de inicio de sesión alternativo, debe asegurarse de que esas reglas siguen siendo válidas en el caso de WIA.
+-   Cuando se realiza la autenticación integrada de Windows (WIA) (por ejemplo, cuando los usuarios intentan obtener acceso a una aplicación corporativa en un equipo unido a un dominio desde la intranet y AD FS administrador ha configurado la Directiva de autenticación para usar WIA para intranet), UPN Isused para la autenticación. Si ha configurado alguna regla de notificaciones para los usuarios de confianza para la característica de identificador de inicio de sesión alternativo, debe asegurarse de que esas reglas siguen siendo válidas en el caso de WIA.
 
 -   Cuando está habilitada, la característica de identificador de inicio de sesión alternativo requiere que al menos un servidor de catálogo global sea accesible desde el servidor de AD FS para cada bosque de cuenta de usuario que AD FS admita. Si no se alcanza un servidor de catálogo global en el bosque de cuentas de usuario, AD FS se revierte al uso de UPN. De forma predeterminada, todos los controladores de dominio son servidores de catálogo global.
 
@@ -212,7 +211,7 @@ A continuación se muestran varios casos de error y el impacto correspondiente e
 
 
 
-|                       **Casos de error**                        | **Impacto en la experiencia de inicio de sesión** |                                                              **Event**                                                              |
+|                       **Casos de error**                        | **Impacto en la experiencia de inicio de sesión** |                                                              **Ceso**                                                              |
 |--------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | No se puede obtener un valor para SAMAccountName para el objeto de usuario |          Error de inicio de sesión           |                  ID. de evento 364 con el mensaje de excepción MSIS8012: no se puede encontrar samAccountName para el usuario: '{0}'.                   |
 |        No se puede obtener acceso al atributo CanonicalName         |          Error de inicio de sesión           |               ID. de evento 364 con el mensaje de excepción MSIS8013: CanonicalName: '{0}' del usuario: '{1}' tiene un formato incorrecto.                |

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 1a6740e6-5b6d-41f8-9ec4-32cdbee3e1bb
 title: Configurar la resolución de nombres para un servidor proxy de federación de una zona DNS que da servicio tanto a la red perimetral como a los clientes de Internet
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 118c03ada32d3cd5b198ecd238078984a38df0db
-ms.sourcegitcommit: 8fbd2d877612a9feb02d7d91ed0372d7cd441d5c
+ms.openlocfilehash: 487ba9d90043ada0d401d7e5a9d02872e1872b7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71359834"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854938"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-both-the-perimeter-network-and-internet-clients"></a>Configurar la resolución de nombres para un servidor proxy de federación de una zona DNS que da servicio tanto a la red perimetral como a los clientes de Internet
 
@@ -52,7 +51,7 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 Para que el servidor proxy de Federación pueda procesar correctamente las solicitudes de cliente de Internet y llegar al servidor de Federación después de que las resuelva la zona DNS de Internet, debe crear un host \(un\) registro de recursos en la zona DNS perimetral. Este registro de recursos resuelve el nombre de host del servidor de Federación de la cuenta \(por ejemplo, FS. fabrikam.com\) a la dirección IP del servidor de Federación de cuenta \(por ejemplo,\) 192.168.1.4 en la red corporativa.  
   
 > [!NOTE]  
-> Se supone que usa un servidor DNS que ejecuta Windows 2000 Server, Windows Server 2003, Windows Server 2008 o Windows Server® 2012 con el servicio servidor DNS para controlar la zona DNS perimetral.  
+> Se supone que usa un servidor DNS que ejecuta Windows 2000 Server, Windows Server 2003, Windows Server 2008 o Windows Server&reg; 2012 con el servicio servidor DNS para controlar la zona DNS perimetral.  
   
 La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesario para completar este procedimiento.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
@@ -62,7 +61,7 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
   
 2.  En el árbol de consola, haga clic con el botón secundario\-en la zona de búsqueda directa aplicable y, a continuación, haga clic en **nuevo Host \(a o AAAA\)** .  
   
-3.  En **nombre**, escriba solo el nombre de equipo del servidor de Federación. Por ejemplo, para el FQDN fs.fabrikam.com, escriba **fs**.  
+3.  En **nombre**, escriba solo el nombre de equipo del servidor de Federación. Por ejemplo, para el FQDN fs.fabrikam.com, escribe **fs**.  
   
 4.  En el cuadro de texto **dirección IP** , escriba la dirección IP del servidor de Federación en la red corporativa, por ejemplo, 192.168.1.4.  
   

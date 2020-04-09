@@ -1,24 +1,20 @@
 ---
 title: goto
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e0de1458-1f78-48ff-a746-c285a945a510
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1caf3da3e8b873150af5be7ed8316cfcb526db83
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 928a9031a7f86261789676257afe95ffc3be8a99
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375693"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842568"
 ---
 # <a name="goto"></a>goto
 
@@ -34,14 +30,14 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 goto <Label> 
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
 |\<etiqueta >|Especifica una cadena de texto que se utiliza como etiqueta en el programa por lotes.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Trabajar con extensiones de comandos
 
@@ -62,7 +58,7 @@ goto <Label>
 
     Puede usar **goto** con otros comandos para realizar operaciones condicionales. Para obtener más información sobre el uso de **goto** para las operaciones condicionales, vea la referencia del comando [If](if.md) .
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 El siguiente programa por lotes da formato a un disco de la unidad A como un disco del sistema. Si la operación se realiza correctamente, el comando **goto** dirige el procesamiento a la etiqueta **: end** :
 ```
@@ -74,9 +70,9 @@ echo An error occurred during formatting.
 echo End of batch program. 
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
 [Cmd](cmd.md)
 

@@ -1,24 +1,20 @@
 ---
 title: nslookup
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 41516932-7833-434a-aa92-b4cf0f9a7ef7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b47592be57d5999ac26465097490da266bd0aea
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 15062d81992ee1b6e55d47cb9e49822350e4f2bc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372701"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838098"
 ---
 # <a name="nslookup"></a>nslookup
 
@@ -57,7 +53,7 @@ nslookup /set [no]vc
 nslookup /view <FileName>
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |                       Parámetro                       |                                                                                                         Descripción                                                                                                         |
 |-------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -97,7 +93,7 @@ nslookup /view <FileName>
   Si necesita buscar más de un fragmento de datos, puede usar el modo interactivo. Escriba un guión (-) para el primer parámetro y el nombre o la dirección IP de un servidor de nombres DNS para el segundo parámetro. O bien, omita ambos parámetros y **nslookup** usará el servidor de nombres DNS predeterminado. A continuación se muestran algunas sugerencias sobre cómo trabajar en modo interactivo:
   -   Para interrumpir los comandos interactivos en cualquier momento, presione CTRL + B.
   -   Para salir, escriba **Exit**.
-  -   Para tratar un comando integrado como un nombre de equipo, debe ir precedido por el carácter de\\escape ().
+  -   Para tratar un comando integrado como un nombre de equipo, debe ir precedido del carácter de escape (\\).
   -   Un comando desconocido se interpreta como un nombre de equipo.
 - Si se produce un error en la solicitud de búsqueda, **nslookup** imprime un mensaje de error. En la tabla siguiente se enumeran los posibles mensajes de error.
   |**Mensaje de error**|**Descripción**|
@@ -106,7 +102,7 @@ nslookup /view <FileName>
   |`No response from server`|No se está ejecutando ningún servidor de nombres DNS en el equipo servidor.|
   |`No records`|El servidor de nombres DNS no tiene registros de recursos del tipo de consulta actual para el equipo, aunque el nombre del equipo es válido. El tipo de consulta se especifica con el comando **set QueryType** .|
   |`Nonexistent domain`|El nombre del equipo o dominio DNS no existe.|
-  |`Connection refused`<br /><br />-o bien-<br /><br />`Network is unreachable`|No se pudo establecer la conexión con el servidor de nombres DNS o el servidor Finger. Este error suele producirse con solicitudes **LS** y **Finger** .|
+  |`Connection refused`<p>O bien,<p>`Network is unreachable`|No se pudo establecer la conexión con el servidor de nombres DNS o el servidor Finger. Este error suele producirse con solicitudes **LS** y **Finger** .|
   |`Server failure`|El servidor de nombres DNS encontró una incoherencia interna en su base de datos y no pudo devolver una respuesta válida.|
   |`Refused`|El servidor de nombres DNS rechazó el servicio de la solicitud.|
   |`format error`|El servidor de nombres DNS detectó que el paquete de solicitud no tenía el formato correcto. Puede indicar un error en **nslookup**.|
@@ -116,5 +112,5 @@ nslookup /view <FileName>
   - Larson, M. y C. Liu. 2001. *DNS en Windows 2000*. Sebastopol, California: O'Reilly y Associates, Inc.
     #### <a name="examples"></a>Ejemplos
     Cada opción de línea de comandos está formada por un guión (-) seguido inmediatamente del nombre del comando y, en algunos casos, un signo igual (=) y, a continuación, un valor. Por ejemplo, para cambiar el tipo de consulta predeterminado a información de host (equipo) y el tiempo de espera inicial a 10 segundos, escriba: **nslookup-QueryType = HINFO-timeout = 10**
-    ## <a name="see-also"></a>Vea también
-    [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+    ## <a name="see-also"></a>Consulta también
+    - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

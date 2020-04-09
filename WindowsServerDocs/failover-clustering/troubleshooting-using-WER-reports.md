@@ -1,26 +1,23 @@
 ---
 title: Solución de problemas de un clúster de conmutación por error mediante Informe de errores de Windows
 description: Solución de problemas de un clúster de conmutación por error mediante informes WER, con detalles específicos sobre cómo recopilar informes y diagnosticar problemas comunes.
-keywords: Clúster de conmutación por error, informes WER, diagnósticos, clúster, Informe de errores de Windows
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.author: vpetter
-ms.topic: article
-author: vpetter
+author: dcuomo
 ms.date: 03/27/2018
-ms.localizationpriority: ''
-ms.openlocfilehash: 46c633af8cf82ac43d2a787a7193685d88ad0ecc
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: e8db88dc4fe3ad9176299c5b423a7aac6093f254
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322157"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827358"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Solución de problemas de un clúster de conmutación por error mediante Informe de errores de Windows 
 
 > Se aplica a: Windows Server 2019, Windows Server 2016 y Windows Server
 
-Informe de errores de Windows (WER) es una infraestructura de comentarios basada en eventos flexible diseñada para ayudar a los administradores avanzados o al soporte técnico de nivel 3 a recopilar información sobre los problemas de hardware y software que Windows puede detectar, notificar la información a Microsoft, y proporcione a los usuarios todas las soluciones disponibles. Esta [referencia](https://docs.microsoft.com/powershell/module/windowserrorreporting/) proporciona descripciones y sintaxis para todos los cmdlets de WindowsErrorReporting.
+Informe de errores de Windows (WER) es una infraestructura de comentarios basada en eventos flexible diseñada para ayudar a los administradores avanzados o al soporte técnico de nivel 3 a recopilar información sobre los problemas de hardware y software que Windows puede detectar, notificar la información a Microsoft y proporcionar a los usuarios las soluciones disponibles. Esta [referencia](https://docs.microsoft.com/powershell/module/windowserrorreporting/) proporciona descripciones y sintaxis para todos los cmdlets de WindowsErrorReporting.
 
 La información sobre la solución de problemas que se presenta a continuación será útil para solucionar problemas avanzados que se han escalado y que pueden requerir que los datos se envíen a Microsoft para la clasificación.
 

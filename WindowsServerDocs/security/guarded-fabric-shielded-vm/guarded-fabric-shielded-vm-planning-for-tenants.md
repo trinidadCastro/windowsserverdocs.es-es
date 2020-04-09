@@ -1,18 +1,18 @@
 ---
 title: Guía de planificación de máquinas virtuales blindadas y tejido protegido para proveedores de hospedaje
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 392af37f-a02d-4d40-a25d-384211cbbfdd
 manager: dongill
 author: nirb-ms
+ms.author: nirb
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 255429960735d70ff3a4d260bd9090b95882b6bd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 829d6a3efef082e35c6a4f98e0ba9e4b70c27a93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949773"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856478"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-tenants"></a>Guía de planificación de máquinas virtuales blindadas y tejido protegido para inquilinos
 
@@ -63,7 +63,7 @@ Los datos de blindaje contienen los secretos necesarios para implementar máquin
 
 Los datos de blindaje se crean mediante el Asistente para archivos de datos de blindaje y se almacenan en archivos PDK que los propietarios de máquinas virtuales cargan en el tejido protegido.
 
-Las máquinas virtuales blindadas ayudan a protegerse frente a ataques de un tejido de virtualización en peligro, por lo que necesitamos un mecanismo seguro para pasar datos de inicialización confidenciales, como la contraseña del administrador, las credenciales de unión al dominio o los certificados RDP, sin revelarlos a el tejido de virtualización en sí o a sus administradores. Además, los datos de blindaje contienen lo siguiente:
+Las máquinas virtuales blindadas ayudan a protegerse frente a ataques de un tejido de virtualización en peligro, por lo que necesitamos un mecanismo seguro para pasar datos de inicialización confidenciales, como la contraseña del administrador, las credenciales de unión al dominio o los certificados RDP, sin revelarlos al tejido de virtualización en sí o a sus administradores. Además, los datos de blindaje contienen lo siguiente:
 
 1. Nivel de seguridad: protegido o compatible con cifrado
 2. Propietario y lista de protecciones de host de confianza en las que se puede ejecutar la máquina virtual

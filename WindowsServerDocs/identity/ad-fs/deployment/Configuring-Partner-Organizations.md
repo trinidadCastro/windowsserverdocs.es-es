@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4d002764-58b4-4137-9c86-1e55b02e07ce
 title: Configuración de organizaciones asociadas
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 575d7e3fc97496c3f7c147220fe342add66517c3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ac83d9754365f3ceea5b363af4df93862bdb59e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408396"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855498"
 ---
 # <a name="configuring-partner-organizations"></a>Configuración de organizaciones asociadas
 
@@ -24,11 +23,11 @@ Para implementar una nueva organización asociada en Servicios de federación de
 > Al usar cualquiera de estas listas de comprobación, se recomienda encarecidamente que lea primero las referencias a la guía de planeamiento de asociados de cuenta o de recursos en la [Guía de diseño de AD FS en Windows Server 2012](https://technet.microsoft.com/library/dd807036.aspx) antes de continuar con los procedimientos para configurar la nueva organización asociada. La siguiente lista de comprobación le ayudará a comprender mejor el AD FS de diseño e implementación completos del asociado de cuenta o de la organización del asociado de recurso.  
   
 ## <a name="about-account-partner-organizations"></a>Acerca de las organizaciones de asociado de cuenta  
-Un asociado de cuenta es la organización de la relación de confianza de Federación que almacena físicamente las cuentas de usuario en un almacén de atributos compatible con AD FS. El asociado de cuenta es responsable de la recopilación y autenticación de las credenciales de un usuario, la creación de notificaciones para ese usuario y el empaquetado de las notificaciones en los tokens de seguridad. Estos tokens se pueden presentar a continuación a través de una confianza de Federación para permitir el acceso a los recursos basados en\-web que se encuentran en la organización del asociado de recurso.  
+Un asociado de cuenta es la organización de la relación de confianza de Federación que almacena físicamente las cuentas de usuario en un almacén de atributos compatible con AD FS. El asociado de cuenta es responsable de recopilar y autenticar las credenciales de un usuario, generar notificaciones para dicho usuario y empaquetar las notificaciones en tokens de seguridad. Estos tokens se pueden presentar a continuación a través de una confianza de Federación para permitir el acceso a los recursos basados en\-web que se encuentran en la organización del asociado de recurso.  
   
 En otras palabras, un asociado de cuenta representa la organización para cuyos usuarios el servidor de Federación de la cuenta\-emite los tokens de seguridad. El servidor de Federación de la organización del asociado de cuenta autentica a los usuarios locales y crea tokens de seguridad que el asociado de recurso utiliza para tomar decisiones de autorización.  
   
-En lo que respecta a los almacenes de atributos, el asociado de cuenta en AD FS es conceptualmente equivalente a un único bosque de Active Directory cuyas cuentas necesitan tener acceso a los recursos ubicados físicamente en otro bosque. Las cuentas de este bosque pueden acceder a los recursos del bosque de recursos solo cuando existe una relación de confianza externa o de confianza de bosque entre los dos bosques y los recursos a los que los usuarios intentan obtener acceso se han establecido con la autorización adecuada. los.  
+En lo que respecta a los almacenes de atributos, el asociado de cuenta en AD FS es conceptualmente equivalente a un único bosque de Active Directory cuyas cuentas necesitan tener acceso a los recursos ubicados físicamente en otro bosque. Las cuentas de este bosque solo pueden tener acceso a los recursos del bosque de recursos cuando existe una relación de confianza externa o de confianza de bosque entre los dos bosques y los recursos a los que los usuarios intentan obtener acceso se han establecido con los permisos de autorización adecuados.  
   
 ## <a name="about-resource-partner-organizations"></a>Acerca de las organizaciones de asociado de recurso  
 El asociado de recurso es la organización en una implementación de AD FS donde se encuentran los servidores Web. El asociado de recurso confía en el asociado de cuenta para autenticar a los usuarios. Por lo tanto, para tomar decisiones de autorización, el asociado de recurso utiliza las notificaciones que se empaquetan en los tokens de seguridad que proceden de los usuarios del asociado de cuenta.  

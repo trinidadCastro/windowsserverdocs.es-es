@@ -1,24 +1,20 @@
 ---
 title: Opciones de vista de miniaturas de sesión en MultiPoint Dashboard
 description: Aprenda a personalizar las opciones de vista para Multipoint Services
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 288a6504-418c-4489-acc6-930410c47cdb
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 9b6fa08a6f3215140a528dab0fb55bac23c60ccc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 87e60a048b3933bac988014717d66e8784676ca8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394800"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820438"
 ---
 # <a name="view-options-for-session-thumbnails-in-multipoint-dashboard"></a>Opciones de vista de miniaturas de sesión en MultiPoint Dashboard
 Una manera sencilla de supervisar las actividades de los usuarios en escritorios individuales es ver imágenes en miniatura de cada escritorio activo en el sistema MultiPoint Services. De forma predeterminada, las imágenes de los equipos de escritorio se muestran en el panel de Multipoint en la pestaña **Inicio** .  
@@ -56,5 +52,5 @@ Con el panel de Multipoint, puede hacer lo siguiente:
 >[!NOTE] 
 > Haga clic con el botón derecho en una o varias miniaturas para tener acceso a más acciones que se pueden realizar en las sesiones activas o inactivas, como **Cerrar la sesión de los usuarios seleccionados**. Vea [Cerrar sesiones de usuario](Log-Off-User-Sessions.md) para más información.
 
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Administrar escritorios de usuario mediante MultiPoint Dashboard](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)

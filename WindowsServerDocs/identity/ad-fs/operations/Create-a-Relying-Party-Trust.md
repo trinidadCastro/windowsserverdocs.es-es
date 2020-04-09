@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5b9fc9c1-5d12-4ad4-8ddc-3b8a6d45b217
 title: Creación de una relación de confianza para usuario autenticado
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a0d32edd7ebc23fa724439710c6511642d9c49a3
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: c9134360498184ab578b02809634279a84753e43
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323057"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816848"
 ---
 # <a name="create-a-relying-party-trust"></a>Creación de una relación de confianza para usuario autenticado
 
@@ -64,7 +63,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
 ## <a name="to-create-a-claims-aware-relying-party-trust-using-federation-metadata"></a>Para crear una relación de confianza para usuario autenticado compatible con notificaciones mediante metadatos de Federación
 
-Para agregar una nueva relación de confianza para usuario autenticado con el complemento Administración de AD FS, importando automáticamente los datos de configuración sobre el socio desde los metadatos de Federación que el asociado publicó en una red local o en Internet, realice el siguiente procedimiento en un servidor de Federación en la organización del asociado de cuenta.
+Para agregar una nueva relación de confianza para usuario autenticado con el complemento Administración de AD FS, importando automáticamente los datos de configuración sobre el socio desde los metadatos de Federación que el asociado publicó en una red local o en Internet, realice el siguiente procedimiento en un servidor de Federación de la organización del asociado de cuenta.
 
 >[!NOTE]
 >Aunque la práctica habitual es usar certificados con nombres de host sin calificar como https://myserver, estos certificados no tienen ningún valor de seguridad y pueden permitir que un atacante suplante un Servicio de federación que está publicando metadatos de Federación. Por lo tanto, al consultar los metadatos de Federación, solo debe usar un nombre de dominio completo como https://myserver.contoso.com.

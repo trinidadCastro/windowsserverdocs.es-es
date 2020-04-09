@@ -1,24 +1,20 @@
 ---
 title: recuperación de inicio de Wbadmin
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Temas de comandos de Windows para Wbadmin Start recovery, que ejecuta una operación de recuperación basada en los parámetros que especifique.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 52381316-a0fa-459f-b6a6-01e31fb21612
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: edb287573dc76619502faf58018f48c464140629
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b5a65e67e7a34ca5263c85c1038820e0a4fc1ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362352"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829618"
 ---
 # <a name="wbadmin-start-recovery"></a>recuperación de inicio de Wbadmin
 
@@ -48,11 +44,11 @@ wbadmin start recovery
 [-quiet]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
-|-versión|Especifica el identificador de la versión de la copia de seguridad que se va a recuperar en formato MM/DD/AAAA-HH: MM. Si no conoce el identificador de la versión, escriba **Wbadmin get Versions**.|
+|-version|Especifica el identificador de la versión de la copia de seguridad que se va a recuperar en formato MM/DD/AAAA-HH: MM. Si no conoce el identificador de la versión, escriba **Wbadmin get Versions**.|
 |-elementos|Especifica una lista delimitada por comas de volúmenes, aplicaciones, archivos o carpetas que se van a recuperar.</br>-Si **-itemType** es un **volumen**, solo puede especificar un único volumen; para ello, proporcione la letra de unidad del volumen, el punto de montaje del volumen o el nombre del volumen basado en GUID.</br>-Si **-itemType** es una **aplicación**, puede especificar una sola aplicación. Para poder recuperarse, la aplicación debe estar registrada con Copias de seguridad de Windows Server. También puede usar el valor **ADIFM** para recuperar una instalación de Active Directory. Vea la sección Comentarios en para obtener más información.</br>-Si **-itemType** es un **archivo**, puede especificar archivos o carpetas, pero deben formar parte del mismo volumen y deben estar en la misma carpeta principal.|
 |-ItemType|Especifica el tipo de elementos que se van a recuperar. Debe ser **volumen**, **aplicación**o **archivo**.|
 |-backupTarget|Especifica la ubicación de almacenamiento que contiene la copia de seguridad que desea recuperar. Este parámetro es útil cuando la ubicación es diferente de donde se almacenan normalmente las copias de seguridad de este equipo.|
@@ -65,7 +61,7 @@ wbadmin start recovery
 |-noRollForward|Solo es válido cuando se recuperan aplicaciones. Permite la recuperación en un momento dado anterior de una aplicación si se selecciona la versión más reciente de las copias de seguridad. En el caso de otras versiones de la aplicación que no son la última recuperación a un momento dado anterior, se realiza como valor predeterminado.|
 |-quiet|Ejecuta el subcomando sin preguntar al usuario.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Para ver una lista de los elementos que están disponibles para la recuperación a partir de una versión de copia de seguridad específica, use **Wbadmin get items**. Si un volumen no tenía un punto de montaje o una letra de unidad en el momento de la copia de seguridad, este subcomando devolvería un nombre de volumen basado en GUID que se debe usar para recuperar el volumen.
 -   Cuando **-itemType** es una **aplicación**, puede usar un valor de **ADIFM** para que realice una instalación desde el **medio de la** operación para recuperar todos los datos relacionados necesarios para Active Directory Domain Services. **ADIFM** crea una copia de la base de datos Active Directory, el registro y el estado de SYSVOL y, a continuación, guarda esta información en la ubicación especificada por **-recoveryTarget**. Use este parámetro solo cuando se especifica **-recoveryTarget** .
@@ -73,7 +69,7 @@ wbadmin start recovery
 >     [!NOTE]
 >     Before using **wbadmin** to perform an install from media operation, you should consider using the **ntdsutil** command because **ntdsutil** only copies the minimum amount of data needed, and it uses a more secure data transport method.
 
-## <a name="BKMK_Examples"></a>Example
+## <a name="examples"></a><a name=BKMK_Examples></a>Example
 
 Para ejecutar una recuperación de la copia de seguridad del 31 de marzo de 2013, tomada a las 9:00 A.M., del volumen d:, escriba:
 ```
@@ -97,9 +93,9 @@ Para ejecutar una recuperación de la copia de seguridad del 30 de abril de 2013
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   Cmdlet [Start-WBFileRecovery](https://technet.microsoft.com/library/jj902457.aspx)
 -   Cmdlet [Start-WBHyperVRecovery](https://technet.microsoft.com/library/jj902463.aspx)

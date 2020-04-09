@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4d21d27d-5523-4993-ad4f-fbaa43df7576
 title: Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 6ec8ac4936889356ef92e82c0c89491e5c853a95
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 197f994bdd5dedced24aa390dc562530c41e951d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949337"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824918"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
@@ -28,7 +27,7 @@ En este tema se describe con detalle el Centro de administración de Active Dire
 - [Usar el visor del historial de Windows PowerShell Centro de administración de Active Directory](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_HistoryViewer)  
 - [Solución de problemas de administración de AD DS](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Tshoot)  
   
-## <a name="BKMK_Arch"></a>Arquitectura de Centro de administración de Active Directory  
+## <a name="active-directory-administrative-center-architecture"></a><a name="BKMK_Arch"></a>Arquitectura de Centro de administración de Active Directory  
   
 ### <a name="active-directory-administrative-center-executables-dlls"></a>Centro de administración de Active Directory ejecutables, archivos dll  
 
@@ -44,9 +43,9 @@ A continuación se ilustran la capa de operaciones y de Windows PowerShell subya
   
 ![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/adds_adrestore.png)  
   
-## <a name="BKMK_EnableRecycleBin"></a>Habilitar y administrar la papelera de reciclaje de Active Directory mediante Centro de administración de Active Directory  
+## <a name="enabling-and-managing-the-active-directory-recycle-bin-using-active-directory-administrative-center"></a><a name="BKMK_EnableRecycleBin"></a>Habilitar y administrar la papelera de reciclaje de Active Directory mediante Centro de administración de Active Directory  
   
-### <a name="capabilities"></a>Funcionalidades  
+### <a name="capabilities"></a>Capacidades  
   
 - El Centro de administración de Active Directory de Windows Server 2012 o posterior le permite configurar y administrar la papelera de reciclaje de Active Directory para cualquier partición de dominio de un bosque. Ya no es necesario usar Windows PowerShell o Ldp.exe para habilitar la papelera de reciclaje de Active Directory o restaurar objetos en particiones de dominio.
 - El Centro de administración de Active Directory tiene criterios de filtrado avanzados que facilitan la restauración específica en entornos grandes en los que muchos objetos se eliminan intencionadamente.
@@ -64,11 +63,11 @@ La papelera de reciclaje de Active Directory requiere un nivel funcional de bosq
   
 ### <a name="enabling-active-directory-recycle-bin-using-active-directory-administrative-center"></a>Habilitar la papelera de reciclaje de Active Directory mediante el Centro de administración de Active Directory
 
-Para habilitar la papelera de reciclaje de Active Directory, abre el **Centro de administración de Active Directory** y haz clic en el nombre del bosque en el panel de navegación. En el panel **Tareas** , haz clic en **Habilitar papelera de reciclaje**.  
+Para habilitar la papelera de reciclaje de Active Directory, abre el **Centro de administración de Active Directory** y haz clic en el nombre del bosque en el panel de navegación. En el panel **Tareas**, haz clic en **Habilitar papelera de reciclaje**.  
   
 ![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBin.png)  
   
-El Centro de administración de Active Directory muestra el cuadro de diálogo **Habilitar confirmación de papelera de reciclaje** . Este cuadro de diálogo avisa de que la operación para habilitar la papelera de reciclaje es irreversible. Haz clic en **Aceptar** para habilitar la papelera de reciclaje de Active Directory. El Centro de administración de Active Directory muestra otro cuadro de diálogo para recordarte que la papelera de reciclaje de Active Directory no será completamente funcional hasta que todos los controladores de dominio repliquen el cambio de configuración.  
+El Centro de administración de Active Directory muestra el cuadro de diálogo **Habilitar confirmación de papelera de reciclaje**. Este cuadro de diálogo avisa de que la operación para habilitar la papelera de reciclaje es irreversible. Haz clic en **Aceptar** para habilitar la papelera de reciclaje de Active Directory. El Centro de administración de Active Directory muestra otro cuadro de diálogo para recordarte que la papelera de reciclaje de Active Directory no será completamente funcional hasta que todos los controladores de dominio repliquen el cambio de configuración.  
   
 > [!IMPORTANT]  
 > La opción para habilitar la papelera de reciclaje de Active Directory no está disponible si:  
@@ -119,18 +118,18 @@ La operación de restauración admite todas las opciones de criterios de filtrad
 - *ANR (resolución de nombres ambiguos; no aparece en el menú, pero lo que se usa al escribir en el cuadro * * * * filtro * * *)*  
 - Última modificación entre las fechas indicadas  
 - El tipo de objeto es usuario, inetOrgPerson, equipo, grupo o unidad organizativa  
-- Nombre  
+- Name  
 - Al eliminar  
 - Principal último conocido  
-- Escribe  
+- Tipo  
 - Descripción  
 - Ciudad  
 - País o región  
 - Departmento  
-- Id. de empleado  
+- Identificador de empleado  
 - Nombre  
 - Puesto  
-- Apellido  
+- Último nombre  
 - SAMaccountname  
 - Estado o provincia  
 - Número de teléfono  
@@ -151,7 +150,7 @@ La restauración de objetos eliminados siempre ha sido una operación única.  E
   
 1. Haz clic en el nombre de dominio en el panel de navegación del Centro de administración de Active Directory.  
 2. Haz doble clic en **Objetos eliminados** en la lista de administración.  
-3. Haz clic con el botón derecho en el objeto y haz clic en **Restaurar**, o haz clic en **Restaurar** en el panel **Tareas** .  
+3. Haz clic con el botón derecho en el objeto y haz clic en **Restaurar**, o haz clic en **Restaurar** en el panel **Tareas**.  
   
 El objeto se restaura a su ubicación original.  
   
@@ -217,10 +216,10 @@ La funcionalidad del cmdlet **Restore-ADObject** no cambió de Windows Server 20
 Es posible que, con el tiempo, el contenedor de objetos eliminados acumule más de 20.000 (o incluso 100.000) objetos en organizaciones de tamaño medio y grande, y que tenga dificultades para mostrarlos todos. Como el mecanismo de filtrado en el Centro de administración de Active Directory usa el filtrado del lado del cliente, no puede mostrar estos objetos adicionales. Para evitar esta limitación, sigue estos pasos para realizar una búsqueda del lado del servidor:  
   
 1. Haz clic con el botón derecho en el contenedor **Objetos eliminados** y haz clic en **Buscar en este nodo**.  
-2. Haz clic en el botón de contenido adicional para exponer el menú **+Agregar criterios** y selecciona y agrega **Última modificación entre las fechas indicadas**. La hora de Última modificación (el atributo **whenChanged** ) es una aproximación cercana a la hora de eliminación; en la mayoría de los entornos, es idéntica. Esta consulta realiza una búsqueda en el lado del servidor.  
+2. Haz clic en el botón de contenido adicional para exponer el menú **+Agregar criterios** y selecciona y agrega **Última modificación entre las fechas indicadas**. La hora de Última modificación (el atributo **whenChanged**) es una aproximación cercana a la hora de eliminación; en la mayoría de los entornos, es idéntica. Esta consulta realiza una búsqueda en el lado del servidor.  
 3. Busca los objetos eliminados que quieres restaurar usando más filtrado y ordenación, entre otros, en los resultados mostrados, y restáuralos normalmente.  
   
-## <a name="BKMK_FGPP"></a>Configuración y administración de directivas de contraseña específica mediante Centro de administración de Active Directory  
+## <a name="configuring-and-managing-fine-grained-password-policies-using-active-directory-administrative-center"></a><a name="BKMK_FGPP"></a>Configuración y administración de directivas de contraseña específica mediante Centro de administración de Active Directory  
   
 ### <a name="configuring-fine-grained-password-policies"></a>Configurar directivas de contraseña específica
 
@@ -228,13 +227,13 @@ El Centro de administración de Active Directory permite crear y administrar obj
   
 Para obtener más información sobre la directiva de contraseña específica, consulte la [Guía paso a paso para la configuración de directivas de bloqueo de cuenta y contraseña específica de AD DS (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx).  
   
-En el panel de navegación, haz clic en la Vista de árbol, en tu dominio, en **Sistema**, en **Contenedor de configuraciones de contraseña**y, en el panel tareas, haz clic en **Nuevo** y **Configuración de contraseña**.  
+En el panel de navegación, haz clic en la Vista de árbol, en tu dominio, en **Sistema**, en **Contenedor de configuraciones de contraseña** y, en el panel tareas, haz clic en **Nuevo** y **Configuración de contraseña**.  
   
 ![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_PasswordSettings.png)  
   
 ### <a name="managing-fine-grained-password-policies"></a>Administrar directivas de contraseña específica
 
-Al crear una nueva FGPP o editar una existente, se abre el editor **Configuración de contraseña** . Aquí puedes configurar todas las directivas de contraseña que quieras, como harías en Windows Server 2008 o Windows Server 2008 R2, solo que ahora con un editor creado específicamente para ello.  
+Al crear una nueva FGPP o editar una existente, se abre el editor **Configuración de contraseña**. Aquí puedes configurar todas las directivas de contraseña que quieras, como harías en Windows Server 2008 o Windows Server 2008 R2, solo que ahora con un editor creado específicamente para ello.  
   
 ![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_CreatePasswordSettings.png)  
   
@@ -270,7 +269,7 @@ Al examinar las **Propiedades** de un usuario o grupo, se muestra la **Configura
   
 La asignación implícita de FGPP no se muestra aquí; para ello, debe usar la opción **Ver configuración de contraseña resultante...**  
   
-## <a name="BKMK_HistoryViewer"></a>Usar el visor del historial de Windows PowerShell Centro de administración de Active Directory
+## <a name="using-the-active-directory-administrative-center-windows-powershell-history-viewer"></a><a name="BKMK_HistoryViewer"></a>Usar el visor del historial de Windows PowerShell Centro de administración de Active Directory
 
 El futuro de la administración de Windows es Windows PowerShell. Las herramientas gráficas se distribuyen por capas en un entorno de automatización de tareas, lo que permite administrar los sistemas distribuidos más complejos de forma coherente y eficaz. Tienes que comprender cómo funciona Windows PowerShell para aprovechar todas sus posibilidades y maximizar la inversión en informática.  
   
@@ -316,7 +315,7 @@ set-aduser
 
 El diseño del Centro de administración de Active Directory requirió una modularidad y un uso de código mínimos. Por lo tanto, en lugar de un conjunto de funciones que crean nuevos usuarios y otras que modifican los usuarios existentes, realiza cada función mínimamente y, después, las encadena con los cmdlets. Ten esto en cuenta cuando estudies Active Directory Windows PowerShell. También puedes usarlo como técnica de aprendizaje, para ver lo simple que resulta usar Windows PowerShell para completar una sola tarea.  
   
-## <a name="BKMK_Tshoot"></a>Solución de problemas de administración de AD DS  
+## <a name="troubleshooting-ad-ds-management"></a><a name="BKMK_Tshoot"></a>Solución de problemas de administración de AD DS  
   
 ### <a name="introduction-to-troubleshooting"></a>Introducción a la solución de problemas
 
@@ -348,7 +347,7 @@ Crea el contenido siguiente:
 </system.diagnostics>
 ```
 
-Los niveles de detalle de **DsacLogLevel** son **None**, **Error**, **Warning**, **Info**y **Verbose**. El nombre del archivo de salida se puede configurar y se escribe en la misma carpeta que dsac.exe. El archivo de salida proporciona más información sobre cómo funciona ADAC, con qué controladores de dominio se puso en contacto, qué comandos de Windows PowerShell se ejecutaron, cuáles fueron las respuestas y más información.  
+Los niveles de detalle de **DsacLogLevel** son **None**, **Error**, **Warning**, **Info** y **Verbose**. El nombre del archivo de salida se puede configurar y se escribe en la misma carpeta que dsac.exe. El archivo de salida proporciona más información sobre cómo funciona ADAC, con qué controladores de dominio se puso en contacto, qué comandos de Windows PowerShell se ejecutaron, cuáles fueron las respuestas y más información.  
 
 Por ejemplo, al usar el nivel INFO, que devuelve todos los resultados excepto el detalle del nivel de seguimiento:  
   
@@ -447,7 +446,7 @@ Cuando se establece el nivel Verbose, también se muestran las pilas de .NET de 
 
 Los errores que se muestran cuando no hay disponibles instancias de Servicios web de Active Directory son:  
   
-|Error de :|Operación|
+|Error|Operación|
 | --- | --- |  
 |"No se pudo conectar a ningún dominio. Actualice o vuelva a intentarlo cuando la conexión esté disponible"|Se muestra al iniciar la aplicación Centro de administración de Active Directory.|
 |"No se puede encontrar un servidor disponible en el dominio de *<NetBIOS domain name>* que ejecuta el servicio Web Active Directory (ADWs)"|Se muestra al intentar seleccionar un nodo del dominio en la aplicación Centro de administración de Active Directory.|
@@ -470,7 +469,7 @@ Para solucionar este problema, sigue estos pasos:
    Netstat -anob > ports.txt  
    ```
 
-   Examina el archivo ports.txt y comprueba que el servicio ADWS está escuchando en el puerto 9389. Por ejemplo:  
+   Examina el archivo ports.txt y comprueba que el servicio ADWS está escuchando en el puerto 9389. Ejemplo:  
 
    ```
    TCP    0.0.0.0:9389    0.0.0.0:0    LISTENING    1828  

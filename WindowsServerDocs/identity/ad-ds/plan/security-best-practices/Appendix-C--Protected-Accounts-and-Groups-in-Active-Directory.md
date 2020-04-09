@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5b2876ac-fe7d-4054-bfba-b692e57bc0d2
 title: 'Apéndice C: cuentas y grupos protegidos en Active Directory'
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 606b3a42d70ee5c2a3479f9c9df2f95a495d6afd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3036176127cbb5401c582d81ddb2704d790a209a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408726"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821688"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Anexo C: cuentas protegidas y grupos de Active Directory
 
@@ -22,7 +21,7 @@ ms.locfileid: "71408726"
 
 ## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Anexo C: cuentas protegidas y grupos de Active Directory
 
-Dentro de Active Directory, un conjunto predeterminado de cuentas y grupos con privilegios elevados se considera cuentas y grupos protegidos. Con la mayoría de los objetos de Active Directory, los administradores delegados (usuarios con permisos delegados para administrar objetos de Active Directory) pueden cambiar los permisos de los objetos, incluido el cambio de permisos para permitirse cambiar la pertenencia de los grupos, por ejemplo.  
+Dentro de Active Directory, un conjunto predeterminado de cuentas y grupos con privilegios elevados se considera cuentas y grupos protegidos. Con la mayoría de los objetos de Active Directory, los administradores delegados (usuarios a los que se han delegado permisos para administrar objetos de Active Directory) pueden cambiar los permisos de los objetos, incluido el cambio de permisos para permitirse cambiar la pertenencia de los grupos, por ejemplo.  
 
 Sin embargo, con cuentas y grupos protegidos, los permisos de los objetos se establecen y se aplican a través de un proceso automático que garantiza que los permisos en los objetos siguen siendo coherentes incluso si los objetos se mueven al directorio. Incluso si alguien cambia manualmente los permisos de un objeto protegido, este proceso garantiza que los permisos se devuelven a sus valores predeterminados rápidamente.  
 
@@ -32,16 +31,16 @@ La tabla siguiente contiene los grupos protegidos en Active Directory enumerados
 
 #### <a name="protected-accounts-and-groups-in-active-directory-by-operating-system"></a>Cuentas y grupos protegidos en Active Directory por sistema operativo
 
-| Windows Server 2003 RTM | Windows Server 2003 SP1 + | Windows Server 2012, <br> Windows Server 2008 R2, <br> Windows Server 2008 | Windows Server 2016 |
+| Windows Server 2003 RTM | Windows Server 2003 SP1 + | Windows Server 2012, <br> Windows Server 2008 R2, <br> Windows Server 2008 | Windows Server 2016 |
 | --- | --- | --- | --- |
 |Operadores de cuentas|Operadores de cuentas|Operadores de cuentas|Operadores de cuentas|
 |Administrador|Administrador|Administrador|Administrador|
 |Administradores|Administradores|Administradores|Administradores|
 |Operadores de copia de seguridad|Operadores de copia de seguridad|Operadores de copia de seguridad|Operadores de copia de seguridad|
 |Publicadores de certificados|||
-|Admins. del dominio|Admins. del dominio|Admins. del dominio|Admins. del dominio|
+|Administradores del dominio|Administradores del dominio|Administradores del dominio|Administradores del dominio|
 |Controladores de dominio|Controladores de dominio|Controladores de dominio|Controladores de dominio|
-|Administradores de empresas|Administradores de empresas|Administradores de empresas|Administradores de empresas|
+|Administradores de organización|Administradores de organización|Administradores de organización|Administradores de organización|
 ||||Administradores de claves de empresa|
 ||||Administradores clave|
 |Krbtgt|Krbtgt|Krbtgt|Krbtgt|

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 96a6749c-6c9f-4f2f-ad0a-51272d282ace
 title: Determinar el intervalo
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 065b4ff707bdd8b82e33e06ad2b52c57a746045f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f39ad2ce2ce84e36d2faff2a07b8310d3600b6c9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402629"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822578"
 ---
 # <a name="determining-the-interval"></a>Determinar el intervalo
 
@@ -52,7 +51,7 @@ Con una estrategia de replicación de almacenamiento y reenvío, es difícil det
   
 -   Combine estas latencias máximas para determinar la latencia máxima de toda la red.  
   
-    Por ejemplo, si la latencia máxima entre Seattle y su sitio satélite en los Ángeles es de un día, la latencia de replicación máxima para este conjunto de vínculos (Washington, D.C.-Nueva York-Seattle-los Ángeles) es de 31 horas, es decir, 4 (Washington, D.C.-Nueva York) + 3 (nuevo York-Seattle) + 24 (Seattle-los Ángeles), como se muestra en la tabla siguiente.  
+    Por ejemplo, si la latencia máxima entre Seattle y su sitio satélite en los Ángeles es un día, la latencia de replicación máxima para este conjunto de vínculos (Washington, D.C.-New York-Seattle-los Ángeles) es de 31 horas, es decir, 4 (Washington, D.C.-Nueva York) + 3 (Nueva York-Seattle) + 24 (Seattle-los Ángeles), como se muestra en la tabla siguiente.  
   
     |Sitios|Seattle|Boston|Los Ángeles|Nueva York|Washington, D.C.|  
     |---------|-----------|----------|---------------|------------|--------------------|  

@@ -1,7 +1,6 @@
 ---
 ms.assetid: f0398494-773d-4070-aa4e-25b4815b001e
 title: Determinación del diseño de AD DS y requisitos de implementación
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8a01fde69ebdd5a14899bd888a3c282ded74caaa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5d0801623c499f87bfafc52d23e7e8b2627a3ec6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408805"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822388"
 ---
 # <a name="identifying-your-ad-ds-design-and-deployment-requirements"></a>Determinación del diseño de AD DS y requisitos de implementación
 
