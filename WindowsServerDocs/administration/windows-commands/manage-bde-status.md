@@ -1,24 +1,20 @@
 ---
 title: 'administrar: estado de BDE'
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1444a360-fabf-4dd3-b67f-188e6ea3fa5b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 235db54ef2361c0e95c66b15a15be7f188fb74d9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1c8248333944b030dc8868ba4408024727a08c3a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373859"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839848"
 ---
 # <a name="manage-bde-status"></a>Manage-BDE: estado
 
@@ -43,7 +39,7 @@ Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_
 manage-bde -status [<Drive>] [-protectionaserrorlevel] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -54,14 +50,14 @@ manage-bde -status [<Drive>] [-protectionaserrorlevel] [-computername <Name>] [{
 |-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
 |-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
 
-## <a name="BKMK_Examples"></a>Example
+## <a name="examples"></a><a name=BKMK_Examples></a>Example
 
 En el ejemplo siguiente se muestra el uso del comando **-status** para mostrar el estado de la unidad C.
 ```
 manage-bde –status C:
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Manage-BDE](manage-bde.md)

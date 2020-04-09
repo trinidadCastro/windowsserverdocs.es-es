@@ -1,34 +1,30 @@
 ---
 title: Administrar varios servidores remotos con Administrador del servidor
 description: Administrador de servidores
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3a17e686-e7f2-47e2-b7af-733777c38b5f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 74632dd26a1bfe7b280c73737557f1e954a7a1db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b7a33e15287f24ee5b259618dfcfef3c6245564
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383141"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851508"
 ---
 # <a name="manage-multiple-remote-servers-with-server-manager"></a>Administrar varios servidores remotos con Administrador del servidor
 
 >Se aplica a: Windows Server 2016
 
-Administrador del servidor es una consola de administración de Windows Server 2012 R2 y Windows Server 2012 que ayuda a los profesionales de ti a aprovisionar y administrar servidores basados en Windows, tanto locales como remotos, desde sus escritorios, sin necesidad de acceso físico a los servidores ni del necesita habilitar conexiones de protocolo de Escritorio remoto (rdP) para cada servidor. Aunque Administrador del servidor está disponible en Windows Server 2008 R2 y Windows Server 2008, Administrador del servidor se actualizó en Windows Server 2012, para admitir la administración remota de varios servidores y ayudar a aumentar el número de servidores que puede administrar un administrador.
+Administrador del servidor es una consola de administración de Windows Server 2012 R2 y Windows Server 2012 que ayuda a los profesionales de ti a aprovisionar y administrar servidores basados en Windows, tanto locales como remotos, desde sus escritorios, sin necesidad de tener acceso físico a los servidores ni de habilitar conexiones de protocolo de Escritorio remoto (rdP) a cada servidor. Aunque Administrador del servidor está disponible en Windows Server 2008 R2 y Windows Server 2008, Administrador del servidor se actualizó en Windows Server 2012, para admitir la administración remota de varios servidores y ayudar a aumentar el número de servidores que puede administrar un administrador.
 
-En nuestras pruebas, Administrador del servidor en Windows Server 2012 R2 y Windows Server 2012 se pueden usar para administrar hasta 100 servidores que estén configurados con una carga de trabajo típica. El número de servidores que se pueden administrar con una sola consola del Administrador de servidores puede variar según la cantidad de datos que solicite de los servidores administrados así como los recursos de hardware y de red disponibles para el equipo que ejecuta el Administrador de servidores. Como la cantidad de datos que desea mostrar se acerca a la capacidad de los recursos del equipo, puede experimentar respuestas lentas del administrador de servidores y retrasos en la finalización de las actualizaciones. Para ayudar a aumentar el número de servidores que se pueden administrar mediante el Administrador de servidores, se recomienda limitar los datos de eventos que el Administrador de servidores obtiene de los servidores administrados utilizando la configuración del cuadro de diálogo **Configurar datos de eventos** . Configurar datos de eventos se puede abrir desde el menú **Tareas** del icono **Eventos** . Si tienes que administrar un número de nivel de empresa de servidores de su organización, se recomienda evaluar productos en la [suite Microsoft System Center](https://go.microsoft.com/fwlink/p/?LinkId=239437).
+En nuestras pruebas, Administrador del servidor en Windows Server 2012 R2 y Windows Server 2012 se pueden usar para administrar hasta 100 servidores que estén configurados con una carga de trabajo típica. El número de servidores que se pueden administrar con una sola consola del Administrador de servidores puede variar según la cantidad de datos que solicite de los servidores administrados así como los recursos de hardware y de red disponibles para el equipo que ejecuta el Administrador de servidores. Como la cantidad de datos que desea mostrar se acerca a la capacidad de los recursos del equipo, puede experimentar respuestas lentas del administrador de servidores y retrasos en la finalización de las actualizaciones. Para ayudar a aumentar el número de servidores que se pueden administrar mediante el Administrador de servidores, se recomienda limitar los datos de eventos que el Administrador de servidores obtiene de los servidores administrados utilizando la configuración del cuadro de diálogo **Configurar datos de eventos** . Configurar datos de eventos se puede abrir desde el menú **Tareas** del icono **Eventos**. Si tienes que administrar un número de nivel de empresa de servidores de su organización, se recomienda evaluar productos en la [suite Microsoft System Center](https://go.microsoft.com/fwlink/p/?LinkId=239437).
 
-En este tema y sus temas secundarios se proporciona información sobre cómo usar las características de en la consola de Administrador del servidor. En este tema se incluyen las siguientes secciones.
+En este tema y sus temas secundarios se proporciona información sobre cómo usar las características de en la consola de Administrador del servidor. Este tema contiene las siguientes secciones.
 
 -   [Revisar consideraciones iniciales y requisitos del sistema](#BKMK_1.1)
 
@@ -40,13 +36,13 @@ En este tema y sus temas secundarios se proporciona información sobre cómo usa
 
 -   [Exportar la configuración de Administrador del servidor a otros equipos](#BKMK_export)
 
-## <a name="BKMK_1.1"></a>Revisar consideraciones iniciales y requisitos del sistema
+## <a name="review-initial-considerations-and-system-requirements"></a><a name=BKMK_1.1></a>Revisar consideraciones iniciales y requisitos del sistema
 En las secciones siguientes se enumeran algunas consideraciones iniciales que debe revisar, así como los requisitos de hardware y software para Administrador del servidor.
 
 ### <a name="hardware-requirements"></a>Requisitos de hardware
 Administrador del servidor se instala de manera predeterminada con todas las ediciones de Windows Server 2012 R2 y Windows Server 2012. No existen requisitos de hardware adicionales para Administrador del servidor.
 
-### <a name="BKMK_softconfig"></a>Requisitos de software y configuración
+### <a name="software-and-configuration-requirements"></a><a name=BKMK_softconfig></a>Requisitos de software y configuración
 Administrador del servidor se instala de manera predeterminada con todas las ediciones de Windows Server 2012. Aunque puede usar Administrador del servidor para administrar [las opciones de instalación de Server Core](https://go.microsoft.com/fwlink/p/?LinkID=241573) de windows Server 2012 y windows Server 2008 R2 que se ejecutan en equipos remotos, administrador del servidor no se ejecuta directamente en las opciones de instalación de Server Core.
 
 Para administrar completamente los servidores remotos que ejecutan Windows Server 2008 o Windows Server 2008 R2, instale las siguientes actualizaciones en los servidores que desea administrar, en el orden mostrado.
@@ -74,8 +70,8 @@ La consola de Administrador del servidor se incluye con [herramientas de adminis
 
 |Administrador del servidor sistema operativo de origen|Destinado a Windows Server 2012 R2 |Destinado a Windows Server 2012 |Destinado a Windows Server 2008 R2 o Windows Server 2008 |Dirigido a Windows Server 2003|
 |-------------------------------|---------------------------------------|------------------------------------|-----------------------------------------------------------------------|------------------|
-|Windows 8 o Windows Server 2012 |No se admite|Compatibilidad completa|Tras cumplir los [Requisitos de software y configuración](#BKMK_softconfig) , puedes realizar la mayoría de las tareas de administración, pero no puedes instalar ni desinstalar roles o características.|Compatibilidad limitada; solo estados con y sin conexión|
-|Windows 8.1 o Windows Server 2012 R2 |Compatibilidad completa|Compatibilidad completa|Tras cumplir los [Requisitos de software y configuración](#BKMK_softconfig) , puedes realizar la mayoría de las tareas de administración, pero no puedes instalar ni desinstalar roles o características.|Compatibilidad limitada; solo estados con y sin conexión|
+|Windows 8 o Windows Server 2012 |No se admite|Compatibilidad completa|Tras cumplir los [requisitos de software y configuración](#BKMK_softconfig), puede realizar la mayoría de las tareas de administración, pero no puede instalar ni desinstalar roles o características.|Compatibilidad limitada; solo estados con y sin conexión|
+|Windows 8.1 o Windows Server 2012 R2 |Compatibilidad completa|Compatibilidad completa|Tras cumplir los [requisitos de software y configuración](#BKMK_softconfig), puede realizar la mayoría de las tareas de administración, pero no puede instalar ni desinstalar roles o características.|Compatibilidad limitada; solo estados con y sin conexión|
 
 ###### <a name="to-start-server-manager-on-a-client-computer"></a>Para iniciar el Administrador del servidor en un equipo cliente
 
@@ -83,7 +79,7 @@ La consola de Administrador del servidor se incluye con [herramientas de adminis
 
 2.  En la pantalla **Inicio** , haga clic en **Administrador del servidor**. El icono de **Administrador del servidor** está disponible después de instalar las Herramientas de administración remota del servidor.
 
-3.  Si no se muestran ni las **herramientas administrativas** ni los iconos **Administrador del servidor** en la pantalla **Inicio** después de instalar herramientas de administración remota del servidor y no se muestra la búsqueda de administrador del servidor en la pantalla **Inicio** resultados, compruebe que la opción **Mostrar herramientas administrativas** está activada. Para ver esta configuración, mantenga el cursor del mouse sobre la esquina superior derecha de la pantalla **Inicio** y, a continuación, haga clic en **configuración**. Si la opción **Mostrar herramientas administrativas** está desactivada, actívala para mostrar las herramientas que instalaste como parte de las Herramientas de administración remota del servidor.
+3.  Si no se muestran ni los iconos **herramientas administrativas** ni **Administrador del servidor** en la pantalla **Inicio** después de instalar herramientas de administración remota del servidor y la búsqueda de administrador del servidor en la pantalla **Inicio** no muestra resultados, compruebe que la opción **Mostrar herramientas administrativas** está activada. Para ver esta configuración, mantenga el cursor del mouse sobre la esquina superior derecha de la pantalla **Inicio** y, a continuación, haga clic en **configuración**. Si la opción **Mostrar herramientas administrativas** está desactivada, actívala para mostrar las herramientas que instalaste como parte de las Herramientas de administración remota del servidor.
 
 para obtener más información acerca de cómo ejecutar Herramientas de administración remota del servidor para Windows 8 con el fin de administrar servidores remotos, consulte [herramientas de administración remota del servidor](https://go.microsoft.com/fwlink/?LinkID=221055) en el sitio wiki de TechNet.
 
@@ -94,7 +90,7 @@ para obtener más información acerca de cómo ejecutar Herramientas de administ
 
 Para realizar tareas de administración en servidores remotos mediante Administrador del servidor, los servidores remotos que desee administrar deben estar configurados para permitir la administración remota mediante Administrador del servidor y Windows PowerShell. Si la administración remota se ha deshabilitado en Windows Server 2012 R2 o Windows Server 2012 y desea habilitarla de nuevo, realice los pasos siguientes.
 
-##### <a name="BKMK_windows"></a>Para configurar la administración remota de Administrador del servidor en Windows Server 2012 R2 o Windows Server 2012 mediante la interfaz de Windows
+##### <a name="to-configure-server-manager-remote-management-on--windows-server-2012-r2--or--windows-server-2012--by-using-the-windows-interface"></a><a name=BKMK_windows></a>Para configurar la administración remota de Administrador del servidor en Windows Server 2012 R2 o Windows Server 2012 mediante la interfaz de Windows
 
 1.  > [!NOTE]
     > La configuración que se controla mediante el cuadro de diálogo **Configurar administración remota** no afecta a las partes de administrador del servidor que usan DCOM para las comunicaciones remotas.
@@ -113,9 +109,9 @@ Para realizar tareas de administración en servidores remotos mediante Administr
 
     -   Para permitir que este equipo se administre de forma remota mediante Administrador del servidor o Windows PowerShell, seleccione **Habilitar administración remota de este servidor desde otros equipos**.
 
-##### <a name="BKMK_ps"></a>Para habilitar Administrador del servidor la administración remota en Windows Server 2012 R2 o Windows Server 2012 mediante Windows PowerShell
+##### <a name="to-enable-server-manager-remote-management-on--windows-server-2012-r2--or--windows-server-2012--by-using-windows-powershell"></a><a name=BKMK_ps></a>Para habilitar Administrador del servidor la administración remota en Windows Server 2012 R2 o Windows Server 2012 mediante Windows PowerShell
 
-1.  Realice una de las siguientes acciones:
+1.  Lleve a cabo cualquiera de las siguientes opciones.
 
     -   Para ejecutar Windows PowerShell como administrador desde la pantalla **Inicio** , haga clic con el botón derecho en el icono de **Windows PowerShell** y, a continuación, haga clic en **Ejecutar como administrador**.
 
@@ -132,7 +128,7 @@ Para realizar tareas de administración en servidores remotos mediante Administr
 
 ###### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-older-operating-systems"></a>Para habilitar la administración remota de Windows PowerShell y el Administrador del servidor en versiones anteriores de los sistemas operativos
 
--   Realice una de las siguientes acciones:
+-   Lleve a cabo cualquiera de las siguientes opciones.
 
     -   Para habilitar la administración remota en servidores que ejecutan Windows Server 2008 R2, consulte [administración remota con administrador del servidor](https://go.microsoft.com/fwlink/?LinkID=137378) en la ayuda de windows Server 2008 R2.
 
@@ -140,7 +136,7 @@ Para realizar tareas de administración en servidores remotos mediante Administr
 
     -   Para habilitar la administración remota en servidores que ejecutan Windows Server 2003, habilite las excepciones DCOM de WMI en Firewall de Windows. Para obtener más información sobre cómo hacer esto en servidores que ejecutan Windows Server 2003, consulta [Conexión a través de Firewall de Windows](https://msdn.microsoft.com/library/aa389286.aspx) en MSDN.
 
-## <a name="BKMK_tasks"></a>Tareas que puede realizar en Administrador del servidor
+## <a name="tasks-that-you-can-perform-in-server-manager"></a><a name=BKMK_tasks></a>Tareas que puede realizar en Administrador del servidor
 Administrador del servidor hace que la administración del servidor sea más eficaz, ya que permite a los administradores realizar tareas en la tabla siguiente mediante una sola herramienta. En Windows Server 2012 R2 y Windows Server 2012, tanto los usuarios estándar de un servidor como los miembros del grupo administradores pueden realizar tareas de administración en Administrador del servidor, pero, de forma predeterminada, los usuarios estándar no pueden realizar algunas tareas, como se muestra en la tabla siguiente.
 
 Los administradores pueden usar dos cmdlets de Windows PowerShell en el módulo de cmdlet de Administrador del servidor, [enable-ServerManagerStandardUserremoting](https://technet.microsoft.com/library/jj205470.aspx) y [Disable-ServerManagerStandardUserremoting](https://technet.microsoft.com/library/jj205468.aspx), para controlar aún más el acceso de usuarios estándar a algunos datos adicionales. El cmdlet **enable-ServerManagerStandardUserremoting** puede proporcionar a uno o varios usuarios estándar y no administradores acceso a los datos de inventario de eventos, servicios, contadores de rendimiento y roles y características.
@@ -166,7 +162,7 @@ Los administradores pueden usar dos cmdlets de Windows PowerShell en el módulo 
 > [!NOTE]
 > El Administrador de servidores solo puede recibir estado en línea o sin conexión de los servidores que ejecutan Windows Server 2003. Administrador del servidor no se puede usar para agregar roles y características a servidores que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
 
-## <a name="BKMK_start"></a>Inicio Administrador del servidor
+## <a name="start-server-manager"></a><a name=BKMK_start></a>Inicio Administrador del servidor
 Administrador del servidor se inicia automáticamente de forma predeterminada en los servidores que ejecutan Windows Server 2012 cuando un miembro del grupo administradores inicia sesión en un servidor. Si cierra Administrador del servidor, reinícielo de una de las siguientes maneras. Esta sección también contiene pasos para cambiar el comportamiento predeterminado e impedir que Administrador del servidor se inicie automáticamente.
 
 #### <a name="to-start-server-manager-from-the-start-screen"></a>Para iniciar Administrador del servidor desde la pantalla Inicio
@@ -181,17 +177,17 @@ Administrador del servidor se inicia automáticamente de forma predeterminada en
 
 1.  En la consola de Administrador del servidor, en el menú **administrar** , haga clic en **propiedades de administrador del servidor**.
 
-2.  En el cuadro de diálogo **Propiedades del Administrador del servidor** , active la casilla de **No iniciar el Administrador del servidor automáticamente al iniciar sesión**. Haga clic en **Aceptar**.
+2.  En el cuadro de diálogo **Propiedades del Administrador del servidor**, active la casilla de **No iniciar el Administrador del servidor automáticamente al iniciar sesión**. Haga clic en **Aceptar**.
 
 3.  Como alternativa, puede impedir que Administrador del servidor se inicie automáticamente si habilita la configuración de directiva de grupo, **no inicia administrador del servidor automáticamente al iniciar sesión**. La ruta de acceso a esta configuración de Directiva, en la consola del editor de directiva de grupo local, es configuración del Equipo\plantillas Administrativas\sistema\administrador del servidor Manager.
 
-## <a name="BKMK_restart"></a>Reiniciar servidores remotos
+## <a name="restart-remote-servers"></a><a name=BKMK_restart></a>Reiniciar servidores remotos
 Puede reiniciar un servidor remoto desde el icono **servidores** de una página de rol o grupo de administrador del servidor.
 
 > [!IMPORTANT]
 > El reinicio de un servidor remoto fuerza el reinicio del servidor, aunque todavía haya usuarios con sesión iniciada en el servidor remoto y programas abiertos con datos no guardados. Este comportamiento se diferencia del apagado o reinicio del equipo local, en el que se le solicita que guarde los datos de programas que todavía no haya guardado y que compruebe que desea forzar el cierre de sesión de los usuarios que tienen una sesión iniciada. Asegúrese de que puede forzar a los otros usuarios a cerrar sesión en los servidores remotos y descartar los datos no guardados en los programas que se ejecutan en los servidores remotos.
 > 
-> Si se produce una actualización automática en Administrador del servidor mientras se está apagando y reiniciando un servidor administrado, pueden producirse errores de estado de actualización y de administración en el servidor administrado, ya que Administrador del servidor no se puede conectar al servidor remoto hasta que haya finalizado. reiniciar.
+> Si se produce una actualización automática en Administrador del servidor mientras se está cerrando y reiniciando un servidor administrado, pueden producirse errores de actualización y de estado de administración en el servidor administrado, ya que Administrador del servidor no se puede conectar al servidor remoto hasta que haya terminado de reiniciarse.
 
 #### <a name="to-restart-remote-servers-in-server-manager"></a>Para reiniciar los servidores remotos en el Administrador del servidor
 
@@ -201,12 +197,12 @@ Puede reiniciar un servidor remoto desde el icono **servidores** de una página 
 
 3.  Haga clic con el botón secundario en los servidores seleccionados y, a continuación, haga clic en **Reiniciar servidor**.
 
-## <a name="BKMK_export"></a>Exportar la configuración de Administrador del servidor a otros equipos
+## <a name="export-server-manager-settings-to-other-computers"></a><a name=BKMK_export></a>Exportar la configuración de Administrador del servidor a otros equipos
 En Administrador del servidor, la lista de servidores administrados, los cambios en la configuración de la consola de Administrador del servidor y los grupos personalizados que ha creado se almacenan en los dos archivos siguientes. Puede volver a usar esta configuración en otros equipos que ejecuten la misma versión de Administrador del servidor (no en equipos que ejecutan la opción de instalación Server Core) o Windows 8. Herramientas de administración remota del servidor debe ejecutarse en equipos basados en cliente de Windows para exportar la configuración de Administrador del servidor a esos equipos.
 
 -   %*AppData*% \ Microsoft\Windows\ServerManager\Serverlist.XML
 
--   %*AppData*% \ Local\Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+-   %*AppData*% \ Local \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
 > [!NOTE]
 > -   Las credenciales de Administrar como (o alternativas) de los servidores del grupo de servidores no se almacenan en el perfil móvil. Los usuarios del Administrador de servidores deben agregarlas en cada equipo desde el que desean administrar.
@@ -224,17 +220,17 @@ Puede exportar la configuración de Administrador del servidor, hacer que Admini
 
 2.  En la pestaña **perfil** , agregue una ruta de acceso a un recurso compartido de red para almacenar el perfil del usuario.
 
-3.  Realice una de las siguientes acciones:
+3.  Lleve a cabo cualquiera de las siguientes opciones.
 
-    -   En Estados Unidos Compilaciones en inglés (en-US), los cambios realizados en el archivo **ServerList. XML** se guardan automáticamente en el perfil. Vaya al paso siguiente.
+    -   En las compilaciones en Inglés de Estados Unidos (en-US), los cambios realizados en el archivo **ServerList. XML** se guardan automáticamente en el perfil. Vaya al paso siguiente.
 
     -   En otras compilaciones, copie los dos archivos siguientes desde el equipo que ejecuta Administrador del servidor al recurso compartido de red que forma parte del perfil móvil del usuario.
 
         -   %*AppData*% \ Microsoft\Windows\ServerManager\Serverlist.XML
 
-        -   %*LocalAppData*% \ Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+        -   %*LocalAppData*% \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
-4.  Haga clic en **Aceptar** para guardar los cambios y cerrar el cuadro de diálogo **Propiedades** .
+4.  Haga clic en **Aceptar** para guardar los cambios y cerrar el cuadro de diálogo **Propiedades**.
 
 #### <a name="to-export-server-manager-settings-to-computers-in-workgroups"></a>Para exportar la configuración del Administrador del servidor a equipos de grupos de trabajo
 
@@ -242,6 +238,6 @@ Puede exportar la configuración de Administrador del servidor, hacer que Admini
 
     -   %*AppData*% \ Microsoft\Windows\ServerManager\Serverlist.XML
 
-    -   %*LocalAppData*% \ Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+    -   %*LocalAppData*% \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
 

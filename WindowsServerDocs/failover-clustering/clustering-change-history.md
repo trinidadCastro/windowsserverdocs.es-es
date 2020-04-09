@@ -1,20 +1,20 @@
 ---
 ms.assetid: 289cbd10-e7ec-4f2e-8dd1-eb5692565578
 title: Historial de cambios para temas relacionados con clústeres de conmutación por error
+description: Temas nuevos y actualizados en la documentación sobre clústeres de conmutación por error para Windows Server 2016
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.topic: article
 author: JasonGerend
-manager: daveba
+manager: lizross
 ms.author: jgerend
 ms.date: 01/07/2020
-description: Temas nuevos y actualizados en la documentación sobre clústeres de conmutación por error para Windows Server 2016
-ms.openlocfilehash: b29a1dd979dc5ab14684a83e549ce3e6b3c273f1
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 73767eb8411523a93f3a4fe2e04106c81cc39f9b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953039"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827908"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>Historial de cambios para temas relacionados con clústeres de conmutación por error
 
@@ -24,31 +24,31 @@ En este tema se enumeran los temas nuevos y actualizados de la documentación so
 
 > Si estás buscando el historial de actualizaciones de Windows Server 2016, consulta [Historial de actualizaciones de Windows 10 y Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).
 
-## <a name="january-2020"></a>Enero de 2020
+## <a name="january-2020"></a>2020 de enero
 
 |Tema nuevo o modificado                                    |Descripción |
 |--------------------------------------------------------|------------|
-|[Eventos de clúster](system-events.md)| New     |
+|[Eventos de clúster](system-events.md)| Nuevo     |
 
-## <a name="march-2019"></a>Marzo de 2019
+## <a name="march-2019"></a>2019 de marzo
 
 |Tema nuevo o modificado                                    |Descripción |
 |--------------------------------------------------------|------------|
-|[Afinidad de clústeres](cluster-affinity.md)| New     |
+|[Afinidad de clústeres](cluster-affinity.md)| Nuevo     |
 
 ## <a name="february-2019"></a>Febrero de 2019
 
 |Tema nuevo o modificado                                    |Descripción |
 |--------------------------------------------------------|------------|
-| [Actualizar un clúster de conmutación por error en el mismo hardware](upgrade-option-same-hardware.md)| New |
-|[Implementar un servidor de archivos de dos nodos](deploy-two-node-clustered-file-server.md)| New |
+| [Actualizar un clúster de conmutación por error en el mismo hardware](upgrade-option-same-hardware.md)| Nuevo |
+|[Implementar un servidor de archivos de dos nodos](deploy-two-node-clustered-file-server.md)| Nuevo |
 
-## <a name="january-2019"></a>Enero de 2019
+## <a name="january-2019"></a>2019 de enero
 
 |Tema nuevo o modificado                                    |Descripción |
 |--------------------------------------------------------|------------|
-|[Implementar un testigo del recurso compartido de archivos](file-share-witness.md)    | New        |
-|[Migración del dominio del clúster](cluster-domain-migration.md) | New        |
+|[Implementar un testigo del recurso compartido de archivos](file-share-witness.md)    | Nuevo        |
+|[Migración del dominio del clúster](cluster-domain-migration.md) | Nuevo        |
 
 ## <a name="november-2018"></a>Noviembre de 2018
 
@@ -62,7 +62,7 @@ En este tema se enumeran los temas nuevos y actualizados de la documentación so
 |---|---|
 |[Novedades de la agrupación en clústeres](whats-new-in-failover-clustering.md)| Actualizaciones para Windows Server 2019|
 
-## <a name="june-2018"></a>Junio de 2018
+## <a name="june-2018"></a>2018 de junio
 
 |Tema nuevo o modificado|Descripción|
 |---|---|

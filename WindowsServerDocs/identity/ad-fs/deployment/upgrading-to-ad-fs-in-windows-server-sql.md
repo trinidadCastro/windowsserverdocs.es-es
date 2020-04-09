@@ -1,6 +1,5 @@
 ---
 title: Actualización a AD FS en Windows Server 2016 con SQL Server
-description: ''
 author: billmath
 manager: mtillman
 ms.date: 04/11/2018
@@ -9,12 +8,12 @@ ms.prod: windows-server
 ms.assetid: 70f279bf-aea1-4f4f-9ab3-e9157233e267
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: dd843724faf1c7a8101def84091484a5e7f7900f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e9488357eecb4a2093d6989e4ebfcc195ce68567
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408235"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854008"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-with-sql-server"></a>Actualización a AD FS en Windows Server 2016 con SQL Server
 
@@ -33,7 +32,7 @@ Se puede Agregar un servidor de AD FS de Windows Server 2016 a una granja de ser
 
 -   Los administradores pueden agregar nuevos servidores de Federación de Windows Server 2016 a una granja existente de Windows Server 2012 R2.  Como resultado, la granja está en "modo mixto" y funciona el nivel de comportamiento de la granja de servidores de Windows Server 2012 R2.  Para garantizar un comportamiento coherente en la granja, las nuevas características de Windows Server 2016 no se pueden configurar ni usar en este modo.  
 
--   Una vez que todos los servidores de Federación de Windows Server 2012 R2 se han quitado de la granja de servidores de modo mixto y, en el caso de una granja de WID, uno de los nuevos servidores de Federación de Windows Serve 2016 se ha promocionado al rol del nodo principal, el administrador puede elevar el FBL desde Win con Server 2012 R2 a Windows Server 2016.  Como resultado, se pueden configurar y usar las nuevas características AD FS Windows Server 2016.  
+-   Una vez que todos los servidores de Federación de Windows Server 2012 R2 se han quitado de la granja de servidores de modo mixto y, en el caso de una granja de servidores WID, uno de los nuevos servidores de Federación de Windows Serve 2016 se ha promocionado al rol de nodo principal, el administrador puede elevar el FBL de Windows Server 2012 R2 a Windows Server 2016.  Como resultado, se pueden configurar y usar las nuevas características AD FS Windows Server 2016.  
 
 -   Como resultado de la característica de granja mixta, AD FS las organizaciones de Windows Server 2012 R2 que desean actualizar a Windows Server 2016 no tendrán que implementar una granja completamente nueva, exportar e importar los datos de configuración.  En su lugar, pueden agregar nodos de Windows Server 2016 a una granja existente mientras están en línea y solo incurren en un tiempo de inactividad relativamente breve relacionado con el FBL.  
 

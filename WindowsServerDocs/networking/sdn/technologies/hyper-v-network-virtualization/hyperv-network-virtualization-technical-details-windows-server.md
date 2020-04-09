@@ -1,24 +1,19 @@
 ---
 title: Detalles técnicos de la virtualización de red de Hyper-V en Windows Server 2016
 description: En este tema se proporciona información técnica sobre la virtualización de red de Hyper-V en Windows Server 2016
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: virtual-network
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9efe0231-94c1-4de7-be8e-becc2af84e69
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: a8628404de8a1b9caccc7f7f51b063cabb1caf27
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 54fb9eba99a4e6dc565111a3f34c8ccceeca2ff4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317205"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859708"
 ---
 # <a name="hyper-v-network-virtualization-technical-details-in-windows-server-2016"></a>Detalles técnicos de la virtualización de red de Hyper-V en Windows Server 2016
 
@@ -41,7 +36,7 @@ Hay dos implementaciones de HNV que estarán disponibles en Windows Server 2016:
 
     HNVv1 es compatible con Windows Server 2012 R2 y System Center 2012 R2 Virtual Machine Manager (VMM). La configuración de HNVv1 se basa en los cmdlets de Windows PowerShell y la administración de WMI (facilitado a través de System Center VMM) para definir la configuración de aislamiento y las asignaciones y el enrutamiento de la red virtual a la dirección física (PA). No se han agregado características adicionales a HNVv1 en Windows Server 2016 y no se han planeado nuevas características.  
 
-    • ESTABLECER la formación de equipos y HNV v1 no es compatible con la plataforma.
+    *   La plataforma establece la formación de equipos y HNV v1 no es compatible.
 
     o para usar NVGRE puertas de enlace de alta disponibilidad, los usuarios deben usar el equipo LBFO o ningún equipo. O
 

@@ -1,35 +1,29 @@
 ---
 title: call
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para llamar a, que llama a un programa por lotes desde otro sin detener el programa de Batch primario.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d34a41dc-e6c7-4467-bf6a-15cec704833e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 89097ec5d3711b3d8831f8c33b3778ed0752246f
-ms.sourcegitcommit: ee8fa8e1293f29229b5ce1b0f3d4a07ba99568f5
+ms.openlocfilehash: 58b2d03c76f53fa7bbf5c483c1a423cd4a011f94
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280196"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848238"
 ---
 # <a name="call"></a>call
 
-
-
-Llama a un programa por lotes desde otro sin detener el programa de Batch primario. El comando **Call** acepta etiquetas como destino de la llamada.
-
-> [!NOTE]
-> La **llamada** no tiene ningún efecto en el símbolo del sistema cuando se usa fuera de un script o un archivo por lotes.
+Llama a un programa por lotes desde otro sin detener el programa de Batch primario. El comando **Call** acepta etiquetas como destino de la llamada
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
+> [!NOTE]
+> La llamada no tiene ningún efecto en el símbolo del sistema cuando se usa fuera de un script o un archivo por lotes.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,7 +31,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |           Parámetro           |                                                                         Descripción                                                                          |
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -57,7 +51,7 @@ Puede usar las siguientes sintaxis opcionales como sustituciones para los parám
 
 |Parámetro batch|Descripción|
 |---------------|-----------|
-|% ~ 1|Expande **%1** y quita las comillas ("").|
+|% ~ 1|Expande **%1** y quita las comillas ().|
 |% ~ F1|Expande **%1** a una ruta de acceso completa.|
 |% ~ D1|Expande **%1** solo a una letra de unidad.|
 |% ~ P1|Expande **%1** a una ruta de acceso únicamente.|
@@ -100,7 +94,7 @@ En los ejemplos anteriores, **%1** y path se pueden reemplazar por otros valores
 
     `call :<Label> <Arguments>`
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para ejecutar el programa Checknew. bat desde otro programa por lotes, escriba el siguiente comando en el programa de Batch primario:
 ```
@@ -111,6 +105,6 @@ Si el programa de Batch primario acepta dos parámetros de batch y desea pasarlo
 call checknew %1 %2
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

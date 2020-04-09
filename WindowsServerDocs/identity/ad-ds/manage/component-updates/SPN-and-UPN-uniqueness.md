@@ -1,7 +1,6 @@
 ---
 ms.assetid: 40bc24b1-2e7d-4e77-bd0f-794743250888
 title: Unicidad de SPN y UPN
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ded707276471fccd28f0ec17afef0a24015ff32f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f182f79b5bb97e45f1cfd34ad59cf52322f09063
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390028"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823068"
 ---
 # <a name="spn-and-upn-uniqueness"></a>Unicidad de SPN y UPN
 
@@ -25,10 +24,10 @@ ms.locfileid: "71390028"
 > [!NOTE]  
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.  
   
-## <a name="overview"></a>Introducción  
+## <a name="overview"></a>Información general  
 Los controladores de dominio que ejecutan Windows Server 2012 R2 bloquean la creación de nombres de entidad de seguridad de servicio (SPN) y nombres principales de usuario (UPN) duplicados. Esto incluye si la restauración o la reanimación de un objeto eliminado o el cambio de nombre de un objeto daría como resultado un duplicado.  
   
-### <a name="background"></a>Background  
+### <a name="background"></a>Fondo  
 Los nombres principales de servicio (SPN) duplicados se producen normalmente y dan lugar a errores de autenticación y pueden provocar un uso excesivo de la CPU de LSASS. No hay ningún método en la caja para bloquear la adición de un SPN o un UPN duplicados. *  
   
 Los valores de UPN duplicados interrumpen la sincronización entre AD local y Office 365.  
@@ -51,7 +50,7 @@ Los códigos de error 8467 o 8468 o sus equivalentes hexadecimales, simbólicos 
   
 **Tabla SEQ \\\* árabe 2: códigos de error de unicidad de UPN y SPN**  
   
-|Decimal|Hex|Simbólicos|Cadena|  
+|Decimal|Hex|Simbólicos|String|  
 |-----------|-------|------------|----------|  
 |8467|21C7|ERROR_DS_SPN_VALUE_NOT_UNIQUE_IN_FOREST|No se pudo realizar la operación porque el valor SPN proporcionado para la adición o modificación no es único en todo el bosque.|  
 |8648|21C8|ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST|No se pudo realizar la operación porque el valor de UPN proporcionado para la adición o modificación no es único en todo el bosque.|  
@@ -190,7 +189,7 @@ DN: CN=Dianne Hunt2\0ADEL:dd3ab8a4-3005-4f2f-814f-d6fc54a1a1c0,CN=Deleted Object
   
 ![Unicidad de SPN y UPN](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig13_GlobalSearch.gif)  
   
-### <a name="using-windows-powershell"></a>Uso de Windows PowerShell  
+### <a name="using-windows-powershell"></a>Usar Windows PowerShell  
   
 ```  
 Get-ADObject -LdapFilter "(userPrincipalName=dhunt@blue.contoso.com)" -IncludeDeletedObjects -SearchBase "DC=blue,DC=Contoso,DC=com" -SearchScope Subtree -Server winbluedc1.blue.contoso.com  

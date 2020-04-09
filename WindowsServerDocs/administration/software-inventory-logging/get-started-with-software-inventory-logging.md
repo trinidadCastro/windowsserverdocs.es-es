@@ -1,24 +1,20 @@
 ---
 title: Introducción al registro de inventario de software
 description: Describe cómo instalar y empezar a usar el registro de inventario de software
-ms.custom: na
 ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ed51c13c-7cbf-4144-a675-011fd29379d4
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: add11bf51570e3cafa2bd03ee3585de89f3eecab
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: e54e8f96863280263f7afee2e32bfd41ec712110
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75946965"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851448"
 ---
 # <a name="get-started-with-software-inventory-logging"></a>Introducción al registro de inventario de software
 
@@ -26,8 +22,8 @@ ms.locfileid: "75946965"
 
  El registro de inventario de software recopila datos de inventario de software de Microsoft por servidor. Antes de usar el registro de inventario de software con Windows Server 2012 R2, asegúrese de que Windows Update [kb 3000850](https://support.microsoft.com/kb/3000850) y [KB 3060681](https://support.microsoft.com/kb/3060681) están instalados en cada sistema en el que se va a realizar el inventario. No se requiere ningún Windows Update para Windows Server 2016. Además, si desea usar la capacidad de SIL para reenviar datos a un servidor de agregación, asegúrese de que tiene certificados SSL válidos para la red.
 
-## <a name="BKMK_OVER"></a>Descripción de la característica
-El registro de inventario de software de Windows Server es una función dotada de un sencillo conjunto de cmdlets de PowerShell que ayuda a los administradores de servidores a recuperar una lista del software de Microsoft instalado en sus servidores. También proporciona la capacidad de recopilar y reenviar estos datos periódicamente a través de la red a un servidor web de destino, mediante el protocolo HTTPS, para la agregación. También se usan comandos de PowerShell para administrar la función, en particular para recopilar datos cada hora y reenviarlos.
+## <a name="feature-description"></a><a name="BKMK_OVER"></a>Descripción de la característica
+El registro de inventario de software de Windows Server es una característica dotada de un sencillo conjunto de cmdlets de PowerShell que ayuda a los administradores de servidores a recuperar una lista del software de Microsoft instalado en sus servidores. También proporciona la capacidad de recopilar y reenviar estos datos periódicamente a través de la red a un servidor web de destino, mediante el protocolo HTTPS, para la agregación. También se usan comandos de PowerShell para administrar la característica, en particular para recopilar datos cada hora y reenviarlos.
 
 > [!NOTE]
 > Se puede configurar por separado un servidor de agregación que ejecute un servicio web. Obtenga más información sobre [Agregador de Registro de inventario de software](software-inventory-logging-aggregator.md).
@@ -35,7 +31,7 @@ El registro de inventario de software de Windows Server es una función dotada d
 > [!IMPORTANT]
 > Ninguno de los datos recopilados por el registro de inventario de software se envía a Microsoft como parte de la funcionalidad de la característica.
 
-## <a name="BKMK_APP"></a>Aplicaciones prácticas
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicaciones prácticas
 El registro de inventario de software está pensado para reducir los costes operativos derivados de la recuperación de información precisa sobre el software de Microsoft implementado de forma local en un servidor y, más particularmente, en numerosos servidores en un entorno de TI (suponiendo que esté implementado y habilitado en dicho entorno). Al poder reenviar estos datos a un servidor de agregación (que un administrador de TI deberá configurar por separado), los datos se recopilan en una misma ubicación mediante un proceso automático y uniforme. Aunque esto también se puede conseguir con una consulta directa a las interfaces, el registro de inventario de software, mediante una arquitectura de reenvío (a través de la red) que se inicia en cada servidor, puede superar los retos de detección de equipos típicos en muchos escenarios relativos al inventario y a la administración de activos de software. SSL se usa para proteger los datos reenviados a través de HTTPS a un servidor de agregación de un administrador. Tener los datos en una única ubicación (en un servidor) simplifica su análisis y manipulación, y la elaboración de informes sobre ellos. Es importante destacar que estos datos no se envían a Microsoft como parte de la funcionalidad de la característica. Los datos y la funcionalidad de registro de inventario de software están destinados al uso exclusivo del propietario y los administradores con licencia del software de servidor.
 
 El registro de inventario de software puede ayudar a los administradores del servidor a realizar las siguientes tareas:
@@ -49,5 +45,5 @@ El registro de inventario de software puede ayudar a los administradores del ser
 [Administrar el Registro de inventario de software](manage-software-inventory-logging.md)<br>
 [Cmdlets de registro de inventario de software en Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx)<br>
 [Microsoft Assessment and Planning Toolkit](https://www.microsoft.com/download/en/details.aspx?id=7826)
-[Herramienta de administración de activación por volumen](https://blogs.technet.com/b/volume-licensing/)
+[herramienta de administración de activación por volumen](https://blogs.technet.com/b/volume-licensing/)
 

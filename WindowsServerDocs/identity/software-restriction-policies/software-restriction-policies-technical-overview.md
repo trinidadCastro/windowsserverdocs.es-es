@@ -1,24 +1,20 @@
 ---
 title: Introducción técnica a las directivas de restricción de software
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc7013b0-0efd-40fd-bd6d-75128adbd0b8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 293239c9f746f939b06d45d6e8c1a50b59e2bc43
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 38625a8d416345a6a7ed40c021b55aa10d1fd92f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322967"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855278"
 ---
 # <a name="software-restriction-policies-technical-overview"></a>Introducción técnica a las directivas de restricción de software
 
@@ -27,7 +23,7 @@ ms.locfileid: "79322967"
 En este tema se describen las directivas de restricción de software, Cuándo y cómo usar la característica, qué cambios se han implementado en las versiones anteriores y se proporcionan vínculos a recursos adicionales que le ayudarán a crear e implementar directivas de restricción de software a partir de Windows Server 2008 y Windows Vista.
 
 ## <a name="introduction"></a>Introducción
-Las directivas de restricción de software proporcionan a los administradores un mecanismo controlado por directiva de grupo para identificar el software y controlar su capacidad de ejecución en el equipo local. Estas directivas se pueden usar para proteger los equipos que ejecutan sistemas operativos Microsoft Windows (a partir de Windows Server 2003 y Windows XP Professional) frente a conflictos conocidos y proteger los equipos frente a amenazas de seguridad como virus malintencionados. y programas troyanos. También puede usar las directivas de restricción de software para crear una configuración altamente restringida para los equipos, en los que solamente pueden ejecutarse aquellas aplicaciones específicamente identificadas. Las directivas de restricción de software están integradas en Microsoft Active Directory y la directiva de grupo. También puede crear directivas de restricción de software en equipos independientes.
+Las directivas de restricción de software proporcionan a los administradores un mecanismo controlado por directiva de grupo para identificar el software y controlar su capacidad de ejecución en el equipo local. Estas directivas se pueden usar para proteger los equipos que ejecutan sistemas operativos Microsoft Windows (a partir de Windows Server 2003 y Windows XP Professional) frente a conflictos conocidos y proteger los equipos frente a amenazas de seguridad como virus malintencionados y programas troyanos. También puede usar las directivas de restricción de software para crear una configuración altamente restringida para los equipos, en los que solamente pueden ejecutarse aquellas aplicaciones específicamente identificadas. Las directivas de restricción de software están integradas en Microsoft Active Directory y la directiva de grupo. También puede crear directivas de restricción de software en equipos independientes.
 
 Las directivas de restricción de software son directivas de confianza, las cuáles son normativas establecidas por un administrador para restringir los scripts y otros códigos que no son de confianza plena. La extensión de directivas de restricción de software para el Editor de directivas de grupo local proporciona una única interfaz de usuario a través de la cual la configuración para restringir el uso de aplicaciones puede administrarse en el equipo local o en todo un dominio.
 
@@ -72,7 +68,7 @@ Concretamente, los administradores pueden usar las directivas de restricción de
 
 -   Evitar que los archivos ejecutables se ejecuten en el equipo local, la unidad organizativa (OU), el sitio o el dominio. Esto resultaría apropiado cuando no está usando directivas de restricción de software para tratar problemas potenciales con usuarios malintencionados.
 
-## <a name="BKMK_Diffs_Changes"></a>Diferencias y cambios en la funcionalidad
+## <a name="differences-and-changes-in-functionality"></a><a name="BKMK_Diffs_Changes"></a>Diferencias y cambios en la funcionalidad
 No hay ningún cambio en la funcionalidad de SRP para Windows Server 2012 y Windows 8.
 
 **Versiones admitidas**
@@ -89,15 +85,15 @@ En la tabla siguiente se comparan las características y funciones de la caracte
 |Función de control de aplicaciones|SRP|AppLocker|
 |----------------|----|-------|
 |Ámbito|Las directivas de SRP se pueden aplicar a todos los sistemas operativos Windows a partir de Windows XP y Windows Server 2003.|Las directivas de AppLocker solo se aplican a Windows Server 2008 R2, Windows Server 2012, Windows 7 y Windows 8.|
-|Creación de directivas|Las directivas de SRP se mantienen a través de la directiva de grupo y solo el administrador del GPO puede actualizar la directiva de SRP. El administrador del equipo local puede modificar las directivas de SRP definidas en el GPO local.|Las directivas de AppLocker se mantienen a través de la directiva de grupo y solo el administrador del GPO puede actualizar la directiva. El administrador del equipo local puede modificar las directivas de AppLocker definidas en el GPO local.<br /><br />AppLocker permite la personalización de mensajes de error con el fin de dirigir a los usuarios a una página web para obtener ayuda.|
+|Creación de directivas|Las directivas de SRP se mantienen a través de la directiva de grupo y solo el administrador del GPO puede actualizar la directiva de SRP. El administrador del equipo local puede modificar las directivas de SRP definidas en el GPO local.|Las directivas de AppLocker se mantienen a través de la directiva de grupo y solo el administrador del GPO puede actualizar la directiva. El administrador del equipo local puede modificar las directivas de AppLocker definidas en el GPO local.<p>AppLocker permite la personalización de mensajes de error con el fin de dirigir a los usuarios a una página web para obtener ayuda.|
 |Mantenimiento de directivas|Las directivas de SRP deben actualizarse mediante el complemento de directiva de seguridad local (si se crean las directivas localmente) o la consola de administración de directiva de grupo (GPMC).|Las directivas de AppLocker pueden actualizarse mediante el complemento de directiva de seguridad local (si se crean las directivas localmente), los GPMC o los cmdlets de Windows PowerShell AppLocker.|
 |Aplicación de la directiva|Las directivas de SRP se distribuyen a través de la directiva de grupo.|Las directivas de AppLocker se distribuyen a través de la directiva de grupo.|
-|Modo de cumplimiento|SRP funciona en el modo de lista de denegación, donde los administradores pueden crear reglas para los archivos que no desean permitir en esta empresa, mientras que el resto del archivo se puede ejecutar de forma predeterminada.<br /><br />SRP también puede configurarse en "permitir modo de lista" de forma que todos los archivos estén bloqueados de forma predeterminada y los administradores tengan que crear reglas de permiso para los archivos que desea permitir.|De forma predeterminada, AppLocker funciona en el modo de lista de permitidos, donde solo se permite ejecutar los archivos para los que hay una regla de permiso coincidente.|
-|Tipos de archivo que se pueden controlar|SRP puede controlar los siguientes tipos de archivo:<br /><br />-Ejecutables<br />-Dll<br />-Scripts<br />: Instaladores de Windows<br /><br />SRP no puede controlar cada tipo de archivo por separado. Todas las reglas de SRP están en una colección de regla única.|AppLocker puede controlar los siguientes tipos de archivo:<br /><br />-Ejecutables<br />-Dll<br />-Scripts<br />: Instaladores de Windows<br />-Aplicaciones e instaladores empaquetados (Windows Server 2012 y Windows 8)<br /><br />AppLocker mantiene una colección de reglas independientes para cada uno de los cinco tipos de archivo.|
-|Tipos de archivo designados|SRP admite una lista extensible de tipos de archivo que se consideran ejecutables. Los administradores pueden agregar extensiones a los archivos que deben considerarse ejecutables.|AppLocker no admite esto. AppLocker admite actualmente las siguientes extensiones de archivo:<br /><br />-Ejecutables (. exe,. com)<br />-DLL (. ocx,. dll)<br />-Scripts (. vbs,. js,. ps1,. cmd,. bat)<br />-Instaladores de Windows (. msi,. MST,. msp)<br />-Instaladores de aplicaciones empaquetadas (. appx)|
-|Tipos de regla|SRP admite cuatro tipos de reglas:<br /><br />-Hash<br />-Path<br />-Signature<br />-Zona de Internet|AppLocker admite tres tipos de reglas:<br /><br />-Hash<br />-Path<br />-Publicador|
+|Modo de cumplimiento|SRP funciona en el modo de lista de denegación, donde los administradores pueden crear reglas para los archivos que no desean permitir en esta empresa, mientras que el resto del archivo se puede ejecutar de forma predeterminada.<p>SRP también puede configurarse en "permitir modo de lista" de forma que todos los archivos estén bloqueados de forma predeterminada y los administradores tengan que crear reglas de permiso para los archivos que desea permitir.|De forma predeterminada, AppLocker funciona en el modo de lista de permitidos, donde solo se permite ejecutar los archivos para los que hay una regla de permiso coincidente.|
+|Tipos de archivo que se pueden controlar|SRP puede controlar los siguientes tipos de archivo:<p>-Ejecutables<br />-Dll<br />-Scripts<br />: Instaladores de Windows<p>SRP no puede controlar cada tipo de archivo por separado. Todas las reglas de SRP están en una colección de regla única.|AppLocker puede controlar los siguientes tipos de archivo:<p>-Ejecutables<br />-Dll<br />-Scripts<br />: Instaladores de Windows<br />-Aplicaciones e instaladores empaquetados (Windows Server 2012 y Windows 8)<p>AppLocker mantiene una colección de reglas independientes para cada uno de los cinco tipos de archivo.|
+|Tipos de archivo designados|SRP admite una lista extensible de tipos de archivo que se consideran ejecutables. Los administradores pueden agregar extensiones a los archivos que deben considerarse ejecutables.|AppLocker no admite esto. AppLocker admite actualmente las siguientes extensiones de archivo:<p>-Ejecutables (. exe,. com)<br />-DLL (. ocx,. dll)<br />-Scripts (. vbs,. js,. ps1,. cmd,. bat)<br />-Instaladores de Windows (. msi,. MST,. msp)<br />-Instaladores de aplicaciones empaquetadas (. appx)|
+|Tipos de regla|SRP admite cuatro tipos de reglas:<p>-Hash<br />-Path<br />-Signature<br />-Zona de Internet|AppLocker admite tres tipos de reglas:<p>-Hash<br />-Path<br />-Publicador|
 |Editar el valor de hash|SRP permite a los administradores proporcionar valores hash personalizados.|AppLocker calcula el valor de hash por su cuenta. Utiliza internamente el hash SHA1 Authenticode para los archivos ejecutables portables (exe y dll) y los instaladores de Windows y un hash de archivo sin formato SHA1 para el resto.|
-|Compatibilidad con diferentes niveles de seguridad|Los administradores de SRP pueden especificar los permisos con los que se puede ejecutar una aplicación. Por lo tanto, un administrador puede configurar una regla de modo que el Bloc de notas siempre se ejecute con permisos restringidos y nunca con privilegios de administrador.<br /><br />SRP en Windows Vista y varios niveles de seguridad anteriores compatibles. En Windows 7, esa lista se restringe a solo dos niveles: no permitido y no restringido (el usuario básico se traduce en no permitido).|AppLocker no admite niveles de seguridad.|
+|Compatibilidad con diferentes niveles de seguridad|Los administradores de SRP pueden especificar los permisos con los que se puede ejecutar una aplicación. Por lo tanto, un administrador puede configurar una regla de modo que el Bloc de notas siempre se ejecute con permisos restringidos y nunca con privilegios de administrador.<p>SRP en Windows Vista y varios niveles de seguridad anteriores compatibles. En Windows 7, esa lista se restringe a solo dos niveles: no permitido y no restringido (el usuario básico se traduce en no permitido).|AppLocker no admite niveles de seguridad.|
 |Administración de aplicaciones empaquetadas e instaladores de aplicaciones empaquetadas|No se puede|.appx es un tipo de archivo válido que puede administrar AppLocker.|
 |Selección del destino de una regla para un usuario o un grupo de usuarios|Las reglas de SRP se aplican a todos los usuarios en un equipo determinado.|Las reglas de AppLocker pueden destinarse a un usuario específico o un grupo de usuarios.|
 |Compatibilidad con las excepciones de regla|SRP no admite excepciones de reglas.|Las reglas de AppLocker pueden tener excepciones que permiten a los administradores crear reglas como "permitir todo desde Windows excepto regedit. exe".|
@@ -119,7 +115,7 @@ En un nivel alto, las directivas de restricción de software constan de los sigu
 
 -   Un conjunto de aplicaciones y API del sistema operativo que llaman a las API de directivas de restricción de software para proporcionar la aplicación de las directivas de restricción de software en tiempo de ejecución.
 
--   Active Directory y directiva de grupo. Las directivas de restricción de software dependen de la infraestructura de directiva de grupo para propagar las directivas de restricción de software del Active Directory a los clientes adecuados y para el ámbito y el filtrado de la aplicación de estas directivas al equipos de destino.
+-   Active Directory y directiva de grupo. Las directivas de restricción de software dependen de la infraestructura de directiva de grupo para propagar las directivas de restricción de software del Active Directory a los clientes adecuados y para el ámbito y el filtrado de la aplicación de estas directivas en los equipos de destino adecuados.
 
 -   Authenticode y WinVerify confían en las API que se usan para procesar archivos ejecutables firmados.
 
@@ -129,7 +125,7 @@ En un nivel alto, las directivas de restricción de software constan de los sigu
 
 Para obtener más información acerca de la arquitectura de SRP, cómo administra SRP las reglas, los procesos y las interacciones, vea [Cómo funcionan las directivas de restricción de software](https://technet.microsoft.com/library/cc786941(v=WS.10).aspx) en la biblioteca técnica de Windows Server 2003.
 
-## <a name="BKMK_Best_Practices"></a>Procedimientos recomendados
+## <a name="best-practices"></a><a name="BKMK_Best_Practices"></a>Procedimientos recomendados
 
 ### <a name="do-not-modify-the-default-domain-policy"></a>No modifique la directiva predeterminada de dominio.
 
@@ -180,7 +176,7 @@ Para obtener más información acerca de la arquitectura de SRP, cómo administr
 |**Planeamiento**|[Referencia técnica de directivas de restricción de software](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx)|
 |**Operaciones**|[Administración de las directivas de restricción de software](administer-software-restriction-policies.md)|
 |**Solución de problemas**|[Solución de problemas de directivas de restricción de software (2003)](https://technet.microsoft.com/library/cc737011(v=WS.10).aspx)|
-|**Seguridad**|[Amenazas y contramedidas para las directivas de restricción de software (2008)](https://technet.microsoft.com/library/dd349795(v=WS.10).aspx)<br /><br />[Amenazas y contramedidas para las directivas de restricción de software (2008 R2)](https://technet.microsoft.com/library/hh125926(v=WS.10).aspx)|
+|**Seguridad**|[Amenazas y contramedidas para las directivas de restricción de software (2008)](https://technet.microsoft.com/library/dd349795(v=WS.10).aspx)<p>[Amenazas y contramedidas para las directivas de restricción de software (2008 R2)](https://technet.microsoft.com/library/hh125926(v=WS.10).aspx)|
 |**Herramientas y configuración**|[Herramientas y configuración de las directivas de restricción de software (2003)](https://technet.microsoft.com/library/cc782454(v=WS.10).aspx)|
 |**Recursos de la comunidad**|[Bloqueo de aplicaciones con directivas de restricción de software](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
 

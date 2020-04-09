@@ -1,24 +1,20 @@
 ---
 title: tasklist
 description: Obtenga información acerca de cómo mostrar una lista de los procesos que se ejecutan en el equipo local o remoto.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8dbe30ee-1484-46be-917b-5ca3ff4fdc9c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7ad61dfe8beb86c8299dd71bec1d862805e50e0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b43f4c9a89fa60f2244253d48d3dca646fe8e02d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383682"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80833438"
 ---
 # <a name="tasklist"></a>tasklist
 
@@ -32,7 +28,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module> | /svc | /v}] [/fo {table | list | csv}] [/nh] [/fi <Filter> [/fi <Filter> [ ... ]]]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |          Parámetro           |                                                                                                                                            Descripción                                                                                                                                             |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -45,29 +41,29 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 |  /FO {Table \| List \| CSV}  |                                                                             Especifica el formato que se va a utilizar para la salida. Los valores válidos son **TABLE**, **List**y **CSV**. El formato predeterminado de la salida es **TABLE**.                                                                             |
 |             /NH              |                                                                                             Suprime los encabezados de columna en la salida. Válido cuando el parámetro **/FO** está establecido en **TABLE** o **CSV**.                                                                                              |
 |        /fi \<filtrar >         |                                                                          Especifica los tipos de procesos que se van a incluir o excluir de la consulta. Vea la tabla siguiente para ver los nombres de filtro, los operadores y los valores válidos.                                                                          |
-|              /?              |                                                                                                                                Muestra la ayuda en el símbolo del sistema.                                                                                                                                |
+|              /?              |                                                                                                                                Muestra la Ayuda en el símbolo del sistema.                                                                                                                                |
 
 ### <a name="filter-names-operators-and-values"></a>Filtrar nombres, operadores y valores
 
 | Nombre del filtro |    Operadores válidos     |                                                                 Valores válidos                                                                 |
 |-------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-|   ESTATUS    |         eq, ne         |                                                                   ESTÉN                                                                    |
+|   STATUS    |         eq, ne         |                                                                   EN EJECUCIÓN                                                                    |
 |  /IM  |         eq, ne         |                                                                  Nombre de la imagen                                                                  |
 |     PID     | eq, ne, gt, lt, ge, le |                                                                  Valor de PID                                                                   |
-|   SESIÓN   | eq, ne, gt, lt, ge, le |                                                                Número de sesión                                                                |
+|   SESIÓN   | eq, ne, gt, lt, ge, le |                                                                Número de la sesión                                                                |
 | NOMBREDESESIÓN |         eq, ne         |                                                                 Nombre de sesión                                                                 |
 |   CPUTIME   | eq, ne, gt, lt, ge, le | Tiempo de CPU con el formato <em>HH</em> **:** <em>mm</em> **:** <em>SS</em>, donde *mm* y *SS* están entre 0 y 59 y *HH* es cualquier número sin signo. |
 |  MEMUSAGE   | eq, ne, gt, lt, ge, le |                                                              Uso de memoria en KB                                                              |
-|  NOMBRE   |         eq, ne         |                                                             Cualquier nombre de usuario válido                                                              |
+|  NOMBRE DE USUARIO   |         eq, ne         |                                                             Cualquier nombre de usuario válido                                                              |
 |  Server   |         eq, ne         |                                                                 Nombre del servicio                                                                 |
-| WINDOWTITLE |         eq, ne         |                                                                 Título de ventana                                                                 |
+| WINDOWTITLE |         eq, ne         |                                                                 Título de la ventana                                                                 |
 |   ADICIONALES   |         eq, ne         |                                                                   Nombre de DLL                                                                   |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 Los filtros WINDOWTITLE y STATUs no se admiten cuando se especifica un sistema remoto.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Example
 
 Para enumerar todas las tareas con un ID. de proceso superior a 1000 y mostrarlas en formato CSV, escriba:
 ```
@@ -94,6 +90,6 @@ Para enumerar los procesos del equipo remoto "Srvmain", con las credenciales de 
 tasklist /s srvmain /u maindom\hiropln /p p@ssW23
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

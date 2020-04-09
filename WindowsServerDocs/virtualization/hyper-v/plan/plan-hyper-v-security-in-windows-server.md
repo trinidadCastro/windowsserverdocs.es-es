@@ -2,22 +2,19 @@
 title: Planeación de la seguridad de Hyper-V en Windows Server
 description: Proporciona listas de consideraciones de seguridad para hosts de Hyper-v y máquinas virtuales
 ms.prod: windows-server
-ms.service: na
-ms.suite: na
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 115db481-b57e-41c3-8354-504f4bc6113a
 manager: dongill
 author: larsiwer
-ms.author: kathyDav
+ms.author: kathydav
 ms.date: 08/03/2018
-ms.openlocfilehash: 8fd86ae500fff1e6b8c27b0d34d1dcbeeade9f81
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 794f36b688c4c65da8b3925a98c91aea8cf74bde
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392962"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852888"
 ---
 # <a name="plan-for-hyper-v-security-in-windows-server"></a>Planeación de la seguridad de Hyper-V en Windows Server
 

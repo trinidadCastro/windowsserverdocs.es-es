@@ -1,7 +1,6 @@
 ---
 ms.assetid: 155abe09-6360-4913-8dd9-7392d71ea4e6
 title: Configuración de un equipo para la solución de problemas
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 53af8acd7da8f9008c88ad7c6c14b00e63801847
-ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
+ms.openlocfilehash: d9d279615dc1f70ffdcff9e49a4aa619f0106a93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278560"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822978"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>Configuración de un equipo para la solución de problemas
 
@@ -36,7 +35,7 @@ Para obtener información sobre cómo instalar RSAT, consulte el artículo [herr
 
 ### <a name="configure-reliability-and-performance-monitor"></a>Configurar el monitor de confiabilidad y rendimiento
 
-Windows Server incluye el monitor de confiabilidad y rendimiento de Windows, que es un complemento de Microsoft Management Console (MMC) que combina la funcionalidad de las herramientas independientes anteriores, como Registros y alertas de rendimiento, Server Performance Advisor. y el monitor de sistema. Este complemento proporciona una interfaz gráfica de usuario (GUI) para personalizar conjuntos de recopiladores de datos y sesiones de seguimiento de eventos.
+Windows Server incluye el monitor de confiabilidad y rendimiento de Windows, que es un complemento de Microsoft Management Console (MMC) que combina la funcionalidad de herramientas independientes anteriores, como Registros y alertas de rendimiento, el asesor de rendimiento de servidor y el monitor de sistema. Este complemento proporciona una interfaz gráfica de usuario (GUI) para personalizar conjuntos de recopiladores de datos y sesiones de seguimiento de eventos.
 
 El monitor de confiabilidad y rendimiento también incluye el monitor de confiabilidad, un complemento MMC que realiza un seguimiento de los cambios en el sistema y los compara con los cambios en la estabilidad del sistema, lo que proporciona una vista gráfica de su relación.
 

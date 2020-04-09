@@ -1,24 +1,20 @@
 ---
 title: print
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aa2325d5-a993-4ed3-b996-255165452db8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ada0657e2f17754e55e97e6488aac99fb0025afb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 36966d8d3beb032ee0dcee50d9bd5bc0111bf4f5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372154"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837378"
 ---
 # <a name="print"></a>print
 
@@ -34,7 +30,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -42,9 +38,9 @@ Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
 |> de \<unidad:|Especifica la unidad física o lógica en la que se encuentra el archivo que desea imprimir. Este parámetro no es necesario si el archivo que desea imprimir se encuentra en la unidad actual.|
 |\<ruta de acceso >|Especifica la ubicación del archivo que desea imprimir. Este parámetro no es necesario si el archivo que desea imprimir está ubicado en el directorio actual.|
 |\<nombre de archivo > [...]|Obligatorio. Especifica el archivo que desea imprimir. Puede incluir varios archivos en un solo comando.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Un archivo puede imprimir en segundo plano si lo envía a una impresora conectada a un puerto serie o paralelo en el equipo local.
 -   Puede realizar muchas tareas de configuración desde el símbolo del sistema mediante el comando **modo** .
@@ -55,7 +51,7 @@ Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
     -   Mostrar el estado de una impresora
     -   Preparar una impresora para el cambio de páginas de códigos
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para enviar el archivo report. txt en el directorio actual a una impresora conectada a LPT2 en el equipo local, escriba:
 ```
@@ -66,9 +62,9 @@ Para enviar el archivo report. txt en el directorio c:\Accounting a la cola de i
 print /d:\\copyroom\printer1 c:\accounting\report.txt 
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
 [Referencia de comandos de impresión](print-command-reference.md)
 

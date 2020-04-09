@@ -1,28 +1,22 @@
 ---
 title: clip
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Comando comandos de Windows para clip, que redirige la salida del comando desde la línea de comandos al portapapeles de Windows.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 85322d85-3376-4806-845b-93ac77fe27bf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82186869782c47f41930d46b4c33a710e6addedf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0d997154a382cf39aa2b877d7a2b84f4ff34157d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379354"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847648"
 ---
 # <a name="clip"></a>clip
-
-
 
 Redirige la salida del comando desde la línea de comandos al portapapeles de Windows. Después, puede pegar esta salida de texto en otros programas.
 
@@ -35,19 +29,19 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 clip < <FileName>
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
 |\<> de comandos|Especifica un comando cuya salida se desea enviar al portapapeles de Windows.|
 |\<nombre de archivo >|Especifica un archivo cuyo contenido desea enviar al portapapeles de Windows.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 Puede usar el comando **clip** para copiar los datos directamente en cualquier aplicación que pueda recibir texto del portapapeles.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para copiar la lista de directorios actual en el portapapeles de Windows, escriba:
 ```
@@ -62,6 +56,6 @@ Para copiar el contenido de un archivo denominado README. txt en el portapapeles
 clip < readme.txt
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

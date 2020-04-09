@@ -1,7 +1,6 @@
 ---
 ms.assetid: 026747c7-4c34-41c7-b7ea-27f9a7f64a35
 title: Agregar un registro de recursos de host (A) al DNS corporativo para un servidor de federación
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 132e71cec134d17dd73be998683c09f752fdc414
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 47d619803133a29bd0217b738577c93522f1ab59
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360332"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815028"
 ---
 # <a name="add-a-host-a-resource-record-to-corporate-dns-for-a-federation-server"></a>Agregar un registro de recursos de host (A) al DNS corporativo para un servidor de federación
 

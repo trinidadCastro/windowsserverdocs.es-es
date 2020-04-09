@@ -1,28 +1,22 @@
 ---
 title: cipher
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Comando comandos de Windows para Cipher, que muestra o modifica el cifrado de directorios y archivos en volúmenes NTFS.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78ef795e-0f87-4acd-8d15-192c972c0f41
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ba6a54c275e1765bfdc31fe30d78fc6e3da6c05
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40e969735e6280fb10084440f34cae7753962f66
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379359"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847768"
 ---
 # <a name="cipher"></a>cipher
-
-
 
 Muestra o cambia el cifrado de directorios y archivos en volúmenes NTFS. Si se usa sin parámetros, **Cipher** muestra el estado de cifrado del directorio actual y los archivos que contiene.
 
@@ -43,11 +37,11 @@ cipher /removeuser /certhash:<Hash> [/s:<Directory>] [/b] [/h] [<PathName> [...]
 cipher /rekey [PathName [...]]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |          Parámetros           |                                                                                                                                                   Descripción                                                                                                                                                    |
 |-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|              b               |                                                                                                    Se anula si se produce un error. De forma predeterminada, el **cifrado** continúa ejecutándose incluso si se producen errores.                                                                                                    |
+|              /b               |                                                                                                    Se anula si se produce un error. De forma predeterminada, el **cifrado** continúa ejecutándose incluso si se producen errores.                                                                                                    |
 |              /c               |                                                                                                                                   Muestra información sobre el archivo cifrado.                                                                                                                                    |
 |              /d               |                                                                                                                                   Descifra los archivos o directorios especificados.                                                                                                                                   |
 |              /e               |                                                                                          Cifra los archivos o directorios especificados. Los directorios se marcan para que se cifren los archivos que se agregan después.                                                                                           |
@@ -62,16 +56,16 @@ cipher /rekey [PathName [...]]
 |  /adduser [/certhash:\<hash >  |                                                                                                                                              /CERTFILE:<FileName>]                                                                                                                                               |
 |            /rekey             |                                                                                                                 Actualiza los archivos cifrados especificados para usar la clave EFS configurada actualmente.                                                                                                                 |
 | /removeuser/certhash:\<hash > |                                                                                       Quita un usuario de los archivos especificados. El *hash* proporcionado para **/certhash** debe ser el hash SHA1 del certificado que se va a quitar.                                                                                       |
-|              /?               |                                                                                                                                       Muestra la ayuda en el símbolo del sistema.                                                                                                                                       |
+|              /?               |                                                                                                                                       Muestra la Ayuda en el símbolo del sistema.                                                                                                                                       |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Si el directorio principal no está cifrado, se puede descifrar un archivo cifrado cuando se modifica. Por lo tanto, al cifrar un archivo, también debe cifrar el directorio principal.
 -   Un administrador puede Agregar el contenido de un archivo. cer a la Directiva de recuperación de EFS para crear el agente de recuperación para los usuarios y, a continuación, importar el archivo. pfx para recuperar archivos individuales.
 -   Puede usar varios nombres de directorio y caracteres comodín.
 -   Debe colocar espacios entre varios parámetros.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para mostrar el estado de cifrado de cada uno de los archivos y subdirectorios del directorio actual, escriba:
 ```
@@ -107,4 +101,4 @@ Tenga en cuenta que el directorio privado está marcado como cifrado.
 
 #### <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

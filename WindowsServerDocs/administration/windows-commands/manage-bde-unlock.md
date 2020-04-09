@@ -1,24 +1,20 @@
 ---
 title: 'administrar: desbloqueo de BDE'
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7852bf7d-9102-40be-adcb-71e8f4dfde72
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 92ed2e00babfad890be83e45827ae8e0080cac40
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e26952ca8c2b20cb0cb8efa167fca81e27b692a0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373872"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839743"
 ---
 # <a name="manage-bde-unlock"></a>Manage-BDE: Unlock
 
@@ -32,7 +28,7 @@ Desbloquea una unidad protegida con BitLocker mediante una contraseña de recupe
 manage-bde -unlock {-recoverypassword <Password>|-recoverykey <PathToExternalKeyFile>} <Drive> [-certificate {-cf PathToCertificateFile | -ct CertificateThumbprint} {-pin}] [-password] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |Parámetro|Valor|Descripción|
 |---------|-----|-----------|
@@ -44,20 +40,20 @@ manage-bde -unlock {-recoverypassword <Password>|-recoverykey <PathToExternalKey
 |-certificado||El certificado de usuario local de un certificado de BitLocker para deshacer el reloj del volumen se encuentra en el almacén de certificados de usuario de búsqueda. Abreviatura:-CERT|
 ||<-CF PathToCertificateFile >|Ruta de acceso al archivo Cerficate|
 ||<-CT CertificateThumbprint >|Huella digital del certificado que puede incluir opcionalmente el PIN (-PIN).|
-|-contraseña||Presenta un símbolo del sistema para la contraseña para desbloquear el volumen. Abreviatura:-PW|
+|-password||Presenta un símbolo del sistema para la contraseña para desbloquear el volumen. Abreviatura:-PW|
 |-COMPUTERNAME||Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. Abreviatura:-CN|
 ||Nombre del \<>|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
 |-? o/?||Muestra una breve ayuda en el símbolo del sistema.|
 |-Help o-h||Muestra la ayuda completa en el símbolo del sistema.|
 
-## <a name="BKMK_Examples"></a>Example
+## <a name="examples"></a><a name=BKMK_Examples></a>Example
 
 En el ejemplo siguiente se muestra el uso del comando **-Unlock** para desbloquear la unidad E con un archivo de clave de recuperación que se ha guardado en una carpeta de copia de seguridad de otra unidad.
 ```
-manage-bde –unlock E: -recoverykey "F:\Backupkeys\recoverykey.bek"
+manage-bde –unlock E: -recoverykey F:\Backupkeys\recoverykey.bek
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Manage-BDE](manage-bde.md)

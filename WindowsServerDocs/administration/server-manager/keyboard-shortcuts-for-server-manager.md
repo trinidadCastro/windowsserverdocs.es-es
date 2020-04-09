@@ -1,24 +1,20 @@
 ---
 title: Métodos abreviados de teclado del Administrador del servidor
 description: Administrador de servidores
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 96a2a8be-cbeb-4799-9034-284ea057915c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a78a9eb0923a067fe2a8f1c9faee38b9d7f8b944
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8135f453f633f8193fa56d80ae05cd9601435c87
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383174"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851518"
 ---
 # <a name="keyboard-shortcuts-for-server-manager"></a>Métodos abreviados de teclado del Administrador del servidor
 
@@ -33,7 +29,7 @@ Para obtener acceso a los comandos que no tengan sus propios métodos abreviados
 
 **Icono de bienvenida**
 
-|Grupo de controles|Tecla de acceso|
+|Grupo de controles|Clave de acceso|
 |---------|-------|
 |Icono de bienvenida: pestaña Inicio rápido|**Alt + Q**|
 |Icono Página principal; pestaña Novedades|**Alt + W**|
@@ -42,29 +38,29 @@ Para obtener acceso a los comandos que no tengan sus propios métodos abreviados
 
 **Miniaturas de roles y grupos**
 
-|Grupo de controles|Tecla de acceso|
+|Grupo de controles|Clave de acceso|
 |---------|-------|
 |Icono Grupos de servidores y roles|**Alt + R**|
 
 **Controles de encabezado de la consola**
 
-|Grupo de controles|Tecla de acceso|
+|Grupo de controles|Clave de acceso|
 |---------|-------|
 |Botón Atrás de la barra de direcciones|**Alt+flecha izquierda** o **Retroceso**|
 |botón Reenviar en la barra de direcciones|**Alt + flecha derecha**|
-|Actualizar|**CTRL+F5**|
+|Actualizar|**Ctrl+F5**|
 |Área de notificaciones, abrir cuadro de diálogo Detalles de tarea|**Alt + N**|
 |Menú Administrar|**Alt + M**|
 |Menú Ver|**ALT + V**|
 |menú ayuda|**Alt + H**|
-|Abrir Administrador del servidor ayuda|**TECLA**|
+|Abrir Administrador del servidor ayuda|**Tecla**|
 |Acercar|**Ctrl + más (+)**|
 |Alejar|**Ctrl + menos (-)**|
 |Mostrar la consola al 100%|**Ctrl + 0**|
 
 **Mosaicos en páginas de rol, grupo o servidor local**
 
-|Grupo de controles|Tecla de acceso|
+|Grupo de controles|Clave de acceso|
 |---------|-------|
 |Icono Propiedades de la página Servidor local|**Alt + P**|
 |Icono Eventos en una página de rol, grupo o servidor local|**ALT + E**|
@@ -76,9 +72,9 @@ Para obtener acceso a los comandos que no tengan sus propios métodos abreviados
 
 **Icono de las propiedades de navegación en el servidor local**
 
-|Grupo de controles|Tecla de acceso|
+|Grupo de controles|Clave de acceso|
 |---------|-------|
-|Nombre del equipo|**ALT + C**|
+|nombre del equipo|**ALT + C**|
 |Últimas actualizaciones instaladas|**Alt + L**|
 |Dominio o grupo de trabajo|**Alt + D**|
 |Windows Update|**Alt + W**|
@@ -91,11 +87,11 @@ Para obtener acceso a los comandos que no tengan sus propios métodos abreviados
 |Programa para la mejora de la experiencia del usuario|**ALT + X**|
 |Conexión cableada Ethernet|**ALT + O**|
 |Configuración de seguridad mejorada de Internet Explorer|**Alt + Y**|
-|Zona horaria|**ALT + Z**|
+|zona horaria|**ALT + Z**|
 
 **Navegación en los iconos de eventos, servicios, BPA, rendimiento y roles y características**
 
-|Grupo de controles|Tecla de acceso|
+|Grupo de controles|Clave de acceso|
 |---------|-------|
 |Menú Tareas|**Alt + T**|
 |Control de filtro|**Alt + F**|

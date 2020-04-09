@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8738c03d-6ae8-49a7-8b0c-bef7eab81057
 title: Implementar una directiva de acceso central (pasos de demostración)
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 09b7edcd843dfe65d7e2391612f029cf18b633ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5f4d94facc57cf2b71d6d546b4a2b60253ff58fe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357499"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861208"
 ---
 # <a name="deploy-a-central-access-policy-demonstration-steps"></a>Implementar una directiva de acceso central (pasos de demostración)
 
@@ -31,28 +30,28 @@ Para implementar una directiva de acceso central es necesario completar varias f
 |[Implementar la Directiva de acceso central](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.4)|Implementa la directiva.  
 |[Mantener: cambiar y almacenar provisionalmente la Directiva](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.5)|Cambios de directivas y almacenamiento provisional. 
 
-## <a name="BKMK_1.1"></a>Configurar un entorno de prueba  
+## <a name="set-up-a-test-environment"></a><a name="BKMK_1.1"></a>Configurar un entorno de prueba  
 Antes de comenzar, deberás preparar un entorno de laboratorio para este escenario. Los pasos para configurar el laboratorio se explican en detalle en el [Apéndice B: configurar el entorno de prueba](Appendix-B--Setting-Up-the-Test-Environment.md).  
 
-## <a name="BKMK_1.2"></a>Plan: identifique la necesidad de la Directiva y la configuración necesaria para la implementación.  
+## <a name="plan-identify-the-need-for-policy-and-the-configuration-required-for-deployment"></a><a name="BKMK_1.2"></a>Plan: identifique la necesidad de la Directiva y la configuración necesaria para la implementación.  
 En esta sección encontrarás series de pasos de alto nivel que te ayudarán a planificar la implementación.  
 
 ||Paso|Ejemplo|  
 |-|--------|-----------|  
 |1.1|Una empresa determina que necesita una directiva de acceso central|Para proteger la información financiera almacenada en los servidores de archivos, las operaciones de seguridad del Departamento Financiero trabajan con seguridad de la información central para especificar la necesidad de una directiva de acceso central.|  
 |1.2|Expresión de la directiva de acceso|Los documentos financieros solo deben leerlos los miembros del Departamento Financiero. Los miembros del Departamento Financiero solo deben tener acceso a los documentos de su propio país. Solo los administradores de finanzas deben tener acceso de escritura. Se permite una excepción para los miembros del grupo FinanceException. Este grupo tendrá acceso de lectura.|  
-|1.3|Expresar la Directiva de acceso en construcciones de Windows Server 2012|Destinatarios:<br /><br />-Resource. Department contiene Finance<br /><br />Reglas de acceso:<br /><br />-Permitir leer usuario. país = recurso. país y usuario. Departamento = recurso. Departamento<br />-Permitir control total User. memberOf (FinanceAdmin)<br /><br />Excepción:<br /><br />Allow read memberOf(FinanceException)|  
-|1.4|Determinar las propiedades del archivo necesarias para la directiva|Etiquetar archivos con:<br /><br />-Departamento<br />-País|  
-|1.5|Determinar los tipos de notificaciones y los grupos necesarios para la directiva|Tipos de notificaciones:<br /><br />-País<br />-Departamento<br /><br />Grupos de usuarios:<br /><br />-FinanceAdmin<br />-FinanceException|  
+|1.3|Expresar la Directiva de acceso en construcciones de Windows Server 2012|Destino:<p>-Resource. Department contiene Finance<p>Reglas de acceso:<p>-Permitir leer usuario. país = recurso. país y usuario. Departamento = recurso. Departamento<br />-Permitir control total User. memberOf (FinanceAdmin)<p>Excepción:<p>Allow read memberOf(FinanceException)|  
+|1.4|Determinar las propiedades del archivo necesarias para la directiva|Etiquetar archivos con:<p>-Departamento<br />-País|  
+|1.5|Determinar los tipos de notificaciones y los grupos necesarios para la directiva|Tipos de notificaciones:<p>-País<br />-Departamento<p>Grupos de usuarios:<p>-FinanceAdmin<br />-FinanceException|  
 |1.6|Determinar los servidores donde se aplicará esta directiva|Aplica la directiva en todos los servidores de archivos de finanzas.|  
 
-## <a name="BKMK_1.3"></a>Implementar: configurar los componentes y la Directiva  
+## <a name="implement-configure-the-components-and-policy"></a><a name="BKMK_1.3"></a>Implementar: configurar los componentes y la Directiva  
 En esta sección encontrarás un ejemplo en el que implementa una directiva de acceso central para documentos financieros.  
 
 |No|Paso|Ejemplo|  
 |------|--------|-----------|  
-|2.1|Crear tipos de notificaciones|Crea los siguientes tipos de notificaciones:<br /><br />-Departamento<br />-País|  
-|2.2|Crear propiedades de recursos|Crea y habilita las siguientes propiedades de recursos:<br /><br />-Departamento<br />-País|  
+|2.1|Crear tipos de notificaciones|Crea los siguientes tipos de notificaciones:<p>-Departamento<br />-País|  
+|2.2|Crear propiedades de recursos|Crea y habilita las siguientes propiedades de recursos:<p>-Departamento<br />-País|  
 |2.3|Configurar una regla de acceso central|Crea una regla llamada Documentos financieros que incluya una directiva determinada en la sección anterior.|  
 |2.4|Configurar una directiva de acceso central (CAP)|Crea una CAP llamada Directiva de finanzas y agrega la regla Documentos financieros a esta.|  
 |2.5|Dirigir la directiva de acceso central a los servidores de archivos|Publica la CAP Directiva de finanzas en los servidores de archivos.|  
@@ -73,7 +72,7 @@ En el procedimiento siguiente, creará dos tipos de notificaciones: país y depa
    > [!TIP]  
    > También puedes abrir la ventana **Crear tipo de notificación** en el panel **Tareas**. En el panel **Tareas**, haz clic en **Nueva** y después en **Tipo de notificación**.  
 
-4. En la lista **Atributo de origen**, desplázate por la lista de atributos y haz clic en **departamento**. Esto rellenará el campo **Nombre para mostrar** con **departamento**. Haz clic en **Aceptar**.  
+4. En la lista **Atributo de origen**, desplázate por la lista de atributos y haz clic en **departamento**. Esto rellenará el campo **Nombre para mostrar** con **departamento**. Haga clic en **Aceptar**.  
 
 5. En el panel **Tareas**, haz clic en **Nueva** y después en **Tipo de notificación**.  
 
@@ -87,7 +86,7 @@ En el procedimiento siguiente, creará dos tipos de notificaciones: país y depa
 
 ![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
 
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
 
 
     New-ADClaimType country -SourceAttribute c -SuggestedValues:@((New-Object Microsoft.ActiveDirectory.Management.ADSuggestedValueEntry("US","US","")), (New-Object Microsoft.ActiveDirectory.Management.ADSuggestedValueEntry("JP","JP","")))  
@@ -123,7 +122,7 @@ El paso siguiente es crear propiedades de recursos. En el procedimiento siguient
 
 ![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
 
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
 
 ```  
 New-ADResourceProperty Country -IsSecured $true -ResourcePropertyValueType MS-DS-MultivaluedChoice -SharesValuesWith country  
@@ -191,7 +190,7 @@ Reglas de acceso:
 
     ![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
 
-    Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+    Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
 
 
 ~~~
@@ -226,7 +225,7 @@ Ahora verás una regla de acceso central que permite a los usuarios acceder a do
 
    ![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
 
-   Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+   Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
 
    ```  
    New-ADCentralAccessPolicy "Finance Policy" Add-ADCentralAccessPolicyMember   
@@ -281,7 +280,7 @@ Para que los controladores de dominio de un dominio proporcionen notificaciones 
 
 6.  Abra un símbolo del sistema y escriba `gpupdate /force`.  
 
-## <a name="BKMK_1.4"></a>Implementar la Directiva de acceso central  
+## <a name="deploy-the-central-access-policy"></a><a name="BKMK_1.4"></a>Implementar la Directiva de acceso central  
 
 ||Paso|Ejemplo|  
 |-|--------|-----------|  
@@ -302,7 +301,7 @@ En este paso asignarás la directiva de acceso central a un servidor de archivos
    > También puedes actualizar las propiedades de recursos globales si inicias sesión en el servidor de archivos. Sigue estos pasos para actualizar las propiedades de recursos globales desde el servidor de archivos  
    > 
    > 1. Inicie sesión en el servidor de archivos ARCHIVO1 como Contoso\Administrador con la contraseña <strong>pass@word1</strong>.  
-   > 2. Abra el Administrador de recursos del servidor de archivos. Para abrir el Administrador de recursos del servidor de archivos haz clic en **Inicio**, escribe **administrador de recursos del servidor de archivos**y haz clic en **Administrador de recursos del servidor de archivos**.  
+   > 2. Abra el Administrador de recursos del servidor de archivos. Para abrir el Administrador de recursos del servidor de archivos haz clic en **Inicio**, escribe **administrador de recursos del servidor de archivos** y haz clic en **Administrador de recursos del servidor de archivos**.  
    > 3. En el Administrador de recursos del servidor de archivos, haz clic en **Administración de clasificación de archivos**, haz clic con el botón secundario en **Propiedades de clasificación** y selecciona **Actualizar**.  
 
 4. Abre el Explorador de Windows y, en el panel izquierdo, haz clic en la unidad D. Haz clic con el botón secundario en la carpeta **Documentos financieros** y selecciona **Propiedades**.  
@@ -314,7 +313,7 @@ En este paso asignarás la directiva de acceso central a un servidor de archivos
    > [!NOTE]  
    > Recuerda que la directiva de acceso central se configuró para archivos del Departamento de Finanzas. Los pasos anteriores marcan todos los documentos de la carpeta con los atributos País y Departamento.  
 
-7. Haga clic en la pestaña **Seguridad** y, a continuación, en **Opciones avanzadas**. Haz clic en la pestaña **Directiva central**.  
+7. Haz clic en la pestaña **Seguridad** y, después, en **Avanzadas**. Haz clic en la pestaña **Directiva central**.  
 
 8. Haz clic en **Cambiar**, selecciona **Directiva de finanzas** en el menú desplegable y, después, haz clic en **Aplicar**. Verás que la **Regla Documentos financieros** está incluida en la directiva. Expande el artículo para todos los permisos que estableciste al crear la regla en Active Directory.  
 
@@ -340,7 +339,7 @@ En el paso siguiente, comprueba que el acceso esté configurado correctamente.  
 
     La última columna se llama **Acceso limitado por** en la ventana Acceso efectivo. Esta columna le indica qué puertas están afectando a los permisos de la persona. En este caso, los permisos de recursos compartidos y NTFS otorgan control total a todos los usuarios. Pero la directiva de acceso central restringe el acceso basándose en las reglas que has configurado anteriormente.  
 
-## <a name="BKMK_1.5"></a>Mantener: cambiar y almacenar provisionalmente la Directiva  
+## <a name="maintain-change-and-stage-the-policy"></a><a name="BKMK_1.5"></a>Mantener: cambiar y almacenar provisionalmente la Directiva  
 
 ||||  
 |-|-|-|  
@@ -366,7 +365,7 @@ En el paso siguiente, comprueba que el acceso esté configurado correctamente.  
 
 3. Haz clic en **Vista de árbol**, expande **Control de acceso dinámico**, haz doble clic en **Tipos de notificaciones** y, después, haz doble clic en la notificación de **país**.  
 
-4. En **Las notificaciones de este tipo pueden ser emitidas por las siguientes clases**, selecciona la casilla **Equipo**. Haz clic en **Aceptar**.   
+4. En **Las notificaciones de este tipo pueden ser emitidas por las siguientes clases**, selecciona la casilla **Equipo**. Haga clic en **Aceptar**.   
    Deben estar seleccionadas las dos casillas, **Usuario** y **Equipo**. Ahora puede usarse la notificación de país con dispositivos, además de los usuarios.  
 
 El paso siguiente es crear una regla de directivas de almacenamiento provisional. Las directivas de almacenamiento provisional se pueden usar para supervisar los efectos de una nueva entrada de directiva antes de habilitarla. En el paso siguiente crearás una entrada de directiva de almacenamiento provisional y comprobarás los efectos en la carpeta compartida.  
@@ -404,7 +403,7 @@ El paso siguiente es crear una regla de directivas de almacenamiento provisional
 
 ![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
 
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
 
 ```  
 Set-ADCentralAccessRule  

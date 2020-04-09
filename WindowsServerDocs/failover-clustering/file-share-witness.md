@@ -1,23 +1,24 @@
 ---
 title: Implementar un testigo de recurso compartido de archivos en Windows Server 2019
+description: Los testigos de recurso compartido de archivos permiten usar un recurso compartido de archivos para votar en el cuórum del clúster. En este tema se describen testigos de recurso compartido de archivos y la nueva funcionalidad, incluido el uso de una unidad USB conectada a un enrutador como testigo de recurso compartido de archivos.
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 01/24/2019
-description: Los testigos de recurso compartido de archivos permiten usar un recurso compartido de archivos para votar en el cuórum del clúster. En este tema se describen testigos de recurso compartido de archivos y la nueva funcionalidad, incluido el uso de una unidad USB conectada a un enrutador como testigo de recurso compartido de archivos.
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f0a0c5b48f7c382367e4b1100ff649fe73d3be9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 63e016b8e00482529e69aaa12727f854afd51e41
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369764"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827678"
 ---
 # <a name="deploy-a-file-share-witness"></a>Implementación de un testigo de recurso compartido de archivos
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Un testigo de recurso compartido de archivos es un recurso compartido de SMB que el clúster de conmutación por error usa como voto en el cuórum del clúster. En este tema se proporciona información general sobre la tecnología y la nueva funcionalidad de Windows Server 2019, incluido el uso de una unidad USB conectada a un enrutador como testigo de recurso compartido de archivos.
 

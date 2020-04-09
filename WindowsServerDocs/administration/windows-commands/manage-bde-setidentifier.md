@@ -1,24 +1,20 @@
 ---
 title: Manage-BDE setidentifier
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7092d18f-4ac9-4c73-a20f-1246ca60e75e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 52d7c42e6176f7ea204f5616946197dc71649339
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e24719e120430cbfd5192e1800f59f0676aef5cb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373883"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839878"
 ---
 # <a name="manage-bde-setidentifier"></a>Manage-BDE: setidentifier
 
@@ -32,7 +28,7 @@ Establece el campo Identificador de unidad de la unidad en el valor especificado
 manage-bde –setidentifier <Drive> [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -42,15 +38,15 @@ manage-bde –setidentifier <Drive> [-computername <Name>] [{-?|/?}] [{-help|-h}
 |-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
 |-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
 
-## <a name="BKMK_Examples"></a>Example
+## <a name="examples"></a><a name=BKMK_Examples></a>Example
 
 En el ejemplo siguiente se muestra el uso del comando **-setidentifier** para establecer el campo de identificador de unidad BitLocker para C.
 ```
 manage-bde –setidentifier C:
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Manage-BDE](manage-bde.md)
 -   [Uso de agentes de recuperación de datos con BitLocker](https://technet.microsoft.com/library/dd875560(WS.10).aspx)

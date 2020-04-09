@@ -1,24 +1,20 @@
 ---
 title: Logman crear cfg
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bfc87093-3ff5-4e19-aa93-d185fb8e2239
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a9dffb308c9c5b73777aa2a2b4dd6e0204699ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 51ae4b64665577aa4795527371764401ce1fe9a1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374588"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840888"
 ---
 # <a name="logman-create-cfg"></a>Logman crear cfg
 
@@ -30,7 +26,7 @@ Cree un recopilador de datos de configuración.
 ```  
 logman create cfg <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parámetros  
+### <a name="parameters"></a>Parámetros  
 
 |                    Parámetro                     |                                                                               Descripción                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -59,16 +55,16 @@ logman create cfg <[-n] <name>> [options]
 |            -ad< consulta [consulta [...]] >            |                                                      Especifica los objetos WMI que se van a recopilar mediante el lenguaje de consulta SQL.                                                       |
 |             -FTC < ruta de acceso [ruta de acceso [...]] >             |                                                           Especifica la ruta de acceso completa a los archivos que se van a recopilar.                                                            |
 
-## <a name="remarks"></a>Observaciones  
+## <a name="remarks"></a>Comentarios  
 Donde [-] aparece en la lista, un archivo extra niega la opción.  
-## <a name="BKMK_examples"></a>Example  
+## <a name="examples"></a><a name=BKMK_examples></a>Example  
 El siguiente comando crea un recopilador de datos de configuración llamado cfg_log mediante la clave del registro HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\Currentverion\\.  
 ```  
-logman create cfg cfg_log -reg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\\"  
+logman create cfg cfg_log -reg HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\\  
 ```  
 El siguiente comando crea un recopilador de datos de configuración denominado cfg_log que registra todos los objetos WMI de root\wmi en la columna de base de datos MSNdis_Vendordriverversion.  
 ```  
-logman create cfg cfg_log -mgt "root\wmi:select * FROM MSNdis_Vendordriverversion"  
+logman create cfg cfg_log -mgt root\wmi:select * FROM MSNdis_Vendordriverversion  
 ```  
-#### <a name="additional-references"></a>referencias adicionales  
+## <a name="additional-references"></a>Referencias adicionales  
 [logman](logman.md)  

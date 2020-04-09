@@ -2,18 +2,18 @@
 title: Introducción al Administrador de recursos del servidor de archivos (FSRM)
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: brianlic
+manager: brianlic
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: Administrador de recursos de servidor de archivos (FSRM) es una herramienta que permite administrar y clasificar los datos en un servidor de archivos de Windows Server.
-ms.openlocfilehash: 719176307afc320ad676fd1acfc07ad9d15920cf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ed7e5abce9389283a9b9d641f813b5df89a586b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394171"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854248"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>Introducción al Administrador de recursos del servidor de archivos (FSRM)
 
@@ -53,7 +53,7 @@ Las características incluidas en el servidor de archivos Administrador de recur
   
 -   Programe que todos los domingos a medianoche se ejecute un informe que genere una lista de los últimos archivos a los que se ha accedido en los dos últimos días. Este informe puede servir de ayuda para conocer la actividad de almacenamiento durante el fin de semana y planear el tiempo de inactividad del servidor según esa información.  
 
-## <a name="whats-new"></a>Novedades: impedir que FSRM cree diarios de cambios
+## <a name="whats-new---prevent-fsrm-from-creating-change-journals"></a><a name="whats-new"></a>Novedades: impedir que FSRM cree diarios de cambios
 
 A partir de Windows Server, versión 1803, ahora puede impedir que el servidor de archivos Administrador de recursos servicio cree un diario de cambios (también conocido como un diario USN) en los volúmenes cuando se inicia el servicio. Esto puede ahorrar un poco de espacio en cada volumen, pero deshabilitará la clasificación de archivos en tiempo real.
 
@@ -69,14 +69,14 @@ Para evitar que el servidor de archivos Administrador de recursos cree un diario
       ```
     Por ejemplo: `fsutil usn deletejournal /d c:`
 
-3. Abra el editor del registro, por ejemplo, `regedit` escribiendo en la misma sesión de PowerShell.
-4. Vaya a la siguiente clave: **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings**
+3. Abra el editor del registro, por ejemplo, escribiendo `regedit` en la misma sesión de PowerShell.
+4. Vaya a la clave siguiente: **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\srmsvc\settings**
 5. Para omitir opcionalmente la creación del diario de cambios para todo el servidor (Omita este paso si desea deshabilitarlo solo en volúmenes específicos):
     1. Haga clic con el botón secundario en la clave de **configuración** y seleccione **nuevo** > **valor DWORD (32 bits)** . 
-    1. Asigne un nombre `SkipUSNCreationForSystem`al valor.
+    1. Asigne al valor el nombre `SkipUSNCreationForSystem`.
     1. Establezca el valor en **1** (en hexadecimal).
 6. Para omitir opcionalmente la creación del diario de cambios para volúmenes específicos:
-    1. Obtenga las rutas de acceso de volumen que desea omitir `fsutil volume list` mediante el comando o el siguiente comando de PowerShell:
+    1. Obtenga las rutas de acceso de volumen que desea omitir mediante el comando `fsutil volume list` o el siguiente comando de PowerShell:
         ```PowerShell
         Get-Volume | Format-Table DriveLetter,FileSystemLabel,Path
         ```
@@ -88,8 +88,8 @@ Para evitar que el servidor de archivos Administrador de recursos cree un diario
                     System Reserved \\?\Volume{8d3c9e8a-0000-0000-0000-100000000000}\
         C                           \\?\Volume{8d3c9e8a-0000-0000-0000-501f00000000}\
        ```
-    2. De nuevo en el editor del registro, haga clic con el botón derecho en la clave **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings** y seleccione **nuevo** > **valor de cadena múltiple**.
-    3. Asigne un nombre `SkipUSNCreationForVolumes`al valor.
+    2. De nuevo en el editor del registro, haga clic con el botón derecho en la clave **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\srmsvc\settings** y seleccione **nuevo** > **valor de cadena múltiple**.
+    3. Asigne al valor el nombre `SkipUSNCreationForVolumes`.
     4. Escriba la ruta de acceso de cada volumen en el que omitir la creación de un diario de cambios y coloque cada trazado en una línea independiente. Por ejemplo:
 
         ```
@@ -98,9 +98,9 @@ Para evitar que el servidor de archivos Administrador de recursos cree un diario
         ```
 
         > [!NOTE] 
-        > El editor del registro puede indicarle que quitó cadenas vacías y que muestra esta advertencia que se puede pasar por alto sin ningún problema: *Data de tipo REG_MULTI_SZ no puede contener cadenas vacías. El editor del registro quitará todas las cadenas vacías encontradas.*
+        > El editor del registro puede indicarle que quitó cadenas vacías y que muestra esta advertencia sin ningún problema: los *datos de tipo REG_MULTI_SZ no pueden contener cadenas vacías. El editor del registro quitará todas las cadenas vacías encontradas.*
 
-7. Inicie el servicio SRMSVC. Por ejemplo, en una sesión de PowerShell `Start-Service SrmSvc`, escriba.
+7. Inicie el servicio SRMSVC. Por ejemplo, en una sesión de PowerShell, escriba `Start-Service SrmSvc`.
 
 
 

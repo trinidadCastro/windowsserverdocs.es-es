@@ -1,22 +1,23 @@
 ---
 title: Afinidad de clústeres
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 03/07/2019
 description: En este artículo se describen los niveles de afinidad y antiafinidad de clústeres de conmutación por error
-ms.openlocfilehash: 9a269d2b14e953daee849008a473c750dfbfe84b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c9910cac602802b753391fad1009fb7f1fa3d2f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361457"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828288"
 ---
 # <a name="cluster-affinity"></a>Afinidad de clústeres
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 Un clúster de conmutación por error puede contener numerosos roles que pueden moverse entre nodos y ejecutarse.  Hay ocasiones en que determinados roles (es decir, máquinas virtuales, grupos de recursos, etc.) no deben ejecutarse en el mismo nodo.  Esto puede deberse al consumo de recursos, al uso de memoria, etc.  Por ejemplo, hay dos máquinas virtuales con un uso intensivo de memoria y CPU, y si las dos máquinas virtuales se ejecutan en el mismo nodo, una de las máquinas virtuales, o ambas, podrían tener problemas de impacto en el rendimiento.  En este artículo se explican los niveles de antiafinidad de clústeres y cómo puede usarlos.
 
@@ -86,7 +87,7 @@ En una lista de PowerShell de los grupos, verá lo siguiente:
 - Tenga en cuenta que en un escenario de dos nodos y ClusterEnforcedAntiAffinity, si un nodo está inactivo, no se ejecutarán ambos grupos.  
 
 - El uso de los propietarios preferidos en los grupos se puede combinar con la antiafinidad en un clúster de tres o más nodos.
-- La configuración de AntiAffinityClassNames y ClusterEnforcedAntiAffinity solo tendrá lugar después de un reciclaje de los recursos. ES DECIR,. puede establecerlos, pero si ambos grupos están en línea en el mismo nodo cuando se establecen, seguirán estando en línea.
+- La configuración de AntiAffinityClassNames y ClusterEnforcedAntiAffinity solo tendrá lugar después de un reciclaje de los recursos. es decir,. puede establecerlos, pero si ambos grupos están en línea en el mismo nodo cuando se establecen, seguirán estando en línea.
 
 
 

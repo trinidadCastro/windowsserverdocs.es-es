@@ -1,7 +1,6 @@
 ---
 ms.assetid: 10d6723e-c857-43da-9d2d-acb5641d3da8
 title: Unir un equipo a un dominio
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 9f6d657397cb07d081a229135e3e6c97c7191164
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 174f585f3e156fc8e068b9300fc90a20a67869cf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408346"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855358"
 ---
 # <a name="join-a-computer-to-a-domain"></a>Unir un equipo a un dominio
 
@@ -22,7 +21,7 @@ Por Servicios de federación de Active Directory (AD FS) \(AD FS\) funcione, cad
   
 No es necesario unir un servidor Web a un dominio si el servidor Web hospeda notificaciones\-solo aplicaciones compatibles.  
   
-El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
+La pertenencia al grupo **Administradores** o equivalente en el equipo local es el requisito mínimo necesario para completar este procedimiento.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
 ### <a name="to-join-a-computer-to-a-domain"></a>Para unir un equipo a un dominio  
   
@@ -32,11 +31,11 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
   
 3.  En **Configuración de nombre, dominio y grupo de trabajo del equipo**, haga clic en **Cambiar configuración**.  
   
-4.  En la ficha **Nombre de equipo** , haga clic en **Cambiar**.  
+4.  En la pestaña **Nombre de equipo**, haz clic en **Cambiar**.  
   
 5.  En **miembro de**, haga clic en **dominio**, escriba el nombre del dominio al que desea unir este equipo y, a continuación, haga clic en **Aceptar**.  
   
-6.  Haga clic en **Aceptar** y, a continuación, reinicie el equipo.  
+6.  Haz clic en **Aceptar** y reinicia el equipo.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
 [Lista de comprobación: configuración de un servidor de Federación](Checklist--Setting-Up-a-Federation-Server.md)  

@@ -1,25 +1,25 @@
 ---
-title: Agregar destinos de carpeta
+title: Add Folder Targets
 description: En este tema se describe cómo agregar destinos de carpeta (rutas UNC)
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: brianlic
+manager: brianlic
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: b0685ea795d53b36fad92d54f817f67de57e3a82
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d2f3845a612556a51692aaf51d256bbedd518e7a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403185"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854108"
 ---
-# <a name="add-folder-targets"></a>Agregar destinos de carpeta
+# <a name="add-folder-targets"></a>Add folder targets
 
-> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008
 
-Un destino de carpeta es la ruta de acceso UNC (convención de nomenclatura universal) de una carpeta compartida o de otro espacio de nombres que se asocia con una carpeta en un espacio de nombres. Agregar varios destinos de carpeta aumenta la disponibilidad de la carpeta en el espacio de nombres.
+Un destino de carpeta es la ruta de acceso UNC (convención de nomenclatura universal) de una carpeta compartida o de otro espacio de nombres que se asocia con una carpeta en un espacio de nombres. La adición de varios destinos de carpeta permite aumentar la disponibilidad de la carpeta en el espacio de nombres.
 
 ## <a name="to-add-a-folder-target"></a>Para agregar un destino de carpeta
 
@@ -37,7 +37,7 @@ Para agregar un destino de carpeta mediante la administración de DFS, usa el si
 > Para agregar un destino de carpeta mediante Windows PowerShell, usa el cmdlet [New-DfsnFolderTarget](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnfoldertarget). El módulo de Windows PowerShell para DFSN se introdujo en Windows Server 2012.
 
 > [!NOTE]
-> Las carpetas pueden incluir destinos de carpeta u otras carpetas DFS, pero no ambas, en el mismo nivel en la jerarquía de carpetas.
+> Las carpetas pueden contener destinos de carpeta u otras carpetas DFS, pero no ambos en el mismo nivel de la jerarquía de carpetas.
 
 ## <a name="see-also"></a>Vea también
 

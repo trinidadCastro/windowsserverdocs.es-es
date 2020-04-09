@@ -1,28 +1,24 @@
 ---
 title: PowerShell
 description: Obtenga información sobre cómo abrir la consola de PowerShell desde un símbolo del sistema.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 694fc970-0b6c-4046-b1b5-7eb1a0d26609
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 2c43c71fce9bb25efcf3f03284160d5534475a8a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 327ac844bec0e4c89ee1443c193aa628de038dea
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372200"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837408"
 ---
 # <a name="powershell"></a>PowerShell
 
-Windows PowerShell es un shell de línea de comandos basado en tareas y un lenguaje de scripting diseñado especialmente para la administración del sistema. Basado en .NET Framework, Windows PowerShell ayuda a los profesionales de TI y a los usuarios avanzados a controlar y automatizar la administración tanto del sistema operativo Windows como de las aplicaciones que se ejecutan en Windows.
+Windows PowerShell es un shell de línea de comandos basado en tareas y un lenguaje de scripting diseñado especialmente para la administración del sistema. Basado en .NET Framework, Windows PowerShell ayuda a los profesionales de TI y usuarios avanzados a controlar y automatizar la administración del sistema operativo Windows y las aplicaciones que se ejecutan en Windows.
 
 La herramienta de línea de comandos de **PowerShell. exe** inicia una sesión de Windows PowerShell en una ventana del símbolo del sistema. Al usar **PowerShell. exe**, puede usar sus parámetros opcionales para personalizar la sesión. Por ejemplo, puede iniciar una sesión que use una directiva de ejecución determinada o una que excluya un perfil de Windows PowerShell. De lo contrario, la sesión es la misma que cualquier sesión iniciada en la consola de Windows PowerShell.
 
@@ -72,5 +68,5 @@ Windows PowerShell se ejecuta en la opción de instalación Server Core de los s
 
 [about_PowerShell. exe](https://go.microsoft.com/fwlink/?LinkID=113439)
 [about_PowerShell_Ise. exe](https://go.microsoft.com/fwlink/?LinkId=256512)
-[Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)
-[scripting con Windows PowerShell](https://technet.microsoft.com/scriptcenter/dd742419) vea también
+[scripting de
+de](https://technet.microsoft.com/scriptcenter/dd742419) [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116) con Windows PowerShell, vea también

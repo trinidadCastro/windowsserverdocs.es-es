@@ -1,24 +1,20 @@
 ---
 title: Referencia de comandos (Terminal Services) de Servicios de Escritorio remoto
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2f371848-5c48-470c-908c-afbc95d3a805
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d13d6ac2e423c5a07a2a84af5e17fe9081cd70f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2e188be84c657688a971a75788942d4acf598d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371615"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836068"
 ---
 # <a name="remote-desktop-services-terminal-services-command-reference"></a>Referencia de comandos (Terminal Services) de Servicios de Escritorio remoto
 
@@ -26,16 +22,16 @@ ms.locfileid: "71371615"
 
 A continuación se muestra una lista de herramientas de línea de comandos de Servicios de Escritorio remoto.
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
+> En Windows Server 2008 R2, el nombre de Terminal Services ha cambiado a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
 > 
 > |                 Comando                 |                                                      Descripción                                                       |
 > |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 > |           [change](change.md)           | cambia Escritorio remoto configuración del servidor host de sesión de escritorio remoto para los inicios de sesión, las asignaciones de puertos COM y el modo de instalación. |
 > |     [change logon](change-logon.md)     |    Habilita o deshabilita los inicios de sesión de las sesiones de cliente en un servidor host de sesión de escritorio remoto o muestra el estado de inicio de sesión actual.     |
-> |      [change port](change-port.md)      |                   enumera o cambia las asignaciones de puertos COM para que sean compatibles con las aplicaciones de MS-DOS.                    |
+> |      [change port](change-port.md)      |                   Enumera o cambia las asignaciones de puertos COM para que sean compatibles con las aplicaciones de MS-DOS.                    |
 > |      [change user](change-user.md)      |                                cambia el modo de instalación del servidor host de sesión de escritorio remoto.                                |
 > |         [chglogon](chglogon.md)         |    Habilita o deshabilita los inicios de sesión de las sesiones de cliente en un servidor host de sesión de escritorio remoto o muestra el estado de inicio de sesión actual.     |
-> |          [chgport](chgport.md)          |                   enumera o cambia las asignaciones de puertos COM para que sean compatibles con las aplicaciones de MS-DOS.                    |
+> |          [chgport](chgport.md)          |                   Enumera o cambia las asignaciones de puertos COM para que sean compatibles con las aplicaciones de MS-DOS.                    |
 > |           [chgusr](chgusr.md)           |                                cambia el modo de instalación del servidor host de sesión de escritorio remoto.                                |
 > |         [flattemp](flattemp.md)         |                                      Habilita o deshabilita las carpetas temporales sin formato.                                       |
 > |           [logoff](logoff.md)           |          Cierra la sesión de un usuario de una sesión en un servidor host de sesión de escritorio remoto y elimina la sesión del servidor.          |
@@ -43,7 +39,7 @@ A continuación se muestra una lista de herramientas de línea de comandos de Se
 > |            [mstsc](mstsc.md)            |                       crea conexiones a servidores host de sesión de escritorio remoto o a otros equipos remotos.                        |
 > |          [qappsrv](qappsrv.md)          |                             Muestra una lista de todos los servidores host de sesión de escritorio remoto en la red.                             |
 > |         [qprocess](qprocess.md)         |                  Muestra información sobre los procesos que se ejecutan en un servidor host de sesión de escritorio remoto.                   |
-> |            [query](query.md)            |                      Muestra información acerca de los procesos, las sesiones y los servidores host de sesión de escritorio remoto.                      |
+> |            [consulta](query.md)            |                      Muestra información acerca de los procesos, las sesiones y los servidores host de sesión de escritorio remoto.                      |
 > |    [proceso de consulta](query-process.md)    |                  Muestra información sobre los procesos que se ejecutan en un servidor host de sesión de escritorio remoto.                   |
 > |    [sesión de consulta](query-session.md)    |                           Muestra información acerca de las sesiones en un servidor host de sesión de escritorio remoto.                            |
 > | [consulta termserver](query-termserver.md) |                             Muestra una lista de todos los servidores host de sesión de escritorio remoto en la red.                             |

@@ -1,24 +1,20 @@
 ---
 title: Comandos por rol de servidor
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Temas de comandos de Windows para comandos por rol de servidor, que describe la función principal del servidor.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 343597ec-9b92-4b92-8d6c-faef4b565068
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5201e7291ce93c6bc45180aa8b9df2e36409c8f8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c33158021c7a1a0b4a1335434098ff6272a2d203
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379253"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847468"
 ---
 # <a name="commands-by-server-role"></a>Comandos por rol de servidor
 
@@ -28,5 +24,5 @@ Un rol de servidor describe la función principal del servidor. Los administrado
 
 -   [Referencia de comandos de impresión](print-command-reference.md)
 -   [Servicios de referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)
--   [Referencia &#40;de&#41; comandos de Terminal Services de servicios de escritorio remoto](remote-desktop-services-terminal-services-command-reference.md)
+-   [Referencia de comandos (Terminal Services) de Servicios de Escritorio remoto](remote-desktop-services-terminal-services-command-reference.md)
 -   [Referencia de comandos de copia de seguridad de Windows Server](windows-server-backup-command-reference.md)

@@ -2,22 +2,18 @@
 title: Visualización de registros de recursos DNS para una zona DNS
 description: Este tema forma parte de la guía de administración de la administración de direcciones IP (IPAM) en Windows Server 2016.
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 375feefc-949e-47c3-9e61-35b79e021966
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ca2cf532fc9fa7e1f12e5294b40d29863fd42261
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: dfd772f89d913cd75b8c31ef4e5236f3cc11263c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312336"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854848"
 ---
 # <a name="view-dns-resource-records-for-a-dns-zone"></a>Visualización de registros de recursos DNS para una zona DNS
 

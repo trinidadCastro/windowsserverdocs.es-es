@@ -1,28 +1,22 @@
 ---
 title: Subcomando set-DriverPackage
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para el subcomando set-DriverPackage, que cambia el nombre de un paquete de controladores o lo habilita o deshabilita en un servidor.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 11804bb6-ca29-4461-8c63-5131748cd742
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65751cf6e03baa87c7734b318a26111652bee0a1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 68d282b3338e67a33a55481658f55db69930b10e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370823"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834028"
 ---
 # <a name="subcommand-set-driverpackage"></a>Subcomando: set-DriverPackage
-
-
 
 Cambia el nombre o habilita o deshabilita un paquete de controladores en un servidor.
 
@@ -32,7 +26,7 @@ Cambia el nombre o habilita o deshabilita un paquete de controladores en un serv
 WDSUTIL /Set-DriverPackage [/Server:<Server name>] {/DriverPackage:<Name> | /PackageId:<ID>} [/Name:<New Name>] [/Enabled:{Yes | No}
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |        Parámetro         |                                                                                                                                                                                                               Descripción                                                                                                                                                                                                                |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -40,9 +34,9 @@ WDSUTIL /Set-DriverPackage [/Server:<Server name>] {/DriverPackage:<Name> | /Pac
 | [/DriverPackage: nombre de\<>] |                                                                                                                                                                                       Especifica el nombre actual del paquete de controladores que se va a modificar.                                                                                                                                                                                        |
 |    [/PackageId: ID. de\<>]    | Especifica el ID. de servicios de implementación de Windows del paquete de controladores. Debe especificar esta opción si el paquete de controladores no se puede identificar de forma única por nombre. Para encontrar este ID. para un paquete, haga clic en el grupo de controladores en el que se encuentra el paquete (o en el nodo **todos los paquetes** ), haga clic con el botón secundario en el paquete y, a continuación, haga clic en **propiedades**. El identificador del paquete se muestra en la pestaña **General** . Por ejemplo: {DD098D20-1850-4FC8-8E35-EA24A1BEFF5E}. |
 |   [/Name:\<nuevo nombre >]    |                                                                                                                                                                                              Especifica el nuevo nombre del paquete de controladores.                                                                                                                                                                                              |
-|      [/Enabled: {Yes      |                                                                                                                                                                                                                   Ninguno                                                                                                                                                                                                                    |
+|      [/Enabled: {Yes      |                                                                                                                                                                                                                   ninguno                                                                                                                                                                                                                    |
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para cambiar la configuración de un paquete, escriba uno de los siguientes:
 ```
@@ -52,6 +46,6 @@ WDSUTIL /Set-DriverPackage /PackageId:{4D36E972-E325-11CE-BFC1-08002BE10318} /Na
 WDSUTIL /Set-DriverPackage /DriverPackage:MyDriverPackage /Name:NewName /Enabled:Yes
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

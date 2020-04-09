@@ -1,24 +1,20 @@
 ---
 title: prncnfg
 description: Aprenda a configurar una impresora con el comando prncfg.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 38a4e8fa-3122-495b-a125-35b926bc6415
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5cbbf82e832c50d168e0bef06b2b7c3022dd90e8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3db99c06232e4ed6b3ad5df4ee189d38bffb14c2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372141"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837328"
 ---
 # <a name="prncnfg"></a>prncnfg
 
@@ -31,7 +27,7 @@ Configura o muestra la información de configuración de una impresora.
 cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <NewprinterName>] [-u <UserName>] [-w <Password>] [-r <PortName>] [-l <Location>] [-h <Sharename>] [-m <Comment>] [-f <SeparatorFileName>] [-y <Datatype>] [-st <starttime>] [-ut <Untiltime>] [-i <DefaultPriority>] [-o <Priority>] [<+|->shared] [<+|->direct] [<+|->hidden] [<+|->published] [<+|->rawonly] [<+|->queued] [<+|->enablebidi] [<+|->keepprintedjobs] [<+|->workoffline] [<+|->enabledevq] [<+|->docompletefirst]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
 |-g|Muestra información de configuración acerca de una impresora.|
@@ -62,16 +58,16 @@ cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <Ne
 |{+ &#124; -} EnableDevq|Especifica si los trabajos de impresión que no coinciden con la configuración de la impresora (por ejemplo, archivos PostScript puestos en cola en impresoras que no son PostScript) se deben mantener en la cola en lugar de imprimirse.|
 |{+ &#124; -} docompletefirst|Especifica si el administrador de trabajos de impresión debe enviar trabajos de impresión con una prioridad más baja que haya completado la puesta en cola antes de enviar trabajos de impresión con una prioridad más alta que no haya completado la puesta en cola. Si esta opción está habilitada y ningún documento ha completado la cola de impresión, el administrador de trabajos de impresión enviará documentos más grandes antes que los más pequeños. Debe habilitar esta opción si desea maximizar la eficacia de la impresora a costa de la prioridad del trabajo. Si esta opción está deshabilitada, el administrador de trabajos de impresión siempre envía primero los trabajos de mayor prioridad a sus respectivas colas.|
 |{+ &#124; -} enablebidi|Especifica si la impresora envía información de estado al administrador de trabajos de impresión.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 -   El comando **prncnfg** es un script de Visual Basic ubicado en el printing_Admin_Scripts%windir%\system32\\\<language> directorio. Para usar este comando, en una ventana del símbolo del sistema, escriba **cscript** seguido de la ruta de acceso completa al archivo prncnfg o cambie los directorios a la carpeta correspondiente. Por ejemplo:
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prncnfg
     ```
 -   Si la información proporcionada contiene espacios, utilice comillas alrededor del texto (por ejemplo, `"computer Name"`).
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Example
 Para mostrar la información de configuración de la impresora llamada colorprinter_2 con una cola de impresión hospedada por el equipo remoto llamado ServidorRH, escriba:
 ```
 cscript prncnfg -g -S HRServer -P colorprinter_2 
@@ -87,6 +83,6 @@ Para cambiar el nombre de una impresora en el equipo remoto llamado ServidorRH d
 cscript prncnfg -x -S HRServer -P colorprinter_2 -z "colorprinter 3" 
 ```
 
-#### <a name="additional-references"></a>referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+## <a name="additional-references"></a>Referencias adicionales
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 [Referencia del comando Print](print-command-reference.md)

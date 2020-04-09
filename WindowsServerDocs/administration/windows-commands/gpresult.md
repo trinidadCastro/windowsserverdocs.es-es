@@ -1,24 +1,20 @@
 ---
 title: gpresult
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dfaa3adf-2c83-486c-86d6-23f93c5c883c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb61911450ea8c0c68af0cf1a35c2f571810504b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 480599a4040ab1fdcc3842cdb0eaa8c35afa873c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375659"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842468"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -33,7 +29,7 @@ Para usar informes de RSoP para equipos de destino remotos a través del firewal
 gpresult [/s <system> [/u <USERNAME> [/p [<PASSWOrd>]]]] [/user [<TARGETDOMAIN>\]<TARGETUSER>] [/scope {user | computer}] {/r | /v | /z | [/x | /h] <FILENAME> [/f] | /?}
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 > [!NOTE]
 > Excepto cuando use **/?** , debe incluir una opción de salida, ya sea **/r**, **/v**, **/z**, **/x**o **/h**.
@@ -50,9 +46,9 @@ gpresult [/s <system> [/u <USERNAME> [/p [<PASSWOrd>]]]] [/user [<TARGETDOMAIN>\
 |                    /r                    |                                                                                             Muestra datos de Resumen de RSoP.                                                                                              |
 |                    /v                    |                                                    Muestra información detallada de la Directiva. Esto incluye la configuración detallada que se aplicó con una prioridad de 1.                                                    |
 |                    /z                    |                                     Muestra toda la información disponible sobre directiva de grupo. Esto incluye la configuración detallada que se aplicó con una prioridad de 1 y superior.                                      |
-|                    /?                    |                                                                                         Muestra la ayuda en el símbolo del sistema.                                                                                         |
+|                    /?                    |                                                                                         Muestra la Ayuda en el símbolo del sistema.                                                                                         |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 - Directiva de grupo es la herramienta administrativa principal para definir y controlar el funcionamiento de los programas, los recursos de red y el sistema operativo para los usuarios y equipos de una organización. En un entorno de Active Directory, directiva de grupo se aplica a usuarios o equipos en función de su pertenencia a sitios, dominios o unidades organizativas.
 - Dado que puede aplicar la configuración de directivas superpuestas a cualquier equipo o usuario, la característica directiva de grupo genera un conjunto de valores de configuración de directiva resultante cuando el usuario inicia sesión. **Gpresult** muestra el conjunto resultante de opciones de configuración de directivas que se aplicaron en el equipo para el usuario especificado cuando el usuario inició sesión.
 - Dado que **/v** y **/z** generan mucha información, resulta útil redirigir la salida a un archivo de texto (por ejemplo, **gpresult/z > Policy. txt**).
@@ -76,7 +72,7 @@ En el ejemplo siguiente se muestran los datos de RSoP para el equipo **srvmain**
   gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /r
   ```
   
-## <a name="additional-references"></a>referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 - [TechCenter de directiva de grupo](https://go.microsoft.com/fwlink/?LinkID=145531)
 
-- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

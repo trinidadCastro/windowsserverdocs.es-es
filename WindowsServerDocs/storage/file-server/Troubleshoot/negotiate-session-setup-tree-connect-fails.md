@@ -3,16 +3,15 @@ title: Negociación, configuración de sesión y errores de conexión de árbol
 description: Presenta cómo solucionar los errores de negociación, configuración de sesión y conexión de árbol.
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 0ccd8d882060432dcfc27ee47b82d0c61e3aad4d
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 13124176e530aa7b74d18a38c906bf5297be511e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654376"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815388"
 ---
 # <a name="negotiate-session-setup-and-tree-connect-failures"></a>Negociación, configuración de sesión y errores de conexión de árbol
 
@@ -30,7 +29,7 @@ Si usa Windows Server 2008 R2, hay revisiones para este problema. Asegúrese de 
 
 El servidor SMB recibe una sesión SMB\_solicitud de instalación desde un cliente SMB pero no pudo responder.
 
-Si el nombre de dominio completo (FQDN) o el nombre del sistema básico de entrada y salida (NetBIOS) del servidor se usa en la ruta de acceso de la Convención de nomenclatura universal (UNC), Windows utilizará Kerberos para la autenticación.
+Si el nombre de dominio completo (FQDN) o el nombre del sistema básico de entrada y salida (NetBIOS) del servidor es ' sed ' en la ruta de acceso de la Convención de nomenclatura universal (UNC), Windows utilizará Kerberos para la autenticación.
 
 Después de la respuesta de negociación, se intentará obtener un vale de Kerberos para el nombre principal de servicio (SPN) del sistema de archivos de Internet común (CIFS) del servidor. Observe el tráfico Kerberos en el puerto TCP 88 para asegurarse de que no hay errores de Kerberos cuando el cliente SMB obtiene el token.
 
@@ -61,7 +60,7 @@ Estado de \[\_acceso denegado\_\]
 
 Compruebe que el disco y la carpeta utilizados por el recurso compartido existen y son accesibles.
 
-Si usa SMBv3 o posterior, compruebe si el servidor y el recurso compartido requieren cifrado, pero el cliente no admite el cifrado. Para ello, realice estas acciones:
+Si usa SMBv3 o posterior, compruebe si el servidor y el recurso compartido requieren cifrado, pero el cliente no admite el cifrado. Para ello, realice las siguientes acciones:
 
 - Compruebe el servidor ejecutando el siguiente comando.
 
@@ -89,7 +88,7 @@ Siga estas instrucciones para solucionar el problema:
 
 ## <a name="references"></a>Referencias
 
-Para obtener más información, consulte los siguientes artículos.
+Para obtener más información, vea los siguientes artículos.
 
 [3.3.5.4 recibir una solicitud de negociación de SMB2](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/b39f253e-4963-40df-8dff-2f9040ebbeb1)
 

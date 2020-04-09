@@ -1,23 +1,19 @@
 ---
 title: Administrar el mantenimiento del sistema en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bbe05c0564e706ef0227e723a52bd10b2f774756
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8bca8f89e876da56dc6ede53a017e4d4331e39fc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311071"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852718"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>Administrar el mantenimiento del sistema en Windows Server Essentials
 
@@ -28,7 +24,7 @@ ms.locfileid: "80311071"
 > [!NOTE]
 >  En Windows Server Essentials y Windows Server 2012 R2 con el rol de experiencia con Windows Server Essentials instalado, las alertas de estado de los equipos cliente y servidor de la red ya no se muestran en el visor de alertas, sino que se pueden ver en la pestaña **informes de mantenimiento** de la página **principal** .  
   
- Windows Server Essentials supervisa activamente cada equipo que está conectado al servidor y alerta al administrador de problemas relacionados con el estado del sistema, incluidas las actualizaciones críticas, la falta de protección contra malware, las definiciones de virus no actualizadas en el cliente. equipos y otros problemas importantes que requieren una acción. Estos problemas se muestran como alertas en el visor de alertas, que se puede iniciar desde el panel del servidor o desde el Launchpad del equipo cliente en Windows Server Essentials, o en la pestaña **informes de mantenimiento** de Windows Server Essentials. De forma predeterminada, las alertas se actualizan cada 30 minutos, pero puede evaluar la red en busca de alertas en cualquier momento haciendo clic en **Actualizar** en el Visor de alertas o en la pestaña **Informes de mantenimiento**.  
+ Windows Server Essentials supervisa activamente cada equipo que está conectado al servidor y alerta al administrador de problemas relacionados con el estado del sistema, incluidas las actualizaciones críticas, la falta de protección contra malware, las definiciones de virus no actualizadas en los equipos cliente y otros problemas importantes que requieren una acción. Estos problemas se muestran como alertas en el visor de alertas, que se puede iniciar desde el panel del servidor o desde el Launchpad del equipo cliente en Windows Server Essentials, o en la pestaña **informes de mantenimiento** de Windows Server Essentials. De forma predeterminada, las alertas se actualizan cada 30 minutos, pero puede evaluar la red en busca de alertas en cualquier momento haciendo clic en **Actualizar** en el Visor de alertas o en la pestaña **Informes de mantenimiento**.  
   
  Los siguientes temas le ayudarán a comprender, ver y responder a las alertas del Visor de alertas y también le proporcionan instrucciones para configurar el servidor de modo que reciba notificaciones de alerta por correo electrónico:  
   

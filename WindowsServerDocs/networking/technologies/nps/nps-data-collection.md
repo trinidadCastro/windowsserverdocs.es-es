@@ -9,14 +9,13 @@ ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
-ms.assetid: ''
 ms.date: 05/01/2018
-ms.openlocfilehash: d393ad4af81ee1c24fa5f28b8a3b05217e7b34dd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: def65c174ff608301f8d4f35ef1ce19818103e61
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396292"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859378"
 ---
 # <a name="network-policy-server-user-data-collection"></a>Recopilación de datos de usuario del servidor de directivas de redes
 
@@ -27,7 +26,7 @@ En este documento se explica cómo buscar información de usuario recopilada por
 
 ## <a name="information-collected-by-nps"></a>Información recopilada por NPS
 
-- Timestamp
+- Marca de tiempo
 - Marca de tiempo del evento
 - Nombre de usuario
 - Nombre de usuario completo
@@ -43,8 +42,8 @@ Si los datos de cuentas están habilitados y configurados, los registros de los 
 
 Si se configuran los datos de cuentas para SQL Server, consulte todos los registros donde User_Name = `'<username>'`.
 
-Si se configuran los datos de cuentas para un archivo de registro, busque `<username>` en el archivo de registro para buscar todas las entradas de registro.
+Si se configuran los datos de cuentas para un archivo de registro, busque el `<username>` para buscar todas las entradas de registro en el archivo de registro.
 
 Las entradas del registro de eventos de servicios de acceso y directivas de redes se consideran duplicadas en los datos de cuentas y no es necesario recopilarlas.
 
-Si los datos de cuentas no están habilitados, los registros de los intentos de autenticación de NPS de un usuario se pueden obtener del registro de eventos de servicios de `<username>`acceso y directivas de redes mediante la búsqueda de.
+Si los datos de cuentas no están habilitados, los registros de los intentos de autenticación de NPS de un usuario se pueden obtener del registro de eventos de servicios de acceso y directivas de redes buscando el `<username>`.

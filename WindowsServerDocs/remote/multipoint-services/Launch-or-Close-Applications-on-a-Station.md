@@ -1,24 +1,20 @@
 ---
 title: Iniciar o cerrar aplicaciones en una estación
 description: Aprenda a trabajar con aplicaciones en Multipoint Services
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: efede045-c20b-4541-9db0-dc96848b987a
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: dbf926cd934a14334785a400763d58fcea581973
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d1725a4bed34541b6b6737bbe45b0898a32202a3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389658"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853698"
 ---
 # <a name="launch-or-close-applications-on-a-station"></a>Iniciar o cerrar aplicaciones en una estación
 Como usuario de Multipoint Dashboard, puede abrir o cerrar una aplicación en el escritorio de un usuario, en escritorios seleccionados o en todos los equipos de escritorio.  
@@ -47,6 +43,6 @@ Como usuario de Multipoint Dashboard, puede abrir o cerrar una aplicación en el
   
 3.  Seleccione el nombre de la aplicación, carpeta, documento o recurso de Internet que quiera cerrar y luego haga clic en **Cerrar aplicación**.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Administrar escritorios de usuario](manage-user-desktops-using-multipoint-dashboard.md)  
   

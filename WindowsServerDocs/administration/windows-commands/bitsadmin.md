@@ -1,30 +1,26 @@
 ---
 title: bitsadmin
-description: El tema comandos de Windows para **bitsadmin** -bitsadmin es una herramienta de línea de comandos que puede usar para crear, descargar o cargar trabajos y supervisar su progreso.
-ms.custom: na
+description: El tema comandos de Windows para bitsadmin, que es una herramienta de línea de comandos que se usa para crear, descargar o cargar trabajos y supervisar su progreso.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4853036e-1df8-45ad-8be6-cfb097b8dd27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b53293b28a83ecced34d248741996c958531d517
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ae6536b5c149f54bbfd37a5e0e814ffaa09a6bae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380097"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848748"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
 > **Se aplica a**: Windows Server (canal semianual), windows Server 2016, windows Server 2012 R2, windows Server 2012, Windows 10
 
-bitsadmin es una herramienta de línea de comandos que puede usar para crear trabajos de descarga o carga y supervisar su progreso. La herramienta bitsadmin usa modificadores para identificar el trabajo que se va a realizar.  Puede llamar a `bitsadmin /?` o `bitsadmin /HELP` para obtener una lista de modificadores.
+Bitsadmin es una herramienta de línea de comandos que puede usar para crear trabajos de descarga o carga y supervisar su progreso. La herramienta bitsadmin usa modificadores para identificar el trabajo que se va a realizar.  Puede llamar a `bitsadmin /?` o `bitsadmin /HELP` para obtener una lista de modificadores.
 
 La mayoría de los conmutadores requieren un \<de trabajo\> parámetro que se establece en el nombre para mostrar del trabajo, o GUID. Tenga en cuenta que el nombre para mostrar de un trabajo puede no ser único. Los modificadores **/Create** y **/List** devuelven el GUID de un trabajo.
 
@@ -34,7 +30,7 @@ Muchos de los modificadores se corresponden con los métodos de las [interfaces 
 
 Use los modificadores siguientes para crear un trabajo, establecer y recuperar las propiedades de un trabajo, y supervisar el estado de un trabajo. Para obtener ejemplos que muestran cómo usar algunos de estos modificadores para realizar tareas, consulte [ejemplos de bitsadmin](bitsadmin-examples.md).
 
-## <a name="switches"></a>Centrales
+## <a name="switches"></a>Conmutadores
 
 [bitsadmin addfile](bitsadmin-addfile.md)  
 [bitsadmin addfileset](bitsadmin-addfileset.md)  

@@ -1,30 +1,26 @@
 ---
 title: rem
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7245aedb-ba6f-49bb-9f77-848c4853c68f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 56534f75baf514d1c1760edfd41f6f94ab4ae1ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 78c35c94bedb7fa204cbb074871ec2581183cbf0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371600"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836098"
 ---
 # <a name="rem"></a>rem
 
 
 
-Proporciona una manera de agregar comentarios a un script.
+Proporciona una forma de agregar comentarios a un script.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,7 +28,7 @@ Proporciona una manera de agregar comentarios a un script.
 rem
 ```
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 En este script de ejemplo, **REM** se usa para proporcionar un Comentario sobre lo que hace el script:
 ```
@@ -50,7 +46,7 @@ create partition logical
 assign f:
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 

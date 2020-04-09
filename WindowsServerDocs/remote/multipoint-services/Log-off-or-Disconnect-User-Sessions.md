@@ -1,27 +1,23 @@
 ---
 title: Cerrar sesión o desconectar sesiones de usuario
 description: Obtenga información sobre cómo cerrar sesión de un usuario manualmente
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3e9bbcdc-e33b-481e-8b46-787a4f6d58bc
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: c636af35a78eab76d69c68b6f506b64dcb555f81
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a38722474fcd7e0fc346c5df1edc5df0c786ecf2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395270"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853678"
 ---
 # <a name="log-off-or-disconnect-user-sessions"></a>Cerrar sesión o desconectar sesiones de usuario
-Los usuarios de Multipoint Services pueden iniciar y cerrar sesión en sus sesiones de escritorio como lo harían con cualquier sesión de Windows. Los usuarios también pueden desconectar o suspender su sesión para que no se use la estación Multipoint Services, pero su sesión permanece activa en la memoria del equipo del sistema Multipoint Services.  
+Los usuarios de MultiPoint Services pueden iniciar sesión y cerrar sesión de sus sesiones de escritorio al igual que harían en cualquier sesión de Windows. Los usuarios también pueden desconectar o suspender su sesión para que no se use la estación Multipoint Services, pero su sesión permanece activa en la memoria del equipo del sistema Multipoint Services.  
   
 Además, los usuarios administrativos pueden finalizar la sesión de un usuario si el usuario se ha desplazado fuera de la sesión de Multipoint Services o ha olvidado cerrar la sesión del sistema.  
   
@@ -41,10 +37,10 @@ En la tabla siguiente se describen las distintas opciones que usted, como usuari
 |||  
 |-|-|  
 |**Acción**|**Realizado**|  
-|**S3** En Multipoint Manager, use la pestaña **estaciones** para suspender la sesión del usuario. Para más información, vea el tema [Suspender y dejar activa la sesión de usuario](Suspend-and-Leave-User-Session-Active.md).|La sesión del usuario finaliza y se conserva en la memoria del equipo. La estación estará disponible para que el mismo usuario u otro diferente inicien sesión. El usuario puede iniciar sesión en la misma estación o en otra diferente y continuar con su trabajo.|  
-|**Extremo** En Multipoint Manager, use la pestaña **estaciones** para finalizar la sesión del usuario. También puede finalizar todas las sesiones de usuario en la pestaña **Estaciones**. Para más información, vea el tema [Finalizar una sesión de usuario](End-a-User-Session.md).|La sesión del usuario finaliza y la estación está disponible para que el usuario inicie sesión. La sesión del usuario ya no se muestra en la pestaña **estaciones** y no se encuentra en la memoria del equipo.|  
+|**Suspender:** En Multipoint Manager, use la pestaña **estaciones** para suspender la sesión del usuario. Para más información, vea el tema [Suspender y dejar activa la sesión de usuario](Suspend-and-Leave-User-Session-Active.md).|La sesión del usuario finaliza y se conserva en la memoria del equipo. La estación estará disponible para que el mismo usuario u otro diferente inicien sesión. El usuario puede iniciar sesión en la misma estación o en otra diferente y continuar con su trabajo.|  
+|**Fin:** En Multipoint Manager, use la pestaña **estaciones** para finalizar la sesión del usuario. También puede finalizar todas las sesiones de usuario en la pestaña **estaciones** . Para obtener más información, vea el tema [finalizar una sesión de usuario](End-a-User-Session.md) .|La sesión del usuario finaliza y la estación está disponible para que el usuario inicie sesión. La sesión del usuario ya no se muestra en la pestaña **estaciones** y no se encuentra en la memoria del equipo.|  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Suspender y dejar activa la sesión de usuario](Suspend-and-Leave-User-Session-Active.md)  
 [Finalizar una sesión de usuario](End-a-User-Session.md)  
 [Administrar escritorios de usuario](manage-user-desktops-using-multipoint-dashboard.md)  

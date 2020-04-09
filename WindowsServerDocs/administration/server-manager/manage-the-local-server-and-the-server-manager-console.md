@@ -1,36 +1,32 @@
 ---
 title: Manage the Local Server and the Server Manager Console
 description: Administrador de servidores
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: eeb32f65-d588-4ed5-82ba-1ca37f517139
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45bb0efcaf989cadd717ddbfde27230b76901113
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d64d45fec0c48f66da72dfee7ab9f1f9965205ad
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383112"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851498"
 ---
 # <a name="manage-the-local-server-and-the-server-manager-console"></a>Manage the Local Server and the Server Manager Console
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-En Windows Server, Administrador del servidor le permite administrar el servidor local (si ejecuta Administrador del servidor en Windows Server y no en un sistema operativo de cliente basado en Windows) y los servidores remotos que ejecutan Windows Server 2008 y versiones más recientes de Windows Sistema operativo del servidor.
+En Windows Server, Administrador del servidor le permite administrar el servidor local (si ejecuta Administrador del servidor en Windows Server y no en un sistema operativo de cliente basado en Windows) y los servidores remotos que ejecutan Windows Server 2008 y versiones más recientes del sistema operativo Windows Server.
 
 En la página **servidor local** de administrador del servidor se muestran las propiedades del servidor, los eventos, los datos del contador de rendimiento y de servicio, y los resultados del analizador de procedimientos recomendados (BPA) para el servidor local. Los iconos de eventos, servicios, BPA y rendimiento funcionan igual que en las páginas de grupos de servidores y roles. Para obtener más información sobre cómo configurar los datos que se muestran en estos iconos, consulta [View y Configure Performance, Event, y Service Data](view-and-configure-performance-event-and-service-data.md) y [Run Best Practices Analyzer Scans y Manage Scan Results](run-best-practices-analyzer-scans-and-manage-scan-results.md).
 
 Los comandos de menú y la configuración de las barras de título de la consola de Administrador del servidor se aplican globalmente a todos los servidores del grupo de servidores y permiten usar Administrador del servidor para administrar todo el grupo de servidores.
 
-En este tema se incluyen las siguientes secciones.
+Este tema contiene las siguientes secciones.
 
 -   [Apagar el servidor local](#BKMK_shutdown)
 
@@ -42,16 +38,16 @@ En este tema se incluyen las siguientes secciones.
 
 -   [Administrar roles en páginas principales de rol](#BKMK_roles)
 
-## <a name="BKMK_shutdown"></a>Apagar el servidor local
-El menú **tareas** del icono **propiedades** del servidor local permite iniciar una sesión de Windows PowerShell en el servidor local, abrir el complemento MMC **Administración de equipos** o abrir complementos MMC para roles o características instalados en el servidor local. También puede cerrar el servidor local mediante el comando **Cerrar servidor local** de este menú **Tareas** . El comando **Cerrar servidor local** también está disponible para el servidor local en el icono **Servidores** de la página **Todos los servidores** o en cualquier página de rol o grupo en la que esté representado el servidor local.
+## <a name="shut-down-the-local-server"></a><a name=BKMK_shutdown></a>Apagar el servidor local
+El menú **tareas** del icono **propiedades** del servidor local permite iniciar una sesión de Windows PowerShell en el servidor local, abrir el complemento MMC **Administración de equipos** o abrir complementos MMC para roles o características instalados en el servidor local. También puede cerrar el servidor local mediante el comando **Cerrar servidor local** de este menú **Tareas**. El comando **Cerrar servidor local** también está disponible para el servidor local en el icono **Servidores** de la página **Todos los servidores** o en cualquier página de rol o grupo en la que esté representado el servidor local.
 
 Cerrar el servidor local mediante este método, a diferencia de cerrar Windows Server 2016 desde la pantalla **Inicio** , abre el cuadro de diálogo **cerrar Windows** , que permite especificar los motivos para el apagado en el área **rastreador de eventos de apagado** .
 
 > [!NOTE]
 > Solo los miembros del grupo Administradores pueden cerrar o reiniciar un servidor. Los usuarios estándar no pueden cerrar ni reiniciar un servidor. Al hacer clic en el comando **Cerrar servidor local**, se cierran las sesiones de los usuarios estándar en el servidor. Esto es igual que si un usuario estándar ejecuta el comando de cierre **Alt+F4** desde el escritorio del servidor.
 
-## <a name="BKMK_props"></a>Configurar propiedades de Administrador del servidor
-Puede ver o cambiar las siguientes opciones de configuración en el icono **Propiedades** de la página **Servidor local** . Para cambiar el valor de una configuración, haga clic en el valor de hipertexto de la configuración.
+## <a name="configure-server-manager-properties"></a><a name=BKMK_props></a>Configurar propiedades de Administrador del servidor
+Puede ver o cambiar las siguientes opciones de configuración en el icono **Propiedades** de la página **Servidor local**. Para cambiar el valor de una configuración, haga clic en el valor de hipertexto de la configuración.
 
 > [!NOTE]
 > Por lo general, las propiedades mostradas en el icono **Propiedades** del servidor local solo se pueden cambiar en el servidor local. No se pueden cambiar las propiedades del servidor local desde un equipo remoto mediante Administrador del servidor porque el icono **propiedades** solo puede obtener información acerca del equipo local, no de los equipos remotos.
@@ -65,23 +61,23 @@ Puede ver o cambiar las siguientes opciones de configuración en el icono **Prop
 |Firewall de Windows|Muestra el estado de Firewall de Windows del servidor local. Abre **Panel de control\Sistema y seguridad\Firewall de Windows**. Para obtener más información sobre la configuración de Firewall de Windows, consulta [Firewall de Windows con seguridad avanzada e IPsec](https://go.microsoft.com/fwlink/?LinkId=253465).|
 |administración remota|Muestra Administrador del servidor y el estado de administración remota de Windows PowerShell. Abre el cuadro de diálogo **Configurar administración remota** . Para obtener más información sobre la administración remota, vea [configuración de la administración remota en Administrador del servidor](configure-remote-management-in-server-manager.md).|
 |Escritorio remoto|Muestra si los usuarios se pueden conectar el servidor de forma remota mediante sesiones de Escritorio remoto. Abre la pestaña **remoto** del cuadro de diálogo **propiedades del sistema** .|
-|Formación de equipos NIC|Muestra si el servidor local participa o no en la Formación de equipos NIC. Abre el cuadro de diálogo **Formación de equipos NIC** y le permite unir el servidor local a un equipo NIC si lo desea. Para obtener más información sobre la Formación de equipos NIC, consulta las [Notas del producto de Formación de equipos NIC](https://go.microsoft.com/fwlink/?LinkID=253449).|
+|Formación de equipos NIC|Muestra si el servidor local participa o no en la Formación de equipos NIC. Abre el cuadro de diálogo **NIC Teaming** y le permite unir el servidor local a un equipo NIC si lo desea. Para obtener más información sobre la Formación de equipos NIC, consulta las [Notas del producto de Formación de equipos NIC](https://go.microsoft.com/fwlink/?LinkID=253449).|
 |Ethernet|Muestra el estado de red del servidor. Abre **Panel de control\Red e Internet\Conexiones de red**.|
 |Versión del sistema operativo|Este campo de solo lectura muestra el número de versión del sistema operativo Windows que ejecuta el servidor local.|
 |Información de hardware|Este campo de solo lectura muestra el fabricante y el número y nombre de modelo del hardware del servidor.|
 |Últimas actualizaciones instaladas|Muestra el día y la hora en que se instalaron por última vez actualizaciones de Windows. Abre **Panel de control\Sistema y seguridad\Windows Update**.|
 |Windows Update|Muestra la configuración de Windows Update del servidor local. Abre **Panel de control\Sistema y seguridad\Windows Update**.|
 |Últimas actualizaciones buscadas|Muestra el día y la hora en que el servidor comprobó por última vez si había actualizaciones de Windows disponibles. Abre **Panel de control\Sistema y seguridad\Windows Update**.|
-|Informe de errores de Windows|Muestra el estado de participación en el Informe de errores de Windows. Abre el cuadro de diálogo **Configuración de Informe de errores de Windows** . Para obtener más información sobre el Informe de errores de Windows, sus ventajas, declaraciones de privacidad y configuración de participación, consulta [Informe de errores de Windows](https://go.microsoft.com/fwlink/?LinkID=245991).|
-|Programa para la mejora de la experiencia del usuario|Muestra el estado de participación en el Programa para la mejora de la experiencia del usuario de Windows. Abre el cuadro de diálogo **Configuración del Programa para la mejora de la experiencia del usuario** . Para obtener más información sobre el Programa para la mejora de la experiencia del usuario de Windows, sus ventajas y configuración de participación, consulta [Programa para la mejora de la experiencia del usuario de Windows](https://go.microsoft.com/fwlink/?LinkID=245992).|
+|Informe de errores de Windows|Muestra el estado de participación en el Informe de errores de Windows. Abre el cuadro de diálogo **Configuración de Informe de errores de Windows**. Para obtener más información sobre el Informe de errores de Windows, sus ventajas, declaraciones de privacidad y configuración de participación, consulta [Informe de errores de Windows](https://go.microsoft.com/fwlink/?LinkID=245991).|
+|Programa para la mejora de la experiencia del usuario|Muestra el estado de participación en el Programa para la mejora de la experiencia del usuario de Windows. Abre el cuadro de diálogo **Configuración del Programa para la mejora de la experiencia del usuario**. Para obtener más información sobre el Programa para la mejora de la experiencia del usuario de Windows, sus ventajas y configuración de participación, consulta [Programa para la mejora de la experiencia del usuario de Windows](https://go.microsoft.com/fwlink/?LinkID=245992).|
 |Configuración de seguridad mejorada de Internet Explorer|Muestra si la Configuración de seguridad mejorada de Internet Explorer (también conocida como IE Hardening o IE ESC) está activada o desactivada. Abre el cuadro de diálogo **Configuración de seguridad mejorada de Internet Explorer**. La Configuración de seguridad mejorada de Internet Explorer es una medida de seguridad para servidores que impide la apertura de páginas web en Internet Explorer. Para obtener más información sobre la configuración de seguridad mejorada de Internet Explorer, sus ventajas y configuración, consulte [configuración de seguridad mejorada](https://go.microsoft.com/fwlink/?LinkId=253461)de IE.|
 |zona horaria|Muestra la zona horaria del servidor local. Abre el cuadro de diálogo **fecha y hora** .|
-|Id. del producto|Muestra el estado de activación de Windows y el número de ID. de producto (si se ha activado Windows) del sistema operativo Windows Server 2016. No es el mismo número que la clave del producto de Windows. Abre el cuadro de diálogo **Activación de Windows** .|
+|Product ID|Muestra el estado de activación de Windows y el número de ID. de producto (si se ha activado Windows) del sistema operativo Windows Server 2016. No es el mismo número que la clave del producto de Windows. Abre el cuadro de diálogo **Activar Windows**.|
 |Procesadores|Este campo de solo lectura muestra la información de fabricante, nombre de modelo y velocidad de los procesadores del servidor local.|
 |Memoria instalada (RAM)|Este campo de solo lectura muestra la cantidad de RAM disponible, en gigabytes.|
 |Espacio total en disco|Este campo de solo lectura muestra la cantidad de espacio en disco disponible, en gigabytes.|
 
-## <a name="BKMK_managesm"></a>Administrar la consola de Administrador del servidor
+## <a name="manage-the-server-manager-console"></a><a name=BKMK_managesm></a>Administrar la consola de Administrador del servidor
 La configuración global que se aplica a toda la consola de Administrador del servidor y a todos los servidores remotos que se han agregado al grupo de servidores de Administrador del servidor se encuentra en las barras de título de la parte superior de la ventana de la consola de Administrador del servidor.
 
 ### <a name="add-servers-to-server-manager"></a>agregar servidores a Administrador del servidor
@@ -94,7 +90,7 @@ Puede configurar el intervalo de actualización para los datos que se muestran e
 
 1.  En el menú **administrar** de la consola de administrador del servidor, haga clic en **Administrador del servidor propiedades**.
 
-2.  En el cuadro de diálogo **propiedades de administrador del servidor** , especifique un período de tiempo, en minutos, para la cantidad de tiempo que desea que transcurra entre las actualizaciones de los datos que se muestran en Administrador del servidor. El valor predeterminado es 10 minutos. Haga clic en Aceptar cuando haya acabado.
+2.  En el cuadro de diálogo **propiedades de administrador del servidor** , especifique un período de tiempo, en minutos, para la cantidad de tiempo que desea que transcurra entre las actualizaciones de los datos que se muestran en Administrador del servidor. El valor predeterminado es 10 minutos. Haga clic en Aceptar al terminar.
 
 #### <a name="refresh-limitations"></a>Limitaciones de la actualización
 La actualización se aplica globalmente a los datos de todos los servidores que ha agregado al grupo de servidores de Administrador del servidor. No puede actualizar los datos ni configurar intervalos de actualización distintos para servidores, roles o grupos individuales.
@@ -104,7 +100,7 @@ Cuando los servidores que se encuentran en un clúster se agregan a Administrado
 Los datos que se muestran en las páginas principales de roles en Administrador del servidor para Servicios de Escritorio remoto, administración de direcciones IP y servicios de archivos y almacenamiento no se actualizan automáticamente. Actualice los datos que se muestran en estas páginas manualmente; para ello, presione **F5** o haga clic en **Actualizar** en el encabezado de la consola de administrador del servidor mientras está en esas páginas.
 
 ### <a name="add-or-remove-roles-or-features"></a>Agregar o quitar roles o características
-Los comandos que abren el Asistente para agregar roles y características y el Asistente para quitar roles y características, y permiten agregar o quitar roles, servicios de rol y características de los servidores del grupo de servidores, se encuentran en el menú **administrar** de la consola de administrador del servidor, y en el menú **tareas** del icono **roles y características** en páginas de roles o grupos. Para obtener información detallada sobre cómo agregar o quitar roles o características, consulta [Install or Uninstall Roles, Role Services, or Features](install-or-uninstall-roles-role-services-or-features.md).
+Los comandos que abren el Asistente para agregar roles y características y el Asistente para quitar roles y características, y permiten agregar o quitar roles, servicios de rol y características de los servidores del grupo de servidores, se encuentran en el menú **administrar** de la consola de administrador del servidor, y en el menú **tareas** del icono **roles y características** en páginas de roles o grupos. Para obtener información detallada sobre cómo agregar o quitar roles o características, vea [Instalación o desinstalación de roles, servicios de rol o características](install-or-uninstall-roles-role-services-or-features.md).
 
 En Administrador del servidor, los datos de roles y características se muestran en el idioma base del sistema, también denominado idioma predeterminado de la GUI del sistema, o el idioma seleccionado durante la instalación del sistema operativo.
 
@@ -117,10 +113,10 @@ La casilla no **iniciar administrador del servidor automáticamente al iniciar s
 ### <a name="zoom-in-or-out"></a>Acercar o alejar
 Para acercar o alejar la vista de la consola de Administrador del servidor, puede usar los comandos de **zoom** del menú **Ver** o presionar **Ctrl + más (+)** para acercar y **Ctrl + menos (-)** para alejar.
 
-## <a name="BKMK_tools"></a>Personalizar las herramientas que se muestran en el menú herramientas
+## <a name="customize-tools-that-are-displayed-in-the-tools-menu"></a><a name=BKMK_tools></a>Personalizar las herramientas que se muestran en el menú herramientas
 El menú **herramientas** de administrador del servidor incluye vínculos a los accesos directos de la carpeta **herramientas administrativas** del **Panel de control/sistema y seguridad**. La carpeta **herramientas administrativas** contiene una lista de accesos directos o archivos lnk para las herramientas de administración disponibles, como los complementos mmc. administrador del servidor rellena el menú **herramientas** con vínculos a dichos accesos directos y copia la estructura de carpetas de la carpeta **herramientas administrativas** en el menú **herramientas** . De forma predeterminada, las herramientas de la carpeta Herramientas administrativas están organizadas en una lista plana, ordenadas por tipo y nombre. En el menú**herramientas** de administrador del servidor, los elementos se ordenan solo por nombre, no por tipo.
 
-Para personalizar el menú **Herramientas** , copie los accesos directos a herramientas o scripts que desee usar en la carpeta **Herramientas administrativas** . También puede organizar los accesos directos en carpetas, con lo que se crean menús en cascada en el menú **Herramientas** . Además, si desea restringir el acceso a las herramientas personalizadas del menú **herramientas** , puede establecer derechos de acceso de usuario en las carpetas de herramientas personalizadas de herramientas administrativas o directamente en los archivos de herramientas o scripts originales.
+Para personalizar el menú **Herramientas**, copie los accesos directos a herramientas o scripts que desee usar en la carpeta **Herramientas administrativas**. También puede organizar los accesos directos en carpetas, con lo que se crean menús en cascada en el menú **Herramientas**. Además, si desea restringir el acceso a las herramientas personalizadas del menú **herramientas** , puede establecer derechos de acceso de usuario en las carpetas de herramientas personalizadas de herramientas administrativas o directamente en los archivos de herramientas o scripts originales.
 
 Se recomienda no reorganizar las herramientas administrativas y del sistema y las herramientas de administración asociadas con roles y características instalados en el servidor local. Si se mueven las herramientas de administración de roles y características, se puede impedir la correcta desinstalación de estas herramientas de administración, cuando sea necesario. Después de desinstalar un rol o característica, en el menú **Herramientas** podría quedar un vínculo no funcional a una herramienta cuyo acceso directo se haya movido. Si reinstala el rol, se crea un vínculo duplicado a la misma herramienta en el menú **Herramientas**, pero uno de los vínculos no funcionará.
 
@@ -133,9 +129,9 @@ En el procedimiento siguiente se describe cómo crear una carpeta de ejemplo den
 1.  Cree una nueva carpeta denominada mis *herramientas* en una ubicación adecuada.
 
     > [!NOTE]
-    > A causa de los restrictivos derechos de acceso en la carpeta **Herramientas administrativas** , no puede crear una carpeta directamente en la carpeta **Herramientas administrativas** ; debe crear una carpeta en otra ubicación (como el escritorio) y luego copiar la nueva carpeta en la carpeta **Herramientas administrativas** .
+    > A causa de los restrictivos derechos de acceso en la carpeta **Herramientas administrativas**, no puede crear una carpeta directamente en la carpeta **Herramientas administrativas**; debe crear una carpeta en otra ubicación (como el escritorio) y luego copiar la nueva carpeta en la carpeta **Herramientas administrativas**.
 
-2.  mueva o copie mis *herramientas* en **Panel de control/sistema y seguridad/herramientas administrativas**. De forma predeterminada, debe pertenecer al grupo Administradores del equipo para realizar cambios en la carpeta **Herramientas administrativas** .
+2.  mueva o copie mis *herramientas* en **Panel de control/sistema y seguridad/herramientas administrativas**. De forma predeterminada, debe pertenecer al grupo Administradores del equipo para realizar cambios en la carpeta **Herramientas administrativas**.
 
 3.  Si no necesita restringir los derechos de acceso de usuario a los métodos abreviados de herramientas personalizados, vaya al paso 6. De lo contrario, haga clic con el botón secundario en el archivo de la herramienta (o en la carpeta *MisHerramientas*) y, a continuación, haga clic en **Propiedades**.
 
@@ -158,8 +154,8 @@ En el procedimiento siguiente se describe cómo crear una carpeta de ejemplo den
 
 8.  Actualice o reinicie Administrador del servidor, si es necesario, para ver el acceso directo a la herramienta personalizada en el menú **herramientas** .
 
-## <a name="BKMK_roles"></a>Administrar roles en páginas principales de rol
-Después de agregar servidores al grupo de servidores de Administrador del servidor y Administrador del servidor recopila datos de inventario sobre los servidores del grupo, Administrador del servidor agrega páginas al panel de navegación para los roles detectados en los servidores administrados. El icono **Servidores** de las páginas de rol muestra los servidores administrados que ejecutan el rol. De forma predeterminada, los iconos **Eventos**, **Analizador de procedimientos recomendados**, **Servicios**y **Rendimiento** muestran datos de todos los servidores que ejecutan el rol y si seleccionas servidores específicos en el icono **Servidores** , se limita el ámbito de los eventos, servicios, contadores de rendimiento y resultados de BPA solo al servidor seleccionado. Las herramientas de administración suelen estar disponibles en el menú **herramientas** de la consola de administrador del servidor, después de instalar o detectar un rol o una característica en un servidor administrado. También puede hacer clic con el botón secundario en las entradas de servidor del icono **Servidores** para un rol o grupo y, a continuación, iniciar la herramienta de administración que desee usar.
+## <a name="manage-roles-on-role-home-pages"></a><a name=BKMK_roles></a>Administrar roles en páginas principales de rol
+Después de agregar servidores al grupo de servidores de Administrador del servidor y Administrador del servidor recopila datos de inventario sobre los servidores del grupo, Administrador del servidor agrega páginas al panel de navegación para los roles detectados en los servidores administrados. El icono **Servidores** de las páginas de rol muestra los servidores administrados que ejecutan el rol. De forma predeterminada, los iconos **Eventos**, **Analizador de procedimientos recomendados**, **Servicios** y **Rendimiento** muestran datos de todos los servidores que ejecutan el rol y si seleccionas servidores específicos en el icono **Servidores**, se limita el ámbito de los eventos, servicios, contadores de rendimiento y resultados de BPA solo al servidor seleccionado. Las herramientas de administración suelen estar disponibles en el menú **herramientas** de la consola de administrador del servidor, después de instalar o detectar un rol o una característica en un servidor administrado. También puede hacer clic con el botón secundario en las entradas de servidor del icono **Servidores** para un rol o grupo y, a continuación, iniciar la herramienta de administración que desee usar.
 
 En Windows Server 2016, los siguientes roles y características tienen herramientas de administración que se integran en Administrador del servidor consola como páginas.
 
@@ -171,7 +167,7 @@ En Windows Server 2016, los siguientes roles y características tienen herramien
 
     Existen algunas limitaciones en la administración de IPAM en Administrador del servidor. A diferencia de las páginas de rol y grupo habituales, IPAM no tiene los iconos **Servidores**, **Eventos**, **Rendimiento**, **Analizador de procedimientos recomendados** o **Servicios**. No hay ningún modelo de Analizador de procedimientos recomendados disponible para IPAM; No se admiten los exámenes de Analizador de procedimientos recomendados en IPAM. Para obtener acceso a los servidores del grupo de servidores que ejecutan IPAM, cree un grupo personalizado de esos servidores y obtenga acceso a la lista de servidores desde el icono **Servidores** de la página del grupo personalizado. Como alternativa, puede obtener acceso a los servidores IPAM desde el icono **Servidores** de la página del grupo **Todos los servidores**.
 
-    Las miniaturas del panel también muestran filas limitadas para IPAM, en comparación de las miniaturas de otros roles y grupos. Si hace clic en las filas de miniaturas de IPAM, puede ver los eventos, datos de rendimiento y alertas de estado de administración de los servidores que ejecutan IPAM. Los servicios relacionados con IPAM se pueden administrar desde páginas de grupos de servidores que contiene servidores IPAM, como la página del grupo **Todos los servidores** .
+    Las miniaturas del panel también muestran filas limitadas para IPAM, en comparación de las miniaturas de otros roles y grupos. Si hace clic en las filas de miniaturas de IPAM, puede ver los eventos, datos de rendimiento y alertas de estado de administración de los servidores que ejecutan IPAM. Los servicios relacionados con IPAM se pueden administrar desde páginas de grupos de servidores que contiene servidores IPAM, como la página del grupo **Todos los servidores**.
 
     para obtener más información sobre la implementación y administración de IPAM, consulte [Administración de direcciones IP (IPAM)](https://go.microsoft.com/fwlink/p/?LinkId=241533).
 
@@ -180,9 +176,9 @@ En Windows Server 2016, los siguientes roles y características tienen herramien
 [agregar servidores a administrador del servidor](add-servers-to-server-manager.md)
 [crear y administrar grupos de servidores](create-and-manage-server-groups.md)
 [ver y configurar los datos de rendimiento, eventos y servicios](view-and-configure-performance-event-and-service-data.md)
-[servicios de archivos y almacenamiento](https://go.microsoft.com/fwlink/p/?LinkId=241530)
-[servicios de escritorio remoto (rdS)](https://go.microsoft.com/fwlink/p/?LinkId=241532)
-[administración de direcciones IP (IPAM)](https://go.microsoft.com/fwlink/p/?LinkId=241533)
+los [servicios de archivos y almacenamiento](https://go.microsoft.com/fwlink/p/?LinkId=241530)
+servicios de escritorio remoto [(rdS)](https://go.microsoft.com/fwlink/p/?LinkId=241532)
+la [Administración de direcciones IP (IPAM)](https://go.microsoft.com/fwlink/p/?LinkId=241533)
 
 
 

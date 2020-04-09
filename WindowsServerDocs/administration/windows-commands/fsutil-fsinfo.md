@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 472c3b91285810ac1ff528da24de50533bae526d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 56e27c386451c561de8f62e523e2d1e59a8ce84c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376944"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844308"
 ---
 # <a name="fsutil-fsinfo"></a>Fsutil fsinfo
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
@@ -33,20 +33,20 @@ fsutil fsinfo [statistics] <VolumePath>
 fsutil fsinfo [volumeinfo] <RootPath>
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |-------------|---------------|
-|SATA|Muestra todas las unidades del equipo.|
+|unidades|Muestra todas las unidades del equipo.|
 |Drivetype|Consulta una unidad y muestra su tipo, por ejemplo, la unidad de CD-ROM.|
 |ntfsinfo|Muestra información de volumen específica de NTFS para el volumen especificado, como el número de sectores, clústeres totales, clústeres libres y el inicio y el final de la zona MFT.|
 |sectorinfo|Muestra información sobre el tamaño y la alineación del sector del hardware.|
-|¡|Muestra las estadísticas del sistema de archivos para el volumen especificado, como metadatos, archivo de registro y lecturas y escrituras de MFT.|
+|estadísticas|Muestra las estadísticas del sistema de archivos para el volumen especificado, como metadatos, archivo de registro y lecturas y escrituras de MFT.|
 |volumeinfo|Muestra información para el volumen especificado, como el sistema de archivos, y si el volumen admite nombres de archivo que distinguen mayúsculas de minúsculas, Unicode en nombres de archivo, cuotas de disco o es un volumen de DirectAccess (DAX).|
 |< "VolumePath" >|Especifica la letra de unidad (seguida de dos puntos).|
 |< "RootPathname" >|Especifica la letra de unidad (seguida de dos puntos) de la unidad raíz.|
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Example
 Para enumerar todas las unidades del equipo, escriba:
 
 ```
@@ -153,8 +153,8 @@ UserFileReadBytes :    1305244512
 LogFileWriteBytes :    180936704       
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>Referencias adicionales
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 [fsutil](Fsutil.md)
 
 

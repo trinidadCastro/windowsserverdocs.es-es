@@ -1,28 +1,22 @@
 ---
 title: diskcopy
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Comando comandos de Windows para diskcopy, que copia el contenido del disquete de la unidad de origen en un disquete formateado o sin formatear en la unidad de destino.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5fd21efa-52cc-4e70-a7fe-35125a435106
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 553a85ac4fd9b7708d7adc668be4e000b36a9346
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 675694503cab207f05fd6b48e0d17c23196f85d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377819"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845548"
 ---
 # <a name="diskcopy"></a>diskcopy
-
-
 
 Copia el contenido del disquete de la unidad de origen en un disquete formateado o sin formatear en la unidad de destino. Si se usa sin parámetros, **diskcopy** usa la unidad actual para el disco de origen y el disco de destino.
 
@@ -37,16 +31,16 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 diskcopy [<Drive1>: [<Drive2>:]] [/v]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
 |\<unidad1 >|Especifica la unidad que contiene el disco de origen.|
 |\<Unidad2 >|Especifica la unidad que contiene el disco de destino.|
 |/v|Comprueba que la información se ha copiado correctamente. Esta opción ralentiza el proceso de copia.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Uso de discos
 
@@ -84,9 +78,11 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
 > [!NOTE]
 > No se puede usar **xcopy** para copiar un disco de inicio.
-> -   Descripción de los códigos de salida de **diskcopy**
 
-    The following table explains each exit code.  
+### <a name="understanding-diskcopy-exit-codes"></a>Descripción de los códigos de salida de **diskcopy**
+
+    The following table explains each exit code.
+    
     |Código de salida|Descripción|
     |---------|-----------|
     |0|La operación de copia se realizó correctamente|
@@ -96,7 +92,7 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
     To process the exit codes that are returned by **diskcomp**, you can use the *ERRORLEVEL* environment variable on the **if** command line in a batch program.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para copiar el disco de la unidad B en el disco de la unidad A, escriba:
 ```
@@ -106,6 +102,6 @@ Para usar la unidad de disquete a para copiar un disquete en otro, cambie primer
 
 diskcopy a:
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

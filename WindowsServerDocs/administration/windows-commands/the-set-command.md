@@ -1,30 +1,27 @@
 ---
-title: El comando set
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+title: set
+description: Comando comandos de Windows para Set, que establece las propiedades y los atributos de los servidores de servicios de implementación de Windows, los equipos preconfigurados, las imágenes, los grupos de imágenes y los servidores de transporte.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5def6be0-83b9-4133-bc1b-bbe6d407eca7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8131685b227444a0114e9c0eb70d6191a78f3da0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e47a90137a94d4ada149135ee0b593e0ade0ae3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385077"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80833058"
 ---
-# <a name="the-set-command"></a>El comando set
+# <a name="set"></a>set
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Establece las propiedades y los atributos de los servidores de servicios de implementación de Windows, los equipos preconfigurados, las imágenes, los grupos de imágenes y los servidores de transporte.
+
 ## <a name="subcommands"></a>Subcomandos
 |Subcomando|Descripción|
 |-------|--------|
@@ -35,4 +32,4 @@ Establece las propiedades y los atributos de los servidores de servicios de impl
 |[Subcomando: set-TransportServer](subcommand-set-transportserver.md)|Configura los valores para un servidor de transporte.|
 |[Subcomando: set-DriverPackage](subcommand-set-driverpackage.md)|cambia el nombre o habilita o deshabilita un paquete de controladores en un servidor.|
 |[Subcomando: set-DriverGroup](subcommand-set-drivergroup.md)|Establece las propiedades de un grupo de controladores existente en un servidor.|
-|[Subcomando: set-DriverGroupFilter](subcommand-set-drivergroupfilter.md)|Agrega o quita un filtro de grupo de controladores existente de un grupo de controladores.|
+|[Subcomando: set-DriverGroupFilter](subcommand-set-drivergroupfilter.md)|agrega o quita un filtro de grupo de controladores existente de un grupo de controladores.|

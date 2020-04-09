@@ -5,14 +5,14 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: v-tea; lindakup
-author: Teresa-Motiv
+author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: 55ac47d835874ddb8e160603f08cbafa985aad2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cceabd73a3064ff82cfe1d3c353ea63574f5feff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370287"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851888"
 ---
 # <a name="memory-usage-considerations-for-ad-ds-performance-tuning"></a>Consideraciones sobre el uso de memoria para el ajuste del rendimiento AD DS
 
@@ -26,7 +26,7 @@ LSASS es responsable de la administración de la autenticación de dominio de la
 - Servicio servidor LSA
 - Capa de sockets seguros (SSL)
 - Protocolo de autenticación Kerberos V5
-- Protocolo de autenticación NTLM
+- protocolo de autenticación NTLM
 - Otros paquetes de autenticación que se cargan en LSA
 
 Los servicios de Active Directory Database (NTDSAI. dll) funcionan con el motor de almacenamiento extensible (ESE, ESENT. dll).

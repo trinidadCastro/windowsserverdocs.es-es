@@ -1,24 +1,20 @@
 ---
 title: Ver y configurar los datos de servicio y de eventos de rendimiento
 description: Administrador de servidores
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ccd59c35-4dbf-48e7-88a4-c519c00184d1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 55ff19988cf502c2fdc968f08f207120956217df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 992fdc6e4f1bba69d540a4ae810bde00db207a46
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383042"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851468"
 ---
 # <a name="view-and-configure-performance-event-and-service-data"></a>Visualización y configuración de rendimiento, evento y datos de servicio
 
@@ -28,11 +24,11 @@ En este tema se describe cómo ver y configurar las entradas del registro de eve
 
 Los datos del registro de eventos, servicios y rendimiento se muestran en dos lugares de la consola de Administrador del servidor en Windows Server.  
 
--   En el panel, puede hacer clic en las filas de miniaturas **eventos**, **rendimiento**y **servicios** para configurar los datos del registro de eventos, rendimiento y servicios que desea ver para los roles, todo el grupo de servidores de administrador del servidor, grupos creados por el usuario de servidores y el servidor local. Al hacer clic en las filas de hipertexto, se abren los cuadros de diálogo **vista de detalle** que permiten especificar los datos sobre los que desea recibir alertas en el panel. Después de configurar los datos de registro de eventos, servicios y rendimiento que desea que se resalten en las miniaturas del panel, las entradas de registro que coincidan con los criterios especificados se enumeran en la parte inferior de los cuadros de diálogo **vista de detalle** .  
+-   En el panel, puede hacer clic en las filas de miniaturas **eventos**, **rendimiento**y **servicios** para configurar los datos del registro de eventos, rendimiento y servicios que desea ver para los roles, todo el grupo de servidores de administrador del servidor, grupos de servidores creados por el usuario y el servidor local. Al hacer clic en las filas de hipertexto, se abren los cuadros de diálogo **vista de detalle** que permiten especificar los datos sobre los que desea recibir alertas en el panel. Después de configurar los datos de registro de eventos, servicios y rendimiento que desea que se resalten en las miniaturas del panel, las entradas de registro que coincidan con los criterios especificados se enumeran en la parte inferior de los cuadros de diálogo **vista de detalle** .  
 
 -   Los iconos**Eventos**, **Servicios**y **Rendimiento** forman parte de las páginas principales de los roles y los grupos. Los comandos del menú **Tareas** de estos iconos permiten especificar los datos que desea recopilar de los servidores administrados. Los iconos incluyen filtros y consultas para limitar aún más las entradas del registro que se muestran en el icono, si lo desea.  
 
-En este tema se incluyen las siguientes secciones.  
+Este tema contiene las siguientes secciones.  
 
 -   [¿Qué son las miniaturas?](#BKMK_thumb)  
 
@@ -44,26 +40,26 @@ En este tema se incluyen las siguientes secciones.
 
 -   [Ver y copiar entradas de eventos o de rendimiento](#BKMK_copy)  
 
-## <a name="BKMK_thumb"></a>¿Qué son las miniaturas?  
-Las *miniaturas* se muestran en el panel de administrador del servidor de cada rol (la miniatura de un rol refleja los datos recopilados sobre todos los servidores del grupo de administrador del servidor que ejecutan el rol), para cada grupo de servidores, para el grupo **todos los servidores** (todos de los servidores del grupo de Administrador del servidor) y para el servidor local. Una vez que Administrador del servidor obtiene los datos de los servidores administrados, se crean automáticamente miniaturas para los roles que se ejecutan en los servidores del grupo de servidores.  
+## <a name="what-are-thumbnails"></a><a name=BKMK_thumb></a>¿Qué son las miniaturas?  
+Las *miniaturas* se muestran en el panel de administrador del servidor de cada rol (la miniatura de un rol refleja los datos recopilados sobre todos los servidores del grupo de administrador del servidor que ejecutan el rol), para cada grupo de servidores, para el grupo **todos** los servidores (todos los servidores del grupo de administrador del servidor) y para el servidor local. Una vez que Administrador del servidor obtiene los datos de los servidores administrados, se crean automáticamente miniaturas para los roles que se ejecutan en los servidores del grupo de servidores.  
 
 Si la consola de Administrador del servidor se está ejecutando en un equipo cliente como parte de Herramientas de administración remota del servidor, no hay ninguna miniatura del **servidor local** .  
 
-La miniatura muestra una vista rápida del estado y la capacidad de administración de los roles, servidores y grupos de servidores. La fila de encabezado de la miniatura cambia de color (y los números resaltados se muestran en el margen izquierdo) cuando los eventos, los contadores de rendimiento, los resultados de Analizador de procedimientos recomendados, los servicios o los problemas de capacidad de administración generales cumplen los criterios que se configuran en el **detalle Ver** cuadros de diálogo abiertos haciendo clic en filas en miniatura. En la tabla siguiente se describen los datos que se muestran en las miniaturas.  
+La miniatura muestra una vista rápida del estado y la capacidad de administración de los roles, servidores y grupos de servidores. La fila de encabezado de la miniatura cambia de color (y los números resaltados se muestran en el margen izquierdo) cuando los eventos, los contadores de rendimiento, los resultados de Analizador de procedimientos recomendados, los servicios o los problemas de capacidad de administración generales cumplen los criterios que se configuran en los cuadros de diálogo de **vista de detalle** abiertos haciendo clic en filas en miniatura. En la tabla siguiente se describen los datos que se muestran en las miniaturas.  
 
 |Fila de la miniatura|Descripción|  
 |---------|--------|  
-|Manageability|La capacidad de administración de un servidor de incluye varias medidas: Si el servidor está en línea o sin conexión, si es accesible e informa de los datos de Administrador del servidor, si el usuario que ha iniciado sesión en el equipo local tiene los derechos de usuario adecuados para obtener acceso o administrar el servidor remoto, si el servidor remoto ejecuta todo el software necesario para administrarlo de forma remota o si el servidor está configurado de forma que permita consultarlo y administrarlo mediante Administrador del servidor. Los únicos datos de capacidad de administración que Administrador del servidor puede recopilar de un servidor que ejecuta Windows Server 2003 es si el servidor está en línea o sin conexión. Para obtener información detallada sobre los errores de estado de capacidad de administración y cómo resolverlos, consulta la [Guía de solución de problemas del administrador del servidor](https://social.technet.microsoft.com/wiki/contents/articles/13443.windows-server-2012-server-manager-troubleshooting-guide-part-i-overview.aspx).|  
-|Events|Puede configurar la fila **Eventos** de una miniatura para mostrar las alertas cuando se registren eventos que coincidan con los niveles de gravedad, las fuentes, los períodos de tiempo o los identificadores de eventos especificados. Para ver detalles acerca de los eventos y cambiar las alertas que desea ver, haga clic en la fila **eventos** y abra el cuadro de diálogo **vista de detalles de eventos** del rol o grupo de servidores.|  
-|Servicios|Puede configurar la fila **servicios** para mostrar alertas cuando se encuentren servicios en un rol o grupo de servidores que coincidan con los tipos de inicio, el estado del servicio, los nombres de servicio y los servidores que especifique en el cuadro de diálogo **vista de detalles de servicios** .<br /><br />Después de agregar un servidor al grupo de servidores de Administrador del servidor, se pueden mostrar alertas de servicio sobre el servicio detección de hardware Shell si no hay usuarios con sesión iniciada en el servidor administrado. Esto sucede porque el servicio Detección de hardware shell se ejecuta solo cuando los usuarios han iniciado sesión en el servidor administrado o cuando están conectados a una sesión de Escritorio remoto en el servidor administrado. Para no ver las alertas del servicio Detección de hardware shell en este caso, haga clic en **Servicios** en las miniaturas para grupos de servidores, incluido el grupo **Todos los servidores**. En el cuadro de diálogo **vista de detalles de servicios** , en la lista desplegable **servicios** , desactive la casilla de **detección de hardware Shell**y, a continuación, haga clic en **Aceptar**.|  
-|Rendimiento|Puede configurar la fila **rendimiento** para mostrar las alertas de un rol o grupo de servidores cuando se produzcan alertas de rendimiento que coincidan con los tipos de recursos, los servidores o los períodos de tiempo que especifique en el cuadro de diálogo **vista de detalles de rendimiento** .<br /><br />De manera predeterminada, los contadores de rendimiento están desactivados. Los servidores administrados que ejecutan sistemas operativos posteriores a Windows Server 2003 y cuyos contadores de rendimiento no se han iniciado, normalmente muestran errores de estado de capacidad de administración de **contadores de rendimiento en línea no iniciados** en los **servidores** icono de páginas de roles o grupos. Para activar los contadores de rendimiento en los servidores administrados, en la página **todos los servidores** , haga clic con el botón secundario en entradas en el icono **rendimiento** que muestran un valor de **Estado de contador** de **desactivado**y, a continuación, haga clic en **iniciar contadores de rendimiento**. También puede iniciar los contadores de rendimiento haciendo clic con el botón secundario en entradas para servidores en el icono **servidores** de las páginas de roles o grupos y, a continuación, haciendo clic en **iniciar contadores de rendimiento**.|  
+|Manageability|La capacidad de administración de un servidor de incluye varias medidas: Si el servidor está en línea o sin conexión, si es accesible e informa de los datos de Administrador del servidor, si el usuario que ha iniciado sesión en el equipo local tiene derechos de usuario adecuados para obtener acceso al servidor remoto o administrarlo, si el servidor remoto está ejecutando todo el software necesario para administrarlo de forma remota. o si el servidor está configurado de forma que permita consultarlo y administrarlo mediante Administrador del servidor. Los únicos datos de capacidad de administración que Administrador del servidor puede recopilar de un servidor que ejecuta Windows Server 2003 es si el servidor está en línea o sin conexión. Para obtener información detallada sobre los errores de estado de capacidad de administración y cómo resolverlos, consulta la [Guía de solución de problemas del administrador del servidor](https://social.technet.microsoft.com/wiki/contents/articles/13443.windows-server-2012-server-manager-troubleshooting-guide-part-i-overview.aspx).|  
+|Eventos|Puede configurar la fila **Eventos** de una miniatura para mostrar las alertas cuando se registren eventos que coincidan con los niveles de gravedad, las fuentes, los períodos de tiempo o los identificadores de eventos especificados. Para ver detalles acerca de los eventos y cambiar las alertas que desea ver, haga clic en la fila **eventos** y abra el cuadro de diálogo **vista de detalles de eventos** del rol o grupo de servidores.|  
+|Servicios|Puede configurar la fila **servicios** para mostrar alertas cuando se encuentren servicios en un rol o grupo de servidores que coincidan con los tipos de inicio, el estado del servicio, los nombres de servicio y los servidores que especifique en el cuadro de diálogo **vista de detalles de servicios** .<p>Después de agregar un servidor al grupo de servidores de Administrador del servidor, se pueden mostrar alertas de servicio sobre el servicio detección de hardware Shell si no hay usuarios con sesión iniciada en el servidor administrado. Esto sucede porque el servicio Detección de hardware shell se ejecuta solo cuando los usuarios han iniciado sesión en el servidor administrado o cuando están conectados a una sesión de Escritorio remoto en el servidor administrado. Para no ver las alertas del servicio Detección de hardware shell en este caso, haga clic en **Servicios** en las miniaturas para grupos de servidores, incluido el grupo **Todos los servidores**. En el cuadro de diálogo **vista de detalles de servicios** , en la lista desplegable **servicios** , desactive la casilla de **detección de hardware Shell**y, a continuación, haga clic en **Aceptar**.|  
+|Rendimiento|Puede configurar la fila **rendimiento** para mostrar las alertas de un rol o grupo de servidores cuando se produzcan alertas de rendimiento que coincidan con los tipos de recursos, los servidores o los períodos de tiempo que especifique en el cuadro de diálogo **vista de detalles de rendimiento** .<p>De manera predeterminada, los contadores de rendimiento están desactivados. Los servidores administrados que ejecutan sistemas operativos posteriores a Windows Server 2003 y cuyos contadores de rendimiento no se han iniciado, normalmente muestran errores de estado de capacidad de administración de **contadores de rendimiento en línea no iniciados** en el icono **servidores** de páginas de roles o grupos. Para activar los contadores de rendimiento en los servidores administrados, en la página **todos los servidores** , haga clic con el botón secundario en entradas en el icono **rendimiento** que muestran un valor de **Estado de contador** de **desactivado**y, a continuación, haga clic en **iniciar contadores de rendimiento**. También puede iniciar los contadores de rendimiento haciendo clic con el botón secundario en entradas para servidores en el icono **servidores** de las páginas de roles o grupos y, a continuación, haciendo clic en **iniciar contadores de rendimiento**.|  
 |Resultados BPA|Puede configurar la fila de **resultados de BPA** para mostrar las alertas de un rol o grupo de servidores cuando se encuentren resultados de análisis BPA que coincidan con los niveles de gravedad, los servidores o las categorías de BPA que especifique en el cuadro de diálogo vista de detalles de resultados de **BPA** .|  
 
-## <a name="BKMK_events"></a>Ver y configurar eventos  
+## <a name="view-and-configure-events"></a><a name=BKMK_events></a>Ver y configurar eventos  
 En esta sección, aprenderá a configurar qué datos del registro de eventos se recopilan de los servidores del grupo de servidores de Administrador del servidor y qué eventos desea que se resalten en las miniaturas.  
 
 > [!NOTE]  
-> Los eventos sobre los que se notifican en las miniaturas son un subconjunto del total de eventos que se indican Administrador del servidor que se van a recopilar de los servidores administrados. Aunque el cambio de criterios de eventos en el cuadro de diálogo **configurar datos de eventos** en los iconos de **eventos** puede cambiar el número de alertas que se ven en el panel de administrador del servidor, el cambio de los criterios de alertas de eventos en las miniaturas no tiene ningún efecto en los datos de registro de eventos que se recopila de los servidores administrados.  
+> Los eventos sobre los que se notifican en las miniaturas son un subconjunto del total de eventos que se indican Administrador del servidor que se van a recopilar de los servidores administrados. Aunque el cambio de criterios de eventos en el cuadro de diálogo **configurar datos de eventos** en los iconos de **eventos** puede cambiar el número de alertas que se ven en el panel de administrador del servidor, el cambio de los criterios de alertas de eventos en las miniaturas no tiene ningún efecto en los datos de registro de eventos que se recopilan de los servidores administrados.  
 
 #### <a name="to-configure-the-events-collected-from-managed-servers"></a>Para configurar los eventos recopilados desde los servidores administrados  
 
@@ -105,15 +101,15 @@ En esta sección, aprenderá a configurar qué datos del registro de eventos se 
 
 10. Haga clic en **Aceptar** para guardar los cambios, cierre el cuadro de diálogo **vista de detalle** y vea los cambios en las alertas de eventos en la miniatura de origen.  
 
-## <a name="BKMK_perf"></a>Ver y configurar los datos del registro de rendimiento  
+## <a name="view-and-configure-performance-log-data"></a><a name=BKMK_perf></a>Ver y configurar los datos del registro de rendimiento  
 En esta sección, aprenderá a configurar qué datos del registro de rendimiento se recopilan de los servidores del grupo de servidores de Administrador del servidor y qué alertas del contador de rendimiento desea que se destaquen en las miniaturas.  
 
-De manera predeterminada, los contadores de rendimiento están desactivados. Los servidores administrados que ejecutan sistemas operativos posteriores a Windows Server 2003 y cuyos contadores de rendimiento no se han iniciado, normalmente muestran errores de estado de capacidad de administración de **contadores de rendimiento en línea no iniciados** en los **servidores** icono de páginas de roles o grupos. Para activar los contadores de rendimiento en los servidores administrados, en la página **todos los servidores** , haga clic con el botón secundario en entradas en el icono **rendimiento** que muestran un valor de **Estado de contador** de **desactivado**y, a continuación, haga clic en **iniciar contadores de rendimiento**. También puede iniciar los contadores de rendimiento haciendo clic con el botón secundario en entradas para servidores en el icono **servidores** de las páginas de roles o grupos y, a continuación, haciendo clic en **iniciar contadores de rendimiento**.  
+De manera predeterminada, los contadores de rendimiento están desactivados. Los servidores administrados que ejecutan sistemas operativos posteriores a Windows Server 2003 y cuyos contadores de rendimiento no se han iniciado, normalmente muestran errores de estado de capacidad de administración de **contadores de rendimiento en línea no iniciados** en el icono **servidores** de páginas de roles o grupos. Para activar los contadores de rendimiento en los servidores administrados, en la página **todos los servidores** , haga clic con el botón secundario en entradas en el icono **rendimiento** que muestran un valor de **Estado de contador** de **desactivado**y, a continuación, haga clic en **iniciar contadores de rendimiento**. También puede iniciar los contadores de rendimiento haciendo clic con el botón secundario en entradas para servidores en el icono **servidores** de las páginas de roles o grupos y, a continuación, haciendo clic en **iniciar contadores de rendimiento**.  
 
 > [!NOTE]  
-> Las alertas de rendimiento que se ven en las miniaturas son un subconjunto del total de datos del contador de rendimiento que se indican Administrador del servidor que se van a recopilar de los servidores administrados. Aunque el cambio de los criterios de alerta de rendimiento en el cuadro de diálogo **configurar alertas** de rendimiento en los iconos de **rendimiento** puede cambiar el número de alertas que se ven en el panel de administrador del servidor, cambiando los criterios de alerta de rendimiento en miniaturas no tiene ningún efecto en los datos del registro de rendimiento que se recopilan de los servidores administrados.  
+> Las alertas de rendimiento que se ven en las miniaturas son un subconjunto del total de datos del contador de rendimiento que se indican Administrador del servidor que se van a recopilar de los servidores administrados. Aunque el cambio de los criterios de alerta de rendimiento en el cuadro de diálogo **configurar alertas** de rendimiento en los iconos de **rendimiento** puede cambiar el número de alertas que se ven en el panel de administrador del servidor, el cambio de los criterios de alerta de rendimiento en las miniaturas no tiene ningún efecto en los datos de registro de rendimiento que se recopilan de los servidores administrados.  
 >   
-> Por este motivo, la antigüedad máxima de los datos de rendimiento que puedes mostrar en las miniaturas no puede ser mayor que el período de presentación de gráfico máximo configurado en el cuadro de diálogo **Configurar alertas de rendimiento** . Por ejemplo, si el valor del **período de visualización del gráfico** en **configurar alertas de rendimiento** es **1 día**, el valor máximo para el campo **período de tiempo** en el cuadro de diálogo vista de **detalles de rendimiento** que ha abierto en el administrador del servidor el panel puede ser **1 día**, **24 horas**o **1.440 minutos**.  
+> Por este motivo, la antigüedad máxima de los datos de rendimiento que puedes mostrar en las miniaturas no puede ser mayor que el período de presentación de gráfico máximo configurado en el cuadro de diálogo **Configurar alertas de rendimiento** . Por ejemplo, si el valor del **período de visualización del gráfico** en **configurar alertas de rendimiento** es **1 día**, el valor máximo para el campo **período de tiempo** en el cuadro de diálogo vista de detalles de **rendimiento** que ha abierto en el Administrador del servidor panel puede ser **1 día**, **24 horas**o **1.440 minutos**.  
 
 #### <a name="to-configure-the-performance-log-data-collected-from-managed-servers"></a>Para configurar los datos de registro de rendimiento recopilados de los servidores administrados  
 
@@ -154,7 +150,7 @@ De manera predeterminada, los contadores de rendimiento están desactivados. Los
 
 #### <a name="to-view-the-properties-of-performance-alerts"></a>Para visualizar las propiedades de las alertas de rendimiento  
 
-1.  Realice una de las siguientes acciones:  
+1.  Lleve a cabo cualquiera de las siguientes opciones.  
 
     -   En la página del panel, en una miniatura del icono **Grupos de servidores y roles** , haga clic en la fila **Rendimiento** .  
 
@@ -175,7 +171,7 @@ para obtener más información acerca de cómo analizar los datos del contador d
 
 para obtener más información acerca de las herramientas avanzadas de supervisión y análisis de rendimiento disponibles para Windows Server 2012 y versiones posteriores de Windows Server, incluido Server Performance Advisor 3,0, vea [rendimiento](https://msdn.microsoft.com/windows/hardware/gg463374.aspx) en MSDN.  
 
-## <a name="BKMK_services"></a>Administrar servicios y configurar alertas de servicio  
+## <a name="manage-services-and-configure-service-alerts"></a><a name=BKMK_services></a>Administrar servicios y configurar alertas de servicio  
 En esta sección, aprenderá a iniciar, detener, reiniciar, pausar o reanudar los servicios que se muestran en el icono **servicios** en las páginas de roles y grupos de servidores en Administrador del servidor. También puede configurar los servicios sobre los que recibirá alertas en miniaturas en el panel de Administrador del servidor.  
 
 > [!NOTE]  
@@ -209,11 +205,11 @@ En esta sección, aprenderá a iniciar, detener, reiniciar, pausar o reanudar lo
 
 8.  Haga clic en **Aceptar** para guardar los cambios, cierre el cuadro de diálogo **vista de detalle** y vea los cambios en las alertas de servicio en la miniatura de origen.  
 
-## <a name="BKMK_copy"></a>Ver y copiar entradas de eventos, servicios o rendimiento  
+## <a name="view-and-copy-event-service-or-performance-entries"></a><a name=BKMK_copy></a>Ver y copiar entradas de eventos, servicios o rendimiento  
 Puede copiar las propiedades de las entradas de eventos, servicios o rendimiento tanto en los cuadros de diálogo **vista de detalle** como en los iconos **eventos** y **rendimiento** de un rol o grupo. Haga clic con el botón secundario en una entrada de evento o rendimiento y, a continuación, haga clic en **copiar**.  
 
 El icono **Eventos** también permite obtener una vista previa de las propiedades del evento en la mitad inferior del icono al seleccionar un evento en la lista. Para copiar las propiedades que se muestran en la vista previa, haga clic con el botón secundario en el panel de vista previa y, a continuación, haga clic en **copiar**.  
 
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Administrador del servidor](server-manager.md)  
 [Filtrar, ordenar y consultar datos en los iconos del Administrador del servidor](filter-sort-and-query-data-in-server-manager-tiles.md)  

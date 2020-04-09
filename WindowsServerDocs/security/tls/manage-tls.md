@@ -1,23 +1,19 @@
 ---
 title: Administrar la seguridad de la capa de transporte (TLS)
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tls-ssl
-ms.tgt_pltfrm: na
 ms.topic: article
 author: justinha
 ms.author: justinha
-manager: brianlic-msft
+manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: a4ac1ea5b0648dbb80f103c146ad3df23fc04ab7
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 065c8932667eed12d347e796c29cc7ee013c0383
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322687"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852938"
 ---
 # <a name="manage-transport-layer-security-tls"></a>Administrar la seguridad de la capa de transporte (TLS)
 
@@ -121,11 +117,11 @@ Windows no puede usar una curva con nombre después de que un administrador Quit
 Las organizaciones pueden distribuir parámetros de curva a un equipo de empresa, unido a dominio, mediante directiva de grupo y la extensión del registro directiva de grupo Preferences.  
 El proceso de distribución de una curva es el siguiente:
 
-1.  En Windows 10 y Windows Server 2016, use **certutil. exe** para agregar una nueva curva con nombre registrada a Windows.
-2.  En el mismo equipo, abra el Consola de administración de directivas de grupo (GPMC), cree un nuevo objeto directiva de grupo y edítelo.
-3.  Vaya a **configuración del equipo | Preferencias | Configuración de Windows | Registro**.  Haga clic con el botón secundario en **registro**. Mantenga el mouse sobre **nuevo** y seleccione **elemento de recopilación**. Cambie el nombre del elemento de recopilación para que coincida con el nombre de la curva. Creará un elemento de colección de registro para cada clave del registro en *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters*.
-4.  Configure la colección del registro de preferencias directiva de grupo recién creada agregando un nuevo **elemento del registro** para cada valor del registro que aparece en *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters\[curveName]* .
-5.  Implemente el directiva de grupo objeto que contiene directiva de grupo elemento de colección del registro en equipos con Windows 10 y Windows Server 2016 que deben recibir las nuevas curvas con nombre.
+1.    En Windows 10 y Windows Server 2016, use **certutil. exe** para agregar una nueva curva con nombre registrada a Windows.
+2.    En el mismo equipo, abra el Consola de administración de directivas de grupo (GPMC), cree un nuevo objeto directiva de grupo y edítelo.
+3.    Vaya a **configuración del equipo | Preferencias | Configuración de Windows | Registro**.  Haga clic con el botón secundario en **registro**. Mantenga el mouse sobre **nuevo** y seleccione **elemento de recopilación**. Cambie el nombre del elemento de recopilación para que coincida con el nombre de la curva. Creará un elemento de colección de registro para cada clave del registro en *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters*.
+4.    Configure la colección del registro de preferencias directiva de grupo recién creada agregando un nuevo **elemento del registro** para cada valor del registro que aparece en *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters\[curveName]* .
+5.    Implemente el directiva de grupo objeto que contiene directiva de grupo elemento de colección del registro en equipos con Windows 10 y Windows Server 2016 que deben recibir las nuevas curvas con nombre.
 
     ![GPP distribuir curvas](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)
 

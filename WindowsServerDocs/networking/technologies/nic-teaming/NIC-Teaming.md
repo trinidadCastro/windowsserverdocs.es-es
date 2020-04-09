@@ -2,23 +2,19 @@
 title: Formación de equipos NIC
 description: En este tema se proporciona información general sobre la formación de equipos de tarjeta de interfaz de red (NIC) en Windows Server 2016. La formación de equipos NIC le permite agrupar entre uno y 32 adaptadores de red Ethernet físicos en uno o varios adaptadores de red virtuales basados en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.
 manager: dougkim
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-nict
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
 ms.author: lizross
 author: eross-msft
 ms.date: 09/10/2018
-ms.openlocfilehash: f4d9dd20d626f998bee0a8414c281cd27b2d3dbb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 13607bedb436b794e03e3b2ef67ca0e90d865ed7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316443"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854738"
 ---
 # <a name="nic-teaming"></a>Formación de equipos NIC
 
@@ -41,7 +37,10 @@ Dado que Windows Server 2016 admite hasta 32 interfaces de equipo por equipo, ha
 Además, puede conectar las NIC del equipo al mismo conmutador o a distintos conmutadores. Si conecta las NIC a diferentes conmutadores, ambos conmutadores deben estar en la misma subred.  
   
 ## <a name="availability"></a>Disponibilidad  
-La formación de equipos NIC está disponible en todas las versiones de Windows Server 2016. Puede usar diversas herramientas para administrar la formación de equipos NIC desde equipos que ejecutan un sistema operativo cliente, como: • cmdlets de Windows PowerShell • Escritorio remoto • Herramientas de administración remota del servidor  
+La formación de equipos NIC está disponible en todas las versiones de Windows Server 2016. Puede usar diversas herramientas para administrar la formación de equipos NIC desde equipos que ejecutan un sistema operativo cliente, como:
+*    Cmdlets de Windows PowerShell
+*    Escritorio remoto
+*    Herramientas de administración remota del servidor  
   
 ## <a name="supported-and-unsupported-nics"></a>NIC admitidas y no admitidas   
 Puede usar cualquier NIC Ethernet que haya superado la prueba de logotipo y de calificación de hardware de Windows (pruebas de WHQL) en un equipo NIC en Windows Server 2016.  
@@ -116,9 +115,9 @@ Cuando un equipo se conecta a un conmutador virtual de Hyper-V, todas las segreg
 
 Planea el uso de redes VLAN en una máquina virtual configurada con un equipo NIC mediante las siguientes directrices:
   
--   El método preferido para admitir varias VLAN en una máquina virtual es configurar la máquina virtual con varios puertos en el conmutador virtual de Hyper-V y asociar cada puerto a una VLAN. Nunca debe agrupar estos puertos en la máquina virtual porque esto provoca problemas de comunicación de red.  
+-    El método preferido para admitir varias VLAN en una máquina virtual es configurar la máquina virtual con varios puertos en el conmutador virtual de Hyper-V y asociar cada puerto a una VLAN. Nunca debe agrupar estos puertos en la máquina virtual porque esto provoca problemas de comunicación de red.  
 
--   Si la máquina virtual tiene varias funciones virtuales de SR-IOV (VFs), asegúrese de que se encuentran en la misma VLAN antes de agruparlas en la máquina virtual. Es fácil configurar el VFs diferente para que esté en diferentes VLAN y hacerlo provoca problemas de comunicación de red.  
+-    Si la máquina virtual tiene varias funciones virtuales de SR-IOV (VFs), asegúrese de que se encuentran en la misma VLAN antes de agruparlas en la máquina virtual. Es fácil configurar el VFs diferente para que esté en diferentes VLAN y hacerlo provoca problemas de comunicación de red.  
  
   
 ### <a name="manage-network-interfaces-and-vlans"></a>Administrar interfaces de red y VLAN 

@@ -1,29 +1,25 @@
 ---
 title: Migración de Windows Small Business Server 2008 a Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 71e3243e-2da9-409a-ae1f-813d4c9062e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f72c696f5d3f4f131a2767b021ddfe3dcd73f8f4
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 6a8c8a142cb40b8211450d16753ec9796987d208
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639848"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852518"
 ---
 # <a name="migrate-windows-small-business-server-2008-to-windows-server-essentials"></a>Migración de Windows Small Business Server 2008 a Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-En esta guía se describe cómo migrar un dominio existente de Windows SBS 2008 a Windows Server® 2012 Essentials en hardware nuevo y, después, migrar la configuración y los datos. En esta guía también se describe cómo quitar el servidor existente de la red de Windows Server Essentials después de finalizar la migración.  
+En esta guía se describe cómo migrar un dominio existente de Windows SBS 2008 a Windows Server&reg; 2012 Essentials en hardware nuevo y, después, migrar la configuración y los datos. En esta guía también se describe cómo quitar el servidor existente de la red de Windows Server Essentials después de finalizar la migración.  
   
 > [!NOTE]
 >  Para evitar problemas durante la migración, el equipo de desarrollo de productos de Windows Server Essentials recomienda encarecidamente que lea este documento antes de comenzar la migración.  

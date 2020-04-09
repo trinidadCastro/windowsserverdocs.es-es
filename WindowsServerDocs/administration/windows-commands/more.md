@@ -1,26 +1,22 @@
 ---
-title: more
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+title: más
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ded14f6a-d82f-4aeb-a2d8-7ec1c94dfb8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: d505f99511d8702f11ac0c70edba3d62c8cf7996
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4c627e003e71cb2265c717669e082d48564dd483
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373910"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839428"
 ---
-# <a name="more"></a>more
+# <a name="more"></a>más
 
 
 
@@ -36,7 +32,7 @@ more [[/c] [/p] [/s] [/t<N>] [+<N>]] < [<Drive>:][<Path>]<FileName>
 more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |           Parámetro            |                               Descripción                               |
 |--------------------------------|-------------------------------------------------------------------------|
@@ -48,9 +44,9 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 |             +\<N >              |     Muestra el primer archivo que comienza en la línea especificada por *N*.     |
 | [\<> de unidad:] [\<path >]\<FileName > |          Especifica la ubicación y el nombre de un archivo que se va a mostrar.          |
 |            Archivos de \<>            | Especifica una lista de archivos que se van a mostrar. Separe los nombres de archivo con un espacio. |
-|               /?               |                  Muestra la ayuda en el símbolo del sistema.                   |
+|               /?               |                  Muestra la Ayuda en el símbolo del sistema.                   |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Los siguientes subcomandos se aceptan en el símbolo del sistema **más** (`-- More --`). 
 
@@ -68,7 +64,7 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 -   Al usar el carácter de redirección ( **<** ), debe especificar un nombre de archivo como origen. Al usar la canalización ( **\|** ), puede usar tales comandos como **dir**, **Sort**y **Type**.
 -   El comando **More** , con diferentes parámetros, está disponible en la consola de recuperación.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para ver la primera pantalla de información de un archivo denominado clients. New, escriba uno de los siguientes comandos:
 ```
@@ -114,6 +110,6 @@ Los ejemplos siguientes se pueden usar en el símbolo del sistema **más** (`-- 
   ```  
   Escriba el número de líneas que desea omitir y, a continuación, presione Entrar. **More** omite el número de líneas especificado y muestra la siguiente pantalla de información.
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

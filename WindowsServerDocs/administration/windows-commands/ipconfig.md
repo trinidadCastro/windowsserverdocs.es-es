@@ -1,24 +1,20 @@
 ---
 title: ipconfig
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 15071c2c-4815-4893-93b2-ab30232e312e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4bfe3476dd90016291881ca8cee2b66283772bce
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1c93b75d6518746df7ef936c7059bd03fcf96ab6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375376"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842078"
 ---
 # <a name="ipconfig"></a>ipconfig
 
@@ -32,11 +28,11 @@ Muestra todos los valores de configuración de red TCP/IP actuales y actualiza l
 ipconfig [/allcompartments] [/all] [/renew [<Adapter>]] [/release [<Adapter>]] [/renew6[<Adapter>]] [/release6 [<Adapter>]] [/flushdns] [/displaydns] [/registerdns] [/showclassid <Adapter>] [/setclassid <Adapter> [<ClassID>]]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/All|Muestra la configuración TCP/IP completa de todos los adaptadores. Los adaptadores pueden representar interfaces físicas, como adaptadores de red instalados o interfaces lógicas como conexiones de acceso telefónico.|
+|/all|Muestra la configuración TCP/IP completa de todos los adaptadores. Los adaptadores pueden representar interfaces físicas, como adaptadores de red instalados o interfaces lógicas como conexiones de acceso telefónico.|
 |/allcompartments|Muestra la configuración TCP/IP completa de todos los compartimientos.|
 |comando/displaydns|Muestra el contenido de la memoria caché de la resolución del cliente DNS, que incluye las entradas cargadas previamente desde el archivo de hosts local y los registros de recursos que se han obtenido recientemente para las consultas de nombres resueltas por el equipo. El servicio cliente DNS usa esta información para resolver rápidamente los nombres consultados con frecuencia, antes de consultar sus servidores DNS configurados.|
 |/flushdns|Vacía y restablece el contenido de la memoria caché de la resolución del cliente DNS. Durante la solución de problemas de DNS, puede usar este procedimiento para descartar las entradas de caché negativas de la memoria caché, así como cualquier otra entrada que se haya agregado dinámicamente.|
@@ -49,10 +45,10 @@ ipconfig [/allcompartments] [/all] [/renew [<Adapter>]] [/release [<Adapter>]] [
 |Adaptador de \</showclassid >|Muestra el identificador de clase DHCP de un adaptador especificado. Para ver el identificador de clase de DHCP para todos los adaptadores, use el **&#42;** carácter comodín de asterisco () en lugar del *adaptador*. Este parámetro solo está disponible en equipos con adaptadores que estén configurados para obtener una dirección IP automáticamente.|
 |/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 - Este comando es muy útil en los equipos que están configurados para obtener una dirección IP automáticamente. Esto permite a los usuarios determinar qué valores de configuración de TCP/IP han sido configurados por DHCP, el direccionamiento IP privado automático (APIPA) o una configuración alternativa.
-- Si el nombre proporcionado para el *adaptador* contiene espacios, utilice comillas alrededor del nombre del adaptador (por ejemplo: **"** <em>nombre del adaptador</em> **"** ).
+- Si el nombre proporcionado para el *adaptador* contiene espacios, utilice comillas alrededor del nombre del adaptador (por ejemplo: * * * *<em>nombre del adaptador</em>* * *).
 - En el caso de los nombres de adaptador, **ipconfig** admite el uso del carácter comodín de asterisco (\*) para especificar los adaptadores con nombres que comienzan por una cadena o adaptadores especificados con nombres que contienen una cadena especificada. Por ejemplo, **\*local** coincide con todos los adaptadores que comienzan con la cadena local y **\*con\*** coincide con todos los adaptadores que contienen la cadena con.
 
 ## <a name="examples"></a>Ejemplos
@@ -67,7 +63,7 @@ ipconfig /all
 ```
 Para renovar una configuración de dirección IP asignada por DHCP solo para el adaptador de conexión de área local, escriba:
 ```
-ipconfig /renew "Local Area Connection"
+ipconfig /renew Local Area Connection
 ```
 Para vaciar la memoria caché de la resolución DNS al solucionar problemas de resolución de nombres DNS, escriba:
 ```
@@ -79,9 +75,9 @@ ipconfig /showclassid Local*
 ```
 Para establecer el identificador de clase DHCP del adaptador de conexión de área local que se va a probar, escriba:
 ```
-ipconfig /setclassid "Local Area Connection" TEST
+ipconfig /setclassid Local Area Connection TEST
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

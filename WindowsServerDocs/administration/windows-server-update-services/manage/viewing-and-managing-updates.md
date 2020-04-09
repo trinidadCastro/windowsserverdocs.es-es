@@ -2,22 +2,19 @@
 title: Visualización y administración de actualizaciones
 description: 'Tema de Windows Server Update Service (WSUS): visualización y administración de actualizaciones en la consola de WSUS'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac70192b-0309-4385-b697-2e8eda51911c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de2d12ad34ba11f948baa390546747a6bf4b635c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a2a9f7e1f1f3f648a0cba22d599ccc64e7b424d8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361495"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828448"
 ---
 # <a name="viewing-and-managing-updates"></a>Visualización y administración de actualizaciones
 
@@ -76,7 +73,7 @@ En la página **actualizaciones** , puede hacer lo siguiente:
 
 5.  En **paso 3: especifique un nombre**, asigne un nombre a la nueva vista.
 
-6.  Haz clic en **Aceptar**.
+6.  Haga clic en **Aceptar**.
 
 La nueva vista aparecerá en el panel vista de árbol en actualizaciones. Se mostrará, como las vistas estándar, en el panel central al seleccionarlo.
 
@@ -98,7 +95,7 @@ La nueva vista aparecerá en el panel vista de árbol en actualizaciones. Se mos
 
     -   La barra de título muestra el título de la actualización. por ejemplo, la actualización de seguridad para Windows Media Player 9 (KB911565).
 
-    -   La sección estado muestra el estado de instalación de la actualización (los equipos en los que se debe instalar, los equipos en los que se instaló con errores, los equipos en los que se ha instalado o no es aplicable y los equipos que no han comunicado Estado de la actualización), así como información general (fecha de lanzamiento de los números de KB y MSRC, etc.).
+    -   La sección estado muestra el estado de instalación de la actualización (los equipos en los que se debe instalar, los equipos en los que se instaló con errores, los equipos en los que se ha instalado o no es aplicable, y los equipos que no han comunicado el estado de la actualización), así como información general (fecha de lanzamiento de los números de KB y MSRC, etc.).
 
     -   La sección Descripción muestra una breve descripción de la actualización.
 
@@ -123,7 +120,7 @@ Tenga en cuenta que este procedimiento solo se puede realizar en una actualizaci
 ## <a name="managing-updates-with-wsus"></a>Administración de actualizaciones con WSUS
 Las actualizaciones se usan para actualizar o proporcionar una sustitución completa de archivos para el software instalado en un equipo. Cada actualización que está disponible en Microsoft Update se compone de dos componentes:
 
--   Metadata: proporciona información acerca de la actualización. Por ejemplo, los metadatos proporcionan información para las propiedades de una actualización, lo que le permite averiguar cuál es la utilidad de actualización. Los metadatos también incluyen términos de licencia del software de Microsoft. El paquete de metadatos descargado para una actualización suele ser mucho menor que el paquete del archivo de actualización real.
+-   Metadata: proporciona información acerca de la actualización. Por ejemplo, los metadatos proporcionan información para las propiedades de una actualización, lo que te permite averiguar cuál es la utilidad de actualización. Los metadatos también incluyen términos de licencia del software de Microsoft. El paquete de metadatos descargado para una actualización suele tener un tamaño bastante menor que el del paquete de archivos de actualización real.
 
 -   Archivos de actualización: los archivos reales necesarios para instalar una actualización en un equipo.
 

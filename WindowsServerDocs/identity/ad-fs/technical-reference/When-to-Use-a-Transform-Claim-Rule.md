@@ -1,7 +1,6 @@
 ---
 ms.assetid: 77aa61bf-9c04-4889-a5d2-6f45bc1b8bd2
 title: Cuándo usar una regla de notificaciones de transformación
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b7cdf68783db1b6b775209e4e42dc6b6ccf0e1b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2b69156d1e2825f4287112735493ebc5cc8469d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385418"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853788"
 ---
 # <a name="when-to-use-a-transform-claim-rule"></a>Cuándo usar una regla de notificaciones de transformación
 Puedes usar esta regla en Servicios de federación de Active Directory (AD FS) \(AD FS\) cuando necesites asignar un tipo de notificaciones entrantes a un tipo de notificaciones salientes y después aplicar una acción que determine qué resultado se debe producir en función de los valores que se originaron en la demanda entrante. Cuando usas esta regla, pasas a través o transformas notificaciones que coinciden con la lógica de la regla siguiente, según cualquiera de las opciones que configures en la regla, como se describe en la tabla siguiente.  
@@ -79,10 +78,10 @@ Para obtener más instrucciones sobre cómo crear esta plantilla, consulte [crea
 Si la notificación saliente se tiene que crear a partir del contenido de más de una notificación entrante, tienes que usar una regla personalizada en su lugar. Si el valor de notificación de la notificación saliente tiene que estar basado en el valor de la notificación entrante, pero con contenido adicional, también tienes que usar una regla personalizada en ese contexto. Para obtener más información, consulte [When to Use a Custom Claim Rule](When-to-Use-a-Custom-Claim-Rule.md).  
   
 ### <a name="examples-of-how-to-construct-a-transform-rule-syntax"></a>Ejemplos de cómo construir una sintaxis de regla de transformación  
-Cuando se utiliza la sintaxis del lenguaje de reglas de notificación para transformar las notificaciones, puedes establecer una propiedad de la notificación transformada en un nuevo valor literal. Por ejemplo, la regla siguiente cambia el valor de las notificaciones de rol de «Administradores» a «raíz» manteniendo el mismo tipo de notificación:  
+Cuando se utiliza la sintaxis del lenguaje de reglas de notificación para transformar las notificaciones, puedes establecer una propiedad de la notificación transformada en un nuevo valor literal. Por ejemplo, la siguiente regla cambia el valor de las notificaciones de rol de "administradores" a "raíz" manteniendo el mismo tipo de notificación:  
   
 ```  
-c:[type == “https://schemas.microsoft.com/ws/2008/06/identity/claims/role”, value == “Administrators”]  => issue(type = c.type, value = “root”);  
+c:[type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/role", value == "Administrators"]  => issue(type = c.type, value = "root");  
 ```  
   
 También se pueden usar expresiones comunes para las transformaciones de notificaciones. Por ejemplo, la siguiente regla establecerá el dominio en las notificaciones de nombre de usuario de Windows en el dominio\\el formato de usuario en FABRIKAM:  
@@ -97,7 +96,7 @@ Las transformaciones de notificaciones se pueden aplicar selectivamente a solici
 |Propiedad de notificación|Descripción|  
 |------------------|---------------|  
 |Tipo, valor, tipo de valor|Estas propiedades se usarán con más frecuencia para las asignaciones. Se deben especificar en el tipo y valor mínimos para la notificación transformada resultante.|  
-|Emisor|Aunque el lenguaje de reglas de notificación permite establecer el emisor de una notificación, generalmente no se recomienda hacerlo. No se serializa el emisor de una notificación en el token. Cuando se recibe un token,se establece la propiedad emisora de todas las notificaciones en el identificador del servidor de federación que firmó el token. Por lo tanto, el establecer el emisor de una notificación en las reglas no tendrá efecto en el contenido del token y se perderá la configuración una vez que la notificación se empaquete en un token. El único escenario en el que tiene sentido establecer el emisor de la notificación es si se establece en un valor específico en el conjunto de reglas del proveedor de notificaciones y el conjunto de reglas del usuario de confianza creó las reglas que hacen referencia a este valor específico. Si la propiedad emisora no se establece explícitamente en un valor de una regla de notificación, el motor de emisión de notificaciones la establece en "AUTORIDAD LOCAL".|  
+|Emisor|Aunque el lenguaje de reglas de notificación permite establecer el emisor de una notificación, generalmente no se recomienda hacerlo. No se serializa el emisor de una notificación en el token. Cuando se recibe un token,se establece la propiedad emisora de todas las notificaciones en el identificador del servidor de federación que firmó el token. Por lo tanto, el establecer el emisor de una notificación en las reglas no tendrá efecto en el contenido del token y se perderá la configuración una vez que la notificación se empaquete en un token. El único escenario en el que tiene sentido establecer el emisor de la notificación es si se establece en un valor específico en el conjunto de reglas del proveedor de notificaciones y el conjunto de reglas del usuario de confianza creó las reglas que hacen referencia a este valor específico. Si la propiedad emisor no se establece explícitamente en un valor de una regla de notificación, el motor de emisión de notificaciones la establece en "autoridad LOCAL".|  
 |Emisor original|De forma similar al emisor, al emisor original generalmente no se le debería asignar explícitamente un valor. A diferencia del emisor, la propiedad del emisor original se serializa en el token, pero la expectativa de consumidores de tokens es que, si se establece, contendrá el identificador del servidor de federación que emitió una notificación originalmente.|  
 |Propiedades|Tal y como se describe en la sección anterior, el contenedor de propiedades de una solicitud no se conserva en el token, por lo que solo se deben realizar asignaciones de propiedades si las posteriores directivas locales van a hacer referencia a la información almacenada en la propiedad.|  
   

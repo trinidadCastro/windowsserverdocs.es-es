@@ -1,24 +1,20 @@
 ---
 title: Determinación de la lista de permisos y denegaciones y del inventario de aplicaciones para directivas de restricción de software
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0abb73b6-b5d8-4505-8ab1-2f29e4bf0411
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4ddea6daeb2150bd9fd3131a8457a6a4b408cfc3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7609ebb0fdcb6d429cd40d99399eaaedb732df08
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357658"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855098"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>Determinación de la lista de permisos y denegaciones y del inventario de aplicaciones para directivas de restricción de software
 
@@ -37,8 +33,8 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 
 -   [Usar directivas de restricción de software para ayudar a proteger el equipo contra un virus de correo electrónico](use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus.md)
 
-### <a name="what-default-rule-to-choose-allow-or-deny"></a>Qué regla predeterminada elegir: Permitir o denegar
-Las directivas de restricción de software se pueden implementar en uno de los dos modos que son la base de la regla predeterminada: Lista de permitidos o denegación. Puede crear una directiva que identifique todas las aplicaciones que pueden ejecutarse en su entorno; la regla predeterminada dentro de la Directiva está restringida y bloqueará todas las aplicaciones que no permita que se ejecuten explícitamente. O bien, puede crear una directiva que identifique todas las aplicaciones que no se pueden ejecutar; la regla predeterminada es Unrestricted y solo restringe las aplicaciones que ha enumerado explícitamente.
+### <a name="what-default-rule-to-choose-allow-or-deny"></a>Qué regla predeterminada elegir: permitir o denegar
+Las directivas de restricción de software se pueden implementar en uno de los dos modos que son la base de la regla predeterminada: lista de permitidos o lista de denegación. Puede crear una directiva que identifique todas las aplicaciones que pueden ejecutarse en su entorno; la regla predeterminada dentro de la Directiva está restringida y bloqueará todas las aplicaciones que no permita que se ejecuten explícitamente. O bien, puede crear una directiva que identifique todas las aplicaciones que no se pueden ejecutar; la regla predeterminada es Unrestricted y solo restringe las aplicaciones que ha enumerado explícitamente.
 
 > [!IMPORTANT]
 > El modo de lista de denegación puede ser una estrategia de mantenimiento elevado para su organización con respecto al control de la aplicación. Crear y mantener una lista en evolución que prohibe todo el malware y otras aplicaciones problemáticas llevaría mucho tiempo y es susceptible a errores.
@@ -52,7 +48,7 @@ Para usar de forma eficaz la regla predeterminada permitir, debe determinar exac
 
 2.  Cree el siguiente valor del registro para habilitar la característica de registro avanzado y establezca la ruta de acceso en la que se debe escribir el archivo de registro.
 
-    **"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\ CodeIdentifiers"**
+    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\ CodeIdentifiers"**
 
     Valor de cadena: *NameLogFile ruta de acceso a NameLogFile*
 

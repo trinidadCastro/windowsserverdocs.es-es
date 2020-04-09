@@ -1,7 +1,6 @@
 ---
 ms.assetid: 50bd2566-e03c-4884-b5c4-895c8aab80aa
 title: Determinación de los participantes en el proyecto de implementación
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: bb5ded466a45061649585a747be74adcdc1148cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 516c37165952e46c8e6e76499909e90851e305ce
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408771"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822318"
 ---
 # <a name="identifying-the-deployment-project-participants"></a>Determinación de los participantes en el proyecto de implementación
 
@@ -28,10 +27,10 @@ El primer paso para establecer un proyecto de implementación para Dominio de Ac
   
 -   [Compilar equipos de proyecto](#BKMK_3)  
   
-## <a name="BKMK_1"></a>Definir roles específicos del proyecto  
+## <a name="defining-project-specific-roles"></a><a name="BKMK_1"></a>Definir roles específicos del proyecto  
 Un paso importante en el establecimiento de los equipos del proyecto es identificar a las personas que van a contener roles específicos del proyecto. Entre ellos se incluyen el Patrocinador Ejecutivo, el arquitecto del proyecto y el jefe de proyecto. Estas personas son responsables de ejecutar el proyecto de implementación de Active Directory.  
   
-Después de designar al arquitecto de proyectos y al jefe de proyecto, estas personas establecen canales de comunicación en toda la organización, compilan programaciones del proyecto e identifican a los usuarios que serán miembros de los equipos del proyecto, empezando por el varios propietarios.  
+Después de nombrar al arquitecto de proyectos y al jefe de proyecto, estas personas establecen canales de comunicación en toda la organización, compilan programaciones del proyecto e identifican a los usuarios que serán miembros de los equipos del proyecto, empezando por los distintos propietarios.  
   
 ### <a name="executive-sponsor"></a>Patrocinador Ejecutivo  
 La implementación de una infraestructura como AD DS puede tener un gran impacto en una organización. Por esta razón, es importante tener un Patrocinador Ejecutivo que comprenda el valor empresarial de la implementación, admita el proyecto en el nivel ejecutivo y pueda ayudar a resolver conflictos en toda la organización.  
@@ -71,7 +70,7 @@ El jefe de proyecto facilita la cooperación entre las unidades de negocio y ent
   
 -   Establecer y mantener la comunicación con el Patrocinador Ejecutivo a lo largo del proyecto de implementación  
   
-## <a name="BKMK_2"></a>Establecimiento de propietarios y administradores  
+## <a name="establishing-owners-and-administrators"></a><a name="BKMK_2"></a>Establecimiento de propietarios y administradores  
 En un proyecto de implementación de Active Directory, los usuarios que son propietarios son responsables de la administración para asegurarse de que se completan las tareas de implementación y de que Active Directory especificaciones de diseño satisfacen las necesidades de la organización. Los propietarios no tienen necesariamente acceso o manipulan directamente la infraestructura de directorios. Los administradores son los responsables de completar las tareas de implementación necesarias. Los administradores tienen el acceso a la red y los permisos necesarios para manipular el directorio y su infraestructura.  
   
 El rol del propietario es estratégico y directivo. Los propietarios son responsables de comunicarse con los administradores de las tareas necesarias para la implementación del Active Directory diseño, como la creación de nuevos controladores de dominio en el bosque. Los administradores son responsables de implementar el diseño en la red de acuerdo con las especificaciones de diseño.  
@@ -85,10 +84,10 @@ La administración de AD DS diaria implica dos tipos de propietarios:
   
 -   Propietarios de datos que son responsables del mantenimiento de la información almacenada en el directorio. Esto incluye la administración de cuentas de usuario y equipo, y la administración de recursos locales, como servidores miembro y estaciones de trabajo.  
   
-Es importante identificar el servicio de Active Directory y los propietarios de datos al principio para que puedan participar en todo el proceso de diseño posible. Dado que el servicio y los propietarios de datos son responsables del mantenimiento a largo plazo del directorio una vez finalizado el proyecto de implementación, es importante que estos usuarios proporcionen información sobre las necesidades de la organización y que estén familiarizados con cómo y por qué se toman ciertas decisiones de diseño. Los propietarios de servicios incluyen el propietario del bosque, el propietario del sistema de nombres Dominio de Active Directory (DNS) y el propietario de la topología del sitio. Los propietarios de datos incluyen propietarios de unidades organizativas (OU).  
+Es importante identificar el servicio de Active Directory y los propietarios de datos al principio para que puedan participar en todo el proceso de diseño posible. Dado que el servicio y los propietarios de los datos son responsables del mantenimiento a largo plazo del directorio una vez finalizado el proyecto de implementación, es importante que estos usuarios proporcionen información sobre las necesidades de la organización y estén familiarizados con cómo y por qué se realizan ciertas decisiones de diseño. Los propietarios de servicios incluyen el propietario del bosque, el propietario del sistema de nombres Dominio de Active Directory (DNS) y el propietario de la topología del sitio. Los propietarios de datos incluyen propietarios de unidades organizativas (OU).  
   
 ### <a name="service-and-data-administrators"></a>Administradores de datos y servicios  
-La operación de AD DS implica dos tipos de administradores: administradores de servicios y administradores de datos. Los administradores de servicios implementan decisiones de directivas tomadas por los propietarios de servicios y controlan las tareas cotidianas asociadas al mantenimiento del servicio de directorio y la infraestructura. Esto incluye la administración de los controladores de dominio que hospedan el servicio de directorio, la administración de otros servicios de red como DNS necesarios para AD DS, el control de la configuración de la configuración de todo el bosque y la garantía de que el directorio siempre es disponible.  
+La operación de AD DS implica dos tipos de administradores: administradores de servicios y administradores de datos. Los administradores de servicios implementan decisiones de directivas tomadas por los propietarios de servicios y controlan las tareas cotidianas asociadas al mantenimiento del servicio de directorio y la infraestructura. Esto incluye la administración de los controladores de dominio que hospedan el servicio de directorio, la administración de otros servicios de red como DNS necesarios para AD DS, el control de la configuración de la configuración de todo el bosque y la garantía de que el directorio está siempre disponible.  
   
 Los administradores de servicios también son responsables de llevar a cabo tareas de implementación Active Directory en curso que son necesarias una vez completado el proceso de implementación inicial de Windows Server 2008 Active Directory. Por ejemplo, a medida que aumenta el directorio, los administradores de servicios crean controladores de dominio adicionales y establecen o quitan confianzas entre dominios, según sea necesario. Por esta razón, el equipo de implementación de Active Directory debe incluir administradores de servicios.  
   
@@ -96,7 +95,7 @@ Debe tener cuidado de asignar roles de administrador de servicios solo a usuario
   
 Los administradores de datos son usuarios de un dominio que son responsables de mantener los datos almacenados en AD DS como cuentas de usuario y de grupo, y para mantener los equipos que son miembros de su dominio. Los administradores de datos controlan subconjuntos de objetos dentro del directorio y no tienen ningún control sobre la instalación o configuración del servicio de directorio.  
   
-Las cuentas de administrador de datos no se proporcionan de forma predeterminada. Una vez que el equipo de diseño determina cómo se van a administrar los recursos para la organización, los propietarios del dominio deben crear cuentas de administrador de datos y delegar los permisos adecuados en función del conjunto de objetos para el que los administradores vayan a ser responsables. .  
+Las cuentas de administrador de datos no se proporcionan de forma predeterminada. Una vez que el equipo de diseño determina cómo se van a administrar los recursos para la organización, los propietarios del dominio deben crear cuentas de administrador de datos y delegar los permisos adecuados en función del conjunto de objetos para los que los administradores vayan a ser responsables.  
   
 Es mejor limitar el número de administradores de servicios de su organización al número mínimo necesario para asegurarse de que la infraestructura siga funcionando. Los administradores de datos pueden completar la mayoría del trabajo administrativo. Los administradores de servicios requieren un conjunto de aptitudes mucho más amplio porque son responsables de mantener el directorio y la infraestructura que lo admiten. Los administradores de datos solo requieren los conocimientos necesarios para administrar su parte del directorio. Dividir las asignaciones de trabajo de esta manera supone un ahorro en el costo de la organización, ya que solo es necesario entrenar a un pequeño número de administradores para que funcionen y mantengan todo el directorio y su infraestructura.  
   
@@ -107,7 +106,7 @@ La implementación de AD DS requiere la coordinación y la comunicación entre m
 Una vez completado el proyecto de implementación, estos servicios y propietarios de datos seguirán siendo responsables de la parte de la infraestructura administrada por su grupo. En un entorno de Active Directory, estos propietarios son el propietario del bosque, el DNS de AD DS propietario, el propietario de la topología del sitio y el propietario de la unidad organizativa. Los roles de estos servicios y propietarios de datos se explican en las secciones siguientes.  
   
 #### <a name="forest-owner"></a>Propietario del bosque  
-El propietario del bosque es normalmente un administrador de tecnología de la información (TI) Senior en la organización responsable del proceso de implementación de Active Directory y que, en última instancia, es responsable de mantener la entrega del servicio dentro del bosque después de la la implementación se ha completado. El propietario del bosque asigna usuarios para que rellenen los demás roles de propiedad mediante la identificación del personal clave dentro de la organización que puede contribuir a la información necesaria sobre la infraestructura de red y las necesidades administrativas. El propietario del bosque es responsable de lo siguiente:  
+El propietario del bosque es normalmente un administrador de tecnología de la información (TI) Senior en la organización responsable del proceso de implementación de Active Directory y que, en última instancia, es responsable de mantener la entrega del servicio dentro del bosque una vez completada la implementación. El propietario del bosque asigna usuarios para que rellenen los demás roles de propiedad mediante la identificación del personal clave dentro de la organización que puede contribuir a la información necesaria sobre la infraestructura de red y las necesidades administrativas. El propietario del bosque es responsable de lo siguiente:  
   
 -   Implementación del dominio raíz del bosque para crear el bosque  
   
@@ -172,7 +171,7 @@ El propietario de la unidad organizativa es responsable de administrar los datos
   
 El propietario de la unidad organizativa es un propietario de datos.  
   
-## <a name="BKMK_3"></a>Compilar equipos de proyecto  
+## <a name="building-project-teams"></a><a name="BKMK_3"></a>Compilar equipos de proyecto  
 Active Directory los equipos de proyecto son grupos temporales que son responsables de completar Active Directory tareas de diseño e implementación. Una vez completado el proyecto de implementación de Active Directory, los propietarios asumen la responsabilidad del directorio y los equipos del proyecto pueden Disband.  
   
 El tamaño de los equipos del proyecto varía según el tamaño de la organización. En organizaciones pequeñas, una sola persona puede abarcar varias áreas de responsabilidad en un equipo de proyecto y participar en más de una fase de la implementación. Es posible que las organizaciones de gran tamaño requieran equipos más grandes con individuos diferentes o incluso distintos equipos que cubran las distintas áreas de responsabilidad. El tamaño de los equipos no es importante, siempre y cuando se asignen todas las áreas de responsabilidad y se cumplan los objetivos de diseño de la organización.  
@@ -184,7 +183,7 @@ La separación del servicio y la administración de datos en AD DS permite que e
   
 En el caso de las organizaciones que tienen un grupo de TI de infraestructura centralizada, el grupo de ti es generalmente el propietario del bosque y, por lo tanto, el posible propietario del bosque para futuras implementaciones. Las organizaciones que incluyen un número de grupos de TI de infraestructura independiente tienen una serie de posibles propietarios de bosque. Si su organización ya tiene una infraestructura de Active Directory implementada, los propietarios de bosque actuales también son posibles propietarios de bosque para nuevas implementaciones.  
   
-Seleccione uno de los posibles propietarios de bosque para que actúe como el propietario del bosque para cada bosque que esté pensando en la implementación. Estos posibles propietarios de bosque son responsables de trabajar con el equipo de diseño para determinar si se implementará o no su bosque realmente o si un curso alternativo de acción (por ejemplo, unirse a otro bosque existente) es un mejor uso de los recursos disponibles. y sigue cumpliendo sus necesidades. El propietario (o propietarios) del bosque de su organización son miembros del equipo de diseño de Active Directory.  
+Seleccione uno de los posibles propietarios de bosque para que actúe como el propietario del bosque para cada bosque que esté pensando en la implementación. Estos posibles propietarios de bosque son responsables de trabajar con el equipo de diseño para determinar si se implementará o no su bosque realmente o si un curso alternativo de acción (como unirse a otro bosque existente) es un mejor uso de los recursos disponibles y sigue cumpliendo sus necesidades. El propietario (o propietarios) del bosque de su organización son miembros del equipo de diseño de Active Directory.  
   
 ### <a name="establishing-a-design-team"></a>Establecer un equipo de diseño  
 El equipo de diseño de Active Directory es responsable de recopilar toda la información necesaria para tomar decisiones sobre el diseño de la estructura lógica de Active Directory.  
@@ -253,7 +252,7 @@ El equipo de implementación de Active Directory incluye los siguientes miembros
 El equipo de implementación trabaja con el servicio y los administradores de datos durante la fase de implementación para asegurarse de que los miembros del equipo de operaciones estén familiarizados con el nuevo diseño. Esto ayuda a garantizar una transición fluida de la propiedad cuando se completa la operación de implementación. Al finalizar el proceso de implementación, la responsabilidad de mantener el nuevo entorno de Active Directory pasa al equipo de operaciones.  
   
 ### <a name="documenting-the-design-and-deployment-teams"></a>Documentar los equipos de diseño e implementación  
-Documente los nombres y la información de contacto de las personas que participarán en el diseño y la implementación de AD DS. Identifique quién será responsable de cada rol en los equipos de diseño e implementación. Inicialmente, esta lista incluye los posibles propietarios del bosque, el jefe de proyecto y el arquitecto del proyecto. Cuando determine el número de bosques que va a implementar, es posible que necesite crear nuevos equipos de diseño para otros bosques. Tenga en cuenta que deberá actualizar la documentación a medida que los miembros del equipo cambien y a medida que identifique los distintos propietarios de Active Directory durante el proceso de diseño. Para obtener una hoja de cálculo que le ayude a documentar los equipos de diseño e implementación de cada bosque, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la ayuda del trabajo para el kit de implementación de Windows Server 2003 ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)) y abra " Información del equipo de diseño e implementación "(DSSLOGI_1. doc).  
+Documente los nombres y la información de contacto de las personas que participarán en el diseño y la implementación de AD DS. Identifique quién será responsable de cada rol en los equipos de diseño e implementación. Inicialmente, esta lista incluye los posibles propietarios del bosque, el jefe de proyecto y el arquitecto del proyecto. Cuando determine el número de bosques que va a implementar, es posible que necesite crear nuevos equipos de diseño para otros bosques. Tenga en cuenta que deberá actualizar la documentación a medida que los miembros del equipo cambien y a medida que identifique los distintos propietarios de Active Directory durante el proceso de diseño. Para obtener una hoja de cálculo que le ayude a documentar los equipos de diseño e implementación de cada bosque, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la ayuda del trabajo para el kit de implementación de Windows Server 2003 ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)) y abra "información del equipo de diseño e implementación" (DSSLOGI_1. doc).  
   
 
 

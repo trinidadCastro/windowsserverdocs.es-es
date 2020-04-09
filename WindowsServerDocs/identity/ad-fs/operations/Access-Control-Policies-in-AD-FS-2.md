@@ -1,7 +1,5 @@
 ---
-ms.assetid: ''
 title: Directivas de Access Control de cliente en Servicios de federación de Active Directory (AD FS) 2,0
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4f5d2cfa8383bcf3c0813b272f8c4828473b8df9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6ae1f34343e8574ce776fcc5761c078b12bc9977
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948607"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814828"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>Directivas de Access Control de cliente en AD FS 2,0
 Las directivas de acceso de cliente en Servicios de federación de Active Directory (AD FS) 2,0 permiten restringir o conceder a los usuarios acceso a los recursos.  En este documento se describe cómo habilitar las directivas de acceso de cliente en AD FS 2,0 y cómo configurar los escenarios más comunes.
@@ -141,7 +139,7 @@ El conjunto de reglas se basa en la regla de autorización de emisión predeterm
 
 ### <a name="scenario-4-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>Escenario 4: bloquear todo el acceso externo a Office 365 para los grupos de Active Directory designados
 
-En el ejemplo siguiente se habilita el acceso desde clientes internos basados en la dirección IP. Bloquea el acceso desde los clientes que se encuentran fuera de la red corporativa que tienen una dirección IP de cliente externa, excepto para las personas de un grupo de Active Directory especificado. el conjunto de reglas se basa en la regla de autorización de emisión predeterminada titulada acceso a Todos los usuarios. Siga estos pasos para agregar una regla de autorización de emisión a la relación de confianza para usuario autenticado de la plataforma de identidad Microsoft Office 365 mediante el Asistente para reglas de notificaciones:
+En el ejemplo siguiente se habilita el acceso desde clientes internos basados en la dirección IP. Bloquea el acceso desde los clientes que se encuentran fuera de la red corporativa que tienen una dirección IP de cliente externa, excepto para las personas de un grupo de Active Directory especificado. el conjunto de reglas se basa en la regla de autorización de emisión predeterminada titulada permitir el acceso a todos los usuarios. Siga estos pasos para agregar una regla de autorización de emisión a la relación de confianza para usuario autenticado de la plataforma de identidad Microsoft Office 365 mediante el Asistente para reglas de notificaciones:
 
 #### <a name="to-create-a-rule-to-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>Para crear una regla para bloquear todo el acceso externo a Office 365 para los grupos de Active Directory designados
 
@@ -271,6 +269,6 @@ AD FS eventos de seguimiento se registran en el registro de depuración de AD FS
 
 Después de habilitar el seguimiento, use la siguiente sintaxis de línea de comandos para habilitar el nivel de registro detallado: wevtutil. exe SL "AD FS 2,0 Tracing/debug"/l: 5  
 
-## <a name="related"></a>Relacionados
+## <a name="related"></a>Relacionado
 Para obtener más información sobre los nuevos tipos de notificación, consulte [AD FS tipos de notificaciones](AD-FS-Claims-Types.md).
 

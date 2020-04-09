@@ -1,7 +1,6 @@
 ---
 ms.assetid: 85ca191c-0cc7-4453-a72c-42060ddf2ea2
 title: Resumen ejecutivo
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 53f51d3a7a777ae378ce733ea9e66de66da5351a
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.openlocfilehash: 75b98e3f8078f33098512c8ecd01d3bb49a1c8ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781342"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823048"
 ---
 # <a name="executive-summary"></a>Resumen ejecutivo
 
@@ -23,9 +22,9 @@ ms.locfileid: "74781342"
 >[!IMPORTANT] 
 >La siguiente documentación se escribió en 2013 y se proporciona solo con fines históricos.  Actualmente se está revisando esta documentación y está sujeta a cambios.  Puede que no refleje las prácticas recomendadas actuales.
 
-Ninguna organización con una infraestructura de tecnología de la información (TI) es inmune a los ataques, pero si se implementan las directivas, los procesos y los controles adecuados para proteger los segmentos clave de la infraestructura informática de una organización, es posible que evitar que un evento de infracción crezca hasta un riesgo mayorista del entorno informático.  
+Ninguna organización con una infraestructura de tecnología de la información (TI) es inmune a los ataques, pero si se implementan las directivas, los procesos y los controles adecuados para proteger los segmentos clave de la infraestructura informática de una organización, es posible evitar que un evento de infracción crezca hasta un riesgo mayorista del entorno informático.  
   
-Este Resumen Ejecutivo está pensado para ser útil como un documento independiente que resume el contenido del documento, que contiene recomendaciones que ayudarán a las organizaciones a mejorar la seguridad de sus instalaciones Active Directory. Mediante la implementación de estas recomendaciones, las organizaciones podrán identificar y priorizar las actividades de seguridad, proteger los segmentos clave de la infraestructura informática de su organización y crear controles que reduzcan significativamente la probabilidad de ataques exitosos contra componentes críticos del entorno de ti.  
+Este Resumen Ejecutivo está pensado para ser útil como un documento independiente que resume el contenido del documento, que contiene recomendaciones que ayudarán a las organizaciones a mejorar la seguridad de sus instalaciones Active Directory. Mediante la implementación de estas recomendaciones, las organizaciones podrán identificar y priorizar las actividades de seguridad, proteger los segmentos clave de la infraestructura informática de su organización y crear controles que disminuyan significativamente la probabilidad de ataques exitosos contra componentes críticos del entorno de ti.  
   
 Aunque este documento describe los ataques más comunes contra Active Directory y contramedidas para reducir la superficie expuesta a ataques, también contiene recomendaciones para la recuperación en caso de que se produzca un riesgo completo. La única forma de garantizar la recuperación en caso de que se produzca un riesgo completo de Active Directory se debe preparar para el riesgo antes de que ocurra.  
   
@@ -40,7 +39,7 @@ Las secciones principales de este documento son:
 -   Planeación de compromiso  
   
 ## <a name="avenues-to-compromise"></a>Vías de compromiso  
-En esta sección se proporciona información sobre algunas de las vulnerabilidades de uso más frecuente utilizadas por los atacantes para poner en peligro las infraestructuras de los clientes. Contiene categorías generales de vulnerabilidades y cómo se usan para penetrar inicialmente las infraestructuras de los clientes, propagar el compromiso entre sistemas adicionales y, finalmente, dirigirse a Active Directory y controladores de dominio para obtener el completo control de los bosques de la organización. No proporciona recomendaciones detalladas sobre cómo abordar cada tipo de vulnerabilidad, especialmente en las áreas en las que las vulnerabilidades no se usan para dirigirse directamente a Active Directory. Sin embargo, para cada tipo de vulnerabilidad, se proporcionan vínculos a información adicional que se utiliza para desarrollar contramedidas y reducir la superficie expuesta a ataques de la organización.  
+En esta sección se proporciona información sobre algunas de las vulnerabilidades de uso más frecuente utilizadas por los atacantes para poner en peligro las infraestructuras de los clientes. Contiene categorías generales de vulnerabilidades y cómo se usan para penetrar inicialmente las infraestructuras de los clientes, propagar el compromiso entre sistemas adicionales y, finalmente, dirigirse a Active Directory y controladores de dominio para obtener el control completo de los bosques de la organización. No proporciona recomendaciones detalladas sobre cómo abordar cada tipo de vulnerabilidad, especialmente en las áreas en las que las vulnerabilidades no se usan para dirigirse directamente a Active Directory. Sin embargo, para cada tipo de vulnerabilidad, se proporcionan vínculos a información adicional que se utiliza para desarrollar contramedidas y reducir la superficie expuesta a ataques de la organización.  
   
 Se incluyen los siguientes temas:  
   
@@ -134,7 +133,7 @@ En esta sección se incluyen los siguientes temas:
 -   **Recomendaciones** de la Directiva de auditoría: en esta sección se describe la configuración de directiva de auditoría predeterminada de Windows, la configuración de directiva de auditoría recomendada por Microsoft y recomendaciones más agresivas para que las organizaciones las usen para auditar servidores y estaciones de trabajo críticos.  
   
 ## <a name="planning-for-compromise"></a>Planeación de compromiso  
-Esta sección contiene recomendaciones que ayudarán a las organizaciones a prepararse para un riesgo antes de que se produzcan, a implementar controles que pueden detectar un evento de riesgo antes de que se produzca una infracción de la totalidad y proporcionar directrices de respuesta y recuperación para los casos en los que los atacantes obtienen un riesgo completo del directorio. En esta sección se incluyen los siguientes temas:  
+Esta sección contiene recomendaciones que ayudarán a las organizaciones a prepararse para un riesgo antes de que se produzca, a implementar controles que pueden detectar un evento de riesgo antes de que se produzca una infracción de la totalidad, y proporcionar directrices de respuesta y recuperación para los casos en los que los atacantes consiguen un riesgo completo del directorio. En esta sección se incluyen los siguientes temas:  
   
 -   **Replanteamiento del enfoque** : contiene principios e instrucciones para crear entornos seguros en los que una organización puede colocar sus activos más importantes. Estas instrucciones son las siguientes:  
   
@@ -176,21 +175,21 @@ Las prácticas se muestran en orden aproximado de prioridad, es decir, los núme
 |-|-|-|-|  
 |1|Aplicaciones de revisión.|Táctica|Preventivas|  
 |2|Sistemas operativos de revisión.|Táctica|Preventivas|  
-|3|Implemente y actualice rápidamente el software antivirus y antimalware en todos los sistemas y supervise los intentos de quitarlos o deshabilitarlos.|Táctica|Ambos|  
+|3|Implemente y actualice rápidamente el software antivirus y antimalware en todos los sistemas y supervise los intentos de quitarlos o deshabilitarlos.|Táctica|Ambas|  
 |4|Supervise los objetos de Active Directory confidenciales para los intentos de modificación y las ventanas de eventos que pueden indicar que se ha intentado poner en peligro.|Táctica|Detective|  
-|5|Proteger y supervisar las cuentas de los usuarios que tienen acceso a datos confidenciales|Táctica|Ambos|  
+|5|Proteger y supervisar las cuentas de los usuarios que tienen acceso a datos confidenciales|Táctica|Ambas|  
 |6|Evitar que se utilicen cuentas eficaces en sistemas no autorizados.|Táctica|Preventivas|  
 |7|Elimine la pertenencia permanente a grupos con privilegios elevados.|Táctica|Preventivas|  
 |8|Implemente controles para conceder la pertenencia temporal a grupos con privilegios cuando sea necesario.|Táctica|Preventivas|  
 |9|Implementar hosts administrativos seguros.|Táctica|Preventivas|  
 |10|Usar listas blancas de aplicaciones en controladores de dominio, hosts administrativos y otros sistemas confidenciales.|Táctica|Preventivas|  
-|11|Identifique los recursos críticos y priorice su seguridad y supervisión.|Táctica|Ambos|  
+|11|Identifique los recursos críticos y priorice su seguridad y supervisión.|Táctica|Ambas|  
 |12|Implemente controles de acceso basados en roles con privilegios mínimos para la administración del directorio, su infraestructura auxiliar y sistemas Unidos a un dominio.|Estratégica|Preventivas|  
 |13|Aísle las aplicaciones y los sistemas heredados.|Táctica|Preventivas|  
 |14|Retirar sistemas y aplicaciones heredados.|Estratégica|Preventivas|  
 |15|Implemente programas de ciclo de vida de desarrollo seguros para aplicaciones personalizadas.|Estratégica|Preventivas|  
 |16|Implemente la administración de la configuración, revise el cumplimiento con regularidad y evalúe la configuración con cada nueva versión de hardware o software.|Estratégica|Preventivas|  
-|17|Migre recursos críticos a bosques puros con estrictos requisitos de seguridad y supervisión.|Estratégica|Ambos|  
+|17|Migre recursos críticos a bosques puros con estrictos requisitos de seguridad y supervisión.|Estratégica|Ambas|  
 |18|Simplifique la seguridad para los usuarios finales.|Estratégica|Preventivas|  
 |19|Utilice firewalls basados en host para controlar y proteger las comunicaciones.|Táctica|Preventivas|  
 |20|Dispositivos de revisión.|Táctica|Preventivas|  

@@ -1,7 +1,6 @@
 ---
 title: Preguntas más frecuentes sobre Espacios de almacenamiento directo
 description: Más información sobre Espacios de almacenamiento directo
-keywords: Espacios de almacenamiento
 ms.prod: windows-server
 ms.author: kaushik
 ms.technology: storage-spaces
@@ -9,12 +8,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 19dcc1c57fe7c7eea74b003553a0b0a6ab5508aa
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 18384ab3c9e520ace9237b68474a45c8ec349502
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950235"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856108"
 ---
 # <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>Espacios de almacenamiento directo preguntas más frecuentes (p + f)
 
@@ -87,5 +86,5 @@ Espacios de almacenamiento directo usa la asignación de los servicios de alojam
 Este:
 
 ```powershell
-get-virtualdisk -friendlyname “xyz” | get-physicalextent
+get-virtualdisk -friendlyname "xyz" | get-physicalextent
 ```

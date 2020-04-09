@@ -1,26 +1,22 @@
 ---
-title: Cmd
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+title: cmd
+description: Temas de comandos de Windows para CMD, que inicia una nueva instancia del intérprete de comandos, cmd. exe.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6ec588db-31a9-4a73-a970-65a2c6f4abbe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 032fbea2039faa09753ac0c2b51e4b62004d36ac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 83b5e27017a9a0f979acec428b8ddaa73cd9d46b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379331"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847628"
 ---
-# <a name="cmd"></a>Cmd
+# <a name="cmd"></a>cmd
 
 Inicia una nueva instancia del intérprete de comandos, cmd. exe. Si se usa sin parámetros, **cmd** muestra la versión y la información de copyright del sistema operativo.
 
@@ -30,7 +26,7 @@ Inicia una nueva instancia del intérprete de comandos, cmd. exe. Si se usa sin 
 cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}] [/v:{on|off}] [<String>]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -49,7 +45,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 |/v: activado|Habilita la expansión diferida de variables de entorno.|
 |/v: desactivado|Deshabilita la expansión diferida de variables de entorno.|
 |\<cadena >|Especifica el comando que se desea llevar a cabo.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
 En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede usar como valores para \<B\> y \<F\>
 
@@ -59,8 +55,8 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
 |1|Azul|
 |2|Verde|
 |3|Aguamarina|
-|4|Roja|
-|5|Ponen|
+|4|Rojo|
+|5|Púrpura|
 |6|Amarillo|
 |7|Blanco|
 |8|Gris|
@@ -69,17 +65,17 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
 |b|Aguamarina claro|
 |c|Rojo claro|
 |d|Púrpura claro|
-|e:.|Amarillo claro|
+|e|Amarillo claro|
 |f|Blanco brillante|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Usar varios comandos
 
     Para usar varios comandos para \<cadena >, sepárelos mediante el separador de comandos **&&** y enciérrelos entre comillas. Por ejemplo:
 
     ```
-    "<Command>&&<Command>&&<Command>"
+    <Command>&&<Command>&&<Command>
     ``` 
  
 -   Procesar comillas
@@ -103,7 +99,7 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
     Si una o ambas subclaves del registro están presentes, se ejecutan antes que todas las demás variables.
 
 > [!CAUTION]
-> La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
+> Una modificación incorrecta del Registro puede provocar daños graves en el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
 
 -   Habilitar y deshabilitar las extensiones de comando
 
@@ -116,7 +112,7 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
     Establezca el valor de **REG_DWORD** en **0 × 1** (habilitado) o en **0 × 0** (deshabilitado) en el registro mediante regedit. exe. La configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
 
 > [!CAUTION]
-> La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
+> Una modificación incorrecta del Registro puede provocar daños graves en el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
 
     When you enable command extensions, the following commands are affected:  
     -  **assoc**
@@ -156,7 +152,7 @@ En la tabla siguiente se enumeran los dígitos hexadecimales válidos que puede 
     Para establecer el valor de **REG_DWORD** , ejecute regedit. exe y use el valor hexadecimal de un carácter de control para una función determinada (por ejemplo, **0 × 9** es Tab y **0 × 08** es el retroceso). La configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
 
 > [!CAUTION]
-> La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
+> Una modificación incorrecta del Registro puede provocar daños graves en el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
 
 Si habilita la finalización de nombres de archivos y directorios mediante **/f: on**, use Ctrl + D para completar el nombre de directorio y Ctrl + f para completar el nombre de archivo. Para deshabilitar un carácter de finalización determinado en el registro, use el valor de espacio en blanco [**0 × 20**] porque no es un carácter de control válido.
 
@@ -166,10 +162,10 @@ La finalización de nombres de archivos y directorios procesa correctamente los 
 
 Los siguientes caracteres especiales requieren comillas: & < > [] {} ^ =;! ' +, ' ~ [espacio en blanco].
 
-Si la información proporcionada contiene espacios, utilice comillas alrededor del texto (por ejemplo, "nombre del equipo").
+Si la información proporcionada contiene espacios, utilice comillas alrededor del texto (por ejemplo, nombre de equipo).
 
 Si procesa la finalización de nombres de archivos y directorios desde una *cadena*, se descarta cualquier parte de la *ruta de acceso* situada a la derecha del cursor (en el punto de la *cadena* donde se procesó la finalización).
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

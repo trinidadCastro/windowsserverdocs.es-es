@@ -4,15 +4,15 @@ description: Scripting para rendimiento en PowerShell
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: JasonSh
+ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 2898cf5ee965da77c9f6a3473e55c1cee6b53f2b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f22a4f1ba5c0f048e2aa01c744feb3b2b83007a0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71354980"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851928"
 ---
 # <a name="powershell-scripting-performance-considerations"></a>Consideraciones sobre el rendimiento del scripting de PowerShell
 
@@ -30,13 +30,13 @@ $null = $arrayList.Add($item)
 [void]$arrayList.Add($item)
 ```
 
-La asignación a `$null` o a `[void]` son aproximadamente equivalentes y, por lo general, deben ser preferibles donde sea importante el rendimiento.
+La asignación a `$null` o conversión a `[void]` son aproximadamente equivalentes y, por lo general, deben ser preferibles donde sea importante el rendimiento.
 
 ```PowerShell
 $arrayList.Add($item) > $null
 ```
 
-La redirección de archivos a `$null` es casi tan buena como las alternativas anteriores, la mayoría de los scripts nunca observarían la diferencia.
+La redirección de archivos a `$null` es prácticamente tan buena como las alternativas anteriores, la mayoría de los scripts nunca observarían la diferencia.
 En función del escenario, el redireccionamiento de archivos introduce un poco de sobrecarga.
 
 ```PowerShell
@@ -54,7 +54,7 @@ $null = . {
 ```
 
 Al introducir un bloque de script y llamarlo (mediante el uso de un punto de partida o de otro modo), asignar el resultado a `$null` es una técnica adecuada para suprimir la salida de un bloque grande de script.
-Esta técnica realiza aproximadamente la canalización a `Out-Null` y debe evitarse en el script sensible al rendimiento.
+Esta técnica realiza aproximadamente la canalización a `Out-Null` y se debe evitar en el script sensible al rendimiento.
 La sobrecarga adicional en este ejemplo procede de la creación y la invocación de un bloque de scripts que anteriormente se encontraban en línea.
 
 
@@ -84,7 +84,7 @@ $results.AddRange((Do-SomethingElse))
 $results
 ```
 
-Si requiere una matriz, puede usar su propio `ArrayList` y simplemente llamar a `ArrayList.ToArray` cuando desee la matriz.
+Si requiere una matriz, puede usar su propio `ArrayList` y llamar simplemente a `ArrayList.ToArray` cuando desee la matriz.
 Como alternativa, puede permitir que PowerShell cree el `ArrayList` y `Array`:
 
 ```PowerShell
@@ -94,8 +94,8 @@ $results = @(
 )
 ```
 
-En este ejemplo, PowerShell crea un `ArrayList` que contiene los resultados que se escriben en la canalización dentro de la expresión de matriz.
-Justo antes de asignar a `$results`, PowerShell convierte el `ArrayList` a un `object[]`.
+En este ejemplo, PowerShell crea un `ArrayList` para contener los resultados que se escriben en la canalización dentro de la expresión de matriz.
+Justo antes de asignar a `$results`, PowerShell convierte el `ArrayList` en un `object[]`.
 
 ## <a name="processing-large-files"></a>Archivos grandes de procesamiento
 
@@ -127,9 +127,9 @@ finally
 
 ## <a name="avoid-write-host"></a>Evitar write-host
 
-Por lo general, se considera mala práctica escribir la salida directamente en la consola, pero cuando tiene sentido, muchos scripts usan `Write-Host`.
+Generalmente, se considera una práctica inadecuada escribir la salida directamente en la consola, pero cuando tiene sentido, muchos scripts usan `Write-Host`.
 
-Si debe escribir muchos mensajes en la consola, `Write-Host` puede ser un orden de magnitud más lento que `[Console]::WriteLine()`. Sin embargo, tenga en cuenta que `[Console]::WriteLine()` solo es una alternativa adecuada para hosts específicos, como PowerShell. exe o powershell_ise. exe, no se garantiza que funcione en todos los hosts.
+Si debe escribir muchos mensajes en la consola, `Write-Host` puede ser un orden de magnitud más lento que `[Console]::WriteLine()`. Sin embargo, tenga en cuenta que `[Console]::WriteLine()` es solo una alternativa adecuada para hosts específicos, como PowerShell. exe o powershell_ise. exe, no se garantiza que funcione en todos los hosts.
 
 En lugar de usar `Write-Host`, considere la posibilidad de usar [Write-Output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output?view=powershell-5.1).
 

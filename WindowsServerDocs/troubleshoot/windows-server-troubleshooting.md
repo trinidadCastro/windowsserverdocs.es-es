@@ -3,30 +3,24 @@ title: Solución de problemas de Windows Server
 description: Obtener vínculos a los artículos de solución de problemas de Windows Server
 layout: LandingPage
 ms.prod: windows-server
-ms.custom:
-- CI 113175
-- CSSTroubleshooting
-audience: Admin
-ms.service: na
-manager: ''
 ms.technology: server-general
 ms.date: 1/24/2020
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: cd4e61a9fac5b1a1f6a1b66309e514ef75b1e4db
-ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
+ms.openlocfilehash: 0537f00a06b27f855fcd87e9b1caa9d2e5085685
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125136"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820738"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Solucionar problemas de componentes de Windows Server
 
 > [!TIP]
-> ¿Busca información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com.  
+> ¿Buscas información sobre versiones anteriores de Windows Server? Echa un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com.  
 >   
-> También puede [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
+> También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
 
 Microsoft publica regularmente ambas actualizaciones para Windows Server. Para garantizar que los servidores pueden recibir actualizaciones futuras, incluidas las actualizaciones de seguridad, es importante mantenerlos actualizados. Echa un vistazo a [Historial de actualizaciones de Windows 10 y Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history) para obtener una lista completa de las actualizaciones publicadas.
 

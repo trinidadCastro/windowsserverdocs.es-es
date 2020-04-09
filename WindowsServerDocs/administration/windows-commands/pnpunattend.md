@@ -1,24 +1,20 @@
 ---
 title: pnpunattend
 description: Obtenga información acerca de cómo auditar los controladores de dispositivos en un equipo, así como realizar instalaciones de controladores silenciosos.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4fa88932-cff0-4dfc-936c-98c0e3dfbeb8 britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 77a6ab1ea45322e3c53e8b095c412cf8838be60d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c4836665946b39acdacf4c204c6e79fc2d8507bd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372272"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837538"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
@@ -30,16 +26,16 @@ Audita un equipo para los controladores de dispositivos y realiza instalaciones 
 PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
-|auditSystem|Especifica la instalación del controlador en línea.</br>Obligatorio, excepto cuando se ejecuta **pnpunattend** con las opciones **/Help** o **/?** los.|
+|auditSystem|Especifica la instalación del controlador en línea.</br>Obligatorio, excepto cuando se ejecuta **pnpunattend** con las opciones **/Help** o **/?** .|
 |/s|Opcional. Especifica que se busquen controladores sin instalar.|
 |L|Opcional. Especifica que se muestre la información de registro de este comando en el símbolo del sistema.|
 |/?|Opcional. Muestra la ayuda de este comando en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 Se requiere la preparación preliminar. Antes de utilizar este comando, debe completar las siguientes tareas:
 
@@ -60,4 +56,4 @@ pnpunattend auditsystem /s /l
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

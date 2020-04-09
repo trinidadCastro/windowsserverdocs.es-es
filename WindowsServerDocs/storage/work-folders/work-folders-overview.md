@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/07/2019
 description: 'Introducción a Carpetas de trabajo: es un rol de servidor en Windows Server que proporciona a los usuarios un modo coherente de acceder a los archivos de trabajo desde equipos y dispositivos.'
-ms.openlocfilehash: ca76412a6e623b42718fc4f7589f7053073e0f64
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 67c62d81c7d9b6d33a198f5282fa39a88e07f2e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950194"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820788"
 ---
 # <a name="work-folders-overview"></a>Introducción a Carpetas de trabajo
 
@@ -30,9 +30,9 @@ Si busca descargar o usar carpetas de trabajo en Windows 10, Windows 7 o en un d
 - [Carpetas de trabajo para iOS](https://itunes.apple.com/app/work-folders/id950878067)
 - [Carpetas de trabajo para Android](https://play.google.com/store/apps/details?id=com.microsoft.workfolders)
 
-## <a name="role-description"></a>Descripción del rol
+## <a name="role-description"></a>Descripción de rol
 
- Con Carpetas de trabajo, los usuarios pueden almacenar y tener acceso a archivos de trabajo en equipos y dispositivos (lo que suele denominarse "Trae tu propio dispositivo [BYOD]"), así como a equipos corporativos. Los usuarios obtienen una ubicación adecuada para almacenar los archivos de trabajo y pueden tener acceso a ellos desde cualquier lugar. Las organizaciones mantienen el control sobre los datos corporativos almacenando los archivos en servidores de archivos administrados centralmente y, de manera opcional, especificando directivas de dispositivo de usuario como contraseñas de cifrado y de bloqueo de pantalla.  
+ Con Carpetas de trabajo, los usuarios pueden almacenar y tener acceso a archivos de trabajo en equipos y dispositivos, lo que suele denominarse Traer su propio dispositivo (BYOD), así como a equipos corporativos. Los usuarios obtienen una ubicación adecuada para almacenar los archivos de trabajo y pueden tener acceso a ellos desde cualquier lugar. Las organizaciones mantienen el control sobre los datos corporativos almacenando los archivos en servidores de archivos administrados centralmente y, de manera opcional, especificando directivas de dispositivo de usuario como contraseñas de cifrado y de bloqueo de pantalla.  
   
  Puedes implementar Carpetas de trabajo con otras implementaciones como Redirección de carpetas, Archivos sin conexión y carpetas particulares. Asimismo, Carpetas de trabajo almacena archivos de usuario en una carpeta del servidor llamada *compartir sincronización*. Puedes especificar una carpeta que ya contenga datos de usuario, lo que te permitirá usar Carpetas de trabajo sin tener que migrar los datos y los servidores o sin tener que retirar inmediatamente la solución que ya estés usando.  
   
@@ -60,8 +60,8 @@ Si busca descargar o usar carpetas de trabajo en Windows 10, Windows 7 o en un d
 | ------------------- | ------------------ | ----------------- |  
 | Servicio de rol de Carpetas de trabajo en el Administrador del servidor | Windows Server 2019, Windows Server 2016 o Windows Server 2012 R2 | Los Servicios de almacenamiento y archivos son una buena manera de configurar los recursos compartidos de sincronización (es decir, carpetas que almacenan los archivos de trabajo del usuario), supervisar Carpetas de trabajo y administrar los recursos compartidos de sincronización y el acceso de los usuarios |
 | Cmdlets de Carpetas de trabajo | Windows Server 2019, Windows Server 2016 o Windows Server 2012 R2 | Módulo de Windows PowerShell que contiene cmdlets completos para administrar los servidores de Carpetas de trabajo |  
-| Integración de Carpetas de trabajo con Windows | 10 de Windows<br /><br /> Windows 8.1<br /><br /> Windows RT 8.1<br /><br /> Windows 7 (es necesario descargarlo) | Carpetas de trabajo proporciona las siguientes funcionalidades en los equipos de Windows:<br /><br /> -   Un elemento del Panel de control que configura y supervisa Carpetas de trabajo<br />-   Integración con el Explorador de archivos que te permite acceder fácilmente a los archivos de Carpetas de trabajo<br />-   Un motor de sincronización que transfiere los archivos hacia y desde un servidor de archivos central a la vez que maximiza la duración de la batería y el rendimiento del sistema |
-| Aplicación Carpetas de trabajo para dispositivos | Android<br /><br /> Apple iPhone e iPad® | Gracias a esta aplicación, puedes acceder a los archivos que tienes en Carpetas de trabajo usando los dispositivos más populares |  
+| Integración de Carpetas de trabajo con Windows | Windows 10<p> Windows 8.1<p> Windows RT 8.1<p> Windows 7 (es necesario descargarlo) | Carpetas de trabajo proporciona las siguientes funcionalidades en los equipos de Windows:<p> -   Un elemento del Panel de control que configura y supervisa Carpetas de trabajo<br />-   Integración con el Explorador de archivos que te permite acceder fácilmente a los archivos de Carpetas de trabajo<br />-   Un motor de sincronización que transfiere los archivos hacia y desde un servidor de archivos central a la vez que maximiza la duración de la batería y el rendimiento del sistema |
+| Aplicación Carpetas de trabajo para dispositivos | Android<p> Apple iPhone e iPad® | Gracias a esta aplicación, puedes acceder a los archivos que tienes en Carpetas de trabajo usando los dispositivos más populares |  
   
 ## <a name="new-and-changed-functionality"></a>Funcionalidad nueva y modificada
   
@@ -80,15 +80,15 @@ Carpetas de trabajo presenta los siguientes requisitos de software en cuanto a s
   
 -   Un servidor que ejecute Windows Server 2019, Windows Server 2016 o Windows Server 2012 R2 para hospedar recursos compartidos de sincronización con archivos de usuario  
   
--   Un volumen con formato de sistema de archivos NTFS para almacenar archivos de usuario.  
+-   Un volumen con formato de sistema de archivos NTFS para almacenar archivos de usuario  
   
--   Para aplicar directivas de contraseña en equipos con Windows 7, debes usar las directivas de contraseña de directiva de grupo. También debes excluir los equipos con Windows 7 de las directivas de contraseña de Carpetas de trabajo (si es que los usas).
+-   Para aplicar directivas de contraseña en equipos con Windows 7, debe usar las directivas de contraseña de directiva de grupo. También debe excluir los equipos con Windows 7 de las directivas de contraseña de Carpetas de trabajo (si es que los usa).
 
 -   Un certificado de servidor para cada servidor de archivos que se alojará en Carpetas de trabajo. Estos certificados deben proceder de una entidad de certificación (CA) de confianza para los usuarios; lo más indicado es que sea una entidad de certificación pública.
 
 -   Opta Un bosque de Active Directory Domain Services con las extensiones de esquema en Windows Server 2012 R2 para admitir automáticamente la referencia de equipos y dispositivos al servidor de archivos correcto al usar varios servidores de archivos.  
   
-Existen más requisitos para permitir que los usuarios se sincronicen a través de Internet:  
+Existen más requisitos para permitir que los usuarios sincronicen a través de Internet:  
   
 -   La capacidad de lograr que un servidor sea accesible desde Internet mediante la creación de reglas de publicación en el proxy inverso o la puerta de enlace de red de la organización.  
   
@@ -100,9 +100,9 @@ Carpetas de trabajo presenta los siguientes requisitos de software relativos a l
   
 -   El equipo y los dispositivos deben funcionar con uno de los siguientes sistemas operativos:  
   
-    -   10 de Windows  
+    -   Windows 10  
   
-    -   Windows 8.1  
+    -   Windows 8.1  
   
     -   Windows RT 8.1  
   
@@ -124,11 +124,11 @@ Carpetas de trabajo presenta los siguientes requisitos de software relativos a l
   
 -   Debe haber espacio libre suficiente en una unidad local con formato NTFS para almacenar todos los archivos de usuario en Carpetas de trabajo, además de otros 6 GB extra de espacio libre en caso de que Carpetas de trabajo se encuentre en la unidad del sistema (como sucede de forma predeterminada). Carpetas de trabajo usa la siguiente ubicación de forma predeterminada **%USERPROFILE%\Work Folders**  
   
-     No obstante, esta ubicación se puede modificar durante la instalación (se pueden usar ubicaciones como tarjetas microSD y unidades USB con el formato del sistema de archivos NTFS, pero cabe recordar que la sincronización se detendrá si se extraen las unidades).  
+     No obstante, esta ubicación se puede modificar durante la instalación (se pueden usar ubicaciones como tarjetas microSD y unidades USB con el formato del sistema de archivos NTFS, pero cabe recordar que la sincronización se detendrá si se extraen las unidades).  
   
      El tamaño máximo de los archivos individuales es de 10 GB de forma predeterminada. No existe límite de almacenamiento por usuario, si bien los administradores pueden hacer uso de la función de cuotas del Administrador de recursos del servidor de archivos para implementar cuotas.  
   
--   Carpetas de trabajo no admite revertir el estado de máquina virtual de las máquinas virtuales cliente. En su lugar, debes realizar operaciones de copia de seguridad y restauración desde la máquina virtual cliente, ya sea por medio de Copia de seguridad de imagen del sistema o de cualquier otra aplicación de copia de seguridad.  
+-   Carpetas de trabajo no admite revertir el estado de máquina virtual de las máquinas virtuales cliente. realice en su lugar operaciones de copia de seguridad y restauración desde la máquina virtual cliente, ya sea por medio de Copia de seguridad de imagen del sistema o de cualquier otra aplicación de copia de seguridad.  
   
 ## <a name="work-folders-compared-to-other-sync-technologies"></a>Carpetas de trabajo en comparación con otras tecnologías de sincronización  
 
@@ -138,8 +138,8 @@ La siguiente tabla describe la posición de las distintas tecnologías de sincro
 | - | ------------------ | ------------------- | -------------------------- | -------------- |
 | **Resumen de tecnología** | Sincroniza archivos que se almacenan en un servidor de archivos con otros equipos y dispositivos | Sincroniza archivos que se almacenan en un servidor de archivos con otros equipos que tienen acceso a la red corporativa (puede sustituirse por Carpetas de trabajo) | Sincroniza archivos que se almacenan en Office 365 o en SharePoint con otros equipos y dispositivos que se encuentran dentro o fuera de una red corporativa y proporciona la funcionalidad de colaboración de documentos | Sincroniza archivos personales almacenados en OneDrive con otros equipos, dispositivos y equipos Mac |
 | **Diseñado para proporcionar acceso de usuario a los archivos de trabajo** | Sí | Sí | Sí | No |
-| **Servicio en la nube** | Ninguna | Ninguna | Office 365 | Microsoft OneDrive |
-| **Servidores de la red interna** | Servidores de archivos que ejecutan Windows Server 2012 R2 o Windows Server 2016 | Servidores de archivos | Servidor de SharePoint (opcional) | Ninguna |
+| **Servicio en la nube** | Ninguno | Ninguno | Office 365 | Microsoft OneDrive |
+| **Servidores de la red interna** | Servidores de archivos que ejecutan Windows Server 2012 R2 o Windows Server 2016 | Servidores de archivos | Servidor de SharePoint (opcional) | Ninguno |
 | **Clientes compatibles** | Equipos, iOS, Android | Equipos de una red corporativa o que estén conectados a través de DirectAccess, VPN u otras tecnologías de acceso remoto | Equipos, iOS, Android, Windows Phone | Equipos, equipos Mac, Windows Phone, iOS, Android |
   
 > [!NOTE]
@@ -161,9 +161,9 @@ Carpetas de trabajo forma parte del rol Servicios de archivos y almacenamiento. 
   
 Para obtener más información acerca de cómo comenzar a usar las máquinas virtuales de Microsoft Azure, visita el [sitio web de Microsoft Azure](http://www.windowsazure.com/documentation/services/virtual-machines).  
   
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
- Para obtener más información relacionada, consulta los siguientes recursos.  
+ Para obtener más información relacionada, vea los siguientes recursos.  
   
 | Tipo de contenido | Referencias |
 | ------------------ | ---------------- |

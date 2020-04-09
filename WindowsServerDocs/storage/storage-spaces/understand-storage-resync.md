@@ -1,7 +1,6 @@
 ---
 title: Comprender y ver la resincronización de almacenamiento
 description: Información detallada sobre cuándo se produce la resincronización de almacenamiento y cómo verla en Windows Server 2019.
-keywords: Espacios de almacenamiento directo, resincronización de almacenamiento, resincronización, almacenamiento, S2D
 ms.prod: windows-server
 ms.author: adagashe
 ms.technology: storage-spaces
@@ -9,12 +8,12 @@ ms.topic: article
 author: adagashe
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d271d92a14278e52a6020c60f96f48b1c8b35871
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 1209a3e08922a380ef46d3be6d28ce489b748f22
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465309"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820938"
 ---
 # <a name="understand-and-monitor-storage-resync"></a>Comprender y controlar la resincronización de almacenamiento
 

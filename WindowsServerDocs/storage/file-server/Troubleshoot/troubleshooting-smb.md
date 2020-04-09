@@ -3,16 +3,15 @@ title: Solución avanzada de problemas de bloque de mensajes del servidor (SMB)
 description: Presenta los métodos avanzados para solucionar problemas de bloque de mensajes del servidor (SMB).
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 433221f9846e9e071557b5537974b5739131742b
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 654cb1b0eea65457d521d201739721ed8c3c0203
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949694"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815198"
 ---
 # <a name="advanced-troubleshooting-server-message-block-smb"></a>Solución avanzada de problemas de bloque de mensajes del servidor (SMB)
 
@@ -31,7 +30,7 @@ Por ejemplo, si usa Windows Server 2016 para llegar a un recurso compartido de S
 
 ### <a name="collect-data"></a>Recopilar datos
 
-Antes de solucionar problemas de SMB, se recomienda que primero recopile un seguimiento de red tanto en el lado cliente como en el servidor. Se aplican las directrices siguientes:
+Antes de solucionar problemas de SMB, se recomienda que primero recopile un seguimiento de red tanto en el lado cliente como en el servidor. Se aplican las siguientes directrices:
 
 - En los sistemas Windows, puede usar NetShell (netsh), Monitor de red, el analizador de mensajes o Wireshark para recopilar un seguimiento de red.
 
@@ -100,7 +99,7 @@ Compruebe si TCP/IP experimenta cualquiera de estos problemas:
 
 4. La ventana de recepción TCP está disminuyendo. Esto puede deberse a un almacenamiento lento o a algún otro problema que impida que los datos se recuperen del búfer Winsock del controlador de función auxiliar (AFD).
 
-Si no hay ningún problema de TCP/IP apreciable, busque errores de SMB. Para ello, sigue estos pasos:
+Si no hay ningún problema de TCP/IP apreciable, busque errores de SMB. Para ello, realice los pasos siguientes:
 
 1. Compruebe siempre los errores SMB en la especificación del protocolo MS-SMB2. Muchos errores de SMB son benignos (no dañinos). Consulte la siguiente información para determinar por qué SMB devolvió el error antes de concluir que el error está relacionado con cualquiera de los siguientes problemas:
 
@@ -129,7 +128,7 @@ Examine los detalles reales del protocolo SMB en el seguimiento de red para comp
 
 - Puede obtener información sobre lo que la aplicación está tratando de hacer examinando los comandos SMB.
 
-Compare los comandos y las operaciones con la especificación del protocolo para asegurarse de que todo funciona correctamente. Si no es así, recopile los datos que estén más cerca o en un nivel inferior para buscar más información sobre la causa raíz. Para ello, sigue estos pasos:
+Compare los comandos y las operaciones con la especificación del protocolo para asegurarse de que todo funciona correctamente. Si no es así, recopile los datos que estén más cerca o en un nivel inferior para buscar más información sobre la causa raíz. Para ello, realice los pasos siguientes:
 
 1. Recopilar una captura de paquetes estándar.
 

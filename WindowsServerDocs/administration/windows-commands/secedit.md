@@ -1,24 +1,20 @@
 ---
 title: secedit
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 58ed57ed-08e3-403d-a363-0620b358637a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5598f830ad4cef8d45c99594da12cbcdd84e7eef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e80217c201cde4dc1df58c0e8976fbe1422511fe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371113"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834848"
 ---
 # <a name="secedit"></a>secedit
 
@@ -38,7 +34,7 @@ secedit
 [/validate <configuration file name>]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -49,7 +45,7 @@ secedit
 |[Secedit:import](secedit-import.md)|Permite importar una plantilla de seguridad en una base de datos de forma que la configuración especificada en la plantilla pueda aplicarse a un sistema o analizarse en un sistema.|
 |[Secedit:validate](secedit-validate.md)|Permite validar la sintaxis de una plantilla de seguridad.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 En todos los nombres de archivo, se usa el directorio actual si no se especifica ninguna ruta de acceso.
 
@@ -66,7 +62,7 @@ Cuando se crea una plantilla de seguridad con el complemento plantilla de seguri
 > [!NOTE]
 > Microsoft Management Console (MMC) y el complemento configuración y análisis de seguridad no están disponibles en Server Core.
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
 Para obtener ejemplos de cómo se puede usar este comando, consulte la sección ejemplos en cualquiera de los archivos de subcomando.
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

@@ -1,24 +1,20 @@
 ---
 title: netcfg
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e2daaab7-12db-4e36-b70c-db8906d084f7 vhorne
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bfbe8cd757f78bfa3e808a9126af7d1698579885
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 4895928ffdd5d923d370f82e699d69f42c0f81a5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79320009"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838938"
 ---
 # <a name="netcfg"></a>netcfg
 
@@ -29,7 +25,7 @@ Instala el Entorno de preinstalación de Windows (WinPE), una versión ligera de
 ```
 netcfg [/v] [/e] [/winpe] [/l ] /c /i
 ```
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
 |/v|Ejecutar en modo **detallado** (detallado)|
@@ -38,11 +34,11 @@ netcfg [/v] [/e] [/winpe] [/l ] /c /i
 |/l|Proporciona la **Ubicación** de INF|
 |/c|Proporciona la **clase** del componente que se va a instalar; Protocolo, servicio o cliente|
 |/i|Proporciona el **identificador** del componente|
-|/s|Proporciona el tipo de componentes que se van a **Mostrar**.<br /><br />\ta = adaptadores, n = componentes de net|
+|/s|Proporciona el tipo de componentes que se van a **Mostrar**.<p>\ta = adaptadores, n = componentes de net|
 |/b|Muestra las **rutas**de acceso de enlace, cuando van seguidas de una cadena que contiene el nombre de la ruta de acceso.|
 |/?|Muestra la **ayuda** en el símbolo del sistema.|
 
-## <a name="BKMK_Examples"></a>Example
+## <a name="examples"></a><a name=BKMK_Examples></a>Example
 
 Para instalar el *ejemplo* de protocolo mediante c:\oemdir\example.inf:
 ```
@@ -72,5 +68,5 @@ Para mostrar las rutas de acceso de enlace que contienen *MS_TCPIP*:
 ```
 netcfg /b ms_tcpip
 ```
-## <a name="additional-references"></a>referencias adicionales
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+## <a name="additional-references"></a>Referencias adicionales
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

@@ -1,24 +1,20 @@
 ---
 title: Administrar el Registro de acceso de usuarios
 description: Describe cómo administrar el registro de acceso de usuarios
-ms.custom: na
 ms.prod: windows-server
 ms.technology: manage-user-access-logging
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4f039017-4152-47eb-838e-bb6ef730b638
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b209cdb4763d4f30478725aa1ba47f399e9a729f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ff33102a2197cc961a44290c5b7e4e3e40b0191
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382844"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851388"
 ---
 # <a name="manage-user-access-logging"></a>Administrar el Registro de acceso de usuarios
 
@@ -48,7 +44,7 @@ Las opciones de configuración que se abordan en este documento son:
   
 -   Habilitar el seguimiento de licencias de uso de Carpetas de trabajo   
   
-## <a name="BKMK_Step1"></a>Deshabilitar y habilitar el servicio UAL  
+## <a name="disabling-and-enabling-the-ual-service"></a><a name="BKMK_Step1"></a>Deshabilitar y habilitar el servicio UAL  
 UAL se habilita y se ejecuta de forma predeterminada cuando un equipo que ejecuta Windows Server 2012 o posterior se instala e inicia por primera vez. Puede que los administradores prefieran desactivar y deshabilitar UAL para cubrir requisitos de privacidad o necesidades operativas. Puede desactivar UAL mediante la consola de servicios, desde la línea de comandos o mediante cmdlets de PowerShell. Sin embargo, para asegurarse de que UAL no se ejecute de nuevo la próxima vez que se inicie el equipo, también deberá deshabilitar el servicio. En los procedimientos siguientes se describe cómo desactivar y deshabilitar UAL.  
   
 > [!NOTE]  
@@ -62,7 +58,7 @@ UAL se habilita y se ejecuta de forma predeterminada cuando un equipo que ejecut
   
 3.  Desplácese hacia abajo y seleccione **Servicio de registro de acceso de usuarios**. Haga clic en **Detener el servicio**.  
   
-4.  Haga\-clic con el botón secundario en el nombre del servicio y seleccione **propiedades**. En la pestaña **General** , cambie **Tipo de inicio** a **Deshabilitado**y haga clic en **Aceptar**.  
+4.  \-haga clic con el botón derecho en el nombre del servicio y seleccione **propiedades**. En la pestaña **General**, cambie **Tipo de inicio** a **Deshabilitado** y haga clic en **Aceptar**.  
   
 #### <a name="to-stop-and-disable-ual-from-the-command-line"></a>Para detener y deshabilitar UAL desde la línea de comandos  
   
@@ -71,13 +67,13 @@ UAL se habilita y se ejecuta de forma predeterminada cuando un equipo que ejecut
 2.  Presione las teclas de logotipo de Windows+R y, después, escriba **cmd** para abrir una ventana del símbolo del sistema.  
   
     > [!IMPORTANT]  
-    > Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+    > Si aparece el cuadro de **Control de cuentas de usuario**, confirma que la acción que se muestra es la que deseas realizar y haz clic en **Sí**.  
   
 3.  Escriba **net stop ualsvc** y presione ENTRAR.  
   
 4.  Escriba **netsh ualsvc set opmode mode=disable** y presione ENTRAR.  
    
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
 
 UAL también se puede detener y deshabilitar si se usan los comandos de Windows PowerShell Stop-service y Disable-Ual.  
   
@@ -99,7 +95,7 @@ Si en una fecha posterior desea reiniciar y volver a habilitar UAL, puede hacerl
   
 3.  Desplácese hacia abajo y seleccione **Servicio de registro de acceso de usuarios**. Haga clic en **Iniciar el servicio**.  
   
-4.  Haga clic con el botón secundario en el nombre del servicio y seleccione **Propiedades**. En la pestaña **General** , cambie **Tipo de inicio** a **Automático**y haga clic en **Aceptar**.  
+4.  Haga clic con el botón secundario en el nombre del servicio y seleccione **Propiedades**. En la pestaña **General**, cambie **Tipo de inicio** a **Automático** y haga clic en **Aceptar**.  
   
 #### <a name="to-start-and-enable-ual-from-the-command-line"></a>Para iniciar y habilitar UAL desde la línea de comandos  
   
@@ -108,13 +104,13 @@ Si en una fecha posterior desea reiniciar y volver a habilitar UAL, puede hacerl
 2.  Presione las teclas de logotipo de Windows+R y, después, escriba **cmd** para abrir una ventana del símbolo del sistema.  
   
     > [!IMPORTANT]  
-    > Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+    > Si aparece el cuadro de **Control de cuentas de usuario**, confirma que la acción que se muestra es la que deseas realizar y haz clic en **Sí**.  
   
 3.  Escriba **net start ualsvc** y presione ENTRAR.  
   
-4.  Escriba **netsh ualsvc set opmode mode=enable**y presione ENTRAR.  
+4.  Escriba **netsh ualsvc set opmode mode=enable** y presione ENTRAR.  
 
-Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.
   
 UAL también se puede iniciar y volver a habilitar si se usan los comandos de Windows PowerShell Start-service y Enable-Ual.  
   
@@ -126,14 +122,14 @@ Enable-ual
 Start-service ualsvc  
 ```  
   
-## <a name="BKMK_Step2"></a>Recopilación de datos de UAL  
+## <a name="collecting-ual-data"></a><a name="BKMK_Step2"></a>Recopilación de datos de UAL  
 Además de los cmdlets de PowerShell que se describen en la sección anterior, se pueden usar 12 cmdlets adicionales para recopilar datos de UAL:  
   
 -   **Get-UalOverview**: proporciona detalles de UAL y un historial de los roles y productos instalados.  
   
 -   **Get-UalServerUser**: proporciona datos de acceso del usuario del cliente relativos al servidor local o de destino.  
   
--   **Get-UalServerDevice**:  proporciona datos de acceso del dispositivo cliente relativos al servidor local o de destino.  
+-   **Get-UalServerDevice**: proporciona datos de acceso del dispositivo cliente relativos al servidor local o de destino.  
   
 -   **Get-UalUserAccess**: proporciona datos de acceso del usuario del cliente relativos a cada rol o producto instalado en el servidor local o de destino.  
   
@@ -151,12 +147,12 @@ Además de los cmdlets de PowerShell que se describen en la sección anterior, s
   
 -   **Get-UalSystemId**: proporciona datos específicos del sistema con los que se identifica de forma única al servidor local o de destino.  
   
-`Get-UalSystemId` está pensado para proporcionar un perfil único de un servidor para establecer una correlación con el resto de datos de dicho servidor.  Si un servidor experimenta algún cambio en, se crea en uno de los `Get-UalSystemId` parámetros de un nuevo perfil.  `Get-UalOverview` está pensado para proveer al administrador de una lista de los roles que hay instalados y en uso en el servidor.  
+`Get-UalSystemId` está pensado para proporcionar un perfil único de un servidor para establecer una correlación con el resto de datos de dicho servidor.  Si un servidor experimenta algún cambio en en uno de los parámetros de `Get-UalSystemId` se crea un nuevo perfil.  `Get-UalOverview` está pensado para proveer al administrador de una lista de los roles que hay instalados y en uso en el servidor.  
   
 > [!NOTE]  
-> Las características básicas de los servicios de Servicios de impresión y documentos y archivos se instalan de forma predeterminada. Por lo tanto, los administradores pueden esperar ver información sobre estos servicios siempre que quieran, como si los roles completos estuvieran instalados. Se incluyen cmdlets de UAL por separado para Hyper-V y DNS debido a los datos únicos que UAL recopila para estos roles de servidor.  
+> Las características básicas de los servicios de Servicios de impresión y documentos y archivos se instalan de forma predeterminada. Por lo tanto, los administradores pueden esperar ver información sobre estos servicios siempre que quieran, como si los roles completos estuvieran instalados. Se incluyen cmdlets de UAL independientes para Hyper-V y DNS debido a los datos únicos que UAL recopila para estos roles de servidor.  
   
-Un escenario de caso de uso típico de los cmdlets de UAL sería un administrador que consulta a UAL acerca de los accesos de cliente único que han tenido lugar entre dos fechas. Esto se logra de diversas maneras. A continuación se detalla el método recomendado para consultar los accesos de dispositivo único entre dos fechas.  
+Un escenario de caso de uso típico de los cmdlets de UAL sería un administrador que consulta a UAL acerca de los accesos de cliente único que han tenido lugar entre dos fechas. Esto se puede hacer de varias maneras. El siguiente es un método recomendado para consultar los accesos de dispositivo únicos en un intervalo de fechas.  
   
 ```  
 PS C:\Windows\system32>Gwmi -Namespace "root\AccessLogging" -query "SELECT * FROM MsftUal_DeviceAccess WHERE LastSeen >='1/01/2013' and LastSeen <='3/31/2013'"  
@@ -165,7 +161,7 @@ PS C:\Windows\system32>Gwmi -Namespace "root\AccessLogging" -query "SELECT * FRO
   
 Con este procedimiento se obtendrá una lista exhaustiva de todos los dispositivos cliente únicos (identificados por su dirección IP) que han enviado solicitudes al servidor durante dicho periodo de tiempo.  
   
-' ActivityCount ' para cada cliente único se limita a 65.535 por día. Asimismo, solo es necesario llamar a WMI desde PowerShell cuando se realiza la consulta por fecha.  El resto de parámetros de cmdlet de UAL se puede usar en consultas de PS del modo previsto, como en el siguiente ejemplo:  
+' ActivityCount ' para cada cliente único se limita a 65.535 por día. Además, solo es necesario llamar a WMI desde PowerShell cuando se realiza una consulta por fecha.  Todos los demás parámetros de cmdlet de UAL se pueden usar en las consultas de PS según lo previsto, como en el ejemplo siguiente:  
   
 ```  
 PS C:\Windows\system32> Get-UalDeviceAccess -IPAddress "10.36.206.112"  
@@ -184,7 +180,7 @@ PSComputerName
   
 UAL conserva un historial de hasta dos años. Para permitir la recuperación de datos de UAL por parte de un administrador cuando el servicio se está ejecutando, UAL realiza una copia del archivo de base de datos activo, Current. mdb, en un archivo denominado *GUID. mdb* cada 24 horas para el uso del proveedor de WMI.  
   
-El primer día del año, UAL creará una base de datos *GUID.mdb*nueva, La antigua *GUID. mdb* se conserva como un archivo para el uso del proveedor.  Transcurridos dos años, el archivo *GUID.mdb* original se sobrescribirá.  
+El primer día del año, UAL creará una base de datos *GUID.mdb* nueva, La antigua *GUID. mdb* se conserva como un archivo para el uso del proveedor.  Transcurridos dos años, el archivo *GUID.mdb* original se sobrescribirá.  
   
 > [!IMPORTANT]  
 > El siguiente procedimiento solo debe realizarlo un usuario avanzado y, por lo general, está pensado para un desarrollador que realiza pruebas en su propio instrumental de interfaces de programación de aplicación de UAL.  
@@ -198,9 +194,9 @@ El primer día del año, UAL creará una base de datos *GUID.mdb*nueva, La antig
 3.  Agregue el valor de Registro:  **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\AutoLogger\Sum\PollingInterval (REG_DWORD)** .  
   
     > [!WARNING]  
-    > La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer y guardar una copia de seguridad de los datos valiosos en el equipo.  
+    > Una modificación incorrecta del Registro puede provocar daños graves en el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de todos los datos importantes que contenga el equipo.  
   
-    En el siguiente ejemplo se indica cómo agregar un intervalo de dos minutos (esto no se recomienda como estado de ejecución a largo plazo): **REG Add HKLM\System\CurrentControlSet\Control\WMI\\AutoLogger\Sum/v PollingInterval/t reg\_DWORD/d 120000/f**  
+    En el ejemplo siguiente se muestra cómo agregar un intervalo de dos minutos (no recomendado como estado de ejecución a largo plazo): **reg Add HKLM\System\CurrentControlSet\Control\WMI\\AutoLogger\Sum/V PollingInterval/T REG\_DWORD/d 120000/f**  
   
     Los valores de tiempo se expresan en milisegundos. El valor mínimo son 60 segundos, el máximo son siete día y el valor predeterminado es 24 horas.  
   
@@ -222,19 +218,19 @@ UAL no está pensado para ser un componente crítico del sistema. Está diseñad
 ## <a name="managing-ual-in-high-volume-environments"></a>Administrar UAL en entornos de gran volumen  
 En esta sección se explica lo que un administrador puede esperar cuando UAL se usa en un servidor con un gran volumen de clientes:  
   
-El número máximo de accesos que se puede registrar con UAL es de 65.535 al día.  El uso de UAL no es aconsejable en servidores que se conecten directamente a Internet (como los servidores web que se conectan directamente a Internet) o en escenarios donde la función primordial del servidor es mantener un rendimiento extremadamente alto (como en entornos de carga de trabajo HPC). UAL se destina principalmente a escenarios pequeños, medianos y de intranet empresarial donde se espera un gran volumen, pero no tan alto como en muchas de las implementaciones que atienden el volumen de tráfico con conexión a Internet de forma regular.  
+El número máximo de accesos que se puede registrar con UAL es de 65.535 al día.  UAL no se recomienda para su uso en servidores que están conectados directamente a Internet, como los servidores web que se conectan directamente a Internet o en escenarios donde el rendimiento extremadamente alto es la función principal del servidor (por ejemplo, en entornos de carga de trabajo HPC). UAL se destina principalmente a escenarios pequeños, medianos y de intranet empresarial donde se espera un gran volumen, pero no tan alto como en muchas de las implementaciones que atienden el volumen de tráfico con conexión a Internet de forma regular.  
   
-**UAL en memoria**: Dado que UAL usa el motor de almacenamiento extensible (ESE), los requisitos de memoria de UAL aumentarán con el tiempo (o por la cantidad de solicitudes de cliente). Sin embargo, se renunciará a la memoria, ya que el sistema la necesita para reducir el impacto en el rendimiento del sistema.  
+**UAL en memoria**: dado que UAL usa el motor de almacenamiento extensible (ese), los requisitos de memoria de UAL aumentarán con el tiempo (o por la cantidad de solicitudes de cliente). Sin embargo, se renunciará a la memoria, ya que el sistema la necesita para reducir el impacto en el rendimiento del sistema.  
   
-**UAL en disco**: Los requisitos de disco duro de UAL son aproximadamente como se muestra a continuación:  
+**UAL en disco**: los requisitos de disco duro de UAL son aproximadamente como se muestra a continuación:  
   
 -   0 registros de cliente único: 22 M  
   
 -   50.000 registros de cliente único: 80 M  
   
--   500.000 registros de cliente único: 384 M  
+-   500.000 registros de cliente único: 384 MB  
   
--   1\.000.000 de registros de cliente único: 729 M  
+-   1\.000.000 registros de cliente único: 729 MB  
   
 ## <a name="recovering-from-a-corrupt-state"></a>Recuperarse de un estado dañado  
 En esta sección se describe el uso de UAL del motor de almacenamiento extensible (ESE) a un alto nivel y lo que un administrador puede hacer si los datos de UAL están dañados o no se pueden recuperar.  
@@ -261,7 +257,7 @@ Después de agregarse la clave del Registro, debe reiniciar el servicio SyncShar
   
 Una vez habilitado el registro, se registran dos eventos informativos en el canal de Registros de Windows\Aplicación cada vez que un cliente se conecta al servidor. En Carpetas de trabajo, cada usuario puede tener uno o varios dispositivos cliente que se conectan al servidor y comprueban si hay actualizaciones de datos cada 10 minutos. Si el servidor recibe 1000 usuarios, cada uno de ellos con dos dispositivos, los registros de aplicación se sobrescribirán cada 70 minutos, lo que dificultará la solución de problemas no relacionados. Para evitarlo, puede deshabilitar temporalmente el servicio de registro de acceso de usuarios o aumentar el tamaño del canal de Windows \ aplicación del servidor.  
   
-## <a name="BKMK_Links"></a>Vea también  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también  
 
 - [Introducción al registro de acceso de usuarios](get-started-with-user-access-logging.md)
   

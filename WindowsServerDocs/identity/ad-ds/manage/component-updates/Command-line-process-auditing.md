@@ -1,7 +1,6 @@
 ---
 ms.assetid: c8597cc8-bdcb-4e59-a09e-128ef5ebeaf8
 title: Auditoría de proceso de línea de comandos
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5d5ab971327ab7ec16bf2748571882458cc38f72
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc6cba306a36589d8b585b23ecb43e7d16b7d201
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368986"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823078"
 ---
 # <a name="command-line-process-auditing"></a>Auditoría de proceso de línea de comandos
 
@@ -25,7 +24,7 @@ ms.locfileid: "71368986"
 > [!NOTE]  
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.  
   
-## <a name="overview"></a>Introducción  
+## <a name="overview"></a>Información general  
   
 -   El ID. de evento de auditoría de creación de procesos preexistente 4688 ahora incluirá información de auditoría para los procesos de línea de comandos.  
   
@@ -74,7 +73,7 @@ Volumen de eventos: bajo a medio, según del uso del sistema
 |**Configuraciones**|**Incluir línea de comandos en eventos de creación de procesos**|  
 |**Configuración predeterminada**|No configurado (no habilitado)|  
 |**Compatible con:**|?|  
-|**Descripción**|Esta configuración de directiva determina la información que se registra en los eventos de auditoría de seguridad cuando se ha creado un nuevo proceso.<br /><br />Esta configuración solo se aplica cuando está habilitada la Directiva de creación de procesos de auditoría. Si habilita esta Directiva, la información de la línea de comandos de cada proceso se registrará en texto sin formato en el registro de eventos de seguridad como parte del evento 4688 de creación de proceso de auditoría, "se ha creado un nuevo proceso", en las estaciones de trabajo y los servidores en los que esta Directiva se aplica el valor.<br /><br />Si deshabilita o no establece esta configuración de Directiva, la información de línea de comandos del proceso no se incluirá en los eventos de creación de procesos de auditoría.<br /><br />Valor predeterminado: no configurado<br /><br />Nota: cuando esta configuración de directiva está habilitada, cualquier usuario con acceso para leer los eventos de seguridad podrá leer los argumentos de la línea de comandos para cualquier proceso creado correctamente. Los argumentos de la línea de comandos pueden contener información confidencial o privada como contraseñas o datos de usuario.|  
+|**Descripción**|Esta configuración de directiva determina la información que se registra en los eventos de auditoría de seguridad cuando se ha creado un nuevo proceso.<p>Esta configuración solo se aplica cuando está habilitada la Directiva de creación de procesos de auditoría. Si habilita esta Directiva, la información de la línea de comandos de cada proceso se registrará en texto sin formato en el registro de eventos de seguridad como parte del evento 4688 de creación de proceso de auditoría, "se ha creado un nuevo proceso", en las estaciones de trabajo y los servidores en los que se aplica esta configuración de directiva.<p>Si deshabilita o no establece esta configuración de Directiva, la información de línea de comandos del proceso no se incluirá en los eventos de creación de procesos de auditoría.<p>Valor predeterminado: no configurado<p>Nota: cuando esta configuración de directiva está habilitada, cualquier usuario con acceso para leer los eventos de seguridad podrá leer los argumentos de la línea de comandos para cualquier proceso creado correctamente. Los argumentos de la línea de comandos pueden contener información confidencial o privada como contraseñas o datos de usuario.|  
   
 ![auditoría de línea de comandos](media/Command-line-process-auditing/GTR_ADDS_IncludeCLISetting.gif)  
   
@@ -89,13 +88,13 @@ En el procedimiento siguiente se muestra cómo evitar conflictos bloqueando la a
   
 1.  Abra la consola de administración de directiva de grupo  
   
-2.  Haga clic con el botón secundario en directiva predeterminada de dominio y, a continuación, haga clic en Editar.  
+2.  Haga clic con el botón secundario en Directiva predeterminada de dominio y, a continuación, haga clic en Editar.  
   
 3.  Haga doble clic en configuración del equipo, haga doble clic en directivas y, a continuación, haga doble clic en configuración de Windows.  
   
 4.  Haga doble clic en configuración de seguridad, haga doble clic en directivas locales y, a continuación, haga clic en opciones de seguridad.  
   
-5.  Haga doble clic en auditoría: forzar la configuración de subcategoría de directiva de auditoría (Windows Vista o posterior) para invalidar la configuración de categoría de directiva de auditoría y, a continuación, haga clic en definir esta configuración de directiva.  
+5.  Haga doble clic en Auditoría: forzar la configuración de subcategorías de la directiva de auditoría (Windows Vista o posterior) para invalidar la configuración de la categoría de directiva de auditoría y, a continuación, haga clic en Definir esta configuración de directiva.  
   
 6.  Haga clic en habilitado y, a continuación, en Aceptar.  
   

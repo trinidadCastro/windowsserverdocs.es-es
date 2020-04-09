@@ -1,24 +1,20 @@
 ---
 title: Administración de actualizaciones con Windows Server Update Services
 description: 'Tema de Windows Server Update Service (WSUS): información general de Update Management con vínculos a los temas relacionados'
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 28fde77a-f5fc-4e51-835d-8bc304dcfa54
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8454966af47be4775bb241523e50dd4968c4f92e
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: cbf1e94c0f5467f4b4beb8e96cd5f2a26b43513a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639810"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828488"
 ---
 # <a name="update-management-with-windows-server-update-services"></a>Administración de actualizaciones con Windows Server Update Services
 

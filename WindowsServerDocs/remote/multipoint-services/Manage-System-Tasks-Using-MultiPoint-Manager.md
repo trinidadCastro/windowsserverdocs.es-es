@@ -1,24 +1,20 @@
 ---
 title: Administrar tareas del sistema mediante MultiPoint Manager
 description: Información general de las tareas de administración en Multipoint Manager
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: efb34298-391c-4435-afdf-1a749f1ce224
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 185f4c88286138af61f92f3f349efd8f584ed73c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a1f51d459634f9657a8623e52ed30b88158167ad
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405061"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853518"
 ---
 # <a name="manage-system-tasks-using-multipoint-manager"></a>Administrar tareas del sistema mediante MultiPoint Manager
 En Multipoint Manager, puede usar la pestaña **Inicio** para realizar tareas de Multipoint Services y comprobar el estado del sistema. Entre las tareas que puede realizar en la pestaña **Inicio** se incluyen las siguientes:  
@@ -35,7 +31,7 @@ En Multipoint Manager, puede usar la pestaña **Inicio** para realizar tareas de
   
 -   Agregar o quitar equipos, tal como se describe en el tema [Agregar o quitar equipos](Add-or-Remove-Computers.md).  
 
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Editar la configuración del servidor](Edit-Server-Settings.md)  
 [Reiniciar o apagar](Restart-or-Shut-Down.md)  
 [Cambiar entre modos](Switch-Between-Modes.md)  

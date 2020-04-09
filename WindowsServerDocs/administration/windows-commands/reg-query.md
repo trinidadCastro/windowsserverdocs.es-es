@@ -1,24 +1,20 @@
 ---
 title: REG (consulta)
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0e6a0d7c-ed9b-4318-833d-33f265a81f39
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d2f616fb33974df4327c7b2536b3143b75d116be
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bf21933e1ce9928048f0f07ed502dfcab75d1783
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371718"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836398"
 ---
 # <a name="reg-query"></a>REG (consulta)
 
@@ -34,7 +30,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] [{/k | /d}] [/c] [/e] [/t <Type>] [/z]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -61,7 +57,7 @@ En la tabla siguiente se enumeran los valores devueltos para la operación **reg
 |0|Correcto|
 |1|Error|
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para mostrar el valor de la versión del valor de nombre en la clave HKLM\Software\Microsoft\ResKit, escriba:
 ```
@@ -88,6 +84,6 @@ Para mostrar el valor y los datos de los nombres de valor null (valor predetermi
 REG QUERY HKLM\SOFTWARE /ve
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

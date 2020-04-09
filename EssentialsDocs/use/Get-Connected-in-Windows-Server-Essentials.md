@@ -1,23 +1,19 @@
 ---
 title: Conéctese en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 05/07/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 149a5d34-43b7-4b9e-99e7-9f2294ab9ddb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 14acbff8b538224546884e5bb51c40a22b8849b4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7591efcc896dd382afd50cf0e360e28e0cb08f3e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318552"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852158"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>Conéctese en Windows Server Essentials
 
@@ -448,7 +444,7 @@ ms.locfileid: "80318552"
     > [!NOTE]
     >  Cuando inicie sesión en un equipo que ejecute Windows 8 por primera vez con la cuenta de red después de conectarse al servidor, se le proporcionarán instrucciones para migrar los archivos y las aplicaciones desde la cuenta de usuario anterior. Siga las instrucciones de la página **¿Cómo migrar archivos y aplicaciones desde mi cuenta de usuario anterior?** para migrar todos los archivos y aplicaciones a la cuenta de usuario de red.  
 
-9. Una vez que el equipo se ha conectado correctamente al servidor, aparecen accesos directos al bandeja del conector y al panel del servidor en el menú Inicio, que se puede usar de la siguiente manera (si el equipo ejecuta Windows 8, Windows 8.1 o Windows 10, el panel y el conector Bandeja estará disponible en la pantalla Inicio del equipo):  
+9. Una vez que el equipo se ha conectado correctamente al servidor, aparecen accesos directos al bandeja del conector y al panel del servidor en el menú Inicio, que se puede usar de la siguiente manera (si el equipo ejecuta Windows 8, Windows 8.1 o Windows 10, el panel y el conector bandeja estarán disponibles en la pantalla Inicio del equipo):  
 
     -   Si el equipo ejecuta Windows 8, Windows 8.1 o Windows 10, el panel y el conector bandeja se podrán buscar como una aplicación.  
 

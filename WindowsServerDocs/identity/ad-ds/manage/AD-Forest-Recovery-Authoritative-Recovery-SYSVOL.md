@@ -1,6 +1,5 @@
 ---
 title: 'Recuperación de bosque de AD: sincronización autoritativa de SYSVOL'
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 38a1c543-c76d-4b8e-a06b-53742aaa172f
 ms.technology: identity-adds
-ms.openlocfilehash: 051e3fdb1c801ab6f19b276b66599ea555026845
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4c797c98fc8d41621954077ebf470f1f52604cf7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369385"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824308"
 ---
 # <a name="ad-forest-recovery---performing-an-authoritative-synchronization-of-dfsr-replicated-sysvol"></a>Recuperación de bosque de AD: realización de una sincronización autoritativa de SYSVOL replicada en DFSR  
 

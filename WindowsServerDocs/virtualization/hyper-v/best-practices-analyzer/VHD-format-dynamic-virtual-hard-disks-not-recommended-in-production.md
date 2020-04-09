@@ -2,20 +2,19 @@
 title: No se recomienda usar discos duros virtuales dinámicos con formato VHD para las máquinas virtuales que ejecutan cargas de trabajo de servidor en un entorno de producción.
 description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 324a60a0-1d15-4ef2-9f17-23cbd2eb42ce
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: bf5464208fc145a31571f01822bb5ba54efe89c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 195bc4c85d380c8f0b15b27d042b30491f635d5d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364593"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854178"
 ---
 # <a name="vhd-format-dynamic-virtual-hard-disks-are-not-recommended-for-virtual-machines-that-run-server-workloads-in-a-production-environment"></a>No se recomienda usar discos duros virtuales dinámicos con formato VHD para las máquinas virtuales que ejecutan cargas de trabajo de servidor en un entorno de producción.
 
@@ -27,7 +26,7 @@ Para obtener más información sobre los análisis y los procedimientos recomend
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
-|**Gravedad**|Advertencia|  
+|**Gravedad**|advertencia|  
 |**Categoría**|Configuración|  
   
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.

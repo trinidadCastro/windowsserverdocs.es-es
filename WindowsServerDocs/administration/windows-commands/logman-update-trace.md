@@ -1,24 +1,20 @@
 ---
 title: Logman actualizar seguimiento
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b7111f7f-4162-4d1a-8e53-d766db0ede1f britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c28256826e341ce1421984025546421258bb1db7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8d619dc0c267351e842286044cc037e63c75740b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374268"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840518"
 ---
 # <a name="logman-update-trace"></a>Logman actualizar seguimiento
 
@@ -30,7 +26,7 @@ Actualice las propiedades de un recopilador de datos de seguimiento de eventos e
 ```  
 logman update trace <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>Parámetros  
+### <a name="parameters"></a>Parámetros  
 
 |                         Parámetro                          |                                                                                                                                                                                                                                                                                                                                Descripción                                                                                                                                                                                                                                                                                                                                |
 |------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -40,7 +36,7 @@ logman update trace <[-n] <name>> [options]
 |                            -ETS                            |                                                                                                                                                                                                                                                                                               Enviar comandos a sesiones de seguimiento de eventos directamente sin guardar ni programar.                                                                                                                                                                                                                                                                                                |
 |                        [-n] <name>                         |                                                                                                                                                                                                                                                                                                                        Nombre del objeto de destino.                                                                                                                                                                                                                                                                                                                         |
 |      -f < bin&#124;bincirc&#124;CSV&#124;TSV&#124;SQL >      |                                                                                                                                                                                                                                                                                                             Especifica el formato del registro del recopilador de datos.                                                                                                                                                                                                                                                                                                              |
-|                  -[-] u < usuario [contraseña] >                   |                                                                                                                                                                                                                                                  Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña.                                                                                                                                                                                                                                                  |
+|                  -[-] u < usuario [contraseña] >                   |                                                                                                                                                                                                                                                  Especifica el usuario que se va a ejecutar como. Al escribir una \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña.                                                                                                                                                                                                                                                  |
 |         -m < [Start] [STOP] [[Start] [STOP] [...]] >         |                                                                                                                                                                                                                                                                                                 cambie a Inicio o detención manual en lugar de a una hora de inicio o de finalización programada.                                                                                                                                                                                                                                                                                                  |
 |                     -RF < [[HH:] mm:] SS >                     |                                                                                                                                                                                                                                                                                                         Ejecute el recopilador de datos durante el período de tiempo especificado.                                                                                                                                                                                                                                                                                                          |
 |             -b < M/d/YYYY h:mm: SS [AM&#124;PM] >              |                                                                                                                                                                                                                                                                                                               Comienza a recopilar datos en el momento especificado.                                                                                                                                                                                                                                                                                                                |
@@ -63,15 +59,15 @@ logman update trace <[-n] <name>> [options]
 |                           -[-] UL                           |                                                                                                                                                                                                                                                                                                                 Ejecutar la sesión de seguimiento de eventos en modo de usuario.                                                                                                                                                                                                                                                                                                                 |
 |                        -BS <value>                         |                                                                                                                                                                                                                                                                                                           Especifica el tamaño del búfer de la sesión de seguimiento de eventos en KB.                                                                                                                                                                                                                                                                                                            |
 |                       -NB <min max>                        |                                                                                                                                                                                                                                                                                                           Especifica el número de búferes de la sesión de seguimiento de eventos.                                                                                                                                                                                                                                                                                                            |
-| -Mode < globalsequence&#124;localsequence&#124;pagedmemory > | Especifica el modo de registrador de sesión de seguimiento de eventos.<br /><br />**Globalsequence** especifica que el seguimiento de eventos agrega un número de secuencia a cada evento que recibe con independencia de qué sesión de seguimiento ha recibido el evento.<br /><br />**Localsequence** especifica que el seguimiento de eventos agrega los números de secuencia de los eventos recibidos en una sesión de seguimiento específica. Cuando se usa la opción **localsequence** , los números de secuencia duplicados pueden existir en todas las sesiones, pero serán únicos dentro de cada sesión de seguimiento.<br /><br />**Pagedmemory** especifica que el seguimiento de eventos utiliza la memoria paginada en lugar del bloque de memoria no paginado predeterminado para sus asignaciones de búfer internas. |
+| -Mode < globalsequence&#124;localsequence&#124;pagedmemory > | Especifica el modo de registrador de sesión de seguimiento de eventos.<p>**Globalsequence** especifica que el seguimiento de eventos agrega un número de secuencia a cada evento que recibe con independencia de qué sesión de seguimiento ha recibido el evento.<p>**Localsequence** especifica que el seguimiento de eventos agrega los números de secuencia de los eventos recibidos en una sesión de seguimiento específica. Cuando se usa la opción **localsequence** , los números de secuencia duplicados pueden existir en todas las sesiones, pero serán únicos dentro de cada sesión de seguimiento.<p>**Pagedmemory** especifica que el seguimiento de eventos utiliza la memoria paginada en lugar del bloque de memoria no paginado predeterminado para sus asignaciones de búfer internas. |
 
 ## <a name="remarks"></a>Comentarios  
 Donde [-] aparece en la lista, un archivo extra niega la opción.  
-## <a name="BKMK_examples"></a>Example  
+## <a name="examples"></a><a name=BKMK_examples></a>Example  
 El comando siguiente actualiza el recopilador de datos existente perf_log, cambiando el tamaño máximo del registro a 10 MB, actualizando el formato del archivo de registro a CSV y anexando el control de versiones de archivo en el formato mmddHHMM.  
 ```  
 logman update perf_log -max 10 -f csv -v mmddhhmm  
 ```  
-#### <a name="additional-references"></a>Referencias adicionales  
+## <a name="additional-references"></a>Referencias adicionales  
 [logman](logman.md)  
 [Logman crear seguimiento](logman-create-trace.md)  

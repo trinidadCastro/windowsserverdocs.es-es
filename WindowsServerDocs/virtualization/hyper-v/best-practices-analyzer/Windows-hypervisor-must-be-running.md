@@ -2,20 +2,19 @@
 title: El hipervisor de Windows debe estar en ejecución
 description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 501a9beb-c464-46c0-88c5-e3e7e3e70101
-author: KBDAzure
+author: kbdazure
 ms.date: 10/03/2016
-ms.openlocfilehash: 51f863425bd1107894fb5e4d44ed7c742a806394
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b24700e0ed617177af888013e36f971870d0ac59
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393049"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860958"
 ---
 # <a name="windows-hypervisor-must-be-running"></a>El hipervisor de Windows debe estar en ejecución
 
@@ -25,7 +24,7 @@ ms.locfileid: "71393049"
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
 |**Producto o característica**|Hyper-V|  
-|**Gravedad**|Advertencia|  
+|**Gravedad**|advertencia|  
 |**Categoría**|Requisitos previos|  
   
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.  
@@ -76,7 +75,7 @@ A continuación, compruebe el registro de eventos del hipervisor de Hyper-V. Si 
   
 #### <a name="to-check-the-event-logs"></a>Para comprobar los registros de eventos  
   
-1.  Abre el Visor de eventos. Haga clic en **Inicio**, en **herramientas administrativas**y, a continuación, en **visor de eventos**.  
+1.  Abra el Visor de eventos. Haga clic en **Inicio**, en **herramientas administrativas**y, a continuación, en **visor de eventos**.  
   
 2.  Abra el registro de eventos del hipervisor de Hyper-V. En el panel de navegación, expanda **registros de aplicaciones y servicios** >> **Microsoft** >> **Windows** >> **Hyper-V-hipervisor**y, a continuación, haga clic en **operativo**.  
   

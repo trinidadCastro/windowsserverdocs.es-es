@@ -1,24 +1,20 @@
 ---
 title: find
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2ca66b22-3b7c-4166-8503-eb75fc53ab46
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 25cd99f3a6411c637a07b7231729cbf529a5d52e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 82b966db4117e9273ae6aed8d30baec76362de2f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377202"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844698"
 ---
 # <a name="find"></a>find
 
@@ -31,10 +27,10 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 ## <a name="syntax"></a>Sintaxis
 
 ```
-find [/v] [/c] [/n] [/i] [/off[line]] "<String>" [[<Drive>:][<Path>]<FileName>[...]]
+find [/v] [/c] [/n] [/i] [/off[line]] <String> [[<Drive>:][<Path>]<FileName>[...]]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |           Parámetro           |                                              Descripción                                               |
 |-------------------------------|--------------------------------------------------------------------------------------------------------|
@@ -43,17 +39,17 @@ find [/v] [/c] [/n] [/i] [/off[line]] "<String>" [[<Drive>:][<Path>]<FileName>[.
 |              /n               |                            Precede a cada línea con el número de línea del archivo.                             |
 |              /i               |                            Especifica que la búsqueda no distingue entre mayúsculas y minúsculas.                            |
 |         [/OFF [línea]]          |                        No omite los archivos que tienen el conjunto de atributos sin conexión.                        |
-|          "cadena de\<>"          | Obligatorio. Especifica el grupo de caracteres (entre comillas) que desea buscar. |
+|          \<cadena >          | Obligatorio. Especifica el grupo de caracteres (entre comillas) que desea buscar. |
 | [\<> de unidad:] [<Path>]<FileName> |        Especifica la ubicación y el nombre del archivo en el que se va a buscar la cadena especificada.        |
-|              /?               |                                  Muestra la ayuda en el símbolo del sistema.                                  |
+|              /?               |                                  Muestra la Ayuda en el símbolo del sistema.                                  |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Especificar una cadena
 
-    Si no usa **/i**, **Buscar** busca exactamente lo que especifica para la *cadena*. Por ejemplo, el comando **Buscar** trata los caracteres "a" y "a" de manera diferente. Sin embargo, si usa **/i**, **Buscar** no distingue entre mayúsculas y minúsculas y trata "A" y "a" como el mismo carácter.
+    Si no usa **/i**, **Buscar** busca exactamente lo que especifica para la *cadena*. Por ejemplo, el comando **Buscar** trata los caracteres A y a de manera diferente. Sin embargo, si usa **/i**, **Buscar** no distingue entre mayúsculas y minúsculas y trata a y a como el mismo carácter.
 
-    Si la cadena que desea buscar contiene comillas, debe utilizar comillas dobles para cada comilla de la cadena (por ejemplo, "esta" cadena "" contiene comillas ").
+    Si la cadena que desea buscar contiene comillas, debe utilizar comillas dobles para cada comilla incluida en la cadena (por ejemplo, esta cadena contiene comillas).
 -   Usar **Buscar** como filtro
 
     Si se omite un nombre de archivo, la **búsqueda** actúa como un filtro, se toma la entrada del origen de entrada estándar (normalmente, un teclado, una barra vertical (|) o un archivo Redirigido) y, a continuación, se muestran las líneas que contienen la *cadena*.
@@ -68,28 +64,28 @@ find [/v] [/c] [/n] [/i] [/off[line]] "<String>" [[<Drive>:][<Path>]<FileName>[.
     Si usa **/c** y **/v** en la misma línea de comandos, la **búsqueda** de muestra un recuento de las líneas que no contienen la cadena especificada. Si especifica **/c** y **/n** en la misma línea de comandos, la **búsqueda** omite **/n**.
 -   Usar **Buscar** con retornos de carro
 
-    El comando **Buscar** no reconoce los retornos de carro. Cuando se usa **Buscar** para buscar texto en un archivo que incluye retornos de carro, se debe limitar la cadena de búsqueda al texto que se puede encontrar entre los retornos de carro (es decir, una cadena que no es probable que sea interrumpida por un retorno de carro). Por ejemplo, **Buscar** no notifica una coincidencia para la cadena "archivo de impuestos" si se produce un retorno de carro entre las palabras "Tax" y "File".
+    El comando **Buscar** no reconoce los retornos de carro. Cuando se usa **Buscar** para buscar texto en un archivo que incluye retornos de carro, se debe limitar la cadena de búsqueda al texto que se puede encontrar entre los retornos de carro (es decir, una cadena que no es probable que sea interrumpida por un retorno de carro). Por ejemplo, **Buscar** no notifica una coincidencia para el archivo de impuestos de cadena si se produce un retorno de carro entre las palabras Tax y file.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
-Para mostrar todas las líneas de Pencil.ad que contengan la cadena "lápiz Sharper", escriba:
+Para mostrar todas las líneas de Pencil.ad que contienen el enfoque de lápiz de cadena, escriba:
 ```
-find "Pencil Sharpener" pencil.ad
+find Pencil Sharpener pencil.ad
 ```
-Para buscar una cadena que contenga texto entre comillas, debe incluir toda la cadena entre comillas. A continuación, debe usar dos comillas para cada comilla incluida dentro de la cadena. Para buscar "los científicos etiquetaron su papel" solo para la descripción ". No es un informe final ". en informe. doc, escriba:
+Para buscar una cadena que contenga texto entre comillas, debe incluir toda la cadena entre comillas. A continuación, debe usar dos comillas para cada comilla incluida dentro de la cadena. Para encontrar los científicos, etiquetó su papel únicamente para la discusión. No es un informe final. en informe. doc, escriba:
 ```
-find "The scientists labeled their paper ""for discussion only."" It is not a final report." report.doc
+find The scientists labeled their paper for discussion only. It is not a final report. report.doc
 ```
-Si desea buscar un conjunto de archivos, puede usar el comando **Buscar** del comando **para** . Para buscar en el directorio actual los archivos que tengan la extensión. bat y que contengan la cadena "PROMPT", escriba:
+Si desea buscar un conjunto de archivos, puede usar el comando **Buscar** del comando **para** . Para buscar en el directorio actual los archivos que tengan la extensión. bat y que contengan la solicitud de cadena, escriba:
 ```
-for %f in (*.bat) do find "PROMPT" %f 
+for %f in (*.bat) do find PROMPT %f 
 ```
-Para buscar en el disco duro y mostrar los nombres de archivo en la unidad C que contiene la cadena "CPU", use la barra vertical (|) para dirigir la salida del comando **dir** al comando **Buscar** de la manera siguiente:
+Para buscar en el disco duro y mostrar los nombres de archivo en la unidad C que contiene la cadena CPU, use la barra vertical (|) para dirigir la salida del comando **dir** al comando **Find** de la manera siguiente:
 ```
-dir c:\ /s /b | find "CPU" 
+dir c:\ /s /b | find CPU 
 ```
-Dado que las búsquedas de **búsqueda** distinguen mayúsculas de minúsculas y **dir** genera una salida en mayúsculas, debe escribir la cadena "CPU" en mayúsculas o usar la opción de línea de comandos **/i** con **Buscar**.
+Dado que las búsquedas de **búsqueda** distinguen mayúsculas de minúsculas y **dir** produce una salida en mayúsculas, debe escribir la cadena CPU en mayúsculas o usar la opción de línea de comandos **/i** con **Buscar**.
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

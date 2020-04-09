@@ -1,24 +1,20 @@
 ---
 title: carga de reg
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3b0b2b1b-f510-4108-9e9d-7057e924aa6e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db661e311e3fe8c393750716de5dab375e7817f4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 140c6b51b9f88081a8686ebebbc9400f241b5ef6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384700"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836389"
 ---
 # <a name="reg-load"></a>carga de reg
 
@@ -34,7 +30,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 reg load KeyName FileName
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -42,7 +38,7 @@ reg load KeyName FileName
 |\<nombre de archivo >|Especifica el nombre y la ruta de acceso del archivo que se va a cargar. Este archivo debe crearse de antemano mediante la operación de **guardado del registro** y la extensión. HIV.|
 |/?|Muestra la ayuda de la **carga del registro** en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 En la tabla siguiente se enumeran los valores devueltos para la operación de **carga del registro** .
 
@@ -51,13 +47,13 @@ En la tabla siguiente se enumeran los valores devueltos para la operación de **
 |0|Correcto|
 |1|Error|
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para cargar el archivo denominado TempHive. HIV en la clave HKLM\TempHive, escriba:
 ```
 REG LOAD HKLM\TempHive TempHive.hiv
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

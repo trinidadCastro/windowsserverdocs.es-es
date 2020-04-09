@@ -1,24 +1,20 @@
 ---
 title: Manage-BDE (bloqueo)
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b8858e61-3a7e-4d03-8c98-5c09853f35e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d773d7f02a509b3186d7b552993277369411f963
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cc95b2e4a1ad242ffb748782ffb319fd2017c510
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374041"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840058"
 ---
 # <a name="manage-bde-lock"></a>Manage-BDE: bloqueo
 
@@ -32,7 +28,7 @@ Bloquea una unidad protegida con BitLocker para impedir el acceso a ella a menos
 manage-bde -lock [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -42,14 +38,14 @@ manage-bde -lock [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 |-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
 |-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
 
-## <a name="BKMK_Examples"></a>Example
+## <a name="examples"></a><a name=BKMK_Examples></a>Example
 
 En el ejemplo siguiente se muestra el uso del comando **-Lock** para bloquear la unidad de datos D.
 ```
 manage-bde –lock D:
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Manage-BDE](manage-bde.md)

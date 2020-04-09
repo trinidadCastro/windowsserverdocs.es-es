@@ -1,24 +1,20 @@
 ---
 title: gpfixup
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2b145410-fc75-4526-932d-f16b7ee3aaef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e32427369f1664476c81a81353ae8869ec0c2ff3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e0f1ce2e050a3d741f9b2f7a5cce9d2988716106
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375671"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842558"
 ---
 # <a name="gpfixup"></a>gpfixup
 
@@ -36,7 +32,7 @@ Gpfixup [/v]
 [/user:<USERNAME> [/pwd:{<PASSWORD>|*}]] [/?]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |       Parámetro       |                                                                                                                                                                                                                               Descripción                                                                                                                                                                                                                               |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -51,12 +47,12 @@ Gpfixup [/v]
 |   /PWD: {\<contraseña >   |                                                                                                                                                                                                                                   \*}                                                                                                                                                                                                                                   |
 |          /?           |                                                                                                                                                                                                                  Muestra la Ayuda en el símbolo del sistema.                                                                                                                                                                                                                   |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   El comando **gpfixup** está disponible en windows Server 2008 R2 y windows Server 2008, excepto en las instalaciones Server Core.
 -   Aunque el Consola de administración de directivas de grupo (GPMC) se distribuye con Windows Server 2008 R2 y Windows Server 2008, debe instalar la administración de directiva de grupo como una característica a través de Administrador del servidor.
 
-## <a name="BKMK_Examples"></a>Example
+## <a name="examples"></a><a name=BKMK_Examples></a>Example
 
 En este ejemplo se da por supuesto que ya ha realizado una operación de cambio de nombre de dominio en la que ha cambiado el nombre DNS de **MyOldDnsName** a **MyNewDnsName**y el nombre de NetBIOS de **MyOldNetBIOSName** a **MyNewNetBIOSName**. En este ejemplo, use el comando **gpfixup** para conectarse al controlador de dominio denominado **MyDcDnsName** y reparar los GPO y los vínculos de directiva de grupo actualizando el nombre de dominio anterior incrustado en los GPO y vínculos. El estado y la salida de error se guardan en un archivo denominado **gpfixup. log**.
 ```
@@ -67,8 +63,8 @@ Este ejemplo es el mismo que el anterior, salvo que supone que el nombre NetBIOS
 gpfixup /olddns: MyOldDnsName /newdns:MyNewDnsName /dc:MyDcDnsName 2>&1 >gpfixup.log
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Administrar Dominio de Active Directory cambiar el nombre](https://go.microsoft.com/fwlink/?LinkId=198385)
 -   [TechCenter de directiva de grupo](https://go.microsoft.com/fwlink/?LinkID=145531)
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

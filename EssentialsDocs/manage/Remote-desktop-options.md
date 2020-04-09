@@ -1,22 +1,18 @@
 ---
 title: Opciones de escritorio remoto
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 51076946-ea9b-4ac7-9a6e-d6023816b97d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bbf7f258b2904732ab2e605d1eb3ea6bd2d306be
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5f2c0da644aaf08cc921f778d9d1203c94e3f94e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818316"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852658"
 ---
 # <a name="remote-desktop-options"></a>Opciones de escritorio remoto
  
@@ -27,12 +23,12 @@ ms.locfileid: "59818316"
 ||||||  
 |-|-|-|-|-|  
 ||Módem lento (28,8 Kbps)|Módem rápido (56 Kbps) (valor predeterminado)|Banda ancha (128 Kbps - 1,5 Mbps)|Red de área local (1,5 Mbps o superior)|  
-|Fondo de pantalla|No|No|No|Sí|  
+|Fondo del escritorio|No|No|No|Sí|  
 |Suavizado de fuentes|No|No|No|Sí|  
 |Composición del escritorio|No|No|Sí|Sí|  
 |Mostrar contenido de ventana al arrastrar|No|No|Sí|Sí|  
 |Animaciones de menús y ventanas|No|No|Sí|Sí|  
-|Temas|No|Sí|Sí|Sí|  
+|Themes|No|Sí|Sí|Sí|  
 |Almacenar mapas de bits en caché|Sí|Sí|Sí|Sí|  
   
 ## <a name="screen-size"></a>Tamaño de la pantalla  
@@ -65,6 +61,6 @@ ms.locfileid: "59818316"
   
 ## <a name="see-also"></a>Vea también  
   
--   [Administrar acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Administrar el acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
 -   [Usar acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)

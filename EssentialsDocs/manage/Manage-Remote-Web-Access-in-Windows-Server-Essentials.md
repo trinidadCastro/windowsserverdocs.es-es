@@ -1,29 +1,25 @@
 ---
 title: Administrar Acceso web remoto en Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6f4277637ed0f721b0cae12c15086a59ac6190fc
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 3457eb28c05bd79f0de3a982da77ca01ffe9b52d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311163"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852768"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>Administrar Acceso web remoto en Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
  
- Acceso Web remoto en Windows Server Essentials, o en Windows Server 2012 R2 con el rol de experiencia con Windows Server Essentials instalado, proporciona una experiencia de explorador optimizada y táctil para el acceso a aplicaciones y datos desde prácticamente cualquier lugar. que tiene una conexión a Internet y con casi cualquier dispositivo. Para usar la funcionalidad Acceso web remoto, primero debe activarla usando el asistente para la configuración de Acceso desde cualquier lugar y, después, configurar el enrutador y el nombre de dominio.  
+ Acceso Web remoto en Windows Server Essentials, o en Windows Server 2012 R2 con el rol de experiencia con Windows Server Essentials instalado, proporciona una experiencia de explorador optimizada y táctil para el acceso a aplicaciones y datos desde prácticamente cualquier lugar donde tenga una conexión a Internet y con casi cualquier dispositivo. Para usar la funcionalidad Acceso web remoto, primero debe activarla usando el asistente para la configuración de Acceso desde cualquier lugar y, después, configurar el enrutador y el nombre de dominio.  
   
 ## <a name="in-this-topic"></a>En este tema  
   

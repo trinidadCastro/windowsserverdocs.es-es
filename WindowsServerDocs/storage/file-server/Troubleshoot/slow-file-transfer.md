@@ -3,16 +3,15 @@ title: Velocidad de transferencia lenta de archivos SMB
 description: Presenta cómo solucionar problemas de rendimiento de transferencia de archivos SMB.
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 0e6c049404f464eba872075a8ef5060b303920c8
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: af05daa164b5b2c5eca73eff51d97d4c25ba1ca3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654566"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815398"
 ---
 # <a name="slow-smb-files-transfer-speed"></a>Velocidad de transferencia lenta de archivos SMB
 
@@ -38,7 +37,7 @@ Si observa transferencias lentas de archivos grandes, tenga en cuenta los siguie
 
 - En el caso de SMBv3 y versiones posteriores, asegúrese de que SMB multicanal está habilitado y en funcionamiento.
 
-- En el cliente SMB, habilite la MTU grande en SMB y deshabilite la limitación de ancho de banda. Para ello, ejecuta el comando siguiente:  
+- En el cliente SMB, habilite la MTU grande en SMB y deshabilite la limitación de ancho de banda. Para ello, ejecute el comando siguiente:  
   
   ```PowerShell
   Set-SmbClientConfiguration -EnableBandwidthThrottling 0 -EnableLargeMtu 1
@@ -66,7 +65,7 @@ A continuación se muestran los detalles técnicos sobre este problema:
 
 Este problema se produce normalmente en una conexión WAN. Esto es habitual y normalmente se debe a la manera en que las aplicaciones de Office (Microsoft Excel, en particular) tienen acceso y leen los datos.
 
-Se recomienda asegurarse de que los archivos binarios de la oficina y el SMB estén actualizados y, a continuación, realizar pruebas con la concesión deshabilitada en el servidor SMB. Para ello, sigue estos pasos:
+Se recomienda asegurarse de que los archivos binarios de la oficina y el SMB estén actualizados y, a continuación, realizar pruebas con la concesión deshabilitada en el servidor SMB. Para ello, realice los pasos siguientes:
    
 1. Ejecute el siguiente comando de PowerShell en Windows 8 y Windows Server 2012 o versiones posteriores de Windows:
       

@@ -1,7 +1,6 @@
 ---
 title: Comprensión e implementación de memoria persistente
 description: Información detallada sobre qué es la memoria persistente y cómo configurarla con espacios de almacenamiento directo en Windows Server 2019.
-keywords: Espacios de almacenamiento directo, memoria persistente, pmem, almacenamiento, S2D
 ms.prod: windows-server
 ms.author: adagashe
 ms.technology: storage-spaces
@@ -9,12 +8,12 @@ ms.topic: article
 author: adagashe
 ms.date: 1/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a9070d2e2ab73c7882f4b2ef585ccb01986695bb
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 43268986f0ef42aabc218062ac19f1d98f27be6d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822318"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861038"
 ---
 # <a name="understand-and-deploy-persistent-memory"></a>Comprensión e implementación de memoria persistente
 
@@ -22,7 +21,7 @@ ms.locfileid: "76822318"
 
 La memoria persistente (o PMem) es un nuevo tipo de tecnología de memoria que proporciona una combinación única de capacidad y persistencia asequibles. En este artículo se proporciona información general sobre PMem y los pasos para implementarlo en Windows Server 2019 mediante Espacios de almacenamiento directo.
 
-## <a name="background"></a>Segundo plano
+## <a name="background"></a>Fondo
 
 PMem es un tipo de RAM no volátil (NVDIMM) que conserva su contenido a través de ciclos de energía. El contenido de la memoria permanece incluso cuando se interrumpe la alimentación del sistema en caso de que se produzca una pérdida de energía inesperada, el cierre Iniciado por el usuario, el bloqueo del sistema, etc. Esta característica única significa que también puede usar PMem como almacenamiento. Este es el motivo por el que puede oír que los usuarios hacen referencia a PMem como "memoria de clase de almacenamiento".
 
@@ -38,11 +37,11 @@ Cualquier sistema de almacenamiento que proporcione tolerancia a errores realiza
 
 Si ve el vídeo en estrecha, observará que lo que es incluso más Jaw es la latencia. Incluso a más de 13,7 millones de IOPS, el sistema de archivos de Windows está informando de una latencia que es constantemente inferior a 40 μs. (Es decir, el símbolo de microsegundos, una-millonésimas de segundo). Esta velocidad es un orden de magnitud más rápido que la típica que los proveedores All-Flash anuncian hoy en día.
 
-Juntos, Espacios de almacenamiento directo en Windows Server 2019 e Intel® Optane™ memoria persistente de DC ofrecen un rendimiento innovador. Este benchmark de HCl líder del sector de más de 13.7 M e/s por segundo, acompañado por una latencia predecible y extremadamente baja, es más que el doble de la prueba comparativa anterior líder del sector de 6,7 M IOPS. Lo que es más, esta vez necesitamos solo 12 nodos de servidor&mdash;25 por ciento menos de hace dos años.
+Juntos, Espacios de almacenamiento directo en Windows Server 2019 e Intel&reg; Optane&trade; memoria persistente de DC ofrecen un rendimiento innovador. Este benchmark de HCl líder del sector de más de 13.7 M e/s por segundo, acompañado por una latencia predecible y extremadamente baja, es más que el doble de la prueba comparativa anterior líder del sector de 6,7 M IOPS. Lo que es más, esta vez necesitamos solo 12 nodos de servidor&mdash;25 por ciento menos de hace dos años.
 
 ![Ventajas de IOPS](media/deploy-pmem/iops-gains.png)
 
-El hardware de prueba era un clúster de 12 servidores que se configuró para usar volúmenes de creación de reflejo triple y de ReFS delimitados. **12** x Intel® S2600WFT, **384 GIB** Memory, 2 x 28-Core "CASCADELAKE", **1,5 TB** Intel® Optane™ dc persistente Memory as cache, **32 TB** NVME (4 x 8 TB Intel® DC P4510) como capacidad, **2** x Mellanox ConnectX-4 25 Gbps.
+El hardware de prueba era un clúster de 12 servidores que se configuró para usar volúmenes de creación de reflejo triple y de ReFS delimitados. **12** x Intel&reg; S2600WFT, **384 GIB** Memory, 2 x 28-Core "CASCADELAKE", **1,5 TB** Intel&reg; Optane&trade; dc persistente Memory as cache, **32 TB** NVME (4 x 8 TB Intel&reg; DC P4510) como capacidad, **2** x Mellanox ConnectX-4 25 Gbps.
 
 En la tabla siguiente se muestran los números de rendimiento completos.  
 
@@ -56,17 +55,17 @@ En la tabla siguiente se muestran los números de rendimiento completos.
 
 En la tabla siguiente se muestra el hardware de memoria persistente compatible para Windows Server 2019 y Windows Server 2016.  
 
-| Tecnología de memoria persistente                                      | Windows Server 2016 | Windows Server 2019 |
+| Tecnología de memoria persistente                                      | Windows Server 2016 | Windows Server 2019 |
 |-------------------------------------------------------------------|--------------------------|--------------------------|
 | **NVDIMM-N** en modo persistente                                  | Se admite                | Se admite                |
-| **Memoria persistente de DC de™ de Intel Optane** en modo de aplicación directa             | No admitido            | Se admite                |
-| **Memoria persistente de DC de™ de Intel Optane** en modo de memoria | Se admite            | Se admite                |
+| **Memoria persistente de DC de&trade; de Intel Optane** en modo de aplicación directa             | No se admite            | Se admite                |
+| **Memoria persistente de DC de&trade; de Intel Optane** en modo de memoria | Se admite            | Se admite                |
 
 > [!NOTE]  
 > Intel Optane admite los modos de *memoria* (volátil) y *aplicación directa* (persistente).
    
 > [!NOTE]  
-> Cuando se reinicia un sistema que tiene varios módulos de Intel® Optane™ PMem en modo de aplicación directa que se dividen en varios espacios de nombres, es posible que se pierda el acceso a algunos o a todos los discos de almacenamiento lógicos relacionados. Este problema se produce en las versiones de Windows Server 2019 anteriores a la versión 1903.
+> Cuando se reinicia un sistema que tiene varios módulos de Intel&reg; Optane&trade; PMem en modo de aplicación directa que se dividen en varios espacios de nombres, es posible que se pierda el acceso a algunos o a todos los discos de almacenamiento lógicos relacionados. Este problema se produce en las versiones de Windows Server 2019 anteriores a la versión 1903.
 >   
 > Esta pérdida de acceso se produce porque un módulo PMem no está entrenado o produce un error cuando se inicia el sistema. En tal caso, se produce un error en todos los espacios de nombres de almacenamiento de cualquier módulo de PMem en el sistema, incluidos los espacios de nombres que no se asignan físicamente al módulo con errores.
 >   
@@ -159,7 +158,7 @@ Espacios de almacenamiento directo en Windows Server 2019 admite el uso de memor
 
 ### <a name="understanding-dax"></a>Descripción de DAX
 
-Hay dos métodos para tener acceso a la memoria persistente. Estos son:
+Hay dos métodos para tener acceso a la memoria persistente. Son:
 
 1. **Acceso directo (Dax)** , que funciona como la memoria para obtener la latencia más baja. La aplicación modifica directamente la memoria persistente, omitiendo la pila. Tenga en cuenta que solo puede usar DAX en combinación con NTFS.
 1. **Bloquear el acceso**, que funciona como el almacenamiento para la compatibilidad de aplicaciones. En este configuración, los datos fluyen a través de la pila. Puede usar esta configuración en combinación con NTFS y ReFS.
@@ -310,7 +309,7 @@ Initializing the physical persistent memory device. This may take a few moments.
 > [!IMPORTANT]  
 > **Initialize-PmemPhysicalDevice provoca la** pérdida de datos en la memoria persistente. Úselo como último recurso para corregir problemas persistentes relacionados con la memoria.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 - [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
 - [Administración de estado de memoria de clase de almacenamiento (NVDIMM-N) en Windows](storage-class-memory-health.md)

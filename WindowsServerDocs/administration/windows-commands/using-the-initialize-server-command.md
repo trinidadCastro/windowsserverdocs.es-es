@@ -1,26 +1,22 @@
 ---
-title: Usar el comando Initialize-Server
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+title: Inicializar-servidor
+description: El tema comandos de Windows para Initialize-Server, que configura un servidor de servicios de implementación de Windows para su uso inicial después de haber instalado el rol de servidor.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 68a26ad9-5eb2-4490-b782-b7cd46b8000d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b9e95972838fc70ee1e617d1e299c9e35db5b979
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2c80af07827c889a3dd1c5d3050cd2ca3b4c8f1e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392093"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830798"
 ---
-# <a name="using-the-initialize-server-command"></a>Usar el comando Initialize-Server
+# <a name="initialize-server"></a>Inicializar-servidor
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -29,25 +25,27 @@ Configura un servidor de servicios de implementación de Windows para su uso ini
 ```
 wdsutil /Initialize-Server [/Server:<Server name>] /remInst:<Full path> [/Authorize]
 ```
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
 |[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local.|
-|/remInst: "<Full path>"|Especifica la ruta de acceso completa y el nombre de la carpeta remoteInstall. Si la carpeta especificada no existe todavía, esta opción la creará cuando se ejecute el comando. Siempre debe especificar una ruta de acceso local, incluso en el caso de un equipo remoto. Por ejemplo: **D:\remoteInstall**.|
+|/remInst:<Full path>|Especifica la ruta de acceso completa y el nombre de la carpeta remoteInstall. Si la carpeta especificada no existe todavía, esta opción la creará cuando se ejecute el comando. Siempre debe especificar una ruta de acceso local, incluso en el caso de un equipo remoto. Por ejemplo: **D:\remoteInstall**.|
 |/Authorize|Autoriza el servidor en el protocolo de control de host dinámico (DHCP). Esta opción solo es necesaria si está habilitada la detección no autorizada de DHCP, lo que significa que el servidor PXE de servicios de implementación de Windows debe estar autorizado en DHCP para poder atender los equipos cliente. Tenga en cuenta que la detección no autorizada de DHCP está deshabilitada de forma predeterminada.|
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 Para inicializar el servidor y establecer la carpeta compartida remoteInstall en la unidad F:, escriba.
 ```
-wdsutil /Initialize-Server /remInst:"F:\remoteInstall"
+wdsutil /Initialize-Server /remInst:F:\remoteInstall
 ```
 Para inicializar el servidor y establecer la carpeta compartida remoteInstall en la unidad C:, escriba.
 ```
-wdsutil /verbose /Progress /Initialize-Server /Server:MyWDSServer /remInst:"C:\remoteInstall"
+wdsutil /verbose /Progress /Initialize-Server /Server:MyWDSServer /remInst:C:\remoteInstall
 ```
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[con el comando DISABLE-Server](using-the-disable-server-command.md)
+## <a name="additional-references"></a>Referencias adicionales
+- La [clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+[usar el comando DISABLE-Server](using-the-disable-server-command.md)
 [mediante el comando Enable-Server](using-the-enable-server-command.md)
 [mediante el comando Get-Server](using-the-get-server-command.md)
 [Subcommand: set-Server](subcommand-set-server.md)
-[Subcommand: subcomando Start-Server](subcommand-start-server.md)1[: Stop-Server](subcommand-stop-server.md)3[The UnInitialize-Server Option](the-uninitialize-server-option.md)
+[Subcommand: Start-Server](subcommand-start-server.md)
+[Subcommand: Stop-Server](subcommand-stop-server.md)
+[la opción UnInitialize-](the-uninitialize-server-option.md) Server

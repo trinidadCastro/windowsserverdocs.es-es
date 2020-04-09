@@ -1,24 +1,20 @@
 ---
 title: 'ksetup: addrealmflags'
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 80ca1e16-8871-494b-b9be-6bc9d63de860
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 543fcb8105d21020cc9a4ab5e5e8c1eca14a358b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 21ab18620f0ed25cfb0d50bb1ab1a5d92caa9c54
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375168"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841820"
 ---
 # <a name="ksetupaddrealmflags"></a>ksetup: addrealmflags
 
@@ -32,15 +28,15 @@ Agrega marcas de dominio Kerberos adicionales al dominio Kerberos especificado. 
 ksetup /addrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsupported] [rc4]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
 |Nombre de dominio Kerberos|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
-Las marcas de dominio Kerberos especifican características adicionales de un dominio Kerberos que no se basa en el sistema operativo Windows Server. Los equipos que ejecutan Windows Server 2003, Windows Server 2008 o Windows Server 2008 R2 pueden usar un servidor Kerberos para administrar la autenticación en lugar de usar un dominio que ejecute un sistema operativo Windows Server, y estos sistemas participarán en un Dominio Kerberos. Esta entrada establece las características del dominio Kerberos. En la tabla siguiente se describe cada uno de ellos.
+Las marcas de dominio Kerberos especifican características adicionales de un dominio Kerberos que no se basa en el sistema operativo Windows Server. Los equipos que ejecutan Windows Server 2003, Windows Server 2008 o Windows Server 2008 R2 pueden usar un servidor Kerberos para administrar la autenticación en lugar de usar un dominio que ejecute un sistema operativo Windows Server, y estos sistemas participarán en un dominio Kerberos. Esta entrada establece las características del dominio Kerberos. En la tabla siguiente se describe cada uno de ellos.
 
 |Valor|Marca de dominio Kerberos|Descripción|
 |-----|----------|-----------|
@@ -56,7 +52,7 @@ Las marcas de dominio Kerberos se almacenan en el registro en **HKEY_LOCAL_MACHI
 
 Puede ver qué marcas de dominio están disponibles y establecerse mediante la visualización de la salida de ksetup o ksetup/dumpstate.
 
-## <a name="BKMK_Examples"></a>Example
+## <a name="examples"></a><a name=BKMK_Examples></a>Example
 
 Enumere las marcas de dominio Kerberos disponibles para el dominio Kerberos CONTOSO:
 ```
@@ -72,9 +68,9 @@ ksetup /addrealmflags CONTOSO SendAddress
 ```
 Ejecute el comando **ksetup** para comprobar que la marca de dominio Kerberos está establecida visualizando la salida y buscando **marcas de dominio Kerberos =** .
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
 -   [Ksetup:listrealmflags](ksetup-listrealmflags.md)
 -   [Ksetup:setrealmflags](ksetup-setrealmflags.md)
 -   [Ksetup:delrealmflags](ksetup-delrealmflags.md)
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

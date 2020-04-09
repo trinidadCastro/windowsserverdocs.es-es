@@ -1,30 +1,26 @@
 ---
 title: bitsadmin setreplyfilename
-description: 'Temas de comandos de Windows para **bitsadmin setreplyfilename** : especifique la ruta de acceso del archivo que contiene la respuesta del servidor.'
-ms.custom: na
+description: Windows Commands topic for bitsadmin setreplyfilename, que especifica la ruta de acceso del archivo que contiene la respuesta del servidor.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c26d3342-0533-40b1-a13e-e09678232b25
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a490b5bc565549d096b6f43f42758f77570fcb26
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fd45174a7deac89cc943fb19d544e372c0198139
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380424"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80849188"
 ---
 # <a name="bitsadmin-setreplyfilename"></a>bitsadmin setreplyfilename
 
-Especifique la ruta de acceso del archivo que contiene la respuesta del servidor.
+Especifica la ruta de acceso del archivo que contiene la respuesta del servidor.
 
-**BITS 1,2 y versiones anteriores**: No compatible.
+**BITS 1,2 y versiones anteriores**: no se admiten.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,24 +28,24 @@ Especifique la ruta de acceso del archivo que contiene la respuesta del servidor
 bitsadmin /SetReplyFileName <Job> <Path>
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
 |Trabajo|El nombre para mostrar del trabajo o el GUID|
-|Path|Ubicación para colocar la respuesta del servidor|
+|Ruta de acceso|Ubicación para colocar la respuesta del servidor|
 
 ## <a name="remarks"></a>Comentarios
 
 Válido solo para trabajos de carga y respuesta.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 En el ejemplo siguiente se establece el nombre de archivo de respuesta pathfor el trabajo denominado *myDownloadJob*.
 ```
 C:\>bitsadmin /SetReplyFileName myDownloadJob c:\reply
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

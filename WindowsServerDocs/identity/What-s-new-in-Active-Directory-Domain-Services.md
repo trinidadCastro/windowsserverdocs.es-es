@@ -1,34 +1,29 @@
 ---
 ms.assetid: 9a06cd41-426f-4cb9-89cf-f5be730e0b79
-title: Novedades&#39;de Active Directory Domain Services
-ms.custom: na
+title: Novedades de Active Directory Domain Services
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: ''
-ms.suite: na
 ms.technology: active-directory-domain-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: Femila
 ms.author: billmath
 ms.date: 05/31/2017
-ms.openlocfilehash: 064ccf80faf77bbf128351a78ea437730983bf06
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5e58bb229aa8fe02fb20f870a0e922d1aa8c34b7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948194"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825648"
 ---
-# <a name="what39s-new-in-active-directory-domain-services"></a>Novedades&#39;de Active Directory Domain Services 
+# <a name="whats-new-in-active-directory-domain-services"></a>Novedades de Active Directory Domain Services 
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2016
 
-Las siguientes características nuevas de Active Directory Domain Services (AD DS) mejoran la capacidad para que las organizaciones protejan Active Directory entornos y les ayuden a migrar a implementaciones solo en la nube e implementaciones híbridas, donde algunas aplicaciones y servicios son hospedado en la nube y otros se hospedan de forma local. Estas mejoras incluyen:  
+Las siguientes características nuevas de Active Directory Domain Services (AD DS) mejoran la capacidad para que las organizaciones protejan Active Directory entornos y les ayuden a migrar a implementaciones solo en la nube e implementaciones híbridas, donde algunas aplicaciones y servicios se hospedan en la nube y otros se hospedan de forma local. Las mejoras incluyen:  
   
 -   [Privileged Access Management](https://technet.microsoft.com/library/mt150258.aspx   
 )  
   
-- [Ampliación de las capacidades de nube a dispositivos de Windows 10 a través de Azure Active Directory Join](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)   
+- [Extensión de las funcionalidades de nube a dispositivos de Windows 10 a través de Azure Active Directory join](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)   
   
 - [Conexión de dispositivos Unidos a un dominio a Azure AD para experiencias de Windows 10](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)   
   
@@ -37,7 +32,7 @@ Las siguientes características nuevas de Active Directory Domain Services (AD D
 -  [Desuso del servicio de replicación de archivos (FRS) y los niveles funcionales de Windows Server 2003](ad-ds/active-directory-functional-levels.md)  
   
   
-## <a name="BKMK_PAM"></a>Privileged Access Management  
+## <a name="privileged-access-management"></a><a name="BKMK_PAM"></a>Privileged Access Management  
 Privileged Access Management (PAM) ayuda a mitigar los problemas de seguridad de los entornos de Active Directory causados por técnicas de robo de credenciales, como Pass-The-hash, Spear phishing y otros tipos similares de ataques. Proporciona una nueva solución de acceso administrativo que se configura mediante Microsoft Identity Manager (MIM). PAM presenta:  
   
 -   Un nuevo bosque de Active Directory bastión, aprovisionado por MIM. El bosque bastión tiene una confianza de PAM especial con un bosque existente. Proporciona un nuevo entorno de Active Directory que se sabe que está libre de cualquier actividad malintencionada y el aislamiento de un bosque existente para el uso de cuentas con privilegios.  
@@ -55,13 +50,13 @@ Privileged Access Management (PAM) ayuda a mitigar los problemas de seguridad de
   
 -   Nuevas capacidades de supervisión para ayudarle a identificar fácilmente quién solicitó acceso, qué acceso se ha concedido y qué actividades se han realizado.  
   
-**Requirements**  
+**Satisfacer**  
   
 -   Microsoft Identity Manager  
   
 -   Active Directory nivel funcional del bosque de Windows Server 2012 R2 o posterior.  
   
-## <a name="BKMK_AzureADJoin"></a>Azure AD join  
+## <a name="azure-ad-join"></a><a name="BKMK_AzureADJoin"></a>Azure AD join  
 Azure Active Directory join mejora las experiencias de identidad de los clientes empresariales, empresariales y de EDU, con capacidades mejoradas para dispositivos corporativos y personales.  
   
 Ventajas:  
@@ -70,7 +65,7 @@ Ventajas:
   
     -   Itinerancia o personalización, configuración de accesibilidad y credenciales  
   
-    -   Copia de seguridad y restauración  
+    -   Copias de seguridad y restauración  
   
     -   Acceso a Microsoft Store con cuenta profesional  
   
@@ -92,14 +87,14 @@ Ventajas:
   
 Para obtener más información, consulte [Windows 10 para empresa: formas de usar dispositivos para trabajar](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1).  
   
-## <a name="BKMK_IDLocker"></a>Microsoft Passport  
+## <a name="microsoft-passport"></a><a name="BKMK_IDLocker"></a>Microsoft Passport  
 Microsoft Passport es un nuevo enfoque de autenticación basada en claves para organizaciones y consumidores que va más allá de las contraseñas. Esta forma de autenticación se basa en credenciales de infracción, robo y resistente a phish.  
   
 El usuario inicia sesión en el dispositivo con una información de inicio de sesión biométrica o PIN que está vinculada a un certificado o un par de claves asimétricas. Los proveedores de identidades (IDP) validan al usuario mediante la asignación de la clave pública del usuario a IDLocker y proporcionan información de inicio de sesión a través de una contraseña de una hora (OTP), Phonefactor o un mecanismo de notificación diferente.  
   
 Para obtener más información, vea [autenticar identidades sin contraseñas a través de Microsoft Passport](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport/)  
   
-## <a name="BKMK_FRSDeprecation"></a>Desuso del servicio de replicación de archivos (FRS) y los niveles funcionales de Windows Server 2003  
+## <a name="deprecation-of-file-replication-service-frs-and-windows-server-2003-functional-levels"></a><a name="BKMK_FRSDeprecation"></a>Desuso del servicio de replicación de archivos (FRS) y los niveles funcionales de Windows Server 2003  
 Aunque el servicio de replicación de archivos (FRS) y los niveles funcionales de Windows Server 2003 estaban en desuso en versiones anteriores de Windows Server, se repite que el sistema operativo Windows Server 2003 ya no se admite. Como resultado, todos los controladores de dominio que ejecuten Windows Server 2003 deben quitarse del dominio. El nivel funcional de dominio y bosque debe elevarse al menos a Windows Server 2008 para evitar que un controlador de dominio que ejecuta una versión anterior de Windows Server se agregue al entorno.  
   
 En los niveles funcionales de dominio de Windows Server 2008 y superior, se usa la Replicación del sistema de archivos distribuido (DFS) para replicar el contenido de la carpeta SYSVOL entre controladores de dominio. Si creas un nuevo dominio en el nivel funcional del dominio de Windows Server 2008 o superior, se usa automáticamente Replicación DFS para replicar SYSVOL. Si has creado el dominio en un nivel funcional inferior, tendrás que migrar del uso de FRS a la replicación DFS para SYSVOL. En el caso de los pasos de migración, puedes seguir los [procedimientos de TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) o puedes consultar el [conjunto de pasos simplificado en el blog de contenedor de archivos del equipo de almacenamiento](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).  

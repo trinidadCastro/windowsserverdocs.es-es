@@ -1,28 +1,22 @@
 ---
-title: eliminar partición
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+title: delete partition
+description: Windows Commands tema para Delete Partition, que elimina la partición que tiene el foco.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 65752312-cb16-46f6-870f-1b95c507b101
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 46a214f26e7c21f6ae08eb16d95fd898bd949b0f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a24c18cf98f2899fbb57f1f5f2d2776824d637b7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378656"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80846578"
 ---
-# <a name="delete-partition"></a>eliminar partición
-
-
+# <a name="delete-partition"></a>delete partition
 
 Elimina la partición que tiene el foco.
 
@@ -32,12 +26,12 @@ Elimina la partición que tiene el foco.
 delete partition [noerr] [override]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
-|estima|Permite que DiskPart elimine cualquier partición independientemente del tipo. Normalmente, DiskPart solo permite eliminar particiones de datos conocidas.|
-|Noerr|Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
+|override|Permite que DiskPart elimine una partición con independencia de su tipo. Normalmente, DiskPart solo permite eliminar particiones de datos conocidas.|
+|noerr|Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
 
 ## <a name="remarks"></a>Comentarios
 
@@ -46,14 +40,14 @@ delete partition [noerr] [override]
 > -   No se puede eliminar la partición del sistema, la partición de arranque o cualquier partición que contenga el archivo de paginación activo o la información de volcado de memoria.
 > -   Se debe seleccionar una partición para que esta operación se realice correctamente. Use el comando **seleccionar partición** para seleccionar una partición y desplazar el foco a ella.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para eliminar la partición que tiene el foco, escriba:
 ```
 delete partition
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 

@@ -1,24 +1,19 @@
 ---
 title: Inicio de sesión con reinicio automático de Winlogon (ARSO)
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: na
-ms.suite: na
 ms.technology: security-auditing
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 15cddcfa-8a8e-45e4-bb76-b8e1a14ceac0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: f085cf78a01148f97a450577131213ce977a432a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3dd66cc799ee23f77c9c60e23e49d3088a27b2fc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402330"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855108"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Inicio de sesión con reinicio automático de Winlogon (ARSO)
 
@@ -29,7 +24,7 @@ ms.locfileid: "71402330"
 > [!NOTE]  
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.  
   
-## <a name="overview"></a>Introducción  
+## <a name="overview"></a>Información general  
 Windows 8 presentó aplicaciones de pantalla de bloqueo.  Estas son las aplicaciones que ejecutan y muestran las notificaciones mientras la sesión del usuario está bloqueada (citas del calendario, correo electrónico y mensajes, etc.).  Los dispositivos que se reinician debido al proceso de Windows Update no pueden mostrar estas notificaciones de la pantalla de bloqueo tras el reinicio.  Algunos usuarios dependen de estas aplicaciones de pantalla de bloqueo.  
   
 ## <a name="whats-changed"></a>¿Qué es lo que ha cambiado?  
@@ -93,9 +88,9 @@ Si deshabilita esta configuración de Directiva, el dispositivo no almacena las 
   
 **Editor del registro**  
   
-|Nombre del valor|Tipo|data|  
+|Nombre del valor|Tipo|Datos|  
 |-------|----|----|  
-|DisableAutomaticRestartSignOn|DWORD|0<br /><br />**Ejemplo:**<br /><br />0 (habilitado)<br /><br />1 (deshabilitado)|  
+|DisableAutomaticRestartSignOn|DWORD|0<p>**Ejemplo:**<p>0 (habilitado)<p>1 (deshabilitado)|  
   
 **Ubicación del registro de directivas:** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System  
   
@@ -111,7 +106,7 @@ Valor: 0 o 1
   
 ![Captura de pantalla que muestra la configuración de la Directiva interfaz de usuario, donde puede especificar si un dispositivo iniciará sesión automáticamente en el último usuario interactivo después de que Windows Update reinicie el sistema.](../media/winlogon-automatic-restart-sign-on-arso/GTR_ADDS_SignInPolicy.gif)  
   
-## <a name="troubleshooting"></a>Solución de problemas  
+## <a name="troubleshooting"></a>Solucionar problemas  
 Cuando WinLogon se bloquea automáticamente, el seguimiento de estado de WinLogon se almacenará en el registro de eventos de WinLogon.  
   
 Se registra el estado de un intento de configuración de inicio de sesión automático  
@@ -147,6 +142,6 @@ Las horas de inicio de sesión y los controles parentales pueden prohibir la cre
   
 |Término|Definición|  
 |----|-------|  
-|Autologon|El inicio de sesión automático es una característica que está presente en Windows para varias versiones.  Se trata de una característica documentada de Windows que incluso tiene herramientas como el inicio de sesión automático para Windows v 3.01  *[http:/technet. Microsoft. com/Sysinternals/bb963905. aspx.](https://technet.microsoft.com/sysinternals/bb963905.aspx)*<br /><br />Permite a un solo usuario del dispositivo iniciar sesión automáticamente sin escribir credenciales. Las credenciales se configuran y almacenan en el registro como secreto de LSA cifrado.|  
+|Autologon|El inicio de sesión automático es una característica que está presente en Windows para varias versiones.  Se trata de una característica documentada de Windows que incluso tiene herramientas como el inicio de sesión automático para Windows v 3.01  *[http:/technet. Microsoft. com/Sysinternals/bb963905. aspx.](https://technet.microsoft.com/sysinternals/bb963905.aspx)*<p>Permite a un solo usuario del dispositivo iniciar sesión automáticamente sin escribir credenciales. Las credenciales se configuran y almacenan en el registro como secreto de LSA cifrado.|  
   
 

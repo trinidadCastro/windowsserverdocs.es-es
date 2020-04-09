@@ -4,15 +4,15 @@ description: Consideraciones de configuración de Hyper-V para el ajuste del ren
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f21115265ca7d2788fc0be078860048602d82c0f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e3c4fa32b97761ad05c88722ef090f96fff21cf3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370159"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851798"
 ---
 # <a name="hyper-v-configuration"></a>Configuración de Hyper-V
 
@@ -76,15 +76,15 @@ Hyper-V publica los contadores de rendimiento para ayudar a caracterizar el comp
 
 Siempre debe medir el uso de CPU del sistema físico mediante los contadores de rendimiento del procesador lógico de hipervisor de Hyper-V. Los contadores de uso de CPU que el administrador de tareas y el monitor de rendimiento notifican en las particiones raíz y secundarias no reflejan el uso de CPU físico real. Use los siguientes contadores de rendimiento para supervisar el rendimiento:
 
-- **Procesador lógico de hipervisor de Hyper-V (\*) \\% de tiempo de ejecución total** El tiempo total de inactividad de los procesadores lógicos
+- **Procesador lógico de hipervisor de Hyper-V (\*)\\% total de tiempo de ejecución** El tiempo total de inactividad de los procesadores lógicos
 
-- **Procesador lógico de hipervisor de Hyper-V (\*) \\% de tiempo de ejecución de invitado** Tiempo empleado en ejecutar ciclos dentro de un invitado o en el host
+- **Procesador lógico de hipervisor de Hyper-V (\*)\\% de tiempo de ejecución de invitado** Tiempo empleado en ejecutar ciclos dentro de un invitado o en el host
 
-- **Procesador lógico de hipervisor de Hyper-V (\*) \\% de tiempo de ejecución del hipervisor** Tiempo empleado en ejecutarse dentro del hipervisor
+- **Procesador lógico de hipervisor de Hyper-V (\*)\\% tiempo de ejecución de hipervisor** Tiempo empleado en ejecutarse dentro del hipervisor
 
-- El **procesador virtual raíz del hipervisor de Hyper\*-\\V ()\\** * mide el uso de CPU de la partición raíz
+- **Procesador virtual raíz del hipervisor de Hyper-V (\*)\\\\** * mide el uso de CPU de la partición raíz
 
-- **Procesador virtual del hipervisor de Hyper-\*V\\()\\** * mide el uso de CPU de las particiones de invitado
+- **Procesador virtual del hipervisor de Hyper-V (\*)\\\\** * mide el uso de CPU de las particiones invitadas
 
 
 ## <a name="see-also"></a>Vea también

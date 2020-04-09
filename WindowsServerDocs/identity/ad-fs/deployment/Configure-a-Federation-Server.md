@@ -1,7 +1,6 @@
 ---
 ms.assetid: 434fd617-373a-405e-bae4-da324ea83efc
 title: Guía de implementación de AD FS en Windows Server 2012 R2
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7a3cada555fbf22a853e3aaf002c6413b6555fb8
-ms.sourcegitcommit: 5197a87e659589bcc8d2a32069803ae736b02892
+ms.openlocfilehash: b4cf161d9dfcbeeb467ccb0a83cc260c5299057e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79376282"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855528"
 ---
 # <a name="configure-a-federation-server"></a>Configurar un servidor de federación
 
@@ -151,7 +150,7 @@ Puede crear una nueva granja de servidores de Federación mediante una cuenta gM
 4.  En la página **especificar granja** , proporcione el nombre del servidor de Federación principal en una granja que use WID o especifique el nombre de host de base de datos y el nombre de la instancia de base de datos de una granja de servidores de Federación existente que use SQL Server.  
   
     > [!WARNING]  
-    > En Windows Server® 2012 R2, existe una solución alternativa para especificar la instancia predeterminada de SQL Server. La solución alternativa es no utilizar la interfaz de usuario. En su lugar, siga los pasos de [para configurar el primer servidor de Federación en una nueva granja de servidores de Federación a través de Windows PowerShell](Configure-a-Federation-Server.md#BKMK_3).  
+    > En Windows Server&reg; 2012 R2, existe una solución alternativa para especificar la instancia predeterminada de SQL Server. La solución alternativa es no utilizar la interfaz de usuario. En su lugar, siga los pasos de [para configurar el primer servidor de Federación en una nueva granja de servidores de Federación a través de Windows PowerShell](Configure-a-Federation-Server.md#BKMK_3).  
   
     > [!IMPORTANT]  
     > Si desea crear una granja de AD FS y usar SQL Server para almacenar los datos de configuración, puede usar SQL Server 2008 y versiones posteriores, incluido SQL Server 2012.  
@@ -225,7 +224,7 @@ Después de instalar el Servicios de federación de Active Directory (AD FS) \(A
 
 -   [Agregar un servidor de Federación a una granja de servidores de Federación existente](Configure-a-Federation-Server.md#BKMK_2)
 
-## <a name="BKMK_1"></a>Configurar el primer servidor de Federación en una nueva granja de servidores de Federación
+## <a name="configure-the-first-federation-server-in-a-new-federation-server-farm"></a><a name="BKMK_1"></a>Configurar el primer servidor de Federación en una nueva granja de servidores de Federación
 
 ### <a name="to-configure-the-first-federation-server-in-a-new-federation-server-farm-by-using-the-active-directory-federation-service-configuration-wizard"></a>Para configurar el primer servidor de Federación en una nueva granja de servidores de Federación mediante el Asistente para configuración de Active Directory Servicio de federación
 
@@ -271,7 +270,7 @@ Después de instalar el Servicios de federación de Active Directory (AD FS) \(A
 
 9. En la página **resultados** , revise los resultados y compruebe si la configuración se completó correctamente y, a continuación, haga clic en **pasos siguientes necesarios para completar la implementación del servicio de Federación**. Para obtener más información, consulte [pasos siguientes para completar la instalación de AD FS](https://go.microsoft.com/fwlink/p/?LinkId=286704). Haz clic en **Cerrar** para salir del asistente.
 
-### <a name="BKMK_3"></a>Para configurar el primer servidor de Federación en una nueva granja de servidores de Federación a través de Windows PowerShell
+### <a name="to-configure-the-first-federation-server-in-a-new-federation-server-farm-via-windows-powershell"></a><a name="BKMK_3"></a>Para configurar el primer servidor de Federación en una nueva granja de servidores de Federación a través de Windows PowerShell
 Puede crear una nueva granja de servidores de Federación mediante una cuenta gMSA nueva o existente o una cuenta de usuario de dominio existente.
 
 -   **Si desea crear un nuevo servidor de Federación con una nueva cuenta de gMSA, haga lo siguiente:**
@@ -330,7 +329,7 @@ Puede crear una nueva granja de servidores de Federación mediante una cuenta gM
         > [!IMPORTANT]
         > Si desea crear una granja de AD FS y usar SQL Server para almacenar los datos de configuración, puede usar SQL Server 2008 y versiones más recientes, incluidas SQL Server 2012 y SQL Server 2014.
 
-## <a name="BKMK_2"></a>Agregar un servidor de Federación a una granja de servidores de Federación existente
+## <a name="add-a-federation-server-to-an-existing-federation-server-farm"></a><a name="BKMK_2"></a>Agregar un servidor de Federación a una granja de servidores de Federación existente
 
 > [!IMPORTANT]
 > Asegúrese de que ha completado el [paso 3: instalar el servicio de rol AD FS](../../ad-fs/deployment/Install-the-AD-FS-Role-Service.md), antes de iniciar cualquiera de los procedimientos de esta sección.
@@ -351,7 +350,7 @@ Puede crear una nueva granja de servidores de Federación mediante una cuenta gM
 4.  En la página **especificar granja** , proporcione el nombre del servidor de Federación principal en una granja que use WID o especifique el nombre de host de base de datos y el nombre de la instancia de base de datos de una granja de servidores de Federación existente que use SQL Server.
 
     > [!WARNING]
-    > En Windows Server® 2012 R2, existe una solución alternativa para especificar la instancia predeterminada de SQL Server. La solución alternativa es no utilizar la interfaz de usuario. En su lugar, siga los pasos de [para configurar el primer servidor de Federación en una nueva granja de servidores de Federación a través de Windows PowerShell](Configure-a-Federation-Server.md#BKMK_3).
+    > En Windows Server&reg; 2012 R2, existe una solución alternativa para especificar la instancia predeterminada de SQL Server. La solución alternativa es no utilizar la interfaz de usuario. En su lugar, siga los pasos de [para configurar el primer servidor de Federación en una nueva granja de servidores de Federación a través de Windows PowerShell](Configure-a-Federation-Server.md#BKMK_3).
 
     > [!IMPORTANT]
     > Si desea crear una granja de AD FS y usar SQL Server para almacenar los datos de configuración, puede usar SQL Server 2008 y versiones posteriores, incluido SQL Server 2012.

@@ -4,15 +4,15 @@ description: Consideraciones de rendimiento de e/s de almacenamiento en el ajust
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c5a7b667f24ee929a80010dc51508033f991ed5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 83b22c47cb23b02bb9984e03d78fcae93be1ca0a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370058"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851818"
 ---
 # <a name="hyper-v-storage-io-performance"></a>Rendimiento de e/s de almacenamiento de Hyper-V
 
@@ -20,7 +20,7 @@ En esta sección se describen las distintas opciones y consideraciones para opti
 
 ## <a name="virtual-controllers"></a>Controladores virtuales
 
-Hyper-V ofrece tres tipos de controladores virtuales: IDE, SCSI y adaptadores de bus host virtuales (HBA).
+Hyper-V ofrece tres tipos de controladores virtuales: IDE, SCSI y adaptadores de bus host (HBA) virtuales.
 
 ## <a name="ide"></a>IDE
 
@@ -160,7 +160,7 @@ El disco duro virtual apunta a un archivo VHD primario. Cualquier escritura en b
 
 ## <a name="block-size-considerations"></a>Consideraciones de tamaño de bloque
 
-El tamaño de bloque puede afectar significativamente al rendimiento. Es óptimo que coincida con el tamaño de bloque con los patrones de asignación de la carga de trabajo que está utilizando el disco. Por ejemplo, si una aplicación se asigna en fragmentos de 16 MB, sería óptimo tener un tamaño de bloque de disco duro virtual de 16 MB. Un tamaño de bloque &gt;de 2 MB solo es posible en discos duros virtuales con el formato VHDX. Tener un tamaño de bloque mayor que el patrón de asignación para una carga de trabajo de e/s aleatoria aumentará significativamente el uso de espacio en el host.
+El tamaño de bloque puede afectar significativamente al rendimiento. Es óptimo que coincida con el tamaño de bloque con los patrones de asignación de la carga de trabajo que está utilizando el disco. Por ejemplo, si una aplicación se asigna en fragmentos de 16 MB, sería óptimo tener un tamaño de bloque de disco duro virtual de 16 MB. Un tamaño de bloque de &gt;2 MB solo es posible en discos duros virtuales con el formato VHDX. Tener un tamaño de bloque mayor que el patrón de asignación para una carga de trabajo de e/s aleatoria aumentará significativamente el uso de espacio en el host.
 
 ## <a name="sector-size-implications"></a>Implicaciones de tamaño de sector
 
@@ -244,7 +244,7 @@ Las siguientes mejoras clave que se introdujeron por primera vez en la pila de a
 
 -   Un mecanismo de finalización de e/s más eficaz que implique la distribución de interrupciones entre los procesadores virtuales para evitar interrupciones de interprocesadores costosas.
 
-Introducida en Windows Server 2012, hay algunas entradas del registro, ubicadas en HKLM\\System\\CurrentControlSet\\enum\\VMBUS\\{Device ID\\} {ID. de instancia}\\StorChannel, que permite ajustar el número de canales. También alinean los procesadores virtuales que controlan las finalizaciones de e/s con las CPU virtuales asignadas por la aplicación para que sean los procesadores de e/s. La configuración del registro se configura por cada adaptador en la clave de hardware del dispositivo.
+Introducida en Windows Server 2012, hay algunas entradas del registro, ubicadas en HKLM\\System\\CurrentControlSet\\enum\\VMBUS\\{ID. de dispositivo}\\{ID. de instancia}\\StorChannel, que permiten ajustar el número de canales. También alinean los procesadores virtuales que controlan las finalizaciones de e/s con las CPU virtuales asignadas por la aplicación para que sean los procesadores de e/s. La configuración del registro se configura por cada adaptador en la clave de hardware del dispositivo.
 
 -   **ChannelCount (DWORD)** Número total de canales que se van a usar, con un máximo de 16. Su valor predeterminado es un límite superior, que es el número de procesadores virtuales/16.
 
@@ -262,7 +262,7 @@ Hyper-V en Windows Server 2012 y versiones posteriores admiten operaciones de de
 
 Los archivos de disco duro virtual existen como archivos en un volumen de almacenamiento y comparten espacio disponible con otros archivos. Dado que el tamaño de estos archivos tiende a ser grande, el espacio que consume puede aumentar rápidamente. La demanda de más almacenamiento físico afecta al presupuesto de hardware de ti. Es importante optimizar el uso del almacenamiento físico tanto como sea posible.
 
-Antes de Windows Server 2012, cuando las aplicaciones eliminan el contenido de un disco duro virtual, que ha abandonado el espacio de almacenamiento del contenido, la pila de almacenamiento de Windows del sistema operativo invitado y el host de Hyper-V tenían limitaciones que impedían esto información que se comunica con el disco duro virtual y el dispositivo de almacenamiento físico. Esto impidió que la pila de almacenamiento de Hyper-V optimizara el uso de espacio por los archivos de disco virtual basados en VHD. También impide que el dispositivo de almacenamiento subyacente recupere el espacio que anteriormente ocupaba los datos eliminados.
+Antes de Windows Server 2012, cuando las aplicaciones eliminan el contenido de un disco duro virtual, que ha abandonado el espacio de almacenamiento del contenido, la pila de almacenamiento de Windows del sistema operativo invitado y el host de Hyper-V tenían limitaciones que impidieron que esta información se comunicara al disco duro virtual y al dispositivo de almacenamiento físico. Esto impidió que la pila de almacenamiento de Hyper-V optimizara el uso de espacio por los archivos de disco virtual basados en VHD. También impide que el dispositivo de almacenamiento subyacente recupere el espacio que anteriormente ocupaba los datos eliminados.
 
 A partir de Windows Server 2012, Hyper-V admite la desasignación de notificaciones, lo que permite que los archivos VHDX sean más eficientes en la representación de los datos que contiene. Esto da como resultado un tamaño de archivo más pequeño y permite que el dispositivo de almacenamiento físico subyacente reclame el espacio no utilizado.
 

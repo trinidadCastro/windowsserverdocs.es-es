@@ -1,7 +1,6 @@
 ---
 ms.assetid: 0abe0976-4b49-45d6-a7b3-81d28bdb8210
 title: Recomendaciones de la directiva de auditoría
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 6cecf2edcb834a963c706fa4a63e7d15b13f7888
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c25df61246bf6a7c731e08e11cee54fd87d6ae4c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949626"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821348"
 ---
 # <a name="audit-policy-recommendations"></a>Recomendaciones de la directiva de auditoría
 
@@ -38,13 +37,13 @@ Esta sección contiene tablas que enumeran las recomendaciones de configuración
 
 -   Windows Server 2012  
 
--   R2 de Windows 2012 Server  
+-   Windows Server 2012 R2  
 
 -   Windows Server 2008  
 
--   10 de Windows
+-   Windows 10
 
--   Windows 8.1  
+-   Windows 8.1  
 
 -   Windows 7  
 
@@ -65,7 +64,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 
 **Directiva de auditoría**  
 
-|Categoría o subcategoría de directiva de auditoría|Predeterminado de Windows<br /><br />Error de operación correcta|Recomendación de línea de base<br /><br />Error de operación correcta|Recomendación más fuerte<br /><br />Error de operación correcta|  
+|Categoría o subcategoría de directiva de auditoría|Predeterminado de Windows<p>Error de operación correcta|Recomendación de línea de base<p>Error de operación correcta|Recomendación más fuerte<p>Error de operación correcta|  
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
 |**Inicio de sesión de cuenta**||||  
 |Auditar validación de credenciales|No no|Sí no|Sí sí|  
@@ -107,7 +106,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar recurso compartido de archivos||||  
 |Auditar sistema de archivos||||  
 |Auditar conexión de Plataforma de filtrado||||  
-|Auditar colocación de paquetes de Plataforma de filtrado||||  
+|Auditar colocación de paquetes de la Plataforma de filtrado||||  
 |Auditar manipulación de identificadores||||  
 |Auditar objeto de kernel||||  
 |Auditar otros eventos de acceso a objetos||||  
@@ -119,14 +118,14 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar cambio de directiva de auditoría|Sí no|Sí sí|Sí sí|  
 |Auditar cambio de directiva de autenticación|Sí no|Sí no|Sí sí|  
 |Auditar cambio de directiva de autorización||||  
-|Auditar cambio de directiva de Plataforma de filtrado||||  
+|Auditar cambio de directiva de la Plataforma de filtrado||||  
 |Auditar cambio de directiva del nivel de reglas de MPSSVC|||Sí  |  
 |Auditar otros eventos de cambio de directiva||||  
 |**Uso de privilegios**||||  
 |Auditar uso de privilegios no confidenciales||||  
 |Auditar otros eventos de uso de privilegios||||  
 |Auditar uso de privilegios confidenciales||||  
-|**System** (Sistema)||||  
+|**Integrado**||||  
 |Auditar controlador IPsec||Sí sí|Sí sí|  
 |Auditar otros eventos del sistema|Sí sí|||  
 |Auditar cambio de estado de seguridad|Sí no|Sí sí|Sí sí|  
@@ -143,7 +142,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 
 **Recomendaciones de configuración de auditoría de Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008**  
 
-|Categoría o subcategoría de directiva de auditoría|Predeterminado de Windows<br /><br />Error de operación correcta|Recomendación de línea de base<br /><br />Error de operación correcta|Recomendación más fuerte<br /><br />Error de operación correcta|  
+|Categoría o subcategoría de directiva de auditoría|Predeterminado de Windows<p>Error de operación correcta|Recomendación de línea de base<p>Error de operación correcta|Recomendación más fuerte<p>Error de operación correcta|  
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
 |**Inicio de sesión de cuenta**||||  
 |Auditar validación de credenciales|No no|Sí sí|Sí sí|  
@@ -185,7 +184,7 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar recurso compartido de archivos||||  
 |Auditar sistema de archivos||||  
 |Auditar conexión de Plataforma de filtrado||||  
-|Auditar colocación de paquetes de Plataforma de filtrado||||  
+|Auditar colocación de paquetes de la Plataforma de filtrado||||  
 |Auditar manipulación de identificadores||||  
 |Auditar objeto de kernel||||  
 |Auditar otros eventos de acceso a objetos||||  
@@ -197,14 +196,14 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar cambio de directiva de auditoría|Sí no|Sí sí|Sí sí|  
 |Auditar cambio de directiva de autenticación|Sí no|Sí no|Sí sí|  
 |Auditar cambio de directiva de autorización||||  
-|Auditar cambio de directiva de Plataforma de filtrado||||  
+|Auditar cambio de directiva de la Plataforma de filtrado||||  
 |Auditar cambio de directiva del nivel de reglas de MPSSVC|||Sí  |  
 |Auditar otros eventos de cambio de directiva||||  
 |**Uso de privilegios**||||  
 |Auditar uso de privilegios no confidenciales||||  
 |Auditar otros eventos de uso de privilegios||||  
 |Auditar uso de privilegios confidenciales||||  
-|**System** (Sistema)||||  
+|**Integrado**||||  
 |Auditar controlador IPsec||Sí sí|Sí sí|  
 |Auditar otros eventos del sistema|Sí sí|||  
 |Auditar cambio de estado de seguridad|Sí no|Sí sí|Sí sí|  

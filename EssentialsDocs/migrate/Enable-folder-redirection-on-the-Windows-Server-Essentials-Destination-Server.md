@@ -1,24 +1,20 @@
 ---
 title: Habilitación del redireccionamiento de carpetas en el servidor 1 de destino de Windows Server Essentials
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 H1: Habilitar la redirección de carpetas en el servidor de destino de Windows Server Essentials
 ms.assetid: f67d195e-36f6-495a-8361-6d5faa889441
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 301224256c196b9788e80d38112ed94a6073e054
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 2db5bafe1f14dddad253ffdb892f90a040246638
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319004"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852598"
 ---
 # <a name="enable-folder-redirection-on-the-windows-server-essentials-destination-server1"></a>Habilitación del redireccionamiento de carpetas en el servidor 1 de destino de Windows Server Essentials
 

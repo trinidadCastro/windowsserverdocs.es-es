@@ -5,15 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: dc083a15d0cd6a21b5512c1506bc9a461c4b886c
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 78f95f25d365b1b30a9e4e2d311128b8c7cb13b6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001770"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827418"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>Introducción al servidor de archivos de escalabilidad horizontal para datos de aplicación
 
@@ -65,7 +66,7 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 <thead>
 <tr class="header">
 <th>Ámbito tecnológico</th>
-<th>Función</th>
+<th>Característica</th>
 <th>Clúster de servidor de archivos de uso general</th>
 <th>Servidor de archivos de escalabilidad horizontal</th>
 </tr>
@@ -231,7 +232,7 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 Los Servidores de archivos de escalabilidad horizontal son ideales para el almacenamiento de aplicaciones de servidor. A continuación se muestran algunos ejemplos de aplicaciones de servidor que pueden almacenar sus datos en un recurso compartido de archivos de escalabilidad horizontal:
 
 - El servidor web de Internet Information Services (IIS) puede almacenar datos y la configuración de sitios web en un recurso compartido de archivos de escalabilidad horizontal. Para obtener más información, consulta [Configuración compartida](https://www.iis.net/learn/manage/managing-your-configuration-settings/shared-configuration_264).
-- Hyper-V puede almacenar la configuración y los discos virtuales activos en un recurso compartido de archivos de escalabilidad horizontal. Para obtener más información, consulte [Deploy Hyper-V over SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>).
+- Hyper-V puede almacenar la configuración y los discos virtuales activos en un recurso compartido de archivos de escalabilidad horizontal. Para obtener más información, consulte [Implementación de Hyper-V en SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>).
 - SQL Server puede almacenar archivos de bases de datos activos en un recurso compartido de archivos de escalabilidad horizontal. Para obtener más información, consulta [Instalar SQL Server con recurso compartido de archivos SMB como una opción de almacenamiento](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option).
 - El Virtual Machine Manager (VMM) puede almacenar un recurso compartido de biblioteca (que contiene plantillas de máquinas virtuales y archivos relacionados) en un recurso compartido de archivos de escalabilidad horizontal. Sin embargo, el propio servidor de biblioteca no puede ser un Servidor de archivos de escalabilidad horizontal; debe estar en un servidor independiente o en un clúster de conmutación por error que no utilice el rol de clúster de Servidor de archivos de escalabilidad horizontal.
 
@@ -249,7 +250,7 @@ En la tabla siguiente, se enumeran las características que forman parte de este
 <table>
 <thead>
 <tr class="header">
-<th>Función</th>
+<th>Característica</th>
 <th>Compatibilidad con este escenario</th>
 </tr>
 </thead>
@@ -267,11 +268,11 @@ Para obtener más información sobre las funciones nuevas y modificadas para SMB
 </tbody>
 </table>
 
-## <a name="more-information"></a>Información adicional
+## <a name="more-information"></a>Más información
 
 - [Guía de consideraciones de diseño de almacenamiento definidas por software](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt243829(v%3dws.11)>)
 - [Aumento de la disponibilidad del servidor, el almacenamiento y la red](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
 - [Implementación de Hyper-V en SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
-- [Implementación de servidores de archivos rápidos y eficientes para aplicaciones de servidor](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
+- [Implementación de servidores de archivos rápidos y eficaces para aplicaciones de servidores](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
 - Entrada de blog[Escalar horizontalmente o no escalar horizontalmente, esa es la cuestión](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx)
-- [Redirección de carpetas, Archivos sin conexión y perfiles de usuario móviles](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848267(v%3dws.11)>)
+- [Redireccionamiento de carpetas, Archivos sin conexión y Perfiles de usuario móvil](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848267(v%3dws.11)>)

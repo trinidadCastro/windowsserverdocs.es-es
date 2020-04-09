@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7f6b27e5-dc55-4ffc-8e76-6d57e65a870b
 title: Apéndice A Dynamic Access Control Glosario
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5508c3397039a1a70c07f1dc5f29e06bd02234a0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 328d8c74e57150c94d0a6032ff88a3600fe0baf3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357609"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859288"
 ---
 # <a name="appendix-a-dynamic-access-control-glossary"></a>Anexo A: glosario de control de acceso dinámico
 
@@ -33,7 +32,7 @@ A continuación se muestra la lista de términos y definiciones que se incluyen 
 |Notificaciones de dispositivo|Una demanda asociada al sistema.  Con las notificaciones de usuario, se incluye en el token de un usuario que intenta tener acceso a un recurso.|  
 |Lista de control de acceso discrecional (DACL)|Una lista de control de acceso que identifica a los usuarios de confianza a los que se permite o deniega el acceso a un recurso protegible. Se puede modificar a discreción del propietario del recurso.|  
 |Propiedad de recurso|Propiedades (como etiquetas) que describen un archivo y se asignan a archivos mediante la clasificación automática o la clasificación manual. Algunos ejemplos son: sensibilidad, proyecto y período de retención.|  
-|Administrador de recursos del servidor de archivos|Característica del sistema operativo Windows Server que ofrece administración de cuotas de carpetas, filtrado de archivos, informes de almacenamiento, clasificación de archivos y trabajos de administración de archivos en un servidor de archivos.|  
+|File Server Resource Manager|Característica del sistema operativo Windows Server que ofrece administración de cuotas de carpetas, filtrado de archivos, informes de almacenamiento, clasificación de archivos y trabajos de administración de archivos en un servidor de archivos.|  
 |Propiedades y etiquetas de la carpeta|Propiedades y etiquetas que describen una carpeta y que los administradores y propietarios de carpetas asignan manualmente. Estas propiedades asignan los valores de propiedad predeterminados a los archivos de estas carpetas, por ejemplo, la confidencialidad o el Departamento.|  
 |Directiva de grupo|Conjunto de reglas y directivas que controla el entorno de trabajo de usuarios y equipos en un entorno de Active Directory.|  
 |Clasificación casi en tiempo real|Clasificación automática que se realiza poco después de crear o modificar un archivo.|  
@@ -43,7 +42,7 @@ A continuación se muestra la lista de términos y definiciones que se incluyen 
 |Descriptor de seguridad|Una estructura de datos que contiene información de seguridad asociada a un recurso protegible, como listas de control de acceso.|  
 |Lenguaje de definición de descriptores de seguridad|Especificación que describe la información de un descriptor de seguridad como una cadena de texto.|  
 |Directiva de ensayo|Una directiva de acceso central que aún no está en vigor.|  
-|Lista de control de acceso de sistema (SACL)|Una lista de control de acceso que especifica los tipos de intentos de acceso por parte de los datos de confianza específicos para los que se deben generar registros de auditoría.|  
+|Lista de control de acceso del sistema (SACL)|Una lista de control de acceso que especifica los tipos de intentos de acceso por parte de los datos de confianza específicos para los que se deben generar registros de auditoría.|  
 |Notificaciones de usuario|Atributos de un usuario que se proporcionan en el token de seguridad del usuario. Algunos ejemplos son: Departamento, compañía, proyecto y autorización de seguridad.  La información del token de usuario de los sistemas anteriores a Windows Server 2012, como los grupos de seguridad de los que forma parte el usuario, también se puede considerar como notificaciones de usuario. Algunas notificaciones de usuario se proporcionan a través de Active Directory y otras se calculan dinámicamente, por ejemplo, si el usuario ha iniciado sesión con una tarjeta inteligente.|  
 |Token de usuario|Objeto de datos que identifica un usuario y las notificaciones de usuario y notificaciones de dispositivo asociadas a ese usuario. Se usa para autorizar el acceso del usuario a los recursos.|  
   

@@ -1,24 +1,20 @@
 ---
 title: pathping
 description: Aprenda a obtener información sobre la latencia y la pérdida de red mediante el comando pathping.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ec430125-b1dc-4aad-a7c9-b70f486d9e3c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 3232aaac979aa4e410d31db810abdd940d1c24bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3f853ef430207c08e78e0446ce67c6b5bec4c1db
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372402"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837700"
 ---
 # <a name="pathping"></a>pathping
 
@@ -32,7 +28,7 @@ Proporciona información sobre la latencia de red y la pérdida de red en saltos
 ```
 pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>] [/i <IPaddress>] [/4 <IPv4>] [/6 <IPv6>][<TargetName>]
 ```
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
 |/n|Impide que **pathping** intente resolver las direcciones IP de los enrutadores intermedios en sus nombres. Esto puede acelerar la presentación de los resultados de **pathping** .|
@@ -45,9 +41,9 @@ pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>]
 |/4 \<> IPv4|Especifica que PathPing solo usa IPv4.|
 |/6 \<IPv6 >|Especifica que PathPing solo usa IPv6.|
 |\<TargetName >|Especifica el destino, que se identifica mediante la dirección IP o el nombre de host.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 -   los parámetros de **pathping** distinguen mayúsculas de minúsculas.
 -   Para evitar la congestión de la red, los pings se deben enviar a un ritmo suficientemente lento.
 -   Para minimizar los efectos de las pérdidas de ráfagas, no envíe pings con demasiada frecuencia.
@@ -55,7 +51,7 @@ pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>]
 -   Cuando se usa el parámetro **/w** , se pueden enviar varios ping en paralelo. Por este motivo, la cantidad de tiempo especificada en el parámetro *timeout* no está limitada por la cantidad de tiempo especificada en el parámetro *period* para esperar entre pings.
 -   Este comando solo está disponible si el Protocolo Protocolo de Internet (TCP/IP) se instala como componente en las propiedades de un adaptador de red en las conexiones de red.
 
-## <a name="BKMK_Examples"></a>Example
+## <a name="examples"></a><a name=BKMK_Examples></a>Example
 
 En el ejemplo siguiente se muestra la salida del comando **pathping** :
 
@@ -92,4 +88,4 @@ En el informe de ejemplo anterior, las columnas **este nodo/vínculo**, **perdid
 Las tasas de pérdida mostradas para los vínculos, identificadas como barras verticales ( **|** ) en la columna **Dirección** , indican la congestión del vínculo que está causando la pérdida de paquetes que se reenvían en la ruta de acceso. Las tasas de pérdida mostradas para los enrutadores (identificados por sus direcciones IP) indican que estos enrutadores podrían estar sobrecargados.
 
 ## <a name="additional-references"></a>Referencias adicionales
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

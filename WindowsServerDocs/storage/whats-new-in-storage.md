@@ -3,17 +3,17 @@ ms.assetid: 0f2a7f7b-aca8-4e5d-ad67-4258e88bc52f
 title: Novedades de Espacios de almacenamiento en Windows Server
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: dongill
+manager: dongill
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: ffcff036a7e30018e523def055ce3aeb8d30c225
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 0de83c8642629b3a7ff21c9accadec5f9331178e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322337"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820858"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Novedades de almacenamiento en Windows Server
 
@@ -65,7 +65,7 @@ Para ser justo, el centro de administración de Windows es una descarga independ
 
 Servicio de migración de almacenamiento es una nueva tecnología que facilita migrar servidores a una versión más reciente de Windows Server. Proporciona una herramienta gráfica que inventaría los datos en los servidores, transfiere los datos y la configuración a servidores más recientes y entonces, opcionalmente, pasa las identidades de los servidores antiguos a los nuevos servidores, para que las aplicaciones y los usuarios no tengan que cambiar nada. Para obtener más información, consulta [Servicio de migración de almacenamiento](storage-migration-service/overview.md).
 
-### <a id="storage-spaces-direct"></a>Espacios de almacenamiento directo (solo Windows Server 2019)
+### <a name="storage-spaces-direct-windows-server-2019-only"></a><a id="storage-spaces-direct"></a>Espacios de almacenamiento directo (solo Windows Server 2019)
 
 Hay una serie de mejoras en Espacios de almacenamiento directo en Windows Server 2019 (Espacios de almacenamiento directo no se incluye en Windows Server, canal semianual):
 
@@ -109,7 +109,7 @@ Hay una serie de mejoras en Espacios de almacenamiento directo en Windows Server
 
     Esto permite que los administradores delimiten manualmente la asignación de volúmenes en Espacios de almacenamiento directo. Esto puede aumentar significativamente la tolerancia a errores en determinadas condiciones, pero impone algunas consideraciones y complejidad de administración agregadas. Para obtener más información, consulte [delimitar la asignación de volúmenes](storage-spaces/delimit-volume-allocation.md).
 
-### <a name="storage-replica2019"></a>Réplica de almacenamiento
+### <a name="storage-replica"></a><a name="storage-replica2019"></a>Réplica de almacenamiento
 
 Hay una serie de mejoras en la [réplica de almacenamiento](storage-replica/storage-replica-overview.md) en esta versión:
 
@@ -128,7 +128,7 @@ Para obtener el mayor rendimiento, todos los miembros del grupo de replicación 
 
 #### <a name="test-failover"></a>Conmutaciones por error de prueba
 
-Ahora puede montar temporalmente una instantánea del almacenamiento replicado en un servidor de destino con fines de prueba o de copia de seguridad. Para más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq).
+Ahora puede montar temporalmente una instantánea del almacenamiento replicado en un servidor de destino con fines de prueba o de copia de seguridad. Para obtener más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq).
 
 #### <a name="windows-admin-center-support"></a>Soporte técnico de Windows Admin Center
 
@@ -143,9 +143,9 @@ Réplica de almacenamiento también contiene las siguientes mejoras:
 
 ### <a name="smb"></a>SMB
 
-- **SMB1 y eliminación**de la autenticación de invitado: Windows Server ya no instala el cliente y el servidor de smb1 de forma predeterminada. Además, la capacidad de autenticar como invitado en SMB2 y versiones posteriores está desactivada de manera predeterminada. Para más información, revisa [SMBv1 no está instalado de manera predeterminada en Windows 10, versión 1709 y Windows Server, versión 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
+- **SMB1 y eliminación**de la autenticación de invitado: Windows Server ya no instala el cliente y el servidor de smb1 de forma predeterminada. Además, la capacidad de autenticar como invitado en SMB2 y versiones posteriores está desactivada de forma predeterminada. Para obtener más información, revisa [SMBv1 no está instalado de forma predeterminada en Windows 10, versión 1709 y Windows Server, versión 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
 
-- **Compatibilidad y seguridad de SMB2/SMB3**: se añadieron opciones adicionales de compatibilidad de seguridad y aplicaciones, incluida la capacidad de desactivar bloqueos oportunistas en SMB2+ para aplicaciones heredadas, además de requerir inicio de sesión o cifrado en función de la base por conexión de un cliente. Para más información, revisa la Ayuda del módulo de SMBShare de PowerShell.
+- **Compatibilidad y seguridad de SMB2/SMB3**: se añadieron opciones adicionales de compatibilidad de seguridad y aplicaciones, incluida la capacidad de desactivar bloqueos oportunistas en SMB2+ para aplicaciones heredadas, además de requerir inicio de sesión o cifrado en función de la base por conexión de un cliente. Para obtener más información, revisa la Ayuda del módulo de SMBShare PowerShell.
 
 ### <a name="data-deduplication"></a>Desduplicación de datos
 
@@ -154,13 +154,13 @@ Réplica de almacenamiento también contiene las siguientes mejoras:
 
 ### <a name="file-server-resource-manager"></a>File Server Resource Manager
 
-Windows Server 2019 incluye la posibilidad de impedir que el servidor de archivos Administrador de recursos servicio cree un diario de cambios (también conocido como diario USN) en todos los volúmenes cuando se inicia el servicio. Esto puede ahorrar espacio en cada volumen, pero deshabilitará la clasificación de archivos en tiempo real. Para obtener más información, vea [Introducción al Administrador de recursos del servidor de archivos](fsrm/fsrm-overview.md).
+Windows Server 2019 incluye la posibilidad de impedir que el servidor de archivos Administrador de recursos servicio cree un diario de cambios (también conocido como diario USN) en todos los volúmenes cuando se inicia el servicio. Esto puede ahorrar espacio en cada volumen, pero deshabilitará la clasificación de archivos en tiempo real. Para obtener más información, consulta [Información general sobre el Administrador de recursos del servidor de archivos](fsrm/fsrm-overview.md).
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1803"></a>Novedades de Storage en Windows Server, versión 1803
 
 ### <a name="file-server-resource-manager"></a>File Server Resource Manager
 
-Windows Server, versión 1803 incluye la posibilidad de impedir que el servidor de archivos Administrador de recursos servicio cree un diario de cambios (también conocido como un diario USN) en todos los volúmenes cuando se inicia el servicio. Esto puede ahorrar espacio en cada volumen, pero deshabilitará la clasificación de archivos en tiempo real. Para obtener más información, vea [Introducción al Administrador de recursos del servidor de archivos](fsrm/fsrm-overview.md).
+Windows Server, versión 1803 incluye la posibilidad de impedir que el servidor de archivos Administrador de recursos servicio cree un diario de cambios (también conocido como un diario USN) en todos los volúmenes cuando se inicia el servicio. Esto puede ahorrar espacio en cada volumen, pero deshabilitará la clasificación de archivos en tiempo real. Para obtener más información, consulta [Información general sobre el Administrador de recursos del servidor de archivos](fsrm/fsrm-overview.md).
 
 ## <a name="whats-new-in-storage-in-windows-server-version-1709"></a>Novedades de Storage en Windows Server, versión 1709
 
@@ -172,7 +172,7 @@ Para obtener más información, consulta [Introducción al Canal semianual de Wi
 
 La protección de recuperación ante desastres agregada por réplica de almacenamiento se ha ampliado para incluir:
 
-- **Conmutación por error de prueba**: la opción para montar el almacenamiento de destino ya es posible mediante la característica Conmutación por error de prueba. Puedes montar una instantánea del almacenamiento replicado en los nodos de destino temporalmente para realizar pruebas o copias de seguridad. Para más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq).
+- **Conmutación por error de prueba**: la opción para montar el almacenamiento de destino ya es posible a través de la característica Conmutación por error de prueba. Puedes montar una instantánea del almacenamiento replicado en los nodos de destino temporalmente para realizar pruebas o copias de seguridad. Para obtener más información, consulta [Preguntas frecuentes acerca de Réplica de almacenamiento](https://aka.ms/srfaq).
 - **Compatibilidad con el centro de administración de Windows**: la compatibilidad con la administración gráfica de la replicación ahora está disponible en el centro de administración de Windows a través de la herramienta Administrador del servidor. Esto incluye la replicación de servidor a servidor, de clúster a clúster, así como de la replicación de clúster extendido.
 
 Réplica de almacenamiento también contiene las siguientes mejoras:
@@ -182,9 +182,9 @@ Réplica de almacenamiento también contiene las siguientes mejoras:
 
 ### <a name="smb"></a>SMB
 
-- **Eliminación de autenticación de invitados y SMB1**: Windows Server, versión 1709 ya no instala el cliente SMB1 y el servidor de forma predeterminada. Además, la capacidad de autenticar como invitado en SMB2 y versiones posteriores está desactivada de manera predeterminada. Para más información, revisa [SMBv1 no está instalado de manera predeterminada en Windows 10, versión 1709 y Windows Server, versión 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
+- **Eliminación de autenticación de invitados y SMB1**: Windows Server, versión 1709 ya no instala el cliente SMB1 y el servidor de forma predeterminada. Además, la capacidad de autenticar como invitado en SMB2 y versiones posteriores está desactivada de forma predeterminada. Para obtener más información, revisa [SMBv1 no está instalado de forma predeterminada en Windows 10, versión 1709 y Windows Server, versión 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
 
-- **Compatibilidad y seguridad de SMB2/SMB3**: se añadieron opciones adicionales de compatibilidad de seguridad y aplicaciones, incluida la capacidad de desactivar bloqueos oportunistas en SMB2+ para aplicaciones heredadas, además de requerir inicio de sesión o cifrado en función de la base por conexión de un cliente. Para más información, revisa la Ayuda del módulo de SMBShare de PowerShell.
+- **Compatibilidad y seguridad de SMB2/SMB3**: se añadieron opciones adicionales de compatibilidad de seguridad y aplicaciones, incluida la capacidad de desactivar bloqueos oportunistas en SMB2+ para aplicaciones heredadas, además de requerir inicio de sesión o cifrado en función de la base por conexión de un cliente. Para obtener más información, revisa la Ayuda del módulo de SMBShare PowerShell.
 
 ### <a name="data-deduplication"></a>Desduplicación de datos
 
@@ -193,7 +193,7 @@ Réplica de almacenamiento también contiene las siguientes mejoras:
 
 ## <a name="whats-new-in-storage-in-windows-server-2016"></a>Novedades de Espacios de almacenamiento en Windows Server 2016
 
-### <a name="s2d"></a>Espacios de almacenamiento directo  
+### <a name="storage-spaces-direct"></a><a name="s2d"></a>Espacios de almacenamiento directo  
 Espacios de almacenamiento directo permite la creación de almacenamiento altamente disponible y escalable con servidores de almacenamiento local. Simplifica la implementación y administración de los sistemas de almacenamiento definidos por software y desbloquea el uso de las nuevas clases de dispositivos de disco, como SSD de SATA y dispositivos de disco NVMe, que no estaban disponibles con Espacios de almacenamiento de clúster con discos compartidos.  
 
 **¿Qué valor aporta este cambio?**  
@@ -205,7 +205,7 @@ Para más información, consulte [Storage Spaces Direct in Windows Server 2016](
 **¿Qué funciona de manera diferente?**  
 Esta funcionalidad es nueva en Windows Server 2016.  
 
-### <a name="storage-replica"></a>Réplica de almacenamiento
+### <a name="storage-replica"></a><a name="storage-replica"></a>Réplica de almacenamiento
 
 Réplica de almacenamiento (SR) permite la replicación sincrónica independiente del almacenamiento y a nivel de bloque entre servidores o clústeres para la recuperación ante desastres, así como la extensión de un clúster de conmutación por error entre sitios. La replicación sincrónica permite el reflejo de datos en sitios físicos con volúmenes coherentes frente a bloqueos para asegurar que no se produce absolutamente ninguna pérdida de datos en el nivel de sistema de archivos. La replicación asincrónica permite la extensión de sitios más allá del área metropolitana con la posibilidad de pérdida de datos.  
 
@@ -229,7 +229,7 @@ Para más información, consulte [Storage Replica in Windows Server 2016](storag
 **¿Qué funciona de manera diferente?**  
 Esta funcionalidad es nueva en Windows Server 2016.  
 
-### <a name="storage-qos"></a>Calidad de servicio de almacenamiento  
+### <a name="storage-quality-of-service"></a><a name="storage-qos"></a>Calidad de servicio de almacenamiento  
 Ahora puede usar la calidad de servicio de almacenamiento para supervisar de manera centralizada el rendimiento del almacenamiento de extremo a extremo y crear directivas de administración mediante Hyper-V y clústeres de CSV en Windows Server 2016.  
 
 **¿Qué valor aporta este cambio?**  
@@ -248,7 +248,7 @@ Esta funcionalidad es nueva en Windows Server 2016. La administración de reserv
 
 Para más información, consulte [Calidad de servicio de almacenamiento](storage-qos/storage-qos-overview.md).
 
-### <a name="dedup"></a>Desduplicación de datos  
+### <a name="data-deduplication"></a><a name="dedup"></a>Desduplicación de datos  
 | Funcionalidad | Nueva o actualizada | Descripción |
 |---------------|----------------|-------------|
 | [Compatibilidad con volúmenes grandes](data-deduplication/whats-new.md#large-volume-support) | Actualizado | Antes de Windows Server 2016, los volúmenes debían tener un tamaño específico para la renovación esperada, y aquellos tamaños de volúmenes por encima de los 10 TB no eran buenos candidatos para la desduplicación. En Windows Server 2016, Desduplicación de datos admite tamaños de volúmenes de **hasta 64 TB**. |
@@ -257,7 +257,7 @@ Para más información, consulte [Calidad de servicio de almacenamiento](storage
 | [Compatibilidad con copia de seguridad simplificada](data-deduplication/whats-new.md#simple-backup-support) | Nuevo | En Windows Server 2012 R2, las aplicaciones virtualizadas de copia de seguridad, como [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) de Microsoft, se admitían a través de una serie de pasos de configuración manual. En Windows Server 2016, se ha agregado un nuevo tipo de uso de "Copia de seguridad" predeterminado para una implementación fluida de Desduplicación de datos para aplicaciones virtualizadas de copia de seguridad. |
 | [Compatibilidad con las actualizaciones graduales del sistema operativo del clúster](data-deduplication/whats-new.md#cluster-upgrade-support) | Nuevo | Desduplicación de datos es totalmente compatible con la nueva característica [Actualización gradual de sistema operativo de clúster](..//failover-clustering/cluster-operating-system-rolling-upgrade.md) de Windows Server 2016. |
 
-### <a name="smb-hardening-improvements"></a>Mejoras de protección de SMB para conexiones SYSVOL y NETLOGON  
+### <a name="smb-hardening-improvements-for-sysvol-and-netlogon-connections"></a><a name="smb-hardening-improvements"></a>Mejoras de protección de SMB para conexiones SYSVOL y NETLOGON  
 En Windows 10 y Windows Server 2016, las conexiones de cliente a los recursos compartidos de archivos SYSVOL y NETLOGON predeterminados de Active Directory Domain Services en controladores de dominio ahora requieren firma SMB y autenticación mutua (como Kerberos).   
 
 **¿Qué valor aporta este cambio?**  

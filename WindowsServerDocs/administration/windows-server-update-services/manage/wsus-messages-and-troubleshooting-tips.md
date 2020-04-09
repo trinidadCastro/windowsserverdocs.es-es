@@ -1,37 +1,34 @@
 ---
-title: Mensajes WSUS y consejos para solucionar problemas
+title: Sugerencias para solucionar problemas y mensajes WSUS
 description: 'Tema de Windows Server Update Service (WSUS): solución de problemas con mensajes de WSUS'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9f6317f7-bfe0-42d9-87ce-d8f038c728ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c66e655ea6b6c44ee3ba375f75e6532fab74bfb
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: e4fe14eeaba3fc82e125288f8c47fb445f6e00b0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948487"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828318"
 ---
-# <a name="wsus-messages-and-troubleshooting-tips"></a>Mensajes WSUS y consejos para solucionar problemas
+# <a name="wsus-messages-and-troubleshooting-tips"></a>Sugerencias para solucionar problemas y mensajes WSUS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Este tema contiene información acerca de los siguientes mensajes de WSUS:
 
--   "El equipo no ha comunicado el estado"
+-   El equipo no ha comunicado el estado
 
--   "ID. de mensaje 6703-error de sincronización de WSUS"
+-   ID. de mensaje 6703-error de sincronización de WSUS
 
--   "Error 0x80070643: error irrecuperable durante la instalación"
+-   Error 0x80070643: error irrecuperable durante la instalación
 
--   "Algunos servicios no se están ejecutando. Compruebe los siguientes servicios [...] "
+-   Algunos servicios no se están ejecutando. Comprobar los siguientes servicios [...]
 
 ## <a name="computer-has-not-reported-status"></a>El equipo no ha comunicado el estado
 Este mensaje se genera en la consola de WSUS cuando un equipo cliente WSUS no envía información al servidor WSUS para indicar su estado de actualización actual. Este problema se produce normalmente en el equipo cliente WSUS, no en el servidor WSUS.
@@ -76,7 +73,7 @@ Para resolver este problema, conceda permisos de administrador del sistema a una
 
 - **Selfupdate:** Consulte [actualizaciones automáticas se debe actualizar](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx) para obtener información acerca de la solución de problemas del servicio selfupdate.
 
-- **WSSUService. exe:** Este servicio facilita la sincronización. Si tiene problemas con la sincronización, acceda a WSUSService. exe. para ello, haga clic en **Inicio**, seleccione **herramientas administrativas**, haga clic en **servicios**y, a continuación, busque **Windows Server Update Service** en la lista de servicios. Haz lo siguiente:
+- **WSSUService. exe:** Este servicio facilita la sincronización. Si tiene problemas con la sincronización, acceda a WSUSService. exe. para ello, haga clic en **Inicio**, seleccione **herramientas administrativas**, haga clic en **servicios**y, a continuación, busque **Windows Server Update Service** en la lista de servicios. haga lo siguiente:
     
     -   Compruebe que este servicio se está ejecutando. Haga clic en **iniciar** si se detiene o en **reiniciar** para actualizar el servicio.
     
@@ -90,6 +87,6 @@ Para resolver este problema, conceda permisos de administrador del sistema a una
     
   - **MSSQLSERver** (si usa WMSDE o MSDE, o si usa SQL Server y usa el nombre de instancia predeterminado para el nombre de instancia)
     
-  - **MSSQL $ WSUS** (si utiliza una base de datos de SQL Server y ha llamado a la instancia de base de datos "WSUS")
+  - **MSSQL $ WSUS** (si utiliza una base de datos de SQL Server y ha llamado a la instancia de base de datos WSUS)
     
     Haga clic con el botón secundario en el servicio y, a continuación, haga clic en **iniciar** si el servicio no se está ejecutando o en **reiniciar** para actualizar el servicio si se está ejecutando.

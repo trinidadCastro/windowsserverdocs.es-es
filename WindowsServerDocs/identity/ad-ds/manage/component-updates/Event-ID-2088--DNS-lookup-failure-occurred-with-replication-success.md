@@ -1,7 +1,6 @@
 ---
 ms.assetid: 0fd7b6aa-3e50-45a3-a3a6-56982844363e
 title: ID. de evento 2088-error de búsqueda de DNS con replicación correcta
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d51cbcc93a8decbcb72a1e91854a09345507511d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f84fd7be45995e9e0b318b42c8b4152af244a9da
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368911"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823058"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>Id. de evento 2088: se produjo un error de búsqueda de DNS con replicación correcta
 
@@ -54,7 +53,7 @@ Ruta de acceso del registro: cliente RPC de HKLM\System\CurrentControlSet\Servic
 
 Acción del usuario: 
 
-1) Si el controlador de dominio de origen ya no funciona o su sistema operativo se ha reinstalado con un nombre de equipo o un GUID de objeto NTDSDSA diferentes, quite los metadatos del controlador de dominio de origen con Ntdsutil. exe, siguiendo los pasos descritos en el artículo MSKB 216498. 
+1) Si el controlador de dominio de origen ya no funciona o su sistema operativo se ha reinstalado con un nombre de equipo o GUID de objeto de NTDSDSA diferente, quite los metadatos del controlador de dominio de origen con Ntdsutil. exe, siguiendo los pasos descritos en el artículo de MSKB 216498. 
 
 2) Confirme que el controlador de dominio de origen se está ejecutando Active Directory y que es accesible en la red. para ello, escriba "net view \\&lt;nombre del DC de origen&gt;" o "ping &lt;nombre del DC de origen&gt;". 
 

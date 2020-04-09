@@ -1,25 +1,26 @@
 ---
 title: Actualización de clústeres de conmutación por error con el mismo hardware
+description: En este artículo se describe cómo actualizar un clúster de conmutación por error de 2 nodos con el mismo hardware
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 02/28/2019
-description: En este artículo se describe cómo actualizar un clúster de conmutación por error de 2 nodos con el mismo hardware
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fe93f1d43e0c3a1bc4269b585cb9d021d3461aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2d9866417908b3979a4ee17b25dd0d3a404bb1c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361401"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828188"
 ---
 # <a name="upgrading-failover-clusters-on-the-same-hardware"></a>Actualización de clústeres de conmutación por error en el mismo hardware
 
-> Se aplica a: Windows Server 2019 y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
-Un clúster de conmutación por error es un grupo de equipos independientes que trabajan juntos para aumentar la disponibilidad de las aplicaciones y los servicios. Los servidores agrupados (denominados nodos) están conectados mediante cables físicos y mediante software. Si se produce un error en uno de los nodos del clúster, otro comienza a dar servicio (proceso que se denomina conmutación por error). Los usuarios experimentarán un número de interrupciones mínimo en el servicio.
+Un clúster de conmutación por error es un grupo de equipos independientes que trabajan juntos para aumentar la disponibilidad de las aplicaciones y los servicios. Los servidores en clúster (llamados nodos) están conectados con cables físicos y con software. Si se produce un error en uno de los nodos del clúster, otro comienza a dar servicio (proceso que se denomina conmutación por error). Los usuarios experimentarán un número de interrupciones mínimo en el servicio.
 
 En esta guía se describen los pasos para actualizar los nodos de clúster a Windows Server 2019 o Windows Server 2016 desde una versión anterior con el mismo hardware.
 
@@ -37,7 +38,7 @@ Antes de iniciar cualquier actualización, asegúrese de que se ha realizado una
 
 En el ejemplo siguiente, el nombre del clúster de conmutación por error es CLUSTER y los nombres de nodo son NODO1 y NODO2.
 
-## <a name="step-1-evict-first-node-and-upgrade-to-windows-server-2016"></a>Paso 1: Expulsar el primer nodo y actualizar a Windows Server 2016
+## <a name="step-1-evict-first-node-and-upgrade-to-windows-server-2016"></a>Paso 1: expulsar el primer nodo y actualizar a Windows Server 2016
 
 1. En Administrador de clústeres de conmutación por error, vacíe todos los recursos del NODO1 al NODO2 haciendo clic con el botón secundario del mouse en el nodo y seleccionando roles de **pausa** y **purga**.  Como alternativa, puede usar el comando de PowerShell [Suspend-CLUSTERNODE](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode).
 
@@ -61,7 +62,7 @@ En el ejemplo siguiente, el nombre del clúster de conmutación por error es CLU
 
 7.  Una vez que se han migrado todos los recursos, apague el NODO2 (clúster original) y desconecte el almacenamiento para que no se produzca ninguna interferencia.  Conecte el almacenamiento al NODO1.  Una vez que todo está conectado, ponga todos los recursos en línea y asegúrese de que funcionan como debiera.
 
-## <a name="step-2-rebuild-second-node-to-windows-server-2019"></a>Paso 2: Recompilar el segundo nodo en Windows Server 2019
+## <a name="step-2-rebuild-second-node-to-windows-server-2019"></a>Paso 2: reconstruir el segundo nodo en Windows Server 2019
 
 Una vez que haya comprobado que todo funciona como debería, NODO2 se puede volver a generar en Windows Server 2019 y unirse al clúster.
 
@@ -85,7 +86,7 @@ Una vez que haya comprobado que todo funciona como debería, NODO2 se puede volv
 
 5. Vacíe todos los recursos del NODO1 al NODO2 haciendo clic con el botón secundario del mouse en el nodo y seleccionando los roles de **pausa** y **purga**.  Como alternativa, puede usar el comando de PowerShell [Suspend-CLUSTERNODE](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode).  Asegúrese de que todos los recursos están en línea y funcionan como deberían.
 
-## <a name="step-3-rebuild-first-node-to-windows-server-2019"></a>Paso 3: Volver a generar el primer nodo en Windows Server 2019
+## <a name="step-3-rebuild-first-node-to-windows-server-2019"></a>Paso 3: reconstruir el primer nodo en Windows Server 2019
 
 1. Expulse el NODO1 del clúster y desconecte el almacenamiento del nodo en la forma en que se encontraba anteriormente.
 

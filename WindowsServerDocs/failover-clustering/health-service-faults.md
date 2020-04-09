@@ -5,15 +5,14 @@ manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 11af69d1c6f32205b87ad4605edebacb59b0b710
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 913a596a46720718a165295345cb02e3e2baa1de
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369711"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827568"
 ---
 # <a name="health-service-faults"></a>Errores de Servicio de mantenimiento
 > Se aplica a: Windows Server 2019, Windows Server 2016
@@ -24,7 +23,7 @@ El Servicio de mantenimiento supervisa constantemente el clúster de Espacios de
 
 Cada error contiene cinco campos importantes:  
 
--   Gravedad
+-   Severity
 -   Descripción del problema
 -   Pasos siguientes recomendados para solucionar el problema
 -   Información de identificación de la entidad con errores
@@ -333,42 +332,42 @@ En Windows Server 2016, el Servicio de mantenimiento proporciona la siguiente co
 ### <a name="physicaldisk-8"></a>**DiscoFísico (8)**
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedmedia"></a>FaultType: Microsoft. Health. FaultType. DiscoFísico. FailedMedia
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"error en el disco físico".*
 * RecommendedAction: *"reemplazar el disco físico."*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldisklostcommunication"></a>FaultType: Microsoft. Health. FaultType. DiscoFísico. LostCommunication
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"se ha perdido la conectividad con el disco físico".*
 * RecommendedAction: *"Compruebe que el disco físico funciona y está correctamente conectado".*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunresponsive"></a>FaultType: Microsoft. Health. FaultType. DiscoFísico. no responde
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"el disco físico está exhibiendo no responde de forma periódica".*
 * RecommendedAction: *"reemplazar el disco físico."*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskpredictivefailure"></a>FaultType: Microsoft. Health. FaultType. DiscoFísico. PredictiveFailure
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"no se prevé que se produzca un error del disco físico en breve".*
 * RecommendedAction: *"reemplazar el disco físico."*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedhardware"></a>FaultType: Microsoft. Health. FaultType. DiscoFísico. UnsupportedHardware
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"el disco físico está en cuarentena porque no lo admite el proveedor de la solución".*
 * RecommendedAction: *"reemplazar el disco físico por el hardware compatible".*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedfirmware"></a>FaultType: Microsoft. Health. FaultType. DiscoFísico. UnsupportedFirmware
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"el disco físico está en cuarentena porque su versión de firmware no es compatible con el proveedor de la solución".*
 * RecommendedAction: *"actualizar el firmware en el disco físico a la versión de destino".*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunrecognizedmetadata"></a>FaultType: Microsoft. Health. FaultType. DiscoFísico. UnrecognizedMetadata
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"el disco físico tiene metadatos no reconocidos".*
 * RecommendedAction: *"este disco puede contener datos de un grupo de almacenamiento desconocido. En primer lugar, asegúrese de que no hay datos útiles en este disco y, a continuación, restablezca el disco ".*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedfirmwareupdate"></a>FaultType: Microsoft. Health. FaultType. DiscoFísico. FailedFirmwareUpdate
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"error al intentar actualizar el firmware en el disco físico".*
 * RecommendedAction: *"intentar usar un archivo binario de firmware diferente".*
 
@@ -387,14 +386,14 @@ En Windows Server 2016, el Servicio de mantenimiento proporciona la siguiente co
 ### <a name="pool-capacity-1"></a>**Capacidad del grupo (1)**
 
 #### <a name="faulttype-microsofthealthfaulttypestoragepoolinsufficientreservecapacityfault"></a>FaultType: Microsoft. Health. FaultType. StoragePool. InsufficientReserveCapacityFault
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"el grupo de almacenamiento no tiene la capacidad de reserva mínima recomendada. Esto puede limitar la capacidad de restaurar la resistencia de los datos en caso de que se produzcan errores en la unidad.*
 * RecommendedAction: *"agregar capacidad adicional al bloque de almacenamiento o liberar capacidad. La reserva recomendada mínima varía según la implementación, pero tiene aproximadamente 2 unidades de capacidad.*
 
 ### <a name="volume-capacity-2sup1sup"></a>**Capacidad del volumen (2)** <sup>1</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType: Microsoft. Health. FaultType. VOLUME. Capacity
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"el volumen se está quedando sin espacio disponible".*
 * RecommendedAction: *"expanda el volumen o migre las cargas de trabajo a otros volúmenes".*
 
@@ -430,88 +429,88 @@ En Windows Server 2016, el Servicio de mantenimiento proporciona la siguiente co
 ### <a name="network-adapterinterface-4"></a>**Adaptador de red/interfaz (4)**
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisconnected"></a>FaultType: Microsoft. Health. FaultType. adaptador de conexión. desconectado
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"la interfaz de red se ha desconectado".*
 * RecommendedAction: *"volver a conectar el cable de red".*
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkinterfacemissing"></a>FaultType: Microsoft. Health. FaultType. interfaz cluster. Missing
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"el servidor {servidor} no tiene adaptadores de red conectados a la red de clústeres {red de clúster}."*
 * RecommendedAction: *"conectar el servidor a la red de clústeres que faltan".*
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterhardware"></a>FaultType: Microsoft. Health. FaultType. adaptador de hardware
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"se ha producido un error de hardware en la interfaz de red".*
 * RecommendedAction: *"reemplazar el adaptador de la interfaz de red".*
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisabled"></a>FaultType: Microsoft. Health. FaultType. adaptador de. deshabilitado
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"la interfaz de red {interfaz de red} no está habilitada y no se está usando".*
 * RecommendedAction: *"habilitar la interfaz de red".*
 
 ### <a name="enclosure-6"></a>**Gabinete (6)**
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurelostcommunication"></a>FaultType: Microsoft. Health. FaultType. StorageEnclosure. LostCommunication
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"la comunicación se ha perdido en el contenedor de almacenamiento".*
 * RecommendedAction: *"iniciar o reemplazar el contenedor de almacenamiento".*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurefanerror"></a>FaultType: Microsoft. Health. FaultType. StorageEnclosure. FanError
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"error en el ventilador de la posición {posición} del contenedor de almacenamiento".*
 * RecommendedAction: *"reemplazar el ventilador en el contenedor de almacenamiento."*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurecurrentsensorerror"></a>FaultType: Microsoft. Health. FaultType. StorageEnclosure. CurrentSensorError
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"error en el sensor actual en la posición {posición} del contenedor de almacenamiento".*
 * RecommendedAction: *"reemplazar un sensor actual en el contenedor de almacenamiento."*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurevoltagesensorerror"></a>FaultType: Microsoft. Health. FaultType. StorageEnclosure. VoltageSensorError
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"error en el sensor de voltaje en la posición {posición} del contenedor de almacenamiento".*
 * RecommendedAction: *"reemplazar un sensor de voltaje en el contenedor de almacenamiento."*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosureiocontrollererror"></a>FaultType: Microsoft. Health. FaultType. StorageEnclosure. IoControllerError
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"error en el controlador de e/s en la posición {posición} del contenedor de almacenamiento".*
 * RecommendedAction: *"reemplazar un controlador de e/s en el contenedor de almacenamiento."*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosuretemperaturesensorerror"></a>FaultType: Microsoft. Health. FaultType. StorageEnclosure. TemperatureSensorError
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"error en el sensor de temperatura en la posición {posición} del contenedor de almacenamiento".*
 * RecommendedAction: *"reemplazar un sensor de temperatura en el contenedor de almacenamiento."*
 
 ### <a name="firmware-rollout-3"></a>**Lanzamiento de firmware (3)**
 
 #### <a name="faulttype-microsofthealthfaulttypefaultdomainfailedmaintenancemode"></a>FaultType: Microsoft. Health. FaultType. FaultDomain. FailedMaintenanceMode
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"actualmente no se puede realizar el progreso mientras se realiza la implementación del firmware".*
 * RecommendedAction: *"Compruebe que todos los espacios de almacenamiento son correctos y que ningún dominio de error está actualmente en modo de mantenimiento".*
 
 #### <a name="faulttype-microsofthealthfaulttypefaultdomainfirmwareverifyversionfaile"></a>FaultType: Microsoft. Health. FaultType. FaultDomain. FirmwareVerifyVersionFaile
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"la puesta al día del firmware se canceló debido a la información de versión de firmware no leída o inesperada después de aplicar una actualización de firmware".*
 * RecommendedAction: *"reiniciar el firmware cuando se ha resuelto el problema de firmware".*
 
 #### <a name="faulttype-microsofthealthfaulttypefaultdomaintoomanyfailedupdates"></a>FaultType: Microsoft. Health. FaultType. FaultDomain. TooManyFailedUpdates
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"la puesta al día del firmware se canceló debido a que hay demasiados discos físicos con errores en un intento de actualización de firmware".*
 * RecommendedAction: *"reiniciar el firmware cuando se ha resuelto el problema de firmware".*
 
 ### <a name="storage-qos-3sup2sup"></a>**QoS de almacenamiento (3)** <sup>2</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType: Microsoft. Health. FaultType. StorQos. InsufficientThroughput
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"el rendimiento de almacenamiento no es suficiente para satisfacer las reservas".*
 * RecommendedAction: *"volver a configurar las directivas de QoS de almacenamiento".*
 
 #### <a name="faulttype-microsofthealthfaulttypestorqoslostcommunication"></a>FaultType: Microsoft. Health. FaultType. StorQos. LostCommunication
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"el administrador de directivas QoS de almacenamiento perdió la comunicación con el volumen".*
 * RecommendedAction: *"reinicie los nodos {Nodes}"*
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosmisconfiguredflow"></a>FaultType: Microsoft. Health. FaultType. StorQos. MisconfiguredFlow
-* Gravedad: ADVERTENCIA
+* Gravedad: advertencia
 * Motivo: *"uno o más consumidores de almacenamiento (normalmente virtual machines) están usando una directiva que no existe con el identificador {ID}."*
 * RecommendedAction: *"volver a crear las directivas QoS de almacenamiento que faltan".*
 
@@ -521,6 +520,6 @@ En Windows Server 2016, el Servicio de mantenimiento proporciona la siguiente co
 >[!NOTE]
 > El mantenimiento de los componentes de contenedor de almacenamiento como ventiladores, fuentes de alimentación y sensores proviene de SCSI Enclosure Services (SES). Si el proveedor no proporciona esta información, el servicio de mantenimiento no puede mostrarla.  
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 
 - [Servicio de mantenimiento en Windows Server 2016](health-service-overview.md)

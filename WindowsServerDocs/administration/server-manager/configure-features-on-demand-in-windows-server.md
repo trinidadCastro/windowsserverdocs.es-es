@@ -1,24 +1,20 @@
 ---
 title: Configure Features on Demand in Windows Server
 description: Administrador de servidores
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e663bbea-d025-41fa-b16c-c2bff00a88e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f834ca2e4c4acd045ccaeb4f46142dcc0e86f674
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 090b87810dc519728bf915bdb2cd79668c7f01f4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383269"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851558"
 ---
 # <a name="configure-features-on-demand-in-windows-server"></a>Configure Features on Demand in Windows Server
 
@@ -44,7 +40,7 @@ Puede invalidar el comportamiento predeterminado de Características a petición
 
 -   Configurar la directiva de grupo **Especificar configuración de instalación de componentes opcionales y reparación de componentes**
 
-En este tema se incluyen las siguientes secciones.
+Este tema contiene las siguientes secciones.
 
 -   [Crear un archivo de características o un almacén en paralelo](#BKMK_store)
 
@@ -52,14 +48,14 @@ En este tema se incluyen las siguientes secciones.
 
 -   [Quitar archivos de características mediante Uninstall-WindowsFeature](#BKMK_remove)
 
-## <a name="BKMK_store"></a>Crear un archivo de características o un almacén en paralelo
+## <a name="create-a-feature-file-or-side-by-side-store"></a><a name=BKMK_store></a>Crear un archivo de características o un almacén en paralelo
 En esta sección se describe cómo configurar una carpeta compartida de archivos de características remota (también denominada tienda en paralelo) que almacena los archivos necesarios para instalar roles, servicios de rol y características en servidores que ejecutan Windows Server 2012 R2 o Windows Server 2012. Después de configurar un almacén de características, puede instalar roles, servicios de rol y características en los servidores que ejecutan esos sistemas operativos y especificar el almacén de características como la ubicación de los archivos de origen de instalación.
 
 #### <a name="to-create-a-feature-file-store"></a>Para crear un almacén de archivos de características
 
-1.  Cree una carpeta compartida en un servidor de la red. Por ejemplo, *\\ \ network\share\sxs*.
+1.  Cree una carpeta compartida en un servidor de la red. Por ejemplo, *\\\network\share\sxs*.
 
-2.  Compruebe que tiene los permisos correctos asignados al almacén de características. La ruta de acceso de origen o el recurso compartido de archivos deben conceder permisos de **lectura** al grupo **todos** (no se recomienda por motivos de seguridad) o a las cuentas de equipo (*dominio*\\*nombreDeServidor*$) de los servidores en los que va a instalar características de mediante este almacén de características; no es suficiente conceder acceso a la cuenta de usuario.
+2.  Compruebe que tiene los permisos correctos asignados al almacén de características. La ruta de acceso de origen o el recurso compartido de archivos deben conceder permisos de **lectura** al grupo **todos** (no se recomienda por motivos de seguridad) o a las cuentas de equipo (*dominio*\\*SERverNAME*$) de los servidores en los que tiene previsto instalar características mediante este almacén de características. no es suficiente conceder acceso a la cuenta de usuario.
 
     Para obtener acceso a la configuración de permisos y uso compartido de archivos, realice cualquiera de las siguientes acciones en el escritorio de Windows.
 
@@ -72,14 +68,14 @@ En esta sección se describe cómo configurar una carpeta compartida de archivos
 
 3.  Copie la carpeta **Sources\SxS** de los medios de instalación de Windows Server en la carpeta compartida que creó en el paso 1.
 
-## <a name="BKMK_methods"></a>Métodos para quitar archivos de características
+## <a name="methods-of-removing-feature-files"></a><a name=BKMK_methods></a>Métodos para quitar archivos de características
 Dispone de dos métodos para quitar archivos de características de Windows Server en una configuración de Características a petición.
 
 -   El parámetro `remove` del cmdlet `Uninstall-WindowsFeature` permite eliminar archivos de características de un servidor o un disco duro virtual (VHD) sin conexión que ejecute Windows Server 2012 R2 o Windows Server 2012. Los valores válidos para el parámetro `remove` son los nombres de los roles, servicios de función y características.
 
 -   Los comandos de Administración y mantenimiento de imágenes de implementación (DISM) permiten crear archivos WIM personalizados que conservan espacio en disco mediante la omisión de archivos de características que no son necesarios o que se pueden obtener de otros orígenes remotos. Para obtener más información acerca del uso de DISM para preparar imágenes personalizadas, vea [Cómo habilitar o deshabilitar características de Windows](https://technet.microsoft.com/library/hh824822.aspx).
 
-## <a name="BKMK_remove"></a>Quitar archivos de características mediante Uninstall-WindowsFeature
+## <a name="remove-feature-files-by-using-uninstall-windowsfeature"></a><a name=BKMK_remove></a>Quitar archivos de características mediante Uninstall-WindowsFeature
 Puede usar el cmdlet Uninstall-WindowsFeature para desinstalar roles, servicios de rol y características de los servidores y los VHD sin conexión que ejecutan Windows Server 2012 R2 o Windows Server 2012, y para eliminar los archivos de características. Puede desinstalar y eliminar los mismos roles, servicios de rol y características en el mismo comando si lo desea.
 
 > [!IMPORTANT]
@@ -121,10 +117,10 @@ Puede usar el cmdlet Uninstall-WindowsFeature para desinstalar roles, servicios 
     Uninstall-WindowsFeature -Name AD-Domain-Services,GPMC -VHD C:\WS2012VHDs\Contoso.vhd -computerName ContosoDC1
     ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 [Instalar o desinstalar roles, servicios de rol o características](install-or-uninstall-roles-role-services-or-features.md)
 [Opciones de instalación de Windows Server](https://technet.microsoft.com/library/hh831786.aspx)
 [Cómo habilitar o deshabilitar características de Windows](https://technet.microsoft.com/library/hh824822.aspx)
-[información general de administración y mantenimiento de imágenes de implementación (DISM)](https://technet.microsoft.com/library/hh825236.aspx)
+[Administración y mantenimiento de imágenes de implementación (DISM)](https://technet.microsoft.com/library/hh825236.aspx)
 
 

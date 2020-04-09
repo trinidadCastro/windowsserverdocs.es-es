@@ -1,7 +1,6 @@
 ---
 ms.assetid: e727a33d-133b-43c9-b6a4-7c00f9cb6000
 title: Revisar los modelos de dominio
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 00683b09aff5b3a3b097f7f8b423c51080b86d02
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b77f634d8548994d2f9e130faad9ca34aa226327
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408688"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821958"
 ---
 # <a name="reviewing-the-domain-models"></a>Revisar los modelos de dominio
 
@@ -30,7 +29,7 @@ El diseño de dominio más sencillo es un dominio único. En un diseño de domin
 
 Es mejor minimizar el número de dominios que se implementan en el bosque. Esto reduce la complejidad general de la implementación y, como resultado, reduce el costo total de propiedad. En la tabla siguiente se enumeran los costos administrativos asociados con la adición de dominios regionales.  
 
-|Coste|Repercuti|  
+|Cost|Repercuti|  
 |--------|----------------|  
 |Administración de varios grupos de administradores de servicios|Cada dominio tiene sus propios grupos de administradores de servicios que deben administrarse de forma independiente. La pertenencia de estos grupos de administradores de servicios debe controlarse cuidadosamente.|  
 |Mantener la coherencia entre los valores de directiva de grupo que son comunes a varios dominios|Directiva de grupo Opciones de configuración que deben aplicarse en todo el bosque deben aplicarse por separado a cada dominio individual del bosque.|  

@@ -1,24 +1,20 @@
 ---
 title: netstat
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 60e2718f-93cc-4ceb-bf0e-58a6a6e4fc8b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54bd21b7e96275d329e45e825971d9236488c793
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: afd34cca2ecd3caa7ac480b380b85ba6d2a19fcb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373259"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839018"
 ---
 # <a name="netstat"></a>netstat
 
@@ -31,7 +27,7 @@ Muestra las conexiones TCP activas, los puertos en los que el equipo está escuc
 netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<Interval>]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |   Parámetro   |                                                                                                                                              Descripción                                                                                                                                              |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,7 +39,7 @@ netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<Interval>]
 |      -s       | Muestra las estadísticas por protocolo. De forma predeterminada, las estadísticas se muestran para los protocolos TCP, UDP, ICMP y IP. Si el protocolo IPv6 está instalado, se muestran estadísticas para los protocolos TCP a través de IPv6, UDP a través de IPv6, ICMPv6 e IPv6. El parámetro **-p** se puede usar para especificar un conjunto de protocolos. |
 |      -r       |                                                                                                     Muestra el contenido de la tabla de enrutamiento IP. Es equivalente al comando Route Print.                                                                                                     |
 |  <Interval>   |                                                        Vuelve a mostrar la información seleccionada cada *intervalo* de segundos. Presione CTRL + C para detener la representación. Si se omite este parámetro, **netstat** imprime la información seleccionada una sola vez.                                                         |
-|      /?       |                                                                                                                                 Muestra la ayuda en el símbolo del sistema.                                                                                                                                  |
+|      /?       |                                                                                                                                 Muestra la Ayuda en el símbolo del sistema.                                                                                                                                  |
 
 ## <a name="remarks"></a>Comentarios
 -   Los parámetros que se usan con este comando deben ir precedidos de un guion ( **-** ) en lugar de una barra diagonal ( **/** ).
@@ -51,10 +47,10 @@ netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<Interval>]
     -   Proto el nombre del Protocolo (TCP o UDP).
     -   Dirección local la dirección IP del equipo local y el número de puerto que se está usando. Se muestra el nombre del equipo local que corresponde a la dirección IP y el nombre del puerto, a menos que se especifique el parámetro **-n** . Si aún no se ha establecido el puerto, el número de puerto se muestra como un asterisco (*).
     -   Dirección externa: la dirección IP y el número de puerto del equipo remoto al que está conectado el socket. Los nombres que corresponden a la dirección IP y el puerto se muestran a menos que se especifique el parámetro **-n** . Si aún no se ha establecido el puerto, el número de puerto se muestra como un asterisco (*).
-    -   State Indica el estado de una conexión TCP. Los Estados posibles son los siguientes: CLOSE_WAIT CLOSED FIN_WAIT_1 FIN_WAIT_2 LAST_ACK listEN SYN_RECEIVED SYN_SEND timeD_WAIT para obtener más información acerca de los Estados de una conexión TCP, consulte RFC 793.
+    -   State Indica el estado de una conexión TCP. Los Estados posibles son los siguientes: CLOSE_WAIT cerrado establecido FIN_WAIT_1 FIN_WAIT_2 LAST_ACK escuchar SYN_RECEIVED SYN_SEND timeD_WAIT para obtener más información acerca de los Estados de una conexión TCP, consulte RFC 793.
 -   Este comando solo está disponible si el Protocolo Protocolo de Internet (TCP/IP) se instala como componente en las propiedades de un adaptador de red en las conexiones de red.
 
-## <a name="BKMK_Examples"></a>Example
+## <a name="examples"></a><a name=BKMK_Examples></a>Example
 Para mostrar las estadísticas de Ethernet y las estadísticas de todos los protocolos, escriba:
 ```
 netstat -e -s
@@ -73,4 +69,4 @@ netstat -n -o
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

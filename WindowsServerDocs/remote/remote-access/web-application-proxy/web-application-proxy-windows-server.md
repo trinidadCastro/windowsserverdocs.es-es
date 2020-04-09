@@ -1,25 +1,25 @@
 ---
 ms.assetid: d8adcb68-18e0-41bf-a817-d57344bf2e7d
 title: Proxy de aplicación web en Windows Server 2016
-description: ''
-author: kgremban
+ms.author: kgremban
+author: eross-msft
 manager: femila
 ms.date: 07/13/2016
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: 4f2827f02ec13d187cdf360637882c6c9d4b2441
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 660915a9fc704a01b59b4eeb1107ef56599ecac7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387972"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818578"
 ---
 # <a name="web-application-proxy-in-windows-server-2016"></a>Proxy de aplicación web en Windows Server 2016
 
 >Se aplica a: Windows Server 2016
 
-el contenido de **This es relevante para la versión local del proxy de aplicación Web. Para habilitar el acceso seguro a aplicaciones locales a través de la nube, consulte el [contenido del proxy de aplicación de Azure ad](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
+**Este contenido es relevante para la versión local del proxy de aplicación Web. Para habilitar el acceso seguro a aplicaciones locales a través de la nube, consulte el [contenido del proxy de aplicación Azure ad](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
   
 El contenido de esta sección describe las novedades y los cambios en el proxy de aplicación web para Windows Server 2016. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan mayor impacto al trabajar con la versión preliminar.  
   
@@ -55,7 +55,7 @@ El contenido de esta sección describe las novedades y los cambios en el proxy d
   
 - Propagación de la dirección IP del cliente a las aplicaciones de back-end  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
   
 -   [Novedades en Windows Server 2016](https://technet.microsoft.com/library/dn765472.aspx)  
   

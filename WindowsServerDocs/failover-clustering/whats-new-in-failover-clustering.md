@@ -4,18 +4,18 @@ title: Novedades de los clústeres de conmutación por error en Windows Server
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.topic: get-started-article
-manager: dongill
+manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 40342f43f7afbf020ba20f27586650767218fe83
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0d4b648a54e1937aedfe3fd087977c5733110787
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948033"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827338"
 ---
-# <a name="whats-new-in-failover-clustering"></a>Novedades de los clústeres de conmutación por error
+# <a name="whats-new-in-failover-clustering"></a>What's new in Failover Clustering (Novedades de los clústeres de conmutación por error)
 
 > Se aplica a: Windows Server 2019, Windows Server 2016
 
@@ -29,22 +29,22 @@ En este tema se explica la funcionalidad nueva y modificada de los clústeres de
     Con los conjuntos de clústeres, puede trasladar las máquinas virtuales en línea (migración en vivo) entre los clústeres del conjunto de clústeres.
 
     Para obtener más información, consulte [conjuntos de clústeres](../storage/storage-spaces/cluster-sets.md).
+                
+- **Clústeres con reconocimiento de Azure**                
+                
+    Los clústeres de conmutación por error ahora detectan automáticamente qu n y Runn ng en máquinas virtuales de IaaS de Azure y optimizan la configuración para proporcionar conmutación por error y registro proactivos de eventos de mantenimiento planeado de Azure para lograr los niveles más altos de disponibilidad. La implementación también se simplifica mediante la eliminación de la necesidad de configurar el equilibrador de carga con el nombre de red dinámico para el nombre del clúster.
+                
+- **Cross-DOM en c uste MIG bicación**
+                
+    Los clústeres de conmutación por error ahora pueden moverse dinámicamente de un dominio Active Directory a otro, lo que simplifica la consolidación de dominios y permite que los clústeres se creen con los asociados de hardware y se unen al dominio del cliente más adelante.    
+- **Testigo USB**                
 
-- **Clústeres con reconocimiento de Azure**
-
-    Los clústeres de conmutación por error ahora detectan automáticamente cuando se ejecutan en máquinas virtuales de IaaS de Azure y optimizan la configuración para proporcionar conmutación por error y registro proactivos de eventos de mantenimiento planeado de Azure para lograr los niveles más altos de disponibilidad. La implementación también se simplifica mediante la eliminación de la necesidad de configurar el equilibrador de carga con el nombre de red dinámico para el nombre del clúster.
-
-- **Migración de clúster entre dominios**
-
-    Los clústeres de conmutación por error ahora pueden moverse dinámicamente de un dominio Active Directory a otro, lo que simplifica la consolidación de dominios y permite que los asociados de hardware los creen y se unan al dominio del cliente más adelante.
-- **Testigo USB**
-
-    Ahora puede usar una unidad USB simple conectada a un conmutador de red como testigo para determinar el cuórum de un clúster. Esto extiende el testigo del recurso compartido de archivos para admitir cualquier dispositivo compatible con SMB2.
-
-- **Mejoras de infraestructura de clústeres**
-
-    La caché de CSV está habilitada de forma predeterminada para mejorar el rendimiento de las máquinas virtuales. MSDTC ahora admite Volúmenes compartidos de clúster, para permitir la implementación de cargas de trabajo de MSDTC en espacios de almacenamiento directo, como con SQL Server. Lógica mejorada para detectar nodos con particiones con recuperación automática para devolver los nodos a la pertenencia al clúster. Detección de rutas de red de clúster mejorada y recuperación automática.
-
+    Ahora puede usar una unidad USB si ntaje conectada a un conmutador de red como testigo para determinar el cuórum de un clúster. Esto extiende el testigo del recurso compartido de archivos para admitir cualquier dispositivo compatible con SMB2.
+                
+- **RUCT de los intercambios de clústeres**
+                
+    La memoria caché de CSV ahora está habilitada por d faultviewerpage para el rendimiento de la máquina virtual de Oost. MSDTC ahora admite Volúmenes compartidos de clúster, para permitir la implementación de cargas de trabajo de MSDTC en espacios de almacenamiento directo, como con SQL Server. Lógica mejorada para detectar nodos con particiones con recuperación automática para devolver los nodos a la pertenencia al clúster. Detección de rutas de red de clúster mejorada y recuperación automática.
+                
 - **La actualización con reconocimiento de clúster es compatible con Espacios de almacenamiento directo**
 
     La Actualización compatible con clústeres (CAU) ahora está integrada y es compatible con Espacios de almacenamiento directo, validando y garantizando que la resincronización de datos se completa en cada nodo. La actualización compatible con clústeres inspecciona las actualizaciones para que se reinicien de forma inteligente solo si es necesario. Esto permite a los reinicios de orquestación de todos los servidores del clúster el mantenimiento planeado.
@@ -66,7 +66,7 @@ En este tema se explica la funcionalidad nueva y modificada de los clústeres de
 
 ## <a name="whats-new-in-windows-server-2016"></a>Novedades de Windows Server 2016
 
-### <a name="BKMK_RollingUpgrade"></a>Actualización gradual del sistema operativo del clúster
+### <a name="cluster-operating-system-rolling-upgrade"></a><a name="BKMK_RollingUpgrade"></a>Actualización gradual del sistema operativo del clúster
 
 La actualización gradual del sistema operativo de clústeres permite a un administrador actualizar el sistema operativo de los nodos del clúster de Windows Server 2012 R2 a una versión más reciente sin detener las cargas de trabajo de Hyper-V o Servidor de archivos de escalabilidad horizontal. Con esta característica, se pueden evitar las penalizaciones de tiempo de inactividad en los acuerdos de nivel de servicio (SLA). 
 
@@ -94,7 +94,7 @@ Los sistemas operativos de clúster para la actualización en fases son los sigu
 
 Para obtener más información, consulte [actualización gradual del sistema operativo del clúster](cluster-operating-system-rolling-upgrade.md). 
 
-### <a name="BKMK_SR"></a>Réplica de almacenamiento  
+### <a name="storage-replica"></a><a name="BKMK_SR"></a>Réplica de almacenamiento  
 Réplica de almacenamiento es una nueva característica que permite la replicación sincrónica independiente del almacenamiento y a nivel de bloque entre servidores o clústeres para la recuperación ante desastres, así como la ampliación de un clúster de conmutación por error entre sitios. La replicación sincrónica permite el reflejo de datos en sitios físicos con volúmenes coherentes frente a bloqueos para asegurar que no se produce absolutamente ninguna pérdida de datos en el nivel de sistema de archivos. La replicación asincrónica permite la extensión de sitios más allá del área metropolitana con la posibilidad de pérdida de datos. 
 
 **¿Qué valor aporta este cambio?**  
@@ -126,7 +126,7 @@ Réplica de almacenamiento permite hacer lo siguiente:
 Para más información, consulte [Storage Replica in Windows Server 2016](../storage/storage-replica/storage-replica-overview.md) (Réplica de almacenamiento en Windows Server 2016). 
 
 
-### <a name="BKMK_CloudWitness"></a>Testigo en la nube  
+### <a name="cloud-witness"></a><a name="BKMK_CloudWitness"></a>Testigo en la nube  
 Testigo en la nube es un nuevo tipo de testigo de cuórum de clúster de conmutación por error en Windows Server 2016 que utiliza Microsoft Azure como punto de arbitraje. El testigo en la nube, como cualquier otro testigo de cuórum, obtiene un voto y pueden participar en los cálculos de cuórum. Puede configurar el testigo en la nube como un testigo de cuórum el Asistente para configurar un cuórum de clúster. 
 
 **¿Qué valor aporta este cambio?**  
@@ -147,7 +147,7 @@ Para obtener más información, consulte [implementación de un testigo en la nu
 
 Esta funcionalidad es nueva en Windows Server 2016. 
 
-### <a name="BKMK_VMs"></a>Resistencia de la máquina virtual  
+### <a name="virtual-machine-resiliency"></a><a name="BKMK_VMs"></a>Resistencia de la máquina virtual  
 **Resistencia de proceso** Windows Server 2016 incluye una mayor resistencia de proceso de máquinas virtuales para ayudar a reducir los problemas de comunicación dentro del clúster en el clúster de proceso de la siguiente manera: 
 
 -   **Opciones de resistencia disponibles para las máquinas virtuales:**  Ahora puede configurar las opciones de resistencia de la máquina virtual que definen el comportamiento de las máquinas virtuales durante los errores transitorios:  
@@ -166,17 +166,17 @@ Cuando una máquina virtual se desconecta de su almacenamiento subyacente, se pa
 
 En Windows Server 2016, la resistencia de almacenamiento de máquinas virtuales es consciente y optimizada también para los clústeres invitados. 
 
-### <a name="BKMK_Diagnostics"></a>Mejoras de diagnóstico en los clústeres de conmutación por error  
+### <a name="diagnostic-improvements-in-failover-clustering"></a><a name="BKMK_Diagnostics"></a>Mejoras de diagnóstico en los clústeres de conmutación por error  
 Para ayudar a diagnosticar problemas con los clústeres de conmutación por error, Windows Server 2016 incluye lo siguiente:  
 
 -   Varias mejoras en los archivos de registro del clúster (como información de zona horaria y registro de DiagnosticVerbose) que facilita la solución de problemas de clústeres de conmutación por error. Para obtener más información, vea [mejoras en la solución de problemas del clúster de conmutación por error de Windows Server 2016: registro de clúster](https://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx). 
 
 -   Un nuevo tipo de volcado de **memoria activo**, que filtra la mayoría de las páginas de memoria asignadas a las máquinas virtuales y, por tanto, hace que Memory. DMP sea mucho más pequeño y más fácil de guardar o copiar. Para obtener más información, consulte [mejoras en la solución de problemas del clúster de conmutación por error de Windows Server 2016: volcado activo](https://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx). 
 
-### <a name="BKMK_SiteAware"></a>Clústeres de conmutación por error que reconocen el sitio  
+### <a name="site-aware-failover-clusters"></a><a name="BKMK_SiteAware"></a>Clústeres de conmutación por error que reconocen el sitio  
 Windows Server 2016 incluye clústeres de conmutación por error que reconocen el sitio y que habilitan nodos de grupo en clústeres extendidos en función de su ubicación física (sitio). El reconocimiento de sitios de clúster mejora las operaciones clave durante el ciclo de vida del clúster, como el comportamiento de la conmutación por error, las directivas de colocación, el latido entre los nodos y el comportamiento del cuórum. Para obtener más información, consulte [clústeres de conmutación por error que reconocen el sitio en Windows Server 2016](https://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx). 
 
-### <a name="BKMK_multidomainclusters"></a>Clústeres de grupo de trabajo y de varios dominios  
+### <a name="workgroup-and-multi-domain-clusters"></a><a name="BKMK_multidomainclusters"></a>Clústeres de grupo de trabajo y de varios dominios  
 En Windows Server 2012 R2 y versiones anteriores, un clúster solo se puede crear entre nodos de miembro Unidos al mismo dominio. Windows Server 2016 rompe estas barreras y presenta la capacidad para crear un clúster de conmutación por error sin dependencias de Active Directory. Ahora puede crear clústeres de conmutación por error en las siguientes configuraciones:  
 
 -   **Clústeres de un solo dominio.** Clústeres con todos los nodos Unidos al mismo dominio. 
@@ -186,13 +186,13 @@ En Windows Server 2012 R2 y versiones anteriores, un clúster solo se puede crea
 -   **Clústeres de grupo de trabajo.** Clústeres con nodos que son servidores miembro/Grupo de trabajo (no Unidos a un dominio). 
 
 Para obtener más información, consulte [clústeres de grupos de trabajo y varios dominios en Windows Server 2016](https://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx)  
-### <a name="BKMK_VMLoadBalancing"></a>Equilibrio de carga de máquinas virtuales  
+### <a name="virtual-machine-load-balancing"></a><a name="BKMK_VMLoadBalancing"></a>Equilibrio de carga de máquinas virtuales  
 El equilibrio de carga de máquinas virtuales es una característica nueva de los clústeres de conmutación por error que facilita el equilibrio de carga sin problemas de las máquinas virtuales entre los nodos de un clúster. Los nodos sobrecargados se identifican en función de la memoria de la máquina virtual y el uso de CPU en el nodo. Después, las máquinas virtuales se mueven (se migran en vivo) desde un nodo sobrecargado a los nodos con el ancho de banda disponible (si procede). La agresividad del equilibrio se puede optimizar para garantizar un rendimiento óptimo del clúster y el uso. El equilibrio de carga está habilitado de forma predeterminada en Windows Server 2016 Technical Preview. Sin embargo, el equilibrio de carga se deshabilita cuando está habilitada la optimización dinámica de SCVMM. 
 
-### <a name="BKMK_VMStartOrder"></a>Orden de inicio de la máquina virtual  
+### <a name="virtual-machine-start-order"></a><a name="BKMK_VMStartOrder"></a>Orden de inicio de la máquina virtual  
 El orden de inicio de la máquina virtual es una característica nueva de los clústeres de conmutación por error que presenta la orquestación de inicio de las máquinas virtuales (y todos los grupos) de un clúster. Las máquinas virtuales ahora se pueden agrupar en niveles y las dependencias de orden de inicio se pueden crear entre diferentes niveles. Esto garantiza que las máquinas virtuales más importantes (como los controladores de dominio o las máquinas virtuales de la utilidad) se inician en primer lugar. Las máquinas virtuales no se inician hasta que también se inician las máquinas virtuales en las que tienen una dependencia. 
 
-### <a name="BKMK_SMBMultiChannel"></a>Redes de clústeres de varias NIC y de SMB multicanal simplificado  
+### <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a><a name="BKMK_SMBMultiChannel"></a>Redes de clústeres de varias NIC y de SMB multicanal simplificado  
 Las redes de clústeres de conmutación por error ya no se limitan a una única NIC por subred o red. Con las redes de clústeres de varias NIC y de SMB simplificado, la configuración de red es automática y todas las NIC de la subred se pueden usar para el tráfico de clústeres y cargas de trabajo. Esta mejora permite a los clientes maximizar el rendimiento de la red de Hyper-V, SQL Server instancia de clúster de conmutación por error y otras cargas de trabajo de SMB. 
 
 Para más información, consulte [redes de clústeres de varias NIC y SMB multicanal simplificado](smb-multichannel.md).

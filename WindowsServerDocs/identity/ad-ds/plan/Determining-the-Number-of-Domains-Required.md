@@ -1,7 +1,6 @@
 ---
 ms.assetid: 87bca912-b912-4bbe-9533-2c34a7abc52d
 title: Determinar el número de dominios necesarios
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 87214178fdda0cd70c79aed2e46e056deecb6291
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 32093409150e54f30eec5385ea80fc1c30851142
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402611"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822568"
 ---
 # <a name="determining-the-number-of-domains-required"></a>Determinar el número de dominios necesarios
 
@@ -35,12 +34,12 @@ Cada bosque se inicia con un solo dominio. El número máximo de usuarios que pu
 |Vínculo más lento que conecta un controlador de dominio (kbps)|Número máximo de usuarios si hay disponible un ancho de banda del 1%|Número máximo de usuarios si el ancho de banda del 5 por ciento está disponible|Número máximo de usuarios si el ancho de banda de 10 por ciento está disponible|  
 | --- | --- | --- | --- |  
 |28.8|10.000|25.000|40.000|  
-|32|10.000|25.000|50,000|  
-|56|10.000|50,000|100.000|  
-|64|10.000|50,000|100.000|  
+|32|10.000|25.000|50.000|  
+|56|10.000|50.000|100.000|  
+|64|10.000|50.000|100.000|  
 |128|25.000|100.000|100.000|  
-|256|50,000|100.000|100.000|  
-|512|80.000|100.000|100.000|  
+|256|50.000|100.000|100.000|  
+|512|80,000|100.000|100.000|  
 |1\.500|100.000|100.000|100.000|  
 
 Para usar esta tabla:  
@@ -49,7 +48,7 @@ Para usar esta tabla:
 
 2. En la fila que corresponde a la velocidad de vínculo más lenta, busque la columna que representa el porcentaje de ancho de banda que desea asignar a AD DS. El valor en esa ubicación es el número máximo de usuarios que puede contener el dominio de un bosque de dominio único.  
 
-Si determina que el número total de usuarios del bosque es menor que el número máximo de usuarios que puede contener el dominio, puede usar un solo dominio. Asegúrese de acomodar el crecimiento futuro planeado cuando realice esta determinación. Si determina que el número total de usuarios del bosque es mayor que el número máximo de usuarios que puede contener el dominio, debe reservar un porcentaje mayor de ancho de banda para la replicación, aumentar la velocidad del vínculo o dividir la organización en Dominios regionales.  
+Si determina que el número total de usuarios del bosque es menor que el número máximo de usuarios que puede contener el dominio, puede usar un solo dominio. Asegúrese de acomodar el crecimiento futuro planeado cuando realice esta determinación. Si determina que el número total de usuarios del bosque es mayor que el número máximo de usuarios que puede contener el dominio, debe reservar un porcentaje mayor de ancho de banda para la replicación, aumentar la velocidad del vínculo o dividir la organización en dominios regionales.  
   
 ## <a name="dividing-the-organization-into-regional-domains"></a>División de la organización en dominios regionales
 
@@ -72,11 +71,11 @@ En primer lugar, determine el número máximo de usuarios que el bosque puede ho
   
 |Vínculo más lento que conecta un controlador de dominio (kbps)|Número máximo de usuarios si hay disponible un ancho de banda del 1%|Número máximo de usuarios si el ancho de banda del 5 por ciento está disponible|Número máximo de usuarios si el ancho de banda de 10 por ciento está disponible|  
 | --- | --- | --- | --- |  
-|28.8|10.000|50,000|75.000|  
-|32|10.000|50,000|75.000|  
+|28.8|10.000|50.000|75.000|  
+|32|10.000|50.000|75.000|  
 |56|10.000|75.000|100.000|  
 |64|25.000|75.000|100.000|  
-|128|50,000|100.000|100.000|  
+|128|50.000|100.000|100.000|  
 |256|75.000|100.000|100.000|  
 |512|100.000|100.000|100.000|  
 |1\.500|100.000|100.000|100.000|  
@@ -107,12 +106,12 @@ Determine el número de usuarios que deben estar hospedados en cada región y, a
 |Vínculo más lento que conecta un controlador de dominio (kbps)|Número máximo de usuarios si hay disponible un ancho de banda del 1%|Número máximo de usuarios si el ancho de banda del 5 por ciento está disponible|Número máximo de usuarios si el ancho de banda de 10 por ciento está disponible|  
 | --- | --- | --- | --- |  
 |28.8|10.000|18.000|40.000|  
-|32|10.000|20.000|50,000|  
+|32|10.000|20.000|50.000|  
 |56|10.000|40.000|100.000|  
-|64|10.000|50,000|100.000|  
+|64|10.000|50.000|100.000|  
 |128|15.000|100.000|100.000|  
 |256|30.000|100.000|100.000|  
-|512|80.000|100.000|100.000|  
+|512|80,000|100.000|100.000|  
 |1\.500|100.000|100.000|100.000|  
 
 Para usar esta tabla:  
@@ -129,4 +128,4 @@ Aunque el número total de usuarios que puede colocar en un dominio en un bosque
 
 Después de dividir la organización en dominios regionales, documente las regiones que desee representar y el número de usuarios que existirán en cada región. Además, tenga en cuenta la velocidad de los vínculos más lentos en cada región que utilizará para la replicación de Active Directory. Esta información se usa para determinar si se requieren dominios o bosques adicionales.  
 
-Para obtener una hoja de cálculo que le ayude a documentar las regiones que identificó, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558) y abra "identificar regiones" (DSSLOGI _4. doc).  
+Para obtener una hoja de cálculo que le ayude a documentar las regiones que identificó, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558) y abra "identificar regiones" (DSSLOGI_4. doc).  

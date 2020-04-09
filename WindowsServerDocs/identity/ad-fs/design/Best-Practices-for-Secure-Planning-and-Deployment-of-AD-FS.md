@@ -1,7 +1,6 @@
 ---
 ms.assetid: 963a3d37-d5f1-4153-b8d5-2537038863cb
 title: Procedimientos recomendados para planear e implementar AD FS de forma segura
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: be488ccffee7b267d2a3a120b85436abf206f65a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bcddb3cc7534f45f0a84e25a6174648f1e3b82af
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359202"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858418"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>Procedimientos recomendados para planear e implementar AD FS de forma segura
 
@@ -61,7 +60,7 @@ Los siguientes procedimientos recomendados principales son comunes para todas la
     |---------------------|-------------------------------------|---------------------------------------------------|  
     |Servidor de federación independiente|Windows Internal Database|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwStandAlone.xml"`|  
     |Servidor de federación unido a una granja de servidores|Windows Internal Database|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwFarm.xml"`|  
-    |Servidor de federación unido a una granja de servidores|SQL Server|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwSQLFarm.xml"`|  
+    |Servidor de federación unido a una granja de servidores|SQL Server|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwSQLFarm.xml"`|  
     |Servidor proxy de federación|N/D|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
   
     Para obtener más información sobre las bases de datos que se pueden usar con AD FS, consulta [Rol de la base de datos de configuración de AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md).  
@@ -85,7 +84,7 @@ Los siguientes procedimientos recomendados principales son comunes para todas la
   
     Para habilitar la característica de protección ampliada, usa el parámetro **ExtendedProtectionTokenCheck** en el cmdlet **Set-ADFSProperties**. En la tabla siguiente se describen los valores posibles para esta opción y el nivel de seguridad que proporcionan los valores.  
   
-    |Valor del parámetro|Nivel Seguridad|Configuración de protección|  
+    |Valor de parámetro|Nivel Seguridad|Configuración de protección|  
     |-------------------|------------------|----------------------|  
     |Requerir|El servidor está protegido completamente.|La protección ampliada es obligatoria y siempre se requiere.|  
     |Permitir|El servidor está protegido parcialmente.|La protección ampliada es obligatoria en aquellos sistemas que han sido actualizados para admitirla.|  
@@ -114,7 +113,7 @@ Los siguientes procedimientos recomendados principales son comunes para todas la
      Para el bloqueo inteligente de extranet para AD FS en Windows Server 2016, consulte [AD FS la protección de bloqueo inteligente de extranet](../../ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md).  
   
 ## <a name="sql-serverspecific-security-best-practices-for-ad-fs"></a>Recomendaciones de seguridad específicas de SQL Server para AD FS  
-Las siguientes prácticas recomendadas de seguridad son específicas para el uso de Microsoft SQL Server® o Windows Internal Database (WID) cuando se usan estas tecnologías de base de datos para administrar datos en el diseño y la implementación de AD FS.  
+Las siguientes prácticas recomendadas de seguridad son específicas para el uso de Microsoft SQL Server&reg; o Windows Internal Database (WID) cuando se usan estas tecnologías de base de datos para administrar datos en el diseño y la implementación de AD FS.  
   
 > [!NOTE]  
 > Estas recomendaciones tienen como objetivo ampliar (no sustituir) la guía de seguridad del producto de SQL Server. Para obtener más información acerca de cómo planear una instalación de SQL Server segura, vea [consideraciones de seguridad para una instalación de SQL Server](https://go.microsoft.com/fwlink/?LinkID=139831) (https://go.microsoft.com/fwlink/?LinkID=139831).  
@@ -125,7 +124,7 @@ Las siguientes prácticas recomendadas de seguridad son específicas para el uso
   
 -   **Ejecute SQL Server en una cuenta de servicio en lugar de usar las cuentas de servicio del sistema predeterminadas integradas.**  
   
-    De manera predeterminada, SQL Server suele instalarse y configurarse para usar una de las cuentas del sistema predefinidas, como LocalSystem o NetworkService. Para mejorar la seguridad de la instalación de SQL Server para AD FS, siempre que sea posible, use una cuenta de servicio independiente para tener acceso al servicio de SQL Server y habilite la autenticación Kerberos registrando el nombre de la entidad de seguridad (SPN) de esta cuenta en el Active Directory la implementación. Esto permite la autenticación mutua entre cliente y servidor. Si no se registra el SPN de una cuenta de servicio separada, SQL Server usará NTLM para autenticación basada en Windows, donde solo se autentica el cliente.  
+    De manera predeterminada, SQL Server suele instalarse y configurarse para usar una de las cuentas del sistema predefinidas, como LocalSystem o NetworkService. Para mejorar la seguridad de la instalación de SQL Server para AD FS, siempre que sea posible, use una cuenta de servicio independiente para tener acceso al servicio de SQL Server y habilite la autenticación Kerberos registrando el nombre de la entidad de seguridad (SPN) de esta cuenta en la implementación de Active Directory. Esto permite la autenticación mutua entre cliente y servidor. Si no se registra el SPN de una cuenta de servicio separada, SQL Server usará NTLM para autenticación basada en Windows, donde solo se autentica el cliente.  
   
 -   **Minimice el área expuesta de SQL Server.**  
   

@@ -1,24 +1,20 @@
 ---
 title: Evntcmd
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c1aabb74-76e7-4304-95a6-50ad87e92fd9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b4496df6df1a40b383505627d58389c098493f59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 86e4290543ffcc0da1c768a661fd88a7638b1146
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377441"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845018"
 ---
 # <a name="evntcmd"></a>Evntcmd
 
@@ -29,7 +25,7 @@ Configura la traducción de eventos a capturas, destinos de captura o ambos seg�
 ```  
 evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>  
 ```  
-### <a name="parameters"></a>Parámetros  
+#### <a name="parameters"></a>Parámetros  
 
 |      Parámetro      |                                                                                                                                                            Descripción                                                                                                                                                             |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -37,9 +33,9 @@ evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>
 | /v <verbosityLevel> | Especifica los tipos de mensajes de estado que aparecen como capturas y se configuran los destinos de captura. Este parámetro debe ser un entero comprendido entre 0 y 10. Si especifica 10, aparecerán todos los tipos de mensajes, incluidos los mensajes de seguimiento y las advertencias sobre si la configuración de la captura fue correcta. Si especifica 0, no aparece ningún mensaje. |
 |         /n          |                                                                                                           Especifica que el servicio SNMP no debe reiniciarse si este equipo recibe cambios de configuración de captura.                                                                                                            |
 |     <FileName>      |                                                                                     Especifica, por nombre, el archivo de configuración que contiene información sobre la traducción de eventos a capturas y destinos de captura que desea configurar.                                                                                     |
-|         /?          |                                                                                                                                                Muestra la ayuda en el símbolo del sistema.                                                                                                                                                |
+|         /?          |                                                                                                                                                Muestra la Ayuda en el símbolo del sistema.                                                                                                                                                |
 
-## <a name="remarks"></a>Observaciones  
+## <a name="remarks"></a>Comentarios  
 - Si desea configurar capturas pero no destinos de captura, puede crear un archivo de configuración válido mediante el traductor de eventos para captura, que es una utilidad gráfica. Si tiene el servicio SNMP instalado, puede iniciar el evento para capturar el traductor escribiendo **evntwin** en el símbolo del sistema. Una vez definidas las capturas que desee, haga clic en exportar para crear un archivo adecuado para su uso con **evntcmd**. Puede usar el traductor de eventos para interceptar para crear fácilmente un archivo de configuración y, a continuación, utilizar el archivo de configuración con **evntcmd** en el símbolo del sistema para configurar rápidamente las capturas en varios equipos.  
 - La sintaxis para configurar una captura es la siguiente:  
   **#pragma agregar**<em><EventLogFile> <EventSource> <EventID> [<Count> [<Period>]]</em>  
@@ -65,19 +61,19 @@ evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>
   - El parámetro *delete_TRAP_DEST* especifica que no desea que los mensajes de captura se envíen a un host especificado dentro de una comunidad.  
   - El parámetro *CommunityName* especifica, por nombre, la comunidad en la que se envían los mensajes de captura.  
   - El parámetro *HostID* especifica, por nombre o dirección IP, el host al que no desea que se envíen los mensajes de captura.  
-    ## <a name="BKMK_Examples"></a>Example  
+    ## <a name="examples"></a><a name=BKMK_Examples></a>Example  
     En los siguientes ejemplos se muestran entradas en el archivo de configuración para el comando **evntcmd** . No se han diseñado para que se escriban en el símbolo del sistema.  
     Para enviar un mensaje de captura si se reinicia el servicio registro de eventos, escriba:  
     ```  
-    #pragma add System "Eventlog" 2147489653  
+    #pragma add System Eventlog 2147489653  
     ```  
     Para enviar un mensaje de captura si el servicio registro de eventos se reinicia dos veces en tres minutos, escriba:  
     ```  
-    #pragma add System "Eventlog" 2147489653 2 180  
+    #pragma add System Eventlog 2147489653 2 180  
     ```  
     Para detener el envío de un mensaje de captura cada vez que se reinicie el servicio registro de eventos, escriba:  
     ```  
-    #pragma delete System "Eventlog" 2147489653  
+    #pragma delete System Eventlog 2147489653  
     ```  
     Para enviar mensajes de captura dentro de la comunidad denominada Public al host con la dirección IP 192.168.100.100, escriba:  
     ```  
@@ -91,5 +87,5 @@ evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>
     ```  
     #pragma delete_TRAP_DEST private localhost  
     ```  
-    ## <a name="additional-references"></a>referencias adicionales  
-- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
+    ## <a name="additional-references"></a>Referencias adicionales  
+- - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  

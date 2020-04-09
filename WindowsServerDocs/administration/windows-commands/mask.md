@@ -1,26 +1,22 @@
 ---
-title: Máscara
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+title: mask
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bf301474-d74a-44e7-9fad-c8a11e7ca3bd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f0dc83d7d9f7204f56e95c62b7cfad991f539ef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a1cb92caacb955449c1baaad411fdbe4cdf05b73
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373715"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839648"
 ---
-# <a name="mask"></a>Máscara
+# <a name="mask"></a>mask
 
 
 
@@ -34,7 +30,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 mask <ShadowSetID>
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -44,13 +40,13 @@ mask <ShadowSetID>
 
 -   Puede usar un alias existente o una variable de entorno en lugar de *ShadowSetID*. Use **Agregar** sin parámetros para ver los alias existentes.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para quitar la instantánea importada% Import_1%, escriba:
 ```
 mask %Import_1%
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

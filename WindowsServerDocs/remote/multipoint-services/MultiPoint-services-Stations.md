@@ -1,24 +1,20 @@
 ---
 title: Estaciones de MultiPoint
 description: Más información sobre las estaciones en Multipoint Services, incluidas las diferentes opciones para los usuarios
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f9f9d618-ccfe-41ea-a52c-00c3c7adb51a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 7b8f757d552bf54cd7f4eed0783ba8e0062b9d30
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 3bcdd2d3f7492b29ecf92c59714f1d93b910c9b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322807"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853428"
 ---
 # <a name="multipoint--stations"></a>Estaciones Multipoint
 En un entorno del sistema Multipoint Services, las *estaciones* son los puntos de conexión de usuario para conectarse al equipo que ejecuta Multipoint Services. Cada estación proporciona al usuario una experiencia independiente de Windows 10. Se admiten los siguientes tipos de estación:  
@@ -48,7 +44,7 @@ El equipo que ejecuta Multipoint Services puede contener varias tarjetas de víd
   
 **Figura 1** Sistema Multipoint Services con cuatro estaciones conectadas a vídeo directo  
   
-### <a name="BKMK_PS2stations"></a>Estaciones PS/2  
+### <a name="ps2-stations"></a><a name="BKMK_PS2stations"></a>Estaciones PS/2  
 Con Multipoint Services, puede asignar el teclado y el mouse de PS/2 en la placa base a un monitor conectado a vídeo directo para crear una estación PS/2. El audio analógico de alta definición en la placa base es el audio asociado a este tipo de estación. Esto no se aplica a los equipos en los que no hay conectores PS/2 en la placa base.  
   
 ## <a name="usb-zero-client-connected-stations"></a>Estaciones conectadas por el cliente USB a cero  
@@ -64,7 +60,7 @@ En el diagrama siguiente se muestra un sistema MultiPoint Server con una estaci�
 Los clientes USB a través de Ethernet son una variación de los clientes USB que envían USB a través de LAN al sistema Multipoint Services. Estos tipos de clientes USB no funcionan de forma similar a otros clientes USB, pero no están limitados por la longitud máxima del cable USB. Los clientes USB a través de Ethernet no son clientes ligeros tradicionales y aparecen como dispositivos USB virtuales en el sistema Multipoint Services. Al usar estos dispositivos, consulte al fabricante del dispositivo para obtener recomendaciones específicas sobre el rendimiento y el planeamiento del sitio. La mayoría de los dispositivos tienen un complemento de terceros para Multipoint Manager que le permite asociar y conectar dispositivos al sistema Multipoint Services.  
   
 ## <a name="rdp-over-lan-connected-stations"></a>Estaciones conectadas de RDP a través de LAN  
-Los clientes ligeros y equipos de escritorio, portátiles o Tablet PC tradicionales pueden conectarse al equipo que ejecuta Multipoint Services a través de la red de área local (LAN) mediante Protocolo de escritorio remoto (RDP) o un protocolo propietario y el Protocolo de escritorio remoto Presta. Las conexiones RDP proporcionan una experiencia de usuario final muy similar a cualquier otra estación Multipoint, pero hace uso del hardware del equipo cliente local. Obtenga más información sobre las aplicaciones de escritorio remoto disponibles para Android, iOS, Mac y Windows en [clientes de escritorio remoto](../remote-desktop-services/clients/remote-desktop-clients.md). 
+Los clientes ligeros y los equipos de escritorio, portátiles o Tablet PC tradicionales pueden conectarse al equipo que ejecuta Multipoint Services a través de la red de área local (LAN) mediante Protocolo de escritorio remoto (RDP) o un protocolo propietario y el proveedor de Protocolo de escritorio remoto. Las conexiones RDP proporcionan una experiencia de usuario final muy similar a cualquier otra estación Multipoint, pero hace uso del hardware del equipo cliente local. Obtenga más información sobre las aplicaciones de escritorio remoto disponibles para Android, iOS, Mac y Windows en [clientes de escritorio remoto](../remote-desktop-services/clients/remote-desktop-clients.md). 
   
 Los clientes y dispositivos que ejecutan Microsoft RemoteFX pueden proporcionar una experiencia multimedia enriquecida aprovechando las capacidades de hardware de procesador y vídeo del equipo o cliente ligero local para proporcionar vídeo de alta definición a través de la red.  
   
@@ -113,7 +109,7 @@ Una vez que se divide una estación, un usuario puede iniciar sesión en la esta
   
 **Figura 4** Sistema Multipoint Services con estaciones de pantalla divididas  
   
-## <a name="BKMK_StationTypeComparison"></a>Comparación de tipo de estación  
+## <a name="station-type-comparison"></a><a name="BKMK_StationTypeComparison"></a>Comparación de tipo de estación  
   
 ||Vídeo directo conectado|Cliente USB sin conexión|RDP a través de LAN conectada|  
 |-|--------------------------|-----------------------------|----------------------------|  

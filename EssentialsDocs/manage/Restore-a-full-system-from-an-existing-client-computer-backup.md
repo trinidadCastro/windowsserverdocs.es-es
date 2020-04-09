@@ -1,23 +1,19 @@
 ---
 title: Restauración completa del sistema desde una copia de seguridad existente del equipo cliente
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b9629f41c4e8eb707b19914a297d9d8b88c6aead
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 37e4d45f6bd34d77fbbf3cbabcd66a776b624c19
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310655"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852648"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>Restauración completa del sistema desde una copia de seguridad existente del equipo cliente
 
@@ -91,7 +87,7 @@ ms.locfileid: "80310655"
  La copia de seguridad de matrices redundantes de discos independientes (RAID) y discos dinámicos no es compatible.  
   
 ##  <a name="how-does-the-system-restore-environment-work"></a><a name="BKMK_HowDoes"></a>¿Cómo funciona el entorno de restauración del sistema?  
- Los medios de restauración del sistema suministrados con Windows Server® 2012 Essentials instala Entorno de preinstalación de Windows (Windows PE) en el equipo. Windows PE sustituye el entorno de MS-DOS y contiene los archivos de programa principales para Windows. En Windows Server Essentials, existen dos formas admitidas para restaurar un sistema: mediante el servicio de restauración de cliente, que usa una red y no se basa en medios, o en el uso de la unidad flash USB.  
+ Los medios de restauración del sistema suministrados con Windows Server&reg; 2012 Essentials instala Entorno de preinstalación de Windows (Windows PE) en el equipo. Windows PE sustituye el entorno de MS-DOS y contiene los archivos de programa principales para Windows. En Windows Server Essentials, existen dos formas admitidas para restaurar un sistema: mediante el servicio de restauración de cliente, que usa una red y no se basa en medios, o en el uso de la unidad flash USB.  
   
 > [!NOTE]
 >  Windows PE no admite conexiones inalámbricas. Debido a ello, el equipo que se va a restaurar debe estar conectado físicamente a la red de la pequeña empresa.  

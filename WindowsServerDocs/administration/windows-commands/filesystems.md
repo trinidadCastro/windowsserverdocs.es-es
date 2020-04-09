@@ -1,26 +1,22 @@
 ---
-title: sistemas
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+title: filesystems
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3c4915a6-bd20-4af6-a94a-5fc7c20410bf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e6ebb65223bd69af2253bc77dcbe2c433255513b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3dc474f3b6c7631343175da02bb477bf5da685e0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377176"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844708"
 ---
-# <a name="filesystems"></a>sistemas
+# <a name="filesystems"></a>filesystems
 
 
 
@@ -36,5 +32,5 @@ filesystems
 
 -   Se debe seleccionar un volumen para que esta operación se realice correctamente. Use el comando **seleccionar volumen** para seleccionar un volumen y cambiar el foco a él.
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 

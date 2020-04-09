@@ -1,20 +1,20 @@
 ---
 title: Cifrado de Virtual Network
 description: El cifrado de red virtual permite el cifrado del tráfico de red virtual entre máquinas virtuales que se comunican entre sí dentro de subredes marcadas como "cifrado habilitado".
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 7da0f509-7b02-4a0f-90fb-d97c83a2bc4e
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 8e12e5ff8a1ce8403e9d13d215f26f46352b17d1
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 63daea02ec00593504383ce071d3f9454a37956b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309753"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853578"
 ---
 # <a name="virtual-network-encryption"></a>Cifrado de Virtual Network
 

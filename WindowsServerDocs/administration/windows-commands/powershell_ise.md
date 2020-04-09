@@ -1,24 +1,20 @@
 ---
 title: PowerShell_ise
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 32c41b5b-a210-47d9-bd8c-91eb9830b4f0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65d8b9e7b7952ec64cd24e8106802cf66de693c6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b6ae96dcd40c894e0a528c06b461173f626fb2d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372190"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837398"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
@@ -26,9 +22,9 @@ ms.locfileid: "71372190"
 
 El entorno de scripting integrado (ISE) de Windows PowerShell es una aplicación de host gráfico que permite leer, escribir, ejecutar, depurar y probar scripts y módulos en un entorno asistido por gráficos. Características clave como IntelliSense, show-Command, Snippets, finalización con tabulación, color de sintaxis, depuración visual y ayuda contextual proporcionan una experiencia de scripting enriquecida.
 
-La herramienta **PowerShell_ISE. exe** inicia una sesión Windows PowerShell ISE. Al usar **PowerShell_ISE. exe**, puede usar sus parámetros opcionales para abrir archivos en Windows PowerShell ISE o para iniciar una sesión de Windows PowerShell ISE sin ningún perfil o con un apartamento multiproceso.
+La herramienta **PowerShell_ISE. exe** inicia una sesión Windows PowerShell ISE. Cuando use **PowerShell_ISE. exe**, puede usar sus parámetros opcionales para abrir archivos en Windows PowerShell ISE o para iniciar una sesión de Windows PowerShell ISE sin ningún perfil o con un apartamento multiproceso.
 
-**PowerShell_ISE. exe** se incorporó en windows PowerShell 2,0 y se amplió significativamente en windows PowerShell 3,0.
+**PowerShell_ISE. exe** se incorporó en windows PowerShell 2,0 y se amplió de forma significativa en windows PowerShell 3,0.
 
 ## <a name="using-powershell_iseexe"></a>Usar PowerShell_ISE. exe
 
@@ -49,11 +45,11 @@ Puede usar **PowerShell_ISE. exe** para iniciar y finalizar una sesión de Windo
   ```
   PowerShell_Ise -NoProfile
   ```  
-- Para ver el archivo de ayuda de **PowerShell_ISE. exe** en una ventana del símbolo del sistema, use el siguiente formato de comando:  
+- Para ver el archivo de ayuda **PowerShell_ISE. exe** en una ventana del símbolo del sistema, use el siguiente formato de comando:  
   ```
   PowerShell_Ise -help, -?, /?
   ```  
-  Para obtener una lista completa de los parámetros de línea de comandos de **PowerShell_ISE. exe** , vea [about_PowerShell_Ise. exe](https://go.microsoft.com/fwlink/?LinkId=256512).
+  Para obtener una lista completa de los parámetros de línea de comandos de **PowerShell_ISE. exe** , consulte [about_PowerShell_Ise. exe](https://go.microsoft.com/fwlink/?LinkId=256512).
 
 ## <a name="start-windows-powershell-ise-in-other-ways"></a>Iniciar Windows PowerShell ISE de otras maneras
 
@@ -67,5 +63,5 @@ Windows PowerShell se ejecuta en la opción de instalación Server Core de los s
 
 [about_PowerShell_Ise. exe](https://go.microsoft.com/fwlink/?LinkId=256512)
 [about_PowerShell. exe](https://go.microsoft.com/fwlink/?LinkID=113439)
-[Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)
-[scripting con Windows PowerShell](https://technet.microsoft.com/scriptcenter/dd742419) vea también
+[scripting de
+de](https://technet.microsoft.com/scriptcenter/dd742419) [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116) con Windows PowerShell, vea también

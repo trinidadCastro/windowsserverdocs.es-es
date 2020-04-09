@@ -1,24 +1,20 @@
 ---
 title: REG Add
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d9ad143e-dc10-4e2e-a229-408393c40079
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b478ce0c98ec77f1387d8f894364f53cf8d2142
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: df59477c980169699dac897e36836e5226b6a0fa
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371765"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836598"
 ---
 # <a name="reg-add"></a>REG Add
 
@@ -32,7 +28,7 @@ reg add <KeyName> [{/v ValueName | /ve}] [/t DataType] [/s Separator] [/d Data] 
 ```
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |      Parámetro      |                                                                                                                                                                                                                                                                   Descripción                                                                                                                                                                                                                                                                   |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -45,7 +41,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 |         /f          |                                                                                                                                                                                                                                           Agrega la entrada del registro sin pedir confirmación.                                                                                                                                                                                                                                           |
 |         /?          |                                                                                                                                                                                                                                              Muestra ayuda para **reg Add** en el símbolo del sistema.                                                                                                                                                                                                                                               |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   No se pueden agregar subárboles con esta operación. Esta versión de **reg** no pide confirmación al agregar una subclave.
 -   En la tabla siguiente se enumeran los valores devueltos para la operación **reg Add** .
@@ -55,9 +51,9 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 |   0   |   Correcto   |
 |   1   |   Error   |
 
--   Para el tipo de clave REG_EXPAND_SZ, use el símbolo de intercalación ( **^** ) con **%** "dentro del parámetro/d.
+-   Para el tipo de clave REG_EXPAND_SZ, use el símbolo de intercalación ( **^** ) con **%** dentro del parámetro/d.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para agregar la clave HKLM\Software\MyCo en el equipo remoto ABC, escriba:
 ```
@@ -76,6 +72,6 @@ Para agregar una entrada de registro expandida a HKLM\Software\MyCo con un nombr
 REG ADD HKLM\Software\MyCo /v Path /t REG_EXPAND_SZ /d ^%systemroot^%
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

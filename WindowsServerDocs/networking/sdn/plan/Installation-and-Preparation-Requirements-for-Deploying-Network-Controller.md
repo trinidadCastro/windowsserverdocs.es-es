@@ -1,20 +1,20 @@
 ---
 title: Requisitos para implementar la controladora de red
 description: Prepare su centro de información para la implementación de la controladora de red, que requiere uno o varios equipos o máquinas virtuales, y un equipo o máquina virtual. Para poder implementar la controladora de red, debe configurar los grupos de seguridad, las ubicaciones de los archivos de registro (si es necesario) y el registro de DNS dinámico.
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: a16d82e4db1e92a5dd20f6b4feb88f0619d50cc4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: da9164eea4ab7e2fb38864fb69c47252448b77b6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317511"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854428"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>Requisitos para implementar la controladora de red
 

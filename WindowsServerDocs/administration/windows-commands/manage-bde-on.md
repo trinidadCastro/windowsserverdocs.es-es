@@ -1,24 +1,20 @@
 ---
 title: Manage-BDE en
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f6a12814-df74-416c-a04a-62ea8512263e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a95bbc375c0a5b62b96f7c68f7d5ab5e09371d1c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1785c10ade5f7aace8595d8d0972fb1fa315232b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373993"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840018"
 ---
 # <a name="manage-bde-on"></a>Manage-BDE: activado
 
@@ -35,7 +31,7 @@ manage-bde –on <Drive> {[-recoveryPassword <NumericalPassword>]|[-recoverykey 
 [{-?|/?}] [{-help|-h}]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -44,13 +40,13 @@ manage-bde –on <Drive> {[-recoveryPassword <NumericalPassword>]|[-recoverykey 
 |\<NumericalPassword >|Representa la contraseña de recuperación.|
 |-recoverykey|Agrega un protector de clave externa para la recuperación. También puede usar **-RK** como una versión abreviada de este comando.|
 |\<PathToExternalDirectory >|Representa la ruta de acceso del directorio a la clave de recuperación.|
-|-clave|Agrega un protector de clave externa para el inicio. También puede usar **-SK** como una versión abreviada de este comando.|
+|-clave|agrega un protector de clave externa para el inicio. También puede usar **-SK** como una versión abreviada de este comando.|
 |\<PathToExternalKeyDirectory >|Representa la ruta de acceso al directorio de la clave de inicio.|
-|-certificado|Agrega un protector de clave pública para una unidad de datos. También puede usar **-CERT** como una versión abreviada de este comando.|
+|-certificado|agrega un protector de clave pública para una unidad de datos. También puede usar **-CERT** como una versión abreviada de este comando.|
 |-tpmandpin|Agrega un protector de Módulo de plataforma segura (TPM) y un número de identificación personal (PIN) para la unidad del sistema operativo. También puede usar **-TP** como una versión abreviada de este comando.|
-|-tpmandstartupkey|Agrega un protector de clave de inicio y TPM para la unidad del sistema operativo. También puede usar **-TSK** como una versión abreviada de este comando.|
-|-tpmandpinandstartupkey|Agrega un protector de TPM, PIN y clave de inicio para la unidad del sistema operativo. También puede usar **-tpsk** como una versión abreviada de este comando.|
-|-contraseña|Agrega un protector de clave de contraseña para la unidad de datos. También puede usar **-PW** como una versión abreviada de este comando.|
+|-tpmandstartupkey|agrega un protector de clave de inicio y TPM para la unidad del sistema operativo. También puede usar **-TSK** como una versión abreviada de este comando.|
+|-tpmandpinandstartupkey|agrega un protector de TPM, PIN y clave de inicio para la unidad del sistema operativo. También puede usar **-tpsk** como una versión abreviada de este comando.|
+|-password|agrega un protector de clave de contraseña para la unidad de datos. También puede usar **-PW** como una versión abreviada de este comando.|
 |-ADAccountOrGroup|Agrega un protector de identidad basado en SID para el volumen. El volumen se desbloqueará automáticamente si el usuario o el equipo tienen las credenciales adecuadas. Al especificar una cuenta de equipo, anexe un **$** al nombre del equipo y especifique **– Service** para indicar que el desbloqueo debe llevarse a cabo en el contenido del servidor BitLocker en lugar de en el usuario. También puede usar **-SID** como una versión abreviada de este comando.|
 |-UsedSpaceOnly|Establece el modo de cifrado para el cifrado solo del espacio usado. Se cifrarán las secciones del volumen que contiene el espacio usado, pero no el espacio disponible. Si no se especifica esta opción, se cifrarán todos los espacios usados y el espacio disponible en el volumen. También puede usar **: se usa** como una versión abreviada de este comando.|
 |-encryptionMethod|Configura el algoritmo de cifrado y el tamaño de la clave. También puede usar **-em** como una versión abreviada de este comando.|
@@ -64,7 +60,7 @@ manage-bde –on <Drive> {[-recoveryPassword <NumericalPassword>]|[-recoverykey 
 |-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
 |-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
 
-## <a name="BKMK_Examples"></a>Example
+## <a name="examples"></a><a name=BKMK_Examples></a>Example
 
 En el siguiente ejemplo se muestra el uso del comando **-on** para Activar BitLocker para la unidad C y agregar una contraseña de recuperación a la unidad.
 ```
@@ -87,7 +83,7 @@ En el ejemplo siguiente se muestra el uso del comando **-on** para Activar BitLo
 manage-bde –on C: -fet Hardware
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Manage-BDE](manage-bde.md)

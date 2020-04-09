@@ -1,7 +1,6 @@
 ---
 ms.assetid: 61ed00fd-51c7-4728-91fa-8501de9d8f28
 title: Publicación de aplicaciones con SharePoint, Exchange y RDG
-description: ''
 author: billmath
 manager: mtillman
 ms.author: billmath
@@ -9,12 +8,12 @@ ms.date: 04/30/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: 3852baf866dae20d1d1d08219841295aa976c626
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 18851463b82afc1dc34615e6faaa14622c80224a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79319939"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818688"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>Publicación de aplicaciones con SharePoint, Exchange y RDG
 
@@ -27,7 +26,7 @@ En este tema se describen las tareas necesarias para publicar SharePoint Server,
 > [!NOTE]
 > Esta información se proporciona tal cual.  Servicios de Escritorio remoto admite y recomienda el uso de [App de Azure proxy para proporcionar un acceso remoto seguro a aplicaciones locales](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started).
 
-## <a name="BKMK_6.1"></a>Publicación de SharePoint Server
+## <a name="publish-sharepoint-server"></a><a name="BKMK_6.1"></a>Publicación de SharePoint Server
 Puede publicar un sitio de SharePoint mediante el proxy de aplicación web cuando el sitio de SharePoint está configurado para la autenticación basada en notificaciones o la autenticación integrada de Windows. Si desea usar Servicios de federación de Active Directory (AD FS) (AD FS) para la autenticación previa, debe configurar un usuario de confianza mediante uno de los asistentes.
 
 -   Si el sitio de SharePoint usa la autenticación basada en notificaciones, debe utilizar el Asistente para agregar la relación de confianza para usuario autenticado para la aplicación.
@@ -40,7 +39,7 @@ Puede publicar un sitio de SharePoint mediante el proxy de aplicación web cuand
 
 Si el sitio de SharePoint se configura mediante asignaciones de acceso alternativas (AAM) o colecciones de sitios denominadas host, puede usar diferentes direcciones URL de los servidores externos y back-end para publicar la aplicación. Sin embargo, si no configura el sitio de SharePoint con AAM o colecciones de sitios denominadas host, deberá usar las mismas direcciones URL de los servidores externos y back-end.
 
-## <a name="BKMK_6.2"></a>Publicación de Exchange Server
+## <a name="publish-exchange-server"></a><a name="BKMK_6.2"></a>Publicación de Exchange Server
 En la tabla siguiente se describen los servicios de Exchange que se pueden publicar a través del proxy de aplicación web y la autenticación previa admitida para estos servicios:
 
 
@@ -48,7 +47,7 @@ En la tabla siguiente se describen los servicios de Exchange que se pueden publi
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    Outlook Web App     | -AD FS mediante la autenticación no basada en notificaciones<br />-Paso a través<br />-AD FS el uso de la autenticación basada en notificaciones para Exchange 2013 Service Pak 1 (SP1) local |                                                                  Para más información, vea: [Usar la autenticación basada en notificaciones de AD FS con Outlook Web App y EAC](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
 | Panel de control de Exchange |                                                                               Paso a través                                                                               |                                                                                                                                                                                                                                                                                    |
-|    Outlook en cualquier lugar    |                                                                               Paso a través                                                                               | Debe publicar tres direcciones URL para que Outlook en cualquier lugar funcione correctamente:<br /><br />-La dirección URL de detección automática.<br />: El nombre de host externo del servidor de Exchange; es decir, la dirección URL que está configurada para que los clientes se conecten a.<br />: El nombre de dominio completo interno del servidor de Exchange. |
+|    Outlook en cualquier lugar    |                                                                               Paso a través                                                                               | Debe publicar tres direcciones URL para que Outlook en cualquier lugar funcione correctamente:<p>-La dirección URL de detección automática.<br />: El nombre de host externo del servidor de Exchange; es decir, la dirección URL que está configurada para que los clientes se conecten a.<br />: El nombre de dominio completo interno del servidor de Exchange. |
 |  Exchange ActiveSync   |                                                     Paso a través<br/> AD FS mediante el protocolo de autorización básico HTTP                                                      |                                                                                                                                                                                                                                                                                    |
 
 Para publicar Outlook Web App con la autenticación integrada de Windows, debe usar el Asistente para agregar relación de confianza para usuario autenticado no basado en notificaciones para configurar la relación de confianza para la aplicación.
@@ -162,7 +161,7 @@ Si quiere restringir el acceso a la puerta de enlace de acceso remoto y agregar 
 
             Para obtener más información sobre RDP, consulte [configuración del escenario de OTP de puerta de enlace de TS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731249(v=ws.10)).
 
-## <a name="BKMK_Links"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
 
 - [Planeación de la publicación de aplicaciones mediante el proxy de aplicación Web](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383650(v=ws.11))
 

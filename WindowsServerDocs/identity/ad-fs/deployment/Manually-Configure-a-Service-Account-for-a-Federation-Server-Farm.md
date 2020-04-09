@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5a1ae56b-adcb-447e-9e34-c0629d7cb241
 title: Configurar manualmente una cuenta de servicio para una granja de servidores de federación
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 8240903b3c446d4f02ca93dc053e520480f5e8ca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c30215f5f8e39bb97452fccaaef8d1bb0469dc31
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359492"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855348"
 ---
 # <a name="manually-configure-a-service-account-for-a-federation-server-farm"></a>Configurar manualmente una cuenta de servicio para una granja de servidores de federación
 
@@ -24,13 +23,13 @@ Si piensa configurar un entorno de granja de servidores de Federación en Servic
 > A partir de AD FS 3,0 (Windows Server 2012 R2), AD FS admite el uso de una [cuenta de servicio administrada de grupo](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview) \(gMSA\) como cuenta de servicio.  Esta es la opción recomendada, ya que elimina la necesidad de administrar la contraseña de la cuenta de servicio a lo largo del tiempo.  En este documento se describe el caso alternativo del uso de una cuenta de servicio tradicional, como en los dominios que siguen ejecutando un nivel funcional de dominio de Windows Server 2008 R2 o anterior \(nivel funcional\).
 
 > [!NOTE]  
-> Debe realizar las tareas de este procedimiento una sola vez para toda la granja de servidores de federación. Más adelante, cuando cree un servidor de Federación mediante el Asistente para configuración de servidor de Federación de AD FS, debe especificar esta misma cuenta en la página del asistente de **cuenta de servicio** en cada servidor de Federación de la granja.  
+> Debe realizar las tareas de este procedimiento una sola vez para toda la granja de servidores de federación. Más adelante, cuando crees un servidor de federación mediante el Asistente para la configuración de servidores de federación, debes especificar esta misma cuenta en la página **Cuenta de servicio** del asistente en cada servidor de federación de la granja.  
   
 #### <a name="create-a-dedicated-service-account"></a>Crear una cuenta de servicio dedicada  
   
 1.  Cree una cuenta de servicio de\/de usuario dedicada en el bosque de Active Directory que se encuentra en la organización del proveedor de identidades. Esta cuenta es necesaria para que el protocolo de autenticación Kerberos funcione en un escenario de granja de servidores y para permitir el paso\-a través de la autenticación en cada uno de los servidores de Federación. Use esta cuenta solo para los fines de la granja de servidores de Federación.  
   
-2.  Edita las propiedades de la cuenta de usuario y activa la casilla **La contraseña nunca expira** . Con esta acción te aseguras de que la función de esta cuenta de servicio no se interrumpa nunca como resultado de los requisitos de cambio de contraseña del dominio.  
+2.  Edita las propiedades de la cuenta de usuario y selecciona la casilla **La contraseña nunca caduca**. Esta acción garantiza que esta función de cuenta de servicio no se interrumpe debido al requisito de cambio de contraseña de dominio.  
   
     > [!NOTE]  
     > Si se usa la cuenta de servicio de red para esta cuenta dedicada, se producirán errores aleatorios al intentar acceder con la autenticación integrada de Windows, porque los vales de Kerberos no se validan de un servidor a otro.  

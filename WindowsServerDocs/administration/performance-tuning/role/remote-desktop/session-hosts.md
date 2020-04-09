@@ -4,15 +4,15 @@ description: Directrices para la optimización del rendimiento para hosts de ses
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: HammadBu; VladmiS; DenisGun
+ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: b439b0cbab66f98a1f74faeb7bff996b30a188d5
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: 3227bfe3bf21343ca9b7e85a07f550b4684a2fb7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812333"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851718"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>Optimización del rendimiento Escritorio remoto hosts de sesión
 
@@ -58,7 +58,7 @@ La actividad de disco que se genera en un servidor host de sesión de escritorio
 
 -   Perfiles de usuario y datos de usuario
 
-Idealmente, se debe realizar una copia de seguridad de estas áreas mediante dispositivos de almacenamiento distintos. El uso de configuraciones RAID seccionadas u otros tipos de almacenamiento de alto rendimiento mejora el rendimiento. Le recomendamos encarecidamente que use adaptadores de almacenamiento con almacenamiento en caché de escritura con respaldo de batería. Los controladores con el almacenamiento en caché de escritura en disco ofrecen mayor compatibilidad con las operaciones de escritura sincrónicas. Dado que todos los usuarios tienen un subárbol independiente, las operaciones de escritura sincrónicas son mucho más comunes en un servidor host de sesión de escritorio remoto. Los subárboles del registro se guardan periódicamente en el disco mediante operaciones de escritura sincrónicas. Para habilitar estas optimizaciones, en la consola de administración de discos, abra el cuadro de diálogo **propiedades** del disco de destino y, en la pestaña **directivas** , seleccione **Habilitar caché de escritura en el disco** y **desactivar búfer de escritura en caché de Windows Desactivación de las** casillas de dispositivo.
+Idealmente, se debe realizar una copia de seguridad de estas áreas mediante dispositivos de almacenamiento distintos. El uso de configuraciones RAID seccionadas u otros tipos de almacenamiento de alto rendimiento mejora el rendimiento. Le recomendamos encarecidamente que use adaptadores de almacenamiento con almacenamiento en caché de escritura con respaldo de batería. Los controladores con el almacenamiento en caché de escritura en disco ofrecen mayor compatibilidad con las operaciones de escritura sincrónicas. Dado que todos los usuarios tienen un subárbol independiente, las operaciones de escritura sincrónicas son mucho más comunes en un servidor host de sesión de escritorio remoto. Los subárboles del registro se guardan periódicamente en el disco mediante operaciones de escritura sincrónicas. Para habilitar estas optimizaciones, en la consola de administración de discos, abra el cuadro de diálogo **propiedades** del disco de destino y, en la ficha **directivas** , active las casillas **Habilitar almacenamiento en caché de escritura en el disco** y **desactivar el vaciado del búfer de caché de escritura de Windows** en el dispositivo.
 
 ### <a name="network-configuration"></a>Configuración de red
 
@@ -132,7 +132,7 @@ Los iconos de notificación en el escritorio pueden tener mecanismos de actualiz
 
 ### <a name="remote-desktop-protocol-data-compression"></a>Protocolo de escritorio remoto compresión de datos
 
-Protocolo de escritorio remoto compresión se puede configurar mediante directiva de grupo en **configuración del equipo** &gt; **plantillas administrativas** &gt; **componentes** de Windows **&gt; servicios de escritorio remoto &gt;** **Escritorio remoto host de sesión** &gt; **entorno de sesión remoto** &gt; **configurar la compresión para los datos de RemoteFX**. Hay tres valores posibles:
+Protocolo de escritorio remoto compresión se puede configurar mediante directiva de grupo en **configuración del equipo** &gt; **plantillas administrativas** &gt; componentes de Windows **&gt; servicios de escritorio remoto &gt;** **host de sesión** escritorio remoto **entorno de sesión remoto** &gt; **configurar la compresión de los datos de RemoteFX**. **Windows Components**&gt; Hay tres valores posibles:
 
 -   **Optimizado para usar menos memoria** Consume la menor cantidad de memoria por sesión, pero tiene la menor relación de compresión y, por lo tanto, el mayor consumo de ancho de banda.
 
@@ -144,7 +144,7 @@ También puede optar por no usar un algoritmo de compresión de Protocolo de esc
 
 ### <a name="device-redirection"></a>Redireccionamiento de dispositivos
 
-La redirección de dispositivos se puede configurar mediante directiva de grupo **en configuración del equipo** &gt; **plantillas administrativas** &gt; **componentes de Windows** &gt; servicios de escritorio remoto &gt; **remoto Host de sesión de escritorio** &gt; la **redirección de dispositivos y recursos** , o mediante el cuadro de propiedades **colección de sesiones** en Administrador del servidor.
+El redireccionamiento de dispositivos se puede configurar mediante directiva de grupo en **configuración del equipo** &gt; **plantillas administrativas** &gt; **componentes de Windows** **&gt; servicios de escritorio remoto &gt;** **host de sesión** escritorio remoto &gt; de **dispositivos y redirección de recursos** , o mediante el cuadro de propiedades colección de **sesiones** en Administrador del servidor.
 
 Por lo general, la redirección de dispositivos aumenta la cantidad de ancho de banda de red que usan las conexiones del servidor host de sesión de escritorio remoto porque los datos se intercambian entre los dispositivos de los equipos cliente y los procesos que se ejecutan en la sesión de servidor. La extensión del aumento es una función de la frecuencia de las operaciones realizadas por las aplicaciones que se ejecutan en el servidor en los dispositivos redirigidos.
 

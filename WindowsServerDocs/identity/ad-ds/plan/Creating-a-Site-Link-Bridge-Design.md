@@ -1,7 +1,6 @@
 ---
 ms.assetid: 64142026-07b5-4601-840a-c8dcf6ab9814
 title: Crear un diseño de puente de vínculos a sitios
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 79e91481c357d05617ee0ddc716e2bf6e90b8b27
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f75feb34b64e2ab41859dd708147a2e8d05a768a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408969"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822768"
 ---
 # <a name="creating-a-site-link-bridge-design"></a>Crear un diseño de puente de vínculos a sitios
 
@@ -39,4 +38,4 @@ Si su organización tiene una topología de red de concentrador y radio, normalm
   
 ### <a name="controlling-replication-through-a-firewall"></a>Control de la replicación a través de un firewall
 
-Si dos controladores de dominio que representan el mismo dominio en dos sitios diferentes están específicamente permitidos para comunicarse únicamente entre sí a través de un firewall, puede deshabilitar el **puente de todos los vínculos de sitio** y crear puentes de vínculos de sitio para sitios en el mismo lado del Firewall. Por lo tanto, si la red está separada por firewalls, se recomienda que deshabilite la transitividad de los vínculos a sitios y cree puentes de vínculos a sitios para la red en un lado del firewall. Para obtener información sobre la administración de la replicación a través de firewalls, consulte el artículo [Active Directory en redes segmentadas por firewalls](https://go.microsoft.com/fwlink/?LinkId=107074).
+Si dos controladores de dominio que representan el mismo dominio en dos sitios diferentes están específicamente permitidos para comunicarse únicamente entre sí a través de un firewall, puede deshabilitar el **puente de todos los vínculos de sitio** y crear puentes de vínculos de sitio para sitios en el mismo lado del firewall. Por lo tanto, si la red está separada por firewalls, se recomienda que deshabilite la transitividad de los vínculos a sitios y cree puentes de vínculos a sitios para la red en un lado del firewall. Para obtener información sobre la administración de la replicación a través de firewalls, consulte el artículo [Active Directory en redes segmentadas por firewalls](https://go.microsoft.com/fwlink/?LinkId=107074).

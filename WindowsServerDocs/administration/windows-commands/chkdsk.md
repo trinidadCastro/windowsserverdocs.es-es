@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 10/09/2019
-ms.openlocfilehash: 130b51e472ebf3d900186d6d63e318c88a340579
-ms.sourcegitcommit: e2964a803cba1b8037e10d065a076819d61e8dbe
+ms.openlocfilehash: 21f6ac91faefa17f153df43fbd2530a2c8c0f713
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252353"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847788"
 ---
 # <a name="chkdsk"></a>chkdsk
 
@@ -37,7 +37,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#examp
 chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]] [/b]  
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |      Parámetro       |                  Descripción                                    |
 | -------------------- | ------------------------------------------------------------------------ |
@@ -50,18 +50,18 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 |         /i          | Úselo solo con NTFS. Realiza una comprobación menos exhaustiva de entradas de índice, lo que reduce la cantidad de tiempo necesario para ejecutar **CHKDSK**.  |
 |         /c          | Úselo solo con NTFS. No comprueba los ciclos dentro de la estructura de carpetas, lo que reduce la cantidad de tiempo necesario para ejecutar **CHKDSK**.  |
 |    /l [:\<tamaño >]     | Úselo solo con NTFS. Cambia el tamaño del archivo de registro al tamaño que escriba. Si omite el parámetro size, **/l** muestra el tamaño actual. |
-|         b          | Solo NTFS: borra la lista de clústeres defectuosos en el volumen y vuelve a examinar todos los clústeres asignados y libres en busca de errores. **/b** incluye la funcionalidad de **/r**. Utilice este parámetro después de la creación de imágenes de un volumen en una nueva unidad de disco duro.            |
+|         /b          | Solo NTFS: borra la lista de clústeres defectuosos en el volumen y vuelve a examinar todos los clústeres asignados y libres en busca de errores. **/b** incluye la funcionalidad de **/r**. Utilice este parámetro después de la creación de imágenes de un volumen en una nueva unidad de disco duro.            |
 | /Scan               | Solo NTFS: ejecuta un examen en línea en el volumen. |
-| /forceofflinefix    | Solo NTFS: (debe usarse con "/SCAN"). Omitir todas las reparaciones en línea; todos los defectos encontrados se ponen en cola para la reparación sin conexión (es decir, "CHKDSK/spotfix x"). |
-| /perf               | Solo NTFS: (debe usarse con "/SCAN"). Usa más recursos del sistema para completar un análisis tan rápido como sea posible. Esto puede afectar negativamente al rendimiento de otras tareas que se ejecutan en el sistema.|
+| /forceofflinefix    | Solo NTFS: (debe usarse con/SCAN). Omitir todas las reparaciones en línea; todos los defectos encontrados se ponen en cola para la reparación sin conexión (es decir, CHKDSK/spotfix x). |
+| /perf               | Solo NTFS: (debe usarse con/SCAN). Usa más recursos del sistema para completar un análisis tan rápido como sea posible. Esto puede afectar negativamente al rendimiento de otras tareas que se ejecutan en el sistema.|
 | /spotfix x            | Solo NTFS: ejecuta una corrección puntual en el volumen. |
 | /sdcleanup          | Solo NTFS: la recolección de elementos no utilizados recopila datos de descriptores de seguridad innecesarios (implica/F). |
 | /offlinescanandfix  | Ejecuta un examen y una corrección sin conexión en el volumen. |
 | /freeorphanedchains | Solo FAT/FAT32/exFAT: libera cualquier cadena de clúster huérfana en lugar de recuperar su contenido. |
 | /markclean          | Solo FAT/FAT32/exFAT: marca el volumen Clean si no se detectó ningún daño, aunque no se haya especificado/F. |
-|         /?          | Muestra la ayuda en el símbolo del sistema.                       |
+|         /?          | Muestra la Ayuda en el símbolo del sistema.                       |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 - Omitir comprobaciones de volumen
 
@@ -144,4 +144,4 @@ chkdsk *.*
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

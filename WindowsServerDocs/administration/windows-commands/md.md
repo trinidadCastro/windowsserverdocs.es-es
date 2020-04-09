@@ -1,24 +1,20 @@
 ---
 title: Md
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82162d00-cc34-4776-9e55-4b4836dbd6a9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3751b185677bfee9d0519b9a617bea1df063c1e7
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: e2fad89fe4b7e8425064301f6020fefaa5705b25
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259080"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839588"
 ---
 # <a name="md"></a>Md
 
@@ -38,19 +34,19 @@ md [<Drive>:]<Path>
 mkdir [<Drive>:]<Path>
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
 |> de \<unidad:|Especifica la unidad en la que desea crear el nuevo directorio.|
 |\<ruta de acceso >|Obligatorio. Especifica el nombre y la ubicación del nuevo directorio. El sistema de archivos determina la longitud máxima de cualquier ruta de acceso única.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
 Las extensiones de comandos, que están habilitadas de forma predeterminada, permiten usar un único comando **MD** para crear directorios intermedios en una ruta de acceso especificada.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para crear un directorio denominado Directory1 en el directorio actual, escriba:
 ```
@@ -67,8 +63,8 @@ md \Taxes\Property
 md \Taxes\Property\Current
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
 [Cmd](cmd.md)

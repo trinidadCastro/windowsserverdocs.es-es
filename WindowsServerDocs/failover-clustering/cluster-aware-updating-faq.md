@@ -3,17 +3,17 @@ ms.assetid: 6416d125-bcaf-433d-971a-2f0283bca2c2
 title: 'Actualización compatible con clústeres: preguntas más frecuentes'
 ms.topic: article
 ms.prod: windows-server
-manager: dongill
+manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 description: Respuestas a las preguntas más frecuentes sobre la actualización compatible con clústeres en Windows Server.
-ms.openlocfilehash: 736b49222ae4c9e2a27229341f0d886bd3e0343c
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: ca81e952c0524af36ab6d241a205bd1cc971c74a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822138"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828108"
 ---
 # <a name="cluster-aware-updating-frequently-asked-questions"></a>Actualización compatible con clústeres: Preguntas más frecuentes
 
@@ -118,11 +118,11 @@ La CAU ofrece opciones de exportación a través de la interfaz de línea de com
   
 **Opciones de la interfaz de usuario:**  
   
--   Copie los resultados del informe desde la pantalla **Vista previa de actualizaciones** . Resultado: CSV  
+-   Copie los resultados del informe desde la pantalla **Vista previa de actualizaciones**. Resultado: CSV  
   
--   Copie los resultados del informe desde la pantalla **Generar informe** . Resultado: CSV  
+-   Copie los resultados del informe desde la pantalla **Generar informe**. Resultado: CSV  
   
--   Exporte los resultados del informe desde la pantalla **Generar informe** . Resultado: HTML  
+-   Exporte los resultados del informe desde la pantalla **Generar informe**. Resultado: HTML  
   
 ## <a name="how-do-i-install-cau"></a>¿Cómo se instala la CAU?  
 Una instalación de CAU se integra perfectamente en la característica de Clúster de conmutación por error. La CAU se instala de la siguiente manera:  
@@ -158,7 +158,7 @@ Sí. La CAU admite una cantidad de opciones de ejecución de actualización que 
   
 -   [\-del complemento de actualización compatible con clústeres en el ejemplo](https://code.msdn.microsoft.com/windowsdesktop/Cluster-Aware-Updating-6a8854c9)  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
   
--   [Introducción a la actualización compatible con clústeres](cluster-aware-updating.md)  
+-   [Introducción a la actualización compatible con clústeres\-  
   
