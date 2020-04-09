@@ -1,5 +1,5 @@
 # [Comandos de Windows](windows-commands.md)
-## [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+## - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 ## [Comandos por rol de servidor](commands-by-server-role.md)
 ### [Referencia de comandos de impresión](print-command-reference.md)
 ### [Servicios de referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)
