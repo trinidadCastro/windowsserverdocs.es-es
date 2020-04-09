@@ -1,24 +1,20 @@
 ---
 title: Usar dispositivos de red virtual en una red virtual
 description: En este tema, aprenderá a implementar aplicaciones virtuales de red en redes virtuales de inquilinos. Puede agregar aplicaciones virtuales de red a redes que realizan funciones de enrutamiento definido por el usuario y de creación de reflejo del puerto.
-manager: dougkim
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+manager: grcusanz
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.assetid: 3c361575-1050-46f4-ac94-fa42102f83c1
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/30/2018
-ms.openlocfilehash: db634af114610cce0bdbcacd58986ceb5f00dd99
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 5d8ac7256e9c7e59c7df260bea5d5a8f0fb6b42b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317585"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854478"
 ---
 # <a name="use-network-virtual-appliances-on-a-virtual-network"></a>Usar dispositivos de red virtual en una red virtual
 

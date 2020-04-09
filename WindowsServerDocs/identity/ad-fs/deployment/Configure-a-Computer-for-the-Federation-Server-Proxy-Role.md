@@ -1,7 +1,6 @@
 ---
 ms.assetid: a2f23877-30a7-439f-817d-387da9e00e86
 title: Configurar un equipo para el rol de servidor proxy de federación
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: d47f7d3985aa779276f0712347eb9030857cefdb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a8bfe21f50a68edfcdbc7c937dc914ff1e1d94c3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359788"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854908"
 ---
 # <a name="configure-a-computer-for-the-federation-server-proxy-role"></a>Configurar un equipo para el rol de servidor proxy de federación
 
@@ -25,29 +24,29 @@ Después de configurar un equipo con los certificados necesarios y de instalar e
   
 Una vez que haya configurado el equipo, compruebe que el servidor proxy de federación funciona del modo esperado. Para obtener más información, consulta [Comprobar que un servidor proxy de federación está operativo](Verify-That-a-Federation-Server-Proxy-Is-Operational.md).  
   
-El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
+La pertenencia al grupo **Administradores** o equivalente en el equipo local es el requisito mínimo necesario para completar este procedimiento.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
-### <a name="to-configure-a-computer-for-the-federation-server-proxy-role"></a>Cómo configurar un equipo para el rol de servidor proxy de federación  
+### <a name="to-configure-a-computer-for-the-federation-server-proxy-role"></a>Para configurar un equipo para el rol de servidor proxy de federación  
   
-1.  Hay dos maneras de iniciar el Asistente para la configuración del servidor de Federación de AD FS. Para iniciar el asistente, realiza una de las acciones siguientes:  
+1.  Hay dos maneras de iniciar el Asistente para la configuración del servidor de federación de AD FS. Para iniciar el asistente, siga uno de estos procedimientos:  
   
     -   En la pantalla **Inicio** , escriba**AD FS Asistente para configuración de servidor proxy de Federación**y, a continuación, presione Entrar.  
   
     -   En cualquier momento después de completar el Asistente para la instalación, abra el explorador de Windows, vaya a la carpeta **C:\\Windows\\ADFS** y, a continuación, haga doble\-haga clic en **FspConfigWizard. exe**.  
   
-2.  Independientemente del método que elijas, inicia el asistente y en la **Página principal** haz clic en **Siguiente**.  
+2.  Mediante cualquiera de los métodos, inicie el asistente y, en la página **Bienvenida**, haga clic en **Siguiente**.  
   
-3.  En la página **Especificar el nombre del Servicio de federación**, en **Nombre del Servicio de federación**, escribe el nombre que represente al Servicio de federación para el cual este equipo actuará con el rol de proxy.  
+3.  En la página **Especificar el nombre del Servicio de federación**, en **Nombre del Servicio de federación**, escriba el nombre que representa el Servicio de federación para el que este equipo actuará en el rol de servidor proxy.  
   
-4.  En función de los requisitos específicos de tu red, determina si tendrás que utilizar un servidor proxy HTTP para reenviar las solicitudes al servicio de federación. En caso de que así sea, activa la casilla **Usar un servidor proxy HTTP al enviar solicitudes a este servicio de federación** , escribe la dirección del servidor proxy en **Dirección del servidor proxy HTTP** , haz clic en **Probar conexión** para comprobar la conectividad y haz clic en **Siguiente**.  
+4.  En función de sus requisitos de red específicos, determine si tendrá que usar un servidor proxy HTTP para desviar las solicitudes al servicio de federación. Si lo necesita, seleccione la casilla de verificación **Usar un servidor proxy HTTP al enviar solicitudes a este Servicio de federación**, en **Dirección del servidor proxy HTTP**, escriba la dirección del servidor proxy, haga clic en **Probar conexión** para comprobar la conectividad y luego haga clic en **Siguiente**.  
   
-5.  Cuando se te pida, especifica las credenciales necesarias para establecer una relación de confianza entre este servidor proxy de federación y el servicio de federación.  
+5.  Cuando se le indique, especifique las credenciales necesarias para establecer una relación de confianza entre este servidor proxy de federación y el servicio de federación.  
   
     De forma predeterminada, solo la cuenta de servicio usada por el Servicio de federación o un miembro del grupo local Builtin\\administradores puede autorizar un servidor proxy de Federación.  
   
-6.  En la página **Listo para aplicar configuración**, comprueba los detalles. Si los ajustes son correctos, haz clic en **Siguiente** para empezar a configurar el equipo con esa configuración de proxy.  
+6.  En la página **Listo para aplicar configuración**, revise los detalles. Si la configuración parece ser correcta, haga clic en **Siguiente** para comenzar a configurar este equipo con estos valores de servidor proxy.  
   
-7.  En la página **Resultados de la configuración** , comprueba los resultados. Cuando haya finalizado todos los pasos de configuración, haga clic en **Cerrar**  para salir del asistente.  
+7.  En la página **Resultados de configuración**, revise los resultados. Cuando haya finalizado todos los pasos de configuración, haga clic en **Cerrar**  para salir del asistente.  
   
     No hay ningún complemento Microsoft Management Console \(MMC\) Snap\-en para usar para administrar los servidores proxy de Federación. Para configurar los valores de cada uno de los servidores proxy de Federación de su organización, use los cmdlets de Windows PowerShell.  
   
@@ -80,7 +79,7 @@ De forma predeterminada, el servicio de servidor proxy de Federación está conf
     > [!NOTE]  
     > Las direcciones URL del extremo no están habilitadas de forma predeterminada para el servicio de servidor proxy de Federación. Si está configurando una nueva instalación de servidor de Federación, primero debe habilitar los puntos de conexión de servicio de servidor proxy de Federación. Por ejemplo, se supone que para todos los extremos a los que hace referencia el ejemplo de este procedimiento, puede seleccionarlos en el\-de administración de AD FS en y seleccionar **Habilitar en proxy**.  
   
-3.  Actualice la instalación de IIS en el servidor proxy de Federación de modo que Lenguaje de marcado de aserción de seguridad \(SAML\) y los puntos de conexión de confianza WS\-estén configurados para reflejar el número de Puerto actualizado. Para ello, puede utilizar el Bloc de notas para modificar lo siguiente en el archivo Web. config, que se encuentra en SystemDrive%\\Inetpub\\ADFS\\LS\\ en el equipo del servidor proxy de Federación. Por ejemplo, suponiendo que tiene un servidor de Federación llamado sts1.contoso.com y el nuevo número de puerto es 444, busque y abra el archivo Web. config en el Bloc de notas en el equipo del servidor proxy de Federación, busque la sección siguiente, modifique el número de puerto como resaltado a continuación y, a continuación, guarde y salga del Bloc de notas.  
+3.  Actualice la instalación de IIS en el servidor proxy de Federación de modo que Lenguaje de marcado de aserción de seguridad \(SAML\) y los puntos de conexión de confianza WS\-estén configurados para reflejar el número de Puerto actualizado. Para ello, puede utilizar el Bloc de notas para modificar lo siguiente en el archivo Web. config, que se encuentra en SystemDrive%\\Inetpub\\ADFS\\LS\\ en el equipo del servidor proxy de Federación. Por ejemplo, suponiendo que tiene un servidor de Federación llamado sts1.contoso.com y el nuevo número de puerto es 444, busque y abra el archivo Web. config en el Bloc de notas en el equipo del servidor proxy de Federación, busque la siguiente sección, modifique el número de puerto como se indica a continuación y, a continuación, guarde y salga del Bloc de notas.  
   
     ```  
     <securityTokenService samlProtocolEndpoint="https://sts1.contoso.com:444/adfs/services/trust/samlprotocol/proxycertificatetransport"  

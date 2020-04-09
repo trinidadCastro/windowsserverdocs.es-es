@@ -1,28 +1,24 @@
 ---
 title: Protocolo de seguridad de capa de transporte de datagrama
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tls-ssl
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 57b8873a-ad9c-4f2c-93e0-a2af352c6965
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/16/2018
-ms.openlocfilehash: f603dc0c5616619088537ffcbd06f64baece0e23
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d0c066b063cbfc8def54c2e0d02cbb0eaf7f1d40
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402301"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852928"
 ---
 # <a name="datagram-transport-layer-security-protocol"></a>Protocolo de seguridad de capa de transporte de datagrama
 
-Windows Server (canal semianual), Windows Server 2016, Windows 10
+Windows Server (canal semianual), Windows Server 2016 y Windows 10
 
 En este tema de referencia para profesionales de TI se describe el protocolo de seguridad de la capa de transporte de datagrama (DTLS), que forma parte del proveedor de compatibilidad para seguridad de Schannel (SSP).
 
@@ -38,3 +34,4 @@ Los conjuntos de cifrado que están disponibles para la configuración se incluy
 [Seguridad de la capa de transporte de datagrama RFC 4347 de IETF](http://tools.ietf.org/html/rfc4347)
 
 
+                                        

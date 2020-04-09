@@ -4,15 +4,15 @@ description: Consideraciones de hardware en la optimización del rendimiento de 
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
+ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e9b121036d33bc36cabb92ca682407bc2382fca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c40faca06668adf6fd29a5e4e753e5790b8104b7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355102"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851918"
 ---
 # <a name="hardware-considerations-in-adds-performance-tuning"></a>Consideraciones de hardware en agrega optimización del rendimiento 
 
@@ -55,7 +55,7 @@ Active Directory almacena en caché la gran parte de la base de datos que permit
 
 ## <a name="dont-over-tax-the-processors"></a>No sobrepasar impuestos por los procesadores
 
-Los procesadores que no tienen suficientes ciclos libres pueden provocar tiempos de espera largos en la obtención de subprocesos en el procesador para su ejecución. En muchos entornos, la filosofía es asegurarse de que hay suficiente espacio suficiente para dar cabida a subidas o picos en la carga para minimizar el impacto en la capacidad de respuesta del cliente en estos escenarios. En Resumen, la superación de los umbrales siguientes no es mala en el corto plazo (de 5 a 15 minutos varias veces al día). sin embargo, un sistema que se ejecuta de forma sostenida con este tipo de estadísticas no proporciona ninguna sala principal para dar cabida a cargas anómalas y puede colocarse fácilmente en un exceso de impuestos cenario. Los sistemas que gastan períodos sostenidos por encima de los umbrales deben investigarse para reducir las cargas del procesador.
+Los procesadores que no tienen suficientes ciclos libres pueden provocar tiempos de espera largos en la obtención de subprocesos en el procesador para su ejecución. En muchos entornos, la filosofía es asegurarse de que hay suficiente espacio suficiente para dar cabida a subidas o picos en la carga para minimizar el impacto en la capacidad de respuesta del cliente en estos escenarios. En Resumen, la superación de los umbrales siguientes no es mala en el corto plazo (de 5 a 15 minutos varias veces al día). sin embargo, un sistema que se ejecuta de forma sostenida con este tipo de estadísticas no proporciona ninguna sala principal para dar cabida a cargas anómalas y puede incluirse fácilmente en un escenario sobrecargado. Los sistemas que gastan períodos sostenidos por encima de los umbrales deben investigarse para reducir las cargas del procesador.
 
 -   Para obtener más información sobre cómo seleccionar un procesador, consulte [Tuning performance for Server hardware](../../hardware/index.md).
 
@@ -71,9 +71,9 @@ Al igual que con los procesadores, el uso excesivo de adaptadores de red provoca
 
 -   Use el contador de rendimiento comparar interfaz cluster (\*)\\bytes enviados/seg. con interfaz cluster (\*)\\de ancho de banda actual. La relación debe ser inferior al 60% de uso.
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 - [Optimizar el rendimiento de servidores Active Directory](index.md)
-- [Consideraciones de LDAP](ldap-considerations.md)
+- [LDAP considerations](ldap-considerations.md) (Consideraciones de LDAP)
 - [Colocación adecuada de los controladores de dominio y consideraciones de sitio](site-definition-considerations.md)
 - [Solución de problemas de rendimiento de AD DS](troubleshoot.md) 
 - [Capacity Planning for Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566) (Planeamiento de la capacidad para Active Directory Domain Services)

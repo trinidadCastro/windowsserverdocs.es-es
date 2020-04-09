@@ -1,7 +1,6 @@
 ---
 ms.assetid: fb09e37e-5d1c-428a-a2ca-2f01a0ba2992
 title: Guía de diseño de AD FS
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1c080cef1211a059acf00afb15e6e904eb4fdcd5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fb07120d4b79cfc5be772a75e5f1e2e6ca2081ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408171"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853938"
 ---
 # <a name="ad-fs-2016-design-guide"></a>Guía de diseño de AD FS 2016
 
@@ -27,7 +26,7 @@ La guía de diseño de AD FS es una guía completa para diseñar implementacione
   
 
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 Para planear la capacidad de AD FS en Windows Server 2016, consulte la [hoja de cálculo de planeación de la AD FS capacidad.](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)  
   
-[Información general de Servicios de federación de Active Directory (AD FS)](../../Active-Directory-Federation-Services.md)
+[Introducción a los Servicios de federación de Active Directory](../../Active-Directory-Federation-Services.md)

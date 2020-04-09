@@ -1,24 +1,20 @@
 ---
 title: doskey
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4874fd43-d5ea-45f3-ae24-388ae925ed76
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d45a2ddfeba7ec136add07eac11c3a8522ef872b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 72a5a362a225f57245a015de43a7538928c0937e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377687"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845268"
 ---
 # <a name="doskey"></a>doskey
 
@@ -34,7 +30,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/insert | /overstrike] [/exename=<ExeName>] [/macrofile=<FileName>] [<MacroName>=[<Text>]]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |       Parámetro        |                                                                                                                          Descripción                                                                                                                           |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -49,9 +45,9 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
 |  /EXENAME =\<ExeName >   |                                                                                        Especifica el programa (es decir, ejecutable) en el que se ejecuta la macro **doskey** .                                                                                         |
 | /MACROFILE =\<nombre de archivo > |                                                                                              Especifica un archivo que contiene las macros que desea instalar.                                                                                               |
 | \<nombremacro > = [\<texto >]  | Crea una macro que lleva a cabo los comandos especificados por el *texto*. *Nombremacro* especifica el nombre que desea asignar a la macro. *Texto* especifica los comandos que desea registrar. Si el *texto* se deja en blanco, *nombremacro* se borra de los comandos asignados. |
-|           /?           |                                                                                                              Muestra la ayuda en el símbolo del sistema.                                                                                                              |
+|           /?           |                                                                                                              Muestra la Ayuda en el símbolo del sistema.                                                                                                              |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 - Usar Doskey. exe
 
@@ -78,10 +74,10 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
   |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
   |       FLECHA IZQUIERDA       |                                                                                                                                      Mueve el punto de inserción un carácter hacia atrás.                                                                                                                                      |
   |      FLECHA DERECHA       |                                                                                                                                    Mueve el punto de inserción hacia delante un carácter.                                                                                                                                     |
-  |    CTRL + FLECHA IZQUIERDA     |                                                                                                                                        Mueve el punto de inserción una palabra hacia atrás.                                                                                                                                         |
+  |    CTRL+FLECHA IZQUIERDA     |                                                                                                                                        Mueve el punto de inserción una palabra hacia atrás.                                                                                                                                         |
   |    CTRL + FLECHA DERECHA    |                                                                                                                                       Mueve el punto de inserción hacia delante una palabra.                                                                                                                                       |
   |          INICIO          |                                                                                                                                 Mueve el punto de inserción al principio de la línea.                                                                                                                                 |
-  |          EXTREMO           |                                                                                                                                    Mueve el punto de inserción al final de la línea.                                                                                                                                    |
+  |          END           |                                                                                                                                    Mueve el punto de inserción al final de la línea.                                                                                                                                    |
   |          ESC           |                                                                                                                                          Borra el comando de la pantalla.                                                                                                                                           |
   |           F1           |                                                                      Copia un carácter de una columna de la plantilla en la misma columna de la ventana del símbolo del sistema. (La plantilla es un búfer de memoria que contiene el último comando que escribió).                                                                       |
   |           F2           |                                                                 Busca hacia delante en la plantilla la siguiente tecla que escriba después de presionar F2. Doskey. exe inserta el texto de la plantilla, hasta el carácter especificado, pero sin incluirlo.                                                                  |
@@ -90,10 +86,10 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
   |           F5           |                                                                                                                                   Copia la plantilla en la línea de comandos actual.                                                                                                                                    |
   |           F6           |                                                                                                                    Coloca un carácter de fin de archivo (CTRL + Z) en la posición del punto de inserción actual.                                                                                                                    |
   |           F7           | Muestra (en un cuadro de diálogo) todos los comandos para este programa que se almacenan en memoria. Use la tecla flecha arriba y la tecla flecha abajo para seleccionar el comando que desee y presione Entrar para ejecutar el comando. También puede anotar el número secuencial delante del comando y usar este número junto con la tecla F9. |
-  |         ALT + F7         |                                                                                                                          Elimina todos los comandos almacenados en memoria para el búfer de historial actual.                                                                                                                          |
+  |         ALT+F7         |                                                                                                                          Elimina todos los comandos almacenados en memoria para el búfer de historial actual.                                                                                                                          |
   |           F8           |                                                                                                           Muestra todos los comandos del búfer de historial que comienzan con los caracteres del comando actual.                                                                                                            |
   |           F9           |                                             Solicita un número de comando de búfer de historial y, a continuación, muestra el comando asociado al número que especifique. Presione Entrar para ejecutar el comando. Para mostrar todos los números y sus comandos asociados, presione F7.                                             |
-  |        ALT + F10         |                                                                                                                                             Elimina todas las definiciones de macro.                                                                                                                                              |
+  |        ALT+F10         |                                                                                                                                             Elimina todas las definiciones de macro.                                                                                                                                              |
 
 
 - Usar **doskey** dentro de un programa
@@ -116,7 +112,7 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
 
   Puede usar Doskey. exe para crear macros que realicen uno o más comandos. En la tabla siguiente se enumeran los caracteres especiales que se pueden usar para controlar las operaciones de comandos cuando se define una macro.  
 
-  |   Óptico   |                                                                                                                                                                               Descripción                                                                                                                                                                               |
+  |   Carácter   |                                                                                                                                                                               Descripción                                                                                                                                                                               |
   |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
   |   $G o $g    |                                                                                   Redirige la salida. Use cualquiera de estos caracteres especiales para enviar la salida a un dispositivo o un archivo en lugar de a la pantalla. Este carácter es equivalente al símbolo de redirección de la salida ( **>** ).                                                                                    |
   | $G $ G o $g $ g  |                                                         Anexa la salida al final de un archivo. Use cualquiera de estos dos caracteres dobles para anexar la salida a un archivo existente en lugar de reemplazar los datos del archivo. Estos caracteres dobles son equivalentes al símbolo de redirección de anexado para la salida ( **>>** ).                                                         |
@@ -143,7 +139,7 @@ doskey [/reinstall] [/listsize=<Size>] [/macros:[all | <ExeName>] [/history] [/i
   doskey <MacroName> =
   ```
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Las opciones de línea de comandos **/macros** y **/History** son útiles para crear programas de batch para guardar macros y comandos. Por ejemplo, para almacenar todas las macros de **doskey** actuales, escriba:
 ```
@@ -196,6 +192,6 @@ Para eliminar una macro denominada Vlist, escriba:
 doskey vlist =
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

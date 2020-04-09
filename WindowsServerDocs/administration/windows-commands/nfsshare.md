@@ -1,24 +1,20 @@
 ---
 title: nfsshare
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 437a2615-335a-442f-9713-d50d5f3983a3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d205bcfad11d22fea7fc9d0651aca61f234347cf
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 032baaf3013d2658b1040345da3a35cb6a1631f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948502"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838908"
 ---
 # <a name="nfsshare"></a>nfsshare
 
@@ -37,7 +33,7 @@ nfsshare {<ShareName> | <Drive>:<Path> | * } /delete
 
 Sin argumentos, la utilidad de línea de comandos **nfsshare** enumera todos los recursos compartidos de Network File System (NFS) exportados por servidor para NFS. Con *ShareName* como único argumento, **nfsshare** enumera las propiedades del recurso compartido de NFS identificado por *ShareName*. Cuando se proporcionan *ShareName* y <em>Drive</em> **:** <em>path</em> , **nfsshare** exporta la carpeta identificada por <em>Drive</em> **:** <em>path</em> como *ShareName*. Cuando se usa la opción **/Delete** , la carpeta especificada deja de estar disponible para los clientes NFS.
 
-## <a name="options"></a>botón
+## <a name="options"></a>Opciones
 
 El comando **nfsshare** acepta las opciones y los argumentos siguientes:
 
@@ -56,6 +52,6 @@ El comando **nfsshare** acepta las opciones y los argumentos siguientes:
 > [!NOTE]
 > Para ver la sintaxis completa de este comando, en una ventana de símbolo del sistema, escriba:</br>> **nfsshare/?**
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 [Servicios de referencia de comandos de sistema de archivos de red](services-for-network-file-system-command-reference.md)

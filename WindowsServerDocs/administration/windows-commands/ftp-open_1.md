@@ -1,24 +1,20 @@
 ---
 title: open_1 FTP
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b61926a-dc60-4b4c-96d3-64e5c91c18ba vhorne
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c5da1c73362c0396300f712b2e45b906d1652604
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8bd3063a52908d65f336afcda6b6982d5bc9bf94
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376186"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843188"
 ---
 # <a name="ftp-open_1"></a>FTP: open_1
 
@@ -29,7 +25,7 @@ Se conecta al servidor FTP especificado.
 ```  
 open <computer> [<Port>]  
 ```  
-### <a name="parameters"></a>Parámetros  
+#### <a name="parameters"></a>Parámetros  
 
 | Parámetro  |                                           Descripción                                            |
 |------------|--------------------------------------------------------------------------------------------------|
@@ -38,7 +34,7 @@ open <computer> [<Port>]
 
 ## <a name="remarks"></a>Comentarios  
 Puede usar una dirección IP o un nombre de equipo (en cuyo caso debe estar disponible un servidor DNS o un archivo hosts) para especificar el **equipo**.  
-## <a name="BKMK_Examples"></a>Example  
+## <a name="examples"></a><a name=BKMK_Examples></a>Example  
 Conéctese al servidor FTP en **FTP.Microsoft.com**.  
 ```  
 Open ftp.microsoft.com  
@@ -48,4 +44,4 @@ Conéctese al servidor FTP en **FTP.Microsoft.com** que escucha en el puerto TCP
 open ftp.microsoft.com 755  
 ```  
 ## <a name="additional-references"></a>Referencias adicionales  
--   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
+-   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  

@@ -1,24 +1,20 @@
 ---
 title: Administrar licencias de acceso de cliente
 description: Aprenda a trabajar con cal en Multipoint Services
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 675e089e-d841-401e-bba7-69f3929ef609
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 4d809ab1bf2a18dff537bf63620623d576c0b25d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 2981f22b2b85d90f4102c3a0b67e25901cb12395
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949883"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853548"
 ---
 # <a name="manage-client-access-licenses"></a>Administrar licencias de acceso de cliente
 Cada estación que se conecta a un sistema Multipoint Services, incluido el equipo que ejecuta Multipoint Services que se usa como estación, debe tener una licencia de *acceso de cliente (cal)* de escritorio remoto por usuario válida.
@@ -41,12 +37,12 @@ Si no se ha configurado correctamente, la configuración de Multipoint Services 
 3. En el panel derecho, haga clic con el botón derecho en **usar el escritorio remoto servidores de licencias especificados** y seleccione **Editar**:
    - En el cuadro de diálogo Editor de directivas de grupo, seleccione **habilitado** .
    - Escriba el nombre del equipo local en el campo **servidores de licencias que se usarán** .
-   - Haga clic en **Aceptar**
+   - Seleccione **Aceptar** .
   
 4. En el panel derecho, haga clic con el botón derecho en **establecer el modo de licencia de escritorio remoto** y seleccione **Editar** .
    - En el cuadro de diálogo Editor de directivas de grupo, seleccione **habilitado** .
    - Establecer el **modo de licencia** en por dispositivo/por usuario
-   - Haga clic en **Aceptar** 
+   - Seleccione **Aceptar** . 
 
   
 ## <a name="see-also"></a>Consulta también  

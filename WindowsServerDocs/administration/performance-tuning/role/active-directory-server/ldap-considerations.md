@@ -4,15 +4,15 @@ description: Consideraciones de LDAP en cargas de trabajo de Active Directory
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
+ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e407f9f32339e3f9c75e3722ad218228b608b9d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 86aef48575388ad76ff22fc6027c5ce2d4b6694a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947112"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851898"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>Consideraciones de LDAP en agrega optimización del rendimiento
 
@@ -98,10 +98,10 @@ Para obtener más información, vea lo siguiente:
 
 -   [Atributos indizados](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 - [Optimizar el rendimiento de servidores Active Directory](index.md)
-- [Consideraciones de hardware](hardware-considerations.md).
+- [Consideraciones de hardware](hardware-considerations.md)
 - [Colocación adecuada de los controladores de dominio y consideraciones de sitio](site-definition-considerations.md)
 - [Solución de problemas de rendimiento de AD DS](troubleshoot.md) 
 - [Capacity Planning for Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566) (Planeamiento de la capacidad para Active Directory Domain Services)

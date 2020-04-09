@@ -4,15 +4,15 @@ description: Máquina virtual Linux y BSD
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5668629e7eded214525561d30fec496a4e91b8dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7abc1ef5473365dd26dce1167bb685f116822a7d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385066"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851748"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Consideraciones sobre máquinas virtuales Linux
 
@@ -26,7 +26,7 @@ Incluso cuando el invitado se ejecuta Integration Services, se puede configurar 
 
 De forma predeterminada, Linux habilita las descargas y la aceleración de hardware de forma predeterminada. Si vRSS está habilitado en las propiedades de una NIC en el host y el invitado de Linux tiene la capacidad de usar vRSS, se habilitará la funcionalidad. En PowerShell se puede cambiar este mismo parámetro con el comando `EnableNetAdapterRSS`.
 
-Del mismo modo, la característica VMMQ (RSS de conmutador virtual) se puede habilitar en la NIC física que usan las **propiedades**de invitado  > **configure..** . en la pestaña  > **Opciones avanzadas** > configurar el **conmutador virtual de RSS** en **habilitado** o habilitar VMMQ en PowerShell mediante lo siguiente:
+Del mismo modo, la característica VMMQ (RSS de conmutador virtual) puede estar habilitada en la NIC física usada por las **propiedades** de invitado > **configurar...**  > pestaña **avanzadas** > establecer el valor **RSS del conmutador virtual** en **habilitado** o habilitar VMMQ en PowerShell mediante lo siguiente:
 
 ```PowerShell
  Set-VMNetworkAdapter -VMName **$VMName** -VmmqEnabled $True
@@ -49,7 +49,7 @@ net.ipv4.ip_local_port_range = 10240 65535
 net.ipv4.tcp_abort_on_overflow = 1
 ```
 
-Una herramienta útil para microbenchmarks de red es ntttcp, que está disponible en Linux y Windows. La versión de Linux es de código abierto y está disponible en [ntttcp-for-Linux en github.com](https://github.com/Microsoft/ntttcp-for-linux). La versión de Windows se puede encontrar en el [centro de descarga](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769). Cuando se optimizan las cargas de trabajo, es mejor usar tantas secuencias como sea necesario para obtener el mejor rendimiento. Al usar ntttcp para modelar el tráfico, el parámetro `-P` establece el número de conexiones paralelas que se usan.
+Una herramienta útil para microbenchmarks de red es ntttcp, que está disponible en Linux y Windows. La versión de Linux es de código abierto y está disponible en [ntttcp-for-Linux en github.com](https://github.com/Microsoft/ntttcp-for-linux). La versión de Windows se puede encontrar en el [centro de descarga](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769). Cuando se optimizan las cargas de trabajo, es mejor usar tantas secuencias como sea necesario para obtener el mejor rendimiento. Al utilizar ntttcp para modelar el tráfico, el parámetro `-P` establece el número de conexiones paralelas usadas.
 
 ## <a name="linux-storage-performance"></a>Rendimiento de almacenamiento de Linux
 

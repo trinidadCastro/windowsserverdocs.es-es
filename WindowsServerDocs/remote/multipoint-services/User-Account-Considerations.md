@@ -1,27 +1,23 @@
 ---
 title: Consideraciones sobre las cuentas de usuario
 description: Proporciona consideraciones de cuenta de usuario, nombre de usuario y contraseña para Multipoint Services
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e225900b-cee9-48c9-b21c-394dc5e72b78
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: c81d14d46e96d39676e1fb6fa31892e0d5e1b683
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 732100a79adbdd7d9fbe4ade742c43084d6b54f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389260"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820578"
 ---
 # <a name="user-account-considerations"></a>Consideraciones sobre las cuentas de usuario
-En este tema se describen los problemas que, como usuario administrativo, deben tener en cuenta a la hora de crear y administrar cuentas de usuario. Las cuentas de usuario se administran en la pestaña usuarios de Multipoint Manager. Para más información, vea el tema [Administrar cuentas de usuario](Manage-User-Accounts.md).  
+En este tema se describen problemas que usted, como usuario administrativo, debe tener en cuenta al crear y administrar cuentas de usuario. Las cuentas de usuario se administran en la pestaña usuarios de Multipoint Manager. Para más información, vea el tema [Administrar cuentas de usuario](Manage-User-Accounts.md).  
   
 ## <a name="user-account-types"></a>Tipos de cuentas de usuario  
 Una cuenta de usuario es una colección de información que indica a multipoint Services a qué archivos y carpetas puede acceder un usuario, qué cambios pueden realizar en el sistema Multipoint Services y las preferencias de cada usuario, como el fondo de escritorio. Cada persona tiene acceso a su propia cuenta de usuario mediante un nombre de usuario y una contraseña únicos. Multipoint Services admite tres tipos de cuentas de usuario:  

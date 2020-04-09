@@ -1,24 +1,20 @@
 ---
 title: Administración de las directivas de restricción de software
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8cc22093-67d1-47b6-9ddd-4569b6761ce9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c75c7813041870f79ed95250857a5c7d1576c7dc
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 88e745b6951ab27f22cc412ee63f792d30775d14
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322987"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855118"
 ---
 # <a name="administer-software-restriction-policies"></a>Administración de las directivas de restricción de software
 
@@ -53,7 +49,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 
 -   [Usar directivas de restricción de software para ayudar a proteger el equipo contra un virus de correo electrónico](use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus.md)
 
-## <a name="BKMK_Open_SRP"></a>Para abrir directivas de restricción de software
+## <a name="to-open-software-restriction-policies"></a><a name="BKMK_Open_SRP"></a>Para abrir directivas de restricción de software
 
 -   [Para el equipo local](#BKMK_1)
 
@@ -63,7 +59,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 
 -   [Para un sitio de y está en un controlador de dominio o en una estación de trabajo que tiene instalado el Herramientas de administración remota del servidor](#BKMK_4)
 
-### <a name="BKMK_1"></a>Para el equipo local
+### <a name="for-your-local-computer"></a><a name="BKMK_1"></a>Para el equipo local
 
 1.  Abra Configuración de seguridad local
 
@@ -76,7 +72,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 > [!NOTE]
 > Para realizar este procedimiento, debe ser miembro del grupo Administradores en el equipo local o tienen que delegarle la autoridad adecuada.
 
-### <a name="BKMK_2"></a>Para un dominio, un sitio o una unidad organizativa, y se encuentra en un servidor miembro o en una estación de trabajo que está unida a un dominio
+### <a name="for-a-domain-site-or-organizational-unit-and-you-are-on-a-member-server-or-on-a-workstation-that-is-joined-to-a-domain"></a><a name="BKMK_2"></a>Para un dominio, un sitio o una unidad organizativa, y se encuentra en un servidor miembro o en una estación de trabajo que está unida a un dominio
 
 1.  Abra Microsoft Management Console (MMC).
 
@@ -101,7 +97,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 > [!NOTE]
 > Para llevar a cabo este procedimiento, debe ser miembro del grupo Admins. del dominio.
 
-### <a name="BKMK_3"></a>Para un dominio o unidad organizativa, y está en un controlador de dominio o en una estación de trabajo que tiene instalado el Herramientas de administración remota del servidor
+### <a name="for-a-domain-or-organizational-unit-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_3"></a>Para un dominio o unidad organizativa, y está en un controlador de dominio o en una estación de trabajo que tiene instalado el Herramientas de administración remota del servidor
 
 1.  Abra Consola de administración de directivas de grupo.
 
@@ -120,7 +116,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 > [!NOTE]
 > Para llevar a cabo este procedimiento, debe ser miembro del grupo Admins. del dominio.
 
-### <a name="BKMK_4"></a>Para un sitio de y está en un controlador de dominio o en una estación de trabajo que tiene instalado el Herramientas de administración remota del servidor
+### <a name="for-a-site-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_4"></a>Para un sitio de y está en un controlador de dominio o en una estación de trabajo que tiene instalado el Herramientas de administración remota del servidor
 
 1.  Abra Consola de administración de directivas de grupo.
 
@@ -145,7 +141,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 > -   Para establecer la configuración de directiva que se aplicará a los equipos, independientemente de los usuarios que inicien sesión en ellos, haga clic en **configuración del equipo**.
 > -   Para establecer la configuración de directiva que se aplicará a los usuarios, independientemente del equipo en el que inicien sesión, haga clic en **configuración de usuario**.
 
-## <a name="BKMK_Create_SRP"></a>Para crear nuevas directivas de restricción de software
+## <a name="to-create-new-software-restriction-policies"></a><a name="BKMK_Create_SRP"></a>Para crear nuevas directivas de restricción de software
 
 1.  Abra Directivas de restricción de software.
 
@@ -158,7 +154,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 >     -   Si crea nuevas directivas de restricción de software para un equipo unido a un dominio, los miembros del grupo de Administradores de dominio pueden llevar a cabo este procedimiento.
 > -   Si ya se han creado directivas de restricción de software para un objeto de directiva de grupo (GPO), el comando **Nuevas directivas de restricción de software** no aparece en el menú **Acción**. Para eliminar las directivas de restricción de software aplicadas a un GPO, en el árbol de consola, haga clic con el botón secundario en **Directivas de restricción de software** y, luego, en **Eliminar directivas de restricción de software**. Al eliminar las directivas de restricción de software para un GPO, también se eliminan todas las reglas de directivas de restricción de software para ese GPO. Después de eliminar las directivas de restricción de software, puede crear nuevas directivas de restricción de software para ese GPO.
 
-## <a name="BKMK_Add_Del"></a>Para agregar o eliminar un tipo de archivo designado
+## <a name="to-add-or-delete-a-designated-file-type"></a><a name="BKMK_Add_Del"></a>Para agregar o eliminar un tipo de archivo designado
 
 1.  Abra Directivas de restricción de software.
 
@@ -178,7 +174,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 > -   Es posible que sea necesario crear una nueva configuración de directiva de restricción de software para el objeto de directiva de grupo (GPO), si aun no lo ha hecho.
 > -   Todas las reglas de configuración del equipo y configuración de usuario de un GPO comparten la lista de tipos de archivos designados.
 
-## <a name="BKMK_Prevent_Admin"></a>Para evitar que las directivas de restricción de software se apliquen a los administradores locales
+## <a name="to-prevent-software-restriction-policies-from-applying-to-local-administrators"></a><a name="BKMK_Prevent_Admin"></a>Para evitar que las directivas de restricción de software se apliquen a los administradores locales
 
 1.  Abra Directivas de restricción de software.
 
@@ -192,7 +188,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 > -   Si es común que los usuarios sean miembros del grupo local de Administradores en los equipos de su organización, es posible que no quiera habilitar esta opción.
 > -   Si define una configuración de directiva de restricción de software para el equipo local, use este procedimiento para impedir que las directivas de restricción de software se apliquen a los administradores locales. Si define una configuración de directiva de restricción de software para la red, filtre la configuración de directiva de usuario en función de la pertenencia a grupos de seguridad a través de directiva de grupo.
 
-## <a name="BKMK_Sec_Lvl"></a>Para cambiar el nivel de seguridad predeterminado de las directivas de restricción de software
+## <a name="to-change-the-default-security-level-of-software-restriction-policies"></a><a name="BKMK_Sec_Lvl"></a>Para cambiar el nivel de seguridad predeterminado de las directivas de restricción de software
 
 1.  Abra Directivas de restricción de software.
 
@@ -210,7 +206,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 > -   Se crean reglas de directivas de restricción de software para especificar las excepciones en el nivel de seguridad predeterminado. Cuando el nivel de seguridad predeterminado se establece en **Sin restricción**, las reglas pueden especificar el software que no tiene permiso para ejecutarse. Cuando el nivel de seguridad predeterminado se establece en **No permitido**, las reglas pueden especificar el software que tiene permiso para ejecutarse.
 > -   Durante la instalación, el nivel de seguridad predeterminado de las directivas de restricción de software en todos los archivos del sistema se establece en **Sin restricción**.
 
-## <a name="BKMK_Apply_SRP_DLLs"></a>Para aplicar directivas de restricción de software a archivos dll
+## <a name="to-apply-software-restriction-policies-to-dlls"></a><a name="BKMK_Apply_SRP_DLLs"></a>Para aplicar directivas de restricción de software a archivos dll
 
 1.  Abra Directivas de restricción de software.
 

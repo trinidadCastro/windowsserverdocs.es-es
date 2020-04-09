@@ -1,24 +1,20 @@
 ---
 title: Configuración de sincronizaciones de actualización
 description: 'Tema de Windows Server Update Service (WSUS): Cómo configurar y configurar sincronizaciones de actualizaciones'
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ddd5c395-451b-44a0-8e08-a05db26d2282
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c7bca5be7a8ec0e857cba65680fbc3b967af4f8
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: f4da028b2100d824b55c00c185f8b90df7d787bf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639753"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828547"
 ---
 # <a name="setting-up-update-synchronizations"></a>Configuración de sincronizaciones de actualización
 
@@ -89,7 +85,7 @@ Entre las opciones para personalizar el modo en que el servidor WSUS se sincroni
 
 -   Puede especificar un puerto personalizado para la sincronización. Para obtener información acerca de la configuración de puertos, consulte [Step 3: configure WSUS](../deploy/2-configure-wsus.md) en la guía de implementación de WSUS.
 
--   Puede usar capas de sockets seguros (SSL) para proteger la sincronización de la información de actualización entre los servidores WSUS. Para obtener más información sobre el uso de SSL, consulte la sección "3,5. Proteja WSUS con el protocolo de Capa de sockets seguros "del [paso 3: configurar WSUS](../deploy/2-configure-wsus.md) en la guía de implementación de WSUS.
+-   Puede usar capas de sockets seguros (SSL) para proteger la sincronización de la información de actualización entre los servidores WSUS. Para obtener más información sobre el uso de SSL, consulte la sección 3,5. Proteja WSUS con el protocolo Capa de sockets seguros del [paso 3: configurar WSUS](../deploy/2-configure-wsus.md) en la guía de implementación de WSUS.
 
 ## <a name="synchronizing-manually-or-automatically"></a>Sincronizar manual o automáticamente
 Puede sincronizar el servidor WSUS manualmente o especificar una hora para que se sincronice automáticamente.

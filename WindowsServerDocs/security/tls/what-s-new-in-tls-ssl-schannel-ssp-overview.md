@@ -1,30 +1,26 @@
 ---
 title: Información general de TLS-SSL (Schannel SSP)
 description: Seguridad de Windows Server
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tls-ssl
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c8836345-16bb-4dcc-8d2b-2b9b687456a3
 author: justinha
 ms.author: justinha
-manager: brianlic-msft
+manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: c1ff76e6e611876a30196e1c8eefddbd783d86a9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5478a97a6b333cfc92de100440d53a769a8c0fd9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403355"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855198"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>Información general sobre TLS-SSL (Schannel SSP)
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016 y Windows 10
 
-En este tema para profesionales de TI se describen los cambios en la funcionalidad del proveedor de compatibilidad para seguridad de Schannel (SSP), que incluye la seguridad de la capa de transporte (TLS), el Capa de sockets seguros (SSL) y la seguridad de la capa de transporte de datagrama (DTLS). protocolos de autenticación, para Windows Server 2012 R2, Windows Server 2012, Windows 8.1 y Windows 8.
+En este tema para profesionales de TI se describen los cambios en la funcionalidad del proveedor de compatibilidad para seguridad de Schannel (SSP), que incluye los protocolos de autenticación seguridad de la capa de transporte (TLS), Capa de sockets seguros (SSL) y seguridad de la capa de transporte de datagrama (DTLS), para Windows Server 2012 R2, Windows Server 2012, Windows 8.1 y Windows 8.
 
 Schannel es un proveedor de compatibilidad para seguridad (SSP) que implementa los protocolos de autenticación estándar de Internet de SSL y TLS y DTLS. La interfaz del proveedor de compatibilidad para seguridad (SSPI) es una API que usan los sistemas Windows para realizar funciones basadas en la seguridad, incluida la autenticación. SSPI funciona como una interfaz común a varios proveedores de compatibilidad para seguridad (SSP), incluido el Schannel SSP.
 
@@ -51,7 +47,7 @@ Los dispositivos que conectan TLS con los servidores con frecuencia necesitan vo
 Para obtener información acerca de la reanudación de la sesión TLS sin estado, consulte el documento IETF [RFC 5077.](http://www.ietf.org/rfc/rfc5077)
 
 ### <a name="application-protocol-negotiation"></a>Negociación de protocolo de aplicación
- Windows Server 2012 R2 y Windows 8.1 admiten la negociación del Protocolo de aplicación de TLS de cliente para que las aplicaciones puedan aprovechar los protocolos como parte del desarrollo estándar de HTTP 2,0 y los usuarios pueden acceder a servicios en línea como Google y Twitter mediante aplicaciones que se ejecutan el protocolo SPDY.
+ Windows Server 2012 R2 y Windows 8.1 admiten la negociación del Protocolo de aplicación de TLS de cliente para que las aplicaciones puedan aprovechar los protocolos como parte del desarrollo estándar de HTTP 2,0 y los usuarios pueden acceder a servicios en línea como Google y Twitter mediante aplicaciones que ejecutan el protocolo SPDY.
 
 **Cómo funciona**
 
@@ -59,7 +55,7 @@ Las aplicaciones de cliente y servidor habilitan la extensión de la negociació
 
 Cuando el cliente TLS realiza la solicitud al servidor, el servidor TLS lee su lista de protocolos admitidos para obtener el protocolo de aplicación preferido que también admite el cliente. Si se encuentra este tipo de protocolo, el servidor responde con el identificador de protocolo seleccionado y continúa con el protocolo de enlace como de costumbre. Si no hay ningún protocolo de aplicación común, el servidor envía una alerta de error grave de protocolo de enlace.
 
-### <a name="BKMK_TrustedIssuers"></a>Administración de emisores de confianza para la autenticación de cliente
+### <a name="management-of-trusted-issuers-for-client-authentication"></a><a name="BKMK_TrustedIssuers"></a>Administración de emisores de confianza para la autenticación de cliente
 Cuando se requiere la autenticación del equipo cliente mediante SSL o TLS, el servidor puede configurarse para enviar una lista de emisores de certificados de confianza. Esta lista contiene el conjunto de emisores de certificados en los que confiará el servidor y es una sugerencia para el equipo cliente en cuanto a qué certificado de cliente seleccionar si hay varios certificados presentes. Además, la cadena de certificados que el equipo cliente envía al servidor debe validarse con la lista de emisores de confianza configurados.
 
 Antes de Windows Server 2012 y Windows 8, las aplicaciones o los procesos que usaban el SSP de Schannel (incluidos HTTP. sys e IIS) podían proporcionar una lista de los emisores de confianza que admitían para la autenticación de cliente a través de una lista de certificados de confianza (CTL).
@@ -68,7 +64,7 @@ En Windows Server 2012 y Windows 8, se realizaron cambios en el proceso de auten
 
 -   Ya no se admite la administración de listas de emisores de confianza basada en CTL.
 
--   El comportamiento de envío de la lista de emisores de confianza de forma predeterminada está desactivada: El valor predeterminado de la clave de registro SendTrustedIssuerList ahora es 0 (desactivado de forma predeterminada) en lugar de 1.
+-   El comportamiento para enviar la lista de emisores de confianza de forma predeterminada está desactivado: el valor predeterminado de la clave del registro SendTrustedIssuerList ahora es 0 (desactivado de forma predeterminada) en lugar de 1.
 
 -   Se conserva la compatibilidad con versiones anteriores de sistemas operativos Windows.
 
@@ -76,7 +72,7 @@ En Windows Server 2012 y Windows 8, se realizaron cambios en el proceso de auten
 
 A partir de Windows Server 2012, el uso de la CTL se ha reemplazado por una implementación basada en el almacén de certificados. Esto permite una manejabilidad más familiar a través de los cmdlets de administración de certificados existentes del proveedor de PowerShell, además de herramientas de línea de comandos como certutil.exe.
 
-Aunque el tamaño máximo de la lista de entidades de certificación de confianza que admite el SSP de Schannel (16 KB) sigue siendo el mismo que en Windows Server 2008 R2, en Windows Server 2012 hay un nuevo almacén de certificados dedicado para los emisores de autenticación de cliente, de modo que los certificados no relacionados no se incluyen en el mensaje.
+Aunque el tamaño máximo de la lista de entidades de certificación de confianza que admite el SSP de Schannel (16 KB) sigue siendo el mismo que en Windows Server 2008 R2, en Windows Server 2012 hay un nuevo almacén de certificados dedicado para los emisores de autenticación de cliente, de modo que los certificados no relacionados no se incluyan en el mensaje.
 
 **¿Cómo funciona?**
 
@@ -98,11 +94,11 @@ Para obtener información sobre la administración de certificados mediante el p
 
 Para obtener información acerca de cómo administrar certificados mediante la utilidad de certificados, consulte [certutil. exe](https://technet.microsoft.com/library/cc732443.aspx).
 
-Para obtener información sobre los datos, incluido el almacén definido por la aplicación, que se define para una credencial de Schannel, consulte [estructura SCHANNEL_CRED (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379810(v=vs.85).aspx).
+Para obtener información sobre los datos, incluido el almacén definido por la aplicación, que se define para una credencial de Schannel, consulte [estructura de SCHANNEL_CRED (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379810(v=vs.85).aspx).
 
 **Valores predeterminados para los modos de confianza**
 
-Hay tres modos de confianza de autenticación de cliente admitidos por el proveedor de Schannel. El modo de confianza controla cómo se realiza la validación de la cadena de certificados del cliente y es una configuración de todo el sistema controlada por el REG_DWORD "ClientAuthTrustMode" en HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel .
+Hay tres modos de confianza de autenticación de cliente admitidos por el proveedor de Schannel. El modo de confianza controla cómo se realiza la validación de la cadena de certificados del cliente y es una configuración de todo el sistema controlada por el REG_DWORD "ClientAuthTrustMode" en HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel.
 
 |Valor|Modo de confianza|Descripción|
 |-----|-------|--------|
@@ -112,7 +108,7 @@ Hay tres modos de confianza de autenticación de cliente admitidos por el provee
 
 Para obtener información acerca de los errores de autenticación debidos a problemas de configuración de emisores de confianza, consulte el artículo [280256](https://support.microsoft.com/kb/2802568)de Knowledge base.
 
-### <a name="BKMK_SNI"></a>Compatibilidad con TLS para extensiones de indicador de nombre de servidor (SNI)
+### <a name="tls-support-for-server-name-indicator-sni-extensions"></a><a name="BKMK_SNI"></a>Compatibilidad con TLS para extensiones de indicador de nombre de servidor (SNI)
 La característica Indicación de nombre de servidor extiende los protocolos SSL y TLS para permitir la identificación adecuada del servidor cuando se ejecuta una gran cantidad de imágenes virtuales en un solo servidor. Para asegurar la comunicación de forma adecuada entre un equipo cliente y un servidor, el equipo cliente solicita al servidor un certificado digital. Una vez que el servidor responde la solicitud y envía el certificado, el equipo cliente lo examina, lo usa para cifrar la comunicación y continúa con en intercambio normal de solicitud-respuesta. Sin embargo, en un escenario de hospedaje virtual, se hospedan varios dominios, cada uno con un certificado potencialmente diferente, en un solo servidor. En este caso, el servidor no puede saber de antemano qué certificado se envía al equipo cliente. SNI permite que el equipo cliente informe antes al dominio de destino en el protocolo, y esto permite que el servidor seleccione correctamente el certificado adecuado.
 
 **¿Qué valor se agrega?**
@@ -133,7 +129,7 @@ Schannel SSP mantiene una caché en memoria de los estados de conexión de clien
 
 La selección de certificados por parte de los usuarios finales se ha mejorado, ya que permite preparar una lista de nombres de emisores de certificados probables con sugerencias para el usuario final acerca de cuál debe elegir. Esta lista puede configurarse mediante la directiva de grupo.
 
-### <a name="BKMK_DTLS"></a>Seguridad de la capa de transporte de datagramas (DTLS)
+### <a name="datagram-transport-layer-security-dtls"></a><a name="BKMK_DTLS"></a>Seguridad de la capa de transporte de datagramas (DTLS)
 La versión 1.0 del protocolo DTLS se ha agregado al proveedor de compatibilidad para seguridad Schannel. El protocolo DTLS proporciona privacidad en las comunicaciones de los protocolos de datagramas. El protocolo permite que las aplicaciones de cliente/servidor se comuniquen de acuerdo con el modo en que fueron diseñadas para evitar interceptaciones, alteraciones o falsificación de mensajes. El protocolo DTLS se basa en el protocolo de seguridad de la capa de transporte (TLS) y proporciona garantías de seguridad equivalentes, lo que reduce la necesidad de usar IPsec o diseñar un protocolo personalizado de seguridad de la capa de la aplicación.
 
 **¿Qué valor se agrega?**
@@ -144,7 +140,7 @@ Los datagramas son comunes en el streaming multimedia, como juegos o videoconfer
 
 Las aplicaciones que usan DTLS a través de UDP pueden usar el modelo SSPI en Windows Server 2012 y Windows 8. Hay disponibles algunos conjuntos de cifrado para la configuración, de manera similar al modo en que se configura TLS. Schannel continúa usando el proveedor criptográfico CNG que aprovecha la certificación de FIPS 140, que se introdujo en Windows Vista.
 
-### <a name="BKMK_Deprecated"></a>Funcionalidad desusada
+### <a name="deprecated-functionality"></a><a name="BKMK_Deprecated"></a>Funcionalidad desusada
 En Schannel SSP para Windows Server 2012 y Windows 8, no hay características ni funcionalidades desusadas.
 
 ## <a name="see-also"></a>Vea también

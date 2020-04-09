@@ -1,28 +1,22 @@
 ---
 title: copy
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Temas de comandos de Windows para copiar, que copia uno o varios archivos de una ubicación a otra.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9624d4a1-349a-4693-ad00-1d1d4e59e9ac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 102fd6b59516b04b8986ee47b52f521be73f04de
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3f1ba088f62dec574a23406683bf5ae3d13c1e86
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379044"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847148"
 ---
 # <a name="copy"></a>copy
-
-
 
 Copia uno o varios archivos de una ubicación a otra.
 
@@ -34,7 +28,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a | /b] [+ ...]] [<Destination> [/a | /b]]
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
@@ -45,12 +39,12 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
 |/-y|Le pide que confirme si desea sobrescribir un archivo de destino existente.|
 |/z|Copia los archivos en red en modo reiniciable.|
 |/a|Indica un archivo de texto ASCII.|
-|b|Indica un archivo binario.|
+|/b|Indica un archivo binario.|
 |> de \<de origen|Obligatorio. Especifica la ubicación desde la que desea copiar un archivo o un conjunto de archivos. El *origen* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
 |> de destino de \<|Obligatorio. Especifica la ubicación en la que desea copiar un archivo o un conjunto de archivos. El *destino* puede constar de una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   Puede copiar un archivo de texto ASCII que use un carácter de fin de archivo (CTRL + Z) para indicar el final del archivo.
 -   Usar **/a**
@@ -112,7 +106,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
     Para copiar todos los archivos y subdirectorios de un directorio, use el comando **xcopy** .
 -   El comando **Copy** , con distintos parámetros, está disponible en la consola de recuperación.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 Para copiar un archivo denominado Memo. doc en Letter. doc en la unidad actual y asegurarse de que el carácter de fin de archivo (CTRL + Z) está al final del archivo copiado, escriba:
 ```
@@ -153,6 +147,6 @@ Para combinar todos los archivos con la extensión. txt y, a continuación, comb
 copy *.txt + *.ref Combined.doc
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

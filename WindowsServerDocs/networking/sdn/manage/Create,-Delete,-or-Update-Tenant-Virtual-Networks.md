@@ -1,24 +1,20 @@
 ---
 title: Creación, eliminación o actualización de una red virtual de inquilino
 description: En este tema, aprenderá a crear, eliminar y actualizar redes virtuales de virtualización de red de Hyper-V después de implementar las redes definidas por software (SDN). Virtualización de red de Hyper-V le ayuda a aislar las redes de inquilinos para que cada red de inquilinos sea una entidad independiente. Cada entidad no tiene ninguna posibilidad entre conexiones a menos que configure cargas de trabajo de acceso público.
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a820826-e829-4ef2-9a20-f74235f8c25b
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: f85f593ec3dca33c5b35fb065c7d84ed12ea9af2
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: acb663cd33d015c1ce96241abffd4ca260cc5559
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309820"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854528"
 ---
 # <a name="create-delete-or-update-tenant-virtual-networks"></a>Crear, eliminar o actualizar redes virtuales de inquilinos
 

@@ -1,24 +1,20 @@
 ---
 title: Filtrar, ordenar y consultar sobre datos en las ventanas del Administrador del servidor
 description: Administrador de servidores
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8786f791-73e5-4c75-8d12-46e88a196976
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 89604b73fd071030d0f800b3a38a7ac3858ef1c6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8447d06c03b6adca00966d05978d4337d9b5984
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383202"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851538"
 ---
 # <a name="filter-sort-and-query-data-in-server-manager-tiles"></a>Filtrar, ordenar y consultar sobre datos en las ventanas del Administrador del servidor
 
@@ -26,7 +22,7 @@ ms.locfileid: "71383202"
 
 En Windows Server, los iconos de Administrador del servidor permiten filtrar y ordenar los datos, así como crear y guardar consultas personalizadas. Puede ordenar, usar filtros de palabras clave y ejecutar consultas en las entradas de la lista en los mosaicos eventos, rendimiento, Analizador de procedimientos recomendados, servicios y roles y características en las páginas de rol de servidor o de grupo en Administrador del servidor.  
   
-En este tema se incluyen las siguientes secciones.  
+Este tema contiene las siguientes secciones.  
   
 -   [Filtrar entradas de la lista en mosaicos](#BKMK_tiles)  
   
@@ -34,7 +30,7 @@ En este tema se incluyen las siguientes secciones.
   
 -   [crear y ejecutar consultas personalizadas en los datos de los mosaicos](#BKMK_query)  
   
-## <a name="BKMK_tiles"></a>Filtrar entradas de la lista en mosaicos  
+## <a name="filter-list-entries-in-tiles"></a><a name=BKMK_tiles></a>Filtrar entradas de la lista en mosaicos  
 El cuadro de texto **Filtro** es una manera rápida de reducir la lista de entradas que se muestran en un mosaico a solo aquellas entradas que contienen una cadena de texto especificada.  
   
 #### <a name="to-apply-a-filter-to-the-list-of-entries-in-a-tile"></a>Para aplicar un filtro en la lista de entradas de un mosaico  
@@ -49,10 +45,10 @@ El cuadro de texto **Filtro** es una manera rápida de reducir la lista de entra
   
 4.  Para eliminar el filtro, elimine la cadena del cuadro de filtro o haga clic en **X**.  
   
-## <a name="BKMK_sort"></a>ordenar entradas de la lista en mosaicos  
+## <a name="sort-list-entries-in-tiles"></a><a name=BKMK_sort></a>ordenar entradas de la lista en mosaicos  
 Ordene las entradas de la lista en Administrador del servidor mosaicos haciendo clic en los encabezados de columna. Al hacer clic en el mosaico de una columna por primera vez, los valores de la columna se ordenan en orden alfanumérico ascendente (flecha hacia arriba); al hacer clic de nuevo, los valores se ordenan en orden alfanumérico descendente (flecha hacia abajo).  
   
-## <a name="BKMK_query"></a>crear y ejecutar consultas personalizadas en los datos de los mosaicos  
+## <a name="create-and-run-custom-queries-on-tile-data"></a><a name=BKMK_query></a>crear y ejecutar consultas personalizadas en los datos de los mosaicos  
 Puede crear consultas personalizadas en los iconos eventos, rendimiento, Analizador de procedimientos recomendados, servicios o roles y características en Administrador del servidor. De forma predeterminada, el área de la barra de herramientas del mosaico en la que se seleccionan los criterios para crear una consulta personalizada está oculta. Haga clic en **expandir** (botón de contenido adicional en el borde derecho de la barra de herramientas del mosaico) para mostrar los criterios de consulta.  
   
 #### <a name="to-create-a-custom-query-for-tile-data"></a>Para crear una consulta personalizada para los datos del mosaico  
@@ -85,7 +81,7 @@ Puede crear consultas personalizadas en los iconos eventos, rendimiento, Analiza
   
 12. Para eliminar una consulta guardada, haga clic en **Consultas de búsqueda guardadas**y haga clic **X** junto al nombre de la consulta guardada que desea eliminar.  
   
-## <a name="see-also"></a>Vea también  
+## <a name="see-also"></a>Consulta también  
 [Administrador del servidor](server-manager.md)  
 [Visualización y configuración de rendimiento, eventos y datos de servicio](view-and-configure-performance-event-and-service-data.md)  
   

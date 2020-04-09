@@ -1,79 +1,74 @@
 ---
-title: Información general de información del sistema
-description: Información del sistema es una nueva característica de análisis predictivo en Windows Server 2019. Las funcionalidades predictivas de sistema Insights - cada uno de ellos con el respaldo de un modelo de aprendizaje automático - analizar localmente datos del sistema de Windows Server, como los contadores de rendimiento y eventos, que proporcionan información detallada sobre el funcionamiento de los servidores y reducir el gastos operativos asociados con la administración de forma reactiva problemas en sus implementaciones.
-ms.custom: na
+title: Introducción a información del sistema
+description: System Insights es una nueva característica de análisis predictivo en Windows Server 2019. Las funcionalidades de predicción de System Insights, cada una de las cuales está respaldada por un modelo de aprendizaje automático, analizan de forma local los datos del sistema de Windows Server, como los contadores de rendimiento y los eventos, lo que proporciona una visión general del funcionamiento de los servidores y ayuda a reducir los gastos operativos asociados a la administración de problemas de forma reactiva.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: system-insights
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 5/23/2018
-ms.openlocfilehash: ca471e5e747c7aaa369f5725290e16deab7a6660
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2530ff9ecb4bcf69f2f9a3a452f51696b4466d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887246"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815948"
 ---
-# <a name="system-insights-overview"></a>Información general de información del sistema
+# <a name="system-insights-overview"></a>Introducción a información del sistema
 
->Se aplica a: Windows Server 2019
+>Se aplica a: Windows Server 2019
 
-Información del sistema es una nueva característica de análisis predictivo en Windows Server 2019. Las funcionalidades predictivas de sistema Insights - cada uno de ellos con el respaldo de un modelo de aprendizaje automático - analizar localmente datos del sistema de Windows Server, como los contadores de rendimiento y eventos, que proporcionan información detallada sobre el funcionamiento de los servidores y reducir el gastos operativos asociados con la administración de forma reactiva problemas en sus implementaciones. 
+System Insights es una nueva característica de análisis predictivo en Windows Server 2019. Las funcionalidades de predicción de System Insights, cada una de las cuales está respaldada por un modelo de aprendizaje automático, analizan de forma local los datos del sistema de Windows Server, como los contadores de rendimiento y los eventos, lo que proporciona una visión general del funcionamiento de los servidores y ayuda a reducir los gastos operativos asociados a la administración de problemas de forma reactiva. 
 
-En Windows Server 2019, información del sistema incluye cuatro funciones predeterminadas centrados en la capacidad de previsión, predecir el futuro recursos de proceso, redes y almacenamiento basado en los patrones de uso anteriores. Información del sistema también se distribuye con un [infraestructura extensible](adding-and-developing-capabilities.md), por lo que Microsoft y fabricantes 3rd pueden agregar nuevas funcionalidades de predicción a información del sistema sin actualizar el sistema operativo. 
+En Windows Server 2019, System Insights se incluye con cuatro funcionalidades predeterminadas centradas en la previsión de la capacidad, lo que predice recursos futuros de proceso, redes y almacenamiento en función de los patrones de uso anteriores. System Insights también se suministra con una [infraestructura extensible](adding-and-developing-capabilities.md), por lo que Microsoft y terceros pueden agregar nuevas capacidades de predicción a la información del sistema sin necesidad de actualizar el sistema operativo. 
 
-Puede administrar información del sistema a través de una intuitiva [Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview) extensión o [directamente a través de PowerShell](https://aka.ms/SystemInsightsPowerShell), y la información del sistema le permite configurar cada funcionalidad predictiva por separado según las necesidades de su implementación. Todos los resultados de predicción se publican en el registro de eventos, que le permite usar [Azure Monitor](https://azure.microsoft.com/services/monitor/) o [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807) para agregar fácilmente y ver las predicciones de un grupo de máquinas.
+Puede administrar información del sistema a través de una extensión intuitiva del [centro de administración de Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview) o [directamente a través de PowerShell](https://aka.ms/SystemInsightsPowerShell), y System Insights le permite configurar cada una de las funcionalidades predictivas de forma independiente según las necesidades de su implementación. Todos los resultados de predicción se publican en el registro de eventos, lo que permite usar [Azure monitor](https://azure.microsoft.com/services/monitor/) o [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807) para agregar fácilmente y ver las predicciones en un grupo de máquinas.
 
-![Extensión del sistema de información en Windows Admin Center, que muestra la capacidad de CPU, capacidad de previsión con un gráfico de la previsión de trazado](media/cpu-forecast-2.png)
+![Extensión de System Insights en el centro de administración de Windows, donde se muestra la capacidad de previsión de la capacidad de CPU con un gráfico que traza la previsión](media/cpu-forecast-2.png)
 
 ## <a name="local-functionality"></a>Funcionalidad local
-Información del sistema se ejecuta completamente localmente en Windows Server. Nueva funcionalidad incluida en Windows Server 2019 todos sus datos se recopila, persistente y analizan directamente en el equipo, que le permiten obtener capacidades de análisis predictivo sin ninguna conectividad de la nube.
+System Insights se ejecuta completamente localmente en Windows Server. Con la nueva funcionalidad introducida en Windows Server 2019, todos los datos se recopilan, conservan y analizan directamente en el equipo, lo que le permite obtener capacidades de análisis predictivo sin ninguna conectividad en la nube.
 
-Los datos del sistema se almacenan en el equipo, y estos datos se analizan mediante las funcionalidades de predicción que no requieren de reciclaje en la nube. Con los conocimientos del sistema, puede conservar los datos en el equipo y continuar beneficiándose de las funcionalidades de análisis predictivo. 
+Los datos del sistema se almacenan en el equipo y los datos se analizan mediante funcionalidades predictivas que no requieren reciclaje en la nube. Con System Insights, puede conservar los datos en la máquina y seguir beneficiándose de las capacidades de análisis predictivo. 
 
-## <a name="get-started"></a>Comenzar
+## <a name="get-started"></a>Introducción
 
-<iframe src="https://www.youtube-nocookie.com/embed/AJxQkx5WSaA" width="560" height="315" allowfullscreen></iframe>
+<iframe src=https://www.youtube-nocookie.com/embed/AJxQkx5WSaA width=560 height=315 allowfullscreen></iframe>
 
 >[!TIP]
->Vea estos breves vídeos para obtener información sobre la información que necesita para empezar a trabajar y con confianza administrar información del sistema: [Introducción a información del sistema en 10 minutos](https://blogs.technet.microsoft.com/filecab/2018/07/24/getting-started-with-system-insights-in-10-minutes/)
+>Vea estos breves vídeos para conocer la información que necesita para empezar a trabajar y administrar con confianza el conocimiento del sistema: [Introducción a System Insights en 10 minutos](https://blogs.technet.microsoft.com/filecab/2018/07/24/getting-started-with-system-insights-in-10-minutes/)
 
 ### <a name="requirements"></a>Requisitos
-Información del sistema está disponible en cualquier instancia de Windows Server 2019. Se ejecuta en las máquinas host e invitado, en cualquier hipervisor y en cualquier nube.
+System Insights está disponible en cualquier instancia de Windows Server 2019. Se ejecuta tanto en el host como en los equipos invitados, en cualquier hipervisor y en cualquier nube.
 
-### <a name="install-system-insights"></a>Instale el sistema Insights
+### <a name="install-system-insights"></a>Instalación del sistema Insights
 >[!IMPORTANT]
->Sistema Insights recopila y almacena hasta un año de datos localmente. Si desea conservar los datos al actualizar el sistema operativo, **Asegúrese de usar la actualización inmediata**.
+>System Insights recopila y almacena hasta un año de datos de forma local. Si desea conservar los datos al actualizar el sistema operativo, asegúrese **de usar la actualización en contexto**.
 
 #### <a name="install-the-feature"></a>Instalar la característica
-Puede instalar información del sistema mediante la extensión de Windows Admin Center:
+Puede instalar System Insights mediante la extensión del centro de administración de Windows:
 
-![Experiencia de día 0 para la extensión de la información del sistema.](media/day-0-2.png)
+![Experiencia del día 0 para la extensión de System Insights.](media/day-0-2.png)
 
-También puede instalar directamente mediante Administrador del servidor del sistema Insights agregando el **sistema Insights** característica, o mediante el uso de PowerShell:
+También puede instalar información del sistema directamente a través de Administrador del servidor agregando la característica **System-Insights** o mediante PowerShell:
 
 ```PowerShell
 Add-WindowsFeature System-Insights -IncludeManagementTools
 ```
 
 ## <a name="provide-feedback"></a>Enviar comentarios
-Nos encantaría recibir sus comentarios para ayudarnos a mejorar esta característica. Puede usar los siguientes canales para enviar comentarios:
-- **Centro de opiniones**: Usar la herramienta Centro de opiniones en Windows 10 en el archivo de un error o comentarios. Al hacerlo, especifique:
-    - **Categoría**: Servidor 
-    - **Subcategoría**: Información del sistema
-- **UserVoice**: Enviar solicitudes de características a través de nuestro [página UserVoice](https://windowsserver.uservoice.com/forums/295071-management-tools). Compartir con sus compañeros a votar los elementos que son importantes para usted.
-- **Correo electrónico**: Si desea enviar sus comentarios de forma privada en el equipo de características, envíe un correo electrónico a system-insights-feed@microsoft.com. Tenga en cuenta que puede que le sigue solicitemos usar Centro comentarios o UserVoice.
+Nos encantaría conocer sus comentarios para ayudarnos a mejorar esta característica. Puede usar los siguientes canales para enviar comentarios:
+- **Centro de comentarios**: Use la herramienta centro de comentarios de Windows 10 para archivar un error o comentarios. Al hacerlo, especifique:
+    - **Categoría**: servidor 
+    - **Subcategoría**: System Insights
+- **UserVoice**: envíe solicitudes de características a través de nuestra [Página de uservoice](https://windowsserver.uservoice.com/forums/295071-management-tools). Comparta con sus colegas para votar elementos que sean importantes para usted.
+- **Correo electrónico**: Si desea enviar sus comentarios de forma privada al equipo de características, envíe un correo electrónico a system-insights-feed@microsoft.com. Tenga en cuenta que todavía podemos solicitarle que use el centro de opiniones o UserVoice.
 
 ## <a name="see-also"></a>Vea también
-Para obtener más información acerca de la información del sistema, use los siguientes recursos:
+Para obtener más información acerca de System Insights, utilice los siguientes recursos:
 
-- [Capacidades de descripción](understanding-capabilities.md)
-- [Capacidades de administración](managing-capabilities.md)
-- [Agregar y desarrollo de capacidades](adding-and-developing-capabilities.md)
-- [Preguntas más frecuentes del sistema Insights](faq.md)
+- [Descripción de funcionalidades](understanding-capabilities.md)
+- [Administración de funcionalidades](managing-capabilities.md)
+- [Funcionalidades de adición y desarrollo](adding-and-developing-capabilities.md)
+- [Preguntas más frecuentes sobre System Insights](faq.md)

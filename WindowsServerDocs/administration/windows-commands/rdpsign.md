@@ -1,24 +1,20 @@
 ---
 title: rdpsign
 description: Obtenga información sobre cómo firmar digitalmente un archivo RDP.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4a6fa8ce-3d32-49a5-b056-bcc1a23391f5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 406563a07d3760c2846c201410f3a7b8f1c2829b
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: c9df46ab09b758cbd86334d5b418c876c41f0eff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588057"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836678"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -28,14 +24,14 @@ Permite firmar digitalmente un archivo Protocolo de escritorio remoto (. RDP).
 para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
 
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
+> En Windows Server 2008 R2, el nombre de Terminal Services ha cambiado a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
 
 ## <a name="syntax"></a>Sintaxis
 ```
 rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |-------|--------|
@@ -44,9 +40,9 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 |/q|Modo silencioso. No hay ninguna salida cuando el comando se ejecuta correctamente y la salida mínima si se produce un error en el comando.|
 |/v|modo detallado. Muestra todas las advertencias, mensajes y estado.|
 |/l|Comprueba los resultados de la firma y la salida sin reemplazar realmente ninguno de los archivos de entrada.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 -   La huella digital del certificado SHA1 o SHA256 debe representar un editor de archivos. RDP de confianza. Para obtener la huella digital del certificado, abra el complemento certificados, haga doble clic en el certificado que desea usar (ya sea en el almacén de certificados del equipo local o en el almacén de certificados personales), haga clic en la pestaña **detalles** y, a continuación, en la lista de **campos** , haga clic en **huella digital**.
 
     > [!NOTE]
@@ -56,7 +52,7 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 -   Los archivos de salida firmados sobrescribirán los archivos de entrada.
 -   Si alguno de los archivos. RDP no se puede leer ni escribir en él, la herramienta continuará con el siguiente archivo si se especifican varios archivos.
 
-## <a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Example
 - Para firmar un archivo. RDP denominado archivo1. RDP, navegue hasta la carpeta donde guardó el archivo. RDP y, a continuación, escriba lo siguiente:
   ```
   rdpsign /sha1 hash file1.rdp
@@ -72,5 +68,5 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
   rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
   ```
   ## <a name="see-also"></a>Consulta también
-  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-  [servicios de escritorio remoto &#40;referencia de comandos Terminal Services&#41; ](remote-desktop-services-terminal-services-command-reference.md)
+  - Referencia [de comandos de
+  de la clave de sintaxis de línea de comandos](command-line-syntax-key.md) [servicios de escritorio remoto (Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)

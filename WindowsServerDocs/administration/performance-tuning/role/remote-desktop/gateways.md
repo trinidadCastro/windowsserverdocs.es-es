@@ -4,15 +4,15 @@ description: Recomendaciones para la optimización del rendimiento para puertas 
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: HammadBu; VladmiS
+ms.author: hammadbu; vladmis
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: fcd7afd840df12ec19e162f751df9e5c0c9c84d4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3794b47e7226a905944495dd7c31f3196a33d0d5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385011"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851738"
 ---
 # <a name="performance-tuning-remote-desktop-gateways"></a>Puertas de enlace de Escritorio remoto de optimización del rendimiento
 
@@ -70,42 +70,42 @@ Los parámetros siguientes pueden ayudar a ajustar las llamadas a procedimiento 
 
 La siguiente lista de contadores de rendimiento se considera un conjunto básico de contadores al supervisar el uso de recursos en la puerta de enlace de escritorio remoto:
 
--   \\Puerta de enlace de Terminal Services\\\*
+-   \\\\de puerta de enlace de Terminal Services \*
 
--   \\Proxy RPC/HTTP\\\*
+-   \\\\de proxy RPC/HTTP \*
 
--   \\Proxy RPC/HTTP por servidor\\\*
+-   \\proxy RPC/HTTP por\\de servidor \*
 
--   \\Servicio Web\\\*
+-   \\de servicio Web de \\\*
 
 -   \\W3SVC\_W3WP\\\*
 
--   \\IPv6\\\*
+-   \\\\IPv4 \*
 
--   \\Memoria\\\*
+-   \\de memoria de \\\*
 
--   \\Interfaz de red\*()\\\*
+-   \\de la interfaz de red (\*) de \\\*
 
--   \\Proceso (\*)\\\*
+-   \\de proceso (\*) de \\\*
 
--   \\Información del procesador\*()\\\*
+-   \\la información del procesador (\*)\\\*
 
--   \\Sincronización (\*)\\\*
+-   \\sincronización de \\(\*) \*
 
--   \\Integrado\\\*
+-   \\del\\del sistema \*
 
 -   \\TCPv4\\\*
 
 Los siguientes contadores de rendimiento solo son aplicables para el transporte RPC heredado:
 
--   \\RPC de RPC/\\ proxy\* http
+-   \\proxy RPC/HTTP\\\* RPC
 
--   \\Proxy RPC/HTTP por RPC\\ de servidor\*
+-   \\proxy RPC/HTTP por servidor\\\* RPC
 
--   \\RPC del\\ servicio\* Web
+-   Servicio Web de \\\\\* RPC
 
--   \\W3SVC\_RPC\\ W3WP\*
+-   \\W3SVC\_W3WP\\\* RPC
 
 > [!NOTE]
-> Si es aplicable, agregue \\los\\ objetos \\IPv6\* y TCPv6\\ \* . ReplaceThisText
+> Si es aplicable, agregue los objetos \\IPv6\\\* y \\TCPv6\\\*. ReplaceThisText
 

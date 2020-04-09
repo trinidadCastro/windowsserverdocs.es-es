@@ -1,7 +1,6 @@
 ---
 ms.assetid: ef63d40c-a262-4a18-938d-b95c10680c0b
-title: Autonomía frente a Aislamiento
-description: ''
+title: Autonomía frente a aislamiento
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c3430ae9320ed2d39768d91f768adb3f9ab1c716
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9d836804f1de84ed9d10a978876db9cbecc23123
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402645"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822838"
 ---
-# <a name="autonomy-vs-isolation"></a>Autonomía frente a Aislamiento
+# <a name="autonomy-vs-isolation"></a>Autonomía frente a aislamiento
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -70,7 +69,7 @@ Los requisitos operativos o legales normalmente crean una necesidad de aislamien
 ### <a name="service-autonomy"></a>Autonomía del servicio  
 La autonomía del servicio implica la capacidad de administrar la infraestructura sin necesidad de un control exclusivo; por ejemplo, cuando un grupo desea realizar cambios en la infraestructura (como agregar o quitar dominios, modificar el espacio de nombres del sistema de nombres de dominio (DNS) o modificar el esquema) sin la aprobación del propietario del bosque.  
   
-Es posible que sea necesaria la autonomía del servicio dentro de una organización para un grupo que desee poder controlar el nivel de servicio de AD DS (agregando y quitando controladores de dominio, según sea necesario) o para un grupo que necesite poder instalar aplicaciones habilitadas para el directorio que requerir extensiones de esquema.  
+Es posible que sea necesaria la autonomía del servicio dentro de una organización para un grupo que desee poder controlar el nivel de servicio de AD DS (agregando y quitando controladores de dominio, según sea necesario) o para un grupo que necesite poder instalar aplicaciones habilitadas para el directorio que requieran extensiones de esquema.  
   
 ## <a name="limited-connectivity"></a>Conectividad limitada  
 Si un grupo de la organización posee redes separadas por dispositivos que restringen o limitan la conectividad entre redes (como firewalls y dispositivos de traducción de direcciones de red (NAT)), esto puede afectar al diseño del bosque. Al identificar los requisitos de diseño de bosque, asegúrese de anotar las ubicaciones en las que tiene conectividad de red limitada. Esta información es necesaria para que pueda tomar decisiones sobre el diseño del bosque.  

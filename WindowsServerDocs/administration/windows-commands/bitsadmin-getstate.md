@@ -1,66 +1,61 @@
 ---
 title: bitsadmin getstate
-description: Tema comandos de Windows para bitsadmin GetState
-ms.custom: na
+description: Tema de comandos de Windows para **bitsadmin GetState**, que recupera el estado del trabajo especificado.
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1252d6cf-14ca-44df-beb2-930ff011f297
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2cff790c8787b1514e8523a4583184d6f6a59efc
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 43cd8c8e614cce65f55b16fc5395b1d37de0cf95
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259110"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80850468"
 ---
 # <a name="bitsadmin-getstate"></a>bitsadmin getstate
-
 
 Recupera el estado del trabajo especificado.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-bitsadmin /GetState <Job>
+bitsadmin /getstate <job>
 ```
 
-## <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 | Parámetro | Descripción |
-| --------- | ----------- |
-|    Trabajo    | El nombre para mostrar del trabajo o el GUID |
+| -------------- | -------------- |
+| trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="remarks"></a>Comentarios
+## <a name="output"></a>Salida
 
-Los estados posibles son:
+Los valores de salida incluyen:
 
-|      Estado      | Descripción |
+| Estado | Descripción |
 | --------------- | ----------- |
-| EN cola          | El trabajo está en espera de ejecutarse. |
-| CONECTANDO      | BITS está poniéndose en contacto con el servidor. |
-| TRANSFERIR    | BITS está transfiriendo datos. |
-| TRASLADA     | BITS transfirió correctamente todos los archivos del trabajo. |
-| SUSPENDIDAS       | El trabajo está en pausa. |
-| ERROR           | Se produjo un error no recuperable. no se volverá a intentar la transferencia. |
-| TRANSIENT_ERROR | Se ha producido un error recuperable. la transferencia se reintenta cuando expira el retraso de reintento mínimo. |
-| CONFIRMADO    | Se completó el trabajo. |
-| CANCELADO        | El trabajo se canceló. |
+| En cola | El trabajo está en espera de ejecutarse. |
+| Conectando | BITS está poniéndose en contacto con el servidor. |
+| Transferir | BITS está transfiriendo datos. |
+| Traslada | BITS transfirió correctamente todos los archivos del trabajo. |
+| Suspended | El trabajo está en pausa. |
+| Error | Se produjo un error no recuperable. no se volverá a intentar la transferencia. |
+| Transient_Error | Se ha producido un error recuperable. la transferencia se reintenta cuando expira el retraso de reintento mínimo. |
+| Confirmado | Se completó el trabajo. |
+| Canceled | El trabajo se canceló. |
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="examples"></a><a name=BKMK_examples></a>Example
 
 En el ejemplo siguiente se recupera el estado del trabajo denominado *myDownloadJob*.
 
 ```
-C:\>bitsadmin /GetState myDownloadJob
+C:\>bitsadmin /getstate myDownloadJob
 ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

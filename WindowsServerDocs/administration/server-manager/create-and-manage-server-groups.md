@@ -1,24 +1,20 @@
 ---
 title: crear y administrar grupos de servidores
 description: Administrador de servidores
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9d5b1be8-49fd-4ff7-9580-e4ff21fe4b17
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 74075f091cd707f6faf73567c1dce6f22a2f6753
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2f4ad512c55bcd1391ad55bdbdeb9a2ba3bfd7f0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383221"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851548"
 ---
 # <a name="create-and-manage-server-groups"></a>crear y administrar grupos de servidores
 
@@ -26,7 +22,7 @@ ms.locfileid: "71383221"
 
 En este tema se describe cómo crear grupos de servidores personalizados definidos por el usuario en Administrador del servidor en Windows Server.
 
-## <a name="BKMK_groups"></a>Grupos de servidores
+## <a name="server-groups"></a><a name=BKMK_groups></a>Grupos de servidores
 Los servidores que se agregan al grupo de servidores se muestran en la página **todos los servidores** de administrador del servidor. Puede crear grupos de servidores personalizados que haya agregado. Los grupos de servidores le permiten ver y administrar un subconjunto más pequeño del grupo de servidores como unidad lógica; por ejemplo, puede crear un grupo denominado **servidores de contabilidad** para todos los servidores del Departamento de contabilidad de su organización o un grupo denominado **Chicago** para todos los servidores ubicados geográficamente en Chicago. Después de crear un grupo de servidores, la Página principal del grupo en Administrador del servidor muestra información acerca de los eventos, servicios, contadores de rendimiento, Analizador de procedimientos recomendados resultados y roles y características instalados para el grupo en su conjunto.
 
 Los servidores pueden ser miembros de más de un grupo.
@@ -43,7 +39,7 @@ Los servidores pueden ser miembros de más de un grupo.
 
 #### <a name="to-edit-an-existing-server-group"></a>Para editar un grupo existente de servidores
 
-1.  Realice una de las siguientes acciones:
+1.  Lleve a cabo cualquiera de las siguientes opciones.
 
     -   En el panel de navegación Administrador del servidor, haga clic con el botón secundario en un grupo de servidores y, a continuación, haga clic en **Editar Grupo de servidores**.
 
@@ -58,7 +54,7 @@ Los servidores pueden ser miembros de más de un grupo.
 
 #### <a name="to-delete-an-existing-server-group"></a>Para eliminar un grupo existente de servidores
 
-1.  Realice una de las siguientes acciones:
+1.  Lleve a cabo cualquiera de las siguientes opciones.
 
     -   En el panel de navegación Administrador del servidor, haga clic con el botón secundario en un grupo de servidores y haga clic en **Eliminar grupo de servidores**.
 
