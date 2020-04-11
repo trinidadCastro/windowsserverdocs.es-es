@@ -1,6 +1,6 @@
 ---
 title: bitsadmin suspend
-description: Tema de comandos de Windows para bitsadmin suspender, que suspende el trabajo especificado.
+description: Tema de comandos de Windows para **bitsadmin suspender**, que suspende el trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,41 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0419f4cdf59d04539b8b4c6d47cec886197d412b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 42ed83d4dbf8c3d982c5c186b440cf17997903c9
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849058"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123154"
 ---
 # <a name="bitsadmin-suspend"></a>bitsadmin suspend
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Suspende el trabajo especificado.
+Suspende el trabajo especificado. Si suspendió el trabajo por error, puede usar el modificador de la [reanudación de bitsadmin](bitsadmin-resume.md) para reiniciar el trabajo.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-bitsadmin /Suspend <Job>
+bitsadmin /suspend <job>
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|-------|--------|
-|Trabajo|El nombre para mostrar del trabajo o el GUID|
+| Parámetro | Descripción |
+| --------- | ---------- |
+| Trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="remarks"></a>Comentarios
-
-Para reiniciar el trabajo, use el conmutador [bitsadmin resume](bitsadmin-resume.md) .
-
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="example"></a>Ejemplo
 
 En el ejemplo siguiente se suspende el trabajo denominado *myDownloadJob*.
 
+
 ```
-C:\>bitsadmin /Suspend myDownloadJob
+C:\>bitsadmin /suspend myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

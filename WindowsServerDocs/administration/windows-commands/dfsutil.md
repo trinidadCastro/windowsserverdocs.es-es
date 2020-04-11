@@ -9,18 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30415bc85fd8a4a4804946a3d4a168d6a7d1433a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 47d468ee122dc78cc880f4a9bc0705354e0b5214
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845588"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122556"
 ---
 # <a name="dfsutil"></a>Dfsutil
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-El comando Dfsutil administra espacios de nombres DFS, servidores y clientes. En su lugar, la mayoría de las veces, puede usar los cmdlets de PowerShell de los espacios de nombres DFS más recientes, aunque hay algunos comandos que aún requieren Dfsutil.
+El comando Dfsutil administra espacios de nombres DFS, servidores y clientes.
+
+>[!NOTE]
+>El **módulo espacios de nombres DFS** proporciona reemplazos para algunos de los parámetros de Dfsutil, mientras que otros aún requieren el uso de Dfsutil. Para obtener más información sobre los equivalentes de PowerShell actualizados, vea [DFSN](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps).
 
 ## <a name="parameters-available-in-powershell"></a>Parámetros disponibles en PowerShell
 

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnoprogresstimeout
-description: Windows Commands topic for bitsadmin setnoprogresstimeout, que establece el período de tiempo, en segundos, que el servicio intenta transferir el archivo después de que se produzca un error transitorio.
+description: Windows Commands topic for **bitsadmin setnoprogresstimeout**, que establece el período de tiempo, en segundos, que el servicio intenta transferir el archivo después de que se produzca un error transitorio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 544a6c73f29684bc4091ec05fa28016fbc718bb2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8adff95b0dbae68634db2e248d4493549c5ac85d
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849358"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122884"
 ---
 # <a name="bitsadmin-setnoprogresstimeout"></a>bitsadmin setnoprogresstimeout
 
@@ -23,27 +23,30 @@ Establece el período de tiempo, en segundos, que BITS intenta transferir el arc
 ## <a name="syntax"></a>Sintaxis
 
 ```
-bitsadmin /SetNoProgressTimeout <Job> <TimeOutvalue>
+bitsadmin /setnoprogresstimeout <job> <timeoutvalue>
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|Trabajo|El nombre para mostrar del trabajo o el GUID|
-|TimeOutvalue|Número representado en segundos.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| trabajo | El nombre para mostrar o el GUID del trabajo. |
+| timeoutvalue | Período de tiempo durante el cual BITS espera para transferir un archivo después del primer error, en segundos. |
 
 ## <a name="remarks"></a>Comentarios
 
--   El intervalo de tiempo de espera de no progreso comienza cuando el trabajo encuentra un error transitorio.
--   El intervalo de tiempo de espera se detiene o se restablece cuando se transfiere correctamente un byte de datos.
--   Si ningún intervalo de tiempo de espera de progreso supera el *TimeOutvalue*, el trabajo se coloca en un estado de error irrecuperable.
+- El intervalo de tiempo de espera "no Progress" comienza cuando el trabajo encuentra su primer error transitorio.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+- El intervalo de tiempo de espera se detiene o se restablece cuando se transfiere correctamente un byte de datos.
 
-En el ejemplo siguiente se establece el valor de tiempo de espera sin progreso para el trabajo denominado *myDownloadJob* en 20 segundos.
+- Si el intervalo de tiempo de espera de "no Progress" supera el *timeoutvalue*, el trabajo se coloca en un estado de error irrecuperable.
+
+## <a name="examples"></a>Ejemplos
+
+En el ejemplo siguiente se establece el valor de tiempo de espera de "no Progress" en 20 segundos para el trabajo denominado *myDownloadJob*.
+
 ```
-C:\>bitsadmin /SetNoProgressTimeout myDownloadJob 20
+C:\>bitsadmin /setnoprogresstimeout myDownloadJob 20
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

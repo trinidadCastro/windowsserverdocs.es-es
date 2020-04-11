@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setaclflag
-description: Windows Commands topic for bitsadmin setaclflag, que establece las marcas de propagación de la lista de control de acceso.
+description: Temas de comandos de Windows para **bitsadmin setaclflag**, que establece las marcas de propagación de la lista de control de acceso (ACL).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,41 +9,42 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4ac47e554dde6a555e891d89668cd12fec3179d4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f0aae550e94d04db518edccafb1d6bcf46d0320b
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849678"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123064"
 ---
 # <a name="bitsadmin-setaclflag"></a>bitsadmin setaclflag
 
-Establece las marcas de propagación de la lista de control de acceso (ACL) para el trabajo. Las marcas indican que desea mantener la información del propietario y de la ACL con el archivo que se está descargando. Por ejemplo, para mantener el propietario y el grupo con el archivo, establezca **flags** en `OG`.
+Establece las marcas de propagación de la lista de control de acceso (ACL) para el trabajo. Las marcas indican que desea mantener la información del propietario y de la ACL con el archivo que se está descargando. Por ejemplo, para mantener el propietario y el grupo con el archivo, establezca el parámetro **Flags** en `og`.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-bitsadmin /SetAclFlags <Job> <Flags>
+bitsadmin /setaclflag <job> <flags>
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|Trabajo|El nombre para mostrar del trabajo o el GUID|
-|Flags|Especifique uno o varios de los siguientes valores de marca:</br>-O: copiar información del propietario con el archivo.</br>-G: copiar información de grupo con el archivo.</br>-D: copiar información de DACL con el archivo.</br>-S: copiar información de SACL con el archivo.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| trabajo | El nombre para mostrar o el GUID del trabajo. |
+| flags | Especifique uno o varios de los valores, entre los que se incluyen:<ul><li>**o** copiar información del propietario con el archivo.</li><li>**g** -copiar información de grupo con el archivo.</li><li>**d** -copiar información de la lista de control de acceso discrecional (DACL) con el archivo.</li><li>**s** -copiar información de la lista de control de acceso de sistema (SACL) con el archivo.</li></ul> |
 
 ## <a name="remarks"></a>Comentarios
 
-El modificador SetAclFlags se usa para mantener la información de la lista de control de acceso y el propietario cuando un trabajo está descargando datos de un recurso compartido de Windows (SMB).
+El modificador/setaclflag se usa para mantener la información de la lista de control de acceso y el propietario cuando un trabajo está descargando datos de un recurso compartido de Windows (SMB).
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 En el ejemplo siguiente se establecen los marcadores de propagación de la lista de control de acceso para el trabajo denominado *myDownloadJob* para mantener la información del propietario y del grupo con los archivos descargados.
+
 ```
-C:\>bitsadmin /setaclflags myDownloadJob OG
+C:\>bitsadmin /setaclflags myDownloadJob og
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)&reg;'    

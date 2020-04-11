@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnotifycmdline
-description: Windows Commands topic for bitsadmin setnotifycmdline, que establece el comando de línea de comandos que se ejecutará cuando el trabajo termine de transferir datos o cuando un trabajo entre en un estado.
+description: Windows Commands topic for **bitsadmin setnotifycmdline**, que establece el comando de línea de comandos que se ejecutará cuando el trabajo termine de transferir datos, o cuando un trabajo entre en un estado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,48 +9,44 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 761a7003e44e8dc15cb2dd2f1ce5a1a23be53286
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b268b68cbd355a7fe7f993d678a98f6fcb99f0ab
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849338"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122897"
 ---
 # <a name="bitsadmin-setnotifycmdline"></a>bitsadmin setnotifycmdline
 
-Establece el comando de línea de comandos que se ejecutará cuando el trabajo finalice la transferencia de datos o cuando un trabajo entre en un estado.
+Establece el comando de línea de comandos que se ejecutará cuando el trabajo finalice la transferencia de datos o cuando un trabajo entre en un estado especificado.
 
-**BITS 1,2 y versiones anteriores**: no se admiten.
+> [!NOTE]
+> Este comando no es compatible con BITS 1,2 y versiones anteriores.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-bitsadmin /SetNotifyCmdLine <Job> <ProgramName> [ProgramParameters]
+bitsadmin /setnotifycmdline <job> <program_name> [program_parameters]
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|Trabajo|El nombre para mostrar del trabajo o el GUID|
-|Nombreprograma|Nombre del comando que se va a ejecutar cuando se complete el trabajo.|
-|ProgramParameters|Parámetros que se van a pasar a *nombreprograma*.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| trabajo | El nombre para mostrar o el GUID del trabajo. |
+| program_name | Nombre del comando que se va a ejecutar cuando se complete el trabajo. Puede establecer este valor en NULL, pero si lo hace, *program_parameters* también debe establecerse en NULL. |
+| program_parameters | Parámetros que se van a pasar a *program_name*. Este valor se puede establecer como NULL. Si *program_parameters* no está establecido en null, el primer parámetro de *program_parameters* debe coincidir con el *program_name*. |
 
-## <a name="remarks"></a>Comentarios
+## <a name="examples"></a>Ejemplos
 
-Puede especificar NULL para *nombreprograma* y *ProgramParameters*. Si *nombreprograma* es null, *PROGRAMPARAMETERS* debe ser null.
+En el ejemplo siguiente se establece el comando de línea de comandos que usa el servicio para ejecutar Notepad. exe después de que se complete el trabajo denominado *myDownloadJob* .
 
-> [!IMPORTANT]
-> Si *ProgramParameters* no es null, el primer parámetro de *ProgramParameters* debe coincidir con *nombreprograma*.
-
-## <a name="examples"></a><a name=BKMK_examples></a>Example
-
-En el ejemplo siguiente se establece el comando de línea de comandos que usa el servicio para ejecutar el Bloc de notas cuando se completa el trabajo denominado *myDownloadJob* .
 ```
-C:\>bitsadmin /SetNotifyCmdLine myDownloadJob c:\winnt\system32\notepad.exe NULL
+C:\>bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe NULL
 ```
+
 ```
-C:\>bitsadmin /SetNotifyCmdLine myDownloadJob c:\winnt\system32\notepad.exe notepad c:\eula.txt
+C:\>bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe notepad c:\eula.txt
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

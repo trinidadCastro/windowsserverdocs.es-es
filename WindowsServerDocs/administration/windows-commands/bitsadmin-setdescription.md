@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setdescription
-description: Windows Commands topic for bitsadmin setDescription, que establece la descripción del trabajo especificado.
+description: Windows Commands topic for **bitsadmin setDescription**, que establece la descripción del trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a17f864e3bc3b3cdc8ba0d76d553bcfcef27d29
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0b62e6b030c23c475418cd6f2c63f04edba1acff
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849568"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123014"
 ---
 # <a name="bitsadmin-setdescription"></a>bitsadmin setdescription
 
@@ -23,21 +23,22 @@ Establece la descripción del trabajo especificado.
 ## <a name="syntax"></a>Sintaxis
 
 ```
-bitsadmin /SetDescription <Job> <Description>
+bitsadmin /setdescription <job> <description>
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|Trabajo|El nombre para mostrar del trabajo o el GUID|
-|Descripción|Texto que se usa para describir el trabajo.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| trabajo | El nombre para mostrar o el GUID del trabajo. |
+| description | Texto que se usa para describir el trabajo. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 En el ejemplo siguiente se recupera la descripción del trabajo denominado *myDownloadJob*.
+
 ```
-C:\>bitsadmin /SetDescription myDownloadJob Music Downloads
+C:\>bitsadmin /setdescription myDownloadJob music_downloads
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

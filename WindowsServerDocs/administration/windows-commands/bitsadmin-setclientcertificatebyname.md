@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setclientcertificatebyname
-description: Windows Commands topic for bitsadmin setclientcertificatebyname, que especifica el nombre de sujeto del certificado de cliente que se va a usar para la autenticación de cliente en una solicitud HTTPS (SSL).
+description: Windows Commands topic for **bitsadmin setclientcertificatebyname**, que especifica el nombre de sujeto del certificado de cliente que se va a usar para la autenticación de cliente en una solicitud HTTPS (SSL).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08ec6fd8c941234de36f14cd71ffa51c3b428acb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f2308bb5331f1555965b278a64bb7ab95e03779b
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849658"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123058"
 ---
 # <a name="bitsadmin-setclientcertificatebyname"></a>bitsadmin setclientcertificatebyname
 
@@ -23,23 +23,24 @@ Especifica el nombre de sujeto del certificado de cliente que se va a usar para 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-bitsadmin /SetClientCertificateByID <Job> <store_location> <store_name> <subject_name>
+bitsadmin /setclientcertificatebyname <job> <store_location> <store_name> <subject_name>
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|Trabajo|El nombre para mostrar del trabajo o el GUID|
-|Store_location|Identifica la ubicación de un almacén del sistema que se va a usar para buscar el certificado. Los valores posibles son:</br>1 (CURRENT_USER)</br>2 (LOCAL_MACHINE)</br>3 (CURRENT_SERVICE)</br>4 (SERVICIOS)</br>5 (USUARIOS)</br>6 (CURRENT_USER_GROUP_POLICY)</br>7 (LOCAL_MACHINE_GROUP_POLICY)</br>8 (LOCAL_MACHINE_ENTERPRISE)|
-|Store_name|Nombre del almacén de certificados. Los valores posibles son:</br>CA (certificados de entidad de certificación)</br>MIS (certificados personales)</br>RAÍZ (certificados raíz)</br>SPC (certificado de editor de software)|
-|Subject_name|Nombre del certificado|
+| Parámetro | Descripción |
+| -------------- | -------------- |
+| trabajo | El nombre para mostrar o el GUID del trabajo. |
+| store_location | Identifica la ubicación de un almacén del sistema que se va a usar para buscar el certificado. Los valores posibles son:<ul><li>1 (CURRENT_USER)</li><li>2 (LOCAL_MACHINE)</li><li>3 (CURRENT_SERVICE)</li><li>4 (SERVICIOS)</li><li>5 (USUARIOS)</li><li>6 (CURRENT_USER_GROUP_POLICY)</li><li>7 (LOCAL_MACHINE_GROUP_POLICY)</li><li>8 (LOCAL_MACHINE_ENTERPRISE)</li></ul> |
+| store_name | Nombre del almacén de certificados. Los valores posibles son:<ul><li>CA (certificados de entidad de certificación)</li><li>MIS (certificados personales)</li><li>RAÍZ (certificados raíz)</li><li>SPC (certificado de editor de software)</li></ul> |
+| subject_name | Nombre del certificado. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se especifica el nombre *del certificado de* cliente que se va a utilizar para la autenticación del cliente en una solicitud HTTPS (SSL) para el trabajo denominado *myJob*.
+En el ejemplo siguiente se especifica el nombre *del certificado de* cliente que se va a utilizar para la autenticación del cliente en una solicitud HTTPS (SSL) para el trabajo denominado *myDownloadJob*.
+
 ```
-C:\>bitsadmin Bitsadmin /SetClientCertificateByName myJob 1 MY myCertificate 
+C:\>bitsadmin /setclientcertificatebyname myDownloadJob 1 MY myCertificate
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

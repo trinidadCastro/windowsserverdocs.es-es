@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setsecurityflags
-description: Temas de comandos de Windows para bitsadmin setsecurityflags, que establece marcas para HTTP que determinan si los BITS deben comprobar la lista de revocación de certificados, omitir determinados errores de certificado y definir la Directiva que se va a usar cuando un servidor redirija la solicitud HTTP.
+description: Comando comandos de Windows para **bitsadmin setsecurityflags**, que establece marcas de seguridad para http para determinar si los bits deben comprobar la lista de revocación de certificados, omitir determinados errores de certificado y definir la Directiva que se va a usar cuando un servidor redirija la solicitud HTTP.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,49 +9,36 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a7b857bb398e3061a3435a730bf9a751ee2c5e3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8d73361bceda8c0eb24992bdee176b47bf82a878
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849148"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122724"
 ---
 # <a name="bitsadmin-setsecurityflags"></a>bitsadmin setsecurityflags
 
-Establece marcas para HTTP que determinan si los BITS deben comprobar la lista de revocación de certificados, omitir determinados errores de certificado y definir la Directiva que se va a utilizar cuando un servidor redirija la solicitud HTTP. El valor es un entero sin signo.
+Establece marcas de seguridad para que HTTP determine si los BITS deben comprobar la lista de revocación de certificados, omitir determinados errores de certificado y definir la Directiva que se va a utilizar cuando un servidor redirija la solicitud HTTP. El valor es un entero sin signo.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-bitsadmin /SetSecurityFlags <Job> <Value>
+bitsadmin /setsecurityflags <job> <value>
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|Trabajo|El nombre para mostrar del trabajo o el GUID|
-|Valor|Ver comentarios|
+| Parámetro | Descripción |
+| -------------- | -------------- |
+| trabajo | El nombre para mostrar o el GUID del trabajo. |
+| value | Puede incluir una o varias de las siguientes marcas de notificación, entre las que se incluyen:<ul><li>Establezca el bit menos significativo para habilitar la comprobación de CRL.</li><li>Establezca el segundo bit de la derecha para omitir los nombres comunes incorrectos en el certificado de servidor.</li><li>Establezca el tercer bit de la derecha para omitir las fechas incorrectas en el certificado de servidor.</li><li>Establezca el cuarto bit de la derecha para omitir las entidades de certificación incorrectas en el certificado de servidor.</li><li>Establezca el quinto bit de la derecha para omitir el uso incorrecto del certificado de servidor.</li><li>Establezca el 9 por los undécimo bits de la derecha para implementar la Directiva de redireccionamiento especificada, entre las que se incluyen:<ul><li>**0, 0,0.** Las redirecciones se permiten automáticamente.</li><li>**0, 0, 1.** El nombre remoto de la interfaz **IBackgroundCopyFile** se actualiza si se produce una redirección.</li><li>**0, 1, 0.** BITS produce un error en el trabajo si se produce una redirección.</li></ul></li><li>Establezca el 12 bit de la derecha para permitir el redireccionamiento de HTTPS a HTTP.</li></ul> |
 
-## <a name="remarks"></a>Comentarios
+## <a name="examples"></a>Ejemplos
 
-El parámetro **Value** puede contener una o varias de las siguientes marcas de notificación.
+En el ejemplo siguiente se establecen las marcas de seguridad para habilitar una comprobación de CRL para el trabajo denominado *myDownloadJob*.
 
-|Acción|Representación binaria|
-|------|---------------------|
-|Habilitar comprobación de CRL|Establecer el bit menos significativo|
-|Omitir nombre común no válido en el certificado de servidor|Establecer el segundo bit de la derecha|
-|Omitir fecha no válida en certificado de servidor|Establecer el tercer bit desde la derecha|
-|Omitir la entidad de certificación no válida en el certificado de servidor|Establecer el cuarto bit desde la derecha|
-|Omitir el uso no válido del certificado|Establecer el quinto bit desde la derecha|
-|Directiva de redireccionamiento|Controlado por el noveno a 11 bits desde la derecha</br>0, 0-se permitirán automáticamente las redirecciones.</br>0, 0, 1: el nombre remoto de la interfaz IBackgroundCopyFile se actualizará si se produce una redirección.</br>0, 1, 0: los BITS producirán un error en el trabajo si se produce una redirección.|
-|Permitir redirección de HTTPS a HTTP|Establecer el 12 bit a la derecha|
-
-## <a name="examples"></a><a name=BKMK_examples></a>Example
-
-En el ejemplo siguiente se establecen las marcas de seguridad para habilitar una comprobación de CRL para el trabajo denominado *myJob*.
 ```
-C:\>bitsadmin /SetSecurityFlags myJob 0x0001
+C:\>bitsadmin /setsecurityflags myDownloadJob 0x0001
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setcustomheaders
-description: Windows Commands topic for bitsadmin setcustomheaders, que agrega un encabezado HTTP personalizado a una solicitud GET.
+description: Windows Commands topic for **bitsadmin setcustomheaders**, que agrega un encabezado HTTP personalizado a una solicitud GET.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,39 +9,36 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e5d97fae5f84637c80c3d1ef00aa36f09049bb17
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b5b1a28f03815a22a3f8d10b2c3d1d4a3a2ae635
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849618"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123026"
 ---
 # <a name="bitsadmin-setcustomheaders"></a>bitsadmin setcustomheaders
 
-Agregue un encabezado HTTP personalizado a una solicitud GET.
+Agregue un encabezado HTTP personalizado a una solicitud GET enviada a un servidor HTTP.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-bitsadmin /SetCustomHeaders <Job> <Header1> <Header2> <. . .>
+bitsadmin /setcustomheaders <job> <header1> <header2> <...>
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|Trabajo|El nombre para mostrar del trabajo o el GUID|
-|Header1 Header2 . . .|Los encabezados personalizados para el trabajo|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| trabajo | El nombre para mostrar o el GUID del trabajo. |
+| `<header1> <header2>` etc. | Los encabezados personalizados para el trabajo. |
 
-## <a name="remarks"></a>Comentarios
+## <a name="examples"></a>Ejemplos
 
--   Este modificador se usa para agregar un encabezado HTTP personalizado a una solicitud GET enviada a un servidor HTTP.
+En el ejemplo siguiente se agrega un encabezado HTTP personalizado para el trabajo denominado *myDownloadJob*. Para obtener más información sobre las solicitudes GET, vea [definiciones de métodos](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3) y definiciones de [campos de encabezado](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
-
-En el ejemplo siguiente se agrega un encabezado HTTP personalizado para el trabajo denominado *myDownloadJob*.
 ```
-C:\>bitsadmin / SetCustomHeaders myDownloadJob Accept-encoding:deflate/gzip
+C:\>bitsadmin /setcustomheaders myDownloadJob accept-encoding:deflate/gzip
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

@@ -8,12 +8,12 @@ ms.date: 04/30/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: 18851463b82afc1dc34615e6faaa14622c80224a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f859d40ed04cc25285212968e6cd186cffe760ae
+ms.sourcegitcommit: 5c93c685dca3cafeea916cedcc0f915c528484ca
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818688"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81119246"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>Publicación de aplicaciones con SharePoint, Exchange y RDG
 
@@ -35,7 +35,7 @@ Puede publicar un sitio de SharePoint mediante el proxy de aplicación web cuand
 
     Para permitir que los usuarios se autentiquen mediante la autenticación integrada de Windows, el servidor proxy de aplicación Web debe estar unido a un dominio.
 
-    Debe configurar la aplicación para que admita la delegación restringida de Kerberos. Puede hacerlo en el controlador de dominio para cualquier aplicación. También puede configurar la aplicación directamente en el servidor back-end si se está ejecutando en Windows Server 2012 R2 o en Windows Server 2012. Para más información, consulte [Novedades de la autenticación Kerberos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11)). También debe asegurarse de que los servidores proxy de aplicación Web estén configurados para la delegación en los nombres de entidad de seguridad de servicio de los servidores back-end. Para ver un tutorial sobre cómo configurar el proxy de aplicación web para publicar una aplicación mediante la autenticación integrada de Windows, consulte [configurar un sitio para usar la autenticación integrada de Windows](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/dn308246(v=ws.11)).
+    Debe configurar la aplicación para que admita la delegación restringida de Kerberos. Puede hacerlo en el controlador de dominio para cualquier aplicación. También puede configurar la aplicación directamente en el servidor back-end si se está ejecutando en Windows Server 2012 R2 o en Windows Server 2012. Para obtener más información, consulta [Novedades de la autenticación de Kerberos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11)). También debe asegurarse de que los servidores proxy de aplicación Web estén configurados para la delegación en los nombres de entidad de seguridad de servicio de los servidores back-end. Para ver un tutorial sobre cómo configurar el proxy de aplicación web para publicar una aplicación mediante la autenticación integrada de Windows, consulte [configurar un sitio para usar la autenticación integrada de Windows](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/dn308246(v=ws.11)).
 
 Si el sitio de SharePoint se configura mediante asignaciones de acceso alternativas (AAM) o colecciones de sitios denominadas host, puede usar diferentes direcciones URL de los servidores externos y back-end para publicar la aplicación. Sin embargo, si no configura el sitio de SharePoint con AAM o colecciones de sitios denominadas host, deberá usar las mismas direcciones URL de los servidores externos y back-end.
 
@@ -56,7 +56,7 @@ Para permitir que los usuarios se autentiquen mediante la delegación limitada d
 
 Debe configurar la aplicación para que admita la autenticación Kerberos. Además, debe registrar un nombre principal de servicio (SPN) en la cuenta en la que se está ejecutando el servicio Web. Puede hacerlo en el controlador de dominio o en los servidores back-end. En un entorno de Exchange con equilibrio de carga, esto requeriría el uso de la cuenta de servicio alternativa, consulte [configuración de la autenticación Kerberos para servidores de acceso de cliente con equilibrio de carga](https://docs.microsoft.com/exchange/configuring-kerberos-authentication-for-load-balanced-client-access-servers-exchange-2013-help)
 
-También puede configurar la aplicación directamente en el servidor back-end si se está ejecutando en Windows Server 2012 R2 o en Windows Server 2012. Para más información, consulte [Novedades de la autenticación Kerberos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11)). También debe asegurarse de que los servidores proxy de aplicación Web estén configurados para la delegación en los nombres de entidad de seguridad de servicio de los servidores back-end.
+También puede configurar la aplicación directamente en el servidor back-end si se está ejecutando en Windows Server 2012 R2 o en Windows Server 2012. Para obtener más información, consulta [Novedades de la autenticación de Kerberos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11)). También debe asegurarse de que los servidores proxy de aplicación Web estén configurados para la delegación en los nombres de entidad de seguridad de servicio de los servidores back-end.
 
 ## <a name="publishing-remote-desktop-gateway-through-web-application-proxy"></a>Publicación de Escritorio remoto puerta de enlace mediante el proxy de aplicación Web
 Si quiere restringir el acceso a la puerta de enlace de acceso remoto y agregar la autenticación previa para el acceso remoto, puede revertirla a través del proxy de aplicación Web. Esta es una buena manera de asegurarse de que tiene una autenticación previa enriquecida para RDG, incluido MFA. La publicación sin autenticación previa también es una opción y proporciona un único punto de entrada en los sistemas.
@@ -112,7 +112,7 @@ Si quiere restringir el acceso a la puerta de enlace de acceso remoto y agregar 
 5.  Si los FQDN externos e internos son diferentes, no debe deshabilitar la traducción de encabezados de solicitud en la regla de publicación de RDWeb. Esto puede hacerse mediante la ejecución del siguiente script de PowerShell en el servidor proxy de aplicación Web, pero debe estar habilitado de forma predeterminada:
 
     ```PowerShell
-    Get-WebApplicationProxyApplication applicationname | Set-WebApplicationProxyApplication -DisableTranslateUrlInRequestHeaders:$false
+    Get-WebApplicationProxyApplication applicationname | Set-WebApplicationProxyApplication -DisableTranslateUrlInRequestHeaders:$true
     ```
 
 6.  Deshabilite la propiedad de cookie HttpOnly en el proxy de aplicación web en la aplicación publicada RDG. Para permitir que el control ActiveX RDG tenga acceso a la cookie de autenticación del proxy de aplicación Web, tiene que deshabilitar la propiedad HttpOnly en la cookie del proxy de aplicación Web.
