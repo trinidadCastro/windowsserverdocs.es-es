@@ -1,24 +1,20 @@
 ---
 title: Arquitectura de Servicios de Escritorio remoto
 description: Diagramas de arquitectura de RDS
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 02/10/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7f73bb0a-ce98-48a4-9d9f-cf7438936ca1
 author: lizap
 manager: dongill
-ms.openlocfilehash: 7cd46cadf5ed5424e50556ee0c91a80804108113
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 441b0b24fd4b4dc18d3afd65283bbf7ff2417048
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323677"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818447"
 ---
 # <a name="remote-desktop-services-architecture"></a>Arquitectura de Servicios de Escritorio remoto
 
@@ -32,8 +28,8 @@ A continuación, se muestran diversas configuraciones para la implementación de
 ## <a name="standard-rds-deployment-architectures"></a>Arquitecturas estándar de implementación de RDS
 
 Servicios de Escritorio remoto incluye dos arquitecturas estándar:
--   Implementación básica: contiene el número mínimo de servidores para crear un entorno totalmente eficaz de RDS
--   Implementación de alta disponibilidad: contiene todos los componentes necesarios para proporcionar el mayor tiempo de actividad garantizado para el entorno de RDS
+-    Implementación básica: contiene el número mínimo de servidores para crear un entorno totalmente eficaz de RDS
+-    Implementación de alta disponibilidad: contiene todos los componentes necesarios para proporcionar el mayor tiempo de actividad garantizado para el entorno de RDS
 
 ### <a name="basic-deployment"></a>Implementación básica
 

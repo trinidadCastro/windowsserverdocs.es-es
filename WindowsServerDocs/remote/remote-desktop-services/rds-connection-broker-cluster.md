@@ -1,27 +1,23 @@
 ---
 title: Agregar un servidor de Agente de conexión a Escritorio remoto para configurar la alta disponibilidad en RDS
 description: Aprende a agregar un Agente de conexión a Escritorio remoto a una implementación de RDS para obtener una alta disponibilidad.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/10/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 511f852568aa4cc7498e3a0b8deacea83db22c08
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc6a9fa0d6834f63c9935518e4b2c26320a04082
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404056"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852968"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>Adición del servidor de Agente de conexión a Escritorio remoto para la implementación y la configuración de alta disponibilidad
 
->Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
 Puedes implementar un clúster de Agente de conexión a Escritorio remoto (Agente de conexión a RD) para mejorar la disponibilidad y la escala de la infraestructura de los servicios de Escritorio remoto. 
 

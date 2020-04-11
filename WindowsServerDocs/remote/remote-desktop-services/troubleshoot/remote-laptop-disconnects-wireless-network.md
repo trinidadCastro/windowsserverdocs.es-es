@@ -1,24 +1,19 @@
 ---
 title: Los portátiles remotos se desconectan de la red inalámbrica
 description: Solucionar un problema por el que el portátil remoto se desconecta de la red inalámbrica.
-audience: itpro
-ms.custom: na
 ms.reviewer: rklemen
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.assetid: ''
 author: kaushika-msft
 manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: df43a69fa4777a9286cbe27cfa2d241111f7edf6
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 72bf482512ff3bb0a678ae59cd6ac20b947a54d9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265877"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857158"
 ---
 # <a name="remote-laptop-disconnects-from-wireless-network"></a>Los portátiles remotos se desconectan de la red inalámbrica
 

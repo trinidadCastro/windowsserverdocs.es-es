@@ -5,17 +5,16 @@ ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 07/11/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b222104abd5b0b964bac748c3be15049075191d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c33e5c6309c41e39aeda3a2bdff1a0caf72b2675
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950425"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860338"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Uso de contadores de rendimiento para diagnosticar problemas de rendimiento de las aplicaciones en los hosts de sesión de Escritorio remoto
 
@@ -84,13 +83,13 @@ Esta tabla muestra un ejemplo visual de estas instancias. (La misma información
 
 |Tipo de contador|Nombre de instancia|Retraso notificado (ms)|
 |---------------|-------------|-------------------|
-|Retraso de entrada de usuario por proceso|1:4232 <Calculator.exe>|  200|
-|Retraso de entrada de usuario por proceso|2:1000 <Calculator.exe>|  16|
-|Retraso de entrada de usuario por proceso|1:2000 <Calculator.exe>|  32|
+|Retraso de entrada de usuario por proceso|1:4232 <Calculator.exe>|    200|
+|Retraso de entrada de usuario por proceso|2:1000 <Calculator.exe>|    16|
+|Retraso de entrada de usuario por proceso|1:2000 <Calculator.exe>|    32|
 |Retraso de entrada de usuario por sesión|1|    200|
 |Retraso de entrada de usuario por sesión|2|    16|
-|Retraso de entrada de usuario por sesión|Media|  108|
-|Retraso de entrada de usuario por sesión|Máx.|  200|
+|Retraso de entrada de usuario por sesión|Media|     108|
+|Retraso de entrada de usuario por sesión|Máx.|     200|
 
 ## <a name="counters-used-in-an-overloaded-system"></a>Contadores que se usan en un sistema sobrecargado
 

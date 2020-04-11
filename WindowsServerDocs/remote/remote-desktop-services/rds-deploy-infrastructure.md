@@ -1,28 +1,24 @@
 ---
 title: Implementación del entorno de Escritorio remoto
-ms.custom: na
 ms.prod: windows-server
 description: Pasos básicos para implementar un entorno de Escritorio remoto.
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/10/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: e00be471b2607ad4bc8cc8e11652d428419b4fd6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 31bb6afaca92b36453d4565c1f79aae35a6f0900
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404018"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855758"
 ---
 # <a name="deploy-your-remote-desktop-environment"></a>Implementación del entorno de Escritorio remoto
 
->Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
 Sigue estos pasos para implementar los servidores de Escritorio remoto en tu entorno. Puedes instalar los roles de servidor en equipos físicos o máquinas virtuales, en función de si estás creando un entorno local, basado en la nube o híbrido. 
 

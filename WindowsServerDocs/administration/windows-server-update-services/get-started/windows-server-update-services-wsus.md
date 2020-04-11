@@ -2,26 +2,23 @@
 title: Introducción a Windows Server Update Services (WSUS)
 description: 'Tema de Windows Server Update Services (WSUS): información general sobre el rol de servidor y sus aplicaciones prácticas'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09ec5b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 5/22/2017
-ms.openlocfilehash: 89247f91f616233fc6e4967a0457ff34fac221da
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3bb365c627840d4152b0dc450e24dd83d82103ca
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361649"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828638"
 ---
 # <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Windows Server Update Services (WSUS) permite a los administradores de tecnologías de la información implementar las actualizaciones de productos de Microsoft más recientes. Puedes usar WSUS para administrar por completo la distribución de actualizaciones que se publican a través de Microsoft Update a los equipos de la red. En este tema se proporciona información general sobre este rol de servidor y más información sobre cómo implementar y mantener WSUS.
 

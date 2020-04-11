@@ -1,20 +1,19 @@
 ---
 ms.assetid: d1953097-63ea-4a0e-b860-2f3b7c175c41
 title: Funcionamiento del servicio Hora de Windows
-description: ''
-author: eross-msft
-ms.author: lizross
+author: dcuomo
+ms.author: dacuo
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: d8532dedb6473a34591a1f160a94a785cc4ba367
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b8b30893abe4cdfe8d7e8c5a95ede651f85643a9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315174"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861668"
 ---
 # <a name="how-the-windows-time-service-works"></a>Funcionamiento del servicio Hora de Windows
 
@@ -207,10 +206,10 @@ En la tabla siguiente se enumeran las consultas que hace un controlador de domin
 |----------------|---------------------|------------|------------------------------|  
 |1|Controlador de dominio primario|En el sitio|Prefiere un origen de la hora de confianza, pero puede sincronizarse con un origen de hora la que no sea de confianza si es lo único que está disponible.|  
 |2|Controlador de dominio local|En el sitio|Solo se sincroniza con un origen de la hora de confianza.|  
-|3|Emulador de PDC local|En el sitio|No corresponde.<br /><br />Un controlador de dominio no intenta sincronizarse consigo mismo.|  
+|3|Emulador de PDC local|En el sitio|No corresponde.<p>Un controlador de dominio no intenta sincronizarse consigo mismo.|  
 |4|Controlador de dominio primario|Fuera del sitio|Prefiere un origen de la hora de confianza, pero puede sincronizarse con un origen de hora la que no sea de confianza si es lo único que está disponible.|  
 |5|Controlador de dominio local|Fuera del sitio|Solo se sincroniza con un origen de la hora de confianza.|  
-|6|Emulador de PDC local|Fuera del sitio|No corresponde.<br /><br />Un controlador de dominio no intenta sincronizarse consigo mismo.| 
+|6|Emulador de PDC local|Fuera del sitio|No corresponde.<p>Un controlador de dominio no intenta sincronizarse consigo mismo.| 
   
 **Note**  
   

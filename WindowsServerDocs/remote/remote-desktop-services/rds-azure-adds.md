@@ -1,23 +1,19 @@
 ---
 title: Azure AD Domain Services y Servicios de Escritorio remoto
 description: Aprende a integrar Azure AD Domain Services en tu implementación de RDS.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 10/02/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: christianmontoya
 ms.localizationpriority: medium
-ms.openlocfilehash: d3fe370f18df980acaeaa847bd96642b97613f80
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bc70300df8bc8aef78371f4b84fe697bf8e66749
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387631"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852988"
 ---
 # <a name="integrate-azure-ad-domain-services-with-your-rds-deployment"></a>Integración de Azure AD Domain Services con la implementación de RDS
 

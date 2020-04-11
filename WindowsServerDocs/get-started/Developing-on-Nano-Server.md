@@ -2,29 +2,27 @@
 title: Desarrollo para Nano Server
 description: Comunicación remota de PowerShell y sesiones CIM
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
 ms.date: 09/06/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 57079470-a1c1-4fdc-af15-1950d3381860
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cf21d9db4221fd6bd76cfd5c362bb9f168d1ce9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5933b031260a69bf986d7ca2f7abd832055421fa
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360318"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827088"
 ---
 # <a name="developing-for-nano-server"></a>Desarrollo para Nano Server
 
 >Se aplica a: Windows Server 2016
 
 > [!IMPORTANT]
-> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
+> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Consulta [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
 
 En estos temas se explican las diferencias importantes de PowerShell en Nano Server y también se proporcionan instrucciones para desarrollar sus propios cmdlets de PowerShell para usarlos en Nano Server.
 
@@ -40,14 +38,14 @@ Para administrar Nano Server con la comunicación remota a Windows PowerShell, n
   
 Para agregar Nano Server a la lista de hosts de confianza, ejecute este comando en un símbolo del sistema de Windows PowerShell con privilegios elevados:  
   
-`Set-Item WSMan:\localhost\Client\TrustedHosts "<IP address of Nano Server>"`  
+`Set-Item WSMan:\localhost\Client\TrustedHosts <IP address of Nano Server>`  
   
 Para iniciar la sesión remota de Windows PowerShell, inicie una sesión local de Windows PowerShell con privilegios elevados y, después, ejecute estos comandos:  
   
   
 ```  
-$ip = "\<IP address of Nano Server>"  
-$user = "$ip\Administrator"  
+$ip = \<IP address of Nano Server>  
+$user = $ip\Administrator  
 Enter-PSSession -ComputerName $ip -Credential $user  
 ```  
   
@@ -66,7 +64,7 @@ Inicie la sesión CIM ejecutando estos comandos en un símbolo del sistema de Wi
   
   
 ```  
-$ip = "<IP address of the Nano Server\>"  
+$ip = <IP address of the Nano Server\>  
 $ip\Administrator  
 $cim = New-CimSession -Credential $user -ComputerName $ip  
 ```  
@@ -77,7 +75,7 @@ Con la sesión establecida, puede ejecutar varios comandos WMI, por ejemplo:
   
 ```  
 Get-CimInstance -CimSession $cim -ClassName Win32_ComputerSystem | Format-List *  
-Get-CimInstance -CimSession $Cim -Query "SELECT * from Win32_Process WHERE name LIKE 'p%'"  
+Get-CimInstance -CimSession $Cim -Query SELECT * from Win32_Process WHERE name LIKE 'p%'  
 ```  
   
   

@@ -1,24 +1,20 @@
 ---
 title: 'Servicios de Escritorio remoto: almacenamiento de datos seguro'
 description: Información de planificación para almacenar datos de forma segura mediante el uso de discos de perfil de usuario (UPD) en RDS.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 37b7f68e-7c3a-4190-a52f-99ae96885fae
 author: lizap
 ms.author: elizapo
 ms.date: 11/21/2016
 manager: dongill
-ms.openlocfilehash: 8b7fa596f88f5cb361e0c681ffec3bcc72403d03
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 934aab380f9e58f4fe9567921623279a1893af4b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403928"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860298"
 ---
 # <a name="remote-desktop-services---secure-data-storage-with-upds"></a>Servicios de Escritorio remoto: almacenamiento de datos seguro con UPD
 

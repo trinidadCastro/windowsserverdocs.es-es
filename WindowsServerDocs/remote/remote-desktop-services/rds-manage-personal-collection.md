@@ -1,23 +1,19 @@
 ---
 title: Administrar una colección de sesiones de escritorios personales en RDS
 description: Obtén información sobre cómo agregar programas RDSH y RemoteApp a tu implementación de RDS.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 11/08/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 7be6b2bfe1105357811927f5da7092e8c16c3446
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 7088d164ecdd7211894b004ed580eecb33d1ba60
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949846"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861068"
 ---
 # <a name="manage-your-personal-desktop-session-collections"></a>Administrar tus colecciones de sesiones de escritorios personales
 

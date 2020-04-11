@@ -1,24 +1,20 @@
 ---
 title: 'RDS: Partners para hospedar escritorios y aplicaciones'
 description: Lista de partners que pueden hospedar escritorios y aplicaciones con RDS.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/27/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9a3cb426-fb39-40c5-ae07-26dbe9e3aed9
 author: lizap
 manager: dongill
-ms.openlocfilehash: 4d9a6d4885566204bf9fc29cd9513d25d1b39deb
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 503a9917e271c69a78e5f26db6556d788254c823
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949853"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861368"
 ---
 # <a name="remote-desktop-services-hosting-partners-and-assessment"></a>Partners de hospedaje de Servicios de Escritorio remoto y evaluación
 
@@ -36,7 +32,7 @@ Si eres partner de Microsoft y quieres que se te incluya en la lista de partners
 
 ## <a name="partners-who-have-passed-the-learning-path-assessment"></a>Partners que han superado la evaluación de la ruta de aprendizaje 
 
-Si eres cliente y buscas un partner que te ayude a hospedar aplicaciones y escritorios de Windows en Azure para los usuarios, hemos recopilado una lista de partners que han superado la evaluación. Esta es una [lista de esos partners](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/WindowsServerDocs/remote/remote-desktop-services/RDS-Hosting-Partners.pdf), al 28/03/2017, que puedes descargar.
+Si eres cliente y buscas un partner que te ayude a hospedar aplicaciones y escritorios de Windows en Azure para los usuarios, hemos recopilado una lista de partners que han superado la evaluación. Esta es una [lista de esos partners](rds-hosting-partners.md), al 28/03/2017, que puedes descargar.
 
 Para encontrar más información sobre cada partner, sigue los pasos a continuación:
 

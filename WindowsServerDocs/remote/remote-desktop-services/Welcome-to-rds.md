@@ -1,25 +1,21 @@
 ---
 title: Introducción a Servicios de Escritorio remoto en Windows Server 2016
 description: Proporciona información general acerca de Servicios de Escritorio remoto
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 02/22/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: 46a04905d5247ae940ca900297171d1112cf936b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 70979eae2ad9f54ab895572f97d9b5968cff31d9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404205"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854688"
 ---
 # <a name="welcome-to-remote-desktop-services"></a>Bienvenida a Servicios de Escritorio remoto 
 
@@ -46,7 +42,7 @@ Con estas opciones y configuraciones, tienes la flexibilidad de implementar los 
 ## <a name="next-steps"></a>Pasos siguientes
 
 Estos son los pasos que te ayudarán a conocer mejor RDS, e incluso a empezar a implementar tu propio entorno:
--   Conocer las [configuraciones admitidas](rds-supported-config.md) para RDS en las distintas versiones de Windows y Windows Server
--   [Planear y diseñar](rds-plan-and-design.md) un entorno de RDS que se adapte a distintos requisitos, como una alta disponibilidad y autenticación multifactor.
--   Examinar los [modelos de arquitectura de Servicios de Escritorio remoto](desktop-hosting-logical-architecture.md) que mejor funcionan para un entorno concreto.
--   Empezar a [implementar un entorno de RDS con ARM and Azure Marketplace](rds-in-azure.md).
+-    Conocer las [configuraciones admitidas](rds-supported-config.md) para RDS en las distintas versiones de Windows y Windows Server
+-    [Planear y diseñar](rds-plan-and-design.md) un entorno de RDS que se adapte a distintos requisitos, como una alta disponibilidad y autenticación multifactor.
+-    Examinar los [modelos de arquitectura de Servicios de Escritorio remoto](desktop-hosting-logical-architecture.md) que mejor funcionan para un entorno concreto.
+-    Empezar a [implementar un entorno de RDS con ARM and Azure Marketplace](rds-in-azure.md).

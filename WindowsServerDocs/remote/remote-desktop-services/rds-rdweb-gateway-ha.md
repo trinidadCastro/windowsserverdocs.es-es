@@ -1,27 +1,23 @@
 ---
 title: Adición de alta disponibilidad al front-end web de la puerta de enlace y de la web de Escritorio remoto
 description: Proporciona los pasos necesarios para instalar los servidores de puerta de enlace y web de Escritorio remoto en una implementación de RDS.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
-ms.openlocfilehash: 5838480847e5f86a03f264a0ece1f8d4097597cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e98bbda5460311dd379eab6f5a5bde0ec3845d5c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387227"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860288"
 ---
 # <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>Adición de alta disponibilidad al front-end web de la puerta de enlace y de la web de Escritorio remoto
 
->Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
 
 Puede implementar un acceso web de Escritorio remoto y una granja de puerta de enlace de Escritorio remoto para mejorar la disponibilidad y escalar una implementación de los Servicios de Escritorio remoto (RDS) de Windows. 

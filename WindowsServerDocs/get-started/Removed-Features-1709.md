@@ -9,18 +9,18 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 93f98a87512232fe0605a9fc90a102c87818c88d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a74f3c6ec629df7d1cc40199091e84989606a50e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391641"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826688"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>Características eliminadas o que está previsto su reemplazo a partir de Windows Server, versión 1709
 
 >Se aplica a: Windows Server, versión 1709
 
-A continuación se enumeran las características y funcionalidades de Windows Server, versión 1709 que se quitaron del producto en dicha versión o se está empezando a considerar su posible reemplazo en versiones posteriores. Este artículo está orientado a profesionales de TI que actualizan sus sistemas operativos en un entorno comercial. **Esta lista está sujeta a cambios en versiones posteriores y es posible que no incluya todas las características o funcionalidades afectadas.** 
+A continuación se enumeran las características y funcionalidades de Windows Server, versión 1709 que se quitaron del producto en dicha versión o se está empezando a considerar su posible reemplazo en versiones posteriores. Este artículo está orientado a profesionales de TI que actualizan sus sistemas operativos en un entorno comercial. **Esta lista está sujeta a cambios en versiones posteriores y es posible que no incluya todas las características o funcionalidades afectadas.** 
 
 > [!TIP]
 > - Para obtener acceso rápido a las versiones de Windows Server, puedes unirte al [Programa Windows Insider](https://insider.windows.com). Esta es una excelente manera de probar los cambios de características.

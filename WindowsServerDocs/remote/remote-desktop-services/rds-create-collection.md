@@ -1,28 +1,24 @@
 ---
 title: Crear una colección de Servicios de Escritorio remoto
 description: Obtén información sobre cómo agregar programas RDSH y RemoteApp a tu implementación de RDS.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/22/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: 92af2b4e9fb174f1aa815256148ee8d5c7c7181a
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: 6a842c7984dc63fe40c05300f6cfbb6718846525
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812255"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852958"
 ---
 # <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>Creación de una colección de servicios de Escritorio remoto para que se ejecuten escritorios y aplicaciones
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
 Sigue los pasos a continuación para crear una colección de sesiones de Servicios de Escritorio remoto. Una colección de sesiones contiene las aplicaciones y escritorios que quieres que estén disponibles para los usuarios. Después de crear la colección, publícala para que los usuarios puedan acceder a ella.
 

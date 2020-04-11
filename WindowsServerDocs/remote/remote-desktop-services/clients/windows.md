@@ -1,12 +1,8 @@
 ---
 title: Introducción al cliente de Microsoft Store
 description: Los pasos básicos para la configuración del cliente de Escritorio remoto para Microsoft Store.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
@@ -14,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 13fbe22ef33ea7861ae4c8677792b5758f37ad0f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 64362c6f6da77ee15a95ddcbaf33c6cb9ecd5cf4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387615"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861438"
 ---
 # <a name="get-started-with-the-windows-store-client"></a>Introducción al cliente de Microsoft Store
 
@@ -38,7 +34,7 @@ Usa la siguiente información para comenzar. Asegúrate de consultar la sección
 Sigue estos pasos para empezar a usar Escritorio remoto en un dispositivo con Windows 10:
 
 1. Descarga el cliente de Escritorio remoto de [Microsoft Store](https://www.microsoft.com/store/p/microsoft-remote-desktop/9wzdncrfj3ps). 
-2. [Configura el equipo para que acepte conexiones remotas](remote-desktop-allow-access.md).
+2. [Configura tu equipo para que acepte conexiones remotas](remote-desktop-allow-access.md).
 3. Agrega una conexión a Escritorio remoto o un recurso remoto. Usa una conexión para conectarse directamente a un equipo Windows y un recurso remoto para usar un programa de RemoteApp, un escritorio basado en sesión o un escritorio virtual publicado por el administrador. 
 4. Ancla los elementos para poder acceder a Escritorio remoto rápidamente.
 
@@ -193,7 +189,7 @@ Existen dos modos de ratón para interactuar con la sesión.
 > [!NOTE]
 > En la interacción con Windows 8, o las versiones más recientes, se admiten los gestos táctiles nativos en modo de toque directo.
 
-| Modo de mouse    | Operación del ratón      | Gesto                                                               |
+| Modo del mouse    | Operación del ratón      | Gesto                                                               |
 |---------------|----------------------|-----------------------------------------------------------------------|
 | Toque directo  | Hacer clic con el botón izquierdo           | Pulsación con un dedo                                                          |
 | Toque directo  | Hacer clic con el botón derecho          | Mantener pulsado con un dedo                                                 |

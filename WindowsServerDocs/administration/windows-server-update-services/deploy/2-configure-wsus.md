@@ -2,7 +2,6 @@
 title: 'Paso 2: configurar WSUS'
 description: 'Tema de Windows Server Update Service (WSUS): configurar WSUS es el segundo paso en un proceso de cuatro pasos para implementar WSUS'
 ms.prod: windows-server
-ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: d4adc568-1f23-49f3-9a54-12a7bec5f27c
@@ -10,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1e68685e3a1e5486360d7946d5aeb36abbdcd3a
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: aa8a59a25d4a9880c70e593cd31a416ab51552f1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639867"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828868"
 ---
 # <a name="step-2-configure-wsus"></a>Paso 2: Configurar WSUS
 

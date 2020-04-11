@@ -1,27 +1,23 @@
 ---
 title: Crear un plan de recuperación ante desastres
 description: Obtén información sobre cómo crear un plan de recuperación ante desastres para su implementación de RDS.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 05/05/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: e4e9a9ab05e672c72925e3699900218abdf1c682
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18342bb7fd3ad26427ae1e1a051e20444fdff7c2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404027"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859028"
 ---
 # <a name="create-your-disaster-recovery-plan-for-rds"></a>Crear un plan de recuperación ante desastres para RDS
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
 Puedes crear un plan de recuperación ante desastres en Azure Site Recovery para automatizar el proceso de conmutación por error. Agrega todas las VM con componentes de RDS al plan de recuperación.
 

@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ce821c2e793792032e2f91aa806b1bd8d8a76f6
-ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
+ms.openlocfilehash: 6c424d19c006cfae6343d577dc08ff3553a5616b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73956071"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825878"
 ---
 # <a name="whats-new-in-windows-server"></a>Novedades de Windows Server
 
@@ -35,7 +35,7 @@ Versiones del Canal semianual:
 
 Las versiones del Canal semianual de Windows Server ofrecen nuevas funcionalidades del sistema operativo a un ritmo más rápido. Cada seis meses sale una nueva versión y se admite durante 18 meses. Comprueba la [información de versión de Windows Server](windows-server-release-info.md) y la [página de soporte técnico del ciclo de vida](https://support.microsoft.com/lifecycle) para ver las fechas de soporte técnico y utiliza siempre la versión más reciente si es posible.
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Consulta también
 
 - [Notas de la versión: Problemas importantes en Windows Server 2019](../get-started-19/rel-notes-19.md)
 - [Notas de la versión: Problemas importantes en Windows Server 2016](Windows-Server-2016-GA-Release-Notes.md)

@@ -1,27 +1,23 @@
 ---
 title: Uso de un entorno de escritorios de sesión personal con Servicios de Escritorio remoto
 description: Aprende a compartir escritorios asignados personalizados a través de RDS.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 10/22/2019
 manager: dongill
-ms.openlocfilehash: 9386733911ca81ad60d038854bd68e5603aae4cf
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: c0c36793d08391ad98fa797004ed6dec9883e9f1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812286"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857408"
 ---
 # <a name="use-personal-session-desktops-with-remote-desktop-services"></a>Uso de un entorno de escritorios de sesión personal con Servicios de Escritorio remoto
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
 Puedes implementar escritorios personales basados en servidor en un entorno de informática en la nube mediante escritorios de sesión personal.  (Un entorno de informática en la nube tiene una separación entre los servidores de tejido de Hyper-V y las máquinas virtuales de invitado, por ejemplo, Microsoft Azure Cloud o la plataforma de Microsoft Cloud). La funcionalidad de escritorios de sesión personal amplía el escenario de implementación de escritorios basados en sesión en los Servicios de Escritorio remoto, para crear un nuevo tipo de colección de sesiones donde a cada usuario se asigna su propio host de sesión personal con derechos administrativos. 
 
@@ -99,4 +95,4 @@ El cmdlet **Export-RDPersonalPersonalDesktopAssignment** exporta las asociacione
 -Path \<cadena\>
 
 
-Todos los nuevos cmdlets admiten los parámetros comunes: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer y -OutVariable. Para obtener más información, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/p/?LinkID=113216).
+Todos los nuevos cmdlets admiten los parámetros comunes: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer y -OutVariable. Para obtener más información, consulta [about_CommonParameters](https://go.microsoft.com/fwlink/p/?LinkID=113216).

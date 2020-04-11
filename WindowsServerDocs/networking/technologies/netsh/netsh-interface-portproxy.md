@@ -4,17 +4,16 @@ description: Usa los comandos de proxy de puerto de la interfaz de netsh para qu
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
-ms.assetid: ''
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 645786484881af3a0f6d9503e1f3fcde32a2cdfe
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e9c4cff4d1424c244857cf75be41d445b299f1f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316737"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853748"
 ---
 # <a name="netsh-interface-portproxy-commands"></a>Comandos de proxy de puerto de la interfaz de netsh
 
@@ -81,7 +80,7 @@ El servidor proxy de puerto escucha los mensajes enviados a un puerto y una dire
 add v4tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address | HostName}] [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv4Address | HostName}] [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 
 |                    |                                                                                                                                                                                                   |
@@ -102,7 +101,7 @@ El servidor proxy de puerto escucha los mensajes enviados a un puerto y una dire
 add v4tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -122,7 +121,7 @@ El servidor proxy de puerto escucha los mensajes enviados a un puerto y una dire
 add v6tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -142,7 +141,7 @@ El servidor proxy de puerto escucha los mensajes enviados a un puerto y una dire
 add v6tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -162,7 +161,7 @@ El servidor proxy de puerto elimina una dirección IPv4 de la lista de puertos y
 delete v4tov4 listenport= {Integer | ServiceName} [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |                   |                                                                                                          |
 |-------------------|----------------------------------------------------------------------------------------------------------|
@@ -180,7 +179,7 @@ El servidor proxy de puerto elimina un puerto y una dirección IPv4 de la lista 
 delete v4tov6 listenport= {Integer | ServiceName} [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |                   |                                                                                                          |
 |-------------------|----------------------------------------------------------------------------------------------------------|
@@ -198,7 +197,7 @@ El servidor proxy de puerto elimina un puerto y una dirección IPv6 de la lista 
 delete v6tov4 listenport= {Integer | ServiceName} [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |                   |                                                                                                          |
 |-------------------|----------------------------------------------------------------------------------------------------------|
@@ -216,7 +215,7 @@ El servidor proxy de puerto elimina una dirección IPv6 de la lista de direccion
 delete v6tov6 listenport= {Integer | ServiceName} [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |                   |                                                                                                          |
 |-------------------|----------------------------------------------------------------------------------------------------------|
@@ -242,7 +241,7 @@ Modifica los valores de parámetro de una entrada existente en el servidor proxy
 set v4tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -262,7 +261,7 @@ Modifica los valores de parámetro de una entrada existente en el servidor proxy
 set v4tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -282,7 +281,7 @@ Modifica los valores de parámetro de una entrada existente en el servidor proxy
 set v6tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -302,7 +301,7 @@ Modifica los valores de parámetro de una entrada existente en el servidor proxy
 set v6tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>Parámetros
+#### <a name="parameters"></a>Parámetros
 
 |                    |                                                                                                                                                                                                    |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
