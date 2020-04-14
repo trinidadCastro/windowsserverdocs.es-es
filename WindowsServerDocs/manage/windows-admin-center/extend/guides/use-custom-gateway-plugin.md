@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 829cbf6df8cc2738bf4066b36210b860595774ed
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5bcaaa452a2b42a54cbc3b1d8f9a296504054e34
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385230"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269232"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>Usar un complemento de puerta de enlace personalizado en la extensión de herramienta
 
@@ -63,7 +63,7 @@ export class PluginService {
 
 Cambie las referencias a ```Sample Uno``` y ```Sample%20Uno``` al nombre de la característica según corresponda.
 
-[!WARNING]
+> [!WARNING]
 > Se recomienda que el ```this.appContextService.node``` integrado se use para llamar a cualquier API que esté definida en el complemento de puerta de enlace personalizada. Esto garantizará que, si se requieren credenciales en el complemento de puerta de enlace, se controlarán correctamente.
 
 ### <a name="modify-modulets"></a>Modificar módulo. ts

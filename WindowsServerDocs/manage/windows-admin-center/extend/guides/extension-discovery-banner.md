@@ -8,18 +8,18 @@ ms.author: jol
 ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: d761ba61ae5680373c334889799e82e5d092a0d4
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: f51070abfeed3a790055b12f733fc61be383472c
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950106"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269262"
 ---
 # <a name="enabling-the-extension-discovery-banner"></a>Habilitación del banner de detección de extensión
 
 >Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
 
-Una nueva característica disponible en el centro de administración de Windows Preview 1903 es el banner de detección de la extensión. Esta característica permite a una extensión declarar el fabricante del hardware de servidor y los modelos que admite, y cuando un usuario se conecta a un servidor o clúster para el que hay una extensión disponible, se muestra un banner de notificación para instalar la extensión fácilmente. Los desarrolladores de extensiones podrán obtener más visibilidad de sus extensiones y los usuarios podrán detectar fácilmente más capacidades de administración para sus servidores.
+La característica de banner de detección de extensión se presentó en la versión Preview 1903 del centro de administración de Windows. Esta característica permite a una extensión declarar el fabricante del hardware de servidor y los modelos que admite, y cuando un usuario se conecta a un servidor o clúster para el que hay una extensión disponible, se muestra un banner de notificación para instalar la extensión fácilmente. Los desarrolladores de extensiones podrán obtener más visibilidad de sus extensiones y los usuarios podrán detectar fácilmente más capacidades de administración para sus servidores.
 
 ![Banner de detección de extensión](../../media/extend-guides-extension-discovery-banner/extension-discovery-banner.png)
 
