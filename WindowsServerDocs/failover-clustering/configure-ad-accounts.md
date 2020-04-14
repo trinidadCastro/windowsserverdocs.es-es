@@ -4,14 +4,14 @@ ms.date: 11/12/2012
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 author: JasonGerend
-manager: elizapo
+manager: lizross
 ms.author: jgerend
-ms.openlocfilehash: 47f3a515379eb79f628a0ee97ef2c7965c4d8d50
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c087b3f86dcb70c07221a5436d921b09fb5a917f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948153"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827898"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>Configuración de cuentas de clúster en Active Directory
 
@@ -30,7 +30,7 @@ En esta sección se describen las cuentas de equipo de Active Directory (tambié
       
     Por ejemplo, si crea un clúster denominado Clúster1 e intenta configurar un servidor de impresión en clúster denominado ServidorImpresión1 en el clúster, la cuenta Clúster1 de Active Directory necesitará conservar los permisos correctos para que se pueda utilizar con el fin de crear una cuenta de equipo denominada ServidorImpresión1.  
       
-    La cuenta de nombre de clúster se crea en el contenedor predeterminado para las cuentas de equipo en Active Directory. De forma predeterminada, es el contenedor "Equipos", pero el administrador de dominio puede elegir redirigirlo a otro contenedor o unidad organizativa (OU).  
+    La cuenta de nombre de clúster se crea en el contenedor predeterminado para las cuentas de equipo en Active Directory. De forma predeterminada, es el contenedor "equipos", pero el administrador de dominio puede elegir redirigirlo a otro contenedor o unidad organizativa (OU).  
       
   - **La cuenta de equipo (objeto de equipo) de un servicio o aplicación en clúster.** El Asistente para alta disponibilidad crea automáticamente estas cuentas como parte del proceso de creación de la mayoría de los tipos de servicios o aplicaciones en clúster, a excepción de una máquina virtual de Hyper-V. A la cuenta de nombre de clúster se le conceden los permisos necesarios para controlar estas cuentas.  
       
@@ -107,7 +107,7 @@ Tal y como se describe en las tres secciones anteriores, se deben cumplir cierto
           
       - La cuenta (o el grupo del que la cuenta es miembro) debe tener concedidos los permisos **Crear objetos de equipo** y **Leer todas las propiedades** en el contenedor que se utiliza para las cuentas de equipo del dominio. Para obtener más información, vea [Pasos para configurar la cuenta para la persona que instala el clúster](#steps-for-configuring-the-account-for-the-person-who-installs-the-cluster), más adelante en esta guía.  
           
-      - Si su organización elige preconfigurar la cuenta de nombre de clúster (una cuenta de equipo con el mismo nombre que el clúster), la cuenta de nombre de clúster preconfigurada debe conceder el permiso "Control total" a la cuenta de la persona que instala el clúster. Para obtener otros detalles importantes sobre cómo preconfigurar la cuenta de nombre de clúster, vea [Pasos para preconfigurar la cuenta de nombre de clúster](#steps-for-prestaging-the-cluster-name-account), más adelante en esta guía.  
+      - Si su organización decide preconfigurar la cuenta de nombre de clúster (una cuenta de equipo con el mismo nombre que el clúster), la cuenta de nombre de clúster preconfigurada debe conceder el permiso "control total" a la cuenta de la persona que instala el clúster. Para obtener otros detalles importantes sobre cómo preconfigurar la cuenta de nombre de clúster, vea [Pasos para preconfigurar la cuenta de nombre de clúster](#steps-for-prestaging-the-cluster-name-account), más adelante en esta guía.  
           
 
 ### <a name="planning-ahead-for-password-resets-and-other-account-maintenance"></a>Planear de antemano los restablecimientos de la contraseña y otras tareas de mantenimiento de la cuenta
@@ -126,13 +126,13 @@ La pertenencia a grupos mínima necesaria para completar el procedimiento siguie
 
 2.  Si la cuenta que se creó u obtuvo en el paso 1 no se incluye automáticamente en el grupo de **administradores** locales en los equipos del dominio, agregue la cuenta al grupo local **administradores** en los servidores que serán nodos del clúster de conmutación por error:
     
-    1.  Haga clic en **Inicio**, **Herramientas administrativas**y **Administrador del servidor**.  
+    1.  Haga clic en **Inicio**, **Herramientas administrativas** y **Administrador del servidor**.  
           
     2.  En el árbol de consola, expanda sucesivamente **Configuración**, **Usuarios y grupos locales**, y **Grupos**.  
           
     3.  En el panel central, haga clic con el botón secundario en **Administradores**, haga clic en **Agregar a grupo** y, a continuación, haga clic en **Agregar**.  
           
-    4.  En **Escriba los nombres de objeto que desea seleccionar**, escriba el nombre de la cuenta de usuario que se creó u obtuvo en el paso 1. Si se le solicita, escriba un nombre de cuenta y una contraseña con permisos suficientes para esta acción. A continuación, haga clic en **Aceptar**.  
+    4.  En **Escriba los nombres de objeto que desea seleccionar**, escriba el nombre de la cuenta de usuario que se creó u obtuvo en el paso 1. Si se le solicita, escriba un nombre de cuenta y una contraseña con permisos suficientes para esta acción. Después, haga clic en **Aceptar**.  
           
     5.  Repita estos pasos en cada servidor que será un nodo del clúster de conmutación por error.  
 
@@ -143,7 +143,7 @@ La pertenencia a grupos mínima necesaria para completar el procedimiento siguie
 
 3. Si la cuenta que se creó u obtuvo en el paso 1 es una cuenta de administrador de dominio, omita el resto de este procedimiento. De lo contrario, conceda a la cuenta los permisos **Crear objetos de equipo** y **Leer todas las propiedades** en el contenedor que se utiliza para las cuentas de equipo en el dominio:
     
-   1.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.  
+   1.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.  
           
    2.  En el menú **Ver**, asegúrese de que está seleccionado **Características avanzadas**.  
           
@@ -151,7 +151,7 @@ La pertenencia a grupos mínima necesaria para completar el procedimiento siguie
           
    3.  Haga clic con el botón secundario en el contenedor predeterminado **Equipos** o en el contenedor predeterminado donde se crean las cuentas de equipo en su dominio y, a continuación, haga clic en **Propiedades**. **Equipos** se encuentra en <b>Active Directory usuarios y equipos/</b><i>dominio-nodo</i><b>/equipos</b>.  
           
-   4.  En la pestaña **Seguridad** , haga clic en **Opciones avanzadas**.  
+   4.  En la pestaña **Seguridad**, haga clic en **Opciones avanzadas**.  
           
    5.  Haga clic en **Agregar**, escriba el nombre de la cuenta que se creó u obtuvo en el paso 1 y, a continuación, haga clic en **Aceptar**.  
           
@@ -169,7 +169,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 1.  Asegúrese de que sabe el nombre que tendrá el clúster y el nombre de la cuenta de usuario que utilizará la persona que crea el clúster. (Puede utilizar esa cuenta para realizar este procedimiento.)
 
-2.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.
+2.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.
 
 3.  En el árbol de consola, haga clic con el botón secundario en **Equipos** o en el contenedor predeterminado donde se crean las cuentas de equipo en su dominio. **Equipos** se encuentra en <b>Active Directory usuarios y equipos/</b><i>dominio-nodo</i><b>/equipos</b>.
 
@@ -187,7 +187,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 8.  Haga clic con el botón secundario en la carpeta en la que hizo clic con el botón secundario en el paso 3 y, a continuación, haga clic en **propiedades**.
 
-9.  En la pestaña **Seguridad** , haga clic en **Opciones avanzadas**.
+9.  En la pestaña **Seguridad**, haga clic en **Opciones avanzadas**.
 
 10. Haga clic en **Agregar**, haga clic en **Tipos de objetos** y asegúrese de que se ha seleccionado **Equipos**; a continuación, haga clic en **Aceptar**. Después, en **Escriba el nombre de objeto para seleccionar**, escriba el nombre de la cuenta de equipo recién creada y, a continuación, haga clic en **Aceptar**. Si aparece un mensaje que indica que está a punto de agregar un objeto deshabilitado, haga clic en **Aceptar**.
 
@@ -203,9 +203,9 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
           
     2.  Haga clic con el botón secundario en la cuenta de equipo recién creada y, a continuación, haga clic en **Propiedades**.  
           
-    3.  En la pestaña **Seguridad**, haz clic en **Agregar**. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.  
+    3.  En la pestaña **Seguridad**, haga clic en **Agregar**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.  
           
-    4.  Utilice el cuadro de diálogo **Seleccionar usuarios, equipos o grupos** para especificar la cuenta de usuario que se utilizará al crear el clúster. A continuación, haga clic en **Aceptar**.  
+    4.  Utilice el cuadro de diálogo **Seleccionar usuarios, equipos o grupos** para especificar la cuenta de usuario que se utilizará al crear el clúster. Después, haga clic en **Aceptar**.  
           
     5.  Asegúrese de que la cuenta de usuario recién agregada está seleccionada y a continuación, junto a **Control total**, active la casilla **Permitir**.  
           
@@ -221,7 +221,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 1.  Asegúrese de que sabe el nombre que tendrán el clúster y el servicio o la aplicación en clúster.
 
-2.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.
+2.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.
 
 3.  En el árbol de consola, haga clic con el botón secundario en **Equipos** o en el contenedor predeterminado donde se crean las cuentas de equipo en su dominio. **Equipos** se encuentra en <b>Active Directory usuarios y equipos/</b><i>dominio-nodo</i><b>/equipos</b>.
 
@@ -235,7 +235,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 7.  Haga clic con el botón secundario en la cuenta de equipo recién creada y, a continuación, haga clic en **Propiedades**.
 
-8.  En la pestaña **Seguridad**, haz clic en **Agregar**.
+8.  En la pestaña **Seguridad**, haga clic en **Agregar**.
 
 9.  Haga clic en **Tipos de objeto**, asegúrese de que se ha seleccionad **Equipos** y, a continuación, haga clic en **Aceptar**. Después, en **Escriba el nombre de objeto para seleccionar**, escriba la cuenta de nombre de clúster y, a continuación, haga clic en **Aceptar**. Si aparece un mensaje que indica que está a punto de agregar un objeto deshabilitado, haga clic en **Aceptar**.
 
@@ -262,7 +262,7 @@ Los mensajes de evento que se ajustan a la descripción anterior indican que la 
 
 Para obtener información sobre cómo asegurarse de que los administradores de clústeres tienen los permisos correctos para realizar el siguiente procedimiento de la manera necesaria, vea Planear de antemano los restablecimientos de la contraseña y otras tareas de mantenimiento de la cuenta, anteriormente en esta guía.
 
-Para completar este procedimiento, se requiere como mínimo la pertenencia al grupo local **Administradores** o equivalente. Además, se debe conceder a su cuenta el permiso **Restablecer contraseña** para la cuenta de nombre de clúster (a menos que sea una cuenta **Admins. del dominio** o sea el creador propietario de la cuenta de nombre de clúster). Se puede utilizar para este procedimiento la cuenta empleada por la persona que instaló el clúster. Revise los detalles sobre el uso de las cuentas adecuadas y las pertenencias a grupos en [https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477).
+La pertenencia al grupo local **Administradores**, o equivalente, es el requisito mínimo necesario para completar este procedimiento. Además, se debe conceder a su cuenta el permiso **Restablecer contraseña** para la cuenta de nombre de clúster (a menos que sea una cuenta **Admins. del dominio** o sea el creador propietario de la cuenta de nombre de clúster). Se puede utilizar para este procedimiento la cuenta empleada por la persona que instaló el clúster. Revise los detalles sobre el uso de las cuentas adecuadas y las pertenencias a grupos en [https://go.microsoft.com/fwlink/?LinkId=83477](https://go.microsoft.com/fwlink/?linkid=83477).
 
 #### <a name="to-troubleshoot-password-problems-with-the-cluster-name-account"></a>Para solucionar problemas de contraseña con la cuenta de nombre de clúster
 
@@ -282,7 +282,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 #### <a name="to-troubleshoot-problems-caused-by-changes-in-cluster-related-active-directory-accounts"></a>Para solucionar problemas debidos a cambios en las cuentas de Active Directory relacionadas con el clúster
 
-1.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.
+1.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.
 
 2.  Expanda el contenedor predeterminado **Equipos** o la carpeta donde se encuentra la cuenta de nombre de clúster (la cuenta de equipo del clúster). **Equipos** se encuentra en <b>Active Directory usuarios y equipos/</b><i>dominio-nodo</i><b>/equipos</b>.
 
@@ -294,9 +294,9 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 5.  Haga clic con el botón secundario en el contenedor predeterminado **Equipos** o en la carpeta donde se encuentra la cuenta de nombre de clúster.
 
-6.  Haz clic en **Propiedades**.
+6.  Haga clic en **Propiedades**.
 
-7.  En la pestaña **Seguridad** , haga clic en **Opciones avanzadas**.
+7.  En la pestaña **Seguridad**, haga clic en **Opciones avanzadas**.
 
 8.  En la lista de cuentas con permisos, haga clic en la cuenta de nombre de clúster y, a continuación, haga clic en **Editar**.
     
