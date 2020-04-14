@@ -7,15 +7,14 @@ ms.sitesec: library
 author: mikeblodge
 ms.author: mikeblodge
 ms.date: 07/11/2018
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 19e4abf1573b8d3ee99b8e8828c1674f24d27695
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de9233e31c5530abd207a1bbba0e1e16a07d1561
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391505"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826128"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>Cargar una imagen especializada de Windows Server 2008/2008 R2 en Azure 
 
@@ -41,7 +40,7 @@ Antes de cargar imágenes, realiza los cambios siguientes:
   4. Selecciona Permitir las conexiones desde equipos que ejecutan cualquier versión de Escritorio remoto (menos seguro).   
   5. Haga clic en **Aplicar** y en **Aceptar**.
 - Configurar Firewall de Windows.   
-   1. En el símbolo del sistema en modo Administrador, introduce “**wf.msc**” para ir a la configuración de Firewall de Windows y de seguridad avanzada.   
+   1. En el símbolo del sistema en modo Administrador, introduce "**wf.msc**" para ir a la configuración de Firewall de Windows y de seguridad avanzada.   
    2. Ordena los resultados por **Puertos** selecciona **puerto 3389**.   
      ![Captura de pantalla de reglas de entrada de la configuración del Firewall de Windows.](media/3b_inboundrules.png)   
    3. Habilitar Escritorio remoto (TCP-IN) para los perfiles: **Dominio**, **Privado** y **Público** (como se muestra arriba).
@@ -86,26 +85,26 @@ En esta sección, implementarás la imagen VHD in Azure.
 > [!IMPORTANT]
 > No uses imágenes de usuario predefinidas en Azure.
 
-1.  Crear un nuevo [grupo de recursos](https://docs.microsoft.com/rest/api/resources/resourcegroups/createorupdate). 
-2.  Crea un nuevo [blob de almacenamiento](https://docs.microsoft.com/rest/api/storageservices/put-blob) dentro del grupo de recursos.
-3.  Crea un [contenedor](https://docs.microsoft.com/rest/api/storageservices/create-container) dentro del blob de almacenamiento.
-4.  Copia el URL del blob de almacenamiento desde las propiedades.
-5.  Usa el script facilitado anteriormente para cargar tu imagen al nuevo blob de almacenamiento.
-6.  Crea un [disco](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image) para el VHD.   
-     a. Ve a Discos y haz clic en **Agregar**.  
-     b. Introduce un nombre para el disco. Selecciona la suscripción que quieres usar, configura la región y elige el tipo de cuenta.   
+1.    Crear un nuevo [grupo de recursos](https://docs.microsoft.com/rest/api/resources/resourcegroups/createorupdate). 
+2.    Crea un nuevo [blob de almacenamiento](https://docs.microsoft.com/rest/api/storageservices/put-blob) dentro del grupo de recursos.
+3.    Crea un [contenedor](https://docs.microsoft.com/rest/api/storageservices/create-container) dentro del blob de almacenamiento.
+4.    Copia el URL del blob de almacenamiento desde las propiedades.
+5.    Usa el script facilitado anteriormente para cargar tu imagen al nuevo blob de almacenamiento.
+6.    Crea un [disco](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image) para el VHD.   
+     a.    Ve a Discos y haz clic en **Agregar**.  
+     b.    Introduce un nombre para el disco. Selecciona la suscripción que quieres usar, configura la región y elige el tipo de cuenta.   
      c. En Tipo de fuente, selecciona Almacenamiento. Explora la ubicación del VHD del blob creado usando el script.  
      d. Selecciona el sistema operativo de tipo Windows y Tamaño (predeterminado: 1023).   
      e. Haga clic en **Crear**.   
 
-7.  Ve al disco creado y haz clic en **Crear VM**.   
-     a. Nombra la VM.   
-     b. Selecciona el grupo existente que creaste en el paso 5, al cargar el disco.   
-     c. Elige un tamaño y un plan de SKU para la VM.   
-     d. Selecciona una interfaz de red en la página de configuración. Asegúrate de que la interfaz de red tenga especificada la regla siguiente:
+7.    Ve al disco creado y haz clic en **Crear VM**.   
+     a.    Nombra la VM.   
+     b.    Selecciona el grupo existente que creaste en el paso 5, al cargar el disco.   
+     c.    Elige un tamaño y un plan de SKU para la VM.   
+     d.    Selecciona una interfaz de red en la página de configuración. Asegúrate de que la interfaz de red tenga especificada la regla siguiente:
  
-        PORT:3389 Protocol: TCP Action: Allow Priority: 1000 Name: ‘RDP-Rule'.   
-     e. Haga clic en **Crear**.
+        PUERTO: 3389 Protocolo: TCP Acción: Permitir Prioridad: 1000 Nombre: "Regla-RDP".   
+     e.    Haga clic en **Crear**.
 
 
 

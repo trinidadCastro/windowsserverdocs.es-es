@@ -10,12 +10,12 @@ metadata:
   ms.topic: hub-page
   ms.date: 06/06/2019
   ms.author: lizross
-  ms.openlocfilehash: 7ea64a8b3b6d930c8105c57bb7d2a1537eb6780d
-  ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+  ms.openlocfilehash: 91a9a648c5b51f098a94300ffb1dd3f7ce76bdd8
+  ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
   ms.translationtype: HT
   ms.contentlocale: es-ES
-  ms.lasthandoff: 04/08/2020
-  ms.locfileid: "80856278"
+  ms.lasthandoff: 04/11/2020
+  ms.locfileid: "81123165"
 highlightedContent:
   items:
   - title: Novedades de Windows Server 2019
@@ -190,12 +190,9 @@ conceptualContent:
 additionalContent:
   sections:
   - items:
-    - title: Windows Server 2012 R2 y Windows Server 2012
-      summary: Contenido técnico para profesionales de TI que administran Windows Server 2012 R2 y Windows Server 2012.
+    - title: Windows Server 2012 R2 y Windows Server 2012 (archivo)
+      summary: Archivo del contenido técnico para profesionales de TI que administran Windows Server 2012 R2 y Windows Server 2012.
       url: https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11)
-    - title: Windows Server 2008 R2 y Windows Server 2008
-      summary: Contenido técnico para profesionales de TI que administran Windows Server 2008 R2 y Windows Server 2008.
-      url: https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349801(v=ws.10)
-    - title: Windows Server 2008 Developer Story
-      summary: Contenido para desarrolladores y otros expertos en tecnología y administradores interesados en explorar algunas de las características nuevas y extendidas de Windows Server 2008.
-      url: https://docs.microsoft.com/previous-versions/windows/server-2008/bb852234(v=msdn.10)
+    - title: Windows Server Essentials
+      summary: Contenido técnico para profesionales de TI que administran Windows Server Essentials, el primer servidor conectado a la nube diseñado para pequeñas empresas con hasta 25 usuarios y 50 dispositivos.
+      url: https://docs.microsoft.com/en-us/windows-server-essentials/get-started/get-started
