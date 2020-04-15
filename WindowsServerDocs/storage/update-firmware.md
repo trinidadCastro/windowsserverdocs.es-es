@@ -3,17 +3,17 @@ ms.assetid: e5945bae-4a33-487c-a019-92a69db8cf6c
 title: Actualización del firmware de la unidad
 ms.prod: windows-server
 ms.author: toklima
-ms.manager: dmoss
+manager: dmoss
 ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 2f0530101bb7d597d2d95c26648aad65d62b69ca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 55a4fc94440b763c48735ffe44099da702857489
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365874"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820878"
 ---
 # <a name="updating-drive-firmware"></a>Actualización del firmware de la unidad
 >Se aplica a: Windows Server 2019, Windows Server 2016 y Windows 10
@@ -30,9 +30,9 @@ Para usar Windows Server para actualizar el firmware de la unidad, debe tener un
 Para obtener información sobre si su hardware admite que Windows actualice el firmware de la unidad, póngase en contacto con su proveedor de soluciones.
 A continuación se enumeran vínculos a los distintos requisitos:
 
--   SAS [Device. Storage. HD. SATA](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) : en la sección **[IF implemented @ No__t-2 firmware download & Activate**
+-   SAS [Device. Storage. HD. SATA](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) : en la sección **[si está implementado\] descargar el firmware & activar**
     
--   ASOCIACIONES [Device. Storage. HD. SAS](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) : en la sección **[IF implemented @ No__t-2 firmware download & Activate**
+-   ASOCIACIONES [Device. Storage. HD. SAS](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) : en la sección **[si está implementado\] descargar el firmware & activar**
 
 -   NVMe [Device. Storage. ControllerDrive. NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) : en las secciones **5,7** y **5,8**.
 
@@ -166,7 +166,7 @@ $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponen
 
 Si desea ver el Servicio de mantenimiento en acción y obtener más información sobre su mecanismo de implementación, consulte este vídeo: https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
-## <a name="frequently-asked-questions"></a>Preguntas frecuentes
+## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
 Consulta también [Solución de problemas de las actualizaciones de firmware de unidad](troubleshoot-firmware-update.md).
 

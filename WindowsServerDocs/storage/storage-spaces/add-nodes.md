@@ -3,27 +3,27 @@ ms.assetid: 898d72f1-01e7-4b87-8eb3-a8e0e2e6e6da
 title: Agregar servidores o unidades a espacios de almacenamiento directo
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: dongill
+manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 11/06/2017
 description: Cómo agregar servidores o unidades a un clúster de Espacios de almacenamiento directo
 ms.localizationpriority: medium
-ms.openlocfilehash: f5fb9da903bb76de3a075fa7feeeaba468d802c2
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: be79a2d3e0e8c56afc409298518d967c9bc80453
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465629"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859128"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>Agregar servidores o unidades a espacios de almacenamiento directo
 
->Se aplica a: Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server 2019 y Windows Server 2016
 
 En este tema se describe cómo agregar servidores o unidades a espacios de almacenamiento directo.
 
-## <a name="adding-servers"></a>Agregar servidores
+## <a name="adding-servers"></a><a name="adding-servers"></a>Agregar servidores
 
 Mediante la adición de servidores, también conocida como escalado horizontal, se agrega capacidad de almacenamiento y también se puede mejorar el rendimiento, así como mejorar la eficiencia del almacenamiento. Si tu implementación es hiperconvergida, la adición de servidores también proporciona más recursos de proceso para la carga de trabajo.
 
@@ -166,7 +166,7 @@ Si la implementación usa la tolerancia a errores de chasis o bastidor, debes es
 
 3. Agrega el servidor al clúster como se describe en [Agregar servidores](#adding-servers). Cuando el servidor nuevo se une al clúster, se asocia automáticamente (mediante su nombre) al dominio de error del marcador de posición.
 
-## <a name="adding-drives"></a>Agregar unidades
+## <a name="adding-drives"></a><a name="adding-drives"></a>Agregar unidades
 
 Mediante la adición de unidades (también conocida como escalado vertical) se agrega capacidad de almacenamiento y se puede mejorar el rendimiento. Si tienes ranuras disponibles, puedes agregar unidades a cada servidor para expandir la capacidad de almacenamiento sin agregar servidores. Puedes agregar unidades de caché o unidades de capacidad independientemente en cualquier momento.
 
