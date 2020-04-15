@@ -1,24 +1,19 @@
 ---
 title: El usuario no se puede autenticar o debe autenticarse dos veces
 description: Solución de un problema en el que el usuario no se puede autenticar o debe autenticarse dos veces cuando se inicia una conexión a Escritorio remoto.
-audience: itpro
-ms.custom: na
 ms.reviewer: rklemen
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.assetid: ''
 author: kaushika-msft
 manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dbb037e335af52dacbc56c920b1776be995e753
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 8fd7cfda8814347f8bab9dc7b3f7632e3b992ecb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265937"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857238"
 ---
 # <a name="user-cant-authenticate-or-must-authenticate-twice"></a>El usuario no se puede autenticar o debe autenticarse dos veces
 

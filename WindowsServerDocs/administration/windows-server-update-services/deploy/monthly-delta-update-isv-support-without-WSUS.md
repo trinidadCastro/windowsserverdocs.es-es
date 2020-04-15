@@ -2,21 +2,18 @@
 title: Compatibilidad de ISV de actualización Delta mensual sin WSUS
 description: 'Tema de Windows Server Update Services (WSUS): cómo los fabricantes de software independientes (ISV) pueden usar temporalmente la actualización mensual Delta en lugar de la entrega de actualizaciones Express de WSUS para reducir el tamaño de los paquetes'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 author: sakitong
 ms.author: coreyp
 manager: dougkim
 ms.date: 10/16/2017
-ms.openlocfilehash: 4607827d73c34f50f721a2774fa498eb95f9dbb8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3ccddd3bfd55ae340dc5273905bb475e7d2cb98a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361732"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828748"
 ---
 # <a name="monthly-delta-update-isv-support-without-wsus"></a>Compatibilidad de ISV de actualización Delta mensual sin WSUS
 
@@ -39,7 +36,7 @@ La actualización mensual Delta es nueva y es una solución provisional para los
 >[!IMPORTANT]
 >**La actualización Delta está disponible para el servicio de Windows 10, versión 1607 (Actualización de aniversario), versión 1703 (Creators Update) y versión 1709 (Fall Creators Update).** En el caso de versiones posteriores a la 1709, tendrás que implementar una infraestructura de implementación que admita [la entrega de actualizaciones Express](express-update-delivery-ISV-support.md) para seguir aprovechando las actualizaciones incrementales.
 
-Al usar la actualización mensual Delta, los paquetes solo contendrán actualizaciones de un mes. Las actualizaciones mensuales Acumulativas contienen todas las actualizaciones de la versión de actualización, lo que da lugar a un archivo que crece cada mes. Las actualizaciones Delta y mensuales se publican el segundo martes de cada mes, también conocido como "martes de actualización". En la tabla siguiente se comparan las actualizaciones Delta y Acumulativa:
+Al usar la actualización mensual Delta, los paquetes solo contendrán actualizaciones de un mes. Las actualizaciones mensuales Acumulativas contienen todas las actualizaciones de la versión de actualización, lo que da lugar a un archivo que crece cada mes. Las actualizaciones Delta y mensuales se publican el segundo martes de cada mes, también conocido como martes de actualización. En la tabla siguiente se comparan las actualizaciones Delta y Acumulativa:
 
 |                    | Actualización mensual **Delta**                                                                                                                                                                                                       | Actualización mensual **Acumulativa**                                                                                                                                                                                             |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

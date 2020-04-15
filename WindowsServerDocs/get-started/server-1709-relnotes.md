@@ -1,25 +1,21 @@
 ---
 title: 'Notas de la versión: problemas importantes de Windows Server, versión 1709'
 description: Se resumen problemas críticos que requieren soluciones para evitar bloqueos, faltas de respuesta, errores de instalación o pérdida de datos.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 04/23/2018
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: dcd50b287ad0f3dd49a0df3c1fe531379bd4078e
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: fea4b259986d1ca6e2f992168f7b0c2e1a177916
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948237"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826108"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1709"></a>Notas de la versión: Problemas importantes en Windows Server, versión 1709
 
@@ -31,7 +27,7 @@ Este documento se actualiza continuamente. Habida cuenta de que se detectan prob
   
 ## <a name="storage-spaces-direct"></a>Espacios de almacenamiento directos
 [comment]: # (Id.: desconocido; Remitente: stevenek; estado: aprobado)  
-Espacios de almacenamiento directo no se incluye en Windows Server, versión 1709. Si llamas a *Enable-ClusterStorageSpacesDirect* o a su alias *Enable-ClusterS2D* en un servidor que ejecuta Windows Server, versión 1709, recibirás un error con el mensaje "No se admite la operación solicitada".
+Espacios de almacenamiento directo no se incluye en Windows Server, versión 1709. Si llamas a *Enable-ClusterStorageSpacesDirect* o a su alias *Enable-ClusterS2D* en un servidor que ejecuta Windows Server, versión 1709, recibirás un error con el mensaje No se admite la operación solicitada.
 
 Tampoco es compatible para presentar servidores que ejecutan Windows Server, versión 1709 en una implementación de Espacios de almacenamiento directo de Windows Server 2016.
 

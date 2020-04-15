@@ -1,7 +1,6 @@
 ---
 ms.assetid: aa892a85-f95a-4bf1-acbb-e3c36ef02b0d
 title: Novedades en Servicios de federación de Active Directory (AD FS) para Windows Server 2016
-description: ''
 author: billmath
 ms.author: billmath
 manager: daveba
@@ -9,12 +8,12 @@ ms.date: 01/22/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8061f41dab0f02bccd59a659e0bcd209bd73a249
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: e88297bdbd55d2f834f1bff72b6d05bdf356bb85
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517560"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860258"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Novedades de Servicios de federación de Active Directory (AD FS)
 
@@ -72,7 +71,7 @@ Las siguientes mejoras de compatibilidad no forman parte de AD FS 2019:
 Las siguientes actualizaciones de implementación ahora están incluidas en AD FS 2019:
 - **Nivel de comportamiento de la granja 2019**: al igual que con AD FS 2016, se requiere una nueva versión de nivel de comportamiento de granja para habilitar la nueva funcionalidad descrita anteriormente. Esto permite realizar los siguientes cambios:
     - 2012 R2 -> 2019
-    - 2016 -> 2019   
+    - 2016 -> 2019     
 
 ### <a name="saml-updates"></a>Actualizaciones de SAML
 La siguiente actualización de SAML está incluida en AD FS 2019:

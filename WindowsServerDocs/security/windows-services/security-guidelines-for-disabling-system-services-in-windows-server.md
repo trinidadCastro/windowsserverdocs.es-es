@@ -1,21 +1,19 @@
 ---
 title: Directrices de seguridad para los servicios del sistema en Windows Server 2016
 description: Directrices de seguridad para deshabilitar los servicios en Windows Server 2016 con Experiencia de escritorio
-ms.custom: na
 ms.prod: windows-server
 ms.technology: techgroup-security
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 1711eb94b622775feaf02f6bada596fe03b08ea9
-ms.sourcegitcommit: b8e120fc574450e9eee13e7315424137a43e6a6c
+ms.openlocfilehash: f7bb6f73fb2d898c3e5170dda96fef5aea611a88
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74044809"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855058"
 ---
 # <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>Guía para deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio
 
@@ -23,7 +21,7 @@ Se aplica a: Windows Server 2016
 
 El sistema operativo Windows incluye muchos servicios del sistema que proporcionan una funcionalidad importante. Los distintos servicios tienen directivas de inicio diferentes: algunos se inician de manera predeterminada (automáticamente), algunos cuando es necesario (manualmente) y otros están deshabilitados de manera predeterminada y se deben habilitar de forma explícita antes de poder ejecutarse. Estos valores predeterminados se eligieron cuidadosamente para cada servicio a fin de equilibrar el rendimiento, la funcionalidad y la seguridad para los clientes típicos.
 
-Sin embargo, es posible que algunos clientes empresariales prefieran un equilibrio más centrado en la seguridad para sus servidores y PC Windows, uno que disminuya la superficie expuesta a ataques al mínimo absoluto y, por lo tanto, deseen deshabilitar por completo todos los servicios que no son necesarios en sus entornos específicos. Para esos clientes, Microsoft® brinda estas directrices relacionadas con los servicios que se pueden deshabilitar de manera seguridad para este fin.
+Sin embargo, es posible que algunos clientes empresariales prefieran un equilibrio más centrado en la seguridad para sus servidores y PC Windows, uno que disminuya la superficie expuesta a ataques al mínimo absoluto y, por lo tanto, deseen deshabilitar por completo todos los servicios que no son necesarios en sus entornos específicos. Para esos clientes, Microsoft&reg; brinda estas directrices relacionadas con los servicios que se pueden deshabilitar de manera seguridad para este fin.
 
 Las directrices solo se aplican a Windows Server 2016 con Experiencia de escritorio (a menos que se use como un reemplazo del escritorio para los usuarios finales). A partir de Windows Server 2019, estas directrices están configuradas de manera predeterminada. Cada servicio del sistema se clasifica por categorías como se indica a continuación:
 
@@ -364,7 +362,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 | | |           
 |---|---|       
 |   **Descripción del servicio** |   Mantiene una lista actualizada de los equipos en la red y proporciona esta lista a los equipos designados como exploradores. Si se detiene este servicio, esta lista no se actualizará ni mantendrá. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
-|   **Nombre del servicio**    |   Browser
+|   **Nombre del servicio**    |   Explorador
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Deshabilitada
 |   **Recomendación**  |   Ya deshabilitado
@@ -989,7 +987,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 
 
 
-## <a name="ip-helper"></a>Aplicación auxiliar IP            
+## <a name="ip-helper"></a>Asistente de IP            
 
 | | |           
 |---|---|       
@@ -1180,7 +1178,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
 |   **Recomendación**  |   No deshabilitar
-|   **Comentarios**    |   Sin este servicio, las API de administración de almacenamiento presentarán errores. Por ejemplo: "Get-WmiObject -class MSFT_Disk -Namespace Root\Microsoft\Windows\Storage".
+|   **Comentarios**    |   Sin este servicio, las API de administración de almacenamiento presentarán errores. Ejemplo: "Get-WmiObject -class MSFT_Disk -Namespace Root\Microsoft\Windows\Storage".
 |||         
 
 
@@ -1409,12 +1407,12 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 
 
 
-## <a name="power"></a>Alimentación            
+## <a name="power"></a>Potencia            
 
 | | |           
 |---|---|       
 |   **Descripción del servicio** |   Administra la directiva de energía y la entrega de notificaciones de dicha directiva.
-|   **Nombre del servicio**    |   Alimentación
+|   **Nombre del servicio**    |   Potencia
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
 |   **Recomendación**  | Sin instrucciones   
@@ -1423,7 +1421,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 
 
 
-## <a name="print-spooler"></a>Print Spooler            
+## <a name="print-spooler"></a>Administrador de trabajos de impresión            
 
 | | |           
 |---|---|   
@@ -1479,7 +1477,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 
 
 
-##  <a name="quality-windows-audio-video-experience"></a>Windows Audio Video Experience (qWAVE)      
+##  <a name="quality-windows-audio-video-experience"></a>Experiencia de calidad de audio y vídeo de Windows (qWave)      
 
 | | |           
 |---|---|   
@@ -1741,7 +1739,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 |   **Comentarios**    |
 |||
 
-## <a name="server"></a>Servidor           
+## <a name="server"></a>Server (servidor)           
 
 | | |           
 |---|---|   

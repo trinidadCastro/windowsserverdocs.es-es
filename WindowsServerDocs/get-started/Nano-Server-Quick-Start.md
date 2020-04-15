@@ -2,28 +2,26 @@
 title: Inicio rápido de Nano Server
 description: Pasos para implementar rápidamente un Nano Server básico en máquinas virtuales o físicas
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
 ms.date: 09/05/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de589d9da1c7d4fc9eb116e6ea1f6a326d1ad7c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7729b853f2e54c7f99d428fcb821a68d7a22aef0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391722"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826818"
 ---
 # <a name="nano-server-quick-start"></a>Inicio rápido de Nano Server
 
 >Se aplica a: Windows Server 2016
 
 > [!IMPORTANT]
-> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
+> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Consulta [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
 
 Siga los pasos de esta sección para empezar a trabajar rápidamente con una implementación básica de Nano Server usando DHCP para obtener una dirección IP. Puede ejecutar un VHD de Nano Server en una máquina virtual o arrancarlo en un equipo físico; los pasos son ligeramente diferentes.
 
@@ -64,7 +62,7 @@ Siga estos pasos para crear un VHD de Nano Server que se ejecutará en una máqu
   
 5. Arranque la máquina virtual y conéctese a ella en el Administrador de Hyper-V.  
   
-6. Inicie sesión en la Consola de recuperación (vea la sección "Consola de recuperación de Nano Server" en esta guía), con el administrador y la contraseña indicados al ejecutar el script en el paso 3.  
+6. Inicia sesión en la Consola de recuperación (consulta la sección Consola de recuperación de Nano Server en esta guía), con el administrador y la contraseña indicados al ejecutar el script en el paso 3.  
    > [!NOTE]  
    > La Consola de recuperación solo admite funciones básicas de teclado. No se admiten las luces del teclado, las secciones de 10 teclas y el cambio de la distribución del teclado entre Bloq Mayús y Bloq num.
   
@@ -72,7 +70,7 @@ Siga estos pasos para crear un VHD de Nano Server que se ejecutará en una máqu
   
 **Nano Server en un equipo físico**  
   
-También puede crear un VHD que ejecutará Nano Server en un equipo físico, con los controladores de dispositivo instalados previamente. Si el hardware necesita un controlador que no se ha proporcionado ya, con el fin de iniciar una red o conectarse a ella, siga los pasos descritos en la sección "Agregar más controladores" de esta guía.  
+También puede crear un VHD que ejecutará Nano Server en un equipo físico, con los controladores de dispositivo instalados previamente. Si el hardware necesita un controlador que no se ha proporcionado ya, con el fin de iniciar una red o conectarse a ella, sigue los pasos descritos en la sección Agregar más controladores de esta guía.  
   
 ## <a name="to-quickly-deploy-nano-server-on-a-physical-computer"></a>Para implementar Nano Server rápidamente en un equipo físico  
   
@@ -111,7 +109,7 @@ También puede crear un VHD que ejecutará Nano Server en un equipo físico, con
   
 6. Arranque el equipo físico en el VHD de Nano Server.  
   
-7. Inicie sesión en la Consola de recuperación (vea la sección "Consola de recuperación de Nano Server" en esta guía), con el administrador y la contraseña indicados al ejecutar el script en el paso 3.
+7. Inicia sesión en la Consola de recuperación (consulta la sección Consola de recuperación de Nano Server en esta guía), con el administrador y la contraseña indicados al ejecutar el script en el paso 3.
    > [!NOTE]  
    > La Consola de recuperación solo admite funciones básicas de teclado. No se admiten las luces del teclado, las secciones de 10 teclas y el cambio de la distribución del teclado entre Bloq Mayús y Bloq num. 
   

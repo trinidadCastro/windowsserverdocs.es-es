@@ -2,7 +2,6 @@
 title: Planear la implementación de WSUS
 description: 'Tema de Windows Server Update Service (WSUS): información general sobre el proceso de planeamiento de la implementación con vínculos a los temas relacionados'
 ms.prod: windows-server
-ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 35865398-b011-447a-b781-1c52bc0c9e3a
@@ -10,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 8d284c51bfa1e04a38c32adf5dce2b6f5d948b0a
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 68825c6bc4d24bca41c04a238fbf4d6291a6625b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639932"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828198"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planear la implementación de WSUS
 
@@ -218,7 +217,7 @@ Windows Server Update Services (WSUS) usa dos tipos de sistemas de almacenamient
 Las actualizaciones se componen de dos partes: los metadatos que describen la actualización y los archivos necesarios para instalarla. Los metadatos de una actualización normalmente son mucho más pequeños que la actualización en sí y se almacenan en la base de datos de WSUS. Los archivos de una actualización se almacenan en un servidor WSUS local o en un servidor web de Microsoft Update.
 
 ### <a name="wsus-database"></a>Base de datos de WSUS
-WSUS requiere una base de datos para cada servidor WSUS. WSUS admite el uso de una base de datos que resida en otro equipo que no sea el servidor WSUS, con algunas restricciones. Para obtener una lista de las bases de datos admitidas y las limitaciones de bases de datos remotas, consulta la sección "1.1 Revisar consideraciones iniciales y requisitos del sistema" de esta guía.
+WSUS requiere una base de datos para cada servidor WSUS. WSUS admite el uso de una base de datos que resida en otro equipo que no sea el servidor WSUS, con algunas restricciones. Para obtener una lista de las bases de datos admitidas y las limitaciones de bases de datos remotas, consulta la sección 1.1 Revisar consideraciones iniciales y requisitos del sistema de esta guía.
 
 La base de datos WSUS almacena la siguiente información:
 
@@ -436,7 +435,7 @@ De manera predeterminada, los productos que se van actualizar son Windows y Offi
 ### <a name="installation"></a>Instalación
 Las actualizaciones normalmente consisten en nuevas versiones de archivos que ya existen en un equipo que se está actualizando. En un nivel binario, estos archivos existentes podrían no diferir demasiado de las versiones actualizadas. La característica de archivos de instalación rápida identifica el número exacto de bytes entre versiones, crea y distribuye actualizaciones solo para esas diferencias y después combina el archivo existente con los bytes actualizados.
 
-A veces esta característica se denomina "entrega de diferencia" porque descarga únicamente la diferencia (delta) entre dos versiones de un archivo. Los archivos de instalación rápida son más grandes que las actualizaciones que se distribuyen a equipos cliente, porque un archivo de instalación rápida contiene todas las versiones posibles de cada archivo que se va a actualizar.
+A veces esta característica se denomina entrega de diferencia porque descarga únicamente la diferencia (delta) entre dos versiones de un archivo. Los archivos de instalación rápida son más grandes que las actualizaciones que se distribuyen a equipos cliente, porque un archivo de instalación rápida contiene todas las versiones posibles de cada archivo que se va a actualizar.
 
 Puede usar archivos de instalación rápida para limitar el ancho de banda que se consume en la red local, ya que WSUS transmite solo el delta aplicable a una versión determinada de un componente actualizado. Sin embargo, esto requiere ancho de banda adicional entre el servidor WSUS, los servidores WSUS que preceden en la cadena y Microsoft Update, además de espacio adicional en el disco local. De manera predeterminada, WSUS no usa archivos de instalación rápida.
 

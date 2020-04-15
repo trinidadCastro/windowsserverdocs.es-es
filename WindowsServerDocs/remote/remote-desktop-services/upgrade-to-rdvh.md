@@ -1,24 +1,20 @@
 ---
 title: Actualización del host de virtualización de Escritorio remoto a Windows Server 2016
 description: En este artículo se describe cómo actualizar las implementaciones existentes de Servicios de Escritorio remoto a Windows Server 2016.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: spatnaik
 ms.date: 08/01/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5aed8ba7-f541-4416-b01c-4d3b1712e2b1
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 319074987ae161e2b567c15e9e56cce0e2106a1f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7bbf5f6a81a18303d4f9f4b02a1b8dead3c9a53a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403784"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857118"
 ---
 # <a name="upgrading-your-remote-desktop-virtualization-host-to-windows-server-2016"></a>Actualización del host de virtualización de Escritorio remoto a Windows Server 2016
 
@@ -38,7 +34,7 @@ Estos servidores deben actualizarse a la vez. Sigue los pasos indicados a contin
 ## <a name="rd-virtualization-host-servers-in-the-deployment-where-vms-are-stored-in-cluster-shared-volumes-csv"></a>Servidores host de virtualización de Escritorio remoto de la implementación en la que las VM se almacenan localmente en Volúmenes compartidos de clúster (CSV) 
 
 1. Determina una estrategia de actualización donde se actualicen algunos de los servidores RDVH y otros sigan hospedando VM en Windows Server 2012 R2.  
-2. Aísla uno o varios servidores RDVH destinados para la ronda inicial de la actualización mediante la migración de todas las VM a otros servidores RDVH que "aún no se vayan a actualizar" que seguirán formando parte del clúster original 2012 R2.
+2. Aísla uno o varios servidores RDVH destinados para la ronda inicial de la actualización mediante la migración de todas las VM a otros servidores RDVH que aún no se vayan a actualizar que seguirán formando parte del clúster original 2012 R2.
     1. Abre el Administrador de clústeres de conmutación por error. 
     1. Haz clic en **Roles**. 
     1. Selecciona una o varias VM. Haz clic con el botón derecho para abrir el menú contextual. 
@@ -54,7 +50,7 @@ Estos servidores deben actualizarse a la vez. Sigue los pasos indicados a contin
     1. Haz clic en **Roles**. 
     1. Haz clic con el botón derecho en los objetos de la VM y, a continuación, en **Quitar**. 
 10. En uno de los servidores RDVH que no está actualizado, usa el Administrador de Hyper-V para mover todas las VM a uno de los servidores RDVH actualizados y el nuevo clúster de CSV:
-    1. Abre el Administrador Hyper-V. 
+    1. Abra el Administrador de Hyper-V. 
     2. Selecciona uno de los servidores RDVH que no esté actualizado. 
     3. Haz clic con el botón derecho en uno de las VM que quieres mover y, a continuación, haz clic en **Mover**. 
     4. Elige **Mover la máquina virtual** y, a continuación, haz clic en **Siguiente**. 
@@ -67,7 +63,7 @@ Estos servidores deben actualizarse a la vez. Sigue los pasos indicados a contin
        > [!NOTE]
        > Como se mencionó, ya deberías haber creado una nueva subcarpeta de destino antes de este paso. El cuadro de diálogo Seleccionar la carpeta no te permitirá crear una subcarpeta en este paso. 
     
-       Haz clic en **Siguiente** y, después, en **Finalizado**. 
+       Haz clic en **Siguiente**y, después, en **Finalizado**. 
 11. Una vez que se han reubicado las VM, puedes agregarlas como objetos de clúster de **alta disponibilidad**:
      1. Abre el Administrador de clústeres de conmutación por error en un servidor host de virtualización de Escritorio remoto actualizado. 
      1. Haz clic con el botón derecho en el nodo **Roles** y, a continuación, haz clic en **Configurar rol**. En la página **Inicio** del Asistente para alta disponibilidad, haz clic en **Siguiente**. 

@@ -4,19 +4,18 @@ description: Cómo obtener una instalación Server Core e instalarla en Windows 
 ms.prod: windows-server
 ms.date: 05/21/2019
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d22818c-fbb7-487a-bb82-81ef0a3f7ede
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: e6264a59a837003e49e82529750cfb153cc37b92
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13d36c233094511216483f0fb37dc6a004212a50
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360341"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826978"
 ---
 # <a name="install-server-core"></a>Instalación de Server Core
 
@@ -25,17 +24,17 @@ ms.locfileid: "71360341"
 Cuando instalas Windows Server por primera vez, tienes las siguientes opciones de instalación:
 
 >[!NOTE]
-> En la lista siguiente, las ediciones sin la "Experiencia de escritorio" son las opciones de instalación básica.
+> En la lista siguiente, las ediciones sin Experiencia de escritorio son las opciones de instalación de Server Core.
 
--   Windows Server Standard
--   Windows Server Standard con Experiencia de escritorio
--   Windows Server Datacenter
--   Windows Server Datacenter con Experiencia de escritorio
+-    Windows Server Standard
+-    Windows Server Standard con Experiencia de escritorio
+-    Windows Server Datacenter
+-    Windows Server Datacenter con Experiencia de escritorio
 
 Cuando instalas Windows Server (canal semianual), tienes las siguientes opciones de instalación:
 
--   Windows Server Standard 
--   Windows Server Datacenter
+-    Windows Server Standard 
+-    Windows Server Datacenter
 
 La opción de instalación básica reduce el espacio requerido en el disco y la posible superficie expuesta a ataques, de modo que recomendamos elegir la instalación básica, a menos que necesites particularmente los elementos adicionales de la interfaz de usuario y las herramientas de administración de gráficos que se incluyen en la opción de Server con Experiencia de escritorio. Si consideras que necesitas los elementos adicionales de la interfaz de usuario, consulta [Instalación de servidor con Experiencia de escritorio](Getting-Started-with-Server-with-Desktop-Experience.md). 
 
@@ -59,7 +58,7 @@ Con esta opción de instalación básica, no se instala la interfaz de usuario e
 **Ejemplo de roles de servidor disponibles:**
 
 - Servicios de certificados de Active Directory
-- Active Directory Domain Services
+- Servicios de dominio de Active Directory
 - Servidor DHCP
 - Servidor DNS
 - Servicios de archivo (incluido Administrador de recursos del servidor de archivos)

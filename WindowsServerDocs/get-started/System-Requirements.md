@@ -1,25 +1,21 @@
 ---
 title: Requisitos del sistema
 description: ¿Cuáles son los requisitos mínimos para almacenamiento, CPU, red, memoria y RAM en una instalación limpia de cada opción de instalación?
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 10/17/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4a8b42d7-9fe5-4efe-9ea1-ace2131fe068
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e8b0c04137ff3b11cdaa7aba3c7899ca6300848
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: cd4666f9ac0677ce8893041ae4e937cca41e8164
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947742"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826498"
 ---
 # <a name="system-requirements"></a>Requisitos del sistema
 
@@ -31,16 +27,16 @@ En este tema se tratan los requisitos mínimos del sistema para ejecutar Windows
 > En esta versión, se recomiendan las instalaciones limpias.  
 
 > [!NOTE]  
-> Si en el momento de la instalación opta por la opción Server Core, debe tener en cuenta que no se instala ningún componente de la interfaz gráfica de usuario y que no podrá instalarlos o desinstalarlos con el Administrador del servidor. Si necesita características de la interfaz gráfica de usuario, asegúrese de elegir la opción "Servidor con Experiencia de escritorio" al instalar Windows Server 2016. Para obtener más información, consulte [Instalación de Nano Server](Getting-Started-with-Nano-Server.md).  
+> Si en el momento de la instalación opta por la opción Server Core, debe tener en cuenta que no se instala ningún componente de la interfaz gráfica de usuario y que no podrá instalarlos o desinstalarlos con el Administrador del servidor. Si necesitas características de la interfaz gráfica de usuario, asegúrate de elegir la opción Servidor con Experiencia de escritorio al instalar Windows Server 2016. Para obtener más información, consulte [Instalación de Nano Server](Getting-Started-with-Nano-Server.md).  
 
 
 ## <a name="review-system-requirements"></a>Repasar los requisitos del sistema  
-A continuación se incluyen los requisitos del sistema aproximados para Windows Server 2016. Si su equipo no cumple con los requisitos mínimos, no podrá instalar el producto correctamente. Los requisitos reales variarán según la configuración del sistema y las aplicaciones y características que instale.
+A continuación se incluyen los requisitos del sistema aproximados para Windows Server 2016. Si su equipo no cumple los requisitos mínimos, no podrá instalar este producto correctamente. Los requisitos reales variarán según la configuración del sistema y las aplicaciones y características que instale.
 
 A menos que se especifique lo contrario, estos requisitos mínimos del sistema se aplican a todas las opciones de instalación (Server Core, Server con Experiencia de escritorio y Nano Server) y a las ediciones Standard y Datacenter.  
 
 > [!IMPORTANT]  
-> Dado a la gran diversidad de implementaciones posibles, sería irreal que se declararan requisitos del sistema "recomendados" de aplicación general. Consulte la documentación específica de los roles de servidor que intenta implementar para obtener más detalles sobre los recursos que se necesitan para cada uno de ellos. Podrá obtener mejores resultados con implementaciones de prueba que le ayuden a determinar los requisitos del sistema apropiados para sus propios escenarios.  
+> Debido a la gran diversidad de implementaciones posibles, sería irreal que se declararan requisitos del sistema recomendados de aplicación general. Consulte la documentación específica de los roles de servidor que intenta implementar para obtener más detalles sobre los recursos que se necesitan para cada uno de ellos. Podrá obtener mejores resultados con implementaciones de prueba que le ayuden a determinar los requisitos del sistema apropiados para sus propios escenarios.  
 
 
 ## <a name="processor"></a>Procesador  

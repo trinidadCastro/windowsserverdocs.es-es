@@ -8,18 +8,18 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ea5cd954dde6d4fa8fcaa7874f75cb9588115ab1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8ff800fc2a0885cec39ca104607d7207f0bd8ce0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402123"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815608"
 ---
-# <a name="use-robocopy-to-preseed-files-for-dfs-replication"></a>Uso de Robocopy para preinicializar archivos para Replicación DFS
+# <a name="use-robocopy-to-pre-seed-files-for-dfs-replication"></a>Uso de Robocopy para preinicializar archivos para Replicación DFS
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
-En este tema se explica cómo usar la herramienta de línea de comandos **Robocopy.exe** para preinicializar los archivos al configurar la replicación para la replicación del Sistema de archivos distribuido (DFS) (también conocida como DFSR o DFS-R) en Windows Server. Al preinicializar los archivos antes de configurar la Replicación DFS, agregar un nuevo asociado de replicación o reemplazar un servidor, puedes acelerar la sincronización inicial y habilitar la clonación de la base de datos de Replicación DFS en Windows Server 2012 R2. El método Robocopy es uno de varios métodos de preinicialización; para obtener información general, consulta [Paso 1: Preinicializar archivos para Replicación DFS](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495046(v%3dws.11)>).
+En este tema se explica cómo usar la herramienta de línea de comandos **Robocopy.exe** para preinicializar los archivos al configurar la replicación del Sistema de archivos distribuido (DFS) (también conocida como DFSR o DFS-R) en Windows Server. Al preinicializar los archivos antes de configurar la Replicación DFS, agregar un nuevo partner de replicación o reemplazar un servidor, puedes acelerar la sincronización inicial y habilitar la clonación de la base de datos de Replicación DFS en Windows Server 2012 R2. El método Robocopy es uno de varios métodos de preinicialización; para obtener información general, consulta [Paso 1: Preinicializar archivos para Replicación DFS](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495046(v%3dws.11)>).
 
 La utilidad de línea de comandos Robocopy (copia eficaz de archivos) se incluye con Windows Server. La utilidad proporciona amplias opciones que incluyen la seguridad las copias, la compatibilidad con la API de copia de seguridad, funcionalidades de reintento y registro. Las versiones posteriores incluyen compatibilidad con subprocesamiento múltiple y E/S sin almacenamiento en búfer.
 
@@ -85,13 +85,13 @@ Después de minimizar los bloqueos en los archivos que se van a replicar, puedes
 >[!NOTE]
 >Puedes ejecutar Robocopy en el equipo de origen o en el equipo de destino. En el procedimiento siguiente se describe la ejecución de Robocopy en el servidor de destino, que normalmente ejecuta un sistema operativo más reciente, para aprovechar las funcionalidades adicionales de Robocopy que pueda proporcionar el sistema operativo más reciente.
 
-### <a name="preseed-the-replicated-files-onto-the-destination-server-with-robocopy"></a>Preinicialización de los archivos replicados en el servidor de destino con Robocopy
+### <a name="pre-seed-the-replicated-files-onto-the-destination-server-with-robocopy"></a>Preinicialización de los archivos replicados en el servidor de destino con Robocopy
 
 1. Inicia sesión en el servidor de destino con una cuenta que sea miembro del grupo de administradores locales tanto en el servidor de origen como en el de destino.
 
 2. Abra un símbolo del sistema con privilegios elevados.
 
-3. Para preinicializar los archivos del servidor de origen al de destino, ejecuta el siguiente comando, sustituyendo tus propias rutas de acceso de origen, destino y archivo de registro por los valores entre llaves:
+3. Para preinicializar los archivos del servidor de origen al de destino, ejecuta el siguiente comando, sustituyendo los valores entre llaves por tus propias rutas de acceso de los archivos de origen, destino y registro:
     
     ```PowerShell
     robocopy "<source replicated folder path>" "<destination replicated folder path>" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:<log file path> /v
@@ -117,7 +117,7 @@ Después de minimizar los bloqueos en los archivos que se van a replicar, puedes
     Por ejemplo, el siguiente comando replica los archivos de la carpeta replicada de origen, E:\\RF01, en la unidad de datos D del servidor de destino:
     
     ```PowerShell
-    robocopy.exe "\\srv01\e$\rf01" "d:\rf01" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:c:\temp\preseedsrv02.log
+    robocopy.exe "\\srv01\e$\rf01" "d:\rf01" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:c:\temp\pre-seedsrv02.log
     ```
     
     >[!NOTE]

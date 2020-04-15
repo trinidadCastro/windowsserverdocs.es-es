@@ -1,23 +1,19 @@
 ---
 title: 'Notas de la versión: Problemas importantes en Windows Server 2016'
 description: Se resumen problemas críticos que requieren soluciones para evitar bloqueos, faltas de respuesta, errores de instalación o pérdida de datos.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 11/13/2018
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: f4568e1781dbe385d8abe8a96f07841391506738
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 8ceff837c2b85466f5583eed03f39e73f32fd4a4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822168"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826388"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>Notas de la versión: Problemas importantes en Windows Server 2016
 
@@ -29,7 +25,7 @@ Este documento se actualiza continuamente. Habida cuenta de que se detectan prob
 
 ## <a name="express-updates-available-starting-in-november-2018-new"></a>Actualizaciones rápidas disponibles a partir de noviembre de 2018 (NUEVO)
 
-A partir de la actualización del "martes de actualizaciones" de noviembre de 2018, Windows volverá a publicará las [actualizaciones rápidas](express-updates.md) para Windows Server 2016. Si usas WSUS y Configuration Manager, volverás a ver dos paquetes para la actualización de Windows Server 2016: una actualización completa y una rápida. Si quieres usar la actualización rápida para tus entornos de servidor, deberás confirmar que el servidor ha hecho una actualización completa desde noviembre de 2017 (KB 4048953) para garantizar que la actualización rápida se instale correctamente. Si intentas realizar una actualización rápida en un servidor que no se ha actualizado desde la actualización 11B de 2017 (KB 4048953), recibirás varios errores que consumen ancho de banda y recursos de CPU en un bucle infinito. Si te encuentras con este escenario, deja de intentar la actualización rápida y, en su lugar, intenta una actualización completa reciente para detener el bucle de errores.
+A partir de la actualización del martes de actualizaciones de noviembre de 2018, Windows volverá a publicar las [Actualizaciones rápidas](express-updates.md) para Windows Server 2016. Si usas WSUS y Configuration Manager, volverás a ver dos paquetes para la actualización de Windows Server 2016: una actualización completa y una rápida. Si quieres usar la actualización rápida para tus entornos de servidor, deberás confirmar que el servidor ha hecho una actualización completa desde noviembre de 2017 (KB 4048953) para garantizar que la actualización rápida se instale correctamente. Si intentas realizar una actualización rápida en un servidor que no se ha actualizado desde la actualización 11B de 2017 (KB 4048953), recibirás varios errores que consumen ancho de banda y recursos de CPU en un bucle infinito. Si te encuentras con este escenario, deja de intentar la actualización rápida y, en su lugar, intenta una actualización completa reciente para detener el bucle de errores.
 
 ## <a name="server-core-installation-option"></a>Opción de instalación Server Core
 
@@ -42,7 +38,7 @@ Para evitar esta situación, tras el primer inicio, defina el administrador de t
 ## <a name="containers"></a>Contenedores
 
 [comment]: # (ID: 371; Remitente: taylorb; estado: firmado)
-- Antes de que uses los contenedores, instala la [Actualización de la pila de mantenimiento de Windows 10, versión 1607: 23 de agosto de 2016](https://support.microsoft.com/kb/3176936) o cualquier actualización posterior disponible. De lo contrario, puede producirse una serie de problemas, incluidos los errores de compilación, inicio o ejecución de contenedores, y errores similares a "Error de CreateProcess en Win32: El servidor RPC no está disponible".
+- Antes de que uses los contenedores, instala la [Actualización de la pila de mantenimiento de Windows 10, versión 1607: 23 de agosto de 2016](https://support.microsoft.com/kb/3176936) o cualquier actualización posterior disponible. De lo contrario, puede producirse una serie de problemas, incluidos los errores de compilación, inicio o ejecución de contenedores, y errores similares a Error de CreateProcess en Win32: El servidor RPC no está disponible.
 
 [comment]: # (ID: 373; Remitente: plang; estado: firmado)
 - El proveedor de NanoServerPackage OneGet no funciona en los contenedores de Windows. Para solucionar este problema, utilice Find-NanoServerPackage y Save-NanoServerPackage en un equipo diferente (no en un contenedor) para descargar el paquete necesario. Después copie los paquetes en el contenedor e instálelos.
@@ -86,7 +82,7 @@ Algunos sistemas pueden presentar un rendimiento de almacenamiento reducido al e
 
 ## <a name="copyright"></a>Copyright
 
-Este documento se proporciona “tal cual”. La información y las vistas expresadas en este documento, incluidas las direcciones URL y otras referencias a sitios web de Internet, pueden cambiar sin previo aviso.  
+Este documento se proporciona tal cual. La información y las vistas expresadas en este documento, incluidas las direcciones URL y otras referencias a sitios web de Internet, pueden cambiar sin previo aviso.  
 
 Este documento no le proporciona derechos legales sobre ninguna propiedad intelectual en ningún producto de Microsoft. Puede copiar y usar este documento para su referencia interna.  
 

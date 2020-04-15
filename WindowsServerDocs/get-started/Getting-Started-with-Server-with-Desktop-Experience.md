@@ -1,25 +1,21 @@
 ---
 title: Instalación de servidor con Experiencia de escritorio
-description: 'Se explica cómo obtener e instalar un servidor con Experiencia de escritorio '
-ms.custom: na
+description: Se explica cómo obtener e instalar un servidor con Experiencia de escritorio
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 01/18/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5b38b8a0-4dfc-4130-be00-fc58bba99595
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d92ae9e0013d622c1e0a6b8b6a1662dc82360f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18c454d9ef4deb8c9ea681a486e85f356ad5c9cd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391791"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826948"
 ---
 # <a name="install-server-with-desktop-experience"></a>Instalación de servidor con Experiencia de escritorio
 > Se aplica a: Windows Server 2016
@@ -33,7 +29,7 @@ La opción Servidor con Experiencia de escritorio instala la interfaz de usuario
 >
 > A diferencia de algunas versiones anteriores de Windows Server, no se puede convertir entre Server Core y Servidor con Experiencia de escritorio tras la instalación. Si instala Servidor con Experiencia de escritorio y más tarde decides usar Server Core, debes efectuar una instalación nueva.
 
-**Interfaz de usuario:** Interfaz gráfica de usuario estándar (“Shell gráfico de servidor”). El Shell gráfico de servidor incluye el nuevo shell de Windows 10. Las características específicas de Windows instaladas de forma predeterminada con esta opción son User-Interfaces-Infra, Server-GUI-Shell, Server-GUI-Mgmt-Infra, InkAndHandwritingServices, ServerMediaFoundation y Experiencia de escritorio. Aunque estas características aparecen en el Administrador del servidor en esta versión, no se admite su desinstalación y no estarán disponibles en las versiones futuras.
+**Interfaz de usuario:** interfaz gráfica de usuario estándar (Shell gráfico de servidor). El Shell gráfico de servidor incluye el nuevo shell de Windows 10. Las características específicas de Windows instaladas de forma predeterminada con esta opción son User-Interfaces-Infra, Server-GUI-Shell, Server-GUI-Mgmt-Infra, InkAndHandwritingServices, ServerMediaFoundation y Experiencia de escritorio. Aunque estas características aparecen en el Administrador del servidor en esta versión, no se admite su desinstalación y no estarán disponibles en las versiones futuras.
 
 **Instalar, configurar, desinstalar roles de servidor localmente:** con el Administrador del servidor o con Windows PowerShell.
 
@@ -93,19 +89,19 @@ La capacidad de migración varía entre los diferentes roles de servidor. En la 
 
 |Rol de servidor|¿Se puede actualizar desde Windows Server 2012 R2?|¿Se puede actualizar desde Windows Server 2012?|¿Se admite la migración?|¿La migración puede completarse sin tiempo de inactividad?|  
 |-------------------|----------|--------------|--------------|----------|  
-|Servicios de certificados de Active Directory| Sí|    Sí|    Sí|    No|
-|Active Directory Domain Services|  Sí|    Sí|    Sí|    Sí|
-|Servicios de federación de Active Directory (AD FS)|  No| No| Sí|    No (es necesario agregar nuevos nodos a la granja)|
-|Active Directory Lightweight Directory Services|   Sí|    Sí|    Sí|    Sí|
-|Active Directory Rights Management Services|   Sí|    Sí|    Sí|    No|
-|Clúster de conmutación por error|Sí, con el proceso de [Cluster OS Rolling Upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (Actualización gradual de sistema operativo de clúster) que incluye el nodo Pause-Drain, Evict, actualizar a Windows Server 2016 y volver a unir el clúster original. Sí, cuando el servidor se quita del clúster para la actualización y después se agrega a un clúster diferente.|No mientras el servidor forma parte de un clúster. Sí, cuando el servidor se quita del clúster para la actualización y después se agrega a un clúster diferente.  |Sí|No para clústeres de conmutación por error en Windows Server 2012. Sí, para clústeres de conmutación por error de Windows Server 2012 R2 con máquinas virtuales de Hyper-V o clústeres de conmutación por error de Windows Server 2012 R2 que ejecutan el rol de Servidor de archivos de escalabilidad horizontal. Vea [Cluster OS Rolling Upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (Actualización gradual de sistema operativo de clúster).|
-|Servicios de archivos y almacenamiento| Sí|    Sí|    Varía según la subcaracterística|  No|
-|Servicios de impresión y fax|    No| No| Sí (Printbrm.exe)| No|
-|Servicios de Escritorio remoto|   Sí, para todos los subroles, pero no se admite la granja de modo mixto|   Sí, para todos los subroles, pero no se admite la granja de modo mixto|   Sí|    No|
-|Servidor web (IIS)|  Sí|    Sí|    Sí|    No|
-|Experiencia con Windows Server Essentials|  Sí|    N/A: nueva característica|  Sí|    No|
+|Servicios de certificados de Active Directory|    Sí|    Sí|    Sí|    No|
+|Servicios de dominio de Active Directory|    Sí|    Sí|    Sí|    Sí|
+|Servicios de federación de Active Directory (AD FS)|    No|    No|    Sí|    No (es necesario agregar nuevos nodos a la granja)|
+|Active Directory Lightweight Directory Services|    Sí|    Sí|    Sí|    Sí|
+|Active Directory Rights Management Services|    Sí|    Sí|    Sí|    No|
+|Clúster de conmutación por error|Sí, con el proceso de [Cluster OS Rolling Upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (Actualización gradual de sistema operativo de clúster) que incluye el nodo Pause-Drain, Evict, actualizar a Windows Server 2016 y volver a unir el clúster original. Sí, cuando el servidor se quita del clúster para la actualización y después se agrega a un clúster diferente.|No mientras el servidor forma parte de un clúster. Sí, cuando el servidor se quita del clúster para la actualización y después se agrega a un clúster diferente.    |Sí|No para clústeres de conmutación por error en Windows Server 2012. Sí, para clústeres de conmutación por error de Windows Server 2012 R2 con máquinas virtuales de Hyper-V o clústeres de conmutación por error de Windows Server 2012 R2 que ejecutan el rol de Servidor de archivos de escalabilidad horizontal. Vea [Cluster OS Rolling Upgrade](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) (Actualización gradual de sistema operativo de clúster).|
+|Servicios de archivos y almacenamiento|    Sí|    Sí|    Varía según la subcaracterística|    No|
+|Servicios de impresión y fax|    No|    No|    Sí (Printbrm.exe)|    No|
+|Servicios de Escritorio remoto|    Sí, para todos los subroles, pero no se admite la granja de modo mixto|    Sí, para todos los subroles, pero no se admite la granja de modo mixto|    Sí|    No|
+|Servidor web (IIS)|    Sí|    Sí|    Sí|    No|
+|Experiencia con Windows Server Essentials|    Sí|    N/A: nueva característica|    Sí|    No|
 |Windows Server Update Services|    Sí|    Sí|    Sí|    No|
-|Carpetas de trabajo|  Sí|    Sí|    Sí|    Sí, en el clúster de WS 2012 R2, cuando se usa la [Actualización gradual de sistema operativo de clúster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).|
+|Carpetas de trabajo|    Sí|    Sí|    Sí|    Sí, en el clúster de WS 2012 R2, cuando se usa la [Actualización gradual de sistema operativo de clúster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).|
 
 > [!IMPORTANT]  
 > Una vez completada la instalación e inmediatamente después de instalar todos los roles de servidor y las características que necesita, busque e instale las actualizaciones disponibles para Windows Server 2016 mediante Windows Update u otros métodos de actualización.

@@ -1,5 +1,5 @@
 ---
-title: Implementar la redirección de carpetas con Archivos sin conexión
+title: Implementación de la Redirección de carpetas con Redirección de carpetas FilesDeploy sin conexión con Archivos sin conexión
 description: Cómo usar Windows Server para implementar Redirección de carpetas con Archivos sin conexión en equipos cliente de Windows.
 ms.prod: windows-server
 ms.topic: article
@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d8f6bf0df67b76028945403352bd135e6641a5a
-ms.sourcegitcommit: ab3967d71dcbb962079af194875de58e7c32c4e2
+ms.openlocfilehash: e8e6e5a29c75c117f6faa3c1d1b3f288582d81a2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76967418"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855888"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>Implementar la redirección de carpetas con Archivos sin conexión
 
@@ -30,7 +30,7 @@ Para obtener una lista de los cambios recientes de este tema, consulta [Historia
 
 ### <a name="hardware-requirements"></a>Requisitos de hardware
 
-Redirección de carpetas requiere un equipo basado en x64 o en x86; no es compatible con Windows® RT.
+Redirección de carpetas requiere un equipo basado en x64 o en x86; no es compatible con Windows&reg; RT.
 
 ### <a name="software-requirements"></a>Requisitos de software
 
@@ -55,7 +55,7 @@ Si tu entorno aún no está configurado con Redirección de carpetas, el primer 
 Aquí se muestra cómo crear un grupo de seguridad para Redirección de carpetas:
 
 1. Abre el Administrador del servidor en un equipo que tenga instalado el Centro de administración de Active Directory.
-2. En el menú **Herramientas**, selecciona **Centro de administración de Active Directory**. Aparece el Centro de administración de Active Directory.
+2. En el menú **Herramientas**, selecciona **Active Directory Administration Center** (Centro de administración de Active Directory). Aparece el Centro de administración de Active Directory.
 3. Haz clic con el botón derecho en el dominio o la unidad organizativa correspondiente, selecciona **Nuevo** y elige **Grupo**.
 4. En la ventana **Crear grupo** , en la sección **Grupo** , especifique la configuración siguiente:
     - En **Nombre de grupo**, escribe el nombre del grupo de seguridad, como por ejemplo: **Usuarios de Redirección de carpetas**.
@@ -74,7 +74,7 @@ Aquí se muestra cómo crear un recurso compartido de archivos en Windows Serve
 
 1. En el panel de navegación del Administrador del servidor, selecciona **Servicios de archivos y almacenamiento** y, después, elije **Recursos compartidos** para mostrar la página Recursos compartidos.
 2. En el icono **Recursos compartidos**, selecciona **Tareas** y, después, **Nuevo recurso compartido**. Se abrirá el Asistente para nuevo recurso compartido.
-3. En la página **Seleccionar perfil**, selecciona **Recurso compartido SMB - Rápido**. Si tienes instalado el Administrador de recursos del servidor de archivos y usas las propiedades de administración de carpetas, en su lugar selecciona **Recurso compartido SMB - Avanzado**.
+3. En la página **Seleccionar perfil**, selecciona **Recurso compartido SMB – Rápido**. Si tienes instalado el Administrador de recursos del servidor de archivos y usas las propiedades de administración de carpetas, en su lugar selecciona **Recurso compartido SMB - Avanzado**.
 4. En la página **Ubicación del recurso compartido** , selecciona el servidor y el volumen donde quieras crear el recurso compartido.
 5. En la página **Nombre del recurso compartido**, escribe un nombre para el recurso compartido (por ejemplo, **Users$** ) en el cuadro **Nombre del recurso compartido**.
     >[!TIP]
@@ -99,7 +99,7 @@ Aquí se muestra cómo crear un recurso compartido de archivos en Windows Serve
 | System     | Control total        |    Esta carpeta, subcarpetas y archivos     |
 | Administradores     | Control total       | Solo esta carpeta        |
 | Creador/propietario     |   Control total      |   Solo subcarpetas y archivos      |
-| Grupo de seguridad de usuarios que deben colocar datos en recurso compartido (Usuarios de Redirección de carpetas)     |   Mostrar carpeta o leer datos *(permisos avanzados)* <br /><br />Crear carpetas o anexar datos *(permisos avanzados)* <br /><br />Leer atributos *(permisos avanzados)* <br /><br />Leer atributos extendidos *(permisos avanzados)* <br /><br />Permisos de lectura *(permisos avanzados)*      |  Solo esta carpeta       |
+| Grupo de seguridad de usuarios que deben colocar datos en recurso compartido (Usuarios de Redirección de carpetas)     |   Mostrar carpeta o leer datos *(permisos avanzados)* <p>Crear carpetas o anexar datos *(permisos avanzados)* <p>Leer atributos *(permisos avanzados)* <p>Leer atributos extendidos *(permisos avanzados)* <p>Permisos de lectura *(permisos avanzados)*      |  Solo esta carpeta       |
 | Otros grupos y cuentas     |  Ninguno (quitar)       |         |
 
 ## <a name="step-3-create-a-gpo-for-folder-redirection"></a>Paso 3: Crear un GPO para Redirección de carpetas
@@ -200,5 +200,5 @@ En la tabla siguiente se resumen los cambios más importantes realizados en este
 * [Implementar equipos principales para Redirección de carpetas y Perfiles de usuario móvil](deploy-primary-computers.md)
 * [Habilitar la funcionalidad de Archivos sin conexión avanzada](enable-always-offline.md)
 * [Declaración de soporte técnico de Microsoft sobre los datos de perfil de usuario replicados](https://blogs.technet.microsoft.com/askds/2010/09/01/microsofts-support-statement-around-replicated-user-profile-data/)
-* [Transferir localmente aplicaciones con DISM](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
+* [Transferencia local de aplicaciones con DISM](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
 * [Solución de problemas de empaquetado, implementación y consulta de aplicaciones basadas en Windows Runtime](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)

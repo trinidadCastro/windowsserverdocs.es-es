@@ -2,22 +2,19 @@
 title: 'Paso 4: configurar la directiva de grupo para Actualizaciones automáticas'
 description: 'Tema de Windows Server Update Service (WSUS): configurar la directiva de grupo para Actualizaciones automáticas es el cuarto paso en un proceso de cuatro pasos para implementar WSUS'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 62177d05-d832-4ea8-bca4-47a8cd34a19c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8ebe1f82cd6f616d42521729c5efc14821c20fa
-ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
+ms.openlocfilehash: d678c139ae2327eeecdff2731f1edb57d358a28a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78169585"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828848"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>Paso 4: Configurar la directiva de grupo para las actualizaciones automáticas
 
@@ -64,9 +61,9 @@ En esta sección se proporcionan detalles acerca de las siguientes configuracion
 
 -   [Retrasar el reinicio para las instalaciones programadas](#delay-restart-for-scheduled-installations)
 
--   [No ajustar la opción predeterminada a "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar Windows](#do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog)
+-   [No ajustar la opción predeterminada en Instalar actualizaciones y apagar en el cuadro de diálogo Cerrar Windows](#do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog)
 
--   [No mostrar la opción "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar Windows](#do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog)
+-   [No mostrar la opción Instalar actualizaciones y apagar en el cuadro de diálogo Cerrar Windows](#do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog)
 
 -   [Habilitar la orientación de cliente](#enable-client-side-targeting)
 
@@ -97,7 +94,7 @@ Especifica si Actualizaciones automáticas instalará automáticamente las actua
 |Los sistemas operativos Windows que aún están dentro de su [ciclo de vida de soporte técnico de los productos de Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
-> Si la configuración de directiva "Configurar Actualizaciones automáticas" está establecida como **Deshabilitada**, esta directiva no surte efecto.
+> Si la configuración de directiva Configurar Actualizaciones automáticas está establecida en **Deshabilitada**, esta directiva no surte efecto.
 
 |||
 |-|-|
@@ -116,7 +113,7 @@ Especifica si los usuarios que no son administradores recibirán notificaciones 
 |Los sistemas operativos Windows que aún están dentro de su [ciclo de vida de soporte técnico de los productos de Microsoft](https://support.microsoft.com/gp/lifeselect).|Consulta detalles en la tabla siguiente.|
 
 > [!NOTE]
-> Si la configuración de directiva "Configurar Actualizaciones automáticas" está deshabilitada o no está configurada, no surte efecto esta configuración de directiva.
+> Si la configuración de directiva Configurar Actualizaciones automáticas está deshabilitada o no está configurada, esta configuración de directiva no surte efecto.
 
 > [!IMPORTANT]
 > A partir de Windows 8 y Windows RT, esta configuración de directiva está habilitada de forma predeterminada. En todas las versiones anteriores de Windows, está deshabilitada de forma predeterminada.
@@ -125,7 +122,7 @@ Especifica si los usuarios que no son administradores recibirán notificaciones 
 |-|-|
 |**Estado de configuración de la directiva**|**Comportamiento**|
 |**No configurado**|Especifica que los usuarios verán siempre una ventana de control de cuentas y requieren permisos elevados para realizar estas tareas. Un administrador local puede cambiar esta configuración mediante el Editor de directivas de grupo local.|
-|**Habilitado**|Especifica que las actualizaciones automáticas de Windows y Microsoft Update incluirán a los usuarios que no son administradores al determinar qué usuario con sesión iniciada recibirá notificaciones de actualización. Los usuarios que no son administradores podrán instalar todo el contenido de actualización opcional, recomendado e IMPORTANTE para el que recibieron una notificación. Los usuarios no verán una ventana de control de cuentas de usuario y no necesitan permisos elevados para instalar estas actualizaciones, excepto en el caso de las actualizaciones que contengan la interfaz de usuario, el contrato de licencia para el usuario final o los cambios de configuración de Windows Update.<br /><br />Hay dos situaciones en las que el efecto de esta configuración depende del equipo operativo:<br /><br />1.  **Ocultar** o **Restaurar** actualizaciones<br />2.  **Cancelar** una instalación de actualización<br /><br />En Windows Vista o Windows XP, si esta configuración de directiva está habilitada, los usuarios no verán una ventana de control de cuentas de usuario y no necesitan permisos elevados para ocultar, restaurar ni cancelar actualizaciones.<br /><br />En Windows Vista, si esta configuración de directiva está habilitada, los usuarios no verán una ventana de control de cuentas de usuario y no necesitan permisos elevados para ocultar, restaurar ni cancelar actualizaciones. Si esta configuración de directiva está habilitada, los usuarios no verán una ventana de control de cuentas y necesitan permisos elevados para ocultar, restaurar o cancelar actualizaciones.<br /><br />En Windows 7, esta configuración de directiva no tiene ningún efecto. Los usuarios verán siempre una ventana de control de cuentas y necesitan permisos elevados para realizar estas tareas.<br /><br />En Windows 8 y Windows RT, esta configuración de directiva no tiene ningún efecto.|
+|**Habilitado**|Especifica que las actualizaciones automáticas de Windows y Microsoft Update incluirán a los usuarios que no son administradores al determinar qué usuario con sesión iniciada recibirá notificaciones de actualización. Los usuarios que no son administradores podrán instalar todo el contenido de actualización opcional, recomendado e IMPORTANTE para el que recibieron una notificación. Los usuarios no verán una ventana de control de cuentas de usuario y no necesitan permisos elevados para instalar estas actualizaciones, excepto en el caso de las actualizaciones que contengan la interfaz de usuario, el contrato de licencia para el usuario final o los cambios de configuración de Windows Update.<p>Hay dos situaciones en las que el efecto de esta configuración depende del equipo operativo:<p>1.  **Ocultar** o **Restaurar** actualizaciones<br />2.  **Cancelar** una instalación de actualización<p>En Windows Vista o Windows XP, si esta configuración de directiva está habilitada, los usuarios no verán una ventana de control de cuentas de usuario y no necesitan permisos elevados para ocultar, restaurar ni cancelar actualizaciones.<p>En Windows Vista, si esta configuración de directiva está habilitada, los usuarios no verán una ventana de control de cuentas de usuario y no necesitan permisos elevados para ocultar, restaurar ni cancelar actualizaciones. Si esta configuración de directiva está habilitada, los usuarios no verán una ventana de control de cuentas y necesitan permisos elevados para ocultar, restaurar o cancelar actualizaciones.<p>En Windows 7, esta configuración de directiva no tiene ningún efecto. Los usuarios verán siempre una ventana de control de cuentas y necesitan permisos elevados para realizar estas tareas.<p>En Windows 8 y Windows RT, esta configuración de directiva no tiene ningún efecto.|
 |**Deshabilitado**|Especifica que solo los administradores que han iniciado sesión reciben notificaciones de actualización. **Nota:** En Windows 8 y Windows RT, esta configuración de directiva está habilitada de forma predeterminada. En todas las versiones anteriores de Windows, está deshabilitada de forma predeterminada.|
 
 **Opciones:** No hay opciones para esta configuración.
@@ -149,7 +146,7 @@ Especifica si Actualizaciones automáticas acepta actualizaciones que están fir
 |-|-|
 |**Estado de configuración de la directiva**|**Comportamiento**|
 |**No configurado**|Especifica que las actualizaciones de la ubicación del servicio Microsoft Update en la intranet deben estar firmadas por Microsoft.|
-|**Habilitado**|Especifica que Actualizaciones automáticas acepta las actualizaciones recibidas a través de una ubicación del servicio Microsoft Update en la intranet si están firmadas por un certificado que se encuentra en el almacén de certificados "Editores de confianza" del equipo local.|
+|**Habilitado**|Especifica que Actualizaciones automáticas acepta las actualizaciones recibidas a través de una ubicación del servicio Microsoft Update en la intranet si están firmadas por un certificado que se encuentra en el almacén de certificados Editores de confianza del equipo local.|
 |**Deshabilitado**|Especifica que las actualizaciones de la ubicación del servicio Microsoft Update en la intranet deben estar firmadas por Microsoft.|
 
 **Opciones:** No hay opciones para esta configuración.
@@ -162,13 +159,13 @@ Especifica si un temporizador de reinicio siempre se iniciará inmediatamente de
 |Los sistemas operativos Windows que aún están dentro de su [ciclo de vida de soporte técnico de los productos de Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
-> Si está habilitada la directiva "No reiniciar automáticamente para instalar actualizaciones automáticas programadas con usuarios que hayan iniciado sesión", esta directiva no tiene efecto.
+> Si está habilitada la configuración de directiva No reiniciar automáticamente para instalar actualizaciones automáticas programadas con usuarios que hayan iniciado sesión, esta directiva no tiene efecto.
 
 |||
 |-|-|
 |**Estado de configuración de la directiva**|**Comportamiento**|
 |**No configurado**|Especifica que Windows Update no modificará el comportamiento de reinicio del equipo.|
-|**Habilitado**|Especifica que un temporizador de reinicio siempre se iniciará inmediatamente después de que Windows Update instale actualizaciones IMPORTANTES, en lugar de notificar primero a los usuarios de la pantalla de inicio de sesión durante al menos dos días.<br /><br />El temporizador de reinicio puede configurarse para que se inicie con cualquier valor entre 15 y 180 minutos. Cuando se agote el tiempo de espera del temporizador, el reinicio continuará incluso si el equipo tiene usuarios que han iniciado sesión.|
+|**Habilitado**|Especifica que un temporizador de reinicio siempre se iniciará inmediatamente después de que Windows Update instale actualizaciones IMPORTANTES, en lugar de notificar primero a los usuarios de la pantalla de inicio de sesión durante al menos dos días.<p>El temporizador de reinicio puede configurarse para que se inicie con cualquier valor entre 15 y 180 minutos. Cuando se agote el tiempo de espera del temporizador, el reinicio continuará incluso si el equipo tiene usuarios que han iniciado sesión.|
 |**Deshabilitado**|Especifica que Windows Update no modificará el comportamiento de reinicio del equipo.|
 
 **Opciones:** si esta opción está habilitada, puedes especificar la cantidad de tiempo que transcurrirá después de la instalación de las actualizaciones antes de que se produzca un reinicio forzado del equipo.
@@ -181,9 +178,9 @@ Especifica las horas que tardará Windows en determinar cuánto tiempo debe espe
 |Los sistemas operativos Windows que aún están dentro de su [ciclo de vida de soporte técnico de los productos de Microsoft](https://support.microsoft.com/gp/lifeselect).|Windows RT|
 
 > [!NOTE]
-> La configuración de "Especificar ubicación del servicio Microsoft Update en la intranet" debe estar habilitada para que esta directiva tenga efecto.
+> La configuración de Especificar ubicación del servicio Microsoft Update en la intranet debe estar habilitada para que esta directiva tenga efecto.
 >
-> Si la configuración de directiva "Configurar Actualizaciones automáticas" está deshabilitada, esta directiva no surte efecto.
+> Si la configuración de directiva Configurar Actualizaciones automáticas está deshabilitada, esta directiva no surte efecto.
 
 > [!NOTE]
 > Esta directiva no se admite en Windows RT. La habilitación de esta directiva no tendrá ningún efecto en los equipos que ejecutan Windows RT.
@@ -212,7 +209,7 @@ Para usar esta configuración, selecciona **Habilitada** y, después, en **Opcio
 |-|-|
 |**Estado de configuración de la directiva**|**Comportamiento**|
 |**No configurado**|Especifica que el uso de actualizaciones automáticas no se especifica en el nivel de directiva de grupo. Sin embargo, un administrador del equipo puede seguir configurando las actualizaciones automáticas en el panel de control.|
-|**Habilitado**|Especifica que Windows reconoce cuando el equipo está en línea y utiliza su conexión a Internet para buscar las actualizaciones disponibles en Windows Update.<br /><br />Cuando está habilitada, los administradores locales podrán usar el panel de control de Windows Update para seleccionar una opción de configuración. Sin embargo, los administradores locales no podrán deshabilitar la configuración de las actualizaciones automáticas.<br /><br />-   **2 - Notificar descarga y notificar instalación**<br />    Cuando Windows Update encuentra actualizaciones que se aplican al equipo, se notificará a los usuarios que las actualizaciones están listas para su descarga. Los usuarios pueden ejecutar Windows Update para descargar e instalar las actualizaciones disponibles.<br />-   **3 - Descargar automáticamente y notificar instalación** (configuración predeterminada)<br />    Windows Update encuentra las actualizaciones aplicables y las descarga en segundo plano. No se notifica al usuario ni se le interrumpe durante el proceso. Cuando se completen las descargas, se notificará a los usuarios que están listas para instalarse. A continuación, los usuarios pueden ejecutar Windows Update para instalar las actualizaciones descargadas.<br />-   **4 - Descargar automáticamente y programar la instalación**<br />    Puedes especificar la programación mediante las opciones de este directiva de grupo configuración. Si no se especifica ninguna programación, la programación predeterminada de todas las instalaciones será todos los días a las 3:00 a. m. Si alguna actualización requiere un reinicio para completar la instalación, Windows reiniciará el equipo automáticamente. (Si un usuario ha iniciado sesión en el equipo cuando Windows está listo para reiniciarse, se le notificará al usuario y se le dará la opción de retrasar el reinicio). **Nota:** A partir de Windows 8, puedes establecer las actualizaciones que se instalarán durante el mantenimiento automático en lugar de usar una programación específica vinculada a Windows Update. El mantenimiento automático instalará las actualizaciones cuando el equipo no esté en uso y evitará la instalación de actualizaciones cuando el equipo esté funcionando con batería. Si el mantenimiento automático no puede instalar actualizaciones en el plazo de unos días, Windows Update instalará las actualizaciones inmediatamente. A continuación, se notificará a los usuarios acerca de un reinicio pendiente. Un reinicio pendiente solo tendrá lugar si no hay ninguna posibilidad de pérdida accidental de datos.    Las opciones de programación se pueden especificar en la configuración del programador de mantenimiento de GPME, que se encuentran en la ruta de acceso, *PolicyName* > **Configuración del equipo** > **Directivas** > **Plantillas administrativas** > **Componentes de Windows** > **Programador de mantenimiento** > **Límite de activación del Mantenimiento automático**. Consulta la sección de esta referencia titulada: [Configuración del programador de mantenimiento](#computer-configuration--maintenance-scheduler-policy-settings) para establecer los detalles.    **5 - Permitir que el administrador local elija la opción**<br />Especifica si los administradores locales pueden usar el panel de control de Actualizaciones automáticas para seleccionar una opción de configuración de su elección, por ejemplo, si los administradores locales pueden elegir una hora de instalación programada.<br />    Los administradores locales no podrán deshabilitar la configuración de las actualizaciones automáticas.|
+|**Habilitado**|Especifica que Windows reconoce cuando el equipo está en línea y utiliza su conexión a Internet para buscar las actualizaciones disponibles en Windows Update.<p>Cuando está habilitada, los administradores locales podrán usar el panel de control de Windows Update para seleccionar una opción de configuración. Sin embargo, los administradores locales no podrán deshabilitar la configuración de las actualizaciones automáticas.<p>-   **2 - Notificar descarga y notificar instalación**<br />    Cuando Windows Update encuentra actualizaciones que se aplican al equipo, se notificará a los usuarios que las actualizaciones están listas para su descarga. Los usuarios pueden ejecutar Windows Update para descargar e instalar las actualizaciones disponibles.<br />-   **3 - Descargar automáticamente y notificar instalación** (configuración predeterminada)<br />    Windows Update encuentra las actualizaciones aplicables y las descarga en segundo plano. No se notifica al usuario ni se le interrumpe durante el proceso. Cuando se completen las descargas, se notificará a los usuarios que están listas para instalarse. A continuación, los usuarios pueden ejecutar Windows Update para instalar las actualizaciones descargadas.<br />-   **4 - Descargar automáticamente y programar la instalación**<br />    Puedes especificar la programación mediante las opciones de este directiva de grupo configuración. Si no se especifica ninguna programación, la programación predeterminada de todas las instalaciones será todos los días a las 3:00 a. m. Si alguna actualización requiere un reinicio para completar la instalación, Windows reiniciará el equipo automáticamente. (Si un usuario ha iniciado sesión en el equipo cuando Windows está listo para reiniciarse, se le notificará al usuario y se le dará la opción de retrasar el reinicio). **Nota:** A partir de Windows 8, puedes establecer las actualizaciones que se instalarán durante el mantenimiento automático en lugar de usar una programación específica vinculada a Windows Update. El mantenimiento automático instalará las actualizaciones cuando el equipo no esté en uso y evitará la instalación de actualizaciones cuando el equipo esté funcionando con batería. Si el mantenimiento automático no puede instalar actualizaciones en el plazo de unos días, Windows Update instalará las actualizaciones inmediatamente. A continuación, se notificará a los usuarios acerca de un reinicio pendiente. Un reinicio pendiente solo tendrá lugar si no hay ninguna posibilidad de pérdida accidental de datos.    Las opciones de programación se pueden especificar en la configuración del programador de mantenimiento de GPME, que se encuentran en la ruta de acceso, *PolicyName* > **Configuración del equipo** > **Directivas** > **Plantillas administrativas** > **Componentes de Windows** > **Programador de mantenimiento** > **Límite de activación del Mantenimiento automático**. Consulta la sección de esta referencia titulada: [Configuración del programador de mantenimiento](#computer-configuration--maintenance-scheduler-policy-settings) para establecer los detalles.    **5 - Permitir que el administrador local elija la opción**<br />Especifica si los administradores locales pueden usar el panel de control de Actualizaciones automáticas para seleccionar una opción de configuración de su elección, por ejemplo, si los administradores locales pueden elegir una hora de instalación programada.<br />    Los administradores locales no podrán deshabilitar la configuración de las actualizaciones automáticas.|
 |**Deshabilitado**|Especifica que las actualizaciones de cliente que están disponibles desde el servicio Windows Update público deben descargarse manualmente desde Internet e instalarse.|
 
 #### <a name="delay-restart-for-scheduled-installations"></a>Retrasar el reinicio para las instalaciones programadas
@@ -223,7 +220,7 @@ Especifica la cantidad de tiempo que Actualizaciones automáticas esperará ante
 |Los sistemas operativos Windows que aún están dentro de su [ciclo de vida de soporte técnico de los productos de Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
-> Esta directiva solo es válida cuando Actualizaciones automáticas se configura para realizar instalaciones de actualizaciones programadas. Si la configuración de directiva "Configurar Actualizaciones automáticas" está deshabilitada, esta directiva no surte efecto.
+> Esta directiva solo es válida cuando Actualizaciones automáticas se configura para realizar instalaciones de actualizaciones programadas. Si la configuración de directiva Configurar Actualizaciones automáticas está deshabilitada, esta directiva no surte efecto.
 
 |||
 |-|-|
@@ -242,7 +239,7 @@ Esta configuración de directiva te permite especificar si se permite la opción
 |Los sistemas operativos Windows que aún están dentro de su [ciclo de vida de soporte técnico de los productos de Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
-> Esta configuración de Directiva no tiene ningún efecto si la configuración de directiva *PolicyName* > **Configuración del equipo** > **Directivas** > **Plantillas administrativas** > **Componentes de Windows** > **Windows Update** > **No mostrar la opción "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar Windows** está habilitada.
+> Esta configuración de directiva no tiene ningún efecto si la configuración de directiva *PolicyName* > **Configuración del equipo** > **Directivas** > **Plantillas administrativas** > **Componentes de Windows** > **Windows Update** > **No mostrar la opción Instalar actualizaciones y apagar en el cuadro de diálogo Cerrar Windows** está habilitada.
 
 |||
 |-|-|
@@ -263,7 +260,7 @@ Habilitar esta directiva deshabilitará la funcionalidad para recuperar periódi
 |A partir de Windows Server 2012 R2, Windows 8.1 o Windows RT 8.1, los sistemas operativos Windows que aún están dentro de su [ciclo de vida de soporte técnico de los productos de Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
-> Esta directiva solo se aplica cuando el equipo está configurado para conectarse a un servicio de actualización de intranet mediante la configuración de directiva "Especificar la ubicación del servicio Microsoft Update en la intranet".
+> Esta directiva solo se aplica cuando el equipo está configurado para conectarse a un servicio de actualización de intranet mediante la configuración de directiva Especificar la ubicación del servicio Microsoft Update en la intranet.
 
 |||
 |-|-|
@@ -298,7 +295,7 @@ Especifica el nombre o los nombres de grupo de destino que están configurados e
 |Los sistemas operativos Windows que aún están dentro de su [ciclo de vida de soporte técnico de los productos de Microsoft](https://support.microsoft.com/gp/lifeselect).|Windows RT|
 
 > [!NOTE]
-> Esta directiva solo se aplica cuando este equipo está configurado para admitir los nombres de grupo de destino especificados en WSUS. Si el nombre del grupo de destino no existe en WSUS, se omitirá hasta que se cree. Si la configuración de directiva "Especificar la ubicación del servicio Microsoft Update de la intranet" está deshabilitada o no configurada, esta directiva no tiene efecto.
+> Esta directiva solo se aplica cuando este equipo está configurado para admitir los nombres de grupo de destino especificados en WSUS. Si el nombre del grupo de destino no existe en WSUS, se omitirá hasta que se cree. Si la configuración de directiva Especificar la ubicación del servicio Microsoft Update en la intranet está deshabilitada o no configurada, esta directiva no tiene efecto.
 
 > [!NOTE]
 > Esta directiva no se admite en Windows RT. La habilitación de esta directiva no tendrá ningún efecto en los equipos que ejecutan Windows RT.
@@ -340,7 +337,7 @@ Especifica que para completar una instalación programada, Actualizaciones autom
 |Los sistemas operativos Windows que aún están dentro de su [ciclo de vida de soporte técnico de los productos de Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
-> Esta directiva solo es válida cuando Actualizaciones automáticas se configura para realizar instalaciones de actualizaciones programadas. Si la configuración de directiva "Configurar Actualizaciones automáticas" está deshabilitada, esta directiva no surte efecto.
+> Esta directiva solo es válida cuando Actualizaciones automáticas se configura para realizar instalaciones de actualizaciones programadas. Si la configuración de directiva Configurar Actualizaciones automáticas está deshabilitada, esta directiva no surte efecto.
 
 |||
 |-|-|
@@ -359,7 +356,7 @@ Especifica la cantidad de tiempo que Actualizaciones automáticas esperará ante
 |Los sistemas operativos Windows que aún están dentro de su [ciclo de vida de soporte técnico de los productos de Microsoft](https://support.microsoft.com/gp/lifeselect).|Windows RT|
 
 > [!IMPORTANT]
-> Esta directiva solo es válida cuando Actualizaciones automáticas se configura para realizar instalaciones de actualizaciones programadas. Si la configuración de directiva "Configurar Actualizaciones automáticas" está deshabilitada, esta directiva no surte efecto.
+> Esta directiva solo es válida cuando Actualizaciones automáticas se configura para realizar instalaciones de actualizaciones programadas. Si la configuración de directiva Configurar Actualizaciones automáticas está deshabilitada, esta directiva no surte efecto.
 
 > [!NOTE]
 > Esta directiva no tiene efecto en los equipos que ejecutan Windows RT.
@@ -383,7 +380,7 @@ Si el estado se establece en **No configurado**, se realizará una instalación 
 |Los sistemas operativos Windows que aún están dentro de su [ciclo de vida de soporte técnico de los productos de Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
-> Esta directiva solo es válida cuando Actualizaciones automáticas se configura para realizar instalaciones de actualizaciones programadas. Si la configuración de directiva "Configurar Actualizaciones automáticas" está deshabilitada, esta directiva no surte efecto.
+> Esta directiva solo es válida cuando Actualizaciones automáticas se configura para realizar instalaciones de actualizaciones programadas. Si la configuración de directiva Configurar Actualizaciones automáticas está deshabilitada, esta directiva no surte efecto.
 
 |||
 |-|-|
@@ -406,7 +403,7 @@ Esta opción permite especificar un servidor WSUS en la red para que funcione co
 Para usar esta opción, debes establecer dos valores de nombre de servidor: el servidor desde el que el cliente detecta y descarga las actualizaciones y el servidor para que las estaciones de trabajo actualizados cargan estadísticas. Los valores no deben ser diferentes si ambos servicios están configurados en el mismo servidor.
 
 > [!NOTE]
-> Si la configuración de directiva "Configurar Actualizaciones automáticas" está deshabilitada, esta directiva no surte efecto.
+> Si la configuración de directiva Configurar Actualizaciones automáticas está deshabilitada, esta directiva no surte efecto.
 
 > [!NOTE]
 > Esta directiva no se admite en Windows RT. La habilitación de esta directiva no tendrá ningún efecto en los equipos que ejecutan Windows RT.
@@ -445,9 +442,9 @@ Especifica si Actualizaciones automáticas proporcionará las actualizaciones IM
 #### <a name="turn-on-software-notifications"></a>Activar notificaciones de software
 Esta configuración de directiva te permite controlar si los usuarios verán mensajes de notificación mejorados y detallado del servicio Microsoft Update acerca de software destacado. Los mensajes de notificación mejorados destacan el valor y promueven la instalación y el uso de software opcional. Esta configuración de directiva está destinada a usarse en entornos poco administrados en los que se permite que el usuario final tenga acceso al servicio Microsoft Update.
 
-Si no usas el servicio Microsoft Update, la configuración de directiva "Notificaciones de software" no surte efecto.
+Si no usas el servicio Microsoft Update, la configuración de directiva Notificaciones de software no surte efecto.
 
-Si la configuración de directiva "Configurar Actualizaciones automáticas" está deshabilitada o no está configurada, no surte efecto la configuración de directiva "Notificaciones de software" no surte efecto.
+Si la configuración de directiva Configurar Actualizaciones automáticas está deshabilitada o no está configurada, la configuración de directiva Notificaciones de software no surte efecto.
 
 |Compatible en:|Excepto:|
 |---------|-------|
@@ -460,13 +457,13 @@ Si la configuración de directiva "Configurar Actualizaciones automáticas" est�
 |-|-|
 |**Estado de configuración de la directiva**|**Comportamiento**|
 |**No configurado**|No se ofrecen mensajes para aplicaciones opcionales a los usuarios de equipos que ejecutan Windows 7. No se ofrecen mensajes para aplicaciones ni para actualizaciones opcionales a los usuarios de equipos que ejecutan Windows Vista. Un administrador local puede cambiar esta configuración mediante el Panel de control o una directiva local.|
-|**Habilitado**|Si habilitas esta configuración de directiva, cuando haya software destacado disponible, aparecerá un mensaje de notificación en el equipo del usuario. El usuario puede hacer clic en la notificación para abrir Windows Update y obtener más información acerca del software o su instalación. El usuario también puede hacer clic en **Cerrar este mensaje** o **Mostrármelas más tarde** para aplazar la notificación según convenga.<br /><br />En Windows 7, esta configuración de directiva controlará las notificaciones detalladas solo para aplicaciones opcionales. En Windows Vista, esta configuración de directiva controlará las notificaciones detalladas solo para aplicaciones y actualizaciones opcionales.|
+|**Habilitado**|Si habilitas esta configuración de directiva, cuando haya software destacado disponible, aparecerá un mensaje de notificación en el equipo del usuario. El usuario puede hacer clic en la notificación para abrir Windows Update y obtener más información acerca del software o su instalación. El usuario también puede hacer clic en **Cerrar este mensaje** o **Mostrármelas más tarde** para aplazar la notificación según convenga.<p>En Windows 7, esta configuración de directiva controlará las notificaciones detalladas solo para aplicaciones opcionales. En Windows Vista, esta configuración de directiva controlará las notificaciones detalladas solo para aplicaciones y actualizaciones opcionales.|
 |**Deshabilitado**|Especifica que los usuarios que ejecutan Windows 7 no recibirán mensajes de notificación detallados para aplicaciones opcionales y los usuarios que ejecutan Windows Vista no recibirán mensajes de notificación detallados para aplicaciones ni para actualizaciones opcionales.|
 
 **Opciones:** No hay opciones para esta configuración.
 
 ### <a name="computer-configuration--maintenance-scheduler-policy-settings"></a>Configuración del equipo > Configuración de la directiva del programador de mantenimiento
-En la opción Configurar Actualizaciones automáticas, seleccionaste la opción **4 - Descargar automáticamente y programar la instalación**. Puedes especificar la configuración del programador de mantenimiento en la GPMC para los equipos que ejecutan Windows 8 y Windows RT. Si no seleccionaste la opción 4 en el valor "Configurar Actualizaciones automáticas", no es necesario configurar estas opciones para las actualizaciones automáticas. La configuración del programador de mantenimiento se encuentra en la ruta de acceso: *PolicyName* > **Configuración del equipo** > **Directivas** > **Plantillas administrativas** > **Componentes de Windows** > **Programador de mantenimiento**. La extensión del programador de mantenimiento de la directiva de grupo contiene las siguientes opciones:
+En la opción Configurar Actualizaciones automáticas, seleccionaste la opción **4 - Descargar automáticamente y programar la instalación**. Puedes especificar la configuración del programador de mantenimiento en la GPMC para los equipos que ejecutan Windows 8 y Windows RT. Si no seleccionaste la opción 4 en el valor Configurar Actualizaciones automáticas, no es necesario configurar estas opciones para las actualizaciones automáticas. La configuración del programador de mantenimiento se encuentra en la ruta de acceso: *PolicyName* > **Configuración del equipo** > **Directivas** > **Plantillas administrativas** > **Componentes de Windows** > **Programador de mantenimiento**. La extensión del programador de mantenimiento de la directiva de grupo contiene las siguientes opciones:
 
 -   [Límite de activación del Mantenimiento automático](#automatic-maintenance-activation-boundary)
 
@@ -475,7 +472,7 @@ En la opción Configurar Actualizaciones automáticas, seleccionaste la opción 
 -   [Directiva de activación automática](#automatic-wakeup-policy)
 
 #### <a name="automatic-maintenance-activation-boundary"></a>Límite de activación del Mantenimiento automático
-Esta directiva te permite configurar la opción "Límite de activación del Mantenimiento automático".
+Esta directiva te permite configurar la opción Límite de activación del Mantenimiento automático.
 
 El límite de activación de mantenimiento es la hora programada diaria a la que se inicia el mantenimiento automático.
 
@@ -539,9 +536,9 @@ La directiva de reactivación de mantenimiento especifica si Mantenimiento autom
 ### <a name="user-configuration--windows-update-policy-settings"></a>Configuración de usuario > Configuración de la directiva de Windows Update
 En esta sección se proporcionan detalles acerca de las siguientes configuraciones de directiva basadas en el usuario:
 
--   [No mostrar la opción "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar Windows](#do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog)
+-   [No mostrar la opción Instalar actualizaciones y apagar en el cuadro de diálogo Cerrar Windows](#do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog)
 
--   [No ajustar la opción predeterminada a "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar Windows](#do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog)
+-   [No ajustar la opción predeterminada en Instalar actualizaciones y apagar en el cuadro de diálogo Cerrar Windows](#do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog)
 
 -   [Desactivar el acceso al uso de todas las características de Windows Update](#remove-access-to-use-all-windows-update-features)
 
@@ -569,7 +566,7 @@ Especifica si la opción **Instalar actualizaciones y apagar** se muestra en el 
 
 **Opciones:** No hay opciones para esta configuración.
 
-#### <a name="do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog-box"></a>No ajustar la opción predeterminada a "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar Windows
+#### <a name="do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog-box"></a>No ajustar la opción predeterminada en Instalar actualizaciones y apagar en el cuadro de diálogo Cerrar Windows
 Especifica si la opción **Instalar actualizaciones y apagar** se permite como opción predeterminada en el cuadro de diálogo **Cerrar Windows**.
 
 |Compatible en:|Excepto:|
@@ -577,7 +574,7 @@ Especifica si la opción **Instalar actualizaciones y apagar** se permite como o
 |Los sistemas operativos Windows que aún están dentro de su [ciclo de vida de soporte técnico de los productos de Microsoft](https://support.microsoft.com/gp/lifeselect).|nulo|
 
 > [!NOTE]
-> Esta configuración de Directiva no tiene ningún efecto si la configuración de directiva *PolicyName* > **Configuración de usuario** > **Directivas** > **Plantillas administrativas** > **Componentes de Windows** > **Windows Update** > **No mostrar la opción "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar Windows** está habilitada.
+> Esta configuración de directiva no tiene ningún efecto si la opción *PolicyName* > **Configuración de usuario** > **Directivas** > **Plantillas administrativas** > **Componentes de Windows** > **Windows Update** > **No mostrar la opción Instalar actualizaciones y apagar en el cuadro de diálogo Cerrar Windows** está habilitada.
 
 |||
 |-|-|
@@ -599,7 +596,7 @@ Esta configuración te permite quitar el acceso de cliente de WSUS a Windows Up
 |-|-|
 |**Estado de configuración de la directiva**|**Comportamiento**|
 |**No configurado**|Los usuarios pueden conectarse al sitio web de Windows Update.|
-|**Habilitado**|**IMPORTANTE:** si se habilita, se quitarán todas las características de Windows Update. Esto incluye bloquear el acceso al sitio web de Windows Update en https://windowsupdate.microsoft.com, desde el hipervínculo de Windows Update del menú Inicio o la pantalla Inicio, y también del menú **Herramientas** en Internet Explorer. También se deshabilita la actualización automática de Windows; no se notificará al usuario ni recibirá actualizaciones críticas de Windows Update. Esta opción impide además que Administrador de dispositivos instale automáticamente actualizaciones de controladores del sitio web de Windows Update.<br /><br />Cuando está habilitada, puedes configurar una de las siguientes opciones de notificación:<br /><br />-   **0 - No mostrar ninguna notificación**<br />    Esta opción quitará cualquier acceso a las características de Windows Update y no se mostrarán notificaciones.<br />-   **1 - Mostrar las notificaciones necesarias para reiniciar**<br />    Esta opción mostrará las notificaciones sobre las veces que es necesario reiniciar para completar la instalación. **Nota:** En los equipos que ejecutan Windows 8 y Windows RT, si se habilita esta directiva, solo se mostrarán las notificaciones relacionadas con los reinicios y la imposibilidad de detectar actualizaciones. Las opciones de notificaciones no se admiten. Las notificaciones de la pantalla Inicio de sesión siempre se mostrarán.|
+|**Habilitado**|**IMPORTANTE:** si se habilita, se quitarán todas las características de Windows Update. Esto incluye bloquear el acceso al sitio web de Windows Update en https://windowsupdate.microsoft.com, desde el hipervínculo de Windows Update del menú Inicio o la pantalla Inicio, y también del menú **Herramientas** en Internet Explorer. También se deshabilita la actualización automática de Windows; no se notificará al usuario ni recibirá actualizaciones críticas de Windows Update. Esta opción impide además que Administrador de dispositivos instale automáticamente actualizaciones de controladores del sitio web de Windows Update.<p>Cuando está habilitada, puedes configurar una de las siguientes opciones de notificación:<p>-   **0 - No mostrar ninguna notificación**<br />    Esta opción quitará cualquier acceso a las características de Windows Update y no se mostrarán notificaciones.<br />-   **1 - Mostrar las notificaciones necesarias para reiniciar**<br />    Esta opción mostrará las notificaciones sobre las veces que es necesario reiniciar para completar la instalación. **Nota:** En los equipos que ejecutan Windows 8 y Windows RT, si se habilita esta directiva, solo se mostrarán las notificaciones relacionadas con los reinicios y la imposibilidad de detectar actualizaciones. Las opciones de notificaciones no se admiten. Las notificaciones de la pantalla Inicio de sesión siempre se mostrarán.|
 |**Deshabilitado**|Los usuarios pueden conectarse al sitio web de Windows Update.|
 
 **Opciones:** Consulta **Habilitada** en la tabla para esta configuración.
@@ -682,10 +679,10 @@ A continuación se muestra una lista de los términos utilizados en esta guía.
 
 |Término|Definición|
 |----|-------|
-|Actualizaciones automáticas|**Un servicio que se ejecuta en equipos Windows** (Actualizaciones automáticas): Hace referencia al componente de equipo cliente integrado en los sistemas operativos Microsoft Windows Vista, Windows Server 2003, Windows XP y Windows 2000 con SP3 para obtener actualizaciones de Microsoft Update o Windows Update.<br /><br />**Referencia casual** (actualizaciones automáticas): El término que se usa para describir cuándo el Agente de Windows Update programa y descarga automáticamente las actualizaciones.|
+|Actualizaciones automáticas|**Un servicio que se ejecuta en equipos Windows** (Actualizaciones automáticas): Hace referencia al componente de equipo cliente integrado en los sistemas operativos Microsoft Windows Vista, Windows Server 2003, Windows XP y Windows 2000 con SP3 para obtener actualizaciones de Microsoft Update o Windows Update.<p>**Referencia casual** (actualizaciones automáticas): El término que se usa para describir cuándo el Agente de Windows Update programa y descarga automáticamente las actualizaciones.|
 |servidor autónomo|Se usa para hacer referencia a un servidor de Windows Server Update Services (WSUS) que sigue en la cadena en el que los administradores pueden administrar componentes de WSUS.|
 |servidor que sigue en la cadena|Se usa para hacer referencia a un servidor de Windows Server Update Services (WSUS) que obtiene actualizaciones desde otro servidor WSUS y no desde Microsoft Update o Windows Update.|
-|Extensión de directiva de grupo (y: extensión de directiva de grupo)|Colección de valores de directiva de grupo que se usan para controlar el modo en que los usuarios y equipos (a los que se aplican las directivas) pueden configurar y usar diversos servicios y características de Windows. Los administradores pueden usar WSUS con directiva de grupo para la configuración del cliente de Actualizaciones automáticas, a fin de ayudar a garantizar que los usuarios finales no puedan deshabilitar o ignorar las directivas de actualización corporativas.<br /><br />WSUS no requiere el uso de Active Directory o directiva de grupo. La configuración del cliente también se puede aplicar mediante la directiva de grupo local o modificando el registro de Windows.|
+|Extensión de directiva de grupo (y: extensión de directiva de grupo)|Colección de valores de directiva de grupo que se usan para controlar el modo en que los usuarios y equipos (a los que se aplican las directivas) pueden configurar y usar diversos servicios y características de Windows. Los administradores pueden usar WSUS con directiva de grupo para la configuración del cliente de Actualizaciones automáticas, a fin de ayudar a garantizar que los usuarios finales no puedan deshabilitar o ignorar las directivas de actualización corporativas.<p>WSUS no requiere el uso de Active Directory o directiva de grupo. La configuración del cliente también se puede aplicar mediante la directiva de grupo local o modificando el registro de Windows.|
 |servicio de actualización interno|Una referencia casual a una infraestructura de red que usa uno o más servidores WSUS para distribuir actualizaciones.|
 |servidor de réplicas|Se usa para hacer referencia a un servidor de Windows Server Update Services (WSUS) que sigue en la cadena y que refleja las aprobaciones y la configuración del servidor que precede en la cadena al que está conectado. No puedes administrar WSUS en un servidor de réplicas.|
 |Microsoft Update|**Un sitio de descarga de Microsoft basado en Internet:** Un sitio de Internet de Microsoft que almacena y distribuye actualizaciones para equipos Windows (controladores de dispositivos), sistemas operativos Windows y otros productos de software de Microsoft.|
@@ -695,6 +692,6 @@ A continuación se muestra una lista de los términos utilizados en esta guía.
 |información de actualización (se conoce también como metadatos de actualización)|La información acerca de una actualización, en lugar de los archivos binarios de actualización de un paquete de actualización. Por ejemplo, los metadatos proporcionan información para las propiedades de una actualización, lo que te permite averiguar cuál es la utilidad de actualización. Los metadatos también incluyen términos de licencia del software de Microsoft. El paquete de metadatos descargado para una actualización suele tener un tamaño bastante menor que el del paquete de archivos de actualización real.|
 |origen de la actualización|La ubicación en la que se sincroniza un servidor de Windows Server Update Services (WSUS) para obtener los archivos de actualización. Esta ubicación puede ser Microsoft Update o un servidor WSUS que precede en la cadena.|
 |servidor que precede en la cadena|Un servidor de Windows Server Update Services (WSUS) que proporciona archivos de actualización a otro servidor WSUS, que a su vez se conoce como servidor que sigue en la cadena.|
-|Windows Server Update Services (WSUS)|Programa de rol de servidor que se ejecuta en uno o más equipos con Windows Server en una red corporativa. Una infraestructura de WSUS te permite administrar las actualizaciones de los equipos de la red que se van a instalar.<br /><br />Puedes usar WSUS para aprobar o rechazar actualizaciones antes de la versión, para forzar la instalación de actualizaciones en una fecha determinada y para obtener informes completos sobre qué actualizaciones requiere cada equipo de la red. Puedes configurar WSUS para que apruebe ciertas clases de actualizaciones automáticamente (actualizaciones críticas, actualizaciones de seguridad, Service Pack, controladores, etc.). WSUS también te permite aprobar actualizaciones solo para "detección", de modo que puedas ver qué equipos requerirán una actualización determinada sin tener que instalar las actualizaciones.<br /><br />En una implementación WSUS, como mínimo, un servidor WSUS de la red debe poder conectarse a Microsoft Update para obtener actualizaciones disponibles. En función de la configuración y seguridad de la red, el administrador puede determinar cuántos servidores más se conectan directamente a Microsoft Update.<br /><br />Puedes configurar un servidor WSUS para obtener actualizaciones a través de Internet desde lugares como:<br /><br />- el sitio web público de Microsoft Update<br />- el sitio web público de Windows Update<br />-   Microsoft Store|
-|Windows Update|**Un sitio de descarga de Microsoft basado en Internet:** Un sitio de Internet de Microsoft que almacena y distribuye actualizaciones para equipos Windows (controladores de dispositivos) y sistemas operativos Windows.<br /><br />**servicio de equipo:** El nombre del servicio Windows Update que se ejecuta en los equipos. Windows Update detecta, descarga e instala actualizaciones en equipos Windows.<br /><br />En función de las configuraciones de equipo y directiva, el Agente de Windows Update puede descargar actualizaciones desde:<br /><br />-   Microsoft Update<br />-   Windows Update<br />-   Microsoft Store<br />- Un servicio de actualización de Internet (red) (WSUS)<br /><br />Los equipos que no están administrados en un entorno basado en WSUS normalmente usarán Windows Update para conectarse directamente (a través de Internet) a Windows Update, Microsoft Update o Microsoft Store para obtener actualizaciones.|
-|Cliente WSUS|Un equipo que recibe actualizaciones de un servicio de actualización de la intranet de WSUS.<br /><br />En el caso de la configuración de directiva de grupo que controla la interacción del usuario final con Actualizaciones automáticas: un usuario de un equipo en un entorno de WSUS.|
+|Windows Server Update Services (WSUS)|Programa de rol de servidor que se ejecuta en uno o más equipos con Windows Server en una red corporativa. Una infraestructura de WSUS te permite administrar las actualizaciones de los equipos de la red que se van a instalar.<p>Puedes usar WSUS para aprobar o rechazar actualizaciones antes de la versión, para forzar la instalación de actualizaciones en una fecha determinada y para obtener informes completos sobre qué actualizaciones requiere cada equipo de la red. Puedes configurar WSUS para que apruebe ciertas clases de actualizaciones automáticamente (actualizaciones críticas, actualizaciones de seguridad, Service Pack, controladores, etc.). WSUS también te permite aprobar actualizaciones solo para la detección, de modo que puedas ver qué equipos requerirán una actualización determinada sin tener que instalar las actualizaciones.<p>En una implementación WSUS, como mínimo, un servidor WSUS de la red debe poder conectarse a Microsoft Update para obtener actualizaciones disponibles. En función de la configuración y seguridad de la red, el administrador puede determinar cuántos servidores más se conectan directamente a Microsoft Update.<p>Puedes configurar un servidor WSUS para obtener actualizaciones a través de Internet desde lugares como:<p>- el sitio web público de Microsoft Update<br />- el sitio web público de Windows Update<br />-   Microsoft Store|
+|Windows Update|**Un sitio de descarga de Microsoft basado en Internet:** Un sitio de Internet de Microsoft que almacena y distribuye actualizaciones para equipos Windows (controladores de dispositivos) y sistemas operativos Windows.<p>**servicio de equipo:** El nombre del servicio Windows Update que se ejecuta en los equipos. Windows Update detecta, descarga e instala actualizaciones en equipos Windows.<p>En función de las configuraciones de equipo y directiva, el Agente de Windows Update puede descargar actualizaciones desde:<p>-   Microsoft Update<br />-   Windows Update<br />-   Microsoft Store<br />- Un servicio de actualización de Internet (red) (WSUS)<p>Los equipos que no están administrados en un entorno basado en WSUS normalmente usarán Windows Update para conectarse directamente (a través de Internet) a Windows Update, Microsoft Update o Microsoft Store para obtener actualizaciones.|
+|Cliente WSUS|Un equipo que recibe actualizaciones de un servicio de actualización de la intranet de WSUS.<p>En el caso de la configuración de directiva de grupo que controla la interacción del usuario final con Actualizaciones automáticas: un usuario de un equipo en un entorno de WSUS.|

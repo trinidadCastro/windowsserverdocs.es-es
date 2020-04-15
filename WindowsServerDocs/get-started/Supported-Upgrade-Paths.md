@@ -1,31 +1,27 @@
 ---
 title: Opciones de actualización y conversión para Windows Server 2016
 description: Explica todas las rutas de actualización admitidas para Windows Server 2016.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 01/18/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 74aa1da3-7076-4a1f-ad5b-9e17bd46dba2
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2484363db661620844993d52914700cb8b6cdf56
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 05e891d4170458018577b39bc83e952bf18d420e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391594"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826508"
 ---
 # <a name="upgrade-and-conversion-options-for-windows-server-2016"></a>Opciones de actualización y conversión para Windows Server 2016
 
->Se aplica a: Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server 2019 y Windows Server 2016
 
-En este tema se incluye información sobre cómo actualizar a Windows Server® 2016 desde una variedad de sistemas operativos anteriores y mediante diversos métodos.
+En este tema se incluye información sobre cómo actualizar a Windows Server&reg; 2016 desde una variedad de sistemas operativos anteriores y mediante diversos métodos.
 
 El proceso de cambiar a Windows Server 2016 puede variar enormemente en función del sistema operativo desde el que se parte y el método elegido para hacerlo. Se usan los siguientes términos para distinguir las diferentes acciones que podrían tener lugar en una nueva implementación de Windows Server 2016.
 
@@ -35,9 +31,9 @@ El proceso de cambiar a Windows Server 2016 puede variar enormemente en función
 
 - La **actualización gradual del sistema operativo del clúster** es una nueva característica de Windows Server 2016 que permite a un administrador actualizar el sistema operativo de los nodos del clúster de Windows Server 2012 R2 a Windows Server 2016 sin detener la función Hyper-V o las cargas de trabajo del Servidor de archivos de escalabilidad horizontal. Esta característica permite evitar tiempos de inactividad que podrían afectar a los contratos de nivel de servicio. Esta nueva característica se describe con más detalle en [Actualización gradual del sistema operativo del clúster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).
 
-- **Conversión de licencia** en algunas versiones de los sistemas operativos: con un solo paso puede convertir una edición particular de la versión que usted tenga a otra edición de la misma versión. Para ello, solo necesita un sencillo comando y la clave de licencia correspondiente. Este cambio se denomina “conversión de licencia”. Por ejemplo, si ejecuta Windows Server 2016 Standard, puede realizar la conversión a Windows Server 2016 Datacenter.
+- **Conversión de licencia** en algunas versiones de los sistemas operativos: con un solo paso puede convertir una edición particular de la versión que usted tenga a otra edición de la misma versión. Para ello, solo necesita un sencillo comando y la clave de licencia correspondiente. Este proceso se denomina conversión de licencia. Por ejemplo, si ejecuta Windows Server 2016 Standard, puede realizar la conversión a Windows Server 2016 Datacenter.
 
-- **Actualizar** significa pasar de la versión actual del sistema operativo a una versión más reciente sin cambiar de hardware. (A esto a veces se hace referencia como actualización “local”). Por ejemplo, si su servidor ejecuta Windows Server 2012 o Windows Server 2012 R2, puede actualizarlo a Windows Server 2016. Es posible actualizar de una versión de evaluación del sistema operativo a una versión comercial, de una versión comercial antigua a una nueva o, en algunos casos, de una edición de licencia por volumen a una edición comercial normal.
+- **Actualizar** significa pasar de la versión actual del sistema operativo a una versión más reciente sin cambiar de hardware. (A esto a veces se hace referencia como actualización local). Por ejemplo, si su servidor ejecuta Windows Server 2012 o Windows Server 2012 R2, puede actualizarlo a Windows Server 2016. Es posible actualizar de una versión de evaluación del sistema operativo a una versión comercial, de una versión comercial antigua a una nueva o, en algunos casos, de una edición de licencia por volumen a una edición comercial normal.
 
 > [!IMPORTANT]  
 > La actualización funciona mejor en máquinas virtuales donde los controladores de hardware específicos de OEM no son necesarios para una actualización correcta.  
@@ -91,21 +87,21 @@ Puede convertir la versión de evaluación de Windows Server 2016 Standard a Win
 
 Antes de intentar convertir una versión de evaluación a comercial, compruebe que el servidor esté ejecutándose en una versión de evaluación. Para hacer esto, realice una de las acciones siguientes:
 
-- Desde un símbolo del sistema con privilegios elevados, ejecute **slmgr.vbs /dlv**. La versiones de evaluación incluirán “EVAL” en el resultado.
+- Desde un símbolo del sistema con privilegios elevados, ejecute **slmgr.vbs /dlv**. Las versiones de evaluación incluirán EVAL en la salida.
 
 - En la pantalla Inicio , abra el **Panel de control**. Abra **Sistema y seguridad**y después **Sistema**. Vea el estado de activación de Windows en el área de activación del Windows de la página del **sistema**. Haga clic en **Ver los detalles** en Activación de Windows para obtener más información sobre el estado de activación de Windows.
 
 Si ya activó Windows, el escritorio muestra el tiempo restante en el período de evaluación.
 
-Si el servidor está ejecutando una versión comercial en vez de una versión de evaluación, consulte la sección "Actualizar versiones comerciales anteriores de Windows Server a Windows Server 2016" de este tea para obtener instrucciones para actualizar a Windows Server 2016.
+Si el servidor ejecuta una versión comercial en vez de una versión de evaluación, consulta la sección Actualizar versiones comerciales anteriores de Windows Server a Windows Server 2016 de este tema para obtener instrucciones para actualizar a Windows Server 2016.
 
 Para **Windows Server 2016 Essentials**: puedes realizar la conversión a la versión comercial completa proporcionando una clave OEM de licencia por volumen o comercial en el comando **slmgr.vbs**.
 
 Si el servidor está ejecutando una versión de evaluación de Windows Server 2016 Standard o Windows Server 2016 Datacenter, puede convertirla en una versión comercial de la siguiente manera:
 
-1.  Si el servidor es un **controlador de dominio**, no puede convertirlo en una versión comercial. En este caso, instale un controlador de dominio adicional en un servidor que ejecute una versión comercial y quite AD DS del controlador de dominio que se ejecuta en la versión de evaluación. Para más información, vea [Actualizar controladores de dominio a Windows Server 2012 R2 y Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx).
-2.  Lea los términos de licencia.
-3.  Desde un símbolo del sistema con privilegios elevados, determine el nombre de la edición actual con el comando **DISM /online /Get-CurrentEdition**. Tome nota del identificador de la edición, una forma abreviada del nombre de la edición. A continuación, ejecute **DISM /online /Set-Edition:\<id. de edición\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula**, proporcionando el identificador de edición y una clave de producto comercial. El servidor se reiniciará dos veces.
+1.    Si el servidor es un **controlador de dominio**, no puede convertirlo en una versión comercial. En este caso, instale un controlador de dominio adicional en un servidor que ejecute una versión comercial y quite AD DS del controlador de dominio que se ejecuta en la versión de evaluación. Para más información, vea [Actualizar controladores de dominio a Windows Server 2012 R2 y Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx).
+2.    Lea los términos de licencia.
+3.    Desde un símbolo del sistema con privilegios elevados, determine el nombre de la edición actual con el comando **DISM /online /Get-CurrentEdition**. Tome nota del identificador de la edición, una forma abreviada del nombre de la edición. A continuación, ejecute **DISM /online /Set-Edition:\<id. de edición\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula**, proporcionando el identificador de edición y una clave de producto comercial. El servidor se reiniciará dos veces.
 
 Para la versión de evaluación de Windows Server 2016 Standard, también puede convertir la versión comercial de Windows Server 2016 Datacenter en un paso usando este mismo comando y la clave de producto correspondiente.
 
@@ -114,8 +110,8 @@ Para la versión de evaluación de Windows Server 2016 Standard, también puede 
 
 ## <a name="converting-a-current-retail-edition-to-a-different-current-retail-edition"></a>Convertir la edición comercial actual a una edición comercial distinta
 
-En cualquier momento después de instalar Windows Server 2016, puede ejecutar el programa de instalación para repararla (conocido a veces como “reparación en contexto”) o, en algunos casos, para convertir a una edición diferente.
-Puede ejecutar el programa de instalación para realizar una “reparación en contexto” en cualquier edición de Windows Server 2016. El resultado tendrá la misma edición con la que comenzó.
+En cualquier momento después de instalar Windows Server 2016, puedes ejecutar el programa de instalación para repararla (conocido a veces como reparación en contexto) o, en algunos casos, para convertir a una edición diferente.
+Puedes ejecutar el programa de instalación para realizar una reparación en contexto en cualquier edición de Windows Server 2016. El resultado tendrá la misma edición con la que iniciaste.
 
 Para Windows Server 2016 Standard, puedes realizar la conversión a Windows Server 2016 Datacenter como se indica a continuación: Desde un símbolo del sistema con privilegios elevados, determine el nombre de la edición actual con el comando **DISM /online /Get-CurrentEdition**. Para Windows Server 2016 Standard será `ServerStandard`. Ejecuta el comando **DISM /online /Get-TargetEditions** para obtener el id. de la edición a la que se puede actualizar. Toma nota del id. de edición, una forma abreviada del nombre de la edición. A continuación, ejecuta **DISM /online /Set-Edition:\<id. de edición\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula**, proporcionando el identificador de edición de destino y su clave de producto comercial. El servidor se reiniciará dos veces.
 

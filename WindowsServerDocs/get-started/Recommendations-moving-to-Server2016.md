@@ -1,25 +1,21 @@
 ---
 title: Recomendaciones para cambiar a Windows Server 2016
 description: Recomendaciones para cambiar a Windows Server 2016
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 10/18/2016
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 74aa1da3-7076-4a1f-ad5b-9e17bd46dba2
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: be63880e8a07e71aa6811f3a6979eb6e2fcd8eba
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6b02a3caa0db2a66307754ebd95865d8ba10ef4f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947803"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826758"
 ---
 # <a name="recommendations-for-moving-to-windows-server-2016"></a>Recomendaciones para cambiar a Windows Server 2016
 
@@ -33,7 +29,7 @@ ms.locfileid: "75947803"
 |**Cargas de trabajo de aplicaciones de ISV**|-Las actualizaciones a Windows Server 2016 deben utilizar instrucciones específicas de la aplicación. <br>- Para obtener más información sobre la compatibilidad de Windows Server con aplicaciones que no son de Microsoft, visite el [portal de certificación del logotipo de Windows Server](https://msdn.microsoft.com/enterprisecloudcertified).|- Para sacar partido de las nuevas características de Windows Server 2016, implementar hardware nuevo o instalar Windows Server 2016 en una máquina virtual en un host existente. Algunas características nuevas funcionan mejor en un host físico de Windows Server 2016 que ejecute Hyper-V. Siga las guías de migración según corresponda. <br>- También puede mantener su SO actual y usar una máquina virtual que se ejecute en un host de Windows Server 2016 o Microsoft Azure. Póngase en contacto con su revendedor de EA, TAM o Microsoft para conocer las opciones de soporte técnico extendido a través de [Software Assurance](https://www.microsoft.com/Licensing/licensing-programs/software-assurance-default.aspx).|
 |**Cargas de trabajo de aplicaciones personalizadas**|- Consulte a los desarrolladores de las aplicaciones sobre su compatibilidad con Windows Server 2016 y solicíteles las instrucciones de actualización. <br>- Aproveche Microsoft Azure para probar la aplicación en Windows Server 2016 antes de cambiar. <br>- Vea todas las opciones en la sección siguiente.|- Consulte con sus desarrolladores de aplicaciones sobre la compatibilidad con Windows Server 2016 e instrucciones de actualización. <br>- Aproveche Microsoft Azure para probar la aplicación en Windows Server 2016 antes de cambiar. <br>- Para sacar partido de las nuevas características de Windows Server 2016, implementar hardware nuevo o instalar Windows Server 2016 en una máquina virtual en un host existente. Algunas características nuevas funcionan mejor en un host físico de Windows Server 2016 que ejecute Hyper-V. <br>- Vea todas las opciones en la sección siguiente.|
 
-## <a name="complete-options-for-moving-servers-running-custom-or-in-house-applications-on-older-versions-of-windows-server-to-windows-server-2016"></a>Opciones completas para migrar servidores que ejecutan aplicaciones personalizadas o "internas" en versiones anteriores de Windows Server a Windows Server 2016
+## <a name="complete-options-for-moving-servers-running-custom-or-in-house-applications-on-older-versions-of-windows-server-to-windows-server-2016"></a>Opciones completas para migrar servidores que ejecutan aplicaciones personalizadas o internas en versiones de Windows Server anteriores a Windows Server 2016
 
 Hay más opciones que nunca para ayudarle a usted y a sus clientes a aprovechar las características de Windows Server 2016 con una afectación mínima a sus servicios y cargas de trabajo actuales.
 

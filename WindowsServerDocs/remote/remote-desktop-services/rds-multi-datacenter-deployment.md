@@ -1,28 +1,24 @@
 ---
 title: Centros de datos de RDS con redundancia geográfica en Azure
 description: Obtén información sobre cómo crear una implementación de RDS que use varios centros de datos para proporcionar alta disponibilidad entre ubicaciones geográficas.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 61c36528-cf47-4af0-83c1-a883f79a73a5
 author: haley-rowland
 ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
-ms.openlocfilehash: 55b96c112dd7f7294ff674ee4675501af4287da4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5c0f5d6937a79f36df264597400fe71af3f3779b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403952"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855598"
 ---
 # <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>Creación de una implementación de RDS de varios centros de datos con redundancia geográfica para la recuperación ante desastres
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
 Puedes habilitar la recuperación ante desastres para tu implementación de Servicios de Escritorio remoto que aproveche varios centros de datos en Azure. A diferencia de una implementación de RDS de alta disponibilidad estándar (como se describe en [Arquitectura de Servicios de Escritorio remoto](desktop-hosting-logical-architecture.md)), que usa centros de datos de una única región de Azure (por ejemplo, Oeste de Europa), una implementación de varios centros de datos usa los centros de datos de varias ubicaciones geográficas, lo que aumenta la disponibilidad de la implementación: es posible que un centro de datos no esté disponible, pero es improbable que varias regiones dejan de funcionar al mismo tiempo. Al implementar una arquitectura de RDS con redundancia geográfica, puedes habilitar la conmutación por error en caso de falla grave de toda una región.
 
@@ -66,7 +62,7 @@ Crea los siguientes recursos en Azure para crear una implementación de RDS de v
    
       2. Edita los nombres de equipo para que no entren en conflicto con los de la implementación en GR A.
       
-         Busca las VM en la sección **Recursos** de la plantilla. Cambia el campo **computerName** en **osProfile**. Por ejemplo, "gateway" puede convertirse en "gateway **-b**"; "[concat('rdsh-', copyIndex())]" can become "[concat('rdsh-b-', copyIndex())]", y “broker” puede convertirse en “broker **-b**”.
+         Busca las VM en la sección **Recursos** de la plantilla. Cambia el campo **computerName** en **osProfile**. Por ejemplo, "gateway" puede convertirse en "gateway **-b**"; "[concat('rdsh-', copyIndex())]" puede convertirse en "[concat('rdsh-b-', copyIndex())]" y "broker" puede convertirse en "broker **-b**".
       
          (También puedes cambiar los nombres de las VM manualmente después de ejecutar la plantilla).
    2. Como en el paso 3 anterior, usa la información de [Servicios de Escritorio remoto: alta disponibilidad](rds-plan-high-availability.md) para configurar los demás componentes de RDS para alta disponibilidad.

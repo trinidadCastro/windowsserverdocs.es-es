@@ -7,15 +7,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 04/17/2019
 ms.topic: article
-ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 48d93f515a5f3e5f8ce2c3ff9a1b40f300ca57ed
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: a1041bdc189238c7da32896e6f867f730e392d24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265747"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814435"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>Preguntas más frecuentes (P+F) sobre AD FS
 
@@ -105,8 +104,8 @@ Para asegurarte de que los servidores WAP y AD FS negocian solo los conjuntos de
 
 ## <a name="developer"></a>Desarrollador
 
-### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>Al generar el elemento id_token con AD FS para un usuario autenticado en AD, ¿cómo se genera la notificación "sub" en el elemento id_token?
-El valor de la notificación "sub" es el hash del identificador de cliente y el valor de la notificación de delimitador.
+### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>Al generar el elemento id_token con ADFS para un usuario autenticado en AD, ¿cómo se genera la notificación "sub" en el elemento id_token?
+El valor de la notificación "sub" es el hash del id. de cliente y el valor de la notificación de delimitador.
 
 ### <a name="what-is-the-lifetime-of-the-refresh-tokenaccess-token-when-the-user-logs-in-via-a-remote-claims-provider-trust-over-ws-fedsaml-p"></a>¿Cuál es la duración del token de acceso o de actualización cuando el usuario inicia sesión a través de una relación de confianza de proveedor de notificaciones remotas a través de WS-FED/SAML-P?
 La duración del token de actualización será la del token que AD FS recibió de la relación de confianza del proveedor de notificaciones remotas. A su vez, la duración del token de acceso será la del token del usuario de confianza para el que se emite el token de acceso.
@@ -232,14 +231,14 @@ Normalmente, este evento se registra para un acceso no válido en AD FS al recur
 
 ### <a name="why-am-i-seeing-a-warning-for-failure-to-add-the-ad-fs-service-account-to-the-enterprise-key-admins-group"></a>¿Por qué veo una advertencia de error al agregar la cuenta de servicio de AD FS al grupo administradores de claves de empresa?
 Este grupo solo se crea cuando existe un controlador de dominio de Windows 2016 con el rol PDC de FSMO en el dominio. Para resolver el error, puedes crear el grupo manualmente y seguir los pasos que se indican a continuación para conceder el permiso necesario después de agregar la cuenta de servicio como miembro del grupo.
-1.  Abra **Usuarios y equipos de Active Directory**.
-2.  **Haz clic con el botón derecho** en el nombre de dominio del panel de navegación y **haz clic** en Propiedades.
-3.  **Haz clic** en Seguridad (si falta la pestaña Seguridad, activa las Características avanzadas en el menú Vista).
-4.  **Haz clic** en Avanzado. **Haz clic** en Agregar. **Haz clic** en Seleccionar una entidad de seguridad.
-5.  Se abrirá el cuadro de diálogo Select User, Computer, Service Account, or Group (Seleccionar usuarios, equipos, cuentas de servicio o grupos).  En el cuadro de texto Enter the object name to select (Escribe el nombre del objeto que quieras seleccionar), escribe Key Admin Group (Grupo de administradores de claves).  Haga clic en Aceptar.
-6.  En el cuadro de lista Se aplica a, selecciona **Descendant User objects** (Objetos de usuario descendientes).
-7.  Con la barra de desplazamiento, desplázate a la parte inferior de la página y **haz clic** en Borrar todo.
-8.  En la sección **Propiedades**, selecciona **Read msDS-KeyCredentialLink** (Leer msDS-KeyCredentialLink) y **Write msDS-KeyCredentialLink** (Escribir msDS-KeyCredentialLink).
+1.    Abra **Usuarios y equipos de Active Directory**.
+2.    **Haz clic con el botón derecho** en el nombre de dominio del panel de navegación y **haz clic** en Propiedades.
+3.    **Haz clic** en Seguridad (si falta la pestaña Seguridad, activa las Características avanzadas en el menú Vista).
+4.    **Haz clic** en Avanzado. **Haz clic** en Agregar. **Haz clic** en Seleccionar una entidad de seguridad.
+5.    Se abrirá el cuadro de diálogo Select User, Computer, Service Account, or Group (Seleccionar usuarios, equipos, cuentas de servicio o grupos).  En el cuadro de texto Enter the object name to select (Escribe el nombre del objeto que quieras seleccionar), escribe Key Admin Group (Grupo de administradores de claves).  Haga clic en Aceptar.
+6.    En el cuadro de lista Se aplica a, selecciona **Descendant User objects** (Objetos de usuario descendientes).
+7.    Con la barra de desplazamiento, desplázate a la parte inferior de la página y **haz clic** en Borrar todo.
+8.    En la sección **Propiedades**, selecciona **Read msDS-KeyCredentialLink** (Leer msDS-KeyCredentialLink) y **Write msDS-KeyCredentialLink** (Escribir msDS-KeyCredentialLink).
 
 ### <a name="why-does-modern-authentication-from-android-devices-fail-if-the-server-does-not-send-all-the-intermediate-certificates-in-the-chain-with-the-ssl-cert"></a>¿Por qué se produce un error en la autenticación moderna de dispositivos Android si el servidor no envía todos los certificados intermedios de la cadena con el certificado SSL?
 

@@ -1,12 +1,8 @@
 ---
 title: Introducción al cliente de Android
 description: Información general acerca del cliente de Android.
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
@@ -14,12 +10,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 03/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d4ef08107c816aebf6563e57e5e76b12b793d472
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: a9cb49f2570b297c81f41412ad041215090538d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323427"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856238"
 ---
 # <a name="get-started-with-the-android-client"></a>Introducción al cliente de Android
 
@@ -72,7 +68,7 @@ Para crear una conexión a Escritorio remoto:
 ¿Quieres quitar la conexión? Vuelve a pulsar en el menú **Más opciones** ( **...** ) y, a continuación, pulsa en **Quitar**.
 
 >[!TIP]
-> Si aparece el error 0xf07, que tiene relación con una contraseña incorrecta ["We couldn't connect to the remote PC because the password associated with the user account has expired" (No ha sido posible conectarse al equipo remoto porque la contraseña asociada a la cuenta de usuario ha expirado)], cambie la contraseña y pruebe de nuevo.
+> Si aparece el error 0xf07, que tiene relación con una contraseña incorrecta (No hemos podido conectar con el PC remoto porque la contraseña asociada a la cuenta de usuario ha expirado), cambia la contraseña y prueba de nuevo.
 
 ### <a name="add-remote-resources"></a>Agregar recursos remotos
 
@@ -103,7 +99,7 @@ El cliente de Escritorio remoto admite el anclaje de conexiones a la pantalla de
 
 1. Pulsa **Aplicaciones** para iniciar el menú de aplicaciones.
 2. Pulsa **Widgets**.
-3. Desliza el dedo por los widgets y busca el icono de Escritorio remoto con la descripción: "Pin Remote Desktop" (Anclar a Escritorio remoto).
+3. Desliza el dedo por los widgets y busca el icono de Escritorio remoto con la descripción: Pin Remote Desktop (Anclar a Escritorio remoto).
 4. Mantén pulsado el widget de Escritorio remoto y muévelo a la pantalla de inicio.
 5. Al soltar el icono, verás los escritorios remotos guardados. Elige la conexión que quieres guardar en la pantalla de inicio.
 

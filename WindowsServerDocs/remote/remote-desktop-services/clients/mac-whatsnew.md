@@ -1,30 +1,56 @@
 ---
 title: Novedades del cliente de macOS
 description: Obtén información sobre los cambios recientes en el cliente de Escritorio remoto para Mac
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/06/2020
+ms.date: 04/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ef2a9966da7046a14fb1d9d4562f0ef9b1a09a45
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: c378d8c4a87b6aa0cf4f6b4f30f3bd5524dbb7a9
+ms.sourcegitcommit: f95d0e6904b103fc30dcae13e9199e138c287e2b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919854"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80980857"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novedades del cliente de macOS
 
 El [cliente de Escritorio remoto para macOS](remote-desktop-mac.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
 
 Si tienes algún problema, puedes ponerte en contacto con nosotros a través **Ayuda** > **Notificar un problema**.
+
+## <a name="updates-for-version-1039"></a>Actualizaciones para la versión 10.3.9
+
+*Fecha de publicación: 6/4/20*
+
+En esta versión realizamos algunos cambios para mejorar la interoperabilidad con el [servicio de Windows Virtual Desktop](https://azure.microsoft.com/services/virtual-desktop/). Además, incluimos las siguientes actualizaciones:
+
+- Control+Opción+Eliminar ahora desencadena la secuencia Ctrl+Alt+Supr (antes se requería presionar la tecla Fn).
+- Se corrigió la combinación de colores de notificación del modo de teclado para el modo claro.
+- Se solucionaron los escenarios en los que las conexiones iniciadas con la propiedad GatewayAccessToken de archivo RDP no funcionaban.
+
+>[!NOTE]
+>Esta es la última versión que será compatible con macOS 10.12.
+
+## <a name="updates-for-version-1038"></a>Actualizaciones de la versión 10.3.8
+
+*Fecha de publicación: 12/2/20*
+
+Es el momento de nuestra primera versión de 2020.
+
+Con esta actualización, puedes conmutar entre los modos Scancode (Ctrl+comando+K) y Unicode (Ctrl+comando+U) al escribir la entrada en el teclado. El modo Unicode permite escribir caracteres extendidos mediante la tecla de opción de un teclado Mac. Por ejemplo, en un teclado para Mac de EE. UU., Opción+2 introducirá el símbolo de marca comercial (&trade;). También puedes escribir caracteres acentuados en el modo Unicode. Por ejemplo, en un teclado para Mac de EE. UU., si escribes Opción+E y la tecla "A" al mismo tiempo, se escribirá el carácter "á" en la sesión remota.
+
+Otras actualizaciones de esta versión incluyen:
+
+- Se limpió la experiencia de actualización del área de trabajo y la interfaz de usuario.
+- Se solucionó un problema con la redirección de la tarjeta inteligente que hacía que la sesión remota dejara de responder en la pantalla de inicio de sesión cuando aparecía el mensaje "Comprobando estado".
+- Se redujo el tiempo para crear archivos temporales utilizados para copiar y pegar archivos basados en el Portapapeles.
+- Los archivos temporales que se usan para copiar y pegar archivos del Portapapeles se eliminan automáticamente al salir de la aplicación, en lugar de dejar que macOS los elimine.
+- Ahora, las acciones de marcador de PC se representan en la esquina superior derecha de las miniaturas.
+- Se realizaron correcciones para solucionar los problemas que se comunicaron a través de la telemetría de bloqueo.
 
 ## <a name="updates-for-version-1037"></a>Actualizaciones de la versión 10.3.7
 
@@ -259,7 +285,7 @@ Han pasado algunas semanas desde la última actualización, pero estamos trabaja
 
 *Fecha de publicación: 06/08/2018*
 
-- Se habilitó la conectividad equipos unidos a Azure Active Directory (AAD). Para conectarse a un equipo unido a AAD, el nombre de usuario debe tener uno de los siguientes formatos: “AzureAD\usuario” o “AzureAD\user@domain”.
+- Se habilitó la conectividad equipos unidos a Azure Active Directory (AAD). Para conectarse a un equipo unido a AAD, el nombre de usuario debe tener uno de los siguientes formatos: "AzureAD\usuario" o "AzureAD\user@domain".
 - Se abordaron algunos errores al usar tarjetas inteligentes en una sesión remota.
 
 ## <a name="updates-for-version-1020"></a>Actualizaciones de la versión 10.2.0
@@ -310,7 +336,7 @@ Han pasado algunas semanas desde la última actualización, pero estamos trabaja
 - Ahora puedes iniciar una conexión presionando ENTRAR en un icono del escritorio.
 - Cuando estés en la vista de pantalla completa, CMD+M ahora se asigna correctamente a WIN+M.
 - Las ventanas Connection Center (Centro de conexiones), Preferences (Preferencias) y About (Acerca de) ahora responden a CMD+M.
-- Ahora puedes comenzar a detectar fuentes al presionar ENTRAR en la página **Adding Remote Resources** (Agregando recursos remotos).
+- Ahora puedes comenzar a detectar fuentes al presionar ENTRAR en la página **Adición de recursos remotos*.
 - Se corrigió un problema donde una nueva fuente de los recursos remotos aparecía vacía en el centro de conexiones hasta después de actualizar.
 
 ## <a name="updates-for-version-1016"></a>Actualizaciones de la versión 10.1.6

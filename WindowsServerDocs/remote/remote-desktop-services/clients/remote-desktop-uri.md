@@ -1,12 +1,8 @@
 ---
 title: Esquema de URI de clientes de Escritorio remoto
 description: Obtén información sobre el esquema de identificador uniforme de recursos para los clientes de Escritorio remoto
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0c3f1eb6-835c-4522-99ff-56c6ee4bb911
 author: lizap
@@ -14,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/11/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 56d11a2ab0afab1e119666aea17bb6d54cd5638b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 02f970cb2e793c1e342a2818a2bca3900327fa9c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404129"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856008"
 ---
 # <a name="remote-desktop-client-universal-resource-identifier-uri-scheme-support"></a>Compatibilidad del esquema de identificador universal de recursos (URI) para clientes de Escritorio remoto
 
@@ -41,7 +37,7 @@ Los atributos RDP se separan mediante el símbolo de "y" comercial (&). Por ejem
 rdp://full%20address=s:mypc:3389&audiomode=i:2&disable%20themes=i:1
 ```
 
-Esta tabla proporciona una lista completa de los atributos compatibles que pueden usarse con clientes de Escritorio remoto de iOS, Mac y Android. (Una “x” en la columna de plataforma indica que el atributo es compatible. Los valores indicados por comillas angulares (<>) representan los valores que son compatibles con los clientes de Escritorio remoto).
+Esta tabla proporciona una lista completa de los atributos compatibles que pueden usarse con clientes de Escritorio remoto de iOS, Mac y Android. (Una "x" en la columna de plataforma indica que el atributo es compatible. Los valores indicados por comillas angulares (<>) representan los valores que son compatibles con los clientes de Escritorio remoto).
 
 | **Atributo RDP**                                           | **Android** | **Mac** | **iOS** |
 |---------------------------------------------------------|---------|-----|-----|

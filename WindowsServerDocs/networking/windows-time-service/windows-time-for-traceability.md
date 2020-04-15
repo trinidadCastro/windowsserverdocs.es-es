@@ -1,20 +1,19 @@
 ---
-ms.assetid: ''
 title: Hora de Windows para rastreabilidad
 description: Las normas de muchos sectores exigen que los sistemas puedan rastrearse según la hora UTC.  Esto significa que se pueda dar fe de la diferencia horaria de un sistema con respecto a UTC.
-author: eross-msft
+author: dcuomo
 ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: e7f7a68d61729813583255d64afbf172475969e3
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 30952c7a15109ccdd8bcbb09d7c8dda44f716d5d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314935"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859818"
 ---
 # <a name="windows-time-for-traceability"></a>Hora de Windows para rastreabilidad
 >Se aplica a: Windows Server 2016, versión 1709 o posterior, y Windows 10, versión 1703 o posterior

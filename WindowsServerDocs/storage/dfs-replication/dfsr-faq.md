@@ -1,17 +1,17 @@
 ---
-title: 'Replicación DFS: Preguntas más frecuentes'
+title: 'Replicación DFS: Preguntas más frecuentes (P+F)'
 ms.date: 06/18/2014
 ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: e92ada07140b88ef4178a5aecdb263b825380c2d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1e11f6c596d7e5eb0bdf379adcf47d21e74e9f6b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950281"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815628"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>Replicación DFS: Preguntas más frecuentes
 
@@ -74,7 +74,7 @@ Sí. Replicación DFS es compatible con los volúmenes de Servicio de instantán
 
 No, no se admite el uso de Copias de seguridad de Windows (Ntbackup.exe) en un equipo que ejecuta Windows Server 2003 o una versión anterior para realizar una copia de seguridad del contenido de una carpeta replicada en un equipo que ejecuta Windows Server 2012, Windows Server 2008 R2 o Windows Server 2008.
 
-Para realizar una copia de seguridad de los archivos almacenados en una carpeta replicada, usa Copias de seguridad de Windows Server o Microsoft® System Center Data Protection Manager. Para obtener información sobre la funcionalidad de copia de seguridad y recuperación en Windows Server 2008 R2 y Windows Server 2008, consulta el tema [Copia de seguridad y recuperación](https://technet.microsoft.com/library/Cc754097). Para obtener más información, consulta el tema [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=182261) (https://go.microsoft.com/fwlink/?LinkId=182261).
+Para realizar una copia de seguridad de los archivos almacenados en una carpeta replicada, usa Copias de seguridad de Windows Server o Microsoft&reg; System Center Data Protection Manager. Para obtener información sobre la funcionalidad de copia de seguridad y recuperación en Windows Server 2008 R2 y Windows Server 2008, consulta el tema [Copia de seguridad y recuperación](https://technet.microsoft.com/library/Cc754097). Para obtener más información, consulta el tema [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=182261) (https://go.microsoft.com/fwlink/?LinkId=182261).
 
 ### <a name="do-file-system-policies-impact-dfs-replication"></a>¿Afectan las directivas del sistema de archivos a Replicación DFS?
 
@@ -129,7 +129,7 @@ Las aplicaciones antivirus pueden provocar una replicación excesiva si sus acti
 
 ### <a name="what-are-the-benefits-of-using-dfs-replication-instead-of-windows-sharepoint-services"></a>¿Cuáles son las ventajas de usar Replicación DFS en lugar de Windows SharePoint Services?
 
-Windows® SharePoint® Services proporciona una estricta coherencia en forma de funcionalidad de desprotección de archivos que Replicación DFS no ofrece. Si te preocupa que varias personas editen el mismo archivo, se recomienda usar Windows SharePoint Services. Windows SharePoint Services 2.0 con Service Pack 2 está disponible como parte de Windows Server 2003 R2. Windows SharePoint Services se puede descargar desde el sitio web de Microsoft; no se incluye en las versiones más recientes de Windows Server. Sin embargo, si vas a replicar datos en varios sitios y los usuarios no editarán los mismos archivos al mismo tiempo, Replicación DFS proporciona un mayor ancho de banda y una administración más sencilla.
+Windows&reg; SharePoint&reg; Services proporciona una estricta coherencia en forma de funcionalidad de desprotección de archivos que Replicación DFS no ofrece. Si te preocupa que varias personas editen el mismo archivo, se recomienda usar Windows SharePoint Services. Windows SharePoint Services 2.0 con Service Pack 2 está disponible como parte de Windows Server 2003 R2. Windows SharePoint Services se puede descargar desde el sitio web de Microsoft; no se incluye en las versiones más recientes de Windows Server. Sin embargo, si vas a replicar datos en varios sitios y los usuarios no editarán los mismos archivos al mismo tiempo, Replicación DFS proporciona un mayor ancho de banda y una administración más sencilla.
 
 ## <a name="limitations-and-requirements"></a>Limitaciones y requisitos
 
@@ -152,7 +152,7 @@ Replicación DFS puede replicar de forma segura archivos de carpeta personales d
 
 ### <a name="can-i-use-dfs-replication-in-a-workgroup"></a>¿Puedo usar Replicación DFS en un grupo de trabajo?
 
-No. Replicación DFS confía en Active Directory® Domain Services para la configuración. Solo funcionará en un dominio.
+No. Replicación DFS confía en Active Directory&reg; Domain Services para la configuración. Solo funcionará en un dominio.
 
 ### <a name="can-more-than-one-folder-be-replicated-on-a-single-server"></a>¿Se puede replicar más de una carpeta en un solo servidor?
 
@@ -343,7 +343,7 @@ Replicación DFS en Windows Server 2008 incluye varias mejoras de rendimiento, 
 
 ### <a name="how-does-dfs-replication-performance-compare-with-frs"></a>¿Cómo es el rendimiento de Replicación DFS en comparación con FRS?
 
-Replicación DFS es mucho más rápida que FRS, especialmente cuando se realizan pequeños cambios en archivos de gran tamaño y RDC está habilitado. Por ejemplo, con RDC, un pequeño cambio en una presentación de PowerPoint® de 2 MB puede dar lugar a que solo se envíen 60 kilobytes (KB) a través de la red, lo que supone un ahorro del 97 % de bytes transferidos.
+Replicación DFS es mucho más rápida que FRS, especialmente cuando se realizan pequeños cambios en archivos de gran tamaño y RDC está habilitado. Por ejemplo, con RDC, un pequeño cambio en una presentación de PowerPoint&reg; de 2 MB puede dar lugar a que solo se envíen 60 kilobytes (KB) a través de la red, lo que supone un ahorro del 97 % de bytes transferidos.
 
 RDC no se usa en archivos de menos de 64 KB y es posible que no sea beneficioso en las LAN de alta velocidad en las que no existe contención sobre el ancho de banda de red. RDC se puede deshabilitar en cada conexión mediante Administración de DFS.
 

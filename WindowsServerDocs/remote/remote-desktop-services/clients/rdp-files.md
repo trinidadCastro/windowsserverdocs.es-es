@@ -1,28 +1,24 @@
 ---
 title: Configuración admitida del archivo RDP de Escritorio remoto
 description: Obtén información sobre la configuración del archivo RDP para Escritorio remoto
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
-author: btaintor
-manager: dongill
+author: heidilohr
+manager: lizross
 ms.author: helohr
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a596bcd29fdb80f8b2b0fa86ee808755dd09f43
-ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
+ms.openlocfilehash: 6af7559f1d74f2af38579ee357507bd1207f63b2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125097"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855918"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>Configuración admitida del archivo RDP de Escritorio remoto
 
-En la tabla siguiente se incluye la lista de configuraciones admitidas del archivo RDP que puedes usar con los clientes de Windows y HTML. Una “x” en la columna de plataforma indica que la configuración es compatible. Sin embargo, esta no es una lista completa de las configuraciones admitidas para los clientes de Windows y HTML5. Seguiremos actualizando esta tabla para incluir más configuración de RDP compatibles para los clientes de Windows y HTML5, así como los clientes de macOS, iOS y Android.
+En la tabla siguiente se incluye la lista de configuraciones admitidas del archivo RDP que puedes usar con los clientes de Windows y HTML. Una "x" en la columna de plataforma indica que la configuración es compatible. Sin embargo, esta no es una lista completa de las configuraciones admitidas para los clientes de Windows y HTML5. Seguiremos actualizando esta tabla para incluir más configuración de RDP compatibles para los clientes de Windows y HTML5, así como los clientes de macOS, iOS y Android.
 
 Consulta [esta documentación](https://go.microsoft.com/fwlink/?linkid=2098243&clcid=0x409) para obtener información sobre cómo usar PowerShell para personalizar las propiedades de RDP para un grupo host.
 

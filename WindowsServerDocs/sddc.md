@@ -1,23 +1,20 @@
 ---
 title: Centro de datos definido por software de Windows Server
-description: Introducción a SDDC de Windows Server
+Description: Introducción a SDDC de Windows Server
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: SDDC
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6490bd9a6cb7b305ba9746a357a8c909c7b84555
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5a90ad13a51a540c6c76adacb7df0225d642573a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950468"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857198"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Centro de datos definido por software de Windows Server
 
@@ -255,7 +252,7 @@ Desired State Configuration de Windows PowerShell ofrece una plataforma de admin
 
 ![](media/sddc/spacer1.png)![](media/sddc/dsc.png)
 
-DSC admite "implementaciones continuas" para poder implementar configuraciones una y otra vez sin interrumpir nada.
+DSC admite implementaciones continuas para poder implementar configuraciones una y otra vez sin interrumpir nada.
 
 -  Las configuraciones de DSC solo aplican los ajustes que han cambiado con respecto a la versión original para que implementaciones sean más rápidas.
 -  DSC puede usarse en un entorno local, público o de nube privada.

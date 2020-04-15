@@ -1,7 +1,6 @@
 ---
 title: Asignar una ruta de acceso de carpeta de punto de montaje a una unidad
 description: En este artículo se describe cómo asignar una ruta de acceso de carpeta de punto de montaje (en lugar de una letra de unidad) a una unidad.
-keywords: virtualización, seguridad, malware
 ms.date: 06/07/2019
 ms.prod: windows-server
 ms.technology: storage
@@ -9,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1255eadd50adb0eaaf44774e150d69f6dad8adae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2fda216b57fbf036ce20c40b4c8b38d44404f3c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386051"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815538"
 ---
 # <a name="assign-a-mount-point-folder-path-to-a-drive"></a>Asignar una ruta de acceso de carpeta de punto de montaje a una unidad
 
-> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Puedes usar la Administración de discos para asignar una ruta de acceso de carpeta de punto de montaje (en lugar de una letra de unidad) a la unidad. Las rutas de acceso de carpeta de punto de montaje solo están disponibles en carpetas vacías en volúmenes NTFS básicos o dinámicos.
 
@@ -50,12 +49,12 @@ Puedes usar la Administración de discos para asignar una ruta de acceso de carp
 
 -   Para quitar la ruta de acceso de carpeta de punto de montaje, haz clic en ella y luego haz clic en **Quitar**.
 
-| Valor | Descripción |
+| Value | Descripción |
 | --- | --- |
 | **list volume** | Muestra una lista de volúmenes básicos y dinámicos en todos los discos. |
 | **select volume**        | Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de carpeta de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente.|
 | **assign** | <ul><li> Asigna una letra de unidad o una ruta de acceso de carpeta de punto de montaje al volumen con foco. Si no se especifica ninguna ruta de acceso de carpeta de punto de montaje o letra de unidad, se le asigna la siguiente letra de unidad disponible. Si la ruta de acceso de carpeta de punto de montaje o letra de unidad ya está en uso, se genera un error.</li>  <li>Con el comando **assign**, puedes cambiar la letra de unidad asociada a una unidad extraíble.</li> <li> No puedes asignar letras de unidad a volúmenes de arranque ni a volúmenes que incluyan el archivo de paginación. Además, no puedes asignar una letra de unidad a una partición del fabricante de equipos originales (OEM), partición de sistema EFI o una partición GPT que no sea una partición de datos básica.</li></ul> |
-| **mount=** <em>path</em> | Especifica una carpeta NTFS vacía y existente donde residirá la unidad montada.  |
+| **mount=** <em>ruta de acceso</em> | Especifica una carpeta NTFS vacía y existente donde residirá la unidad montada.  |
 
 ## <a name="additional-considerations"></a>Consideraciones adicionales
 
@@ -65,7 +64,7 @@ Puedes usar la Administración de discos para asignar una ruta de acceso de carp
 -   Al asignar una ruta de acceso de carpeta de punto de montaje a una unidad, usa el **Visor de eventos** para comprobar el registro del sistema en busca de errores o advertencias del servicio de clúster que indiquen errores en la ruta de acceso de carpeta de punto de montaje. Estos errores aparecerían como **ClusSvc** en la columna **Origen** y **Recurso de disco físico** en la columna **Categoría**.
 -   También puedes crear una unidad montada usando el comando [mountvol](https://go.microsoft.com/fwlink/?linkid=64111).
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Consulta también
 -   [Notación de sintaxis de línea de comandos](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
 
 
