@@ -1,32 +1,28 @@
 ---
 title: Agregar entradas a CONFIGURAR, COMPLEMENTOS, ESTADO RÁPIDO Y VÍNCULOS DE AYUDA
 description: Describe cómo usar Windows Server Essentials
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c0a8f10d-fd85-4c8d-b9bb-176cb1db1f46
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 074e4e638a1fe96bedf2c8340ec71848a8fa4ac4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 78eb8a24b32763ae4f7c048889529f87d3b4fecf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310278"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817668"
 ---
 # <a name="add-entries-to-setup-add-ins-quick-status-and-help-links"></a>Agregar entradas a CONFIGURAR, COMPLEMENTOS, ESTADO RÁPIDO Y VÍNCULOS DE AYUDA
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **ESTADO RÁPIDO**, y puede agregar vínculos a la sección Vínculos de la comunidad en la página principal del Panel. Para agregar las tareas y enlaces a las listas y secciones, copie un archivo XML llamado OEMHomePageContent.home o un archivo de recursos incrustado llamado OEMHomePageContent.dll en %ProgramFiles%\Windows Server\Bin\Addins\Home. El archivo de recursos incrustado se puede utilizar para localizar el texto en las tareas y los vínculos que se agregan. El archivo .home contiene las definiciones XML de las tareas y vínculos.  
+Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **ESTADO RÁPIDO** , y puede agregar vínculos a la sección Vínculos de la comunidad en la página principal del Panel. Para agregar las tareas y enlaces a las listas y secciones, copie un archivo XML llamado OEMHomePageContent.home o un archivo de recursos incrustado llamado OEMHomePageContent.dll en %ProgramFiles%\Windows Server\Bin\Addins\Home. El archivo de recursos incrustado se puede utilizar para localizar el texto en las tareas y los vínculos que se agregan. El archivo .home contiene las definiciones XML de las tareas y vínculos.  
   
 ## <a name="adding-tasks-to-the-setup-add-ins-quick-status-task-lists-and-adding-links-to-help-task"></a>Agregar tareas a las listas de tareas CONFIGURAR, COMPLEMENTOS o ESTADO RÁPIDO y agregar vínculos a la tarea AYUDA  
- Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **ESTADO RÁPIDO**, y vínculos a la **AYUDA**; para ello, defina las tareas y los enlaces en el archivo XML y, de manera opcional, cree el archivo de recursos incrustado e instálelo en el servidor. Si el archivo XML se instala en el servidor sin un archivo de recursos, debe tener como nombre OEMHomePageContent.home. Si se está usando un ensamblado para instalar el archivo XML y el archivo de recursos, se debe denominar OEMHomePageContent.dll y firmar con Authenticode.  
+ Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **ESTADO RÁPIDO** , y vínculos a la **AYUDA** ; para ello, defina las tareas y los enlaces en el archivo XML y, de manera opcional, cree el archivo de recursos incrustado e instálelo en el servidor. Si el archivo XML se instala en el servidor sin un archivo de recursos, debe tener como nombre OEMHomePageContent.home. Si se está usando un ensamblado para instalar el archivo XML y el archivo de recursos, se debe denominar OEMHomePageContent.dll y firmar con Authenticode.  
   
 ### <a name="define-the-tasks-and-links"></a>Definición de tareas y enlaces  
  Puede utilizar un editor de textos como el Bloc de notas para crear el archivo .home; si también va a crear un archivo de recursos incrustado, puede utilizar Visual Studio 2010 o superior para definir los archivos. En el procedimiento siguiente se muestra cómo utilizar Visual Studio 2010 o superior para crear los archivos.  
@@ -35,15 +31,15 @@ Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **
   
 1. Abra Visual Studio 2010 o superior como administrador; para ello, haga clic con el botón secundario en el menú Inicio y seleccione **Ejecutar como administrador**.  
   
-2. Haga clic en **Archivo**, **Nuevo** y a continuación haga clic en **Proyecto**.  
+2. Haga clic en **Archivo**, **Nuevo**y a continuación haga clic en **Proyecto**.  
   
-3. En el panel **Plantillas**, haga clic en **Biblioteca de clase**, escriba **OEMHomePageContent** en la casilla **Nombre** y a continuación haga clic en **Aceptar**.  
+3. En el panel **Plantillas** , haga clic en **Biblioteca de clase**, escriba **OEMHomePageContent** en la casilla **Nombre** y a continuación haga clic en **Aceptar**.  
   
 4. Elimine el archivo Class1.cs.  
   
-5. Haga clic con el botón secundario en el nuevo proyecto, seleccione **Agregar** y a continuación haga clic en **Nuevo elemento**.  
+5. Haga clic con el botón secundario en el nuevo proyecto, seleccione **Agregar**y a continuación haga clic en **Nuevo elemento**.  
   
-6. En el panel **Plantillas**, haga clic en **Archivo XML**, escriba **OEMHomePageContent.home** en la casilla **Nombre** y después haga clic en **Agregar**.  
+6. En el panel **Plantillas** , haga clic en **Archivo XML**, escriba **OEMHomePageContent.home** en la casilla **Nombre** y después haga clic en **Agregar**.  
   
    > [!NOTE]
    >  Si el archivo XML se instala sin un archivo de recursos, debe tener como nombre OEMHomePageContent.home. Si se incluye en un conjunto, puede tener cualquier nombre siempre y cuando tenga la extensión .home.  
@@ -103,17 +99,17 @@ Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **
    |---------------|-----------------|  
    |Nombre (tarea)|El nombre de la tarea que se muestra en la lista. Si crea un archivo de recursos incrustado, el valor de este atributo será el recurso de cadena.|  
    |descripción (tarea)|La descripción de la tarea. Si crea un archivo de recursos incrustado, el valor de este atributo será el recurso de cadena.|  
-   |Id. (tarea)|El identificador de la tarea. El identificador debe ser un GUID. Puede crear un nuevo GUID para una tarea **exe** , pero para una tarea **global** , use el GUID que creó al definir la tarea para el panel de tareas de la subpestaña. Para obtener más información acerca de cómo crear un GUID, consulte [crear GUID (Guidgen. exe)](https://go.microsoft.com/fwlink/?LinkId=116098).|  
+   |Id. (tarea)|El identificador de la tarea. El identificador debe ser un GUID. Puede crear un nuevo GUID para una tarea **exe** , pero para tareas **globales** deberá utilizar el GUID que creó al definir la tarea para el panel de tareas de la subficha. Para obtener más información sobre cómo crear un GUID, consulte [Crear GUID (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098).|  
    |image|Se omitirá este campo.|  
    |Nombre (acción)|Muestra el nombre de la tarea.|  
-   |Tipo (acción)|Describe el tipo de tarea. La tarea puede ser: una tarea **global**, **exe** o de URL. Una tarea **global** es la misma tarea global que creó al definir las tareas del panel de tareas en la subpestaña. Para obtener más información sobre la creación de una tarea global que se puede usar en el panel de tareas de la subpestaña y en las listas de tareas de Introducción o tareas comunes de la Página principal, vea œCreating las clases de soporte técnico? en cómo: ¿desea crear una subpestaña? del [SDK de soluciones de Windows Server](https://go.microsoft.com/fwlink/?LinkID=248648). Las tareas **exe** se pueden utilizar para ejecutar aplicaciones desde las listas Tareas de introducción o Tareas comunes.|  
-   |exelocation|La ruta a la aplicación asociada con la tarea. Este atributo solo se utiliza con las tareas **exe**.|  
+   |Tipo (acción)|Describe el tipo de tarea. La tarea puede ser: una tarea **global** , **exe**o de URL. Las tareas **globales** son las creadas al definir las tareas del panel de tareas en la subficha. Para obtener más información sobre la creación de una tarea global que se puede usar en el panel de tareas de la subpestaña y en las listas de tareas de Introducción o tareas comunes de la Página principal, vea œCreating las clases de soporte técnico? en cómo: ¿Crear una subpestaña? del [SDK de soluciones de Windows Server](https://go.microsoft.com/fwlink/?LinkID=248648). Las tareas **exe** se pueden utilizar para ejecutar aplicaciones desde las listas Tareas de introducción o Tareas comunes.|  
+   |exelocation|La ruta a la aplicación asociada con la tarea. Este atributo solo se utiliza con las tareas **exe** .|  
    |replaceid|El identificador de la tarea que es sustituida por esta tarea.|  
    |conjunto|AssemblyName del conjunto que proporciona la clase para implementar la consulta de estado rápido. El ensamblado debe encontrarse en archivos de programa \ Windows Server\Bin\\.|  
-   |clase|Nombre de la clase que implementa la consulta de estado rápido. La clase debe implementar la interfaz **ITaskStatusQuery**.|  
+   |clase|Nombre de la clase que implementa la consulta de estado rápido. La clase debe implementar la interfaz **ITaskStatusQuery** .|  
    |Título (vínculo)|El texto del enlace. Si crea un archivo de recursos incrustado, el valor de este atributo será el recurso de cadena.|  
    |Descripción (vínculo)|La descripción del destino del enlace. Si crea un archivo de recursos incrustado, el valor de este atributo será el recurso de cadena.|  
-   |ShellExecPath|La ruta a la aplicación o la dirección URL.<br /><br /> **Nota:** Las variables de entorno se admiten en el atributo ShellExecPath.|  
+   |ShellExecPath|La ruta a la aplicación o la dirección URL.<br /><br /> **Nota:** El atributo ShellExecPath es compatible con variables de entorno.|  
   
     En el siguiente código de ejemplo se muestra cómo definir un enlace para una aplicación:  
   
@@ -133,7 +129,7 @@ Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **
   
 8. Cambie los valores del atributo para representar la tarea o el enlace.  
   
-9. En el **Explorador de soluciones**, haga clic con el botón secundario en **OEMHomePageContent.home** y, a continuación, haga clic en **Propiedades**.  En el panel de **Propiedades**, en **Acción de generación**, seleccione **Recurso incrustado**.  
+9. En el **Explorador de soluciones**, haga clic con el botón secundario en **OEMHomePageContent.home**y, a continuación, haga clic en **Propiedades**.  En el panel de **Propiedades** , en **Acción de generación**, seleccione **Recurso incrustado**.  
   
 10. Guarde el archivo OEMHomePageContent.home.  
   
@@ -147,7 +143,7 @@ Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **
 ##### <a name="replace-tasks"></a>Sustituir tareas  
  Para sustituir las tareas predefinidas en la lista de Tareas de introducción o la lista de Tareas comunes, agregue el GUID de la tarea al atributo replaceid de la definición de la tarea. En la tabla siguiente encontrará una lista de las tareas y sus identificadores correspondientes que se pueden sustituir en el Panel:  
   
-|Nombre de tarea|Identificador|  
+|Nombre de la tarea|Identificador|  
 |---------------|----------------|  
 |Obtener actualizaciones para otros productos de Microsoft|8412D35A-13EE-4112-AE0B-F7DBC83EA83D|  
 |Configurar copia de seguridad del servidor|F68B3F3F-19DE-499D-9ACB-4BB41B8FF420|  
@@ -167,9 +163,9 @@ Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **
   
 ###### <a name="to-create-the-resource-file"></a>Para crear el archivo de recursos  
   
-1.  Haga clic con el botón secundario en el proyecto que haya creado para las tareas, haga clic en **Agregar** y a continuación en **Nuevo elemento**.  
+1.  Haga clic con el botón secundario en el proyecto que haya creado para las tareas, haga clic en **Agregar**y a continuación en **Nuevo elemento**.  
   
-2.  En el panel **Plantillas**, haga clic en **Archivo de recursos**, escriba **OEMHomePageContent.home.resx** en la casilla **Nombre** y a continuación haga clic en **Agregar**.  
+2.  En el panel **Plantillas** , haga clic en **Archivo de recursos**, escriba **OEMHomePageContent.home.resx** en la casilla **Nombre** y a continuación haga clic en **Agregar**.  
   
     > [!NOTE]
     >  El archivo de recursos puede tener cualquier nombre, siempre que posea la extensión .home.resx.  
@@ -213,7 +209,7 @@ Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **
   
 2.  Si no ha creado ningún archivo de recursos incrustado, copie el archivo OEMHomePageContent.home en la carpeta **%ProgramFiles%\Windows Server\Bin\Addins\Home** del servidor. Si ha creado un archivo de recursos incrustado, copie el archivo OEMHomePageContent.dll en la carpeta **%ProgramFiles%\Windows Server\Bin\Addins\Home** del servidor.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Consulte también  
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
  [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   

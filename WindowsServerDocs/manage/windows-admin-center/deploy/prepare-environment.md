@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 72e71ce2d1427f392aa02d32597f92d031f9a5c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7a4dacd611741942e874e831fd9598aeda5e97b3
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407004"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269282"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>Preparación del entorno para Windows Admin Center
 
@@ -22,7 +22,6 @@ ms.locfileid: "71407004"
 Hay algunas versiones de servidor que necesitan preparación adicional antes de que estén listas para administrarse con Windows Admin Center:
 
 - [Windows Server 2012 y 2012 R2](#prepare-windows-server-2012-and-2012-r2)
-- [Windows Server 2008 R2](#prepare-windows-server-2008-r2)
 - [Microsoft Hyper-V Server 2016](#prepare-microsoft-hyper-v-server-2016)
 - [Microsoft Hyper-V Server 2012 R2](#prepare-microsoft-hyper-v-server-2012-r2)
 
@@ -37,26 +36,6 @@ Windows Admin Center requiere características de PowerShell que no se incluyen 
 Escribe `$PSVersiontable` en PowerShell para verificar que esté instalado WMF y que la versión sea 5.1 o posterior.
 
 Si no está instalado, puedes [descargar e instalar WMF 5.1](https://docs.microsoft.com/powershell/wmf/setup/install-configure).
-
-## <a name="prepare-windows-server-2008-r2"></a>Preparación de Windows Server 2008 R2
-
-### <a name="install-wmf-version-51-or-higher"></a>Instalación de WMF versión 5.1 o posterior
-
-Windows Admin Center requiere características de PowerShell que no se incluyen de forma predeterminada en Windows Server 2008 R2. Para administrar Windows Server 2008 R2 con Windows Admin Center, debes instalar WMF versión 5.1 o posterior en esos servidores. 
-
-Asegúrate de que [.NET Framework 4.5.2 o posterior](https://docs.microsoft.com/dotnet/framework/install/on-windows-7) ya esté instalado en el equipo.
-
-Escribe `$PSVersiontable` en PowerShell para verificar que esté instalado WMF y que la versión sea 5.1 o posterior.
-
-Si no está instalado, puedes [descargar e instalar WMF 5.1](https://docs.microsoft.com/powershell/wmf/setup/install-configure).
-
-Ejecuta `Enable-PSRemoting –force` en una consola de PowerShell para habilitar la conexión remota de PowerShell. 
-
-### <a name="enable-remote-desktop"></a>Habilitación de Escritorio remoto
-
-Para usar Escritorio remoto dentro de Windows Admin Center, debes habilitar Escritorio remoto en tu servidor de Windows Server 2008 R2.
-
-Desde **Administrador de servidores**, ve a **Configurar Escritorio remoto**. Habilita Escritorio remoto en "Permitir las conexiones desde equipos que ejecuten cualquier versión de Escritorio remoto".
 
 ## <a name="prepare-microsoft-hyper-v-server-2016"></a>Preparación de Microsoft Hyper-V Server 2016
 
