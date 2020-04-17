@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 7609ebb0fdcb6d429cd40d99399eaaedb732df08
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c0fdb5c1d7c4b03610a173c6cd0575d39646a7d0
+ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855098"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81524910"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>Determinación de la lista de permisos y denegaciones y del inventario de aplicaciones para directivas de restricción de software
 
@@ -48,9 +48,9 @@ Para usar de forma eficaz la regla predeterminada permitir, debe determinar exac
 
 2.  Cree el siguiente valor del registro para habilitar la característica de registro avanzado y establezca la ruta de acceso en la que se debe escribir el archivo de registro.
 
-    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\ CodeIdentifiers"**
+    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers"**
 
-    Valor de cadena: *NameLogFile ruta de acceso a NameLogFile*
+    Valor de cadena: *nombreDeArchivoDeRegistro ruta de acceso a nombreDeArchivoDeRegistro*
 
     Dado que SRP está evaluando todas las aplicaciones cuando se ejecutan, se escribe una entrada en el archivo de registro *NameLogFile* cada vez que se ejecuta la aplicación.
 
@@ -69,5 +69,4 @@ Para usar de forma eficaz la regla predeterminada permitir, debe determinar exac
     Un ejemplo de la salida escrita en un archivo de registro:
 
 **Explorer. exe (PID = 4728) identifiedC: \ Windows\system32\onenote.exe as Unrestricted usingpath Rule, GUID = {320bd852-aa7c-4674-82c5-9a80321670a3}**    Todas las aplicaciones y el código asociado que comprueba y establece en Block se anotarán en el archivo de registro, que puede usar para determinar qué ejecutables se deben tener en cuenta para la lista de permitidos.
-
 
