@@ -1,24 +1,20 @@
 ---
 title: Configurar la calidad de servicio (QoS) para un adaptador de red de máquina virtual de inquilino
 description: Al configurar QoS para un adaptador de red de máquina virtual de inquilinos, puede elegir entre el protocolo de puente del centro de datos \(DCB\)o las redes definidas por software \(SDN\) QoS.
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6d783ff6-7dd5-496c-9ed9-5c36612c6859
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 61f790898d2a6068afb1436957e64861f4c0ebe8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 76a37bde8ca89fe6808a12aff51185d179f5d523
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309932"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854558"
 ---
 # <a name="configure-quality-of-service-qos-for-a-tenant-vm-network-adapter"></a>Configurar la calidad de servicio (QoS) para un adaptador de red de máquina virtual de inquilino
 
@@ -26,9 +22,9 @@ ms.locfileid: "80309932"
 
 Al configurar QoS para un adaptador de red de máquina virtual de inquilinos, puede elegir entre el protocolo de puente del centro de datos \(DCB\)o las redes definidas por software \(SDN\) QoS.
 
-1.  **DCB**. Puede configurar DCB mediante los cmdlets de NetQoS de Windows PowerShell. Para obtener un ejemplo, vea la sección sobre cómo habilitar el protocolo de puente del centro de datos en el tema [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).
+1.    **DCB**. Puede configurar DCB mediante los cmdlets de NetQoS de Windows PowerShell. Para obtener un ejemplo, vea la sección sobre cómo habilitar el protocolo de puente del centro de datos en el tema [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).
 
-2.  **QoS de Sdn**. Puede habilitar la QoS de SDN mediante el uso de la controladora de red, que se puede establecer para limitar el ancho de banda en una interfaz virtual para impedir que una máquina virtual de tráfico alto bloquee a otros usuarios.  También puede configurar la QoS de SDN para reservar una cantidad específica de ancho de banda para una máquina virtual con el fin de asegurarse de que la máquina virtual sea accesible independientemente de la cantidad de tráfico de red.  
+2.    **QoS de Sdn**. Puede habilitar la QoS de SDN mediante el uso de la controladora de red, que se puede establecer para limitar el ancho de banda en una interfaz virtual para impedir que una máquina virtual de tráfico alto bloquee a otros usuarios.  También puede configurar la QoS de SDN para reservar una cantidad específica de ancho de banda para una máquina virtual con el fin de asegurarse de que la máquina virtual sea accesible independientemente de la cantidad de tráfico de red.  
 
 Aplique la configuración de QoS de SDN a través de la configuración de puerto de las propiedades de la interfaz de red. Consulte la tabla siguiente para obtener más detalles.
 
