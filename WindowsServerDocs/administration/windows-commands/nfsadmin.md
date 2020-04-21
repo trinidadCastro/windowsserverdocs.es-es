@@ -1,28 +1,24 @@
 ---
 title: nfsadmin
-description: 'Tema de comandos de Windows para * * * *- '
-ms.custom: na
+description: Tema de comandos de Windows para * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7375b2cf-c6b8-45b5-abf6-6c10e462defd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2658cf610e4328d382b9224f4230d68a022d1cc3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6134ac7737cd761e752082b336e851dead23bd14
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373221"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838988"
 ---
 # <a name="nfsadmin"></a>nfsadmin
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Puede usar **nfsadmin** para administrar servidor para NFS y cliente para NFS.  
   
@@ -54,7 +50,7 @@ Puede usar **nfsadmin** para administrar servidor para NFS y cliente para NFS.
 **nfsadmin client** `[`*computerName*`] [`\-u *nombredeusuario* `[`\-p *contraseña* *`]]` config`[...]`*  
   
 ## <a name="description"></a>Descripción  
-La utilidad de línea de\-de comandos **nfsadmin** administra servidor para NFS o cliente para NFS en el equipo local o remoto que ejecuta los servicios de Microsoft para Network File System \(NFS\). Si ha iniciado sesión con una cuenta que no tiene los privilegios necesarios, puede especificar un nombre de usuario y una contraseña de una cuenta que sí los tenga. La acción realizada por **nfsadmin** depende de los argumentos de comando que suministre.  
+La utilidad de línea de\-de comandos **nfsadmin** administra servidor para NFS o cliente para NFS en el equipo local o remoto que ejecuta los servicios de Microsoft para Network File System \(NFS\). Si inicia sesión con una cuenta que no tenga los privilegios necesarios, puede especificar un nombre de usuario y una contraseña de una cuenta que sí los tenga. La acción realizada por **nfsadmin** depende de los argumentos de comando que suministre.  
   
 Además de las opciones y los argumentos de comando específicos de Service\-, **nfsadmin** acepta lo siguiente:  
   
@@ -62,7 +58,7 @@ Además de las opciones y los argumentos de comando específicos de Service\-, *
 Especifica el equipo remoto que desea administrar. Puede especificar el equipo mediante un servicio de nombres de Internet de Windows \(nombre de\) WINS o un sistema de nombres de dominio \(nombre de\) DNS, o bien por el protocolo de Internet \(dirección IP\).  
   
 **\-u** *nombreDeUsuario*  
-Especifica el nombre de usuario del usuario cuyas credenciales se van a utilizar. Puede que sea necesario agregar el nombre de dominio al nombre de usuario con el formato <em>dominio</em> **\\** <em>nombreDeUsuario</em>  
+Especifica el nombre del usuario cuyas credenciales se van a usar. Puede que sea necesario agregar el nombre de dominio al nombre de usuario con el formato <em>dominio</em> **\\** <em>nombreDeUsuario</em>  
   
 **\-p** *contraseña*  
 Especifica la contraseña del usuario especificado mediante la opción **\-u** . Si especifica la opción **\-u** pero omite la opción **\-p** , se le pedirá la contraseña del usuario.  
@@ -109,7 +105,7 @@ Establece el archivo especificado por *archivo* como archivo de auditoría. El v
 *tamaño* de\=de **fsize\=**  
 Establece el *tamaño* como el tamaño máximo en megabytes del archivo de auditoría. El tamaño máximo predeterminado es de 7 MB.  
   
-**audit\=** \[ **\+** | **\-** \]**montar** \[ **\+|\-** \]**read** \[ **\+** | **\-** \]**escritura** \[ **\+** | **\-** \]**Create** \[ **\+|\-** \]**Delete** \[ **\+** | **\-** \]**bloqueo** \[ **\+|\-** \]**todo**  
+**audit\=** \[ **\+** | **\-** \]**montar** \[ **\+|\-** \]**read** \[ **\+** | **\-** \]**escritura** \[ **\+** | **\-** \]**Create** \[ **\+** | **\-** \]**Delete** \[ **\+** | **\-** \] **\[** \+ **|** \- **\]** **all** **\-**  
 Especifica los eventos que se van a registrar. Para iniciar el registro de un evento, escriba un signo más \( **\+** \) antes del nombre del evento; para detener el registro de un evento, escriba un signo menos \( **\-** \) antes del nombre del evento. Si se omite el signo, se supone el signo más. No use **All** con ningún otro nombre de evento.  
   
 **lockperiod\=** <em>segundos</em>  
@@ -163,22 +159,22 @@ DWOrd obcaseinsensitive
 **ntfscase\=** {**lower** | **Upper** | **preserve**}  
 Especifica si el uso de mayúsculas o minúsculas en los nombres de los archivos del sistema de archivos NTFS se devolverá en minúsculas, mayúsculas o en el formato almacenado en el directorio. La configuración predeterminada es **preserve**. Esta configuración no se puede cambiar si **casesensitivelookups** está establecido en **yes**.  
   
-*nombre* de creategroup  
+**creategroup** *nombre* de creategroup  
 crea un nuevo grupo de clientes y le asigna el *nombre*especificado.  
   
 **listgroups**  
 Muestra los nombres de todos los grupos de clientes.  
   
-*nombre* de deletegroup  
+**deletegroup** *nombre* de deletegroup  
 quita el grupo de clientes especificado por *nombre*.  
   
 **renamegroup** *OldName NewName*  
 cambia el nombre del grupo de clientes especificado por *OldName* a *NewName* .  
   
-*host de nombre* de addmembers\[...\]  
+**addmembers** *host de nombre* de addmembers\[...\]  
 agrega el *host* al grupo de clientes especificado por *nombre*.  
   
-*nombre* de listmembers  
+**listmembers** *nombre* de listmembers  
 enumera los equipos host del grupo de clientes especificado por *nombre*.  
   
 \[de *host de grupo* de **deletemembers** ...\]  
@@ -186,7 +182,7 @@ quita el cliente especificado por el *host* del grupo de clientes especificado p
   
 Si no se especifica una opción de comando o un argumento, **nfsadmin Server** muestra las opciones de configuración del servidor para NFS actual.  
   
-#### <a name="administering-client-for-nfs"></a>Administración de cliente para NFS  
+#### <a name="administering-client-for-nfs"></a>Administración de Cliente para NFS  
 Use el comando **nfsadmin Client** para administrar cliente para NFS. La acción específica que **nfsadmin Client** realiza depende del argumento de comando que especifique:  
   
 **start**  
@@ -199,7 +195,7 @@ Detiene el servicio cliente para NFS.
 Especifica la configuración general de cliente para NFS. Debe proporcionar al menos una de las siguientes opciones con el argumento del comando de **configuración** :  
   
 <em>modo</em> de **\=FileAccess**  
--   Especifica el modo de permisos predeterminado para los archivos creados en los servidores de Network File System \(NFS\). El argumento de *modo* consta de tres dígitos entre 0 y 7 \(\) inclusivas que representan los permisos predeterminados concedidos al usuario, grupo y otros \(\). Los dígitos se traducen a los permisos de estilo de\-de UNIX de la siguiente manera: 0\=ninguno, 1\=x, 2\=w, 3\=WX, 4\=r, 5\=RX, 6\=RW y 7\=rwx. Por ejemplo, **fileaccess\=750** proporciona el permiso rwx al propietario, el permiso RX para el grupo y ningún permiso de acceso a otros usuarios.  
+-   Especifica el modo de permisos predeterminado para los archivos creados en los servidores de Network File System \(NFS\). El argumento de *modo* consta de tres dígitos entre 0 y 7 \(\) inclusivas que representan los permisos predeterminados concedidos al usuario, grupo y otros \(\). Los dígitos se traducen a los permisos de estilo de\-de UNIX de la manera siguiente: 0\=ninguno, 1\=x, 2\=w, 3\=WX, 4\=r, 5\=RX, 6\=RW y 7\=rwx. Por ejemplo, **fileaccess\=750** proporciona el permiso rwx al propietario, el permiso RX para el grupo y ningún permiso de acceso a otros usuarios.  
   
 **mapsvr\=** <em>Server</em>  
 Establece el *servidor* como servidor de asignación de nombres de usuario para cliente para NFS. Aunque esta opción sigue siendo compatible con la compatibilidad con versiones anteriores, debe usar la utilidad **sfuadmin** en su lugar.  
@@ -236,7 +232,7 @@ Restaura los valores predeterminados de la siguiente configuración de rendimien
 -   **wsize**  
   
 <em>modo</em> de **\=FileAccess**  
-Especifica el modo de permisos predeterminado para los archivos creados en los servidores de Network File System \(NFS\). El argumento de *modo* consta de tres dígitos entre 0 y 7 \(\) inclusivas que representan los permisos predeterminados concedidos al usuario, grupo y otros \(\). Los dígitos se traducen a los permisos de estilo de\-de UNIX de la siguiente manera: 0\=ninguno, 1\=x, 2\=w, 3\=WX, 4\=r, 5\=RX, 6\=RW y 7\=rwx. Por ejemplo, **fileaccess\=750** proporciona el permiso rwx al propietario, el permiso RX para el grupo y ningún permiso de acceso a otros usuarios.  
+Especifica el modo de permisos predeterminado para los archivos creados en los servidores de Network File System \(NFS\). El argumento de *modo* consta de tres dígitos entre 0 y 7 \(\) inclusivas que representan los permisos predeterminados concedidos al usuario, grupo y otros \(\). Los dígitos se traducen a los permisos de estilo de\-de UNIX de la manera siguiente: 0\=ninguno, 1\=x, 2\=w, 3\=WX, 4\=r, 5\=RX, 6\=RW y 7\=rwx. Por ejemplo, **fileaccess\=750** proporciona el permiso rwx al propietario, el permiso RX para el grupo y ningún permiso de acceso a otros usuarios.  
   
 Si no se especifica una opción de comando o un argumento, **nfsadmin Client** muestra la configuración actual de cliente para NFS.  
   

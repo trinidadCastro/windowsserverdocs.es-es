@@ -1,7 +1,6 @@
 ---
 ms.assetid: 82918181-525d-4e93-af96-957dac6aedb6
 title: Apéndice B configurar el entorno de prueba
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: af045545826269630af9327480cda59093d219df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5f529e6b0176b7ad416a728163b4ae9671040bf8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407143"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861288"
 ---
 # <a name="appendix-b-setting-up-the-test-environment"></a>Apéndice B: Configuración del entorno de pruebas
 
@@ -64,17 +63,17 @@ Tienes que instalar el rol Hyper-V en un equipo con Windows Server 2008 R2 con S
 
 ##### <a name="to-install-the-hyper-v-role"></a>Para instalar el rol Hyper-V  
 
-1.  Haga clic en **Inicio**y, después, en Administrador del servidor.  
+1.  Haga clic en **Inicio** y, después, en Administrador del servidor.  
 
 2.  En el área de resumen de los roles de la ventana principal del Administrador del servidor, haz clic en **Agregar roles**.  
 
 3.  En la pantalla **Seleccionar roles de servidor**, selecciona **Hyper-V**.  
 
-4.  En la página **Crear redes virtuales** , haz clic en uno o varios adaptadores si quieres que sus conexiones de red estén disponibles para las máquinas virtuales.  
+4.  En la página **Crear redes virtuales**, haga clic en uno o varios adaptadores de red si desea que la conexión de red esté disponible para las máquinas virtuales.  
 
-5.  En la página para **confirmar selecciones de instalación**, haga clic en **Instalar**.  
+5.  En la página **Confirmar selecciones de instalación**, haz clic en **Instalar**.  
 
-6.  El equipo debe reiniciarse para finalizar la instalación. Haz clic en **Cerrar** para finalizar el asistente y después haz clic en **Sí** para reiniciar el servidor.  
+6.  El equipo debe reiniciarse para completar la instalación. Haz clic en **Cerrar** para finalizar el asistente y después haz clic en **Sí** para reiniciar el servidor.  
 
 7.  Después de reiniciar el servidor, inicia sesión con la misma cuenta que usaste para instalar el rol. Cuando el Asistente para reanudar la configuración complete la instalación, haz clic en **Cerrar** para finalizar el asistente.  
 
@@ -89,7 +88,7 @@ Ahora crearás una red virtual interna llamada ID_AD_Network.
 
 3.  En **Crear red virtual**, selecciona **Interna**.  
 
-4.  Haz clic en **Agregar**. Se abre la página **Nueva red virtual** .  
+4.  Haga clic en **Agregar**. Se abre la página **Nueva red virtual** .  
 
 5.  Escribe **ID_AD_Network** como nombre de la nueva red. Revisa las demás propiedades y modifícalas si es necesario.  
 
@@ -104,15 +103,15 @@ Crea una máquina virtual para usarla como controlador de dominio (DC1). Instale
 
 2. En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**.  
 
-3. En la página **Before you begin**, haz clic en **Next**.  
+3. En la página **Antes de comenzar**, haz clic en **Siguiente**.  
 
-4. En la página **Seleccionar tipo de instalación** , haz clic en **Instalación basada en características o en roles**y, después, haz clic en **Siguiente**.  
+4. En la página **Seleccionar tipo de instalación**, haz clic en **Instalación basada en características o en roles** y, después, haz clic en **Siguiente**.  
 
 5. En la página **Seleccionar servidor de destino**, haga clic en **Siguiente**.  
 
 6. En la página **Seleccionar roles de servidor**, haz clic en **Servicios de federación de Active Directory**. En el cuadro de diálogo **Asistente para agregar roles y características**, haz clic en **Agregar características** y, después, en **Siguiente**.  
 
-7. En la página **Seleccionar características**, haga clic en **Siguiente**.  
+7. En la página **Seleccionar características**, haz clic en **Siguiente**.  
 
 8. En la página **Servicios de dominio de Active Directory** , revisa la información y haz clic en **Siguiente**.  
 
@@ -126,11 +125,11 @@ Crea una máquina virtual para usarla como controlador de dominio (DC1). Instale
 
 13. En la página **Opciones de DNS**, haz clic en **Siguiente**.  
 
-14. En la página **Opciones adicionales** , haz clic en **Siguiente**.  
+14. En la página **Opciones adicionales**, haz clic en **Siguiente**.  
 
-15. En la página **Rutas de acceso** , escribe las ubicaciones para la carpeta SYSVOL, archivos de registro o la base de datos de Active Directory (o acepta las ubicaciones predeterminadas) y, después, haz clic en **Siguiente**.  
+15. En la página **Rutas de acceso**, escribe las ubicaciones para la carpeta SYSVOL, archivos de registro o la base de datos de Active Directory (o acepta las ubicaciones predeterminadas) y, después, haz clic en **Siguiente**.  
 
-16. En la página **Revisar opciones** , confirma las selecciones y, después, haz clic en **Siguiente**.  
+16. En la página **Revisar opciones**, confirma las selecciones y, después, haz clic en **Siguiente**.  
 
 17. En la página **Comprobación de requisitos previos**, confirma que se haya completado la validación de los requisitos previos y, después, haz clic en **Instalar**.  
 
@@ -147,7 +146,7 @@ Crea los siguientes usuarios con el Centro de administración de Active Director
 2. Crea los siguientes grupos de seguridad:  
 
 
-   |    Nombre de grupo    |        Dirección de correo electrónico         |
+   |    Nombre del grupo    |        Email Address         |
    |------------------|------------------------------|
    |   FinanceAdmin   |   financeadmin@contoso.com   |
    | FinanceException | financeexception@contoso.com |
@@ -164,13 +163,13 @@ Crea los siguientes usuarios con el Centro de administración de Active Director
 4. Crea los siguientes usuarios con los atributos indicados:  
 
 
-   |       Usuario       |  Nombre de usuario  |     Dirección de correo electrónico      | Departmento |      Grupo       | País o región |
+   |       Usuario       |  Nombre de usuario  |     Dirección de correo electrónico      | Departmento |      Grupo       | Country/Región |
    |------------------|------------|------------------------|------------|------------------|----------------|
-   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  Finanzas   |                  |       EE. UU.       |
-   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  Finanzas   |   FinanceAdmin   |       EE. UU.       |
-   |   Esther Valle   |   EValle   |   EValle@contoso.com   | Operaciones | FinanceException |       EE. UU.       |
-   |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     HR     |                  |       EE. UU.       |
-   |     Jeff Low     |    JLow    |    JLow@contoso.com    |     HR     |                  |       EE. UU.       |
+   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  Finance   |                  |       EE.UU.       |
+   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  Finance   |   FinanceAdmin   |       EE.UU.       |
+   |   Esther Valle   |   EValle   |   EValle@contoso.com   | Operaciones | FinanceException |       EE.UU.       |
+   |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     HR     |                  |       EE.UU.       |
+   |     Jeff Low     |    JLow    |    JLow@contoso.com    |     HR     |                  |       EE.UU.       |
    |    Servidor RMS    |    rms     |    rms@contoso.com     |            |                  |                |
 
    Para obtener más información sobre cómo crear grupos de seguridad, consulte [Crear un nuevo grupo](https://technet.microsoft.com/library/dd861305.aspx) en el sitio web de Windows Server.  
@@ -179,7 +178,7 @@ Crea los siguientes usuarios con el Centro de administración de Active Director
 
 1.  Mantén el cursor en la esquina superior derecha de la pantalla y haz clic en el icono de búsqueda. En el cuadro de búsqueda, escribe **administración de directivas de grupo** y haz clic en **Administración de directivas de grupo**.  
 
-2.  Expande **Bosque: contoso.com**y, después, expande **Dominios**, navega a **contoso.com**, expande **(contoso.com)** y selecciona **FileServerOU**. Haga clic con el botón derecho en **crear un GPO en este dominio y vincularlo aquí**
+2.  Expande **Bosque: contoso.com** y, después, expande **Dominios**, navega a **contoso.com**, expande **(contoso.com)** y selecciona **FileServerOU**. Haga clic con el botón derecho en **crear un GPO en este dominio y vincularlo aquí**
 
 3.  Escribe un nombre descriptivo para el GPO, como **FlexibleAccessGPO**, y haz clic en **Aceptar**.  
 
@@ -187,7 +186,7 @@ Crea los siguientes usuarios con el Centro de administración de Active Director
 
 1.  Abre la Consola de administración de directivas de grupo, haz clic en **contoso.com** y, después, haz doble clic en **Controladores de dominio**.  
 
-2.  Haz clic con el botón derecho en **Directiva predeterminada de controladores de dominio**y selecciona **Editar**.  
+2.  Haz clic con el botón derecho en **Directiva predeterminada de controladores de dominio** y selecciona **Editar**.  
 
 3.  En la ventana del Editor de administración de directivas de grupo, haz doble clic en **Configuración del equipo**, haz doble clic en **Directivas**, haz doble clic en **Plantillas administrativas**, haz doble clic en **Sistema**y, después, haz doble clic en **KDC**.  
 
@@ -213,17 +212,17 @@ Crea los siguientes usuarios con el Centro de administración de Active Director
 
 1.  En el Administrador del servidor, haz clic en **Agregar roles y características**.  
 
-2.  En la página **Before you begin**, haz clic en **Next**.  
+2.  En la página **Antes de comenzar**, haz clic en **Siguiente**.  
 
-3.  En la página **Seleccionar tipo de instalación** , haz clic en **Siguiente**.  
+3.  En la página **Seleccionar tipo de instalación**, haz clic en **Siguiente**.  
 
 4.  En la página **Seleccionar servidor de destino**, haga clic en **Siguiente**.  
 
 5.  En la página **Seleccionar roles de servidor** , expande **Servicios de archivos y almacenamiento**, activa la casilla junto a **Servicios de iSCSI y archivo**, expande y selecciona **Administrador de recursos del servidor de archivos**.  
 
-    En el Asistente para agregar roles y características, haz clic en **Agregar características**y, después, en **Siguiente**.  
+    En el Asistente para agregar roles y características, haz clic en **Agregar características** y, después, en **Siguiente**.  
 
-6.  En la página **Seleccionar características**, haga clic en **Siguiente**.  
+6.  En la página **Seleccionar características**, haz clic en **Siguiente**.  
 
 7.  En la página **Confirmar selecciones de instalación** , haga clic en **Instalar**.  
 
@@ -239,11 +238,11 @@ Al crear cuotas y filtros de archivos, tienes la opción de enviar notificacione
 
 ###### <a name="to-configure-email-options-in-file-server-resource-manager"></a>Para configurar las opciones de correo electrónico en el Administrador de recursos del servidor de archivos  
 
-1. Abra el Administrador de recursos del servidor de archivos. Para abrir el Administrador de recursos del servidor de archivos haz clic en **Inicio**, escribe **administrador de recursos del servidor de archivos**y haz clic en **Administrador de recursos del servidor de archivos**.  
+1. Abra el Administrador de recursos del servidor de archivos. Para abrir el Administrador de recursos del servidor de archivos haz clic en **Inicio**, escribe **administrador de recursos del servidor de archivos** y haz clic en **Administrador de recursos del servidor de archivos**.  
 
 2. En la interfaz del Administrador de recursos del servidor de archivos, haz clic con el botón derecho en **Administrador de recursos del servidor de archivos** y, después, haz clic en **Configurar opciones**. Se abre el cuadro de diálogo **Opciones del Administrador de recursos del servidor de archivos**.  
 
-3. En la pestaña **Notificaciones de correo electrónico** , en el nombre o la dirección IP del servidor SMTP, escribe el nombre de host o la dirección IP del servidor SMTP que reenviará las notificaciones de correo electrónico.  
+3. En la pestaña **Notificaciones de correo electrónico**, en el nombre o la dirección IP del servidor SMTP, escribe el nombre de host o la dirección IP del servidor SMTP que reenviará las notificaciones de correo electrónico.  
 
 4. Si desea notificar de forma rutinaria a determinados administradores de eventos de cuota o de filtrado de archivos, en **los destinatarios de administrador predeterminados**, escriba cada dirección de correo electrónico como fileadmin@contoso.com. Use el formato account@domainy use punto y coma para separar varias cuentas.  
 
@@ -296,33 +295,33 @@ Agrega Active Directory Rights Management Services (AD RMS) y todas las caracter
 
 3. En la pantalla **Antes de comenzar**, haz clic en **Siguiente**.  
 
-4. En la pantalla **Seleccionar tipo de instalación** , haz clic en **Instalación basada en características o en roles**y, después, haz clic en **Siguiente**.  
+4. En la pantalla **Seleccionar tipo de instalación**, haz clic en **Instalación basada en características o en roles** y, después, haz clic en **Siguiente**.  
 
 5. En la pantalla **Seleccionar destinos del servidor**, haz clic en **Siguiente**.  
 
-6. En la pantalla **Seleccionar roles de servidor** , activa la casilla junto a **Active Directory Rights Management Services**y, después, haz clic en **Siguiente**.  
+6. En la pantalla **Seleccionar roles de servidor**, activa la casilla junto a **Active Directory Rights Management Services** y, después, haz clic en **Siguiente**.  
 
 7. En **¿Desea agregar características requeridas para Active Directory Rights Management Services?** , haz clic en **Agregar características**.  
 
 8. En la pantalla **Seleccionar roles de servidor**, haz clic en **Siguiente**.  
 
-9. En la pantalla **Seleccionar características para instalar** , haz clic en **Siguiente**.  
+9. En la pantalla **Seleccionar características para instalar**, haz clic en **Siguiente**.  
 
 10. En la pantalla **Active Directory Rights Management Services**, haz clic en Siguiente.  
 
-11. En la pantalla **Seleccionar servicios de rol** , haz clic en **Siguiente**.  
+11. En la pantalla **Seleccionar servicios de rol**, haz clic en **Siguiente**.  
 
-12. En la pantalla **Rol Servidor web (IIS)** , haga clic en **Siguiente**.  
+12. En la pantalla **Rol Servidor web (IIS)** , haz clic en **Siguiente**.  
 
-13. En la pantalla **Seleccionar servicios de rol** , haz clic en **Siguiente**.  
+13. En la pantalla **Seleccionar servicios de rol**, haz clic en **Siguiente**.  
 
-14. En la pantalla **Confirmar selecciones de instalación** , haz clic en **Instalar**.  
+14. En la pantalla **Confirmar selecciones de instalación**, haz clic en **Instalar**.  
 
-15. Una vez completada la instalación, en la pantalla **Progreso de la instalación** , haz clic en **Realizar configuración adicional**. Aparece el asistente de configuración de AD RMS.  
+15. Una vez completada la instalación, en la pantalla **Progreso de la instalación**, haz clic en **Realizar configuración adicional**. Aparece el asistente de configuración de AD RMS.  
 
-16. En la pantalla **AD RMS** , haz clic en **Siguiente**.  
+16. En la pantalla **AD RMS**, haz clic en **Siguiente**.  
 
-17. En la pantalla **Clúster de AD RMS** , selecciona **Crear un nuevo clúster raíz de AD RMS** y, después, haz clic en **Siguiente**.  
+17. En la pantalla **Clúster de AD RMS**, selecciona **Crear un nuevo clúster raíz de AD RMS** y, después, haz clic en **Siguiente**.  
 
 18. En la pantalla **Base de datos de configuración**, haz clic en **Usar Windows Internal Database en este servidor** y, después, haz clic en **Siguiente**.  
 
@@ -337,13 +336,13 @@ Agrega Active Directory Rights Management Services (AD RMS) y todas las caracter
 
 22. En la pantalla contraseña de la **clave de clúster** , en los cuadros **contraseña** y **Confirmar contraseña** , escriba <strong>pass@word1</strong>y, a continuación, haga clic en **siguiente**.  
 
-23. En la pantalla **Sitio web del clúster** , asegúrate de que **Sitio web predeterminado** está seleccionado y, después, haz clic en **Siguiente**.  
+23. En la pantalla **Sitio web del clúster**, asegúrate de que **Sitio web predeterminado** está seleccionado y, después, haz clic en **Siguiente**.  
 
 24. En la pantalla **Dirección de clúster**, selecciona la opción **Usar una conexión no cifrada**, en el cuadro **Nombre de domino completo**, escribe **FILE1.contoso.com** y, después, haz clic en **Siguiente**.  
 
 25. En la pantalla **Nombre del certificado emisor de licencias**, acepta el nombre predeterminado (**FILE1**) en el cuadro de texto y haz clic en **Siguiente**.  
 
-26. En la pantalla **Registro de SCP** , selecciona **Registrar el SCP ahora**y, después, haz clic en **Siguiente**.  
+26. En la pantalla **Registro de SCP**, selecciona **Registrar el SCP ahora** y, después, haz clic en **Siguiente**.  
 
 27. En la pantalla **Confirmación**, haz clic en **Instalar**.  
 
@@ -351,9 +350,9 @@ Agrega Active Directory Rights Management Services (AD RMS) y todas las caracter
 
 29. Inicia la consola de AD RMS y ve a **Plantillas de directiva de permisos**.  
 
-    Para abrir la consola de AD RMS, en el Administrador del servidor, haz clic en **Servidor local** en el árbol de consola, haz clic en **Herramientas**y haz clic en **Active Directory Rights Management Services**.  
+    Para abrir la consola de AD RMS, en el Administrador del servidor, haz clic en **Servidor local** en el árbol de consola, haz clic en **Herramientas** y haz clic en **Active Directory Rights Management Services**.  
 
-30. Haz clic en la plantilla **Crear plantilla de directiva de permisos distribuida** , situada en el panel derecho, haz clic en **Agregar**y selecciona la siguiente información:  
+30. Haz clic en la plantilla **Crear plantilla de directiva de permisos distribuida**, situada en el panel derecho, haz clic en **Agregar** y selecciona la siguiente información:  
 
     -   Language (idioma): Inglés EE.UU.  
 
@@ -361,11 +360,11 @@ Agrega Active Directory Rights Management Services (AD RMS) y todas las caracter
 
     -   Descripción: Contoso Finance Admin Only  
 
-    Haga clic en **Agregar** y, a continuación, en **Siguiente**.  
+    Haz clic en **Agregar** y, después, en **Siguiente**.  
 
 31. En la sección usuarios y derechos, haga clic en **usuarios y derechos**, haga clic en **agregar**, escriba <strong>financeadmin@contoso.com</strong>y haga clic en **Aceptar**.  
 
-32. Selecciona **Control total**y deja seleccionada **Conceder al propietario (autor) derecho de control total sin expiración** .  
+32. Selecciona **Control total** y deja seleccionada **Conceder al propietario (autor) derecho de control total sin expiración**.  
 
 33. Haz clic en las demás pestañas sin realizar cambios y, después, haz clic en **Finalizar**. Inicie sesión como CONTOSO\Administrador.  
 
@@ -575,9 +574,9 @@ Configura Microsoft Exchange Server en este equipo. Para obtener más informaci�
 
 2. En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**.  
 
-3. En la página **Before you begin**, haz clic en **Next**.  
+3. En la página **Antes de comenzar**, haz clic en **Siguiente**.  
 
-4. En la página **Seleccionar tipo de instalación** , haz clic en **Instalación basada en características o en roles**y, después, haz clic en **Siguiente**.  
+4. En la página **Seleccionar tipo de instalación**, haz clic en **Instalación basada en características o en roles** y, después, haz clic en **Siguiente**.  
 
 5. En la página **Seleccionar servidor de destino** , haz clic en **Seleccionar un servidor del grupo de servidores**, haz clic en los nombres de servidor donde quieres instalar los Servicios de dominio de Active Directory (AD DS) y, después, en **Siguiente**.  
 
@@ -589,7 +588,7 @@ Configura Microsoft Exchange Server en este equipo. Para obtener más informaci�
 
 9. En la página **Confirmación**, haz clic en **Instalar**. La barra de progreso de instalación de características en la página Resultados indica que el rol se está instalando.  
 
-10. En la página **Resultados** , comprueba que la instalación se realizó correctamente y, después, haz clic en el icono de advertencia con un signo de exclamación en la esquina superior derecha de la pantalla, junto a **Administrar**. En la lista Tareas, haz clic en el vínculo **Promover este servidor a controlador de dominio**.  
+10. En la página **Resultados**, comprueba que la instalación se realizó correctamente y, después, haz clic en el icono de advertencia con un signo de exclamación en la esquina superior derecha de la pantalla, junto a **Administrar**. En la lista Tareas, haz clic en el vínculo **Promover este servidor a controlador de dominio**.  
 
     > [!IMPORTANT]  
     > Si cierras el asistente de instalación en este punto en lugar de hacer clic en **Promover este servidor a controlador de dominio**, puedes continuar la instalación haciendo clic en **Tareas** en el Administrador del servidor.  
@@ -600,11 +599,11 @@ Configura Microsoft Exchange Server en este equipo. Para obtener más informaci�
 
 13. En la página **Opciones de DNS**, haz clic en **Siguiente**.  
 
-14. En la página **Opciones adicionales** , haz clic en **Siguiente**.  
+14. En la página **Opciones adicionales**, haz clic en **Siguiente**.  
 
-15. En la página **Rutas de acceso** , escribe las ubicaciones para la carpeta SYSVOL, archivos de registro o la base de datos de Active Directory (o acepta las ubicaciones predeterminadas) y, después, haz clic en **Siguiente**.  
+15. En la página **Rutas de acceso**, escribe las ubicaciones para la carpeta SYSVOL, archivos de registro o la base de datos de Active Directory (o acepta las ubicaciones predeterminadas) y, después, haz clic en **Siguiente**.  
 
-16. En la página **Revisar opciones** , confirma las selecciones y, después, haz clic en **Siguiente**.  
+16. En la página **Revisar opciones**, confirma las selecciones y, después, haz clic en **Siguiente**.  
 
 17. En la página **Comprobación de requisitos previos**, confirma que se haya completado la validación de los requisitos previos y, después, haz clic en **Instalar**.  
 
@@ -616,7 +615,7 @@ Configura Microsoft Exchange Server en este equipo. Para obtener más informaci�
 > Para asegurarte de que la red está correctamente configurada, después de configurar ambos bosques, haz lo siguiente:  
 >   
 > -   Inicia sesión en adatum.com como adatum\administrador. Abre una ventana de símbolo del sistema, escribe **nslookup contoso.com** y presiona ENTRAR.  
-> -   Inicia sesión en contoso.com como contoso/administrador. Abre una ventana de símbolo del sistema, escribe **nslookup adatum.com**y presiona ENTRAR.  
+> -   Inicia sesión en contoso.com como contoso/administrador. Abre una ventana de símbolo del sistema, escribe **nslookup adatum.com** y presiona ENTRAR.  
 >   
 > Si estos comandos se ejecutan sin errores, los bosques pueden comunicarse entre sí. Para obtener más información sobre los errores de nslookup, consulte la sección sobre solución de problemas en el tema [Uso de NSlookup.exe](https://support.microsoft.com/kb/200525)  
 
@@ -625,19 +624,19 @@ En este paso, creas una relación de confianza entre el sitio de Adatum Corporat
 
 ##### <a name="to-set-contoso-as-a-trusting-forest-to-adatum"></a>Para establecer contoso.com como bosque de confianza para Adatum  
 
-1.  Inicia sesión en DC2 como administrador. En la pantalla **Inicio** , escribe domain.msc.  
+1.  Inicia sesión en DC2 como administrador. En la pantalla **Inicio**, escribe domain.msc.  
 
 2.  En el árbol de la consola, haz clic con el botón derecho en adatum.com y, después, haz clic en Propiedades.  
 
-3.  En la pestaña **Confianzas**, haz clic en **Nueva confianza** y, después, en **Siguiente**.  
+3.  En la pestaña **Confianzas**, haga clic en **Nueva confianza** y luego en **Siguiente**.  
 
-4.  En la página **Nombre de confianza** , escribe **contoso.com**, en el campo de nombre del Sistema de nombres de dominio (DNS) y, después, haz clic en **Siguiente**.  
+4.  En la página **Nombre de confianza**, escribe **contoso.com**, en el campo de nombre del Sistema de nombres de dominio (DNS) y, después, haz clic en **Siguiente**.  
 
 5.  En la página **Tipo de confianza**, haz clic en **Confianza de bosque** y, después, en **Siguiente**.  
 
-6.  En la página **Dirección de confianza** , haz clic en **Bidireccional**.  
+6.  En la página **Dirección de confianza**, haz clic en **Bidireccional**.  
 
-7.  En la página **Partes de la relación de confianza** , haz clic en **Ambos, este dominio y el dominio especificado**y, después, haz clic en **Siguiente**.  
+7.  En la página **Partes de la relación de confianza**, haz clic en **Ambos, este dominio y el dominio especificado** y, después, haz clic en **Siguiente**.  
 
 8.  Siga las instrucciones del asistente.  
 
@@ -705,7 +704,7 @@ Cree el usuario Jeff Low con la contraseña <strong>pass@word1</strong>y asigne 
 
 2.  Abre la Consola de administración de directivas de grupo, haz clic en **adatum.com** y, después, haz doble clic en **Controladores de dominio**.  
 
-3.  Haz clic con el botón derecho en **Directiva predeterminada de controladores de dominio**y selecciona **Editar**.  
+3.  Haz clic con el botón derecho en **Directiva predeterminada de controladores de dominio** y selecciona **Editar**.  
 
 4.  En la ventana del Editor de administración de directivas de grupo, haz doble clic en **Configuración del equipo**, haz doble clic en **Directivas**, haz doble clic en **Plantillas administrativas**, haz doble clic en **Sistema**y, después, haz doble clic en **KDC**.  
 
@@ -740,21 +739,21 @@ Cree el usuario Jeff Low con la contraseña <strong>pass@word1</strong>y asigne 
 
 1. En el panel izquierdo del Centro de administración de Active Directory, haz clic en **Vista de árbol**. En el panel izquierdo, haz clic en **Control de acceso dinámico** y, después, haz clic en **Reglas de acceso central**.  
 
-2. Haz clic con el botón derecho en **Reglas de acceso central**, haz clic en **Nueva**y, después, en **Regla de acceso central**.  
+2. Haz clic con el botón derecho en **Reglas de acceso central**, haz clic en **Nueva** y, después, en **Regla de acceso central**.  
 
 3. En el campo **Nombre**, escribe **AdatumEmployeeAccessRule**.  
 
-4. En la sección **Permisos**, selecciona la opción **Usar los siguientes permisos como permisos actuales**, haz clic en **Editar** y, después, haz clic en **Agregar**. Haz clic en el vínculo **Seleccionar una entidad de seguridad** , escribe **Usuarios autenticados**y, después, haz clic en **Aceptar**.  
+4. En la sección **Permisos**, selecciona la opción **Usar los siguientes permisos como permisos actuales**, haz clic en **Editar** y, después, haz clic en **Agregar**. Haz clic en el vínculo **Seleccionar una entidad de seguridad**, escribe **Usuarios autenticados** y, después, haz clic en **Aceptar**.  
 
 5. En el cuadro de diálogo **Entrada de permiso para permisos**, haga clic en **Agregar una condición** y especifique las condiciones siguientes:  [**Usuario**] [**Empresa**] [**Igual**] [**Valor**] [**Adatum**]. Los permisos deben ser **Modificar, Leer y ejecutar, Leer, Escribir**.  
 
-6. Haz clic en **Aceptar**.  
+6. Haga clic en **Aceptar**.  
 
 7. Haz clic en **Aceptar** tres veces para terminar y volver al Centro de administración de Active Directory.  
 
    ![guías de soluciones](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
 
-   Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
+   Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, incluso aunque puedan aparecer con las palabras ajustadas en varias líneas aquí debido a las restricciones de formato.  
 
    ```  
    New-ADCentralAccessRule `  
@@ -783,7 +782,7 @@ Cree el usuario Jeff Low con la contraseña <strong>pass@word1</strong>y asigne 
 
 ##### <a name="to-apply-the-central-access-policy-across-file-servers-through-group-policy"></a>Para aplicar la directiva de acceso central a todos los servidores de archivos mediante directiva de grupo  
 
-1.  En la pantalla **Inicio** , escriba **Herramientas administrativas**y, en la barra **Buscar** , haga clic en **Configuración**. En los resultados de **Configuración** , haga clic en **Herramientas administrativas**. Abre la Consola de administración de directivas de grupo de la carpeta **Herramientas administrativas** .  
+1.  En la pantalla **Inicio** , escriba **Herramientas administrativas**y, en la barra **Buscar** , haga clic en **Configuración**. En los resultados de **Configuración**, haz clic en **Herramientas administrativas**. Abre la Consola de administración de directivas de grupo de la carpeta **Herramientas administrativas**.  
 
     > [!TIP]  
     > Si la opción **Mostrar herramientas administrativas** está deshabilitada, no aparecerá la carpeta Herramientas administrativas ni su contenido en los resultados de **Configuración**.  
@@ -807,7 +806,7 @@ Cree el usuario Jeff Low con la contraseña <strong>pass@word1</strong>y asigne 
 
 5.  Expande **Sistema de archivos**, haz clic con el botón derecho en **Directiva de acceso central** y, después, haz clic en **Administrar directivas de acceso central**.  
 
-6.  En el cuadro de diálogo **Configuración de directivas de acceso central** , haz clic en **Agregar**, selecciona **Adatum Only Access Policy**y, después, haz clic en **Aceptar**.  
+6.  En el cuadro de diálogo **Configuración de directivas de acceso central**, haz clic en **Agregar**, selecciona **Adatum Only Access Policy** y, después, haz clic en **Aceptar**.  
 
 7.  Cierra el Editor de administración de directivas de grupo. Ya has agregado la directiva de acceso central a la directiva de grupo.  
 
