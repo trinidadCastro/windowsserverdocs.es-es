@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 110e1442b6660c24dc1e3fd9649138390117ffd6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cb4e3ab2bf98a0c2d51483642fe5388e468dbbb4
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406815"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269272"
 ---
 # <a name="what-is-windows-admin-center"></a>¿Qué es Windows Admin Center?
 
@@ -27,7 +27,7 @@ Windows Admin Center es la evolución moderna de herramientas de administración
 
 ## <a name="how-does-windows-admin-center-work"></a>¿Cómo funciona Windows Admin Center?
 
-Windows Admin Center se ejecuta en un explorador web y administra Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows 10, etc. a través de la **puerta de enlace de Windows Admin Center** instalada en Windows Server o Windows 10. La puerta de enlace administra servidores mediante PowerShell remota y WMI a través de WinRM. La puerta de enlace se incluye con Windows Admin Center en un solo paquete .msi ligero que se puede [descargar](https://aka.ms/windowsadmincenter).
+Windows Admin Center se ejecuta en un explorador web y administra Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows 10, etc., mediante la **puerta de enlace de Windows Admin Center** instalada en Windows Server o Windows 10 unido a un dominio. La puerta de enlace administra servidores mediante PowerShell remota y WMI a través de WinRM. La puerta de enlace se incluye con Windows Admin Center en un solo paquete .msi ligero que se puede [descargar](https://aka.ms/windowsadmincenter).
 
 La puerta de enlace de Windows Admin Center, cuando se publica en DNS y se le proporciona acceso a través de los firewalls corporativos correspondientes, no solo permite conectarse de forma segura a los servidores desde cualquier lugar con Microsoft Edge o Google Chrome, sino también administrarlos.
 

@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/24/2020
+ms.date: 04/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 34f5fdb5a2826173edf471fd65248008761863dd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 016a88999b93d686faff73134a660014fd602765
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861418"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81279701"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -27,7 +27,26 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 |Grupo de usuarios |Version  |
 |-----------|---------|
 |Público     |1.2.790  |
-|Insider    |1.2.790  |
+|Insider    |1.2.940  |
+
+## <a name="updates-for-version-12940"></a>Actualizaciones de la versión 1.2.940
+
+*Fecha de publicación: 14/04/2020*
+
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZU), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZV), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4tM6I)
+
+- Se han agregado nuevas opciones de configuración de pantalla para las conexiones de escritorio disponibles al hacer clic con el botón derecho en un icono de escritorio del centro de conexiones.
+  - Ahora hay tres opciones de configuración de pantalla: **todas las pantallas**, **pantalla única** y **pantallas seleccionadas**.
+  - Ahora solo se muestra la configuración disponible cuando se selecciona una configuración de pantalla.
+  - En el modo de pantallas seleccionadas, la nueva opción **Maximize to current displays** (Maximizar a las pantallas actuales) te permite cambiar dinámicamente las pantallas que se usan para la sesión sin necesidad de volver a conectar. Cuando está habilitada, al maximizar la sesión, se activa la pantalla completa en todas las pantallas que toca la ventana de sesión.
+  - Se ha agregado la nueva opción **Single display when windowed** (Pantalla única para varias ventanas) para los modos de todas las pantallas y pantallas seleccionadas. Esta opción cambia la sesión automáticamente a una pantalla única al salir del modo de pantalla completa y vuelve automáticamente a varias pantallas al maximizar la ventana.
+- Hemos agregado un nuevo grupo de **Configuración de pantalla** al menú del sistema que aparece al hacer clic con el botón derecho en la barra de títulos de una sesión de escritorio en ventanas. Esto te permitirá cambiar algunas opciones de configuración de forma dinámica durante una sesión. Por ejemplo, puedes cambiar las nuevas opciones **Single display mode when windowed** (Modo de pantalla única para varias ventanas) y **Maximize to current displays** (Maximizar a pantallas actuales).
+- Al salir de la pantalla completa, la ventana de sesión volverá a la que era su ubicación original cuando se activó por primera vez a la pantalla completa.
+- Al restablecer los datos de usuario desde la página Acerca de, ahora se redirige al centro de conexión al finalizar, en lugar de cerrar el cliente.
+- Se han solucionado algunos problemas de accesibilidad con la navegación por pestañas y los lectores de pantalla.
+- Se ha corregido un problema de parpadeo y reducción al arrastrar una ventana de sesión de escritorio entre las pantallas de distintos factores de escala.
+- Se corrigió un error que se producía al redirigir las cámaras.
+- Se han corregido varios bloqueos para mejorar la confiabilidad.
 
 ## <a name="updates-for-version-12790"></a>Actualizaciones para la versión 1.2.790
 

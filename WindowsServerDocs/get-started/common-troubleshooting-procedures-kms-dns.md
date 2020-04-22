@@ -6,12 +6,12 @@ ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cd94e997deaaf358c72793e6ff35d51a9ab3df6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 76665d91cc1e2997a837721ffbc51b0513dd7c1a
+ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80826189"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81524940"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>Instrucciones para solucionar problemas de activación relacionados con DNS
 
@@ -241,7 +241,7 @@ Tal y como se describe en [Asignación manual de un host de KMS a un cliente de 
 - En el caso de los equipos unidos a un dominio, el dominio del equipo asignado por el sistema de DNS (por ejemplo, el DNS de Active Directory Domain Services [AD DS]).
 - Para los equipos de grupo de trabajo, el dominio del equipo asignado por el Protocolo de configuración dinámica de host (DHCP). Este nombre de dominio se define mediante la opción que tiene el valor de código 15, tal y como se define en las Solicitudes de comentarios (RFC) 2132.
 
-De forma predeterminada, un host de KMS registra sus registros SRV en la zona DNS que corresponde al dominio del equipo host de KMS. Por ejemplo, supongamos que un host de KMS se une al dominio contoso.com. En este escenario, el host de KMS registra su registro SRV de _vmlcs en la zona DNS de contoso.com. Por lo tanto, el registro identifica el servicio como VLMCS._TCP.CONTOSO.COM.
+De forma predeterminada, un host de KMS registra sus registros SRV en la zona DNS que corresponde al dominio del equipo host de KMS. Por ejemplo, supongamos que un host de KMS se une al dominio contoso.com. En este escenario, el host de KMS registra su registro SRV de _vmlcs en la zona DNS de contoso.com. Por lo tanto, el registro identifica el servicio como _VLMCS._TCP.CONTOSO.COM.
 
 Si el host de KMS y los clientes de KMS usan diferentes zonas DNS, debe configurar el host de KMS para publicar automáticamente sus registros SRV en varios dominios DNS. Para ello, realice los pasos siguientes:
 

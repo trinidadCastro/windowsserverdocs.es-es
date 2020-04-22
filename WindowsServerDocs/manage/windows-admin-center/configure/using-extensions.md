@@ -7,12 +7,12 @@ author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 7c1a70e36dfac9b23ded8f920ffcc8cccbfff023
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 2b8a9f5ebab22891b8b97c9c56bba3837cbb9371
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323587"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269302"
 ---
 # <a name="install-and-manage-extensions"></a>Instalar y administrar extensiones
 
@@ -36,7 +36,7 @@ Windows Admin Center admite varias fuentes y puede ver y administrar paquetes de
 1. Haz clic en el botón **Configuración** de la parte superior derecha. A continuación, en el panel izquierdo, haz clic en **Extensiones**.
 2. En el panel de la derecha, haz clic en la pestaña **Fuentes**.
 3. Haz clic en el botón **Agregar** para agregar otra fuente. Para una fuente de NuGet, escribe la dirección URL de la fuente de NuGet V2. El proveedor o el administrador de la fuente de NuGet debe poder proporcionar la información de la dirección URL. En un recurso compartido de archivos, escribe la ruta de acceso completa del recurso compartido de archivos en el que se almacenan los archivos de paquete de extensión (.nupkg).
-4. Haga clic en **Agregar**. Si la puerta de enlace debe ejecutarse en un modo con privilegios elevados para realizar este cambio, se te presentará una petición de elevación de UAC.
+4. Haga clic en **Agregar**. Si la puerta de enlace debe ejecutarse en un modo con privilegios elevados para realizar este cambio, se te presentará una petición de elevación de UAC. Este mensaje solo se mostrará si está ejecutando Windows Admin Center en modo de escritorio.
 
 La lista **Extensiones disponibles** mostrará las extensiones de todas las fuentes registradas. Puede comprobar de qué fuente es cada extensión en la columna**Fuente del paquete**.
 
