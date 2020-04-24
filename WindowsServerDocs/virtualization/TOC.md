@@ -24,7 +24,7 @@
 #### [Crear una máquina virtual](hyper-v/get-started/create-a-virtual-machine-in-Hyper-V.md)
 ### [Planificar](hyper-v/plan/Plan-Hyper-V-on-Windows-Server.md)
 #### [Generación de VM](hyper-v/plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)
-#### [Funciones de red](hyper-v/plan/plan-hyper-v-networking-in-windows-server.md)
+#### [Redes](hyper-v/plan/plan-hyper-v-networking-in-windows-server.md)
 #### [Escalabilidad](hyper-v/plan/plan-hyper-v-scalability-in-windows-server.md)
 #### [Seguridad](hyper-v/plan/plan-hyper-v-security-in-windows-server.md)
 #### [Aceleración de GPU](hyper-v/plan/plan-for-gpu-acceleration-in-windows-server.md)

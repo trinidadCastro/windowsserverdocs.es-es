@@ -9,13 +9,13 @@ ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
 ms.openlocfilehash: b4e31cfa892019e4f3bbcd3b67dbb42751cc58dd
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71963041"
 ---
-# <a name="example-troubleshooting-active-directory-based-activation-adba-clients-that-do-not-activate"></a>Por ejemplo: Solución de problemas de clientes de activación basada en Active Directory (ADBA) que no se activan
+# <a name="example-troubleshooting-active-directory-based-activation-adba-clients-that-do-not-activate"></a>Ejemplo: Solución de problemas de clientes de activación basada en Active Directory (ADBA) que no se activan
 
 > [!NOTE]
 > Este artículo se publicó originalmente como blog de TechNet el 26 de marzo de 2018.

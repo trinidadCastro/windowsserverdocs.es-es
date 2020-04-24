@@ -9,10 +9,10 @@ ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: edf714bc0d6b39dbe7c5e800e953d7820fe9abc5
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75352609"
 ---
 # <a name="enable-optimized-moves-of-redirected-folders"></a>Habilitación de los movimientos optimizados de carpetas redirigidas
@@ -74,6 +74,6 @@ Al mover el recurso compartido de archivos que contiene las carpetas redirigidas
 
 ## <a name="more-information"></a>Información adicional
 
-* [Implementación de la redirección de carpetas con Archivos sin conexión](deploy-folder-redirection.md)
+* [Implementar la redirección de carpetas con Archivos sin conexión](deploy-folder-redirection.md)
 * [Implementar perfiles de usuario móviles](deploy-roaming-user-profiles.md)
 * [Introducción a la redirección de carpetas, archivos sin conexión y perfiles de usuario móvil](folder-redirection-rup-overview.md)

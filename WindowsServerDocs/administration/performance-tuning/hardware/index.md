@@ -8,10 +8,10 @@ ms.author: phstee
 author: phstee
 ms.date: 01/08/2018
 ms.openlocfilehash: 9c012711dff3746587b4a04b31d9c23ebb7de4cd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71370552"
 ---
 # <a name="server-hardware-performance-considerations"></a>Consideraciones de rendimiento del hardware de servidor
@@ -105,7 +105,7 @@ Los adaptadores compatibles con la descarga ofrecen ahorros de CPU que generan u
 ### <a name="dynamic-interrupt-and-deferred-procedure-call-dpc-redirection"></a>Redireccionamiento de llamada a procedimiento diferida (DPC) e interrupción dinámica
 En Windows Server 2016, la E/S de Numa permite que los adaptadores de almacenamiento PCIe redireccionen de manera dinámica las interrupciones y las DPC y pueden ayudar a cualquier sistema multiprocesador al mejorar la creación de particiones de carga de trabajo, almacenar en caché las frecuencias de aciertos e incorporar el uso de interconexiones de hardware para las cargas de trabajo de E/S intensiva.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Consulte también
 - [Server Hardware Power Considerations](power.md) (Consideraciones de alimentación del hardware de servidor)
 - [Power and Performance Tuning](power/power-performance-tuning.md) (Optimización de potencia y rendimiento)
 - [Processor Power Management Tuning](power/processor-power-management-tuning.md) (Optimización de la administración de energía del procesador)

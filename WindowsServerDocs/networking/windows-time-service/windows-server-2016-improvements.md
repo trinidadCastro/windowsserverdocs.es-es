@@ -9,10 +9,10 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
 ms.openlocfilehash: 2723868251f90429fb0ad5e966c9222a6a22ab0c
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77520717"
 ---
 # <a name="windows-server-2016-improvements"></a>Mejoras en Windows Server 2016
@@ -321,7 +321,7 @@ Para cumplir las normativas de seguimiento de la hora, puedes archivar manualmen
 ### <a name="event-logging"></a>Registro de eventos
 Para obtener la historia completa, también necesitarás información de registro de eventos. Al recopilar el registro de eventos del sistema y filtrar por Time-Server, Microsoft-Windows-Kernel-Boot y Microsoft-Windows-Kernel-General, es posible que puedas detectar si hay otros factores que han causado el cambio de la hora, por ejemplo, otros terceros. Estos registros pueden ser necesarios para descartar interferencias externas. La directiva de grupo puede afectar a los registros de eventos que se escriben en el registro. Consulta la sección anterior sobre el uso de la directiva de grupo para obtener más detalles.
 
-### <a name="W32Logging"></a>Registro de depuración W32time
+### <a name="w32time-debug-logging"></a><a name="W32Logging"></a>Registro de depuración W32time
 Para habilitar W32tm con fines de auditoría, el siguiente comando habilita el registro que muestra las actualizaciones periódicas del reloj e indica el reloj de origen. Reinicia el servicio para habilitar el nuevo registro. 
 
 Para obtener más información, consulta [Cómo activar el registro de depuración en el servicio de hora de Windows](https://support.microsoft.com/kb/816043).

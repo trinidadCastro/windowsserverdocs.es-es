@@ -9,10 +9,10 @@ ms.author: elizapo
 ms.date: 09/20/2016
 manager: dongill
 ms.openlocfilehash: 3a9f73418bd4da67c97db30a3272588afc287b95
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80860448"
 ---
 # <a name="install-rds-client-access-licenses-on-the-remote-desktop-license-server"></a>Instalar licencias de acceso de cliente de RDS en el servidor de licencias de Escritorio remoto

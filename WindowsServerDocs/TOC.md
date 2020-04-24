@@ -6,7 +6,7 @@
 ## [Conexión a Azure](azure-hybrid-services/index.md)
 ## [Clúster de conmutación por error](failover-clustering/failover-clustering-overview.md)
 ## [Identidad y acceso](identity/Identity-and-Access.md)
-## [Funciones de red](networking/Networking.md)
+## [Redes](networking/Networking.md)
 ## [Control remoto](remote/index.md)
 ## [Seguridad y control](security/security-and-assurance.md)
 ## [Almacenamiento](storage/storage.md)

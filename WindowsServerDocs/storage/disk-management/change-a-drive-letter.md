@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 3e18092a71e12cadb86052204738fafc8a149ff4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71386022"
 ---
 # <a name="change-a-drive-letter"></a>Cambio de una letra de unidad
@@ -27,7 +27,7 @@ Si no te gusta la letra que se ha asignado a una unidad o si tienes alguna unida
 Aquí se muestra cómo cambiar una letra de unidad (para montar la unidad en una carpeta vacía para que aparezca como otra carpeta, consulte [Asignar una ruta de acceso de carpeta de punto de montaje a una unidad](assign-a-mount-point-folder-path-to-a-drive.md)).
 
 1. Abre Administración de discos con permisos de administrador. 
-    Para ello, en el cuadro de búsqueda de la barra de tareas, escribe **Administración de discos**, selecciona y mantén pulsado (o haz clic con el botón derecho) **Administración de discos** y, después, selecciona **Ejecutar como administrador**  >  **Sí**. Si no puedes abrirlo como administrador, escribe **en Administración de equipos** en su lugar y, a continuación, vete a **Almacenamiento** > **Administración de discos**.
+    Para ello, en el cuadro de búsqueda de la barra de tareas, escribe **Administración de discos**, selecciona y mantén pulsado (o haz clic con el botón derecho) **Administración de discos** y, después, selecciona **Ejecutar como administrador** > **Sí**. Si no puedes abrirlo como administrador, escribe **en Administración de equipos** en su lugar y, a continuación, vete a **Almacenamiento** > **Administración de discos**.
 1. En Administración de discos, haz clic con el botón derecho en la unidad en la que deseas agrega una letra, o cambiarla, y selecciona **Cambiar la letra y rutas de acceso de unidad...** .
 
     ![Administración de discos muestra una unidad](media/change-drive-letter.png)

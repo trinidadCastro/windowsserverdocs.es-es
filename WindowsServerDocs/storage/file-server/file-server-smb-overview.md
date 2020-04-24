@@ -9,10 +9,10 @@ ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
 ms.openlocfilehash: aafcfcd4d0f2f14836c5b7dee2bdbccbf99fa887
-ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "78169625"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>Información general sobre el uso compartido de archivos mediante el protocolo SMB 3 en Windows Server

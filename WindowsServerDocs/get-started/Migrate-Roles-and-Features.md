@@ -11,10 +11,10 @@ ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 33c1aa654e4c660b4fe2f3305bfaf78b5191220a
-ms.sourcegitcommit: e58e1646ffd75d4a89576d967b2dbbbb84764303
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "70119199"
 ---
 # <a name="migrating-roles-and-features-in-windows-server"></a>Migrar roles y características en Windows Server
@@ -32,7 +32,7 @@ Antes de empezar a migrar roles y características, comprueba que los servidores
 > [!NOTE]
 > Siempre que se migra o se actualiza a cualquier versión de Windows Server, es necesario revisar y comprender la [directiva de ciclos de vida de Microsoft](https://support.microsoft.com/lifecycle) y el período para esa versión, y planificar en consecuencia. Puedes [buscar información sobre el ciclo de vida](https://support.microsoft.com/lifecycle) referente a la versión concreta de Windows Server que te interese.
 
-## <a name="windows-server-2019"></a>Windows Server 2019
+## <a name="windows-server-2019"></a>Windows Server 2019
 
 Para migrar servidores de archivos y almacenamiento a Windows Server 2019 o Windows Server 2016, se recomienda usar el [Servicio de migración de almacenamiento](../storage/storage-migration-service/overview.md). Para migrar otros roles, consulta las instrucciones para Windows Server 2016 y Windows Server 2012 R2.
 
@@ -47,7 +47,7 @@ Estas son las guías de migración de Windows Server 2016. Ten en cuenta que, 
 
 Para migrar servidores de archivos a Windows Server 2019 o Windows Server 2016, se recomienda usar el [Servicio de migración de almacenamiento](../storage/storage-migration-service/overview.md).
 
-## <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
+## <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
 
 Sigue los pasos que aparecen en estas guías para migrar roles y características desde servidores que ejecuten Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, Windows Server 2012 o Windows Server 2012 R2 a Windows Server 2012 R2. Herramientas de migración de Windows Server en Windows Server 2012 R2 admite las migraciones entre subredes.
 

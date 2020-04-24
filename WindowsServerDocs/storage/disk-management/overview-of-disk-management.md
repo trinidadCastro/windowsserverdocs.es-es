@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 46ed1256ed9039311939f9de12ea46416443be9c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71402143"
 ---
 # <a name="overview-of-disk-management"></a>Introducción a la Administración de discos
@@ -49,7 +49,7 @@ En caso de que tengas curiosidad (hemos leído sus comentarios), Windows normalm
 
 Aunque la Administración de discos puede mostrar la partición de sistema EFI y la partición de recuperación como libre al 100%, no es verdad. Estas particiones normalmente están bastante llenas con archivos muy importantes que el equipo necesita para funcionar correctamente. Es mejor dejarlos trabajar para que inicien el equipo y te ayuden en la recuperación de los problemas.
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Consulta también
 
 - [Administrar discos](manage-disks.md)
 - [Administrar volúmenes básicos](manage-basic-volumes.md)

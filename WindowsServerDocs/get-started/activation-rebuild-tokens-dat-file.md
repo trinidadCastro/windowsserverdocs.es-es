@@ -9,17 +9,17 @@ ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a5835cd601b2eb327c8605d70bf075e6c8e8414
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71963001"
 ---
 # <a name="rebuild-the-tokensdat-file"></a>Volver a generar el archivo Tokens.dat
 
 Al solucionar problemas de activación de Windows, es posible que tengas que volver a generar el archivo Tokens.dat. En este artículo se describe en detalle cómo hacerlo.
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 Para volver a generar el archivo Tokens.dat, sigue estos pasos:
 
@@ -67,7 +67,7 @@ Para volver a generar el archivo Tokens.dat, sigue estos pasos:
    ```
 1. Reinicie el equipo.
 
-## <a name="more-information"></a>Más información
+## <a name="more-information"></a>Información adicional
 
 Después de volver a generar el archivo Tokens.dat, debes reinstalar la clave de producto con uno de los métodos siguientes:
 
