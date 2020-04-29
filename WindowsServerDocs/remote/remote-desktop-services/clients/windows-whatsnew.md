@@ -7,18 +7,33 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/02/2020
+ms.date: 04/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 540630ce4baa8246d654b0d50f203623705286c5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fd9e353c18293d22b18c6ffb6a57ad97a819a4a
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859738"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81650040"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Novedades del cliente de Microsoft Store
 
 El [cliente de Microsoft Store](windows.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
+
+## <a name="updates-for-version-1011215"></a>Actualizaciones para la versión 10.1.1215
+
+*Fecha de publicación: 20/04/2020*
+
+- Se actualizó la cadena de agente de usuario de Windows Virtual Desktop.
+
+## <a name="updates-for-version-1011195"></a>Actualizaciones para la versión 10.1.1195
+
+*Fecha de publicación: 06/03/2020*
+
+- Ahora, el audio de la sesión continúa reproduciéndose aunque la aplicación esté minimizada o en segundo plano.
+- Se corrigió un problema que hacía que las teclas de alternancia (Bloq Mayús, Bloq Num, etc.) no estuvieran sincronizadas entre los equipos locales y remotos.
+- Mejoras en el rendimiento en los dispositivos de 64 bits.
+- Se corrigió un bloqueo que se producía al suspender la aplicación.
 
 ## <a name="updates-for-version-1011107"></a>Actualizaciones de la versión 10.1.1107
 

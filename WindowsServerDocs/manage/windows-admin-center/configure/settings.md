@@ -1,6 +1,6 @@
 ---
-title: Configuración
-description: Obtener información sobre la configuración del centro de administración de Windows (proyecto Honolulu). La configuración de usuario permite a los usuarios cambiar su idioma o región y otras preferencias. La configuración de la puerta de enlace permite a los administradores configurar la puerta de enlace.
+title: Settings
+description: Obtén información sobre la configuración en Windows Admin Center (Proyecto Honolulu). La configuración de usuario permite a los usuarios cambiar su idioma o región y otras preferencias. La configuración de la puerta de enlace permite a los administradores configurar la puerta de enlace.
 ms.technology: manage
 ms.topic: article
 author: haley-rowland
@@ -9,53 +9,53 @@ ms.date: 04/12/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: e0fd6618f275058d4e22fe9abb9e484d4752ac9a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71407059"
 ---
-# <a name="windows-admin-center-settings"></a>Configuración del centro de administración de Windows
+# <a name="windows-admin-center-settings"></a>Configuración de Windows Admin Center
 
 > Se aplica a: Windows Admin Center
 
-La configuración del centro de administración de Windows consta de los valores de nivel de usuario y de nivel de puerta de enlace. Un cambio en la configuración de nivel de usuario solo afecta al perfil del usuario actual, mientras que un cambio en la configuración de nivel de puerta de enlace afecta a todos los usuarios de esa puerta de enlace del centro de administración de Windows.
+La configuración de Windows Admin Center consta de valores de configuración de nivel de usuario y de nivel de puerta de enlace. Un cambio en la configuración de nivel de usuario solo afecta al perfil del usuario actual, mientras que un cambio en la configuración de nivel de puerta de enlace afecta a todos los usuarios de esa puerta de enlace de Windows Admin Center.
 
 ## <a name="user-settings"></a>Configuración de usuario
 
-La configuración de nivel de usuario consta de las siguientes secciones:
+La configuración de nivel de usuario se compone de las secciones siguientes:
 
 - Cuenta
 - Personalization
 - Idioma o región
 - Sugerencias
-- Avanzado
+- Avanzadas
 
-En la pestaña **cuenta** , los usuarios pueden revisar las credenciales que han usado para autenticarse en el centro de administración de Windows. Si Azure AD está configurado para ser el proveedor de identidades, el usuario puede cerrar la sesión de su cuenta de Azure AD desde esta pestaña.
+En la pestaña **Cuenta**, los usuarios pueden revisar las credenciales que han usado para autenticarse en Windows Admin Center. Si Azure AD está configurado para ser el proveedor de identidades, el usuario puede cerrar la sesión de su cuenta de Azure AD desde esta pestaña.
 
-En la pestaña **Personalización** , los usuarios pueden alternar a un tema oscuro de la interfaz de usuario.
+En la pestaña **Personalización**, los usuarios pueden cambiar a un tema oscuro de la interfaz de usuario.
 
-En la pestaña **idioma o región** , los usuarios pueden cambiar los formatos de idioma y región mostrados por el centro de administración de Windows.
+En la pestaña **Idioma o región**, los usuarios pueden cambiar los formatos de idioma y región que muestra Windows Admin Center.
 
-En la pestaña **sugerencias** , los usuarios pueden alternar sugerencias sobre los servicios de Azure y las nuevas características.
+En la pestaña **Sugerencias**, los usuarios pueden activar o desactivar las sugerencias sobre los servicios y las nuevas características de Azure.
 
-La pestaña **Opciones avanzadas** proporciona a los desarrolladores de extensiones del centro de administración de Windows funciones adicionales.
+La pestaña **Opciones avanzadas** proporciona funcionalidades adicionales a los desarrolladores de extensiones de Windows Admin Center.
 
 ## <a name="gateway-settings"></a>Configuración de puerta de enlace
 
-La configuración de nivel de puerta de enlace consta de las siguientes secciones:
+La configuración de nivel de puerta de enlace se compone de las secciones siguientes:
 
 - Extensions
 - Acceso
 - Azure
 - Conexiones compartidas
 
-Solo los administradores de puerta de enlace pueden ver y cambiar esta configuración. Los cambios en esta configuración cambian la configuración de la puerta de enlace y afectan a todos los usuarios de la puerta de enlace del centro de administración de Windows.
+Solo los administradores de puerta de enlace pueden ver y cambiar esta configuración. Los cambios en esta sección cambian la configuración de la puerta de enlace y afectan a todos los usuarios de la puerta de enlace de Windows Admin Center.
 
-En la pestaña **extensiones** , los administradores pueden instalar, desinstalar o actualizar las extensiones de puerta de enlace. [Más información acerca de las extensiones.](using-extensions.md)
+En la pestaña **Extensiones**, los administradores pueden instalar, desinstalar o actualizar las extensiones de puerta de enlace. [Obtén más información acerca de las extensiones.](using-extensions.md)
 
-La pestaña **acceso** permite a los administradores configurar quién puede tener acceso a la puerta de enlace del centro de administración de Windows, así como el proveedor de identidades que se usa para autenticar a los usuarios. [Obtenga más información sobre cómo controlar el acceso a la puerta de enlace.](user-access-control.md)
+La pestaña **Acceso** permite a los administradores configurar quién puede acceder a la puerta de enlace de Windows Admin Center, así como el proveedor de identidades que se usa para autenticar a los usuarios. [Obtén más información sobre el control del acceso a la puerta de enlace.](user-access-control.md)
 
-En la pestaña **Azure** , los administradores pueden registrar la puerta de enlace con Azure para habilitar [las características de integración de Azure](azure-integration.md) en el centro de administración de Windows.
+En la pestaña **Azure**, los administradores pueden registrar la puerta de enlace con Azure para habilitar las [características de integración de Azure](azure-integration.md) en Windows Admin Center.
 
-Mediante la pestaña **conexiones compartidas** , los administradores pueden configurar una sola lista de conexiones que se compartirán entre todos los usuarios de la puerta de enlace del centro de administración de Windows. [Obtenga más información sobre la configuración de conexiones una vez para todos los usuarios de una puerta de enlace.](shared-connections.md)
+Con la pestaña **Conexiones compartidas**, los administradores pueden configurar una lista única de conexiones que se compartirán entre todos los usuarios de la puerta de enlace de Windows Admin Center. [Obtén más información sobre la configuración de conexiones una vez para todos los usuarios de una puerta de enlace.](shared-connections.md)

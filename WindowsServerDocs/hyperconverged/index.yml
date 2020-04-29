@@ -32,19 +32,34 @@ sections:
             html: '<p>Virtualiza el hardware de almacenamiento, lo que le permite crear volúmenes encima de un grupo virtualizado de unidades repartidas entre servidores en un clúster hiperconvergido.</p>'
             image:
               src: ../media/i-store.svg
-            title: Espacios de almacenamiento directo
+            title: Espacios de almacenamiento directos
           - href: ../failover-clustering/failover-clustering-overview.md
             html: '<p>Agrupa varios servidores para que las cargas de trabajo, como máquinas virtuales, puedan ejecutarse en cualquier servidor en el clúster, para el equilibrio de carga y la conmutación por error correcta entre servidores.</p>'
             image:
               src: ../media/i-cluster.svg
-            title: Clústeres de conmutación por error
+            title: Clúster de conmutación por error
           - href: 'https://docs.microsoft.com/windows-server/networking/sdn/'
             html: '<p>Virtualiza el hardware de red, lo que le permite crear y administrar dinámicamente las redes y las directivas que abstraen las cargas de trabajo de redes físicas subyacentes.</p>'
             image:
               src: ../media/i-network.svg
             title: Redes definidas por software
+          - href: ../manage/windows-admin-center/overview.md
+            html: <p>Administra el clúster y otros servidores Windows.</p>
+            image:
+              src: ../media/i-admin-center.svg
+            title: Windows Admin Center
+          - href: ../azure-hybrid-services.md
+            html: '<p>Conecta el clúster a los servicios híbridos de Azure con fines de recuperación de sitios, supervisión, etc.</p>'
+            image:
+              src: ../media/i-microsoft-azure.svg
+            title: Conexión a los servicios híbridos de Azure
+          - href: ../azure-stack-hci
+            html: '<p>Empareja las tecnologías de virtualización y agrupación en clústeres de Windows Server 2019 con las soluciones de hardware validadas por el asociado de su elección, lo que ayuda a eliminar las suposiciones al querer optimizar un centro de datos definido por software.</p>'
+            image:
+              src: ../media/i-azure-stack.svg
+            title: Azure Stack HCI
           - href: 'https://www.microsoft.com/cloud-platform/software-defined-datacenter'
-            html: '<p>Empareja las tecnologías de virtualización y agrupación en clústeres de Windows Server con las soluciones de hardware validadas por el asociado de su elección, lo que ayuda a eliminar las suposiciones al querer optimizar un centro de datos definido por software.</p>'
+            html: '<p>Empareja las tecnologías de virtualización y agrupación en clústeres de Windows Server 2016 con las soluciones de hardware validadas por el asociado de su elección, lo que ayuda a eliminar las suposiciones al querer optimizar un centro de datos definido por software.</p>'
             image:
               src: 'https://docs.microsoft.com/media/common/i_data-collection.svg'
             title: Windows Server definido por software (WSSD)

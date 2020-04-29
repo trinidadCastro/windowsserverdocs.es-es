@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 2baf24ed656ef06d44dff93180701d25e6852500
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71385862"
 ---
 # <a name="shrink-a-basic-volume"></a>Reducir un volumen básico
@@ -53,7 +53,7 @@ Al reducir una partición, todos los archivos normales se reubican automáticame
 
 4.  En el símbolo del sistema **DISKPART**, escribe `shrink [desired=<desiredsize>] [minimum=<minimumsize>]`. Reduce el volumen seleccionado a *desiredsize* en megabytes (MB), si es posible, o a *minimumsize* si *desiredsize* es demasiado grande.
 
-| Valor             | Descripción |
+| Value             | Descripción |
 | ---               | ----------- |
 | **list volume** | Muestra una lista de volúmenes básicos y dinámicos en todos los discos. |
 | **select volume** | Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente. |
@@ -70,6 +70,6 @@ En algunos casos, se puede cambiar la ubicación del archivo temporalmente. Por 
 
 -   Puedes reducir particiones principales y unidades lógicas en particiones sin procesar (las que no disponen de un sistema de archivos) o particiones con el sistema de archivos NTFS.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Consulte también
 
 -   [Administrar volúmenes básicos](manage-basic-volumes.md)

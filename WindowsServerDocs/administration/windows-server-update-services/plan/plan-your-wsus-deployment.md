@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 68825c6bc4d24bca41c04a238fbf4d6291a6625b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0208e23b94b5e7c5012bc99eabf71aa0c7ad944c
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828198"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82037144"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planear la implementación de WSUS
 
@@ -115,15 +115,7 @@ WSUS requiere una de las siguientes bases de datos:
 
 -   Windows Internal Database (WID)
 
--   Microsoft SQL Server 2017
-
--   Microsoft SQL Server 2016
-
--   Microsoft SQL Server 2014
-
--   Microsoft SQL Server 2012
-
--   Microsoft SQL Server 2008 R2
+-   Cualquier versión de Microsoft SQL Server admitida. Para obtener más información, consulte [Directiva de ciclo de vida de Microsoft](https://aka.ms/sqllifecycle).
 
 Las siguientes ediciones de SQL Server son compatibles con WSUS:
 
