@@ -8,18 +8,18 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: f7e68558945fcd26d5e8ab405f39e86266beeea8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f62b6ad288e2733083d535260f0b3f5ffb5b50bf
+ms.sourcegitcommit: f829a48b9b0c7b9ed6e181b37be828230c80fb8a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853868"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173630"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Cree una aplicación Web de una sola página mediante OAuth y ADAL. JS con AD FS 2016 o posterior
 
 En este tutorial se proporcionan instrucciones para la autenticación en AD FS mediante ADAL para JavaScript para proteger una aplicación de una sola página basada en AngularJS, implementada con un back-end de ASP.NET Web API.
 
-En este escenario, cuando el usuario inicia sesión, el front-end de JavaScript usa [biblioteca de autenticación de Active Directory para JavaScript (Adal. JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js) y la concesión de autorización implícita para obtener un token de identificador (ID_token) de Azure ad. El token se almacena en caché y el cliente lo adjunta a la solicitud como el token de portador al realizar llamadas a su back-end de API Web, que está protegido mediante el middleware OWIN.
+En este escenario, cuando el usuario inicia sesión, el front-end de JavaScript usa la [biblioteca de autenticación de Active Directory para JavaScript (ADAL.JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js) y la concesión de autorización implícita para obtener un token de identificación (id_token) de Azure AD. El token se almacena en caché y el cliente lo adjunta a la solicitud como token de portador al realizar llamadas al back-end de la API web, que está protegido con el middleware de OWIN.
 
 >[!IMPORTANT]
 >El ejemplo que se puede compilar aquí es solo con fines educativos. Estas instrucciones son para la implementación más sencilla y mínima posible para exponer los elementos necesarios del modelo. El ejemplo no puede incluir todos los aspectos del control de errores y otras funcionalidades relacionadas.
@@ -40,7 +40,7 @@ Si ADAL ve un desencadenador para la autenticación, usa la información proporc
 ## <a name="setting-up-the-development-box"></a>Configuración del cuadro de desarrollo
 En este tutorial se usa Visual Studio 2015. El proyecto usa la biblioteca de ADAL JS. Para obtener información sobre ADAL, lea [biblioteca de autenticación de Active Directory .net.](https://msdn.microsoft.com/library/azure/mt417579.aspx)
 
-## <a name="setting-up-the-environment"></a>Configurar el entorno
+## <a name="setting-up-the-environment"></a>Configuración del entorno
 En este tutorial, usaremos una configuración básica de:
 
 1.    DC: controlador de dominio para el dominio en el que se hospedará AD FS
@@ -56,10 +56,10 @@ Cómo configurar el controlador de dominio y AD FS está fuera del ámbito de es
 
 
 
-## <a name="clone-or-download-this-repository"></a>Clonar o descargar este repositorio
+## <a name="clone-or-download-this-repository"></a>Clonación o descarga de este repositorio
 Vamos a usar la aplicación de ejemplo creada para integrar Azure AD en una aplicación de página única de AngularJS y modificarla para proteger en su lugar el recurso de back-end mediante AD FS.
 
-Desde el shell o la línea de comandos:
+Desde el shell o la línea de comandos, ejecute:
 
     git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp.git
 
@@ -108,12 +108,12 @@ Abra el archivo **app. js** y cambie la definición de **adalProvider. init** a:
             //cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not work for localhost.
         },
         $httpProvider
-        );
+    );
 
 |Configuración|Descripción|
 |--------|--------|
-|repetición|Su dirección URL de STS, por ejemplo, https://fs.contoso.com/|
-|inquilino|Guárdela como ' ADFS '|
+|instance|Su dirección URL de STS, por ejemplo,https://fs.contoso.com/|
+|tenant|Guárdela como ' ADFS '|
 |clientID|Este es el identificador de cliente que especificó al configurar el cliente público para la aplicación de una sola página.|
 
 ## <a name="configure-webapi-to-use-ad-fs"></a>Configurar WebAPI para usar AD FS
@@ -123,25 +123,26 @@ Abra el archivo **Startup.auth.CS** en el ejemplo y agregue lo siguiente al prin
 
 retirar
 
-                app.UseWindowsAzureActiveDirectoryBearerAuthentication(
-    new WindowsAzureActiveDirectoryBearerAuthenticationOptions
-    {
-    Audience = ConfigurationManager.AppSettings["ida:Audience"],
-    Tenant = ConfigurationManager.AppSettings["ida:Tenant"]
-    });
+    app.UseWindowsAzureActiveDirectoryBearerAuthentication(
+        new WindowsAzureActiveDirectoryBearerAuthenticationOptions
+        {
+            Audience = ConfigurationManager.AppSettings["ida:Audience"],
+            Tenant = ConfigurationManager.AppSettings["ida:Tenant"]
+        }
+    );
 
 y agregue:
 
     app.UseActiveDirectoryFederationServicesBearerAuthentication(
-    new ActiveDirectoryFederationServicesBearerAuthenticationOptions
-    {
-    MetadataEndpoint = ConfigurationManager.AppSettings["ida:AdfsMetadataEndpoint"],
-    TokenValidationParameters = new TokenValidationParameters()
-    {
-    ValidAudience = ConfigurationManager.AppSettings["ida:Audience"],
-    ValidIssuer = ConfigurationManager.AppSettings["ida:Issuer"]
-    }
-    }
+        new ActiveDirectoryFederationServicesBearerAuthenticationOptions
+        {
+            MetadataEndpoint = ConfigurationManager.AppSettings["ida:AdfsMetadataEndpoint"],
+            TokenValidationParameters = new TokenValidationParameters()
+            {
+                ValidAudience = ConfigurationManager.AppSettings["ida:Audience"],
+                ValidIssuer = ConfigurationManager.AppSettings["ida:Issuer"]
+            }
+        }
     );
 
 |Parámetro|Descripción|
@@ -152,31 +153,32 @@ y agregue:
 
 ## <a name="add-application-configuration-for-ad-fs"></a>Agregar configuración de aplicación para AD FS
 Cambie el appSettings como se indica a continuación:
-
+```xml
     <appSettings>
-    <add key="ida:Audience" value="https://localhost:44326/" />
-    <add key="ida:AdfsMetadataEndpoint" value="https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml" />
-    <add key="ida:Issuer" value="https://fs.contoso.com/adfs" />
-      </appSettings>
+        <add key="ida:Audience" value="https://localhost:44326/" />
+        <add key="ida:AdfsMetadataEndpoint" value="https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml" />
+        <add key="ida:Issuer" value="https://fs.contoso.com/adfs" />
+    </appSettings>
+    ```
 
-## <a name="running-the-solution"></a>Ejecutar la solución
-Limpie la solución, vuelva a compilar la solución y ejecútela. Si desea ver seguimientos detallados, inicie Fiddler y habilite el descifrado HTTPS.
+## Running the solution
+Clean the solution, rebuild the solution and run it. If you want to see detailed traces, launch Fiddler and enable HTTPS decryption.
 
-El explorador (use chrome browser) cargará el SPA y aparecerá la siguiente pantalla:
+The browser (use Chrome browser) will load the SPA and you will be presented with the following screen:
 
-![Registrar el cliente](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
+![Register the client](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
 
-Haga clic en Inicio de sesión.  La lista de tareas desencadenará el flujo de autenticación y ADAL JS dirigirá la autenticación a AD FS
+Click on Login.  The ToDo List will trigger the authentication flow and ADAL JS will direct the authentication to AD FS
 
-![Iniciar sesión](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
+![Login](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
 
-En Fiddler, puede ver el token que se devuelve como parte de la dirección URL en el # Fragment.
+In Fiddler you can see the token being returned as part of the URL in the # fragment.
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp5a.PNG)
 
-Ahora podrá llamar a la API de back-end para agregar elementos de la lista de tareas pendientes para el usuario que ha iniciado sesión:
+You will be able to now call the backend API to add ToDo List items for the logged-in user:
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
-## <a name="next-steps"></a>Pasos siguientes
-[Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)  
+## Next Steps
+[AD FS Development](../../ad-fs/AD-FS-Development.md)  

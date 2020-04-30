@@ -8,13 +8,13 @@ ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
-ms.date: 3/1/2019
-ms.openlocfilehash: 7baf71af401b8318ccd136fe12d6eb810cf9434e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.date: 04/15/2020
+ms.openlocfilehash: d8861369abe24ea0d34dce209a5d98e854c4c95d
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853308"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82072241"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>Prácticas recomendadas para ejecutar Linux en Hyper-V
 
@@ -49,7 +49,7 @@ Debido a que el hardware heredado se quita de la emulación en máquinas virtual
 
 Dado que el temporizador de PIT no está presente en la generación 2 Virtual Machines, las conexiones de red al servidor TFTP de PxE pueden finalizar prematuramente y evitar que el cargador de arranque Lea la configuración de GRUB y cargue un kernel desde el servidor.
 
-En RHEL 6. x, se puede usar el cargador de arranque de EFI heredado de GRUB v 0.97 en lugar de grub2, como se describe aquí: [https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)
+En RHEL 6. x, se puede usar el cargador de arranque de EFI heredado de GRUB v 0.97 en lugar de grub2, como se describe aquí:[https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)
 
 En las distribuciones de Linux que no sean RHEL 6. x, se pueden seguir pasos similares para configurar GRUB v 0.97 para cargar kernels de Linux desde un servidor PxE.
 
@@ -74,13 +74,15 @@ Las máquinas virtuales Linux que se implementarán mediante clústeres de conmu
 
 Configure y use el adaptador Ethernet virtual, que es una tarjeta de red específica de Hyper-V con un rendimiento mejorado. Si los adaptadores de red heredados y específicos de Hyper-V están conectados a una máquina virtual, los nombres de red de la salida de **ifconfig-a** pueden mostrar valores aleatorios como **_tmp12000801310**. Para evitar este problema, quite todos los adaptadores de red heredados al usar adaptadores de red específicos de Hyper-V en una máquina virtual Linux.
 
-## <a name="use-io-scheduler-noop-for-better-disk-io-performance"></a>Usar el Scheduler de e/s para mejorar el rendimiento de e/s de disco
+## <a name="use-io-scheduler-noopnone-for-better-disk-io-performance"></a>Usar el programador de e/s en NOOP/ninguno para mejorar el rendimiento de e/s de disco
 
-El kernel de Linux tiene cuatro programadores de e/s diferentes para reordenar las solicitudes con diferentes algoritmos. NOOP es una cola primero en salir que pasa la decisión de programación que va a realizar el hipervisor. Se recomienda usar NOOP como programador al ejecutar la máquina virtual Linux en Hyper-V. Para cambiar el programador de un dispositivo específico, en la configuración del cargador de arranque (por ejemplo,/etc/grub.conf), agregue **ascensor = NOOP** a los parámetros del kernel y, a continuación, reinicie.
+El kernel de Linux ofrece dos conjuntos de programadores de e/s de disco para reordenar las solicitudes.  Un conjunto es para el subsistema "BLK" anterior y un conjunto es para el subsistema "BLK-MQ" más reciente. En cualquier caso, con los discos de estado sólido de hoy en día, se recomienda usar un programador que pase las decisiones de programación al hipervisor de Hyper-V subyacente. En el caso de los kernels de Linux que usan el subsistema "BLK", este es el programador "noop". En el caso de los kernels de Linux que usan el subsistema "BLK-MQ", este es el programador "ninguno".
+
+En el caso de un disco determinado, los programadores disponibles pueden verse en esta ubicación del sistema`<diskname>`de archivos:/sys/class/Block//Queue/Scheduler, con el programador seleccionado actualmente entre corchetes. Puede cambiar el programador escribiendo en esta ubicación del sistema de archivos. El cambio se debe agregar a un script de inicialización para que pueda conservarse entre los reinicios. Consulte la documentación de distribución de Linux para obtener más información.
 
 ## <a name="numa"></a>NUMA
 
-Las versiones del kernel de Linux anteriores a 2.6.37 no admiten NUMA en Hyper-V con tamaños de máquina virtual más grandes. Este problema afecta principalmente a las distribuciones anteriores que usan el kernel de Red Hat 2.6.32 de nivel superior y se corrigió en Red Hat Enterprise Linux (RHEL) 6,6 (kernel-2.6.32-504). Los sistemas que ejecutan kernels personalizados anteriores a 2.6.37 o kernels basados en RHEL anteriores a 2.6.32-504 deben establecer el parámetro boot `numa=off` en la línea de comandos del kernel en grub. conf. Para obtener más información, consulte [Red Hat KB 436883](https://access.redhat.com/solutions/436883).
+Las versiones de kernel de Linux inferiores a la versión 2.6.37 no admiten NUMA en Hyper-V con tamaños de VM más grandes. Este problema afecta principalmente a las distribuciones anteriores que usan el kernel Red Hat 2.6.32 de canal de subida, y se ha corregido en Red Hat Enterprise Linux (RHEL) 6.6 (kernel-2.6.32-504). Los sistemas que ejecutan kernels personalizados cuyas versiones son anteriores a la versión 2.6.37, o bien kernels basados en RHEL cuyas versiones son anteriores a la versión 2.6.32-504, deben establecer el parámetro de inicio `numa=off` en la línea de comandos de kernel en grub.conf. Para más información, consulte [Red Hat KB 436883](https://access.redhat.com/solutions/436883).
 
 ## <a name="reserve-more-memory-for-kdump"></a>Reserve más memoria para kdump
 
@@ -92,7 +94,7 @@ Hyper-V permite la reducción de archivos de disco virtual (VHDX) sin tener en c
 
 Después de cambiar el tamaño de un VHD o VHDX, los administradores deben usar una utilidad como fdisk o parte de para actualizar las estructuras de partición, volumen y sistema de archivos para reflejar el cambio en el tamaño del disco. Al reducir o expandir el tamaño de un VHD o VHDX que tenga una tabla de particiones GUID (GPT) se producirá una advertencia cuando se use una herramienta de administración de particiones para comprobar el diseño de las particiones, y se avisará al administrador para que corrija el primer y el secundario. Este paso manual es seguro para realizar sin pérdida de datos.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 * [Máquinas virtuales Linux y FreeBSD compatibles con Hyper-V en Windows](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 

@@ -8,35 +8,33 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 784e26a1762e8950b8f658ea32968a0d170df13d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bb68a3551b362f0beb5d42a92a7c18d0913e47bc
+ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822188"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81624093"
 ---
 # <a name="planning-domain-controller-placement"></a>Planear la ubicación del controlador de dominio
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Después de recopilar toda la información de red que se usará para diseñar la topología de sitio, Planee dónde desea colocar los controladores de dominio, incluidos los controladores de dominio raíz del bosque, los controladores de dominio regionales, los titulares de la función de maestro de operaciones y los servidores de catálogo global.  
-  
-En Windows Server 2008, también puede aprovechar los controladores de dominio de solo lectura (RODC). Un RODC es un nuevo tipo de controlador de dominio que hospeda particiones de solo lectura de la base de datos Active Directory. A excepción de las contraseñas de cuenta, un RODC contiene todos los objetos Active Directory y atributos que contiene un controlador de dominio de escritura. Sin embargo, los cambios no se pueden realizar en la base de datos almacenada en el RODC. Los cambios se deben realizar en un controlador de dominio grabable y, a continuación, volver a replicarse en el RODC.  
-  
-Un RODC está diseñado principalmente para implementarse en entornos remotos o de sucursales, que normalmente tienen relativamente pocos usuarios, una seguridad física deficiente, un ancho de banda de red relativamente pobre en un sitio concentrador y personal con conocimiento limitado de la tecnología de la información (TI). La implementación de RODC da como resultado una mejor seguridad y un acceso más eficaz a los recursos de red. Para obtener más información acerca de las características de RODC, consulte AD DS: Controladores de dominio de solo lectura ([https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616)). Para obtener información sobre cómo implementar un RODC, vea la guía paso a paso para controladores de dominio de solo lectura ([https://go.microsoft.com/fwlink/?LinkID=92728](https://go.microsoft.com/fwlink/?LinkID=92728)).  
-  
-> [!NOTE]  
-> En esta guía no se explica cómo determinar el número adecuado de controladores de dominio y los requisitos de hardware del controlador de dominio para cada dominio que se representa en cada sitio.  
-  
-## <a name="in-this-section"></a>En esta sección  
-  
--   [Planear la ubicación del controlador de dominio de raíz del bosque](../../ad-ds/plan/Planning-Forest-Root-Domain-Controller-Placement.md)  
-  
--   [Planeación de la ubicación del controlador de dominio regional](../../ad-ds/plan/Planning-Regional-Domain-Controller-Placement.md)  
-  
--   [Planear la ubicación del servidor de catálogo global](../../ad-ds/plan/Planning-Global-Catalog-Server-Placement.md)  
-  
--   [Planear la ubicación del rol de maestro de operaciones](../../ad-ds/plan/Planning-Operations-Master-Role-Placement.md)  
-  
+Después de recopilar toda la información de red que se usará para diseñar la topología de sitio, Planee dónde desea colocar los controladores de dominio, incluidos los controladores de dominio raíz del bosque, los controladores de dominio regionales, los titulares de la función de maestro de operaciones y los servidores de catálogo global.
 
+En Windows Server 2008, también puede aprovechar los controladores de dominio de solo lectura (RODC). Un RODC es un tipo de controlador de dominio nuevo que hospeda particiones de sólo lectura de la base de datos de Active Directory. A excepción de las contraseñas de cuenta, un RODC contiene todos los objetos Active Directory y atributos que contiene un controlador de dominio de escritura. Sin embargo, los cambios no se pueden realizar en la base de datos almacenada en el RODC. Los cambios se deben realizar en un controlador de dominio grabable y, a continuación, volver a replicarse en el RODC.
+
+Un RODC está diseñado principalmente para implementarse en entornos remotos o de sucursales, que normalmente tienen relativamente pocos usuarios, una seguridad física deficiente, un ancho de banda de red relativamente pobre en un sitio concentrador y personal con conocimiento limitado de la tecnología de la información (TI). La implementación de RODC da como resultado una mejor seguridad y un acceso más eficaz a los recursos de red. Para obtener más información acerca de las características de RODC, consulte [AD DS: Controladores de dominio de solo lectura](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732801(v=ws.10)). Para obtener información sobre cómo implementar un RODC, consulte la [Guía paso a paso de controladores de dominio de solo lectura](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772234(v=ws.10)) .
+
+> [!NOTE]
+> En esta guía no se explica cómo determinar el número adecuado de controladores de dominio y los requisitos de hardware del controlador de dominio para cada dominio que se representa en cada sitio.
+
+## <a name="in-this-section"></a>En esta sección
+
+- [Planear la ubicación del controlador de dominio de raíz del bosque](../../ad-ds/plan/Planning-Forest-Root-Domain-Controller-Placement.md)
+
+- [Planeación de la ubicación del controlador de dominio regional](../../ad-ds/plan/Planning-Regional-Domain-Controller-Placement.md)
+
+- [Planear la ubicación del servidor de catálogo global](../../ad-ds/plan/Planning-Global-Catalog-Server-Placement.md)
+
+- [Planear la ubicación del rol de maestro de operaciones](../../ad-ds/plan/Planning-Operations-Master-Role-Placement.md)
 

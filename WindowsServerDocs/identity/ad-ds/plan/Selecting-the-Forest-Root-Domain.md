@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: abc02bec101b39a66a78da871f838d2585d89377
-ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
+ms.openlocfilehash: 1abf845ce69b395bf46a0f155db2c683c359207c
+ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81524930"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81623883"
 ---
 # <a name="selecting-the-forest-root-domain"></a>Seleccionar el dominio raíz del bosque
 
@@ -68,7 +68,7 @@ Para seleccionar un sufijo para el dominio raíz del bosque:
 Se recomienda usar nombres DNS registrados con una autoridad de Internet en el espacio de nombres Active Directory. Solo se garantiza que los nombres registrados son únicos globalmente. Si otra organización registra más adelante el mismo nombre de dominio DNS (o si la organización combina con, adquiere o adquiere otra compañía que usa el mismo nombre DNS), las dos infraestructuras no pueden interactuar entre sí.
 
 > [!CAUTION]
-> No use nombres DNS de etiqueta única. Para obtener más información, vea ([implementación y funcionamiento de Active Directory dominios que se configuran mediante nombres DNS de etiqueta única](https://go.microsoft.com/fwlink/?LinkId=106631)). Además, no se recomienda usar sufijos no registrados, como. local.
+> No use nombres DNS de etiqueta única. Para obtener más información, consulte [implementación y funcionamiento de Active Directory dominios que se configuran mediante nombres DNS de etiqueta única](https://support.microsoft.com/help/300684/). Además, no se recomienda usar sufijos no registrados, como. local.
 
 ### <a name="selecting-a-prefix"></a>Seleccionar un prefijo
 
@@ -78,14 +78,14 @@ Si seleccionó un dominio regional para que funcione como dominio raíz del bosq
 
 En la tabla siguiente se enumeran las reglas para seleccionar un prefijo para un nombre DNS registrado.
 
-|Regla|Explicación|
-|--------|---------------|
-|Seleccione un prefijo que no sea probable que quede obsoleto.|Evite nombres como una línea de productos o un sistema operativo que podrían cambiar en el futuro. Se recomienda usar nombres genéricos como Corp o DS.|
-|Seleccione un prefijo que incluya solo caracteres estándar de Internet.|A-Z, a-z, 0-9 y (-), pero no totalmente numérica.|
-|Incluya 15 caracteres o menos en el prefijo.|Si elige una longitud de prefijo de 15 caracteres o menos, el nombre NetBIOS es el mismo que el prefijo.|
+| Regla     | Explicación |
+| -------- | --------------- |
+| Seleccione un prefijo que no sea probable que quede obsoleto. | Evite nombres como una línea de productos o un sistema operativo que podrían cambiar en el futuro. Se recomienda usar nombres genéricos como Corp o DS.|
+| Seleccione un prefijo que incluya solo caracteres estándar de Internet. | A-Z, a-z, 0-9 y (-), pero no totalmente numérica. |
+| Incluya 15 caracteres o menos en el prefijo. | Si elige una longitud de prefijo de 15 caracteres o menos, el nombre NetBIOS es el mismo que el prefijo. |
 
 Es importante que el propietario de DNS Active Directory funcione con el propietario DNS de la organización para obtener la propiedad del nombre que se utilizará para el espacio de nombres Active Directory. Para obtener más información sobre cómo diseñar una infraestructura DNS para admitir AD DS, consulte [creación de un diseño de infraestructura de DNS](../../ad-ds/plan/Creating-a-DNS-Infrastructure-Design.md).
 
 ## <a name="documenting-the-forest-root-domain-name"></a>Documentar el nombre de dominio raíz del bosque
 
-Documente el prefijo y el sufijo DNS que seleccione para el dominio raíz del bosque. En este punto, identifique el dominio que será la raíz del bosque. Puede Agregar la información del nombre de dominio raíz del bosque a la hoja de cálculo "planeamiento de dominios" que creó para documentar el plan de dominios nuevos y actualizados y los nombres de dominio. Para abrirlo, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://www.microsoft.com/download/details.aspx?id=9608) y abra "planeamiento de dominios" (DSSLOGI_5. doc).
+Documente el prefijo y el sufijo DNS que seleccione para el dominio raíz del bosque. En este punto, identifique el dominio que será la raíz del bosque. Puede Agregar la información del nombre de dominio raíz del bosque a la hoja de cálculo "planeamiento de dominios" que creó para documentar el plan de dominios nuevos y actualizados y los nombres de dominio. Para abrirlo, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) y abra "planeamiento de dominios" (DSSLOGI_5. doc).
