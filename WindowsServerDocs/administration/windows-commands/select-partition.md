@@ -1,6 +1,6 @@
 ---
 title: select partition
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 97145d73cbbe1bdc9b27e545b047b78fe89e4984
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 55b06f247c8e9f183a2971278a8f16ac237e9cfe
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834808"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722010"
 ---
 # <a name="select-partition"></a>select partition
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 selecciona la partición especificada y desplaza el foco a ella. Este comando también se puede usar para mostrar la partición que tiene actualmente el foco en el disco seleccionado.  
   
@@ -34,9 +34,9 @@ select partition=<n>
   
 |   Parámetro    |                                                                                    Descripción                                                                                    |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <n> de\=de partición | Número de la partición que va a recibir el foco. Puede ver los números de todas las particiones del disco seleccionado actualmente mediante el comando **List Partition** en Diskpart. |
+| divide\=<n> | Número de la partición que va a recibir el foco. Puede ver los números de todas las particiones del disco seleccionado actualmente mediante el comando **List Partition** en Diskpart. |
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
   
 -   Antes de poder seleccionar una partición, primero debe seleccionar un disco con el comando **Seleccionar disco** .  
   
@@ -46,7 +46,7 @@ select partition=<n>
   
 -   Si se selecciona una partición con un volumen correspondiente, el volumen se seleccionará automáticamente.  
   
-## <a name="examples"></a><a name=BKMK_examples></a>Example  
+## <a name="examples"></a>Ejemplos  
 Para desplazar el foco a la partición 3, escriba:  
   
 ```  

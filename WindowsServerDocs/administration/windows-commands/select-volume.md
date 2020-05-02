@@ -1,6 +1,6 @@
 ---
 title: select volume
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b9337d7e4b37adcc22084249e53fb272335bf4f3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a3885d5d40e35e975ebe1cc28ddc26d4c1e78e24
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834708"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721988"
 ---
 # <a name="select-volume"></a>select volume
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 selecciona el volumen especificado y desplaza el foco a él. Este comando también se puede usar para mostrar el volumen que tiene actualmente el foco en el disco seleccionado.  
   
@@ -37,7 +37,7 @@ select volume={<n>|<d>}
 |    <n>    | Número del volumen en el que se va a recibir el foco. Puede ver los números de todos los volúmenes del disco seleccionado actualmente mediante el comando **List Volume** en Diskpart. |
 |    <d>    |                                                 La letra de unidad o la ruta de acceso del punto de montaje del volumen que va a recibir el foco.                                                 |
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
   
 -   Si no se especifica ningún volumen, este comando muestra el volumen que tiene actualmente el foco en el disco seleccionado.  
   
@@ -47,7 +47,7 @@ select volume={<n>|<d>}
   
 -   Si se selecciona una partición con un volumen correspondiente, el volumen se seleccionará automáticamente.  
   
-## <a name="examples"></a><a name=BKMK_examples></a>Example  
+## <a name="examples"></a>Ejemplos  
 Para desplazar el foco al volumen 2, escriba:  
   
 ```  

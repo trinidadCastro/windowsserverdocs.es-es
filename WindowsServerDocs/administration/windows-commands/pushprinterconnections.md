@@ -1,6 +1,6 @@
 ---
 title: pushprinterconnections
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5941b1eba55ce7524946f3257c093d409ef7d773
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 94ba2d09a3e67248a393350e46e971aa8b24b00d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837078"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722764"
 ---
 # <a name="pushprinterconnections"></a>pushprinterconnections
 
@@ -32,10 +32,10 @@ pushprinterconnections <-log> <-?>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|<-Registro >|Escribe un archivo de registro de depuración por usuario en% Temp o escribe un registro de depuración por máquina en%windir%\temp.|
+|<-registro>|Escribe un archivo de registro de depuración por usuario en% Temp o escribe un registro de depuración por máquina en%windir%\temp.|
 |<-? >|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Esta utilidad se usa en scripts de inicio de equipo o de inicio de sesión de usuario, y no se debe ejecutar desde la línea de comandos.
 

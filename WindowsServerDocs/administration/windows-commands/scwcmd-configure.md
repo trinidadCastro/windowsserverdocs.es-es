@@ -1,6 +1,6 @@
 ---
 title: Scwcmd configure
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ac4333628c33b60daabbb6cff55575d6ec8cd5f6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6ffaff594a8927b3fcdfc871ec380fd5f134ce90
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835188"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722146"
 ---
 # <a name="scwcmd-configure"></a>Scwcmd: configure
 
@@ -32,20 +32,20 @@ scwcmd configure [[[/m:<ComputerName> | /ou:<OuName>] /p:<Policy>] | /i:<Compute
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/m:\<ComputerName >|Especifica el nombre NetBIOS, el nombre DNS o la dirección IP del equipo que se va a configurar. Si se especifica el parámetro **/m** , también se debe especificar el parámetro **/p** .|
-|/ou:\<OuName >|Especifica el nombre de dominio completo (FQDN) de una unidad organizativa (OU) en Active Directory Domain Services. Si se especifica el parámetro **/ou** , también se debe especificar el parámetro **/p** . Todos los equipos de la unidad organizativa se analizarán según la Directiva especificada.|
-|/p:\<Directiva >|Especifica la ruta de acceso y el nombre del archivo de directiva. XML que se va a usar para realizar la configuración.|
-|/i:\<ComputerList >|Especifica la ruta de acceso y el nombre de un archivo. XML que contiene una lista de equipos junto con los archivos de directivas esperados. Todos los equipos del archivo. XML se configurarán según sus archivos de directiva correspondientes. Un archivo. XML de ejemplo es%windir%\security\SampleMachineList.xml.|
-|/u:\<nombre de usuario >|Especifica una credencial de usuario alternativa para usar al configurar un equipo remoto. El valor predeterminado es el usuario que ha iniciado sesión.|
-|/PW:\<contraseña >|Especifica una credencial de usuario alternativa para usar al configurar un equipo remoto. El valor predeterminado es la contraseña del usuario que ha iniciado sesión.|
-|/t:\<subprocesos >|Especifica el número de operaciones de configuración pendientes simultáneas que se deben mantener durante el proceso de configuración (DefaultValue = 40, MinValue = 1, MaxValue = 1000).|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/m:\<COMPUTERNAME>|Especifica el nombre NetBIOS, el nombre DNS o la dirección IP del equipo que se va a configurar. Si se especifica el parámetro **/m** , también se debe especificar el parámetro **/p** .|
+|/ou:\<OuName>|Especifica el nombre de dominio completo (FQDN) de una unidad organizativa (OU) en Active Directory Domain Services. Si se especifica el parámetro **/ou** , también se debe especificar el parámetro **/p** . Todos los equipos de la unidad organizativa se analizarán según la Directiva especificada.|
+|/p:\<Directiva>|Especifica la ruta de acceso y el nombre del archivo de directiva. XML que se va a usar para realizar la configuración.|
+|/i:\<ComputerList>|Especifica la ruta de acceso y el nombre de un archivo. XML que contiene una lista de equipos junto con los archivos de directivas esperados. Todos los equipos del archivo. XML se configurarán según sus archivos de directiva correspondientes. Un archivo. XML de ejemplo es%windir%\security\SampleMachineList.xml.|
+|/u:\<nombre de usuario>|Especifica una credencial de usuario alternativa para usar al configurar un equipo remoto. El valor predeterminado es el usuario que ha iniciado sesión.|
+|/PW:\<contraseña>|Especifica una credencial de usuario alternativa para usar al configurar un equipo remoto. El valor predeterminado es la contraseña del usuario que ha iniciado sesión.|
+|/t:\<subprocesos>|Especifica el número de operaciones de configuración pendientes simultáneas que se deben mantener durante el proceso de configuración (DefaultValue = 40, MinValue = 1, MaxValue = 1000).|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Scwcmd. exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para configurar una directiva de seguridad en el archivo webpolicy. XML, escriba:
 ```

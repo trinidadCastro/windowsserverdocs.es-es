@@ -1,6 +1,6 @@
 ---
 title: Scwcmd (transformación)
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fed9ff6369e6c966d9d1f5295db7db6648a1ab1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1f1116b42d356cc36f478089cdf487a38e792e87
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835128"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722119"
 ---
 # <a name="scwcmd-transform"></a>Scwcmd: transform
 
@@ -25,9 +25,9 @@ Transforma un archivo de directiva de seguridad generado mediante el Asistente p
 Se necesitan credenciales de administrador de dominio para completar la operación de transformación.
 
 > [!IMPORTANT]
-> La configuración de la Directiva de seguridad de Internet Information Services (IIS) no se puede implementar mediante directiva de grupo.</br>> Las directivas de firewall que enumeran las aplicaciones aprobadas no se deben implementar en los servidores a menos que el servicio Firewall de Windows se inicie automáticamente cuando el servidor se inició por última vez.
+> La configuración de la Directiva de seguridad de Internet Information Services (IIS) no se puede implementar mediante directiva de grupo.</br>> las directivas de firewall que enumeran las aplicaciones aprobadas no se deben implementar en los servidores a menos que el servicio Firewall de Windows se inicie automáticamente cuando el servidor se inició por última vez.
 
-Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -39,15 +39,15 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/p:\<policyFile. XML >|Especifica la ruta de acceso y el nombre de archivo del archivo de directiva. XML que se debe aplicar. Se debe especificar este parámetro.|
-|/g:\<GPODisplayName >|Especifica el nombre para mostrar del GPO. Se debe especificar este parámetro.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/p:\<policyFile. XML>|Especifica la ruta de acceso y el nombre de archivo del archivo de directiva. XML que se debe aplicar. Se debe especificar este parámetro.|
+|/g:\<GPODisplayName>|Especifica el nombre para mostrar del GPO. Se debe especificar este parámetro.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Scwcmd. exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para crear un GPO denominado FileServerSecurity desde un archivo denominado FileServerPolicy. XML, escriba:
 ```

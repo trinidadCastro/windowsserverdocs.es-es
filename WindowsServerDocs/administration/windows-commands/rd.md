@@ -1,6 +1,6 @@
 ---
 title: rd
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 298e6b291a6aa08701b6d54a11470b0cc4bea486
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cb169a44f9613b237af71321f9619d9ea93a6912
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836718"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722644"
 ---
 # <a name="rd"></a>rd
 
@@ -22,7 +22,7 @@ ms.locfileid: "80836718"
 
 Elimina un directorio. Este comando es el mismo que el comando **rmdir** .
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -38,9 +38,9 @@ rmdir [<Drive>:]<Path> [/s [/q]]
 | [\<> de unidad:]<Path> |                      Especifica la ubicación y el nombre del directorio que desea eliminar. La *ruta de acceso* es obligatoria.                       |
 |        /s         |                     Elimina un árbol de directorios (el directorio especificado y todos sus subdirectorios, incluidos todos los archivos).                      |
 |        /q         | Especifica el modo silencioso. No solicita confirmación al eliminar un árbol de directorios. (Tenga en cuenta que **/q** solo funciona si se especifica **/s** ). |
-|        /?         |                                                     Muestra la Ayuda en el símbolo del sistema.                                                     |
+|        /?         |                                                     Muestra la ayuda en el símbolo del sistema.                                                     |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   No se puede eliminar un directorio que contenga archivos, incluidos los archivos ocultos o del sistema. Si intenta hacerlo, aparece el siguiente mensaje:
 
@@ -55,7 +55,7 @@ rmdir [<Drive>:]<Path> [/s [/q]]
     Si recibe este mensaje de error, debe cambiar a un directorio diferente (no un subdirectorio del directorio actual) y, a continuación, usar **Rd** (especifique la *ruta de acceso* si es necesario).
 -   El comando **Rd** , con diferentes parámetros, está disponible en la consola de recuperación.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 No se puede eliminar el directorio en el que está trabajando actualmente. Debe cambiar a un directorio que no esté dentro del directorio actual. Por ejemplo, para cambiar al directorio principal, escriba:
 ```

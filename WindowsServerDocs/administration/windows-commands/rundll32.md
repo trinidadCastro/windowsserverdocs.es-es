@@ -1,6 +1,6 @@
 ---
 title: rundll32
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 391607f6e744fe88a60cb556067cf2699eee25f5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b0639206b26ea58c4ec8473c0a736fda3c435021
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835438"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722238"
 ---
 # <a name="rundll32"></a>rundll32
 
@@ -30,13 +30,13 @@ Debe ejecutar el comando **rundll32** desde un símbolo del sistema con privileg
 Rundll32 <DLLname>
 ```
 
-## <a name="commands"></a>Commands
+## <a name="commands"></a>Comandos:
 
 |Parámetro|Descripción|
 |---------|-----------|
 |[Rundll32 printui. dll, PrintUIEntry](rundll32-printui.md)|Muestra la interfaz de usuario de la impresora|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Rundll32 solo puede llamar a funciones de un archivo DLL escrito explícitamente para ser llamado por rundll32.
 

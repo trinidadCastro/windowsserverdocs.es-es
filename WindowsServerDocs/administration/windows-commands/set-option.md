@@ -1,6 +1,6 @@
 ---
-title: Opción set
-description: Temas de comandos de Windows para la opción set, que establece las opciones para la creación de instantáneas.
+title: Opción SET
+description: Tema de referencia de la opción set, que establece las opciones para la creación de instantáneas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a956c74619f3a6c33dfcaa62ee4c810cd93b21f1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a4aba049e29cd74450467cf28057a2ff4e4a7094
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834498"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721901"
 ---
-# <a name="set-option"></a>Opción set
+# <a name="set-option"></a>Opción SET
 
 Establece las opciones para crear la instantánea. Si se usa sin parámetros, la **opción set** muestra la ayuda en el símbolo del sistema.
 

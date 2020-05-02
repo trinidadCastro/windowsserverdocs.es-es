@@ -1,6 +1,6 @@
 ---
 title: Establecer detallado
-description: Temas de comandos de Windows para Set verbose, que especifica si se proporciona una salida detallada durante la creación de la instantánea.
+description: Tema de referencia sobre Set verbose, que especifica si se proporciona una salida detallada durante la creación de la instantánea.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f06400259004095fcc4ec81b2ed3cb25678a4b7d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: db31192037e57ee471d04480e0c9333b39e44980
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834468"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721893"
 ---
 # <a name="set-verbose"></a>Establecer detallado
 
@@ -32,7 +32,7 @@ set verbose {on | off}
 |-----------|-------------|
 |    {activado    |    off}     |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Si el modo detallado está activado, **set** proporciona detalles de inclusión o exclusión del escritor y detalles de la compresión y extracción de metadatos.
 

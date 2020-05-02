@@ -1,6 +1,6 @@
 ---
 title: repair-bde
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2107e5b7ef0339fc4f682632f3ef5a593578680a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 501ab801e76980f7e94e88213dd3aa42ee04d4d7
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835968"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722398"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -29,7 +29,7 @@ Existen las siguientes limitaciones para la herramienta de línea de comandos re
 -   Repair-BDE no puede reparar una unidad en la que se produjo un error durante el proceso de cifrado o descifrado.
 -   Repair-BDE supone que si la unidad tiene algún cifrado, la unidad se ha cifrado completamente.
 
-Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -41,8 +41,8 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<InputVolume >|Identifica la letra de unidad de la unidad cifrada con BitLocker que desea reparar. La letra de unidad debe incluir un signo de dos puntos. por ejemplo: **C:** .|
-|\<OutputVolumeorImage >|Identifica la unidad en la que se va a almacenar el contenido de la unidad reparada. Se sobrescribirá toda la información de la unidad de salida.|
+|\<> InputVolume|Identifica la letra de unidad de la unidad cifrada con BitLocker que desea reparar. La letra de unidad debe incluir un signo de dos puntos. por ejemplo: **C:**.|
+|\<> OutputVolumeorImage|Identifica la unidad en la que se va a almacenar el contenido de la unidad reparada. Se sobrescribirá toda la información de la unidad de salida.|
 |-RK|Identifica la ubicación de la clave de recuperación que se debe usar para desbloquear el volumen. Este comando también se puede especificar como **-RecoveryKey**.|
 |-RP|Identifica la contraseña de recuperación numérica que se debe usar para desbloquear el volumen. Este comando también se puede especificar como **-RecoveryPassword**.|
 |-PW|Identifica la contraseña que se debe usar para desbloquear el volumen. Este comando también se puede especificar como **-password** .|
@@ -51,25 +51,25 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 |-f|Fuerza el desmontaje de un volumen incluso si no se puede bloquear. Este comando también se puede especificar como **Force**.|
 |-? o/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Si no se especifica la ruta de acceso a un paquete de claves, **repair-BDE** buscará en la unidad un paquete de claves. Sin embargo, si el disco duro está dañado, **repair-BDE** no podrá encontrar el paquete y le pedirá que proporcione la ruta de acceso.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se intenta reparar la unidad C y escribir el contenido de la unidad C en la unidad D mediante el archivo de clave de recuperación (RecoveryKey. Bek) almacenado en la unidad F y se escriben los resultados de este intento en el archivo de registro (log. txt) de la unidad Z.
+Para intentar reparar la unidad C y escribir el contenido de la unidad C en la unidad D con el archivo de clave de recuperación (RecoveryKey. Bek) almacenado en la unidad F y escribe los resultados de este intento en el archivo de registro (log. txt) de la unidad Z.
 ```
 repair-bde C: D: -rk F:\RecoveryKey.bek –lf Z:\log.txt
 ```
-En el ejemplo siguiente se intenta reparar la unidad C y escribir el contenido de la unidad C en la unidad D mediante la contraseña de recuperación de 48 dígitos especificada. La contraseña de recuperación debe escribirse en ocho bloques de seis dígitos con un guion separando cada bloque.
+Para intentar reparar la unidad C y escribir el contenido en la unidad C en la unidad D con la contraseña de recuperación de 48 dígitos especificada. La contraseña de recuperación debe escribirse en ocho bloques de seis dígitos con un guion separando cada bloque.
 ```
 repair-bde C: D: -rp 111111-222222-333333-444444-555555-666666-777777-888888
 ```
-En el ejemplo siguiente se fuerza la desmontaje de la unidad C y, a continuación, se intenta reparar la unidad C y se escribe el contenido de la unidad C en la unidad D mediante el paquete de claves de recuperación y el archivo de clave de recuperación (RecoveryKey. Bek) almacenados en la unidad F.
+Para forzar la desmontaje de la unidad C y, a continuación, intenta reparar la unidad C y escribe el contenido de la unidad C en la unidad D con el paquete de claves de recuperación y el archivo de clave de recuperación (RecoveryKey. Bek) almacenados en la unidad F.
 ```
 repair-bde C: D: -kp F:\RecoveryKeyPackage -rk F:\RecoveryKey.bek -f
 ```
-En el ejemplo siguiente se intenta reparar la unidad C y escribir el contenido de la unidad C en la unidad D, y se debe escribir una contraseña para desbloquear la unidad C: cuando se le solicite:
+Para intentar reparar la unidad C y escribir el contenido de la unidad C en la unidad D, y debe escribir una contraseña para desbloquear la unidad C: cuando se le solicite:
 ```
 repair-bde C: D: -pw
 ```

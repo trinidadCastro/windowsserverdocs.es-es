@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 3db99c06232e4ed6b3ad5df4ee189d38bffb14c2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 49d079c8c659fc1f8abc821935c401ae00bc8ba4
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837328"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722851"
 ---
 # <a name="prncnfg"></a>prncnfg
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Configura o muestra la información de configuración de una impresora.
 
@@ -31,43 +31,43 @@ cscript Prncnfg {-g | -t | -x | -?} [-S <ServerName>] [-P <printerName>] [-z <Ne
 |Parámetro|Descripción|
 |-------|--------|
 |-g|Muestra información de configuración acerca de una impresora.|
-|-t|Configura una impresora.|
-|-x|cambia el nombre de una impresora.|
-|-S \<ServerName\>|Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local.|
-|-P \<Nombredeimpresora\>|Especifica el nombre de la impresora que desea administrar. Obligatorio.|
+|-T|Configura una impresora.|
+|-X|cambia el nombre de una impresora.|
+|-S \<nombreDeServidor\>|Especifica el nombre del equipo remoto que hospeda la impresora que desea administrar. Si no especifica un equipo, se usa el equipo local.|
+|-P \<nombredeimpresora\>|Especifica el nombre de la impresora que desea administrar. Necesario.|
 |-z \<NewprinterName\>|Especifica el nuevo nombre de la impresora. Requiere los parámetros **-x** y **-P** .|
-|-u \<nombredeusuario\>-w \<contraseña\>|Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione.|
+|-u \<nombredeusuario\> -w \<contraseña\>|Especifica una cuenta con permisos para conectarse al equipo que hospeda la impresora que desea administrar. Todos los miembros del grupo de administradores locales del equipo de destino tienen estos permisos, pero también se pueden conceder los permisos a otros usuarios. Si no especifica una cuenta, debe iniciar sesión con una cuenta que tenga estos permisos para que el comando funcione.|
 |-r \<PortName\>|Especifica el puerto al que está conectada la impresora. Si se trata de un puerto paralelo o de serie, use el identificador del puerto (por ejemplo, LPT1 o COM1). Si se trata de un puerto TCP/IP, utilice el nombre de puerto que se especificó cuando se agregó el puerto.|
 |-l \<ubicación\>|Especifica la ubicación de la impresora, como "copiar salón".|
-|-h \<ShareName\>|Especifica el nombre del recurso compartido de la impresora.|
-|-m \<comentario\>|Especifica la cadena de comentario de la impresora.|
+|-h \<nombreDeRecursoCompartido\>|Especifica el nombre del recurso compartido de la impresora.|
+|-m \<(comentario)\>|Especifica la cadena de comentario de la impresora.|
 |-f \<SeparatorFileName\>|Especifica un archivo que contiene el texto que aparece en la página separador.|
-|-y \<\> DataType|Especifica los tipos de datos que la impresora puede aceptar.|
+|-tipo \<de de-y\>|Especifica los tipos de datos que la impresora puede aceptar.|
 |-St \<startTime\>|Configura la impresora para una disponibilidad limitada. Especifica la hora del día en la que la impresora está disponible. Si envía un documento a una impresora cuando no está disponible, el documento se mantiene (en cola) hasta que la impresora esté disponible. Debe especificar la hora como un reloj de 24 horas. Por ejemplo, para especificar 11:00 P.M., escriba **2300**.|
 |-UT \<EndTime\>|Configura la impresora para una disponibilidad limitada. Especifica la hora del día en que la impresora ya no está disponible. Si envía un documento a una impresora cuando no está disponible, el documento se mantiene (en cola) hasta que la impresora esté disponible. Debe especificar la hora como un reloj de 24 horas. Por ejemplo, para especificar 11:00 P.M., escriba **2300**.|
-|-o \<prioridad\>|Especifica la prioridad que utiliza el administrador de trabajos de impresión para enrutar los trabajos de impresión en la cola de impresión. Una cola de impresión con una prioridad más alta recibe todos sus trabajos antes de cualquier cola con una prioridad más baja.|
+|-o \<Priority\>|Especifica la prioridad que utiliza el administrador de trabajos de impresión para enrutar los trabajos de impresión en la cola de impresión. Una cola de impresión con una prioridad más alta recibe todos sus trabajos antes de cualquier cola con una prioridad más baja.|
 |-i \<DefaultPriority\>|Especifica la prioridad predeterminada asignada a cada trabajo de impresión.|
 |{+&#124;-} compartido|Especifica si esta impresora se comparte en la red.|
 |{+&#124;-} directo|Especifica si el documento se debe enviar directamente a la impresora sin ser puesto en cola.|
 |{+&#124;-} publicado|Especifica si esta impresora debe publicarse en Active Directory. Si publica la impresora, otros usuarios pueden buscarla en función de su ubicación y capacidades (como la impresión en color y el grapado).|
 |{+&#124;-} oculto|Función reservada.|
 |{+&#124;-} rawonly|Especifica si solo se pueden poner en cola los trabajos de impresión de datos sin procesar en esta cola.|
-|{+ &#124; -} en cola|Especifica que la impresora no debe empezar a imprimir hasta que no se haya puesto en cola la última página del documento. El programa de impresión no está disponible hasta que el documento ha finalizado la impresión. Sin embargo, el uso de este parámetro garantiza que todo el documento esté disponible en la impresora.|
-|{+ &#124; -} KeepPrintedJobs|Especifica si el administrador de trabajos de impresión debe conservar los documentos después de imprimirlos. Al habilitar esta opción, el usuario puede volver a enviar un documento a la impresora desde la cola de impresión en lugar de desde el programa de impresión.|
-|{+ &#124; -} WorkOffline|Especifica si un usuario puede enviar trabajos de impresión a la cola de impresión si el equipo no está conectado a la red.|
-|{+ &#124; -} EnableDevq|Especifica si los trabajos de impresión que no coinciden con la configuración de la impresora (por ejemplo, archivos PostScript puestos en cola en impresoras que no son PostScript) se deben mantener en la cola en lugar de imprimirse.|
-|{+ &#124; -} docompletefirst|Especifica si el administrador de trabajos de impresión debe enviar trabajos de impresión con una prioridad más baja que haya completado la puesta en cola antes de enviar trabajos de impresión con una prioridad más alta que no haya completado la puesta en cola. Si esta opción está habilitada y ningún documento ha completado la cola de impresión, el administrador de trabajos de impresión enviará documentos más grandes antes que los más pequeños. Debe habilitar esta opción si desea maximizar la eficacia de la impresora a costa de la prioridad del trabajo. Si esta opción está deshabilitada, el administrador de trabajos de impresión siempre envía primero los trabajos de mayor prioridad a sus respectivas colas.|
-|{+ &#124; -} enablebidi|Especifica si la impresora envía información de estado al administrador de trabajos de impresión.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|{+ &#124;-} en cola|Especifica que la impresora no debe empezar a imprimir hasta que no se haya puesto en cola la última página del documento. El programa de impresión no está disponible hasta que el documento ha finalizado la impresión. Sin embargo, el uso de este parámetro garantiza que todo el documento esté disponible en la impresora.|
+|{+ &#124;-} KeepPrintedJobs|Especifica si el administrador de trabajos de impresión debe conservar los documentos después de imprimirlos. Al habilitar esta opción, el usuario puede volver a enviar un documento a la impresora desde la cola de impresión en lugar de desde el programa de impresión.|
+|{+ &#124;-} WorkOffline|Especifica si un usuario puede enviar trabajos de impresión a la cola de impresión si el equipo no está conectado a la red.|
+|{+ &#124;-} EnableDevq|Especifica si los trabajos de impresión que no coinciden con la configuración de la impresora (por ejemplo, archivos PostScript puestos en cola en impresoras que no son PostScript) se deben mantener en la cola en lugar de imprimirse.|
+|{+ &#124;-} docompletefirst|Especifica si el administrador de trabajos de impresión debe enviar trabajos de impresión con una prioridad más baja que haya completado la puesta en cola antes de enviar trabajos de impresión con una prioridad más alta que no haya completado la puesta en cola. Si esta opción está habilitada y ningún documento ha completado la cola de impresión, el administrador de trabajos de impresión enviará documentos más grandes antes que los más pequeños. Debe habilitar esta opción si desea maximizar la eficacia de la impresora a costa de la prioridad del trabajo. Si esta opción está deshabilitada, el administrador de trabajos de impresión siempre envía primero los trabajos de mayor prioridad a sus respectivas colas.|
+|{+ &#124;-} enablebidi|Especifica si la impresora envía información de estado al administrador de trabajos de impresión.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
--   El comando **prncnfg** es un script de Visual Basic ubicado en el printing_Admin_Scripts%windir%\system32\\\<language> directorio. Para usar este comando, en una ventana del símbolo del sistema, escriba **cscript** seguido de la ruta de acceso completa al archivo prncnfg o cambie los directorios a la carpeta correspondiente. Por ejemplo:
+## <a name="remarks"></a>Observaciones
+-   El comando **prncnfg** es un script de Visual Basic ubicado en el directorio\\ <language> de printing_Admin_Scripts%WINDIR%\system32\. Para usar este comando, en una ventana del símbolo del sistema, escriba **cscript** seguido de la ruta de acceso completa al archivo prncnfg o cambie los directorios a la carpeta correspondiente. Por ejemplo:
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prncnfg
     ```
 -   Si la información proporcionada contiene espacios, utilice comillas alrededor del texto (por ejemplo, `"computer Name"`).
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Ejemplos
 Para mostrar la información de configuración de la impresora llamada colorprinter_2 con una cola de impresión hospedada por el equipo remoto llamado ServidorRH, escriba:
 ```
 cscript prncnfg -g -S HRServer -P colorprinter_2 
@@ -84,5 +84,5 @@ cscript prncnfg -x -S HRServer -P colorprinter_2 -z "colorprinter 3"
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
-- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[Referencia del comando Print](print-command-reference.md)
+- [Referencia de la clave de sintaxis de la línea de comandos referencia del](command-line-syntax-key.md)
+[comando Print](print-command-reference.md)

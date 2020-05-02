@@ -1,6 +1,6 @@
 ---
 title: Establecer contexto
-description: Tema de comandos de Windows para set context, que establece el contexto para la creación de instantáneas.
+description: Tema de referencia sobre set context, que establece el contexto para la creación de instantáneas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 162fefc46bc3b8ae39dcb41a387e50ed98fefa70
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9494cb8a0a6b0e320240d74980049a4e49843ecd
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834568"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721930"
 ---
 # <a name="set-contex"></a>Establecer contextual.
 
 Establece el contexto para la creación de la instantánea. Si se usa sin parámetros, **set context** muestra la ayuda en el símbolo del sistema.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,11 +37,11 @@ set context {clientaccessible | persistent [nowriters] | volatile [nowriters]}
 |volatile|Elimina la instantánea al salir o restablecer.|
 |nowriters|Especifica que todos los escritores están excluidos.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   El contexto *clientaccessible* es persistente de forma predeterminada.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para evitar que se eliminen las instantáneas al salir de DiskShadow, escriba:
 ```

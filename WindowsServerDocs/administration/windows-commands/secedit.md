@@ -1,6 +1,6 @@
 ---
 title: secedit
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e80217c201cde4dc1df58c0e8976fbe1422511fe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 89405e767e3fa06dbe0caf742fc898974b217552
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834848"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722030"
 ---
 # <a name="secedit"></a>secedit
 
@@ -45,7 +45,7 @@ secedit
 |[Secedit:import](secedit-import.md)|Permite importar una plantilla de seguridad en una base de datos de forma que la configuración especificada en la plantilla pueda aplicarse a un sistema o analizarse en un sistema.|
 |[Secedit:validate](secedit-validate.md)|Permite validar la sintaxis de una plantilla de seguridad.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 En todos los nombres de archivo, se usa el directorio actual si no se especifica ninguna ruta de acceso.
 
@@ -55,9 +55,9 @@ Cuando se crea una plantilla de seguridad con el complemento plantilla de seguri
 |           Archivo           |                                                                                                                                                                                                                                                               Descripción                                                                                                                                                                                                                                                                |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        Scesrv. log        |                                                                                                                             **Ubicación**:%WINDIR%\security\logs</br>**Creado por**: sistema operativo</br>**Tipo de archivo**: texto</br>**Frecuencia de actualización**: se sobrescribe cuando se ejecutan secedit/Analyze,/configure,/Export o/Import.</br>**Contenido**: contiene los resultados del análisis agrupados por tipo de directiva.                                                                                                                             |
-| *Nombre seleccionado por el usuario*. sdb |                                                                                    **Ubicación**:% windir%\*cuenta de usuario<em>\Documents\Security\Database</br></em>*creado por*<em>: ejecutar el complemento configuración y análisis de seguridad</br></em>*tipo de archivo*<em>: propietario</br>*frecuencia de actualización* de </em><em>: se actualiza cada vez que se crea una nueva plantilla de seguridad.</br></em>\*de *contenido* : directivas de seguridad local y plantillas de seguridad creadas por el usuario.                                                                                    |
-| *Nombre seleccionado por el usuario*. log | **Ubicación**: definido por el usuario, pero el valor predeterminado es% windir%\*cuenta de usuario<em>\Documents\Security\Logs</br></em>*creado por*<em>: ejecutar los subcomandos/Analyze y/configure (o utilizar el complemento configuración y análisis de seguridad)</br></em>*tipo de archivo*<em>: texto</br>*frecuencia de actualización* de </em><em>: ejecutar los subcomandos/Analyze y/configure (o utilizar el complemento configuración y análisis de seguridad); sobrescribe.</br>\*de *contenido* </em>:</br>1. nombre de archivo de registro</br>2. fecha y hora</br>3. resultados del análisis o de la investigación. |
-| *Nombre seleccionado por el usuario*. inf |                                                                                     **Ubicación**:% windir%\*cuenta de usuario<em>\Documents\Security\Templates</br></em>*creado por*<em>: ejecutar el complemento de plantilla de seguridad</br></em>*tipo de archivo*<em>: texto</br>*frecuencia de actualización* de </em><em>: cada vez que se actualiza la plantilla de seguridad</br></em>\*de *contenido* : contiene la información de configuración de la plantilla para cada directiva seleccionada mediante el complemento.                                                                                     |
+| *Nombre seleccionado por el usuario*. sdb |                                                                                    **Ubicación**:% WINDIR%\*cuenta<em>de usuario \Documents\Security\Database</br></em>*Creado por*<em>: ejecutar el complemento configuración y análisis de seguridad</br></em>*Tipo de archivo*<em>: propietario</br></em>*Frecuencia de actualización*<em>: se actualiza cada vez que se crea una nueva plantilla de seguridad.</br></em>*Contenido*\*: directivas de seguridad local y plantillas de seguridad creadas por el usuario.                                                                                    |
+| *Nombre seleccionado por el usuario*. log | **Ubicación**: definido por el usuario, pero el valor predeterminado es\*% WINDIR<em>% cuenta de usuario \Documents\Security\Logs</br></em>*Creado por*<em>: ejecutar los subcomandos/Analyze y/configure (o mediante el complemento configuración y análisis de seguridad)</br></em>*Tipo de archivo*<em>: texto</br></em>*Frecuencia de actualización*<em>: ejecutar los subcomandos/Analyze y/configure (o usar el complemento configuración y análisis de seguridad); sobrescribe.</br></em>*Contenido*\*:</br>1. nombre de archivo de registro</br>2. fecha y hora</br>3. resultados del análisis o de la investigación. |
+| *Nombre seleccionado por el usuario*. inf |                                                                                     **Ubicación**:% WINDIR%\*cuenta<em>de usuario \Documents\Security\Templates</br></em>*Creado por*<em>: ejecutar el complemento de plantilla de seguridad</br></em>*Tipo de archivo*<em>: texto</br></em>*Frecuencia de actualización*<em>: cada vez que se actualiza la plantilla de seguridad</br></em>*Contenido*\*: contiene la información de configuración de la plantilla para cada directiva seleccionada mediante el complemento.                                                                                     |
 
 > [!NOTE]
 > Microsoft Management Console (MMC) y el complemento configuración y análisis de seguridad no están disponibles en Server Core.

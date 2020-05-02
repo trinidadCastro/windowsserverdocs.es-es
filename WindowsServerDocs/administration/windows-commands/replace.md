@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: d44e4f8383a77582177f4d9b161210207ce46e63
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4ac424154968b4f4c55664d0d20f524345b87986
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835908"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722382"
 ---
 # <a name="replace"></a>replace
 
@@ -22,7 +22,7 @@ ms.locfileid: "80835908"
 
 Reemplaza los archivos. Si se usa con la opción **/a** , **reemplazar** agrega nuevos archivos a un directorio en lugar de reemplazar los archivos existentes.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -35,17 +35,17 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] 
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[\<unidad1 >:] [\<Ruta1 >]\<nombre de archivo >|Especifica la ubicación y el nombre del archivo de código fuente o del conjunto de archivos. *Filename* es obligatorio y puede incluir caracteres comodín ( **&#42;** y **?** ).|
-|[\<Unidad2 >:] [\<Ruta2 >]|Especifica la ubicación del archivo de destino. No se puede especificar un nombre de archivo para los archivos que se reemplacen. Si no especifica una unidad o una ruta de acceso, **Replace** utiliza la unidad y el directorio actuales como destino.|
+|[\<> unidad1:] [\<Ruta1>] \<Nombre de archivo>|Especifica la ubicación y el nombre del archivo de código fuente o del conjunto de archivos. *Filename* es obligatorio y puede incluir caracteres comodín (**&#42;** y **?**).|
+|[\<Unidad2>:] [\<Ruta2>]|Especifica la ubicación del archivo de destino. No se puede especificar un nombre de archivo para los archivos que se reemplacen. Si no especifica una unidad o una ruta de acceso, **Replace** utiliza la unidad y el directorio actuales como destino.|
 |/a|Agrega nuevos archivos al directorio de destino en lugar de reemplazar los archivos existentes. No puede usar esta opción de línea de comandos con la opción de línea de comandos **/s** o **/u** .|
 |/p|Le pide confirmación antes de reemplazar un archivo de destino o de agregar un archivo de origen.|
 |/r|Reemplaza los archivos de solo lectura y los no protegidos. Si intenta reemplazar un archivo de solo lectura, pero no especifica **/r**, se genera un error y se detiene la operación de reemplazo.|
 |/w|Espera a que inserte un disco antes de que se inicie la búsqueda de archivos de código fuente. Si no especifica **/w**, **Replace** comienza a reemplazar o agregar archivos inmediatamente después de presionar entrar.|
 |/s|Busca todos los subdirectorios en el directorio de destino y reemplaza los archivos coincidentes. No se puede usar **/s** con la opción de línea de comandos **/a** . El comando **Replace** no busca subdirectorios que se especifican en *ruta1*.|
-|/u|Reemplaza solo los archivos del directorio de destino que sean más antiguos que los del directorio de origen. No se puede usar **/u** con la opción de línea de comandos **/a** .|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/U|Reemplaza solo los archivos del directorio de destino que sean más antiguos que los del directorio de origen. No se puede usar **/u** con la opción de línea de comandos **/a** .|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Cuando **Replace** agrega o reemplaza archivos, los nombres de archivo se muestran en la pantalla. Una vez finalizado el **reemplazo** , se muestra una línea de resumen en uno de los siguientes formatos:  
   ```
@@ -70,7 +70,7 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] 
 > [!NOTE]
 > Puede usar el parámetro ERRORLEVEL en la línea de comandos **If** en un programa por lotes para procesar códigos de salida devueltos por **Replace**.
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Ejemplos
 
 Para actualizar todas las versiones de un archivo denominado PHONES. CLI (que aparecen en varios directorios de la unidad C), con la versión más reciente del archivo PHONES. CLI de un disquete en la unidad A, escriba:
 

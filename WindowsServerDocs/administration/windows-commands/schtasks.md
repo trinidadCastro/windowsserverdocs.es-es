@@ -1,6 +1,6 @@
 ---
 title: schtasks
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2b50ca62aea7a46f9246fb8d5089c0ef41aa1316
-ms.sourcegitcommit: d669d4af166b9018bcf18dc79cb621a5fee80042
+ms.openlocfilehash: a723025846a0e1725c72d5880d1ecc97579e1a69
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82037174"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722168"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -340,7 +340,7 @@ En una programación diaria, se requiere el parámetro **/SC Daily** . El parám
 
 #### <a name="to-schedule-a-task-that-runs-every-day"></a>Para programar una tarea que se ejecuta todos los días
 
-En el ejemplo siguiente se programa el programa MyApp para que se ejecute una vez al día, cada día, a las 8:00 A.M. hasta el 31 de diciembre de 2002. Dado que omite el parámetro **/mo** , el intervalo predeterminado de 1 se usa para ejecutar el comando cada día.
+Para programar el programa MyApp para que se ejecute una vez al día, cada día, a las 8:00 A.M. hasta el 31 de diciembre de 2002. Dado que omite el parámetro **/mo** , el intervalo predeterminado de 1 se usa para ejecutar el comando cada día.
 
 En este ejemplo, dado que el sistema del equipo local se establece en la opción **Inglés (Reino Unido)** de **las opciones de configuración regional y de idioma** del **Panel de control**, el formato de la fecha de finalización es DD/MM/AAAA (31/12/2002)
 ```
@@ -349,7 +349,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc daily /st 08:00 /ed 31/12/
 
 #### <a name="to-schedule-a-task-that-runs-every-12-days"></a>Para programar una tarea que se ejecuta cada 12 días
 
-En el siguiente ejemplo se programa el programa MyApp para que se ejecute cada doce días a las 1:00 P.M. (13:00) a partir del 31 de diciembre de 2002. El comando usa el parámetro **/mo** para especificar un intervalo de dos (2) días y los parámetros **/SD** y **/St** para especificar la fecha y la hora.
+Para programar el programa MyApp para que se ejecute cada doce días a las 1:00 P.M. (13:00) a partir del 31 de diciembre de 2002. El comando usa el parámetro **/mo** para especificar un intervalo de dos (2) días y los parámetros **/SD** y **/St** para especificar la fecha y la hora.
 
 En este ejemplo, dado que el sistema está establecido en la opción **Inglés (Zimbabue)** en **configuración regional y de idioma** en el **Panel de control**, el formato de la fecha de finalización es MM/DD/AAAA (12/31/2002)
 ```

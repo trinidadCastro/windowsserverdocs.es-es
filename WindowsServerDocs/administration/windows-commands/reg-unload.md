@@ -1,6 +1,6 @@
 ---
 title: descarga de reg
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia para el comando reg Unload, que quita una sección del registro cargada mediante la operación reg Load.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e5fd1436ed1122a09eea11d358a3711aedddf2c1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 029b9225f8a437be18c3056d97e153075d9df7c9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836278"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722501"
 ---
 # <a name="reg-unload"></a>descarga de reg
 
@@ -22,7 +22,7 @@ ms.locfileid: "80836278"
 
 Quita una sección del registro que se cargó con la operación de **carga de reg** .
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,19 +34,19 @@ reg unload <KeyName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<KeyName >|Especifica la ruta de acceso completa de la subclave que se va a descargar. Para especificar equipos remotos, incluya el nombre del equipo (en el formato \\\\ComputerName\) como parte del nombre de *clave*. Si se omite \\\\ComputerName \, la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son HKLM y HKU.|
+|\<> KeyName|Especifica la ruta de acceso completa de la subclave que se va a descargar. Para especificar equipos remotos, incluya el nombre del equipo (en el \\ \\formato\) COMPUTERNAME como parte del *keyName*). Si \\ \\se omite COMPUTERNAME \, la operación se realizará de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son HKLM y HKU.|
 |/?|Muestra ayuda para la **descarga de reg** en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 En la tabla siguiente se enumeran los valores devueltos para la opción **reg Unload** .
 
-|Valor|Descripción|
+|Value|Descripción|
 |-----|-----------|
 |0|Correcto|
 |1|Error|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para descargar el subárbol TempHive en el archivo HKLM, escriba:
 ```
@@ -59,3 +59,5 @@ REG UNLOAD HKLM\TempHive
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [REG Load (comando)](reg-load.md)

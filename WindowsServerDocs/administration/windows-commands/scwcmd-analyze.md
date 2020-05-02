@@ -1,6 +1,6 @@
 ---
 title: Scwcmd ANALYZE
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b0657523b49f8db444b6a48a41e3078d6351a34
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 017363ff2a60f9348290813c357560fe9fe3ba2a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835238"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722160"
 ---
 # <a name="scwcmd-analyze"></a>Scwcmd: analyze
 
 > Se aplica a: Windows Server 2012 R2, Windows Server 2012
 
-Determina si un equipo cumple con una directiva. Los resultados se devuelven en un archivo. Xml. También acepta una lista de nombres de equipo como entrada. Para ver los resultados en el explorador, use **scwcmd View** y especifique **%WINDIR%\security\msscw\TransformFiles\scwanalysis.xsl** como la transformación. Xsl. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Determina si un equipo cumple con una directiva. Los resultados se devuelven en un archivo. Xml. También acepta una lista de nombres de equipo como entrada. Para ver los resultados en el explorador, use **scwcmd View** y especifique **%WINDIR%\security\msscw\TransformFiles\scwanalysis.xsl** como la transformación. Xsl.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -33,23 +33,23 @@ scwcmd analyze [[[/m:<ComputerName> | /ou:<Ou>] /p:<Policy>] | /i:<ComputerList>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/m:\<ComputerName >|Especifica el nombre NetBIOS, el nombre DNS o la dirección IP del equipo que se va a analizar. Si se especifica el parámetro **/m** , también se debe especificar el parámetro **/p** .|
-|/ou:\<OuName >|Especifica el nombre de dominio completo (FQDN) de una unidad organizativa (OU) en Active Directory Domain Services. Si se especifica el parámetro **/ou** , también se debe especificar el parámetro **/p** . Todos los equipos de la unidad organizativa se analizarán con la Directiva especificada.|
-|/p:\<Directiva >|Especifica la ruta de acceso y el nombre del archivo de directiva. XML que se va a usar para realizar el análisis.|
-|/i:\<ComputerList >|Especifica la ruta de acceso y el nombre de un archivo. XML que contiene una lista de equipos junto con los archivos de directivas esperados. Todos los equipos del archivo. XML se analizarán con los archivos de directiva correspondientes. Un archivo. XML de ejemplo es%windir%\security\SampleMachineList.xml.|
-|/o:\<ResultDir >|Especifica la ruta de acceso y el directorio donde se deben guardar los archivos de resultados de análisis. El valor predeterminado es el directorio actual.|
-|/u:\<nombre de usuario >|Especifica una credencial de usuario alternativa para usar al realizar el análisis en un equipo remoto. El valor predeterminado es el usuario que ha iniciado sesión.|
-|/PW:\<contraseña >|Especifica una credencial de usuario alternativa para usar al realizar el análisis en un equipo remoto. El valor predeterminado es la contraseña del usuario que ha iniciado sesión.|
-|/t:\<subprocesos >|Especifica el número de operaciones de análisis pendientes simultáneas que se deben mantener durante el análisis (DefaultValue = 40, MinValue = 1, MaxValue = 1000).|
+|/m:\<COMPUTERNAME>|Especifica el nombre NetBIOS, el nombre DNS o la dirección IP del equipo que se va a analizar. Si se especifica el parámetro **/m** , también se debe especificar el parámetro **/p** .|
+|/ou:\<OuName>|Especifica el nombre de dominio completo (FQDN) de una unidad organizativa (OU) en Active Directory Domain Services. Si se especifica el parámetro **/ou** , también se debe especificar el parámetro **/p** . Todos los equipos de la unidad organizativa se analizarán con la Directiva especificada.|
+|/p:\<Directiva>|Especifica la ruta de acceso y el nombre del archivo de directiva. XML que se va a usar para realizar el análisis.|
+|/i:\<ComputerList>|Especifica la ruta de acceso y el nombre de un archivo. XML que contiene una lista de equipos junto con los archivos de directivas esperados. Todos los equipos del archivo. XML se analizarán con los archivos de directiva correspondientes. Un archivo. XML de ejemplo es%windir%\security\SampleMachineList.xml.|
+|/o:\<ResultDir>|Especifica la ruta de acceso y el directorio donde se deben guardar los archivos de resultados de análisis. El valor predeterminado es el directorio actual.|
+|/u:\<nombre de usuario>|Especifica una credencial de usuario alternativa para usar al realizar el análisis en un equipo remoto. El valor predeterminado es el usuario que ha iniciado sesión.|
+|/PW:\<contraseña>|Especifica una credencial de usuario alternativa para usar al realizar el análisis en un equipo remoto. El valor predeterminado es la contraseña del usuario que ha iniciado sesión.|
+|/t:\<subprocesos>|Especifica el número de operaciones de análisis pendientes simultáneas que se deben mantener durante el análisis (DefaultValue = 40, MinValue = 1, MaxValue = 1000).|
 |/l|Hace que se registre el proceso de análisis. Se generará un archivo de registro para cada equipo que se está analizando. Los archivos de registro se almacenarán en el mismo directorio que los archivos de resultados. Use la opción **/o** para especificar el directorio de los archivos de resultados.|
 |/e|Registra un evento en el registro de eventos de la aplicación si se encuentra un error de coincidencia.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Scwcmd. exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para analizar una directiva de seguridad con el archivo webpolicy. XML, escriba:
 ```

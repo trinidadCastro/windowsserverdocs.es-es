@@ -1,6 +1,6 @@
 ---
 title: Scwcmd registrar
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5390b7d81efe8d807dd0b7d7a8c136a1d7092af3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b7328a9db29f394bde089988ab0bdbcd84f54b30
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835158"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722139"
 ---
 # <a name="scwcmd-register"></a>Scwcmd: register
 
@@ -32,23 +32,23 @@ scwcmd register /kbname:<MyApp> [/kbfile:<kb.xml>] [/kb:<path>] [/d]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/kbname:\<MyApp >|Especifica el nombre con el que se registrará la extensión de la base de datos de configuración de seguridad. Se debe especificar este parámetro.|
-|/KBFile:\<KB. XML >|Especifica la ruta de acceso y el nombre del archivo de base de datos de configuración de seguridad que se utilizará para extender o personalizar la base de datos de configuración de seguridad base. Para validar que el archivo de base de datos de configuración de seguridad es compatible con el esquema de SCW, use el archivo de definición de esquema%windir%\security\KBRegistrationInfo.xsd. Se debe proporcionar esta opción a menos que se especifique el parámetro **/d** .|
-|/KB:\<ruta de acceso >|Especifica la ruta de acceso al directorio que contiene los archivos de base de datos de configuración de seguridad de SCW que se van a actualizar. Si no se especifica esta opción, se utiliza%WINDIR%\security\msscw\kbs.|
+|/kbname:\<MyApp>|Especifica el nombre con el que se registrará la extensión de la base de datos de configuración de seguridad. Se debe especificar este parámetro.|
+|/KBFile:\<KB. XML>|Especifica la ruta de acceso y el nombre del archivo de base de datos de configuración de seguridad que se utilizará para extender o personalizar la base de datos de configuración de seguridad base. Para validar que el archivo de base de datos de configuración de seguridad es compatible con el esquema de SCW, use el archivo de definición de esquema%windir%\security\KBRegistrationInfo.xsd. Se debe proporcionar esta opción a menos que se especifique el parámetro **/d** .|
+|/KB:\<ruta de acceso>|Especifica la ruta de acceso al directorio que contiene los archivos de base de datos de configuración de seguridad de SCW que se van a actualizar. Si no se especifica esta opción, se utiliza%WINDIR%\security\msscw\kbs.|
 |/d|Anula el registro de una extensión de base de datos de configuración de seguridad de la base de datos de configuración de seguridad. La extensión a la que se va a anular el registro se especifica mediante el parámetro/kbname. (No se debe especificar el parámetro **/KBFile** ). La base de datos de configuración de seguridad de la que se va a anular el registro de la extensión se especifica mediante el parámetro **/KB** .|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Scwcmd. exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-Para registrar el archivo de base de datos de configuración de seguridad denominado SCWKBForMyApp. XML bajo el nombre MyApp en la ubicación \\\\kbserver\kb, escriba:
+Para registrar el archivo de base de datos de configuración de seguridad denominado SCWKBForMyApp. XML bajo el \\ \\nombre MyApp en la ubicación kbserver\kb, escriba:
 ```
 scwcmd register /kbfile:d:\SCWKBForMyApp.xml /kbname:MyApp /kb:\\kbserver\kb
 ```
-Para anular el registro de la base de datos de configuración de seguridad MyApp ubicada en \\\\kbserver\kb, escriba:
+Para anular el registro de la base de datos \\ \\de configuración de seguridad MyApp ubicada en kbserver\kb, escriba:
 ```
 scwcmd register /d /kbname:MyApp /kb:\\kbserver\kb
 ```

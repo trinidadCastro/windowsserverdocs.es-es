@@ -1,6 +1,6 @@
 ---
 title: set
-description: Windows Commands tema para Set, que muestra, establece o quita CMD. Variables de entorno de EXE.
+description: Tema de referencia para Set, que muestra, establece o quita CMD. Variables de entorno de EXE.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7477caa47ef8f728b2ebe99fe0bbf961888b846e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9d537188e1f0fafdd5ecd4075a77397e12328ddf
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834398"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721885"
 ---
 # <a name="set"></a>set
 
 Muestra, establece o quita CMD. Variables de entorno de EXE. Si se usa sin parámetros, **set** muestra la configuración actual de las variables de entorno.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,23 +34,23 @@ set /a <Variable>=<Expression>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<variable >|Especifica la variable de entorno que se va a establecer o modificar.|
-|\<cadena >|Especifica la cadena que se va a asociar a la variable de entorno especificada.|
+|\<> de variable|Especifica la variable de entorno que se va a establecer o modificar.|
+|\<> de cadena|Especifica la cadena que se va a asociar a la variable de entorno especificada.|
 |/p|Establece el valor de la *variable* en una línea de entrada especificada por el usuario.|
-|\<PromptString >|Opcional. Especifica un mensaje para solicitar la intervención del usuario. Este parámetro se usa con la opción de línea de comandos **/p** .|
+|\<> PromptString|Opcional. Especifica un mensaje para solicitar la intervención del usuario. Este parámetro se usa con la opción de línea de comandos **/p** .|
 |/a|Establece una *cadena* en una expresión numérica que se evalúa.|
-|\<expresión >|Especifica una expresión numérica. Vea la sección Comentarios para ver los operadores válidos que se pueden usar en la *expresión*.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|\<> de expresiones|Especifica una expresión numérica. Vea la sección Comentarios para ver los operadores válidos que se pueden usar en la *expresión*.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Usar **set** con extensiones de comandos habilitadas
 
   Cuando se habilitan las extensiones de comando (valor predeterminado) y se ejecuta **set** con un valor, se muestran todas las variables que comienzan por ese valor.
 - Usar caracteres especiales
 
-  Los caracteres **<** , **>** , **|** , **&** , **^** son caracteres especiales del shell de comandos, y deben ir precedidos del carácter de escape ( **^** ) o encerrarse entre comillas cuando se utilizan en una *cadena* (por ejemplo, **StringContaining & Symbol**). Si utiliza comillas para incluir una cadena que contenga uno de los caracteres especiales, las comillas se establecerán como parte del valor de la variable de entorno.
-- Usar variables de entorno
+  Los caracteres **<**, **>** **|**,, **&**, **^** son caracteres de Shell de comandos especiales y deben ir precedidos del carácter de escape**^**() o encerrados entre comillas cuando se utilizan en una *cadena* (por ejemplo, **StringContaining&símbolo**). Si utiliza comillas para incluir una cadena que contenga uno de los caracteres especiales, las comillas se establecerán como parte del valor de la variable de entorno.
+- Uso de variables de entorno
 
   Utilice variables de entorno para controlar el comportamiento de algunos archivos y programas por lotes y para controlar la manera en que Windows y el subsistema MS-DOS aparecen y funcionan. El comando **set** se usa a menudo en el archivo Autoexec. NT para establecer variables de entorno.
 - Mostrar la configuración del entorno actual
@@ -65,20 +65,20 @@ set /a <Variable>=<Expression>
 
   En la tabla siguiente se enumeran los operadores admitidos para **/a** en orden descendente de prioridad.  
 
-  |        Operador         | Operación realizada  |
+  |        Operator         | Operación realizada  |
   |-------------------------|----------------------|
   |           ( )           |       Agrupación       |
   |          ! ~ -          |        Unario         |
-  |         \*/%          |      Operadores aritméticos      |
-  |           + -           |      Operadores aritméticos      |
+  |         \* / %          |      Aritméticos      |
+  |           + -           |      Aritméticos      |
   |          << >>          |    Desplazamiento lógico     |
-  |            &            |     And bit a bit      |
+  |            &            |     AND bit a bit      |
   |            ^            | OR exclusivo bit a bit |
   |                         |                      |
-  | = \*=/=% = + =-= & = ^ = |      = < < = > > =       |
+  | = \*=/=% = + =-= &= ^ = |      = <<= >>=       |
   |            ,            | Separador de expresión |
 
-  Si utiliza operadores lógicos ( **&&** o **||** ) o módulo ( **%** ), incluya la cadena de expresión entre comillas. Las cadenas no numéricas de la expresión se consideran nombres de variable de entorno y sus valores se convierten en números antes de que se procesen. Si especifica un nombre de variable de entorno que no está definido en el entorno actual, se asigna un valor de cero, lo que le permite realizar operaciones aritméticas con valores de variables de entorno sin usar% para recuperar un valor.
+  Si usa los operadores**&&** lógicos **||**(OR) o**%** modulus (), incluya la cadena de expresión entre comillas. Las cadenas no numéricas de la expresión se consideran nombres de variable de entorno y sus valores se convierten en números antes de que se procesen. Si especifica un nombre de variable de entorno que no está definido en el entorno actual, se asigna un valor de cero, lo que le permite realizar operaciones aritméticas con valores de variables de entorno sin usar% para recuperar un valor.
 
   Si ejecuta **set/a** desde la línea de comandos fuera de un script de comandos, muestra el valor final de la expresión.
 
@@ -94,12 +94,12 @@ set /a <Variable>=<Expression>
   Al crear archivos por lotes, puede usar **set** para crear variables y, a continuación, utilizarlos de la misma manera que usaría las variables numeradas **%0** hasta **%9**. También puede usar las variables **%0** a **%9** como entrada para **set**.
 - Llamar a una variable **set** desde un archivo por lotes
 
-  Cuando llame a un valor de variable desde un archivo por lotes, incluya el valor entre signos de porcentaje ( **%** ). Por ejemplo, si el programa por lotes crea una variable de entorno denominada BAUD, puede usar la cadena asociada a BAUD como parámetro reemplazable escribiendo **% Baud%** en el símbolo del sistema.
+  Cuando llame a un valor de variable desde un archivo por lotes, incluya el valor entre signos**%** de porcentaje (). Por ejemplo, si el programa por lotes crea una variable de entorno denominada BAUD, puede usar la cadena asociada a BAUD como parámetro reemplazable escribiendo **% Baud%** en el símbolo del sistema.
 - Usar **set** en la consola de recuperación
 
   El comando **set** , con diferentes parámetros, está disponible en la consola de recuperación.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para establecer una variable de entorno denominada TEST ^ 1, escriba:
 ```
@@ -111,11 +111,11 @@ set testVar=test^^1
 > ```
 > set testVar=test^1
 > ```
-> Obtendrá el siguiente resultado:
+> Obtiene el siguiente resultado:
 > ```
 > testVar=test^1
 > ```
-> Para establecer una variable de entorno denominada TEST & 1, escriba:
+> Para establecer una variable de entorno denominada TEST&1, escriba:
 > ```
 > set testVar=test^&1
 > ```
@@ -123,11 +123,11 @@ set testVar=test^^1
 > ```
 > set include=c:\inc
 > ```
-> Después, puede usar la cadena C:\Inc en los archivos por lotes incluyendo el nombre INCLUDE con signos de porcentaje ( **%** ). Por ejemplo, puede incluir el siguiente comando en un archivo por lotes para que pueda mostrar el contenido del directorio asociado a la variable de entorno INCLUDE:
+> Después, puede usar la cadena C:\Inc en archivos por lotes incluyendo el nombre INCLUDE con signos de porcentaje (**%**). Por ejemplo, puede incluir el siguiente comando en un archivo por lotes para que pueda mostrar el contenido del directorio asociado a la variable de entorno INCLUDE:
 > ```
 > dir %include%
 > ```
-> Cuando se procesa este comando, la cadena C:\Inc reemplaza **% include%** .
+> Cuando se procesa este comando, la cadena C:\Inc reemplaza **% include%**.
 
 También puede usar **set** en un programa por lotes que agregue un nuevo directorio a la variable de entorno PATH. Por ejemplo:
 ```

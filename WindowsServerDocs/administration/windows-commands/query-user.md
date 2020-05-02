@@ -1,6 +1,6 @@
 ---
 title: query user
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6624c559bc85263da955f993ae7e4ad7e8b9ee2d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e8c095226a5445e976e47e461044ec002dc007fe
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836808"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722690"
 ---
 # <a name="query-user"></a>query user
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Muestra información acerca de las sesiones de usuario en un servidor host de sesión de Escritorio remoto (host de sesión de escritorio remoto).
-para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
+
 > [!NOTE]
-> En Windows Server 2008 R2, el nombre de Terminal Services ha cambiado a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
+> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
 > ## <a name="syntax"></a>Sintaxis
 > ```
 > query user [<UserName> | <SessionName> | <SessionID>] [/server:<ServerName>]
@@ -36,9 +36,9 @@ para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples)
 > |    <SessionName>     |                              Especifica el nombre de la sesión que desea consultar.                              |
 > |     <SessionID>      |                               Especifica el identificador de la sesión que desea consultar.                               |
 > | /server:<ServerName> | Especifica el servidor host de sesión de escritorio remoto que desea consultar. De lo contrario, se usa el servidor host de sesión de escritorio remoto actual. |
-> |          /?          |                                        Muestra la Ayuda en el símbolo del sistema.                                         |
+> |          /?          |                                        Muestra la ayuda en el símbolo del sistema.                                         |
 > 
-> ## <a name="remarks"></a>Comentarios
+> ## <a name="remarks"></a>Observaciones
 > - Puede usar este comando para averiguar si un usuario específico ha iniciado sesión en un servidor host de sesión de escritorio remoto específico. **query User** devuelve la siguiente información:
 >   -   El nombre del usuario
 >   -   El nombre de la sesión en el servidor host de sesión de escritorio remoto
@@ -50,7 +50,7 @@ para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples)
 > - Si utiliza **query User** sin especificar <*UserName*>, <*nombresesión*> o <*SessionID*>, se devuelve una lista de todos los usuarios que han iniciado sesión en el servidor. También puede usar la **sesión de consulta** para mostrar una lista de todas las sesiones de un servidor.
 > - Cuando el usuario de la **consulta** devuelve información, se muestra un signo mayor que (>) antes de la sesión actual.
 > - El parámetro **/Server** solo es necesario si se utiliza **query User** desde un servidor remoto.
->   ## <a name="examples"></a><a name=BKMK_examples></a>Example
+>   ## <a name="examples"></a>Ejemplos
 > - Para mostrar información acerca de todos los usuarios que han iniciado sesión en el sistema, escriba:
 >   ```
 >   query user
@@ -60,6 +60,6 @@ para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples)
 >   query user USER1 /server:SERver1
 >   ```
 >   ## <a name="additional-references"></a>Referencias adicionales
->   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
->   referencia de comandos de la
->   de [consulta](query.md) [servicios de escritorio remoto (Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)
+>   - [Referencia de comandos de servicios de escritorio remoto de](command-line-syntax-key.md)
+>   [consulta](query.md)
+>   de clave de sintaxis de línea de comandos[(Terminal Services)](remote-desktop-services-terminal-services-command-reference.md)

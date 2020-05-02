@@ -1,6 +1,6 @@
 ---
 title: 'secedit: Export'
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ea0181bcdcae8d3869327985a0db0601ded6505d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1282e90d4604831ed060e19b6a1b9117557e7d36
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834978"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722073"
 ---
 # <a name="seceditexport"></a>secedit: Export
 
 
 
-Exporta la configuración de seguridad almacenada en una base de datos configurada con plantillas de seguridad. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Exporta la configuración de seguridad almacenada en una base de datos configurada con plantillas de seguridad.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,22 +32,22 @@ Secedit /export /db <database file name> [/mergedpolicy] /cfg <configuration fil
 
 |Parámetro|Descripción|
 |---------|-----------|
-|bases|Obligatorio.</br>Especifica la ruta de acceso y el nombre de un archivo de base de datos que contiene la configuración almacenada en la que se realizará el análisis.</br>Si nombre de archivo especifica una base de datos que no tiene una plantilla de seguridad (tal como la representa el archivo de configuración) asociada, también se debe especificar la opción de línea de comandos `/cfg \<configuration file name>`.|
+|db|Necesario.</br>Especifica la ruta de acceso y el nombre de un archivo de base de datos que contiene la configuración almacenada en la que se realizará el análisis.</br>Si nombre de archivo especifica una base de datos que no tiene una plantilla de seguridad (tal como la representa el archivo de configuración) `/cfg \<configuration file name>` asociada, también se debe especificar la opción de línea de comandos.|
 |mergedpolicy|Opcional.</br>Combina y exporta la configuración de seguridad de la Directiva de dominio y local.|
-|cfg|Obligatorio.</br>Especifica la ruta de acceso y el nombre de archivo de la plantilla de seguridad que se importará en la base de datos para su análisis.</br>Esta opción/cfg solo es válida cuando se usa con el parámetro `/db \<database file name>`. Si no se especifica, el análisis se realiza en cualquier configuración que ya esté almacenada en la base de datos.|
+|cfg|Necesario.</br>Especifica la ruta de acceso y el nombre de archivo de la plantilla de seguridad que se importará en la base de datos para su análisis.</br>Esta opción/cfg solo es válida cuando se usa con `/db \<database file name>` el parámetro. Si no se especifica, el análisis se realiza en cualquier configuración que ya esté almacenada en la base de datos.|
 |áreas|Opcional.</br>Especifica las áreas de seguridad que se van a aplicar al sistema. Si no se especifica este parámetro, se aplicará al sistema toda la configuración de seguridad definida en la base de datos. Para configurar varias áreas, separe cada área por un espacio. Se admiten las siguientes áreas de seguridad:</br>-SecurityPolicy</br>    Directiva local y Directiva de dominio para el sistema, incluidas las directivas de cuenta, las directivas de auditoría, las opciones de seguridad, etc.</br>-Group_Mgmt</br>    Configuración de grupo restringido para los grupos especificados en la plantilla de seguridad.</br>-User_Rights</br>    Derechos de inicio de sesión de usuario y concesión de privilegios.</br>- RegKeys</br>    Seguridad de las claves del registro local.</br>-Almacén de.</br>    Seguridad en el almacenamiento de archivos local.</br>-Servicios</br>    Seguridad para todos los servicios definidos.|
 |log|Opcional.</br>Especifica la ruta de acceso y el nombre del archivo de registro para el proceso.|
-|actividad|Opcional.</br>Suprime la salida de la pantalla y del registro. Todavía puede ver los resultados del análisis mediante el complemento configuración y análisis de seguridad de Microsoft Management Console (MMC).|
+|silencioso|Opcional.</br>Suprime la salida de la pantalla y del registro. Todavía puede ver los resultados del análisis mediante el complemento configuración y análisis de seguridad de Microsoft Management Console (MMC).|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Puede usar este comando para hacer una copia de seguridad de las directivas de seguridad en un equipo local además de importar la configuración en otro equipo.
 
-Si no se proporciona la ruta de acceso del archivo de registro, se usa el archivo de registro predeterminado, (*systemroot*\Documents and settings\*cuentadeusuario<em>\Mis Documents\Security\Logs\*DatabaseName</em>. log).
+Si no se proporciona la ruta de acceso del archivo de registro, se usa el archivo*systemroot*de registro predeterminado,\*(SystemRoot \Documents and Settings cuentadeusuario<em>\Mis Documents\Security\Logs\*DatabaseName</em>. log).
 
-En Windows Server 2008, `Secedit /refreshpolicy` se ha reemplazado por `gpupdate`. Para obtener información acerca de cómo actualizar la configuración de seguridad, consulte [gpupdate](gpupdate.md).
+En Windows Server 2008, `Secedit /refreshpolicy` se ha reemplazado `gpupdate`por. Para obtener información acerca de cómo actualizar la configuración de seguridad, consulte [gpupdate](gpupdate.md).
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Exporte la base de datos de seguridad y las directivas de seguridad de dominio a un archivo INF e importe el archivo a una base de datos diferente para replicar la configuración de la Directiva de seguridad en otro equipo.
 ```
