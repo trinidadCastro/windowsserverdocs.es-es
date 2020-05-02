@@ -1,6 +1,6 @@
 ---
 title: aprovecha
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 55cc7a292b81977a346f3f078a3b5623243ea46c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 500dc5cfcd5e2bba4cfbc3cb5ef81a9065ea53cf
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844808"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725676"
 ---
 # <a name="expose"></a>aprovecha
 
 
 
-expone una instantánea persistente como letra de unidad, recurso compartido o punto de montaje.
+Expone una instantánea persistente como letra de unidad, recurso compartido o punto de montaje.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -35,15 +35,15 @@ expose <ShadowID> {<Drive:> | <Share> | <MountPoint>}
 |Parámetro|Descripción|
 |---------|-----------|
 |ShadowID|Especifica el ID. de sombra de la instantánea que desea exponer.|
-|Unidad de \<: >|Expone la instantánea especificada como una letra de unidad (por ejemplo, P:).|
-|\<compartir >|Expone la instantánea especificada en un recurso compartido (por ejemplo, \\\\*MachineName*\).|
-|\<MountPoint >|Expone la instantánea especificada en un punto de montaje (por ejemplo, C:\shadowcopy\).|
+|\<Unidad: >|Expone la instantánea especificada como una letra de unidad (por ejemplo, P:).|
+|\<Compartir>|Expone la instantánea especificada en un recurso compartido (por ejemplo, \\ \\ *MachineName*\).|
+|\<> MountPoint|Expone la instantánea especificada en un punto de montaje (por ejemplo, C:\shadowcopy\).|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Puede usar un alias existente o una variable de entorno en lugar de *ShadowID*. Use **Agregar** sin parámetros para ver los alias existentes.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para exponer la instantánea persistente asociada a la variable de entorno VSS_SHADOW_1 como unidad X, escriba:
 ```

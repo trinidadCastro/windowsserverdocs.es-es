@@ -1,6 +1,6 @@
 ---
 title: bell_1 FTP
-description: Temas de comandos de Windows para FTP bell_1
+description: Tema de referencia de FTP bell_1
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 527b000f971cd3b4fc2b98772dc918d66c8d4b42
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8efed1dcafb1076a6440a9c3a9519a16b86890c8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843738"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725379"
 ---
 # <a name="ftp-bell_1"></a>FTP: bell_1
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Alterna un sonido audible para que se produzca después de que se complete cada comando de transferencia de archivos.   
 ## <a name="syntax"></a>Sintaxis  
@@ -26,10 +26,10 @@ Alterna un sonido audible para que se produzca después de que se complete cada 
 bell  
 ```  
 #### <a name="parameters"></a>Parámetros  
-ninguno  
-## <a name="remarks"></a>Comentarios  
+None  
+## <a name="remarks"></a>Observaciones  
 De forma predeterminada, la campana está desactivada.  
-## <a name="examples"></a><a name=BKMK_Examples></a>Example  
+## <a name="examples"></a>Ejemplos  
 Alterne un sonido audible para que se produzca después de que se complete cada comando de transferencia de archivos.  
 ```  
 bell  

@@ -1,6 +1,6 @@
 ---
 title: Wbadmin Start sysrecovery
-description: Temas de comandos de Windows para Wbadmin Start sysrecovery, que realiza una recuperación del sistema (reconstrucción completa) mediante los parámetros que especifique.
+description: Tema de referencia de Wbadmin Start sysrecovery, que realiza una recuperación del sistema (reconstrucción completa) mediante los parámetros especificados.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e0f1f79f35678b5c4a50022adf3413f3de217a7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ba3d826b0312091f00ef01d2efe9ee63572fade1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829598"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725894"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>Wbadmin Start sysrecovery
 
@@ -26,8 +26,6 @@ Realiza una recuperación del sistema (reconstrucción completa) mediante los pa
 > Este subcomando solo se puede ejecutar desde el entorno de recuperación de Windows y no se muestra de forma predeterminada en el texto de uso de **Wbadmin**. Para obtener más información, vea [información general sobre el entorno de recuperación de Windows (Windows re)](https://technet.microsoft.com/library/hh825173.aspx).
 
 Para realizar una recuperación del sistema con este subcomando, debe ser miembro del grupo **operadores de copia de seguridad** o del grupo **administradores** , o bien tener delegados los permisos adecuados.
-
-Para obtener ejemplos de cómo usar este subcomando, vea [ejemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -56,13 +54,13 @@ wbadmin start sysrecovery
 |-skipBadClusterCheck|Omite la comprobación de los discos de recuperación para obtener información de clúster incorrecta. Si va a restaurar a un servidor o hardware alternativo, se recomienda que no use este parámetro. Puede ejecutar manualmente **CHKDSK/b** en los discos de recuperación en cualquier momento para comprobarlos en busca de clústeres defectuosos y, a continuación, actualizar la información del sistema de archivos en consecuencia.</br>ADVERTENCIA: hasta que ejecute **CHKDSK** como se describe, es posible que los clústeres incorrectos notificados en el sistema recuperado no sean precisos.|
 |-quiet|Ejecuta el comando sin indicaciones al usuario.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para iniciar la recuperación de la información de la copia de seguridad que se ejecutó el 31 de marzo de 2013 a las 9:00 A.M., que se encuentra en la unidad d:, escriba:
 ```
 wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 ```
-Para iniciar la recuperación de la información de la copia de seguridad que se ejecutó el 30 de abril de 2013 a las 9:00 A.M., que se encuentra en la carpeta compartida \\\\servername\shared: para Server01, escriba:
+Para iniciar la recuperación de la información de la copia de seguridad que se ejecutó el 30 de abril de 2013 a las 9:00 \\ \\A.M., que se encuentra en la carpeta compartida servername\shared: para Server01, escriba:
 ```
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

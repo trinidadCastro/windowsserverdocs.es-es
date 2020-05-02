@@ -1,6 +1,6 @@
 ---
 title: wbadmin
-description: Comando comandos de Windows para Wbadmin, que permite realizar copias de seguridad y restaurar el sistema operativo, los volúmenes, los archivos, las carpetas y las aplicaciones desde un símbolo del sistema.
+description: Tema de referencia de Wbadmin, que permite realizar copias de seguridad y restaurar el sistema operativo, los volúmenes, los archivos, las carpetas y las aplicaciones desde un símbolo del sistema.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ca9bdc54cd77f11239d0a61cf052e7b12b02b22
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 94f07d17d46dad4e5301ba3ea6be94b10f26a3af
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829478"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725835"
 ---
 # <a name="wbadmin"></a>wbadmin
 

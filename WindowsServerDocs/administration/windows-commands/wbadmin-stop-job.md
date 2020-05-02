@@ -1,6 +1,6 @@
 ---
 title: trabajo de detención de Wbadmin
-description: Tema de comandos de Windows para el trabajo de detención de Wbadmin, que cancela la operación de copia de seguridad o de recuperación que se está ejecutando actualmente. Las operaciones canceladas no se pueden reiniciar; debe volver a ejecutar una copia de seguridad o una operación de recuperación cancelada desde el principio.
+description: Tema de referencia sobre el trabajo de detención de Wbadmin, que cancela la operación de copia de seguridad o recuperación que se está ejecutando actualmente. Las operaciones canceladas no se pueden reiniciar; debe volver a ejecutar una copia de seguridad o una operación de recuperación cancelada desde el principio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a00b4a93e0aaa954f8f07adae825a4f582c5581
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3133688ac0d60d97d80192611c9b561c53a74c35
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829488"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725848"
 ---
 # <a name="wbadmin-stop-job"></a>trabajo de detención de Wbadmin
 

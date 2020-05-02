@@ -1,6 +1,6 @@
 ---
 title: extract
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d66682126f1cc3c924c42b4605a537a997e8ac52
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1cca89a356530e49fbf2b0610ff3ced1c5733847
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844778"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725656"
 ---
 # <a name="extract"></a>extract
 
@@ -34,7 +34,7 @@ EXTRACT [/Y] /C source destination
 |---------|-----------|
 |archiva|El archivo contiene dos o más archivos.|
 |filename|Nombre del archivo que se va a extraer del archivo. cab. Se pueden usar caracteres comodín y varios nombres de archivo (separados por espacios en blanco).|
-|fuentes|Archivos comprimidos (un archivo. cab con un solo archivo).|
+|source|Archivos comprimidos (un archivo. cab con un solo archivo).|
 |nuevoNombre|Nuevo nombre de archivo para proporcionar el archivo extraído. Si no se proporciona, se utiliza el nombre original.|
 |/A|Procesar todos los archivadores. Sigue a la cadena de contenedores empezando en el primer contenedor mencionado.|
 |/C|Copiar el archivo de origen en el destino (copiar desde discos DMF).|

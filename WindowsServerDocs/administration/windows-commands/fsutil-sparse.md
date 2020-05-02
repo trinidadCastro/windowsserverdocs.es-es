@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 70c881cc02f31614160920766d32d73a3a939315
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3d0df4e8e8dc16818273393062989ef7c0455c51
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844068"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725452"
 ---
 # <a name="fsutil-sparse"></a>Fsutil Sparse
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2 y Windows 7
 
 Administra archivos dispersos.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -44,7 +44,7 @@ fsutil sparse [setrange] <FileName> <BeginningOffset> <Length>
 | <BeginningOffset> |                              Especifica el desplazamiento en el archivo que se va a marcar como disperso.                              |
 |     <Length>      |                 Especifica la longitud de la región en el archivo que se va a marcar como dispersa (en bytes).                 |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Un archivo disperso es un archivo con una o más regiones de datos sin asignar. Un programa verá estas regiones sin asignar que contienen bytes con el valor cero, pero no se usa espacio en disco para representar estos ceros. Se asignan todos los datos significativos o distintos de cero, mientras que no se asignan todos los datos insignificantes (cadenas grandes de datos que se componen de ceros). Cuando se lee un archivo disperso, los datos asignados se devuelven como almacenados y se devuelven los datos sin asignar, de forma predeterminada, como ceros, de acuerdo con la especificación de los requisitos de seguridad C2. La compatibilidad con archivos dispersos permite cancelar la asignación de los datos desde cualquier parte del archivo.
 
@@ -54,7 +54,7 @@ fsutil sparse [setrange] <FileName> <BeginningOffset> <Length>
 
 -   Si el archivo es disperso o comprimido, NTFS puede desasignar el espacio en disco del archivo. Esto establece el intervalo de bytes en ceros sin extender el tamaño del archivo.
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Ejemplos
 Para marcar un archivo denominado sample. txt en el directorio C:\Temp como disperso, escriba:
 
 ```

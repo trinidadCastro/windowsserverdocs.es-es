@@ -1,6 +1,6 @@
 ---
 title: Inicio de systemstaterecovery de Wbadmin
-description: Comando de comandos de Windows para Wbadmin Start systemstaterecovery, que realiza una recuperación de estado del sistema en una ubicación y, a partir de una copia de seguridad, que especifique.
+description: Tema de referencia de Wbadmin Start systemstaterecovery, que realiza una recuperación del estado del sistema en una ubicación y, a partir de una copia de seguridad, que especifique.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 581ad6fe3591e549c3f89e4c95d2f8ab0cde059c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fa111934f93bf7fea5aade1f39b4fc6a014d6c9e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829498"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725876"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>Inicio de systemstaterecovery de Wbadmin
 
@@ -27,7 +27,7 @@ Realiza una recuperación de estado del sistema en una ubicación y desde una co
 
 Para realizar una recuperación del estado del sistema con este subcomando, debe ser miembro del grupo **operadores de copia de seguridad** o del grupo **administradores** , o bien tener delegados los permisos adecuados. Además, debe ejecutar **Wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados, haga clic con el botón secundario en **símbolo del sistema**y, a continuación, haga clic en **Ejecutar como administrador**).
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -68,13 +68,13 @@ wbadmin start systemstaterecovery
 |-autoReboot|Especifica que se reinicie el sistema al final de la operación de recuperación del estado del sistema. Este parámetro solo es válido para una recuperación en la ubicación original. No se recomienda usar este parámetro si necesita realizar pasos después de la operación de recuperación.|
 |-quiet|Ejecuta el subcomando sin preguntar al usuario.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 - Para realizar una recuperación del estado del sistema de la copia de seguridad de 03/31/2013 a las 9:00 A.M., escriba:  
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
   ```  
-- Para realizar una recuperación del estado del sistema de la copia de seguridad de 04/30/2013 a las 9:00 A.M. que está almacenado en el recurso compartido \\\\servername\share para Server01, escriba:  
+- Para realizar una recuperación del estado del sistema de la copia de seguridad de 04/30/2013 a las 9:00 A.M. que está almacenado en el recurso \\ \\compartido servername\share para Server01, escriba:  
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```

@@ -1,6 +1,6 @@
 ---
 title: find
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82b966db4117e9273ae6aed8d30baec76362de2f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3cd731ef64912644965ef6bb96d060a46f0a6067
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844698"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725624"
 ---
 # <a name="find"></a>find
 
@@ -22,7 +22,7 @@ ms.locfileid: "80844698"
 
 Busca una cadena de texto en un archivo o archivos y muestra líneas de texto que contienen la cadena especificada.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,16 +34,16 @@ find [/v] [/c] [/n] [/i] [/off[line]] <String> [[<Drive>:][<Path>]<FileName>[...
 
 |           Parámetro           |                                              Descripción                                               |
 |-------------------------------|--------------------------------------------------------------------------------------------------------|
-|              /v               |                    Muestra todas las líneas que no contienen la cadena de \<especificada >.                     |
-|              /c               |              Cuenta las líneas que contienen la cadena de \<especificada > y muestra el total.              |
+|              /v               |                    Muestra todas las líneas que no contienen la cadena \<especificada>.                     |
+|              /C               |              Cuenta las líneas que contienen la cadena \<especificada>y muestra el total.              |
 |              /n               |                            Precede a cada línea con el número de línea del archivo.                             |
 |              /i               |                            Especifica que la búsqueda no distingue entre mayúsculas y minúsculas.                            |
 |         [/OFF [línea]]          |                        No omite los archivos que tienen el conjunto de atributos sin conexión.                        |
-|          \<cadena >          | Obligatorio. Especifica el grupo de caracteres (entre comillas) que desea buscar. |
+|          \<> de cadena          | Necesario. Especifica el grupo de caracteres (entre comillas) que desea buscar. |
 | [\<> de unidad:] [<Path>]<FileName> |        Especifica la ubicación y el nombre del archivo en el que se va a buscar la cadena especificada.        |
-|              /?               |                                  Muestra la Ayuda en el símbolo del sistema.                                  |
+|              /?               |                                  Muestra la ayuda en el símbolo del sistema.                                  |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Especificar una cadena
 
@@ -58,7 +58,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] <String> [[<Drive>:][<Path>]<FileName>[...
     Puede escribir parámetros y opciones de línea de comandos para el comando **Buscar** en cualquier orden.
 -   Usar caracteres comodín
 
-    No puede usar caracteres comodín ( **&#42;** y **?** ) en nombres de archivo o extensiones que especifique con el comando **Buscar** . Para buscar una cadena en un conjunto de archivos que especifique con caracteres comodín, puede usar el comando **Buscar** en un comando **for** .
+    No puede usar caracteres comodín (**&#42;** y **?**) en nombres de archivo o extensiones que especifique con el comando **Buscar** . Para buscar una cadena en un conjunto de archivos que especifique con caracteres comodín, puede usar el comando **Buscar** en un comando **for** .
 -   Usar **/v** o **/n** con **/c**
 
     Si usa **/c** y **/v** en la misma línea de comandos, la **búsqueda** de muestra un recuento de las líneas que no contienen la cadena especificada. Si especifica **/c** y **/n** en la misma línea de comandos, la **búsqueda** omite **/n**.
@@ -66,7 +66,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] <String> [[<Drive>:][<Path>]<FileName>[...
 
     El comando **Buscar** no reconoce los retornos de carro. Cuando se usa **Buscar** para buscar texto en un archivo que incluye retornos de carro, se debe limitar la cadena de búsqueda al texto que se puede encontrar entre los retornos de carro (es decir, una cadena que no es probable que sea interrumpida por un retorno de carro). Por ejemplo, **Buscar** no notifica una coincidencia para el archivo de impuestos de cadena si se produce un retorno de carro entre las palabras Tax y file.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para mostrar todas las líneas de Pencil.ad que contienen el enfoque de lápiz de cadena, escriba:
 ```
