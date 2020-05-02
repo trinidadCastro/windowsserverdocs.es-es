@@ -1,6 +1,6 @@
 ---
 title: tracerpt
-description: Temas de comandos de Windows para tracerpt, que analiza los registros de seguimiento de eventos, los archivos de registro generados por el monitor de rendimiento y los proveedores de seguimiento de eventos en tiempo real.
+description: Tema de referencia de tracerpt, que analiza los registros de seguimiento de eventos, los archivos de registro generados por el monitor de rendimiento y los proveedores de seguimiento de eventos en tiempo real.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 17bed5b1cb084392ed3169ca963ce03c1ee2b0d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 79eac1db4d91bfcfe52cf71cbab683b7489d5287
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832688"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721314"
 ---
 # <a name="tracerpt"></a>tracerpt
 
 El comando **tracerpt** se puede usar para analizar los registros de seguimiento de eventos, los archivos de registro generados por el monitor de rendimiento y los proveedores de seguimiento de eventos en tiempo real. Genera archivos de volcado de memoria, archivos de informe y esquemas de informe.
-
-Para obtener ejemplos de cómo usar **tracerpt**, vea [ejemplos](#BKMK_EXAMPLES).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -33,19 +31,19 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 |              Marca de opción               |                                                                    Descripción                                                                    |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 |                   -?                   |                                                         Muestra la ayuda contextual.                                                          |
-|          -config \<nombre de archivo >           |                                                 Carga un archivo de configuración que contiene opciones de comando.                                                  |
+|          -config \<nombre de archivo>           |                                                 Carga un archivo de configuración que contiene opciones de comando.                                                  |
 |                   -y                   |                                                  Responda sí a todas las preguntas sin preguntar.                                                   |
-|            -f \<XML\|HTML >             |                                                                  Formato del informe.                                                                   |
-|         -de \<CSV\|EVTX\|XML >          |                                                         El formato de volcado, el valor predeterminado es XML.                                                          |
-|            -DF \<nombre de archivo >             |                                            Cree un archivo de esquema de recuento o informes específico de Microsoft.                                            |
-|            -int \<nombre de archivo >            |                                            Vuelca la estructura de eventos interpretada en el archivo especificado.                                            |
+|            -f \<XML\|HTML>             |                                                                  Formato del informe.                                                                   |
+|         -de \<CSV\|archivo\|XML de EVTX>          |                                                         El formato de volcado, el valor predeterminado es XML.                                                          |
+|            -DF \<nombredearchivo>             |                                            Cree un archivo de esquema de recuento o informes específico de Microsoft.                                            |
+|            -int \<FILENAME>            |                                            Vuelca la estructura de eventos interpretada en el archivo especificado.                                            |
 |                  -RTS                  |                        Notificar marca de tiempo sin formato en el encabezado de seguimiento de eventos. Solo se puede usar con-o, no con informe o-Resumen.                         |
-|            -TMF \<nombre de archivo >            |                                                  Especifique un archivo de definición de formato de mensaje de seguimiento.                                                  |
-|              -TP \<valor >              |                            Especifique la ruta de búsqueda de archivos TMF. Se pueden usar varias rutas de acceso, separadas por un punto y coma (;).                            |
-|              -i \<valor >               | Especifique la ruta de acceso de la imagen del proveedor. El archivo PDB correspondiente se ubicará en el servidor de símbolos. Se pueden usar varias rutas de acceso, separadas por un punto y coma (;). |
-|             -PDB \<valor >              |                             Especifique la ruta de acceso del servidor de símbolos. Se pueden usar varias rutas de acceso, separadas por un punto y coma (;).                             |
+|            -TMF \<nombrearchivo>            |                                                  Especifique un archivo de definición de formato de mensaje de seguimiento.                                                  |
+|              -valor \<de TP>              |                            Especifique la ruta de búsqueda de archivos TMF. Se pueden usar varias rutas de acceso, separadas por un punto y coma (;).                            |
+|              -i \<valor>               | Especifique la ruta de acceso de la imagen del proveedor. El archivo PDB correspondiente se ubicará en el servidor de símbolos. Se pueden usar varias rutas de acceso, separadas por un punto y coma (;). |
+|             -valor \<de PDB>              |                             Especifique la ruta de acceso del servidor de símbolos. Se pueden usar varias rutas de acceso, separadas por un punto y coma (;).                             |
 |                  -GMT                  |                                              Convierte las marcas de tiempo de carga de WPP en la hora del meridiano de Greenwich.                                               |
-|              -RL \<valor >              |                                               Defina el nivel de informe del sistema de 1 a 5. El valor predeterminado es 1.                                               |
+|              -valor \<RL>              |                                               Defina el nivel de informe del sistema de 1 a 5. El valor predeterminado es 1.                                               |
 |          -Summary [nombre de archivo]           |                                  Generar un archivo de texto de informe de resumen. FILENAME si no se especifica es Summary. txt.                                   |
 |             -o [nombre de archivo]              |                                      Generar un archivo de salida de texto. FILENAME si no se especifica, el archivo Dumpfile. Xml.                                      |
 |           -Report [nombre de archivo]           |                                  Generar un archivo de informe de salida de texto. FILENAME si no se especifica, es Workload. Xml.                                   |
@@ -54,7 +52,7 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 |       [-l] \<valor [valor [...]] >        |                                                   Especifique el archivo de registro de seguimiento de eventos que se va a procesar.                                                    |
 | -RT \<session_name [session_name [...]] > |                                                Especifique orígenes de datos de sesión de seguimiento de eventos en tiempo real.                                                |
 
-## <a name="examples"></a><a name=BKMK_EXAMPLES></a>Example
+## <a name="examples"></a>Ejemplos
 
 - En este ejemplo se crea un informe basado en los dos registros de eventos **logfile1. ETL** y **logfile2. ETL** y se crea el archivo de volcado de memoria **LOGDUMP. XML** en formato XML.  
   ```

@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ece727b68eb620e839cbfb8efe02dbe775666498
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 212e2d45b77f09b9460555733de15488a4420842
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833618"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721596"
 ---
 # <a name="sxstrace"></a>sxstrace
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Diagnostica problemas en paralelo.    
 
@@ -32,17 +32,17 @@ sxstrace [{[trace -logfile:<FileName> [-nostop]|[parse -logfile:<FileName> -outf
 |-------|--------|  
 |seguimiento|Habilita el seguimiento para SxS (en paralelo)|  
 |-logfile|Especifica el archivo de registro sin procesar.|  
-|\<nombre de archivo >|Guarda el registro de seguimiento en el *nombre de archivo*.|  
+|\<Nombre de archivo>|Guarda el registro de seguimiento en el *nombre de archivo*.|  
 |-NoStop|No especifica ningún aviso para detener el seguimiento.|  
-|analiza|Traduce el archivo de seguimiento sin procesar.|  
+|parse|Traduce el archivo de seguimiento sin procesar.|  
 |-OUTFILE|Especifica el nombre de archivo de salida.|  
-|\<ParsedFile >|Especifica el nombre de archivo del archivo analizado.|  
-|-filtro|Permite filtrar la salida.|  
-|\<AppName >|Especifica el nombre de la aplicación.|  
+|\<> ParsedFile|Especifica el nombre de archivo del archivo analizado.|  
+|-filter|Permite filtrar la salida.|  
+|\<AppName>|Especifica el nombre de la aplicación.|  
 |stoptrace|Detenga el seguimiento si no se ha detenido antes de.|  
-|-?|Muestra la Ayuda en el símbolo del sistema.|  
+|-?|Muestra la ayuda en el símbolo del sistema.|  
 
-## <a name="examples"></a><a name="BKMK_Examples"></a>Example  
+## <a name="examples"></a>Ejemplos  
 Habilite el seguimiento y guarde el archivo de seguimiento en **sxstrace. ETL**:  
 ```  
 sxstrace trace -logfile:sxstrace.etl  

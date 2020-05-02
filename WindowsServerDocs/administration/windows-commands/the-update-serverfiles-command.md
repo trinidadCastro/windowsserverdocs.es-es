@@ -1,6 +1,6 @@
 ---
 title: 'Actualización: ServerFiles'
-description: Temas de comandos de Windows para Update-ServerFiles, que actualiza los archivos de la carpeta compartida REMINST con los archivos más recientes que se almacenan en la carpeta%Windir%\System32\RemInst del servidor.
+description: Tema de referencia de Update-ServerFiles, que actualiza los archivos de la carpeta compartida REMINST mediante el uso de los archivos más recientes que se almacenan en la carpeta%Windir%\System32\RemInst del servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 37cbb880246cf5e5ff6a9e007dbe720de8dd1cbe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0005d8e198300c4aad9fdfc772957b460d6fee74
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832958"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721382"
 ---
 # <a name="update-serverfiles"></a>Actualización: ServerFiles
 
@@ -30,9 +30,9 @@ WDSUTIL [Options] /Update-ServerFiles [/Server:<Server name>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[/Server:\<nombre de servidor >]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local.|
+|[/Server:\<nombre del servidor>]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para actualizar los archivos, escriba uno de los siguientes:
 ```

@@ -1,6 +1,6 @@
 ---
 title: Telnet abierto
-description: Comando comandos de Windows para telnet abierto, que se conecta a un servidor Telnet.
+description: Tema de referencia de Telnet Open, que se conecta a un servidor Telnet.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 s.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b100d2b53a340a083f22d4fd88c42363642d5da5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6c4529670ef934cfa19c9864ac59f5317eb2887a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833338"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721512"
 ---
 # <a name="telnet-open"></a>Telnet: abierto
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Se conecta a un servidor Telnet.    
 
@@ -33,7 +33,7 @@ o[pen] <hostname> [<Port>]
 | <hostname> |                         Especifica el nombre del equipo o la dirección IP.                         |
 |  [<Port>]  | Especifica el puerto TCP en el que escucha el servidor Telnet. El valor predeterminado es el puerto TCP 23. |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example  
+## <a name="examples"></a>Ejemplos  
 Conéctese a un servidor Telnet en telnet.microsoft.com.  
 ```  
 o telnet.microsoft.com  

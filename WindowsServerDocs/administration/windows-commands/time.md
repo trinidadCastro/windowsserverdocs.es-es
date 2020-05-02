@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b6efff57a512a2e0519b3294c51c073f1f44d8d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e27b260bdaa8896ad3cf0ad58294467bbb63e1c2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832838"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721362"
 ---
 # <a name="time"></a>time
 
@@ -22,7 +22,7 @@ ms.locfileid: "80832838"
 
 Muestra o establece la hora del sistema. Si se usa sin parámetros, **Time** muestra la hora actual del sistema y le pide que especifique una nueva hora.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,18 +34,18 @@ time [/t | [<HH>[:<MM>[:<SS>]] [am|pm]]]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<HH > [:\<MM > [:\<SS > [.\<NN >]]] [AM\|PM]|Establece la hora del sistema en la nueva hora especificada, donde *HH* se encuentra en horas (obligatorio), *mm* es en minutos y *SS* está en segundos. *Nn* se puede usar para especificar centésimas de segundo. Si no se especifica **AM** o **PM** , **Time** usa el formato de 24 horas de forma predeterminada.|
+|\<HH> [:\<mm> [:\<SS> [.\< NN>]]] [AM\|PM]|Establece la hora del sistema en la nueva hora especificada, donde *HH* se encuentra en horas (obligatorio), *mm* es en minutos y *SS* está en segundos. *Nn* se puede usar para especificar centésimas de segundo. Si no se especifica **AM** o **PM** , **Time** usa el formato de 24 horas de forma predeterminada.|
 |/t|Muestra la hora actual sin pedirle una nueva hora.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Para cambiar la hora actual, debe tener credenciales administrativas.
 -   Debe separar los valores de *HH*, *mm*y *SS* con dos puntos (:). *SS* y *nn* se deben separar con un punto (.).
 -   Los valores de *HH* válidos son de 0 a 24.
 -   Los valores válidos *mm* y *SS* son de 0 a 59.
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Ejemplos
 
 Si las extensiones de comando están habilitadas, para mostrar la hora actual del sistema, escriba:
 ```

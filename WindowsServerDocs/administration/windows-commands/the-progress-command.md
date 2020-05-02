@@ -1,6 +1,6 @@
 ---
 title: progreso
-description: Comandos de Windows tema de progreso, que muestra el progreso mientras se ejecuta un comando.
+description: Tema de referencia sobre el progreso, que muestra el progreso mientras se ejecuta un comando.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9957174203df8f2f5c02bf3ab8a4f3406701a8da
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3fcb06304df22208cef013d73a4ebf0af1991f88
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833128"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721429"
 ---
 # <a name="progress"></a>progreso
 

@@ -1,6 +1,6 @@
 ---
 title: set
-description: Comando comandos de Windows para Set, que establece las propiedades y los atributos de los servidores de servicios de implementación de Windows, los equipos preconfigurados, las imágenes, los grupos de imágenes y los servidores de transporte.
+description: Tema de referencia sobre Set, que establece las propiedades y los atributos de los servidores de servicios de implementación de Windows, los equipos preconfigurados, las imágenes, los grupos de imágenes y los servidores de transporte.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e47a90137a94d4ada149135ee0b593e0ade0ae3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd406a04fdb704ec8e2ee1e9aa3548c130e1089c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833058"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721422"
 ---
 # <a name="set"></a>set
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Establece las propiedades y los atributos de los servidores de servicios de implementación de Windows, los equipos preconfigurados, las imágenes, los grupos de imágenes y los servidores de transporte.
 

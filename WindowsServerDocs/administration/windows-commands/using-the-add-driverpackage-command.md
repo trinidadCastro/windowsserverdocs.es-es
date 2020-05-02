@@ -1,6 +1,6 @@
 ---
 title: Add-DriverPackage
-description: Tema de comandos de Windows para Add-DriverPackage, que agrega un paquete de controladores al servidor.
+description: Tema de referencia de Add-DriverPackage, que agrega un paquete de controladores al servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2ccdfcddd2f605eccd9cd32fed7b8c6921297fc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 12d7f7078cf3dde10f834a4d4c7784ecc1d9bdf2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832018"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721091"
 ---
 # <a name="add-driverpackage"></a>Add-DriverPackage
 
-agrega un paquete de controladores al servidor.
+Agrega un paquete de controladores al servidor.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -30,13 +30,13 @@ WDSUTIL /Add-DriverPackage /InfFile:<Inf File path> [/Server:<Server name>] [/Ar
 
 |          Parámetro           |                                                              Descripción                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-|   InfFile:\<ruta de acceso del archivo INF >   |                                           Especifica la ruta de acceso completa del archivo. inf que se va a agregar.                                            |
-|    /Server:\<nombre de servidor >    | Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se utiliza el servidor local. |
+|   InfFile:\<ruta de acceso del archivo INF>   |                                           Especifica la ruta de acceso completa del archivo. inf que se va a agregar.                                            |
+|    /Server:\<nombre del servidor>    | Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se utiliza el servidor local. |
 |      /Architecture: {x86      |                                                                 64                                                                  |
-| [/DriverGroup: nombre de grupo de\<>] |                             Especifica el nombre del grupo de controladores al que se debe agregar el paquete.                              |
-|   [/Name:\<nombre descriptivo >]   |                                           Indica el nombre descriptivo para el paquete de controladores.                                            |
+| [/DriverGroup:\<nombre de grupo>] |                             Especifica el nombre del grupo de controladores al que se debe agregar el paquete.                              |
+|   [/Name:\<nombre descriptivo>]   |                                           Indica el nombre descriptivo para el paquete de controladores.                                            |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para agregar un paquete de controladores, escriba uno de los siguientes:
 ```

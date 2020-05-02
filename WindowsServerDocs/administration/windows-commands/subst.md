@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43cbc57aba29ea0b9150dccdfc566a93017a09a5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 62ba0de33e69998e7d3e343b1e53c1de7e630e10
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833648"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721608"
 ---
 # <a name="subst"></a>subst
 
@@ -22,7 +22,7 @@ ms.locfileid: "80833648"
 
 Asocia una ruta de acceso a una letra de unidad. Si se usa sin parámetros, **subst** muestra los nombres de las unidades virtuales en vigor.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -35,12 +35,12 @@ subst <Drive1>: /d
 
 |Parámetro|Descripción|
 |---------|-----------|
-|> \<unidad1:|Especifica la unidad virtual a la que desea asignar una ruta de acceso.|
-|[\<Unidad2 >:]\<ruta de acceso >|Especifica la unidad física y la ruta de acceso que desea asignar a una unidad virtual.|
+|\<> unidad1:|Especifica la unidad virtual a la que desea asignar una ruta de acceso.|
+|[\<Unidad2>:] \<Ruta de acceso>|Especifica la unidad física y la ruta de acceso que desea asignar a una unidad virtual.|
 |/d|Elimina una unidad (virtual) sustituida.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Los siguientes comandos no funcionan y no deben usarse en las unidades que se especifican en el comando **subst** :
 
@@ -59,7 +59,7 @@ subst <Drive1>: /d
 
     `Invalid parameter - drive1:`
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Ejemplos
 
 Para crear una unidad virtual Z para la ruta de acceso B:\User\Betty\Forms, escriba:
 ```

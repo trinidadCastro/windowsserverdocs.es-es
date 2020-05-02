@@ -1,6 +1,6 @@
 ---
 title: tsecimp
-description: Windows Commands topic for tsecimp, que importa la información de asignación de un archivo lenguaje de marcado extensible (XML) en el archivo de seguridad del servidor TAPI (TSEC. ini).
+description: Tema de referencia de tsecimp, que importa la información de asignación de un archivo lenguaje de marcado extensible (XML) en el archivo de seguridad del servidor TAPI (TSEC. ini).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30a097bcd25e981f72a421b81b80b595343404ba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: afd38f7081a9b4674eb6cac26f52849794b8d5e6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832508"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721255"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -31,13 +31,13 @@ tsecimp /d
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/f \<nombre de archivo >|Obligatorio. Especifica el nombre del archivo XML que contiene la información de asignaciones que desea importar.|
+|/f \<nombre de archivo>|Necesario. Especifica el nombre del archivo XML que contiene la información de asignaciones que desea importar.|
 |/v|Valida la estructura del archivo XML sin importar la información al archivo Tsec.ini.|
-|/u|Comprueba si cada usuario pertenece al dominio especificado en el archivo XML. El equipo donde use este parámetro deberá estar conectado a la red. Es posible que el parámetro reduzca considerablemente el rendimiento si se procesa una gran cantidad de información de asignaciones de usuarios.|
+|/U|Comprueba si cada usuario pertenece al dominio especificado en el archivo XML. El equipo donde use este parámetro deberá estar conectado a la red. Es posible que el parámetro reduzca considerablemente el rendimiento si se procesa una gran cantidad de información de asignaciones de usuarios.|
 |/d|Muestra una lista de los proveedores de telefonía instalados. Para cada proveedor de telefonía, se enumeran los dispositivos de línea asociados, así como las direcciones y los usuarios asociados a cada dispositivo de línea.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   El archivo XML desde el cual desea importar la información de asignaciones debe respetar la estructura que se describe a continuación.  
     -   Elemento **userList**

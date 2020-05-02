@@ -1,6 +1,6 @@
 ---
 title: envío de Telnet
-description: Temas de comandos de Windows para el envío de Telnet, que envía comandos Telnet al servidor Telnet.
+description: Tema de referencia para el envío de Telnet, que envía comandos Telnet al servidor Telnet.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fef48ca04a3817f58d063bc8b23f5c11c4ea197
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 432401bbe2050a7954967a73b5ba8abeee5bb1d3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833288"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721488"
 ---
 # <a name="telnet-send"></a>Telnet: enviar
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Envía comandos Telnet al servidor Telnet.   
 
@@ -33,13 +33,13 @@ sen[d] {ao | ayt | brk | esc | ip | synch | <string>} [?]
 |    AO     |       Envía la salida de anulación del comando telnet.        |
 |    ayt    |       Envía el comando telnet.       |
 |    brk    |            Envía el comando telnet BRK.            |
-|    ESC    |      Envía el carácter de escape de Telnet actual.      |
-|    intelectual     |     Envía el proceso de interrupción del comando de Telnet.     |
+|    esc    |      Envía el carácter de escape de Telnet actual.      |
+|    ip     |     Envía el proceso de interrupción del comando de Telnet.     |
 |   sincronización   |           Envía la sincronización de comandos de Telnet.           |
 | <string>  | Envía cualquier cadena que escriba en el servidor Telnet. |
 |     ?     |     Muestra la ayuda asociada a este comando.      |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example  
+## <a name="examples"></a>Ejemplos  
 Envíelo al servidor Telnet.  
 ```  
 sen ayt  

@@ -1,6 +1,6 @@
 ---
 title: Usar el subcomando add-AllDriverPackages
-description: Comando de comandos de Windows para Add-AllDriverPackages, que agrega todos los paquetes de controladores que se almacenan en una carpeta a un servidor.
+description: Tema de referencia de Add-AllDriverPackages, que agrega todos los paquetes de controladores que se almacenan en una carpeta a un servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc8252339fcae04517c2074c24bbfab44228b779
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 31daa8fc3e3304dba5079672ea4619fd085dd74f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832268"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721157"
 ---
 # <a name="add-alldriverpackages"></a>Add-AllDriverPackages
 
@@ -30,12 +30,12 @@ WDSUTIL /Add-AllDriverPackages /FolderPath:<Folder Path> [/Server:<Server name>]
 
 |          Parámetro           |                                                              Descripción                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-|  /FolderPath:\<ruta de acceso de la carpeta >  |                      Especifica la ruta de acceso completa a la carpeta que contiene los archivos. inf para los paquetes de controladores.                      |
-|   [/Server:\<nombre de servidor >]   | Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se utiliza el servidor local. |
+|  /FolderPath:\<ruta de acceso de la carpeta>  |                      Especifica la ruta de acceso completa a la carpeta que contiene los archivos. inf para los paquetes de controladores.                      |
+|   [/Server:\<nombre del servidor>]   | Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se utiliza el servidor local. |
 |     [/Architecture: {x86      |                                                                 64                                                                  |
-| [/DriverGroup: nombre de grupo de\<>] |                             Especifica el nombre del grupo de controladores al que se deben agregar los paquetes.                             |
+| [/DriverGroup:\<nombre de grupo>] |                             Especifica el nombre del grupo de controladores al que se deben agregar los paquetes.                             |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para agregar paquetes de controladores, escriba uno de los siguientes:
 ```

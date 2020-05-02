@@ -1,6 +1,6 @@
 ---
 title: Estado de Telnet
-description: Temas de comandos de Windows para el estado de Telnet, que muestra información de estado.
+description: Tema de referencia sobre el estado de Telnet, que muestra información de estado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f2a790f2e17871275c4fa96c9b1b7e85cdbc150
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 54c75af3705c6f1b0ae4410265e8d869a3c8419b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832978"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721475"
 ---
 # <a name="telnet-status"></a>Telnet: estado
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Muestra información de estado.   
 
@@ -27,8 +27,8 @@ Muestra información de estado.
 st[atus]  
 ```  
 #### <a name="parameters"></a>Parámetros  
-ninguno  
-## <a name="examples"></a><a name=BKMK_Examples></a>Example  
+None  
+## <a name="examples"></a>Ejemplos  
 Mostrar información de estado.  
 ```  
 st  

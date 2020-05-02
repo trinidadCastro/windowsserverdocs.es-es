@@ -1,6 +1,6 @@
 ---
 title: Subcomando STOP-TransportServer
-description: Tema de comandos de Windows para STOP-TransportServer
+description: Tema de referencia de STOP-TransportServer
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44d62332307ffda4dcfa6af286c7b95cb12423dc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4321ec991b2c20911f992e4c3c38e5c9cfa5f165
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833708"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721622"
 ---
 # <a name="subcommand-stop-transportserver"></a>Subcomando: Stop-TransportServer
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Detiene todos los servicios en un servidor de transporte.
 ## <a name="syntax"></a>Sintaxis
@@ -29,16 +29,16 @@ wdsutil [Options] /Stop-TransportServer [/Server:<Server name>]
 |Parámetro|Descripción|
 |-------|--------|
 |[/Server:<Server name>]|Especifica el nombre del servidor de transporte. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún servidor de transporte, se usará el servidor local.|
-## <a name="examples"></a><a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Ejemplos
 Para detener los servicios, escriba uno de los siguientes:
 ```
 wdsutil /Stop-TransportServer
 wdsutil /verbose /Stop-TransportServer /Server:MyWDSServer
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- La [clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[usar el comando DISABLE-TransportServer](using-the-disable-transportserver-command.md)
-[mediante el comando enable-TransportServer](using-the-enable-transportserver-command.md)
-[mediante el comando Get-TransportServer](using-the-get-transportserver-command.md)
-[Subcommand: set-TransportServer](subcommand-set-transportserver.md)
+- [Clave](command-line-syntax-key.md)
+de sintaxis de línea de comandos[mediante el comando](using-the-disable-transportserver-command.md)
+Disable-TransportServer[con el comando enable-TransportServer](using-the-enable-transportserver-command.md)
+[mediante el subcomando Get-TransportServer comando](using-the-get-transportserver-command.md)
+[: set-TransportServer](subcommand-set-transportserver.md)
 [Subcommand: Start-TransportServer](subcommand-start-transportserver.md)

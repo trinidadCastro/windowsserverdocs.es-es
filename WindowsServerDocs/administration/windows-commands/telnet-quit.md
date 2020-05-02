@@ -1,6 +1,6 @@
 ---
 title: cerrar Telnet
-description: Comando comandos de Windows para telnet Quit, que sale de Telnet.
+description: Tema de referencia de Telnet Quit, que sale de Telnet.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c6c5ef0d563096be2384454f0480bb250a6485c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 795629887b27cad0c125e7f580799a41d41666f9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833308"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721500"
 ---
 # <a name="telnet-quit"></a>Telnet: salir
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Sale de Telnet.   
 
@@ -27,8 +27,8 @@ Sale de Telnet.
 q[uit]  
 ```  
 #### <a name="parameters"></a>Parámetros  
-ninguno  
-## <a name="examples"></a><a name=BKMK_Examples></a>Example  
+None  
+## <a name="examples"></a>Ejemplos  
 salga de Telnet.  
 ```  
 q  
