@@ -1,6 +1,6 @@
 ---
 title: delete disk
-description: Comando comandos de Windows para eliminar disco, que elimina un disco dinámico que falta en la lista de discos.
+description: Tema de referencia de DELETE Disk, que elimina un disco dinámico que falta en la lista de discos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1a767e0689d5fbabb193df37528a0909ab63a1ab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ad4888835c0bb1862344f104099b8b59027d1de9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846658"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716755"
 ---
 # <a name="delete-disk"></a>delete disk
 
@@ -35,7 +35,7 @@ delete disk [noerr] [override]
 |noerr|Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
 |override|Permite que DiskPart elimine todos los volúmenes simples del disco. Si el disco contiene la mitad de un volumen reflejado, se eliminará la mitad del reflejo del disco. El comando delete disk override no funciona si el disco forma parte de un volumen RAID-5.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para eliminar un disco dinámico que falta en la lista de discos, escriba:
 ```

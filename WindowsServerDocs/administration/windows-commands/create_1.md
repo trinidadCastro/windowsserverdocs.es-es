@@ -1,6 +1,6 @@
 ---
-title: crear
-description: Comando comandos de Windows para crear, que inicia el proceso de creación de instantáneas, con la configuración de contexto y opciones actual.
+title: create
+description: Tema de referencia de Create, que inicia el proceso de creación de instantáneas, utilizando la configuración de contexto y opciones actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d29285517ca678a15828079c95663fc4d501eaf
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cfddbebd5744d8cd222d67e46690ce8b5d2e0fde
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846838"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716837"
 ---
-# <a name="create"></a>crear
+# <a name="create"></a>create
 
 Inicia el proceso de creación de instantáneas con la configuración de contexto y opciones actual. Requiere al menos un volumen en el conjunto de instantáneas.
 
@@ -26,7 +26,7 @@ Inicia el proceso de creación de instantáneas con la configuración de context
 create
 ```
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Debe agregar al menos un volumen con el comando **Add Volume** para poder usar el comando **Create** .
 -   Puede usar el comando **Begin backup** para especificar una copia de seguridad completa, en lugar de una copia de seguridad de copia.

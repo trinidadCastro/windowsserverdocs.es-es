@@ -1,6 +1,6 @@
 ---
-title: bitsadmin pares y detectar
-description: Tema de comandos de Windows para **bitsadmin Peers** y **Discover**, que detecta los elementos del mismo nivel de nuevo.
+title: bitsadmin peers y discover
+description: Tema de referencia para el comando bitsadmin Peers y Discover, que detecta los elementos del mismo nivel de nuevo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f6f25ed65f58c12374c43953a0f6276c20b1a06
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 094580bcf27b0968ebfab2d064a4a74dc8358a74
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850018"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717171"
 ---
-# <a name="bitsadmin-peers-and-discover"></a>bitsadmin pares y detectar
+# <a name="bitsadmin-peers-and-discover"></a>bitsadmin peers y discover
 
 Detecta elementos del mismo nivel de nuevo.
 
@@ -26,14 +26,18 @@ Detecta elementos del mismo nivel de nuevo.
 bitsadmin /peers /discover
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se detectan los elementos del mismo nivel.
+Para detectar elementos del mismo nivel de nuevo:
 
 ```
-C:\>bitsadmin /peers /discover
+bitsadmin /peers /discover
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)
+
+- [comando del mismo nivel de bitsadmin](bitsadmin-peers.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setpeercachingflags
-description: Comando de comandos de Windows para **bitsadmin setpeercachingflags**, que establece las marcas que determinan si los archivos del trabajo se pueden almacenar en caché y servir a los elementos del mismo nivel y si el trabajo puede descargar contenido de elementos del mismo nivel.
+description: Tema de referencia para el comando bitsadmin setpeercachingflags, que establece las marcas que determinan si los archivos del trabajo se pueden almacenar en caché y servir a los elementos del mismo nivel y si el trabajo puede descargar contenido de elementos del mismo nivel.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b4a7807975fb46440301e30b1fdbd01784d7c85
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 8b66b169c38ac050ecaaf6546365547148faa9cf
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122776"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717267"
 ---
 # <a name="bitsadmin-setpeercachingflags"></a>bitsadmin setpeercachingflags
 
@@ -35,12 +35,14 @@ bitsadmin /setpeercachingflags <job> <value>
 
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se establecen marcas para el trabajo denominado *myDownloadJob*, lo que permite descargar contenido de elementos del mismo nivel.
+Para permitir que el trabajo denominado *myDownloadJob* Descargue contenido de elementos del mismo nivel:
 
 ```
-C:\>bitsadmin /setpeercachingflags myDownloadJob 1
+bitsadmin /setpeercachingflags myDownloadJob 1
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

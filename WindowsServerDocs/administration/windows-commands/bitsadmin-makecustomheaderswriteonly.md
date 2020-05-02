@@ -1,6 +1,6 @@
 ---
 title: bitsadmin makecustomheaderswriteonly
-description: Tema de comandos de Windows para **bitsadmin makecustomheaderswriteonly**, que hace que los encabezados HTTP personalizados de un trabajo sean de solo escritura.
+description: Tema de referencia del comando bitsadmin makecustomheaderswriteonly, que hace que los encabezados HTTP personalizados de un trabajo sean de solo escritura.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,18 +8,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 9183b1b5de51020c5c6d2efad2c0a788d158a183
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2aeab7e0ee7797b3e0be7be1156920f3bafc84dc
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850248"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717406"
 ---
 # <a name="bitsadmin-makecustomheaderswriteonly"></a>bitsadmin makecustomheaderswriteonly
 
 Hacer que los encabezados HTTP personalizados de un trabajo sean de solo escritura.
 
-> [!Important]
+> [!IMPORTANT]
 > Esta acción no se puede deshacer.
 
 ## <a name="syntax"></a>Sintaxis
@@ -34,14 +34,16 @@ bitsadmin /makecustomheaderswriteonly <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se hace que los encabezados HTTP personalizados sean de solo escritura para el trabajo denominado *myDownloadJob*.
+Para hacer que los encabezados HTTP personalizados sean de solo escritura para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /makecustomheaderswriteonly myDownloadJob
+bitsadmin /makecustomheaderswriteonly myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

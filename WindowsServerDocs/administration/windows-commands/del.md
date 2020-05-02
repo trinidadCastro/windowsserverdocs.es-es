@@ -1,6 +1,6 @@
 ---
 title: del
-description: Comando de comandos de Windows para del, que elimina uno o varios archivos.
+description: Tema de referencia de del, que elimina uno o varios archivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7069ee50a810296d31e1a034b24955299918020a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 703597ae422518a5b401b656ace0b4cd73418be8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846668"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716745"
 ---
 # <a name="del"></a>del
 
 Elimina uno o varios archivos. Este comando es el mismo que el comando **Erase** .
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -33,15 +33,15 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Nombres de \<>|Especifica una lista de uno o varios archivos o directorios. Se pueden usar caracteres comodín para eliminar varios archivos. Si se especifica un directorio, se eliminarán todos los archivos del directorio.|
+|\<Nombres>|Especifica una lista de uno o varios archivos o directorios. Se pueden usar caracteres comodín para eliminar varios archivos. Si se especifica un directorio, se eliminarán todos los archivos del directorio.|
 |/p|Solicita confirmación antes de eliminar el archivo especificado.|
 |/f|Fuerza la eliminación de archivos de solo lectura.|
 |/s|Elimina los archivos especificados del directorio actual y todos los subdirectorios. Muestra los nombres de los archivos que se van a eliminar.|
 |/q|Especifica el modo silencioso. No se le pedirá confirmación de eliminación.|
-|/a [:]\<atributos >|Elimina archivos en función de los siguientes atributos de archivo:</br>archivos de solo lectura de **r**</br>**h** archivos ocultos</br>**no hay** archivos indizados de contenido</br>archivos **del sistema**</br>**archivos listos** para archivar</br>**l** puntos de reanálisis</br>-El significado del prefijo ' not '|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/a [:]\<atributos>|Elimina archivos en función de los siguientes atributos de archivo:</br>archivos de solo lectura de **r**</br>**h** archivos ocultos</br>**no hay** archivos indizados de contenido</br>archivos **del sistema**</br>**archivos listos** para archivar</br>**l** puntos de reanálisis</br>-El significado del prefijo ' not '|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 > [!CAUTION]
 > Si usa **Supr** para eliminar un archivo del disco, no puede recuperarlo.
@@ -56,7 +56,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
   ```
   del \work
   ```  
-- Puede usar caracteres comodín ( **&#42;** y **?** ) para eliminar más de un archivo a la vez. Sin embargo, para evitar la eliminación accidental de archivos, debe usar caracteres comodín con precaución con el comando **del** . Por ejemplo, si escribe el comando siguiente:  
+- Puede usar caracteres comodín (**&#42;** y **?**) para eliminar más de un archivo a la vez. Sin embargo, para evitar la eliminación accidental de archivos, debe usar caracteres comodín con precaución con el comando **del** . Por ejemplo, si escribe el comando siguiente:  
   ```
   del *.*
   ```  
@@ -71,7 +71,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
 -   El comando **del** , con diferentes parámetros, está disponible en la consola de recuperación.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para eliminar todos los archivos de una carpeta denominada test en la unidad C, escriba cualquiera de los siguientes:
 ```

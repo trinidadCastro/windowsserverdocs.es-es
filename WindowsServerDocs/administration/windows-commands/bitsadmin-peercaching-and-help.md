@@ -1,6 +1,6 @@
 ---
-title: la caché y ayuda de bitsadmin
-description: Tema de comandos de Windows para la **caché de bitsadmin** y la **ayuda**, que muestra el uso de la línea de comandos para los modificadores de/peercaching.
+title: bitsadmin peercaching y help
+description: Tema de referencia para la **ayuda**y la **caché de bitsadmin** , que muestra el uso de la línea de comandos para los modificadores de/peercaching.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 29d530d721b9e82eff180abcbed8cf60bf8c9281
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 08cb792989470d7492ff2da4b63ddd686b35b232
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850168"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717249"
 ---
-# <a name="bitsadmin-peercaching-and-help"></a>la caché y ayuda de bitsadmin
+# <a name="bitsadmin-peercaching-and-help"></a>bitsadmin peercaching y help
 
 Muestra el uso de la línea de comandos para los modificadores de **/peercaching** .
 
@@ -26,14 +26,18 @@ Muestra el uso de la línea de comandos para los modificadores de **/peercaching
 bitsadmin /peercaching /help
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-El siguiente comando muestra la ayuda de la línea de comandos para los modificadores de **caché** .
+Para mostrar la ayuda de la línea de comandos para los modificadores de **/peercaching** :
 
 ```
-C:\> bitsadmin /peercaching /help
+bitsadmin /peercaching /help
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)
+
+- [bitsadmin (comando de caché)](bitsadmin-peercaching.md)

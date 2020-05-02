@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setaclflag
-description: Temas de comandos de Windows para **bitsadmin setaclflag**, que establece las marcas de propagación de la lista de control de acceso (ACL).
+description: Tema de referencia del comando bitsadmin setaclflag, que establece las marcas de propagación de la lista de control de acceso (ACL).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f0aae550e94d04db518edccafb1d6bcf46d0320b
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 1852bd267fe22825d55f7522a81179e9290e2a00
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123064"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716987"
 ---
 # <a name="bitsadmin-setaclflag"></a>bitsadmin setaclflag
 
@@ -33,18 +33,16 @@ bitsadmin /setaclflag <job> <flags>
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 | flags | Especifique uno o varios de los valores, entre los que se incluyen:<ul><li>**o** copiar información del propietario con el archivo.</li><li>**g** -copiar información de grupo con el archivo.</li><li>**d** -copiar información de la lista de control de acceso discrecional (DACL) con el archivo.</li><li>**s** -copiar información de la lista de control de acceso de sistema (SACL) con el archivo.</li></ul> |
 
-## <a name="remarks"></a>Comentarios
-
-El modificador/setaclflag se usa para mantener la información de la lista de control de acceso y el propietario cuando un trabajo está descargando datos de un recurso compartido de Windows (SMB).
-
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se establecen los marcadores de propagación de la lista de control de acceso para el trabajo denominado *myDownloadJob* para mantener la información del propietario y del grupo con los archivos descargados.
+Para establecer las marcas de propagación de la lista de control de acceso para el trabajo denominado *myDownloadJob*, de modo que mantiene la información de propietario y de grupo con los archivos descargados.
 
 ```
-C:\>bitsadmin /setaclflags myDownloadJob og
+bitsadmin /setaclflags myDownloadJob og
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)&reg;'    
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

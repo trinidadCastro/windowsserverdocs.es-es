@@ -1,6 +1,6 @@
 ---
 title: defrag
-description: Temas de comandos de Windows para Defrag, que busca y consolida archivos fragmentados en volúmenes locales para mejorar el rendimiento del sistema.
+description: Tema de referencia de Defrag, que busca y consolida archivos fragmentados en volúmenes locales para mejorar el rendimiento del sistema.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8723afc936fa1ea311e275a58a85b20988f92a2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 47a19ec697da29b1eff152de8fc5930516d5b806
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846718"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716766"
 ---
 # <a name="defrag"></a>defrag
 
->Se aplica a: Windows 10, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
+> Se aplica a: Windows 10, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Busca y consolida archivos fragmentados en volúmenes locales para mejorar el rendimiento del sistema.
 
@@ -36,11 +36,11 @@ defrag <volume> [/<Parameter>]*
 |Parámetro|Descripción|
 |-------|--------|
 |`<volume>`|Especifica la letra de unidad o la ruta de acceso del punto de montaje del volumen que se va a desfragmentar o analizar.|
-|A|Realizar análisis en los volúmenes especificados.|
+|Un|Realizar análisis en los volúmenes especificados.|
 |C|Realice la operación en todos los volúmenes.|
 |D|Realice la desfragmentación tradicional (este es el valor predeterminado). Sin embargo, en un volumen en capas, la desfragmentación tradicional solo se realiza en el nivel de capacidad.|
 |E|Realice la operación en todos los volúmenes excepto en los especificados.|
-|N|Optimice las capas de almacenamiento en los volúmenes especificados.|
+|G|Optimice las capas de almacenamiento en los volúmenes especificados.|
 |H|Ejecute la operación con la prioridad normal (el valor predeterminado es low).|
 |N|La optimización de niveles se ejecutaría durante un máximo de n segundos en cada volumen.|
 |K|Realice la consolidación de bloques en los volúmenes especificados.|
@@ -53,7 +53,7 @@ defrag <volume> [/<Parameter>]*
 |X|Realice la consolidación de espacio libre en los volúmenes especificados.|
 |?|Muestra esta información de ayuda.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 - No se pueden desfragmentar tipos específicos de volúmenes o unidades del sistema de archivos:
   -   No se pueden desfragmentar los volúmenes bloqueados por el sistema de archivos.
   -   No puede desfragmentar los volúmenes que el sistema de archivos marcó como modificados, lo que indica posibles daños. Debe ejecutar **CHKDSK** en un volumen sucio antes de poder desfragmentarlo. Puede determinar si un volumen se ha modificado mediante el comando **fsutil** Dirty Query. Para obtener más información acerca de **CHKDSK** y **fsutil** Dirty, consulte [referencias adicionales](defrag.md#BKMK_additionalRef).
@@ -61,7 +61,7 @@ defrag <volume> [/<Parameter>]*
   -   No puede desfragmentar cdROMs.
   -   No se pueden desfragmentar volúmenes del sistema de archivos que no sean **NTFS**, **ReFS**, **FAT** o **FAT32**.
 - Con Windows Server 2008 R2, Windows Server 2008 y, Windows Vista, puede programar la desfragmentación de un volumen. Sin embargo, no se puede programar para desfragmentar una unidad de estado sólido (SSD) o un volumen en un disco duro virtual (VHD) que resida en una SSD.
-- Para realizar este procedimiento, debe ser miembro del grupo Administradores en el equipo local o tienen que delegarle la autoridad adecuada. Si el equipo está unido a un dominio, los miembros del grupo Administradores del dominio podrían realizar este procedimiento. Como práctica recomendada de seguridad, considere la posibilidad de usar **Ejecutar como** para realizar este procedimiento.
+- Para llevar a cabo este procedimiento, debe ser miembro del grupo Administradores del equipo local o tener delegada la autoridad adecuada. Si el equipo está unido a un dominio, los miembros del grupo Administradores de dominio podrían llevar a cabo este procedimiento. Como práctica recomendada de seguridad, considere la posibilidad de usar **Ejecutar como** para realizar este procedimiento.
 - Un volumen debe tener al menos un 15% de espacio libre para que **Defrag** se desfragmente de forma completa y adecuada. **Defrag** usa este espacio como área de ordenación para los fragmentos de archivo. Si un volumen tiene menos del 15% de espacio libre, **Defrag** solo lo desfragmentará parcialmente. Para aumentar el espacio libre en un volumen, elimine los archivos innecesarios o muévalos a otro disco.
 - Mientras que **Defrag** está analizando y desfragmentando un volumen, muestra un cursor parpadeante. Cuando **Defrag** finaliza el análisis y desfragmentación del volumen, muestra el informe de análisis, el informe de desfragmentación o ambos informes y, a continuación, sale del símbolo del sistema.
 - De forma predeterminada, **Defrag** muestra un resumen de los informes de análisis y desfragmentación si no se especifican los parámetros **/a** o **/v** .
@@ -69,7 +69,7 @@ defrag <volume> [/<Parameter>]*
 - Para interrumpir el proceso de desfragmentación, en la línea de comandos, presione **Ctrl + C**.
 - La ejecución del comando **Defrag** y del Desfragmentador de disco es mutuamente excluyente. Si usa el Desfragmentador de disco para desfragmentar un volumen y ejecuta el comando **Defrag** en una línea de comandos, se produce un error en el comando **Defrag** . Por el contrario, si ejecuta el comando **Defrag** y abre el Desfragmentador de disco, las opciones de desfragmentación del Desfragmentador de disco no estarán disponibles.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 Para desfragmentar el volumen de la unidad C a la vez que proporciona el progreso y el resultado detallado, escriba:
 ```
 defrag C: /U /V

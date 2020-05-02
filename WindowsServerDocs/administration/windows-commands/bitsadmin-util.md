@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util
-description: Tema de comandos de Windows para **bitsadmin util**, que enumera los modificadores de la util.
+description: Tema de referencia del comando bitsadmin util, que enumera los modificadores de la util.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0982bd02001bc6168f13255a7e785905f617db3f
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 0fa7e8f67dd1c7c77ac489b38aa967e55f0e3506
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122577"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707587"
 ---
 # <a name="bitsadmin-util"></a>bitsadmin util
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
+
+Enumera los modificadores de **/util** .
 
 Enumera los modificadores de la **util** .
 
@@ -45,3 +47,5 @@ bitsadmin /util /version
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

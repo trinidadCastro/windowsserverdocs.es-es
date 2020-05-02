@@ -1,6 +1,6 @@
 ---
 title: bitsadmin listfiles
-description: Windows Commands topic for **bitsadmin ListFiles**, que enumera los archivos del trabajo especificado.
+description: Tema de referencia del comando bitsadmin ListFiles, que enumera los archivos del trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1af11f7876a3d1cd36aa38c7ac26563c01e81ab5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6826c1ec2f624a06d11fedcb8ca9f14d86b7ec27
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850318"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717416"
 ---
 # <a name="bitsadmin-listfiles"></a>bitsadmin listfiles
 
@@ -32,14 +32,16 @@ bitsadmin /listfiles <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se recupera la lista de archivos del trabajo denominado *myDownloadJob*.
+Para recuperar la lista de archivos del trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /listfiles myDownloadJob
+bitsadmin /listfiles myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

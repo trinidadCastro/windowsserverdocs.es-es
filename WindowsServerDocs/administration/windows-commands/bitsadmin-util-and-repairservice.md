@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util y repairservice
-description: Tema de comandos de Windows para **bitsadmin util y repairservice**, que corrige problemas conocidos de varias versiones de servicio bits.
+description: Tema de referencia del comando bitsadmin util y repairservice, que corrige problemas conocidos de varias versiones de servicio BITS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 164a402e7cbfc0a9223a97f4246eac84f0797aed
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 0104a3f2ace972821151bf5083f9b0795e427ff1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122514"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707655"
 ---
 # <a name="bitsadmin-util-and-repairservice"></a>bitsadmin util y repairservice
 
@@ -40,12 +40,16 @@ bitsadmin /util /repairservice [/force]
 
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se repara la configuración del servicio BITS.
+Para reparar la configuración del servicio BITS:
 
 ```
-C:\>bitsadmin /util /repairservice
+bitsadmin /util /repairservice
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin util (comando)](bitsadmin-util.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

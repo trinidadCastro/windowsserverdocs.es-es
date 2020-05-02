@@ -1,6 +1,6 @@
 ---
 title: bitsadmin nowrap
-description: Tema de comandos de Windows para **bitsadmin NoWrap**, que trunca cualquier línea de texto de salida que se extienda más allá del borde derecho de la ventana de comandos.
+description: Tema de referencia del comando bitsadmin NoWrap, que trunca cualquier línea de texto de salida que se extienda más allá del borde derecho de la ventana de comandos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f9f1db370d8a8917aa03a414a27623a1024df192
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2aac604ec3e13026e322d7cb7a9364df46266a0c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850188"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717334"
 ---
 # <a name="bitsadmin-nowrap"></a>bitsadmin nowrap
 
@@ -26,14 +26,16 @@ Trunca cualquier línea de texto de salida que se extienda más allá del borde 
 bitsadmin /nowrap
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se recupera el estado del trabajo denominado *myDownloadJob* y no se encapsula el resultado.
+Para recuperar el estado del trabajo denominado *myDownloadJob* mientras no se ajusta la salida:
 
 ```
-C:\>bitsadmin /nowrap /getstate myDownloadJob
+bitsadmin /nowrap /getstate myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

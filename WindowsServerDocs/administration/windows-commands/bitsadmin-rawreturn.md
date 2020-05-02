@@ -1,6 +1,6 @@
 ---
 title: bitsadmin rawreturn
-description: Tema de comandos de Windows para **bitsadmin rawreturn**, que devuelve los datos adecuados para el análisis.
+description: Tema de referencia del comando bitsadmin rawreturn, que devuelve los datos adecuados para el análisis.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8cd84b6082b1fda8061ee7b324dd66991d3b206
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: af465bb9f51ab6f43980c43bf2be1f5158429a82
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849888"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717084"
 ---
 # <a name="bitsadmin-rawreturn"></a>bitsadmin rawreturn
 
 Devuelve los datos adecuados para el análisis. Normalmente, este comando se usa junto con los modificadores **/Create** e **/Get*** para recibir solo el valor. Debe especificar este modificador antes que otros modificadores.
+
+> [!NOTE]
+> Este comando quita los caracteres de nueva línea y el formato de la salida.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -26,18 +29,16 @@ Devuelve los datos adecuados para el análisis. Normalmente, este comando se usa
 bitsadmin /rawreturn
 ```
 
-## <a name="remarks"></a>Comentarios
+## <a name="examples"></a>Ejemplos
 
-- Quita los caracteres de nueva línea y el formato de la salida.
-
-## <a name="examples"></a><a name=BKMK_examples></a>Example
-
-En el ejemplo siguiente se recuperan los datos sin procesar para el estado del trabajo denominado *myDownloadJob*.
+Para recuperar los datos sin procesar para el estado del trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /rawreturn /getstate myDownloadJob
+bitsadmin /rawreturn /getstate myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

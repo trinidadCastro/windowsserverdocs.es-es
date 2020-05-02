@@ -1,6 +1,6 @@
 ---
 title: date
-description: Comandos de Windows tema para Date, que muestra o establece la fecha del sistema. Si se usa sin parámetros,
+description: Tema de referencia de Date, que muestra o establece la fecha del sistema. Si se usa sin parámetros,
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8f9e32240eb27d651e324becefd72e9b1a545215
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d7bcdb35579ac86b4ec7f9c7c639cf905f6a05fa
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846748"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716803"
 ---
 # <a name="date"></a>date
 
 Muestra o establece la fecha del sistema. Si se usa sin parámetros, **fecha** muestra la configuración actual de fecha del sistema y le pide que especifique una nueva fecha.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,11 +32,11 @@ date [/t | <Month-Day-Year>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<mes-día-año >|Establece la fecha especificada, donde *Month* es el mes (uno o dos dígitos), *Day* es el día (uno o dos dígitos) y *Year* es el año (dos o cuatro dígitos).|
+|\<Mes-día-año>|Establece la fecha especificada, donde *Month* es el mes (uno o dos dígitos), *Day* es el día (uno o dos dígitos) y *Year* es el año (dos o cuatro dígitos).|
 |/t|Muestra la fecha actual sin pedir una nueva fecha.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Para cambiar la fecha actual, debe tener credenciales administrativas.
 -   Debe separar los valores de *mes*, *día*y *año* con puntos (.), guiones (-) o barras diagonales (/).
@@ -44,7 +44,7 @@ date [/t | <Month-Day-Year>]
 -   Los valores de *día* válidos van de 1 a 31.
 -   Los valores de *año* válidos están comprendidos entre 00 y 99 o de 1980 a 2099. Si usa dos dígitos, los valores de 80 a 99 se corresponden con los años 1980 a 1999.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Si las extensiones de comando están habilitadas, para mostrar la fecha actual del sistema, escriba:
 ```

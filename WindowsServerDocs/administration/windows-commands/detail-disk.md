@@ -1,6 +1,6 @@
 ---
 title: detail disk
-description: Temas de comandos de Windows para el disco de detalles, que muestra las propiedades del disco seleccionado y los volúmenes del disco.
+description: Tema de referencia del disco de detalles, que muestra las propiedades del disco seleccionado y los volúmenes del disco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0d0768d45c0f56ba549ff54064c4e74ae3048e41
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a746506d6c9609e3214dbd48e5fa91f52d16ab4d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846458"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82710518"
 ---
 # <a name="detail-disk"></a>detail disk
 
-Muestra las propiedades del disco seleccionado y de sus volúmenes.
+Muestra las propiedades del disco seleccionado y los volúmenes del mismo.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -26,12 +26,12 @@ Muestra las propiedades del disco seleccionado y de sus volúmenes.
 detail disk
 ```
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Se debe seleccionar un disco para que esta operación se realice correctamente. Use el comando **Seleccionar disco** para seleccionar un disco y desplazar el foco a él.
 -   Si el disco seleccionado es un disco duro virtual (VHD), **detail Disk** informa del tipo de bus del disco como virtual.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para ver las propiedades del disco seleccionado e información acerca de los volúmenes del disco, escriba:
 ```

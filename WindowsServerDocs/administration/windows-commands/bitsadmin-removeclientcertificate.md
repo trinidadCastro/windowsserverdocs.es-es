@@ -1,6 +1,6 @@
 ---
 title: bitsadmin removeclientcertificate
-description: Windows Commands topic for **bitsadmin removeclientcertificate**, que quita el certificado de cliente del trabajo.
+description: Tema de referencia del comando bitsadmin removeclientcertificate, que quita el certificado de cliente del trabajo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 312226b73b91385436e15c4afbb49df161258768
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 513830f6048f78aa528fa22cb590571e718452c2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123108"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717070"
 ---
 # <a name="bitsadmin-removeclientcertificate"></a>bitsadmin removeclientcertificate
 
@@ -34,12 +34,14 @@ bitsadmin /removeclientcertificate <job>
 
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se quita el certificado de cliente del trabajo denominado *myDownloadJob*.
+Para quitar el certificado de cliente del trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /removeclientcertificate myDownloadJob 
+bitsadmin /removeclientcertificate myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

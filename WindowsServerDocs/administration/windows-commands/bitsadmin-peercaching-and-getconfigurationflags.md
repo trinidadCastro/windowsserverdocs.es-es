@@ -1,6 +1,6 @@
 ---
-title: bitsadmin-caché y getconfigurationflags
-description: Tema de comandos de Windows para la caché de sistema de **bitsadmin** y **getconfigurationflags**, que obtiene las marcas de configuración que determinan si el equipo atiende el contenido a los elementos del mismo nivel y si puede descargar contenido de los equipos del mismo nivel.
+title: bitsadmin peercaching y getconfigurationflags
+description: Tema de referencia sobre el comando bitsadmin de caché y getconfigurationflags, que obtiene las marcas de configuración que determinan si el equipo atiende el contenido a los equipos del mismo nivel y si puede descargar contenido de los equipos del mismo nivel.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: be8d6a719d63c8e9c6250320560b6ce21274c680
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 62b6848dec30a9a9fef401b1b2372605dbb9934a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850178"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717323"
 ---
-# <a name="bitsadmin-peercaching-and-getconfigurationflags"></a>bitsadmin-caché y getconfigurationflags
+# <a name="bitsadmin-peercaching-and-getconfigurationflags"></a>bitsadmin peercaching y getconfigurationflags
 
 Obtiene las marcas de configuración que determinan si el equipo atiende el contenido a los elementos del mismo nivel y si puede descargar contenido de elementos del mismo nivel.
 
@@ -32,14 +32,18 @@ bitsadmin /peercaching /getconfigurationflags <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se obtienen las marcas de configuración para el trabajo denominado *myDownloadJob*.
+Para obtener las marcas de configuración para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\> bitsadmin /peercaching /getconfigurationflags myDownloadJob
+bitsadmin /peercaching /getconfigurationflags myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)
+
+- [bitsadmin (comando de caché)](bitsadmin-peercaching.md)

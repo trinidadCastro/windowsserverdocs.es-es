@@ -1,6 +1,6 @@
 ---
-title: bitsadmin pares y lista
-description: Tema de comandos de Windows para **bitsadmin pares** y **lista**, que enumera todos los elementos del mismo nivel.
+title: bitsadmin peers y list
+description: Tema de referencia del comando bitsadmin Peers and List, en el que se enumeran todos los elementos del mismo nivel.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a38f3ed825f6629c196d5ebac1e967f4fa06a940
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a6c1f8fbcb6ca40c86a1d589ba7217392b9875cf
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849938"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717147"
 ---
-# <a name="bitsadmin-peers-and-list"></a>bitsadmin pares y lista
+# <a name="bitsadmin-peers-and-list"></a>bitsadmin peers y list
 
 Enumera todos los elementos del mismo nivel.
 
@@ -26,14 +26,18 @@ Enumera todos los elementos del mismo nivel.
 bitsadmin /peers /list
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se enumeran todos los elementos del mismo nivel.
+Para enumerar todos los elementos del mismo nivel:
 
 ```
-C:\>bitsadmin /peers /list
+bitsadmin /peers /list
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)
+
+- [comando del mismo nivel de bitsadmin](bitsadmin-peers.md)

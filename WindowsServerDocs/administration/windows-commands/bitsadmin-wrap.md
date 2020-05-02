@@ -1,6 +1,6 @@
 ---
 title: bitsadmin wrap
-description: Tema de comandos de Windows para el **ajuste de bitsadmin**, que ajusta cualquier línea de texto de salida que se extienda más allá del borde derecho de la ventana de comandos a la línea siguiente.
+description: Tema de referencia del comando bitsadmin Wrap, que ajusta cualquier línea de texto de salida que se extienda más allá del borde derecho de la ventana de comandos a la línea siguiente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e754a765d94661baf24190431b455584d29991ec
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 8c1c2c78fd3cc78674ef497526ba236ad058fe83
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122564"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707572"
 ---
 # <a name="bitsadmin-wrap"></a>bitsadmin wrap
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Ajusta cualquier línea de texto de salida que se extienda más allá del borde derecho de la ventana de comandos a la línea siguiente. Debe especificar este modificador antes que cualquier otro modificador.
 
@@ -34,16 +34,18 @@ bitsadmin /wrap <job>
 
 | Parámetro | Descripción |
 | --------- | ---------- |
-| Trabajo | El nombre para mostrar o el GUID del trabajo. |
+| trabajo | El nombre para mostrar o el GUID del trabajo. |
 
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se recupera información del trabajo denominado *myDownloadJob* y se incluye la salida.
+Para recuperar información del trabajo denominado *myDownloadJob* y ajustar el texto de salida:
 
 ```
-C:\>bitsadmin /wrap /info myDownloadJob /verbose
+bitsadmin /wrap /info myDownloadJob /verbose
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)
