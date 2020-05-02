@@ -1,6 +1,6 @@
 ---
 title: nslookup set class
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc3bb4e36582f01584c0b89a12d43874322c3190
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b1ae3a5336815a5273aafa976b1dcad8b60fac9b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838588"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723657"
 ---
 # <a name="nslookup-set-class"></a>nslookup set class
 
@@ -32,7 +32,7 @@ set class=<Class>
 
 | Parámetro |                                                                                                                                    Descripción                                                                                                                                    |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \<clase >  | La clase predeterminada está en. A continuación se enumeran los valores válidos para este comando.</br>-IN: especifica la clase de Internet.</br>-CAOS: especifica la clase caos.</br>-HESIOD: especifica la clase MIT Athena Hesiod.</br>-ANY: especifica cualquiera de los caracteres comodín enumerados anteriormente. |
+| \<Class>  | La clase predeterminada está en. A continuación se enumeran los valores válidos para este comando.</br>-IN: especifica la clase de Internet.</br>-CAOS: especifica la clase caos.</br>-HESIOD: especifica la clase MIT Athena Hesiod.</br>-ANY: especifica cualquiera de los caracteres comodín enumerados anteriormente. |
 |   {ayuda   |                                                                                                                                        ?}                                                                                                                                         |
 
 ## <a name="additional-references"></a>Referencias adicionales

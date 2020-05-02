@@ -1,6 +1,6 @@
 ---
 title: mqbkup
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ff6fc2f483bceb99b970cd0c48f56985ecd485b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25bc5a0b5da0c78ccc68cf7b8fc70a5b4ec11a1f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839358"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723905"
 ---
 # <a name="mqbkup"></a>mqbkup
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Realiza una copia de seguridad de los archivos de mensajes y la configuración del registro de MSMQ en un dispositivo de almacenamiento y restaura los mensajes y configuraciones almacenados previamente.   
 La operación de copia de seguridad y restauración detendrá el servicio MSMQ local. Si el servicio MSMQ se inició de antemano, la utilidad intentará reiniciar el servicio MSMQ al final de la copia de seguridad o de la operación de restauración. Si el servicio ya se detuvo antes de ejecutar la utilidad, no se intentará reiniciar el servicio.  
@@ -32,9 +32,9 @@ mqbkup {/b | /r} <folder path_to_storage_device>
 |-------|--------|  
 |/b|Especifica la operación de copia de seguridad|  
 |/r|Especifica la operación de restauración|  
-|< carpeta path_to_storage\_dispositivo >|Especifica la ruta de acceso donde se almacenan los archivos de mensajes y la configuración del registro de MSMQ|  
-|/?|Muestra la Ayuda en el símbolo del sistema.|  
-## <a name="examples"></a><a name=BKMK_Examples></a>Example  
+|<carpeta path_to_storage\_dispositivo>|Especifica la ruta de acceso donde se almacenan los archivos de mensajes y la configuración del registro de MSMQ|  
+|/?|Muestra la ayuda en el símbolo del sistema.|  
+## <a name="examples"></a>Ejemplos  
 Para realizar una copia de seguridad de todos los archivos de mensajes de MSMQ y la configuración del registro y almacenarlos en la carpeta *Msmqbkup* de la unidad c:.  
 ```  
 mqbkup /b c:\msmqbkup  

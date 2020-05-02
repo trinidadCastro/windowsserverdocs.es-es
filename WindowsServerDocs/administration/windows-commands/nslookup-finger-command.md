@@ -1,6 +1,6 @@
 ---
-title: nslookup finger Command
-description: Tema de comandos de Windows para * * * *-
+title: Comando nslookup finger
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9cfdf60478ca917fb373d07a72f018cf09056b49
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 428c9e7e775c85992f861e30ae9628ea27f7ee70
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838788"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723721"
 ---
-# <a name="nslookup-finger-command"></a>nslookup finger Command
+# <a name="nslookup-finger-command"></a>Comando nslookup finger
 
 
 
@@ -32,8 +32,8 @@ finger [<UserName>] [{[>] <FileName>|[>>] <FileName>}]
 
 |  Parámetro  |                                                                               Descripción                                                                               |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \<nombre de usuario > |                                                               Especifica el nombre del usuario que se va a buscar.                                                                |
-| \<nombre de archivo > | Especifica un nombre de archivo en el que se guardará la salida. Puede usar los caracteres mayor que (>) y Double mayor que (> >) para redirigir la salida de la manera habitual. |
+| \<Nombre de usuario> |                                                               Especifica el nombre del usuario que se va a buscar.                                                                |
+| \<Nombre de archivo> | Especifica un nombre de archivo en el que se guardará la salida. Puede usar los caracteres mayor que (>) y Double mayor que (>>) para redirigir la salida de la manera habitual. |
 |    {ayuda    |                                                                                   ?}                                                                                    |
 
 ## <a name="additional-references"></a>Referencias adicionales

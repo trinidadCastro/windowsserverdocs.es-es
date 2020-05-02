@@ -1,6 +1,6 @@
 ---
 title: mklink
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d6328d972b07b1bebd272788b896fd491e47380
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 83a607711f0abe51810aa5abf4eb731206d810c2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839558"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723971"
 ---
 # <a name="mklink"></a>mklink
 Crea un vínculo simbólico.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,13 +34,13 @@ mklink [[/d] | [/h] | [/j]] <Link> <Target>
 |/d|Crea un vínculo simbólico de directorio. De forma predeterminada, **Mklink** crea un vínculo simbólico de archivo.|
 |/h|Crea un vínculo físico en lugar de un vínculo simbólico.|
 |/j|Crea una Unión de directorio.|
-|\<vínculo >|Especifica el nombre del vínculo simbólico que se va a crear.|
-|> de destino de \<|Especifica la ruta de acceso (relativa o absoluta) a la que hace referencia el nuevo vínculo simbólico.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|\<> de vínculos|Especifica el nombre del vínculo simbólico que se va a crear.|
+|\<Target>|Especifica la ruta de acceso (relativa o absoluta) a la que hace referencia el nuevo vínculo simbólico.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se muestra la creación y la eliminación de un vínculo simbólico denominado mis carpetas y el archivo. file desde el directorio raíz al directorio \Users\User1\Documents y un archivo example ubicado en el directorio:
+Para mostrar la creación y eliminación de un vínculo simbólico denominado mis carpetas y el archivo. file desde el directorio raíz al directorio \Users\User1\Documents y un archivo example ubicado en el directorio:
 ```
 mklink /d \MyFolder \Users\User1\Documents
 mklink /h \MyFile.file \User1\Documents\example.file

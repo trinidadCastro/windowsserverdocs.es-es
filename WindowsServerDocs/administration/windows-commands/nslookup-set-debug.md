@@ -1,6 +1,6 @@
 ---
 title: nslookup set debug
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a960be031dd5259906ba53c43c57f29b1a7b300
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 92a6f53105c682500d68fa7bf07fdcbacea75f34
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838548"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723631"
 ---
 # <a name="nslookup-set-debug"></a>nslookup set debug
 
@@ -34,9 +34,9 @@ set [no]debug
 |-------------|--------------------------------------------------------------|
 | **nodebug** | Desactiva el modo de depuración. La sintaxis predeterminada es **nodebug**. |
 |  **depura**  |                   Activa el modo de depuración.                   |
-|  \*\*{Help  |                            ?}\*\*                            |
+|  \*\*{ayuda  |                            ?}\*\*                            |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Con el modo de depuración activado, se imprime más información sobre el paquete que se envía al servidor y la respuesta resultante.
 

@@ -1,6 +1,6 @@
 ---
 title: volumen sin conexión
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 821132b41b55410223c0310f283b076526c9fbc4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d17295f3367fed054a7f6a245bae44ea3494a4a8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837978"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723451"
 ---
 # <a name="offline-volume"></a>volumen sin conexión
 
@@ -37,11 +37,11 @@ offline volume [noerr]
 |---------|-----------|
 |noerr|Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Se debe seleccionar un volumen para que esto se realice correctamente. Use el comando **seleccionar volumen** para seleccionar un disco y desplazar el foco a él.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para desconectar el disco con el foco, escriba:
 ```

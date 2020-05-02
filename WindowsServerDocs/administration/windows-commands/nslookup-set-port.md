@@ -1,6 +1,6 @@
 ---
 title: nslookup set port
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2fcd20a4a7866a830284d0c858bf17668228fb0c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 148137d11f6fc145e57caca4f60e5f6355fa5504
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838448"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723621"
 ---
 # <a name="nslookup-set-port"></a>nslookup set port
 

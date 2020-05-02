@@ -1,6 +1,6 @@
 ---
 title: volumen en línea
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 476dd893e7899a2bd58336546a7881934f415f92
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bb2ee396e4fa8a2e61001df0d979d85dabe1aa32
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837848"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723419"
 ---
 # <a name="online-volume"></a>volumen en línea
 
@@ -40,12 +40,12 @@ online volume [noerr]
 |---------|-----------|
 |noerr|Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Este comando funciona en los volúmenes en los que se ha producido un error, están produciendo errores o tienen un estado de redundancia con errores.
 -   Se debe seleccionar un volumen para que este comando se ejecute correctamente. Use el comando **seleccionar volumen** para seleccionar un volumen y cambiar el foco a él.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para poner en línea el volumen que tiene el foco, escriba:
 ```

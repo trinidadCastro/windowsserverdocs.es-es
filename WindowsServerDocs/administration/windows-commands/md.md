@@ -1,6 +1,6 @@
 ---
 title: Md
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2fad89fe4b7e8425064301f6020fefaa5705b25
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a605571fb74af99d0f365a100dd33fd4db0d3f22
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839588"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724005"
 ---
 # <a name="md"></a>Md
 
@@ -25,7 +25,7 @@ Crea un directorio o subdirectorio.
 > [!NOTE]
 > Este comando es el mismo que el comando **mkdir** .
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -38,15 +38,15 @@ mkdir [<Drive>:]<Path>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|> de \<unidad:|Especifica la unidad en la que desea crear el nuevo directorio.|
-|\<ruta de acceso >|Obligatorio. Especifica el nombre y la ubicación del nuevo directorio. El sistema de archivos determina la longitud máxima de cualquier ruta de acceso única.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|\<> de unidad:|Especifica la unidad en la que desea crear el nuevo directorio.|
+|\<Ruta de acceso>|Necesario. Especifica el nombre y la ubicación del nuevo directorio. El sistema de archivos determina la longitud máxima de cualquier ruta de acceso única.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Las extensiones de comandos, que están habilitadas de forma predeterminada, permiten usar un único comando **MD** para crear directorios intermedios en una ruta de acceso especificada.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para crear un directorio denominado Directory1 en el directorio actual, escriba:
 ```

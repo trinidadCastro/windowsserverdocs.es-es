@@ -1,6 +1,6 @@
 ---
 title: nbtstat
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8077228a6c72302e63a2d1b8123e7f7e0ff6b8e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0c3405818d3ed11d14dee6c2fc8796c024ef253e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839028"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723827"
 ---
 # <a name="nbtstat"></a>nbtstat
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Muestra las estadísticas de protocolo NetBIOS sobre TCP/IP (NetBT), las tablas de nombre NetBIOS para el equipo local y los equipos remotos, y la caché de nombres NetBIOS. **Nbtstat** permite una actualización de la caché de nombres NetBIOS y los nombres registrados en el servicio de nombres Internet de Windows (WINS). Si se usa sin parámetros, **Nbtstat** muestra la ayuda. 
 
@@ -32,9 +32,9 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 
 |    Parámetro    |                                                                                                                         Descripción                                                                                                                         |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /a <remoteName> |    Muestra la tabla de nombres NetBIOS de un equipo remoto, donde *remoteName* es el nombre de equipo NetBIOS del equipo remoto. La tabla de nombres NetBIOS es la lista de nombres NetBIOS que corresponde a las aplicaciones NetBIOS que se ejecutan en ese equipo.     |
-| /A <IPaddress>  |                                                           Muestra la tabla de nombres NetBIOS de un equipo remoto, especificada por la dirección IP (en notación decimal con puntos) del equipo remoto.                                                            |
-|       /c        |                                                                        Muestra el contenido de la caché de nombres NetBIOS, la tabla de nombres NetBIOS y sus direcciones IP resueltas.                                                                         |
+| /a<remoteName> |    Muestra la tabla de nombres NetBIOS de un equipo remoto, donde *remoteName* es el nombre de equipo NetBIOS del equipo remoto. La tabla de nombres NetBIOS es la lista de nombres NetBIOS que corresponde a las aplicaciones NetBIOS que se ejecutan en ese equipo.     |
+| /A<IPaddress>  |                                                           Muestra la tabla de nombres NetBIOS de un equipo remoto, especificada por la dirección IP (en notación decimal con puntos) del equipo remoto.                                                            |
+|       /C        |                                                                        Muestra el contenido de la caché de nombres NetBIOS, la tabla de nombres NetBIOS y sus direcciones IP resueltas.                                                                         |
 |       /n        |                                            Muestra la tabla de nombres NetBIOS del equipo local. El estado **registrado** indica que el nombre se registra mediante difusión o con un servidor WINS.                                             |
 |       /r        |      Muestra las estadísticas de resolución de nombres NetBIOS. En un equipo que ejecuta Windows XP o Windows Server 2003 y que está configurado para usar WINS, este parámetro devuelve el número de nombres que se han resuelto y registrado mediante difusión y WINS.       |
 |       /R        |                                                                      Purga el contenido de la caché de nombres NetBIOS y, a continuación, vuelve a cargar las entradas etiquetadas por el #PRE del archivo **Lmhosts** .                                                                      |
@@ -42,9 +42,9 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 |       /s        |                                                                          Muestra las sesiones de cliente y servidor NetBIOS, intentando convertir la dirección IP de destino en un nombre.                                                                           |
 |       /S        |                                                                          Muestra las sesiones de cliente y servidor de NetBIOS, que solo muestran los equipos remotos por dirección IP de destino.                                                                          |
 |   <Interval>    | Vuelve a mostrar las estadísticas seleccionadas y pausa el número de segundos especificados en *intervalo* entre cada pantalla. Presione CTRL + C para detener la visualización de las estadísticas. Si se omite este parámetro, **Nbtstat** imprime la información de configuración actual una sola vez. |
-|       /?        |                                                                                                            Muestra la Ayuda en el símbolo del sistema.                                                                                                             |
+|       /?        |                                                                                                            Muestra la ayuda en el símbolo del sistema.                                                                                                             |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   los parámetros de la línea de comandos **Nbtstat** distinguen mayúsculas de minúsculas.
 
@@ -53,35 +53,35 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     |Encabezado|Descripción|
     |------|--------|
     |Entrada|Número de bytes recibidos.|
-    |Salida|Número de bytes enviados.|
-    |Entrada/salida|Si la conexión procede del equipo (saliente) o de otro equipo al equipo local (entrante).|
-    |Dura|La hora a la que se activará una entrada de la caché de tabla de nombres antes de que se purgue.|
+    |Output|Número de bytes enviados.|
+    |Dentro/fuera|Si la conexión procede del equipo (saliente) o de otro equipo al equipo local (entrante).|
+    |Life|La hora a la que se activará una entrada de la caché de tabla de nombres antes de que se purgue.|
     |Nombre local|Nombre NetBIOS local asociado a la conexión.|
     |Host remoto|El nombre o la dirección IP asociada al equipo remoto.|
-    |< 03 >|El último byte de un nombre NetBIOS convertido en hexadecimal. Cada nombre NetBIOS tiene una longitud de 16 caracteres. Este último byte suele tener una importancia especial, ya que el mismo nombre puede estar presente varias veces en un equipo, que solo difiere en el último byte. Por ejemplo, < 20 > es un espacio en texto ASCII.|
-    |tipo|Tipo de nombre. Un nombre puede ser un nombre único o un nombre de grupo.|
-    |Estado|Si el servicio NetBIOS del equipo remoto se está ejecutando (registrado) o un nombre de equipo duplicado ha registrado el mismo servicio (conflicto).|
-    |Estado|El estado de las conexiones NetBIOS.|
+    |<03>|El último byte de un nombre NetBIOS convertido en hexadecimal. Cada nombre NetBIOS tiene una longitud de 16 caracteres. Este último byte suele tener una importancia especial, ya que el mismo nombre puede estar presente varias veces en un equipo, que solo difiere en el último byte. Por ejemplo, <20> es un espacio en texto ASCII.|
+    |type|Tipo de nombre. Un nombre puede ser un nombre único o un nombre de grupo.|
+    |Status|Si el servicio NetBIOS del equipo remoto se está ejecutando (registrado) o un nombre de equipo duplicado ha registrado el mismo servicio (conflicto).|
+    |State|El estado de las conexiones NetBIOS.|
 
 -   En la tabla siguiente se describen los posibles estados de conexión NetBIOS:
 
-    |Estado|Descripción|
+    |State|Descripción|
     |-----|--------|
     |Conectado|Se ha establecido una sesión.|
     |asociadas|Se ha creado un extremo de conexión y se ha asociado a una dirección IP.|
     |escuchar|Este extremo está disponible para una conexión entrante.|
     |Inactivo|Este punto de conexión se ha abierto pero no puede recibir conexiones.|
-    |Conectando|Una sesión se encuentra en la fase de conexión y se está resolviendo la asignación de nombre a dirección IP del destino.|
+    |Connecting|Una sesión se encuentra en la fase de conexión y se está resolviendo la asignación de nombre a dirección IP del destino.|
     |Aceptar|Una sesión entrante se está aceptando actualmente y se conectará en breve.|
     |Reconexión|Una sesión está intentando volver a conectarse (no se pudo conectar en el primer intento).|
-    |Saliente|Una sesión se encuentra en la fase de conexión y la conexión TCP se está creando actualmente.|
-    |Entrante|Una sesión entrante está en la fase de conexión.|
+    |Salida|Una sesión se encuentra en la fase de conexión y la conexión TCP se está creando actualmente.|
+    |Entrada|Una sesión entrante está en la fase de conexión.|
     |Desconectando|Una sesión se encuentra en el proceso de desconexión.|
-    |Disconnected|El equipo local ha emitido una desconexión y está esperando la confirmación del sistema remoto.|
+    |Escenario desconectado|El equipo local ha emitido una desconexión y está esperando la confirmación del sistema remoto.|
 
 -   Este comando solo está disponible si el Protocolo Protocolo de Internet (TCP/IP) se instala como componente en las propiedades de un adaptador de red en las conexiones de red.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 Para mostrar la tabla de nombres NetBIOS del equipo remoto con el nombre de equipo NetBIOS de CORP07, escriba:
 
 ```

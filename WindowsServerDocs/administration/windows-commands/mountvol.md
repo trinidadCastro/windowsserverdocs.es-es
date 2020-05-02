@@ -1,6 +1,6 @@
 ---
 title: mountvol
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 34a98a273274f7982bfdd970710c04178fed4f5a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ca3e4320499161194f87ceaca4f693ff997f3ba2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839388"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723923"
 ---
 # <a name="mountvol"></a>mountvol
 
 
 
 Crea, elimina o enumera un punto de montaje de volumen.
-
-Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -41,7 +39,7 @@ mountvol <Drive>: /s
 |Parámetro|Descripción|
 |---------|-----------|
 |[\<> de unidad:]<Path>|Especifica el directorio NTFS existente donde residirá el punto de montaje.|
-|\<VolumeName >|Especifica el nombre del volumen que es el destino del punto de montaje. El nombre del volumen utiliza la sintaxis siguiente, donde *GUID* es un identificador único global:</br>`\\\\?\Volume\{GUID}\`</br>Los corchetes {} son obligatorios.|
+|\<VolumeName>|Especifica el nombre del volumen que es el destino del punto de montaje. El nombre del volumen utiliza la sintaxis siguiente, donde *GUID* es un identificador único global:</br>`\\\\?\Volume\{GUID}\`</br>Los corchetes {} son obligatorios.|
 |/d|Quita el punto de montaje del volumen de la carpeta especificada.|
 |/l|Muestra el nombre del volumen montado para la carpeta especificada.|
 |/p|Quita el punto de montaje del volumen del directorio especificado, desmonta el volumen básico y desconecta el volumen básico, lo que hace que sea desmontable. Si otros procesos están usando el volumen, **Mountvol** cierra los identificadores abiertos antes de desmontar el volumen.|
@@ -49,15 +47,15 @@ mountvol <Drive>: /s
 |/n|Deshabilita el montaje automático de nuevos volúmenes básicos. Los nuevos volúmenes no se montan automáticamente cuando se agregan al sistema.|
 |/e|Vuelve a habilitar el montaje automático de nuevos volúmenes básicos.|
 |/s|Monta la partición del sistema EFI en la unidad especificada.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   **Mountvol** le permite vincular volúmenes sin necesidad de una letra de unidad.
 -   Los volúmenes que se desmontan con **/p** se enumeran en la lista de volúmenes como no montados hasta que se crea un punto de montaje de volumen. Si el volumen tiene más de un punto de montaje, use **/d** para quitar los puntos de montaje adicionales antes de usar **/p**. Puede volver a hacer que se pueda montar el volumen básico si asigna un punto de montaje de volumen.
--   Si necesita expandir el espacio de volumen sin volver a formatear o reemplazar una unidad de disco duro, puede Agregar una ruta de acceso de montaje a otro volumen. La ventaja de usar un volumen con varias rutas de acceso de montaje es que puede acceder a todos los volúmenes locales mediante una sola letra de unidad (como `C:`). No es necesario recordar qué volumen corresponde a la letra de unidad, aunque todavía puede montar volúmenes locales y asignarles letras de unidad.
+-   Si necesita expandir el espacio de volumen sin volver a formatear o reemplazar una unidad de disco duro, puede Agregar una ruta de acceso de montaje a otro volumen. La ventaja de usar un volumen con varias rutas de acceso de montaje es que puede acceder a todos los volúmenes locales mediante una sola letra de `C:`unidad (como). No es necesario recordar qué volumen corresponde a la letra de unidad, aunque todavía puede montar volúmenes locales y asignarles letras de unidad.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para crear un punto de montaje, escriba:
 ```

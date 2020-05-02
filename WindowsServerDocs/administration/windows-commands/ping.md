@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c9e03b45d889bcac87bd3e533ab69c7a07be74ee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 70d10267e6b5f77c9cc32ea29f222e730b1182d1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837558"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723310"
 ---
 # <a name="ping"></a>ping
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 El comando **ping** comprueba la conectividad de nivel IP con otro equipo TCP/IP mediante el envío de mensajes de solicitud de eco del Protocolo de mensajes de control de Internet (ICMP). Se muestra la recepción de los mensajes de respuesta de eco correspondientes, junto con los tiempos de ida y vuelta. Ping es el comando TCP/IP principal que se usa para solucionar problemas de conectividad, disponibilidad y resolución de nombres. Si se usa sin parámetros, **ping** muestra la ayuda.
 
@@ -37,9 +37,9 @@ ping [/t] [/a] [/n <Count>] [/l <Size>] [/f] [/I <TTL>] [/v <TOS>] [/r <Count>] 
 |/n \<recuento\>|Especifica el número de mensajes de solicitud de eco enviados. El valor predeterminado es 4.|
 |/l \<tamaño\>|Especifica la longitud, en bytes, del campo de datos de los mensajes de solicitud de eco enviados. El valor predeterminado es 32. El tamaño máximo es 65.527.|
 |/f|Especifica que los mensajes de solicitud de eco se envían con la marca no Fragment en el encabezado IP establecido en 1 (disponible solo en IPv4). Los enrutadores de la ruta de acceso al destino no pueden fragmentar el mensaje de solicitud de eco. Este parámetro es útil para solucionar problemas de la unidad de transmisión máxima (PMTU) de la ruta de acceso.|
-|/I \<TTL\>|Especifica el valor del campo TTL en el encabezado IP para los mensajes de solicitud de eco enviados. El valor predeterminado es el valor de TTL predeterminado para el host. El *TTL* máximo es 255.|
-|/v \<TOS\>|Especifica el valor del campo de tipo de servicio (TOS) en el encabezado IP para los mensajes de solicitud de eco enviados (disponible solo en IPv4). El valor predeterminado es 0. *Tos* se especifica como un valor decimal entre 0 y 255.|
-|/r \<recuento\>|Especifica que la opción registrar ruta del encabezado IP se usa para registrar la ruta de acceso tomada por el mensaje de solicitud de eco y el mensaje de respuesta de eco correspondiente (disponible solo en IPv4). Cada salto de la ruta de acceso usa una entrada en la opción registrar ruta. Si es posible, especifique un *recuento* que sea igual o mayor que el número de saltos entre el origen y el destino. El *recuento* debe ser un mínimo de 1 y un máximo de 9.|
+|/i \<TTL\>|Especifica el valor del campo TTL en el encabezado IP para los mensajes de solicitud de eco enviados. El valor predeterminado es el valor de TTL predeterminado para el host. El *TTL* máximo es 255.|
+|/v \<tos\>|Especifica el valor del campo de tipo de servicio (TOS) en el encabezado IP para los mensajes de solicitud de eco enviados (disponible solo en IPv4). El valor predeterminado es 0. *Tos* se especifica como un valor decimal entre 0 y 255.|
+|recuento de/r \<\>|Especifica que la opción registrar ruta del encabezado IP se usa para registrar la ruta de acceso tomada por el mensaje de solicitud de eco y el mensaje de respuesta de eco correspondiente (disponible solo en IPv4). Cada salto de la ruta de acceso usa una entrada en la opción registrar ruta. Si es posible, especifique un *recuento* que sea igual o mayor que el número de saltos entre el origen y el destino. El *recuento* debe ser un mínimo de 1 y un máximo de 9.|
 |/s \<recuento\>|Especifica que la opción de marca de tiempo de Internet del encabezado IP se utiliza para registrar la hora de llegada del mensaje de solicitud de eco y el mensaje de respuesta de eco correspondiente para cada salto. El *recuento* debe ser un mínimo de 1 y un máximo de 4. Esto es necesario para las direcciones de destino locales de vínculo.|
 |/j \<hostlist\>|Especifica que los mensajes de solicitud de eco usan la opción de ruta de origen flexible del encabezado IP con el conjunto de destinos intermedios especificado en *hostlist* (disponible solo en IPv4). Con el enrutamiento de origen suelto, los destinos intermedios sucesivos pueden estar separados por uno o varios enrutadores. El número máximo de direcciones o nombres en la lista de hosts es 9. La lista de hosts es una serie de direcciones IP (en notación decimal con puntos) separadas por espacios.|
 |/k \<hostlist\>|Especifica que los mensajes de solicitud de eco usan la opción de ruta de origen estricta en el encabezado IP con el conjunto de destinos intermedios especificado en *hostlist* (disponible solo en IPv4). Con el enrutamiento de origen estricto, el siguiente destino intermedio debe ser accesible directamente (debe ser un vecino en una interfaz del enrutador). El número máximo de direcciones o nombres en la lista de hosts es 9. La lista de hosts es una serie de direcciones IP (en notación decimal con puntos) separadas por espacios.|
@@ -48,17 +48,17 @@ ping [/t] [/a] [/n <Count>] [/l <Size>] [/f] [/I <TTL>] [/v <TOS>] [/r <Count>] 
 |/S \<srcaddr\>|Especifica la dirección de origen que se va a usar (disponible solo en IPv6).|
 |/4|Especifica que IPv4 se usa para hacer ping. Este parámetro no es necesario para identificar el host de destino con una dirección IPv4. Solo es necesario identificar el host de destino por nombre.|
 |/6|Especifica que IPv6 se usa para hacer ping. Este parámetro no es necesario para identificar el host de destino con una dirección IPv6. Solo es necesario identificar el host de destino por nombre.|
-|\<TargetName\>|Especifica el nombre de host o la dirección IP del destino.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|\<NombreDeDestino\>|Especifica el nombre de host o la dirección IP del destino.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Puede usar **ping** para probar el nombre del equipo y la dirección IP del equipo. Si la operación de hacer ping a la dirección IP es correcta, pero no se puede hacer ping en el nombre del equipo, es posible que tenga un problema de resolución de nombres. En este caso, asegúrese de que el nombre de equipo que está especificando se puede resolver a través del archivo de hosts local, mediante consultas del sistema de nombres de dominio (DNS) o mediante técnicas de resolución de nombres de NetBIOS.
 -   Este comando solo está disponible si el Protocolo Protocolo de Internet (TCP/IP) se instala como componente en las propiedades de un adaptador de red en las conexiones de red.
 
-## <a name="examples"></a><a name="BKMK_Examples"></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se muestra la salida del comando **ping** :
+Para mostrar la salida del comando **ping** :
 
 ```
 C:\>ping example.microsoft.com       

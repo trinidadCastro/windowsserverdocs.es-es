@@ -1,6 +1,6 @@
 ---
 title: mask
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a1cb92caacb955449c1baaad411fdbe4cdf05b73
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 816bcd932091b33ed897add5a13603e3a1eea925
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839648"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724018"
 ---
 # <a name="mask"></a>mask
 
@@ -22,7 +22,7 @@ ms.locfileid: "80839648"
 
 Quita las instantáneas de hardware que se importaron mediante el comando de **importación** .
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,11 +36,11 @@ mask <ShadowSetID>
 |---------|-----------|
 |ShadowSetID|Quita las instantáneas que pertenecen al identificador de conjunto de instantáneas especificado.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Puede usar un alias existente o una variable de entorno en lugar de *ShadowSetID*. Use **Agregar** sin parámetros para ver los alias existentes.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para quitar la instantánea importada% Import_1%, escriba:
 ```

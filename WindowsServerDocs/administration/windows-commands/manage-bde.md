@@ -1,6 +1,6 @@
 ---
 title: manage-bde
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 816e20152ec40ce54c1192f3075c6f4556aed3db
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 567e0ed45f6bef42e82c3a68b3c0cbbb352b12d9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839698"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724032"
 ---
 # <a name="manage-bde"></a>manage-bde
 
 
 
-Se usa para activar o desactivar BitLocker, especificar mecanismos de desbloqueo, actualizar métodos de recuperación y desbloquear unidades de datos protegidas por BitLocker. Esta herramienta de línea de comandos se puede usar en lugar de la **cifrado de unidad BitLocker** elemento del panel de control. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Se usa para activar o desactivar BitLocker, especificar mecanismos de desbloqueo, actualizar métodos de recuperación y desbloquear unidades de datos protegidas por BitLocker. Esta herramienta de línea de comandos se puede usar en lugar de la **cifrado de unidad BitLocker** elemento del panel de control.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -44,27 +44,27 @@ manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unloc
 |[Manage-bde: protectors](manage-bde-protectors.md)|Administra métodos de protección para la clave de cifrado.|
 |[Manage-bde: tpm](manage-bde-tpm.md)|Configura el Módulo de plataforma segura del equipo (TPM). Este comando no se admite en equipos que ejecutan Windows 8 o **win8_server_2**. Para administrar el TPM en estos equipos, use el complemento MMC administración de TPM o los cmdlets de administración de TPM para Windows PowerShell.|
 |[Manage-bde: setidentifier](manage-bde-setidentifier.md)|Establece el campo Identificador de unidad de la unidad en el valor especificado en la configuración **proporcionar los identificadores únicos de la organización** Directiva de grupo.|
-|[Manage-BDE: ForceRecovery](manage-bde-forcerecovery.md)|Fuerza una unidad protegida por BitLocker en modo de recuperación al reiniciarse. Este comando elimina de la unidad todos los protectores de clave relacionados con TPM. Cuando se reinicia el equipo, solo se puede usar una contraseña de recuperación o una clave de recuperación para desbloquear la unidad.|
+|[Manage-bde: ForceRecovery](manage-bde-forcerecovery.md)|Fuerza una unidad protegida por BitLocker en modo de recuperación al reiniciarse. Este comando elimina de la unidad todos los protectores de clave relacionados con TPM. Cuando se reinicia el equipo, solo se puede usar una contraseña de recuperación o una clave de recuperación para desbloquear la unidad.|
 |[Manage-bde: changepassword](manage-bde-changepassword.md)|Modifica la contraseña de una unidad de datos.|
 |[Manage-bde: changepin](manage-bde-changepin.md)|Modifica el PIN de una unidad del sistema operativo.|
 |[Manage-bde: changekey](manage-bde-changekey.md)|Modifica la clave de inicio de una unidad del sistema operativo.|
-|[Manage-BDE: KeyPackage](manage-bde-keypackage.md)|Genera un paquete de claves para una unidad.|
+|[Manage-bde: KeyPackage](manage-bde-keypackage.md)|Genera un paquete de claves para una unidad.|
 |[Manage-bde: upgrade](manage-bde-upgrade.md)|Actualiza la versión de BitLocker.|
-|[Manage-BDE: WipeFreeSpace](manage-bde-wipefreespace.md)|Borra el espacio libre de una unidad.|
+|[Manage-bde: WipeFreeSpace](manage-bde-wipefreespace.md)|Borra el espacio libre de una unidad.|
 |-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
 |-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se muestran las unidades del equipo y se identifica si están protegidas por BitLocker y el estado de cifrado actual.
+Para mostrar las unidades del equipo e identifica si están protegidas por BitLocker y el estado de cifrado actual.
 ```
 manage-bde -status
 ```
-En el ejemplo siguiente se muestra cómo habilitar BitLocker en la unidad C con la opción de una contraseña de recuperación. BitLocker generará la contraseña de recuperación y se mostrará en la pantalla para que pueda grabarla.
+Para ilustrar la habilitación de BitLocker en la unidad C con la opción de una contraseña de recuperación. BitLocker generará la contraseña de recuperación y se mostrará en la pantalla para que pueda grabarla.
 ```
 manage-bde –on C: -recoverypassword
 ```
-En el ejemplo siguiente se muestra cómo desbloquear una unidad protegida con BitLocker mediante una contraseña de recuperación.
+Ilustra el desbloqueo de una unidad protegida con BitLocker mediante una contraseña de recuperación.
 ```
 manage-bde –unlock E: -recoverypassword 111111-222222-333333-444444-555555-666666-777777-888888
 ```

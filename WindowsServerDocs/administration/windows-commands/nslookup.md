@@ -1,6 +1,6 @@
 ---
 title: nslookup
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 15062d81992ee1b6e55d47cb9e49822350e4f2bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 35f790a3a537959501afe7c3173317f22b934ec6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838098"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723495"
 ---
 # <a name="nslookup"></a>nslookup
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Muestra información que puede usar para diagnosticar la infraestructura del sistema de nombres de dominio (DNS). Antes de usar esta herramienta, debe estar familiarizado con el funcionamiento de DNS. La herramienta de línea de comandos nslookup solo está disponible si se ha instalado el protocolo TCP/IP.
 ## <a name="syntax"></a>Sintaxis
@@ -84,7 +84,7 @@ nslookup /view <FileName>
 |         [nslookup set vc](nslookup-set-vc.md)         |                                                                     Especifica que se use o no un circuito virtual al enviar solicitudes al servidor.                                                                      |
 |           [nslookup view](nslookup-view.md)           |                                                                          Ordena y muestra la salida del subcomando o los comandos **LS** anteriores.                                                                          |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 - Si *computerTofind* es una dirección IP y la consulta es para un tipo de registro de recursos A o PTR, se devuelve el nombre del equipo. Si *computerTofind* es un nombre y no tiene un punto final, el nombre de dominio DNS predeterminado se anexa al nombre. Este comportamiento depende del estado de los siguientes subcomandos **set** : **Domain**, **srchlist**, **defname**y **Search**.
 - Si escribe un guión (-) en lugar de *computerTofind*, el símbolo del sistema cambia al modo interactivo de **nslookup** .
 - La longitud de la línea de comandos debe ser inferior a 256 caracteres.
@@ -93,7 +93,7 @@ nslookup /view <FileName>
   Si necesita buscar más de un fragmento de datos, puede usar el modo interactivo. Escriba un guión (-) para el primer parámetro y el nombre o la dirección IP de un servidor de nombres DNS para el segundo parámetro. O bien, omita ambos parámetros y **nslookup** usará el servidor de nombres DNS predeterminado. A continuación se muestran algunas sugerencias sobre cómo trabajar en modo interactivo:
   -   Para interrumpir los comandos interactivos en cualquier momento, presione CTRL + B.
   -   Para salir, escriba **Exit**.
-  -   Para tratar un comando integrado como un nombre de equipo, debe ir precedido del carácter de escape (\\).
+  -   Para tratar un comando integrado como un nombre de equipo, debe ir precedido por el carácter de\\escape ().
   -   Un comando desconocido se interpreta como un nombre de equipo.
 - Si se produce un error en la solicitud de búsqueda, **nslookup** imprime un mensaje de error. En la tabla siguiente se enumeran los posibles mensajes de error.
   |**Mensaje de error**|**Descripción**|
@@ -102,7 +102,7 @@ nslookup /view <FileName>
   |`No response from server`|No se está ejecutando ningún servidor de nombres DNS en el equipo servidor.|
   |`No records`|El servidor de nombres DNS no tiene registros de recursos del tipo de consulta actual para el equipo, aunque el nombre del equipo es válido. El tipo de consulta se especifica con el comando **set QueryType** .|
   |`Nonexistent domain`|El nombre del equipo o dominio DNS no existe.|
-  |`Connection refused`<p>O bien,<p>`Network is unreachable`|No se pudo establecer la conexión con el servidor de nombres DNS o el servidor Finger. Este error suele producirse con solicitudes **LS** y **Finger** .|
+  |`Connection refused`<p>O bien<p>`Network is unreachable`|No se pudo establecer la conexión con el servidor de nombres DNS o el servidor Finger. Este error suele producirse con solicitudes **LS** y **Finger** .|
   |`Server failure`|El servidor de nombres DNS encontró una incoherencia interna en su base de datos y no pudo devolver una respuesta válida.|
   |`Refused`|El servidor de nombres DNS rechazó el servicio de la solicitud.|
   |`format error`|El servidor de nombres DNS detectó que el paquete de solicitud no tenía el formato correcto. Puede indicar un error en **nslookup**.|
@@ -112,5 +112,5 @@ nslookup /view <FileName>
   - Larson, M. y C. Liu. 2001. *DNS en Windows 2000*. Sebastopol, California: O'Reilly y Associates, Inc.
     #### <a name="examples"></a>Ejemplos
     Cada opción de línea de comandos está formada por un guión (-) seguido inmediatamente del nombre del comando y, en algunos casos, un signo igual (=) y, a continuación, un valor. Por ejemplo, para cambiar el tipo de consulta predeterminado a información de host (equipo) y el tiempo de espera inicial a 10 segundos, escriba: **nslookup-QueryType = HINFO-timeout = 10**
-    ## <a name="see-also"></a>Consulta también
+    ## <a name="see-also"></a>Consulte también
     - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

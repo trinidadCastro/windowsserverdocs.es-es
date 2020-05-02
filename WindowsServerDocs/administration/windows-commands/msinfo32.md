@@ -1,6 +1,6 @@
 ---
 title: msinfo32
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a77cf9ae4c5f054e66839ff5b5b057e031b36ff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0db8a4549ac26ef61d4aa8f435a01d3224501a77
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839118"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723846"
 ---
 # <a name="msinfo32"></a>msinfo32
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Abre la herramienta información del sistema para mostrar una vista completa del hardware, los componentes del sistema y el entorno de software en el equipo local. 
 ## <a name="syntax"></a>Sintaxis
@@ -37,13 +37,13 @@ msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/show
 |     /Report     |                                               Guarda el archivo en la *ruta de acceso* como un archivo de texto. El nombre de archivo se guarda exactamente como aparece en *ruta de acceso*. La extensión. txt no se anexa al archivo a menos que se especifique en ruta de acceso.                                                |
 |    /Computer    |                                                                inicia la herramienta de información del sistema para el equipo remoto especificado. Debe tener los permisos adecuados para obtener acceso al equipo remoto.                                                                |
 | /showcategories |                         inicia la herramienta de información del sistema con todos los identificadores de categoría disponibles mostrados, en lugar de mostrar los nombres descriptivos o localizados. Por ejemplo, la categoría entorno de software se muestra como la categoría **SWEnv** .                         |
-|    /category    |                                                                     inicia la información del sistema con la categoría especificada seleccionada. Use **/showcategories** para mostrar una lista de los identificadores de categoría disponibles.                                                                     |
+|    /categoría    |                                                                     inicia la información del sistema con la categoría especificada seleccionada. Use **/showcategories** para mostrar una lista de los identificadores de categoría disponibles.                                                                     |
 |   /Categories   |                          inicia la información del sistema solo con la categoría o categorías especificadas que se muestran. También limita la salida a la categoría o categorías seleccionadas. Use **/showcategories** para mostrar una lista de los identificadores de categoría disponibles.                          |
-|       /?        |                                                                                                                     Muestra la Ayuda en el símbolo del sistema.                                                                                                                     |
+|       /?        |                                                                                                                     Muestra la ayuda en el símbolo del sistema.                                                                                                                     |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 Algunas categorías de información del sistema contienen grandes cantidades de datos. Puede usar el comando **Start/wait** para optimizar el rendimiento de los informes de estas categorías. Para obtener más información, vea [información del sistema](https://technet.microsoft.com/library/cc783305(v=ws.10).aspx).
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 Para enumerar los identificadores de categoría disponibles, escriba:
 ```
 msinfo32 /showcategories

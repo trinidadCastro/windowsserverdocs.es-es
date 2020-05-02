@@ -1,6 +1,6 @@
 ---
 title: Manage-BDE (bloqueo)
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cc95b2e4a1ad242ffb748782ffb319fd2017c510
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a4d3c61a1e6f7481e1ceabed4473e34912b22b33
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80840058"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724154"
 ---
 # <a name="manage-bde-lock"></a>Manage-BDE: bloqueo
 
 
 
-Bloquea una unidad protegida con BitLocker para impedir el acceso a ella a menos que se proporcione la clave de desbloqueo. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Bloquea una unidad protegida con BitLocker para impedir el acceso a ella a menos que se proporcione la clave de desbloqueo.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,15 +32,15 @@ manage-bde -lock [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<unidad >|Representa la letra de una unidad seguida del signo de dos puntos.|
+|\<> de unidad|Representa la letra de una unidad seguida del signo de dos puntos.|
 |-COMPUTERNAME|Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando.|
-|Nombre del \<>|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
+|\<Name>|Representa el nombre del equipo en el que se va a modificar la protección de BitLocker. Los valores aceptados incluyen el nombre NetBIOS del equipo y la dirección IP del equipo.|
 |-? o/?|Muestra una breve ayuda en el símbolo del sistema.|
 |-Help o-h|Muestra la ayuda completa en el símbolo del sistema.|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se muestra el uso del comando **-Lock** para bloquear la unidad de datos D.
+Ilustra el uso del comando **-Lock** para bloquear la unidad de datos D.
 ```
 manage-bde –lock D:
 ```

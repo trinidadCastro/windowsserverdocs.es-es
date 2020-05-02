@@ -1,6 +1,6 @@
 ---
 title: protectores de Manage-BDE
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: 1a2e2c851ec9bc93ec434a35f14c6f92ec831876
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e01049a5fb3dc419e219fe4ec8b11dcdc790f919
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839958"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724118"
 ---
 # <a name="manage-bde-protectors"></a>Manage-BDE: protectores
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Administra los métodos de protección usados para la clave de cifrado de BitLocker. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Administra los métodos de protección usados para la clave de cifrado de BitLocker.
 ## <a name="syntax"></a>Sintaxis
 ```
 manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup}] <Drive> [-computername <Name>] [{-?|/?}] [{-help|-h}]
@@ -53,9 +53,9 @@ manage-bde  -protectors  -add [<Drive>] [-forceupgrade] [-recoverypassword <Nume
 |          Parámetro           |                                                                                                                                                                                   Descripción                                                                                                                                                                                   |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |           <Drive>            |                                                                                                                                                                 Representa la letra de una unidad seguida del signo de dos puntos.                                                                                                                                                                  |
-|      -RecoveryPassword       |                                                                                                                                    Agrega un protector de contraseña numérica. También puede usar **-RP** como una versión abreviada de este comando.                                                                                                                                     |
+|      -RecoveryPassword       |                                                                                                                                    agrega un protector de contraseña numérica. También puede usar **-RP** como una versión abreviada de este comando.                                                                                                                                     |
 |     <NumericalPassword>      |                                                                                                                                                                        Representa la contraseña de recuperación.                                                                                                                                                                        |
-|         -recoverykey         |                                                                                                                                Agrega un protector de clave externa para la recuperación. También puede usar **-RK** como una versión abreviada de este comando.                                                                                                                                 |
+|         -recoverykey         |                                                                                                                                agrega un protector de clave externa para la recuperación. También puede usar **-RK** como una versión abreviada de este comando.                                                                                                                                 |
 | <pathToExternalKeydirectory> |                                                                                                                                                               Representa la ruta de acceso del directorio a la clave de recuperación.                                                                                                                                                                |
 |         -clave          |                                                                                                                                 agrega un protector de clave externa para el inicio. También puede usar **-SK** como una versión abreviada de este comando.                                                                                                                                 |
 | <pathToExternalKeydirectory> |                                                                                                                                                                Representa la ruta de acceso al directorio de la clave de inicio.                                                                                                                                                                |
@@ -64,7 +64,7 @@ manage-bde  -protectors  -add [<Drive>] [-forceupgrade] [-recoverypassword <Nume
 |   <pathToCertificateFile>    |                                                                                                                                                             Representa la ruta de acceso del directorio al archivo de certificado.                                                                                                                                                              |
 |             -CT              |                                                                                                                                           Especifica que se usará una huella digital de certificado para identificar el certificado de clave pública.                                                                                                                                           |
 |   <CertificateThumbprint>    |                                                       Especifica el valor de la propiedad huella digital del certificado que desea utilizar. Por ejemplo, un valor de huella digital de certificado de A9 09 50 2D D8 2A E4 14 33 E6 F8 38 86 B0 0d 42 77 a3 2A 7B debe especificarse como a909502dd82ae41433e6f83886b00d4277a32a7b.                                                        |
-|          -tpmandpin          |                                                                                           Agrega un protector de Módulo de plataforma segura (TPM) y un número de identificación personal (PIN) para la unidad del sistema operativo. También puede usar **-TP** como una versión abreviada de este comando.                                                                                           |
+|          -tpmandpin          |                                                                                           agrega un protector de Módulo de plataforma segura (TPM) y un número de identificación personal (PIN) para la unidad del sistema operativo. También puede usar **-TP** como una versión abreviada de este comando.                                                                                           |
 |      -tpmandstartupkey       |                                                                                                                    agrega un protector de clave de inicio y TPM para la unidad del sistema operativo. También puede usar **-TSK** como una versión abreviada de este comando.                                                                                                                    |
 |   -tpmandpinandstartupkey    |                                                                                                                agrega un protector de TPM, PIN y clave de inicio para la unidad del sistema operativo. También puede usar **-tpsk** como una versión abreviada de este comando.                                                                                                                 |
 |          -password           |                                                                                                                              agrega un protector de clave de contraseña para la unidad de datos. También puede usar **-PW** como una versión abreviada de este comando.                                                                                                                              |
@@ -85,12 +85,12 @@ manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|ce
 |    RecoveryPassword    |                                                 Especifica que se deben eliminar los protectores de clave de la contraseña de recuperación.                                                 |
 |      externalkey       |                                        Especifica que se debe eliminar cualquier protector de clave externa asociado a la unidad.                                         |
 |      certificado       |                                       Especifica que se deben eliminar todos los protectores de clave de certificado asociados con la unidad.                                       |
-|          TPM           |                                        Especifica que se deben eliminar todos los protectores de clave solo TPM asociados a la unidad.                                         |
+|          tpm           |                                        Especifica que se deben eliminar todos los protectores de clave solo TPM asociados a la unidad.                                         |
 |    tpmandstartupkey    |                                Especifica que se deben eliminar todos los protectores de clave basados en el TPM y la clave de inicio asociados a la unidad.                                |
 |       tpmandpin        |                                    Especifica que se deben eliminar los protectores de clave basados en TPM y en el PIN asociados a la unidad.                                    |
 | tpmandpinandstartupkey |                             Especifica que se deben eliminar los protectores de clave basados en el TPM, el PIN y la clave de inicio asociados con la unidad.                             |
-|        contraseña        |                                        Especifica que se deben eliminar todos los protectores de clave de contraseña asociados a la unidad.                                         |
-|        identidad        |                                        Especifica que se deben eliminar todos los protectores de clave de identidad asociados a la unidad.                                         |
+|        password        |                                        Especifica que se deben eliminar todos los protectores de clave de contraseña asociados a la unidad.                                         |
+|        identity        |                                        Especifica que se deben eliminar todos los protectores de clave de identidad asociados a la unidad.                                         |
 |          identificador de           |                Identifica el protector de clave que se va a eliminar mediante el identificador de clave. Este parámetro es una opción alternativa al parámetro **-Type** .                 |
 |    <KeyProtectorID>    |        Identifica un protector de clave individual en la unidad que se va a eliminar. Los identificadores de protector de clave se pueden mostrar con el comando **Manage-BDE-protectors-Get** .         |
 |     -COMPUTERNAME      | Especifica que Manage-Bde. exe se usará para modificar la protección de BitLocker en otro equipo. También puede usar **-CN** como una versión abreviada de este comando. |
@@ -112,24 +112,24 @@ manage-bde  -protectors  -disable <Drive> [-RebootCount <integer 0 - 15>] [-comp
 |   -? o/?    |                                                                                                                                                                                                    Muestra una breve ayuda en el símbolo del sistema.                                                                                                                                                                                                    |
 |  -Help o-h  |                                                                                                                                                                                                  Muestra la ayuda completa en el símbolo del sistema.                                                                                                                                                                                                   |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
-En el ejemplo siguiente se muestra el uso del comando **-protecters** para agregar un protector de clave de certificado identificado por un archivo de certificado a la unidad E.
+## <a name="examples"></a>Ejemplos
+Ilustra el uso del comando **-protecters** para agregar un protector de clave de certificado identificado por un archivo de certificado a la unidad E.
 ```
 manage-bde  -protectors  -add E: -certificate  -cf c:\File Folder\Filename.cer
 ```
-En el ejemplo siguiente se muestra el uso del comando **-protecters** para agregar un protector de clave **adaccountorgroup** identificado por el dominio y el nombre de usuario a la unidad E.
+Para ilustrar el uso del comando **-protecters** para agregar un protector de clave **adaccountorgroup** identificado por el dominio y el nombre de usuario a la unidad E.
 ```
 manage-bde  -protectors  -add E: -sid DOMAIN\user
 ```
-En el siguiente ejemplo se muestra el uso del comando **protectores** para deshabilitar la protección hasta que el equipo se haya reiniciado 3 veces.
+Ilustra el uso del comando **protectores** para deshabilitar la protección hasta que el equipo se haya reiniciado 3 veces.
 ```
 manage-bde  -protectors  -disable C: -rc 3
 ```
-En el ejemplo siguiente se muestra el uso del comando **-protecters** para eliminar todos los protectores de clave basados en el TPM y en la clave de inicio de la unidad C.
+Ilustra el uso del comando **-protecters** para eliminar todos los protectores de clave basados en el TPM y en la clave de inicio de la unidad C.
 ```
 manage-bde  -protectors -delete C: -type tpmandstartupkey
 ```
-En el ejemplo siguiente se muestra el uso del comando **-protecters** para realizar una copia de seguridad de toda la información de recuperación de la unidad C en AD DS.
+Ilustra el uso del comando **-protecters** para realizar una copia de seguridad de toda la información de recuperación de la unidad C en AD DS.
 ```
 manage-bde  -protectors  -adbackup C:
 ```

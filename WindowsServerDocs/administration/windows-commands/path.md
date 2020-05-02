@@ -1,5 +1,5 @@
 ---
-title: ruta de acceso
+title: path
 description: Obtenga información sobre cómo establecer la variable de entorno PATH.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cb77cac3871dcf4a411638409de68d038a317d24
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 52d4a99d21574f9cae3120201dcd4db0cd9a2202
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837718"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723373"
 ---
-# <a name="path"></a>ruta de acceso
+# <a name="path"></a>path
 
 
 
 Establece la ruta de acceso del comando en la variable de entorno PATH (el conjunto de directorios que se usa para buscar archivos ejecutables). Si se usa sin parámetros, la **ruta de acceso** muestra la ruta de acceso del comando actual.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -38,9 +38,9 @@ path ;
 | [\<> de unidad:]<Path> |                                                                            Especifica la unidad y el directorio que se establecerán en la ruta de acceso del comando.                                                                             |
 |         ;         | Separa los directorios en la ruta de acceso del comando. Si se usa sin otros parámetros **, se** borran las rutas de comandos existentes de la variable de entorno PATH y se indica a cmd. exe que busque solo en el directorio actual. |
 |      CAMINO       |                                                         Anexa la ruta de acceso del comando al conjunto de directorios existente que aparece en la variable de entorno PATH.                                                         |
-|        /?         |                                                                                         Muestra la Ayuda en el símbolo del sistema.                                                                                         |
+|        /?         |                                                                                         Muestra la ayuda en el símbolo del sistema.                                                                                         |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Cuando se incluye **% path%** en la sintaxis, cmd. exe lo reemplaza con los valores de ruta de acceso de comando que se encuentran en la variable de entorno PATH, lo que elimina la necesidad de escribir manualmente estos valores en el símbolo del sistema.
 -   Siempre se busca en el directorio actual antes de los directorios especificados en la ruta de acceso del comando.
@@ -50,7 +50,7 @@ path ;
 -   Si dos o más archivos de la ruta de acceso de comandos tienen el mismo nombre de archivo y la misma extensión, **path** busca primero el nombre de archivo especificado en el directorio actual. A continuación, busca en los directorios de la ruta de comandos en el orden en que aparecen en la variable de entorno PATH.
 -   Si coloca el comando **path** en el archivo Autoexec. NT, el sistema operativo Windows anexará automáticamente la ruta de acceso de búsqueda del subsistema de ms-dos especificada cada vez que inicie sesión en el equipo. Cmd. exe no utiliza el archivo Autoexec. NT. Cuando se inicia desde un acceso directo, cmd. exe hereda las variables de entorno establecidas en Mi PC/propiedades/avanzado/entorno.
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Ejemplos
 
 Para buscar las rutas de acceso C:\User\Taxes, B:\User\Invest y B:\Bin para comandos externos, escriba:
 

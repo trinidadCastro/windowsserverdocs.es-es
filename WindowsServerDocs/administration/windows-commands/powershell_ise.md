@@ -1,6 +1,6 @@
 ---
 title: PowerShell_ise
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b6ae96dcd40c894e0a528c06b461173f626fb2d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fb143c3d365b47f66aee5c64bfdc7dc26e5794f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837398"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723279"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
@@ -55,7 +55,7 @@ Puede usar **PowerShell_ISE. exe** para iniciar y finalizar una sesión de Windo
 
 Para obtener información sobre otras maneras de iniciar Windows PowerShell ISE, consulte [iniciar Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=135259).
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Windows PowerShell se ejecuta en la opción de instalación Server Core de los sistemas operativos Windows Server. Sin embargo, dado que Windows PowerShell ISE requiere una interfaz gráfica de usuario, no se ejecuta en instalaciones Server Core.
 
@@ -63,5 +63,5 @@ Windows PowerShell se ejecuta en la opción de instalación Server Core de los s
 
 [about_PowerShell_Ise. exe](https://go.microsoft.com/fwlink/?LinkId=256512)
 [about_PowerShell. exe](https://go.microsoft.com/fwlink/?LinkID=113439)
-[scripting de
-de](https://technet.microsoft.com/scriptcenter/dd742419) [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116) con Windows PowerShell, vea también
+scripting de[Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)
+[con Windows PowerShell](https://technet.microsoft.com/scriptcenter/dd742419) , vea también

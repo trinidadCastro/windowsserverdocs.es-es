@@ -1,6 +1,6 @@
 ---
 title: pause
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 135d074a71c7153cc1665ad7b543bdba56ed66e8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 89e76c4f45f59c32ef879fb518a1a92c973f5cdf
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837688"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723353"
 ---
 # <a name="pause"></a>pause
 
@@ -24,7 +24,7 @@ Suspende el procesamiento de un programa por lotes y muestra el siguiente mensaj
 ```
 Press any key to continue . . .
 ```
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,9 +36,9 @@ pause
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Al ejecutar el comando **PAUSE** , aparece el siguiente mensaje:  
   ```
@@ -51,7 +51,7 @@ pause
   Si presiona Y (para sí) en respuesta a este mensaje, el programa por lotes finaliza y el control vuelve al sistema operativo.
 - Puede insertar el comando **pausar** antes de una sección del archivo por lotes que no desee procesar. Al **pausar** suspende el procesamiento del programa por lotes, puede presionar Ctrl + C y, a continuación, presionar y para detener el programa por lotes.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para crear un programa por lotes que pida al usuario que cambie los discos en una de las unidades, escriba:
 ```
