@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getmaxdownloadtime
-description: Tema de comandos de Windows para **bitsadmin getmaxdownloadtime**, que recupera el tiempo de espera de descarga en segundos.
+description: Tema de referencia del comando bitsadmin getmaxdownloadtime, que recupera el tiempo de espera de descarga en segundos.
 ms.prod: windows-servemr
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b6e4a45da76d5ba39edae151454ad7f28a74085
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c63acee7629267ed10df11fb8cf4eeb0c911e118
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850638"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717867"
 ---
 # <a name="bitsadmin-getmaxdownloadtime"></a>bitsadmin getmaxdownloadtime
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Recupera el tiempo de espera de descarga en segundos.
 
@@ -34,14 +34,16 @@ bitsadmin /getmaxdownloadtime <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se obtiene el tiempo de descarga máximo para el trabajo denominado *myDownloadJob* en segundos.
+Para obtener el tiempo de descarga máximo para el trabajo llamado *myDownloadJob* en segundos:
 
 ```
-C:\>bitsadmin /getmaxdownloadtime myDownloadJob
+bitsadmin /getmaxdownloadtime myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

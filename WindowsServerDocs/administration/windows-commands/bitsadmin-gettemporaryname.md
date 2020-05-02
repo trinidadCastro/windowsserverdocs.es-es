@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gettemporaryname
-description: Comando comandos de Windows para **bitsadmin gettemporaryname**, que notifica el nombre de archivo temporal del archivo especificado dentro del trabajo.
+description: Tema de referencia del comando bitsadmin gettemporaryname, que indica el nombre de archivo temporal del archivo especificado en el trabajo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c331ecf12cb02d34c76692158c79eafbe5691c5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f7780691f37fb78f1553fa993fd408d224be39ff
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850458"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717485"
 ---
 # <a name="bitsadmin-gettemporaryname"></a>bitsadmin gettemporaryname
 
@@ -33,14 +33,16 @@ bitsadmin /gettemporaryname <job> <file_index>
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 | file_index | Comienza en 0. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se notifica el nombre de archivo temporal del archivo 2 para el trabajo denominado *myDownloadJob*.
+Para notificar el nombre de archivo temporal del archivo 2 para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /gettemporaryname myDownloadJob 1
+bitsadmin /gettemporaryname myDownloadJob 1
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

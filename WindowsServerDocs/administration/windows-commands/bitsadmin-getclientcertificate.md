@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getclientcertificate
-description: Tema de comandos de Windows para **bitsadmin getclientcertificate**, que recupera el certificado de cliente del trabajo.
+description: Tema de referencia del comando bitsadmin getclientcertificate, que recupera el certificado de cliente del trabajo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c29d5c64fd172cfdd2d5d93c5ed22d519077806
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d2582950dd02ca1880e4765fb974c83c423b22bb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850768"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718122"
 ---
 # <a name="bitsadmin-getclientcertificate"></a>bitsadmin getclientcertificate
 
@@ -32,14 +32,16 @@ bitsadmin /getclientcertificate <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se recupera el certificado de cliente para el trabajo denominado *myDownloadJob*.
+Para recuperar el certificado de cliente para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getclientcertificate myDownloadJob
+bitsadmin /getclientcertificate myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

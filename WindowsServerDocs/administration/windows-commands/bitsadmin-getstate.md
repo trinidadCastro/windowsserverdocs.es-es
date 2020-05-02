@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getstate
-description: Tema de comandos de Windows para **bitsadmin GetState**, que recupera el estado del trabajo especificado.
+description: Tema de referencia del comando bitsadmin GetState, que recupera el estado del trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43cd8c8e614cce65f55b16fc5395b1d37de0cf95
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ab014c96c6d5d62232243d704d41d33cfcfc50f0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850468"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717536"
 ---
 # <a name="bitsadmin-getstate"></a>bitsadmin getstate
 
@@ -32,15 +32,15 @@ bitsadmin /getstate <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="output"></a>Salida
+#### <a name="output"></a>Output
 
-Los valores de salida incluyen:
+Los valores de salida devueltos pueden ser:
 
-| Estado | Descripción |
+| State | Descripción |
 | --------------- | ----------- |
 | En cola | El trabajo está en espera de ejecutarse. |
-| Conectando | BITS está poniéndose en contacto con el servidor. |
-| Transferir | BITS está transfiriendo datos. |
+| Connecting | BITS está poniéndose en contacto con el servidor. |
+| Transferring | BITS está transfiriendo datos. |
 | Traslada | BITS transfirió correctamente todos los archivos del trabajo. |
 | Suspended | El trabajo está en pausa. |
 | Error | Se produjo un error no recuperable. no se volverá a intentar la transferencia. |
@@ -48,14 +48,16 @@ Los valores de salida incluyen:
 | Confirmado | Se completó el trabajo. |
 | Canceled | El trabajo se canceló. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se recupera el estado del trabajo denominado *myDownloadJob*.
+Para recuperar el estado del trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getstate myDownloadJob
+bitsadmin /getstate myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

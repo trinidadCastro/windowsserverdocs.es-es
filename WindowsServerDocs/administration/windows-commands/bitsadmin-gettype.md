@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gettype
-description: Tema de comandos de Windows para **bitsadmin GetType**, que recupera el tipo de trabajo del trabajo especificado.
+description: Tema de referencia del comando bitsadmin GetType, que recupera el tipo de trabajo del trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 66a1fc5b0478e1eec26557dc9a7f76d50abcb8b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 151f9b8e81229a666111ebcd20f060d84160445a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850448"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717477"
 ---
 # <a name="bitsadmin-gettype"></a>bitsadmin gettype
 
@@ -32,25 +32,27 @@ bitsadmin /gettype <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="output"></a>Salida
+#### <a name="output"></a>Output
 
-Los valores de salida incluyen:
+Los valores de salida devueltos pueden ser:
 
 | Tipo | Descripción |
 | --------------- | ----------- |
 | Descargar | El trabajo es una descarga. |
 | Cargar | El trabajo es una carga. |
 | Upload-Reply | El trabajo es una respuesta de carga. |
-| Desconocida | El trabajo tiene un tipo desconocido. |
+| Desconocido | El trabajo tiene un tipo desconocido. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se recupera el tipo de trabajo para el trabajo denominado *myDownloadJob*.
+Para recuperar el tipo de trabajo para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /gettype myDownloadJob
+bitsadmin /gettype myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

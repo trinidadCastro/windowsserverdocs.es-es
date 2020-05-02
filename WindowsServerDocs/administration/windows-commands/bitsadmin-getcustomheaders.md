@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getcustomheaders
-description: Tema de comandos de Windows para **bitsadmin getcustomheaders**, que recupera los encabezados HTTP personalizados del trabajo.
+description: Tema de referencia del comando bitsadmin getcustomheaders, que recupera los encabezados HTTP personalizados del trabajo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 80a3d1230fd541f0b986434ce373da4c8bb0c761
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7fe839cd0e629af88b3ee3642abcce339442d03a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850738"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718096"
 ---
 # <a name="bitsadmin-getcustomheaders"></a>bitsadmin getcustomheaders
 
@@ -32,14 +32,16 @@ bitsadmin /getcustomheaders <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se obtienen los encabezados personalizados para el trabajo denominado *myDownloadJob*.
+Para obtener los encabezados personalizados para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getcustomheaders myDownloadJob
+bitsadmin /getcustomheaders myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

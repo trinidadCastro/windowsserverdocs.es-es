@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getproxyusage
-description: Tema de comandos de Windows para **bitsadmin getproxyusage**, que recupera la configuración de uso del proxy para el trabajo especificado.
+description: Tema de referencia del comando bitsadmin getproxyusage, que recupera la configuración de uso del proxy para el trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01c9bb9a1d413fa847482f652e18eed30ad76109
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 13a3f216b1ed3c77dbbefee37d73a657525daa36
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850518"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717647"
 ---
 # <a name="bitsadmin-getproxyusage"></a>bitsadmin getproxyusage
 
@@ -32,9 +32,9 @@ bitsadmin /getproxyusage <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="remarks"></a>Comentarios
+#### <a name="output"></a>Output
 
-Los valores de uso del proxy incluyen:
+Los valores de uso del proxy devueltos pueden ser:
 
 - **Configuración** predeterminada: Use los valores predeterminados de Internet Explorer del propietario.
 
@@ -44,14 +44,16 @@ Los valores de uso del proxy incluyen:
 
 - **Detección** automática: detecta automáticamente la configuración de proxy.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se recupera el uso de proxy para el trabajo denominado *myDownloadJob*.
+Para recuperar el uso de proxy para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getproxyusage myDownloadJob
+bitsadmin /getproxyusage myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

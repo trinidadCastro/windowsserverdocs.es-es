@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getsecurityflags
-description: Windows Commands topic for **bitsadmin getsecurityflags**, que informa de las marcas de seguridad http para la redirección de direcciones URL y las comprobaciones realizadas en el certificado de servidor durante la transferencia.
+description: Tema de referencia del comando bitsadmin getsecurityflags, que informa de las marcas de seguridad HTTP para la redirección de direcciones URL y las comprobaciones realizadas en el certificado de servidor durante la transferencia.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 360f8d5514e5251dd9e4a6a6b60335dc34fe4415
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 41b710f9897f24eb4161d9379dc3b1f89b141472
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850478"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717551"
 ---
 # <a name="bitsadmin-getsecurityflags"></a>bitsadmin getsecurityflags
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Notifica las marcas de seguridad HTTP para la redirección de direcciones URL y las comprobaciones realizadas en el certificado de servidor durante la transferencia.
 
@@ -34,14 +34,16 @@ bitsadmin /getsecurityflags <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se recuperan las marcas de seguridad de un trabajo denominado *myDownloadJob*.
+Para recuperar las marcas de seguridad de un trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getsecurityflags myDownloadJob
+bitsadmin /getsecurityflags myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

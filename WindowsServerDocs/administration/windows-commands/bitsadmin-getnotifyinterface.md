@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnotifyinterface
-description: Windows Commands topic for **bitsadmin getnotifyinterface**, que determina si otro programa ha registrado una interfaz de devolución de llamada com para el trabajo especificado.
+description: Tema de referencia del comando bitsadmin getnotifyinterface, que determina si otro programa ha registrado una interfaz de devolución de llamada COM para el trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5eb5aee42446c70f16fd6785a3645f42c1987e4d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2158759067010292ca213f97014857354247b9c7
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850578"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717737"
 ---
 # <a name="bitsadmin-getnotifyinterface"></a>bitsadmin getnotifyinterface
 
@@ -32,21 +32,23 @@ bitsadmin /getnotifyinterface <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-#### <a name="output"></a>Salida
+#### <a name="output"></a>Output
 
 La salida de este comando muestra, **registrado** o **anulado el registro**.
 
 > [!NOTE]
 > No es posible determinar el programa que registró la interfaz de devolución de llamada.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se recupera la interfaz Notify del trabajo denominado *myDownloadJob*.
+Para recuperar la interfaz Notify del trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getnotifyinterface myDownloadJob
+bitsadmin /getnotifyinterface myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

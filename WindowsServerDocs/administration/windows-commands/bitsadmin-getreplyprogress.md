@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getreplyprogress
-description: Comando comandos de Windows para **bitsadmin getreplyprogress**, que recupera el tamaño y el progreso de la respuesta de carga del servidor.
+description: Tema de referencia del comando bitsadmin getreplyprogress, que recupera el tamaño y el progreso de la respuesta de carga del servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 195ed669817bc0aca7ebc432e7f3c66ab1548162
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7c355c796d480e9deb444b8fd9ee7570136cade6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850488"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717587"
 ---
 # <a name="bitsadmin-getreplyprogress"></a>bitsadmin getreplyprogress
 
@@ -35,15 +35,16 @@ bitsadmin /getreplyprogress <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
+## <a name="examples"></a>Ejemplos
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
-
-En el ejemplo siguiente se recupera el progreso de la carga de la respuesta para el trabajo denominado *myDownloadJob*.
+Para recuperar el progreso de la respuesta de carga para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getreplyprogress myDownloadJob
+bitsadmin /getreplyprogress myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin list
-description: Tema de comandos de Windows para la **lista de bitsadmin**, que enumera los trabajos de transferencia que son propiedad del usuario actual.
+description: Tema de referencia del comando de lista bitsadmin, que enumera los trabajos de transferencia que son propiedad del usuario actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1883da7bfa71a41952f6f67e25eca4dbbdd3353c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 262589293a147cc1bae98da8fdca047c5f914094
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850328"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717431"
 ---
 # <a name="bitsadmin-list"></a>bitsadmin list
 
@@ -33,14 +33,16 @@ bitsadmin /list [/allusers][/verbose]
 | /allusers | Opcional. Enumera los trabajos de todos los usuarios. Debe tener privilegios de administrador para usar este parámetro. |
 | /verbose | Opcional. Proporciona información detallada acerca de cada trabajo. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el siguiente ejemplo se recupera información sobre los trabajos que pertenecen al usuario actual.
+Para recuperar información acerca de los trabajos que pertenecen al usuario actual.
 
 ```
-C:\>bitsadmin /list
+bitsadmin /list
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

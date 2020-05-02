@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnotifycmdline
-description: Tema de comandos de Windows para **bitsadmin getnotifycmdline**, que recupera el comando de línea de comandos que se ejecuta cuando el trabajo finaliza la transferencia de datos.
+description: Tema de referencia del comando bitsadmin getnotifycmdline, que recupera el comando de línea de comandos que se ejecuta cuando el trabajo finaliza la transferencia de datos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24b49b3fa0c2dafb999d8cb9c6e0c13ae68bf6f4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4d4c47c4a1b9ea06fd804c8f2c48e9ac0ce1b319
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850598"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717798"
 ---
 # <a name="bitsadmin-getnotifycmdline"></a>bitsadmin getnotifycmdline
 
-Recupera el comando de línea de comandos que se debe ejecutar cuando el trabajo finaliza la transferencia de datos.
+Recupera el comando de línea de comandos que se ejecutará después de que el trabajo especificado termine de transferir los datos.
 
 > [!NOTE]
 > Este comando no es compatible con BITS 1,2 y versiones anteriores.
@@ -35,14 +35,16 @@ bitsadmin /getnotifycmdline <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se recupera el comando de línea de comandos que usa el servicio cuando se completa el trabajo denominado *myDownloadJob* .
+Para recuperar el comando de línea de comandos que usa el servicio cuando se completa el trabajo denominado *myDownloadJob* .
 
 ```
-C:\>bitsadmin /getnotifycmdline myDownloadJob
+bitsadmin /getnotifycmdline myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

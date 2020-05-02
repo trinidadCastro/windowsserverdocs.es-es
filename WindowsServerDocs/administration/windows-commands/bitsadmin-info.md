@@ -1,6 +1,6 @@
 ---
 title: bitsadmin info
-description: Tema de comandos de Windows para la **información de bitsadmin**, que muestra información de resumen sobre el trabajo especificado.
+description: Tema de referencia del comando bitsadmin info, que muestra información de resumen sobre el trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 20b8358caba3e0c07b0c985cb24e8f7bde43b06c
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 904f70c82ab4bcc4fb25f759898674cc719b1954
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123115"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717440"
 ---
 # <a name="bitsadmin-info"></a>bitsadmin info
 
@@ -33,12 +33,12 @@ bitsadmin /info <job> [/verbose]
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 | /verbose | Opcional. Proporciona información detallada acerca de cada trabajo. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se recupera información sobre el trabajo denominado *myDownloadJob*.
+Para recuperar información sobre el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /info myDownloadJob
+bitsadmin /info myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

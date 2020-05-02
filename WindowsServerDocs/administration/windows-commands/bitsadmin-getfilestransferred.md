@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getfilestransferred
-description: Comando comandos de Windows para **bitsadmin getfilestransferred**, que recupera el número de archivos transferidos para el trabajo especificado.
+description: Tema de referencia del comando bitsadmin getfilestransferred, que recupera el número de archivos transferidos para el trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 053b67f5f85066d202b446b31eb1b1698fd735b9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ed11739029338ecce5fc4efbe1918873a7f37f62
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850678"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717912"
 ---
 # <a name="bitsadmin-getfilestransferred"></a>bitsadmin getfilestransferred
 
@@ -32,14 +32,16 @@ bitsadmin /getfilestransferred <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se recupera el número de archivos transferidos en el trabajo denominado *myDownloadJob*.
+Para recuperar el número de archivos transferidos en el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getfilestransferred myDownloadJob
+bitsadmin /getfilestransferred myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

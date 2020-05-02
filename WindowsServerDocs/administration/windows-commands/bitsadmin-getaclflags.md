@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getaclflags
-description: Temas de comandos de Windows para **bitsadmin getaclflags**, que recupera las marcas de propagación de la lista de control de acceso (ACL).
+description: Tema de referencia del comando bitsadmin getaclflags, que recupera las marcas de propagación de la lista de control de acceso (ACL).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d53018e2fa5c659c8cf4b0ec985beda848a8c1af
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a9ca541b488c3c83e7a64a138bae0914001778e3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850798"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718174"
 ---
 # <a name="bitsadmin-getaclflags"></a>bitsadmin getaclflags
 
@@ -32,9 +32,9 @@ bitsadmin /getaclflags <job>
 | --------- | ----------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
-Muestra uno o varios de los siguientes valores de marca:
+Devuelve uno o varios de los siguientes valores de marca:
 
 - **o** copiar información del propietario con el archivo.
 
@@ -44,14 +44,16 @@ Muestra uno o varios de los siguientes valores de marca:
 
 - **s** -copiar información de la lista de control de acceso de sistema (SACL) con el archivo.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se recuperan los marcadores de propagación de la lista de control de acceso para el trabajo denominado *myDownloadJob*.
+Para recuperar los marcadores de propagación de la lista de control de acceso para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getaclflags myDownloadJob
+bitsadmin /getaclflags myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

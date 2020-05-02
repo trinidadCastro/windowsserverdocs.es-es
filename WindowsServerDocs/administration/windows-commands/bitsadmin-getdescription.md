@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getdescription
-description: Tema de comandos de Windows para **bitsadmin getDescription**, que recupera la descripción del trabajo especificado.
+description: Tema de referencia del comando bitsadmin getDescription, que recupera la descripción del trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ff1638cf634d76001042691fd890dfe41f9ae0b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ec5fa9875ca9f669c2a43d58532d3e5e0770d550
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850728"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718080"
 ---
 # <a name="bitsadmin-getdescription"></a>bitsadmin getdescription
 
@@ -32,14 +32,16 @@ bitsadmin /getdescription <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se recupera la descripción del trabajo denominado *myDownloadJob*.
+Para recuperar la descripción del trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /getdescription myDownloadJob
+bitsadmin /getdescription myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

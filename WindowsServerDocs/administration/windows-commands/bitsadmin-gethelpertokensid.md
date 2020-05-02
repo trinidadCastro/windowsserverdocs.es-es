@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gethelpertokensid
-description: Windows Commands topic for **bitsadmin gethelpertokensid**, que devuelve el SID del token auxiliar de un trabajo de transferencia de bits, si se ha establecido uno.
+description: Tema de referencia del comando bitsadmin gethelpertokensid, que devuelve el SID del token auxiliar de un trabajo de transferencia de BITS, si se ha establecido uno.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: a2e26ff459b068595529fbd24e6165c130660570
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c45bf86d8a7364289db41fa390f319270a2a8386
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850648"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717896"
 ---
 # <a name="bitsadmin-gethelpertokensid"></a>bitsadmin gethelpertokensid
 
@@ -34,6 +34,16 @@ bitsadmin /gethelpertokensid <job>
 | -------------- | -------------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
+## <a name="examples"></a>Ejemplos
+
+Para recuperar el SID de un trabajo de transferencia de BITS denominado *myDownloadJob*:
+
+```
+bitsadmin /gethelpertokensid myDownloadJob
+```
+
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)
