@@ -9,16 +9,16 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 16f141eceb4831f588e33aca5284425f69e9e417
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 67ef309bc2a09c5e241d52c747ab800cfde86168
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827518"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720533"
 ---
 # <a name="configure-and-manage-quorum"></a>Configurar y administrar el cuórum
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 En este tema se proporciona información general y los pasos para configurar y administrar el cuórum en un clúster de conmutación por error de Windows Server.
 
@@ -40,7 +40,7 @@ En la tabla siguiente encontrarás las tres opciones de configuración del cuór
 
 Según la opción de configuración de cuórum que elijas y la configuración específica, el clúster se configurará en uno de los siguientes modos de cuórum:
 
-| Modo  | Descripción  |
+| Mode  | Descripción  |
 | --------- | ---------|
 | Mayoría de nodo (sin testigo)     |   Solo los nodos tienen votos. No se configura ningún testigo de cuórum. El cuórum de clúster es la mayoría de los nodos de votación en la pertenencia al clúster activa.      |
 | Mayoría de nodo con testigo (disco o recurso compartido de archivos)     |   Los nodos tienen votos. Además, los testigos de cuórum tienen un voto. El cuórum de clúster es la mayoría de los nodos de votación en la pertenencia al clúster activa, más un voto de testigo. Los testigos de cuórum se pueden designar como testigos de disco o como testigos de recurso compartido de archivos. 
@@ -137,7 +137,7 @@ Para completar este procedimiento se requiere, como mínimo, pertenecer al grupo
           > [!NOTE]
           > También puedes seleccionar **No configurar un testigo de quórum** y completar el asistente después. No se recomienda tener un número par de nodos de votación en el clúster.
 
-      2. Si seleccionas la opción para configurar un testigo de disco, en la página **Configurar testigo de almacenamiento** , selecciona el volumen de almacenamiento que quieras asignar como el testigo de disco y, después, completa el asistente.
+      2. Si seleccionas la opción para configurar un testigo de disco, en la página **Configurar testigo de almacenamiento**, selecciona el volumen de almacenamiento que quieras asignar como el testigo de disco y, después, completa el asistente.
       3. Si seleccionas la opción para configurar un testigo de recurso compartido de archivos, en la página **Configurar testigo del recurso compartido de archivos**, escribe o explora hasta un recurso compartido de archivos que quieras usar como el recurso de testigo y, después, completa el asistente.
 
     - Para configurar las opciones de administración de cuórum y para agregar o cambiar el testigo de cuórum, seleccione **Configuración avanzada de cuórum y selección de testigo**y, después, complete los pasos siguientes. Para obtener información y conocer las consideraciones sobre las opciones de configuración de quórum avanzada, consulta [Asignación de votos de nodos](#node-vote-assignment) y [Administración de quórum dinámico](#dynamic-quorum-management) anteriormente en este tema.
@@ -153,12 +153,12 @@ Para completar este procedimiento se requiere, como mínimo, pertenecer al grupo
           > [!NOTE]
           > También puedes seleccionar **No configurar un testigo de quórum** y completar el asistente después. No se recomienda tener un número par de nodos de votación en el clúster.
 
-      4. Si seleccionas la opción para configurar un testigo de disco, en la página **Configurar testigo de almacenamiento** , selecciona el volumen de almacenamiento que quieras asignar como el testigo de disco y, después, completa el asistente.
+      4. Si seleccionas la opción para configurar un testigo de disco, en la página **Configurar testigo de almacenamiento**, selecciona el volumen de almacenamiento que quieras asignar como el testigo de disco y, después, completa el asistente.
       5. Si seleccionas la opción para configurar un testigo de recurso compartido de archivos, en la página **Configurar testigo del recurso compartido de archivos**, escribe o explora hasta un recurso compartido de archivos que quieras usar como el recurso de testigo y, después, completa el asistente.
 
 4. Seleccione **Siguiente**. Confirme las selecciones en la página de confirmación que aparece y, a continuación, seleccione **siguiente**.
 
-Una vez que se ejecute el asistente y aparezca la página **Resumen** , si desea ver un informe de las tareas realizadas por el asistente, seleccione **Ver informe**. El informe más reciente permanecerá en la carpeta <em>systemroot</em> **\\Cluster\\Reports** con el nombre **QuorumConfiguration. mht**.
+Una vez que se ejecute el asistente y aparezca la página **Resumen** , si desea ver un informe de las tareas realizadas por el asistente, seleccione **Ver informe**. El informe más reciente permanecerá en la carpeta <em>systemroot</em>**\\Cluster\\Reports** con el nombre **QuorumConfiguration. mht**.
 
 > [!NOTE]
 > Después de configurar el quórum de clúster, ejecuta la prueba **Validar configuración de quórum** para comprobar la configuración de quórum actualizada.
@@ -179,7 +179,7 @@ En el ejemplo siguiente se cambia la configuración de cuórum en el clúster lo
 Set-ClusterQuorum -NodeAndDiskMajority "Cluster Disk 2"
 ```
 
-En el ejemplo siguiente se cambia la configuración de cuórum en el clúster local a una mayoría de nodo con configuración de testigo. El recurso de recurso compartido de archivos denominado *\\\\contoso-FS\\FSW* está configurado como testigo de recurso compartido de archivos.
+En el ejemplo siguiente se cambia la configuración de cuórum en el clúster local a una mayoría de nodo con configuración de testigo. El recurso de recurso compartido de archivos denominado * \\ \\contoso-FS\\FSW* se configura como un testigo de recurso compartido de archivos.
 
 ```PowerShell
 Set-ClusterQuorum -NodeAndFileShareMajority "\\fileserver\fsw"
@@ -275,7 +275,7 @@ Net Start ClusSvc /PQ
 
 En esta sección encontrarás un resumen de las características y las configuraciones de cuórum para dos configuraciones de clúster multisitio en implementaciones de recuperación ante desastres. Las instrucciones de configuración de cuórum son distintas según si necesitas la conmutación automática por error o la conmutación por error manual para cargas de trabajo entre sitios. La configuración suele depender de los contratos de nivel de servicio de su organización para suministrar y dar soporte a cargas de trabajo en clúster en caso de un error o desastre en el sitio.
 
-### <a name="automatic-failover"></a>Conmutación automática por error
+### <a name="automatic-failover"></a>Conmutación por error automática
 
 En esta configuración, el clúster está formado por dos o más sitios que pueden hospedar roles agrupados en clúster. Si se produce un error en uno de los sitios, los roles agrupados en clúster conmutarán por error automáticamente en el resto de sitios. Por lo tanto, el cuórum de clúster debe configurarse de manera que cualquier sitio pueda sostener un error de sitio completo.
 

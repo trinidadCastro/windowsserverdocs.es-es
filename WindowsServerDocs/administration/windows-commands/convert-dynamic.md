@@ -1,6 +1,6 @@
 ---
 title: convert dynamic
-description: Tema de comandos de Windows para convertir dinámico, que convierte un disco básico en un disco dinámico.
+description: Tema de referencia del comando Convert Dynamic, que convierte un disco básico en un disco dinámico.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ad84cf2ecb6808b68110187b52f3fc13590b491
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 05d507fb5a1f8ac3ca8d8899249a26dee496ed2a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80847328"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720778"
 ---
 # <a name="convert-dynamic"></a>convert dynamic
 
-Convierte un disco básico en un disco dinámico.
+Convierte un disco básico en un disco dinámico. Se debe seleccionar un disco básico para que esta operación se realice correctamente. Use el [comando Seleccionar disco](select-disk.md) para seleccionar un disco básico y desplazar el foco a él.
 
-Para obtener instrucciones sobre cómo usar este comando, consulte [cambiar un disco básico a un disco dinámico](https://go.microsoft.com/fwlink/?LinkId=207047) (https://go.microsoft.com/fwlink/?LinkId=207047).
+> [!NOTE]
+> Para obtener instrucciones sobre cómo usar este comando, consulte [cambiar un disco dinámico a un disco básico](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755238(v=ws.11)).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -30,18 +31,18 @@ convert dynamic [noerr]
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|noerr|Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
 
-## <a name="remarks"></a>Comentarios
+#### <a name="remarks"></a>Observaciones
 
--   Todas las particiones existentes en el disco básico se convertirán en volúmenes simples.
--   Se debe seleccionar un disco básico para que esta operación se realice correctamente. Use el comando **Seleccionar disco** para seleccionar un disco básico y desplazar el foco a él.
+- Todas las particiones existentes en el disco básico se convertirán en volúmenes simples.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para convertir un disco básico en un disco dinámico, escriba:
+
 ```
 convert dynamic
 ```
@@ -50,3 +51,4 @@ convert dynamic
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
+- [Convert (comando)](convert.md)

@@ -1,6 +1,6 @@
 ---
 title: Wbadmin habilitar copia de seguridad
-description: Temas de comandos de Windows para Wbadmin habilitar copia de seguridad, que crea y habilita una programación de copia de seguridad diaria o modifica una programación de copia de seguridad existente.
+description: Tema de referencia de Wbadmin enable backup, que crea y habilita una programación de copia de seguridad diaria o modifica una programación de copia de seguridad existente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4c5abdec29ed519a2894a26814711e32e3b8672
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a44cfca936e5349e1757d66a4b7b6a8195b44228
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829798"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720179"
 ---
 # <a name="wbadmin-enable-backup"></a>Wbadmin habilitar copia de seguridad
 
@@ -23,8 +23,6 @@ ms.locfileid: "80829798"
 Crea y habilita una programación de copia de seguridad diaria o modifica una programación de copia de seguridad existente. Si no se especifica ningún parámetro, se muestra la configuración de copia de seguridad programada actualmente.
 
 Para configurar o modificar una programación de copia de seguridad diaria, debe ser miembro del grupo **administradores** o **operadores de copia de seguridad** . Además, debe ejecutar **Wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados, haga clic con el botón secundario en **símbolo del sistema** y haga clic en **Ejecutar como administrador**).
-
-Para obtener ejemplos de cómo usar este subcomando, vea [ejemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -78,7 +76,7 @@ wbadmin enable backup
 
 |Parámetro|Descripción|
 |---------|-----------|
-|-addtarget|En Windows Server 2008, especifica la ubicación de almacenamiento para las copias de seguridad. Requiere que se especifique un destino para las copias de seguridad como identificador de disco (vea la sección comentarios). El disco tiene el formato anterior al uso, y los datos existentes en él se borran de forma permanente.</br>En Windows Server 2008 R2 y versiones posteriores, especifica la ubicación de almacenamiento para las copias de seguridad. Requiere que especifique la ubicación como una ruta de acceso de disco, volumen o Convención de nomenclatura universal (UNC) a una carpeta compartida remota (\\\\\<ServerName >\<nombreDeRecursoCompartido >\). De forma predeterminada, la copia de seguridad se guardará en: \\\\<servername>\<nombreDeRecursoCompartido > \WindowsImageBackup\<ComputerBackedUp >\. Si especifica un disco, se formateará el disco antes de usarse y los datos existentes en él se borrarán de forma permanente. Si especifica una carpeta compartida, no puede agregar más ubicaciones. Solo puede especificar una carpeta compartida como ubicación de almacenamiento a la vez.</br>Importante: Si guarda una copia de seguridad en una carpeta compartida remota, la copia de seguridad se sobrescribirá si usa la misma carpeta para hacer una copia de seguridad del mismo equipo de nuevo. Además, si se produce un error en la operación de copia de seguridad, es posible que se quede sin ninguna copia de seguridad porque la copia anterior se sobrescribirá y la nueva no se podrá usar. Para evitar esta situación, puede crear subcarpetas en la carpeta compartida remota y organizar en ellas las copias de seguridad. Si lo hace, las subcarpetas necesitarán dos veces el espacio de la carpeta principal.</br>Solo se puede especificar una ubicación en un solo comando. Se pueden agregar varias ubicaciones de almacenamiento de copia de seguridad de disco y volumen si se vuelve a ejecutar el comando.|
+|-addtarget|En Windows Server 2008, especifica la ubicación de almacenamiento para las copias de seguridad. Requiere que se especifique un destino para las copias de seguridad como identificador de disco (vea la sección comentarios). El disco tiene el formato anterior al uso, y los datos existentes en él se borran de forma permanente.</br>En Windows Server 2008 R2 y versiones posteriores, especifica la ubicación de almacenamiento para las copias de seguridad. Requiere que se especifique la ubicación como una ruta de acceso de disco, volumen o Convención de nomenclatura universal (UNC) a una carpeta\\\\\<compartida remota \<(ServerName \)>ShareName>. De forma predeterminada, la copia de seguridad se guardará en \\ \\ <servername> \<:\<ShareName> \windowsimagebackup ComputerBackedUp>\. Si especifica un disco, se formateará el disco antes de usarse y los datos existentes en él se borrarán de forma permanente. Si especifica una carpeta compartida, no puede agregar más ubicaciones. Solo puede especificar una carpeta compartida como ubicación de almacenamiento a la vez.</br>Importante: Si guarda una copia de seguridad en una carpeta compartida remota, la copia de seguridad se sobrescribirá si usa la misma carpeta para hacer una copia de seguridad del mismo equipo de nuevo. Además, si se produce un error en la operación de copia de seguridad, es posible que se quede sin ninguna copia de seguridad porque la copia anterior se sobrescribirá y la nueva no se podrá usar. Para evitar esta situación, puede crear subcarpetas en la carpeta compartida remota y organizar en ellas las copias de seguridad. Si lo hace, las subcarpetas necesitarán dos veces el espacio de la carpeta principal.</br>Solo se puede especificar una ubicación en un solo comando. Se pueden agregar varias ubicaciones de almacenamiento de copia de seguridad de disco y volumen si se vuelve a ejecutar el comando.|
 |-removetarget|Especifica la ubicación de almacenamiento que desea quitar de la programación de copia de seguridad existente. Requiere que se especifique la ubicación como identificador de disco (vea la sección comentarios).|
 |-programación|Especifica las horas del día para crear una copia de seguridad, con el formato HH: MM y coma delimitada.|
 |-incluir|En Windows Server 2008, especifica la lista delimitada por comas de las letras de unidad del volumen, los puntos de montaje del volumen o los nombres de los volúmenes basados en GUID que se van a incluir en la copia de seguridad.</br>En Windows Server 2008 R2and, especifica la lista de elementos delimitados por comas que se van a incluir en la copia de seguridad. Se pueden incluir varios archivos, carpetas o volúmenes. Las rutas de acceso a los volúmenes se pueden especificar mediante letras de unidad, puntos de montaje o nombres basados en identificadores GUID. Si usa un nombre de volumen basado en GUID, debe terminar con una barra diagonal inversa (\). Puede usar el carácter comodín (*) en el nombre de archivo al especificar una ruta de acceso a un archivo.|
@@ -95,30 +93,30 @@ wbadmin enable backup
 |-quiet|Ejecuta el subcomando sin preguntar al usuario.|
 |-allowDeleteOldBackups|Sobrescribe las copias de seguridad realizadas antes de actualizar el equipo.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Para ver el valor del identificador de disco de los discos, escriba **Wbadmin get Disks**.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 En los siguientes ejemplos se muestra cómo se puede usar el comando **Wbadmin enable backup** en distintos escenarios de copia de seguridad:
 
 Escenario #1
-- Programar copias de seguridad de las unidades de disco duro e:, d:\mountpoint y \\\\? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
+- Programar copias de seguridad de las unidades de disco duro e:, \\ \\d:\mountpoint y? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
 - Guarde los archivos en el disco duro.
-- Ejecutar copias de seguridad diariamente a las 9:00 A.M. y 6:00 P.M.
+- Ejecutar copias de seguridad diariamente a las 9:00 A.M. y a las 06:00:00 p. m.
   ```
   wbadmin enable backup -addtarget:DiskID -schedule:09:00,18:00 -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
   ```
   Escenario #2
-- Programe copias de seguridad de la carpeta d:\Documents en la ubicación de red \\\\backupshare\backup1
+- Programe copias de seguridad de la carpeta d:\Documents en la \\ \\ubicación de red backupshare\backup1
 - Use las credenciales de red para el administrador de copias de seguridad Aaren Ekelund (aekel), que es miembro del dominio CONTOSOEAST para autenticar el acceso al recurso compartido de red. La contraseña de Aaren es *$3hM9 ^ 5lp*.
 - Ejecutar copias de seguridad diariamente a las 12:00 A.M. y 7:00 P.M.
   ```
   wbadmin enable backup –addtarget:\\backupshare\backup1 –include: d:\documents –user:CONTOSOEAST\aekel –password:$3hM9^5lp –schedule:00:00,19:00
   ```
   Escenario #3
-- Programe copias de seguridad del volumen t: y la carpeta d:\Documents en la unidad h:, pero excluya la carpeta d:\Documents\~tmp
+- Programe copias de seguridad del volumen t: y la carpeta d:\Documents en la unidad h:, pero excluya\~la carpeta d:\Documents tmp
 - Realice una copia de seguridad completa mediante el Servicio de instantáneas de volumen.
 - Ejecutar copias de seguridad diariamente a las 1:00 A.M.
   ```

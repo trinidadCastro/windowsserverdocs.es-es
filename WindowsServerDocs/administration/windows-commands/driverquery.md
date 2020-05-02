@@ -1,6 +1,6 @@
 ---
 title: driverquery
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c3e7cc5dc84794a5cfb5ac21edb00f8dacfaa18
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 993c05a930a7702880af23fcfa7c19a43aa8b22b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845288"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720830"
 ---
 # <a name="driverquery"></a>driverquery
 
@@ -22,7 +22,7 @@ ms.locfileid: "80845288"
 
 Permite a un administrador mostrar una lista de los controladores de dispositivos instalados y sus propiedades. Si se usa sin parámetros, **DRIVERQUERY** se ejecuta en el equipo local.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,16 +34,16 @@ driverquery [/s <System> [/u [<Domain>\]<Username> [/p <Password>]]] [/fo {table
 
 |         Parámetro         |                                                                                                                                         Descripción                                                                                                                                          |
 |---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       /s \<System >        |                                                                                      Especifica el nombre o la dirección IP de un equipo remoto. No use barras diagonales inversas. El valor predeterminado es el equipo local.                                                                                       |
-| /u [\<\]de > de dominio <Username> | Ejecuta el comando con las credenciales de la cuenta de usuario según lo especificado por *usuario* o *dominio*\*usuario<em>. De forma predeterminada, \*\*/s</em>\* usa las credenciales del usuario que ha iniciado sesión actualmente en el equipo que emite el comando. **/u** no se puede usar a menos que se especifique **/s** . |
-|      /p \<contraseña >       |                                                                           Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** . **/p** no se puede usar a menos que se especifique **/u** .                                                                            |
-|        /FO {Table         |                                                                                                                                             lista                                                                                                                                             |
+|       /s \<sistema>        |                                                                                      Especifica el nombre o la dirección IP de un equipo remoto. No use barras diagonales inversas. El valor predeterminado es el equipo local.                                                                                       |
+| /u [\<dominio>\]<Username> | Ejecuta el comando con las credenciales de la cuenta de usuario según lo *especificado por usuario o usuario de* *dominio*\*<em>. De forma predeterminada \* \*,/s</em> \* usa las credenciales del usuario que ha iniciado sesión actualmente en el equipo que emite el comando. **/u** no se puede usar a menos que se especifique **/s** . |
+|      /p \<contraseña>       |                                                                           Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** . **/p** no se puede usar a menos que se especifique **/u** .                                                                            |
+|        /FO {Table         |                                                                                                                                             list                                                                                                                                             |
 |            /NH            |                                                                                      Omite la fila de encabezado de la información de controlador mostrada. No es válido si el parámetro **/FO** está establecido en **List**.                                                                                      |
 |            /v             |                                                                                                               Muestra la salida detallada. **/v** no es válido para los controladores firmados.                                                                                                               |
 |            /Si            |                                                                                                                          Proporciona información acerca de los controladores firmados.                                                                                                                          |
-|            /?             |                                                                                                                             Muestra la Ayuda en el símbolo del sistema.                                                                                                                             |
+|            /?             |                                                                                                                             Muestra la ayuda en el símbolo del sistema.                                                                                                                             |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para mostrar una lista de los controladores de dispositivos instalados en el equipo local, escriba:
 ```

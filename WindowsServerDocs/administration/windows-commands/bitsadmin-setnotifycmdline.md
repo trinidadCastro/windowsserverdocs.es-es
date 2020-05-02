@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnotifycmdline
-description: Windows Commands topic for **bitsadmin setnotifycmdline**, que establece el comando de línea de comandos que se ejecutará cuando el trabajo termine de transferir datos, o cuando un trabajo entre en un estado.
+description: Tema de referencia del comando bitsadmin setnotifycmdline, que establece el comando de línea de comandos que se ejecutará cuando el trabajo finalice la transferencia de datos o cuando un trabajo entre en un estado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b268b68cbd355a7fe7f993d678a98f6fcb99f0ab
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: b21d7151a5b646a4fe07d073220614f5e3c99539
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122897"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720135"
 ---
 # <a name="bitsadmin-setnotifycmdline"></a>bitsadmin setnotifycmdline
 
-Establece el comando de línea de comandos que se ejecutará cuando el trabajo finalice la transferencia de datos o cuando un trabajo entre en un estado especificado.
+Establece el comando de línea de comandos que se ejecuta cuando el trabajo finaliza la transferencia de datos o después de que un trabajo entra en un estado especificado.
 
 > [!NOTE]
 > Este comando no es compatible con BITS 1,2 y versiones anteriores.
@@ -39,16 +39,20 @@ bitsadmin /setnotifycmdline <job> <program_name> [program_parameters]
 
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se establece el comando de línea de comandos que usa el servicio para ejecutar Notepad. exe después de que se complete el trabajo denominado *myDownloadJob* .
+Para ejecutar Notepad. exe al finalizar el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe NULL
+bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe NULL
 ```
 
+Para mostrar el texto del CLUF en Notepad. exe, al finalizar el trabajo denominado myDownloadJob:
+
 ```
-C:\>bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe notepad c:\eula.txt
+bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe notepad c:\eula.txt
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

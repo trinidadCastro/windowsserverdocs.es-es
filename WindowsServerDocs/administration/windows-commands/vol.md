@@ -1,6 +1,6 @@
 ---
 title: vol
-description: Windows Commands topic for Vol, que muestra la etiqueta del volumen de disco y el número de serie, si existen.
+description: Tema de referencia de Vol, que muestra la etiqueta de volumen de disco y el número de serie, si existen.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fbf55bad619379005d7ed8044277d3a2759dde10
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: aa900ade6f434a53ac940d097407aa90509e9141
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830108"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720283"
 ---
 # <a name="vol"></a>vol
 
@@ -32,8 +32,8 @@ vol [<Drive>:]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|> de \<unidad:|Especifica la unidad que contiene el disco para el que desea mostrar la etiqueta de volumen y el número de serie.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|\<> de unidad:|Especifica la unidad que contiene el disco para el que desea mostrar la etiqueta de volumen y el número de serie.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="additional-references"></a>Referencias adicionales
 

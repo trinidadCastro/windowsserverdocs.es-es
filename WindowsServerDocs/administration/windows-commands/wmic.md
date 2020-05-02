@@ -1,6 +1,6 @@
 ---
 title: wmic
-description: Comando comandos de Windows para WMIC, que muestra información de WMI en un shell de comandos interactivo.
+description: Tema de referencia de WMIC, que muestra información de WMI en un shell de comandos interactivo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 03ba4ecb4b12b03e010318bf6ca260dec00f28f3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 252ba6b59c29378dd1f5e437de21a2ec4f5ec5c8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829058"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720653"
 ---
 # <a name="wmic"></a>wmic
 
@@ -22,7 +22,7 @@ ms.locfileid: "80829058"
 
 Muestra información de WMI en un shell de comandos interactivo.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,11 +37,11 @@ Los siguientes subcomandos están disponibles en todo momento:
 |Subcomando|Descripción|
 |-----------|-----------|
 |clase|Escapa del modo de alias predeterminado de WMIC para tener acceso directamente a las clases del esquema WMI.|
-|ruta de acceso|Escapa del modo de alias predeterminado de WMIC para tener acceso directamente a las instancias del esquema WMI.|
-|contexto|Muestra los valores actuales de todos los conmutadores globales.|
-|[salir de \| salir]|Sale del shell de comandos de WMIC.|
+|path|Escapa del modo de alias predeterminado de WMIC para tener acceso directamente a las instancias del esquema WMI.|
+|context|Muestra los valores actuales de todos los conmutadores globales.|
+|[salir \| salir]|Sale del shell de comandos de WMIC.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para mostrar los valores actuales de todos los conmutadores globales, escriba:
 ```

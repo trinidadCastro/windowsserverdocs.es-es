@@ -1,6 +1,6 @@
 ---
 title: Remove-DriverGroupFilter
-description: Comando de comandos de Windows para Remove-DriverGroupFilter, que quita una regla de filtro de un grupo de controladores en un servidor.
+description: Tema de referencia de Remove-DriverGroupFilter, que quita una regla de filtro de un grupo de controladores en un servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08914b66c37d327ddef2a50d2f98adcfdbb88ffe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd6fcbc8f87539ac687927b9e58ed15edb524ef6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830498"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720415"
 ---
 # <a name="remove-drivergroupfilter"></a>Remove-DriverGroupFilter
 
@@ -32,11 +32,11 @@ WDSUTIL /Remove-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server nam
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/DriverGroup: nombre del grupo de\<>|Especifica el nombre del grupo de controladores.|
-|[/Server:\<nombre de servidor >]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se utiliza el servidor local.|
-|[/FilterType:\<FilterType >]|Especifica el tipo de filtro que se va a quitar del grupo. \<FilterType > puede ser uno de los siguientes:</br>**BiosVendor**</br>**BiosVersion**</br>**ChassisType**</br>**Le**</br>**UUID**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
+|/DriverGroup:\<nombre de grupo>|Especifica el nombre del grupo de controladores.|
+|[/Server:\<nombre del servidor>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se utiliza el servidor local.|
+|[/FilterType:\<FilterType>]|Especifica el tipo de filtro que se va a quitar del grupo. \<La> FilterType puede ser una de las siguientes:</br>**BiosVendor**</br>**BiosVersion**</br>**ChassisType**</br>**Fabricante**</br>**UUID**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para quitar un filtro, escriba uno de los siguientes:
 ```

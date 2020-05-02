@@ -1,6 +1,6 @@
 ---
 title: Comandos de Windows
-description: Comandos de Windows
+description: Referencia
 ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c703d07c-8227-4e86-94a6-8ef390f94cdc
@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
 ms.prod: windows-server
-ms.openlocfilehash: 9d68e2becbf9c6522be7e1ff6e6742d44f3a8247
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7baec3bbe532bbcedb8c17628fd88d2c8eac34c6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829238"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720732"
 ---
 # <a name="windows-commands"></a>Comandos de Windows
 
@@ -24,39 +24,39 @@ En este conjunto de documentación se describen los comandos de Windows que se p
 
 Para obtener información acerca de un comando específico, en el siguiente menú A-Z, haga clic en la letra con la que comienza el comando y, a continuación, haga clic en el nombre del comando.
 
-[Un](#a) |
+[A](#a) |
 [B](#b) | 
-[C](#c) | 
-[D](#d) | 
-[E](#e) | 
-[F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[i](#i) |
+[M](#m)[D](#d) | 
+[V](#v)[C](#c) |
 [J](#j) | 
-[K](#k) | 
-[L](#l) | 
-[M](#m) | 
-[N](#n) | 
-[O](#o) | 
-[p](#p) | 
-[Q](#q) | 
-[R](#r) | 
-[S](#s) | 
-[t](#t) | 
-[U](#u) | 
-[V](#v) | 
-[W](#w) | 
-[X](#x) | S | Z
+[W](#w)[F](#f) | 
+[S](#s)[E](#e) | 
+[R](#r)[G](#g) | 
+[U](#u)[H](#h) | 
+[X](#x) [I](#i) | 
+[T](#t)[L](#l)[N](#n)[Q](#q)[O](#o)[P](#p)[K](#k)C D E F G H I J | 
+K L M | 
+N | 
+O | 
+p | 
+Q R s T U V W X | | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ S | Z
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 
 La información contenida en este tema se aplica a:
 
 -   Windows Server 2019
--   Windows Server (Canal semianual)
+-   Windows Server (Canal semianual)
 -   Windows Server 2016
--   Windows Server 2012 R2
+-   Windows Server 2012 R2
 -   Windows Server 2012 
 -   Windows Server 2008 R2
 -   Windows Server 2008
@@ -76,7 +76,7 @@ Para la automatización de Windows más sólida y actualizada, se recomienda usa
 >También puede descargar e instalar [PowerShell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6), la versión de código abierto de PowerShell. 
 
 > [!CAUTION]
-> Una modificación incorrecta del Registro puede provocar daños graves en el sistema. Antes de realizar los siguientes cambios en el registro, debe realizar una copia de seguridad de los datos valiosos del equipo.
+> La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar los siguientes cambios en el registro, debe realizar una copia de seguridad de los datos valiosos del equipo.
 
 > [!NOTE]
 > Para habilitar o deshabilitar la finalización de nombres de archivos y directorios en el shell de comandos de un equipo o una sesión de inicio de sesión de usuario, ejecute **regedit. exe** y establezca el siguiente **valor de reg_DWOrd**:
@@ -85,36 +85,36 @@ Para la automatización de Windows más sólida y actualizada, se recomienda usa
 > 
 > Para establecer el valor de **reg_DWOrd** , use el valor hexadecimal de un carácter de control para una función determinada (por ejemplo, **0 9** es Tab y **0 08** es el retroceso). La configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
 
-## <a name="command-line-reference-a-z"></a>Referencia a-Z de la línea de comandos
+## <a name="command-line-reference-a-z"></a>Referencia A-Z de la línea de comandos  
 
 Para obtener información acerca de un comando específico de Windows, en el siguiente menú A-Z, haga clic en la letra con la que comienza el comando y, a continuación, haga clic en el nombre del comando.
 
-[Un](#a) |
+[A](#a) |
 [B](#b) | 
-[C](#c) | 
-[D](#d) | 
-[E](#e) | 
-[F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[i](#i) |
+[M](#m)[D](#d) | 
+[V](#v)[C](#c) |
 [J](#j) | 
-[K](#k) | 
-[L](#l) | 
-[M](#m) | 
-[N](#n) | 
-[O](#o) | 
-[p](#p) | 
-[Q](#q) | 
-[R](#r) | 
-[S](#s) | 
-[t](#t) | 
-[U](#u) | 
-[V](#v) | 
-[W](#w) | 
-[X](#x) | S | Z
+[W](#w)[F](#f) | 
+[S](#s)[E](#e) | 
+[R](#r)[G](#g) | 
+[U](#u)[H](#h) | 
+[X](#x) [I](#i) | 
+[T](#t)[L](#l)[N](#n)[Q](#q)[O](#o)[P](#p)[K](#k)C D E F G H I J | 
+K L M | 
+N | 
+O | 
+p | 
+Q R s T U V W X | | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ S | Z
 
-### <a name="a"></a>A
+### <a name="a"></a>Un
 -   [append](append.md)
 -   [arp](arp.md)
 -   [assoc](assoc.md)
@@ -302,7 +302,7 @@ Para obtener información acerca de un comando específico de Windows, en el sig
 - [ftype](ftype.md)
 - [fveupdate](fveupdate.md)
 
-### <a name="g"></a>N
+### <a name="g"></a>G
 -   [getmac](getmac.md)
 -   [gettype](gettype.md)
 -   [goto](goto.md)
@@ -361,10 +361,10 @@ Para obtener información acerca de un comando específico de Windows, en el sig
 - [logman](logman.md)
   -   [logman create](logman-create.md)
   -   [logman query](logman-query.md)
-  -   [Logman Start & 124; detener](logman-start-stop.md)
+  -   [Logman Start &124; detener](logman-start-stop.md)
   -   [logman delete](logman-delete.md)
   -   [logman update](logman-update.md)
-  -   [Logman Import & 124; Portada](logman-import-export.md)
+  -   [Logman Import &124; Portada](logman-import-export.md)
 - [logoff](logoff.md)
 - [lpq](lpq.md)
 - [lpr](lpr.md)
@@ -589,7 +589,7 @@ Para obtener información acerca de un comando específico de Windows, en el sig
 -   [verifier](verifier.md)
 -   [verify](verify_1.md)
 -   [vol](vol.md)
--   [vssadmin](vssadmin.md)- 
+-   [List](vssadmin.md)- 
 
 ### <a name="w"></a>W
 - [waitfor](waitfor.md)

@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 587ff48bd0af80667f9a336323641b87be808b1d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7e332db921eeb64f890149d143fc13b6e27fe4aa
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843938"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720071"
 ---
 # <a name="fsutil-volume"></a>Fsutil Volume
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2 y Windows 7
 
 Desmonta un volumen o consulta la unidad de disco duro para determinar la cantidad de espacio libre disponible actualmente en la unidad de disco duro o el archivo que está utilizando un clúster determinado.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -39,16 +39,16 @@ fsutil volume [querycluster] <VolumePath> <Cluster> [<Cluster>] … …
 |Parámetro|Descripción|
 |-------------|---------------|
 |allocationreport|Muestra información sobre cómo se usa el almacenamiento en un volumen determinado.|
-|\<VolumePath >|Especifica la letra de unidad (seguida de dos puntos).|
+|\<> VolumePath|Especifica la letra de unidad (seguida de dos puntos).|
 |diskfree|Consulta la unidad de disco duro para determinar la cantidad de espacio disponible en ella.|
-|dismount|Desmonta un volumen.|
+|desmontar|Desmonta un volumen.|
 |filelayout|Muestra los metadatos NTFS del archivo especificado.|
-|\<fileid >|Especifica el identificador de archivo.|
-|lista|Enumera todos los volúmenes del sistema.|
+|\<> fileid|Especifica el identificador de archivo.|
+|list|Enumera todos los volúmenes del sistema.|
 |querycluster|Busca el archivo que está utilizando un clúster especificado. Puede especificar varios clústeres con el parámetro **querycluster** .<p>Este parámetro se aplica a: Windows Server 2008 R2 y Windows 7.|
-|> de clúster de \<|Especifica el número de clúster lógico (LCN).|
+|\<> de clúster|Especifica el número de clúster lógico (LCN).|
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Example
+## <a name="examples"></a><a name="BKMK_examples"></a>Ejemplos
 Para mostrar un informe de clústeres asignados, escriba:
 
 ```

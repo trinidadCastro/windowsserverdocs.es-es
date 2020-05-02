@@ -9,16 +9,16 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b14561a05778ed30e71363a2cd3b3b6fdf24f78e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: eb9077f40c33d615c0bbe18f1c02b29ce27165a2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827478"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720518"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Preconfigurar objetos de equipo de clúster en Active Directory Domain Services
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 En este tema se muestra el modo de preconfigurar objetos de equipo en clúster en los Servicios de dominio de Active Directory (AD DS). Puede usar este procedimiento con el fin de habilitar a un usuario o grupo para que cree un clúster de conmutación por error cuando no tenga permisos para crear objetos de equipo en AD DS.
 
@@ -71,7 +71,7 @@ Aquí se muestra cómo conceder permisos de usuario para crear el clúster:
 
 1. En Usuarios y equipos de Active Directory, en el menú **Ver**, seleccione la opción **Características avanzadas**.
 2. Busque y, a continuación, haga clic con el botón secundario en el CNO y seleccione **propiedades**.
-3. En la pestaña **seguridad** , seleccione **Agregar**.
+3. En la pestaña **Seguridad**, seleccione **Agregar**.
 4. En el cuadro de diálogo **Seleccionar usuarios, equipos o grupos** , especifique la cuenta de usuario o el grupo al que desea conceder permisos y, a continuación, seleccione **Aceptar**.
 5. Seleccione la cuenta de usuario o el grupo recién agregado y, junto a **Control total**, active la casilla **Permitir**.
   
@@ -128,7 +128,7 @@ Un administrador del clúster de conmutación por error puede ahora crear roles 
 4. En el cuadro **nombre de equipo** , escriba el nombre que usará para el rol en clúster y, después, seleccione **Aceptar**.
 5. Como práctica recomendada, haga clic con el botón secundario en la cuenta de equipo que acaba de crear, seleccione **propiedades**y, a continuación, seleccione la pestaña **objeto** . En la pestaña **objeto** , active la casilla **proteger objeto contra eliminación accidental** y después seleccione **Aceptar**.
 6. Haga clic con el botón secundario en la cuenta de equipo que acaba de crear y, a continuación, seleccione **propiedades**.
-7. En la pestaña **seguridad** , seleccione **Agregar**.
+7. En la pestaña **Seguridad**, seleccione **Agregar**.
 8. En el cuadro de diálogo **Seleccionar usuarios, equipos, cuentas de servicio o grupos** , seleccione **tipos de objetos**, active la casilla **equipos** y, a continuación, haga clic en **Aceptar**.
 9. En **Escriba los nombres de objeto que desea seleccionar**, escriba el nombre del CNO, seleccione **Comprobar nombres**y, después, haga clic en **Aceptar**. Si recibe un mensaje de advertencia que indica que está a punto de agregar un objeto deshabilitado, haga clic en **Aceptar**.
 10. Asegúrese de que el CNO esté seleccionado y, a continuación, junto a **Control total**, active la casilla **Permitir**.

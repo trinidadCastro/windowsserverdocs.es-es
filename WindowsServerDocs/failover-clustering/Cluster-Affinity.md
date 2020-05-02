@@ -8,22 +8,22 @@ author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 03/07/2019
 description: En este artículo se describen los niveles de afinidad y antiafinidad de clústeres de conmutación por error
-ms.openlocfilehash: c9910cac602802b753391fad1009fb7f1fa3d2f2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b0c2209680f3c34ac8376d5662620595aff92c0b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828288"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720615"
 ---
 # <a name="cluster-affinity"></a>Afinidad de clústeres
 
-> Se aplica a: Windows Server 2019, Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
-Un clúster de conmutación por error puede contener numerosos roles que pueden moverse entre nodos y ejecutarse.  Hay ocasiones en que determinados roles (es decir, máquinas virtuales, grupos de recursos, etc.) no deben ejecutarse en el mismo nodo.  Esto puede deberse al consumo de recursos, al uso de memoria, etc.  Por ejemplo, hay dos máquinas virtuales con un uso intensivo de memoria y CPU, y si las dos máquinas virtuales se ejecutan en el mismo nodo, una de las máquinas virtuales, o ambas, podrían tener problemas de impacto en el rendimiento.  En este artículo se explican los niveles de antiafinidad de clústeres y cómo puede usarlos.
+Un clúster de conmutación por error puede contener numerosos roles que pueden moverse entre nodos y ejecutarse. Hay ocasiones en que determinados roles (es decir, máquinas virtuales, grupos de recursos, etc.) no deben ejecutarse en el mismo nodo.  Esto puede deberse al consumo de recursos, al uso de memoria, etc.  Por ejemplo, hay dos máquinas virtuales con un uso intensivo de memoria y CPU, y si las dos máquinas virtuales se ejecutan en el mismo nodo, una de las máquinas virtuales, o ambas, podrían tener problemas de impacto en el rendimiento.  En este artículo se explican los niveles de antiafinidad de clústeres y cómo puede usarlos.
 
 ## <a name="what-is-affinity-and-antiaffinity"></a>¿Qué es la afinidad y la antiafinidad?
 
-La afinidad es una regla que se debe configurar y que establece una relación entre dos o más roles (i, e, máquinas virtuales, grupos de recursos, etc.) para mantenerlos juntos.  La antiafinidad es la misma, pero se utiliza para intentar mantener los roles especificados entre sí.  Los clústeres de conmutación por error usan la antiafinidad para sus roles.  Más concretamente, el parámetro [AntiAffinityClassNames](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames) definido en los roles para que no se ejecuten en el mismo nodo.  
+La afinidad es una regla que se debe configurar y que establece una relación entre dos o más roles (i, e, máquinas virtuales, grupos de recursos, etc.) para mantenerlos juntos.  La antiafinidad es la misma, pero se utiliza para intentar mantener los roles especificados entre sí. Los clústeres de conmutación por error usan la antiafinidad para sus roles.  Más concretamente, el parámetro [AntiAffinityClassNames](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames) definido en los roles para que no se ejecuten en el mismo nodo.  
 
 ## <a name="antiaffinityclassnames"></a>AntiAffinityClassnames
 
@@ -88,6 +88,3 @@ En una lista de PowerShell de los grupos, verá lo siguiente:
 
 - El uso de los propietarios preferidos en los grupos se puede combinar con la antiafinidad en un clúster de tres o más nodos.
 - La configuración de AntiAffinityClassNames y ClusterEnforcedAntiAffinity solo tendrá lugar después de un reciclaje de los recursos. es decir,. puede establecerlos, pero si ambos grupos están en línea en el mismo nodo cuando se establecen, seguirán estando en línea.
-
-
-

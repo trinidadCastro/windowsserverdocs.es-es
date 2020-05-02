@@ -1,6 +1,6 @@
 ---
 title: Wbadmin Delete systemstatebackup
-description: Temas de comandos de Windows para Wbadmin Delete systemstatebackup, que elimina las copias de seguridad de estado del sistema que especifique.
+description: Tema de referencia de Wbadmin Delete systemstatebackup, que elimina las copias de seguridad de estado del sistema que especifique.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e184a40612024f81e1c6ab93de8cec4a63eee578
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 12d8ba6ff24e338c6afa5556d7a60e2157156acc
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829898"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720197"
 ---
 # <a name="wbadmin-delete-systemstatebackup"></a>Wbadmin Delete systemstatebackup
 
@@ -27,7 +27,7 @@ Elimina las copias de seguridad de estado del sistema que especifique. Si el vol
 
 Para eliminar una copia de seguridad de estado del sistema con este subcomando, debe ser miembro del grupo **operadores de copia de seguridad** o del grupo **administradores** , o bien tener delegados los permisos adecuados. Además, debe ejecutar **Wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados, haga clic con el botón secundario en **símbolo del sistema**y, a continuación, haga clic en **Ejecutar como administrador**).
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -53,7 +53,7 @@ wbadmin delete systemstatebackup
 |-equipo|Especifica el equipo cuya copia de seguridad de estado del sistema desea eliminar. Resulta útil cuando se realizó una copia de seguridad de varios equipos en la misma ubicación. Debe usarse cuando se especifica el parámetro **-backupTarget** .|
 |-quiet|Ejecuta el subcomando sin preguntar al usuario.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para eliminar la copia de seguridad del estado del sistema creada el 31 de marzo de 2013 a las 10:00 AM, escriba:
 ```

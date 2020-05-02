@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setsecurityflags
-description: Comando comandos de Windows para **bitsadmin setsecurityflags**, que establece marcas de seguridad para http para determinar si los bits deben comprobar la lista de revocación de certificados, omitir determinados errores de certificado y definir la Directiva que se va a usar cuando un servidor redirija la solicitud HTTP.
+description: Tema de referencia del comando bitsadmin setsecurityflags, que establece marcas de seguridad para HTTP para determinar si los BITS deben comprobar la lista de revocación de certificados, omitir determinados errores de certificado y definir la Directiva que se va a usar cuando un servidor redirija la solicitud HTTP.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8d73361bceda8c0eb24992bdee176b47bf82a878
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 63430f9814037aeb948cc8b91e8590f13a4df00e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122724"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720475"
 ---
 # <a name="bitsadmin-setsecurityflags"></a>bitsadmin setsecurityflags
 
@@ -35,12 +35,14 @@ bitsadmin /setsecurityflags <job> <value>
 
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se establecen las marcas de seguridad para habilitar una comprobación de CRL para el trabajo denominado *myDownloadJob*.
+Para establecer las marcas de seguridad para habilitar una comprobación de CRL para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /setsecurityflags myDownloadJob 0x0001
+bitsadmin /setsecurityflags myDownloadJob 0x0001
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

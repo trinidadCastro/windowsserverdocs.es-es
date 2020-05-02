@@ -7,15 +7,16 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 913a596a46720718a165295345cb02e3e2baa1de
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fe2f98c89d97325c1f59dc6ba292831e0ffa5ff
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827568"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720560"
 ---
 # <a name="health-service-faults"></a>Errores de Servicio de mantenimiento
-> Se aplica a: Windows Server 2019, Windows Server 2016
+
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 ## <a name="what-are-faults"></a>Qué son los errores
 
@@ -23,7 +24,7 @@ El Servicio de mantenimiento supervisa constantemente el clúster de Espacios de
 
 Cada error contiene cinco campos importantes:  
 
--   Severity
+-   severity
 -   Descripción del problema
 -   Pasos siguientes recomendados para solucionar el problema
 -   Información de identificación de la entidad con errores
@@ -42,7 +43,7 @@ Location: Seattle DC, Rack B07, Node 4, Slot 11
  >[!NOTE]
  > La ubicación física procede de la configuración del dominio de error. Para obtener más información acerca de los dominios de error, consulte [dominios de error en Windows Server 2016](fault-domains.md). Si no proporciona esta información, el campo de ubicación será menos útil, por ejemplo, puede mostrar solo el número de ranura.  
 
-## <a name="root-cause-analysis"></a>Análisis de causa raíz
+## <a name="root-cause-analysis"></a>Análisis de la causa raíz
 
 El Servicio de mantenimiento puede evaluar la causalidad potencial entre las entidades con errores para identificar y combinar los errores que son consecuencias del mismo problema subyacente. Al reconocer las cadenas de efectos, habrá menos informes innecesarios. Por ejemplo, si un servidor está inactivo, se espera que las unidades del servidor también estén sin conectividad. Por lo tanto, solo se generará un error para la causa raíz; en este caso, el servidor.  
 
@@ -69,14 +70,13 @@ Get-FileShare -Name <Name> | Debug-FileShare
 
 Esto devuelve los errores que afectan solo al volumen específico o al recurso compartido de archivos. A menudo, estos errores están relacionados con el planeamiento de la capacidad, la resistencia de los datos o características como la calidad de servicio o la réplica de almacenamiento. 
 
-## <a name="usage-in-net-and-c"></a>Uso en .NET yC#
+## <a name="usage-in-net-and-c"></a>Uso en .NET y C #
 
 ### <a name="connect"></a>Conectar
 
-Para consultar el Servicio de mantenimiento, tendrá que establecer un **CimSession** con el clúster. Para ello, necesitará algunas cosas que solo están disponibles en .NET completo, lo que significa que no puede hacerlo directamente desde una aplicación web o móvil. Estos ejemplos de código usarán C\#, la opción más sencilla para esta capa de acceso a datos.
+Para consultar el Servicio de mantenimiento, tendrá que establecer un **CimSession** con el clúster. Para ello, necesitará algunas cosas que solo están disponibles en .NET completo, lo que significa que no puede hacerlo directamente desde una aplicación web o móvil. Estos ejemplos de código usarán\#C, la opción más sencilla para esta capa de acceso a datos.
 
-``` 
-...
+```
 using System.Security;
 using Microsoft.Management.Infrastructure;
 
@@ -105,7 +105,7 @@ Se recomienda que construya la contraseña **SecureString** directamente a parti
 
 Con el **CimSession** establecido, puede consultar instrumental de administración de Windows (WMI) en el clúster.
 
-Antes de que pueda obtener errores o métricas, deberá obtener instancias de varios objetos pertinentes. En primer lugar, el **MSFT\_StorageSubSystem** que representa espacios de almacenamiento directo en el clúster. Con esto, puede obtener todos los **StorageNode de msft\_** en el clúster y todos los volúmenes de **\_de msft**, los volúmenes de datos. Por último, necesitará el **MSFT\_StorageHealth**, el servicio de mantenimiento mismo.
+Antes de que pueda obtener errores o métricas, deberá obtener instancias de varios objetos pertinentes. En primer lugar, el **StorageSubSystem de msft\_** que representa espacios de almacenamiento directo en el clúster. Con esto, puede obtener todos los **StorageNode\_de msft** del clúster y todos los **volúmenes\_msft**, los volúmenes de datos. Por último, también necesitará **el\_StorageHealth de msft**, el propio servicio de mantenimiento.
 
 ```
 CimInstance Cluster;
@@ -138,7 +138,6 @@ Estos son los mismos objetos que se obtienen en PowerShell mediante cmdlets como
 Puede tener acceso a todas las mismas propiedades, documentadas en [clases de API de administración de almacenamiento](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx).
 
 ```
-...
 using System.Diagnostics;
 
 foreach (CimInstance Node in Nodes)
@@ -213,7 +212,7 @@ A continuación se describe la lista completa de las propiedades de cada error (
 
 Cuando se crean, quitan o actualizan errores, el Servicio de mantenimiento genera eventos WMI. Son esenciales para mantener el estado de la aplicación sincronizada sin sondeos frecuentes y pueden ayudar con cosas como determinar cuándo enviar alertas por correo electrónico, por ejemplo. Para suscribirse a estos eventos, este código de ejemplo utiliza de nuevo el modelo de diseño de observador.
 
-En primer lugar, suscríbase a **MSFT\_eventos StorageFaultEvent** .
+En primer lugar, suscríbase a los eventos **msft\_StorageFaultEvent** .
 
 ```      
 public void ListenForFaultEvents()
@@ -284,13 +283,13 @@ Sin embargo, en algunos casos, el Servicio de mantenimiento puede volver a detec
 
 ### <a name="properties-of-faults"></a>Propiedades de los errores
 
-Esta tabla presenta varias propiedades clave del objeto de error. En el esquema completo, inspeccione la clase **MSFT\_StorageDiagnoseResult** en *storagewmi. mof*.
+Esta tabla presenta varias propiedades clave del objeto de error. En el esquema completo, inspeccione la clase **msft\_StorageDiagnoseResult** en *storagewmi. mof*.
 
 | **Propiedad**              | **Ejemplo**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft. Health. FaultType. VOLUME. Capacity                      |
-| Razón                    | "El volumen se está quedando sin espacio disponible".                 |
+| Motivo                    | "El volumen se está quedando sin espacio disponible".                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | S.N. XYZ9000 contoso 123456789                                  |
 | FaultingObjectLocation    | Bastidor A06, RU 25, ranura 11                                        |
@@ -308,7 +307,7 @@ Esta tabla presenta varias propiedades clave del objeto de error. En el esquema 
 
 ## <a name="properties-of-fault-events"></a>Propiedades de los eventos de error
 
-Esta tabla presenta varias propiedades clave del evento de error. En el esquema completo, inspeccione la clase **MSFT\_StorageFaultEvent** en *storagewmi. mof*.
+Esta tabla presenta varias propiedades clave del evento de error. En el esquema completo, inspeccione la clase **msft\_StorageFaultEvent** en *storagewmi. mof*.
 
 Tenga en cuenta el **ChangeType**, que indica si se está creando, quitando o actualizando un error, y **FaultId**. Un evento también contiene todas las propiedades del error afectado.
 
@@ -317,7 +316,7 @@ Tenga en cuenta el **ChangeType**, que indica si se está creando, quitando o ac
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft. Health. FaultType. VOLUME. Capacity                      |
-| Razón                    | "El volumen se está quedando sin espacio disponible".                 |
+| Motivo                    | "El volumen se está quedando sin espacio disponible".                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | S.N. XYZ9000 contoso 123456789                                  |
 | FaultingObjectLocation    | Bastidor A06, RU 25, ranura 11                                        |
@@ -390,7 +389,7 @@ En Windows Server 2016, el Servicio de mantenimiento proporciona la siguiente co
 * Motivo: *"el grupo de almacenamiento no tiene la capacidad de reserva mínima recomendada. Esto puede limitar la capacidad de restaurar la resistencia de los datos en caso de que se produzcan errores en la unidad.*
 * RecommendedAction: *"agregar capacidad adicional al bloque de almacenamiento o liberar capacidad. La reserva recomendada mínima varía según la implementación, pero tiene aproximadamente 2 unidades de capacidad.*
 
-### <a name="volume-capacity-2sup1sup"></a>**Capacidad del volumen (2)** <sup>1</sup>
+### <a name="volume-capacity-2sup1sup"></a>**Capacidad del volumen (2)**<sup>1</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType: Microsoft. Health. FaultType. VOLUME. Capacity
 * Gravedad: advertencia
@@ -497,7 +496,7 @@ En Windows Server 2016, el Servicio de mantenimiento proporciona la siguiente co
 * Motivo: *"la puesta al día del firmware se canceló debido a que hay demasiados discos físicos con errores en un intento de actualización de firmware".*
 * RecommendedAction: *"reiniciar el firmware cuando se ha resuelto el problema de firmware".*
 
-### <a name="storage-qos-3sup2sup"></a>**QoS de almacenamiento (3)** <sup>2</sup>
+### <a name="storage-qos-3sup2sup"></a>**QoS de almacenamiento (3)**<sup>2</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType: Microsoft. Health. FaultType. StorQos. InsufficientThroughput
 * Gravedad: advertencia
@@ -522,4 +521,4 @@ En Windows Server 2016, el Servicio de mantenimiento proporciona la siguiente co
 
 ## <a name="see-also"></a>Vea también
 
-- [Servicio de mantenimiento en Windows Server 2016](health-service-overview.md)
+- [Servicio de mantenimiento de Windows Server 2016](health-service-overview.md)

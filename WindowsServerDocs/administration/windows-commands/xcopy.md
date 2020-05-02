@@ -1,6 +1,6 @@
 ---
 title: xcopy
-description: El tema comandos de Windows para xcopy, w hich copia archivos y directorios, incluidos los subdirectorios.
+description: Tema de referencia sobre xcopy, que copia archivos y directorios, incluidos los subdirectorios.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: 660ef69a5f1df99c3b959a588984719c9d4dea6b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d0ee0a9f87eacefad619e82aa28f5fcf8419ed09
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828928"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720622"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -32,18 +32,18 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 |Parámetro|Descripción|
 |---------|-----------|
-|> de \<de origen|Obligatorio. Especifica la ubicación y los nombres de los archivos que desea copiar. Este parámetro debe incluir una unidad o una ruta de acceso.|
-|[\<> de destino]|Especifica el destino de los archivos que desea copiar. Este parámetro puede incluir una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
+|\<> de origen|Necesario. Especifica la ubicación y los nombres de los archivos que desea copiar. Este parámetro debe incluir una unidad o una ruta de acceso.|
+|[\<Destino>]|Especifica el destino de los archivos que desea copiar. Este parámetro puede incluir una letra de unidad y dos puntos, un nombre de directorio, un nombre de archivo o una combinación de estos.|
 |/w|Muestra el siguiente mensaje y espera la respuesta antes de empezar a copiar los archivos:</br>**Presione cualquier tecla para empezar a copiar los archivos.**|
 |/p|Le pide que confirme si desea crear cada archivo de destino.|
-|/c|Omite los errores.|
+|/C|Omite los errores.|
 |/v|Comprueba cada archivo a medida que se escribe en el archivo de destino para asegurarse de que los archivos de destino son idénticos a los archivos de origen.|
 |/q|Suprime la presentación de mensajes **xcopy** .|
 |/f|Muestra los nombres de archivo de origen y de destino durante la copia.|
 |/l|Muestra una lista de los archivos que se van a copiar.|
 |/g|Crea archivos de *destino* descifrados cuando el destino no admite el cifrado.|
 |/d [: MM-DD-YYYY]|Copia los archivos de código fuente que han cambiado en o después de la fecha especificada. Si no incluye un valor *MM-DD-YYYY* , **xcopy** copia todos los archivos de *origen* que son más recientes que los archivos de *destino* existentes. Esta opción de línea de comandos permite actualizar los archivos que han cambiado.|
-|/u|Copia archivos del *origen* que solo existen en el *destino* .|
+|/U|Copia archivos del *origen* que solo existen en el *destino* .|
 |/i|Si el *origen* es un directorio o contiene caracteres comodín y el *destino* no existe, **xcopy** supone que el *destino* especifica un nombre de directorio y crea un nuevo directorio. A continuación, **xcopy** copia todos los archivos especificados en el nuevo directorio. De forma predeterminada, **xcopy** le pide que especifique si el *destino* es un archivo o un directorio.|
 |/s|Copia directorios y subdirectorios, a menos que estén vacíos. Si omite **/s**, **xcopy** funciona dentro de un único directorio.|
 |/e|Copia todos los subdirectorios, incluso si están vacíos. Use **/e** con las opciones de línea de comandos **/s** y **/t** .|
@@ -56,15 +56,15 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 |/n|Crea copias usando los nombres de archivo o directorio cortos NTFS. **/n** es necesario cuando se copian archivos o directorios de un volumen NTFS a un volumen FAT o cuando se requiere la Convención de nomenclatura del sistema de archivos FAT (es decir, 8,3 caracteres) en el sistema de archivos de *destino* . El sistema de archivos de *destino* puede ser FAT o NTFS.|
 |/o|Copia la propiedad del archivo y la información de la lista de control de acceso discrecional (DACL).|
 |/x|Copia la configuración de auditoría de archivos y la información de la lista de control de acceso (SACL) del sistema (implica **/o**).|
-|/exclude: nombreDeArchivo1 [+ [Nombredearchivo2] [+ [FileName3] (\)]|Especifica una lista de archivos. Se debe especificar al menos un archivo. Cada archivo contendrá cadenas de búsqueda con cada cadena en una línea independiente del archivo.</br>Cuando cualquiera de las cadenas coincida con cualquier parte de la ruta de acceso absoluta del archivo que se va a copiar, el archivo se excluirá de la copia. Por ejemplo, si se especifica la cadena **obj** , se excluirán todos los archivos situados debajo del archivo **obj** o todos los archivos con la extensión **. obj** .|
+|/exclude: nombreDeArchivo1 [+ [Nombredearchivo2] [+ [FileName3] ( \)]|Especifica una lista de archivos. Se debe especificar al menos un archivo. Cada archivo contendrá cadenas de búsqueda con cada cadena en una línea independiente del archivo.</br>Cuando cualquiera de las cadenas coincida con cualquier parte de la ruta de acceso absoluta del archivo que se va a copiar, el archivo se excluirá de la copia. Por ejemplo, si se especifica la cadena **obj** , se excluirán todos los archivos situados debajo del archivo **obj** o todos los archivos con la extensión **. obj** .|
 |/y|Suprime el mensaje para confirmar que desea sobrescribir un archivo de destino existente.|
 |/-y|Solicita que confirme si desea sobrescribir un archivo de destino existente.|
 |/z|Copia a través de una red en modo reiniciable.|
 |/b|Copia el vínculo simbólico en lugar de los archivos. Este parámetro se incorporó en® de Windows Vista.|
 |/j|Copia archivos sin almacenamiento en búfer. Recomendado para archivos de gran tamaño. Este parámetro se agregó en Windows Server 2008 R2.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Usar **/z**
 
@@ -151,7 +151,7 @@ xcopy \rawdata \reports /d:12-29-1993 /l > xcopy.out
 
 El archivo XCopy. out muestra todos los archivos que se van a copiar.
 
-**6.** para copiar el directorio \Customer y todos los subdirectorios en el directorio \\\\Public\Address en la unidad de red H:, conserve el atributo de solo lectura y se le preguntará cuando se cree un nuevo archivo en h:, escriba:
+**6.** para copiar el directorio \Customer y todos los subdirectorios en el \\ \\directorio Public\Address de la unidad de red H:, conserve el atributo de solo lectura y se le preguntará cuando se cree un nuevo archivo en H:, escriba:
 
 ```
 xcopy \customer h:\public\address /s /e /k /p
@@ -204,14 +204,14 @@ rem  .\d2\toc.yml
 rem  3 File(s) copied
 ```
 
-En el ejemplo anterior, este valor de parámetro de origen concreto **.\\tdc\*. yml** copie los mismos 3 archivos aunque se hayan quitado sus dos caracteres de ruta de acceso **.\\** . Sin embargo, no se copiará ningún archivo si se quitó el carácter comodín de asterisco del parámetro de origen, lo que lo hizo simplemente **.\\TOC. yml**.
+En el ejemplo anterior, este valor de parámetro de origen concreto **.\\ TOC\*. yml** copia los mismos 3 archivos **aunque se hayan\\ ** quitado los dos caracteres de la ruta de acceso. Sin embargo, no se copiará ningún archivo si se quitó el carácter comodín de asterisco del parámetro de origen, lo que lo hizo simplemente **.\\ TOC. yml**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 -   [Copiar](copy.md)
--   [Mover](move.md)
+-   [Move](move.md)
 -   [Dir](dir.md)
 -   [Atributo](attrib.md)
 -   [Diskcopy](diskcopy.md)
--   [Cuando](if.md)
+-   [If](if.md)
 -   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

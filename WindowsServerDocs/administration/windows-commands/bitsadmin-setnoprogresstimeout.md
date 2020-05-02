@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnoprogresstimeout
-description: Windows Commands topic for **bitsadmin setnoprogresstimeout**, que establece el período de tiempo, en segundos, que el servicio intenta transferir el archivo después de que se produzca un error transitorio.
+description: Tema de referencia del comando bitsadmin setnoprogresstimeout, que establece el período de tiempo, en segundos, que el servicio intenta transferir el archivo después de que se produzca un error transitorio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8adff95b0dbae68634db2e248d4493549c5ac85d
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 398882cf795e98dc0bbc0fb81006d3406fded707
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122884"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720110"
 ---
 # <a name="bitsadmin-setnoprogresstimeout"></a>bitsadmin setnoprogresstimeout
 
@@ -33,7 +33,7 @@ bitsadmin /setnoprogresstimeout <job> <timeoutvalue>
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 | timeoutvalue | Período de tiempo durante el cual BITS espera para transferir un archivo después del primer error, en segundos. |
 
-## <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 - El intervalo de tiempo de espera "no Progress" comienza cuando el trabajo encuentra su primer error transitorio.
 
@@ -43,12 +43,14 @@ bitsadmin /setnoprogresstimeout <job> <timeoutvalue>
 
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se establece el valor de tiempo de espera de "no Progress" en 20 segundos para el trabajo denominado *myDownloadJob*.
+Para establecer el valor de tiempo de espera de "no Progress" en 20 segundos, para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /setnoprogresstimeout myDownloadJob 20
+bitsadmin /setnoprogresstimeout myDownloadJob 20
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

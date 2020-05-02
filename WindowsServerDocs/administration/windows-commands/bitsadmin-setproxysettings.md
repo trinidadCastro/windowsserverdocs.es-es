@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setproxysettings
-description: Windows Commands topic for **bitsadmin setproxysettings**, que establece la configuración de proxy para el trabajo especificado.
+description: Tema de referencia del comando bitsadmin setproxysettings, que establece la configuración de proxy para el trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ea92383d9bd09372d21d3c1da84db060b0a9958
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 7f7c54b3081c85756735d921fb70f726ba60d833
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122753"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720491"
 ---
 # <a name="bitsadmin-setproxysettings"></a>bitsadmin setproxysettings
 
@@ -32,15 +32,15 @@ bitsadmin /setproxysettings <job> <usage> [list] [bypass]
 | --------- | ----------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 | usage | Establece el uso del proxy, incluido:<ul><li>**PRECONFIG.** Use los valores predeterminados de Internet Explorer del propietario.</li><li>**NO_PROXY.** No utilice un servidor proxy.</li><li>**Estima.** Use una lista de proxy explícita y una lista de omisión. La lista de proxy y la información de omisión de proxy deben seguir.</li><li>**Detección automática.** Detecta automáticamente la configuración de proxy.</li></ul> |
-| lista | Se utiliza cuando el parámetro *Usage* está establecido en override. Debe contener una lista delimitada por comas de servidores proxy para usar. |
-| Alto | Se utiliza cuando el parámetro *Usage* está establecido en override. Debe contener una lista delimitada por espacios de nombres de host o direcciones IP, o ambos, para las que las transferencias no se van a enrutar a través de un proxy. Esto se puede `<local>` para hacer referencia a todos los servidores de la misma LAN. Los valores NULL se pueden usar para una lista de omisión de proxy vacía. |
+| list | Se utiliza cuando el parámetro *Usage* está establecido en override. Debe contener una lista delimitada por comas de servidores proxy para usar. |
+| omitir | Se utiliza cuando el parámetro *Usage* está establecido en override. Debe contener una lista delimitada por espacios de nombres de host o direcciones IP, o ambos, para las que las transferencias no se van a enrutar a través de un proxy. Esto puede ser `<local>` hacer referencia a todos los servidores de la misma LAN. Los valores NULL se pueden usar para una lista de omisión de proxy vacía. |
 
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se establece la configuración de proxy para el trabajo denominado *myDownloadJob*.
+Para establecer la configuración de proxy con las distintas opciones de uso del trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /setproxysettings myDownloadJob PRECONFIG
+bitsadmin /setproxysettings myDownloadJob PRECONFIG
 ```
 
 ```
@@ -57,3 +57,5 @@ bitsadmin /setproxysettings myDownloadJob OVERRIDE proxy1,proxy2,proxy3 NULL
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

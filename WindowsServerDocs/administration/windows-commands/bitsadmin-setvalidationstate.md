@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setvalidationstate
-description: Tema de comandos de Windows para **bitsadmin setvalidationstate**, que establece el estado de validación de contenido del archivo especificado en el trabajo.
+description: Tema de referencia del comando bitsadmin setvalidationstate, que establece el estado de validación del contenido del archivo especificado en el trabajo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6bec42ae926050cd21df594a38f1c441a40a527f
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: e3f22dc09eb1f70ce3c1ebd80fd6ba721e864377
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122719"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720462"
 ---
 # <a name="bitsadmin-setvalidationstate"></a>bitsadmin setvalidationstate
 
@@ -36,12 +36,14 @@ bitsadmin /setvalidationstate <job> <file_index> <TRUE|FALSE>
 
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se establece el estado de validación de contenido del archivo 2 en TRUE para el trabajo denominado *myDownloadJob*.
+Para establecer el estado de validación del contenido del archivo 2 en TRUE para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /setvalidationstate myDownloadJob 2 TRUE
+bitsadmin /setvalidationstate myDownloadJob 2 TRUE
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

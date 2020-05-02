@@ -8,16 +8,16 @@ ms.author: jgerend
 manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 01/14/2020
-ms.openlocfilehash: 5d382807adcfd771215d1f87332a47842d25eda3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: eea98579a66f1db7f7ec873bda6a2c934841736f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827388"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720510"
 ---
 # <a name="failover-clustering-system-log-events"></a>Eventos de registro del sistema de clústeres de conmutación por error
 
->Se aplica a: Windows Server 2019, Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se enumeran los eventos de clústeres de conmutación por error del registro del sistema de Windows Server (visibles en Visor de eventos). Todos estos eventos comparten el origen de eventos de **FailoverClustering** y pueden ser útiles para solucionar problemas de un clúster.
 
@@ -185,7 +185,7 @@ Hora en que se borrará automáticamente la cuarentena: %3
 
 ### <a name="event-1024-cp_reg_ckpt_restore_failed"></a>Evento 1024: CP_REG_CKPT_RESTORE_FAILED
 
-No se pudo restaurar el punto de control del registro para el recurso de clúster ' %1 ' en la clave del registro HKEY_LOCAL_MACHINE\\%2. Es posible que el recurso no funcione correctamente.
+No se pudo restaurar el punto de control del registro para el recurso de clúster ' %1\\' en la clave del registro HKEY_LOCAL_MACHINE %2. Es posible que el recurso no funcione correctamente.
 Asegúrese de que ningún otro proceso tiene identificadores abiertos a las claves del registro en este subárbol del registro.
 
 ### <a name="event-1034-res_disk_missing"></a>Evento 1034: RES_DISK_MISSING
@@ -600,7 +600,7 @@ No se puede poner en línea el recurso de nombre de red de clúster ' %1 '. El s
 
 ### <a name="event-1567-service_failed_to_change_log_size"></a>Evento 1567: SERVICE_FAILED_TO_CHANGE_LOG_SIZE
 
-Servicio de clúster no pudo cambiar el tamaño del registro de seguimiento. Compruebe el valor de ClusterLogSize con el cmdlet de PowerShell "Get-Cluster \| Format-List \*". Además, use el complemento monitor de rendimiento para comprobar la configuración de la sesión de seguimiento de eventos para FailoverClustering.
+Servicio de clúster no pudo cambiar el tamaño del registro de seguimiento. Compruebe el valor de ClusterLogSize con el cmdlet de PowerShell " \| Get-Cluster \*Format-List". Además, use el complemento monitor de rendimiento para comprobar la configuración de la sesión de seguimiento de eventos para FailoverClustering.
 
 ### <a name="event-1567-res_vipaddr_address_interface_failed"></a>Evento 1567: RES_VIPADDR_ADDRESS_INTERFACE_FAILED
 
@@ -664,11 +664,11 @@ No se pudo iniciar el servidor de archivos porque no se encontró la dependencia
 
 ### <a name="event-1606-res_disk_cno_check_failed"></a>Evento 1606: RES_DISK_CNO_CHECK_FAILED
 
-El recurso de disco de clúster ' %1 ' contiene un volumen protegido por BitLocker, ' %2 ', pero para este volumen, el Active Directory cuenta de nombre de clúster (también denominado objeto de nombre de clúster o CNO) no es un protector de BitLocker para el volumen. Esto es necesario para los volúmenes protegidos por BitLocker. Para corregirlo, quite primero el disco del clúster. A continuación, use la herramienta de línea de comandos Manage-Bde. exe para agregar el nombre de clúster como un protector de ADAccountOrGroup, con el formato dominio\\ClusterName\$ para el nombre del clúster. A continuación, vuelva a agregar el disco al clúster. Para obtener más información, consulte la documentación de Manage-Bde. exe.
+El recurso de disco de clúster ' %1 ' contiene un volumen protegido por BitLocker, ' %2 ', pero para este volumen, el Active Directory cuenta de nombre de clúster (también denominado objeto de nombre de clúster o CNO) no es un protector de BitLocker para el volumen. Esto es necesario para los volúmenes protegidos por BitLocker. Para corregirlo, quite primero el disco del clúster. A continuación, use la herramienta de línea de comandos Manage-Bde. exe para agregar el nombre de clúster como un protector de\\ADAccountOrGroup\$ , con el formato dominio ClusterName para el nombre del clúster. A continuación, vuelva a agregar el disco al clúster. Para obtener más información, consulte la documentación de Manage-Bde. exe.
 
 ### <a name="event-1607-res_disk_cno_unlock_failed"></a>Evento 1607: RES_DISK_CNO_UNLOCK_FAILED
 
-El recurso de disco de clúster ' %1 ' no pudo desbloquear el volumen protegido por BitLocker ' %2 '. El objeto de nombre de clúster (CNO) no está configurado para ser un protector de BitLocker válido para este volumen. Para corregirlo, quite el disco del clúster. A continuación, use la herramienta de línea de comandos Manage-Bde. exe para agregar el nombre de clúster como un protector de ADAccountOrGroup, con el formato dominio\\ClusterName\$y vuelva a agregar el disco al clúster. Para obtener más información, consulte la documentación de Manage-Bde. exe.
+El recurso de disco de clúster ' %1 ' no pudo desbloquear el volumen protegido por BitLocker ' %2 '. El objeto de nombre de clúster (CNO) no está configurado para ser un protector de BitLocker válido para este volumen. Para corregirlo, quite el disco del clúster. A continuación, use la herramienta de línea de comandos Manage-Bde. exe para agregar el nombre de clúster como un protector\\de\$ADAccountOrGroup, con el formato dominio ClusterName, y vuelva a agregar el disco al clúster. Para obtener más información, consulte la documentación de Manage-Bde. exe.
 
 ### <a name="event-1608-res_fileserver_leader_failed"></a>Evento 1608: RES_FILESERVER_LEADER_FAILED
 
@@ -780,7 +780,7 @@ El administrador de particiones no liberó el disco en clúster con el identific
 
 ### <a name="event-4613-nodecleanup_clear_clusdisk_database_failed"></a>Evento 4613: NODECLEANUP_CLEAR_CLUSDISK_DATABASE_FAILED
 
-El servicio de clúster no pudo limpiar correctamente un disco en clúster con el identificador ' %2 ' al destruir el clúster. El código de error era ' %1 '. Es posible que no pueda obtener acceso a este disco hasta que la limpieza se haya completado correctamente. Para la limpieza manual, elimine el valor ' AttachedDisks ' de la clave ' HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\ClusDisk\\Parameters ' en el registro de Windows.
+El servicio de clúster no pudo limpiar correctamente un disco en clúster con el identificador ' %2 ' al destruir el clúster. El código de error era ' %1 '. Es posible que no pueda obtener acceso a este disco hasta que la limpieza se haya completado correctamente. Para la limpieza manual, elimine el valor ' AttachedDisks ' de la\\clave\\'\\HKEY_LOCAL_MACHINE\\System\\CurrentControlSet Services ClusDisk Parameters ' en el registro de Windows.
 
 ### <a name="event-4615-nodecleanup_disable_cluster_service_failed"></a>Evento 4615: NODECLEANUP_DISABLE_CLUSTER_SERVICE_FAILED
 

@@ -1,6 +1,6 @@
 ---
 title: wscript
-description: Temas de comandos de Windows para Wscript, que proporciona un entorno en el que los usuarios pueden ejecutar scripts en diversos lenguajes que usan diversos modelos de objetos para realizar tareas.
+description: Tema de referencia de Wscript, que proporciona un entorno en el que los usuarios pueden ejecutar scripts en diversos lenguajes que usan diversos modelos de objetos para realizar tareas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 77a0087eee1287699d66c4e1e5ab2aef69551440
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cf2d23c7d5773662f679a9a20b0aaba118f35548
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828938"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720626"
 ---
 # <a name="wscript"></a>wscript
 
@@ -39,18 +39,18 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 |/h: cscript|Registra **Cscript. exe** como host de script predeterminado para ejecutar scripts.|
 |/h: Wscript|Registra **Wscript. exe** como host de script predeterminado para ejecutar scripts. Este es el valor predeterminado cuando se omite la opción **/h** .|
 |/i|Especifica el modo interactivo, que muestra las alertas, los errores de scripting y los mensajes de entrada.</br>Este es el valor predeterminado y el contrario de **/b**.|
-|/trabajo: identificador de\<>|Ejecuta el trabajo identificado por el *identificador* en un archivo de script **. wsf** .|
+|/trabajo:\<identificador>|Ejecuta el trabajo identificado por el *identificador* en un archivo de script **. wsf** .|
 |/logo|Especifica que el banner de Windows Script Host se muestra en la consola antes de que se ejecute el script.</br>Este es el valor predeterminado y el contrario de **/nologo**.|
 |/nologo|Especifica que el titular de Windows Script Host no se muestra antes de que se ejecute el script. Es lo contrario de **/logo**.|
 |/s|Guarda las opciones actuales del símbolo del sistema para el usuario actual.|
-|/t:\<número >|Especifica el tiempo máximo que se puede ejecutar el script (en segundos). Puede especificar hasta 32.767 segundos.</br>El valor predeterminado es sin límite de tiempo.|
+|/t:\<número>|Especifica el tiempo máximo que se puede ejecutar el script (en segundos). Puede especificar hasta 32.767 segundos.</br>El valor predeterminado es sin límite de tiempo.|
 |/x|Inicia el script en el depurador.|
 |ScriptArguments|Especifica los argumentos que se pasan al script. Cada argumento de script debe ir precedido de una barra diagonal (/).|
 |/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
--   Para realizar esta tarea no necesita credenciales administrativas. Por lo tanto, para garantizar la mayor seguridad, se recomienda realizar esta tarea como usuario sin credenciales administrativas.
+-   La realización de esta tarea no le exige que tenga credenciales administrativas. Por consiguiente, como medida de seguridad recomendada, considere la posibilidad de realizar esta tarea como un usuario sin credenciales administrativas.
 -   Para abrir un símbolo del sistema, en la pantalla **Inicio**, escriba **cmd** y, a continuación, haga clic en **símbolo del sistema**.
 -   Cada parámetro es opcional; sin embargo, no se pueden especificar argumentos de script sin especificar un script. Si no especifica un script o argumentos de script, **Wscript. exe** muestra el cuadro de diálogo **configuración de Windows Script Host** , que puede usar para establecer las propiedades globales de los scripts para todos los scripts que **Wscript. exe** ejecuta en el equipo local.
 -   El parámetro **/t** evita la ejecución excesiva de scripts mediante la configuración de un temporizador. Cuando el tiempo supera el valor especificado, **Wscript** interrumpe el motor de scripts y finaliza el proceso.

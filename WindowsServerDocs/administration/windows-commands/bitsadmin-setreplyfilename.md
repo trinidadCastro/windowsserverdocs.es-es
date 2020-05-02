@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setreplyfilename
-description: Windows Commands topic for **bitsadmin setreplyfilename**, que especifica la ruta de acceso del archivo que contiene la respuesta de carga del servidor.
+description: Tema de referencia del comando bitsadmin setreplyfilename, que especifica la ruta de acceso del archivo que contiene la respuesta de carga del servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c476073cb22ff66bcefc75a45fcd0526cdf3d25
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 2f0bd184db274dc915817ff3e26ae2c686190c27
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122736"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720476"
 ---
 # <a name="bitsadmin-setreplyfilename"></a>bitsadmin setreplyfilename
 
@@ -38,12 +38,14 @@ bitsadmin /setreplyfilename <job> <file_path>
 
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se establece la ruta de acceso del archivo filename de carga-respuesta para el trabajo denominado *myDownloadJob*.
+Para establecer la ruta de acceso del archivo de nombre de archivo de la respuesta de carga para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /setreplyfilename myDownloadJob c:\upload-reply
+bitsadmin /setreplyfilename myDownloadJob c:\upload-reply
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

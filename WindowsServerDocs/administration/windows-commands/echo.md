@@ -1,6 +1,6 @@
 ---
 title: echo
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e6e9c3c79cc8006efba0c97a574e3d6d94a6f7e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 05b42e4df38c3eafd3dcf3a92ced7b7b2c088e2b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845248"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720868"
 ---
 # <a name="echo"></a>echo
 
@@ -36,16 +36,16 @@ echo [on | off]
 |Parámetro|Descripción|
 |---------|-----------|
 |[on \| OFF]|Activa o desactiva la característica de repetición de comandos. El eco de comandos está activado de forma predeterminada.|
-|\<> de mensaje|Especifica el texto que se va a mostrar en la pantalla.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|\<> de mensajes|Especifica el texto que se va a mostrar en la pantalla.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   El comando **echo** *Message* es especialmente útil cuando se desactiva el **eco** . Para mostrar un mensaje con varias líneas de longitud sin mostrar ningún comando, puede incluir varios comandos de *mensaje* de **eco** después del comando **echo off** en el programa por lotes.
 -   Cuando se desactiva el **eco** , el símbolo del sistema no aparece en la ventana del símbolo del sistema. Para mostrar el símbolo del sistema, escriba **echo.**
 -   Si se usa en un archivo por lotes, el **eco** y el **eco** no afectan a la configuración del símbolo del sistema.
 -   Para evitar que se repita un comando determinado en un archivo por lotes, inserte una arroba (@) delante del comando. Para evitar que se repitan todos los comandos en un archivo por lotes, incluya el comando **echo off** al principio del archivo.
--   Para mostrar una canalización ( **|** ) o un carácter de redireccionamiento ( **<** o **>** ) cuando use el **eco**, use un símbolo de intercalación (^) inmediatamente antes del carácter de canalización o redirección (por ejemplo, **^|** , **^>** o **^<** ). Para mostrar un símbolo de intercalación, escriba dos intercalaciones consecutivas ( **^^** ).
+-   Para mostrar una canalización**|**() o un carácter de**<** redireccionamiento (o **>**) cuando use el **eco**, use un símbolo de intercalación (^) inmediatamente antes del carácter de canalización o redirección (por ejemplo **^|** **^>**,, o **^<**). Para mostrar un símbolo de intercalación, escriba dos intercalaciones consecutivas (**^^**).
 
 ## <a name="examples"></a>Ejemplos
 

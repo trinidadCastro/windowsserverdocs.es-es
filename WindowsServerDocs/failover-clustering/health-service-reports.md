@@ -7,15 +7,16 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 3b47e1abf3805b7e6e3dc180d5d937ddb2723fa4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0a03dc5d646d24c9f24f979df36fb3fe1eafe631
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827548"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720555"
 ---
 # <a name="health-service-reports"></a>Servicio de mantenimiento informes
-> Se aplica a: Windows Server 2019, Windows Server 2016
+
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 ## <a name="what-are-reports"></a>¿Qué son los informes?  
 
@@ -43,14 +44,13 @@ Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>
 Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 ```
 
-## <a name="usage-in-net-and-c"></a>Uso en .NET yC#
+## <a name="usage-in-net-and-c"></a>Uso en .NET y C #
 
 ### <a name="connect"></a>Conectar
 
-Para consultar el Servicio de mantenimiento, tendrá que establecer un **CimSession** con el clúster. Para ello, necesitará algunas cosas que solo están disponibles en .NET completo, lo que significa que no puede hacerlo directamente desde una aplicación web o móvil. Estos ejemplos de código usarán C\#, la opción más sencilla para esta capa de acceso a datos.
+Para consultar el Servicio de mantenimiento, tendrá que establecer un **CimSession** con el clúster. Para ello, necesitará algunas cosas que solo están disponibles en .NET completo, lo que significa que no puede hacerlo directamente desde una aplicación web o móvil. Estos ejemplos de código usarán\#C, la opción más sencilla para esta capa de acceso a datos.
 
-``` 
-...
+```
 using System.Security;
 using Microsoft.Management.Infrastructure;
 
@@ -79,7 +79,7 @@ Se recomienda que construya la contraseña **SecureString** directamente a parti
 
 Con el **CimSession** establecido, puede consultar instrumental de administración de Windows (WMI) en el clúster.
 
-Antes de que pueda obtener errores o métricas, deberá obtener instancias de varios objetos pertinentes. En primer lugar, el **MSFT\_StorageSubSystem** que representa espacios de almacenamiento directo en el clúster. Con esto, puede obtener todos los **StorageNode de msft\_** en el clúster y todos los volúmenes de **\_de msft**, los volúmenes de datos. Por último, necesitará el **MSFT\_StorageHealth**, el servicio de mantenimiento mismo.
+Antes de que pueda obtener errores o métricas, deberá obtener instancias de varios objetos pertinentes. En primer lugar, el **StorageSubSystem de msft\_** que representa espacios de almacenamiento directo en el clúster. Con esto, puede obtener todos los **StorageNode\_de msft** del clúster y todos los **volúmenes\_msft**, los volúmenes de datos. Por último, también necesitará **el\_StorageHealth de msft**, el propio servicio de mantenimiento.
 
 ```
 CimInstance Cluster;
@@ -112,7 +112,6 @@ Estos son los mismos objetos que se obtienen en PowerShell mediante cmdlets como
 Puede tener acceso a todas las mismas propiedades, documentadas en [clases de API de administración de almacenamiento](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx).
 
 ```
-...
 using System.Diagnostics;
 
 foreach (CimInstance Node in Nodes)
@@ -214,8 +213,8 @@ Cada métrica tiene solo tres propiedades, por esta tabla.
 
 | **Propiedad** | **Ejemplo**       |
 | -------------|-------------------|
-| Name         | IOLatencyAverage  |
-| Valor        | 0,00021           |
+| Nombre         | IOLatencyAverage  |
+| Value        | 0,00021           |
 | Unidades        | 3                 |
 
 Unidades = {0, 1, 2, 3, 4}, donde 0 = "bytes", 1 = "BytesPerSecond", 2 = "CountPerSecond", 3 = "segundos" o 4 = "porcentaje".
@@ -226,7 +225,7 @@ A continuación se muestran las métricas disponibles para cada ámbito en Windo
 
 ### <a name="msft_storagesubsystem"></a>MSFT_StorageSubSystem
 
-| **Nombre**                        | **Participa** |
+| **Nombre**                        | **Unidades** |
 |---------------------------------|-----------|
 | CPUUsage                        | 4         |
 | CapacityPhysicalPooledAvailable | 0         |
@@ -250,7 +249,7 @@ A continuación se muestran las métricas disponibles para cada ámbito en Windo
 
 ### <a name="msft_storagenode"></a>MSFT_StorageNode
 
-| **Nombre**            | **Participa** |
+| **Nombre**            | **Unidades** |
 |---------------------|-----------|
 | CPUUsage            | 4         |
 | IOLatencyAverage    | 3         |
@@ -267,7 +266,7 @@ A continuación se muestran las métricas disponibles para cada ámbito en Windo
 
 ### <a name="msft_volume"></a>MSFT_Volume
 
-| **Nombre**            | **Participa** |
+| **Nombre**            | **Unidades** |
 |---------------------|-----------|
 | CapacityAvailable   | 0         |
 | CapacityTotal       | 0         |
@@ -283,4 +282,4 @@ A continuación se muestran las métricas disponibles para cada ámbito en Windo
 
 ## <a name="see-also"></a>Vea también
 
-- [Servicio de mantenimiento en Windows Server 2016](health-service-overview.md)
+- [Servicio de mantenimiento de Windows Server 2016](health-service-overview.md)

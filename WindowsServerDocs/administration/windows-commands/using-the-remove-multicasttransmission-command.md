@@ -1,6 +1,6 @@
 ---
 title: Remove-MulticastTransmission
-description: Tema de comandos de Windows para Remove-MulticastTransmission, que deshabilita la transmisión por multidifusión para una imagen.
+description: Tema de referencia de Remove-MulticastTransmission, que deshabilita la transmisión por multidifusión para una imagen.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36bb666b841c4c0c33f12c5ca766e619afc176ef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 41dea341216979d6ed7298f11c16458e4d3f2f50
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830338"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720336"
 ---
 # <a name="using-the-remove-multicasttransmission-command"></a>Usar el comando Remove-MulticastTransmission
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Deshabilita la transmisión por multidifusión para una imagen. A menos que especifique **/Force**, los clientes existentes completarán la transferencia de imágenes, pero no se permitirá que se unan a los clientes nuevos.
 
 ## <a name="syntax"></a>Sintaxis
-**Windows Server 2008**
+**Windows Server 2008**
 ```
 wdsutil /remove-MulticastTransmissiomedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image Group>] [/Filename:<File name>] [/force]
 ```
@@ -46,14 +46,14 @@ wdsutil [Options] /remove-MulticastTransmissiomedia:<Image name>
 ### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-medios:<Image name>|Especifica el nombre de la imagen.|
+soporte<Image name>|Especifica el nombre de la imagen.|
 |[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utiliza el servidor local.|
-mediatype: {instalación&#124;de arranque}|Especifica el tipo de imagen. Tenga en cuenta que esta opción debe estar establecida en **instalar** para Windows Server 2008.|
+mediatype: {instalar&#124;arranque}|Especifica el tipo de imagen. Tenga en cuenta que esta opción debe estar establecida en **instalar** para Windows Server 2008.|
 |/Architecture: {x86 &#124; ia64 &#124; x64}|Especifica la arquitectura de la imagen de arranque que está asociada a la transmisión que se va a iniciar. Dado que es posible tener el mismo nombre de imagen para imágenes de arranque en diferentes arquitecturas, debe especificar la arquitectura para asegurarse de que se utiliza la transmisión correcta.|
 |\mediaGroup:<Image group name>]|Especifica el grupo de imágenes que contiene la imagen. Si no se especifica ningún nombre de grupo de imágenes y solo existe un grupo de imágenes en el servidor, se utiliza ese grupo de imágenes. Si existe más de un grupo de imágenes en el servidor, debe usar esta opción para especificar el nombre del grupo de imágenes.|
-|[/Filename:<File name>]|Especifica el nombre de archivo. Si la imagen de origen no se puede identificar de forma única mediante el nombre, debe usar esta opción para especificar el nombre de archivo.|
+|[/Filename:<File name>]|especifica el nombre de archivo. Si la imagen de origen no se puede identificar de forma única mediante el nombre, debe usar esta opción para especificar el nombre de archivo.|
 |/Force.|quita la transmisión y finaliza todos los clientes. A menos que especifique un valor para la opción **/Force** , los clientes existentes pueden completar la transferencia de imágenes, pero los clientes nuevos no podrán unirse.|
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 Para detener un espacio de nombres (los clientes actuales completarán la transmisión, pero los clientes nuevos no podrán unirse), escriba:
 ```
 wdsutil /remove-MulticastTransmissiomedia:Vista with Office
@@ -70,8 +70,8 @@ wdsutil /remove-MulticastTransmission /Server:MyWDSServer
 /Filename:install.wim /force
 ```
 ## <a name="additional-references"></a>Referencias adicionales
-- La [clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[usar el comando get-AllMulticastTransmissions](using-the-get-allmulticasttransmissions-command.md)
-[mediante el comando Get-MulticastTransmission](using-the-get-multicasttransmission-command.md)
-[con el comando New-MulticastTransmission](using-the-new-multicasttransmission-command.md)
-[Subcommand: Start-MulticastTransmission](subcommand-start-multicasttransmission.md)
+- [Clave](command-line-syntax-key.md)
+de sintaxis de línea de comandos mediante el
+[comando Get-AllMulticastTransmissions](using-the-get-allmulticasttransmissions-command.md)mediante el comando[Get-MulticastTransmission](using-the-get-multicasttransmission-command.md)
+[con el comando New-MulticastTransmission comando](using-the-new-multicasttransmission-command.md)
+[: Start-MulticastTransmission](subcommand-start-multicasttransmission.md)

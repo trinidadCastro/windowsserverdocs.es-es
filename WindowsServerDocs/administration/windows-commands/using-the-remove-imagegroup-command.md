@@ -1,6 +1,6 @@
 ---
 title: Remove-ImageGroup
-description: Tema de comandos de Windows para Remove-ImageGroup, que quita un grupo de imágenes de un servidor.
+description: Tema de referencia de Remove-ImageGroup, que quita un grupo de imágenes de un servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d8406959037a958ea6d61b8e8145317635955e6d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f814d83a32a8c739e7462bc77251cf3f3f4fe20e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830358"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720352"
 ---
 # <a name="using-the-remove-imagegroup-command"></a>Usar el comando Remove-ImageGroup
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Quita un grupo de imágenes de un servidor.
 
@@ -31,7 +31,7 @@ wdsutil [Options] /remove-ImageGroumediaGroup:<Image group name> [/Server:<Serve
 |-------|--------|
 mediaGroup:<Image group name>|Especifica el nombre del grupo de imágenes que se va a quitar.|
 |[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local.|
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 Para quitar el grupo de imágenes, escriba uno de los siguientes:
 ```
 wdsutil /remove-ImageGroumediaGroup:ImageGroup1
