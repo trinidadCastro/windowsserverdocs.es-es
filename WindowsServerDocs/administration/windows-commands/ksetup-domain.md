@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: dominio'
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bfaa8a37ae4ee5c9669b09f27a73b3d016324dea
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f127eaf33e9ef6d597851c31a4167ceaa3516abb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841588"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724682"
 ---
 # <a name="ksetupdomain"></a>ksetup: dominio
 
 
 
-Establece el nombre de dominio para todas las operaciones de Kerberos. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Establece el nombre de dominio para todas las operaciones de Kerberos.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,13 +32,13 @@ ksetup /domain <DomainName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<DomainName >|Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como contoso.com o contoso.|
+|\<DomainName>|Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como contoso.com o contoso.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Ninguno.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Establezca una conexión a un dominio válido, como Microsoft, mediante el subcomando/mapuser:
 ```

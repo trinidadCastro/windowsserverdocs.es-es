@@ -1,6 +1,6 @@
 ---
 title: etiqueta
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ccb86e2167682e1048161f2d5f5386a8b5cf6ed
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 63603eda8d23b6f7b89b8d1ba858575a60e3c65c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841178"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724511"
 ---
 # <a name="label"></a>etiqueta
 
@@ -22,7 +22,7 @@ ms.locfileid: "80841178"
 
 Crea, cambia o elimina la etiqueta de volumen (es decir, el nombre) de un disco. Si se usa sin parámetros, el comando **Label** cambia la etiqueta de volumen actual o elimina la etiqueta existente.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,12 +34,12 @@ label [/mp] [<Volume>] [<Label>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/MP|Especifica que el volumen se debe tratar como un punto de montaje o un nombre de volumen.|
+|/mp|Especifica que el volumen se debe tratar como un punto de montaje o un nombre de volumen.|
 |\<> de volumen|Especifica una letra de unidad (seguida de un signo de dos puntos), un punto de montaje o un nombre de volumen. Si se especifica un nombre de volumen, el parámetro **/MP** no es necesario.|
-|\<etiqueta >|Especifica la etiqueta del volumen.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|\<> de etiqueta|Especifica la etiqueta del volumen.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 - Windows muestra la etiqueta de volumen y el número de serie (si tiene uno) como parte de la lista de directorios.
 - Una etiqueta de volumen NTFS puede tener una longitud de hasta 32 caracteres, incluidos espacios. Las etiquetas de volumen NTFS conservan y muestran el caso que se usó cuando se creó la etiqueta.
@@ -55,14 +55,14 @@ label [/mp] [<Volume>] [<Label>]
   ```  
   Presione Y para eliminar la etiqueta o presione N para conservar la etiqueta.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para etiquetar un disco en la unidad A que contiene información de ventas de julio, escriba:
 ```
 label a:sales-july
 ```
 Para eliminar la etiqueta actual de la unidad C, siga estos pasos:
-1. En la ventana de símbolo del sistema, escriba:  
+1. En el símbolo del sistema, escriba:  
    ```
    Label
    ```  

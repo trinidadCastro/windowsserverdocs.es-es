@@ -1,6 +1,6 @@
 ---
 title: importación
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 07fdd03c73c454e92218a4c6983eac7f29b50883
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 72cbd6195de64a6a0a7f2c258e19b2d5eb1378b1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842178"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724853"
 ---
 # <a name="import"></a>importación
 
 
 
-importa una instantánea transportable de un archivo de metadatos cargado en el sistema.
+Importa una instantánea transportable de un archivo de metadatos cargado en el sistema.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -30,12 +30,12 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 import
 ```
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Las instantáneas transportables no se almacenan en el sistema inmediatamente. Sus detalles se almacenan en un archivo XML de documento de componentes de copia de seguridad, que DiskShadow solicita y guarda automáticamente en un archivo de metadatos. cab en el directorio de trabajo. Puede cambiar la ruta de acceso y el nombre de este archivo mediante el comando **set Metadata** .
 -   Antes de poder usar la **importación**, debe cargar un archivo de metadatos de DiskShadow con el comando **cargar metadatos** .
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 El siguiente es un script de DiskShadow de ejemplo que muestra el uso del comando de **importación** :
 ```

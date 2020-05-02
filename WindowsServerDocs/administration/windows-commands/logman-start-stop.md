@@ -1,6 +1,6 @@
 ---
 title: ejecutar Logman | detener
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2bd81a33779aa58e7528d0173a7a4b49489de8f9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 68f570d99d4b3eaa818c9fbdcce76c42d1cb12d4
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80840628"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724344"
 ---
 # <a name="logman-start--stop"></a>ejecutar Logman | detener
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Inicie un recopilador de datos y establezca la hora de inicio en manual, o bien detenga un conjunto de recopiladores de datos y establezca la hora de finalización en manual.  
 
@@ -32,13 +32,13 @@ logman stop <[-n] <name>> [options]
 |     Parámetro      |                                 Descripción                                  |
 |--------------------|------------------------------------------------------------------------------|
 |         -?         |                       Muestra la ayuda contextual.                       |
-| -s <computer name> |            Ejecute el comando en el equipo remoto especificado.             |
+| -s<computer name> |            Ejecute el comando en el equipo remoto especificado.             |
 |  -config <value>   |           Especifica el archivo de configuración que contiene opciones de comando.            |
-|    [-n] <name>     |                          Nombre del objeto de destino.                          |
+|    [-n]<name>     |                          Nombre del objeto de destino.                          |
 |        -ETS        | Enviar comandos a sesiones de seguimiento de eventos directamente sin guardar ni programar. |
 |        -as         |               Realizar la operación solicitada de forma asincrónica.                |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example  
+## <a name="examples"></a>Ejemplos  
 El comando siguiente inicia el perf_log del recopilador de datos en el server_1 del equipo remoto.  
 ```  
 logman start perf_log -s server_1  

@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: removerealm'
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1465ce08c0cf45de828683324b29fb2df8d0e893
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bb7bf4663594a6c164d6495a9ba4cd81942afb79
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841458"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724603"
 ---
 # <a name="ksetupremoverealm"></a>ksetup: removerealm
 
 
 
-Elimina toda la información del dominio Kerberos especificado del registro. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Elimina toda la información del dominio Kerberos especificado del registro.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,15 +32,15 @@ ksetup /removerealm <RealmName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<RealmName >|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos predeterminado cuando se ejecuta **ksetup** .|
+|\<> RealmName|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos predeterminado cuando se ejecuta **ksetup** .|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 El nombre de dominio Kerberos se almacena en dos lugares del registro: **HKEY_LOCAL_MACHINE \system\controlset001** y **\CurrentControlSet\Control\Lsa\Kerberos**.
 
 No se puede quitar el nombre de dominio Kerberos predeterminado del controlador de dominio, ya que se restablecerá la información de DNS y se podrá quitar el controlador de dominio.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 El nombre de dominio Kerberos se estableció erróneamente. COM en el equipo local en CORP. Senda. TIMADO
 ```

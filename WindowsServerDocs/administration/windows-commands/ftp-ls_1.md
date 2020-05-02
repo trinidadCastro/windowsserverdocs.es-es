@@ -1,6 +1,6 @@
 ---
 title: ls_1 FTP
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ff63272fe3c5e59965b04bef258a06fee2da0c4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0dd661742288bdd43299f379f4eb04016b2ac799
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843368"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725239"
 ---
 # <a name="ftp-ls_1"></a>FTP: ls_1
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 > 
 > 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Muestra una lista abreviada de archivos y subdirectorios del equipo remoto.   
 ## <a name="syntax"></a>Sintaxis  
@@ -35,7 +35,7 @@ ls [<remotedirectory>] [<LocalFile>]
 | [<remotedirectory>] | Especifica el directorio para el que desea ver una lista. Si no se especifica ningún directorio, se utiliza el directorio de trabajo actual en el equipo remoto. |
 |    [<LocalFile>]    |               Especifica un archivo local en el que se va a almacenar la lista. Si no se especifica un archivo local, los resultados se muestran en la pantalla.               |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example  
+## <a name="examples"></a>Ejemplos  
 Mostrar una lista abreviada de archivos y subdirectorios del equipo remoto.  
 ```  
 ls  

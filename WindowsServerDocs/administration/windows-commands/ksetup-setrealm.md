@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: setrealm'
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: acdbfaabe341c8efb19c6e9d183022375f679de7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 453977ac39dd3a52b4f5a3104995f944e4a48392
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841318"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724555"
 ---
 # <a name="ksetupsetrealm"></a>ksetup: setrealm
 
 
 
-Establece el nombre de un dominio Kerberos. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Establece el nombre de un dominio Kerberos.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,15 +32,15 @@ ksetup /setrealm <DNSDomainName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<NombreDominioDns >|El nombre de dominio DNS puede tener el formato de un nombre de dominio completo o un nombre de dominio simple.|
+|\<NombreDominioDns>|El nombre de dominio DNS puede tener el formato de un nombre de dominio completo o un nombre de dominio simple.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 El parámetro de nombre de dominio DNS debe escribirse en mayúsculas. De lo contrario, el comando **ksetup** solicitará la comprobación para continuar.
 
 No se admite el establecimiento del dominio Kerberos en un controlador de dominio. Si intenta hacerlo, se producirá una advertencia y un error de comando.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Establezca el dominio Kerberos para este equipo en un nombre de dominio específico para restringir el acceso por parte de un controlador que no sea de dominio al dominio Kerberos de CONTOSO:
 ```

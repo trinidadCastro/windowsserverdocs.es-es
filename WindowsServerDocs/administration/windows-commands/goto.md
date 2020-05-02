@@ -1,6 +1,6 @@
 ---
 title: goto
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 928a9031a7f86261789676257afe95ffc3be8a99
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd61575b8b31ed47463db464f4aad0a048e755b2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842568"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725005"
 ---
 # <a name="goto"></a>goto
 
@@ -22,7 +22,7 @@ ms.locfileid: "80842568"
 
 Dirige cmd. exe a una línea etiquetada en un programa por lotes. En un programa por lotes, **goto** dirige el procesamiento de comandos a una línea identificada por una etiqueta. Cuando se encuentra la etiqueta, el procesamiento continúa a partir de los comandos que comienzan en la línea siguiente.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,10 +34,10 @@ goto <Label>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<etiqueta >|Especifica una cadena de texto que se utiliza como etiqueta en el programa por lotes.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|\<> de etiqueta|Especifica una cadena de texto que se utiliza como etiqueta en el programa por lotes.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Trabajar con extensiones de comandos
 
@@ -58,7 +58,7 @@ goto <Label>
 
     Puede usar **goto** con otros comandos para realizar operaciones condicionales. Para obtener más información sobre el uso de **goto** para las operaciones condicionales, vea la referencia del comando [If](if.md) .
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 El siguiente programa por lotes da formato a un disco de la unidad A como un disco del sistema. Si la operación se realiza correctamente, el comando **goto** dirige el procesamiento a la etiqueta **: end** :
 ```
@@ -76,4 +76,4 @@ echo End of batch program.
 
 [Cmd](cmd.md)
 
-[Cuando](if.md)
+[If](if.md)

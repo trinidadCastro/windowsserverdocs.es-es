@@ -1,6 +1,6 @@
 ---
 title: Mostrar sombras
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e22b0006709e1cf6636ad6c2bcc18432f59b4d1a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d22fc3bbe644983eaf072a430e565a0d34d1c4dd
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841168"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724474"
 ---
 # <a name="list-shadows"></a>Mostrar sombras
 
@@ -33,8 +33,8 @@ list shadows {all | set <SetID> | id <ShadowID>}
 |Parámetro|Descripción|
 |---------|-----------|
 |all|Muestra todas las instantáneas.|
-|establecer \<> SetId|Muestra las instantáneas que pertenecen al identificador de conjunto de instantáneas especificado.|
-|ID \<ShadowID >|Muestra todas las instantáneas con el identificador de instantánea especificado.|
+|set \<setid>|Muestra las instantáneas que pertenecen al identificador de conjunto de instantáneas especificado.|
+|ID \<ShadowID>|Muestra todas las instantáneas con el identificador de instantánea especificado.|
 
 ## <a name="additional-references"></a>Referencias adicionales
 

@@ -1,6 +1,6 @@
 ---
 title: open_1 FTP
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8bd3063a52908d65f336afcda6b6982d5bc9bf94
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 15a27d2f7512da352a0f4ddf02fa2511ffce7c1d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843188"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725195"
 ---
 # <a name="ftp-open_1"></a>FTP: open_1
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Se conecta al servidor FTP especificado.   
 ## <a name="syntax"></a>Sintaxis  
@@ -32,9 +32,9 @@ open <computer> [<Port>]
 | <computer> |                Especifica el equipo remoto al que está intentando conectarse.                 |
 |  [<Port>]  | Especifica el número de puerto TCP que se va a utilizar para conectarse a un servidor FTP. De forma predeterminada, se usa el puerto TCP 21. |
 
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
 Puede usar una dirección IP o un nombre de equipo (en cuyo caso debe estar disponible un servidor DNS o un archivo hosts) para especificar el **equipo**.  
-## <a name="examples"></a><a name=BKMK_Examples></a>Example  
+## <a name="examples"></a>Ejemplos  
 Conéctese al servidor FTP en **FTP.Microsoft.com**.  
 ```  
 Open ftp.microsoft.com  

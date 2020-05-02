@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: delkpasswd'
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b849265e6036f338413b75fe1da2067e4cdb4cd8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2de1546b112041f7035a711852140e9bb34babe3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841658"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724673"
 ---
 # <a name="ksetupdelkpasswd"></a>ksetup: delkpasswd
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-quita un servidor de contraseñas de Kerberos (Kpasswd) para un dominio Kerberos. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+quita un servidor de contraseñas de Kerberos (Kpasswd) para un dominio Kerberos.
 ## <a name="syntax"></a>Sintaxis
 ```
 ksetup /delkpasswd <RealmName> <KpasswdName>
@@ -32,9 +32,9 @@ ksetup /delkpasswd <RealmName> <KpasswdName>
 |  <RealmName>  |                                El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM, y aparece como el dominio Kerberos o el dominio Kerberos predeterminados = cuando se ejecuta **ksetup** .                                |
 | <KpasswdName> | El nombre del KDC que se va a usar como servidor de contraseñas de Kerberos se indica como un nombre de dominio completo sin distinción entre mayúsculas y minúsculas, como mitkdc.contoso.com. Si se omite el nombre del KDC, se podría usar DNS para buscar KDC. |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 Ejecute el comando **ksetup** para comprobar el nombre del KDC. Si **Kpasswd =** no aparece en la salida, la asignación no se ha configurado. Si se establece, se mostrarán varias asignaciones.
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 Compruebe el dominio de la empresa. CONTOSO.COM usa el servidor KDC que no es de Windows mitkdc.contoso.com como el servidor de contraseñas:
 ```
 ksetup /delkpasswd CORP.CONTOSO.COM mitkdc.contoso.com

@@ -1,6 +1,6 @@
 ---
 title: enumerar escritores
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e12c4f36c3fd840b7b37b12d9f4171429e5a52d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ef7fa0bd6e9857e22994178849e49afeb3305a2a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841118"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724484"
 ---
 # <a name="list-writers"></a>enumerar escritores
 
@@ -22,7 +22,7 @@ ms.locfileid: "80841118"
 
 Enumera los escritores que se encuentran en el sistema. Si se usa sin parámetros, **List** muestra la salida de los **metadatos de lista** de forma predeterminada.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -38,7 +38,7 @@ list writers [metadata | detailed | status]
 |detallado|Muestra la misma información que los **metadatos**, pero **Detailed** incluye la lista completa de archivos de todos los componentes.|
 |status|Muestra solo la identidad y el estado de los escritores registrados.|
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para mostrar solo la identidad y el estado de los escritores, escriba:
 ```

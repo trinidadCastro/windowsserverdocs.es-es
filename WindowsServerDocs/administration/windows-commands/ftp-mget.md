@@ -1,6 +1,6 @@
 ---
 title: mget FTP
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 72b45f84622fcd6abf7a743f606fb514def584cd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4a71fbfb60ae012b5e65af04e6f3e21ec796996a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843358"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725233"
 ---
 # <a name="ftp-mget"></a>FTP: mget
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Copia los archivos remotos en el equipo local mediante el tipo de transferencia de archivos actual.   
 ## <a name="syntax"></a>Sintaxis  
@@ -31,7 +31,7 @@ mget <remoteFile>[ ]
 |--------------|-----------------------------------------------------------|
 | <remoteFile> | Especifica los archivos remotos que se van a copiar en el equipo local. |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example  
+## <a name="examples"></a>Ejemplos  
 Copie los archivos remotos a **. exe** y **b. exe** en el equipo local con el tipo de transferencia de archivos actual.  
 ```  
 mget a.exe b.exe  

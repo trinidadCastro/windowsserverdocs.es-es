@@ -1,6 +1,6 @@
 ---
 title: if
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 706ac1569ac3ca7ae504410935f334be360eda3a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e56624a5c82caefdf7cc51c7a84f67882756e274
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842238"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724862"
 ---
 # <a name="if"></a>if
 
@@ -22,7 +22,7 @@ ms.locfileid: "80842238"
 
 Realiza el procesamiento condicional en los programas por lotes.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -43,28 +43,28 @@ if defined <Variable> <Command> [else <Expression>]
 |        Parámetro        |                                                                                                                                                                                                                Descripción                                                                                                                                                                                                                 |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |           not           |                                                                                                                                                                              Especifica que el comando solo se debe llevar a cabo si la condición es falsa.                                                                                                                                                                              |
-|  ERRORLEVEL \<número >   |                                                                                                                                                      Especifica una condición verdadera solo si el programa anterior ejecutado por cmd. exe devolvió un código de salida igual o mayor que el *número*.                                                                                                                                                       |
+|  número \<de ERRORLEVEL>   |                                                                                                                                                      Especifica una condición verdadera solo si el programa anterior ejecutado por cmd. exe devolvió un código de salida igual o mayor que el *número*.                                                                                                                                                       |
 |       \<> de comandos        |                                                                                                                                                                            Especifica el comando que debe realizarse si se cumple la condición anterior.                                                                                                                                                                             |
-|  \<string1 > = =<String2>  |                                                                                                             Especifica una condición verdadera solo si *string1* y *String2* son iguales. Estos valores pueden ser cadenas literales o variables por lotes (por ejemplo, %1). No es necesario incluir cadenas literales entre comillas.                                                                                                              |
-|    existe \<nombre de archivo >    |                                                                                                                                                                                       Especifica una condición verdadera si el nombre de archivo especificado existe.                                                                                                                                                                                        |
-|      \<CompareOp >       |                                                                               Especifica un operador de comparación de tres letras. La lista siguiente representa los valores válidos para *CompareOp*:</br>**Equ** Igual a</br>**Neq** No es igual a</br>**LSS** Menor que</br>**Leq** Menor o igual que</br>**GTR** Mayor que</br>**GEQ** Mayor o igual que                                                                                |
-|           /i            |                                                            Fuerza que las comparaciones de cadenas omitan mayúsculas y minúsculas.  Puede usar **/i** en la forma <em>cadena1</em> **==** <em>cadena2</em> de **si**. Estas comparaciones son genéricas, en el caso de que *string1* y *String2* solo consten de dígitos numéricos, las cadenas se convierten en números y se realiza una comparación numérica.                                                            |
-| cmdextversion \<número > | Especifica una condición verdadera solo si el número de versión interno asociado a la característica de extensiones de comandos de cmd. exe es igual o mayor que el número especificado. La primera versión es 1. Aumenta en incrementos de uno cuando se agregan mejoras significativas a las extensiones de comando. El condicional **cmdextversion** nunca es true cuando las extensiones de comando están deshabilitadas (de forma predeterminada, las extensiones de comando están habilitadas). |
-|   Variable de \<definida >   |                                                                                                                                                                                            Especifica una condición verdadera si se define la *variable* .                                                                                                                                                                                            |
-|      \<expresión >      |                                                                                                                                                                   Especifica un comando de línea de comandos y los parámetros que se van a pasar al comando en una cláusula **else** .                                                                                                                                                                   |
-|           /?            |                                                                                                                                                                                                    Muestra la Ayuda en el símbolo del sistema.                                                                                                                                                                                                    |
+|  \<Cadena1>= =<String2>  |                                                                                                             Especifica una condición verdadera solo si *string1* y *String2* son iguales. Estos valores pueden ser cadenas literales o variables por lotes (por ejemplo, %1). No es necesario incluir cadenas literales entre comillas.                                                                                                              |
+|    existe \<un nombre de archivo>    |                                                                                                                                                                                       Especifica una condición verdadera si el nombre de archivo especificado existe.                                                                                                                                                                                        |
+|      \<> CompareOp       |                                                                               Especifica un operador de comparación de tres letras. La lista siguiente representa los valores válidos para *CompareOp*:</br>**Equ** Igual a</br>**Neq** No es igual a</br>**LSS** Menor que</br>**Leq** Menor o igual que</br>**GTR** Mayor que</br>**GEQ** Mayor o igual que                                                                                |
+|           /i            |                                                            Fuerza que las comparaciones de cadenas omitan mayúsculas y minúsculas.  Puede usar **/i** en la forma <em>string1</em>**==**<em>cadena2</em> de **si**. Estas comparaciones son genéricas, en el caso de que *string1* y *String2* solo consten de dígitos numéricos, las cadenas se convierten en números y se realiza una comparación numérica.                                                            |
+| número \<de cmdextversion> | Especifica una condición verdadera solo si el número de versión interno asociado a la característica de extensiones de comandos de cmd. exe es igual o mayor que el número especificado. La primera versión es 1. Aumenta en incrementos de uno cuando se agregan mejoras significativas a las extensiones de comando. El condicional **cmdextversion** nunca es true cuando las extensiones de comando están deshabilitadas (de forma predeterminada, las extensiones de comando están habilitadas). |
+|   Variable \<definida>   |                                                                                                                                                                                            Especifica una condición verdadera si se define la *variable* .                                                                                                                                                                                            |
+|      \<> de expresiones      |                                                                                                                                                                   Especifica un comando de línea de comandos y los parámetros que se van a pasar al comando en una cláusula **else** .                                                                                                                                                                   |
+|           /?            |                                                                                                                                                                                                    Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                                                    |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Si la condición especificada en una cláusula **If** es true, se lleva a cabo el comando que sigue a la condición. Si la condición es falsa, se omite el comando de la cláusula **If** y el comando ejecuta cualquier comando que se especifique en la cláusula **else** .
 -   Cuando un programa se detiene, devuelve un código de salida. Para usar códigos de salida como condiciones, use **ERRORLEVEL**.
--   Si utiliza **definido**, se agregan las tres variables siguientes al entorno: **% ERRORLEVEL%** , **% cmdcmdline%** y **% cmdextversion%** .  
+-   Si utiliza **definido**, se agregan las tres variables siguientes al entorno: **% ERRORLEVEL%**, **% cmdcmdline%** y **% cmdextversion%**.  
     -   **% ERRORLEVEL%** se expande en una representación de cadena del valor actual de la variable de entorno errorlevel. Se supone que no existe una variable de entorno con el nombre ERRORLEVEL; si existe, se obtendrá ese valor de ERRORLEVEL en su lugar.
     -   **% cmdcmdline%** se expande en la línea de comandos original que se pasó a cmd. exe antes de cualquier procesamiento por cmd. exe. Se supone que no existe una variable de entorno con el nombre CMDCMDLINE (si existe), obtendrá el valor CMDCMDLINE en su lugar.
     -   **% cmdextversion%** se expande en la representación de cadena del valor actual de **cmdextversion**. Se supone que no existe una variable de entorno con el nombre CMDEXTVERSION; si es así, obtendrá el valor CMDEXTVERSION en su lugar.
 -   Debe usar la cláusula **else** en la misma línea que el comando después de **If**.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para mostrar el mensaje no se encuentra el archivo de datos si no se encuentra el archivo product. dat, escriba:
 ```
@@ -115,6 +115,6 @@ echo The Product.dat file is missing.
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-[Cuando](if.md)
+[If](if.md)
 
 [Goto](goto.md)

@@ -1,6 +1,6 @@
 ---
-title: Ksetup
-description: Tema de comandos de Windows para * * * *-
+title: ksetup
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3c61fd81691f9db44330eddbf40d4212d1786ff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2f3fde0ada4ab8bcbe52eccf22b959f99f91319f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841258"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724548"
 ---
-# <a name="ksetup"></a>Ksetup
+# <a name="ksetup"></a>ksetup
 
 
 
@@ -64,7 +64,7 @@ ksetup
 |[Ksetup:server](ksetup-server.md)|Permite especificar el nombre de un equipo Windows en el que se van a aplicar los cambios.|
 |[Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)|Establece la contraseña de la cuenta de dominio del equipo (o la entidad de seguridad del host).|
 |[Ksetup:removerealm](ksetup-removerealm.md)|Elimina toda la información del dominio Kerberos especificado del registro.|
-|[Ksetup:domain](ksetup-domain.md)|Permite especificar un dominio (si \<nombredominio > no se ha establecido mediante **/Domain**).|
+|[Ksetup:domain](ksetup-domain.md)|Permite especificar un dominio (si \<domainname> no se ha establecido mediante **/Domain**).|
 |[Ksetup:changepassword](ksetup-changepassword.md)|Permite usar Kpasswd para cambiar la contraseña del usuario que ha iniciado sesión.|
 |[Ksetup:listrealmflags](ksetup-listrealmflags.md)|Muestra las marcas de dominio Kerberos disponibles que **ksetup** puede detectar.|
 |[Ksetup:setrealmflags](ksetup-setrealmflags.md)|Establece marcas de dominio Kerberos para un dominio Kerberos específico.|
@@ -79,7 +79,7 @@ ksetup
 |[Ksetup:delenctypeattr](ksetup-delenctypeattr.md)|Elimina el atributo de confianza tipos de cifrado del dominio.|
 |/?|Muestra la Ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 **Ksetup** se usa para cambiar la configuración del equipo para buscar dominios Kerberos. En implementaciones que no son de Microsoft, esta información normalmente se mantiene en el archivo Krb5. conf. En los sistemas operativos Windows Server, se mantiene en el registro. Puede usar esta herramienta para modificar esta configuración. Las estaciones de trabajo usan estas opciones para localizar los dominios Kerberos y los controladores de dominio para localizar los dominios Kerberos para las relaciones de confianza entre dominios.
 

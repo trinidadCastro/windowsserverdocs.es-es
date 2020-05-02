@@ -1,6 +1,6 @@
 ---
 title: klist
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b693e4496f4fc1275e1f2b364900564ce86e97cb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f83a46f158cd83aa8393630aa0138271e8868575
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841968"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724754"
 ---
 # <a name="klist"></a>klist
 
 
 
-Muestra una lista de vales de Kerberos en caché actualmente. Esta información se aplica a Windows Server 2012. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Muestra una lista de vales de Kerberos en caché actualmente. Esta información se aplica a Windows Server 2012.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,19 +34,19 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 |---------|-----------|
 |-LH|Denota la parte alta del identificador local único (LUID) del usuario, expresada en formato hexadecimal. Si no hay ninguna – LH o – Li, el comando toma como valor predeterminado el LUID del usuario que ha iniciado sesión actualmente.|
 |-Li|Denota la parte baja del identificador local único (LUID) del usuario, expresada en formato hexadecimal. Si no hay ninguna – LH o – Li, el comando toma como valor predeterminado el LUID del usuario que ha iniciado sesión actualmente.|
-|vales|Enumera los vales de concesión de vales (TGT) almacenados en caché y los vales de servicio de la sesión de inicio de sesión especificada. Esta es la opción predeterminada.|
+|vales|Enumera los vales de concesión de vales (TGT) almacenados en caché y los vales de servicio de la sesión de inicio de sesión especificada. Ésta es la opción predeterminada.|
 |TGT|Muestra el TGT inicial de Kerberos.|
 |purga|Permite eliminar todos los vales de la sesión de inicio de sesión especificada.|
 |sesiones|Muestra una lista de sesiones de inicio de sesión en este equipo.|
 |kcd_cache|Muestra la información de la caché de delegación restringida de Kerberos.|
-|obtener|Permite solicitar un vale al equipo de destino especificado por el nombre de entidad de seguridad de servicio (SPN).|
+|get|Permite solicitar un vale al equipo de destino especificado por el nombre de entidad de seguridad de servicio (SPN).|
 |add_bind|Permite especificar un controlador de dominio preferido para la autenticación Kerberos.|
 |query_bind|Muestra una lista de controladores de dominio preferidos almacenados en caché para cada dominio en el que se ha establecido contacto con Kerberos.|
 |purge_bind|Quita los controladores de dominio preferidos almacenados en caché para los dominios especificados.|
 |kdcoptions|Muestra las opciones de Centro de distribución de claves (KDC) especificadas en RFC 4120.|
 |/?|Muestra ayuda para este comando.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 La pertenencia al grupo **Admins**. del dominio, o equivalente, es lo mínimo necesario para ejecutar todos los parámetros de este comando.
 
@@ -70,7 +70,7 @@ Los parámetros muestran la siguiente información:
     Muestra el TGT inicial de Kerberos y los siguientes atributos del vale actualmente en caché:  
     -   LogonID: identificado en hexadecimal
     -   ServiceName: krbtgt
-    -   \<SPN del destino >: krbtgt
+    -   SPN \<de TargetName>: krbtgt
     -   DomainName: nombre del dominio que emite el TGT
     -   TargetDomainName: dominio al que se emite el TGT
     -   AltTargetDomainName: dominio al que se emite el TGT
@@ -93,7 +93,7 @@ Los parámetros muestran la siguiente información:
 
     Permite mostrar la información de la memoria caché de delegación restringida de Kerberos.  
     -   LogonID: si se especifica, muestra la información de la memoria caché de la sesión de inicio de sesión por el valor especificado. Si no se especifica, muestra la información de la memoria caché de la sesión de inicio de sesión del usuario actual.
--   **Obtener**
+-   **get**
 
     Permite solicitar un vale al destino especificado por el SPN.  
     -   LogonID: si se especifica, solicita un vale mediante la sesión de inicio de sesión por el valor especificado. Si no se especifica, solicita un vale mediante la sesión de inicio de sesión del usuario actual.
@@ -114,7 +114,7 @@ Los parámetros muestran la siguiente información:
 **Otras consideraciones**
 -   Klist. exe está disponible en Windows Server 2012 y Windows 8, y no requiere ninguna instalación especial.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 1. Al diagnosticar un identificador de evento 27 mientras se procesa una solicitud de servicio de concesión de vales (TGS) para el servidor de destino, la cuenta no tenía una clave adecuada para generar un vale de Kerberos. Puede usar klist para consultar la memoria caché de vales de Kerberos para determinar si faltan vales, si el servidor o la cuenta de destino tienen errores, o si no se admite el tipo de cifrado.  
    ```

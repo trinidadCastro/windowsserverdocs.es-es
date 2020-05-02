@@ -1,6 +1,6 @@
 ---
 title: literal_1 FTP
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f502bb56c94734870962f56cfb85dcc17ddc3f93
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fc4f8aff5a22da93330a12a75e5f368285366216
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843398"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725255"
 ---
 # <a name="ftp-literal_1"></a>FTP: literal_1
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 envía argumentos textuales al servidor FTP remoto. Se devuelve un solo código de respuesta FTP.   
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 envía argumentos textuales al servidor FTP remoto. Se devuelve un solo código de respuesta FTP.   
 
 ## <a name="syntax"></a>Sintaxis  
 ```  
@@ -30,9 +30,9 @@ literal <Argument> [ ]
 |------------|---------------------------------------------------|
 | <Argument> | Especifica el argumento que se va a enviar al servidor FTP. |
 
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
 El comando **literal** es idéntico al comando **Quote** .  
-## <a name="examples"></a><a name=BKMK_Examples></a>Example  
+## <a name="examples"></a>Ejemplos  
 Envíe un comando **Quit** al servidor FTP remoto.  
 ```  
 literal quit  

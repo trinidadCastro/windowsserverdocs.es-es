@@ -1,6 +1,6 @@
 ---
 title: ktmutil
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e65312ea4bb3169b90c2550b8b945919b86587f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 47b447165ee54e6839bb6338801c6703d818caa8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841198"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724524"
 ---
 # <a name="ktmutil"></a>ktmutil
 
@@ -22,7 +22,7 @@ ms.locfileid: "80841198"
 
 Inicia la utilidad Administrador de transacciones de kernel. Si se usa sin parámetros, **ktmutil** muestra los subcomandos disponibles.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -39,9 +39,9 @@ ktmutil forget
 
 ### <a name="parameters"></a>Parámetros
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para forzar una transacción dudosa con GUID 311a9209-03f4-11dc-918f-00188b8f707b para confirmar, escriba:
 ```

@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: ChangePassword'
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68b14388ff3c33458873b494c8d5a770b44f7545
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 32c48e896b77043820eea42159e20c089bd69fb8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841788"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724724"
 ---
 # <a name="ksetupchangepassword"></a>ksetup: ChangePassword
 
 
 
-Usa el valor de la contraseña del Centro de distribución de claves (KDC) (Kpasswd) para cambiar la contraseña del usuario que ha iniciado sesión. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Usa el valor de la contraseña del Centro de distribución de claves (KDC) (Kpasswd) para cambiar la contraseña del usuario que ha iniciado sesión.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,10 +32,10 @@ ksetup /changepassword <OldPasswd> <NewPasswd>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<OldPasswd >|Indica la contraseña existente del usuario que ha iniciado sesión.|
-|\<NewPasswd >|Indica la nueva contraseña del usuario que ha iniciado sesión.|
+|\<> OldPasswd|Indica la contraseña existente del usuario que ha iniciado sesión.|
+|\<> NewPasswd|Indica la nueva contraseña del usuario que ha iniciado sesión.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Este comando usa el valor de la contraseña de KDC (Kpasswd) para cambiar la contraseña del usuario que ha iniciado sesión. El Kpasswd, si se establece, se muestra en la salida ejecutando el comando **ksetup/dumpstate** .
 
@@ -47,7 +47,7 @@ Si desea forzar un cambio de contraseña en el siguiente inicio de sesión, este
 
 La salida del comando le informa del estado de éxito o de error.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Cambiar la contraseña de un usuario que ha iniciado sesión actualmente en este equipo en este dominio:
 ```

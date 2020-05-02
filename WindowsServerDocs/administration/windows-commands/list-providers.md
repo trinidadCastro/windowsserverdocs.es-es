@@ -1,6 +1,6 @@
 ---
 title: enumerar proveedores
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: df58eb8383378e8cfbe44db286e5f2a116d52a88
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 761099e3b399aeb9e6a3fe1ddd53ed1a667a4ccb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841188"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724502"
 ---
 # <a name="list-providers"></a>enumerar proveedores
 
@@ -22,7 +22,7 @@ ms.locfileid: "80841188"
 
 Enumera los proveedores de instantáneas que están registrados actualmente en el sistema.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -30,7 +30,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 list providers
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para enumerar los proveedores de instantáneas registrados actualmente, escriba:
 ```

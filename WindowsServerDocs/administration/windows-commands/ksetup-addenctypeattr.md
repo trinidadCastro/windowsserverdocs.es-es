@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: addenctypeattr'
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 217e8a707c0af23901da3f433f630b253360f093
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 26441f739979cde31715e5fb06b5f3ab59845d97
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841948"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724750"
 ---
 # <a name="ksetupaddenctypeattr"></a>ksetup: addenctypeattr
 
 
 
-Agrega el atributo de tipo de cifrado a la lista de posibles tipos para el dominio. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Agrega el atributo de tipo de cifrado a la lista de posibles tipos para el dominio.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,10 +32,10 @@ ksetup /addenctypeattr <DomainName> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | 
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<DomainName >|Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso.|
+|\<DomainName>|Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso.|
 |Tipo de cifrado|Debe ser uno de los siguientes tipos de cifrado admitidos:</br>-DES-CBC-CRC</br>-DES-CBC-MD5</br>-RC4-HMAC-MD5</br>-AES128-CTS-HMAC-SHA1-96</br>-AES256-CTS-HMAC-SHA1-96|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Para ver el tipo de cifrado del vale de concesión de vales (TGT) de Kerberos y la clave de sesión, ejecute el comando **klist** y vea la salida.
 
@@ -43,9 +43,9 @@ Puede establecer o agregar varios tipos de cifrado separando los tipos de cifrad
 
 Si el comando se ejecuta correctamente o produce un error, se muestra un mensaje de estado.
 
-Para establecer el dominio al que desea conectarse y usar, ejecute el comando **ksetup/domain \<nombredominio >** .
+Para establecer el dominio al que desea conectarse y usar, ejecute el comando **ksetup/domain \<nombredominio>** .
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Determinar los tipos de cifrado actuales que se establecen en este equipo:
 ```

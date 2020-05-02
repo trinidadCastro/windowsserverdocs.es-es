@@ -1,6 +1,6 @@
 ---
 title: ftp
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6406093be682dbd74b92f1ca11f363e5eb9babee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8fa956124e0c227d048d4c6eec844154187d5861
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842758"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725054"
 ---
 # <a name="ftp"></a>ftp
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Transfiere archivos a y desde un equipo que ejecuta un servicio de servidor de File Transfer Protocol (FTP). **FTP** se puede usar de forma interactiva o en modo por lotes mediante el procesamiento de archivos de texto ASCII. 
 ## <a name="syntax"></a>Sintaxis
@@ -34,23 +34,23 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<FileName>] [-a] [-A] [-x:<SendBuffer>] [-r:<Re
 |        -i         |                                                                                                                            Deshabilita la solicitud interactiva durante varias transferencias de archivos.                                                                                                                             |
 |        -n         |                                                                                                                                    Suprime el inicio de sesión automático después de la conexión inicial.                                                                                                                                     |
 |        -g         |                                         Deshabilita el nombre de archivo comodines.  **Glob** permite el uso del asterisco (\*) y el signo de interrogación (?) como caracteres comodín en los nombres de archivo y ruta de acceso locales. Para obtener más información, consulte [referencias adicionales](ftp.md#BKMK_additionalRef).                                          |
-|   -s:<FileName>   | Especifica un archivo de texto que contiene comandos **FTP** . Estos comandos se ejecutan automáticamente después de iniciar **FTP** . Este parámetro no permite ningún espacio. Utilice este parámetro en lugar de la redirección ( **<** ). **Nota:** En los sistemas operativos Windows 8 y Windows Server 2012 o posterior, el archivo de texto debe estar escrito en UTF-8. |
+|   seg<FileName>   | Especifica un archivo de texto que contiene comandos **FTP** . Estos comandos se ejecutan automáticamente después de iniciar **FTP** . Este parámetro no permite ningún espacio. Utilice este parámetro en lugar de la redirección**<**(). **Nota:** En los sistemas operativos Windows 8 y Windows Server 2012 o posterior, el archivo de texto debe estar escrito en UTF-8. |
 |        -a         |                                                                                                                 Especifica que se puede utilizar cualquier interfaz local al enlazar la conexión de datos FTP.                                                                                                                  |
 |        -A         |                                                                                                                                        Inicia sesión en el servidor FTP como anónimo.                                                                                                                                         |
-|  -x:<SendBuffer>  |                                                                                                                                     Invalida el tamaño de SO_SNDBUF predeterminado de 8192.                                                                                                                                     |
-|  -r:<RecvBuffer>  |                                                                                                                                     Invalida el tamaño de SO_RCVBUF predeterminado de 8192.                                                                                                                                     |
-| -b:<AsyncBuffers> |                                                                                                                                    Invalida el recuento de búferes asincrónicos predeterminado de 3.                                                                                                                                     |
-| -w:<WindowsSize>  |                                                                                                                   Especifica el tamaño del búfer de transferencia. El tamaño predeterminado de la ventana es de 4096 bytes.                                                                                                                   |
-|        -?         |                                                                                                                                         Muestra la Ayuda en el símbolo del sistema.                                                                                                                                          |
+|  x1<SendBuffer>  |                                                                                                                                     Invalida el tamaño de SO_SNDBUF predeterminado de 8192.                                                                                                                                     |
+|  c<RecvBuffer>  |                                                                                                                                     Invalida el tamaño de SO_RCVBUF predeterminado de 8192.                                                                                                                                     |
+| b<AsyncBuffers> |                                                                                                                                    Invalida el recuento de búferes asincrónicos predeterminado de 3.                                                                                                                                     |
+| con<WindowsSize>  |                                                                                                                   Especifica el tamaño del búfer de transferencia. El tamaño predeterminado de la ventana es de 4096 bytes.                                                                                                                   |
+|        -?         |                                                                                                                                         Muestra la ayuda en el símbolo del sistema.                                                                                                                                          |
 |      <host>       |                                                                    Especifica el nombre del equipo, la dirección IP o la dirección IPv6 del servidor FTP al que se va a conectar. El nombre o la dirección de host, si se especifica, debe ser el último parámetro de la línea.                                                                    |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 - para obtener más información acerca de los comandos **FTP** en Windows Server 2003, consulte [FTP](https://technet.microsoft.com/library/cc756013(v=ws.10).aspx).
 - los parámetros de la línea de comandos **FTP** distinguen mayúsculas de minúsculas.
 - Este comando solo está disponible si el protocolo **Protocolo de Internet (TCP/IP)** se instala como componente en las propiedades de un adaptador de red en las conexiones de red.
-- **FTP** se puede usar de forma interactiva. Una vez iniciado, **FTP** crea un subentorno en el que puede usar comandos **FTP** . Puede volver al símbolo del sistema escribiendo el comando **Quit** . Cuando se está ejecutando el subentorno **FTP** , se indica mediante el > del símbolo del sistema de **FTP** . Para obtener más información, consulte los comandos **FTP** .
+- **FTP** se puede usar de forma interactiva. Una vez iniciado, **FTP** crea un subentorno en el que puede usar comandos **FTP** . Puede volver al símbolo del sistema escribiendo el comando **Quit** . Cuando se está ejecutando el subentorno **FTP** , se indica mediante el >del símbolo del sistema de **FTP** . Para obtener más información, consulte los comandos **FTP** .
 - **FTP** admite el uso de IPv6 cuando se instala el protocolo IPv6. Para obtener más información, consulte [referencias adicionales](ftp.md#BKMK_additionalRef).
-  ## <a name="examples"></a><a name=BKMK_Examples></a>Example
+  ## <a name="examples"></a>Ejemplos
   Para iniciar sesión en el servidor FTP denominado ftp.example.microsoft.com, escriba:
   ```
   ftp ftp.example.microsoft.com

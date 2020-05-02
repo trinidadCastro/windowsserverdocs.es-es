@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: addhosttorealmmap'
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ee8f434482b0658194daed46b62f6f7f70abae1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 732dccc868ca85b108ba443d912788a14dd0e107
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841848"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724772"
 ---
 # <a name="ksetupaddhosttorealmmap"></a>ksetup: addhosttorealmmap
 
 
 
-Agrega una asignación de nombre de entidad de seguridad de servicio (SPN) entre el host indicado y el dominio Kerberos. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Agrega una asignación de nombre de entidad de seguridad de servicio (SPN) entre el host indicado y el dominio Kerberos.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,16 +32,16 @@ ksetup /addhosttorealmmap <HostName> <RealmName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<HostName >|El nombre de host es el nombre del equipo y se puede indicar como el nombre de dominio completo del equipo.|
-|\<RealmName >|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM.|
+|\<Nombre de host>|El nombre de host es el nombre del equipo y se puede indicar como el nombre de dominio completo del equipo.|
+|\<> RealmName|El nombre de dominio Kerberos se indica como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Este comando permite asignar un host o varios hosts que comparten el mismo sufijo DNS en el dominio Kerberos.
 
 La asignación se registra en el registro en **HKEY_LOCAL_MACHINE \system\currentcontolset\lsa\kerberos\hosttorealm**.
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Como parte de la configuración del territorio CONTOSO, asigne el equipo host IPops897 al dominio Kerberos:
 ```

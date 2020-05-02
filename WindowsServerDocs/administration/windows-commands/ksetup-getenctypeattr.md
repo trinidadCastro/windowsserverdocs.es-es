@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: getenctypeattr'
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60de138ac73140c69e9a863083e01a51c0e13ca3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f8363113d4fbb310d98b40d852b36a00f20320e6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841538"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724634"
 ---
 # <a name="ksetupgetenctypeattr"></a>ksetup: getenctypeattr
 
 
 
-Recupera el atributo de tipo de cifrado del dominio. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Recupera el atributo de tipo de cifrado del dominio.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,17 +32,17 @@ ksetup /getenctypeattr <DomainName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<DomainName >|Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso.|
+|\<DomainName>|Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Para ver el tipo de cifrado del vale de concesión de vales (TGT) de Kerberos y la clave de sesión, ejecute el comando **klist** y vea la salida.
 
 Si el comando se ejecuta correctamente o produce un error, se muestra un mensaje de estado cuando se completa correctamente o con errores.
 
-Para establecer el dominio al que desea conectarse y usar, ejecute el comando **ksetup/domain \<nombredominio >** .
+Para establecer el dominio al que desea conectarse y usar, ejecute el comando **ksetup/domain \<nombredominio>** .
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Compruebe el atributo de tipo de cifrado del dominio:
 ```

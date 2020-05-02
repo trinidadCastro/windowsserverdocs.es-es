@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: delenctypeattr'
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c650b973ac34e28394d5b6ec38142a058ad76338
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2908cc0a095a6985c11f7885766926b7f0354ab0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841768"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724701"
 ---
 # <a name="ksetupdelenctypeattr"></a>ksetup: delenctypeattr
 
 
 
-Quita el atributo de tipo de cifrado del dominio. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Quita el atributo de tipo de cifrado del dominio.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,17 +32,17 @@ ksetup /delenctypeattr <DomainName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<DomainName >|Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso.|
+|\<DomainName>|Nombre del dominio en el que desea establecer una conexión. Use el nombre de dominio completo o una forma sencilla del nombre, como corp.contoso.com o contoso.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Para ver el tipo de cifrado del vale de concesión de vales (TGT) de Kerberos y la clave de sesión, ejecute el comando **klist** y vea la salida.
 
 Se muestra un mensaje de estado cuando se completa correctamente o con errores.
 
-Para establecer el dominio al que desea conectarse y usar, ejecute el comando **ksetup/domain \<nombredominio >** .
+Para establecer el dominio al que desea conectarse y usar, ejecute el comando **ksetup/domain \<nombredominio>** .
 
-## <a name="examples"></a><a name=BKMK_Examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Determinar los tipos de cifrado actuales que se establecen en este equipo:
 ```
