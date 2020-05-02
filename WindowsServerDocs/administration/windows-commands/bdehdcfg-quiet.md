@@ -1,6 +1,6 @@
 ---
 title: bdehdcfg silencioso
-description: Tema de comandos de Windows para **bdehdcfg Quiet**, que indica a bdehdcfg que no muestre todas las acciones y errores.
+description: Tema de referencia del comando silencioso de bdehdcfg, que indica a bdehdcfg que no muestre todas las acciones y errores.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,34 +9,30 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9c24d8861476e6c1578af8245236d699b6ef6db
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: afb7a73899259b0f3823941ece014ea85568a4ce
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851048"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718639"
 ---
 # <a name="bdehdcfg-quiet"></a>bdehdcfg: Quiet
 
-Informa a la herramienta de línea de comandos Bdehdcfg de que no se mostrarán todas las acciones y los errores en la interfaz de la línea de comandos. Para obtener un ejemplo de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Informa a la herramienta de línea de comandos bdehdcfg de que no se mostrarán todas las acciones y los errores en la interfaz de la línea de comandos. Los mensajes sí/no (Y/N) que se muestran durante la preparación de la unidad asumirán una respuesta "sí". Para ver los errores que se produzcan durante la preparación de la unidad, revise el registro de eventos del sistema en el proveedor de eventos **Microsoft-Windows-BitLocker-DrivePreparationTool**.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge} -quiet
+bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge} -quiet
 ```
 
 #### <a name="parameters"></a>Parámetros
 
-Este comando no toma ningún parámetro adicional.
+Este comando no tiene parámetros adicionales.
 
-## <a name="remarks"></a>Comentarios
+## <a name="examples"></a>Ejemplos
 
-Si se muestran indicaciones Yes/No (Y/N) durante la preparación de la unidad, se supondrá la respuesta "Yes". Para ver los errores que se produzcan durante la preparación de la unidad, revise el registro de eventos del sistema en el proveedor de eventos **Microsoft-Windows-BitLocker-DrivePreparationTool**.
-
-## <a name="examples"></a><a name="BKMK_Examples"></a>Example
-
-En el siguiente ejemplo se muestra el uso del comando **Quiet** .
+Para usar el comando **Quiet** :
 
 ```
 bdehdcfg -target default -quiet
@@ -46,4 +42,4 @@ bdehdcfg -target default -quiet
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Bdehdcfg](bdehdcfg.md)
+- [bdehdcfg](bdehdcfg.md)

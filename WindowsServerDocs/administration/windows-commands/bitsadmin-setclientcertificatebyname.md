@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setclientcertificatebyname
-description: Windows Commands topic for **bitsadmin setclientcertificatebyname**, que especifica el nombre de sujeto del certificado de cliente que se va a usar para la autenticación de cliente en una solicitud HTTPS (SSL).
+description: Tema de referencia del comando bitsadmin setclientcertificatebyname, que especifica el nombre de sujeto del certificado de cliente que se va a usar para la autenticación de cliente en una solicitud HTTPS (SSL).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2308bb5331f1555965b278a64bb7ab95e03779b
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: ef7111d462cd0509e8959855e9bc950dc15f3bfe
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123058"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719347"
 ---
 # <a name="bitsadmin-setclientcertificatebyname"></a>bitsadmin setclientcertificatebyname
 
@@ -37,12 +37,14 @@ bitsadmin /setclientcertificatebyname <job> <store_location> <store_name> <subje
 
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se especifica el nombre *del certificado de* cliente que se va a utilizar para la autenticación del cliente en una solicitud HTTPS (SSL) para el trabajo denominado *myDownloadJob*.
+Para especificar el nombre *del certificado de cliente que se* va a usar para la autenticación del cliente en una solicitud HTTPS (SSL) para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /setclientcertificatebyname myDownloadJob 1 MY myCertificate
+bitsadmin /setclientcertificatebyname myDownloadJob 1 MY myCertificate
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

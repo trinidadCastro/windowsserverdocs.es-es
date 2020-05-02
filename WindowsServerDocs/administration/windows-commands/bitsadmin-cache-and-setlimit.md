@@ -1,6 +1,6 @@
 ---
-title: memoria caché de bitsadmin y setlimit
-description: Tema de comandos de Windows para la **caché de bitsadmin y setlimit**, que establece el límite de tamaño de caché.
+title: bitsadmin cache y setlimit
+description: Tema de referencia de la memoria caché de bitsadmin y el comando setlimit, que establece el límite de tamaño de caché.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 746ee0b69da8f5bd22fec2ccbd432126cc25d94d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a4c41102bfb87ff6d48113c4e85a821b821b5b01
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850878"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718286"
 ---
-# <a name="bitsadmin-cache-and-setlimit"></a>memoria caché de bitsadmin y setlimit
+# <a name="bitsadmin-cache-and-setlimit"></a>bitsadmin cache y setlimit
 
 Establece el límite de tamaño de la memoria caché.
 
@@ -32,14 +32,16 @@ bitsadmin /cache /setlimit percent
 | -------------- | -------------- |
 | percent | Límite de caché definido como un porcentaje del espacio total del disco duro. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el siguiente ejemplo se limita el tamaño de la caché al 50%.
+Para establecer el límite de tamaño de la caché en 50%:
 
 ```
-C:\>bitsadmin /cache /setlimit 50
+bitsadmin /cache /setlimit 50
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [comando caché de bitsadmin](bitsadmin-cache.md)

@@ -1,6 +1,6 @@
 ---
 title: diskperf
-description: Windows Commands topic for diskperf, que puede usarse para habilitar o deshabilitar de forma remota los contadores de rendimiento de disco físico o lógico en equipos que ejecutan Windows 2000.
+description: Tema de referencia de diskperf, que puede usarse para habilitar o deshabilitar de forma remota los contadores de rendimiento de disco físico o lógico en equipos que ejecutan Windows 2000.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b07471c051d57d0279e4fd8b38afdc4acdc4069
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c8f505d924ee1de311f2f2736ff65be844c3f2ea
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845468"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719445"
 ---
 # <a name="diskperf"></a>diskperf
 
@@ -33,10 +33,10 @@ diskperf [-Y[D|V] | -N[D|V]] [\\computername]
 |Opción|Descripción|
 |------|-----------|
 |-?|Muestra la ayuda contextual.|
-|-Y|Inicie todos los contadores de rendimiento de disco cuando se reinicie el equipo.|
+|-y|Inicie todos los contadores de rendimiento de disco cuando se reinicie el equipo.|
 |-YD|Habilite los contadores de rendimiento de disco para las unidades físicas cuando se reinicie el equipo.|
 |-YV|Habilite los contadores de rendimiento de disco para unidades lógicas o volúmenes de almacenamiento cuando se reinicie el equipo.|
-|-N|Deshabilite todos los contadores de rendimiento de disco cuando se reinicie el equipo.|
+|-n|Deshabilite todos los contadores de rendimiento de disco cuando se reinicie el equipo.|
 |-ND|Deshabilite los contadores de rendimiento de disco para las unidades físicas cuando se reinicie el equipo.|
 |-NV|Deshabilite los contadores de rendimiento de disco para unidades lógicas o volúmenes de almacenamiento cuando se reinicie el equipo.|
-|\\\\ *\<computername >*|Especifique el nombre del equipo en el que desea habilitar o deshabilitar los contadores de rendimiento del disco.|
+|\\\\*\<COMPUTERNAME>*|Especifique el nombre del equipo en el que desea habilitar o deshabilitar los contadores de rendimiento del disco.|

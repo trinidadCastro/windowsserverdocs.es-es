@@ -1,6 +1,6 @@
 ---
 title: bitsadmin sethttpmethod
-description: Tema de comandos de Windows para **bitsadmin sethttpmethod**, que establece el verbo http que se va a usar.
+description: Tema de referencia del comando bitsadmin sethttpmethod, que establece el verbo HTTP que se va a usar.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: d349dcad7bdf6a6fc566ed961c3160836d7f49da
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: daf1c23565bc4f398fd29e51aaaeef23b3b0d018
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122967"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719358"
 ---
 # <a name="bitsadmin-sethttpmethod"></a>bitsadmin sethttpmethod
 
@@ -35,3 +35,5 @@ bitsadmin /sethttpmethod <job> <httpmethod>
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

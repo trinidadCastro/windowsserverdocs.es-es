@@ -1,6 +1,6 @@
 ---
 title: auditpol
-description: Temas de comandos de Windows para **Auditpol**, que muestra información sobre y realiza funciones para manipular directivas de auditoría.
+description: Tema de referencia del comando Auditpol, que muestra información sobre y realiza funciones para manipular directivas de auditoría.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,30 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00365b0e46b8bff761cf991dbdbd09d8f5e9c687
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 89fee7ccd3b6671a6f2633c3b5d15d0cbee261fa
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851138"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718833"
 ---
 # <a name="auditpol"></a>auditpol
 
-Muestra información sobre y realiza funciones para manipular las directivas de auditoría.
+Muestra información sobre y realiza funciones para manipular directivas de auditoría, entre las que se incluyen:
 
-Para obtener ejemplos de cómo se puede usar este comando, consulte la sección ejemplos de cada tema.
+- Establecer y consultar una directiva de auditoría del sistema.
+
+- Establecer y consultar una directiva de auditoría por usuario.
+
+- Establecer y consultar las opciones de auditoría.
+
+- Establecer y consultar el descriptor de seguridad que se usa para delegar el acceso a una directiva de auditoría.
+
+- Informe o copia de seguridad de una directiva de auditoría en un archivo de texto de valores separados por comas (CSV).
+
+- Carga de una directiva de auditoría desde un archivo de texto CSV.
+
+- Configuración de las SACL de recursos globales.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -28,7 +40,7 @@ Para obtener ejemplos de cómo se puede usar este comando, consulte la sección 
 auditpol command [<sub-command><options>]
 ```
 
-#### <a name="parameters"></a>Parámetros
+### <a name="parameters"></a>Parámetros
 
 | Subcomando | Descripción |
 | ----------- | ----------- |
@@ -40,25 +52,7 @@ auditpol command [<sub-command><options>]
 | /Clear | Borra la Directiva de auditoría. Para obtener más información, vea [Auditpol Clear](auditpol-clear.md) para ver la sintaxis y las opciones. |
 | /remove | Quita todas las configuraciones de directiva de auditoría por usuario y deshabilita todas las configuraciones de directiva de auditoría del sistema. Para obtener más información, vea [Auditpol Remove](auditpol-remove.md) para ver la sintaxis y las opciones. |
 | /resourceSACL | Configura las listas de control de acceso (SACL) del sistema de recursos globales. **Nota:** Solo se aplica a Windows 7 y Windows Server 2008 R2. Para obtener más información, vea [Auditpol resourceSACL](auditpol-resourcesacl.md). |
-| /?| Muestra la Ayuda en el símbolo del sistema. |
-
-## <a name="remarks"></a>Comentarios
-
-La herramienta de línea de comandos de directiva de auditoría se puede usar para:
-
-- Establecer y consultar una directiva de auditoría del sistema.
-
-- Establecer y consultar una directiva de auditoría por usuario.
-
-- Establezca y consulte las opciones de auditoría.
-
-- Establezca y consulte el descriptor de seguridad que se usa para delegar el acceso a una directiva de auditoría.
-
-- Informe o copia de seguridad de una directiva de auditoría en un archivo de texto de valores separados por comas (CSV).
-
-- Cargar una directiva de auditoría desde un archivo de texto CSV.
-
-- Configurar las SACL de recursos globales.
+| /?| Muestra la ayuda en el símbolo del sistema. |
 
 ## <a name="additional-references"></a>Referencias adicionales
 

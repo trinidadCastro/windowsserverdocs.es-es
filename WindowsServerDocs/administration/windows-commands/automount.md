@@ -1,6 +1,6 @@
 ---
 title: automount
-description: Temas de comandos de Windows para el **montaje automático**, que habilita o deshabilita la característica de montaje automático.
+description: Tema de referencia del comando automount, que habilita o deshabilita la característica de montaje automático.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,57 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2eccc44add6c0e0a5735282a216c07da7a0038ee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0a3ff8782b2110dd1b8039477c0b748dc4ab8f44
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851098"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718726"
 ---
 # <a name="automount"></a>automount
 
-Habilita o deshabilita la característica de montaje automático. Cuando está habilitado (valor predeterminado), Windows monta automáticamente el sistema de archivos para un nuevo volumen básico o dinámico cuando se agrega al sistema y, a continuación, asigna una letra de unidad al volumen.
+Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+
+- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+> [!IMPORTANT]
+> En las configuraciones de red de área de almacenamiento (SAN), al deshabilitar el montaje automático se impide que Windows Monte automáticamente o asigne Letras de unidad a los nuevos volúmenes básicos que estén visibles para el sistema.
+
+## <a name="syntax"></a>Sintaxis
+
+montaje automático [{Enable | Disable | Scrub}] [Noerr]
+
+### <a name="parameters"></a>Parámetros
+
+| Parámetro | Descripción |
+| --------- | ----------- |
+| enable | Permite a Windows montar automáticamente nuevos volúmenes básicos y dinámicos que se agregan al sistema y asignarles letras de unidad. |
+| disable | Impide que Windows Monte automáticamente los nuevos volúmenes básicos y dinámicos que se agreguen al sistema.<p>**Nota**: al deshabilitar el montaje automático se puede producir un error en los clústeres de conmutación por error de la parte de almacenamiento del Asistente para validar una configuración. |
+| scrub | Quita los directorios del punto de montaje de volumen y la configuración del Registro de aquellos volúmenes que ya no se encuentran en el sistema. Así se impide que los volúmenes que se encontraban previamente en el sistema se monten automáticamente y reciban los puntos de montaje de volumen anteriores cuando se vuelven a agregar al sistema. |
+| noerr | Sólo para scripting. Cuando se detecta un error, DiskPart sigue procesando los comandos como si no hubiera ningún error. Sin este parámetro, un error hace que DiskPart salga con un código de error. |
+
+## <a name="examples"></a>Ejemplos
+
+Para ver si la característica de montaje automático está habilitada, escriba los siguientes comandos en el comando DiskPart:
+
+```
+automount
+```
+
+Para habilitar la característica de montaje automático, escriba:
+
+```
+automount enable
+```
+
+Para deshabilitar la característica de montaje automático, escriba:
+
+```
+automount disable
+```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Trabajar con sistemas de archivos](https://go.microsoft.com/fwlink/?LinkId=4509)
+- [comandos Diskpart](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc770877(v%3dws.11))

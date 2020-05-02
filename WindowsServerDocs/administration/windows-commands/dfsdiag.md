@@ -1,6 +1,6 @@
 ---
 title: dfsdiag
-description: Temas de comandos de Windows para dfsdiag, que proporciona información de diagnóstico para los espacios de nombres DFS.
+description: Tema de referencia de dfsdiag, que proporciona información de diagnóstico para los espacios de nombres DFS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2c895dabbbafbe8ea253920d3bc6de17f42918e6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2d5a9b147994628ccad6a723311decbccbe82ec6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846198"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719550"
 ---
 # <a name="dfsdiag"></a>dfsdiag
 
@@ -36,7 +36,7 @@ dfsdiag [ /TestDCs [/Domain:<Domain name>]| /TestSites </Machine:<server name>| 
 |[Dfsdiag TestDFSConfig](dfsdiag-testdfsconfig.md)|Comprueba la configuración del espacio de nombres DFS.|
 |[Dfsdiag TestDFSIntegrity](dfsdiag-testdfsintegrity.md)|Comprueba la integridad del espacio de nombres DFS.|
 |[Dfsdiag TestReferral](dfsdiag-testreferral.md)|Comprueba las respuestas de referencia.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="additional-references"></a>Referencias adicionales
 

@@ -1,6 +1,6 @@
 ---
 title: reinicio de bdehdcfg
-description: Comando comandos de Windows para el **reinicio de bdehdcfg**, que indica a bdehdcfg que el equipo debe reiniciarse una vez finalizada la preparación de la unidad.
+description: Tema de referencia para el comando bdehdcfg restart, que indica a bdehdcfg que el equipo debe reiniciarse una vez finalizada la preparación de la unidad.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,34 +9,30 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ae6f8d31c09feddf8f994c28d34e4e1b08cc322
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 684a6a24fe78c0a23ba954981121c7bd99ac56fb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851038"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718622"
 ---
 # <a name="bdehdcfg-restart"></a>bdehdcfg: reinicio
 
-Informa a la herramienta de línea de comandos Bdehdcfg de que el equipo debe reiniciarse una vez finalizada la preparación de la unidad. Para obtener un ejemplo de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
+Informa a la herramienta de línea de comandos bdehdcfg de que el equipo debe reiniciarse una vez finalizada la preparación de la unidad. Si otros usuarios han iniciado sesión en el equipo y no se ha especificado el comando **Quiet** , aparecerá un mensaje para confirmar que el equipo debe reiniciarse.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge} -restart
+bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge} -restart
 ```
 
 #### <a name="parameters"></a>Parámetros
 
-Este comando no toma ningún parámetro adicional.
+Este comando no tiene parámetros adicionales.
 
-## <a name="remarks"></a>Comentarios
+## <a name="examples"></a>Ejemplos
 
-Si otros usuarios han iniciado sesión en el equipo y no se ha especificado el comando **Quiet** , se mostrará un símbolo del sistema para confirmar que el equipo debe reiniciarse.
-
-## <a name="examples"></a><a name="BKMK_Examples"></a>Example
-
-En el siguiente ejemplo se muestra el uso del comando **restart** .
+Para usar el comando de **reinicio** :
 
 ```
 bdehdcfg -target default -restart
@@ -46,4 +42,4 @@ bdehdcfg -target default -restart
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-- [Bdehdcfg](bdehdcfg.md)
+- [bdehdcfg](bdehdcfg.md)

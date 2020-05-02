@@ -1,6 +1,6 @@
 ---
-title: caché de bitsadmin
-description: Tema de comandos de Windows para **caché de bitsadmin**, que contiene una lista de los modificadores de caché de bitsadmin.
+title: bitsadmin cache
+description: Tema de referencia del comando bitsadmin cache, que contiene una lista de los modificadores de caché de bitsadmin.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 88079935942ef70f56c615c89cb4762e8012f741
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bf54225263b238cc7b6ba04d9881f4bc224d29b9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850848"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718266"
 ---
-# <a name="bitsadmin-cache"></a>caché de bitsadmin
+# <a name="bitsadmin-cache"></a>bitsadmin cache
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
+
+Contiene una lista de los modificadores de bitsadmin/cache.
 
 Contiene una lista de los modificadores de bitsadmin/cache.
 
@@ -26,7 +28,7 @@ Contiene una lista de los modificadores de bitsadmin/cache.
 
 ```
 bitsadmin /cache /help
-bitsadmin /cache /Clear
+bitsadmin /cache /clear
 bitsadmin /cache /delete
 bitsadmin /cache /deleteURL
 bitsadmin /cache /list
@@ -44,7 +46,7 @@ bitsadmin /cache /setexpirationtime
 | [bitsadmin cache y help](bitsadmin-cache-and-help.md) | Muestra el uso de la línea de comandos para los modificadores/cache. |
 | [bitsadmin cache y clear](bitsadmin-cache-clear.md) | Purga la memoria caché local. |
 | [bitsadmin cache y delete](bitsadmin-cache-and-delete.md) | Elimina una entrada de la memoria caché. |
-| [bitsadmin cache y deleteurl](bitsadmin-cache-and-deleteurl.md) | Elimina todas las entradas de la memoria caché de la dirección URL especificada. |
+| [memoria caché de bitsadmin y deleteURL](bitsadmin-cache-and-deleteurl.md) | Elimina todas las entradas de la memoria caché de la dirección URL especificada. |
 | [bitsadmin cache y list](bitsadmin-cache-and-list.md) | Muestra todas las entradas de caché. |
 | [bitsadmin cache e info](bitsadmin-cache-and-info.md) | Vuelca una entrada específica de la memoria caché. |
 | [bitsadmin cache y getlimit](bitsadmin-cache-and-getlimit.md) | Recupera el límite de la memoria caché. |
@@ -55,3 +57,5 @@ bitsadmin /cache /setexpirationtime
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

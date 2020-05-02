@@ -1,6 +1,6 @@
 ---
 title: append
-description: Temas de comandos de Windows para **anexar**, que permite a los programas abrir archivos de datos en los directorios especificados, como si estuvieran en el directorio actual.
+description: Tema de referencia del comando APPEND, que permite a los programas abrir archivos de datos en los directorios especificados, como si estuvieran en el directorio actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 95bbc607ef297e7cf67da2e388884882356ef744
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 562a13c6b1a47e43bb66548902f0b8e57e789a34
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851328"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718997"
 ---
 # <a name="append"></a>append
 
@@ -23,12 +23,10 @@ Permite a los programas abrir archivos de datos en directorios especificados com
 > [!NOTE]
 > Este comando no se admite en Windows 10.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
-
 ## <a name="syntax"></a>Sintaxis
 
 ```
-append [[<Drive>:]<Path>[;...]] [/x[:on|:off]] [/path:[:on|:off] [/e] 
+append [[<drive>:]<path>[;...]] [/x[:on|:off]] [/path:[:on|:off] [/e]
 append ;
 ```
 
@@ -36,16 +34,16 @@ append ;
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| `[\<Drive>:]<Path>` | Especifica una unidad y un directorio para anexar. |
-| `/x:on` | Aplica los directorios anexados a las búsquedas de archivos y las aplicaciones de inicio. |
-| `/x:off` | Solo se aplica a las solicitudes para abrir archivos. La opción **/x: OFF** es la configuración predeterminada. |
-| `/path:on` | Aplica los directorios anexados a las solicitudes de archivos que ya especifican una ruta de acceso. **/path: on** es el valor predeterminado. |
-| `/path:off` | Desactiva el efecto de **/path: on**. |
-| `/e` | Almacena una copia de la lista de directorios anexada en una variable de entorno denominada APPEND. **/e** solo se puede usar la primera vez que se usa **Append** después de iniciar el sistema. |
-| `;` | Borra la lista de directorios anexados. |
-| `/?` | Muestra la Ayuda en el símbolo del sistema. |
+| `[\<drive>:]<path>` | Especifica una unidad y un directorio para anexar. |
+| /x: on | Aplica los directorios anexados a las búsquedas de archivos y las aplicaciones de inicio. |
+| /x: desactivado | Solo se aplica a las solicitudes para abrir archivos. La opción **/x: OFF** es la configuración predeterminada. |
+| /path: activado | Aplica los directorios anexados a las solicitudes de archivos que ya especifican una ruta de acceso. **/path: on** es el valor predeterminado. |
+| /path: desactivado | Desactiva el efecto de **/path: on**. |
+| /e | Almacena una copia de la lista de directorios anexada en una variable de entorno denominada APPEND. **/e** solo se puede usar la primera vez que se usa **Append** después de iniciar el sistema. |
+| ; | Borra la lista de directorios anexados. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para borrar la lista de directorios anexados, escriba:
 
@@ -53,7 +51,7 @@ Para borrar la lista de directorios anexados, escriba:
 append ;
 ```
 
-Para almacenar una copia del directorio anexado en una variable de entorno denominada APPEND, escriba:
+Para almacenar una copia del directorio anexado en una variable de entorno denominada *Append*, escriba:
 
 ```
 append /e

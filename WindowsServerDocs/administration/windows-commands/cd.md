@@ -1,6 +1,6 @@
 ---
 title: cd
-description: Comando comandos de Windows para CD, que muestra el nombre de o cambia el directorio actual.
+description: Tema de referencia del comando CD, que muestra el nombre de o cambia el directorio actual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,75 +9,89 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d62f529ab6c45957f0fdea24358a2f13151adb6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7c9ee57590cf165ba46f394cab06817c7c13f0a9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848228"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719657"
 ---
 # <a name="cd"></a>cd
 
-Muestra el nombre de o cambia el directorio actual. Si se usa solo con una letra de unidad (por ejemplo, `cd C:`), el **CD** muestra los nombres del directorio actual en la unidad especificada. Si se usa sin parámetros, el **CD** muestra la unidad y el directorio actuales.
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
+
+Muestra el nombre del directorio actual o cambia el directorio actual. Si se usa solo con una letra de unidad (por `cd C:`ejemplo,), **CD** muestra los nombres del directorio actual en la unidad especificada. Si se usa sin parámetros, el **CD** muestra la unidad y el directorio actuales.
 
 > [!NOTE]
-> Este comando es el mismo que el comando **chdir** .
-
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+> Este comando es el mismo que el [comando CHDIR](chdir.md).
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-cd [/d] [<Drive>:][<Path>]
+cd [/d] [<drive>:][<path>]
 cd [..]
-chdir [/d] [<Drive>:][<Path>]
+chdir [/d] [<drive>:][<path>]
 chdir [..]
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|/d|Cambia la unidad actual y el directorio actual de una unidad.|
-|> de \<unidad:|Especifica la unidad que se va a mostrar o cambiar (si es diferente de la unidad actual).|
-|\<ruta de acceso >|Especifica la ruta de acceso al directorio que desea mostrar o cambiar.|
-|[..]|Especifica que desea cambiar a la carpeta principal.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| /d | Cambia la unidad actual y el directorio actual de una unidad. |
+| `<drive>:` | Especifica la unidad que se va a mostrar o cambiar (si es diferente de la unidad actual). |
+| `<path>` | Especifica la ruta de acceso al directorio que desea mostrar o cambiar. |
+| [..] | Especifica que desea cambiar a la carpeta principal. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 Si se habilitan las extensiones de comandos, se aplican las siguientes condiciones al comando de **CD** :
-- La cadena de directorio actual se convierte para usar el mismo caso que los nombres del disco. Por ejemplo, `cd C:\TEMP` establecería el directorio actual en C:\Temp si ese es el caso en el disco.
-- Los espacios no se tratan como delimitadores, por lo que la *ruta de acceso* puede contener espacios sin comillas. Por ejemplo:  
+
+- La cadena de directorio actual se convierte para usar el mismo caso que los nombres del disco. Por ejemplo, `cd c:\temp` establecería el directorio actual en C:\temp si ese es el caso en el disco.
+
+- Los espacios no se tratan como delimitadores `<path>` , por lo que pueden contener espacios sin comillas. Por ejemplo:
+
   ```
   cd username\programs\start menu
-  ```  
+  ```
+
   es igual que:  
+  
   ```
-  cd username\programs\start menu
-  ```  
-  Sin embargo, las comillas son necesarias si las extensiones están deshabilitadas.
+  cd "username\programs\start menu"
+  ```
 
-Para deshabilitar las extensiones de comando, escriba:
-```
-cmd /e:off
-```
+  Si se deshabilitan las extensiones, se requieren comillas.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+- Para deshabilitar las extensiones de comando, escriba:
 
-El directorio raíz es la parte superior de la jerarquía de directorios de una unidad. Para volver al directorio raíz, escriba:
+  ```
+  cmd /e:off
+  ```
+
+## <a name="examples"></a>Ejemplos
+
+Para volver al directorio raíz, en la parte superior de la jerarquía de directorios de una unidad:
+
 ```
 cd\
 ```
-Para cambiar el directorio predeterminado en una unidad distinta de la que se encuentra en, escriba:
+
+Para cambiar el directorio predeterminado en una unidad distinta de la que se encuentra en:
+
 ```
-cd [<Drive>:\[<Directory>]]
+cd [<drive>:[<directory>]]
 ```
+
 Para comprobar el cambio en el directorio, escriba:
+
 ```
-cd [<Drive>:]
+cd [<drive>:]
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [chdir (comando)](chdir.md)

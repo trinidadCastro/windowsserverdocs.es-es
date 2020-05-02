@@ -1,6 +1,6 @@
 ---
 title: endlocal
-description: Tema de comandos de Windows para * * * *-
+description: Tema de referencia de * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4958c5419ed4f6374f7c6ecf09bdf67f61134d93
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f007a9ec1e86093192630011c5197740dfefe922
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845118"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719375"
 ---
 # <a name="endlocal"></a>endlocal
 
@@ -22,7 +22,7 @@ ms.locfileid: "80845118"
 
 Finaliza la localización de los cambios de entorno en un archivo por lotes y restaura las variables de entorno a sus valores antes de ejecutar el comando **setlocal** correspondiente.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,9 +34,9 @@ endlocal
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   El comando **endlocal** no tiene ningún efecto fuera de un script o un archivo por lotes.
 -   Hay un comando de **endlocal** implícito al final de un archivo por lotes.
@@ -45,7 +45,7 @@ endlocal
 > [!NOTE]
 > Para obtener más información acerca de cómo habilitar y deshabilitar las extensiones de comandos, vea [cmd](cmd.md).
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Puede localizar las variables de entorno en un archivo por lotes. Por ejemplo, el siguiente programa inicia el programa por lotes superapp en la red, dirige la salida a un archivo y muestra el archivo en el Bloc de notas:
 ```

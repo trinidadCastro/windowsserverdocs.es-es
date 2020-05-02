@@ -1,6 +1,6 @@
 ---
-title: detail
-description: Temas de comandos de Windows para obtener detalles, que muestra información sobre el disco, la partición, el volumen o el disco duro virtual (VHD) seleccionados.
+title: detalles
+description: Tema de referencia para obtener detalles, que muestra información sobre el disco, la partición, el volumen o el disco duro virtual (VHD) seleccionado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 71f4f72b5a11e7af9c245b0491902687cb352b66
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4601e637f9e087dfa9647d633cee6a1dbc80638f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846378"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719604"
 ---
-# <a name="detail"></a>detail
+# <a name="detail"></a>detalles
 
 Muestra información sobre el disco, la partición, el volumen o el disco duro virtual (VHD) seleccionado.
 
@@ -33,7 +33,7 @@ detail vdisk
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[Disco de detalles](detail-disk.md)|Muestra las propiedades del disco seleccionado y de sus volúmenes.|
+|[Disco de detalles](detail-disk.md)|Muestra las propiedades del disco seleccionado y los volúmenes del mismo.|
 |[Partición de detalle](detail-partition.md)|Muestra las propiedades de la partición seleccionada.|
 |[Volumen detallado](detail-volume.md)|Muestra los discos en los que reside el volumen actual.|
 |[Detalles del vDisk](detail-vdisk.md)|Muestra las propiedades del VHD seleccionado.|

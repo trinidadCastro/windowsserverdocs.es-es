@@ -1,6 +1,6 @@
 ---
 title: bcdboot
-description: Windows Commands topic for **BCDboot**, que configuran rápidamente una partición del sistema, o reparan el entorno de arranque ubicado en la partición del sistema.
+description: Tema de referencia para el comando de BCDboot, que configura rápidamente una partición del sistema o repara el entorno de arranque ubicado en la partición del sistema.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 637170cbd8ee4f3c11ee1dc77a0cd49b5dfa3038
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cde91738f524350f72f0278495e4bd46a3960e6f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851088"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718710"
 ---
 # <a name="bcdboot"></a>bcdboot
 
@@ -30,11 +30,11 @@ bcdboot <source> [/l] [/s]
 
 | Parámetro | Descripción |
 | --------- | ----------- |
-| fuentes | Especifica la ubicación del directorio de Windows que se va a usar como origen para copiar los archivos del entorno de arranque. |
+| source | Especifica la ubicación del directorio de Windows que se va a usar como origen para copiar los archivos del entorno de arranque. |
 | /l | Especifica la configuración regional. La configuración regional predeterminada es Inglés de EE. UU. |
 | /s | Especifica la letra de volumen de la partición del sistema. El valor predeterminado es la partición del sistema identificada por el firmware. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para obtener información sobre dónde encontrar BCDboot y ejemplos de cómo usar este comando, consulte el tema [Opciones de la línea de comandos de BCDboot](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh824874(v=win.10)x) .
 

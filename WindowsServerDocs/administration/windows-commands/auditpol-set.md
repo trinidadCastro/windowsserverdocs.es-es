@@ -1,6 +1,6 @@
 ---
 title: AuditPol set
-description: Temas de comandos de Windows para **Auditpol Set**, que establece la Directiva de auditoría por usuario, la Directiva de auditoría del sistema o las opciones de auditoría.
+description: Tema de referencia del comando Auditpol Set, que establece la Directiva de auditoría por usuario, la Directiva de auditoría del sistema o las opciones de auditoría.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0773a0a9ae9237b39293bae80001616d00630436
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 73868d6044d8742d4d9e0ce76e0668402f230f86
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851148"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718887"
 ---
 # <a name="auditpol-set"></a>AuditPol set
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Establece la Directiva de auditoría por usuario, la Directiva de auditoría del sistema o las opciones de auditoría.
+
+Para realizar operaciones de *conjunto* en las directivas *por usuario* y *del sistema* , debe tener el permiso de **control total** o de **escritura** para ese objeto establecido en el descriptor de seguridad. También puede realizar operaciones de *conjunto* si tiene el derecho de usuario **Administrar registro de auditoría y de seguridad** (SeSecurityPrivilege). Sin embargo, este derecho permite el acceso adicional que no es necesario para realizar las operaciones de *conjunto* generales.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -41,19 +43,15 @@ auditpol /set
 | /User | La entidad de seguridad para la que se establece la Directiva de auditoría por usuario especificada por la categoría o subcategoría. Se debe especificar la opción categoría o subcategoría, como un identificador de seguridad (SID) o un nombre. |
 | /include | Se especifica con/User; indica que la Directiva por usuario del usuario hará que se genere una auditoría incluso si no se especifica en la Directiva de auditoría del sistema. Esta configuración es la predeterminada y se aplica automáticamente si no se especifican explícitamente los parámetros/include ni/exclude. |
 | /exclude | Se especifica con/User; indica que la Directiva por usuario del usuario hará que se elimine una auditoría independientemente de la Directiva de auditoría del sistema. Esta configuración se omite para los usuarios que son miembros del grupo local Administradores. |
-| /category | Una o varias categorías de auditoría especificadas por el identificador único global (GUID) o el nombre. Si no se especifica ningún usuario, se establece la Directiva del sistema. |
+| /categoría | Una o varias categorías de auditoría especificadas por el identificador único global (GUID) o el nombre. Si no se especifica ningún usuario, se establece la Directiva del sistema. |
 | /subcategory | Una o más subcategorías de auditoría especificadas por el GUID o el nombre. Si no se especifica ningún usuario, se establece la Directiva del sistema. |
 | /Success | Especifica la auditoría de aciertos. Esta opción es la predeterminada y se aplica automáticamente si no se especifican explícitamente los parámetros/Success ni/Failure. Esta configuración debe usarse con un parámetro que indique si se va a habilitar o deshabilitar la configuración. |
 | /Failure | Especifica la auditoría de errores. Esta configuración debe usarse con un parámetro que indique si se va a habilitar o deshabilitar la configuración. |
 | /Option | Establece la Directiva de auditoría para las opciones CrashOnAuditFail, FullprivilegeAuditing, AuditBaseObjects o AuditBasedirectories. |
 | /SD | Establece el descriptor de seguridad que se usa para delegar el acceso a la Directiva de auditoría. El descriptor de seguridad se debe especificar mediante el lenguaje de definición de descriptores de seguridad (SDDL). El descriptor de seguridad debe tener una lista de control de acceso discrecional (DACL). |
-| /? | Muestra la Ayuda en el símbolo del sistema. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Comentarios
-
-En el caso de todas las operaciones Set de la Directiva de usuario y la Directiva del sistema, debe tener el permiso de control total o de escritura en ese objeto establecido en el descriptor de seguridad. También puede realizar operaciones Set con el derecho de usuario **Administrar registro de seguridad y auditoría** (SeSecurityPrivilege). Sin embargo, este derecho permite el acceso adicional que no es necesario para realizar la operación SET.
-
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para establecer la Directiva de auditoría por usuario para todas las subcategorías de la categoría de seguimiento detallado para el usuario Mikedan de modo que se auditen todos los intentos correctos del usuario, escriba:
 
@@ -97,3 +95,5 @@ auditpol /set /option:CrashOnAuditFail /value:enable
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [comandos Auditpol](auditpol.md)

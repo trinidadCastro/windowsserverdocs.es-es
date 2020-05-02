@@ -1,6 +1,6 @@
 ---
 title: assoc
-description: Windows Commands topic for Assoc, que muestra o modifica las asociaciones de extensión de nombre de archivo.
+description: Tema de referencia del comando Assoc, que muestra o modifica las asociaciones de la extensión de nombre de archivo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 442ba244a7325425df29a1ebdcdb8bc107095ebe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f637e1f744ec412899320cfbb368633b222da8d3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851298"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718961"
 ---
 # <a name="assoc"></a>assoc
 
@@ -23,12 +23,10 @@ Muestra o modifica las asociaciones de extensión de nombre de archivo. Si se us
 > [!NOTE]
 > Este comando solo se admite en CMD. EXE y no está disponible en PowerShell.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
-
 ## <a name="syntax"></a>Sintaxis
 
 ```
-assoc [<.ext>[=[<FileType>]]]
+assoc [<.ext>[=[<filetype>]]]
 ```
 
 ### <a name="parameters"></a>Parámetros
@@ -36,18 +34,18 @@ assoc [<.ext>[=[<FileType>]]]
 | Parámetro | Descripción |
 | --------- | ----------- |
 | `<.ext>` | Especifica la extensión de nombre de archivo. |
-| `<FileType>` | Especifica el tipo de archivo que se va a asociar a la extensión de nombre de archivo especificada. |
-| `/?` | Muestra la Ayuda en el símbolo del sistema. |
+| `<filetype>` | Especifica el tipo de archivo que se va a asociar a la extensión de nombre de archivo especificada. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 - Para quitar la Asociación de tipo de archivo para una extensión de nombre de archivo, agregue un espacio en blanco después del signo igual presionando la barra ESPACIAdora.
 
 - Para ver los tipos de archivo actuales que tienen definidas cadenas de comandos abiertas, use el comando **ftype** .
 
-- Para redirigir la salida de **Assoc** a un archivo de texto, utilice el operador de redireccionamiento de **>** .
+- Para redirigir la salida de **Assoc** a un archivo de texto, utilice `>` el operador de redireccionamiento.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para ver la Asociación de tipo de archivo actual para la extensión de nombre de archivo. txt, escriba:
 
@@ -79,3 +77,5 @@ assoc>assoc.txt
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [ftype (comando)](ftype.md)

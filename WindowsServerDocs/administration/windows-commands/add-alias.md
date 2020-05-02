@@ -1,6 +1,6 @@
 ---
 title: Agregar alias
-description: El tema comandos de Windows para **Agregar alias**, que agrega alias al entorno de alias.
+description: Tema de referencia del comando Agregar alias, que agrega alias al entorno de alias.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ebffc1504f502711dab30f6f9b120ad20e64ae9d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 807981c3581eea328291f2389e08065edbd280d3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851368"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719031"
 ---
 # <a name="add-alias"></a>Agregar alias
 
-Agrega alias al entorno de alias. Si se usa sin parámetros, **Agregar alias** muestra la ayuda en el símbolo del sistema.
-
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+Agrega alias al entorno de alias. Si se usa sin parámetros, **Agregar alias** muestra la ayuda en el símbolo del sistema. Los alias se guardan en el archivo de metadatos y se cargarán con el comando **cargar metadatos** .
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -30,17 +28,13 @@ add alias <AliasName> <AliasValue>
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|`<AliasName>`|Especifica el nombre del alias.|
-|`<AliasValue>`|Especifica el valor del alias.|
-|`/?`|Muestra la Ayuda en el símbolo del sistema.|
+| Parámetro | Descripción |
+| --------- | ----------- |
+| `<AliasName>` | Especifica el nombre del alias. |
+| `<AliasValue>` | Especifica el valor del alias. |
+| `/?` | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Comentarios
-
--   Los alias se guardan en el archivo de metadatos y se cargarán con el comando **cargar metadatos** .
-
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para enumerar todas las sombras, incluidos sus alias, escriba:
 
@@ -70,3 +64,5 @@ add alias System1 {ff47165a-1946-4a0c-b7f4-80f46a309278}
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [comando cargar metadatos](load-metadata.md)

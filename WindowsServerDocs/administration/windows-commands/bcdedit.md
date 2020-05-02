@@ -1,6 +1,6 @@
 ---
 title: bcdedit
-description: Temas de comandos de Windows para **bcdedit**, que crea nuevos almacenes, modifica almacenes existentes y agrega parámetros de menú de arranque.
+description: Tema de referencia del comando bcdedit, que crea nuevos almacenes, modifica almacenes existentes y agrega parámetros de menú de arranque.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: f5bd39fa29dc99bba0d3600fc8609a355ffe540c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: df68c2c1b1087f7e32dbe270657a54e072261c46
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851078"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718697"
 ---
 # <a name="bcdedit"></a>bcdedit
 
@@ -29,19 +29,19 @@ BCDEdit es una herramienta de la línea de comandos que sirve para administrar a
 > [!NOTE]
 > Se requieren privilegios administrativos para usar BCDEditor con el fin de modificar BCD.
 
-BCDEdit es la herramienta principal para editar la configuración de arranque de Windows Vista y versiones posteriores de Windows. Se incluye con la distribución de Windows Vista en la carpeta%WINDIR%\System32.
+BCDEdit es la principal herramienta para editar la configuración de arranque de Windows Vista y versiones posteriores de Windows. Se incluye con la distribución de Windows Vista en la carpeta %WINDIR%\System32.
 
 BCDEdit se limita a los tipos de datos estándar y se ha diseñado principalmente para realizar cambios comunes en BCD. Para realizar operaciones más complejas o trabajar con tipos de datos no estándar, use la interfaz de programación de aplicaciones (API) de Instrumental de administración de Windows (WMI) de BCD para crear herramientas personalizadas más versátiles y flexibles.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-BCDEdit /Command [<Argument1>] [<Argument2>] ...
+bcdedit /command [<argument1>] [<argument2>] ...
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-### <a name="general-bcdedit-command-line-option"></a>Opción general de la línea de comandos de BCDEdit
+### <a name="general-bcdedit-command-line-options"></a>Opciones generales de la línea de comandos de BCDEdit
 
 | Opción | Descripción |
 | ------ | ----------- |
@@ -101,10 +101,10 @@ BCDEdit /Command [<Argument1>] [<Argument2>] ...
 | Parámetro | Descripción |
 | ------ | ----------- |
 | /bootdebug | Habilita o deshabilita el depurador de arranque para una entrada de arranque especificada. Aunque este comando funciona con cualquier entrada de arranque, sólo es efectivo para aplicaciones de arranque. |
-| /dbgsettings | Especifica o muestra la configuración global del depurador para el sistema. Este comando no enablepose. Para establecer una configuración de depurador global individual, use el comando **bcdedit/set** `<dbgsettings> <type> <value>`. |
+| /dbgsettings | Especifica o muestra la configuración global del depurador para el sistema. Este comando no enablepose. Para establecer una configuración de depurador global individual, use el comando **bcdedit/Set** `<dbgsettings> <type> <value>` . |
 | /debug | Habilita o deshabilita el depurador de kernel para una entrada de arranque especificada. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="additional-references"></a>Referencias adicionales
 
 Para obtener ejemplos de cómo usar BCDEdit, consulte el artículo de [referencia de las opciones de bcdedit](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcd-boot-options-reference) .
 

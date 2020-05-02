@@ -1,6 +1,6 @@
 ---
 title: bitsadmin complete
-description: Tema de comandos de Windows para **bitsadmin completado**, que completa el trabajo.
+description: Tema de referencia del comando bitsadmin complete, que completa el trabajo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 847f6e298ff9701064ce4e577c785f7fc78ea22c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6b61f3475afdb0e29e5777940e6426a04fe33e78
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850828"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718229"
 ---
 # <a name="bitsadmin-complete"></a>bitsadmin complete
 
-Completa el trabajo. Los archivos descargados no estarán disponibles hasta que use este modificador. Use este modificador después de que el trabajo se mueva al estado transferido. De lo contrario, solo estarán disponibles los archivos que se hayan transferido correctamente.
+Completa el trabajo. Use este modificador después de que el trabajo se mueva al estado transferido. De lo contrario, solo estarán disponibles los archivos que se hayan transferido correctamente.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,16 +32,18 @@ bitsadmin /complete <job>
 | --------- | ----------- |
 | trabajo | El nombre para mostrar o el GUID del trabajo. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="example"></a>Ejemplo
 
-Cuando se transfiere el estado del trabajo, BITS ha transferido correctamente todos los archivos del trabajo. Sin embargo, los archivos no estarán disponibles hasta que use el modificador **/Complete** 
-
-Si varios trabajos usan *myDownloadJob* como su nombre, debe reemplazar *MYDOWNLOADJOB* por el GUID del trabajo para identificar el trabajo de forma única.
+Para completar el trabajo *myDownloadJob* , una vez alcanzado el `TRANSFERRED` estado:
 
 ```
-C:\>bitsadmin /complete myDownloadJob
+bitsadmin /complete myDownloadJob
 ```
+
+Si varios trabajos usan *myDownloadJob* como nombre, debe usar el GUID del trabajo para identificarlo de forma exclusiva para su finalización.
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

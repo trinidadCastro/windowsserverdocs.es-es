@@ -1,6 +1,6 @@
 ---
 title: lista Auditpol
-description: Tema comandos de Windows para la **lista Auditpol**, que enumera las categorías y subcategorías de la Directiva de auditoría, o enumera los usuarios para los que se define una directiva de auditoría por usuario.
+description: Tema de referencia del comando de lista Auditpol, que enumera las categorías y subcategorías de la Directiva de auditoría, o enumera los usuarios para los que se define una directiva de auditoría por usuario.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9e0aff46e62ea4e4259360b78aae223dfcd66ef7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 96ee4388c716c066a2e9b55b57dd2e70b4b4f69c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851188"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719097"
 ---
 # <a name="auditpol-list"></a>lista Auditpol
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Enumera las categorías de directivas de auditoría y/o las subcategorías, o enumera los usuarios para los que se define una directiva de auditoría por usuario.
+Enumera las categorías y subcategorías de directivas de auditoría, o muestra los usuarios para los que se ha definido una directiva de auditoría por usuario.
+
+Para realizar operaciones de *lista* en la directiva *por usuario* , debe tener permiso de **lectura** para ese objeto establecido en el descriptor de seguridad. También puede realizar operaciones de *lista* si tiene el derecho de usuario **Administrar registro de auditoría y de seguridad** (SeSecurityPrivilege). Sin embargo, este derecho permite el acceso adicional que no es necesario para realizar las operaciones de *lista* generales.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -35,17 +37,13 @@ auditpol /list
 | Parámetro | Descripción |
 | ------- | -------- |
 | /User | Recupera todos los usuarios para los que se ha definido la Directiva de auditoría por usuario. Si se usa con el parámetro/v, también se muestra el identificador de seguridad (SID) del usuario. |
-| /category | Muestra los nombres de las categorías que entiende el sistema. Si se usa con el parámetro/v, también se muestra el identificador único global (GUID) de la categoría. |
+| /categoría | Muestra los nombres de las categorías que entiende el sistema. Si se usa con el parámetro/v, también se muestra el identificador único global (GUID) de la categoría. |
 | /subcategory | Muestra los nombres de las subcategorías y su GUID asociado. |
 | /v | Muestra el GUID con la categoría o subcategoría, o cuando se usa con/user, muestra el SID de cada usuario. |
 | /r | Muestra el resultado como un informe en formato de valores separados por comas (CSV). |
-| /? | Muestra la Ayuda en el símbolo del sistema. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Comentarios
-
-Para todas las operaciones de lista de la Directiva por usuario, debe tener permiso de lectura en ese conjunto de objetos en el descriptor de seguridad. También puede realizar operaciones de lista con el derecho de usuario **Administrar registro de auditoría y de seguridad** (SeSecurityPrivilege). Sin embargo, este derecho permite el acceso adicional que no es necesario para realizar la operación de lista.
-
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para enumerar todos los usuarios que tienen una directiva de auditoría definida, escriba:
 
@@ -74,3 +72,5 @@ auditpol /list /subcategory:detailed Tracking,DS Access
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [comandos Auditpol](auditpol.md)

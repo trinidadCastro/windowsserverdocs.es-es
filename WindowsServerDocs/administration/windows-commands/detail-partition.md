@@ -1,6 +1,6 @@
 ---
 title: detail partition
-description: Temas de comandos de Windows para la partición de detalles, que muestra las propiedades de la partición seleccionada.
+description: Tema de referencia de la partición de detalles, que muestra las propiedades de la partición seleccionada.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ac4c5886dc24a2cf36fcbe0d7a4744bad6f5aa68
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9ac71e27f5008d6eda0f4c67a7a8129a3bea6365
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846448"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719638"
 ---
 # <a name="detail-partition"></a>detail partition
 
@@ -26,11 +26,11 @@ Muestra las propiedades de la partición seleccionada.
 detail partition
 ```
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Se debe seleccionar una partición para que esta operación se realice correctamente. Use el comando **seleccionar partición** para seleccionar una partición y desplazar el foco a ella.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para ver las propiedades de la partición seleccionada, escriba:
 ```

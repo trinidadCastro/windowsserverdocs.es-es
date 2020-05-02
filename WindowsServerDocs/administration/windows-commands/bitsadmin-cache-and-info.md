@@ -1,6 +1,6 @@
 ---
-title: memoria caché y información de bitsadmin
-description: Tema de comandos de Windows para la **memoria caché de bitsadmin y la información**, que vuelca una entrada de caché específica.
+title: bitsadmin cache e info
+description: Tema de referencia para el comando bitsadmin cache y info, que vuelca una entrada específica de la memoria caché.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e9c6ce1eb972a76408483b8a27a3abca5500e56
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3a50e6575a5496ff9f7bcd6a0dc429c7960c6933
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850898"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718346"
 ---
-# <a name="bitsadmin-cache-and-info"></a>memoria caché y información de bitsadmin
+# <a name="bitsadmin-cache-and-info"></a>bitsadmin cache e info
 
 Vuelca una entrada específica de la memoria caché.
 
@@ -32,14 +32,16 @@ bitsadmin /cache /info recordID [/verbose]
 | -------------- | -------------- |
 | recordID | GUID asociado a la entrada de caché. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se vuelca la entrada de caché con el valor recordID de {6511FB02-E195-40A2-B595-E8E2F8F47702}.
+Para volcar la entrada de caché con el valor recordID de {6511FB02-E195-40A2-B595-E8E2F8F47702}:
 
 ```
-C:\>bitsadmin /cache /info {6511FB02-E195-40A2-B595-E8E2F8F47702}
+bitsadmin /cache /info {6511FB02-E195-40A2-B595-E8E2F8F47702}
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [comando caché de bitsadmin](bitsadmin-cache.md)

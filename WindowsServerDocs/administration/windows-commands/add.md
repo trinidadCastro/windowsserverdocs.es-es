@@ -1,6 +1,6 @@
 ---
 title: add
-description: Comando comandos de Windows para **Agregar**, que agrega volúmenes al conjunto de volúmenes del que se van a realizar instantáneas, o agrega alias al entorno de alias.
+description: Tema de referencia del comando Add, que agrega volúmenes al conjunto de volúmenes de los que se van a realizar instantáneas, o agrega alias al entorno de alias.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,39 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9895082cc10223fd08cff6916c20c3af5613e947
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9b621a3061c4e3366085c5cc44f91f26dd33d4e3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851348"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719008"
 ---
 # <a name="add"></a>add
 
-agrega volúmenes al conjunto de volúmenes de los que se van a realizar instantáneas o agrega alias al entorno de alias. Si se usa sin subcomandos, **Agregar** enumera los volúmenes y alias actuales.
+Agrega volúmenes al conjunto de volúmenes de los que se van a realizar instantáneas o agrega alias al entorno de alias. Si se usa sin subcomandos, **Agregar** enumera los volúmenes y alias actuales.
 
 > [!NOTE]
 > Los alias no se agregan al entorno de alias hasta que se crea la instantánea. Los alias que necesite inmediatamente deben agregarse mediante **Agregar alias**.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
-
 ## <a name="syntax"></a>Sintaxis
 
 ```
-add 
-add volume <Volume> [provider <ProviderID>] 
-add alias <AliasName> <AliasValue>
+add
+add volume <volume> [provider <providerid>]
+add alias <aliasname> <aliasvalue>
 ```
 
-## <a name="add-subcommands"></a>Agregar subcomandos
+### <a name="parameters"></a>Parámetros
 
-| Subcomando | Descripción |
+| Parámetro | Descripción |
 | ---------- | ----------- |
 | volumen | Agrega un volumen al conjunto de instantáneas, que es el conjunto de volúmenes de los que se va a realizar la instantánea. Consulte [agregar volumen](add-volume.md) para ver la sintaxis y los parámetros. |
 | alias | Agrega el nombre y el valor especificados al entorno de alias. Vea [Agregar alias](add-alias.md) para la sintaxis y los parámetros. |
-| `/?` | Muestra la ayuda en la línea de comandos. |
+| /? | Muestra la ayuda en la línea de comandos. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para mostrar los volúmenes agregados y los alias que se encuentran actualmente en el entorno, escriba:
 

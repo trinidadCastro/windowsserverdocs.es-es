@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setdisplayname
-description: Windows Commands topic for **bitsadmin setDisplayName**, que establece el nombre para mostrar del trabajo especificado.
+description: Tema de referencia del comando bitsadmin setDisplayName, que establece el nombre para mostrar del trabajo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b1086903dd130392800f325c451bb4750fbf8fa
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 382cb2f20f0374c2d2787c4c3d88670b4f7260cd
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123007"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719389"
 ---
 # <a name="bitsadmin-setdisplayname"></a>bitsadmin setdisplayname
 
@@ -35,12 +35,14 @@ bitsadmin /setdisplayname <job> <display_name>
 
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se establece el nombre para mostrar del trabajo en *myDownloadJob*.
+Para establecer el nombre para mostrar del trabajo en *myDownloadJob*:
 
 ```
-C:\>bitsadmin /setdisplayname myDownloadJob
+bitsadmin /setdisplayname myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

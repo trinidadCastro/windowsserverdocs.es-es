@@ -1,6 +1,6 @@
 ---
 title: detalles del vDisk
-description: Temas de comandos de Windows para el disco de detalles, que muestra las propiedades del disco duro virtual (VHD) seleccionado.
+description: Tema de referencia sobre el disco de detalles, que muestra las propiedades del disco duro virtual (VHD) seleccionado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba4a13762da4039459c2fa422ecf83b277fcd4d6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ed07639132fcf770036d5955a4e6cc54415b71e1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846408"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719631"
 ---
 # <a name="detail-vdisk"></a>detalles del vDisk
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 Muestra las propiedades del disco duro virtual (VHD) seleccionado.  
   
@@ -28,11 +28,11 @@ Muestra las propiedades del disco duro virtual (VHD) seleccionado.
 detail vdisk  
 ```  
   
-## <a name="remarks"></a>Comentarios  
+## <a name="remarks"></a>Observaciones  
   
 -   Se debe seleccionar un disco duro virtual para que esta operación se realice correctamente. Use el comando **Select vDisk** para seleccionar un vDisk y desplazar el foco a él.  
   
-## <a name="examples"></a><a name=BKMK_examples></a>Example  
+## <a name="examples"></a>Ejemplos  
 Para ver detalles sobre el disco duro virtual seleccionado, escriba:  
   
 ```  
@@ -43,7 +43,7 @@ detail vdisk
   
 -   - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   
--   [Attach vDisk](attach-vdisk.md)  
+-   [attach vdisk](attach-vdisk.md)  
   
 -   [Compact vDisk](compact-vdisk.md)
   

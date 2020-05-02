@@ -1,6 +1,6 @@
 ---
 title: diskcopy
-description: Comando comandos de Windows para diskcopy, que copia el contenido del disquete de la unidad de origen en un disquete formateado o sin formatear en la unidad de destino.
+description: Tema de referencia de diskcopy, que copia el contenido del disquete en la unidad de origen en un disquete formateado o sin formatear en la unidad de destino.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 675694503cab207f05fd6b48e0d17c23196f85d0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b5c9186a539a58ed0d3362ba83d7a3bcedcaabad
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845548"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719466"
 ---
 # <a name="diskcopy"></a>diskcopy
 
 Copia el contenido del disquete de la unidad de origen en un disquete formateado o sin formatear en la unidad de destino. Si se usa sin parámetros, **diskcopy** usa la unidad actual para el disco de origen y el disco de destino.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
 
 > [!NOTE]
 > Este comando no está incluido en Windows 10.
@@ -35,12 +35,12 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<unidad1 >|Especifica la unidad que contiene el disco de origen.|
-|\<Unidad2 >|Especifica la unidad que contiene el disco de destino.|
+|\<> unidad1|Especifica la unidad que contiene el disco de origen.|
+|\<> unidad2|Especifica la unidad que contiene el disco de destino.|
 |/v|Comprueba que la información se ha copiado correctamente. Esta opción ralentiza el proceso de copia.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Observaciones
 
 -   Uso de discos
 
@@ -92,7 +92,7 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
     To process the exit codes that are returned by **diskcomp**, you can use the *ERRORLEVEL* environment variable on the **if** command line in a batch program.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para copiar el disco de la unidad B en el disco de la unidad A, escriba:
 ```

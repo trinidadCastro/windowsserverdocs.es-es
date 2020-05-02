@@ -1,6 +1,6 @@
 ---
 title: Iniciar copia de seguridad
-description: Comando comandos de Windows para **Iniciar copia de seguridad**, que inicia una sesión de copia de seguridad completa.
+description: Tema de referencia del comando Begin backup, que inicia una sesión de copia de seguridad completa.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ed942dfac0851e2750722f639babb9329b162ab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ecb5d83170d248089e5293ebb8557e7ae0854fac
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850998"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718528"
 ---
 # <a name="begin-backup"></a>Iniciar copia de seguridad
 
-inicia una sesión de copia de seguridad completa.
+> Se aplica a: Windows Server 2012 R2, Windows Server 2012
+
+Inicia una sesión de copia de seguridad completa. Este comando invalida la configuración de copia de seguridad predeterminada.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -26,10 +28,8 @@ inicia una sesión de copia de seguridad completa.
 begin backup
 ```
 
-## <a name="remarks"></a>Comentarios
-
-Este comando invalida la configuración de copia de seguridad predeterminada.
-
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+  
+- [comando Begin restore](begin-restore.md)

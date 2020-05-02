@@ -1,6 +1,6 @@
 ---
 title: obtención de Auditpol
-description: Tema de comandos de Windows para **Auditpol Get**, que recupera la Directiva del sistema, la Directiva por usuario, las opciones de auditoría y el objeto de descriptor de seguridad de auditoría.
+description: Tema de referencia del comando Auditpol get, que recupera la Directiva del sistema, la Directiva por usuario, las opciones de auditoría y el objeto de descriptor de seguridad de auditoría.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe2b1bd060f128e39fa1c687ec963c964798fe1b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 859ea9e2e42af0fe7f34f4e378166685f8316b9e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851198"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719134"
 ---
 # <a name="auditpol-get"></a>obtención de Auditpol
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server, 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Recupera la Directiva del sistema, la Directiva por usuario, las opciones de auditoría y el objeto de descriptor de seguridad de auditoría.
+
+Para realizar operaciones *Get* en las directivas *por usuario* y *del sistema* , debe tener permiso de **lectura** para ese objeto establecido en el descriptor de seguridad. También puede realizar operaciones *Get* si tiene el derecho de usuario **Administrar registro de auditoría y de seguridad** (SeSecurityPrivilege). Sin embargo, este derecho permite obtener acceso adicional que no es necesario para realizar las operaciones *Get* generales.
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-auditpol /get 
+auditpol /get
 [/user[:<username>|<{sid}>]]
 [/category:*|<name>|<{guid}>[,:<name|<{guid}> ]]
 [/subcategory:*|<name>|<{guid}>[,:<name|<{guid}> ]]
@@ -39,19 +41,18 @@ auditpol /get
 | Parámetro | Descripción |
 | --------- | ----------- |
 | /User | Muestra la entidad de seguridad para la que se consulta la Directiva de auditoría por usuario. Se debe especificar el parámetro/Category o/subcategory. El usuario puede especificarse como un identificador de seguridad (SID) o un nombre. Si no se especifica ninguna cuenta de usuario, se consulta la Directiva de auditoría del sistema. |
-| /category | Una o varias categorías de auditoría especificadas por el identificador único global (GUID) o el nombre. Se puede usar un asterisco (*) para indicar que se deben consultar todas las categorías de auditoría. |
+| /categoría | Una o varias categorías de auditoría especificadas por el identificador único global (GUID) o el nombre. Se puede usar un asterisco (*) para indicar que se deben consultar todas las categorías de auditoría. |
 | /subcategory | Una o más subcategorías de auditoría especificadas por el GUID o el nombre. |
 | /SD | Recupera el descriptor de seguridad que se usa para delegar el acceso a la Directiva de auditoría. |
 | /Option | Recupera la directiva existente para las opciones CrashOnAuditFail, FullprivilegeAuditing, AuditBaseObjects o AuditBasedirectories. |
 | /r | Muestra la salida en formato de informe, valor separado por comas (CSV). |
-| /? | Muestra la Ayuda en el símbolo del sistema. |
+| /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Comentarios
+### <a name="remarks"></a>Observaciones
 
 Todas las categorías y subcategorías se pueden especificar mediante el GUID o el nombre entre comillas ("). Los usuarios se pueden especificar por SID o nombre.
-para todas las operaciones GET de la Directiva por usuario y la Directiva del sistema, debe tener permiso de lectura en ese objeto establecido en el descriptor de seguridad. También puede realizar operaciones GET con el derecho de usuario **Administrar registro de seguridad y auditoría** (SeSecurityPrivilege). Sin embargo, este derecho permite obtener acceso adicional que no es necesario para realizar la operación get.
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
 Para recuperar la Directiva de auditoría por usuario para la cuenta invitado y mostrar la salida de las categorías sistema, seguimiento detallado y acceso a objetos, escriba:
 
@@ -60,7 +61,7 @@ auditpol /get /user:{S-1-5-21-1443922412-3030960370-963420232-51} /category:Syst
 ```
 
 > [!NOTE]
-> Este comando es útil en dos escenarios. Al supervisar una cuenta de usuario específica para actividades sospechosas, puede usar el comando/Get para recuperar los resultados en categorías específicas mediante una directiva de inclusión para habilitar la auditoría adicional. O bien, si la configuración de auditoría de una cuenta está registrando numerosos eventos superfluos, puede usar el comando/Get para filtrar los eventos superfluos para esa cuenta con una directiva de exclusión. Para obtener una lista de todas las categorías, use el comando Auditpol/List/Category.
+> Este comando es útil en dos escenarios. 1) al supervisar una cuenta de usuario específica para actividades sospechosas, puede usar `/get` el comando para recuperar los resultados en categorías específicas mediante el uso de una directiva de inclusión para habilitar la auditoría adicional. 2) si la configuración de auditoría de una cuenta está registrando numerosos eventos superfluos, puede `/get` usar el comando para filtrar los eventos superfluos para esa cuenta con una directiva de exclusión. Para obtener una lista de todas las categorías, `auditpol /list /category` use el comando.
 
 Para recuperar la Directiva de auditoría por usuario para una categoría y una subcategoría determinada, que notifica la configuración inclusiva y exclusiva de esa subcategoría en la categoría sistema de la cuenta invitado, escriba:
 
@@ -105,4 +106,7 @@ auditpol /get /option:CrashOnAuditFail /r
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
+
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [comandos Auditpol](auditpol.md)

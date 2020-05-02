@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setclientcertificatebyid
-description: Tema de comandos de Windows para **bitsadmin setclientcertificatebyid**, que especifica el identificador del certificado de cliente que se va a usar para la autenticación de cliente en una solicitud HTTPS (SSL)
+description: Tema de referencia del comando bitsadmin setclientcertificatebyid, que especifica el identificador del certificado de cliente que se va a usar para la autenticación de cliente en una solicitud HTTPS (SSL).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 376bb850664a5ed569488634029cb7384856f158
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 24f5d0b9cda9fecc70611d8eaa21b0c8976c4c7c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123048"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719341"
 ---
 # <a name="bitsadmin-setclientcertificatebyid"></a>bitsadmin setclientcertificatebyid
 
@@ -37,12 +37,14 @@ bitsadmin /setclientcertificatebyid <job> <store_location> <store_name> <hexadec
 
 ## <a name="examples"></a>Ejemplos
 
-En el ejemplo siguiente se especifica el identificador del certificado de cliente que se va a utilizar para la autenticación del cliente en una solicitud HTTPS (SSL) para el trabajo denominado *myDownloadJob*.
+Para especificar el identificador del certificado de cliente que se va a usar para la autenticación de cliente en una solicitud HTTPS (SSL) para el trabajo denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /setclientcertificatebyid myDownloadJob BG_CERT_STORE_LOCATION_CURRENT_USER MY A106B52356D3FBCD1853A41B619358BD
+bitsadmin /setclientcertificatebyid myDownloadJob BG_CERT_STORE_LOCATION_CURRENT_USER MY A106B52356D3FBCD1853A41B619358BD
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [bitsadmin (comando)](bitsadmin.md)

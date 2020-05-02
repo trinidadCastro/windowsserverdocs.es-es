@@ -1,6 +1,6 @@
 ---
 title: cprofile
-description: El tema comandos de Windows para cprofile, que está en desuso y no se garantiza que se admita en versiones futuras de Windows.
+description: Tema de referencia para el comando cprofile. Este comando está en desuso y no se garantiza que se admita en versiones futuras de Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,15 +9,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed79e96f2e3703a3025be259889061ba58ceac7c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1b1103286859f1ab7c790ed20ae14f034d4030bb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80847138"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719254"
 ---
 # <a name="cprofile"></a>cprofile
 
 Cprofile está en desuso y no se garantiza que se admita en versiones futuras de Windows.
 
-Cprofile. exe: perfil limpio. Esta herramienta se incluye en todos los sistemas operativos Windows Server 2003 excepto Windows Server 2003, Web Edition. Para obtener más información [, vea Terminal Services herramientas y configuración](https://technet.microsoft.com/library/cc776289(v=ws.10).aspx).
+Cprofile. exe: perfil limpio. Terminal Services se ha actualizado a Servicios de Escritorio remoto. Para obtener más información, consulte [servicios de escritorio remoto](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/welcome-to-rds).
