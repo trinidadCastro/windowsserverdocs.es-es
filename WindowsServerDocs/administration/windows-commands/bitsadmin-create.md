@@ -1,6 +1,6 @@
 ---
 title: bitsadmin create
-description: Temas de comandos de Windows para **bitsadmin Create**, que crea un trabajo de transferencia con el nombre para mostrar especificado.
+description: Tema de referencia del comando bitsadmin Create, que crea un trabajo de transferencia con el nombre para mostrar especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a922d9f15aff0a9bd064a7e987920adf3a9107d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 728027eb4680805c1f9a2afc32d8d37a14239597
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850818"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718216"
 ---
 # <a name="bitsadmin-create"></a>bitsadmin create
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Crea un trabajo de transferencia con el nombre para mostrar especificado. Los trabajos de descarga transfieren datos de un servidor a un archivo local. Los trabajos de carga transfieren datos de un archivo local a un servidor. Los trabajos de respuesta de carga transfieren datos de un archivo local a un servidor y reciben un archivo de respuesta del servidor.
+Crea un trabajo de transferencia con el nombre para mostrar especificado.
 
-Use el modificador de la [reanudación de bitsadmin](bitsadmin-resume.md) para activar el trabajo en la cola de transferencia.
+> [!NOTE]
+> Los tipos de parámetro **/upload** y **/upload-reply** no son compatibles con bits 1,2 y versiones anteriores.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,17 +35,21 @@ bitsadmin /create [type] displayname
 
 | Parámetro | Descripción |
 | ------- | -------- |
-| tipo | -  **/download** transfiere datos de un servidor a un archivo local.<p>-  **/upload** transfiere datos de un archivo local a un servidor.<p>-  **/upload-reply** transfiere datos de un archivo local a un servidor y recibe un archivo de respuesta del servidor.<p>El valor predeterminado de este parámetro es **/download** cuando no se especifica en la línea de comandos. Además, los tipos  **/upload** y **/upload-reply** no están disponibles en bits 1,2 y versiones anteriores. |
+| type | Hay tres tipos de trabajos:<ul><li>**Descargar.** Transfiere datos de un servidor a un archivo local.</li><li>**Subir.** Transfiere datos de un archivo local a un servidor.</li><li>**/Upload-Reply.** Transfiere datos de un archivo local a un servidor y recibe un archivo de respuesta del servidor.</li></ul>El valor predeterminado de este parámetro es **/download** si no se especifica. |
 | displayname | Nombre para mostrar asignado al trabajo recién creado. |
 
-## <a name="examples"></a><a name=BKMK_examples></a>Example
+## <a name="examples"></a>Ejemplos
 
-Crea un trabajo de descarga denominado *myDownloadJob*.
+Para crear un trabajo de descarga denominado *myDownloadJob*:
 
 ```
-C:\>bitsadmin /create myDownloadJob
+bitsadmin /create myDownloadJob
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
 
 - [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+
+- [comando de reanudación de bitsadmin](bitsadmin-resume.md)
+
+- [bitsadmin (comando)](bitsadmin.md)
