@@ -1,6 +1,6 @@
 ---
-title: Eliminación de SC
-description: Tema de referencia de * * * *-
+title: Eliminación de SC. exe
+description: Obtenga información acerca de cómo anular el registro de servicios con la utilidad SC. exe
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd40b5eb82def3b3c437cbdb5b60d279529d25a0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 284012cf6799df52832e62c3eea1b2f0fcd84805
+ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722191"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82850116"
 ---
-# <a name="sc-delete"></a>Eliminación de SC
-
-
+# <a name="scexe-delete"></a>Eliminación de SC. exe
 
 Elimina una subclave de servicio del registro. Si el servicio se está ejecutando o si otro proceso tiene un identificador abierto para el servicio, el servicio se marca para su eliminación.
 
@@ -27,7 +25,7 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#examp
 ## <a name="syntax"></a>Sintaxis
 
 ```
-sc [<ServerName>] delete [<ServiceName>]
+sc.exe [<ServerName>] delete [<ServiceName>]
 ```
 
 ### <a name="parameters"></a>Parámetros
@@ -40,13 +38,13 @@ sc [<ServerName>] delete [<ServiceName>]
 
 ## <a name="remarks"></a>Observaciones
 
-Use **Agregar o quitar programas** en el **Panel de control** para eliminar DHCP, DNS o cualquier otro servicio de sistema operativo integrado. Tenga en cuenta que en **Agregar o quitar programas** no solo se quitará la subclave del registro para el servicio, sino que también se desinstalará el servicio y se eliminarán los accesos directos a él.
+No se recomienda usar SC. exe para eliminar servicios de sistema operativo integrados, como DHCP, DNS o Internet Information Services. Para instalar, quitar o volver a configurar roles de sistema operativo, servicios y componentes, consulte [instalación o desinstalación de roles, servicios de rol o características](/WindowsServerDocs/administration/server-manager/install-or-uninstall-roles-role-services-or-features.md) .
 
 ## <a name="examples"></a>Ejemplos
 
 Para eliminar la subclave de servicio **NewServ** del registro en el equipo local, escriba:
 ```
-sc delete newserv
+sc.exe delete newserv
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

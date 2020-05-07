@@ -3,16 +3,16 @@ title: Compilación de complementos con el modelo de evaluación de riesgos 2019
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 04/16/2019
+ms.date: 05/05/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6433513f525572254e4aaef65e2bfc992a7c5280
-ms.sourcegitcommit: 41dc7f487d282895a242e788049285363dd19eeb
+ms.openlocfilehash: c9795ea1b945d5da773b8d257434f216d842799d
+ms.sourcegitcommit: f0f447193a0bd14d9a623aaead80329b95bf1f47
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82169180"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82842844"
 ---
 # <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>Compilación de complementos con el modelo de evaluación de riesgos 2019 de AD FS
 
@@ -24,7 +24,7 @@ El modelo de evaluación de riesgos es un conjunto de interfaces y clases que pe
 
 El modelo permite el código de complemento en cualquiera de las tres fases de AD FS canalización de autenticación, como se muestra a continuación
 
-![modelo](media/ad-fs-risk-assessment-model/risk1.png)
+![model](media/ad-fs-risk-assessment-model/risk1.png)
 
 1.    **Fase de solicitud recibida** : permite compilar complementos para permitir o bloquear solicitudes cuando AD FS recibe la solicitud de autenticación, es decir, antes de que el usuario escriba las credenciales. Puede usar el contexto de la solicitud (por ejemplo, la dirección IP del cliente, el método http, el servidor proxy DNS, etc.) disponible en esta fase para realizar la evaluación de riesgos. Por ejemplo, puede crear un complemento para leer la dirección IP desde el contexto de la solicitud y bloquear la solicitud de autenticación si la dirección IP está en la lista predefinida de direcciones IP de riesgo. 
 
@@ -44,7 +44,7 @@ A continuación se muestra la lista de requisitos previos necesarios para compil
 
 - AD FS 2019 instalado y configurado
 - .NET Framework 4,7 y versiones posteriores
-- Programa para la mejora
+- Visual Studio
 
 ### <a name="build-plug-in-dll"></a>DLL del complemento de compilación
 El siguiente procedimiento le guiará a través de la creación de un archivo dll de complemento de ejemplo.
@@ -76,7 +76,7 @@ El siguiente procedimiento le guiará a través de la creación de un archivo dl
    >[!NOTE]
    >En mi caso, voy a crear el complemento en el propio servidor de AD FS. Si el entorno de desarrollo está en un servidor diferente, copie `Microsoft.IdentityServer.dll` el de la carpeta de instalación de AD FS en AD FS Server en el cuadro de desarrollo.</br> 
    
-   ![modelo](media/ad-fs-risk-assessment-model/risk4.png)
+   ![model](media/ad-fs-risk-assessment-model/risk4.png)
    
    c.    Haga clic en **Aceptar** en la ventana **Administrador** de referencias `Microsoft.IdentityServer.dll` después de asegurarse de que la casilla está activada.</br>
    ![model](media/ad-fs-risk-assessment-model/risk5.png)
@@ -313,6 +313,7 @@ El método devuelve la [puntuación de riesgo](https://docs.microsoft.com/dotnet
 
 **¿Qué otros complementos de ejemplo están disponibles?**</br>
 **R:** Están disponibles los siguientes complementos de ejemplo:
+
 |Nombre|Descripción| 
 |-----|-----|
 |[Complemento de usuario de riesgo](https://github.com/microsoft/adfs-sample-block-user-on-adfs-marked-risky-by-AzureAD-IdentityProtection)|Complemento de ejemplo que bloquea la autenticación o aplica MFA en función del nivel de riesgo del usuario determinado por Azure AD Identity Protection.| 

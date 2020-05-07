@@ -8,14 +8,14 @@ ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 29db78fdf38a6fab23d9a5ec5539c0606e2fbbaa
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b947ca49a82c18fd7a6c1da71b1e4b43ea741b41
+ms.sourcegitcommit: f247065941508b913c31828944978d3e721e2110
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814488"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82876420"
 ---
-# <a name="azure-site-recovery-services-integration"></a>Integración de los servicios de Azure Site Recovery
+# <a name="azure-site-recovery-services-integration"></a>Integración de los servicios de Azure Site Recovery 
 
 >Se aplica a: Windows Server 2016 Essentials
 
@@ -39,7 +39,7 @@ Después de la suscripción y la selección de la región, aparecerá una nueva 
 
 ### <a name="enabling-guest-virtual-machines-for-protection"></a>Habilitación de las máquinas virtuales invitadas para protección
 
-Al seleccionar una máquina virtual presente en la ventana de recuperación de Azure, puede hacer clic en **Habilitar replicación en Azure** en el lado derecho del panel para preparar y copiar la máquina virtual &trade;imagen de s en Azure:
+Al seleccionar una máquina virtual presente en la ventana de recuperación de Azure, puede hacer clic en **Habilitar replicación en Azure** en el lado derecho del panel para preparar y copiar la imagen &trade;de la máquina virtual en Azure:
 
 ![Una captura de pantalla que muestra el cuadro de diálogo habilitar la replicación en Azure. Se muestra una barra de progreso a medida que se agrega un host.](media/azure-site-recovery-5.PNG)
 
@@ -63,6 +63,6 @@ En cualquiera de los tres casos anteriores, cuando una máquina virtual conmute 
 
 ![Captura de pantalla que muestra la página recuperación de Azure del panel de Windows Server Essentials. La replicación en Azure se ha habilitado para un host denominado Essentials y una máquina virtual denominada Essentials-test que se ejecuta en Azure indica que el host se ha conmutado por error a Azure.](media/azure-site-recovery-8.PNG)
 
-<a name="see-also"></a>Vea también
+<a name="see-also"></a>Consulte también
 --------
 [Introducción a Windows Server Essentials](get-started.md)

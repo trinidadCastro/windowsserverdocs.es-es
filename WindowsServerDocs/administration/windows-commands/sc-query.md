@@ -1,6 +1,6 @@
 ---
-title: Consulta SC
-description: Tema de referencia de * * * *-
+title: Consulta SC. exe
+description: Obtenga información acerca de cómo obtener información acerca de los servicios, los controladores, el tipo de servicios o el tipo de controladores mediante la utilidad SC. exe
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,25 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a6b4555790a8f9bb1149531251e724189177975
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 86aabbbc42c965b72f317a3bfaa99acc99c46f3b
+ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722181"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82850046"
 ---
-# <a name="sc-query"></a>Consulta SC
-
-
+# <a name="scexe-query"></a>Consulta SC. exe
 
 Obtiene y muestra información sobre el servicio, el controlador, el tipo de servicio o el tipo de controlador especificados.
-
-
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= {own | share | interact | kernel | filesys | rec | adapt}] [state= {active | inactive | all}] [bufsize= <BufferSize>] [ri= <ResumeIndex>] [group= <GroupName>]
+sc.exe [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= {own | share | interact | kernel | filesys | rec | adapt}] [state= {active | inactive | all}] [bufsize= <BufferSize>] [ri= <ResumeIndex>] [group= <GroupName>]
 ```
 
 ### <a name="parameters"></a>Parámetros
@@ -55,43 +51,43 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
   ```  
   Para mostrar la información de **consulta** restante, vuelva a ejecutar la **consulta**, estableciendo **bufsize =** para que sea el número de bytes y establezca **RI =** en el índice especificado. Por ejemplo, la salida restante se mostraría escribiendo lo siguiente en el símbolo del sistema:  
   ```
-  sc query bufsize= 1822 ri= 79
+  sc.exe query bufsize= 1822 ri= 79
   ```
 
 ## <a name="examples"></a>Ejemplos
 
 Para mostrar información solo para los servicios activos, escriba cualquiera de los siguientes comandos:
 ```
-sc query
-sc query type= service
+sc.exe query
+sc.exe query type= service
 ```
 Para mostrar información de los servicios activos y especificar un tamaño de búfer de 2.000 bytes, escriba:
 ```
-sc query type= all bufsize= 2000
+sc.exe query type= all bufsize= 2000
 ```
 Para mostrar información del servicio WUAUSERV, escriba:
 ```
-sc query wuauserv
+sc.exe query wuauserv
 ```
 Para mostrar información de todos los servicios (activo e inactivo), escriba:
 ```
-sc query state= all
+sc.exe query state= all
 ```
 Para mostrar información de todos los servicios (activos e inactivos), a partir de la línea 56, escriba:
 ```
-sc query state= all ri= 56
+sc.exe query state= all ri= 56
 ```
 Para mostrar información de los servicios interactivos, escriba:
 ```
-sc query type= service type= interact
+sc.exe query type= service type= interact
 ```
 Para mostrar información solo para los controladores, escriba:
 ```
-sc query type= driver
+sc.exe query type= driver
 ```
 Para mostrar información de los controladores en el grupo de especificación de interfaz de controlador de red (NDIS), escriba:
 ```
-sc query type= driver group= ndis
+sc.exe query type= driver group= ndis
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales
