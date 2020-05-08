@@ -8,12 +8,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bad6ad9a95618239825366187c8083c1fe77ae94
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cdd35ccc7800616f7803937738c942e68bf04c00
+ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860088"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903437"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS la configuración de inicio de sesión único
 
@@ -153,11 +153,11 @@ En Resumen:
 
   <tr align="center">
     <th></th>
-    <th>NO</th>
+    <th>No</th>
     <th>NO, pero KMSI</th>
     <th>SÍ</th>
     <th></th>
-    <th>NO</th>
+    <th>No</th>
     <th>NO, pero KMSI</th>
     <th>SÍ</th>
   </tr>
@@ -201,6 +201,10 @@ En Resumen:
 Cuando
  - [x] el administrador ha habilitado la característica KMSI [y]
  - [x] el usuario hace clic en la casilla KMSI en la página de inicio de sesión de formularios.
+ 
+  
+ADFS emite un nuevo token de actualización solo si la validez del token de actualización más reciente es mayor que el token anterior. La duración máxima de un token es de 84 días, pero AD FS mantiene el token válido en una ventana deslizante de 14 días. Si el token de actualización es válido durante 8 horas, que es la hora de inicio de sesión único normal, no se emitirá un nuevo token de actualización. 
+ 
  
 **Bueno para saberlo:** <br>
 Los usuarios federados que no tengan el atributo **LastPasswordChangeTimestamp** sincronizado reciben cookies de sesión y tokens de actualización que tienen un **valor de antigüedad máximo de 12 horas**.<br>
